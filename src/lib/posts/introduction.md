@@ -1,8 +1,8 @@
 ---
-title: "Read this first..."
+title: "Intro"
 description: "From parallel computing to clinical data and cab drivers, a look back at 20 years of wrangling enterprise architecture and preparing for the era of black-box AI."
 date: "2026-04-04"
-thumbnail: "/images/photo.jpeg"
+thumbnail: "/images/p0.jpeg"
 category: "career"
 published: true
 color: "blue"
