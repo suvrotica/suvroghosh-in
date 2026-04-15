@@ -1,16 +1,20 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	let { data } = $props();
+	import type { PageData } from './$types';
 
+    let { data }: { data: PageData } = $props();
+
+    // derived values for cleaner template
     let Content = $derived(data.content);
     let meta = $derived(data.metadata);
 
+    // Color Mapping System
     const colorStyles: Record<string, string> = {
-        red: 'bg-red-800 text-white border-red-950',
-        black: 'bg-neutral-950 text-white border-neutral-800',
-        blue: 'bg-blue-700 text-white border-blue-900',
-        green: 'bg-emerald-700 text-white border-emerald-900',
-        orange: 'bg-orange-600 text-white border-orange-800'
+        red: 'bg-red-800 text-white border-red-950',        // Satirical / R-Rated
+        black: 'bg-neutral-950 text-white border-neutral-800', // Personal / Dark
+        blue: 'bg-blue-700 text-white border-blue-900',      // Sciencey
+        green: 'bg-emerald-700 text-white border-emerald-900', // Mathematical
+        orange: 'bg-orange-600 text-white border-orange-800'   // General / Other
     };
 
     let headerClass = $derived(
@@ -30,8 +34,6 @@
         
         <div class="flex justify-center items-center gap-4 text-sm font-medium opacity-90 uppercase tracking-widest">
             <span>{meta.category}</span>
-            <span>•</span>
-            <span>{new Date(meta.date || new Date()).toLocaleDateString()}</span>
         </div>
     </header>
 
