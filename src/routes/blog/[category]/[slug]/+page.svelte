@@ -15,16 +15,7 @@
         </h1>
         
         <div class="flex items-center justify-center gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
-            {#if data.metadata.date}
-                <time datetime={new Date(data.metadata.date).toISOString()}>
-                    {new Date(data.metadata.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                    })}
-                </time>
-            {/if}
-            <span>•</span>
+            
             <span class="uppercase tracking-wider text-gold">{data.metadata.category}</span>
         </div>
     </header>
