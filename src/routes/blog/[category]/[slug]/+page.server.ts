@@ -18,14 +18,22 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
 		if (post.published === false) error(404, { message: 'This post is not available' });
 
+		
+
+
 		const canonicalUrl = `${url.origin}/blog/${category}/${slug}`;
 		const seo = {
 			title: `${post.title} | SuvroGhosh.In`, 
 			description: post.description,
 			canonicalUrl: canonicalUrl,
-			ogImageUrl: post.thumbnail ? `${url.origin}${post.thumbnail}` : `${url.origin}/images/placeholders/default.png`,
+			ogImageUrl: post.thumbnail
+				? `${url.origin}${post.thumbnail}`
+				: `${url.origin}/images/IMG-20251202-WA0009.jpg`, // Fixed fallback image
+			ogImageAlt: post.title,
+			keywords: post.keywords
 		};
 
+		
 		return { metadata: post, seo, resolvedPath: matchingPath };
 	} catch (e: any) {
 		if (e?.status === 404) throw e;
