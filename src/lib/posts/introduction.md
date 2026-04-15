@@ -2,7 +2,6 @@
 title: "Intro"
 description: "From parallel computing to clinical data and cab drivers, a look back at 20 years of wrangling enterprise architecture and preparing for the era of black-box AI."
 date: "2026-04-04"
-thumbnail: "/images/p0.jpeg"
 category: "career"
 published: true
 color: "blue"
@@ -10,38 +9,76 @@ color: "blue"
 
 <TTS />
 
-If you read the vendor manuals, you might genuinely believe that a hospital’s digital transformation is just a matter of turning on the right API. The brochures suggest that FHIR will elegantly part the sea of siloed data, and interoperability will descend upon the enterprise like a gentle, healing rain.
+This isn’t about introducing myself. It’s about establishing context for the kind of problems I work on, and the ones I’m interested in solving going forward.
 
-I know better. I operate under no such charming delusions.
+I’ve spent most of my professional life inside healthcare data systems that were never designed to do what we now expect them to do.
 
-If I start at the very beginning, I once believed the world was easy to manipulate. During my undergraduate years at Jadavpur University, studying computer science, I was introduced to Pascal, FORTRAN, and C++. I fell in love with relational databases and assumed that programming provided all the necessary knobs to control reality. This, of course, was before I met American healthcare data.
+That matters.
 
-## From Parallel Computing to the Zipf Distribution
+Because when people talk about applying AI to healthcare, they usually start at the model. Or the framework. Or the promise. Almost never at the substrate the model has to operate on.
 
-Long before I was diagnosing broken HL7 feeds, I was simulating wireless protocols for ad-hoc networks at the University of Texas at San Antonio. My master's thesis explored distributed databases and parallel computing—a concept the industry would later romantically rebrand as "Big Data."
+That substrate is where I’ve worked.
 
-That academic work landed me at Surgient Networks in Austin, simulating video caching behaviors. There, I was introduced to statistical models, particularly the Zipf distribution. I learned quickly that servers, much like triage nurses, get inundated by the exact same popular requests. Caching optimizations are the only thing standing between functional order and total catastrophe. It was my first real taste of how individual chaos aggregates into predictable, manageable patterns.
+Across VA systems, UTHSCSA research environments, and clinical trial data platforms, the recurring pattern has been the same: heterogeneous data sources, inconsistent representations, fragile mappings, and workflows shaped more by billing, compliance, and legacy constraints than by clinical cognition.
 
-## The Beautiful Disaster of Clinical Data
+This isn’t a complaint. It’s a description of the system as it actually exists.
 
-But nothing tests your architectural sanity quite like healthcare. In 2002, I joined UTHSCSA in San Antonio, working as a statistician and analyst. Here, my passions for biology, scientific programming, and databases were permanently fused.
+You don’t struggle to build intelligent systems in healthcare because the models are insufficient. You struggle because the underlying data is not just “dirty.” It is structurally misaligned with the questions you want to ask.
 
-I spent over a decade wrestling with genetic data structures, fitting statistical models, and administering databases for clinical trials. Long before "medical machine learning" became a mandatory buzzword on every slide deck, we were using it quietly to make sense of complex biological realities. I learned that data is rarely clean; most of my code—whether in VBA, SAS, or SQL—was dedicated to aggressively sanitizing the scattered remnants of clinical documentation.
+Flat files from MUMPS hierarchies. Relational reconstructions in SQL Server. SAS datasets with implicit semantics. HL7 messages carrying state without context. CDISC models enforcing structure without guaranteeing meaning.
 
-In 2012, I founded ClinZen LLC, operating between the US and India. My goal was to assist hospitals with clinical trials and data management. I spent years deep in the trenches of high-level software architecture, fighting the good fight for data security and privacy. I focused heavily on health information exchange and the utopian promises of interoperability using HL7 FHIR and CDISC. I even developed a cloud-based virtual browser to ensure secure hospital connectivity and patient privacy for telemedicine applications.
+Each of these is internally consistent. None of them align cleanly with each other.
 
-## Cab Drivers, Edge Cases, and the Limits of UML
+So what you get is not a data pipeline. You get a translation pipeline. And every translation introduces loss.
 
-Yet, despite the elegance of UML standards, the reality of IT implementation often feels like a beautifully orchestrated tragedy. Since 2014, pushing HIE and CTMS projects in India has frequently been an exercise in building pristine, technologically advanced bridges over entirely missing rivers.
+That loss is where most AI initiatives quietly fail.
 
-Oddly enough, my most profound architectural lesson came not from a hospital, but from launching cab aggregation services in Chennai and Kolkata.
+Over the years, I’ve worked on building data warehouses from VA operational systems, designing registries for NIH-funded studies, implementing ETL pipelines across incompatible formats, and supporting clinical trials where the system had to satisfy both regulatory rigor and analytical usability.
 
-Managing cab drivers teaches you more about system failure than any enterprise certification. It teaches you that reality never actually matches the manual. A sheltered development team simply cannot imagine the real-world variables a driver encounters on a flooded street in Kolkata. You learn quickly that systems are painfully dynamic, and when dealing with human beings, you must be flexible, adaptable, and prepared for unexpected challenges. You have to match their wavelength, or your pristine software is entirely useless.
+The consistent constraint has not been scale. It has been meaning.
 
-## The Age of the Black Box
+You can scale storage. You can scale compute. You cannot trivially scale semantic alignment.
 
-With more than two decades of experience spanning clinical trial management, electronic hospital records, and data analytics, I now find myself staring down a new, entirely synthetic kind of chaos. We are entering an era of cavalier coding, increasingly dominated by the black-box culture of AI agents.
+And AI systems—especially the current generation—are extremely sensitive to that.
 
-Today, there is a dangerous, pervasive temptation to treat artificial intelligence as a magical sanitizer for systemic incompetence. Developers are becoming far too comfortable bolting together autonomous agents and LLMs without understanding the underlying deterministic logic of the systems they are touching. In healthcare, where data structures represent actual human lives and clinical outcomes, this blind faith is terrifying. You cannot simply prompt an AI to resolve a fundamentally broken HL7 feed, shrug, and unconditionally trust the output. 
+They don’t fix ambiguity. They absorb it.
 
-Because ultimately, the best enterprise architecture is no longer just about writing perfect code or mapping the right FHIR resource. It is about defending the integrity of your systems against automated, confident hallucinations. It's about translating complexity, anticipating the chaos, and knowing exactly what to do when an AI agent aggressively—and invisibly—deviates from reality.
+They don’t resolve inconsistency. They generalize over it.
+
+That’s useful in some domains. In healthcare, it can be dangerous.
+
+This is why most conversations around “AI in healthcare” feel incomplete. They assume that once data is available, intelligence can be layered on top. In practice, the opposite is true. Intelligence is constrained, and often defined, by how the data is modeled, transformed, and contextualized upstream.
+
+This is not a theoretical position. It’s an operational one.
+
+If you’ve worked with EHR data long enough, you know that a diagnosis code is not a diagnosis. It’s an encoding of an event shaped by documentation practices, reimbursement rules, and system affordances.
+
+If you’ve worked with clinical trials, you know that a variable in an SDTM dataset is not a fact. It’s the result of protocol design, site behavior, and validation logic interacting over time.
+
+If you’ve built ETL pipelines, you know that “data integration” is often just synchronized inconsistency.
+
+These are not edge cases. They are the norm.
+
+So when I think about AI in healthcare, I’m not thinking about models first. I’m thinking about representation, transformation, and constraint.
+
+What is the system actually capturing?
+
+What is it losing?
+
+What is it forcing into structure that doesn’t belong there?
+
+And how do those decisions propagate into any downstream intelligence we try to build?
+
+This is where I’m focusing now.
+
+Not on abstract AI capability, but on its interaction with real healthcare systems: EHRs that optimize for documentation and billing, HIE layers that move data without harmonizing meaning, clinical data models that standardize structure while preserving ambiguity.
+
+There is a path forward. But it doesn’t start where most people are looking.
+
+It starts with accepting that the system is not broken in a simple way. It is layered, constrained, and internally consistent in ways that resist naive optimization.
+
+AI can be transformative in healthcare. But only if it is grounded in the realities of how healthcare data is actually produced, shaped, and constrained.
+
+That’s the space I work in.
+
+And that’s the space I’m interested in pushing forward.

@@ -1,0 +1,2184 @@
+# Context file generated on: Thursday, April 16, 2026 at 4:40:10 AM GMT+5:30
+---
+
+# Project File Layout
+
+.
+
+├── .gitignore
+├── .npmrc
+├── .prettierignore
+├── .prettierrc
+├── .vscode
+│   ├── extensions.json
+│   └── settings.json
+├── eslint.config.js
+├── package-lock.json
+├── package.json
+├── README.md
+├── scripts
+│   └── generate-context.mjs
+├── src
+│   ├── app.css
+│   ├── app.d.ts
+│   ├── app.html
+│   ├── lib
+│   │   ├── assets
+│   │   │   └── favicon.svg
+│   │   ├── components
+│   │   │   ├── blog
+│   │   │   │   ├── Doggerel.svelte
+│   │   │   │   ├── PostGallery.svelte
+│   │   │   │   ├── PostImage.svelte
+│   │   │   │   ├── TTS.svelte
+│   │   │   │   ├── YouTube.svelte
+│   │   │   │   └── YtCredit.svelte
+│   │   │   ├── layout
+│   │   │   │   ├── Aside.svelte
+│   │   │   │   ├── Footer.svelte
+│   │   │   │   └── Header.svelte
+│   │   │   └── seo
+│   │   │       ├── SEO.svelte
+│   │   │       └── SEO.ts
+│   │   ├── index.ts
+│   │   └── posts
+│   │       ├── fhir-r4-vs-r5-real-deployments.md
+│   │       └── introduction.md
+│   └── routes
+│       ├── +layout.server.ts
+│       ├── +layout.svelte
+│       ├── +page.server.ts
+│       ├── +page.svelte
+│       ├── blog
+│       │   ├── +page.svelte
+│       │   └── [category]
+│       │       ├── +page.server.ts
+│       │       ├── +page.svelte
+│       │       └── [slug]
+│       │           ├── +page.server.ts
+│       │           ├── +page.svelte
+│       │           └── +page.ts
+│       ├── layout.css
+│       ├── resume
+│       │   └── +page.svelte
+│       └── sitemap.xml
+│           └── +server.ts
+├── static
+│   ├── images
+│   │   ├── p0.jpeg
+│   │   ├── p1.jpeg
+│   │   ├── p2.jpeg
+│   │   ├── p3.jpeg
+│   │   └── p4.jpeg
+│   └── robots.txt
+├── svelte.config.js
+├── TheApp.txt
+├── tsconfig.json
+└── vite.config.ts
+
+---
+# File Contents
+---
+
+# File: package.json
+
+{
+	"name": "suvroghosh-in",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"context": "node scripts/generate-context.mjs"
+	},
+	"devDependencies": {
+		"@eslint/compat": "^2.0.3",
+		"@eslint/js": "^10.0.1",
+		"@sveltejs/adapter-vercel": "^6.3.1",
+		"@sveltejs/kit": "^2.50.2",
+		"@sveltejs/vite-plugin-svelte": "^6.2.4",
+		"@tailwindcss/forms": "^0.5.11",
+		"@tailwindcss/typography": "^0.5.19",
+		"@tailwindcss/vite": "^4.2.2",
+		"@types/mathjs": "^9.4.1",
+		"@types/node": "^24",
+		"@types/ua-parser-js": "^0.7.39",
+		"@types/uuid": "^10.0.0",
+		"eslint": "^10.0.3",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-svelte": "^3.15.2",
+		"globals": "^17.4.0",
+		"katex": "^0.16.44",
+		"mdsvex": "^0.12.7",
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.4.1",
+		"prettier-plugin-tailwindcss": "^0.7.2",
+		"rehype-autolink-headings": "^7.1.0",
+		"rehype-katex-svelte": "^1.2.0",
+		"rehype-slug": "^6.0.0",
+		"remark-frontmatter": "^5.0.0",
+		"remark-math": "^6.0.0",
+		"schema-dts": "^2.0.0",
+		"shiki": "^4.0.2",
+		"svelte": "^5.54.0",
+		"svelte-check": "^4.4.2",
+		"tailwindcss": "^4.2.2",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.57.0",
+		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@vercel/analytics": "^2.0.1",
+		"@vercel/speed-insights": "^2.0.0",
+		"mathjs": "^15.1.1",
+		"postgres": "^3.4.8",
+		"ua-parser-js": "^2.0.9",
+		"uuid": "^13.0.0"
+	}
+}
+
+
+# File: svelte.config.js
+
+import adapter from '@sveltejs/adapter-vercel';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { mdsvex } from 'mdsvex';
+import remarkMath from 'remark-math';
+import rehypeKatexSvelte from 'rehype-katex-svelte';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+
+const globalImports = `
+import Pi from '$lib/components/blog/PostImage.svelte';
+import Yt from '$lib/components/blog/YouTube.svelte';
+import Yc from '$lib/components/blog/YtCredit.svelte';
+import Dl from '$lib/components/blog/Doggerel.svelte';
+import TTS from '$lib/components/blog/TTS.svelte';
+`;
+
+const autoImport = {
+	name: 'auto-import',
+	markup: ({ content, filename }) => {
+		if (!filename || !filename.endsWith('.md')) return;
+		if (content.includes('<script>')) {
+			return { code: content.replace('<script>', `<script>\n${globalImports}`) };
+		}
+		return { code: content + `\n<script>\n${globalImports}\n</script>` };
+	}
+};
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+	preprocess: [
+		autoImport,
+		vitePreprocess(),
+		mdsvex({
+			extensions: ['.md', '.svx'],
+			remarkPlugins: [remarkMath],
+			rehypePlugins: [
+				rehypeSlug,
+				[rehypeAutolinkHeadings, { behavior: 'wrap' }],
+				rehypeKatexSvelte
+			]
+		})
+	],
+	extensions: ['.svelte', '.md', '.svx'],
+	kit: {
+		adapter: adapter(),
+		alias: {
+			$components: 'src/lib/components',
+			$assets: 'src/lib/assets'
+		}
+	}
+};
+export default config;
+
+# File: vite.config.ts
+
+import tailwindcss from '@tailwindcss/vite';
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
+
+export default defineConfig({ plugins: [tailwindcss(), sveltekit()] });
+
+
+# File: tsconfig.json
+
+{
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"rewriteRelativeImportExtensions": true,
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"moduleResolution": "bundler"
+	}
+	// Path aliases are handled by https://svelte.dev/docs/kit/configuration#alias
+	// except $lib which is handled by https://svelte.dev/docs/kit/configuration#files
+	//
+	// To make changes to top-level options such as include and exclude, we recommend extending
+	// the generated config; see https://svelte.dev/docs/kit/configuration#typescript
+}
+
+
+# File: src/app.css
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+/* Tailwind 4 Theme Configuration */
+@theme {
+  --font-sans: "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Merriweather", ui-serif, Georgia, serif;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+}
+
+/* Global Styles */
+body {
+  @apply bg-neutral-200 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300;
+  @apply transition-colors duration-300;
+  @apply overflow-x-hidden;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, h5, h6, blockquote {
+  @apply my-4 leading-tight tracking-tight subpixel-antialiased md:tracking-wide font-bold text-neutral-900 dark:text-neutral-100;
+}
+
+h1 { @apply text-5xl md:text-6xl; }
+h2 { @apply text-4xl md:text-5xl; }
+h3 { @apply text-3xl md:text-4xl; }
+h4 { @apply text-2xl md:text-3xl; }
+h5 { @apply text-xl md:text-2xl; }
+h6 { @apply text-lg md:text-xl; }
+
+p {
+  @apply text-justify text-base leading-relaxed mb-4 text-neutral-800 dark:text-neutral-300;
+}
+
+/* Links: Neutral Hover */
+a {
+  @apply text-neutral-900 dark:text-neutral-100 transition-colors duration-200 underline decoration-neutral-400/50;
+  &:hover {
+    @apply text-neutral-600 dark:text-neutral-400 decoration-neutral-500;
+  }
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  @apply text-inherit no-underline;
+}
+
+/* Layout Utilities */
+.main-layout { @apply flex h-screen; }
+.main-content { @apply flex-1 flex flex-col overflow-hidden; }
+.scrollable-main { @apply flex-1 overflow-y-auto; }
+.container { @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl; }
+
+/* Sidebar */
+.sidebar-container { 
+  @apply overflow-y-auto h-screen w-64 shrink-0 bg-neutral-100 dark:bg-neutral-900 border-r border-neutral-300 dark:border-neutral-700 hidden lg:block;
+}
+.sidebar-link { 
+  @apply block rounded-md p-2 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-colors text-sm;
+}
+.sidebar-link-active { 
+  @apply bg-neutral-300 dark:bg-neutral-700 font-bold text-neutral-900 dark:text-neutral-100;
+}
+
+/* UI Components */
+.card {
+  @apply bg-neutral-100 dark:bg-neutral-800/50 border border-neutral-300 dark:border-neutral-700 rounded-lg p-6 shadow-md transition-shadow hover:shadow-lg;
+}
+.btn-primary {
+  @apply rounded-lg bg-neutral-800 dark:bg-neutral-700 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors cursor-pointer;
+}
+
+/* Visualization Containers */
+.interactive-component-wrapper { 
+  @apply my-6 p-6 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800/50;
+}
+
+/* Post Image Layouts */
+.post-image.inline-left { @apply float-left mr-6 mb-4 max-w-[50%] clear-left; }
+.post-image.inline-right { @apply float-right ml-6 mb-4 max-w-[50%] clear-right; }
+
+/* Grid Components */
+@layer components {
+    .benford-grid-container {
+        @apply grid gap-1 items-center justify-center h-full w-full overflow-hidden p-2;
+        @apply bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-inner;
+    }
+    .benford-cell {
+        @apply flex items-center justify-center h-8 text-[10px] font-mono border border-neutral-200/50 
+               dark:border-neutral-800/50 rounded bg-white dark:bg-neutral-900 shadow-sm truncate px-1 transition-colors;
+    }
+    .chart-bar-actual {
+        @apply w-full bg-neutral-900 dark:bg-neutral-100 rounded-t-xs transition-all duration-500 ease-in-out relative;
+    }
+    .chart-marker-expected {
+        @apply absolute w-full border-t-2 border-amber-500/60 z-10 pointer-events-none;
+    }
+}
+
+# File: src/app.d.ts
+
+// See https://svelte.dev/docs/kit/types#app.d.ts
+// for information about these interfaces
+declare global {
+	namespace App {
+		// interface Error {}
+		// interface Locals {}
+		// interface PageData {}
+		// interface PageState {}
+		// interface Platform {}
+	}
+}
+
+export {};
+
+
+# File: src/app.html
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<link rel="icon" href="https://fav.farm/%F0%9F%9A%91" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
+
+
+# File: src/lib/assets/favicon.svg
+
+<svg xmlns="http://www.w3.org/2000/svg" width="107" height="128" viewBox="0 0 107 128"><title>svelte-logo</title><path d="M94.157 22.819c-10.4-14.885-30.94-19.297-45.792-9.835L22.282 29.608A29.92 29.92 0 0 0 8.764 49.65a31.5 31.5 0 0 0 3.108 20.231 30 30 0 0 0-4.477 11.183 31.9 31.9 0 0 0 5.448 24.116c10.402 14.887 30.942 19.297 45.791 9.835l26.083-16.624A29.92 29.92 0 0 0 98.235 78.35a31.53 31.53 0 0 0-3.105-20.232 30 30 0 0 0 4.474-11.182 31.88 31.88 0 0 0-5.447-24.116" style="fill:#ff3e00"/><path d="M45.817 106.582a20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.503 18 18 0 0 1 .624-2.435l.49-1.498 1.337.981a33.6 33.6 0 0 0 10.203 5.098l.97.294-.09.968a5.85 5.85 0 0 0 1.052 3.878 6.24 6.24 0 0 0 6.695 2.485 5.8 5.8 0 0 0 1.603-.704L69.27 76.28a5.43 5.43 0 0 0 2.45-3.631 5.8 5.8 0 0 0-.987-4.371 6.24 6.24 0 0 0-6.698-2.487 5.7 5.7 0 0 0-1.6.704l-9.953 6.345a19 19 0 0 1-5.296 2.326 20.72 20.72 0 0 1-22.237-8.243 19.17 19.17 0 0 1-3.277-14.502 17.99 17.99 0 0 1 8.13-12.052l26.081-16.623a19 19 0 0 1 5.3-2.329 20.72 20.72 0 0 1 22.237 8.243 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-.624 2.435l-.49 1.498-1.337-.98a33.6 33.6 0 0 0-10.203-5.1l-.97-.294.09-.968a5.86 5.86 0 0 0-1.052-3.878 6.24 6.24 0 0 0-6.696-2.485 5.8 5.8 0 0 0-1.602.704L37.73 51.72a5.42 5.42 0 0 0-2.449 3.63 5.79 5.79 0 0 0 .986 4.372 6.24 6.24 0 0 0 6.698 2.486 5.8 5.8 0 0 0 1.602-.704l9.952-6.342a19 19 0 0 1 5.295-2.328 20.72 20.72 0 0 1 22.237 8.242 19.17 19.17 0 0 1 3.277 14.503 18 18 0 0 1-8.13 12.053l-26.081 16.622a19 19 0 0 1-5.3 2.328" style="fill:#fff"/></svg>
+
+# File: src/lib/components/blog/Doggerel.svelte
+
+<script lang="ts">
+	let { children } = $props();
+</script>
+
+<div class="my-12 w-full max-w-2xl mx-auto font-serif text-neutral-800 dark:text-neutral-200 
+            [&_p]:text-center [&_p]:!mb-2 [&_p]:text-xl md:[&_p]:text-2xl [&_p]:italic [&_p]:leading-relaxed">
+	{@render children()}
+</div>
+
+# File: src/lib/components/blog/PostGallery.svelte
+
+<script lang="ts">
+	type Post = {
+		slug: string;
+		title: string;
+		thumbnail?: string;
+		category: string;
+	};
+	let { posts = [] }: { posts: Post[] } = $props();
+</script>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+	{#each posts as post (post.slug)}
+		{@const href = `/blog/${post.category}/${post.slug}`}
+		<a {href} class="group block relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800"> 
+            <div class="aspect-2/3 overflow-hidden bg-neutral-200 dark:bg-neutral-700">
+                {#if post.thumbnail}
+				    <img src={post.thumbnail} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                {:else}
+                    <div class="w-full h-full flex items-center justify-center text-neutral-400 text-4xl font-serif">
+                        {post.title.charAt(0)}
+                    </div>
+                {/if}
+			</div>
+            
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/90 via-black/60 to-transparent pt-12">
+                <h3 class="text-white font-bold text-lg leading-tight group-hover:text-gold transition-colors">
+                    {post.title}
+                </h3>
+                <p class="text-neutral-300 text-xs mt-1 uppercase tracking-wide">{post.category}</p>
+            </div>
+		</a>
+	{/each}
+</div>
+
+# File: src/lib/components/blog/PostImage.svelte
+
+<script lang="ts">
+	let {
+		src,
+		alt,
+		caption = '',
+		layout = 'block',
+		size = 1
+	}: {
+		src: string;
+		alt?: string;
+		caption?: string;
+		layout?: 'block' | 'iL' | 'iR';
+		size?: number;
+	} = $props();
+
+	let fullSrc = $derived(
+		src.startsWith('/') || src.startsWith('http') ? src : `/images/${src}`
+	);
+
+	function formatAlt(filename: string) {
+		const name = filename.split('/').pop() ?? filename;
+		const noExt = name.split('.').slice(0, -1).join('.');
+		return noExt.replace(/[-_]/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase());
+	}
+
+	let finalAlt = $derived(alt ?? formatAlt(src));
+	let containerStyle = $derived(`width: ${size * 100}%;`);
+
+	let figureClasses = $derived.by(() => {
+		let classes = "post-image relative";
+		if (layout === 'iL') return `${classes} float-left mr-6 mb-4 clear-left`;
+		if (layout === 'iR') return `${classes} float-right ml-6 mb-4 clear-right`;
+		return `${classes} block mx-auto my-8`;
+	});
+
+	let imgClasses = $derived("h-auto w-full rounded-lg shadow-md");
+</script>
+
+<figure class={figureClasses} style={containerStyle}>
+	<img src={fullSrc} alt={finalAlt} loading="lazy" decoding="async" class={imgClasses} />
+	{#if caption}
+		<figcaption class="mt-2 text-sm italic text-neutral-600 dark:text-neutral-400 text-center leading-tight">
+			{caption}
+		</figcaption>
+	{/if}
+</figure>
+
+# File: src/lib/components/blog/TTS.svelte
+
+<script lang="ts">
+	import { onMount } from 'svelte';
+	
+	let speaking = false;
+	let paused = false;
+	let supported = false;
+	let buffering = false;
+	let chunks: string[] = [];
+	let currentChunkIndex = 0;
+	let currentUtterance: SpeechSynthesisUtterance | null = null;
+	let debugLog = "";
+	let debugMode = true;
+
+	function log(msg: string) {
+		console.log(msg);
+		if (debugMode) debugLog = msg;
+	}
+
+	const icons = {
+		play: "M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z",
+		pause: "M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z",
+	};
+
+	onMount(() => {
+		if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+			supported = true;
+			window.speechSynthesis.getVoices();
+			window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+		}
+		return () => cancel();
+	});
+
+	function getText(): string {
+		const article = document.querySelector('article') || document.querySelector('.prose') || document.body;
+		// Cast the Node to an HTMLElement so TS knows it has innerText and querySelector
+		const clone = article.cloneNode(true) as HTMLElement; 
+		const self = clone.querySelector('[data-tts-exclude]');
+		if (self) self.remove();
+		clone.querySelectorAll('button, script, style, .no-read').forEach((el: Element) => el.remove());
+		return clone.innerText || "";
+	}
+
+	function splitIntoChunks(text: string): string[] {
+		const rawChunks = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+		return rawChunks.map((c: string) => c.trim()).filter((c: string) => c.length > 0);
+	}
+
+	function speakNextChunk() {
+		if (currentChunkIndex >= chunks.length) {
+			log("Finished all chunks");
+			speaking = false;
+			paused = false;
+			currentChunkIndex = 0;
+			return;
+		}
+
+		const chunkText = chunks[currentChunkIndex];
+		const utt = new SpeechSynthesisUtterance(chunkText);
+		currentUtterance = utt;
+		
+		const voices = window.speechSynthesis.getVoices();
+		const voice = voices.find(v => v.name.includes("Google US English")) || voices.find(v => v.lang === "en-US") || null; 
+		
+		if (voice) utt.voice = voice;
+		utt.rate = 1.0;
+
+		utt.onstart = () => {
+			buffering = false;
+			log(`Speaking chunk ${currentChunkIndex + 1}/${chunks.length}`);
+		};
+		utt.onend = () => {
+			if (speaking && !paused) {
+				currentChunkIndex++;
+				speakNextChunk();
+			}
+		};
+		utt.onerror = (e: SpeechSynthesisErrorEvent) => {
+			log(`Error on chunk ${currentChunkIndex}: ${e.error}`);
+			if (e.error === 'interrupted') return;
+			currentChunkIndex++;
+			setTimeout(speakNextChunk, 100);
+		};
+
+		window.speechSynthesis.speak(utt);
+	}
+
+	function togglePlay() {
+		if (!supported) return;
+		if (speaking && !paused) {
+			log("Pausing...");
+			window.speechSynthesis.cancel();
+			paused = true;
+			return;
+		}
+		if (paused) {
+			log("Resuming...");
+			paused = false;
+			speaking = true;
+			speakNextChunk(); 
+			return;
+		}
+
+		log("Starting New...");
+		window.speechSynthesis.cancel();
+		const text = getText();
+		if (!text.trim()) {
+			log("No text found");
+			return;
+		}
+
+		chunks = splitIntoChunks(text);
+		currentChunkIndex = 0;
+		speaking = true;
+		paused = false;
+		buffering = true;
+		setTimeout(speakNextChunk, 50);
+	}
+
+	function cancel() {
+		if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+			window.speechSynthesis.cancel();
+			speaking = false;
+			paused = false;
+			buffering = false;
+			currentChunkIndex = 0;
+			log("Stopped");
+		}
+	}
+	
+	$: progressPct = chunks.length > 0 ? Math.min(100, Math.round((currentChunkIndex / chunks.length) * 100)) : 0;
+</script>
+
+{#if supported}
+	<div data-tts-exclude class="my-8 flex items-center gap-4 p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900/50 backdrop-blur-sm not-prose shadow-sm">
+		<button on:click={togglePlay} class="flex-none flex items-center justify-center w-12 h-12 rounded-full bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 hover:scale-105 active:scale-95 transition-all shadow-md touch-manipulation" aria-label={speaking && !paused ? "Pause" : "Listen to post"}>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+				{#if speaking && !paused}
+					<path d={icons.pause} />
+				{:else}
+					<path d={icons.play} />
+				{/if}
+			</svg>
+		</button>
+
+		<div class="flex-1 flex flex-col gap-1.5 min-w-0">
+			<div class="flex justify-between items-center">
+				<span class="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400">
+					{#if speaking && !paused}
+						Reading chunk {currentChunkIndex + 1} of {chunks.length}
+					{:else if paused}
+						Paused
+					{:else}
+						Audio Article
+					{/if}
+				</span>
+				{#if speaking || paused}
+					<button on:click={cancel} class="text-xs font-medium text-red-500 hover:text-red-600 transition-colors uppercase tracking-wider p-2">
+						Stop
+					</button>
+				{/if}
+			</div>
+			
+			<div class="h-1.5 w-full bg-neutral-100 dark:bg-neutral-800 rounded-full overflow-hidden">
+				<div class="h-full bg-blue-600 dark:bg-blue-400 transition-all duration-300 ease-linear" style="width: {progressPct}%"></div>
+			</div>
+		</div>
+	</div>
+{/if}
+
+# File: src/lib/components/blog/YouTube.svelte
+
+<script lang="ts">
+	let {
+		src,
+		title = 'Embedded YouTube video',
+		caption = '',
+		aspectRatio = '16/9'
+	}: {
+		src: string;
+		title?: string;
+		caption?: string;
+		aspectRatio?: '16/9' | '4/3' | '1/1';
+	} = $props();
+
+	function parseYouTubeId(url: string): string | null {
+		const regex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
+		const match = url.match(regex);
+		return match ? match[1] : null;
+	}
+
+	function parseYouTubePlaylistId(url: string): string | null {
+		const regex = /[?&]list=([^"&?/\s]+)/;
+		const match = url.match(regex);
+		return match ? match[1] : null;
+	}
+
+	let embedSrc = $derived.by(() => {
+		const videoId = parseYouTubeId(src);
+		const playlistId = parseYouTubePlaylistId(src);
+		const baseUrl = 'https://www.youtube.com/embed/';
+
+		const params = new URLSearchParams({
+			playsinline: '1', 
+			controls: '1',    
+			fs: '1',          
+			rel: '0'          
+		});
+
+		if (playlistId) {
+			params.set('list', playlistId);
+			if (videoId) {
+				return `${baseUrl}${videoId}?${params.toString()}`;
+			} else {
+				return `${baseUrl}videoseries?${params.toString()}`;
+			}
+		} else if (videoId) {
+			return `${baseUrl}${videoId}?${params.toString()}`;
+		}
+		
+		return null;
+	});
+</script>
+
+{#if embedSrc}
+	<figure class="my-8 mx-auto w-full block clear-both not-prose">
+		<div class="relative w-full overflow-hidden rounded-lg shadow-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900" style:aspect-ratio={aspectRatio}>
+			<iframe
+				class="absolute top-0 left-0 w-full h-full"
+				src={embedSrc}
+				{title}
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+				referrerpolicy="strict-origin-when-cross-origin"
+			></iframe>
+		</div>
+		{#if caption || parseYouTubePlaylistId(src)}
+			<figcaption class="mt-2 text-sm italic text-neutral-600 dark:text-neutral-400 text-center leading-tight">
+				{caption}
+				{#if parseYouTubePlaylistId(src)}
+					<br/>
+					<a href={src} target="_blank" rel="noopener noreferrer" class="text-xs text-sky-600 dark:text-sky-400 hover:underline">
+						(Open Playlist on YouTube)
+					</a>
+				{/if}
+			</figcaption>
+		{/if}
+	</figure>
+{:else}
+	<div class="my-6 p-4 rounded-lg border border-red-300 bg-red-50 dark:bg-red-900/20 text-center text-red-600 dark:text-red-400 text-sm font-bold">
+		<p>Invalid YouTube URL provided: {src}</p>
+	</div>
+{/if}
+
+# File: src/lib/components/blog/YtCredit.svelte
+
+<div class="my-8 mx-auto max-w-2xl not-prose">
+    <div class="flex flex-col items-center justify-center p-6 text-center rounded-xl border-2 border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/50 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.05)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.05)]">
+        <div class="mb-3 text-red-500 dark:text-red-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+            </svg>
+        </div>
+        <p class="text-sm font-medium text-neutral-700 dark:text-neutral-300 leading-relaxed max-w-prose">
+            To give full credit and support to the original creator, please click the video title and watch it on YouTube. Once you go to their channels, you will discover many more videos that are not here. My linking them here is not to take traffic away from them or YouTube where they make a few cents, but to introduce them to a wider world who may not have yet stumbled on them.
+        </p>
+    </div>
+</div>
+
+# File: src/lib/components/layout/Aside.svelte
+
+<script lang="ts">
+	import { page } from '$app/state';
+	
+	let categories = $derived(page.data.categories || []);
+    let currentPath = $derived(page.url.pathname as string);
+</script>
+
+<aside class="h-full p-4 overflow-y-auto">
+	<nav class="space-y-8">
+        <div class="sidebar-group space-y-2">
+			<a href="/blog" 
+               class="sidebar-topic block text-sm font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 hover:text-gold transition-colors"
+               class:text-gold={currentPath === '/blog'}>
+				All Posts
+			</a>
+			
+			<a href="/resume" 
+               class="sidebar-topic block text-sm font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 hover:text-gold transition-colors"
+               class:text-gold={currentPath === '/resume'}>
+				Resume
+			</a>
+		</div>
+        {#each categories as category}
+			<div class="sidebar-group mb-6">
+                <a 
+                    href="/blog/{category.name}"
+                    class="sidebar-topic block mb-3 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500 hover:text-gold transition-colors"
+                    class:text-gold={currentPath === `/blog/${category.name}`}
+                >
+					{category.name}
+				</a>
+                
+				<ul class="space-y-1">
+					{#each category.articles as article}
+						<li>
+							<a
+								href="/blog/{category.name}/{article.slug}"
+								class="sidebar-link block px-3 py-2 rounded-md text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all border-l-2 border-transparent"
+                                class:border-gold={currentPath.includes(article.slug)}
+                                class:bg-neutral-200={currentPath.includes(article.slug)}
+                                class:dark:bg-neutral-800={currentPath.includes(article.slug)}
+							>
+								{article.title}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		{/each}
+	</nav>
+</aside>
+
+# File: src/lib/components/layout/Footer.svelte
+
+<script lang="ts">
+	const year = new Date().getFullYear();
+</script>
+
+<footer class="border-t border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 p-6 text-center">
+	<p class="text-sm text-neutral-600 dark:text-neutral-400">
+		&copy; {year} Suvro Ghosh
+    </p>
+</footer>
+
+# File: src/lib/components/layout/Header.svelte
+
+<script lang="ts">
+	let { isMenuOpen, toggleMenu }: { 
+        isMenuOpen: boolean;
+        toggleMenu: () => void;
+    } = $props();
+</script>
+
+<header class="border-b border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 transition-colors duration-300">
+	<div class="container mx-auto flex items-center justify-between p-4">
+        <a href="/" class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-gold transition-colors">
+			SuvroGhosh.In
+		</a>
+
+		<div class="hidden md:flex items-center space-x-6">
+			<a href="/blog" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-gold transition-colors">
+				Blog
+			</a>
+			
+			<a href="/resume" class="text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-gold transition-colors">
+				Resume
+			</a>
+		</div>
+
+		<button
+			class="lg:hidden p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"
+			onclick={toggleMenu}
+			aria-label="Toggle menu"
+		>
+			<svg class="w-6 h-6 text-neutral-800 dark:text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				{#if isMenuOpen}
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				{:else}
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+				{/if}
+			</svg>
+		</button>
+	</div>
+</header>
+
+# File: src/lib/components/seo/SEO.svelte
+
+<script lang="ts">
+	type Props = {
+		title: string;
+		description: string;
+		canonicalUrl?: string;
+		ogImageUrl?: string;
+		ogImageAlt?: string;
+		keywords?: string[];
+		schema?: Record<string, any>;
+	};
+
+	let {
+		title,
+		description,
+		canonicalUrl,
+		ogImageUrl,
+		ogImageAlt,
+		keywords,
+		schema = undefined
+	}: Props = $props();
+</script>
+
+<svelte:head>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+
+	{#if canonicalUrl}
+		<link rel="canonical" href={canonicalUrl} />
+	{/if}
+
+	<meta property="og:type" content="website" />
+	{#if canonicalUrl}
+		<meta property="og:url" content={canonicalUrl} />
+	{/if}
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	{#if ogImageUrl}
+		<meta property="og:image" content={ogImageUrl} />
+	{/if}
+	{#if ogImageAlt}
+		<meta property="og:image:alt" content={ogImageAlt} />
+	{/if}
+
+	<meta name="twitter:card" content="summary_large_image" />
+	{#if canonicalUrl}
+		<meta property="twitter:url" content={canonicalUrl} />
+	{/if}
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	{#if ogImageUrl}
+		<meta name="twitter:image" content={ogImageUrl} />
+	{/if}
+
+	{#if keywords && keywords.length > 0}
+		<meta name="keywords" content={keywords.join(', ')} />
+	{/if}
+
+	{#if schema}
+		{@html `<script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>`}
+	{/if}
+</svelte:head>
+
+# File: src/lib/components/seo/SEO.ts
+
+import { dev } from '$app/environment';
+import type { WithContext, WebSite, Person } from 'schema-dts';
+
+export const siteTitle = 'Suvro Ghosh';
+export const siteTitleLong = 'Suvro Ghosh | Healthcare IT';
+export const siteDescription = "Navigating the architecture of chaos. Notes on enterprise healthcare IT, data science, and philosophical pragmatism from Calcutta.";
+;
+export const siteUrl = dev ? 'http://localhost:5173' : 'https://suvroghosh.in';
+
+export const socialUrls = [
+	'https://github.com/suvroghosh',
+	'https://www.linkedin.com/in/suvro-ghosh-78a5aa278',
+];
+
+export const siteSEO = {
+    title: siteTitleLong,
+    description: siteDescription,
+    canonicalUrl: siteUrl,
+    ogImageUrl: `${siteUrl}/images/photo.jpeg`,
+    ogImageAlt: 'Suvro Ghosh Profile',
+    keywords: [
+        // Core Identity & Roles
+        'Suvro Ghosh', 'Software Engineer', 'Senior Healthcare IT Architect', 'Data Scientist', 'Enterprise Architect',
+        
+        // Healthcare IT & Interoperability (High Value for Recruiters)
+        'Healthcare IT', 'Health Informatics', 'HL7', 'FHIR', 'CDISC', 'Clinical Trials Data', 'Electronic Health Records', 'EHR', 'Health Information Exchange', 'HIE', 'Telemedicine Architecture',
+        
+        // Data Science & Engineering
+        'Data Analytics', 'Machine Learning in Healthcare', 'Statistical Modeling', 'Database Engineering', 'SQL Server', 'Big Data', 'System Performance Optimization',
+        
+        // Philosophy & Geography
+        'Tech Philosophy', 'Digital Garden', 'Calcutta', 'Kolkata', 'India', 'US Healthcare Systems', 'Gulf Digital Health',
+        
+        // Web Tech (Since you are building in modern SvelteKit)
+        'SvelteKit', 'Web Architecture', 'Tech Blog'
+    ]
+};
+export const personSchema: WithContext<Person> = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Suvro Ghosh',
+	url: siteUrl,
+	image: `${siteUrl}/images/IMG-20251202-WA0009.jpg`,
+	sameAs: socialUrls,
+	jobTitle: ['Software Engineer', 'Writer', 'Philosopher'],
+	worksFor: {
+		'@type': 'Organization',
+		name: 'Self-Employed'
+	},
+    address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Kolkata',
+        addressRegion: 'West Bengal',
+        addressCountry: 'India'
+    }
+};
+
+export const websiteSchema: WithContext<WebSite> = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: siteTitle,
+	url: siteUrl,
+	description: siteDescription,
+	publisher: {
+		'@id': `${siteUrl}/#person`
+	},
+	inLanguage: 'en-US'
+};
+
+# File: src/lib/index.ts
+
+// place files you want to import through the `$lib` alias in this folder.
+
+
+# File: src/lib/posts/fhir-r4-vs-r5-real-deployments.md
+
+---
+title: "FHIR R4 vs R5"
+description: "A system-level analysis of HL7 FHIR R4 versus R5, focusing on what materially impacts production healthcare architectures, interoperability layers, and clinical data platforms."
+date: "2026-04-16"
+category: "interoperability"
+published: true
+color: "blue"
+---
+
+<TTS />
+
+This isn’t a versioning problem. It’s a contract stability problem disguised as progress.
+
+R4 (Release 4) of HL7 FHIR (Fast Healthcare Interoperability Resources) is the first version where the standard stopped moving under your feet long enough for real systems to form around it. R5 (Release 5) is technically more complete, more expressive, more internally consistent. None of that guarantees deployability.
+
+In production environments—EHR (Electronic Health Record) systems, HIEs (Health Information Exchanges), payer-provider integrations—the question is not “what’s better.” It’s “what breaks if I move.”
+
+That’s the only question that matters.
+
+---
+
+### System-Level Reality
+
+A deployed FHIR ecosystem is not a specification. It is a layered system:
+
+- Resource models (Patient, Observation, Encounter)
+- Profiles (US Core, national IGs)
+- Terminology bindings (SNOMED CT, LOINC, ICD)
+- API contracts (RESTful endpoints)
+- Data persistence (relational or document stores)
+- Integration glue (ETL pipelines, message brokers, legacy bridges)
+
+R4 sits at the center of a massive gravitational field:
+
+- US Core Implementation Guide anchored to R4
+- SMART on FHIR ecosystem stabilized on R4
+- EHR vendors exposing R4 endpoints (often partially implemented)
+- Regulatory frameworks (ONC in the US) referencing R4 explicitly
+
+This matters more than any feature delta.
+
+Because interoperability is not about capability. It is about alignment.
+
+---
+
+### What R5 Actually Changes
+
+R5 introduces structural and semantic improvements. Some are genuinely important.
+
+**1. Workflow and Event Modeling**
+
+R5 refines the event pattern across resources:
+
+- Better alignment between Request, Event, and Definition resources
+- More consistent lifecycle states
+
+This matters if you are building orchestration-heavy systems—clinical workflows, order management, care pathways.
+
+But most deployments are not. They are extracting, transforming, and exposing data.
+
+So the benefit is real but often unrealized.
+
+---
+
+**2. Resource Maturity and Normalization**
+
+More resources reach higher maturity levels.
+
+New resources introduced:
+
+- `Ingredient`
+- `SubscriptionTopic`
+- Enhanced `Evidence` and `EvidenceReport`
+
+Existing resources cleaned up:
+
+- Reduced duplication
+- Better cardinality constraints
+- More consistent use of extensions vs core elements
+
+This improves model integrity. It does not fix upstream inconsistency.
+
+If your source is an HL7 v2 feed with overloaded OBX segments, R5 does not rescue semantic ambiguity.
+
+---
+
+**3. Subscriptions Overhaul**
+
+This is one of the few changes that matters operationally.
+
+R4 subscriptions are fragile:
+
+- Polling-heavy
+- Limited filtering
+- Poor scalability under load
+
+R5 introduces:
+
+- Topic-based subscriptions (`SubscriptionTopic`)
+- Event-driven patterns
+- Better alignment with modern messaging systems (Kafka, AMQP)
+
+This is the closest thing to a real architectural upgrade.
+
+If you are building near-real-time clinical data pipelines, R5 gives you a cleaner abstraction.
+
+But—and this is the recurring theme—you can implement equivalent behavior outside FHIR today using event brokers.
+
+So again, improvement. Not a forcing function.
+
+---
+
+**4. Terminology and Canonical Handling**
+
+R5 improves:
+
+- Canonical URL handling
+- Versioning of artifacts
+- Cross-resource references
+
+This reduces friction in large-scale IG-driven ecosystems.
+
+But terminology inconsistency is not a FHIR problem. It is an institutional one.
+
+No version fixes competing coding practices across departments.
+
+---
+
+### Where Reality Breaks
+
+You don’t upgrade FHIR in isolation. You upgrade an ecosystem.
+
+And that ecosystem includes:
+
+- Vendor APIs that only partially implement R4
+- Custom profiles tightly coupled to R4 structures
+- Downstream analytics pipelines expecting specific JSON shapes
+- Regulatory constraints that lag behind the spec
+
+Three failure modes show up immediately.
+
+---
+
+**1. Profile Fragmentation**
+
+Your system is not using “FHIR R4.” It is using:
+
+- R4 + US Core 3.1.1
+- + internal extensions
+- + vendor-specific deviations
+
+R5 compatibility is not about the base spec. It is about whether your profiles migrate cleanly.
+
+They rarely do.
+
+---
+
+**2. Data Contract Instability**
+
+Every downstream system depends on:
+
+- Field presence
+- Cardinality assumptions
+- Extension semantics
+
+Even small changes ripple:
+
+- Analytics pipelines break silently
+- Validation rules fail
+- ETL transformations require rework
+
+This is not visible in spec comparison tables. It shows up at 2 AM in production.
+
+---
+
+**3. Vendor Lag**
+
+EHR vendors are not spec-driven. They are roadmap-driven.
+
+R4 is “done enough” for certification.
+
+R5 is optional.
+
+So you end up with:
+
+- Clients asking for R5 features
+- Servers stuck on R4
+- Middleware translating between versions
+
+Which is exactly the problem FHIR was supposed to reduce.
+
+---
+
+### The Deeper Truth
+
+FHIR versions don’t fail. Incentives do.
+
+Healthcare interoperability is shaped by:
+
+- Regulatory compliance, not architectural elegance
+- Billing workflows, not clinical cognition
+- Vendor differentiation, not standard alignment
+
+R4 succeeded not because it was perfect, but because it was stable long enough for institutions to commit.
+
+R5 is better. But stability beats improvement in distributed systems.
+
+Especially in healthcare, where:
+
+- Change is expensive
+- Validation is slow
+- Risk tolerance is low
+
+So the system resists movement.
+
+Not irrationally.
+
+---
+
+### What Actually Matters in Deployment
+
+If you are operating in a real environment—EHR integration, HIE platform, clinical data warehouse—the decision framework is brutally simple.
+
+---
+
+**Stay on R4 if:**
+
+- You depend on US Core or national IGs
+- You integrate with major EHR vendors
+- Your system is already in production
+- Your primary problem is data quality, not model expressiveness
+
+This is most systems.
+
+---
+
+**Consider R5 if:**
+
+- You are building a greenfield platform
+- You control both producer and consumer sides
+- You need advanced subscription/event patterns
+- You are investing in workflow orchestration, not just data exchange
+
+Even then, expect to maintain R4 compatibility layers.
+
+---
+
+**Architectural Pattern That Actually Works**
+
+- Canonical internal model (not FHIR-bound)
+- Inbound adapters (HL7 v2, CDA, FHIR R4)
+- Transformation layer (normalization + enrichment)
+- Outbound FHIR APIs (R4 externally, optionally R5 internally)
+- Event backbone (Kafka or equivalent, not FHIR-native)
+
+FHIR becomes an interface layer. Not the system of record.
+
+This is the only way to survive version churn.
+
+---
+
+### Final Constraint That Doesn’t Go Away
+
+You can upgrade FHIR versions.
+
+You cannot upgrade meaning.
+
+A diagnosis code is still shaped by documentation behavior.
+
+An Observation still depends on how a lab system encodes context.
+
+An Encounter still reflects administrative boundaries more than clinical reality.
+
+R5 does not change that.
+
+It just describes it more cleanly.
+
+And clean description is not the same as clean data.
+
+# File: src/lib/posts/introduction.md
+
+---
+title: "Intro"
+description: "From parallel computing to clinical data and cab drivers, a look back at 20 years of wrangling enterprise architecture and preparing for the era of black-box AI."
+date: "2026-04-04"
+category: "career"
+published: true
+color: "blue"
+---
+
+<TTS />
+
+This isn’t about introducing myself. It’s about establishing context for the kind of problems I work on, and the ones I’m interested in solving going forward.
+
+I’ve spent most of my professional life inside healthcare data systems that were never designed to do what we now expect them to do.
+
+That matters.
+
+Because when people talk about applying AI to healthcare, they usually start at the model. Or the framework. Or the promise. Almost never at the substrate the model has to operate on.
+
+That substrate is where I’ve worked.
+
+Across VA systems, UTHSCSA research environments, and clinical trial data platforms, the recurring pattern has been the same: heterogeneous data sources, inconsistent representations, fragile mappings, and workflows shaped more by billing, compliance, and legacy constraints than by clinical cognition.
+
+This isn’t a complaint. It’s a description of the system as it actually exists.
+
+You don’t struggle to build intelligent systems in healthcare because the models are insufficient. You struggle because the underlying data is not just “dirty.” It is structurally misaligned with the questions you want to ask.
+
+Flat files from MUMPS hierarchies. Relational reconstructions in SQL Server. SAS datasets with implicit semantics. HL7 messages carrying state without context. CDISC models enforcing structure without guaranteeing meaning.
+
+Each of these is internally consistent. None of them align cleanly with each other.
+
+So what you get is not a data pipeline. You get a translation pipeline. And every translation introduces loss.
+
+That loss is where most AI initiatives quietly fail.
+
+Over the years, I’ve worked on building data warehouses from VA operational systems, designing registries for NIH-funded studies, implementing ETL pipelines across incompatible formats, and supporting clinical trials where the system had to satisfy both regulatory rigor and analytical usability.
+
+The consistent constraint has not been scale. It has been meaning.
+
+You can scale storage. You can scale compute. You cannot trivially scale semantic alignment.
+
+And AI systems—especially the current generation—are extremely sensitive to that.
+
+They don’t fix ambiguity. They absorb it.
+
+They don’t resolve inconsistency. They generalize over it.
+
+That’s useful in some domains. In healthcare, it can be dangerous.
+
+This is why most conversations around “AI in healthcare” feel incomplete. They assume that once data is available, intelligence can be layered on top. In practice, the opposite is true. Intelligence is constrained, and often defined, by how the data is modeled, transformed, and contextualized upstream.
+
+This is not a theoretical position. It’s an operational one.
+
+If you’ve worked with EHR data long enough, you know that a diagnosis code is not a diagnosis. It’s an encoding of an event shaped by documentation practices, reimbursement rules, and system affordances.
+
+If you’ve worked with clinical trials, you know that a variable in an SDTM dataset is not a fact. It’s the result of protocol design, site behavior, and validation logic interacting over time.
+
+If you’ve built ETL pipelines, you know that “data integration” is often just synchronized inconsistency.
+
+These are not edge cases. They are the norm.
+
+So when I think about AI in healthcare, I’m not thinking about models first. I’m thinking about representation, transformation, and constraint.
+
+What is the system actually capturing?
+
+What is it losing?
+
+What is it forcing into structure that doesn’t belong there?
+
+And how do those decisions propagate into any downstream intelligence we try to build?
+
+This is where I’m focusing now.
+
+Not on abstract AI capability, but on its interaction with real healthcare systems: EHRs that optimize for documentation and billing, HIE layers that move data without harmonizing meaning, clinical data models that standardize structure while preserving ambiguity.
+
+There is a path forward. But it doesn’t start where most people are looking.
+
+It starts with accepting that the system is not broken in a simple way. It is layered, constrained, and internally consistent in ways that resist naive optimization.
+
+AI can be transformative in healthcare. But only if it is grounded in the realities of how healthcare data is actually produced, shaped, and constrained.
+
+That’s the space I work in.
+
+And that’s the space I’m interested in pushing forward.
+
+# File: src/routes/+layout.server.ts
+
+import type { ServerLoad } from '@sveltejs/kit';
+import { siteSEO, websiteSchema } from '$lib/components/seo/SEO';
+
+export type Article = {
+	title: string;
+	slug: string;
+	category: string;
+	published?: boolean;
+};
+
+export type Category = {
+	name: string;
+	articles: Article[];
+};
+
+export const load: ServerLoad = async () => {
+    // Eagerly import all markdown files
+	const modules = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+	const posts: Article[] = [];
+    
+	for (const path in modules) {
+		const file = modules[path] as any;
+		const slug = path.split('/').pop()?.slice(0, -3).toLowerCase();
+
+		if (file && file.metadata && slug) {
+			const metadata = file.metadata;
+			if (metadata.published !== false && metadata.title) {
+				posts.push({
+					...metadata,
+					slug,
+					category: (metadata.category || 'uncategorized').toLowerCase()
+				});
+			}
+		}
+	}
+
+    // Group posts by category
+	const categoriesMap: Map<string, Article[]> = new Map();
+	posts.forEach((post) => {
+		const category = post.category;
+		if (!categoriesMap.has(category)) {
+			categoriesMap.set(category, []);
+		}
+		categoriesMap.get(category)?.push(post);
+	});
+	
+    const categories: Category[] = Array.from(categoriesMap.entries()).map(([name, articles]) => ({
+		name,
+		articles: articles.sort((a, b) => a.title.localeCompare(b.title))
+	}));
+
+	categories.sort((a, b) => a.name.localeCompare(b.name));
+
+	return {
+		categories,
+		seo: siteSEO,
+		schema: websiteSchema
+	};
+};
+
+# File: src/routes/+layout.svelte
+
+<script lang="ts">
+    import '../app.css';
+    import 'katex/dist/katex.min.css';
+    import { injectAnalytics } from '@vercel/analytics/sveltekit';
+    import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+    import { dev } from '$app/environment';
+    import { afterNavigate } from '$app/navigation';
+    import { page } from '$app/state';
+
+    // Import the layout components we built in Phase 1
+    import Header from '$lib/components/layout/Header.svelte';
+    import Footer from '$lib/components/layout/Footer.svelte';
+    import Aside from '$lib/components/layout/Aside.svelte';
+
+    let { children } = $props();
+
+    // Svelte 5 Runes for mobile menu state
+    let isMenuOpen = $state(false);
+    function toggleMenu() { 
+        isMenuOpen = !isMenuOpen;
+    }
+
+    // Close menu on navigation and handle analytics
+    afterNavigate(() => {
+        isMenuOpen = false;
+        if (!dev) {
+            const payload = {
+                path: page.url.pathname,
+                referrer: document.referrer,
+                screenWidth: window.innerWidth,
+                screenHeight: window.innerHeight,
+            };
+            const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+            if (!navigator.sendBeacon('/api/log-visit', blob)) {
+                fetch('/api/log-visit', { method: 'POST', body: blob });
+            }
+        }
+    });
+
+    // Telemetry injection
+    injectAnalytics({ mode: dev ? 'development' : 'production' });
+    injectSpeedInsights();
+</script>
+
+<div class="main-layout flex h-screen bg-neutral-200 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300 font-sans overflow-hidden">
+    
+    <div class="sidebar-container hidden lg:block w-72 border-r border-neutral-300 dark:border-neutral-700">
+        <Aside />
+    </div>
+
+    {#if isMenuOpen}
+        <div class="fixed inset-0 z-40 bg-black/50 lg:hidden" onclick={toggleMenu} role="presentation" aria-hidden="true"></div>
+        <div class="fixed inset-y-0 left-0 z-50 w-64 bg-neutral-100 dark:bg-neutral-900 shadow-xl transform transition-transform duration-300 lg:hidden">
+            <Aside />
+        </div>
+    {/if}
+
+    <div class="main-content flex-1 flex flex-col min-w-0">
+        <Header {isMenuOpen} {toggleMenu} />
+        
+        <main class="scrollable-main flex-1 overflow-y-auto scroll-smooth">
+            <div class="container max-w-4xl mx-auto px-4 py-8 lg:py-12">
+                {@render children()}
+            </div>
+            
+            <Footer />
+        </main>
+    </div>
+</div>
+
+# File: src/routes/+page.server.ts
+
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+
+interface Post {
+    slug: string;
+    title: string;
+    date: string;
+    description: string;
+    thumbnail?: string;
+    category: string;
+    published?: boolean;
+}
+
+export const load: PageServerLoad = async () => {
+    // Eagerly grab all markdown posts
+    const postFiles = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+    
+    try {
+        const posts = Object.entries(postFiles)
+            .map(([path, file]): Post | null => {
+                const slug = path.split('/').pop()?.replace('.md', '');
+
+                if (file && typeof file === 'object' && 'metadata' in file && slug) {
+                    const metadata = file.metadata as Omit<Post, 'slug'>;
+                    
+                    // Filter out unpublished posts
+                    if (metadata.published === false) {
+                        return null;
+                    }
+                    
+                    return {
+                        ...metadata,
+                        slug,
+                        thumbnail: metadata.thumbnail,
+                        category: metadata.category || 'uncategorized'
+                    };
+                }
+                return null;
+            })
+            .filter((post): post is Post => post !== null);
+
+        // Sort by oldest first
+        posts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+        return { posts };
+    } catch (e) {
+        console.error(e);
+        error(500, 'Could not load posts.');
+    }
+};
+
+# File: src/routes/+page.svelte
+
+<script lang="ts">
+	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	import SEO from '$lib/components/seo/SEO.svelte';
+	import { siteTitleLong, siteDescription } from '$lib/components/seo/SEO';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
+</script>
+
+<SEO title={siteTitleLong} description={siteDescription} />
+
+<section class="mb-12 card bg-white/50 dark:bg-neutral-900/50 text-center md:text-left border-l-4 border-l-gold">
+	<h1 class="text-4xl md:text-6xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
+		Suvro Ghosh
+	</h1>
+	<p class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl leading-relaxed font-medium">
+		Navigating the architecture of chaos. Notes on enterprise healthcare IT, data science, and philosophical pragmatism from Calcutta.
+	</p>
+</section>
+
+<section>
+	<div class="flex items-end justify-between mb-6 border-b border-neutral-300 dark:border-neutral-700 pb-2">
+		<h2 class="text-2xl font-bold m-0 text-neutral-900 dark:text-neutral-100">Latest Writing</h2>
+		<a href="/blog" class="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-gold transition-colors mb-1">
+            View All →
+        </a>
+	</div>
+	
+	{#if data.posts.length > 0}
+        <PostGallery posts={data.posts} />
+	{:else}
+		<div class="py-12 text-center text-neutral-500 border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg">
+			<p>No posts published yet. Check back soon.</p>
+		</div>
+	{/if}
+</section>
+
+# File: src/routes/blog/+page.svelte
+
+<script lang="ts">
+	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	let { data } = $props();
+</script>
+
+<svelte:head>
+    <title>All Posts - SuvroGhosh.In</title>
+</svelte:head>
+
+<section>
+	<h1 class="text-center mb-8">Suvro Ghosh Posts</h1>
+    {#if data.posts.length > 0}
+        <PostGallery posts={data.posts} />
+    {:else}
+        <div class="text-center py-12 text-neutral-500">
+            <p>No posts found.</p>
+        </div>
+    {/if}
+</section>
+
+# File: src/routes/blog/[category]/+page.server.ts
+
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+
+interface Post {
+    slug: string;
+    title: string;
+    date: string;
+    description: string;
+    thumbnail?: string;
+    category: string;
+    published?: boolean;
+}
+
+// 🚨 FIX 1: We explicitly request ({ params }) so SvelteKit knows to re-run this when the URL changes
+export const load: PageServerLoad = async ({ params }) => {
+    // Extract the category from the URL (e.g., "Healthcare")
+    const { category } = params;
+    const targetCategory = category.toLowerCase();
+
+    const postFiles = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+
+    try {
+        const posts = Object.entries(postFiles)
+            .map(([path, file]): Post | null => {
+                const slug = path.split('/').pop()?.slice(0, -3);
+
+                if (file && typeof file === 'object' && 'metadata' in file && slug) {
+                    const metadata = file.metadata as Omit<Post, 'slug'>;
+                    if (metadata.published === false) return null;
+                    
+                    const postCategory = (metadata.category || 'uncategorized').toLowerCase();
+                    
+                    // 🚨 FIX 2: Actually filter the posts so it ONLY returns posts for this category
+                    if (postCategory === targetCategory) {
+                        return {
+                            ...metadata,
+                            slug,
+                            thumbnail: metadata.thumbnail,
+                            category: metadata.category || 'uncategorized',
+                            date: metadata.date || new Date(0).toISOString() // Safety fallback for missing dates
+                        };
+                    }
+                }
+                return null; // Skip posts that don't match the category
+            })
+            .filter((post): post is Post => post !== null);
+
+        // Sort earliest first
+        posts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+
+        // Return the filtered posts AND the category name back to the UI
+        return { 
+            posts,
+            category // This passes the category name (e.g., "Healthcare") to your +page.svelte
+        };
+    } catch (e) {
+        console.error(e);
+        error(500, 'Could not load category posts.');
+    }
+};
+
+# File: src/routes/blog/[category]/+page.svelte
+
+<script lang="ts">
+    import PostGallery from '$lib/components/blog/PostGallery.svelte';
+    import type { PageData } from './$types';
+
+    let { data }: { data: PageData } = $props();
+
+    // 🚨 THE FIX: Force Svelte 5 to react to route changes
+    let category = $derived(data.category);
+    let posts = $derived(data.posts);
+</script>
+
+<svelte:head>
+    <title>{category} Posts | SuvroGhosh.In</title>
+</svelte:head>
+
+<section>
+    <h1 class="capitalize text-center mb-8">Category: {category}</h1>
+    
+    {#if posts.length > 0}
+        <PostGallery posts={posts} />
+    {:else}
+        <div class="my-12 p-8 text-center border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl">
+            <p class="text-neutral-500 dark:text-neutral-400 mb-4 font-medium">No posts found in this category.</p>
+            <a href="/blog" class="btn-primary inline-block">View all posts</a>
+        </div>
+    {/if}
+</section>
+
+# File: src/routes/blog/[category]/[slug]/+page.server.ts
+
+// File: src/routes/blog/[category]/[slug]/+page.server.ts
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
+
+interface PostMetadata {
+    title: string;
+    description: string;
+    date?: string;
+    thumbnail?: string;
+    published?: boolean;
+    keywords?: string[];
+    category?: string;
+    [key: string]: unknown;
+}
+
+export const load: PageServerLoad = async ({ params, url }) => {
+    const { slug, category } = params;
+
+    try {
+        const postModules = import.meta.glob('/src/lib/posts/*.md', { import: 'metadata' });
+        
+        const matchingPath = Object.keys(postModules).find((path) => {
+            const fileName = path.split('/').pop()?.slice(0, -3).toLowerCase();
+            return fileName === slug.toLowerCase();
+        });
+
+        if (!matchingPath) {
+            error(404, { message: `Could not find post: ${slug}` });
+        }
+
+        const metadataLoader = postModules[matchingPath];
+        const post = (await metadataLoader()) as PostMetadata;
+
+        if (post.published === false) {
+            error(404, { message: 'This post is not available.' });
+        }
+
+        const canonicalUrl = `${url.origin}/blog/${category}/${slug}`;
+        const fallbackImage = `${url.origin}/images/photo.jpeg`; // Ensure this image exists in your static folder
+        
+        const seo = {
+            title: `${post.title} | SuvroGhosh.In`, 
+            description: post.description,
+            canonicalUrl,
+            ogImageUrl: post.thumbnail ? `${url.origin}${post.thumbnail}` : fallbackImage,
+            ogImageAlt: post.title,
+            keywords: post.keywords || []
+        };
+        
+        return { 
+            metadata: post, 
+            seo, 
+            resolvedPath: matchingPath 
+        };
+
+    } catch (err: any) {
+        if (err?.status === 404) throw err;
+        console.error(`[Blog Load Error] Failed to load post ${slug}:`, err);
+        error(500, { message: 'Internal Server Error' });
+    }
+};
+
+# File: src/routes/blog/[category]/[slug]/+page.svelte
+
+<script lang="ts">
+    import SEO from '$lib/components/seo/SEO.svelte';
+    import type { PageData } from './$types';
+
+    let { data }: { data: PageData } = $props();
+    
+    let PostContent = $derived(data.content);
+</script>
+<SEO {...data.seo} />
+
+<article class="prose prose-neutral dark:prose-invert max-w-none mx-auto lg:prose-lg prose-headings:font-bold prose-a:text-gold prose-img:rounded-xl">
+    <header class="mb-12 text-center not-prose">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 mb-4">
+            {data.metadata.title}
+        </h1>
+        
+        <div class="flex items-center justify-center gap-4 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+            {#if data.metadata.date}
+                <time datetime={new Date(data.metadata.date).toISOString()}>
+                    {new Date(data.metadata.date).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    })}
+                </time>
+            {/if}
+            <span>•</span>
+            <span class="uppercase tracking-wider text-gold">{data.metadata.category}</span>
+        </div>
+    </header>
+
+    <div class="mt-8">
+        <PostContent />
+    </div>
+</article>
+
+# File: src/routes/blog/[category]/[slug]/+page.ts
+
+import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
+import type { Component } from 'svelte';
+
+export const load: PageLoad = async ({ data }) => {
+    // 1. Cast data to 'any' to bypass the lagging SvelteKit type generator 
+    // that incorrectly thinks this data is coming from the category page.
+    const serverData = data as any; 
+
+    // 2. Tell Vite to map all markdown files as dynamic imports
+    const modules = import.meta.glob('/src/lib/posts/*.md');
+    
+    // 3. Safety check: Ensure the server passed a valid resolvedPath
+    if (!serverData.resolvedPath || !modules[serverData.resolvedPath]) {
+        const title = serverData.metadata?.title || 'this post';
+        error(404, `Could not load Markdown content for: ${title}`);
+    }
+
+    try {
+        // 4. Resolve the dynamic import to get the parsed MDSvex Svelte component
+        const resolver = modules[serverData.resolvedPath];
+        const post = await resolver() as { default: Component };
+        
+        return {
+            ...serverData, // Keep the metadata, SEO, and schema passed from +page.server.ts
+            content: post.default // The renderable Svelte component
+        };
+    } catch (err) {
+        console.error(`[Markdown Parse Error] Failed to load component for ${serverData.resolvedPath}:`, err);
+        error(500, "Failed to render the markdown content.");
+    }
+};
+
+# File: src/routes/layout.css
+
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+
+# File: src/routes/resume/+page.svelte
+
+<script lang="ts">
+	import SEO from '$lib/components/seo/SEO.svelte';
+	import Yt from '$lib/components/blog/YouTube.svelte';
+
+	const title = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Specialist';
+	const description = 'Senior Healthcare IT Architect and Clinical Data Systems Specialist with 15+ years of experience across US healthcare systems, VA research environments, and international clinical data platforms.';
+
+	const summaryParagraphs = [
+		"I’ve spent over 15 years working across US healthcare systems, VA research environments, and clinical data platforms where the core problem was never just scale or performance. It was meaning—what the data actually represents, and how much of that survives once you start moving it around.",
+		"Most of that work has involved EHR-derived data, HL7 pipelines, CDISC-based clinical trial systems, and research datasets stitched together from very different sources. Storage is rarely the constraint. Representation is where things either hold or break.",
+		"Working in those systems, you see quickly that what looks like a data problem is usually a modeling problem, and what looks like integration is often just translation with loss.",
+		"That’s also where my interest in AI in healthcare comes from. Not from the models themselves, but from how they interact with data that is structurally misaligned with the questions we expect them to answer.",
+		"AI doesn’t fail in healthcare because the models are weak. It fails because the substrate they operate on was never designed for that kind of inference.",
+		"That’s the layer I’ve worked in, and the one I’m interested in pushing further."
+	];
+
+	const coreSkills = [
+		{ category: 'Applied AI & Orchestration', items: 'Agentic Workflows, MCP (Model Context Protocol), RAG, Vector Databases, Tool Calling' },
+		{ category: 'Healthcare Data Systems', items: 'HL7, CPT, ICD-9/10/11, CDISC, SDTM' },
+		{ category: 'Data Engineering', items: 'SQL Server, SSIS (ETL), Data Warehousing' },
+		{ category: 'Clinical Trials', items: 'CDMS, EDC, eCRF Design, Data Validation' },
+		{ category: 'Analytics', items: 'SAS, SPSS, SQL Analytics' },
+		{ category: 'Programming', items: 'C, C++, VBA, Perl' },
+		{ category: 'Databases', items: 'SQL Server, MS Access, MySQL' },
+		{ category: 'Architecture', items: 'Data Modeling (Relational, Dimensional, Hybrid)' },
+		{ category: 'Cloud & Systems', items: 'SaaS, Distributed Systems (conceptual)' },
+		{ category: 'Leadership', items: 'Project Management, Team Leadership, Stakeholder Coordination' }
+	];
+
+	const experiences = [
+		{
+			title: 'Consultant',
+			company: 'ClinZen LLC / ClinZen Software Pvt Ltd',
+			period: '2015 – Present',
+			videos: ['https://youtu.be/FkHa3W4pQME?si=S9mLi5y04An7A--I'],
+			details: [
+				'Designed and built clinical trial data systems where regulatory compliance, data integrity, and analytical usability had to coexist, often under conflicting constraints.',
+				'Built mobile-enabled tools aligned with CDISC standards. Reduced operational friction in trial execution, but more importantly exposed where standardization enforces structure without guaranteeing meaning.',
+				'Led full lifecycle: system architecture → data modeling → validation logic → database lock.',
+				'Worked across Phase II/III trials where the system’s primary function was not data capture, but controlled interpretation.'
+			]
+		},
+		{
+			title: 'Consultant',
+			company: 'TenZillionClouds Pvt Ltd',
+			period: 'Early 2016 and 2019',
+			videos: [
+				'https://youtu.be/GKeXyACNca8?si=LwsE_qHxopgsG4cD',
+				'https://youtu.be/BEyub9spGqw?si=tkWpQeq83PsBPlp_'
+			],
+			details: [
+				'Focused on cloud-native thinking in environments where legacy assumptions still dominate.',
+				'Explored SaaS architectures for taxicab systems where multi-tenancy introduces not just scaling concerns, but semantic isolation problems.'
+			]
+		},
+		{
+			title: 'Associate Statistician',
+			company: 'University of Texas Health Science Center (UTHSCSA)',
+			period: '2010 – 2012',
+			details: [
+				'Worked on large-scale healthcare data warehouses integrating VA hospital data and national datasets. The challenge was not ingestion. It was reconciliation.',
+				'Flat files, SAS datasets, relational tables—each internally consistent, none aligned. Built pipelines that transformed data, knowing that every transformation introduces loss.',
+				'Performed statistical analysis across diabetes, ESRD, and nephropathy studies, where variable definition often mattered more than the analysis itself.'
+			]
+		},
+		{
+			title: 'Systems Analyst',
+			company: 'UTHSCSA / VA Research Center',
+			period: '2002 – 2007',
+			details: [
+				'Built and maintained research databases sourced from MUMPS-based VA systems, flat files, and relational structures.',
+				'Designed ETL pipelines using SSIS where "integration" meant negotiating between incompatible representations.',
+				'Implemented outlier detection not as a statistical afterthought, but as a structural necessity due to inconsistencies in operational data.',
+				'Supported datasets spanning inpatient, outpatient, pharmacy, and laboratory domains, each with its own implicit ontology.'
+			]
+		},
+		{
+			title: 'Senior Database Architect',
+			company: 'CF Health Solution',
+			period: '2009',
+			details: [
+				'Migrated unstructured systems into relational SQL Server architectures.',
+				'Redesigned schemas, indexing strategies, and ETL workflows.',
+				'The technical work was straightforward. The challenge was translating assumptions embedded in legacy data into explicit structure.'
+			]
+		},
+		{
+			title: 'Business Analyst',
+			company: 'Taxicharge (New Zealand)',
+			period: '2008',
+			details: [
+				'Built reporting systems from mixed physical and digital data sources.',
+				'Designed SQL-based reporting pipelines, where the primary constraint was not tooling, but the absence of consistent data semantics.'
+			]
+		},
+		{
+			title: 'Lecturer',
+			company: 'University of Fiji',
+			period: '2007 – 2008',
+			details: [
+				'Taught Operating Systems, Computer Networks, and Network Security.',
+				'Explaining systems forces clarity. Most production systems lack that clarity.'
+			]
+		},
+		{
+			title: 'Member of Technical Staff',
+			company: 'Surgient Networks (USA)',
+			period: '2000 – 2002',
+			details: [
+				'Implemented multi-queue caching algorithms for high-performance systems.',
+				'Early exposure to the idea that system behavior is shaped less by code and more by constraints and access patterns.'
+			]
+		}
+	];
+
+	const projects = [
+		'Built VA hospital research data warehouse integrating multi-source clinical data where denormalization and normalization had to coexist.',
+		'Designed registry system for NIH-funded FIND study, balancing protocol-driven structure with real-world data variability.',
+		'Developed Functional Job Analysis (FJA) system used in hospital operations research, modeling human workflows as structured data.',
+		'Created meta-analysis platform enabling synthesis of heterogeneous research outputs, where consensus required alignment beyond schema.'
+	];
+
+	const aiFocus = [
+		"AI in healthcare doesn’t work on raw reality. It works on representations—data shaped by EHR systems, clinical workflows, billing logic, and whatever standardization layer sits on top.",
+		"If those representations are off, AI doesn’t fix them. It just scales whatever is already there.",
+		"HL7 messages move events, but not always enough context.\nFHIR improves structure, but ambiguity doesn’t go away.\nCDISC enforces consistency, but that’s not the same as meaning.",
+		"So the outcome is usually predictable. Models end up inheriting the same limitations that exist in the data.",
+		"It’s not really an intelligence problem. It’s a problem of how reality gets specified in the first place.",
+		"Applying AI here isn’t just about models. It’s about understanding how data is modeled, transformed, and constrained before it ever reaches a model.",
+		"That’s the layer I’m interested in working on, because that’s where most of the leverage actually is."
+	];
+</script>
+
+<SEO {title} {description} />
+
+<section class="mx-auto max-w-4xl py-8 md:py-12">
+	<header class="mb-10 text-center md:text-left">
+		<h1 class="mb-2 text-4xl font-bold md:text-5xl tracking-tight text-neutral-900 dark:text-neutral-100">Suvro Ghosh</h1>
+		<h2 class="text-neutral-600 dark:text-neutral-400 mb-6 text-xl font-medium tracking-wide">Healthcare IT Architect & Clinical Data Systems Specialist</h2>
+		
+		<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-bold text-neutral-600 dark:text-neutral-400 md:justify-start">
+			<span class="flex items-center gap-1">
+				<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+				Kolkata, India | Open to Remote / Hybrid
+			</span>
+			<span class="hidden md:inline">|</span>
+			<a href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors flex items-center gap-1">
+				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+				</svg>
+				Connect on LinkedIn
+			</a>
+		</div>
+	</header>
+
+	<div class="card mb-8">
+		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Professional Summary</h3>
+		<div class="space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+			{#each summaryParagraphs as paragraph, i}
+				<p class={i === 0 ? "font-bold text-lg text-neutral-900 dark:text-neutral-100" : ""}>
+					{paragraph}
+				</p>
+			{/each}
+		</div>
+	</div>
+
+	<div class="card mb-8 border-l-4 border-l-neutral-800 dark:border-l-neutral-200 bg-neutral-200/50 dark:bg-neutral-800/80">
+		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Current Focus: AI in Healthcare</h3>
+		<div class="space-y-4 text-neutral-800 dark:text-neutral-200">
+			{#each aiFocus as paragraph}
+				<p class="whitespace-pre-line leading-relaxed">{paragraph}</p>
+			{/each}
+		</div>
+	</div>
+
+	<div class="card mb-8">
+		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Core Skills</h3>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm">
+			{#each coreSkills as skill}
+				<div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+					<span class="font-bold text-neutral-900 dark:text-neutral-100 whitespace-nowrap">{skill.category}:</span>
+					<span class="text-neutral-600 dark:text-neutral-400">{skill.items}</span>
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	<div class="card mb-8">
+		<h3 class="mb-6 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Professional Experience</h3>
+		<div class="space-y-10">
+			{#each experiences as job}
+				<div class="relative pl-5 border-l-2 border-neutral-300 dark:border-neutral-700">
+					<div class="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-neutral-900 dark:bg-neutral-100"></div>
+					<div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-3">
+						<div>
+							<h4 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 m-0">{job.title}</h4>
+							<span class="text-sm font-bold text-neutral-600 dark:text-neutral-400">{job.company}</span>
+						</div>
+						<div class="text-xs font-bold uppercase tracking-wider text-neutral-500 mt-1 md:mt-0">
+							{job.period}
+						</div>
+					</div>
+					<div class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
+						{#each job.details as detail}
+							<p class="leading-relaxed">{detail}</p>
+						{/each}
+						
+						{#if job.videos && job.videos.length > 0}
+							<div class="mt-4 flex flex-col gap-6 pb-2">
+								{#each job.videos as videoUrl, vIndex}
+									<Yt src={videoUrl} title={`Overview of ${job.company} - Part ${vIndex + 1}`} caption={`Demo/Presentation: ${job.company}`} />
+								{/each}
+							</div>
+						{/if}
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+
+	<div class="card mb-8">
+		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Key Projects & Research</h3>
+		<ul class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
+			{#each projects as project}
+				<li class="leading-relaxed"><span class="ml-[-0.5rem]">{project}</span></li>
+			{/each}
+		</ul>
+	</div>
+
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+		<div class="card">
+			<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Education</h3>
+			<div class="space-y-5">
+				<div>
+					<h4 class="font-bold text-neutral-900 dark:text-neutral-100 m-0 text-base">M.S. Computer Science</h4>
+					<p class="text-sm text-neutral-600 dark:text-neutral-400">University of Texas, USA</p>
+				</div>
+				<div>
+					<h4 class="font-bold text-neutral-900 dark:text-neutral-100 m-0 text-base">B.E. Computer Science & Engineering</h4>
+					<p class="text-sm text-neutral-600 dark:text-neutral-400">Jadavpur University, Kolkata</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex flex-col gap-8">
+			<div class="card flex-1">
+				<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Publications</h3>
+				<ul class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
+					<li>
+						Co-author: <em class="text-neutral-900 dark:text-neutral-100 font-medium">Task Overlap Among Primary Care Team Members</em> 
+						<br/><span class="text-xs text-neutral-500">(Journal of Healthcare Management)</span>
+					</li>
+					<li>Multiple abstracts presented at National Kidney Foundation Clinical Meetings</li>
+				</ul>
+			</div>
+
+			<div class="card flex-1">
+				<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Additional Highlights</h3>
+				<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
+					<li>Full scholarship for MS in the United States</li>
+					<li>WBJEE Rank: 87 (Engineering) 55 (Medical)</li>
+					<li>Experience across USA, India, New Zealand, Fiji, Nepal</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="mt-12 text-center">
+		<a href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center gap-2 px-8 py-3 text-lg">
+			<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+				<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+			</svg>
+			Message on LinkedIn
+		</a>
+	</div>
+</section>
+
+# File: src/routes/sitemap.xml/+server.ts
+
+import { siteUrl } from '$lib/components/seo/SEO';
+
+export const prerender = true;
+
+export async function GET() {
+	// 1. Get all posts
+	const modules = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+	const posts = Object.entries(modules).map(([path, file]: any) => {
+		const slug = path.split('/').pop()?.slice(0, -3).toLowerCase();
+        const metadata = file.metadata;
+
+        // CRITICAL FIX: Skip files without metadata or category to prevent build crash
+        if (!metadata || !metadata.category || metadata.published === false) {
+            return null;
+        }
+
+		return {
+			url: `${siteUrl}/blog/${metadata.category.toLowerCase()}/${slug}`,
+			lastMod: metadata.date ? new Date(metadata.date).toISOString() : new Date().toISOString()
+		};
+	})
+    .filter((post) => post !== null); // Filter out the nulls from above
+
+    // 2. Define static pages
+    const pages = [
+        { url: `${siteUrl}/`, changeFreq: 'daily', priority: 1.0 },
+        { url: `${siteUrl}/resume`, changeFreq: 'monthly', priority: 0.9 },
+        { url: `${siteUrl}/blog`, changeFreq: 'daily', priority: 0.9 },
+    ];
+
+	const xml = `<?xml version="1.0" encoding="UTF-8" ?>
+    <urlset
+        xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="https://www.w3.org/1999/xhtml"
+        xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
+    >
+        ${pages.map(page => `
+            <url>
+                <loc>${page.url}</loc>
+                <changefreq>${page.changeFreq}</changefreq>
+                <priority>${page.priority}</priority>
+            </url>
+        `).join('')}
+        ${posts.map(post => `
+            <url>
+                <loc>${post?.url}</loc>
+                <lastmod>${post?.lastMod}</lastmod>
+                <changefreq>monthly</changefreq>
+                <priority>0.7</priority>
+            </url>
+        `).join('')}
+    </urlset>`;
+
+	return new Response(xml, {
+		headers: {
+			'Content-Type': 'application/xml',
+            'Cache-Control': 'max-age=0, s-maxage=3600'
+		}
+	});
+}

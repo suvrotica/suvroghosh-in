@@ -39,8 +39,8 @@ export const load: PageServerLoad = async () => {
             })
             .filter((post): post is Post => post !== null);
 
-        // Sort by newest first
-        posts.sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
+        // Sort by oldest first
+        posts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
         return { posts };
     } catch (e) {
