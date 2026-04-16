@@ -96,26 +96,3 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     }
 }
 
-
-@layer components {
-	.blog-badge-list {
-		/* max-w-4xl for readability, px-0 to remove that left gap */
-		@apply flex flex-col items-start gap-2 max-w-4xl  py-6 px-0;
-	}
-
-	.blog-badge-link {
-		/* The link itself acts as the badge container */
-		@apply inline-block !no-underline hover:!no-underline focus:outline-none transition-transform active:scale-95;
-	}
-
-	.blog-badge-title {
-		/* Small font, light background, rounded like a badge */
-		@apply inline-block px-3 py-1 rounded-md text-sm font-medium
-               bg-slate-100 text-slate-700 
-               hover:bg-blue-600 hover:text-white 
-               dark:bg-neutral-800 dark:text-neutral-300 
-               dark:hover:bg-blue-500 dark:hover:text-white
-               transition-all duration-200 border border-transparent 
-               dark:border-neutral-700;
-	}
-}
