@@ -2,26 +2,27 @@
 	type Post = {
 		slug: string;
 		title: string;
+		thumbnail?: string;
 		category: string;
 	};
-
-	// Svelte 5 Runes for component props
 	let { posts = [] }: { posts: Post[] } = $props();
-
-	// Function to remove underscores and format nicely
-	function formatTitle(text: string) {
-		return text
-			.replace(/[-_]/g, ' ')
-			.replace(/\b\w/g, (char) => char.toUpperCase());
-	}
 </script>
 
-<div class="blog-badge-list">
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
 	{#each posts as post (post.slug)}
-		<a href={`/blog/${post.slug}`} class="blog-badge-link">
-			<span class="blog-badge-title">
-				{formatTitle(post.title || post.slug)}
-			</span>
+		{@const href = `/blog/${post.category}/${post.slug}`}
+		<a {href} class="group block relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 ease-in-out border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800"> 
+            <div class="p-4 overflow-hidden bg-neutral-200 dark:bg-neutral-700">
+               
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/90 via-black/60 to-transparent pt-12">
+                <h3 class="text-white font-bold text-lg leading-tight group-hover:text-gold transition-colors">
+                    {post.title}
+                </h3>
+                <p class="text-neutral-300 text-xs mt-1 uppercase tracking-wide">{post.category}</p>
+            </div>
+			</div>
+            
+           
 		</a>
 	{/each}
 </div>
