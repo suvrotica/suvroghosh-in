@@ -1,5 +1,5 @@
 ---
-title: "When Ambition Becomes a Costume: Fear, Validation, and the Indian Performance of Success"
+title: "Costume Ambition"
 description: "A critical look at how fear of mediocrity, social exposure, and public comparison reshape ambition into performance, especially in modern India."
 date: "2026-04-21"
 category: "society"
