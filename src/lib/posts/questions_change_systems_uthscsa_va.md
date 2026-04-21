@@ -1,5 +1,5 @@
 ---
-title: "The Questions You Ask Determine the System You Get: UTHSCSA vs VA Data Realities"
+title: "The Questions You Ask"
 description: "Why longitudinal analysis, population insights, and predictive modeling diverge sharply between academic medical centers and VA systems—and what that reveals about data architecture."
 date: "2026-04-21"
 category: "healthcare-it"
