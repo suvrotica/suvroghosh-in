@@ -32,4 +32,15 @@
 			</div>
 
 			<div class="absolute bottom-3 left-3 right-3">
-				<div
+				<div class="inline-block rounded-md bg-black/75 px-3 py-2 backdrop-blur-sm">
+					<div class="text-white text-sm sm:text-base font-semibold leading-snug">
+						{post.title}
+					</div>
+					<div class="text-neutral-300 text-[11px] sm:text-xs leading-tight mt-0.5 uppercase tracking-wide">
+						{post.category}
+					</div>
+				</div>
+			</div>
+		</a>
+	{/each}
+</div>
