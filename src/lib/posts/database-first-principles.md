@@ -1,5 +1,5 @@
 ---
-title: "Databases and Data Warehouses: A First-Principles Reconstruction"
+title: "Databases and Data Warehouses"
 description: "A system-level explanation of databases and data warehouses—what they actually do, where they break, and why architecture matters more than tooling."
 date: "2026-04-21"
 category: "data-architecture"
