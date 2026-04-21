@@ -1,5 +1,5 @@
 ---
-title: "Translation, Not Integration"
+title: "VA data warehousing"
 description: "Why VA data warehousing is fundamentally a problem of representation, not storage—examining HL7, MUMPS, and downstream analytics constraints."
 date: "2026-04-21"
 category: "healthcare-it"
