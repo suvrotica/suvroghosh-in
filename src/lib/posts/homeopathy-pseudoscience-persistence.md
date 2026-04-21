@@ -7,6 +7,8 @@ published: true
 color: "red"
 ---
 
+<TTS />
+
 This isn’t about whether homeopathy “works.” That question was settled, repeatedly, across two centuries of controlled observation.  
 
 The real problem is more structural.  
