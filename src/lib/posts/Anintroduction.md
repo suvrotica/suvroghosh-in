@@ -1,6 +1,7 @@
 ---
 title: "Intro"
 description: "From Pascal at Jadavpur University to healthcare data systems, distributed databases, telemedicine architecture, and ride-hailing platforms, a technical life shaped by translation between systems, disciplines, and people."
+thumbnail : "/images/IMG-20260422-WA0009.jpg"
 date: "2026-04-22"
 category: "career"
 published: true
@@ -8,6 +9,8 @@ color: "blue"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260422-WA0009.jpg" />
 
 At Jadavpur University in the mid-1990s, when the internet was still making the awkward transition from a mostly textual medium into something that could handle images without sounding faintly miraculous, I was introduced to programming through Pascal. There was also FORTRAN, COBOL, and later C and C++, which in that period was a fairly standard academic parade of languages: some already old enough to feel institutional, some sharp enough to feel modern, all presented as if the machine would become obedient once you learned the grammar. My undergraduate understanding was uneven in places, as it usually is when one is young and the abstractions arrive faster than experience can anchor them, but two subjects stayed with me immediately and stubbornly: digital logic and databases. Relational database theory made intuitive sense to me. SQL did too. There was something clean about the idea that information could be structured, constrained, queried, and made to yield an answer if only one asked the question precisely enough.
 
