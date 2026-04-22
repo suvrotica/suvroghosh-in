@@ -1,7 +1,7 @@
 ---
 title: "Intro"
-description: "From parallel computing to clinical data and cab drivers, a look back at 20 years of wrangling enterprise architecture and preparing for the era of black-box AI."
-date: "2026-04-04"
+description: "From Pascal at Jadavpur University to healthcare data systems, distributed databases, telemedicine architecture, and ride-hailing platforms, a technical life shaped by translation between systems, disciplines, and people."
+date: "2026-04-22"
 category: "career"
 published: true
 color: "blue"
@@ -9,76 +9,48 @@ color: "blue"
 
 <TTS />
 
-This isn’t about introducing myself. It’s about establishing context for the kind of problems I work on, and the ones I’m interested in solving going forward.
+At Jadavpur University in the mid-1990s, when the internet was still making the awkward transition from a mostly textual medium into something that could handle images without sounding faintly miraculous, I was introduced to programming through Pascal. There was also FORTRAN, COBOL, and later C and C++, which in that period was a fairly standard academic parade of languages: some already old enough to feel institutional, some sharp enough to feel modern, all presented as if the machine would become obedient once you learned the grammar. My undergraduate understanding was uneven in places, as it usually is when one is young and the abstractions arrive faster than experience can anchor them, but two subjects stayed with me immediately and stubbornly: digital logic and databases. Relational database theory made intuitive sense to me. SQL did too. There was something clean about the idea that information could be structured, constrained, queried, and made to yield an answer if only one asked the question precisely enough.
 
-I’ve spent most of my professional life inside healthcare data systems that were never designed to do what we now expect them to do.
+The through-line was never programming by itself. It was representation. 
 
-That matters.
+That education produced a useful illusion. It suggested that the world was tractable, that systems were manipulable, and that programming exposed the control knobs.
 
-Because when people talk about applying AI to healthcare, they usually start at the model. Or the framework. Or the promise. Almost never at the substrate the model has to operate on.
+Graduate school complicated that picture in the proper way. At the University of Texas at San Antonio, where I completed my Master’s degree in 2000, my work moved deeper into C, C++, and Proto-C, the language bundled with OPNET, a network simulation platform built around event-driven modeling and finite-state machine logic. That environment mattered because it forced a different way of thinking. This was not software as a sequence of commands marching politely from top to bottom. It was software as behavior under conditions, software as interaction, software as timing, contention, and emergence. I worked on wireless protocol simulation for ad hoc networks, the sort of domain that later became so embedded in modern communication stacks that people stopped noticing the intellectual scaffolding under it. I also worked on database technology, especially Microsoft SQL Server, in the context of a thesis involving distributed databases and parallel computing, work that would later be rhetorically absorbed into the much broader and much sloppier bucket now called “big data.”
 
-That substrate is where I’ve worked.
+The phrase did not exist in its current marketing costume then. The technical problem did.
 
-Across VA systems, UTHSCSA research environments, and clinical trial data platforms, the recurring pattern has been the same: heterogeneous data sources, inconsistent representations, fragile mappings, and workflows shaped more by billing, compliance, and legacy constraints than by clinical cognition.
+OPNET, more than anything else, opened the door to Austin during the Y2K period, which was one of those moments when modern civilization briefly convinced itself that date arithmetic might bring down the species. It did not, of course, though the anxiety told you something important about dependence on invisible systems. I joined Surgient Networks in Austin as part of a small research group working on simulation problems around video caching behavior. On paper the task sounded straightforward: model request patterns, evaluate caching algorithms, improve network performance. In reality it was my first serious encounter with the statistical fact that what matters in systems often does not appear at the level of any individual case. It appears only in aggregate. One user requesting a video tells you almost nothing. Millions of requests tell you where the architecture will bend or break. This was where distributions such as Zipf’s law stopped being mathematical curiosities and became operationally consequential. A small fraction of content accounted for the overwhelming majority of requests. Cache the wrong things and you waste scarce storage. Cache the right things and the whole system suddenly behaves as if it has become more intelligent than it is.
 
-This isn’t a complaint. It’s a description of the system as it actually exists.
+That lesson stayed. Popularity is rarely evenly distributed. Load never arrives democratically.
 
-You don’t struggle to build intelligent systems in healthcare because the models are insufficient. You struggle because the underlying data is not just “dirty.” It is structurally misaligned with the questions you want to ask.
+Surgient eventually lost momentum after a failed deal with IBM, and in 2002 I moved into a very different world at the University of Texas Health Science Center at San Antonio. That shift was not as discontinuous as it sounds. The tools changed. The substrate changed. The stakes changed dramatically. But the deeper problem remained the same: how do you represent reality in a system without flattening away the part that matters? In healthcare research, my interests in biology, scientific programming, statistical modeling, and databases finally converged. Some work involved computational genetics, especially tree structures and string manipulation problems that arise naturally when biological sequences stop being treated as inert text and start being treated as evolutionary evidence. Some involved building and fitting statistical models so that inference and prediction could be made from messy empirical data. This was my formal entry into what would now be called machine learning, though at the time it was not culturally staged as a revolution. It was simply one more tool in the quantitative toolbox. Useful. Limited. Context-dependent.
 
-Flat files from MUMPS hierarchies. Relational reconstructions in SQL Server. SAS datasets with implicit semantics. HL7 messages carrying state without context. CDISC models enforcing structure without guaranteeing meaning.
+The database side was no less important, and in many ways more enduring. Healthcare and clinical research do not merely suffer from dirty data. They suffer from fragmented provenance, inconsistent representation, partial capture, shifting definitions, and workflow-induced distortion. Domain constraints, referential integrity, normalization, indexing, performance tuning, and schema design were not classroom niceties there. They were survival mechanisms. Much of the real work sat upstream of analysis: cleaning data, reconciling formats, discovering which field meant what this year as opposed to last year, and building enough structure so that downstream interpretation would not turn into fiction. I wrote code in VBA, SAS, SQL, and related tools for exactly that reason. I also took on database administrator and systems analyst roles in projects tied to hospital-based clinical trials, where technical design had to coexist with regulatory burden, protocol fidelity, documentation discipline, and the unhappy fact that no live clinical environment ever behaves like a neat diagram.
 
-Each of these is internally consistent. None of them align cleanly with each other.
+That is where the modern mythology around data begins to look thin. More data does not mean more truth. It often means more unresolved contradiction.
 
-So what you get is not a data pipeline. You get a translation pipeline. And every translation introduces loss.
+Across those years and the ones that followed, I used whatever tool the problem demanded rather than whatever tool happened to be fashionable. Tableau and Excel for wrangling, exploration, and visualization. Python, SPSS, SAS, and statistical environments for genetics and applied analysis. SQL Server extract-transform-load pipelines and warehouse tooling for integration work. Crystal Reports for operational reporting, because organizations do not live by models alone; they live by repeatable outputs that someone somewhere needs by 8:30 on a Monday morning. I later worked as a SQL Server administrator and Crystal Reports programmer for Taxicharge in Auckland, New Zealand, after a brief teaching stint in computer science at the University of Fiji. Those experiences broadened something that purely technical careers sometimes narrow: the understanding that the same underlying computational disciplines manifest very differently across academic institutions, small companies, operational businesses, and geographically distinct working cultures.
 
-That loss is where most AI initiatives quietly fail.
+Back in India, I started a web development company focused on helping hospitals manage data and clinical trial operations. That was another translation layer in disguise. By then the problem was no longer just databases or analytics in isolation. It was end-to-end software architecture: HyperText Markup Language 5 (HTML5), Cascading Style Sheets (CSS), JavaScript, application programming interfaces (APIs), preprocessing libraries, frameworks, Unified Modeling Language (UML), testing, privacy controls, and the logic of how information moved across systems that were often procured separately and understood differently by every stakeholder in the room. I focused more on system architecture than line-by-line implementation: feature design, data protection, workflow fit, and the awkward but essential business of ensuring that technical design did not quietly violate clinical reality.
 
-Over the years, I’ve worked on building data warehouses from VA operational systems, designing registries for NIH-funded studies, implementing ETL pipelines across incompatible formats, and supporting clinical trials where the system had to satisfy both regulatory rigor and analytical usability.
+One of the more interesting pieces of that period was a cloud-based virtual browser architecture for telemedicine. The client invoked a headless browser in the Amazon cloud, initially using a customized Gecko-based stack and later moving to WebKit in subsequent implementations. The architectural goal was straightforward and nontrivial: preserve patient privacy while enabling secure hospital connectivity and remote interaction without exposing more of the local system than was necessary. That sort of design sits in a useful middle ground between infrastructure and application. It is not glamorous. It is not trivial. It is where privacy, rendering, session management, network trust, and user experience stop pretending to be separate concerns.
 
-The consistent constraint has not been scale. It has been meaning.
+Later consulting roles brought me back again toward analysis, visualization, and translation. D3 for expressive visualization. Orange for exploratory analytic workflows. Python-based tooling when the situation required programmatic flexibility. In a number of those settings, my role was less about writing every line of production code and more about holding the larger map in view: translating business or research goals into system logic, helping engineers understand the real problem, helping nontechnical stakeholders understand the actual constraints, and keeping everyone from talking past one another in mutually unintelligible dialects of jargon.
 
-You can scale storage. You can scale compute. You cannot trivially scale semantic alignment.
+That management layer is often described too politely. It is not just coordination. It is controlled semantic damage reduction.
 
-And AI systems—especially the current generation—are extremely sensitive to that.
+The New Zealand experience also fed into something that at first glance seems unrelated but in practice taught some of the hardest architectural lessons of all: cab aggregation and ride-hailing platforms. I launched services in Chennai in 2017 and Kolkata in 2020, the latter with Onde from Belarus and Taxi Butler from the Netherlands. The software questions there looked familiar enough on a whiteboard: dispatch logic, mobile clients, driver onboarding, routing, payments, exception handling, communication flows, and service orchestration. But real transport systems are gloriously resistant to software neatness. Drivers do not behave like simulated agents. Streets do not behave like graphs. Passengers do not behave like requirements documents. Every edge case that product teams treat as an anomaly eventually arrives in the field as a daily occurrence. It is an excellent cure for any lingering belief that manuals describe reality rather than a thin aspiration toward it.
 
-They don’t fix ambiguity. They absorb it.
+That was one of the more valuable corrections of my working life. The world is not under-specified because people are irrational. It is under-specified because reality is dynamic, local, contingent, and stubbornly uninterested in our abstractions.
 
-They don’t resolve inconsistency. They generalize over it.
+In my various managerial roles, the visible responsibilities were the usual ones: timelines, budgets, expectations, stakeholder communication, conflict management, documentation, version control, support design, usability feedback, troubleshooting, and iteration across the product lifecycle. The less visible responsibility was translation. Turning technical requirements into UML when necessary, but also turning UML back into plain language when that was what the moment required. Unpacking complexity without insulting it. Protecting best practices without pretending they are always affordable. Preserving rigor without becoming theatrically rigid. In healthcare especially, and later in mobility and service systems, what gets called communication is usually a negotiation between incompatible incentives, different levels of technical literacy, and constraints nobody has the authority to remove.
 
-That’s useful in some domains. In healthcare, it can be dangerous.
+That, more than any specific language or platform, is the background.
 
-This is why most conversations around “AI in healthcare” feel incomplete. They assume that once data is available, intelligence can be layered on top. In practice, the opposite is true. Intelligence is constrained, and often defined, by how the data is modeled, transformed, and contextualized upstream.
+Not a neat ladder of technologies. Not a heroic march through trends. A long education in systems that do not line up cleanly with one another, in data that arrives damaged before anyone touches it, in architectures that must answer to budgets and regulations as much as to elegance, and in the recurring need to translate between computation, institutions, and ordinary human beings trying to get through the day.
 
-This is not a theoretical position. It’s an operational one.
+I began in a world where programming felt like direct control. I ended up learning that most serious work is mediation.
 
-If you’ve worked with EHR data long enough, you know that a diagnosis code is not a diagnosis. It’s an encoding of an event shaped by documentation practices, reimbursement rules, and system affordances.
+Between model and mess. Between database and decision. Between software and circumstance. Between what the manual says and what the driver, the researcher, the analyst, the clinician, or the patient is actually facing.
 
-If you’ve worked with clinical trials, you know that a variable in an SDTM dataset is not a fact. It’s the result of protocol design, site behavior, and validation logic interacting over time.
-
-If you’ve built ETL pipelines, you know that “data integration” is often just synchronized inconsistency.
-
-These are not edge cases. They are the norm.
-
-So when I think about AI in healthcare, I’m not thinking about models first. I’m thinking about representation, transformation, and constraint.
-
-What is the system actually capturing?
-
-What is it losing?
-
-What is it forcing into structure that doesn’t belong there?
-
-And how do those decisions propagate into any downstream intelligence we try to build?
-
-This is where I’m focusing now.
-
-Not on abstract AI capability, but on its interaction with real healthcare systems: EHRs that optimize for documentation and billing, HIE layers that move data without harmonizing meaning, clinical data models that standardize structure while preserving ambiguity.
-
-There is a path forward. But it doesn’t start where most people are looking.
-
-It starts with accepting that the system is not broken in a simple way. It is layered, constrained, and internally consistent in ways that resist naive optimization.
-
-AI can be transformative in healthcare. But only if it is grounded in the realities of how healthcare data is actually produced, shaped, and constrained.
-
-That’s the space I work in.
-
-And that’s the space I’m interested in pushing forward.
+That is the past I am trying to resurrect accurately, because without it, the later interest in data science, healthcare systems, machine learning, architecture, and writing can look like a grab bag of unrelated episodes. It was never that. The pattern was there early. I just did not yet have the language for it.
