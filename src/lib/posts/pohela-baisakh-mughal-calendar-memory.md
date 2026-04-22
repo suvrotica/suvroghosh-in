@@ -1,13 +1,18 @@
 ---
 title: "Pohela Baisakh"
 description: "Pohela Baisakh is usually narrated as timeless Bengali tradition. It is older than that in some layers, but the calendar as socially organized year-start, fiscally usable cycle, and April-aligned public rhythm bears a decisive Mughal stamp. Forgetting that is not accidental. It fits a larger Indian habit of sanding Muslim contributions out of historical memory while continuing to live inside their institutions."
+thumbnail : "/images/IMG-20260422-WA0012.jpg"
 date: "2026-04-22"
 category: "history"
 published: true
 color: "red"
 ---
 
+
+
 <TTS />
+
+<Pi src="IMG-20260422-WA0012.jpg" />
 
 Pohela Baisakh is not just a harvest festival, not just a cultural new year, and certainly not some untouched civilizational relic descending from the sky wrapped in conch shells and alpana. It is a calendar event. Calendars are instruments of power before they become sentiment. They decide when rent is due, when revenue is assessed, when crops are counted, when ledgers are closed, when courts record dates, when a state tells ordinary people what year it is. That is the first thing to recover here.
 
