@@ -1,11 +1,16 @@
 ---
 title: "The Fish Bengalis Eat"
 description: "A practical field guide to the fish commonly eaten in Kolkata, with Bengali names, English and scientific names, and a hardheaded look at which fish are best for regular eating, which are occasional luxuries, and which are poor bets."
+thumbnail : "/images/IMG-20260422-WA0006.jpg"
 date: "2026-04-22"
 category: "food"
 published: true
 color: "blue"
 ---
+
+<TTS />
+
+<Pi src="IMG-20260422-WA0006.jpg" />
 
 The first mistake is to think fish in Calcutta are sorted by biology. They are sorted by memory, class, river nostalgia, bones, fat, price, smell, and what the household cook can do without turning dinner into an orthopedic event. The market name is often stable. The species underneath it is not always. That matters, because “good fish” and “bad fish” are not single judgments. They can mean good for taste, good for health, good for children, good for pregnancy, good for weekday eating, or good only if you are willing to forgive half a dozen needle-like bones and a bill that behaves like a small insult.
 
