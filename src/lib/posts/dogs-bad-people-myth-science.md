@@ -9,7 +9,7 @@ color: "amber"
 
 <TTS />
 
-Dogs do not possess a supernatural faculty for identifying “bad people.” They are not little furred moral philosophers with a built-in vice detector. What the research suggests is both narrower and more interesting: dogs are unusually skilled at monitoring reliability, tension, social disruption, and violations of expectation in human behavior. They are not reading souls. They are reading patterns. 0
+Dogs do not possess a supernatural faculty for identifying “bad people.” They are not little furred moral philosophers with a built-in vice detector. What the research suggests is both narrower and more interesting: dogs are unusually skilled at monitoring reliability, tension, social disruption, and violations of expectation in human behavior. They are not reading souls. They are reading patterns. 
 
 That distinction matters because folklore usually smuggles in a human category error. We speak in abstractions—bad, creepy, evil, untrustworthy—while dogs operate on observable signals. Did this person point accurately or deceptively? Did this stranger behave helpfully or refuse assistance to my owner? Did the room chemistry change? Did posture tighten, voice flatten, scent shift, movement become erratic? In other words, the dog is not inferring moral essence. It is updating a probabilistic model of safety, predictability, and affiliation from cues that are often too fast, too embodied, or too chemically diffuse for people to notice consciously. 
 
