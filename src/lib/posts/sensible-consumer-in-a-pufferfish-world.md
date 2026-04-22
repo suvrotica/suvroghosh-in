@@ -1,11 +1,14 @@
 ---
 title: "The Pufferfish Economy"
+thumbnail : "/images/IMG-20260422-WA0001.jpg" 
 description: "Modern life increasingly resembles a marketplace of attractive hazards: products, platforms, services, and institutions that promise convenience while quietly shifting risk onto the buyer. Why surviving it now requires judgment, not just income."
 date: "2026-04-22"
 category: "society"
 published: true
 color: "amber"
 ---
+
+<Pi src="IMG-20260422-WA0001.jpg" />
 
 <TTS />
 
