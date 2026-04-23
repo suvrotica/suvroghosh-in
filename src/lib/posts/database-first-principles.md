@@ -1,12 +1,15 @@
 ---
 title: "Databases and Data Warehouses"
 description: "A practical architectural primer on what databases and data warehouses are actually for, how they fail under real operating conditions, and why the decisive variable is rarely the tool itself. The deeper story lives in workload shape, data semantics, ownership, time, and the often invisible architecture around them."
+thumbnail : "/images/IMG-20260423-WA0006.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 published: true
 color: "slate"
 ---
 <TTS />
+
+<Pi src="IMG-20260423-WA0006.jpg" />
 
 A database is not a large box of facts, and a data warehouse is not a larger one with dashboards stapled to the side. Each is a machine for answering a certain class of questions under certain constraints. Confusion begins the moment teams treat them as interchangeable storage, and from there the trouble spreads with admirable efficiency: operational systems slow down, analytics become untrustworthy, extracts multiply like fungus in a damp cellar, and architecture gets replaced by tooling theater. The real distinction is not old versus new, on-premises versus cloud, or even transactional versus analytical in the most superficial sense. It is about what kind of work the system is being asked to do, how time is represented, how truth is negotiated, and where the cost of consistency is paid.
 
