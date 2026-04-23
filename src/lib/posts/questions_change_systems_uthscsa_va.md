@@ -1,6 +1,7 @@
 ---
 title: "The Questions You Ask"
 description: "Why longitudinal analysis, population insights, and predictive modeling diverge sharply between academic medical centers and VA systems—and what that reveals about data architecture."
+thumbnail : "/images/IMG-20260423-WA0010.jpg" 
 date: "2026-04-21"
 category: "healthcare-it"
 published: true
@@ -8,6 +9,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0010.jpg" />
 
 This isn’t a data access problem. It’s a question formulation problem masquerading as one.
 
