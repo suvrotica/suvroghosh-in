@@ -1,6 +1,7 @@
 ---
 title: "Trigonometric  Colonization"
 description: "A historically grounded examination of how the Great Trigonometrical Survey turned trigonometry into an instrument of colonial power, converting angles into territory, revenue, and military advantage."
+thumbnail : "/images/IMG-20260423-WA0022.jpg"
 date: "2026-04-21"
 category: "history-of-science"
 published: true
@@ -8,6 +9,8 @@ color: "amber"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0022.jpg" />
 
 The strategic importance of trigonometry is easiest to miss when it is taught as a schoolroom exercise involving anonymous triangles, clean diagrams, and the faint smell of chalk. In practice, trigonometry became one of the most consequential political technologies of the modern state. It let governments measure land they had not fully traversed, define borders they had not fully settled, tax populations they did not understand, and move armies through space they wanted to dominate. In British India, that power acquired one of its most formidable forms in the Great Trigonometrical Survey, begun in 1802 under William Lambton and carried forward by George Everest and others until its effective completion in 1871. It was science, yes. It was also infrastructure for rule. 
 
