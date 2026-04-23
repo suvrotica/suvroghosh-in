@@ -1,12 +1,15 @@
 ---
 title: "The History of the Shape of Atoms"
 description: "A technical history of how the atom changed shape in the scientific imagination, from indivisible bead to quantum probability cloud. The story is not merely about better pictures, but about the hard collision between measurement, mathematics, and the limits of representation."
+thumbnail : "/images/IMG-20260423-WA0023.jpg"
 date: "2026-04-23"
 category: "science"
 published: true
 color: "indigo"
 ---
 <TTS />
+
+<Pi src="IMG-20260423-WA0023.jpg" />
 
 The atom has had an unusually busy career for something no one has ever seen in the ordinary sense. It began life as a philosophical pebble, became a kind of microscopic plum pudding, then a miniature solar system, then a swarm of standing waves, and finally a thing that refuses, with exquisite stubbornness, to possess a sharp shape at all. That is the central fact. The history of the shape of atoms is not the history of one object patiently revealing its outline. It is the history of human beings trying to force nature into pictures that our monkey brains can tolerate, and nature repeatedly replying with the scientific equivalent of a raised eyebrow.
 
