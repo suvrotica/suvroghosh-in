@@ -1,6 +1,7 @@
 ---
 title: "Costume Ambition"
 description: "A critical look at how fear of mediocrity, social exposure, and public comparison reshape ambition into performance, especially in modern India."
+thumbnail : "/images/IMG-20260423-WA0017.jpg"
 date: "2026-04-21"
 category: "society"
 published: true
@@ -9,6 +10,7 @@ color: "amber"
 
 <TTS />
 
+<Pi src="IMG-20260423-WA0017.jpg" />
 What gets called ambition in modern India is often something narrower, sadder, and more combustible: status anxiety under theatrical lighting.
 
 Not excellence. Not devotion to craft. Not the long, private, slightly unglamorous labor by which a person becomes good at something difficult. Something else. A public struggle against invisibility. A dread of being ordinary in a civilization so crowded, so comparative, and so relentlessly social that obscurity begins to feel not like a neutral condition but like a verdict.
