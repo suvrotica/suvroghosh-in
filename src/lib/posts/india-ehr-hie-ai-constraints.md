@@ -1,6 +1,7 @@
 ---
 title: "Why EHR and HIE Struggle in India but AI Diagnostics might not"
 description: "A system-level analysis of why Electronic Health Records and Health Information Exchange architectures remain impractical in India, and how structural gaps may paradoxically enable AI-driven diagnostics."
+thumbnail : "/images/IMG-20260423-WA0009.jpg" 
 date: "2026-04-21"
 category: "healthcare-it"
 published: true
@@ -8,6 +9,8 @@ color: "teal"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0009.jpg" />
 
 This isn’t an interoperability failure. It’s a mismatch between system design assumptions and ground reality.
 
