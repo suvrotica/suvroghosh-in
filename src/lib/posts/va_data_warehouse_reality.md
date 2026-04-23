@@ -1,12 +1,15 @@
 ---
 title: "Building VA Data Warehouses"
 description: "A high-level but technically serious primer on how data warehouses are actually built from Department of Veterans Affairs operational systems. It explains why extraction is the easy part, why semantic stability is the hard part, and where warehousing efforts usually go wrong."
+thumbnail : "/images/IMG-20260423-WA0020.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 published: true
 color: "blue"
 ---
 <TTS />
+
+<Pi src="IMG-20260423-WA0020.jpg" />
 
 The first mistake is to imagine that a data warehouse is just a quieter copy of the source system. It is not. In a Department of Veterans Affairs [VA] environment, the warehouse is a negotiated reconstruction of operational reality assembled from Veterans Health Information Systems and Technology Architecture [VistA], ancillary applications, identity systems, claims and eligibility platforms, reporting layers, and increasingly mixed-generation electronic health record [EHR] sources. You are not moving data from one place to another. You are deciding what the institution believes happened, when it happened, to whom it happened, and under which workflow conditions that fact should count.
 
