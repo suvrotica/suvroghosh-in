@@ -1,6 +1,7 @@
 ---
 title: "The Last Economy"
 description: "A rigorous reading of Emad Mostaque’s The Last Economy: its core hypotheses, the idea of intelligence inversion, and why futurism usually says more about the present than the future."
+thumbnail : "/images/IMG-20260423-WA0002.jpg" 
 date: "2026-04-23"
 category: "technology"
 published: true
@@ -8,6 +9,8 @@ color: "slate"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0002.jpg" />
 
 The most useful way to read The Last Economy is not as a prophecy, not as a forecast model, and certainly not as revealed truth, but as a bundle of hypotheses about what happens when intelligence stops behaving like a scarce human service and starts behaving like infrastructure.
 
