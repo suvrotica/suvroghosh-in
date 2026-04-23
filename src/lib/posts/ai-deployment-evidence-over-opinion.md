@@ -1,6 +1,7 @@
 ---
 title: "AI in Healthcare: Beware"
 description: "AI deployment in healthcare is not a modeling problem—it is a representation, validation, and risk management problem. Why staged, evidence-driven rollout is essential."
+thumbnail : "/images/IMG-20260423-WA0008.jpg" 
 date: "2026-04-21"
 category: "healthcare-it"
 published: true
@@ -8,6 +9,8 @@ color: "red"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0008.jpg" />
 
 AI deployment in healthcare fails the moment it is treated as a model problem instead of a system problem.
 
