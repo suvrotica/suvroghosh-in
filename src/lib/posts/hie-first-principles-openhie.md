@@ -1,6 +1,7 @@
 ---
 title: "HIE from First Principles"
 description: "A system-level dissection of Health Information Exchange (HIE) from first principles, using OpenHIE as the architectural lens."
+thumbnail : "/images/IMG-20260423-WA0021.jpg"
 date: "2026-04-21"
 category: "healthcare-it"
 published: true
@@ -8,6 +9,8 @@ color: "blue"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0021.jpg" />
 
 This isn’t an interoperability problem.
 
