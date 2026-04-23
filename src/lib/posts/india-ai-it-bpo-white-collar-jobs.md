@@ -1,7 +1,7 @@
 ---
 title: "India’s White-Collar Issue"
 description: "India’s old labor-arbitrage model in IT and business process outsourcing is under strain. AI is reducing the value of routine coding, coordination, and back-office work while Global Capability Centers reward ownership, judgment, and systems thinking."
-thumbnail : "\images\IMG-20260423-WA0014.jpg"
+thumbnail : "/images/IMG-20260423-WA0014.jpg"
 date: "2026-04-22"
 category: "india"
 published: true
