@@ -24,8 +24,6 @@ Short visits. High volume. Minimal documentation. Economic pressure to optimize 
 
 The architecture expected by EHR/HIE systems presumes the opposite.
 
----
-
 The typical EHR/HIE stack expects three things to exist before anything meaningful can happen:
 
 A reliable patient identity layer.  
@@ -71,8 +69,6 @@ They won’t.
 
 So the network never forms.
 
----
-
 What you get instead is not an HIE. It is a patchwork of partial digitization.
 
 Islands of structured data in large hospital chains.  
@@ -83,8 +79,6 @@ Insurance claim data for a minority of patients.
 Each internally consistent. None interoperable at scale.
 
 Interoperability didn’t fail. It’s operating exactly as the underlying incentives dictate.
-
----
 
 Now the uncomfortable part.
 
@@ -122,8 +116,6 @@ A photo of a lesion.
 
 That is enough for a bounded model.
 
----
-
 Architecturally, this shifts the center of gravity.
 
 From longitudinal data warehouses to edge inference.  
@@ -133,8 +125,6 @@ From canonical enterprise models to task-specific representations.
 You stop trying to unify the entire patient story and instead solve for high-signal slices.
 
 This is not a philosophical shift. It is a constraint-driven one.
-
----
 
 But the constraints don’t disappear. They move.
 
@@ -147,8 +137,6 @@ If your model depends on text, then language variation, shorthand, and code-swit
 If your model is trained on curated datasets but deployed on real-world Indian data, you get distribution shift immediately.
 
 The system doesn’t fail loudly. It degrades silently.
-
----
 
 There is also a structural risk.
 
@@ -166,8 +154,6 @@ Or infer context probabilistically, which introduces its own error surface.
 This is where overconfidence becomes dangerous.
 
 The model appears precise. The underlying uncertainty is not visible.
-
----
 
 Why does this door remain ajar, then?
 
@@ -187,8 +173,6 @@ This is achievable in pockets.
 
 And India is a system of pockets.
 
----
-
 The deeper truth is that both paths—EHR/HIE and AI diagnostics—are constrained by the same underlying issue: representation.
 
 EHR/HIE fails because it assumes structured, consistent, longitudinal representation of clinical reality.
@@ -196,8 +180,6 @@ EHR/HIE fails because it assumes structured, consistent, longitudinal representa
 AI diagnostics risks failure if it ignores how incomplete and biased those representations are.
 
 Different failure modes. Same root.
-
----
 
 So the architectural direction is not to abandon interoperability.
 
@@ -216,8 +198,6 @@ At the top, incrementally build structured representations where they are econom
 Use FHIR where it fits. Don’t force it where it doesn’t.
 
 Let interoperability emerge in constrained domains before attempting it at national scale.
-
----
 
 This is slower. Less elegant. Architecturally messier.
 
