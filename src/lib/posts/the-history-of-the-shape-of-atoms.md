@@ -7,6 +7,7 @@ category: "science"
 published: true
 color: "indigo"
 ---
+
 <TTS />
 
 <Pi src="IMG-20260423-WA0023.jpg" />
