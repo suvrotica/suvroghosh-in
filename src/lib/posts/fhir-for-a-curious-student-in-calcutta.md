@@ -1,12 +1,15 @@
 ---
 title: "FHIR"
 description: "A rigorous but readable introduction to HL7 FHIR for serious beginners, grounded in history, healthcare architecture, and the lived texture of real systems. This post explains what FHIR actually is, what it is not, and why its promise is both enormous and frequently misunderstood."
+thumbnail : "/images/IMG-20260423-WA0007.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 published: true
 color: "blue"
 ---
 <TTS />
+
+<Pi src="IMG-20260423-WA0007.jpg" />
 
 Fast Healthcare Interoperability Resources is one of those names that sounds as though it was assembled by a committee in a room with weak coffee and too many flip charts, yet the thing itself is much more interesting than the name suggests. FHIR, pronounced “fire,” is not a hospital database, not a magical universal medical language, and certainly not a silver bullet for the ancient misery of healthcare data exchange. It is, more modestly and more usefully, a way of representing and moving clinical and administrative information so that different software systems can exchange it with less ritual suffering than before.
 
