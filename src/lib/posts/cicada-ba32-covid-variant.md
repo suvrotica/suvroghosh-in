@@ -1,6 +1,7 @@
 ---
 title: "Cicada, BA.3.2"
 description: "Why the WHO-monitored SARS-CoV-2 lineage BA.3.2 matters: its delayed evolutionary reappearance, deep spike divergence, immune escape, receptor-binding trade-off, and what weaker surveillance now hides."
+thumbnail : "/images/IMG-20260423-WA0012.jpg" 
 date: "2026-04-21"
 category: "public-health"
 published: true
@@ -8,6 +9,8 @@ color: "violet"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0012.jpg" />
 
 The striking thing about BA.3.2 is not that it is merely another Omicron descendant. It is that it behaves like a lineage that somehow stepped out of a side corridor of viral history, reappearing long after its apparent ancestral branch had faded from ordinary circulation. That is why the informal nickname “Cicada” caught on. Not because viruses are insects, obviously, but because BA.3.2 seems to have emerged after a long, quiet interval, much as periodical cicadas surface after years out of sight.
 
