@@ -1,6 +1,7 @@
 ---
 title: "What the Ukraine and Iran Wars May Leave Behind in Civilian Technology"
 description: "Wars do not ennoble technology. They compress it. A look at what the Ukraine war and the current Iran war may yield for civilian systems, and what earlier conflicts already gave the modern world."
+thumbnail : "/images/IMG-20260423-WA0000.jpg" 
 date: "2026-04-23"
 category: "technology"
 published: true
@@ -8,6 +9,8 @@ color: "slate"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0000.jpg" />
 
 War is not a research grant with bad manners. It is a distortion field. It takes money, fear, urgency, logistics, engineering, and state power, then strips away committee drift. That is why it so often accelerates technologies that peacetime would have funded timidly, regulated slowly, and deployed late.
 
