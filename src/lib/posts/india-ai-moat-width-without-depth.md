@@ -1,12 +1,15 @@
 ---
 title: "India’s AI Moat"
 description: "India may yet build a real Artificial Intelligence moat, but it is unlikely to look like Silicon Valley’s. The stronger case is not frontier-model supremacy but a harder, more infrastructural advantage built from diffusion, public rails, language reach, and brutal implementation experience."
+thumbnail : "/images/IMG-20260423-WA0004.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 published: true
 color: "indigo"
 ---
 <TTS />
+
+<Pi src="IMG-20260423-WA0004.jpg" />
 
 India’s most plausible Artificial Intelligence [AI] moat is not a gleaming frontier model trained in a giant bunker of Graphics Processing Units [GPUs]. It is something less glamorous and, for that reason, more believable: the ability to diffuse AI through an unusually large digital society, wire it into payment and identity rails that already exist, and turn messy deployment at national scale into a discipline of its own. That is the optimistic version. The darker version is that India becomes a vast and efficient distribution layer for other people’s intelligence, with just enough local adaptation to feel sovereign while remaining structurally dependent.
 
