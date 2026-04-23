@@ -1,6 +1,7 @@
 ---
 title: "Hormuz, Day 52"
 description: "A system-level look at how a prolonged Strait of Hormuz disruption propagates through energy, fertilizer, food, healthcare, transport, finance, and state capacity—and why the damage is asymmetric across countries."
+thumbnail : "/images/IMG-20260423-WA0011.jpg"
 date: "2026-04-21"
 category: "geopolitics"
 published: true
@@ -8,6 +9,8 @@ color: "amber"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0011.jpg" />
 
 By day 52, this is no longer an oil story.
 
