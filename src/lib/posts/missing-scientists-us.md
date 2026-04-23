@@ -1,6 +1,7 @@
 ---
 title: "The Missing Scientists"
 description: "Why the louder story is not espionage or cinematic disappearance, but bureaucratic rupture, workforce attrition, institutional fear, and a political culture that treats science as disposable until it wants a spectacle."
+thumbnail : "/images/IMG-20260423-WA0016.jpg"
 date: "2026-04-22"
 category: "healthcare-it"
 published: true
@@ -8,6 +9,8 @@ color: "blue"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0016.jpg" />
 
 The missing scientists story is being told in the dumbest possible way.
 
