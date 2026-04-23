@@ -1,6 +1,7 @@
 ---
 title: "India’s White-Collar Issue"
 description: "India’s old labor-arbitrage model in IT and business process outsourcing is under strain. AI is reducing the value of routine coding, coordination, and back-office work while Global Capability Centers reward ownership, judgment, and systems thinking."
+thumbnail : "\images\IMG-20260423-WA0014.jpg"
 date: "2026-04-22"
 category: "india"
 published: true
@@ -8,6 +9,8 @@ color: "blue"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0014.jpg" />
 
 The old Indian information technology and business process outsourcing compact was brutally simple: sell scale, hire in bulk, train people just enough to become operational, bill by the head, and let the arithmetic of wage differentials do the rest. It built an enormous industry, produced urban middle classes by the million, altered family trajectories across states, and convinced several generations that employability meant entering a pipeline, staying compliant, collecting certifications, and climbing into management before the machine noticed you were replaceable.
 
