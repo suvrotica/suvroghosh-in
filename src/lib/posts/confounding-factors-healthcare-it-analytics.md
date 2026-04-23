@@ -1,6 +1,7 @@
 ---
 title: "Confounding Factors"
 description: "A technical guide to understanding, detecting, and handling confounding factors in healthcare IT, clinical analytics, and population health systems without mistaking correlation for architecture-grade truth."
+thumbnail : "/images/IMG-20260423-WA0013.jpg" 
 date: "2026-04-22"
 category: "healthcare-it"
 published: true
@@ -8,6 +9,8 @@ color: "blue"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0013.jpg" />
 
 Confounding is what happens when the system appears to be telling you one thing while the architecture, workflow, or population structure is quietly telling you another.
 
