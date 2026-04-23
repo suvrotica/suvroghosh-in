@@ -1,6 +1,7 @@
 ---
 title: "Homeopathy"
 description: "A technically grounded analysis of homeopathy’s origins, internal logic, empirical failure, and systemic persistence across modern healthcare environments."
+thumbnail : "/images/IMG-20260423-WA0015.jpg"
 date: "2026-04-21"
 category: "healthcare-systems"
 published: true
@@ -8,6 +9,8 @@ color: "red"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0015.jpg" />
 
 This isn’t about whether homeopathy “works.” That question was settled, repeatedly, across two centuries of controlled observation.  
 
