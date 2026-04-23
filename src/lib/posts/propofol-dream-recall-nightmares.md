@@ -1,6 +1,7 @@
 ---
 title: "Propofol, Nightmares"
 description: "An architecturally grounded look at the experimental use of propofol-induced dream states, delayed emergence, and active dream recall as a possible intervention for trauma-related nightmares and PTSD symptoms."
+thumbnail : "/images/IMG-20260423-WA0019.jpg"
 date: "2026-04-22"
 category: "healthcare"
 published: true
@@ -8,6 +9,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0019.jpg" />
 
 This is not a treatment for nightmares in the ordinary clinical sense. It is not sleep medicine. It is not standard psychiatry. It is not even established anesthesiology. It is a narrow, experimental protocol sitting at an awkward border between anesthesia, memory reconsolidation, dream phenomenology, and trauma therapy, built on a real observation that some patients under propofol can enter vivid dream states during emergence, can recall those dreams on awakening, and in a few reported cases showed rapid reduction in trauma symptoms, including nightmares, afterward. That is interesting. It is also very far from proof.
 
