@@ -1,12 +1,16 @@
 ---
 title: "Vector Databases"
 description: "A system-level examination of vector databases for healthcare IT and serious technical readers. This post separates the glamour of embeddings from the harder realities of retrieval, semantics, filtering, latency, and representational loss."
+thumbnail : "/images/IMG-20260423-WA0024.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260423-WA0024.jpg" />
 
 A vector database is not a magic memory organ for artificial intelligence. It is a machine for finding nearby points in a very large geometric space, and that sounds modest until you realize how much modern software now tries to smuggle into the word nearby. In practice, the real architectural problem is rarely how to store vectors. It is how to make geometric closeness behave like relevance under real workflow, dirty metadata, shifting models, and unforgiving latency budgets. The database is only the middle of the story. The trouble begins before the vector is created and continues long after the nearest neighbors have been returned.
 
