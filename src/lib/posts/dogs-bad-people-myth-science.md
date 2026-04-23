@@ -1,6 +1,7 @@
 ---
 title: "Dogs Detect Violations."
 description: "What canine cognition research actually suggests about trust, deception, scent, and social evaluation—and why the myth that dogs can 'sense bad people' is much less mystical and much more interesting."
+thumbnail : "/images/IMG-20260423-WA0018.jpg"
 date: "2026-04-22"
 category: "science"
 published: true
@@ -8,6 +9,8 @@ color: "amber"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260423-WA0018.jpg" />
 
 Dogs do not possess a supernatural faculty for identifying “bad people.” They are not little furred moral philosophers with a built-in vice detector. What the research suggests is both narrower and more interesting: dogs are unusually skilled at monitoring reliability, tension, social disruption, and violations of expectation in human behavior. They are not reading souls. They are reading patterns. 
 
