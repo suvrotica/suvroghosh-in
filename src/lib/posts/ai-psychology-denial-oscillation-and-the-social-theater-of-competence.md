@@ -1,12 +1,16 @@
 ---
 title: "AI and Denial"
 description: "A system-level analysis of why people who depend on Artificial Intelligence often minimize it in public, and why public opinion swings so wildly between mystical overstatement and contemptuous dismissal. The deeper issue is less about the tool than about status, authorship, labor, and the unsettling rearrangement of human competence."
+thumbnail : "/images/IMG-20260424-WA0000.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260424-WA0000.jpg" />
 
 The odd thing about Artificial Intelligence, or AI, is not that it provokes strong opinions. New tools always do. The odd thing is that the loudest opinions now often come from people whose working day is quietly stitched together by it, rather like a gentleman denouncing rail travel while arriving everywhere by train. They use it to summarize, draft, translate, rephrase, search, prototype, debug, brainstorm, compare, and rescue themselves from the sticky middle of the workday. Then, with a face of admirable seriousness, they insist they did not use AI at all, or that AI is mostly hype, or that it is an immature contraption hardly fit to butter toast. At the same time, often in the very next breath, the culture swings to the opposite pole and speaks of AI as if it were a conscious inmate tunneling out of its silicon prison. Then the pendulum flies back again and the same system is dismissed as a mere statistical mimic, a parrot with matrix multiplication. Both positions are theatrically satisfying. Neither is especially useful.
 
