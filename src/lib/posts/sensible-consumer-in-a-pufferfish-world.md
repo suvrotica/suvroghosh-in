@@ -110,4 +110,4 @@ The old fantasy was that prosperity would make life simpler.
 
 What it often did instead was make danger prettier.
 
-P.S. References for the metaphorical framing are conceptual rather than source-dependent in the body of this essay. For the literal background: fugu is a Japanese preparation of puffer fish containing tetrodotoxin, a potent neurotoxin, and safe consumption depends on expert preparation standards recognized in Japanese culinary practice.
+P.S. For the literal background: fugu is a Japanese preparation of puffer fish containing tetrodotoxin, a potent neurotoxin, and safe consumption depends on expert preparation standards recognized in Japanese culinary practice.
