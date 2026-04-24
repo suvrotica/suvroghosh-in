@@ -1,12 +1,16 @@
 ---
 title: "Tea"
 description: "A clear-eyed guide to what Darjeeling Orange Pekoe actually means, what first flush and second flush are, why muscatel tea smells the way it does, and how black tea, green tea, oolong, white tea, and matcha differ at the level of leaf handling rather than romance."
+thumbnail : "/images/IMG-20260424-WA0002.jpg"
 date: "2026-04-24"
 category: "food-and-culture"
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260424-WA0002.jpg" />
 
 Tea is one of those daily miracles that has been wrapped, over time, in enough mystery, marketing, colonial debris, and cheerful nonsense to make a straightforward cup seem like a coded manuscript. A Bengali household may speak of Darjeeling with the affection usually reserved for old songs and difficult relatives, yet even devoted drinkers can be left staring at labels that say Orange Pekoe, First Flush, FTGFOP, muscatel, orthodox, green, matcha, white, oolong, as though the leaf has enrolled in civil service and acquired a title. The simplest way into the subject is this: most true tea comes from one plant, Camellia sinensis, and the great differences we taste are produced less by species than by geography, cultivar, season, altitude, plucking standard, and what happens to the leaf after it is picked.
 
