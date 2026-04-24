@@ -1,12 +1,16 @@
 ---
 title: "Is Claude Mythos, a Myth?"
 description: "A technical analysis of the Claude Mythos access reports and the Claude Code source exposure, separating real security concern from theatrical overclaiming."
+thumbnail : "/images/IMG-20260424-WA0014.jpg"
 date: "2026-04-24"
 category: "AI Security"
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260424-WA0014.jpg" />
 
 Claude Mythos may be powerful, overmarketed, underprotected, misunderstood, and not stolen, all at the same time.
 
