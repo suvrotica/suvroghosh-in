@@ -15,8 +15,6 @@ The first mistake is to imagine that a data warehouse is just a quieter copy of 
 
 That is why newcomers are often surprised by the emotional temperature of warehouse work. Source teams think in transactions, screens, and local operational survival. Analysts think in stable cohorts and reproducible metrics. Leadership thinks in enterprise numbers. Researchers want longitudinal consistency. Auditors want provenance. These are not different views of the same object so much as different demands placed on a system that was rarely designed to satisfy them all at once.
 
-## Core Insight
-
 A warehouse built from VA operational systems succeeds or fails on semantic control, not extraction mechanics.
 
 The pipes matter, of course. You need interfaces, schedules, change capture logic, orchestration, indexing, storage design, security boundaries, and performance tuning. But those are not the part that usually ruins the effort. The real difficulty is that operational systems generate data in service of care delivery, order entry, scheduling, billing, documentation, and local administration. Warehouses generate data products in service of analysis, reporting, quality measurement, operations, and sometimes research. The same row can survive transport intact and still arrive semantically damaged.
@@ -24,8 +22,6 @@ The pipes matter, of course. You need interfaces, schedules, change capture logi
 That distinction is the one beginners need early. Data transport answers whether something moved. Semantic meaning answers whether what moved still means the same thing once detached from the workflow that created it. A Health Level Seven [HL7] version two [v2] feed can faithfully deliver an event. A relational load can preserve every source value. Neither guarantees that the receiving warehouse now possesses a clinically or operationally trustworthy fact.
 
 This is why so many so-called data quality complaints are actually representation failures. The warehouse may not be wrong in the crude sense. It may simply encode a source event at the wrong level of abstraction, with the wrong temporal anchor, the wrong person identity, the wrong facility attribution, or the wrong understanding of what “final,” “active,” “current,” or “encounter-linked” meant in the originating workflow.
-
-## System-Level Breakdown
 
 Start with the source landscape. In the VA world, one historically important fact is that VistA was not a single tidy monolith in practice. It has operated across many instances, facilities, packages, and locally conditioned workflows. That matters because warehousing begins before extraction. It begins with deciding what counts as the enterprise source of truth when the operational world is federated, uneven, and shaped by years of local adaptation.
 
@@ -45,8 +41,6 @@ A novice question is often whether the warehouse should be normalized or denorma
 
 Fast Healthcare Interoperability Resources [FHIR] adds an extra temptation here. People see a modern resource model and imagine that it can replace warehouse design. It cannot. FHIR is a transport and representation framework with strong value for interoperability and application integration, but warehouse questions remain warehouse questions. A resource such as Encounter or Observation can help standardize exchange, but enterprise analytics still requires explicit decisions about grain, history, correction logic, deduplication, terminology governance, longitudinal stitching, and fitness for use. A FHIR-shaped lake is not automatically an analytic model.
 
-## Failure Points
-
 The common failure modes are boring in outline and vicious in effect.
 
 Identity is usually first. A veteran may traverse multiple facilities, identifiers, episodes of care, and administrative contexts. If the enterprise key strategy is weak, every downstream measure inherits the weakness. Duplicate patients, broken merges, stale crosswalks, and ambiguous person matching do not merely create messy reports. They corrupt longitudinal analysis and can produce false utilization patterns, false readmission patterns, and false denominator counts.
@@ -63,8 +57,6 @@ Then there is local variation, the old veteran of every large healthcare enterpr
 
 Performance and scale can also distort design. Large VA warehousing programs attract demands for one platform to serve operations, quality, finance, executive reporting, research, and machine learning. That ambition is understandable and usually unhealthy unless bounded. The more use cases you pile onto a single semantic layer, the more you pressure it into ambiguity. Either it becomes so generic that every user must reinterpret it, or so specialized that it stops being shared infrastructure.
 
-## Deeper Truth
-
 The reason these failures persist is not that healthcare architects are dim or careless. It is that operational systems are built under pressures that warehouses merely inherit.
 
 Clinical systems record care under urgency, regulation, staffing limits, reimbursement rules, legacy application boundaries, and the need to keep the lights on. Their first obligation is not analytic elegance. It is to support action. That means many data elements are workflow-coupled artifacts rather than clean observations about the world. A date may indicate when something was keyed rather than when it occurred. A diagnosis may reflect billing, justification, suspicion, or administrative necessity rather than settled ontology. A location may reflect accountability routing more than physical presence. Warehouses discover this late and then call it messy data, when in fact it is the ordinary fingerprint of the institution’s operating logic.
@@ -76,8 +68,6 @@ Modernization complicates rather than abolishes this problem. Mixed-source reali
 Another deeper truth is that representation failures are attractive to mislabel as data quality failures because “quality” sounds fixable. It suggests better validation, stricter controls, and cleaner feeds. Sometimes that helps. But many warehouse defects arise because the enterprise has not decided what the data is supposed to mean outside the source workflow. No amount of null checks or referential integrity rules can repair an undefined concept. Governance must answer the semantic question first.
 
 The last hard truth is organizational. Data models often encode ownership boundaries more than reality. Domains that are tightly governed get crisp tables. Domains that are politically split get vague joins and unstable definitions. What looks like a technical inconsistency is often an organizational boundary frozen into schema.
-
-## Architectural Direction
 
 Begin with purpose, not platform. Do not start by asking what technology stack to use. Start by asking which decisions the warehouse must support and which questions must be answerable without local heroics. That single discipline prevents a great deal of architectural theatre.
 
