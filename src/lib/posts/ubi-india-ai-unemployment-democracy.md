@@ -1,12 +1,16 @@
 ---
 title: "Universal Basic Income in India After Work Stops Being a Promise"
 description: "A sharp look at Universal Basic Income in India if educated and skilled unemployment becomes catastrophic under Artificial Intelligence and robotics. The post treats UBI not as charity, but as constitutional shock absorption in a state weakened by corruption, inequality, and democratic decay."
+thumbnail : "/images/IMG-20260425-WA0008.jpg"
 date: "2026-04-25"
 category: "political economy"
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260425-WA0008.jpg" />
 
 Universal Basic Income [UBI, a regular cash payment made to people without a work test or poverty test] becomes a serious Indian question only when the old national bargain breaks: study hard, learn a skill, behave yourself, and somewhere, somehow, the economy will find a chair for you before the music stops. That bargain is already limping. If Artificial Intelligence [AI, software systems that perform tasks associated with human judgment, pattern recognition, language, prediction, and decision support] and robotics begin removing not merely drudgery but employable dignity from clerks, coders, drivers, nurses’ assistants, call-center workers, junior analysts, accountants, translators, tutors, warehouse staff, and the great educated crowd of résumé-bearing aspirants, then UBI stops being a drawing-room thought experiment and becomes a question of civil peace.
 
