@@ -1,7 +1,7 @@
 ---
 title: "The Four Fundamental Subspaces of Linear Algebra"
 description: "A lucid, technically careful explanation of the four fundamental subspaces in linear algebra: column space, nullspace, row space, and left nullspace. The post treats a matrix not as a grid of numbers but as a machine for moving, losing, and exposing information."
-thumbnail : "/images/IMG-20260425-WA0000.jpg"
+thumbnail: "/images/IMG-20260425-WA0000.jpg"
 date: "2026-04-25"
 category: "mathematics"
 published: true
@@ -70,21 +70,13 @@ The row space and column space have the same dimension. That shared dimension is
 
 The four dimensions then fall into place with accountant-like severity.
 
-$$
-\dim C(A)=r
-$$
+$$\dim C(A)=r$$
 
-$$
-\dim C(A^T)=r
-$$
+$$\dim C(A^T)=r$$
 
-$$
-\dim N(A)=n-r
-$$
+$$\dim N(A)=n-r$$
 
-$$
-\dim N(A^T)=m-r
-$$
+$$\dim N(A^T)=m-r$$
 
 This is the rank-nullity theorem and its companion structure. It says every input dimension is accounted for: either it contributes to the row space and can affect the output, or it disappears into the nullspace. Every output dimension is also accounted for: either it lies in the column space and can be produced, or it lies in the left nullspace and cannot.
 
@@ -104,9 +96,7 @@ Instead of demanding $Ax=b$, we ask for an $\hat{x}$ such that $A\hat{x}$ is as 
 
 The residual $r=b-A\hat{x}$ is the leftover. But it is not random leftover. At the least-squares solution, the residual is perpendicular to the column space. It lies in the left nullspace. This is why the normal equation appears:
 
-$$
-A^T(b-A\hat{x})=0
-$$
+$$A^T(b-A\hat{x})=0$$
 
 It is not a trick invented to torment students. It says the remaining error is orthogonal to everything the machine could have adjusted. No further movement inside the column space can reduce it.
 
