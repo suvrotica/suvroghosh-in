@@ -1,12 +1,17 @@
 ---
 title: "Mind Is What the Brain Does, Not a Ghost in the Attic"
 description: "A clear historical and scientific account of how the mind came to be understood as an emergent activity of the brain, and why popular language still keeps smuggling in little spirits wearing lab coats."
+thumbnail :  "/images/IMG-20260425-WA0012.jpg" 
 date: "2026-04-25"
 category: "Neuroscience"
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260425-WA0012.jpg" />
+
 
 The mind is not a mist floating above the brain; it is the brain in action, the way flame is not hidden inside a match but appears when chemistry, oxygen, temperature, and structure fall into the right quarrelsome arrangement.
 
