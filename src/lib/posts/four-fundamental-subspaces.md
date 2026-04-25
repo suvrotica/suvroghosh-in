@@ -14,7 +14,7 @@ color: "indigo"
 
 A matrix is not a spreadsheet with pretensions; it is a machine with habits, limits, blind spots, and a stern little constitution written in geometry.
 
-Write a matrix $A$ with $m$ rows and $n$ columns, and it immediately starts behaving like a device. It accepts an input vector $x$ from $\mathbb{R}^n$, chews on it through multiplication, and produces an output vector $b$ in $\mathbb{R}^m$. That sounds innocent enough, like a clerk stamping a form at a government office. But the moment you ask which outputs are possible, which inputs are indistinguishable, which demands are impossible, and what to do when reality refuses to fit the equation, the ordinary grid of numbers becomes something much more interesting. It becomes a map of information flow.
+Write a matrix $A$ with $m$ rows and $n$ columns, and it immediately starts behaving like a device. It accepts an input vector $x$ from $\mathbb R^n$, chews on it through multiplication, and produces an output vector $b$ in $\mathbb R^m$. That sounds innocent enough, like a clerk stamping a form at a government office. But the moment you ask which outputs are possible, which inputs are indistinguishable, which demands are impossible, and what to do when reality refuses to fit the equation, the ordinary grid of numbers becomes something much more interesting. It becomes a map of information flow.
 
 The four fundamental subspaces are that map.
 
@@ -48,7 +48,7 @@ The row space explains which part of the input the matrix actually listens to.
 
 The rows of $A$ define the measurements or constraints applied to the input. Each row takes a dot product with $x$. Each row asks a particular question of the input vector. The row space $C(A^T)$ is the span of these questions. It is the part of input space that is visible to the matrix.
 
-This is the first great perpendicular fact: the row space and nullspace are orthogonal complements inside $\mathbb{R}^n$. Every input vector can be split uniquely into a visible part in the row space and an invisible part in the nullspace. The matrix acts only on the visible part. The invisible part is carried along mathematically, but it contributes nothing to the output.
+This is the first great perpendicular fact: the row space and nullspace are orthogonal complements inside $\mathbb R^n$. Every input vector can be split uniquely into a visible part in the row space and an invisible part in the nullspace. The matrix acts only on the visible part. The invisible part is carried along mathematically, but it contributes nothing to the output.
 
 That is a quietly enormous statement. It means the input space is not a fog. It is cleanly divided into what the matrix can sense and what it cannot. The row space is the listening surface. The nullspace is the padded room.
 
@@ -56,9 +56,9 @@ This also gives a useful correction to a common misunderstanding. When a model f
 
 The left nullspace is the space of impossible demands.
 
-The column space lives in the output space $\mathbb{R}^m$, but it usually does not fill all of it. When it does not, there are output directions the matrix can never produce. Those directions form the left nullspace $N(A^T)$. It consists of all vectors $y$ such that $A^Ty=0$. Geometrically, these are the directions perpendicular to every column of $A$.
+The column space lives in the output space $\mathbb R^m$, but it usually does not fill all of it. When it does not, there are output directions the matrix can never produce. Those directions form the left nullspace $N(A^T)$. It consists of all vectors $y$ such that $A^Ty=0$. Geometrically, these are the directions perpendicular to every column of $A$.
 
-This is the second great perpendicular fact: the column space and the left nullspace are orthogonal complements inside $\mathbb{R}^m$. Every possible target $b$ can be split into a reachable component in the column space and an unreachable component in the left nullspace.
+This is the second great perpendicular fact: the column space and the left nullspace are orthogonal complements inside $\mathbb R^m$. Every possible target $b$ can be split into a reachable component in the column space and an unreachable component in the left nullspace.
 
 The left nullspace is therefore a certificate of impossibility. If some $y$ in $N(A^T)$ has a nonzero dot product with $b$, then $b$ cannot lie in the column space. The target contains a component in a forbidden direction. The machine cannot produce it.
 
@@ -70,13 +70,21 @@ The row space and column space have the same dimension. That shared dimension is
 
 The four dimensions then fall into place with accountant-like severity.
 
-$$\dim C(A)=r$$
+$$
+\dim C(A)=r
+$$
 
-$$\dim C(A^T)=r$$
+$$
+\dim C(A^T)=r
+$$
 
-$$\dim N(A)=n-r$$
+$$
+\dim N(A)=n-r
+$$
 
-$$\dim N(A^T)=m-r$$
+$$
+\dim N(A^T)=m-r
+$$
 
 This is the rank-nullity theorem and its companion structure. It says every input dimension is accounted for: either it contributes to the row space and can affect the output, or it disappears into the nullspace. Every output dimension is also accounted for: either it lies in the column space and can be produced, or it lies in the left nullspace and cannot.
 
@@ -92,11 +100,13 @@ In real applications, $b$ often does not lie in the column space. The target is 
 
 Least squares is what we do when exact equality is unavailable but disciplined approximation remains possible.
 
-Instead of demanding $Ax=b$, we ask for an $\hat{x}$ such that $A\hat{x}$ is as close as possible to $b$. Geometrically, we project $b$ onto the column space. The best attainable output is the shadow of $b$ on the space the matrix can actually produce.
+Instead of demanding $Ax=b$, we ask for an $\hat x$ such that $A\hat x$ is as close as possible to $b$. Geometrically, we project $b$ onto the column space. The best attainable output is the shadow of $b$ on the space the matrix can actually produce.
 
-The residual $r=b-A\hat{x}$ is the leftover. But it is not random leftover. At the least-squares solution, the residual is perpendicular to the column space. It lies in the left nullspace. This is why the normal equation appears:
+The residual $r=b-A\hat x$ is the leftover. But it is not random leftover. At the least-squares solution, the residual is perpendicular to the column space. It lies in the left nullspace. This is why the normal equation appears:
 
-$$A^T(b-A\hat{x})=0$$
+$$
+A^T(b-A\hat x)=0
+$$
 
 It is not a trick invented to torment students. It says the remaining error is orthogonal to everything the machine could have adjusted. No further movement inside the column space can reduce it.
 
