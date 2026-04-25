@@ -1,4 +1,3 @@
-explaining-the-healthcare-it-gap-as-continuity.md
 ---
 title: "Explaining my gap in conventional employment"
 description: "A first-person account of a healthcare IT career gap understood not as absence, but as a difficult and useful continuation of architectural work across data, systems, markets, and representation."
