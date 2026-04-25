@@ -1,12 +1,16 @@
 ---
 title: "How VA Healthcare Data Systems Work: From MUMPS to SQL"
 description: "A technical explanation of how Veterans Affairs healthcare data moves from VistA’s MUMPS and FileMan world into SQL warehouses, and why that translation is never merely a database conversion."
+thumbnail :  "/images/IMG-20260425-WA0005.jpg" 
 date: "2026-04-25"
 category: "Healthcare IT"
 published: true
 color: "blue"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260425-WA0005.jpg" />
 
 The first thing to understand about Veterans Affairs healthcare data is that it was not born in tables. It was born in globals: compact, hierarchical, persistent structures in MUMPS [Massachusetts General Hospital Utility Multi-Programming System, a language and database environment designed for sparse clinical data], where the database is not a separate warehouse of nouns but part of the living nervous system of the application itself.
 
