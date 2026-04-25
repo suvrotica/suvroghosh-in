@@ -2,12 +2,17 @@ explaining-the-healthcare-it-gap-as-continuity.md
 ---
 title: "Explaining my gap in conventional employment"
 description: "A first-person account of a healthcare IT career gap understood not as absence, but as a difficult and useful continuation of architectural work across data, systems, markets, and representation."
+thumbnail : "/images/IMG-20260425-WA0007.jpg"
 date: "2026-04-25"
 category: "Healthcare IT"
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260425-WA0007.jpg" />
+
 
 The easiest thing to misunderstand about a career gap is that the calendar looks empty from a distance, the way a hospital corridor looks quiet at midnight until someone opens a chart, a database job fails, or a clinician says the report is wrong.
 
