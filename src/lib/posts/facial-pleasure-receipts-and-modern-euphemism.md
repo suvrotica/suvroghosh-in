@@ -1,12 +1,16 @@
 ---
 title: "Facial Pleasure Receipts"
 description: "A meditation on modern euphemism, synthetic happiness, and the social requirement to smile while the machinery eats quietly through the floorboards."
+thumbnail :  "/images/IMG-20260427-WA0001.jpg" 
 date: "2026-04-27"
 category: "Culture"
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260427-WA0001.jpg" />
 
 The modern face is no longer a face. It is a notarized document. It certifies enthusiasm, compliance, resilience, team spirit, emotional maturity, spiritual hygiene, market readiness, and the absence of inconvenient despair. The old human face, with its storms and bad weather, has been replaced by a service counter display: Thank you for your suffering. Please rate this experience.
 
