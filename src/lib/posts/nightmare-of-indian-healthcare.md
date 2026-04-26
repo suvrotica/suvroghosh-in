@@ -1,12 +1,16 @@
 ---
 title: "The Nightmare of Indian Healthcare for the Ordinary Patient"
 description: "Indian healthcare has improved on paper, yet for the ordinary patient without money, influence, or elite access, illness still behaves like a trapdoor. This post examines the financial, institutional, clinical, and human architecture of that nightmare."
+thumbnail : "/images/IMG-20260427-WA0002.jpg"
 date: "2026-04-27"
 category: "Healthcare"
 published: true
 color: "#111827"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260427-WA0002.jpg" />
 
 Indian healthcare becomes a horror story when illness turns from a biological event into a liquidity crisis.
 
