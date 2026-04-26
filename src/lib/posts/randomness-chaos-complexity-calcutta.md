@@ -1,12 +1,16 @@
 ---
 title: "Why Myths Multiply When Randomness Is Left Unexplained"
 description: "A technically serious but readable argument for why ordinary people need a working grasp of randomness, chaos, and complexity, especially in a crowded, rumor-rich, infrastructure-fragile city like Calcutta."
+thumbnail : "/images/IMG-20260426-WA0006.jpg"
 date: "2026-04-26"
 category: "Mental Models"
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260426-WA0006.jpg" />
 
 Bad explanations breed fastest where uncertainty is real, consequences are personal, and nobody has been taught the grammar of chance.
 
