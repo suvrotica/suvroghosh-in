@@ -271,7 +271,7 @@
 				<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300 list-disc list-inside">
 					<li>Full scholarship for MS in the United States</li>
 					<li>WBJEE Rank: 87 (Engineering) 55 (Medical)</li>
-					<li>Experience across USA, India, New Zealand, Fiji, Nepal</li>
+					<li>Experience across USA, India, New Zealand, Fiji, Nepal, UAE, Kuwait</li>
 				</ul>
 			</div>
 		</div>
