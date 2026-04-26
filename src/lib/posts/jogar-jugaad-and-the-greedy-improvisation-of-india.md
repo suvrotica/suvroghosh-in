@@ -1,12 +1,16 @@
 ---
 title: "Jogar, Jugaad, and the Greedy Improvisation of India"
 description: "A sharp essay on how improvisation, once a survival skill, mutates into a national operating system when detached from competence, ethics, and accountability."
+thumbnail : "/images/IMG-20260426-WA0001.jpg" 
 date: "2026-04-26"
 category: "India"
 published: true
 color: "#b45309"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260426-WA0001.jpg" />
 
 Jogar in Bengali and jugaad in Hindi began as the art of making do, but in contemporary India it has swollen into something darker: the doctrine that any rule, system, queue, standard, office, law, design, appointment, exam, bridge, hospital bed, tender, certificate, or truth itself may be bent, patched, bribed, charmed, threatened, faked, outsourced, or cosmetically repaired so long as one gets through the afternoon.
 
