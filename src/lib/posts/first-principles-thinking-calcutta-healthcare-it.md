@@ -1,12 +1,16 @@
 ---
 title: "First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality"
 description: "A technical and human argument for first principles thinking as a survival tool, an architectural discipline, and a way to separate reality from inherited vocabulary in healthcare IT."
+thumbnail :  "/images/IMG-20260425-WA0009.jpg" 
 date: "2026-04-26"
 category: "Useful Mental Models"
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260425-WA0009.jpg" />
 
 First principles thinking begins when the furniture of inherited explanation starts looking suspicious.
 
