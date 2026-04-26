@@ -1,12 +1,16 @@
 ---
 title: "Healthcare AI and the Wrong Objective"
 description: "A technical warning about future healthcare Artificial Intelligence systems built on distorted objectives, brittle representations, historical bias, and deployment incentives that confuse measurable performance with clinical truth."
+thumbnail : "/images/IMG-20260426-WA0002.jpg"
 date: "2026-04-26"
 category: "Healthcare AI"
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260426-WA0002.jpg" />
 
 Healthcare Artificial Intelligence [AI, machine systems that learn patterns from data and use those patterns to generate predictions, recommendations, classifications, or actions] will not fail first because it lacks cleverness; it will fail because cleverness is the easiest part to optimize and the hardest part to govern.
 
