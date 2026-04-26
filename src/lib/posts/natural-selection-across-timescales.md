@@ -1,12 +1,16 @@
 ---
 title: "Natural Selection Is Not Just About Animals"
 description: "Natural selection is a general pattern: variation is tested against constraints, and some forms persist while others vanish. The same logic appears across biology, geology, cosmology, engineering, institutions, and civilization, though the clock runs at wildly different speeds."
+thumbnail : "/images/IMG-20260426-WA0004.jpg" 
 date: "2026-04-26"
 category: "Systems Thinking"
 published: true
 color: "green"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260426-WA0004.jpg" />
 
 Selection is what happens when reality keeps score and does not accept excuses.
 
