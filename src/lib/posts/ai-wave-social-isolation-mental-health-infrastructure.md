@@ -1,7 +1,7 @@
 ---
 title: "The Mental Health System Will Meet the AI Wave at Its Weakest Joint"
 description: "A technical and humane look at how social disconnection, economic displacement, and fragile care infrastructure may collide as Artificial Intelligence reshapes work and identity."
-thumbnail : "/images/IMG-20260422-WA0012.jpg" 
+thumbnail : "/images/IMG-20260425-WA0010.jpg" 
 date: "2026-04-26"
 category: "Healthcare IT"
 published: true
