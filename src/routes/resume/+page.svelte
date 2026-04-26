@@ -2,46 +2,49 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 
-	const title = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Specialist';
-	const description = 'Senior Healthcare IT Architect and Clinical Data Systems Specialist with 15+ years of experience across US healthcare systems, VA research environments, and international clinical data platforms.';
+	const title = 'Suvro Ghosh | Senior Healthcare IT Architect & AI Data Specialist';
+	const description = 'Senior Healthcare IT Architect and former Health-Tech Founder with 15+ years engineering clinical data systems (HL7, FHIR, CDISC) and preparing healthcare data substrates for Applied AI.';
 
-	const summaryParagraphs = [
+	const executiveSummary = [
+		"Senior Healthcare IT Architect and former Health-Tech Founder with 15+ years of experience engineering clinical data systems (HL7, FHIR, CDISC).",
+		"Having bootstrapped proprietary HIE and CTMS platforms, I specialize in the critical intersection of Applied AI and healthcare data substrates.",
+		"I partner with global organizations to architect robust data models that prevent expensive AI failures, ensuring complex clinical data is structured, meaningful, and AI-ready."
+	];
+
+	const corePhilosophy = [
 		"I’ve spent over 15 years working across US healthcare systems, VA research environments, and clinical data platforms where the core problem was never just scale or performance. It was meaning—what the data actually represents, and how much of that survives once you start moving it around.",
 		"Most of that work has involved EHR-derived data, HL7 pipelines, CDISC-based clinical trial systems, and research datasets stitched together from very different sources. Storage is rarely the constraint. Representation is where things either hold or break.",
-		"Working in those systems, you see quickly that what looks like a data problem is usually a modeling problem, and what looks like integration is often just translation with loss.",
-		"That’s also where my interest in AI in healthcare comes from. Not from the models themselves, but from how they interact with data that is structurally misaligned with the questions we expect them to answer.",
-		"AI doesn’t fail in healthcare because the models are weak. It fails because the substrate they operate on was never designed for that kind of inference.",
-		"That’s the layer I’ve worked in, and the one I’m interested in pushing further."
+		"Working in those systems, you see quickly that what looks like a data problem is usually a modeling problem, and what looks like integration is often just translation with loss."
 	];
 
 	const coreSkills = [
 		{ category: 'Applied AI & Orchestration', items: 'Agentic Workflows, MCP (Model Context Protocol), RAG, Vector Databases, Tool Calling' },
-		{ category: 'Healthcare Data Systems', items: 'HL7, CPT, ICD-9/10/11, CDISC, SDTM' },
-		{ category: 'Data Engineering', items: 'SQL Server, SSIS (ETL), Data Warehousing' },
+		{ category: 'Healthcare Data Systems', items: 'HL7, FHIR R4/R5, CPT, ICD-9/10/11, CDISC, SDTM' },
+		{ category: 'Data Engineering', items: 'SQL Server, SSIS (ETL), Data Warehousing, Data Governance' },
 		{ category: 'Clinical Trials', items: 'CDMS, EDC, eCRF Design, Data Validation' },
 		{ category: 'Analytics', items: 'SAS, SPSS, SQL Analytics' },
 		{ category: 'Programming', items: 'C, C++, VBA, Perl' },
 		{ category: 'Databases', items: 'SQL Server, MS Access, MySQL' },
-		{ category: 'Architecture', items: 'Data Modeling (Relational, Dimensional, Hybrid)' },
+		{ category: 'Architecture', items: 'Data Modeling (Relational, Dimensional, Hybrid), Interoperability' },
 		{ category: 'Cloud & Systems', items: 'SaaS, Distributed Systems (conceptual)' },
-		{ category: 'Leadership', items: 'Project Management, Team Leadership, Stakeholder Coordination' }
+		{ category: 'Leadership', items: 'Technical Founder, Architecture Strategy, Stakeholder Coordination' }
 	];
 
 	const experiences = [
 		{
-			title: 'Consultant',
+			title: 'Founder & Principal IT Architect',
 			company: 'ClinZen LLC / ClinZen Software Pvt Ltd',
 			period: '2015 – Present',
 			videos: ['https://youtu.be/FkHa3W4pQME?si=S9mLi5y04An7A--I'],
 			details: [
-				'Designed and built clinical trial data systems where regulatory compliance, data integrity, and analytical usability had to coexist, often under conflicting constraints.',
-				'Built mobile-enabled tools aligned with CDISC standards. Reduced operational friction in trial execution, but more importantly exposed where standardization enforces structure without guaranteeing meaning.',
-				'Led full lifecycle: system architecture → data modeling → validation logic → database lock.',
-				'Worked across Phase II/III trials where the system’s primary function was not data capture, but controlled interpretation.'
+				'Bootstrapped and architected proprietary Health Information Exchange (HIE) and Clinical Trial Management System (CTMS) platforms, bridging the gap between legacy clinical data and Applied AI readiness.',
+				'Designed mobile-enabled clinical data tools aligned with CDISC standards, accelerating trial execution and ensuring strict regulatory compliance for Phase II/III trials.',
+				'Led full lifecycle development: system architecture → data modeling → validation logic → database lock, ensuring data integrity and analytical usability under conflicting constraints.',
+				'Operated as an independent architect partnering with healthcare clients to navigate interoperability challenges and translate clinical workflows into structured, scalable semantics.'
 			]
 		},
 		{
-			title: 'Consultant',
+			title: 'Cloud Solutions Architect',
 			company: 'TenZillionClouds Pvt Ltd',
 			period: 'Early 2016 and 2019',
 			videos: [
@@ -50,7 +53,7 @@
 			],
 			details: [
 				'Focused on cloud-native thinking in environments where legacy assumptions still dominate.',
-				'Explored SaaS architectures for taxicab systems where multi-tenancy introduces not just scaling concerns, but semantic isolation problems.'
+				'Explored SaaS architectures for complex systems where multi-tenancy introduces not just scaling concerns, but semantic isolation problems.'
 			]
 		},
 		{
@@ -136,12 +139,12 @@
 <section class="mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10 text-center md:text-left">
 		<h1 class="mb-2 text-4xl font-bold md:text-5xl tracking-tight text-neutral-900 dark:text-neutral-100">Suvro Ghosh</h1>
-		<h2 class="text-neutral-600 dark:text-neutral-400 mb-6 text-xl font-medium tracking-wide">Healthcare IT Architect & Clinical Data Systems Specialist</h2>
+		<h2 class="text-neutral-600 dark:text-neutral-400 mb-6 text-xl font-medium tracking-wide">Senior Healthcare IT Architect & AI Data Specialist</h2>
 		
 		<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-bold text-neutral-600 dark:text-neutral-400 md:justify-start">
 			<span class="flex items-center gap-1">
 				<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-				Kolkata, India | Open to Remote / Hybrid
+				Open to Relocation (US/EU/Gulf) / Remote
 			</span>
 			<span class="hidden md:inline">|</span>
 			<a href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278" target="_blank" rel="noopener noreferrer" class="hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors flex items-center gap-1">
@@ -153,13 +156,22 @@
 		</div>
 	</header>
 
-	<div class="card mb-8">
-		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Professional Summary</h3>
-		<div class="space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed">
-			{#each summaryParagraphs as paragraph, i}
-				<p class={i === 0 ? "font-bold text-lg text-neutral-900 dark:text-neutral-100" : ""}>
+	<div class="card mb-8 bg-neutral-100 dark:bg-neutral-800">
+		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Executive Summary</h3>
+		<div class="space-y-4 text-neutral-800 dark:text-neutral-200 leading-relaxed text-lg">
+			{#each executiveSummary as paragraph, i}
+				<p class={i === 0 ? "font-bold" : ""}>
 					{paragraph}
 				</p>
+			{/each}
+		</div>
+	</div>
+
+	<div class="card mb-8">
+		<h3 class="mb-4 text-2xl font-bold border-b border-neutral-300 dark:border-neutral-700 pb-2">Core Philosophy</h3>
+		<div class="space-y-4 text-neutral-700 dark:text-neutral-300 leading-relaxed italic">
+			{#each corePhilosophy as paragraph}
+				<p>{paragraph}</p>
 			{/each}
 		</div>
 	</div>
