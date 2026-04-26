@@ -1,12 +1,16 @@
 ---
 title: "Maa Sitala, Maa Manasa, and the Bad Public Health Architecture of Fear"
 description: "A technical and historical reading of Bengal’s disease and serpent goddesses, their movement from local folklore into the Hindu pantheon, and why rural dependence on superstition, quacks, and charlatans persists where trustworthy healthcare remains thin."
+thumbnail : "/images/IMG-20260426-WA0014.jpg"
 date: "2026-04-26"
 category: "Public Health"
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260426-WA0014.jpg" />
 
 A society that turns smallpox and snakebite into goddesses is not being quaint; it is building an emergency operating system with the materials it has.
 
