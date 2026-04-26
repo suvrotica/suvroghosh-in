@@ -1,12 +1,16 @@
 ---
 title: "The Negative Infinity Before the Singularity"
 description: "Artificial Intelligence in India will not arrive first as a gleaming utopia. It will arrive, for many people, as fraud, blackmail, job destruction, disinformation, and only later—if we build properly—as medicine, access, and repair."
+thumbnail : "/images/IMG-20260426-WA0010.jpg"
 date: "2026-04-26"
 category: "Healthcare AI"
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260426-WA0010.jpg" />
 
 Artificial Intelligence [AI, software systems that learn patterns from data and generate predictions, text, images, voice, video, or decisions] is not morally improved by being technically impressive; a knife remains a knife whether it was forged by a village blacksmith or optimized by a billion-parameter model humming in a data center.
 
