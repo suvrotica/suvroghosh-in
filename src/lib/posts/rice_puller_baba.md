@@ -1,6 +1,6 @@
 ---
 title: "রাইস পুলার বাবা"
-thumbnail : "/images/file_000000000e0871fa975ca92d5a27d81d.jpg"
+thumbnail : "/images/IMG-20260427-WA0016.jpg"
 date: "2026-04-27"
 description: "একটি বিশেষ ভিডিও উপস্থাপনা - রাইস পুলার বাবা।"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
