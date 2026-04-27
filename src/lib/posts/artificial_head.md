@@ -9,7 +9,7 @@ published: true
 ---
 
 <Vid 
-  src="Artificial_Head.mp4" 
+  src="My_Human_Throat.mp4" 
   caption="Artificial Head - An urban soft rock exploration." 
   layout="block" 
   size={1} 
