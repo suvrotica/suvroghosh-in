@@ -3,6 +3,7 @@ title: "আয়নার অন্য পারে"
 date: "2026-04-27"
 description: "একটি বিশেষ ভিডিও উপস্থাপনা - আয়নার অন্য পারে।"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+category: "AI Music Song"
 published: true
 ---
 
