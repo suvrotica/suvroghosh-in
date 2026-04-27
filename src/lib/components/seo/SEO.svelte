@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Import the master defaults we just created in seo.ts
 	// (Adjust the import path based on where your seo.ts file lives)
-	import { siteSEO, websiteSchema } from './seo';
+	import { siteSEO, websiteSchema } from './SEO';
 	type Props = {
 		title?: string;
 		description?: string;
