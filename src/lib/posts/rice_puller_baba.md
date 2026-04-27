@@ -9,7 +9,7 @@ published: true
 ---
 
 <Vid 
-  src="rice_puller_baba.mp4" 
+  src="স্ক্যামের_গায়ে_চন্দন.mp4" 
   caption="রাইস পুলার বাবা - একটি ভিডিও চিত্র।" 
   layout="block" 
   size={1} 
