@@ -6,8 +6,13 @@
 
 	let { data }: { data: PageData } = $props();
 </script>
-
-<SEO title={siteTitleLong} description={siteDescription} />
+<SEO 
+    {...siteSEO} 
+    schema={{
+        '@context': 'https://schema.org',
+        '@graph': [personSchema, websiteSchema]
+    }} 
+/>
 
 <section class="mb-12 card bg-white/50 dark:bg-neutral-900/50 text-center md:text-left border-l-4 border-l-gold">
 	<h1 class="text-4xl md:text-6xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">

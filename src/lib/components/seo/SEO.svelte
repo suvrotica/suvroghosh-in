@@ -1,22 +1,34 @@
 <script lang="ts">
+	// Import the master defaults we just created in seo.ts
+	// (Adjust the import path based on where your seo.ts file lives)
+	import { siteSEO, websiteSchema } from './seo';
 	type Props = {
-		title: string;
-		description: string;
+		title?: string;
+		description?: string;
 		canonicalUrl?: string;
 		ogImageUrl?: string;
 		ogImageAlt?: string;
 		keywords?: string[];
 		schema?: Record<string, any>;
+		type?: 'website' | 'article';
+		publishedTime?: string;
+		modifiedTime?: string;
+		author?: string;
 	};
 
+	// We set the default values to fall back to your new SEO profile
 	let {
-		title,
-		description,
-		canonicalUrl,
-		ogImageUrl,
-		ogImageAlt,
-		keywords,
-		schema = undefined
+		title = siteSEO.title,
+		description = siteSEO.description,
+		canonicalUrl = siteSEO.canonicalUrl,
+		ogImageUrl = siteSEO.ogImageUrl,
+		ogImageAlt = siteSEO.ogImageAlt,
+		keywords = siteSEO.keywords,
+		schema = websiteSchema, // Defaults to WebSite schema, override with BlogPosting for articles
+		type = 'website',
+		publishedTime,
+		modifiedTime,
+		author = 'Suvro Ghosh'
 	}: Props = $props();
 </script>
 
@@ -28,12 +40,26 @@
 		<link rel="canonical" href={canonicalUrl} />
 	{/if}
 
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content={type} />
+	<meta property="og:site_name" content="SuvroGhosh.In" />
+	<meta name="author" content={author} />
+	
+	<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+	{#if type === 'article' && publishedTime}
+		<meta property="article:published_time" content={publishedTime} />
+	{/if}
+
+	{#if type === 'article' && modifiedTime}
+		<meta property="article:modified_time" content={modifiedTime} />
+	{/if}
+
 	{#if canonicalUrl}
 		<meta property="og:url" content={canonicalUrl} />
 	{/if}
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
+	
 	{#if ogImageUrl}
 		<meta property="og:image" content={ogImageUrl} />
 	{/if}
