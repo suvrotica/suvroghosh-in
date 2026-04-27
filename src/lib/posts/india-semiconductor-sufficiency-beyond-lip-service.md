@@ -1,7 +1,7 @@
 ---
 title: "India’s Semiconductor Problem Is Not a Missing Slogan"
 description: "India is late to semiconductor manufacturing not because it lacks intelligence, ambition, or PowerPoint confidence, but because chips are an industrial civilization compressed into silicon. The useful question is not whether India can become self-sufficient, but which parts of the stack it can master, in what order, and with what honesty."
-thumbmail :  "/images/IMG-20260427-WA0014.jpg"
+thumbnail :  "/images/IMG-20260427-WA0014.jpg"
 date: "2026-04-27"
 category: "Technology"
 published: true
