@@ -1,12 +1,16 @@
 ---
 title: "The Premature Bedside Manner of Large Language Models"
 description: "A balanced argument against cavalier deployment of LLMs in emotionally and clinically sensitive settings, without pretending the technology is useless or that regulation can be copied neatly from drug trials."
+thumbnail :  "/images/IMG-20260427-WA0008.jpg" 
 date: "2026-04-27"
 category: "Healthcare IT"
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="IMG-20260427-WA0008.jpg" />
 
 Large Language Models [LLMs, statistical systems that generate text, code, images, or other outputs by modeling patterns in data] are being released into human dependence faster than we have learned how to measure their injuries.
 
