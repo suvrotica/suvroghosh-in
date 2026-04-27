@@ -1,5 +1,6 @@
 ---
 title: "আয়নার অন্য পারে"
+thumbnail : "/images/IMG-20260427-WA0002.jpg"
 date: "2026-04-27"
 description: "একটি বিশেষ ভিডিও উপস্থাপনা - আয়নার অন্য পারে।"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
