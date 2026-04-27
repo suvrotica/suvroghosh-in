@@ -1,33 +1,22 @@
 <script lang="ts">
     import type { PageData } from './$types';
-    // Import your existing PostGallery or UI components if needed
-    // import PostGallery from '$lib/components/blog/PostGallery.svelte';
+    import PostGallery from '$lib/components/blog/PostGallery.svelte';
+    import SEO from '$lib/components/seo/SEO.svelte';
 
     let { data }: { data: PageData } = $props();
 </script>
 
-<svelte:head>
-    <title>{data.category} IT Engineering | SuvroGhosh.In</title>
-    <meta name="description" content="Healthcare IT engineering articles categorized under {data.category}." />
-</svelte:head>
+<SEO 
+    title="{data.categoryDisplay} | SuvroGhosh.In" 
+    description="Essays by Suvro Ghosh on {data.categoryDisplay}, with a focus on systems, evidence, and technology."
+    canonicalUrl="https://www.suvroghosh.in/blog/{data.categorySlug}"
+/>
 
 <section class="category-layout">
     <header class="category-header">
-        <h1>{data.category}</h1>
-        <p>Exploring concepts, workflows, and code in {data.category}.</p>
+        <h1>{data.categoryDisplay}</h1>
+        <p>Exploring concepts, systems, and logic in {data.categoryDisplay}.</p>
     </header>
 
-    <div class="category-grid">
-        {#each data.posts as post}
-            <article class="post-card">
-                <a href="/blog/{post.slug}" class="post-link">
-                    <h2>{post.title}</h2>
-                    {#if post.description}
-                        <p>{post.description}</p>
-                    {/if}
-                    <time datetime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
-                </a>
-            </article>
-        {/each}
-    </div>
+    <PostGallery posts={data.posts} />
 </section>
