@@ -1,7 +1,7 @@
 <script lang="ts">
 	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	import { siteSEO, personSchema, websiteSchema } from '$lib/components/seo/SEO';
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteTitleLong, siteDescription } from '$lib/components/seo/SEO';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
