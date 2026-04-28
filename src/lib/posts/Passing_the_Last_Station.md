@@ -1,6 +1,6 @@
 ---
 title: "Passing_the_Last_Station"
-thumbnail : "/images/IMG-20260427-WA0002.jpg"
+thumbnail : "/images/Resize_20260428_134350_0013.jpg"
 date: "2026-04-27"
 tags: ["Video", "Music", "SuvroGhosh"]
 category: "AI Music Song"
