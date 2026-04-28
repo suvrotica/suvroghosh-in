@@ -1,13 +1,17 @@
 ---
 title: "When Structure Loses Its Map"
 description: "A reflection on the deaths of Zamil Limon and Nahida Bristy, and how modern institutions can appear orderly while losing the practical ability to see danger moving through their own seams."
+thumbnail : "/images/Compress_20260428_113403_3563.jpg"
 date: "2026-04-28"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "Structured Society", "Institutional Failure", "Public Court Documents", "Criminal Case", "Murder Case", "Zamil Limon", "Nahida Bristy", "Bangladeshi Doctoral Students", "Bangladeshi Students", "Doctoral Students", "International Students", "University of South Florida", "USF", "Graduate Students", "Campus Safety", "Off-Campus Housing", "Student Safety", "Social Architecture", "Institutional Architecture", "Systems Thinking", "Bureaucracy", "Governance", "Risk Signals", "Situational Awareness", "Data Quality", "Representation Failure", "Ontology", "Semantic Meaning", "Late Binding", "Early Warning Systems", "Police Investigation", "Legal Records", "Due Process", "Civil Liberties", "AI Ethics", "ChatGPT", "Digital Evidence", "Forensic Evidence", "Public Safety", "Violence Prevention", "Social Fragmentation", "Immigrant Experience", "Academic Mobility", "Higher Education", "America", "Bangladesh", "Sociology", "Architecture of Failure", "Modern Institutions", "Public Records", "Longform Essay"]
 category: "Society"
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260428_113403_3563.jpg" />
 
 A structured society does not fail only when it collapses into mobs and bonfires; it can also fail while the Wi-Fi works, the court portal updates, the university sends emails, the apartment lease remains active, the police forms are properly filled, and every institution involved continues to resemble itself from the outside.
 
