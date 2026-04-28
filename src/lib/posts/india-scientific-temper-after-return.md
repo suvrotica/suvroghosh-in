@@ -1,6 +1,7 @@
 ---
 title: "The Country That Built Rockets but Still Consults the Stars"
 description: "A returning Indian looks at the strange coexistence of technical brilliance and social superstition, and asks why scientific temper remains so thinly rooted in everyday life."
+thumbnail : "/images/IMG-20260428-WA0001.jpg"
 date: "2026-04-28"
 category: "Society"
 published: true
@@ -8,6 +9,8 @@ color: "amber"
 ---
 
 <TTS />
+
+<Pi src="IMG-20260428-WA0001.jpg" />
 
 India’s problem is not that it lacks intelligence; it is that intelligence here is too often trained to pass examinations, obey elders, worship credentials, fear social exile, and then quietly take a horoscope seriously before booking a wedding hall.
 
