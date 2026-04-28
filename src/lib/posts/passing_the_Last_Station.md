@@ -10,8 +10,7 @@ published: true
 
 <Vid 
   src="Passing_the_Last_Station.mp4" 
-  caption="আয়নার অন্য পারে - একটি ভিডিও চিত্র।" 
+  caption="The Last Station" 
   layout="block" 
   size={1} 
 />
-
