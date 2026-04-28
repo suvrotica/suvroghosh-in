@@ -45,12 +45,12 @@ function rehypeSquareBrackets() {
 							// If the chunk is our bracketed text, wrap it in a styled span
 							if (part.startsWith('[') && part.endsWith(']')) {
 								return {
-									type: 'element',
-									tagName: 'span',
-									// Using Tailwind 4 classes to make it darker and slightly bolder
-									properties: { className: ['font-semibold', 'text-neutral-950', 'dark:text-white'] },
-									children: [{ type: 'text', value: part }]
-								};
+		type: 'element',
+		tagName: 'span',
+		// Changed to muted grays to sink closer into the background
+		properties: { className: ['font-semibold', 'text-neutral-400', 'dark:text-neutral-600'] },
+		children: [{ type: 'text', value: part }]
+	};
 							}
 							// Otherwise, leave it as normal text
 							return { type: 'text', value: part };
