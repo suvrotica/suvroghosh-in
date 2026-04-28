@@ -12,7 +12,6 @@ import Yt from '$lib/components/blog/YouTube.svelte';
 import Yc from '$lib/components/blog/YtCredit.svelte';
 import Dl from '$lib/components/blog/Doggerel.svelte';
 import TTS from '$lib/components/blog/TTS.svelte';
-import Vid from '$lib/components/blog/PostVideo.svelte';
 `;
 
 const autoImport = {
@@ -26,6 +25,50 @@ const autoImport = {
 	}
 };
 
+// 1. Define a custom rehype plugin to darken text inside square brackets
+function rehypeSquareBrackets() {
+	return (tree) => {
+		function walk(node) {
+			// Skip code blocks, inline code, and links to avoid altering their contents
+			if (node.tagName === 'code' || node.tagName === 'pre' || node.tagName === 'a') return;
+			
+			if (node.children) {
+				for (let i = 0; i < node.children.length; i++) {
+					const child = node.children[i];
+					
+					// Look for text nodes containing '['
+					if (child.type === 'text' && child.value && child.value.includes('[')) {
+						// Split by [...] keeping the bracketed text intact in the array
+						const parts = child.value.split(/(\[.*?\])/);
+						
+						const newNodes = parts.map(part => {
+							// If the chunk is our bracketed text, wrap it in a styled span
+							if (part.startsWith('[') && part.endsWith(']')) {
+								return {
+									type: 'element',
+									tagName: 'span',
+									// Using Tailwind 4 classes to make it darker and slightly bolder
+									properties: { className: ['font-semibold', 'text-neutral-950', 'dark:text-white'] },
+									children: [{ type: 'text', value: part }]
+								};
+							}
+							// Otherwise, leave it as normal text
+							return { type: 'text', value: part };
+						}).filter(n => n.type !== 'text' || n.value !== ''); // Drop empty string nodes
+						
+						// Replace the original text node with our new mixed nodes
+						node.children.splice(i, 1, ...newNodes);
+						i += newNodes.length - 1; // Adjust loop index after splice
+					} else {
+						walk(child); // Recursively walk down the AST
+					}
+				}
+			}
+		}
+		walk(tree);
+	};
+}
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
@@ -37,7 +80,8 @@ const config = {
 			rehypePlugins: [
 				rehypeSlug,
 				[rehypeAutolinkHeadings, { behavior: 'wrap' }],
-				rehypeKatexSvelte
+				rehypeKatexSvelte,
+				rehypeSquareBrackets // 2. Inject the custom plugin here
 			]
 		})
 	],
@@ -50,4 +94,5 @@ const config = {
 		}
 	}
 };
+
 export default config;
