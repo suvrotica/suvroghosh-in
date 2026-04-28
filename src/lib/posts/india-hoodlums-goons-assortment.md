@@ -1,13 +1,17 @@
 ---
 title: "Why India Has Such a Rich Assortment of Hoodlums and Goons"
 description: "India’s goons are not a cultural accident. They are an informal operating system produced by weak enforcement, political patronage, economic scarcity, social hierarchy, and the profitable gap between law on paper and power on the street."
+thumbnail : "/images/Compress_20260428_173311_1250.jpg"
 date: "2026-04-28"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Politics", "Crime", "Governance", "Corruption", "State Capacity"]
 published: true
 color: "darkred"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260428_173311_1250.jpg" />
 
 India has many kinds of hoodlums because India has many kinds of power that do not pass cleanly through law.
 
