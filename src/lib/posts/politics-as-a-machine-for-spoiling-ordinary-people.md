@@ -1,13 +1,17 @@
 ---
 title: "Politics Is a Machine for Spoiling Ordinary People"
 description: "Politicians are rarely clean fairy-tale villains. More often, politics turns normal human weakness into public damage by rewarding vanity, tribal loyalty, opaque money, bureaucratic evasion, and power without immediate consequence."
+thumbnail : "/images/Compress_20260428_160801_1383.jpg"
 date: "2026-04-28"
 category: "Politics"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Political Power", "Political Corruption", "Public Accountability", "Democratic Accountability", "Political Incentives", "Incentive Capture", "Political Finance", "Campaign Finance", "Opaque Funding", "Electoral Bonds", "India Electoral Bonds", "Supreme Court of India", "Right to Information", "Transparency", "Governance", "Institutional Design", "State Power", "Public Service", "Democracy", "Democratic Institutions", "Representation", "Political Parties", "Donor Influence", "Bureaucracy", "Regulatory Capture", "Public Policy", "Corruption Systems", "Power Without Consequence", "Political Ethics", "Civic Literacy", "Political Satire", "Institutional Failure", "Administrative Fog", "Cronyism", "Patronage Networks", "Party Discipline", "Voter Rights", "Public Trust", "Political Reform", "Good Governance", "State Accountability", "Money in Politics", "Indian Politics", "Political Realism", "Civic Responsibility", "Anti Corruption", "Systems Thinking"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260428_160801_1383.jpg" />
 
 A politician is not usually born evil, which is disappointing for those of us who prefer our villains tidy, caped, skull-ringed, and considerate enough to leave a signed confession on official letterhead.
 
