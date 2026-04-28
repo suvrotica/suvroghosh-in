@@ -12,6 +12,7 @@ import Yt from '$lib/components/blog/YouTube.svelte';
 import Yc from '$lib/components/blog/YtCredit.svelte';
 import Dl from '$lib/components/blog/Doggerel.svelte';
 import TTS from '$lib/components/blog/TTS.svelte';
+import Vid from '$lib/components/blog/Vid.svelte';
 `;
 
 const autoImport = {
