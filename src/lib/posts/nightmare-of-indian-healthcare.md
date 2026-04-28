@@ -10,7 +10,7 @@ color: "#111827"
 
 <TTS />
 
-<Pi src="IMG-20260426-WA0002.jpg" />
+<Pi src="Compress_20260428_162412_2865.jpg" />
 
 Indian healthcare becomes a horror story when illness turns from a biological event into a liquidity crisis.
 
