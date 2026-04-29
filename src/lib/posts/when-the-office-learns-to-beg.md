@@ -2,12 +2,16 @@
 title: "When the Office Learns to Beg"
 description: "A future Calcutta essay on artificial intelligence displacement, white-collar mendicancy, fraud, class geography, and the slow migration of social failure from glossy city centers to derelict edges."
 date: "2026-04-29"
+thumbnail: "/images/Compress_20260429_133236_6875.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260429_133236_6875.jpg" />
 
 The future plague of begging in Indian cities will not begin with torn clothes; it will begin with clean collars, dead laptops, unpaid loans, and men who still say “basically” before explaining why the economy has temporarily misplaced them.
 
