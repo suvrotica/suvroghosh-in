@@ -2,12 +2,16 @@
 title: "The Educated Horror of Having Nowhere to Go"
 description: "A systems-level essay on middle-aged middle-class boredom: not laziness, not decadence, but a failure of purpose, mobility, trust, and usable civic life."
 date: "2026-04-29"
+thumbnail : "/images/Compress_20260429_171024_4392.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260429_171024_4392.jpg" />
 
 Middle-aged middle-class educated boredom is not emptiness; it is appetite trapped inside a life that still has furniture, bills, manners, and enough vocabulary to diagnose its own suffocation.
 
