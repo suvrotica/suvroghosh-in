@@ -1,13 +1,17 @@
 ---
 title: "The City That Begs at the Window"
 description: "Calcutta’s street begging is not a plague of people; it is a public system failure made intimate, theatrical, and impossible to ignore."
+thumbnail : "/image/Compress_20260429_113348_8570.jpg"
 date: "2026-04-29"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260429_113348_8570.jpg" />
 
 Calcutta’s street begging is not a plague of people; it is the visible user interface of a city that has outsourced destitution to traffic lights, temple gates, railway platforms, hospital entrances, and the embarrassed conscience of anyone trapped behind a rolled-up car window.
 
