@@ -2,12 +2,16 @@
 title: "Calcutta’s Sugar Problem Is Not Only Sugar"
 description: "A technically serious look at how sweets, rice, refined starch, hidden sugars, obesity, insulin resistance, diabetes, kidney disease, and fatty liver are part of one metabolic system in Bengali life."
 date: "2026-04-29"
+thumbnail : "/images/Compress_20260429_200325_5063.jpg"
 category: "Health & Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260429_200325_5063.jpg" />
 
 Calcutta’s sugar problem is not that Bengalis eat sweets; it is that we have mistaken sweetness for sugar and taste for metabolism.
 
