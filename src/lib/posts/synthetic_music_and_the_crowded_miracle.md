@@ -1,13 +1,17 @@
 ---
 title: "When Nothing Beats Something"
 description: "Synthetic music will not end human creativity, but it will change the economics of attention, taste, labor, and artistic trust. The new scarcity will not be sound; it will be the human capacity to care."
+thumbnail : "/images/Compress_20260429_215618_8491.jpg"
 date: "2026-04-29"
 category: "Technology"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "violet"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260429_215618_8491.jpg" />
 
 Artificial Intelligence [AI, software that learns patterns from data and generates or classifies new outputs] does not make everyone an artist; it makes the outer clothing of artistry cheap enough for fools, geniuses, hustlers, hobbyists, vendors, lonely retirees, desperate freelancers, and bored men with headphones to all enter the same bazaar at once.
 
