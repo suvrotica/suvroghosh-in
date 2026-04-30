@@ -2,12 +2,16 @@
 title: "The Range Limit of Kinship"
 description: "A system-level essay on how kinship, visibility, parsimony, and social insulation work for a middle-aged single man living quietly in Calcutta."
 date: "2026-04-30"
+thumbnail : "/images/Compress_20260429_181247_7639.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#6F5B4F"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260429_181247_7639.jpg" />
 
 Kinship in Calcutta is not invisible; it is range-limited infrastructure. It lights up brilliantly for weddings, funerals, hospital corridors, school admissions, property disputes, visa celebrations, religious festivals, and the delicate national sport of knowing who has disappointed whom. But at the level of an ordinary middle-class, middle-aged, single man living quietly, cheaply, and without decorative social shine, it often becomes faint, like a wireless signal trapped behind damp walls.
 
