@@ -42,3 +42,10 @@ published: true
   layout="block" 
   size={1} 
 />
+
+<Vid 
+  src="মানুষ_হলে_বুঝতিস.mp4" 
+  caption="মানুষ_হলে_বুঝতিস" 
+  layout="block" 
+  size={1} 
+/>
