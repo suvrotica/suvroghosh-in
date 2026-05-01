@@ -15,4 +15,9 @@ published: true
   size={1} 
 />
 
-
+<Vid 
+  src="Khaali_Din.mp4" 
+  caption="Khaali_Din" 
+  layout="block" 
+  size={1} 
+/>
