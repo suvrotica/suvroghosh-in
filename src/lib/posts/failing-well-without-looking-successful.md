@@ -2,12 +2,16 @@
 title: "Failing Well Without Looking Successful"
 description: "A system-level essay on why repeated failure is often the real ingredient of learning, even though Curriculum Vitae culture, family expectation, and institutional respectability are built to hide it."
 date: "2026-05-01"
+thumbnail: "/images/Compress_20260430_194445_5279.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#6B7280"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260430_194445_5279.jpg" />
 
 Failure is not the opposite of learning; it is the instrument by which reality corrects our private nonsense.
 
