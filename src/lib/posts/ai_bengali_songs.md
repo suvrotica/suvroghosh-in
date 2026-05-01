@@ -28,3 +28,10 @@ published: true
   layout="block" 
   size={1} 
 />
+
+<Vid 
+  src="লুঙ্গি_আর_লজিক.mp4" 
+  caption="লুঙ্গি_আর_লজিক" 
+  layout="block" 
+  size={1} 
+/>
