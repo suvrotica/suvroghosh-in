@@ -1,13 +1,17 @@
 ---
 title: "The Contender Who Would Not Compete"
 description: "A satirical personal essay on writing, India, ambition, public spectacle, private exhaustion, and the strange civic theater of being told that everything is improving while the pothole outside quietly studies your ankle."
+thumbnail: "/images/Compress_20260502_014710_0769.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260502_014710_0769.jpg" />
 
 I try to write a sensible post, one suited to the sensibilities of sensible people, and almost immediately something inside me throws a wrench into the machinery, not a discreet little Allen key but a great municipal crowbar, the sort used by men in dusty shirts to pry open drains and expose the private digestive system of the city.
 
