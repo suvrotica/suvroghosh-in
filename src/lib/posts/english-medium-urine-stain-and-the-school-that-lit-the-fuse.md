@@ -1,13 +1,17 @@
 ---
 title: "The English Medium Urine Stain"
 description: "A raw memoir on English-medium schooling, childhood anxiety, mythology, superstition, class, language, and the small accidents that quietly reorganize a life."
+thumbnail: "/images/Compress_20260502_004133_3146.jpg"
 date: "2026-05-02"
 category: "Memoir"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260502_004133_3146.jpg" />
 
 My mother’s insistence that I attend an English-medium school may have been one of the great administrative miracles of my life, though at the time it probably looked like one more domestic decision made under the usual Bengali weather system of anxiety, aspiration, thrift, gossip, and maternal command.
 
