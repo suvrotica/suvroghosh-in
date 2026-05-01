@@ -35,3 +35,10 @@ published: true
   layout="block" 
   size={1} 
 />
+
+<Vid 
+  src="বই_খুললেই_রোদ্দুর.mp4" 
+  caption="বই_খুললেই_রোদ্দুর" 
+  layout="block" 
+  size={1} 
+/>
