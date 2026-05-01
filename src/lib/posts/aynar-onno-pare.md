@@ -22,3 +22,9 @@ published: true
   size={1} 
 />
 
+<Vid 
+  src="লেখাপড়া_করে_যে.mp4" 
+  caption="লেখাপড়া করে যে - একটি বিশেষ সঙ্গীত চিত্র।" 
+  layout="block" 
+  size={1} 
+/>
