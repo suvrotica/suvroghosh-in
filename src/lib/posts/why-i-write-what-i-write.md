@@ -2,12 +2,16 @@
 title: "Why I Write What I Write"
 description: "A personal essay on writing, drawing, satire, darkness, digital obscurity, and the strange relief of forcing private weather into public shape."
 date: "2026-05-02"
+thumbnail : "/images/Compress_20260502_143442_2990.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#7C2D12"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260502_143442_2990.jpg" />
 
 I write and draw because certain thoughts refuse to remain well-behaved tenants in the skull, and if they are not evicted into words, lines, grotesque faces, jokes, or little civic obscenities wearing a paper hat, they begin rearranging the furniture.
 
