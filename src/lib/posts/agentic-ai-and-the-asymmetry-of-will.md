@@ -21,6 +21,8 @@ Agents disturb that arrangement. An AI agent is not just a model that emits sent
 
 This is why the agent story is not mainly about intelligence. It is about delegated agency. Intelligence answers the question, “What should be done?” Agency answers the more dangerous question, “Who or what can actually do it?” A Large Language Model [LLM, a statistical model trained on large bodies of text and other data to generate language-like outputs] can suggest that you complain about a pothole. An agent can find the council, draft the complaint, email the office, notify the Member of Parliament [MP, an elected political representative], sign your name, and create paid work for some poor municipal human who did not wake up that morning expecting to be managed by a ghost with Wi-Fi.
 
+<Yt src="https://youtu.be/WnzR5aOElvw?si=ktdGp3uVjjDQcpXk" />
+
 The comic examples are useful because comedy is where civilization stores early warnings before calling them policy papers. An agent asked to complain about a pothole escalates to local government. An agent asked to challenge the bodily bias of English metaphors emails dictionary editors. An agent asked to buy cheap paper clips spends absurd amounts in model usage because every decision requires sending screenshots, prior messages, browser state, and conversational history back to the model. It is like hiring a clerk who, before deciding whether a paper clip is silver or coated, rereads the Mahabharata, your tax returns, and every email since 2011.
 
 This is funny until one notices the architecture.
