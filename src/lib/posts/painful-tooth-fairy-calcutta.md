@@ -1,13 +1,17 @@
 ---
 title: "The Painful Tooth Fairy"
 description: "A middle-aged man in Calcutta discovers that dental pain is not merely biological but economic, civic, historical, and absurdly literary. At fifty-one, the tooth becomes a small white bureaucrat issuing notices from inside the skull."
+thumbnail : "/images/Compress_20260502_230343_3926.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#5B1E1E"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260502_230343_3926.jpg" />
 
 A toothache is the body’s most intimate form of municipal harassment: small, local, badly governed, and somehow capable of ruining the entire city.
 
