@@ -1,13 +1,17 @@
 ---
 title: "The Prognosis Is Clarity"
 description: "A philosophical essay on aging, bitterness, Schopenhauer, disappointment, and the strange late-life discovery that not every sour older person is morally defective. Some have simply watched the conjurer’s trick too many times."
+thumbnail : "/images/Compress_20260502_180443_3646.jpg"
 date: "2026-05-02"
 category: "Philosophy"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260502_180443_3646.jpg" />
 
 Bitterness is not always a personality defect; sometimes it is failed optimism with a long memory.
 
