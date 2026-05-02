@@ -10,14 +10,18 @@ published: true
 
 <Vid 
   src="Tram_Ke_Taaron_Mein.mp4" 
-  caption="Tram_Ke_Taaron_Mein" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
   src="Khaali_Din.mp4" 
-  caption="Khaali_Din" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
+  src="Silli_Silli_Si_Shaam.mp4" 
   layout="block" 
   size={1} 
 />
