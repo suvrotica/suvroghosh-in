@@ -1,13 +1,17 @@
 ---
 title: "AI Agents Will Not Democratize Power Neatly"
 description: "AI agents change the problem from asking machines questions to delegating action into the world. That does not make power equal; it makes agency abundant, uneven, persistent, and easier to weaponize by those already sitting near the levers."
+thumbnail : "/images/Compress_20260502_165912_2384.jpg"
 date: "2026-05-02"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260502_165912_2384.jpg" />
 
 Artificial Intelligence stopped being merely interesting when it learned to stop talking and start doing.
 
