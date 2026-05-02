@@ -10,9 +10,13 @@ published: true
 
 <Vid 
   src="My_Human_Throat.mp4" 
-  caption="Artificial Head - An urban soft rock exploration." 
   layout="block" 
   size={1} 
 />
 
 
+<Vid 
+  src="Calcutta_Under_The_Rain.mp4" 
+  layout="block" 
+  size={1} 
+/>
