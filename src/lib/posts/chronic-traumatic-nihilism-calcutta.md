@@ -1,13 +1,17 @@
 ---
 title: "Chronic Traumatic Nihilism From Calcutta"
 description: "A middle-aged middle-class Bengali meditation on how repeated social, economic, and psychological bruising can turn disbelief into a daily weather system. This is not grand philosophical nihilism, but the smaller, nastier kind that grows in rent receipts, dental pain, job markets, family shame, and the unpaid electricity bill."
+thumbnail: "/images/Compress_20260504_043352_2368.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_043352_2368.jpg" />
 
 Chronic traumatic nihilism is what happens when life does not break you theatrically, with thunder, violins, and a suitable black umbrella, but keeps tapping the same cracked tile every morning until the whole floor learns to sound hollow.
 
