@@ -25,3 +25,9 @@ published: true
   layout="block" 
   size={1} 
 />
+
+<Vid 
+  src="Monsoon_on_the_Balcony.mp4" 
+  layout="block" 
+  size={1} 
+/>
