@@ -1,13 +1,17 @@
 ---
 title: "Self-Gaslit Minds in the Age of AI"
 description: "A sharp essay on how technical pretension, fear of ignorance, and AI-assisted knowledge arbitrage corrode scientific progress, especially in education and industry."
+thumbnail : "/images/Compress_20260503_164121_1110.jpg"
 date: "2026-05-03"
 category: "Technology"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260503_164121_1110.jpg" />
 
 The most expensive sentence missing from Indian education and industry is also the shortest: “I don’t know.”
 
