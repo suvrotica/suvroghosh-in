@@ -2,12 +2,16 @@
 title: "Political Promises and the Hard Floor of Reality"
 description: "A bleak but practical essay on why political promises so often collapse into pain for the middle class, lower middle class, and poor, and why the failure is not merely moral but structural."
 date: "2026-05-02"
+thumbnail : "/images/Compress_20260503_161828_8206.jpg"
 category: "Politics"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260503_161828_8206.jpg" />
 
 Reality has no manifesto, no party office, no election symbol, and no talent for flattery.
 
