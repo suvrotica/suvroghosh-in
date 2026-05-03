@@ -37,3 +37,9 @@ published: true
   layout="block" 
   size={1} 
 />
+
+<Vid 
+  src="Last_Motel_Before_Dawn.mp4" 
+  layout="block" 
+  size={1} 
+/>
