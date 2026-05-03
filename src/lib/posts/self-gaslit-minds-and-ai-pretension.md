@@ -33,7 +33,7 @@ A mind that lies to itself cannot learn properly because it cannot find the woun
 
 This distinction matters everywhere. Moving data is not the same as understanding data. Passing an exam is not the same as grasping a concept. Writing code is not the same as reasoning about a program. Producing a dashboard is not the same as knowing what the numbers represent. The Indian system, with its old talent for social choreography, often rewards the visible artifact and ignores the invisible comprehension. A certificate glitters. A GitHub profile glitters. A résumé glitters. A LinkedIn post glitters. Inside the glitter, there may be genuine ability. There may also be sawdust.
 
-And now comes Artificial Intelligence [AI, software systems that generate or transform text, code, images, predictions, or decisions from learned statistical patterns], carrying a tray of fresh masks.
+And now comes Artificial Intelligence [AI], carrying a tray of fresh masks.
 
 AI did not create pretension. It merely industrialized it. Earlier, a person who did not know could bluff clumsily. Now he can bluff fluently. He can generate an answer, polish it, rearrange it into executive diction, add a diagram, create pseudo-depth, and walk into the room with the confidence of a man who has borrowed not only someone else’s umbrella but also the rain. AI has put knowledge arbitrage behind a veil. The old trick was to copy from a senior, a coaching note, a Stack Overflow answer, or a cousin in New Jersey. The new trick is smoother. The borrowed mind speaks in perfect paragraphs.
 
