@@ -2,12 +2,16 @@
 title: "A Meaningless Number on an Average Star"
 description: "A darkly comic birthday reckoning on superstition, age, ambition, depression, cosmic scale, and the absurd narcissism of attaching destiny to dates."
 date: "2024-04-16"
+thumbnail: "/images/Compress_20260504_232318_8029.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_232318_8029.jpg" />
 
 I used to think there was something talismanic about the 16th of April, as if the date arrived each year wearing a small invisible crown and carrying a secret message for me personally, but no, that was only superstition wearing better trousers. A date is a square on a calendar. A bureaucratic scratch mark. A clerk’s convenience. The universe did not pause, cough politely, and say, “Ah yes, here he is.” As far as the eye can see, I am just another wriggling worm in the great damp congress of ordinary worms, clinging to the side of a rock spinning around a taciturn everyday star in an average-looking corner of a spiral galaxy of no special class. It is not a bad arrangement, exactly. It is just not the grand one the ego had ordered from the catalogue.
 
