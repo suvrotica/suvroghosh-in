@@ -8,6 +8,12 @@ published: true
 ---
 
 <Vid 
+  src="Lanterns_by_the_Frozen_River.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="Patterns_on_the_Glass.mp4" 
   layout="block" 
   size={1} 
