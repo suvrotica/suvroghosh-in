@@ -2,12 +2,16 @@
 title: "LinkedIn, Unemployment, and the National X-Ray"
 description: "A hard, satirical look at India’s job market, credential factories, ghost jobs, nepotism, religious fog, and the bruised hope of young people trying to earn a living on a heating planet."
 date: "2026-05-03"
+thumbnail: "/images/Compress_20260504_165300_0245.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_165300_0245.jpg" />
 
 The Indian job market is not merely failing people; it is making them perform their own failure in public, preferably on LinkedIn, with a smiling photograph, a recycled quote about resilience, and a comment section full of strangers clapping like trained seals at a funeral.
 
