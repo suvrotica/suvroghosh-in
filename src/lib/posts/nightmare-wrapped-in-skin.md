@@ -2,12 +2,16 @@
 title: "Nightmare Wrapped in Skin"
 description: "A bleak, unsentimental personal essay on depression, alienation, books, childhood comics, and the small private refuges that keep a life from collapsing entirely."
 date: "2026-05-04"
+thumbnail: "/images/Compress_20260504_210405_5166.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_210405_5166.jpg" />
 
 Some emotions do not arrive as thoughts. They arrive as discharge from a wound that has lost the courtesy to close. They come out hot, infected, absurdly theatrical, like some municipal drain in Calcutta after rain, carrying flowers, plastic, dead insects, and one slipper belonging to a man nobody will ever identify. That is the trouble with despair. It is not dignified. It does not sit in a chair wearing a shawl and quoting Schopenhauer. It leaks. It smells. It embarrasses the furniture.
 
