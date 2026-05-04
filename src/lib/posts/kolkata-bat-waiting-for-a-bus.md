@@ -1,13 +1,17 @@
 ---
 title: "The Kolkata Bat Waiting for a Bus"
 description: "A satirical reflection on overcrowded transport, civic decay, unsafe systems, corrupt bookkeeping, and the middle-class art of surviving while hanging from a metal handle."
+thumbnail : "/images/Compress_20260504_184912_2345.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_184912_2345.jpg" />
 
 Kolkata public transport is less a system than a recurring experiment in how many vertebrates can be folded into a moving container before somebody invokes God, Marx, bad breath, or the ancestry of the man blocking the door.
 
