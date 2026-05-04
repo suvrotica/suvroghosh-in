@@ -1,13 +1,17 @@
 ---
 title: "The Unhelpful Man in Calcutta"
 description: "A middle-aged, unemployed, middle-class recluse in Calcutta reflects on why people dislike those who insist on reality when comfort, flattery, and convenient fog are socially preferred."
+thumbnail: "/images/Compress_20260504_174433_3743.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_174433_3743.jpg" />
 
 People do not hate reality in the abstract; they hate the man who brings it into the room before tea has been served.
 
