@@ -1,13 +1,17 @@
 ---
 title: "Science Is Not a Solitary Organ"
 description: "A reflection on why real scientific work, especially in clinical research and healthcare data, depends on collaboration rather than lonely brilliance."
+thumbnail: "/images/Compress_20260504_143135_5600.jpg"
 date: "2026-05-04"
 category: "Science"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "blue"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260504_143135_5600.jpg" />
 
 Very little serious scientific research is done alone, not because scientists are romantically communal creatures humming in harmony like a laboratory choir, but because reality is too large, the mathematics too treacherous, the data too compromised, and the human brain too fond of congratulating itself before it has checked the denominator.
 
