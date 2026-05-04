@@ -7,6 +7,11 @@ category: "AI Music Song"
 published: true
 ---
 
+<Vid 
+  src="Patterns_on_the_Glass.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 <Vid 
   src="Passing_the_Last_Station.mp4"  
