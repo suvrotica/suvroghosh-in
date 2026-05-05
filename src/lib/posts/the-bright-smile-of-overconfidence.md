@@ -2,12 +2,17 @@
 title: "The Bright Smile of Overconfidence"
 description: "A caustic reflection on corporate positivity, fake certainty, exploited productivity, unpaid work, and the strange social theater where insecurity dresses itself as leadership."
 date: "2026-05-05"
+thumbnail: "/images/Compress_20260505_154131_1600.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260505_154131_1600.jpg" />
+
 
 Overconfidence is often insecurity wearing a rented blazer and grinning as if it has just acquired a motivational quote wholesale from a warehouse outside Gurgaon. People who only say confident things, who radiate positivity in a permanently polished, dental-adjacent manner, are frequently not brave at all. They are terrified. They have merely discovered that terror looks more employable when lacquered. The always-smiling face, the wet enthusiasm, the waterfall of corporate sunshine pouring from the mouth at nine in the morning, all of it may be less a sign of inner strength than a panic response with PowerPoint permissions.
 
