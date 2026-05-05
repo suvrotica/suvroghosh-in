@@ -1,13 +1,17 @@
 ---
 title: "Applied Multivariate Statistical Modeling in Healthcare IT"
 description: "A healthcare IT architect’s view of applied multivariate statistical modeling: what variables really mean, why covariance matters, and why models are only as honest as the systems that generate their data."
+thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 date: "2026-05-05"
 category: "Healthcare IT"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "blue"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260505_135010_0561.jpg" />
 
 Healthcare data does not become intelligent because it has been counted, normalized, shipped, stored, dashboarded, and ceremonially blessed by a governance committee; it becomes useful only when we understand what system produced it, what variables describe it, what relationships bind those variables together, and what part of reality has already been lost before the model ever opens its mouth.
 
