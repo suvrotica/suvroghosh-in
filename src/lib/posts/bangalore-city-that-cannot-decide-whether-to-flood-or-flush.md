@@ -2,12 +2,16 @@
 title: "Bangalore and the Plumbing of Pretension"
 description: "A satirical rewrite of an old blog post on Bangalore’s floods, water scarcity, corporate confidence, civic failure, and the undignified politics of sanitation."
 date: "2026-05-05"
+thumbnail: "/images/Compress_20260505_161629_9681.jpg"
 category: "Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260505_161629_9681.jpg" />
 
 Bangalore has achieved that rare civic distinction of making both rain and drought feel like administrative conspiracies. When it rains, the city behaves as if the sky has committed cyberterrorism. Roads become canals, basements become aquariums, traffic lights expire with a small electrical cough, and the celebrated software capital of India begins to resemble a motherboard dropped into a septic tank. When it does not rain, the taps grow philosophical, the tanks grow hollow, the housing societies grow tyrannical, and every resident must begin the day with the kind of moral calculation usually reserved for famine, war, or badly designed enterprise software: should this water be used for drinking, bathing, cooking, flushing, or maintaining the final bit of dignity between the human body and its lower paperwork?
 
