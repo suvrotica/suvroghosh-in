@@ -2,12 +2,16 @@
 title: "Calcutta Smog and the Coming Winter"
 description: "A satirical field note on Calcutta’s winter air, civic evasion, bad measurement, public-health fatigue, and the annual Bengali talent for mistaking endurance for policy."
 date: "2026-05-05"
+thumbnail: "/images/Compress_20260505_214328_8458.jpg"
 category: "Satire"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "gray"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260505_214328_8458.jpg" />
 
 Calcutta is still months away from winter, which means the city has entered that brief and charming period when everyone can pretend the air is merely unpleasant rather than conspiratorial. Today, May 5, 2026, the heat is still doing its usual Bengal work, pressing itself against the window grilles like a creditor, but the coming winter is already visible if you have lived through enough past winters and retained the use of memory. The city will cool, the wind will slacken, the sky will lower itself by several moral inches, and the accumulated exhalations of traffic, dust, garbage smoke, construction, diesel, cooking fuel, small industry, and municipal indifference will settle over us like an ancestral shawl woven from phlegm.
 
