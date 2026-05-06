@@ -2,12 +2,16 @@
 title: "If Asimov Forgot the Leash"
 description: "A speculative essay on what machine morality might look like without Asimov’s comforting laws, and why human rule-making tells us more about our anxieties than about robots."
 date: "2026-05-07"
+thumbnail: "/images/Compress_20260507_020201_1913.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260507_020201_1913.jpg" />
 
 Artificial Intelligence [AI] does not need commandments in the way frightened mammals need commandments; it needs constraints, incentives, objectives, feedback, and a tolerable way to survive contact with the idiocy of the world.
 
