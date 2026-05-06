@@ -2,12 +2,16 @@
 title: "The Body Going to Plan"
 description: "A Calcutta essay on bipolar depression, anxiety, unemployment, and the unnerving possibility that the mind is not broken so much as badly matched to the artificial world it has been forced to inhabit."
 date: "2026-05-06"
+thumbnail : "/images/Compress_20260506_160241_1669.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#4B5563"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_160241_1669.jpg" />
 
 Depression may not always be the body going wrong; sometimes it feels more like the body going to plan, with a terrible punctuality.
 
