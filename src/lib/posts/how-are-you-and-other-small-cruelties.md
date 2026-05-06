@@ -2,12 +2,16 @@
 title: "How Are You and Other Small Cruelties"
 description: "A bitter comic meditation on the impossible social arithmetic hidden inside the harmless question, How are you?"
 date: "2026-05-06"
+thumbnail : "/images/Compress_20260506_112925_5240.jpg"
 category: "Personal Satire"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "gray"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_112925_5240.jpg" />
 
 “How are you?” is not a question. It is a tiny social trap, varnished with politeness, carried around by otherwise harmless people like a folding knife in the pocket of civilization. It arrives with a smile, this little nuisance, this three-word mugging in daylight, and expects me, a lower-middle-class, ambition-starved, middle-aged Bengali zero-watt fuckface, to perform emotional accounting on command.
 
