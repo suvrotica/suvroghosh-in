@@ -13,7 +13,7 @@ color: "gray"
 
 <Pi src="Compress_20260506_214131_1484.jpg" />
 
-Artificial Intelligence [AI, software systems that perform tasks associated with human intelligence such as language, prediction, classification, and planning] may now write reports, make images, flirt like a bored call-center succubus, pass exams, summarize legal documents, write code, and impersonate empathy with the smooth, polished manners of a hotel lobby, but it still cannot take a shit.
+Artificial Intelligence [AI] may now write reports, make images, flirt like a bored call-center succubus, pass exams, summarize legal documents, write code, and impersonate empathy with the smooth, polished manners of a hotel lobby, but it still cannot take a shit.
 
 This is not a small detail. This is not an incidental limitation, like being unable to whistle through teeth or identify a good luchi by smell. This is the whole blasted question, sitting there in the porcelain bowl of reality, steaming with metaphysical importance.
 
