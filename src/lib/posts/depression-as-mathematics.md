@@ -1,13 +1,17 @@
 ---
 title: "Depression as Mathematics: States, Switches, Attractors, and the Treacherous Algebra of Mood"
 description: "A technical but readable exploration of how unipolar depression and bipolar disorder might be described using mathematical language: dynamical systems, stochastic processes, phase spaces, thresholds, feedback loops, and state transitions."
+thumbnail: "/images/Compress_20260506_103338_8816.jpg"
 date: "2026-05-06"
 category: "Mental Health Systems"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_103338_8816.jpg" />
 
 Depression, if forced into mathematics, would not be a single number called sadness; it would be a moving system whose variables refuse to sit politely in one row like schoolchildren.
 
