@@ -2,12 +2,16 @@
 title: "Anthropic Is Coming for Wall Street"
 description: "Anthropic’s new finance agents are not just another chatbot wrapper; they are a bid to move Claude into the operational bloodstream of banks, insurers, asset managers, and financial technology firms. The interesting question is not whether Wall Street will use them, but where the human work will retreat once the machine learns the paperwork."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_224233_3067.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_224233_3067.jpg" />
 
 Anthropic is no longer politely knocking on Wall Street’s mahogany door; it has arrived with a toolbox, a Bloomberg segment, and ten little clerks who do not need lunch, sleep, bonus season, or a therapist after formatting pitchbook footnotes at 2:17 in the morning.
 
