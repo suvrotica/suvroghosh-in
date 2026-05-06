@@ -2,12 +2,16 @@
 title: "A Bengali Hikikomori Measures the Room"
 description: "A darkly reflective essay on shrinking life, failed promise, madness, and the strange architecture of isolation."
 date: "2026-05-07"
+thumbnail: "/images/Compress_20260507_031419_9577.jpg"
 category: "Personal"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#111827"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260507_031419_9577.jpg" />
 
 A life can shrink without making a sound, which is one of its crueler engineering tricks.
 
