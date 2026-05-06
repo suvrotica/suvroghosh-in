@@ -2,12 +2,16 @@
 title: "The Coming Unemployment"
 description: "AI will not abolish work in one theatrical thunderclap. It will first rot the ladder, inflate fake hiring signals, compress teams, and leave millions of educated people staring at job boards full of ghosts."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_211530_0762.jpg"
 category: "AI"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_211530_0762.jpg" />
 
 The first thing AI breaks is not the job. It breaks the path into the job, which is worse, because a civilization can survive some unemployment, but it cannot easily survive the disappearance of apprenticeship without turning its young into decorative livestock with degrees.
 
