@@ -3,7 +3,7 @@ title: "The Coming Unemployment"
 description: "AI will not abolish work in one theatrical thunderclap. It will first rot the ladder, inflate fake hiring signals, compress teams, and leave millions of educated people staring at job boards full of ghosts."
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_211530_0762.jpg"
-category: "AI"
+category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
