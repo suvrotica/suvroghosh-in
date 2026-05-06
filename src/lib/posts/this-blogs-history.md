@@ -2,7 +2,7 @@
 title: "This Blog’s History"
 description: "A crooked little history of how this blog staggered from Fiji to New Zealand to Abu Dhabi and Dubai, dragging behind it ambition, disillusionment, second-hand books, vanished friends, and the stubborn wish to be read."
 date: "2024-01-03"
-thumbnail:"/images/Compress_20260506_165933_3433.jpg"
+thumbnail: "/images/Compress_20260506_165933_3433.jpg"
 category: "Personal Reflections"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
