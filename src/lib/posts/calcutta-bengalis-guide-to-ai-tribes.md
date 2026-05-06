@@ -2,12 +2,16 @@
 title: "A Calcutta Bengali’s Guide to the Various Schools of AI"
 description: "A lively guide to the major tribes of artificial intelligence, from symbolic reasoning and neural networks to Bayes, evolution, reinforcement learning, explainability, and the current deep learning carnival."
 date: "2026-05-06"
+thumbnail : "/images/Compress_20260506_184203_3225.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_184203_3225.jpg" />
 
 Artificial Intelligence [AI, the attempt to make machines perform tasks that look intelligent when humans do them] has always looked less like one science and more like College Street after rain: crowded, argumentative, slightly electrified, and full of men insisting that their particular stall contains the one true book.
 
