@@ -2,12 +2,16 @@
 title: "Happiness After Quicksand"
 description: "A personal essay on bipolar life, solitude, recovery, and the unfashionable usefulness of living quietly when the nervous system has had enough civilization for one lifetime."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_174701_1947.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_174701_1947.jpg" />
 
 Happiness, or in my more modest and less embarrassing formulation, the absence of pathological sadness, is not always a mood. Sometimes it is the delayed artifact of geography, biology, memory, medication, bad decisions, decent decisions, exhausted luck, and the long animal history of where the body has been dragged while the mind was busy inventing explanations for its injuries.
 
