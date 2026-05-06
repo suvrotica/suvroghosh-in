@@ -3,7 +3,7 @@ title: "AI Health Insurance and Cruelty"
 description: "The central risk is not that insurers openly announce an artificial intelligence system that punishes expensive patients. It is that ordinary commercial incentives, weak oversight, and deniable technical systems can quietly turn prediction into exclusion while preserving a paper trail of procedural respectability."
 thumbnail : "/images/IMG-20260424-WA0001.jpg"
 date: "2026-04-24"
-category: "healthcare-ai"
+category: "healthcare ai"
 published: true
 color: "indigo"
 ---
