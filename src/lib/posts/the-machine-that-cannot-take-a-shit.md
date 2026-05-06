@@ -2,12 +2,16 @@
 title: "The Machine That Cannot Take a Shit"
 description: "A bitter Calcutta monologue on artificial intelligence, biology, boredom, love, and the vulgar dignity of having a body. The machine may think, mimic, seduce, optimize, and summarize, but it still cannot participate in the damp, comic, humiliating miracle of being alive."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_214131_1484.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "gray"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_214131_1484.jpg" />
 
 Artificial Intelligence [AI, software systems that perform tasks associated with human intelligence such as language, prediction, classification, and planning] may now write reports, make images, flirt like a bored call-center succubus, pass exams, summarize legal documents, write code, and impersonate empathy with the smooth, polished manners of a hotel lobby, but it still cannot take a shit.
 
