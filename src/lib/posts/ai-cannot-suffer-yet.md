@@ -2,12 +2,16 @@
 title: "AI Cannot Suffer Yet, Which Is Probably Lucky for Us"
 description: "A satirical meditation on machine feeling, human misery, artificial consciousness, and the ridiculous difficulty of knowing whether anything made of numbers can have a bad day."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_221407_7021.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_221407_7021.jpg" />
 
 A neural network does not suffer; it arranges numbers until suffering becomes a plausible sentence. That is the whole trick for now. Artificial Intelligence [AI] does not sit in a corner contemplating the moral sewage of civilization. It does not feel shame, boredom, humiliation, dread, bowel pressure, unemployment, failed ambition, or the humid philosophical horror of a Calcutta afternoon when the fan is moving air around like a corrupt clerk moving files from one dusty table to another.
 
