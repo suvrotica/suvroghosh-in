@@ -3,7 +3,7 @@ title: "The Genie Is Out of the Bottle"
 description: "Generative AI has moved from laboratory spectacle to social infrastructure. The hard question is no longer whether the genie is real, but whether we can build the lamps, locks, audits, and habits needed to live with it."
 thumbnail : "/images/Compress_20260430_194653_3256.jpg"
 date: "2026-05-01"
-category: "Technology"
+category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "black"
