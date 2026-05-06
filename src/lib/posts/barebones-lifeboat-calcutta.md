@@ -3,7 +3,7 @@ title: "The Barebones Lifeboat: America, Calcutta, and the Price of Staying Aflo
 description: "A returnee’s life in Calcutta is not always a story of triumphant homecoming or dollar-fed comfort. Sometimes it is simply the place where a modest life remains possible."
 thumbnail : "/images/Compress_20260428_193723_3458.jpg"
 date: "2026-04-28"
-category: "Society"
+category: "Personal"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "America", "Calcutta", "India", "NRI", "Returnee", "Precarity", "Urban Life", "Barebones Living", "Social Trust"]
 published: true
 color: "#7C3AED"
