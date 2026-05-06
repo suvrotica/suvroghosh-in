@@ -3,7 +3,7 @@ title: "Bangalore and the Plumbing of Pretension"
 description: "A satirical rewrite of an old blog post on Bangalore’s floods, water scarcity, corporate confidence, civic failure, and the undignified politics of sanitation."
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_161629_9681.jpg"
-category: "Essay"
+category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "amber"
