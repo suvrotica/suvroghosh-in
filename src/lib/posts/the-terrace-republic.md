@@ -2,12 +2,16 @@
 title: "The Terrace Republic"
 description: "A reflective personal essay on memory, childhood, solitude, bipolar intensity, and the small private rebellions that survive middle age in Calcutta."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_115419_9095.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#7C3AED"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_115419_9095.jpg" />
 
 I sit with a cup of tea, and the tea does what tea has always done in Bengal: it accepts defeat, philosophy, indigestion, ambition, regret, and the entire damp laundry of memory without complaint.
 
