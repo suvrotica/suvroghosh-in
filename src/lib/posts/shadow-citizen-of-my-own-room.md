@@ -2,12 +2,16 @@
 title: "Shadow Citizen of My Own Room"
 description: "A bleak, unsentimental meditation on failed ambition, depression, solitude, and the strange relief of withdrawing from the public race before it turns a man into one more cheerful fraud."
 date: "2026-05-06"
+thumbnail: "/images/Compress_20260506_141951_1567.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260506_141951_1567.jpg" />
 
 I am still here, which is not quite the same as saying I survived. Survival implies some muscular little moral victory, some brass-band resilience, some grinning idiot standing on a hill with his arms spread as if the universe had awarded him a certificate. I merely remained. I had once imagined that after ten years of self-inflicted incarceration I would leave India again, step out of this long domestic sentence, return to motion, to airports, to American pavements, to that earlier version of myself who still believed a life could be resumed like a paused film. But I did not leave. I am not leaving. I cannot leave. The passport may exist, the old memories may still twitch, the maps may still lie open in the skull, but the person who was meant to travel through them has thinned into a watermark.
 
