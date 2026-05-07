@@ -2,12 +2,16 @@
 title: "AI, Meaningful Work, and the Trust Collapse"
 description: "A technically serious reflection on why AI does not merely automate tasks, but corrodes the social machinery that makes work, authorship, and creative attention feel meaningful."
 date: "2026-05-07"
-category: "AI"
+thumbnail: "/images/Compress_20260507_182117_7717.jpg"
+category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260507_182117_7717.jpg" />
 
 Artificial Intelligence [AI, software that performs pattern recognition, generation, prediction, or action in domains once thought to require human judgment] is not only threatening work by doing it faster; it is threatening work by making the evidence of work harder to believe.
 
