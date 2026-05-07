@@ -3,7 +3,7 @@ title: "The Century Has a Hole in It"
 description: "A small childhood arithmetic scandal about why 2023 belongs to the 21st century, and why reality is full of tiny trapdoors for anyone foolish enough to look down."
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_164649_9699.jpg"
-category: "Personal Essay"
+category: "Personal"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
@@ -27,7 +27,7 @@ Not the glamorous esoterica sold in special shops to men with beards and importe
 
 One of the first cracks I remember was the matter of centuries.
 
-Why, I wondered, do we call this the 21st century when the year begins with 20? The year 2023 looks, at first glance, like a loyal citizen of the 20-something kingdom. It has 20 right there in front, waving its little numerical flag. Yet every educated person insists it belongs to the 21st century. This seems, to a child, like the adults have once again formed a committee to lie with confidence.
+Why, I wondered, do we call this the 21st century when the year begins with 20? The year 2026 looks, at first glance, like a loyal citizen of the 20-something kingdom. It has 20 right there in front, waving its little numerical flag. Yet every educated person insists it belongs to the 21st century. This seems, to a child, like the adults have once again formed a committee to lie with confidence.
 
 The trick is not mystical. It is worse. It is accounting.
 
