@@ -8,11 +8,7 @@ category: "AI Music Song"
 published: true
 ---
 
-<Vid 
-  src="हुगली_की_शाम.mp4" 
-  layout="block" 
-  size={1} 
-/>
+
 
 <Vid 
   src="Tram_Ke_Taaron_Mein.mp4" 
