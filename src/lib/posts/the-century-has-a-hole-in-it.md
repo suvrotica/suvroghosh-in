@@ -2,12 +2,16 @@
 title: "The Century Has a Hole in It"
 description: "A small childhood arithmetic scandal about why 2023 belongs to the 21st century, and why reality is full of tiny trapdoors for anyone foolish enough to look down."
 date: "2026-05-07"
+thumbnail: "/images/Compress_20260507_164649_9699.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260507_164649_9699.jpg" />
 
 Reality, that grand upholstered sofa on which respectable people sit without checking for bedbugs, is not nearly as solid as advertised. It is a monoculture only from a distance. Come closer and the thing is riddled with tiny comic holes, little logical termite galleries, absurdities, inherited customs, badly translated certainties, ancestral mutterings, half-remembered scriptures, colonial schoolroom furniture, and the occasional fact sitting quietly in the corner like a goat at a physics lecture.
 
