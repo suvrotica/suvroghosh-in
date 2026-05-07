@@ -39,7 +39,7 @@ The 1st century AD runs from AD 1 through AD 100. Not AD 0 through AD 99, becaus
 
 This is why the year 2000, despite all the fireworks, shiny spectacles, millennium hysteria, and apocalyptic software indigestion, was technically the last year of the 20th century. Humanity threw the party one year early, which is exactly the sort of thing humanity would do after inventing both calendars and marketing departments.
 
-The formula is simple enough to be mildly offensive. For any positive AD year, the century is the ceiling of the year divided by 100. The ceiling function takes a number and rounds it upward to the nearest whole integer. So 2023 divided by 100 is 20.23. The ceiling of 20.23 is 21. Therefore 2023 belongs to the 21st century.
+The formula is simple enough to be mildly offensive. For any positive AD year, the century is the ceiling of the year divided by 100. The ceiling function takes a number and rounds it upward to the nearest whole integer. So 2026 divided by 100 is 20.26. The ceiling of 20.26 is 21. Therefore 2026 belongs to the 21st century.
 
 You can also use the schoolboy shortcut. Split 2023 into 20 and 23. Since the last two digits are not 00, add one to the first part. So 20 plus 1 becomes 21. But for a year ending in 00, do not add one. The year 2000 remains in the 20th century. The year 1900 remains in the 19th. The year 2100 remains in the 21st. The moment the year becomes 2101, the 22nd century begins, and some future idiot will write the same explanation on whatever glowing neurological advertisement platform has replaced blogs by then.
 
