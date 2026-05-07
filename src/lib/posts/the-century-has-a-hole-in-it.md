@@ -1,6 +1,6 @@
 ---
 title: "The Century Has a Hole in It"
-description: "A small childhood arithmetic scandal about why 2023 belongs to the 21st century, and why reality is full of tiny trapdoors for anyone foolish enough to look down."
+description: "A small childhood arithmetic scandal about why 2026 belongs to the 21st century, and why reality is full of tiny trapdoors for anyone foolish enough to look down."
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_164649_9699.jpg"
 category: "Personal"
@@ -49,7 +49,7 @@ That, I think, is how much of reality works. Not by being obvious, but by becomi
 
 The century problem is a small example, almost cute. A calendar gnat. But it teaches a larger lesson. Many things we call natural are conventions with wrinkles. Many things we call obvious are agreements made by dead people under conditions we no longer remember. Many things we call facts are facts only after passing through history’s cracked machinery of language, religion, empire, bureaucracy, translation, and habit.
 
-A child asks why 2023 is the 21st century and discovers the missing year zero. An adult asks why society works the way it does and discovers a whole warehouse of missing zeroes.
+A child asks why 2026 is the 21st century and discovers the missing year zero. An adult asks why society works the way it does and discovers a whole warehouse of missing zeroes.
 
 Missing justice. Missing context. Missing memory. Missing incentives. Missing honesty. Missing explanations. Missing evidence. Missing humility. Missing the small, decent embarrassment that should arrive whenever a confident answer is resting on a pile of inherited nonsense.
 
