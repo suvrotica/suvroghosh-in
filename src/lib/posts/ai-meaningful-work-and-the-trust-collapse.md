@@ -13,7 +13,7 @@ color: "slate"
 
 <Pi src="Compress_20260507_182117_7717.jpg" />
 
-Artificial Intelligence [AI, software that performs pattern recognition, generation, prediction, or action in domains once thought to require human judgment] is not only threatening work by doing it faster; it is threatening work by making the evidence of work harder to believe.
+Artificial Intelligence [AI] is not only threatening work by doing it faster; it is threatening work by making the evidence of work harder to believe.
 
 That is the more demoralizing wound. Not the cartoon version, where a glowing robot strolls into the office wearing a lanyard and takes your chair. The nastier version is quieter. A report appears. A song appears. A blog post appears. A product mockup appears. A clinical summary appears. A student essay appears. A grant proposal appears. Everything has the surface temperature of competence. Everything has paragraphs, transitions, headings, diagrams, tasteful semicolons, and that faintly disinfected prose smell of a hotel corridor after housekeeping has passed through. Yet one begins to suspect that nobody was really there. No mind wrestled the thing down. No one got stuck, circled back, changed position, noticed a contradiction, or paid the small private tax of thinking.
 
