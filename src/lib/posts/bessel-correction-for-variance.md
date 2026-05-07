@@ -2,12 +2,16 @@
 title: "Bessel Correction Without the Mathematical Chilli Powder"
 description: "A plain-English explanation of why sample variance divides by one less than the number of observations, written for someone who would rather cross Esplanade in peak traffic than stare at formulas."
 date: "2026-05-07"
+thumbnail: "/images/Compress_20260507_192047_7281.jpg"
 category: "Statistics"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260507_192047_7281.jpg" />
 
 Bessel correction is the small statistical trick that stops a tiny sample from pretending it knows the whole city.
 
