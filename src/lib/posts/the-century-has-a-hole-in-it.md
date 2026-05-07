@@ -43,7 +43,7 @@ The formula is simple enough to be mildly offensive. For any positive AD year, t
 
 You can also use the schoolboy shortcut. Split 2026 into 20 and 26. Since the last two digits are not 00, add one to the first part. So 20 plus 1 becomes 21. But for a year ending in 00, do not add one. The year 2000 remains in the 20th century. The year 1900 remains in the 19th. The year 2100 remains in the 21st. The moment the year becomes 2101, the 22nd century begins, and some future idiot will write the same explanation on whatever glowing neurological advertisement platform has replaced blogs by then.
 
-What fascinated me was not merely the answer. The answer is tidy. A little calendar arithmetic, a missing zero, a ceiling function, and the matter is settled. What fascinated me was that people could say “21st century” every day and not feel even a faint tickle of contradiction when looking at the 20 in 2023. The mind had built a smooth road over a pothole and then forgotten the pothole existed.
+What fascinated me was not merely the answer. The answer is tidy. A little calendar arithmetic, a missing zero, a ceiling function, and the matter is settled. What fascinated me was that people could say “21st century” every day and not feel even a faint tickle of contradiction when looking at the 20 in 2026. The mind had built a smooth road over a pothole and then forgotten the pothole existed.
 
 That, I think, is how much of reality works. Not by being obvious, but by becoming familiar. Familiarity is the chloroform of thought. It does not prove things. It merely sedates the part of us that would otherwise object.
 
