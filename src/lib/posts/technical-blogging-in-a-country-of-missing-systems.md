@@ -2,12 +2,16 @@
 title: "Writing Healthcare IT From the Edge of the Missing Machine"
 description: "A lament on technical blogging, Indian healthcare systems, and the painful civic comparison with China that polite nationalism keeps trying to bury under applause."
 date: "2026-05-07"
+thumbnail: "/images/Compress_20260507_162504_4412.jpg"
 category: "Healthcare IT"
 tags: ["Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260507_162504_4412.jpg" />
 
 Writing about Healthcare Information Technology [healthcare IT, the machinery by which clinical work is recorded, exchanged, billed, measured, audited, and occasionally understood] is a peculiar punishment because the subject is both everywhere and invisible, like plumbing in a mansion or corruption in a municipal tender. Nobody thinks about it until something leaks, smells, floods, or denies admission to an old man with a laminated folder full of reports from six different labs, each of them printed in a different font, each of them pretending to be medicine.
 
