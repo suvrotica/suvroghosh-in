@@ -4,7 +4,7 @@ description: "A bleak but practical essay on why political promises so often col
 date: "2026-05-02"
 thumbnail : "/images/Compress_20260503_161828_8206.jpg"
 category: "Politics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Political Promises And Reality", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260503_161828_8206.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Reality has no manifesto, no party office, no election symbol, and no talent for flattery.
 
@@ -174,3 +180,10 @@ Live as best as your abilities allow, but do not confuse private endurance with 
 Reality is hard. Politics often lies. People are compromised. Leaders exploit compromise. Time eats everyone.
 
 Still, while alive, one can at least refuse to be fooled cheaply.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Why India Has Such a Rich Assortment of Hoodlums and Goons](/blog/society/india-hoodlums-goons-assortment)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Universal Basic Income in India After Work Stops Being a Promise](/blog/political-economy/ubi-india-ai-unemployment-democracy)

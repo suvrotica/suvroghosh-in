@@ -4,7 +4,7 @@ description: "A small childhood arithmetic scandal about why 2026 belongs to the
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_164649_9699.jpg"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal", "The Century Has A Hole In IT", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260507_164649_9699.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Reality, that grand upholstered sofa on which respectable people sit without checking for bedbugs, is not nearly as solid as advertised. It is a monoculture only from a distance. Come closer and the thing is riddled with tiny comic holes, little logical termite galleries, absurdities, inherited customs, badly translated certainties, ancestral mutterings, half-remembered scriptures, colonial schoolroom furniture, and the occasional fact sitting quietly in the corner like a goat at a physics lecture.
 
@@ -60,3 +65,10 @@ The Indian Heathens Club, if it exists, probably has no annual membership card. 
 Still, I prefer the holes.
 
 A smooth reality is comfortable but suspicious. It has the dead sheen of a government office table polished by decades of elbows and evasion. A punctured reality, full of strange little gaps, is less relaxing but more alive. It gives you places to insert a question. And sometimes a question, if sharpened properly, is the only tool a person has against the enormous upholstered sofa of common sense under which so many small truths have been quietly swept.
+
+## Related Posts
+
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Contender Who Would Not Compete](/blog/personal-essay/the-contender-who-would-not-compete)

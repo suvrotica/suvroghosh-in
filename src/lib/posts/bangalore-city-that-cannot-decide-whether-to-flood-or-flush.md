@@ -4,7 +4,7 @@ description: "A satirical rewrite of an old blog post on Bangalore’s floods, w
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_161629_9681.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "Bangalore City That Cannot Decide Whether To Flood Or Flush", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
 published: true
 color: "amber"
 ---
@@ -12,6 +12,11 @@ color: "amber"
 <TTS />
 
 <Pi src="Compress_20260505_161629_9681.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 Bangalore has achieved that rare civic distinction of making both rain and drought feel like administrative conspiracies. When it rains, the city behaves as if the sky has committed cyberterrorism. Roads become canals, basements become aquariums, traffic lights expire with a small electrical cough, and the celebrated software capital of India begins to resemble a motherboard dropped into a septic tank. When it does not rain, the taps grow philosophical, the tanks grow hollow, the housing societies grow tyrannical, and every resident must begin the day with the kind of moral calculation usually reserved for famine, war, or badly designed enterprise software: should this water be used for drinking, bathing, cooking, flushing, or maintaining the final bit of dignity between the human body and its lower paperwork?
 
@@ -49,7 +54,7 @@ India is very good at conditional logic when someone is watching. If this, then 
 
 The result is a billion-dollar technology city where residents must worry about whether the water should go into the mouth, the pot, the bucket, the flush, the washing machine, the overhead tank, or the bottomless appetite of the tanker lobby. This is not a small embarrassment. It is a diagnostic scan of the nation’s development model. We have built islands of global competence floating in local dysfunction. Inside the campus: cloud migration, Kubernetes, machine learning operations, design thinking, biometric security. Outside the gate: a man with a hose, a tanker, a bribe, a rumor, and a queue.
 
-And then there is the matter of unflushed shit. Civilization depends on removing consequences from view. That is what plumbing does. That is what bureaucracy claims to do. That is what software often pretends to do. Push the button, send the message, flush the toilet, close the ticket. But when the system behind the button fails, reality returns with a smell. Waste piles up. Tickets reopen. Drains reverse. Databases corrupt. Citizens improvise. The unofficial workflow becomes the real architecture.
+And then there is the matter of unflushed mess. Civilization depends on removing consequences from view. That is what plumbing does. That is what bureaucracy claims to do. That is what software often pretends to do. Push the button, send the message, flush the toilet, close the ticket. But when the system behind the button fails, reality returns with a smell. Waste piles up. Tickets reopen. Drains reverse. Databases corrupt. Citizens improvise. The unofficial workflow becomes the real architecture.
 
 Every Indian city has these shadow workflows. The tanker number saved in the phone. The plumber who answers only if you know his cousin. The watchman who knows which valve to open at 3 a.m. The resident who has quietly installed an illegal booster pump. The housing society WhatsApp group where democracy goes to suffer dehydration. The politician’s assistant who can arrange a supply if the colony has the right voting weight. The municipality may publish plans, but the city runs on workaround.
 
@@ -61,7 +66,7 @@ Of course, I am no urban planner, no hydrologist, no elected guardian of the pub
 
 The comparison occurred to me, naturally, in the bathroom. This is where many of my political theories form, because the bathroom is the last honest parliament. There are no microphones, no manifestos, no consultants, no startup founders explaining disruption, no ministers claiming visionary progress. There is only the body, the water, the drain, the smell, and the question of whether the infrastructure of civilization has held for one more morning.
 
-Perhaps this is why artificial intelligence seems, at moments, like an evolutionary improvement. Not because it thinks better than us. It often does not. It hallucinates, flatters, imitates, confabulates, and consumes energy like a demon with a data center. But it has one undeniable advantage over the human organism: it does not shit. It may produce nonsense, but not sewage. Its waste is invisible to most users, hidden in power grids, cooling systems, water consumption, rare earth extraction, labor exploitation, and server farms humming away like temples to outsourced consequence.
+Perhaps this is why artificial intelligence seems, at moments, like an evolutionary improvement. Not because it thinks better than us. It often does not. It hallucinates, flatters, imitates, confabulates, and consumes energy like a demon with a data center. But it has one undeniable advantage over the human organism: it does not mess. It may produce nonsense, but not sewage. Its waste is invisible to most users, hidden in power grids, cooling systems, water consumption, rare earth extraction, labor exploitation, and server farms humming away like temples to outsourced consequence.
 
 That invisibility is the trick. Human waste is vulgar because it announces itself. Technological waste is respectable because it travels through invoices. A human being must clean himself and confront the absurdity of being an intelligent mammal with a digestive tract. A machine merely externalizes its appetite into infrastructure and calls it progress. We smell bad in person. Machines smell bad at scale.
 
@@ -70,3 +75,10 @@ Still, the old bargain may not last. For now, we remain cheaper than clean autom
 But tolerance is not civilization. It is merely the stretchable waistband of collapse.
 
 A city that cannot manage water cannot hide behind software forever. Code is clean only inside the editor. Outside, the programmer needs a toilet, a road, a drain, a pipe, a lake that still exists, and a government that understands that water is not a lifestyle amenity. It is the operating system beneath the operating system. When that fails, the smartest city becomes a wet, dry, smelly, anxious joke, with excellent coffee, expensive rent, and a population of highly skilled mammals wondering whether the next bucket should go to the mouth or the backside.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
+- [Why India Has Such a Rich Assortment of Hoodlums and Goons](/blog/society/india-hoodlums-goons-assortment)

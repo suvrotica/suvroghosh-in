@@ -4,6 +4,7 @@ description: "An architecturally grounded look at the experimental use of propof
 thumbnail : "/images/IMG-20260423-WA0019.jpg"
 date: "2026-04-22"
 category: "healthcare"
+tags: ["SuvroGhosh", "healthcare", "Propofol Dream Recall Nightmares", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,12 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260423-WA0019.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 This is not a treatment for nightmares in the ordinary clinical sense. It is not sleep medicine. It is not standard psychiatry. It is not even established anesthesiology. It is a narrow, experimental protocol sitting at an awkward border between anesthesia, memory reconsolidation, dream phenomenology, and trauma therapy, built on a real observation that some patients under propofol can enter vivid dream states during emergence, can recall those dreams on awakening, and in a few reported cases showed rapid reduction in trauma symptoms, including nightmares, afterward. That is interesting. It is also very far from proof.
 
@@ -65,3 +72,10 @@ What would make this credible over the next few years is not more lyrical case r
 Until then, the fairest description is this: propofol-assisted dream recall before awakening is not a treatment for nightmares in the way lithium is a treatment for mania or insulin is a treatment for diabetic ketoacidosis. It is an experimental attempt to use a controllable anesthetic state to let traumatic dream material emerge, continue, and be remembered under calmer physiological conditions than ordinary nightmares allow. The theory is coherent. The mechanism is plausible. The anecdotes are striking. The evidence is still thin.
 
 And thin evidence is where medicine gets itself into trouble when fascination outruns discipline.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox](/blog/healthcare-it/mental-health-polypharmacy-decision-support)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)

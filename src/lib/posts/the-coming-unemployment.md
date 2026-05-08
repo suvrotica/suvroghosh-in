@@ -4,7 +4,7 @@ description: "AI will not abolish work in one theatrical thunderclap. It will fi
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_211530_0762.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "The Coming Unemployment", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,13 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260506_211530_0762.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The first thing AI breaks is not the job. It breaks the path into the job, which is worse, because a civilization can survive some unemployment, but it cannot easily survive the disappearance of apprenticeship without turning its young into decorative livestock with degrees.
 
@@ -58,3 +65,10 @@ There is still work worth doing. Governments should stop pretending that job cre
 But no clean solution is coming. The ownership structure is too concentrated, the incentives too sharp, the technology too useful, the politics too slow, and the suffering too easy to individualize. We will muddle through, which is what societies call failure when it happens gradually enough. Some will prosper. Some will adapt. Some will be discarded and then blamed for the shape of the ditch.
 
 The machine will not need to hate us. That is childish cinema. It only needs to be useful to people who find other people expensive. That is enough. The rest is not science fiction. It is procurement.
+
+## Related Posts
+
+- [India’s White-Collar Issue](/blog/india/india-ai-it-bpo-white-collar-jobs)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)

@@ -4,7 +4,7 @@ description: "Calcutta’s street begging is not a plague of people; it is a pub
 thumbnail : "/images/Compress_20260429_121822_2096.jpg"
 date: "2026-04-29"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "The City That Begs At The Window", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
 published: true
 color: "charcoal"
 ---
@@ -12,6 +12,12 @@ color: "charcoal"
 <TTS />
 
 <Pi src="Compress_20260429_121822_2096.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Calcutta’s street begging is not a plague of people; it is the visible user interface of a city that has outsourced destitution to traffic lights, temple gates, railway platforms, hospital entrances, and the embarrassed conscience of anyone trapped behind a rolled-up car window.
 
@@ -88,3 +94,10 @@ The task is not to become hard. The task is to become accurate. Give when giving
 A decent city does not require every citizen to solve poverty at a red light. It builds systems so that the red light can go back to being a traffic signal, not a miniature court where hunger, fear, gender exile, class guilt, fraud, pity, and public failure all bang on the glass at once.
 
 P.S. References: Dominique Lapierre, _City of Joy_.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Range Limit of Kinship](/blog/society/kinship-range-limit-calcutta)

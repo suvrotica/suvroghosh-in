@@ -4,7 +4,7 @@ description: "Politicians are rarely clean fairy-tale villains. More often, poli
 thumbnail : "/images/Compress_20260428_160801_1383.jpg"
 date: "2026-04-28"
 category: "Politics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Political Power", "Political Corruption", "Public Accountability", "Democratic Accountability", "Political Incentives", "Incentive Capture", "Political Finance", "Campaign Finance", "Opaque Funding", "Electoral Bonds", "India Electoral Bonds", "Supreme Court of India", "Right to Information", "Transparency", "Governance", "Institutional Design", "State Power", "Public Service", "Democracy", "Democratic Institutions", "Representation", "Political Parties", "Donor Influence", "Bureaucracy", "Regulatory Capture", "Public Policy", "Corruption Systems", "Power Without Consequence", "Political Ethics", "Civic Literacy", "Political Satire", "Institutional Failure", "Administrative Fog", "Cronyism", "Patronage Networks", "Party Discipline", "Voter Rights", "Public Trust", "Political Reform", "Good Governance", "State Accountability", "Money in Politics", "Indian Politics", "Political Realism", "Civic Responsibility", "Anti Corruption", "Systems Thinking"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Politics As A Machine For Spoiling Ordinary People", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "red"
 ---
@@ -12,6 +12,11 @@ color: "red"
 <TTS />
 
 <Pi src="Compress_20260428_160801_1383.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 A politician is not usually born evil, which is disappointing for those of us who prefer our villains tidy, caped, skull-ringed, and considerate enough to leave a signed confession on official letterhead.
 
@@ -84,3 +89,10 @@ So reform comes unevenly. Courts intervene. Journalists uncover. Civil society l
 The funny but accurate takeaway is that politicians are “generally evil” only in the same sense that unattended milk generally spoils. The milk is not possessed by Satan. The fridge is broken, the kitchen is hot, the landlord is lying about electricity, and everyone is standing around writing patriotic poems about dairy.
 
 The task, then, is not to find milk with superior character. It is to fix the refrigerator, audit the landlord, check the wiring, label the bottle, shorten the time between spoilage and consequence, and stop applauding anyone who tells you curdling is part of national culture.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Why India Has Such a Rich Assortment of Hoodlums and Goons](/blog/society/india-hoodlums-goons-assortment)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)

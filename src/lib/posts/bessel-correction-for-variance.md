@@ -4,7 +4,7 @@ description: "A plain-English explanation of why sample variance divides by one 
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_192047_7281.jpg"
 category: "Statistics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Statistics", "Bessel Correction For Variance", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mathematics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "indigo"
 ---
@@ -12,6 +12,12 @@ color: "indigo"
 <TTS />
 
 <Pi src="Compress_20260507_192047_7281.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Bessel correction is the small statistical trick that stops a tiny sample from pretending it knows the whole city.
 
@@ -96,3 +102,10 @@ That is it.
 The formula is not the point. The point is: when your measuring center is built from the same little group you are measuring, the group looks artificially tidy.
 
 And no real group in Kolkata is tidy.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)

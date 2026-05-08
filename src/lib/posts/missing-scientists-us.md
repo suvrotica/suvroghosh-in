@@ -4,6 +4,7 @@ description: "Why the louder story is not espionage or cinematic disappearance, 
 thumbnail : "/images/IMG-20260423-WA0016.jpg"
 date: "2026-04-22"
 category: "healthcare-it"
+tags: ["SuvroGhosh", "Healthcare IT", "healthcare-it", "Missing Scientists US", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,13 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260423-WA0016.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- US: United States. the United States of America.
+
+---
 
 The missing scientists story is being told in the dumbest possible way.
 
@@ -87,3 +95,10 @@ That is what many observers are actually seeing.
 Not a vanishing of scientists into darkness, but a vanishing of state capacity into ideology.
 
 And when that happens, a missing record begins to look like a missing person, a staffing cut begins to look like a mystery, a quiet exit begins to look like a plot, and television does what television always does: it lights the fog from behind and calls the shadow a monster.
+
+## Related Posts
+
+- [India’s Semiconductor Problem Is Not a Missing Slogan](/blog/technology/india-semiconductor-sufficiency-beyond-lip-service)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

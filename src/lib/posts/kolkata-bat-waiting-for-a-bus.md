@@ -4,7 +4,7 @@ description: "A satirical reflection on overcrowded transport, civic decay, unsa
 thumbnail : "/images/Compress_20260504_184912_2345.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Personal Essay", "Kolkata Bat Waiting For A Bus", "Suvro Ghosh", "Calcutta", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260504_184912_2345.jpg" />
+
+Acronyms expanded in this post:
+- COVID: Coronavirus Disease. the disease caused by SARS-CoV-2.
+
+---
 
 Kolkata public transport is less a system than a recurring experiment in how many vertebrates can be folded into a moving container before somebody invokes God, Marx, bad breath, or the ancestry of the man blocking the door.
 
@@ -62,3 +67,10 @@ Still, one must give the old pessimist credit. He understood the basic plot. Too
 He was right, I must admit.
 
 He simply forgot to include the biri.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)

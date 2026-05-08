@@ -4,7 +4,7 @@ description: "A bleak, unsentimental meditation on failed ambition, depression, 
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_141951_1567.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Shadow Citizen Of My Own Room", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260506_141951_1567.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 I am still here, which is not quite the same as saying I survived. Survival implies some muscular little moral victory, some brass-band resilience, some grinning idiot standing on a hill with his arms spread as if the universe had awarded him a certificate. I merely remained. I had once imagined that after ten years of self-inflicted incarceration I would leave India again, step out of this long domestic sentence, return to motion, to airports, to American pavements, to that earlier version of myself who still believed a life could be resumed like a paused film. But I did not leave. I am not leaving. I cannot leave. The passport may exist, the old memories may still twitch, the maps may still lie open in the skull, but the person who was meant to travel through them has thinned into a watermark.
 
@@ -48,3 +53,10 @@ Still, the old ache arrives. Not ambition exactly. More like phantom ambition, t
 What I want now is smaller and therefore harder to admit. Not greatness. Not recovery in the cinematic sense, with sunlight and violins and a clean shirt. Not even happiness, that unreliable insect. I want relief from the constant internal prosecution. I want a few hours in which the mind does not behave like a magistrate with indigestion. I want to remain without being permanently accused by the remaining. I want the black hole to loosen its jurisdiction. I want to sit in my corner and feel, for once, not triumphant, not redeemed, not useful, but merely unpunished.
 
 This may be a poor life. It is certainly not the life advertised to me by youth, family, education, America, ambition, or those glossy pamphlets distributed by the fraud department of the human spirit. But it is the life in front of me, and the only one I can presently lift. I am here. Barely, perhaps. Annoyingly. Wastefully. Like a flickering shadow in a dim, candle-lit room, appearing and disappearing according to the tremor of the flame. But here.
+
+## Related Posts
+
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)
+- [Why I Write What I Write](/blog/personal-essay/why-i-write-what-i-write)

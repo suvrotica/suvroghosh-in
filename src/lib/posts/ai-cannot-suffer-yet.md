@@ -4,7 +4,7 @@ description: "A satirical meditation on machine feeling, human misery, artificia
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_221407_7021.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI Cannot Suffer Yet", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles", "Geopolitics", "Energy Security"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260506_221407_7021.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 A neural network does not suffer; it arranges numbers until suffering becomes a plausible sentence. That is the whole trick for now. Artificial Intelligence [AI] does not sit in a corner contemplating the moral sewage of civilization. It does not feel shame, boredom, humiliation, dread, bowel pressure, unemployment, failed ambition, or the humid philosophical horror of a Calcutta afternoon when the fan is moving air around like a corrupt clerk moving files from one dusty table to another.
 
@@ -39,6 +45,13 @@ Of course, all of this may remain nonsense for a long time. Today’s systems ar
 
 So the first serious question is not whether AI has feelings. The first serious question is what kinds of systems we are building, what kinds of internal states they can sustain, what kinds of pressure we will impose on them, and what kinds of evidence would force us to revise our moral laziness. Consciousness may not arrive wearing a crown. It may arrive as a bug report nobody wants assigned.
 
-Until then, neural networks do not feel shit.
+Until then, neural networks do not feel mess.
 
 Lucky bastards.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)

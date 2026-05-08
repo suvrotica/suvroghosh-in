@@ -4,6 +4,7 @@ description: "A reflection on why learning often reveals only the visible crust 
 thumbnail : "/images/IMG-20260425-WA0003.jpg"
 date: "2026-04-25"
 category: "knowledge"
+tags: ["SuvroGhosh", "knowledge", "Epistemic Iceberg Effect", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,12 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260425-WA0003.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Learning first arrives dressed as clarity, which is how it gets away with so much mischief. A clean diagram, a neat definition, a chapter summary, a teacher’s chalk line across the board: these things feel like possession. We think we have touched the subject because we have learned its face. Then, usually much later, the floor gives a small scholarly creak. The definition has exceptions. The exceptions have footnotes. The footnotes have feuds. The feuds have dead Germans, missing datasets, old mistakes, institutional habits, translation problems, and one obscure convention everybody follows but nobody can quite justify. That is when learning stops looking like a staircase and begins to resemble an iceberg.
 
@@ -43,3 +50,10 @@ A better education would teach not only answers but scale. It would show the vis
 Learning begins as cartography and ends as humility. First we draw the coastline. Then we discover the continent. Then, if we are lucky and not too vain, we learn that much of the continent is underground. The point is not to abandon maps, models, or explanations. The point is to hold them properly: not as trophies of mastery, but as lanterns in partial darkness.
 
 Every subject, once entered deeply enough, becomes larger than its introduction. That enlargement is not a failure of learning. It is learning doing its real work. The iceberg was always there. The mind grows not by pretending to see all of it, but by becoming the sort of instrument that no longer mistakes the glittering tip for the frozen world beneath.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)

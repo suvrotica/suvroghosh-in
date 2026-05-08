@@ -4,7 +4,7 @@ description: "A lament on technical blogging, Indian healthcare systems, and the
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_162504_4412.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "Technical Blogging In A Country Of Missing Systems", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,17 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260507_162504_4412.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HIE: Health Information Exchange. the sharing of clinical information across organizations.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Writing about Healthcare Information Technology [healthcare IT, the machinery by which clinical work is recorded, exchanged, billed, measured, audited, and occasionally understood] is a peculiar punishment because the subject is both everywhere and invisible, like plumbing in a mansion or corruption in a municipal tender. Nobody thinks about it until something leaks, smells, floods, or denies admission to an old man with a laminated folder full of reports from six different labs, each of them printed in a different font, each of them pretending to be medicine.
 
@@ -49,7 +60,7 @@ The bitter joke is that everyone claims to care about healthcare. Healthcare is 
 
 This hypocrisy is not uniquely Indian, but India gives it a special flourish. We want world-class care without world-class plumbing. We want artificial intelligence before reliable patient identity. We want dashboards before documentation discipline. We want national platforms before local workflow repair. We want predictive analytics on top of records that cannot reliably say whether the same patient came back twice or two patients came once. We want the mango without the tree, the shade without the roots, the miracle without the maintenance contract.
 
-The practical implication is blunt. Design must begin not with applications but with representational honesty. What entities does the system claim to know? Patient, encounter, order, result, diagnosis, medication, procedure, claim, referral, consent, provider, facility. Who owns each? When does it change? What is its source of truth? What is captured because care required it, what is captured because billing demanded it, what is captured because regulation threatened punishment, and what is captured because a tired human clicked the least-wrong option?
+The practical point is blunt. Design must begin not with applications but with representational honesty. What entities does the system claim to know? Patient, encounter, order, result, diagnosis, medication, procedure, claim, referral, consent, provider, facility. Who owns each? When does it change? What is its source of truth? What is captured because care required it, what is captured because billing demanded it, what is captured because regulation threatened punishment, and what is captured because a tired human clicked the least-wrong option?
 
 Governance must stop behaving like a festival committee and start behaving like architecture. Terminology mapping is not clerical housekeeping. It is semantic policy. Interface specifications are not vendor paperwork. They are contracts about reality. Data warehouses are not dumping grounds for exhausted transactional systems. They are interpretive machines, and every transformation inside them should carry provenance, latency expectations, loss markers, and an admission of what was guessed.
 
@@ -62,3 +73,10 @@ And write about it anyway.
 Write the technical blog even if only seventeen people read it, and twelve of them are bots, and one is a recruiter searching for “FHIR architect” with the enthusiasm of a bored heron. Write because the public vocabulary is too thin. Write because India badly needs people who can tell the difference between digitization and systems thinking. Write because someone must say that a scanned PDF is not interoperability, that a portal is not governance, that a dashboard is not truth, that a hospital application is not healthcare IT maturity, and that national pride does not become infrastructure merely by shouting at skeptics.
 
 The blog form is inadequate, of course. It is a small window cut into a large, damp, badly wired building. But a window is not nothing. Through it, a reader may see that the mess has structure. The boil has anatomy. The complaint has engineering behind it. And perhaps that is the only honest ambition left: not to make healthcare IT glamorous, but to make its hidden machinery visible enough that fewer people can pretend the machine is working when it is merely making noise.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)
+- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)

@@ -4,7 +4,7 @@ description: "A technical but readable exploration of how unipolar depression an
 thumbnail: "/images/Compress_20260506_103338_8816.jpg"
 date: "2026-05-06"
 category: "Mental Health Systems"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Mental Health", "Mental Health Systems", "Depression As Mathematics", "Mathematics", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,13 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260506_103338_8816.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Depression, if forced into mathematics, would not be a single number called sadness; it would be a moving system whose variables refuse to sit politely in one row like schoolchildren.
 
@@ -41,7 +48,7 @@ For BD, a more honest abstraction is a hybrid dynamical system. “Hybrid” her
 
 That feedback loop might be written as $e(t+1)=e(t)+\rho(1-s(t))-\delta q(t)+\eta(t)$. Here $e$ is activation, $s$ is sleep stability, $q$ is regulatory braking, $\rho$ is sensitivity to sleep loss, and $\delta$ is damping. If sleep drops and the system has high sensitivity, activation rises. If activation then further damages sleep, we get positive feedback. Positive feedback is not “positive” in the motivational-poster sense. It means self-amplifying. A microphone squeal is positive feedback. So is a bank run. So is a manic escalation when the braking system fails.
 
-The non-obvious architectural insight is this: the distinction between unipolar depression and bipolar disorder is not only about which mood states occur, but about the transition architecture between states. Two people may look equally depressed on a Tuesday. Their scores on a symptom scale may be nearly identical. But one system may have a single deep depressive basin, while the other has hidden switches, asymmetric thresholds, circadian instability, and a history of activation overshoot. The visible state is not the whole system. In mathematics, as in healthcare data, a snapshot can lie without saying anything false.
+The less obvious machinery underneath is this: the distinction between unipolar depression and bipolar disorder is not only about which mood states occur, but about the transition architecture between states. Two people may look equally depressed on a Tuesday. Their scores on a symptom scale may be nearly identical. But one system may have a single deep depressive basin, while the other has hidden switches, asymmetric thresholds, circadian instability, and a history of activation overshoot. The visible state is not the whole system. In mathematics, as in healthcare data, a snapshot can lie without saying anything false.
 
 That is also why representation failures are often mislabeled as data quality failures. If a clinic records “mood: depressed” without activation, sleep, velocity, prior episodes, medication exposure, seasonality, psychosis, mixed features, family history, and temporal sequence, the problem is not merely that the data are dirty. The representation is too poor for the phenomenon. Calling it bad data is like blaming a postcard for failing to contain the Bay of Bengal.
 
@@ -78,3 +85,10 @@ The deepest truth is that mood disorders are not merely contents of consciousnes
 So, if depression were mathematical, sadness would be only one variable. Unipolar depression would be a nonlinear stochastic system with a depressive attractor, delayed recovery, and distorted feedback. Bipolar disorder would be a hybrid dynamical system with coupled and uncoupled variables, regime switching, threshold instability, and circadian-sensitive feedback loops. The symbols would not cure anyone. Symbols are not medicine. But they can rescue the conversation from stupidity, and that is not nothing.
 
 A good equation does not explain away suffering. It gives suffering a shape precise enough to stop blaming the sufferer for the geometry of the trap.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox](/blog/healthcare-it/mental-health-polypharmacy-decision-support)

@@ -4,7 +4,7 @@ description: "A system-level analysis of why Electronic Health Records and Healt
 thumbnail : "/images/IMG-20260423-WA0009.jpg" 
 date: "2026-04-21"
 category: "healthcare it"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "EHR", "HIE", "AI Diagnostics", "India"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "EHR", "HIE", "AI Diagnostics", "India", "Healthcare IT", "India Ehr Hie AI Constraints", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary"]
 published: true
 color: "teal"
 ---
@@ -13,8 +13,21 @@ color: "teal"
 
 <Pi src="IMG-20260423-WA0009.jpg" />
 
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HIE: Health Information Exchange. the sharing of clinical information across organizations.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- ICD: International Classification of Diseases. a diagnosis classification system used for reporting, billing, and statistics.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- NLP: Natural Language Processing. software methods for working with human language.
+- SNOMED CT: Systematized Nomenclature of Medicine Clinical Terms. a large clinical terminology for representing medical meaning.
 
-
+---
 
 Electronic Health Record [EHR, the digital clinical record used to document patient care], Health Information Exchange [HIE, the network and governance layer that lets clinical information move between organizations], Artificial Intelligence [AI, software that learns patterns from data and uses them for prediction, classification, or generation], Health Level Seven version 2 [HL7 v2, the old but still widely used healthcare messaging standard that moves events like lab results and admissions], Fast Healthcare Interoperability Resources [FHIR, a newer healthcare data standard that represents clinical data as small linked resources such as Patient, Observation, Encounter, and MedicationRequest], Clinical Document Architecture [CDA, a document-based healthcare standard that packages clinical narratives and structured sections], Optical Character Recognition [OCR, software that converts scanned or photographed text into machine-readable text], Natural Language Processing [NLP, software methods for extracting meaning from human language], International Classification of Diseases [ICD, a coding system for diagnoses], Systematized Nomenclature of Medicine Clinical Terms [SNOMED CT, a detailed clinical terminology for representing medical concepts], Application Programming Interface [API, a controlled software doorway through which one system can request or send data], and Ayushman Bharat Digital Mission [ABDM, India’s national digital health initiative meant to support health identity, records, consent, and data exchange] are the main beasts in this particular zoo.
 
@@ -101,3 +114,10 @@ That is not the grand cathedral of digital health.
 It is more like a tea stall with electricity during load-shedding: imperfect, improvised, slightly smoky, but serving something hot when the grand establishments are still discussing procurement.
 
 And in India, one learns not to sneer at the small working thing.
+
+## Related Posts
+
+- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)
+- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/healthcare-it/arrow_uncertainty_medical_care_healthcare_it)

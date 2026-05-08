@@ -4,6 +4,7 @@ description: "Why the WHO-monitored SARS-CoV-2 lineage BA.3.2 matters: its delay
 thumbnail : "/images/IMG-20260423-WA0012.jpg" 
 date: "2026-04-21"
 category: "public-health"
+tags: ["SuvroGhosh", "public-health", "Cicada Ba32 Covid Variant", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "violet"
 ---
@@ -11,6 +12,15 @@ color: "violet"
 <TTS />
 
 <Pi src="IMG-20260423-WA0012.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- BA: variant lineage naming. a branch name used in SARS-CoV-2 variant tracking.
+- COVID: Coronavirus Disease. the disease caused by SARS-CoV-2.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- SARS-CoV-2: Severe Acute Respiratory Syndrome Coronavirus 2. the virus that causes COVID.
+
+---
 
 The striking thing about BA.3.2 is not that it is merely another Omicron descendant. It is that it behaves like a lineage that somehow stepped out of a side corridor of viral history, reappearing long after its apparent ancestral branch had faded from ordinary circulation. That is why the informal nickname “Cicada” caught on. Not because viruses are insects, obviously, but because BA.3.2 seems to have emerged after a long, quiet interval, much as periodical cicadas surface after years out of sight.
 
@@ -65,3 +75,10 @@ The deeper truth is slightly uncomfortable. We are now in a phase of the pandemi
 That is the unique trajectory worth noticing.
 
 Not merely that an old branch seemed to surface after a long silence, but that it did so at a moment when many countries are less able than before to tell, quickly and precisely, whether a strange lineage is a curiosity, a warning, or the first draft of something more consequential.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Natural Selection Is Not Just About Animals](/blog/systems-thinking/natural-selection-across-timescales)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)

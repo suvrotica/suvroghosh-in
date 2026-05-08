@@ -4,7 +4,7 @@ description: "A lively guide to the major tribes of artificial intelligence, fro
 date: "2026-05-06"
 thumbnail : "/images/Compress_20260506_184203_3225.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Artificial Intelligence", "Calcutta Bengalis Guide To AI Tribes", "Calcutta Bengali", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
 published: true
 color: "indigo"
 ---
@@ -12,6 +12,13 @@ color: "indigo"
 <TTS />
 
 <Pi src="Compress_20260506_184203_3225.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LLM: Large Language Model. a statistical language system trained to generate and interpret text.
+
+---
 
 Artificial Intelligence [AI, the attempt to make machines perform tasks that look intelligent when humans do them] has always looked less like one science and more like College Street after rain: crowded, argumentative, slightly electrified, and full of men insisting that their particular stall contains the one true book.
 
@@ -75,10 +82,17 @@ The crucial distinction, often missed, is between representation and intelligenc
 
 Many AI failures are representation failures mislabeled as model failures. The data does not contain the reality people think it contains. The labels are noisy. The categories are political. The measurements are proxies. The workflow that created the data has bent it. The absence of evidence becomes evidence of absence. The system learns the organization’s habits and mistakes, then returns them with mathematical confidence. This is why a model trained on institutional data can become a mirror with a management degree: accurate in places, distorted in others, and extremely pleased with itself.
 
-The practical implication is plain. Before asking which AI tribe to join, ask what kind of problem you actually have. If the domain is governed by explicit rules, symbolic systems may be appropriate. If the domain is noisy and perceptual, neural methods may shine. If uncertainty is central, Bayesian methods deserve respect. If the problem is sequential and reward-driven, reinforcement learning may fit, though with caution and adult supervision. If the domain requires both perception and reasoning, neuro-symbolic approaches may be worth the pain. If human consequences are serious, explainability and provenance cannot be bolted on afterward like a balcony added to an unsafe building.
+The practical point is plain. Before asking which AI tribe to join, ask what kind of problem you actually have. If the domain is governed by explicit rules, symbolic systems may be appropriate. If the domain is noisy and perceptual, neural methods may shine. If uncertainty is central, Bayesian methods deserve respect. If the problem is sequential and reward-driven, reinforcement learning may fit, though with caution and adult supervision. If the domain requires both perception and reasoning, neuro-symbolic approaches may be worth the pain. If human consequences are serious, explainability and provenance cannot be bolted on afterward like a balcony added to an unsafe building.
 
-The clean solution is prevented by the oldest villain in computing: the world. Data is partial. Institutions lie to themselves. Incentives deform measurement. Humans invent workarounds. Labels drift. Regulations lag. Vendors oversell. Researchers simplify. Production systems decay. The model is only one animal in the zoo. The pipeline, the users, the data-generating process, the feedback loops, and the governance machinery all matter. AI does not escape architecture. It exposes it.
+The neat solution runs into the oldest villain in computing: the world. Data is partial. Institutions lie to themselves. Incentives deform measurement. Humans invent workarounds. Labels drift. Regulations lag. Vendors oversell. Researchers simplify. Production systems decay. The model is only one animal in the zoo. The pipeline, the users, the data-generating process, the feedback loops, and the governance machinery all matter. AI does not escape architecture. It exposes it.
 
 So the Calcutta Bengali’s guide is this: treat every AI school as a temperament, not a religion. The symbolists bring grammar. The neural crowd brings instinct. The Bayesians bring doubt. The evolutionary people bring mutation and mischief. The reinforcement learners bring consequences. The fuzzy logicians bring graded reality. The expert systems bring institutional memory. The swarm people bring collective behavior. The neuro-symbolic crowd brings uneasy diplomacy. The quantum people bring possibility and fog. The explainability people bring the necessary irritation of accountability. The AGI people bring apocalypse, salvation, venture capital, and occasionally a useful question.
 
 Use them all carefully. Mock them when needed. Respect them when earned. And never believe anyone who says one method has solved intelligence. That person has either not understood intelligence, not understood method, or has recently raised funding.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)

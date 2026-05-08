@@ -4,6 +4,7 @@ description: "A field-wise, city-wise guide to the conspicuous insects and arach
 thumbnail : "/images/IMG-20260424-WA0004.jpg"
 date: "2026-04-24"
 category: "natural history"
+tags: ["SuvroGhosh", "Calcutta", "natural history", "Large Common Insects And Arachnids In Urban Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "green"
 ---
@@ -11,6 +12,12 @@ color: "green"
 <TTS />
 
 <Pi src="IMG-20260424-WA0004.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Calcutta is not merely inhabited by insects; it is co-authored by them. The city’s old drains, sweating walls, mango trees, book cupboards, fish markets, tram wires, roof tanks, damp stairwells, puja bamboo, and monsoon puddles form a vast arthropod republic, humming and skittering under the human one. We see only the larger and more theatrical citizens: the cockroach that erupts from a kitchen drain like a guilty clerk, the huntsman spider flattened against the bathroom wall like a hairy punctuation mark, the winged termites that appear after rain as if the furniture itself has begun to dream of aviation, the dragonfly patrolling a pond with the competence of a fighter pilot, the red ant descending from a guava tree with the moral seriousness of a tax inspector.
 
@@ -88,3 +95,9 @@ Yet admiration should not become foolishness. Dengue mosquitoes are not charming
 
 Urban Calcutta is a layered habitat pretending to be only a city. Under the human map lies another map: termite galleries, ant trails, mosquito nurseries, spider territories, wasp hunts, moth flights, beetle burrows, cockroach corridors, dragonfly patrol routes, and mite-scale sovereignties. The tram bell, the frying oil, the wet dust after rain, the sour sweetness of fruit peel near a market, the green shine of a pond at evening, the old books swelling in a monsoon cupboard—all of these are not background. They are instructions. The insects read them fluently. The arachnids read the insects. And we, large, literate, overconfident mammals, are still learning the script. At fifty-one, I sometimes feel that the insects understand Calcutta better than I do: they ask very little of it, make no grand bargain with the future, and simply exist in the cracks, drains, eaves, cupboards, and wet green margins where the city still permits existence without rent or achievement. I am a Bengali at fifty-one, by some quiet civic arithmetic, finally and officially over the hill; and bleak as my prospects already are, there is no irony left in admitting that the year numbers now feel less celebratory than lane closures, each year narrowing the road ahead until the metaphorical tunnel grows absurdly long and the light at the end of it is so dim it might as well have been extinguished. I feel old, not older. I do not think I brood; brooding suggests a kind of theatrical luxury, and I have lost even the ambition for that. There is no life left in this old dog, or so it feels on certain afternoons when the world I thought I was being prepared for turns out not to be the world I inhabit now. This one is faster, slipperier, more baffling, lacquered with lies, and curiously generous to talents I was neither born with nor can acquire: a nimble lack of scruple, a cheerful intimacy with adulterated facts, a professional ease with saying what is useful rather than what is true. So I look at the cockroach, the huntsman spider, the termite after rain, and I envy, a little, their lack of biography. They do not have to be relevant. They do not have to explain why they failed to become the proper modern thing. They endure, repellent and miraculous, in a city that has already changed its locks on me.
 
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

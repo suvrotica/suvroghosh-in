@@ -4,7 +4,7 @@ description: "A satirical personal essay on writing, India, ambition, public spe
 thumbnail: "/images/Compress_20260502_014710_0769.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "The Contender Who Would Not Compete", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "amber"
 ---
@@ -12,6 +12,12 @@ color: "amber"
 <TTS />
 
 <Pi src="Compress_20260502_014710_0769.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 I try to write a sensible post, one suited to the sensibilities of sensible people, and almost immediately something inside me throws a wrench into the machinery, not a discreet little Allen key but a great municipal crowbar, the sort used by men in dusty shirts to pry open drains and expose the private digestive system of the city.
 
@@ -156,3 +162,10 @@ The dark horse who misplaced the racecourse.
 The citizen trying to love his country without being chloroformed by its brochures.
 
 The writer trying to remove the unnecessary adjective, failing, and discovering that the unnecessary adjective was load-bearing.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

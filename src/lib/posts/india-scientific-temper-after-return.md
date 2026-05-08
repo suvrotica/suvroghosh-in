@@ -4,6 +4,7 @@ description: "A returning Indian looks at the strange coexistence of technical b
 thumbnail : "/images/IMG-20260428-WA0001.jpg"
 date: "2026-04-28"
 category: "Society"
+tags: ["SuvroGhosh", "India", "Society", "India Scientific Temper After Return", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,13 @@ color: "amber"
 <TTS />
 
 <Pi src="IMG-20260428-WA0001.jpg" />
+
+Acronyms expanded in this post:
+- GDP: Gross Domestic Product. the total monetary value of goods and services produced in an economy.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- US: United States. the United States of America.
+
+---
 
 India’s problem is not that it lacks intelligence; it is that intelligence here is too often trained to pass examinations, obey elders, worship credentials, fear social exile, and then quietly take a horoscope seriously before booking a wedding hall.
 
@@ -105,3 +113,10 @@ When I came back, I did not find a country without science. I found something st
 India is not doomed to this childhood. No society is. But adulthood will not arrive through GDP [gross domestic product, the total value of goods and services produced in an economy], slogans, temples, startups, fighter jets, lunar missions, or another hundred engineering colleges. It will arrive when the ordinary Indian is allowed, trained, and socially protected to ask the most dangerous small question in civilization.
 
 How do you know?
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)

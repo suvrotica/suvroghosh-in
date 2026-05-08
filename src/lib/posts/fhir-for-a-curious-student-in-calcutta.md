@@ -4,20 +4,29 @@ description: "A rigorous but readable introduction to HL7 FHIR for serious begin
 thumbnail : "/images/IMG-20260423-WA0007.jpg"
 date: "2026-04-23"
 category: "healthcare it"
-tags: ["FHIR", "HL7 FHIR", "Fast Healthcare Interoperability Resources", "Healthcare Interoperability", "Health IT Architecture", "Electronic Health Records", "EHR Integration", "Clinical Data", "Healthcare APIs", "FHIR R4", "FHIR R5", "FHIR Resources", "FHIR Profiles", "Implementation Guides", "HL7 v2", "CDA", "REST API", "Healthcare Data Exchange", "Semantic Interoperability", "Terminology Mapping", "SNOMED CT", "LOINC", "RxNorm", "ICD-10", "EHR Data Quality", "Health Information Exchange", "Healthcare Data Standards", "Clinical Informatics", "Healthcare Data Architecture", "Digital Health", "Medical Records", "Population Health Analytics", "Healthcare Data Governance", "US Healthcare IT", "India Healthcare IT", "Calcutta Healthcare IT", "Engineering Blog", "SuvroGhosh"]
+tags: ["FHIR", "US Healthcare IT", "Calcutta Healthcare IT", "Engineering Blog", "SuvroGhosh", "Calcutta", "Healthcare IT", "FHIR For A Curious Student In Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics"]
 published: true
 color: "blue"
 ---
+
 <TTS />
 
 <Pi src="IMG-20260423-WA0007.jpg" />
 
-
-
-
-Acronyms used in this post: Fast Healthcare Interoperability Resources [FHIR, the modern web-friendly healthcare data exchange standard pronounced “fire”]; Health Level Seven [HL7, the standards organization and family of standards used for healthcare information exchange]; Health Level Seven version 2 [HL7 v2, the older message-based hospital integration standard that still runs much of the clinical world]; Clinical Document Architecture [CDA, an HL7 document standard used for structured clinical summaries]; Electronic Health Record [EHR, the clinical system where patient care is documented and managed]; Application Programming Interface [API, a structured way for software systems to talk to each other]; Representational State Transfer [REST, a common web API style built around resources and standard web operations]; Logical Observation Identifiers Names and Codes [LOINC, a terminology often used for labs and clinical observations]; Systematized Nomenclature of Medicine Clinical Terms [SNOMED CT, a large clinical terminology for conditions, findings, procedures, and related meanings]; International Classification of Diseases, Tenth Revision [ICD-10, a diagnosis classification system widely used for billing, reporting, and statistics]; RxNorm [a United States medication terminology that standardizes drug names and identifiers]; Health Information Exchange [HIE, the sharing of clinical information across organizations]; Veterans Affairs [VA, the United States federal healthcare system for veterans].
-
-<TTS />
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- ICD: International Classification of Diseases. a diagnosis classification system used for reporting, billing, and statistics.
+- ICD-10: International Classification of Diseases, Tenth Revision. a widely used diagnosis classification system.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LOINC: Logical Observation Identifiers Names and Codes. a terminology for lab tests and clinical observations.
+- SNOMED CT: Systematized Nomenclature of Medicine Clinical Terms. a large clinical terminology for representing medical meaning.
+- US: United States. the United States of America.
 
 ---
 
@@ -108,3 +117,10 @@ That is where FHIR becomes interesting. Not as a fashionable standard, not as a 
 The map is imperfect. Of course it is. All maps lie by omission. The question is whether they lie usefully.
 
 FHIR, at its best, lies less than what came before. In healthcare IT, that is not paradise. It is progress.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)
+- [Building VA Data Warehouses](/blog/healthcare-it/va_data_warehouse_reality)

@@ -4,6 +4,7 @@ description: "A technical and human argument for first principles thinking as a 
 thumbnail :  "/images/IMG-20260425-WA0009.jpg" 
 date: "2026-04-26"
 category: "Useful Mental Models"
+tags: ["SuvroGhosh", "Calcutta", "Healthcare IT", "Mental Health", "Useful Mental Models", "First Principles Thinking Calcutta Healthcare IT", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,18 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260425-WA0009.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+
+---
 
 First principles thinking begins when the furniture of inherited explanation starts looking suspicious.
 
@@ -71,3 +84,10 @@ The same applies to a human life. One cannot cleanly redesign oneself from scrat
 The practical model is simple enough to remember and hard enough to occupy a life. Strip the problem to its substrate. Identify the actors, incentives, constraints, and transformations. Separate movement from meaning. Preserve provenance. Notice what gets lost when reality is represented. Refuse explanations that only rename the difficulty. Accept that clean solutions are often blocked by history, dependency, and human need. Then build the least false system you can, with enough humility to repair it when reality answers back.
 
 That is first principles thinking at street level and system level. It is the habit of asking what the machine is actually doing while everyone else is admiring the brochure. It belongs as much in a Calcutta room full of books as in a hospital integration meeting, as much in private grief as in an enterprise architecture review. It is not a philosophy of escape. It is a philosophy of contact. Reality is stubborn, but it is not always silent. First principles thinking is one way of listening before the next beautifully named mistake becomes architecture.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

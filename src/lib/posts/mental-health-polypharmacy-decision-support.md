@@ -4,6 +4,7 @@ description: "Resistant mental illness often leaves a long medication trail, but
 thumbnail : "/images/IMG-20260425-WA0013.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"
+tags: ["SuvroGhosh", "Healthcare IT", "Mental Health", "Mental Health Polypharmacy Decision Support", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay"]
 published: true
 color: "red"
 ---
@@ -11,6 +12,19 @@ color: "red"
 <TTS />
 
 <Pi src="IMG-20260425-WA0013.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- CDS: Clinical Decision Support. software that helps clinicians with alerts, reminders, recommendations, or patient-specific guidance.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- SNOMED CT: Systematized Nomenclature of Medicine Clinical Terms. a large clinical terminology for representing medical meaning.
+
+---
 
 Resistant mental illness is not a neat diagnosis with a clean medication list; it is often a long, battered itinerary through antidepressants, mood stabilizers, antipsychotics, hypnotics, anxiolytics, stimulants, dopamine agonists, failed tapers, rescue drugs, emergency substitutions, and the occasional pharmacological improvisation performed at 4:47 p.m. because everyone is exhausted and the patient is still suffering.
 
@@ -36,7 +50,7 @@ That gap is where patients disappear. Transport says the message arrived. Semant
 
 A useful system would create a psychiatric medication burden profile, not as a score pretending to be wisdom, but as a structured view of risk. It would show cumulative sedative load, anticholinergic burden, serotonergic stacking, seizure-threshold concerns, QT interval [QT, the electrocardiogram interval reflecting ventricular electrical recovery] prolongation risk where relevant, metabolic risk, withdrawal risk, abuse or misuse vulnerability, sleep architecture disruption, cognitive impairment risk, and behavioral adverse-effect signals. It would show this over time. It would separate current exposure from historical exposure. It would distinguish active risk from past intolerance. It would mark confidence levels, because psychiatric records are often less like marble tablets and more like a drawer of wet receipts.
 
-The non-obvious architectural insight is that the system should track failed therapeutic hypotheses, not just failed drugs. “Sertraline failed” is weak data. “Sertraline at an adequate dose for an adequate duration worsened insomnia and agitation without improving depressive symptoms, while the patient was also taking a stimulant and had no documented mood-stabilizer coverage” is a different object. It changes the next decision. “Lamotrigine stopped due to rash” is not the same as “lamotrigine stopped because follow-up was lost.” “Aripiprazole caused restlessness” may be the clue that prevents the next clinician from mistaking akathisia for worsening anxiety. If the hypothesis is not captured, each new prescriber is forced to rediscover the same ditch with fresh enthusiasm.
+The less obvious machinery underneath is that the system should track failed therapeutic hypotheses, not just failed drugs. “Sertraline failed” is weak data. “Sertraline at an adequate dose for an adequate duration worsened insomnia and agitation without improving depressive symptoms, while the patient was also taking a stimulant and had no documented mood-stabilizer coverage” is a different object. It changes the next decision. “Lamotrigine stopped due to rash” is not the same as “lamotrigine stopped because follow-up was lost.” “Aripiprazole caused restlessness” may be the clue that prevents the next clinician from mistaking akathisia for worsening anxiety. If the hypothesis is not captured, each new prescriber is forced to rediscover the same ditch with fresh enthusiasm.
 
 This is where governance stops being a committee word and becomes a safety instrument. A health system should define minimum psychiatric medication-history fields for high-risk prescribing, just as it defines required fields for surgery, chemotherapy, anticoagulation, or allergy documentation. The governance body should include psychiatry, primary care, neurology, sleep medicine, pharmacy, emergency medicine, nursing, informatics, patient safety, and data architecture. Not because everyone needs a meeting badge, but because the patient’s risk is produced across exactly those boundaries. Fragmented ownership is not an administrative inconvenience. It is encoded into the data.
 
@@ -44,7 +58,7 @@ The practical CDS should be tiered. Passive views should provide clean timelines
 
 The design must also respect workflow. If the system demands a small dissertation at the moment of prescribing, clinicians will either revolt or enter garbage, and both outcomes are richly available in nature. The better approach is distributed capture. Pharmacists can document intolerance and interaction concerns. Nurses can document observed sedation, falls, confusion, and patient-reported adverse effects. Psychiatrists can document therapeutic rationale and response. Primary care can reconcile external prescribing. Patients can contribute medication experience through structured portals, especially for adverse effects that are embarrassing, behavioral, or episodic. The CDS engine should not depend on one heroic clinician completing one perfect form. Heroic architecture is usually just future technical debt wearing a cape.
 
-There is also a harsh interoperability problem. Mental health records are often protected, fragmented, partially masked, or held in systems separate from general medicine. Substance use treatment data may carry additional confidentiality constraints. Pharmacy benefit data may know fills but not intent. EHR medication lists may contain ghosts: drugs stopped years ago, duplicates, outside prescriptions, samples, cash purchases, imported medicines, and drugs the patient never took. Claims data may arrive late. Family reports may be clinically important but difficult to encode. A clean solution is prevented by privacy law, vendor fragmentation, reimbursement incentives, short visits, documentation burden, and the plain fact that psychiatric suffering does not arrange itself neatly for relational databases.
+There is also a harsh interoperability problem. Mental health records are often protected, fragmented, partially masked, or held in systems separate from general medicine. Substance use treatment data may carry additional confidentiality constraints. Pharmacy benefit data may know fills but not intent. EHR medication lists may contain ghosts: drugs stopped years ago, duplicates, outside prescriptions, samples, cash purchases, imported medicines, and drugs the patient never took. Claims data may arrive late. Family reports may be clinically important but difficult to encode. The neat solution runs into privacy law, vendor fragmentation, reimbursement incentives, short visits, documentation burden, and the plain fact that psychiatric suffering does not arrange itself neatly for relational databases.
 
 Still, “not clean” is not the same as impossible. A defensible architecture can start with a longitudinal medication graph. In that graph, medications, diagnoses, symptoms, adverse effects, encounters, prescribers, fills, discontinuations, and patient-reported outcomes become connected nodes with dates and provenance. Provenance means the system records where a fact came from and how trustworthy it is: patient report, pharmacy fill, discharge summary, outside note, active prescription, claims record, or clinician confirmation. This lets the system say, in effect, “I know this, I half-know that, and this other thing is a rumor with a National Drug Code attached.” That humility is not weakness. It is safer than false certainty.
 
@@ -67,3 +81,10 @@ The practical direction is therefore plain. Build longitudinal psychiatric medic
 The future mental health crisis will not arrive wearing a badge that says “insufficient decision support.” It will arrive as more patients with fragmented care, more hurried prescribing, more digital encounters, more loneliness, more insomnia, more anxiety, more treatment resistance, more imported histories, more patients crossing systems, and more clinicians trying to make chemical decisions through fogged glass. The humane response is not to make the doctor click through another warning written by a committee that has never met a panicked patient at midnight. The humane response is to build systems that remember, connect, distinguish, and warn with discipline.
 
 Psychiatric medicine will always involve uncertainty. The brain is not a toaster with feelings. But uncertainty is not an argument for bad records. It is the argument for better ones.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

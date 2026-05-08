@@ -4,6 +4,7 @@ description: "A sharp look at Universal Basic Income in India if educated and sk
 thumbnail : "/images/IMG-20260425-WA0008.jpg"
 date: "2026-04-25"
 category: "political economy"
+tags: ["SuvroGhosh", "India", "political economy", "Ubi India AI Unemployment Democracy", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,13 @@ color: "amber"
 <TTS />
 
 <Pi src="IMG-20260425-WA0008.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- UBI: Universal Basic Income. a policy idea where people receive a regular basic cash payment.
+
+---
 
 Universal Basic Income [UBI, a regular cash payment made to people without a work test or poverty test] becomes a serious Indian question only when the old national bargain breaks: study hard, learn a skill, behave yourself, and somewhere, somehow, the economy will find a chair for you before the music stops. That bargain is already limping. If Artificial Intelligence [AI, software systems that perform tasks associated with human judgment, pattern recognition, language, prediction, and decision support] and robotics begin removing not merely drudgery but employable dignity from clerks, coders, drivers, nurses’ assistants, call-center workers, junior analysts, accountants, translators, tutors, warehouse staff, and the great educated crowd of résumé-bearing aspirants, then UBI stops being a drawing-room thought experiment and becomes a question of civil peace.
 
@@ -63,3 +71,10 @@ The moral case is simple but not sentimental. If a society permits technology to
 For India, UBI is therefore neither magic nor madness. It is a possible stabilizer in a future where work may no longer distribute income widely enough to hold society together. But it will only be emancipatory if built against the grain of corruption, patronage, surveillance, and democratic decay. In a healthy republic, basic income is social insurance for an automated age. In a subverted republic, it can become a ration card for obedience. The difference lies not in the elegance of the idea, but in the architecture of power around it.
 
 The final question is not whether India can afford UBI. The sharper question is whether India can afford a future in which millions of educated and skilled people are made economically unnecessary while wealth concentrates behind automated walls and politics decays into spectacle, extraction, and command. A country can survive poverty longer than it can survive mass humiliation among people who were promised modernity and handed a login error. UBI will not repair democracy. But without something like it, a technologically triumphant India may discover that the machines work beautifully, the dashboards glow, the billionaires applaud, and the citizens outside the gate have begun to understand the joke.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
+- [The City That Begs at the Window](/blog/society/the-city-that-begs-at-the-window)

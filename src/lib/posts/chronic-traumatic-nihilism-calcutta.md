@@ -4,7 +4,7 @@ description: "A middle-aged middle-class Bengali meditation on how repeated soci
 thumbnail: "/images/Compress_20260504_043352_2368.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Personal Essay", "Chronic Traumatic Nihilism Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260504_043352_2368.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Chronic traumatic nihilism is what happens when life does not break you theatrically, with thunder, violins, and a suitable black umbrella, but keeps tapping the same cracked tile every morning until the whole floor learns to sound hollow.
 
@@ -70,3 +76,10 @@ The middle-aged middle-class bipolar Bengali does not need to become a motivatio
 The final insult of nihilism is that it claims to be sophistication when often it is exhaustion wearing spectacles. The final defense against it is not belief in some grand cosmic purpose, which may be unavailable, unbelievable, or simply none of our business. The defense is craft. The craft of living one hour without turning it into a referendum on existence. The craft of reading without scrolling away from one’s own mind. The craft of knowing when the brain is ill and when the world is. The craft of refusing fraudulent hope while still making tea. The craft of saying, with no heavenly compensation counter in sight, that this life is damaged, absurd, unfair, biologically treacherous, socially rigged, and still the only workshop currently open.
 
 So one continues. Not because everything matters. Not because nothing does. But because the distinction itself must be protected from the swamp. In Calcutta, that may be enough for one morning. And some mornings, one morning is not a small unit. It is the whole republic.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [The Educated Horror of Having Nowhere to Go](/blog/society/educated-boredom-horror)

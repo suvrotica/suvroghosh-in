@@ -4,7 +4,7 @@ description: "Anthropic’s new finance agents are not just another chatbot wrap
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_224233_3067.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "Anthropic Is Coming For Wall Street", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,13 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260506_224233_3067.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Anthropic is no longer politely knocking on Wall Street’s mahogany door; it has arrived with a toolbox, a Bloomberg segment, and ten little clerks who do not need lunch, sleep, bonus season, or a therapist after formatting pitchbook footnotes at 2:17 in the morning. For anyone wondering what will sustain AI after the novelty wears off, this looks to me like a worthwhile catch. Not another cute demo, not a chatbot reciting market commentary like a junior analyst who swallowed three newsletters and a panic attack, but a claim on the durable work of institutions: the repetitive, regulated, evidence-heavy labor that must be done every day whether markets are euphoric, sulking, or chewing through interns like office stationery. Consumer AI may rise and fall with fascination. Enterprise AI survives if it attaches itself to necessary work. Finance is full of necessary work. Dull work, yes, but dull in the way ballast is dull: without it, the ship performs a brief interpretive dance and then rolls over.
 
@@ -51,7 +58,7 @@ That is the real Wall Street fight. Not model versus analyst. Interface versus i
 
 For decades, specialized financial platforms had a sturdy moat because they were where the data lived, where the tools lived, where trained professionals went to work, and where institutions trusted the output. Anthropic is trying to say: keep your data, keep your vendor relationships, keep your policies, but let Claude sit above them as the agentic workbench. That is a subtler and more dangerous proposition than replacing everything. It is the old empire-building trick of controlling the road rather than every village.
 
-The non-obvious architectural insight is this: the agent layer may become a new kind of enterprise middleware, not because it transports messages like an integration engine, but because it transforms intent into coordinated work across applications. Traditional middleware moves data from System A to System B. Agentic middleware interprets an objective, decomposes it into tasks, retrieves context, invokes tools, drafts artifacts, requests approval, and records evidence. That makes it both powerful and hazardous. It is middleware with opinions.
+The less obvious machinery underneath is this: the agent layer may become a new kind of enterprise middleware, not because it transports messages like an integration engine, but because it transforms intent into coordinated work across applications. Traditional middleware moves data from System A to System B. Agentic middleware interprets an objective, decomposes it into tasks, retrieves context, invokes tools, drafts artifacts, requests approval, and records evidence. That makes it both powerful and hazardous. It is middleware with opinions.
 
 This is why financial institutions will not adopt these agents evenly. Front-office research and pitch preparation may move quickly because the output is advisory, reviewable, and already document-based. Back-office accounting and compliance will move more slowly but may ultimately matter more, because those workflows connect to the books of record and regulatory obligations. The fastest adoption may occur where the work is high-volume, text-heavy, evidence-heavy, and annoying enough that everyone already hates it. Annoyance is an underrated adoption strategy.
 
@@ -59,7 +66,7 @@ Junior bankers should not take much comfort from the phrase “human in the loop
 
 But the machine has a problem too. Finance is full of tacit knowledge disguised as formatting. A managing director may reject a model not because a formula is wrong, but because the assumptions are politically wrong for the client conversation. A credit memo may need not only risk analysis but institutional memory of how a borrower behaves when liquidity tightens. A compliance escalation may require knowing when a pattern is legally suspicious, operationally explainable, or merely a data artifact created by a migration nobody documented. The agent can learn patterns, but it cannot easily inherit accountability. Accountability remains stubbornly mammalian.
 
-This creates the likely near-term settlement: bounded autonomy. Agents will draft, retrieve, reconcile, compare, monitor, and escalate. Humans will review, approve, own, and occasionally pretend they were involved earlier than they were. Control frameworks will become the new battlefield. The winning systems will not be the ones that produce the prettiest prose. They will be the ones that can show their work, obey permissions, cite sources internally, preserve provenance, handle exceptions, degrade safely, and fit into existing governance without requiring the institution to rewrite itself into a software company by Christmas.
+So the near-term settlement will probably be this: bounded autonomy. Agents will draft, retrieve, reconcile, compare, monitor, and escalate. Humans will review, approve, own, and occasionally pretend they were involved earlier than they were. Control frameworks will become the new battlefield. The winning systems will not be the ones that produce the prettiest prose. They will be the ones that can show their work, obey permissions, cite sources internally, preserve provenance, handle exceptions, degrade safely, and fit into existing governance without requiring the institution to rewrite itself into a software company by Christmas.
 
 For software vendors, the warning is brutal. If your product is basically a screen wrapped around a database, and the screen’s main function is to help humans copy, compare, summarize, and export, you are standing in a very windy place. If your product owns trusted data, deep domain semantics, regulatory lineage, workflow controls, and institutional approvals, you still have a business. But you may lose the user interface to the agent layer unless you become part of it.
 
@@ -74,3 +81,10 @@ And Wall Street, being Wall Street, will resist, adopt, rebrand, monetize, regul
 The future of finance will not look like a robot trader laughing over a Bloomberg terminal. It will look like a tired analyst opening a deck and finding that the first version has already been made. Not perfect. Not safe by magic. Not free of error. But good enough to move the human from maker to supervisor.
 
 That is when the old pyramid starts to wobble. Not when AI becomes brilliant. When it becomes administratively useful.
+
+## Related Posts
+
+- [AI Agents Will Not Democratize Power Neatly](/blog/artificial-intelligence/agentic-ai-and-the-asymmetry-of-will)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)

@@ -4,7 +4,7 @@ description: "A raw memoir on English-medium schooling, childhood anxiety, mytho
 thumbnail: "/images/Compress_20260502_004133_3146.jpg"
 date: "2026-05-02"
 category: "Memoir"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Memoir", "English Medium Urine Stain And The School That Lit The Fuse", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260502_004133_3146.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 My mother’s insistence that I attend an English-medium school may have been one of the great administrative miracles of my life, though at the time it probably looked like one more domestic decision made under the usual Bengali weather system of anxiety, aspiration, thrift, gossip, and maternal command.
 
@@ -111,19 +116,19 @@ By fifty, to remain a nobody is almost an accomplishment. The world works hard t
 
 The body has been less cooperative. Short skeleton, surplus fat, nervous gut, poor eyesight, unreliable mood, and a lifelong treaty negotiation with the lower intestine. I remember shitting my school pants at least twice. This is not the kind of childhood material people embroider onto cushions, but it matters. For some children, school anxiety is not an abstraction. It is a liquid threat moving through the abdomen during arithmetic.
 
-To shit or not to shit was not a literary question. It was logistics, dignity, and terror.
+To mess or not to mess was not a literary question. It was logistics, dignity, and terror.
 
 Public toilets in India remain among the strongest arguments against civilization. They are like parliamentary ethics: theoretically present, practically unusable, and avoided by anyone with remaining self-respect. Much of my childhood outside the home involved not education, friendship, or play, but the strategic avoidance of bowel events. I measured space by toilet risk. I measured time by digestive probability. I measured character by containment.
 
 A boy’s moral education, in practice, may consist of learning how long he can clench.
 
-And yet, despite the urine, the shit, the mythology, the fear, the sexual confusion, the color prejudice, the religious nonsense, the class absurdity, the underpaid teachers, the bad toilets, the weak spectacles, and the chronic internal thunder, I cannot deny that the school lit something. A fuse, yes, but also a lamp. It gave me English, which gave me access not merely to status but to shelves of thought. It gave me teachers whose imperfections taught me that authority was human. It gave me classmates who became evidence that people are never as simple as categories. It gave me enough structure to resist structure.
+And yet, despite the urine, the mess, the mythology, the fear, the sexual confusion, the color prejudice, the religious nonsense, the class absurdity, the underpaid teachers, the bad toilets, the weak spectacles, and the chronic internal thunder, I cannot deny that the school lit something. A fuse, yes, but also a lamp. It gave me English, which gave me access not merely to status but to shelves of thought. It gave me teachers whose imperfections taught me that authority was human. It gave me classmates who became evidence that people are never as simple as categories. It gave me enough structure to resist structure.
 
 That is not a small gift.
 
 The great failure of education is not that it fails to produce employable people. It often does that adequately enough for the mills of society. The deeper failure is that it produces too many people who are certain too early. Certainty is the cheapest luxury good of the educated classes. They wear it like perfume. The truly educated person should be harder to fool, but also harder to harden. School should protect the mind from both superstition and smugness. Instead, it often manufactures a polished version of both.
 
-I am an asshole, certainly. But I try not to be a certain asshole. There is a difference. The certain asshole is a public health hazard. The uncertain asshole, properly restrained, may occasionally be useful.
+I am an lout, certainly. But I try not to be a certain lout. There is a difference. The certain lout is a public health hazard. The uncertain lout, properly restrained, may occasionally be useful.
 
 Calcutta, meanwhile, remains itself: overcrowded, tender, brutal, funny, decaying, argumentative, overfed with gods and underprovided with drains. Too many people, too little space, too much time, too much noise, too many wounded egos wandering the streets in search of an object. A mob can form here with the speed of mold. Religion adds kerosene. Politics supplies matches. Poverty supplies the dry wood. Then everyone looks surprised when something burns.
 
@@ -140,3 +145,10 @@ At forty-nine, I had wondered why one should live more. At fifty and beyond, the
 That may be enough.
 
 And if it is not enough, it is still what I have.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)

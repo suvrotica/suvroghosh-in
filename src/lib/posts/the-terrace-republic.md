@@ -4,7 +4,7 @@ description: "A reflective personal essay on memory, childhood, solitude, bipola
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_115419_9095.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "The Terrace Republic", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "#7C3AED"
 ---
@@ -12,6 +12,11 @@ color: "#7C3AED"
 <TTS />
 
 <Pi src="Compress_20260506_115419_9095.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 I sit with a cup of tea, and the tea does what tea has always done in Bengal: it accepts defeat, philosophy, indigestion, ambition, regret, and the entire damp laundry of memory without complaint.
 
@@ -64,3 +69,10 @@ This should make me despair completely, and sometimes it nearly does. But the sa
 So I sit with tea and think. The house in South Sinthee returns, not as it was, but as memory can bear it. The hurricane lamp trembles again. The walls rise again. The terrace waits above them, stubborn and free. Somewhere in that little room, a boy is arranging his collections and preparing to distrust the world’s official explanations. He does not know what will happen to him. He does not know about diagnosis, medication, failure, age, disappointment, or the long comic brutality of being a thinking animal among other thinking animals who often prefer not to think.
 
 He only knows that the sky is large, the walls are stupid, and the mind must get out.
+
+## Related Posts
+
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Contender Who Would Not Compete](/blog/personal-essay/the-contender-who-would-not-compete)

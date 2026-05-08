@@ -4,7 +4,7 @@ description: "A technically serious look at how sweets, rice, refined starch, hi
 date: "2026-04-29"
 thumbnail : "/images/Compress_20260429_200325_5063.jpg"
 category: "Health & Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Health & Society", "Calcutta Carbohydrate Problem", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
 published: true
 color: "amber"
 ---
@@ -12,6 +12,11 @@ color: "amber"
 <TTS />
 
 <Pi src="Compress_20260429_200325_5063.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Calcutta’s sugar problem is not that Bengalis eat sweets; it is that we have mistaken sweetness for sugar and taste for metabolism.
 
@@ -66,3 +71,10 @@ The better Bengali future is not sugarless, joyless, protein-shake modernity. It
 Calcutta’s metabolic crisis will not be solved by scolding Bengalis about mishti. That is too easy, and therefore mostly wrong. The real work is to see the entire carbohydrate machine: the sweet, the unsweet, the cheap, the hidden, the habitual, the packaged, the ceremonial, the comforting, and the industrial. Then we redesign without pretending we can become someone else overnight.
 
 Not purity. Not panic. A wiser plate, a smaller glucose wave, a liver with less to forgive, and a modest life that can still float.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)
+- [The Range Limit of Kinship](/blog/society/kinship-range-limit-calcutta)

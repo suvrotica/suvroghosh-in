@@ -4,15 +4,19 @@ description: "Pohela Baisakh is usually narrated as timeless Bengali tradition. 
 thumbnail : "/images/IMG-20260422-WA0012.jpg"
 date: "2026-04-22"
 category: "history"
+tags: ["SuvroGhosh", "history", "Pohela Baisakh Mughal Calendar Memory", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "red"
 ---
 
-
-
 <TTS />
 
 <Pi src="IMG-20260422-WA0012.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 Pohela Baisakh is not just a harvest festival, not just a cultural new year, and certainly not some untouched civilizational relic descending from the sky wrapped in conch shells and alpana. It is a calendar event. Calendars are instruments of power before they become sentiment. They decide when rent is due, when revenue is assessed, when crops are counted, when ledgers are closed, when courts record dates, when a state tells ordinary people what year it is. That is the first thing to recover here.
 
@@ -57,3 +61,10 @@ That is why the forgetting matters.
 Because when a society is taught to treat the Mughal past as removable dirt, it loses the ability to read its own institutions. It continues to inhabit structures whose genealogy it has been trained not to name. It celebrates a new year while being subtly encouraged to forget who helped make that year countable in the form it came down to us. That is not historical correction. That is historical self-amputation with festive lighting.
 
 Pohela Baisakh deserves better than incense and amnesia. It deserves to be read as what it is: a living Bengali observance whose heartbeat is agricultural, whose public rhythm was systematized by Mughal Muslim statecraft, and whose modern regularity now stands partly synchronized with the Gregorian order. To say that aloud is not to diminish Bengal. It is to restore scale to it. Real civilizations do not remain pure. They accumulate.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Returnee Who No Longer Fits](/blog/work-migration-india/returning_home_after_america)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

@@ -4,6 +4,7 @@ description: "A technical warning about future healthcare Artificial Intelligenc
 thumbnail : "/images/IMG-20260426-WA0002.jpg"
 date: "2026-04-26"
 category: "Healthcare AI"
+tags: ["SuvroGhosh", "Healthcare AI", "Healthcare AI Wrong Objective", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,17 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260426-WA0002.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Healthcare Artificial Intelligence [AI, machine systems that learn patterns from data and use those patterns to generate predictions, recommendations, classifications, or actions] will not fail first because it lacks cleverness; it will fail because cleverness is the easiest part to optimize and the hardest part to govern.
 
@@ -26,7 +38,7 @@ The phrase “wrong people” does not mean people without good intentions. Heal
 
 Historical healthcare data is not a neutral teacher. It is an archive of care and neglect, competence and superstition, reimbursement logic and clinical judgment, racial inequality and class sorting, local custom and national policy, medical progress and institutional sediment. A model trained on it may learn that some patients receive fewer referrals, weaker pain control, later diagnoses, less specialty care, poorer follow-up, and less expensive treatment. If the target is “what happened next,” the model may reproduce historical deprivation as if it were prognosis. If the target is “what clinicians did,” the model may learn institutional habit as if it were medical necessity. If the target is “cost,” it may confuse low spending with low need, especially for populations that were historically denied access to care. The past arrives wearing a lab coat and carrying a clipboard.
 
-The non-obvious architectural insight is that many AI failures in healthcare will not live inside the model at all. They will live in the boundary between the model’s formal objective and the institution’s informal objective. A hospital may say it wants early detection. It may deploy the model where nurses are already overburdened, alerts are already ignored, and escalation pathways are already brittle. The model may fire correctly and still fail because the workflow cannot absorb the truth it produces. Or worse, the model may learn the workflow’s evasions. If clinicians routinely document certain findings only after a patient deteriorates, the model may treat documentation as prediction when it is really aftermath. If case managers enter social risk data only when discharge becomes difficult, the model may confuse a bureaucratic bottleneck with a patient trait. In healthcare AI, the dataset is often the fossil record of workarounds.
+The less obvious machinery underneath is that many AI failures in healthcare will not live inside the model at all. They will live in the boundary between the model’s formal objective and the institution’s informal objective. A hospital may say it wants early detection. It may deploy the model where nurses are already overburdened, alerts are already ignored, and escalation pathways are already brittle. The model may fire correctly and still fail because the workflow cannot absorb the truth it produces. Or worse, the model may learn the workflow’s evasions. If clinicians routinely document certain findings only after a patient deteriorates, the model may treat documentation as prediction when it is really aftermath. If case managers enter social risk data only when discharge becomes difficult, the model may confuse a bureaucratic bottleneck with a patient trait. In healthcare AI, the dataset is often the fossil record of workarounds.
 
 This is why representation failures are so often mislabeled as data quality failures. “Bad data” is the usual diagnosis, convenient and dull. But many failures are not bad data in the ordinary sense. The values are not necessarily corrupt, malformed, duplicated, or missing by accident. They are faithfully recording the wrong thing for the new purpose. A billing diagnosis may be perfectly valid for claim adjudication and dangerously crude for phenotype discovery. A medication order may represent intent, not administration. A lab result may represent a sample, a time, a device, a reference range, and a patient state that cannot be reconstructed from the numeric value alone. A problem list entry may be active, historical, copied, clinically disputed, or never reconciled after the last migration. The data is not dirty like mud on a shoe. It is miscast, like asking a birth certificate to perform as a weather forecast.
 
@@ -54,8 +66,15 @@ The implementation implication is blunt: do not let AI teams build directly on f
 
 There is also a procurement lesson. Organizations should be wary of AI products that sell performance without lineage, explainability without semantics, and integration without workflow accountability. A vendor can honestly report that a model performed well on a dataset and still be selling a system that will fail in another hospital because the local representation of care is different. Healthcare AI is not a toaster. It is closer to introducing a clever, tireless, slightly alien junior colleague into a hospital whose filing cabinets are haunted. The question is not simply whether the model works. The question is what the model is allowed to believe.
 
-The deeper truth is that AI exposes what healthcare IT has long hidden with interfaces, extracts, committees, and hope. Our systems do not merely store clinical facts. They encode organizational structure. They encode who owns a workflow, who gets measured, who gets reimbursed, who gets ignored, who gets time, who gets specialist access, who gets coded carefully, who gets summarized, and who disappears into “other.” AI does not float above this structure. It accelerates it. A poorly governed model is not just a bad prediction machine. It is institutional memory with a turbocharger and no conscience.
+Under the floorboards, the truth is that AI exposes what healthcare IT has long hidden with interfaces, extracts, committees, and hope. Our systems do not merely store clinical facts. They encode organizational structure. They encode who owns a workflow, who gets measured, who gets reimbursed, who gets ignored, who gets time, who gets specialist access, who gets coded carefully, who gets summarized, and who disappears into “other.” AI does not float above this structure. It accelerates it. A poorly governed model is not just a bad prediction machine. It is institutional memory with a turbocharger and no conscience.
 
 Future healthcare AI can still be useful, even powerful, if built by people who respect the distance between objective and world. It can help surface risk, reduce clerical burden, detect inconsistency, support care coordination, improve trial matching, strengthen population health analytics, and make fragmented information less hostile to human attention. But it must be designed as clinical infrastructure, not as magic varnish. The hard work is not only model selection. It is meaning selection. It is deciding which compressed preference deserves to guide action, which historical pattern must be treated as contamination rather than wisdom, which uncertainty must remain visible, and which human workflow must change before the algorithm is blamed for noticing the wrong thing.
 
 The future pitfall is not that healthcare AI will become too intelligent. The pitfall is that it will become intelligent enough to inherit our broken representations, obedient enough to optimize our shallow objectives, persuasive enough to conceal its uncertainty, and profitable enough that people stop asking whether the thing being optimized was ever worth optimizing in the first place.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

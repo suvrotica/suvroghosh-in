@@ -4,6 +4,7 @@ description: "A balanced argument against cavalier deployment of LLMs in emotion
 thumbnail :  "/images/IMG-20260427-WA0008.jpg" 
 date: "2026-04-27"
 category: "Healthcare IT"
+tags: ["SuvroGhosh", "Healthcare IT", "Premature LLM Deployment Clinical Trials AI Safety", "AI Safety", "Large Language Models", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,18 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260427-WA0008.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LLM: Large Language Model. a statistical language system trained to generate and interpret text.
+
+---
 
 Large Language Models [LLMs, statistical systems that generate text, code, images, or other outputs by modeling patterns in data] are being released into human dependence faster than we have learned how to measure their injuries.
 
@@ -64,7 +77,7 @@ Consumer LLMs, however, often live outside medical-device regulation until someo
 
 This is familiar to anyone who has worked in healthcare architecture. Systems are rarely what procurement says they are. A scheduling system becomes a capacity-management system. A billing code becomes a severity marker. A free-text note becomes the real source of truth. A spreadsheet becomes a registry. A nurse’s workaround becomes institutional memory. A chatbot marketed as “just entertainment” can become an unlicensed behavioral health front door because users make it so. Architecture is not the diagram. Architecture is the set of behaviors the system permits under pressure.
 
-The practical implication is that governance must attach to use, not merely to product category. If a hospital uses an LLM for patient-facing education, govern it as patient communication. If a payer uses it to summarize appeals, govern it as administrative decision support with due-process implications. If a school or platform offers AI companions to minors, govern it as a child-safety product, not a novelty toy. If an employer offers a chatbot for wellness, govern it under privacy, mental-health, and labor-risk rules. And if a model is used in a clinical workflow, treat the workflow as the unit of validation, not the model in isolation.
+The practical point is that governance must attach to use, not merely to product category. If a hospital uses an LLM for patient-facing education, govern it as patient communication. If a payer uses it to summarize appeals, govern it as administrative decision support with due-process implications. If a school or platform offers AI companions to minors, govern it as a child-safety product, not a novelty toy. If an employer offers a chatbot for wellness, govern it under privacy, mental-health, and labor-risk rules. And if a model is used in a clinical workflow, treat the workflow as the unit of validation, not the model in isolation.
 
 This last point is where many AI pilots go to die, wearing a laminated innovation badge. Model-level accuracy is not workflow-level safety. A model may perform well on benchmark questions and still fail in production because the patient data are incomplete, the clinician is rushed, the prompt is poorly constructed, the output appears in the wrong screen, the alert fires at the wrong time, the evidence is outdated, the user over-trusts the answer, or nobody knows who owns the escalation. In medicine, a correct answer delivered at the wrong time to the wrong person in the wrong tone can be functionally incorrect. Hospitals have been proving this with alert fatigue for decades.
 
@@ -93,3 +106,10 @@ The pill at least has the decency to remain chemically itself. The chatbot smile
 That is not necessarily evil.
 
 It is enough to require proof.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

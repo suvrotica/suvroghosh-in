@@ -4,7 +4,7 @@ description: "A satirical field note on Calcutta’s winter air, civic evasion, 
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_214328_8458.jpg"
 category: "Satire"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Satire", "Calcutta Smog And The Coming Winter", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "gray"
 ---
@@ -12,6 +12,11 @@ color: "gray"
 <TTS />
 
 <Pi src="Compress_20260505_214328_8458.jpg" />
+
+Acronyms expanded in this post:
+- AQI: Air Quality Index. a public-health number that summarizes pollution risk.
+
+---
 
 Calcutta is still months away from winter, which means the city has entered that brief and charming period when everyone can pretend the air is merely unpleasant rather than conspiratorial. Today, May 5, 2026, the heat is still doing its usual Bengal work, pressing itself against the window grilles like a creditor, but the coming winter is already visible if you have lived through enough past winters and retained the use of memory. The city will cool, the wind will slacken, the sky will lower itself by several moral inches, and the accumulated exhalations of traffic, dust, garbage smoke, construction, diesel, cooking fuel, small industry, and municipal indifference will settle over us like an ancestral shawl woven from phlegm.
 
@@ -60,3 +65,10 @@ That is the little linguistic fraud by which we survive. Fog is God’s gauze. S
 Today, in the furnace end of spring, winter still feels far away. But the coming winter is already being built, particle by particle, by engines, fires, dust, indifference, and the thousand tiny permissions by which a city injures itself without quite intending to. Past winters were not accidents. This winter will not be an accident either. It will be a report card written in the air, and like most report cards in Bengal, it will be read aloud, argued over, blamed on the examiner, and then placed carefully in a drawer until the next examination.
 
 The lungs, unfortunately, do not use drawers.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

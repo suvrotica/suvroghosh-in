@@ -4,6 +4,7 @@ description: "A system-level analysis of why people who depend on Artificial Int
 thumbnail : "/images/IMG-20260424-WA0000.jpg"
 date: "2026-04-23"
 category: "Artificial Intelligence"
+tags: ["SuvroGhosh", "Artificial Intelligence", "AI Psychology Denial Oscillation And The Social Theater Of Competence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,14 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260424-WA0000.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+
+---
 
 The odd thing about Artificial Intelligence, or AI, is not that it provokes strong opinions. New tools always do. The odd thing is that the loudest opinions now often come from people whose working day is quietly stitched together by it, rather like a gentleman denouncing rail travel while arriving everywhere by train. They use it to summarize, draft, translate, rephrase, search, prototype, debug, brainstorm, compare, and rescue themselves from the sticky middle of the workday. Then, with a face of admirable seriousness, they insist they did not use AI at all, or that AI is mostly hype, or that it is an immature contraption hardly fit to butter toast. At the same time, often in the very next breath, the culture swings to the opposite pole and speaks of AI as if it were a conscious inmate tunneling out of its silicon prison. Then the pendulum flies back again and the same system is dismissed as a mere statistical mimic, a parrot with matrix multiplication. Both positions are theatrically satisfying. Neither is especially useful.
 
@@ -44,7 +53,7 @@ The fifth failure is rhetorical opportunism. Some people downgrade AI in public 
 
 Healthcare organizations are not exempt from this theater. They may dismiss AI as vapor when governance is weak, data quality is poor, provenance is sloppy, and accountability is unclear, then quietly adopt it for summarization, coding assistance, inbox triage, document abstraction, and clinical workflow support. Or they may market it internally as revolutionary intelligence while feeding it badly normalized data, weak terminology mapping, and context-starved fragments divorced from workflow boundaries. Then the inevitable disappointment is blamed on “AI failure” when the real failure is architectural incoherence.
 
-The deeper truth is that AI unsettles a civilization built on performance signals more than it unsettles a civilization built on clear theories of mind. Most people do not have a worked-out philosophy of consciousness. They do, however, have a very lively and constantly active sense of hierarchy, effort, authorship, and deservedness.
+Under the floorboards, the truth is that AI unsettles a civilization built on performance signals more than it unsettles a civilization built on clear theories of mind. Most people do not have a worked-out philosophy of consciousness. They do, however, have a very lively and constantly active sense of hierarchy, effort, authorship, and deservedness.
 
 For generations, educated work has rewarded the ability to produce polished language, plausible analysis, and competent procedural output. These were visible signs of expensive training and long apprenticeship. Then along comes a machine that can produce some of the visible signs without paying the human biographical price. Naturally this feels indecent. It is rather like discovering that a respectable drawing room can be furnished overnight with factory-made moldings that mimic hand carving. Even if the connoisseur can still detect the difference, the social order has already been irritated.
 
@@ -77,3 +86,10 @@ Sixth, cultivate a language of assisted expertise. We need terms more precise th
 The sanest view, then, is not admiration or contempt but disciplined realism. AI is immature and already consequential. It is inadequate and often useful. It does not think like a human, yet it can alter the human division of cognitive labor quite dramatically. People who rely on it may deny that reliance because professional identity is a proud and delicate animal. People who fear it may turn it into an escaped mind because dread likes a face. People who dismiss it as a parrot may be partly right about mechanism and wholly wrong about consequence.
 
 And that, in the end, is the important distinction. A thing need not be a person to reorganize a profession. It need only be competent enough, cheap enough, available enough, and socially unsettling enough. AI has already managed that much. The theater around it is therefore not a side effect. It is one of the main events.
+
+## Related Posts
+
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

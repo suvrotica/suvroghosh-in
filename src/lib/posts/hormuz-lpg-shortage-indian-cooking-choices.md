@@ -4,6 +4,7 @@ description: "A system-level look at how Indian kitchens are adapting to the Liq
 thumbnail : "/images/IMG-20260424-WA0005.jpg"
 date: "2026-04-24"
 category: "energy"
+tags: ["SuvroGhosh", "India", "energy", "Hormuz Lpg Shortage Indian Cooking Choices", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,11 @@ color: "amber"
 <TTS />
 
 <Pi src="IMG-20260424-WA0005.jpg" />
+
+Acronyms expanded in this post:
+- LPG: Liquefied Petroleum Gas. bottled cooking gas used in many Indian homes.
+
+---
 
 A kitchen is the smallest room in which a global crisis can arrive fully dressed.
 
@@ -50,3 +56,9 @@ The better question is not whether Indians are moving from LPG to electricity, w
 
 The blue flame made modern Indian cooking feel settled. It was never settled. It was routed through a narrow sea lane, subsidized by public finance, delivered by logistics, stabilized by storage, and trusted by households that had reorganized their lives around it. Now the trust has cracked, and people are doing what Indians have always done under pressure: improvising with whatever is at hand, inventing dignity out of constraint, and quietly proving that the kitchen is not a soft domestic space outside history. It is where history comes to boil.
 
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [India’s Semiconductor Problem Is Not a Missing Slogan](/blog/technology/india-semiconductor-sufficiency-beyond-lip-service)
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)

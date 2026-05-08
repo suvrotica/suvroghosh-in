@@ -4,6 +4,7 @@ description: "A rigorous reading of Emad Mostaque’s The Last Economy: its core
 thumbnail : "/images/IMG-20260423-WA0002.jpg" 
 date: "2026-04-23"
 category: "technology"
+tags: ["SuvroGhosh", "technology", "Last Economy Intelligence Inversion", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260423-WA0002.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- GDP: Gross Domestic Product. the total monetary value of goods and services produced in an economy.
+
+---
 
 The most useful way to read The Last Economy is not as a prophecy, not as a forecast model, and certainly not as revealed truth, but as a bundle of hypotheses about what happens when intelligence stops behaving like a scarce human service and starts behaving like infrastructure.
 
@@ -91,3 +98,10 @@ It deserves pushback where it implies inevitability, speed, or finality. History
 Only the future can tell what the future will be because the future is not one variable. It is technology colliding with law, money, war, habit, boredom, fashion, energy, bureaucracy, fear, and ordinary human stubbornness. Crystal balls fail not because tomorrow is unknowable in principle, but because tomorrow is produced by too many systems touching at once.
 
 That is why books like this matter, and why they must never be mistaken for scripture.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [India’s White-Collar Issue](/blog/india/india-ai-it-bpo-white-collar-jobs)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

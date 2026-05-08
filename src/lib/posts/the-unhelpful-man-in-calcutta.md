@@ -4,7 +4,7 @@ description: "A middle-aged, unemployed, middle-class recluse in Calcutta reflec
 thumbnail: "/images/Compress_20260504_174433_3743.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Personal Essay", "The Unhelpful Man In Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,10 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260504_174433_3743.jpg" />
+
+Acronyms expanded in this post: No central technical acronyms need expansion here.
+
+---
 
 People do not hate reality in the abstract; they hate the man who brings it into the room before tea has been served.
 
@@ -87,3 +91,9 @@ But it is mine.
 
 And if I must choose between being liked for helping people continue down obfuscated roads and being disliked for saying, “Look, there is a ditch ahead, and no, calling it destiny will not improve the landing,” I suppose I will remain what I am: a bitter, nonconforming, occasionally unfair, occasionally accurate, socially expensive man in Calcutta, peering at the world through a cracked window, muttering against the fog, and refusing, even now, to call it weather.
 
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

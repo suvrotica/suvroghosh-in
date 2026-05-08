@@ -4,6 +4,7 @@ description: "A technically serious but readable argument for why ordinary peopl
 thumbnail : "/images/IMG-20260426-WA0006.jpg"
 date: "2026-04-26"
 category: "Mental Models"
+tags: ["SuvroGhosh", "Calcutta", "Mental Models", "Randomness Chaos Complexity Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,17 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260426-WA0006.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Bad explanations breed fastest where uncertainty is real, consequences are personal, and nobody has been taught the grammar of chance.
 
@@ -36,7 +48,7 @@ In healthcare Information Technology [IT, the systems used to store, move, secur
 
 The same mistake happens in ordinary life. A person sees an outcome and mislabels the representation failure as a moral fact. A student’s low score becomes laziness, when the hidden variables may include language barriers, sleep, nutrition, household stress, bad teaching, exam design, anxiety, class signaling, or simply variance. A shop’s decline becomes incompetence, when the system includes platform economics, delivery subsidies, real estate pressure, changing consumer habits, procurement scale, algorithmic visibility, and customers trained to value speed over neighborhood trust. A marriage collapses and the family explains it through horoscope mismatch, when the actual system includes gendered labor, money, emotional illiteracy, migration, status anxiety, and two people who were never taught how to disagree without turning into minor deities of vengeance.
 
-The non-obvious architectural insight is this: myths persist not because people lack intelligence, but because myths are often cheaper than maintaining a high-fidelity model of causality. Accurate models are expensive. They require data, patience, humility, revision, and tolerance for “we do not know yet.” Myths require none of these. They arrive fully dressed, emotionally satisfying, and usually with a villain. In a society under pressure, myth is an energy-saving device. It reduces cognitive load. It also ruins decisions.
+The less obvious machinery underneath is this: myths persist not because people lack intelligence, but because myths are often cheaper than maintaining a high-fidelity model of causality. Accurate models are expensive. They require data, patience, humility, revision, and tolerance for “we do not know yet.” Myths require none of these. They arrive fully dressed, emotionally satisfying, and usually with a villain. In a society under pressure, myth is an energy-saving device. It reduces cognitive load. It also ruins decisions.
 
 The difference between data transport and semantic meaning is essential here. Transport is the movement of a signal from one place to another. Meaning is what that signal validly represents inside a context. Health Level Seven version 2 [HL7 v2, a widely used healthcare messaging standard for transmitting events such as admissions, discharges, orders, and results] can move a message from a laboratory system to an EHR. That does not mean the receiving system understands the clinical meaning with full fidelity. Fast Healthcare Interoperability Resources [FHIR, a modern healthcare data standard built around modular resources and web-based exchange] can expose structured data through an Application Programming Interface [API, a controlled way for software systems to communicate]. That does not mean the data is semantically clean. A rumor moving through WhatsApp has excellent transport. Its meaning may be garbage wearing shoes.
 
@@ -46,7 +58,7 @@ A just-so story is especially seductive because it explains backward. It begins 
 
 Complexity teaches a harsher lesson: outcomes are often produced by interactions, not essences. A person is not simply “disciplined” or “undisciplined.” Behavior emerges from incentives, constraints, habits, environments, relationships, fatigue, fear, opportunity, and feedback. A hospital is not simply “efficient” or “inefficient.” It behaves according to bed capacity, staffing ratios, software design, referral patterns, procurement rules, clinical governance, billing models, regulatory reporting, and the thousand unofficial workarounds by which humans prevent formal systems from collapsing. A city is not simply “cultured” or “decaying.” It is a sedimentary system, with empire, capital, migration, politics, climate, language, infrastructure, education, and memory packed into it like geological strata, except the rocks also argue on Facebook.
 
-The practical implication is that design and governance must begin by asking what kind of uncertainty is being handled. If the problem is random variation, collect enough observations and reason in probabilities. If the problem is chaotic sensitivity, monitor early signals and avoid overconfident long-range prediction. If the problem is complex adaptation, design feedback loops, incentives, accountability boundaries, and graceful failure modes. In healthcare IT, that means preserving provenance, modeling workflow states explicitly, distinguishing event time from record time, avoiding premature normalization when meaning is still contested, and refusing to treat interoperability as mere message movement. In ordinary life, it means asking whether a claim is based on a distribution, a mechanism, a tradition, a fear, a sales pitch, or one spectacular uncle.
+The practical point is that design and governance must begin by asking what kind of uncertainty is being handled. If the problem is random variation, collect enough observations and reason in probabilities. If the problem is chaotic sensitivity, monitor early signals and avoid overconfident long-range prediction. If the problem is complex adaptation, design feedback loops, incentives, accountability boundaries, and graceful failure modes. In healthcare IT, that means preserving provenance, modeling workflow states explicitly, distinguishing event time from record time, avoiding premature normalization when meaning is still contested, and refusing to treat interoperability as mere message movement. In ordinary life, it means asking whether a claim is based on a distribution, a mechanism, a tradition, a fear, a sales pitch, or one spectacular uncle.
 
 There is, however, a realistic constraint that prevents a clean solution. People do not live as detached analysts. They live tired, indebted, overworked, status-anxious, family-bound, politically manipulated, medically under-informed, and algorithmically provoked. A person waiting in a crowded clinic with a sick parent does not have the luxury of reading a monograph on uncertainty. A student facing exams does not calmly model variance. A shopkeeper watching customers vanish into quick-commerce platforms does not run a complexity simulation before despairing. Good explanations must therefore be usable under stress. They must be short enough to remember and strong enough to resist nonsense.
 
@@ -67,3 +79,10 @@ The point is not to replace old superstition with new technocratic arrogance. Mo
 A society that cannot reason about chance becomes cruel to the unlucky. A society that cannot reason about chaos becomes addicted to prediction gurus. A society that cannot reason about complexity becomes easy prey for demagogues, miracle sellers, fake healers, bad software, bad policy, and family tyrants with confident voices. Calcutta, with its books, gossip, humidity, brilliance, decay, tenderness, and daily improvisations, deserves better than explanation by cosmic shrug.
 
 The mature mind does not stop telling stories. It tells better ones. It keeps the story porous enough for evidence, humble enough for uncertainty, and precise enough to guide action. It knows that a map is not the territory, a message is not meaning, a correlation is not a cause, and a loud explanation is not necessarily a true one. That is not the death of wonder. It is wonder with better plumbing.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

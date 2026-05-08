@@ -4,7 +4,7 @@ description: "A systems-level essay on middle-aged middle-class boredom: not laz
 date: "2026-04-29"
 thumbnail : "/images/Compress_20260429_171024_4392.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "Educated Boredom Horror", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
 published: true
 color: "charcoal"
 ---
@@ -12,6 +12,13 @@ color: "charcoal"
 <TTS />
 
 <Pi src="Compress_20260429_171024_4392.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- US: United States. the United States of America.
+
+---
 
 Middle-aged middle-class educated boredom is not emptiness; it is appetite trapped inside a life that still has furniture, bills, manners, and enough vocabulary to diagnose its own suffocation.
 
@@ -80,3 +87,10 @@ The horror does not vanish. Let us not insult the beast. There will still be aft
 Make tea. Walk. Write three ugly sentences. Pay one bill. Repair one object. Call one person without performing success. Read one page slowly enough to remember that the mind was built for more than alarm. Refuse to become cruel merely because life has become narrow.
 
 Not escape. Not triumph. A modest architecture against the mouth of the dark.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Range Limit of Kinship](/blog/society/kinship-range-limit-calcutta)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)

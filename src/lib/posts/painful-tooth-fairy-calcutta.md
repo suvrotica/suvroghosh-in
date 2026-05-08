@@ -4,7 +4,7 @@ description: "A middle-aged man in Calcutta discovers that dental pain is not me
 thumbnail : "/images/Compress_20260502_230343_3926.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Personal Essay", "Painful Tooth Fairy Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
 published: true
 color: "#5B1E1E"
 ---
@@ -12,6 +12,12 @@ color: "#5B1E1E"
 <TTS />
 
 <Pi src="Compress_20260502_230343_3926.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 A toothache is the body’s most intimate form of municipal harassment: small, local, badly governed, and somehow capable of ruining the entire city.
 
@@ -140,3 +146,10 @@ The fan turns.
 The painful tooth fairy counts her coins.
 
 And the fifty-one-year-old man, not healed, not wise, not especially brave, but still inconveniently lucid, writes another paragraph against the dark.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

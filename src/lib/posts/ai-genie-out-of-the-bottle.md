@@ -4,7 +4,7 @@ description: "Generative AI has moved from laboratory spectacle to social infras
 thumbnail : "/images/Compress_20260430_194653_3256.jpg"
 date: "2026-05-01"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI Genie Out Of The Bottle", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 published: true
 color: "black"
 ---
@@ -12,6 +12,13 @@ color: "black"
 <TTS />
 
 <Pi src="Compress_20260430_194653_3256.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LLM: Large Language Model. a statistical language system trained to generate and interpret text.
+
+---
 
 Generative Artificial Intelligence [AI, software that can produce language, images, code, sound, and other artifacts by learning patterns from data] is not a clever toy that escaped from a research lab; it is an industrial machine that learned to speak in a human voice before society had finished writing the safety manual.
 
@@ -186,3 +193,10 @@ That is the boundary. Not between human and machine, but between output and obli
 The genie is out, and it is not going back. It will write, sing, draw, summarize, advise, imitate, optimize, comfort, deceive, accelerate, and annoy us with the serene confidence of a machine that has never had to stand in a queue with a fever. Our task is not to hate it or adore it. Our task is to build around it the dull, necessary architecture of civilized use: limits, records, appeals, audits, manners, skepticism, and enough human courage to interrupt the beautiful answer when it is wrong.
 
 Not a return to the bottle. A constitution for the genie.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

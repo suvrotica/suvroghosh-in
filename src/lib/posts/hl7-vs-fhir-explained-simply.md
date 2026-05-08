@@ -4,6 +4,7 @@ description: "A practical explanation of why HL7 and FHIR are not enemies, why h
 thumbnail : "/images/IMG-20260425-WA0006.jpg" 
 date: "2026-04-25"
 category: "Healthcare IT"
+tags: ["SuvroGhosh", "Healthcare IT", "HL7 Vs FHIR Explained Simply", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,18 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260425-WA0006.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LOINC: Logical Observation Identifiers Names and Codes. a terminology for lab tests and clinical observations.
+- REST: Representational State Transfer. a common web API style built around resources and standard web operations.
+
+---
 
 HL7 is the old hospital telephone system; FHIR is the newer web-addressable filing cabinet. That is not a perfect comparison, but it is close enough to get us out of the fog without committing architectural vandalism. Health Level Seven (HL7), the standards organization and family of healthcare interoperability standards, gave hospitals a way to move clinical facts between systems long before smartphones, cloud platforms, and modern web application programming interfaces (APIs) made everyone expect data to arrive neatly wrapped, searchable, and somewhat house-trained. Fast Healthcare Interoperability Resources (FHIR), a newer HL7 standard, tries to make healthcare data easier to exchange using web-era ideas: resources, profiles, uniform resource locators (URLs), JavaScript Object Notation (JSON), Extensible Markup Language (XML), and Representational State Transfer (REST), which is the familiar style behind much of the modern web.
 
@@ -49,3 +62,10 @@ For practitioners, the useful path is mixed, sober, and unglamorous. Keep HL7 ve
 The simplest explanation is this: HL7 version two helps hospital systems shout events across the corridor; FHIR helps modern systems ask for structured clinical objects by name. The first is still everywhere because hospitals run on events. The second is increasingly important because healthcare now expects data to be discoverable, reusable, patient-accessible, and computable outside the walls where it was born. Neither standard saves us from the central burden of healthcare IT: the patient is real, the workflow is local, the data is partial, and the representation is always a negotiation with loss.
 
 Good architecture begins by admitting that loss. Then it designs around it.
+
+## Related Posts
+
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)

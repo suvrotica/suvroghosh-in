@@ -4,6 +4,7 @@ description: "A technical analysis of the Claude Mythos access reports and the C
 thumbnail : "/images/IMG-20260424-WA0014.jpg"
 date: "2026-04-24"
 category: "AI Security"
+tags: ["SuvroGhosh", "AI Security", "Claude Mythos Hype And Security Hygiene", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260424-WA0014.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The sharpest question about Claude Mythos is not whether the dragon escaped; it is why the people advertising the dragon did not build a better door.
 
@@ -56,3 +63,9 @@ Claude Mythos does not need to have been stolen for the episode to be revealing.
 
 The dragon may still be in the cave. But if strangers can get near enough to warm their hands at its nostrils, the fence is part of the story.
 
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
+- [AI Agents Will Not Democratize Power Neatly](/blog/artificial-intelligence/agentic-ai-and-the-asymmetry-of-will)
+- [Anthropic Is Coming for Wall Street](/blog/artificial-intelligence/anthropic-is-coming-for-wall-street)

@@ -4,7 +4,7 @@ description: "India’s goons are not a cultural accident. They are an informal 
 thumbnail : "/images/Compress_20260428_173311_1250.jpg"
 date: "2026-04-28"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Politics", "Crime", "Governance", "Corruption", "State Capacity"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Society", "India Hoodlums Goons Assortment", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "darkred"
 ---
@@ -12,6 +12,12 @@ color: "darkred"
 <TTS />
 
 <Pi src="Compress_20260428_173311_1250.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 India has many kinds of hoodlums because India has many kinds of power that do not pass cleanly through law.
 
@@ -80,3 +86,10 @@ So the question is not why India has goons. The question is why so many Indian s
 A society does not get rid of hoodlums by pretending they are monsters from outside the gate. It gets rid of them by noticing the gatekeeper, the builder, the councillor, the contractor, the officer, the party worker, the priest, the broker, the app scammer, the respectable uncle, and the smiling man in the linen shirt all using the same basic trick: making lawful life feel slower, weaker, and more foolish than submission.
 
 That is the real scandal. Not that India has goons. Every society has them. The scandal is that too often the goon is not a failure of the system. He is the system, briefly honest about its methods.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The City That Begs at the Window](/blog/society/the-city-that-begs-at-the-window)

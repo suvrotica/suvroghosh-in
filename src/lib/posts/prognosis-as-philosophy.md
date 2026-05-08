@@ -4,7 +4,7 @@ description: "A philosophical essay on aging, bitterness, Schopenhauer, disappoi
 thumbnail : "/images/Compress_20260502_180443_3646.jpg"
 date: "2026-05-02"
 category: "Philosophy"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Philosophy", "Prognosis As Philosophy", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260502_180443_3646.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 Bitterness is not always a personality defect; sometimes it is failed optimism with a long memory.
 
@@ -96,3 +101,10 @@ Fine.
 Now watch carefully anyway.
 
 P.S. References: Arthur Schopenhauer, *Studies in Pessimism* and *The World as Will and Representation*; E. M. Cioran, *On the Heights of Despair*.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)

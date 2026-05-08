@@ -4,6 +4,7 @@ description: "Endless scrolling and reading are both sequential mental acts, but
 thumbnail : "/images/IMG-20260427-WA0017.jpg"
 date: "2026-04-27"
 category: "Technology"
+tags: ["SuvroGhosh", "Technology", "Scrolling Versus Reading Sequential Mind", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,12 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260427-WA0017.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Endless scrolling is reading stripped of architecture, obligation, and memory, which is precisely why it so often wins.
 
@@ -89,3 +96,10 @@ Scrolling says: here is another thing.
 Reading says: here is the same thing, deepening.
 
 The first is easier because the mind is always allowed to abandon its previous self. The second is harder because the mind must remain continuous long enough to be changed. And that, for all our glittering machinery, is still one of the most difficult operations a human being performs: to move word by word through time, carrying meaning without dropping it, until the scattered little alphabet becomes a world.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Educated Horror of Having Nowhere to Go](/blog/society/educated-boredom-horror)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [When Nothing Beats Something](/blog/technology/synthetic_music_and_the_crowded_miracle)

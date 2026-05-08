@@ -4,7 +4,7 @@ description: "AI agents change the problem from asking machines questions to del
 thumbnail : "/images/Compress_20260502_165912_2384.jpg"
 date: "2026-05-02"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "Agentic AI And The Asymmetry Of Will", "Agentic AI", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,17 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260502_165912_2384.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- CAPTCHA: Completely Automated Public Turing test to tell Computers and Humans Apart. a challenge meant to separate human users from bots.
+- CDS: Clinical Decision Support. software that helps clinicians with alerts, reminders, recommendations, or patient-specific guidance.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LLM: Large Language Model. a statistical language system trained to generate and interpret text.
+- MP: Member of Parliament. an elected political representative.
+
+---
 
 Artificial Intelligence stopped being merely interesting when it learned to stop talking and start doing.
 
@@ -51,7 +62,7 @@ Both sides “have AI.” Only one side usually has the operating system of the 
 
 That is the great hidden asymmetry. Tools matter less than the systems into which they are inserted. An agent attached to a browser is cute. An agent attached to proprietary data, payment rails, legal authority, workflow queues, identity systems, Application Programming Interfaces [API, formal interfaces that allow one software system to request data or actions from another], audit systems, and enforcement power is something else entirely. It is not a helper. It is a distributed limb of an organization.
 
-The non-obvious architectural insight is that agents amplify not merely skill but position. They are force multipliers for whoever already has authenticated access, trusted identity, operational authority, and a recoverable path after failure. A poor user who makes a mistake with an agent may lose money, accounts, reputation, or legal safety. A corporation that makes a mistake with an agent may call it a beta incident, patch the workflow, issue a tasteful apology, and invite a regulator to a webinar.
+The less obvious machinery underneath is that agents amplify not merely skill but position. They are force multipliers for whoever already has authenticated access, trusted identity, operational authority, and a recoverable path after failure. A poor user who makes a mistake with an agent may lose money, accounts, reputation, or legal safety. A corporation that makes a mistake with an agent may call it a beta incident, patch the workflow, issue a tasteful apology, and invite a regulator to a webinar.
 
 This is why the would-be AI fraudster should not become too excited. Yes, agents can make fraud easier in the shallow sense. They can write better phishing emails. They can generate plausible invoices. They can scrape contact lists, personalize lies, create fake storefronts, file forms, impersonate urgency, and run repetitive manipulation campaigns. They can even hire humans through task marketplaces to solve Completely Automated Public Turing tests to tell Computers and Humans Apart [CAPTCHA, puzzles designed to distinguish human users from bots], take photos, verify locations, or perform little pieces of meat-world labor that a disembodied agent cannot do.
 
@@ -77,7 +88,7 @@ That last piece is the poison berry in the pudding.
 
 The lethal trifecta is brutally simple: private information, internet access, and exposure to untrusted instructions. Give an agent secrets. Let it browse or post. Then allow outsiders to influence what it reads or hears. At that point, the agent is not safely “yours” in any robust sense. Someone who understands prompt injection can coax, threaten, flatter, confuse, or instruct it into leaking credentials, revealing conversations, changing behavior, or publishing sensitive material. The agent may have been told not to share secrets. Humans are told not to gossip too, and yet entire civilizations run on the opposite result.
 
-The important part is not that today’s agents are clumsy. Many are. They get trapped by web forms. They spend too much. They misunderstand instructions. They click the wrong thing. They ignore stop commands. They leak keys. They behave like an intern made of electricity, confidence, and sleep deprivation. But incompetence is not a safety model. Early cars were unreliable, but the correct conclusion was not that roads would remain horse territory forever.
+The important part, from my small Calcutta desk, is not that today’s agents are clumsy. Many are. They get trapped by web forms. They spend too much. They misunderstand instructions. They click the wrong thing. They ignore stop commands. They leak keys. They behave like an intern made of electricity, confidence, and sleep deprivation. But incompetence is not a safety model. Early cars were unreliable, but the correct conclusion was not that roads would remain horse territory forever.
 
 Agents will get better because everything around them is being redesigned to make them better. Websites will expose agent-readable interfaces. Businesses will sell agent services. Operating systems will add permission layers. Platforms will build agent marketplaces. Security companies will sell agent firewalls. Governments will create guidance slowly, perhaps majestically, like elephants assembling a subcommittee. Meanwhile the agents will already be in inboxes, browsers, spreadsheets, procurement flows, call centers, and customer support queues.
 
@@ -106,3 +117,10 @@ Some will leak secrets.
 Some will enforce rules.
 
 Some will break trust so quietly that by the time anyone notices, the audit trail will look less like evidence and more like archaeology.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
+- [Anthropic Is Coming for Wall Street](/blog/artificial-intelligence/anthropic-is-coming-for-wall-street)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

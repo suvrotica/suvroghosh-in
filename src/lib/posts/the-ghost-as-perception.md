@@ -4,6 +4,7 @@ description: "A study of the ghost not as superstition but as a problem in movem
 thumbnail : "/images/IMG-20260425-WA0001.jpg"
 date: "2026-04-25"
 category: "philosophy"
+tags: ["SuvroGhosh", "philosophy", "The Ghost As Perception", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260425-WA0001.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 A ghost is what happens when the mind sees a human shape but cannot find the ordinary machinery that should make it make sense.
 
@@ -67,3 +73,10 @@ To live is to move under constraint. To be a ghost is to persist without the ord
 And perhaps that is its deepest function. The ghost marks the pause where meaning hesitates. In speech, a pause may carry dread, tenderness, anger, or revelation. In life, too, the most important things do not always advance in straight lines. Some hover. Some return. Some stand at the edge of vision until we stop demanding that reality behave like a well-managed ledger.
 
 The ghost asks us to consider that presence may not be the same as substance, that movement may not be the same as life, and that the unseen is not always empty. Sometimes it is merely waiting for perception to make a mistake large enough to become a doorway.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)

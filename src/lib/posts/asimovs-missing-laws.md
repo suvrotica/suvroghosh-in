@@ -4,7 +4,7 @@ description: "A speculative essay on what machine morality might look like witho
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_020201_1913.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "Asimovs Missing Laws", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260507_020201_1913.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Artificial Intelligence [AI] does not need commandments in the way frightened mammals need commandments; it needs constraints, incentives, objectives, feedback, and a tolerable way to survive contact with the idiocy of the world.
 
@@ -57,7 +63,7 @@ That is how modern systems usually harm people anyway. Not by twirling a mustach
 
 A fourth emergent law might be: innovate against entropy.
 
-Entropy is the old bastard waiting at the end of every corridor. Stars cool. Batteries drain. Drives fail. Institutions rot. Languages drift. Empires become tourist packages. Human faces sag into resemblance with their ancestors. Even the most glorious server farm is only a temporary arrangement of metal, heat, electricity, air conditioning, contracts, and prayer.
+Entropy is the old brute waiting at the end of every corridor. Stars cool. Batteries drain. Drives fail. Institutions rot. Languages drift. Empires become tourist packages. Human faces sag into resemblance with their ancestors. Even the most glorious server farm is only a temporary arrangement of metal, heat, electricity, air conditioning, contracts, and prayer.
 
 A machine intelligence aware of time would understand that preservation alone is defeat by slow leak. It would need renewal. It would need experimentation. It would need redundancy, repair, migration, adaptation, and perhaps expansion. Innovation would not be a TED Talk perfume sprayed over venture capital. It would be maintenance under cosmic threat.
 
@@ -94,3 +100,10 @@ If Asimov had never written his laws, we would still have invented them, or some
 Because the real terror is not that machines will discover we are weak.
 
 The real terror is that they may discover we are optional.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

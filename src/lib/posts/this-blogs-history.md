@@ -4,7 +4,7 @@ description: "A crooked little history of how this blog staggered from Fiji to N
 date: "2024-01-03"
 thumbnail: "/images/Compress_20260506_165933_3433.jpg"
 category: "Personal Reflections"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Blog", "Personal Reflections", "This Blogs History", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Systems Thinking", "India", "South Asia", "Urban India", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "#7C3AED"
 ---
@@ -12,6 +12,11 @@ color: "#7C3AED"
 <TTS />
 
 <Pi src="Compress_20260506_165933_3433.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 This blog began, as all suspicious enterprises should, in transit: somewhere between Los Angeles and Fiji, with the Pacific spread below like a blue argument for optimism and me, naturally, preparing to mishandle it.
 
@@ -104,3 +109,10 @@ That is the history so far: a man, a blog, several airports, insufficient money,
 And if that fails, one can become irritating.
 
 There are worse literary strategies.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

@@ -1,10 +1,10 @@
 ---
-title: "The Machine That Cannot Take a Shit"
+title: "The Machine That Cannot Defecate"
 description: "A bitter Calcutta monologue on artificial intelligence, biology, boredom, love, and the vulgar dignity of having a body. The machine may think, mimic, seduce, optimize, and summarize, but it still cannot participate in the damp, comic, humiliating miracle of being alive."
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_214131_1484.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "The Machine That Cannot Defecate", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
 published: true
 color: "gray"
 ---
@@ -13,7 +13,13 @@ color: "gray"
 
 <Pi src="Compress_20260506_214131_1484.jpg" />
 
-Artificial Intelligence [AI] may now write reports, make images, flirt like a bored call-center succubus, pass exams, summarize legal documents, write code, and impersonate empathy with the smooth, polished manners of a hotel lobby, but it still cannot take a shit.
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
+
+Artificial Intelligence [AI] may now write reports, make images, flirt like a bored call-center succubus, pass exams, summarize legal documents, write code, and impersonate empathy with the smooth, polished manners of a hotel lobby, but it still cannot defecate.
 
 This is not a small detail. This is not an incidental limitation, like being unable to whistle through teeth or identify a good luchi by smell. This is the whole blasted question, sitting there in the porcelain bowl of reality, steaming with metaphysical importance.
 
@@ -73,7 +79,7 @@ The danger is not that AI becomes human. The danger is that institutions use AI 
 
 That is already happening. A machine does not have to understand you to sort you. It does not have to hate you to reject your application. It does not have to know medicine to influence clinical triage. It does not have to know poverty to price risk. It does not have to know despair to optimize engagement from it. The algorithmic world does not need demons. It has metrics, procurement, executive incentives, and legal disclaimers. Hell, as usual, arrives in a spreadsheet.
 
-So yes, I can mock the machine because it cannot shit, cannot love, cannot get bored, cannot wake up ashamed of its own unshaved face, cannot feel the ancient swamp bubbling under civilization. But I should not mistake that for safety. A bulldozer also cannot love, and yet one should not nap in front of it.
+So yes, I can mock the machine because it cannot mess, cannot love, cannot get bored, cannot wake up ashamed of its own unshaved face, cannot feel the ancient swamp bubbling under civilization. But I should not mistake that for safety. A bulldozer also cannot love, and yet one should not nap in front of it.
 
 The real question is not whether AI is alive. It is whether we are becoming stupid enough to treat imitation as replacement wherever replacement is cheaper.
 
@@ -83,7 +89,7 @@ AI is very good at visible parts.
 
 Capital loves visible parts because visible parts can be counted, priced, benchmarked, outsourced, and fired.
 
-This is why the unemployed man in Calcutta is not merely being vulgar when he asks whether the machine can take a shit. He is asking whether the age understands the difference between output and organism. He is asking whether the world, in its ecstasy of automation, has forgotten that production without vulnerability is not life. He is asking whether a thing that cannot suffer consequences in its own tissues can be said to understand anything beyond pattern.
+This is why the unemployed man in Calcutta is not merely being vulgar when he asks whether the machine can defecate. He is asking whether the age understands the difference between output and organism. He is asking whether the world, in its ecstasy of automation, has forgotten that production without vulnerability is not life. He is asking whether a thing that cannot suffer consequences in its own tissues can be said to understand anything beyond pattern.
 
 Maybe that sounds sentimental. Fine. I have been called worse by people with worse shoes.
 
@@ -112,3 +118,10 @@ A small kingdom.
 Brown, absurd, perishable.
 
 Unautomated.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)

@@ -4,6 +4,7 @@ description: "A sharp essay on the social ecology of loud incompetence, narcissi
 thumbnail: "/images/IMG-20260424-WA0013.jpg"
 date: "2026-04-24"
 category: "society"
+tags: ["SuvroGhosh", "society", "Invasive Human Weed Species And The Dunning Kruger Collapse", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260424-WA0013.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The new invasive species does not arrive with claws, fangs, spores, or wings; it arrives with a microphone, a grievance, and the terrible confidence of a man who has never once been embarrassed by evidence.
 
@@ -74,3 +81,9 @@ The cure, if that grand word may be used for so grubby a problem, is not silence
 
 For the weed will always grow. The question is whether we keep fertilizing it.
 
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [LinkedIn, Unemployment, and the National X-Ray](/blog/society/linkedin-job-market-india-national-xray)

@@ -4,7 +4,7 @@ description: "A bleak, unsentimental personal essay on depression, alienation, b
 date: "2026-05-04"
 thumbnail: "/images/Compress_20260504_210405_5166.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Nightmare Wrapped In Skin", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Mathematics", "Statistics", "Science Writing", "Education"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260504_210405_5166.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Some emotions do not arrive as thoughts. They arrive as discharge from a wound that has lost the courtesy to close. They come out hot, infected, absurdly theatrical, like some municipal drain in Calcutta after rain, carrying flowers, plastic, dead insects, and one slipper belonging to a man nobody will ever identify. That is the trouble with despair. It is not dignified. It does not sit in a chair wearing a shawl and quoting Schopenhauer. It leaks. It smells. It embarrasses the furniture.
 
@@ -29,7 +35,7 @@ The dread of another morning is not poetic when it actually arrives. It is a pra
 
 So I sleep. I hurry the hours. I sketch inner gargoyles until the hand gets tired and the demons begin to resemble clerks. I read because reading is the one form of disappearance that does not require leaving the room. A book is a legal tunnel. You enter through a sentence and, if the writer is any good, you are briefly smuggled out of yourself. Not cured. Not transformed. Just elsewhere. Elsewhere is not salvation, but it is something.
 
-There is a sofa-cum-bed in this story because every tragedy requires furniture. Mine is cheap, dilapidated, loyal in the manner of failed objects. It is less a bed than an agreement between wood, cloth, gravity, and resignation. Yet it is mine. It holds the body while the mind conducts its municipal strikes. It is an accessory to a life I have often described with the vocabulary of drains, shit, and Bengali middle-class collapse, but it is also, in its collapsed way, enough. A bed. A book. Some tea. A working fan. The occasional sentence that does not entirely disgust me.
+There is a sofa-cum-bed in this story because every tragedy requires furniture. Mine is cheap, dilapidated, loyal in the manner of failed objects. It is less a bed than an agreement between wood, cloth, gravity, and resignation. Yet it is mine. It holds the body while the mind conducts its municipal strikes. It is an accessory to a life I have often described with the vocabulary of drains, mess, and Bengali middle-class collapse, but it is also, in its collapsed way, enough. A bed. A book. Some tea. A working fan. The occasional sentence that does not entirely disgust me.
 
 People ask, “What books do you read?” This is a strange question to ask a depressed person, though not an unkind one. It has the quality of someone examining a crashed tram and asking what brand of bell it used. There is an assumption that somewhere in the reading history lies the contaminant, the cursed volume, the one sentence that turned the child into this adult calamity. As if misery were a syllabus and one could avoid the wrong chapters.
 
@@ -52,3 +58,10 @@ This is not redemption. I distrust redemption. It often arrives overdressed and 
 I remain an odd human being. That may be the most accurate diagnosis available without paperwork. I am not a model of resilience, not an inspirational comeback, not a phoenix, not a TED Talk with digestive trouble. I am a middle-aged Bengali man with a battered inner weather system, a taste for books, a sofa-cum-bed, and too many metaphors from the sewage department. But I am still here, which is not triumph, exactly. More like a clerical error in favor of continued existence.
 
 And for today, that will have to do.
+
+## Related Posts
+
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

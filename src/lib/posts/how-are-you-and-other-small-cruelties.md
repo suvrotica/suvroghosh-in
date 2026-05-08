@@ -4,7 +4,7 @@ description: "A bitter comic meditation on the impossible social arithmetic hidd
 date: "2026-05-06"
 thumbnail : "/images/Compress_20260506_112925_5240.jpg"
 category: "Personal Satire"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Satire", "How Are You And Other Small Cruelties", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata"]
 published: true
 color: "gray"
 ---
@@ -12,6 +12,11 @@ color: "gray"
 <TTS />
 
 <Pi src="Compress_20260506_112925_5240.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 “How are you?” is not a question. It is a tiny social trap, varnished with politeness, carried around by otherwise harmless people like a folding knife in the pocket of civilization. It arrives with a smile, this little nuisance, this three-word mugging in daylight, and expects me, a lower-middle-class, ambition-starved, middle-aged Bengali zero-watt fuckface, to perform emotional accounting on command.
 
@@ -90,3 +95,10 @@ How am I?
 Unanswerable, obviously.
 
 But thank you for asking.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

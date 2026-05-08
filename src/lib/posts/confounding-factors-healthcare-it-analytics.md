@@ -4,6 +4,7 @@ description: "A technical guide to understanding, detecting, and handling confou
 thumbnail : "/images/IMG-20260423-WA0013.jpg" 
 date: "2026-04-22"
 category: "healthcare-it"
+tags: ["SuvroGhosh", "Healthcare IT", "healthcare-it", "Confounding Factors Healthcare IT Analytics", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,16 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260423-WA0013.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- ELT: Extract, Load, Transform. a data pipeline pattern where raw data is loaded before transformation.
+- ETL: Extract, Transform, Load. a data pipeline pattern for pulling, reshaping, and loading data.
+- HIE: Health Information Exchange. the sharing of clinical information across organizations.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Confounding is what happens when the system appears to be telling you one thing while the architecture, workflow, or population structure is quietly telling you another.
 
@@ -125,3 +136,10 @@ Because the world that produced it is complicated, unequal, asynchronous, incent
 That is the job.
 
 Not to make the mess disappear. To stop pretending it means something before you have earned the right to say so.
+
+## Related Posts
+
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/healthcare-it/arrow_uncertainty_medical_care_healthcare_it)

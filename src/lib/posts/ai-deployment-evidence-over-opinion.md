@@ -4,6 +4,7 @@ description: "AI deployment in healthcare is not a modeling problem—it is a re
 thumbnail : "/images/IMG-20260423-WA0008.jpg" 
 date: "2026-04-21"
 category: "healthcare ai"
+tags: ["SuvroGhosh", "healthcare ai", "AI Deployment Evidence Over Opinion", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "red"
 ---
@@ -11,6 +12,16 @@ color: "red"
 <TTS />
 
 <Pi src="IMG-20260423-WA0008.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 AI deployment in healthcare fails the moment it is treated as a model problem instead of a system problem.
 
@@ -111,3 +122,9 @@ Finally, accept that some problems are not yet solvable with current data. If th
 
 The quiet discipline of evidence-driven deployment does not produce dramatic headlines. It produces something rarer: systems that fail less often, in ways that are understood, and in contexts where humans remain firmly in control.
 
+## Related Posts
+
+- [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [Databases and Data Warehouses](/blog/healthcare-it/database-first-principles)

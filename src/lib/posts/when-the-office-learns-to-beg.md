@@ -4,7 +4,7 @@ description: "A future Calcutta essay on artificial intelligence displacement, w
 date: "2026-04-29"
 thumbnail: "/images/Compress_20260429_133236_6875.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "When The Office Learns To Beg", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260429_133236_6875.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The future plague of begging in Indian cities will not begin with torn clothes; it will begin with clean collars, dead laptops, unpaid loans, and men who still say “basically” before explaining why the economy has temporarily misplaced them.
 
@@ -106,3 +112,10 @@ Not all requests will deserve money. All will deserve diagnosis.
 The future plague will not be that too many people ask. It will be that too many people have been trained, credentialed, indebted, displaced, and cornered into asking badly. And the rest of us, living in our boondocks, lanes, apartments, and small republics of managed fear, will have to decide how to remain humane without becoming prey.
 
 Not salvation. Triage with a conscience.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The City That Begs at the Window](/blog/society/the-city-that-begs-at-the-window)
+- [Why India Has Such a Rich Assortment of Hoodlums and Goons](/blog/society/india-hoodlums-goons-assortment)

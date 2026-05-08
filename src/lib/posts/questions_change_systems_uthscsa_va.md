@@ -4,7 +4,7 @@ description: "Why longitudinal analysis, population insights, and predictive mod
 thumbnail : "/images/IMG-20260423-WA0010.jpg" 
 date: "2026-04-21"
 category: "healthcare it"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "Data Architecture", "VA", "UTHSCSA"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "VA", "UTHSCSA", "Questions Change Systems Uthscsa VA", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics"]
 published: true
 color: "indigo"
 ---
@@ -13,7 +13,24 @@ color: "indigo"
 
 <Pi src="IMG-20260423-WA0010.jpg" />
 
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- CPT: Current Procedural Terminology. a United States coding system for medical procedures and services.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- ETL: Extract, Transform, Load. a data pipeline pattern for pulling, reshaping, and loading data.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- ICD: International Classification of Diseases. a diagnosis classification system used for reporting, billing, and statistics.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LOINC: Logical Observation Identifiers Names and Codes. a terminology for lab tests and clinical observations.
+- US: United States. the United States of America.
+- UTHSCSA: University of Texas Health Science Center at San Antonio. a health science university and research institution in Texas.
+- VA: Veterans Affairs. the United States public healthcare system serving military veterans.
 
+---
 
 University of Texas Health Science Center at San Antonio [UTHSCSA, an academic health science center where clinical care, research, teaching, and grant-funded data work often meet uneasily in the same hallway]; Veterans Affairs [VA, the United States federal healthcare system for military veterans, famous in data circles for its long patient histories and equally famous legacy complexity]; Electronic Health Record [EHR, the clinical system used to document patient care]; Health Level Seven version 2 [HL7 v2, the old but stubbornly useful messaging standard that moves clinical events from one system to another]; Fast Healthcare Interoperability Resources [FHIR, the newer web-friendly healthcare data standard built around resources such as Patient, Observation, Encounter, and MedicationRequest]; Extract, Transform, Load [ETL, the plumbing work of pulling data from one place, reshaping it, and loading it somewhere else]; International Classification of Diseases [ICD, the diagnosis coding system used for classification, billing, reporting, and analytic grouping]; Current Procedural Terminology [CPT, the procedure coding system used heavily in US reimbursement and reporting]; Logical Observation Identifiers Names and Codes [LOINC, a terminology for naming laboratory tests and clinical observations]; Clinical Data Interchange Standards Consortium [CDISC, a standards body for clinical research data]; Study Data Tabulation Model [SDTM, a CDISC model used to submit standardized clinical trial data]; Clinical Trial Management System [CTMS, the operational system for managing trial logistics]; Clinical Data Management System [CDMS, the system for collecting, cleaning, and managing research study data].
 
@@ -63,3 +80,9 @@ In healthcare data, questions are not innocent. They are instruments. Point one 
 
 The job of the architect is not to worship either lamp. It is to know what kind of darkness each one fails to illuminate.
 
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)

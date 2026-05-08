@@ -4,7 +4,7 @@ description: "A technically serious reflection on why AI does not merely automat
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_182117_7717.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI Meaningful Work And The Trust Collapse", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,15 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260507_182117_7717.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Artificial Intelligence [AI] is not only threatening work by doing it faster; it is threatening work by making the evidence of work harder to believe.
 
@@ -105,7 +114,7 @@ One should use AI, but not become its ventriloquist dummy.
 
 Use it as a draftsman, critic, indexer, translator, adversary, or research assistant. Do not let it replace the hard part: deciding what is true enough, useful enough, earned enough, and yours enough to publish. The human role moves upward, but not into some lazy executive cloud. It moves toward responsibility. Judgment becomes the scarce craft. Taste becomes infrastructure. Slowness becomes a signal, though only when joined to quality. Merely being slow and human is not noble. A tortoise can still wander into traffic.
 
-The clean solution is prevented by a realistic constraint: platforms are economically rewarded for volume, engagement, and enclosure, not for preserving the moral ecology of authorship. Search engines, social feeds, streaming services, marketplaces, and AI answer engines all have incentives to ingest, summarize, rank, remix, and monetize output faster than trust institutions can adapt. Regulation will lag. Labeling will be inconsistent. Detection will fail. Consumers will prefer convenience while complaining about degradation, which is the ancient human arrangement: curse the flood, click the boat.
+The neat solution runs into a realistic constraint: platforms are economically rewarded for volume, engagement, and enclosure, not for preserving the moral ecology of authorship. Search engines, social feeds, streaming services, marketplaces, and AI answer engines all have incentives to ingest, summarize, rank, remix, and monetize output faster than trust institutions can adapt. Regulation will lag. Labeling will be inconsistent. Detection will fail. Consumers will prefer convenience while complaining about degradation, which is the ancient human arrangement: curse the flood, click the boat.
 
 So the remaining architectural direction is partial, defensive, and stubborn.
 
@@ -119,3 +128,9 @@ A system is known by what it preserves under pressure. If AI lets us produce mor
 
 The gnawing thought keeps returning because it is not merely anxiety about tools. It is a recognition that the shared world depends on friction. Not all friction is waste. Some of it is verification. Some of it is learning. Some of it is taste forming in the dark. Some of it is the human mind refusing to be replaced by its most fluent shadow.
 
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)

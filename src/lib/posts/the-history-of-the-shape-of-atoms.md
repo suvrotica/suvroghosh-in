@@ -4,6 +4,7 @@ description: "A technical history of how the atom changed shape in the scientifi
 thumbnail : "/images/IMG-20260423-WA0023.jpg"
 date: "2026-04-23"
 category: "science"
+tags: ["SuvroGhosh", "science", "The History Of The Shape Of Atoms", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,12 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260423-WA0023.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The atom has had an unusually busy career for something no one has ever seen in the ordinary sense. It began life as a philosophical pebble, became a kind of microscopic plum pudding, then a miniature solar system, then a swarm of standing waves, and finally a thing that refuses, with exquisite stubbornness, to possess a sharp shape at all. That is the central fact. The history of the shape of atoms is not the history of one object patiently revealing its outline. It is the history of human beings trying to force nature into pictures that our monkey brains can tolerate, and nature repeatedly replying with the scientific equivalent of a raised eyebrow.
 
@@ -82,4 +89,9 @@ That may sound austere, but it is also rather beautiful. The atom began as a phi
 
 Which is to say: the atom did not become blurrier. We merely stopped lying about the kind of clarity we were entitled to expect.
 
+## Related Posts
 
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

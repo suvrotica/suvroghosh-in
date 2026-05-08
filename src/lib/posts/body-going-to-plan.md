@@ -4,7 +4,7 @@ description: "A Calcutta essay on bipolar depression, anxiety, unemployment, and
 date: "2026-05-06"
 thumbnail : "/images/Compress_20260506_160241_1669.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Body Going To Plan", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 published: true
 color: "#4B5563"
 ---
@@ -12,6 +12,12 @@ color: "#4B5563"
 <TTS />
 
 <Pi src="Compress_20260506_160241_1669.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Depression may not always be the body going wrong; sometimes it feels more like the body going to plan, with a terrible punctuality.
 
@@ -70,3 +76,10 @@ That may be all. Not triumph. Not transformation. Not the obscene motivational p
 The body may be going to plan, but plans can be revised. Not by inspirational shouting. Not by pretending the cave was paradise or the modern world is progress in clean trousers. Revised slowly, locally, sometimes medically, sometimes socially, sometimes by refusing the particular insult that can be refused. A plan written by DNA is not edited with slogans. It is edited by conditions. By sleep. By shelter. By money if one can get it. By meaningful work if it can be found or made. By fewer false emergencies. By companionship that does not demand performance. By a room in which the nervous system is not required to defend its existence every hour.
 
 Until then, I remain here in Calcutta, middle-aged, unemployed, single, intermittently ridiculous, frequently afraid, not always convinced I am ill in the way the forms describe. Something in me is ancient and overactivated. Something in the world is artificial and underexamined. Between them sits the person, which is to say me, trying to determine whether the pain is a defect, a message, a memory, a warning, or merely the body’s old survival music played through the cracked loudspeaker of modern life.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

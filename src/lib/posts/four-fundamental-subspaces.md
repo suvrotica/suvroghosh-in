@@ -4,6 +4,7 @@ description: "A lucid, technically careful explanation of the four fundamental s
 thumbnail: "/images/IMG-20260425-WA0000.jpg"
 date: "2026-04-25"
 category: "mathematics"
+tags: ["SuvroGhosh", "mathematics", "Four Fundamental Subspaces", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Statistics"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,12 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260425-WA0000.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 A matrix is not a spreadsheet with pretensions; it is a machine with habits, limits, blind spots, and a stern little constitution written in geometry.
 
@@ -131,3 +138,10 @@ SVD gives the most elegant final picture. It builds orthonormal bases for the in
 So the four fundamental subspaces are not a chapter to be survived before eigenvalues arrive with their own luggage. They are the grammar of linear systems. The column space is what the matrix can say. The nullspace is what it cannot hear. The row space is where it listens. The left nullspace is the realm of demands it must refuse.
 
 Once you see this, a matrix stops being a grid. It becomes a little machine of fate: generous in some directions, deaf in others, proud of its rank, embarrassed by its residuals, and always, always bound by geometry.
+
+## Related Posts
+
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

@@ -4,7 +4,7 @@ description: "A personal essay on writing, drawing, satire, darkness, digital ob
 date: "2026-05-02"
 thumbnail : "/images/Compress_20260502_143442_2990.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Why I Write What I Write", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "#7C2D12"
 ---
@@ -12,6 +12,10 @@ color: "#7C2D12"
 <TTS />
 
 <Pi src="Compress_20260502_143442_2990.jpg" />
+
+Acronyms expanded in this post: No central technical acronyms need expansion here.
+
+---
 
 I write and draw because certain thoughts refuse to remain well-behaved tenants in the skull, and if they are not evicted into words, lines, grotesque faces, jokes, or little civic obscenities wearing a paper hat, they begin rearranging the furniture.
 
@@ -130,3 +134,10 @@ That is why I write what I write.
 Not to be correct. Not to be admired. Not to be family-friendly. Not to be explained into harmlessness. Not to pretend darkness is virtue or vulgarity is courage. Not to become the brave little mascot of authenticity, that overmarketed vegetable.
 
 I write because something in me keeps knocking from the inside, and I would rather open the door with a pen in my hand than wait for it to break the furniture.
+
+## Related Posts
+
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

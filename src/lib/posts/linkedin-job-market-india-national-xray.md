@@ -4,7 +4,7 @@ description: "A hard, satirical look at India’s job market, credential factori
 date: "2026-05-03"
 thumbnail: "/images/Compress_20260504_165300_0245.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Society", "Linkedin Job Market India National Xray", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "red"
 ---
@@ -12,6 +12,12 @@ color: "red"
 <TTS />
 
 <Pi src="Compress_20260504_165300_0245.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The Indian job market is not merely failing people; it is making them perform their own failure in public, preferably on LinkedIn, with a smiling photograph, a recycled quote about resilience, and a comment section full of strangers clapping like trained seals at a funeral.
 
@@ -82,3 +88,10 @@ So yes, people are on LinkedIn looking for work. They are also looking for proof
 That is not entitlement.
 
 That is the minimum claim of a citizen who has not yet agreed to become debris.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)

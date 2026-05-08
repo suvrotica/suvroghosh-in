@@ -4,7 +4,7 @@ description: "A system-level essay on how kinship, visibility, parsimony, and so
 date: "2026-04-30"
 thumbnail : "/images/Compress_20260429_181247_7639.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Society", "Kinship Range Limit Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 published: true
 color: "#6F5B4F"
 ---
@@ -12,6 +12,13 @@ color: "#6F5B4F"
 <TTS />
 
 <Pi src="Compress_20260429_181247_7639.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- US: United States. the United States of America.
+
+---
 
 Kinship in Calcutta is not invisible; it is range-limited infrastructure. It lights up brilliantly for weddings, funerals, hospital corridors, school admissions, property disputes, visa celebrations, religious festivals, and the delicate national sport of knowing who has disappointed whom. But at the level of an ordinary middle-class, middle-aged, single man living quietly, cheaply, and without decorative social shine, it often becomes faint, like a wireless signal trapped behind damp walls.
 
@@ -98,3 +105,10 @@ For the ordinary middle-aged single man in Calcutta, the task is therefore not t
 Not fame. Not family drama. Not the grand embrace of society.
 
 A signal strong enough to cross the damp wall.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Educated Horror of Having Nowhere to Go](/blog/society/educated-boredom-horror)
+- [The City That Begs at the Window](/blog/society/the-city-that-begs-at-the-window)

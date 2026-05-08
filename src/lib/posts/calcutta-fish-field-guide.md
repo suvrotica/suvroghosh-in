@@ -4,6 +4,7 @@ description: "A practical field guide to the fish commonly eaten in Kolkata, wit
 thumbnail : "/images/IMG-20260422-WA0006.jpg"
 date: "2026-04-22"
 category: "food"
+tags: ["SuvroGhosh", "Calcutta", "food", "Calcutta Fish Field Guide", "Calcutta Bengali", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Bengali Culture", "West Bengal", "Urban Kolkata"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,10 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260422-WA0006.jpg" />
+
+Acronyms expanded in this post: No central technical acronyms need expansion here.
+
+---
 
 The first mistake is to think fish in Calcutta are sorted by biology. They are sorted by memory, class, river nostalgia, bones, fat, price, smell, and what the household cook can do without turning dinner into an orthopedic event. The market name is often stable. The species underneath it is not always. That matters, because “good fish” and “bad fish” are not single judgments. They can mean good for taste, good for health, good for children, good for pregnancy, good for weekday eating, or good only if you are willing to forgive half a dozen needle-like bones and a bill that behaves like a small insult.
 
@@ -58,4 +63,11 @@ Postscript on names and evidence: species names above are drawn from standard fi
 
 Postscript on what counts as “good” and “bad”: the nutritional case for fish includes protein and long-chain omega-3 fats, while regulatory mercury guidance consistently advises choosing a variety of lower-mercury fish and limiting larger predatory species, especially for pregnancy and childhood. Small fish eaten whole can contribute disproportionately to calcium, vitamin A, and other micronutrients. That is why this post favors small indigenous fish and medium nonpredatory fish for frequent eating, and treats large predators as occasional rather than staple choices. 
 
-Postscript on caution: contamination risk is not identical across all fish, waters, or sizes. Mercury generally rises with trophic level and age; estuarine and urban-aquatic contamination adds a separate environmental burden; aquaculture handling and antibiotic use are variable by system. So the advice here is ecological and practical rather than absolutist: prefer trustworthy sellers, smaller to medium specimens, and variety over repetitive devotion to one glamorous fish. 
+Postscript on caution: contamination risk is not identical across all fish, waters, or sizes. Mercury generally rises with trophic level and age; estuarine and urban-aquatic contamination adds a separate environmental burden; aquaculture handling and antibiotic use are variable by system. So the advice here is ecological and practical rather than absolutist: prefer trustworthy sellers, smaller to medium specimens, and variety over repetitive devotion to one glamorous fish.
+
+## Related Posts
+
+- [Pests we love](/blog/natural-history/large-common-insects-and-arachnids-in-urban-calcutta)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

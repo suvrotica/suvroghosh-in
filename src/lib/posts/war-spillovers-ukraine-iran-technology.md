@@ -4,6 +4,7 @@ description: "Wars do not ennoble technology. They compress it. A look at what t
 thumbnail : "/images/IMG-20260423-WA0000.jpg" 
 date: "2026-04-23"
 category: "technology"
+tags: ["SuvroGhosh", "technology", "War Spillovers Ukraine Iran Technology", "War Technology", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Geopolitics", "Energy Security", "Global Supply Chains"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260423-WA0000.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 War is not a research grant with bad manners. It is a distortion field. It takes money, fear, urgency, logistics, engineering, and state power, then strips away committee drift. That is why it so often accelerates technologies that peacetime would have funded timidly, regulated slowly, and deployed late.
 
@@ -80,4 +87,11 @@ Still, the broad pattern is hard to miss. When a conflict punishes latency, frag
 
 That, in the end, may be the most durable gift of these wars. Not a miracle gadget. A design philosophy.
 
-Cheap enough to lose. Smart enough to coordinate. Resilient enough to keep working when the map, the signal, and the plan all fail at once. 
+Cheap enough to lose. Smart enough to coordinate. Resilient enough to keep working when the map, the signal, and the plan all fail at once.
+
+## Related Posts
+
+- [India’s Semiconductor Problem Is Not a Missing Slogan](/blog/technology/india-semiconductor-sufficiency-beyond-lip-service)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

@@ -4,6 +4,7 @@ description: "Kenneth Arrow’s 1963 essay remains essential because it explains
 thumbnail : "/images/IMG-20260426-WA0008.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"
+tags: ["SuvroGhosh", "Healthcare IT", "Arrow Uncertainty Medical Care Healthcare IT", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,22 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260426-WA0008.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HIE: Health Information Exchange. the sharing of clinical information across organizations.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- ICD: International Classification of Diseases. a diagnosis classification system used for reporting, billing, and statistics.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LOINC: Logical Observation Identifiers Names and Codes. a terminology for lab tests and clinical observations.
+- SNOMED CT: Systematized Nomenclature of Medicine Clinical Terms. a large clinical terminology for representing medical meaning.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+
+---
 
 Kenneth Arrow’s great insight was not that healthcare markets are imperfect; it was that their imperfections are not decorative scratches on an otherwise respectable machine. They are the machine. In “Uncertainty and the Welfare Economics of Medical Care,” published in 1963, Arrow explained why medical care does not behave like ordinary commerce with a waiting room attached. The patient does not arrive as a calm shopper comparing toaster warranties. The patient arrives frightened, time-poor, physiologically compromised, financially exposed, and forced to make decisions under conditions where the seller knows vastly more than the buyer, the outcome is uncertain, and the purchase itself may be inseparable from trust.
 
@@ -34,7 +51,7 @@ That last role is the dangerous one. AI in healthcare inherits Arrow’s world, 
 
 The central design mistake is believing that better computation fixes malformed representation. It does not. It scales it. If the EHR treats “absence of evidence” as “evidence of absence,” AI will do the same with better typography. If a data warehouse collapses physician uncertainty into binary flags, the model will learn false certainty. If claims data treats reimbursed care as delivered need, population health analytics will confuse market access with disease burden. If a registry accepts only final diagnoses, it may erase the diagnostic journey, which is often where the most important clinical intelligence lives. Arrow’s patient was uncertain at the bedside. Our systems are uncertain in the database. The uncertainty did not disappear. It changed costume.
 
-The practical implication is plain but hard: healthcare architecture must make uncertainty, provenance, and workflow context first-class design objects. Provenance means knowing where a data element came from, who or what asserted it, when it was asserted, under what workflow, for what purpose, and whether later evidence contradicted it. Temporal modeling matters because a diagnosis before treatment, during treatment, and after treatment is not the same object wearing three hats. Terminology mapping matters because Systematized Nomenclature of Medicine Clinical Terms [SNOMED CT, a clinical terminology for representing medical concepts], Logical Observation Identifiers Names and Codes [LOINC, a terminology for identifying lab tests and clinical observations], and International Classification of Diseases [ICD, a diagnosis classification system used heavily in billing and reporting] do different jobs. Pretending that a billing classification and a clinical ontology are interchangeable is like using a railway timetable as a map of human longing. It has information. It is not the thing.
+The practical point, stripped of lecture-hall varnish, is this: healthcare architecture must make uncertainty, provenance, and workflow context first-class design objects. Provenance means knowing where a data element came from, who or what asserted it, when it was asserted, under what workflow, for what purpose, and whether later evidence contradicted it. Temporal modeling matters because a diagnosis before treatment, during treatment, and after treatment is not the same object wearing three hats. Terminology mapping matters because Systematized Nomenclature of Medicine Clinical Terms [SNOMED CT, a clinical terminology for representing medical concepts], Logical Observation Identifiers Names and Codes [LOINC, a terminology for identifying lab tests and clinical observations], and International Classification of Diseases [ICD, a diagnosis classification system used heavily in billing and reporting] do different jobs. Pretending that a billing classification and a clinical ontology are interchangeable is like using a railway timetable as a map of human longing. It has information. It is not the thing.
 
 The same warning applies to research systems. Clinical Data Interchange Standards Consortium [CDISC, a standards organization for clinical research data] and Study Data Tabulation Model [SDTM, a CDISC model for organizing clinical trial submission datasets] impose discipline, which is useful and necessary. But research data models often require cleaner, more bounded representations than routine care naturally produces. A trial dataset wants a defined variable. A clinic produces a trail of suspicion, treatment, patient adherence, insurance interruption, symptom drift, and documentation artifacts. Mapping routine care into research form is not simply extract-transform-load. It is a negotiation between the world as lived and the world as submitted. Some information becomes structured. Some becomes narrative. Some becomes “unknown.” Some vanishes with a faint administrative cough.
 
@@ -55,3 +72,10 @@ Arrow’s 1963 essay remains foundational because it refuses the cheap simplific
 The sober lesson for Healthcare IT is this: before asking whether a system can exchange, analyze, or predict, ask what kind of uncertainty it has already hidden. A normal market can survive a bad product review. A healthcare system can bury ambiguity inside a clean field, pass it across an interface, train a model on it, and return it to the bedside as advice. That is not merely a technical flaw. It is Arrow’s world, digitized, accelerated, and waiting for architects who understand that the deepest bugs in healthcare are often not in the code. They are in the representation of the human condition as if it were easier, cleaner, and more obedient than it has ever been.
 
 P.S. References: Kenneth J. Arrow, “Uncertainty and the Welfare Economics of Medical Care,” The American Economic Review, Volume 53, Issue 5, December 1963, pages 941–973. World Health Organization Bulletin reprint and commentary series on Arrow’s role in the birth of health economics. Duke University Press, Uncertain Times: Kenneth Arrow and the Changing Economics of Health Care.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

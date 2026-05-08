@@ -4,7 +4,7 @@ description: "A returnee’s life in Calcutta is not always a story of triumphan
 thumbnail : "/images/Compress_20260428_193723_3458.jpg"
 date: "2026-04-28"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "America", "Calcutta", "India", "NRI", "Returnee", "Precarity", "Urban Life", "Barebones Living", "Social Trust"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "America", "Calcutta", "Personal", "Barebones Lifeboat Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "#7C3AED"
 ---
@@ -12,6 +12,13 @@ color: "#7C3AED"
 <TTS />
 
 <Pi src="Compress_20260428_193723_3458.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- NRI: Non-Resident Indian. an Indian citizen or person of Indian origin living outside India.
+- US: United States. the United States of America.
+
+---
 
 Calcutta is not paradise; it is the lifeboat that still floats when the grand ship of respectable middle-class life has quietly priced you off the deck.
 
@@ -118,3 +125,10 @@ For me, Calcutta is not the triumphant return to roots. Roots are a complicated 
 But the boat floats.
 
 And when you are barely scraping a living, floating is not a small thing. It is the first condition of thought, dignity, humor, and tomorrow morning’s tea.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
+- [The Educated Horror of Having Nowhere to Go](/blog/society/educated-boredom-horror)

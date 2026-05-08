@@ -4,6 +4,7 @@ description: "The central risk is not that insurers openly announce an artificia
 thumbnail : "/images/IMG-20260424-WA0001.jpg"
 date: "2026-04-24"
 category: "healthcare ai"
+tags: ["SuvroGhosh", "Healthcare IT", "healthcare ai", "AI Health Insurance Surreptitious Risk Scoring", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "indigo"
 ---
@@ -11,6 +12,13 @@ color: "indigo"
 <TTS />
 
 <Pi src="IMG-20260424-WA0001.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 There may be an apprehensive premonition in patients with insurance that Artificial Intelligence, or AI, could be used quietly, indirectly, or without meaningful consent to raise premiums, narrow coverage, intensify scrutiny, or cancel policies in ways that protect insurers from large payouts. That suspicion deserves a more hard-boiled treatment than polite regulatory prose usually gives it.
 
@@ -46,7 +54,7 @@ A non-obvious architectural insight is that some of the most harmful decisions m
 
 That is also why fairness testing limited to the final model is inadequate. Bias can accumulate compositionally. A somewhat skewed cost-prediction model feeds a somewhat skewed review-prioritization model, which feeds a somewhat skewed human workflow, which feeds a somewhat skewed appeals pathway. Each layer can look tolerable in isolation. Together they can produce a ruthless asymmetry. This is how modern systems often injure people: not through one scandalous switch, but through many boring switches all tilted a few degrees in the same direction.
 
-The deeper truth is that healthcare data systems have always encoded moral judgments while pretending merely to record facts. Billing categories, coverage determinations, medical necessity rules, diagnosis hierarchies, quality measures, fraud heuristics, utilization norms, and risk adjustment formulas all translate institutional values into structured data. AI enters a world already thick with judgment. It does not arrive as a neutral mathematician. It arrives like a clerk who can read the ledgers faster than anyone else and imitate the prejudices in them with frightening efficiency.
+Under the floorboards, the truth is that healthcare data systems have always encoded moral judgments while pretending merely to record facts. Billing categories, coverage determinations, medical necessity rules, diagnosis hierarchies, quality measures, fraud heuristics, utilization norms, and risk adjustment formulas all translate institutional values into structured data. AI enters a world already thick with judgment. It does not arrive as a neutral mathematician. It arrives like a clerk who can read the ledgers faster than anyone else and imitate the prejudices in them with frightening efficiency.
 
 So what architectural direction remains possible, assuming one wishes not to build a silkier apparatus for exclusion.
 
@@ -63,3 +71,10 @@ Fifth, some uses should simply be prohibited. Not everything that can be inferre
 So the more nuanced version is darker, not lighter. It is not that insurers are uniquely villainous and twirl their mustaches in secret rooms. It is that ordinary greed, institutional self-interest, fragmented responsibility, legal minimalism, and human willingness to profit from abstraction can produce systems that behave cruelly without requiring any individual to feel especially cruel at all. AI fits this world perfectly. It offers speed, pattern recognition, deniability, and scale. It can convert hunch, prejudice, and financial appetite into ranked outputs that look clinical on a dashboard and punishing in a life.
 
 The real question is therefore not whether a statute somewhere describes a noble boundary. The real question is whether the operational stack allows expensive, vulnerable, or inconvenient people to be identified early and then quietly managed as liabilities. In many systems, that is not a speculative dystopia. It is simply what optimization looks like after it has learned manners.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Healthcare AI and the Wrong Objective](/blog/healthcare-ai/healthcare-ai-wrong-objective)
+- [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)

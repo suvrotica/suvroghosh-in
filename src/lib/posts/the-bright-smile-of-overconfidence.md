@@ -4,7 +4,7 @@ description: "A caustic reflection on corporate positivity, fake certainty, expl
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_154131_1600.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "The Bright Smile Of Overconfidence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "amber"
 ---
@@ -13,6 +13,10 @@ color: "amber"
 
 <Pi src="Compress_20260505_154131_1600.jpg" />
 
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Overconfidence is often insecurity wearing a rented blazer and grinning as if it has just acquired a motivational quote wholesale from a warehouse outside Gurgaon. People who only say confident things, who radiate positivity in a permanently polished, dental-adjacent manner, are frequently not brave at all. They are terrified. They have merely discovered that terror looks more employable when lacquered. The always-smiling face, the wet enthusiasm, the waterfall of corporate sunshine pouring from the mouth at nine in the morning, all of it may be less a sign of inner strength than a panic response with PowerPoint permissions.
 
@@ -28,7 +32,7 @@ The strange thing is that these men are not aberrations. They are products. The 
 
 This is why unrealistic expectations are not merely annoying. They are structurally dangerous. A bad expectation is not a mood. It is an architectural defect. It determines deadlines, budgets, staffing, quality, blame, health, and finally whether some poor exhausted person will be asked to build the Taj Mahal out of broken plywood by Friday evening. I have felt those headwinds. I know the sound a bad project makes before it collapses. It does not usually sound like panic. It sounds like confidence. It sounds like “we are aligned.” It sounds like “let us be aggressive.” It sounds like “we already know this.” It sounds like the small, dry click of a trap closing.
 
-The gung-ho are often led by three forces: bad advice, professional charlatans, and the Dunning-Kruger effect, that little cognitive carnival in which people know so little that they do not yet know what knowing would require. India has built entire informal supply chains around this condition. One person who does not know tells another person who does not know, who forwards it to a third person with a firmer voice and a LinkedIn banner, and by the end of the week a roomful of people are nodding at a strategy made of fog, borrowed jargon, and unpaid confidence. Everyone claims to know their shit. Very few have checked whether the shit exists, where it came from, or whether it is already on fire.
+The gung-ho are often led by three forces: bad advice, professional charlatans, and the Dunning-Kruger effect, that little cognitive carnival in which people know so little that they do not yet know what knowing would require. India has built entire informal supply chains around this condition. One person who does not know tells another person who does not know, who forwards it to a third person with a firmer voice and a LinkedIn banner, and by the end of the week a roomful of people are nodding at a strategy made of fog, borrowed jargon, and unpaid confidence. Everyone claims to know their mess. Very few have checked whether the mess exists, where it came from, or whether it is already on fire.
 
 Then comes the sacred word: productivity. Once upon a time, it meant something plain enough. More output with less waste. Better tools. Smarter process. Less pointless effort. There was a sensible idea in there, like a small honest clerk trapped inside a corrupt ministry. But the word has been beaten, stretched, perfumed, weaponized, and sold back to workers as a moral obligation. Productivity now often means that a company wants more of your life for less of its money. It means the machine is hungry and would prefer if you called the feeding process “growth.”
 
@@ -53,3 +57,10 @@ The future does not arrive politely. It does not knock and ask whether the prese
 As for me, I remain badly suited to the age. I have a large mouth, an inconvenient memory, and a childish desire to be fair. These are not market advantages. The world prefers agreeable frauds, polished half-wits, cheerful exploiters, and men who can say “fantastic” while stepping over a body. I do not have that talent. I see the crack in the wall and mention the crack. I smell the gas and mention the gas. I notice the emperor is not merely naked but also billing the laundry department, and somehow I am the unpleasant one.
 
 So be it. There are worse fates than being called negative by people who require lies to function. Reality is not kind, but it is informative. It tells you where the floor is weak, where the money is missing, where the promise is rotten, and where your own foolishness has been quietly helping the machinery that chews you. The trick is not to become hopeful in the greeting-card sense. The trick is to become harder to fool. That may not save you. It has not saved me in any grand, cinematic way. But it keeps the mind from joining the circus completely, and in this age of smiling incompetence, that is not nothing.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)

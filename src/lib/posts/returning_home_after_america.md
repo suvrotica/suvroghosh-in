@@ -4,6 +4,7 @@ description: "A sensitive, evidence-grounded essay on Indian professionals retur
 thumbnail : "/images/IMG-20260424-WA0007.jpg" 
 date: "2026-04-24"
 category: "work, migration, India"
+tags: ["SuvroGhosh", "India", "work, migration, India", "Returning Home After America", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -12,6 +13,13 @@ color: "slate"
 
 <Pi src="IMG-20260424-WA0007.jpg" />
 
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- NRI: Non-Resident Indian. an Indian citizen or person of Indian origin living outside India.
+- US: United States. the United States of America.
+
+---
 
 Return is not the opposite of migration; it is migration with all the labels peeled off.
 
@@ -85,4 +93,11 @@ The returnee does not need worship. He does not need to be told that his foreign
 
 Because a person who has lived between systems may be awkward, yes. He may be too blunt, too wounded, too expensive, too old for the fantasy of youthful obedience, too foreign in manner and too Indian in longing. But he may also be exactly the sort of person who can see the broken hinge because he has opened other doors.
 
-And a country that cannot use such people is not being practical. It is being wasteful in the grand old subcontinental style: ceremonially respectful toward experience, operationally terrified of it. 
+And a country that cannot use such people is not being practical. It is being wasteful in the grand old subcontinental style: ceremonially respectful toward experience, operationally terrified of it.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [India’s White-Collar Issue](/blog/india/india-ai-it-bpo-white-collar-jobs)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)

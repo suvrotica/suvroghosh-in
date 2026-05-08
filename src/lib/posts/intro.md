@@ -4,6 +4,7 @@ description: "From Pascal at Jadavpur University to healthcare data systems, dis
 thumbnail : "/images/IMG-20260422-WA0009.jpg"
 date: "2026-04-22"
 category: "career"
+tags: ["SuvroGhosh", "career", "Intro", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,25 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260422-WA0009.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- COBOL: Common Business-Oriented Language. an older programming language still used in many institutional systems.
+- CSS: Cascading Style Sheets. the web language used to style pages.
+- D3: Data-Driven Documents. a JavaScript library for building data visualizations.
+- FORTRAN: Formula Translation. an older programming language widely used in scientific and numerical computing.
+- HTML5: HyperText Markup Language 5. the modern generation of HTML used for web applications.
+- IBM: International Business Machines. a long-running enterprise technology company.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- OPNET: Optimized Network Engineering Tools. a network simulation platform used for protocol and system modeling.
+- SAS: Statistical Analysis System. software used for statistics, data management, and reporting.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+- SPSS: Statistical Package for the Social Sciences. software used for statistical analysis.
+- UML: Unified Modeling Language. a notation for diagramming software and system designs.
+- VBA: Visual Basic for Applications. a Microsoft scripting language used in Office automation.
+- Y2K: Year 2000 problem. the date-handling risk that older software might fail when years rolled from 1999 to 2000.
+
+---
 
 At Jadavpur University in the mid-1990s, when the internet was still making the awkward transition from a mostly textual medium into something that could handle images without sounding faintly miraculous, I was introduced to programming through Pascal. There was also FORTRAN, COBOL, and later C and C++, which in that period was a fairly standard academic parade of languages: some already old enough to feel institutional, some sharp enough to feel modern, all presented as if the machine would become obedient once you learned the grammar. My undergraduate understanding was uneven in places, as it usually is when one is young and the abstractions arrive faster than experience can anchor them, but two subjects stayed with me immediately and stubbornly: digital logic and databases. Relational database theory made intuitive sense to me. SQL did too. There was something clean about the idea that information could be structured, constrained, queried, and made to yield an answer if only one asked the question precisely enough.
 
@@ -59,3 +79,10 @@ Between model and mess. Between database and decision. Between software and circ
 That is the past I am trying to resurrect accurately, because without it, the later interest in data science, healthcare systems, machine learning, architecture, and writing can look like a grab bag of unrelated episodes. It was never that. The pattern was there early. I just did not yet have the language for it.
 
 And now, like a great many people who have been around long enough to watch one computing era swagger in and another quietly repossess the furniture, I am trying to remain relevant in the present artificial intelligence deluge without surrendering either technical seriousness or common sense. That means staying engaged with the contemporary stack as it actually exists rather than as marketing slides describe it: Python-based machine learning and data engineering ecosystems, modern SQL and vector-aware data platforms, cloud architecture, application programming interfaces, retrieval-augmented generation, embeddings, evaluation pipelines, model orchestration frameworks, and the emerging world of agentic systems where large language models are asked not merely to generate text but to reason across tools, memory, workflows, and constraints. Some of this is genuinely new. Some of it is old distributed systems and statistical pattern matching dressed in expensive new clothes. Either way, the task remains the same as it always was for me: understand the architecture, separate signal from theater, and learn just enough of the new machinery to make it useful in the real world.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Databases and Data Warehouses](/blog/healthcare-it/database-first-principles)
+- [India’s White-Collar Issue](/blog/india/india-ai-it-bpo-white-collar-jobs)
+- [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)

@@ -4,6 +4,7 @@ description: "A critical look at how fear of mediocrity, social exposure, and pu
 thumbnail : "/images/IMG-20260423-WA0017.jpg"
 date: "2026-04-21"
 category: "society"
+tags: ["SuvroGhosh", "India", "society", "India Ambition Validation Fear Of Mediocrity", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,12 @@ color: "amber"
 <TTS />
 
 <Pi src="IMG-20260423-WA0017.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
+
 What gets called ambition in modern India is often something narrower, sadder, and more combustible: status anxiety under theatrical lighting.
 
 Not excellence. Not devotion to craft. Not the long, private, slightly unglamorous labor by which a person becomes good at something difficult. Something else. A public struggle against invisibility. A dread of being ordinary in a civilization so crowded, so comparative, and so relentlessly social that obscurity begins to feel not like a neutral condition but like a verdict.
@@ -120,3 +127,10 @@ Because once a society loses interest in goodness and becomes fixated on being s
 It becomes performative.
 
 And performative civilizations eventually discover, usually too late, that applause is a poor substitute for substance.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)

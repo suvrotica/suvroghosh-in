@@ -4,6 +4,7 @@ description: "A technically grounded analysis of homeopathy’s origins, interna
 thumbnail : "/images/IMG-20260423-WA0015.jpg"
 date: "2026-04-21"
 category: "healthcare-systems"
+tags: ["SuvroGhosh", "healthcare-systems", "Homeopathy Pseudoscience Persistence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "red"
 ---
@@ -11,6 +12,16 @@ color: "red"
 <TTS />
 
 <Pi src="IMG-20260423-WA0015.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The claim that a single, universal logic can cure all disease is not merely wrong; it is architecturally incompatible with how biology, data, and clinical systems behave. Homeopathy persists not because it works, but because it satisfies a set of human and institutional needs that evidence-based medicine often struggles to meet under real-world constraints.
 
@@ -44,7 +55,7 @@ Culturally, homeopathy aligns with long-standing traditions of holistic and indi
 
 Economically, it is inexpensive to produce and distribute. There is no need for complex supply chains, cold storage, or pharmacovigilance systems. For healthcare systems under financial strain, especially in low- and middle-income settings, this low cost can be mistaken for efficiency rather than absence of effect.
 
-The deeper truth is that homeopathy survives in the space where healthcare systems fail to align three things: scientific validity, operational reality, and human experience. Evidence-based medicine excels at the first, struggles with the second, and often neglects the third. Homeopathy inverts this: it ignores scientific validity, simplifies operations, and amplifies human experience.
+Under the floorboards, the truth is that homeopathy survives in the space where healthcare systems fail to align three things: scientific validity, operational reality, and human experience. Evidence-based medicine excels at the first, struggles with the second, and often neglects the third. Homeopathy inverts this: it ignores scientific validity, simplifies operations, and amplifies human experience.
 
 This inversion creates a stable equilibrium. Attempts to eliminate homeopathy purely through scientific argument tend to fail because they do not address the underlying system gaps that make it attractive.
 
@@ -61,3 +72,10 @@ Finally, address the human layer directly. The persistence of homeopathy is a si
 Homeopathy is often compared to astrology, and the comparison is more precise than it first appears. Both offer internally consistent symbolic systems that map human experience onto simplified frameworks. Both resist falsification because they adapt narratives post hoc. And both persist because they provide meaning in environments where complexity overwhelms comprehension.
 
 In healthcare IT, the lesson is not about homeopathy per se. It is about the danger of confusing coherence with correctness. Systems can be beautifully consistent and completely wrong. The task of architecture is to ensure that what we build is not only coherent, but anchored—firmly, verifiably—in the messy, stubborn reality of biology.
+
+## Related Posts
+
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

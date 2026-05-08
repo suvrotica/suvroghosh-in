@@ -4,6 +4,7 @@ thumbnail : "/images/IMG-20260422-WA0001.jpg"
 description: "Modern life increasingly resembles a marketplace of attractive hazards: products, platforms, services, and institutions that promise convenience while quietly shifting risk onto the buyer. Why surviving it now requires judgment, not just income."
 date: "2026-04-22"
 category: "society"
+tags: ["SuvroGhosh", "society", "Sensible Consumer In A Pufferfish World", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,12 @@ color: "amber"
 <Pi src="IMG-20260422-WA0001.jpg" />
 
 <TTS />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Modern consumer life is increasingly built like fugu, the Japanese puffer fish: alluring, prestigious, often genuinely excellent when handled well, and potentially toxic when it is not. The difference is that in the old world, danger usually sat at the edges of life, in the forest, the alley, the battlefield, the operating theater. In modern life, it sits on the shelf, in the app store, in the financing agreement, in the wellness package, in the school brochure, in the insurance clause, in the food label, in the social feed, in the hospital estimate, in the investment product, in the convenience itself.
 
@@ -44,7 +51,7 @@ Education has drifted the same way. The attractive outer shell is aspiration. Th
 
 Calcutta, and cities like it, provide the street-level version of this truth. The city is full of things that reward discernment and punish naivete. A neighborhood eatery may be superb or catastrophic. A cheap electrical repair may save money or invite fire. A school may market English fluency while hollowing out actual learning. A property bargain may come wrapped in title ambiguity, drainage problems, litigation, or a transformer that hums like divine judgment. Yet it would be a mistake to imagine this is a symptom of underdevelopment alone. Wealthier societies merely hide the hazard behind cleaner glass, stronger fonts, better branding, and more expensive lawyers.
 
-The deeper truth is that modern capitalism often does not eliminate toxicity. It professionalizes its packaging.
+Under the floorboards, the truth is that modern capitalism often does not eliminate toxicity. It professionalizes its packaging.
 
 What changed historically is not that goods became more dangerous in some absolute sense. In many ways they became safer. What changed is the location of risk and the style of responsibility. Pre-modern hazards were often visible, physical, local, and customary. Modern hazards are frequently distributed, contractual, biochemical, informational, actuarial, or delayed. They arrive mediated through systems. The consumer meets a polished front end and inherits backend risk. That is the architecture.
 
@@ -111,3 +118,10 @@ The old fantasy was that prosperity would make life simpler.
 What it often did instead was make danger prettier.
 
 P.S. For the literal background: fugu is a Japanese preparation of puffer fish containing tetrodotoxin, a potent neurotoxin, and safe consumption depends on expert preparation standards recognized in Japanese culinary practice.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [India’s White-Collar Issue](/blog/india/india-ai-it-bpo-white-collar-jobs)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

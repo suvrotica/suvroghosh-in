@@ -4,6 +4,7 @@ description: "A meditation on modern euphemism, synthetic happiness, and the soc
 thumbnail :  "/images/IMG-20260427-WA0001.jpg" 
 date: "2026-04-27"
 category: "Culture"
+tags: ["SuvroGhosh", "Culture", "Facial Pleasure Receipts And Modern Euphemism", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 published: true
 color: "charcoal"
 ---
@@ -11,6 +12,12 @@ color: "charcoal"
 <TTS />
 
 <Pi src="IMG-20260427-WA0001.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The modern face is no longer a face. It is a notarized document. It certifies enthusiasm, compliance, resilience, team spirit, emotional maturity, spiritual hygiene, market readiness, and the absence of inconvenient despair. The old human face, with its storms and bad weather, has been replaced by a service counter display: Thank you for your suffering. Please rate this experience.
 
@@ -55,3 +62,10 @@ A society that cannot tolerate the troubled face becomes stupid in a very specif
 We should be suspicious of every culture, family, company, nation, and polished little social circle that requires cheerfulness as proof of decency. Joy cannot be commanded into existence. It has to grow from tolerable conditions: safety, dignity, health, friendship, meaning, play, rest, justice, some privacy, some beauty, and enough money that life does not become a daily arithmetic of humiliation. Without these, the smile is not evidence of civilization. It is evidence of training.
 
 The human face was not built to be a compliance dashboard. It was built to warn, invite, resist, mourn, desire, question, and occasionally betray us with embarrassing honesty. To demand that it forever advertise pleasure is to make the face into a billboard above a burning building. The flames remain. The billboard says, Welcome Home.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Returnee Who No Longer Fits](/blog/work-migration-india/returning_home_after_america)
+- [The Educated Horror of Having Nowhere to Go](/blog/society/educated-boredom-horror)

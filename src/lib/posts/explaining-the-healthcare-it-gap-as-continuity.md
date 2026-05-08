@@ -4,6 +4,7 @@ description: "A first-person account of a decade spent outside conventional corp
 thumbnail : "/images/IMG-20260425-WA0007.jpg"
 date: "2026-04-25"
 category: "Healthcare IT"
+tags: ["SuvroGhosh", "Healthcare IT", "Explaining The Healthcare IT Gap As Continuity", "Healthcare Data", "Health IT Architecture", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "slate"
 ---
@@ -11,6 +12,22 @@ color: "slate"
 <TTS />
 
 <Pi src="IMG-20260425-WA0007.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HIE: Health Information Exchange. the sharing of clinical information across organizations.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- MUMPS: Massachusetts General Hospital Utility Multi-Programming System. an older database and programming environment used in healthcare systems.
+- SAS: Statistical Analysis System. software used for statistics, data management, and reporting.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+- US: United States. the United States of America.
+- UTHSCSA: University of Texas Health Science Center at San Antonio. a health science university and research institution in Texas.
+- VA: Veterans Affairs. the United States public healthcare system serving military veterans.
+
+---
 
 The easiest thing to misunderstand about independent entrepreneurship is that the corporate calendar looks empty from a distance—the way a hospital corridor looks quiet at midnight until someone opens a chart, a database job fails, or a clinician says the report is wrong.
 
@@ -75,3 +92,10 @@ My time operating outside the corporate ladder was not a disappearance from the 
 I want to help build healthcare AI that is useful because it respects that layer, not because it floats above it in a cloud of confident abstraction. I also plan to make this work visible by writing about healthcare IT in public—not as a slogan, but as architecture under a lamp. 
 
 I will be building demos in public: a mock EHR extract, a toy interface engine, a simple FHIR server, a tiny clinical trial dataset. These will not pretend to be production systems. They will be small, deliberate mimics: little clockwork frogs that hop just enough to show the anatomy of the real animal. Through them, I hope to expose the forces that govern larger systems: representation, provenance, workflow, latency, semantic drift, and the treacherous difference between data that merely arrives and data that can be trusted.
+
+## Related Posts
+
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)

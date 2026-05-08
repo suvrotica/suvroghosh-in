@@ -4,6 +4,7 @@ description: "A technical explanation of how Veterans Affairs healthcare data mo
 thumbnail :  "/images/IMG-20260425-WA0005.jpg" 
 date: "2026-04-25"
 category: "Healthcare IT"
+tags: ["SuvroGhosh", "Healthcare IT", "VA Healthcare Data Systems Mumps To Sql", "Healthcare Data", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,25 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260425-WA0005.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- CDW: Corporate Data Warehouse. the Veterans Affairs enterprise warehouse used for reporting, operations, analytics, and research.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- ETL: Extract, Transform, Load. a data pipeline pattern for pulling, reshaping, and loading data.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- ICD: International Classification of Diseases. a diagnosis classification system used for reporting, billing, and statistics.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LOINC: Logical Observation Identifiers Names and Codes. a terminology for lab tests and clinical observations.
+- MUMPS: Massachusetts General Hospital Utility Multi-Programming System. an older database and programming environment used in healthcare systems.
+- SNOMED CT: Systematized Nomenclature of Medicine Clinical Terms. a large clinical terminology for representing medical meaning.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+- VA: Veterans Affairs. the United States public healthcare system serving military veterans.
+- VistA: Veterans Health Information Systems and Technology Architecture. the long-running Veterans Affairs clinical and administrative software ecosystem.
+
+---
 
 The first thing to understand about Veterans Affairs healthcare data is that it was not born in tables. It was born in globals: compact, hierarchical, persistent structures in MUMPS [Massachusetts General Hospital Utility Multi-Programming System, a language and database environment designed for sparse clinical data], where the database is not a separate warehouse of nouns but part of the living nervous system of the application itself.
 
@@ -113,3 +133,10 @@ The smallest useful mental model is this: VistA stores clinical work in a MUMPS/
 The map is not the territory, yes. But in healthcare IT, the map is also used to schedule surgery, pay claims, measure quality, detect harm, recruit studies, close gaps in care, and tell a veteran whether the system remembers him correctly. That gives the map moral weight. A bad map here does not merely confuse hikers. It can move work, money, attention, risk, and trust.
 
 So the story of VA healthcare data systems is not the story of an old MUMPS database reluctantly becoming SQL. It is the story of a vast healthcare institution trying to convert lived clinical operations into enterprise knowledge without flattening away the very meaning that made the data useful in the first place. MUMPS gave VistA a dense operational memory. SQL gave VHA national analytic reach. The hard work lives in the crossing.
+
+## Related Posts
+
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Building VA Data Warehouses](/blog/healthcare-it/va_data_warehouse_reality)
+- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

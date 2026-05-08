@@ -4,6 +4,7 @@ description: "What canine cognition research actually suggests about trust, dece
 thumbnail : "/images/IMG-20260423-WA0018.jpg"
 date: "2026-04-22"
 category: "science"
+tags: ["SuvroGhosh", "science", "Dogs Bad People Myth Science", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,11 @@ color: "amber"
 <TTS />
 
 <Pi src="IMG-20260423-WA0018.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+---
 
 Dogs do not possess a supernatural faculty for identifying “bad people.” They are not little furred moral philosophers with a built-in vice detector. What the research suggests is both narrower and more interesting: dogs are unusually skilled at monitoring reliability, tension, social disruption, and violations of expectation in human behavior. They are not reading souls. They are reading patterns. 
 
@@ -32,4 +38,11 @@ The breed question is real, but internet summaries tend to become more precise t
 
 So the deeper truth is almost disappointingly plain, except that it is not disappointing at all. Dogs are good at reputation formation when the reputation is built from direct experience or socially meaningful interaction. They are less compelling when asked to evaluate detached, abstract scenarios that do not implicate themselves, their owners, or an immediately interpretable social exchange. Trust is their operational baseline. Distrust usually has to be earned through a concrete, observable violation. That is why one dog may adore an unpleasant person who behaves consistently and predictably around the household, while distrusting a perfectly decent visitor who arrives tense, smells stressed, moves erratically, and disregards familiar boundaries. 
 
-What follows from all this is a much sharper sentence than the mystical cliché. Dogs do not sense bad people. Dogs sense unreliable signals, adverse interactions, physiological stress, and broken social rhythm. Sometimes those things cluster around genuinely dangerous humans. Sometimes they cluster around anxious, intoxicated, frightened, neurologically atypical, or merely unfamiliar ones. The dog may still react. The explanation is cognitive and sensory, not supernatural. And that makes dogs less magical only if one insists that reality must be dull to be real. In fact, the opposite is true. The science leaves them even more impressive: not prophets, but exquisite readers of the living room. 
+What follows from all this is a much sharper sentence than the mystical cliché. Dogs do not sense bad people. Dogs sense unreliable signals, adverse interactions, physiological stress, and broken social rhythm. Sometimes those things cluster around genuinely dangerous humans. Sometimes they cluster around anxious, intoxicated, frightened, neurologically atypical, or merely unfamiliar ones. The dog may still react. The explanation is cognitive and sensory, not supernatural. And that makes dogs less magical only if one insists that reality must be dull to be real. In fact, the opposite is true. The science leaves them even more impressive: not prophets, but exquisite readers of the living room.
+
+## Related Posts
+
+- [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The History of the Shape of Atoms](/blog/science/the-history-of-the-shape-of-atoms)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

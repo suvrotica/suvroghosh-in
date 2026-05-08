@@ -4,7 +4,7 @@ description: "A system-level essay on why repeated failure is often the real ing
 date: "2026-05-01"
 thumbnail: "/images/Compress_20260430_194445_5279.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "Failing Well Without Looking Successful", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
 published: true
 color: "#6B7280"
 ---
@@ -12,6 +12,12 @@ color: "#6B7280"
 <TTS />
 
 <Pi src="Compress_20260430_194445_5279.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Failure is not the opposite of learning; it is the instrument by which reality corrects our private nonsense.
 
@@ -156,3 +162,10 @@ Good.
 A life is not a brochure for the approval of busy strangers. It is a working system under constraint, patched by experience, stressed by history, revised by consequence, and kept alive by whatever mixture of skill, luck, help, humility, stubbornness, and tea remains available at the hour of need.
 
 Not triumph. Calibration.
+
+## Related Posts
+
+- [The Educated Horror of Having Nowhere to Go](/blog/society/educated-boredom-horror)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
+- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)

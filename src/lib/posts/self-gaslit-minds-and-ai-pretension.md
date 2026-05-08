@@ -4,7 +4,7 @@ description: "A sharp essay on how technical pretension, fear of ignorance, and 
 thumbnail : "/images/Compress_20260503_164121_1110.jpg"
 date: "2026-05-03"
 category: "Technology"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Technology", "Self Gaslit Minds And AI Pretension", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,12 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260503_164121_1110.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The most expensive sentence missing from Indian education and industry is also the shortest: “I don’t know.”
 
@@ -65,11 +71,11 @@ AI makes this harder, but it also makes the solution clearer.
 
 If AI can answer ordinary questions, then human education must move beyond answer-production. The valuable person is not the one who can generate text. The valuable person is the one who can test it, challenge it, contextualize it, improve it, detect its omissions, and connect it to reality. In coding, that means reading generated code and knowing why it fails. In statistics, it means knowing whether the model is answering the question actually asked. In science, it means designing experiments that separate signal from theater. In industry, it means building systems whose behavior can be explained under stress, not merely demonstrated under ideal conditions while everyone smiles like hostages in a vendor webinar.
 
-The practical implication is blunt: every serious technical institution should make ignorance visible and safe, but not comfortable. Safe means a student or employee can admit confusion without ridicule. Not comfortable means confusion must lead to work. “I don’t know” is not a sofa. It is a doorway. The sentence must be followed by “Here is how I will find out,” “Here is what I tried,” “Here is where my reasoning broke,” or “Here is the smallest experiment that can test this.” That is the culture of engineering. That is the culture of science. Not the swagger. Not the certificate. Not the English accent. Not the LinkedIn fog machine.
+The practical point is blunt: every serious technical institution should make ignorance visible and safe, but not comfortable. Safe means a student or employee can admit confusion without ridicule. Not comfortable means confusion must lead to work. “I don’t know” is not a sofa. It is a doorway. The sentence must be followed by “Here is how I will find out,” “Here is what I tried,” “Here is where my reasoning broke,” or “Here is the smallest experiment that can test this.” That is the culture of engineering. That is the culture of science. Not the swagger. Not the certificate. Not the English accent. Not the LinkedIn fog machine.
 
 A good technical interview should ask candidates to explain a concept at three levels: to a child, to a peer, and to a production team that must maintain it at 2 a.m. A good classroom should reward the student who asks the question everyone else is silently smuggling under the bench. A good manager should distrust perfect confidence from people who have not yet met the mess. A good engineer should keep a private inventory of ignorance and update it like a sacred ledger.
 
-The non-obvious architectural insight is that societies, like software systems, encode their failure modes into their interfaces. If every human interface punishes uncertainty, then every internal process will learn to conceal uncertainty. The school interface conceals it through marks. The job interface conceals it through jargon. The corporate interface conceals it through status reports. The AI interface conceals it through fluent generation. By the time the truth reaches decision-makers, it has passed through so many beautifying filters that ignorance looks like progress.
+The less obvious machinery underneath is that societies, like software systems, encode their failure modes into their interfaces. If every human interface punishes uncertainty, then every internal process will learn to conceal uncertainty. The school interface conceals it through marks. The job interface conceals it through jargon. The corporate interface conceals it through status reports. The AI interface conceals it through fluent generation. By the time the truth reaches decision-makers, it has passed through so many beautifying filters that ignorance looks like progress.
 
 That is why representation failures are so often mislabeled as quality failures. The data is not “bad” in isolation. The answer is not merely “wrong.” The résumé is not merely “inflated.” The real failure is representational: the symbol no longer corresponds honestly to the underlying capability. A grade does not represent understanding. A degree does not represent readiness. A dashboard does not represent reality. A generated answer does not represent cognition. A confident employee does not represent competence. The label and the thing have drifted apart, like two relatives after a property dispute.
 
@@ -82,3 +88,10 @@ But it is necessary.
 The first revolution is almost embarrassingly small. Say “I don’t know” earlier. Say “I don’t understand” without making it a confession of moral failure. Ask the second question. Ask the stupid question, especially when it is not stupid at all but merely socially inconvenient. Make people explain. Make them repair. Make them transfer knowledge from one context to another. Make them show the working, not only the answer. Reward the person who finds the crack before the bridge collapses.
 
 Technical progress does not come from a society pretending to be brilliant. It comes from a society becoming less afraid of its own ignorance. Until that happens, we will keep producing confident fog: students who can pass, employees who can posture, consultants who can pronounce, and AI-polished minds walking around with borrowed certainty under the veil. The future will not be kind to that arrangement. Reality is not impressed by fluency. It waits patiently, like an old examiner with bad eyesight and excellent memory, and then asks the only question that matters: do you actually understand what you just said?
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)

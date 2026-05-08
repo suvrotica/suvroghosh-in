@@ -4,6 +4,7 @@ description: "A system-level look at how a prolonged Strait of Hormuz disruption
 thumbnail : "/images/IMG-20260423-WA0011.jpg"
 date: "2026-04-21"
 category: "geopolitics"
+tags: ["SuvroGhosh", "geopolitics", "Hormuz Day 52 Supply Ramifications Nation States", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Energy Security", "War Technology", "Global Supply Chains"]
 published: true
 color: "amber"
 ---
@@ -11,6 +12,13 @@ color: "amber"
 <TTS />
 
 <Pi src="IMG-20260423-WA0011.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LPG: Liquefied Petroleum Gas. bottled cooking gas used in many Indian homes.
+
+---
 
 By day 52, this is no longer an oil story.
 
@@ -67,3 +75,10 @@ Any serious national response now has to be multisectoral. Not an oil ministry p
 Because by day 52, the real issue is not whether Hormuz is blocked.
 
 It is whether the state understands what actually runs through it.
+
+## Related Posts
+
+- [India’s Semiconductor Problem Is Not a Missing Slogan](/blog/technology/india-semiconductor-sufficiency-beyond-lip-service)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Nightmare of Indian Healthcare for the Ordinary Patient](/blog/healthcare/nightmare-of-indian-healthcare)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)

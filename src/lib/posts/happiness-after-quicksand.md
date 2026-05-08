@@ -4,7 +4,7 @@ description: "A personal essay on bipolar life, solitude, recovery, and the unfa
 date: "2026-05-06"
 thumbnail: "/images/Compress_20260506_174701_1947.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Happiness After Quicksand", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "slate"
 ---
@@ -12,6 +12,11 @@ color: "slate"
 <TTS />
 
 <Pi src="Compress_20260506_174701_1947.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 Happiness, or in my more modest and less embarrassing formulation, the absence of pathological sadness, is not always a mood. Sometimes it is the delayed artifact of geography, biology, memory, medication, bad decisions, decent decisions, exhausted luck, and the long animal history of where the body has been dragged while the mind was busy inventing explanations for its injuries.
 
@@ -124,3 +129,10 @@ A day without quicksand.
 A day in which nothing inside me has to be dragged out by the hair.
 
 A day in which being alone is not proof of ruin, but the plain, unfashionable architecture by which ruin is kept from becoming worse.
+
+## Related Posts
+
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)

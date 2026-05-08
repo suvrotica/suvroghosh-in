@@ -4,6 +4,7 @@ description: "India’s old labor-arbitrage model in IT and business process out
 thumbnail : "/images/IMG-20260423-WA0014.jpg"
 date: "2026-04-22"
 category: "india"
+tags: ["SuvroGhosh", "India", "India AI IT Bpo White Collar Jobs", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "blue"
 ---
@@ -11,6 +12,14 @@ color: "blue"
 <TTS />
 
 <Pi src="IMG-20260423-WA0014.jpg" />
+
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- BPO: Business Process Outsourcing. office and service work contracted to outside firms.
+- GDP: Gross Domestic Product. the total monetary value of goods and services produced in an economy.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 The old Indian information technology and business process outsourcing compact was brutally simple: sell scale, hire in bulk, train people just enough to become operational, bill by the head, and let the arithmetic of wage differentials do the rest. It built an enormous industry, produced urban middle classes by the million, altered family trajectories across states, and convinced several generations that employability meant entering a pipeline, staying compliant, collecting certifications, and climbing into management before the machine noticed you were replaceable.
 
@@ -90,4 +99,11 @@ The Indian IT story is not ending. That part is true. But the sentiment is too c
 
 That is the cruelty of technological transitions. They do not merely reward the prepared. They invalidate whole forms of preparation.
 
-P.S. References: India’s GCC market is widely estimated in the $60–65 billion range for FY2024/FY2025, with several NASSCOM-linked and KPMG-linked sources projecting roughly $100 billion by 2030; Economic Times in January 2026 described GCCs as contributing about $68 billion, close to 1.8% of GDP. TCS reported a FY2026 headcount decline of 23,460 employees and said it had made 25,000 fresher offers for FY2027 while remaining cautious on demand. Public reporting also described steep net-hiring slowdown across major Indian IT firms and continued pressure on entry-level roles. Salesforce’s public Agentforce materials describe autonomous agents for customer and employee workflows, and Salesforce content specifically highlights automated lead qualification and follow-up. 
+P.S. References: India’s GCC market is widely estimated in the $60–65 billion range for FY2024/FY2025, with several NASSCOM-linked and KPMG-linked sources projecting roughly $100 billion by 2030; Economic Times in January 2026 described GCCs as contributing about $68 billion, close to 1.8% of GDP. TCS reported a FY2026 headcount decline of 23,460 employees and said it had made 25,000 fresher offers for FY2027 while remaining cautious on demand. Public reporting also described steep net-hiring slowdown across major Indian IT firms and continued pressure on entry-level roles. Salesforce’s public Agentforce materials describe autonomous agents for customer and employee workflows, and Salesforce content specifically highlights automated lead qualification and follow-up.
+
+## Related Posts
+
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Coming Unemployment](/blog/artificial-intelligence/the-coming-unemployment)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)

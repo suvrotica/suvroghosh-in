@@ -4,7 +4,7 @@ description: "A darkly reflective essay on shrinking life, failed promise, madne
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_031419_9577.jpg"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal", "Bengali Hikikomori Shadow", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay"]
 published: true
 color: "#111827"
 ---
@@ -12,6 +12,11 @@ color: "#111827"
 <TTS />
 
 <Pi src="Compress_20260507_031419_9577.jpg" />
+
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+---
 
 A life can shrink without making a sound, which is one of its crueler engineering tricks.
 
@@ -52,3 +57,10 @@ So I remain here, in this narrow Calcutta enclosure, half shadow, half scribe, l
 A life can shrink without making a sound.
 
 But even a shrunken life, if it can still speak, is not yet zero.
+
+## Related Posts
+
+- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
