@@ -2,12 +2,16 @@
 title: "Fog Machines in the Temple: Mandukya, AI, and the Dangerous Answer to Who Am I?"
 description: "A Calcutta-bred, skeptical reading of the Mandukya Upanishad, identity, social gaslighting, and why AI can become a private priest for the lonely, gullible, wounded, and over-persuaded."
 date: "2026-05-09"
+thumbnail: "/images/Compress_20260509_022428_8451.jpg"
 category: "Philosophy and AI"
 tags: ["Mandukya Upanishad", "Who Am I", "Advaita Vedanta", "Atman", "Brahman", "Turiya", "Om", "Artificial Intelligence", "AI Dogmatism", "AI Sycophancy", "Large Language Models", "LLM Safety", "Chatbot Persuasion", "AI and Society", "Spiritual Gaslighting", "Digital Culture", "Consciousness", "Indian Philosophy", "Calcutta Essays", "Bengali Blogger", "Philosophy of Self", "Epistemology", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260509_022428_8451.jpg" />
 
 Artificial Intelligence [AI, computer systems that generate or act on patterns learned from data]
 
