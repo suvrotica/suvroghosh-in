@@ -9,6 +9,12 @@ published: true
 ---
 
 <Vid 
+  src="Kaam_Kahan_Gaya.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="Tu_Ab_Bhi_Hai_Insaan.mp4" 
   layout="block" 
   size={1} 
