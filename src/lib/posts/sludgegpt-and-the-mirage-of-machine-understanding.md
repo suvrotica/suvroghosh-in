@@ -2,12 +2,16 @@
 title: "SludgeGPT and the Mirage of Machine Understanding"
 description: "A satirical but serious reflection on why language models can sound magnificent while being wrong, and why abstraction becomes dangerous when fluency masquerades as understanding."
 date: "2026-05-08"
+thumbnail: "/images/Compress_20260508_174835_5424.jpg"
 category: "Artificial Intelligence"
 tags: ["AI", "Machine Learning", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260508_174835_5424.jpg" />
 
 A Large Language Model [LLM, a system trained to predict and generate language from statistical patterns in data] can fail at a cube root in a way that is immediately visible, like a man slipping on a banana peel in front of a mathematics teacher. The mistake lands with a small comic thud. You know the answer is wrong because arithmetic, for all its little cruelties, still has the decency to leave footprints. But ask the same machine about culture, religion, morality, history, politics, identity, or the tangled innards of human foolishness, and suddenly the failure becomes harder to see. It no longer trips. It glides. It produces paragraphs in a smooth diplomatic broth. It sounds like a committee that has swallowed a thesaurus and is now quietly digesting civilization.
 
