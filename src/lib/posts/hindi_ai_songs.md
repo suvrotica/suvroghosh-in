@@ -8,6 +8,11 @@ category: "AI Music Song"
 published: true
 ---
 
+<Vid 
+  src="Tu_Ab_Bhi_Hai_Insaan.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 
 <Vid 
