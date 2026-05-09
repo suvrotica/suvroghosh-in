@@ -3,7 +3,7 @@ title: "The Magnet, the Bulb, and the Battery"
 description: "A science memoir about boyhood curiosity, cheap magnets, glowing bulbs, and the small private university that existed on the floor of a Calcutta childhood."
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_172719_9415.jpg"
-category: "Science Memoir"
+category: "Personal"
 tags: ["Science Writing", "Childhood Science", "Boyhood Curiosity", "Physics for Everyone", "Electricity", "Magnetism", "Incandescent Bulb", "LED", "AI", "Calcutta", "Kolkata", "Middle Class Life", "Science Memoir", "Popular Science", "Bill Bryson Style", "Bengali Blog", "Curiosity", "Michael Faraday", "Thomas Edison", "Simple Experiments", "Old Blog Rewrite", "SuvroGhosh"]
 published: true
 color: "amber"
