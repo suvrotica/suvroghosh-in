@@ -23,7 +23,7 @@ That is not nothing. A clean sheet matters when the old one smells of sweat, med
 
 But I am a fifty-one-year-old lower-middle-class man in the not-so-glamorous edges of Calcutta, which means I have developed the political optimism of a goat standing outside a biryani shop. I do not faint with joy when one party loses, because in Bengal the party is often only the flag on top of the bamboo pole. The real thing is below: the club, the local strongman, the police connection, the tender, the school job, the hospital recommendation, the land quarrel, the para committee, the little envelope, the whispered phone call, the “dada dekhe debe” that has governed more lives than any constitution.
 
-This is what we must say without perfume. Subversion aside, TMC did not merely lose because voters suddenly became philosophers. It lost because the old arrangement had become too heavy to carry. Too many allegations. Too many scandals. Too much arrogance. Too much neighborhood-level fear. Too many people made to feel that public life was a private estate, and they were allowed to enter only through the servants’ gate.
+This is what we must say without perfume. SIR subversion aside, TMC did not merely lose because voters suddenly became philosophers. It lost because the old arrangement had become too heavy to carry. Too many allegations. Too many scandals. Too much arrogance. Too much neighborhood-level fear. Too many people made to feel that public life was a private estate, and they were allowed to enter only through the servants’ gate.
 
 That anger is real. It should not be mocked by people sitting in air-conditioned rooms quoting democracy like a poetry line from school.
 
