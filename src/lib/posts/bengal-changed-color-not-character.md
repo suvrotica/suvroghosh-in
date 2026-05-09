@@ -4,7 +4,7 @@ description: "A middle-aged Calcutta reflection on Bengal’s political earthqua
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_182901_1938.jpg"
 category: "Politics and Society"
-tags: ["West Bengal Politics", "Bengal Election 2026", "Kolkata Politics", "Calcutta", "BJP Bengal", "Trinamool Congress", "TMC", "Suvendu Adhikari", "Mamata Banerjee", "Indian Democracy", "Bengal Political Change", "Bengal Governance", "Political Patronage", "Corruption", "Populism", "Hindutva Politics", "Civic Decay", "Middle Class Bengal", "Lower Middle Class India", "Election Analysis", "Indian Politics", "SuvroGhosh"]
+tags: ["West Bengal Politics", "Bengal Election 2026", "Special Intensive Revision", "SIR 2026", "West Bengal SIR", "Electoral Roll Revision", "Voter Deletion", "Voter Disenfranchisement", "Bengal Democracy", "Election Commission of India", "ECI", "BJP Bengal", "Trinamool Congress", "TMC", "Suvendu Adhikari", "Mamata Banerjee", "Kolkata Politics", "Calcutta Politics", "Indian Democracy", "Electoral Rolls India", "Voter List Controversy", "Political Patronage", "Bengal Governance", "Hindutva Politics", "Indian Elections", "Democracy in India", "Bengal Political Change", "Civic Decay", "Middle Class Bengal", "Lower Middle Class India", "Calcutta Essay", "SuvroGhosh"]
 published: true
 color: "#78350f"
 ---
@@ -13,64 +13,158 @@ color: "#78350f"
 
 <Pi src="Compress_20260509_182901_1938.jpg" />
 
-Acronyms and names used in this post: BJP means Bharatiya Janata Party, India’s ruling national party and now the governing party in West Bengal. TMC means Trinamool Congress, the party that governed West Bengal from 2011 until this election. AITC means All India Trinamool Congress, the formal name of TMC. CPI(M) means Communist Party of India (Marxist), the main Left party that ruled Bengal before TMC. ECI means Election Commission of India, the constitutional body that conducts and reports election results. RSS means Rashtriya Swayamsevak Sangh, the volunteer organization historically linked with the BJP.
+
+
+Acronyms and names used in this post: SIR means Special Intensive Revision, a large-scale electoral roll cleanup process conducted by the Election Commission before the election. ECI means Election Commission of India, the constitutional body that conducts elections and manages electoral rolls. BJP means Bharatiya Janata Party, India’s ruling national party and now the governing party in West Bengal. TMC means Trinamool Congress, the party that governed West Bengal from 2011 until this election. AITC means All India Trinamool Congress, the formal name of TMC. CPI(M) means Communist Party of India (Marxist), the main Left party that ruled Bengal before TMC. BLO means Booth Level Officer, the local election worker who handles voter verification at the polling station level. ERO means Electoral Registration Officer, the official responsible for preparing and deciding claims and objections in electoral rolls. CEO means Chief Electoral Officer, the top state-level election official. RSS means Rashtriya Swayamsevak Sangh, the volunteer organization historically linked with the BJP.
 
 ---
 
-Bengal has not been reborn; it has changed the bedsheet after a long fever.
+Democracy does not always die under a tank; sometimes it disappears from a voter list.
 
-That is not nothing. A clean sheet matters when the old one smells of sweat, medicine, and political decay. The official result is enormous. BJP has won 207 seats in the West Bengal Assembly, while AITC has been reduced to 80. Suvendu Adhikari has taken oath as the first BJP Chief Minister of West Bengal. This is not a slight adjustment in the sofa cover. This is the furniture being dragged across the floor at midnight while the neighbors pretend not to hear the illegal undemocratic noises by stuffing their ears with election commission sponsored cotton candy. 
+That is the less cinematic problem. No marching boots. No dramatic midnight broadcast. No general in sunglasses. Just a name missing from a roll, a form not matched, a relative’s old record not found, a poor man asked to prove what his whole life has already proved badly enough: that he exists.
 
-But I am a fifty-one-year-old lower-middle-class man in the not-so-glamorous edges of Calcutta, which means I have developed the political optimism of a goat standing outside a biryani shop. I do not faint with joy when one party loses, because in Bengal the party is often only the flag on top of the bamboo pole. The real thing is below: the club, the local strongman, the police connection, the tender, the school job, the hospital recommendation, the land quarrel, the para committee, the little envelope, the whispered phone call, the “dada dekhe debe” that has governed more lives than any constitution.
+This is why Bengal’s 2026 election cannot be discussed only as a saffron landslide, a TMC collapse, or Suvendu Adhikari’s rise to the Chief Minister’s chair. Those are the visible parts. The parade, the garlands, the flags, the television shouting, the men dressed as mythological characters outside Brigade, the usual Indian festival of victory in which democracy looks suspiciously like a wedding procession that has misplaced the bride.
 
-This is what we must say without perfume. SIR subversion aside, TMC did not merely lose because voters suddenly became philosophers. It lost because the old arrangement had become too heavy to carry. Too many allegations. Too many scandals. Too much arrogance. Too much neighborhood-level fear. Too many people made to feel that public life was a private estate, and they were allowed to enter only through the servants’ gate.
+The quieter question is SIR.
 
-That anger is real. It should not be mocked by people sitting in air-conditioned rooms quoting democracy like a poetry line from school.
+And SIR is the kind of thing that makes ordinary people’s eyes glaze over. It sounds harmless. Administrative. Clean. Respectable. Like a government file wearing aftershave. Who can object to cleaning the voter rolls? Dead voters should not vote. Duplicate voters should not vote. Foreigners should not vote. People who have moved should not remain in the wrong place forever. A voter list needs cleaning the way a kitchen shelf needs cleaning. Leave it untouched for twenty years and you will find dust, cockroach eggs, expired biscuits, and one mysterious bottle no one remembers buying.
 
-Still, the fall of one ruling network does not automatically create a republic. Sometimes one set of men leaves the room, another set enters, and the chair remains warm. India specializes in this trick. The old landlord goes. The new landlord arrives with a louder microphone, a cleaner kurta, and an even more muscular nephew.
+So far, fair enough.
 
-The poor man claps, because what else is he to do? He has a ration card to protect, a daughter’s tuition to pay, a mother’s prescription to buy, and a leaking roof that turns every monsoon into an engineering examination conducted by God. The middle class claps more cautiously. We are the species that has learned to keep one hand on the wallet and one eye on the exit.
+But here is the catch.
 
-The true problem of Bengal is not only party corruption. That is too simple, too satisfying, like blaming the mosquito after leaving the drain open for twenty years. The true problem is that public life has become dependent on private permission. A citizen cannot simply be a citizen. He must be someone’s man, someone’s voter, someone’s beneficiary, someone’s follower, someone’s cousin, someone’s booth worker, someone’s list entry. If he has no one, he becomes air.
+Cleaning a list is not the same as cleansing an electorate. One is administration. The other is power with a mop in its hand.
 
-This is how a society shrinks. Not with one dramatic dictatorship, but with daily small humiliations. You go to get a document corrected, and a clerk looks at you as if you have interrupted his meditation. You go to the police, and they first calculate who you are before calculating what happened. You look for work, and discover that merit is a decorative word, like those plastic flowers people keep in drawing rooms. You see processions, slogans, flags, and faces, but not enough ordinary competence.
+That is where suspicion begins. Not certainty. Suspicion. The useful kind. The kind a Calcutta fish buyer uses when the hilsa shines too much under the market bulb. You do not accuse the fish first. You lift the gill.
 
-Bengal once had a reputation for argument. We wore it like a shawl, slightly moth-eaten but still grand. “What Bengal thinks today, India thinks tomorrow,” we said, and for some time perhaps there was truth in it. Books, theater, politics, science, football, Marx, Tagore, tea, adda, and unreasonable self-regard all lived together in a smoky room and refused to leave.
+The official argument for SIR was simple enough. Electoral rolls had old errors. Migration had changed households. Some voters were registered in more than one place. Dead voters remained. The last comparable deep revision had been long ago. The ECI said rolls needed purification. That word itself makes me nervous, because in public life “purity” often arrives wearing white and leaves fingerprints everywhere.
 
-Now Bengal often does not think at all. It waits for the next scheme, the next outrage, the next rally, the next religious slogan, the next television shouting match, the next forwarded video from a cousin who has become an expert on civilization after watching three clips and misreading two captions.
+Opposition parties alleged something darker: that the exercise could remove legitimate voters, especially the poor, minorities, migrants, and people least able to fight paperwork. The ECI and its defenders argued that eligible voters had safeguards, additions were also made, and the final picture was more complex than the slogans. That last part is probably true.
 
-Religion has entered politics not as private faith, but as loud identity. Private faith can be beautiful. A grandmother lighting a lamp in the evening has more dignity than ten thousand men shouting into a microphone. But political religion is different. It turns devotion into a headcount. It turns myth into ammunition. It turns the name of a god into a password at the gate. Once that happens, the citizen becomes less important than the crowd.
+The picture is complex.
 
-And crowds are easy to excite when people are tired, poor, badly educated, underemployed, and humiliated. This is not a Bengali flaw. It is not a Bihari flaw. It is not a Hindu, Muslim, rural, or urban flaw. It is a human flaw, especially when cunning leaders discover that hunger and pride are the two cheapest fuels in politics. Add a small bribe, a little fear, a heroic slogan, and a villain conveniently supplied in the correct costume, and the machine begins to move.
+That does not make it innocent.
 
-That is why I distrust all triumphant certainty today. Those who say Bengal has been saved are selling sweets before checking whether the kitchen is clean. Those who say Bengal has been destroyed are writing the obituary before checking the pulse. I prefer the more boring but useful position: Bengal has shifted power, and now we must inspect what power does when the cameras leave.
+A very large administrative exercise before a high-stakes election is not merely a clerical act. It is a political event even if every clerk involved is honest, which would be a pleasant fantasy, like expecting a Kolkata bus to arrive empty, air-conditioned, and filled with violin music. The timing matters. The scale matters. The burden of proof matters. The appeal process matters. The data format matters. The public transparency matters. The ability of a poor person to understand, contest, correct, and confirm matters.
 
-There is a small tea stall near my side of the city where politics is analyzed, in my vicariously vivid imagination of it, because I hardly ever leave my room. The cups are thin, the biscuits are tired, the tea is strong enough to start a scooter, and every man is an expert because every man has suffered. One has a son preparing for an exam. One has a brother looking for a government job. One has a medical bill. One has a case stuck somewhere. One has given up and now speaks only in jokes. This is Bengal’s real parliament. Not elegant, not clean, not always fair, sometimes foolish, sometimes cruel, but close to life.
+This is where democracy becomes less like a speech and more like a ration shop queue.
 
-In that parliament, nobody asks for ideology first. They ask: will the police behave? Will the local boys stop threatening shopkeepers? Will school jobs be clean? Will municipal work happen without begging? Will hospitals treat patients as humans? Will the new rulers punish only criminals, or will they first decide who voted for whom? Will minorities be safe? Will Hindus be respected as citizens rather than milked as a crowd? Will the poor receive welfare without being turned into walking campaign posters? Will the young get work, or only more flags?
+You may have a right. Fine. Wonderful. Frame it and hang it on the wall. But can you exercise it when the man at the counter says your name is not where it should be? Can you appeal? Do you know how? Can you miss work? Can you travel? Can you read the notice? Can you produce the document? Can you afford the photocopy? Can you argue with an official without fear? Can you stand in line again tomorrow?
 
-These are not romantic questions. They are drain-cleaning questions, ration-shop questions, school-fee questions, blood-test questions. They matter more than speeches.
+A middle-class man at least has a folder. A poor man has memory, witnesses, old slips, and hope. Hope is a weak document.
 
-The new government will speak of development, good governance, investment, transparency, and law and order. Every government does. These words are like new plastic buckets: bright on the first day, cracked by winter if handled badly. The proof will be administrative, not poetic. Can a citizen get a service without party mediation? Can a teacher be hired without suspicion? Can a contractor work without feeding the new local mouth? Can a Muslim family feel secure without flattering anyone? Can a Hindu family feel represented without being recruited into permanent rage? Can the police stop behaving like weather, changing direction depending on pressure?
+This is why the argument “only ineligible names were removed” is not enough. It may even be true in many cases. But democracy is not protected by a slogan about intention. It is protected by process visible enough, simple enough, challengeable enough, and merciful enough for the weakest voter to survive it.
 
-The realistic answer is: not quickly.
+Otherwise the strong keep voting, and the weak keep proving they were born.
 
-This is where grown-up politics becomes irritating. We want a revolution, but the state is made of files, incentives, habits, fear, debts, loyalties, officers, clerks, brokers, contractors, local bosses, and men who know where the bodies of old favors are buried. A government can change in a day. A political culture changes like an old wall drying after the monsoon. Slowly, unevenly, with damp patches returning just when you thought the room was safe.
+That is not democracy. That is a paperwork obstacle course.
 
-But a beginning is still a beginning.
+I say this as someone who does not romanticize TMC. Let us not put sandalwood paste on old rot. TMC’s Bengal had too much coercion, too much corruption, too much local arrogance, too much “dada dekhe debe,” too many jobs and favors allegedly routed through networks that treated the state like a private pond stocked for loyal fishermen. Many people voted against humiliation. Good. Humiliation deserves defeat.
 
-BJP now has the rare chance to prove that it did not merely want Bengal as a trophy. It can either govern as a party that has finally entered Writers’ Buildings with historic hunger, or it can behave like every conqueror who denounces the old palace and then quietly asks where the treasury keys are kept. If it uses power to clean institutions, it may change Bengal. If it uses power to capture them, it will only become the new landlord in an old play.
+But if democracy was injured before the vote, the defeat of one bad system does not automatically become freedom.
 
-TMC, if it has any instinct left beyond survival, should understand why people turned away. Not because every voter became saffron overnight. Not because every critic became communal. Not because Bengal suddenly forgot its past. People turned because arrogance has a smell, and after fifteen years even the loyal nose begins to protest.
+This is the uncomfortable sentence: a stolen wallet does not become clean because the previous owner was a thief.
 
-As for the rest of us, we should not become paid drummers in anyone’s procession. The citizen’s job is suspicion with receipts. Praise when something improves. Complain when it does not. Refuse to treat leaders as uncles, saviors, gods, saints, warriors, poets, or household deities. They are public employees with better security arrangements. Nothing more mystical than that.
+BJP’s victory may reflect real anger, real Hindu consolidation, real anti-incumbency, real organizational work, real TMC fatigue, real desire for change, and real hope among voters who felt abandoned or bullied. All of that can be true. At the same time, SIR may still have altered the battlefield in ways that deserve scrutiny. Elections are not novels. They do not need one villain. They are more like Kolkata traffic: everyone contributes a little madness, and then somehow the accident becomes collective.
 
-The old Bengal loved thought. The new Bengal must recover something even more difficult: adult citizenship. Not shouting. Not forwarded fury. Not slogan worship. Not party slavery. Citizenship. The plain, stubborn idea that the state belongs equally to the person who voted for the winner, the loser, and nobody at all.
+The trouble with voter-roll politics is that it is boring by design. Nobody writes songs about Form 6. No child grows up dreaming of appellate tribunals. No TV anchor gets goosebumps over supplementary rolls. Yet this boring machinery decides whether the poetic thing called “the people” actually includes you.
 
-I do not know if Bengal can still do this. Some mornings, after the power cut, the sweating, the price of fish, the medicine bill, the thin consulting income, the endless looking for stable work, and the feeling that one has lived too many lives in one body, I suspect we are too tired. Then some small thing happens. A student asks a good question. A shopkeeper argues with wit. A woman in a queue refuses to be pushed around. A young man says he wants to leave but also wants to fix things. The old spark appears, not as a bonfire, but as a matchstick cupped against the wind.
+That is the trick.
 
-That may be enough for one more attempt.
+Democracy is dramatic only at the end. At the beginning, it is a spreadsheet with human consequences.
 
-Bengal has changed color. Now we must see whether it can change character.
+You think the election happens on polling day. Not quite. Polling day is the last visible act. The real election begins earlier, in the invisible plumbing: who gets registered, who gets deleted, who gets shifted, who gets marked doubtful, who receives notice, who understands notice, who appeals, who gives up, who is helped by party workers, who is frightened by them, who discovers too late that the state knows him less than his tea stall does.
 
-Until then, lift the fish gill before buying. This is Calcutta. We know better than to trust only the shine.
+This is where Bengal’s long sickness shows itself. We do not have citizens first. We have citizens routed through patrons. The poor man does not ask, “What is my right?” He asks, “Whom should I call?” The widow does not ask, “What is the procedure?” She asks, “Which dada will sign?” The young man does not ask, “Is the exam fair?” He asks, “Is the list already fixed?” The entire public sphere becomes a narrow lane where everyone must pass through someone else’s doorway.
+
+SIR entered that Bengal.
+
+Not Switzerland. Not a civics textbook. Bengal.
+
+A Bengal where a man may have three names across three documents because one clerk once sneezed while typing. A Bengal where migration is not a neat line on a chart but a brother sleeping in Howrah, a husband working in Kerala, a daughter married in Barasat, a mother still in the village, and one voter card hiding inside a biscuit tin. A Bengal where names are spelled like they were assembled during a power cut. A Bengal where old women know their age approximately, men lose papers in floods, and whole families treat laminated documents as if they were religious relics because losing one can ruin a month.
+
+Now imagine telling such people: prove yourself again.
+
+Some will manage. Some will be helped. Some will be corrected. Some will be wrongly deleted and restored. Some will be wrongly deleted and not restored. Some will not know. Some will not understand. Some will be too tired. Some will be too poor. Some will be too afraid.
+
+And an election will proceed.
+
+Legally, perhaps. Smoothly, perhaps. Enthusiastically, certainly.
+
+But morally? That question remains sitting in the corner like an unpaid electricity bill.
+
+There is another detail that should trouble anyone who works with systems, records, or even household notebooks. If the state performs a massive voter-list operation, then the data should be open, searchable, comparable, and auditable in a way ordinary citizens, journalists, parties, and researchers can examine. Not scattered like old exam papers. Not buried in scanned images. Not made so technically awkward that only the well-funded can inspect it properly.
+
+Bad transparency is a cousin of secrecy.
+
+A scanned PDF is not democracy’s best friend. It is a locked cupboard pretending to be a window. You can look at it, yes, but you cannot easily sort it, search it, count it, compare it, or ask it uncomfortable questions. In a country where elections are decided by both emotion and arithmetic, making the arithmetic hard to inspect is not a small matter.
+
+This is not a nerd complaint. This is citizenship.
+
+If lakhs of names are added, deleted, marked, restored, pending, or questioned, the people deserve more than trust-me governance. Trust is for mothers and good tea sellers. Institutions require verification.
+
+And yet, one must be honest. The old voter rolls were not holy scripture. They needed cleaning. Dead voters do not become democratic because they are convenient to one party. Duplicate entries do not become secular because they irritate another party. A republic cannot survive on fake names any more than a household can survive on fake salaries.
+
+So the question is not whether SIR was inherently wrong.
+
+The question is whether SIR was designed and executed with enough transparency, timing, appealability, and public trust to avoid becoming a political weapon.
+
+That is the real question.
+
+Do not let anyone replace it with a slogan.
+
+The BJP supporter will say, “Clean rolls strengthened democracy.” The TMC supporter will say, “Democracy was subverted.” The television panel will shout until language files a police complaint. But citizens need a better question: who carried the burden when the roll was cleaned?
+
+Because burden is politics.
+
+If the burden fell mainly on those with weak documents, little literacy, minority status, migrant histories, or no local muscle, then the process may look neutral on paper while behaving unequally on the ground. A weighing scale can be perfectly balanced and still be placed on a crooked table.
+
+That is the part India often pretends not to understand.
+
+A rule can be formally equal and socially brutal. Ask anyone who has stood in a government line with the wrong document. Ask the man who lost a day’s wages because one signature was missing. Ask the woman told to come tomorrow. Ask tomorrow, which in India is not a date but a form of punishment.
+
+I was thinking about this while making tea in my own small Calcutta morning, the kind where the kettle whistles with more confidence than the bank account. Outside, the neighborhood was doing its usual orchestra: a pressure cooker, a dog insulted by another dog, someone dragging a plastic chair, a hawker calling out vegetables, a scooter coughing like a retired uncle. The world had not changed because BJP took oath. The milk still needed boiling. The phone still had payment reminders. The laptop still sat there, accusing me of unfinished work. Democracy, from this distance, is not abstract. It is whether the ordinary man can remain visible without begging.
+
+That is why SIR matters.
+
+It is not a footnote. It is the trapdoor under the stage.
+
+If BJP governs well, Bengal may improve. If it turns the state into a new party estate, we will simply have changed the wallpaper in a damp room. If TMC wants to recover, it must do more than cry conspiracy. It must ask why so many people were ready to believe the worst about the old regime. Distrust does not fall from the sky. It is cultivated, season after season, by arrogance.
+
+But none of that cancels the SIR question.
+
+The old rulers may have deserved defeat. The new rulers may have earned support. The voter rolls may have needed cleaning. Some allegations may be exaggerated. Some official explanations may be reasonable. And still, democracy may have been weakened if large numbers of people were forced to fight for the most basic democratic recognition at the worst possible time.
+
+This is the adult view. Messy. Irritating. Unsuitable for slogans.
+
+Bengal has a talent for theatrical politics. We adore the grand speech, the moral pose, the historical reference, the leader’s photograph looming over us like a concerned deity. But the republic is usually lost in smaller places. A deleted name. A missed notice. A closed office. A scanned list. A poor man confused. A party worker suddenly becoming necessary.
+
+One small exclusion is a clerical error.
+
+A pattern of exclusions is architecture.
+
+That is the sentence worth keeping.
+
+Now Bengal must do what it rarely enjoys doing: audit the boring thing. Not just celebrate the winner. Not just curse the loser. Audit the process. Count who was deleted. Count who was added. Count who was restored. Count who remained under doubt. Map which areas were hit. Compare communities, wards, booths, migration belts, border districts, urban slums, rural blocks. Make the data machine-readable. Publish the trail. Show the appeals. Show the outcomes. Let citizens inspect the kitchen before praising the feast.
+
+If the process was clean, transparency will strengthen it.
+
+If it was not clean, transparency will expose it.
+
+Either way, democracy wins.
+
+But if transparency is avoided, then suspicion becomes rational. Not partisan. Rational.
+
+Bengal changed government in 2026. That is history. But history is not always justice. Sometimes history is only a loud event sitting on top of a quiet injury.
+
+The new Chief Minister has taken oath. The old Chief Minister has fallen. The flags have changed. Brigade has roared. The television graphics have exploded. The crowd has shouted.
+
+Fine.
+
+Now bring out the voter rolls.
+
+Not as holy objects. Not as party weapons. Not as scanned fog. Bring them out as public evidence.
+
+Because in the end, democracy is not the roar of the crowd at Brigade.
+
+It is the old woman at the booth hearing her name called correctly.
