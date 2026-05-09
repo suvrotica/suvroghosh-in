@@ -6,7 +6,6 @@ thumbnail: "/images/Compress_20260506_224233_3067.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Anthropic", "Claude AI", "AI Agents", "Agentic AI", "Wall Street AI", "Financial Services AI", "Banking AI", "AI In Banking", "AI In Finance", "Fintech", "Asset Management", "Investment Banking", "KYC", "AML", "Financial Crime Compliance", "Pitchbook Automation", "Credit Memo Automation", "Month End Close", "General Ledger Reconciliation", "Enterprise AI", "AI Workflow Automation", "Bloomberg", "FIS", "Claude For Financial Services", "AI Productivity", "Future Of Work", "White Collar Automation"]
 published: true
-published: true
 color: "slate"
 ---
 
