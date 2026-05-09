@@ -2,12 +2,16 @@
 title: "Bengal Changed Color, Not Yet Character"
 description: "A middle-aged Calcutta reflection on Bengal’s political earthquake, why party change is not social repair, and how ordinary citizens keep losing to the local machine."
 date: "2026-05-09"
+thumbnail: "/images/Compress_20260509_182901_1938.jpg"
 category: "Politics and Society"
 tags: ["West Bengal Politics", "Bengal Election 2026", "Kolkata Politics", "Calcutta", "BJP Bengal", "Trinamool Congress", "TMC", "Suvendu Adhikari", "Mamata Banerjee", "Indian Democracy", "Bengal Political Change", "Bengal Governance", "Political Patronage", "Corruption", "Populism", "Hindutva Politics", "Civic Decay", "Middle Class Bengal", "Lower Middle Class India", "Election Analysis", "Indian Politics", "SuvroGhosh"]
 published: true
 color: "#78350f"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260509_182901_1938.jpg" />
 
 Acronyms and names used in this post: BJP means Bharatiya Janata Party, India’s ruling national party and now the governing party in West Bengal. TMC means Trinamool Congress, the party that governed West Bengal from 2011 until this election. AITC means All India Trinamool Congress, the formal name of TMC. CPI(M) means Communist Party of India (Marxist), the main Left party that ruled Bengal before TMC. ECI means Election Commission of India, the constitutional body that conducts and reports election results. RSS means Rashtriya Swayamsevak Sangh, the volunteer organization historically linked with the BJP.
 
