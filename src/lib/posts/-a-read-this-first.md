@@ -1,7 +1,7 @@
 ---
 title: "Read This First"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
-date: "2026-05-10"
+date: "2024-01-01"
 thumbnail: "/images/Compress_20260510_023412_2917.jpg"
 category: "Personal"
 tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Bipolar Writing", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "Bill Bryson Style", "SuvroGhosh"]
@@ -89,7 +89,7 @@ I went to the US in August 1998 with about sixteen hundred dollars in my pocket,
 
 What did America give me? Work, books, loneliness, libraries, highways, central heating, depression with better grocery stores, and the knowledge that foreignness does not end when immigration stamps your passport. It also gave me distance from Calcutta. Distance is useful. From too close, a city is only noise, sweat, relatives, errands, and electricity cuts. From far away, it becomes pattern. From very far away, it becomes myth. Then you return and realize it is still also the same leaking tap.
 
-I returned, or perhaps life returned me. Now I am fifty-one, single, lower-middle-class in the shanty edges of Calcutta, a man who has worked in healthcare IT in the US and now often struggles to make the day move. Some mornings begin like a court case. The toothbrush is Exhibit A. The tea is pending. The bath is under appeal. The laptop sits there like a creditor with a black screen.
+I returned, or perhaps life returned me. Now I am almost fifty, single, lower-middle-class in the shanty edges of Calcutta, a man who has worked in healthcare IT in the US and now often struggles to make the day move. Some mornings begin like a court case. The toothbrush is Exhibit A. The tea is pending. The bath is under appeal. The laptop sits there like a creditor with a black screen.
 
 This is not laziness. Laziness has leisure in it. Depression has weight. Bipolar mood has weather. Anxiety has teeth. Irritability has sparks. Shame has glue. Some days a simple task is not simple. It is a parade of invisible negotiations. Get up. Don’t think. Make tea. Don’t check the phone. Open the laptop. Don’t remember every failure since 1987. Answer one email. Don’t collapse into the old swamp. Bathe. Eat. Remain a mammal.
 
