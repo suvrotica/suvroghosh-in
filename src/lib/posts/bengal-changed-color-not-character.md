@@ -37,7 +37,7 @@ This is how a society shrinks. Not with one dramatic dictatorship, but with dail
 
 Bengal once had a reputation for argument. We wore it like a shawl, slightly moth-eaten but still grand. “What Bengal thinks today, India thinks tomorrow,” we said, and for some time perhaps there was truth in it. Books, theater, politics, science, football, Marx, Tagore, tea, adda, and unreasonable self-regard all lived together in a smoky room and refused to leave.
 
-Now Bengal often does not think tomorrow. It waits for the next scheme, the next outrage, the next rally, the next religious slogan, the next television shouting match, the next forwarded video from a cousin who has become an expert on civilization after watching three clips and misreading two captions.
+Now Bengal often does not think at all. It waits for the next scheme, the next outrage, the next rally, the next religious slogan, the next television shouting match, the next forwarded video from a cousin who has become an expert on civilization after watching three clips and misreading two captions.
 
 Religion has entered politics not as private faith, but as loud identity. Private faith can be beautiful. A grandmother lighting a lamp in the evening has more dignity than ten thousand men shouting into a microphone. But political religion is different. It turns devotion into a headcount. It turns myth into ammunition. It turns the name of a god into a password at the gate. Once that happens, the citizen becomes less important than the crowd.
 
