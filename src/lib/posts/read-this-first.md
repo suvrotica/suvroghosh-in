@@ -4,7 +4,7 @@ thumbnail: "/images/IMG-20251202-WA0009.jpg"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2026-05-10"
 thumbnail: "/images/Compress_20260510_023412_2917.jpg"
-category: "personal"
+category: "Personal"
 tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Bipolar Writing", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "Bill Bryson Style", "SuvroGhosh"]
 published: true
 color: "orange"
