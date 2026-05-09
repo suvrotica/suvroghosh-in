@@ -2,12 +2,16 @@
 title: "The AI Layoff Trap: How Companies Can Fire Their Own Customers"
 description: "A readable dissection of The AI Layoff Trap, the paper arguing that AI-driven layoffs may create a demand-collapse loop where rational firms become collectively foolish."
 date: "2026-05-09"
+thumbnail: "/images/Compress_20260509_160236_6664.jpg"
 category: "AI Economics"
 tags: ["Artificial Intelligence", "AI Layoffs", "AI Job Loss", "Automation", "Future of Work", "AI Economy", "Economic Collapse", "Demand Externality", "AI Layoff Trap", "Universal Basic Income", "UBI", "Automation Tax", "Pigouvian Tax", "Tech Layoffs", "White Collar Jobs", "Software Jobs", "AI Productivity", "AI Business Risk", "Labor Market", "Capitalism", "Business Strategy", "AI Infrastructure", "AI Policy", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260509_160236_6664.jpg" />
 
 Acronyms used: AI means Artificial Intelligence, software that performs tasks normally requiring human judgment or cognition. UBI means Universal Basic Income, a recurring cash payment given to people without requiring employment. CEO means Chief Executive Officer, the top executive responsible for running a company. SaaS means Software as a Service, software delivered online by subscription. GDP means Gross Domestic Product, the total value of goods and services produced in an economy.
 
