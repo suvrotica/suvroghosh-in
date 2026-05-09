@@ -3,6 +3,7 @@ title: "Read This First"
 thumbnail: "/images/IMG-20251202-WA0009.jpg"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2026-05-10"
+thumbnail: "/images/Compress_20260510_023412_2917.jpg"
 category: "personal"
 tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Bipolar Writing", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "Bill Bryson Style", "SuvroGhosh"]
 published: true
@@ -10,6 +11,8 @@ color: "orange"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260510_023412_2917.jpg" />
 
 Acronyms used: ICSE — Indian Certificate of Secondary Education, the school examination many English-medium students in India take around Class 10. WWA — Women’s Welfare Association, part of the old school name, grand in sound if not always visible in daily welfare. US — United States, the country where I studied, worked, bought too many books, and learned that exile can come with central heating. AI — Artificial Intelligence, software that can imitate, generate, color, polish, and occasionally behave like a clerk who has swallowed the internet. LLM — Large Language Model, the text-generating kind of AI that has made everyone suspect everyone else of being automated.
 
