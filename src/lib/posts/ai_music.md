@@ -19,6 +19,12 @@ Acronyms expanded in this post:
 />
 
 <Vid 
+  src="Lanterns_on_the_Cobblestone.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="A_Turn_Toward_The_Harbor.mp4" 
   layout="block" 
   size={1} 
