@@ -2,12 +2,16 @@
 title: "America and Calcutta"
 description: "A Calcutta man looks back at America’s clean insulation and Calcutta’s noisy intimacy, not to choose one over the other but to understand what each place did to his body, mind, and sense of home."
 date: "2026-01-05"
+thumbnail: "/images/Compress_20260510_040559_9236.jpg"
 category: "personal"
 tags: ["America", "Calcutta", "Kolkata", "India", "Bengali Life", "Bengali Essay", "Personal Essay", "Immigrant Life", "Return To India", "Life In America", "Life In Kolkata", "Middle Class Life", "Lower Middle Class India", "Urban India", "Texas", "San Antonio", "Austin", "Expat Life", "Reverse Migration", "Sensory Memory", "City Life", "Indian Middle Class", "Mental Health", "Bipolar Disorder", "Loneliness", "Infrastructure", "Nostalgia", "Home", "Culture Shock", "SuvroGhosh"]
 published: true
 color: "orange"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260510_040559_9236.jpg" />
 
 Acronyms used in this post:
 
