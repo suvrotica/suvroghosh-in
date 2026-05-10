@@ -133,7 +133,7 @@ A man may look finished long before he is finished. A career may look like a lan
 
 Decay and life live very close here. Sometimes in the same drain.
 
-That is why the stagnant-water image is powerful. It is disgusting, yes. But it is not empty. Things breed there. Mosquitoes, fever, smell, yes. But also reflection. Sky appears in dirty water. A bird lands on a dead branch. A ragpicker finds value where polite society sees only disposal. This is not romance. This is field observation.
+That is why the stagnant-water image is powerful. It is disgusting, yes. But it is not empty. Things breed there. Mosquitoes, fever, smell, yes. But also reflection. Sky appears in dirty water. A bird lands on a dead head, mine, in this thought. A ragpicker finds value where polite society sees only disposal. This is not romance. This is field observation.
 
 The mind says, “You are dumped.”
 
