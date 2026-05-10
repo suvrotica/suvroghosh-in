@@ -2,13 +2,17 @@
 title: "Existential Arithmetic at Bread Level"
 description: "A Calcutta essay on shrinking ambition down to groceries, rent, electricity, and the next meal while AI quietly saws through the old white-collar ladder."
 date: "2026-05-10"
-category: "Personal Essay"
+thumbnail: "/images/Compress_20260510_225922_2340.jpg"
+category: "Personal"
 tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta Writing", "Kolkata Essay", "Middle Class Life", "Lower Middle Class", "Unemployment", "AI And Jobs", "Artificial Intelligence", "White Collar Work", "Future Of Work", "Career Anxiety", "Rent And Groceries", "Survival Essay", "Bread Level Living", "Existential Arithmetic", "Working Class Anxiety", "Economic Insecurity", "Job Market", "Freelance Life", "Consulting Income", "Ageism", "Midlife Crisis", "Indian Middle Class", "Bengali Life", "Urban India", "Cost Of Living", "Mental Health Essay", "Anxiety And Work", "Human Survival", "Plain Language Essay", "Readable Essay", "Social Commentary", "Technology And Society", "AI Disruption", "AI Economy", "Modern Work", "Precarious Work", "Personal Blog", "Suvro Ghosh"]
 published: true
 color: "amber"
 ---
 
+
 <TTS />
+
+<Pi src="Compress_20260510_225922_2340.jpg" />
 
 Acronyms used in this post: Artificial Intelligence [AI, computer systems that can generate, summarize, classify, code, analyze, imitate, and automate parts of human knowledge work].
 
