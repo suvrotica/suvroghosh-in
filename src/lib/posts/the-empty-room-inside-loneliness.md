@@ -1,14 +1,17 @@
-the-empty-room-inside-loneliness.md
 ---
 title: "The Empty Room Inside Loneliness"
 description: "A personal and philosophical essay on loneliness, bipolar depression, Bengali society, and the strange inner disappearance that can happen when a man lives alone too long."
 date: "2026-05-11"
+thumbnail: "/images/Compress_20260511_034747_7258.jpg"
 category: "Personal"
 tags: ["Video", "Personal Essay", "SuvroGhosh", "loneliness", "bipolar depression", "mental health", "depression", "middle age", "single life", "divorce", "living alone", "Bengali life", "Calcutta", "Kolkata", "lower middle class life", "urban loneliness", "Indian society", "male loneliness", "philosophy of loneliness", "self estrangement", "introspection", "solitude", "alienation", "mother and son", "emotional isolation", "mental health writing", "personal blog", "life after divorce", "existential loneliness", "modern loneliness", "lonely man", "Bengali society", "ordinary life", "reflective essay", "philosophical essay"]
 published: true
 color: "#4A5568"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260511_034747_7258.jpg" />
 
 Acronyms used: None.
 
