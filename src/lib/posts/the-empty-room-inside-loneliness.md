@@ -137,7 +137,7 @@ It is physics with a Bengali accent.
 
 This matters because we often prescribe the wrong cure. Society sees a lonely man and says, meet people. Sometimes this is good advice. Human beings are not pressure cookers. We should not be sealed indefinitely. A man needs witnesses. He needs friction. He needs someone to say, “You are repeating yourself,” or “Eat before the medicine,” or “That joke is not as good as you think.”
 
-But meeting people cannot fully solve the loneliness of self-estrangement. If you must perform cheerfulness to be acceptable, the company becomes another room in the same maze. If you must hide the actual weather inside you, then the conversation is not companionship. It is acting. And acting is tiring when the salary is zero.
+But meeting people cannot fully solve the loneliness of self-estrangement. If you must perform cheerfulness to be acceptable, the company becomes another room in the same labyrinth. If you must hide the actual weather inside you, then the conversation is not companionship. It is acting. And acting is tiring when the salary is zero.
 
 The trick, if there is a trick, is not to solve loneliness like a puzzle in a school exam. It is to stop treating it as one thing.
 
