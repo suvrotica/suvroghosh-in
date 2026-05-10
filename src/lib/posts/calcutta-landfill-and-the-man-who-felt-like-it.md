@@ -2,12 +2,16 @@
 title: "The Landfill and the Man Who Felt Like It"
 description: "A Calcutta personal essay on bipolar depression, unemployment, middle age, shame, and the dangerous mistake of calling a human being waste."
 date: "2026-05-10"
-category: "Personal Essay"
+thumbnail: "/images/Compress_20260510_180901_1081.jpg"
+category: "Personal"
 tags: ["Calcutta", "Kolkata", "Bengali Essay", "Personal Essay", "Mental Health", "Bipolar Disorder", "Middle Age", "Unemployment", "Lower Middle Class Life", "Urban India", "Calcutta Fringe", "South Kolkata", "Loneliness", "Shame", "Self Worth", "Depression", "Anxiety", "Indian Middle Class", "Life After America", "Return Migration", "Landfill", "Waste", "Civic Neglect", "Urban Decay", "Human Dignity", "Single Man", "Fifty One", "AI", "AQI", "EMI", "Video", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260510_180901_1081.jpg" />
 
 Acronyms used: AI — Artificial Intelligence, machines doing tasks that look intelligent but often inherit human foolishness at industrial speed. AQI — Air Quality Index, a number that tells you how enthusiastically the air is trying to sandpaper your lungs. EMI — Equated Monthly Installment, the monthly payment by which respectability politely eats the household.
 
