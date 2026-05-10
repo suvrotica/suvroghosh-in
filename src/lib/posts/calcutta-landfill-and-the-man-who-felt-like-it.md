@@ -81,7 +81,7 @@ This distinction matters.
 
 Because if you call a wound a character flaw, you will treat it with hatred. And hatred is a terrible doctor. Very confident. Very badly trained.
 
-Still, the rice must be bought. The electricity bill does not care about neurotransmitters. The medicine shop does not accept elegant metaphors. The landlord, if he exists in your life, will not say, “Take your time, my son, late capitalism has wounded your prefrontal cortex.” He will ask for money. Correctly. Brutally. As civilization has arranged.
+Still, the rice must be bought. The electricity bill does not care about neurotransmitters. The medicine shop does not accept elegant metaphors. The landlord, will not say, “Take your time, my son, late capitalism has wounded your prefrontal cortex.” He will ask for money. Correctly. Brutally. As civilization has arranged.
 
 So one must be practical.
 
