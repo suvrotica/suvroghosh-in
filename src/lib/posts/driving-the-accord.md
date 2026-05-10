@@ -1,9 +1,8 @@
-driving-the-accord.md
 ---
 title: "Driving the Accord"
 description: "A personal essay about an old Honda Accord, vanished Texas highways, Calcutta room-life, loneliness, dependable objects, and the strange loyalty of machines."
 date: "2026-01-01"
-thumbnail: "/Photos/IMG-20251012-WA0004(1).jpg"
+thumbnail: "/photos/Compress_20260510_235335_5542.jpg"
 category: "personal"
 tags: ["Personal Essay", "Memoir", "Calcutta Life", "Kolkata Life", "Middle Age", "Loneliness", "Honda Accord", "Texas Memories", "Austin", "San Antonio", "Immigrant Life", "Reverse Migration", "Bengali Essay", "Urban India", "Lower Middle Class Life", "Mental Health Writing", "Objects And Memory", "Cars And Memory", "American Life", "Indian Life", "Everyday Philosophy", "Aging", "Solitude", "SuvroGhosh"]
 published: true
@@ -16,7 +15,7 @@ Acronyms used in this post: US means United States, the country where I studied 
 ---
 
 <Pi
-    src="/Photos/IMG-20251012-WA0004(1).jpg"
+    src="/photos/Compress_20260510_235335_5542.jpg"
     caption="Old picture when I used to drive the Accord 260 km between Austin and San Antonio three times a week, and did this for years."
 />
 
