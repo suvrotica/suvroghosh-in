@@ -105,7 +105,7 @@ Today my brain is not a reliable narrator.
 
 Not evil. Not useless. Not doomed. Just unreliable today, like a taxi meter in 1990s Calcutta.
 
-There is relief in that. A little. Enough to create a crack through which a normal human action can enter. Tea. Bath. Rice. Medicine if prescribed. Work for twenty minutes. Lie down without turning the lying down into a moral scandal. Start again.
+There is relief in that. A little. Enough to create a crack through which a normal human action can enter. Tea. Bath. Rice. Medicine. Work for twenty minutes. Lie down without turning the lying down into a moral scandal. Start again.
 
 The funny thing about Calcutta’s fringes is that they do not stay fringes forever. A place nobody took seriously grows a pharmacy, then a coaching center, then a diagnostic lab, then a sweet shop with lights bright enough to guide aircraft. The city arrives late and then behaves as if it founded the place. Yesterday’s “so far away” becomes tomorrow’s “upcoming location.” Yesterday’s wasteland becomes real estate language.
 
