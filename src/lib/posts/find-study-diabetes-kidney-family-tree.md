@@ -1,14 +1,17 @@
-find-study-diabetes-kidney-family-tree.md
 ---
 title: "When Diabetes Started Asking About Its Ancestors"
 description: "A human, layman-friendly explanation of the FIND study, diabetic kidney disease, family risk, genetics, and why the science felt so alive in San Antonio."
 date: "2026-05-11"
+thumbnail: "/images/Compress_20260511_004312_2168.jpg"
 category: "Healthcare Science"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "FIND Study", "Family Investigation of Nephropathy and Diabetes", "Diabetes", "Diabetic Kidney Disease", "Kidney Disease", "Nephropathy", "Genetics", "Medical Genetics", "Family Health", "San Antonio", "UTHSCSA", "Mexican American Health", "Public Health", "Chronic Disease", "Diabetes Research", "Kidney Failure", "Albuminuria", "Creatinine", "Genome Research", "Health Data", "Clinical Research", "Layman Science", "Calcutta", "Kolkata", "Science Writing", "Healthcare Research"]
 published: true
 color: "blue"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260511_004312_2168.jpg" />
 
 Acronyms used here: FIND means Family Investigation of Nephropathy and Diabetes, a large research study that asked why kidney disease runs more strongly in some families with diabetes than in others. DKD means diabetic kidney disease, the kidney damage that can happen after years of diabetes. DNA means deoxyribonucleic acid, the inherited instruction book packed into our cells. ACR means albumin-to-creatinine ratio, a urine test that gives an early clue that the kidney filter is leaking protein. eGFR means estimated glomerular filtration rate, a blood-test-based estimate of how well the kidneys are filtering. GWAS means genome-wide association study, a way of scanning many genetic differences across many people to see which ones travel with disease. AI means artificial intelligence, computer systems trained to find patterns, make predictions, or generate answers from data.
 
