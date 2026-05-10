@@ -2,12 +2,16 @@
 title: "The Boy Inside the Broken House"
 description: "A raw Calcutta middle-age essay on depression, exhaustion, AI, shame, ambition, and the strange grief of feeling left behind without pretending the darkness is a motivational seminar."
 date: "2026-05-10"
-category: "Personal Essay"
+thumbnail: "/images/Compress_20260510_163828_8791.jpg"
+category: "Personal"
 tags: ["AI Anxiety", "Artificial Intelligence", "Depression Essay", "Middle Age Crisis", "Calcutta Writing", "Kolkata Life", "Bipolar Depression", "Mental Health Writing", "Unemployment Shame", "Loneliness", "Aging And Work", "AI And Jobs", "Left Behind", "Personal Essay", "Indian Middle Class", "Lower Middle Class Life", "Male Mental Health", "Existential Fatigue", "Modern Work", "Career Anxiety", "Digital Age", "Human Obsolescence", "Bill Bryson Style", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260510_163828_8791.jpg" />
 
 AI — Artificial Intelligence: machines and software that can write, code, summarize, draw, classify, predict, imitate, and compete with human work at terrifying speed.
 
