@@ -4,7 +4,7 @@ date: "2026-01-15"
 thumbnail: "/images/Compress_20260510_174813_3202.jpg"
 description: "A wheezy Calcutta satire on bad air, middle-class lungs, sparkly snot, and the national talent for turning every discomfort into a development model."
 category: "personal"
-tags: ["AQI", "AQI 420", "Air Pollution", "India Air Pollution", "Calcutta Air Pollution", "Kolkata Air Pollution", "Delhi Pollution", "Particulate Matter", "PM2.5", "PM10", "Smog", "Urban Pollution", "Middle Class India", "Calcutta Essay", "Indian Satire", "Environmental Satire", "Climate Satire", "Respiratory Health", "Clean Air", "Rare Earth Minerals", "Mucus Mining", "Snot Mine", "Personal Essay", "Humor Essay", "Bill Bryson Style", "SuvroGhosh"]
+tags: ["AQI", "AQI 420", "Air Pollution", "India Air Pollution", "Calcutta Air Pollution", "Kolkata Air Pollution", "Delhi Pollution", "Particulate Matter", "PM2.5", "PM10", "Smog", "Urban Pollution", "Middle Class India", "Calcutta Essay", "Indian Satire", "Environmental Satire", "Climate Satire", "Respiratory Health", "Clean Air", "Rare Earth Minerals", "Mucus Mining", "Snot Mine", "Personal Essay", "Humor Essay", "SuvroGhosh"]
 published: true
 color: "orange"
 ---
