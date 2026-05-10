@@ -13,9 +13,7 @@ color: "#3f3f3f"
 
 <Pi src="Compress_20260510_180901_1081.jpg" />
 
-Acronyms used: TTS [Text-to-Speech, the site marker for spoken narration], SEO [Search Engine Optimization, the practice of making writing easier for search engines and readers to discover], CV [Curriculum Vitae, a formal record of work and education].
 
----
 
 Some mornings I wake up in Calcutta and feel not like a man, but like something the city forgot to dispose of properly.
 
