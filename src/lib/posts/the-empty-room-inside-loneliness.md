@@ -13,9 +13,7 @@ color: "#4A5568"
 
 <Pi src="Compress_20260511_034747_7258.jpg" />
 
-Acronyms used: None.
 
----
 
 Loneliness is not an empty chair beside you. That is the tourist version. The postcard version. The one people understand quickly, nodding with the grave sympathy of someone who has located your suffering, put it in a box, labeled it, and gone home for lunch.
 
