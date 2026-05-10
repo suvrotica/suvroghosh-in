@@ -1,140 +1,188 @@
 ---
-title: "The Landfill and the Man Who Felt Like It"
-description: "A Calcutta personal essay on bipolar depression, unemployment, middle age, shame, and the dangerous mistake of calling a human being waste."
+title: "Dead Body in Stagnant Water"
+description: "A blunt, humane essay on bipolar depression, unemployment, middle age, shame, and the strange Calcutta art of continuing when the mind has already written the obituary."
 date: "2026-05-10"
 thumbnail: "/images/Compress_20260510_180901_1081.jpg"
 category: "Personal"
-tags: ["Calcutta", "Kolkata", "Bengali Essay", "Personal Essay", "Mental Health", "Bipolar Disorder", "Middle Age", "Unemployment", "Lower Middle Class Life", "Urban India", "Calcutta Fringe", "South Kolkata", "Loneliness", "Shame", "Self Worth", "Depression", "Anxiety", "Indian Middle Class", "Life After America", "Return Migration", "Landfill", "Waste", "Civic Neglect", "Urban Decay", "Human Dignity", "Single Man", "Fifty One", "AI", "AQI", "EMI", "Video", "SuvroGhosh"]
+tags: ["Video", "Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Bipolar Disorder", "Unemployment", "Middle Age", "Male Mental Health", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class", "Shame", "Self Worth", "Loneliness", "Urban Life", "Stagnant Water", "Landfill", "Survival", "Resilience", "Neuroscience", "Emotional Health", "Life Writing", "SuvroGhosh"]
 published: true
-color: "charcoal"
+color: "#3f3f3f"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260510_180901_1081.jpg" />
 
-Acronyms used: AI — Artificial Intelligence, machines doing tasks that look intelligent but often inherit human foolishness at industrial speed. AQI — Air Quality Index, a number that tells you how enthusiastically the air is trying to sandpaper your lungs. EMI — Equated Monthly Installment, the monthly payment by which respectability politely eats the household.
+Acronyms used: TTS [Text-to-Speech, the site marker for spoken narration], SEO [Search Engine Optimization, the practice of making writing easier for search engines and readers to discover], CV [Curriculum Vitae, a formal record of work and education].
 
 ---
 
-A landfill is not garbage’s birthplace. It is society’s confession booth, except nobody kneels, nobody repents, and the priest is usually a crow with excellent attendance.
+Some mornings I wake up in Calcutta and feel not like a man, but like something the city forgot to dispose of properly.
 
-This is the thing I keep thinking about from the southern fringe of Calcutta, where the city begins to loosen its belt and spill into ponds, half-built flats, tea stalls, flyovers, narrow lanes, political flags, and the sort of concrete optimism that looks as if it was poured during a power cut. On certain days, when the mood drops and the room turns into a small court of law, I feel I am not merely near the landfill.
+Not a tragic hero. Not a fallen prince. Nothing so grand. More like a dead body in stagnant landfill water, swollen with old rain, plastic packets, mosquito larvae, paan spit, political posters, and the exhausted perfume of civilization after it has removed its shirt and given up.
 
-I feel I am it.
+Then the phone lights up.
 
-Not “like it” in the decorative literary sense. Not in the way a man with clean fingernails says, “Ah, modern alienation,” while adjusting his linen scarf. I mean it in the practical Bengali household sense. I feel sorted, rejected, transported, and dumped beyond the polite city limits of usefulness.
+Someone has sent a good morning message with a rose.
 
-A 51-year-old single middle-class Bengali man. Unemployed in the regular salaried way. Educated enough to know the trap. Experienced enough to remember another life. Bipolar enough to distrust the day before breakfast. Living on consulting income that arrives like a reluctant relative: late, thin, and offended that you expected anything better.
+This is how the day begins.
 
-There are mornings when making tea feels like negotiating a trade treaty between two hostile nations, one of which is the kettle. Bathing becomes a project. Opening the laptop becomes an accusation. The cursor blinks on the screen with the moral superiority of a clerk at a government office who has found one spelling mistake in your form and will now ruin your month.
+A 51-year-old unemployed lower-middle-class Bengali man does not collapse dramatically. He does not fall in slow motion while violins behave like widowed relatives. He lies in bed and calculates tea. Tea should be simple. Water, leaf, milk, sugar, flame. Four or five ordinary nouns. But depression can turn tea into the Konark Sun Temple. Magnificent, ancient, impossible to assemble before noon.
 
-You think the problem is laziness.
+You think the problem is sadness.
 
-It is not.
+No.
 
-Laziness has leisure in it. Laziness has a hammock, a mango tree, and one philosophical goat. This is different. This is a nervous system with a blown fuse trying to run the ceiling fan, the fridge, the pump, the Wi-Fi router, and a small private volcano. Bipolar depression does not simply make you sad. It changes the lighting. The same cup on the table becomes evidence. The same undone task becomes a criminal charge. The same silence from the phone becomes proof that the world has held a meeting and voted you unnecessary.
+Sadness has manners. Sadness can sit by a window and look at rain. Sadness can be written in a notebook with a fountain pen by someone who still has the decency to bathe. Depression is different. Depression is a damp government file tied with red ribbon. It smells faintly of mildew and defeat. It says, “Application pending.” It never says which application.
 
-The mind becomes a bad municipality.
+Bipolar depression is worse because it comes with its own circus troupe. One day the mind is a marching band. Next day it is a locked bathroom. Some days anger comes first, wearing cheap sandals and carrying a stick. Then shame comes behind it, like a clerk with a receipt book. Anger breaks the cup. Shame charges interest. By evening the man is not merely tired. He is morally exhausted, as if he has committed a crime by existing in a bad mood.
 
-It stops sorting properly.
+And unemployment sits nearby, chewing betel nut.
 
-That is the secret of landfills too. They are not full only of useless things. They are full of things badly classified. Vegetable peels, plastic packets, old wires, broken buckets, paper, glass, bottles, cloth, ash, flowers from puja, medical wrappers, yesterday’s ambition, last week’s festival, somebody’s lunch, somebody’s fever, somebody’s Amazon delivery, somebody’s brief experiment with fitness equipment. A landfill is a biography written by people who deny authorship.
+Nobody tells you how unemployment enters the body. It does not remain on paper. It gets into the shoulders. The jaw. The stomach. The way you answer the phone. The way you avoid neighbors. The way you look at a shirt and wonder whether it is still “interview worthy,” as if cotton itself has lost faith in you.
 
-The city says, “This is waste.”
+In Calcutta, a jobless middle-aged man becomes a small social puzzle. Too old for cheerful advice. Too young for retirement sympathy. Too educated for simple pity. Too broke for respect. Too experienced to start again at the bottom without rage rising like sewer gas. People ask, “So what are you doing now?” with the innocent cruelty of people asking a fish about mountaineering.
 
-Then it sends it away.
+You say, “Consulting.”
 
-Away is a marvelous word. It is one of humanity’s most successful lies. Throw it away. Move it away. Keep it away. But there is no away. Away is just somebody else’s near.
+This is not entirely false.
 
-Ask the ragpicker. Ask the child walking past the smoke. Ask the old man with the cough. Ask the pond that has slowly learned the taste of plastic. Ask the crow, that black-coated municipal auditor, who knows exactly where the truth is buried.
+It is also not entirely food.
 
-On bad days, shame does the same thing inside the head. It takes the rejected pieces of a life and throws them into one heap. Failed interviews. Angry words. Unfinished drafts. Years that did not convert into the expected staircase. No wife, no fixed job, no smart apartment, no professional title glowing like a tube light at a wedding reception. A return from America without trumpets. A career that looks impressive in fragments and suspicious in chronology. A brain that can explain complex systems but occasionally cannot persuade the body to get up and wash a cup.
+The world likes men in neat categories. Employed. Retired. Successful. Failed. Stable. Troubled. Productive. Lazy. A man with bipolar depression and a broken career line is none of these clean things. He is a paragraph with too many commas. Society prefers bullet points.
 
-Then shame points to the heap and says, “There. That is you.”
+Here is the catch. The man may still be intelligent. This offends everyone, including the man.
 
-What a fraud.
+If I were stupid, things would be easier. One could blame the machinery. But I have studied. I have worked. I have lived in America. I have sat in offices where the air-conditioning behaved like a colonial power. I have understood systems, databases, hospitals, research, rules, maps, broken workflows, human panic hidden under professional vocabulary. I know how complicated things work.
 
-Not a small fraud either. A proper, full-pandal, loudspeaker, sponsored-by-local-councillor fraud.
+And yet some mornings I cannot begin.
 
-Because the heap is not the person. The heap is what happens when the sorting system collapses. When mood, money, age, loneliness, job markets, family expectations, and fear all arrive together like relatives at a small flat during Durga Puja and nobody knows where to put the mattresses.
+There is a special humiliation in being able to explain a large system but unable to brush your teeth without negotiation.
 
-I know this intellectually. That is the comedy. The educated man knows the theory and still gets mugged by the feeling.
+The healthy world does not understand this because the healthy world imagines action as a straight line. Decide, rise, do. Like a good schoolchild in a moral science book. But the depressed brain is not a straight line. It is Ultadanga traffic after a political rally. Horns, heat, exhaust, one goat, three buses angled like wounded ships, and somewhere a policeman waving with philosophical resignation.
 
-The day starts. Somewhere in the news, AI is promising to transform everything again, as if transformation is a toothpaste brand. Somewhere the AQI is doing its little murder dance. Somewhere young people are making videos on productivity while I am staring at a bucket and wondering whether civilization was a mistake. Somewhere a man my age is probably paying an EMI, scolding his son, checking his sugar, and pretending he is not frightened.
+You do not “just do it” in that traffic.
 
-I sit with tea.
+You survive it one inch at a time.
 
-The tea is important.
+This is not an excuse. Excuses are usually lighter. This thing is heavy. It has the weight of wet bedding.
 
-There are days when tea is not a beverage. It is a temporary constitution. It says, for the next seven minutes, we are still a republic. Steam rises. The cup warms the fingers. A biscuit softens too quickly and collapses into the tea with the tragic dignity of a small empire. Outside, somebody shouts at somebody. A scooter coughs. A pressure cooker whistles from a neighboring kitchen like a referee in a match nobody agreed to play.
+The brain is an organ, not a motivational poster. It runs on chemistry, rhythm, memory, sleep, fear, reward, habit, and the small daily electricity of hope. When bipolar depression tampers with those circuits, ordinary tasks become oddly tall. A bath becomes a campaign. Opening the laptop becomes a court appearance. Updating the résumé becomes an autopsy performed by the patient.
 
-And for a moment, I am not landfill. I am observer.
+Then comes the nasty little voice.
 
-That distinction matters.
+It says, “You are lazy.”
 
-A landfill cannot observe itself. A man can. Even when broken, he can say: this is shame speaking. This is mood. This is exhaustion. This is not the whole parliament of reality. This is one loud member banging the desk.
+A beautiful lie. Very popular. Easy to pronounce.
 
-The danger in middle age is that society becomes very fond of final labels. Successful. Failed. Settled. Unsettled. Married. Unmarried. Abroad. Returned. Employed. Problem case. In Bengali households, the label often arrives before the tea. People do not mean to be cruel. That is the irritating part. They are cruel in the ordinary way, the way mosquitoes are musical. They ask small questions with large knives hidden inside them.
+But laziness has pleasure in it. Laziness eats jilipi and stretches in the afternoon. Depression has no pleasure. Depression does not say, “Ah, delightful, let me ruin my life today.” Depression is not rest. It is unpaid labor inside a locked room. You are lifting invisible sacks while the world accuses you of lying down.
 
-“So what are you doing now?”
+This distinction matters.
 
-A simple question. A hand grenade wearing sandals.
+Because if you call a wound a character flaw, you will treat it with hatred. And hatred is a terrible doctor. Very confident. Very badly trained.
 
-What am I doing now? Breathing, mostly. Fighting brain weather. Trying to earn. Trying to write. Trying not to become the worst sentence I have ever said about myself. Trying to take fifteen years of American healthcare IT experience, a Calcutta childhood, a bruised mind, and a stubborn need to tell the truth, and make something from it that is not begging, branding, or fake cheerfulness.
+Still, the rice must be bought. The electricity bill does not care about neurotransmitters. The medicine shop does not accept elegant metaphors. The landlord, if he exists in your life, will not say, “Take your time, my son, late capitalism has wounded your prefrontal cortex.” He will ask for money. Correctly. Brutally. As civilization has arranged.
 
-This is not a motivational poster.
+So one must be practical.
 
-Please.
+But not cruel.
 
-I have no patience for the kind of motivation that looks as if it was manufactured in a gym by men who have never had to calculate grocery money after a bad month. “Crush your goals” sounds very grand until your goal is to bathe before 2 p.m. and not hate yourself by evening.
+The cruel version says, “Get up, you useless man.”
 
-But small things are not small when the system is under load. A bridge is not repaired by giving it a TED Talk. You inspect one beam. You stop one leak. You reduce one pressure. You keep traffic from shaking it apart.
+The practical version says, “Sit up first.”
 
-A difficult life needs that kind of engineering, but spoken in household language. Sleep if you can. Eat something with protein. Wash one plate. Send one email. Walk to the shop. Put the phone away for ten minutes before it turns your mind into a fish market with breaking news. Make the bed badly. Badly is fine. The bed is not appearing for board exams.
+That is the whole revolution. Sit up first. Feet on floor. Drink water. Wash face. Do not solve life before tea. Life is too large before tea. Even the British needed tea before conquering half the planet, and look what a mess they made.
 
-And when the dark voice says, “This is nothing,” answer: yes, exactly. Nothing is the unit from which something is built.
+A lower-middle-class Calcutta day has no cinematic mercy. The lane is damp. Someone is arguing about a parked scooter. A pressure cooker whistles in a nearby flat with the authority of a minor dictator. A child recites multiplication tables. A dog sleeps in the exact philosophical posture of a retired judge. The news shouts about elections, heatwaves, markets, cricket, corruption, some billionaire buying something unnecessary, some minister denying something obvious. The world continues.
 
-The landfill teaches that too, though in a smellier dialect. Under the heap, there is heat. Rot is not the opposite of change. It is change with bad public relations. Compost begins as embarrassment. Soil is what waste becomes when time, pressure, organisms, and patience do not give up too early.
+This is both insulting and helpful.
 
-Of course, not everything becomes soil. Some things are poison. Some things must be contained. Some fires must be put out. Some habits must not be romanticized. Bipolar illness is not a literary accessory. It is not a tragic shawl one drapes over the shoulder for effect. It can burn relationships, ruin sleep, inflate certainty, deepen despair, and make a man both victim and culprit in the same afternoon. It needs treatment, discipline, humility, and sometimes the plain courage to say, “Today my brain is not a reliable narrator.”
+Insulting because your private disaster has not stopped the tramlines of existence. Helpful because perhaps disaster is not the whole story. Perhaps the day is not asking for a grand resurrection. Perhaps it is asking for one small act of maintenance.
 
-That sentence has saved me more than once.
+Maintenance is underrated because it is not glamorous. Nobody claps because you washed a cup. No one gives an award because you took a bath after three days of negotiating with the towel. LinkedIn has no badge for “Did Not Completely Surrender Today.” It should. It would be more honest than half the leadership certificates floating around like decorative papad.
 
-Today my brain is not a reliable narrator.
+Maintenance is civilization.
 
-Not evil. Not useless. Not doomed. Just unreliable today, like a taxi meter in 1990s Calcutta.
+A city survives by drains being cleared, wires being repaired, rice being cooked, medicines being taken, passwords being remembered, old parents being called, small lies being avoided, and one man, somewhere in the shanty edge of Calcutta, washing his face though his mind has declared him already dead.
 
-There is relief in that. A little. Enough to create a crack through which a normal human action can enter. Tea. Bath. Rice. Medicine. Work for twenty minutes. Lie down without turning the lying down into a moral scandal. Start again.
+That washing matters.
 
-The funny thing about Calcutta’s fringes is that they do not stay fringes forever. A place nobody took seriously grows a pharmacy, then a coaching center, then a diagnostic lab, then a sweet shop with lights bright enough to guide aircraft. The city arrives late and then behaves as if it founded the place. Yesterday’s “so far away” becomes tomorrow’s “upcoming location.” Yesterday’s wasteland becomes real estate language.
+Not spiritually. Not poetically. Mechanically. It changes the next minute. The next minute is where life hides.
 
-Human beings also get miszoned.
+Depression wants to discuss the whole future at once. It drags in career, age, money, marriage, regret, lost years, missed chances, medical bills, dignity, status, America, India, old friends, younger men earning more, relatives asking questions, and the terrifying arithmetic of time. It dumps all this on the bed at 9:17 in the morning and says, “Now get up.”
 
-A man may be treated as an outer area because the economy has not found a neat use for him this quarter. But inside him there may still be maps, stories, skill, memory, jokes, grief, tenderness, rage, and a thousand small instruments not yet cataloged. The market is not God. It is often a nervous goat with spreadsheets.
+No sane creature can get up under that pile.
 
-I say this as much to myself as to anyone reading.
+So the trick is not to win the whole case. The trick is to object to the evidence.
 
-Because the landfill feeling is persuasive. It has smell, weight, smoke, evidence. It can point to facts. Yes, the job is not stable. Yes, the bank balance is thin. Yes, the age is real. Yes, the loneliness is not imaginary. Yes, the mood disorder is not a decorative inconvenience. Yes, the world does not owe me applause because I once did difficult things.
+Not all of it belongs in this morning.
 
-But facts can be true and incomplete.
+This morning only needs tea.
 
-A broken chair is still wood. A rejected draft is still language. A tired man is still alive. A life that did not follow the expected route is not automatically a failed life. It may be a badly signposted one. It may be under repair. It may be waiting for a smaller, stranger road.
+Then perhaps a bath.
 
-So when I say I feel like the landfill, I do not mean I accept the verdict. I mean I have seen the verdict up close. I have smelled it. I have sat beside it with tea. I have watched the crows conduct their black parliament over it. I have understood how a city hides what it cannot digest, and how a mind hides what it cannot forgive.
+Then perhaps one page.
 
-But I am not the heap.
+Then perhaps one ugly paragraph.
 
-I am the man looking at it.
+Ugly paragraphs are important. A polished paragraph is an upper-class thing. It arrives bathed and perfumed. An ugly paragraph comes like a fish seller before sunrise, loud, necessary, smelling of work. Many good essays begin as ugly paragraphs that refused to die.
 
-That is not a triumphant ending. Good. Triumph is overrated. Most days I would settle for tolerable digestion, a paid invoice, and one sentence that does not embarrass me in the morning.
+The same is true of men.
 
-Still, it is something.
+A man may look finished long before he is finished. A career may look like a landfill before someone finds metal in the trash. Calcutta itself is an expert in this department. It looks permanently on the verge of collapse, then produces a poet, a physicist, a football argument, a political slogan, a plate of biryani, and a grandmother who can destroy your entire worldview with one sentence from a cane chair.
 
-The crow lifts from the mound. The tea cools. A scooter backfires like a minor political crisis. Somewhere, Calcutta continues its ancient profession of surviving without looking properly organized. The city is damp, vain, funny, cruel, tender, corrupt, poetic, and impossible to evict from history.
+Decay and life live very close here. Sometimes in the same drain.
 
-I live on its edge.
+That is why the stagnant-water image is powerful. It is disgusting, yes. But it is not empty. Things breed there. Mosquitoes, fever, smell, yes. But also reflection. Sky appears in dirty water. A bird lands on a dead branch. A ragpicker finds value where polite society sees only disposal. This is not romance. This is field observation.
 
-Some days I feel thrown there.
+The mind says, “You are dumped.”
 
-Some days I suspect the edge is where the next map begins.
+The eye says, “Look again.”
+
+The danger is believing the first sentence is the whole book.
+
+“I feel like a dead body” is a sentence from pain. It deserves respect. It should not be dismissed with cheerful nonsense. But it is still a sentence, not a court order. The feeling is real. The conclusion may be false.
+
+This is where a little skepticism saves the soul. Not optimism. Optimism is often a salesman with shiny teeth. Skepticism is better. Skepticism says, “Are we sure?” Are we sure this man is useless? Are we sure this day is gone? Are we sure the future has closed? Are we sure the brain, currently behaving like a wet matchbox, is a reliable judge of destiny?
+
+Not quite.
+
+The brain in depression is a biased narrator. A gifted one, unfortunately. It writes dark prose with excellent lighting. It selects memories like a crooked editor. It finds every failure, enlarges it, frames it, and hangs it in the central hall. Then it hides the evidence of endurance in a back drawer.
+
+But the evidence exists.
+
+The years survived exist. The work done exists. The migrations survived exist. The knowledge earned exists. The tenderness, even if buried under irritability, exists. The fact that a man can describe his own despair with such precision means there is still a witness inside him. The witness is not dead. Bruised, yes. Underpaid, certainly. Wearing a faded vest, possibly. But alive.
+
+This is not a happy ending.
+
+Good. Happy endings are often dishonest. What we need is a usable ending.
+
+A usable ending says: today may remain difficult, but it need not become a total loss. The body in the water can become the man at the basin. The man at the basin can become the man with tea. The man with tea can become the man who opens the laptop. The man who opens the laptop can become the man who writes badly for twenty minutes. Twenty bad minutes can become one tolerable paragraph. One tolerable paragraph can become a post. A post can become a signal. A signal can become work. Work can become money. Money can become breathing room.
+
+Not guaranteed.
+
+Possible.
+
+That small word is not small.
+
+Possible is the crack in the wall where the plant begins.
+
+So no, I will not say I am fine. Fine is a word people use when they want the conversation to leave quickly. I am not fine. I am 51, Bengali, unemployed in a brutal market, carrying bipolar weather in the head and lower-middle-class arithmetic in the pocket. Some days I am ashamed of my anger. Some days I am ashamed of my need. Some days I am ashamed of being ashamed, which is a very Bengali achievement, like making chutney out of the peel of the fruit after already eating the fruit.
+
+But I am not garbage.
+
+I am not landfill.
+
+I am not stagnant water.
+
+I am a man having a hard day inside a hard life in a hard city that somehow, rudely, magnificently, continues.
+
+And tomorrow morning, if the mind again files its false death certificate, I will not argue with the whole department.
+
+I will sit up.
+
+I will put my feet on the floor.
+
+I will make tea.
+
+Let the resurrection start badly. Most honest things do.
