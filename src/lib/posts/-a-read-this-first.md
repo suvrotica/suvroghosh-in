@@ -4,7 +4,7 @@ description: "A Calcutta self-portrait stitched from school shame, books, bipola
 date: "2024-01-01"
 thumbnail: "/images/Compress_20260510_023412_2917.jpg"
 category: "Personal"
-tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Bipolar Writing", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "Bill Bryson Style", "SuvroGhosh"]
+tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Bipolar Writing", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "SuvroGhosh"]
 published: true
 color: "orange"
 ---
