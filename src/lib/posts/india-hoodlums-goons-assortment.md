@@ -279,5 +279,3 @@ Being decent is slow.
 Being feared is efficient.
 
 And in a tired, overcrowded country running on heat, noise, frustration, aspiration, and jugaad, efficiency becomes very seductive indeed.
-
-P.S. References: Association for Democratic Reforms reports on criminal cases among elected representatives in India; Supreme Court police reform directives in Prakash Singh vs Union of India; research by Ward Berenschot on political patronage and strongmen in India; PRS Legislative Research papers on policing and criminal justice delays in India.
