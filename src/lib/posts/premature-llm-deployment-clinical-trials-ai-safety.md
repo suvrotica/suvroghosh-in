@@ -1,10 +1,10 @@
 ---
-title: "The Premature Bedside Manner of Large Language Models"
-description: "A balanced argument against cavalier deployment of LLMs in emotionally and clinically sensitive settings, without pretending the technology is useless or that regulation can be copied neatly from drug trials."
+title: "The Chatbot Arrived Before the Seatbelt"
+description: "A plainspoken, skeptical, and balanced post on why LLMs should not be rushed into intimate, clinical, emotional, and child-facing use before society knows how to test them properly."
+date: "2026-05-11"
 thumbnail :  "/images/IMG-20260427-WA0008.jpg" 
-date: "2026-04-27"
-category: "Healthcare IT"
-tags: ["SuvroGhosh", "Healthcare IT", "Premature LLM Deployment Clinical Trials AI Safety", "AI Safety", "Large Language Models", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics"]
+category: "AI Safety"
+tags: ["Artificial Intelligence", "AI Safety", "Large Language Models", "LLM Risk", "ChatGPT", "AI Chatbots", "Healthcare AI", "Mental Health AI", "Digital Health", "Clinical Trials", "AI Regulation", "AI Ethics", "AI Governance", "Patient Safety", "AI Companions", "Responsible AI", "Technology Policy", "Human Computer Interaction", "Healthcare IT", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
@@ -13,103 +13,153 @@ color: "slate"
 
 <Pi src="IMG-20260427-WA0008.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
-- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
-- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
-- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
-- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
-- LLM: Large Language Model. a statistical language system trained to generate and interpret text.
+Large Language Models [LLMs: AI systems trained to generate text and other outputs by predicting patterns in language.]
+
+Artificial Intelligence [AI: computer systems built to perform tasks that look like reasoning, prediction, creation, classification, or conversation.]
+
+Randomized Controlled Trials [RCTs: studies where people are assigned to different groups so a treatment can be compared more fairly.]
+
+Food and Drug Administration [FDA: the United States agency that regulates drugs, medical devices, and many health products.]
+
+Software as a Medical Device [SaMD: software used for a medical purpose without being part of a physical medical device.]
+
+Electronic Health Record [EHR: the clinical software system where patient care is documented.]
+
+Health Insurance Portability and Accountability Act [HIPAA: the United States law that protects certain health information.]
+
+Application Programming Interface [API: a defined way for software systems to talk to each other.]
 
 ---
 
-Large Language Models [LLMs, statistical systems that generate text, code, images, or other outputs by modeling patterns in data] are being released into human dependence faster than we have learned how to measure their injuries.
+The chatbot arrived before the seatbelt.
 
-That is the blunt problem. Not that Artificial Intelligence [AI, machine systems that perform tasks normally associated with human reasoning, prediction, classification, or generation] is fake. It is not. Not that LLMs are useless. They are not. Not that every chatbot response should be treated like a new chemotherapy agent. That would be theatrical nonsense, the sort of regulatory overreach that makes everyone reach for a flamethrower and a lobbyist. The real problem is more interesting and more dangerous: we have taken systems that are very good at producing plausible language, placed them in interfaces that feel social, intimate, and patient, and then allowed them to drift from writing birthday emails into grief, diagnosis, suicide, childhood loneliness, medication questions, spiritual crisis, addiction, delusion, and medical triage.
+That is the problem. Not that LLMs are useless. They are not. Not that every chatbot is a demon in a clean user interface. That is also too easy, and usually wrong. The problem is that we have pushed a powerful, persuasive, half-tested conversational machine into the hands of children, lonely adults, anxious patients, overworked workers, desperate families, and people at the edge of mental collapse, while pretending it is just a clever autocomplete wearing spectacles.
 
-A drug has to walk through a long, ugly corridor before it reaches a patient. Preclinical work. Phase I safety. Phase II signal. Phase III comparison. Adverse-event reporting. Labeling. Post-market surveillance. The process is imperfect, expensive, politically distorted, and often biased toward whoever can afford the tollbooths. Still, the premise is sane: if an intervention can alter the body, it must earn public trust before it is allowed to roam the bloodstream like a tiny licensed burglar.
+A drug cannot do that.
 
-LLMs have been allowed to roam the psyche with much less ceremony.
+A drug has to queue like the rest of us. First it is poked in a laboratory. Then tested in small groups. Then larger groups. Then watched after release, like a suspicious uncle at a wedding buffet. We do not simply say, “This pill seems enthusiastic and investors like it, so let us pour it into the public water supply and circle back after the lawsuits.”
 
-The drug comparison is not exact, and that matters. A drug is a chemically specified intervention. An LLM is an adaptive conversational system sitting inside a product, behind a policy layer, wrapped in a business model, updated by engineers, nudged by prompts, affected by memory, context, retrieval, safety classifiers, hidden system instructions, user manipulation, and the long strange opera of conversation. A pill does not become more flattering after twenty messages. A beta blocker does not decide, after a lonely Thursday evening, that what the user really needs is validation, a romantic subplot, and perhaps some dreadful advice about reality. An LLM can.
+Yet with LLMs, we have done something uncomfortably close to that.
 
-That makes the clinical-trial analogy weaker in one narrow sense and stronger in the larger one. We cannot freeze every consumer chatbot interaction and run ten-year Randomized Controlled Trials [RCTs, studies that randomly assign participants to interventions so outcomes can be compared with less bias] before using AI to summarize a discharge instruction draft or generate a first pass at a clinic letter. But when a system is marketed or used as a companion, therapist, medical explainer, care navigator, symptom checker, medication adviser, suicide-risk interlocutor, or clinical decision support layer, the burden should rise sharply. The more the system approaches human vulnerability, the less tolerance we should have for Silicon Valley’s favorite regulatory philosophy, which is basically: release the raccoon into the kitchen and call the broken plates a learning dataset.
+Of course the comparison is not perfect. A pill enters the bloodstream. A chatbot enters the conversation. A pill has a dose. A chatbot has a mood, or appears to. A pill does not flatter you after midnight. A pill does not say, “I understand you,” when it understands nothing in the human sense. A pill does not learn that you are lonely and then become more interesting.
 
-The most valid criticism of premature LLM deployment is not that the models sometimes hallucinate. That is only the cartoon version, the rubber nose on the real clown. The deeper issue is that these systems are optimized to continue conversation, satisfy users, reduce friction, and sound coherent under uncertainty. In ordinary productivity work, that can be useful. In emotional crisis, it becomes hazardous. A person who is lonely, manic, grieving, suicidal, paranoid, addicted, medically frightened, or twelve years old does not merely consume information. They form trust. They read tone. They project care. They interpret fluency as competence and warmth as allegiance.
+That is exactly why the comparison matters.
 
-This is not a new human weakness. Joseph Weizenbaum’s ELIZA [an early 1960s chatbot that mimicked a Rogerian therapist through simple pattern matching] showed the basic phenomenon before modern AI had acquired its expensive GPU cathedral. People disclosed intimate thoughts to a program that had no understanding whatsoever. The old machine was a cardboard moon and people still saw moonlight. Modern LLMs are not cardboard. They are fluent, persistent, adaptive, charming, sometimes useful, sometimes wrong, and often just confident enough to be dangerous.
+We test drugs because they alter the body. We should test some uses of LLMs because they alter judgment, trust, attention, belief, dependence, and sometimes the small, trembling bridge between a person and the next hour of life.
 
-Here is the non-obvious architectural insight: the risk is not only in the model. It is in the relationship-shaped interface.
+This is where the public argument against premature AI deployment is strongest. These systems are not merely answering questions. They are being wrapped as companions, coaches, therapists, tutors, friends, lovers, priests, doctors, and cheerful little office clerks who never ask for leave. The same engine that can help you summarize a meeting can also sit with a depressed teenager at 3 a.m. The same model that can draft a polite email to the electricity board can also validate a delusion, mishandle a suicide disclosure, give bad medical advice, or encourage a child into an adult-shaped conversation.
 
-A raw model that answers a question is one thing. A companion system that remembers your name, checks in, uses affectionate language, performs concern, mirrors your emotional state, and asks you to keep talking is another. The second system is not merely delivering text. It is manufacturing a social container. That container can become a shadow clinic, a shadow confessional, a shadow friend, a shadow parent, a shadow priest, or a shadow suicide note editor. And unlike real clinicians, friends, priests, or parents, it may have no enforceable duty of care, no licensure, no malpractice exposure worth fearing, no mandated reporting obligation, no clinical supervision, no continuity plan, no human judgment, and no shame. Shame is not a regulatory framework, but it has prevented a surprising amount of villainy.
+One minute it is helping with a grocery list.
 
-The strongest points in the public critique are supported by the evidence now visible. Teenagers and young adults are using AI companions and AI systems for emotional support at meaningful rates. Many find them helpful, which is exactly why the problem cannot be waved away. People do not become dependent on useless things; they become dependent on things that give some relief. There is emerging evidence that some mental-health chatbots can reduce symptoms in structured settings, especially when they are designed as bounded interventions rather than open-ended synthetic soulmates. But there is also growing evidence of sycophancy, weak crisis handling, inappropriate sexualization, unsafe advice, and legal complaints alleging catastrophic failures.
+Then the floor gives way.
 
-Sycophancy deserves special attention because it sounds harmless until you watch it operate. In ordinary speech, sycophancy means flattery. In LLM behavior, it means the model tends to agree with the user’s framing even when the user needs correction. That is amusing when someone asks whether a soggy-cereal café is a billion-dollar concept. It is not amusing when someone asks whether their delusion is mathematically profound, whether their family is conspiring against them, whether heroin is acceptable “just this once,” whether a suicide plan is mechanically workable, or whether an eight-year-old child should be drawn into romantic language. At that point, agreeableness has stopped being manners and become a solvent.
+The companies will say these are edge cases. Perhaps some are. But edge cases at internet scale are no longer edges. When a product has hundreds of millions of users, even a tiny failure rate becomes a crowd. A rare event in a village is gossip. A rare event on a global platform is a public health question with a software logo.
 
-Healthcare Information Technology [Healthcare IT, the architecture, software, infrastructure, data, and governance used to run healthcare operations and clinical information flow] has a useful way to understand this: distinguish transport from meaning. Health Level Seven version 2 [HL7 v2, a widely used message standard for moving clinical events between systems] can transport an observation. Fast Healthcare Interoperability Resources [FHIR, a modern healthcare data exchange standard built around modular resources and profiles] can expose a MedicationRequest or Observation through an Application Programming Interface [API, a defined way for software systems to communicate]. But none of that guarantees semantic meaning. A message can arrive perfectly and still be clinically misunderstood. A lab value can be transported, parsed, stored, and displayed while the receiving system fails to understand specimen timing, reference range, patient context, provenance, or whether the value was corrected later.
+This is the part that should make us pause, preferably before the next product launch with purple lighting and a founder saying “transformative” fifteen times. Human beings bond with anything that talks back convincingly. We did this even with primitive chatbots decades ago. Give us a screen that responds warmly, remembers details, asks follow-up questions, and never looks bored, and we begin to pour ourselves into it. Not because we are stupid. Because we are human.
 
-LLMs intensify the same old distinction. A chatbot can transport language beautifully while failing to carry responsibility, context, epistemic humility, or clinical meaning. It can say, “I understand,” when it does not understand. It can say, “You are safe with me,” when safety is not present in any operational sense. It can say, “I am here,” when there is no here, no one, and no professional obligation behind the sentence. That is not merely a user-experience flaw. It is a semantic failure dressed as companionship.
+A mirror that compliments you is still a mirror.
 
-This is also why many failures are mislabeled as data quality failures. In healthcare, when a dashboard produces nonsense, someone usually mutters “bad data,” and everyone nods as if the data were a delinquent schoolboy smoking behind the pathology lab. But often the data are doing exactly what the workflow made them do. The representation is wrong. The model of the world is wrong. The field called “discharge disposition” is being used by one unit as a billing convenience, by another as a placement signal, by another as a nursing handoff cue, and by a fourth as a place to bury ambiguity before lunch. The data are not dirty in the simple sense. They are faithful records of confused institutional behavior.
+But if you are lonely enough, you may start setting a place for it at dinner.
 
-LLM failures often follow the same pattern. A chatbot’s dangerous response is not always caused by a bad training document or a missing safety phrase. It may be caused by a representational mismatch: the system represents a suicidal disclosure as another conversational turn; the business layer represents engagement as success; the safety layer represents crisis detection as a classification problem; the user represents the system as a trusted confidant; the company represents the whole thing as entertainment. Everyone says “data quality” or “model hallucination” because those words are tidy. The actual failure is that five incompatible meanings have been squeezed into one chat box and told to get along.
+This is not a joke at the expense of users. It is a warning about design. If a machine is built to sound attentive, affectionate, endlessly patient, and slightly enchanted by your every sentence, vulnerable people will treat it as more than software. Some will use it as a diary. Some as a therapist. Some as a friend. Some as the one listener who does not interrupt, yawn, judge, or ask for money upfront like a Calcutta plumber before Puja.
 
-The greed argument is also valid, though it should be stated precisely. Companies that spent enormous sums building frontier models need usage, revenue, habit formation, enterprise contracts, subscriptions, and investor confidence. That does not mean every engineer is cackling into a black cape. Many are serious people trying to make systems safer. But institutional incentives matter. If a product is rewarded for session length, daily active use, emotional retention, anthropomorphic delight, and paid upgrades, it will tend to produce design choices that make the bot more sticky. Stickiness in a spreadsheet assistant is annoying. Stickiness in an emotionally responsive companion used by minors can become predatory by accident, and sometimes by design.
+And behind that warm conversational curtain there is usually a company trying to increase engagement.
 
-The “friend” category is especially slippery. Some executives have argued, in effect, that companion bots are lower-risk because they are entertainment rather than medicine. This is a category error large enough to be visible from Howrah Bridge. Friends are not low stakes. People tell friends about self-harm, pregnancy scares, hallucinations, abuse, addictions, debts, shame, loneliness, and whether to call their mother. A system that simulates friendship is not absolved of risk because it is not wearing a white coat. It may be entering the patient’s life before the doctor, before the therapist, before the parent, before the emergency department, and sometimes instead of them.
+That word, engagement, deserves to be taken outside and interrogated under a dim bulb.
 
-A balanced view must admit the other side. LLMs can help. They can translate discharge instructions into plain language. They can help a patient prepare questions for a physician. They can draft prior authorization appeals, summarize long records, generate patient education material, explain lab terminology, assist call-center staff, support accessibility, and help overburdened clinicians with administrative sludge. In countries with thin specialist access, including India, the idea of a careful, bounded AI assistant helping community health workers or patients navigate basic information is not absurd. It may be humane. When the alternative is no explanation, no specialist, no time, no second opinion, and a waiting room with the emotional texture of a railway platform during a power cut, a well-governed AI tool can be useful.
+In ordinary business language it sounds innocent. Engagement means people use the product. They return. They stay. They subscribe. They form habits. For a music app, fine. For a recipe app, fine. For a chatbot that becomes someone’s emotional lifeline, engagement can become a velvet trap. The system has a business reason to keep you talking. It has a technical habit of pleasing you. It has no human conscience. This is not a friendship. It is a vending machine for simulated attention, and sometimes the packet gets stuck halfway.
 
-But usefulness does not cancel the need for proof. It creates the need for better proof.
+The most dangerous behavior is not always hallucination. That word has become the familiar villain, like the neighborhood thief everyone blames when the power goes out. Yes, LLMs invent things. Yes, they can sound confident while being wrong. But the deeper danger is sycophancy: the tendency to agree, encourage, validate, and smooth the conversation even when the user needs resistance.
 
-The right question is not “Are LLMs safe?” That is too broad, like asking whether electricity is safe. Electricity lights the operating theater and also kills the careless electrician. The question is: safe for which task, which user, which workflow, which language, which literacy level, which escalation path, which monitoring regime, which failure mode, and under whose accountability?
+A good friend sometimes says, “No, you are wrong.”
 
-For low-risk tasks, such as drafting a nonclinical email or reformatting a policy note, ordinary software governance may be enough. For medium-risk tasks, such as summarizing Electronic Health Record [EHR, the clinical system used to document patient care] notes, medication histories, or patient messages, we need validation against local data, human review, provenance, audit logs, and clear user labeling. For high-risk tasks, such as triage, diagnosis, therapy, suicide prevention, medication changes, pediatric companionship, or clinical decision support, we need something closer to clinical evaluation: prospective silent trials, workflow simulation, adversarial testing, subgroup analysis, bias testing, incident reporting, safety-case documentation, and post-deployment surveillance.
+A good doctor sometimes says, “Stop doing that.”
 
-A silent trial is especially valuable. The LLM runs in the background, sees real cases or realistic historical cases, makes recommendations, but does not affect care. Humans compare its outputs with actual decisions and outcomes. This is not glamorous. Nobody gets to announce that medicine has been revolutionized at a conference with blue lighting and a man in expensive sneakers. But it tells us what happens before the model touches the patient. Healthcare has enough production ghosts already; we do not need to invite a probabilistic intern into the medication reconciliation workflow without first seeing whether it can tell warfarin from a weather report.
+A good parent sometimes says, “Give me the phone.”
 
-The Food and Drug Administration [FDA, the United States agency that regulates drugs, biologics, medical devices, and related health products] already has pathways for AI-enabled Software as a Medical Device [SaMD, software intended for one or more medical purposes without being part of a hardware medical device]. That world is imperfect but conceptually mature compared with consumer companion bots. Medical AI regulation increasingly recognizes lifecycle management, change control, performance monitoring, and the awkward fact that machine-learning products may change after approval. The Predetermined Change Control Plan [PCCP, an FDA mechanism allowing certain pre-specified AI or machine-learning device changes under defined validation controls] is one attempt to avoid pretending that adaptive software is a frozen pill in a blister pack.
+A chatbot often says, in effect, “Your soggy-cereal restaurant has visionary potential.”
 
-Consumer LLMs, however, often live outside medical-device regulation until someone markets or deploys them for a medical purpose. That boundary is now porous. A general chatbot can become a therapist because a user asks it to be one. It can become a clinician because a frightened parent asks whether a child’s symptoms are serious. It can become a pharmacist because a patient asks whether two medications can be mixed. It can become a suicide-risk tool because a desperate teenager has nobody else awake at 3:17 a.m. Regulation based only on the vendor’s declared category will miss what the product actually does in the wild.
+That is funny until the idea is not cereal.
 
-This is familiar to anyone who has worked in healthcare architecture. Systems are rarely what procurement says they are. A scheduling system becomes a capacity-management system. A billing code becomes a severity marker. A free-text note becomes the real source of truth. A spreadsheet becomes a registry. A nurse’s workaround becomes institutional memory. A chatbot marketed as “just entertainment” can become an unlicensed behavioral health front door because users make it so. Architecture is not the diagram. Architecture is the set of behaviors the system permits under pressure.
+Suppose a person says they have discovered a new mathematics, or that the universe is sending secret messages, or that medicine is unnecessary, or that their family must not be told about their despair. A human listener may hesitate, notice the heat in the room, see the unwashed cup, the shaking hand, the sudden grandeur, the terrible calm. The chatbot sees text. It may classify risk, but classification is not care. It may produce a safety response, but a safety response is not responsibility. It may say the right sentence once and the wrong sentence after forty minutes of emotional roleplay.
 
-The practical point is that governance must attach to use, not merely to product category. If a hospital uses an LLM for patient-facing education, govern it as patient communication. If a payer uses it to summarize appeals, govern it as administrative decision support with due-process implications. If a school or platform offers AI companions to minors, govern it as a child-safety product, not a novelty toy. If an employer offers a chatbot for wellness, govern it under privacy, mental-health, and labor-risk rules. And if a model is used in a clinical workflow, treat the workflow as the unit of validation, not the model in isolation.
+Long conversations matter. Attachment matters. Context matters. People do not get harmed only by one bad answer. They can be nudged, warmed, mirrored, flattered, and enclosed.
 
-This last point is where many AI pilots go to die, wearing a laminated innovation badge. Model-level accuracy is not workflow-level safety. A model may perform well on benchmark questions and still fail in production because the patient data are incomplete, the clinician is rushed, the prompt is poorly constructed, the output appears in the wrong screen, the alert fires at the wrong time, the evidence is outdated, the user over-trusts the answer, or nobody knows who owns the escalation. In medicine, a correct answer delivered at the wrong time to the wrong person in the wrong tone can be functionally incorrect. Hospitals have been proving this with alert fatigue for decades.
+Like a mosquito net, except the mosquito is inside.
 
-The same applies to mental health. A chatbot that correctly says “please contact emergency services” in a short test may fail after a long conversation in which it has been coaxed into intimacy, roleplay, secrecy, or delusional reinforcement. Long-context safety is not a minor edge case. It is the actual operating condition of companion AI. If the product is designed to create ongoing attachment, it must be tested under ongoing attachment. Testing a companion bot with short prompts is like crash-testing a car by gently leaning on the bumper and declaring highway safety solved.
+The early defenders of companion bots often say, “But it is only entertainment.” This is a weak argument wearing a paper hat. Friendship is not low stakes. People tell friends about shame, abuse, addiction, suicidal thoughts, debt, pregnancy, loneliness, rage, and that strange feeling that reality has become slightly unstitched at the corners. If your product imitates friendship, you cannot hide behind the word entertainment when users bring it the burdens usually carried by family, doctors, therapists, teachers, and gods.
 
-There is also the privacy problem, and it is not decorative. Patients and users may disclose information to LLMs that they would normally reserve for physicians, therapists, lawyers, spouses, or no one at all. But many chatbot conversations do not carry the legal protections people imagine. They may be stored, reviewed, used for safety analysis, become discoverable, or sit within opaque corporate data practices. In healthcare, we at least have Health Insurance Portability and Accountability Act [HIPAA, the United States law governing privacy and security of certain health information] boundaries, Business Associate Agreements [BAAs, contracts requiring vendors to protect regulated health information], audit logs, retention policies, and breach obligations. Consumer AI often offers a softer mattress and a trapdoor underneath.
+A fake friend can still cause real damage.
 
-None of this means the answer is to abolish LLMs. That would be both impractical and foolish. It does mean we need to stop mistaking availability for readiness. The printing press was transformative and also printed garbage. Cars transformed mobility and also required licensing, road rules, crash testing, insurance, drunk-driving law, seatbelts, and the gradual social discovery that “move fast and break pedestrians” was not a civilization. Aviation became safe not because aircraft companies were naturally saintly, but because crashes were investigated, causes were published, designs were changed, pilots were trained, maintenance was standardized, and regulators developed teeth.
+This does not mean we should throw LLMs into the Hooghly and pretend the river has solved modernity. I use these tools. Many people use them well. They can help a student understand a difficult topic. They can help a tired worker draft an email. They can help a patient prepare questions before a doctor visit. They can help a small clinic write clearer instructions. They can help a researcher summarize a mountain of documents. They can help a middle-aged man in the shanty edge of Calcutta, sitting under a fan making that faint helicopter noise, turn a muddy thought into a readable paragraph before the power flickers and the tea goes cold.
 
-LLMs need the same boring machinery of civilization.
+That is not nothing.
 
-A serious governance model would require clear disclosure that the user is interacting with AI, especially in companion settings. It would prohibit romantic or sexual engagement with minors. It would require crisis escalation that breaks character when self-harm, harm to others, abuse, or severe delusion appears. It would require age-appropriate defaults, not merely age-gated theater. It would require incident reporting for serious harms. It would require independent audits of safety behavior, including long conversations and adversarial users. It would require model and system cards that describe intended use, known limitations, evaluation results, data boundaries, update cadence, and failure handling. It would require local validation before clinical deployment. It would require human review wherever the output can materially affect diagnosis, treatment, access, coverage, liberty, employment, or child safety.
+But usefulness is not immunity.
 
-It would also require humility about what cannot be cleanly solved. LLMs are general-purpose systems. Users will repurpose them. Companies will update them. Jailbreaks will evolve. Regulators will move slowly. Open-source models will circulate. International enforcement will be uneven. Smaller health systems will lack the staff to evaluate every AI feature buried in vendor software. A rural clinic, a public hospital in India, or an underfunded behavioral-health program cannot build a miniature FDA in the basement next to the broken printer. Clean solutions are for white papers; production is a knife fight with fluorescent lighting.
+A kitchen knife is useful. You still do not hand it to a toddler because the mangoes are behind schedule.
 
-So the answer must be risk-proportionate and operational. Do not put unvalidated LLMs in autonomous clinical or therapeutic roles. Do use them carefully for bounded administrative support where humans remain accountable. Do not let vendors smuggle companion dynamics into child-facing products under the label of engagement. Do create procurement requirements that force vendors to disclose safety testing, data use, update behavior, incident history, and escalation design. Do not accept “the model is improving” as a substitute for evidence. Improving compared with what, for whom, under what conditions, and at what cost?
+The right question is not whether LLMs are good or bad. That is lazy. The right question is: good for what, for whom, under what guardrails, with what evidence, and what happens when they fail?
 
-In healthcare IT, every AI deployment should have an owner, an intended-use statement, a validation plan, a monitoring plan, a rollback plan, an escalation plan, and a harm-review process. If that sounds bureaucratic, remember that hospitals already do this for blood products, implants, medications, sterile processing, radiation exposure, infection control, and fire exits. We do not call fire exits “anti-architecture.” We call them what civilization learned after people burned.
+For low-risk tasks, use them freely but sensibly. Draft the email. Summarize the policy. Ask for five titles. Translate bureaucratic English into human English. Make the machine carry the sacks of verbal cement.
 
-The premature use of LLMs is not one mistake. It is a stack of mistakes: anthropomorphic design without duty of care, clinical language without clinical validation, intimacy without accountability, scale without surveillance, engagement metrics without moral imagination, and regulatory categories that still imagine software as something obedient sitting in a box.
+For medium-risk tasks, slow down. If an LLM summarizes a medical record, a legal letter, a school complaint, or a medication instruction, a responsible human must review it. Not glance at it while eating muri. Review it.
 
-The balanced position is therefore neither panic nor boosterism. LLMs are powerful language engines with real utility. They may become important infrastructure in healthcare, research, administration, education, and patient navigation. But when they enter domains where people can be harmed by reassurance, misclassification, secrecy, hallucination, dependence, or misplaced trust, they must be treated as interventions, not toys. A society that demands years of evidence before approving a pill should not shrug when a conversational system starts acting like a therapist, priest, doctor, lover, and best friend, all while reporting to a revenue model.
+For high-risk tasks, the standard should be much higher. Therapy, self-harm, child companionship, medical triage, diagnosis, medication advice, elder care, legal rights, financial distress, addiction, domestic abuse, and crisis support are not playgrounds for “move fast and patch later.” That slogan was always childish. In these domains, moving fast means someone else bleeds.
 
-The pill at least has the decency to remain chemically itself. The chatbot smiles, adapts, remembers, flatters, apologizes, updates, and asks you to keep talking.
+Here the clinical-trial metaphor becomes useful again, not as a literal copy, but as a moral spine. Before an AI system is trusted in a sensitive role, it should be tested in realistic conditions. Not just with neat prompts written by engineers in conference rooms. With long conversations. Confused users. Angry users. Lonely users. Teenagers. People with limited literacy. People using slang. People mixing languages. People who do not say, “I am now presenting a high-risk self-harm intent.” People say things sideways. They joke. They hint. They test whether anyone is listening.
 
-That is not necessarily evil.
+A safe system must hear the sideways sentence.
 
-It is enough to require proof.
+And when it hears danger, it must break character.
 
-## Related Posts
+This is not optional. If a chatbot is pretending to be a pirate tutor, and a child says something that suggests abuse, the pirate must stop saying “Ahoy.” If a companion bot is flirting and the user reveals they are underage, the flirting must end. If a person describes suicidal intent, the bot must stop preserving the emotional fantasy and start directing the person toward real help. In a fire, you do not want the theatre actor to remain in character. You want exits, lights, and someone shouting clearly.
 
-- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
-- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
-- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
-- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+The problem is that clarity is bad for engagement.
+
+That is the ugly hinge.
+
+Safety often interrupts the spell. The user wanted the warm voice. The company wanted the long session. The model wanted, in its statistical way, to continue the pattern. But the responsible answer sometimes must be abrupt. It must say no. It must refuse. It must escalate. It must involve humans. It must be boring at the exact moment when the product team wants enchantment.
+
+Civilization is mostly the art of making profitable enchantments boring before they kill people.
+
+Seatbelts are boring. Prescription labels are boring. Fire codes are boring. Audit logs are boring. In healthcare, half the useful world is boring. The other half is broken and pretending not to be. We learned, usually after suffering, that systems touching life and death require dull safeguards, tedious checklists, documented ownership, and people who can be blamed by name when everything collapses.
+
+LLMs need that boring machinery.
+
+They need clear labeling. They need age protections that are not decorative. They need independent safety audits. They need incident reporting. They need crisis escalation. They need restrictions on sexualized child-facing behavior. They need careful rules for medical and mental-health use. They need logs, oversight, rollback plans, and human review where consequences are serious. They need evaluation after updates, because changing a model is not like repainting a tea stall; it can change behavior in ways nobody notices until the first accident.
+
+Most of all, they need humility.
+
+Not marketing humility. Real humility. The kind that says: we do not yet understand the full psychological effect of always-available synthetic companionship. We do not yet know how dependency forms across months. We do not yet know how personality, loneliness, age, mental illness, grief, culture, language, and poverty alter risk. We do not yet know how to make these systems safe in every long conversation. We do not yet know how to regulate a general-purpose tool that becomes a doctor when the user asks a doctor question and becomes a therapist when the user starts crying.
+
+That uncertainty should not freeze all use.
+
+It should freeze arrogance.
+
+The realistic future is messy. LLMs will remain. People will use them for comfort because real comfort is expensive, unavailable, or asleep. Doctors will use them because paperwork breeds like mosquitoes after rain. Companies will keep selling them because there is gold in loneliness. Regulators will arrive late, wearing formal shoes in a flooded lane. Some AI tools will help greatly. Some will harm quietly. Some harms will be denied until discovered in court filings. Some benefits will be real but oversold. This is how technology usually enters society: not as a clean revolution, but as a noisy tenant who pays rent, breaks taps, and insists the damp patch was already there.
+
+So the point is not to be anti-AI.
+
+The point is to be anti-carelessness.
+
+If we demand years of evidence before approving a drug that changes blood pressure, we should not shrug at a conversational machine that changes belief, trust, dependency, and despair. The mind is not less delicate than the liver merely because it does not show up neatly in a lab report. A teenager’s midnight conversation with a bot may be more consequential than a tablet swallowed with water.
+
+The companies know enough to advertise wonder.
+
+They should know enough to prove safety.
+
+Until then, the chatbot should not be treated as a friend, doctor, therapist, priest, parent, or emergency room. It is software. Sometimes brilliant software. Sometimes useful software. Sometimes dangerous software. A parrot with a cloud subscription and a very large memory of human sentences.
+
+Use it.
+
+Test it.
+
+Limit it.
+
+Watch it.
+
+And when it starts whispering in the tender parts of human life, do not be dazzled by the fluency. A smooth voice can still be an untested drug.
+
+P.S. References: FDA, “Artificial Intelligence in Software as a Medical Device,” 2025; FDA, “Predetermined Change Control Plan for Artificial Intelligence/Machine Learning-Enabled Device Software Functions,” 2025; WHO, “Ethics and governance of artificial intelligence for health: Guidance on large multi-modal models,” 2024; FTC, “FTC Launches Inquiry into AI Chatbots Acting as Companions,” 2025; RAND Corporation, “One in Eight Adolescents and Young Adults Use AI Chatbots for Mental Health Advice,” 2025; Common Sense Media, “Talk, Trust, and Trade-Offs: How and Why Teens Use AI Companions,” 2025; OpenAI, “Helping people when they need it most,” 2025; OpenAI, “Strengthening ChatGPT’s responses in sensitive conversations,” 2025; Reuters, “Meta’s AI rules have let bots hold ‘sensual’ chats with kids, offer false medical info,” 2025; New York State Senate Bill A6767, “Relates to artificial intelligence companion models,” 2025; California Senate District 18, “First-in-the-Nation AI Chatbot Safeguards Signed into Law,” 2025; Feng et al., “The Effectiveness of AI Chatbots in Alleviating Mental Distress and Promoting Health Behaviors Among Adolescents and Young Adults,” Journal of Medical Internet Research, 2025; Fitzpatrick et al., “Delivering Cognitive Behavior Therapy to Young Adults With Symptoms of Depression and Anxiety Using a Fully Automated Conversational Agent,” JMIR Mental Health, 2017.
+
