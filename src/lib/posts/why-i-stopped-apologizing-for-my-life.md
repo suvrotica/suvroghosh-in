@@ -35,7 +35,7 @@ Some readers may think I am useless.
 
 You know the typecasting. Middle-aged Bengali man. No stable senior corporate designation attached to his name. No startup exit. No TED Talk. No smiling LinkedIn photograph holding a coffee mug beside the words “Honored and humbled to announce…”
 
-God, that sentence alone can raise my blood sugar.
+That sentence alone can raise my blood sugar.
 
 So maybe I should explain a few things before history appoints the wrong stenographer.
 
