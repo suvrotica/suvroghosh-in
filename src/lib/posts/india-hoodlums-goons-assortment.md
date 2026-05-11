@@ -1,95 +1,283 @@
 ---
-title: "Why India Has Such a Rich Assortment of Hoodlums and Goons"
-description: "India’s goons are not a cultural accident. They are an informal operating system produced by weak enforcement, political patronage, economic scarcity, social hierarchy, and the profitable gap between law on paper and power on the street."
+title: "Why India Produces So Many Different Species of Goons"
+description: "From para dadas to political strongmen, India’s strange biodiversity of hoodlums did not appear by accident. They grow in the warm swamp between weak systems, public fear, social hierarchy, and everyday survival."
+date: "2026-05-11"
 thumbnail : "/images/Compress_20260428_173311_1250.jpg"
-date: "2026-04-28"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Society", "India Hoodlums Goons Assortment", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Politics", "Goons", "Crime", "Kolkata", "Bengal", "Political Violence", "Street Power", "Corruption", "Indian Society", "Muscle Power", "Indian Democracy", "Local Politics", "Urban India", "Indian Mafia", "Social Commentary", "Governance", "Police", "Indian Culture", "Power Structures", "Real Estate Mafia", "Middle Class India"]
 published: true
-color: "darkred"
+color: "maroon"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260428_173311_1250.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+Acronyms and Terms Used
+
+FIR — First Information Report. The formal police complaint document that starts a criminal investigation.
+
+IT — Information Technology.
 
 ---
 
-India has many kinds of hoodlums because India has many kinds of power that do not pass cleanly through law.
+India has so many varieties of goons that if Charles Darwin had been born in Howrah instead of England, the poor man would have needed three extra notebooks and a blood pressure tablet.
 
-That is the unpleasant little engine under the bonnet. The Indian goon is not merely a fellow with a thick neck, a motorcycle, a gold chain, and a tragic relationship with shirts. He is a political instrument, a real-estate negotiator, a strike manager, a religious sentinel, a caste enforcer, a tender manipulator, a polling-booth intimidator, a debt collector, a fixer, a middleman, a spectacle, and sometimes, with great efficiency, an elected representative. He is what appears when the state is strong enough to harass but too weak, selective, or compromised to protect.
+Every neighborhood has its own model.
 
-The popular mistake is to treat goondaism as excess personality. Too much testosterone. Too little schooling. Too much cheap liquor. A childhood with insufficient moral fiber and excessive exposure to action cinema. These things may add garnish, like coriander on a sewer. But the deeper reason is structural. A goon is useful. He performs services that formal institutions cannot, will not, or are paid not to perform. He settles disputes faster than courts. He frightens tenants faster than lawyers. He recovers money faster than civil procedure. He mobilizes crowds faster than ideology. He converts diffuse resentment into a march, a riot, a blockade, a bandh, a protection racket, or a very patriotic shouting event with sponsored snacks.
+There is the thin wiry fellow in a football jersey who controls the local auto stand like a medieval tax collector. There is the enormous gold-chained uncle who settles land disputes by leaning silently against your gate chewing paan. There is the student leader who began with slogans about justice and somehow ended up with six motorcycles, twelve followers, and a mysterious interest in college canteen contracts. There is the religious fellow who appears whenever somebody eats the wrong meat, loves the wrong person, or says the wrong thing on Facebook at 1:17 in the morning.
 
-The first type is the neighborhood dada, the small sovereign of the lane. Every locality knows him or has known his cousin. He is the unofficial complaint desk for illegal parking, water-line quarrels, shop encroachment, drunken fights, club subscriptions, construction noise, and the periodic moral emergency of two adults loving each other without committee approval. His power is not absolute; it is relational. He knows the police constable, the councillor’s nephew, the building promoter, the local club secretary, and which family has a son abroad and therefore can be squeezed gently. He is not outside society. He is stitched into it, like a bad seam in a cheap shirt.
+And somehow all these people know each other.
 
-Then comes the political muscleman, the famous bahubali, literally the strong-armed fellow, though in practice the arm may be less important than the network behind it. This species thrives where elections are competitive, local administration is negotiable, and voters need patrons more than manifestos. He can deliver turnout, suppress turnout, distribute cash, manage fear, and create the ancient democratic miracle by which a person enters a polling booth as a citizen and exits as a statistic. The criminalization of politics is not merely criminals entering politics. It is politics discovering that criminals are logistical assets.
+That is the first thing you notice in India. The goons are networked. Like Airtel towers. Or fungus.
 
-There is also the party goon, more ideological in costume than in content. He may belong to the right, left, center, regional, sub-regional, hyper-local, or opportunistically spiritual wing of public nuisance. His job is to make politics physical. Posters must go up. Opponents must come down. Meetings must be protected, which often means disrupted if held by the other side. He is the chap who turns disagreement into abrasion. His genius is that he can call intimidation “cadre discipline,” vandalism “people’s anger,” and extortion “organizational contribution.” Political language is wonderfully elastic when stretched over a lathi.
+You think they are random street roughs. They are not. They are part of an ecosystem.
 
-The student goon is a younger cousin of the same family, usually found in campuses where education has been asked to share lodging with party machinery. He begins as a defender of student rights and may, after suitable training, become an expert in locking gates, surrounding offices, threatening faculty, controlling hostel rooms, and treating admission lists like hereditary property. This is tragic because student politics can be noble. It can train people in debate, organization, and public ethics. But in many places it becomes a nursery for adult thuggery, a vocational school for the ambitious sociopath, with internships in slogan management and furniture destruction.
+The strange thing is this: many Indian goons are not hiding from society. Society is often hiding behind them.
 
-The real-estate goon is among the most consequential. He operates where land records are foggy, urban growth is feverish, courts are slow, and property is the quickest route from modest illegality to respectable wealth. He helps persuade old tenants to leave, farmers to sell, siblings to stop contesting inheritance, slum dwellers to relocate themselves into somebody else’s inconvenience, and municipal files to experience spiritual acceleration. He may not look like a thug. He may wear linen. He may say “development.” This is how you know civilization is in trouble: the goon has discovered soft fabrics and PowerPoint.
+I was thinking about this the other day while returning from the pharmacy near our lane here in the southern muddy underbelly of Calcutta where the drains smell faintly of dead civilization and old fish. It was hot enough to boil thought itself. One boy on a motorcycle shot past without a silencer. Another was screaming into his phone. Somewhere somebody was frying telebhaja in oil dark enough to qualify as crude petroleum.
 
-The tender mafia is the goon in procurement form. Roads, drains, school repairs, hospital supplies, transport contracts, sand mining, parking lots, market leases, garbage collection, security services, festival contracts, and public works create a fat ecosystem of intimidation. The goal is not always to win by competence. The goal is to make competition unsafe. Rival bidders are discouraged. Paperwork is managed. Officials are pressured or rewarded. Quality is quietly murdered. The public receives a road that dissolves in the first monsoon like a biscuit dipped in tea, and everyone acts shocked, as if asphalt has recently developed moral weakness.
+And outside a local club sat three men doing absolutely nothing.
 
-The sand mafia and mining mafia deserve their own dark garland. They are the children of construction demand, weak environmental enforcement, local political protection, and the simple fact that a riverbed cannot file a police complaint. Sand sounds humble. It is not. It is the skeleton of concrete. Control sand, and you control construction. Control construction, and you control money, land, permits, labor, and local politics. When illegal extraction becomes organized, the goon becomes an environmental actor, which is a polite way of saying he can make rivers poorer, bridges weaker, officials nervous, and reporters dead.
+Indian men have elevated doing nothing into a professional art form. We should submit it to UNESCO.
 
-The transport goon belongs to bus stands, taxi unions, truck routes, loading points, railway-adjacent markets, and interstate freight corridors. He controls movement. That is no small thing in a country where movement is survival. He can decide who gets to load goods, whose vehicle may park, whose permit is honored, whose shop receives supplies, and whose daily wage disappears because a union strongman has had a philosophical disagreement with physics. Transport goondaism often hides under the language of labor protection. Sometimes it really does protect workers. Often it protects the protector.
+But these three were not idle. That is the mistake outsiders make. In India the man sitting in a plastic chair outside the club is often more important than the man inside the office wearing the tie.
 
-The religious goon is more dangerous because he carries metaphysical stationery. He does not merely threaten you; he threatens you on behalf of eternity. This type polices food, dress, couples, art, films, books, prayer, festivals, processions, and rumors. He is especially fond of rumors because rumor is evidence that has skipped the boring burden of being true. His power comes from the fusion of identity, fear, spectacle, and selective enforcement. The state may not officially endorse him, but if it looks away at the right time, he receives the only permission that matters.
+The office has rules.
 
-The caste goon is older, deeper, and often more invisible to comfortable people. He enforces hierarchy where law has promised equality but society has retained older passwords. He may punish inter-caste marriage, land assertion, temple entry, political ambition, labor refusal, or the unforgivable act of standing upright. Sometimes he wears the face of village honor. Sometimes he wears the face of community protection. In reality he is the night watchman of inherited humiliation. Modern India did not abolish this figure. It gave him motorcycles, smartphones, and occasionally party affiliation.
+The plastic chair has outcomes.
 
-The police-linked fixer is another crucial type. He is not necessarily police, not exactly criminal, not formally official, not fully unofficial. He knows whom to call, whom to bribe, whom to frighten, which First Information Report [FIR, the initial police document that records information about a cognizable offence] can be delayed, diluted, strengthened, or made to wander into procedural fog like a goat into traffic. He sells access to state coercion. This is a premium product. Where citizens do not trust the system to act fairly, the broker becomes more valuable than the law.
+That is the whole story right there.
 
-The cyber goon is the newest cousin, though the moral software is ancient. He does not need a street corner. He needs a phone, stolen data, intimidation scripts, fake profiles, payment rails, and enough cruelty to treat strangers as downloadable prey. Some run scams. Some run extortion. Some run abuse campaigns. Some create digital mobs that do online what the old street tough did outside your house: surround, threaten, humiliate, exhaust. The old goon broke windows. The new one breaks reputations, bank accounts, attention spans, and sometimes lives.
+People say India has a corruption problem. Or a law-and-order problem. Or unemployment. Or population pressure. True, true, all true. But underneath all of it is a simpler problem.
 
-The troll-army goon is not identical to the cybercriminal. He is political weather modification. His task is to flood the atmosphere until honest conversation cannot breathe. He manufactures outrage, repeats slogans, attacks critics, distorts evidence, and makes cowardice look like consensus. He may be paid, partisan, bored, bitter, ideological, or merely thrilled to be part of a swarm. This type matters because modern power does not need to censor every voice. It can bury the voice under sewage and call the smell democracy.
+India is full of gaps.
 
-The white-collar hoodlum is the most underappreciated species because he rarely says “I will break your legs.” He says “as per policy.” He rigs hiring, procurement, lending, licensing, billing, admissions, regulatory compliance, valuation, or access. He launders coercion through paperwork. He may never raise his voice. He may have excellent English. He may even complain about the decline of civic values while quietly arranging the decline. In a mature society, crime learns grammar.
+A gap between law and enforcement.
+A gap between complaint and solution.
+A gap between what is promised and what arrives.
+A gap between paperwork and reality.
 
-Why does India produce this biodiversity of goons? Because the country contains a peculiar combination: enormous democratic participation, uneven state capacity, deep social hierarchy, high economic aspiration, slow justice, expensive legality, cheap intimidation, and an old comfort with personalized power. The law exists. Often it is elaborate, ambitious, even beautiful on paper. But between paper and pavement lies a swamp of delay, discretion, backlog, local pressure, political interference, fear, poverty, and social dependency. The goon is the crocodile who has learned the route.
+And into every gap walks a goon carrying a smartphone.
 
-This is also why representation failures are often mislabeled as moral failures. People say, “Indians like strongmen.” Sometimes they do. But often people choose strongmen because formal systems have failed to represent their needs in usable form. A poor family cannot eat constitutional procedure. A shopkeeper being extorted cannot wait twelve years for civil adjudication. A slum dweller facing eviction cannot hire a senior advocate and quote doctrine. Where the official system is slow, expensive, humiliating, or captured, people seek someone who can produce an outcome. The tragedy is that the outcome comes bundled with future domination, like buying a ceiling fan and receiving a cobra.
+You need somebody removed from a rented property. The court may take ten years. The goon takes two evenings.
 
-There is a sharp distinction between legality and legitimacy here. The goon is often illegal, but locally legitimate. The court may not recognize him, but the neighborhood may. The police may arrest him one week and use him the next. The politician may denounce violence in Delhi and outsource it in the district. The citizen may fear him and still request his help. This is not hypocrisy in the simple sense. It is life inside a system where official morality and practical survival have parted ways and now nod awkwardly at weddings.
+You need illegal construction approved. The file sleeps like Kumbhakarna. The goon wakes it up.
 
-The non-obvious point is that goondaism is not the opposite of governance. It is a degraded form of governance. It allocates resources, enforces norms, settles disputes, collects revenue, punishes deviance, protects clients, and manages access. In other words, it performs state-like functions without state-like accountability. This is why it persists. A mere criminal can be removed. A criminal who is also an institution leaves a vacancy.
+You need votes collected. Protesters dispersed. Rival posters torn down. Tender manipulated. Parking controlled. Sand stolen. Coal moved. Debt collected.
 
-British colonial rule did not invent every Indian thug, whatever the lazy romance of historical blame may suggest, but it did leave behind a state built more for control than service. Postcolonial politics democratized access to power without fully transforming the machinery of justice, policing, land administration, and local welfare. Add population pressure, scarcity, factional competition, caste blocs, religious mobilization, and the fabulous profitability of public contracts, and you do not get a clean Weberian state. You get an argument with stamps.
+There is a man for every occasion.
 
-The police are central to the matter, and not because all police are corrupt. That would be foolish and unfair. Many officers work under grim pressure, political interference, poor staffing, bad infrastructure, impossible caseloads, and public expectations that swing between “please save us” and “please ignore what our side is doing.” But a police system vulnerable to transfers, local political pressure, and selective enforcement becomes part of the goon ecology. A goon does not need to defeat the police. He only needs to predict them.
+India is not merely a country. It is a giant informal outsourcing operation.
 
-Courts matter too. Delay is not neutral. Delay is a subsidy to the powerful. If a case takes years, the person with money, muscle, and stamina wins before judgment. The goon lives in this time gap. He is the entrepreneur of delay. His message is brutally simple: the law may help you eventually; I can hurt you today.
+The fascinating thing is the sheer specialization.
 
-Economic informality adds fuel. Large parts of Indian life run through arrangements that are not fully documented, taxed, regulated, titled, licensed, or enforceable. Informality is not always sinister. It is often how the poor survive. But informality also creates vulnerability. If your shop extension is illegal, your tenancy informal, your job unofficial, your documents incomplete, your debt private, or your migration status precarious, you become governable by threat. The goon does not need to invent your insecurity. He audits it.
+America has gangsters. Italy has the mafia. Japan has the yakuza. Fine. But India has categories inside categories. Subspecies. Regional variants. Political hybrids. Seasonal mutations.
 
-There is also a cultural theater to Indian goondaism. The goon must be seen. His convoy, clothes, sunglasses, phone calls, followers, religious donations, gym body, funeral attendance, wedding presence, and charitable gestures are part of the operating model. Fear must circulate. Generosity must circulate too. He sponsors a festival, pays a hospital bill, arranges a school admission, helps during floods, and suddenly the man with three pending cases is “controversial,” which is polite society’s favorite word for “dangerous but useful.”
+Like mangoes.
 
-The media and cinema have not created this figure, but they have given him flattering lighting. The angry strongman is easy to romanticize in a society tired of forms, queues, clerks, and unanswered complaints. He gets things done. That phrase should always make us nervous. So does a bulldozer. So does a fever. So does a mob.
+There is the para dada. Bengal specializes in this fellow. He is usually unemployed in the official sense but permanently occupied in the practical sense. He knows everybody’s business. Which family is fighting over property. Which local boy failed exams. Which girl has a secret boyfriend. Which shopkeeper pays protection. Which policeman drinks. Which councillor steals. Which promoter is buying land.
 
-The clean solution would be boring and therefore politically difficult: faster courts, independent policing, transparent land records, campaign finance reform, local government capacity, witness protection, procurement integrity, professional municipal administration, social welfare that does not require begging a patron, and political parties that stop treating winnability as moral detergent. None of this fits on a campaign slogan. None provides the instant thrill of a televised raid, a demolished building, or a minister promising to crush something by Friday.
+Google Maps wishes it had this level of local intelligence.
 
-A realistic solution begins smaller and harder. Reduce the market for goons. Make ordinary legal processes cheaper, faster, and less humiliating. Protect complainants. Digitize records without merely digitizing corruption. Publish procurement data in usable form. Track case delays. Insulate police postings. Punish political parties reputationally and electorally for nominating candidates with serious charges. Strengthen municipal systems so that citizens do not need a local tough to fix drains, permits, or encroachments. Design welfare delivery so that benefits arrive as rights, not favors from a party office with plastic chairs and portraits of supreme leaders.
+The para dada survives because Indian bureaucracy exhausts people. A common citizen entering government process feels like a goat entering a hydraulic machine. Forms. Signatures. Delays. Missing documents. Somebody on leave. Somebody transferred. Somebody demanding Xerox copies from the Mughal period.
 
-But even this is constrained by reality. The people who benefit from goondaism are often the people positioned to reform it. That is the little joke history tells while picking your pocket. Criminalized politics survives because it solves problems for parties, funders, contractors, and frightened citizens. It is not maintained only by villains. It is maintained by convenience.
+So people turn to the unofficial system.
 
-India’s assortment of hoodlums is rich because the country’s informal power is rich. Every broken interface between citizen and state breeds a specialist. The land grabber grows where titles are weak. The tender mafia grows where procurement is opaque. The religious vigilante grows where identity can be weaponized. The caste enforcer grows where hierarchy survives law. The cyber fraudster grows where trust outruns digital literacy. The political muscleman grows where elections are fierce but institutions are thin. The white-collar hoodlum grows where paperwork can be made into a knife.
+That unofficial system has a face.
+Usually with stubble.
 
-So the question is not why India has goons. The question is why so many Indian systems still require, reward, excuse, fear, elect, hire, protect, and imitate them.
+Then comes the political goon. Ah yes. India’s finest export after software engineers and diabetes.
 
-A society does not get rid of hoodlums by pretending they are monsters from outside the gate. It gets rid of them by noticing the gatekeeper, the builder, the councillor, the contractor, the officer, the party worker, the priest, the broker, the app scammer, the respectable uncle, and the smiling man in the linen shirt all using the same basic trick: making lawful life feel slower, weaker, and more foolish than submission.
+Political parties publicly speak the language of democracy and privately operate like medieval clans with WhatsApp groups.
 
-That is the real scandal. Not that India has goons. Every society has them. The scandal is that too often the goon is not a failure of the system. He is the system, briefly honest about its methods.
+Every party denies using muscle power while mysteriously producing identical men with motorcycles during elections. These fellows materialize from nowhere like mosquitoes after rain.
 
-## Related Posts
+One party calls them volunteers.
+Another calls them cadres.
+A third calls them protectors of culture.
 
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [When the Office Learns to Beg](/blog/society/when-the-office-learns-to-beg)
-- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [The City That Begs at the Window](/blog/society/the-city-that-begs-at-the-window)
+Meanwhile ordinary citizens quietly lock doors early.
+
+The political goon is useful because he converts abstract ideology into physical pressure. Anybody can shout slogans in a television studio under air conditioning. The real business begins at street level. Who controls the booth. Who controls fear. Who controls crowds.
+
+That fellow with the party flag tucked under his arm and a permanently irritated face? He is not decoration. He is infrastructure.
+
+Then there is the real estate goon.
+
+This one is evolving rapidly.
+
+Earlier he looked dangerous. Now he often looks respectable. Polo shirt. SUV. Sunglasses. Says “brother” a lot. Talks about development.
+
+Never trust a man who says “brother” too smoothly.
+
+India’s property market is such a magnificent swamp of unclear titles, disputed ownership, political patronage, forged records, and ancestral confusion that even ghosts probably have litigation pending.
+
+So naturally a parallel enforcement industry emerged.
+
+Suppose an old widow refuses to vacate property.
+
+Enter stage left: local toughs.
+
+Suppose a slum must disappear for luxury apartments named things like “Emerald Serenity Heights.”
+
+Again the same fellows arrive.
+
+Sometimes politely.
+Sometimes less politely.
+
+A city reveals its moral condition by observing who gets moved and who does the moving.
+
+Then there is the religious goon. This one is particularly exhausting because he arrives carrying God as supporting documentation.
+
+He patrols food, clothes, films, jokes, romance, books, songs, and occasionally oxygen itself. He is permanently offended. Permanently vigilant. Permanently available for television debates.
+
+The old neighborhood thug at least wanted money. This fellow wants purity, which is much more dangerous because purity has no finish line.
+
+You cannot negotiate with somebody who believes heaven outsourced enforcement work to him personally.
+
+And then there is my favorite Indian invention: the educated goon.
+
+India produces these in industrial quantities now.
+
+He speaks excellent English.
+Uses words like ecosystem and disruption.
+Posts motivational quotes on LinkedIn.
+Commits ethical crimes with PowerPoint presentations.
+
+Earlier the thug carried bamboo sticks.
+
+Now he carries spreadsheets.
+
+He manipulates tenders, procurement, contracts, fake billing, data, admissions, licensing, consulting fees, shell companies, NGO money, regulatory loopholes. Same predatory instinct. Better grammar.
+
+Sometimes I think modern India did not eliminate the old goon. It simply sent him to business school.
+
+Meanwhile the ordinary middle-class Indian survives by developing advanced psychological techniques. Selective blindness. Tactical silence. Strategic friendliness. The famous Indian head wobble meaning: “I see the danger but also I have EMI payments.”
+
+You know what is funny?
+
+Every Indian claims to hate goons.
+
+Yet whenever there is trouble, the first question becomes:
+“Do you know somebody?”
+
+That sentence alone explains half the country.
+
+Because institutions are weak, personalized power becomes valuable.
+
+And because personalized power becomes valuable, men willing to intimidate become important.
+
+The system manufactures them.
+
+That is the part people miss.
+
+The goon is not outside the machine. He is often the oil keeping the broken machine moving another miserable day.
+
+I learned this years ago working in American healthcare IT systems. Strange comparison perhaps, but stay with me. In American hospitals the official workflow and actual workflow were often completely different species. On paper everything looked rational. Clean diagrams. Governance charts. Policies. Committees.
+
+Then you discovered one exhausted nurse secretly holding the entire operation together with undocumented workarounds and caffeine.
+
+India functions similarly, except instead of undocumented workflow you get undocumented power.
+
+The map and the territory divorced each other long ago.
+
+And somewhere in between sits a man in sandals deciding outcomes.
+
+There is another uncomfortable truth.
+
+Indian society secretly admires strength.
+
+Not moral strength.
+Not intellectual strength.
+
+Operational strength.
+
+The fellow who “gets things done.”
+
+That phrase has destroyed more civilizations than invading armies.
+
+A goon can often solve problems faster than the state. Illegal solution, yes. Ugly solution, yes. But immediate. Human beings are heavily biased toward immediate relief. If your drain is overflowing with sewage outside your house in July, you stop caring about constitutional theory remarkably fast.
+
+You want action.
+
+And action has a smell.
+Usually diesel fuel and paan.
+
+Of course the price comes later.
+
+That is the trick.
+
+The local tough who solved your parking problem today may decide tomorrow that your shop should contribute to festival funds. The political fixer who helped your nephew get a job may later demand turnout for a rally. Informal power never gives charity. It gives loans with hidden interest.
+
+India’s goon problem persists because it is tied to deeper things nobody wants to fix properly.
+
+Slow courts.
+Political funding.
+Police dependence on politicians.
+Broken urban planning.
+Land chaos.
+Mass unemployment among young men.
+Social hierarchy.
+Public humiliation.
+Weak local governance.
+
+Also boredom.
+
+Never underestimate boredom.
+
+A country full of restless young men with weak opportunity and strong ego is dry forest waiting for one matchstick.
+
+And now social media has entered the circus carrying kerosene.
+
+Earlier the local idiot could terrorize only one neighborhood. Now he can become a digital warlord from a rented room with a cracked Oppo phone and unlimited data.
+
+The cyber goon is today’s great mutation.
+
+He scams pensioners.
+Runs extortion rackets.
+Creates fake outrage.
+Threatens women online.
+Spreads rumors.
+Edits videos.
+Forms digital mobs.
+
+Earlier the village loudmouth needed lungs.
+
+Now he needs Wi-Fi.
+
+Sometimes late at night I scroll through Indian news and feel the country resembles one gigantic apartment building where every resident is simultaneously filing complaints against every other resident while the security guard is asleep and somebody’s cousin has stolen the water pump.
+
+Yet despite all this chaos, India somehow continues.
+
+That may be the most Indian thing of all.
+
+The trains still run mostly.
+Children still go to school.
+People still fall in love.
+Tea still arrives.
+Mothers still scream from balconies.
+Somebody still argues about cricket.
+Somebody still feeds stray dogs.
+Somebody still studies under bad light hoping to escape.
+
+Life squeezes through the cracks.
+
+Which is why the country feels both unbearable and strangely alive.
+
+The danger now is not merely street thuggery. The danger is normalization. When every citizen quietly accepts that rules are optional, influence is everything, intimidation is practical, and ethics are decorative, the goon wins before he even enters the room.
+
+And perhaps that is the real reason India produces such a rich assortment of hoodlums.
+
+Not because Indians are uniquely violent.
+
+Not because poverty automatically creates criminals.
+
+But because too many systems quietly whisper the same lesson every day:
+
+Being decent is slow.
+Being feared is efficient.
+
+And in a tired, overcrowded country running on heat, noise, frustration, aspiration, and jugaad, efficiency becomes very seductive indeed.
+
+P.S. References: Association for Democratic Reforms reports on criminal cases among elected representatives in India; Supreme Court police reform directives in Prakash Singh vs Union of India; research by Ward Berenschot on political patronage and strongmen in India; PRS Legislative Research papers on policing and criminal justice delays in India.
