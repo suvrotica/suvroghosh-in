@@ -2,11 +2,16 @@
 title: "Why I am Misunderstood as a Blogger"
 description: "A middle-aged Bengali healthcare IT architect writes honestly about failed startups, loneliness, aging, immigration fear, and the strange humiliation of surviving in modern professional life."
 date: "2026-05-11"
+thumbnail: "/images/Compress_20260511_221054_4931.jpg"
 category: "Life"
 tags: ["Healthcare IT", "Indian Startup Failure", "Middle Age", "Kolkata Life", "NRI Return", "US Healthcare", "Healthcare Architecture", "Career Burnout", "Indian Corporate Culture", "Loneliness", "Mental Health", "Brown Immigrant Experience", "Technology Careers", "Consulting Life", "Life In Kolkata", "Aging In Tech", "Indian Society", "Startup Reality", "Healthcare Technology", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
+<Pi src="Compress_20260511_221054_4931.jpg" />
+
+<TTS />
 
 Acronyms used in this post:
 
