@@ -1,13 +1,17 @@
-lake-maracaibo-lightning-gene-hunt.md
 ---
 title: "The Lake That Lit Up Genes: Maracaibo, Memory, and Huntington’s Disease"
 description: "A human, slightly chaotic journey through Venezuela’s lightning lake and the unlikely genetic detective story that changed modern medicine."
 date: "2026-05-12"
+thumbnail: "/image/Compress_20260512_191418_8592.jpg"
 category: "Science & Healthcare IT"
 tags: ["Huntington disease genetics", "Lake Maracaibo Venezuela", "genetic marker discovery", "neurodegenerative disease research", "DNA repeat expansion", "linkage analysis history", "medical genetics story", "neurology inheritance patterns", "global health history", "gene mapping breakthrough", "rare disease epidemiology", "biomedical discovery narrative"]
 published: true
 color: "deep-blue"
 ---
+
+<TTS/>
+
+<Pi src="Compress_20260512_191418_8592.jpg" />
 
 Acronyms used in this article  
 HD — Huntington’s Disease, a progressive inherited brain disorder  
