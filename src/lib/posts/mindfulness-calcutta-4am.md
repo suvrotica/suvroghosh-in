@@ -1,6 +1,5 @@
 ---
 title: "Mindfulness?"
-thumbnail: "/images/IMG-20260215-WA0002.jpg"
 description: "Meditation is simple. Living inside your own head is not. A sleepless 4 a.m. ramble from the damp edges of Calcutta about writing, bipolarity, tea, gurus, stray cats, and the strange business of staying sane."
 date: "2026-02-11"
 thumbnail: "/images/Compress_20260513_042026_6712.jpg"
