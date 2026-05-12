@@ -1,14 +1,18 @@
-mindfulness-calcutta-4am.md
 ---
 title: "Mindfulness?"
 thumbnail: "/images/IMG-20260215-WA0002.jpg"
 description: "Meditation is simple. Living inside your own head is not. A sleepless 4 a.m. ramble from the damp edges of Calcutta about writing, bipolarity, tea, gurus, stray cats, and the strange business of staying sane."
 date: "2026-02-11"
+thumbnail: "/images/Compress_20260513_042026_6712.jpg"
 category: "Calcutta"
 tags: ["Mindfulness", "Meditation", "Calcutta", "Kolkata", "Bipolar Disorder", "Mental Health", "Anxiety", "Writing", "Insomnia", "Lower Middle Class Life", "Indian Life", "Tea Stall", "Urban India", "Stray Cats", "Loneliness", "Middle Age", "Depression", "Neuroscience", "Default Mode Network", "Ordinary Life", "Bengali Blogger", "Street Philosophy", "4AM Thoughts", "Human Condition", "Modern Life", "Overthinking", "Existential Humor", "City Life", "Mindfulness Meditation", "Mental Noise", "Self Reflection", "Calcutta Weather", "Indian Society", "Daily Life", "SuvroGhosh"]
 published: true
 color: "black"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260513_042026_6712.jpg" />
 
 Acronyms and Terms
 
