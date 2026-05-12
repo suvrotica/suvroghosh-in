@@ -41,7 +41,7 @@ People here do not lack intelligence entirely. That would be unfair. What they o
 
 You can knock all day. Nothing opens.
 
-And before somebody starts typing furiously in the comments, yes, this is true everywhere on Earth to some extent. Americans have conspiracy lunatics. Europeans have their own flavors of nonsense. But India has this special pressure cooker combination of mythology, bad education, pollution, heat, bureaucracy, and family conditioning that can turn even educated people into intellectual cauliflower.
+And, yes, this is true everywhere on Earth to some extent. Americans have conspiracy lunatics. Europeans have their own flavors of nonsense. But India has this special pressure cooker combination of mythology, bad education, pollution, heat, bureaucracy, and family conditioning that can turn even educated people into intellectual cauliflower.
 
 I see it daily.
 
