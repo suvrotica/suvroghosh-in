@@ -1,14 +1,17 @@
-crispr_for_the_man_waiting_for_the_205_bus.md
 ---
 title: "CRISPR: The Tiny Bacterial Trick That May Change Human Destiny"
 description: "CRISPR sounds like a villain from a science fiction film, but its story begins in bacteria, yogurt vats, and scientific accidents. This is the strange and exciting history of how humanity discovered a way to edit life itself."
 date: "2026-05-12"
+thumbnail: "/images/Compress_20260512_181005_5984.jpg"
 category: "Science"
 tags: ["CRISPR", "Gene Editing", "DNA", "Genetics", "Biotechnology", "Science Explained", "CRISPR Cas9", "Molecular Biology", "Future Medicine", "Human Genome", "Biology For Beginners", "Scientific Discoveries", "History of Science", "Genome Editing", "Popular Science", "Medical Science", "Technology", "Science History", "Genetic Engineering", "SuvroGhosh"]
 published: true
 color: "emerald"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260512_181005_5984.jpg" />
 
 Acronyms and Terms Used:
 
