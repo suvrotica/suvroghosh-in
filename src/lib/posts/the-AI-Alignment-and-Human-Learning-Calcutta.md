@@ -1,13 +1,17 @@
-AI-Alignment-and-Human-Learning-Calcutta.md
 ---
 title: "When Systems Train Wrong: AI Alignment, Human Learning, and the Quiet Breakdown of Talent"
 description: "A healthcare IT architect reflects on AI alignment, broken learning environments, and why systems in both machines and societies fail in similar quiet ways."
 date: "2026-05-12"
+thumbnail: "/images/Compress_20260512_193939_9310.jpg"
 category: "Healthcare IT"
 tags: ["AI alignment", "healthcare IT", "HL7", "FHIR", "EHR systems", "data interoperability", "education system failure", "India technology talent", "system design", "clinical informatics", "machine learning governance", "data quality", "Calcutta life"]
 published: true
 color: "dark"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260512_193939_9310.jpg" />
 
 Acronyms first, because otherwise everything becomes alphabet soup pretending to be wisdom:
 
