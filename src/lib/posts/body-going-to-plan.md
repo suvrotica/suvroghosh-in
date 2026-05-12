@@ -75,8 +75,6 @@ The body you live inside is prehistoric equipment operating inside a completely 
 Then we ask:
 “Why are people anxious?”
 
-My God.
-
 It is like throwing a goat into a casino and becoming concerned about the goat’s emotional regulation.
 
 The strange thing is this: anxiety actually makes perfect sense.
@@ -147,7 +145,7 @@ Like Calcutta during peak summer when suddenly an entire neighborhood loses powe
 
 Maybe the brain occasionally pulls the main switch because modern life keeps demanding impossible voltage.
 
-I am not saying mental illness is fake. Dear God no.
+I am not saying mental illness is fake. 
 
 Anybody who has spent nights unable to move from bed while their own thoughts chew them alive knows this is physical. Chemical. Real.
 
