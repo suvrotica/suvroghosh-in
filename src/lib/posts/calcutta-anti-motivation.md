@@ -1,13 +1,17 @@
-calcutta-anti-motivation-2.md
 ---
 title: "I Am Probably the Least Motivational Blogger in India"
 description: "A middle-aged Bengali man in Calcutta explains why he distrusts motivational culture, why survival matters more than inspiration, and why freedom sometimes means giving up on changing everyone else."
 date: "2026-05-12"
+thumbnail: "/images/Compress_20260512_213025_5005.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Calcutta", "Kolkata", "Middle Class India", "Depression", "Bipolar", "Indian Society", "Science", "Atheism", "Rationalism", "Indian Culture", "Self Reflection", "Mental Health", "Lower Middle Class", "Urban India", "Indian Blogger", "Reality Of India", "Life In Kolkata", "Modern India", "Human Nature", "Existentialism", "Indian Families", "Religion", "Skepticism", "Loneliness", "Single Life", "Bengali Writer"]
 published: true
 color: "stone"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260512_213025_5005.jpg" />
 
 Acronyms and Terms
 
