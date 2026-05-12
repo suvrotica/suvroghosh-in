@@ -1,13 +1,17 @@
-falling-through-the-southern-edge-at-3am.md
 ---
 title: "Falling Through the Southern Edge at 3 AM"
 description: "A middle-aged Bengali man with bipolar disorder, unemployment, and too much education discovers that nightmares are often just documentaries with better lighting."
 date: "2026-05-13"
+thumbnail: "/images/Compress_20260513_040346_6756.jpg"
 category: "Personal Essay"
 tags: ["Mental Health", "Bipolar Disorder", "Calcutta", "Kolkata", "Middle Class Bengali", "Unemployment", "Depression", "Anxiety", "Urban Isolation", "Indian Middle Class", "South Kolkata", "Aging Alone", "Modern India", "Existential Writing", "Psychological Struggle", "Loneliness", "Bengali Life", "Life In Kolkata", "Economic Anxiety", "Single Men", "Ordinary Life", "Late Capitalism", "Human Condition", "Personal Narrative", "Contemporary India", "Calcutta Streets", "Bengali Essay", "Urban Decay", "Modern Loneliness", "Consulting Life", "Mental Illness", "Nightmare"]
 published: true
 color: "#343434"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260513_040346_6756.jpg" />
 
 Acronyms used in this post:
 
