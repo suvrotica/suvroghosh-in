@@ -27,7 +27,7 @@ BCE — Before Common Era. Modern secular equivalent of BC.
 
 A few mornings ago the power went out again.
 
-Not dramatically. Kolkata power cuts no longer arrive with the operatic flourish they had in the 1980s. They now slip in quietly like aging pickpockets. One second the fan is turning. Next second the room becomes a warm lung full of trapped May air and distant scooter horns.
+Not dramatically. Kolkata power cuts no longer arrive with the operatic flourish they had in the 1980s. They now slip in quietly like aging pickpockets. One second the fan is turning. Next second the room becomes a warm lungi full of trapped May air and distant scooter horns.
 
 I was sitting there sweating into my tea, scrolling through headlines about artificial intelligence replacing jobs, billionaires building apocalypse bunkers, and another politician promising “transformational growth” with the confidence of a man selling miracle hair oil to bald goats.
 
