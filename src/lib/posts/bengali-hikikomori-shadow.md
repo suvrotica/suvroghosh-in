@@ -1,66 +1,172 @@
 ---
-title: "A Bengali Hikikomori Measures the Room"
-description: "A darkly reflective essay on shrinking life, failed promise, madness, and the strange architecture of isolation."
-date: "2026-05-07"
+title: "The Bengali Hikikomori and the Shrinking Map of His Life"
+description: "A middle-aged Bengali man in Kolkata wrestles with depression, failure, madness, modernity, and the strange humiliation of becoming smaller while the world grows louder."
+date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_031419_9577.jpg"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal", "Bengali Hikikomori Shadow", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "existential crisis", "bengali hikikomori", "depression", "mental health", "midlife crisis", "kolkata life", "loneliness", "alienation", "nihilism", "philosophy", "anxiety", "bipolar depression", "self reflection", "underachievement", "urban isolation", "modern life", "social critique", "dark humor", "identity crisis", "psychology", "inner darkness", "lost potential", "ordinary life", "calcutta essays", "human condition", "despair", "introspection"]
 published: true
-color: "#111827"
+color: "#1f2937"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260507_031419_9577.jpg" />
 
-Acronyms expanded in this post:
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+Acronyms and Terms
+
+Healthcare IT = Healthcare Information Technology, the giant invisible plumbing system of hospitals, insurance, labs, billing, patient records, and regulatory machinery.
+
+Hikikomori = A Japanese term describing people who withdraw almost completely from society and live in prolonged isolation.
+
+BPD = Bipolar Depression, a mood disorder involving alternating emotional states, often including depression, anxiety, agitation, and periods of unstable energy or thought.
 
 ---
 
-A life can shrink without making a sound, which is one of its crueler engineering tricks.
+The strange thing about becoming a failure is that nobody sends you an official letter.
 
-Once there was supposed to be a bright Bengali chap here, some clever little Calcutta filament glowing with promise, exam marks, vocabulary, ambition, and that irritating middle-class certainty that the future was a staircase if only one kept climbing. Now there is this head. This room. This dwindling republic of one citizen, one chair, one bed, one fan, one nervous digestive tract, and a window through which the world continues its vulgar procession without asking permission.
+No peon arrives sweating at your door with a government envelope saying: “Dear Sir, after careful review, society regrets to inform you that your life has quietly drifted into the category of diminished expectations.”
 
-I have become, in the Japanese phrase, a hikikomori, though naturally Bengal cannot import even despair without modifying it with humidity, family history, unpaid bills, and the faint smell of old rice. The Japanese version at least has a clean bureaucratic sadness to it. Mine is more of a North Calcutta mezzanine arrangement: damp walls, ancestral dust, a mind muttering in English, Bengali, and several dialects of private failure.
+No.
 
-The plot of my influence has narrowed. Once I imagined myself moving across continents, arguments, systems, cities, ideas. Now I move from bed to bathroom to table with the careful footwork of a man crossing a minefield laid by his own nervous system. A cup misplaced. A call unanswered. A message seen but not opened. A sudden memory of who I was supposed to become. Boom. There goes another afternoon.
+It happens the way paint peels from an old Kolkata wall. Slowly. Moisture first. Then hairline cracks. Then one day half the plaster is lying beside a dead lizard and an abandoned Horlicks bottle and you suddenly realize the wall had been surrendering for years.
 
-The crowd outside is maddening, but worse, it has installed a branch office in my skull. It jeers from there with impressive punctuality. It asks what happened. It asks why I did not become more. It asks why the world has built so much while I have become less useful than a mule, because the mule at least can carry sacks and look tragic in a productive way. I cannot even offer that. I think, and therefore I probably am not. Cogito ergo sum, that old philosophical brass band, does not quite survive a depressive Bengali afternoon. Thought does not prove existence. Sometimes it proves only that the cage has a commentator.
+That is roughly how middle age arrived for me.
 
-And madness, let us be honest, has been slandered by the respectable. People speak of sanity as though it were marble flooring, polished and level. I have seen enough sane men make catastrophes with clean shirts and reasonable voices to doubt this advertisement. Sanity, in the public form, often looks like a committee approving a bridge to nowhere, a policy strangling the poor in the name of efficiency, a bank smiling through its teeth, a minister garlanding a fiction until the fiction acquires a statue and a police escort.
+Once upon a time — and all tragic stories begin with “once upon a time,” even the ones involving broadband bills and gastric acidity — I was supposed to become somebody. Not Amitabh Bachchan somebody. Let us not get carried away. But at least one of those respectable, intellectually shiny Bengali specimens who speak calmly at seminars while adjusting rimless glasses and saying things like “larginal utility” and “post-structural framework.”
 
-Madness at least occasionally tells the truth before knocking over the furniture.
+Instead I became this.
 
-What frightens me is not that I am mad. What frightens me is that the sane world has arranged itself so convincingly around madness and called the arrangement civilization. Look at its trapped lives, its wheels sunk in policy-mud, its distinguished frauds preserving their influence with footnotes, foundations, flags, and funerary speeches. The masses are told stories, and the stories are given marble bases, and the marble bases are guarded by men with sticks. Reality is not denied. It is outsourced to those with clout.
+A fifty-one-year-old Bengali bachelor living in the boondocks of Kolkata, sitting under a fan that sounds like a wounded helicopter, doing irregular consulting work in Healthcare IT for American clients while carefully calculating whether ordering chicken rezala this week would constitute financial recklessness.
 
-Against all this, what is one underachieving Bengali recluse in a room?
+The irony is delicious in a cruel sort of way.
 
-A smudge. A clerical oversight. A man-shaped annotation in the margin of history, written in faint pencil and then rubbed by a bored thumb. I may feel unique, but uniqueness without consequence is merely eccentric dust. The world’s fetishists are not impressed by the private mythology of non-beings. They want scale, spectacle, achievement, a measurable disturbance in the pond. I offer, at most, a mosquito ripple.
+For fifteen years I worked around gigantic American hospital systems with databases larger than small countries, systems processing millions of patient records every hour, entire digital cathedrals humming day and night. Meanwhile my own life now resembles one of those tiny stationery shops near Gariahat that sells one Lux soap, three geometry boxes, and ten dusty copies of Rapidex English Speaking Course.
 
-This is the ugliest part: the suspicion that disappearance would not be dramatic. No violins. No footnote. No scholar in a future century pausing over my name and saying, ah, here was a minor ruined genius of the late collapsing age. More likely, I will vanish as most people vanish, not as tragedy but as administrative evaporation. A few files. A few passwords. A few photographs no one knows how to interpret. Then silence, which is history’s default setting.
+Human beings are wonderfully asymmetrical creatures.
 
-Still, the mind resists its own erasure. Even at its lowest, it stages little rebellions. It compares the darkness to an umbra and then, being a ridiculous educated fool, remembers the penumbra too. It drags astronomy into depression, as though sadness were an eclipse with geometry, as though enough cleverness could locate the missing edge of light. But some shadows do not arrive with clean diagrams. Some expand like black holes, not dramatically, not cinematically, but with patient appetite, eating matter, space, time, and finally the small domestic future in which one might have taken a bath, answered a call, cooked dal, written something useful, or stepped outside before evening.
+Outside my room the world keeps achieving things at a frightening speed. Every week some twenty-three-year-old child with suspiciously white teeth invents an Artificial Intelligence company that “disrupts” civilization. Disrupt is a marvelous modern word. Earlier generations used words like build, repair, improve. Now we disrupt. It sounds less like progress and more like diarrhea.
 
-The modern world worsens this because it achieves constantly in public. Every day it invents a new miracle and a new humiliation to accompany it. Machines write poems, children become founders, grinning men explain productivity systems, and somewhere a twenty-three-year-old with excellent posture is disrupting grief through an app. The more the world accelerates, the more I feel like an obsolete tramline under asphalt. Still there, technically. Historically interesting. Operationally irrelevant.
+Meanwhile I wake up wondering if today is the day my brain decides to stage another coup.
 
-But irrelevance is not the same as nonexistence, though depression is a genius at forging that equivalence. It takes a fact and dresses it as a verdict. You are not currently useful, therefore you are useless. You are unseen, therefore you are unseeable. You have failed in several visible ways, therefore the whole hidden ledger is void. This is not reasoning. This is a kangaroo court inside the skull, with the judge, prosecutor, witness, and executioner all wearing the same exhausted face.
+That is the exhausting part about depression mixed with anxiety. People think sadness is the main event. It is not. Sadness you can understand. Sadness sits quietly like an old aunt after a funeral.
 
-A Bengali hikikomori knows this and does not know it. That is the joke. The intelligence survives, but not always as rescue. Sometimes it becomes a lamp in a locked room, illuminating the bars with scholarly precision. One can diagnose the cage, classify the bars, write a small essay on their metallurgical properties, and still not leave. Knowledge is not freedom. Sometimes knowledge is only the better description of captivity.
+Anxiety is different.
 
-And yet description matters. To name the room is not to escape it, but it does prevent the room from becoming the universe. This is perhaps the smallest rebellion left to me: to refuse the final flattening. I may be diminished, but I am not merely a nuisance requiring removal. I may be underachieved, but I am not only waste. I may be ridiculous, frightened, bitter, unemployed by destiny, and spiritually dressed in yesterday’s lungi, but I am still the witness of a particular weather no one else can report.
+Anxiety is a municipal corporation dogcatcher running through your nervous system at 3 a.m.
 
-That may not be grandeur. It is certainly not LinkedIn. It will not impress the distinguished bastards polishing their statues. But it is something.
+Even harmless things acquire claws. Phone calls. Doorbells. Emails. A WhatsApp blue tick. A client saying “Can we talk?” Those four words alone can reduce a middle-aged consultant to the emotional stability of wet bread.
 
-So I remain here, in this narrow Calcutta enclosure, half shadow, half scribe, listening to the crowd outside and the smaller, crueler crowd within. I do not claim victory. Victory is too athletic a word for this room. I claim only the right to observe the wreckage without agreeing with every accusation written on it.
+And then comes the truly embarrassing part.
 
-A life can shrink without making a sound.
+You begin avoiding life itself.
 
-But even a shrunken life, if it can still speak, is not yet zero.
+Not heroically. Not poetically. Just incrementally. Like a man stepping around puddles until he realizes he has accidentally walked himself into a swamp.
 
-## Related Posts
+The Japanese have a neat word for this: hikikomori. Of course the Japanese make even psychological collapse sound elegantly organized. In Bengal we do not have such efficient branding. Here it is simply called “cheleta aar beroy na.” The boy does not go out anymore.
 
-- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
-- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
+That sentence contains entire graveyards.
+
+Some days I sit by the window watching ordinary Kolkata life proceed with astonishing determination. The fish seller screaming prices like an auctioneer possessed by demons. Auto drivers arguing with the intensity of constitutional lawyers. Somebody frying telebhaja in old oil that smells simultaneously inviting and carcinogenic. Children playing cricket in lanes barely wide enough for oxygen molecules.
+
+And I think: how are all these people continuing?
+
+Where do they get the fuel?
+
+Because modern life increasingly feels like one of those old Ambassador cars held together entirely by rope, prayer, and contradictory noises.
+
+The world insists this is sanity.
+
+That is the joke.
+
+The officially sane world appears completely deranged to me now. Everywhere you look there are educated maniacs managing institutions. Governments behaving like drunk uncles at weddings. Billionaires building rockets while ordinary people cannot afford onions. News channels shouting every evening like they are trying to exorcise Satan through panel discussions.
+
+And social media. Good God.
+
+A platform originally designed for sharing photographs of lunch has somehow evolved into a global psychiatric experiment.
+
+Everybody performing happiness.
+
+Everybody branding themselves.
+
+Everybody becoming a product.
+
+You are no longer merely alive. You must also market the fact.
+
+Meanwhile I cannot even market myself properly. Somewhere inside me there remains the ghost of an intelligent man, but he now wanders around like a retired zamindar searching for servants in a house converted into a warehouse.
+
+That is what underachievement feels like.
+
+Not dramatic failure.
+
+Not bankruptcy.
+
+Not handcuffs.
+
+Just the slow horror of becoming smaller than your younger self expected.
+
+People misunderstand this completely. They think hopelessness arrives with thunder and lightning. Usually it arrives wearing bathroom slippers. Quietly. Casually. It sits beside you while you eat muri and says, “So. This is it then.”
+
+And perhaps worse than failure itself is invisibility.
+
+History only remembers a tiny number of people. The rest of us vanish like vapor from rice. Entire generations disappear without leaving so much as a sentence behind. Somewhere there was probably a brilliant man in 1842 who made excellent jokes about mangoes and understood the stars and loved someone deeply and died unknown beside a pond.
+
+Gone.
+
+Finished.
+
+The universe did not pause for even half a second.
+
+This realization hits differently after fifty.
+
+When you are young, obscurity feels temporary. At fifty-one it begins feeling architectural.
+
+You start understanding why old Bengali men stare silently from balconies.
+
+They are not relaxing.
+
+They are conducting archaeological excavations into their own lives.
+
+Sometimes I wonder whether madness itself is actually the final honest response to modern civilization. Perhaps the madman is merely the only fellow refusing to participate in collective hallucination.
+
+Because look carefully.
+
+We spend our lives chasing money to buy things we barely use in houses we hardly inhabit while destroying our health to maintain schedules invented by people we dislike. Then motivational speakers arrive to explain “mindfulness” at ₹12,000 per seminar.
+
+The whole arrangement feels like a circus designed by tax consultants.
+
+And yet — here is the irritating thing — life still occasionally leaks beauty through the cracks.
+
+A cool breeze in May after unbearable heat.
+
+The smell of rain hitting dust.
+
+A surprisingly good cup of tea.
+
+An old Hemanta Mukhopadhyay song floating from somebody’s kitchen radio.
+
+A stray cat sleeping with the confidence of Mughal royalty.
+
+These tiny things keep sabotaging total despair.
+
+You think you have reached philosophical finality. Then suddenly some roadside egg roll tastes so magnificent that existence receives a temporary stay order.
+
+Human beings are absurdly easy to reboot sometimes.
+
+So no, I no longer believe I am destined for greatness. That train has left Howrah Station long ago and probably derailed near Bardhaman. But I also no longer fully believe the darker verdict either — that I am merely disposable waste.
+
+Depression loves absolute statements.
+
+Reality rarely cooperates.
+
+Maybe some lives are not meant to become monuments. Maybe some are only meant to become observations. A witness account from the edges. A tired Bengali fellow noting down what modern life feels like from inside the machinery.
+
+That is still something.
+
+Not fame.
+
+Not victory.
+
+But something.
+
+And in an age where everybody is shouting, perhaps simply telling the truth in a human voice is already a minor act of rebellion.
