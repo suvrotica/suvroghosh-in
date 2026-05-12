@@ -1,85 +1,254 @@
 ---
-title: "The Body Going to Plan"
-description: "A Calcutta essay on bipolar depression, anxiety, unemployment, and the unnerving possibility that the mind is not broken so much as badly matched to the artificial world it has been forced to inhabit."
-date: "2026-05-06"
+title: "Maybe the Body Is Not Broken"
+description: "A middle-aged unemployed man in Calcutta wonders whether bipolar depression and anxiety are not defects, but ancient survival machinery trapped inside a world of notifications, rent, loneliness, and artificial modern life."
+date: "2026-05-13"
 thumbnail : "/images/Compress_20260506_160241_1669.jpg"
-category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Body Going To Plan", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
+category: "Calcutta"
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "bipolar depression", "anxiety disorder", "mental health", "Calcutta life", "middle class India", "unemployment", "urban loneliness", "modern life stress", "human psychology", "DNA and behavior", "evolutionary psychology", "bengali writer", "depression essay", "single middle aged man", "Kolkata", "psychology and society", "ordinary life philosophy", "neuroscience", "dopamine", "stress and society", "modernity", "mental illness", "human condition", "life in India", "existential writing"]
 published: true
-color: "#4B5563"
+color: "#3f3f46"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260506_160241_1669.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+Acronyms and Terms
+
+DNA — Deoxyribonucleic Acid, the inherited biological instruction system inside living organisms.
+
+MRI — Magnetic Resonance Imaging, a machine used to create detailed images of the inside of the body.
+
+SSRI — Selective Serotonin Reuptake Inhibitor, a class of antidepressant medicines commonly prescribed for depression and anxiety.
+
+DSM — Diagnostic and Statistical Manual of Mental Disorders, the psychiatric classification handbook used mainly in the United States.
 
 ---
 
-Depression may not always be the body going wrong; sometimes it feels more like the body going to plan, with a terrible punctuality.
+Maybe the body is not broken.
 
-That is the thought I keep circling these days, not with the tidy confidence of a scientist, nor the smooth bedside calm of a doctor, but with the suspicious attention of a middle-aged unemployed man in Calcutta whose nervous system behaves like a faulty ceiling fan in May: too fast, too slow, whining, wobbling, threatening to detach itself and perform an autopsy on the room. Bipolar depression and comorbid anxiety are supposed to be illnesses, disorders, disruptions, malfunctions in the machinery. I do not reject that. I have felt enough of the machinery grinding bone against bone to know that chemistry is not metaphor. But I wonder whether the deeper joke is that some of this machinery is not broken at all. Perhaps it is doing exactly what Deoxyribonucleic acid [DNA, the inherited molecular instruction system that carries biological information across generations] arranged for it to do, only under circumstances so artificial, so absurdly overbuilt, that the old equipment now produces symptoms instead of survival.
+That sounds like the sort of sentence a madman mutters while standing barefoot on a tramline talking to pigeons. Which, to be fair, in this heat, in this city, with this electricity bill, is not entirely impossible.
 
-The body is ancient. The world is new. That is the mismatch at the center of the whole comedy, if comedy is allowed to wear hospital slippers and stare at the wall for six hours.
+But listen.
 
-For most of human history, the mind did not have to absorb job portals, algorithmic rejection, online comparison, urban noise, unpaid bills, family expectation, social ranking, fluorescent lighting, political shouting, collapsing weather, news from five continents, and the soft little execution performed by every unanswered application. The caveman body, which is not a romantic figure but merely our biological ancestor with fewer passwords, knew immediate danger. Snake. Hunger. Enemy. Storm. Fever. Exile. The modern mind knows danger with no visible predator. It wakes in a room in north Calcutta or south Calcutta or any cramped middle-class room with peeling paint and a fan stirring warm air, and the tiger is invisible but everywhere. It is in the bank account. It is in the inbox. It is in age. It is in the polite silence of people who once had use for you. It is in the market’s preference for younger, cheaper, more cheerful bodies who can speak in bullet points and pretend ambition is a scented candle.
+I have been wondering lately whether bipolar depression and anxiety are sometimes less like “errors” and more like an old machine reacting honestly to a completely insane environment.
 
-Anxiety, then, is not foolish. It is the ancient alarm system discovering that the forest has become a spreadsheet.
+Not nobly. Not poetically. Certainly not romantically. There is nothing romantic about staring at a wall fan for forty minutes because your mind feels like wet cement and your chest feels as if somebody has parked a scooter on it.
 
-The cruel part is that the body does not know symbolic danger from physical danger as cleanly as our civilized vanity pretends. A failed career does not have teeth, but the body feels teeth. Social exclusion does not chase you through tall grass, but the body feels pursuit. Unemployment does not strike with a club, but it rearranges sleep, appetite, shame, posture, breathing, memory, and the little electrical weather inside the skull. The body counts status as survival because, for much of human existence, it was. To be cast out from the group was not a philosophical inconvenience. It was death with a long walk attached. So now when the phone does not ring, when the résumé disappears into some corporate drainage system, when a former colleague becomes an important person with a title and an expense account while one sits in Calcutta counting the ruins, the body does not say, “This is an unfortunate labor-market distortion.” The body says, “You are outside the firelight.”
+Still.
 
-Bipolar depression makes this worse because it does not merely darken the room. It falsifies the architecture of time. A normal bad day is bad in weather. Bipolar depression is bad in cosmology. The future collapses. The past becomes evidence. Every failure, embarrassment, unfinished plan, broken ambition, misspent year, and social humiliation is summoned like a prosecution witness. The mind, which once could leap, connect, invent, argue, seduce itself with possibility, becomes a clerk in a morgue. It tags dead hopes and files them alphabetically.
+The thought stays.
 
-And yet I wonder if even this has a biological logic, however monstrous. Depression slows the animal. Anxiety scans the horizon. Bipolarity may be the nervous system’s disastrous talent for changing gears too violently, as if evolution installed a racing engine in a bullock cart and then abandoned maintenance. In one state, the mind accelerates, floods with ideas, associations, appetites, grand designs, unbearable meanings. In another, it shuts down, withdrawing energy from the outer world like a defeated empire pulling troops from impossible provinces. Both states may have once had uses in small doses. Alertness. Risk-taking. Pattern detection. Withdrawal. Conservation. Reassessment. The tragedy is dosage. The tragedy is duration. The tragedy is modern life taking an ancient adaptive tendency and feeding it industrial quantities of stress until it becomes pathology.
+Because if you look carefully at modern life, really look at it the way a suspicious Bengali uncle inspects fish at Gariahat market, poking it from twelve angles before buying, the whole thing begins to seem slightly deranged.
 
-The artificial world does not merely trigger the illness. It collaborates with it.
+Take an ordinary day.
 
-Cities like Calcutta are especially good at this collaboration because they preserve every century at once. Here the prehistoric nervous system is not only trapped inside the modern economy; it must also negotiate family hierarchy, colonial residue, bureaucratic decay, neighborhood scrutiny, class anxiety, decaying infrastructure, and the special Bengali habit of turning disappointment into a minor literary tradition. The body wants sunlight, movement, tribal belonging, predictable labor, shared meals, physical exhaustion, and sleep under honest darkness. Instead, it receives dust, traffic horns, LED glare, WhatsApp forwards, medical bills, job uncertainty, and the moral instruction that a man without income should still maintain dignity, optimism, and preferably a tucked-in shirt.
+You wake up at 5:12 in the morning because some dog has decided the end times are near and must be announced to the neighborhood immediately. The room is already warm. The ceiling fan rotates with the enthusiasm of a retired government clerk. Your phone glows beside the pillow like a radioactive biscuit.
 
-Middle age adds its own bureaucratic stamp. At twenty-five, despair is at least dramatic. It has cheekbones. At fifty, despair has paperwork. It sits beside you with reading glasses and asks what exactly happened to the plan. The single unemployed middle-class man becomes a sort of civic ghost, tolerated but not quite included, living evidence that education, intelligence, foreign exposure, technical skill, and effort do not necessarily combine into a life. People prefer simpler stories. They like winners, sufferers who recover attractively, failures who confess responsibility, or eccentrics who become marketable. They do not know what to do with the man who is articulate, wounded, difficult, technically competent, emotionally radioactive, and inconveniently still alive.
+Before even brushing your teeth you have already absorbed:
+bad news,
+job anxiety,
+world politics,
+three advertisements,
+two scams,
+one successful former classmate in Canada smiling beside a lake,
+and a video explaining why your life would improve if you bought magnesium supplements from Singapore.
 
-So one retreats.
+Meanwhile your actual body — the old animal body, the one carried down through caves and forests and mud and famine and predators — is still basically expecting:
+food,
+tribe,
+sunlight,
+movement,
+rest,
+safety.
 
-Retreat is easily misread as laziness, arrogance, misanthropy, or moral failure. Sometimes it contains traces of all four, because human beings are muddy creatures and not clean diagnostic categories. But retreat can also be the nervous system refusing further abrasion. Crowds become sandpaper. Small talk becomes taxation. Advice becomes assault. Cheerfulness becomes evidence of a conspiracy by people whose serotonin has never had to appear before a tribunal. The anxious-depressed body begins to prefer solitude not because solitude is paradise, but because it is at least administratively simpler. Alone, one can stop performing the role of the acceptable person. Alone, one can be the damaged instrument without having to make pleasant music for visitors.
+Instead we give it Wi-Fi and panic.
 
-This is where the question becomes dangerous. If the body is going to plan, does that mean suffering is destiny? I do not think so. That is the lazy fatalism waiting in the corner, smoking and hoping to be mistaken for wisdom. DNA is not a prison sentence written in divine ink. It is a library of tendencies, vulnerabilities, thresholds, repairs, improvisations. Genes load the dice; the world keeps throwing them against concrete. Biology is real, but so is environment. Chemistry is real, but so is rent. Mood disorder is real, but so are job markets, social cruelty, family silence, bad sleep, pollution, isolation, and the thousand daily indignities that enter the bloodstream by routes no laboratory panel fully captures.
+Then we become surprised when the wiring starts smoking.
 
-The phrase “chemical imbalance” was always too small for the catastrophe. It is not wrong exactly, just miserably insufficient, like describing a cyclone as “air behaving ambitiously.” The brain is chemical, electrical, social, historical, metabolic, linguistic, and economic all at once. A mood episode is not merely a private storm inside the skull. It is the meeting point of inheritance, memory, stress, status, sleep, medication, inflammation, sunlight, shame, class, and whatever fresh insult the day has brought wrapped in ordinary packaging. The modern world loves narrow explanations because narrow explanations create sellable interventions. But the lived mind is not narrow. It is a bazaar in a thunderstorm.
+This is the part people skip over.
 
-Still, I must be careful not to romanticize illness. There is a shabby glamour attached to suffering, especially among people who write. One begins to imagine the wound as a credential, the brokenness as depth, the darkness as proof of seriousness. This is nonsense with a velvet collar. Depression is not wisdom. Anxiety is not intelligence. Bipolarity is not genius. These conditions may sometimes drag strange perceptions to the surface, but they also ruin teeth, sleep, careers, friendships, attention, money, and the ability to enjoy a cup of tea without conducting a postmortem on existence. The fact that suffering can produce insight does not make suffering noble. A leaking roof may teach hydrodynamics, but one is still allowed to prefer a roof that does not leak.
+Human beings talk about the brain as if it were some futuristic supercomputer. It is not. It is a nervous goat wearing spectacles.
 
-What I am trying to understand is not whether the illness is beautiful. It is not. I am asking whether it is intelligible.
+The body you live inside is prehistoric equipment operating inside a completely artificial ecosystem. We built glass towers, stock markets, LinkedIn, performance reviews, online dating, algorithmic advertising, twenty-four-hour outrage channels, and social media feeds that behave like slot machines designed by cocaine merchants.
 
-There is some relief in intelligibility. Not cure. Not redemption. Relief. To think of the depressed-anxious body as an ancient system overwhelmed by modern artificiality does not remove pain, but it removes a little stupidity from the pain. It says: perhaps I am not merely weak. Perhaps my system is responding with brutal seriousness to signals that are themselves brutal. Perhaps the alarm is too loud, yes, and the wiring unstable, yes, and treatment necessary, yes, but the alarm is not ringing in a vacuum. It is ringing in a world that keeps setting small fires and then accusing the smoke detector of negativity.
+Then we ask:
+“Why are people anxious?”
 
-This matters because moral failure is the parasite that feeds on mental illness. The unemployed man already feels reduced. Add depression, anxiety, bipolar instability, and middle-class shame, and he becomes both patient and accused. Why are you not better? Why are you not working? Why are you alone? Why are you difficult? Why are you not grateful? Why can you not adjust? The questions arrive wearing the shoes of concern, but they often carry a policeman’s baton. Underneath them is the assumption that the properly functioning person adapts smoothly to the world as given. But what if the world as given is itself deranged? What if adaptation to it requires a controlled dulling of perception? What if some people are not heroic truth-seers but simply badly insulated wires, sparking in weather everyone else has learned to call normal?
+My God.
 
-The body going to plan, then, is not a comforting idea. It is an accusation against the plan.
+It is like throwing a goat into a casino and becoming concerned about the goat’s emotional regulation.
 
-A caveman body is not built for permanent abstraction. It wants to solve the hunger, escape the predator, mend the tool, sleep after the hunt, belong to the group. The artificial world replaces this with endless deferred evaluation. Your worth is pending. Your application is pending. Your payment is pending. Your future is pending. Your recovery is pending. Even your identity becomes pending, awaiting confirmation by employers, platforms, relatives, banks, governments, and people who have no particular reason to be wise. The nervous system remains mobilized because nothing resolves. A tiger either eats you or leaves. The modern tiger schedules a second interview and never writes back.
+The strange thing is this: anxiety actually makes perfect sense.
 
-In Calcutta, the absurdity becomes almost theatrical. The tea stall still exists, the tramlines still remember an older city, the para still watches, the old houses still crumble with philosophical patience, and yet inside the skull there is Silicon Valley, Wall Street, medical psychiatry, family gossip, postcolonial ambition, global labor arbitrage, and a small prehistoric mammal trying to decide whether to run. The city says endure. The market says upgrade. The family says adjust. The body says danger. The mind says enough. The day says continue.
+A caveman who heard rustling in bushes and said,
+“Probably nothing,”
+did not become your ancestor.
 
-And one does, mostly because continuation is not a heroic act but a biological habit.
+The anxious fellow survived.
 
-I do not know whether there is consolation in this. Perhaps there is only a more accurate map. I am not a broken vase that can be glued back into its cheerful showroom shape. I am a living system carrying old instructions through new weather. Some instructions misfire. Some were never designed for this world. Some may still be useful if handled with care, medication, routine, sleep, solitude, work small enough to begin, and people who do not treat pain as a character defect. There is no clean solution. The body cannot be exchanged. The world will not become humane by Thursday. The job market will not develop a conscience. The past will not resign from its advisory position. The nervous system will not suddenly become a Swiss watch because one has read three articles and taken a brisk walk.
+The fellow who checked twice survived.
 
-But there may be a narrower, less fraudulent hope.
+The fellow who slept lightly survived.
 
-If the body is ancient and the world artificial, then recovery may not mean becoming normal in the advertised sense. It may mean reducing the mismatch where one can. Less noise. More sleep. Fewer symbolic tigers. Food at boring intervals. Movement without athletic propaganda. Work built in small units, not grand declarations. Medication treated neither as miracle nor shame, but as engineering support for a difficult bridge. A life designed not for the imaginary citizen with perfect executive function and a LinkedIn smile, but for the actual animal in the room: aging, intelligent, frightened, stubborn, chemically weathered, still capable of noticing when the evening light hits a Calcutta wall and makes even decay look briefly considered.
+The fellow who worried about danger survived long enough to produce descendants who now sit in Kolkata apartments catastrophizing over e-mails from HR departments.
 
-That may be all. Not triumph. Not transformation. Not the obscene motivational poster where the broken man becomes a brand. Just a more honest settlement between biology and circumstance.
+Evolution is very efficient in the short term and hilariously careless in the long term. Like most politicians.
 
-The body may be going to plan, but plans can be revised. Not by inspirational shouting. Not by pretending the cave was paradise or the modern world is progress in clean trousers. Revised slowly, locally, sometimes medically, sometimes socially, sometimes by refusing the particular insult that can be refused. A plan written by DNA is not edited with slogans. It is edited by conditions. By sleep. By shelter. By money if one can get it. By meaningful work if it can be found or made. By fewer false emergencies. By companionship that does not demand performance. By a room in which the nervous system is not required to defend its existence every hour.
+So now the old alarm system keeps firing continuously because modern life never resolves anything cleanly.
 
-Until then, I remain here in Calcutta, middle-aged, unemployed, single, intermittently ridiculous, frequently afraid, not always convinced I am ill in the way the forms describe. Something in me is ancient and overactivated. Something in the world is artificial and underexamined. Between them sits the person, which is to say me, trying to determine whether the pain is a defect, a message, a memory, a warning, or merely the body’s old survival music played through the cracked loudspeaker of modern life.
+A tiger either eats you or it does not.
 
-## Related Posts
+Modern problems linger like unpaid relatives.
 
-- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)
-- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+Job insecurity.
+Rent.
+Family pressure.
+Health scares.
+Social comparison.
+Middle age.
+Loneliness.
+The WhatsApp school group.
+God help us, the WhatsApp school group.
+
+Nothing finishes.
+
+The nervous system remains permanently half-alert, like a security guard whose tea break keeps getting interrupted.
+
+And bipolar depression adds another layer of comedy to this circus.
+
+When mania comes, the brain suddenly behaves like a television shop during Durga Puja sale season. Everything lights up at once. Ideas arrive in truckloads. You feel intelligent, fast, insightful, chosen even. You start planning books, businesses, philosophical revolutions, fitness routines, maybe even a complete restructuring of civilization before lunch.
+
+Then depression arrives carrying a baseball bat.
+
+Not sadness. People misunderstand this.
+
+Sadness is human weather.
+
+Depression is gravity.
+
+Ordinary sadness says:
+“Things are difficult.”
+
+Bipolar depression says:
+“Nothing has ever worked, nothing will work, and by the way here is every embarrassing memory from 1997 for review.”
+
+The mind becomes a cruel archivist.
+
+And here is the uncomfortable part nobody likes discussing.
+
+Sometimes I suspect the depression is not entirely malfunction either.
+
+Sometimes it feels like the body hitting emergency shutdown after too much overload.
+
+Like an overheated transformer.
+
+Like Calcutta during peak summer when suddenly an entire neighborhood loses power because the system simply cannot take one more air-conditioner.
+
+Maybe the brain occasionally pulls the main switch because modern life keeps demanding impossible voltage.
+
+I am not saying mental illness is fake. Dear God no.
+
+Anybody who has spent nights unable to move from bed while their own thoughts chew them alive knows this is physical. Chemical. Real.
+
+But reality can be two things simultaneously.
+
+The suffering can be real,
+and the environment causing it can also be insane.
+
+Those are not contradictions.
+
+What fascinates me is how quickly society moralizes all this.
+
+If you are depressed, people quietly suspect weakness.
+
+If unemployed, irresponsibility.
+
+If anxious, oversensitivity.
+
+If middle-aged and single, perhaps some invisible character flaw involving destiny, attitude, or shampoo.
+
+Society worships functionality.
+
+It does not particularly care whether the machine is happy. Only whether it continues producing output without making alarming noises.
+
+And if you stop functioning, even temporarily, the world becomes very awkward around you.
+
+I know this feeling intimately now.
+
+Middle-aged lower middle-class life in Kolkata has a particular texture to it. It smells faintly of damp walls, frying oil, old books, mosquito coils, sweat, incense, Dettol, and disappointment.
+
+Outside the window somebody is always repairing something with a hammer.
+
+There is always one uncle walking around in a vest carrying fish.
+
+There is always one coaching center promising success in government exams to children who already look exhausted at sixteen.
+
+You make tea. You check e-mail. Nothing.
+
+You refresh again. Nothing.
+
+You open an old document pretending to work while internally negotiating with existence itself.
+
+Then suddenly some absurd thing happens. The LPG gas delivery man arrives arguing about change. Or the neighbor’s pressure cooker whistles like a dying submarine. Or rain appears out of nowhere and for six minutes the entire lane smells like wet dust and mango leaves and old concrete.
+
+And oddly enough, for those six minutes, life becomes bearable again.
+
+That is the irritating thing about being alive.
+
+Even when the mind becomes a haunted house, tiny ordinary things continue sneaking in through the cracks.
+
+A good cup of tea.
+Clouds before a storm.
+The first breeze after unbearable heat.
+A stray cat sleeping with total philosophical confidence on somebody’s scooter seat.
+An old Mohammed Rafi song from a distant radio.
+
+The nervous system is ancient, yes. But it is also stubbornly responsive to small mercies.
+
+Modern culture keeps telling us happiness must arrive as transformation:
+new career,
+new body,
+new city,
+new relationship,
+new purpose.
+
+But maybe survival is often smaller than that.
+
+Maybe survival is simply reducing the number of unnecessary attacks on the nervous system.
+
+More sleep.
+
+Less doom-scrolling.
+
+Less comparison.
+
+Fewer artificial emergencies.
+
+A little walking.
+
+Some structure.
+
+Medication if needed.
+
+Somebody kind to talk to.
+
+A room where you do not feel judged every minute.
+
+That is not glamorous. It will never become a motivational seminar.
+
+But honestly most of life is maintenance, not transcendence.
+
+People want dramatic redemption arcs because movies have damaged our expectations. In reality most human beings are not conquering Everest. They are trying to keep the refrigerator working and their mind from collapsing simultaneously.
+
+And perhaps that deserves more respect than it gets.
+
+I still do not know whether bipolar depression and anxiety are illnesses in the strict sense, or exaggerated survival systems trapped inside a civilization moving too fast for biology.
+
+Probably both.
+
+The body is old.
+The world is new.
+And somewhere between those two facts sits the modern human being, sweating in a Kolkata summer, checking his phone again, trying to understand whether he is failing to adapt to the world —
+
+or whether the world itself has quietly become something no nervous system was ever designed to survive.
