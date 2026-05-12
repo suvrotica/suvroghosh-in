@@ -13,13 +13,7 @@ color: "stone"
 
 <Pi src="Compress_20260512_213025_5005.jpg" />
 
-Acronyms and Terms
 
-IT = Information Technology, the systems and software industry where I spent much of my working life.
-
-SEO = Search Engine Optimization, the black magic people use to convince Google that their potato recipe or motivational quote deserves global attention.
-
----
 
 I am probably the least motivational blogger in India.
 
