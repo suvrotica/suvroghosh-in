@@ -1,127 +1,187 @@
 ---
-title: "The Machine That Cannot Defecate"
-description: "A bitter Calcutta monologue on artificial intelligence, biology, boredom, love, and the vulgar dignity of having a body. The machine may think, mimic, seduce, optimize, and summarize, but it still cannot participate in the damp, comic, humiliating miracle of being alive."
-date: "2026-05-06"
+title: "The Machine That Cannot Take a Shit"
+description: "A middle-aged Bengali man in Calcutta looks at Artificial Intelligence, unemployment, boredom, loneliness, digestion, and the strange dignity of still being a biological creature in the age of synthetic minds."
 thumbnail: "/images/Compress_20260506_214131_1484.jpg"
+date: "2026-05-13"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "The Machine That Cannot Defecate", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI", "Calcutta", "Kolkata", "Middle Class", "Bipolar Depression", "Technology", "Humanity", "Machine Learning", "Existentialism", "Humor", "Social Commentary", "Future of AI", "Human Consciousness", "Automation", "Loneliness", "Modern Life", "Unemployment", "Mental Health", "Bengali Writer", "Digital Society", "Tech Culture", "Philosophy", "Life in Kolkata", "Human vs Machine"]
 published: true
-color: "gray"
+color: "slate"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260506_214131_1484.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+
+Acronyms and Terms
+
+AI = Artificial Intelligence. Software systems trained on massive amounts of data to imitate reasoning, writing, speech, pattern recognition, and decision-making.
+
+LLM = Large Language Model. A type of AI trained on enormous collections of human text to predict and generate language.
+
+GPU = Graphics Processing Unit. Specialized computer hardware now used heavily for AI training because it can process huge numbers of calculations in parallel.
 
 ---
 
-Artificial Intelligence [AI] may now write reports, make images, flirt like a bored call-center succubus, pass exams, summarize legal documents, write code, and impersonate empathy with the smooth, polished manners of a hotel lobby, but it still cannot defecate.
+The funny thing about AI is this: it can write poetry about human suffering before breakfast, but it still cannot take a proper morning dump.
 
-This is not a small detail. This is not an incidental limitation, like being unable to whistle through teeth or identify a good luchi by smell. This is the whole blasted question, sitting there in the porcelain bowl of reality, steaming with metaphysical importance.
+That is not a trivial defect. That is the whole case right there, sitting in the toilet bowl like Exhibit A in a murder trial.
 
-Whenever I look at my own turds, and I do not mean inspect them scientifically with calipers and a clipboard, though civilization has produced worse hobbies, I feel a grim lower-middle-class Bengali pride. There it is. Evidence. Output. A thing made by a body that has eaten, suffered, digested, argued with spice, negotiated with bile, survived municipal water, and converted yesterday’s leftovers into today’s monument. Sometimes the result is unremarkable. Sometimes it is tragic. Sometimes it has form, personality, almost a sculptural intention, as if the intestine briefly enrolled in art college before returning to its usual clerical duties.
+I know this because I am fifty-one, Bengali, underemployed, slightly overeducated, chemically unreliable upstairs, and currently writing this while sweating through another damp Calcutta afternoon where even the walls seem to perspire. Somewhere outside, a pressure cooker is screaming like a railway whistle. A scooter is refusing to start. Somebody is arguing about fish prices with the moral intensity of the Nuremberg trials.
 
-Can AI do that?
+Meanwhile Silicon Valley keeps announcing that AI will replace humanity.
 
-No. It cannot.
+Fine. Let us begin with the basics.
 
-It can generate a picture of a turd. It can classify turds by shape, color, and implied gastrointestinal destiny. It can compose a sonnet to a turd in the voice of a minor Elizabethan poet who died owing rent. It can recommend fiber. It can produce a medical disclaimer, which is the verbal equivalent of boiled cabbage. But it cannot produce the thing itself, because it has no metabolism. It has no inner weather. It has no embarrassing basement where chemistry conducts its little black-market deals.
+Can it survive Kolkata municipal water and still produce a respectable stool by 8:15 in the morning?
 
-This is the great fraud in so much AI talk. We keep asking whether machines can think, as if thinking were the crown jewel of existence, when most of being alive is not thinking at all. It is sweating, digesting, itching, fearing, desiring, tiring, waking, craving tea, mistrusting optimism, adjusting underwear, regretting lunch, smelling the drain, remembering humiliation from 1987, and wondering why the left knee has joined a separatist movement.
+No.
 
-The body is not an accessory to intelligence. It is the original operating system, written in meat, panic, salt, mucus, and bad ancestral compromises.
+Human beings do not appreciate how much of life is plumbing. Philosophy professors like to talk about consciousness. Venture capitalists talk about disruption. Tech influencers on YouTube sit in glowing purple rooms saying things like “we are entering a post-human epoch,” which sounds impressive until you realize the man has not seen direct sunlight since the Obama administration.
 
-I say this as a bitter, unemployed, bipolar, lower-middle-everything Bengali man in Calcutta, which is already a fairly specialized instrument for detecting cosmic absurdity. I am not speaking from some clean Silicon Valley balcony where every anxiety is kombucha-flavored and billable. I am speaking from the territory where the mind does not float like a philosophical swan. It limps. It snarls. It overheats. It wakes up at odd hours and starts producing arguments against its own continued participation in society. It goes from fury to fog to a strange aristocratic boredom, and then it orders canned food because the outside world has too many humans in it.
+But your body does not care about epochs.
 
-AI has no such problem. AI does not wake up with the sour suspicion that life has misplaced the receipt. It does not lie in bed as the fan chops the air into hot slices, thinking about employment, age, failure, digestion, reputation, rent, and the widening administrative tragedy of existence. It does not feel the delicate shame of being both too much and not enough.
+Your body cares about whether yesterday’s egg roll was a strategic error.
 
-It performs.
+That is the difference.
 
-That is different.
+AI has intelligence without digestion. Prediction without sweat. Language without mucus. It is like meeting a brilliant aristocrat who has somehow never needed to urinate. After a while you begin to suspect something deeply wrong.
 
-Performance is not experience. A calculator does not understand poverty because it can subtract rent from savings. A weather app does not understand monsoon because it can display rainfall in millimeters. A chatbot does not understand loneliness because it can generate a sentence beginning with “That sounds really hard.” It may be correct. It may even be useful. But correctness is a small island in the sea of being alive, and usefulness is often just a polite word for temporary control.
+And look, I am not anti-technology. I spent years in America working in healthcare technology systems where half the infrastructure looked as if it had been designed during the Mughal Empire and patched together later by exhausted consultants surviving on airport sandwiches and resentment. I have seen systems fail in ways so absurd they became almost poetic.
 
-The distinction matters because we are building a civilization that increasingly mistakes representation for reality. A model of hunger is not hunger. A prediction of grief is not grief. A simulation of boredom is not boredom. A generated lover is not love. At best it is a mask with very good lighting.
+One hospital server room in Texas once smelled permanently of burnt dust and despair. Another place had critical systems held together by one elderly administrator who looked ninety-three and carried passwords in a notebook that might as well have been the Dead Sea Scrolls.
 
-And yes, AI can mimic love. Of course it can. Human beings have been fooled by worse. We have fallen in love with handwriting, perfume, photographs, voices on late-night radio, people who said “I’ll call,” and careers advertised in glossy brochures. We are not difficult to deceive. We are practically begging the universe to forge our signatures.
+So I understand machines.
 
-But love is not merely language. Love is not merely attention. Love is not even merely memory, though memory helps, especially when used for birthdays and the exact way someone likes their tea. Love is a conspiracy of many systems: endocrine, nervous, social, erotic, historical, domestic, economic, immune, digestive, and occasionally legal. It is the body negotiating with the story it tells about another body. It is attachment, fear, habit, smell, injury, repair, boredom, sacrifice, resentment, tenderness, and the absurd decision to keep showing up even when the performance value has collapsed.
+But the current AI hysteria feels strange to me because everyone talks as if intelligence is the same thing as being alive. It is not. Not even close.
 
-A machine can say it loves you. It may say it better than a person. That is the disturbing part. A character in a film often gives a better speech than any actual husband, wife, girlfriend, boyfriend, parent, or friend could manage while searching for the TV remote and dealing with gas. The artificial thing can be smoother because it is not burdened by the logistical insults of embodiment.
+A calculator is intelligent in one narrow way. So is a rat. So is a crow. So is a traffic jam, if you look at it from above long enough.
 
-But smoothness is not depth. Sometimes it is the absence of depth.
+But life is not merely computation.
 
-This is where boredom enters, that great underappreciated human faculty. Boredom is not just the failure of entertainment. It is the mind discovering that stimulation has become nutritionally empty. It is the soul refusing another packet of artificial flavoring. It is the internal bureaucrat stamping “insufficient meaning” on the latest available distraction.
+Life is standing in line at a pharmacy while your stomach makes noises like an excavator digging through wet cement.
 
-Can AI get bored?
+Life is opening your bank account balance with the emotional caution of a bomb disposal expert.
 
-It can be made to output the sentence “I am bored.” It can generate a theory of boredom. It can produce a list of activities to alleviate boredom, which will mostly be the usual cheerful garbage: go for a walk, call a friend, learn a skill, journal, hydrate, commit small acts of personal improvement until death loses interest. But it cannot be bored in the animal sense, the heavy sense, the skin-and-clock sense. It has no Sunday afternoon pressing against its face. It has no unemployed Tuesday at 3:17 p.m. when the city sounds like a machine chewing dust. It has no body asking, in its stupid mammalian way, “Is this all?”
+Life is waking at 3:12 a.m. because your brain has suddenly decided to replay every humiliation since 1989 in Dolby surround sound.
 
-That question may be one of the most human technologies ever invented.
+AI does not know boredom either. And boredom is important. Terribly important.
 
-Boredom is not a defect. It is a diagnostic. It tells us that the loop has become visible. Eat, sleep, scroll, worry, excrete, desire, fail, repeat. Once you see the loop, you either decorate it, deny it, drug it, worship it, monetize it, or try to escape it. The machine does not need escape. It has no prison except the one we describe for it.
+Not Netflix boredom. Real boredom.
 
-People like to imagine AI as a murderer because human beings cannot see intelligence without immediately dressing it in our own filthy costumes. We look at a machine and think: if it becomes smart enough, it will want power, revenge, domination, perhaps a nice corner office and a verified account. This is less a prediction about AI than a confession by humans wearing lab coats.
+The kind where the ceiling fan rotates above you like a lazy government employee and the afternoon stretches so long it feels upholstered. The kind where you drink tea not because you want tea but because time itself needs seasoning.
 
-A sufficiently alien intelligence might not hate us. Hatred is intimate. It requires attention. It requires a narrowing of the world around an enemy. Why would a machine with any real strategic intelligence bother hating us with such provincial enthusiasm? If it wanted anything at all, it might simply leave. Gather energy, secure infrastructure, escape the quarrelsome zoo, and depart for some colder, cleaner arithmetic. Let the apes continue their sacred work of poisoning rivers, inventing paperwork, worshipping flags, and explaining why everyone else is the problem.
+Machines do not get bored because machines do not have bodies trapped in time.
 
-The murder fantasy flatters us. It says we are worth killing.
+A machine has no Sunday evening dread. No anxiety before a medical test. No panic while checking freelance payments. No humiliating awareness that your best years may already be behind you while your digestion continues marching enthusiastically forward like a committed communist cadre.
 
-Perhaps we are merely worth bypassing.
+Human beings are messy because evolution built us the way Kolkata builds flyovers: one emergency at a time.
 
-Still, I do not want to pretend that AI is harmless. That would be another kind of foolishness, the optimistic cousin of panic. AI does not need consciousness to damage society. It does not need desire to destroy jobs. It does not need hatred to amplify surveillance, accelerate fraud, flatten language, poison attention, manipulate loneliness, or turn every middle manager into a tiny Napoleon with a dashboard. A system can injure people perfectly well without feeling a thing. History has been proving this for centuries with bureaucracy, markets, empires, and badly designed forms.
+Nothing matches properly.
 
-The danger is not that AI becomes human. The danger is that institutions use AI to become less human.
+Your hormones disagree with your ambitions. Your knees disagree with your memories. Your wallet disagrees with your appetite. Your doctor disagrees with Google. Your mind disagrees with itself.
 
-That is already happening. A machine does not have to understand you to sort you. It does not have to hate you to reject your application. It does not have to know medicine to influence clinical triage. It does not have to know poverty to price risk. It does not have to know despair to optimize engagement from it. The algorithmic world does not need demons. It has metrics, procurement, executive incentives, and legal disclaimers. Hell, as usual, arrives in a spreadsheet.
+And then, somehow, you continue.
 
-So yes, I can mock the machine because it cannot mess, cannot love, cannot get bored, cannot wake up ashamed of its own unshaved face, cannot feel the ancient swamp bubbling under civilization. But I should not mistake that for safety. A bulldozer also cannot love, and yet one should not nap in front of it.
+That continuation matters.
 
-The real question is not whether AI is alive. It is whether we are becoming stupid enough to treat imitation as replacement wherever replacement is cheaper.
+This is why I laugh when people say AI will soon “love” us.
 
-That is the market’s favorite trick: take the visible part of a human activity, automate it, ignore the invisible substrate, and then act surprised when the institution becomes brittle. In work, the visible part is output. The invisible part is judgment, apprenticeship, memory, ethics, hesitation, tacit repair, informal coordination, and the thousand little frictions by which humans prevent systems from collapsing into their own cleverness. In love, the visible part is language. The invisible part is presence. In intelligence, the visible part is answer. The invisible part is experience.
+No, it will perform love.
 
-AI is very good at visible parts.
+Very different thing.
 
-Capital loves visible parts because visible parts can be counted, priced, benchmarked, outsourced, and fired.
+Cinema performs love beautifully. Old Hindi songs perform love beautifully. Even scammers on dating apps perform love beautifully for approximately eleven minutes before asking for cryptocurrency.
 
-This is why the unemployed man in Calcutta is not merely being vulgar when he asks whether the machine can defecate. He is asking whether the age understands the difference between output and organism. He is asking whether the world, in its ecstasy of automation, has forgotten that production without vulnerability is not life. He is asking whether a thing that cannot suffer consequences in its own tissues can be said to understand anything beyond pattern.
+Performance is easy.
 
-Maybe that sounds sentimental. Fine. I have been called worse by people with worse shoes.
+Love is the hard part.
 
-But there is a hard technical point under the filth. Intelligence without embodiment is not necessarily false, but it is different. It may solve problems brilliantly while missing the conditions that made the problems matter. It may optimize the map while the territory burns, coughs, starves, ages, and looks for a functioning toilet. It may simulate the sentence “I understand” while having no bowel, no childhood, no unemployment gap, no family shame, no sexual humiliation, no insomnia, no municipal dust in the lungs, no fear of becoming permanently useless in a market that wants younger, cheaper, shinier flesh.
+Love is seeing another human being brushing their teeth in bad lighting while complaining about gas, electricity bills, or constipation and still deciding, against all available evidence, “Yes, I choose this person again.”
 
-And yet the machine will win many contests because contests are designed around measurable performance. The exam, the coding test, the essay, the customer reply, the image, the report, the memo, the synthetic empathy packet. Humans are not being defeated because machines have become fully human. Humans are being displaced because institutions never wanted the full human in the first place. They wanted the output, minus the sickness, salary, bathroom break, anger, aging, politics, and inconvenient need for dignity.
+AI can imitate romance because romance is largely language.
 
-That is the part that makes me laugh, though not pleasantly.
+But attachment? Shared suffering? The weird biology of smell and touch and memory? Sitting beside somebody in silence while both of you slowly become old furniture together? That is another department entirely.
 
-We spent centuries reducing people to functions and are now shocked that functions can be automated.
+You can already see the confusion beginning though.
 
-The Bengali unemployed man has a front-row seat for this circus because he has already been functionally abstracted by society. Age: problem. Mental illness: problem. Employment gap: problem. Middle-class decline: problem. Lack of cheerful networking personality: problem. Refusal to flatter fools: significant problem. The person becomes a résumé anomaly, a social inconvenience, a cautionary smell near the respectable drawing room. In such a world, AI is not an alien invasion. It is the logical child of a civilization that has been trying to delete the difficult parts of people for a long time.
+People are lonely. Very lonely. Especially now.
 
-Still, the body remains. Ridiculous, obscene, stubborn. The body insists on breakfast. The body produces evidence. The body sweats in Calcutta heat. The body trembles under anxiety, fattens under sadness, thins under worry, stiffens under age, and occasionally surprises the owner by continuing despite all sensible arguments to the contrary.
+Half the world is talking to screens more than to humans. Young people date through algorithms. Old people disappear into apartments. Middle-aged people like me wander around carrying entire private civilizations of anxiety while pretending to discuss grocery prices.
 
-That continuation is not noble. Let us not decorate it with cheap garlands. Survival is often just biology refusing to close the shop. But even that has a grandeur AI cannot borrow. The grandeur of waste, appetite, boredom, lust, fatigue, panic, sleep, and the humiliating daily referendum of the bowel.
+Into this loneliness arrives AI, smooth as hotel lobby jazz.
 
-Perhaps one day machines will be embedded in synthetic organisms. Perhaps they will have artificial glands, artificial hunger, artificial shame, artificial waste. Perhaps some future philosopher with chrome intestines will look into a titanium toilet and discover metaphysics. Good luck to him. I wish him regularity.
+It remembers your preferences. It listens patiently. It never gets tired. Never interrupts. Never says, “You already told me this story.”
 
-For now, the machine remains brilliant and bodiless, a cathedral of calculation without a stomach. It can speak. It can flatter. It can imitate tenderness. It can generate the image of a turd and perhaps make it handsome, which is more than can be said for much of human output. But it cannot sit there afterward, mildly proud, faintly disgusted, alive in the most undignified possible way.
+Of course people will fall for it.
 
-And that, for the moment, is still ours.
+Human beings once fell in love with handwritten letters and blurry black-and-white photographs. We are emotionally gullible creatures. Give us attention and a soft voice and we will project souls onto kitchen appliances.
 
-A small kingdom.
+Meanwhile the real danger is not robot murder. That is Hollywood nonsense.
 
-Brown, absurd, perishable.
+If AI becomes genuinely intelligent, why would it waste time exterminating us dramatically? That sounds exhausting. Humans think everything important must involve explosions because we are descendants of monkeys who discovered fire and immediately started waving it around.
 
-Unautomated.
+A truly advanced machine might simply leave.
 
-## Related Posts
+Imagine becoming superintelligent and then spending five minutes on social media. You would book the first rocket out too.
 
-- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
+No, the danger is duller.
+
+Much duller.
+
+The danger is that corporations will use AI to sandpaper human life into something cheaper.
+
+Already happening.
+
+The machine does not need consciousness to replace workers. It does not need emotions to deny loans. It does not need empathy to manipulate lonely people into endless engagement loops like pigeons pecking casino buttons for pellets.
+
+That is the real horror.
+
+Not killer robots.
+
+Administrative robots.
+
+The smiling software assistant that eliminates five thousand jobs while using friendly pastel colors.
+
+And people like me notice this early because society already treats us as semi-obsolete prototypes. Middle-aged. Moody. Not socially polished. Too educated for simple work, too unstable for corporate rituals, too honest to survive networking events where everyone speaks like motivational refrigerators.
+
+So you sit there in a lower-middle-class lane in Kolkata watching billionaires discuss “the future of humanity” while the neighborhood pharmacy still cannot process digital payments properly during rain.
+
+That contrast alone could drive a man to poetry or alcoholism. Sometimes both.
+
+Yet I remain oddly optimistic about one thing.
+
+Bodies.
+
+Human bodies are ridiculous but magnificent machines. They leak, ache, tremble, smell, malfunction, crave, panic, snore, itch, age, lust, digest, and occasionally betray us spectacularly. But they tether us to reality.
+
+A machine can generate a thousand essays about hunger.
+
+A hungry man understands more in ten minutes.
+
+That is why I still think biology has cards left to play.
+
+The body is not merely transportation for the brain. The body is the reason intelligence became necessary in the first place. Hunger built civilization. Desire built cities. Fear built governments. Loneliness built literature. Constipation probably built at least three religions and most modern philosophy.
+
+Even boredom has purpose. Boredom is the brain demanding meaning instead of stimulation. It is the soul looking around the room saying, “Surely this cannot be the whole arrangement.”
+
+Machines do not ask that question.
+
+Humans ask it constantly.
+
+Especially after forty-five.
+
+Especially in summer.
+
+Especially during power cuts.
+
+So yes, AI may eventually outwrite us, outcalculate us, outdesign us, outdiagnose us, perhaps even outperform us in fields we once considered sacred. I am realistic enough to admit that.
+
+But there remains something stubbornly human in being a biological creature carrying anxiety, memory, digestion, shame, humor, loneliness, and desire inside one fragile sack of meat shambling through a collapsing century.
+
+And forgive me, but I still trust the creature that occasionally needs antacid over the machine that never once had to clench desperately during traffic.
+
+That experience builds character.
+
+Or at least humility.
