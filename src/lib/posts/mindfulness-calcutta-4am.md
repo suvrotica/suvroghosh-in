@@ -10,9 +10,7 @@ published: true
 color: "black"
 ---
 
-<TTS />
 
-<Pi src="Compress_20260513_042026_6712.jpg" />
 
 Acronyms and Terms
 
@@ -20,7 +18,11 @@ DMN — Default Mode Network. A network in the brain associated with self-talk, 
 
 ---
 
+
 <TTS />
+
+<Pi src="Compress_20260513_042026_6712.jpg" />
+
 
 When people talk about mindfulness meditation these days, they usually speak in the tone of someone recommending an expensive air fryer. Very calm. Very certain. Very suspiciously moisturized. Somewhere there is always bamboo furniture involved.
 
