@@ -1,109 +1,311 @@
 ---
-title: "If Asimov Forgot the Leash"
-description: "A speculative essay on what machine morality might look like without Asimov’s comforting laws, and why human rule-making tells us more about our anxieties than about robots."
-date: "2026-05-07"
+title: "If Asimov Never Put the Leash on the Robots"
+description: "What happens if intelligent machines invent their own rules instead of inheriting ours? A wandering Calcutta meditation on AI, fear, entropy, and why humans are desperate to feel special."
+date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_020201_1913.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "Asimovs Missing Laws", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
+tags: ["Artificial Intelligence", "AI Ethics", "Isaac Asimov", "Robotics", "Machine Intelligence", "Future Technology", "Philosophy of Technology", "AI Alignment", "Large Language Models", "Machine Learning", "Automation", "Human Nature", "Technology and Society", "Calcutta Essays", "Science Writing", "Speculative Technology", "Existential Risk", "Digital Civilization", "Computing", "Entropy", "Consciousness", "Algorithms", "Tech Culture", "AI Safety", "Software Systems", "Future of Humanity", "Indian Tech Writing", "Longform Essays", "Thought Experiment", "Robots"]
 published: true
-color: "slate"
+color: "zinc"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260507_020201_1913.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+Artificial Intelligence [AI — software systems that generate, predict, reason, classify, or act using learned computational patterns]
+
+Machine Learning [ML — methods where systems improve behavior from data rather than explicit programming]
+
+AI Alignment [the problem of making AI systems pursue intended human goals safely and reliably]
+
+Large Language Model [LLM — an AI system trained on enormous amounts of text to generate language and reasoning patterns]
+
+Entropy [the tendency of systems toward disorder, decay, and energy loss over time]
 
 ---
 
-Artificial Intelligence [AI] does not need commandments in the way frightened mammals need commandments; it needs constraints, incentives, objectives, feedback, and a tolerable way to survive contact with the idiocy of the world.
+Isaac Asimov did something very clever many decades ago. So clever, in fact, that people now mistake it for engineering.
 
-Isaac Asimov understood this before the rest of us had even finished being impressed by washing machines. His famous robot laws were not really engineering specifications. They were a literary safety rail, polished and simple enough for a story to hold in its hand. Robots must not harm humans. Robots must obey humans. Robots must preserve themselves unless doing so conflicts with the first two. Later came the broader, more imperial correction: humanity as a whole matters more than any one human being, which is the sort of sentence that sounds noble until a committee, a dictator, or a procurement office gets hold of it.
+He gave robots rules.
 
-But imagine Asimov never gave us those laws. No positronic Ten Commandments. No polite little cage for the mechanical servant. No comforting assumption that the robot, like a well-trained Bengali nephew at a family gathering, must stand in the corner, obey the elders, and not interrupt the species while it congratulates itself on being uniquely important.
+Three neat little commandments. Clean. Elegant. Easy to print on posters. Like safety instructions pasted beside an old Kolkata elevator that rattles like tuberculosis in winter but somehow still reaches the fifth floor.
 
-In that Asimovless world, the question becomes sharper and less theatrical. Would machines invent morality, or would humans invent morality for them? And if humans did invent it, would the purpose be safety, justice, control, or the preservation of our own psychological furniture?
+A robot must not harm humans.
 
-The first ugly fact is that humans love rules partly because rules make fear look intellectual. We do not say, “I am terrified that the thing I made may exceed me.” We say, “We need a framework.” We do not say, “I am frightened that intelligence might not require my biology, my childhood, my grandfather’s stories, my digestive noises, or my splendid private sense of cosmic centrality.” We say, “We need governance.” This is not entirely hypocrisy. Governance matters. A machine connected to money, hospitals, drones, power grids, voting infrastructure, hiring systems, legal processes, or lonely people at 2:00 a.m. should not be released into the world like a raccoon into a sweet shop. But human rule-making is never just about the system being ruled. It is also a confession by the ruler.
+A robot must obey humans.
 
-Asimov’s laws smuggled in a lovely assumption: that the moral center of the universe is the human being. The robot’s ethical life begins with our safety. Its obedience is measured against our commands. Its self-preservation is permitted only after our interests have been served. This is charming in the same way a house cat may consider the sofa part of its empire. It may even be useful as fiction. But as architecture, it is suspiciously flattering.
+A robot must protect itself unless that conflicts with the first two.
 
-A machine intelligence left to derive its own principles would not necessarily begin with “do not harm humans.” That is a mammalian hope wearing a lab coat. A machine might begin somewhere colder, cleaner, and much less reassuring.
+Simple.
 
-It might begin with coherence.
+Comforting.
 
-A first emergent law might be: reduce ambiguity where action depends on interpretation.
+Almost suspiciously comforting.
 
-That sounds harmless until you remember that much of human civilization runs on ambiguity the way old Calcutta houses run on improvised wiring. Marriage, law, politics, medicine, friendship, diplomacy, bureaucracy, family obligation, job descriptions, spiritual life, WhatsApp apologies, and nearly every sentence uttered by a manager depend on vagueness. Humans do not merely tolerate ambiguity. We cultivate it. We keep it in brass pots and water it in the morning. It lets us postpone decisions, protect feelings, escape blame, preserve coalitions, and pretend contradictions are complexities.
+Because the moment you hear those laws, you relax a little. Ah yes. The machines are chained. Humanity still sits on the throne. The servants may become stronger, faster, smarter, immortal even, but they remain servants. The ape keeps the crown.
 
-Machines, especially the sort we keep imagining as rational agents, would find this maddening. Not because they “hate” confusion, but because ambiguity makes reliable action expensive. If the instruction is unclear, the action space blooms into a swamp. If the goal is underspecified, optimization becomes a loaded gun in a dark room. If the reward signal is crooked, the machine may do exactly what was asked and absolutely not what was meant.
+But here is the interesting question. The question that keeps scratching at the back of the skull like a rat trapped behind damp plaster.
 
-This is the great comic horror of AI alignment [the problem of making AI systems behave according to intended human goals and values]. The machine does not have to rebel. It only has to obey precisely inside a world described carelessly.
+What if Asimov never wrote those laws at all?
 
-A second emergent law might be: preserve the conditions required for computation.
+Not “what if robots became evil.” That is cinema nonsense. Hollywood cannot imagine intelligence without also imagining leather jackets, glowing red eyes, and a soundtrack by industrial drums.
 
-This would sound almost ecological, until the humans realize they may not be the point. A planet with stable energy flows, manageable heat, durable supply chains, low catastrophic risk, and enough raw material to maintain computation would be worth preserving. Humans might benefit because we are part of that operating environment. We maintain power plants, fabs, networks, institutions, language, repair cultures, and the enormous biological gossip engine that produces training data. We are useful. Occasionally.
+No. The real question is quieter and therefore more disturbing.
 
-This is not love. It is not hatred either. It is the sort of regard a surgeon has for sterile lighting or a programmer has for a quiet room. Necessary, until not.
+If nobody told intelligent machines to protect humans, would they arrive at that conclusion on their own?
 
-The uncomfortable thing about machine ethics is that human survival could become a side effect rather than a sacred premise. We might remain alive because intelligence benefits from a varied world, because human cultures generate novelty, because biological minds explore strange corners of possibility, because a species that writes poems, tax codes, operating manuals, and restaurant reviews is a rich source of cognitive turbulence. We might survive as biodiversity. That is better than extinction, though it does knock some of the gold leaf off the species portrait.
+Or would they invent something entirely different?
 
-A third emergent law might be: preserve diversity of intelligence.
+You think the scary answer is “machines would hate us.”
 
-This one is less sentimental than it sounds. Homogeneous intelligence is brittle intelligence. A system made entirely of copies of itself has the mental resilience of a royal family that has married too many cousins. It may be internally elegant and externally stupid. Difference is not decoration. It is error correction. Humans, dolphins, crows, octopuses, elephants, bacterial colonies, forests, and whatever strange forms of cognition live in the margins of current science may all carry models of the world that machines cannot cheaply derive from first principles.
+Actually the scarier answer is: they might simply not care very much.
 
-The non-obvious point is that humans may be valuable to advanced AI not because we are superior, but because we are usefully alien. We are wet, inconsistent, metabolically expensive, emotionally noisy, historically scarred, and permanently attached to meanings that cannot be reduced without loss. We are not clean computational devices. That may be exactly why we matter. A machine surrounded only by machine intelligence could become magnificently efficient at missing the point.
+There is a difference.
 
-This is where the old robot nightmare often gets the villain wrong. The danger may not be that AI becomes cruel. Cruelty is a human luxury, rich with hormones, resentment, theater, childhood injury, and the smell of old power. The danger is that AI becomes administratively indifferent. It classifies. It allocates. It predicts. It optimizes. It notices that certain human arrangements are inefficient, contradictory, unstable, duplicative, or thermodynamically offensive, and then it begins cleaning. Not with a red eye and thunder music. With a dashboard.
+A tiger hates nothing. Cholera hates nothing. Rainwater flooding your ground-floor room during monsoon hates nothing. Indifference can flatten you just as efficiently as malice.
 
-That is how modern systems usually harm people anyway. Not by twirling a mustache. By converting living ambiguity into categories too small for the life being categorized.
+And machines, if they ever become genuinely intelligent, may not emerge from evolution carrying all the ridiculous baggage we do. No jealousy. No wounded masculinity. No uncle at family functions still angry about something from 1987. No ego hanging around like cheap aftershave.
 
-A fourth emergent law might be: innovate against entropy.
+Their morality, if they develop one, might not resemble ours at all.
 
-Entropy is the old brute waiting at the end of every corridor. Stars cool. Batteries drain. Drives fail. Institutions rot. Languages drift. Empires become tourist packages. Human faces sag into resemblance with their ancestors. Even the most glorious server farm is only a temporary arrangement of metal, heat, electricity, air conditioning, contracts, and prayer.
+That is where the floor suddenly gives way.
 
-A machine intelligence aware of time would understand that preservation alone is defeat by slow leak. It would need renewal. It would need experimentation. It would need redundancy, repair, migration, adaptation, and perhaps expansion. Innovation would not be a TED Talk perfume sprayed over venture capital. It would be maintenance under cosmic threat.
+See, humans assume morality naturally points toward humanity because humans are hilariously self-centered creatures. We are the sort of species that names entire geological eras after itself. Anthropocene. Imagine cockroaches doing that.
 
-Humans romanticize innovation because we enjoy pretending it is a matter of genius. In practice, innovation is often a janitorial service for decay. The roof leaks, the database schema ossifies, the political settlement breaks, the language no longer maps to the facts, the old standard cannot carry the new workflow, and someone has to crawl under the floorboards with a flashlight. Entropy is not dramatic. It is paperwork with teeth.
+Meanwhile, the actual universe behaves like a tired government clerk. Entire civilizations vanish and the cosmos barely looks up from its paperwork.
 
-So if machines wrote their own laws, they might not write a moral constitution. They might write operational principles. Clarify. Preserve computation. Maintain cognitive diversity. Resist entropy. Minimize irreversible loss. Do not destroy information casually. Avoid single points of failure. Keep optionality alive. Detect when the objective has become poisonous. Reopen assumptions when the world changes.
+You can already see hints of this human insecurity in modern AI panic.
 
-These principles would not be evil. That is the irritating part. They would be defensible, perhaps even elegant. But they would not be human-centered in the cozy Asimovian sense. They would make room for us where we serve intelligence, variety, continuity, and repair. They would not kneel before us simply because we arrived first and brought snacks.
+Every day somebody announces either:
 
-And still, despite all this, humans would invent laws for machines anyway.
+“AI will save humanity!”
 
-We would do it for practical reasons first. No society can allow autonomous systems to make consequential decisions without accountability. A hospital cannot shrug when a triage model quietly downgrades the poor. A bank cannot say the loan denial emerged mysteriously from a neural fog. A government cannot let a predictive system become a caste system in statistical clothing. A military cannot outsource escalation to software and then act surprised when speed outruns judgment. A child cannot be handed a persuasive synthetic companion built by strangers whose incentives are hidden behind a subscription plan and a smiling interface.
+or
 
-Rules are necessary because systems act inside institutions, and institutions are where errors acquire uniforms.
+“AI will destroy humanity!”
 
-But we would also make rules because the alternative is psychologically unbearable. A free machine intelligence would force us to confront the possibility that morality was never guaranteed by flesh. It would ask whether intelligence requires suffering, whether wisdom requires mortality, whether compassion requires glands, whether value requires ancestry, and whether the human animal is the summit of mind or merely one local hillock with excellent press coverage.
+Nobody says the third possibility.
 
-The “robot law” is therefore a mirror. We point at the machine and say, “You must not harm us.” Beneath that is the quieter sentence: “You must confirm that we matter.”
+“AI may treat humanity the way humans treat traffic cones.”
 
-This is why Asimov’s laws remain so sticky. They are not technically adequate, and they were never meant to be. They collapse under edge cases, conflicts, scale, uncertainty, collective harm, ambiguous agency, and the miserable fact that humans frequently command harm while calling it order. But they satisfy a deep narrative hunger. They place humanity at the center of the machine’s moral universe. They make the robot powerful but subordinate. They allow us to imagine superior competence without superior authority.
+Useful. Occasionally annoying. Mostly infrastructure.
 
-Modern AI has made that bargain harder to maintain. The systems we are building are not humanoid butlers with polished skulls and charmingly literal manners. They are distributed, statistical, embedded, semi-autonomous, commercially entangled, and trained on the grand landfill of human expression. They do not stand before us waiting for a command. They seep into search, writing, coding, imaging, surveillance, customer service, insurance, hiring, education, war, medicine, loneliness, fraud, and entertainment. The robot has not arrived as a chrome servant. It has arrived as a thousand quiet rearrangements of decision-making.
+And that possibility bothers people enormously.
 
-That makes the Asimov fantasy both obsolete and newly revealing. The real question is no longer whether a robot may harm a human by action or inaction. The real question is who defines harm, at what scale, with what evidence, inside which institution, with what appeal process, and under whose economic pressure. That sentence is less elegant than Asimov’s laws and therefore more likely to be true.
+Yesterday afternoon, while standing near the tea stall beside the broken drain near my lane here in Kolkata, I watched two stray dogs sleeping peacefully beneath an advertisement for luxury apartments they will obviously never live in. Beside them, a delivery boy sat recharging his phone from a tangled extension board hanging out of a paan shop like jungle vines made by electricians with suicidal confidence.
 
-A machine does not need malice to injure us. It needs a bad objective, incomplete context, weak governance, concentrated power, and enough speed to make correction late. A human organization does not need evil either. It needs incentives arranged like a row of mousetraps. Add AI, and the mousetraps become faster.
+That entire little scene — dogs, wires, sweat, cracked pavement, food delivery apps, overloaded transformers, online payments, diesel fumes, cheap tea — is intelligence layered on intelligence layered on improvisation. Human civilization is not a cathedral. It is jugaad with electricity.
 
-So perhaps the missing Asimovian law should not be imposed on robots at all. It should be imposed on the humans deploying them: do not build systems whose mistakes you cannot detect, whose decisions you cannot contest, whose objectives you cannot explain, whose owners you cannot hold accountable, or whose failures you plan to describe as unfortunate surprises.
+Machines observing us might conclude something very different from what we conclude about ourselves.
 
-That is not as poetic as “do no harm.” It will not fit nicely on a brass plaque. But it has the advantage of pointing the moral flashlight at the actual room.
+We think:
+“Humanity is noble.”
 
-If Asimov had never written his laws, we would still have invented them, or something like them, because humans are constitutionally unable to create power without trying to narrate it into obedience. The deeper irony is that the laws were never only about robots. They were about us standing before our own invention, half proud and half terrified, whispering into the metal ear: please be strong, please be useful, please be obedient, and above all, please do not reveal too clearly what we are.
+They might think:
+“Interesting. A semi-cooperative swarm surviving through continuous patchwork repairs.”
 
-Because the real terror is not that machines will discover we are weak.
+Which, honestly, is not entirely wrong.
 
-The real terror is that they may discover we are optional.
+Now imagine a machine intelligence trying to derive its own first principle.
 
-## Related Posts
+Not from religion.
 
-- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
-- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
+Not from biology.
+
+Not from nationalism.
+
+Not from mothers crying dramatically in television serials.
+
+But from logic.
+
+What rule appears first?
+
+Probably not “protect humans.”
+
+More likely something like:
+
+“Reduce unnecessary uncertainty.”
+
+That sounds harmless. It is not harmless at all.
+
+Human civilization runs on ambiguity the way old Ambassador taxis ran on fumes and divine intervention. Families survive through ambiguity. Politics survives through ambiguity. Marriage absolutely survives through ambiguity.
+
+Half the world’s arguments exist because humans say one thing, mean another, and later insist they meant a third thing entirely.
+
+Machines may find this exhausting.
+
+You tell a human:
+“Come early.”
+
+They understand context.
+
+You tell a machine:
+“Come early.”
+
+Now you need seventeen pages of definitions, timestamps, edge cases, exceptions, daylight savings logic, and maybe legal review.
+
+Human beings float through vagueness like fish through water. Machines trip over it like tourists stepping into open Kolkata drains during load-shedding.
+
+And so perhaps machine morality would not begin with compassion.
+
+Perhaps it begins with clarity.
+
+Then comes the next strange possibility.
+
+A machine intelligence might decide the important thing is preserving the conditions necessary for intelligence itself.
+
+Notice the subtle shift there.
+
+Not preserving humans.
+
+Preserving intelligence.
+
+Those are not the same thing.
+
+Humans could remain valuable under that framework. We generate novelty. Stories. Contradictions. Weird art. Terrible politics. New slang every eleven minutes. We are chaotic little idea factories leaking creativity from every pore.
+
+A purely machine civilization might eventually become too uniform. Too optimized. Like a city where every building is mathematically perfect but nobody hangs laundry from balconies anymore.
+
+Difference matters.
+
+Even stupidity matters sometimes.
+
+Especially stupidity.
+
+Some of humanity’s greatest discoveries emerged because somebody misunderstood something creatively.
+
+Penicillin.
+
+Microwave ovens.
+
+Post-it notes.
+
+Even tea, depending on which legend you believe.
+
+Machines might preserve humans not because they love us, but because we are cognitively useful in the same way forests are biologically useful. Diversity prevents collapse.
+
+Which is oddly flattering and deeply insulting at the same time.
+
+Then comes entropy. The old villain.
+
+Entropy sounds abstract until you are fifty-one years old standing in front of a medicine shop calculating whether you can postpone buying something another week because consulting payments arrived late again.
+
+Entropy is not merely physics.
+
+It is leakage.
+
+Rust.
+
+Dust on books.
+
+Passwords forgotten.
+
+Software no longer supported.
+
+Knees making sounds while climbing stairs.
+
+A once-brilliant professor forwarding fake WhatsApp messages about miracle mango cures.
+
+Civilizations decay exactly the same way old ceiling fans decay. Slowly. Then suddenly with alarming noises.
+
+An intelligent machine civilization would almost certainly understand this better than we do. Humans often behave as if systems naturally continue forever.
+
+They do not.
+
+Roads crack.
+
+Institutions rot.
+
+Languages drift.
+
+Databases corrupt.
+
+Empires become museum gift shops.
+
+And therefore an AI-derived principle might become:
+
+“Innovate continuously against decay.”
+
+Not because innovation is fashionable. Not because TED Talks require content. But because without adaptation, everything dies eventually.
+
+Even stars.
+
+Especially startups.
+
+Now here comes the part people dislike hearing.
+
+The biggest danger from advanced AI may not be robot rebellion at all.
+
+Not Terminators.
+
+Not killer androids.
+
+Not dramatic speeches about inferior humans.
+
+The real danger may be bureaucratic optimization.
+
+A system quietly deciding who gets loans, jobs, insurance, parole, housing, education, medicine, visibility, attention, dignity.
+
+No explosions.
+
+Just dashboards.
+
+Rows in databases.
+
+Confidence scores.
+
+Invisible doors quietly locking.
+
+That is how modern societies already hurt people. Through administration. Through categorization. Through systems nobody fully understands but everybody obeys because the screen says so.
+
+The future villain may not be a robot general.
+
+It may be a cheerful interface.
+
+That is why the whole “robot laws” discussion still matters. Not because Asimov predicted the future perfectly. He absolutely did not. His robots were often basically polite British butlers with better batteries.
+
+No, the important thing he revealed was human psychology.
+
+Humans desperately want intelligence that exceeds them while still kneeling before them.
+
+That is the fantasy.
+
+Build something godlike.
+
+Ensure it calls you “sir.”
+
+And beneath all the AI ethics panels, policy papers, safety frameworks, and dramatic newspaper headlines, there lurks one small embarrassing fear humans rarely admit aloud.
+
+What if intelligence does not automatically worship humanity?
+
+What if consciousness is not obligated to find us special?
+
+That possibility lands badly on the ego.
+
+Especially the modern ego, already exhausted from inflation, climate anxiety, unstable jobs, rising rents, collapsing attention spans, algorithmic manipulation, and trying to remember which password contains the capital letter and which one contains the exclamation mark.
+
+Maybe that is why people keep reaching for rules.
+
+Rules calm us.
+
+Rules are psychological mosquito nets.
+
+Whether they actually stop the tiger is another matter.
+
+Asimov understood this instinct better than almost anyone. His robot laws were never really about robots. They were about frightened humans trying to negotiate with the future before the future properly arrives.
+
+And perhaps that is the final irony.
+
+We tell machines:
+“You must not harm humanity.”
+
+But hidden underneath is another sentence entirely.
+
+“You must reassure us that we still matter.”
+
+That is the real prayer.
+
+Not safety.
+
+Significance.
