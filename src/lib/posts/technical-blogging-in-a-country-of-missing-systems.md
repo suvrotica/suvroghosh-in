@@ -1,82 +1,167 @@
 ---
-title: "Writing Healthcare IT From the Edge of the Missing Machine"
-description: "A lament on technical blogging, Indian healthcare systems, and the painful civic comparison with China that polite nationalism keeps trying to bury under applause."
-date: "2026-05-07"
+title: "Trying to Write About Healthcare IT While the Ceiling Paint Falls Into the Dal"
+description: "A middle-aged Bengali healthcare IT architect from Kolkata wrestles with technical blogging, Indian decline, China comparisons, broken systems, and the exhausting theater of patriotism."
+date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_162504_4412.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "Technical Blogging In A Country Of Missing Systems", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "India vs China", "Kolkata", "Calcutta", "Digital Health", "Hospital Systems", "Electronic Health Records", "Healthcare Architecture", "Indian Infrastructure", "Technology and Society", "Public Health", "Middle Class India", "Data Systems", "Interoperability", "FHIR", "HL7", "Healthcare Reform", "Indian Cities", "System Failure", "Urban Decay", "Medical Technology", "Indian Healthcare", "Health Informatics", "Software Architecture", "Bengali Writing", "Tech Blog", "Healthcare Data", "Legacy Systems", "Healthcare Analytics"]
 published: true
-color: "slate"
+color: "zinc"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260507_162504_4412.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
-- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
-- HIE: Health Information Exchange. the sharing of clinical information across organizations.
-- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
-- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+Acronyms used in this post:
+
+Healthcare IT = Healthcare Information Technology, the software and data systems hospitals and clinics use to run clinical, billing, operational, and reporting work.
+
+EHR = Electronic Health Record, the digital chart where patient care gets documented.
+
+FHIR = Fast Healthcare Interoperability Resources, a modern healthcare data exchange standard.
+
+HL7 = Health Level Seven, an older but still dominant messaging standard used between hospital systems.
+
+HIE = Health Information Exchange, systems meant to share patient information across organizations.
 
 ---
 
-Writing about Healthcare Information Technology [healthcare IT, the machinery by which clinical work is recorded, exchanged, billed, measured, audited, and occasionally understood] is a peculiar punishment because the subject is both everywhere and invisible, like plumbing in a mansion or corruption in a municipal tender. Nobody thinks about it until something leaks, smells, floods, or denies admission to an old man with a laminated folder full of reports from six different labs, each of them printed in a different font, each of them pretending to be medicine.
+The problem with writing about healthcare IT in a blog is that the real thing smells faintly of damp paper, panic, cheap printer toner, and institutional lying.
 
-The trouble with a technical blog is not that the subject is too hard. Hard things can be explained. A bridge can be explained. A kidney can be explained. A database index can be dragged down from Mount Abstraction and made to sit on a plastic chair with tea. The trouble is that healthcare IT is not one thing. It is a compost heap of workflows, incentives, standards, procurement failures, billing habits, medical hierarchies, software vendors, clerks, doctors, patients, scanned paper, WhatsApp screenshots, expired passwords, and that ancient Indian institution, the man who knows the system because he has suffered under it long enough to become its unofficial priest.
+You cannot really explain it cleanly.
 
-From a bird’s-eye view, the subject looks almost respectable. We say Electronic Health Record [EHR, the clinical system used to document patient care], Health Information Exchange [HIE, the controlled sharing of clinical information across organizations], Fast Healthcare Interoperability Resources [FHIR, a modern standard for representing and exchanging healthcare data], analytics, patient engagement, population health, claims integration, artificial intelligence. The nouns arrive polished and hopeful, like visiting dignitaries in white shirts. But the moment you zoom in, the flooring changes. You find the crack under the linoleum. You find the nurse retyping a lab result because the interface dropped the observation code. You find the discharge summary that contains three diagnoses in prose and one coded diagnosis for billing, none of them exactly the same. You find “data quality” blamed for what is actually a failure of representation, governance, workflow design, and institutional honesty.
+From far away, healthcare IT looks glamorous enough. Artificial intelligence. Digital health. National health stack. Interoperability. Predictive analytics. Dashboards glowing blue like a spaceship in a Christopher Nolan film. Politicians standing in front of LED screens pointing at graphs that rise upward as if illness itself has been placed under administrative control.
 
-That is the fissure in writing about this subject. Stay high and you become useless, another fellow releasing helium balloons into a conference hall. Go low and you lose the passerby, who did not open a blog to inspect the semantic equivalent of infected boils under the undergarments of a collapsing system. Yet the boil is the system. The pus is architectural. The smell has a schema.
+Then you zoom in.
 
-In India, healthcare IT is often less a functioning category than a placeholder for things that should exist but do not, things that exist but do not connect, and things that connect but do not mean what they claim to mean. Registration systems exist. Billing systems exist. Pharmacy systems exist. Laboratory systems exist. Radiology systems exist. Insurance portals exist. Government dashboards exist. Private hospital applications exist. But existence is not architecture. A bucket is not a water supply merely because it contains water for a while.
+And suddenly you are in a cramped hospital corridor where one exhausted clerk is copying patient information from one computer into another because the two systems do not talk to each other even though both cost crores. A doctor is yelling for a missing CT scan. The internet is down. The billing printer has jammed again. Somebody’s uncle is sleeping on the floor beside the patient bed under a rotating ceiling fan that sounds like a Soviet helicopter attempting retirement.
 
-The public story says digitization. The operational story says clerks, printouts, duplicated identifiers, partial capture, fragile integrations, and a near-comic dependence on human memory. A patient becomes many patients because one system knows him by mobile number, another by hospital number, another by insurer identifier, another by spelling variation, another by the relative who paid the bill, and another by a smudged photocopy of an address proof. Then we wonder why analytics misbehave, as if the poor warehouse had been given clean wheat instead of municipal rubble.
+That is healthcare IT.
 
-The private sector is better in places, sometimes much better, but better is not the same as coherent. Private care may have shinier software, tighter revenue-cycle discipline, cleaner front desks, more aggressive billing integration, and faster diagnostic turnaround. It may also have islands of excellence floating in a sea of proprietary fragmentation. The chart may be digital inside the hospital and meaningless outside it. The lab result may be structured for internal display but useless for longitudinal analysis. The diagnosis may be captured for reimbursement, not clinical truth. The patient may still carry the burden of interoperability in a plastic file, like a medieval courier crossing kingdoms with a sealed message and a limp.
+Not the conference brochure version. The actual version.
 
-This is where the distinction between data transport and semantic meaning matters. Transport asks whether a message arrived. Meaning asks whether the receiving system understood the event in the same way the sending system intended it. Health Level Seven version 2 [HL7 v2, an older but still widely used healthcare messaging standard] can move a result from a laboratory system to an EHR. FHIR can represent a medication, condition, encounter, or observation with more modern elegance. But no transport standard can rescue an organization that has never agreed what counts as an active problem, whether “diabetes” means a clinical diagnosis, a billing artifact, a historical mention, a risk marker, or a family whisper copied forward by a junior doctor at midnight.
+And here is the difficulty. If I stay at thirty thousand feet while writing, the article becomes corporate mashed potatoes. Safe. Smooth. Tasteless. LinkedIn people clap politely like seals at a marine park. But if I descend to street level and start explaining the actual muck — the duplicated records, fake interoperability, broken patient identity systems, endless PDF files pretending to be “digital transformation” — readers begin drifting away like passengers quietly leaving a wedding where the fish curry has gone bad.
 
-That is the non-obvious architectural insight: healthcare data is not merely produced by care; it is produced by the local bargain between care, payment, fear, habit, liability, staffing, and software. The data is organizational behavior fossilized into fields. A hospital’s database is not just a technical object. It is a diary written by a bureaucracy with a stethoscope.
+You think I exaggerate.
 
-This is why representation failures get mislabeled as data quality failures. “The data is bad” is the phrase people use when they have run out of patience, budget, or political courage. But often the data is faithfully recording a bad abstraction. If an EHR forces a clinician to choose from a diagnosis list that does not match the clinical situation, the resulting code is not dirty in the ordinary sense. It is cleanly wrong. If a discharge summary allows rich narrative but the analytics pipeline only extracts billing codes, the loss is not dirt. It is amputation. If a laboratory result travels without provenance, units, reference ranges, device context, or specimen timing, the problem is not that someone forgot to polish the data. The problem is that the system shipped a corpse and called it a patient.
+I do not.
 
-Technical blogging is difficult because the honest version of this argument sounds gloomy to the uninitiated and obvious to the wounded. Healthcare IT people who have lived inside production systems know this already in their bones. Serious beginners need the scaffolding. General readers want the point before the soup cools. And the writer, poor fool, must somehow explain interface engines, coding systems, workflow-coupled data generation, identity matching, temporal ambiguity, source-of-truth conflict, and semantic drift without sounding like a man alphabetizing screws in a sinking ship.
+A scanned PDF in India is often considered advanced digitization. We are one motivational speech away from calling a stapler “artificial intelligence.”
 
-Then comes the Indian complication. In India, the conversation is poisoned by a patriotic reflex that mistakes comparison for betrayal. Mention China and half the room reaches for the nearest flagpole. This is childish, but it is not harmless. A country that cannot compare cannot improve. A country that treats external evidence as insult becomes a committee of wounded uncles, each one convinced that pointing at a broken drain is an attack on civilization.
+Meanwhile somewhere in Shenzhen, a metro line gets built in the time it takes Kolkata municipality to debate whether a pothole officially exists.
 
-India and China were once close enough in rural texture that the comparison was not ridiculous. Villages, poverty, agrarian rhythms, vast populations, hungry states, postcolonial ambition, uneven literacy, uneven health. Then the paths diverged. China built with a ferocity that can be admired without becoming naïve about its costs. India argued, improvised, privatized fragments of competence, celebrated exceptions, tolerated civic decay, and learned the mystical art of calling delay democracy when delay was often just delay wearing a constitutional shawl.
+And there. The moment China enters the conversation, Indian nationalism begins vibrating like a pressure cooker.
 
-The Indian chest-thumper hears this and says, “Go to China.” This is the great intellectual achievement of the insecure patriot: to convert diagnosis into deportation. But I did not come from China. I came from the north side of Calcutta, which, the last time I checked, had not been annexed by Beijing, though parts of it might benefit from a working footpath, less ceremonial garbage, and the occasional suspicion that public systems are meant to function.
+“Why don’t you go to China then?”
 
-The comparison matters because healthcare IT does not grow in a vacuum. It grows in the soil of civic capacity. If a city cannot maintain drains, traffic discipline, land records, air quality, building codes, municipal accountability, and basic administrative coherence, then its healthcare systems inherit that disorder. They may conceal it behind software, but software is a poor curtain. The database eventually smells of the street outside.
+This is the standard response. It arrives with the reliability of monsoon mosquitoes.
 
-A nation’s healthcare IT maturity depends on boring virtues: identity, standards, governance, procurement competence, public trust, operational discipline, clean institutional ownership, and the ability to maintain systems after the ribbon-cutting photograph has yellowed. These are not glamorous. They do not produce slogans. Nobody writes a patriotic song about master data management. Yet without it, the grand digital health dream becomes another Indian spectacle: impressive portal, weak ground truth, heroic claims, exhausted users.
+But that is precisely the point. I did not come from China. I came from the north side of Calcutta. Last I checked, Shyambazar had not yet become a Chinese province, though frankly if Beijing fixed the drainage near some of these lanes people might at least stop needing tetanus shots during monsoon season.
 
-The bitter joke is that everyone claims to care about healthcare. Healthcare is sacred when someone is dying, marketable when someone is selling, political when someone is promising, and invisible when someone must fund maintenance, train staff, reconcile identifiers, govern terminology, or repair a broken interface at 2:17 in the morning. We love the hospital as symbol and neglect the system as organism. We applaud doctors, blame clerks, fear bills, worship machines, and ignore the data architecture that decides whether the next clinician sees the truth or a decorative lie.
+The strange thing is that India and China were not always standing this far apart. Older Bengalis remember this. There was once a vaguely similar rural texture to both countries. Dusty roads. Cycles. Shared bathrooms. Agricultural rhythms. Entire afternoons smelling of boiled rice and damp earth.
 
-This hypocrisy is not uniquely Indian, but India gives it a special flourish. We want world-class care without world-class plumbing. We want artificial intelligence before reliable patient identity. We want dashboards before documentation discipline. We want national platforms before local workflow repair. We want predictive analytics on top of records that cannot reliably say whether the same patient came back twice or two patients came once. We want the mango without the tree, the shade without the roots, the miracle without the maintenance contract.
+Then one country became frighteningly competent at infrastructure and manufacturing while the other became world champion in panel discussions.
 
-The practical point is blunt. Design must begin not with applications but with representational honesty. What entities does the system claim to know? Patient, encounter, order, result, diagnosis, medication, procedure, claim, referral, consent, provider, facility. Who owns each? When does it change? What is its source of truth? What is captured because care required it, what is captured because billing demanded it, what is captured because regulation threatened punishment, and what is captured because a tired human clicked the least-wrong option?
+We debate magnificently.
 
-Governance must stop behaving like a festival committee and start behaving like architecture. Terminology mapping is not clerical housekeeping. It is semantic policy. Interface specifications are not vendor paperwork. They are contracts about reality. Data warehouses are not dumping grounds for exhausted transactional systems. They are interpretive machines, and every transformation inside them should carry provenance, latency expectations, loss markers, and an admission of what was guessed.
+India can hold a symposium on why the municipal water pipe has not worked since 1998. China would probably replace the pipe before lunch and then build a six-lane expressway beside it just to stay in practice.
 
-Implementation must also accept the dirty constraint: clean solutions are often impossible because the live system cannot be stopped. Hospitals do not pause for refactoring. Patients do not wait for ontology alignment. Legacy systems cannot always be retired. Vendors resist openness. Regulators demand reports before workflows mature. Procurement rewards visible features over invisible correctness. Clinicians are already overloaded. Clerks have private survival workflows that no architecture diagram shows. The old system keeps breathing through tubes while the new one is assembled beside it with borrowed screws.
+Now before the patriotic commandos arrive with tricolor profile pictures and aneurysms, let me say this plainly: China has serious problems too. Surveillance. Rigidity. State overreach. Fear. Lack of political openness. Nobody sensible romanticizes that.
 
-So the architectural direction is not purity. Purity is for whiteboards and newly funded fools. The direction is staged realism. Stabilize identity. Capture provenance. Separate transport success from semantic confidence. Make transformations explicit. Preserve clinical narrative while extracting structured meaning carefully. Build canonical models where they help, not as imperial fantasies. Treat FHIR profiles and implementation guides as local agreements, not magic carpets. Design for reconciliation, not imaginary perfection. Audit not only whether data moved, but what meaning it lost in transit.
+But only a fool refuses comparison altogether.
 
-And write about it anyway.
+If your neighbor’s house stopped collapsing and yours still leaks during every rainstorm, it is not treason to ask what cement he used.
 
-Write the technical blog even if only seventeen people read it, and twelve of them are bots, and one is a recruiter searching for “FHIR architect” with the enthusiasm of a bored heron. Write because the public vocabulary is too thin. Write because India badly needs people who can tell the difference between digitization and systems thinking. Write because someone must say that a scanned PDF is not interoperability, that a portal is not governance, that a dashboard is not truth, that a hospital application is not healthcare IT maturity, and that national pride does not become infrastructure merely by shouting at skeptics.
+Healthcare IT sits directly inside this larger civic story. That is the part people miss.
 
-The blog form is inadequate, of course. It is a small window cut into a large, damp, badly wired building. But a window is not nothing. Through it, a reader may see that the mess has structure. The boil has anatomy. The complaint has engineering behind it. And perhaps that is the only honest ambition left: not to make healthcare IT glamorous, but to make its hidden machinery visible enough that fewer people can pretend the machine is working when it is merely making noise.
+A hospital system does not magically become organized inside a fundamentally disorganized society. Software is not holy water. You cannot sprinkle Oracle, Epic, Cerner, cloud computing, machine learning, and PowerPoint over civic dysfunction and expect Switzerland to emerge from the smoke.
 
-## Related Posts
+Data reflects culture more honestly than speeches do.
 
-- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
-- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
-- [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+That is one of the great hidden truths of healthcare IT.
+
+People think medical data is some objective scientific substance sitting quietly in servers like neatly packed rice sacks. It is not. Medical data is generated by frightened humans, tired nurses, overworked doctors, insurance incentives, billing rules, legal fears, bad software design, missing training, and whatever workaround someone invented during a night shift in 2017 that somehow became official policy.
+
+The database becomes a fossil record of institutional confusion.
+
+One hospital identifies a patient by phone number. Another by government ID. Another by spelling. Another by whatever the receptionist heard through a mask behind a noisy fan.
+
+Suddenly one diabetic patient becomes four separate people in the analytics system.
+
+Then management says, “Data quality issue.”
+
+No. Not quite.
+
+That is not dirt. That is representation failure. Different disease entirely.
+
+Saying “the data is bad” is often like blaming the thermometer because the kitchen caught fire.
+
+And this is why writing technical blogs becomes exhausting. Because the deeper truth is always messier than the marketing version.
+
+FHIR can transport healthcare information beautifully. HL7 messages can move millions of records daily. Dashboards can calculate things down to six decimal places. But transport is not meaning.
+
+A train carrying boxes is not the same thing as knowing what is inside the boxes.
+
+One system says “diabetes.” Another says “suspected diabetes.” Another says “family history of diabetes.” Another says “billing code related to diabetes.”
+
+Computers happily exchange all four as though reality itself were neatly folded into rows and columns.
+
+Meanwhile a real human being is sitting in a plastic chair outside radiology eating glucose biscuits from a crinkled packet because he skipped lunch to pay for the scan.
+
+That man is the actual healthcare system.
+
+Not the dashboard.
+
+I sometimes think this is why ordinary readers get uncomfortable with healthcare IT writing. The subject eventually forces you to look at uncomfortable machinery underneath modern life. It is like lifting the lid off your apartment water tank and discovering things in there with opinions.
+
+And maybe that is why I keep writing these blogs despite knowing full well that most readers would probably rather watch reels about productivity hacks or billionaires waking up at 4 AM to consume chia seeds while doing ice baths beside a mountain.
+
+My own mornings are less cinematic.
+
+Usually some crow begins screaming outside around six. The lane below smells faintly of frying oil and drain water. Somebody nearby is already arguing about money. Tea boils. Electricity flickers once like a warning from the gods. I check consulting emails half asleep wondering whether another contract will quietly disappear because some executive somewhere discovered “AI transformation strategy” after listening to a podcast on a flight to Dubai.
+
+Middle age is strange that way.
+
+You become aware that entire civilizations can decline while still sounding confident.
+
+That is modern India in miniature sometimes. Loud optimism wrapped around exhausted systems held together by jugaad, aspiration, caffeine, WhatsApp, and the supernatural patience of ordinary people.
+
+And before somebody says I am being too negative, let me say this too: India still has astonishingly smart people. Brilliant doctors. Engineers. Researchers. Nurses who perform miracles under conditions that would make American hospital administrators faint directly into a risk management committee.
+
+But brilliance scattered randomly across a broken system does not automatically produce a functioning civilization.
+
+A violinist can be gifted. An orchestra can still sound like utensils falling down a staircase.
+
+The healthcare IT lesson hiding inside all this is painfully simple.
+
+You cannot build reliable digital systems on top of unreliable civic foundations forever.
+
+Eventually the cracks rise upward.
+
+Patient identity breaks.
+Records fragment.
+Hospitals become islands.
+Data loses meaning.
+Clinicians stop trusting systems.
+People create workarounds.
+Workarounds become policy.
+Policy becomes architecture.
+
+And then one day some consultant in a blazer says the country needs “digital transformation.”
+
+At which point half the room quietly opens Excel.
+
+Still, I keep writing.
+
+Maybe because I want at least a few ordinary people to understand that healthcare IT is not really about computers. It is about how societies organize trust. Who gets treated. Who waits. Who pays. Who disappears into paperwork. Who survives long enough to become a statistic.
+
+And perhaps also because I am tired of the dishonest optimism floating around India right now like cheap perfume in a crowded bus.
+
+You are apparently required to say India is becoming a superpower every seventeen minutes or your citizenship gets reviewed by uncles on Facebook.
+
+But walk through enough government hospitals. Sit in enough municipal offices. Watch enough young Indians desperately trying to leave. Watch enough educated middle-aged men quietly collapsing economically despite doing everything “right.” Then the gap between slogan and reality becomes impossible to ignore.
+
+Not unlike those old Calcutta houses where the front balcony still looks respectable from the street but inside the walls are wet, the wiring is ancient, and one good monsoon could send the bathroom through the floor into the sweet shop downstairs.
+
+That, unfortunately, is also a kind of systems architecture.
