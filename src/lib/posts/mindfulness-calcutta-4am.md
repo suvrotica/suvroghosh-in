@@ -65,6 +65,8 @@ Now the funny thing about meditation is that it is actually absurdly simple. The
 
 That’s all.
 
+<Yt src="https://youtu.be/eKo1zynOV_0?si=JJM8RBU59Aj8P9u0" />
+
 You do not need a guru from Rishikesh who speaks like he swallowed a poetry calendar. You do not need a bald Scandinavian man renamed “Shantidev” after a three-week retreat in Dharamshala. You do not need incense costing more than fish curry ingredients.
 
 Just breathe.
@@ -128,3 +130,5 @@ Not happiness exactly.
 More like temporary armistice.
 
 Which, honestly, is already quite a luxury.
+
+<Yc />
