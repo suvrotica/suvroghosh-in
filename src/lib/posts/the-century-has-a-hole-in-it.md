@@ -1,74 +1,170 @@
 ---
-title: "The Century Has a Hole in It"
-description: "A small childhood arithmetic scandal about why 2026 belongs to the 21st century, and why reality is full of tiny trapdoors for anyone foolish enough to look down."
-date: "2026-05-07"
+title: "Why 2026 Is Still the 21st Century"
+description: "A small question about calendars turns into a larger meditation on how ordinary people glide past contradictions without ever stopping to poke them with a stick."
+date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_164649_9699.jpg"
-category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal", "The Century Has A Hole In IT", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+category: "Personal Essay"
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "2026 century explanation", "why 2026 is 21st century", "year zero explained", "calendar confusion", "common era", "century calculation", "funny philosophy", "Bengali essays", "Calcutta writer", "middle class India", "curiosity and logic", "history of calendars", "human contradictions", "readable essays", "ordinary life philosophy", "Indian cultural commentary", "thinking and skepticism", "personal reflections"]
 published: true
-color: "slate"
+color: "stone"
+---
+
+Acronyms and Terms Used
+
+AD — Anno Domini. Latin for “in the year of the Lord.” Traditional year numbering system used after the birth of Christ.
+
+BC — Before Christ. Traditional label for years before AD.
+
+CE — Common Era. Modern secular equivalent of AD.
+
+BCE — Before Common Era. Modern secular equivalent of BC.
+
 ---
 
 <TTS />
 
 <Pi src="Compress_20260507_164649_9699.jpg" />
 
-Acronyms expanded in this post:
-- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+A few mornings ago the power went out again.
 
----
+Not dramatically. Kolkata power cuts no longer arrive with the operatic flourish they had in the 1980s. They now slip in quietly like aging pickpockets. One second the fan is turning. Next second the room becomes a warm lung full of trapped May air and distant scooter horns.
 
-Reality, that grand upholstered sofa on which respectable people sit without checking for bedbugs, is not nearly as solid as advertised. It is a monoculture only from a distance. Come closer and the thing is riddled with tiny comic holes, little logical termite galleries, absurdities, inherited customs, badly translated certainties, ancestral mutterings, half-remembered scriptures, colonial schoolroom furniture, and the occasional fact sitting quietly in the corner like a goat at a physics lecture.
+I was sitting there sweating into my tea, scrolling through headlines about artificial intelligence replacing jobs, billionaires building apocalypse bunkers, and another politician promising “transformational growth” with the confidence of a man selling miracle hair oil to bald goats.
 
-Most people learn not to inspect these holes. They walk through life smoothing the creases, ironing the irony out of existence, looking up frocks, exam results, train timings, marriage prospects, gas-cylinder prices, cricket scores, and other sanctioned distractions. Their contentment has a respectable name when spoken kindly and a rude one when spoken honestly. The polite version is normal life. The impolite version is ignorance with a pension plan.
+And then my brain wandered, as it unfortunately does.
 
-But there is often a nagging itch under the civilized skin. A small inquisitive rat in the wall. People hear it as children, then spend adulthood learning to ignore the scratching.
+Why exactly are we calling this the 21st century when the year is 2026?
 
-I did not ignore it, partly because I was not supplied with the equipment. I grew up with half-practicing Hindu parents, which in Bengal means religion arrived not as a clean doctrine but as weather. There were gods, stories, rituals, warnings, festivals, fragments, prohibitions, jokes, rumors, kitchen theology, neighborhood metaphysics, and a generational tolerance for haphazard apocrypha and hearsay. Nobody sat me down with a diagram and said, “Here is reality, son, laminated for convenience.” Reality came in loose pages. Some were missing. Some had turmeric stains. Some contradicted the others.
+Look at the number properly.
 
-So I began, in my small and irritating way, to figure things out myself.
+Twenty.
 
-Not the glamorous esoterica sold in special shops to men with beards and imported mala beads. I mean ordinary concepts. The basic furniture of the world. Things adults used every day without ever turning them over to see how the legs were attached. The sort of thing that should have been explained in school but was usually embalmed instead. Our colonial inheritance had trained generations to recite answers with the moral posture of knowledge, while quietly discouraging the dangerous next question: yes, but why?
+Not twenty-one.
 
-One of the first cracks I remember was the matter of centuries.
+The thing practically introduces itself.
 
-Why, I wondered, do we call this the 21st century when the year begins with 20? The year 2026 looks, at first glance, like a loyal citizen of the 20-something kingdom. It has 20 right there in front, waving its little numerical flag. Yet every educated person insists it belongs to the 21st century. This seems, to a child, like the adults have once again formed a committee to lie with confidence.
+And yet every educated person on earth calmly says “21st century” as if there is nothing strange about it. News anchors say it. Professors say it. People on LinkedIn say it while posting motivational nonsense beside photographs of mountains.
 
-The trick is not mystical. It is worse. It is accounting.
+Nobody pauses.
 
-Our common historical year-numbering system has no year zero. The year 1 Before Christ [BC, the traditional label for years before the Christian calendar’s starting point] is followed immediately by Anno Domini [AD, the traditional Latin label meaning “in the year of the Lord”] 1. There is no neat little neutral zero-year lobby between them, no arithmetic vestibule where history can wipe its shoes. The calendar steps from one side of the doorway to the other and pretends the missing plank is perfectly normal.
+This fascinates me.
 
-That missing zero changes the counting.
+Because humans are extraordinarily good at walking around logical potholes without looking down into them. Civilization depends on it. If everybody stopped every five minutes to inspect contradictions, society would grind to a halt by lunchtime.
 
-The 1st century AD runs from AD 1 through AD 100. Not AD 0 through AD 99, because AD 0 does not exist in that system. The 2nd century runs from AD 101 through AD 200. The 3rd from AD 201 through AD 300. The 20th from AD 1901 through AD 2000. Therefore the 21st century begins on January 1, 2001, and ends on December 31, 2100.
+Most people inherit reality the way Bengalis inherit old furniture. Heavy teak cupboards. Slightly crooked. Smells faintly of naphthalene and dead lizards. Nobody knows exactly where it came from but everybody accepts it as permanent.
 
-This is why the year 2000, despite all the fireworks, shiny spectacles, millennium hysteria, and apocalyptic software indigestion, was technically the last year of the 20th century. Humanity threw the party one year early, which is exactly the sort of thing humanity would do after inventing both calendars and marketing departments.
+I grew up in one of those half-religious Bengali households where certainty floated around loosely like incense smoke. My parents were decent sensible people, but explanations were often assembled from folklore, schoolbooks, neighborly hearsay, snippets of scripture, and the occasional declaration from somebody’s aunt who had once met a guru on a train.
 
-The formula is simple enough to be mildly offensive. For any positive AD year, the century is the ceiling of the year divided by 100. The ceiling function takes a number and rounds it upward to the nearest whole integer. So 2026 divided by 100 is 20.26. The ceiling of 20.26 is 21. Therefore 2026 belongs to the 21st century.
+Which is honestly how most civilizations operate beneath the varnish.
 
-You can also use the schoolboy shortcut. Split 2026 into 20 and 26. Since the last two digits are not 00, add one to the first part. So 20 plus 1 becomes 21. But for a year ending in 00, do not add one. The year 2000 remains in the 20th century. The year 1900 remains in the 19th. The year 2100 remains in the 21st. The moment the year becomes 2101, the 22nd century begins, and some future idiot will write the same explanation on whatever glowing neurological advertisement platform has replaced blogs by then.
+As a child I developed the annoying habit of asking follow-up questions.
 
-What fascinated me was not merely the answer. The answer is tidy. A little calendar arithmetic, a missing zero, a ceiling function, and the matter is settled. What fascinated me was that people could say “21st century” every day and not feel even a faint tickle of contradiction when looking at the 20 in 2026. The mind had built a smooth road over a pothole and then forgotten the pothole existed.
+Adults hate follow-up questions.
 
-That, I think, is how much of reality works. Not by being obvious, but by becoming familiar. Familiarity is the chloroform of thought. It does not prove things. It merely sedates the part of us that would otherwise object.
+The first answer is usually manageable. The second begins exposing loose wiring.
 
-The century problem is a small example, almost cute. A calendar gnat. But it teaches a larger lesson. Many things we call natural are conventions with wrinkles. Many things we call obvious are agreements made by dead people under conditions we no longer remember. Many things we call facts are facts only after passing through history’s cracked machinery of language, religion, empire, bureaucracy, translation, and habit.
+The century puzzle bothered me for years because the explanation was never intuitive. People simply repeated it like railway announcements.
 
-A child asks why 2026 is the 21st century and discovers the missing year zero. An adult asks why society works the way it does and discovers a whole warehouse of missing zeroes.
+Then one day I found the answer.
 
-Missing justice. Missing context. Missing memory. Missing incentives. Missing honesty. Missing explanations. Missing evidence. Missing humility. Missing the small, decent embarrassment that should arrive whenever a confident answer is resting on a pile of inherited nonsense.
+And the answer, absurdly enough, is that the calendar has a missing year.
 
-This is why curiosity is dangerous. Not because it destroys faith, tradition, or order in one dramatic atheistic thunderclap, but because it makes the wallpaper peel. First the century. Then the calendar. Then the schoolbook. Then the priest. Then the nation. Then the family legend. Then your own biography, that most cherished fraud, stitched together from memory, vanity, injury, and selective lighting.
+There is no Year Zero.
 
-The Indian Heathens Club, if it exists, probably has no annual membership card. It is more likely a private disease of attention. You notice one oddity, then another. You begin pulling at threads. Soon the shawl of received wisdom is lying around your ankles, and everyone is annoyed because you have made the room untidy.
+History jumps directly from 1 BC to AD 1 like a man leaping over an open drain during monsoon season. No pause. No neutral middle square. Just hop.
 
-Still, I prefer the holes.
+That tiny missing zero bends the arithmetic forever afterward.
 
-A smooth reality is comfortable but suspicious. It has the dead sheen of a government office table polished by decades of elbows and evasion. A punctured reality, full of strange little gaps, is less relaxing but more alive. It gives you places to insert a question. And sometimes a question, if sharpened properly, is the only tool a person has against the enormous upholstered sofa of common sense under which so many small truths have been quietly swept.
+The 1st century was years 1 through 100.
 
-## Related Posts
+Not 0 through 99.
 
-- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
-- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [The Contender Who Would Not Compete](/blog/personal-essay/the-contender-who-would-not-compete)
+Because zero did not exist in that numbering system.
+
+Then the 2nd century became 101 through 200.
+
+The 20th century became 1901 through 2000.
+
+And the 21st century began only on January 1, 2001.
+
+So yes, 2026 belongs to the 21st century even though the number itself looks like it should be sitting comfortably in the 20th.
+
+It feels wrong because your brain expects counting to begin at zero. Modern people are trained by odometers, computers, elevators, cricket scoreboards, and mobile phone percentages. Zero is everywhere now. But the old calendar system was assembled in a world before mathematical neatness became fashionable.
+
+Human beings are forever trapped inside old decisions made by dead people.
+
+That sentence explains more of society than most political science textbooks.
+
+The mathematical shortcut is simple enough.
+
+Take the year.
+
+Divide by 100.
+
+2026 divided by 100 becomes 20.26.
+
+Now round upward.
+
+You get 21.
+
+That is the 21st century.
+
+Simple.
+
+But here is the interesting part: even after understanding it, the thing still feels faintly crooked. Like a shirt buttoned one hole wrong.
+
+And that tiny discomfort tells you something important about the human mind.
+
+We do not really understand most of the systems surrounding us. We merely become accustomed to them.
+
+There is a difference.
+
+A huge difference.
+
+People think familiarity means truth.
+
+It does not.
+
+It just means repetition stopped triggering alarms.
+
+Once you notice this, you begin seeing it everywhere.
+
+Why do months have these bizarre lengths? Why is February treated like the neglected stepchild of the calendar? Why do governments announce “temporary” measures that survive longer than dynasties? Why do software subscriptions now resemble medieval taxation? Why are modern phones more powerful than NASA computers from the Moon landing yet somehow worse at making phone calls?
+
+Small contradictions pile up around us like unwashed cups in a bachelor’s room.
+
+Most people learn not to inspect them too closely because daily survival already consumes enough mental fuel. Fair enough. If you are commuting two hours in Kolkata humidity, fighting bank apps, worrying about rent, aging parents, cholesterol, layoffs, and whether the fish smells trustworthy, you may not have spare neurological bandwidth for calendar philosophy.
+
+I understand that deeply.
+
+At fifty-one, living in the frayed edges of Kolkata after years in American healthcare IT systems, I sometimes feel like a man who accidentally wandered backstage during a magic show and can no longer enjoy the performance properly. You see the hidden ropes. The painted plywood. The exhausted assistants smoking behind the curtain.
+
+Meanwhile the audience keeps applauding.
+
+Even now, when I hear phrases like “the future of humanity” spoken by television experts who cannot reliably predict next Tuesday’s petrol price, I remember the century problem.
+
+Humans speak confidently about things they have not fully inspected.
+
+Often the inspection would take only five minutes.
+
+But people avoid that little mental wobble. That unpleasant moment when certainty slips.
+
+Curiosity sounds glamorous in books. In real life it mostly means becoming mildly dissatisfied forever.
+
+You notice one crack.
+
+Then another.
+
+Then another.
+
+The calendar has no year zero.
+
+The economy runs on confidence tricks.
+
+Politics runs on selective memory.
+
+Social media runs on emotional slot machines.
+
+And somewhere in the middle of all this, an ordinary middle-aged Bengali man sits in a warm room during a power cut wondering why 2026 belongs to the 21st century while mosquitoes conduct aerial operations around his ankles.
+
+Which, when you think about it, is probably the most 21st-century thing imaginable.
