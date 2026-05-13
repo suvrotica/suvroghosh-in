@@ -25,6 +25,14 @@ Acronyms expanded in this post:
   size={1} 
 />
 
+
+<Vid 
+  src="হাতে_শুধু_হারিকেন.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+
 <Vid 
   src="বাকির_খাতা.mp4" 
   layout="block" 
