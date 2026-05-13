@@ -1,13 +1,17 @@
-calcutta-tea-stall-evening-adda.md
 ---
 title: "One More Bhaar Cha Before Night Falls"
 description: "A humid evening portrait of tea stall adda, middle-aged panic, cracked ambition, and the strange comedy of surviving in the forgotten edges of Calcutta."
 date: "2026-05-13"
+thumbnail: "/images/Compress_20260513_184315_5629.jpg"
 category: "Calcutta Life"
 tags: ["Calcutta", "Kolkata", "Bengali Adda", "Tea Stall", "Middle Class Bengali", "Lower Middle Class Life", "Calcutta Summer", "Bengali Culture", "Indian Urban Life", "Mental Health", "Bipolar Depression", "Loneliness", "Single Middle Age", "City of Joy", "North Calcutta", "South Calcutta", "Bengali Tea Culture", "Calcutta Streets", "Indian Middle Class", "Modern Bengal", "Existential Humor", "Bengali Conversations", "Kolkata Monsoon", "Calcutta Nostalgia", "Indian Everyday Life", "Bengali Literary Essay", "Urban Decay", "Tea Shop Philosophy", "Calcutta Evenings"]
 published: true
 color: "brown"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260513_184315_5629.jpg" />
 
 Acronyms used in this post:
 
