@@ -1,14 +1,17 @@
-election-puja-and-the-common-eye.md
 ---
 title: "Election Puja And The Common Eye"
 description: "A Calcutta-side political essay on campaign promises, welfare theatrics, voter fatigue, and the old Indian art of turning public hope into private furniture."
 date: "2026-05-13"
+thumbnail: "/images/Compress_20260513_233123_3744.jpg"
 category: "Politics"
 tags: ["Video", "Politics", "Indian Politics", "West Bengal Politics", "Calcutta", "Kolkata", "Bengal Election", "BJP", "TMC", "Election Promises", "Welfare Politics", "Cash Transfer Schemes", "Democracy", "Indian Democracy", "Political Satire", "Middle Class India", "Lower Middle Class India", "Civic Life", "Governance", "Corruption", "Public Welfare", "SuvroGhosh"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260513_233123_3744.jpg" />
 
 Acronyms used: BJP [Bharatiya Janata Party, the national political party that has made major electoral promises in Bengal]; TMC [Trinamool Congress, the party that ruled West Bengal before the recent change]; EC [Election Commission, the body that conducts elections]; CAA [Citizenship Amendment Act, a citizenship law that often enters political arguments about identity and eligibility]; SIR [Special Intensive Revision, a large-scale voter-list verification exercise]; MLA [Member of Legislative Assembly, an elected state-level representative].
 
