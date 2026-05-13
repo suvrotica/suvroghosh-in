@@ -1,15 +1,17 @@
-predepression-tea-bipolar-calcutta.md
 ---
 title: "Predepression Tea"
 description: "A Calcutta personal essay on bipolar depression, bad tea, early warning signs, rumination, attention, and the small domestic alarms that go off before the mind darkens."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_021934_4568.jpg"
 category: "Personal Essay"
 tags: ["Bipolar Depression", "Depression Essay", "Mental Health", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class Life", "Middle Age", "Anxiety", "Rumination", "Hypomania", "Depressive Episode", "Metacognition", "Attention", "Tea", "Indian Mental Health", "Personal Writing", "Mood Disorder", "Everyday Psychology", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
 
+<Pi src="Compress_20260514_021934_4568.jpg" />
 
 ---
 
