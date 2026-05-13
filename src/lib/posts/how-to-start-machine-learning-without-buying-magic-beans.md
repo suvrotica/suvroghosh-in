@@ -1,14 +1,17 @@
-how-to-start-machine-learning-without-buying-magic-beans.md
 ---
 title: "How To Start Machine Learning Without Buying Magic Beans"
 description: "A frank, readable guide for confused beginners who want to enter machine learning, AI, and LLMs without pretending the mathematics, statistics, and hard thinking can be skipped."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_043636_6238.jpg"
 category: "AI Education"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Machine Learning", "Artificial Intelligence", "AI Learning Path", "Learn Machine Learning", "Machine Learning Beginner Guide", "Large Language Models", "LLM Beginner Guide", "Deep Learning", "Data Science", "Python Programming", "Linear Algebra", "Probability", "Statistics", "Neural Networks", "AI Career", "AI Skills", "AI Education", "Prompt Engineering", "Generative AI", "Data Literacy", "Model Evaluation", "Mathematics for AI", "AI for Beginners", "Kolkata Writer"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260514_043636_6238.jpg" />
 
 Acronyms used in this post:
 
