@@ -1,14 +1,17 @@
-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.md
 ---
 title: "The Vegetable Girl Before Dawn"
 description: "A dawn meditation from the shanty edges of Calcutta on poverty, AI, attention, cosmic luck, and the strange privilege of being alive when the world feels half-broken."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_002849_9914.jpg"
 category: "Personal Essay"
 tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Life", "Indian Middle Class", "Lower Middle Class India", "Morning Reflection", "Early Morning Thoughts", "Vegetable Vendor", "Street Life", "Poverty In India", "Artificial Intelligence", "AI In India", "Negative Singularity", "Future Of Work", "Existential Reflection", "Cosmic Luck", "Human Imagination", "Atheist Spirituality", "Modern India", "Urban India", "Indian Society", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Personal Blog", "Indian Blog", "Readable Essays", "Philosophy Of Everyday Life", "Life In Kolkata", "Technology And Society", "AI And Inequality", "Social Commentary", "Ordinary People", "Dawn Essay", "Attention And Meaning"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260514_002849_9914.jpg" />
 
 Acronyms: Artificial Intelligence [AI, computer systems trained to recognize patterns, generate language, make predictions, and increasingly act like decision-making clerks with better grammar and fewer tea breaks].
 
