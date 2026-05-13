@@ -13,6 +13,8 @@ color: "brown"
 
 <Pi src="Compress_20260513_184315_5629.jpg" />
 
+
+
 Acronyms used in this post:
 
 Healthcare Information Technology [Healthcare IT]: The systems, software, data, and infrastructure used inside hospitals and healthcare organizations.
@@ -31,7 +33,7 @@ The biscuits taste faintly of cardboard and old rainwater. The omelette arrives 
 
 But the tea — ah, the tea — the tea could restart a dead marriage.
 
-By five-thirty in the evening the stall begins glowing like a tiny shipwreck lantern in the middle of this damp collapsing neighborhood. The summer heat sits over the lane like a fat landlord refusing to leave. The drains smell ambitious. Somewhere nearby a pressure cooker screams. Somewhere else somebody is frying green chilies in mustard oil, which floats through the air and attacks the eyes with the tenderness of military-grade pepper spray.
+By five-thirty in the evening the stall begins glowing like a tiny lantern beside the drain. The summer heat sits over the lane like an unpaid relative refusing to leave after Durga Puja. The drains smell militant. Somewhere nearby somebody fries green chilies in mustard oil and the air itself becomes argumentative.
 
 And then the men arrive.
 
@@ -39,166 +41,152 @@ Always the same species of men.
 
 Middle-aged Bengali men with expanding waists and shrinking optimism.
 
-Men wearing loose Bermuda shorts and old political opinions.
+Men in loose Bermuda shorts carrying newspapers they no longer trust but cannot stop buying. Men with blood pressure. Men with opinions on geopolitics. Men who have spent thirty years waiting for life to become reasonable and are slowly realizing this may have been a clerical misunderstanding.
 
-Men carrying folded newspapers under the arm although nobody reads newspapers anymore except to become angry at them.
+The adda begins carefully.
 
-One retired bank clerk arrives every evening exactly at six-ten, as punctual as a German train, except far sweatier. Another fellow claims he once had a chance to move to Dubai in 1998 but rejected it because “family responsibilities.” In Bengal this phrase can mean anything from genuine sacrifice to catastrophic laziness.
+One complains about electricity bills.
 
-The adda starts slowly.
+Another curses the humidity.
 
-Like old diesel engines.
+Someone predicts early monsoon with the confidence of the Indian Meteorological Department, which is to say not much confidence at all.
 
-At first nobody wants to commit.
+Then suddenly the conversation leaps sideways.
 
-One man complains about electricity bills. Another curses the heat. Someone predicts early monsoon. Somebody says mangoes no longer taste like mangoes. This is a standard Bengali opening ritual. Like dogs sniffing each other before deciding not to fight.
-
-Then suddenly, without warning, the conversation takes flight.
-
-America.
+Iran.
 
 China.
 
-Cricket corruption.
+Hantavirus.
 
-Blood sugar.
+Cricket.
 
-Fish prices.
+Petrol prices.
 
-Why modern songs sound like furniture assembly instructions.
+The Strait of Hormuz.
 
-Why every Bengali mother believes air from ceiling fans causes pneumonia.
+You sit there blinking into your tea wondering how a discussion about mangoes became a naval energy-security briefing.
 
-Why young people say “literally” every six seconds.
+That is Bengali adda.
 
-Why the city is dying.
+No steering wheel. No brakes. No destination.
 
-Why the city never dies.
+Yesterday a fellow with chronic acidity announced loudly that if Hormuz closes, oil prices will explode, America will panic, China will panic, India will panic, and ultimately “the common man will be finished.”
 
-You sit there with tea and listen. That is the trick. Bengali adda is not debate. It is jazz. The point is not reaching conclusions. The point is improvisation. One thought bumps into another like tramcars in fog.
+“The common man,” incidentally, was saying this while owing four teas on credit.
 
-Yesterday the entire tea stall spent forty minutes discussing whether artificial intelligence will destroy jobs. This in a neighborhood where half the men cannot successfully operate a television remote control without calling their children.
+Another man interrupted him to discuss hantavirus because some rats had recently died near the canal.
 
-One fellow declared confidently that robots will soon replace doctors.
+Now everybody at the tea stall had become an infectious disease specialist.
 
-Then he asked me how to open a PDF file.
+One fellow declared cats are “natural virologists.”
 
-Life is generous with irony.
+Another said rats nowadays are becoming “international.”
 
-I usually stand near the side wall beneath a faded Pepsi sign that has been bleaching under the sun since perhaps the Mughal era. The wall remains warm long after sunset. The tea glass burns the fingers slightly. Mosquitoes conduct synchronized aerial operations around the ankles. The stall radio plays old Bengali songs interrupted by static and sudden advertisements for digestive syrup.
+A third man quietly continued eating butter biscuits throughout the discussion with the calm dignity of a buffalo observing political unrest.
 
-You would think this scene sounds depressing.
+At this exact moment the neighborhood cow arrived.
+
+Every tea stall in Calcutta has one semi-official cow. Nobody owns it exactly. Nobody feeds it officially. Yet somehow it survives magnificently, like corruption or old Mohammed Rafi songs.
+
+This particular cow wandered directly into the adda and began chewing a cardboard carton near the cigarette shelf while the men continued discussing global pandemics.
+
+Nobody found this strange.
+
+That is another thing visitors never understand about Calcutta. Human beings, cows, stray dogs, goats, crows, mosquitoes, and philosophical despair all coexist here with the loose administrative structure of an underfunded orchestra.
+
+The tea seller pushed the cow gently aside without interrupting his argument about petroleum shipping routes.
+
+“America won’t allow Hormuz to close,” he declared while pouring six teas simultaneously.
+
+This from a man whose tea stall roof collapses slightly every monsoon.
+
+But he said it with conviction.
+
+And conviction is half the Bengali economy.
+
+I usually stand near the side wall beneath a faded Pepsi sign old enough to qualify for archaeological protection. The tea glass burns the fingers slightly. Mosquitoes launch coordinated attacks against the ankles. Somebody’s cheap perfume mixes with sweat, frying oil, damp earth, and bidi smoke until the entire lane smells like exhausted civilization.
+
+You would think this sounds miserable.
 
 And it is.
 
 But not entirely.
 
-That is the strange thing about Calcutta. Misery here never travels alone. It brings gossip. Humor. Fried snacks. Somebody quoting Tagore incorrectly. Somebody scratching fungal rashes while explaining geopolitics. Somebody laughing so hard tea comes out through the nose.
+That is the trick of this city.
 
-A city elsewhere might collapse with dignity.
+Calcutta never allows despair to travel alone. It sends snacks with it.
 
-Calcutta collapses conversationally.
+The tea stall radio plays old Kishore Kumar songs interrupted by advertisements for liver tonic and coaching centers promising government jobs by means not entirely explained. One man scratches a fungal rash while discussing international diplomacy. Another loudly predicts economic collapse before borrowing ten rupees for cigarettes.
 
-I know these men too well because I am becoming one of them.
+And all around them the city sweats.
 
-Fifty-one years old. Single. Broke in the sophisticated modern way where technically you are not starving but your bank account resembles a patient in the emergency ward asking quietly for relatives.
+The walls sweat.
 
-I spent fifteen years in America working in Healthcare IT. Fancy title. Enterprise systems. Hospital software. EHR migrations. Data integration. Endless meetings where exhausted people used phrases like “stakeholder alignment” while secretly wishing for meteor strikes.
+The buses sweat.
 
-You know what I remember most vividly from America?
+Even the dogs look overheated.
 
-Not New York.
+My rented room upstairs feels by evening like the inside of a damp suitcase forgotten in a railway cloakroom. The ceiling fan rotates with the enthusiasm of a government clerk three weeks before retirement. Paint peels from the walls in long exhausted strips. Sometimes at night I lie awake hearing local trains somewhere far away beyond the dark neighborhoods — that long mournful iron howl rolling across the city like somebody dragging chains through memory itself.
 
-Not highways.
+That sound does something to Bengalis.
 
-Not skyscrapers.
+A distant train at night always sounds like departure.
 
-I remember supermarket silence.
+Like somebody else escaping.
 
-American supermarkets at night are eerie places for a Bengali. Everything works. Everything is organized. Nobody shouts. Nobody bargains. The vegetables sit there under white light looking emotionally unavailable.
+I spent fifteen years in America working in Healthcare IT. Fancy systems. EHR migrations. Endless meetings inside aggressively air-conditioned rooms where people discussed “workflow optimization” while eating sandwiches wrapped with the emotional warmth of printer paper.
 
-Meanwhile here in Calcutta, buying potatoes can become a forty-minute philosophical exchange involving rainfall, state elections, cholesterol, and whether Pakistan once produced better fast bowlers.
+And now here I am back in Calcutta standing beside a drain discussing hantavirus with unemployed men and a cow.
 
-Different civilizations. Different insanities.
+Life is not a straight line. It is one of those tangled electric wires hanging above Kolkata streets that somehow continue functioning despite violating every known law of engineering and possibly religion.
 
-Anyway, after America came the return journey.
+The funny thing is this tea stall contains more honesty than most corporate offices I ever worked in.
 
-Which sounds poetic until you actually do it.
+Nobody here pretends success is guaranteed.
 
-People imagine returning home means emotional closure. In reality it means discovering your old neighborhood pharmacy now sells Korean noodles, your school friends have become diabetic uncles, and your body can no longer tolerate roadside phuchka without filing formal internal complaints.
+Nobody says “living my best life.”
 
-The flat I rent now has walls so damp they appear to be growing thoughts.
+These men speak openly about cholesterol, failed sons, bad investments, cataracts, rising rents, anxiety, and fear.
 
-The ceiling fan rotates with the enthusiasm of a government employee three months before retirement. At night stray dogs bark continuously at invisible constitutional violations. During power cuts the whole neighborhood gathers at windows like prisoners observing weather.
+Especially fear.
 
-And through all this the tea stall continues below.
+Middle age is when fear becomes domestic.
 
-Reliable as fungus.
+Not dramatic fear. Not movie fear.
 
-Tonight one man arrives looking particularly shattered. His daughter wants to study abroad. Tuition fees resemble defense budgets. He laughs while describing it but keeps rubbing his forehead. Another fellow quietly admits his son no longer speaks Bengali properly.
+Quiet fear.
 
-Nobody mocks him.
+Blood test fear.
 
-That silence tells you everything.
+Bank balance fear.
 
-Middle age is a sneaky disaster. In youth your failures arrive dramatically. Loudly. Like cinema explosions. By fifty they arrive softly. Through medical reports. Phone calls. EMI calculations. Loneliness. Tiny humiliations.
+Phone-not-ringing fear.
 
-You discover one morning that hope has not vanished exactly.
+Future fear.
 
-It has become cautious.
+One man tonight admitted softly that his daughter wants to move abroad permanently.
 
-Like an old cat crossing traffic.
+Nobody mocked him.
 
-Meanwhile the world outside keeps becoming stranger. Billionaires are launching rockets into space while my landlord still has not repaired the bathroom leakage from 2022. Every week television debates scream about civilization collapsing while the tea stall owner calmly increases tea prices by one rupee and nobody protests because honestly what is the alternative?
+That silence sat heavily for a few seconds.
 
-Without tea this city would start biting people.
+Then somebody suddenly asked whether modern chickens are genetically modified.
 
-That is not metaphorical.
+And just like that the adda swerved again.
 
-You can feel the collective mood improve after the first sip. Sweet milky tea in those little glass bhaars. Hot enough to cauterize emotional wounds. Strong enough to wake buried ancestors.
+That is how survival works here.
 
-And always the adda.
+The mind never stays on pain too long. It keeps changing buses.
 
-The endless adda.
+By nine o’clock the humidity thickens further. The tea seller washes glasses in water of deeply uncertain ancestry. The cow returns for a second inspection of the biscuit packets. Somebody lights one final cigarette. Somebody remembers cooking gas prices. Somebody else curses politicians in three languages.
 
-One man says Bengal is finished.
+Then from far away comes the sound again.
 
-Another says Bengal has always been finished and yet somehow continues producing poets, communists, singers, economists, and unemployed men capable of discussing 14th-century Persian history while wearing bathroom slippers.
+A local train crossing somewhere in the dark.
 
-Then somebody changes the topic suddenly.
+Metal roaring over tracks.
 
-“Did you hear about that murder in Behala?”
+That lonely long horn floating through humid night air over old houses, tangled wires, sleeping dogs, sweating men, leaking roofs, unpaid bills, unfinished dreams, and one tiny tea stall still boiling sweet tea for whoever remains awake and worried.
 
-And off they go again.
-
-That is the beauty of it.
-
-The mind never stays still long enough to drown completely.
-
-Not here.
-
-Not at the tea stall.
-
-The night deepens. Buses roar past like metal dinosaurs with anger management issues. Humidity settles onto the skin. Somebody orders one last cigarette. Somebody remembers he forgot to buy turmeric. Somebody’s phone rings with a Hindi ringtone loud enough to alarm migratory birds.
-
-Then slowly the crowd dissolves.
-
-One by one the men disappear into narrow lanes and dim staircases and tired apartments where medicines wait on tables beside steel water bottles.
-
-I stand there a little longer.
-
-The tea stall owner rinses glasses in grey water of highly philosophical origin.
-
-A tram bell rings somewhere far away in the dark.
-
-And suddenly, for one small stupid moment, the city feels almost tender.
-
-Not hopeful.
-
-Calcutta rarely gives hope in bulk quantities.
-
-But something smaller.
-
-A kind of companionship among the defeated.
-
-Which, on certain summer evenings, is enough to keep a man alive till tomorrow.
+Which, in this city, is practically everybody.
