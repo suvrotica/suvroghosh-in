@@ -1,8 +1,8 @@
-second-mouth.md
 ---
 title: "The Second Mouth"
 description: "A plague begins in Calcutta with a man splitting from the head downward, leaving behind not a corpse but two hungry copies. As the city tries to name the disease, one doctor discovers the infection has been waiting for a very old human permission."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_215732_2937.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Horror", "Calcutta", "Plague"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260514_215732_2937.jpg" />
 
 # THIS IS A WORK OF FICTION
 
