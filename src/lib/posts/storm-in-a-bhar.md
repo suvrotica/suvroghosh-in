@@ -1,8 +1,8 @@
-storm-in-a-bhar.md
 ---
 title: "Storm in a Bhar"
 description: "A Calcutta tea-stall joke about chaos theory becomes a street-level experiment, and one flutter above a cup teaches North Calcutta the old city is never merely background noise."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_202804_4190.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Science Fiction", "Chaos Theory"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260514_202804_4190.jpg" />
 
 # THIS IS A WORK OF FICTION
 
