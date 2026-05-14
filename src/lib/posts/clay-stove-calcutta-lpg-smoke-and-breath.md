@@ -1,14 +1,17 @@
-clay-stove-calcutta-lpg-smoke-and-breath.md
 ---
 title: "Clay Stoves, Hormuz, and the Price of Breath in Calcutta"
 description: "A street-level Calcutta essay on clay stoves, LPG prices, cooking smoke, poor air quality, and the private arithmetic of damaged lungs."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_172338_8335.jpg"
 category: "Calcutta Life"
 tags: ["Calcutta", "Kolkata", "Bengal", "India", "Clay Stove", "Chulha", "LPG Crisis", "LPG Price", "Black Market LPG", "Hormuz Crisis", "Strait of Hormuz", "Cooking Smoke", "Air Pollution", "Indoor Air Pollution", "PM2.5", "AQI", "Poor Air Quality", "Respiratory Health", "Pertussis", "Whooping Cough", "Damaged Lungs", "Urban Poverty", "Lower Middle Class India", "Village Cooking", "Biomass Fuel", "Household Air Pollution", "Public Health", "Energy Poverty", "Calcutta Essay", "Indian Middle Class", "Shanty Boondocks", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260514_172338_8335.jpg" />
 
 Acronyms used: LPG means Liquefied Petroleum Gas, the bottled cooking fuel many Indian homes depend on. AQI means Air Quality Index, a public number meant to summarize how unhealthy the air is. PM2.5 means fine particulate matter smaller than 2.5 microns, tiny enough to go deep into the lungs and behave there like a thief with excellent manners.
 
