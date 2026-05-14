@@ -1,16 +1,19 @@
-bipolar-mood-and-calcutta-calculus.md
 ---
 title: "Bipolar Mood and Calcutta Calculus"
 description: "A personal essay on bipolar agitation, solitude, Calcutta, cheap vegetables, heat, power cuts, and the strange arithmetic of surviving as a lower-middle-class Bengali man."
 date: "2026-05-15"
+thumbnail: "/images/Compress_20260515_050745_5205.jpg"
 category: "Personal Essay"
 tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta", "Kolkata", "Bipolar Mood", "Mental Health Writing", "Middle Class Life", "Lower Middle Class Bengal", "Bengali Essay", "Calcutta Life", "Kolkata Summer", "Power Cuts", "Monsoon Kolkata", "Urban Survival", "Solitude", "Recluse Life", "Personal Blog", "Indian Personal Essay", "Bengali Middle Age", "Mental Weather", "Everyday Economics", "Vegetable Market", "City Essay", "Atheist Writing", "Readable Essay", "Life in Kolkata"]
 published: true
 color: "slate"
 ---
+
 <TTS />
 
-Acronyms used in this post: none.
+<Pi src="Compress_20260515_050745_5205.jpg" />
+
+
 
 ---
 
