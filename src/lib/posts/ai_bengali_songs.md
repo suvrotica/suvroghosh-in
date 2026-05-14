@@ -94,6 +94,12 @@ Acronyms expanded in this post:
   size={1} 
 />
 
+<Vid 
+  src="ইশ্__শত্তি_.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 ## Related Posts
 
 - [Hindi AI Songs](/blog/ai-music-song/hindi_ai_songs)
