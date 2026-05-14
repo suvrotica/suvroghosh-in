@@ -2,14 +2,18 @@
 title: "The Morning of the Cutouts"
 description: "A boy wakes in a Howrah-side slum to find everyone gone, except for a humanoid robot rehearsing violence on paper versions of his neighbors. What looks like a drill becomes an indictment written in data, rainwater, and guilt."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_184755_5224.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Science Fiction", "Horror"]
 published: true
 color: "#3b3b36"
 ---
+
 <TTS />
 
 # THIS IS A WORK OF FICTION
+
+<Pi src="Compress_20260514_184755_5224.jpg" />
 
 Tuhin woke because the morning had forgotten how to be morning.
 
