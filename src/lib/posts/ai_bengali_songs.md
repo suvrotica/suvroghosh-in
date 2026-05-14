@@ -27,7 +27,7 @@ Acronyms expanded in this post:
 
 
 <Vid 
-  src="হাতে_শুধু_হারিকেন.mp4" 
+  src="মানুষ_মোটা_জানোয়ার.mp4" 
   layout="block" 
   size={1} 
 />
