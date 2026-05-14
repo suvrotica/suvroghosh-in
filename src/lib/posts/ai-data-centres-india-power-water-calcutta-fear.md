@@ -1,14 +1,17 @@
-ai-data-centres-india-power-water-calcutta-fear.md
 ---
 title: "The AI Cloud Will Also Need a Pump, a Plug, and a Tanker"
 description: "India’s AI data centre boom is being sold as a national leap into the future, but for people living with weak power, water stress, heat, and climate anxiety, the real question is simpler: who gets the reliable electricity and who waits in the dark?"
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_063232_2544.jpg"
 category: "Technology"
 tags: ["AI Data Centers India", "India AI Infrastructure", "AI Power Consumption", "AI Water Consumption", "Data Centre India", "Data Center India", "Climate Change India", "Kolkata Power Cuts", "India Electricity Grid", "Groundwater Crisis India", "Renewable Energy India", "Coal Power India", "AI Compute", "GPU Infrastructure", "Digital India", "Energy Security India", "Water Stress India", "Urban Infrastructure India", "AI Sustainability", "Technology Policy India", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260514_063232_2544.jpg" />
 
 Acronyms used here:
 
