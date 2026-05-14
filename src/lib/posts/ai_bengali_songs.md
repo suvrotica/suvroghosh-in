@@ -14,6 +14,13 @@ Acronyms expanded in this post:
 ---
 
 <Vid 
+  src="মানুষ_এখনো_বাকি.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+
+<Vid 
   src="শহর_তবু_ফুল.mp4" 
   layout="block" 
   size={1} 
