@@ -1,17 +1,20 @@
-callous-political-statements-gold-karigars-and-fertiliser.md
 ---
 title: "Gold Karigars, Fertiliser Slogans, and the Knife Hidden Inside a Political Sentence"
 description: "A personal essay on callous political statements, Bengal’s hidden jewellery workers, gold import duty, and the danger of turning fertiliser policy into patriotic theatre."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_164830_0882.jpg"
 category: "Political Economy"
 tags: ["Video", "Political Economy", "India Economy", "Kolkata Essay", "Calcutta Life", "Gold Import Duty", "Gold Prices India", "Gold Artisans", "Bengal Goldsmiths", "Shekra Karigar", "Jewellery Workers", "Informal Economy India", "Working Class India", "South Sinthee", "Cossipore", "Dum Dum", "Strait of Hormuz", "Hormuz Crisis", "Foreign Exchange Reserves", "India Trade Deficit", "Fertiliser Crisis", "Chemical Fertiliser", "Organic Farming", "Natural Farming", "Sri Lanka Fertiliser Ban", "Food Security", "Agriculture Policy", "Modi Gold Appeal", "Policy Failure", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
 
+<TTS />
+
+<Pi src="Compress_20260514_164830_0882.jpg" />
+
 Acronyms used: LPG means Liquefied Petroleum Gas, the cylinder fuel used in many homes and small workshops. MSME means Micro, Small, and Medium Enterprise, the official bucket for small businesses that often includes workshops too small to have a lobby but large enough to be crushed by policy. CAD means Current Account Deficit, the gap created when a country spends more foreign currency on imports and payments than it earns from exports and income. ETF means Exchange Traded Fund, a market-traded investment basket that can track gold, silver, stocks, or other assets.
 
-<TTS />
 
 ---
 
