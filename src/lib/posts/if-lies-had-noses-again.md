@@ -1,18 +1,19 @@
-if-lies-had-noses-again.md
 ---
 title: "If Lies Had Noses Again"
 description: "A satirical speculative social post about Pinocchio, public lying, and the small miracle of visible consequences in a world where falsehood now travels first class."
 date: "2026-05-14"
+thumbnail: "/images/Compress_20260514_235702_2787.jpg"
 category: "Satire"
 tags: ["Pinocchio satire", "lies and society", "truth and politics", "social satire", "speculative satire", "modern morality", "public dishonesty", "media lies", "political satire", "Calcutta writing", "Kolkata satire", "Bengali essay", "middle class India", "social commentary", "moral fiction", "truth in public life", "fake news culture", "digital misinformation", "satirical essay", "contemporary India", "human behavior", "ordinary life satire", "civic trust", "public morality", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
 
-Acronyms used: SEO [Search Engine Optimization, the craft of making writing easier for search engines and human beings to find].
+<Pi src="Compress_20260514_235702_2787.jpg" />
 
----
+
 
 If noses grew according to lies, half the country would need bamboo scaffolding by breakfast.
 
