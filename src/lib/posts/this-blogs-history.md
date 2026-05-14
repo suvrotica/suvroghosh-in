@@ -1,118 +1,201 @@
 ---
-title: "This Blog’s History"
-description: "A crooked little history of how this blog staggered from Fiji to New Zealand to Abu Dhabi and Dubai, dragging behind it ambition, disillusionment, second-hand books, vanished friends, and the stubborn wish to be read."
+title: "This Blog's History"
+description: "A personal travel-and-writing reflection on how this blog wandered through Fiji, New Zealand, Abu Dhabi, Dubai, books, doubt, vanished friends, and the stubborn need to keep writing."
 date: "2024-01-03"
 thumbnail: "/images/Compress_20260506_165933_3433.jpg"
 category: "Personal Reflections"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Blog", "Personal Reflections", "This Blogs History", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Systems Thinking", "India", "South Asia", "Urban India", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "personal blog", "blogging journey", "travel writing", "Calcutta writer", "Kolkata writer", "Indian blogger", "middle aged writer", "personal reflections", "creative nonfiction", "writing life", "blog history", "digital publishing", "self publishing", "online writing", "second hand books", "Fiji travel", "New Zealand travel", "Abu Dhabi travel", "Dubai books", "reader attention", "internet culture", "loneliness and writing", "resilience", "independent writer", "literary essay", "modern Bengali life", "lower middle class life", "blog monetization", "SEO writing", "authentic voice"]
 published: true
-color: "#7C3AED"
+color: "#dcb775"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260506_165933_3433.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+
+SEO [Search Engine Optimization, the practical art of helping search engines and readers discover a page without turning the writing into boiled cabbage].
 
 ---
 
-This blog began, as all suspicious enterprises should, in transit: somewhere between Los Angeles and Fiji, with the Pacific spread below like a blue argument for optimism and me, naturally, preparing to mishandle it.
+This blog began in the air, which is a dangerous place to begin anything except a nap.
 
-Fiji was beautiful in the way postcards are beautiful before human beings arrive to complicate them. The light behaved itself. The sea looked as if it had been recently polished by a committee of angels. Even the air seemed to have confidence. I wrote a few pieces there, or nearly there, and for a brief dangerous moment I thought the thing might have momentum. I had started a blog. It had a shape. It had a name. It had that faint electric smell of a future not yet spoiled by logistics.
+I was flying from Los Angeles toward Fiji, carrying a laptop, a head full of plans, and the kind of fragile optimism that should probably be wrapped in newspaper before travel. Below me was the Pacific, that large blue creature pretending to be calm. Ahead of me was Fiji. Behind me was a life that had become difficult to explain in small talk.
 
-Kava, however, was another matter. Kava tasted like the earth had been made into a beverage by someone with deep respect for mud. I could see the cultural gravity of it, the ritual, the hospitality, the seriousness of the bowl. But my tongue, that vulgar little clerk, filed a complaint. It was not for me. Still, I drank enough of the place to feel I had done my duty, wrote a few good posts, and thought, with the kind of confidence usually found in people about to make travel decisions without adequate mental supervision: why stop now?
+The blog had started. That was the main thing. A few posts existed. They had not conquered the internet, no. They had not caused editors to faint, agents to call, or strangers to fight over the subscription button. But they were alive. For a man sitting alone with his own thoughts, that is not nothing.
+
+Fiji was beautiful. Of course it was. Fiji is one of those places that looks as if the planet, after a long week of producing parking lots and income tax forms, suddenly remembered beauty and overdid it. The water was blue enough to make you suspicious. The air had manners. Even the light seemed to have taken a bath.
+
+Then came kava.
+
+Kava, to my uncultured mouth, tasted like someone had persuaded a respectable patch of earth to become a beverage. I understood the ritual. I respected the hospitality. I admired the cultural weight of it. But my tongue, that small disloyal clerk, stamped the file: not approved.
+
+Still, I wrote. A few decent pieces came out of me, which is always a surprise, like finding money in an old shirt pocket. I thought, foolishly but sweetly, why stop now?
 
 So I went to New Zealand.
 
-There I discovered a second principle of blogging, less often mentioned in the manuals: a good view goes alarmingly well with a drink. A mountain, a lake, a sky behaving extravagantly—these things can persuade a disillusioned man that beer is not a beverage but an interpretive framework. And if the man is already going slightly mad, and if Ambien is somewhere in the machinery, then alcohol does not merely pack a punch. It arrives wearing brass knuckles and a municipal uniform.
+Now, New Zealand has a serious problem. It is too scenic. This sounds like praise, but for a mildly disillusioned man it can become a public safety issue. You look at a mountain, then a lake, then a sky doing theatrical work for free, and suddenly a drink seems not like a drink but like a philosophical companion. A good view and a beer go together very smoothly.
 
-I drank. Not elegantly. Not like a literary exile in a linen suit, but like a man trying to dissolve a private weather system. Then travel became less a plan than a sequence of airport-shaped events. The map turned into a fever chart. I moved through places with the vague determination of luggage that had begun to suspect it was traveling alone. Eventually I found myself in Abu Dhabi, that great polished injunction against chaos, and there I told myself the thing all drifting men tell themselves when they briefly spot their own reflection in a hotel mirror.
+Too smoothly.
+
+Alcohol is not gentle when the mind is already wobbly. Add loneliness, disappointment, and a sleeping pill somewhere in the machinery, and you are no longer a traveler. You are a kettle left on the stove while everyone has gone to the market.
+
+I got drunk. Not poetically. Not with the elegant sadness of a man in a black-and-white French film. I got drunk like a Bengali uncle at a wedding reception who has discovered the free counter and forgotten the existence of knees. After that, travel became less of a plan and more of a series of airport-shaped incidents.
+
+Somehow, eventually, I reached Abu Dhabi.
+
+Abu Dhabi looked orderly in the way certain rich places do, as if chaos had been given a visitor badge and told not to touch anything. I looked around and told myself the sentence every drifting man says when the mirror catches him unexpectedly.
 
 Suvro, focus.
 
-Get back to the blog.
+Go back to the blog.
 
-This was sound advice, which naturally made it very easy to ignore. I was still busy working on dreams that were not mine, which is one of the more refined forms of modern foolishness. You lend your imagination to other people’s machinery, oil their ambitions with your remaining enthusiasm, and call the resulting exhaustion experience. It is experience, I suppose, in the way falling into a ditch is geography.
+This was excellent advice. Therefore I avoided it.
 
-Then came Dubai.
+I was busy working on dreams that were not mine, which is one of the most common unpaid jobs in the world. Other people have grand schemes. You bring your little bucket of hope. You pour it into their machinery. The machine makes impressive sounds. Then, one morning, you realize you are standing there with an empty bucket and no receipt.
 
-Dubai is not a city so much as a declaration that gravity is optional if the invoice clears. Glass, height, money, perfume, malls large enough to contain a minor European principality, and everywhere the vague suggestion that life is something one purchases by the square foot. And there, in this cathedral of consumption, I found myself buying second-hand books.
+That is how detours happen.
 
-This was not the approved activity.
+Then I went to Dubai.
 
-People looked at me as if I had entered a Formula One race riding a goat. The stall was small, almost apologetic, wedged into a city committed to the belief that everything should shine, rise, rotate, or cost too much. I loved it instantly. There is something beautifully perverse about buying old books in Dubai. Around you, people are buying watches, handbags, perfumes, promises, apartment brochures, and desserts engineered like minor architecture. You are standing there holding a used paperback with a cracked spine, feeling like the last monk after the accountants have bought the monastery.
+Dubai is a city that appears to have looked at the desert and said, “Nice, but where is the chandelier?” Everything shines. Buildings rise like ambition with elevators. Malls sit there like weather systems with escalators. Perfume, glass, gold, watches, handbags, indoor waterfalls, outdoor heat, and the constant whisper of money rubbing its hands together.
 
-That, too, belongs to this blog’s history.
+And what did I do there?
 
-The blog has never been merely a website to me. It has been a container for a disorderly private republic: sketches, essays, technical thoughts, jokes with broken teeth, failed attempts at seriousness, successful attempts at irritation, the occasional sentence that surprised even me by surviving the fall from brain to page. It is where I try to gather the loose bolts of myself before they roll under the furniture forever.
+I bought second-hand books.
 
-For a long time I could not make it turn out the way I wanted. The thing was always almost right. Almost. The design needed work. The writing needed arrangement. The categories looked like they had been assigned during a minor seizure. The technical parts kept sulking. The personal pieces kept arriving with mud on their shoes. But lately, for the first time, I think it is coming closer to the shape I had in mind—not perfect, certainly, but coherent enough to stop apologizing for its own existence.
+This was not the approved Dubai activity. People looked at me as if I had gone to a buffet and asked for plain muri. Around me, human beings were buying luxury objects, shiny objects, branded objects, objects designed to inform other objects that they were poor. I was standing beside a small second-hand bookstall, happily inspecting used paperbacks with cracked spines.
 
-Once that happens, the next problem begins.
+There are few pleasures more sincere than an old book in a rich place.
 
-Getting people to read.
+An old book does not flatter you. It sits there like a retired schoolmaster and says, “Read me if you dare.” In Dubai, that felt almost revolutionary. The city was selling the future by the square foot. I was buying somebody else’s abandoned past for a modest price.
 
-Here is where romance dies and invoices begin. In the old fantasy, one writes something worthwhile, releases it into the world, and readers, alerted perhaps by migratory instinct, arrive. They gather. They subscribe. They recommend. They become a small intelligent crowd. This is a charming belief, like thinking a pigeon respects architecture.
+That, too, is part of this blog’s history.
 
-The modern internet does not work that way. Attention is not found. It is bought, gamed, bribed, harvested, algorithmically courted, or acquired through the ancient human arts of networking, flattery, luck, spectacle, and shameless repetition. You need money for marketing, money for promotion, money for design, money for distribution, money for expert advice, money to avoid the expert advice of frauds, and then more money to discover that even the non-frauds are mostly selling weather forecasts in a room without windows.
+This blog has never been just a website. It has been a room. A small room, badly ventilated some days, but mine. A room where sketches, essays, technical thoughts, jokes, anger, memory, despair, and occasional common sense could sit together without needing to impress a committee.
 
-I do not have that money.
+For a long time I could not make it look right. The categories behaved like goats. The design sulked. The writing arrived wearing one shoe. Some posts were personal, some technical, some half-mad, some nearly decent, and the whole thing felt like a Calcutta cupboard in summer: useful, overcrowded, and faintly dangerous if opened too quickly.
 
-This is inconvenient because money, in our delicate civilization, has become the grease for nearly every hinge. Even sincerity now needs a launch budget. A man may have thoughts, a laptop, a domain name, a backlog of essays, and the willingness to sit alone in a room interrogating his own disappointments until they confess; but without promotion, he is essentially whispering into a locked cupboard.
+But lately, I think it is getting closer.
 
-Books have suffered a similar fate. People still buy them, of course. They buy them beautifully. They buy hardcover editions in dignified colors and arrange them behind sofas or beside ceramic objects of mysterious purpose. Books have become domestic plumage. A shelf says: I am the sort of person who might read this, which is, socially speaking, often enough. The unread book now occupies a refined emotional distance. It is not knowledge. It is potential knowledge, preserved like jam.
+Not famous. Not grand. Not the Taj Mahal of blogs. More like a small tea stall with a clean kettle, a working bench, and a proprietor who may argue with you but will not serve you nonsense knowingly.
 
-The dopamine lives in the distance.
+The next problem, of course, is readers.
 
-Owning the book suggests a future self, and the future self is always so much more disciplined than the current slob. The future self reads Spinoza at dawn, stretches, drinks water, organizes receipts, and understands geopolitics. The present self buys the book, places it near a lamp, photographs it, and returns to a screen where a dancing stranger explains productivity in forty-seven seconds.
+You may think writing is the hard part. It is not. Writing is hard, yes, but it is an old kind of hard. You sit, you think, you scratch, you delete, you curse privately, you make tea, you come back, you remove the sentence that thought it was very clever. Eventually something readable appears, blinking like a newborn goat.
 
-Blogs face the same problem, only worse. A book, even unread, can decorate a room. A blog must be opened. It must be clicked. It must compete with scandal, cricket, catastrophe, recipes, pornography, investment advice, celebrity dentistry, outrage, and videos of animals demonstrating superior moral character. An obscure blog behind an obscure address is not merely unread. It is almost metaphysically absent.
+But getting people to read?
 
-Content, we are told, matters.
+That is a different animal.
 
-Of course it does. Eventually. In the way nutrition matters after one has already acquired food. But first comes visibility. First comes trust by association. First comes the awful little social proof machine. If you are known, content is inspected. If you are unknown, content is buried, not necessarily because it is bad, but because nobody has been given a reason to risk attention on it. Attention is expensive now. People guard it badly but spend it nervously.
+The internet now is a bazaar where everyone is shouting, singing, selling, posing, threatening, dancing, explaining, lying, branding, optimizing, reacting, and holding up a ring light to the face of civilization. Somewhere in that bazaar you are standing with a blog post, saying, “Excuse me, I have written something.” Naturally, nobody hears you. A man nearby is explaining how to become rich in twelve minutes. A woman is reviewing a spoon. A cat has done something morally superior. You are finished.
 
-And then there is the human problem.
+This is where SEO enters, wearing practical shoes.
 
-When I had money, I had friends. Many friends. A festive little troop of facial muscles and exposed teeth. They smiled with athletic commitment. They nodded at my plans. They predicted, with the generosity of people who lose nothing by being wrong, that my imagined blog would be a sensation. Viral, they said, because every age has its holy word and ours is viral, a term borrowed from disease and applied to success, which tells you nearly everything about the century.
+SEO is supposed to help readers find you. It is useful. It is necessary. It is also slightly comic, because it means the writer must now think not only about truth, rhythm, image, memory, and human feeling, but also whether the invisible machines of the world have properly sniffed the page. One writes for people, but first one must pass through bots, rankings, snippets, keywords, crawlers, and the mysterious digestive tract of search engines.
 
-Then the rough patch came.
+The old dream was simple. Write something good, publish it, and readers will come.
 
-The admirers evaporated. The smiles were recalled. The teeth remained, but now they were arranged differently. The masks came off, and beneath them were other masks, sterner ones, the kind people wear not against viruses but against obligation. This is one of the hard little discoveries of adulthood: people do not always leave dramatically. Sometimes they simply reduce your resolution until you are no longer visible.
+Charming.
 
-There is a hierarchy in every room, even when nobody admits it. Money brightens your outline. Failure dims it. When you are useful, people find you fascinating. When you are inconvenient, you become philosophical background noise. The same person who once called your idea brilliant will later behave as if your email contains a mild infection.
+That belief belongs in a museum beside telegrams, fountain pens, and people who answered unknown phone calls. Today attention is not found lying on the road. Attention is hunted, rented, bought, tricked, borrowed, begged for, or obtained because someone already famous sneezed in your direction.
 
-I do not say this with innocence. I have worn masks too. We all have. Civilization is, among other things, a mask exchange program. But there is a special education in watching warmth become calculation. It teaches you what applause is worth before the invoice is paid. It teaches you how quickly affection discovers scheduling conflicts. It teaches you that some friendships were never friendships at all, merely weather systems produced by your apparent prospects.
+And money helps.
 
-Still, the blog remains.
+Money helps with design. Money helps with promotion. Money helps with networking. Money helps with hiring people who claim to understand growth, some of whom actually do and many of whom merely understand invoices. Money helps you appear serious before anyone has checked whether you are worth taking seriously.
 
-That is the ridiculous part. The tiny noble part too, perhaps, though I distrust noble explanations. I keep writing. I keep sketching. I keep adjusting the machinery. I keep trying to make the place legible without sanding off the splinters. I keep thinking that if I cannot market it properly to my contemporaries, those distinguished addicts of schadenfreude, perhaps I can at least leave it properly arranged for posterity, that imaginary reader with better manners and no immediate demand for proof of status.
+I do not have that kind of money.
 
-Posterity is a useful fiction. It does not interrupt. It does not ask whether the piece has been monetized. It does not say, “Very nice, very nice,” while backing toward the exit. Posterity is the reader one invents when the present has gone shopping.
+This is a small difficulty, like not having a boat during a flood.
 
-But I am not giving up.
+From my little edge of Calcutta, where the day begins with tea, traffic noise, neighborhood quarrels, and the suspicious stare of unpaid bills, the whole machinery of online success looks both magnificent and absurd. A man may have ideas. He may have experience. He may have worked in America, seen systems from the inside, read books, broken his head over software, written through sadness, and still, on the internet, he is just another small blinking dot unless distribution blesses him.
 
-Not because perseverance is beautiful. It often is not. Perseverance is frequently just stubbornness after a bath. But I have learned a few things, viscerally and vicariously, and one of them is that wanting something does not excuse you from the ungainly labor of pursuing it. You fight for the thing, not in a cinematic way, not with swelling music, but by returning to the desk, fixing the broken page, rewriting the bad paragraph, asking one more person to read, enduring one more silence, and resisting the urge to mistake obscurity for verdict.
+The tragedy is not that people do not read.
 
-My strategy, then, is modest and deranged.
+People do read. They read messages, captions, headlines, outrage, menus, comments, gossip, medical reports, loan reminders, cricket scores, political insults, and the tiny emotional weather reports of strangers. What they do not easily read is a long piece by an unknown man unless the first few seconds convince the brain that staying is worth the effort.
 
-I will keep writing. I will keep sketching. I will keep performing the minimum viable networking required to prevent the blog from becoming a sealed archaeological chamber. I will occasionally ask people to read a post, thereby assigning them a nonremunerated chore they did not request and will almost certainly resent. I will irritate selectively. Irritation, properly applied, is underrated. It is the poor man’s marketing department.
+The brain is a miser. It saves attention like a lower-middle-class father saves electricity. One unnecessary tube light, and the shouting begins.
 
-At some point, perhaps, someone will read to preserve their sanity. Someone will forward a link out of pity, curiosity, boredom, revenge, or mistaken identity. Someone may know someone who knows someone with the mysterious ability to convert effort into audience. A bona fide person may appear. A door may open. Or not.
+So the writing must earn every second. It must open a little door. Then another. It must give the reader a question, then delay the answer just enough. It must make the next paragraph feel like the next bend in a lane you have never walked down. It must be clear enough to enter and interesting enough not to leave.
 
-Either way, this blog has already done something useful. It has followed me from Fiji’s earthy bowl to New Zealand’s dangerous scenery, from Abu Dhabi’s polished self-corrections to Dubai’s second-hand books, from the company of smiling apes to the quieter company of sentences. It has survived my own inattention, which is no small achievement. It has remained, even when I have not always known how to remain.
+This is not manipulation. This is hospitality.
 
-That is the history so far: a man, a blog, several airports, insufficient money, too many vanished friends, a stack of books, a cracked ambition, and the stubborn belief that if one cannot become famous, rich, loved, or properly marketed, one can at least become difficult to ignore.
+If you invite someone into your house, you do not make them climb over furniture, solve a crossword, and eat dry muri in darkness. You switch on a light. You offer a chair. You give them something hot. Then, once they trust you, you may take them to the back room and show them the strange machine.
 
-And if that fails, one can become irritating.
+Books have their own sadness now. Many people still buy books, but a book has become, for some, an interior decoration with pages. It sits on a shelf saying, “The owner of this house may one day become the sort of person who reads me.” This is a very popular modern emotion: deferred intelligence.
 
-There are worse literary strategies.
+We buy the future self.
 
-## Related Posts
+The future self reads. The future self exercises. The future self wakes early, drinks water, understands history, and does not lose temper over slow internet. The present self orders the book, photographs it, arranges it near a lamp, and returns to scrolling.
 
-- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
-- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+I am not innocent. I too own books that look at me with disappointment.
+
+A blog cannot even become furniture. Nobody sees it unless they open it. It cannot decorate the living room. It cannot impress guests unless the guests are unusually patient and the Wi-Fi is working. A blog behind an obscure address is not unread in the ordinary sense. It is hidden like a small fish in a large muddy pond.
+
+Then there is the matter of friends.
+
+When I had money, I had many friends. This is one of those scientific truths that requires no laboratory. Money produces smiles. Money oils the hinges of affection. Money makes your jokes funnier, your plans more promising, your defects more charming, and your phone calls more answerable.
+
+Back then, people told me the blog would be big. Viral, even. I love that word. We borrowed it from disease and turned it into praise, which explains our era better than many thick books. They smiled, nodded, advised, predicted, encouraged. Their faces arranged themselves into enthusiasm.
+
+Then came the rough patch.
+
+The smiles did not exactly disappear. They changed species. The same teeth remained, but now they belonged to a different animal. Replies slowed. Encouragement thinned. People who once had time became busy in a way that suggested not employment but spiritual escape.
+
+This is not a complaint. Not entirely. Life is hard for everyone. People have families, bills, illnesses, ambitions, private disasters, and their own sinking boats to row. Still, there is a particular education in watching warmth cool exactly when your usefulness declines.
+
+It teaches you the market price of affection.
+
+Some friendships are friendships. Others are weather. They gather when the pressure is right and vanish when the season changes. You only learn the difference when the roof starts leaking.
+
+Meanwhile the blog remained.
+
+Ridiculous, stubborn thing.
+
+It sat there while I lost focus, traveled too much, drank too badly, bought books in the wrong city, trusted the wrong smiles, and returned to Calcutta with a head full of unfinished plans. It waited while I tried to repair the design, repair the writing, repair my finances, repair my confidence, repair the small inner engine that keeps a man from becoming furniture himself.
+
+Some days I look at the blog and think, why bother?
+
+Then some other part of me, older and meaner and more useful, answers: because this is the one thing that still sounds like you.
+
+Not the polite you. Not the employable you. Not the passport-stamped, LinkedIn-combed, client-facing version. The actual you. The man who has lived in America and Calcutta, who has seen airports and bookstalls, who knows the smell of expensive hotel lobbies and damp local lanes, who can discuss technology one minute and the price of eggs the next, who has no talent for pretending that things are fine when they are not.
+
+That man needs a place.
+
+This blog is that place.
+
+I want people to read it, yes. I want traffic. I want subscribers. I want the little graph to rise like a well-behaved child’s exam marks. I want the work to travel beyond my immediate circle of exhausted acquaintances and polite avoiders. I want the blog marketed to posterity, if my contemporaries are too busy feeding their schadenfreude with a silver spoon.
+
+But I also know the catch.
+
+The world does not reward effort automatically. It barely notices effort. Effort is the background noise of the planet. Every fruit seller, nurse, coder, mother, driver, clerk, cook, guard, cleaner, and tired man on a bus is making effort. The universe does not hand out medals for sweating.
+
+So the blog must become sharper. Clearer. Easier to enter. Harder to forget.
+
+It must carry the smell of tea, airport carpet, old books, monsoon drains, hotel soap, cheap anxiety, expensive cities, and the private comedy of a middle-aged man trying to build something without a proper budget. It must tell the truth without wearing a funeral shawl. It must be serious without becoming a government circular. It must be funny because otherwise what is the point of surviving the joke?
+
+And yes, I will keep irritating people.
+
+This is my marketing department for now: irritation, persistence, and occasional decency. I will ask someone to read a post. They will say, “Yes, yes, send it.” I will send it. They will disappear into the same ancient cave where people store unread links, unpaid favors, and exercise plans. After a while I will ask again, gently at first, then with the mild desperation of a man selling umbrellas after the rain has stopped.
+
+Perhaps one person will read.
+
+Perhaps one person will forward it.
+
+Perhaps one person will know another person who knows a bona fide person who understands how to move a small independent blog from darkness into at least a modest streetlight.
+
+Or perhaps not.
+
+Still, I keep returning to that second-hand bookstall in Dubai. I remember the absurdity of it. All that glitter around me, and there I was, happy among used books. That is the clue. That is the tiny mystery. Maybe the blog is not meant to compete with the glitter. Maybe it is meant to be the bookstall.
+
+Small. Odd. Findable by the right wanderer.
+
+A place where someone, tired of shine, stops for a minute and says, “What is this?”
+
+That is enough for now.
+
+A blog does not need to begin as a monument. It can begin as a stubborn little stall beside the noise, with a few cracked spines, a sharp sentence or two, and one middle-aged Bengali man from the edge of Calcutta still arranging his thoughts before the next bill arrives.
+
+And if nobody comes?
+
+Then I will keep the kettle on a little longer.
