@@ -1,78 +1,152 @@
 ---
 title: "The Terrace Republic"
-description: "A reflective personal essay on memory, childhood, solitude, bipolar intensity, and the small private rebellions that survive middle age in Calcutta."
-date: "2026-05-06"
+description: "A Calcutta essay on tea, memory, childhood, solitude, bipolar intensity, and the private republic a boy builds when the world insists on queues, walls, and polite lies."
+date: "2026-05-15"
 thumbnail: "/images/Compress_20260506_115419_9095.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "The Terrace Republic", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Calcutta", "Kolkata", "Bengali Essay", "Personal Essay", "Memoir", "Memory", "Childhood", "Middle Age", "South Sinthee", "North Kolkata", "Bipolar Disorder", "Mental Health", "Depression", "Anxiety", "Solitude", "Terrace", "Tea", "Atheism", "Urban India", "Lower Middle Class Life", "Bengali Life", "Nostalgia", "Indian Writing", "Creative Nonfiction", "Literary Essay", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
-color: "#7C3AED"
+color: "#8B5E3C"
 ---
 
 <TTS />
 
 <Pi src="Compress_20260506_115419_9095.jpg" />
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
-
 ---
 
-I sit with a cup of tea, and the tea does what tea has always done in Bengal: it accepts defeat, philosophy, indigestion, ambition, regret, and the entire damp laundry of memory without complaint.
+Tea is a dangerous liquid in Bengal because it pretends to be harmless.
 
-Into that small brown republic my thoughts dissolve, and the quiet night begins its old work. It loosens the present. It lets the past walk in without knocking. Soon I am back in South Sinthee, in that brick house without plaster, where so much of my early definition still lives like an old tenant who never paid rent but cannot be evicted because he knows the family secrets.
+It sits in the cup, brown and obedient, while quietly opening trapdoors under the floor of the mind. One minute you are a respectable middle-aged man in the shanty boondocks of Calcutta, wearing old shorts, checking whether the milk has gone suspicious again. Next minute you are back in South Sinthee, in a brick house without plaster, where the walls were honest enough to show their poverty and nobody had yet discovered the modern disease of painting everything beige and calling it progress.
 
-Memory is not an archive. It is a crooked clerk. It misfiles the syllabus, misplaces the terror, preserves the smell of a wet wall, and loses the face of a boy who was once supposed to become me. From that house came the small academic triumphs that trained the later lampoon of a person in me, the careful stickler, the nervous examiner of facts, the man who would rather polish one sentence until it squeaks than nod along to a roomful of agreeable nonsense. The past keeps operating its creaking loom, and I keep spinning some embroidered fib out of it, not because the fib is false, but because plain truth has no tailoring. It arrives naked, goose-pimpled, and socially unacceptable.
+That house still owns a large part of me. I have the documents now, the age, the medicines, the consulting income that arrives like a shy relative and leaves like a pickpocket, but the title deed of my inner life remains with that brick house. The old place had no polish. It had heat, dust, syllabus pressure, ambition, mosquitoes, family expectations, and the mysterious Bengali belief that a child becomes excellent if he is sufficiently inconvenienced.
 
-I was an unwillingly ordinary chap. This is a terrible thing to be, because ordinary life itself is not terrible. It is the unwilling part that produces the mischief. A sensible boy accepts the queue, the school bell, the exercise book, the moral instruction, the adult finger wagging near his nose like a defective semaphore. I could not. I disliked queues chiefly because a head was always in front of me, obstructing the view, and I seemed to have been born with a lifelong allergy to obstructed views.
+Perhaps it worked. Perhaps it damaged the machinery.
 
-I decided very early that I could not be ordinary. I did not know what extraordinary meant. I merely knew that the available model of life seemed suspiciously like a badly printed government form: stand here, write this, believe that, marry then, earn enough, stop asking questions, die after sufficient social compliance. Even as a boy, I could smell the damp under the paint.
+Both can be true.
 
-Is ambition the seed that germinates into a bipolar tree? I do not know. I distrust neat explanations of the self, especially when they come with laminated diagrams and the confidence of people who have never had to live inside their own weather. But I know this much: even now I need medication to keep myself in the safety zone of a no-one, a nondescript middle-aged discard, the sort of harmless citizen who can stand near a tea stall without trying to redesign civilization. Without the chemical sandbags, my mind starts acquiring wings, engines, trumpets, manifestos, and credit-card debt. Ideas bounce off the walls. Energy turns mutinous. The brain becomes a parliamentary session during a power cut.
+I was an unwillingly ordinary boy. That is the real trouble. Ordinary boys survive better. They stand in queues. They accept the head in front of them. They fill the form, sit the exam, nod at the elder, swallow the nonsense, and move through life like a bus passenger who has made peace with being pressed against a stranger’s armpit.
 
-The hurricane lamp did not seem magical then. It was just light, poor light, practical light, a trembling little bureaucracy of flame. The sultry summer without electricity did not seem romantic either. It was sweat, mosquitoes, homework, heat rash, and that peculiar Bengali night in which the ceiling fan becomes an absent god. Yet the years were harried forward by the rush of syllabus and examination, and now what remains has acquired a warm afterglow. That is nostalgia’s most dishonest talent. It takes discomfort, lets it dry in memory, varnishes it, and returns it as tenderness.
+I could not.
 
-Sometimes when I try to think of who I was as a child, I hit a wall. Not a metaphorical wall only, though there were enough of those, but an actual blankness, an old border post where the official says no visa can be issued because the country no longer exists. Childhood was a bad diarist. It left behind scribbles of awe, blotches of fear, a few bright stamps of sensation, and a pile of emotions no longer attached to their original causes. Somewhere in that extinct country lives a large part of my definition, but I cannot enter it. I can only look at its weather from a distance.
+I did not want a head blocking the view. I wanted to see what lay ahead, behind, above, below, and preferably inside the machine also, even if the machine turned out to be a ceiling fan, a magnet, a dead beetle, a sentence, or the entire suspicious arrangement called society. Some boys collect stamps. I collected objections.
 
-Perhaps that is why I have not properly grown up. I do not mean this in the usual insulting sense, though the usual insulting sense may also apply, depending on the witness. I mean that the world has not ceased to astonish me. I still look at the sky, magnets, insects, old maps, equations, telescopes, computers, fossils, languages, stars, and human stupidity with a child’s mixture of reverence and alarm. The difference is that now I understand a little more, which makes the wonder sharper and the stupidity more expensive.
+Was ambition the seed that later grew into the bipolar tree? I do not know. I am suspicious of neat explanations. They are usually made by people who have never had to live inside a brain that sometimes behaves like a para club microphone during Durga Puja: too loud, badly wired, full of feedback, and convinced it is performing a cultural service.
 
-We live in a wonderful time, and most people seem determined to spend it like a fool spending inherited gold on plastic keychains. There are galaxies to understand, cells to examine, histories to untangle, languages to learn, music to hear, mathematics to climb, and machines that can now simulate fragments of thought. Yet so much human attention is burned in the ritual furnace of gossip, shopping, status, career theater, outrage, and the polishing of social masks. Time is the only wealth that never forgives accounting errors. People talk of wasting money, which is comic. Money can sometimes return. Time has the manners of a train leaving Howrah while you are still arguing with the porter.
+What I know is simpler. I take medicines because without them I become too much myself. That is the odd comedy of the thing. People say, “Be yourself,” because they have not met the full committee. My unmedicated mind comes with extra subcommittees, emergency resolutions, midnight construction projects, and the sudden belief that civilization can be redesigned before lunch. The drugs do not make me normal. They reduce the volume to a level at which neighbors do not call the police.
 
-I know this makes me sound old-fashioned, pompous, or simply wrong. So be it. A man must eventually become whatever kind of fool he is designed to be. My own existence interests me not because I am important, but because existence itself is a strange contraption, and I happen to have been issued one unit of it with slightly defective wiring. To ponder it is not vanity. It is inspection after delivery.
+This is not tragedy. Not always. Sometimes it is ridiculous. Sometimes it is frightening. Sometimes it is useful. Mostly it is weather.
 
-The defective brain is not a decorative detail. It is central information. I would not know how a normal person lives because I have never lived as one. My life has always come through extremes of emotion, even before I had a name for them. Later, when the name arrived, it did not arrive as a cure. It arrived as a label on an old bottle containing the same storm. Knowing the mechanism is useful, but it does not make the mechanism vanish. This is not a pair of colored sunglasses one removes with a little theatrical wisdom. It is closer to a lens bolted to the eye socket. The medicines do not remove the color. They make it less imperial.
+The hurricane lamp of my childhood did not seem poetic then. It was only a lamp. A small flame doing clerical work against a large darkness. Load-shedding was not romance. It was sweat under the shirt, mosquitoes whining like unpaid creditors, exercise books sticking to the wrist, and the whole house waiting for electricity as if the nation itself had gone to fetch change from the next shop.
 
-As a child, I used to wonder why there were so many brick walls. South Sinthee had walls, our house had walls, the neighbors had walls, everyone seemed determined to guard something, though I could rarely identify the treasure. If the walls were meant to stop wildlife, cats and birds treated them as minor suggestions. If they were meant to stop thieves, they mostly advertised anxiety. To me they were ugly interruptions to imagination, and imagination then was tied to vision. A wall was not just a wall. It was a censor.
+Now, of course, memory cheats.
 
-That is why I loved the terrace. The terrace was jurisdiction-free territory. It was not exactly independence, but it was the nearest thing available to a boy whose movements were otherwise regulated by school, family, weather, manners, and the thin sadism of adult advice. There was a little room on the terrace, and that became my home inside the home. I moved my books there, my magnets, my magnifying glasses, my stamp collection, coin collection, matchbox collection, my two Lego sets, and whatever else qualified as private property in the republic of a child.
+The same heat has become golden. The same lamp has become magical. The same powerless evenings now glow softly in the mind like a scene from a film nobody financed. This is what nostalgia does. It takes discomfort, lets it cool, adds cardamom, and serves it back as heritage.
 
-From that little room, through its three windows or under the open sky, I explored the world without going anywhere. This is what books and solitude can do when they are allowed to breed. A boy in a small room in North Calcutta can sit among dust, lizards, paper, and cheap plastic objects and become, for an hour, an astronomer, archaeologist, spy, engineer, monk, pirate, or failed philosopher with excellent intentions. The body remains in the house. The mind defects.
+But childhood itself is a poor diarist. Mine especially. It did not keep minutes. It kept smells, corners, humiliations, terrors, one or two triumphs, the shape of afternoon light, the sound of pages turning, and the feeling of wanting to escape without knowing where escape was located. When I try to find the boy I was, I often find only his luggage.
 
-School, by comparison, was an underfunded prison for curiosity. It was useful in the way a railway timetable is useful: not because it contains wisdom, but because civilization has decided to punish those who ignore it. The great crime of school was not discipline. Discipline can be noble. The crime was the routine murder of wonder by people who confused obedience with education. A child asks why, and the system replies, “Because it will be in the exam.” That answer should be tried at The Hague.
+A few books. Magnets. Magnifying glasses. Stamps. Coins. Matchboxes. Two Lego sets. Some borrowed courage.
 
-The terrace gave me what school withheld. It gave me unassigned thought. It gave me silence large enough to hear my own mind misbehaving. It gave me the beginnings of a spine, though not necessarily a socially convenient one. I became a loner there, and I remain one. Even now, I run from crowds whenever possible, not because I hate all people equally, though on difficult days I make progress toward that democratic ideal, but because solitude lets thought breathe.
+The boy himself is harder to locate.
 
-Conversation rarely gives me what books give me, or what the whirring wheels of thought give me when left alone. Most conversation is packaging. People exchange softened noises, padded sentiments, cautious little phrases wrapped in politeness so nothing sharp can escape. If I insert reality into such an exchange, people startle as if a ghost has entered the room carrying documentation.
+Childhood is a country that no longer issues visas. You can stand at the border with all your documents. The officer will look at you kindly and say, sorry, that republic dissolved years ago. The map has changed. The river shifted. The language is still familiar, but the people are gone.
 
-This is especially true in the modern cult of neutral words. The age has perfected the art of taking serious matters, sanding them down, painting them beige, and calling this kindness. Euphemism has its place. No civilized person wants cruelty as a default operating system. But when language becomes surface treatment, when the word is improved while the wound is left untreated, then speech becomes cosmetics for decay. A kinder interpretation of a malady is not the same as a remedy. Sometimes the new word is not compassion. Sometimes it is merely anesthesia administered to the listener.
+And yet that vanished country governs me still.
 
-People have grown strangely attached to this artificial language. They polish the surface until it reflects their virtue back at them. Meanwhile the structure underneath rots away, moist and cheerful. I hate this. Perhaps hate is an unfashionable word, too angular for modern drawing rooms, but it has the merit of being accurate. This blog, in its small, uneven, often ill-tempered way, has been a protest against that false polishing. I do not want cruelty. I want clarity. They are not the same animal, though many cowards pretend otherwise.
+I have not grown up in the approved way. I have aged, yes. My knees make more comments than necessary. My hair has joined the opposition. My income is uncertain enough to teach philosophy without charging fees. But the world still astonishes me. A cloud can still stop me. A line of mathematics can still open a window in the head. A cheap roadside kettle can still look like a small industrial revolution if you watch it long enough.
 
-The great plague of humanity, banal as it sounds, is humanity itself, especially the portion appointed to improve the herd. The moment people are promoted into responsibility, many develop a fascinating narrowing of the skull. Their horizon collapses to the size of their immediate advantage. They speak of the greater good in the tone of temple bells while counting their private coconuts behind the shrine. The ability to identify genuinely unselfish people remains beyond our science. Declaring oneself noble has never worked, though it remains a popular technology among committees, parties, corporations, and families.
+People say we live in a bad time. They are not wrong. The phone delivers its daily circus of wars, elections, heatwaves, markets, scandals, celebrity divorces, and men shouting into cameras as if truth improves with decibel level. The news app behaves like a drunk uncle who has swallowed a printing press.
 
-It is strange that the thoughts that kept me awake as a child still keep me awake now, though they have changed clothes. Then I wondered about walls, stars, death, injustice, school, adults, God, money, and why some people seemed rewarded for being confidently wrong. Now I wonder about institutions, systems, history, technology, power, loneliness, aging, illness, and why some people are still rewarded for being confidently wrong. The syllabus has expanded. The examination continues.
+Still, what a time.
 
-I am in my fifties, and the systems are where they were, only worse in scale. More people, more noise, more devices, more slogans, more surfaces, more ways to avoid saying the obvious. Humanity has acquired tools of astonishing sophistication and retained motives of antique shabby quality. We can send machines toward the outer planets, sequence genomes, simulate weather, move money at the speed of light, and still fail to arrange public honesty at the level of a decent neighborhood meeting.
+A person can sit in a small room in Calcutta and read about galaxies, viruses, fossils, ancient cities, machine learning, forgotten languages, dying rivers, and the chemistry of tea. The universe has never been more available. It is practically standing at the door with a tiffin carrier. Yet so many people spend their attention on cheap trinkets, status quarrels, gossip, and the daily polishing of their social mask. This is like being given a library card to the cosmos and using it to scratch a lottery ticket.
 
-This should make me despair completely, and sometimes it nearly does. But the same defective brain that darkens everything also lights up at the absurd magnificence of being alive at all. The universe remains excessive. A leaf, correctly examined, is enough to ruin cynicism for an afternoon. A line of mathematics can still feel like a hidden door opening in a wall. A forgotten childhood object can summon a continent. A night sky above a terrace can still make a middle-aged man feel, briefly, like the boy who had escaped into his own republic with books, magnets, and a head full of illegal weather.
+Maybe I am wrong. Maybe people are wise to enjoy small nonsense. I enjoy small nonsense too. A man must not become so profound that he cannot appreciate a good chop from a roadside stall.
 
-So I sit with tea and think. The house in South Sinthee returns, not as it was, but as memory can bear it. The hurricane lamp trembles again. The walls rise again. The terrace waits above them, stubborn and free. Somewhere in that little room, a boy is arranging his collections and preparing to distrust the world’s official explanations. He does not know what will happen to him. He does not know about diagnosis, medication, failure, age, disappointment, or the long comic brutality of being a thinking animal among other thinking animals who often prefer not to think.
+But time is not money. That old phrase is an insult to time. Money sometimes comes back. Time leaves like the last local train. You can shout. It does not reverse.
 
-He only knows that the sky is large, the walls are stupid, and the mind must get out.
+This is why I brood. Not because I am important. I am not. I am one more middle-aged Bengali man with a cup of tea, an uneven beard, a laptop, some unpaid anxiety, and a brain that must be negotiated with like a difficult landlord. But existence itself is strange. To be alive is to be handed a sealed packet and told, “Here, manage this.” Nobody explains the contents. The instruction manual is missing. The warranty is emotional.
 
-## Related Posts
+My brain being defective is not a side note. It is part of the whole apparatus. I cannot say how a normal person lives because I have never been issued the standard model. My life has always come through intensified weather. Joy was too bright. Grief too deep. Anger too flammable. Hope too persuasive. Even before the diagnosis, the diagnosis was living in me like an unnamed tenant.
 
-- [The English Medium Urine Stain](/blog/memoir/english-medium-urine-stain-and-the-school-that-lit-the-fuse)
-- [The Painful Tooth Fairy](/blog/personal-essay/painful-tooth-fairy-calcutta)
-- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [The Contender Who Would Not Compete](/blog/personal-essay/the-contender-who-would-not-compete)
+Knowing the name helps. It does not free you.
+
+This is not colored sunglasses that one can remove after a mature conversation. It is closer to a lens fitted into the eye. The medicines do not remove the tint. They make the world less likely to burst into flames or bloom into impossible grandeur before breakfast.
+
+As a child, I was bothered by walls.
+
+There were too many of them. Brick walls everywhere. Our house had them. The neighbors had them. The lanes had them. Everyone seemed to be guarding something, though I could not see the treasure. If walls were meant to stop cats, the cats had not received the memo. If they were meant to stop birds, the birds treated them as jokes. If they were meant to stop thieves, they mostly announced that someone inside was worried.
+
+To me, a wall was an insult to the eye.
+
+Imagination then was tied to vision. If I could see beyond something, I could think beyond it. A wall interrupted both. It said: here your mind must stop. Naturally I disliked it. I have always been rude to invisible borders.
+
+That is why I loved the terrace.
+
+The terrace was freedom with a concrete floor. It was not grand freedom, not the kind nations sing about before mismanaging themselves. It was a small private freedom. A boy could go there and become unavailable. Below were parents, school, neighbors, instructions, warnings, arithmetic, and the heavy furniture of respectable life. Above was sky.
+
+There was a little room on that terrace, and I annexed it.
+
+I moved my things there. Books, magnets, magnifying glasses, collections of stamps, coins, and matchboxes, those two precious Lego sets, and the other tiny possessions by which a child proves to himself that he is not merely an extension of household policy. That room became my republic. No flag. No anthem. Better than that: no committee.
+
+From its three windows I could look out and feel the world widen. The city was still the city. The lanes were still narrow. The money was still limited. The future was still sharpening its knives somewhere out of sight. But the mind could travel. This is the secret adults forget. A child with books and privacy is not trapped. He is dangerous.
+
+School tried its best to prevent this.
+
+School was useful in the way a ration card is useful. It had its place. But it confused examination with education, obedience with character, and silence with respect. A child asked why, and the answer came back: because it will come in the exam. That sentence should have been dragged into the street and publicly scolded.
+
+The terrace taught better. It gave unassigned thought. That is rare. Most of life arrives pre-labeled. Study this. Earn that. Respect him. Avoid her. Become useful. Behave. Smile. Agree. Adjust. The terrace did not ask me to adjust. It let the mind stretch its legs.
+
+I became a loner there.
+
+I remain one.
+
+This does not mean I hate people. Not professionally. Not every day. But crowds drain me. Most conversation is packaging material. People exchange safe sentences, softened sentences, cotton-wrapped sentences. They talk for twenty minutes and leave reality untouched, like guests who come to dinner and politely avoid the food.
+
+Insert one honest observation, and the room freezes.
+
+Say that a system is broken. Say that a powerful person is mediocre. Say that a family custom is cruelty wearing sandalwood paste. Say that politeness has become a way of hiding cowardice. Suddenly everyone looks at you as if you have opened an umbrella indoors and invited lightning.
+
+Modern language has made this worse. It loves softening words until they no longer cut anything. I am not against kindness. Cruelty is not honesty; it is often laziness with teeth. But there is a point where euphemism becomes furniture polish on rotten wood. The table still collapses. Only now it smells of lemon.
+
+A new word does not fix an old wound.
+
+This blog, for whatever it is worth, has always been my protest against that polish. I do not want ugliness for its own sake. I do not want shouting for exercise. I want clarity. Clarity is not cruelty. It is the clean knife in the kitchen. It cuts because cutting is sometimes necessary.
+
+And humanity, my old subject and old disappointment, remains a magnificent mess.
+
+The problem with humanity is humanity, especially the portion appointed to improve the rest. Give people a title, a chair, a stamp, a budget, a microphone, or a little authority, and many instantly shrink. Their language becomes large while their imagination becomes tiny. They speak of the greater good while quietly arranging the cushions under their own backside.
+
+This is not cynicism. It is field observation.
+
+The truly unselfish person is difficult to identify. Science has not solved this. Religion has not solved this. Politics has certainly not solved this; politics often cannot locate its own shoes. The process of declaring oneself noble does not work, though it remains popular among leaders, influencers, reformers, relatives, and men who forward moral messages on WhatsApp before cheating the milkman.
+
+The questions that kept me awake as a child still keep me awake. They have changed clothes, that is all.
+
+Then I wondered why adults lied so smoothly. Now I wonder why institutions do.
+
+Then I wondered why there were so many walls. Now I wonder why people build them inside language, inside class, inside money, inside ideology, inside themselves.
+
+Then I wondered why the world rewarded confidence more than truth. Now I see that it still does, only with better lighting and faster internet.
+
+I am fifty-one now. Close enough to old age to hear it clearing its throat. Young enough to be irritated by it. The systems around me have not improved as much as the advertisements claim. They have become larger, shinier, faster, and more crowded. More apps. More passwords. More delivery boys racing through broken lanes. More screens. More slogans. More people staring into phones while the actual sky performs above them for free.
+
+And yet I cannot give up.
+
+A leaf still defeats despair on certain afternoons. Tea still performs minor repairs. Books still smuggle air into the room. A good sentence can still make the day less foolish. A quiet night can still return the brick house, the hurricane lamp, the little terrace room, the boy with his magnets and matchboxes, the boy who did not know what would happen to him.
+
+He did not know about medication.
+
+He did not know about failure.
+
+He did not know about consulting invoices, loneliness, aging parents, broken sleep, shrinking opportunities, or the strange humiliation of being educated enough to understand the world and powerless enough to watch it misbehave anyway.
+
+He only knew that the walls were ugly, the sky was large, and something inside him wanted out.
+
+That boy is still here.
+
+Older. Bruised. Less loud on good days. Medicated into partial citizenship. Sitting with tea in the outskirts of Calcutta while the night leans close and the city mutters through its cracked teeth.
+
+The cup cools.
+
+The mind does not.
