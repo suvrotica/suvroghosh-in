@@ -1,16 +1,18 @@
-mood-bellwethers-before-a-low.md
 ---
 title: "Mood Bellwethers Before a Low"
 description: "A personal essay on those strange bodily warnings—indigestion, insomnia, stray thoughts—that sometimes arrive before a depressive dip."
 date: "2026-05-15"
+thumbnail : "/images/Compress_20260515_021049_9074.jpg"
 category: "Personal Essay"
 tags: ["Mood", "Mental Health", "Bipolar Depression", "Depression Warning Signs", "Insomnia", "Anxiety", "Middle Age", "Kolkata", "Calcutta Life", "Personal Essay", "Lower Middle Class Life", "Self Observation", "Mood Disorder", "Depressive Low", "Irritable Insomnia", "Indigestion", "Everyday Philosophy", "Atheist Reflection", "Bengali Essay", "Urban Loneliness", "Emotional Weather", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
-Acronyms used: None.
+
 
 <TTS />
+
+<Pi src="Compress_20260515_021049_9074.jpg" />
 
 ---
 
