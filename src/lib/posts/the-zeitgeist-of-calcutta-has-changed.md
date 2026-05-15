@@ -39,7 +39,7 @@ Religion in private may be sincere. I have no quarrel with that. A person may pr
 
 But visible religiosity has become a performance industry. Microphones. Banners. Lights. Committees. Loudspeakers with the delicacy of a falling cupboard. One lane competes with another lane in devotion as if salvation is awarded by decibel. The same city that cannot fix a broken footpath can build an entrance gate taller than the local school.
 
-This is where the song I am attaching comes in, not as background decoration, but as witness. It catches the city after dark, when the lights come on and the face powder begins to crack. Park Street sells laughter. Shobhabazar keeps its sorrow folded in old cupboards. The tea stall moon drowns in a clay cup. Somebody says everything is illusion. Somebody else says, “Come, let’s go.” The footpath sleeper also, apparently, belongs to some party, some camp, some category, some use.
+This is where the song I composed comes in, not as background decoration, but as witness. It catches the city after dark, when the lights come on and the face powder begins to crack. Park Street sells laughter. Shobhabazar keeps its sorrow folded in old cupboards. The tea stall moon drowns in a clay cup. Somebody says everything is illusion. Somebody else says, “Come, let’s go.” The footpath sleeper also, apparently, belongs to some party, some camp, some category, some use.
 
 Nobody is merely human anymore. Everyone is data for somebody’s scheme, vote for somebody’s arithmetic, audience for somebody’s performance, prey for somebody’s appetite.
 
