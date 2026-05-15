@@ -13,9 +13,11 @@ color: "crimson"
 
 <Pi src="Compress_20260515_202343_3686.jpg" />
 
-Acronyms: SEO [Search Engine Optimization, the craft of helping people and search systems discover a post], TTS [Text-to-Speech, the site marker that helps turn written text into spoken audio].
-
----
+<Vid 
+  src="বাঁকা_গ্লাসে_শহর.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 Calcutta has changed its smell.
 
