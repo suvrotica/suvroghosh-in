@@ -27,7 +27,7 @@ I may have given the wrong impression. I write often about America and India, an
 
 The truth is messier.
 
-My happiness has never depended only on country. It depends on three stubborn things. I need to be alone for large parts of the day. I need some control over my time, even if that control is as modest as deciding when to make tea without a family committee forming around the kettle. And I need some distant object pulling me forward. Not a grand dream. I am not announcing a moon mission from Thakuranir Chak. These days the object is mostly this blog, this small daily business of turning life into words before memory eats the evidence.
+My happiness has never depended only on country. It depends on three stubborn things. I need to be alone for large parts of the day. I need some control over my time, even if that control is as modest as deciding when to make tea without a family committee forming around the kettle. And I need some distant object pulling me forward. Not a grand dream. I am not announcing a moon mission. These days the object is mostly this blog, this small daily business of turning life into words before memory eats the evidence.
 
 Once those three conditions are satisfied, the country matters.
 
