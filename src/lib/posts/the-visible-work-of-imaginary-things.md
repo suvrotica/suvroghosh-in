@@ -1,14 +1,17 @@
-the-visible-work-of-imaginary-things.md
 ---
 title: "The Visible Work of Imaginary Things"
 description: "A personal essay on atheism, cooperation, bipolar fragility, ambition, and why invisible stories must be judged by the visible work they produce."
 date: "2026-05-15"
+thumbnail: "/images/Compress_20260515_150426_6813.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Atheism", "Humanism", "Rationality", "Cooperation", "Religion And Society", "Bipolar Disorder", "Mental Health", "Kolkata Life", "Calcutta Essay", "Middle Class Life", "Lower Middle Class India", "Personal Philosophy", "Existential Essay", "Secular Humanism", "Social Commentary", "Science And Wonder", "Meaning Without God", "Survival Of Species", "Imagination", "Human Connection", "Corruption", "Scarcity", "Floods", "Modern India", "Bengali Writing", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260515_150426_6813.jpg" />
 
 Acronyms used in this post: AI [Artificial Intelligence, computer systems that imitate or extend human tasks such as pattern recognition, language generation, prediction, and decision support]. SEO [Search Engine Optimization, the practical craft of making writing easier for search engines and readers to discover].
 
