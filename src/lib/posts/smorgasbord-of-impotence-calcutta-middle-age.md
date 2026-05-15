@@ -1,18 +1,19 @@
-smorgasbord-of-impotence-calcutta-middle-age.md
 ---
 title: "The Smorgasbord of Impotence"
 description: "A sharp, intimate essay on middle age, bipolar depression, unemployment, loneliness, fading desire, and the small stubborn ways a broke single man in Calcutta still keeps himself alive."
 date: "2026-05-16"
+thumbnail: "/images/Compress_20260516_043341_1678.jpg"
 category: "Personal Essay"
 tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta", "Kolkata", "Middle Age", "Unemployment", "Bipolar Depression", "Mental Health Essay", "Male Loneliness", "Single Middle Aged Man", "Lower Middle Class Life", "Broke In Calcutta", "Aging And Desire", "Impotence", "Depression And Desire", "Urban Loneliness", "Indian Middle Class", "Personal Blog", "Literary Essay", "Memoir", "Life In Kolkata", "Masculinity", "Economic Anxiety", "Solitude", "Survival", "Bengali Life"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
 
-Acronyms and shorthand: None used in the essay. The language has been kept deliberately plain because some subjects are already carrying a full sack of stones on their head.
+<Pi src="Compress_20260516_043341_1678.jpg" />
 
----
+
 
 Impotence arrives first as a bedroom rumor, then quietly expands into a whole municipal department.
 
