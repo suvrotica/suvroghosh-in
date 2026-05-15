@@ -141,7 +141,7 @@ This is the lie hidden inside the word Royal.
 
 The Sundarbans tiger is not royal in the way we imagine royalty. It is not sitting on a velvet cushion eating mutton. It is a hard, hungry, weather-beaten creature living in a difficult place where land and water keep changing their minds. Its kingdom is mud, salt, roots, tides, mosquitoes, deer, fear, and patience. If that is royalty, then royalty has a very bad ration card.
 
-Your song’s barroom woman understands this better than the polished gentlemen.
+My song’s barroom woman understands this better than the polished gentlemen.
 
 She says she has seen the city’s stomach. It eats air. It eats metro gates. It eats land. It eats houses. It eats the last salty voice of the river. That cracked female voice, a little drunk, a little husky, a little cheap-glitter brave, is not decorative. She is the witness. She has watched the city after dark, when the slogans go home and the real appetite comes out like a rat behind the kitchen tin.
 
