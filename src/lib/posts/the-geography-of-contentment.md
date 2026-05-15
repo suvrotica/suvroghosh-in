@@ -1,14 +1,17 @@
-the-geography-of-contentment.md
 ---
 title: "The Geography of Contentment"
 description: "A personal essay on why happiness does not live neatly inside America or India, but in solitude, control, work, memory, terraces, grocers, parents, and the private weather of temperament."
 date: "2026-05-15"
+thumbnail: "/images/Compress_20260515_233018_8846.jpg"
 category: "Life"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "India", "America", "United States", "US India Life", "Bengali Life", "Middle Age", "Personal Essay", "Memoir", "Migration", "Reverse Migration", "Life In India", "Life In America", "Suburban America", "Texas Life", "Calcutta Terrace", "Lower Middle Class Life", "Urban Life", "Loneliness", "Solitude", "Homecoming", "Happiness", "Contentment", "Indian Middle Class", "Bengali Middle Class", "Expat Life", "Returning Home", "Diaspora", "Everyday Philosophy", "Personal Blog", "Kolkata Writing", "Human Attention", "Readable Essay", "Modern India", "American Suburbs", "Walking Culture", "City Life", "Memory", "Aging", "Single Life", "Atheist Writing", "Cultural Contrast", "Quiet Life", "Mental Weather"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260515_233018_8846.jpg" />
 
 Acronyms used in this post:
 
