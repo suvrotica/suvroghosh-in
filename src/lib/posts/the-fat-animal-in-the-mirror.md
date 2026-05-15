@@ -13,6 +13,12 @@ color: "green"
 
 <Pi src="Compress_20260515_210105_5217.jpg" />
 
+<Vid 
+  src="মানুষ_মোটা_জানোয়ার.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 
 
 Calcutta borrows the Royal Bengal tiger the way a slightly broke uncle borrows a silk panjabi for a wedding: proudly, loudly, and with no plan to return it in good condition.
