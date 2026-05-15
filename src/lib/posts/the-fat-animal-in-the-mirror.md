@@ -69,7 +69,7 @@ A sparrow does not disappear because it has become modern and bought a flat in N
 
 The tiger in the Sundarbans is part of the same story, only larger and striped.
 
-Your song sees this very clearly. “সুন্দরবনে বাঘ / হাড়গিলে ভুঁকো / মানুষ মোটা জানোয়ার.” That line has more environmental honesty than most official reports, because it does not start by flattering us. The tiger is hungry. The human being is fat. Not always fat in the stomach. Many poor people near the forest are thin as bamboo splinters. The fatness is elsewhere. In appetite. In entitlement. In the smooth round belly of civilization saying, this river, mine; this forest, mine; this fish, mine; this road, mine; this land, mine; this future, also mine, please stamp here.
+The song composed sees this very clearly. “সুন্দরবনে বাঘ / হাড়গিলে ভুঁকো / মানুষ মোটা জানোয়ার.” That line has more environmental honesty than most official reports, because it does not start by flattering us. The tiger is hungry. The human being is fat. Not always fat in the stomach. Many poor people near the forest are thin as bamboo splinters. The fatness is elsewhere. In appetite. In entitlement. In the smooth round belly of civilization saying, this river, mine; this forest, mine; this fish, mine; this road, mine; this land, mine; this future, also mine, please stamp here.
 
 The tiger kills a man, and the paper says man-eater.
 
