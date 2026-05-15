@@ -1,14 +1,17 @@
-the-zeitgeist-of-calcutta-has-changed.md
 ---
 title: "The Zeitgeist of Calcutta Has Changed"
 description: "A sharp, personal essay on how Kolkata’s moral weather has shifted from old neighborhood shame to new public display, nightlife, selfishness, religiosity, and everyday duplicity."
 date: "2026-05-15"
-category: "Personal Essay"
+thumbnail: "/images/Compress_20260515_202343_3686.jpg"
+category: "Calcutta"
 tags: ["Kolkata", "Calcutta", "Kolkata Culture", "Calcutta Essay", "Bengali Essay", "Urban Life", "City Life", "Kolkata Society", "Calcutta Society", "Modern Kolkata", "Old Calcutta", "Kolkata Nightlife", "Park Street", "Shobhabazar", "Bengali Middle Class", "Bhadralok", "Moral Decline", "Social Satire", "Bengali Satire", "Urban Morality", "Religion And Society", "Hypocrisy", "Selfishness", "Loneliness", "Social Media Culture", "Kolkata Streets", "Bengali Life", "Indian Society", "Cultural Change", "Personal Reflection", "Video", "SuvroGhosh"]
 published: true
 color: "crimson"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260515_202343_3686.jpg" />
 
 Acronyms: SEO [Search Engine Optimization, the craft of helping people and search systems discover a post], TTS [Text-to-Speech, the site marker that helps turn written text into spoken audio].
 
