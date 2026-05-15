@@ -1,18 +1,19 @@
-the-fat-animal-in-the-mirror.md
 ---
 title: "The Fat Animal in the Mirror"
 description: "A Calcutta reflection on the Sundarbans tiger, vanishing crows and sparrows, childhood fields, city greed, and the large smooth lie we call progress."
 date: "2026-05-15"
+thumbnail: "/images/Compress_20260515_210105_5217.jpg"
 category: "Essay"
 tags: ["Video", "Ecology", "Calcutta", "Kolkata", "Sundarbans", "Royal Bengal Tiger", "Bengal Tiger", "Urban Ecology", "Climate Change", "Environmental Essay", "Human Wildlife Conflict", "Bengali Essay", "Kolkata Life", "Calcutta Memory", "South Sinthee", "Vanishing Birds", "Crows", "Sparrows", "Mangrove Forest", "Nature Writing", "Urban Greed", "Environmental Collapse", "Bengal Environment", "Indian Cities", "Middle Class Life", "SuvroGhosh"]
 published: true
 color: "green"
 ---
+
 <TTS />
 
-Acronyms used: None.
+<Pi src="Compress_20260515_210105_5217.jpg" />
 
----
+
 
 Calcutta borrows the Royal Bengal tiger the way a slightly broke uncle borrows a silk panjabi for a wedding: proudly, loudly, and with no plan to return it in good condition.
 
