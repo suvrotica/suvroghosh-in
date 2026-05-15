@@ -13,9 +13,7 @@ color: "amber"
 
 <Pi src="Compress_20260515_150426_6813.jpg" />
 
-Acronyms used in this post: AI [Artificial Intelligence, computer systems that imitate or extend human tasks such as pattern recognition, language generation, prediction, and decision support]. SEO [Search Engine Optimization, the practical craft of making writing easier for search engines and readers to discover].
 
----
 
 My mind becomes a locked almirah when I try to think only about myself.
 
