@@ -45,7 +45,13 @@ The official argument for SIR was simple enough. Electoral rolls had old errors.
 
 Opposition parties alleged something darker: that the exercise could remove legitimate voters, especially the poor, minorities, migrants, and people least able to fight paperwork. The ECI and its defenders argued that eligible voters had safeguards, additions were also made, and the final picture was more complex than the slogans. That last part is probably true.
 
-The picture is complex.
+The picture is complex and it was never botany, neither meristematic foliage nor lotus.
+
+<Vid 
+  src="শহর_তবু_ফুল.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 That does not make it innocent.
 
