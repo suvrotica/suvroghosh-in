@@ -13,7 +13,11 @@ color: "#78350f"
 
 <Pi src="Compress_20260509_182901_1938.jpg" />
 
-
+<Vid 
+  src="বাকির_খাতা (1).mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 Acronyms and names used in this post: SIR means Special Intensive Revision, a large-scale electoral roll cleanup process conducted by the Election Commission before the election. ECI means Election Commission of India, the constitutional body that conducts elections and manages electoral rolls. BJP means Bharatiya Janata Party, India’s ruling national party and now the governing party in West Bengal. TMC means Trinamool Congress, the party that governed West Bengal from 2011 until this election. AITC means All India Trinamool Congress, the formal name of TMC. CPI(M) means Communist Party of India (Marxist), the main Left party that ruled Bengal before TMC. BLO means Booth Level Officer, the local election worker who handles voter verification at the polling station level. ERO means Electoral Registration Officer, the official responsible for preparing and deciding claims and objections in electoral rolls. CEO means Chief Electoral Officer, the top state-level election official. RSS means Rashtriya Swayamsevak Sangh, the volunteer organization historically linked with the BJP.
 
