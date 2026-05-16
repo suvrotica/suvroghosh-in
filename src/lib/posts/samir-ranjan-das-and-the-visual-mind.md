@@ -3,7 +3,7 @@ title: "Samir Ranjan Das and the Visual Mind"
 description: "A personal essay on a PhD advisor, Bengal’s habit of losing brilliant minds, visual thinking, AI, inequality, and the strange business of trying to remain intellectually alive from the edge of Kolkata."
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_181455_5544.jpg"
-category: "Personal Essay"
+category: "Personal"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengal", "Bengali Essay", "Indian Academia", "Brain Drain", "PhD Advisor", "Samir Ranjan Das", "Visual Thinking", "Artificial Intelligence", "AI Inequality", "Gini Index", "OPNET", "InfraNodus", "Technology Reflection", "Middle Class India", "Academic Life", "Indian Education", "Science Writing", "Personal Technology Essay", "Bengali Intellectual Life", "US India", "Dengue Kolkata", "Public Health India", "Creative Nonfiction"]
 published: true
 color: "indigo"
