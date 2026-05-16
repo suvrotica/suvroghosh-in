@@ -1,18 +1,19 @@
-fellow_passengers_and_the_broken_record.md
 ---
 title: "Fellow Passengers and the Broken Record"
 description: "A small, human meditation on the people who pass through life like brief songs, the people who stay like noise, and the patience needed to find tenderness without becoming anyone’s doormat."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_030820_0932.jpg"
 category: "Life"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata Life", "Calcutta Essay", "Personal Essay", "Middle Age", "Loneliness", "Human Relationships", "Everyday Philosophy", "Life Reflection", "Emotional Survival", "Urban Life", "Bengali Life", "Lower Middle Class Life", "Modern India", "Attention Economy", "Mental Health Reflection", "Atheist Writing", "Readable Essay", "Human Condition", "Companionship", "Patience", "Adjustment", "Ordinary Life", "Social Commentary", "Memoir Style", "Indian Blog", "Kolkata Blog", "Personal Growth"]
 published: true
 color: "amber"
 ---
+
 <TTS />
 
-Acronyms used in this post: None.
+<Pi src="Compress_20260517_030820_0932.jpg" />
 
----
+
 
 Some people enter life like a song from a half-open window.
 
