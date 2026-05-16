@@ -1,18 +1,19 @@
-the-dhoti-the-toothache-and-the-great-bengali-flapping-problem.md
 ---
 title: "The Dhoti, the Toothache, and the Great Bengali Flapping Problem"
 description: "A comic personal essay about toothache, loneliness, Bengali dress, ancestral irritation, and the strange theater of middle-class Calcutta life."
 date: "2026-05-16"
-category: "Personal Essay"
+thumbnail: "/images/Compress_20260516_191129_9936.jpg"
+category: "Personal"
 tags: ["Calcutta", "Kolkata", "Bengali Essay", "Personal Essay", "Toothache", "Middle Class Life", "Lower Middle Class India", "Bengali Babu", "Dhoti", "Indian Humor", "Kolkata Humor", "Bengali Culture", "Urban India", "Aging", "Loneliness", "Mental Health Writing", "Atheist Essay", "Satirical Essay", "Indian Society", "Family Memory", "Personal Blog", "SuvroGhosh", "Video"]
 published: true
 color: "mustard"
 ---
+
 <TTS />
 
-Acronyms: United States [US, the country where the narrator once lived and picked up a useful American bluntness of speech].
+<Pi src="Compress_20260516_191129_9936.jpg" />
 
----
+
 
 A toothache is not pain. Pain is too polite a word, like saying the monsoon is a little damp or the local political party is mildly fond of wall-writing. A toothache is a tiny municipal demolition crew inside the jaw, arriving without notice, chewing paan, refusing tea, and beginning excavation at 11:47 at night when every dentist in the city has sensibly gone home.
 
