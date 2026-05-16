@@ -17,6 +17,12 @@ published: true
 />
 
 <Vid 
+  src="দাদা_বাড়ি_যাও.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="মানুষ_এখনো_বাকি.mp4" 
   layout="block" 
   size={1} 
