@@ -197,5 +197,5 @@ Inside, one sentence asks for another.
 
 That is how they get you.
 
-By the by this blog *is* that diary!
+By the bye this blog *is* that diary!
 
