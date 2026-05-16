@@ -35,7 +35,7 @@ And yet.
 
 The details are everything.
 
-A man in London is lonely in fog. A man in Motihari is born under empire. A boy in Calcutta waits for a teacher’s red pen. A middle-aged single fellow on the shabby edge of the city sits with tea, anxiety, and a laptop that has seen better manners. Same species. Same hunger for dignity. Same fear of being laughed at. But what different smells, weather, rooms, mothers, debts, buses, alphabets, and afternoon shadows.
+A man in London is lonely in fog. A man in Motihari is born under empire. A boy in Calcutta waits for a teacher’s red pen. A middle-aged single fellow on the shabby edge of the city sits with tea, anxiety, and a book that makes his mind voluble. Same species. Same hunger for dignity. Same fear of being laughed at. But what different smells, weather, rooms, mothers, debts, buses, alphabets, and afternoon shadows.
 
 That is why I still like short essays and poems. They fit into the cracks of life. A novel asks you to clear furniture. A short essay comes in like a clever visitor, says two sharp things, eats one biscuit, and leaves before the family quarrel starts. A poem can sit in the mind for forty years, doing tiny carpentry in the dark.
 
