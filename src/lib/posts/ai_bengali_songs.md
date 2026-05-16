@@ -8,10 +8,7 @@ category: "AI Music Song"
 published: true
 ---
 
-Acronyms expanded in this post:
-- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
 
----
 
 <Vid 
   src="বাঁকা_গ্লাসে_শহর.mp4" 
@@ -72,6 +69,12 @@ Acronyms expanded in this post:
 
 <Vid 
   src="লেখাপড়া_করে_যে.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
+  src="বৃষ্টি_সাক্ষী.mp4" 
   layout="block" 
   size={1} 
 />
