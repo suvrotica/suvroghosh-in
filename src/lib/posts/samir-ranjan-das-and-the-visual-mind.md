@@ -1,14 +1,17 @@
-samir-ranjan-das-and-the-visual-mind.md
 ---
 title: "Samir Ranjan Das and the Visual Mind"
 description: "A personal essay on a PhD advisor, Bengal’s habit of losing brilliant minds, visual thinking, AI, inequality, and the strange business of trying to remain intellectually alive from the edge of Kolkata."
 date: "2026-05-16"
+thumbnail: "/images/Compress_20260516_181455_5544.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengal", "Bengali Essay", "Indian Academia", "Brain Drain", "PhD Advisor", "Samir Ranjan Das", "Visual Thinking", "Artificial Intelligence", "AI Inequality", "Gini Index", "OPNET", "InfraNodus", "Technology Reflection", "Middle Class India", "Academic Life", "Indian Education", "Science Writing", "Personal Technology Essay", "Bengali Intellectual Life", "US India", "Dengue Kolkata", "Public Health India", "Creative Nonfiction"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260516_181455_5544.jpg" />
 
 Acronyms used: PhD means Doctor of Philosophy, the highest university research degree. US means United States, where many Indian scientists, engineers, and professors build long careers. OPNET means Optimized Network Engineering Tools, a simulation platform once used for modeling communication networks. AI means Artificial Intelligence, software that performs tasks associated with reasoning, language, prediction, and pattern recognition. Gini index means a statistical measure of inequality, where a higher number usually means a more unequal society.
 
