@@ -1,14 +1,17 @@
-obama-hitech-ehr-incentives-and-the-electronic-chart.md
 ---
 title: "Obama, HITECH, and the Day the American Medical Chart Was Dragged Into Electricity"
 description: "How Obama’s 2008 health IT promise became the 2009 HITECH incentive machine, why EHR adoption suddenly accelerated, and why digitizing healthcare solved one problem while quietly creating several new ones."
 date: "2026-05-16"
+thumbnail: "/images/Compress_20260516_202821_1802.jpg"
 category: "Healthcare IT"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Obama EHR Incentives", "HITECH Act", "ARRA 2009", "Electronic Health Records", "EHR Adoption", "Meaningful Use", "Healthcare IT History", "Health Information Technology", "ONC", "CMS", "Medicare Incentives", "Medicaid Incentives", "Interoperability", "FHIR", "HL7", "CDA", "VA Healthcare IT", "VistA", "CPRS", "UTHSCSA", "Healthcare Modernization", "Health Policy", "Digital Health", "Clinical Data", "Healthcare Data Quality", "AI in Healthcare", "Population Health Analytics", "Semantic Interoperability", "Healthcare Architecture"]
 published: true
 color: "blue"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260516_202821_1802.jpg" />
 
 Acronyms used here: EHR means Electronic Health Record, the clinical software record of patient care; HITECH means Health Information Technology for Economic and Clinical Health Act, the 2009 law that turned EHR adoption into a national incentive program; ARRA means American Recovery and Reinvestment Act, the post-crash stimulus law that carried HITECH inside it like medicine hidden in a banana; ONC means Office of the National Coordinator for Health Information Technology, the federal health IT policy office; CMS means Centers for Medicare & Medicaid Services, the agency that ran the incentive programs; MU means Meaningful Use, the staged program that paid providers for using certified EHRs in specified ways; VA means Veterans Affairs, the federal healthcare system for veterans; VistA means Veterans Health Information Systems and Technology Architecture, the VA’s long-running health information system; CPRS means Computerized Patient Record System, the VA’s clinician-facing chart; UTHSCSA means University of Texas Health Science Center at San Antonio; HL7 v2 means Health Level Seven version 2, the old but stubbornly useful healthcare messaging standard; CDA means Clinical Document Architecture, a document-based clinical exchange standard; FHIR means Fast Healthcare Interoperability Resources, the newer web-style healthcare data standard; AI means Artificial Intelligence; IOM means Institute of Medicine, now the National Academy of Medicine; RAND means the RAND Corporation, a policy research organization whose health IT cost-saving estimates helped shape the public argument.
 
