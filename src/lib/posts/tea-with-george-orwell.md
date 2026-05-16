@@ -2,20 +2,16 @@
 title: "Tea with George Orwell"
 description: "A nostalgic Calcutta essay on a schoolteacher’s praise, diary-writing, short essays, poems, and the late arrival of George Orwell as a severe but useful companion."
 date: "2026-05-16"
-category: "Personal Essay"
+thumbnail: "/images/Compress_20260516_173224_4931.jpg"
+category: "Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "George Orwell", "Tea with George Orwell", "Calcutta Essay", "Kolkata Writing", "Bengali Memoir", "Personal Essay", "Nostalgic Essay", "School Memories", "Diary Writing", "Daily Journaling", "English Essay", "Ira Paul", "1984", "Nineteen Eighty-Four", "Animal Farm", "Orwell Essays", "Motihari Bihar", "Indian Literary History", "Atheist Writer", "Middle Class Kolkata", "Lower Middle Class Life", "Writing Habit", "Reading Essays", "Short Poems", "Literary Memoir", "Creative Nonfiction", "Life in Calcutta", "Bengali Blog", "Suvro Ghosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
 
-Acronyms used:
-
-SEO — Search Engine Optimization, the ordinary craft of helping writing get discovered online without making it sound like it was assembled by a committee of tired robots.
-
-TTS — Text To Speech, the little reading-machine marker used by the site so the post can be spoken aloud.
-
----
+<Pi src="Compress_20260516_173224_4931.jpg" />
 
 A teacher once praised my English essay, and the damage was permanent.
 
