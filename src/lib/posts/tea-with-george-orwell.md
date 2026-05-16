@@ -2,7 +2,7 @@
 title: "Tea with George Orwell"
 description: "A nostalgic Calcutta essay on a schoolteacher’s praise, diary-writing, short essays, poems, and the late arrival of George Orwell as a severe but useful companion."
 date: "2026-05-16"
-thumbnail: "/images/Compress_20260516_173224_4931.jpg"
+thumbnail: "/photos/Compress_20260516_184128_8866.jpg"
 category: "Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "George Orwell", "Tea with George Orwell", "Calcutta Essay", "Kolkata Writing", "Bengali Memoir", "Personal Essay", "Nostalgic Essay", "School Memories", "Diary Writing", "Daily Journaling", "English Essay", "Ira Paul", "1984", "Nineteen Eighty-Four", "Animal Farm", "Orwell Essays", "Motihari Bihar", "Indian Literary History", "Atheist Writer", "Middle Class Kolkata", "Lower Middle Class Life", "Writing Habit", "Reading Essays", "Short Poems", "Literary Memoir", "Creative Nonfiction", "Life in Calcutta", "Bengali Blog", "Suvro Ghosh"]
 published: true
@@ -11,7 +11,7 @@ color: "amber"
 
 <TTS />
 
-<Pi src="Compress_20260516_173224_4931.jpg" />
+<Pi src="/photos/Compress_20260516_184128_8866.jpg" />
 
 A teacher once praised my English essay, and the damage was permanent.
 
