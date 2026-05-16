@@ -1,14 +1,17 @@
-shallow-water-loud-television.md
 ---
 title: "Shallow Water, Loud Television"
 description: "A Calcutta monsoon essay about waterlogging, disaster television, civic decay, and the strange national habit of turning public misery into background entertainment."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_042233_3922.jpg"
 category: "Essay"
 tags: ["Calcutta", "Kolkata", "Monsoon", "Waterlogging", "Urban Flooding", "Civic Failure", "Indian Cities", "Kolkata Rain", "Disaster Media", "Indian Television News", "Urban Infrastructure", "Potholes", "Drainage", "Climate Risk", "Municipal Governance", "Lower Middle Class Life", "Bengali Essay", "Satirical Essay", "Personal Essay", "Monsoon Essay", "Civic Satire", "Media Criticism", "Environmental Decay", "City Life", "South Kolkata", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260517_042233_3922.jpg" />
 
 TRP means Television Rating Point, the crude little number by which television attention is measured and sold to advertisers.  
 Amrit Kaal is a political phrase meaning a supposedly golden or auspicious national period, though in ordinary lanes it often arrives disguised as a broken drain.  
