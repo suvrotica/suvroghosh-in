@@ -1,14 +1,17 @@
-what-india-meant-by-demonetization-and-where-we-are.md
 ---
 title: "What India Meant by Demonetization, and Where We Are"
 description: "A plainspoken, skeptical look at India’s 2016 demonetization: what it promised, what it broke, what it accidentally accelerated, and why cash still walks beside QR codes in modern India."
 date: "2026-05-16"
+thumbnail: "/images/Compress_20260516_222640_0073.jpg"
 category: "Economy"
 tags: ["India Demonetization", "Demonetization 2016", "Indian Economy", "Cash Economy India", "Digital India", "UPI India", "Black Money India", "Informal Economy", "Indian Middle Class", "Indian Politics", "Economic Policy India", "Currency Ban India", "Reserve Bank of India", "NPCI", "Digital Payments", "Financial Inclusion", "Cashless India", "Indian Tax System", "Kolkata Essays", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260516_222640_0073.jpg" />
 
 Acronyms used: UPI [Unified Payments Interface, India’s instant mobile bank-to-bank payment system]; NPCI [National Payments Corporation of India, the organization that operates major Indian retail payment systems including UPI]; RBI [Reserve Bank of India, India’s central bank]; GDP [Gross Domestic Product, the total value of goods and services produced in an economy]; ATM [Automated Teller Machine, the cash-withdrawal machine that becomes a small temple during currency panic].
 
