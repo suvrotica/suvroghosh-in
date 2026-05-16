@@ -59,6 +59,12 @@ That is the comedy. Also the wound.
 
 I live far from the polished postcard version of the city. My Calcutta is not only Park Street lights and puja awards. It is also damp rooms, unpaid bills, cracked plastic buckets, medicine strips, suspicious landlords, tea with too much sugar, and the daily mathematics of a lower-middle-class single man trying to keep life from sliding off the plate. Some mornings the news arrives before the tea boils: another scandal, another outrage, another video, another leader speaking as if language itself has resigned. You look at the phone and think, “Should I read this now, or should I preserve one spoonful of sanity for breakfast?”
 
+<Vid 
+  src="দাদা_বাড়ি_যাও.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 Then the pressure cooker whistles next door.
 
 Life continues. Shamelessly. Bravely. Absurdly.
