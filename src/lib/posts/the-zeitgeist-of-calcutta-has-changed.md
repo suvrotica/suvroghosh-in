@@ -115,6 +115,12 @@ One public prayer used to cover one private rot.
 
 One more laugh sold under colored light.
 
+<Vid 
+  src="বাকির_খাতা (1).mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 And yet morning comes. It always does, irritatingly hopeful, like a tea seller who refuses to accept philosophy before payment. The kettle boils. The smoke rises. Someone argues about football. Someone complains about the price of fish. Someone’s mother says, “মানুষ হবি,” and the child, already too clever, wonders what profit there is in that line of work.
 
 There is the question.
