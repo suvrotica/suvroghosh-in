@@ -1,14 +1,17 @@
-plague-of-pseudoscience-india-scientific-temper.md
 ---
 title: "The Plague of Pseudoscience in India"
 description: "India cannot become a serious scientific civilization while treating superstition as culture, pseudoscience as pride, and science as an exam subject. This essay argues for scientific temper, better schools, public skepticism, and a practical route out of the fog."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_170049_9569.jpg"
 category: "Science and Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Pseudoscience", "Scientific Temper", "Science Education India", "Indian Education System", "Rationalism India", "Anti Science Propaganda", "Mythology And Science", "Evolution Education", "NCERT Curriculum", "India China Science Gap", "Research And Development India", "Science Policy India", "Public Reason", "Secular India", "Critical Thinking", "Evidence Based Thinking", "Science Communication", "Indian Politics", "Religion And Politics", "WhatsApp Misinformation", "Social Media Misinformation", "Faith Healing", "Gurus In India", "Superstition India", "Science Literacy", "Nehru Scientific Temper", "Atheism India", "Modern India", "Bengali Essays", "Kolkata Essays", "Calcutta Blog"]
 published: true
 color: "#7C2D12"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260517_170049_9569.jpg" />
 
 Acronyms used in this post:
 
@@ -277,6 +280,3 @@ How do we know?
 That sentence is small.
 
 So is a match.
-
-P.S. References: Constitution of India, Article 51A(h); Government of India, Scientific Policy Resolution, 1958; Jawaharlal Nehru’s writings and speeches on scientific temper; NCERT rationalised textbook content lists; Government of India public data on national R&D spending; World Intellectual Property Organization reports on global innovation and R&D; public science communication research on misinformation, superstition, and scientific temper in India.
-
