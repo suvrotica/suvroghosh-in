@@ -1,14 +1,18 @@
-the-overzealous-credulity-crisis.md
 ---
 title: "The Overzealous Credulity Crisis"
 description: "Chatbots sound wise because language is the most expensive costume humanity ever learned to wear. The danger is not that machines can talk, but that tired humans may stop thinking when the talking becomes too smooth."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_161043_3982.jpg"
 category: "Artificial Intelligence"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI", "Generative AI", "ChatGPT", "Large Language Models", "LLM", "AI Hallucination", "AI Sycophancy", "AI Credulity", "AI Hype", "AI Bubble", "RLHF", "GPU", "Machine Learning", "Digital Literacy", "Critical Thinking", "Technology Criticism", "Autocomplete", "Automation", "Human Judgment", "AI Ethics", "Future of Work", "Cognitive Bias", "Language Models", "AI Safety", "Media Literacy", "Tech Culture"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260517_161043_3982.jpg" />
+
 
 Acronyms: AI means Artificial Intelligence, computer systems made to perform tasks we associate with human thinking. LLM means Large Language Model, a statistical language system trained to predict and generate text. GPU means Graphics Processing Unit, a chip built for fast parallel calculation and now used heavily in AI training. RLHF means Reinforcement Learning from Human Feedback, the polishing process where human preferences help make model responses more useful, polite, and agreeable.
 
