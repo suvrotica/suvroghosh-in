@@ -1,14 +1,17 @@
-ai-business-model-broke-bengali-nervous.md
 ---
 title: "The AI Business Model Makes a Broke Bengali Nervous"
 description: "AI may be real, useful, and still financially overcooked. The trouble is not only intelligence; it is power, chips, debt, data centers, and the slippery language of infrastructure promises."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_073622_2338.jpg"
 category: "Technology"
 tags: ["AI", "Artificial Intelligence", "AI Business Model", "AI Bubble", "AI Infrastructure", "AI Data Centers", "AI Capex", "AI Debt Financing", "OpenAI Stargate", "Abilene Data Center", "Microsoft AI Capacity", "Amazon Project Rainier", "Anthropic", "xAI Colossus", "Nvidia GPUs", "GPU Shortage", "Data Center Power Demand", "AI Energy Use", "AI Economics", "AI Valuation", "Big Tech Capex", "Private Credit", "Cloud Infrastructure", "Technology Bubble", "AI Finance", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#7F1D1D"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260517_073622_2338.jpg" />
 
 Acronyms: AI means Artificial Intelligence, software that appears to reason, write, code, predict, classify, summarize, and sometimes confidently invent nonsense with the face of a bank manager. GPU means Graphics Processing Unit, the specialized chip now doing much of the heavy lifting in modern AI. GW means gigawatt, one billion watts of electrical power, which is not a poetic unit but a serious appetite. MW means megawatt, one million watts. Capex means Capital Expenditure, the money spent on long-lived assets like land, buildings, servers, chips, cooling systems, and other expensive objects that do not care about your feelings. PR means Public Relations, the art of making half a bridge sound like a completed highway.
 
