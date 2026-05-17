@@ -1,18 +1,18 @@
-falling-through-the-crack.md
 ---
 title: "Falling Through the Crack"
 description: "A darkly comic personal essay about usefulness, failure, time, work, belief, and the strange third category of people who neither serve the known world nor discover the unknown one."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_064736_6352.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Kolkata Essay", "Calcutta Writing", "Middle Class Life", "Atheist Writing", "Work And Meaning", "Failure Essay", "Dark Humor", "Satirical Essay", "Indian Blog", "Bengali Writer", "Life In Kolkata", "Modern Loneliness", "Mental Health Reflection", "Social Commentary", "Existential Essay", "Human Purpose", "Unemployment", "Creative Nonfiction", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
 
-Acronyms used in the post body: None.
+<Pi src="Compress_20260517_064736_6352.jpg" />
 
----
 
 Human life has two respectable counters, like an old government office where the fan rotates with the philosophical indifference of a cow.
 
