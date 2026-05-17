@@ -1,14 +1,17 @@
-babu-culture-vip-india-obsequiousness.md
 ---
 title: "Babu Culture and the Indian Art of Bending"
 description: "A personal, satirical, street-level essay on Indian obsequiousness, VIP culture, clerical flattery, and the old machinery of hierarchy that keeps ordinary people crawling before power."
 date: "2026-05-18"
+thumbnail: "/images/Compress_20260518_022157_7757.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Society", "Babu Culture", "VIP Culture", "Indian Bureaucracy", "Obsequiousness", "Sycophancy", "Clerical Culture", "Power Distance", "Hierarchy", "Colonial Legacy", "Postcolonial India", "Kolkata", "Calcutta", "Indian Middle Class", "Indian Offices", "Indian Politics", "Indian Administration", "Patronage", "Nepotism", "Jugaad", "Corruption", "Public Life", "Social Commentary", "Civic Culture", "Indian Democracy", "Workplace Culture", "Power And Status", "Everyday India"]
 published: true
 color: "ochre"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260518_022157_7757.jpg" />
 
 Acronym key:
 
@@ -25,6 +28,12 @@ IAS: Indian Administrative Service, the post-independence elite civil service th
 AI: Artificial Intelligence, software systems that imitate or automate forms of human reasoning, prediction, writing, classification, and decision support.
 
 ---
+
+<Vid 
+  src="আলমারিতে_বন্দি_দেশ.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 The fastest way to understand Indian hierarchy is to lose importance.
 
