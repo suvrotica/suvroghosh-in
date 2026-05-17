@@ -28,6 +28,12 @@ published: true
   size={1} 
 />
 
+<Vid 
+  src="আলমারিতে_বন্দি_দেশ.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 
 <Vid 
   src="শহর_তবু_ফুল.mp4" 
