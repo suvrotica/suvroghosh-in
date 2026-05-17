@@ -83,6 +83,8 @@ That word is the mosquito in the net.
 
 Public companies disclose capex, but not always in the tidy format a Bengali accountant would prefer after lunch: how much went to land, how much to buildings, how much to power gear, how much to prepayments, how much to GPUs, how much to live GPUs, and how much to revenue-producing GPUs. Money can be committed without becoming useful capacity. A wedding caterer can be booked before a single luchi is fried.
 
+<Yt src="https://youtu.be/TCeXwFWmv1U?si=Dlry42lNAbTTS1jE" />
+
 This is why Ed Zitron’s loudest claims should be handled with tongs, but his central worry should not be dismissed. When he says the story is overcooked, he is not wrong to look at the oven. The absolutist version—nothing is being built, nobody is making money, it is all fraud—is too hot. NVIDIA is plainly making money. The big cloud companies are still profitable monsters. Amazon’s Project Rainier has been described as already supporting Anthropic workloads. There is real buildout.
 
 But real buildout is not the same as good economics.
@@ -198,3 +200,5 @@ I do not know.
 But when a business needs chips from one kingdom, power from another, debt from a third, construction miracles from a fourth, and customers from everywhere, a broke Bengali sitting under a fan that sometimes coughs before starting is allowed to feel nervous.
 
 P.S. References: OpenAI Stargate expansion announcement; Oracle/OpenAI Stargate data-center fact sheet; Microsoft FY2026 earnings call transcripts; Reuters reporting on Big Tech AI infrastructure spending, debt-market funding, private credit, and data-center power demand; Data Center Dynamics reporting on Anthropic and Colossus 1; xAI and SpaceX statements on Colossus; Amazon Web Services material on Project Rainier; NVIDIA fiscal 2026 financial results; Morgan Stanley analysis of data-center financing needs.
+
+<Yc />
