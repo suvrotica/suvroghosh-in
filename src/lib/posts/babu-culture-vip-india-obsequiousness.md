@@ -39,7 +39,7 @@ The fastest way to understand Indian hierarchy is to lose importance.
 
 Not money. Not exactly. Money matters, naturally. Money in India is like mustard oil in a Bengali kitchen; everyone pretends the food is about the vegetables, but the oil is doing half the moral work. But status is the sharper instrument. Lose status, and the room changes temperature.
 
-When I came back from the US in 2014, I returned with the foolish private belief that I was still the same man. Same education. Same experience. Same battered intelligence. Same old middle-aged Bengali stomach, somewhat treacherous after luchi. I had worked in serious systems, sat in serious rooms, handled serious responsibilities, and had once carried the little visiting-card electricity of a CEO. Then India performed its old magic trick. It looked at me, sniffed the air, detected reduced usefulness, and quietly moved me from “sir” to “who are you?”
+When I came back from the US in 2014, and when by 2016 the Indian startup vanished, I held on to the foolish private belief that I was still the same man. Same education. Same experience. Same battered intelligence. Same old middle-aged Bengali stomach, somewhat treacherous after luchi. I had worked in serious systems, sat in serious rooms, handled serious responsibilities, and had once carried the little visiting-card electricity of a CEO. Then India performed its old magic trick. It looked at me, sniffed the air, detected reduced usefulness, and quietly moved me from “sir” to “who are you?”
 
 That shift teaches more sociology than a library shelf.
 
