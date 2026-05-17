@@ -1,18 +1,19 @@
-thucydides-trap-greek-mythology-america-china.md
 ---
 title: "The Thucydides Trap, Two Superpowers, and a Very Old Greek Headache"
 description: "A readable Calcutta-flavored essay on the Thucydides Trap, Greek mythology, Trump, Xi, America, China, fear, pride, empire, and why history does not repeat until foolish people help it along."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_061746_6927.jpg"
 category: "Geopolitics"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Thucydides Trap", "Thucydides", "Peloponnesian War", "Greek Mythology", "Athens", "Sparta", "America China Rivalry", "US China Relations", "Trump Xi", "Geopolitics", "Great Power Competition", "China Rise", "American Empire", "Foreign Policy", "International Relations", "War and Peace", "History Lessons", "Ancient Greece", "Cassandra", "Icarus", "Trojan Horse", "Minotaur", "Hubris", "Power Transition", "Strategic Rivalry", "World Politics", "Semiconductors", "Taiwan", "Trade War", "Modern Empire", "Political Mythology", "Global Order", "Readable History", "Calcutta Essays"]
 published: true
 color: "crimson"
 ---
+
 <TTS />
 
-Acronyms used in this post: United States [US, the modern superpower that inherited much of the post-World War Two global order]; People’s Republic of China [PRC, the state formally governing mainland China since 1949]; Cable News Network [CNN, the American television news network whose chyrons often compress civilization-sized anxieties into one shouting strip]; Artificial Intelligence [AI, computer systems that imitate or automate tasks associated with human reasoning, language, perception, and prediction]; Gross Domestic Product [GDP, the total market value of goods and services produced by a country].
+<Pi src="Compress_20260517_061746_6927.jpg" />
 
----
+
 
 The Thucydides Trap sounds like something an elderly Greek uncle would warn you about while removing fish bones from his lunch.
 
