@@ -1,14 +1,17 @@
-nicotine-biri-and-the-great-bengali-bargain.md
 ---
 title: "Nicotine, Biri, and the Great Bengali Bargain"
 description: "A plainspoken public-health warning about cigarettes, biri, khaini, zarda, gutkha, vape, nicotine pouches, patches, and gum—and why changing the delivery system does not turn addiction into wisdom."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_181715_5274.jpg"
 category: "Public Health"
 tags: ["Nicotine", "Tobacco", "Biri", "Beedi", "Smoking", "Cigarettes", "Vaping", "Vape Health Risks", "Nicotine Pouches", "Nicotine Gum", "Nicotine Patch", "Khaini", "Gutkha", "Zarda", "Paan Masala", "Smokeless Tobacco", "Snuff", "Bengal", "Kolkata", "Calcutta", "Public Health India", "Tobacco Addiction", "Quit Smoking", "Cancer Prevention", "Heart Health", "Oral Cancer", "Lung Health", "Middle Age Health", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260517_181715_5274.jpg" />
 
 Acronym shelf: NRT means Nicotine Replacement Therapy, the controlled medical use of nicotine through products like patches, gum, lozenges, sprays, or inhalers to reduce withdrawal while quitting tobacco. ENDS means Electronic Nicotine Delivery Systems, the official public-health name for vapes and e-cigarettes that heat liquid into an aerosol carrying nicotine and other chemicals. WHO means World Health Organization, the United Nations public-health agency. CDC means Centers for Disease Control and Prevention, the United States public-health agency. FDA means Food and Drug Administration, the United States agency that regulates drugs, medical products, and tobacco products.
 
