@@ -229,5 +229,4 @@ That sounds modest.
 
 In India, modest things are often revolutionary.
 
-P.S. References: Jack London, The People of the Abyss; Akhil Gupta, Red Tape: Bureaucracy, Structural Violence, and Poverty in India; Max Weber’s writings on bureaucracy; Lloyd I. Rudolph and Susanne Hoeber Rudolph, The Modernity of Tradition; scholarship on colonial administration, Indian bureaucracy, patronage politics, power distance, and everyday state power in South Asia.
 
