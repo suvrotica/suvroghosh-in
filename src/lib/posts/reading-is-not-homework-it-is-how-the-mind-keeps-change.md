@@ -1,18 +1,19 @@
-reading-is-not-homework-it-is-how-the-mind-keeps-change.md
 ---
 title: "Reading Is Not Homework. It Is How the Mind Keeps Change."
 description: "A plainspoken defense of reading without making it a religion. Books are not the only road to knowledge, but some kinds of understanding still need to be slowly installed inside the head."
 date: "2026-05-17"
+thumbnail: "/images/Compress_20260517_211115_5741.jpg"
 category: "Essay"
 tags: ["Reading", "Books", "Learning", "Education", "Attention", "Human Intelligence", "Artificial Intelligence", "AI", "Deep Reading", "Knowledge Work", "Self Learning", "Critical Thinking", "Cognitive Science", "Digital Culture", "Book Culture", "Lifelong Learning", "Kolkata Essays", "Calcutta Life", "Middle Class Life", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
 
-Acronyms used: AI — Artificial Intelligence, software that can generate, summarize, classify, translate, predict, or explain patterns in language, images, code, and data.
+<Pi src="Compress_20260517_211115_5741.jpg" />
 
----
+
 
 Reading is not proof of virtue; it is proof that the mind still needs a way to cook raw information until it becomes food.
 
