@@ -1,14 +1,17 @@
-india-ai-market-darling-boondocks-dragon.md
 ---
 title: "India Slept Through the AI Alarm, and the Market Has Started Packing Its Bags"
 description: "A sharp, street-level Calcutta-fringe essay on India’s AI-market problem: not that Indians lack talent, but that India has confused service labor, imported tools, and slogans with deep technological ownership."
 date: "2026-05-18"
+thumbnail: "/images/Compress_20260518_194331_1231.jpg"
 category: "AI Economy"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India AI", "Indian Economy", "Indian Stock Market", "AI Bubble", "AI Infrastructure", "AI Jobs", "Indian IT Services", "Nifty IT", "TCS", "Infosys", "Wipro", "HCLTech", "Semiconductors", "GPU", "AI Compute", "IndiaAI Mission", "Tata Electronics", "ASML", "Dholera", "R&D Spending", "Research And Development", "Global Capability Centres", "Outsourcing", "Automation", "Generative AI", "Technology Strategy", "Economic Reality", "Kolkata", "Calcutta", "Bengali Commentary", "Middle Class India", "Future Of Work", "AI Disruption", "Startup India", "Digital India", "Taiwan", "South Korea", "Nvidia", "TSMC", "AI Supply Chain", "Deep Tech India"]
 published: true
 color: "crimson"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260518_194331_1231.jpg" />
 
 Acronyms used in this post:
 
