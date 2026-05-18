@@ -1,18 +1,19 @@
-one-life-no-rehearsal-calcutta.md
 ---
 title: "One Life, No Rehearsal, No Refund Counter"
 description: "A personal Calcutta reflection on mortality, atheism, aging, poverty, mental illness, curiosity, and the stubborn little hope of still contributing something useful."
 date: "2026-05-18"
+thumbnail: "/images/Compress_20260518_172757_7093.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Existential Reflection", "Atheism", "One Life", "Mortality", "Time", "Aging", "Midlife", "Kolkata", "Calcutta", "Bengali Writer", "Indian Atheist", "Lower Middle Class India", "Mental Health", "Bipolar Depression", "Anxiety", "Scientific Curiosity", "Serendipity", "AI", "Artificial Intelligence", "Human Condition", "Urban India", "Life Reflection", "Memoir", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
 
-Acronyms: AI [Artificial Intelligence, computer systems that can process language, patterns, images, and data in ways that sometimes imitate pieces of human thinking, though not human experience].
+<Pi src="Compress_20260518_172757_7093.jpg" />
 
----
+
 
 We get one life, which is a very small number when you think about it properly.
 
