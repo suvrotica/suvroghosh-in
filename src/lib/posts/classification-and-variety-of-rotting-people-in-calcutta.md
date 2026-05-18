@@ -1,14 +1,17 @@
-classification-and-variety-of-rotting-people-in-calcutta.md
 ---
 title: "The Classification and Variety of Rotting People in Calcutta"
 description: "A sharp, readable Calcutta satire on civic rot, poverty, corruption, religious hypocrisy, family cruelty, political brokerage, and the small daily moral leaks that turn a city sour."
 date: "2026-05-18"
-category: "Social Satire"
+thumbnail: "/images/Compress_20260518_184447_7065.jpg"
+category: "Calcutta"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Satire", "Urban Decay", "Civic Decay", "Poverty", "Corruption", "Religious Hypocrisy", "Political Corruption", "Moral Decay", "Social Commentary", "Indian Cities", "Bengali Society", "Middle Class India", "Lower Middle Class Life", "Kolkata Underbelly", "Civic Failure", "Indian Politics", "Street Life", "Urban Poverty", "Bureaucracy", "Social Rot", "Modern India", "Public Life", "Everyday Corruption", "Cultural Criticism", "Human Condition"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260518_184447_7065.jpg" />
 
 Acronyms and local terms:
 
