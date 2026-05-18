@@ -48,6 +48,12 @@ published: true
 />
 
 <Vid 
+  src="দরজা_আধখোলা.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="মুড়ির_বাটিতে_চাঁদ.mp4" 
   layout="block" 
   size={1} 
