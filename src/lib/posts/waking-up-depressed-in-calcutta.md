@@ -19,6 +19,12 @@ NSAID: Nonsteroidal Anti-Inflammatory Drug, a class of pain-relieving and anti-i
 
 ---
 
+<Vid 
+  src="দরজা_আধখোলা.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 Some mornings I wake up and the day has already stolen my furniture.
 
 Not the wooden furniture. That is still there, looking poor and faithful. The chair. The table. The bottle of water with its cap half-chewed by habit. The fan turning above me like a tired clerk stamping invisible files in Writers’ Building. Outside, Calcutta has begun without asking permission. A scooter coughs. A crow abuses civilization. Somebody’s pressure cooker announces breakfast with the emotional range of a small bomb.
