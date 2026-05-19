@@ -3,7 +3,7 @@ title: "The Coming White-Collar Mendicancy"
 description: "AI may not simply take jobs; it may quietly push educated lower-middle-class workers down the social staircase. This is a street-level look at what happens when respectable work begins to evaporate."
 date: "2026-05-19"
 thumbnail: "/images/Compress_20260519_204129_9756.jpg"
-category: "Society and AI"
+category: "Society"
 tags: ["AI", "Artificial Intelligence", "Generative AI", "Automation", "Job Loss", "White Collar Jobs", "Middle Class", "Lower Middle Class", "Labor Market", "Future of Work", "India Jobs", "Kolkata", "Calcutta", "Economic Anxiety", "Automation Risk", "Digital Economy", "Gig Work", "Freelancing", "Tech Layoffs", "AI Displacement", "Social Mobility", "Education Crisis", "Employment Crisis", "Knowledge Work", "Office Work", "Clerical Work", "Productivity", "Inequality", "Precarity", "Bengali Essay", "Indian Economy", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#374151"
