@@ -34,6 +34,11 @@ published: true
   size={1} 
 />
 
+<Vid 
+  src="রোদে_ভাজা_কলকাতা.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 <Vid 
   src="শহর_তবু_ফুল.mp4" 
