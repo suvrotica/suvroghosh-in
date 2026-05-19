@@ -1,24 +1,19 @@
-the-low-market-value-of-reality.md
 ---
 title: "The Low Market Value of Reality"
 description: "A personal essay from Calcutta’s margins on school envy, dead meritocracy, superstition, science, poverty, and the stubborn refusal to sell comforting nonsense."
 date: "2026-05-20"
+thumbnail: "/images/Compress_20260520_035321_1185.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Society", "Middle Class Bengal", "Lower Middle Class Life", "Science Writing", "Math Writing", "Reality", "Rationalism", "Atheism", "Skepticism", "Superstition", "Pseudoscience", "Astrology", "Horoscope", "Homeopathy", "Meritocracy", "Office Politics", "Gaslighting", "Sycophancy", "Bipolar Depression", "Anxiety", "Outcast", "Pariah", "Personal Essay", "Bengali Blogger", "Indian Society", "Education", "School Life", "Workplace Culture", "Truth", "Evidence", "Corruption", "Social Criticism", "Intellectual Honesty", "Writing Life", "Kolkata Blogger", "Rational Bengali", "Science And Society", "Modern India", "Mental Health", "Poverty", "Loneliness", "Satire", "Essay"]
 published: true
 color: "slate"
 ---
+
 <TTS />
 
-Acronyms and terms used in this post:
+<Pi src="Compress_20260520_035321_1185.jpg" />
 
-SEO: Search Engine Optimization, the practical business of making writing discoverable online by search engines and readers.
 
-IT: Information Technology, the work of building, maintaining, repairing, connecting, and explaining computer systems.
-
-US: United States, where I studied and worked long enough to learn that every society has its own circus, only the uniforms differ.
-
----
 There are two kinds of outcast. One burns down the village granary and runs away at midnight. The other answers correctly in class, refuses to flatter idiots at work, and later writes about science and mathematics in a society that would rather buy a horoscope with laminated edges.
 
 I belong, regrettably, to the second group.
