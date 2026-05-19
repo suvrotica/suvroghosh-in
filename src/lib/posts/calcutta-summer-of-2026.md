@@ -39,6 +39,12 @@ ORS: Oral Rehydration Salts, a cheap salt-sugar-water mixture used to treat dehy
 
 ---
 
+<Vid 
+  src="রোদে_ভাজা_কলকাতা.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 Calcutta is not frying like Rajasthan. Calcutta is being pressure-cooked.
 
 That is the small but important difference. In Delhi or Vidarbha or parts of Rajasthan, the heat sometimes arrives like a brass band with no manners: 44°C, 46°C, the sort of number that makes newspapers reach for red fonts and schoolchildren secretly hope for closure notices. Calcutta’s heat is craftier. It does not always shout. It sidles in with humidity, shuts the window, steals your sleep, and then sits on your chest like an overweight uncle after lunch.
