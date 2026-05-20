@@ -1,6 +1,6 @@
-multivariate-statistics-healthcare-data-analytics-part-2.md
 ---
-title: "Multivariate Statistics for Healthcare Data Analytics: The Art of Not Fooling Yourself With Hospital Data"
+title: "Applied Multivariate Statistical Modeling in Healthcare IT Part 2"
+thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 description: "A beginner-friendly second post on multivariate statistics for healthcare data analytics, showing how real hospital problems become statistical questions, models, and practical decisions."
 date: "2026-05-20"
 category: "Healthcare Data Analytics"
@@ -8,7 +8,10 @@ tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare Data Analytics", "
 published: true
 color: "blue"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260505_135010_0561.jpg" />
 
 Acronyms used in this post:
 
@@ -31,6 +34,8 @@ SEM: Structural Equation Modeling, a framework for modeling complex relationship
 AI: Artificial Intelligence, software systems that perform tasks associated with human reasoning, prediction, classification, or pattern recognition.
 
 ---
+
+
 
 Hospital data is not truth sitting quietly in a chair. It is truth after a long bus ride through heat, paperwork, fear, billing rules, software menus, missing fields, tired nurses, hurried doctors, and one mysterious dropdown that everyone clicks because otherwise the screen refuses to move.
 
