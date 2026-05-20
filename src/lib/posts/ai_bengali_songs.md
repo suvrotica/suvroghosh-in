@@ -23,6 +23,12 @@ published: true
 />
 
 <Vid 
+  src="বরফ_দে (1).mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="মানুষ_এখনো_বাকি.mp4" 
   layout="block" 
   size={1} 
