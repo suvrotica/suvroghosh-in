@@ -1,14 +1,17 @@
-nostril-hairs-and-the-tainted-calcutta-summer.md
 ---
 title: "Nostril Hairs and the Tainted Calcutta Summer"
 description: "A darkly comic Calcutta essay about aging, heat, pollution, bodily indignity, family expectations, and the stubborn little absurdities that keep a man alive when the city itself feels half-cooked."
 date: "2026-05-20"
+thumbnail: "/images/Compress_20260520_071606_6125.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Life", "Personal Essay", "Satire", "Dark Humor", "Aging", "Middle Age", "Urban Heat", "Calcutta Summer", "Kolkata Heatwave", "Climate Anxiety", "Air Pollution", "Depression", "Bipolar Depression", "Anxiety", "Lower Middle Class Life", "Single Life", "Body Humor", "Family Expectations", "Indian Cities", "Urban Decay", "Survival", "Atheist Writing", "Bengali Satire", "Heat Stress", "Everyday India", "Life Writing"]
 published: true
 color: "brown"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260520_071606_6125.jpg" />
 
 Acronyms and Notes:
 
