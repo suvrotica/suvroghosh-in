@@ -1,14 +1,17 @@
-writing-nothing-from-calcutta.md
 ---
 title: "Writing Nothing From the Edge of Calcutta"
 description: "A personal essay on blank pages, empty days, middle age, poverty, depression, and why writing about nothing may still be a form of staying alive."
 date: "2026-05-20"
+thumbnail: "/images/Compress_20260520_055819_9176.jpg"
 category: "Personal Essay"
 tags: ["Writing", "Creative Writing", "Personal Essay", "Blank Page", "Writer's Block", "Kolkata", "Calcutta", "Bengali Writer", "Middle Age", "Depression", "Anxiety", "Lower Middle Class Life", "Shanty Boondocks", "Loneliness", "Smartphone Writing", "Catharsis", "Nothingness", "Everyday Life", "Indian Blogger", "Bengali Blog", "Mental Health Writing", "Memoir", "Self Reflection", "Urban India", "Existential Humor", "Ordinary Life", "Life Writing", "Digital Diary", "Blogging", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260520_055819_9176.jpg" />
 
 Acronyms used in this post:
 
