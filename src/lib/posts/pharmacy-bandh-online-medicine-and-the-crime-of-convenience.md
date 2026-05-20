@@ -1,14 +1,17 @@
-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.md
 ---
 title: "The Pharmacy Bandh Is Not About Apps. It Is About Trust Being Sold by the Strip."
 description: "India’s retail pharmacy bandh against online medicine platforms is being treated as a shopkeeper-versus-app fight, but the darker issue is chain of custody, fake prescriptions, counterfeit risk, expired drug recycling, and a governance system too weak or too compromised to protect ordinary patients."
 date: "2026-05-20"
+thumbnail: "/images/Compress_20260520_194050_0867.jpg"
 category: "Healthcare IT"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Pharmacy Strike", "Pharmacy Bandh", "Dharmaghat", "Online Pharmacy India", "E Pharmacy Regulation", "Amazon Pharmacy India", "Medicine Delivery", "Drug Safety India", "Counterfeit Medicines", "Expired Medicines", "Fake Prescriptions", "Prescription Drug Abuse", "Controlled Drugs", "Sedatives", "Anxiolytics", "Stimulants", "ADHD Medicines", "Narcolepsy Medicines", "Retail Chemists India", "AIOCD", "CDSCO", "GSR 817E", "GSR 220E", "Public Health", "Healthcare Regulation", "Medicine Supply Chain", "Pharmaceutical Crime", "Healthcare Corruption", "Patient Safety", "Drug Traceability", "Healthcare Governance", "India Healthcare", "Pharmacy Law India"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260520_194050_0867.jpg" />
 
 Acronyms used in this post: AIOCD — All India Organisation of Chemists and Druggists, the national body representing retail and wholesale chemists in India. CDSCO — Central Drugs Standard Control Organisation, India’s national drug regulatory authority. GSR — Government Statutory Rules, a formal government notification used to create or amend rules. ADHD — Attention Deficit Hyperactivity Disorder, a condition for which stimulant medicines may sometimes be prescribed. WHO — World Health Organization, the global public health agency of the United Nations. FDA — Food and Drug Administration, the United States drug regulator.
 
