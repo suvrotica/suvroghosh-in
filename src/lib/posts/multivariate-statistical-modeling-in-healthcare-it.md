@@ -1,5 +1,5 @@
 ---
-title: "Applied Multivariate Statistical Modeling in Healthcare IT"
+title: "Applied Multivariate Statistical Modeling in Healthcare IT Part 1"
 description: "A healthcare IT architect’s view of applied multivariate statistical modeling: what variables really mean, why covariance matters, and why models are only as honest as the systems that generate their data."
 thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 date: "2026-05-05"
