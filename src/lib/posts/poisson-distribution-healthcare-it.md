@@ -49,7 +49,7 @@ SDTM: Study Data Tabulation Model, a CDISC model for organizing clinical trial d
 
 ---
 
-The Poisson distribution is the mathematics of small trouble arriving in countable packets.
+The Poisson distribution is the mathematics of rare trouble arriving in countable packets.
 
 One failed interface message. One medication error. One patient fall. One infection. One ED arrival at 2:17 in the morning. One duplicate patient record born because two systems disagreed about a middle initial and behaved, as systems often do, like two goats on a narrow bridge.
 
