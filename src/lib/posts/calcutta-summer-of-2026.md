@@ -83,6 +83,12 @@ This is where the polite language collapses.
 
 “Do not go out between 11 a.m. and 4 p.m.” is not advice for a domestic worker who must reach three houses before noon.
 
+<Vid 
+  src="বরফ_দে (1).mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 “Drink plenty of water” is not advice for a man at a labor chowk who is paid only if someone picks him for the day.
 
 “Use ORS” is not a heat policy.
