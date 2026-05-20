@@ -2,7 +2,7 @@
 title: "The Bridgerat of Cossipore"
 description: "A Class Ten biology student in north Kolkata tries to raise an impossible creature from ancient fragments, street animals, and borrowed ambition. What grows from his rooftop tank is not quite a dinosaur, not quite a son, and not quite an accident."
 date: "2026-05-20"
-<Pi src="Compress_20260520_203404_4420.jpg" />
+thumbnail: "/images/Compress_20260520_203404_4420.jpg"
 category: "Short Fiction"
 tags: ["Science Fiction", "Horror", "Kolkata", "Dinosaur", "Bioengineering", "Short Fiction", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
