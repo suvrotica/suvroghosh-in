@@ -29,6 +29,12 @@ published: true
 />
 
 <Vid 
+  src="তোরে_বাবা_বড়_গরম_.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="মানুষ_এখনো_বাকি.mp4" 
   layout="block" 
   size={1} 
