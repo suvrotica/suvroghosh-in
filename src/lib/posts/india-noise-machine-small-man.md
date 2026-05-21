@@ -1,13 +1,15 @@
-india-noise-machine-small-man.md
 ---
 title: "India’s Noise Machine and the Small Man Under It"
 description: "A street-level political essay on India’s loud public theatre, paid media, corruption, nepotism, and majoritarian hypocrisy, written from the tired but stubborn viewpoint of an ordinary Calcutta citizen."
 date: "2026-05-21"
+thumbnail: "/images/Compress_20260521_213304_4601.jpg"
 category: "Politics"
 tags: ["India Politics", "Indian Democracy", "Paid Media", "Godi Media", "Political Propaganda", "Majoritarianism", "Hindutva Politics", "Religious Bigotry", "Hindu Bigotry", "Corruption in India", "Nepotism", "Cronyism", "Public Institutions", "Indian Media", "Television News", "Democracy Crisis", "Civil Liberties", "Minority Rights", "Free Speech", "Press Freedom", "Political Hypocrisy", "Nationalism", "Authoritarianism", "Kolkata", "Calcutta", "Middle Class India", "Lower Middle Class India", "Public Life", "Indian Society", "Civic Decay", "Secularism", "Social Commentary", "Opinion Essay", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "saffron"
 ---
+
+<Pi src="Compress_20260521_213304_4601.jpg" />
 
 Acronyms used:
 
@@ -24,7 +26,10 @@ BJP: Bharatiya Janata Party, India’s current ruling party at the national leve
 RSS: Rashtriya Swayamsevak Sangh, a Hindu nationalist organization that has deeply influenced modern right-wing politics in India.
 
 ---
+
 <TTS />
+
+
 
 India has discovered a cheap substitute for governance: keep shouting until the ceiling fan shakes.
 
