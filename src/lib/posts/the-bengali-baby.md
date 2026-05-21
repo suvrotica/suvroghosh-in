@@ -1,25 +1,18 @@
-the-bengali-baby.md
 ---
 title: "The Bengali Baby"
 description: "A winter afternoon in Calcutta becomes a meditation on sunlight, exile, failure, Bengal’s arrested adulthood, and the stubborn refusal to stop trying."
 date: "2024-12-01"
+thumbnail: "/images/Compress_20260522_033652_2556.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Bengal", "Bengali", "Calcutta", "Kolkata", "Personal Essay", "Winter Afternoon", "Urban Melancholy", "Exile", "Alienation", "Middle Class Bengal", "Lower Middle Class Life", "Bengali Identity", "Social Criticism", "Bengal Politics", "Cultural Decay", "Hope", "Failure", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Atheist Essay", "Indian Society", "Kolkata Life", "Boondocks of Calcutta", "Winter Smog", "Sunset Essay", "Modern Bengal", "Bengali Renaissance", "Postcolonial Bengal", "Indian Middle Class", "Civic Failure", "Urban India", "Social Commentary", "Literary Essay", "Readable Prose", "Wit", "Human Condition", "Loneliness", "Migration", "Leaving India", "Ordinary Life", "Philosophical Essay", "South Asian Writing", "Bengali Blog", "Suvro Ghosh"]
 published: true
 color: "#C8892B"
 ---
+
 <TTS />
 
-Acronyms and notes:
 
-TTS: Text-to-Speech, the site marker that tells the publishing system this post may be read aloud.
-
-SEO: Search Engine Optimization, the practical business of making a post easier for search engines and readers to discover.
-
-Pi: Picture or image component, the site’s custom image tag used to place an uploaded image inside the post.
-
----
-<Pi src="/images/20240824124946.png" layout="wide" caption="Calcutta afternoon light, doing what it has always done: turning bad air into poetry." size="large" />
+<Pi src="Compress_20260522_033652_2556.jpg" />
 
 The afternoon sun in Calcutta does not set so much as bargain with the dirt in the air.
 
