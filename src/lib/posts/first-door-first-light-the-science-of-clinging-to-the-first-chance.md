@@ -214,7 +214,7 @@ A verdict says, “Case closed.”
 
 Keep the signal. Delay the verdict.
 
-That delay need not be grand. You do not need a thirty-seven-page committee report and three consultants named Arindam. You need a little inspection room in the mind. Put the first chance there. Give it tea. Look at it in daylight.
+That delay need not be grand. You do not need a thirty-seven-page committee report and three consultants named Vivek. You need a little inspection room in the mind. Put the first chance there. Give it tea. Look at it in daylight.
 
 Ask plain questions.
 
@@ -241,14 +241,6 @@ This is especially important in middle age, when life stops pretending to be end
 Marriage, career ascent, reinvention, heroic migration, the grand second act—these may still happen, but they no longer stand in a neat row like schoolboys. They arrive irregularly, if at all. A message here. A project there. A little affection. A little money. A little recognition. A day without dread. One good paragraph written before the heat arrives.
 
 At that age, curiosity becomes not a hobby but a form of breathing.
-
-You ask: why was I like this?
-
-Why did I hold on?
-
-Was it love, fear, mathematics, poverty, temperament, memory, or some strange curry of all of them?
-
-The answer is: yes.
 
 Human beings are not clean equations. We are equations spilled into weather. We are probability with stomach acid. We are decision theory walking through a bazaar, distracted by smell, debt, hope, music, shame, and the sudden sight of someone who looks at us as if we are not entirely ridiculous.
 
