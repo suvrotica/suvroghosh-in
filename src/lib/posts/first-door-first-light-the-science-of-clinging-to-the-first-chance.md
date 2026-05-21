@@ -1,14 +1,18 @@
-first-door-first-light-the-science-of-clinging-to-the-first-chance.md
 ---
 title: "The First Door That Opens"
 description: "Why some of us cling to the first chance, first love, first job, or first rescue rope: a street-level essay on decision theory, scarcity, memory, attachment, and the odd mathematics of human longing."
 date: "2026-05-21"
-category: "Science Essay"
+thumbnail: "/images/Compress_20260521_061552_2162.jpg"
+category: "Science"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Psychology", "Decision Theory", "Statistics", "Optimal Stopping", "Human Behavior", "Love At First Sight", "First Choice Bias", "Scarcity Mindset", "Attachment Theory", "Bayesian Thinking", "Bounded Rationality", "Satisficing", "Memory And Emotion", "Regret", "Life Choices", "Behavioral Science", "Neuroscience", "Cognitive Bias", "Calcutta Essay", "Kolkata Writing", "Middle Age", "Loneliness", "Opportunity", "Human Attention", "Readable Science", "Popular Science", "Emotional Decision Making", "Exploration And Exploitation"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260521_061552_2162.jpg" />
+
 
 Acronyms and terms used in this post:
 
