@@ -1,14 +1,17 @@
-physics-and-deep-neural-networks-calcutta-scale-story.md
 ---
 title: "Why Physics Keeps Sneaking Into Deep Learning"
 description: "A readable, research-backed explanation of the state-of-the-art connection between physics and deep neural networks: scale, symmetry, diffusion, tensor networks, and scientific machine learning."
 date: "2026-05-22"
+thumbnail: "/images/Compress_20260522_014330_0107.jpg"
 category: "Artificial Intelligence"
 tags: ["Artificial Intelligence", "AI", "Machine Learning", "Deep Learning", "Neural Networks", "Deep Neural Networks", "Physics and AI", "Physics-Informed AI", "Scientific Machine Learning", "Renormalization", "Statistical Mechanics", "Tensor Networks", "Diffusion Models", "Score-Based Models", "Neural Operators", "Fourier Neural Operator", "Physics-Informed Neural Networks", "Geometric Deep Learning", "Equivariant Neural Networks", "Symmetry in AI", "Large Language Models", "Generative AI", "AI Research", "Modern Physics", "Complex Systems", "Scale and Complexity", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260522_014330_0107.jpg" />
 
 Acronyms used:
 
@@ -196,5 +199,4 @@ Throw away carefully.
 
 Then, if fortune is kind and the ceiling fan is still working, understanding may enter the room quietly, wipe its feet, and sit down.
 
-P.S. References: John Hopfield and Geoffrey Hinton’s Nobel Prize in Physics 2024 background material; Pankaj Mehta and David Schwab on RG and deep learning; Maciej Koch-Janusz and Zohar Ringel on mutual information and RG; Michael Bronstein and colleagues on geometric deep learning; Yang Song and colleagues on score-based generative modeling through SDEs; Jonathan Ho, Ajay Jain, and Pieter Abbeel on denoising diffusion probabilistic models; Maziar Raissi, Paris Perdikaris, and George Karniadakis on PINNs; Lu Lu and colleagues on DeepONet; recent 2025 reviews on PINNs, physics-informed ML, neural operators, and tensor networks in ML.
-
+P.S. References: John Hopfield and Geoffrey Hinton’s Nobel Prize in Physics 2024 background material; 
