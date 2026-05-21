@@ -1,14 +1,17 @@
-hedonist-hollow-men-on-the-selfie-treadmill.md
 ---
 title: "Hedonist Hollow Men on the Selfie Treadmill"
 description: "A sharp, readable social essay on selfie culture, narcissism, cruel individualism, jingoism, religious bigotry, and the dangerous pyramid of modern status-seeking in India."
 date: "2026-05-22"
+thumbnail: "/images/Compress_20260522_023545_5156.jpg"
 category: "Society"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Society", "Social Media Culture", "Selfie Culture", "Narcissism", "Attention Economy", "Consumerism", "Religious Bigotry", "Nationalism", "Jingoism", "Irrationality", "Public Life", "Modern India", "Kolkata", "Calcutta", "Middle Class Anxiety", "Inequality", "Status Anxiety", "Digital Culture", "Hedonism", "Moral Decay", "Civic Life", "Urban India", "Loneliness", "Algorithmic Culture", "Political Noise", "Cultural Criticism", "Social Commentary"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260522_023545_5156.jpg" />
 
 
 
