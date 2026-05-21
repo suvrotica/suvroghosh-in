@@ -49,7 +49,7 @@ Physics keeps turning up in deep learning for the same reason fish keeps turning
 
 The common problem is simple. Reality has too many details.
 
-A photograph has millions of pixels. A sentence has dozens of words tugging at each other like passengers in a crowded bus. A fluid has countless little parcels of motion. A magnet has atoms doing their tiny voting. A city has drains, lanes, hawkers, wires, stray dogs, traffic lights, and one uncle who will park his scooter exactly where the universe begged him not to.
+A photograph has millions of pixels. A sentence has dozens of words tugging at each other like passengers in a crowded bus. A fluid has countless little parcels of motion. A magnet has atoms doing their tiny voting. A city has drains, lanes, hawkers, wires, stray dogs, traffic lights, and one village uncle who will park his scooter exactly where the loo is.
 
 You cannot understand such things by treating every detail as equally important.
 
