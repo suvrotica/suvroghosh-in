@@ -1,8 +1,8 @@
-society-with-open-drains-and-polished-shoes.md
 ---
 title: "Society With Open Drains and Polished Shoes"
 description: "A darkly comic Kolkata essay on moral rot, fake advice, failed ambition, loneliness, and the small stubborn dignity of noticing what everyone else has agreed to perfume."
 date: "2026-05-21"
+thumbnail: "/images/Compress_20260521_232804_4936.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengali Essay", "Personal Essay", "Dark Humor", "Satire", "Social Satire", "Middle Class Life", "Lower Middle Class Kolkata", "Urban Decay", "Moral Decay", "Fake Friends", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Loneliness", "Misanthropy", "Indian Society", "Kolkata Life", "Calcutta Summer", "Entrepreneurship Failure", "Self Help Culture", "Scam Culture", "Political Rot", "Human Nature", "Social Commentary", "Literary Essay", "Readable Essays", "Funny Sad Writing", "Modern India", "Everyday Philosophy", "Personal Blog"]
 published: true
@@ -10,13 +10,9 @@ color: "charcoal"
 ---
 <TTS />
 
-Acronyms used in this post:
 
-SEO — Search Engine Optimization, the practice of making writing easier for search engines and readers to discover.
 
----
-
-<Pi src="/images/Pasted image 20240824122449.png" layout="wide" caption="Some societies do not collapse. They merely learn to decorate the smell." size="large" />
+<Pi src="Compress_20260521_232804_4936.jpg" />
 
 The nice thing about living in a society that smells faintly of open drain, cheap perfume, and committee tea is that bad people do not have to be searched for with binoculars.
 
