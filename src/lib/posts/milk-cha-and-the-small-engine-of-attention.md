@@ -47,7 +47,7 @@ Sometimes your cup is deciding for you.
 
 By the bye, even the word cha carries a small passport. Bengali cha comes from the Chinese word chá, which travelled across languages, markets, ports, kitchens, and empires until it landed in our cups as if it had always belonged there. This is worth remembering in India, where we manage the impressive trick of importing half our household life from China while casually insulting our own brothers and sisters from the North East with the slur “chinki,” as if geography were a license for stupidity. The cup in our hand knows better. It says culture has never respected our neat little prejudices. It crosses borders, takes local train connections, changes pronunciation, marries milk, meets sugar, and becomes Bengali without asking permission from any television panel. If anything, we should as Indians, drink more cha to focus on catching up to the Chinese.
 
-Then it quietly helps us work.
+It quietly helps us to get work done.
 
 Now let nobody become foolish here. Milk cha is not treatment. Sugar is not therapy. Caffeine is not a psychiatrist wearing a brown overcoat. A bankrupt, bipolar, depressed, anxious, attention-scattered Bengali does not become magically efficient because one saucepan has made encouraging noises on the stove. Life is not that kind. It has never shown that level of customer service.
 
