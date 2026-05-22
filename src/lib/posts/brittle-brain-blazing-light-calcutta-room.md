@@ -1,22 +1,19 @@
-brittle-brain-blazing-light-calcutta-room.md
 ---
 title: "The Room, the Light, and the Brittle Brain"
 description: "A Calcutta rumination on bipolar fear, middle age, loneliness, small income, and the uneasy question of whether the room is a prison or a shelter from a madder world."
 date: "2026-05-22"
+thumbnail: "/images/Compress_20260522_070709_9817.jpg"
 category: "Personal"
 tags: ["Rumination", "Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression", "Anxiety", "Loneliness", "Middle Age", "Single Life", "Calcutta", "Kolkata", "Lower Middle Class Life", "Bengali Writing", "Personal Essay", "Autobiographical Essay", "Fear", "Fragility", "Emotional Survival", "Mental Health Writing", "Indian Middle Class", "Urban Loneliness", "Precarious Income", "Existential Anxiety", "Modern Life", "News Anxiety", "Brittle Brain", "Aging", "Poverty", "Room As Prison", "Psychological Reflection", "Video", "SuvroGhosh"]
 published: true
 color: "#374151"
 ---
+
 <TTS />
 
-Acronyms and terms used in this post:
+<Pi src="Compress_20260522_070709_9817.jpg" />
 
-TTS — Text-to-Speech, a site marker that helps render the post for listening.
 
-SEO — Search Engine Optimization, the ordinary craft of helping a post become discoverable without turning it into a sack of keywords wearing lipstick.
-
----
 
 Some days the room stops being a room and becomes an accusation.
 
