@@ -1,14 +1,17 @@
-ai-moat-labor-displacement.md
 ---
 title: "The AI Moat Is the Missing Salary"
 description: "AI companies are not spending fortunes to make office life slightly smoother. The economics make sense only when the target is paid human labor."
 date: "2026-05-23"
+thumbnail: "/images/Compress_20260523_005308_8999.jpg"
 category: "AI and Society"
 tags: ["AI", "Artificial Intelligence", "AGI", "Generative AI", "Labor Displacement", "Job Loss", "Future of Work", "White Collar Jobs", "Entry Level Jobs", "Automation", "AI Agents", "AI Economics", "Big Tech", "Silicon Valley", "Data Centers", "GPU Infrastructure", "Enterprise AI", "Labor Market", "Digital Labor", "Capitalism", "Inequality", "Corporate Power", "AI Moat", "Worker Replacement", "Payroll Reduction", "Technology and Society", "Political Economy", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260523_005308_8999.jpg" />
 
 Acronyms used in this post:
 
