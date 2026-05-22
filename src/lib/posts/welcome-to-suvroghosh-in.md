@@ -1,8 +1,8 @@
-welcome-to-suvroghosh-in.md
 ---
 title: "Welcome To SuvroGhosh.IN"
 description: "A Kolkata-flavored blog manifesto about science, skepticism, satire, failure, bipolar weather, and the stubborn need to keep writing even when the room is empty."
-date: "2024-01-05"
+date: "2019-01-05"
+thumbnail: "/images/Compress_20260523_023012_2872.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Suvro Ghosh Blog", "SuvroGhosh.IN", "Kolkata Blog", "Calcutta Blog", "Bengali Blog", "Indian Personal Blog", "Science Blog India", "Skepticism", "Atheism", "Pseudoscience Critique", "Rationalism", "Satire", "Dark Humor", "Personal Essay", "Bengali Writer", "Middle Aged Blogger", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Creative Nonfiction", "Irreverent Writing", "Kolkata Satire", "Science And Society", "Philosophy Blog", "Literature", "Failure", "Guitar Learning", "Sketching", "Existential Humor", "Urban India", "North Calcutta", "Dum Dum", "Tea Stall Philosophy", "Indian Rationalist Writing", "Longform Essay", "Readable Essay", "Human Blog"]
 published: true
@@ -10,13 +10,11 @@ color: "orange"
 ---
 <TTS />
 
+<Pi src="Compress_20260523_023012_2872.jpg" />
+
 IN — India’s country-code internet domain, the little digital tail in SuvroGhosh.IN that says this site belongs, at least administratively, to India.
 
 US — United States, where the writer spent many years studying, working, learning systems, and collecting the kind of bruises that do not show in passport photographs.
-
-SEO — Search Engine Optimization, the mildly desperate art of helping machines and strangers discover a page before both die of boredom.
-
-TTS — Text To Speech, a site marker for listening to the post aloud, useful when eyes are tired, tea is hot, and life has already taken too much screen time.
 
 ---
 
