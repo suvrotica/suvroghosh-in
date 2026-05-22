@@ -83,7 +83,7 @@ The pricing model is this: if a human task costs \$50 and a machine can do it fo
 
 Acceptable is the dangerous word.
 
-It does not have to be perfect. Most systems are not perfect now. Most offices already run on half-broken processes, confused spreadsheets, stale dashboards, heroic clerks, nervous managers, and undocumented workarounds known only to one person called Debashis-da who has not taken leave since 2017. Corporate life has never required perfection. It requires something good enough to pass upward without causing an immediate fire.
+It does not have to be perfect. Most systems are not perfect now. Most offices already run on half-broken processes, confused spreadsheets, stale dashboards, heroic clerks, nervous managers, and undocumented workarounds known only to one person called Kartik-da who has not taken leave since 2017. Corporate life has never required perfection. It requires something good enough to pass upward without causing an immediate fire.
 
 AI is being built to be good enough.
 
