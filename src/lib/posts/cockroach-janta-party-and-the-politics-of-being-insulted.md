@@ -1,14 +1,17 @@
-cockroach-janta-party-and-the-politics-of-being-insulted.md
 ---
 title: "The Cockroach Party and the Politics of Being Insulted"
 description: "A fact-based, readable look at how a satirical online party turned an insult into a symbol of youth anger, exam anxiety, democratic distrust, and platform censorship in India."
 date: "2026-05-22"
+thumbnail: "/images/Compress_20260522_205830_0242.jpg"
 category: "Politics"
 tags: ["Video", "Politics", "India", "Indian Democracy", "Youth Politics", "Gen Z India", "Cockroach Janta Party", "Abhijeet Dipke", "Ravish Kumar", "Political Satire", "Digital Protest", "Social Media Politics", "Instagram Politics", "X Withheld India", "Free Speech India", "Platform Censorship", "NEET Paper Leak", "NEET UG", "Exam Scams India", "Youth Unemployment India", "West Bengal Elections", "Voter Roll Controversy", "Election Integrity India", "Opposition Politics India", "BJP", "Congress", "AAP", "Democracy Crisis", "Civil Liberties", "Online Movements", "Meme Politics", "Indian Students", "Digital India", "SuvroGhosh"]
 published: true
 color: "#7C3AED"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260522_205830_0242.jpg" />
 
 Acronyms used in this post:
 
