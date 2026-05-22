@@ -65,6 +65,12 @@ published: true
 />
 
 <Vid 
+  src="জানলা_খোলা_রাখি.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
+<Vid 
   src="দরজা_আধখোলা.mp4" 
   layout="block" 
   size={1} 
