@@ -1,14 +1,17 @@
-milk-cha-and-the-small-engine-of-attention.md
 ---
 title: "Milk Cha and the Small Engine of Attention"
 description: "A warm, comic Calcutta-side reflection on why strong milk tea with sugar can sometimes help a tired, anxious, attention-scattered mind work better than delicate liquor tea."
 date: "2026-05-22"
+thumbnail: "/images/Compress_20260522_224121_1932.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Milk Tea", "Milk Cha", "Bengali Cha", "Kolkata Life", "Calcutta Blog", "Attention", "Focus", "Bipolar Depression", "Anxiety", "Middle Class Life", "Lower Middle Class Life", "Boondocks of Calcutta", "Assam Tea", "Darjeeling Tea", "CTC Tea", "Sugar Tea", "Tea and Focus", "Tea and Mood", "Bengali Food Writing", "Indian Tea Culture", "Everyday Survival", "Mental Health Essay", "Personal Blog", "Readable Science", "Neuroscience of Attention", "Concentration", "Work From Home Life", "Bengali Essay", "Indian Society", "North East India", "Chinese Etymology", "Tea History"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260522_224121_1932.jpg" />
 
 Acronyms and terms:
 
