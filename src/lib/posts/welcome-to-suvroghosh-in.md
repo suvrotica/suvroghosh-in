@@ -20,7 +20,7 @@ US — United States, where the writer spent many years studying, working, learn
 
 Welcome to SuvroGhosh.IN, a small digital adda where science wipes its feet on the doormat, satire removes its slippers, and truth comes in late, sweating, suspicious, and asking whether there is still tea.
 
-This is not a soft little diary with pressed flowers between the pages. No. I have nothing against pressed flowers. They have harmed nobody, except perhaps literature. This is also not one of those grand intellectual halls where people say “discourse” while quietly murdering thought with furniture-polish English. This place is more like a tea stall near a half-broken road in north Calcutta, where a man with a cracked cup may explain black holes, municipal corruption, Hilsa prices, and the collapse of civilization before asking for two rupees extra because milk has gone up again.
+This is not a soft little diary with pressed flowers between the pages. No. I have nothing against pressed flowers. They have harmed nobody, except perhaps literature. This is also not one of those grand intellectual halls where people say “discourse” while quietly murdering thought with furniture-polish English. This place is more like a tea stall near a half-broken road in South Calcutta, where a man with a cracked cup may explain black holes, municipal corruption, Hilsa prices, and the collapse of civilization before asking for two rupees extra because milk has gone up again.
 
 That man, unfortunately, is me.
 
