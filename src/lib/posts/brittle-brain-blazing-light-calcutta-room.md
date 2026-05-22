@@ -13,7 +13,11 @@ color: "#374151"
 
 <Pi src="Compress_20260522_070709_9817.jpg" />
 
-
+<Vid 
+  src="জানলা_খোলা_রাখি.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 Some days the room stops being a room and becomes an accusation.
 
