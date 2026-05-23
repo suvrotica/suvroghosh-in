@@ -17,12 +17,6 @@ Acronyms and short explanations:
 
 ORS — Oral Rehydration Solution, a measured mixture of salts and sugar used to replace water and electrolytes lost through sweating, diarrhea, or dehydration.
 
-WHO — World Health Organization, the United Nations health agency that publishes public health guidance.
-
-CDC — Centers for Disease Control and Prevention, the United States public health agency whose heat illness guidance is widely used.
-
-NHS — National Health Service, the publicly funded health system of the United Kingdom, useful here because its heat guidance is plain and practical.
-
 ---
 
 Heat is not a temperature in Calcutta. Heat is a tenant.
