@@ -1,5 +1,5 @@
 ---
-title: "Read This First"
+title: "Schooling and growing up"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2024-01-01"
 thumbnail: "/images/Compress_20260510_023412_2917.jpg"
@@ -22,6 +22,8 @@ I was not manufactured for childhood. Some children bloom like hibiscus. I devel
 <Pi src="/photos/Compress_20260524_125448_8402.jpg" />
 
 School is where this story begins, because school is where a Bengali middle-class child is first told, with chalk, prayer, punishment, and sharpened pencils, that life has a syllabus and failure has handwriting. Mine began in Cossipore, or Kashipur, depending on whether you were speaking as a Bengali, an English-medium hopeful, or a colonial ghost still mispronouncing local geography from the afterlife.
+
+<Pi src="/photos/Compress_20260524_125448_8591.jpg" />
 
 Cossipore sounded to me like coughing, which was suitable. I had lungs that behaved like old harmoniums: wheezy, emotional, and ready to collapse during performance. I almost vanished from whooping cough as a child, then returned to the world through the professional confidence of Dr. Bhaskar Mani and antibiotics strong enough to make microbes reconsider their career choices. I survived. The lungs did too, though they remain dramatic. Today, when Calcutta air enters them, they react like two elderly uncles reading the electricity bill.
 
