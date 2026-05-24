@@ -1,14 +1,16 @@
-toolbox-thinking-simplicity-complexity.md
 ---
 title: "The Toolbox Theory of Thinking: Why Simple Models Help Us Survive a Complicated World"
 description: "A clear, lively explanation of why models like Miller’s Law, Occam’s Razor, Gall’s Law, the Paradox of Choice, and the Laws of Simplicity are useful tools for everyday thinking."
 date: "2026-05-23"
+thumbnail: "/images/Compress_20260524_233657_7100.jpg"
 category: "Thinking"
 tags: ["Thinking Tools", "Mental Models", "Simplicity", "Complexity", "Decision Making", "Miller's Law", "Occam's Razor", "Gall's Law", "Paradox of Choice", "John Maeda", "Barry Schwartz", "Foucault", "Education", "Work", "Technology", "Everyday Life", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
 <TTS />
+
+<Pi src="Compress_20260524_233657_7100.jpg" />
 
 A good idea is not a statue in a museum. It is a screwdriver, a kitchen knife, a torch, a mosquito net, sometimes even a small Bengali umbrella that turns inside out during the first proper Nor’wester but still saves your shirt. The best models of thinking are not meant to be worshipped. They are meant to be picked up, tested, used, and occasionally thrown back into the drawer with a muttered complaint.
 
