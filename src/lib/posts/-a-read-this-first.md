@@ -1,5 +1,5 @@
 ---
-title: "Schooling and growing up"
+title: "Schooling in Calcutta"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2024-01-01"
 thumbnail: "/images/Compress_20260510_023412_2917.jpg"
@@ -30,6 +30,8 @@ Cossipore sounded to me like coughing, which was suitable. I had lungs that beha
 The name Cossipore, alas, does not come from coughing Bengalis, though the air quality has tried very hard to support the theory. The name is tied to Kashinath, and to an older estate history involving Mulakchand Dewan Kashinath-ji and Lord Clive. Kashipur became Cossipore after the English did what they often did with Indian names: picked them up, dropped them, stepped on them, and then wrote the result into official paper.
 
 My school name had WWA attached to it, which gave it an air of institutional virtue. I cannot say I saw much welfare being distributed. I saw classrooms, uniforms, discipline, long skirts, water bottles, chalk dust, fear, and teachers who seemed enormous to my thin, coughing, bespectacled self. One teacher, Ira Paul, our English teacher, had grace. Children notice grace. They may not know the word yet, but they know when an adult enters a room without making the room smaller.
+
+<Pi src="/photos/Compress_20260524_130646_6472.jpg" />
 
 The building smelled of childhood illness, wet walls, old wood, ink, and the faint panic of examinations. This was not the golden school of sentimental songs. No slow-motion sunlight. No violin. No gentle voiceover saying, “Those were the days.” Those were days of ambition, shame, cough, digestive emergencies, bookish escape, and the early suspicion that the world was built by people who had never been children, or had forgotten the evidence.
 
