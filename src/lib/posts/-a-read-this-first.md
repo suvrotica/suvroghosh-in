@@ -17,7 +17,7 @@ Acronyms used: ICSE — Indian Certificate of Secondary Education, the school ex
 
 ---
 
-I was not manufactured for childhood. Some children bloom like hibiscus. I developed like damp paperwork in a North Calcutta cupboard.
+I was not manufactured for childhood. Some children bloom like hibiscus. I developed like damp paperwork in a North Calcutta cupboard. Middle row, left-most.
 
 <Pi src="/photos/Compress_20260524_125448_8402.jpg" />
 
