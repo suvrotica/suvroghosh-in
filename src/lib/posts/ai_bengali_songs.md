@@ -112,6 +112,11 @@ published: true
   size={1} 
 />
 
+<Vid 
+  src="দুই_রোদ্দুর_চোর.mp4" 
+  layout="block" 
+  size={1} 
+/>
 
 <Vid 
   src="বাকির_খাতা.mp4" 
