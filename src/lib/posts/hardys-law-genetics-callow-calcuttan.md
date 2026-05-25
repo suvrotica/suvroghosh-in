@@ -1,14 +1,16 @@
-hardys-law-genetics-callow-calcuttan.md
 ---
 title: "Hardy’s Law in Genetics for the Callow Calcuttan"
 description: "A street-level explanation of the Hardy-Weinberg law: why dominant genes do not automatically take over, why recessive genes do not politely vanish, and why evolution needs a disturbance."
 date: "2026-05-26"
+thumbnail: "/images/Compress_20260526_034630_0962.jpg"
 category: "Science"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Hardy Weinberg Law", "Hardy Weinberg Equilibrium", "Hardys Law Genetics", "Population Genetics", "Genetics Explained", "Evolution Explained", "Biology Basics", "Mendelian Genetics", "Allele Frequency", "Gene Frequency", "Dominant Recessive Traits", "Science for Beginners", "Calcutta Science Writing", "Kolkata Blog", "Bengali Science Explainer", "Simple Genetics", "Evolutionary Biology", "Biology Education", "Genetics for Students", "Science Essay", "Readable Science", "Public Science"]
 published: true
 color: "green"
 ---
 <TTS />
+
+<Pi src="Compress_20260526_034630_0962.jpg" />
 
 Acronyms and terms used in this post:
 
