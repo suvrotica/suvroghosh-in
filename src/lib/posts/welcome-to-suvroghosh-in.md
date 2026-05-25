@@ -12,6 +12,12 @@ color: "orange"
 
 <Pi src="Compress_20260523_024207_7823.jpg" />
 
+<Vid 
+  src="কাপের_তলায়_চাঁদ.mp4" 
+  layout="block" 
+  size={1} 
+/>
+
 IN — India’s country-code internet domain, the little digital tail in SuvroGhosh.IN that says this site belongs, at least administratively, to India.
 
 US — United States, where the writer spent many years studying, working, learning systems, and collecting the kind of bruises that do not show in passport photographs.
