@@ -1,14 +1,17 @@
-commercial-hifi-sounds-for-ordinary-ears.md
 ---
 title: "Hi-Fi Sound Without the Perfume: Mono, Stereo, 5.1, Dolby, DTS, Atmos, and the Great Audio Bazaar"
 description: "A plain, witty guide to commercial hi-fi sound labels, from mono and stereo to surround sound, Dolby Atmos, DTS, THX, lossless audio, Bluetooth, soundbars, and why the room often matters more than the logo."
 date: "2026-05-26"
+thumbnail: "/images/Compress_20260526_081512_2710.jpg"
 category: "Audio Technology"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "HiFi Audio", "Home Theater", "Mono Sound", "Stereo Sound", "Surround Sound", "5.1 Audio", "7.1 Audio", "Dolby Atmos", "DTS X", "THX", "Lossless Audio", "Hi Res Audio", "Bluetooth Audio", "Soundbar", "Subwoofer", "Speaker Setup", "Audiophile", "Music Streaming", "Spatial Audio", "Home Audio", "Audio Codecs", "Indian Tech Blog", "Beginner Audio Guide", "Consumer Electronics", "Speaker Buying Guide"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260526_081512_2710.jpg" />
 
 Acronyms and short explanations:
 
@@ -225,5 +228,3 @@ The hi-fi industry sells logos because logos fit on cartons. But sound happens i
 And if, after all that, your old mono recording still gives you goosebumps from one modest speaker on a plastic chair, congratulations. You have discovered the most embarrassing secret in audio.
 
 The song was the main technology all along.
-
-P.S. References: Dolby documentation on Dolby Digital and Dolby Atmos; DTS documentation on DTS:X; THX certification material; Apple Support on lossless audio and Bluetooth limitations; Spotify support and newsroom material on lossless streaming; Tidal support material on hi-res FLAC; EMI Archive Trust and engineering-history material on Alan Blumlein’s stereo work.
