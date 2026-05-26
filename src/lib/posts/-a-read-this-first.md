@@ -47,6 +47,8 @@ One of my earliest discoveries was that the body is a traitor. Adults sell child
 
 The school toilet was my first lesson in Indian public infrastructure. It taught me more about civilization than civics did. It was a place where water was theoretical, smell was democratic, and courage had to be summoned at the door. I learned to hold my bowels with the seriousness of a border guard. Twice I failed. On a hand-pulled rickshaw, over potholes that seemed personally designed by geologists with grudges, I came home carrying the kind of shame that does not make a speech. It simply sits inside the child and becomes furniture.
 
+<Pi src="/photos/Compress_20260526_081512_2854.jpg" />
+
 My mother cleaned what had to be cleaned. This was before washing machines entered the North Calcutta middle-class imagination. We did not have domestic backup teams, scented sprays, or elegant solutions. We had buckets, soap, tired mothers, and the mute economy of love. Much of childhood is sustained by labor children cannot yet see.
 
 There was also the College Street toilet incident, which deserves a small memorial plaque. I was there with other children, all apparently equipped with superior internal plumbing. I had to use a makeshift toilet in an English bookstore. The flush arrangement was missing in action. When I asked for water, the shop clerk suggested I carry a leaking bucket across the street in my school uniform. I fled instead, not heroically, but practically. Some escapes are not from war or prison. Some are from sanitation.
