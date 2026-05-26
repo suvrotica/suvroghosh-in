@@ -1,14 +1,17 @@
-mycin-expert-system-clinical-ai-calcutta-readable.md
 ---
 title: "MYCIN: The 1970s Medical AI That Knew How to Explain Itself"
 description: "MYCIN was an early Stanford expert system for infectious disease diagnosis and antibiotic therapy. Its real lesson is not that old AI was crude, but that medicine is painfully hard to squeeze into rules, screens, and databases."
 date: "2026-05-26"
+thumbnail: "/images/Compress_20260526_121024_4895.jpg"
 category: "Healthcare IT"
 tags: ["MYCIN", "Expert Systems", "Clinical AI", "Medical AI", "Healthcare IT", "Clinical Decision Support", "Artificial Intelligence", "Stanford AI", "Rule Based Systems", "Explainable AI", "Infectious Disease", "Antibiotic Therapy", "EHR", "FHIR", "HL7", "Health Informatics", "Digital Health", "Medical Informatics", "Healthcare Data", "AI History", "Healthcare Architecture", "Interoperability", "Clinical Reasoning", "SuvroGhosh"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260526_121024_4895.jpg" />
 
 Acronyms and terms used in this post:
 
