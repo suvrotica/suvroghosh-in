@@ -1,15 +1,15 @@
-trauma-chronic-angst-bipolar-disorder.md
 ---
 title: "When Suffering Refuses to Leave the Room"
 description: "A personal essay on how acute and chronic trauma can turn into a constant background angst, especially when it collides with bipolar disorder, betrayal, failed relationships, and a hostile social and business environment."
 date: "2026-05-28"
+thumbnail: "/images/Compress_20260528_022609_9120.jpg"
 category: "Mental Health"
 tags: ["Mental Health", "Trauma", "Bipolar Disorder", "Depression", "Anxiety", "Loneliness", "Relationships", "Entrepreneurship", "India", "Kolkata", "Personal Essay", "Video", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
 <TTS />
-
+<Pi src="Compress_20260528_022609_9120.jpg" />
 Suffering does not always end when the event ends. Sometimes the event walks out, shuts the door politely, and leaves behind a small government office inside the nervous system, where files are never closed, fans rotate slowly, and every clerk is suspicious.
 
 That is the part many cheerful people do not understand. They think trauma is a memory. It is not always a memory. Sometimes it becomes weather. It becomes the air pressure inside the skull. It becomes the little tightening before a phone call, the dread before opening WhatsApp, the sudden collapse of energy before doing ordinary work, the private court case that keeps running in the mind long after all parties have left the building.
