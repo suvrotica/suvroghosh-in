@@ -1,15 +1,15 @@
-mind-not-staying-in-one-place.md
 ---
 title: "When the Mind Refuses to Stay in One Place"
 description: "A personal essay on depression, loneliness, worry, bodily discomfort, and the strange daily business of living with a mind that does not always feel like an ally."
 date: "2026-05-27"
+thumbnail: "/images/Compress_20260527_102513_3412.jpg"
 category: "Mental Health"
 tags: ["Video", "Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Loneliness", "Mood Swings", "Self Doubt", "Emotional Health", "Middle Age", "Calcutta Life", "Kolkata Blog", "Indian Mental Health", "Living With Depression", "Unemployment Shame", "Executive Dysfunction", "Nervous System", "Emotional Resilience", "Human Psychology", "Personal Reflection", "Readable Essays", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
 <TTS />
-
+<Pi src="Compress_20260527_102513_3412.jpg" />
 
 
 Depression does not always kick the door open. That would be too honest of it. Many days it enters like damp through a wall in an old Calcutta room, one faint stain first, then a smell, then a whole geography of gloom quietly spreading behind the almirah.
