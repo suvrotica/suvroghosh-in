@@ -20,7 +20,9 @@ Dry-bulb temperature is the ordinary temperature. This is the number you see on 
 
 If the dry-bulb temperature is 38°C, the air around you is 38°C. That is already hot. But it does not tell you whether your body can cool itself. This is the crucial bit, and Kolkata often hides its knife here.
 
-Human beings are not cooled mainly by dignity, prayer, optimism, or WhatsApp forwards from school friends. We are cooled by evaporation. Sweat comes out of the skin. If that sweat evaporates, it carries heat away. The small miracle is this: water needs energy to turn from liquid into vapor. That energy comes from your skin. So evaporation steals heat from you.
+Human beings are not cooled mainly by dignity, prayer, optimism, or WhatsApp forwards from school friends. Even at rest, the human body is already a small heater, roughly like an old 100-watt incandescent bulb. That means it is producing about 100 joules of heat every second while doing nothing more heroic than sitting, breathing, blinking, and wondering why Kolkata feels like a pressure cooker with tramlines. Start walking, climbing stairs, carrying groceries, arguing with an auto driver, or working outdoors, and that heat production rises. The body’s furnace burns harder.
+
+So the body must constantly throw heat away. One of its best tricks is sweat. Sweat comes out through the skin, and if that sweat evaporates, it carries heat away with it. The little miracle is this: water needs energy to turn from liquid into vapor. That energy is pulled from your skin. Evaporation therefore steals heat from you, which is exactly the theft we want in May.
 
 In the simplest useful formula, the heat removed is:
 
