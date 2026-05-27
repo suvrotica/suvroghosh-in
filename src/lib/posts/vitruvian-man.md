@@ -1,15 +1,15 @@
-vitruvian-man.md
 ---
 title: "The Vitruvian Man: A Naked Man, Two Shapes, and Our Old Hunger for Order"
 description: "Leonardo da Vinci’s Vitruvian Man is not just a famous Renaissance drawing. It is a compact, beautiful, slightly ridiculous argument about the human body, geometry, perfection, and why messy people keep dreaming of clean proportions."
 date: "2026-05-27"
+thumbnail: "/images/Compress_20260527_231749_9546.jpg"
 category: "Art History"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Vitruvian Man", "Leonardo da Vinci", "Renaissance Art", "Art History", "Human Proportion", "Geometry in Art", "Classical Architecture", "Vitruvius", "De Architectura", "Anatomy and Art", "Science and Art", "European Renaissance", "Humanism", "Symmetry", "Circle and Square", "Famous Drawings", "Cultural History", "Philosophy of Art", "Body and Geometry", "Da Vinci Drawing", "Western Art", "Art Explained", "Readable Art History", "Kolkata Essays", "Calcutta Writing"]
 published: true
 color: "amber"
 ---
 <TTS />
-
+<Pi src="Compress_20260527_231749_9546.jpg" />
 Acronyms and terms used in this post:
 
 Vitruvius: Marcus Vitruvius Pollio, a Roman architect and engineer whose ideas about proportion influenced Leonardo’s drawing.
