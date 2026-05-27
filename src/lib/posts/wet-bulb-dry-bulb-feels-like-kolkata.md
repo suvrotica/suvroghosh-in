@@ -2,13 +2,14 @@
 title: "Wet-Bulb, Dry-Bulb, and Feels Like: Why Kolkata Heat Is Not Just Heat"
 description: "A clear, local, practical explanation of dry-bulb temperature, wet-bulb temperature, and feels-like temperature for anyone who has survived a Kolkata summer and still wonders why some days feel personally insulting."
 date: "2026-05-28"
+thumbnail: "/images/Compress_20260528_013933_3751.jpg"
 category: "Science"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata Heat", "Calcutta Weather", "Wet Bulb Temperature", "Dry Bulb Temperature", "Feels Like Temperature", "Humidity", "Heat Index", "Evaporation", "Climate", "Science Explainer", "Public Health"]
 published: true
 color: "orange"
 ---
 <TTS />
-
+<Pi src="Compress_20260528_013933_3751.jpg" />
 A Kolkata summer does not merely arrive; it occupies the room, sits on your chest, drinks your water, and then asks why you are sweating so much.
 
 The weather app says 38°C. Fine. We have seen 38°C. We are not delicate Swiss pastry. We are practical Calcuttans. We have stood near Esplanade buses, eaten phuchka beside drains of uncertain biography, and survived power cuts with one hand-fan and ancestral stubbornness. So why does one 38°C day feel merely unpleasant, while another 38°C day feels like being slowly steamed inside a municipal idli cooker?
