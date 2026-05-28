@@ -1,15 +1,15 @@
-cant-go-back-to-childhood-except-as-a-misremembering-ghost.md
 ---
 title: "Can't Go Back to Childhood—Except as a Misremembering Ghost"
 description: "A funny, sharp, Calcutta-flavored essay on childhood, nostalgia, memory, and the brain’s cheerful habit of forging emotional documents."
 date: "2025-03-24"
+thumbnail: "/images/Compress_20260528_070926_6026.jpg"
 category: "Memoir"
 tags: ["childhood", "nostalgia", "memory", "neuroscience", "cognition", "psychology", "ghost", "humor", "satire", "Calcutta", "Kolkata", "memoir", "Bengali", "middle age", "aging", "brain", "childhood memories", "memory distortion", "nostalgia essay", "funny essay", "personal essay", "popular neuroscience", "emotional memory", "urban memory", "North Calcutta", "South Calcutta", "Indian memoir", "Bengali writing", "mental life", "human brain", "misremembering", "memory and identity", "suvrotica", "suvroghosh"]
 published: true
 color: "amber"
 ---
 <TTS />
-
+<Pi src="Compress_20260528_070926_6026.jpg" />
 Acronyms and terms: Joint Photographic Experts Group [JPEG, a common compressed image format that loses detail when squeezed too much]. Global Positioning System [GPS, a satellite-based navigation system that tells you where you are, though not always who you have become]. Search Engine Optimization [SEO, the practice of making online writing easier for search engines and readers to find].
 
 ---
