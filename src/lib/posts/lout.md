@@ -1,8 +1,8 @@
-lout.md
 ---
 title: "The Dawn Is Still Open"
 description: "A sleepless Calcutta morning becomes a small argument for doubt, imagination, atheism, and the strange luck of being alive in a noisy, irrational world."
 date: "2026-05-28"
+thumbnail: "/images/Compress_20260528_064842_2623.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Atheism", "Richard Dawkins", "The God Delusion", "Science And Wonder", "Existential Reflection", "Kolkata Writing", "Calcutta Essay", "Middle Age", "Sleeplessness", "Anxiety", "Depression", "Bipolar Life", "Indian Politics", "Democracy", "Religious Irrationality", "Casteism", "Secularism", "Humanism", "Skepticism", "Free Thought", "Ordinary Life", "Lower Middle Class Life", "Urban India", "Morning Thoughts", "Personal Blog", "Philosophy", "Cosmic Perspective", "Social Satire", "Political Satire", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
@@ -10,15 +10,9 @@ color: "slate"
 ---
 <TTS />
 
-Acronyms and terms used in this post:
 
-AI: Artificial Intelligence, computer systems that imitate parts of human reasoning, pattern recognition, prediction, and decision-making.
+<Pi src="Compress_20260528_064842_2623.jpg" />
 
-IT: Information Technology, the broad world of computers, networks, software, databases, websites, and all the digital plumbing that keeps modern life from collapsing into paper files and shouting.
-
-SEO: Search Engine Optimization, the practical craft of making web pages easier for search engines and readers to find.
-
----
 
 Some nights sleep refuses to come, like a government clerk who has seen your file and decided your face is not encouraging.
 
