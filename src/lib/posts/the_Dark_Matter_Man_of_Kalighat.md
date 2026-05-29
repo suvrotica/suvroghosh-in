@@ -1,8 +1,8 @@
-The_Dark_Matter_Man_of_Kalighat.md
 ---
 title: "The Dark Matter Man of Kalighat"
 description: "A failed cosmologist turned hospital data worker meets a future visitor whose body refuses light. In rain-soaked Calcutta, a clerical act of erasure becomes the beginning of an impossible species."
 date: "2026-05-29"
+thumbnail: "/images/Compress_20260529_110838_8356.jpg"
 category: "Short Fiction"
 tags: ["Science Fiction", "Kolkata", "Dark Matter", "Speculative Fiction", "Horror", "SuvroGhosh"]
 published: true
@@ -10,7 +10,7 @@ color: "charcoal"
 ---
 
 <TTS />
-
+<Pi src="Compress_20260529_110838_8356.jpg" />
 # THIS IS A WORK OF FICTION
 
 The first thing the man from the future did in Calcutta was make a cup of tea bend.
