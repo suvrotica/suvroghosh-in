@@ -1,8 +1,8 @@
-asteroid-over-calcutta.md
 ---
 title: "The Last Notification"
 description: "When a large asteroid is announced to be heading for Calcutta, a hospital data clerk notices that the city has begun recording deaths before they happen. In a city where everyone survives by looking away, the sky becomes only the second-worst thing falling."
 date: "2026-05-26"
+thumbnail: "/images/Compress_20260529_130736_6731.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Calcutta", "Science Fiction", "Mystery", "Asteroid", "Urban Horror"]
 published: true
@@ -10,6 +10,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260529_130736_6731.jpg" />
 
 # THIS IS A WORK OF FICTION
 
