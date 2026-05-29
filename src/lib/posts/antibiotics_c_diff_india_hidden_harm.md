@@ -1,14 +1,17 @@
-antibiotics_c_diff_india_hidden_harm.md
 ---
 title: "The Antibiotic That Came Back With a Stick"
 description: "In India, strong antibiotics are often prescribed as if they are harmless proof of decisive treatment. But disturbed gut bacteria, C. difficile infection, and avoidable deaths show that the bill can arrive after the clinic visit is forgotten."
 date: "2026-05-29"
+thumbnail: "/images/Compress_20260529_114503_3371.jpg"
 category: "Healthcare"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Healthcare", "Antibiotics India", "Antibiotic Misuse", "Antimicrobial Resistance", "C Difficile", "C Diff Infection", "Antibiotic Stewardship", "Public Health India", "Gut Health", "Patient Safety", "Doctor Prescribing", "Dental Antibiotics", "Clindamycin Risk", "Broad Spectrum Antibiotics", "Healthcare Awareness", "Medical Education India", "Diarrhea After Antibiotics", "Colitis", "AMR India", "Clinical Safety", "Over The Counter Antibiotics", "Rational Drug Use"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260529_114503_3371.jpg" />
 
 Acronyms and terms:
 
