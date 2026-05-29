@@ -1,22 +1,19 @@
-trapped-by-the-room-mirror-and-feed.md
 ---
 title: "Trapped by the Room, the Mirror, and the Feed"
 description: "A Calcutta-flavored reflection on feeling trapped by memory, illness, anxiety, social media, modern artificial life, and the new soft authority of machines that sound too confident."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_043139_9997.jpg"
 category: "Mental Health"
 tags: ["Mental Health", "Bipolar Depression", "Bipolar Disorder", "Anxiety", "Trauma", "Loneliness", "Addiction", "Social Media Anxiety", "Modern Life", "Digital Life", "Artificial Intelligence", "Large Language Models", "LLM", "AI", "Chatbots", "Calcutta Life", "Kolkata Blog", "Personal Essay", "Middle Age", "Psychology", "Technology And Society", "Attention Economy", "Dystopia", "Brave New World", "1984", "SuvroGhosh"]
 published: true
 color: "#4B5563"
 ---
+
 <TTS />
 
-Acronyms:
+<Pi src="Compress_20260530_043139_9997.jpg" />
 
-AI — Artificial Intelligence, computer systems designed to perform tasks that appear to require human-like reasoning, language, perception, or decision-making.
 
-LLM — Large Language Model, a type of AI trained on huge amounts of text so it can generate fluent answers, explanations, summaries, and conversations.
-
----
 
 Feeling trapped is not always a dramatic thing with iron bars, thunder, and a villain in a black coat. Sometimes it is a plastic chair, a hot room, a half-charged phone, yesterday’s tea cup, and your own face in the mirror looking back as if it has read the audit report and found serious irregularities.
 
