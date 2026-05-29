@@ -1,8 +1,8 @@
-the-protein-man.md
 ---
 title: "The Protein Man"
 description: "In a humid Calcutta of hospitals, app deliveries, and old para gossip, a failed biotech trial returns as a hunger walking on two legs. A data man follows the trail and finds the city has been feeding something it does not want to name."
 date: "2026-05-29"
+thumbnail: "/images/Compress_20260529_091946_6601.jpg"
 category: "Short Fiction"
 tags: ["Horror", "Science Fiction", "Calcutta", "Kolkata", "Cannibal Horror", "Short Fiction", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
@@ -10,6 +10,7 @@ color: "charcoal"
 ---
 
 <TTS />
+<Pi src="Compress_20260529_091946_6601.jpg" />
 
 # THIS IS A WORK OF FICTION
 
