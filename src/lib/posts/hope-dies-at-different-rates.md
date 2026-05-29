@@ -9,8 +9,6 @@ published: true
 color: "indigo"
 ---
 
-
-
 <TTS />
 
 <Pi src="Compress_20260530_030551_1659.jpg" />
