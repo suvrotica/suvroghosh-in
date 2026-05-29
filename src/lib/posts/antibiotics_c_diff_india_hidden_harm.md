@@ -145,4 +145,4 @@ The tablet is swallowed in five seconds.
 
 The damage may take weeks to introduce itself.
 
-P.S. References: CDC, “About C. diff” and “C. diff: Facts for Clinicians”; WHO AWaRe antibiotic classification; ICMR treatment guidelines for antimicrobial use in common syndromes; ICMR antimicrobial stewardship program guidance; Koya et al., “Consumption of systemic antibiotics in India in 2019,” The Lancet Regional Health – Southeast Asia; Miller et al., “Comparison of Different Antibiotics and the Risk for Community-Associated Clostridioides difficile Infection,” Open Forum Infectious Diseases; Ghia et al., “Systematic Literature Review on Burden of Clostridioides difficile Infection in India”; Angulo et al., “The burden of Clostridioides difficile infections in South Asia.”
+P.S. References: CDC, “About C. diff” 
