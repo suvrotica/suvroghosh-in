@@ -1,23 +1,19 @@
-hope-dies-at-different-rates.md
 ---
 title: "Hope Dies at Different Rates"
 description: "A personal essay on middle age, bipolar depression, poverty, education, writing, and the fear that AI may steal from future generations the old human habit of turning pain into words."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_030551_1659.jpg"
 category: "Personal Essay"
 tags: ["Mental Health", "Bipolar Depression", "Anxiety", "Middle Age", "Artificial Intelligence", "AI And Writing", "Kolkata Life", "Calcutta Bengali", "Bengali Essay", "Creative Writing", "Human Expression", "Digital Culture", "Technology And Society", "Reading Crisis", "Writing Therapy", "Loneliness", "Atheism", "Hope", "Poverty", "Education", "Future Of Reading", "Future Of Writing", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
 
-Acronyms:
 
-AI — Artificial Intelligence, meaning computer systems that can generate, summarize, translate, imitate, and manipulate language, images, code, and patterns in ways that increasingly resemble human intellectual work.
-
-SEO — Search Engine Optimization, meaning the practical craft of making writing easier for search engines and discovery systems to find, understand, and recommend.
-
----
 
 <TTS />
+
+<Pi src="Compress_20260530_030551_1659.jpg" />
 
 Hope does not die like a cinema hero, one hand on the chest, violins swelling, rain arriving exactly on cue. Hope dies more like a cheap ceiling fan in a rented room. First it makes a noise. Then it runs only on speed three. Then someone ties the regulator with tape. Then one day it moves so slowly that you cannot decide whether it is working or only remembering its former profession.
 
