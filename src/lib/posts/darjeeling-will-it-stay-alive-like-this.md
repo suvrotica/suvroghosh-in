@@ -1,14 +1,17 @@
-darjeeling-will-it-stay-alive-like-this.md
 ---
 title: "Will Darjeeling Stay Alive Like This?"
 description: "A personal Calcutta Bengali essay on Darjeeling’s counterfeit markets, bad hotels, trash burning, vehicle pollution, deforestation, overcrowding, alcohol and drug problems, and the uncomfortable question of whether the hill town can survive being loved so carelessly."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_075335_5425.jpg"
 category: "Personal Essay"
 tags: ["Darjeeling", "Darjeeling Tourism", "Darjeeling Pollution", "Darjeeling Hotels", "Darjeeling Travel", "Darjeeling Waste Problem", "Darjeeling Garbage Burning", "Darjeeling Traffic", "Kanchenjunga", "Tiger Hill", "Counterfeit Products", "Fake Branded Clothing", "Fake Shoes", "Fake Jackets", "Fake Imported Goods", "Counterfeit Tea", "Darjeeling Tea", "Hill Station Tourism", "Overtourism", "Sustainable Tourism", "Responsible Travel", "North Bengal", "Kolkata Travel", "Calcutta Bengali", "Indian Hill Stations", "Himalayan Towns", "Vehicle Pollution", "Deforestation", "Urban Decay", "Alcohol Problems", "Drug Abuse", "Mountain Ecology", "Environmental Crisis", "Travel Essay", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "green"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260530_075335_5425.jpg" />
 
 Acronyms and terms used in this post:
 
