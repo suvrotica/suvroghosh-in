@@ -1,14 +1,17 @@
-rain-power-and-quicksand.md
 ---
 title: "Rain, Power Cuts, and India Standing on Quicksand"
 description: "A personal Calcutta essay on rain, heat, power cuts, noisy nationalism, and the old inherited habit of hoping that India will one day care about ordinary people."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_071427_7686.jpg"
 category: "Personal Essay"
 tags: ["Video", "Personal Essay", "SuvroGhosh", "India", "Calcutta", "Kolkata", "Bengali Writing", "Indian Middle Class", "Lower Middle Class India", "Power Cut", "Load Shedding", "Rain in Kolkata", "Kolkata Heat", "Indian Summer", "Sultry Weather", "Jingoism", "Nationalism", "Common Man", "Indian Infrastructure", "Indian Politics", "Everyday India", "Urban India", "Civic Failure", "Public Services", "Indian Society", "Hope and Despair", "Father and Son", "Diaspora Return", "India After America", "Personal Reflection", "Middle Aged Life", "Bipolar Depression", "Anxiety", "Consulting Life", "Ordinary Life", "Social Commentary"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260530_071427_7686.jpg" />
 
 
 
