@@ -1,24 +1,18 @@
-synthetic-jest-fake-laughter-bengali-modernity.md
 ---
 title: "Synthetic Jest and the Great Bengali Smile Factory"
 description: "A social satire on fake laughter, saccharine smiles, Bengali middle-class performance, Indian modernity, and the circus of pretending everything is fine."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_085115_5705.jpg"
 category: "Social Commentary"
 tags: ["Video", "Essay", "SuvroGhosh", "Bengali Modernity", "Indian Modernity", "Kolkata Life", "Calcutta Essays", "Fake Laughter", "Synthetic Jest", "Saccharine Smiles", "Middle Class India", "Bengali Middle Class", "Social Satire", "Indian Society", "Kolkata Culture", "Bengali Society", "Modern Life", "Social Media Culture", "Family Pressure", "Office Culture", "Urban Loneliness", "Performative Happiness", "WhatsApp Society", "Apartment Culture", "Indian Weddings", "Middle Aged Life", "Lower Middle Class Life", "Cultural Criticism", "Human Comedy", "Social Circus", "Everyday India"]
 published: true
 color: "#7A2E2E"
 ---
+
 <TTS />
 
-Acronyms used in this post:
 
-AI: Artificial Intelligence, meaning computer systems that imitate or automate tasks we associate with human reasoning, language, pattern recognition, and prediction.
-
-SEO: Search Engine Optimization, meaning the practical work of making writing easier for search engines and readers to discover.
-
-TTS: Text-to-Speech, meaning software that reads written text aloud.
-
----
+<Pi src="Compress_20260530_085115_5705.jpg" />
 
 There is a kind of smile now that should be registered with the municipal health department.
 
