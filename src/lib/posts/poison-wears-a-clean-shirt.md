@@ -1,14 +1,17 @@
-poison-wears-a-clean-shirt.md
 ---
 title: "Poison Often Wears a Clean Shirt"
 description: "A sharp, readable essay on why harmful people often arrive looking ordinary, respectable, and harmless, and why recognizing them too late can leave deep damage."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_100944_4233.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Toxic People", "Poisonous People", "Emotional Abuse", "Manipulation", "Betrayal", "Human Nature", "Social Masks", "Trauma", "Trust Issues", "Kolkata Life", "Calcutta Writing", "Middle Class Life", "Mental Health", "Psychology", "Everyday Philosophy", "Social Observation", "Personal Reflection", "Toxic Relationships", "Narcissistic Behavior", "Hidden Cruelty", "Gaslighting", "Schadenfreude", "Boundaries", "Self Respect", "Bengali Essay", "Readable Essay", "Modern Life"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260530_100944_4233.jpg" />
 
 
 
