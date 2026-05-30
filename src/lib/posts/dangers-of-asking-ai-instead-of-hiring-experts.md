@@ -1,14 +1,17 @@
-dangers-of-asking-ai-instead-of-hiring-experts.md
 ---
 title: "The Hidden Bill for Asking AI Instead of Hiring an Expert"
 description: "AI can make ordinary people feel suddenly competent, which is useful until the work needs judgment, memory of failure, and responsibility. The danger is not that AI gives bad answers; it is that it gives good-looking answers to questions we were never qualified to ask."
 date: "2026-05-30"
+thumbnail: "/images/Compress_20260530_125730_0847.jpg"
 category: "Technology"
 tags: ["AI", "Artificial Intelligence", "Expertise", "Human Judgment", "Automation", "Knowledge Work", "Digital Transformation", "Healthcare IT", "AI Risk", "AI Safety", "Professional Services", "Self Service Economy", "Expert Labor", "Hidden Costs", "Productivity", "Automation Risk", "Decision Making", "Technical Debt", "Data Quality", "Semantic Meaning", "EHR", "FHIR", "HL7", "Software Architecture", "Business Risk", "Consulting", "Middle Class Work", "Kolkata", "Calcutta", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "#B45309"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260530_125730_0847.jpg" />
 
 Acronyms used in this post:
 
