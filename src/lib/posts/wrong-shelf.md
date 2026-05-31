@@ -1,8 +1,8 @@
-wrong-shelf.md
 ---
 title: "Wrong Shelf"
 description: "A Calcutta preschool receives a carton of donated picture books that should never have entered a classroom. As children fall asleep and do not wake, a teacher follows the trail of paper into the city’s newest appetite."
 date: "2026-06-01"
+thumbnail: "/images/Compress_20260601_045407_7366.jpg"
 category: "Short Fiction"
 tags: ["Horror", "Ghost Story", "Calcutta", "Synthetic Drugs", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260601_045407_7366.jpg" />
 
 # THIS IS A WORK OF FICTION
 
