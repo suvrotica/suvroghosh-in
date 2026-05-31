@@ -3,12 +3,16 @@ invisible-radius.md
 title: "The Invisible Radius"
 description: "A personal essay on trust, bipolar caution, loneliness, and the small defensive circle a damaged but still-living man draws around himself."
 date: "2026-05-31"
+thumbnail: "/images/Compress_20260531_142107_7583.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Mental Health Essay", "Bipolar Disorder", "Bipolar Depression", "Anxiety", "Trust Issues", "Emotional Boundaries", "Loneliness", "Middle Age", "Calcutta Life", "Kolkata Essay", "Bengali Writer", "Lower Middle Class Life", "Divorce", "Single Life", "Social Isolation", "Self Protection", "Emotional Survival", "Trauma", "Human Relationships", "Depression Writing", "Personal Reflection", "Life Experience", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260531_142107_7583.jpg" />
 
 Acronyms and terms:
 
