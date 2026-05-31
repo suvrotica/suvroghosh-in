@@ -1,14 +1,17 @@
-bengali-normalcy-and-the-borrowed-warmth-of-nests.md
 ---
 title: "Bengali Normalcy and the Borrowed Warmth of Nests"
 description: "A personal essay on middle age, loneliness, family life, privacy, and the strange comfort of borrowing warmth from other people’s ordinary homes through a screen."
 date: "2026-05-31"
+thumbnail: "/images/Compress_20260531_074301_1393.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Bengali Life", "Kolkata", "Calcutta", "Middle Age", "Loneliness", "Family Life", "Bengali Family", "Mental Health", "Bipolar Depression", "Anxiety", "Single Life", "Lower Middle Class", "Urban Loneliness", "Domestic Life", "Privacy", "Social Life", "Aging", "Indian Middle Class", "Personal Blog", "Life Writing", "Kolkata Essay", "Calcutta Essay", "Human Connection", "Modern Loneliness", "Everyday Life", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260531_074301_1393.jpg" />
 
 Acronyms and notes: None used. A few Bengali words appear naturally: luchi is a fried flatbread, para is the neighborhood, and adda is that magnificent Bengali technology by which five people can waste three hours and call it civilization.
 
