@@ -1,14 +1,17 @@
-private-nuisance-at-five-thirty-in-calcutta.md
 ---
 title: "A Private Nuisance at Five-Thirty in Calcutta"
 description: "A personal essay on bipolar depression, unemployment, insomnia, irritation, tooth pain, loneliness, and the slow morning time of a bankrupt middle-aged Bengali man in Calcutta."
 date: "2026-05-31"
+thumbnail: "/images/Compress_20260531_054547_7919.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Mental Health Essay", "Bipolar Depression", "Bipolar Disorder", "Depression Writing", "Anxiety", "Anhedonia", "Insomnia", "Unemployment", "Middle Age", "Loneliness", "Calcutta Life", "Kolkata Life", "Bengali Writer", "Bengali Middle Class", "Lower Middle Class Life", "Financial Stress", "Doomscrolling", "Morning Depression", "Tooth Pain", "Ketorol", "Personal Blog", "Emotional Essay", "Lived Experience", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260531_054547_7919.jpg" />
 
 Acronyms and terms:
 
