@@ -1,14 +1,17 @@
-concentric-incurable-angsts-of-a-bengali-man.md
 ---
 title: "The Concentric Angsts of a Bankrupt Bengali Man"
 description: "A cleaner, sharper, more human rant about money, age, illness, failed respectability, and the strange comedy of surviving middle-class Bengali life in Calcutta."
 date: "2026-05-31"
+thumbnail: "/images/Compress_20260531_164417_7793.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class", "Middle Age", "Bipolar Depression", "Mental Health", "Unemployment", "Bankruptcy", "Loneliness", "Aging", "Class Anxiety", "Single Man", "Urban India", "Indian Middle Class", "Bengali Society", "Life After Fifty", "Personal Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260531_164417_7793.jpg" />
 
 
 
