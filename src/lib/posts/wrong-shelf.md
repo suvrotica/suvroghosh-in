@@ -353,7 +353,7 @@ Bring the primer to Girish Park metro. Platform end. 6 pm. Come alone if you wan
 
 She showed Lahiri.
 
-He cursed softly. Not “kester.”
+He cursed softly.
 
 They went together, though separately. He sent two plainclothes constables. Nandita was wired, which made her feel like a criminal pretending to be bait, or bait pretending to be brave.
 
