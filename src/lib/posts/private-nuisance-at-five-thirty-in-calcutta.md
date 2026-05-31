@@ -23,6 +23,9 @@ Doomscrolling: The habit of endlessly scrolling through bad news, noise, quarrel
 
 ---
 
+<Yt src="https://youtube.com/shorts/8deTyg5POGg?si=gNlYotq0FT52htp4" />
+
+
 Some mornings do not begin. They crawl in through the crack under the door and sit on your chest.
 
 Today is one of those mornings.
