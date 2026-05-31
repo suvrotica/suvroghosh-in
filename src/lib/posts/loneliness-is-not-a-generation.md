@@ -1,14 +1,17 @@
-loneliness-is-not-a-generation.md
 ---
 title: "Loneliness Is Not a Generation"
 description: "A personal essay on Gen X loneliness, aging, bipolar depression, smartphones, AI, and the strange modern habit of being connected to everyone while sitting utterly alone."
 date: "2026-05-31"
+thumbnail: "/images/Compress_20260531_064004_4075.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Loneliness", "Gen X Loneliness", "Gen Z Loneliness", "Middle Age Loneliness", "Bipolar Depression", "Mental Health Essay", "Calcutta Life", "Kolkata Life", "Modern Isolation", "Smartphone Addiction", "Artificial Intelligence", "AI Loneliness", "Digital Life", "Social Isolation", "Human Connection", "Aging Parents", "Neurobiology", "Depression", "Anxiety", "Technology and Society", "Modern Life", "Personal Blog", "Indian Blogger", "Bengali Writer", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260531_064004_4075.jpg" />
 
 Acronyms used in this post: AI means Artificial Intelligence, computer systems that can generate language, images, predictions, and decisions that once required human beings. US means United States, where I lived through the strange little parade from pagers to mobile phones to smartphones.
 
