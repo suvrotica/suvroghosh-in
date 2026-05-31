@@ -1,14 +1,17 @@
-tau-scaling-law-time-not-nanometers.md
 ---
 title: "Tau Scaling Law: The Chip Race Has Found a New Clock"
 description: "Huawei’s Tau Scaling Law is not magic and not nonsense. It is a serious bet that the next semiconductor race may be won by shortening time, not merely shrinking transistors."
 date: "2026-06-01"
+thumbnail: "/images/Compress_20260601_040041_1818.jpg"
 category: "Technology"
 tags: ["Tau Scaling Law", "Huawei Tau Scaling", "LogicFolding", "Moore's Law", "Semiconductors", "Chip Design", "AI Chips", "Kirin 2026", "Advanced Packaging", "3D Chips", "Post Moore Era", "Computer Architecture", "Signal Delay", "Transistor Density", "EUV Lithography", "China Technology", "US Chip Sanctions", "Semiconductor Geopolitics", "AI Hardware", "Technology Explained", "Engineering Blog", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260601_040041_1818.jpg" />
 
 Acronyms and terms used in this post:
 
