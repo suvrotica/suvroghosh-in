@@ -1,4 +1,3 @@
-invisible-radius.md
 ---
 title: "The Invisible Radius"
 description: "A personal essay on trust, bipolar caution, loneliness, and the small defensive circle a damaged but still-living man draws around himself."
