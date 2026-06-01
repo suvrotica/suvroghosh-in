@@ -1,14 +1,17 @@
-the-useful-box-and-the-bengali-problem-of-too-many-choices.md
 ---
 title: "The Useful Box and the Bengali Problem of Too Many Choices"
 description: "A clear, witty, human essay on why freedom without boundaries often turns into fog, and why good constraints can rescue work, creativity, attention, and ordinary life."
 date: "2026-06-01"
+thumbnail: "/images/Compress_20260601_092735_5845.jpg"
 category: "Systems Thinking"
 tags: ["Systems Thinking", "Constraints", "Creativity", "Attention", "Focus", "Decision Making", "Productivity", "Modern Work", "Digital Distraction", "AI", "Healthcare IT", "Software Design", "Innovation", "Problem Solving", "Subtraction", "Mental Models", "Cognitive Science", "Behavioral Science", "Calcutta", "Kolkata Life", "Middle Class Life", "Bengali Essays", "Work Culture", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260601_092735_5845.jpg" />
 
 Acronyms and terms used:
 
