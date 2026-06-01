@@ -1,14 +1,17 @@
-the-unrecorded-error-india.md
 ---
 title: "The Unrecorded Error"
 description: "Indian healthcare does not merely suffer from medical mistakes. It suffers from missing records, fake competence, leaked gates into the profession, understaffed wards, underpaid workers, counterfeit machinery, and a culture where harm often vanishes before it becomes evidence."
 date: "2026-06-01"
+thumbnail: "/images/Compress_20260601_075059_9881.jpg"
 category: "Healthcare IT"
 tags: ["Healthcare IT", "Indian Healthcare", "Patient Safety", "Medical Error", "Preventable Harm", "Fake Doctors", "Medical Corruption", "NEET Paper Leak", "Medical Education", "Hospital Safety", "Understaffed Hospitals", "Doctor Burnout", "Nursing Shortage", "Counterfeit Medical Equipment", "Biomedical Equipment", "Medical Negligence", "Hospital Governance", "Healthcare Documentation", "Clinical Informatics", "Health Policy India", "Public Health India", "Private Hospitals India", "Medication Errors", "Hospital Acquired Infection", "Healthcare Associated Infection", "Audit Trails", "Patient Rights", "Digital Health India", "ABDM", "Medical Records", "Health Data", "SuvroGhosh"]
 published: true
 color: "red"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260601_075059_9881.jpg" />
 
 Acronyms used in this post: Healthcare IT means Healthcare Information Technology, the technical and organizational systems used to capture, preserve, move, and govern health information. EHR means Electronic Health Record, the supposed digital clinical record of a patient’s care, though in much of India this exists more as brochure language than operating reality. EMR means Electronic Medical Record, a narrower digital record inside one hospital or clinic, again often incomplete or absent in real practice. HAI means Healthcare-Associated Infection, an infection acquired during medical care. ICU means Intensive Care Unit, the hospital unit for critically ill patients. OR means Operating Room, where surgery happens. ABDM means Ayushman Bharat Digital Mission, India’s national digital health infrastructure initiative. NEET means National Eligibility cum Entrance Test, India’s medical entrance examination. NMC means National Medical Commission, India’s regulator for medical education and professional standards. WHO means World Health Organization. BMJ means British Medical Journal. CDC means Centers for Disease Control and Prevention.
 
