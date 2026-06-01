@@ -1,14 +1,17 @@
-end-of-history-not-end-of-trouble.md
 ---
 title: "The End of History Is Not the End of Trouble"
 description: "A personal, plain-English explanation of Francis Fukuyama’s End of History thesis, Hegelian recognition, liberal democracy, capitalism, and why human beings keep reopening supposedly settled arguments."
 date: "2026-06-01"
+thumbnail: "/images/Compress_20260601_055842_2255.jpg"
 category: "Ideas"
 tags: ["End of History", "Francis Fukuyama", "Hegel", "Alexandre Kojeve", "Political Philosophy", "Liberal Democracy", "Capitalism", "Invisible Hand", "Recognition", "Cold War", "History", "Public Life", "Democracy", "Modernity", "Social Theory", "Everyday Philosophy", "Calcutta", "Kolkata", "Books", "Reading", "Writing", "Mental Health", "Bipolar Depression", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "#4F46E5"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260601_055842_2255.jpg" />
 
 Acronyms and terms:
 
