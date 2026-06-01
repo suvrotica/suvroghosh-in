@@ -1,8 +1,8 @@
-the-happy-water.md
 ---
 title: "The Happy Water"
 description: "After a dismissed water department employee poisons Kolkata’s old Tala water tank, the city’s joy becomes forensic evidence. A hidden bottling racket carries the disaster across oceans, where another set of deaths reveals a deeper betrayal."
 date: "2026-06-01"
+thumbnail: "/images/Compress_20260601_103901_1947.jpg"
 category: "Short Fiction"
 tags: ["Horror", "Kolkata", "Water", "Urban Decay", "Crime", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "blue"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260601_103901_1947.jpg" />
 
 # THIS IS A WORK OF FICTION
 
