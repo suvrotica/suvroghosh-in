@@ -1,8 +1,8 @@
-the-pressure-in-sinthee.md
 ---
 title: "The Pressure in Sinthee"
 description: "In a small South Sinthee lane, people begin dying from impossible swelling, their bodies rupturing from within. As the sickness spreads across Calcutta, one man discovers the parasite is not merely biological—it has learned the city’s oldest habit."
 date: "2026-06-02"
+thumbnail: "/images/Compress_20260602_075554_4121.jpg"
 category: "Short Fiction"
 tags: ["Horror", "Calcutta", "Body Horror", "Supernatural", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "sickly green"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260602_075554_4121.jpg" />
 
 # THIS IS A WORK OF FICTION
 
