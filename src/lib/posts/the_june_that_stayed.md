@@ -1,8 +1,8 @@
-the_june_that_stayed.md
 ---
 title: "The June That Stayed"
 description: "A heat dome settles over Calcutta and refuses to move. As electricity fails and the city begins to cook, a man in an old apartment building discovers the heat may not be weather at all."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_032454_4137.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Horror", "Climate Horror", "Kolkata", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "burnt orange"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_032454_4137.jpg" />
 
 # THIS IS A WORK OF FICTION
 
