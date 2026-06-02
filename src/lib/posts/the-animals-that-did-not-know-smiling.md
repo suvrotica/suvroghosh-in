@@ -1,8 +1,8 @@
-the-animals-that-did-not-know-smiling.md
 ---
 title: "The Animals That Did Not Know Smiling"
 description: "When a cheap brand of children's crayons floods Kolkata, the drawings begin to climb out of school notebooks and apartment walls. A failed illustrator follows the trail through markets, balconies, hospitals, and old family guilt."
 date: "2026-06-02"
+thumbnail: "/images/Compress_20260602_090456_6566.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Fantasy Horror", "Kolkata", "Supernatural", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "Charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260602_090456_6566.jpg" />
 
 # THIS IS A WORK OF FICTION
 
