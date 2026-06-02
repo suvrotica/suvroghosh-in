@@ -1,8 +1,8 @@
-the-filth-that-learned-to-stand.md
 ---
 title: "The Filth That Learned to Stand"
 description: "In a heat-struck Calcutta, a dismissed municipal data analyst notices that the city’s garbage is moving before the people do. When the cockroaches rise, the real mutation is not only in their bodies."
 date: "2026-06-02"
+thumbnail: "/images/Compress_20260602_063022_2977.jpg"
 category: "Short Fiction"
 tags: ["Horror", "Climate Fiction", "Kolkata", "Urban Horror", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "sickly green"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260602_063022_2977.jpg" />
 
 # THIS IS A WORK OF FICTION
 
