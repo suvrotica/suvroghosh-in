@@ -1,8 +1,8 @@
-the-water-remembers.md
 ---
 title: "The Water Remembers"
 description: "A failed pathology lab assistant in Calcutta thinks he has found a way to punish a city that has ignored him. But the city has its own older, wetter memory."
 date: "2026-06-02"
+thumbnail: "/images/Compress_20260602_055556_6872.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Horror", "Calcutta", "Speculative Fiction", "Medical Horror"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260602_055556_6872.jpg" />
 
 # THIS IS A WORK OF FICTION
 
