@@ -1,7 +1,7 @@
 ---
 title: "Shouldering the Chips: A Bengali Odyssey Through Calcutta’s Public Transport"
 description: "A clean but sharp satirical Calcutta commute essay about minibuses, heat, humidity, crowding, middle-class irritation, and the little resentments Bengalis carry like family heirlooms."
-date: "2025-03-30"
+date: "2025-06-02"
 thumbnail: "/images/Compress_20260602_052320_0414.jpg"
 category: "Calcutta"
 tags: ["Calcutta", "Kolkata", "Public Transport", "Calcutta Minibus", "Kolkata Bus", "Bengali Life", "Middle Class Bengali", "Lower Middle Class", "Daily Commute", "Urban India", "Indian Cities", "City Life", "Humidity", "Climate", "Heat", "Crowded Bus", "Satire", "Clean Satire", "Bengali Satire", "Observational Comedy", "Daily Life", "Urban Chaos", "Transportation", "Bus Ride", "Civic Neglect", "Indian Public Transport", "Kolkata Humour", "Bengali Humour", "Rants", "Essays", "suvrotica", "suvroghosh"]
