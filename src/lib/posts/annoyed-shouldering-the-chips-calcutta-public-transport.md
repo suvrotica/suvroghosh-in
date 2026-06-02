@@ -36,7 +36,7 @@ Every Bengali carries chips on the shoulder. Some carry small ones, like muri. S
 
 We do not throw these chips away. We preserve them. We polish them. We pass them down silently through tea, scowls, and unnecessary corrections of other people’s English.
 
-So there I stand, fifty-one years old, lower middle-class, single, tired, sweating in the southern fringe of Calcutta, earning barely through consulting when the mind permits, carrying the biography of a man who once lived in America and now negotiates with minibuses like a minor character in a heatstroke epic. Outside, the city continues its usual performance: horns, dogs, hawkers, plastic bags, cables, tea stalls, scooters, banners, half-built dreams, and a sky the color of boiled tin.
+So there I stand, fifty years old, lower middle-class, single, tired, sweating in the southern fringe of Calcutta, earning barely through consulting when the mind permits, carrying the biography of a man who once lived in America and now negotiates with minibuses like a minor character in a heatstroke epic. Outside, the city continues its usual performance: horns, dogs, hawkers, plastic bags, cables, tea stalls, scooters, banners, half-built dreams, and a sky the color of boiled tin.
 
 The heat enters everything. Your shirt becomes a confession. Your face becomes a legal document. Your back develops its own river system. Calcutta humidity is not weather. It is a relative who comes to stay for three months and uses all the towels.
 
