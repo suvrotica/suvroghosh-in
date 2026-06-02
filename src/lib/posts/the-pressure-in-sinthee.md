@@ -185,7 +185,7 @@ By morning, the word had spread.
 
 Not cholera. Not food poisoning.
 
-Peti-phata rog.
+Pet-phata rog.
 
 Belly-burst disease.
 
