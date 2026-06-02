@@ -1,8 +1,8 @@
-the-average-weight-of-sunday.md
 ---
 title: "The Average Weight of Sunday"
 description: "In a humid Calcutta where app food, imported office habits, and sweetened comfort have quietly colonized the body, a reluctant hospital data analyst notices that the city’s obesity epidemic has begun obeying impossible arithmetic."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_041131_1164.jpg"
 category: "Short Fiction"
 tags: ["Medical Horror", "Body Horror", "Calcutta", "Obesity", "Healthcare", "Short Fiction", "Video", "Engineering Blog", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "maroon"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_041131_1164.jpg" />
 
 # THIS IS A WORK OF FICTION
 
