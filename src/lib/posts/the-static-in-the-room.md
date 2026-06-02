@@ -85,7 +85,7 @@ Excellent advice, except the enjoyment department has been closed for renovation
 
 Still, I write.
 
-Not because writing saves me in any grand way. I distrust grand claims. They usually arrive wearing polished shoes and carrying an invoice. Writing does not cure the room. It does not pay enough bills. It does not restore youth, health, confidence, lost years, lost teeth, lost chances, or the small animal brightness that once lived in the chest.
+Not because writing saves me in any grand way. I distrust grand claims. They usually arrive wearing polished shoes and carrying an invoice. Writing does not cure the room. It does not pay any bills. It does not restore youth, health, confidence, lost years, lost teeth, lost chances, or the small animal brightness that once lived in the chest.
 
 But writing gives the static a shape.
 
