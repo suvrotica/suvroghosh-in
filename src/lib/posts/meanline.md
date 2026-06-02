@@ -1,8 +1,8 @@
-Meanline.md
 ---
 title: "Meanline"
 description: "A height supplement in Kolkata promises to defeat heredity, age, and ordinary statistical gravity. What it creates is not ambition fulfilled, but a city of people growing toward a vanishing point."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_051806_6539.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Horror", "Science Fiction", "Kolkata", "Body Horror", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "Charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_051806_6539.jpg" />
 
 # THIS IS A WORK OF FICTION
 
