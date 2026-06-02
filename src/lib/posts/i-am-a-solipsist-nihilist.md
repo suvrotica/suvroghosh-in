@@ -1,14 +1,17 @@
-i-am-a-solipsist-nihilist.md
 ---
 title: "I Am a Solipsist Nihilist, Unfortunately Before Breakfast"
 description: "A personal essay on doubt, meaning, atheism, depression, and the small daily comedy of trying to live in Calcutta when the universe has misplaced its instruction manual."
 date: "2026-06-02"
+thumbnail: "/images/Compress_20260602_141117_7335.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Philosophy", "Solipsism", "Nihilism", "Atheism", "Existentialism", "Depression", "Bipolar Depression", "Anxiety", "Kolkata", "Calcutta", "Bengali Life", "Middle Age", "Loneliness", "Meaning Of Life", "Modern Life", "Urban India", "Lower Middle Class", "Mental Health Essay", "Skepticism", "Absurdism", "Everyday Philosophy", "Indian Society", "Social Commentary", "Personal Blog", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260602_141117_7335.jpg" />
 
 Acronyms and terms:
 
