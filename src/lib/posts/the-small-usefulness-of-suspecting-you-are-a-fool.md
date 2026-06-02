@@ -1,14 +1,17 @@
-the-small-usefulness-of-suspecting-you-are-a-fool.md
 ---
 title: "The Small Usefulness of Suspecting You Are a Fool"
 description: "A sharp, clean, comic essay on self-doubt, intelligence, certainty, and why the person who never questions himself is usually the fellow carrying the loudest empty tin."
 date: "2026-06-02"
+thumbnail: "/images/Compress_20260602_071422_2768.jpg"
 category: "Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Self Doubt", "Critical Thinking", "Dunning Kruger Effect", "Bengali Essay", "Calcutta Writing", "Kolkata Essay", "Indian Middle Class", "Skepticism", "Intelligence", "Human Psychology", "Cognitive Bias", "Scientific Method", "Philosophy", "Everyday Philosophy", "Humor Essay", "Personal Essay", "Readable Philosophy", "Mental Models", "Rational Thinking", "Epistemic Humility", "Life Lessons", "Clear Thinking", "Indian Society", "Bengali Middle Class", "Science And Society", "Psychology Essay", "Modern Life"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260602_071422_2768.jpg" />
 
 Acronyms and terms used in this post:
 
