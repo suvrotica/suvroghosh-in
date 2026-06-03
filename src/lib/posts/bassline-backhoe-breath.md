@@ -123,7 +123,7 @@ A society that cannot fix the drain often develops a rich philosophy of why the 
 
 And I am tired.
 
-Not poetically tired. Not the refined tiredness of a man in a novel looking at rain. I mean the plain tiredness of a 51-year-old single Bengali man in the shanty edges of Calcutta, making some precarious consulting income, with bipolar depression and anxiety sitting in the room like two unpaid tenants. The day does not begin with ambition. It begins with negotiation. Can I make tea? Can I answer that message? Can I work before the noise starts? Can I keep my temper? Can I keep my mother steady? Can I keep myself from sinking before lunch?
+Not poetically tired. Not the refined tiredness of a man in a novel looking at rain. I mean the plain tiredness of a 50-year-old single Bengali man in the shanty edges of Calcutta, making some precarious consulting income, with bipolar depression and anxiety sitting in the room like two unpaid tenants. The day does not begin with ambition. It begins with negotiation. Can I make tea? Can I answer that message? Can I work before the noise starts? Can I keep my temper? Can I keep my mother steady? Can I keep myself from sinking before lunch?
 
 Then the bass begins.
 
