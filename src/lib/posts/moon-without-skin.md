@@ -1,8 +1,8 @@
-moon-without-skin.md
 ---
 title: "Moon Without Skin"
 description: "When cancerous growths appear across the face of the moon, a retired healthcare data analyst in Kolkata notices that the first pattern is not astronomical but medical. The city looks upward, while something beneath ordinary life begins answering back."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_065220_0026.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Horror", "Science Fiction", "Kolkata", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "black"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_065220_0026.jpg" />
 
 # THIS IS A WORK OF FICTION
 
