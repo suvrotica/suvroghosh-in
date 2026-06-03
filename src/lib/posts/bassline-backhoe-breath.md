@@ -1,16 +1,17 @@
-bassline-backhoe-breath.md
 ---
 title: "Bassline, Backhoe, Breath"
 description: "A South Calcutta lane turns into a laboratory of bass, dust, roadwork, television shouting, and civic forgetfulness, while one ordinary household tries to keep breathing."
 date: "2026-01-08"
+thumbnail: "/images/Compress_20260603_080501_1072.jpg"
 category: "Personal"
 tags: ["Kolkata", "Calcutta", "South Kolkata", "South Calcutta", "Noise Pollution", "Bass Noise", "Urban Noise", "Air Pollution", "Dust Pollution", "PM2.5", "Road Construction", "Civic Failure", "Middle Class Life", "Lower Middle Class", "Bengali Essay", "Kolkata Essay", "Calcutta Essay", "Urban India", "Indian Cities", "Public Health", "Respiratory Health", "Caregiving", "Mother", "Aging Parents", "Bipolar Depression", "Anxiety", "Atheist Writing", "Personal Essay", "Urban Decay", "Civic Neglect", "Everyday India", "SuvroGhosh"]
 published: true
 color: "orange"
-thumbnail: "/images/IMG-20251210-WA0000.jpg"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_080501_1072.jpg" />
 
 Acronyms and terms:
 
