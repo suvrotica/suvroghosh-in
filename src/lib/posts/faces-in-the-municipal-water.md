@@ -1,8 +1,8 @@
-faces-in-the-municipal-water.md
 ---
 title: "Faces in the Municipal Water"
 description: "When a water-borne parasite enters Kolkata’s drinking-water network, the city begins losing the one thing even poverty, politics, and shame had left intact: the human face."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_144743_3968.jpg"
 category: "Short Fiction"
 tags: ["Horror", "Ghost Story", "Kolkata", "Water", "Parasite", "Urban Dread", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "slate"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_144743_3968.jpg" />
 
 # THIS IS A WORK OF FICTION
 
