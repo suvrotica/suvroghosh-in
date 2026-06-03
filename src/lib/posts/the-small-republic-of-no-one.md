@@ -1,19 +1,21 @@
-the-small-republic-of-no-one.md
 ---
 title: "The Small Republic of No One"
 description: "A middle-aged Calcutta essay about childhood ambition, adult invisibility, failure without fireworks, and the stubborn little dignity of still noticing the world clearly."
 date: "2026-06-03"
+thumbnail: "/photos/Compress_20260603_094652_2288.jpg"
 category: "Personal"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Middle Class", "Middle Age", "Childhood Dreams", "Adult Failure", "Loneliness", "Depression Writing", "Bipolar Depression", "Anxiety", "Lower Middle Class", "Indian Middle Class", "Life Essay", "Memoir", "Aging", "Failure", "Hope", "Disillusionment", "Readable Essays", "Personal Blog", "Suvro Ghosh"]
 published: true
 color: "slate"
 ---
 
-Acronyms and terms: None used in this post.
+
 
 <TTS />
 
----
+<Pi src="/photos/Compress_20260603_094652_2288.jpg" />
+
+
 
 When I was a child, I was absolutely certain I would become someone. I did not know who this someone was, but he was definitely not going to be a tired man in a rented Calcutta room wondering whether making tea was worth the administrative burden.
 
