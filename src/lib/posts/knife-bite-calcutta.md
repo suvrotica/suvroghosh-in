@@ -1,8 +1,8 @@
-knife-bite-calcutta.md
 ---
 title: "Knife Bite"
 description: "A Calcutta biscuit jingle begins as a small nuisance in the ear, then crawls into the eyes, the teeth, and the hunger of the city."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_105956_6470.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta Horror", "Speculative Fiction", "Body Horror", "Advertising", "Earworm"]
 published: true
@@ -10,6 +10,8 @@ color: "blood orange"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_105956_6470.jpg" />
 
 # THIS IS A WORK OF FICTION
 
