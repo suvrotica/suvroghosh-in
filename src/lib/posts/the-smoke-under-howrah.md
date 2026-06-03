@@ -1,8 +1,8 @@
-the-smoke-under-howrah.md
 ---
 title: "The Smoke Under Howrah"
 description: "When smoke begins rising from cracks near Howrah Bridge, a disgraced geologist follows the old city’s whispers down into its buried fire."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_122054_4966.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Volcano Horror", "Geological Terror", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "Ash Gray"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_122054_4966.jpg" />
 
 # THIS IS A WORK OF FICTION
 
