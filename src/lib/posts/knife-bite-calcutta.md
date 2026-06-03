@@ -21,6 +21,8 @@ It was not even a good song. That was the chief insult. Calcutta has forgiven ma
 
 The biscuit advertisement began three weeks before Rath Yatra, when the air had become a wet towel flung over the city’s face. At tea stalls, on buses, inside cheap cafés where ceiling fans stirred heat without reducing it, the jingle arrived from television screens, phone reels, mall speakers, FM radio, auto-rickshaw stickers with QR codes, and the impossible digestive system of app-based advertising.
 
+<Yt src="https://youtube.com/shorts/xEIXfxBnFi4?si=bc-KmroWgRoNhxc1" />
+
 “Khabo, khabo, aar ek bite,
 
 Mithe rosh, dudher light,
