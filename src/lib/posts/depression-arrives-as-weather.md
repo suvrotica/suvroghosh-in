@@ -1,14 +1,17 @@
-depression-arrives-as-weather.md
 ---
 title: "Depression Arrives as Weather"
 description: "A plainspoken personal essay on bipolar depression, anhedonia, and the strange private weather that turns ordinary life monochrome."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_161843_3392.jpg"
 category: "Mental Health"
 tags: ["Depression", "Bipolar Depression", "Anhedonia", "Mental Health", "Calcutta", "Kolkata", "Middle Age", "Loneliness", "Anxiety", "Mood Disorder", "Personal Essay", "Bengali Writing", "Lower Middle Class Life", "Men And Depression", "Emotional Pain", "Psychiatric Illness", "Mental Health Awareness", "Urban Loneliness", "Calcutta Essays", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260603_161843_3392.jpg" />
 
 Acronyms and terms used in this post:
 
