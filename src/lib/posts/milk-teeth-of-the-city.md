@@ -1,8 +1,8 @@
-milk-teeth-of-the-city.md
 ---
 title: "Milk Teeth of the City"
 description: "A counterfeit milk habit begins as a private shame in Calcutta and turns into a public undoing. One man’s violence becomes the first clue to a citywide regression."
 date: "2026-06-03"
+thumbnail: "/images/Compress_20260603_090627_7821.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta Horror", "Speculative Fiction", "Urban Horror", "Counterfeit Food"]
 published: true
@@ -10,6 +10,8 @@ color: "Bone White"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260603_090627_7821.jpg" />
 
 # THIS IS A WORK OF FICTION
 
