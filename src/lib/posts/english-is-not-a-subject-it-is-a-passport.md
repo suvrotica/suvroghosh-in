@@ -1,8 +1,8 @@
-english-is-not-a-subject-it-is-a-passport.md
 ---
 title: "English Is Not a Subject. It Is a Passport."
 description: "A plain-spoken Calcutta essay on why English has become more important than ever for students, workers, readers, writers, and anyone trying to survive science, commerce, software, and AI."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_072953_3744.jpg"
 category: "Education"
 tags: ["English", "English Learning", "Education", "India", "Indian Students", "Calcutta", "Kolkata", "Language Skills", "Reading Habit", "Writing Skills", "Communication Skills", "Career Growth", "Science Education", "Technology", "Artificial Intelligence", "AI", "Software", "Global Economy", "Higher Education", "Study Skills", "Competitive Exams", "Employability", "Digital Literacy", "Knowledge Economy", "Language And Thinking", "Sapir Whorf", "Bengali Students", "Middle Class India", "Self Improvement", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260604_072953_3744.jpg" />
 
 Acronyms and terms used in this post:
 
