@@ -91,7 +91,7 @@ By noon, the emergency department had received nine such cases. By two, twenty-s
 
 The official advisory called it “severe heat-related neurological deterioration.”
 
-The ward boys called it “matha jhol,” head gravy.
+The ward boys called it “mathar jhol,” head gravy.
 
 At 3:30 p.m. a power cut hit the pediatric wing for eleven minutes before the generator stabilized. Eleven minutes is brief in history, long in surgery, and endless in a room full of children whose bodies are small arguments against adult incompetence.
 
