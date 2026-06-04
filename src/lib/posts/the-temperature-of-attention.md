@@ -1,8 +1,8 @@
-the-temperature-of-attention.md
 ---
 title: "The Temperature of Attention"
 description: "During a June heat wave in Calcutta, a hospital data contractor discovers that the city’s poorest bodies are not merely dying from heat, but being edited out of consciousness itself."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_050121_1354.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Horror", "Calcutta", "Heatwave", "Speculative Fiction", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "copper"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_050121_1354.jpg" />
 
 # THIS IS A WORK OF FICTION
 
