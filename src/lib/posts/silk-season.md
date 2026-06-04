@@ -1,8 +1,8 @@
-silk-season.md
 ---
 title: "Silk Season"
 description: "After a new household pesticide turns Calcutta’s huntsman spiders into beautiful, woman-sized creatures, lonely men begin vanishing into old apartment walls. A pest-control technician who helped spread the spray must decide whether desire is a trap, a punishment, or merely the city learning a new language."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_155930_0658.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Romantic Horror", "Kolkata", "Spider Horror", "Speculative Fiction"]
 published: true
@@ -10,6 +10,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260604_155930_0658.jpg" />
 
 # THIS IS A WORK OF FICTION
 
