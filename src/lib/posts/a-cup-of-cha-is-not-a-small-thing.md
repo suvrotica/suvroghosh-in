@@ -1,14 +1,17 @@
-a-cup-of-cha-is-not-a-small-thing.md
 ---
 title: "A Cup of Cha Is Not a Small Thing"
 description: "Tea looks like a humble brown drink, but inside that cup sits China, empire, stolen plants, Bengali roadside life, colonial labor, and the merciless physics of cooling."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_065606_6517.jpg"
 category: "Essay"
 tags: ["Tea", "Cha", "Calcutta", "Kolkata", "Bengali Tea", "Roadside Cha", "History of Tea", "Tea Etymology", "Colonialism", "British Empire", "East India Company", "Robert Fortune", "Wardian Case", "Botanical Espionage", "Assam Tea", "Darjeeling Tea", "Indian Tea History", "Chinese Tea", "Camellia Sinensis", "Tea Plantation", "Porcelain", "Opium Trade", "Silver Drain", "Newton Cooling Law", "Thermodynamics", "Entropy", "Sanskrit Wisdom", "Bengali Life", "Middle Class Kolkata", "Existential Humor", "Cynical Humor", "Cultural History", "Food History", "Everyday Philosophy", "SuvroGhosh"]
 published: true
 color: "#8B5A2B"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260604_065606_6517.jpg" />
 
 Acronyms and terms:
 
