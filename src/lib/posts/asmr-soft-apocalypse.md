@@ -1,14 +1,17 @@
-asmr-soft-apocalypse.md
 ---
 title: "ASMR: The Softly Whispered Apocalypse"
 description: "A sharp, funny, street-level satire on ASMR, internet relaxation, fake profundity, loneliness, and the modern hunger for manufactured calm."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_143104_4560.jpg"
 category: "Satire"
 tags: ["ASMR", "Autonomous Sensory Meridian Response", "Internet Culture", "Digital Life", "Online Trends", "Satire", "Cultural Criticism", "Modern Loneliness", "Mental Health", "Sleep Videos", "Relaxation Content", "YouTube Culture", "Whisper Videos", "Social Media", "Boredom", "Attention Economy", "Late Capitalism", "Technology and Society", "Kolkata Blog", "Calcutta Life", "Middle Class Life", "Essay", "Humor", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260604_143104_4560.jpg" />
 
 Acronyms:
 
