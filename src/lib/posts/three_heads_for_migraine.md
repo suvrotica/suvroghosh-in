@@ -1,8 +1,8 @@
-three_heads_for_migraine.md
 ---
 title: "Three Heads for Migraine"
 description: "A new Calcutta headache medicine promises relief for the city’s splitting pain, until its cure becomes gruesomely literal. A medical consultant follows the first cases and discovers the side effect was not an accident."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_131043_3530.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Medical Horror", "Calcutta", "Kolkata", "Speculative Fiction", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "crimson"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260604_131043_3530.jpg" />
 
 # THIS IS A WORK OF FICTION
 
