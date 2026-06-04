@@ -1,8 +1,8 @@
-the-rain-in-anirbans-head.md
 ---
 title: "The Rain in Anirban’s Head"
 description: "In the boondocks of Calcutta, a failed healthcare entrepreneur’s depression rises from him as a black weather system and rains private dread over the city. What soaks everyone is not water but memory, shame, and something Calcutta has been storing for years."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_081644_4173.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Calcutta Horror", "Psychological Horror", "Speculative Fiction", "Healthcare IT"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260604_081644_4173.jpg" />
 
 # THIS IS A WORK OF FICTION
 
