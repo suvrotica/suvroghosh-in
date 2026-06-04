@@ -1,8 +1,8 @@
-the-cow-that-spoke-like-npr.md
 ---
 title: "The Cow That Spoke Like NPR"
 description: "In a rain-darkened Calcutta temple lane, a sacred cow begins speaking in immaculate American English and gently abolishes heaven. The city answers, as cities do, first with wonder, then with appetite."
 date: "2026-06-04"
+thumbnail: "/images/Compress_20260604_171552_2091.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Supernatural", "Horror", "Calcutta", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "maroon"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260604_171552_2091.jpg" />
 
 # THIS IS A WORK OF FICTION
 
