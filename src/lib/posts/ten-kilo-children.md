@@ -1,8 +1,8 @@
-ten-kilo-children.md
 ---
 title: "The Ten-Kilo Children"
 description: "In a Calcutta maternity clinic, newborns begin arriving impossibly heavy after their mothers are given a cheap prenatal vitamin. A doctor follows the pattern and discovers that hunger, once packaged, is difficult to stop."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_074511_1368.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Medical Horror", "Calcutta Horror", "Supernatural Fiction", "Body Horror", "Short Fiction"]
 published: true
@@ -10,6 +10,8 @@ color: "maroon"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_074511_1368.jpg" />
 
 # THIS IS A WORK OF FICTION
 
