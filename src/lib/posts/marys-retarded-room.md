@@ -1,17 +1,17 @@
-marys-retarded-room.md
 ---
 title: "Mary's Room, Red Mangoes, and the Poor Man's Philosophy of Color"
-thumbnail: "/images/marys-retarded-room"
 date: 2026-01-12
+thumbnail: "/images/Compress_20260605_132149_9212.jpg"
 description: "A Calcutta essay on Mary’s Room, color, consciousness, qualia, and why knowing everything about red is not the same as seeing a ripe mango split open in summer."
 category: "personal"
 tags: ["Marys Room", "Philosophy", "Consciousness", "Qualia", "Mind Body Problem", "Neuroscience", "Color Perception", "Philosophy of Mind", "Thought Experiment", "Calcutta Essay", "Kolkata Writing", "Bengali Blogger", "Personal Essay", "Atheism", "Science and Philosophy", "Human Experience", "Depression Writing", "Middle Class Life", "SuvroGhosh"]
 published: true
 color: "orange"
 ---
+
 <TTS />
 
-<Pi src="/images/marys-retarded-room" />
+<Pi src="Compress_20260605_132149_9212.jpg" />
 
 RGB: Red Green Blue, the common digital color model used by screens to mix colors from red, green, and blue light.
 
