@@ -1,8 +1,8 @@
-the-polished-ghost-of-banamali-lane.md
 ---
 title: "The Polished Ghost of Banamali Lane"
 description: "A faceless gentleman in a suit begins visiting corrupt men across Calcutta at night, leaving resignations, deaths, and a city drunk on justice. One failed writer discovers the ghost may not be hunting the people everyone thinks it is."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_062727_7107.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Ghost Story", "Kolkata", "Supernatural Horror", "Political Corruption", "SuvroGhosh"]
 published: true
@@ -10,6 +10,8 @@ color: "Midnight Blue"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_062727_7107.jpg" />
 
 # THIS IS A WORK OF FICTION
 
