@@ -1,14 +1,17 @@
-bipolar-diet-is-not-lithium.md
 ---
 title: "The Bipolar Diet Is Not Lithium"
 description: "A readable, skeptical Calcutta essay on bipolar disorder, diet, supplements, probiotics, sleep, caffeine, alcohol, mindfulness, and why cabbage cannot replace serious treatment."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_094716_6304.jpg"
 category: "Mental Health"
 tags: ["Bipolar Disorder", "Bipolar Depression", "Mania", "Hypomania", "Mood Stabilizers", "Lithium", "Mental Health", "Depression", "Anxiety", "Sleep", "Insomnia", "Caffeine", "Alcohol", "Nutrition", "Diet", "Supplements", "Omega 3", "NAC", "Magnesium", "Folate", "CoQ10", "Probiotics", "Gut Brain Axis", "Inflammation", "Mindfulness", "MBCT", "IPSRT", "Ayurveda", "Brahmi", "Jatamansi", "Evidence Based Medicine", "Psychiatry", "Kolkata", "Calcutta", "India", "Healthcare", "Patient Safety", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260605_094716_6304.jpg" />
 
 BD — Bipolar disorder, a recurrent mood illness in which a person may have depression, mania, hypomania, or mixed states.
 
