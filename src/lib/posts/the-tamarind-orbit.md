@@ -1,8 +1,8 @@
-the-tamarind-orbit.md
 ---
 title: "The Tamarind Orbit"
 description: "An alien girl pauses over Calcutta for one harmless taste of street food and finds, in fuchka water, friendship, hunger, and a reason not to return to the stars. A strange, tender science-fiction story about appetite, attention, and choosing where to belong."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_114531_1411.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Strange Science Fiction", "Tender", "Belonging"]
 published: true
@@ -10,6 +10,8 @@ color: "tamarind gold"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_114531_1411.jpg" />
 
 # THIS IS A WORK OF FICTION
 
