@@ -1,8 +1,8 @@
-the-humming-under-the-bandage.md
 ---
 title: "The Humming Under the Bandage"
 description: "An NRI family returns from Texas to Calcutta carrying a small, unnoticed horror. In the city’s heat, among stray animals, leaking drains, and old family wounds, something hungry discovers abundance."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_153151_1076.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Homecoming"]
 published: true
@@ -10,6 +10,8 @@ color: "oxblood"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_153151_1076.jpg" />
 
 # THIS IS A WORK OF FICTION
 
