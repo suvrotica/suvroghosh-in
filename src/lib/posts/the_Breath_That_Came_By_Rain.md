@@ -1,8 +1,8 @@
-The_Breath_That_Came_By_Rain.md
 ---
 title: "The Breath That Came By Rain"
 description: "In monsoon Calcutta, a small private clinic receives twelve desperate foreign patients, and a doctor discovers that the city has begun coughing in a new language."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_081913_3915.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Medical Horror", "Calcutta", "Kolkata", "Pandemic Horror", "Monsoon", "Speculative Fiction"]
 published: true
@@ -10,6 +10,8 @@ color: "dark green"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_081913_3915.jpg" />
 
 # THIS IS A WORK OF FICTION
 
