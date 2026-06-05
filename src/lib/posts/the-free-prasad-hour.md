@@ -1,8 +1,8 @@
-the-free-prasad-hour.md
 ---
 title: "The Free Prasad Hour"
 description: "In a humid Calcutta afternoon, a televised miracle gathering becomes a trap, and one woman begins to understand that crowds can be murdered like individuals. A story about spectacle, faith, poverty, and the lethal vanity of being seen."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_110848_8382.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Psychological Suspense", "Dread", "Spectacle"]
 published: true
@@ -10,6 +10,8 @@ color: "maroon"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_110848_8382.jpg" />
 
 # THIS IS A WORK OF FICTION
 
