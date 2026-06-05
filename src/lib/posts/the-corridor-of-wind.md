@@ -1,8 +1,8 @@
-the-corridor-of-wind.md
 ---
 title: "The Corridor of Wind"
 description: "When an impossible EF5 tornado tears through Calcutta, a failed weather analyst searches the wreckage for his sister and finds that the city had been warned by the dead all along."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_071217_7571.jpg"
 category: "Short Fiction"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Horror", "Calcutta", "Tornado", "Supernatural", "Urban Horror", "Ghost Story", "Disaster Fiction"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_071217_7571.jpg" />
 
 # THIS IS A WORK OF FICTION
 
