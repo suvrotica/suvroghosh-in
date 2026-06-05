@@ -1,14 +1,17 @@
-the-router-behind-the-television.md
 ---
 title: "The Router Behind the Television"
 description: "A funny, uneasy Calcutta essay on routers, weak passwords, smart devices, and the new age of automatic malware. The future does not always arrive in chrome and glass; sometimes it blinks behind the television."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_045423_3796.jpg"
 category: "Cybersecurity"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Cybersecurity", "AI Security", "Artificial Intelligence", "Autonomous Malware", "Computer Worms", "Digital Privacy", "Password Security", "MFA", "VPN", "IoT Security", "Smart Devices", "Router Security", "Home Network Security", "Android Security", "Firmware Updates", "Patch Management", "Cybercrime", "Consumer Technology", "Technology Essay", "Kolkata", "Calcutta", "Digital India", "Online Safety", "Data Security", "Personal Cybersecurity", "AI Risks", "Malware Protection", "Privacy Awareness"]
 published: true
 color: "#22C55E"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260606_045423_3796.jpg" />
 
 Acronyms used in this post:
 
