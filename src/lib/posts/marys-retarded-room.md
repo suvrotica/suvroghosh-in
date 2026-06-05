@@ -1,6 +1,6 @@
 ---
 title: "Mary's Room, Red Mangoes, and the Poor Man's Philosophy of Color"
-date: 2026-01-12
+date: "2026-01-12"
 thumbnail: "/images/Compress_20260605_132149_9212.jpg"
 description: "A Calcutta essay on Mary’s Room, color, consciousness, qualia, and why knowing everything about red is not the same as seeing a ripe mango split open in summer."
 category: "personal"
