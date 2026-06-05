@@ -1,24 +1,18 @@
-when-variety-starts-wearing-the-same-shirt.md
 ---
 title: "When Variety Starts Wearing the Same Shirt"
 description: "A Calcutta essay on cultural flattening, aspirational sameness, social media taste, and AI as the new pocket machine that may polish human variety into one smooth global surface."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_125358_8197.jpg"
 category: "Culture"
 tags: ["Culture", "Calcutta", "Kolkata", "Bengali Life", "Cultural Homogenization", "Globalization", "Artificial Intelligence", "AI", "Social Media", "Attention Economy", "Digital Culture", "Modern India", "Aspirational Class", "Middle Class India", "Consumer Culture", "Cultural Identity", "Urban Life", "Postcolonial India", "Westernization", "Smartphones", "Algorithmic Culture", "Local Culture", "Human Variety", "Technology And Society", "Online Culture", "Cultural Memory", "Digital Homogeneity", "Class Anxiety", "India And Globalization", "SuvroGhosh"]
 published: true
 color: "#6A4A2F"
 ---
+
 <TTS />
 
-Acronyms and terms:
 
-AI: Artificial Intelligence, computer systems trained on large collections of text, images, code, and other material so they can generate answers, images, summaries, predictions, and other outputs.
-
-US: United States, the country where much of today’s corporate, consumer, entertainment, software, and internet culture became industrialized and exported globally.
-
-SEO: Search Engine Optimization, the practice of making online writing easier for search engines and readers to find.
-
----
+<Pi src="Compress_20260605_125358_8197.jpg" />
 
 The problem is not English. The problem is that everybody’s life is being pushed through the same little polishing machine.
 
