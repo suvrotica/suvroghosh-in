@@ -1,14 +1,17 @@
-human-rights-oh-what-a-joke.md
 ---
 title: "Human Rights, Oh What a Joke!"
 description: "A sharp, comic, Calcutta-flavored satire on how human rights are praised in brochures, speeches, and seminars, then postponed when ordinary people actually need them."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_135601_1961.jpg"
 category: "Society"
 tags: ["Human Rights", "Civil Liberties", "Free Speech", "Right To Protest", "Democracy", "Social Justice", "Political Satire", "Bureaucracy", "Kolkata", "Calcutta", "India", "Power And Society", "Rights And Dignity", "Public Life", "State Power", "Citizen Rights", "Freedom", "Inequality", "Institutional Hypocrisy", "Satirical Essay", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260605_135601_1961.jpg" />
 
 Acronyms:
 
