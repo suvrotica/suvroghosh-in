@@ -1,14 +1,17 @@
-the-rice-cooker-and-the-black-hole.md
 ---
 title: "The Rice Cooker and the Black Hole"
 description: "A darkly comic personal essay on aging, bipolar depression, shrinking hope, Calcutta, AI, and the small stubborn act of continuing."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_165336_6854.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression Writing", "Aging", "Middle Age", "Calcutta", "Kolkata Life", "South Calcutta", "Loneliness", "Hope", "Hopelessness", "AI Anxiety", "Artificial Intelligence", "India", "America", "Trump Era", "Healthcare IT", "Single Life", "Lower Middle Class", "Urban India", "Existential Essay", "Dark Humor", "Bengali Writer", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260605_165336_6854.jpg" />
 
 Acronyms used in this post:
 
