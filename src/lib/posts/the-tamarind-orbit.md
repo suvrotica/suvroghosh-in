@@ -15,25 +15,25 @@ color: "tamarind gold"
 
 At five in the evening, when Calcutta had softened from murder to manslaughter, the fuchkawala under the broken tram wire near Deshapriya Park began his preparations with the solemnity of a temple priest and the impatience of a bus conductor.
 
-He cracked the tops of the fuchkas with his thumb. He stuffed each fragile globe with mashed potato, black salt, boiled gram, coriander, green chilli, and some private arithmetic known only to him and possibly the Reserve Bank. He dipped them in tamarind water dark enough to look like monsoon collected from drains and fragrant enough to make saints reconsider asceticism.
+He cracked the tops of the fuchkas with his thumb. He stuffed each fragile globe with mashed potato, black salt, boiled gram, coriander, green chilli, and some private arithmetic known only to him and possibly to the Reserve Bank. He dipped them in tamarind water dark enough to look like monsoon collected from drains and fragrant enough to make saints reconsider asceticism.
 
 Behind him, traffic arranged itself in layers of injury. Yellow taxis coughed. Autos barked. A man selling belts shouted, “Original leather, dada, original!” with the conviction of a politician explaining sacrifice. Two crows fought over a paper plate. A puja committee banner from last year still hung from a lamppost, advertising devotion long after the gods had gone home. Above everything, tangled wires crossed the sky like handwriting by a nervous clerk.
 
-Oishory Ghosh held her phone at arm’s length and said, “Hello, food-family, today we are exploring the most underrated fuchka near Southern Avenue, and honestly if this does not blow up then the algorithm is personally classist.”
+Mili Banerjee held her phone at arm’s length and said, “Hello, food-family, today we are exploring the most underrated fuchka near Southern Avenue, and honestly if this does not blow up then the algorithm is personally classist.”
 
-“Don’t say algorithm,” Rajeshwari said. “It sounds like tuition.”
+“Don’t say algorithm,” Piu said. “It sounds like tuition.”
 
 “It is my channel. I will say what I like.”
 
 “Our channel.”
 
-Oishory ignored this small but important legal correction. She was nineteen, wore large silver hoops, and believed visibility was a practical thing, like a ceiling fan. Without it, people suffocated. Her father had once owned a stationery shop near Lake Market. Now the shop had become a glass-fronted café selling coffee in cups the size of flowerpots, and her father sold exam guides from home while pretending he was “between locations.”
+Mili ignored this small but important legal correction. She was nineteen, wore large silver hoops, and believed visibility was a practical thing, like a ceiling fan. Without it, people suffocated. Her father had once owned a stationery shop near Lake Market. Now the shop had become a glass-fronted café selling coffee in cups the size of flowerpots, and her father sold exam guides from home while pretending he was “between locations.”
 
-Rajeshwari, her younger sister by eleven minutes and the only person who considered this a legal victory, filmed better and spoke less. She had the narrow, watchful face of someone who had learned early that rents rose faster than forgiveness. Their mother stitched fall and pico for neighborhood aunties. Their elder brother had gone to Bengaluru and sent money with the emotional warmth of a bank notification.
+Piu, also nineteen, filmed better and spoke less. She had the narrow, watchful face of someone who had learned early that rents rose faster than forgiveness. Her mother stitched fall and pico for neighborhood aunties. Her elder brother had gone to Bengaluru and sent money with the emotional warmth of a bank notification.
 
-The sisters called themselves Wayfarer Girls, though both had mostly traveled between Gariahat, Rashbehari, Golpark, and the anxious provinces of their own family.
+They called themselves Wayfarer Girls, though both had mostly traveled between Gariahat, Rashbehari, Golpark, and the anxious provinces of their own families.
 
-“Didi, give reaction after eating,” Oishory instructed Rajeshwari.
+“Didi, give reaction after eating,” Mili instructed Piu.
 
 “You eat first.”
 
@@ -47,9 +47,9 @@ At that moment, the tram wire above them hummed.
 
 This was odd because no tram had passed there for years with anything like confidence. The wire shivered. The crows stopped fighting. The fuchkawala’s brass pot trembled, and the tamarind water rose into a small, perfect dome, as if trying to leave.
 
-“Earthquake?” Rajeshwari whispered.
+“Earthquake?” Piu whispered.
 
-“In Calcutta?” Oishory said. “Then first the municipality will deny it.”
+“In Calcutta?” Mili said. “Then first the municipality will deny it.”
 
 The light changed. Not dimmed, not brightened, but became more accurate. The peeling cinema poster on the opposite wall sharpened. The paan stains on the pavement took on the clarity of geological maps. Every face at the stall looked suddenly overdeveloped, as if printed by a cruel photographer.
 
@@ -71,9 +71,9 @@ Not delicately. Not romantically. She inhaled like a drowning person discovering
 
 Her English was crisp, almost school-recitation clear, with no accent anyone could place. Not foreign exactly. More like radio signals after elocution training.
 
-Oishory’s phone was still recording. Her mouth had fallen open, a rare state in which no opinion was exiting.
+Mili’s phone was still recording. Her mouth had fallen open, a rare state in which no opinion was exiting.
 
-Rajeshwari said, because her practical instincts were stronger than her terror, “Which one?”
+Piu said, because her practical instincts were stronger than her terror, “Which one?”
 
 The girl pointed to Nirmal’s brass pot.
 
@@ -83,7 +83,7 @@ Nirmal clutched his ladle. “Tamarind water. Ten rupees five pieces. No bargain
 
 The girl came closer. The crowd expanded in the Calcutta way, not by running but by accumulating. A tea seller abandoned his kettle. A taxi driver leaned out. Three coaching-center boys appeared from nowhere, smelling of deodorant and unemployment. An old man on a balcony shouted, “Ki holo? What happened?” though he had a better view than anyone.
 
-Oishory recovered first. History, she understood dimly, had landed in front of her and was asking for snack content.
+Mili recovered first. History, she understood dimly, had landed in front of her and was asking for snack content.
 
 “Hi,” she said, turning the camera toward herself and then the girl. “We are here with—sorry, what is your name?”
 
@@ -117,27 +117,27 @@ The saucer waited.
 
 Somewhere a pressure cooker whistled in a flat, continuing domestic life against all evidence.
 
-Ila swallowed. For a moment she looked pained, and Rajeshwari reached out, afraid the girl might collapse or explode or accuse them before an intergalactic tribunal. Instead, Ila made a small sound, not quite human, not quite animal, not unlike a harmonium learning grief.
+Ila swallowed. For a moment she looked pained, and Piu reached out, afraid the girl might collapse or explode or accuse them before an intergalactic tribunal. Instead, Ila made a small sound, not quite human, not quite animal, not unlike a harmonium learning grief.
 
 “What,” Ila said slowly, “was that?”
 
-“Fuchka,” Oishory said.
+“Fuchka,” Mili said.
 
 Ila turned to Nirmal. “Again.”
 
 The second one made her grip the edge of the stall. The third made her laugh. The fourth made the streetlights flicker. By the fifth, her saucer had lowered another half meter, as if embarrassed to be associated with such behavior.
 
-Oishory whispered, “Raj, this will go viral.”
+Mili whispered, “Piu, this will go viral.”
 
-Rajeshwari did not answer. She was watching Ila’s hands. They had six fingers each.
+Piu did not answer. She was watching Ila’s hands. They had six fingers each.
 
 Nobody else seemed to have noticed. Or perhaps Calcutta had noticed and filed it under “private matter.”
 
-“Where do you have to go?” Rajeshwari asked.
+“Where do you have to go?” Piu asked.
 
 Ila ate another fuchka. “Kepler Relay. Then Spiral College. Then home before second moonrise.”
 
-“College?” Oishory said. “You are a student?”
+“College?” Mili said. “You are a student?”
 
 “Yes.”
 
@@ -153,11 +153,11 @@ Nirmal sniffed. “All classifications are insults.”
 
 This was received with approving murmurs, though nobody was certain what had been defended.
 
-A police constable arrived after seven minutes, which was impressive by cosmic standards and poor by traffic standards. He examined the saucer, Ila, the growing crowd, and Oishory’s phone.
+A police constable arrived after seven minutes, which was impressive by cosmic standards and poor by traffic standards. He examined the saucer, Ila, the growing crowd, and Mili’s phone.
 
 “Permission?” he asked.
 
-“For what?” Oishory said.
+“For what?” Mili said.
 
 “For this shooting.”
 
@@ -165,9 +165,9 @@ A police constable arrived after seven minutes, which was impressive by cosmic s
 
 “History also needs permission.”
 
-Ila leaned toward Rajeshwari. “Is he authority?”
+Ila leaned toward Piu. “Is he authority?”
 
-“Small authority,” Rajeshwari said.
+“Small authority,” Piu said.
 
 The constable heard. “What small? I am uniform.”
 
@@ -175,11 +175,11 @@ Ila looked at his khaki shirt with interest. “Your authority is stitched?”
 
 The crowd enjoyed this so much that the constable became philosophical and moved to the tea stall.
 
-Within twenty minutes, three things happened. First, Ila ate forty-seven fuchkas and showed no sign of stopping. Second, Oishory’s video, posted with shaking hands and the title ALIEN GIRL TRIES KOLKATA FUCHKA—REAL UFO??, began to spread through the city’s nervous system. Third, the saucer made a low chiming noise.
+Within twenty minutes, three things happened. First, Ila ate forty-seven fuchkas and showed no sign of stopping. Second, Mili’s video, posted with shaking hands and the title ALIEN GIRL TRIES KOLKATA FUCHKA—REAL UFO??, began to spread through the city’s nervous system. Third, the saucer made a low chiming noise.
 
 Ila froze.
 
-“What is it?” Rajeshwari asked.
+“What is it?” Piu asked.
 
 “Recall signal.”
 
@@ -191,9 +191,9 @@ She did not move.
 
 The saucer chimed again, more sharply. The blue ladder brightened.
 
-Oishory, whose mind had already decorated the future with interviews, sponsorships, and perhaps a studio light, said, “Just one more reaction shot?”
+Mili, whose mind had already decorated the future with interviews, sponsorships, and perhaps a studio light, said, “Just one more reaction shot?”
 
-Rajeshwari gave her a look.
+Piu gave her a look.
 
 “What? I am being professional.”
 
@@ -225,7 +225,7 @@ The face ignored him.
 
 Ila’s defiance flickered.
 
-Rajeshwari saw it then: under the wonder, under the appetite, Ila was frightened. Not of Calcutta. Of going back.
+Piu saw it then: under the wonder, under the appetite, Ila was frightened. Not of Calcutta. Of going back.
 
 The projection vanished. The saucer chimed a third time.
 
@@ -233,25 +233,25 @@ Ila took one step toward the ladder.
 
 The crowd groaned.
 
-Oishory grabbed Rajeshwari’s wrist. “Say something.”
+Mili grabbed Piu’s wrist. “Say something.”
 
 “You say. You like speaking.”
 
 “This is different.”
 
-Rajeshwari stepped forward. Her voice came out smaller than she wanted.
+Piu stepped forward. Her voice came out smaller than she wanted.
 
 “You can come to our house.”
 
-Oishory stared at her. “Our house?”
+Mili stared at her. “Our house?”
 
-“For tonight,” Rajeshwari said.
+“For tonight,” Piu said. “Not yours. Mine.”
 
 Ila looked at her. “You would shelter a traveler?”
 
-“Our mother shelters cousins during exams. Same thing, more or less.”
+“My mother shelters my cousin during exams. Same thing, more or less.”
 
-“It is not same,” Oishory said.
+“It is not same,” Mili said.
 
 “No. This one may be cleaner.”
 
@@ -271,9 +271,9 @@ Nirmal examined it. “This is not money.”
 
 “Can I buy rice with it?”
 
-Rajeshwari paid him fifty rupees. Nirmal accepted, offended by the discount history had given itself.
+Piu paid him fifty rupees. Nirmal accepted, offended by the discount history had given itself.
 
-They left by the lane behind the sweet shop, before news vans could arrive and transform the event into panel discussion. Oishory kept looking back at the saucer.
+They left by the lane behind the sweet shop, before news vans could arrive and transform the event into panel discussion. Mili kept looking back at the saucer.
 
 “We are making a terrible branding mistake,” she whispered.
 
@@ -281,11 +281,11 @@ They left by the lane behind the sweet shop, before news vans could arrive and t
 
 “Both can happen.”
 
-The Ghosh sisters’ home was in a damp old building off a lane where scooters slept under plastic covers and every balcony seemed to be drying either clothes, papad, or disappointment. The staircase smelled of wet cement, incense, frying onions, and the old iron smell of water stored too long. On the first-floor landing, Mrs. Dutta opened her door by two inches.
+Piu’s house was in a damp old building off a lane where scooters slept under plastic covers and every balcony seemed to be drying either clothes, papad, or disappointment. The staircase smelled of wet cement, incense, frying onions, and the old iron smell of water stored too long. On the first-floor landing, Mrs. Dutta opened her door by two inches.
 
-“Oishory? Rajeshwari? Who is this?”
+“Piu? Who is this?”
 
-“Our friend,” Rajeshwari said.
+“My friend.”
 
 “From which family?”
 
@@ -293,11 +293,11 @@ The Ghosh sisters’ home was in a damp old building off a lane where scooters s
 
 Mrs. Dutta looked Ila up and down. “These days girls wear anything.”
 
-Rajeshwari pulled Ila inside before anthropology could deepen.
+Piu pulled Ila inside before anthropology could deepen.
 
-Their mother, Shampa Ghosh, sat at the sewing machine near the window, guiding a blue sari edge under the needle. The room was small but disciplined. Steel plates shone on a rack. A calendar of a smiling god hung above an unpaid electricity bill. The fan rotated with a tired chopping sound, moving heat from one side of the room to the other like a government file.
+Her mother, Shampa, sat at the sewing machine near the window, guiding a blue sari edge under the needle. The room was small but disciplined. Steel plates shone on a rack. A calendar of a smiling god hung above an unpaid electricity bill. The fan rotated with a tired chopping sound, moving heat from one side of the room to the other like a government file.
 
-“Ma,” Rajeshwari said, “this is Ila. She will stay tonight.”
+“Ma,” Piu said, “this is Ila. She will stay tonight.”
 
 Shampa did not stop sewing. “Who is Ila?”
 
@@ -305,9 +305,9 @@ Shampa did not stop sewing. “Who is Ila?”
 
 “People have started keeping friends like parcels?”
 
-Oishory entered behind them. “Ma, actually, she is from—”
+Mili entered behind them. “Aunty, actually, she is from—”
 
-“North Bengal,” Rajeshwari said quickly.
+“North Bengal,” Piu said quickly.
 
 Ila looked curious. “Is North Bengal not near?”
 
@@ -319,9 +319,9 @@ Shampa finally looked up. Her eyes went to Ila’s tunic, her six-fingered hands
 
 “Yes,” Ila said. “Forty-seven hollows of tamarind.”
 
-Shampa turned to her daughters. “She is feverish?”
+Shampa turned to Piu. “She is feverish?”
 
-“Maybe,” Rajeshwari said.
+“Maybe.”
 
 “Give her rice.”
 
@@ -329,15 +329,15 @@ It is one of the unadvertised strengths of Bengali motherhood that even interste
 
 By nine, the city outside had become hysterical. The video had spread. News vans were indeed at Deshapriya Park. Men with microphones asked Nirmal whether he believed in aliens, whether fuchka represented Indian soft power, whether this was a conspiracy by foreign agencies, and whether he would consider franchise opportunities. Nirmal gave each question the contempt it deserved and raised his price to fifteen rupees.
 
-In the sisters’ room, the three girls sat on the floor. Ila had changed into one of Rajeshwari’s old kurtas. It fit badly at the shoulders and made her look younger.
+In Piu’s room, the three girls sat on the floor. Ila had changed into one of Piu’s old kurtas. It fit badly at the shoulders and made her look younger.
 
-Oishory was reading comments.
+Mili was reading comments.
 
 “Listen to this: ‘Fake. Good CGI.’ Arrey baba, if I could do CGI would I be standing in sweat near fuchka stall?”
 
-Rajeshwari said, “Delete the video.”
+Piu said, “Delete the video.”
 
-Oishory looked as if slapped. “Are you mad?”
+Mili looked as if slapped. “Are you mad?”
 
 “They will find her.”
 
@@ -349,15 +349,15 @@ Oishory looked as if slapped. “Are you mad?”
 
 “Our chance to what?”
 
-“To be seen.” Oishory’s voice cracked, surprising them both. “You know what happens to girls like us? We study, we make videos, we give exams, we become polite furniture. People say very talented, very sweet, then marry us to some man with a scooter loan. I don’t want to vanish in a two-bedroom flat in Barasat making tea for in-laws who think making videos is moral decline.”
+“To be seen.” Mili’s voice cracked, surprising them both. “You know what happens to girls like us? We study, we make reels, we give exams, we become polite furniture. People say very talented, very sweet, then marry us to some man with a scooter loan. I don’t want to vanish in a two-bedroom flat in Barasat making tea for in-laws who think YouTube is moral decline.”
 
 Ila listened carefully.
 
 “In my home,” she said, “children are assigned path by aptitude density. Wanderers become wanderers. Thinkers become thinkers. Those with high obedience become administrators.”
 
-“Same only,” Oishory said bitterly. “We call it career counseling.”
+“Same only,” Mili said bitterly. “We call it career counseling.”
 
-Rajeshwari reached for the phone. Oishory pulled it away.
+Piu reached for the phone. Mili pulled it away.
 
 The fan stopped.
 
@@ -367,7 +367,7 @@ The room fell into hot darkness. From outside came a rising sound: not traffic, 
 
 Shampa entered with a candle. “People are downstairs.”
 
-“For Ila?” Rajeshwari asked.
+“For Ila?” Piu asked.
 
 “For miracle,” Shampa said. “For selfie. For whatever word they are using now.”
 
@@ -383,7 +383,7 @@ From the lane below came shouting.
 
 Someone began chanting a mantra. Someone else argued that aliens were mentioned in ancient scriptures. A third person demanded proof that she was not Pakistani.
 
-Ila moved to the window, drawn by the noise. Rajeshwari stopped her.
+Ila moved to the window, drawn by the noise. Piu stopped her.
 
 “No.”
 
@@ -395,7 +395,7 @@ Ila moved to the window, drawn by the noise. Rajeshwari stopped her.
 
 “Not always.”
 
-The metal band lying on Rajeshwari’s desk lit up suddenly. Though Ila had removed it, the projected face returned, flickering against the wall.
+The metal band lying on Piu’s desk lit up suddenly. Though Ila had removed it, the projected face returned, flickering against the wall.
 
 “Signal reacquired. Local crowd density rising. Extraction required.”
 
@@ -403,11 +403,11 @@ Ila stood very still.
 
 The face continued. “You have caused contamination event. Your companions will be memory-adjusted. Local records will be corrected.”
 
-“What does that mean?” Oishory asked.
+“What does that mean?” Mili asked.
 
 Ila did not answer.
 
-Rajeshwari understood from her face. “They will make us forget.”
+Piu understood from her face. “They will make us forget.”
 
 “Not cruelly,” Ila said.
 
@@ -415,13 +415,13 @@ Rajeshwari understood from her face. “They will make us forget.”
 
 “It is standard.”
 
-Oishory laughed once, short and ugly. “Of course. Big people always have standard procedure. Police, parents, aliens—everyone has rubber stamp.”
+Mili laughed once, short and ugly. “Of course. Big people always have standard procedure. Police, parents, aliens—everyone has rubber stamp.”
 
 The band pulsed. Outside, the crowd grew louder. A stone struck the shutter of the ground-floor pharmacy.
 
 Shampa looked at the three girls and made a decision with no drama. She picked up the metal band, wrapped it in the unpaid electricity bill, and placed it inside the rice tin.
 
-“Ma!” Oishory said.
+“Ma!” Piu said.
 
 “What? They will search fancy places first.”
 
@@ -429,7 +429,7 @@ The projection vanished.
 
 Ila stared at Shampa. “You are interfering with planetary protocol.”
 
-Shampa lit another candle. “I also once interfered with your Baba’s protocol. Otherwise Oishory would have been named Pinky.”
+Shampa lit another candle. “I also once interfered with your Piu’s father’s protocol. Otherwise she would have been named Pinky.”
 
 There was no sensible reply to this.
 
@@ -443,7 +443,7 @@ A beam of pale light slipped through the window and found Ila.
 
 She began to fade.
 
-Rajeshwari grabbed her hand. It was cold and too light, like holding a bird made of glass.
+Piu grabbed her hand. It was cold and too light, like holding a bird made of glass.
 
 “I cannot stay,” Ila said.
 
@@ -453,7 +453,7 @@ Rajeshwari grabbed her hand. It was cold and too light, like holding a bird made
 
 “About what?”
 
-Ila looked at Oishory, then Rajeshwari. “I was not on a hop.”
+Ila looked at Mili, then Piu. “I was not on a hop.”
 
 The beam brightened. Her skin became translucent. Beneath it were not bones exactly but rings of light, rotating slowly.
 
@@ -463,17 +463,17 @@ From the lane below, the crowd roared as they saw the light.
 
 Ila spoke quickly. “At home I am not Ila. I am Archive Daughter 472. My family stores endings. Dead languages. Failed planets. Extinct recipes. We travel to collect last tastes before civilizations become efficient and forget why they cooked. I was sent to observe Earth’s appetite before your century changes it beyond recovery.”
 
-Oishory whispered, “Changes how?”
+Mili whispered, “Changes how?”
 
 Ila smiled sadly. “You already eat while watching yourself eat. You are beginning to prefer the image of hunger to hunger.”
 
-For once, Oishory had nothing to say.
+For once, Mili had nothing to say.
 
 “I tasted fuchka,” Ila continued, “and the archive opened inside me. Not data. Want. I had never wanted wrongly before.”
 
-The saucer’s beam pulled harder. Rajeshwari’s fingers slipped.
+The saucer’s beam pulled harder. Piu’s fingers slipped.
 
-“Come back,” Rajeshwari said.
+“Come back,” Piu said.
 
 “I cannot. But I can choose what is archived.”
 
@@ -481,29 +481,29 @@ The saucer’s beam pulled harder. Rajeshwari’s fingers slipped.
 
 Ila reached into her tunic and took out one fuchka, impossible whole, golden and dry, though it had been hours since the stall. She must have hidden it before they left.
 
-She pressed it into Rajeshwari’s palm.
+She pressed it into Piu’s palm.
 
 “Do not let them turn this into proof,” she said. “Proof is how wonder dies in committees.”
 
 Then she vanished upward in a line of light.
 
-The saucer rose without sound. For a second it hovered above the lane, and every phone below died at once. Screens went black. Batteries emptied. Recordings corrupted. Oishory’s phone gave a small pop and released a thread of smoke.
+The saucer rose without sound. For a second it hovered above the lane, and every phone below died at once. Screens went black. Batteries emptied. Recordings corrupted. Mili’s phone gave a small pop and released a thread of smoke.
 
 She stared at it, stricken.
 
 “My channel,” she said.
 
-Rajeshwari held the fuchka. It was warm.
+Piu held the fuchka. It was warm.
 
 By morning, Calcutta had already begun repairing reality with gossip.
 
 The news channels called it a promotional stunt, then a drone prank, then mass hysteria caused by heat. Experts appeared. One said weather balloons. One said adolescent attention-seeking. One said foreign hand. Nirmal denied everything until a reporter offered payment, at which point he confirmed selectively and announced Alien Special Fuchka, twenty rupees five pieces.
 
-Oishory’s video was gone. Her phone was dead. The channel lost followers after she failed to provide “Part Two.” People accused the sisters of fraud, then forgot them for a man who claimed his goat could sing Rabindrasangeet.
+Mili’s video was gone. Her phone was dead. The channel lost followers after she failed to provide “Part Two.” People accused her of fraud, then forgot her for a man who claimed his goat could sing Rabindrasangeet.
 
-For three days, Rajeshwari kept the fuchka in a steel dabba under her bed. It did not soften. It did not rot. At night, when the house quieted and the fan chopped the heat into smaller pieces, the fuchka gave off a faint smell of tamarind, black salt, rain on hot dust, and something else—cold metal, perhaps, or distance.
+For three days, Piu kept the fuchka in a steel dabba under her bed. It did not soften. It did not rot. At night, when the house quieted and the fan chopped the heat into smaller pieces, the fuchka gave off a faint smell of tamarind, black salt, rain on hot dust, and something else—cold metal, perhaps, or distance.
 
-On the fourth evening, Oishory sat beside her sister on the floor. She looked tired. Without eyeliner, her face seemed younger and more honest.
+On the fourth evening, Mili came over. She looked tired. Without eyeliner, her face seemed younger and more honest.
 
 “I deleted the backup,” she said.
 
@@ -511,27 +511,27 @@ On the fourth evening, Oishory sat beside her sister on the floor. She looked ti
 
 “I am not an amateur.”
 
-Rajeshwari waited.
+Piu waited.
 
-Oishory looked at the steel dabba. “I thought if people saw us, really saw us, then life would open. But they didn’t see us. They saw a thing to forward before dinner.”
+Mili sat on the floor. “I thought if people saw us, really saw us, then life would open. But they didn’t see us. They saw a thing to forward before dinner.”
 
-Rajeshwari opened the dabba.
+Piu opened the dabba.
 
 The fuchka sat inside, perfect and absurd.
 
-“What should we do?” Oishory asked.
+“What should we do?” Mili asked.
 
-Rajeshwari thought of Ila pulled upward, of hunger mistaken for curiosity, of the crowd below asking for blessings, exam luck, stock tips, proof. She thought of her mother hiding alien technology in a rice tin because poor households knew better than museums how to protect impossible things.
+Piu thought of Ila pulled upward, of hunger mistaken for curiosity, of the crowd below asking for blessings, exam luck, stock tips, proof. She thought of her mother hiding alien technology in a rice tin because poor households knew better than museums how to protect impossible things.
 
-“Eat it,” Rajeshwari said.
+“Eat it,” Piu said.
 
-Oishory stared. “Are you mad?”
+Mili stared. “Are you mad?”
 
 “Probably.”
 
 “What if we die?”
 
-“Then Ma will blame me.”
+“Then your mother will blame me.”
 
 “She already does.”
 
@@ -541,7 +541,7 @@ He looked at the fuchka, then at them, then at the sky.
 
 “Where did you get this?”
 
-“Old stock,” Rajeshwari said.
+“Old stock,” Piu said.
 
 “Don’t insult me.”
 
@@ -549,7 +549,7 @@ He prepared tamarind water without another word. No camera. No announcement. No 
 
 “Share,” he said.
 
-So they did. Rajeshwari bit one side, Oishory the other, and the fuchka collapsed between them, spilling tamarind down their wrists.
+So they did. Piu bit one side, Mili the other, and the fuchka collapsed between them, spilling tamarind down their wrists.
 
 For a moment nothing happened.
 
@@ -557,17 +557,17 @@ Then Calcutta became unbearably clear.
 
 They could taste every hand that had made the city: the mason’s lime, the typist’s ink, the tram conductor’s coin, the nurse’s tea gone cold, the mother watering dal, the migrant sleeping beside his toolbox, the old professor forgetting names, the child licking orange ice from a stick, the girl from the stars discovering wrong hunger under a broken tram wire. Not visions exactly. More like appetite with memory attached.
 
-Oishory began to cry.
+Mili began to cry.
 
-Rajeshwari laughed, because it was too large for crying alone.
+Piu laughed, because it was too large for crying alone.
 
 Above them, very high, where evening turned from violet to black, one star moved against the others.
 
 Nirmal noticed it too. He wiped his hands on his gamchha and looked away quickly, as if good manners applied even to the sky.
 
-Years later, when people asked why the Ghosh sisters never became famous but somehow never stopped wandering, why their small videos of tea stalls, old lanes, forgotten ponds, broken cinemas, ferry ghats, and fuchka vendors made strangers feel suddenly homesick for places they had never visited, Oishory would shrug and say, “Content strategy.”
+Years later, when people asked why Wayfarer Girls never became famous but somehow never stopped wandering, why their small videos of tea stalls, old lanes, forgotten ponds, broken cinemas, ferry ghats, and fuchka vendors made strangers feel suddenly homesick for places they had never visited, Mili would shrug and say, “Content strategy.”
 
-Rajeshwari would say nothing.
+Piu would say nothing.
 
 But every year, on the evening when heat softened from murder to manslaughter, a tall girl in a pale green tunic would appear at Nirmal’s stall just before closing. She would look a little older and not older at all. She would eat five fuchkas, pay in ordinary rupees, and listen to her two Bengali friends complain about rent, mothers, men, work, weather, and the general administrative incompetence of the universe.
 
@@ -575,9 +575,9 @@ And each year, before leaving, Ila would ask the same question.
 
 “Are you coming?”
 
-Oishory always looked at the sky first.
+Mili always looked at the sky first.
 
-Rajeshwari always looked at the city.
+Piu always looked at the city.
 
 That was how Ila knew they had not yet decided.
 
