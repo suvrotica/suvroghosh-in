@@ -1,8 +1,8 @@
-the-blue-above-chandni.md
 ---
 title: "The Blue Above Chandni"
 description: "When Calcutta begins to burn under an oddly polished sky, a spectacle-shop owner follows the trail of cataracts, dead crows, and old air-conditioner gas to a grievance nobody had thought important enough to remember."
 date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_144100_0775.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Strange Disaster", "Dread", "Grudge"]
 published: true
@@ -10,6 +10,8 @@ color: "ultraviolet"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260605_144100_0775.jpg" />
 
 # THIS IS A WORK OF FICTION
 
