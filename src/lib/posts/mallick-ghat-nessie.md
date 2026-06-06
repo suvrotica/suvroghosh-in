@@ -1,8 +1,8 @@
-mallick-ghat-nessie.md
 ---
 title: "The River Climbed the Stairs"
 description: "At Mallick Ghat on a furnace-bright morning, devotees enter the river for relief and find something older than prayer waiting below. When the thing climbs ashore, one man must decide whether the past is a wound, a warning, or a debt come due."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_052637_7382.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Heat"]
 published: true
@@ -10,6 +10,8 @@ color: "river-green"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_052637_7382.jpg" />
 
 # THIS IS A WORK OF FICTION
 
