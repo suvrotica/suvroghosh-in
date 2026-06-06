@@ -1,8 +1,8 @@
-the-belly-wall.md
 ---
 title: "The Belly Wall"
 description: "After a chemical spill near a Calcutta canal, something old and small grows monstrously large, and the city’s respectable bellies become warm nests."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_053211_1558.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Body Horror"]
 published: true
@@ -10,6 +10,8 @@ color: "sickly green"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260606_053211_1558.jpg" />
 
 # THIS IS A WORK OF FICTION
 
