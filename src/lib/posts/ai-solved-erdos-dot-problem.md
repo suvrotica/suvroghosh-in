@@ -1,14 +1,17 @@
-ai-solved-erdos-dot-problem.md
 ---
 title: "AI, Erdős, and the Great Dot Mischief"
 description: "A plain-language Calcutta-friendly explanation of how AI made a serious breakthrough on Paul Erdős’s unit distance problem, and why it matters without turning mathematics into temple smoke."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_154743_3738.jpg"
 category: "Science"
 tags: ["AI", "Artificial Intelligence", "Erdos Problem", "Paul Erdos", "Unit Distance Problem", "Mathematics", "Math Explained Simply", "OpenAI", "Discrete Geometry", "Combinatorial Geometry", "Algebraic Number Theory", "Machine Learning", "Reasoning Models", "AI Research", "Science Writing", "Popular Science", "Mathematical Discovery", "Human And AI Collaboration", "Calcutta Blog", "Kolkata Writing", "Bengali Reader", "SuvroGhosh"]
 published: true
 color: "charcoal"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260606_154743_3738.jpg" />
 
 Acronyms and terms:
 
