@@ -1,14 +1,17 @@
-folded-arms-and-other-small-national-disasters.md
 ---
 title: "Folded Arms and Other Small National Disasters"
 description: "A sharp, comic essay on the smug folded-arms posture, petty authority, Indian social theater, and the little chest-fortresses people build when competence has quietly left the room."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_183950_0378.jpg"
 category: "Satire"
 tags: ["Satire", "Indian Satire", "Kolkata Essay", "Calcutta Life", "Bengali Writing", "Bengali Humor", "Social Commentary", "Body Language", "Folded Arms", "Arms Crossed", "Smug Posture", "Indian Masculinity", "Petty Authority", "Bureaucracy", "Middle Class India", "Apartment Politics", "Tea Stall Culture", "Colonial Hangover", "Everyday India", "Urban India", "Kolkata Middle Class", "Indian Society", "Observational Humor", "Comic Essay", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "#4A342E"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260606_183950_0378.jpg" />
 
 Acronyms and terms used in this post:
 
