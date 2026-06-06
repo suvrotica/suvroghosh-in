@@ -1,8 +1,8 @@
-the-bride-price-of-salt.md
 ---
 title: "The Bride Price of Salt"
 description: "At a Calcutta wedding feast, a seafood restaurant serves oysters bought cheap from a drain by the landfill. By morning, the city has taken back more than anyone ordered."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_193206_6725.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Class Anxiety"]
 published: true
@@ -10,6 +10,8 @@ color: "#4B5D53"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260606_193206_6725.jpg" />
 
 # THIS IS A WORK OF FICTION
 
