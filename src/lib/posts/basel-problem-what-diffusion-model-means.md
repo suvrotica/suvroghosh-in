@@ -1,14 +1,17 @@
-basel-problem-what-diffusion-model-means.md
 ---
 title: "What a Diffusion Model Is, and Why Pi Sneaks Into the Hospital"
 description: "A plain-English explanation of biological diffusion models and why the Basel problem identity helps keep them properly normalized. The point is simple: the model must not accidentally create or destroy drug, oxygen, dye, heat, or signal before the story even begins."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_174301_1039.jpg"
 category: "Science"
 tags: ["Basel Problem", "Pi Squared Over Six", "Diffusion Model", "Biological Diffusion", "Biomedical Mathematics", "Medical Mathematics", "Mathematical Biology", "Healthcare AI", "Diffusion MRI", "MRI Physics", "Pharmacokinetics", "Drug Transport", "Oxygen Transport", "Contrast Dye", "Heat Transfer", "Signal Analysis", "Fourier Series", "Infinite Series", "Normalization", "Partial Differential Equations", "Biomedical Engineering", "Applied Mathematics", "Science Explained", "Math Explained Simply", "Calcutta Science Writing", "Kolkata Blog", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260606_174301_1039.jpg" />
 
 Acronyms used in this post:
 
