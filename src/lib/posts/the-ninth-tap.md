@@ -1,8 +1,8 @@
-the-ninth-tap.md
 ---
 title: "The Ninth Tap"
 description: "When Delhi’s drinking water begins to smell faintly of drains, a widower in a government colony notices that the complaints, the deaths, and the water itself are following an older map."
 date: "2026-06-06"
+thumbnail: "/images/Compress_20260606_204352_2237.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Public Failure"]
 published: true
@@ -10,6 +10,8 @@ color: "slate"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260606_204352_2237.jpg" />
 
 # THIS IS A WORK OF FICTION
 
