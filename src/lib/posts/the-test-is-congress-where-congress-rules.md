@@ -1,14 +1,17 @@
-the-test-is-congress-where-congress-rules.md
 ---
 title: "The Test Is Congress Where Congress Rules"
 description: "A skeptical but sympathetic essay on Rahul Gandhi, Congress, corruption, and why democracy cannot depend on one good man or one famous family."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_102539_9599.jpg"
 category: "Politics"
 tags: ["India Politics", "Rahul Gandhi", "Indian National Congress", "Congress Party", "Indian Democracy", "Constitution of India", "Corruption in India", "Political Reform", "Electoral Reform", "Anti Defection Law", "Karnataka Politics", "Telangana Politics", "Himachal Pradesh Politics", "Dynasty Politics", "Party Democracy", "Constitutional Reform", "Voter Power", "Common Man", "Political Accountability", "Indian Opposition", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260607_102539_9599.jpg" />
 
 Acronyms expanded and explained:
 
