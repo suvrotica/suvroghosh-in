@@ -1,8 +1,8 @@
-settled-water.md
 ---
 title: "Settled Water"
 description: "In a rain-soaked Calcutta lane, dengue begins choosing its victims with a private and impossible cruelty: it kills only those who have recently become happy."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_073554_4430.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Medical Horror", "Slow Dread", "Happiness"]
 published: true
@@ -10,6 +10,8 @@ color: "green"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_073554_4430.jpg" />
 
 # THIS IS A WORK OF FICTION
 
