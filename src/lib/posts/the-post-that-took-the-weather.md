@@ -1,8 +1,8 @@
-the-post-that-took-the-weather.md
 ---
 title: "The Post That Took the Weather"
 description: "A bankrupt middle-aged Bengali writes honestly about bipolar weather on his little blog, and strangers begin to recover. Then Calcutta starts asking what, exactly, has been cured—and where it has gone."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_070937_7811.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Illness"]
 published: true
@@ -10,6 +10,8 @@ color: "Slate Gray"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_070937_7811.jpg" />
 
 # THIS IS A WORK OF FICTION
 
