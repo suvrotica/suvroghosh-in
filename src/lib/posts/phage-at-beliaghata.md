@@ -1,8 +1,8 @@
-phage-at-beliaghata.md
 ---
 title: "Phage at Beliaghata"
 description: "A Bengali doctoral researcher studying antibiotic resistance wakes to find his body replaced by something older, smaller, and hungry. In a damp Calcutta lane, his private grief becomes a living cure with a price."
 date: "2026-06-08"
+thumbnail: "/images/Compress_20260608_045909_9124.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Science Horror", "Dread", "Antibiotic Resistance"]
 published: true
@@ -10,6 +10,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260608_045909_9124.jpg" />
 
 # THIS IS A WORK OF FICTION
 
