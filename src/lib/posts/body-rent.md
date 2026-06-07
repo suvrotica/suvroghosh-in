@@ -1,8 +1,8 @@
-body-rent.md
 ---
 title: "Body Rent"
 description: "A bankrupt middle-aged Bengali in the southern edge of Calcutta begins to suspect his rented room is not enclosing him but becoming him. As rent, shame, illness, and neighborhood gossip tighten around his life, he discovers what the city has been collecting from its discarded men."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_131646_6816.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Claustrophobic", "Body"]
 published: true
@@ -10,6 +10,8 @@ color: "Charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_131646_6816.jpg" />
 
 # THIS IS A WORK OF FICTION
 
