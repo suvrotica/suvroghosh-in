@@ -60,43 +60,53 @@
 	const coreSkills: SkillGroup[] = [
 		{
 			category: 'Healthcare Interoperability',
-			items: 'HL7, FHIR R4/R5, HIE architecture, EHR/EMR integration, clinical data exchange, identity, consent, provenance, audit, terminology mapping'
+			items:
+				'HL7, FHIR R4/R5, HIE architecture, EHR/EMR integration, clinical data exchange, identity, consent, provenance, audit, terminology mapping'
 		},
 		{
 			category: 'Healthcare Data Standards',
-			items: 'ICD-9/10/11, CPT, CDISC, SDTM, clinical research data structures, registry data, laboratory, pharmacy, inpatient and outpatient datasets'
+			items:
+				'ICD-9/10/11, CPT, CDISC, SDTM, clinical research data structures, registry data, laboratory, pharmacy, inpatient and outpatient datasets'
 		},
 		{
 			category: 'Clinical Data Architecture',
-			items: 'Healthcare data modeling, relational and dimensional modeling, data dictionaries, data quality, normalization, denormalization, semantic mapping'
+			items:
+				'Healthcare data modeling, relational and dimensional modeling, data dictionaries, data quality, normalization, denormalization, semantic mapping'
 		},
 		{
 			category: 'Data Engineering',
-			items: 'SQL Server, SSIS, ETL pipelines, data warehousing, reporting databases, multi-source reconciliation, legacy data migration'
+			items:
+				'SQL Server, SSIS, ETL pipelines, data warehousing, reporting databases, multi-source reconciliation, legacy data migration'
 		},
 		{
 			category: 'Analytics & Research',
-			items: 'SAS, SPSS, SQL analytics, clinical research datasets, chronic disease studies, nephrology, diabetes, ESRD, outcomes research'
+			items:
+				'SAS, SPSS, SQL analytics, clinical research datasets, chronic disease studies, nephrology, diabetes, ESRD, outcomes research'
 		},
 		{
 			category: 'Clinical Trials Technology',
-			items: 'CTMS, CDMS, EDC, eCRF design, edit checks, validation logic, database lock, protocol-driven data collection'
+			items:
+				'CTMS, CDMS, EDC, eCRF design, edit checks, validation logic, database lock, protocol-driven data collection'
 		},
 		{
 			category: 'Applied AI Data Readiness',
-			items: 'Healthcare AI workflow analysis, RAG concepts, vector databases, data substrate evaluation, structured knowledge representation, tool-calling concepts'
+			items:
+				'Healthcare AI workflow analysis, RAG concepts, vector databases, data substrate evaluation, structured knowledge representation, tool-calling concepts'
 		},
 		{
 			category: 'Programming & Databases',
-			items: 'SQL, C, C++, VBA, Perl, MS Access, MySQL, MUMPS-derived data, reporting automation'
+			items:
+				'SQL, C, C++, VBA, Perl, MS Access, MySQL, MUMPS-derived data, reporting automation'
 		},
 		{
 			category: 'Systems & Architecture',
-			items: 'SaaS architecture, distributed systems concepts, data governance, workflow modeling, integration strategy, technical documentation'
+			items:
+				'SaaS architecture, distributed systems concepts, data governance, workflow modeling, integration strategy, technical documentation'
 		},
 		{
 			category: 'Leadership & Consulting',
-			items: 'Technical founder, stakeholder coordination, requirements analysis, implementation planning, training, client communication, architecture strategy'
+			items:
+				'Technical founder, stakeholder coordination, requirements analysis, implementation planning, training, client communication, architecture strategy'
 		}
 	];
 
@@ -234,30 +244,34 @@
 		'Healthcare IT training for clinical, administrative, and vendor teams'
 	];
 
-	const recommendedCertifications = [
-		'HL7 FHIR proficiency / practical FHIR implementation portfolio',
-		'CPHIMS or CAHIMS for healthcare IT credibility',
-		'PMP or PRINCE2 Foundation for project-delivery roles',
-		'Microsoft PL-300 / Power BI portfolio for healthcare analytics',
-		'HIPAA, GDPR, ISO 27001 Foundation, or ISC2 CC for privacy/security adjacency'
+	const professionalDevelopment = [
+		'Practical FHIR R4/R5 implementation examples and healthcare interoperability portfolio',
+		'ABDM, HIE, EHR/EMR integration, consent, identity, provenance, audit, and terminology workflows',
+		'Healthcare SQL data modeling, ETL, data-quality review, and reporting/dashboard prototypes',
+		'Healthcare AI data-readiness: workflow mapping, data-substrate review, and risk-aware implementation planning',
+		'Privacy, security, and governance awareness for healthcare data environments, including HIPAA, GDPR, and ISO 27001 concepts'
 	];
 
 	const marketFit = [
 		{
 			region: 'Gulf',
-			fit: 'Strong fit for UAE, Saudi Arabia, Qatar, Kuwait, and regional healthcare modernization programs needing senior EHR, HIE, data, interoperability, and implementation experience.'
+			fit:
+				'Strong fit for UAE, Saudi Arabia, Qatar, Kuwait, and regional healthcare modernization programs needing senior EHR, HIE, data, interoperability, and implementation experience.'
 		},
 		{
 			region: 'India',
-			fit: 'Strong fit for ABDM, FHIR, healthtech, hospital digitization, clinical data, and implementation consulting without visa friction.'
+			fit:
+				'Strong fit for ABDM, FHIR, healthtech, hospital digitization, clinical data, and implementation consulting without visa friction.'
 		},
 		{
 			region: 'Remote International',
-			fit: 'Strong fit for contract work with healthtech vendors needing SQL, FHIR, healthcare data modeling, clinical workflow, and interoperability support.'
+			fit:
+				'Strong fit for contract work with healthtech vendors needing SQL, FHIR, healthcare data modeling, clinical workflow, and interoperability support.'
 		},
 		{
 			region: 'U.S. / U.K. / EU',
-			fit: 'Best pursued through remote, vendor, consulting, or specialist interoperability roles rather than generic relocation-first job searches.'
+			fit:
+				'Best pursued through remote, vendor, consulting, or specialist interoperability roles rather than generic relocation-first job searches.'
 		}
 	];
 </script>
@@ -445,16 +459,16 @@
 
 		<div class="card">
 			<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-				Credential Roadmap
+				Professional Development Focus
 			</h3>
 
 			<p class="mb-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-				Current focus areas for international healthcare IT, interoperability, analytics, and digital health credibility:
+				Current focus areas for strengthening international healthcare IT, interoperability, analytics, and digital health consulting work:
 			</p>
 
 			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-				{#each recommendedCertifications as certification}
-					<li class="leading-relaxed">• {certification}</li>
+				{#each professionalDevelopment as item}
+					<li class="leading-relaxed">• {item}</li>
 				{/each}
 			</ul>
 		</div>
