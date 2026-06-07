@@ -1,8 +1,8 @@
-the-second-rain.md
 ---
 title: "The Second Rain"
 description: "When two impossible cloudbursts strike Calcutta within three hours, a bookbinder tries to reach his daughter through a city filling like a locked room. The water brings back not only bodies, but names the living had taught themselves not to hear."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_164005_5829.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Flood"]
 published: true
@@ -10,6 +10,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_164005_5829.jpg" />
 
 # THIS IS A WORK OF FICTION
 
