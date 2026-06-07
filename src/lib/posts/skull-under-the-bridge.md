@@ -1,8 +1,8 @@
-skull-under-the-bridge.md
 ---
 title: "The Skull Under the Bridge"
 description: "When a maintenance painter on Howrah Bridge notices bone-white threads clinging to the old steel, he thinks first of rust, then neglect, then hunger. By evening, Calcutta learns what has been living beneath its most familiar crossing."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_135747_7487.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Creature Horror", "Dread", "Survival"]
 published: true
@@ -10,6 +10,8 @@ color: "bone-white"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_135747_7487.jpg" />
 
 # THIS IS A WORK OF FICTION
 
