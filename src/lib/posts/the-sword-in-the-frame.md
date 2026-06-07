@@ -1,8 +1,8 @@
-the-sword-in-the-frame.md
 ---
 title: "The Sword in the Frame"
 description: "A middle-aged Bengali man in North Calcutta takes up an old blade against impossible reptiles, only to discover the battlefield is stranger than madness. The city, the monsters, and his own face begin to repeat."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_161730_0686.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Strange Fiction", "Dread", "Identity"]
 published: true
@@ -10,6 +10,8 @@ color: "charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_161730_0686.jpg" />
 
 # THIS IS A WORK OF FICTION
 
