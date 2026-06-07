@@ -1,8 +1,8 @@
-north-facing-room.md
 ---
 title: "The North-Facing Room"
 description: "During a June heat wave, a solar storm knocks Calcutta dark, and a decent man in a sealed apartment block must decide whom he can save. What moves through the dead wires may be weather, memory, or something older than electricity."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_123944_4675.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Heat Dread", "Moral Choice"]
 published: true
@@ -10,6 +10,8 @@ color: "ember"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_123944_4675.jpg" />
 
 # THIS IS A WORK OF FICTION
 
