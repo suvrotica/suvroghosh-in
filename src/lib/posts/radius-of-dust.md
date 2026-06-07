@@ -1,8 +1,8 @@
-radius-of-dust.md
 ---
 title: "The Radius of Dust"
 description: "In a crumbling Calcutta flat, a lonely proofreader discovers that his depression has begun to age the objects around him. As the decay spreads outward, he must choose between hiding from the city and entering the grief that has been waiting inside his own house."
 date: "2026-06-07"
+thumbnail: "/images/Compress_20260607_062600_0744.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Melancholy", "Grief"]
 published: true
@@ -10,6 +10,8 @@ color: "Charcoal"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260607_062600_0744.jpg" />
 
 # THIS IS A WORK OF FICTION
 
