@@ -1,18 +1,19 @@
-father-samarendra-kumar-ghosh-bikrampur-rangoon-naihati-sinthi.md
 ---
 title: "My Father, Samarendra Kumar Ghosh, and the Family That Came Home with a Few Clothes"
 description: "A personal essay on Samarendra Kumar Ghosh, his discipline, his generous faith, and a Bengali family line that travelled from Bikrampur to Rangoon, Naihati, and Sinthi through war, work, loss, and memory."
 date: "2026-06-08"
+thumbnail: "/photos/Compress_20260608_083349_9832.jpg"
 category: "Personal Essay"
 tags: ["Samarendra Kumar Ghosh", "Ghosh Family History", "Bengali Family History", "Bikrampur", "Dhaka", "Rangoon", "Yangon", "Naihati", "Sinthi", "North Kolkata", "Bengal Migration", "Second World War", "Burmese Bengalis", "Bengali Diaspora", "Partition Era Memories", "Kolkata Memoir", "Calcutta Memoir", "Father And Son", "Indian Family History", "Oral History", "Ancestral Memory", "Lower Middle Class Bengal", "Bengali Atheist", "Bengali Personal Essay", "Family Lineage", "Migration Story", "Kolkata Writing", "SuvroGhosh"]
 published: true
 color: "amber"
 ---
+
 <TTS />
 
-Acronyms used: None.
+<Pi src="/photos/Compress_20260608_083349_9832.jpg" />
 
----
+
 
 My father, Samarendra Kumar Ghosh, was not the sort of man who needed a motivational poster behind him. He would have found the poster unnecessary, probably badly printed, and morally suspicious if bought at full price.
 
