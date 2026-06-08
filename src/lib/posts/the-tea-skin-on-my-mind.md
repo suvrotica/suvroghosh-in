@@ -1,9 +1,8 @@
-the-tea-skin-on-my-mind.md
 ---
 title: "The Tea Skin on My Mind"
 description: "A Kolkata personal essay on overthinking, solitude, procrastination, emotional exhaustion, and the strange comedy of not quite belonging anywhere."
 date: "2026-06-08"
-thumbnail: "/images/tea-skin-on-my-mind.jpg"
+thumbnail: "/images/Compress_20260608_122432_2859.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Kolkata Essay", "Calcutta Life", "Bengali Writing", "Middle Age", "Mental Health", "Bipolar Depression", "Anxiety", "Solitude", "Loneliness", "Overthinking", "Procrastination", "Attention", "Self Doubt", "Not Belonging", "Lower Middle Class Life", "Urban India", "Indian Middle Class", "Existential Humor", "Dark Humor", "Memoir", "Autobiographical Essay", "Readable Nonfiction", "Human Psychology", "Modern Loneliness", "SuvroGhosh"]
 published: true
@@ -18,7 +17,7 @@ LinkedIn — A professional networking site where everyone appears employed, pol
 
 <TTS />
 
-<Pi src="/images/tea-skin-on-my-mind.jpg" />
+<Pi src="/images/Compress_20260608_122432_2859.jpg" />
 
 ---
 
