@@ -1,9 +1,8 @@
-pest-department-in-my-skull.md
 ---
 title: "The Pest Department in My Skull"
 description: "A comic and uneasy Calcutta essay about cockroaches, bureaucracy, bad metaphors, and the private danger of calling human behavior pest-like."
 date: "2026-06-08"
-thumbnail: "/images/pest-department-in-my-skull.png"
+thumbnail: "/images/Compress_20260608_134536_6914.jpg"
 category: "Personal Essay"
 tags: ["Kolkata", "Calcutta", "Bengali Essay", "Indian Society", "India", "Bureaucracy", "Satire", "Personal Essay", "Middle Class India", "Urban India", "Cockroach", "Metaphor", "Language", "Human Behavior", "Civic Life", "Queue Culture", "Corruption", "Loneliness", "Mental Health Writing", "Bipolar Depression", "Lower Middle Class Life", "Social Commentary", "Everyday India", "Dark Humor", "Clean Satire", "SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "#7a4a2a"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260608_134536_6914.jpg" />
 
 Acronyms and notes:
 
