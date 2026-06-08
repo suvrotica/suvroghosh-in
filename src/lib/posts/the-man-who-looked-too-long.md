@@ -1,9 +1,8 @@
-the-man-who-looked-too-long.md
 ---
 title: "The Man Who Looked Too Long"
 description: "In a damp North Calcutta lane, a failed physics graduate returns with a pair of strange spectacles and a talent for making people suffer without touching them."
 date: "2026-06-08"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260608_113614_4700.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Resentment"]
 published: true
@@ -12,7 +11,7 @@ color: "charcoal"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260608_113614_4700.jpg" />
 
 # THIS IS A WORK OF FICTION
 
