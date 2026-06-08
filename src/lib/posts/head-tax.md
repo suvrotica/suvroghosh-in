@@ -1,9 +1,8 @@
-head-tax.md
 ---
 title: "Head Tax"
 description: "In a rain-sour Calcutta lane, a butcher begins offering cheap medical cures to people who cannot afford doctors. A woman looking for help for her mother discovers that the city has a frightening way of accepting whatever reduces pain."
 date: "2026-06-08"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260608_105719_9912.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Medical Debt"]
 published: true
@@ -12,7 +11,7 @@ color: "maroon"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260608_105719_9912.jpg" />
 
 # THIS IS A WORK OF FICTION
 
