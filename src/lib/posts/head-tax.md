@@ -23,7 +23,7 @@ It lay on a wooden block beside coriander, green chilies, a cracked weighing sca
 
 Rina Sen moved aside, clutching her mother’s prescription and the cotton bag containing two brinjals, one papaya, and the sort of cauliflower that looked like it had survived a court case.
 
-The butcher’s name was Gobindo Pal, but everyone called him Gobu. He was large without being fat, with a neck like a temple pillar and eyes that never settled on the same object for more than a second. His white apron had gone the color of old election walls. On the shelf behind him hung cleavers in descending size, like a family portrait arranged by temper.
+The butcher’s name was Gobindo Pal, but everyone called him Gobu. He was large and fat, without a neck and eyes that never settled on the same object for more than a second. His black sando had gone the color of old election walls. On the shelf behind him hung cleavers in descending size, like a family portrait arranged by temper.
 
 “I am not here for meat,” Rina said.
 
