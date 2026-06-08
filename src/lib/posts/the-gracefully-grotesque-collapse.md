@@ -1,14 +1,17 @@
-the-gracefully-grotesque-collapse.md
 ---
 title: "The Gracefully Grotesque Collapse"
 description: "A darkly comic Calcutta essay on the crooked human body, the vanity of uprightness, and the ridiculous dignity of surviving while bent out of shape."
 date: "2026-06-08"
+thumbnail: "/images/Compress_20260608_092416_6561.jpg"
 category: "Essay"
 tags: ["Essay", "Calcutta Writing", "Kolkata Essay", "Dark Humor", "Existential Humor", "Human Body", "Spine", "Back Pain", "Evolution", "Nietzsche", "Quasimodo", "Richard III", "Middle Class Life", "Bengali Essay", "Satirical Prose", "Philosophy", "Aging", "Body And Mind", "Personal Essay", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
 <TTS />
+
+<Pi src="Compress_20260608_092416_6561.jpg" />
 
 Acronyms and terms:
 
