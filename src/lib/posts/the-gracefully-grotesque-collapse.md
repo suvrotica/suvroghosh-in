@@ -37,7 +37,7 @@ You bend to enter the auto. You bend to avoid the hanging wire. You bend to pick
 
 And then comes the grander bending. For family. For money. For work. For respectability. For landlords. For clients who pay late but speak early. For relatives who think your life is one long software update. For society, that great auntie with a handbag, always watching from the balcony.
 
-The original phrase was grotesque, yes: bending over backwards on the hunched humps of humping hunchbacks. A mad sentence. A sentence wearing too many ornaments and sweating in them. But underneath the noise was a useful little animal. It was saying: look at us. Look at what we call living. We are all stacked on each other’s burdens, leaning on somebody’s deformity, making music out of discomfort, then calling the result civilization.
+The original phrase in my mind was grotesque, yes: bending over backwards on the hunched humps of humping hunchbacks. A mad sentence. A sentence wearing too many ornaments and sweating in them. But underneath the noise was a useful little animal. It was saying: look at us. Look at what we call living. We are all stacked on each other’s burdens, leaning on somebody’s deformity, making music out of discomfort, then calling the result civilization.
 
 The body is not a temple. I have never liked that phrase. A temple suggests clean stone, bells, incense, symmetry, some caretaker with a broom. The body is more like an old rental flat near the edge of the city. One window jams. One tap coughs. The wiring is mysterious. The ceiling has a stain shaped like Indonesia. Something smells slightly damp in the monsoon. Still, you live there, because where else will you go?
 
