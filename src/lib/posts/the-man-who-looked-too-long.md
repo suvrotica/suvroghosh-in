@@ -41,7 +41,7 @@ She turned.
 
 Anirban stood under the paan shop awning, wearing his new spectacles.
 
-New, though they looked old-fashioned: thick black frame, round lenses, the sort a serious Bengali boy might wear in a college photograph before disappointing everyone. His hair had grown too long at the back. He had lost weight. The collar of his shirt curled outward with the exhausted dignity of failed laundry.
+New, though they looked old-fashioned: thick black frame, round lenses, the sort a serious Bengali boy might wear in a college photograph before disappointing everyone. His head almost bald. He had lost weight. The collar of his shirt curled outward with the exhausted dignity of failed laundry.
 
 “When did you come?” she asked.
 
