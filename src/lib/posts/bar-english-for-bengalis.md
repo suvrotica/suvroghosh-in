@@ -103,7 +103,25 @@ Take them where you find them.
 
 Now comes the martini family, where words begin wearing monocles.
 
-A “dry” martini has less vermouth. A “wet” martini has more vermouth. An “extra dry” martini may contain so little vermouth that the bartender merely waves the vermouth bottle near the glass, like a priest blessing a bus before a dangerous journey.
+A “dry” martini has less vermouth. A “wet” martini has more vermouth. An “extra dry” martini may contain so little vermouth that the bartender merely waves the vermouth bottle near the glass, like a priest blessing a bus before a dangerous journey. Vermouth is wine that has been strengthened and flavored.
+
+More precisely: it is a fortified aromatized wine.
+
+Fortified means extra alcohol has been added, usually a neutral grape spirit.
+
+Aromatized means it has been flavored with herbs, roots, bark, flowers, spices, citrus peel, and botanicals. One of the old classic ingredients was wormwood, which is where the name comes from: the German word Wermut means wormwood.
+
+It is not a spirit like whiskey, gin, or vodka. It begins as wine.
+
+There are two common broad types:
+
+Sweet vermouth is usually reddish-brown, richer, slightly bitter-sweet, and used in drinks like a Manhattan or Negroni.
+
+Dry vermouth is pale, lighter, sharper, and used in martinis.
+
+In a martini, gin or vodka is the strong base. Vermouth is the herbal-wine seasoning. Too much and it becomes softer, wetter, more wine-like. Too little and you are basically drinking chilled gin while pretending a herb garden was consulted.
+
+Think of vermouth as the kasundi of certain cocktails: not the main food, but without it the thing loses its intended bite.
 
 A “dirty” martini contains olive brine.
 
@@ -231,6 +249,4 @@ Drink water.
 
 And leave before your stomach forms a union.
 
-P.S. References:
 
-Alcohol proof, ABV, and the difference between the American and older British proof systems are based on standard alcohol-labeling history and measurement references, including the modern U.S. definition of proof as twice ABV and the old British proof system where 100 proof was about 57.15% ABV. The old gunpowder “proof” origin and later hydrometer-based measurement are part of the historical background of spirit taxation and alcohol regulation.
