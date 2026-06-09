@@ -1,9 +1,8 @@
-the_banyans_under_ballygunge.md
 ---
 title: "The Banyans Under Ballygunge"
 description: "A grieving botanist plants shade trees along Calcutta’s broken pavements, hoping to cool the city that took his wife. When entire lanes begin sinking into root-darkness, he must learn what kind of shade he has made."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_093627_7182.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Grief"]
 published: true
@@ -12,7 +11,7 @@ color: "Green"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_093627_7182.jpg" />
 
 # THIS IS A WORK OF FICTION
 
