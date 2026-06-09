@@ -1,9 +1,8 @@
-greed-made-me-small.md
 ---
 title: "Greed Made Me Small"
 description: "A darkly comic Calcutta essay about greed, selfishness, fear, withdrawal, and the slow shrinking of a middle-aged man who has been scraped too often by people with polished manners and small appetites."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_123507_7458.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Writing", "Middle Age", "Loneliness", "Depression", "Anxiety", "Bipolar Depression", "Social Criticism", "Greed", "Selfishness", "Superficial People", "Trust Issues", "Emotional Exhaustion", "Urban India", "Lower Middle Class Life", "Mental Health Writing", "Dark Humor", "Satirical Essay", "Indian Society", "Kolkata Bengali", "Human Behavior", "Cynicism", "Withdrawal", "Fear of People", "SuvroGhosh"]
 published: true
@@ -12,11 +11,9 @@ color: "brown"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_123507_7458.jpg" />
 
-Acronyms: None used in this post.
 
----
 
 The tea had made that brown ring again inside the cup, the kind of ring that looks less like tea and more like a small municipal waterbody after three committees, two councillors, and one failed beautification scheme have finished with it.
 
