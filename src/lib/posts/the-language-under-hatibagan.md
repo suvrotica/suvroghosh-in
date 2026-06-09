@@ -1,9 +1,8 @@
-the-language-under-hatibagan.md
 ---
 title: "The Language Under Hatibagan"
 description: "When a man's head opens in a crowded Calcutta crossing and something inside begins speaking, a failed teacher must decide whether to protect a stranger, expose a lie, or listen to the city’s oldest debt."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_105104_4133.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Strange Horror", "Slow Dread", "Memory"]
 published: true
@@ -12,7 +11,7 @@ color: "charcoal"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_105104_4133.jpg" />
 
 # THIS IS A WORK OF FICTION
 
