@@ -1,9 +1,8 @@
-the-dry-drowning.md
 ---
 title: "The Dry Drowning"
 description: "A luxury apartment in Calcutta traps the monsoon inside imported tanks, and the water begins listening through the pipes. When residents start drowning in dry rooms, a caretaker must open what the building was designed to hide."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_092518_8609.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Gentrification"]
 published: true
@@ -12,7 +11,7 @@ color: "slate"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_092518_8609.jpg" />
 
 # THIS IS A WORK OF FICTION
 
