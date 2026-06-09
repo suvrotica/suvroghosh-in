@@ -1,9 +1,8 @@
-the-mothers-of-tangra.md
 ---
 title: "The Mothers of Tangra"
 description: "A cheap-protein factory near Tangra begins producing meat that remembers too much. When one worker hears her dead mother’s voice from a vat, hunger becomes a family matter."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_083528_8762.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Biological Horror", "Dread", "Hunger"]
 published: true
@@ -12,7 +11,7 @@ color: "maroon"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_083528_8762.jpg" />
 
 # THIS IS A WORK OF FICTION
 
