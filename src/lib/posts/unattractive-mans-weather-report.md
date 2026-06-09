@@ -9,17 +9,11 @@ published: true
 color: "slate"
 ---
 
-Acronyms used in this post:
 
-TTS — Text-to-Speech, a small site feature that lets the post be read aloud.
-
-SEO — Search Engine Optimization, the practical craft of helping readers and search engines find a piece of writing without making the writing sound like a detergent advertisement.
-
-<TTS />
 
 <Pi src="Compress_20260609_184824_4565.jpg" />
 
----
+
 
 There is a kind of male unattractiveness that does not enter the room with thunder, lightning, and a violin section. It comes in quietly, like damp on a wall. One day you are not handsome, but still serviceable, like a decent old ceiling fan. Then, after some years of failed invoices, bad sleep, dental decline, and trousers bought under protest, you discover you have become socially invisible without receiving any official notice from the municipality.
 
