@@ -1,9 +1,8 @@
-the-pond-that-breathed.md
 ---
 title: "The Pond That Breathed"
 description: "A municipal mosquito worker in Calcutta discovers that the city’s oldest enemy has been remade in a hidden pond. As the swarm rises, his private grief becomes the bait."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_080959_9483.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Science Horror", "Dread", "Grief"]
 published: true
@@ -12,7 +11,7 @@ color: "green"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_080959_9483.jpg" />
 
 # THIS IS A WORK OF FICTION
 
