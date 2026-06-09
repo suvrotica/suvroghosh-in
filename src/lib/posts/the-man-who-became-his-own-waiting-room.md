@@ -1,9 +1,8 @@
-the-man-who-became-his-own-waiting-room.md
 ---
 title: "The Man Who Became His Own Waiting Room"
 description: "A personal essay about a middle-aged Bengali man in the southern fringe of Calcutta waiting for work, money, health, love, and dignity to return, until waiting itself becomes the life."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_113206_6041.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Middle Class", "Bengali Personal Writing", "Depression Essay", "Bipolar Depression", "Anxiety", "Loneliness", "Middle Age", "Unemployment", "Financial Anxiety", "Single Life", "Divorced Life", "Lower Middle Class Life", "South Calcutta", "Calcutta Suburbs", "Mental Health Writing", "Suspended Animation", "Waiting For Life", "Existential Essay", "Urban Loneliness", "Indian Middle Class", "Bengali Man", "Life Restart", "Personal Struggle", "Consulting Life", "Dignity", "Shame", "Hope", "SuvroGhosh"]
 published: true
@@ -12,11 +11,9 @@ color: "slate"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_113206_6041.jpg" />
 
-Acronyms used in this post: None.
 
----
 
 Waiting is harmless only when it has a chair, a fan, and a known ending.
 
