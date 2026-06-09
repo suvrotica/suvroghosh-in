@@ -1,9 +1,8 @@
-rain-before-rain.md
 ---
 title: "Rain Before Rain"
 description: "A billionaire’s private resurrection park near the wetlands promises extinct Bengal as entertainment. When the animals begin to remember a country before people mattered, a woman hired to keep them calm must decide what should stay buried."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_085848_8252.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Prehistory"]
 published: true
@@ -12,7 +11,7 @@ color: "Moss Green"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_085848_8252.jpg" />
 
 # THIS IS A WORK OF FICTION
 
