@@ -1,9 +1,8 @@
-black-reservoir.md
 ---
 title: "The Black Reservoir"
 description: "A lonely Calcutta geneticist breeds fish to cleanse a poisoned municipal reservoir, but the creatures learn to breathe, climb, and remember the human hunger that made them."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_082228_8378.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Strange Fiction", "Dread", "Pollution"]
 published: true
@@ -12,7 +11,7 @@ color: "black"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_082228_8378.jpg" />
 
 # THIS IS A WORK OF FICTION
 
