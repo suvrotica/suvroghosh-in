@@ -1,9 +1,8 @@
-the-heap-that-remembered.md
 ---
 title: "The Heap That Remembered"
 description: "At the edge of Calcutta, a clerk overseeing a contractor’s miracle garbage cure finds that the city’s waste is not being destroyed. It is being judged."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_100753_3619.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Science Horror", "Slow Dread", "Memory"]
 published: true
@@ -12,7 +11,7 @@ color: "#4D4030"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_100753_3619.jpg" />
 
 # THIS IS A WORK OF FICTION
 
