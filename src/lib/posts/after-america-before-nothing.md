@@ -1,9 +1,8 @@
-after-america-before-nothing.md
 ---
 title: "After America, Before Nothing"
 description: "A personal essay about returning from serious healthcare IT work in America to a small rented Calcutta life, where old competence begins to feel like an expired passport."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_175314_4056.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Suvro Ghosh", "Calcutta", "Kolkata", "America", "USA", "Return Migration", "Bengali Life", "Middle Age", "Lower Middle Class", "Healthcare IT", "Health Data", "Hospital Systems", "VA Data", "NIH Studies", "Clinical Data", "Data Pipelines", "Professional Decline", "Downward Mobility", "Bipolar Depression", "Anxiety", "Unpaid Consulting", "Work and Dignity", "Loneliness", "Personal Essay", "Indian Middle Class", "Kolkata Life", "South Calcutta", "Career Loss", "After America", "Competence", "Modern India", "Bengali Essay", "SuvroGhosh.IN"]
 published: true
@@ -12,7 +11,7 @@ color: "slate"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_175314_4056.jpg" />
 
 Acronyms used: IT means Information Technology, the broad world of computers, software, data, systems, and the human mess glued around them. NIH means National Institutes of Health, the major American federal agency that supports biomedical research. VA means Veterans Affairs, the American healthcare system for military veterans. SQL means Structured Query Language, the standard language used to query and manage relational databases.
 
