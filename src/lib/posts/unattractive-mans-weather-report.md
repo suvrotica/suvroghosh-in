@@ -1,9 +1,8 @@
-unattractive-mans-weather-report.md
 ---
 title: "The Unattractive Man’s Weather Report"
 description: "A personal essay on middle-aged male unattractiveness as a whole weather system of money, teeth, clothes, posture, loneliness, fatigue, status, and vanished confidence."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_184824_4565.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Middle Age", "Male Loneliness", "Male Depression", "Bengali Essay", "Calcutta Essay", "Kolkata Life", "Lower Middle Class", "Single Man", "Aging Men", "Male Insecurity", "Romantic Irrelevance", "Social Status", "Financial Ruin", "Dental Decay", "Self Image", "Mental Health Writing", "Depression Essay", "Loneliness Essay", "Bipolar Depression", "Class Anxiety", "Urban Loneliness", "Unattractive Man", "Modern Masculinity", "Life After Fifty", "Human Condition", "Autobiographical Essay", "SuvroGhosh"]
 published: true
@@ -18,7 +17,7 @@ SEO — Search Engine Optimization, the practical craft of helping readers and s
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_184824_4565.jpg" />
 
 ---
 
