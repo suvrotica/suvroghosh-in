@@ -1,9 +1,8 @@
-the-gut-of-god.md
 ---
 title: "The Gut of God"
 description: "A proud Calcutta godman turns shame into sacrament and commerce into contagion. One grocery clerk follows the smell back to its source."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_150923_3785.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Satirical Dread", "Faith and Contagion"]
 published: true
@@ -12,7 +11,7 @@ color: "Ochre"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_150923_3785.jpg" />
 
 # THIS IS A WORK OF FICTION
 
