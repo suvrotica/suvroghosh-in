@@ -1,9 +1,8 @@
-the-men-who-became-water.md
 ---
 title: "The Men Who Became Water"
 description: "During a murderous Calcutta heat wave, a decent man sells cheap cooling patches to survive, until sweat wakes something inside the gel. Soon the city’s skin begins to turn clear."
 date: "2026-06-09"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260609_095409_9999.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Science Horror", "Heat Dread", "Survival"]
 published: true
@@ -12,7 +11,7 @@ color: "blue"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260609_095409_9999.jpg" />
 
 # THIS IS A WORK OF FICTION
 
