@@ -107,7 +107,7 @@ But there was one useful habit I picked up there.
 
 A thing had to work.
 
-Not spiritually work. Not symbolically work. Not work because some uncle said his grandfather’s neighbour once used it and survived until ninety-two. Work in the plain boring sense. Show the result. Measure the claim. Test the mechanism. Fix the leak. Count the dead. Count the cost. Compare before and after.
+Not spiritually work. Not symbolically work. Not work because some uncle said his grandfather’s neighbour once used it and survived until ninety-two. Work in the plain boring sense. Show the result. Measure the claim. Test the mechanism. Fix the leak. Count the dead. Count the cost. Compare before and after. This is why Trump is temporary, he doesn't add up.
 
 Here, too often, we do the opposite. We begin with pride and work backward until reality becomes inconvenient.
 
