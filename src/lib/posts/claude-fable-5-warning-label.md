@@ -1,9 +1,8 @@
-claude-fable-5-warning-label.md
 ---
 title: "Claude Fable 5, Mythos in a Muzzle, and the Poor Man’s Future"
 description: "Claude Fable 5 is not just marketing incense, but neither is it a machine god descending with clean feet. It looks like a real capability jump, carefully throttled, expensively packaged, and aimed straight at the nervous stomach of modern work."
 date: "2026-06-10"
-thumbnail: "/images/claude-fable-5-warning-label.jpg"
+thumbnail: "/images/Compress_20260610_100245_5058.jpg"
 category: "AI"
 tags: ["AI", "Artificial Intelligence", "Claude Fable 5", "Claude Mythos 5", "Anthropic", "Generative AI", "Frontier AI", "AI Agents", "Agentic AI", "Cybersecurity AI", "AI Safety", "AI Hype", "AI Jobs", "Future of Work", "Technology Essay", "Calcutta Blog", "Kolkata Writer", "Bengali Essay", "Middle Class India", "SuvroGhosh"]
 published: true
@@ -24,7 +23,7 @@ IPO: Initial Public Offering, the moment a private company sells shares to the p
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_100245_5058.jpg" />
 
 ---
 
