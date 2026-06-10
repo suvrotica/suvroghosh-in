@@ -1,9 +1,8 @@
-local-disgrace-still-making-noise.md
 ---
 title: "The Local Disgrace Still Making Noise"
 description: "A sharper, cleaner, more readable Calcutta monologue about being called useless, strange, obscene, and failed by a society that forgives cruelty more easily than oddness."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_135723_3467.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta", "Kolkata", "Bengali Writing", "Middle Age", "Lower Middle Class", "Mental Health", "Bipolar Disorder", "Depression", "Anxiety", "Loneliness", "Social Shame", "Social Satire", "Indian Society", "Urban Life", "Class Anxiety", "Failure", "Respectability Politics", "Atheist Writing", "Dark Humor", "Rant Essay", "Monologue", "Memoir", "Creative Nonfiction", "Human Condition", "Modern Life", "South Calcutta"]
 published: true
@@ -15,7 +14,7 @@ Acronyms and terms:
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_135723_3467.jpg" />
 
 
 
