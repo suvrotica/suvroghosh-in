@@ -1,9 +1,8 @@
-depressive-mind-government-office-after-rain.md
 ---
 title: "The Damp Government Office Inside My Head"
 description: "A personal essay on depression, rumination, regret, and the absurd inner bureaucracy that keeps stamping old pain as if paperwork could repair a life."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_060140_0665.jpg"
 category: "Personal Essay"
 tags: ["Depression", "Rumination", "Mental Health", "Bipolar Depression", "Anxiety", "Kolkata", "Calcutta", "Middle Age", "Loneliness", "Lower Middle Class Life", "Personal Essay", "Indian Mental Health", "Bengali Writer", "Regret", "Overthinking", "Emotional Survival", "Urban Loneliness", "Boondocks Life", "Psychological Essay", "Life After Failure", "Aging Alone", "Dignity", "Shame", "Resilience", "SuvroGhosh"]
 published: true
@@ -20,7 +19,7 @@ SEO: Search Engine Optimization, the practice of making a post easier for search
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_060140_0665.jpg" />
 
 The depressive mind is not silent. Silence would be respectable. Silence would be a closed shop on a Sunday afternoon, shutter down, dust floating peacefully in a shaft of light, one lazy dog sleeping under the tea stall bench as if he has solved capitalism.
 
