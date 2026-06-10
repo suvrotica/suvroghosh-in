@@ -1,9 +1,8 @@
-i-could-have-been-a-simple-fool.md
 ---
 title: "I Could Have Been a Simple Fool"
 description: "A sharp Calcutta essay on doubt, obedience, poverty, propaganda, corruption, political spectacle, and the small personal misfortune of being unable to call sewage incense."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_153519_9316.jpg"
 category: "Personal Essay"
 tags: ["India", "Calcutta", "Kolkata", "Bengali Essay", "Middle Class India", "Lower Middle Class Life", "Political Satire", "Indian Society", "Corruption", "Propaganda", "Religion And Politics", "Democracy", "Civic Anger", "Atheism", "Bipolar Depression", "Mental Health Writing", "Social Criticism", "Personal Essay", "Indian Politics", "Working Class India", "Urban India", "SuvroGhosh"]
 published: true
@@ -16,7 +15,7 @@ SUV — Sport Utility Vehicle, the large high-clearance car beloved by men who b
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_153519_9316.jpg" />
 
 ---
 
