@@ -1,9 +1,8 @@
-badly-lit-municipality-of-myself.md
 ---
 title: "The Badly Lit Municipality of Myself"
 description: "A Calcutta essay about living on the rough southern edge of the city, where bad drainage, broken roads, poverty, depression, and middle-aged survival begin to resemble one another too closely."
 date: "2026-06-10"
-thumbnail: "/images/badly-lit-municipality-of-myself.png"
+thumbnail: "/images/Compress_20260610_074741_1755.jpg"
 category: "Personal Essay"
 tags: ["Calcutta", "Kolkata", "South Kolkata", "Southern Fringe", "Bengali Essay", "Personal Essay", "Middle Age", "Lower Middle Class Life", "Depression", "Bipolar Depression", "Anxiety", "Urban Decay", "City Life", "Kolkata Drainage", "Bad Infrastructure", "Poverty", "Survival", "Loneliness", "Single Man", "Bengali Life", "Calcutta Memoir", "Urban India", "Mental Health", "SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "#4A4A4A"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_074741_1755.jpg" />
 
 LED: Light-emitting diode, the little modern light that now flickers over pharmacies, lanes, tea stalls, and human despair with equal democratic enthusiasm.
 
