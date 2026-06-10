@@ -39,7 +39,7 @@ This is the modern bachelor sound.
 
 Plastic lid. White steam. One red light. One switch. One man on a mattress pretending that this arrangement is temporary, though the room has begun to suspect otherwise.
 
-The rice cooker sits on the floor beside a laptop charger, a coil of wire, two unpaid bills, one damp towel, and a smell that cannot be honestly blamed on the municipality. It coughs steam like a clerk in a government office who has sinus trouble and knows your file is missing but will not say so.
+The rice cooker sits sometimes on the shabby unkempt kitchen counter and more frequently these days on the floor beside a laptop charger, a coil of wire, two unpaid bills, one damp towel, and a smell that cannot be honestly blamed on the municipality. It coughs steam like a clerk in a government office who has sinus trouble and knows your file is missing but will not say so.
 
 That is solitude.
 
