@@ -1,9 +1,8 @@
-courage-to-be-disliked-in-calcutta.md
 ---
 title: "The Courage to Be Disliked in a Sweating Calcutta Room"
 description: "A sharp, funny, personal essay on social approval, rejection, anxiety, Adlerian psychology, social media, and the ancient fear of being cast out."
 date: "2026-06-10"
-thumbnail: "/images/courage-to-be-disliked-calcutta.png"
+thumbnail: "/images/Compress_20260610_180715_5488.jpg"
 category: "Psychology"
 tags: ["Psychology", "Mental Health", "Anxiety", "Social Approval", "Rejection", "Self Respect", "Authenticity", "Alfred Adler", "Adlerian Psychology", "Evolutionary Psychology", "Social Media", "WhatsApp", "Facebook", "YouTube", "Loneliness", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "South Calcutta", "Bipolar Depression", "Modern Life", "Digital Anxiety", "Self Help", "Personal Essay", "Humor Essay", "SuvroGhosh"]
 published: true
@@ -12,13 +11,9 @@ color: "slate"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_180715_5488.jpg" />
 
-Search Engine Optimization [SEO, the practical craft of making a post easier for search engines and readers to find]
 
-Equated Monthly Instalment [EMI, the fixed monthly payment people make on loans, usually accompanied by a small private collapse of the soul]
-
----
 
 The first symptom of wanting approval is not philosophical. It is not a noble sorrow wearing a shawl and quoting poetry near Rabindra Sarobar. It is much smaller and more insulting. A bead of sweat slips down your spine in a rented South Calcutta room, the ceiling fan turns like it has lost interest in democracy, your underwear sticks to you with the confidence of a government file, and your phone glows in your hand like a tiny crematorium for self-respect.
 
