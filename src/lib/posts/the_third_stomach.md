@@ -1,6 +1,6 @@
 ---
 title: "The Third Stomach"
-description: "At a small Calcutta temple, a caretaker discovers that a holy man's miracle has begun to grow teeth, horns, and a hunger older than prayer."
+description: "At a small Calcutta temple a caretaker discovers that a holy man's miracle has begun to grow teeth, horns, and a hunger older than prayer."
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_205242_2401.jpg"
 category: "Short Fiction"
