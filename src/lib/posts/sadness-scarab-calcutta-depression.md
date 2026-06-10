@@ -1,9 +1,8 @@
-sadness-scarab-calcutta-depression.md
 ---
 title: "The Scarab Under the Skin"
 description: "A Calcutta essay on sadness that does not behave like sadness, but arrives as bodily irritation, bipolar anger, memory, heat, shame, and the strange private electricity of depression."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_173505_5897.jpg"
 category: "Mental Health"
 tags: ["Mental Health", "Depression", "Bipolar Disorder", "Bipolar Depression", "Anxiety", "Irritability", "Anger", "Depressive Rage", "Mood Disorder", "Executive Dysfunction", "Loneliness", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "Single Man", "Urban Loneliness", "Indian Mental Health", "Mental Health India", "Personal Essay", "Memoir Essay", "SuvroGhosh"]
 published: true
@@ -20,7 +19,7 @@ PFC: Prefrontal Cortex, the front part of the brain that helps with judgment, re
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_173505_5897.jpg" />
 
 ---
 
