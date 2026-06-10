@@ -1,9 +1,8 @@
-the-former-bright-boy-problem.md
 ---
 title: "The Former Bright Boy Problem"
 description: "A satirical Calcutta essay about old ranks, damp certificates, gifted-child residue, failed adulthood, bipolar depression, and the rude discovery that intelligence is useful but not sufficient."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_081233_3516.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta Essay", "Kolkata Writing", "Bengali Middle Class", "Gifted Child", "Former Bright Boy", "Bipolar Depression", "Midlife Failure", "Indian Education System", "Joint Entrance", "Jadavpur University", "St Xaviers Kolkata", "Cossipore", "Park Street", "Lower Middle Class Life", "Mental Health Writing", "Satirical Essay", "Indian Middle Class", "Memoir", "Autobiographical Essay", "Social Satire", "Education Pressure", "Career Failure", "Life After America", "Healthcare IT", "SuvroGhosh"]
 published: true
@@ -14,7 +13,7 @@ Acronyms used in this post: WWA — WWA Cossipore English School, the school whe
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_081233_3516.jpg" />
 
 ---
 
