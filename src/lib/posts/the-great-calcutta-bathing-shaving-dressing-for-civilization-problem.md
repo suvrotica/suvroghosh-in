@@ -1,24 +1,20 @@
-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.md
 ---
 title: "The Great Calcutta Bathing, Shaving, Dressing for Civilization Problem"
 description: "A painfully honest Calcutta essay about depression, bathing, shaving, dressing, body shame, executive dysfunction, and the small daily collapse that cheerful people mistake for laziness."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_092705_5403.jpg"
 category: "Personal Essay"
 tags: ["Depression", "Mental Health", "Bipolar Depression", "Anxiety", "Executive Dysfunction", "Bathing and Depression", "Shaving and Depression", "Dressing and Depression", "Body Shame", "Male Depression", "Middle Age", "Calcutta Life", "Kolkata Life", "South Calcutta", "Lower Middle Class Life", "Single Man", "Loneliness", "Heat", "Humidity", "Daily Survival", "Personal Essay", "Indian Mental Health", "Bengali Essay", "SuvroGhosh"]
 published: true
 color: "#334155"
 ---
 
-Acronyms used in this post:
-
-US — United States, the country where I studied and worked for many years before returning to Calcutta.
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_092705_5403.jpg" />
 
----
+
 
 The bucket is not an object. It is an accusation with a handle.
 
