@@ -1,9 +1,8 @@
-vamana-and-the-three-steps-of-bankruptcy.md
 ---
 title: "Vamana and the Three Steps of Bankruptcy"
 description: "A Calcutta essay on how tiny expenses turn into cosmic humiliations. Rent, medicine, dental work, laptop repair, and unpaid bills become the three steps by which bankruptcy measures a man."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_200636_6399.jpg"
 category: "Personal Essay"
 tags: ["Vamana", "King Bali", "Bankruptcy", "Calcutta Life", "Kolkata Essay", "Middle Class India", "Lower Middle Class", "Financial Anxiety", "Debt", "Rent", "Medicine", "Dental Pain", "Laptop Repair", "Dignity", "Bipolar Depression", "Anxiety", "Personal Essay", "Indian Mythology", "Mythology Essay", "Everyday Poverty", "Urban India", "South Calcutta", "Bengali Life", "Mental Health Essay", "Economic Humiliation", "SuvroGhosh"]
 published: true
@@ -13,9 +12,9 @@ color: "brown"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_200636_6399.jpg" />
 
----
+
 
 Bankruptcy does not knock like a villain. It does not arrive wearing black robes, twirling a moustache, and announcing, “Prepare to surrender your dignity by Thursday.” It comes as a small thing. A polite thing. A dwarf thing.
 
