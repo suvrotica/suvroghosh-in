@@ -1,9 +1,8 @@
-faces-for-ashtami.md
 ---
 title: "Faces for Ashtami"
 description: "Before Durga Puja, a Bengali scientist grows Triassic creatures with human faces and human instincts. Calcutta receives them first as rumor, then as appetite."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_164136_6970.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Festival Dread", "Human Instinct"]
 published: true
@@ -12,7 +11,7 @@ color: "maroon"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_164136_6970.jpg" />
 
 # THIS IS A WORK OF FICTION
 
