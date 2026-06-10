@@ -111,7 +111,7 @@ This is how one survives, perhaps. Not by victory. Not by transformation. Not by
 
 Pod mara gechhe does not vanish.
 
-It sits there, of course. Heavy, comic, rude, and strangely loyal. It has been with me through American winters, Calcutta summers, hospital corridors, rented rooms, failed plans, bright beginnings, bad endings, and mornings when the mirror seemed like hostile evidence.
+It sits there, of course. Heavy, comic, rude, and strangely loyal. It has been with me since I first heard the invective as a college student, many times in those years, then in JU, through American winters, Calcutta summers as a returnee, hospital corridors, rented rooms, failed plans, bright beginnings, bad endings, and mornings when the mirror seemed like hostile evidence.
 
 But now I know its trick.
 
