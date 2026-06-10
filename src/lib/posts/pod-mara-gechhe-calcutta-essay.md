@@ -1,9 +1,8 @@
-pod-mara-gechhe-calcutta-essay.md
 ---
 title: "Pod Mara Gechhe: A Calcutta Weather Report From the Lower End of the Soul"
 description: "A darkly comic Calcutta essay on depression, bodily discomfort, middle-aged loneliness, Bengali overthinking, and the private comedy of continuing to exist with a rice cooker, a laptop, and unpaid bills."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_110032_2690.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta Essay", "Kolkata Essay", "Bengali Life", "Middle Age", "Depression", "Anxiety", "Bipolar Depression", "Executive Dysfunction", "Loneliness", "Single Man", "Lower Middle Class", "South Calcutta", "Kolkata Summer", "Bengali Humor", "Dark Humor", "Existential Comedy", "Mental Health Writing", "Urban India", "Indian Middle Class", "Personal Blog", "SuvroGhosh"]
 published: true
@@ -12,11 +11,9 @@ color: "amber"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_110032_2690.jpg" />
 
-Acronyms: None.
 
----
 
 Some days the soul does not break. It simply sits down, removes its chappals, scratches itself gloomily, and refuses to get up.
 
