@@ -1,9 +1,8 @@
-the-rice-cooker-kind-of-solitude.md
 ---
 title: "The Rice Cooker Kind of Solitude"
 description: "A middle-aged Bengali man in a small rented room on the southern edge of Calcutta discovers that solitude is not spiritual, poetic, or noble. It is rice, heat, unpaid bills, a ceiling fan, and the giant invisible noise of not being necessary to anyone’s day."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_083746_6111.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Writing", "Middle Age", "Solitude", "Loneliness", "Single Man", "Lower Middle Class", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Urban Loneliness", "South Calcutta", "Rented Room", "Rice Cooker", "Heat", "Indian Life", "Bengali Middle Class", "Personal Blog", "Literary Essay", "Social Commentary", "SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "slate"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_083746_6111.jpg" />
 
 Acronyms used in this post:
 
