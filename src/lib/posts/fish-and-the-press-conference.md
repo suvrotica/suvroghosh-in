@@ -1,22 +1,21 @@
-fish-and-the-press-conference.md
 ---
 title: "I Like Fish, But I Refuse to Worship Rot"
 description: "A Calcutta essay on superstition, nationalism, poverty, failed public reasoning, and the strange national habit of putting garlands on decay."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_192137_7295.jpg"
 category: "Society"
 tags: ["India", "Calcutta", "Kolkata", "Bengali Essay", "Indian Society", "Social Satire", "Political Satire", "Atheism", "Rationalism", "Superstition", "Pseudoscience", "Nationalism", "Poverty", "Middle Class India", "Lower Middle Class Life", "Public Reason", "Science And Society", "Urban India", "Civic Life", "Sanitation", "Corruption", "Everyday India", "Social Commentary", "SuvroGhosh"]
 published: true
 color: "#6B3F2A"
 ---
 
-Acronyms: None used.
+
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_192137_7295.jpg" />
 
----
+
 
 I like fish, which is already a dangerous confession in Bengal because immediately someone will ask which fish, and then the whole matter becomes a civil war with mustard oil. Hilsa people look down on rohu people. Rohu people pretend not to care. Pabda people behave like quiet aristocrats. Catla arrives like a fat uncle at a wedding and occupies the plate without apology.
 
