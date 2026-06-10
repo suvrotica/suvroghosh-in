@@ -1,9 +1,8 @@
-anger-the-last-working-appliance.md
 ---
 title: "Anger: The Last Working Appliance"
 description: "A personal essay on bipolar depression, irritability, and the strange survival value of anger when the rest of the mind has gone numb."
 date: "2026-06-10"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260610_161354_4273.jpg"
 category: "Personal Essay"
 tags: ["Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression Essay", "Anger", "Irritability", "Agitated Depression", "Executive Dysfunction", "Middle Age", "Calcutta Life", "Kolkata Essay", "Bengali Life", "Lower Middle Class", "Loneliness", "Anxiety", "Men And Mental Health", "Personal Essay", "Dark Humor", "Survival", "Emotional Numbness", "SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "gray"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260610_161354_4273.jpg" />
 
 
 
