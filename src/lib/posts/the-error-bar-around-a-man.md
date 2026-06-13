@@ -2,6 +2,7 @@
 title: "The Error Bar Around a Man"
 description: "A personal science essay about depression, bankruptcy, loneliness, social judgment, and why no human life should be reduced to one cruel number."
 date: "2026-06-12"
+thumbnail: "/images/Compress_20260613_140717_7011.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Depression", "Bipolar Disorder", "Mental Health", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "Unemployment", "Bankruptcy", "Loneliness", "Science Writing", "Statistics", "Error Bar", "Uncertainty", "Self Worth", "Aging", "Lower Middle Class", "Anhedonia", "Social Judgment", "Healthcare", "Data", "SuvroGhosh"]
 published: true
@@ -12,7 +13,7 @@ Acronyms used: CT means computed tomography, a medical scan that builds cross-se
 
 <TTS />
 
-
+<Pi src="Compress_20260613_140717_7011.jpg" />
 
 ---
 
