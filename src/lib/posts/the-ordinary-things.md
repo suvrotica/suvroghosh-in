@@ -1,28 +1,21 @@
-the-ordinary-things.md
 ---
 title: "The Ordinary Things"
 description: "A middle-aged Bengali man in the boondocks of Calcutta writes about books, bad tea, depression, memory, science, shame, and why ordinary things may be the last honest republic left."
 date: "2026-06-13"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260613_174427_7792.jpg"
 category: "Personal Essay"
 tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta", "Kolkata", "Bengali Writing", "Middle Age", "Lower Middle Class Life", "Depression", "Bipolar Disorder", "Anxiety", "Books", "Reading", "Writing", "Science", "Atheism", "Memory", "Ordinary Life", "Loneliness", "Creative Writing", "Satire", "Humor Essay", "Indian Society", "South Calcutta", "Boondocks", "Modern Culture", "Attention Economy", "Social Media", "Algorithms", "Reality", "Curiosity", "Human Condition", "Everyday Philosophy"]
 published: true
 color: "brown"
 ---
 
-Acronyms used in this post:
 
-SEO: Search Engine Optimization, the dull but necessary art of helping search engines understand what a page is about.
-
-TTS: Text-to-Speech, the audio-reading feature used by the website.
-
-Pi: Page image, the optional visual image component used in the website layout.
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260613_174427_7792.jpg" />
 
----
+
 
 Yesterday’s tea has a smell that knows too much.
 
