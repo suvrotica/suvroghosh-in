@@ -2,6 +2,7 @@
 title: "The Laugh Track Has Left The Room"
 description: "A personal essay on comedy, depression, anhedonia, aging, and the strange humiliation of seeing where the joke is while no longer being able to laugh."
 date: "2026-06-12"
+thumbnail: "/images/Compress_20260613_125634_4509.jpg"
 category: "Personal Essay"
 tags: ["Mental Health", "Depression", "Anhedonia", "Comedy", "Laughter", "Bengali Essay", "Calcutta Life", "Kolkata Writing", "Middle Age", "Loneliness", "Bipolar Depression", "Personal Essay", "Neuroscience", "Attention", "Everyday Philosophy", "Dark Humor", "Existential Comedy", "Indian Middle Class", "Urban Loneliness", "Emotional Numbness", "Aging", "Self Reflection", "Readable Nonfiction", "SuvroGhosh"]
 published: true
@@ -10,7 +11,7 @@ color: "charcoal"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_125634_4509.jpg" />
 
 The laugh track comes out of the laptop like someone shaking a tin box full of old buttons, and I sit there in my Calcutta room, one knee folded under me, tea going cold, the ceiling fan making its heroic but frankly limited contribution to civilization, watching some man on screen trip over a sofa and become internationally hilarious.
 
