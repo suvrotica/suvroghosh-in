@@ -2,6 +2,7 @@
 title: "Highly Composite Mornings, Prime Afternoons"
 description: "A Calcutta essay on bipolar mood, Ramanujan, highly composite numbers, prime numbers, and the strange arithmetic by which a mind becomes crowded or unreachable."
 date: "2026-06-11"
+thumbnail: "/images/Compress_20260613_132518_8802.jpg"
 category: "Personal Essay"
 tags: ["SuvroGhosh", "Mental Health Essay", "Bipolar Disorder", "Depression", "Mania", "Ramanujan", "Srinivasa Ramanujan", "Highly Composite Numbers", "Prime Numbers", "Mathematics Essay", "Science Writing", "Calcutta Essay", "Kolkata Writing", "South Calcutta", "Middle Age", "Loneliness", "Lower Middle Class Life", "Personal Essay", "Indian Essay", "Bengali Writer", "Neuroscience", "Mood Disorder", "Arithmetic Metaphor", "Readable Science", "Creative Nonfiction", "Literary Nonfiction", "Essay Writing"]
 published: true
@@ -9,6 +10,8 @@ color: "indigo"
 ---
 
 <TTS />
+
+<Pi src="Compress_20260613_132518_8802.jpg" />
 
 Highly Composite Number [HCN, a number with more divisors than any smaller positive integer before it]
 
