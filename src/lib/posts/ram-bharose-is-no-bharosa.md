@@ -2,6 +2,7 @@
 title: "Ram Bharose Is No Bharosa"
 description: "A raw Calcutta essay on unemployment, ageism, institutional collapse, hunger, honesty, and the slow disappearance of an educated middle-aged man in India."
 date: "2026-06-12"
+thumbnail: "/images/Compress_20260613_135824_4917.jpg"
 category: "Personal Essay"
 tags: ["India", "Calcutta", "Kolkata", "South Calcutta", "Bengali Essay", "Indian Society", "Unemployment", "Ageism", "Middle Age", "Mental Health", "Bipolar Depression", "Financial Fragility", "Lower Middle Class", "Institutional Collapse", "Public Institutions", "Kakistocracy", "Ram Bharose", "Indian Politics", "Indian Democracy", "Election Promises", "Social Invisibility", "Hunger", "Slow Starvation", "Artificial Intelligence", "AI Unemployment", "Job Market", "Economic Anxiety", "Personal Essay", "Social Commentary", "Political Satire", "Dark Humor", "SuvroGhosh"]
 published: true
@@ -10,6 +11,7 @@ color: "amber"
 
 <TTS />
 
+<Pi src="Compress_20260613_135824_4917.jpg" />
 
 
 The rice cooker first makes that little wet coughing sound.
