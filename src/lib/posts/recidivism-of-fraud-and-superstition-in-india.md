@@ -1,9 +1,8 @@
-recidivism-of-fraud-and-superstition-in-india.md
 ---
 title: "The Recidivism of Fraud"
 description: "A Calcutta essay on how India keeps returning to superstition, petty adjustment, respectable fraud, public amnesia, and the old national habit of calling deception culture."
 date: "2026-06-13"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260613_162345_5284.jpg"
 category: "Essay"
 tags: ["India", "Calcutta", "Kolkata", "Bengal", "Fraud", "Superstition", "Recidivism", "Religiosity", "Godmen", "Petty Corruption", "Bank Fraud", "Loan Default", "Public Memory", "Scientific Temper", "Atheism", "Middle Class India", "Lower Middle Class Life", "Indian Society", "Social Satire", "Political Satire", "Cultural Criticism", "Everyday Corruption", "Indian Bureaucracy", "Financial Fraud", "Moral Decay", "Urban India", "South Calcutta", "SuvroGhosh"]
 published: true
@@ -14,7 +13,7 @@ Acronyms used in this post: None.
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260613_162345_5284.jpg" />
 
 ---
 
