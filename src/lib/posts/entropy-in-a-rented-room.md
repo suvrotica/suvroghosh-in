@@ -2,6 +2,7 @@
 title: "Entropy in a Rented Room"
 description: "A sharp, human science essay about entropy, depression, Calcutta heat, rented rooms, and the daily energy cost of keeping a life from scattering."
 date: "2026-06-11"
+thumbnail: "/images/Compress_20260613_131317_7911.jpg"
 category: "Science Essay"
 tags: ["Entropy", "Thermodynamics", "Depression Essay", "Bipolar Depression", "Mental Health Writing", "Calcutta Essay", "Kolkata Life", "Middle Age", "Lower Middle Class Life", "Science Writing", "Popular Science", "Personal Essay", "Indian Writing", "Bengali Essay", "Urban Loneliness", "Heat And Humidity", "Rented Room", "Everyday Science", "Physics Of Life", "Statistical Mechanics", "SuvroGhosh"]
 published: true
@@ -11,7 +12,7 @@ color: "slate"
 Acronyms used: European Organization for Nuclear Research [CERN, the large European physics laboratory famous for particle accelerators and experiments on the basic particles of matter].
 
 <TTS />
-
+<Pi src="Compress_20260613_131317_7911.jpg" />
 
 The room does not collapse with thunder. It collapses politely, like a clerk taking leave without telling anyone.
 
