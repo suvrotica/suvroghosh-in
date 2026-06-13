@@ -2,6 +2,7 @@
 title: "The Corridor That Forgot to Breathe"
 description: "When students die mysteriously in a narrow metro passage near an old Calcutta college, a tired clerk follows the trail of unpaid wages, hidden ledgers, and a grief that has learned to wear another man's face."
 date: "2026-06-13"
+thumbnail: "/images/Compress_20260613_143811_1448.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Institutional Neglect"]
 published: true
@@ -10,7 +11,7 @@ color: "Slate"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_143811_1448.jpg" />
 
 # THIS IS A WORK OF FICTION
 
