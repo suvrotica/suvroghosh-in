@@ -2,6 +2,7 @@
 title: "Chyavana and the Refusal to Rot Quietly"
 description: "A sharp, funny, street-level essay on aging, Chyavana, lost youth, depression, dignity, and the stubborn mind that refuses to become scrap."
 date: "2026-06-11"
+thumbnail: "/images/Compress_20260613_144902_2574.jpg"
 category: "Personal Essay"
 tags: ["Aging", "Middle Age", "Chyavana", "Indian Mythology", "Vedic Mythology", "Calcutta Essay", "Kolkata Life", "Bengali Writing", "Personal Essay", "Depression", "Bipolar Depression", "Male Aging", "Loneliness", "Dignity", "Failure", "Resilience", "Mortality", "Atheist Essay", "Lower Middle Class India", "South Calcutta", "Mental Health", "Aging Body", "Lost Youth", "Mythology and Modern Life", "SuvroGhosh"]
 published: true
@@ -10,7 +11,7 @@ color: "#7A4B2A"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_144902_2574.jpg" />
 
 Permanent Account Number [PAN, an Indian tax identification number used for official and financial paperwork]. Structured Query Language [SQL, the language used to ask questions of relational databases]. United States [US, the country where I studied and worked for many years].
 
