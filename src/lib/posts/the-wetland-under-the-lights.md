@@ -2,6 +2,7 @@
 title: "The Wetland Under the Lights"
 description: "During Durga Puja in Calcutta, a temporary electrician follows a pattern of failing lights into a hidden artificial wetland where something ancient has been taught to remember a human name."
 date: "2026-06-13"
+thumbnail: "/images/Compress_20260613_133242_2016.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Strange Fiction", "Dread", "Memory"]
 published: true
@@ -10,7 +11,7 @@ color: "Black"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_133242_2016.jpg" />
 
 # THIS IS A WORK OF FICTION
 
