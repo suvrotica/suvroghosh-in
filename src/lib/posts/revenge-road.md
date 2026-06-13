@@ -2,6 +2,7 @@
 title: "The Ledger of Soft Parts"
 description: "A ruined healthcare founder in South Calcutta begins hearing that the people who destroyed him are dying of a disease that makes the body confess its debts. As the deaths circle closer, he must decide whether justice is a god, an infection, or only another form of hunger."
 date: "2026-06-11"
+thumbnail: "/images/Compress_20260613_151422_2879.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Moral Debt"]
 published: true
@@ -10,7 +11,7 @@ color: "#4A2F2F"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_151422_2879.jpg" />
 
 # THIS IS A WORK OF FICTION
 
