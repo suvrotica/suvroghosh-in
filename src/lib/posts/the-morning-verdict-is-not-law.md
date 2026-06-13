@@ -2,6 +2,7 @@
 title: "The Morning Verdict Is Not Law"
 description: "A darkly funny Calcutta essay on older depression, morning self-disgust, neural weather, and the small procedural rebellion of surviving the first hour."
 date: "2026-06-12"
+thumbnail: "/images/Compress_20260613_143000_0691.jpg"
 category: "Mental Health"
 tags: ["Depression", "Older Depression", "Middle Age", "Mental Health", "Bipolar Depression", "Anhedonia", "Morning Anxiety", "Self Loathing", "Loneliness", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class Life", "Neuroscience", "Predictive Brain", "Circadian Rhythm", "Cortisol", "Aging", "Financial Stress", "Survival Essay", "Personal Essay", "Dark Humor", "Indian Mental Health", "SuvroGhosh"]
 published: true
@@ -10,7 +11,7 @@ color: "slate"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_143000_0691.jpg" />
 
 
 The mouth tastes metallic in the morning, as if a cheap railway canteen spoon has melted overnight on the tongue, and before philosophy, before dignity, before any noble poster about resilience, the body performs its first public service: a small stale belch of acid and defeat.
