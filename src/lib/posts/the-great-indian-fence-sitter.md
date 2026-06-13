@@ -2,6 +2,7 @@
 title: "The Great Indian Fence-Sitter"
 description: "A sharp satirical essay on the Indian habit of calling cowardice balance, fraud enterprise, and stupidity culture while ordinary people are asked to adjust."
 date: "2026-06-12"
+thumbnail: "/images/Compress_20260613_145142_2841.jpg"
 category: "Society"
 tags: ["India", "Indian Society", "Indian Politics", "Social Satire", "Political Satire", "Indian Middle Class", "Corruption in India", "Fraud in India", "Fence Sitting", "False Balance", "Moral Cowardice", "Public Discourse", "YouTube Commentary", "Indian Media", "Bureaucracy", "Institutional Decay", "Civic Failure", "Middle Class India", "Calcutta", "Kolkata", "Bengali Essay", "Social Commentary", "SuvroGhosh"]
 published: true
@@ -11,6 +12,8 @@ color: "slate"
 
 
 <TTS />
+
+<Pi src="Compress_20260613_145142_2841.jpg" />
 
 
 There is a particular Indian I have met too many times in life, and not always from the safe zoological distance advised by doctors, lawyers, and experienced aunties, who does not take a position. Taking a position requires spine. What he does instead is lower his entire oily administrative backside onto a fence and announce, with the grave expression of a man who has discovered moral philosophy inside a cold singara, that both sides have a point.
