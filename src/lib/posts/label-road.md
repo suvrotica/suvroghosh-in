@@ -2,6 +2,7 @@
 title: "Label: Road"
 description: "A displaced Calcutta software professional takes a desperate image-labeling job and begins making one private correction to the machine’s vision. The city later discovers that some mistakes do not stay inside a spreadsheet."
 date: "2026-06-11"
+thumbnail: "/images/Compress_20260613_160142_2362.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Horror", "Urban Dread", "Moral Consequence"]
 published: true
@@ -10,7 +11,7 @@ color: "Charcoal"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_160142_2362.jpg" />
 
 # THIS IS A WORK OF FICTION
 
