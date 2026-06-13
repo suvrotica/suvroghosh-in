@@ -2,6 +2,7 @@
 title: "Newton’s First Law and the Bladder"
 description: "A darkly funny Calcutta essay on depression, executive dysfunction, inertia, bodily urgency, and why getting out of bed is sometimes physics before it is willpower."
 date: "2026-06-12"
+thumbnail: "/images/Compress_20260613_152430_0018.jpg"
 category: "Personal Science"
 tags: ["Depression", "Executive Dysfunction", "Mental Health", "Bipolar Depression", "Anhedonia", "Newton First Law", "Physics of Depression", "Inertia", "Calcutta Essay", "Kolkata Writing", "Middle Age", "Lower Middle Class Life", "Loneliness", "Motivation", "Human Body", "Neuroscience", "Attention", "Daily Life", "Self Respect", "Personal Essay", "Science Essay", "Bengali Writer", "SuvroGhosh"]
 published: true
@@ -10,6 +11,7 @@ color: "slate"
 
 <TTS />
 
+<Pi src="Compress_20260613_152430_0018.jpg" />
 
 Acronyms used: USB means Universal Serial Bus, the ordinary cable-and-port standard by which half the world charges its gadgets and loses its patience. AI means Artificial Intelligence, software that imitates or automates tasks we associate with human reasoning. HIE means Healthcare Information Exchange, the sharing of clinical information between hospitals, clinics, labs, and other care systems.
 
