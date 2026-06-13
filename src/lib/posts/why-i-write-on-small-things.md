@@ -2,6 +2,7 @@
 title: "Why I Write on Small Things"
 description: "A hot June afternoon in Calcutta turns into a funny, bruised, and unsentimental essay on depression, class humiliation, ordinary failure, and the stubborn need to keep naming life honestly."
 date: "2026-06-11"
+thumbnail: "/images/Compress_20260613_150523_3394.jpg"
 category: "Personal Essay"
 tags: ["Calcutta", "Kolkata", "Bengali Life", "Middle Class India", "Lower Middle Class", "South Calcutta", "Depression", "Bipolar Depression", "Mental Health", "Anhedonia", "Heatwave", "Indian Summer", "Urban Loneliness", "Single Middle Aged Man", "Failure", "Class Humiliation", "Personal Essay", "Indian Blog", "Bengali Blog", "Life Writing", "Social Satire", "Everyday Philosophy", "Existential Humor", "Dark Humor", "SuvroGhosh"]
 published: true
@@ -10,7 +11,7 @@ color: "amber"
 
 <TTS />
 
-
+<Pi src="Compress_20260613_150523_3394.jpg" />
 
 
 
