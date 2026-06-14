@@ -1,9 +1,8 @@
-symmetry-in-a-calcutta-room.md
 ---
 title: "Symmetry in a Calcutta Room"
 description: "A plain, witty essay on symmetry, from mirrors and wallpaper to particles, mathematics, and the strange human need to know what remains unchanged when everything else gets shoved around."
 date: "2026-06-14"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260614_151948_8935.jpg"
 category: "Mathematics"
 tags: ["Mathematics", "Symmetry", "Geometry", "Algebra", "Physics", "Quantum Mechanics", "Linear Algebra", "Group Theory", "Representation Theory", "Wallpaper Groups", "Platonic Solids", "Dynkin Diagrams", "Yang Baxter Equation", "Mathematical Physics", "Science Writing", "Popular Mathematics", "Calcutta Essays", "Kolkata Writing", "Bengali Writer", "Readable Mathematics", "Mathematics Explained", "Geometry Explained", "Science Essays", "SuvroGhosh"]
 published: true
@@ -18,7 +17,7 @@ MIT: Massachusetts Institute of Technology, a major American university known fo
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260614_151948_8935.jpg" />
 
 ---
 
