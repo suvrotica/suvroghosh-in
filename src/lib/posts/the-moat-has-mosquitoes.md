@@ -1,9 +1,8 @@
-the-moat-has-mosquitoes.md
 ---
 title: "The Moat Has Mosquitoes"
 description: "A darkly comic Calcutta essay about middle age, class descent, unemployment, illness, pride, and the small arithmetic of survival."
 date: "2026-06-14"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260614_102059_9408.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Unemployment", "Class Anxiety", "Lower Middle Class", "Mental Health", "Bipolar Depression", "Anxiety", "Survival", "Poverty", "Dignity", "White Collar Work", "Tuition Teacher", "Hawker Economy", "Street Vendors", "Rickshaw Puller", "Urban India", "Indian Middle Class", "Economic Insecurity", "Social Satire", "Dark Humor", "Life Writing", "Memoir", "SuvroGhosh"]
 published: true
@@ -12,11 +11,9 @@ color: "slate"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260614_102059_9408.jpg" />
 
-Acronyms: BJP means Bharatiya Janata Party, the political party currently associated with national power in India. MBA means Master of Business Administration, the formal business degree whose street version is learned on pavements, in bargaining, rain, police visits, and unpaid risk. HR means Human Resources, the corporate department that manages employees and often delivers bad news in a pleasant voice. US means United States, where I spent years studying and working before returning to India.
 
----
 
 My future does not have a road in front of it; it has a moat, and unfortunately the moat has mosquitoes.
 
