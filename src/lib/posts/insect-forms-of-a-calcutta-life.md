@@ -29,7 +29,7 @@ It sounds cruel until you look carefully.
 
 Then it sounds like documentation.
 
-The trouble with the human face is that it is a dangerous public relations department. Give a scoundrel cheeks, eyes, a little tiredness around the mouth, perhaps a memory of childhood fever, and suddenly we begin forgiving him. Poor man. Difficult life. Family pressure. Party pressure. Loan pressure. Saturn in the wrong house. India won the match but his business failed. His father shouted at him in 1987. His mother loved the other son. On and on we go, like a minibus conductor giving change in imaginary coins.
+Often it's an insect on a fat face. The trouble with the human face is that it is a dangerous public relations department. Give a scoundrel cheeks, eyes, a little tiredness around the mouth, perhaps a memory of childhood fever, and suddenly we begin forgiving him. Poor man. Difficult life. Family pressure. Party pressure. Loan pressure. Saturn in the wrong house. India won the match but his business failed. His father shouted at him in 1987. His mother loved the other son. On and on we go, like a minibus conductor giving change in imaginary coins.
 
 But put mandibles where the mouth was and the truth improves.
 
