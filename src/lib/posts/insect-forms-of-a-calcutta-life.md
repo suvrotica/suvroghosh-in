@@ -2,7 +2,7 @@
 title: "Insect Forms of a Calcutta Life"
 description: "A darkly funny Calcutta essay about sketching human beings as insects, the small machinery of social extraction, and the unpleasant honesty of seeing oneself among the crawling things."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_151948_8935.jpg"
+thumbnail: "/images/Compress_20260614_164625_5148.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta Writing", "Kolkata Essay", "Bengali Life", "Middle Age", "Lower Middle Class", "Satirical Essay", "Dark Humor", "Social Satire", "Indian Society", "Bengal", "Urban Loneliness", "Bipolar Depression", "Mental Health Writing", "Anxiety", "Sketching", "Insect Metaphor", "Kafka", "Swift", "Gogol", "Darwin", "Linnaeus", "Human Failure", "Fraudsters", "Freeloaders", "Bureaucracy", "Indian Bureaucracy", "Rent", "Unpaid Invoices", "Rented Room", "Single Man", "Absurdism", "Literary Nonfiction", "Memoir Essay", "SuvroGhosh"]
 published: true
@@ -17,7 +17,7 @@ DNA: Deoxyribonucleic Acid, the molecule that carries genetic instructions in li
 
 <TTS />
 
-<Pi src="Compress_20260614_151948_8935.jpg" />
+<Pi src="Compress_20260614_164625_5148.jpg" />
 
 ---
 
@@ -29,7 +29,7 @@ It sounds cruel until you look carefully.
 
 Then it sounds like documentation.
 
-Often it's an insect on a fat face. The trouble with the human face is that it is a dangerous public relations department. Give a scoundrel cheeks, eyes, a little tiredness around the mouth, perhaps a memory of childhood fever, and suddenly we begin forgiving him. Poor man. Difficult life. Family pressure. Party pressure. Loan pressure. Saturn in the wrong house. India won the match but his business failed. His father shouted at him in 1987. His mother loved the other son. On and on we go, like a minibus conductor giving change in imaginary coins.
+The trouble with the human face is that it is a dangerous public relations department. Give a scoundrel cheeks, eyes, a little tiredness around the mouth, perhaps a memory of childhood fever, and suddenly we begin forgiving him. Poor man. Difficult life. Family pressure. Party pressure. Loan pressure. Saturn in the wrong house. India won the match but his business failed. His father shouted at him in 1987. His mother loved the other son. On and on we go, like a minibus conductor giving change in imaginary coins.
 
 But put mandibles where the mouth was and the truth improves.
 
