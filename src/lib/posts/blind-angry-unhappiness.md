@@ -13,9 +13,7 @@ color: "slate"
 
 <Pi src="Compress_20260615_201237_7311.jpg" />
 
-Acronyms and abbreviations: None used in this post.
 
----
 
 The sweat first gathers in the most undignified places, because the body, after fifty, becomes a landlord with opinions. It leaks. It complains. It sends damp notices from under the chest, behind the neck, inside the waistband, and other regions where no self-respecting philosopher should be receiving correspondence.
 
