@@ -49,7 +49,7 @@ The stranger laughed, and then I saw his molars.
 
 They were enormous.
 
-I do not mean merely big teeth, the sort a dentist admires in the privacy of his greed. These were great rear stones packed into his mouth, square and flat and faintly ridged, like grinding slabs from some ancient kitchen where lentils, bones, and proclamations had been crushed into paste. His front teeth were small, almost shy. But the back of his mouth was an architectural event.
+I do not mean merely big teeth, the sort a dentist admires in the privacy of his greed. These were great rear stones packed into his mouth, square and flat and faintly ridged, like grinding slabs from some ancient kitchen where lentils, bones, and proclamations had been crushed into paste. His front teeth were big too. But the back of his mouth was an architectural event.
 
 Haradhan stared.
 
