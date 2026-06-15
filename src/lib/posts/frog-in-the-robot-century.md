@@ -27,7 +27,7 @@ Outside, the heat is not weather anymore.
 
 It feels like policy.
 
-Forty-five degrees Celsius presses on the city like a large sweaty wrestler who has no intention of moving. The ceiling fan chops the air into useless slices. Then the electricity goes off, as if it has remembered another appointment. Somewhere a transformer sighs. Somewhere a dog gives up. Somewhere a man in a baniyan says, “Current chole geche,” with the calm of a philosopher announcing mortality.
+Feels-like forty-five degrees Celsius presses on the city like a large sweaty wrestler who has no intention of moving. The ceiling fan chops the air into useless slices. Then the electricity goes off, as if it has remembered another appointment. Somewhere a transformer sighs. Somewhere a dog gives up. Somewhere a man in a baniyan says, “Current chole geche,” with the calm of a philosopher announcing mortality.
 
 And somewhere else, in San Francisco, Shenzhen, Hangzhou, Boston, Seoul, or some bright little laboratory where the floor is cleaner than most Indian hospitals, people are training machines to fold laundry, move boxes, write code, read scans, fly drones, optimize warehouses, design molecules, translate languages, drive cars, and build the next layer of the machine century.
 
