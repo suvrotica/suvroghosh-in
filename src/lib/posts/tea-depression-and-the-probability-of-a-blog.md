@@ -1,4 +1,3 @@
-tea-depression-and-the-probability-of-a-blog.md
 ---
 title: "Tea, Depression, and the Probability of a Blog"
 description: "A middle-aged Bengali man in Calcutta asks whether depression and manic writing energy created the strange angle of vision from which his blog exists."
@@ -12,7 +11,6 @@ color: "brown"
 
 CESC: Calcutta Electric Supply Corporation, the power utility whose failures can turn a humid evening into a small domestic apocalypse.
 
-US: United States, the country where I spent fifteen years studying and working before returning to Calcutta with more experience than money.
 
 <TTS />
 
