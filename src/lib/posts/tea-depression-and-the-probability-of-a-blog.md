@@ -3,7 +3,7 @@ tea-depression-and-the-probability-of-a-blog.md
 title: "Tea, Depression, and the Probability of a Blog"
 description: "A middle-aged Bengali man in Calcutta asks whether depression and manic writing energy created the strange angle of vision from which his blog exists."
 date: "2026-06-15"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260615_172945_5757.jpg"
 category: "Personal Essay"
 tags: ["Depression", "Bipolar Disorder", "Anxiety", "Mental Health", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Personal Essay", "Philosophy", "Mathematics", "Probability", "Introspection", "Writing Life", "Creativity", "Mania", "Caffeine", "Tea", "Lower Middle Class", "Indian Life", "Urban Loneliness", "Existential Essay", "Readable Philosophy", "SuvroGhosh"]
 published: true
@@ -16,7 +16,7 @@ US: United States, the country where I spent fifteen years studying and working 
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260615_172945_5757.jpg" />
 
 ---
 
