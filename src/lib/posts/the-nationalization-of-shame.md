@@ -13,9 +13,7 @@ color: "slate"
 
 <Pi src="Compress_20260616_160214_4513.jpg" />
 
-Acronyms and notes: None used in this post.
 
----
 
 The phone begins vibrating beside the tea pan with that cheap insect-buzz all budget phones seem to learn at birth, half mosquito, half electric razor, one hundred percent bad omen.
 
