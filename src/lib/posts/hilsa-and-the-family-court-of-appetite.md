@@ -1,9 +1,8 @@
-hilsa-and-the-family-court-of-appetite.md
 ---
 title: "Hilsa and the Family Court of Appetite"
 description: "A Calcutta Bengali essay on hilsa, mustard oil, memory, river ecology, family politics, fish markets, class, appetite, and the strange sovereignty of ilish over the Bengali lunch plate."
 date: "2026-06-18"
-thumbnail: "/images/hilsa-and-the-family-court-of-appetite.png"
+thumbnail: "/images/Compress_20260618_141556_6381.jpg"
 category: "Culture"
 tags: ["Hilsa", "Ilish", "Bengali Food", "Bengali Cuisine", "Calcutta Essay", "Kolkata Essay", "Bengal Culture", "Padma Ilish", "Shorshe Ilish", "Mustard Oil", "Fish Market", "River Ecology", "Bengali Memory", "Food Writing", "Cultural Essay", "Indian Food Essay", "Monsoon Food", "Bengali Lunch", "SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "silver"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260618_141556_6381.jpg" />
 
 Acronyms and terms: Tenualosa ilisha means the scientific name of hilsa. Anadromous means a fish that lives in the sea but swims into rivers to breed. Osmoregulation means the biological management of salt and water inside the body. Isothiocyanates are sharp-smelling mustard compounds that attack the nose with the enthusiasm of a para committee during Durga Puja subscription season.
 
