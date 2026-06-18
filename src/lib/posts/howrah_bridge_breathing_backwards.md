@@ -1,9 +1,8 @@
-howrah_bridge_breathing_backwards.md
 ---
 title: "The Bridge That Breathed Backwards"
 description: "When a wormhole opens on Howrah Bridge, Calcutta discovers that the past is not waiting politely behind glass. It is hungry, crowded, and carrying unpaid debts."
 date: "2026-06-18"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260618_202519_9501.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Science Fiction", "Dread", "Time"]
 published: true
@@ -12,7 +11,7 @@ color: "#536878"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260618_202519_9501.jpg" />
 
 # THIS IS A WORK OF FICTION
 
