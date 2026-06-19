@@ -33,7 +33,7 @@ My crotch stinks now.
 
 This is not the sentence with which Bengali literature expected me to enter the room, but Bengali literature will have to manage its disappointment. It has survived worse. It survived committee speeches, puja souvenirs, and men in cotton kurtas using the word “civilizational” after two cups of tea.
 
-When I was in America, at least sometimes, I smelled of Calvin Klein. Or something nearby. Some imported liquid fiction sprayed from a bottle by a lonely man trying to inform the universe that he remained administratively presentable.
+When I was in America, at least sometimes, I smelled of Calvin Klein `Be`. Some imported liquid fiction sprayed from a bottle by a lonely man trying to inform the universe that he remained administratively presentable.
 
 Now I smell of heat, cheap soap, damp underwear, power cuts, stale ambition, and that special Kolkata sweat which does not evaporate. It sits on the body with tenancy rights. You cannot remove it. You can only negotiate.
 
