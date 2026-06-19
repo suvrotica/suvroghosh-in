@@ -17,7 +17,7 @@ WWA: WWA Cossipore English School, my childhood school in north Calcutta.
 
 ISC: Indian School Certificate, a higher secondary school qualification.
 
-CA: Chartered Accountancy, the professional accounting track many ambitious Indian students chase.
+CA: CA block in Salt Lake Calcutta.
 
 UTSA: University of Texas at San Antonio, where I studied in the United States.
 
@@ -49,7 +49,7 @@ I was not a popular kid in school.
 
 WWA did not tremble when I arrived. No girl wrote my initials behind her notebook. No boy said, “This fellow has leadership.” I existed in the way a broken tube light exists: technically visible, emotionally ignored, and mentioned only when it flickers at the wrong time.
 
-Then came the Salt Lake school period, where I remained invisible, now with more syllabus and cleaner shoes around me.
+Then came the temporary 1 month Salt Lake CA school ISC/HS indecision period, where I remained invisible, now with more syllabus and cleaner shoes around me.
 
 Then St. Xavier’s, Park Street.
 
@@ -61,7 +61,7 @@ Useful in theory.
 
 Unclaimed in practice.
 
-University was worse. If there is something below invisible, something less dramatic than failure and less interesting than scandal, that was me. Not villainous slime. Villainous slime has presence. It enters the plot. It changes the lighting.
+University at Jadavpur (JU) was worse. If there is something below invisible, something less dramatic than failure and less interesting than scandal, that was me. Not villainous slime. Villainous slime has presence. It enters the plot. It changes the lighting.
 
 I was side-margin slime.
 
