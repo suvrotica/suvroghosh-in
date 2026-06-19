@@ -13,11 +13,7 @@ color: "brown"
 
 <Pi src="Compress_20260619_132554_4247.jpg" />
 
-Acronyms and notes:
 
-SEO — Search Engine Optimization, the practice of making a post easier to discover through search.
-
----
 
 The danger begins when a Bengali man discovers he can explain his failure elegantly.
 
