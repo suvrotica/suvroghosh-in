@@ -1,9 +1,8 @@
-the-linear-algebra-blind-spot-healthcare-ai-safety.md
 ---
 title: "The Linear Algebra Blind Spot: Why Healthcare AI Is Only as Safe as Its Underlying Math"
 description: "Healthcare AI failures often begin long before an algorithm makes a prediction. The real risk lies in how patient reality is translated into mathematical structures that machines can process."
 date: "2026-06-21"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260621_014107_7684.jpg"
 category: "Healthcare IT"
 tags: ["Healthcare AI","Machine Learning","Linear Algebra","FHIR","HL7","EHR","Clinical Informatics","Healthcare Architecture","Data Science","Medical AI","Health IT","Digital Health","Interoperability","Data Governance","Vector Embeddings","Healthcare Engineering","Healthcare Analytics","SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "blue"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260621_014107_7684.jpg" />
 
 Acronyms and Terms
 
