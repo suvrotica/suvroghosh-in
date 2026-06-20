@@ -1,9 +1,8 @@
-k.md
 ---
 title: "A Trapezoid for My Mother"
 description: "A personal essay on depression, maternal mercy, and the small edits by which a damaged life is made bearable for someone who loves too much."
 date: "2026-06-20"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260620_115927_7094.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Mother", "Bengali Family", "Calcutta Life", "Kolkata", "Middle Age", "Loneliness", "Aging Parents", "Caregiving", "Indian Family", "Lower Middle Class Life", "Atheism", "Science And Suffering", "Readable Essays", "Memoir", "Literary Essay", "SuvroGhosh"]
 published: true
@@ -12,13 +11,9 @@ color: "brown"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260620_115927_7094.jpg" />
 
-TTS: Text-to-Speech, the site marker for generating or attaching an audio version of the post.
 
-Pi: Post image placeholder, the site marker for an optional image.
-
----
 
 The tea had grown that thin brown skin on top, the sort of skin tea gets in Bengal when milk, heat, neglect, and municipal philosophy hold a small meeting in a cup. I sat there looking at it and wondering which version of the truth to write: the real one, with its cracked plaster and smell of damp cloth, or the mother-approved version, where everything is still roughly rectangular if viewed from a kind angle.
 
