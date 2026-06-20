@@ -1,9 +1,8 @@
-administratively-deleted.md
 ---
 title: "Administratively Deleted"
 description: "A personal essay on middle age, social invisibility, worklessness, desire, family usefulness, and the quiet Calcutta bureaucracy of being erased before death."
 date: "2026-06-20"
-thumbnail: "/images/administratively-deleted.png"
+thumbnail: "/images/Compress_20260620_123845_5292.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Loneliness", "Social Invisibility", "Depression", "Anxiety", "Unemployment", "Lower Middle Class", "Single Man", "Aging", "Family", "Romance", "Worklessness", "Urban Life", "South Calcutta", "Kolkata Essay", "Indian Society", "Modern India", "Bengali Middle Class", "Mental Health Writing", "Dark Humor", "Literary Nonfiction", "Autobiographical Essay", "Social Erasure", "Precarious Life", "SuvroGhosh"]
 published: true
@@ -12,7 +11,7 @@ color: "#4A3B36"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260620_123845_5292.jpg" />
 
 Acronyms and short forms used in this post:
 
