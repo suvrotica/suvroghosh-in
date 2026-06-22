@@ -69,7 +69,7 @@ Calcutta.
 
 Not Kolkata.
 
-Calcutta, with its British ghosts and its Marxist hangover and its present-tense decay, a city that smells of jasmine and sewage in equal measure, where the hand-pulled rickshaws still exist in the twenty-first century like some cruel anachronism, where the tram lines run through streets too narrow for them, where the Communist posters fade slowly on walls that crumble faster than ideologies, where I was born in North Calcutta, in South Sinthee, in a house that no longer exists, demolished for a shopping mall that went bankrupt before it opened, and where I now exist, if exist is the word, in this South Calcutta flat, this transitional space, this liminal zone between the city and the suburbs, between sanity and its opposite, between the illusion of being human and the reality of being livestock.
+Calcutta, with its British ghosts and its Marxist hangover and its present-tense decay, a city that smells of jasmine and sewage in equal measure, where the hand-pulled rickshaws still exist in the twenty-first century like some cruel anachronism, where the tram lines run through streets too narrow for them, where the Communist posters fade slowly on walls that crumble faster than ideologies, where I was born in North Calcutta, in South Sinthee, in a house that no longer exists, demolished for a seedy apartment block, and where I now exist, if exist is the word, in this South Calcutta flat, this transitional space, this liminal zone between the city and the suburbs, between sanity and its opposite, between the illusion of being human and the reality of being livestock.
 
 Livestock.
 
