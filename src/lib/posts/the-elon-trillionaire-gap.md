@@ -299,7 +299,7 @@ I should eat the rice.
 
 It is getting cold.
 
-Cold rice is better than no rice, as my mother used to say, before she died, before the cancer took her, before I had the chance to tell her that I was sorry, that I was a disappointment, that I had not become the doctor or the engineer or the good Bengali boy that she wanted, that I had instead become this, this thing, this man in a black t-shirt and cheap boxers staring at a ceiling fan in a South Calcutta flat, counting the seconds between child deaths and trillionaire gains.
+Cold rice is better than no rice, as my mother used to say.
 
 But I do not eat.
 
