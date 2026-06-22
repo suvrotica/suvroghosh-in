@@ -1,9 +1,8 @@
-taklu-babu.md
 ---
 title: "Taklu Babu Eats the River"
 description: "A bald street cat in Calcutta discovers that fish carry memories, and that humans are easier to steer than rickshaws."
 date: "2026-06-22"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260622_124351_1146.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Dark Comedy", "Memory", "Power", "Hunger"]
 published: true
@@ -12,7 +11,7 @@ color: "#2c3e50"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260622_124351_1146.jpg" />
 
 # THIS IS A WORK OF FICTION
 
