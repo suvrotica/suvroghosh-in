@@ -383,4 +383,5 @@ The phone stays dark.
 
 And outside, in the street, in the city, in the world, the wealth gap widens, the rockets launch, the children die, the future arrives, and I eat my rice, one spoonful at a time, chewing slowly, deliberately, with the solemn concentration of a man performing the last sacrament of a religion that has no gods, no heaven, no salvation, only this, only now, only the steam and the spoon and the stubborn, beautiful, defeated act of continuing.
 
-P.S. References only if needed: Forbes, Oxfam, Federal Reserve, World Inequality Database, Polymarket, CBS News, Institute for Policy Studies. But who needs references when the ceiling fan is your primary source, and the rice cooker your only peer reviewer?
+P.S.: Forbes, Oxfam, Federal Reserve, World Inequality Database, Polymarket, CBS News, Institute for Policy Studies. 
+But who needs references when the ceiling fan is your primary source, and the rice cooker your only peer reviewer?
