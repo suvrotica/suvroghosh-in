@@ -1,9 +1,8 @@
-the-dwellers.md
 ---
 title: "The Dwellers"
 description: "A widow’s rosacea becomes a conduit for the voices of Calcutta itself, as microscopic witnesses buried in her skin reveal a murder her family would rather silence."
 date: "2026-06-22"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260622_224433_3263.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Memory"]
 published: true
@@ -12,7 +11,7 @@ color: "#6B1C1C"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260622_224433_3263.jpg" />
 
 # THIS IS A WORK OF FICTION
 
