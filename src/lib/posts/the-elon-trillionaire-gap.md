@@ -115,7 +115,7 @@ I did not drink it.
 
 I was too busy counting—counting the cracks in the ceiling, the hairs in my sink, the days since I last went outside, the rupees in my account, the reasons to continue, the reasons to stop, the minutes, the hours, the years, the trillion dollars that accumulated while I was not looking, while I was staring at the stain, while I was scratching my stubble, while I was being nothing, doing nothing, meaning nothing.
 
-Mister J, my one remaining connection to the American economy, to the world of consulting and conference calls and PowerPoint presentations that I deliver with the enthusiasm of a man reading his own autopsy report, sent an email this morning.
+Mister J, my one remaining connection to the American economy, to the world of consulting and conference calls and PowerPoint presentations that I deliver with the enthusiasm of a man reading his own autopsy report, sent an email this morning. He didn't I am making this up, but there is verity in this illusion, I just put on some cheap mascara because this is work and subsistence related.
 
 "Great work on the last deck," he wrote, from his air-conditioned office in whatever sun-blasted suburb he inhabits, "payment will be processed next quarter."
 
