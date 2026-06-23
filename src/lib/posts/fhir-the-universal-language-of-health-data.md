@@ -13,8 +13,6 @@ color: "#0D7377"
 
 <Pi src="Compress_20260517_073622_2338.jpg" />
 
-# FHIR: The Universal Language of Health Data
-
 ## The Quiet Crisis in Your Medical Records
 
 Picture this.
