@@ -3,7 +3,7 @@ title: "The Architecture of Shadows: What We Must Build Before We Let AI Into th
 description: "A deep exploration of the invisible infrastructure—regulatory, ethical, technical, and human—that must exist before artificial intelligence can safely enter clinical practice, and why the real revolution happens in the shadows before the spotlight."
 date: "2026-06-23"
 thumbnail: "/images/Compress_20260624_013106_6822.jpg"
-category: "Healthcare Technology"
+category: "Healthcare-IT"
 tags: ["Artificial Intelligence", "Clinical Medicine", "Healthcare Infrastructure", "Medical Ethics", "Regulatory Science", "Digital Health", "Patient Safety", "SuvroGhosh"]
 published: true
 color: "#2C3E50"
