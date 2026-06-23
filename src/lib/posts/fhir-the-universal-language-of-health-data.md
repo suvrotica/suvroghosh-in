@@ -2,7 +2,7 @@
 title: "FHIR: The Universal Language of Health Data"
 description: "A deep dive into FHIR, the Fast Healthcare Interoperability Resources standard that is quietly rebuilding the plumbing of modern medicine—one resource at a time."
 date: "2026-06-23"
-thumbnail: "/images/IMG-20260423-WA0007.jpg"
+thumbnail: "/images/Compress_20260517_073622_2338.jpg"
 category: "Healthcare-IT"
 tags: ["FHIR", "Healthcare Interoperability", "Health Data Standards", "HL7", "Digital Health", "APIs", "Medical Informatics", "SuvroGhosh"]
 published: true
@@ -11,7 +11,7 @@ color: "#0D7377"
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0007.jpg" />
+<Pi src="Compress_20260517_073622_2338.jpg" />
 
 # FHIR: The Universal Language of Health Data
 
