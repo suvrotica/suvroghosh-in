@@ -13,9 +13,7 @@ color: "#2c5282"
 
 <Pi src="IMG-20260426-WA0008.jpg" />
 
-# The Architecture of Vulnerability: Why Kenneth Arrow Saw Healthcare Markets as Fundamentally Different
 
----
 
 ## The Paper That Should Have Changed Everything
 
