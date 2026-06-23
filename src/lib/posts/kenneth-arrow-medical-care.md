@@ -1,18 +1,17 @@
-kenneth-arrow-medical-care.md
 ---
 title: "The Architecture of Vulnerability: Why Kenneth Arrow Saw Healthcare Markets as Fundamentally Different"
 description: "A deep exploration of Kenneth Arrow's 1963 paper on the welfare economics of medical care, examining why healthcare markets are structurally unlike ordinary commerce and what this means for patients, providers, and policymakers."
 date: "2026-06-24"
-thumbnail: "/images/arrow-healthcare.jpg"
+thumbnail: "/images/IMG-20260426-WA0008.jpg"
 category: "Economics"
 tags: ["Healthcare Economics", "Kenneth Arrow", "Market Failure", "Medical Care", "Information Asymmetry", "Welfare Economics", "Insurance", "Uncertainty", "Public Policy"]
 published: true
 color: "#2c5282"
 ---
 
-&lt;TTS /&gt;
+<TTS />
 
-&lt;Pi src="" /&gt;
+<Pi src="IMG-20260426-WA0008.jpg" />
 
 # The Architecture of Vulnerability: Why Kenneth Arrow Saw Healthcare Markets as Fundamentally Different
 
