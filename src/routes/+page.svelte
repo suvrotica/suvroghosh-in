@@ -19,8 +19,7 @@
 		Suvro Ghosh
 	</h1>
 	<p class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl leading-relaxed font-medium">
-		Navigating the architecture of chaos. Notes on enterprise healthcare IT, data science, and philosophical pragmatism from Calcutta.
-	</p>
+		Where clinical entropy meets structural intent. Notes on enterprise healthcare IT, data architecture, and the first-principles thinking required to build technology that outlasts its own hype. Calcutta.</p>
 </section>
 
 <section>
