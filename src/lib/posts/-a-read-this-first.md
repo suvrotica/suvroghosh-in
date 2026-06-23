@@ -2,7 +2,7 @@
 title: "An Architect's Education"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2024-01-01"
-thumbnail: "/images/Compress_20260510_023412_2917.jpg"
+thumbnail: "/images/Compress_20260509_172719_9415.jpg"
 category: "Personal"
 tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Bipolar Writing", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "SuvroGhosh"]
 published: true
@@ -11,7 +11,7 @@ color: "orange"
 
 <TTS />
 
-<Pi src="Compress_20260510_023412_2917.jpg" />
+<Pi src="Compress_20260509_172719_9415.jpg" />
 
 # What Lies Beneath
 
