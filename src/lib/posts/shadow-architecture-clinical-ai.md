@@ -13,9 +13,6 @@ color: "#2C3E50"
 
 <Pi src="Compress_20260624_013106_6822.jpg" />
 
-# The Architecture of Shadows: What We Must Build Before We Let AI Into the Hospital
-
----
 
 ## The Patient Who Never Met the Machine
 
