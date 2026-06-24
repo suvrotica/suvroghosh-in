@@ -556,7 +556,16 @@
 		</div>
 	</div>
 
-	<div class="mt-12 text-center">
+	<div class="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+		<a
+			href="mailto:contact@suvroghosh.in"
+			class="btn-primary inline-flex items-center gap-2 px-8 py-3 text-lg"
+		>
+			<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+			</svg>
+			Email
+		</a>
 		<a
 			href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278"
 			target="_blank"
