@@ -3,7 +3,7 @@ title: "The Thermodynamics of Fishy Things"
 description: "A man in Calcutta, drenched in a record heat wave, reads about a Japanese artificial intelligence named after the pufferfish and wonders if the suspicious smell of collective intelligence might be preferable to the antiseptic stench of trillion-dollar singularities."
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_021009_9774.jpg"
-category: "Essay"
+category: "Artificial Intelligence"
 tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
 published: true
 color: "#4a5759"
