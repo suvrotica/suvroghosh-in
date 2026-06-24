@@ -1,15 +1,17 @@
-## complexity-in-calcutta.md
-
 ---
 title: "Complexity in Calcutta"
 description: "A personal reflection on living with the layered, unresolvable complexity of contemporary life in a city that refuses to simplify itself."
 date: "2026-06-24"
-thumbnail: "/images/calcutta-morning.jpg"
+thumbnail: "/images/Compress_20260624_172038_8596.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
 published: true
 color: "#4a6741"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260624_172038_8596.jpg" />
 
 The ceiling fan in my study turns with a faint, rhythmic wobble that I have learned to stop noticing, much as one stops noticing the particular pitch of a neighbor's generator or the perpetual hum of the city beyond the window, which is to say that I notice it precisely when it stops, which happened this morning at six-fifteen, when the power flickered and died for eleven minutes, and in that sudden, humid silence I became aware of how much machinery I had invited into my life to make existence tolerable, and how each machine had brought with it its own small demands, its own particular fragility, its own scheduled obsolescence, and how the aggregate of these machines—the air conditioner, the water purifier, the refrigerator with its ice maker that jams every third week, the router that requires biweekly resuscitation, the phone that updates itself in the middle of the night and emerges with new buttons in new places and new permissions I never granted—constitutes a kind of second body, an external nervous system that I must maintain and troubleshoot and eventually replace, cell by cell, while my original body, the one I was born with, proceeds on its own schedule of entropy, largely ignored until it protests too loudly to be dismissed.
 
