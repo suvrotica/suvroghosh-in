@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
-	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	import PostTabs from '$lib/components/blog/PostTabs.svelte';
 	let { data } = $props();
 </script>
 
@@ -14,11 +14,11 @@
 
 <section>
 	<h1 class="text-center mb-8">Suvro Ghosh Posts</h1>
-    {#if data.posts.length > 0}
-        <PostGallery posts={data.posts} />
-    {:else}
-        <div class="text-center py-12 text-neutral-500">
-            <p>No posts found.</p>
-        </div>
-    {/if}
+	{#if data.posts.length > 0}
+		<PostTabs posts={data.posts} basePath="/blog" />
+	{:else}
+		<div class="text-center py-12 text-neutral-500">
+			<p>No posts found.</p>
+		</div>
+	{/if}
 </section>

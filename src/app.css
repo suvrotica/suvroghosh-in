@@ -54,12 +54,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 .sidebar-container { 
   @apply overflow-y-auto h-screen w-64 shrink-0 bg-neutral-100 dark:bg-neutral-900 border-r border-neutral-300 dark:border-neutral-700 hidden lg:block;
 }
-.sidebar-link { 
-  @apply block rounded-md p-2 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-300 dark:hover:bg-neutral-800 transition-colors text-sm;
-}
-.sidebar-link-active { 
-  @apply bg-neutral-300 dark:bg-neutral-700 font-bold text-neutral-900 dark:text-neutral-100;
-}
 
 /* UI Components */
 .card {
@@ -67,33 +61,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 .btn-primary {
   @apply rounded-lg bg-neutral-800 dark:bg-neutral-700 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-700 dark:hover:bg-neutral-600 transition-colors cursor-pointer;
-}
-
-/* Visualization Containers */
-.interactive-component-wrapper { 
-  @apply my-6 p-6 rounded-lg border border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-800/50;
-}
-
-/* Post Image Layouts */
-.post-image.inline-left { @apply float-left mr-6 mb-4 max-w-[50%] clear-left; }
-.post-image.inline-right { @apply float-right ml-6 mb-4 max-w-[50%] clear-right; }
-
-/* Grid Components */
-@layer components {
-    .benford-grid-container {
-        @apply grid gap-1 items-center justify-center h-full w-full overflow-hidden p-2;
-        @apply bg-neutral-50 dark:bg-neutral-950 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-inner;
-    }
-    .benford-cell {
-        @apply flex items-center justify-center h-8 text-[10px] font-mono border border-neutral-200/50 
-               dark:border-neutral-800/50 rounded bg-white dark:bg-neutral-900 shadow-sm truncate px-1 transition-colors;
-    }
-    .chart-bar-actual {
-        @apply w-full bg-neutral-900 dark:bg-neutral-100 rounded-t-xs transition-all duration-500 ease-in-out relative;
-    }
-    .chart-marker-expected {
-        @apply absolute w-full border-t-2 border-amber-500/60 z-10 pointer-events-none;
-    }
 }
 
 @layer components {
@@ -111,29 +78,5 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
     .category-header p {
         @apply mt-4 text-xl text-slate-600;
-    }
-
-    .category-grid {
-        @apply grid gap-8 md:grid-cols-2 lg:grid-cols-3;
-    }
-
-    .post-card {
-        @apply flex flex-col bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-slate-300 transition-all duration-200 overflow-hidden;
-    }
-
-    .post-link {
-        @apply flex flex-col h-full p-6 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2;
-    }
-
-    .post-card h2 {
-        @apply text-xl font-bold text-slate-900 mb-3 leading-tight;
-    }
-
-    .post-card p {
-        @apply text-slate-600 mb-6 flex-grow line-clamp-3;
-    }
-
-    .post-card time {
-        @apply text-sm font-medium text-slate-500 mt-auto;
     }
 }

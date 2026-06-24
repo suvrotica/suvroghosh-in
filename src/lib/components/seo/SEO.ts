@@ -5,15 +5,13 @@ export const siteTitle = 'Suvro Ghosh';
 export const siteTitleLong = 'Suvro Ghosh | Healthcare IT Architect & AI Specialist';
 export const siteDescription = "Senior Healthcare IT Architect and former Health-Tech Founder bridging legacy clinical data and Applied AI. Notes on enterprise healthcare architecture, interoperability, and semantic data substrates.";
 
-// Phase 0 Fix: Canonical domain resolution
 export const siteUrl = dev ? 'http://localhost:5173' : 'https://www.suvroghosh.in';
 
 export const socialUrls = [
-    'https://github.com/suvrotica', // Fixed GitHub URI entity
+    'https://github.com/suvrotica',
     'https://www.linkedin.com/in/suvro-ghosh-78a5aa278',
 ];
 
-// Phase 0 Fix: Correct missing Open Graph fallback
 export const defaultOgImage = `${siteUrl}/images/IMG-20260427-WA0001.jpg`;
 
 export const siteSEO = {
@@ -30,7 +28,6 @@ export const siteSEO = {
     ]
 };
 
-// Phase 0 Fix: Provide ID for entity cross-referencing
 export const personSchema: WithContext<Person> = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -54,7 +51,6 @@ export const websiteSchema: WithContext<WebSite> = {
     inLanguage: 'en-US'
 };
 
-// Phase 0 Fix: Dynamic BlogPosting Schema Generator
 export function blogPostingSchema(post: {
     title: string;
     description: string;
@@ -98,7 +94,6 @@ export function blogPostingSchema(post: {
     return schema as unknown as WithContext<BlogPosting>;
 }
 
-// BreadcrumbList Schema Generator
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
     return {
         '@context': 'https://schema.org',

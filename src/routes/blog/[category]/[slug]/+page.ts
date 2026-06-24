@@ -3,23 +3,19 @@ import type { PageLoad } from './$types';
 import { siteUrl, defaultOgImage, blogPostingSchema, breadcrumbSchema } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 
-export const load: PageLoad = async ({ params, data: serverData }) => {
+export const load: PageLoad = async ({ params }) => {
 	const { category, slug } = params;
 
 	try {
-		// Dynamically import the markdown file
 		const post = await import(`../../../../../src/lib/posts/${slug}.md`);
-		
-		const metadata = post.metadata;
-		// This is the compiled Svelte component from your markdown
-		const content = post.default; 
 
-		// Ensure the category matches our normalized taxonomy
+		const metadata = post.metadata;
+		const content = post.default;
+
 		const normalizedCategory = slugifyCategory(metadata.category ?? category);
 		const canonicalUrl = `${siteUrl}/blog/${normalizedCategory}/${slug.toLowerCase()}`;
 		const catLabel = categoryLabel(normalizedCategory);
 
-		// Build page-specific keywords from post tags + title words
 		const titleWords = (metadata.title || '')
 			.split(/\s+/)
 			.filter((w: string) => w.length > 3)
@@ -31,7 +27,6 @@ export const load: PageLoad = async ({ params, data: serverData }) => {
 			'Suvro Ghosh'
 		].filter(Boolean).slice(0, 15);
 
-		// Breadcrumb schema for rich SERP breadcrumbs
 		const breadcrumbs = breadcrumbSchema([
 			{ name: 'Home', url: siteUrl },
 			{ name: 'Blog', url: `${siteUrl}/blog` },
@@ -39,7 +34,6 @@ export const load: PageLoad = async ({ params, data: serverData }) => {
 			{ name: metadata.title, url: canonicalUrl }
 		]);
 
-		// Build robust SEO data tailored for an Article
 		const seo = {
 			title: `${metadata.title} | SuvroGhosh.In`,
 			description: metadata.description,
@@ -65,13 +59,44 @@ export const load: PageLoad = async ({ params, data: serverData }) => {
 			}
 		};
 
+		const postModules = import.meta.glob('/src/lib/posts/*.md', { import: 'metadata' });
+
+		const relatedPosts: { title: string; slug: string; category: string; date?: string; thumbnail?: string }[] = [];
+
+		for (const path in postModules) {
+			const fileName = path.split('/').pop()?.slice(0, -3).toLowerCase();
+			if (!fileName || fileName === slug.toLowerCase()) continue;
+
+			const loader = postModules[path] as () => Promise<any>;
+			const meta = await loader();
+
+			if (meta.published === false || !meta.title) continue;
+
+			const postCat = slugifyCategory(meta.category || 'uncategorized');
+			if (postCat === normalizedCategory) {
+				relatedPosts.push({
+					title: meta.title,
+					slug: fileName,
+					category: postCat,
+					date: meta.date,
+					thumbnail: meta.thumbnail
+				});
+			}
+		}
+
+		relatedPosts.sort((a, b) => {
+			const dateA = a.date ? new Date(a.date).getTime() : 0;
+			const dateB = b.date ? new Date(b.date).getTime() : 0;
+			return dateB - dateA;
+		});
+
 		return {
-			relatedPosts: serverData.relatedPosts ?? [],
+			relatedPosts: relatedPosts.slice(0, 4),
 			content,
 			metadata: {
 				...metadata,
 				categorySlug: normalizedCategory,
-				categoryLabel: catLabel,
+				categoryLabel: catLabel
 			},
 			seo
 		};

@@ -23,16 +23,17 @@
 		return match ? match[1] : null;
 	}
 
+	let playlistId = $derived(parseYouTubePlaylistId(src));
+
 	let embedSrc = $derived.by(() => {
 		const videoId = parseYouTubeId(src);
-		const playlistId = parseYouTubePlaylistId(src);
 		const baseUrl = 'https://www.youtube.com/embed/';
 
 		const params = new URLSearchParams({
-			playsinline: '1', 
-			controls: '1',    
-			fs: '1',          
-			rel: '0'          
+			playsinline: '1',
+			controls: '1',
+			fs: '1',
+			rel: '0'
 		});
 
 		if (playlistId) {
@@ -45,7 +46,7 @@
 		} else if (videoId) {
 			return `${baseUrl}${videoId}?${params.toString()}`;
 		}
-		
+
 		return null;
 	});
 </script>
@@ -63,10 +64,10 @@
 				referrerpolicy="strict-origin-when-cross-origin"
 			></iframe>
 		</div>
-		{#if caption || parseYouTubePlaylistId(src)}
+		{#if caption || playlistId}
 			<figcaption class="mt-2 text-sm italic text-neutral-600 dark:text-neutral-400 text-center leading-tight">
 				{caption}
-				{#if parseYouTubePlaylistId(src)}
+				{#if playlistId}
 					<br/>
 					<a href={src} target="_blank" rel="noopener noreferrer" class="text-xs text-sky-600 dark:text-sky-400 hover:underline">
 						(Open Playlist on YouTube)

@@ -26,7 +26,6 @@ const autoImport = {
 	}
 };
 
-// 1. Define a custom rehype plugin to darken text inside square brackets
 function rehypeSquareBrackets() {
 	return (tree) => {
 		function walk(node) {
@@ -76,7 +75,7 @@ const config = {
 		autoImport,
 		vitePreprocess(),
 		mdsvex({
-			extensions: ['.md', '.svx'],
+			extensions: ['.md'],
 			remarkPlugins: [remarkMath],
 			rehypePlugins: [
 				rehypeSlug,
@@ -86,13 +85,9 @@ const config = {
 			]
 		})
 	],
-	extensions: ['.svelte', '.md', '.svx'],
+	extensions: ['.svelte', '.md'],
 	kit: {
-		adapter: adapter(),
-		alias: {
-			$components: 'src/lib/components',
-			$assets: 'src/lib/assets'
-		}
+		adapter: adapter()
 	}
 };
 

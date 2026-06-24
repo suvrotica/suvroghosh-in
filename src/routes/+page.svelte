@@ -1,17 +1,17 @@
 <script lang="ts">
-	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	import PostTabs from '$lib/components/blog/PostTabs.svelte';
 	import { siteSEO, personSchema, websiteSchema } from '$lib/components/seo/SEO';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 </script>
-<SEO 
-    {...siteSEO} 
-    schema={{
-        '@context': 'https://schema.org',
-        '@graph': [personSchema, websiteSchema]
-    }} 
+<SEO
+	{...siteSEO}
+	schema={{
+		'@context': 'https://schema.org',
+		'@graph': [personSchema, websiteSchema]
+	}}
 />
 
 <section class="mb-12 card bg-white/50 dark:bg-neutral-900/50 text-center md:text-left border-l-4 border-l-gold">
@@ -26,12 +26,12 @@
 	<div class="flex items-end justify-between mb-6 border-b border-neutral-300 dark:border-neutral-700 pb-2">
 		<h2 class="text-2xl font-bold m-0 text-neutral-900 dark:text-neutral-100">Latest Writing</h2>
 		<a href="/blog" class="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-gold transition-colors mb-1">
-            View All →
-        </a>
+			View All →
+		</a>
 	</div>
-	
+
 	{#if data.posts.length > 0}
-        <PostGallery posts={data.posts} />
+		<PostTabs posts={data.posts} basePath="/" />
 	{:else}
 		<div class="py-12 text-center text-neutral-500 border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg">
 			<p>No posts published yet. Check back soon.</p>

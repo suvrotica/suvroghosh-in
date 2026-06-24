@@ -17,7 +17,7 @@
 	};
 
 	const title = 'Suvro Ghosh | Senior Healthcare IT & Interoperability Architect';
-	const canonicalUrl = `{siteUrl}/resume`;
+	const canonicalUrl = `${siteUrl}/resume`;
 	const keywords = [
 		'Healthcare IT Architect', 'HL7', 'FHIR', 'HIE', 'Clinical Data Systems', 'SQL', 'ETL',
 		'Healthcare Interoperability', 'EHR', 'CDISC', 'Data Warehousing', 'Suvro Ghosh', 'Resume',
