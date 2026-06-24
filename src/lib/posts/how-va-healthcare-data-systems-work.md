@@ -3,7 +3,7 @@ title: "How VA Healthcare Data Systems Work: From MUMPS to SQL"
 description: "A technical explanation of how Veterans Affairs healthcare data moves from VistA's MUMPS and FileMan world into SQL warehouses, and why that translation is never merely a database conversion."
 date: "2026-06-24"
 thumbnail: "/images/IMG-20260425-WA0005.jpg"
-category: "Healthcare IT"
+category: "Healthcare-IT"
 tags: ["Healthcare IT", "Veterans Affairs", "VistA", "MUMPS", "Data Migration", "SQL", "Medical Informatics", "SuvroGhosh"]
 published: true
 color: "#1a4d8f"
