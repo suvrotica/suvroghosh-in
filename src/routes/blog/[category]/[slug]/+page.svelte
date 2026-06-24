@@ -7,6 +7,8 @@
 
 	// Alias the component so Svelte recognizes it as a valid tag
 	let PostContent = $derived(data.content);
+
+	let relatedPosts = $derived(data.relatedPosts ?? []);
 </script>
 
 <SEO {...data.seo} />
@@ -93,5 +95,26 @@
 				{/each}
 			</ul>
 		</footer>
+	{/if}
+
+	{#if relatedPosts.length > 0}
+		<section class="mt-16 border-t border-neutral-200 pt-8 dark:border-neutral-800">
+			<h2 class="mb-6 text-2xl font-bold text-neutral-900 dark:text-white">Read Next</h2>
+			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+				{#each relatedPosts as post (post.slug)}
+					<a
+						href={`/blog/${post.category}/${post.slug}`}
+						class="group block rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 p-4 shadow-sm transition-all hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-700"
+					>
+						<div class="text-xs font-medium uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">
+							{post.category}
+						</div>
+						<div class="font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-gold transition-colors">
+							{post.title}
+						</div>
+					</a>
+				{/each}
+			</div>
+		</section>
 	{/if}
 </article>

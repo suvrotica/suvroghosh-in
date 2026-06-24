@@ -1,6 +1,7 @@
 // File: src/routes/blog/[category]/[slug]/+page.server.ts
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { slugifyCategory } from '$lib/content/categories';
 
 interface PostMetadata {
     title: string;
@@ -11,6 +12,14 @@ interface PostMetadata {
     keywords?: string[];
     category?: string;
     [key: string]: unknown;
+}
+
+interface RelatedPost {
+    title: string;
+    slug: string;
+    category: string;
+    date?: string;
+    thumbnail?: string;
 }
 
 export const load: PageServerLoad = async ({ params, url }) => {
@@ -35,8 +44,40 @@ export const load: PageServerLoad = async ({ params, url }) => {
             error(404, { message: 'This post is not available.' });
         }
 
+        // Fetch related posts from the same category (excluding current post)
+        const normalizedCategory = slugifyCategory(post.category ?? category);
+        const relatedPosts: RelatedPost[] = [];
+
+        for (const path in postModules) {
+            const fileName = path.split('/').pop()?.slice(0, -3).toLowerCase();
+            if (!fileName || fileName === slug.toLowerCase()) continue;
+
+            const loader = postModules[path];
+            const meta = (await loader()) as PostMetadata;
+
+            if (meta.published === false || !meta.title) continue;
+
+            const postCat = slugifyCategory(meta.category || 'uncategorized');
+            if (postCat === normalizedCategory) {
+                relatedPosts.push({
+                    title: meta.title,
+                    slug: fileName,
+                    category: postCat,
+                    date: meta.date,
+                    thumbnail: meta.thumbnail
+                });
+            }
+        }
+
+        // Sort related posts by date, newest first, limit to 4
+        relatedPosts.sort((a, b) => {
+            const dateA = a.date ? new Date(a.date).getTime() : 0;
+            const dateB = b.date ? new Date(b.date).getTime() : 0;
+            return dateB - dateA;
+        });
+
         const canonicalUrl = `${url.origin}/blog/${category}/${slug}`;
-        const fallbackImage = `${url.origin}/images/photo.jpeg`; // Ensure this image exists in your static folder
+        const fallbackImage = `${url.origin}/images/photo.jpeg`;
         
         const seo = {
             title: `${post.title} | SuvroGhosh.In`, 
@@ -50,7 +91,8 @@ export const load: PageServerLoad = async ({ params, url }) => {
         return { 
             metadata: post, 
             seo, 
-            resolvedPath: matchingPath 
+            resolvedPath: matchingPath,
+            relatedPosts: relatedPosts.slice(0, 4)
         };
 
     } catch (err: any) {

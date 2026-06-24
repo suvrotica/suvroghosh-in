@@ -1,8 +1,8 @@
 import { dev } from '$app/environment';
-import type { WithContext, WebSite, Person, BlogPosting } from 'schema-dts';
+import type { WithContext, WebSite, Person, BlogPosting, BreadcrumbList } from 'schema-dts';
 
 export const siteTitle = 'Suvro Ghosh';
-export const siteTitleLong = 'Suvro Ghosh | Senior Healthcare IT Architect & AI Data Specialist';
+export const siteTitleLong = 'Suvro Ghosh | Healthcare IT Architect & AI Specialist';
 export const siteDescription = "Senior Healthcare IT Architect and former Health-Tech Founder bridging legacy clinical data and Applied AI. Notes on enterprise healthcare architecture, interoperability, and semantic data substrates.";
 
 // Phase 0 Fix: Canonical domain resolution
@@ -23,10 +23,10 @@ export const siteSEO = {
     ogImageUrl: defaultOgImage,
     ogImageAlt: 'Suvro Ghosh - Senior Healthcare IT Architect',
     keywords: [
-        'Suvro Ghosh', 'Senior Healthcare IT Architect', 'Health-Tech Founder', 'AI Data Specialist', 
+        'Suvro Ghosh', 'Healthcare IT Architect', 'AI Specialist',
         'Applied AI in Healthcare', 'Enterprise Architecture', 'Healthcare Interoperability',
         'HL7', 'FHIR R4/R5', 'CDISC', 'Clinical Data Semantics', 'EHR Data Substrates', 'HIE', 'CTMS',
-        'SvelteKit', 'RAG', 'Agentic Workflows'
+        'RAG', 'Agentic Workflows'
     ]
 };
 
@@ -64,8 +64,9 @@ export function blogPostingSchema(post: {
     category: string;
     slug: string;
     canonicalUrl: string;
+    wordCount?: number;
 }) {
-    return {
+    const schema: Record<string, unknown> = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
         headline: post.title,
@@ -90,5 +91,23 @@ export function blogPostingSchema(post: {
         },
         articleSection: post.category,
         inLanguage: 'en'
-    } satisfies WithContext<BlogPosting>;
+    };
+    if (post.wordCount) {
+        schema.wordCount = post.wordCount;
+    }
+    return schema as unknown as WithContext<BlogPosting>;
+}
+
+// BreadcrumbList Schema Generator
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
+    return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.name,
+            item: item.url
+        }))
+    } satisfies WithContext<BreadcrumbList>;
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
+	import { siteUrl } from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 
 	type SkillGroup = {
@@ -16,6 +17,12 @@
 	};
 
 	const title = 'Suvro Ghosh | Senior Healthcare IT & Interoperability Architect';
+	const canonicalUrl = `{siteUrl}/resume`;
+	const keywords = [
+		'Healthcare IT Architect', 'HL7', 'FHIR', 'HIE', 'Clinical Data Systems', 'SQL', 'ETL',
+		'Healthcare Interoperability', 'EHR', 'CDISC', 'Data Warehousing', 'Suvro Ghosh', 'Resume',
+		'Healthcare Data Architecture', 'Digital Health', 'Health Informatics'
+	];
 	const description =
 		'Senior Healthcare IT Architect with 15+ years of U.S. healthcare data, EHR, HIE, HL7, FHIR, CDISC, SQL, ETL, clinical research, and health data architecture experience.';
 
@@ -276,7 +283,7 @@
 	];
 </script>
 
-<SEO {title} {description} />
+<SEO {title} {description} {canonicalUrl} {keywords} />
 
 <section class="mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10 text-center md:text-left">
