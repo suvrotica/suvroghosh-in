@@ -88,9 +88,12 @@
 			<ul class="flex flex-wrap gap-2">
 				{#each data.metadata.tags as tag}
 					<li>
-						<span class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300">
+						<a
+							href={`/blog?search=${encodeURIComponent(tag)}`}
+							class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-900 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-white"
+						>
 							{tag}
-						</span>
+						</a>
 					</li>
 				{/each}
 			</ul>

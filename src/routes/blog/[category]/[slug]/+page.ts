@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { siteUrl, defaultOgImage, blogPostingSchema, breadcrumbSchema } from '$lib/components/seo/SEO';
+import { siteUrl, siteTitle, defaultOgImage, blogPostingSchema, breadcrumbSchema } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 
 export const load: PageLoad = async ({ params }) => {
@@ -16,13 +16,8 @@ export const load: PageLoad = async ({ params }) => {
 		const canonicalUrl = `${siteUrl}/blog/${normalizedCategory}/${slug.toLowerCase()}`;
 		const catLabel = categoryLabel(normalizedCategory);
 
-		const titleWords = (metadata.title || '')
-			.split(/\s+/)
-			.filter((w: string) => w.length > 3)
-			.map((w: string) => w.replace(/[^a-zA-Z]/g, ''));
 		const postKeywords = [
 			...(metadata.tags || []),
-			...titleWords,
 			metadata.category,
 			'Suvro Ghosh'
 		].filter(Boolean).slice(0, 15);
@@ -35,7 +30,7 @@ export const load: PageLoad = async ({ params }) => {
 		]);
 
 		const seo = {
-			title: `${metadata.title} | SuvroGhosh.In`,
+			title: `${metadata.title} | ${siteTitle}`,
 			description: metadata.description,
 			canonicalUrl,
 			ogImageUrl: metadata.thumbnail ? `${siteUrl}${metadata.thumbnail}` : defaultOgImage,
@@ -45,13 +40,15 @@ export const load: PageLoad = async ({ params }) => {
 			modifiedTime: metadata.dateModified ?? metadata.date,
 			author: metadata.author ?? 'Suvro Ghosh',
 			keywords: postKeywords,
+			category: catLabel,
+			tags: metadata.tags ?? [],
 			schema: {
 				'@context': 'https://schema.org',
 				'@graph': [
 					blogPostingSchema({
 						...metadata,
 						slug: slug.toLowerCase(),
-						category: normalizedCategory,
+						category: catLabel,
 						canonicalUrl
 					}),
 					breadcrumbs

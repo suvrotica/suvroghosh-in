@@ -11,7 +11,7 @@
     title={`${data.categoryDisplay} | SuvroGhosh.In`}
     description={`Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`}
     canonicalUrl={`${siteUrl}/blog/${data.categorySlug}`}
-    keywords={[data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog', ...data.posts.flatMap(p => (p.title || '').split(/\s+/).filter((w: string) => w.length > 3)).slice(0, 10)]}
+    keywords={[data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog']}
 />
 
 <section class="category-layout">

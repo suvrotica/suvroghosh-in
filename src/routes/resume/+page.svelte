@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteUrl } from '$lib/components/seo/SEO';
+	import { siteUrl, personSchema, defaultOgImage } from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 
 	type SkillGroup = {
@@ -16,7 +16,7 @@
 		videos?: string[];
 	};
 
-	const title = 'Suvro Ghosh | Senior Healthcare IT & Interoperability Architect';
+	const title = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Consultant';
 	const canonicalUrl = `${siteUrl}/resume`;
 	const keywords = [
 		'Healthcare IT Architect', 'HL7', 'FHIR', 'HIE', 'Clinical Data Systems', 'SQL', 'ETL',
@@ -24,7 +24,7 @@
 		'Healthcare Data Architecture', 'Digital Health', 'Health Informatics'
 	];
 	const description =
-		'Senior Healthcare IT Architect with 15+ years of U.S. healthcare data, EHR, HIE, HL7, FHIR, CDISC, SQL, ETL, clinical research, and health data architecture experience.';
+		'Healthcare IT Architect and Clinical Data Systems Consultant with 15+ years in EHR, HIE, HL7, FHIR interoperability, SQL data warehousing, MUMPS/VistA, clinical trials, and health informatics. Based in Kolkata, India — open to remote, hybrid, and Gulf consulting.';
 
 	const headline =
 		'Senior Healthcare IT Architect | HL7 / FHIR / HIE | Clinical Data Systems | SQL / ETL | AI-Ready Healthcare Data';
@@ -283,7 +283,15 @@
 	];
 </script>
 
-<SEO {title} {description} {canonicalUrl} {keywords} />
+<SEO
+	{title}
+	{description}
+	{canonicalUrl}
+	{keywords}
+	ogImageUrl={defaultOgImage}
+	ogImageAlt={'Suvro Ghosh - Healthcare IT Architect'}
+	schema={personSchema}
+/>
 
 <section class="mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10 text-center md:text-left">

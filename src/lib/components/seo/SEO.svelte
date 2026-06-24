@@ -12,6 +12,8 @@
 		publishedTime?: string;
 		modifiedTime?: string;
 		author?: string;
+		category?: string;
+		tags?: string[];
 	};
 
 	// We set the default values to fall back to your new SEO profile
@@ -26,7 +28,9 @@
 		type = 'website',
 		publishedTime,
 		modifiedTime,
-		author = 'Suvro Ghosh'
+		author = 'Suvro Ghosh',
+		category,
+		tags
 	}: Props = $props();
 </script>
 
@@ -50,6 +54,16 @@
 
 	{#if type === 'article' && modifiedTime}
 		<meta property="article:modified_time" content={modifiedTime} />
+	{/if}
+
+	{#if type === 'article' && category}
+		<meta property="article:section" content={category} />
+	{/if}
+
+	{#if type === 'article' && tags && tags.length > 0}
+		{#each tags as tag}
+			<meta property="article:tag" content={tag} />
+		{/each}
 	{/if}
 
 	{#if canonicalUrl}
