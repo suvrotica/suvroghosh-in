@@ -1,15 +1,17 @@
-## the-person-is-not-a-machine.md
-
 ---
 title: "The Person Is Not a Machine"
 description: "A 51-year-old in Calcutta reflects on why he still writes long-form personal essays in an age of algorithmic content, AI slop, and collapsing attention spans—choosing thought over trend, and honesty over polish."
 date: "2026-06-24"
-thumbnail: "/images/calcutta-fan.jpg"
+thumbnail: "/images/Compress_20260624_195048_8696.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
 published: true
 color: "#8B4513"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260624_195048_8696.jpg" />
 
 The ceiling fan in my room makes a sound like a small aircraft preparing for an uncertain takeoff. It has made this sound for years. I know because I have counted. Not obsessively, not in any clinical way, but in the manner in which a person who lives alone in a room with a noisy fan comes to know the particular cadence of his own discomfort. The blades wobble slightly—there is a microscopic imbalance somewhere in the assembly that no electrician has ever been able to diagnose, let alone fix—and the resulting oscillation produces a rhythmic thrum that varies with the humidity. On days like today, when the pre-monsoon air hangs in the room like a damp wool blanket, the fan sounds desperate. It is trying. That is the important part. It is trying to move air that does not want to be moved.
 
