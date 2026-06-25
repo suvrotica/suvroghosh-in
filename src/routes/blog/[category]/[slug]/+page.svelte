@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
+	import WordCloud from '$lib/components/visual/WordCloud.svelte';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -42,10 +43,8 @@
 	{#if data.metadata.tags && data.metadata.tags.length > 0}
 		<ScrollReveal>
 			<footer class="mt-16 border-t border-neutral-200 pt-8 dark:border-neutral-800">
-				<h2 class="mb-4 text-xs font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Topics Discussed</h2>
-				<ul class="flex flex-wrap gap-2">
-					{#each data.metadata.tags as tag}<li><a href={`/blog?search=${encodeURIComponent(tag)}`} class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-neutral-400/10 hover:text-neutral-400 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700">{tag}</a></li>{/each}
-				</ul>
+				<h2 class="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Topics Discussed</h2>
+				<WordCloud tags={data.metadata.tags} />
 			</footer>
 		</ScrollReveal>
 	{/if}
