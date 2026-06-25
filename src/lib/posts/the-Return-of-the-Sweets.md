@@ -1,9 +1,8 @@
-The-Return-of-the-Sweets.md
 ---
 title: "The Return of the Sweets"
 description: "A grieving man returns to Calcutta and discovers his late father has engineered a rosogolla that replicates inside the human body, using familial tissue to rebuild itself."
 date: "2026-06-25"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260625_180713_3083.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Calcutta", "Body Horror", "Familial Dread", "Biological Inheritance"]
 published: true
@@ -12,7 +11,7 @@ color: "#F5F5DC"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260625_180713_3083.jpg" />
 
 # THIS IS A WORK OF FICTION
 
