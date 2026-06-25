@@ -9,9 +9,9 @@ published: true
 color: "blue"
 ---
 
-&lt;TTS /&gt;
+<TTS />
 
-&lt;Pi src="IMG-20260423-WA0021.jpg" /&gt;
+<Pi src="IMG-20260423-WA0021.jpg" />
 
 # The Invisible River: Understanding Health Information Exchange from the Bedrock Up
 
