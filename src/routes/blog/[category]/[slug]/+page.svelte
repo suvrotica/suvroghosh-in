@@ -14,11 +14,11 @@
 <article class="page-enter mx-auto max-w-3xl px-4 py-12 md:px-8">
 	<nav aria-label="Breadcrumb" class="mb-8 text-sm text-neutral-500 dark:text-neutral-400">
 		<ol class="flex flex-wrap items-center gap-2">
-			<li><a href="/" class="transition-colors hover:text-gold">Home</a></li>
+			<li><a href="/" class="transition-colors hover:text-neutral-400">Home</a></li>
 			<li><span aria-hidden="true">/</span></li>
-			<li><a href="/blog" class="transition-colors hover:text-gold">Blog</a></li>
+			<li><a href="/blog" class="transition-colors hover:text-neutral-400">Blog</a></li>
 			<li><span aria-hidden="true">/</span></li>
-			<li><a href={`/blog/${data.metadata.categorySlug}`} class="transition-colors hover:text-gold">{data.metadata.categoryLabel}</a></li>
+			<li><a href={`/blog/${data.metadata.categorySlug}`} class="transition-colors hover:text-neutral-400">{data.metadata.categoryLabel}</a></li>
 			<li><span aria-hidden="true">/</span></li>
 			<li class="truncate font-medium text-neutral-900 dark:text-neutral-200" aria-current="page">{data.metadata.title}</li>
 		</ol>
@@ -27,7 +27,7 @@
 	<header class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800">
 		<h1 class="mb-6 text-3xl font-bold tracking-tight text-neutral-900 md:text-5xl md:leading-tight dark:text-white">{data.metadata.title}</h1>
 		<div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-600 dark:text-neutral-400">
-			<span>By <a href="/resume" rel="author" class="font-medium hover:text-gold transition-colors">{data.metadata.author ?? 'Suvro Ghosh'}</a></span>
+			<span>By <a href="/resume" rel="author" class="font-medium hover:text-neutral-400 transition-colors">{data.metadata.author ?? 'Suvro Ghosh'}</a></span>
 			{#if data.metadata.date}<span aria-hidden="true">&middot;</span><time datetime={data.metadata.date}>{new Date(data.metadata.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</time>{/if}
 			{#if data.metadata.dateModified}<span aria-hidden="true">&middot;</span><span>Updated <time datetime={data.metadata.dateModified}>{new Date(data.metadata.dateModified).toLocaleDateString('en-IN')}</time></span>{/if}
 			{#if data.metadata.readingTime}<span aria-hidden="true">&middot;</span><span>{data.metadata.readingTime} read</span>{/if}
@@ -44,7 +44,7 @@
 			<footer class="mt-16 border-t border-neutral-200 pt-8 dark:border-neutral-800">
 				<h2 class="mb-4 text-xs font-semibold uppercase tracking-wider text-neutral-900 dark:text-white">Topics Discussed</h2>
 				<ul class="flex flex-wrap gap-2">
-					{#each data.metadata.tags as tag}<li><a href={`/blog?search=${encodeURIComponent(tag)}`} class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-gold/10 hover:text-gold dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700">{tag}</a></li>{/each}
+					{#each data.metadata.tags as tag}<li><a href={`/blog?search=${encodeURIComponent(tag)}`} class="inline-block rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition-colors hover:bg-neutral-400/10 hover:text-neutral-400 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700">{tag}</a></li>{/each}
 				</ul>
 			</footer>
 		</ScrollReveal>
@@ -57,8 +57,8 @@
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 					{#each relatedPosts as post (post.slug)}
 						<a href={`/blog/${post.category}/${post.slug}`} class="post-card group block rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800/50 p-4 shadow-sm no-underline">
-							<div class="text-xs font-medium uppercase tracking-wider text-gold mb-1">{post.category}</div>
-							<div class="font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-gold transition-colors">{post.title}</div>
+							<div class="text-xs font-medium uppercase tracking-wider text-neutral-400 mb-1">{post.category}</div>
+							<div class="font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-neutral-400 transition-colors">{post.title}</div>
 						</a>
 					{/each}
 				</div>

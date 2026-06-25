@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
-	import ThemeToggle from '$lib/components/animation/ThemeToggle.svelte';
 
 	let { isMenuOpen, toggleMenu }: {
 		isMenuOpen: boolean;
@@ -25,15 +24,15 @@
 
 <header class="border-b border-neutral-300 dark:border-neutral-700 bg-neutral-100/95 dark:bg-neutral-900/95 backdrop-blur-sm transition-colors sticky top-0 z-30">
 	<div class="container mx-auto flex items-center justify-between p-4 gap-4">
-		<a href="/" class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 hover:text-gold transition-colors whitespace-nowrap">
-			SuvroGhosh<span class="text-gold">.In</span>
+		<a href="/" class="text-lg font-bold text-neutral-900 dark:text-neutral-100 hover:text-neutral-400 transition-colors whitespace-nowrap">
+			SuvroGhosh<span class="text-neutral-400">.In</span>
 		</a>
 
 		<div class="flex items-center gap-3">
 			<div class="hidden md:flex items-center space-x-6">
 				<a
 					href="/blog"
-					class="nav-link text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-gold transition-colors"
+					class="nav-link text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-400 transition-colors"
 					aria-current={currentPath === '/blog' ? 'page' : undefined}
 				>
 					Blog
@@ -41,7 +40,7 @@
 
 				<a
 					href="/resume"
-					class="nav-link text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-gold transition-colors"
+					class="nav-link text-sm font-medium text-neutral-700 dark:text-neutral-300 hover:text-neutral-400 transition-colors"
 					aria-current={currentPath === '/resume' ? 'page' : undefined}
 				>
 					Resume
@@ -55,7 +54,7 @@
 					bind:value={searchQuery}
 					placeholder="Search posts…"
 					aria-label="Search posts"
-					class="w-28 sm:w-40 px-3 py-1.5 text-sm rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-gold transition-colors"
+					class="w-28 sm:w-40 px-3 py-1.5 text-sm rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 placeholder-neutral-400 focus:outline-none focus:ring-1 focus:ring-neutral-400 transition-colors"
 				/>
 				<button
 					type="submit"
@@ -67,8 +66,6 @@
 					</svg>
 				</button>
 			</form>
-
-			<ThemeToggle />
 
 			<button
 				class="lg:hidden p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 cursor-pointer"

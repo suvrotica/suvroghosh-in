@@ -15,7 +15,7 @@
 
 		<a
 			{href}
-			class="post-card group block overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800 shadow-md no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
+			class="post-card group block overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-800 shadow-md no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2"
 		>
 			{#if post.thumbnail}
 				<div class="relative aspect-[2/3] overflow-hidden bg-neutral-200 dark:bg-neutral-700">
@@ -30,17 +30,17 @@
 						<div class="text-white text-sm sm:text-base font-semibold leading-snug break-words">
 							{post.title}
 						</div>
-						<div class="text-gold-light text-[11px] sm:text-xs leading-tight mt-0.5 uppercase tracking-wide">
+						<div class="text-neutral-300 text-[11px] sm:text-xs leading-tight mt-0.5 uppercase tracking-wide">
 							{post.category}
 						</div>
 					</div>
 				</div>
 			{:else}
 				<div class="p-5 min-h-[8rem] flex flex-col justify-center bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900">
-					<div class="text-neutral-900 dark:text-neutral-100 text-sm sm:text-base font-semibold leading-snug break-words group-hover:text-gold transition-colors">
+					<div class="text-neutral-900 dark:text-neutral-100 text-sm sm:text-base font-semibold leading-snug break-words group-hover:text-neutral-400 transition-colors">
 						{post.title}
 					</div>
-					<div class="text-gold text-[11px] sm:text-xs leading-tight mt-1 uppercase tracking-wide">
+					<div class="text-neutral-400 text-[11px] sm:text-xs leading-tight mt-1 uppercase tracking-wide">
 						{post.category}
 					</div>
 				</div>

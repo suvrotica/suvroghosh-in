@@ -28,7 +28,7 @@
 						No posts found for &ldquo;{data.search}&rdquo;
 					{/if}
 				</p>
-				<a href="/blog" class="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-gold transition-colors">
+				<a href="/blog" class="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-400 transition-colors">
 					Clear &times;
 				</a>
 			</div>

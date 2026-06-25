@@ -8,10 +8,15 @@
   --font-serif: "Merriweather", ui-serif, Georgia, serif;
   --font-mono: "Fira Code", ui-monospace, monospace;
 
-  /* Accent colour */
-  --color-gold: #c8a04a;
-  --color-gold-light: #e0bc6c;
-  --color-gold-dark: #9e7e36;
+  /* Accent colour – light gray, in keeping with the neutral palette */
+  --color-accent: #9ca3af;
+  --color-accent-light: #d1d5db;
+  --color-accent-dark: #6b7280;
+
+  /* Keep gold available for backward-compat but redirect to accent */
+  --color-gold: var(--color-accent);
+  --color-gold-light: var(--color-accent-light);
+  --color-gold-dark: var(--color-accent-dark);
 
   /* Animation tokens */
   --motion-fast: 150ms;
@@ -55,7 +60,7 @@ a {
   transition-duration: var(--motion-fast);
   &:hover {
     @apply decoration-neutral-500;
-    color: var(--color-gold);
+    color: var(--color-accent-light);
   }
 }
 
@@ -118,6 +123,14 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+@keyframes constellation-draw {
+  from { stroke-dashoffset: 200; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes constellation-pulse {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.7; }
+}
 
 /* Scroll reveal */
 .reveal {
@@ -150,7 +163,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-accent-light);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform var(--motion-medium) var(--ease-emphatic);
@@ -171,17 +184,28 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   transform: translateY(-4px);
 }
 
-/* Theme toggle icon spin */
-.theme-toggle-icon {
-  transition: transform var(--motion-medium) var(--ease-emphatic);
-}
-.theme-toggle:hover .theme-toggle-icon {
-  transform: rotate(180deg);
-}
-
 /* Page transition */
 .page-enter {
   animation: fade-in-up var(--motion-medium) var(--ease-emphatic) both;
+}
+
+/* Topic constellation */
+.constellation-line {
+  stroke: var(--color-accent);
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: 200;
+  animation: constellation-draw 2s var(--ease-emphatic) forwards;
+}
+.constellation-node {
+  fill: var(--color-accent);
+  animation: constellation-pulse 3s ease-in-out infinite;
+}
+.constellation-label {
+  fill: var(--color-accent-light);
+  font-size: 11px;
+  font-family: var(--font-sans);
+  text-anchor: middle;
 }
 
 /* Reduced motion */
@@ -195,5 +219,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   .reveal {
     opacity: 1 !important;
     transform: none !important;
+  }
+  .constellation-line {
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+  .constellation-node {
+    animation: none !important;
+    opacity: 0.5 !important;
   }
 }
