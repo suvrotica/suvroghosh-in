@@ -3,6 +3,7 @@
     import PostGallery from '$lib/components/blog/PostGallery.svelte';
     import SEO from '$lib/components/seo/SEO.svelte';
     import { siteUrl } from '$lib/components/seo/SEO';
+    import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 
     let { data }: { data: PageData } = $props();
 </script>
@@ -14,11 +15,13 @@
     keywords={[data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog']}
 />
 
-<section class="category-layout">
+<section class="category-layout page-enter">
     <header class="category-header">
         <h1>{data.categoryDisplay}</h1>
         <p>Exploring concepts, systems, and logic in {data.categoryDisplay}.</p>
     </header>
 
-    <PostGallery posts={data.posts} />
+    <ScrollReveal>
+        <PostGallery posts={data.posts} />
+    </ScrollReveal>
 </section>

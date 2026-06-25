@@ -293,7 +293,7 @@
 	schema={personSchema}
 />
 
-<section class="mx-auto max-w-4xl py-8 md:py-12">
+<section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10 text-center md:text-left">
 		<h1 class="mb-2 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 md:text-5xl">
 			Suvro Ghosh

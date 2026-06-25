@@ -9,6 +9,7 @@
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Aside from '$lib/components/layout/Aside.svelte';
+	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
 
 	let { children } = $props();
 
@@ -25,6 +26,23 @@
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	injectSpeedInsights();
 </script>
+
+<svelte:head>
+	<script>
+		// Prevent dark-mode flash: apply stored/system preference before first paint
+		(function () {
+			try {
+				var stored = localStorage.getItem('theme-preference');
+				var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				var isDark = stored ? stored === 'dark' : prefersDark;
+				if (isDark) document.documentElement.classList.add('dark');
+				else document.documentElement.classList.remove('dark');
+			} catch (e) {}
+		})();
+	</script>
+</svelte:head>
+
+<ReadingProgress />
 
 <div class="main-layout flex h-screen bg-neutral-200 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300 font-sans overflow-hidden">
 	<div class="sidebar-container hidden lg:block w-72 border-r border-neutral-300 dark:border-neutral-700">
