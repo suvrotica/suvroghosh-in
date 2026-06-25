@@ -1,9 +1,8 @@
 <script lang="ts">
-	import PostTabs from '$lib/components/blog/PostTabs.svelte';
-	import { siteSEO, personSchema, websiteSchema } from '$lib/components/seo/SEO';
 	import SEO from '$lib/components/seo/SEO.svelte';
+	import { siteSEO, personSchema, websiteSchema } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
-	import TopicConstellation from '$lib/components/visual/TopicConstellation.svelte';
+	import { Button } from '$lib/components/ui/button';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -18,44 +17,92 @@
 />
 
 <section class="page-enter mb-12">
-	<div class="relative overflow-hidden rounded-xl border border-neutral-300 dark:border-neutral-700 bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800/60 dark:to-neutral-900 p-8 md:p-12">
-		<div class="absolute top-0 right-0 w-48 h-48 bg-neutral-400/5 rounded-full blur-3xl -mr-16 -mt-16" aria-hidden="true"></div>
+	<div
+		class="relative overflow-hidden rounded-xl border border-neutral-300 bg-gradient-to-br from-neutral-100 to-neutral-200 p-8 md:p-12 dark:border-neutral-700 dark:from-neutral-800/60 dark:to-neutral-900"
+	>
+		<div
+			class="absolute top-0 right-0 -mt-16 -mr-16 h-48 w-48 rounded-full bg-neutral-400/5 blur-3xl"
+			aria-hidden="true"
+		></div>
 
-		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-			<div class="relative">
-				<p class="text-sm font-semibold uppercase tracking-widest text-neutral-400 mb-3">
-					Healthcare IT &middot; Applied AI &middot; Calcutta
-				</p>
-				<h1 class="text-4xl md:text-6xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-					Suvro Ghosh
-				</h1>
-				<p class="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl leading-relaxed font-medium">
-					Where clinical entropy meets structural intent. Notes on enterprise healthcare IT, data architecture, and the first-principles thinking required to build technology that outlasts its own hype. Calcutta.
-				</p>
-			</div>
+		<div class="relative">
+			<p class="mb-3 text-sm font-semibold tracking-widest text-neutral-400 uppercase">
+				Healthcare IT &middot; Interoperability &middot; Applied AI &middot; Calcutta
+			</p>
+			<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-6xl dark:text-neutral-100">
+				Suvro Ghosh
+			</h1>
+			<p class="mb-4 text-xl font-semibold text-neutral-700 md:text-2xl dark:text-neutral-300">
+				Healthcare IT Architect &amp; Clinical Data Systems Consultant
+			</p>
+			<p
+				class="max-w-2xl text-base leading-relaxed text-neutral-700 md:text-lg dark:text-neutral-300"
+			>
+				I work on healthcare data systems, interoperability, clinical data architecture, and
+				AI-ready health information infrastructure. I also write essays and satire on technology,
+				illness, corruption, society, and ordinary life in Calcutta.
+			</p>
 
-			<div class="relative hidden lg:block">
-				<TopicConstellation class="opacity-70" />
+			<div class="mt-8 flex flex-wrap gap-3">
+				<Button href="/resume" size="lg">View Resume</Button>
+				<Button href="/consulting" variant="outline" size="lg">Healthcare IT Consulting</Button>
+				<Button href="/writing" variant="outline" size="lg">Writing &amp; Essays</Button>
+				<Button href="/contact" variant="ghost" size="lg">Contact</Button>
 			</div>
 		</div>
 	</div>
 </section>
 
 <ScrollReveal>
-	<section>
-		<div class="flex items-end justify-between mb-6 border-b border-neutral-300 dark:border-neutral-700 pb-2">
-			<h2 class="text-2xl font-bold m-0 text-neutral-900 dark:text-neutral-100">Latest Writing</h2>
-			<a href="/blog" class="text-xs font-bold uppercase tracking-wider text-neutral-500 hover:text-neutral-400 transition-colors mb-1">
-				View All &rarr;
-			</a>
+	<div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+		<div class="card">
+			<h2 class="mb-2 text-xl font-bold text-neutral-900 dark:text-neutral-100">Professional</h2>
+			<p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+				Healthcare IT, HL7/FHIR, HIE, clinical data systems, SQL/ETL, health informatics, and
+				AI-ready healthcare data architecture. Open to Gulf, remote, hybrid, consulting, and
+				advisory opportunities.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-2">
+				<a
+					href="/resume"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					>Resume</a
+				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
+					href="/consulting"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					>Consulting</a
+				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
+					href="/healthcare-it-gulf"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					>Gulf / Kuwait</a
+				>
+			</div>
 		</div>
 
-		{#if data.posts.length > 0}
-			<PostTabs posts={data.posts} basePath="/" />
-		{:else}
-			<div class="py-12 text-center text-neutral-500 border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg">
-				<p>No posts published yet. Check back soon.</p>
+		<div class="card">
+			<h2 class="mb-2 text-xl font-bold text-neutral-900 dark:text-neutral-100">Writing</h2>
+			<p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+				Essays, satire, fiction, sketches, and reflections on technology, illness, corruption,
+				social decay, and Calcutta life. Personal, analytical, sometimes comic, sometimes dark, and
+				intentionally human.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-2">
+				<a
+					href="/writing"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					>Writing &amp; Essays</a
+				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
+					href="/blog"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					>All Posts</a
+				>
 			</div>
-		{/if}
-	</section>
+		</div>
+	</div>
 </ScrollReveal>

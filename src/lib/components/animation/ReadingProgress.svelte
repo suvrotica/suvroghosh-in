@@ -5,7 +5,7 @@
 	let rafId: number | null = null;
 
 	onMount(() => {
-		const scroller = document.querySelector('.scrollable-main') as HTMLElement | null;
+		const scroller = document.getElementById('main-content') as HTMLElement | null;
 		if (!scroller) return;
 
 		const update = () => {
@@ -32,7 +32,7 @@
 </script>
 
 <div
-	class="reading-progress-bar fixed top-0 left-0 right-0 z-50 h-0.5 bg-gold"
+	class="reading-progress-bar fixed top-0 right-0 left-0 z-50 h-0.5 bg-gold"
 	style="transform: scaleX({progress})"
 	aria-hidden="true"
 ></div>

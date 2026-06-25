@@ -17,7 +17,7 @@
 		videos?: string[];
 	};
 
-	const title = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Consultant';
+	const title = 'Resume | Suvro Ghosh | Senior Healthcare IT Architect';
 	const canonicalUrl = `${siteUrl}/resume`;
 	const keywords = [
 		'Healthcare IT Architect',

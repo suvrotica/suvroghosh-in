@@ -4,27 +4,30 @@
 	import { Input } from '$lib/components/ui/input';
 	import { Button } from '$lib/components/ui/button';
 
-	let {
-		isMenuOpen,
-		toggleMenu
-	}: {
-		isMenuOpen: boolean;
-		toggleMenu: () => void;
-	} = $props();
+	let currentPath = $derived(page.url.pathname);
+
+	const navLinks = [
+		{ href: '/', label: 'Home' },
+		{ href: '/resume', label: 'Resume' },
+		{ href: '/consulting', label: 'Healthcare IT' },
+		{ href: '/healthcare-it-gulf', label: 'Gulf / Kuwait' },
+		{ href: '/writing', label: 'Writing' },
+		{ href: '/contact', label: 'Contact' }
+	];
+
+	let mobileOpen = $state(false);
+
+	function closeMobile() {
+		mobileOpen = false;
+	}
 
 	let searchQuery = $state(page.url.searchParams.get('search') ?? '');
-
-	$effect(() => {
-		searchQuery = page.url.searchParams.get('search') ?? '';
-	});
 
 	function handleSearch(e: SubmitEvent) {
 		e.preventDefault();
 		const query = searchQuery.trim();
-		goto(query ? `/blog?search=${encodeURIComponent(query)}` : '/blog');
+		goto(query ? '/blog?search=' + encodeURIComponent(query) : '/blog');
 	}
-
-	let currentPath = $derived(page.url.pathname);
 </script>
 
 <header
@@ -38,31 +41,25 @@
 			SuvroGhosh<span class="text-neutral-400">.In</span>
 		</a>
 
+		<nav class="hidden items-center gap-5 md:flex" aria-label="Main navigation">
+			{#each navLinks as link}
+				<a
+					href={link.href}
+					class="nav-link text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-400 dark:text-neutral-300"
+					aria-current={currentPath === link.href ? 'page' : undefined}
+				>
+					{link.label}
+				</a>
+			{/each}
+		</nav>
+
 		<div class="flex items-center gap-3">
-			<div class="hidden items-center space-x-6 md:flex">
-				<a
-					href="/blog"
-					class="nav-link text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-400 dark:text-neutral-300"
-					aria-current={currentPath === '/blog' ? 'page' : undefined}
-				>
-					Blog
-				</a>
-
-				<a
-					href="/resume"
-					class="nav-link text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-400 dark:text-neutral-300"
-					aria-current={currentPath === '/resume' ? 'page' : undefined}
-				>
-					Resume
-				</a>
-			</div>
-
 			<form onsubmit={handleSearch} class="flex items-center gap-1" role="search">
 				<Input
 					type="search"
 					name="search"
 					bind:value={searchQuery}
-					placeholder="Search posts…"
+					placeholder="Search posts..."
 					aria-label="Search posts"
 					class="h-8 w-28 sm:w-40"
 				/>
@@ -79,9 +76,10 @@
 			</form>
 
 			<button
-				class="cursor-pointer rounded-md p-2 hover:bg-neutral-200 lg:hidden dark:hover:bg-neutral-800"
-				onclick={toggleMenu}
-				aria-label="Toggle menu"
+				class="cursor-pointer rounded-md p-2 hover:bg-neutral-200 md:hidden dark:hover:bg-neutral-800"
+				onclick={() => (mobileOpen = !mobileOpen)}
+				aria-label="Toggle navigation menu"
+				aria-expanded={mobileOpen}
 			>
 				<svg
 					class="h-6 w-6 text-neutral-800 dark:text-neutral-200"
@@ -89,7 +87,7 @@
 					stroke="currentColor"
 					viewBox="0 0 24 24"
 				>
-					{#if isMenuOpen}
+					{#if mobileOpen}
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -108,4 +106,26 @@
 			</button>
 		</div>
 	</div>
+
+	{#if mobileOpen}
+		<nav
+			class="border-t border-neutral-300 px-4 py-3 md:hidden dark:border-neutral-700"
+			aria-label="Mobile navigation"
+		>
+			<ul class="flex flex-col gap-2">
+				{#each navLinks as link}
+					<li>
+						<a
+							href={link.href}
+							onclick={closeMobile}
+							class="block rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-400 dark:text-neutral-300 dark:hover:bg-neutral-800"
+							aria-current={currentPath === link.href ? 'page' : undefined}
+						>
+							{link.label}
+						</a>
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	{/if}
 </header>

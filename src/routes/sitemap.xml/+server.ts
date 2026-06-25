@@ -15,29 +15,35 @@ export async function GET() {
 			const category = slugifyCategory(metadata.category);
 
 			return {
-				url: `${siteUrl}/blog/${category}/${slug}`,
+				url: siteUrl + '/blog/' + category + '/' + slug,
 				lastMod: metadata.dateModified || metadata.date
 			};
 		})
 		.filter(Boolean);
 
 	const pages = [
-		{ url: `${siteUrl}/`, lastMod: new Date().toISOString() },
-		{ url: `${siteUrl}/blog`, lastMod: new Date().toISOString() },
-		{ url: `${siteUrl}/resume`, lastMod: new Date().toISOString() }
+		{ url: siteUrl + '/', lastMod: new Date().toISOString() },
+		{ url: siteUrl + '/resume', lastMod: new Date().toISOString() },
+		{ url: siteUrl + '/consulting', lastMod: new Date().toISOString() },
+		{ url: siteUrl + '/healthcare-it-gulf', lastMod: new Date().toISOString() },
+		{ url: siteUrl + '/writing', lastMod: new Date().toISOString() },
+		{ url: siteUrl + '/blog', lastMod: new Date().toISOString() },
+		{ url: siteUrl + '/contact', lastMod: new Date().toISOString() }
 	];
 
-	const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...pages, ...posts]
-	.map(
-		(page: any) => `  <url>
-    <loc>${page.url}</loc>
-    ${page.lastMod ? `<lastmod>${new Date(page.lastMod).toISOString()}</lastmod>` : ''}
-  </url>`
-	)
-	.join('\n')}
-</urlset>`;
+	const xml =
+		'<?xml version=""1.0"" encoding=""UTF-8""?>\n<urlset xmlns=""http://www.sitemaps.org/schemas/sitemap/0.9"">\n' +
+		[...pages, ...posts]
+			.map(
+				(page: any) =>
+					'  <url>\n    <loc>' +
+					page.url +
+					'</loc>\n    ' +
+					(page.lastMod ? '<lastmod>' + new Date(page.lastMod).toISOString() + '</lastmod>' : '') +
+					'\n  </url>'
+			)
+			.join('\n') +
+		'\n</urlset>';
 
 	return new Response(xml, {
 		headers: {

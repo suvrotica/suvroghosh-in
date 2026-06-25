@@ -52,8 +52,8 @@
 	--accent: oklch(0.269 0 0);
 	--accent-foreground: oklch(0.985 0 0);
 	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
+	--border: oklch(1 0 0 / 20%);
+	--input: oklch(1 0 0 / 30%);
 	--ring: oklch(0.556 0 0);
 	--sidebar: oklch(0.205 0 0);
 	--sidebar-foreground: oklch(0.985 0 0);
@@ -61,7 +61,7 @@
 	--sidebar-primary-foreground: oklch(0.985 0 0);
 	--sidebar-accent: oklch(0.269 0 0);
 	--sidebar-accent-foreground: oklch(0.985 0 0);
-	--sidebar-border: oklch(1 0 0 / 10%);
+	--sidebar-border: oklch(1 0 0 / 20%);
 	--sidebar-ring: oklch(0.556 0 0);
 }
 
@@ -176,14 +176,19 @@ p {
 
 /* Links: Neutral Hover */
 a {
-	@apply text-neutral-900 underline decoration-neutral-400/50 transition-colors dark:text-neutral-100;
+	@apply underline decoration-neutral-400/50 transition-colors;
 	transition-duration: var(--motion-fast);
 	&:hover {
 		@apply decoration-neutral-500;
-		color: var(--color-accent-light);
 	}
 }
 
+/* Non-button links get hover color accent */
+a:not([class]):hover {
+	color: var(--color-accent-light);
+}
+
+/* Heading links */
 h1 a,
 h2 a,
 h3 a,
@@ -191,6 +196,14 @@ h4 a,
 h5 a,
 h6 a {
 	@apply text-inherit no-underline;
+}
+
+/* Buttons rendered as <a> do not get link underline */
+a[class] {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 /* Layout Utilities */
@@ -386,4 +399,24 @@ h6 a {
 		animation: none !important;
 		opacity: 0.5 !important;
 	}
+}
+
+/* Skip link for accessibility */
+.skip-link {
+	position: absolute;
+	left: -9999px;
+	top: 0;
+	z-index: 100;
+	padding: 0.75rem 1.5rem;
+	background: var(--color-primary);
+	color: var(--color-primary-foreground);
+	font-weight: 600;
+	font-size: 0.875rem;
+	text-decoration: none;
+	border-radius: 0 0 0.375rem 0;
+}
+.skip-link:focus {
+	left: 0;
+	outline: 2px solid var(--color-accent-light);
+	outline-offset: 2px;
 }

@@ -20,6 +20,8 @@
 			return;
 		}
 
+		const scrollRoot = document.getElementById('main-content') as HTMLElement | null;
+
 		observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
@@ -29,10 +31,16 @@
 					}
 				}
 			},
-			{ threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+			{ threshold: 0.1, root: scrollRoot, rootMargin: '0px 0px -60px 0px' }
 		);
 
 		if (element) observer.observe(element);
+
+		// Fallback: if IntersectionObserver doesn't fire (e.g. no scroll root),
+		// make visible after a short delay
+		setTimeout(() => {
+			if (!isVisible) isVisible = true;
+		}, 500);
 
 		return () => observer?.disconnect();
 	});
