@@ -36,7 +36,7 @@
 		return () => observer.disconnect();
 	});
 
-	const weights = [3, 2, 2.5, 1.5, 2, 1, 2.5, 1.5, 3, 1, 2, 1.5, 2.5, 1, 2];
+	const weights = [1.75, 1.15, 1.45, 0.85, 1.15, 0.55, 1.45, 0.85, 1.75, 0.55, 1.15, 0.85, 1.45, 0.55, 1.15];
 
 	let items = $derived(
 		tags.map((tag, i) => ({

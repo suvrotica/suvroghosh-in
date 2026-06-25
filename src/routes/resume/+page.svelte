@@ -2,6 +2,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl, personSchema, defaultOgImage } from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
+	import { Button } from '$lib/components/ui/button';
 
 	type SkillGroup = {
 		category: string;
@@ -19,9 +20,22 @@
 	const title = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Consultant';
 	const canonicalUrl = `${siteUrl}/resume`;
 	const keywords = [
-		'Healthcare IT Architect', 'HL7', 'FHIR', 'HIE', 'Clinical Data Systems', 'SQL', 'ETL',
-		'Healthcare Interoperability', 'EHR', 'CDISC', 'Data Warehousing', 'Suvro Ghosh', 'Resume',
-		'Healthcare Data Architecture', 'Digital Health', 'Health Informatics'
+		'Healthcare IT Architect',
+		'HL7',
+		'FHIR',
+		'HIE',
+		'Clinical Data Systems',
+		'SQL',
+		'ETL',
+		'Healthcare Interoperability',
+		'EHR',
+		'CDISC',
+		'Data Warehousing',
+		'Suvro Ghosh',
+		'Resume',
+		'Healthcare Data Architecture',
+		'Digital Health',
+		'Health Informatics'
 	];
 	const description =
 		'Healthcare IT Architect and Clinical Data Systems Consultant with 15+ years in EHR, HIE, HL7, FHIR interoperability, SQL data warehousing, MUMPS/VistA, clinical trials, and health informatics. Based in Kolkata, India — open to remote, hybrid, and Gulf consulting.';
@@ -102,8 +116,7 @@
 		},
 		{
 			category: 'Programming & Databases',
-			items:
-				'SQL, C, C++, VBA, Perl, MS Access, MySQL, MUMPS-derived data, reporting automation'
+			items: 'SQL, C, C++, VBA, Perl, MS Access, MySQL, MUMPS-derived data, reporting automation'
 		},
 		{
 			category: 'Systems & Architecture',
@@ -262,23 +275,19 @@
 	const marketFit = [
 		{
 			region: 'Gulf',
-			fit:
-				'Strong fit for UAE, Saudi Arabia, Qatar, Kuwait, and regional healthcare modernization programs needing senior EHR, HIE, data, interoperability, and implementation experience.'
+			fit: 'Strong fit for UAE, Saudi Arabia, Qatar, Kuwait, and regional healthcare modernization programs needing senior EHR, HIE, data, interoperability, and implementation experience.'
 		},
 		{
 			region: 'India',
-			fit:
-				'Strong fit for ABDM, FHIR, healthtech, hospital digitization, clinical data, and implementation consulting without visa friction.'
+			fit: 'Strong fit for ABDM, FHIR, healthtech, hospital digitization, clinical data, and implementation consulting without visa friction.'
 		},
 		{
 			region: 'Remote International',
-			fit:
-				'Strong fit for contract work with healthtech vendors needing SQL, FHIR, healthcare data modeling, clinical workflow, and interoperability support.'
+			fit: 'Strong fit for contract work with healthtech vendors needing SQL, FHIR, healthcare data modeling, clinical workflow, and interoperability support.'
 		},
 		{
 			region: 'U.S. / U.K. / EU',
-			fit:
-				'Best pursued through remote, vendor, consulting, or specialist interoperability roles rather than generic relocation-first job searches.'
+			fit: 'Best pursued through remote, vendor, consulting, or specialist interoperability roles rather than generic relocation-first job searches.'
 		}
 	];
 </script>
@@ -295,7 +304,9 @@
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10 text-center md:text-left">
-		<h1 class="mb-2 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 md:text-5xl">
+		<h1
+			class="mb-2 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl dark:text-neutral-100"
+		>
 			Suvro Ghosh
 		</h1>
 
@@ -307,21 +318,9 @@
 			{locationLine}
 		</p>
 
-		<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-bold text-neutral-600 dark:text-neutral-400 md:justify-start">
-			<a
-				href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278"
-				target="_blank"
-				rel="noopener noreferrer"
-				class="flex items-center gap-1 transition-colors hover:text-neutral-900 dark:hover:text-neutral-100"
-			>
-				<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-				</svg>
-				Connect on LinkedIn
-			</a>
-
-			<span class="hidden md:inline">|</span>
-
+		<div
+			class="flex flex-wrap items-center justify-center gap-4 text-sm font-bold text-neutral-600 md:justify-start dark:text-neutral-400"
+		>
 			<span>Healthcare IT · Interoperability · Clinical Data · AI-Ready Data Systems</span>
 		</div>
 	</header>
@@ -338,7 +337,9 @@
 		</div>
 	</div>
 
-	<div class="card mb-8 border-l-4 border-l-neutral-800 bg-neutral-200/50 dark:border-l-neutral-200 dark:bg-neutral-800/80">
+	<div
+		class="card mb-8 border-l-4 border-l-neutral-800 bg-neutral-200/50 dark:border-l-neutral-200 dark:bg-neutral-800/80"
+	>
 		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
 			Professional Positioning
 		</h3>
@@ -357,7 +358,9 @@
 
 		<div class="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
 			{#each targetRoles as role}
-				<div class="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-semibold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
+				<div
+					class="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-semibold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
+				>
 					{role}
 				</div>
 			{/each}
@@ -403,7 +406,9 @@
 		<div class="space-y-10">
 			{#each experiences as job}
 				<div class="relative border-l-2 border-neutral-300 pl-5 dark:border-neutral-700">
-					<div class="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-neutral-900 dark:bg-neutral-100"></div>
+					<div
+						class="absolute top-1.5 -left-[5px] h-2 w-2 rounded-full bg-neutral-900 dark:bg-neutral-100"
+					></div>
 
 					<div class="mb-3 flex flex-col md:flex-row md:items-baseline md:justify-between">
 						<div>
@@ -415,7 +420,7 @@
 							</span>
 						</div>
 
-						<div class="mt-1 text-xs font-bold uppercase tracking-wider text-neutral-500 md:mt-0">
+						<div class="mt-1 text-xs font-bold tracking-wider text-neutral-500 uppercase md:mt-0">
 							{job.period}
 						</div>
 					</div>
@@ -478,7 +483,8 @@
 			</h3>
 
 			<p class="mb-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-				Current focus areas for strengthening international healthcare IT, interoperability, analytics, and digital health consulting work:
+				Current focus areas for strengthening international healthcare IT, interoperability,
+				analytics, and digital health consulting work:
 			</p>
 
 			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
@@ -517,18 +523,14 @@
 					<h4 class="m-0 text-base font-bold text-neutral-900 dark:text-neutral-100">
 						M.S. Computer Science
 					</h4>
-					<p class="text-sm text-neutral-600 dark:text-neutral-400">
-						University of Texas, USA
-					</p>
+					<p class="text-sm text-neutral-600 dark:text-neutral-400">University of Texas, USA</p>
 				</div>
 
 				<div>
 					<h4 class="m-0 text-base font-bold text-neutral-900 dark:text-neutral-100">
 						B.E. Computer Science & Engineering
 					</h4>
-					<p class="text-sm text-neutral-600 dark:text-neutral-400">
-						Jadavpur University, Kolkata
-					</p>
+					<p class="text-sm text-neutral-600 dark:text-neutral-400">Jadavpur University, Kolkata</p>
 				</div>
 			</div>
 		</div>
@@ -551,31 +553,37 @@
 				<li>Multiple abstracts presented at National Kidney Foundation Clinical Meetings</li>
 				<li>Full scholarship for M.S. study in the United States</li>
 				<li>WBJEE Rank: 87 Engineering, 55 Medical</li>
-				<li>Experience across USA, India, New Zealand, Fiji, Nepal, UAE, and Kuwait-facing remote work</li>
+				<li>
+					Experience across USA, India, New Zealand, Fiji, Nepal, UAE, and Kuwait-facing remote work
+				</li>
 			</ul>
 		</div>
 	</div>
 
-	<div class="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-		<a
-			href="mailto:contact@suvroghosh.in"
-			class="btn-primary inline-flex items-center gap-2 px-8 py-3 text-lg"
-		>
+	<div class="mt-12 flex items-center justify-center gap-4">
+		<Button href="mailto:contact@suvroghosh.in" variant="outline" size="icon" aria-label="Email">
 			<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+				<path
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+				/>
 			</svg>
-			Email
-		</a>
-		<a
+		</Button>
+		<Button
 			href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="btn-primary inline-flex items-center gap-2 px-8 py-3 text-lg"
+			variant="outline"
+			size="icon"
+			aria-label="LinkedIn"
 		>
 			<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-				<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+				<path
+					d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+				/>
 			</svg>
-			Message on LinkedIn
-		</a>
+		</Button>
 	</div>
 </section>

@@ -13,14 +13,16 @@
 	];
 </script>
 
-<footer class="border-t border-neutral-300 dark:border-neutral-700 bg-neutral-100 dark:bg-neutral-900 px-6 py-8 mt-12">
-	<ScrollReveal class="max-w-4xl mx-auto">
-		<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-			<p class="text-sm text-neutral-600 dark:text-neutral-400 text-center sm:text-left">
+<footer
+	class="mt-12 border-t border-neutral-300 bg-neutral-100 px-6 py-8 dark:border-neutral-700 dark:bg-neutral-900"
+>
+	<ScrollReveal class="mx-auto max-w-4xl">
+		<div class="flex flex-col items-center justify-between gap-4 sm:flex-row">
+			<p class="text-center text-sm text-neutral-600 sm:text-left dark:text-neutral-400">
 				&copy; {year} Suvro Ghosh &middot;
 				<a
 					href={`mailto:${email}`}
-					class="underline underline-offset-4 hover:text-neutral-400 transition-colors"
+					class="underline underline-offset-4 transition-colors hover:text-neutral-400"
 				>
 					{email}
 				</a>
@@ -32,10 +34,11 @@
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-300 transition-colors"
+						class="text-neutral-500 transition-colors hover:text-neutral-300 dark:text-neutral-400"
 						aria-label={link.label}
+						title={link.label}
 					>
-						<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+						<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 							<path d={link.icon} />
 						</svg>
 					</a>

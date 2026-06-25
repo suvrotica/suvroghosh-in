@@ -10,6 +10,7 @@
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Aside from '$lib/components/layout/Aside.svelte';
 	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
+	import { Sheet, SheetContent } from '$lib/components/ui/sheet';
 
 	let { children } = $props();
 
@@ -29,23 +30,26 @@
 
 <ReadingProgress />
 
-<div class="main-layout flex h-screen bg-neutral-200 dark:bg-neutral-900 text-neutral-800 dark:text-neutral-300 font-sans overflow-hidden">
-	<div class="sidebar-container hidden lg:block w-72 border-r border-neutral-300 dark:border-neutral-700">
+<div
+	class="main-layout flex h-screen overflow-hidden bg-neutral-200 font-sans text-neutral-800 dark:bg-neutral-900 dark:text-neutral-300"
+>
+	<div
+		class="sidebar-container hidden w-72 border-r border-neutral-300 lg:block dark:border-neutral-700"
+	>
 		<Aside />
 	</div>
 
-	{#if isMenuOpen}
-		<div class="fixed inset-0 z-40 bg-black/50 lg:hidden" onclick={toggleMenu} role="presentation" aria-hidden="true"></div>
-		<div class="fixed inset-y-0 left-0 z-50 w-64 bg-neutral-100 dark:bg-neutral-900 shadow-xl transform transition-transform duration-300 lg:hidden">
+	<Sheet bind:open={isMenuOpen}>
+		<SheetContent side="left" class="w-64 p-0 lg:hidden">
 			<Aside />
-		</div>
-	{/if}
+		</SheetContent>
+	</Sheet>
 
-	<div class="main-content flex-1 flex flex-col min-w-0">
+	<div class="main-content flex min-w-0 flex-1 flex-col">
 		<Header {isMenuOpen} {toggleMenu} />
 
 		<main class="scrollable-main flex-1 overflow-y-auto scroll-smooth">
-			<div class="container max-w-4xl mx-auto px-4 py-8 lg:py-12">
+			<div class="container mx-auto max-w-4xl px-4 py-8 lg:py-12">
 				{@render children()}
 			</div>
 
