@@ -1,5 +1,3 @@
-## the-weight-of-wet-heat.md
-
 ---
 title: "The Weight of Wet Heat"
 description: "A humid, philosophically inclined reflection from Calcutta on the relentless tropical heat, the science of heat domes and El Niño, and the quiet dread of a monsoon that may never arrive as promised."
