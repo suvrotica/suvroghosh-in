@@ -31,8 +31,12 @@ export const load: PageLoad = async () => {
 		}))
 		.sort((a, b) => a.label.localeCompare(b.label));
 
+	const healthcareItPosts = posts.filter(
+		(post) => slugifyCategory(post.category || 'uncategorized') === 'healthcare-it'
+	);
+
 	return {
-		recentPosts: posts.slice(0, 6),
+		recentPosts: healthcareItPosts.slice(0, 6),
 		categories
 	};
 };
