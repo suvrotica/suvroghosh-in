@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
 	import { Separator } from '$lib/components/ui/separator';
+	import { tagSearchPath } from '$lib/content/posts';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -16,13 +18,13 @@
 <article class="page-enter mx-auto max-w-3xl px-4 py-12 md:px-8">
 	<nav aria-label="Breadcrumb" class="mb-8 text-sm text-neutral-500 dark:text-neutral-400">
 		<ol class="flex flex-wrap items-center gap-2">
-			<li><a href="/" class="transition-colors hover:text-neutral-400">Home</a></li>
+			<li><a href={resolve('/')} class="transition-colors hover:text-neutral-400">Home</a></li>
 			<li><span aria-hidden="true">/</span></li>
-			<li><a href="/blog" class="transition-colors hover:text-neutral-400">Blog</a></li>
+			<li><a href={resolve('/blog')} class="transition-colors hover:text-neutral-400">Blog</a></li>
 			<li><span aria-hidden="true">/</span></li>
 			<li>
 				<a
-					href={`/blog/${data.metadata.categorySlug}`}
+					href={resolve('/blog/[category]', { category: data.metadata.categorySlug })}
 					class="transition-colors hover:text-neutral-400">{data.metadata.categoryLabel}</a
 				>
 			</li>
@@ -44,7 +46,7 @@
 		>
 			<span
 				>By <a
-					href="/resume"
+					href={resolve('/resume')}
 					rel="author"
 					class="font-medium transition-colors hover:text-neutral-400"
 					>{data.metadata.author ?? 'Suvro Ghosh'}</a
@@ -72,7 +74,65 @@
 			>
 				This is a living essay and may be updated as facts change.
 			</p>{/if}
+		{#if data.metadata.tags && data.metadata.tags.length > 0}
+			<nav aria-label="Post topics" class="mt-6 flex flex-wrap gap-2">
+				{#each data.metadata.tags as tag (tag)}
+					<a
+						href={resolve(tagSearchPath(tag) as `/blog?${string}`)}
+						class="rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+					>
+						{tag}
+					</a>
+				{/each}
+			</nav>
+		{/if}
 	</header>
+
+	{#if data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length}
+		<section
+			aria-labelledby="answer-summary"
+			class="mb-10 rounded-lg border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-800 dark:bg-neutral-900/60"
+		>
+			<h2 id="answer-summary" class="mb-3 text-lg font-bold text-neutral-900 dark:text-white">
+				Quick Answer
+			</h2>
+			{#if data.metadata.inPlainEnglish}
+				<p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+					{data.metadata.inPlainEnglish}
+				</p>
+			{/if}
+			{#if data.metadata.keyTerms?.length}
+				<div class="mt-4">
+					<h3 class="mb-2 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+						Key Terms
+					</h3>
+					<ul class="flex flex-wrap gap-2">
+						{#each data.metadata.keyTerms as term (term)}
+							<li
+								class="rounded-md bg-white px-2.5 py-1 text-xs text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+							>
+								{term}
+							</li>
+						{/each}
+					</ul>
+				</div>
+			{/if}
+			{#if data.metadata.faq?.length}
+				<div class="mt-4 space-y-3">
+					{#each data.metadata.faq as item (item.question)}
+						<div>
+							<h3 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+								{item.question}
+							</h3>
+							<p class="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+								{item.answer}
+							</p>
+						</div>
+					{/each}
+				</div>
+			{/if}
+		</section>
+	{/if}
 
 	<div
 		class="prose max-w-none prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-img:rounded-xl"
@@ -89,7 +149,7 @@
 				>
 					Topics Discussed
 				</h2>
-				<WordCloud tags={data.metadata.tags} />
+				<WordCloud tags={data.metadata.tags} searchBase="/blog?search=" />
 			</footer>
 		</ScrollReveal>
 	{/if}
@@ -102,7 +162,10 @@
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 					{#each relatedPosts as post (post.slug)}
 						<a
-							href={`/blog/${post.category}/${post.slug}`}
+							href={resolve('/blog/[category]/[slug]', {
+								category: post.category,
+								slug: post.slug
+							})}
 							class="post-card group block rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm dark:border-neutral-800 dark:bg-neutral-800/50"
 						>
 							<div class="mb-1 text-xs font-medium tracking-wider text-neutral-400 uppercase">

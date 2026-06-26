@@ -1,17 +1,27 @@
 ---
-title: "FHIR: The Universal Language of Health Data"
-description: "A deep dive into FHIR, the Fast Healthcare Interoperability Resources standard that is quietly rebuilding the plumbing of modern medicine—one resource at a time."
-date: "2026-06-23"
-thumbnail: "/images/Compress_20260517_073622_2338.jpg"
-category: "Healthcare-IT"
-tags: ["FHIR", "Healthcare Interoperability", "Health Data Standards", "HL7", "Digital Health", "APIs", "Medical Informatics", "SuvroGhosh"]
+title: 'FHIR: The Universal Language of Health Data'
+description: 'A deep dive into FHIR, the Fast Healthcare Interoperability Resources standard that is quietly rebuilding the plumbing of modern medicine—one resource at a time.'
+date: '2026-06-23'
+thumbnail: '/images/Compress_20260517_073622_2338.jpg'
+category: 'Healthcare-IT'
+tags:
+  [
+    'FHIR',
+    'Healthcare Interoperability',
+    'Health Data Standards',
+    'HL7',
+    'Digital Health',
+    'APIs',
+    'Medical Informatics',
+    'SuvroGhosh'
+  ]
 published: true
-color: "#0D7377"
+color: '#0D7377'
 ---
 
 <TTS />
 
-<Pi src="Compress_20260517_073622_2338.jpg" />
+<Pi src="Compress_20260517_073622_2338.jpg" alt="Article illustration for FHIR healthcare data interoperability" />
 
 ## The Quiet Crisis in Your Medical Records
 
@@ -43,7 +53,7 @@ More precisely, it is a standard developed by Health Level Seven International�
 
 But "a set of rules" is a dry description for something so consequential. Let us try again.
 
-FHIR is a way of describing health information—patients, medications, allergies, lab results, diagnoses, appointments, insurance claims, genomic sequences, wearable device readings, social determinants of health, and on and on and on—in a format that any computer system can understand, regardless of who built it, what language it was written in, or what database it uses underneath. It is a *lingua franca* for medical data. It is the Esperanto of the emergency room, the Rosetta Stone of the radiology department.
+FHIR is a way of describing health information—patients, medications, allergies, lab results, diagnoses, appointments, insurance claims, genomic sequences, wearable device readings, social determinants of health, and on and on and on—in a format that any computer system can understand, regardless of who built it, what language it was written in, or what database it uses underneath. It is a _lingua franca_ for medical data. It is the Esperanto of the emergency room, the Rosetta Stone of the radiology department.
 
 The core innovation of FHIR is its use of **resources**—discrete, standardized packets of information, each representing a specific concept in healthcare. A Patient resource contains demographic information: name, birth date, gender, address, contact details. An Observation resource contains a single piece of clinical data: a blood pressure reading, a body temperature, a lab result, a smoking status. A MedicationRequest resource contains—well, a request for medication. A Condition resource contains a diagnosis. An Encounter resource contains a visit.
 
@@ -53,26 +63,26 @@ Here is a simplified example of a Patient resource in JSON:
 
 ```json
 {
-  "resourceType": "Patient",
-  "id": "example-patient-001",
-  "name": [
-    {
-      "use": "official",
-      "family": "Hernandez",
-      "given": ["Maria", "Isabel"]
-    }
-  ],
-  "gender": "female",
-  "birthDate": "1985-03-12",
-  "address": [
-    {
-      "use": "home",
-      "line": ["742 Evergreen Terrace"],
-      "city": "Springfield",
-      "state": "IL",
-      "postalCode": "62704"
-    }
-  ]
+	"resourceType": "Patient",
+	"id": "example-patient-001",
+	"name": [
+		{
+			"use": "official",
+			"family": "Hernandez",
+			"given": ["Maria", "Isabel"]
+		}
+	],
+	"gender": "female",
+	"birthDate": "1985-03-12",
+	"address": [
+		{
+			"use": "home",
+			"line": ["742 Evergreen Terrace"],
+			"city": "Springfield",
+			"state": "IL",
+			"postalCode": "62704"
+		}
+	]
 }
 ```
 
@@ -194,7 +204,7 @@ FHIR is not merely a technical specification. It is the product of decades of re
 
 ### Information Models and the Problem of Meaning
 
-At the heart of healthcare interoperability is a deceptively simple question: what does this data *mean*?
+At the heart of healthcare interoperability is a deceptively simple question: what does this data _mean_?
 
 When a doctor records that a patient has "diabetes," what exactly is being asserted? Is it a diagnosis? A suspicion? A history? A risk factor? Is it Type 1 or Type 2? Is it controlled or uncontrolled? Does it involve complications? The word "diabetes" is a label for a vast, heterogeneous, evolving constellation of biological states and clinical judgments.
 
@@ -354,69 +364,69 @@ The EHR system creates a FHIR Observation resource. It looks something like this
 
 ```json
 {
-  "resourceType": "Observation",
-  "id": "bp-2026-06-23-001",
-  "status": "final",
-  "category": [
-    {
-      "coding": [
-        {
-          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-          "code": "vital-signs",
-          "display": "Vital Signs"
-        }
-      ]
-    }
-  ],
-  "code": {
-    "coding": [
-      {
-        "system": "http://loinc.org",
-        "code": "85354-9",
-        "display": "Blood pressure panel with all children optional"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/example-patient-001"
-  },
-  "effectiveDateTime": "2026-06-23T09:30:00Z",
-  "component": [
-    {
-      "code": {
-        "coding": [
-          {
-            "system": "http://loinc.org",
-            "code": "8480-6",
-            "display": "Systolic blood pressure"
-          }
-        ]
-      },
-      "valueQuantity": {
-        "value": 142,
-        "unit": "mmHg",
-        "system": "http://unitsofmeasure.org",
-        "code": "mm[Hg]"
-      }
-    },
-    {
-      "code": {
-        "coding": [
-          {
-            "system": "http://loinc.org",
-            "code": "8462-4",
-            "display": "Diastolic blood pressure"
-          }
-        ]
-      },
-      "valueQuantity": {
-        "value": 88,
-        "unit": "mmHg",
-        "system": "http://unitsofmeasure.org",
-        "code": "mm[Hg]"
-      }
-    }
-  ]
+	"resourceType": "Observation",
+	"id": "bp-2026-06-23-001",
+	"status": "final",
+	"category": [
+		{
+			"coding": [
+				{
+					"system": "http://terminology.hl7.org/CodeSystem/observation-category",
+					"code": "vital-signs",
+					"display": "Vital Signs"
+				}
+			]
+		}
+	],
+	"code": {
+		"coding": [
+			{
+				"system": "http://loinc.org",
+				"code": "85354-9",
+				"display": "Blood pressure panel with all children optional"
+			}
+		]
+	},
+	"subject": {
+		"reference": "Patient/example-patient-001"
+	},
+	"effectiveDateTime": "2026-06-23T09:30:00Z",
+	"component": [
+		{
+			"code": {
+				"coding": [
+					{
+						"system": "http://loinc.org",
+						"code": "8480-6",
+						"display": "Systolic blood pressure"
+					}
+				]
+			},
+			"valueQuantity": {
+				"value": 142,
+				"unit": "mmHg",
+				"system": "http://unitsofmeasure.org",
+				"code": "mm[Hg]"
+			}
+		},
+		{
+			"code": {
+				"coding": [
+					{
+						"system": "http://loinc.org",
+						"code": "8462-4",
+						"display": "Diastolic blood pressure"
+					}
+				]
+			},
+			"valueQuantity": {
+				"value": 88,
+				"unit": "mmHg",
+				"system": "http://unitsofmeasure.org",
+				"code": "mm[Hg]"
+			}
+		}
+	]
 }
 ```
 
@@ -562,5 +572,5 @@ The fire is lit. Whether it warms or consumes remains to be seen.
 
 ---
 
-P.S. For those who wish to dig deeper, the canonical source is the FHIR specification itself, maintained by HL7 International at [hl7.org/fhir](https://hl7.org/fhir). The SMART on FHIR specification lives at [smarthealthit.org](https://smarthealthit.org). The Argonaut Project's implementation guides are archived at [argonautwiki.hl7.org](https://argonautwiki.hl7.org). 
+P.S. For those who wish to dig deeper, the canonical source is the FHIR specification itself, maintained by HL7 International at [hl7.org/fhir](https://hl7.org/fhir). The SMART on FHIR specification lives at [smarthealthit.org](https://smarthealthit.org). The Argonaut Project's implementation guides are archived at [argonautwiki.hl7.org](https://argonautwiki.hl7.org).
 And for the masochists among you, the author's own blood pressure—captured, naturally, in a FHIR Observation resource—remains stubbornly, gloriously, humanly variable.

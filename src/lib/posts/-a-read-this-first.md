@@ -1,17 +1,38 @@
 ---
 title: "An Architect's Education"
-description: "A Calcutta self-portrait of a technology architect stitched from school shame, books, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
-date: "2024-01-01"
-thumbnail: "/images/Compress_20260509_172719_9415.jpg"
-category: "Personal"
-tags: ["Personal Essay", "Calcutta Blog", "Kolkata Memoir", "Bengali Writer", "Middle Class Life", "Mental Health Essay", "Reading Culture", "Book Lover", "School Memories", "Childhood in Calcutta", "North Kolkata", "Indian Middle Class", "Atheist Writer", "Political Satire", "Personal Blog", "Creative Nonfiction", "Autobiographical Essay", "Humor Essay", "SuvroGhosh"]
+description: 'A Calcutta self-portrait of a technology architect stitched from school shame, books, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive.'
+date: '2024-01-01'
+thumbnail: '/images/Compress_20260509_172719_9415.jpg'
+category: 'Personal'
+tags:
+  [
+    'Personal Essay',
+    'Calcutta Blog',
+    'Kolkata Memoir',
+    'Bengali Writer',
+    'Middle Class Life',
+    'Mental Health Essay',
+    'Reading Culture',
+    'Book Lover',
+    'School Memories',
+    'Childhood in Calcutta',
+    'North Kolkata',
+    'Indian Middle Class',
+    'Atheist Writer',
+    'Political Satire',
+    'Personal Blog',
+    'Creative Nonfiction',
+    'Autobiographical Essay',
+    'Humor Essay',
+    'SuvroGhosh'
+  ]
 published: true
-color: "orange"
+color: 'orange'
 ---
 
 <TTS />
 
-<Pi src="Compress_20260509_172719_9415.jpg" />
+<Pi src="Compress_20260509_172719_9415.jpg" alt="Article illustration for An Architect's Education" />
 
 ## The Weight of Foundations
 

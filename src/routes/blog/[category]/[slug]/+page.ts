@@ -1,7 +1,17 @@
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
-import { siteUrl, siteTitle, defaultOgImage, blogPostingSchema, breadcrumbSchema } from '$lib/components/seo/SEO';
+import {
+	siteUrl,
+	siteTitle,
+	defaultOgImage,
+	absoluteUrl,
+	blogPostUrl,
+	blogPostingSchema,
+	breadcrumbSchema,
+	schemaGraph
+} from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
+import { validatePublishedPostMetadata, postPath, type BlogPostMetadata } from '$lib/content/posts';
 
 export const load: PageLoad = async ({ params }) => {
 	const { category, slug } = params;
@@ -10,17 +20,21 @@ export const load: PageLoad = async ({ params }) => {
 		const post = await import(`../../../../../src/lib/posts/${slug}.md`);
 
 		const metadata = post.metadata;
+		validatePublishedPostMetadata(metadata, `${slug}.md`);
 		const content = post.default;
 
 		const normalizedCategory = slugifyCategory(metadata.category ?? category);
-		const canonicalUrl = `${siteUrl}/blog/${normalizedCategory}/${slug.toLowerCase()}`;
+		const expectedPath = postPath({ category: metadata.category ?? category, slug });
+		if (`/blog/${category}/${slug}` !== expectedPath) {
+			redirect(308, expectedPath);
+		}
+
+		const canonicalUrl = blogPostUrl(metadata.category ?? category, slug);
 		const catLabel = categoryLabel(normalizedCategory);
 
-		const postKeywords = [
-			...(metadata.tags || []),
-			metadata.category,
-			'Suvro Ghosh'
-		].filter(Boolean).slice(0, 15);
+		const postKeywords = [...(metadata.tags || []), metadata.category, 'Suvro Ghosh']
+			.filter(Boolean)
+			.slice(0, 15);
 
 		const breadcrumbs = breadcrumbSchema([
 			{ name: 'Home', url: siteUrl },
@@ -33,7 +47,7 @@ export const load: PageLoad = async ({ params }) => {
 			title: `${metadata.title} | ${siteTitle}`,
 			description: metadata.description,
 			canonicalUrl,
-			ogImageUrl: metadata.thumbnail ? `${siteUrl}${metadata.thumbnail}` : defaultOgImage,
+			ogImageUrl: absoluteUrl(metadata.thumbnail) ?? defaultOgImage,
 			ogImageAlt: metadata.thumbnailAlt ?? metadata.title,
 			type: 'article' as const,
 			publishedTime: metadata.date,
@@ -42,35 +56,43 @@ export const load: PageLoad = async ({ params }) => {
 			keywords: postKeywords,
 			category: catLabel,
 			tags: metadata.tags ?? [],
-			schema: {
-				'@context': 'https://schema.org',
-				'@graph': [
-					blogPostingSchema({
-						...metadata,
-						slug: slug.toLowerCase(),
-						category: catLabel,
-						canonicalUrl
-					}),
-					breadcrumbs
-				]
-			}
+			schema: schemaGraph([
+				blogPostingSchema({
+					...metadata,
+					slug,
+					category: catLabel,
+					canonicalUrl
+				}),
+				breadcrumbs
+			])
 		};
 
-		const postModules = import.meta.glob('/src/lib/posts/*.md', { import: 'metadata' });
+		const postModules = import.meta.glob<BlogPostMetadata>('/src/lib/posts/*.md', {
+			import: 'metadata'
+		});
 
-		const relatedPosts: { title: string; slug: string; category: string; date?: string; thumbnail?: string }[] = [];
+		const relatedPosts: {
+			title: string;
+			slug: string;
+			category: string;
+			date?: string;
+			thumbnail?: string;
+		}[] = [];
 
 		for (const path in postModules) {
-			const fileName = path.split('/').pop()?.slice(0, -3).toLowerCase();
-			if (!fileName || fileName === slug.toLowerCase()) continue;
+			const fileName = path.split('/').pop()?.slice(0, -3);
+			if (!fileName || fileName === slug) continue;
 
-			const loader = postModules[path] as () => Promise<any>;
+			const loader = postModules[path];
 			const meta = await loader();
 
 			if (meta.published === false || !meta.title) continue;
 
 			const postCat = slugifyCategory(meta.category || 'uncategorized');
-			if (postCat === normalizedCategory) {
+			const sharedTags = Array.isArray(meta.tags)
+				? meta.tags.filter((tag: string) => metadata.tags?.includes(tag)).length
+				: 0;
+			if (postCat === normalizedCategory || sharedTags > 0) {
 				relatedPosts.push({
 					title: meta.title,
 					slug: fileName,
@@ -98,6 +120,9 @@ export const load: PageLoad = async ({ params }) => {
 			seo
 		};
 	} catch (e) {
+		if (e && typeof e === 'object' && 'status' in e && 'location' in e) {
+			throw e;
+		}
 		console.error(`Error loading post ${slug}:`, e);
 		error(404, 'Essay not found');
 	}

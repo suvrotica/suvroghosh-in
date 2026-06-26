@@ -1,17 +1,30 @@
 ---
-title: "AI, Meaningful Work, and the Trust Collapse"
-description: "A reflection on why artificial intelligence does not merely automate tasks, but corrodes the social machinery that makes work, authorship, and creative attention feel meaningful."
-date: "2026-06-24"
-thumbnail: "/images/Compress_20260507_182117_7717.jpg"
-category: "Artificial Intelligence"
-tags: ["AI", "Artificial Intelligence", "Generative AI", "Future of Work", "Meaningful Work", "Trust Collapse", "Human Authorship", "Creative Work", "Personal Essay", "Reflection", "SuvroGhosh"]
+title: 'AI, Meaningful Work, and the Trust Collapse'
+description: 'A reflection on why artificial intelligence does not merely automate tasks, but corrodes the social machinery that makes work, authorship, and creative attention feel meaningful.'
+date: '2026-06-24'
+thumbnail: '/images/Compress_20260507_182117_7717.jpg'
+category: 'Artificial Intelligence'
+tags:
+  [
+    'AI',
+    'Artificial Intelligence',
+    'Generative AI',
+    'Future of Work',
+    'Meaningful Work',
+    'Trust Collapse',
+    'Human Authorship',
+    'Creative Work',
+    'Personal Essay',
+    'Reflection',
+    'SuvroGhosh'
+  ]
 published: true
-color: "slate"
+color: 'slate'
 ---
 
 <TTS />
 
-<Pi src="Compress_20260507_182117_7717.jpg" />
+<Pi src="Compress_20260507_182117_7717.jpg" alt="Article illustration for AI and the erosion of trust in creative work" />
 
 The monsoon is indifferent to calendars. In Calcutta in late June, the humidity sits on the chest like a cat that refuses to move. Inside the flat, damp climbs the interior walls in pale patches the color of old tea, and the ceiling fan merely stirs the heat into new configurations. You notice the first bubble in the plaster near the light switch. Then another by the window frame. Soon the whole room carries a faint smell of damage you cannot yet see.
 
@@ -21,7 +34,7 @@ Job loss is frightening enough, yes. A salary is not poetry. It buys rice, medic
 
 A thing appears in front of us now: a song, a logo, a post, a report, a birthday message, a student essay, a love poem, a product review, a picture of a child who never existed eating a mango in light that never fell. It is smooth. It is neat. It is plausible.
 
-And immediately the mind asks: who made this? Was anyone there? Did a person wrestle with the idea, fail, return, scratch his head, make tea, delete three paragraphs, curse the humidity, and finally say, *Yes, this is what I mean*? Or did someone toss a sentence into a machine and receive a polished parcel wrapped in synthetic sincerity?
+And immediately the mind asks: who made this? Was anyone there? Did a person wrestle with the idea, fail, return, scratch his head, make tea, delete three paragraphs, curse the humidity, and finally say, _Yes, this is what I mean_? Or did someone toss a sentence into a machine and receive a polished parcel wrapped in synthetic sincerity?
 
 That doubt is corrosive. It enters everything like damp in a Calcutta wall. First one patch bubbles. Then another. Soon the whole structure smells of hidden damage.
 
@@ -39,7 +52,7 @@ Can this thing be believed? Does it help anyone? Does it carry responsibility? I
 
 AI is excellent at furniture arrangement. It is not, by itself, a home.
 
-This is why the word *slop* has caught on. It is ugly, but precise. Slop is not simply bad writing or bad art. Slop is output that looks complete but has no lived weight inside it. It asks the viewer or reader to do the missing work. The maker saves ten minutes. The receiver loses trust, time, and appetite. It is like being handed a samosa that looks perfect until the first bite reveals only air and one tragic pea.
+This is why the word _slop_ has caught on. It is ugly, but precise. Slop is not simply bad writing or bad art. Slop is output that looks complete but has no lived weight inside it. It asks the viewer or reader to do the missing work. The maker saves ten minutes. The receiver loses trust, time, and appetite. It is like being handed a samosa that looks perfect until the first bite reveals only air and one tragic pea.
 
 In offices, this becomes workslop. A memo that says everything and decides nothing. A strategy document that floats three feet above the earth and refuses to land. A project plan with confident timelines and no memory of human beings. A summary of a meeting where nobody understood the meeting. A customer reply that sounds polite but answers a question from a nearby universe. A code sample that works in the demo and collapses in the rain.
 
@@ -71,7 +84,7 @@ This does not make the machine evil. The machine has no evil. It has no soul eit
 
 And once that happens, everything becomes a little suspect.
 
-A touching post may be synthetic. A heartfelt apology may be synthetic. A job application may be synthetic. A product review may be synthetic. A profile photo may be synthetic. A song may be synthetic. A child’s story may be synthetic. A comment praising the song may be synthetic. A comment attacking the comment may be synthetic. Soon the whole marketplace becomes a wedding buffet where every dish is labeled *special*, and one quietly longs for plain dal that has at least met a human hand.
+A touching post may be synthetic. A heartfelt apology may be synthetic. A job application may be synthetic. A product review may be synthetic. A profile photo may be synthetic. A song may be synthetic. A child’s story may be synthetic. A comment praising the song may be synthetic. A comment attacking the comment may be synthetic. Soon the whole marketplace becomes a wedding buffet where every dish is labeled _special_, and one quietly longs for plain dal that has at least met a human hand.
 
 Trust does not disappear all at once. It thins.
 

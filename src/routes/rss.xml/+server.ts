@@ -1,35 +1,48 @@
 import { siteUrl, siteTitle, siteDescription } from '$lib/components/seo/SEO';
-import { slugifyCategory } from '$lib/content/categories';
+import { postPath, validatePublishedPostMetadata, type BlogPostMetadata } from '$lib/content/posts';
+
+type RssPost = {
+	title: string;
+	description: string;
+	date: string;
+	link: string;
+	guid: string;
+	category: string;
+};
 
 export const prerender = true;
 
 export async function GET() {
-	const modules = import.meta.glob('/src/lib/posts/*.md', { eager: true });
+	const modules = import.meta.glob<{ metadata: BlogPostMetadata }>('/src/lib/posts/*.md', {
+		eager: true
+	});
 
 	const posts = Object.entries(modules)
-		.map(([path, file]: any) => {
+		.map(([path, file]) => {
 			const metadata = file.metadata;
 			if (!metadata || metadata.published === false || !metadata.title) return null;
 
-			const slug = path.split('/').pop()?.slice(0, -3).toLowerCase();
-			const category = slugifyCategory(metadata.category || 'uncategorized');
+			const slug = path.split('/').pop()?.slice(0, -3);
+			if (!slug) return null;
+			validatePublishedPostMetadata(metadata, `${slug}.md`);
+			const link = siteUrl + postPath({ category: metadata.category || 'uncategorized', slug });
 
 			return {
 				title: metadata.title,
 				description: metadata.description || '',
 				date: metadata.date,
-				link: `${siteUrl}/blog/${category}/${slug}`,
-				guid: `${siteUrl}/blog/${category}/${slug}`,
+				link,
+				guid: link,
 				category: metadata.category || 'uncategorized'
 			};
 		})
-		.filter(Boolean)
-		.sort((a: any, b: any) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.filter((post): post is RssPost => Boolean(post))
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 		.slice(0, 25);
 
 	const items = posts
 		.map(
-			(post: any) => `
+			(post) => `
 		<item>
 			<title><![CDATA[${post.title}]]></title>
 			<link>${post.link}</link>

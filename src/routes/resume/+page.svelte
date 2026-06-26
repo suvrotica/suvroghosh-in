@@ -1,6 +1,12 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteUrl, personSchema, defaultOgImage } from '$lib/components/seo/SEO';
+	import {
+		defaultOgImage,
+		personSchema,
+		profilePageSchema,
+		schemaGraph,
+		siteUrl
+	} from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 	import { Button } from '$lib/components/ui/button';
 
@@ -298,8 +304,11 @@
 	{canonicalUrl}
 	{keywords}
 	ogImageUrl={defaultOgImage}
-	ogImageAlt={'Suvro Ghosh - Healthcare IT Architect'}
-	schema={personSchema}
+	ogImageAlt="Suvro Ghosh - Healthcare IT Architect"
+	schema={schemaGraph([
+		personSchema,
+		profilePageSchema({ name: title, description, url: canonicalUrl })
+	])}
 />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">

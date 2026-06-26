@@ -1,12 +1,14 @@
 import type { PageLoad } from './$types';
+import { validatePublishedPostMetadata, type BlogPostSummary } from '$lib/content/posts';
 
 export const load: PageLoad = async ({ url }) => {
-	const postFiles = import.meta.glob('/src/lib/posts/**/*.md');
+	const postFiles = import.meta.glob<{ metadata: BlogPostSummary }>('/src/lib/posts/**/*.md');
 
 	const postPromises = Object.entries(postFiles).map(async ([path, resolver]) => {
-		const mod: any = await resolver();
+		const mod = await resolver();
 		const { metadata } = mod;
 		const slug = path.split('/').pop()?.replace('.md', '') ?? '';
+		validatePublishedPostMetadata(metadata, `${slug}.md`);
 
 		return {
 			...metadata,
@@ -14,7 +16,7 @@ export const load: PageLoad = async ({ url }) => {
 		};
 	});
 
-	let posts = await Promise.all(postPromises);
+	let posts: BlogPostSummary[] = await Promise.all(postPromises);
 
 	posts = posts.filter((post) => post.published !== false);
 
@@ -23,7 +25,10 @@ export const load: PageLoad = async ({ url }) => {
 	const search = url.searchParams.get('search')?.trim() ?? '';
 
 	if (search) {
-		const rawFiles = import.meta.glob('/src/lib/posts/**/*.md', { query: '?raw', import: 'default' });
+		const rawFiles = import.meta.glob('/src/lib/posts/**/*.md', {
+			query: '?raw',
+			import: 'default'
+		});
 
 		const words = search.toLowerCase().split(/\s+/).filter(Boolean);
 
@@ -43,7 +48,9 @@ export const load: PageLoad = async ({ url }) => {
 				post.slug ?? '',
 				Array.isArray(post.tags) ? post.tags.join(' ') : '',
 				bodyText
-			].join(' ').toLowerCase();
+			]
+				.join(' ')
+				.toLowerCase();
 
 			return { post, matches: words.every((w) => haystack.includes(w)) };
 		});

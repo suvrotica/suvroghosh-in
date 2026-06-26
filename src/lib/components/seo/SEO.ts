@@ -1,5 +1,6 @@
 import { dev } from '$app/environment';
 import type { WithContext, WebSite, Person, BlogPosting, BreadcrumbList } from 'schema-dts';
+import { slugifyCategory } from '$lib/content/categories';
 
 export const siteTitle = 'Suvro Ghosh';
 export const siteTitleLong =
@@ -15,6 +16,16 @@ export const socialUrls = [
 ];
 
 export const defaultOgImage = `${siteUrl}/images/IMG-20260427-WA0001.jpg`;
+
+export function absoluteUrl(pathOrUrl?: string) {
+	if (!pathOrUrl) return undefined;
+	if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
+	return `${siteUrl}${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`;
+}
+
+export function blogPostUrl(category: string, slug: string) {
+	return `${siteUrl}/blog/${slugifyCategory(category)}/${encodeURIComponent(slug)}`;
+}
 
 export const siteSEO = {
 	title: siteTitleLong,
@@ -76,6 +87,7 @@ export function blogPostingSchema(post: {
 	category: string;
 	slug: string;
 	canonicalUrl: string;
+	tags?: string[];
 	wordCount?: number;
 }) {
 	const schema: Record<string, unknown> = {
@@ -83,7 +95,7 @@ export function blogPostingSchema(post: {
 		'@type': 'BlogPosting',
 		headline: post.title,
 		description: post.description,
-		image: post.thumbnail ? `${siteUrl}${post.thumbnail}` : defaultOgImage,
+		image: absoluteUrl(post.thumbnail) ?? defaultOgImage,
 		datePublished: post.date,
 		dateModified: post.dateModified ?? post.date,
 		author: {
@@ -102,12 +114,59 @@ export function blogPostingSchema(post: {
 			'@id': post.canonicalUrl
 		},
 		articleSection: post.category,
+		keywords: post.tags ?? [],
 		inLanguage: 'en'
 	};
 	if (post.wordCount) {
 		schema.wordCount = post.wordCount;
 	}
 	return schema as unknown as WithContext<BlogPosting>;
+}
+
+export function collectionPageSchema(page: {
+	name: string;
+	description: string;
+	url: string;
+	about?: string;
+}) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'CollectionPage',
+		name: page.name,
+		description: page.description,
+		url: page.url,
+		isPartOf: { '@id': `${siteUrl}/#website` },
+		about: page.about,
+		inLanguage: 'en'
+	};
+}
+
+export function contactPageSchema(page: { name: string; description: string; url: string }) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'ContactPage',
+		name: page.name,
+		description: page.description,
+		url: page.url,
+		mainEntity: {
+			'@id': `${siteUrl}/#person`
+		},
+		inLanguage: 'en'
+	};
+}
+
+export function profilePageSchema(page: { name: string; description: string; url: string }) {
+	return {
+		'@context': 'https://schema.org',
+		'@type': 'ProfilePage',
+		name: page.name,
+		description: page.description,
+		url: page.url,
+		mainEntity: {
+			'@id': `${siteUrl}/#person`
+		},
+		inLanguage: 'en'
+	};
 }
 
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
@@ -121,4 +180,11 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
 			item: item.url
 		}))
 	} satisfies WithContext<BreadcrumbList>;
+}
+
+export function schemaGraph(items: unknown[]) {
+	return {
+		'@context': 'https://schema.org',
+		'@graph': items
+	};
 }

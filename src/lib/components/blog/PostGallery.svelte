@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { Badge } from '$lib/components/ui/badge';
 	import { slugifyCategory } from '$lib/content/categories';
 
@@ -14,7 +15,10 @@
 
 <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 	{#each posts as post (post.slug)}
-		{@const href = `/blog/${slugifyCategory(post.category)}/${post.slug}`}
+		{@const href = resolve('/blog/[category]/[slug]', {
+			category: slugifyCategory(post.category),
+			slug: post.slug
+		})}
 
 		<a
 			{href}

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteUrl } from '$lib/components/seo/SEO';
+	import { collectionPageSchema, siteUrl } from '$lib/components/seo/SEO';
 	import PostTabs from '$lib/components/blog/PostTabs.svelte';
 	import PostGallery from '$lib/components/blog/PostGallery.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
@@ -23,6 +23,13 @@
 		'Public Health',
 		'Healthcare Interoperability'
 	]}
+	schema={collectionPageSchema({
+		name: 'All Posts',
+		description:
+			'Complete archive of essays by Suvro Ghosh on healthcare IT, AI, systems thinking, public health, Calcutta culture, and first-principles analysis.',
+		url: siteUrl + '/blog',
+		about: 'Essays and blog posts'
+	})}
 />
 
 <ScrollReveal class="page-enter">

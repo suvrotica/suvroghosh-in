@@ -7,7 +7,7 @@
 		ogImageUrl?: string;
 		ogImageAlt?: string;
 		keywords?: string[];
-		schema?: Record<string, any>;
+		schema?: unknown;
 		type?: 'website' | 'article';
 		publishedTime?: string;
 		modifiedTime?: string;
@@ -32,6 +32,12 @@
 		category,
 		tags
 	}: Props = $props();
+
+	let jsonLd = $derived(
+		schema
+			? `<script type="application/ld+json">${JSON.stringify(schema, null, 2)}</${'script'}>`
+			: ''
+	);
 </script>
 
 <svelte:head>
@@ -45,8 +51,11 @@
 	<meta property="og:type" content={type} />
 	<meta property="og:site_name" content="SuvroGhosh.In" />
 	<meta name="author" content={author} />
-	
-	<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+	<meta
+		name="robots"
+		content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+	/>
 
 	{#if type === 'article' && publishedTime}
 		<meta property="article:published_time" content={publishedTime} />
@@ -61,7 +70,7 @@
 	{/if}
 
 	{#if type === 'article' && tags && tags.length > 0}
-		{#each tags as tag}
+		{#each tags as tag (tag)}
 			<meta property="article:tag" content={tag} />
 		{/each}
 	{/if}
@@ -71,7 +80,7 @@
 	{/if}
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	
+
 	{#if ogImageUrl}
 		<meta property="og:image" content={ogImageUrl} />
 	{/if}
@@ -94,6 +103,7 @@
 	{/if}
 
 	{#if schema}
-		{@html `<script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>`}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+		{@html jsonLd}
 	{/if}
 </svelte:head>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
@@ -35,7 +36,7 @@
 			>
 				<h2 class="m-0 text-2xl font-bold text-neutral-900 dark:text-neutral-100">Recent Posts</h2>
 				<a
-					href="/blog"
+					href={resolve('/blog')}
 					class="mb-1 text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400"
 				>
 					View All &rarr;
@@ -43,7 +44,10 @@
 			</div>
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 				{#each data.recentPosts as post (post.slug)}
-					{@const href = '/blog/' + slugifyCategory(post.category || 'uncategorized') + '/' + post.slug}
+					{@const href = resolve('/blog/[category]/[slug]', {
+						category: slugifyCategory(post.category || 'uncategorized'),
+						slug: post.slug
+					})}
 					<a
 						{href}
 						class="post-card group block rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm dark:border-neutral-800 dark:bg-neutral-800/50"
@@ -76,7 +80,10 @@
 			</h2>
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{#each data.categories as cat (cat.slug)}
-					<a href={'/blog/' + cat.slug} class="card group block no-underline">
+					<a
+						href={resolve('/blog/[category]', { category: cat.slug })}
+						class="card group block no-underline"
+					>
 						<h3 class="m-0 mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-100">
 							{cat.label}
 						</h3>

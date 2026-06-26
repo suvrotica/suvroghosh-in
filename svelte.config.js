@@ -31,37 +31,57 @@ function rehypeSquareBrackets() {
 		function walk(node) {
 			// Skip code blocks, inline code, and links to avoid altering their contents
 			if (node.tagName === 'code' || node.tagName === 'pre' || node.tagName === 'a') return;
-			
+
 			if (node.children) {
 				for (let i = 0; i < node.children.length; i++) {
 					const child = node.children[i];
-					
+
 					// Look for text nodes containing '['
 					if (child.type === 'text' && child.value && child.value.includes('[')) {
 						// Split by [...] keeping the bracketed text intact in the array
 						const parts = child.value.split(/(\[.*?\])/);
-						
-						const newNodes = parts.map(part => {
-							// If the chunk is our bracketed text, wrap it in a styled span
-							if (part.startsWith('[') && part.endsWith(']')) {
-								return {
-		type: 'element',
-		tagName: 'span',
-		// Changed to muted grays to sink closer into the background
-		properties: { className: ['font-semibold', 'text-neutral-400', 'dark:text-neutral-600'] },
-		children: [{ type: 'text', value: part }]
-	};
-							}
-							// Otherwise, leave it as normal text
-							return { type: 'text', value: part };
-						}).filter(n => n.type !== 'text' || n.value !== ''); // Drop empty string nodes
-						
+
+						const newNodes = parts
+							.map((part) => {
+								// If the chunk is our bracketed text, wrap it in a styled span
+								if (part.startsWith('[') && part.endsWith(']')) {
+									return {
+										type: 'element',
+										tagName: 'span',
+										// Changed to muted grays to sink closer into the background
+										properties: {
+											className: ['font-semibold', 'text-neutral-400', 'dark:text-neutral-600']
+										},
+										children: [{ type: 'text', value: part }]
+									};
+								}
+								// Otherwise, leave it as normal text
+								return { type: 'text', value: part };
+							})
+							.filter((n) => n.type !== 'text' || n.value !== ''); // Drop empty string nodes
+
 						// Replace the original text node with our new mixed nodes
 						node.children.splice(i, 1, ...newNodes);
 						i += newNodes.length - 1; // Adjust loop index after splice
 					} else {
 						walk(child); // Recursively walk down the AST
 					}
+				}
+			}
+		}
+		walk(tree);
+	};
+}
+
+function rehypeDemotePostH1() {
+	return (tree) => {
+		function walk(node) {
+			if (node.tagName === 'h1') {
+				node.tagName = 'h2';
+			}
+			if (node.children) {
+				for (const child of node.children) {
+					walk(child);
 				}
 			}
 		}
@@ -81,6 +101,7 @@ const config = {
 				rehypeSlug,
 				[rehypeAutolinkHeadings, { behavior: 'wrap' }],
 				rehypeKatexSvelte,
+				rehypeDemotePostH1,
 				rehypeSquareBrackets // 2. Inject the custom plugin here
 			]
 		})

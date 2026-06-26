@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteUrl, personSchema } from '$lib/components/seo/SEO';
+	import { contactPageSchema, personSchema, schemaGraph, siteUrl } from '$lib/components/seo/SEO';
 	import { Button } from '$lib/components/ui/button';
 	import type { ActionData } from './$types';
 
@@ -26,7 +26,15 @@
 	);
 </script>
 
-<SEO {title} {description} {canonicalUrl} schema={personSchema} />
+<SEO
+	{title}
+	{description}
+	{canonicalUrl}
+	schema={schemaGraph([
+		personSchema,
+		contactPageSchema({ name: title, description, url: canonicalUrl })
+	])}
+/>
 
 <section class="page-enter mx-auto max-w-2xl py-8 md:py-12">
 	<header class="mb-10 text-center">
