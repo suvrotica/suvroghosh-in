@@ -2,6 +2,9 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl, personSchema } from '$lib/components/seo/SEO';
 	import { Button } from '$lib/components/ui/button';
+	import type { ActionData } from './$types';
+
+	let { form }: { form?: ActionData } = $props();
 
 	const title = 'Contact | Suvro Ghosh';
 	const description =
@@ -9,6 +12,18 @@
 	const canonicalUrl = siteUrl + '/contact';
 
 	const email = 'contact@suvroghosh.in';
+
+	type ContactFormErrors = { name?: string; email?: string; message?: string; form?: string };
+
+	const errors = $derived(form?.errors as ContactFormErrors | undefined);
+
+	const values = $derived(
+		form?.values ?? {
+			name: '',
+			email: '',
+			message: ''
+		}
+	);
 </script>
 
 <SEO {title} {description} {canonicalUrl} schema={personSchema} />
@@ -24,18 +39,125 @@
 		</p>
 	</header>
 
-	<div class="card text-center">
-		<p class="mb-2 text-base text-neutral-700 dark:text-neutral-300">Email</p>
-		<a
-			href={'mailto:' + email}
-			class="text-xl font-bold text-neutral-900 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-100"
-		>
-			{email}
-		</a>
-		<p class="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
-			Based in Calcutta, India. Open to remote, hybrid, contract, consulting, and Gulf healthcare IT
-			opportunities.
-		</p>
+	<div class="card">
+		{#if form?.success}
+			<div
+				class="mb-6 rounded-md border border-green-600/30 bg-green-50 px-4 py-3 text-sm text-green-900 dark:border-green-400/30 dark:bg-green-950/40 dark:text-green-100"
+				role="status"
+			>
+				Thanks. Your message has been sent.
+			</div>
+		{/if}
+
+		{#if errors?.form}
+			<div
+				class="mb-6 rounded-md border border-red-600/30 bg-red-50 px-4 py-3 text-sm text-red-900 dark:border-red-400/30 dark:bg-red-950/40 dark:text-red-100"
+				role="alert"
+			>
+				{errors.form}
+			</div>
+		{/if}
+
+		<form method="POST" class="space-y-5" novalidate>
+			<div>
+				<label
+					for="name"
+					class="mb-2 block text-sm font-semibold text-neutral-900 dark:text-neutral-100"
+				>
+					Name
+				</label>
+				<input
+					id="name"
+					name="name"
+					type="text"
+					autocomplete="name"
+					required
+					maxlength="120"
+					value={values.name}
+					aria-invalid={errors?.name ? 'true' : undefined}
+					aria-describedby={errors?.name ? 'name-error' : undefined}
+					class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+				/>
+				{#if errors?.name}
+					<p id="name-error" class="mt-2 text-left text-sm text-red-700 dark:text-red-300">
+						{errors.name}
+					</p>
+				{/if}
+			</div>
+
+			<div>
+				<label
+					for="email"
+					class="mb-2 block text-sm font-semibold text-neutral-900 dark:text-neutral-100"
+				>
+					Email
+				</label>
+				<input
+					id="email"
+					name="email"
+					type="email"
+					autocomplete="email"
+					required
+					maxlength="254"
+					value={values.email}
+					aria-invalid={errors?.email ? 'true' : undefined}
+					aria-describedby={errors?.email ? 'email-error' : undefined}
+					class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+				/>
+				{#if errors?.email}
+					<p id="email-error" class="mt-2 text-left text-sm text-red-700 dark:text-red-300">
+						{errors.email}
+					</p>
+				{/if}
+			</div>
+
+			<div>
+				<label
+					for="message"
+					class="mb-2 block text-sm font-semibold text-neutral-900 dark:text-neutral-100"
+				>
+					Message
+				</label>
+				<textarea
+					id="message"
+					name="message"
+					required
+					minlength="10"
+					maxlength="5000"
+					rows="7"
+					aria-invalid={errors?.message ? 'true' : undefined}
+					aria-describedby={errors?.message ? 'message-error' : undefined}
+					class="w-full resize-y rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+					>{values.message}</textarea
+				>
+				{#if errors?.message}
+					<p id="message-error" class="mt-2 text-left text-sm text-red-700 dark:text-red-300">
+						{errors.message}
+					</p>
+				{/if}
+			</div>
+
+			<div class="absolute left-[-9999px]" aria-hidden="true">
+				<label for="website">Website</label>
+				<input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+			</div>
+
+			<Button type="submit" class="w-full sm:w-auto">Send message</Button>
+		</form>
+
+		<div class="mt-8 border-t border-neutral-300 pt-6 text-center dark:border-neutral-700">
+			<p class="mb-2 text-base text-neutral-700 dark:text-neutral-300">Or email me directly</p>
+			<a
+				href={'mailto:' + email}
+				class="text-xl font-bold text-neutral-900 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-100"
+			>
+				{email}
+			</a>
+			<p class="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
+				Based in Calcutta, India. Open to remote, hybrid, contract, consulting, and Gulf healthcare
+				IT opportunities.
+			</p>
+		</div>
 	</div>
 
 	<div class="mt-8 flex items-center justify-center gap-4">

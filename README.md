@@ -29,6 +29,18 @@ npm run dev
 npm run dev -- --open
 ```
 
+## Contact form environment
+
+The `/contact` form sends email through Resend. Configure these Vercel environment variables for production:
+
+```sh
+RESEND_API_KEY=your_resend_api_key
+CONTACT_TO_EMAIL=contact@suvroghosh.in
+CONTACT_FROM_EMAIL=noreply@suvroghosh.in
+```
+
+`CONTACT_FROM_EMAIL` must be a sender address allowed by your Resend domain configuration.
+
 ## Building
 
 To create a production version of your app:
