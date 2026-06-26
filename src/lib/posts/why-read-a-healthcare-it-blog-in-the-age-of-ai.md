@@ -3,7 +3,7 @@ title: "Why You Still Want to Read a Healthcare IT Blog in the Age of AI"
 description: "An exploration of why human-written, skeptical, and curiosity-driven healthcare IT commentary remains indispensable in an era of AI-generated noise, marketing jargon, and technological conceit."
 date: "2026-06-26"
 thumbnail: "/images/Compress_20260626_134922_2939.jpg"
-category: "Healthcare IT"
+category: "Healthcare-IT"
 tags: ["Healthcare IT", "Artificial Intelligence", "Medical Informatics", "Critical Thinking", "SuvroGhosh", "Opinion", "Industry 4.0"]
 published: true
 color: "#2E5C8A"
