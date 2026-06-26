@@ -102,7 +102,7 @@ It matters because the **security and privacy implications** of AI in healthcare
 
 ## How Does This Work?
 
-The mechanics of this blog are deceptively simple: a person with experience in healthcare IT, genetics, entrepreneurship, and the messy reality of clinical data sits down and writes about what he has observed, what he has learned, what he suspects, and what he does not know.
+The mechanics of this blog are deceptively simple: I sit down with my experience in healthcare IT, genetics, entrepreneurship, and the messy reality of clinical data, and write about what I have observed, what I have learned, what I suspect, and what I do not know.
 
 But the *method* is more interesting than the mechanics.
 
@@ -148,7 +148,7 @@ What this blog offers is not certainty but engagement. Not answers but better qu
 
 The back-office bodyshopping moat is gone. The old models of healthcare IT outsourcing, built on cheap labor and repetitive tasks, are crumbling. India, and every nation that has relied on similar models, faces a choice: pivot toward genuine expertise and innovation, or find new ways to lie unabashedly and stay complacent. Some of the posts on this blog have the exact intent to focus attention back to where it is important—to the hard work of building real capability, of asking real questions, of creating systems that actually serve the people they are supposed to help.
 
-Most of these topics are not my own. Not projects he has worked on directly. Many are related, tangentially or deeply, but the blog does not claim exclusive ownership of the problems it examines. It claims only the willingness to look, to think, to write, and to share what is found.
+Most of these topics are not my own. Many are not projects I have worked on directly. Some are related to my experience, tangentially or deeply, but I do not claim exclusive ownership of the problems I examine here. I claim only the willingness to look, to think, to write, and to share what I find.
 
 And it matters what kind of utopia is promised, because the delivery can be dystopian if the steering is wrong. It matters who is chosen to ask the questions. It matters whether subservience or critical thinking is attractive to hiring. It matters whether we evaluate learning through shallow filters or through the deeper, harder-to-measure qualities of curiosity, ethics, and fit.
 
