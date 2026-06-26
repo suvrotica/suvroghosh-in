@@ -13,7 +13,6 @@ color: "#2E5C8A"
 
 <Pi src="Compress_20260626_134922_2939.jpg" />
 
-# Why You Still Want to Read a Healthcare IT Blog in the Age of AI
 
 ## The Uncomfortable Premise
 
@@ -110,6 +109,8 @@ But the *method* is more interesting than the mechanics.
 The method is **concentric**. Each post begins with the big picture—the broad context, the human stakes, the why—and then zooms inward into increasingly detailed concepts. A post about AI in diabetes research might begin with the global burden of the disease, move through the history of computational approaches to diabetes management, delve into the specifics of genetic data analysis, and end with the statistical nuances of model validation in multi-ethnic populations. The reader is carried along, gradually acquiring the vocabulary and conceptual framework needed to understand the deepest layers.
 
 The method is **interdisciplinary**. A post about hiring practices in healthcare IT might draw on organizational psychology, economics, and the author's direct experience running companies. A post about linear algebra in healthcare might connect matrix operations to the geometry of genetic variation. A post about a book like Dan Bader's *Python Tricks* might explore how programming craftsmanship intersects with clinical software reliability. The boundaries between disciplines are treated as permeable, because in reality they are.
+
+<Pi src="/photos/Compress_20260626_135253_3863.jpg" />
 
 The method is **skeptical but not cynical**. There is a difference. Cynicism is the lazy assumption that everything is corrupt and nothing can be improved. Skepticism is the rigorous demand for evidence, the willingness to ask uncomfortable questions, and the humility to say "I don't know" when that is the honest answer. The author claims no more knowledge than he possesses, and he treats the ability to entertain blunt answers like "I don't know" as a strength, not a weakness. It is exactly because he can admit ignorance that he has the thirst to go out and look for what he doesn't know, to fill the gap with a beginning.
 
