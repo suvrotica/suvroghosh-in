@@ -34,8 +34,7 @@
 			Contact
 		</h1>
 		<p class="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-			For healthcare IT consulting, interoperability, clinical data systems, advisory, or writing
-			inquiries.
+			For healthcare IT consulting, interoperability, clinical data systems, advisory.
 		</p>
 	</header>
 
@@ -90,7 +89,7 @@
 					for="email"
 					class="mb-2 block text-sm font-semibold text-neutral-900 dark:text-neutral-100"
 				>
-					Email
+					Email <span class="text-red-700 dark:text-red-300">(required)</span>
 				</label>
 				<input
 					id="email"
@@ -145,17 +144,26 @@
 			<Button type="submit" class="w-full sm:w-auto">Send message</Button>
 		</form>
 
-		<div class="mt-8 border-t border-neutral-300 pt-6 text-center dark:border-neutral-700">
-			<p class="mb-2 text-base text-neutral-700 dark:text-neutral-300">Or email me directly</p>
+		<div
+			class="mt-8 flex flex-col items-center border-t border-neutral-300 pt-6 text-center dark:border-neutral-700"
+		>
+			<p
+				class="mb-2 w-full text-center text-base text-neutral-700 dark:text-neutral-300"
+				style="text-align: center;"
+			>
+				Or email me directly
+			</p>
 			<a
 				href={'mailto:' + email}
 				class="text-xl font-bold text-neutral-900 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-100"
 			>
 				{email}
 			</a>
-			<p class="mt-6 text-sm text-neutral-600 dark:text-neutral-400">
-				Based in Calcutta, India. Open to remote, hybrid, contract, consulting, and Gulf healthcare
-				IT opportunities.
+			<p
+				class="mt-6 w-full text-center text-sm text-neutral-600 dark:text-neutral-400"
+				style="text-align: center;"
+			>
+				Based in India. Open to remote, hybrid, contract, consulting healthcare IT opportunities.
 			</p>
 		</div>
 	</div>
