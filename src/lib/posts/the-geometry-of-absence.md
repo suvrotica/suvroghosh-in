@@ -3,7 +3,7 @@ title: "The Geometry of Absence: On Solitude, Density, and the Mathematics of Be
 description: "A reflective essay on the paradox of loneliness in crowded Calcutta, the sociology of Bengali group dynamics abroad, and the quiet liberation of choosing solitude over performative congregation."
 date: "2026-06-28"
 thumbnail: "/images/Compress_20260628_010953_3988.jpg"
-category: "Programming"
+category: "Culture"
 tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
 published: true
 color: "#2c3e50"
