@@ -1,4 +1,3 @@
-## the-humidity-of-proof.md
 ---
 title: "The Humidity of Proof"
 description: "A middle-aged Calcutta resident sits beneath a sluggish ceiling fan and considers AI valuations, collapsing warehouses, the etymology of proof, and the quiet arithmetic of condensation."
