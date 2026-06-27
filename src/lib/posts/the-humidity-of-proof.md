@@ -37,7 +37,7 @@ Microsoft has unveiled something called Project Solara, an operating system for 
 
 The bartender asks if I want another. I do not.
 
-I am drinking water. It is free. It will not convert my liver into a test kitchen.
+I am drinking beer. It will not convert my liver into a test kitchen.
 
 I think about the word agent. From the Latin *agens*, present participle of *agere*, to do or to drive. An agent is one who acts on behalf of another. But an agent is also a thing that acts upon something else—a chemical agent, a biological agent, a disease agent. The same word serves delegation and infection. Language, like Kolkata drainage, has many channels, not all of them shown on the map.
 
