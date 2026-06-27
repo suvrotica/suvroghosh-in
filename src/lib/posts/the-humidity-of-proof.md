@@ -2,12 +2,16 @@
 title: "The Humidity of Proof"
 description: "A middle-aged Calcutta resident sits beneath a sluggish ceiling fan and considers AI valuations, collapsing warehouses, the etymology of proof, and the quiet arithmetic of condensation."
 date: "2026-06-27"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260608_100111_1953.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
 published: true
 color: "#6B3A1E"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260608_100111_1953.jpg" />
 
 The ceiling fan above this Park Street establishment rotates with the exhausted diligence of a man who has already submitted his retirement papers and is now merely serving out the fortnight, and I am sitting beneath it with a glass of water that has begun to weep against the varnished wood, watching a single bead of condensation travel southward with the solemn attention I usually reserve for descending elevators, tax notices, or the final stages of a chess game in which I have already lost my queen but remain too stubborn to resign. 
 
