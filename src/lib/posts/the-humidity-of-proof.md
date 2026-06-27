@@ -55,6 +55,6 @@ I do not know how to reconcile these scales. I do not know how to hold the 1.75 
 
 The fan completes another rotation. The World Cup continues on the screen, men running after a ball that is also, in its way, a proof—a proof that twenty-two people can agree on the rules of a meaningless contest and invest it with significance, which is perhaps the only real miracle we have ever achieved.
 
-I pay my bill. The arithmetic is simple. The water was free. The seat was free. The thoughts were complimentary, though they will cost me later, in the small hours, when the ceiling fan in my bedroom performs the same exhausted orbit and I lie awake wondering whether the algorithms have finished reading my emails yet.
+I pay my bill. The arithmetic is simple. The seat was free but not the beer. The thoughts were complimentary, though they will cost me later, in the small hours, when the ceiling fan in my bedroom performs the same exhausted orbit and I lie awake wondering whether the algorithms have finished reading my emails yet.
 
 I leave before last call. The sky outside is the color of a bruise that has begun to heal. Somewhere, a scooter coughs itself into despair. The monsoon is coming. It always is.
