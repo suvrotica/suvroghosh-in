@@ -25,12 +25,14 @@ export type BlogPostSummary = BlogPostMetadata & {
 	categoryLabel?: string;
 };
 
-export function isPublishedPost(post: Partial<BlogPostMetadata>) {
-	return post.published !== false;
+export function isPublishedPost(
+	post: Partial<BlogPostMetadata> | null | undefined
+): post is Partial<BlogPostMetadata> {
+	return post != null && post.published !== false;
 }
 
 export function validatePublishedPostMetadata(
-	metadata: Partial<BlogPostMetadata>,
+	metadata: Partial<BlogPostMetadata> | null | undefined,
 	source = 'post'
 ) {
 	if (!isPublishedPost(metadata)) return;

@@ -8,6 +8,7 @@ export const load: PageLoad = async ({ url }) => {
 		const mod = await resolver();
 		const { metadata } = mod;
 		const slug = path.split('/').pop()?.replace('.md', '') ?? '';
+		if (!metadata || metadata.published === false) return null;
 		validatePublishedPostMetadata(metadata, `${slug}.md`);
 
 		return {
@@ -16,9 +17,7 @@ export const load: PageLoad = async ({ url }) => {
 		};
 	});
 
-	let posts: BlogPostSummary[] = await Promise.all(postPromises);
-
-	posts = posts.filter((post) => post.published !== false);
+	let posts: BlogPostSummary[] = (await Promise.all(postPromises)).filter((post) => post !== null);
 
 	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 

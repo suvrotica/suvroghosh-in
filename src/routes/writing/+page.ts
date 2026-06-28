@@ -9,12 +9,12 @@ export const load: PageLoad = async () => {
 		const mod = await resolver();
 		const { metadata } = mod;
 		const slug = path.split('/').pop()?.replace('.md', '') ?? '';
+		if (!metadata || metadata.published === false) return null;
 		validatePublishedPostMetadata(metadata, `${slug}.md`);
 		return { ...metadata, slug };
 	});
 
-	let posts = await Promise.all(postPromises);
-	posts = posts.filter((post) => post.published !== false);
+	const posts = (await Promise.all(postPromises)).filter((post) => post !== null);
 	posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 	const groups = new Map<string, typeof posts>();
