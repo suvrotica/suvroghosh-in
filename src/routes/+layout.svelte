@@ -4,14 +4,17 @@
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { dev } from '$app/environment';
+	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
 
 	let { children } = $props();
 
-	injectAnalytics({ mode: dev ? 'development' : 'production' });
-	injectSpeedInsights();
+	onMount(() => {
+		injectAnalytics({ mode: dev ? 'development' : 'production' });
+		injectSpeedInsights();
+	});
 </script>
 
 <ReadingProgress />

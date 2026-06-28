@@ -31,7 +31,7 @@ color: 'orange'
 ---
 
 <TTS />
-
+<ChatterboxTTS />
 <Pi src="Compress_20260509_172719_9415.jpg" alt="Article illustration for An Architect's Education" />
 
 ## The Weight of Foundations
