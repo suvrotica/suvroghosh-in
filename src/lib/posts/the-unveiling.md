@@ -2,12 +2,16 @@
 title: "The Unveiling"
 description: "A rambling reflection from Calcutta on ghost jobs, synthetic professional networks, and the quiet dissolution of white-collar meaning in the age of agentic AI."
 date: "2026-06-28"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260629_014348_8354.jpg"
 category: "Personal Essay"
 tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
 published: true
 color: "#2c3e50"
 ---
+
+<TTS />
+
+<Pi src="Compress_20260629_014348_8354.jpg" />
 
 Outside my flat, the June heat has turned the tar roads into something viscous and almost alive, a black, sticky membrane that seems to breathe, and you could fry an egg on the hood of the Ambassador taxi stalled below my window, though no one has that experimental leeway anymore to waste food, because even that thought is a luxury and admission is a form of surrender.
 
