@@ -1,5 +1,3 @@
-## the-unveiling.md
-
 ---
 title: "The Unveiling"
 description: "A rambling reflection from Calcutta on ghost jobs, synthetic professional networks, and the quiet dissolution of white-collar meaning in the age of agentic AI."
