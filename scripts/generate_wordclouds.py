@@ -425,7 +425,8 @@ def main() -> int:
 			failed += 1
 			print(f"Warning: failed to generate word cloud for {markdown_path.name}: {exc}", file=sys.stderr)
 
-	save_manifest(manifest)
+	if generated > 0:
+		save_manifest(manifest)
 	print(
 		f"Word clouds: scanned {scanned}, generated {generated}, skipped {skipped}, failed {failed}."
 	)

@@ -6,8 +6,8 @@
 	"scripts": {
 		"dev": "vite dev",
 		"wordclouds": "python scripts/generate_wordclouds.py",
-		"wordclouds:install": "python -m pip install -r requirements-wordcloud.txt",
-		"prebuild": "python scripts/generate_wordclouds.py",
+		"wordclouds:install": "python -m pip install --user -r requirements-wordcloud.txt",
+		"prebuild": "python scripts/ensure_wordcloud_deps.py && python scripts/generate_wordclouds.py",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
