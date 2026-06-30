@@ -1,12 +1,13 @@
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { validatePublishedPostMetadata, type BlogPostSummary } from '$lib/content/posts';
 
-export const load: PageLoad = async ({ url }) => {
-	const postFiles = import.meta.glob<{ metadata: BlogPostSummary }>('/src/lib/posts/**/*.md');
+export const load: PageServerLoad = async ({ url }) => {
+	const postFiles = import.meta.glob<BlogPostSummary>('/src/lib/posts/**/*.md', {
+		import: 'metadata'
+	});
 
 	const postPromises = Object.entries(postFiles).map(async ([path, resolver]) => {
-		const mod = await resolver();
-		const { metadata } = mod;
+		const metadata = await resolver();
 		const slug = path.split('/').pop()?.replace('.md', '') ?? '';
 		if (!metadata || metadata.published === false) return null;
 		validatePublishedPostMetadata(metadata, `${slug}.md`);

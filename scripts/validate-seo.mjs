@@ -16,23 +16,59 @@ function parseFrontmatter(file) {
 	if (!match) return {};
 
 	const data = {};
-	for (const line of match[1].split(/\r?\n/)) {
-		const field = line.match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
-		if (!field) continue;
+	const lines = match[1].split(/\r?\n/);
 
-		const [, key, rawValue] = field;
+	function parseValue(rawValue) {
 		const value = rawValue.trim();
 		if (value.startsWith('[') && value.endsWith(']')) {
-			data[key] = value
+			return value
 				.slice(1, -1)
 				.split(',')
 				.map((item) => item.trim().replace(/^["']|["']$/g, ''))
 				.filter(Boolean);
-		} else if (value === 'true' || value === 'false') {
-			data[key] = value === 'true';
-		} else {
-			data[key] = value.replace(/^["']|["']$/g, '');
 		}
+		if (value === 'true' || value === 'false') {
+			return value === 'true';
+		}
+		return value.replace(/^["']|["']$/g, '');
+	}
+
+	for (let i = 0; i < lines.length; i += 1) {
+		const line = lines[i];
+		const field = line.match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
+		if (!field) continue;
+
+		const [, key, rawValue] = field;
+		let value = rawValue.trim();
+
+		if (!value && lines[i + 1]?.trim().startsWith('[')) {
+			const arrayLines = [];
+			i += 1;
+			while (i < lines.length) {
+				arrayLines.push(lines[i].trim());
+				if (lines[i].trim().endsWith(']')) break;
+				i += 1;
+			}
+			value = arrayLines.join(' ');
+		} else if (value.startsWith('[') && !value.endsWith(']')) {
+			const arrayLines = [value];
+			while (i + 1 < lines.length) {
+				i += 1;
+				arrayLines.push(lines[i].trim());
+				if (lines[i].trim().endsWith(']')) break;
+			}
+			value = arrayLines.join(' ');
+		} else if (!value && lines[i + 1]?.trim().startsWith('- ')) {
+			const items = [];
+			while (i + 1 < lines.length && lines[i + 1].trim().startsWith('- ')) {
+				i += 1;
+				items.push(lines[i].trim().slice(2).trim().replace(/^["']|["']$/g, ''));
+			}
+			data[key] = items.filter(Boolean);
+			continue;
+		}
+
+		data[key] = parseValue(value);
 	}
 
 	return data;

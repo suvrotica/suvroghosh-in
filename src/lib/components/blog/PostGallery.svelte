@@ -14,7 +14,7 @@
 </script>
 
 <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-	{#each posts as post (post.slug)}
+	{#each posts as post, index (post.slug)}
 		{@const href = resolve('/blog/[category]/[slug]', {
 			category: slugifyCategory(post.category),
 			slug: post.slug
@@ -29,7 +29,9 @@
 					<img
 						src={post.thumbnail}
 						alt={post.title}
-						loading="lazy"
+						loading={index === 0 ? 'eager' : 'lazy'}
+						fetchpriority={index === 0 ? 'high' : 'auto'}
+						decoding="async"
 						class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 					/>
 
