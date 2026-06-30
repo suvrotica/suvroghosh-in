@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T21:12:33.345642+00:00",
+  "generatedAt": "2026-06-30T22:35:41.815327+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -21,6 +21,29 @@
         "Merely",
         "Tool",
         "Technical"
+      ],
+      "wordCount": 130
+    },
+    "ai-layoff-trap-firing-your-customers": {
+      "generatedAt": "2026-06-30T22:35:29.761481+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-layoff-trap-firing-your-customers.svg",
+      "source": "src/lib/posts/ai-layoff-trap-firing-your-customers.md",
+      "sourceHash": "a8b3b17c3d16105305a30b7d87ce6983191ce033fdd70d73fde902a0790cd39e",
+      "sourceModified": "2026-06-30T22:25:02.093544+00:00",
+      "topWords": [
+        "Firm",
+        "AI",
+        "Demand",
+        "Firms",
+        "Job",
+        "Automation",
+        "Income",
+        "Cost",
+        "Paper",
+        "Tasks",
+        "Company",
+        "Market"
       ],
       "wordCount": 130
     },
@@ -162,6 +185,29 @@
       ],
       "wordCount": 130
     },
+    "bengal-changed-color-not-character": {
+      "generatedAt": "2026-06-30T22:35:30.531208+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bengal-changed-color-not-character.svg",
+      "source": "src/lib/posts/bengal-changed-color-not-character.md",
+      "sourceHash": "17bd985ea74aad4004f7f9de2eb8418fb26efd55dde3df68be16976efd281f4e",
+      "sourceModified": "2026-06-30T22:25:02.093544+00:00",
+      "topWords": [
+        "Bengal",
+        "Enough",
+        "Public",
+        "Voter",
+        "Democracy",
+        "SIR",
+        "Election",
+        "Matters",
+        "Real",
+        "List",
+        "Much",
+        "Person"
+      ],
+      "wordCount": 130
+    },
     "bengali-hikikomori-shadow": {
       "generatedAt": "2026-06-30T21:04:36.025872+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -182,6 +228,29 @@
         "Version",
         "Morning",
         "Work"
+      ],
+      "wordCount": 130
+    },
+    "bessel-correction-for-variance": {
+      "generatedAt": "2026-06-30T22:35:31.252523+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bessel-correction-for-variance.svg",
+      "source": "src/lib/posts/bessel-correction-for-variance.md",
+      "sourceHash": "6932a05175e01f9b22e9330c019884af23b7764acf1eec6e24b33255a41dc755",
+      "sourceModified": "2026-06-30T22:25:02.093544+00:00",
+      "topWords": [
+        "Sample",
+        "Mean",
+        "Three",
+        "Deviations",
+        "Observations",
+        "Bill",
+        "Center",
+        "Looks",
+        "Average",
+        "Freedom",
+        "Data",
+        "Variance"
       ],
       "wordCount": 130
     },
@@ -254,6 +323,29 @@
       ],
       "wordCount": 130
     },
+    "bogosity-enshittification-and-the-glittering-drain": {
+      "generatedAt": "2026-06-30T22:18:59.156045+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bogosity-enshittification-and-the-glittering-drain.svg",
+      "source": "src/lib/posts/bogosity-enshittification-and-the-glittering-drain.md",
+      "sourceHash": "945f115365f1321888781ff31eb324b2ebc7c1bd1e0b279ecc6abc196a6e1000",
+      "sourceModified": "2026-06-30T22:16:19.847952+00:00",
+      "topWords": [
+        "Fake",
+        "Becomes",
+        "AI",
+        "Teach",
+        "Internet",
+        "Many",
+        "Information",
+        "Keep",
+        "Small",
+        "Public",
+        "Already",
+        "Attention"
+      ],
+      "wordCount": 130
+    },
     "boyhood-magnets-bulbs-batteries-calcutta": {
       "generatedAt": "2026-06-30T21:04:43.413023+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -300,6 +392,52 @@
       ],
       "wordCount": 130
     },
+    "calcutta-carbohydrate-problem": {
+      "generatedAt": "2026-06-30T22:35:31.994739+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-carbohydrate-problem.svg",
+      "source": "src/lib/posts/calcutta-carbohydrate-problem.md",
+      "sourceHash": "7585a89dc18efdb61bcf931427f2666bf5d739d467d65aa71200020ac106f1c5",
+      "sourceModified": "2026-06-30T22:25:02.093544+00:00",
+      "topWords": [
+        "Glucose",
+        "Liver",
+        "Rice",
+        "Metabolic",
+        "Food",
+        "Insulin",
+        "Fat",
+        "Blood",
+        "Sugar",
+        "Pressure",
+        "Protein",
+        "Tea"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-fish-field-guide": {
+      "generatedAt": "2026-06-30T22:35:32.680654+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-fish-field-guide.svg",
+      "source": "src/lib/posts/calcutta-fish-field-guide.md",
+      "sourceHash": "f3688ebdf67f9b4f7ee4747ff9a86e086630518fa208f5769779388e4c3f78da",
+      "sourceModified": "2026-06-30T22:25:02.093544+00:00",
+      "topWords": [
+        "Fish",
+        "Small",
+        "Large",
+        "Bones",
+        "Market",
+        "Bengali",
+        "Hilsa",
+        "Whole",
+        "Regular",
+        "Children",
+        "Usually",
+        "Chain"
+      ],
+      "wordCount": 130
+    },
     "calcutta-landfill-and-the-man-who-felt-like-it": {
       "generatedAt": "2026-06-30T21:04:47.255597+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -320,6 +458,29 @@
         "Someone",
         "Becomes",
         "World"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-summer-of-2026": {
+      "generatedAt": "2026-06-30T22:35:33.409586+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-summer-of-2026.svg",
+      "source": "src/lib/posts/calcutta-summer-of-2026.md",
+      "sourceHash": "2ca4a35d93f8eb68d91d557767047c5f20e0a0bf6860082927070e8c0fea2b33",
+      "sourceModified": "2026-06-30T22:25:02.093544+00:00",
+      "topWords": [
+        "Heat",
+        "Cooling",
+        "Boring",
+        "Means",
+        "Water",
+        "Humidity",
+        "Plan",
+        "Hot",
+        "Labor",
+        "Need",
+        "Sweat",
+        "Work"
       ],
       "wordCount": 130
     },
@@ -346,6 +507,52 @@
       ],
       "wordCount": 130
     },
+    "claude-mythos-hype-and-security-hygiene": {
+      "generatedAt": "2026-06-30T22:35:34.027992+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/claude-mythos-hype-and-security-hygiene.svg",
+      "source": "src/lib/posts/claude-mythos-hype-and-security-hygiene.md",
+      "sourceHash": "93e359dbae31d9591a8e4c521369310a9ab4d4855c4b1e363d1d1fc7323ba33c",
+      "sourceModified": "2026-06-30T22:29:35.472514+00:00",
+      "topWords": [
+        "Model",
+        "Release",
+        "Access",
+        "Source",
+        "Ordinary",
+        "Claude",
+        "Question",
+        "Code",
+        "Mythos",
+        "Company",
+        "Vendor",
+        "Aiassisted"
+      ],
+      "wordCount": 130
+    },
+    "clay-stove-calcutta-lpg-smoke-and-breath": {
+      "generatedAt": "2026-06-30T22:35:34.703208+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/clay-stove-calcutta-lpg-smoke-and-breath.svg",
+      "source": "src/lib/posts/clay-stove-calcutta-lpg-smoke-and-breath.md",
+      "sourceHash": "9bc03c60dddab753a5061342c615b3076803543dcee80935297cdbc717738441",
+      "sourceModified": "2026-06-30T22:29:54.744881+00:00",
+      "topWords": [
+        "Smoke",
+        "Air",
+        "Clay",
+        "Stove",
+        "Adjust",
+        "Rice",
+        "Becomes",
+        "Lungs",
+        "Fuel",
+        "Cardboard",
+        "Every",
+        "Kitchen"
+      ],
+      "wordCount": 130
+    },
     "cockroach-season": {
       "generatedAt": "2026-06-30T21:04:50.476927+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -366,6 +573,29 @@
         "Behind",
         "Mouth",
         "Near"
+      ],
+      "wordCount": 130
+    },
+    "commercial-hifi-sounds-for-ordinary-ears": {
+      "generatedAt": "2026-06-30T22:35:35.539156+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/commercial-hifi-sounds-for-ordinary-ears.svg",
+      "source": "src/lib/posts/commercial-hifi-sounds-for-ordinary-ears.md",
+      "sourceHash": "e2bc732c1b8c0902bdd99b1ae7667e815d671ee18cc509d25e192e477592f470",
+      "sourceModified": "2026-06-30T22:29:35.472514+00:00",
+      "topWords": [
+        "Sound",
+        "Speakers",
+        "Room",
+        "Audio",
+        "Speaker",
+        "Subwoofer",
+        "Bass",
+        "Better",
+        "Stereo",
+        "Means",
+        "Mono",
+        "DTS"
       ],
       "wordCount": 130
     },
@@ -461,6 +691,98 @@
       ],
       "wordCount": 130
     },
+    "end-of-history-not-end-of-trouble": {
+      "generatedAt": "2026-06-30T22:35:36.300502+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/end-of-history-not-end-of-trouble.svg",
+      "source": "src/lib/posts/end-of-history-not-end-of-trouble.md",
+      "sourceHash": "8bd6ceecf2f6ef614387da68804a3973ea0877ace9051470ef45f08949f1a78f",
+      "sourceModified": "2026-06-30T22:29:35.474718+00:00",
+      "topWords": [
+        "Democracy",
+        "History",
+        "Liberal",
+        "Sometimes",
+        "End",
+        "Capitalism",
+        "War",
+        "Fukuyama",
+        "Politics",
+        "Automatically",
+        "Calls",
+        "Elections"
+      ],
+      "wordCount": 130
+    },
+    "english-is-not-a-subject-it-is-a-passport": {
+      "generatedAt": "2026-06-30T22:35:36.988602+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/english-is-not-a-subject-it-is-a-passport.svg",
+      "source": "src/lib/posts/english-is-not-a-subject-it-is-a-passport.md",
+      "sourceHash": "862045bc45f1639014c02fc16580001d6d4a2491f010998a2026799d0b78e653",
+      "sourceModified": "2026-06-30T22:29:35.474718+00:00",
+      "topWords": [
+        "English",
+        "Language",
+        "Writing",
+        "AI",
+        "Write",
+        "Ask",
+        "Indian",
+        "First",
+        "Read",
+        "Science",
+        "Means",
+        "Notice"
+      ],
+      "wordCount": 130
+    },
+    "entropy-in-a-rented-room": {
+      "generatedAt": "2026-06-30T22:35:37.628054+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/entropy-in-a-rented-room.svg",
+      "source": "src/lib/posts/entropy-in-a-rented-room.md",
+      "sourceHash": "070230ef851df207d8f95abdc5c75c80e43500a23e6c8bca4847faeee1fe7605",
+      "sourceModified": "2026-06-30T22:29:35.474718+00:00",
+      "topWords": [
+        "Room",
+        "Towel",
+        "Rice",
+        "Bill",
+        "Entropy",
+        "Laptop",
+        "Wants",
+        "Cooker",
+        "Heat",
+        "Ways",
+        "Clean",
+        "Expensive"
+      ],
+      "wordCount": 130
+    },
+    "epistemic-iceberg-effect": {
+      "generatedAt": "2026-06-30T22:35:38.309006+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/epistemic-iceberg-effect.svg",
+      "source": "src/lib/posts/epistemic-iceberg-effect.md",
+      "sourceHash": "03ba2c5ad6257b2654c09606e5712e78423d990b14b7fb12ada674e65654b663",
+      "sourceModified": "2026-06-30T22:34:16.829434+00:00",
+      "topWords": [
+        "Learning",
+        "Iceberg",
+        "Knowledge",
+        "Visible",
+        "Failed",
+        "Answer",
+        "Arrives",
+        "Reality",
+        "Confidence",
+        "Exceptions",
+        "Arguments",
+        "Missing"
+      ],
+      "wordCount": 130
+    },
     "existential-arithmetic-at-bread-level": {
       "generatedAt": "2026-06-30T21:04:59.800928+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -553,6 +875,52 @@
       ],
       "wordCount": 130
     },
+    "first-principles-thinking-calcutta-healthcare-it": {
+      "generatedAt": "2026-06-30T22:35:38.976746+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/first-principles-thinking-calcutta-healthcare-it.svg",
+      "source": "src/lib/posts/first-principles-thinking-calcutta-healthcare-it.md",
+      "sourceHash": "f8d41cf4abc29c656d8956cf15b02cca46b68d11d8d61be53cc96b1bc68ec50d",
+      "sourceModified": "2026-06-30T22:34:38.919776+00:00",
+      "topWords": [
+        "Data",
+        "Time",
+        "First",
+        "Means",
+        "Clinical",
+        "Healthcare",
+        "Principles",
+        "Thinking",
+        "HL7",
+        "Billing",
+        "Whether",
+        "Model"
+      ],
+      "wordCount": 130
+    },
+    "fog-machines-in-the-temple": {
+      "generatedAt": "2026-06-30T22:35:39.686664+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/fog-machines-in-the-temple.svg",
+      "source": "src/lib/posts/fog-machines-in-the-temple.md",
+      "sourceHash": "16dc4eef4b675db8c0f18f07b3c5136a5d791a16a87ee942a002da4c487e6ea8",
+      "sourceModified": "2026-06-30T22:34:16.829434+00:00",
+      "topWords": [
+        "AI",
+        "Person",
+        "Mandukya",
+        "Social",
+        "Pretends",
+        "Mode",
+        "Human",
+        "Waking",
+        "Sound",
+        "Useful",
+        "Dream",
+        "Deep"
+      ],
+      "wordCount": 130
+    },
     "food-chain-reversal": {
       "generatedAt": "2026-06-30T21:05:06.983454+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -573,6 +941,29 @@
         "Dutta",
         "Rain",
         "Someone"
+      ],
+      "wordCount": 130
+    },
+    "great-trigonometrical-survey-india-trigonometry-empire": {
+      "generatedAt": "2026-06-30T22:35:40.372676+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/great-trigonometrical-survey-india-trigonometry-empire.svg",
+      "source": "src/lib/posts/great-trigonometrical-survey-india-trigonometry-empire.md",
+      "sourceHash": "990f0233e9e602370ee5755339e24bb0e1988b4eefbda27063c37b24aeed4699",
+      "sourceModified": "2026-06-30T22:34:16.829434+00:00",
+      "topWords": [
+        "Revenue",
+        "Survey",
+        "Administration",
+        "Baseline",
+        "Known",
+        "Law",
+        "Great",
+        "India",
+        "Angles",
+        "Colonial",
+        "State",
+        "Trigonometrical"
       ],
       "wordCount": 130
     },
@@ -619,6 +1010,52 @@
         "Governance",
         "Often",
         "Information"
+      ],
+      "wordCount": 130
+    },
+    "hormuz-lpg-shortage-indian-cooking-choices": {
+      "generatedAt": "2026-06-30T22:35:41.016778+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hormuz-lpg-shortage-indian-cooking-choices.svg",
+      "source": "src/lib/posts/hormuz-lpg-shortage-indian-cooking-choices.md",
+      "sourceHash": "08f6caf7103538861f5464b09f9ae1842a430a37bfba2e32a7175c4e858d3599",
+      "sourceModified": "2026-06-30T22:34:16.840896+00:00",
+      "topWords": [
+        "Cooking",
+        "Fuel",
+        "LPG",
+        "Kitchen",
+        "Gas",
+        "Rice",
+        "Waste",
+        "Household",
+        "Induction",
+        "Food",
+        "Energy",
+        "Pressure"
+      ],
+      "wordCount": 130
+    },
+    "how-to-start-machine-learning-without-buying-magic-beans": {
+      "generatedAt": "2026-06-30T22:35:41.695450+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/how-to-start-machine-learning-without-buying-magic-beans.svg",
+      "source": "src/lib/posts/how-to-start-machine-learning-without-buying-magic-beans.md",
+      "sourceHash": "1c7012dbcc3f1d07c3bd6fa325819dbf6e9e9f8cad7d0ee4759bd18ef5acdc5c",
+      "sourceModified": "2026-06-30T22:34:16.840896+00:00",
+      "topWords": [
+        "Learn",
+        "Data",
+        "AI",
+        "Model",
+        "Means",
+        "ML",
+        "Learning",
+        "Build",
+        "System",
+        "Becomes",
+        "Matters",
+        "Probability"
       ],
       "wordCount": 130
     },
@@ -1631,6 +2068,29 @@
         "Lane",
         "Rain",
         "Stood"
+      ],
+      "wordCount": 130
+    },
+    "the-desperation-premium": {
+      "generatedAt": "2026-06-30T22:19:01.160963+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-desperation-premium.svg",
+      "source": "src/lib/posts/the-desperation-premium.md",
+      "sourceHash": "fc7c58980500e5189e3f0ebb5575361adc5b6925a6171b6a3a7eb12d49da77f2",
+      "sourceModified": "2026-06-30T22:16:19.847952+00:00",
+      "topWords": [
+        "Becomes",
+        "Buyer",
+        "Product",
+        "Sometimes",
+        "Bad",
+        "Room",
+        "Already",
+        "Price",
+        "Desperation",
+        "Begins",
+        "Small",
+        "Creator"
       ],
       "wordCount": 130
     },
