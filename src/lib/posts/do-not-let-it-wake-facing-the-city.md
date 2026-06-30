@@ -1,10 +1,10 @@
 ---
 title: "Do Not Let It Wake Facing the City"
-description: "A sleepless structural engineer inspecting Howrah Bridge discovers the steel is breathing, the cracks are stretch marks, and the city itself is a scab the bridge is finally ready to pick."
+description: "A Calcutta girl helping with a school bridge project discovers that Howrah Bridge breathes at 3:17 every morning. To save a stuck kitten and a frightened city, she must learn why an old warning says the bridge must never wake facing Calcutta."
 date: "2026-06-27"
 thumbnail: "/images/Compress_20260627_021235_5350.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Ominous", "Escape"]
+tags: ["Short Fiction", "Children's Fiction", "Adventure", "Ominous", "Calcutta"]
 published: true
 color: "#4a4a4a"
 ---
@@ -15,132 +15,314 @@ color: "#4a4a4a"
 
 # THIS IS A WORK OF FICTION
 
-At 3:17 a.m., the steel beneath my boots rose six inches, held its breath, and settled back down.
+Anjali's measuring tape came back warm from the bridge.
 
-I did not scream. I was too tired to scream. I had been awake for forty-one hours, rewriting a fatigue-stress report for the Howrah Bridge Authority that paid just enough to cover my mother’s oxygen bill for another week. The crack I’d been mapping in Girder 4B looked like a word in Bengali script, but I told myself it was chloride corrosion, political negligence, the usual demons. Then the girder moved.
+That was wrong for three reasons. First, the tape belonged to her mother, who had said, "Do not drop it, do not bend it, and do not use it as a sword." Second, it had been clipped to the cold steel of Howrah Bridge for only ten seconds. Third, the little numbers on the tape had shifted while she was holding it.
 
-I pressed my palm against the riveted flank. It was warm. Not sun-warmed. Fever-warmed. The kind of heat that comes from deep inside a body.
+The mark that should have read 42 centimetres now read 43.
 
-"First time?" a voice said.
+Then, with a soft click, it changed back.
 
-An old man stood at the railing. He wore a maintenance jumpsuit washed so many times it looked like fog. His name was Prabir. He had worked the bridge for fifty-two years.
+Anjali Sen wanted only one ordinary thing that morning: to finish her school project before Bappa and Mina arrived with their grand, useless ideas. The project was called Bridges of Our City. Anjali had planned to measure one girder, draw the river, write three neat facts, and be done before breakfast.
 
-"You felt it," he said. Not a question.
+Instead the bridge had measured her back.
 
-"I felt an expansion joint," I said. "Thermal contraction. Maybe a barge hit a pylon."
+"Ma," she called.
 
-He smiled. He had three teeth. "At 3:17? Every morning? For eighty years?" He held out a cloth-bound notebook. "Write your numbers in here. Next to mine. Next to my father's."
+Her mother was speaking to Mr Dutta, her supervisor, near the railing. They both wore yellow helmets. Mr Dutta had a moustache like a wet paintbrush and the expression of a man who had misplaced his patience in 1998.
 
-I took it. The pages were filled with timestamps. 3:17 a.m. 3:17 a.m. 3:17 a.m. Beside each: expansion measurements. 4.2 cm. 4.3 cm. 4.1 cm. The handwriting changed across decades, but the numbers barely varied. In the margins, small drawings: lungs. Rib cages. A heart with too many chambers.
+"No delays," he was saying. "The inspection report must go today."
 
-"I need to sleep," I said.
+"The old expansion joint needs another look," Ma said.
 
-"Yes," Prabir said. "That's the first thing it takes."
+"Everything in Calcutta needs another look. That is not a business plan."
 
-I went back to the office. The ceiling fan chopped the air into pieces. My desk was a landfill of coffee cups and failed calculations. I spread my data next to Prabir's notebook. The thermal expansion coefficient for steel is eleven parts per million per degree Celsius. To move 4.3 centimeters, the girder would need to heat by two hundred degrees. At 3:17 in the morning, in December, the steel was cold to the touch everywhere except that one flank.
+Anjali did not call again. Grown-ups became deaf when work was wearing shoes.
 
-On my desk, beside my laptop, was a photograph of my mother in her hospice bed. Her eyes were closed. Her mouth was open. She looked like a hole in the world that I was paying money to keep open.
+She held the tape against the steel. The girder under her palm gave one slow thump.
 
-I called my supervisor. Mr. Dutta answered on the fourth ring, breathless, probably running another scam.
+Not a sound. A feeling.
 
-"The bridge is moving," I said.
+Like a heart heard through a pillow.
 
-"Sign the report, Anjali. Get your money. Don't be a poet."
+A tiny mew came from below.
 
-"It's not in the report yet. I need another week."
+Anjali froze. "Hello?"
 
-"You have until Friday. After that, the contract goes to Gupta's firm. He has a daughter too. She also needs to eat."
+The mew came again, thin and cross.
 
-I hung up. I looked at the crack in Girder 4B on my laptop screen. I rotated the image. It was definitely a word. Not corrosion. A word I knew. *Kshudha.* Hunger.
+She bent carefully and peered through a gap in the maintenance walkway. Far beneath, on a lower beam, a small white kitten clung to a rusted plate. Its tail stood up like a question mark. Beyond it the Hooghly moved brown and wide, carrying flowers, plastic, and the morning light.
 
-I opened Prabir's notebook again. The pages smelled like the bridge. Like iron and the inside of a mouth. Like the back of my mother's throat when I leaned close to hear her breathing at night.
+"Oh no," Anjali whispered.
 
-I returned at 2:00 a.m. The city was a smear of light and diesel. I carried a flashlight, a caliper, and Prabir's notebook. The inspection chamber was a hollow in the girder, barely tall enough to stand in, accessible through a manhole that had not been opened since the British left. The rungs were rusted but warm.
+The kitten looked up at her and shouted in kitten language, which mostly meant, "You have failed to organise the world properly."
 
-I dropped inside. The air was thick. Humid. It smelled of wet stone and something sweeter. Like fruit left too long in a closed drawer. Like the inside of a cheek. Like the air in my mother's room after the nurse had left. I clicked on my flashlight.
+Anjali had to get it.
 
-The bolts were unscrewing.
+She looked around. Her mother was still arguing. Mr Dutta was saying, "Sign first, worry later." Two workers were carrying tools. A tea seller pushed his bicycle on the far pavement. No one else had seen the kitten.
 
-Not falling. Unscrewing. Each one turning neatly, silently, as if someone were loosening them with infinite patience from the inside. I should have climbed out. I should have run. But the chamber was warm, and my eyelids were stones, and the sound was rhythmic. A lullaby in metal.
+Anjali tucked the tape into her pocket and followed the narrow service path to a ladder. It led down to the lower beams. There was a sign that said AUTHORISED PERSONS ONLY.
 
-I sat down. The steel cradled my hips like a palm. I leaned back. The wall gave slightly, breathing against my spine. It was not pushing. It was holding.
+Anjali was not authorised.
 
-I saw the scratches then. 1943. Deeper than corrosion. Deeper than time. Carved into the girder with a knife or a rivet or a fingernail: *Do not let it wake facing the city.*
+But she was ten, and the kitten was smaller than a school tiffin.
 
-Beneath it, newer scratches. 1962. 1989. 2004. All the same. And beside the 2004 set, a single word: *Bhoy.* Fear.
+"I am coming," she whispered.
 
-I touched the 1943 carving. The steel was soft. Not yielding like clay. Yielding like skin. Like the skin of my mother's hand, which had become soft and thin in the weeks before the hospice.
+The ladder was cold at first. Then, after five steps, it was warm.
 
-I lay down. Just for a minute. The flashlight rolled from my hand. The chamber contracted around me, gently, the way a sleeping body pulls a blanket closer. I heard a heartbeat. Two heartbeats. Mine, frantic. Another, slower, deeper. They found each other. Synced. I slept.
+At the bottom, she found an old man sitting on a beam as calmly as if it were a bench in a para lane. He wore a faded maintenance uniform and carried a cloth-bound notebook.
 
-I woke to pain.
+"You are early," he said.
 
-Not the pain of crushing. The pain of birth. The chamber was pressing me out, peristalsis in steel, pushing me toward the manhole. I grabbed the rungs. The steel beneath my fingernails was hot, wet, alive. It did not want to hurt me. It wanted me gone. It was turning over in its sleep, and I was a stone in its bed.
+Anjali nearly dropped the tape. "Who are you?"
 
-I tumbled onto the walkway. The sky was gray. 5:47 a.m. I had slept for three hours inside the girder, and I felt no better. I felt worse. The sleep had been too deep. Dreamless. Like being stored. Like being kept in a jar.
+"Prabir."
 
-Prabir stood at the railing, looking at the river. He did not turn.
+"Are you authorised?"
 
-"It's facing the city," he said.
+"For fifty-two years."
 
-I stood. My knees clicked. The bridge was different. The roadbed, which had run straight from Howrah to Calcutta, now curved. Not broken. Bent. The way a spine bends when a sleeper rolls from their back to their side. The traffic lights at the far end pointed at the water.
+That sounded difficult to argue with.
 
-"It's turning," I said.
+The kitten mewed again.
 
-"Slowly," Prabir said. "It has been turning since 1943. One degree per year. One degree per month, lately. Now one degree per hour."
+Prabir pointed with his chin. "Little Raja has gone exploring again. He does this when the bridge is restless."
 
-I looked at the city. The buildings were waking. Tea stalls opening. Buses coughing. The city did not know. The city thought it was permanent.
+"The bridge is not restless," Anjali said, though her palm still remembered the thump.
 
-"Why?" I asked.
+Prabir opened his notebook. The pages were filled with times. 3:17 a.m. 3:17 a.m. 3:17 a.m. Beside each time were tiny measurements and drawings of ribs, lungs, and long sleeping eyes.
 
-Prabir finally looked at me. His eyes were yellow and clear. "You think you were hired to inspect a bridge. You were hired to witness a departure. The bridge needed someone to remember it when it's gone. Someone who understands hunger."
+"Every morning," he said. "The bridge breathes."
 
-He pointed at the notebook in my hand. I opened it. The margins were not drawings of lungs. They were maps. The bridge was not a bridge. It was a road. A road that had been interrupted. The British had caught it mid-step and riveted it down. For eighty years, it had been trying to continue its journey. The breathing was not illness. It was homesickness. The expansion was a step that could not be taken.
+Anjali stared at him.
 
-The cracks were not cracks. They were stretch marks.
+"You may laugh," he said.
 
-I ran to the office. Mr. Dutta was not there. The building was empty. I checked my phone. No signal. I checked my watch. 3:17 a.m. The sun was up, but my watch said 3:17 a.m. All the clocks in the office said 3:17 a.m. The bridge had stopped time, or bent it, or swallowed it.
+"I am not laughing because I am choosing to be polite."
 
-I went back. The roadbed was now at a fifteen-degree angle. Cars had stopped. Drivers stood on their doors, not fleeing, just watching. A bus was sliding slowly toward the railing, its brakes useless against the tilt. No one was screaming. It was too strange for screaming.
+"Good. Politeness saves time."
 
-I walked onto the bridge. The steel was soft beneath my feet. Not melting. Becoming. Becoming what it had been before. A path. A way out.
+The steel beneath them lifted.
 
-Prabir was gone. The notebook in my hand was heavy. I opened it to the last page. A drawing, not in the margins but across the whole sheet: the bridge not spanning the river, but continuing beyond it, beyond the sea, beyond the edge of the paper. A road with no end. And beneath it, in Prabir's shaking hand: *It was never a bridge. We were the ones who needed crossing. It was just walking.*
+Only a little. Enough to make Anjali grab a bolt. Enough to make the kitten flatten itself and yowl. Enough to make every hair on Anjali's arms stand up.
 
-I dropped the notebook. The wind took it. The pages scattered like gulls.
+The bridge settled back.
 
-The bridge groaned. Not in pain. In relief. The sound was subsonic, felt in the teeth, in the marrow, in the small bones of the feet. The Howrah end was lifting. The Calcutta end was sinking. The bridge was not breaking. It was unrooting. The pylons were toes, wiggling free of silt. The girders were ribs, expanding. The roadbed was a tongue, tasting the air.
+Above them, buses and taxis rolled on, not noticing. That was the most frightening part. Calcutta was carrying on with breakfast while the great bridge beneath its feet took a breath.
 
-And the city. The city was watching. Calcutta, my hungry, dirty, beautiful city, was watching the only thing that had ever truly held it together decide to leave.
+Prabir wrote in his notebook. "3:17 by bridge time."
 
-I stood at the center. The turning was faster now. The river below was not water. It was a mirror. It showed the bridge's underside, and the underside was not steel. It was flesh. Pale, veined, trembling. The bridge had been wearing the city like a mask. Now it was taking it off.
+"But it is morning," Anjali said.
 
-The buildings on the Howrah bank began to crumble. Not fall. Crumble. Like dry cake. Like they had been waiting for permission to dissolve. The buildings on the Calcutta bank did the same. They were not buildings. They were scabs. The city had grown around a wound, and the wound was walking away.
+"It is always 3:17 when it remembers itself."
 
-I understood then. The scratches. The warnings. *Do not let it wake facing the city.* Not because the bridge would destroy the city. Because the city would destroy the bridge. The city was a parasite. It fed on stillness. On permanence. On things that could not leave. The bridge had been keeping it alive by staying. By pretending to be a foundation. By holding its breath for eighty years.
+"That makes no sense."
 
-And I? I was part of the city. My mother's oxygen. My debt. My forty-one hours of wakefulness. I was a scab too.
+"Most important things do not, at first."
 
-The bridge turned. It faced the river. It faced the sea. It faced away.
+Anjali wanted to climb back up, pull her mother by the sleeve, and tell her everything. She also wanted the kitten safe. The kitten sneezed, as if voting.
 
-I felt the roadbed shudder. It was not asking me to come. It was not asking me to stay. It was simply moving. And I realized, with a clarity that made my teeth ache, that I had never been an engineer. I had been a splinter. A thing the bridge had grown around. And now that it was healing, it was pushing me out.
+"I need Raja," she said.
 
-Or.
+"Then you need to go three beams down and one beam across. Do not step on the red plate."
 
-Or I could move with it.
+"Why?"
 
-I looked back. Calcutta was coughing up dust. The streets were unraveling. The Howrah Station was folding in on itself like a paper boat in rain. My mother's hospice was somewhere in that smear. I had not said goodbye. I had not bought the oxygen. I had not slept.
+Prabir pointed to a scratched line in the steel beside his foot.
 
-I looked forward. The bridge was straight now. Not straight across. Straight ahead. A road. The river was not an obstacle. It was a threshold. The steel was silver and warm and new. The rivets were eyes, opening. The girders were arms, stretching after a long, long sleep.
+Do not let it wake facing the city.
 
-I took a step. The bridge did not shake. It accepted my weight the way a body accepts a breath.
+The words were cut deep. Not painted. Cut. Under them were dates: 1943, 1962, 1989, 2004. Then, in fresher marks, one more date. 2026.
 
-I took another step. The city screamed behind me. Not in pain. In loneliness. It had never been alive. It had only been full of living things, and now the fullest thing was leaving.
+"Who wrote that?" Anjali asked.
 
-I walked. The bridge walked with me. The river rose to meet us, but it did not wet my feet. The bridge was not sinking. It was growing. Each step I took, a new girder unrolled ahead of me, silver and singing, while the old girders fell away behind, rusting, crumbling, becoming the city they had pretended to be.
+"People who listened."
 
-I did not look back again. I was not tired. The sleep I had lost was here, in the motion, in the going. The bridge had not been breathing. It had been counting. One. Two. Eighty years. Now it was done counting.
+"To what?"
 
-At the edge of the water, where the bridge became the sea, I stopped. Not because I had to. Because I wanted to see what came next.
+The bridge gave another slow thump.
 
-The road continued. There was no end. There was only the next step, and the next, and the warm steel beneath my feet, breathing in, breathing out, finally facing the right direction.
+Prabir smiled sadly. "To that."
+
+Anjali crawled along the beam. The steel smelt of rain, rust, and something warm like a closed room. Her knees collected black dust. Her plait came loose. She wished Bappa were there so he could say something silly and make the fear smaller.
+
+The kitten watched her with round blue eyes.
+
+"Do not jump," Anjali told it. "This is not the Olympics."
+
+It sneezed again.
+
+Halfway across, a tram bell clanged from somewhere on the Calcutta side. The sound reached the bridge and changed. It became lower, longer, like a spoon tapped against a sleeping giant's tooth.
+
+The beam tilted.
+
+Anjali slid.
+
+Her fingers caught the edge of a rivet. Her shoe scraped empty air. The river flashed below her.
+
+"Anjali!" shouted Prabir.
+
+She bit her lip and pulled herself flat. Her heart banged so hard she could hardly hear the traffic.
+
+The kitten, who had clearly decided humans were slow, leapt into her lap.
+
+"Now you come?" Anjali whispered.
+
+It dug ten needles into her shirt.
+
+She hugged it with one arm and crawled back, inch by inch. When she reached Prabir, he lifted both of them as if they weighed nothing.
+
+"You are brave," he said.
+
+"I was frightened."
+
+"That is where bravery starts."
+
+The kitten licked black dust from its paw.
+
+Above them, someone shouted. Anjali's mother was leaning over the walkway. Her face had gone the colour of uncooked luchi.
+
+"ANJALI SEN!"
+
+Anjali winced. Full names were thunder.
+
+When she climbed back up with Raja inside her shirt, Ma grabbed her first and scolded her second. This, Anjali felt, was the correct order.
+
+"There was a kitten," Anjali said.
+
+"There was a sign!"
+
+"The kitten could not read."
+
+Mr Dutta took one look at the scratches on Anjali's arms and said, "This is why children should not be near infrastructure."
+
+Raja hissed from inside Anjali's shirt.
+
+"The bridge moved," Anjali said.
+
+Mr Dutta sighed. "The bridge is a bridge."
+
+"It breathes at 3:17."
+
+Ma stopped.
+
+Prabir had climbed up behind them. He held out his notebook. "Your daughter noticed."
+
+Mr Dutta snapped, "Not this foolishness again."
+
+"Again?" Anjali said.
+
+The word flew out before anyone could stop it.
+
+Ma looked at the notebook. Her mouth became a straight line. "My father mentioned this."
+
+"Your father wrote the 2004 warning," said Prabir.
+
+Anjali stared. "Dadu?"
+
+Ma did not answer at once. The wind tugged at her helmet strap. Below, the river moved as if it had somewhere secret to go.
+
+"He said the bridge was turning," Ma said softly. "He said it had been caught mid-step long ago. I thought it was his illness talking."
+
+The road beneath them groaned.
+
+Cars braked. A bus horn wailed. On the Howrah side, people turned their heads. The bridge had shifted, not enough to break, but enough for everyone to feel the huge sleepy roll of it.
+
+Raja wriggled from Anjali's shirt and bolted towards the railing.
+
+"Catch him!" cried Bappa's voice.
+
+Anjali spun. Bappa and Mina had arrived, each carrying a school notebook, two pencils, and the expression of children delighted to find danger already in progress.
+
+"You started without us," Mina said.
+
+"The bridge started," Anjali said.
+
+The bridge moved again.
+
+This time, the whole road seemed to lean towards Calcutta.
+
+The warning flashed in Anjali's mind. Do not let it wake facing the city.
+
+"It is turning the wrong way," she said.
+
+Prabir nodded. "It hears the city. Horns, engines, shouting, digging, drilling. It thinks the city is calling it."
+
+"Then we must call louder from the river side," said Mina at once.
+
+Everyone looked at her.
+
+Mina shrugged. "If my little brother wakes facing the wall, Ma shakes his other shoulder."
+
+It was a strange idea. It was also the only idea.
+
+Ma ran to the workers. "Stop traffic. Now."
+
+Mr Dutta made a noise like a punctured football. "We cannot stop traffic on Howrah Bridge because children have invented a sleeping bridge."
+
+The steel beneath his shoes rose six inches, held its breath, and settled back down.
+
+Mr Dutta swallowed. "Temporarily stop traffic."
+
+The next ten minutes became a Calcutta muddle of whistles, waving arms, angry drivers, frightened drivers, and one tea seller who refused to leave until someone paid for six glasses. Anjali, Bappa, Mina, Prabir, and Ma hurried to the river-facing side of the bridge.
+
+"What sound does a bridge like?" Bappa asked.
+
+"Not horns," said Anjali.
+
+"Not Mr Dutta," said Mina.
+
+Prabir handed Anjali the notebook. On the last page was a drawing of the bridge as a long road, walking away from the city, not angry, only tired.
+
+Under it was written: Remind it of crossing, not holding.
+
+Anjali understood suddenly. A bridge was not meant to be a prison for two banks. It was meant to help things cross.
+
+She looked at the river. A ferry below gave a soft horn. Oars splashed. Someone on the ghat laughed. The sound rose gently.
+
+"Sing," Anjali said.
+
+"What?" said Bappa.
+
+"The ferry song Dida sings. The one about going across."
+
+Bappa's ears turned red. "I only know half."
+
+"Then sing half."
+
+They sang. Badly at first. Then Mina joined. Then Prabir, in a cracked old voice. Then Ma. The tea seller, who knew every song in Bengal if someone else began it, joined with such confidence that people nearby forgot to be afraid.
+
+The song was not magic. It was smaller than that and bigger. It was a human sound about crossing water, going home, carrying rice, calling from one bank to another.
+
+The bridge listened.
+
+Anjali felt the steel under her feet change. The heat cooled. The thumping slowed. The roadbed eased away from the city and turned a little towards the river.
+
+The kitten Raja sat on the railing, washing one ear as if he had arranged the whole affair.
+
+At last the bridge sighed.
+
+Everyone felt it.
+
+Not a groan. Not a crack. A sigh.
+
+The traffic lights blinked back to ordinary. The halted bus stopped leaning. Mr Dutta sat down on a toolbox and said, "I need tea."
+
+Prabir wrote one line in his notebook and showed Anjali.
+
+2026. Children listened.
+
+By afternoon, the official story was that a minor vibration had caused a temporary traffic pause. Grown-ups liked small words for large wonders. Anjali did not mind. Her school project had become much better than three neat facts.
+
+That evening, on the terrace, she drew Howrah Bridge with ribs inside its girders and a kitten asleep on one beam. Bappa drew Mr Dutta falling off a toolbox. Mina wrote the title in careful letters:
+
+Do Not Let It Wake Facing the City.
+
+"Will it wake again?" Bappa asked.
+
+Anjali looked west, where the sky over the river was turning the colour of guava flesh.
+
+"Maybe," she said. "But now it knows we are here."
+
+Below, a tram bell rang. Far away, or perhaps not far at all, something made of steel breathed in and out, peacefully, while Calcutta crossed the river and came home.

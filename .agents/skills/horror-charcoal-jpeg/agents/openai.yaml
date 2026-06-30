@@ -1,0 +1,6 @@
+interface:
+  display_name: "Horror Charcoal JPG"
+  short_description: "Generate or transform horror charcoal artwork and save a <500 kB JPG to static/images."
+  default_prompt: "Use $horror-charcoal-jpeg to create a disturbing charcoal horror JPG under 500 kB in static/images."
+policy:
+  allow_implicit_invocation: true

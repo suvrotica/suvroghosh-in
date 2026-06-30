@@ -1,10 +1,10 @@
 ---
 title: "Blood Sugar"
-description: "A Calcutta shut-in discovers he can taste the blood and biographies of strangers through walls, and must decide whether to feed his city or be consumed by it."
+description: "A Calcutta child with a missing tiffin carrier meets Arjun of Flat 3B, a lonely man who can taste the hidden sweetness and trouble in the people around him. Together they must solve a small building mystery before fear turns into something worse."
 date: "2026-06-28"
 thumbnail: "/images/Compress_20260628_232447_7373.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Intimate", "Loneliness"]
+tags: ["Short Fiction", "Children's Fiction", "Adventure", "Intimate", "Calcutta"]
 published: true
 color: "#8B0000"
 ---
@@ -15,118 +15,338 @@ color: "#8B0000"
 
 # THIS IS A WORK OF FICTION
 
-The delivery boy smelled of O positive and diesel, and Arjun could tell, without opening the door, that the boy was lying about having change for a thousand.
+Rini's tiffin carrier came back smelling of fish, but she had packed luchi and alur dom.
 
-Arjun stood in the darkened hallway of 3B, his bare feet spreading on the cool tile, his lungs working like bellows against the weight of his own chest. Through the wood, he could taste the boy's blood—bright, adolescent, thin. He could taste the boy's fear too, a metallic edge that had nothing to do with hemoglobin. Someone had warned him about the man in 3B. The shut-in. The monster who hadn't left his flat in three years.
+She stood outside Flat 3B with the wrong carrier in both hands. It was steel, round, and warm. A smear of mustard oil shone on the lid. Her own carrier had a red ribbon tied to the handle because three people in the building had the same size carrier and one person, namely Bappa from 2A, could not read labels even when they were large enough for buses.
 
-The boy knocked again. Three raps, impatient.
+This carrier had no ribbon.
 
-Arjun had ordered the same dinner every night for eight months. Two pieces of ilish, rice, dal, a slice of lemon. He wanted to eat it in front of his computer while a streamer in Mumbai opened Pokémon cards. He wanted the fish to be moist, the rice separate, the dal sharp with mustard oil. He wanted one evening without shame. He wanted to be invisible. He wanted to be a normal man having a normal dinner, instead of a hundred and forty-six kilograms of loneliness that delivery boys ran from.
+It had a drop of something sticky on the side.
 
-He opened the door a crack. The chain bit into the jamb.
+Rini wanted only one ordinary thing: her own lunchbox back before school reopened on Monday. If she returned without it, Ma would say, "How does a child lose a tiffin inside her own building?" and Rini would have no answer except, "By living among confused people."
 
-The boy saw one eye, one slab of cheek, the darkness behind. He thrust the bag forward. Arjun pushed the thousand-rupee note out. The boy took it, dropped the bag, and ran. He didn't bring change. He didn't bring the food he'd been told to bring. He brought fear instead, and Arjun could taste it lingering in the hallway like cheap incense.
+The door of 3B was always shut.
 
-Arjun pulled the food inside. The bag's wire handle had snagged something. A single drop of blood on the threshold, bright as a bindi.
+Behind it lived Arjun-da, though nobody called him da to his face because nobody saw his face. He had not stepped outside in three years, said the aunties. He ordered food every evening. He paid through a crack in the door. Delivery boys came down the stairs pale and quiet, as if Flat 3B had swallowed their jokes.
 
-The boy had cut his finger on the staple.
+Rini knocked.
 
-Arjun stared at it. He should wipe it. He should feel disgust. He should call the building supervisor and complain about the delivery service. Instead, he knelt, slowly, his knees cracking like gunshots in the empty flat, and touched his tongue to the drop.
+Nothing.
 
-The taste was nuclear. Not just blood. The boy's whole afternoon rushed into his mouth: the argument with his girlfriend about money, the fever he didn't know he was incubating, the debt to his cousin, the specific shame of delivering food to ghosts. Arjun swallowed. His eyes watered. He had not known another person's interior in three years, and now he knew this boy completely, down to the platelets, down to the lie about the change.
+She knocked again.
 
-He sat on the floor and ate his fish. It was dry. The rice had clumped. He chewed without tasting it, because his mouth was still full of the delivery boy.
+"Wrong flat," said a voice from inside.
 
-Through the wall to his left, he could taste his mother. Mitali was seventy-two, bird-boned, fierce. Her blood pressure was high tonight. She had used too much salt in her own dinner. She was worried about the rent, which tasted in her blood like copper wire. He could taste her disappointment too, a flat, papery note that had been there since his father's funeral three years ago, when Arjun had stepped inside and never stepped out. He could taste her love, which she never spoke, and which tasted like overripe banana, sweet and slightly alcoholic.
+"You do not know that yet," Rini said.
 
-He remembered his father's body at the funeral, how it had looked small under the white cloth, how the mourners had sung and wept, and how Arjun had stood in the corner, unable to look, unable to touch, unable to bear the weight of their eyes on his body. He had eaten six samosas in the funeral hall, in front of everyone, because eating was the only shield he had. Then he had gone home and stopped leaving.
+There was a pause.
 
-This had started three weeks ago. A fever of forty degrees. Two days of delirium where the walls had breathed and the ceiling had pulsed. When he woke, his tongue was new. He could taste the neighbor's tuberculosis two doors down—sweet, rotting fruit. The old woman's dementia on the first floor—milk left in the sun. The pregnant girl above him—hormones bright as lemons, a whole orchard of them.
+"You are the girl from 2C," the voice said. "You had mango pickle at lunch and you are carrying fish curry."
 
-He had not told his mother. He had not told anyone. He had simply stopped sleeping, because sleep meant letting go of the tastes, and he was starving for them. He sat in his chair, which groaned under him, and watched the streamer open cards, and tasted the building instead.
+Rini looked at the carrier. "How do you know?"
 
-At midnight, she brought his laundry. She didn't look at him. She hadn't looked directly at him since he was nineteen, since he had stopped going to college, since he had grown too large for the doorframes she measured in her mind.
+"Too much mustard oil. Too little patience."
 
-"Eat," she said. She put a plate down. Fish curry. But he could taste what she had added. A tablespoon of her own blood, stirred in while it simmered. He could taste her intent—fear, love, resignation, a ritual older than his understanding. She had been doing this for weeks. Maybe months. Maybe since the fever.
+The chain rattled. The door opened a crack. One eye looked out. The eye was tired and clever. Around it was a large cheek, a dark hallway, and the smell of old books, medicine, and rice.
 
-"Why?" he asked.
+"I am looking for my tiffin," Rini said. "It has a red ribbon."
 
-She didn't answer. She left.
+"Your tiffin is upstairs," said Arjun.
 
-He didn't eat the curry. He sat in the dark and tasted the building. Twenty-three people. Their dreams had different flavors than their waking blood. The man upstairs was having an affair; his blood at 2 AM tasted of guilt and adrenaline, a chemical brightness like petrol on pavement. The child two doors down had leukemia; the blood was wrong, copper and overripe mango. The pregnant girl's fetus tasted of salt and potential, a new flavor that made Arjun's teeth ache. The building supervisor, who lived in the basement, tasted of whiskey and kidney stones, a brown, gravelly flavor that made Arjun thirsty. The old woman on the first floor, who had forgotten her own name, tasted of violets and rust, a flavor from before the war, before the partition, before Calcutta.
+"How do you know?"
 
-Arjun was hungry. Not for food. For the affair. For the leukemia. For the salt. For the violets.
+"It tastes worried."
 
-He had not spoken to another human being in three years, except his mother and delivery boys. But now he knew them all, intimately, biologically. He knew their organs better than they did. He knew the affair before the wife did. He knew the leukemia before the doctor's appointment. He knew the fetus was a girl before the mother. He knew the old woman had killed a man in 1947 and buried the memory so deep only her blood remembered.
+Rini considered running away. Then she remembered Ma's face if the tiffin was lost. She stayed.
 
-At 3 AM, he stood. He opened his door. The hallway was dark, lit by a single bulb that had been flickering since the monsoon. He hadn't walked this hallway in three years. The paint was the same institutional green, the color of hospitals and government offices. He could taste the man who had died in 2B last year—his blood still lingered in the plaster, faint, sweet, peaceful, like lilies left too long in a vase. He could taste his own fear, which tasted like cold aluminum.
+"Tiffins do not taste worried," she said.
 
-He climbed to the roof. The door was unlocked. The Calcutta heat at 3 AM was still thirty-five degrees, a wet blanket that smelled of the Hooghly and diesel exhaust and the jasmine his mother grew in rusted cans. The city spread out before him, Shyambazar's tram lines silver in the dark, the Ambassador taxis sleeping under torn tarps, lakhs of people stacked in concrete like bricks in a kiln. He could taste the river, brown and holy, full of ashes and soap.
+"This building disagrees."
 
-He opened his mouth.
+The door began to close.
 
-He tasted thousands.
+"Wait!" Rini pushed the wrong carrier forward. "If mine is upstairs, whose is this?"
 
-It should have overwhelmed him. It should have driven him to the edge. His father had stood on this roof, his mother had told him once, years ago, and had looked down at the street and wept. Arjun understood now. His father had tasted the whole city, and it had been too much noise, too many heartbeats, too much blood, too much life for one man to hold. His father had jumped not because he was sad, but because he was full.
+Arjun did not touch it. His eye sharpened.
 
-But something else happened.
+"Mitali's," he said softly.
 
-Arjun was not alone. He was inside ten thousand bodies. He was the fishmonger's gout, a sharp cheddar ache in the big toe. He was the student's Adderall, a chemical blue that tasted like electricity. He was the priest's diabetes, a syrupy thickness that coated his tongue. He was the beggar's starvation, which had no taste at all, only a cold wind where flavor should be. He was the prostitute's morning-after pill, a chalky regret. He was the city, and the city was him, and for the first time in three years, he was not lonely.
+"Who is Mitali?"
 
-He heard the roof door creak. His mother. She was holding a kitchen knife.
+"My mother."
 
-He thought: she is going to kill me.
+That was when Rini heard a faint clatter from above. Not a normal clatter. A small metal sound, then a bump, then someone whispering, "Shh!"
 
-But she cut her own palm. She held it out. The blood ran down her wrist, black in the sodium light from the street.
+Arjun heard it too. His hand tightened on the door.
 
-"Your grandfather had it," she said. "Your father too. I thought it skipped you."
+"Go home," he said.
 
-He stared at her. The knife glinted.
+"Not without my tiffin."
 
-"Drink," she said. "Before you go to the street. You need to learn the taste of family first. Strangers will make you sick."
+"This is not your matter."
 
-He didn't want to. But his mouth was open. He took her palm. He licked. The blood was hot, thin, ancient. It tasted of her whole life: the village in Khulna, the train to Calcutta in '71, his father's hands, the miscarriage before him, the shame of his body, the love she could not show, the rent receipts she kept in a tin box. He wept. The blood mixed with his tears and ran down his chin.
+"My tiffin is literally in the matter."
 
-She pulled her hand back. She wrapped it in the hem of her sari.
+Another sound came from upstairs. A child's cough. Then silence.
 
-"Now," she said. "Go down."
+Arjun opened the door wider.
 
-He shook his head.
+He was very large, larger than any person Rini had stood so near. His hair was untidy. His kurta was clean but old. He held the door as if the hallway might rush in and knock him over.
 
-"You've tasted me," she said. "Now you have to taste the world. Or it will taste you first."
+"Do not stare," he said.
 
-She pushed him toward the stairs.
+"I am not," Rini said, though she had been.
 
-He walked down. The building was waking. The old woman with dementia saw him in the hallway and smiled—she recognized something in his blood, something familiar, a flavor from before she forgot her own name. The pregnant girl touched her belly and looked at him, frightened. She could feel him tasting her. He could taste her fear, bright and sharp as green chili. The man having the affair stepped out of his door, saw Arjun, and stepped back in, ashamed, because Arjun tasted like truth.
+"You are."
 
-He stepped into the street.
+"Only because you said my tiffin tastes worried."
 
-Shyambazar at 4 AM was already moving. The tram clanged its bell. A hawker sharpened knives against a wheel, sending sparks into the dark. The heat was a wall you could lean against. A dog barked. A man coughed blackness from his lungs. A woman threw wastewater into the gutter.
+Something like a smile moved over his face and disappeared.
 
-He could taste everyone. But now, something else. They could taste him too.
+"Come," he said. "Slowly."
 
-He was one hundred and forty-six kilograms of blood and sweat and loneliness. He was a feast. He was a beacon. The shut-in of 3B, the ghost, the monster, was suddenly the most delicious thing on the street. People turned. They didn't know why. They just wanted to be near him. To know him. To taste him back. A cycle rickshaw wallah stopped pedaling. A woman in a nightie stepped out of a doorway. A policeman lowered his lathi. A student with exam bags stared, tasting Arjun's solitude, which was richer than any coffee.
+Flat 3B was dim even in the afternoon. Newspapers stood in piles. A computer screen glowed blue on a desk. Beside it was a plate of untouched rice. Rini noticed three jars of sugar on a shelf, all labelled in careful handwriting: white, brown, emergency.
 
-He stood in the middle of the road. A crowd gathered. Not touching. Just standing close. Breathing. Tasting. Consuming him with their nostrils, their pores, their open mouths. He could feel their tongues on his arteries, their noses in his veins. He was being eaten by a hundred invisible mouths.
+"Why emergency sugar?" she asked.
 
-He raised his hand. The crowd flinched. He pointed to a tea stall. "I want a chai," he said. His voice was rust. "With milk. And three spoons of sugar."
+"For people whose sweetness falls too low."
 
-The tea stall owner nodded, trembling, honored. The crowd parted. Arjun sat on a plastic stool. It groaned under him, then cracked. He fell. The crowd gasped. Someone helped him up. Their hands touched. The taste was nuclear. A complete exchange. Arjun tasted the man's childhood malaria, the quinine bitterness still lodged in his liver. The man tasted Arjun's three years of silence, a flavor like dust and closed windows.
+"People have sweetness?"
 
-They stared at each other. The man didn't let go.
+"Blood sugar," said Arjun. "A kind of fuel in the blood. Too much is trouble. Too little is also trouble."
 
-The chai came in a clay cup. Arjun drank it. It tasted of the milkman's tuberculosis and the sugar vendor's joy and the clay's river-mud and the boy's blood still faint on his tongue. He finished it. He stood. The crowd waited. They wanted him to stay. They wanted to taste him more. They were hungry for his loneliness, which was the only thing he had in abundance.
+"How do you know if it is too little?"
 
-He walked back to his building. The crowd followed, but didn't enter. They knew the building now. They knew him. They would wait. They would always wait.
+He tapped his tongue. "I can taste it."
 
-He went back to 3B. His mother was waiting with the knife. She cut her palm again. "Welcome home," she said.
+Rini waited for him to laugh. He did not.
 
-He shook his head. "Not yet."
+"You taste people's blood?"
 
-He opened the window. The whole city breathed in. He breathed out.
+"Not like a vampire in bad cinema. I taste clues. Through walls, doors, sometimes air. Sweetness. Salt. Fear. Fever. Lies, if they are very fresh."
 
-He sat in his chair. The fan was still broken. But he didn't need it. The city was his fan, a thousand lungs breathing him in and out. His mother stood in the doorway, her palm wrapped in cotton, watching him. She did not speak. She did not need to. He could taste her pride, which was new, and her grief, which was old, and her hunger, which was endless. She had fed him her blood. Now he fed the city. This was the family business. This was the inheritance.
+"That is disgusting."
 
-He opened his mouth. He did not speak. He only tasted.
+"Yes."
 
-And three floors down, the tea stall owner looked up from his cups, licked his lips, and waited. The sun was rising. The trams were starting. The city was awake. And it was hungry.
+"And useful."
+
+"Also yes."
+
+Arjun looked towards the ceiling. "There are three children upstairs in 4A. One is hiding. One is frightened. One is getting faint."
+
+Rini knew 4A. It belonged to Mrs Banerjee, who gave music lessons and had a grandson named Neel who always carried glucose biscuits because of a medical problem nobody was supposed to make fun of.
+
+"Neel," Rini said. "His sugar drops sometimes."
+
+Arjun nodded. "It is dropping now."
+
+The ordinary lost tiffin suddenly became much less ordinary.
+
+They went into the hallway. Arjun paused at his own doorway. His breathing became loud.
+
+"You have not come out in three years?" Rini asked.
+
+"Who told you?"
+
+"Everyone."
+
+"Everyone is too many people."
+
+"Today only one is asking."
+
+He looked at her. "Do not be kind in that sharp way. It is confusing."
+
+"Then walk."
+
+He stepped out.
+
+The hallway did not explode. The green paint did not peel from shock. The old lift did not start working, which proved it was not a magical day in every respect. Arjun gripped the railing and followed Rini up the stairs.
+
+On the landing between floors, old Mrs Gomes opened her door. "Arjun?"
+
+He froze.
+
+Rini said quickly, "Aunty, emergency."
+
+"What emergency?"
+
+"Tiffin emergency."
+
+Mrs Gomes accepted this at once. In Calcutta, food containers had caused many serious situations.
+
+On the fourth floor, the door of 4A was half open. From inside came a whisper.
+
+"I told you not to take it!"
+
+"It was only a joke!"
+
+"He looks funny when he gets scared."
+
+Rini pushed the door. "Hello?"
+
+Three boys stood near the dining table. Neel sat on the floor, pale and sweaty, with his schoolbag in his lap. Beside him was Rini's tiffin carrier, red ribbon and all. A packet of glucose biscuits lay on top of a cupboard, just out of reach.
+
+The tallest boy, Ronit, tried to look bored. "Why are you here?"
+
+"For my tiffin," Rini said. "And because Neel looks like curd left in the sun."
+
+"He is acting."
+
+Arjun entered behind her.
+
+The boys stopped being bored.
+
+Arjun did not shout. He only looked at Neel.
+
+"He needs sugar," he said.
+
+Ronit swallowed. "We were going to give the biscuits back."
+
+"When?" Rini snapped. "After he turned into furniture?"
+
+Neel gave a weak laugh, then leaned his head against the wall.
+
+Arjun crossed the room faster than Rini expected. His hands shook, but they were gentle. He took the biscuit packet from the cupboard, opened it, and gave one to Neel.
+
+"Small bites," he said. "Then water."
+
+Rini fetched water from the kitchen. It tasted faintly of the metal jug. Neel drank. Colour returned to his lips, slowly.
+
+"I did not steal your tiffin," he whispered to Rini.
+
+"I know."
+
+"Ronit swapped them because he said my lunch was boring."
+
+Ronit looked at the floor.
+
+Rini opened her tiffin. Inside were two luchis, folded like tired moons, and alur dom with a red oil ring. Neel's eyes followed the food.
+
+"Share," said Arjun.
+
+"It is mine," Rini said automatically.
+
+Arjun raised one eyebrow.
+
+Rini sighed and tore a luchi in half. "Fine. But he gets the smaller half because justice."
+
+Neel grinned.
+
+They sat on the floor and ate. Arjun did not eat, but he watched as if the sight fed something in him. Mrs Banerjee returned from the market halfway through and nearly dropped a bag of tomatoes.
+
+"Why is my grandson on the floor? Why is Arjun here? Why is Ronit looking like a wet school sock?"
+
+Everyone answered at once.
+
+The story came out in pieces. Ronit and the other boys had swapped tiffins after music class. They had hidden Neel's biscuits to make him chase them. Then Neel had gone pale and shaky, and the joke had stopped being a joke. They had not known what to do. So they had done the worst thing children and grown-ups both do when ashamed.
+
+They had waited.
+
+Mrs Banerjee hugged Neel first and scolded him second for not calling. Then she scolded Ronit with such exactness that Rini almost felt sorry for him.
+
+"Say sorry," Rini whispered.
+
+Ronit muttered, "Sorry."
+
+"To Neel, not to your own shoes."
+
+Ronit looked up. His ears were red. "I am sorry. I thought it would be funny."
+
+Neel looked at the empty biscuit wrapper. "It was not."
+
+"I know."
+
+That was the first useful thing Ronit had said.
+
+Then everyone looked at Arjun.
+
+He was standing near the door, one hand on the wall. His face had gone grey.
+
+"Too many tastes?" Rini asked quietly.
+
+He nodded.
+
+"Then come down."
+
+"I cannot."
+
+"You already came up."
+
+"Down is different."
+
+"Down has tea."
+
+This was a strong argument.
+
+By the time they reached the second-floor landing, half the building knew. Mrs Gomes had told the milkman, who had told the guard, who had told a delivery boy, who was now staring at Arjun as if he were a festival idol made of nervousness.
+
+Arjun shrank back.
+
+Rini stepped in front of him. "Move. He saved Neel."
+
+"I only tasted something," Arjun said.
+
+"You walked upstairs," Rini said. "That is more than tasting."
+
+Mitali, Arjun's mother, stood at the doorway of 3B. She was small, white-haired, and holding a kitchen towel twisted in both hands.
+
+"Arjun," she said.
+
+He looked ashamed. "I came out."
+
+"I can see that."
+
+"I did not faint."
+
+"I can see that too."
+
+For a moment they only looked at each other. Then Mitali opened her arms. Arjun bent down and let his mother hold him in the hallway, in front of everyone. Nobody laughed. Even Ronit had the sense to be still.
+
+Later, because Calcutta turns fright into snacks when possible, Mrs Banerjee made lime water and puffed rice with mustard oil, onion, and green chilli cut very small. Neel was given proper food and another biscuit. Rini got her tiffin back. Ronit was made to wash all three carriers.
+
+Arjun sat on a plastic chair near the open door of 3B. The chair complained, but held.
+
+"What does the building taste like now?" Rini asked.
+
+He considered. "Less frightened. More onion."
+
+"And me?"
+
+"Curious. Bossy. A little hungry."
+
+"That is not a special power. Everyone knows that."
+
+He laughed then. It was rusty, but it worked.
+
+When evening came, Arjun walked down to the tea stall for the first time in three years. Rini went with him, carrying emergency sugar in her pocket because it felt official. The lane smelt of frying batter, wet dust, and tram wires warming in the dusk. People stared, then pretended not to stare, which was the Calcutta way of being polite and nosy at the same time.
+
+At the stall, Arjun ordered tea.
+
+"How much sugar?" asked the tea seller.
+
+Arjun looked at Rini. Rini looked at Neel, who had come down with his grandmother and was holding his biscuit packet like a medal.
+
+"Enough," Arjun said. "Not too much."
+
+The tea seller nodded solemnly, as if this were wisdom.
+
+Rini took a sip from her own small clay cup. The tea was too hot and too sweet. It burnt her tongue in the ordinary way. She liked it.
+
+Arjun lifted his cup and looked at the lane, the balconies, the water tank, the people carrying their hidden sweetness and trouble around inside them.
+
+"Can you taste the whole city?" Rini asked.
+
+"A little."
+
+"Is it horrible?"
+
+He thought for a while. "It is noisy. Bitter in places. Too sweet in others. But not horrible."
+
+"What is it, then?"
+
+Arjun smiled, and this time the smile stayed.
+
+"Alive," he said.
+
+On Monday, Rini took her tiffin to school with the red ribbon tied twice as tightly. Inside were luchi, alur dom, and two glucose biscuits she did not need but carried anyway. She also wrote ARJUN-DA KNOWS on a small paper slip and tucked it under the lid. In Calcutta, adventures often began with a missing lunchbox. It seemed sensible to be prepared.

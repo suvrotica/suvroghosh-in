@@ -1,5 +1,9 @@
 node_modules
 
+# Codex local artifacts
+.codex/
+.codex-artifacts/
+
 # Output
 .output
 .vercel
