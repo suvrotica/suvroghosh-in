@@ -2,7 +2,7 @@
 title: "The Fish of Babughat"
 description: "When Priya's uncle vanishes into the Hooghly River on a sweltering June day, she finds a puffer fish with his exact scar—and must carry it across Kolkata to bring him home."
 date: "2026-06-30"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260630_200233_3781.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Children's Fiction", "Adventure", "Warm", "Curiosity"]
 published: true
@@ -11,7 +11,7 @@ color: "#2E8B57"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260630_200233_3781.jpg" />
 
 # THIS IS A WORK OF FICTION
 
