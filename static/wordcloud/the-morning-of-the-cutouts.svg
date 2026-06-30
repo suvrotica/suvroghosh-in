@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Morning of the Cutouts" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Morning of the Cutouts</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(444,466)" font-size="118" style="fill:#9fc9c5">Tuhin</text>
+<text transform="translate(668,679)" font-size="94" style="fill:#d6a79f">Paper</text>
+<text transform="translate(481,357)" font-size="94" style="fill:#d6a79f">Robot</text>
+<text transform="translate(165,459)" font-size="75" style="fill:#e0b879">Near</text>
+<text transform="translate(690,105)" font-size="75" style="fill:#d9c89e">Mother</text>
+<text transform="translate(363,695)" font-size="68" style="fill:#d6a79f">Rain</text>
+<text transform="translate(1045,288)" font-size="64" style="fill:#d9c89e">White</text>
+<text transform="translate(73,233)" font-size="60" style="fill:#9fc9c5">Stood</text>
+<text transform="translate(974,212)" font-size="56" style="fill:#a9b7a3">Blue</text>
+<text transform="translate(562,119)" font-size="56" style="fill:#8fb7d0">Now</text>
+<text transform="translate(96,137)" font-size="56" style="fill:#a9b7a3">Printed</text>
+<text transform="translate(598,549)" font-size="56" style="fill:#c7d7b5">Asset</text>
+<text transform="translate(635,203)" font-size="52" style="fill:#e0b879">Khokonkaku</text>
+<text transform="translate(944,404)" font-size="52" style="fill:#c7d7b5">Mud</text>
+<text transform="translate(510,593)" font-size="52" style="fill:#d9c89e">Targets</text>
+<text transform="translate(210,539)" font-size="52" style="fill:#e0b879">Cutout</text>
+<text transform="translate(65,283)" font-size="52" style="fill:#c49a6c">Five</text>
+<text transform="translate(1072,453)" font-size="47" style="fill:#c7d7b5">Room</text>
+<text transform="translate(1096,524)" font-size="47" style="fill:#a9b7a3">Small</text>
+<text transform="translate(751,285)" font-size="47" style="fill:#9fc9c5">Last</text>
+<text transform="translate(327,258)" font-size="47" style="fill:#d5d2c2">Bridge</text>
+<text transform="translate(841,460) rotate(-90)" font-size="47" style="fill:#e0b879">Light</text>
+<text transform="translate(58,408)" font-size="47" style="fill:#c49a6c">Wet</text>
+<text transform="translate(83,702)" font-size="47" style="fill:#d9c89e">Men</text>
+<text transform="translate(1081,602)" font-size="47" style="fill:#b6c3dd">Child</text>
+<text transform="translate(84,654)" font-size="47" style="fill:#c7d7b5">Toward</text>
+<text transform="translate(961,687)" font-size="47" style="fill:#d5d2c2">Everyone</text>
+<text transform="translate(934,54)" font-size="47" style="fill:#d6a79f">River</text>
+<text transform="translate(345,688) rotate(-90)" font-size="47" style="fill:#c7d7b5">Moved</text>
+<text transform="translate(924,509)" font-size="47" style="fill:#8fb7d0">Ran</text>
+<text transform="translate(811,623) rotate(-90)" font-size="47" style="fill:#d5d2c2">First</text>
+<text transform="translate(48,328) rotate(-90)" font-size="47" style="fill:#e0b879">Training</text>
+<text transform="translate(361,110)" font-size="47" style="fill:#d5d2c2">Rifle</text>
+<text transform="translate(115,603) rotate(-90)" font-size="47" style="fill:#d9c89e">Piyali</text>
+<text transform="translate(287,398) rotate(-90)" font-size="47" style="fill:#8fb7d0">Found</text>
+<text transform="translate(1042,373)" font-size="47" style="fill:#a9b7a3">Likeness</text>
+<text transform="translate(1066,152)" font-size="47" style="fill:#d6a79f">Face</text>
+<text transform="translate(508,74)" font-size="47" style="fill:#8fb7d0">Photo</text>
+<text transform="translate(1049,619) rotate(-90)" font-size="47" style="fill:#8fb7d0">Hundred</text>
+<text transform="translate(1133,222)" font-size="47" style="fill:#9fc9c5">Blank</text>
+<text transform="translate(77,342)" font-size="42" style="fill:#e0b879">Howrah</text>
+<text transform="translate(379,476) rotate(-90)" font-size="42" style="fill:#d6a79f">Thin</text>
+<text transform="translate(48,499) rotate(-90)" font-size="42" style="fill:#c7d7b5">Tin</text>
+<text transform="translate(561,666)" font-size="42" style="fill:#c49a6c">Sari</text>
+<text transform="translate(1246,128) rotate(-90)" font-size="42" style="fill:#9fc9c5">Gone</text>
+<text transform="translate(367,146)" font-size="42" style="fill:#e0b879">Dead</text>
+<text transform="translate(855,588)" font-size="42" style="fill:#b6c3dd">Night</text>
+<text transform="translate(52,67)" font-size="42" style="fill:#c7d7b5">Remembered</text>
+<text transform="translate(584,244)" font-size="42" style="fill:#c49a6c">Colony</text>
+<text transform="translate(736,245)" font-size="42" style="fill:#8fb7d0">Remained</text>
+<text transform="translate(548,285) rotate(-90)" font-size="42" style="fill:#d6a79f">Plastic</text>
+<text transform="translate(470,610) rotate(-90)" font-size="42" style="fill:#d5d2c2">Every</text>
+<text transform="translate(689,146)" font-size="42" style="fill:#b6c3dd">Someone</text>
+<text transform="translate(276,212)" font-size="42" style="fill:#d9c89e">Buromashi</text>
+<text transform="translate(900,325)" font-size="42" style="fill:#8fb7d0">Little</text>
+<text transform="translate(892,446) rotate(-90)" font-size="42" style="fill:#8fb7d0">Behind</text>
+<text transform="translate(1063,641)" font-size="42" style="fill:#d9c89e">Ground</text>
+<text transform="translate(618,287)" font-size="42" style="fill:#9fc9c5">Boys</text>
+<text transform="translate(302,47)" font-size="42" style="fill:#d6a79f">Nothing</text>
+<text transform="translate(152,591)" font-size="42" style="fill:#9fc9c5">CIVIC</text>
+<text transform="translate(1020,106)" font-size="42" style="fill:#a9b7a3">Held</text>
+<text transform="translate(438,527) rotate(-90)" font-size="42" style="fill:#9fc9c5">Pellet</text>
+<text transform="translate(1057,325)" font-size="42" style="fill:#e0b879">Folded</text>
+<text transform="translate(672,45)" font-size="42" style="fill:#c7d7b5">Khokon</text>
+<text transform="translate(841,535)" font-size="42" style="fill:#d5d2c2">Boy</text>
+<text transform="translate(1127,61)" font-size="42" style="fill:#d6a79f">Sen</text>
+<text transform="translate(291,320)" font-size="42" style="fill:#a9b7a3">Rupees</text>
+<text transform="translate(57,175)" font-size="36" style="fill:#d88988">Morning</text>
+<text transform="translate(1090,407)" font-size="36" style="fill:#d88988">Munnidi</text>
+<text transform="translate(280,660) rotate(-90)" font-size="36" style="fill:#d6a79f">Tea</text>
+<text transform="translate(483,521)" font-size="36" style="fill:#c7d7b5">Stall</text>
+<text transform="translate(372,635)" font-size="36" style="fill:#c49a6c">Even</text>
+<text transform="translate(921,139)" font-size="36" style="fill:#d5d2c2">Proper</text>
+<text transform="translate(1156,483)" font-size="36" style="fill:#d5d2c2">Torn</text>
+<text transform="translate(32,709) rotate(-90)" font-size="36" style="fill:#d5d2c2">Tarpaulin</text>
+<text transform="translate(358,356)" font-size="36" style="fill:#e0b879">Steel</text>
+<text transform="translate(127,371)" font-size="36" style="fill:#d9c89e">Sat</text>
+<text transform="translate(653,495)" font-size="36" style="fill:#c49a6c">Feet</text>
+<text transform="translate(184,490)" font-size="36" style="fill:#e0b879">Man</text>
+<text transform="translate(541,712)" font-size="36" style="fill:#d5d2c2">Political</text>
+<text transform="translate(918,359)" font-size="36" style="fill:#e0b879">Wall</text>
+<text transform="translate(1058,558)" font-size="36" style="fill:#c49a6c">Green</text>
+<text transform="translate(873,279)" font-size="36" style="fill:#d5d2c2">Yellow</text>
+<text transform="translate(10,32)" font-size="36" style="fill:#d5d2c2">Flowers</text>
+<text transform="translate(214,176)" font-size="36" style="fill:#b6c3dd">Phone</text>
+<text transform="translate(186,705)" font-size="36" style="fill:#8fb7d0">Lay</text>
+<text transform="translate(475,627)" font-size="36" style="fill:#8fb7d0">Black</text>
+<text transform="translate(1256,711) rotate(-90)" font-size="36" style="fill:#8fb7d0">Shouting</text>
+<text transform="translate(493,31)" font-size="36" style="fill:#a9b7a3">Children</text>
+<text transform="translate(801,707)" font-size="29" style="fill:#d88988">Nandipara</text>
+<text transform="translate(132,620)" font-size="29" style="fill:#b6c3dd">Houses</text>
+<text transform="translate(938,443)" font-size="29" style="fill:#e0b879">Door</text>
+<text transform="translate(1196,445)" font-size="29" style="fill:#9fc9c5">Open</text>
+<text transform="translate(152,515)" font-size="29" style="fill:#d88988">Red</text>
+<text transform="translate(323,284)" font-size="29" style="fill:#d5d2c2">Walked</text>
+<text transform="translate(354,596)" font-size="29" style="fill:#a9b7a3">Lane</text>
+<text transform="translate(358,179)" font-size="29" style="fill:#d88988">Heard</text>
+<text transform="translate(564,151)" font-size="29" style="fill:#8fb7d0">Already</text>
+<text transform="translate(232,92)" font-size="29" style="fill:#d88988">SETU</text>
+<text transform="translate(766,311)" font-size="29" style="fill:#d9c89e">VISTA</text>
+<text transform="translate(801,481)" font-size="29" style="fill:#d6a79f">Written</text>
+<text transform="translate(57,611) rotate(-90)" font-size="29" style="fill:#d9c89e">Enough</text>
+<text transform="translate(1205,167) rotate(-90)" font-size="29" style="fill:#b6c3dd">Police</text>
+<text transform="translate(711,396)" font-size="29" style="fill:#c7d7b5">Meant</text>
+<text transform="translate(555,196)" font-size="29" style="fill:#d6a79f">Rose</text>
+<text transform="translate(272,491)" font-size="29" style="fill:#a9b7a3">Away</text>
+<text transform="translate(966,245) rotate(-90)" font-size="29" style="fill:#c49a6c">Poor</text>
+<text transform="translate(209,27)" font-size="29" style="fill:#d9c89e">Head</text>
+<text transform="translate(919,545)" font-size="29" style="fill:#d5d2c2">Chest</text>
+<text transform="translate(852,623)" font-size="29" style="fill:#c7d7b5">NANDI-07</text>
+<text transform="translate(479,545)" font-size="27" style="fill:#d9c89e">Thought</text>
+<text transform="translate(308,654) rotate(-90)" font-size="27" style="fill:#d88988">Fired</text>
+<text transform="translate(532,489)" font-size="27" style="fill:#d5d2c2">Across</text>
+<text transform="translate(1257,340) rotate(-90)" font-size="27" style="fill:#9fc9c5">Exactly</text>
+<text transform="translate(16,92)" font-size="27" style="fill:#c49a6c">Smaller</text>
+<text transform="translate(369,564)" font-size="27" style="fill:#d88988">Scar</text>
+<text transform="translate(1073,176)" font-size="27" style="fill:#d5d2c2">Mouth</text>
+<text transform="translate(1053,485)" font-size="27" style="fill:#8fb7d0">DUTTA</text>
+<text transform="translate(867,39)" font-size="27" style="fill:#9fc9c5">Eyes</text>
+<text transform="translate(1135,713)" font-size="27" style="fill:#b6c3dd">Tired</text>
+<text transform="translate(1098,25)" font-size="27" style="fill:#a9b7a3">Sometimes</text>
+<text transform="translate(616,390)" font-size="27" style="fill:#d6a79f">Name</text>
+<text transform="translate(11,363)" font-size="24" style="fill:#d6a79f">Properly</text>
+<text transform="translate(321,69)" font-size="24" style="fill:#e0b879">Robotics</text>
+<text transform="translate(119,480)" font-size="24" style="fill:#d9c89e">Take</text>
+<text transform="translate(193,290)" font-size="24" style="fill:#d5d2c2">Need</text>
+<text transform="translate(1006,234)" font-size="24" style="fill:#d6a79f">Lifted</text>
+<text transform="translate(1208,179)" font-size="24" style="fill:#d6a79f">Hand</text>
+<text transform="translate(513,392)" font-size="20" style="fill:#d5d2c2">Tap</text>
+<text transform="translate(978,708)" font-size="20" style="fill:#d6a79f">High</text>
+</svg>

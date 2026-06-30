@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Thermodynamics of Fishy Things" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Thermodynamics of Fishy Things</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(368,199)" font-size="118" style="fill:#c49a6c">Intelligence</text>
+<text transform="translate(535,550)" font-size="105" style="fill:#d5d2c2">Small</text>
+<text transform="translate(514,692)" font-size="105" style="fill:#d5d2c2">Fish</text>
+<text transform="translate(719,396)" font-size="98" style="fill:#c7d7b5">Smells</text>
+<text transform="translate(194,635)" font-size="90" style="fill:#9fc9c5">Sakana</text>
+<text transform="translate(174,405) rotate(-90)" font-size="82" style="fill:#c7d7b5">Heat</text>
+<text transform="translate(1006,620)" font-size="82" style="fill:#e0b879">Fugu</text>
+<text transform="translate(327,299)" font-size="73" style="fill:#a9b7a3">Sweat</text>
+<text transform="translate(735,295)" font-size="73" style="fill:#8fb7d0">Yet</text>
+<text transform="translate(718,102)" font-size="73" style="fill:#e0b879">Artificial</text>
+<text transform="translate(90,61)" font-size="73" style="fill:#b6c3dd">Fishy</text>
+<text transform="translate(711,297) rotate(-90)" font-size="73" style="fill:#c7d7b5">AI</text>
+<text transform="translate(314,389)" font-size="63" style="fill:#9fc9c5">Afternoon</text>
+<text transform="translate(309,695)" font-size="63" style="fill:#c49a6c">Air</text>
+<text transform="translate(139,501)" font-size="63" style="fill:#d88988">Humidity</text>
+<text transform="translate(900,525)" font-size="63" style="fill:#b6c3dd">Almost</text>
+<text transform="translate(911,454)" font-size="63" style="fill:#d6a79f">Simply</text>
+<text transform="translate(445,67)" font-size="63" style="fill:#d9c89e">Company</text>
+<text transform="translate(4,179)" font-size="63" style="fill:#d5d2c2">Swimming</text>
+<text transform="translate(925,692)" font-size="63" style="fill:#c49a6c">Perhaps</text>
+<text transform="translate(942,274)" font-size="63" style="fill:#8fb7d0">American</text>
+<text transform="translate(233,386) rotate(-90)" font-size="63" style="fill:#e0b879">Now</text>
+<text transform="translate(642,450)" font-size="63" style="fill:#a9b7a3">Public</text>
+<text transform="translate(4,705)" font-size="63" style="fill:#d9c89e">Mean</text>
+<text transform="translate(94,633) rotate(-90)" font-size="63" style="fill:#d5d2c2">Collective</text>
+<text transform="translate(1259,598) rotate(-90)" font-size="63" style="fill:#b6c3dd">Together</text>
+<text transform="translate(740,613)" font-size="63" style="fill:#e0b879">School</text>
+<text transform="translate(193,438)" font-size="63" style="fill:#b6c3dd">Sense</text>
+<text transform="translate(467,467)" font-size="63" style="fill:#d5d2c2">Need</text>
+<text transform="translate(43,106)" font-size="51" style="fill:#d88988">Degrees</text>
+<text transform="translate(412,338)" font-size="47" style="fill:#d9c89e">Temperature</text>
+<text transform="translate(137,551)" font-size="47" style="fill:#c49a6c">Telephone</text>
+<text transform="translate(873,40)" font-size="47" style="fill:#b6c3dd">Number</text>
+<text transform="translate(960,316)" font-size="47" style="fill:#d5d2c2">Means</text>
+<text transform="translate(533,592)" font-size="47" style="fill:#b6c3dd">System</text>
+<text transform="translate(441,237)" font-size="47" style="fill:#d5d2c2">Percent</text>
+<text transform="translate(1187,559) rotate(-90)" font-size="47" style="fill:#d9c89e">Evaporate</text>
+<text transform="translate(41,461) rotate(-90)" font-size="47" style="fill:#e0b879">Moisture</text>
+<text transform="translate(294,367) rotate(-90)" font-size="47" style="fill:#c49a6c">Screen</text>
+<text transform="translate(1262,234) rotate(-90)" font-size="47" style="fill:#d88988">Japanese</text>
+<text transform="translate(163,676)" font-size="47" style="fill:#b6c3dd">Named</text>
+<text transform="translate(371,110)" font-size="47" style="fill:#8fb7d0">Whale</text>
+<text transform="translate(34,211)" font-size="38" style="fill:#d9c89e">Pufferfish</text>
+<text transform="translate(761,704)" font-size="38" style="fill:#c7d7b5">License</text>
+<text transform="translate(1066,35)" font-size="38" style="fill:#d88988">Monsoon</text>
+<text transform="translate(340,206) rotate(-90)" font-size="38" style="fill:#a9b7a3">Entirely</text>
+<text transform="translate(808,646)" font-size="38" style="fill:#d88988">Act</text>
+<text transform="translate(127,588) rotate(-90)" font-size="38" style="fill:#8fb7d0">Colorado</text>
+<text transform="translate(383,425)" font-size="38" style="fill:#a9b7a3">Law</text>
+<text transform="translate(1254,712) rotate(-90)" font-size="38" style="fill:#c49a6c">Days</text>
+<text transform="translate(718,32)" font-size="32" style="fill:#a9b7a3">Offering</text>
+<text transform="translate(326,579)" font-size="32" style="fill:#8fb7d0">Dollars</text>
+<text transform="translate(961,550)" font-size="27" style="fill:#e0b879">Electricity</text>
+<text transform="translate(869,124)" font-size="27" style="fill:#a9b7a3">Memory</text>
+<text transform="translate(766,223)" font-size="27" style="fill:#d88988">Asking</text>
+<text transform="translate(322,224)" font-size="27" style="fill:#b6c3dd">Largest</text>
+<text transform="translate(166,709)" font-size="27" style="fill:#9fc9c5">Merging</text>
+<text transform="translate(819,320)" font-size="27" style="fill:#c49a6c">Tokyo</text>
+<text transform="translate(392,544)" font-size="27" style="fill:#d5d2c2">Singular</text>
+<text transform="translate(884,641)" font-size="27" style="fill:#c49a6c">Model</text>
+<text transform="translate(130,589)" font-size="27" style="fill:#d6a79f">Many</text>
+<text transform="translate(404,702)" font-size="27" style="fill:#d5d2c2">Models</text>
+<text transform="translate(845,557)" font-size="27" style="fill:#d88988">Toward</text>
+<text transform="translate(864,301)" font-size="27" style="fill:#d9c89e">Alive</text>
+<text transform="translate(509,420)" font-size="27" style="fill:#a9b7a3">Wrong</text>
+<text transform="translate(32,122) rotate(-90)" font-size="27" style="fill:#d9c89e">Japan</text>
+<text transform="translate(515,107)" font-size="27" style="fill:#9fc9c5">Licensing</text>
+<text transform="translate(30,651) rotate(-90)" font-size="27" style="fill:#b6c3dd">Currently</text>
+<text transform="translate(65,656)" font-size="27" style="fill:#b6c3dd">Water</text>
+<text transform="translate(985,227)" font-size="27" style="fill:#8fb7d0">Systems</text>
+<text transform="translate(589,27)" font-size="27" style="fill:#c7d7b5">Defense</text>
+<text transform="translate(985,128)" font-size="27" style="fill:#e0b879">Scientist</text>
+<text transform="translate(553,275)" font-size="27" style="fill:#c7d7b5">Moving</text>
+<text transform="translate(769,670)" font-size="27" style="fill:#8fb7d0">Thousands</text>
+<text transform="translate(545,715)" font-size="25" style="fill:#d6a79f">Trilliondollar</text>
+<text transform="translate(1099,298)" font-size="25" style="fill:#b6c3dd">Supposed</text>
+<text transform="translate(448,490)" font-size="25" style="fill:#c49a6c">Canopy</text>
+<text transform="translate(955,710)" font-size="18" style="fill:#c7d7b5">Intelligences</text>
+<text transform="translate(326,329)" font-size="18" style="fill:#8fb7d0">Designed</text>
+<text transform="translate(1112,220)" font-size="18" style="fill:#d88988">Handled</text>
+<text transform="translate(978,480)" font-size="18" style="fill:#a9b7a3">Side</text>
+<text transform="translate(1091,411)" font-size="13" style="fill:#b6c3dd">Pooling</text>
+<text transform="translate(1069,353)" font-size="13" style="fill:#d88988">Hollow</text>
+<text transform="translate(602,488)" font-size="13" style="fill:#e0b879">Collarbone</text>
+<text transform="translate(982,53)" font-size="13" style="fill:#d88988">Tastes</text>
+<text transform="translate(487,668)" font-size="13" style="fill:#9fc9c5">Iron</text>
+<text transform="translate(638,623)" font-size="13" style="fill:#9fc9c5">Vaguely</text>
+<text transform="translate(729,172) rotate(-90)" font-size="13" style="fill:#d9c89e">Metallic</text>
+<text transform="translate(369,250)" font-size="13" style="fill:#d9c89e">Private</text>
+<text transform="translate(1013,334)" font-size="13" style="fill:#d88988">Chemistry</text>
+<text transform="translate(106,614)" font-size="13" style="fill:#9fc9c5">Experiment</text>
+<text transform="translate(177,259)" font-size="13" style="fill:#d5d2c2">Conducted</text>
+<text transform="translate(9,224)" font-size="13" style="fill:#a9b7a3">Stupefying</text>
+<text transform="translate(371,50)" font-size="13" style="fill:#d88988">Envelope</text>
+<text transform="translate(853,436)" font-size="13" style="fill:#d5d2c2">India</text>
+<text transform="translate(340,17)" font-size="13" style="fill:#9fc9c5">Meteorological</text>
+<text transform="translate(383,437)" font-size="13" style="fill:#e0b879">Department</text>
+<text transform="translate(544,288)" font-size="13" style="fill:#d6a79f">Politely</text>
+<text transform="translate(476,193) rotate(-90)" font-size="13" style="fill:#b6c3dd">Lists</text>
+<text transform="translate(867,469)" font-size="13" style="fill:#b6c3dd">Thirtyeight</text>
+<text transform="translate(1061,54)" font-size="13" style="fill:#c49a6c">Celsius</text>
+<text transform="translate(1177,93)" font-size="13" style="fill:#d5d2c2">Index</text>
+<text transform="translate(1076,376)" font-size="13" style="fill:#c7d7b5">Composite</text>
+<text transform="translate(729,309) rotate(-90)" font-size="13" style="fill:#a9b7a3">Measure</text>
+<text transform="translate(309,238)" font-size="13" style="fill:#e0b879">Fusing</text>
+<text transform="translate(726,627)" font-size="13" style="fill:#b6c3dd">Relative</text>
+<text transform="translate(312,712)" font-size="13" style="fill:#8fb7d0">Application</text>
+<text transform="translate(777,518) rotate(-90)" font-size="13" style="fill:#c7d7b5">Displays</text>
+<text transform="translate(491,16)" font-size="13" style="fill:#b6c3dd">Judgmental</text>
+<text transform="translate(1196,55)" font-size="13" style="fill:#e0b879">Font</text>
+<text transform="translate(435,512)" font-size="13" style="fill:#d9c89e">Translates</text>
+<text transform="translate(1140,511) rotate(-90)" font-size="13" style="fill:#c49a6c">Fiftyone</text>
+<text transform="translate(834,492)" font-size="13" style="fill:#9fc9c5">Actually</text>
+<text transform="translate(1140,124)" font-size="13" style="fill:#8fb7d0">Experiences</text>
+<text transform="translate(973,635)" font-size="13" style="fill:#d88988">Thermoregulatory</text>
+<text transform="translate(655,391)" font-size="13" style="fill:#d88988">Laboring</text>
+<text transform="translate(223,129)" font-size="13" style="fill:#8fb7d0">Maximum</text>
+<text transform="translate(1070,393)" font-size="13" style="fill:#8fb7d0">Capacity</text>
+<text transform="translate(838,570)" font-size="13" style="fill:#e0b879">Dissipating</text>
+<text transform="translate(633,470)" font-size="13" style="fill:#e0b879">Seventythree</text>
+<text transform="translate(360,181) rotate(-90)" font-size="13" style="fill:#d88988">Efficiently</text>
+<text transform="translate(440,129)" font-size="13" style="fill:#e0b879">Accumulates</text>
+<text transform="translate(554,124)" font-size="13" style="fill:#a9b7a3">Stagnant</text>
+<text transform="translate(207,228)" font-size="13" style="fill:#d6a79f">Salty</text>
+<text transform="translate(945,215)" font-size="13" style="fill:#b6c3dd">Lake</text>
+<text transform="translate(829,505)" font-size="13" style="fill:#9fc9c5">Forming</text>
+<text transform="translate(446,649)" font-size="13" style="fill:#b6c3dd">Creases</text>
+<text transform="translate(891,91) rotate(-90)" font-size="13" style="fill:#b6c3dd">Elbows</text>
+<text transform="translate(629,305)" font-size="13" style="fill:#c7d7b5">Behind</text>
+<text transform="translate(876,264)" font-size="13" style="fill:#b6c3dd">Knees</text>
+</svg>

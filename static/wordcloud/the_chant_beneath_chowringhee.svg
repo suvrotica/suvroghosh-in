@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Chant Beneath Chowringhee" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Chant Beneath Chowringhee</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(555,167)" font-size="118" style="fill:#9fc9c5">Anirban</text>
+<text transform="translate(657,687)" font-size="94" style="fill:#d9c89e">Dao</text>
+<text transform="translate(361,510)" font-size="89" style="fill:#e0b879">Raka</text>
+<text transform="translate(245,373)" font-size="73" style="fill:#d88988">Sound</text>
+<text transform="translate(151,59)" font-size="73" style="fill:#c7d7b5">Father</text>
+<text transform="translate(455,603)" font-size="70" style="fill:#b6c3dd">Chant</text>
+<text transform="translate(648,462)" font-size="66" style="fill:#8fb7d0">Came</text>
+<text transform="translate(631,264)" font-size="66" style="fill:#b6c3dd">Give</text>
+<text transform="translate(252,167)" font-size="62" style="fill:#a9b7a3">Tram</text>
+<text transform="translate(241,704)" font-size="62" style="fill:#8fb7d0">Rail</text>
+<text transform="translate(77,375)" font-size="58" style="fill:#9fc9c5">Men</text>
+<text transform="translate(919,401)" font-size="58" style="fill:#8fb7d0">Throat</text>
+<text transform="translate(966,315)" font-size="58" style="fill:#c7d7b5">Maati</text>
+<text transform="translate(1023,225)" font-size="58" style="fill:#b6c3dd">Speaker</text>
+<text transform="translate(406,674)" font-size="58" style="fill:#d6a79f">Every</text>
+<text transform="translate(877,591)" font-size="54" style="fill:#b6c3dd">Recorder</text>
+<text transform="translate(864,658)" font-size="54" style="fill:#c49a6c">Asphalt</text>
+<text transform="translate(159,590)" font-size="50" style="fill:#b6c3dd">Three</text>
+<text transform="translate(949,59)" font-size="50" style="fill:#d9c89e">Generator</text>
+<text transform="translate(481,313)" font-size="50" style="fill:#d9c89e">Tea</text>
+<text transform="translate(111,422)" font-size="50" style="fill:#a9b7a3">Room</text>
+<text transform="translate(597,545)" font-size="50" style="fill:#b6c3dd">Cracked</text>
+<text transform="translate(1026,489)" font-size="50" style="fill:#8fb7d0">Heard</text>
+<text transform="translate(212,319) rotate(-90)" font-size="50" style="fill:#d88988">Name</text>
+<text transform="translate(809,210)" font-size="50" style="fill:#d88988">Voice</text>
+<text transform="translate(629,315)" font-size="45" style="fill:#d6a79f">Already</text>
+<text transform="translate(1125,128)" font-size="45" style="fill:#c7d7b5">Near</text>
+<text transform="translate(908,540)" font-size="45" style="fill:#d5d2c2">Silence</text>
+<text transform="translate(57,266)" font-size="45" style="fill:#c7d7b5">Bus</text>
+<text transform="translate(78,149)" font-size="45" style="fill:#c7d7b5">Horn</text>
+<text transform="translate(489,244)" font-size="45" style="fill:#d6a79f">Damp</text>
+<text transform="translate(323,212)" font-size="45" style="fill:#d5d2c2">Mother</text>
+<text transform="translate(663,375)" font-size="45" style="fill:#c7d7b5">Podcast</text>
+<text transform="translate(1066,707)" font-size="45" style="fill:#d88988">Called</text>
+<text transform="translate(40,221)" font-size="45" style="fill:#d5d2c2">Hear</text>
+<text transform="translate(158,103)" font-size="45" style="fill:#d6a79f">Shaped</text>
+<text transform="translate(120,492)" font-size="45" style="fill:#9fc9c5">Man</text>
+<text transform="translate(491,205)" font-size="45" style="fill:#d6a79f">Noise</text>
+<text transform="translate(486,435)" font-size="45" style="fill:#a9b7a3">Earth</text>
+<text transform="translate(104,683) rotate(-90)" font-size="45" style="fill:#d88988">File</text>
+<text transform="translate(314,551)" font-size="45" style="fill:#d6a79f">Night</text>
+<text transform="translate(8,47)" font-size="45" style="fill:#b6c3dd">Small</text>
+<text transform="translate(225,302)" font-size="45" style="fill:#8fb7d0">Asked</text>
+<text transform="translate(774,500)" font-size="45" style="fill:#c7d7b5">Time</text>
+<text transform="translate(445,49)" font-size="45" style="fill:#9fc9c5">Enough</text>
+<text transform="translate(1076,171)" font-size="45" style="fill:#d5d2c2">River</text>
+<text transform="translate(953,442)" font-size="45" style="fill:#c7d7b5">Remembered</text>
+<text transform="translate(127,527)" font-size="40" style="fill:#d9c89e">Private</text>
+<text transform="translate(111,628)" font-size="40" style="fill:#d5d2c2">Recording</text>
+<text transform="translate(36,533) rotate(-90)" font-size="40" style="fill:#e0b879">Years</text>
+<text transform="translate(706,40)" font-size="40" style="fill:#9fc9c5">Recordings</text>
+<text transform="translate(36,713)" font-size="40" style="fill:#a9b7a3">Rain</text>
+<text transform="translate(377,109)" font-size="40" style="fill:#c49a6c">Street</text>
+<text transform="translate(866,291)" font-size="40" style="fill:#d88988">Gave</text>
+<text transform="translate(846,705)" font-size="40" style="fill:#9fc9c5">Episode</text>
+<text transform="translate(235,258)" font-size="40" style="fill:#b6c3dd">Listeners</text>
+<text transform="translate(725,630)" font-size="40" style="fill:#9fc9c5">First</text>
+<text transform="translate(1096,264)" font-size="40" style="fill:#d6a79f">Sounded</text>
+<text transform="translate(30,305)" font-size="40" style="fill:#9fc9c5">Sat</text>
+<text transform="translate(832,255)" font-size="40" style="fill:#9fc9c5">Outside</text>
+<text transform="translate(263,414)" font-size="40" style="fill:#d9c89e">Listened</text>
+<text transform="translate(569,396)" font-size="40" style="fill:#9fc9c5">Low</text>
+<text transform="translate(236,476)" font-size="40" style="fill:#d9c89e">Crow</text>
+<text transform="translate(1169,633)" font-size="40" style="fill:#c7d7b5">Fan</text>
+<text transform="translate(725,408)" font-size="40" style="fill:#a9b7a3">Filtered</text>
+<text transform="translate(650,199)" font-size="40" style="fill:#c7d7b5">Never</text>
+<text transform="translate(1173,313)" font-size="40" style="fill:#b6c3dd">Baba</text>
+<text transform="translate(851,331)" font-size="40" style="fill:#d6a79f">Fish</text>
+<text transform="translate(1026,356)" font-size="40" style="fill:#a9b7a3">Gariahat</text>
+<text transform="translate(43,171) rotate(-90)" font-size="40" style="fill:#d9c89e">Ran</text>
+<text transform="translate(1113,541)" font-size="40" style="fill:#9fc9c5">Beside</text>
+<text transform="translate(728,592)" font-size="40" style="fill:#e0b879">Almost</text>
+<text transform="translate(328,598)" font-size="40" style="fill:#d5d2c2">Gola</text>
+<text transform="translate(836,456)" font-size="40" style="fill:#d6a79f">Naam</text>
+<text transform="translate(464,352)" font-size="40" style="fill:#9fc9c5">Remained</text>
+<text transform="translate(1095,667)" font-size="40" style="fill:#c49a6c">Last</text>
+<text transform="translate(1149,401)" font-size="40" style="fill:#a9b7a3">Radio</text>
+<text transform="translate(1264,136) rotate(-90)" font-size="40" style="fill:#c7d7b5">Bells</text>
+<text transform="translate(888,89)" font-size="36" style="fill:#d88988">Kidderpore</text>
+<text transform="translate(388,298)" font-size="36" style="fill:#d5d2c2">Ani</text>
+<text transform="translate(1181,482)" font-size="36" style="fill:#e0b879">Wet</text>
+<text transform="translate(421,147)" font-size="36" style="fill:#c7d7b5">Buried</text>
+<text transform="translate(117,180)" font-size="36" style="fill:#e0b879">Breath</text>
+<text transform="translate(433,708)" font-size="31" style="fill:#c49a6c">Past</text>
+<text transform="translate(574,495)" font-size="31" style="fill:#c49a6c">Esplanade</text>
+<text transform="translate(63,573) rotate(-90)" font-size="31" style="fill:#b6c3dd">Microphones</text>
+<text transform="translate(472,634)" font-size="31" style="fill:#c7d7b5">Drivers</text>
+<text transform="translate(10,95)" font-size="31" style="fill:#9fc9c5">Shouted</text>
+<text transform="translate(605,715)" font-size="31" style="fill:#c7d7b5">Window</text>
+<text transform="translate(911,500)" font-size="31" style="fill:#c7d7b5">Buses</text>
+<text transform="translate(133,450)" font-size="31" style="fill:#c49a6c">Crows</text>
+<text transform="translate(607,80)" font-size="31" style="fill:#d6a79f">Line</text>
+<text transform="translate(707,71)" font-size="31" style="fill:#e0b879">Ruined</text>
+<text transform="translate(202,711) rotate(-90)" font-size="31" style="fill:#9fc9c5">Wave</text>
+<text transform="translate(1156,566)" font-size="31" style="fill:#8fb7d0">Now</text>
+<text transform="translate(101,533) rotate(-90)" font-size="31" style="fill:#a9b7a3">Unpaid</text>
+<text transform="translate(313,435)" font-size="24" style="fill:#d6a79f">Respectable</text>
+<text transform="translate(454,266)" font-size="24" style="fill:#d5d2c2">Speech</text>
+<text transform="translate(209,655)" font-size="24" style="fill:#e0b879">Horns</text>
+<text transform="translate(1196,588)" font-size="24" style="fill:#b6c3dd">Teeth</text>
+<text transform="translate(192,353)" font-size="24" style="fill:#8fb7d0">Let</text>
+<text transform="translate(343,619)" font-size="24" style="fill:#a9b7a3">Ordinary</text>
+<text transform="translate(625,683) rotate(-90)" font-size="24" style="fill:#d5d2c2">Meant</text>
+<text transform="translate(405,71)" font-size="24" style="fill:#d9c89e">Money</text>
+<text transform="translate(4,636)" font-size="24" style="fill:#b6c3dd">Wall</text>
+<text transform="translate(219,554)" font-size="24" style="fill:#d6a79f">Mrs</text>
+<text transform="translate(82,567)" font-size="24" style="fill:#9fc9c5">Dutta</text>
+<text transform="translate(985,22)" font-size="24" style="fill:#d5d2c2">Downstairs</text>
+<text transform="translate(704,102) rotate(-90)" font-size="24" style="fill:#c7d7b5">Traffic</text>
+<text transform="translate(1058,615)" font-size="24" style="fill:#9fc9c5">Beneath</text>
+<text transform="translate(404,171)" font-size="24" style="fill:#8fb7d0">Sounds</text>
+<text transform="translate(741,712)" font-size="24" style="fill:#d5d2c2">Call</text>
+<text transform="translate(24,383) rotate(-90)" font-size="24" style="fill:#d5d2c2">Continued</text>
+<text transform="translate(468,373)" font-size="24" style="fill:#8fb7d0">Twice</text>
+<text transform="translate(656,682) rotate(-90)" font-size="24" style="fill:#9fc9c5">Track</text>
+<text transform="translate(470,537)" font-size="24" style="fill:#c7d7b5">Hearing</text>
+<text transform="translate(351,640)" font-size="24" style="fill:#b6c3dd">Hand</text>
+<text transform="translate(958,343)" font-size="24" style="fill:#c7d7b5">Dead</text>
+<text transform="translate(455,398)" font-size="24" style="fill:#d6a79f">Pressure</text>
+<text transform="translate(315,325)" font-size="24" style="fill:#b6c3dd">Thousand</text>
+<text transform="translate(1122,80)" font-size="24" style="fill:#b6c3dd">Always</text>
+<text transform="translate(37,327)" font-size="24" style="fill:#d88988">Sometimes</text>
+<text transform="translate(573,456)" font-size="24" style="fill:#b6c3dd">Cough</text>
+<text transform="translate(808,522)" font-size="24" style="fill:#d9c89e">Evening</text>
+<text transform="translate(703,217)" font-size="19" style="fill:#9fc9c5">Shyambazar</text>
+<text transform="translate(685,282)" font-size="19" style="fill:#e0b879">Sealed</text>
+<text transform="translate(128,682)" font-size="19" style="fill:#d9c89e">Late</text>
+<text transform="translate(229,213)" font-size="19" style="fill:#c49a6c">Episodes</text>
+<text transform="translate(800,278)" font-size="19" style="fill:#a9b7a3">Mouth</text>
+<text transform="translate(855,350)" font-size="19" style="fill:#b6c3dd">Everyone</text>
+</svg>

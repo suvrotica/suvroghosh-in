@@ -110,6 +110,7 @@ export const load: PageLoad = async ({ params }) => {
 		});
 
 		return {
+			slug,
 			relatedPosts: relatedPosts.slice(0, 4),
 			content,
 			metadata: {

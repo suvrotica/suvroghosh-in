@@ -1,83 +1,83 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	type Tag = {
-		text: string;
-		href: string;
-	};
+	import { base } from '$app/paths';
 
 	type Props = {
-		tags: string[];
-		searchBase?: string;
+		slug: string;
+		title: string;
+		class?: string;
 	};
 
-	let { tags, searchBase = '/blog?search=' }: Props = $props();
+	let { slug, title, class: className = '' }: Props = $props();
+	let missingSlug = $state<string | null>(null);
 
-	let container: HTMLElement;
-	let revealed = $state(false);
+	const imageSrc = $derived(`${base}/wordcloud/${encodeURIComponent(slug)}.svg`);
+	const visible = $derived(Boolean(slug) && missingSlug !== slug);
 
-	onMount(() => {
-		if (typeof IntersectionObserver === 'undefined') {
-			revealed = true;
-			return;
-		}
-		const observer = new IntersectionObserver(
-			(entries) => {
-				for (const entry of entries) {
-					if (entry.isIntersecting) {
-						revealed = true;
-						observer.disconnect();
-					}
-				}
-			},
-			{ threshold: 0.15 }
-		);
-		if (container) observer.observe(container);
-		return () => observer.disconnect();
-	});
-
-	const weights = [1.75, 1.15, 1.45, 0.85, 1.15, 0.55, 1.45, 0.85, 1.75, 0.55, 1.15, 0.85, 1.45, 0.55, 1.15];
-
-	let items = $derived(
-		tags.map((tag, i) => ({
-			text: tag,
-			href: `${searchBase}${encodeURIComponent(tag)}`,
-			size: weights[i % weights.length]
-		}))
-	);
+	function hideMissingImage() {
+		missingSlug = slug;
+	}
 </script>
 
-<div bind:this={container} class="word-cloud flex flex-wrap items-center justify-center gap-x-3 gap-y-2 py-4">
-	{#each items as item, i (item.text)}
-		<a
-			href={item.href}
-			class="word-cloud-item inline-block leading-tight text-neutral-400 hover:text-neutral-200 transition-colors"
-			style="font-size: {item.size}rem; animation-delay: {revealed ? i * 60 : 0}ms; opacity: {revealed ? 1 : 0}"
-		>
-			{item.text}
-		</a>
-	{/each}
-</div>
+{#if visible}
+	<section class={`word-cloud ${className}`.trim()} aria-labelledby="word-cloud-heading">
+		<h2 id="word-cloud-heading">Word Cloud</h2>
+		<figure>
+			<img
+				src={imageSrc}
+				alt={`Word cloud for ${title}`}
+				loading="lazy"
+				decoding="async"
+				onerror={hideMissingImage}
+			/>
+		</figure>
+	</section>
+{/if}
 
 <style>
-	.word-cloud-item {
-		animation: word-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+	.word-cloud {
+		margin-block: 2rem 0;
 	}
 
-	@keyframes word-pop {
-		from {
-			opacity: 0;
-			transform: translateY(0.5rem) scale(0.9);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0) scale(1);
-		}
+	.word-cloud h2 {
+		margin: 0 0 1.5rem;
+		text-align: center;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0;
+		text-transform: uppercase;
+		color: rgb(23 23 23);
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		.word-cloud-item {
-			animation: none;
+	.word-cloud figure {
+		margin: 0;
+		border-radius: 0.5rem;
+		border: 1px solid rgba(115, 115, 115, 0.22);
+		background: #101114;
+		box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+		overflow: hidden;
+	}
+
+	.word-cloud img {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+
+	:global(.dark) .word-cloud h2 {
+		color: rgb(245 245 245);
+	}
+
+	:global(.dark) .word-cloud figure {
+		border-color: rgba(245, 245, 245, 0.16);
+		box-shadow: 0 18px 60px rgba(0, 0, 0, 0.44);
+	}
+
+	@media (max-width: 640px) {
+		.word-cloud {
+			margin-block-start: 1.5rem;
 		}
 	}
 </style>

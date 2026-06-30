@@ -1,0 +1,4 @@
+wordcloud>=1.9.4
+Pillow>=10.0.0
+numpy>=1.26.0
+PyYAML>=6.0.0

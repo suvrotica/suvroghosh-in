@@ -140,19 +140,10 @@
 		<PostContent />
 	</div>
 
-	{#if data.metadata.tags && data.metadata.tags.length > 0}
-		<ScrollReveal>
-			<footer class="mt-16">
-				<Separator class="mb-8" />
-				<h2
-					class="mb-2 text-center text-xs font-semibold tracking-wider text-neutral-900 uppercase dark:text-white"
-				>
-					Topics Discussed
-				</h2>
-				<WordCloud tags={data.metadata.tags} searchBase="/blog?search=" />
-			</footer>
-		</ScrollReveal>
-	{/if}
+	<ScrollReveal>
+		<Separator class="mt-16" />
+		<WordCloud slug={data.slug} title={data.metadata.title} />
+	</ScrollReveal>
 
 	{#if relatedPosts.length > 0}
 		<ScrollReveal delay={100}>
