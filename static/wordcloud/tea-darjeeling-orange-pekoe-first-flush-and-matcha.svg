@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Tea" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Tea</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(1024,194)" font-size="118" style="fill:#e0b879">Tea</text>
+<text transform="translate(656,463) rotate(-90)" font-size="115" style="fill:#c49a6c">Leaf</text>
+<text transform="translate(902,312)" font-size="77" style="fill:#b6c3dd">Becomes</text>
+<text transform="translate(273,78)" font-size="77" style="fill:#9fc9c5">Darjeeling</text>
+<text transform="translate(396,639)" font-size="72" style="fill:#d5d2c2">Orange</text>
+<text transform="translate(773,524)" font-size="72" style="fill:#c49a6c">Green</text>
+<text transform="translate(211,338)" font-size="66" style="fill:#d9c89e">Flush</text>
+<text transform="translate(103,660)" font-size="66" style="fill:#d6a79f">Matcha</text>
+<text transform="translate(900,630)" font-size="66" style="fill:#a9b7a3">Often</text>
+<text transform="translate(821,450) rotate(-90)" font-size="66" style="fill:#c7d7b5">Cup</text>
+<text transform="translate(7,576)" font-size="60" style="fill:#e0b879">Pekoe</text>
+<text transform="translate(331,435)" font-size="60" style="fill:#c49a6c">First</text>
+<text transform="translate(250,543)" font-size="60" style="fill:#d9c89e">Season</text>
+<text transform="translate(1227,672) rotate(-90)" font-size="60" style="fill:#9fc9c5">Oxidation</text>
+<text transform="translate(932,457)" font-size="53" style="fill:#9fc9c5">Leaves</text>
+<text transform="translate(194,493)" font-size="53" style="fill:#c49a6c">Muscatel</text>
+<text transform="translate(797,680)" font-size="53" style="fill:#e0b879">Plucking</text>
+<text transform="translate(401,708)" font-size="53" style="fill:#9fc9c5">Different</text>
+<text transform="translate(355,172)" font-size="53" style="fill:#d88988">Grade</text>
+<text transform="translate(189,383)" font-size="53" style="fill:#a9b7a3">Whether</text>
+<text transform="translate(988,247)" font-size="53" style="fill:#9fc9c5">Teas</text>
+<text transform="translate(699,604)" font-size="53" style="fill:#8fb7d0">Aroma</text>
+<text transform="translate(697,140)" font-size="53" style="fill:#c49a6c">Chemistry</text>
+<text transform="translate(197,297) rotate(-90)" font-size="53" style="fill:#8fb7d0">Process</text>
+<text transform="translate(652,192)" font-size="53" style="fill:#e0b879">Naming</text>
+<text transform="translate(84,440)" font-size="46" style="fill:#d6a79f">CTC</text>
+<text transform="translate(363,271)" font-size="46" style="fill:#c7d7b5">Style</text>
+<text transform="translate(1009,66)" font-size="46" style="fill:#d6a79f">Small</text>
+<text transform="translate(75,446) rotate(-90)" font-size="46" style="fill:#d9c89e">Orthodox</text>
+<text transform="translate(972,373)" font-size="46" style="fill:#a9b7a3">White</text>
+<text transform="translate(759,68)" font-size="46" style="fill:#9fc9c5">Oolong</text>
+<text transform="translate(23,60)" font-size="46" style="fill:#d6a79f">Plant</text>
+<text transform="translate(670,327)" font-size="46" style="fill:#d9c89e">Altitude</text>
+<text transform="translate(548,515)" font-size="46" style="fill:#c49a6c">Standard</text>
+<text transform="translate(994,496)" font-size="46" style="fill:#d9c89e">Dried</text>
+<text transform="translate(984,411)" font-size="46" style="fill:#b6c3dd">Black</text>
+<text transform="translate(274,582)" font-size="46" style="fill:#a9b7a3">Flavor</text>
+<text transform="translate(493,593)" font-size="46" style="fill:#c49a6c">Bushes</text>
+<text transform="translate(664,268)" font-size="46" style="fill:#a9b7a3">Language</text>
+<text transform="translate(425,374)" font-size="46" style="fill:#e0b879">Fine</text>
+<text transform="translate(258,711)" font-size="46" style="fill:#d6a79f">Tell</text>
+<text transform="translate(213,226)" font-size="46" style="fill:#c7d7b5">Floral</text>
+<text transform="translate(18,703)" font-size="46" style="fill:#a9b7a3">Handling</text>
+<text transform="translate(517,143)" font-size="38" style="fill:#a9b7a3">Means</text>
+<text transform="translate(561,309) rotate(-90)" font-size="38" style="fill:#c7d7b5">Pellets</text>
+<text transform="translate(1009,562)" font-size="38" style="fill:#a9b7a3">Label</text>
+<text transform="translate(381,231)" font-size="38" style="fill:#d5d2c2">Packet</text>
+<text transform="translate(566,550)" font-size="38" style="fill:#c49a6c">Camellia</text>
+<text transform="translate(800,238)" font-size="38" style="fill:#9fc9c5">Sinensis</text>
+<text transform="translate(1085,705)" font-size="38" style="fill:#d88988">Taste</text>
+<text transform="translate(776,562)" font-size="38" style="fill:#a9b7a3">Cultivar</text>
+<text transform="translate(1265,252) rotate(-90)" font-size="38" style="fill:#c7d7b5">Categories</text>
+<text transform="translate(207,125)" font-size="38" style="fill:#d5d2c2">Withered</text>
+<text transform="translate(799,713)" font-size="38" style="fill:#d9c89e">Oxidized</text>
+<text transform="translate(19,104)" font-size="38" style="fill:#d9c89e">Early</text>
+<text transform="translate(1266,460) rotate(-90)" font-size="38" style="fill:#d6a79f">Minimally</text>
+<text transform="translate(862,183)" font-size="38" style="fill:#e0b879">Japanese</text>
+<text transform="translate(980,102)" font-size="38" style="fill:#8fb7d0">Processed</text>
+<text transform="translate(40,497)" font-size="38" style="fill:#b6c3dd">Prized</text>
+<text transform="translate(62,187)" font-size="38" style="fill:#d6a79f">Air</text>
+<text transform="translate(171,425)" font-size="38" style="fill:#a9b7a3">History</text>
+<text transform="translate(5,147)" font-size="38" style="fill:#9fc9c5">Garden</text>
+<text transform="translate(682,383)" font-size="38" style="fill:#d88988">Term</text>
+<text transform="translate(990,528)" font-size="38" style="fill:#d88988">Confuses</text>
+<text transform="translate(856,374)" font-size="38" style="fill:#c49a6c">Many</text>
+<text transform="translate(1067,672)" font-size="38" style="fill:#b6c3dd">Mean</text>
+<text transform="translate(121,348) rotate(-90)" font-size="38" style="fill:#a9b7a3">Liquor</text>
+<text transform="translate(240,273)" font-size="38" style="fill:#d5d2c2">Young</text>
+<text transform="translate(702,668)" font-size="38" style="fill:#e0b879">Buds</text>
+<text transform="translate(519,424)" font-size="38" style="fill:#e0b879">Trade</text>
+<text transform="translate(1264,707) rotate(-90)" font-size="38" style="fill:#9fc9c5">Associated</text>
+<text transform="translate(1165,490) rotate(-90)" font-size="38" style="fill:#c49a6c">Quality</text>
+<text transform="translate(204,162)" font-size="38" style="fill:#c7d7b5">Refers</text>
+<text transform="translate(839,31)" font-size="38" style="fill:#a9b7a3">Harvest</text>
+<text transform="translate(110,531)" font-size="38" style="fill:#c49a6c">Second</text>
+<text transform="translate(544,108)" font-size="34" style="fill:#c49a6c">Usually</text>
+<text transform="translate(662,221)" font-size="32" style="fill:#d6a79f">Lightly</text>
+<text transform="translate(11,607)" font-size="32" style="fill:#8fb7d0">Sometimes</text>
+<text transform="translate(1100,593)" font-size="32" style="fill:#d5d2c2">Skin</text>
+<text transform="translate(583,183)" font-size="32" style="fill:#b6c3dd">Sit</text>
+<text transform="translate(634,24)" font-size="26" style="fill:#d88988">Interesting</text>
+<text transform="translate(676,427)" font-size="26" style="fill:#8fb7d0">Color</text>
+<text transform="translate(1133,230)" font-size="26" style="fill:#d6a79f">Place</text>
+<text transform="translate(28,292) rotate(-90)" font-size="26" style="fill:#c49a6c">Stops</text>
+<text transform="translate(1146,37)" font-size="26" style="fill:#d5d2c2">Less</text>
+<text transform="translate(853,478) rotate(-90)" font-size="26" style="fill:#d5d2c2">Origin</text>
+<text transform="translate(914,479) rotate(-90)" font-size="19" style="fill:#c49a6c">Acronyms</text>
+<text transform="translate(300,604)" font-size="19" style="fill:#b6c3dd">Used</text>
+<text transform="translate(215,49)" font-size="19" style="fill:#c7d7b5">AI</text>
+<text transform="translate(453,660)" font-size="19" style="fill:#d9c89e">Artificial</text>
+<text transform="translate(428,324)" font-size="19" style="fill:#a9b7a3">Intelligence</text>
+<text transform="translate(762,88)" font-size="19" style="fill:#d5d2c2">Software</text>
+<text transform="translate(420,195)" font-size="19" style="fill:#e0b879">Generates</text>
+<text transform="translate(460,477)" font-size="19" style="fill:#c49a6c">Classifies</text>
+<text transform="translate(170,67)" font-size="19" style="fill:#9fc9c5">Predicts</text>
+<text transform="translate(208,184)" font-size="19" style="fill:#e0b879">Summarizes</text>
+<text transform="translate(702,478)" font-size="19" style="fill:#d6a79f">Acts</text>
+<text transform="translate(991,333)" font-size="19" style="fill:#d6a79f">Patterns</text>
+<text transform="translate(1195,68)" font-size="19" style="fill:#d9c89e">Data</text>
+<text transform="translate(683,634)" font-size="19" style="fill:#c49a6c">Crushtearcurl</text>
+<text transform="translate(1094,120)" font-size="19" style="fill:#a9b7a3">Manufacturing</text>
+<text transform="translate(425,393)" font-size="19" style="fill:#9fc9c5">Turns</text>
+<text transform="translate(129,345)" font-size="19" style="fill:#d5d2c2">Looks</text>
+<text transform="translate(344,663)" font-size="19" style="fill:#d9c89e">Educated</text>
+<text transform="translate(81,461)" font-size="19" style="fill:#8fb7d0">Person</text>
+<text transform="translate(362,21)" font-size="19" style="fill:#9fc9c5">Trying</text>
+<text transform="translate(532,343)" font-size="19" style="fill:#9fc9c5">Read</text>
+<text transform="translate(88,397)" font-size="19" style="fill:#9fc9c5">FTGFOP</text>
+<text transform="translate(471,541)" font-size="19" style="fill:#8fb7d0">Gather</text>
+<text transform="translate(29,436) rotate(-90)" font-size="19" style="fill:#8fb7d0">Passed</text>
+<text transform="translate(157,235) rotate(-90)" font-size="19" style="fill:#b6c3dd">Several</text>
+<text transform="translate(229,454)" font-size="19" style="fill:#c7d7b5">Competitive</text>
+<text transform="translate(225,596) rotate(-90)" font-size="19" style="fill:#8fb7d0">Exams</text>
+<text transform="translate(1126,254)" font-size="19" style="fill:#8fb7d0">Simplest</text>
+<text transform="translate(474,303)" font-size="19" style="fill:#d88988">True</text>
+<text transform="translate(699,704)" font-size="19" style="fill:#c49a6c">Enormous</text>
+<text transform="translate(138,23)" font-size="19" style="fill:#e0b879">Differences</text>
+<text transform="translate(671,345)" font-size="19" style="fill:#9fc9c5">Geography</text>
+<text transform="translate(41,523)" font-size="19" style="fill:#8fb7d0">Picked</text>
+<text transform="translate(11,463)" font-size="19" style="fill:#b6c3dd">Fates</text>
+<text transform="translate(481,30)" font-size="19" style="fill:#b6c3dd">Plants</text>
+<text transform="translate(667,449)" font-size="19" style="fill:#9fc9c5">Rolled</text>
+<text transform="translate(72,208)" font-size="19" style="fill:#a9b7a3">Heated</text>
+<text transform="translate(583,302) rotate(-90)" font-size="19" style="fill:#c49a6c">Stop</text>
+<text transform="translate(16,643)" font-size="19" style="fill:#e0b879">Allowed</text>
+<text transform="translate(134,316)" font-size="19" style="fill:#a9b7a3">Partial</text>
+<text transform="translate(433,121)" font-size="19" style="fill:#8fb7d0">Handled</text>
+<text transform="translate(92,369)" font-size="19" style="fill:#e0b879">Special</text>
+<text transform="translate(620,255)" font-size="19" style="fill:#d9c89e">Case</text>
+<text transform="translate(1019,20)" font-size="19" style="fill:#d9c89e">Shadegrown</text>
+</svg>

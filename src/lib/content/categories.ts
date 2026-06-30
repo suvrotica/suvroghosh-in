@@ -4,9 +4,12 @@ export const categoryLabels: Record<string, string> = {
 	'healthcare-science': 'Healthcare Science',
 	'healthcare-systems': 'Healthcare Systems',
 	'public-health': 'Public Health',
+	health: 'Health',
 	'ai-economy': 'AI Economy',
 	'ai-economics': 'AI Economics',
+	'ai-safety': 'AI Safety',
 	'ai-security': 'AI Security',
+	cybersecurity: 'Cybersecurity',
 	'calcutta-life': 'Calcutta Life',
 	'audio-technology': 'Audio Technology',
 	'politics-and-society': 'Politics and Society',
@@ -15,6 +18,7 @@ export const categoryLabels: Record<string, string> = {
 	'philosophy-and-ai': 'Philosophy and AI',
 	food: 'Food',
 	climate: 'Climate',
+	history: 'History',
 	ideas: 'Ideas',
 	career: 'Career',
 	education: 'Education',
@@ -33,7 +37,10 @@ export const categoryLabels: Record<string, string> = {
 	'natural-history': 'Natural History',
 	neuroscience: 'Neuroscience',
 	'personal-science': 'Personal Science',
-	'work-migration-india': 'Work, Migration, India'
+	'work-migration-india': 'Work, Migration, India',
+	'personal-reflections': 'Personal Reflections',
+	thinking: 'Thinking',
+	'art-history': 'Art History'
 };
 
 export function slugifyCategory(category = 'uncategorized') {
