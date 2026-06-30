@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Homeopathy" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Homeopathy</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(504,358)" font-size="118" style="fill:#e0b879">Homeopathy</text>
+<text transform="translate(320,89)" font-size="104" style="fill:#d9c89e">Healthcare</text>
+<text transform="translate(388,598) rotate(-90)" font-size="88" style="fill:#a9b7a3">Means</text>
+<text transform="translate(548,543)" font-size="78" style="fill:#8fb7d0">Health</text>
+<text transform="translate(627,180)" font-size="78" style="fill:#b6c3dd">Evidence</text>
+<text transform="translate(303,687)" font-size="78" style="fill:#c49a6c">Substance</text>
+<text transform="translate(396,151)" font-size="78" style="fill:#a9b7a3">Long</text>
+<text transform="translate(285,707) rotate(-90)" font-size="78" style="fill:#9fc9c5">Survive</text>
+<text transform="translate(938,66)" font-size="78" style="fill:#b6c3dd">Systems</text>
+<text transform="translate(956,491)" font-size="67" style="fill:#b6c3dd">Data</text>
+<text transform="translate(1002,545)" font-size="67" style="fill:#c7d7b5">System</text>
+<text transform="translate(898,648)" font-size="67" style="fill:#d5d2c2">Patient</text>
+<text transform="translate(127,213)" font-size="67" style="fill:#a9b7a3">Problem</text>
+<text transform="translate(883,240)" font-size="67" style="fill:#c49a6c">Symptoms</text>
+<text transform="translate(580,249)" font-size="67" style="fill:#c49a6c">Person</text>
+<text transform="translate(570,451)" font-size="67" style="fill:#d9c89e">Many</text>
+<text transform="translate(79,337)" font-size="67" style="fill:#d9c89e">Effect</text>
+<text transform="translate(461,598)" font-size="67" style="fill:#d88988">Attention</text>
+<text transform="translate(84,138)" font-size="67" style="fill:#e0b879">Feel</text>
+<text transform="translate(194,268)" font-size="67" style="fill:#d6a79f">Medicine</text>
+<text transform="translate(30,407)" font-size="55" style="fill:#9fc9c5">FHIR</text>
+<text transform="translate(437,585) rotate(-90)" font-size="55" style="fill:#e0b879">Standard</text>
+<text transform="translate(378,312)" font-size="55" style="fill:#9fc9c5">HL7</text>
+<text transform="translate(1032,710)" font-size="55" style="fill:#c49a6c">Level</text>
+<text transform="translate(818,434)" font-size="55" style="fill:#d6a79f">Information</text>
+<text transform="translate(67,347) rotate(-90)" font-size="55" style="fill:#a9b7a3">Technology</text>
+<text transform="translate(1049,169)" font-size="55" style="fill:#e0b879">Small</text>
+<text transform="translate(776,705)" font-size="55" style="fill:#d5d2c2">Bottles</text>
+<text transform="translate(178,61)" font-size="55" style="fill:#c7d7b5">Shop</text>
+<text transform="translate(4,512)" font-size="55" style="fill:#d5d2c2">Window</text>
+<text transform="translate(33,588)" font-size="55" style="fill:#d88988">Clean</text>
+<text transform="translate(1269,443) rotate(-90)" font-size="55" style="fill:#a9b7a3">Survived</text>
+<text transform="translate(536,639)" font-size="49" style="fill:#d88988">Architecture</text>
+<text transform="translate(1010,110)" font-size="37" style="fill:#d88988">Preparations</text>
+<text transform="translate(10,661)" font-size="37" style="fill:#d6a79f">Scientific</text>
+<text transform="translate(733,474)" font-size="37" style="fill:#d6a79f">Modern</text>
+<text transform="translate(42,705)" font-size="37" style="fill:#8fb7d0">Changes</text>
+<text transform="translate(58,455)" font-size="37" style="fill:#c49a6c">Beyond</text>
+<text transform="translate(880,547)" font-size="37" style="fill:#8fb7d0">Point</text>
+<text transform="translate(652,397)" font-size="37" style="fill:#c49a6c">Remain</text>
+<text transform="translate(825,122)" font-size="37" style="fill:#a9b7a3">Water</text>
+<text transform="translate(493,391)" font-size="37" style="fill:#c7d7b5">Often</text>
+<text transform="translate(1061,594)" font-size="37" style="fill:#8fb7d0">Mechanism</text>
+<text transform="translate(820,580)" font-size="37" style="fill:#e0b879">Show</text>
+<text transform="translate(480,522) rotate(-90)" font-size="37" style="fill:#d9c89e">Ordinary</text>
+<text transform="translate(228,477) rotate(-90)" font-size="37" style="fill:#d6a79f">Trials</text>
+<text transform="translate(434,203)" font-size="37" style="fill:#d88988">Enough</text>
+<text transform="translate(637,285)" font-size="37" style="fill:#8fb7d0">Reduce</text>
+<text transform="translate(23,625)" font-size="37" style="fill:#a9b7a3">Anecdotes</text>
+<text transform="translate(320,610) rotate(-90)" font-size="37" style="fill:#d88988">Practitioner</text>
+<text transform="translate(538,538) rotate(-90)" font-size="37" style="fill:#e0b879">Relief</text>
+<text transform="translate(842,508)" font-size="37" style="fill:#9fc9c5">Proof</text>
+<text transform="translate(115,260) rotate(-90)" font-size="37" style="fill:#d6a79f">Visit</text>
+<text transform="translate(918,396)" font-size="37" style="fill:#a9b7a3">Listen</text>
+<text transform="translate(1220,446) rotate(-90)" font-size="37" style="fill:#d9c89e">Cost</text>
+<text transform="translate(247,130)" font-size="37" style="fill:#9fc9c5">Time</text>
+<text transform="translate(1269,712) rotate(-90)" font-size="37" style="fill:#d5d2c2">Whole</text>
+<text transform="translate(772,287)" font-size="37" style="fill:#8fb7d0">Narrative</text>
+<text transform="translate(1230,282) rotate(-90)" font-size="37" style="fill:#d9c89e">Real</text>
+<text transform="translate(1114,492)" font-size="34" style="fill:#c7d7b5">Patients</text>
+<text transform="translate(116,542)" font-size="34" style="fill:#d88988">Rushed</text>
+<text transform="translate(913,592)" font-size="33" style="fill:#d6a79f">Clinics</text>
+<text transform="translate(1073,198)" font-size="33" style="fill:#c7d7b5">Treated</text>
+<text transform="translate(646,117)" font-size="33" style="fill:#c7d7b5">Low</text>
+<text transform="translate(364,715)" font-size="32" style="fill:#b6c3dd">Mechanisms</text>
+<text transform="translate(1100,287)" font-size="32" style="fill:#d88988">Model</text>
+<text transform="translate(558,475)" font-size="27" style="fill:#d5d2c2">Concept</text>
+<text transform="translate(1222,706) rotate(-90)" font-size="27" style="fill:#d6a79f">False</text>
+<text transform="translate(774,27)" font-size="27" style="fill:#8fb7d0">Lesson</text>
+<text transform="translate(1205,134)" font-size="27" style="fill:#d9c89e">Full</text>
+<text transform="translate(327,616)" font-size="26" style="fill:#d6a79f">Response</text>
+<text transform="translate(624,201)" font-size="24" style="fill:#a9b7a3">Sneering</text>
+<text transform="translate(573,709)" font-size="17" style="fill:#d88988">Acronyms</text>
+<text transform="translate(506,343) rotate(-90)" font-size="17" style="fill:#b6c3dd">Used</text>
+<text transform="translate(134,424)" font-size="17" style="fill:#a9b7a3">AI</text>
+<text transform="translate(1051,672)" font-size="17" style="fill:#d6a79f">Artificial</text>
+<text transform="translate(45,358)" font-size="17" style="fill:#c7d7b5">Intelligence</text>
+<text transform="translate(119,273)" font-size="17" style="fill:#a9b7a3">EHR</text>
+<text transform="translate(216,155)" font-size="17" style="fill:#d9c89e">Electronic</text>
+<text transform="translate(218,286)" font-size="17" style="fill:#b6c3dd">Record</text>
+<text transform="translate(620,281) rotate(-90)" font-size="17" style="fill:#a9b7a3">Fast</text>
+<text transform="translate(727,655)" font-size="17" style="fill:#e0b879">Interoperability</text>
+<text transform="translate(371,171)" font-size="17" style="fill:#a9b7a3">Resources</text>
+<text transform="translate(380,19)" font-size="17" style="fill:#d6a79f">Exchanging</text>
+<text transform="translate(168,77)" font-size="17" style="fill:#9fc9c5">Seven</text>
+<text transform="translate(94,61)" font-size="17" style="fill:#c49a6c">Family</text>
+<text transform="translate(615,196) rotate(-90)" font-size="17" style="fill:#e0b879">Standards</text>
+<text transform="translate(884,477)" font-size="17" style="fill:#d9c89e">Glass</text>
+<text transform="translate(246,22)" font-size="17" style="fill:#c7d7b5">Strange</text>
+<text transform="translate(428,221)" font-size="17" style="fill:#d6a79f">Authority</text>
+<text transform="translate(527,231)" font-size="17" style="fill:#e0b879">Sit</text>
+<text transform="translate(528,248)" font-size="17" style="fill:#b6c3dd">Neat</text>
+<text transform="translate(417,637)" font-size="17" style="fill:#d88988">Rows</text>
+<text transform="translate(18,409) rotate(-90)" font-size="17" style="fill:#9fc9c5">Labelled</text>
+<text transform="translate(10,533)" font-size="17" style="fill:#9fc9c5">Latinish</text>
+<text transform="translate(666,707)" font-size="17" style="fill:#8fb7d0">Vocabulary</text>
+<text transform="translate(496,545) rotate(-90)" font-size="17" style="fill:#d88988">Harmlesslooking</text>
+<text transform="translate(303,665) rotate(-90)" font-size="17" style="fill:#9fc9c5">Order</text>
+<text transform="translate(1058,259)" font-size="17" style="fill:#d9c89e">Outside</text>
+<text transform="translate(28,110) rotate(-90)" font-size="17" style="fill:#9fc9c5">Pavement</text>
+<text transform="translate(1082,83)" font-size="17" style="fill:#d5d2c2">Broken</text>
+<text transform="translate(322,147)" font-size="17" style="fill:#e0b879">Shelves</text>
+<text transform="translate(744,202)" font-size="17" style="fill:#c7d7b5">Disciplined</text>
+<text transform="translate(1077,379)" font-size="17" style="fill:#c49a6c">Visual</text>
+<text transform="translate(663,18)" font-size="17" style="fill:#d9c89e">Discipline</text>
+<text transform="translate(68,16)" font-size="17" style="fill:#a9b7a3">Reason</text>
+<text transform="translate(1011,18)" font-size="17" style="fill:#b6c3dd">Looks</text>
+<text transform="translate(846,607)" font-size="17" style="fill:#d88988">Names</text>
+<text transform="translate(722,685)" font-size="17" style="fill:#d5d2c2">Rules</text>
+<text transform="translate(738,419)" font-size="17" style="fill:#c7d7b5">Rituals</text>
+<text transform="translate(943,668)" font-size="17" style="fill:#e0b879">Histories</text>
+<text transform="translate(1117,17)" font-size="17" style="fill:#a9b7a3">Practitioners</text>
+<text transform="translate(725,110)" font-size="17" style="fill:#c49a6c">Colleges</text>
+<text transform="translate(927,125)" font-size="15" style="fill:#e0b879">Prescriptions</text>
+<text transform="translate(141,159)" font-size="15" style="fill:#e0b879">Stories</text>
+<text transform="translate(1133,458)" font-size="15" style="fill:#d6a79f">Present</text>
+<text transform="translate(821,245)" font-size="15" style="fill:#c49a6c">Random</text>
+<text transform="translate(1010,188)" font-size="15" style="fill:#c49a6c">Hope</text>
+<text transform="translate(596,190) rotate(-90)" font-size="15" style="fill:#c7d7b5">Presents</text>
+<text transform="translate(302,288)" font-size="15" style="fill:#9fc9c5">Complete</text>
+<text transform="translate(94,41)" font-size="15" style="fill:#e0b879">Parallel</text>
+<text transform="translate(231,361)" font-size="15" style="fill:#d88988">Healing</text>
+<text transform="translate(1089,561)" font-size="15" style="fill:#b6c3dd">Internal</text>
+<text transform="translate(488,615)" font-size="15" style="fill:#d9c89e">Truth</text>
+<text transform="translate(131,241)" font-size="15" style="fill:#c7d7b5">Began</text>
+<text transform="translate(247,91)" font-size="15" style="fill:#d88988">Samuel</text>
+<text transform="translate(129,677)" font-size="15" style="fill:#e0b879">Hahnemann</text>
+<text transform="translate(840,530)" font-size="15" style="fill:#9fc9c5">Late</text>
+<text transform="translate(729,437)" font-size="15" style="fill:#d9c89e">Eighteenth</text>
+<text transform="translate(793,376)" font-size="15" style="fill:#d9c89e">Century</text>
+</svg>

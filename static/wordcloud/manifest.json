@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T22:35:41.815327+00:00",
+  "generatedAt": "2026-06-30T22:50:23.349994+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -875,6 +875,29 @@
       ],
       "wordCount": 130
     },
+    "find-study-diabetes-kidney-family-tree": {
+      "generatedAt": "2026-06-30T22:50:18.091994+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/find-study-diabetes-kidney-family-tree.svg",
+      "source": "src/lib/posts/find-study-diabetes-kidney-family-tree.md",
+      "sourceHash": "0a711c7d464adc089ab347e31247b245d2e0a7aef4cb3827af1dfee7b900baa5",
+      "sourceModified": "2026-06-30T22:49:24.433926+00:00",
+      "topWords": [
+        "Family",
+        "Kidney",
+        "Diabetes",
+        "Disease",
+        "Study",
+        "Means",
+        "FIND",
+        "History",
+        "Question",
+        "Families",
+        "Risk",
+        "Clinical"
+      ],
+      "wordCount": 130
+    },
     "first-principles-thinking-calcutta-healthcare-it": {
       "generatedAt": "2026-06-30T22:35:38.976746+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1013,6 +1036,29 @@
       ],
       "wordCount": 130
     },
+    "homeopathy-pseudoscience-persistence": {
+      "generatedAt": "2026-06-30T22:50:18.858990+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/homeopathy-pseudoscience-persistence.svg",
+      "source": "src/lib/posts/homeopathy-pseudoscience-persistence.md",
+      "sourceHash": "56db7b1a1c3e7cd271b98dc11f954c82565af5968d726aa9c442eb4eeafc3381",
+      "sourceModified": "2026-06-30T22:49:24.440603+00:00",
+      "topWords": [
+        "Homeopathy",
+        "Healthcare",
+        "Means",
+        "Health",
+        "Evidence",
+        "Substance",
+        "Long",
+        "Survive",
+        "Systems",
+        "Data",
+        "System",
+        "Patient"
+      ],
+      "wordCount": 130
+    },
     "hormuz-lpg-shortage-indian-cooking-choices": {
       "generatedAt": "2026-06-30T22:35:41.016778+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1102,6 +1148,52 @@
         "Tiffin",
         "Face",
         "Time"
+      ],
+      "wordCount": 130
+    },
+    "india-ai-market-darling-boondocks-dragon": {
+      "generatedAt": "2026-06-30T22:50:19.625658+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-ai-market-darling-boondocks-dragon.svg",
+      "source": "src/lib/posts/india-ai-market-darling-boondocks-dragon.md",
+      "sourceHash": "1a63e598f925281f022299868f62c80f06fbd59bed2efefcf64208617a830e55",
+      "sourceModified": "2026-06-30T22:49:24.441599+00:00",
+      "topWords": [
+        "India",
+        "Means",
+        "AI",
+        "Machine",
+        "Research",
+        "Begins",
+        "Market",
+        "Manufacturing",
+        "Global",
+        "Money",
+        "Depth",
+        "Ask"
+      ],
+      "wordCount": 130
+    },
+    "intro": {
+      "generatedAt": "2026-06-30T22:50:20.325589+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/intro.svg",
+      "source": "src/lib/posts/intro.md",
+      "sourceHash": "8c83507c85be77332ef4ce9be102cdcff30eb8592c5402bd8742411ca6d755ec",
+      "sourceModified": "2026-06-30T22:49:24.441599+00:00",
+      "topWords": [
+        "Means",
+        "Work",
+        "Language",
+        "SQL",
+        "Systems",
+        "Translation",
+        "System",
+        "Data",
+        "Clinical",
+        "Databases",
+        "Research",
+        "AI"
       ],
       "wordCount": 130
     },
@@ -1217,6 +1309,52 @@
         "Face",
         "Saw",
         "Tea"
+      ],
+      "wordCount": 130
+    },
+    "lake-maracaibo-lightning-gene-hunt": {
+      "generatedAt": "2026-06-30T22:50:21.103697+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/lake-maracaibo-lightning-gene-hunt.svg",
+      "source": "src/lib/posts/lake-maracaibo-lightning-gene-hunt.md",
+      "sourceHash": "4f2e97c9618e73a0b96aef90eca043770d133bd45e1f9cea5cd771bb071e45f5",
+      "sourceModified": "2026-06-30T22:49:24.442595+00:00",
+      "topWords": [
+        "Disease",
+        "Huntington",
+        "Gene",
+        "Pattern",
+        "Families",
+        "CAG",
+        "Means",
+        "Repeat",
+        "Lake",
+        "Maracaibo",
+        "Time",
+        "Researchers"
+      ],
+      "wordCount": 130
+    },
+    "large-common-insects-and-arachnids-in-urban-calcutta": {
+      "generatedAt": "2026-06-30T22:50:21.848095+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/large-common-insects-and-arachnids-in-urban-calcutta.svg",
+      "source": "src/lib/posts/large-common-insects-and-arachnids-in-urban-calcutta.md",
+      "sourceHash": "a7fbc99084aca716a56fea85fceabfd7213f8b119028f543a4b7d1145a085637",
+      "sourceModified": "2026-06-30T22:49:24.443819+00:00",
+      "topWords": [
+        "Food",
+        "Spiders",
+        "Small",
+        "Water",
+        "Damp",
+        "Less",
+        "Drains",
+        "Wood",
+        "Pest",
+        "Management",
+        "Aedes",
+        "Rain"
       ],
       "wordCount": 130
     },
@@ -1358,6 +1496,29 @@
       ],
       "wordCount": 130
     },
+    "mind-as-emergence-not-magic": {
+      "generatedAt": "2026-06-30T22:50:22.503707+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mind-as-emergence-not-magic.svg",
+      "source": "src/lib/posts/mind-as-emergence-not-magic.md",
+      "sourceHash": "0a2a387749370490f76bb80837963ee2dcf2b975f96daef17ad3165fbd5fffb8",
+      "sourceModified": "2026-06-30T22:49:24.444815+00:00",
+      "topWords": [
+        "Brain",
+        "Mind",
+        "Means",
+        "Activity",
+        "Different",
+        "System",
+        "Street",
+        "Language",
+        "Real",
+        "World",
+        "AI",
+        "Electrical"
+      ],
+      "wordCount": 130
+    },
     "moon-without-skin": {
       "generatedAt": "2026-06-30T21:05:33.809543+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1378,6 +1539,29 @@
         "Near",
         "Man",
         "Face"
+      ],
+      "wordCount": 130
+    },
+    "newtons-first-law-and-the-bladder": {
+      "generatedAt": "2026-06-30T22:50:23.236665+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/newtons-first-law-and-the-bladder.svg",
+      "source": "src/lib/posts/newtons-first-law-and-the-bladder.md",
+      "sourceHash": "6614568ef9d35fe0ad30f51939d6fce884f9ea2bab1fa58bfc3c3e5fc0fa181b",
+      "sourceModified": "2026-06-30T22:49:24.445812+00:00",
+      "topWords": [
+        "First",
+        "Force",
+        "Bed",
+        "Small",
+        "Floor",
+        "Feet",
+        "Mornings",
+        "REST",
+        "Person",
+        "Motion",
+        "Move",
+        "Energy"
       ],
       "wordCount": 130
     },
