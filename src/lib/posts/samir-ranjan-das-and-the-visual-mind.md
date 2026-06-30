@@ -13,17 +13,13 @@ color: "indigo"
 
 <Pi src="Compress_20260516_202547_7320.jpg" />
 
-Acronyms used: PhD means Doctor of Philosophy, the highest university research degree. US means United States, where many Indian scientists, engineers, and professors build long careers. OPNET means Optimized Network Engineering Tools, a simulation platform once used for modeling communication networks. AI means Artificial Intelligence, software that performs tasks associated with reasoning, language, prediction, and pattern recognition. Gini index means a statistical measure of inequality, where a higher number usually means a more unequal society.
-
----
-
 Some teachers do not explain the world to you. They quietly loosen one screw in your head, and twenty-five years later the whole machine begins making a different sound.
 
 I remembered my PhD advisor yesterday. Dr. Samir Ranjan Das. He was once my go-to person in that fragile, nervous, immigrant-student way: not a guru on a tiger skin, not a motivational wall calendar, but a serious mind nearby when the fog came down. I still respect him deeply. That matters. Respect, after fifty, becomes rarer than good fish in a late evening market. Most things by then have been handled too much, priced wrongly, and left under a weak bulb.
 
 He lives in the US. I am glad he does.
 
-That may sound odd, because we Bengalis have a theatrical attachment to return. Come back, we say. Serve the land. Build the nation. Eat muri, argue about Tagore, and die slowly under a leaking ceiling while someone’s cousin blocks your file. Bengal has a remarkable talent for losing its brilliant minds and then behaving as if the loss were an unfortunate weather condition. Ah, the monsoon came. Ah, the professor left. Ah, the drain overflowed. What can one do?
+That may sound odd, because we Bengalis have a theatrical attachment to return. Come back, we say. Serve the land. Build the nation. Eat muri, argue about Tagore, and die slowly under a leaking ceiling while someone's cousin blocks your file. Bengal has a remarkable talent for losing its brilliant minds and then behaving as if the loss were an unfortunate weather condition. Ah, the monsoon came. Ah, the professor left. Ah, the drain overflowed. What can one do?
 
 Quite a lot, actually.
 
@@ -65,9 +61,9 @@ That matters even more now because AI has entered the room wearing a nice suit a
 
 A black box is not made less black because it speaks politely.
 
-This is where the memory of Samirda returns. The next few decades will need people like him. Not influencers. Not panelists. Not professional visionaries who say “disruption” with the seriousness of a man announcing a cyclone. We will need serious minds with technical depth, moral impatience, and the ability to detect nonsense before it becomes a government scheme, a corporate platform, or a university brochure.
+This is where the memory of Samirda returns. The next few decades will need people like him. Not influencers. Not panelists. Not professional visionaries who say "disruption" with the seriousness of a man announcing a cyclone. We will need serious minds with technical depth, moral impatience, and the ability to detect nonsense before it becomes a government scheme, a corporate platform, or a university brochure.
 
-Unfortunately, academia often cuffs such minds. A professor should be a live wire. Too often the system turns him into a form-filling mammal. Grants, committees, administrative rituals, performance metrics, ranking games, polite frauds. The mind that could help shape a country is made to attend meetings where everyone says “stakeholder” and nobody risks a thought.
+Unfortunately, academia often cuffs such minds. A professor should be a live wire. Too often the system turns him into a form-filling mammal. Grants, committees, administrative rituals, performance metrics, ranking games, polite frauds. The mind that could help shape a country is made to attend meetings where everyone says "stakeholder" and nobody risks a thought.
 
 Meanwhile the world is being steered by brawn and bluster. India is not unique in this. We should not flatter ourselves even in failure. Everywhere, money has grown muscles. Noise has grown wings. Mediocrity has discovered branding. And now AI arrives, not as a neutral angel, but as a machine entering an already unequal room.
 
@@ -81,7 +77,7 @@ This is not self-pity. Self-pity is too luxurious. This is inventory.
 
 And yet, strange as it sounds, gratitude survives.
 
-I remember Dr. Samir Ranjan Das not because he solved my life. Nobody does that. Lives are not equations, and anyone who claims to solve them is usually selling a course. I remember him because he helped awaken a form of curiosity that remained mine through failure, detour, illness, return, unemployment, consulting scraps, and the long unglamorous business of trying to keep one’s mind from rusting.
+I remember Dr. Samir Ranjan Das not because he solved my life. Nobody does that. Lives are not equations, and anyone who claims to solve them is usually selling a course. I remember him because he helped awaken a form of curiosity that remained mine through failure, detour, illness, return, unemployment, consulting scraps, and the long unglamorous business of trying to keep one's mind from rusting.
 
 That is not a small thing.
 
@@ -93,6 +89,6 @@ The mosquito will hum.
 
 The machine will think.
 
-And somewhere, if we are lucky, one good teacher will still open one small door in one confused student’s head.
+And somewhere, if we are lucky, one good teacher will still open one small door in one confused student's head.
 
 P.S. Dr. Samir R. Das is Professor and Chair of Computer Science at Stony Brook University, part of the State University of New York system. His work is in mobile and wireless networking, especially protocols, systems, and performance evaluation. He earned his PhD in Computer Science from Georgia Institute of Technology, after earlier studies at Jadavpur University in Kolkata and the Indian Institute of Science in Bangalore, and worked briefly at Indian Statistical Institute. Before Stony Brook, he held faculty positions at the University of Texas at San Antonio and the University of Cincinnati. He directs the Wireless Networking and Systems Lab, known as WINGS, and is one of the authors of RFC 3561, the Ad hoc On-Demand Distance Vector routing protocol for mobile ad hoc networks. His public Stony Brook profile also notes his NSF CAREER Award, ACM MobiSys Best Paper Award, IEEE Computer Society Distinguished Visitor role, major editorial service, and leadership in premier mobile networking conferences.
