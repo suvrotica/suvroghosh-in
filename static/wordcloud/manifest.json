@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T07:03:15.778584+00:00",
+  "generatedAt": "2026-07-01T07:30:55.153057+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -1358,6 +1358,29 @@
       ],
       "wordCount": 130
     },
+    "india-ai-it-bpo-white-collar-jobs": {
+      "generatedAt": "2026-07-01T07:30:36.620667+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-ai-it-bpo-white-collar-jobs.svg",
+      "source": "src/lib/posts/india-ai-it-bpo-white-collar-jobs.md",
+      "sourceHash": "46a2d2cd6c1e957ad7598baac4198965fef764f247480025b9df7d2912d14727",
+      "sourceModified": "2026-07-01T07:28:40.057689+00:00",
+      "topWords": [
+        "AI",
+        "Work",
+        "Enough",
+        "Means",
+        "Process",
+        "Operations",
+        "Model",
+        "Labor",
+        "India",
+        "Firms",
+        "Product",
+        "Risk"
+      ],
+      "wordCount": 130
+    },
     "india-ai-market-darling-boondocks-dragon": {
       "generatedAt": "2026-06-30T22:50:19.625658+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1401,6 +1424,52 @@
         "Databases",
         "Research",
         "AI"
+      ],
+      "wordCount": 130
+    },
+    "jogar-jugaad-and-the-greedy-improvisation-of-india": {
+      "generatedAt": "2026-07-01T07:30:38.331746+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/jogar-jugaad-and-the-greedy-improvisation-of-india.svg",
+      "source": "src/lib/posts/jogar-jugaad-and-the-greedy-improvisation-of-india.md",
+      "sourceHash": "2a37265a7c4ee72c8a71683bace39dd596bb16f6e4c4d6faab302f2f768a1fc8",
+      "sourceModified": "2026-07-01T07:28:40.059701+00:00",
+      "topWords": [
+        "Becomes",
+        "Jugaad",
+        "System",
+        "Person",
+        "Whether",
+        "Merely",
+        "Means",
+        "Often",
+        "Systems",
+        "Household",
+        "Practical",
+        "Improvisation"
+      ],
+      "wordCount": 130
+    },
+    "k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink": {
+      "generatedAt": "2026-07-01T07:30:40.320443+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.svg",
+      "source": "src/lib/posts/k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.md",
+      "sourceHash": "e9ddbb9d45c7d57cfe1306f4b7f7dbc7e9d881d777c2ed5d718f7eb5237249b5",
+      "sourceModified": "2026-07-01T07:28:40.062051+00:00",
+      "topWords": [
+        "Economy",
+        "Class",
+        "India",
+        "Better",
+        "Private",
+        "Less",
+        "Public",
+        "Asset",
+        "Rise",
+        "Money",
+        "Debt",
+        "Versus"
       ],
       "wordCount": 130
     },
@@ -1749,6 +1818,29 @@
       ],
       "wordCount": 130
     },
+    "natural-selection-across-timescales": {
+      "generatedAt": "2026-07-01T07:30:42.598228+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/natural-selection-across-timescales.svg",
+      "source": "src/lib/posts/natural-selection-across-timescales.md",
+      "sourceHash": "ba1dd2d42abd660a1225ee46dac14d7c98c7059d4742d5838ee806d30a94ab10",
+      "sourceModified": "2026-07-01T07:28:40.066777+00:00",
+      "topWords": [
+        "Selection",
+        "Select",
+        "Selected",
+        "Means",
+        "Forms",
+        "Fit",
+        "Data",
+        "Systems",
+        "Survives",
+        "Conditions",
+        "World",
+        "Design"
+      ],
+      "wordCount": 130
+    },
     "newtons-first-law-and-the-bladder": {
       "generatedAt": "2026-06-30T22:50:23.236665+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1818,6 +1910,29 @@
       ],
       "wordCount": 130
     },
+    "plague-of-pseudoscience-india-scientific-temper": {
+      "generatedAt": "2026-07-01T07:30:44.509313+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/plague-of-pseudoscience-india-scientific-temper.svg",
+      "source": "src/lib/posts/plague-of-pseudoscience-india-scientific-temper.md",
+      "sourceHash": "403f92ef05b278ee68bcbf75c95e74926c889d9d579bf7e0b8e36171335b8ae5",
+      "sourceModified": "2026-07-01T07:28:40.070165+00:00",
+      "topWords": [
+        "Science",
+        "Build",
+        "Means",
+        "India",
+        "Becomes",
+        "Research",
+        "Public",
+        "Evidence",
+        "Say",
+        "Scientific",
+        "Teach",
+        "Work"
+      ],
+      "wordCount": 130
+    },
     "pohela-baisakh-mughal-calendar-memory": {
       "generatedAt": "2026-06-30T23:05:22.836096+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1861,6 +1976,29 @@
         "Safety",
         "Language",
         "Model"
+      ],
+      "wordCount": 130
+    },
+    "prognosis-as-philosophy": {
+      "generatedAt": "2026-07-01T07:30:46.453809+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/prognosis-as-philosophy.svg",
+      "source": "src/lib/posts/prognosis-as-philosophy.md",
+      "sourceHash": "c990e2fbbd33d7f43a550e3152aca500d405ca07e98931428a33f26f1f0cd79a",
+      "sourceModified": "2026-07-01T07:28:40.075266+00:00",
+      "topWords": [
+        "Bitterness",
+        "Person",
+        "Trick",
+        "Schopenhauer",
+        "Desire",
+        "Young",
+        "Often",
+        "World",
+        "Wisdom",
+        "Happiness",
+        "First",
+        "Suffering"
       ],
       "wordCount": 130
     },
@@ -2876,6 +3014,29 @@
       ],
       "wordCount": 130
     },
+    "the-ghost-as-perception": {
+      "generatedAt": "2026-07-01T07:30:49.153790+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-ghost-as-perception.svg",
+      "source": "src/lib/posts/the-ghost-as-perception.md",
+      "sourceHash": "449e83ddc1c1ac74005ea0e803a217acd3ca7af402d0e0dc3c13c881914d8660",
+      "sourceModified": "2026-07-01T07:28:40.075266+00:00",
+      "topWords": [
+        "Ghost",
+        "Person",
+        "Perception",
+        "Figure",
+        "Mind",
+        "Human",
+        "Memory",
+        "Living",
+        "Time",
+        "Ordinary",
+        "Fear",
+        "Face"
+      ],
+      "wordCount": 130
+    },
     "the-good-boy-hunger": {
       "generatedAt": "2026-06-30T21:06:43.926831+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3727,6 +3888,29 @@
       ],
       "wordCount": 130
     },
+    "the-useful-box-and-the-bengali-problem-of-too-many-choices": {
+      "generatedAt": "2026-07-01T07:30:51.488974+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-useful-box-and-the-bengali-problem-of-too-many-choices.svg",
+      "source": "src/lib/posts/the-useful-box-and-the-bengali-problem-of-too-many-choices.md",
+      "sourceHash": "3bc7b5f0eb81cb1c3f2e15eed496f873cb2ff40b09aa052cd9a2a92a336f0366",
+      "sourceModified": "2026-07-01T07:28:40.070165+00:00",
+      "topWords": [
+        "Constraint",
+        "Means",
+        "Often",
+        "Useful",
+        "Bottleneck",
+        "System",
+        "Data",
+        "Work",
+        "Every",
+        "Healthcare",
+        "Better",
+        "Problem"
+      ],
+      "wordCount": 130
+    },
     "the-voice-under-the-loudspeaker": {
       "generatedAt": "2026-06-30T21:07:45.729279+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4279,6 +4463,29 @@
       ],
       "wordCount": 130
     },
+    "what-india-meant-by-demonetization-and-where-we-are": {
+      "generatedAt": "2026-07-01T07:30:53.457393+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/what-india-meant-by-demonetization-and-where-we-are.svg",
+      "source": "src/lib/posts/what-india-meant-by-demonetization-and-where-we-are.md",
+      "sourceHash": "87b04683e4ef059a89348fa7174d05f9192cc7e2a7d8560f401a0d35f43876ca",
+      "sourceModified": "2026-07-01T07:28:40.064059+00:00",
+      "topWords": [
+        "India",
+        "Cash",
+        "Payment",
+        "UPI",
+        "Demonetization",
+        "Economy",
+        "Money",
+        "Helpless",
+        "Digital",
+        "Real",
+        "Never",
+        "Less"
+      ],
+      "wordCount": 130
+    },
     "why-i-stopped-apologizing-for-my-life": {
       "generatedAt": "2026-06-30T21:08:25.116872+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4322,6 +4529,29 @@
         "System",
         "Whether",
         "Clinical"
+      ],
+      "wordCount": 130
+    },
+    "world-yoga-day-summer-solstice-2026": {
+      "generatedAt": "2026-07-01T07:30:55.133844+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/world-yoga-day-summer-solstice-2026.svg",
+      "source": "src/lib/posts/world-yoga-day-summer-solstice-2026.md",
+      "sourceHash": "77095609b6d481f10fdb0ac6c37ff5ecd961f43b1278f347285f13c89cf7108d",
+      "sourceModified": "2026-07-01T07:28:40.070165+00:00",
+      "topWords": [
+        "Yoga",
+        "Sun",
+        "Solstice",
+        "International",
+        "Earth",
+        "June",
+        "Light",
+        "Tilt",
+        "Means",
+        "Astronomy",
+        "Sky",
+        "Event"
       ],
       "wordCount": 130
     },
