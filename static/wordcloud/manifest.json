@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T07:30:55.153057+00:00",
+  "generatedAt": "2026-07-01T07:43:53.408103+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -113,6 +113,29 @@
         "Horn",
         "Smell",
         "Fish"
+      ],
+      "wordCount": 130
+    },
+    "antibiotics_c_diff_india_hidden_harm": {
+      "generatedAt": "2026-07-01T07:43:48.985007+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/antibiotics_c_diff_india_hidden_harm.svg",
+      "source": "src/lib/posts/antibiotics_c_diff_india_hidden_harm.md",
+      "sourceHash": "41c78742fbf098f11cf4cfa55083fefc05813be88c3e4ed89a42a0bfd3e966bd",
+      "sourceModified": "2026-07-01T07:42:42.424084+00:00",
+      "topWords": [
+        "Antibiotic",
+        "Patient",
+        "Antibiotics",
+        "Patients",
+        "Prescription",
+        "Diff",
+        "Serious",
+        "Clinic",
+        "Family",
+        "Doctor",
+        "Drug",
+        "Use"
       ],
       "wordCount": 130
     },
@@ -1864,6 +1887,29 @@
       ],
       "wordCount": 130
     },
+    "nightmare-of-indian-healthcare": {
+      "generatedAt": "2026-07-01T07:43:51.307849+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/nightmare-of-indian-healthcare.svg",
+      "source": "src/lib/posts/nightmare-of-indian-healthcare.md",
+      "sourceHash": "34ccb3d1ce6187004328fdb4bfb670069c00ec4477edd0162844e8a197661e0b",
+      "sourceModified": "2026-07-01T07:42:42.431278+00:00",
+      "topWords": [
+        "Patient",
+        "Care",
+        "Private",
+        "Public",
+        "Health",
+        "System",
+        "Healthcare",
+        "First",
+        "Hospital",
+        "Family",
+        "India",
+        "Hospitals"
+      ],
+      "wordCount": 130
+    },
     "north-facing-room": {
       "generatedAt": "2026-06-30T21:05:35.616665+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1999,6 +2045,29 @@
         "Happiness",
         "First",
         "Suffering"
+      ],
+      "wordCount": 130
+    },
+    "propofol-dream-recall-nightmares": {
+      "generatedAt": "2026-07-01T07:43:53.098774+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/propofol-dream-recall-nightmares.svg",
+      "source": "src/lib/posts/propofol-dream-recall-nightmares.md",
+      "sourceHash": "99228483108f833a6c6cccf3b8de31a419c09148cd5779d810e341749849fc2b",
+      "sourceModified": "2026-07-01T07:42:42.434532+00:00",
+      "topWords": [
+        "Dream",
+        "Propofol",
+        "Whether",
+        "Emergence",
+        "Patient",
+        "Carefully",
+        "Research",
+        "Anesthesia",
+        "Memory",
+        "Person",
+        "Recall",
+        "Experience"
       ],
       "wordCount": 130
     },
