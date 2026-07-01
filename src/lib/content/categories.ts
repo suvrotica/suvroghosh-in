@@ -55,6 +55,7 @@ export const categoryLabels: Record<string, string> = {
 	neuroscience: 'Neuroscience',
 	psychology: 'Psychology',
 	'personal-science': 'Personal Science',
+	'personal-essay': 'Personal Essay',
 	'mental-health-systems': 'Mental Health Systems',
 	'work-migration-india': 'Work, Migration, India',
 	'personal-reflections': 'Personal Reflections',
