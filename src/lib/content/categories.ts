@@ -7,6 +7,7 @@ export const categoryLabels: Record<string, string> = {
 	health: 'Health',
 	healthcare: 'Healthcare',
 	ai: 'AI',
+	'artificial-intelligence': 'Artificial Intelligence',
 	'ai-music-song': 'AI Music Song',
 	'ai-and-society': 'AI and Society',
 	'ai-economy': 'AI Economy',

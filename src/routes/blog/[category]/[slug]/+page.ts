@@ -13,8 +13,17 @@ import {
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 import { validatePublishedPostMetadata, postPath, type BlogPostMetadata } from '$lib/content/posts';
 
+const postPathAliases: Record<string, string> = {
+	'artificial-intelligence/ai-meaningful-work-and-the-trust-collapse':
+		'/blog/artificial-intelligence/ai-meaningful-work-trust-collapse'
+};
+
 export const load: PageLoad = async ({ params }) => {
 	const { category, slug } = params;
+	const aliasPath = postPathAliases[`${slugifyCategory(category)}/${slug}`];
+	if (aliasPath) {
+		redirect(308, aliasPath);
+	}
 
 	try {
 		const post = await import(`../../../../../src/lib/posts/${slug}.md`);
