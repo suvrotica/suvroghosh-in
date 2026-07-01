@@ -36,9 +36,12 @@ export const categoryLabels: Record<string, string> = {
 	'political-economy': 'Political Economy',
 	'natural-history': 'Natural History',
 	neuroscience: 'Neuroscience',
+	psychology: 'Psychology',
 	'personal-science': 'Personal Science',
+	'mental-health-systems': 'Mental Health Systems',
 	'work-migration-india': 'Work, Migration, India',
 	'personal-reflections': 'Personal Reflections',
+	'personal-satire': 'Personal Satire',
 	thinking: 'Thinking',
 	'art-history': 'Art History'
 };

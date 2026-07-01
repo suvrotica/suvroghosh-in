@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T23:05:30.628209+00:00",
+  "generatedAt": "2026-07-01T06:44:14.690264+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -645,6 +645,52 @@
       ],
       "wordCount": 130
     },
+    "courage-to-be-disliked-in-calcutta": {
+      "generatedAt": "2026-07-01T06:44:07.026773+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/courage-to-be-disliked-in-calcutta.svg",
+      "source": "src/lib/posts/courage-to-be-disliked-in-calcutta.md",
+      "sourceHash": "e5611a0c4a155026fcb05e500ea06064edc54995ffe5d9383f52f629287b6cfd",
+      "sourceModified": "2026-07-01T06:42:43.923380+00:00",
+      "topWords": [
+        "Person",
+        "Call",
+        "Every",
+        "Keep",
+        "Task",
+        "Public",
+        "Perhaps",
+        "System",
+        "Begin",
+        "Weather",
+        "Little",
+        "Small"
+      ],
+      "wordCount": 130
+    },
+    "depression-as-mathematics": {
+      "generatedAt": "2026-07-01T06:44:09.030564+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/depression-as-mathematics.svg",
+      "source": "src/lib/posts/depression-as-mathematics.md",
+      "sourceHash": "adfa1627db2e87d780db4417612a3fe58b78294d4817c2de118c8f477b80eaad",
+      "sourceModified": "2026-07-01T06:42:43.923380+00:00",
+      "topWords": [
+        "Mood",
+        "System",
+        "Person",
+        "Sleep",
+        "State",
+        "Low",
+        "Means",
+        "Energy",
+        "Rumination",
+        "Stress",
+        "Threshold",
+        "Ordinary"
+      ],
+      "wordCount": 130
+    },
     "do-not-let-it-wake-facing-the-city": {
       "generatedAt": "2026-06-30T21:04:55.948028+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1079,6 +1125,29 @@
         "Food",
         "Energy",
         "Pressure"
+      ],
+      "wordCount": 130
+    },
+    "how-are-you-and-other-small-cruelties": {
+      "generatedAt": "2026-07-01T06:44:11.227427+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/how-are-you-and-other-small-cruelties.svg",
+      "source": "src/lib/posts/how-are-you-and-other-small-cruelties.md",
+      "sourceHash": "bc8c1e774dec83315c943a298ddb9768d5aaad17ee67aae7050e62276f020d6e",
+      "sourceModified": "2026-07-01T06:42:43.923380+00:00",
+      "topWords": [
+        "Fine",
+        "Question",
+        "Produce",
+        "Answer",
+        "Say",
+        "Means",
+        "Asks",
+        "Private",
+        "Honesty",
+        "Small",
+        "Yes",
+        "Asking"
       ],
       "wordCount": 130
     },
