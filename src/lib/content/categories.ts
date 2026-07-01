@@ -14,6 +14,7 @@ export const categoryLabels: Record<string, string> = {
 	'ai-safety': 'AI Safety',
 	'ai-security': 'AI Security',
 	cybersecurity: 'Cybersecurity',
+	calcutta: 'Calcutta',
 	'calcutta-life': 'Calcutta Life',
 	'audio-technology': 'Audio Technology',
 	culture: 'Culture',

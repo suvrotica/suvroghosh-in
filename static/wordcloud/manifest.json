@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T12:11:49.676344+00:00",
+  "generatedAt": "2026-07-01T12:21:50.040955+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -251,6 +251,29 @@
         "Horn",
         "Smell",
         "Fish"
+      ],
+      "wordCount": 130
+    },
+    "annoyed-shouldering-the-chips-calcutta-public-transport": {
+      "generatedAt": "2026-07-01T12:21:45.583207+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/annoyed-shouldering-the-chips-calcutta-public-transport.svg",
+      "source": "src/lib/posts/annoyed-shouldering-the-chips-calcutta-public-transport.md",
+      "sourceHash": "009ec13bed044ace4ae6c76075239b87b7d8d240d3124e1fb6c6ff80ae7af63b",
+      "sourceModified": "2026-07-01T12:21:04.477106+00:00",
+      "topWords": [
+        "Better",
+        "Someone",
+        "Watch",
+        "Bus",
+        "Whether",
+        "Teaches",
+        "Adjust",
+        "Conductor",
+        "Public",
+        "Heat",
+        "Road",
+        "Driver"
       ],
       "wordCount": 130
     },
@@ -553,6 +576,29 @@
       ],
       "wordCount": 130
     },
+    "body-going-to-plan": {
+      "generatedAt": "2026-07-01T12:21:46.302491+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/body-going-to-plan.svg",
+      "source": "src/lib/posts/body-going-to-plan.md",
+      "sourceHash": "3b3aa16febd826283d7a44abdef3b88a301b2f7d6e2bc96ec1d17fb128185829",
+      "sourceModified": "2026-07-01T12:21:04.479172+00:00",
+      "topWords": [
+        "System",
+        "World",
+        "Whether",
+        "Room",
+        "Modern",
+        "Work",
+        "Becomes",
+        "Update",
+        "Phone",
+        "Tea",
+        "Nervous",
+        "Danger"
+      ],
+      "wordCount": 130
+    },
     "body-rent": {
       "generatedAt": "2026-06-30T21:04:41.559161+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -760,6 +806,29 @@
       ],
       "wordCount": 130
     },
+    "calcutta-tea-stall-evening-adda": {
+      "generatedAt": "2026-07-01T12:21:47.015423+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-tea-stall-evening-adda.svg",
+      "source": "src/lib/posts/calcutta-tea-stall-evening-adda.md",
+      "sourceHash": "e7222d6462992a5e31ef96c242fa66b9e13b2389efc85c6c396fe4eea539636a",
+      "sourceModified": "2026-07-01T12:21:04.480506+00:00",
+      "topWords": [
+        "Tea",
+        "Fear",
+        "Someone",
+        "Men",
+        "Stall",
+        "Whether",
+        "Cup",
+        "Nobody",
+        "Evening",
+        "Lane",
+        "Whole",
+        "Damp"
+      ],
+      "wordCount": 130
+    },
     "callous-political-statements-gold-karigars-and-fertiliser": {
       "generatedAt": "2026-07-01T07:03:01.327020+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -872,6 +941,29 @@
         "Asked",
         "Home",
         "Don"
+      ],
+      "wordCount": 130
+    },
+    "classification-and-variety-of-rotting-people-in-calcutta": {
+      "generatedAt": "2026-07-01T12:21:47.687310+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/classification-and-variety-of-rotting-people-in-calcutta.svg",
+      "source": "src/lib/posts/classification-and-variety-of-rotting-people-in-calcutta.md",
+      "sourceHash": "e4bad0ab133199b49570fb9857b4eb7f535143d3c1effe773366d1b4b661dfd8",
+      "sourceModified": "2026-07-01T12:21:04.481503+00:00",
+      "topWords": [
+        "Rot",
+        "Broken",
+        "Everyone",
+        "Person",
+        "Becomes",
+        "Enough",
+        "Public",
+        "Often",
+        "Benefits",
+        "Smell",
+        "Cupboards",
+        "Exist"
       ],
       "wordCount": 130
     },
@@ -2324,6 +2416,29 @@
       ],
       "wordCount": 130
     },
+    "mindfulness-calcutta-4am": {
+      "generatedAt": "2026-07-01T12:21:48.515935+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mindfulness-calcutta-4am.svg",
+      "source": "src/lib/posts/mindfulness-calcutta-4am.md",
+      "sourceHash": "7d875bac9030403bd4a0dfa40b618e44baec74d85549bde6bb8fd3230b48b94c",
+      "sourceModified": "2026-07-01T12:21:04.482662+00:00",
+      "topWords": [
+        "Enough",
+        "Sit",
+        "Someone",
+        "Breath",
+        "Mind",
+        "Need",
+        "Writing",
+        "Sometimes",
+        "Tea",
+        "Becomes",
+        "Phone",
+        "Commentary"
+      ],
+      "wordCount": 130
+    },
     "moon-without-skin": {
       "generatedAt": "2026-06-30T21:05:33.809543+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3172,6 +3287,29 @@
         "Cheap",
         "Dog",
         "Child"
+      ],
+      "wordCount": 130
+    },
+    "the-aromatics-of-stagnation": {
+      "generatedAt": "2026-07-01T12:21:49.265123+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-aromatics-of-stagnation.svg",
+      "source": "src/lib/posts/the-aromatics-of-stagnation.md",
+      "sourceHash": "85a7f8f0d32d623289c40832054b40a52e7c4222a2a067fca38ef36ba3b67f33",
+      "sourceModified": "2026-07-01T12:21:04.483758+00:00",
+      "topWords": [
+        "Soap",
+        "Work",
+        "Becomes",
+        "Room",
+        "Often",
+        "Tap",
+        "Small",
+        "Person",
+        "Someone",
+        "Many",
+        "Water",
+        "Irritation"
       ],
       "wordCount": 130
     },
@@ -4713,6 +4851,29 @@
         "Water",
         "Near",
         "Wet"
+      ],
+      "wordCount": 130
+    },
+    "the-zeitgeist-of-calcutta-has-changed": {
+      "generatedAt": "2026-07-01T12:21:50.001103+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-zeitgeist-of-calcutta-has-changed.svg",
+      "source": "src/lib/posts/the-zeitgeist-of-calcutta-has-changed.md",
+      "sourceHash": "2bbaa113438e445e3b4f174412d3581433783bfe7cc95507ca891adf0cc9a5d8",
+      "sourceModified": "2026-07-01T12:21:04.484623+00:00",
+      "topWords": [
+        "Someone",
+        "Becomes",
+        "Audience",
+        "Human",
+        "Private",
+        "Public",
+        "Often",
+        "Wants",
+        "Now",
+        "Small",
+        "Defeated",
+        "Smell"
       ],
       "wordCount": 130
     },
