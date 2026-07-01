@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T12:21:50.040955+00:00",
+  "generatedAt": "2026-07-01T12:36:58.958386+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -1036,6 +1036,29 @@
       ],
       "wordCount": 130
     },
+    "cockroach-janta-party-and-the-politics-of-being-insulted": {
+      "generatedAt": "2026-07-01T12:36:53.735975+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/cockroach-janta-party-and-the-politics-of-being-insulted.svg",
+      "source": "src/lib/posts/cockroach-janta-party-and-the-politics-of-being-insulted.md",
+      "sourceHash": "cd5d8baa987ad10a2160eacd3229708cc525932827652d2b2c0b3a77ca1561da",
+      "sourceModified": "2026-07-01T12:36:06.581000+00:00",
+      "topWords": [
+        "Symbol",
+        "Young",
+        "Political",
+        "Party",
+        "Insult",
+        "Already",
+        "Exam",
+        "Public",
+        "Account",
+        "Someone",
+        "Citizen",
+        "Humiliation"
+      ],
+      "wordCount": 130
+    },
     "cockroach-season": {
       "generatedAt": "2026-06-30T21:04:50.476927+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1240,6 +1263,29 @@
         "DRC",
         "Tell",
         "Care"
+      ],
+      "wordCount": 130
+    },
+    "election-puja-and-the-common-eye": {
+      "generatedAt": "2026-07-01T12:36:54.469586+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/election-puja-and-the-common-eye.svg",
+      "source": "src/lib/posts/election-puja-and-the-common-eye.md",
+      "sourceHash": "3b6dd12d08d1cc9c4db1bfd5069d4d644d87993a7738f5d7ec6402dcbbfb378f",
+      "sourceModified": "2026-07-01T12:36:06.582086+00:00",
+      "topWords": [
+        "Local",
+        "Becomes",
+        "Person",
+        "Citizen",
+        "Knows",
+        "Promise",
+        "Party",
+        "Voter",
+        "Counter",
+        "Welfare",
+        "Politics",
+        "Whether"
       ],
       "wordCount": 130
     },
@@ -2025,6 +2071,29 @@
       ],
       "wordCount": 130
     },
+    "india-noise-machine-small-man": {
+      "generatedAt": "2026-07-01T12:36:55.269615+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-noise-machine-small-man.svg",
+      "source": "src/lib/posts/india-noise-machine-small-man.md",
+      "sourceHash": "b8bb35f059fa769dde6af52da1dba78d709948c1f95dfb66c0de6596dba482e4",
+      "sourceModified": "2026-07-01T12:36:06.583154+00:00",
+      "topWords": [
+        "Public",
+        "Noise",
+        "Small",
+        "Becomes",
+        "Notices",
+        "Sees",
+        "Man",
+        "Problem",
+        "Question",
+        "Citizen",
+        "Needs",
+        "Country"
+      ],
+      "wordCount": 130
+    },
     "intro": {
       "generatedAt": "2026-06-30T22:50:20.325589+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2646,6 +2715,52 @@
       ],
       "wordCount": 130
     },
+    "political-promises-and-reality": {
+      "generatedAt": "2026-07-01T12:36:55.980298+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/political-promises-and-reality.svg",
+      "source": "src/lib/posts/political-promises-and-reality.md",
+      "sourceHash": "d81c87e44576572817d1e3cd449e736fea21af1b578cd508c923d3125177628a",
+      "sourceModified": "2026-07-01T12:36:06.583154+00:00",
+      "topWords": [
+        "Promise",
+        "Becomes",
+        "Public",
+        "Ask",
+        "Small",
+        "Wait",
+        "Citizen",
+        "Remember",
+        "Person",
+        "Reality",
+        "Every",
+        "Office"
+      ],
+      "wordCount": 130
+    },
+    "politics-as-a-machine-for-spoiling-ordinary-people": {
+      "generatedAt": "2026-07-01T12:36:56.628076+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/politics-as-a-machine-for-spoiling-ordinary-people.svg",
+      "source": "src/lib/posts/politics-as-a-machine-for-spoiling-ordinary-people.md",
+      "sourceHash": "838852ce2d6769924ec76c2b98fa314b6e6868816e10bca6b461a230a7375c4a",
+      "sourceModified": "2026-07-01T12:36:06.584199+00:00",
+      "topWords": [
+        "Public",
+        "Money",
+        "Becomes",
+        "Politics",
+        "Ordinary",
+        "Local",
+        "Party",
+        "Useful",
+        "Power",
+        "Democracy",
+        "Delayed",
+        "Wall"
+      ],
+      "wordCount": 130
+    },
     "premature-llm-deployment-clinical-trials-ai-safety": {
       "generatedAt": "2026-06-30T23:05:23.567695+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2850,6 +2965,29 @@
         "Man",
         "Sat",
         "Tea"
+      ],
+      "wordCount": 130
+    },
+    "rotten-sack-indian-politics": {
+      "generatedAt": "2026-07-01T12:36:57.404158+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/rotten-sack-indian-politics.svg",
+      "source": "src/lib/posts/rotten-sack-indian-politics.md",
+      "sourceHash": "4103033d6b26910e47fc2c697c24637f454503cd2e26c9b1f306b66177498d92",
+      "sourceModified": "2026-07-01T12:36:06.584199+00:00",
+      "topWords": [
+        "Person",
+        "Local",
+        "Public",
+        "Money",
+        "Becomes",
+        "Parties",
+        "Sack",
+        "Politics",
+        "Political",
+        "Cases",
+        "Clean",
+        "Candidate"
       ],
       "wordCount": 130
     },
@@ -4049,6 +4187,29 @@
       ],
       "wordCount": 130
     },
+    "the-man-held-by-the-neck": {
+      "generatedAt": "2026-07-01T12:36:58.058135+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-man-held-by-the-neck.svg",
+      "source": "src/lib/posts/the-man-held-by-the-neck.md",
+      "sourceHash": "1d5142387b6ae03b30fab02ac47cd86acd228bc22bbe3b76e8fe9fc2910408eb",
+      "sourceModified": "2026-07-01T12:36:06.585203+00:00",
+      "topWords": [
+        "Citizen",
+        "Public",
+        "Power",
+        "India",
+        "Person",
+        "Work",
+        "Remains",
+        "Small",
+        "Office",
+        "Inequality",
+        "Cases",
+        "Hand"
+      ],
+      "wordCount": 130
+    },
     "the-man-who-looked-too-long": {
       "generatedAt": "2026-06-30T21:06:57.539737+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4644,6 +4805,29 @@
         "Man",
         "Glass",
         "System"
+      ],
+      "wordCount": 130
+    },
+    "the-test-is-congress-where-congress-rules": {
+      "generatedAt": "2026-07-01T12:36:58.902565+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-test-is-congress-where-congress-rules.svg",
+      "source": "src/lib/posts/the-test-is-congress-where-congress-rules.md",
+      "sourceHash": "73e5f0827c8b6123d67794f36aabbbee88aeff46aeb10be50e20da922bb44e72",
+      "sourceModified": "2026-07-01T12:36:06.585203+00:00",
+      "topWords": [
+        "Party",
+        "Congress",
+        "Local",
+        "Power",
+        "Democratic",
+        "Public",
+        "Evidence",
+        "Rahul",
+        "Machine",
+        "Language",
+        "Welfare",
+        "Gandhi"
       ],
       "wordCount": 130
     },

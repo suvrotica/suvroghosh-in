@@ -25,6 +25,7 @@ export const categoryLabels: Record<string, string> = {
 	food: 'Food',
 	economy: 'Economy',
 	geopolitics: 'Geopolitics',
+	politics: 'Politics',
 	india: 'India',
 	climate: 'Climate',
 	history: 'History',
