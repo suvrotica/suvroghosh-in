@@ -7,7 +7,8 @@
 		autoplay = false,
 		loop = false,
 		muted = false,
-		poster = ''
+		poster = '',
+		preload = 'none'
 	}: {
 		src: string;
 		caption?: string;
@@ -17,6 +18,7 @@
 		loop?: boolean;
 		muted?: boolean;
 		poster?: string;
+		preload?: 'none' | 'metadata' | 'auto';
 	} = $props();
 
 	// Defaults to looking in the /videos/ directory of your `static` folder 
@@ -51,7 +53,7 @@
 		{loop}
 		{muted}
 		playsinline
-		preload="metadata"
+		{preload}
 		class={videoClasses}
 	></video>
 	

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T11:45:05.838288+00:00",
+  "generatedAt": "2026-07-01T11:51:05.088237+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -161,6 +161,75 @@
         "Every"
       ],
       "wordCount": 130
+    },
+    "ai_bengali_songs": {
+      "generatedAt": "2026-07-01T11:51:03.666572+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai_bengali_songs.svg",
+      "source": "src/lib/posts/ai_bengali_songs.md",
+      "sourceHash": "0d5f4c6121452243eb3fea6a0e1828617d319a7333369df82d997d1f0a8eafbb",
+      "sourceModified": "2026-07-01T11:50:24.507116+00:00",
+      "topWords": [
+        "AI",
+        "Bengali",
+        "Song",
+        "Music",
+        "Songs",
+        "Letters",
+        "File",
+        "Names",
+        "Alive",
+        "Player",
+        "Controls",
+        "Sit"
+      ],
+      "wordCount": 64
+    },
+    "ai_english_songs": {
+      "generatedAt": "2026-07-01T11:51:03.999156+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai_english_songs.svg",
+      "source": "src/lib/posts/ai_english_songs.md",
+      "sourceHash": "c0a6a615d8880877d499755539ade3d68d88d6b5c9f6f06a9705ab512d1528c0",
+      "sourceModified": "2026-07-01T11:50:24.507116+00:00",
+      "topWords": [
+        "AI",
+        "Songs",
+        "Quite",
+        "Suspicion",
+        "Curiosity",
+        "Important",
+        "Pretend",
+        "Music",
+        "Play",
+        "Button",
+        "Sits",
+        "Calm"
+      ],
+      "wordCount": 59
+    },
+    "ai_music": {
+      "generatedAt": "2026-07-01T11:51:04.438932+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai_music.svg",
+      "source": "src/lib/posts/ai_music.md",
+      "sourceHash": "8edb28acedbd8d1384d8abf5375d376c2686e2f3245dd3364d5260e860c90598",
+      "sourceModified": "2026-07-01T11:50:24.500082+00:00",
+      "topWords": [
+        "AI",
+        "Music",
+        "Feel",
+        "Songs",
+        "Becomes",
+        "Sound",
+        "Page",
+        "Artificial",
+        "Intelligence",
+        "Sometimes",
+        "Feels",
+        "Headphones"
+      ],
+      "wordCount": 81
     },
     "america-and-calcutta": {
       "generatedAt": "2026-06-30T21:04:27.132115+00:00",
@@ -1472,6 +1541,29 @@
         "Appetite"
       ],
       "wordCount": 130
+    },
+    "hindi_ai_songs": {
+      "generatedAt": "2026-07-01T11:51:04.877207+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hindi_ai_songs.svg",
+      "source": "src/lib/posts/hindi_ai_songs.md",
+      "sourceHash": "f84a64b204d87f999541d25dfef8a3c4343e8e3259073d3c19dcc8bd344fcf18",
+      "sourceModified": "2026-07-01T11:50:24.507116+00:00",
+      "topWords": [
+        "AI",
+        "Hindi",
+        "Songs",
+        "Room",
+        "Sound",
+        "Bengali",
+        "English",
+        "Song",
+        "Music",
+        "Speaker",
+        "Desk",
+        "Vibrate"
+      ],
+      "wordCount": 61
     },
     "homeopathy-pseudoscience-persistence": {
       "generatedAt": "2026-06-30T22:50:18.858990+00:00",
