@@ -36,6 +36,7 @@ export const categoryLabels: Record<string, string> = {
 	energy: 'Energy',
 	statistics: 'Statistics',
 	'ai-education': 'AI Education',
+	science: 'Science',
 	'science-essay': 'Science Essay',
 	'science-and-society': 'Science and Society',
 	'science-and-healthcare-it': 'Science and Healthcare IT',
