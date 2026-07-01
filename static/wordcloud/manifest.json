@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T11:51:05.088237+00:00",
+  "generatedAt": "2026-07-01T11:58:44.936489+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -300,6 +300,29 @@
       ],
       "wordCount": 130
     },
+    "asmr-soft-apocalypse": {
+      "generatedAt": "2026-07-01T11:58:41.283216+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/asmr-soft-apocalypse.svg",
+      "source": "src/lib/posts/asmr-soft-apocalypse.md",
+      "sourceHash": "11ed10a6d1e70c5f3f24dc4585884dff0180b9dff7e0e6926b8b14a002e7c0fd",
+      "sourceModified": "2026-07-01T11:57:53.459395+00:00",
+      "topWords": [
+        "ASMR",
+        "Someone",
+        "Becomes",
+        "Tapping",
+        "World",
+        "Impatient",
+        "Name",
+        "Minutes",
+        "Needs",
+        "Sometimes",
+        "Person",
+        "Sleep"
+      ],
+      "wordCount": 130
+    },
     "asteroid-over-calcutta": {
       "generatedAt": "2026-06-30T21:04:30.937340+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -435,6 +458,29 @@
         "Version",
         "Morning",
         "Work"
+      ],
+      "wordCount": 130
+    },
+    "bengali-tintin-in-kolkata": {
+      "generatedAt": "2026-07-01T11:58:42.136681+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bengali-tintin-in-kolkata.svg",
+      "source": "src/lib/posts/bengali-tintin-in-kolkata.md",
+      "sourceHash": "bb919b05f7743f38ff9201ff512d80eafa2ef32e72d425f3e07a572929642c7e",
+      "sourceModified": "2026-07-01T11:58:17.712888+00:00",
+      "topWords": [
+        "Beside",
+        "Tintin",
+        "Heap",
+        "Found",
+        "Garbage",
+        "Lane",
+        "Tea",
+        "Public",
+        "Dog",
+        "Adventure",
+        "Clue",
+        "Official"
       ],
       "wordCount": 130
     },
@@ -665,6 +711,29 @@
         "Someone",
         "Becomes",
         "World"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-smog-and-the-coming-winter": {
+      "generatedAt": "2026-07-01T11:58:43.083779+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-smog-and-the-coming-winter.svg",
+      "source": "src/lib/posts/calcutta-smog-and-the-coming-winter.md",
+      "sourceHash": "c3b55ad7067de1fe176c07fb040bd2923ed9d30c7cdbc150175dc4017367e676",
+      "sourceModified": "2026-07-01T11:57:53.459395+00:00",
+      "topWords": [
+        "Air",
+        "Dust",
+        "Winter",
+        "Public",
+        "Construction",
+        "Small",
+        "AQI",
+        "Becomes",
+        "Fog",
+        "Gray",
+        "Garbage",
+        "Road"
       ],
       "wordCount": 130
     },
@@ -1358,6 +1427,29 @@
       ],
       "wordCount": 130
     },
+    "folded-arms-and-other-small-national-disasters": {
+      "generatedAt": "2026-07-01T11:58:43.949619+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/folded-arms-and-other-small-national-disasters.svg",
+      "source": "src/lib/posts/folded-arms-and-other-small-national-disasters.md",
+      "sourceHash": "cdd4264987d731c93993985077c0e790e269666fdb0bc92de33e3e75b0a04ce1",
+      "sourceModified": "2026-07-01T11:57:53.459395+00:00",
+      "topWords": [
+        "Arms",
+        "Posture",
+        "Person",
+        "Outside",
+        "Work",
+        "Hands",
+        "Usually",
+        "Authority",
+        "Man",
+        "Folded",
+        "Sometimes",
+        "Little"
+      ],
+      "wordCount": 130
+    },
     "food-chain-reversal": {
       "generatedAt": "2026-06-30T21:05:06.983454+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1723,6 +1815,29 @@
         "Tiffin",
         "Face",
         "Time"
+      ],
+      "wordCount": 130
+    },
+    "if-lies-had-noses-again": {
+      "generatedAt": "2026-07-01T11:58:44.759664+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/if-lies-had-noses-again.svg",
+      "source": "src/lib/posts/if-lies-had-noses-again.md",
+      "sourceHash": "86c5f861008b8f09aac44a37dcdfc81100248141e72980686660f82b9616e171",
+      "sourceModified": "2026-07-01T11:57:53.459395+00:00",
+      "topWords": [
+        "Lie",
+        "Nose",
+        "Need",
+        "Person",
+        "Becomes",
+        "Lies",
+        "Tea",
+        "Public",
+        "Saying",
+        "Pinocchio",
+        "Meeting",
+        "Morning"
       ],
       "wordCount": 130
     },
