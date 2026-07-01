@@ -3,7 +3,7 @@ title: "An Architect's Education"
 description: 'A Calcutta self-portrait of a technology architect stitched from school shame, books, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive.'
 date: '2024-01-01'
 thumbnail: '/images/Compress_20260509_172719_9415.jpg'
-category: 'Healthcare-IT'
+category: 'Career'
 tags:
   [
     'Personal Essay',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T22:09:36.419325+00:00",
+  "generatedAt": "2026-07-01T22:23:41.087117+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -48,12 +48,12 @@
       "wordCount": 130
     },
     "a-read-this-first": {
-      "generatedAt": "2026-06-30T21:04:23.417009+00:00",
+      "generatedAt": "2026-07-01T22:23:38.294162+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/a-read-this-first.svg",
       "source": "src/lib/posts/-a-read-this-first.md",
-      "sourceHash": "d58e271e8331593a652db05e07d5a2fae4df8ca1274d7f24345d3f7c4e9e8b61",
-      "sourceModified": "2026-06-30T17:44:11.007226+00:00",
+      "sourceHash": "ac0a52402b291319f7ab5fb066cbc29ea1399d95c905a09b5bbb90c55d73d37d",
+      "sourceModified": "2026-07-01T22:22:53.717025+00:00",
       "topWords": [
         "Data",
         "Healthcare",
@@ -3635,29 +3635,6 @@
       ],
       "wordCount": 130
     },
-    "intro": {
-      "generatedAt": "2026-06-30T22:50:20.325589+00:00",
-      "generatorVersion": "2026-07-01.1",
-      "output": "static/wordcloud/intro.svg",
-      "source": "src/lib/posts/intro.md",
-      "sourceHash": "8c83507c85be77332ef4ce9be102cdcff30eb8592c5402bd8742411ca6d755ec",
-      "sourceModified": "2026-06-30T22:49:24.441599+00:00",
-      "topWords": [
-        "Means",
-        "Work",
-        "Language",
-        "SQL",
-        "Systems",
-        "Translation",
-        "System",
-        "Data",
-        "Clinical",
-        "Databases",
-        "Research",
-        "AI"
-      ],
-      "wordCount": 130
-    },
     "invasive-human-weed-species-and-the-dunning-kruger-collapse": {
       "generatedAt": "2026-07-01T17:38:02.712223+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7082,6 +7059,29 @@
         "Meat",
         "Seven",
         "Came"
+      ],
+      "wordCount": 130
+    },
+    "the-new-mantra": {
+      "generatedAt": "2026-07-01T22:23:40.848451+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-new-mantra.svg",
+      "source": "src/lib/posts/the-new-mantra.md",
+      "sourceHash": "b449708ba0febfa73d5e5c1b149017d83da8d31042db01ac66b4c3e1b3cd9eec",
+      "sourceModified": "2026-07-01T22:22:53.717025+00:00",
+      "topWords": [
+        "Enough",
+        "Code",
+        "File",
+        "Test",
+        "Function",
+        "Small",
+        "Ask",
+        "First",
+        "Change",
+        "Work",
+        "Less",
+        "Read"
       ],
       "wordCount": 130
     },

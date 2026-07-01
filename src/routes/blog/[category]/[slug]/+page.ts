@@ -16,10 +16,12 @@ import { validatePublishedPostMetadata, postPath, type BlogPostMetadata } from '
 const postPathAliases: Record<string, string> = {
 	'artificial-intelligence/ai-meaningful-work-and-the-trust-collapse':
 		'/blog/artificial-intelligence/ai-meaningful-work-trust-collapse',
+	'career/intro': '/blog/career/the-new-mantra',
 	'healthcare-it/arrow_uncertainty_medical_care_healthcare_it':
 		'/blog/economics/kenneth-arrow-medical-care',
 	'healthcare-it/confounding-factors-healthcare-it-analytics':
 		'/blog/healthcare-it/confounding-factors',
+	'healthcare-it/-a-read-this-first': '/blog/career/-a-read-this-first',
 	'healthcare-it/hie-first-principles-openhie': '/blog/healthcare-it/hie-from-first-principles',
 	'healthcare-it/latent-space-in-healthcare-data':
 		'/blog/healthcare-it/latent-space-healthcare-data',
