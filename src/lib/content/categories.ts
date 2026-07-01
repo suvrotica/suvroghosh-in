@@ -32,6 +32,7 @@ export const categoryLabels: Record<string, string> = {
 	ideas: 'Ideas',
 	career: 'Career',
 	education: 'Education',
+	essay: 'Essay',
 	knowledge: 'Knowledge',
 	energy: 'Energy',
 	statistics: 'Statistics',
