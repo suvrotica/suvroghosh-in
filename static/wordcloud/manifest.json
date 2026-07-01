@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T07:43:53.408103+00:00",
+  "generatedAt": "2026-07-01T07:51:52.345076+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -228,6 +228,29 @@
         "Someone",
         "Say",
         "Speaker"
+      ],
+      "wordCount": 130
+    },
+    "benfords-law-and-the-ledger-that-sweats": {
+      "generatedAt": "2026-07-01T07:51:47.844804+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/benfords-law-and-the-ledger-that-sweats.svg",
+      "source": "src/lib/posts/benfords-law-and-the-ledger-that-sweats.md",
+      "sourceHash": "1fb81b0afcb8c2b64063c19f2acb4fbcab0a11ca6233281e4a4e02c990853ede",
+      "sourceModified": "2026-07-01T07:50:46.435641+00:00",
+      "topWords": [
+        "Numbers",
+        "Benford",
+        "Add",
+        "Digits",
+        "Check",
+        "Amounts",
+        "First",
+        "Law",
+        "Invoice",
+        "Often",
+        "Many",
+        "Ledger"
       ],
       "wordCount": 130
     },
@@ -1171,6 +1194,29 @@
         "Dutta",
         "Rain",
         "Someone"
+      ],
+      "wordCount": 130
+    },
+    "four-fundamental-subspaces": {
+      "generatedAt": "2026-07-01T07:51:49.900622+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/four-fundamental-subspaces.svg",
+      "source": "src/lib/posts/four-fundamental-subspaces.md",
+      "sourceHash": "b73655ca5115950b7d6d9446bf72113cd2fcdf7af9e2966ca87e9683ad3ae662",
+      "sourceModified": "2026-07-01T07:50:46.435641+00:00",
+      "topWords": [
+        "Space",
+        "Nullspace",
+        "Matrix",
+        "Column",
+        "Output",
+        "Row",
+        "Part",
+        "Input",
+        "Ask",
+        "Directions",
+        "Every",
+        "Target"
       ],
       "wordCount": 130
     },
@@ -2459,6 +2505,29 @@
         "Metro",
         "Three",
         "Small"
+      ],
+      "wordCount": 130
+    },
+    "symmetry-in-a-calcutta-room": {
+      "generatedAt": "2026-07-01T07:51:52.004383+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/symmetry-in-a-calcutta-room.svg",
+      "source": "src/lib/posts/symmetry-in-a-calcutta-room.md",
+      "sourceHash": "f772cdda09959cb2ffa4459cba33cfbc3d5ac0623a4714fdd51f200f27d0dce5",
+      "sourceModified": "2026-07-01T07:50:46.435641+00:00",
+      "topWords": [
+        "Symmetry",
+        "Change",
+        "Structure",
+        "Group",
+        "Appears",
+        "Physics",
+        "Space",
+        "Turn",
+        "Changes",
+        "Transformation",
+        "Becomes",
+        "Move"
       ],
       "wordCount": 130
     },

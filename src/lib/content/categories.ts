@@ -48,6 +48,7 @@ export const categoryLabels: Record<string, string> = {
 	'work-migration-india': 'Work, Migration, India',
 	'personal-reflections': 'Personal Reflections',
 	'personal-satire': 'Personal Satire',
+	mathematics: 'Mathematics',
 	philosophy: 'Philosophy',
 	life: 'Life',
 	memoir: 'Memoir',
