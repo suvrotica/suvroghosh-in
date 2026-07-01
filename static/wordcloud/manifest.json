@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T22:23:41.087117+00:00",
+  "generatedAt": "2026-07-01T22:46:00.382011+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -2853,6 +2853,29 @@
       ],
       "wordCount": 130
     },
+    "fish-market-merit-and-the-small-republic-of-honesty": {
+      "generatedAt": "2026-07-01T22:45:25.375469+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/fish-market-merit-and-the-small-republic-of-honesty.svg",
+      "source": "src/lib/posts/fish-market-merit-and-the-small-republic-of-honesty.md",
+      "sourceHash": "a7d84e0fc01bdc0fddb168129f419799a2d22e603e2e20026d77b8a47033b392",
+      "sourceModified": "2026-07-01T22:44:27.761485+00:00",
+      "topWords": [
+        "Fish",
+        "Market",
+        "Person",
+        "Becomes",
+        "Merit",
+        "Floor",
+        "Wet",
+        "Either",
+        "Fresh",
+        "Story",
+        "Honesty",
+        "School"
+      ],
+      "wordCount": 130
+    },
     "fog-machines-in-the-temple": {
       "generatedAt": "2026-06-30T22:35:39.686664+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2988,6 +3011,29 @@
         "Colonial",
         "State",
         "Trigonometrical"
+      ],
+      "wordCount": 130
+    },
+    "happiness-after-quicksand": {
+      "generatedAt": "2026-07-01T22:45:27.394089+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/happiness-after-quicksand.svg",
+      "source": "src/lib/posts/happiness-after-quicksand.md",
+      "sourceHash": "31d300b692e84d52d05ec5d391abf19637869993015bb6d944d819270c26ff62",
+      "sourceModified": "2026-07-01T22:44:27.793307+00:00",
+      "topWords": [
+        "Happiness",
+        "Hour",
+        "Ground",
+        "Suspiciously",
+        "Room",
+        "Better",
+        "Future",
+        "Tea",
+        "Door",
+        "Quicksand",
+        "Sinking",
+        "Ordinary"
       ],
       "wordCount": 130
     },
@@ -3842,6 +3888,29 @@
       ],
       "wordCount": 130
     },
+    "kolkata-bat-waiting-for-a-bus": {
+      "generatedAt": "2026-07-01T22:45:29.304966+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/kolkata-bat-waiting-for-a-bus.svg",
+      "source": "src/lib/posts/kolkata-bat-waiting-for-a-bus.md",
+      "sourceHash": "62db791495f706d9ecb0a2cbd74a431990ffb3e39199041d283bfb2658fec464",
+      "sourceModified": "2026-07-01T22:44:27.775820+00:00",
+      "topWords": [
+        "Bus",
+        "Becomes",
+        "System",
+        "Already",
+        "Nobody",
+        "Space",
+        "Finds",
+        "Bag",
+        "Public",
+        "Conductor",
+        "Moves",
+        "Man"
+      ],
+      "wordCount": 130
+    },
     "label-road": {
       "generatedAt": "2026-06-30T21:05:21.976340+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4210,6 +4279,29 @@
       ],
       "wordCount": 130
     },
+    "mood-bellwethers-before-a-low": {
+      "generatedAt": "2026-07-01T22:45:31.149783+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mood-bellwethers-before-a-low.svg",
+      "source": "src/lib/posts/mood-bellwethers-before-a-low.md",
+      "sourceHash": "7a0314c513dd35437d35fbeee100448859c4a58213e58afa4adab53e6afbd476",
+      "sourceModified": "2026-07-01T22:44:27.796648+00:00",
+      "topWords": [
+        "Weather",
+        "Mind",
+        "Sleep",
+        "Close",
+        "Hour",
+        "Turns",
+        "Bodily",
+        "Becomes",
+        "Fan",
+        "Thoughts",
+        "Work",
+        "Inner"
+      ],
+      "wordCount": 130
+    },
     "moon-without-skin": {
       "generatedAt": "2026-06-30T21:05:33.809543+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4394,6 +4486,29 @@
       ],
       "wordCount": 130
     },
+    "nightmare-wrapped-in-skin": {
+      "generatedAt": "2026-07-01T22:45:33.434666+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/nightmare-wrapped-in-skin.svg",
+      "source": "src/lib/posts/nightmare-wrapped-in-skin.md",
+      "sourceHash": "82e1a15d7509ea8b4a60c43951d57d1d551ffcbb9e7774a867b08481b6aa2bfb",
+      "sourceModified": "2026-07-01T22:44:27.779836+00:00",
+      "topWords": [
+        "Furniture",
+        "Room",
+        "Private",
+        "Always",
+        "Needs",
+        "World",
+        "Person",
+        "Hour",
+        "Little",
+        "Child",
+        "Read",
+        "Proof"
+      ],
+      "wordCount": 130
+    },
     "north-facing-room": {
       "generatedAt": "2026-06-30T21:05:35.616665+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4440,6 +4555,29 @@
       ],
       "wordCount": 130
     },
+    "one-life-no-rehearsal-calcutta": {
+      "generatedAt": "2026-07-01T22:45:35.010958+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/one-life-no-rehearsal-calcutta.svg",
+      "source": "src/lib/posts/one-life-no-rehearsal-calcutta.md",
+      "sourceHash": "1150c11e198178756b02f1f1294e879acb6fe1a3509e54c72d19103bb1fed04f",
+      "sourceModified": "2026-07-01T22:44:27.813107+00:00",
+      "topWords": [
+        "Small",
+        "Less",
+        "Number",
+        "Paper",
+        "Plan",
+        "Work",
+        "Suspicious",
+        "Applied",
+        "Spare",
+        "Folded",
+        "Cupboard",
+        "Revised"
+      ],
+      "wordCount": 130
+    },
     "openclaw-balanced-intro": {
       "generatedAt": "2026-07-01T16:59:41.381970+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4460,6 +4598,29 @@
         "Change",
         "Board",
         "Task"
+      ],
+      "wordCount": 130
+    },
+    "painful-tooth-fairy-calcutta": {
+      "generatedAt": "2026-07-01T22:45:36.984724+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/painful-tooth-fairy-calcutta.svg",
+      "source": "src/lib/posts/painful-tooth-fairy-calcutta.md",
+      "sourceHash": "351e2e61e5628d6202cfcd16ab48bddbeb4c67e485b60fe22395d22ef079549c",
+      "sourceModified": "2026-07-01T22:44:27.770004+00:00",
+      "topWords": [
+        "Tooth",
+        "Becomes",
+        "Pain",
+        "Man",
+        "Begins",
+        "Small",
+        "Head",
+        "National",
+        "Jaw",
+        "Arrive",
+        "Larger",
+        "Short"
       ],
       "wordCount": 130
     },
@@ -4667,6 +4828,29 @@
         "Democracy",
         "Delayed",
         "Wall"
+      ],
+      "wordCount": 130
+    },
+    "predepression-tea-bipolar-calcutta": {
+      "generatedAt": "2026-07-01T22:45:38.828961+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/predepression-tea-bipolar-calcutta.svg",
+      "source": "src/lib/posts/predepression-tea-bipolar-calcutta.md",
+      "sourceHash": "5477fe2719f8f193d8ee28c2518f34508e0ef4617cff35922c7669f829109574",
+      "sourceModified": "2026-07-01T22:44:27.785263+00:00",
+      "topWords": [
+        "Small",
+        "Cup",
+        "Tea",
+        "Perhaps",
+        "Changes",
+        "Light",
+        "Fan",
+        "Message",
+        "Becomes",
+        "Respect",
+        "Signs",
+        "Fear"
       ],
       "wordCount": 130
     },
@@ -5222,6 +5406,29 @@
       ],
       "wordCount": 130
     },
+    "shadow-citizen-of-my-own-room": {
+      "generatedAt": "2026-07-01T22:45:40.385291+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/shadow-citizen-of-my-own-room.svg",
+      "source": "src/lib/posts/shadow-citizen-of-my-own-room.md",
+      "sourceHash": "11ec284e25de8144f24ab7b4f2b222b0e7bfdb681c771cf911a18c5b3bbcab31",
+      "sourceModified": "2026-07-01T22:44:27.803577+00:00",
+      "topWords": [
+        "Room",
+        "Knows",
+        "Smaller",
+        "Window",
+        "Function",
+        "Now",
+        "Easy",
+        "Call",
+        "Corner",
+        "Learned",
+        "Hours",
+        "Chair"
+      ],
+      "wordCount": 130
+    },
     "shallow-water-loud-television": {
       "generatedAt": "2026-07-01T16:40:55.148058+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -5403,6 +5610,29 @@
         "Fluency",
         "Bad",
         "Authority"
+      ],
+      "wordCount": 130
+    },
+    "smorgasbord-of-impotence-calcutta-middle-age": {
+      "generatedAt": "2026-07-01T22:45:42.143644+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/smorgasbord-of-impotence-calcutta-middle-age.svg",
+      "source": "src/lib/posts/smorgasbord-of-impotence-calcutta-middle-age.md",
+      "sourceHash": "3ffe7d7e687b9264e23f532ef40d2179a05d83693a0bf4a755d46fc847082988",
+      "sourceModified": "2026-07-01T22:44:27.811889+00:00",
+      "topWords": [
+        "Powerlessness",
+        "Counter",
+        "Money",
+        "Work",
+        "Social",
+        "File",
+        "Today",
+        "Tragedy",
+        "Small",
+        "Convert",
+        "Clean",
+        "Little"
       ],
       "wordCount": 130
     },
@@ -5889,6 +6119,29 @@
       ],
       "wordCount": 130
     },
+    "the-bengali-baby": {
+      "generatedAt": "2026-07-01T22:45:43.827117+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-bengali-baby.svg",
+      "source": "src/lib/posts/the-bengali-baby.md",
+      "sourceHash": "c0d41ffe192801a532e85a96f924e3a4479ea18628eda133c616394fccc33a4b",
+      "sourceModified": "2026-07-01T22:44:27.767993+00:00",
+      "topWords": [
+        "Light",
+        "Wants",
+        "Sun",
+        "Bengali",
+        "Less",
+        "Cracked",
+        "Afternoon",
+        "Turn",
+        "Even",
+        "Bengal",
+        "Grow",
+        "Someone"
+      ],
+      "wordCount": 130
+    },
     "the-billing-hour-has-started-to-smell": {
       "generatedAt": "2026-07-01T17:18:17.539478+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6027,6 +6280,29 @@
       ],
       "wordCount": 130
     },
+    "the-century-has-a-hole-in-it": {
+      "generatedAt": "2026-07-01T22:45:45.693455+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-century-has-a-hole-in-it.svg",
+      "source": "src/lib/posts/the-century-has-a-hole-in-it.md",
+      "sourceHash": "3d35993cceb9dd22154b5132762611a9dea7e087e6efe223ad7540cef662033c",
+      "sourceModified": "2026-07-01T22:44:27.785263+00:00",
+      "topWords": [
+        "Century",
+        "Future",
+        "Code",
+        "Room",
+        "Becomes",
+        "Calendar",
+        "Switchboard",
+        "Payment",
+        "AI",
+        "Systems",
+        "Speak",
+        "Reserved"
+      ],
+      "wordCount": 130
+    },
     "the-chair-and-the-drain": {
       "generatedAt": "2026-06-30T21:06:19.205053+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6139,6 +6415,29 @@
         "Judgment",
         "Savings",
         "Missing"
+      ],
+      "wordCount": 130
+    },
+    "the-contender-who-would-not-compete": {
+      "generatedAt": "2026-07-01T22:45:47.482005+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-contender-who-would-not-compete.svg",
+      "source": "src/lib/posts/the-contender-who-would-not-compete.md",
+      "sourceHash": "df56310045b2c0469bb0c44a978d573f7de2270373210448827e68e50413c6dd",
+      "sourceModified": "2026-07-01T22:44:27.772013+00:00",
+      "topWords": [
+        "Perform",
+        "Clean",
+        "Sometimes",
+        "Write",
+        "Careful",
+        "Sentence",
+        "Problem",
+        "World",
+        "Built",
+        "Competition",
+        "Stage",
+        "Nation"
       ],
       "wordCount": 130
     },
@@ -7637,6 +7936,29 @@
       ],
       "wordCount": 130
     },
+    "the-terrace-republic": {
+      "generatedAt": "2026-07-01T22:45:49.506914+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-terrace-republic.svg",
+      "source": "src/lib/posts/the-terrace-republic.md",
+      "sourceHash": "b09bfcc2791db4b3366c030657d05a0b799900771771c34484523c3ba7bb5bde",
+      "sourceModified": "2026-07-01T22:44:27.807876+00:00",
+      "topWords": [
+        "Terrace",
+        "Tea",
+        "House",
+        "Cup",
+        "Minute",
+        "Present",
+        "Room",
+        "Lie",
+        "Heat",
+        "Childhood",
+        "Often",
+        "Becomes"
+      ],
+      "wordCount": 130
+    },
     "the-test-is-congress-where-congress-rules": {
       "generatedAt": "2026-07-01T12:36:58.902565+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7706,6 +8028,29 @@
       ],
       "wordCount": 130
     },
+    "the-unhelpful-man-in-calcutta": {
+      "generatedAt": "2026-07-01T22:45:51.018948+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-unhelpful-man-in-calcutta.svg",
+      "source": "src/lib/posts/the-unhelpful-man-in-calcutta.md",
+      "sourceHash": "088ef440160fe9dc37fbd4b3ac3c4b85f10f8a946779e7f2f42af5f40697d776",
+      "sourceModified": "2026-07-01T22:44:27.781845+00:00",
+      "topWords": [
+        "Map",
+        "Yes",
+        "Help",
+        "Someone",
+        "Say",
+        "Phone",
+        "Wants",
+        "Road",
+        "Learn",
+        "Build",
+        "Apply",
+        "Verbs"
+      ],
+      "wordCount": 130
+    },
     "the-unrecorded-error-india": {
       "generatedAt": "2026-07-01T18:06:19.801620+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7772,6 +8117,29 @@
         "Healthcare",
         "Better",
         "Problem"
+      ],
+      "wordCount": 130
+    },
+    "the-visible-work-of-imaginary-things": {
+      "generatedAt": "2026-07-01T22:45:52.726466+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-visible-work-of-imaginary-things.svg",
+      "source": "src/lib/posts/the-visible-work-of-imaginary-things.md",
+      "sourceHash": "3b099e08f250093e9b98bb3f0536f328d4003cfa1c88aaa8dc750f0a9ec949ce",
+      "sourceModified": "2026-07-01T22:44:27.809882+00:00",
+      "topWords": [
+        "Work",
+        "Usefulness",
+        "Visible",
+        "Lies",
+        "Page",
+        "Career",
+        "Blank",
+        "Human",
+        "Pen",
+        "Difficulty",
+        "Laziness",
+        "Personal"
       ],
       "wordCount": 130
     },
@@ -8465,6 +8833,29 @@
       ],
       "wordCount": 130
     },
+    "vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck": {
+      "generatedAt": "2026-07-01T22:45:54.827967+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.svg",
+      "source": "src/lib/posts/vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.md",
+      "sourceHash": "9dbc02471f312e26613228e9638b9bdbe1dc2ea80ad7062168ae4bf930be8f94",
+      "sourceModified": "2026-07-01T22:44:27.791297+00:00",
+      "topWords": [
+        "AI",
+        "System",
+        "Society",
+        "Effort",
+        "Already",
+        "Vegetable",
+        "Seller",
+        "Call",
+        "Lane",
+        "Work",
+        "Price",
+        "Public"
+      ],
+      "wordCount": 130
+    },
     "vitruvian-man": {
       "generatedAt": "2026-06-30T23:05:30.593597+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8488,6 +8879,29 @@
       ],
       "wordCount": 130
     },
+    "waking-up-depressed-in-calcutta": {
+      "generatedAt": "2026-07-01T22:45:56.637633+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/waking-up-depressed-in-calcutta.svg",
+      "source": "src/lib/posts/waking-up-depressed-in-calcutta.md",
+      "sourceHash": "44a8eaecf760db963a43eff03ed6e9e35fcbd357360226e3781553a158e0d396",
+      "sourceModified": "2026-07-01T22:44:27.815113+00:00",
+      "topWords": [
+        "Furniture",
+        "First",
+        "Tea",
+        "Mornings",
+        "Water",
+        "Fan",
+        "Outside",
+        "Across",
+        "Ready",
+        "Begins",
+        "Immediately",
+        "Room"
+      ],
+      "wordCount": 130
+    },
     "war-spillovers-ukraine-iran-technology": {
       "generatedAt": "2026-07-01T17:18:21.686909+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8508,6 +8922,29 @@
         "Clean",
         "Roads",
         "Faster"
+      ],
+      "wordCount": 130
+    },
+    "welcome-to-suvroghosh-in": {
+      "generatedAt": "2026-07-01T22:45:58.560168+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/welcome-to-suvroghosh-in.svg",
+      "source": "src/lib/posts/welcome-to-suvroghosh-in.md",
+      "sourceHash": "64b31ffdc6fb739b2236f3554fa0f8303b33d4458f7d8a38318dfb4740321361",
+      "sourceModified": "2026-07-01T22:44:27.761485+00:00",
+      "topWords": [
+        "Write",
+        "Sentence",
+        "Small",
+        "Room",
+        "Tea",
+        "Science",
+        "Technology",
+        "Matters",
+        "Site",
+        "India",
+        "Public",
+        "Society"
       ],
       "wordCount": 130
     },
@@ -8646,6 +9083,29 @@
         "Defeat",
         "Used",
         "Technology"
+      ],
+      "wordCount": 130
+    },
+    "why-i-write-what-i-write": {
+      "generatedAt": "2026-07-01T22:46:00.375054+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/why-i-write-what-i-write.svg",
+      "source": "src/lib/posts/why-i-write-what-i-write.md",
+      "sourceHash": "0b47736c9795569fc4e5eb4754425ab0d54fe4247ea0b851dc8359edae698ae9",
+      "sourceModified": "2026-07-01T22:44:27.775820+00:00",
+      "topWords": [
+        "Write",
+        "Return",
+        "Days",
+        "Helps",
+        "Joke",
+        "Need",
+        "Language",
+        "Entire",
+        "Sentence",
+        "Truth",
+        "Drawing",
+        "Public"
       ],
       "wordCount": 130
     },
