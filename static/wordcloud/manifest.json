@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T11:58:44.936489+00:00",
+  "generatedAt": "2026-07-01T12:11:49.676344+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -600,12 +600,12 @@
       "wordCount": 130
     },
     "boyhood-magnets-bulbs-batteries-calcutta": {
-      "generatedAt": "2026-06-30T21:04:43.413023+00:00",
+      "generatedAt": "2026-07-01T12:06:55.008347+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/boyhood-magnets-bulbs-batteries-calcutta.svg",
       "source": "src/lib/posts/boyhood-magnets-bulbs-batteries-calcutta.md",
-      "sourceHash": "841820fe32dc81f687ce110083f1273c467bd19aa7f101659c5f6c811a6690b2",
-      "sourceModified": "2026-06-30T17:57:04.075049+00:00",
+      "sourceHash": "7e4ba18d48ccb6074a7a9fa652573553d7956fc17e251612aa6029ad199482b7",
+      "sourceModified": "2026-07-01T12:04:53.932059+00:00",
       "topWords": [
         "Bulb",
         "Magnet",
@@ -826,6 +826,29 @@
         "UPI",
         "Digital",
         "Tea"
+      ],
+      "wordCount": 130
+    },
+    "cicada-ba32-covid-variant": {
+      "generatedAt": "2026-07-01T12:11:46.559110+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/cicada-ba32-covid-variant.svg",
+      "source": "src/lib/posts/cicada-ba32-covid-variant.md",
+      "sourceHash": "a51944b1e4eca8b52ede6079ce6ada0a788d894c68d120c66d758e6117d7946a",
+      "sourceModified": "2026-07-01T12:11:08.103175+00:00",
+      "topWords": [
+        "BA.3.2",
+        "Variant",
+        "Lineage",
+        "Public",
+        "Attention",
+        "Problem",
+        "Monitoring",
+        "Mean",
+        "Surveillance",
+        "Virus",
+        "Table",
+        "Name"
       ],
       "wordCount": 130
     },
@@ -1102,6 +1125,29 @@
         "Small",
         "Means",
         "Room"
+      ],
+      "wordCount": 130
+    },
+    "ebola-from-first-principles-bundibugyo-calcutta-watch": {
+      "generatedAt": "2026-07-01T12:11:47.270140+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ebola-from-first-principles-bundibugyo-calcutta-watch.svg",
+      "source": "src/lib/posts/ebola-from-first-principles-bundibugyo-calcutta-watch.md",
+      "sourceHash": "a5d1c915cb1158eb469dda219f680f952c0392225f27c22dc1504b40d2803422",
+      "sourceModified": "2026-07-01T12:11:08.104034+00:00",
+      "topWords": [
+        "Ebola",
+        "Virus",
+        "Health",
+        "Bundibugyo",
+        "Cases",
+        "Disease",
+        "Person",
+        "Outbreak",
+        "Uganda",
+        "DRC",
+        "Tell",
+        "Care"
       ],
       "wordCount": 130
     },
@@ -2347,6 +2393,29 @@
       ],
       "wordCount": 130
     },
+    "nicotine-biri-and-the-great-bengali-bargain": {
+      "generatedAt": "2026-07-01T12:11:48.081628+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/nicotine-biri-and-the-great-bengali-bargain.svg",
+      "source": "src/lib/posts/nicotine-biri-and-the-great-bengali-bargain.md",
+      "sourceHash": "7e8da047a8c89a9d4f032c59f7f8e0540a7c372047924de29629e4114908205b",
+      "sourceModified": "2026-07-01T12:11:08.104034+00:00",
+      "topWords": [
+        "Nicotine",
+        "Smoke",
+        "Tobacco",
+        "Becomes",
+        "Risk",
+        "Tells",
+        "Biri",
+        "Wants",
+        "Use",
+        "Least",
+        "Small",
+        "Tea"
+      ],
+      "wordCount": 130
+    },
     "nightmare-of-indian-healthcare": {
       "generatedAt": "2026-07-01T07:43:51.307849+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2853,6 +2922,29 @@
       ],
       "wordCount": 130
     },
+    "sitala-manasa-public-health-superstition": {
+      "generatedAt": "2026-07-01T12:11:48.858992+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/sitala-manasa-public-health-superstition.svg",
+      "source": "src/lib/posts/sitala-manasa-public-health-superstition.md",
+      "sourceHash": "1c2a648de23a5d3b1ef1fb5dd6a3c9703a0902066ef1352ee09d889f3a7790c9",
+      "sourceModified": "2026-07-01T12:11:08.106805+00:00",
+      "topWords": [
+        "System",
+        "Fear",
+        "Antivenom",
+        "Snakebite",
+        "Part",
+        "Village",
+        "Sitala",
+        "Manasa",
+        "Rural",
+        "Health",
+        "Problem",
+        "Shrine"
+      ],
+      "wordCount": 130
+    },
     "skull-under-the-bridge": {
       "generatedAt": "2026-06-30T21:06:00.649668+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3149,6 +3241,29 @@
         "Father",
         "Smell",
         "Came"
+      ],
+      "wordCount": 130
+    },
+    "the-body-becomes-a-small-oven": {
+      "generatedAt": "2026-07-01T12:11:49.572237+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-body-becomes-a-small-oven.svg",
+      "source": "src/lib/posts/the-body-becomes-a-small-oven.md",
+      "sourceHash": "5ea1b86b0ebe2d264872fc83b9f1f6578bb5133133d51b8abc358266c3dc5626",
+      "sourceModified": "2026-07-01T12:11:08.106805+00:00",
+      "topWords": [
+        "Heat",
+        "Water",
+        "Whether",
+        "Shade",
+        "Person",
+        "Public",
+        "Drinks",
+        "Cold",
+        "Ice",
+        "Different",
+        "Plus",
+        "Summer"
       ],
       "wordCount": 130
     },
