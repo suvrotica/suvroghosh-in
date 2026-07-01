@@ -5,6 +5,8 @@ export const categoryLabels: Record<string, string> = {
 	'healthcare-systems': 'Healthcare Systems',
 	'public-health': 'Public Health',
 	health: 'Health',
+	ai: 'AI',
+	'ai-and-society': 'AI and Society',
 	'ai-economy': 'AI Economy',
 	'ai-economics': 'AI Economics',
 	'ai-safety': 'AI Safety',
@@ -42,6 +44,8 @@ export const categoryLabels: Record<string, string> = {
 	'work-migration-india': 'Work, Migration, India',
 	'personal-reflections': 'Personal Reflections',
 	'personal-satire': 'Personal Satire',
+	life: 'Life',
+	memoir: 'Memoir',
 	thinking: 'Thinking',
 	'art-history': 'Art History'
 };

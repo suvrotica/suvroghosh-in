@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T06:44:14.690264+00:00",
+  "generatedAt": "2026-07-01T07:03:15.778584+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -67,6 +67,29 @@
         "First",
         "Every",
         "Song"
+      ],
+      "wordCount": 130
+    },
+    "ai-moat-labor-displacement": {
+      "generatedAt": "2026-07-01T07:02:59.533843+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-moat-labor-displacement.svg",
+      "source": "src/lib/posts/ai-moat-labor-displacement.md",
+      "sourceHash": "26315bcb03e0a046111d2c8f835e9546bcf88a0eadacb8d906560066d71de69c",
+      "sourceModified": "2026-07-01T06:58:06.984705+00:00",
+      "topWords": [
+        "AI",
+        "Work",
+        "Human",
+        "Worker",
+        "Machine",
+        "Enough",
+        "Now",
+        "Becomes",
+        "Need",
+        "Means",
+        "Labor",
+        "Every"
       ],
       "wordCount": 130
     },
@@ -484,6 +507,52 @@
       ],
       "wordCount": 130
     },
+    "callous-political-statements-gold-karigars-and-fertiliser": {
+      "generatedAt": "2026-07-01T07:03:01.327020+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/callous-political-statements-gold-karigars-and-fertiliser.svg",
+      "source": "src/lib/posts/callous-political-statements-gold-karigars-and-fertiliser.md",
+      "sourceHash": "6443f56f24f0d046b5c954a885b4917af51d38dc78094feffc26955109f5584d",
+      "sourceModified": "2026-07-01T06:58:06.991294+00:00",
+      "topWords": [
+        "Gold",
+        "Small",
+        "Policy",
+        "Foreign",
+        "Exchange",
+        "Fertilizer",
+        "Organic",
+        "Soil",
+        "Many",
+        "Imports",
+        "Speech",
+        "Person"
+      ],
+      "wordCount": 130
+    },
+    "cant-go-back-to-childhood-except-as-a-misremembering-ghost": {
+      "generatedAt": "2026-07-01T07:03:02.900848+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/cant-go-back-to-childhood-except-as-a-misremembering-ghost.svg",
+      "source": "src/lib/posts/cant-go-back-to-childhood-except-as-a-misremembering-ghost.md",
+      "sourceHash": "71e236371a79cc4638b0e6aca6bc39076c07cf44ea086b4d06d9c561f1c24e21",
+      "sourceModified": "2026-07-01T06:58:06.997818+00:00",
+      "topWords": [
+        "Childhood",
+        "Becomes",
+        "Every",
+        "Memory",
+        "Lane",
+        "Small",
+        "Often",
+        "Past",
+        "Smell",
+        "Dust",
+        "Brain",
+        "Ordinary"
+      ],
+      "wordCount": 130
+    },
     "circle-of-death": {
       "generatedAt": "2026-06-30T21:04:48.658569+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -504,6 +573,29 @@
         "Asked",
         "Home",
         "Don"
+      ],
+      "wordCount": 130
+    },
+    "claude-fable-5-warning-label": {
+      "generatedAt": "2026-07-01T07:03:04.601926+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/claude-fable-5-warning-label.svg",
+      "source": "src/lib/posts/claude-fable-5-warning-label.md",
+      "sourceHash": "0431613b31eca2a1ad9321524478b77d3bcfb868521ccf77e8a556361d5db150",
+      "sourceModified": "2026-07-01T07:01:42.030397+00:00",
+      "topWords": [
+        "Fable",
+        "Claude",
+        "Mythos",
+        "Work",
+        "Model",
+        "Real",
+        "Means",
+        "Public",
+        "Anthropic",
+        "Software",
+        "Machine",
+        "Access"
       ],
       "wordCount": 130
     },
@@ -783,6 +875,29 @@
       ],
       "wordCount": 130
     },
+    "english-medium-urine-stain-and-the-school-that-lit-the-fuse": {
+      "generatedAt": "2026-07-01T07:03:06.472492+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/english-medium-urine-stain-and-the-school-that-lit-the-fuse.svg",
+      "source": "src/lib/posts/english-medium-urine-stain-and-the-school-that-lit-the-fuse.md",
+      "sourceHash": "7ac255ab9de1955828967ff2b5314f9b9649879ceabd17865bfe78dff954d1fd",
+      "sourceModified": "2026-07-01T07:01:42.028108+00:00",
+      "topWords": [
+        "School",
+        "Small",
+        "Child",
+        "Certainty",
+        "English",
+        "Gave",
+        "Childhood",
+        "WWA",
+        "Wall",
+        "Remember",
+        "Stain",
+        "Mark"
+      ],
+      "wordCount": 130
+    },
     "entropy-in-a-rented-room": {
       "generatedAt": "2026-06-30T22:35:37.628054+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -895,6 +1010,29 @@
         "Worms",
         "Eyes",
         "Wet"
+      ],
+      "wordCount": 130
+    },
+    "fellow_passengers_and_the_broken_record": {
+      "generatedAt": "2026-07-01T07:03:08.323225+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/fellow_passengers_and_the_broken_record.svg",
+      "source": "src/lib/posts/fellow_passengers_and_the_broken_record.md",
+      "sourceHash": "5dd356695cd0b00722bc7ca43d0b978935e9bbf830b30359aa41410aa79c1ad8",
+      "sourceModified": "2026-07-01T07:01:42.032510+00:00",
+      "topWords": [
+        "Song",
+        "Someone",
+        "Noise",
+        "Room",
+        "Sentence",
+        "Ones",
+        "First",
+        "Person",
+        "Always",
+        "Useful",
+        "Sometimes",
+        "Everyone"
       ],
       "wordCount": 130
     },
@@ -2370,6 +2508,29 @@
       ],
       "wordCount": 130
     },
+    "the-coming-unemployment": {
+      "generatedAt": "2026-07-01T07:03:10.371498+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-coming-unemployment.svg",
+      "source": "src/lib/posts/the-coming-unemployment.md",
+      "sourceHash": "f8bf9c69715bf8263b72c2d91b5e9d950ddba76d6fc549d56df8f4318d5203fe",
+      "sourceModified": "2026-07-01T07:01:42.031262+00:00",
+      "topWords": [
+        "AI",
+        "Job",
+        "Jobs",
+        "Real",
+        "Means",
+        "Work",
+        "Senior",
+        "Software",
+        "Person",
+        "Useful",
+        "Hiring",
+        "Learn"
+      ],
+      "wordCount": 130
+    },
     "the-corridor-of-wind": {
       "generatedAt": "2026-06-30T21:06:20.749282+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2666,6 +2827,29 @@
         "Face",
         "Gate",
         "Stood"
+      ],
+      "wordCount": 130
+    },
+    "the-geography-of-contentment": {
+      "generatedAt": "2026-07-01T07:03:12.057079+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-geography-of-contentment.svg",
+      "source": "src/lib/posts/the-geography-of-contentment.md",
+      "sourceHash": "6bdd341905588042a8be37319d8fafe7939ec6f3399dc6bafa3e6230309165f4",
+      "sourceModified": "2026-07-01T07:01:42.033148+00:00",
+      "topWords": [
+        "Need",
+        "America",
+        "Country",
+        "Sometimes",
+        "Terrace",
+        "Person",
+        "Small",
+        "Systems",
+        "Long",
+        "Happiness",
+        "Home",
+        "Distance"
       ],
       "wordCount": 130
     },
@@ -3428,6 +3612,29 @@
       ],
       "wordCount": 130
     },
+    "the-tea-stall-as-an-anti-ai-safety-system": {
+      "generatedAt": "2026-07-01T07:03:14.056758+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-tea-stall-as-an-anti-ai-safety-system.svg",
+      "source": "src/lib/posts/the-tea-stall-as-an-anti-ai-safety-system.md",
+      "sourceHash": "236f2ff04caf2a556696b3b3ef6423d1abede15ceddc47ac74ab1e7e3b9324c7",
+      "sourceModified": "2026-07-01T06:58:06.987494+00:00",
+      "topWords": [
+        "AI",
+        "Tea",
+        "Stall",
+        "Sentence",
+        "Someone",
+        "Means",
+        "System",
+        "Person",
+        "Private",
+        "Friction",
+        "Safety",
+        "Work"
+      ],
+      "wordCount": 130
+    },
     "the-temperature-of-attention": {
       "generatedAt": "2026-06-30T21:07:38.492564+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4000,6 +4207,29 @@
         "Paradox",
         "Occam",
         "Razor"
+      ],
+      "wordCount": 130
+    },
+    "ubi-india-ai-unemployment-democracy": {
+      "generatedAt": "2026-07-01T07:03:15.755895+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ubi-india-ai-unemployment-democracy.svg",
+      "source": "src/lib/posts/ubi-india-ai-unemployment-democracy.md",
+      "sourceHash": "a7f3226bbeaad5072751a79f09ae976beb60fc44dd47604a3d551859e4607ff9",
+      "sourceModified": "2026-07-01T06:58:06.995809+00:00",
+      "topWords": [
+        "UBI",
+        "Work",
+        "India",
+        "Public",
+        "Becomes",
+        "AI",
+        "Means",
+        "Payment",
+        "Employment",
+        "Income",
+        "Poverty",
+        "Food"
       ],
       "wordCount": 130
     },
