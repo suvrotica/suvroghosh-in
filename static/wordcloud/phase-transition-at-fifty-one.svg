@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Phase Transition at Fifty-One" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Phase Transition at Fifty-One</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(311,529)" font-size="118" style="fill:#a9b7a3">Milk</text>
+<text transform="translate(695,370)" font-size="118" style="fill:#8fb7d0">Stove</text>
+<text transform="translate(621,477)" font-size="96" style="fill:#b6c3dd">Transition</text>
+<text transform="translate(755,208)" font-size="96" style="fill:#d5d2c2">Change</text>
+<text transform="translate(358,327)" font-size="96" style="fill:#d5d2c2">State</text>
+<text transform="translate(99,653) rotate(-90)" font-size="96" style="fill:#e0b879">Water</text>
+<text transform="translate(31,107)" font-size="96" style="fill:#c7d7b5">Pressure</text>
+<text transform="translate(426,614)" font-size="96" style="fill:#d88988">Feel</text>
+<text transform="translate(888,639)" font-size="96" style="fill:#d5d2c2">Used</text>
+<text transform="translate(212,218)" font-size="96" style="fill:#9fc9c5">Enough</text>
+<text transform="translate(114,535)" font-size="70" style="fill:#9fc9c5">Rose</text>
+<text transform="translate(597,149)" font-size="70" style="fill:#a9b7a3">Pan</text>
+<text transform="translate(780,78)" font-size="70" style="fill:#9fc9c5">Warning</text>
+<text transform="translate(490,711)" font-size="70" style="fill:#d88988">Earned</text>
+<text transform="translate(121,439)" font-size="70" style="fill:#d6a79f">Second</text>
+<text transform="translate(819,709)" font-size="70" style="fill:#e0b879">Obedient</text>
+<text transform="translate(1185,401) rotate(-90)" font-size="70" style="fill:#c7d7b5">Liquid</text>
+<text transform="translate(999,541)" font-size="70" style="fill:#e0b879">Next</text>
+<text transform="translate(1261,562) rotate(-90)" font-size="70" style="fill:#c7d7b5">Ambition</text>
+<text transform="translate(126,687)" font-size="70" style="fill:#d88988">Bubbles</text>
+<text transform="translate(65,313)" font-size="70" style="fill:#9fc9c5">Lowered</text>
+<text transform="translate(825,289)" font-size="70" style="fill:#d6a79f">Flame</text>
+<text transform="translate(682,617)" font-size="70" style="fill:#a9b7a3">Late</text>
+<text transform="translate(66,362) rotate(-90)" font-size="70" style="fill:#b6c3dd">Pale</text>
+<text transform="translate(1076,74)" font-size="70" style="fill:#d6a79f">Ring</text>
+<text transform="translate(146,597)" font-size="70" style="fill:#c7d7b5">Spread</text>
+<text transform="translate(633,533)" font-size="70" style="fill:#d88988">Across</text>
+<text transform="translate(134,380)" font-size="65" style="fill:#9fc9c5">Transformation</text>
+<text transform="translate(499,75)" font-size="65" style="fill:#8fb7d0">Often</text>
+<text transform="translate(1001,148)" font-size="65" style="fill:#d9c89e">Behaves</text>
+<text transform="translate(655,277)" font-size="65" style="fill:#d5d2c2">Room</text>
+<text transform="translate(52,160)" font-size="65" style="fill:#9fc9c5">Less</text>
+<text transform="translate(131,49)" font-size="59" style="fill:#b6c3dd">Revelation</text>
+<text transform="translate(378,422)" font-size="50" style="fill:#e0b879">Cleaning</text>
+<text transform="translate(1144,600)" font-size="50" style="fill:#c49a6c">Duty</text>
+<text transform="translate(176,269)" font-size="50" style="fill:#d5d2c2">Phase</text>
+<text transform="translate(746,102) rotate(-90)" font-size="50" style="fill:#e0b879">Ice</text>
+<text transform="translate(587,208)" font-size="50" style="fill:#8fb7d0">Steam</text>
+<text transform="translate(798,121)" font-size="50" style="fill:#c49a6c">Small</text>
+<text transform="translate(681,420)" font-size="50" style="fill:#d88988">Domestic</text>
+<text transform="translate(416,656)" font-size="48" style="fill:#d5d2c2">Accusation</text>
+<text transform="translate(272,160)" font-size="48" style="fill:#d9c89e">Material</text>
+<text transform="translate(109,480)" font-size="48" style="fill:#8fb7d0">Remains</text>
+<text transform="translate(1111,417) rotate(-90)" font-size="48" style="fill:#d88988">Related</text>
+<text transform="translate(27,193)" font-size="38" style="fill:#c49a6c">Behavior</text>
+<text transform="translate(715,653)" font-size="38" style="fill:#8fb7d0">Alters</text>
+<text transform="translate(4,715)" font-size="38" style="fill:#c7d7b5">Flows</text>
+<text transform="translate(585,250) rotate(-90)" font-size="38" style="fill:#d6a79f">Hardens</text>
+<text transform="translate(1116,645)" font-size="37" style="fill:#c7d7b5">Expands</text>
+<text transform="translate(943,573)" font-size="37" style="fill:#d5d2c2">Escapes</text>
+<text transform="translate(221,622)" font-size="30" style="fill:#8fb7d0">Temperature</text>
+<text transform="translate(682,561)" font-size="30" style="fill:#c49a6c">Rises</text>
+<text transform="translate(27,545) rotate(-90)" font-size="30" style="fill:#c7d7b5">Shifts</text>
+<text transform="translate(287,709)" font-size="25" style="fill:#9fc9c5">Arrangement</text>
+<text transform="translate(810,567)" font-size="25" style="fill:#c49a6c">Stops</text>
+<text transform="translate(885,523)" font-size="25" style="fill:#8fb7d0">Holding</text>
+<text transform="translate(864,143)" font-size="25" style="fill:#c7d7b5">Fiftyone</text>
+<text transform="translate(104,222)" font-size="25" style="fill:#d6a79f">Feels</text>
+<text transform="translate(32,25)" font-size="25" style="fill:#d5d2c2">Though</text>
+<text transform="translate(23,148) rotate(-90)" font-size="25" style="fill:#a9b7a3">Dignity</text>
+<text transform="translate(130,715)" font-size="25" style="fill:#d9c89e">Textbook</text>
+<text transform="translate(769,110) rotate(-90)" font-size="25" style="fill:#c49a6c">Diagram</text>
+<text transform="translate(774,233)" font-size="25" style="fill:#8fb7d0">Reborn</text>
+<text transform="translate(1153,710)" font-size="25" style="fill:#d9c89e">Rebirth</text>
+<text transform="translate(194,336)" font-size="25" style="fill:#b6c3dd">Excellent</text>
+<text transform="translate(480,551)" font-size="25" style="fill:#d5d2c2">Lighting</text>
+<text transform="translate(924,392)" font-size="20" style="fill:#8fb7d0">Reconfigured</text>
+<text transform="translate(88,265)" font-size="20" style="fill:#c7d7b5">Heat</text>
+<text transform="translate(973,20)" font-size="20" style="fill:#c7d7b5">Versions</text>
+<text transform="translate(800,19)" font-size="20" style="fill:#9fc9c5">Vanished</text>
+<text transform="translate(35,678)" font-size="20" style="fill:#9fc9c5">Student</text>
+<text transform="translate(910,499)" font-size="20" style="fill:#d9c89e">Worker</text>
+<text transform="translate(888,229)" font-size="20" style="fill:#9fc9c5">Returnee</text>
+<text transform="translate(265,237)" font-size="20" style="fill:#9fc9c5">Consultant</text>
+<text transform="translate(954,97)" font-size="20" style="fill:#c49a6c">Reader</text>
+<text transform="translate(740,693)" font-size="20" style="fill:#e0b879">Failed</text>
+<text transform="translate(554,21)" font-size="20" style="fill:#d88988">Planner</text>
+<text transform="translate(641,571)" font-size="20" style="fill:#d9c89e">Man</text>
+<text transform="translate(644,169)" font-size="20" style="fill:#b6c3dd">Rice</text>
+<text transform="translate(882,663)" font-size="20" style="fill:#d5d2c2">Cooker</text>
+<text transform="translate(1200,681)" font-size="20" style="fill:#a9b7a3">Many</text>
+<text transform="translate(55,335)" font-size="20" style="fill:#d5d2c2">Tabs</text>
+<text transform="translate(301,546)" font-size="20" style="fill:#9fc9c5">Open</text>
+<text transform="translate(707,235)" font-size="20" style="fill:#b6c3dd">Mind</text>
+<text transform="translate(1192,216)" font-size="20" style="fill:#a9b7a3">Remain</text>
+<text transform="translate(1166,25)" font-size="20" style="fill:#a9b7a3">Solution</text>
+<text transform="translate(84,244)" font-size="20" style="fill:#a9b7a3">Visible</text>
+<text transform="translate(476,258)" font-size="20" style="fill:#9fc9c5">Cup</text>
+<text transform="translate(1189,180)" font-size="20" style="fill:#c7d7b5">Stirred</text>
+<text transform="translate(1114,97)" font-size="20" style="fill:#d5d2c2">Changed</text>
+<text transform="translate(594,94)" font-size="20" style="fill:#c7d7b5">Ambitions</text>
+<text transform="translate(568,451)" font-size="20" style="fill:#d88988">Longer</text>
+<text transform="translate(110,632)" font-size="20" style="fill:#d88988">Dissolve</text>
+<text transform="translate(1062,361) rotate(-90)" font-size="20" style="fill:#d5d2c2">Humiliations</text>
+<text transform="translate(618,226)" font-size="20" style="fill:#c49a6c">Settle</text>
+<text transform="translate(72,362)" font-size="20" style="fill:#c7d7b5">Bottom</text>
+<text transform="translate(895,540)" font-size="20" style="fill:#b6c3dd">Faster</text>
+<text transform="translate(1022,661)" font-size="20" style="fill:#d5d2c2">Desires</text>
+<text transform="translate(20,681) rotate(-90)" font-size="20" style="fill:#8fb7d0">Evaporate</text>
+<text transform="translate(571,268)" font-size="20" style="fill:#c49a6c">Named</text>
+<text transform="translate(1141,615)" font-size="15" style="fill:#d88988">Background</text>
+<text transform="translate(835,34)" font-size="15" style="fill:#b6c3dd">Infrastructure</text>
+<text transform="translate(598,472)" font-size="15" style="fill:#d9c89e">Now</text>
+<text transform="translate(1203,556) rotate(-90)" font-size="15" style="fill:#a9b7a3">Submits</text>
+<text transform="translate(509,120)" font-size="15" style="fill:#d88988">Daily</text>
+<text transform="translate(484,17)" font-size="15" style="fill:#d9c89e">Reports</text>
+<text transform="translate(746,388)" font-size="15" style="fill:#d9c89e">Science</text>
+<text transform="translate(357,639)" font-size="15" style="fill:#a9b7a3">Useful</text>
+<text transform="translate(1106,202)" font-size="15" style="fill:#d6a79f">Flatter</text>
+<text transform="translate(1130,412)" font-size="15" style="fill:#b6c3dd">Ordinary</text>
+<text transform="translate(1137,326) rotate(-90)" font-size="15" style="fill:#c7d7b5">Irreversible</text>
+<text transform="translate(420,678)" font-size="15" style="fill:#d6a79f">Slightly</text>
+<text transform="translate(888,556)" font-size="15" style="fill:#a9b7a3">Messy</text>
+<text transform="translate(214,124)" font-size="15" style="fill:#e0b879">Every</text>
+<text transform="translate(1056,492)" font-size="15" style="fill:#d88988">Progress</text>
+<text transform="translate(702,172)" font-size="15" style="fill:#d5d2c2">Merely</text>
+<text transform="translate(81,379)" font-size="15" style="fill:#c7d7b5">Happens</text>
+<text transform="translate(744,673)" font-size="15" style="fill:#c7d7b5">Meets</text>
+<text transform="translate(1204,196)" font-size="15" style="fill:#d6a79f">Time</text>
+<text transform="translate(954,120)" font-size="15" style="fill:#a9b7a3">Cools</text>
+<text transform="translate(642,331)" font-size="15" style="fill:#d6a79f">Slowly</text>
+<text transform="translate(425,591) rotate(-90)" font-size="15" style="fill:#d6a79f">Thin</text>
+<text transform="translate(1075,17)" font-size="15" style="fill:#c7d7b5">Skin</text>
+<text transform="translate(190,553)" font-size="15" style="fill:#8fb7d0">Forms</text>
+<text transform="translate(67,539)" font-size="15" style="fill:#b6c3dd">Dried</text>
+<text transform="translate(1115,559)" font-size="15" style="fill:#9fc9c5">Outside</text>
+<text transform="translate(1181,661)" font-size="15" style="fill:#c49a6c">Continues</text>
+<text transform="translate(731,127)" font-size="15" style="fill:#e0b879">Heating</text>
+<text transform="translate(18,240) rotate(-90)" font-size="15" style="fill:#d88988">Everything</text>
+<text transform="translate(625,520) rotate(-90)" font-size="15" style="fill:#c49a6c">Level</text>
+</svg>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T23:00:00.278888+00:00",
+  "generatedAt": "2026-07-01T23:14:50.350705+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -2991,6 +2991,29 @@
       ],
       "wordCount": 130
     },
+    "fractal-geometry-of-a-half-lived-life": {
+      "generatedAt": "2026-07-01T23:14:12.522967+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/fractal-geometry-of-a-half-lived-life.svg",
+      "source": "src/lib/posts/fractal-geometry-of-a-half-lived-life.md",
+      "sourceHash": "772dd9c4598a3c0ac2c31dd9c5e72e2ed680b22fe34626dc85be77723d4b0a6f",
+      "sourceModified": "2026-07-01T23:13:19.561141+00:00",
+      "topWords": [
+        "Smaller",
+        "Enters",
+        "Edge",
+        "Tea",
+        "Stain",
+        "Table",
+        "Ring",
+        "Afternoon",
+        "Mathematics",
+        "Far",
+        "Away",
+        "Closer"
+      ],
+      "wordCount": 130
+    },
     "frog-in-the-robot-century": {
       "generatedAt": "2026-07-01T16:40:47.546865+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3013,6 +3036,29 @@
         "Payment"
       ],
       "wordCount": 130
+    },
+    "future-tense-fog": {
+      "generatedAt": "2026-07-01T23:14:14.295947+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/future-tense-fog.svg",
+      "source": "src/lib/posts/future-tense-fog.md",
+      "sourceHash": "6eff7c2eab6916ab7aaebf0acae98c1e0fed249bc768e1bd8e476fee92d4b249",
+      "sourceModified": "2026-07-01T23:13:19.568814+00:00",
+      "topWords": [
+        "Future",
+        "Towel",
+        "Enough",
+        "Small",
+        "Dry",
+        "Road",
+        "Room",
+        "Arrives",
+        "Counters",
+        "Forms",
+        "Motion",
+        "Chair"
+      ],
+      "wordCount": 118
     },
     "great-trigonometrical-survey-india-trigonometry-empire": {
       "generatedAt": "2026-06-30T22:35:40.372676+00:00",
@@ -3220,6 +3266,29 @@
         "Information"
       ],
       "wordCount": 130
+    },
+    "highly-composite-mornings-prime-afternoons": {
+      "generatedAt": "2026-07-01T23:14:16.000606+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/highly-composite-mornings-prime-afternoons.svg",
+      "source": "src/lib/posts/highly-composite-mornings-prime-afternoons.md",
+      "sourceHash": "58dbd79aeb2ff8f5facbdacb34a5300c159e9068fbe6553edfa3572e37af2639",
+      "sourceModified": "2026-07-01T23:13:19.568814+00:00",
+      "topWords": [
+        "Afternoon",
+        "Small",
+        "Room",
+        "Number",
+        "Prime",
+        "Morning",
+        "Heat",
+        "Tea",
+        "Ramanujan",
+        "Mind",
+        "Highly",
+        "Composite"
+      ],
+      "wordCount": 123
     },
     "hilsa-and-the-family-court-of-appetite": {
       "generatedAt": "2026-07-01T08:12:33.592920+00:00",
@@ -3520,6 +3589,52 @@
       ],
       "wordCount": 130
     },
+    "i-could-have-been-a-simple-fool": {
+      "generatedAt": "2026-07-01T23:14:17.911558+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/i-could-have-been-a-simple-fool.svg",
+      "source": "src/lib/posts/i-could-have-been-a-simple-fool.md",
+      "sourceHash": "f40940f0c69a74271b883f21f9ee5d1a08a61e5f9ee11ee49835c7c23a27a74e",
+      "sourceModified": "2026-07-01T23:13:19.572231+00:00",
+      "topWords": [
+        "Man",
+        "Everyone",
+        "Drain",
+        "Outside",
+        "Smell",
+        "Entered",
+        "Room",
+        "Little",
+        "Doubt",
+        "Behind",
+        "Small",
+        "Cough"
+      ],
+      "wordCount": 130
+    },
+    "i-do-not-hate-the-world-i-am-tired": {
+      "generatedAt": "2026-07-01T23:14:19.728165+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/i-do-not-hate-the-world-i-am-tired.svg",
+      "source": "src/lib/posts/i-do-not-hate-the-world-i-am-tired.md",
+      "sourceHash": "1c95cf5422d56cc0dbe7633d947b8a31d7cf959b90040317f1121882d60a8cd0",
+      "sourceModified": "2026-07-01T23:13:19.575355+00:00",
+      "topWords": [
+        "Many",
+        "Cup",
+        "Man",
+        "Clean",
+        "Table",
+        "Small",
+        "Decent",
+        "Days",
+        "Continues",
+        "World",
+        "REST",
+        "Later"
+      ],
+      "wordCount": 130
+    },
     "if-lies-had-noses-again": {
       "generatedAt": "2026-07-01T11:58:44.759664+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3770,6 +3885,29 @@
         "Class",
         "Stones",
         "Enough"
+      ],
+      "wordCount": 130
+    },
+    "insect-forms-of-a-calcutta-life": {
+      "generatedAt": "2026-07-01T23:14:21.672470+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/insect-forms-of-a-calcutta-life.svg",
+      "source": "src/lib/posts/insect-forms-of-a-calcutta-life.md",
+      "sourceHash": "07ee4e0d4ac49a99a751aafad19d7cfbd6ba30b2a775b984682a903dbb66a00a",
+      "sourceModified": "2026-07-01T23:13:19.577171+00:00",
+      "topWords": [
+        "Drawing",
+        "Small",
+        "Becomes",
+        "Palm",
+        "Line",
+        "Face",
+        "Human",
+        "Advantage",
+        "Pencil",
+        "Darkened",
+        "Side",
+        "Anything"
       ],
       "wordCount": 130
     },
@@ -4186,6 +4324,29 @@
         "Binadi"
       ],
       "wordCount": 130
+    },
+    "local-disgrace-still-making-noise": {
+      "generatedAt": "2026-07-01T23:14:23.475413+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/local-disgrace-still-making-noise.svg",
+      "source": "src/lib/posts/local-disgrace-still-making-noise.md",
+      "sourceHash": "99e67d8f9ad01193ad4d23d160f6349f480f7caf4759555c76ec2d5164d87849",
+      "sourceModified": "2026-07-01T23:13:19.578866+00:00",
+      "topWords": [
+        "Man",
+        "Regular",
+        "Clap",
+        "Useless",
+        "Room",
+        "Wall",
+        "Work",
+        "Evidence",
+        "Local",
+        "Cruelty",
+        "Oddness",
+        "Time"
+      ],
+      "wordCount": 125
     },
     "loneliness-is-not-a-generation": {
       "generatedAt": "2026-07-01T22:59:33.609342+00:00",
@@ -4693,6 +4854,29 @@
       ],
       "wordCount": 130
     },
+    "no-ambition-left-cold-tea": {
+      "generatedAt": "2026-07-01T23:14:25.561436+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/no-ambition-left-cold-tea.svg",
+      "source": "src/lib/posts/no-ambition-left-cold-tea.md",
+      "sourceHash": "e2073c078b6a5c496e6dc39c86d043ecbc1a0bb4a09368bdbfb9502efa597a63",
+      "sourceModified": "2026-07-01T23:13:19.580877+00:00",
+      "topWords": [
+        "Tea",
+        "Biscuit",
+        "Ambition",
+        "Cup",
+        "Less",
+        "Work",
+        "Verbs",
+        "Rice",
+        "Late",
+        "Toward",
+        "Duty",
+        "Cooled"
+      ],
+      "wordCount": 129
+    },
     "north-facing-room": {
       "generatedAt": "2026-06-30T21:05:35.616665+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4808,6 +4992,29 @@
       ],
       "wordCount": 130
     },
+    "oxygen-in-a-box": {
+      "generatedAt": "2026-07-01T23:14:27.589459+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/oxygen-in-a-box.svg",
+      "source": "src/lib/posts/oxygen-in-a-box.md",
+      "sourceHash": "561cad951346aedfdeaefd8e041bd790ccd4a96f0b00f801d8938c1c65464b77",
+      "sourceModified": "2026-07-01T23:13:19.580877+00:00",
+      "topWords": [
+        "Room",
+        "Enough",
+        "Meets",
+        "Air",
+        "Stale",
+        "Man",
+        "Long",
+        "Draft",
+        "Writing",
+        "Irritation",
+        "Memory",
+        "Small"
+      ],
+      "wordCount": 124
+    },
     "painful-tooth-fairy-calcutta": {
       "generatedAt": "2026-07-01T22:45:36.984724+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4900,6 +5107,29 @@
       ],
       "wordCount": 130
     },
+    "phase-transition-at-fifty-one": {
+      "generatedAt": "2026-07-01T23:14:29.567343+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/phase-transition-at-fifty-one.svg",
+      "source": "src/lib/posts/phase-transition-at-fifty-one.md",
+      "sourceHash": "aaff8a66fbfdddf8e35ec2a09c7b7dfa28612bebe69c2a54a8b0b558991a5672",
+      "sourceModified": "2026-07-01T23:13:19.585226+00:00",
+      "topWords": [
+        "Milk",
+        "Stove",
+        "Transition",
+        "Change",
+        "State",
+        "Water",
+        "Pressure",
+        "Feel",
+        "Used",
+        "Enough",
+        "Rose",
+        "Pan"
+      ],
+      "wordCount": 130
+    },
     "physics-and-deep-neural-networks-calcutta-scale-story": {
       "generatedAt": "2026-07-01T16:59:42.966764+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4968,6 +5198,29 @@
         "Work"
       ],
       "wordCount": 130
+    },
+    "pod-mara-gechhe-calcutta-essay": {
+      "generatedAt": "2026-07-01T23:14:30.972208+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/pod-mara-gechhe-calcutta-essay.svg",
+      "source": "src/lib/posts/pod-mara-gechhe-calcutta-essay.md",
+      "sourceHash": "dc48ac1fd261ab1ef9fdaf9bd6d2d1d2eb8f22a99af3aa3602a0e38105ea5dce",
+      "sourceModified": "2026-07-01T23:13:19.587238+00:00",
+      "topWords": [
+        "Enough",
+        "Chair",
+        "Even",
+        "Heat",
+        "Cloth",
+        "Foolish",
+        "Condition",
+        "Weather",
+        "Small",
+        "Whole",
+        "Bill",
+        "Complaint"
+      ],
+      "wordCount": 106
     },
     "pohela-baisakh-mughal-calendar-memory": {
       "generatedAt": "2026-06-30T23:05:22.836096+00:00",
@@ -5314,6 +5567,29 @@
       ],
       "wordCount": 130
     },
+    "ram-bharose-is-no-bharosa": {
+      "generatedAt": "2026-07-01T23:14:32.688117+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ram-bharose-is-no-bharosa.svg",
+      "source": "src/lib/posts/ram-bharose-is-no-bharosa.md",
+      "sourceHash": "51151254f39c7180ece23bef185934672aa39911aabe593d2e15522bb679be97",
+      "sourceModified": "2026-07-01T23:13:19.591004+00:00",
+      "topWords": [
+        "Trust",
+        "Ram",
+        "Bharose",
+        "Water",
+        "Earns",
+        "Rice",
+        "Cooker",
+        "Layer",
+        "Much",
+        "Phrase",
+        "Leave",
+        "Fate"
+      ],
+      "wordCount": 121
+    },
     "randomness-chaos-complexity-calcutta": {
       "generatedAt": "2026-06-30T23:05:24.330994+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -5428,6 +5704,52 @@
         "Tea"
       ],
       "wordCount": 130
+    },
+    "rice-cooker-bookkeeping": {
+      "generatedAt": "2026-07-01T23:14:34.491278+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/rice-cooker-bookkeeping.svg",
+      "source": "src/lib/posts/rice-cooker-bookkeeping.md",
+      "sourceHash": "a8ecff73dab6ee43b397374d063a3e778aac71a4e7f801edceaffa6b9c654a08",
+      "sourceModified": "2026-07-01T23:13:19.594543+00:00",
+      "topWords": [
+        "Rice",
+        "Month",
+        "Cooker",
+        "Small",
+        "Calculation",
+        "Heat",
+        "Notebook",
+        "Uncertain",
+        "Repair",
+        "Budgeting",
+        "Question",
+        "Clicked"
+      ],
+      "wordCount": 127
+    },
+    "ro-water-abu-dhabi-rent-calcutta": {
+      "generatedAt": "2026-07-01T23:14:36.333664+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ro-water-abu-dhabi-rent-calcutta.svg",
+      "source": "src/lib/posts/ro-water-abu-dhabi-rent-calcutta.md",
+      "sourceHash": "4c77bf597cb331ba070c9d42b00b6262907869ef553445e437fc36b4a56f099d",
+      "sourceModified": "2026-07-01T23:13:19.594543+00:00",
+      "topWords": [
+        "Water",
+        "Remains",
+        "Tea",
+        "Better",
+        "Filter",
+        "Glass",
+        "Boil",
+        "Means",
+        "Covers",
+        "Tasted",
+        "Wrong",
+        "Even"
+      ],
+      "wordCount": 123
     },
     "rotten-sack-indian-politics": {
       "generatedAt": "2026-07-01T12:36:57.404158+00:00",
@@ -5771,6 +6093,52 @@
         "Equations",
         "Prey",
         "Model"
+      ],
+      "wordCount": 130
+    },
+    "shiva-and-the-poison-in-the-throat": {
+      "generatedAt": "2026-07-01T23:14:38.156102+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/shiva-and-the-poison-in-the-throat.svg",
+      "source": "src/lib/posts/shiva-and-the-poison-in-the-throat.md",
+      "sourceHash": "55190ca812a24e5c84d959806a92e62f4c1f9de65aeca56b4ab563118fad595f",
+      "sourceModified": "2026-07-01T23:13:19.596551+00:00",
+      "topWords": [
+        "Throat",
+        "Phone",
+        "Familiar",
+        "Payment",
+        "Poison",
+        "Tightens",
+        "Polite",
+        "Voice",
+        "Appears",
+        "Rings",
+        "Number",
+        "Sentence"
+      ],
+      "wordCount": 114
+    },
+    "shortchanged-from-dollar-to-paise": {
+      "generatedAt": "2026-07-01T23:14:39.902384+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/shortchanged-from-dollar-to-paise.svg",
+      "source": "src/lib/posts/shortchanged-from-dollar-to-paise.md",
+      "sourceHash": "98a614eeb9e1429c38f6bb2dae571e1f9a6d80b11eb7bf119e274f5ea587f41c",
+      "sourceModified": "2026-07-01T23:13:19.598559+00:00",
+      "topWords": [
+        "Competence",
+        "Shirt",
+        "America",
+        "Man",
+        "Always",
+        "Somewhere",
+        "Dull",
+        "Outside",
+        "Call",
+        "Smelled",
+        "Heat",
+        "Finished"
       ],
       "wordCount": 130
     },
@@ -6210,6 +6578,29 @@
         "First"
       ],
       "wordCount": 130
+    },
+    "tea-depression-and-the-probability-of-a-blog": {
+      "generatedAt": "2026-07-01T23:14:41.296411+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/tea-depression-and-the-probability-of-a-blog.svg",
+      "source": "src/lib/posts/tea-depression-and-the-probability-of-a-blog.md",
+      "sourceHash": "dcd6f5963e67a12c8f4103f5ed21f66be18a7608510629e3903d4ffd083738e6",
+      "sourceModified": "2026-07-01T23:13:19.601222+00:00",
+      "topWords": [
+        "Small",
+        "Room",
+        "Thought",
+        "Tea",
+        "Cup",
+        "Judge",
+        "Probability",
+        "Man",
+        "Writing",
+        "Plans",
+        "Gives",
+        "Space"
+      ],
+      "wordCount": 115
     },
     "tea-skin-and-the-science-of-suspicion": {
       "generatedAt": "2026-07-01T16:40:58.920519+00:00",
@@ -6763,6 +7154,29 @@
       ],
       "wordCount": 130
     },
+    "the-compressor-and-the-small-black-hole": {
+      "generatedAt": "2026-07-01T23:14:43.126910+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-compressor-and-the-small-black-hole.svg",
+      "source": "src/lib/posts/the-compressor-and-the-small-black-hole.md",
+      "sourceHash": "2058f5e3663886c635b24443f7bd2646d321cf3e91713b5bcedd798169724dc7",
+      "sourceModified": "2026-07-01T23:13:19.601222+00:00",
+      "topWords": [
+        "Compressor",
+        "Room",
+        "Outside",
+        "Seconds",
+        "Machine",
+        "Work",
+        "Inward",
+        "Black",
+        "Hole",
+        "Boundary",
+        "Event",
+        "Horizon"
+      ],
+      "wordCount": 115
+    },
     "the-contender-who-would-not-compete": {
       "generatedAt": "2026-07-01T22:45:47.482005+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6854,6 +7268,52 @@
         "Stood"
       ],
       "wordCount": 130
+    },
+    "the-cup-that-refused-to-become-content": {
+      "generatedAt": "2026-07-01T23:14:44.710868+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-cup-that-refused-to-become-content.svg",
+      "source": "src/lib/posts/the-cup-that-refused-to-become-content.md",
+      "sourceHash": "9e3e66c8617c867b382b0adde8c82a4074b0ecb1aafee5dd4b69748a12c0fb62",
+      "sourceModified": "2026-07-01T23:13:19.605851+00:00",
+      "topWords": [
+        "Cup",
+        "Leave",
+        "Tea",
+        "Skin",
+        "Small",
+        "Long",
+        "Conversion",
+        "Writing",
+        "Room",
+        "Feel",
+        "Say",
+        "Grown"
+      ],
+      "wordCount": 114
+    },
+    "the-cup-that-starts-the-sun": {
+      "generatedAt": "2026-07-01T23:14:46.459732+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-cup-that-starts-the-sun.svg",
+      "source": "src/lib/posts/the-cup-that-starts-the-sun.md",
+      "sourceHash": "47f0fd1cca1b822c7b0114070c4673fb6cef379b37fa2a6da7b22d79165a17fe",
+      "sourceModified": "2026-07-01T23:13:19.607858+00:00",
+      "topWords": [
+        "Tea",
+        "Pan",
+        "Room",
+        "Argues",
+        "Corner",
+        "Cup",
+        "Morning",
+        "Heat",
+        "First",
+        "Long",
+        "Nobody",
+        "Sat"
+      ],
+      "wordCount": 119
     },
     "the-desperation-premium": {
       "generatedAt": "2026-06-30T22:19:01.160963+00:00",
@@ -6970,6 +7430,29 @@
       ],
       "wordCount": 130
     },
+    "the-elon-trillionaire-gap": {
+      "generatedAt": "2026-07-01T23:14:48.200077+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-elon-trillionaire-gap.svg",
+      "source": "src/lib/posts/the-elon-trillionaire-gap.md",
+      "sourceHash": "5688e51426daf351e23cc87cf8b89ab3eea36b5d86c0374de36c40ab22f4694d",
+      "sourceModified": "2026-07-01T23:13:19.609600+00:00",
+      "topWords": [
+        "Scale",
+        "Room",
+        "Fan",
+        "Phone",
+        "Number",
+        "Wealth",
+        "Becomes",
+        "Rice",
+        "Cooker",
+        "Numbers",
+        "Placed",
+        "Somewhere"
+      ],
+      "wordCount": 130
+    },
     "the-empty-room-inside-loneliness": {
       "generatedAt": "2026-06-30T21:06:31.528625+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6992,6 +7475,29 @@
         "Missing"
       ],
       "wordCount": 130
+    },
+    "the-error-bar-around-a-man": {
+      "generatedAt": "2026-07-01T23:14:50.004438+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-error-bar-around-a-man.svg",
+      "source": "src/lib/posts/the-error-bar-around-a-man.md",
+      "sourceHash": "bb9daf1fe02927fadf9accaef4fa1dc5f584bc43c4e5c025088d9e9bb7bc3a4b",
+      "sourceModified": "2026-07-01T23:13:19.613073+00:00",
+      "topWords": [
+        "Mirror",
+        "Failed",
+        "Small",
+        "Face",
+        "Labels",
+        "Point",
+        "Estimate",
+        "Number",
+        "Statistics",
+        "Travel",
+        "Error",
+        "Bar"
+      ],
+      "wordCount": 127
     },
     "the-eye-eater-of-hazra": {
       "generatedAt": "2026-06-30T21:06:33.371541+00:00",
