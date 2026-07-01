@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T23:14:50.350705+00:00",
+  "generatedAt": "2026-07-01T23:27:58.812588+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -69,6 +69,29 @@
         "Technical"
       ],
       "wordCount": 130
+    },
+    "a-trapezoid-in-low-light": {
+      "generatedAt": "2026-07-01T23:27:26.677634+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/a-trapezoid-in-low-light.svg",
+      "source": "src/lib/posts/a-trapezoid-in-low-light.md",
+      "sourceHash": "aef0d33f7772c70fee0a3e232407bd6e02b542a6cd419b5887f43ce3ddc99dc9",
+      "sourceModified": "2026-07-01T23:26:03.884874+00:00",
+      "topWords": [
+        "Rectangle",
+        "Tea",
+        "Room",
+        "Becomes",
+        "Skin",
+        "Geometry",
+        "Enough",
+        "Always",
+        "Trapezoid",
+        "Every",
+        "Pretending",
+        "Grown"
+      ],
+      "wordCount": 129
     },
     "administratively-deleted": {
       "generatedAt": "2026-07-01T18:47:55.124979+00:00",
@@ -7591,6 +7614,29 @@
       ],
       "wordCount": 130
     },
+    "the-former-bright-boy-problem": {
+      "generatedAt": "2026-07-01T23:27:29.166400+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-former-bright-boy-problem.svg",
+      "source": "src/lib/posts/the-former-bright-boy-problem.md",
+      "sourceHash": "0c334102159c72e7aa0dc7781043e5b184d26e82e15d6629dcf59995c36752b9",
+      "sourceModified": "2026-07-01T23:26:03.842660+00:00",
+      "topWords": [
+        "Folder",
+        "Boy",
+        "Promise",
+        "Bright",
+        "Certificate",
+        "Paper",
+        "Broke",
+        "Evidence",
+        "Former",
+        "School",
+        "English",
+        "Becomes"
+      ],
+      "wordCount": 123
+    },
     "the-fourth-standard-saint": {
       "generatedAt": "2026-06-30T21:06:38.451141+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7752,6 +7798,29 @@
       ],
       "wordCount": 130
     },
+    "the-great-calcutta-bathing-shaving-dressing-for-civilization-problem": {
+      "generatedAt": "2026-07-01T23:27:30.866084+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.svg",
+      "source": "src/lib/posts/the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.md",
+      "sourceHash": "f3378f7e5471037c280793fa578ee5b28e7f19a90e0fd72faebc810e8efa85d2",
+      "sourceModified": "2026-07-01T23:26:03.847465+00:00",
+      "topWords": [
+        "Towel",
+        "Bucket",
+        "Bathroom",
+        "Already",
+        "Becomes",
+        "Soap",
+        "Razor",
+        "Shirt",
+        "Civilization",
+        "Republic",
+        "Remain",
+        "Object"
+      ],
+      "wordCount": 128
+    },
     "the-great-indian-fence-sitter": {
       "generatedAt": "2026-07-01T17:38:19.542530+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7772,6 +7841,29 @@
         "Balance",
         "Wisdom",
         "Sometimes"
+      ],
+      "wordCount": 130
+    },
+    "the-great-unemployment-of-the-soul": {
+      "generatedAt": "2026-07-01T23:27:32.822953+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-great-unemployment-of-the-soul.svg",
+      "source": "src/lib/posts/the-great-unemployment-of-the-soul.md",
+      "sourceHash": "806ca993123a8377502f757cef503222810f4dcedf717f47c1a784069ad0de6d",
+      "sourceModified": "2026-07-01T23:26:03.849474+00:00",
+      "topWords": [
+        "Human",
+        "Model",
+        "Phone",
+        "Room",
+        "Wants",
+        "AI",
+        "Present",
+        "Unemployment",
+        "Income",
+        "Pretend",
+        "Rent",
+        "Feeling"
       ],
       "wordCount": 130
     },
@@ -7982,6 +8074,29 @@
       ],
       "wordCount": 130
     },
+    "the-laugh-track-has-left-the-room": {
+      "generatedAt": "2026-07-01T23:27:34.577076+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-laugh-track-has-left-the-room.svg",
+      "source": "src/lib/posts/the-laugh-track-has-left-the-room.md",
+      "sourceHash": "f93e623d93ddf32eacc29146dab91aedac4de885b7eda8534241af303f185334",
+      "sourceModified": "2026-07-01T23:26:03.849474+00:00",
+      "topWords": [
+        "Enough",
+        "Laugh",
+        "Laptop",
+        "Screen",
+        "Light",
+        "Tea",
+        "Laughter",
+        "Mind",
+        "Face",
+        "Dignity",
+        "Three",
+        "Sound"
+      ],
+      "wordCount": 128
+    },
     "the-linear-algebra-blind-spot-healthcare-ai-safety": {
       "generatedAt": "2026-07-01T18:06:17.823872+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8074,6 +8189,29 @@
       ],
       "wordCount": 130
     },
+    "the-man-who-became-his-own-waiting-room": {
+      "generatedAt": "2026-07-01T23:27:36.224549+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-man-who-became-his-own-waiting-room.svg",
+      "source": "src/lib/posts/the-man-who-became-his-own-waiting-room.md",
+      "sourceHash": "bbff191755b407836c162e0a66fbdf92ef0ffc9fc816b50d86b1470139eaf2ff",
+      "sourceModified": "2026-07-01T23:26:03.857785+00:00",
+      "topWords": [
+        "Waiting",
+        "Room",
+        "Becomes",
+        "Door",
+        "Keeps",
+        "Timetable",
+        "Month",
+        "Furniture",
+        "Open",
+        "Outside",
+        "Harmless",
+        "Chair"
+      ],
+      "wordCount": 109
+    },
     "the-man-who-looked-too-long": {
       "generatedAt": "2026-06-30T21:06:57.539737+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8120,6 +8258,29 @@
       ],
       "wordCount": 130
     },
+    "the-many-body-problem-of-indian-life": {
+      "generatedAt": "2026-07-01T23:27:37.803342+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-many-body-problem-of-indian-life.svg",
+      "source": "src/lib/posts/the-many-body-problem-of-indian-life.md",
+      "sourceHash": "950f57ba9f6d856d9fd0d5231d9189a03636ef9c5916877c41a0365600a4b9b9",
+      "sourceModified": "2026-07-01T23:26:03.857785+00:00",
+      "topWords": [
+        "Problem",
+        "Income",
+        "Joined",
+        "Solve",
+        "Laptop",
+        "Room",
+        "Pulled",
+        "Work",
+        "Electricity",
+        "Add",
+        "Manybody",
+        "Simplicity"
+      ],
+      "wordCount": 125
+    },
     "the-men-who-became-water": {
       "generatedAt": "2026-06-30T21:07:00.899942+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8142,6 +8303,29 @@
         "Small"
       ],
       "wordCount": 130
+    },
+    "the-moat-has-mosquitoes": {
+      "generatedAt": "2026-07-01T23:27:39.530321+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-moat-has-mosquitoes.svg",
+      "source": "src/lib/posts/the-moat-has-mosquitoes.md",
+      "sourceHash": "b3da8d20f3c0884fafb1c117448b05f569d4284216b9e95254f737f720709d30",
+      "sourceModified": "2026-07-01T23:26:03.862251+00:00",
+      "topWords": [
+        "Moat",
+        "Less",
+        "Nobody",
+        "Side",
+        "Future",
+        "Road",
+        "Front",
+        "Unfortunately",
+        "Mosquitoes",
+        "Grand",
+        "History",
+        "Books"
+      ],
+      "wordCount": 126
     },
     "the-morlocks-in-white-kurta": {
       "generatedAt": "2026-07-01T17:38:21.575821+00:00",
@@ -8235,6 +8419,52 @@
       ],
       "wordCount": 130
     },
+    "the-nationalization-of-shame": {
+      "generatedAt": "2026-07-01T23:27:41.226252+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-nationalization-of-shame.svg",
+      "source": "src/lib/posts/the-nationalization-of-shame.md",
+      "sourceHash": "b6e4ba64799bfedca2bb3ea15a759ad3ebde06f984fcd88de2b9a05c9e8251b2",
+      "sourceModified": "2026-07-01T23:26:03.864258+00:00",
+      "topWords": [
+        "Number",
+        "Phone",
+        "Tea",
+        "Saved",
+        "Worse",
+        "Shame",
+        "Answer",
+        "Polite",
+        "Private",
+        "Becomes",
+        "Public",
+        "Vibrated"
+      ],
+      "wordCount": 127
+    },
+    "the-nethermost-layer-of-dinner": {
+      "generatedAt": "2026-07-01T23:27:42.596377+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-nethermost-layer-of-dinner.svg",
+      "source": "src/lib/posts/the-nethermost-layer-of-dinner.md",
+      "sourceHash": "fe6e814dcb6cbd98b2a9ca4cef6aaea05e275f8683929cd5c5e154ff00fadfaf",
+      "sourceModified": "2026-07-01T23:26:03.866266+00:00",
+      "topWords": [
+        "Rice",
+        "Bottom",
+        "Heat",
+        "Pot",
+        "Call",
+        "Stuck",
+        "Cooker",
+        "Dinner",
+        "White",
+        "Spoon",
+        "Layer",
+        "Bad"
+      ],
+      "wordCount": 112
+    },
     "the-new-mantra": {
       "generatedAt": "2026-07-01T22:23:40.848451+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8303,6 +8533,29 @@
         "Little"
       ],
       "wordCount": 130
+    },
+    "the-ordinary-things": {
+      "generatedAt": "2026-07-01T23:27:44.310145+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-ordinary-things.svg",
+      "source": "src/lib/posts/the-ordinary-things.md",
+      "sourceHash": "3086edaedf32b308627b0d6eeeccdb528af645a1059d94ea0317e511d292c106",
+      "sourceModified": "2026-07-01T23:26:03.869058+00:00",
+      "topWords": [
+        "Cup",
+        "Map",
+        "Stain",
+        "Long",
+        "Noticing",
+        "Small",
+        "Face",
+        "Looks",
+        "Achievement",
+        "Room",
+        "Income",
+        "Though"
+      ],
+      "wordCount": 113
     },
     "the-overzealous-credulity-crisis": {
       "generatedAt": "2026-07-01T16:59:49.800023+00:00",
@@ -8557,6 +8810,29 @@
       ],
       "wordCount": 130
     },
+    "the-rent-is-a-clock": {
+      "generatedAt": "2026-07-01T23:27:45.939489+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-rent-is-a-clock.svg",
+      "source": "src/lib/posts/the-rent-is-a-clock.md",
+      "sourceHash": "5af6a51d8e59626b043ed3a55c4b6b14f66c5e88614902e79f5278650d260f13",
+      "sourceModified": "2026-07-01T23:26:03.871071+00:00",
+      "topWords": [
+        "Every",
+        "Room",
+        "Rent",
+        "Becomes",
+        "Clock",
+        "Calendar",
+        "Remains",
+        "Time",
+        "Repair",
+        "Month",
+        "Speak",
+        "Payment"
+      ],
+      "wordCount": 122
+    },
     "the-rent-spider": {
       "generatedAt": "2026-06-30T21:07:26.945279+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8602,6 +8878,29 @@
         "Becomes"
       ],
       "wordCount": 130
+    },
+    "the-rice-cooker-kind-of-solitude": {
+      "generatedAt": "2026-07-01T23:27:47.627599+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-rice-cooker-kind-of-solitude.svg",
+      "source": "src/lib/posts/the-rice-cooker-kind-of-solitude.md",
+      "sourceHash": "62e0dac924fc9ed5e253d9545ff97a55962015dd4a12c46f84b2e7a3577530f9",
+      "sourceModified": "2026-07-01T23:26:03.875222+00:00",
+      "topWords": [
+        "Rice",
+        "Cooker",
+        "Plate",
+        "Room",
+        "Solitude",
+        "Sound",
+        "Spoon",
+        "Becomes",
+        "Small",
+        "Clicked",
+        "Accepted",
+        "Decision"
+      ],
+      "wordCount": 124
     },
     "the-robot-begins-as-a-loose-wire": {
       "generatedAt": "2026-07-01T17:18:19.709244+00:00",
@@ -8671,6 +8970,29 @@
         "Mukherjeemashi"
       ],
       "wordCount": 130
+    },
+    "the-signal-to-noise-ratio-of-a-ruined-life": {
+      "generatedAt": "2026-07-01T23:27:49.246362+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-signal-to-noise-ratio-of-a-ruined-life.svg",
+      "source": "src/lib/posts/the-signal-to-noise-ratio-of-a-ruined-life.md",
+      "sourceHash": "ea2d8f2a748ae4ff68530e6427c325ae941994d57d0063616269aed8fffe4a70",
+      "sourceModified": "2026-07-01T23:26:03.877235+00:00",
+      "topWords": [
+        "Noise",
+        "Signal",
+        "Enough",
+        "Ceiling",
+        "Fan",
+        "Room",
+        "Hiss",
+        "Full",
+        "Often",
+        "Becomes",
+        "Eat",
+        "Hear"
+      ],
+      "wordCount": 117
     },
     "the-small-republic-of-no-one": {
       "generatedAt": "2026-06-30T21:07:31.573975+00:00",
@@ -8971,6 +9293,29 @@
       ],
       "wordCount": 130
     },
+    "the-unattractive-mans-guide-to-quantum-mechanics": {
+      "generatedAt": "2026-07-01T23:27:50.881588+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-unattractive-mans-guide-to-quantum-mechanics.svg",
+      "source": "src/lib/posts/the-unattractive-mans-guide-to-quantum-mechanics.md",
+      "sourceHash": "d45bcd911454779288ede45a722c8d59e05f2afa9175834bdd00a5952463eb77",
+      "sourceModified": "2026-07-01T23:26:03.880858+00:00",
+      "topWords": [
+        "Face",
+        "Useful",
+        "Observation",
+        "Physics",
+        "Bathroom",
+        "Mirror",
+        "Neither",
+        "World",
+        "States",
+        "Collapse",
+        "Metaphor",
+        "Half"
+      ],
+      "wordCount": 111
+    },
     "the-unhelpful-man-in-calcutta": {
       "generatedAt": "2026-07-01T22:45:51.018948+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -8993,6 +9338,29 @@
         "Verbs"
       ],
       "wordCount": 130
+    },
+    "the-unpaid-consultant-and-the-theology-of-hope": {
+      "generatedAt": "2026-07-01T23:27:52.356152+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-unpaid-consultant-and-the-theology-of-hope.svg",
+      "source": "src/lib/posts/the-unpaid-consultant-and-the-theology-of-hope.md",
+      "sourceHash": "9e17480bff0c6d9d1bc5c7423aa6df1ac8e23237f1b2fb0987d26441922bd5e0",
+      "sourceModified": "2026-07-01T23:26:12.687197+00:00",
+      "topWords": [
+        "Hope",
+        "Work",
+        "Arrives",
+        "Free",
+        "Help",
+        "Soft",
+        "Laptop",
+        "Time",
+        "Cruelest",
+        "Least",
+        "Honestly",
+        "Charity"
+      ],
+      "wordCount": 103
     },
     "the-unrecorded-error-india": {
       "generatedAt": "2026-07-01T18:06:19.801620+00:00",
@@ -9684,6 +10052,29 @@
       ],
       "wordCount": 130
     },
+    "turing-test-for-human-usefulness": {
+      "generatedAt": "2026-07-01T23:27:53.959409+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/turing-test-for-human-usefulness.svg",
+      "source": "src/lib/posts/turing-test-for-human-usefulness.md",
+      "sourceHash": "39eb7b78cac1331c24bc837c0e0d91a8ab8faf315b8dbab5810c0476ad67b3d2",
+      "sourceModified": "2026-07-01T23:26:03.886846+00:00",
+      "topWords": [
+        "Room",
+        "Test",
+        "Laptop",
+        "Market",
+        "Person",
+        "Behind",
+        "Service",
+        "EOD",
+        "End",
+        "Dignity",
+        "Arrives",
+        "Machine"
+      ],
+      "wordCount": 114
+    },
     "twaddle-tendency": {
       "generatedAt": "2026-07-01T16:41:09.000342+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -9730,6 +10121,29 @@
       ],
       "wordCount": 130
     },
+    "unattractive-mans-weather-report": {
+      "generatedAt": "2026-07-01T23:27:55.922963+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/unattractive-mans-weather-report.svg",
+      "source": "src/lib/posts/unattractive-mans-weather-report.md",
+      "sourceHash": "46e45a938adbdf0480392210d3a4d3c46baed18ee8b6c969febf23ae2296ed4c",
+      "sourceModified": "2026-07-01T23:26:03.891372+00:00",
+      "topWords": [
+        "Man",
+        "Later",
+        "Sleep",
+        "Money",
+        "Clothes",
+        "Report",
+        "Cloudy",
+        "Humid",
+        "Unstable",
+        "Attractiveness",
+        "Shirt",
+        "Becomes"
+      ],
+      "wordCount": 125
+    },
     "va_data_warehouse_reality": {
       "generatedAt": "2026-07-01T18:06:25.356852+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -9752,6 +10166,29 @@
         "Asks"
       ],
       "wordCount": 130
+    },
+    "vamana-and-the-three-steps-of-bankruptcy": {
+      "generatedAt": "2026-07-01T23:27:57.409986+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/vamana-and-the-three-steps-of-bankruptcy.svg",
+      "source": "src/lib/posts/vamana-and-the-three-steps-of-bankruptcy.md",
+      "sourceHash": "5e7ab7f4617d37634d06e0d11deabd45872f88a34e49ff10d28ebffb35cd3836",
+      "sourceModified": "2026-07-01T23:26:03.892572+00:00",
+      "topWords": [
+        "Vamana",
+        "Covers",
+        "Small",
+        "Expense",
+        "Laptop",
+        "Asks",
+        "Three",
+        "Steps",
+        "Third",
+        "Toothache",
+        "Repair",
+        "Room"
+      ],
+      "wordCount": 117
     },
     "vector-databases": {
       "generatedAt": "2026-06-30T21:08:22.759817+00:00",
@@ -10028,6 +10465,29 @@
         "Technology"
       ],
       "wordCount": 130
+    },
+    "why-i-write-on-small-things": {
+      "generatedAt": "2026-07-01T23:27:58.792511+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/why-i-write-on-small-things.svg",
+      "source": "src/lib/posts/why-i-write-on-small-things.md",
+      "sourceHash": "10d2fabc1a39723b04fd5896f77ea24a9c9a1b2372e055979ad8f32d86e2e220",
+      "sourceModified": "2026-07-01T23:26:03.892572+00:00",
+      "topWords": [
+        "Small",
+        "Let",
+        "Room",
+        "Sweats",
+        "Fan",
+        "Write",
+        "Cup",
+        "Ask",
+        "Difficult",
+        "Hot",
+        "Noon",
+        "Finished"
+      ],
+      "wordCount": 113
     },
     "why-i-write-what-i-write": {
       "generatedAt": "2026-07-01T22:46:00.375054+00:00",

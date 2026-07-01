@@ -28,7 +28,8 @@ const postPathAliases: Record<string, string> = {
 	'healthcare-it/trolley-problem-healthcare-it':
 		'/blog/healthcare-it/the-trolley-problem-is-already-hiding-in-healthcare',
 	'healthcare-it/va-healthcare-data-systems-mumps-to-sql':
-		'/blog/healthcare-it/how-va-healthcare-data-systems-work'
+		'/blog/healthcare-it/how-va-healthcare-data-systems-work',
+	'personal-essay/trapezoid-for-my-mother': '/blog/personal-essay/a-trapezoid-in-low-light'
 };
 
 export const load: PageLoad = async ({ params }) => {
