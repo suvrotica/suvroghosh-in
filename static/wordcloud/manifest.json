@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T08:00:06.170199+00:00",
+  "generatedAt": "2026-07-01T08:19:30.117885+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -599,6 +599,29 @@
       ],
       "wordCount": 130
     },
+    "china-india-rise-2026-evolutionary-thinking": {
+      "generatedAt": "2026-07-01T08:19:26.286131+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/china-india-rise-2026-evolutionary-thinking.svg",
+      "source": "src/lib/posts/china-india-rise-2026-evolutionary-thinking.md",
+      "sourceHash": "99048f2b1d880a9d560fd21c12aad31c7a7aa188ad05febd35afd14d75036363",
+      "sourceModified": "2026-07-01T08:18:28.686494+00:00",
+      "topWords": [
+        "India",
+        "China",
+        "System",
+        "World",
+        "Queues",
+        "Country",
+        "Useful",
+        "Growth",
+        "Becomes",
+        "UPI",
+        "Digital",
+        "Tea"
+      ],
+      "wordCount": 130
+    },
     "circle-of-death": {
       "generatedAt": "2026-06-30T21:04:48.658569+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1059,6 +1082,29 @@
       ],
       "wordCount": 130
     },
+    "facial-pleasure-receipts-and-modern-euphemism": {
+      "generatedAt": "2026-07-01T08:12:31.985372+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/facial-pleasure-receipts-and-modern-euphemism.svg",
+      "source": "src/lib/posts/facial-pleasure-receipts-and-modern-euphemism.md",
+      "sourceHash": "cadd0c32bd366f0c72c31be38b95dfcbaef123d8f7def62f79178f755aa37651",
+      "sourceModified": "2026-07-01T08:10:35.609596+00:00",
+      "topWords": [
+        "Face",
+        "Becomes",
+        "Smile",
+        "Person",
+        "Human",
+        "Truth",
+        "Speech",
+        "Society",
+        "Fine",
+        "Room",
+        "Modern",
+        "Question"
+      ],
+      "wordCount": 130
+    },
     "fellow_passengers_and_the_broken_record": {
       "generatedAt": "2026-07-01T07:03:08.323225+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1312,6 +1358,29 @@
       ],
       "wordCount": 130
     },
+    "hilsa-and-the-family-court-of-appetite": {
+      "generatedAt": "2026-07-01T08:12:33.592920+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hilsa-and-the-family-court-of-appetite.svg",
+      "source": "src/lib/posts/hilsa-and-the-family-court-of-appetite.md",
+      "sourceHash": "bf77b6155d9bdbd944f699ad0d086b835f7629890efc248abc6f972267268f82",
+      "sourceModified": "2026-07-01T08:10:35.615616+00:00",
+      "topWords": [
+        "Hilsa",
+        "Fish",
+        "Mustard",
+        "Food",
+        "River",
+        "Plate",
+        "Oil",
+        "Rice",
+        "Merely",
+        "Lies",
+        "Belly",
+        "Appetite"
+      ],
+      "wordCount": 130
+    },
     "homeopathy-pseudoscience-persistence": {
       "generatedAt": "2026-06-30T22:50:18.858990+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1332,6 +1401,29 @@
         "Data",
         "System",
         "Patient"
+      ],
+      "wordCount": 130
+    },
+    "hormuz-day-52-supply-ramifications-nation-states": {
+      "generatedAt": "2026-07-01T08:19:28.092497+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hormuz-day-52-supply-ramifications-nation-states.svg",
+      "source": "src/lib/posts/hormuz-day-52-supply-ramifications-nation-states.md",
+      "sourceHash": "13289c8c0973c509981a5ab82c27721cb98a512b7174ac08808f0c3ae158aba0",
+      "sourceModified": "2026-07-01T08:18:28.689669+00:00",
+      "topWords": [
+        "Becomes",
+        "Fertilizer",
+        "Energy",
+        "Hormuz",
+        "Oil",
+        "Shock",
+        "Food",
+        "Transport",
+        "State",
+        "Power",
+        "Less",
+        "Inflation"
       ],
       "wordCount": 130
     },
@@ -4555,6 +4647,29 @@
       ],
       "wordCount": 130
     },
+    "thucydides-trap-greek-mythology-america-china": {
+      "generatedAt": "2026-07-01T08:19:30.085390+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/thucydides-trap-greek-mythology-america-china.svg",
+      "source": "src/lib/posts/thucydides-trap-greek-mythology-america-china.md",
+      "sourceHash": "3e8e4a23ebc0a9944b16d6fc9205f36f95ccd75756937584171cb85136dc243e",
+      "sourceModified": "2026-07-01T08:18:28.689669+00:00",
+      "topWords": [
+        "Becomes",
+        "Power",
+        "Fear",
+        "Say",
+        "Trap",
+        "Every",
+        "Side",
+        "Problem",
+        "Thucydides",
+        "Modern",
+        "Away",
+        "Rivalry"
+      ],
+      "wordCount": 130
+    },
     "toolbox-thinking-simplicity-complexity": {
       "generatedAt": "2026-06-30T23:05:29.771148+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4693,6 +4808,29 @@
       ],
       "wordCount": 130
     },
+    "when-variety-starts-wearing-the-same-shirt": {
+      "generatedAt": "2026-07-01T08:12:35.874047+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/when-variety-starts-wearing-the-same-shirt.svg",
+      "source": "src/lib/posts/when-variety-starts-wearing-the-same-shirt.md",
+      "sourceHash": "a84492fe2f27076393510e2a45cbde95799dfd6eaab9863bf123a1e00f99274c",
+      "sourceModified": "2026-07-01T08:10:35.616398+00:00",
+      "topWords": [
+        "AI",
+        "Family",
+        "Class",
+        "Sentence",
+        "Culture",
+        "Machine",
+        "Local",
+        "Social",
+        "Media",
+        "Let",
+        "Often",
+        "Window"
+      ],
+      "wordCount": 130
+    },
     "why-i-stopped-apologizing-for-my-life": {
       "generatedAt": "2026-06-30T21:08:25.116872+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4736,6 +4874,29 @@
         "System",
         "Whether",
         "Clinical"
+      ],
+      "wordCount": 130
+    },
+    "woke-word-calcutta-redux": {
+      "generatedAt": "2026-07-01T08:12:37.243434+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/woke-word-calcutta-redux.svg",
+      "source": "src/lib/posts/woke-word-calcutta-redux.md",
+      "sourceHash": "a51f7aa39021190bd0359770313c22ecb82add467bc3b0adb34898c05bffa4dd",
+      "sourceModified": "2026-07-01T08:10:35.619612+00:00",
+      "topWords": [
+        "Woke",
+        "Becomes",
+        "Ordinary",
+        "Social",
+        "Injustice",
+        "Person",
+        "Real",
+        "Performance",
+        "Vocabulary",
+        "Work",
+        "Whose",
+        "American"
       ],
       "wordCount": 130
     },
