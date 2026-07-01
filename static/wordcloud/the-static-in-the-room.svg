@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Static in the Room" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Static in the Room</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(212,102)" font-size="118" style="fill:#c49a6c">Static</text>
+<text transform="translate(770,465)" font-size="102" style="fill:#c7d7b5">Fan</text>
+<text transform="translate(403,308)" font-size="102" style="fill:#d5d2c2">Work</text>
+<text transform="translate(383,556)" font-size="102" style="fill:#8fb7d0">Signal</text>
+<text transform="translate(40,546)" font-size="83" style="fill:#c49a6c">Action</text>
+<text transform="translate(678,201)" font-size="83" style="fill:#d9c89e">Enough</text>
+<text transform="translate(943,300)" font-size="83" style="fill:#8fb7d0">Write</text>
+<text transform="translate(750,596)" font-size="83" style="fill:#d6a79f">Mind</text>
+<text transform="translate(146,409)" font-size="83" style="fill:#8fb7d0">Interference</text>
+<text transform="translate(1062,662) rotate(-90)" font-size="83" style="fill:#d6a79f">Thought</text>
+<text transform="translate(1238,707) rotate(-90)" font-size="83" style="fill:#c7d7b5">Small</text>
+<text transform="translate(19,254)" font-size="83" style="fill:#d6a79f">Create</text>
+<text transform="translate(23,676)" font-size="83" style="fill:#c49a6c">Hears</text>
+<text transform="translate(319,675)" font-size="83" style="fill:#d88988">Continues</text>
+<text transform="translate(1005,141)" font-size="60" style="fill:#d5d2c2">Room</text>
+<text transform="translate(272,176)" font-size="60" style="fill:#d5d2c2">Quiet</text>
+<text transform="translate(1158,692) rotate(-90)" font-size="60" style="fill:#d88988">Silent</text>
+<text transform="translate(739,72)" font-size="60" style="fill:#b6c3dd">Course</text>
+<text transform="translate(1044,217)" font-size="60" style="fill:#9fc9c5">Always</text>
+<text transform="translate(122,312)" font-size="60" style="fill:#d9c89e">Cutting</text>
+<text transform="translate(1164,353)" font-size="60" style="fill:#a9b7a3">Air</text>
+<text transform="translate(756,357)" font-size="60" style="fill:#d5d2c2">Tired</text>
+<text transform="translate(82,474)" font-size="60" style="fill:#d5d2c2">Circles</text>
+<text transform="translate(1037,82)" font-size="60" style="fill:#9fc9c5">Wire</text>
+<text transform="translate(733,289)" font-size="60" style="fill:#e0b879">Hum</text>
+<text transform="translate(800,703)" font-size="60" style="fill:#9fc9c5">Faint</text>
+<text transform="translate(516,470)" font-size="60" style="fill:#d6a79f">Traffic</text>
+<text transform="translate(64,603)" font-size="60" style="fill:#d6a79f">Residue</text>
+<text transform="translate(322,225)" font-size="60" style="fill:#d9c89e">Scooter</text>
+<text transform="translate(632,126)" font-size="60" style="fill:#b6c3dd">Somewhere</text>
+<text transform="translate(454,357)" font-size="60" style="fill:#c49a6c">Pressure</text>
+<text transform="translate(79,482) rotate(-90)" font-size="60" style="fill:#d6a79f">Cooker</text>
+<text transform="translate(81,169)" font-size="60" style="fill:#c49a6c">Walls</text>
+<text transform="translate(57,59)" font-size="60" style="fill:#c49a6c">Away</text>
+<text transform="translate(454,156)" font-size="60" style="fill:#b6c3dd">Tiny</text>
+<text transform="translate(262,715)" font-size="48" style="fill:#c49a6c">Electrical</text>
+<text transform="translate(748,512)" font-size="47" style="fill:#d5d2c2">Complaint</text>
+<text transform="translate(553,624)" font-size="47" style="fill:#8fb7d0">Devices</text>
+<text transform="translate(1065,393)" font-size="47" style="fill:#9fc9c5">Waiting</text>
+<text transform="translate(763,637)" font-size="47" style="fill:#d9c89e">Touched</text>
+<text transform="translate(9,114)" font-size="47" style="fill:#c7d7b5">Beneath</text>
+<text transform="translate(319,590)" font-size="39" style="fill:#d6a79f">Ordinary</text>
+<text transform="translate(1137,444)" font-size="39" style="fill:#9fc9c5">Noises</text>
+<text transform="translate(377,470)" font-size="39" style="fill:#d5d2c2">Harder</text>
+<text transform="translate(1117,36)" font-size="39" style="fill:#c49a6c">Locate</text>
+<text transform="translate(630,239)" font-size="39" style="fill:#d88988">Sits</text>
+<text transform="translate(590,714)" font-size="39" style="fill:#b6c3dd">Intention</text>
+<text transform="translate(643,52)" font-size="39" style="fill:#d5d2c2">Open</text>
+<text transform="translate(849,391)" font-size="39" style="fill:#e0b879">Laptop</text>
+<text transform="translate(1143,179)" font-size="39" style="fill:#d88988">Clear</text>
+<text transform="translate(1007,715)" font-size="39" style="fill:#9fc9c5">Move</text>
+<text transform="translate(1271,562) rotate(-90)" font-size="39" style="fill:#d6a79f">File</text>
+<text transform="translate(854,32)" font-size="39" style="fill:#c49a6c">Answer</text>
+<text transform="translate(1094,626) rotate(-90)" font-size="39" style="fill:#d9c89e">Message</text>
+<text transform="translate(575,204)" font-size="39" style="fill:#8fb7d0">Read</text>
+<text transform="translate(1177,117)" font-size="39" style="fill:#c49a6c">Page</text>
+<text transform="translate(45,707)" font-size="35" style="fill:#d5d2c2">Paragraph</text>
+<text transform="translate(184,342)" font-size="35" style="fill:#c49a6c">None</text>
+<text transform="translate(763,241)" font-size="35" style="fill:#e0b879">Tasks</text>
+<text transform="translate(274,358)" font-size="35" style="fill:#d88988">Heroic</text>
+<text transform="translate(645,294)" font-size="35" style="fill:#9fc9c5">Yet</text>
+<text transform="translate(102,201)" font-size="35" style="fill:#d5d2c2">Hand</text>
+<text transform="translate(1097,472)" font-size="35" style="fill:#c49a6c">Pauses</text>
+<text transform="translate(369,529) rotate(-90)" font-size="35" style="fill:#d5d2c2">Fills</text>
+<text transform="translate(110,412) rotate(-90)" font-size="35" style="fill:#d6a79f">Exactly</text>
+<text transform="translate(993,150) rotate(-90)" font-size="35" style="fill:#d5d2c2">Shape</text>
+<text transform="translate(749,385)" font-size="35" style="fill:#e0b879">Dust</text>
+<text transform="translate(994,648) rotate(-90)" font-size="35" style="fill:#9fc9c5">Modern</text>
+<text transform="translate(602,583)" font-size="30" style="fill:#9fc9c5">Produces</text>
+<text transform="translate(525,490)" font-size="21" style="fill:#e0b879">Efficiently</text>
+<text transform="translate(22,448) rotate(-90)" font-size="21" style="fill:#d5d2c2">News</text>
+<text transform="translate(1005,228) rotate(-90)" font-size="21" style="fill:#d6a79f">Bills</text>
+<text transform="translate(716,21)" font-size="21" style="fill:#8fb7d0">Unfinished</text>
+<text transform="translate(1070,103)" font-size="21" style="fill:#c7d7b5">Mistakes</text>
+<text transform="translate(851,301)" font-size="21" style="fill:#d88988">Future</text>
+<text transform="translate(1187,63)" font-size="21" style="fill:#d5d2c2">Costs</text>
+<text transform="translate(1194,148)" font-size="21" style="fill:#b6c3dd">Social</text>
+<text transform="translate(979,677)" font-size="21" style="fill:#d6a79f">Comparison</text>
+<text transform="translate(767,145)" font-size="20" style="fill:#b6c3dd">Technological</text>
+<text transform="translate(154,431)" font-size="20" style="fill:#e0b879">Change</text>
+<text transform="translate(401,624)" font-size="20" style="fill:#d88988">Public</text>
+<text transform="translate(393,330) rotate(-90)" font-size="20" style="fill:#c7d7b5">Disorder</text>
+<text transform="translate(88,622)" font-size="20" style="fill:#d9c89e">Private</text>
+<text transform="translate(322,123)" font-size="20" style="fill:#c49a6c">Irritation</text>
+<text transform="translate(1270,661) rotate(-90)" font-size="20" style="fill:#d6a79f">Person</text>
+<text transform="translate(1033,160)" font-size="20" style="fill:#d9c89e">Keep</text>
+<text transform="translate(322,19)" font-size="20" style="fill:#d88988">Explaining</text>
+<text transform="translate(94,21)" font-size="20" style="fill:#d5d2c2">Item</text>
+<text transform="translate(1012,21)" font-size="20" style="fill:#a9b7a3">Together</text>
+<text transform="translate(33,589) rotate(-90)" font-size="20" style="fill:#8fb7d0">Weather</text>
+<text transform="translate(847,534)" font-size="20" style="fill:#a9b7a3">Adds</text>
+<text transform="translate(20,367) rotate(-90)" font-size="20" style="fill:#8fb7d0">Frequency</text>
+<text transform="translate(1203,256)" font-size="20" style="fill:#c7d7b5">Drill</text>
+<text transform="translate(653,316)" font-size="20" style="fill:#8fb7d0">Starts</text>
+<text transform="translate(261,430)" font-size="20" style="fill:#c49a6c">Warning</text>
+<text transform="translate(437,433)" font-size="20" style="fill:#c7d7b5">Vendor</text>
+<text transform="translate(1073,331)" font-size="20" style="fill:#a9b7a3">Calls</text>
+<text transform="translate(854,273)" font-size="20" style="fill:#c49a6c">Someone</text>
+<text transform="translate(54,80)" font-size="20" style="fill:#d5d2c2">Quarrels</text>
+<text transform="translate(115,337)" font-size="20" style="fill:#e0b879">Near</text>
+<text transform="translate(602,167)" font-size="20" style="fill:#9fc9c5">Gate</text>
+<text transform="translate(192,621)" font-size="18" style="fill:#e0b879">Electricity</text>
+<text transform="translate(474,247)" font-size="18" style="fill:#8fb7d0">Flickers</text>
+<text transform="translate(19,219) rotate(-90)" font-size="18" style="fill:#d6a79f">Remind</text>
+<text transform="translate(546,18)" font-size="18" style="fill:#9fc9c5">Confidence</text>
+<text transform="translate(782,655)" font-size="18" style="fill:#c7d7b5">Premature</text>
+<text transform="translate(1274,83) rotate(-90)" font-size="18" style="fill:#d88988">Shared</text>
+<text transform="translate(1114,711)" font-size="18" style="fill:#d88988">Radio</text>
+<text transform="translate(944,332)" font-size="18" style="fill:#b6c3dd">Many</text>
+<text transform="translate(4,23)" font-size="18" style="fill:#c7d7b5">Hands</text>
+<text transform="translate(689,69)" font-size="18" style="fill:#b6c3dd">Dial</text>
+<text transform="translate(223,121)" font-size="18" style="fill:#c49a6c">Problem</text>
+<text transform="translate(451,176)" font-size="18" style="fill:#d9c89e">Imitates</text>
+<text transform="translate(1196,296)" font-size="18" style="fill:#d6a79f">Meaning</text>
+<text transform="translate(881,244)" font-size="18" style="fill:#b6c3dd">Feels</text>
+<text transform="translate(231,491)" font-size="18" style="fill:#d6a79f">Important</text>
+<text transform="translate(679,261)" font-size="18" style="fill:#d5d2c2">Loud</text>
+<text transform="translate(25,156)" font-size="18" style="fill:#a9b7a3">Much</text>
+<text transform="translate(1091,350)" font-size="18" style="fill:#d88988">Threat</text>
+<text transform="translate(1092,410)" font-size="18" style="fill:#c49a6c">Clutter</text>
+<text transform="translate(1107,235)" font-size="18" style="fill:#c49a6c">Verdict</text>
+<text transform="translate(1195,273)" font-size="18" style="fill:#d6a79f">Fatigue</text>
+<text transform="translate(733,529)" font-size="18" style="fill:#d6a79f">Becomes</text>
+<text transform="translate(822,319)" font-size="18" style="fill:#9fc9c5">Technical</text>
+<text transform="translate(22,703) rotate(-90)" font-size="18" style="fill:#d5d2c2">Smallest</text>
+<text transform="translate(956,435)" font-size="18" style="fill:#d88988">Sense</text>
+<text transform="translate(669,86)" font-size="18" style="fill:#d9c89e">Reduce</text>
+<text transform="translate(1028,88) rotate(-90)" font-size="18" style="fill:#c7d7b5">Noise</text>
+<text transform="translate(1219,235)" font-size="18" style="fill:#e0b879">Close</text>
+<text transform="translate(1207,84)" font-size="18" style="fill:#d9c89e">Tabs</text>
+</svg>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T22:46:00.382011+00:00",
+  "generatedAt": "2026-07-01T23:00:00.278888+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -2692,6 +2692,29 @@
       ],
       "wordCount": 130
     },
+    "father-samarendra-kumar-ghosh-bikrampur-rangoon-naihati-sinthi": {
+      "generatedAt": "2026-07-01T22:59:23.603170+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/father-samarendra-kumar-ghosh-bikrampur-rangoon-naihati-sinthi.svg",
+      "source": "src/lib/posts/father-samarendra-kumar-ghosh-bikrampur-rangoon-naihati-sinthi.md",
+      "sourceHash": "d1ebfab9ffddf7a4f2f0e55c4d1f199ae5e4bbcd2e2685d118faae7c0a29638f",
+      "sourceModified": "2026-07-01T22:58:21.052497+00:00",
+      "topWords": [
+        "Books",
+        "Photograph",
+        "Room",
+        "Receives",
+        "Person",
+        "Always",
+        "Less",
+        "Family",
+        "Story",
+        "Carried",
+        "Fear",
+        "School"
+      ],
+      "wordCount": 130
+    },
     "fellow_passengers_and_the_broken_record": {
       "generatedAt": "2026-07-01T07:03:08.323225+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3014,6 +3037,29 @@
       ],
       "wordCount": 130
     },
+    "greed-made-me-small": {
+      "generatedAt": "2026-07-01T22:59:25.614484+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/greed-made-me-small.svg",
+      "source": "src/lib/posts/greed-made-me-small.md",
+      "sourceHash": "35dfae1c32d8b27a8ca16666241333dc08f62ecf89a37c92a0ae20e7ea33e9ea",
+      "sourceModified": "2026-07-01T22:58:21.056375+00:00",
+      "topWords": [
+        "Greed",
+        "Tea",
+        "Small",
+        "Room",
+        "Calls",
+        "Ring",
+        "Cup",
+        "Means",
+        "Labor",
+        "Fewer",
+        "Better",
+        "Brown"
+      ],
+      "wordCount": 130
+    },
     "happiness-after-quicksand": {
       "generatedAt": "2026-07-01T22:45:27.394089+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3267,6 +3313,29 @@
       ],
       "wordCount": 130
     },
+    "hope-dies-at-different-rates": {
+      "generatedAt": "2026-07-01T22:59:27.598868+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hope-dies-at-different-rates.svg",
+      "source": "src/lib/posts/hope-dies-at-different-rates.md",
+      "sourceHash": "9d9b7cb2e60674c1025ca48120c9defd50adaea602d1d76554c44605d06811bb",
+      "sourceModified": "2026-07-01T22:58:21.036595+00:00",
+      "topWords": [
+        "Hope",
+        "Hopes",
+        "Small",
+        "Envelope",
+        "Table",
+        "Worry",
+        "First",
+        "Remains",
+        "Enough",
+        "Person",
+        "Next",
+        "Art"
+      ],
+      "wordCount": 130
+    },
     "hormuz-day-52-supply-ramifications-nation-states": {
       "generatedAt": "2026-07-01T08:19:28.092497+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3425,6 +3494,29 @@
         "Dignity",
         "Looking",
         "Idea"
+      ],
+      "wordCount": 130
+    },
+    "i-am-a-solipsist-nihilist": {
+      "generatedAt": "2026-07-01T22:59:29.705659+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/i-am-a-solipsist-nihilist.svg",
+      "source": "src/lib/posts/i-am-a-solipsist-nihilist.md",
+      "sourceHash": "161fbaef6fdafe7c70806d5ea1ee6128a1d93d17f60ef6a3b8b88b121e03aaba",
+      "sourceModified": "2026-07-01T22:58:21.039598+00:00",
+      "topWords": [
+        "Whether",
+        "Breakfast",
+        "Asks",
+        "Universe",
+        "Mind",
+        "Meaning",
+        "Tea",
+        "Kettle",
+        "Room",
+        "Morning",
+        "Toast",
+        "Bread"
       ],
       "wordCount": 130
     },
@@ -3701,6 +3793,29 @@
         "Human",
         "Certainty",
         "Brings"
+      ],
+      "wordCount": 130
+    },
+    "invisible-radius": {
+      "generatedAt": "2026-07-01T22:59:31.469975+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/invisible-radius.svg",
+      "source": "src/lib/posts/invisible-radius.md",
+      "sourceHash": "f6ff955c9e448cce8913e8fd2c72e0eaf1c898c9ffd228fec9140914a007861f",
+      "sourceModified": "2026-07-01T22:58:21.039598+00:00",
+      "topWords": [
+        "Small",
+        "Careful",
+        "Notebook",
+        "Tea",
+        "Page",
+        "Invisible",
+        "Radii",
+        "Large",
+        "Radius",
+        "Instruments",
+        "Someone",
+        "Becomes"
       ],
       "wordCount": 130
     },
@@ -4072,6 +4187,52 @@
       ],
       "wordCount": 130
     },
+    "loneliness-is-not-a-generation": {
+      "generatedAt": "2026-07-01T22:59:33.609342+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/loneliness-is-not-a-generation.svg",
+      "source": "src/lib/posts/loneliness-is-not-a-generation.md",
+      "sourceHash": "ace7bccbceed43c0d814f27e6d4c9633b7ad39c2d1560adf3b985c1b04ee7d58",
+      "sourceModified": "2026-07-01T22:58:57.529837+00:00",
+      "topWords": [
+        "Loneliness",
+        "Phone",
+        "Generation",
+        "Everyone",
+        "Company",
+        "Problem",
+        "Full",
+        "Room",
+        "Better",
+        "Kind",
+        "Table",
+        "Person"
+      ],
+      "wordCount": 130
+    },
+    "lout": {
+      "generatedAt": "2026-07-01T22:59:35.225359+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/lout.svg",
+      "source": "src/lib/posts/lout.md",
+      "sourceHash": "4706fb72a0a2f0e431018bd1133e954e95e94210b89730fe1778058ea022cf5e",
+      "sourceModified": "2026-07-01T22:58:21.029880+00:00",
+      "topWords": [
+        "Dawn",
+        "Lane",
+        "Yet",
+        "Air",
+        "Verdicts",
+        "Sunrise",
+        "Work",
+        "Mind",
+        "Now",
+        "Little",
+        "Begin",
+        "Remains"
+      ],
+      "wordCount": 130
+    },
     "mallick-ghat-nessie": {
       "generatedAt": "2026-06-30T21:05:27.283573+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4161,6 +4322,29 @@
         "List",
         "Problem",
         "Tell"
+      ],
+      "wordCount": 130
+    },
+    "milk-cha-and-the-small-engine-of-attention": {
+      "generatedAt": "2026-07-01T22:59:37.127524+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/milk-cha-and-the-small-engine-of-attention.svg",
+      "source": "src/lib/posts/milk-cha-and-the-small-engine-of-attention.md",
+      "sourceHash": "c652d3edfcaba0eccb0bf5ef090765377aef9e22525dae52c04f4a63a7ca94ac",
+      "sourceModified": "2026-07-01T22:58:21.029880+00:00",
+      "topWords": [
+        "Small",
+        "Cup",
+        "Milk",
+        "Pan",
+        "Tea",
+        "Attention",
+        "Becomes",
+        "Engines",
+        "Morning",
+        "Large",
+        "Phone",
+        "Stand"
       ],
       "wordCount": 130
     },
@@ -4532,6 +4716,29 @@
       ],
       "wordCount": 130
     },
+    "nostril-hairs-and-the-tainted-calcutta-summer": {
+      "generatedAt": "2026-07-01T22:59:38.992047+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/nostril-hairs-and-the-tainted-calcutta-summer.svg",
+      "source": "src/lib/posts/nostril-hairs-and-the-tainted-calcutta-summer.md",
+      "sourceHash": "e5e01e6acab58eecb49fe655dc1aa554b7455ef1092cd116fb02157a9301b9ae",
+      "sourceModified": "2026-07-01T22:58:21.021875+00:00",
+      "topWords": [
+        "Heat",
+        "Age",
+        "Hair",
+        "Middle",
+        "Small",
+        "Arrives",
+        "Air",
+        "White",
+        "Nostril",
+        "Looks",
+        "Maintenance",
+        "Face"
+      ],
+      "wordCount": 130
+    },
     "obama-hitech-ehr-incentives-and-the-electronic-chart": {
       "generatedAt": "2026-07-01T18:06:09.123640+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4621,6 +4828,29 @@
         "Arrive",
         "Larger",
         "Short"
+      ],
+      "wordCount": 130
+    },
+    "pest-department-in-my-skull": {
+      "generatedAt": "2026-07-01T22:59:40.870461+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/pest-department-in-my-skull.svg",
+      "source": "src/lib/posts/pest-department-in-my-skull.md",
+      "sourceHash": "a476f4252b5836dd6209cf9fdcf489c2ccada36ac50a095680e55f4f6afb3021",
+      "sourceModified": "2026-07-01T22:58:21.052497+00:00",
+      "topWords": [
+        "Perhaps",
+        "Near",
+        "Slipper",
+        "Obstruction",
+        "Cockroach",
+        "Kitchen",
+        "Private",
+        "Department",
+        "Skull",
+        "Pest",
+        "Often",
+        "Enters"
       ],
       "wordCount": 130
     },
@@ -4762,6 +4992,29 @@
       ],
       "wordCount": 130
     },
+    "poison-wears-a-clean-shirt": {
+      "generatedAt": "2026-07-01T22:59:42.764322+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/poison-wears-a-clean-shirt.svg",
+      "source": "src/lib/posts/poison-wears-a-clean-shirt.md",
+      "sourceHash": "d8e1536054f029424696791a74a64c58126f4d3aac58e91c320be209058c26d8",
+      "sourceModified": "2026-07-01T22:58:21.039598+00:00",
+      "topWords": [
+        "Request",
+        "Means",
+        "Perhaps",
+        "Shirt",
+        "Clean",
+        "Man",
+        "Manners",
+        "Family",
+        "Signs",
+        "Poison",
+        "Arrives",
+        "Time"
+      ],
+      "wordCount": 130
+    },
     "poisson-distribution-healthcare-it": {
       "generatedAt": "2026-07-01T18:06:12.401515+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4874,6 +5127,29 @@
         "Safety",
         "Language",
         "Model"
+      ],
+      "wordCount": 130
+    },
+    "private-nuisance-at-five-thirty-in-calcutta": {
+      "generatedAt": "2026-07-01T22:59:44.792079+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/private-nuisance-at-five-thirty-in-calcutta.svg",
+      "source": "src/lib/posts/private-nuisance-at-five-thirty-in-calcutta.md",
+      "sourceHash": "900fe7f944664e64ed795baa974765884912715ba52f7a64500750b2911c00ef",
+      "sourceModified": "2026-07-01T22:58:21.039598+00:00",
+      "topWords": [
+        "Nuisance",
+        "Private",
+        "Public",
+        "Small",
+        "Becomes",
+        "Real",
+        "Tea",
+        "Yet",
+        "Room",
+        "Irritation",
+        "Heat",
+        "Nothing"
       ],
       "wordCount": 130
     },
@@ -5012,6 +5288,29 @@
         "Water",
         "Fish",
         "Stood"
+      ],
+      "wordCount": 130
+    },
+    "rain-power-and-quicksand": {
+      "generatedAt": "2026-07-01T22:59:46.652134+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/rain-power-and-quicksand.svg",
+      "source": "src/lib/posts/rain-power-and-quicksand.md",
+      "sourceHash": "a6d0e242b189ebc47ba4d288e4f1d864ed6c8f8bb49563b542ec8c7eb5dc72a3",
+      "sourceModified": "2026-07-01T22:58:21.039598+00:00",
+      "topWords": [
+        "Rain",
+        "Phone",
+        "Becomes",
+        "Water",
+        "Sometimes",
+        "Room",
+        "Fan",
+        "Reduced",
+        "Mode",
+        "India",
+        "Lane",
+        "Always"
       ],
       "wordCount": 130
     },
@@ -5544,6 +5843,29 @@
       ],
       "wordCount": 130
     },
+    "skepticism-is-the-mosquito-net": {
+      "generatedAt": "2026-07-01T22:59:48.749178+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/skepticism-is-the-mosquito-net.svg",
+      "source": "src/lib/posts/skepticism-is-the-mosquito-net.md",
+      "sourceHash": "e689aaf0f6b94e362052da63009b9d658fa06ee724d4aac5b64260b43ae8e9cb",
+      "sourceModified": "2026-07-01T22:58:21.039598+00:00",
+      "topWords": [
+        "Net",
+        "Skepticism",
+        "Evidence",
+        "Mesh",
+        "Remove",
+        "Cynicism",
+        "Sleep",
+        "Enough",
+        "Asks",
+        "Always",
+        "Enjoy",
+        "Debate"
+      ],
+      "wordCount": 130
+    },
     "skull-under-the-bridge": {
       "generatedAt": "2026-06-30T21:06:00.649668+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -5633,6 +5955,29 @@
         "Convert",
         "Clean",
         "Little"
+      ],
+      "wordCount": 130
+    },
+    "society-with-open-drains-and-polished-shoes": {
+      "generatedAt": "2026-07-01T22:59:50.548709+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/society-with-open-drains-and-polished-shoes.svg",
+      "source": "src/lib/posts/society-with-open-drains-and-polished-shoes.md",
+      "sourceHash": "10e7202017ee0f1eec7633402a68645ddc11b4f445cb1d09d1ed5fd730e0be7a",
+      "sourceModified": "2026-07-01T22:58:21.029880+00:00",
+      "topWords": [
+        "Drain",
+        "Discuss",
+        "Shoes",
+        "Smell",
+        "Society",
+        "Polish",
+        "Shine",
+        "Beside",
+        "Open",
+        "Man",
+        "Water",
+        "Polished"
       ],
       "wordCount": 130
     },
@@ -7154,6 +7499,29 @@
       ],
       "wordCount": 130
     },
+    "the-low-market-value-of-reality": {
+      "generatedAt": "2026-07-01T22:59:52.729352+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-low-market-value-of-reality.svg",
+      "source": "src/lib/posts/the-low-market-value-of-reality.md",
+      "sourceHash": "97e5761da06f2419a05ada3db3286d37dc2c511dd33dc755790f4d718923fd93",
+      "sourceModified": "2026-07-01T22:58:21.025890+00:00",
+      "topWords": [
+        "Bad",
+        "Reality",
+        "Social",
+        "Fog",
+        "Bill",
+        "Learned",
+        "Arrives",
+        "Slogan",
+        "Comforting",
+        "Explanation",
+        "Say",
+        "Evidence"
+      ],
+      "wordCount": 130
+    },
     "the-machine-that-cannot-defecate": {
       "generatedAt": "2026-07-01T16:59:48.279896+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7706,6 +8074,29 @@
       ],
       "wordCount": 130
     },
+    "the-rice-cooker-and-the-black-hole": {
+      "generatedAt": "2026-07-01T22:59:54.447260+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-rice-cooker-and-the-black-hole.svg",
+      "source": "src/lib/posts/the-rice-cooker-and-the-black-hole.md",
+      "sourceHash": "8a89df8438cdcb2bb7fb347b08517f87034b66fa2bd22852f4f7da237cccab3c",
+      "sourceModified": "2026-07-01T22:58:21.050236+00:00",
+      "topWords": [
+        "Rice",
+        "Goes",
+        "Cooker",
+        "Outside",
+        "Clicks",
+        "Small",
+        "Water",
+        "Heat",
+        "Work",
+        "Open",
+        "Cosmic",
+        "Becomes"
+      ],
+      "wordCount": 130
+    },
     "the-robot-begins-as-a-loose-wire": {
       "generatedAt": "2026-07-01T17:18:19.709244+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7844,6 +8235,29 @@
       ],
       "wordCount": 130
     },
+    "the-static-in-the-room": {
+      "generatedAt": "2026-07-01T22:59:56.402904+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-static-in-the-room.svg",
+      "source": "src/lib/posts/the-static-in-the-room.md",
+      "sourceHash": "9bdd0a1eb85d88dfa1deb935a4dc15bc68b2312191fdd820f9238e697311fef0",
+      "sourceModified": "2026-07-01T22:58:21.048230+00:00",
+      "topWords": [
+        "Static",
+        "Fan",
+        "Work",
+        "Signal",
+        "Action",
+        "Enough",
+        "Write",
+        "Mind",
+        "Interference",
+        "Thought",
+        "Small",
+        "Create"
+      ],
+      "wordCount": 130
+    },
     "the-sword-in-the-frame": {
       "generatedAt": "2026-06-30T21:07:34.814914+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -7887,6 +8301,29 @@
         "Crowd",
         "Small",
         "Light"
+      ],
+      "wordCount": 130
+    },
+    "the-tea-skin-on-my-mind": {
+      "generatedAt": "2026-07-01T22:59:58.158678+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-tea-skin-on-my-mind.svg",
+      "source": "src/lib/posts/the-tea-skin-on-my-mind.md",
+      "sourceHash": "9961998414a7810a81e419f05042da9a8eecba570974f9ad9d3ccb8142ef16e1",
+      "sourceModified": "2026-07-01T22:58:21.052497+00:00",
+      "topWords": [
+        "Tea",
+        "Skin",
+        "Mind",
+        "Film",
+        "Cup",
+        "Milk",
+        "Abandoned",
+        "Case",
+        "Begin",
+        "Doubts",
+        "Thinking",
+        "Small"
       ],
       "wordCount": 130
     },
@@ -9175,6 +9612,29 @@
         "Astronomy",
         "Sky",
         "Event"
+      ],
+      "wordCount": 130
+    },
+    "writing-nothing-from-calcutta": {
+      "generatedAt": "2026-07-01T23:00:00.275578+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/writing-nothing-from-calcutta.svg",
+      "source": "src/lib/posts/writing-nothing-from-calcutta.md",
+      "sourceHash": "c1becfb62c80121542b63cf7e1ab2e1f7f858394fb9b1580008a7d2fd72f302d",
+      "sourceModified": "2026-07-01T22:58:21.029880+00:00",
+      "topWords": [
+        "Nothing",
+        "Subject",
+        "Page",
+        "Room",
+        "Blank",
+        "Cup",
+        "Refuses",
+        "Every",
+        "Writing",
+        "Days",
+        "Though",
+        "Sentence"
       ],
       "wordCount": 130
     },
