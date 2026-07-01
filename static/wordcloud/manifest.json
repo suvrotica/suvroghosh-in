@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T08:19:30.117885+00:00",
+  "generatedAt": "2026-07-01T11:45:05.838288+00:00",
   "posts": {
     "a-read-this-first": {
       "generatedAt": "2026-06-30T21:04:23.417009+00:00",
@@ -21,6 +21,75 @@
         "Merely",
         "Tool",
         "Technical"
+      ],
+      "wordCount": 130
+    },
+    "ai-deployment-evidence-over-opinion": {
+      "generatedAt": "2026-07-01T11:45:03.293566+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-deployment-evidence-over-opinion.svg",
+      "source": "src/lib/posts/ai-deployment-evidence-over-opinion.md",
+      "sourceHash": "280c6266accc678bc216e401e70a35246093670a695248f05b9895d34e367aa4",
+      "sourceModified": "2026-07-01T11:44:30.157425+00:00",
+      "topWords": [
+        "Model",
+        "Data",
+        "Clinical",
+        "AI",
+        "Workflow",
+        "Healthcare",
+        "Time",
+        "Measure",
+        "System",
+        "Question",
+        "Whether",
+        "Result"
+      ],
+      "wordCount": 130
+    },
+    "ai-health-insurance-surreptitious-risk-scoring": {
+      "generatedAt": "2026-07-01T11:45:04.015548+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-health-insurance-surreptitious-risk-scoring.svg",
+      "source": "src/lib/posts/ai-health-insurance-surreptitious-risk-scoring.md",
+      "sourceHash": "494a88b9f04a3eab6e14067e7e68e462e4fffc323ac13007875d1e539e8088ad",
+      "sourceModified": "2026-07-01T11:44:30.157425+00:00",
+      "topWords": [
+        "Model",
+        "AI",
+        "Person",
+        "System",
+        "Language",
+        "Insurance",
+        "Administrative",
+        "Health",
+        "Machine",
+        "Cost",
+        "Documentation",
+        "Claim"
+      ],
+      "wordCount": 130
+    },
+    "ai-in-india-the-negative-infinity-before-the-singularity": {
+      "generatedAt": "2026-07-01T11:45:04.760397+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-in-india-the-negative-infinity-before-the-singularity.svg",
+      "source": "src/lib/posts/ai-in-india-the-negative-infinity-before-the-singularity.md",
+      "sourceHash": "da16e83ba77984bb8b0891fcc26d2a096adb72d29e2a92a8024da5f87ffab38b",
+      "sourceModified": "2026-07-01T11:44:30.157425+00:00",
+      "topWords": [
+        "AI",
+        "Fake",
+        "Help",
+        "Voice",
+        "Trust",
+        "India",
+        "First",
+        "Needs",
+        "Arrive",
+        "Fraud",
+        "Healthcare",
+        "Patient"
       ],
       "wordCount": 130
     },
@@ -1332,6 +1401,29 @@
         "Everyone",
         "Morning",
         "Money"
+      ],
+      "wordCount": 130
+    },
+    "healthcare-ai-wrong-objective": {
+      "generatedAt": "2026-07-01T11:45:05.671235+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/healthcare-ai-wrong-objective.svg",
+      "source": "src/lib/posts/healthcare-ai-wrong-objective.md",
+      "sourceHash": "5bd549463c4c99650a6dde5cba1bc6b47b82133555bb17e467ba239339793258",
+      "sourceModified": "2026-07-01T11:44:30.160691+00:00",
+      "topWords": [
+        "Model",
+        "AI",
+        "Data",
+        "Healthcare",
+        "Clinical",
+        "Care",
+        "Time",
+        "Workflow",
+        "Enough",
+        "Means",
+        "Objective",
+        "Access"
       ],
       "wordCount": 130
     },
