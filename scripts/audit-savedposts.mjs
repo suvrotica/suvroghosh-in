@@ -116,14 +116,28 @@ function readPosts(dir) {
 
 const activePosts = readPosts(activeDir);
 const savedPosts = readPosts(savedDir);
+const redirectedDuplicateSlugs = new Set([
+	'arrow_uncertainty_medical_care_healthcare_it',
+	'confounding-factors-healthcare-it-analytics',
+	'hie-first-principles-openhie',
+	'latent-space-in-healthcare-data',
+	'trolley-problem-healthcare-it',
+	'va-healthcare-data-systems-mumps-to-sql'
+]);
 
 const missing = [];
 let exact = 0;
 let likelyCovered = 0;
+let redirectedDuplicates = 0;
 
 for (const saved of savedPosts) {
 	if (activePosts.some((post) => post.slug === saved.slug)) {
 		exact += 1;
+		continue;
+	}
+
+	if (redirectedDuplicateSlugs.has(saved.slug)) {
+		redirectedDuplicates += 1;
 		continue;
 	}
 
@@ -166,6 +180,7 @@ console.log(
 			saved: savedPosts.length,
 			exact,
 			likelyCovered,
+			redirectedDuplicates,
 			missing: missing.length,
 			categories: Array.from(categories.entries())
 				.sort((left, right) => right[1].count - left[1].count)

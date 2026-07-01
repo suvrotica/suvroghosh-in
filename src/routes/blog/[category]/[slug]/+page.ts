@@ -15,7 +15,18 @@ import { validatePublishedPostMetadata, postPath, type BlogPostMetadata } from '
 
 const postPathAliases: Record<string, string> = {
 	'artificial-intelligence/ai-meaningful-work-and-the-trust-collapse':
-		'/blog/artificial-intelligence/ai-meaningful-work-trust-collapse'
+		'/blog/artificial-intelligence/ai-meaningful-work-trust-collapse',
+	'healthcare-it/arrow_uncertainty_medical_care_healthcare_it':
+		'/blog/economics/kenneth-arrow-medical-care',
+	'healthcare-it/confounding-factors-healthcare-it-analytics':
+		'/blog/healthcare-it/confounding-factors',
+	'healthcare-it/hie-first-principles-openhie': '/blog/healthcare-it/hie-from-first-principles',
+	'healthcare-it/latent-space-in-healthcare-data':
+		'/blog/healthcare-it/latent-space-healthcare-data',
+	'healthcare-it/trolley-problem-healthcare-it':
+		'/blog/healthcare-it/the-trolley-problem-is-already-hiding-in-healthcare',
+	'healthcare-it/va-healthcare-data-systems-mumps-to-sql':
+		'/blog/healthcare-it/how-va-healthcare-data-systems-work'
 };
 
 export const load: PageLoad = async ({ params }) => {

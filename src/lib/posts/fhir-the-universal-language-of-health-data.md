@@ -2,7 +2,7 @@
 title: "FHIR and the Clerk With the Clipboard"
 description: "A Calcutta-grounded essay on FHIR, the health data standard that tries to make clinics, labs, apps, and public health systems speak to one another without losing meaning."
 date: "2026-06-23"
-thumbnail: "/images/Compress_20260517_073622_2338.jpg"
+thumbnail: "/images/Compress_20260517_064736_6352.jpg"
 category: "Healthcare-IT"
 tags:
   [
@@ -21,7 +21,7 @@ color: "#0D7377"
 
 <TTS />
 
-<Pi src="Compress_20260517_073622_2338.jpg" alt="Article illustration for FHIR healthcare data interoperability" />
+<Pi src="Compress_20260517_064736_6352.jpg" alt="Article illustration for FHIR healthcare data interoperability" />
 
 The clipboard arrives before the doctor.
 

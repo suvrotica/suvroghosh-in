@@ -151,6 +151,58 @@ for (const post of publishedPosts) {
 	assertAbsoluteUrl(post.file, post.url);
 }
 
+function normalizeIdentity(value) {
+	return String(value || '')
+		.toLowerCase()
+		.trim()
+		.replace(/&/g, 'and')
+		.replace(/[^a-z0-9/._-]+/g, ' ')
+		.replace(/\s+/g, ' ');
+}
+
+function seriesBaseTitle(title) {
+	return normalizeIdentity(title)
+		.replace(/(?:,?\s+part\s+\d+|,?\s+pt\s+\d+)$/i, '')
+		.trim();
+}
+
+function isAllowedSharedThumbnail(posts) {
+	if (posts.length < 2) return false;
+
+	const seriesBase = seriesBaseTitle(posts[0].metadata.title);
+	if (!seriesBase) return false;
+
+	return posts.every((post) => {
+		const title = normalizeIdentity(post.metadata.title);
+		return (
+			seriesBaseTitle(post.metadata.title) === seriesBase &&
+			/\b(?:part|pt)\s+\d+\b/i.test(title)
+		);
+	});
+}
+
+for (const field of ['title', 'description', 'thumbnail']) {
+	const seen = new Map();
+
+	for (const post of publishedPosts) {
+		const value = post.metadata[field];
+		if (!value) continue;
+
+		const key = normalizeIdentity(value);
+		const matches = seen.get(key) ?? [];
+		matches.push(post.file);
+		seen.set(key, matches);
+	}
+
+	for (const files of seen.values()) {
+		if (files.length > 1) {
+			const matchingPosts = publishedPosts.filter((post) => files.includes(post.file));
+			if (field === 'thumbnail' && isAllowedSharedThumbnail(matchingPosts)) continue;
+			errors.push(`published posts share the same ${field}: ${files.join(', ')}`);
+		}
+	}
+}
+
 const seoComponent = read(path.join(root, 'src', 'lib', 'components', 'seo', 'SEO.svelte'));
 for (const required of [
 	'<title>{title}</title>',
