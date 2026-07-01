@@ -1,0 +1,134 @@
+<svg role="img" aria-label="When Structure Loses Its Map" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>When Structure Loses Its Map</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(971,370)" font-size="118" style="fill:#c49a6c">Sees</text>
+<text transform="translate(779,469)" font-size="105" style="fill:#d9c89e">Map</text>
+<text transform="translate(165,197)" font-size="105" style="fill:#d5d2c2">Data</text>
+<text transform="translate(63,364)" font-size="91" style="fill:#c49a6c">Campus</text>
+<text transform="translate(751,263)" font-size="91" style="fill:#a9b7a3">Police</text>
+<text transform="translate(436,204)" font-size="91" style="fill:#d6a79f">Limon</text>
+<text transform="translate(465,655)" font-size="91" style="fill:#a9b7a3">University</text>
+<text transform="translate(104,278)" font-size="91" style="fill:#e0b879">Modern</text>
+<text transform="translate(274,468)" font-size="91" style="fill:#e0b879">Offcampus</text>
+<text transform="translate(127,616)" font-size="91" style="fill:#d88988">Court</text>
+<text transform="translate(180,74)" font-size="91" style="fill:#9fc9c5">Society</text>
+<text transform="translate(585,381)" font-size="90" style="fill:#c7d7b5">Absence</text>
+<text transform="translate(446,567)" font-size="90" style="fill:#9fc9c5">Risk</text>
+<text transform="translate(833,173)" font-size="74" style="fill:#d9c89e">Labels</text>
+<text transform="translate(795,72)" font-size="74" style="fill:#8fb7d0">Disturbing</text>
+<text transform="translate(122,681)" font-size="74" style="fill:#9fc9c5">Record</text>
+<text transform="translate(991,431)" font-size="74" style="fill:#d6a79f">Deaths</text>
+<text transform="translate(459,281)" font-size="74" style="fill:#d88988">Bristy</text>
+<text transform="translate(754,564)" font-size="74" style="fill:#d88988">Doctoral</text>
+<text transform="translate(69,535)" font-size="74" style="fill:#d9c89e">Students</text>
+<text transform="translate(966,486)" font-size="72" style="fill:#c7d7b5">Reports</text>
+<text transform="translate(462,711)" font-size="72" style="fill:#d88988">Statements</text>
+<text transform="translate(546,132)" font-size="60" style="fill:#e0b879">Studying</text>
+<text transform="translate(83,252) rotate(-90)" font-size="60" style="fill:#8fb7d0">Policy</text>
+<text transform="translate(1016,647)" font-size="60" style="fill:#c49a6c">Student</text>
+<text transform="translate(649,60)" font-size="60" style="fill:#d6a79f">Visa</text>
+<text transform="translate(724,319)" font-size="60" style="fill:#9fc9c5">Friend</text>
+<text transform="translate(13,450)" font-size="60" style="fill:#8fb7d0">Missing</text>
+<text transform="translate(1083,237)" font-size="60" style="fill:#d6a79f">Adult</text>
+<text transform="translate(421,380)" font-size="60" style="fill:#c49a6c">Case</text>
+<text transform="translate(993,713)" font-size="59" style="fill:#c7d7b5">Roommate</text>
+<text transform="translate(77,710) rotate(-90)" font-size="59" style="fill:#d6a79f">WUSF</text>
+<text transform="translate(283,110)" font-size="42" style="fill:#d6a79f">Reporting</text>
+<text transform="translate(1143,145)" font-size="42" style="fill:#d6a79f">Point</text>
+<text transform="translate(1116,595)" font-size="42" style="fill:#d88988">Notice</text>
+<text transform="translate(891,107)" font-size="42" style="fill:#e0b879">Structure</text>
+<text transform="translate(1093,528)" font-size="42" style="fill:#b6c3dd">Safety</text>
+<text transform="translate(89,115)" font-size="42" style="fill:#e0b879">Phone</text>
+<text transform="translate(1085,277)" font-size="42" style="fill:#8fb7d0">Systems</text>
+<text transform="translate(656,505)" font-size="42" style="fill:#d6a79f">Prevention</text>
+<text transform="translate(443,318)" font-size="42" style="fill:#9fc9c5">Missed</text>
+<text transform="translate(103,715)" font-size="42" style="fill:#d6a79f">Items</text>
+<text transform="translate(437,715) rotate(-90)" font-size="42" style="fill:#e0b879">Filings</text>
+<text transform="translate(37,400) rotate(-90)" font-size="42" style="fill:#9fc9c5">System</text>
+<text transform="translate(624,600)" font-size="40" style="fill:#d5d2c2">Enrollment</text>
+<text transform="translate(1103,182)" font-size="40" style="fill:#c49a6c">Routine</text>
+<text transform="translate(50,392)" font-size="31" style="fill:#d9c89e">Charges</text>
+<text transform="translate(559,409)" font-size="31" style="fill:#c49a6c">Boundaries</text>
+<text transform="translate(236,709)" font-size="31" style="fill:#a9b7a3">Friends</text>
+<text transform="translate(714,180)" font-size="31" style="fill:#d6a79f">Family</text>
+<text transform="translate(113,675) rotate(-90)" font-size="31" style="fill:#c7d7b5">Signals</text>
+<text transform="translate(176,303)" font-size="27" style="fill:#e0b879">Vulnerability</text>
+<text transform="translate(10,26)" font-size="27" style="fill:#d6a79f">Compound</text>
+<text transform="translate(1003,598)" font-size="27" style="fill:#a9b7a3">Facts</text>
+<text transform="translate(109,476)" font-size="27" style="fill:#a9b7a3">Visible</text>
+<text transform="translate(306,391)" font-size="27" style="fill:#d6a79f">Status</text>
+<text transform="translate(968,198)" font-size="27" style="fill:#d88988">Order</text>
+<text transform="translate(1146,555)" font-size="20" style="fill:#b6c3dd">Looks</text>
+<text transform="translate(429,491)" font-size="20" style="fill:#8fb7d0">Orderly</text>
+<text transform="translate(441,399)" font-size="20" style="fill:#9fc9c5">Buildings</text>
+<text transform="translate(1211,295)" font-size="20" style="fill:#c49a6c">Paths</text>
+<text transform="translate(391,131)" font-size="20" style="fill:#d88988">Labs</text>
+<text transform="translate(281,223)" font-size="20" style="fill:#d88988">Offices</text>
+<text transform="translate(213,561)" font-size="20" style="fill:#8fb7d0">Residence</text>
+<text transform="translate(102,53)" font-size="20" style="fill:#c49a6c">Halls</text>
+<text transform="translate(9,559)" font-size="20" style="fill:#d9c89e">Routes</text>
+<text transform="translate(696,79)" font-size="20" style="fill:#d9c89e">Numbered</text>
+<text transform="translate(609,86)" font-size="20" style="fill:#d9c89e">Lots</text>
+<text transform="translate(1062,668)" font-size="20" style="fill:#d9c89e">Emergency</text>
+<text transform="translate(866,401)" font-size="20" style="fill:#c7d7b5">Contacts</text>
+<text transform="translate(1147,19)" font-size="20" style="fill:#8fb7d0">Everything</text>
+<text transform="translate(663,557)" font-size="20" style="fill:#d9c89e">Label</text>
+<text transform="translate(531,494)" font-size="20" style="fill:#c7d7b5">Terror</text>
+<text transform="translate(889,695)" font-size="20" style="fill:#d9c89e">Begins</text>
+<text transform="translate(15,494)" font-size="20" style="fill:#e0b879">Keep</text>
+<text transform="translate(477,336)" font-size="20" style="fill:#d88988">Existing</text>
+<text transform="translate(945,508)" font-size="20" style="fill:#8fb7d0">Living</text>
+<text transform="translate(1197,667)" font-size="20" style="fill:#d6a79f">Fails</text>
+<text transform="translate(258,487)" font-size="20" style="fill:#b6c3dd">Remains</text>
+<text transform="translate(920,583)" font-size="20" style="fill:#c7d7b5">Public</text>
+<text transform="translate(545,512)" font-size="20" style="fill:#e0b879">Zamil</text>
+<text transform="translate(27,688) rotate(-90)" font-size="20" style="fill:#d5d2c2">Nahida</text>
+<text transform="translate(666,236)" font-size="20" style="fill:#d9c89e">Yearold</text>
+<text transform="translate(25,230) rotate(-90)" font-size="20" style="fill:#8fb7d0">Bangladeshi</text>
+<text transform="translate(55,337) rotate(-90)" font-size="20" style="fill:#c7d7b5">South</text>
+<text transform="translate(11,469)" font-size="20" style="fill:#e0b879">Florida</text>
+<text transform="translate(185,635)" font-size="20" style="fill:#b6c3dd">Lawenforcement</text>
+<text transform="translate(1267,381) rotate(-90)" font-size="20" style="fill:#9fc9c5">Say</text>
+<text transform="translate(455,710) rotate(-90)" font-size="20" style="fill:#c49a6c">Geography</text>
+<text transform="translate(385,223)" font-size="20" style="fill:#d6a79f">Environmental</text>
+<text transform="translate(668,528)" font-size="20" style="fill:#e0b879">Science</text>
+<text transform="translate(958,23)" font-size="20" style="fill:#c49a6c">Chemical</text>
+<text transform="translate(664,327)" font-size="20" style="fill:#a9b7a3">Lives</text>
+<text transform="translate(1123,108)" font-size="20" style="fill:#a9b7a3">Institutions</text>
+<text transform="translate(186,405)" font-size="19" style="fill:#d9c89e">Classify</text>
+<text transform="translate(244,19)" font-size="19" style="fill:#a9b7a3">Researcher</text>
+<text transform="translate(1050,127)" font-size="19" style="fill:#d6a79f">Holder</text>
+<text transform="translate(798,88)" font-size="17" style="fill:#d6a79f">Colleague</text>
+<text transform="translate(575,40)" font-size="17" style="fill:#d88988">Tenant</text>
+<text transform="translate(112,77)" font-size="17" style="fill:#b6c3dd">Victim</text>
+<text transform="translate(492,18)" font-size="17" style="fill:#d9c89e">Classifications</text>
+<text transform="translate(403,371) rotate(-90)" font-size="17" style="fill:#e0b879">Protect</text>
+<text transform="translate(532,600)" font-size="17" style="fill:#d6a79f">Bodies</text>
+<text transform="translate(164,215)" font-size="17" style="fill:#9fc9c5">Writing</text>
+<text transform="translate(559,63)" font-size="17" style="fill:#e0b879">Carefully</text>
+<text transform="translate(986,280)" font-size="17" style="fill:#a9b7a3">Criminal</text>
+<text transform="translate(375,485)" font-size="17" style="fill:#e0b879">Prop</text>
+<text transform="translate(569,149)" font-size="17" style="fill:#d9c89e">Cleverness</text>
+<text transform="translate(216,118)" font-size="17" style="fill:#d88988">Hisham</text>
+<text transform="translate(100,275) rotate(-90)" font-size="17" style="fill:#a9b7a3">Abugharbieh</text>
+<text transform="translate(95,147)" font-size="17" style="fill:#9fc9c5">Charged</text>
+<text transform="translate(451,583)" font-size="17" style="fill:#9fc9c5">Connection</text>
+<text transform="translate(1133,297)" font-size="17" style="fill:#d6a79f">Pleaded</text>
+<text transform="translate(1047,297)" font-size="17" style="fill:#a9b7a3">Guilty</text>
+<text transform="translate(540,189) rotate(-90)" font-size="17" style="fill:#d9c89e">According</text>
+<text transform="translate(825,278)" font-size="14" style="fill:#d6a79f">Allegations</text>
+<text transform="translate(901,714)" font-size="14" style="fill:#b6c3dd">Verdicts</text>
+<text transform="translate(595,296)" font-size="14" style="fill:#b6c3dd">Improve</text>
+<text transform="translate(32,534)" font-size="14" style="fill:#b6c3dd">Room</text>
+<text transform="translate(384,16)" font-size="14" style="fill:#d9c89e">Cases</text>
+<text transform="translate(586,225)" font-size="14" style="fill:#d9c89e">Reveal</text>
+<text transform="translate(874,188)" font-size="14" style="fill:#e0b879">Situational</text>
+<text transform="translate(722,148)" font-size="14" style="fill:#c49a6c">Awareness</text>
+<text transform="translate(250,381)" font-size="14" style="fill:#d6a79f">Badges</text>
+<text transform="translate(1142,85)" font-size="14" style="fill:#d88988">Forms</text>
+<text transform="translate(66,290)" font-size="12" style="fill:#d88988">Missingstudent</text>
+<text transform="translate(725,21)" font-size="12" style="fill:#d6a79f">Protocols</text>
+<text transform="translate(1199,384)" font-size="12" style="fill:#8fb7d0">Email</text>
+<text transform="translate(105,129)" font-size="12" style="fill:#e0b879">Accounts</text>
+<text transform="translate(11,515)" font-size="12" style="fill:#d6a79f">Webpages</text>
+</svg>

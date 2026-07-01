@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Kenneth Arrow and the Healthcare Data Problem" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Kenneth Arrow and the Healthcare Data Problem</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(1214,715) rotate(-90)" font-size="118" style="fill:#d9c89e">Healthcare</text>
+<text transform="translate(239,710)" font-size="109" style="fill:#c7d7b5">Arrow</text>
+<text transform="translate(99,159)" font-size="99" style="fill:#d5d2c2">Patient</text>
+<text transform="translate(820,684) rotate(-90)" font-size="99" style="fill:#8fb7d0">Uncertainty</text>
+<text transform="translate(197,599)" font-size="99" style="fill:#d9c89e">Clinical</text>
+<text transform="translate(31,413)" font-size="88" style="fill:#d88988">Knowledge</text>
+<text transform="translate(1012,429) rotate(-90)" font-size="88" style="fill:#8fb7d0">Data</text>
+<text transform="translate(10,270)" font-size="88" style="fill:#8fb7d0">System</text>
+<text transform="translate(667,462) rotate(-90)" font-size="76" style="fill:#d6a79f">Economics</text>
+<text transform="translate(57,496)" font-size="76" style="fill:#c49a6c">Medical</text>
+<text transform="translate(402,64)" font-size="76" style="fill:#e0b879">Care</text>
+<text transform="translate(846,558)" font-size="76" style="fill:#d88988">Market</text>
+<text transform="translate(150,334)" font-size="76" style="fill:#b6c3dd">Service</text>
+<text transform="translate(847,77)" font-size="76" style="fill:#d9c89e">Clean</text>
+<text transform="translate(823,621)" font-size="76" style="fill:#e0b879">Meaning</text>
+<text transform="translate(76,67)" font-size="76" style="fill:#a9b7a3">Whether</text>
+<text transform="translate(825,706)" font-size="76" style="fill:#d88988">Note</text>
+<text transform="translate(900,206)" font-size="76" style="fill:#d9c89e">Value</text>
+<text transform="translate(572,516)" font-size="76" style="fill:#e0b879">Need</text>
+<text transform="translate(23,572)" font-size="62" style="fill:#e0b879">Room</text>
+<text transform="translate(509,251)" font-size="62" style="fill:#d5d2c2">Fan</text>
+<text transform="translate(852,493)" font-size="62" style="fill:#a9b7a3">Kenneth</text>
+<text transform="translate(861,137)" font-size="62" style="fill:#e0b879">Health</text>
+<text transform="translate(8,697)" font-size="62" style="fill:#d9c89e">Person</text>
+<text transform="translate(240,216)" font-size="62" style="fill:#d6a79f">Welfare</text>
+<text transform="translate(1270,296) rotate(-90)" font-size="62" style="fill:#e0b879">Normal</text>
+<text transform="translate(734,462) rotate(-90)" font-size="62" style="fill:#d9c89e">Professional</text>
+<text transform="translate(1271,703) rotate(-90)" font-size="62" style="fill:#d9c89e">Document</text>
+<text transform="translate(12,640)" font-size="62" style="fill:#d6a79f">Later</text>
+<text transform="translate(874,418) rotate(-90)" font-size="62" style="fill:#c49a6c">Missing</text>
+<text transform="translate(554,529) rotate(-90)" font-size="62" style="fill:#9fc9c5">Delayed</text>
+<text transform="translate(939,439) rotate(-90)" font-size="62" style="fill:#c49a6c">Trust</text>
+<text transform="translate(336,645)" font-size="55" style="fill:#d6a79f">Institutions</text>
+<text transform="translate(1082,441) rotate(-90)" font-size="55" style="fill:#d9c89e">Reality</text>
+<text transform="translate(8,201)" font-size="47" style="fill:#8fb7d0">Workflow</text>
+<text transform="translate(601,698)" font-size="47" style="fill:#e0b879">Local</text>
+<text transform="translate(388,493)" font-size="47" style="fill:#c49a6c">Code</text>
+<text transform="translate(1007,710)" font-size="47" style="fill:#8fb7d0">Mean</text>
+<text transform="translate(608,457) rotate(-90)" font-size="47" style="fill:#d6a79f">Disease</text>
+<text transform="translate(328,257)" font-size="44" style="fill:#b6c3dd">Billing</text>
+<text transform="translate(938,30)" font-size="34" style="fill:#d5d2c2">Historical</text>
+<text transform="translate(520,200)" font-size="34" style="fill:#b6c3dd">Time</text>
+<text transform="translate(515,153)" font-size="34" style="fill:#9fc9c5">Field</text>
+<text transform="translate(61,533)" font-size="34" style="fill:#8fb7d0">Becomes</text>
+<text transform="translate(1116,426) rotate(-90)" font-size="34" style="fill:#d9c89e">Software</text>
+<text transform="translate(33,454) rotate(-90)" font-size="34" style="fill:#d5d2c2">Assertion</text>
+<text transform="translate(485,99)" font-size="34" style="fill:#a9b7a3">Packet</text>
+<text transform="translate(71,164) rotate(-90)" font-size="34" style="fill:#8fb7d0">Problems</text>
+<text transform="translate(895,643)" font-size="24" style="fill:#d88988">Representation</text>
+<text transform="translate(661,568)" font-size="24" style="fill:#b6c3dd">Outside</text>
+<text transform="translate(595,22)" font-size="24" style="fill:#c7d7b5">Interface</text>
+<text transform="translate(87,360)" font-size="24" style="fill:#c7d7b5">Different</text>
+<text transform="translate(324,92)" font-size="24" style="fill:#e0b879">Ambiguity</text>
+<text transform="translate(355,530)" font-size="24" style="fill:#b6c3dd">Model</text>
+<text transform="translate(55,324)" font-size="24" style="fill:#c49a6c">Risk</text>
+<text transform="translate(679,595)" font-size="24" style="fill:#b6c3dd">Vague</text>
+<text transform="translate(742,26)" font-size="24" style="fill:#9fc9c5">Problem</text>
+<text transform="translate(23,162) rotate(-90)" font-size="24" style="fill:#a9b7a3">Computation</text>
+<text transform="translate(909,444)" font-size="24" style="fill:#a9b7a3">Systems</text>
+<text transform="translate(878,242)" font-size="24" style="fill:#c7d7b5">Quiet</text>
+<text transform="translate(1017,668)" font-size="24" style="fill:#d6a79f">Lesson</text>
+<text transform="translate(224,622)" font-size="24" style="fill:#d9c89e">Possess</text>
+<text transform="translate(233,439)" font-size="24" style="fill:#8fb7d0">Review</text>
+<text transform="translate(103,431)" font-size="17" style="fill:#d5d2c2">Waiting</text>
+<text transform="translate(19,590)" font-size="17" style="fill:#b6c3dd">Turns</text>
+<text transform="translate(1129,449)" font-size="17" style="fill:#e0b879">Slowly</text>
+<text transform="translate(853,481) rotate(-90)" font-size="17" style="fill:#d9c89e">Even</text>
+<text transform="translate(1105,510)" font-size="17" style="fill:#c7d7b5">Air</text>
+<text transform="translate(410,355)" font-size="17" style="fill:#c7d7b5">Negotiate</text>
+<text transform="translate(277,359)" font-size="17" style="fill:#8fb7d0">Permission</text>
+<text transform="translate(763,702)" font-size="17" style="fill:#9fc9c5">Moving</text>
+<text transform="translate(895,341) rotate(-90)" font-size="17" style="fill:#d88988">Feels</text>
+<text transform="translate(684,285) rotate(-90)" font-size="17" style="fill:#a9b7a3">Modern</text>
+<text transform="translate(1183,330)" font-size="17" style="fill:#b6c3dd">Polished</text>
+<text transform="translate(1064,155)" font-size="17" style="fill:#8fb7d0">Lecture</text>
+<text transform="translate(201,522)" font-size="17" style="fill:#b6c3dd">Hall</text>
+<text transform="translate(90,590)" font-size="17" style="fill:#d88988">Version</text>
+<text transform="translate(624,663)" font-size="17" style="fill:#b6c3dd">Ordinary</text>
+<text transform="translate(376,283)" font-size="17" style="fill:#a9b7a3">Sits</text>
+<text transform="translate(435,514)" font-size="17" style="fill:#d9c89e">File</text>
+<text transform="translate(117,658)" font-size="17" style="fill:#9fc9c5">Bill</text>
+<text transform="translate(586,714)" font-size="17" style="fill:#a9b7a3">Halfunderstood</text>
+<text transform="translate(106,715)" font-size="17" style="fill:#c49a6c">Instruction</text>
+<text transform="translate(1126,117) rotate(-90)" font-size="17" style="fill:#d6a79f">Dull</text>
+<text transform="translate(277,514)" font-size="17" style="fill:#9fc9c5">Selling</text>
+<text transform="translate(285,287)" font-size="17" style="fill:#8fb7d0">Knows</text>
+<text transform="translate(367,450)" font-size="17" style="fill:#9fc9c5">Vastly</text>
+<text transform="translate(1084,50)" font-size="17" style="fill:#a9b7a3">Buying</text>
+<text transform="translate(527,117)" font-size="17" style="fill:#d9c89e">Explained</text>
+<text transform="translate(695,535)" font-size="17" style="fill:#d5d2c2">Behave</text>
+<text transform="translate(827,156)" font-size="17" style="fill:#d6a79f">White</text>
+<text transform="translate(1108,119) rotate(-90)" font-size="17" style="fill:#8fb7d0">Coats</text>
+<text transform="translate(593,47)" font-size="17" style="fill:#8fb7d0">Attached</text>
+<text transform="translate(155,84)" font-size="17" style="fill:#d5d2c2">Shopping</text>
+<text transform="translate(1156,153)" font-size="17" style="fill:#d88988">Toaster</text>
+<text transform="translate(1141,288) rotate(-90)" font-size="17" style="fill:#a9b7a3">Frightened</text>
+<text transform="translate(1030,449) rotate(-90)" font-size="17" style="fill:#d5d2c2">Timepoor</text>
+<text transform="translate(1029,360) rotate(-90)" font-size="17" style="fill:#b6c3dd">Physiologically</text>
+<text transform="translate(178,643)" font-size="17" style="fill:#d5d2c2">Exposed</text>
+<text transform="translate(49,515) rotate(-90)" font-size="17" style="fill:#e0b879">Dependent</text>
+<text transform="translate(756,224) rotate(-90)" font-size="17" style="fill:#9fc9c5">Judgment</text>
+<text transform="translate(342,17)" font-size="17" style="fill:#e0b879">Doctor</text>
+<text transform="translate(1232,599) rotate(-90)" font-size="17" style="fill:#e0b879">Recommend</text>
+<text transform="translate(150,19)" font-size="17" style="fill:#d5d2c2">Perform</text>
+<text transform="translate(461,430)" font-size="17" style="fill:#d88988">Help</text>
+<text transform="translate(469,17)" font-size="17" style="fill:#d88988">Determine</text>
+<text transform="translate(1222,349)" font-size="17" style="fill:#e0b879">Payer</text>
+<text transform="translate(1234,403)" font-size="17" style="fill:#8fb7d0">Sees</text>
+<text transform="translate(397,174)" font-size="14" style="fill:#c49a6c">Automatically</text>
+<text transform="translate(254,137)" font-size="14" style="fill:#d6a79f">Imply</text>
+<text transform="translate(421,283)" font-size="14" style="fill:#8fb7d0">Corruption</text>
+<text transform="translate(31,712)" font-size="14" style="fill:#c7d7b5">Implies</text>
+<text transform="translate(80,215)" font-size="14" style="fill:#d9c89e">Structural</text>
+<text transform="translate(1002,508)" font-size="14" style="fill:#c49a6c">Asymmetry</text>
+<text transform="translate(906,510)" font-size="14" style="fill:#d6a79f">Markets</text>
+<text transform="translate(754,412) rotate(-90)" font-size="14" style="fill:#b6c3dd">Full</text>
+<text transform="translate(522,539)" font-size="14" style="fill:#e0b879">Outcomes</text>
+<text transform="translate(321,429)" font-size="14" style="fill:#8fb7d0">Regulation</text>
+<text transform="translate(683,469) rotate(-90)" font-size="14" style="fill:#d9c89e">Ethics</text>
+<text transform="translate(14,529) rotate(-90)" font-size="14" style="fill:#8fb7d0">Insurance</text>
+<text transform="translate(430,448)" font-size="14" style="fill:#d88988">Licensing</text>
+<text transform="translate(199,286)" font-size="14" style="fill:#a9b7a3">Created</text>
+<text transform="translate(1242,28)" font-size="14" style="fill:#9fc9c5">Tidy</text>
+<text transform="translate(844,136) rotate(-90)" font-size="14" style="fill:#a9b7a3">Story</text>
+<text transform="translate(99,287)" font-size="14" style="fill:#c7d7b5">Breaks</text>
+<text transform="translate(507,169)" font-size="14" style="fill:#d88988">Illness</text>
+<text transform="translate(1219,367)" font-size="14" style="fill:#e0b879">Matters</text>
+<text transform="translate(826,638)" font-size="14" style="fill:#a9b7a3">Directly</text>
+<text transform="translate(921,574)" font-size="14" style="fill:#9fc9c5">Electronic</text>
+<text transform="translate(1082,137)" font-size="14" style="fill:#8fb7d0">Record</text>
+</svg>

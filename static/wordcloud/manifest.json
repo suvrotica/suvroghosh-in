@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T17:18:21.753787+00:00",
+  "generatedAt": "2026-07-01T18:23:15.249462+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -576,6 +576,29 @@
       ],
       "wordCount": 130
     },
+    "arrow_uncertainty_medical_care_healthcare_it": {
+      "generatedAt": "2026-07-01T18:05:40.682661+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/arrow_uncertainty_medical_care_healthcare_it.svg",
+      "source": "src/lib/posts/arrow_uncertainty_medical_care_healthcare_it.md",
+      "sourceHash": "bd0ba99d0487e879b715680a5143138bced1ed0edb4228c20613a252dee033c0",
+      "sourceModified": "2026-07-01T17:57:51.785580+00:00",
+      "topWords": [
+        "Healthcare",
+        "Arrow",
+        "Patient",
+        "Uncertainty",
+        "Clinical",
+        "Knowledge",
+        "Data",
+        "System",
+        "Economics",
+        "Medical",
+        "Care",
+        "Market"
+      ],
+      "wordCount": 130
+    },
     "asimovs-missing-laws": {
       "generatedAt": "2026-07-01T16:59:36.767472+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -645,6 +668,52 @@
       ],
       "wordCount": 130
     },
+    "babu-culture-vip-india-obsequiousness": {
+      "generatedAt": "2026-07-01T17:37:37.754502+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/babu-culture-vip-india-obsequiousness.svg",
+      "source": "src/lib/posts/babu-culture-vip-india-obsequiousness.md",
+      "sourceHash": "751ce0ad02d8b7774dc2a6f1e7c9637264f1488e2775ff7a6b6fc59480a7113d",
+      "sourceModified": "2026-07-01T17:28:42.294905+00:00",
+      "topWords": [
+        "Becomes",
+        "Person",
+        "Someone",
+        "Hierarchy",
+        "India",
+        "Small",
+        "Power",
+        "Ordinary",
+        "Authority",
+        "Bend",
+        "Speak",
+        "Better"
+      ],
+      "wordCount": 130
+    },
+    "bangalore-city-that-cannot-decide-whether-to-flood-or-flush": {
+      "generatedAt": "2026-07-01T17:37:39.754121+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bangalore-city-that-cannot-decide-whether-to-flood-or-flush.svg",
+      "source": "src/lib/posts/bangalore-city-that-cannot-decide-whether-to-flood-or-flush.md",
+      "sourceHash": "fe4eb8bcff9e62f0aa36feae170d4c03086b77cb9e1ff0f648aac1a18383ea26",
+      "sourceModified": "2026-07-01T17:28:42.300290+00:00",
+      "topWords": [
+        "Water",
+        "Drains",
+        "Tanker",
+        "Bucket",
+        "Behind",
+        "Bangalore",
+        "Begins",
+        "Waste",
+        "Problem",
+        "Class",
+        "Sound",
+        "Small"
+      ],
+      "wordCount": 130
+    },
     "barebones-lifeboat-calcutta": {
       "generatedAt": "2026-06-30T21:04:32.303153+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -665,6 +734,29 @@
         "Afford",
         "Treat",
         "Time"
+      ],
+      "wordCount": 130
+    },
+    "barnum-statements-and-the-horoscope-that-fits-everybody": {
+      "generatedAt": "2026-07-01T17:37:41.764987+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/barnum-statements-and-the-horoscope-that-fits-everybody.svg",
+      "source": "src/lib/posts/barnum-statements-and-the-horoscope-that-fits-everybody.md",
+      "sourceHash": "ab4561b02ebd622ececa2913dcdb9b92f4954e333dcce849217fd75f6d1dab53",
+      "sourceModified": "2026-07-01T17:28:42.302300+00:00",
+      "topWords": [
+        "Sentence",
+        "Barnum",
+        "Delayed",
+        "Vague",
+        "Mind",
+        "Almost",
+        "Nothing",
+        "Little",
+        "Student",
+        "Person",
+        "Worker",
+        "Tea"
       ],
       "wordCount": 130
     },
@@ -829,6 +921,52 @@
       ],
       "wordCount": 130
     },
+    "bipolar-depression-friendless-blister": {
+      "generatedAt": "2026-07-01T18:22:55.126880+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bipolar-depression-friendless-blister.svg",
+      "source": "src/lib/posts/bipolar-depression-friendless-blister.md",
+      "sourceHash": "d3bf3e9e6b1b2dc908e3cf38d262f6206b06fb6b5cfc73a2a35ade473453e71d",
+      "sourceModified": "2026-07-01T18:13:43.917160+00:00",
+      "topWords": [
+        "Blister",
+        "Small",
+        "Room",
+        "Becomes",
+        "Keeps",
+        "Court",
+        "Nothing",
+        "Answer",
+        "Let",
+        "Foot",
+        "Private",
+        "Wall"
+      ],
+      "wordCount": 130
+    },
+    "bipolar-diet-is-not-lithium": {
+      "generatedAt": "2026-07-01T18:22:56.885623+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/bipolar-diet-is-not-lithium.svg",
+      "source": "src/lib/posts/bipolar-diet-is-not-lithium.md",
+      "sourceHash": "1e99954c713148d4bd895205af8dc1f9b2ad4e2e332b8bbba05d1c39462e1759",
+      "sourceModified": "2026-07-01T18:13:43.917160+00:00",
+      "topWords": [
+        "Care",
+        "Cabbage",
+        "Eat",
+        "Sleep",
+        "Matter",
+        "Person",
+        "Blame",
+        "Avoid",
+        "Small",
+        "Matters",
+        "Nonsense",
+        "Someone"
+      ],
+      "wordCount": 130
+    },
     "black-reservoir": {
       "generatedAt": "2026-06-30T21:04:37.804413+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -987,6 +1125,29 @@
         "Light",
         "Cup",
         "Door"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-anti-motivation": {
+      "generatedAt": "2026-07-01T17:37:43.686862+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-anti-motivation.svg",
+      "source": "src/lib/posts/calcutta-anti-motivation.md",
+      "sourceHash": "75a79b9969ea85bf44bede540bd0943865c9bcf222caba13a4f2b174835b90c9",
+      "sourceModified": "2026-07-01T17:28:42.304312+00:00",
+      "topWords": [
+        "Later",
+        "Every",
+        "Motivational",
+        "India",
+        "Write",
+        "Full",
+        "Becomes",
+        "Mind",
+        "Thought",
+        "Let",
+        "Work",
+        "Tea"
       ],
       "wordCount": 130
     },
@@ -1519,6 +1680,29 @@
       ],
       "wordCount": 130
     },
+    "confounding-factors-healthcare-it-analytics": {
+      "generatedAt": "2026-07-01T18:05:42.946884+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/confounding-factors-healthcare-it-analytics.svg",
+      "source": "src/lib/posts/confounding-factors-healthcare-it-analytics.md",
+      "sourceHash": "8e38abb31ce015c3a8509cf3ee63e72bcc07864417260996ea4de0593586cf30",
+      "sourceModified": "2026-07-01T17:57:51.787734+00:00",
+      "topWords": [
+        "Data",
+        "Healthcare",
+        "Patient",
+        "Appear",
+        "Dashboard",
+        "Clean",
+        "Enters",
+        "System",
+        "Outcome",
+        "Workflow",
+        "Documentation",
+        "Risk"
+      ],
+      "wordCount": 130
+    },
     "courage-to-be-disliked-in-calcutta": {
       "generatedAt": "2026-07-01T06:44:07.026773+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1585,6 +1769,52 @@
         "Failure",
         "Answer",
         "Sensible"
+      ],
+      "wordCount": 130
+    },
+    "database-first-principles": {
+      "generatedAt": "2026-07-01T18:05:44.870820+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/database-first-principles.svg",
+      "source": "src/lib/posts/database-first-principles.md",
+      "sourceHash": "d49cca6fe496daa48f3d5823a25e0d0e685a75591d244c1c6b351ab4e2527147",
+      "sourceModified": "2026-07-01T17:57:51.789917+00:00",
+      "topWords": [
+        "Warehouse",
+        "Database",
+        "Data",
+        "Storage",
+        "Time",
+        "Systems",
+        "Result",
+        "Questions",
+        "System",
+        "Extracts",
+        "Truth",
+        "Means"
+      ],
+      "wordCount": 130
+    },
+    "depression-arrives-as-weather": {
+      "generatedAt": "2026-07-01T18:22:59.126828+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/depression-arrives-as-weather.svg",
+      "source": "src/lib/posts/depression-arrives-as-weather.md",
+      "sourceHash": "6b66a5ced4029b9572cbd0dbd37dac77a84389371ecfddfecb96fff2df5cdf81",
+      "sourceModified": "2026-07-01T18:13:43.917160+00:00",
+      "topWords": [
+        "Weather",
+        "Remains",
+        "Bad",
+        "Room",
+        "Cup",
+        "Less",
+        "Becomes",
+        "Chair",
+        "Outside",
+        "Grey",
+        "Sometimes",
+        "Somewhere"
       ],
       "wordCount": 130
     },
@@ -1749,6 +1979,29 @@
       ],
       "wordCount": 130
     },
+    "educated-boredom-horror": {
+      "generatedAt": "2026-07-01T17:37:45.456175+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/educated-boredom-horror.svg",
+      "source": "src/lib/posts/educated-boredom-horror.md",
+      "sourceHash": "bdabc63b9c5c631c6bb233e753506c3bba9861f725fff7c90a76450fc1504cd8",
+      "sourceModified": "2026-07-01T17:28:42.306324+00:00",
+      "topWords": [
+        "Boredom",
+        "Enough",
+        "Almost",
+        "Person",
+        "Attention",
+        "Feed",
+        "Bills",
+        "Middleaged",
+        "Outrage",
+        "Read",
+        "Aged",
+        "Skill"
+      ],
+      "wordCount": 130
+    },
     "election-puja-and-the-common-eye": {
       "generatedAt": "2026-07-01T12:36:54.469586+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1910,6 +2163,29 @@
       ],
       "wordCount": 130
     },
+    "explaining-the-healthcare-it-gap-as-continuity": {
+      "generatedAt": "2026-07-01T18:05:47.035556+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/explaining-the-healthcare-it-gap-as-continuity.svg",
+      "source": "src/lib/posts/explaining-the-healthcare-it-gap-as-continuity.md",
+      "sourceHash": "d5758ae9a520e154b6a72e071640d7011adfd8ffb32c019f4499110228de2712",
+      "sourceModified": "2026-07-01T17:57:51.792780+00:00",
+      "topWords": [
+        "Healthcare",
+        "Data",
+        "Means",
+        "Work",
+        "Systems",
+        "AI",
+        "Writing",
+        "System",
+        "Away",
+        "Meaning",
+        "Visible",
+        "Layer"
+      ],
+      "wordCount": 130
+    },
     "faces-for-ashtami": {
       "generatedAt": "2026-06-30T21:05:01.581856+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1979,6 +2255,29 @@
       ],
       "wordCount": 130
     },
+    "failing-well-without-looking-successful": {
+      "generatedAt": "2026-07-01T17:37:47.422987+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/failing-well-without-looking-successful.svg",
+      "source": "src/lib/posts/failing-well-without-looking-successful.md",
+      "sourceHash": "26885cc67545963cc885ba1961337d6ca442c94665fa6c6299b040a11b79e6a9",
+      "sourceModified": "2026-07-01T17:28:42.311605+00:00",
+      "topWords": [
+        "Failure",
+        "Indicate",
+        "Failed",
+        "Reality",
+        "Reveal",
+        "Learning",
+        "Social",
+        "Fail",
+        "Corrects",
+        "Model",
+        "Ingredient",
+        "Consequence"
+      ],
+      "wordCount": 130
+    },
     "fellow_passengers_and_the_broken_record": {
       "generatedAt": "2026-07-01T07:03:08.323225+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1999,6 +2298,29 @@
         "Useful",
         "Sometimes",
         "Everyone"
+      ],
+      "wordCount": 130
+    },
+    "fhir-for-a-curious-student-in-calcutta": {
+      "generatedAt": "2026-07-01T18:05:48.935211+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/fhir-for-a-curious-student-in-calcutta.svg",
+      "source": "src/lib/posts/fhir-for-a-curious-student-in-calcutta.md",
+      "sourceHash": "e25c783c6ff4ff22e2c272b134d32f2ccdc533a97ac7849f541eb5f431d9c721",
+      "sourceModified": "2026-07-01T17:57:51.795915+00:00",
+      "topWords": [
+        "FHIR",
+        "Healthcare",
+        "Resource",
+        "Data",
+        "Information",
+        "Resources",
+        "Modern",
+        "HL7",
+        "Health",
+        "Patient",
+        "Often",
+        "Standard"
       ],
       "wordCount": 130
     },
@@ -2091,6 +2413,29 @@
         "Billing",
         "Whether",
         "Model"
+      ],
+      "wordCount": 130
+    },
+    "fish-and-the-press-conference": {
+      "generatedAt": "2026-07-01T17:37:49.040999+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/fish-and-the-press-conference.svg",
+      "source": "src/lib/posts/fish-and-the-press-conference.md",
+      "sourceHash": "beee54294e287c2aea07fc83c36555b8f41c31dab5d2bd74c882948049f357e0",
+      "sourceModified": "2026-07-01T17:31:01.559489+00:00",
+      "topWords": [
+        "Public",
+        "Means",
+        "Plate",
+        "Knows",
+        "Broken",
+        "Pride",
+        "Becoming",
+        "Decide",
+        "Answer",
+        "Appears",
+        "Ordinary",
+        "Fish"
       ],
       "wordCount": 130
     },
@@ -2324,6 +2669,52 @@
       ],
       "wordCount": 130
     },
+    "hedonist-hollow-men-on-the-selfie-treadmill": {
+      "generatedAt": "2026-07-01T17:37:51.053943+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hedonist-hollow-men-on-the-selfie-treadmill.svg",
+      "source": "src/lib/posts/hedonist-hollow-men-on-the-selfie-treadmill.md",
+      "sourceHash": "090cdd6aaed8bb3f6ed404689f960234a2c3679de1c48223e639d8275da1b679",
+      "sourceModified": "2026-07-01T17:31:01.559489+00:00",
+      "topWords": [
+        "Enough",
+        "Prove",
+        "Turned",
+        "Phone",
+        "Moment",
+        "Arrives",
+        "Now",
+        "Needs",
+        "Cruelty",
+        "Person",
+        "Becomes",
+        "Food"
+      ],
+      "wordCount": 130
+    },
+    "hie-first-principles-openhie": {
+      "generatedAt": "2026-07-01T18:05:50.901996+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hie-first-principles-openhie.svg",
+      "source": "src/lib/posts/hie-first-principles-openhie.md",
+      "sourceHash": "088228a1292c6e532636e3181b5f92aaf70a2c49d0bc0c38fb05d5275e0be070",
+      "sourceModified": "2026-07-01T17:57:51.796923+00:00",
+      "topWords": [
+        "Systems",
+        "Health",
+        "Exchange",
+        "Layer",
+        "HIE",
+        "Patient",
+        "Information",
+        "Every",
+        "Person",
+        "Local",
+        "Openhie",
+        "Shared"
+      ],
+      "wordCount": 130
+    },
     "hie-from-first-principles": {
       "generatedAt": "2026-06-30T21:05:09.894854+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2392,6 +2783,29 @@
         "Vibrate"
       ],
       "wordCount": 61
+    },
+    "hl7-vs-fhir-explained-simply": {
+      "generatedAt": "2026-07-01T18:05:52.924153+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/hl7-vs-fhir-explained-simply.svg",
+      "source": "src/lib/posts/hl7-vs-fhir-explained-simply.md",
+      "sourceHash": "9882b3a1d73d0a68a629c3033665aec0e90b00e94c39bb850c01e50e16081b79",
+      "sourceModified": "2026-07-01T17:57:51.797815+00:00",
+      "topWords": [
+        "HL7",
+        "FHIR",
+        "Systems",
+        "Patient",
+        "System",
+        "Healthcare",
+        "Hospitals",
+        "Need",
+        "Data",
+        "Standards",
+        "Events",
+        "Standard"
+      ],
+      "wordCount": 130
     },
     "homeopathy-pseudoscience-persistence": {
       "generatedAt": "2026-06-30T22:50:18.858990+00:00",
@@ -2554,6 +2968,29 @@
       ],
       "wordCount": 130
     },
+    "human-rights-oh-what-a-joke": {
+      "generatedAt": "2026-07-01T17:37:53.076372+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/human-rights-oh-what-a-joke.svg",
+      "source": "src/lib/posts/human-rights-oh-what-a-joke.md",
+      "sourceHash": "7dacc9dfffc2c756497a5bd8ae17abd328f47da18a47b1e08253c1b7b1c86e17",
+      "sourceModified": "2026-07-01T17:31:01.562685+00:00",
+      "topWords": [
+        "Rights",
+        "Human",
+        "Person",
+        "Power",
+        "Someone",
+        "Police",
+        "Citizen",
+        "Ceremony",
+        "Brochure",
+        "Dignity",
+        "Looking",
+        "Idea"
+      ],
+      "wordCount": 130
+    },
     "if-lies-had-noses-again": {
       "generatedAt": "2026-07-01T11:58:44.759664+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2623,6 +3060,98 @@
       ],
       "wordCount": 130
     },
+    "india-ai-moat-width-without-depth": {
+      "generatedAt": "2026-07-01T18:05:54.512503+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-ai-moat-width-without-depth.svg",
+      "source": "src/lib/posts/india-ai-moat-width-without-depth.md",
+      "sourceHash": "25ee46ce67dd6822fe6afa791db8437bc4dbd29c65b6506002a189e004674e56",
+      "sourceModified": "2026-07-01T17:57:51.799118+00:00",
+      "topWords": [
+        "India",
+        "AI",
+        "Public",
+        "Moat",
+        "Local",
+        "Model",
+        "Intelligence",
+        "Build",
+        "Compute",
+        "Systems",
+        "Use",
+        "Launch"
+      ],
+      "wordCount": 130
+    },
+    "india-ambition-validation-fear-of-mediocrity": {
+      "generatedAt": "2026-07-01T17:37:54.904263+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-ambition-validation-fear-of-mediocrity.svg",
+      "source": "src/lib/posts/india-ambition-validation-fear-of-mediocrity.md",
+      "sourceHash": "10feef3240b827f6e6d5c8662310c8b8ea301c6a97dfeb91eb4400313f7cce63",
+      "sourceModified": "2026-07-01T17:31:01.562685+00:00",
+      "topWords": [
+        "Fear",
+        "Work",
+        "Becomes",
+        "Much",
+        "Ambition",
+        "Costume",
+        "Better",
+        "Often",
+        "Public",
+        "Person",
+        "Mediocrity",
+        "Social"
+      ],
+      "wordCount": 130
+    },
+    "india-ehr-hie-ai-constraints": {
+      "generatedAt": "2026-07-01T18:05:56.340176+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-ehr-hie-ai-constraints.svg",
+      "source": "src/lib/posts/india-ehr-hie-ai-constraints.md",
+      "sourceHash": "6e9f36f84e250200409398501e9c6e1b6a0ad5d71cd0551480b6574b5bf9efa9",
+      "sourceModified": "2026-07-01T17:57:51.799118+00:00",
+      "topWords": [
+        "Asks",
+        "AI",
+        "Data",
+        "India",
+        "Paper",
+        "Requires",
+        "Tool",
+        "Weak",
+        "Diagnostic",
+        "Workflow",
+        "Hospitals",
+        "Institutions"
+      ],
+      "wordCount": 130
+    },
+    "india-hoodlums-goons-assortment": {
+      "generatedAt": "2026-07-01T17:37:56.903166+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-hoodlums-goons-assortment.svg",
+      "source": "src/lib/posts/india-hoodlums-goons-assortment.md",
+      "sourceHash": "c5c27153993b215cfaf2887d9d61eb9d8e09462af76c50c70b9827cad90e5b68",
+      "sourceModified": "2026-07-01T17:31:01.562685+00:00",
+      "topWords": [
+        "India",
+        "Gap",
+        "Enforcement",
+        "Goon",
+        "Local",
+        "Person",
+        "Chair",
+        "Many",
+        "Goons",
+        "Property",
+        "Society",
+        "Power"
+      ],
+      "wordCount": 130
+    },
     "india-noise-machine-small-man": {
       "generatedAt": "2026-07-01T12:36:55.269615+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2643,6 +3172,29 @@
         "Citizen",
         "Needs",
         "Country"
+      ],
+      "wordCount": 130
+    },
+    "india-scientific-temper-after-return": {
+      "generatedAt": "2026-07-01T17:37:58.776000+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-scientific-temper-after-return.svg",
+      "source": "src/lib/posts/india-scientific-temper-after-return.md",
+      "sourceHash": "bacac0fb927a5750313ef119d5b360a5efe3daa2ca6d9ff34dd580e5cf96b0e8",
+      "sourceModified": "2026-07-01T17:31:01.565464+00:00",
+      "topWords": [
+        "Asks",
+        "India",
+        "Scientific",
+        "Temper",
+        "Question",
+        "Habit",
+        "Teaches",
+        "Better",
+        "Often",
+        "Evidence",
+        "Past",
+        "Every"
       ],
       "wordCount": 130
     },
@@ -2669,6 +3221,29 @@
       ],
       "wordCount": 130
     },
+    "indian-middle-aged-middle-class-lopsided-rocks": {
+      "generatedAt": "2026-07-01T17:38:00.631692+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/indian-middle-aged-middle-class-lopsided-rocks.svg",
+      "source": "src/lib/posts/indian-middle-aged-middle-class-lopsided-rocks.md",
+      "sourceHash": "20e4cd29cbea8bbd97efc21762c6e4335188a4bbd3118b6dec2e571528e1f5ce",
+      "sourceModified": "2026-07-01T17:31:01.567470+00:00",
+      "topWords": [
+        "Household",
+        "Care",
+        "Home",
+        "Income",
+        "Family",
+        "Loan",
+        "School",
+        "Cost",
+        "Middle",
+        "Class",
+        "Stones",
+        "Enough"
+      ],
+      "wordCount": 130
+    },
     "intro": {
       "generatedAt": "2026-06-30T22:50:20.325589+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2689,6 +3264,29 @@
         "Databases",
         "Research",
         "AI"
+      ],
+      "wordCount": 130
+    },
+    "invasive-human-weed-species-and-the-dunning-kruger-collapse": {
+      "generatedAt": "2026-07-01T17:38:02.712223+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/invasive-human-weed-species-and-the-dunning-kruger-collapse.svg",
+      "source": "src/lib/posts/invasive-human-weed-species-and-the-dunning-kruger-collapse.md",
+      "sourceHash": "bee709c1702a18f38734328cda32e86e3295cf9902d431debb097fd4b31d03a2",
+      "sourceModified": "2026-07-01T17:33:22.943405+00:00",
+      "topWords": [
+        "Ignorance",
+        "Person",
+        "Rewards",
+        "Microphone",
+        "Often",
+        "Evidence",
+        "Meetings",
+        "Expert",
+        "Treats",
+        "Human",
+        "Certainty",
+        "Brings"
       ],
       "wordCount": 130
     },
@@ -2830,6 +3428,29 @@
       ],
       "wordCount": 130
     },
+    "kinship-range-limit-calcutta": {
+      "generatedAt": "2026-07-01T17:38:04.364802+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/kinship-range-limit-calcutta.svg",
+      "source": "src/lib/posts/kinship-range-limit-calcutta.md",
+      "sourceHash": "6d725f4f482ea9a66575b9e4841cc7a830d979947c9278c16b7ba1b1ac61e6b7",
+      "sourceModified": "2026-07-01T17:33:22.944093+00:00",
+      "topWords": [
+        "Triggers",
+        "Quiet",
+        "Person",
+        "Low",
+        "Phone",
+        "Kinship",
+        "Family",
+        "Neighbor",
+        "Household",
+        "Enough",
+        "Fewer",
+        "Less"
+      ],
+      "wordCount": 130
+    },
     "knife-bite-calcutta": {
       "generatedAt": "2026-06-30T21:05:20.257019+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2968,6 +3589,52 @@
       ],
       "wordCount": 130
     },
+    "latent-space-in-healthcare-data": {
+      "generatedAt": "2026-07-01T18:05:58.090187+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/latent-space-in-healthcare-data.svg",
+      "source": "src/lib/posts/latent-space-in-healthcare-data.md",
+      "sourceHash": "1d549db1ce9db10723ebcca6b1768682b0c2f58caeff1201f461b0b7456730ce",
+      "sourceModified": "2026-07-01T17:57:51.801299+00:00",
+      "topWords": [
+        "Model",
+        "Latent",
+        "Space",
+        "Data",
+        "Healthcare",
+        "Embeddings",
+        "Matters",
+        "Notes",
+        "Geometry",
+        "Map",
+        "Learn",
+        "Becomes"
+      ],
+      "wordCount": 130
+    },
+    "linkedin-job-market-india-national-xray": {
+      "generatedAt": "2026-07-01T17:38:06.442724+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/linkedin-job-market-india-national-xray.svg",
+      "source": "src/lib/posts/linkedin-job-market-india-national-xray.md",
+      "sourceHash": "da1f6ab32347a0ad2b953a2704442ac1707045331c2e5d58962275fcb6d4dfd3",
+      "sourceModified": "2026-07-01T17:33:22.944093+00:00",
+      "topWords": [
+        "Work",
+        "Public",
+        "Need",
+        "India",
+        "Perform",
+        "Country",
+        "Young",
+        "Everybody",
+        "Problem",
+        "Many",
+        "Becomes",
+        "Education"
+      ],
+      "wordCount": 130
+    },
     "loadshedding_crawlies": {
       "generatedAt": "2026-06-30T21:05:25.432875+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3060,6 +3727,29 @@
       ],
       "wordCount": 130
     },
+    "mental-health-polypharmacy-decision-support": {
+      "generatedAt": "2026-07-01T18:05:59.890966+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mental-health-polypharmacy-decision-support.svg",
+      "source": "src/lib/posts/mental-health-polypharmacy-decision-support.md",
+      "sourceHash": "b7e1a6ba123295390c0708fcc954dcff2d7a8f6c9773de808bd603cb8802e49d",
+      "sourceModified": "2026-07-01T18:04:03.040465+00:00",
+      "topWords": [
+        "System",
+        "Prescribing",
+        "Care",
+        "Complex",
+        "History",
+        "Active",
+        "Software",
+        "Reason",
+        "Record",
+        "List",
+        "Problem",
+        "Tell"
+      ],
+      "wordCount": 130
+    },
     "milk-teeth-of-the-city": {
       "generatedAt": "2026-06-30T21:05:32.342246+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3106,6 +3796,29 @@
       ],
       "wordCount": 130
     },
+    "mind-not-staying-in-one-place": {
+      "generatedAt": "2026-07-01T18:23:01.483097+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mind-not-staying-in-one-place.svg",
+      "source": "src/lib/posts/mind-not-staying-in-one-place.md",
+      "sourceHash": "3ccc73a652c9bbe64c34803bd28cb29102dca955fb4b82c13752b6bef509446e",
+      "sourceModified": "2026-07-01T18:13:43.928359+00:00",
+      "topWords": [
+        "Mind",
+        "Chair",
+        "Worry",
+        "Room",
+        "Small",
+        "Becomes",
+        "Message",
+        "System",
+        "News",
+        "Silence",
+        "Problem",
+        "Alone"
+      ],
+      "wordCount": 130
+    },
     "mindfulness-calcutta-4am": {
       "generatedAt": "2026-07-01T12:21:48.515935+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3129,6 +3842,29 @@
       ],
       "wordCount": 130
     },
+    "missing-scientists-us": {
+      "generatedAt": "2026-07-01T18:06:01.590525+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/missing-scientists-us.svg",
+      "source": "src/lib/posts/missing-scientists-us.md",
+      "sourceHash": "f4247b1028989b9e9c8baa2259071d629eb1853a8032f425b31ab87248ce4b7f",
+      "sourceModified": "2026-07-01T18:04:03.048249+00:00",
+      "topWords": [
+        "Science",
+        "Public",
+        "Federal",
+        "Missing",
+        "Grant",
+        "Person",
+        "Loss",
+        "Institutions",
+        "Capacity",
+        "Wants",
+        "Scientist",
+        "Dataset"
+      ],
+      "wordCount": 130
+    },
     "moon-without-skin": {
       "generatedAt": "2026-06-30T21:05:33.809543+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3149,6 +3885,75 @@
         "Near",
         "Man",
         "Face"
+      ],
+      "wordCount": 130
+    },
+    "multivariate-statistical-modeling-in-healthcare-it": {
+      "generatedAt": "2026-07-01T18:06:03.436902+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/multivariate-statistical-modeling-in-healthcare-it.svg",
+      "source": "src/lib/posts/multivariate-statistical-modeling-in-healthcare-it.md",
+      "sourceHash": "b392912cc4b161b7bede10b8f902754690dae84102cf07719e6a2af31bf919b4",
+      "sourceModified": "2026-07-01T18:04:03.052108+00:00",
+      "topWords": [
+        "Data",
+        "Move",
+        "Variables",
+        "Model",
+        "Healthcare",
+        "Together",
+        "Fields",
+        "Documentation",
+        "Risk",
+        "Number",
+        "Age",
+        "Multivariate"
+      ],
+      "wordCount": 130
+    },
+    "multivariate-statistics-healthcare-data-analytics-part-2": {
+      "generatedAt": "2026-07-01T18:06:05.294419+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/multivariate-statistics-healthcare-data-analytics-part-2.svg",
+      "source": "src/lib/posts/multivariate-statistics-healthcare-data-analytics-part-2.md",
+      "sourceHash": "3dbbc985c86aa17f760519fd592fd8a1d4336cdb86b078a8dfad593d84dd19b2",
+      "sourceModified": "2026-07-01T18:04:03.052108+00:00",
+      "topWords": [
+        "Model",
+        "Data",
+        "Time",
+        "Question",
+        "Decision",
+        "Mean",
+        "Define",
+        "Analytics",
+        "Variables",
+        "Outcome",
+        "Care",
+        "Healthcare"
+      ],
+      "wordCount": 130
+    },
+    "mycin-expert-system-clinical-ai-calcutta-readable": {
+      "generatedAt": "2026-07-01T18:06:07.108102+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mycin-expert-system-clinical-ai-calcutta-readable.svg",
+      "source": "src/lib/posts/mycin-expert-system-clinical-ai-calcutta-readable.md",
+      "sourceHash": "dc2ba1dd6a30d08d2d86867873779dde818e9849c6dbb903c9e1ca22b09f79a6",
+      "sourceModified": "2026-07-01T18:04:03.052108+00:00",
+      "topWords": [
+        "MYCIN",
+        "Systems",
+        "Rules",
+        "Modern",
+        "Expert",
+        "Clinical",
+        "AI",
+        "Data",
+        "Machine",
+        "Rule",
+        "Pattern",
+        "Healthcare"
       ],
       "wordCount": 130
     },
@@ -3267,6 +4072,29 @@
       ],
       "wordCount": 130
     },
+    "obama-hitech-ehr-incentives-and-the-electronic-chart": {
+      "generatedAt": "2026-07-01T18:06:09.123640+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/obama-hitech-ehr-incentives-and-the-electronic-chart.svg",
+      "source": "src/lib/posts/obama-hitech-ehr-incentives-and-the-electronic-chart.md",
+      "sourceHash": "e267cd3633c5704a63be61a29ac5e607a63f422e2e125cbda720fb214b0b7daa",
+      "sourceModified": "2026-07-01T18:04:03.063076+00:00",
+      "topWords": [
+        "Healthcare",
+        "EHR",
+        "Chart",
+        "System",
+        "Electronic",
+        "American",
+        "HITECH",
+        "Travel",
+        "Policy",
+        "Act",
+        "Use",
+        "Data"
+      ],
+      "wordCount": 130
+    },
     "openclaw-balanced-intro": {
       "generatedAt": "2026-07-01T16:59:41.381970+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3313,6 +4141,29 @@
       ],
       "wordCount": 130
     },
+    "pharmacy-bandh-online-medicine-and-the-crime-of-convenience": {
+      "generatedAt": "2026-07-01T18:06:10.878975+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/pharmacy-bandh-online-medicine-and-the-crime-of-convenience.svg",
+      "source": "src/lib/posts/pharmacy-bandh-online-medicine-and-the-crime-of-convenience.md",
+      "sourceHash": "702f6e62129c3bc6804628791727a69c7a419e696b9d73bd3e95d418385d0ca6",
+      "sourceModified": "2026-07-01T18:04:03.063076+00:00",
+      "topWords": [
+        "Small",
+        "India",
+        "Question",
+        "Platform",
+        "Patient",
+        "Care",
+        "Bad",
+        "Healthcare",
+        "Commerce",
+        "Pharmacy",
+        "Online",
+        "Platforms"
+      ],
+      "wordCount": 130
+    },
     "physics-and-deep-neural-networks-calcutta-scale-story": {
       "generatedAt": "2026-07-01T16:59:42.966764+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3333,6 +4184,29 @@
         "Equations",
         "Structure",
         "Many"
+      ],
+      "wordCount": 130
+    },
+    "pixels-that-make-us-feel-present": {
+      "generatedAt": "2026-07-01T17:38:07.981075+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/pixels-that-make-us-feel-present.svg",
+      "source": "src/lib/posts/pixels-that-make-us-feel-present.md",
+      "sourceHash": "833045660e40c09945f74dcdd46d6284027fdb06fccba5958dd9b23ceee175e7",
+      "sourceModified": "2026-07-01T17:33:22.946096+00:00",
+      "topWords": [
+        "Phone",
+        "History",
+        "Participation",
+        "Happened",
+        "Real",
+        "Someone",
+        "Witness",
+        "Often",
+        "True",
+        "Room",
+        "Mind",
+        "World"
       ],
       "wordCount": 130
     },
@@ -3379,6 +4253,29 @@
         "Books",
         "Deeper",
         "Inheritance"
+      ],
+      "wordCount": 130
+    },
+    "poisson-distribution-healthcare-it": {
+      "generatedAt": "2026-07-01T18:06:12.401515+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/poisson-distribution-healthcare-it.svg",
+      "source": "src/lib/posts/poisson-distribution-healthcare-it.md",
+      "sourceHash": "a280582da59c3d8463c12c6241eba3b7cfcc48e8e4e6c04e8caf1117189aeaf7",
+      "sourceModified": "2026-07-01T18:04:03.063076+00:00",
+      "topWords": [
+        "Events",
+        "Poisson",
+        "Event",
+        "Many",
+        "Count",
+        "Per",
+        "Denominator",
+        "Healthcare",
+        "Model",
+        "Rare",
+        "Rate",
+        "Interface"
       ],
       "wordCount": 130
     },
@@ -3517,6 +4414,29 @@
         "Came",
         "Human",
         "Mosquitoes"
+      ],
+      "wordCount": 130
+    },
+    "questions_change_systems_uthscsa_va": {
+      "generatedAt": "2026-07-01T18:06:13.968384+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/questions_change_systems_uthscsa_va.svg",
+      "source": "src/lib/posts/questions_change_systems_uthscsa_va.md",
+      "sourceHash": "32e1507a4414ca516fda0dc7a575eb356138c9b6bdfb43a7a3292cfdf10660ba",
+      "sourceModified": "2026-07-01T18:04:03.063076+00:00",
+      "topWords": [
+        "Data",
+        "Local",
+        "Question",
+        "National",
+        "Depends",
+        "Lands",
+        "Better",
+        "Academic",
+        "VA",
+        "Continuity",
+        "History",
+        "System"
       ],
       "wordCount": 130
     },
@@ -3727,6 +4647,29 @@
       ],
       "wordCount": 130
     },
+    "sadness-scarab-calcutta-depression": {
+      "generatedAt": "2026-07-01T18:23:03.483262+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/sadness-scarab-calcutta-depression.svg",
+      "source": "src/lib/posts/sadness-scarab-calcutta-depression.md",
+      "sourceHash": "65f9f86455fcf517ce600f3977ece22d0439de6a0d672ea4a4de23800631852d",
+      "sourceModified": "2026-07-01T18:13:43.928359+00:00",
+      "topWords": [
+        "Happened",
+        "Stone",
+        "Face",
+        "Becomes",
+        "Private",
+        "Pressure",
+        "Little",
+        "Room",
+        "Sadness",
+        "Heat",
+        "Memory",
+        "Skin"
+      ],
+      "wordCount": 130
+    },
     "samir-ranjan-das-and-the-visual-mind": {
       "generatedAt": "2026-06-30T21:05:47.894311+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3862,6 +4805,29 @@
         "Confidence",
         "Behind",
         "Nobody"
+      ],
+      "wordCount": 130
+    },
+    "sensible-consumer-in-a-pufferfish-world": {
+      "generatedAt": "2026-07-01T17:38:09.675761+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/sensible-consumer-in-a-pufferfish-world.svg",
+      "source": "src/lib/posts/sensible-consumer-in-a-pufferfish-world.md",
+      "sourceHash": "7b21b98a0a05a2bb47056d9b531004b1616323a1078ba98430de7828b562fa33",
+      "sourceModified": "2026-07-01T17:33:22.946872+00:00",
+      "topWords": [
+        "Part",
+        "Often",
+        "Danger",
+        "Arrive",
+        "Food",
+        "Label",
+        "Convenience",
+        "Simply",
+        "Data",
+        "Becomes",
+        "Systems",
+        "Sits"
       ],
       "wordCount": 130
     },
@@ -4049,6 +5015,29 @@
       ],
       "wordCount": 130
     },
+    "slow-poisoning-republic": {
+      "generatedAt": "2026-07-01T17:38:11.620716+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/slow-poisoning-republic.svg",
+      "source": "src/lib/posts/slow-poisoning-republic.md",
+      "sourceHash": "55535bfb3bf565e509af77978a21c04452ac7adfee7288fb639af29a241a4ec0",
+      "sourceModified": "2026-07-01T17:33:22.948201+00:00",
+      "topWords": [
+        "Becomes",
+        "Calls",
+        "Small",
+        "Little",
+        "Suspect",
+        "Smell",
+        "Payment",
+        "Trust",
+        "Water",
+        "Glass",
+        "India",
+        "Cheat"
+      ],
+      "wordCount": 130
+    },
     "sludgegpt-and-the-mirage-of-machine-understanding": {
       "generatedAt": "2026-07-01T16:59:44.568463+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4092,6 +5081,29 @@
         "Bappa",
         "Sat",
         "Cloth"
+      ],
+      "wordCount": 130
+    },
+    "square-peg-in-a-world-of-round-holes": {
+      "generatedAt": "2026-07-01T18:23:05.505255+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/square-peg-in-a-world-of-round-holes.svg",
+      "source": "src/lib/posts/square-peg-in-a-world-of-round-holes.md",
+      "sourceHash": "c30a9489777e21acbcd3531e7e9b341898de06bf9a97fb5b26a3323289f539ec",
+      "sourceModified": "2026-07-01T18:13:43.928359+00:00",
+      "topWords": [
+        "Peg",
+        "Person",
+        "Round",
+        "Roundness",
+        "Square",
+        "Sometimes",
+        "Every",
+        "Perhaps",
+        "Performance",
+        "Honest",
+        "World",
+        "Shape"
       ],
       "wordCount": 130
     },
@@ -4233,6 +5245,29 @@
       ],
       "wordCount": 130
     },
+    "tautology-metaphor-strawman-ruminative-depression": {
+      "generatedAt": "2026-07-01T18:23:07.460346+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/tautology-metaphor-strawman-ruminative-depression.svg",
+      "source": "src/lib/posts/tautology-metaphor-strawman-ruminative-depression.md",
+      "sourceHash": "5b26c17dafcc375a7c9fb6a5f333293103e495f57cd7c9af21199fef446960ad",
+      "sourceModified": "2026-07-01T18:13:43.928359+00:00",
+      "topWords": [
+        "Becomes",
+        "Mind",
+        "Morning",
+        "Bad",
+        "Evidence",
+        "Metaphor",
+        "Repetition",
+        "Fan",
+        "Court",
+        "Trick",
+        "Everything",
+        "Reason"
+      ],
+      "wordCount": 130
+    },
     "tea-darjeeling-orange-pekoe-first-flush-and-matcha": {
       "generatedAt": "2026-06-30T23:05:26.000803+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4299,6 +5334,29 @@
         "Written",
         "Washed",
         "Sentences"
+      ],
+      "wordCount": 130
+    },
+    "technical-blogging-in-a-country-of-missing-systems": {
+      "generatedAt": "2026-07-01T18:06:15.901159+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/technical-blogging-in-a-country-of-missing-systems.svg",
+      "source": "src/lib/posts/technical-blogging-in-a-country-of-missing-systems.md",
+      "sourceHash": "5481d7d66081654cb6d485beba5b97c8eeba55d050b33e052caae33abea0a8a5",
+      "sourceModified": "2026-07-01T18:04:03.074222+00:00",
+      "topWords": [
+        "Data",
+        "Write",
+        "Systems",
+        "AI",
+        "Writing",
+        "Healthcare",
+        "Missing",
+        "Technical",
+        "Becomes",
+        "Architecture",
+        "Country",
+        "Best"
       ],
       "wordCount": 130
     },
@@ -4601,6 +5659,29 @@
       ],
       "wordCount": 130
     },
+    "the-bright-smile-of-overconfidence": {
+      "generatedAt": "2026-07-01T17:38:13.609106+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-bright-smile-of-overconfidence.svg",
+      "source": "src/lib/posts/the-bright-smile-of-overconfidence.md",
+      "sourceHash": "8e3e24737c960d26516ee73bf2404ed5c0868f497f10558386d06ac2778d5f22",
+      "sourceModified": "2026-07-01T17:33:22.948201+00:00",
+      "topWords": [
+        "Often",
+        "Smile",
+        "Say",
+        "Tools",
+        "Less",
+        "Money",
+        "Pay",
+        "Work",
+        "Stop",
+        "Arrives",
+        "Estimate",
+        "Bright"
+      ],
+      "wordCount": 130
+    },
     "the-chair-and-the-drain": {
       "generatedAt": "2026-06-30T21:06:19.205053+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4647,6 +5728,29 @@
       ],
       "wordCount": 130
     },
+    "the-city-that-begs-at-the-window": {
+      "generatedAt": "2026-07-01T17:38:15.587047+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-city-that-begs-at-the-window.svg",
+      "source": "src/lib/posts/the-city-that-begs-at-the-window.md",
+      "sourceHash": "35f22603a6a13e120792c75e5084b65bc7ee6ad4bc28debb872eec2d5d8bdd63",
+      "sourceModified": "2026-07-01T17:35:56.333267+00:00",
+      "topWords": [
+        "Window",
+        "Public",
+        "Child",
+        "Light",
+        "Traffic",
+        "Red",
+        "Person",
+        "Outside",
+        "Transgender",
+        "Fewer",
+        "Taxi",
+        "Whole"
+      ],
+      "wordCount": 130
+    },
     "the-coming-unemployment": {
       "generatedAt": "2026-07-01T07:03:10.371498+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4667,6 +5771,29 @@
         "Useful",
         "Hiring",
         "Learn"
+      ],
+      "wordCount": 130
+    },
+    "the-coming-white-collar-mendicancy": {
+      "generatedAt": "2026-07-01T17:38:17.586264+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-coming-white-collar-mendicancy.svg",
+      "source": "src/lib/posts/the-coming-white-collar-mendicancy.md",
+      "sourceHash": "96983872d62ffa34bd8562ccf2acb8d91d5cae91064da51b3d6d94ed20726c7a",
+      "sourceModified": "2026-07-01T17:35:56.335271+00:00",
+      "topWords": [
+        "Learn",
+        "AI",
+        "Work",
+        "Tool",
+        "Class",
+        "Worker",
+        "Contractor",
+        "Support",
+        "Tasks",
+        "Judgment",
+        "Savings",
+        "Missing"
       ],
       "wordCount": 130
     },
@@ -4782,6 +5909,29 @@
         "Clerk",
         "Sweating",
         "Becomes"
+      ],
+      "wordCount": 130
+    },
+    "the-dopamine-economy": {
+      "generatedAt": "2026-07-01T18:23:09.455856+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-dopamine-economy.svg",
+      "source": "src/lib/posts/the-dopamine-economy.md",
+      "sourceHash": "eabddd2a0c1f0f19e35b63abc68f4810c2c5d6eb9bd5cbf3197ea6a0c69bb9c0",
+      "sourceModified": "2026-07-01T18:13:43.939299+00:00",
+      "topWords": [
+        "Becomes",
+        "Wanting",
+        "Phone",
+        "Tea",
+        "Person",
+        "Feel",
+        "Designed",
+        "World",
+        "Small",
+        "Economy",
+        "Whether",
+        "Food"
       ],
       "wordCount": 130
     },
@@ -5107,6 +6257,29 @@
       ],
       "wordCount": 130
     },
+    "the-great-indian-fence-sitter": {
+      "generatedAt": "2026-07-01T17:38:19.542530+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-great-indian-fence-sitter.svg",
+      "source": "src/lib/posts/the-great-indian-fence-sitter.md",
+      "sourceHash": "fde363f49905946aecf04896997cfe67813dea871ef42a657c70797b6f08b973",
+      "sourceModified": "2026-07-01T17:35:56.336124+00:00",
+      "topWords": [
+        "Always",
+        "Person",
+        "Side",
+        "Middle",
+        "Say",
+        "Fraud",
+        "Sides",
+        "Public",
+        "Fencesitter",
+        "Balance",
+        "Wisdom",
+        "Sometimes"
+      ],
+      "wordCount": 130
+    },
     "the-ground-we-dream-on": {
       "generatedAt": "2026-06-30T21:06:45.710909+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -5314,6 +6487,29 @@
       ],
       "wordCount": 130
     },
+    "the-linear-algebra-blind-spot-healthcare-ai-safety": {
+      "generatedAt": "2026-07-01T18:06:17.823872+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-linear-algebra-blind-spot-healthcare-ai-safety.svg",
+      "source": "src/lib/posts/the-linear-algebra-blind-spot-healthcare-ai-safety.md",
+      "sourceHash": "d031c4de5a11847dc40289f6137cc49d1d1be4dde9b452ca36ce994358ed77e9",
+      "sourceModified": "2026-07-01T18:04:03.074222+00:00",
+      "topWords": [
+        "Healthcare",
+        "Patient",
+        "AI",
+        "Model",
+        "Representation",
+        "Geometry",
+        "Missing",
+        "Notes",
+        "Embeddings",
+        "Features",
+        "Safety",
+        "Vectors"
+      ],
+      "wordCount": 130
+    },
     "the-machine-that-cannot-defecate": {
       "generatedAt": "2026-07-01T16:59:48.279896+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -5429,6 +6625,29 @@
       ],
       "wordCount": 130
     },
+    "the-morlocks-in-white-kurta": {
+      "generatedAt": "2026-07-01T17:38:21.575821+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-morlocks-in-white-kurta.svg",
+      "source": "src/lib/posts/the-morlocks-in-white-kurta.md",
+      "sourceHash": "f074a7bddd0de96ff7d59201f8c3f8c958b9fb5a4fdd937387ba22a50a6b6fdb",
+      "sourceModified": "2026-07-01T17:35:56.336926+00:00",
+      "topWords": [
+        "Extractable",
+        "Work",
+        "Predator",
+        "Becomes",
+        "Citizen",
+        "Prey",
+        "Respectable",
+        "Society",
+        "Appetite",
+        "Arrive",
+        "Wells",
+        "Time"
+      ],
+      "wordCount": 130
+    },
     "the-morning-of-the-cutouts": {
       "generatedAt": "2026-06-30T21:07:02.429863+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -5449,6 +6668,29 @@
         "Now",
         "Printed",
         "Asset"
+      ],
+      "wordCount": 130
+    },
+    "the-morning-verdict-is-not-law": {
+      "generatedAt": "2026-07-01T18:23:11.340609+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-morning-verdict-is-not-law.svg",
+      "source": "src/lib/posts/the-morning-verdict-is-not-law.md",
+      "sourceHash": "d43ca04866acdb2d83bb127233b0cb106456e957900211f29eb4a4f536c44224",
+      "sourceModified": "2026-07-01T18:13:43.939299+00:00",
+      "topWords": [
+        "Morning",
+        "Face",
+        "Bad",
+        "First",
+        "Becomes",
+        "Tea",
+        "Minutes",
+        "Verdict",
+        "Evidence",
+        "Work",
+        "Mouth",
+        "Sleep"
       ],
       "wordCount": 130
     },
@@ -6096,6 +7338,29 @@
       ],
       "wordCount": 130
     },
+    "the-unrecorded-error-india": {
+      "generatedAt": "2026-07-01T18:06:19.801620+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-unrecorded-error-india.svg",
+      "source": "src/lib/posts/the-unrecorded-error-india.md",
+      "sourceHash": "e6ca76fc4b4accaa2f7894d36e1fd7751dc5f6bd2d000147329e6b8c37387a20",
+      "sourceModified": "2026-07-01T18:04:03.074222+00:00",
+      "topWords": [
+        "Becomes",
+        "Device",
+        "Evidence",
+        "Systems",
+        "Staff",
+        "India",
+        "Digital",
+        "System",
+        "Error",
+        "Often",
+        "Healthcare",
+        "Sometimes"
+      ],
+      "wordCount": 130
+    },
     "the-unveiling": {
       "generatedAt": "2026-06-30T21:07:43.926287+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6671,6 +7936,75 @@
       ],
       "wordCount": 130
     },
+    "trapped-by-the-room-mirror-and-feed": {
+      "generatedAt": "2026-07-01T18:23:13.215996+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/trapped-by-the-room-mirror-and-feed.svg",
+      "source": "src/lib/posts/trapped-by-the-room-mirror-and-feed.md",
+      "sourceHash": "db462f3310ee2e858650a14ebbad606c6b6d211a232f2aa5976ba7c8d48984b5",
+      "sourceModified": "2026-07-01T18:13:43.939299+00:00",
+      "topWords": [
+        "Room",
+        "Feed",
+        "Mirror",
+        "Remains",
+        "Becomes",
+        "Someone",
+        "Feels",
+        "Evidence",
+        "Let",
+        "Enters",
+        "Table",
+        "Air"
+      ],
+      "wordCount": 130
+    },
+    "trauma-chronic-angst-bipolar-disorder": {
+      "generatedAt": "2026-07-01T18:23:15.149818+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/trauma-chronic-angst-bipolar-disorder.svg",
+      "source": "src/lib/posts/trauma-chronic-angst-bipolar-disorder.md",
+      "sourceHash": "04eee55f3e2c2ecc92622b3b0d96c2a431294a49011103e5d07f23a726b27093",
+      "sourceModified": "2026-07-01T18:13:43.939299+00:00",
+      "topWords": [
+        "Room",
+        "Chair",
+        "Needed",
+        "Sometimes",
+        "Mind",
+        "Every",
+        "Memory",
+        "Furniture",
+        "Leave",
+        "Distress",
+        "Person",
+        "Wound"
+      ],
+      "wordCount": 130
+    },
+    "trolley-problem-healthcare-it": {
+      "generatedAt": "2026-07-01T18:06:21.694450+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/trolley-problem-healthcare-it.svg",
+      "source": "src/lib/posts/trolley-problem-healthcare-it.md",
+      "sourceHash": "1572575ec1cc91194469a1be511502cd19784cde689fbb25d9b5e7e01b6f9ad3",
+      "sourceModified": "2026-07-01T18:04:03.085150+00:00",
+      "topWords": [
+        "Whether",
+        "Healthcare",
+        "Trolley",
+        "Model",
+        "Moral",
+        "Person",
+        "System",
+        "Data",
+        "Decision",
+        "Decides",
+        "Queue",
+        "Alert"
+      ],
+      "wordCount": 130
+    },
     "truth-adjustment-and-the-cost-of-coming-back": {
       "generatedAt": "2026-07-01T08:00:06.158966+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6737,6 +8071,52 @@
         "Income",
         "Poverty",
         "Food"
+      ],
+      "wordCount": 130
+    },
+    "va-healthcare-data-systems-mumps-to-sql": {
+      "generatedAt": "2026-07-01T18:06:23.757057+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/va-healthcare-data-systems-mumps-to-sql.svg",
+      "source": "src/lib/posts/va-healthcare-data-systems-mumps-to-sql.md",
+      "sourceHash": "438c22395378a2a487a3c1d304c540340b8afde329d92642aca7a061556af2f0",
+      "sourceModified": "2026-07-01T18:04:03.085150+00:00",
+      "topWords": [
+        "Tables",
+        "Data",
+        "SQL",
+        "Local",
+        "Explains",
+        "System",
+        "Change",
+        "Healthcare",
+        "Vista",
+        "Workflow",
+        "Operational",
+        "Warehouse"
+      ],
+      "wordCount": 130
+    },
+    "va_data_warehouse_reality": {
+      "generatedAt": "2026-07-01T18:06:25.356852+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/va_data_warehouse_reality.svg",
+      "source": "src/lib/posts/va_data_warehouse_reality.md",
+      "sourceHash": "b621b9665b52694a2866b98e19927d0ceba8a6a4f32bbaeab08c5a31c190f33b",
+      "sourceModified": "2026-07-01T18:04:03.085150+00:00",
+      "topWords": [
+        "Warehouse",
+        "Data",
+        "Time",
+        "Source",
+        "Local",
+        "VA",
+        "Lab",
+        "Workflow",
+        "Systems",
+        "Quality",
+        "Context",
+        "Asks"
       ],
       "wordCount": 130
     },
@@ -6852,6 +8232,52 @@
         "Real",
         "Never",
         "Less"
+      ],
+      "wordCount": 130
+    },
+    "when-structure-loses-its-map": {
+      "generatedAt": "2026-07-01T17:38:23.797779+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/when-structure-loses-its-map.svg",
+      "source": "src/lib/posts/when-structure-loses-its-map.md",
+      "sourceHash": "8b761dec58a0be6eeaed99513808ef7cfb678e78ee13da6180910aa80ab6973d",
+      "sourceModified": "2026-07-01T17:35:56.338292+00:00",
+      "topWords": [
+        "Sees",
+        "Map",
+        "Data",
+        "Campus",
+        "Police",
+        "Limon",
+        "University",
+        "Modern",
+        "Offcampus",
+        "Court",
+        "Society",
+        "Absence"
+      ],
+      "wordCount": 130
+    },
+    "when-the-office-learns-to-beg": {
+      "generatedAt": "2026-07-01T17:38:25.574897+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/when-the-office-learns-to-beg.svg",
+      "source": "src/lib/posts/when-the-office-learns-to-beg.md",
+      "sourceHash": "8081d2a6e4350de4420a538d686750265a7c8f205c3471142584d8d95e51707c",
+      "sourceModified": "2026-07-01T17:35:56.338292+00:00",
+      "topWords": [
+        "Becomes",
+        "Please",
+        "Future",
+        "Person",
+        "Fake",
+        "Whitecollar",
+        "Fraud",
+        "AI",
+        "Already",
+        "Family",
+        "Pressure",
+        "Course"
       ],
       "wordCount": 130
     },

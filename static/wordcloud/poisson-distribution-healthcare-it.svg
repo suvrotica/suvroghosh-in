@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Poisson Distribution in Healthcare IT" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Poisson Distribution in Healthcare IT</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(599,174)" font-size="118" style="fill:#a9b7a3">Events</text>
+<text transform="translate(135,658) rotate(-90)" font-size="86" style="fill:#8fb7d0">Poisson</text>
+<text transform="translate(243,318)" font-size="80" style="fill:#d9c89e">Event</text>
+<text transform="translate(770,682) rotate(-90)" font-size="80" style="fill:#c7d7b5">Many</text>
+<text transform="translate(1131,396) rotate(-90)" font-size="74" style="fill:#e0b879">Count</text>
+<text transform="translate(452,102)" font-size="74" style="fill:#d88988">Per</text>
+<text transform="translate(622,455)" font-size="74" style="fill:#8fb7d0">Denominator</text>
+<text transform="translate(221,657) rotate(-90)" font-size="67" style="fill:#d9c89e">Healthcare</text>
+<text transform="translate(232,582)" font-size="67" style="fill:#b6c3dd">Model</text>
+<text transform="translate(936,686)" font-size="67" style="fill:#e0b879">Rare</text>
+<text transform="translate(216,202)" font-size="67" style="fill:#d88988">Rate</text>
+<text transform="translate(436,236)" font-size="60" style="fill:#d5d2c2">Interface</text>
+<text transform="translate(228,373)" font-size="60" style="fill:#d6a79f">Patient</text>
+<text transform="translate(618,339)" font-size="60" style="fill:#8fb7d0">Interval</text>
+<text transform="translate(275,652)" font-size="60" style="fill:#d5d2c2">Failures</text>
+<text transform="translate(496,592)" font-size="60" style="fill:#c7d7b5">Stable</text>
+<text transform="translate(328,698)" font-size="52" style="fill:#d9c89e">Emergency</text>
+<text transform="translate(722,57)" font-size="52" style="fill:#9fc9c5">Distribution</text>
+<text transform="translate(224,108)" font-size="52" style="fill:#c49a6c">Counts</text>
+<text transform="translate(224,442)" font-size="52" style="fill:#d9c89e">Occur</text>
+<text transform="translate(803,254)" font-size="52" style="fill:#9fc9c5">Average</text>
+<text transform="translate(1022,137)" font-size="52" style="fill:#a9b7a3">Window</text>
+<text transform="translate(484,463)" font-size="52" style="fill:#c7d7b5">Time</text>
+<text transform="translate(779,594)" font-size="52" style="fill:#a9b7a3">Counting</text>
+<text transform="translate(867,530)" font-size="52" style="fill:#d9c89e">Assumptions</text>
+<text transform="translate(34,64)" font-size="52" style="fill:#c49a6c">Cluster</text>
+<text transform="translate(1040,606)" font-size="52" style="fill:#d5d2c2">Change</text>
+<text transform="translate(509,393)" font-size="52" style="fill:#d6a79f">Documentation</text>
+<text transform="translate(489,283)" font-size="52" style="fill:#c49a6c">Variation</text>
+<text transform="translate(477,146)" font-size="42" style="fill:#d88988">Fall</text>
+<text transform="translate(445,507)" font-size="42" style="fill:#a9b7a3">Duplicate</text>
+<text transform="translate(37,183) rotate(-90)" font-size="42" style="fill:#9fc9c5">Lab</text>
+<text transform="translate(411,39)" font-size="42" style="fill:#9fc9c5">Serious</text>
+<text transform="translate(39,632) rotate(-90)" font-size="42" style="fill:#a9b7a3">Drops</text>
+<text transform="translate(42,698)" font-size="42" style="fill:#e0b879">Relatively</text>
+<text transform="translate(61,244)" font-size="42" style="fill:#d9c89e">Rareevent</text>
+<text transform="translate(1093,479)" font-size="42" style="fill:#d5d2c2">Arrive</text>
+<text transform="translate(103,216)" font-size="42" style="fill:#a9b7a3">Hour</text>
+<text transform="translate(174,146)" font-size="42" style="fill:#d5d2c2">Infections</text>
+<text transform="translate(1159,44)" font-size="42" style="fill:#8fb7d0">Five</text>
+<text transform="translate(857,684)" font-size="42" style="fill:#e0b879">Ten</text>
+<text transform="translate(1250,425) rotate(-90)" font-size="42" style="fill:#e0b879">Staffing</text>
+<text transform="translate(237,486)" font-size="42" style="fill:#8fb7d0">Changes</text>
+<text transform="translate(1061,176)" font-size="42" style="fill:#d88988">Useful</text>
+<text transform="translate(1112,654)" font-size="42" style="fill:#a9b7a3">First</text>
+<text transform="translate(668,93)" font-size="42" style="fill:#d6a79f">Ordinary</text>
+<text transform="translate(1099,702)" font-size="42" style="fill:#d88988">Signals</text>
+<text transform="translate(492,343)" font-size="42" style="fill:#d5d2c2">Sees</text>
+<text transform="translate(43,493) rotate(-90)" font-size="42" style="fill:#b6c3dd">Operational</text>
+<text transform="translate(343,264)" font-size="42" style="fill:#d9c89e">Mix</text>
+<text transform="translate(920,360)" font-size="42" style="fill:#8fb7d0">Spike</text>
+<text transform="translate(393,187)" font-size="42" style="fill:#8fb7d0">Workflow</text>
+<text transform="translate(1168,425) rotate(-90)" font-size="42" style="fill:#b6c3dd">Signal</text>
+<text transform="translate(761,204)" font-size="34" style="fill:#d88988">Overdispersion</text>
+<text transform="translate(1140,218)" font-size="34" style="fill:#d6a79f">Let</text>
+<text transform="translate(930,486)" font-size="25" style="fill:#d5d2c2">Easy</text>
+<text transform="translate(715,699)" font-size="25" style="fill:#d5d2c2">Ignore</text>
+<text transform="translate(1064,79)" font-size="25" style="fill:#d9c89e">Failed</text>
+<text transform="translate(280,22)" font-size="25" style="fill:#c49a6c">Message</text>
+<text transform="translate(505,538)" font-size="25" style="fill:#d6a79f">Infection</text>
+<text transform="translate(567,656)" font-size="25" style="fill:#c7d7b5">Record</text>
+<text transform="translate(800,477)" font-size="25" style="fill:#d5d2c2">Arrival</text>
+<text transform="translate(42,174)" font-size="25" style="fill:#d9c89e">Morning</text>
+<text transform="translate(77,272)" font-size="25" style="fill:#b6c3dd">Wrong</text>
+<text transform="translate(1131,553)" font-size="25" style="fill:#9fc9c5">Timestamp</text>
+<text transform="translate(974,290)" font-size="25" style="fill:#b6c3dd">Delayed</text>
+<text transform="translate(76,448) rotate(-90)" font-size="25" style="fill:#d5d2c2">Result</text>
+<text transform="translate(568,622)" font-size="25" style="fill:#a9b7a3">Single</text>
+<text transform="translate(82,139)" font-size="25" style="fill:#d5d2c2">Drop</text>
+<text transform="translate(810,641)" font-size="25" style="fill:#b6c3dd">Weather</text>
+<text transform="translate(322,396)" font-size="25" style="fill:#c7d7b5">Becomes</text>
+<text transform="translate(593,41)" font-size="25" style="fill:#a9b7a3">Learns</text>
+<text transform="translate(707,549) rotate(-90)" font-size="25" style="fill:#d9c89e">Fixed</text>
+<text transform="translate(232,518)" font-size="25" style="fill:#b6c3dd">Independently</text>
+<text transform="translate(959,385)" font-size="25" style="fill:#9fc9c5">Gentle</text>
+<text transform="translate(916,316)" font-size="25" style="fill:#d6a79f">Version</text>
+<text transform="translate(103,100)" font-size="25" style="fill:#d9c89e">Plainly</text>
+<text transform="translate(297,225)" font-size="25" style="fill:#9fc9c5">Trouble</text>
+<text transform="translate(933,85)" font-size="25" style="fill:#d5d2c2">Happens</text>
+<text transform="translate(1207,413) rotate(-90)" font-size="25" style="fill:#e0b879">Occasionally</text>
+<text transform="translate(805,278)" font-size="25" style="fill:#d88988">Repeatedly</text>
+<text transform="translate(23,203)" font-size="25" style="fill:#d88988">Gives</text>
+<text transform="translate(974,636)" font-size="25" style="fill:#8fb7d0">Starting</text>
+<text transform="translate(303,60)" font-size="25" style="fill:#b6c3dd">Language</text>
+<text transform="translate(1164,93)" font-size="25" style="fill:#e0b879">Asking</text>
+<text transform="translate(684,711) rotate(-90)" font-size="25" style="fill:#b6c3dd">Expect</text>
+<text transform="translate(781,499)" font-size="25" style="fill:#d5d2c2">Magic</text>
+<text transform="translate(901,709)" font-size="25" style="fill:#c49a6c">Discipline</text>
+<text transform="translate(159,557) rotate(-90)" font-size="25" style="fill:#c49a6c">Hospitals</text>
+<text transform="translate(1215,160)" font-size="25" style="fill:#8fb7d0">Full</text>
+<text transform="translate(174,407) rotate(-90)" font-size="25" style="fill:#c49a6c">Questions</text>
+<text transform="translate(1033,23)" font-size="25" style="fill:#c7d7b5">Patients</text>
+<text transform="translate(489,413)" font-size="22" style="fill:#c49a6c">Department</text>
+<text transform="translate(1163,64)" font-size="22" style="fill:#c7d7b5">Appear</text>
+<text transform="translate(368,441)" font-size="22" style="fill:#8fb7d0">Thousand</text>
+<text transform="translate(1270,417) rotate(-90)" font-size="22" style="fill:#c49a6c">Devicedays</text>
+<text transform="translate(785,617)" font-size="22" style="fill:#e0b879">Claims</text>
+<text transform="translate(146,23)" font-size="22" style="fill:#e0b879">Denied</text>
+<text transform="translate(1046,554)" font-size="22" style="fill:#e0b879">Week</text>
+<text transform="translate(488,308)" font-size="22" style="fill:#8fb7d0">Identities</text>
+<text transform="translate(467,614)" font-size="22" style="fill:#c7d7b5">Created</text>
+<text transform="translate(871,552)" font-size="22" style="fill:#a9b7a3">Month</text>
+<text transform="translate(380,416)" font-size="22" style="fill:#d6a79f">Critical</text>
+<text transform="translate(615,359)" font-size="22" style="fill:#d6a79f">Values</text>
+<text transform="translate(447,159) rotate(-90)" font-size="22" style="fill:#d9c89e">Overnight</text>
+<text transform="translate(992,483)" font-size="22" style="fill:#d9c89e">Usually</text>
+<text transform="translate(613,23)" font-size="22" style="fill:#8fb7d0">Called</text>
+<text transform="translate(582,81)" font-size="22" style="fill:#9fc9c5">Lambda</text>
+<text transform="translate(1272,525) rotate(-90)" font-size="22" style="fill:#b6c3dd">Estimate</text>
+<text transform="translate(228,600)" font-size="18" style="fill:#d5d2c2">Probability</text>
+<text transform="translate(22,84)" font-size="18" style="fill:#d9c89e">Seeing</text>
+<text transform="translate(431,578)" font-size="18" style="fill:#c7d7b5">Zero</text>
+<text transform="translate(866,612)" font-size="18" style="fill:#d9c89e">Assuming</text>
+<text transform="translate(285,715)" font-size="18" style="fill:#d88988">Conditions</text>
+<text transform="translate(66,659) rotate(-90)" font-size="18" style="fill:#e0b879">Reasonable</text>
+<text transform="translate(236,390)" font-size="18" style="fill:#a9b7a3">Matter</text>
+<text transform="translate(74,296)" font-size="18" style="fill:#d5d2c2">Counted</text>
+<text transform="translate(656,196)" font-size="18" style="fill:#d88988">Defined</text>
+<text transform="translate(1209,219)" font-size="18" style="fill:#d88988">Within</text>
+<text transform="translate(806,710)" font-size="18" style="fill:#8fb7d0">Strongly</text>
+<text transform="translate(124,715)" font-size="18" style="fill:#d88988">Cause</text>
+<text transform="translate(1038,331)" font-size="18" style="fill:#b6c3dd">Tied</text>
+<text transform="translate(1116,571)" font-size="18" style="fill:#d5d2c2">Sense</text>
+<text transform="translate(786,300)" font-size="18" style="fill:#c49a6c">Real</text>
+<text transform="translate(1192,444)" font-size="18" style="fill:#d6a79f">Often</text>
+<text transform="translate(1255,633) rotate(-90)" font-size="18" style="fill:#d88988">Bend</text>
+<text transform="translate(361,601)" font-size="18" style="fill:#a9b7a3">Arrivals</text>
+<text transform="translate(22,709) rotate(-90)" font-size="18" style="fill:#c7d7b5">Vary</text>
+<text transform="translate(413,468)" font-size="18" style="fill:#c7d7b5">Cascade</text>
+<text transform="translate(774,677)" font-size="18" style="fill:#c7d7b5">Holidays</text>
+</svg>
