@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T16:59:49.933362+00:00",
+  "generatedAt": "2026-07-01T17:18:21.753787+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-01T16:40:43.417674+00:00",
@@ -70,6 +70,29 @@
       ],
       "wordCount": 130
     },
+    "ai-business-model-broke-bengali-nervous": {
+      "generatedAt": "2026-07-01T17:17:55.299138+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-business-model-broke-bengali-nervous.svg",
+      "source": "src/lib/posts/ai-business-model-broke-bengali-nervous.md",
+      "sourceHash": "8ec160b19a3922cc9ecc43f81d80dc345c9c0921bf024395da71e34bdb87928d",
+      "sourceModified": "2026-07-01T17:14:32.879364+00:00",
+      "topWords": [
+        "AI",
+        "Power",
+        "Hope",
+        "Need",
+        "Electricity",
+        "Paid",
+        "Infrastructure",
+        "Capacity",
+        "Real",
+        "Cooling",
+        "Question",
+        "Somebody"
+      ],
+      "wordCount": 130
+    },
     "ai-cannot-suffer-yet": {
       "generatedAt": "2026-07-01T16:59:26.815628+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -90,6 +113,29 @@
         "Memory",
         "Future",
         "Distress"
+      ],
+      "wordCount": 130
+    },
+    "ai-data-centres-india-power-water-calcutta-fear": {
+      "generatedAt": "2026-07-01T17:17:57.133572+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-data-centres-india-power-water-calcutta-fear.svg",
+      "source": "src/lib/posts/ai-data-centres-india-power-water-calcutta-fear.md",
+      "sourceHash": "6ac5ccd59edfd33550a29ea24a28c0f71c65fb342461f0308e339a9d8281e6c2",
+      "sourceModified": "2026-07-01T17:09:43.787604+00:00",
+      "topWords": [
+        "Water",
+        "Public",
+        "Local",
+        "Cooling",
+        "India",
+        "Power",
+        "AI",
+        "Infrastructure",
+        "Question",
+        "Backup",
+        "Systems",
+        "Electricity"
       ],
       "wordCount": 130
     },
@@ -136,6 +182,29 @@
         "Gone",
         "Language",
         "Rooms"
+      ],
+      "wordCount": 130
+    },
+    "ai-harmonium-players": {
+      "generatedAt": "2026-07-01T17:17:59.333410+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/ai-harmonium-players.svg",
+      "source": "src/lib/posts/ai-harmonium-players.md",
+      "sourceHash": "01caa227de64ecf712a399fce1e89ce9e5641938bf68012df19238fd6c4a8155",
+      "sourceModified": "2026-07-01T17:09:43.788451+00:00",
+      "topWords": [
+        "AI",
+        "Machine",
+        "First",
+        "Changed",
+        "Whether",
+        "Harmonium",
+        "Note",
+        "Resistance",
+        "Often",
+        "Students",
+        "Use",
+        "Little"
       ],
       "wordCount": 130
     },
@@ -1496,6 +1565,29 @@
       ],
       "wordCount": 130
     },
+    "dangers-of-asking-ai-instead-of-hiring-experts": {
+      "generatedAt": "2026-07-01T17:18:01.208964+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/dangers-of-asking-ai-instead-of-hiring-experts.svg",
+      "source": "src/lib/posts/dangers-of-asking-ai-instead-of-hiring-experts.md",
+      "sourceHash": "910addc4d72db06d45f833221cec739bb35bf991bb19728d2896e92d9a894653",
+      "sourceModified": "2026-07-01T17:09:43.790496+00:00",
+      "topWords": [
+        "AI",
+        "Expert",
+        "Time",
+        "Real",
+        "Danger",
+        "Gives",
+        "Record",
+        "Data",
+        "Wrong",
+        "Failure",
+        "Answer",
+        "Sensible"
+      ],
+      "wordCount": 130
+    },
     "depression-as-mathematics": {
       "generatedAt": "2026-07-01T06:44:09.030564+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -1539,6 +1631,29 @@
         "Notebook",
         "Tape",
         "First"
+      ],
+      "wordCount": 130
+    },
+    "do-not-sell-your-pressure-cooker-for-rtx-spark": {
+      "generatedAt": "2026-07-01T17:18:03.089871+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/do-not-sell-your-pressure-cooker-for-rtx-spark.svg",
+      "source": "src/lib/posts/do-not-sell-your-pressure-cooker-for-rtx-spark.md",
+      "sourceHash": "941a1a0e3e0ce5515359a56f2399db3ae111456e04324aeba7421b4ff0847c14",
+      "sourceModified": "2026-07-01T17:16:42.542534+00:00",
+      "topWords": [
+        "AI",
+        "Local",
+        "Machine",
+        "Buy",
+        "Every",
+        "Work",
+        "Wait",
+        "Person",
+        "Real",
+        "Matters",
+        "Money",
+        "Future"
       ],
       "wordCount": 130
     },
@@ -2531,6 +2646,29 @@
       ],
       "wordCount": 130
     },
+    "india-semiconductor-sufficiency-beyond-lip-service": {
+      "generatedAt": "2026-07-01T17:18:05.076156+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/india-semiconductor-sufficiency-beyond-lip-service.svg",
+      "source": "src/lib/posts/india-semiconductor-sufficiency-beyond-lip-service.md",
+      "sourceHash": "df715b2446f1696f7428b43fad27176854310c3580bfa8dadccf0e884a95cbc1",
+      "sourceModified": "2026-07-01T17:14:32.879364+00:00",
+      "topWords": [
+        "India",
+        "Semiconductor",
+        "Packaging",
+        "Power",
+        "Chips",
+        "Design",
+        "Chip",
+        "Industrial",
+        "Every",
+        "Factory",
+        "Enjoy",
+        "Becomes"
+      ],
+      "wordCount": 130
+    },
     "intro": {
       "generatedAt": "2026-06-30T22:50:20.325589+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -2781,6 +2919,29 @@
         "Management",
         "Aedes",
         "Rain"
+      ],
+      "wordCount": 130
+    },
+    "last-economy-intelligence-inversion": {
+      "generatedAt": "2026-07-01T17:18:07.043150+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/last-economy-intelligence-inversion.svg",
+      "source": "src/lib/posts/last-economy-intelligence-inversion.md",
+      "sourceHash": "7b5b250021e93d60f9397ef586b6e68f083bef03a790d79077644dd12963ef0a",
+      "sourceModified": "2026-07-01T17:14:32.890522+00:00",
+      "topWords": [
+        "Scarce",
+        "Economy",
+        "Last",
+        "Human",
+        "Someone",
+        "Intelligence",
+        "Market",
+        "Happens",
+        "Language",
+        "AI",
+        "Room",
+        "Valuable"
       ],
       "wordCount": 130
     },
@@ -3635,6 +3796,29 @@
       ],
       "wordCount": 130
     },
+    "scrolling-versus-reading-sequential-mind": {
+      "generatedAt": "2026-07-01T17:18:09.042751+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/scrolling-versus-reading-sequential-mind.svg",
+      "source": "src/lib/posts/scrolling-versus-reading-sequential-mind.md",
+      "sourceHash": "1195b6843dd8eb5003b8e7e56b32dc4693a8801373311f46cac95fd8510df9ba",
+      "sourceModified": "2026-07-01T17:14:32.890522+00:00",
+      "topWords": [
+        "Scrolling",
+        "Reading",
+        "Mind",
+        "Page",
+        "Books",
+        "Every",
+        "First",
+        "Thumb",
+        "Person",
+        "Asks",
+        "Gives",
+        "Thought"
+      ],
+      "wordCount": 130
+    },
     "second-mouth": {
       "generatedAt": "2026-06-30T21:05:51.744975+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3655,6 +3839,29 @@
         "Line",
         "Kabir",
         "Hand"
+      ],
+      "wordCount": 130
+    },
+    "self-gaslit-minds-and-ai-pretension": {
+      "generatedAt": "2026-07-01T17:18:10.665312+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/self-gaslit-minds-and-ai-pretension.svg",
+      "source": "src/lib/posts/self-gaslit-minds-and-ai-pretension.md",
+      "sourceHash": "b718fec7723f86ee6ec0680f85c6c4fd3b98ca44a08735d020b432737f692147",
+      "sourceModified": "2026-07-01T17:14:32.890522+00:00",
+      "topWords": [
+        "Language",
+        "AI",
+        "Person",
+        "Sound",
+        "Wants",
+        "Sentence",
+        "Machine",
+        "Thought",
+        "First",
+        "Confidence",
+        "Behind",
+        "Nobody"
       ],
       "wordCount": 130
     },
@@ -3957,6 +4164,29 @@
       ],
       "wordCount": 130
     },
+    "synthetic_music_and_the_crowded_miracle": {
+      "generatedAt": "2026-07-01T17:18:12.476734+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/synthetic_music_and_the_crowded_miracle.svg",
+      "source": "src/lib/posts/synthetic_music_and_the_crowded_miracle.md",
+      "sourceHash": "523a47139211b7867c7ce5f13e86be9829f1a7f37796e335ff421268db505b0b",
+      "sourceModified": "2026-07-01T17:14:32.890522+00:00",
+      "topWords": [
+        "Music",
+        "Synthetic",
+        "Track",
+        "Becomes",
+        "Song",
+        "Making",
+        "Background",
+        "Sound",
+        "Room",
+        "Voice",
+        "Work",
+        "Musicians"
+      ],
+      "wordCount": 130
+    },
     "taklu-babu": {
       "generatedAt": "2026-06-30T21:06:05.682966+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -3977,6 +4207,29 @@
         "Eating",
         "Politician",
         "Ate"
+      ],
+      "wordCount": 130
+    },
+    "tau-scaling-law-time-not-nanometers": {
+      "generatedAt": "2026-07-01T17:18:14.087408+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/tau-scaling-law-time-not-nanometers.svg",
+      "source": "src/lib/posts/tau-scaling-law-time-not-nanometers.md",
+      "sourceHash": "28f426a5fcce79bf1453499d5df5f28ad97e1c56235ece72357158639d7faa8a",
+      "sourceModified": "2026-07-01T17:16:35.577426+00:00",
+      "topWords": [
+        "Time",
+        "Chip",
+        "Smaller",
+        "Scaling",
+        "Progress",
+        "Transistors",
+        "Tau",
+        "Law",
+        "Delay",
+        "Memory",
+        "Becomes",
+        "Less"
       ],
       "wordCount": 130
     },
@@ -4118,6 +4371,29 @@
       ],
       "wordCount": 130
     },
+    "the-ai-sermon-and-the-wet-knot": {
+      "generatedAt": "2026-07-01T17:18:15.987455+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-ai-sermon-and-the-wet-knot.svg",
+      "source": "src/lib/posts/the-ai-sermon-and-the-wet-knot.md",
+      "sourceHash": "45dea3aae21ee35a632b95fc4d7d368ba93f21baee8e7aaa3c80955abd404060",
+      "sourceModified": "2026-07-01T17:16:35.579433+00:00",
+      "topWords": [
+        "AI",
+        "Work",
+        "Use",
+        "Person",
+        "Knot",
+        "Sermon",
+        "Learn",
+        "Advice",
+        "Faster",
+        "Wet",
+        "Problem",
+        "Workers"
+      ],
+      "wordCount": 130
+    },
     "the-animals-that-did-not-know-smiling": {
       "generatedAt": "2026-06-30T21:06:08.983020+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -4207,6 +4483,29 @@
         "Tea",
         "Near",
         "Outside"
+      ],
+      "wordCount": 130
+    },
+    "the-billing-hour-has-started-to-smell": {
+      "generatedAt": "2026-07-01T17:18:17.539478+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-billing-hour-has-started-to-smell.svg",
+      "source": "src/lib/posts/the-billing-hour-has-started-to-smell.md",
+      "sourceHash": "aa70a159b9adf13e82049702dc7bf720d1318235fca081e68e1219db1ec8feae",
+      "sourceModified": "2026-07-01T17:16:35.582323+00:00",
+      "topWords": [
+        "AI",
+        "Services",
+        "Hours",
+        "Hour",
+        "Work",
+        "Clients",
+        "Story",
+        "Time",
+        "Person",
+        "Billing",
+        "Pyramid",
+        "Harder"
       ],
       "wordCount": 130
     },
@@ -5498,6 +5797,29 @@
       ],
       "wordCount": 130
     },
+    "the-robot-begins-as-a-loose-wire": {
+      "generatedAt": "2026-07-01T17:18:19.709244+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-robot-begins-as-a-loose-wire.svg",
+      "source": "src/lib/posts/the-robot-begins-as-a-loose-wire.md",
+      "sourceHash": "574afbeb992b982ab70a403a9525a3e98460852f0a3e69108e3ac5e0ae66787b",
+      "sourceModified": "2026-07-01T17:16:35.582830+00:00",
+      "topWords": [
+        "Motor",
+        "Robot",
+        "Robotics",
+        "Affects",
+        "Wire",
+        "Sensor",
+        "World",
+        "Loose",
+        "Machine",
+        "Intelligence",
+        "Control",
+        "Ask"
+      ],
+      "wordCount": 130
+    },
     "the-router-behind-the-television": {
       "generatedAt": "2026-06-30T23:05:27.292352+00:00",
       "generatorVersion": "2026-07-01.1",
@@ -6461,6 +6783,29 @@
         "Man",
         "Architecture",
         "Many"
+      ],
+      "wordCount": 130
+    },
+    "war-spillovers-ukraine-iran-technology": {
+      "generatedAt": "2026-07-01T17:18:21.686909+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/war-spillovers-ukraine-iran-technology.svg",
+      "source": "src/lib/posts/war-spillovers-ukraine-iran-technology.md",
+      "sourceHash": "d709103041289c2c2260bb0e9edb2ad926c522c5435d87cacec5eb963ca91750",
+      "sourceModified": "2026-07-01T17:16:35.584838+00:00",
+      "topWords": [
+        "Civilian",
+        "Systems",
+        "War",
+        "Pressure",
+        "Repair",
+        "Public",
+        "Infrastructure",
+        "Learn",
+        "Screen",
+        "Clean",
+        "Roads",
+        "Faster"
       ],
       "wordCount": 130
     },

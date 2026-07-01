@@ -46,6 +46,7 @@ export const categoryLabels: Record<string, string> = {
 	'useful-mental-models': 'Useful Mental Models',
 	'systems-thinking': 'Systems Thinking',
 	'mental-models': 'Mental Models',
+	technology: 'Technology',
 	'technology-and-society': 'Technology and Society',
 	'political-economy': 'Political Economy',
 	'natural-history': 'Natural History',
