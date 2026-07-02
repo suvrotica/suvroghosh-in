@@ -1,10 +1,10 @@
 ---
-title: "Dogs Detect Violations"
-description: "What canine cognition research suggests about trust, deception, scent, and social evaluation, and why the myth that dogs sense bad people is less mystical and more interesting."
+title: "Dogs Detect Violations."
+description: "What canine cognition research actually suggests about trust, deception, scent, and social evaluation—and why the myth that dogs can 'sense bad people' is much less mystical and much more interesting."
+thumbnail : "/images/IMG-20260423-WA0018.jpg"
 date: "2026-04-22"
-thumbnail: "/images/IMG-20260423-WA0018.jpg"
-category: "Science"
-tags: ["Video", "Science", "Canine Cognition", "Animal Behavior", "Trust", "Reliability", "Human Stress", "Social Evaluation", "Cognitive Science", "Popular Science", "Calcutta", "SuvroGhosh"]
+category: "science"
+tags: ["SuvroGhosh", "science", "Dogs Bad People Myth Science", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "amber"
 ---
@@ -13,59 +13,36 @@ color: "amber"
 
 <Pi src="IMG-20260423-WA0018.jpg" />
 
-A dog staring at a visitor from the corner of a room can make a whole household invent philosophy in six seconds.
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
 
-Someone says the dog has sensed bad character. Someone else says animals know what humans cannot. The guest smiles stiffly. The dog continues watching, which does not help the guest's case.
+---
 
-The mystical explanation is satisfying.
+Dogs do not possess a supernatural faculty for identifying “bad people.” They are not little furred moral philosophers with a built-in vice detector. What the research suggests is both narrower and more interesting: dogs are unusually skilled at monitoring reliability, tension, social disruption, and violations of expectation in human behavior. They are not reading souls. They are reading patterns. 
 
-The scientific one is better.
+That distinction matters because folklore usually smuggles in a human category error. We speak in abstractions—bad, creepy, evil, untrustworthy—while dogs operate on observable signals. Did this person point accurately or deceptively? Did this stranger behave helpfully or refuse assistance to my owner? Did the room chemistry change? Did posture tighten, voice flatten, scent shift, movement become erratic? In other words, the dog is not inferring moral essence. It is updating a probabilistic model of safety, predictability, and affiliation from cues that are often too fast, too embodied, or too chemically diffuse for people to notice consciously. 
 
-Dogs do not appear to possess a supernatural moral detector. What research suggests is narrower and more interesting: they can track reliability, social behavior, human tension, scent cues, and violations of expectation. They are not reading the soul. They are reading signals.
+The cleanest evidence comes from work on reliability. In the Kyoto University study commonly cited in this area, dogs followed a human pointing cue when it led to the expected outcome, then reduced their compliance after being misled by that same informant. The important point is not that the dogs became universally suspicious. They did something subtler. They revised trust in relation to a specific person who had proven unreliable. That is not mysticism. That is selective social calibration. 
 
-That distinction matters because humans speak in abstractions. Bad. Good. Creepy. Trustworthy. Dangerous. Dogs live closer to observable patterns. Did this person point honestly? Did this person refuse help to the dog's human? Did the room's emotional chemistry change? Did movement become tense, erratic, or too forward? Did the familiar person stiffen?
+Another line of work, also associated with Kyoto researchers, found that dogs avoided taking food from a person who had behaved negatively toward their owner during a staged interaction. Here again the result is routinely oversold online. The dogs were not handing down an ethical verdict on humanity. They were showing third-party social evaluation: they watched an interaction, tracked who was obstructive, and adjusted their behavior toward that individual. Just as striking, the effect was stronger for negativity than for abstract niceness. Dogs seem especially attuned to social friction and non-cooperation around their own human. That is less halo effect than hazard detection. 
 
-One famous line of research tested whether dogs keep trusting a person who gives unreliable pointing cues. Dogs often follow human pointing. But when a person points misleadingly, many dogs reduce their trust in that specific informant. That is not mystical judgment. It is social updating. The dog has learned that this person may not be a reliable guide.
+Research from the Clever Dog Lab in Vienna pushed the question further by asking whether dogs respond differently when a human is merely wrong versus misleading from a position of knowledge. In the 2021 false-belief work, dogs followed misleading human suggestions more often when the informant had a false belief than when the dog had reason to think the human knew the real location of the reward. That does not prove that dogs entertain human-style theories of mind in the full philosophical sense. It does show that many dogs are sensitive to what a person has seen, knows, or plausibly believes, and that their behavior changes accordingly. The internet likes to translate this into “dogs know when you are lying.” The more defensible claim is that dogs can use knowledge-state cues to discount some misleading signals. 
 
-Another experiment asked whether dogs respond to how strangers treat their owner. In that work, dogs were less willing to accept food from someone who had refused to help the owner. Again, the point is not that the dog delivered an ethical verdict on humanity. The point is that the dog watched a social interaction and changed behavior toward a particular person.
+Then there is scent, which is where human intuition usually wanders off into ghost stories. Dogs absolutely can respond to chemical changes associated with human stress. Recent work in *Scientific Reports* found that the odor of a stressed unfamiliar person altered dogs’ performance on a cognitive-bias task, suggesting that olfactory stress cues can affect how dogs learn and evaluate ambiguous situations. Earlier work on human emotional chemosignals likewise showed that dogs respond behaviorally and physiologically to human body odors associated with emotional states. This is not proof that dogs can smell “evil,” because evil is not a volatile organic compound. But stress, fear, arousal, and related metabolic shifts can change odor profiles in ways dogs can detect. That alone can make a person feel “off” to a dog long before any visible event occurs. 
 
-Scent adds another layer. Dogs can respond to human stress odors. A Scientific Reports study found that the odor of an unfamiliar stressed person affected dogs' responses in a cognitive-bias task. That does not mean stress equals danger. It means human physiological states can produce detectable cues that influence canine behavior.
+Visual information matters too, and not only from the face. Reviews of canine emotion perception emphasize that dogs use a richer stream of bodily information than people often assume. Whole-body movement, gesture quality, orientation, pace, abruptness, and the coherence—or incoherence—between posture and action all carry signal. A guest who smiles while standing rigid, invades space oddly, moves with jerky asymmetry, or causes the owner’s body to stiffen may register to the dog as behaviorally inconsistent or socially destabilizing. Humans often narrate that as “the dog sensed something bad.” A drier and better explanation is that the dog detected mismatch. 
 
-So when a dog reacts oddly to a person, several ordinary explanations may be working together.
+This is also why owner context matters so much. Dogs do not observe strangers in a social vacuum. They watch the owner’s routines for years. They learn timing, gait, tone, thresholds, usual patterns of welcome and alarm. When a new person perturbs those patterns—subtly raising the owner’s tension, blocking movement, producing unfamiliar odor changes, violating normal interaction rhythm—the dog has unusually rich baseline data against which to notice the deviation. In practical terms, what people call a dog “judging character” is often a dog detecting disruption in a bonded dyad it knows intimately. 
 
-The person may move unpredictably.
+The breed question is real, but internet summaries tend to become more precise than the evidence deserves. There is good evidence that breeds differ in social cognition, inhibitory control, problem-solving style, and response to human communicative gestures. A large 2022 study found significant breed differences across several cognitive tasks, including following misleading human gestures. That supports the general claim that some breeds or breed groups may be more socially cue-dependent while others may be more independently exploratory. But the neat little ranking stories—this breed spots liars, that breed ignores people, terriers do X, retrievers do Y—often outrun what controlled studies can safely support in everyday life. Breed tendencies are real. Mythic breed clairvoyance is not. 
 
-The owner may be tense.
+So the deeper truth is almost disappointingly plain, except that it is not disappointing at all. Dogs are good at reputation formation when the reputation is built from direct experience or socially meaningful interaction. They are less compelling when asked to evaluate detached, abstract scenarios that do not implicate themselves, their owners, or an immediately interpretable social exchange. Trust is their operational baseline. Distrust usually has to be earned through a concrete, observable violation. That is why one dog may adore an unpleasant person who behaves consistently and predictably around the household, while distrusting a perfectly decent visitor who arrives tense, smells stressed, moves erratically, and disregards familiar boundaries. 
 
-The visitor may smell stressed.
+What follows from all this is a much sharper sentence than the mystical cliché. Dogs do not sense bad people. Dogs sense unreliable signals, adverse interactions, physiological stress, and broken social rhythm. Sometimes those things cluster around genuinely dangerous humans. Sometimes they cluster around anxious, intoxicated, frightened, neurologically atypical, or merely unfamiliar ones. The dog may still react. The explanation is cognitive and sensory, not supernatural. And that makes dogs less magical only if one insists that reality must be dull to be real. In fact, the opposite is true. The science leaves them even more impressive: not prophets, but exquisite readers of the living room.
 
-The dog may remember a past interaction.
+## Related Posts
 
-The social rhythm of the room may have changed.
-
-The dog is not doing theology. It is doing embodied pattern recognition.
-
-This is more impressive than the myth, not less. A supernatural detector would be a story. A real animal learning from gesture, scent, posture, familiarity, and social history is a living intelligence fitted to the household.
-
-The danger is overinterpretation. Sometimes a dog reacts to a genuinely unsafe person. Sometimes it reacts to fear, awkwardness, unfamiliar movement, illness, perfume, noise, or its own history. A reaction is information. It is not a court judgment.
-
-The practical sentence is simple: take the signal seriously, but do not make it sacred.
-
-A dog may notice something you missed.
-
-It may also be wrong.
-
-That is not an insult. Humans with degrees are wrong every day, often at greater expense.
-
-In a Calcutta living room, with the fan turning, the visitor sitting too straight, and the dog refusing to relax, the old myth will still appear. It is an easy myth to love. But the real explanation has its own dignity. The animal is not seeing invisible evil. It is noticing reliability, tension, history, and the small disruptions that human beings often explain only after something has already gone wrong.
-
-The dog watches the room.
-
-The room gives itself away.
-
-P.S. References
-
-- [PubMed: Do dogs follow behavioral cues from an unreliable human?](https://pubmed.ncbi.nlm.nih.gov/25348065/)
-- [Kyoto University repository: Dogs avoid people who behave negatively to their owner](https://repository.kulib.kyoto-u.ac.jp/dspace/bitstream/2433/198493/1/j.anbehav.2015.05.018.pdf)
-- [Proceedings of the Royal Society B / PMC: Dogs follow misleading suggestions more often when the informant has a false belief](https://pmc.ncbi.nlm.nih.gov/articles/PMC8292766/)
-- [Scientific Reports: Human stress odor affects dogs' responses](https://www.nature.com/articles/s41598-024-66147-1)
+- [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The History of the Shape of Atoms](/blog/science/the-history-of-the-shape-of-atoms)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

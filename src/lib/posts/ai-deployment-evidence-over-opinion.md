@@ -1,10 +1,10 @@
 ---
 title: "AI in Healthcare: Beware"
-description: "AI deployment in healthcare is not mainly a modeling problem. It is a representation, validation, workflow, and risk-management problem, and it needs staged evidence before real clinical influence."
-thumbnail: "/images/IMG-20260423-WA0008.jpg"
+description: "AI deployment in healthcare is not a modeling problem—it is a representation, validation, and risk management problem. Why staged, evidence-driven rollout is essential."
+thumbnail : "/images/IMG-20260423-WA0008.jpg" 
 date: "2026-04-21"
-category: "Healthcare AI"
-tags: ["Healthcare AI", "Artificial Intelligence", "Healthcare IT", "Clinical Decision Support", "FHIR", "HL7", "EHR", "Model Validation", "Patient Safety", "Calcutta Essay", "SuvroGhosh"]
+category: "healthcare ai"
+tags: ["SuvroGhosh", "healthcare ai", "AI Deployment Evidence Over Opinion", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
 color: "red"
 ---
@@ -13,50 +13,118 @@ color: "red"
 
 <Pi src="IMG-20260423-WA0008.jpg" />
 
-The alert on a hospital screen can look innocent: one small box, one probability, one suggested action. It has the modest manners of software. That is what makes it dangerous. A system that nudges clinical attention is no longer just software in the ordinary sense. It has entered the pathway by which someone may be watched more closely, treated sooner, ignored longer, or sent through a different corridor of care.
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
 
-AI in healthcare fails the moment it is treated as a model problem instead of a system problem.
+---
 
-The temptation is obvious. A model performs well on retrospective data. A vendor demo looks polished. A clinical champion believes the tool will save time. A leadership team wants the institution to appear modern. A pilot feels promising. Soon the question becomes, "Why are we not using this?" That question sounds practical, but it can be the beginning of a category error.
+AI deployment in healthcare fails the moment it is treated as a model problem instead of a system problem.
 
-Healthcare AI is not a feature toggle. It is an intervention that may be wrapped in software clothing.
+The pressure to operationalize quickly—clinical leadership expectations, vendor promises, regulatory signaling, and internal innovation mandates—pushes teams toward opinion-driven deployment. A model looks good offline. A champion clinician believes in it. A pilot “feels right.” That is usually enough to cross the line into production. It shouldn't be. 
 
-The hard question is not whether a model can produce a plausible prediction. The hard question is whether that prediction is valid here, on this population, under this workflow, using this institution's data, with this staffing pattern, at the time when a human can still act on it. Anything less is not deployment. It is hope with an interface.
+A model that predicts sepsis five minutes earlier than baseline sounds like progress—until you ask where those five minutes came from, what data the model actually saw, and whether the clinician trusts it enough to act. This is where most AI deployments in healthcare IT quietly unravel: not at the level of algorithmic performance, but at the seam where evidence, workflow, and representation collide.
 
-The first weakness is representation. Healthcare data does not arrive as clinical truth. It arrives as residue from work. An Electronic Health Record, or EHR, records orders, notes, results, billing needs, liability concerns, templates, schedules, and memory. It is not a clean photograph of the patient. It is a working ledger built under pressure.
+AI in healthcare cannot be deployed like a feature toggle because its outputs are not merely informational—they are action-inducing. The central problem is this: opinion-driven deployment treats AI as a tool whose correctness can be assumed or inferred, while evidence-driven deployment recognizes that every model is a hypothesis generator embedded in a fragile, high-stakes system.
 
-The same is true of transport standards. HL7 v2, the older hospital messaging standard still running in many systems, can carry a lab result reliably without carrying the full clinical story around that result. FHIR, the newer web-friendly standard for healthcare data exchange, gives clearer structure, but structure is not meaning. A FHIR `Condition` can still depend on coding habits, timing, uncertainty, and whether anyone reconciled the record after the last migration.
+The moment an AI system influences a clinical decision, it becomes part of the care pathway. At that point, the burden of proof shifts from “does it work in general?” to “does it work here, now, on this patient, within this workflow, under these constraints?” Anything less is not innovation—it is untested intervention.
 
-When a model consumes this data, it is not learning the body directly. It is learning the institution's representation of the body.
+Healthcare data systems are not neutral substrates; they are the fossil record of operational decisions. Consider a typical architecture:
 
-That matters. A missing blood-pressure value may mean the reading was not taken, not entered, delayed, unavailable to the interface, or considered less urgent in the moment. A diagnosis code may mean confirmed disease, suspected disease, historical residue, billing necessity, or copied habit. A lab timestamp may mark collection, result availability, posting, correction, or some local compromise nobody remembers until the interface breaks.
+- Data originates in an Electronic Health Record (EHR), shaped by clinician workflows and billing constraints.
+- It is transported via HL7 v2 (Health Level Seven version 2) messages, often lossy, event-driven, and semantically thin.
+- It may be normalized into a warehouse or exposed through FHIR (Fast Healthcare Interoperability Resources), which offers cleaner resource structures but inherits upstream ambiguities.
+- AI models are trained on this derived data, often after aggressive preprocessing, imputation, and feature engineering.
 
-Calling all of this "bad data" is too shallow. Often the data is faithfully recording the wrong thing for the new purpose.
+At each stage, meaning is not preserved—it is approximated.
 
-The second weakness is time. Clinical life is not arranged in the neat sequence that model training often imagines. The patient worsens. The nurse notices. A test is ordered. The result returns. The note is written later. The code appears later still. If a model is trained carelessly, it can appear to predict an event while quietly using evidence that was only available after the decision window had already begun to close.
+Transport and semantics are frequently conflated. An HL7 v2 ORU message can reliably deliver a lab result, but it cannot guarantee the clinical context in which that result was ordered. FHIR improves structural clarity, but a `Condition` resource still depends on coding fidelity, temporal accuracy, and clinician intent—all of which are variable.
 
-This is the oldest kind of analytics fraud: time travel with a dashboard.
+When an AI model consumes this data, it is not learning “clinical truth.” It is learning a representation shaped by:
+- documentation habits
+- coding practices
+- system defaults
+- missingness patterns
+- workflow timing
 
-The third weakness is workflow. A model can be accurate and useless if it speaks at the wrong moment. An alert that appears during peak clinical load may be dismissed. A score that cannot be explained may be distrusted. A warning that requires a pathway the hospital cannot provide may only add guilt to delay. The model may be right, but the organization may be unable to metabolize its truth.
+This is why model performance metrics—Area Under the Curve (AUC), precision-recall—are often orthogonal to real-world utility. They measure internal consistency, not external validity.
 
-That is why evidence-driven deployment must be staged.
+The failure modes are predictable, and they repeat across institutions.
 
-Start with local retrospective validation. Then run the model in shadow mode, where it observes live workflow without showing outputs to clinicians. Shadow mode is boring, which is one reason it is valuable. It reveals timing, drift, missing data, calibration problems, and local behavior without pushing the clinical team into premature reliance.
+First, representation failure is mislabeled as data quality failure. A missing blood pressure reading is not just “bad data”; it may reflect a workflow where vitals are delayed or selectively recorded. The model interprets absence as signal, but the signal is about process, not physiology.
 
-After that, expose the tool narrowly, with guardrails. Keep it as decision support, not decision automation. Define who sees it, when they see it, how they can challenge it, what action it is meant to trigger, and what happens when the system is wrong. Measure clinical impact, not only predictive accuracy. Measure alert burden. Measure overrides. Measure whether particular groups are harmed, missed, or overloaded.
+Second, temporal ambiguity creeps in. Clinical events are rarely timestamped with the precision models assume. Orders, results, and documentation often lag reality. A model trained on these sequences may “predict” an outcome that has already partially occurred.
 
-Every prediction should carry provenance: model version, data sources, feature transformations, timestamp assumptions, and workflow context. Without that, investigation after harm becomes guesswork dressed as root-cause analysis.
+Third, source-of-truth conflicts emerge. The same patient condition may exist in structured fields, free text, and billing codes—each telling a slightly different story. The model learns whichever version is most statistically convenient, not necessarily the most clinically accurate.
 
-The quiet architectural principle is simple: AI outputs should be treated as signals, not commands. Separate inference from workflow orchestration. Make rollback possible. Make monitoring continuous. Make uncertainty visible. Make the system admit when the data is missing, contradictory, stale, or outside the population on which the model was tested.
+Fourth, workflow misalignment undermines adoption. A model that fires an alert during peak clinical load, or outside the decision window, will be ignored regardless of its accuracy. The architecture assumed a rational actor; the reality is a time-constrained human navigating cognitive overload.
 
-Healthcare already understands this discipline in other areas. A lab assay is validated, calibrated, monitored, and interpreted within limits. An AI model that influences care deserves at least that level of seriousness. A high AUC, meaning a statistical measure of ranking performance, is not a moral passport. It says something about discrimination between classes in a dataset. It does not prove clinical usefulness, fairness, safety, explainability, or fit with local workflow.
+Fifth, silent model drift occurs. Clinical practice evolves, coding patterns shift, patient populations change. The model’s training distribution becomes a historical artifact, but deployment continues as if nothing has changed.
 
-Some problems should not be modeled yet. If the underlying representation is unstable, the correct move may be upstream: improve capture, standardization, workflow, and governance before inserting a model. This is not anti-innovation. It is the adult form of innovation, the one that survives contact with patients, nurses, doctors, clerks, downtime, migration scripts, and the ordinary fatigue of institutions.
+The persistence of opinion-driven AI deployment is not a technical failure—it is structural.
 
-From a Calcutta room, it is easy to see why the shortcut seduces. We live in a country where queues are long, clinicians are overworked, and access is uneven. A useful AI tool could matter. It could support triage, translation, follow-up, risk detection, and care navigation. The need is real.
+Healthcare systems are optimized for throughput, compliance, and reimbursement, not for experimental rigor. Introducing AI as a staged, evidence-driven intervention requires:
+- controlled environments
+- longitudinal evaluation
+- governance structures that can pause or rollback deployment
 
-But need does not cancel proof.
+These are at odds with procurement cycles and operational pressures.
 
-The discipline of evidence-driven deployment will not produce dramatic headlines. It will produce slower systems, more documentation, more argument, more rollback plans, and fewer shiny launch photographs. That is probably a good sign. In healthcare, the safest technology often enters the room quietly and spends a long time proving it deserves to stay.
+There is also a category error at play. AI is often treated as software, when it behaves more like a clinical instrument. A lab assay undergoes validation, calibration, and ongoing quality control. An AI model, by contrast, is frequently deployed after a retrospective validation and left to operate in a live environment with minimal oversight.
 
-P.S. References: Useful current anchors include the FDA's AI-enabled medical device resources, ONC's HTI-1 decision-support transparency requirements, and WHO guidance on AI and large multi-modal models in health: [FDA AI in medical devices](https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device), [ONC HTI-1](https://healthit.gov/regulations/hti-rules/hti-1-final-rule/), [WHO LMM guidance](https://www.who.int/publications/i/item/9789240084759).
+The illusion of certainty is reinforced by metrics. A model with 0.87 AUC appears authoritative, but that number is detached from:
+- patient heterogeneity
+- site-specific workflows
+- edge-case behavior
+
+In practice, the model is a probabilistic guess layered on top of already uncertain data.
+
+Evidence-driven deployment does not mean paralysis; it means disciplined progression.
+
+Start with strict boundary definition. Identify where the model can influence decisions without introducing irreversible risk. Early stages should focus on:
+- decision support, not decision automation
+- low-acuity pathways
+- retrospective shadow mode evaluation
+
+Shadow mode is underused and undervalued. Running the model in parallel with clinical workflows, without exposing outputs to clinicians, allows:
+- calibration against real outcomes
+- identification of drift
+- understanding of workflow timing
+
+Next, enforce staged rollout:
+- Stage 1: Retrospective validation on local data
+- Stage 2: Prospective shadow mode
+- Stage 3: Limited clinical exposure with guardrails
+- Stage 4: Broader deployment with continuous monitoring
+
+At each stage, define exit criteria based on:
+- outcome improvement, not just predictive accuracy
+- clinician adoption and trust
+- operational impact
+
+Architecturally, separate model inference from workflow orchestration. Use event-driven patterns where AI outputs are treated as signals, not commands. This allows:
+- controlled integration
+- easier rollback
+- parallel evaluation of multiple models
+
+Invest in provenance tracking. Every prediction should be traceable to:
+- input data version
+- model version
+- transformation pipeline
+
+Without this, post hoc analysis becomes guesswork.
+
+Finally, accept that some problems are not yet solvable with current data. If the underlying representation is unstable, no amount of modeling sophistication will fix it. In such cases, the correct architectural move is upstream: improve data capture, standardization, and workflow alignment before introducing AI.
+
+The quiet discipline of evidence-driven deployment does not produce dramatic headlines. It produces something rarer: systems that fail less often, in ways that are understood, and in contexts where humans remain firmly in control.
+
+## Related Posts
+
+- [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
+- [Databases and Data Warehouses](/blog/healthcare-it/database-first-principles)

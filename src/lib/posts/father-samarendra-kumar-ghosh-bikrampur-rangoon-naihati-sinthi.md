@@ -13,6 +13,8 @@ color: "amber"
 
 <Pi src="/photos/Compress_20260608_083349_9832.jpg" />
 
+
+
 My father, Samarendra Kumar Ghosh, was not the sort of man who needed a motivational poster behind him. He would have found the poster unnecessary, probably badly printed, and morally suspicious if bought at full price.
 
 He rose before dawn, took a cold-water bath at five in the morning even in winter, read the Gita, and then somehow did not become the kind of religious man who tried to beat science out of his son with a rolled-up newspaper. This, in Bengal, is not a small achievement. We are a civilization that can turn fish curry, football, grammar, god, politics, and the price of coriander into full-contact sports before breakfast.

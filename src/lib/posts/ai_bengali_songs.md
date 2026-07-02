@@ -1,19 +1,14 @@
 ---
 title: "Bengali AI Songs"
-thumbnail: "/images/IMG-20260427-WA0002.jpg"
+thumbnail : "/images/IMG-20260427-WA0002.jpg"
 date: "2026-04-27"
-description: "Bengali AI-generated songs, collected as an informal Calcutta listening shelf."
-tags: ["AI Music", "Bengali AI Songs", "Bengali Songs", "Synthetic Media", "Artificial Intelligence", "Music Commentary", "Calcutta", "Kolkata", "SuvroGhosh"]
+description: "Bengali"
+tags: ["Songs", "Engineering Blog", "SuvroGhosh", "AI Music Song", "AI Bengali Songs", "AI Music", "Bengali Songs", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Synthetic Media", "Music Commentary"]
 category: "AI Music Song"
 published: true
-color: "green"
 ---
 
-The Bengali letters in the file names look more alive than the player controls around them. They sit there with their little hooks and curves, already carrying a street, a room, a joke, a sulk, a cup, a window, a city sweating through its own habits.
-
-This is the Bengali AI song shelf. I refresh it when I add new tracks. Some pieces are playful, some are tired, some are city-soaked, and some simply exist because a phrase would not leave quietly.
-
-AI means artificial intelligence: software that generates or arranges sound and image from learned patterns. Bengali makes the experiment feel less abstract to me. The machine can copy form, rhythm, and surface, but the listener still brings the city, the memory, and the small irritation that makes a song land.
+### Refresh often I add new tracks whenever I feel like it
 
 <Vid 
   src="কাপের_তলায়_চাঁদ.mp4" 
@@ -201,8 +196,9 @@ AI means artificial intelligence: software that generates or arranges sound and 
   size={1} 
 />
 
-## More AI Music
+## Related Posts
 
-- [AI Music](/blog/ai-music-song/ai_music)
-- [English AI Songs](/blog/ai-music-song/ai_english_songs)
 - [Hindi AI Songs](/blog/ai-music-song/hindi_ai_songs)
+- [English AI Songs](/blog/ai-music-song/ai_english_songs)
+- [AI Music](/blog/ai-music-song/ai_music)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)

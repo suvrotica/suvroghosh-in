@@ -1,134 +1,134 @@
 <svg role="img" aria-label="The Thin-Fat Bengali and the Treacherous Little Belly" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Thin-Fat Bengali and the Treacherous Little Belly</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(420,682)" font-size="118" style="fill:#a9b7a3">Means</text>
-<text transform="translate(71,344)" font-size="118" style="fill:#a9b7a3">Rice</text>
-<text transform="translate(421,295)" font-size="111" style="fill:#c49a6c">Insulin</text>
-<text transform="translate(7,595)" font-size="111" style="fill:#8fb7d0">Muscle</text>
-<text transform="translate(720,493)" font-size="103" style="fill:#b6c3dd">Sugar</text>
-<text transform="translate(1032,676)" font-size="103" style="fill:#d88988">Fat</text>
-<text transform="translate(910,226)" font-size="95" style="fill:#a9b7a3">Liver</text>
-<text transform="translate(99,685)" font-size="86" style="fill:#d9c89e">Blood</text>
-<text transform="translate(193,188)" font-size="86" style="fill:#d6a79f">Resistance</text>
-<text transform="translate(626,93)" font-size="86" style="fill:#d5d2c2">Waist</text>
-<text transform="translate(107,452)" font-size="86" style="fill:#a9b7a3">Less</text>
-<text transform="translate(1116,572) rotate(-90)" font-size="77" style="fill:#c7d7b5">Bengali</text>
-<text transform="translate(607,564) rotate(-90)" font-size="77" style="fill:#d5d2c2">Belly</text>
-<text transform="translate(673,595)" font-size="77" style="fill:#9fc9c5">Person</text>
-<text transform="translate(14,95)" font-size="77" style="fill:#c7d7b5">Much</text>
-<text transform="translate(629,376)" font-size="77" style="fill:#b6c3dd">Family</text>
-<text transform="translate(225,106)" font-size="77" style="fill:#d5d2c2">Becomes</text>
-<text transform="translate(942,134)" font-size="77" style="fill:#d88988">Tea</text>
-<text transform="translate(849,682)" font-size="77" style="fill:#b6c3dd">Work</text>
-<text transform="translate(732,172)" font-size="66" style="fill:#a9b7a3">BMI</text>
-<text transform="translate(409,520) rotate(-90)" font-size="66" style="fill:#d9c89e">Hba1c</text>
-<text transform="translate(904,426)" font-size="66" style="fill:#d6a79f">HDL</text>
-<text transform="translate(1037,54)" font-size="66" style="fill:#c49a6c">Fatty</text>
-<text transform="translate(314,56)" font-size="66" style="fill:#9fc9c5">Often</text>
-<text transform="translate(1227,591) rotate(-90)" font-size="66" style="fill:#d6a79f">Quietly</text>
-<text transform="translate(11,242)" font-size="66" style="fill:#d6a79f">Little</text>
-<text transform="translate(4,507)" font-size="66" style="fill:#d88988">Central</text>
-<text transform="translate(8,386)" font-size="50" style="fill:#d88988">Metabolic</text>
-<text transform="translate(1077,145)" font-size="50" style="fill:#a9b7a3">Normal</text>
-<text transform="translate(15,140)" font-size="50" style="fill:#d9c89e">Useful</text>
-<text transform="translate(882,58)" font-size="50" style="fill:#c7d7b5">Lunch</text>
-<text transform="translate(886,286)" font-size="50" style="fill:#9fc9c5">Real</text>
-<text transform="translate(419,534)" font-size="50" style="fill:#d6a79f">Poor</text>
-<text transform="translate(252,261)" font-size="50" style="fill:#d5d2c2">Sleep</text>
-<text transform="translate(916,333)" font-size="50" style="fill:#9fc9c5">Walk</text>
-<text transform="translate(1130,284)" font-size="41" style="fill:#a9b7a3">Mass</text>
-<text transform="translate(1035,707)" font-size="35" style="fill:#b6c3dd">Lipoprotein</text>
-<text transform="translate(545,136)" font-size="35" style="fill:#d6a79f">Pressure</text>
-<text transform="translate(425,446)" font-size="35" style="fill:#c7d7b5">T2D</text>
-<text transform="translate(21,175)" font-size="35" style="fill:#c49a6c">Ordinary</text>
-<text transform="translate(627,528)" font-size="35" style="fill:#a9b7a3">Shirt</text>
-<text transform="translate(866,135)" font-size="35" style="fill:#d9c89e">Thin</text>
-<text transform="translate(1092,101)" font-size="35" style="fill:#b6c3dd">Harmless</text>
-<text transform="translate(613,218)" font-size="35" style="fill:#e0b879">Heat</text>
-<text transform="translate(650,410)" font-size="35" style="fill:#9fc9c5">Thinfat</text>
-<text transform="translate(524,605)" font-size="35" style="fill:#e0b879">South</text>
-<text transform="translate(1017,260)" font-size="35" style="fill:#9fc9c5">Risk</text>
-<text transform="translate(424,359)" font-size="35" style="fill:#e0b879">Weight</text>
-<text transform="translate(945,362)" font-size="35" style="fill:#8fb7d0">Carry</text>
-<text transform="translate(413,481)" font-size="35" style="fill:#c7d7b5">Change</text>
-<text transform="translate(20,424)" font-size="35" style="fill:#c7d7b5">Tape</text>
-<text transform="translate(134,30)" font-size="35" style="fill:#9fc9c5">Measure</text>
-<text transform="translate(478,715)" font-size="35" style="fill:#d88988">Matters</text>
-<text transform="translate(902,536)" font-size="35" style="fill:#d5d2c2">Healthy</text>
-<text transform="translate(424,398)" font-size="35" style="fill:#e0b879">Needs</text>
-<text transform="translate(1161,590) rotate(-90)" font-size="35" style="fill:#d6a79f">Fasting</text>
-<text transform="translate(718,199)" font-size="31" style="fill:#8fb7d0">Sleepiness</text>
-<text transform="translate(794,714)" font-size="31" style="fill:#c7d7b5">Event</text>
-<text transform="translate(341,541) rotate(-90)" font-size="31" style="fill:#d5d2c2">Background</text>
-<text transform="translate(426,566)" font-size="31" style="fill:#a9b7a3">Bengal</text>
-<text transform="translate(521,222)" font-size="31" style="fill:#d6a79f">Food</text>
-<text transform="translate(752,539)" font-size="31" style="fill:#d5d2c2">Habit</text>
-<text transform="translate(637,715)" font-size="31" style="fill:#9fc9c5">Fish</text>
-<text transform="translate(626,457)" font-size="31" style="fill:#d5d2c2">Plate</text>
-<text transform="translate(1257,526) rotate(-90)" font-size="31" style="fill:#c49a6c">Serving</text>
-<text transform="translate(468,327)" font-size="31" style="fill:#e0b879">Starch</text>
-<text transform="translate(204,626)" font-size="31" style="fill:#c49a6c">Sitting</text>
-<text transform="translate(289,216)" font-size="31" style="fill:#d5d2c2">Snacks</text>
-<text transform="translate(13,26)" font-size="31" style="fill:#9fc9c5">Sugary</text>
-<text transform="translate(35,714)" font-size="31" style="fill:#8fb7d0">Biscuits</text>
-<text transform="translate(610,27)" font-size="31" style="fill:#c49a6c">Stress</text>
-<text transform="translate(1256,316) rotate(-90)" font-size="31" style="fill:#b6c3dd">History</text>
-<text transform="translate(1162,433) rotate(-90)" font-size="31" style="fill:#a9b7a3">Single</text>
-<text transform="translate(981,596)" font-size="31" style="fill:#c7d7b5">Biscuit</text>
-<text transform="translate(889,709)" font-size="27" style="fill:#e0b879">Paragraph</text>
-<text transform="translate(274,714)" font-size="27" style="fill:#8fb7d0">Pattern</text>
-<text transform="translate(804,422)" font-size="27" style="fill:#9fc9c5">Sweets</text>
-<text transform="translate(734,23)" font-size="27" style="fill:#e0b879">Sweetness</text>
-<text transform="translate(749,118)" font-size="27" style="fill:#e0b879">Protein</text>
-<text transform="translate(6,655)" font-size="27" style="fill:#c49a6c">Helps</text>
-<text transform="translate(785,621)" font-size="27" style="fill:#a9b7a3">Groceries</text>
-<text transform="translate(677,322)" font-size="27" style="fill:#c7d7b5">Chair</text>
-<text transform="translate(1103,169)" font-size="27" style="fill:#d6a79f">Glucose</text>
-<text transform="translate(808,226)" font-size="27" style="fill:#e0b879">Meals</text>
-<text transform="translate(1189,615)" font-size="27" style="fill:#e0b879">Fewer</text>
-<text transform="translate(517,53)" font-size="27" style="fill:#c7d7b5">Eating</text>
-<text transform="translate(1055,502) rotate(-90)" font-size="27" style="fill:#d5d2c2">Walking</text>
-<text transform="translate(12,619)" font-size="26" style="fill:#d5d2c2">Tenminute</text>
-<text transform="translate(774,672)" font-size="26" style="fill:#c7d7b5">Need</text>
-<text transform="translate(618,489)" font-size="26" style="fill:#d88988">Eaten</text>
-<text transform="translate(1184,239)" font-size="26" style="fill:#d6a79f">Dal</text>
-<text transform="translate(1128,307)" font-size="26" style="fill:#d88988">Fails</text>
-<text transform="translate(409,699) rotate(-90)" font-size="26" style="fill:#b6c3dd">Enough</text>
-<text transform="translate(243,130)" font-size="26" style="fill:#d5d2c2">Improve</text>
-<text transform="translate(422,319) rotate(-90)" font-size="26" style="fill:#d6a79f">Message</text>
-<text transform="translate(72,525)" font-size="19" style="fill:#c7d7b5">Acronyms</text>
-<text transform="translate(15,319)" font-size="19" style="fill:#a9b7a3">Used</text>
-<text transform="translate(298,577) rotate(-90)" font-size="19" style="fill:#a9b7a3">Index</text>
-<text transform="translate(166,525)" font-size="18" style="fill:#d5d2c2">Hemoglobin</text>
-<text transform="translate(946,633)" font-size="18" style="fill:#c49a6c">A1c</text>
-<text transform="translate(1123,602)" font-size="18" style="fill:#a9b7a3">Test</text>
-<text transform="translate(6,450)" font-size="18" style="fill:#e0b879">Estimates</text>
-<text transform="translate(649,611) rotate(-90)" font-size="18" style="fill:#c7d7b5">Average</text>
-<text transform="translate(1210,648)" font-size="18" style="fill:#d88988">Three</text>
-<text transform="translate(432,206)" font-size="18" style="fill:#d9c89e">Months</text>
-<text transform="translate(409,589)" font-size="17" style="fill:#c49a6c">Highdensity</text>
-<text transform="translate(138,309)" font-size="17" style="fill:#8fb7d0">LDL</text>
-<text transform="translate(988,80)" font-size="17" style="fill:#d5d2c2">Lowdensity</text>
-<text transform="translate(569,108)" font-size="15" style="fill:#a9b7a3">Triglycerides</text>
-<text transform="translate(391,130)" font-size="15" style="fill:#c7d7b5">NAFLD</text>
-<text transform="translate(654,612)" font-size="15" style="fill:#8fb7d0">Nonalcoholic</text>
-<text transform="translate(777,636)" font-size="15" style="fill:#d6a79f">Disease</text>
-<text transform="translate(857,154)" font-size="15" style="fill:#9fc9c5">Type</text>
-<text transform="translate(884,74)" font-size="15" style="fill:#d9c89e">Diabetes</text>
-<text transform="translate(433,416)" font-size="15" style="fill:#e0b879">Arrives</text>
-<text transform="translate(1042,164)" font-size="15" style="fill:#a9b7a3">Wrists</text>
-<text transform="translate(1218,176)" font-size="15" style="fill:#c49a6c">Calves</text>
-<text transform="translate(697,274) rotate(-90)" font-size="15" style="fill:#9fc9c5">Face</text>
-<text transform="translate(856,324) rotate(-90)" font-size="15" style="fill:#b6c3dd">Even</text>
-<text transform="translate(547,69)" font-size="15" style="fill:#c7d7b5">Seem</text>
-<text transform="translate(1180,542) rotate(-90)" font-size="15" style="fill:#9fc9c5">Lean</text>
-<text transform="translate(718,702)" font-size="15" style="fill:#9fc9c5">Clings</text>
-<text transform="translate(190,708)" font-size="15" style="fill:#d9c89e">Bends</text>
-<text transform="translate(429,318)" font-size="15" style="fill:#d88988">Lift</text>
-<text transform="translate(991,561)" font-size="15" style="fill:#d5d2c2">Market</text>
-<text transform="translate(534,375)" font-size="15" style="fill:#d9c89e">Bag</text>
-<text transform="translate(936,615)" font-size="15" style="fill:#9fc9c5">Truth</text>
-<text transform="translate(1166,211)" font-size="15" style="fill:#d9c89e">Steps</text>
-<text transform="translate(605,312)" font-size="15" style="fill:#d9c89e">Forward</text>
-<text transform="translate(938,203)" font-size="15" style="fill:#d6a79f">Firm</text>
+<text transform="translate(792,602)" font-size="118" style="fill:#a9b7a3">Fat</text>
+<text transform="translate(143,331)" font-size="109" style="fill:#a9b7a3">Rice</text>
+<text transform="translate(490,240)" font-size="100" style="fill:#c49a6c">Sugar</text>
+<text transform="translate(410,563)" font-size="95" style="fill:#c49a6c">Liver</text>
+<text transform="translate(1099,374)" font-size="95" style="fill:#d88988">Man</text>
+<text transform="translate(521,161)" font-size="95" style="fill:#d9c89e">Tea</text>
+<text transform="translate(51,491)" font-size="95" style="fill:#c49a6c">Muscle</text>
+<text transform="translate(988,278)" font-size="90" style="fill:#d9c89e">Belly</text>
+<text transform="translate(162,679)" font-size="90" style="fill:#d6a79f">Insulin</text>
+<text transform="translate(790,95)" font-size="84" style="fill:#d5d2c2">Often</text>
+<text transform="translate(490,423)" font-size="84" style="fill:#a9b7a3">Bengali</text>
+<text transform="translate(1036,452) rotate(-90)" font-size="84" style="fill:#c7d7b5">Gas</text>
+<text transform="translate(475,399) rotate(-90)" font-size="84" style="fill:#d5d2c2">Mishti</text>
+<text transform="translate(1013,623)" font-size="78" style="fill:#9fc9c5">Blood</text>
+<text transform="translate(879,159)" font-size="78" style="fill:#c7d7b5">Big</text>
+<text transform="translate(611,691)" font-size="78" style="fill:#b6c3dd">Sometimes</text>
+<text transform="translate(203,607)" font-size="72" style="fill:#d5d2c2">Less</text>
+<text transform="translate(487,74)" font-size="72" style="fill:#d88988">Becomes</text>
+<text transform="translate(746,496)" font-size="65" style="fill:#b6c3dd">Bad</text>
+<text transform="translate(6,98)" font-size="65" style="fill:#a9b7a3">Enough</text>
+<text transform="translate(926,415) rotate(-90)" font-size="65" style="fill:#d9c89e">Little</text>
+<text transform="translate(1053,473)" font-size="65" style="fill:#d6a79f">Small</text>
+<text transform="translate(77,178)" font-size="65" style="fill:#c49a6c">Looks</text>
+<text transform="translate(1020,153)" font-size="65" style="fill:#9fc9c5">Office</text>
+<text transform="translate(551,334)" font-size="65" style="fill:#d5d2c2">Family</text>
+<text transform="translate(31,247)" font-size="65" style="fill:#d9c89e">Waist</text>
+<text transform="translate(15,388)" font-size="58" style="fill:#d88988">BMI</text>
+<text transform="translate(49,539)" font-size="58" style="fill:#d88988">Resistance</text>
+<text transform="translate(244,92)" font-size="58" style="fill:#a9b7a3">Normal</text>
+<text transform="translate(1094,80)" font-size="58" style="fill:#d9c89e">Chair</text>
+<text transform="translate(703,163)" font-size="58" style="fill:#c7d7b5">Thin</text>
+<text transform="translate(1023,530)" font-size="58" style="fill:#9fc9c5">Making</text>
+<text transform="translate(525,622)" font-size="58" style="fill:#d6a79f">Whether</text>
+<text transform="translate(390,479)" font-size="58" style="fill:#d5d2c2">Bellies</text>
+<text transform="translate(164,396)" font-size="58" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(26,617)" font-size="58" style="fill:#a9b7a3">Work</text>
+<text transform="translate(1019,204)" font-size="54" style="fill:#b6c3dd">Biscuits</text>
+<text transform="translate(26,698)" font-size="54" style="fill:#c7d7b5">Plus</text>
+<text transform="translate(1052,696)" font-size="54" style="fill:#e0b879">Sweets</text>
+<text transform="translate(239,239)" font-size="54" style="fill:#9fc9c5">Meals</text>
+<text transform="translate(18,302)" font-size="54" style="fill:#a9b7a3">Need</text>
+<text transform="translate(134,41)" font-size="47" style="fill:#d9c89e">Hba1c</text>
+<text transform="translate(961,40)" font-size="47" style="fill:#b6c3dd">HDL</text>
+<text transform="translate(271,176)" font-size="47" style="fill:#e0b879">Fatty</text>
+<text transform="translate(854,344) rotate(-90)" font-size="47" style="fill:#9fc9c5">Always</text>
+<text transform="translate(1054,417)" font-size="47" style="fill:#e0b879">Arrive</text>
+<text transform="translate(969,381) rotate(-90)" font-size="47" style="fill:#9fc9c5">Quietly</text>
+<text transform="translate(247,136)" font-size="47" style="fill:#e0b879">Stall</text>
+<text transform="translate(316,40)" font-size="47" style="fill:#8fb7d0">Remain</text>
+<text transform="translate(865,498)" font-size="47" style="fill:#c7d7b5">Alone</text>
+<text transform="translate(541,372)" font-size="47" style="fill:#c7d7b5">Matters</text>
+<text transform="translate(38,539) rotate(-90)" font-size="47" style="fill:#9fc9c5">Story</text>
+<text transform="translate(674,560)" font-size="47" style="fill:#d88988">Deep</text>
+<text transform="translate(377,605)" font-size="47" style="fill:#b6c3dd">Phone</text>
+<text transform="translate(377,715)" font-size="44" style="fill:#d6a79f">Metabolic</text>
+<text transform="translate(6,36)" font-size="42" style="fill:#8fb7d0">Carry</text>
+<text transform="translate(107,434)" font-size="42" style="fill:#c7d7b5">Someone</text>
+<text transform="translate(170,707)" font-size="32" style="fill:#a9b7a3">Stamping</text>
+<text transform="translate(337,433)" font-size="32" style="fill:#c7d7b5">South</text>
+<text transform="translate(643,470)" font-size="32" style="fill:#d5d2c2">Many</text>
+<text transform="translate(668,271)" font-size="32" style="fill:#9fc9c5">Ordinary</text>
+<text transform="translate(55,567)" font-size="32" style="fill:#d5d2c2">Room</text>
+<text transform="translate(1274,712) rotate(-90)" font-size="32" style="fill:#c49a6c">Starch</text>
+<text transform="translate(69,341)" font-size="32" style="fill:#e0b879">Food</text>
+<text transform="translate(42,646)" font-size="32" style="fill:#d6a79f">Lunch</text>
+<text transform="translate(699,525)" font-size="32" style="fill:#c49a6c">Court</text>
+<text transform="translate(508,341) rotate(-90)" font-size="32" style="fill:#9fc9c5">Eaten</text>
+<text transform="translate(690,114)" font-size="32" style="fill:#8fb7d0">Fewer</text>
+<text transform="translate(878,630)" font-size="32" style="fill:#c49a6c">Walking</text>
+<text transform="translate(868,448)" font-size="26" style="fill:#b6c3dd">Number</text>
+<text transform="translate(1061,24)" font-size="26" style="fill:#a9b7a3">Lipoprotein</text>
+<text transform="translate(728,27)" font-size="26" style="fill:#c7d7b5">Called</text>
+<text transform="translate(1037,648)" font-size="26" style="fill:#e0b879">Cholesterol</text>
+<text transform="translate(869,715)" font-size="26" style="fill:#8fb7d0">Walls</text>
+<text transform="translate(1037,558)" font-size="26" style="fill:#9fc9c5">Needs</text>
+<text transform="translate(615,23)" font-size="26" style="fill:#e0b879">NAFLD</text>
+<text transform="translate(637,98)" font-size="26" style="fill:#e0b879">T2D</text>
+<text transform="translate(535,504)" font-size="26" style="fill:#c49a6c">Diabetes</text>
+<text transform="translate(754,625)" font-size="26" style="fill:#a9b7a3">Common</text>
+<text transform="translate(659,714)" font-size="26" style="fill:#c7d7b5">Pattern</text>
+<text transform="translate(267,264)" font-size="26" style="fill:#d6a79f">Control</text>
+<text transform="translate(1267,532) rotate(-90)" font-size="26" style="fill:#e0b879">Obesity</text>
+<text transform="translate(1044,358)" font-size="26" style="fill:#e0b879">Cup</text>
+<text transform="translate(1187,104)" font-size="26" style="fill:#8fb7d0">Large</text>
+<text transform="translate(511,270)" font-size="26" style="fill:#d5d2c2">Puja</text>
+<text transform="translate(884,527)" font-size="26" style="fill:#d5d2c2">San</text>
+<text transform="translate(986,304)" font-size="26" style="fill:#c7d7b5">Antonio</text>
+<text transform="translate(30,121)" font-size="25" style="fill:#d88988">Entering</text>
+<text transform="translate(1134,299)" font-size="25" style="fill:#d6a79f">Even</text>
+<text transform="translate(1127,566)" font-size="25" style="fill:#d88988">Shirt</text>
+<text transform="translate(873,22)" font-size="25" style="fill:#a9b7a3">Heat</text>
+<text transform="translate(728,440)" font-size="18" style="fill:#c49a6c">Vegetables</text>
+<text transform="translate(9,170)" font-size="18" style="fill:#d9c89e">Round</text>
+<text transform="translate(102,663)" font-size="18" style="fill:#d6a79f">Thinfat</text>
+<text transform="translate(705,643)" font-size="18" style="fill:#c7d7b5">Almost</text>
+<text transform="translate(595,285)" font-size="18" style="fill:#a9b7a3">Hiding</text>
+<text transform="translate(437,659) rotate(-90)" font-size="18" style="fill:#a9b7a3">Arms</text>
+<text transform="translate(299,557)" font-size="18" style="fill:#d5d2c2">Conspiracy</text>
+<text transform="translate(146,570)" font-size="18" style="fill:#c49a6c">Legs</text>
+<text transform="translate(966,515)" font-size="18" style="fill:#9fc9c5">Taken</text>
+<text transform="translate(922,464)" font-size="18" style="fill:#9fc9c5">Arrangement</text>
+<text transform="translate(510,154) rotate(-90)" font-size="18" style="fill:#e0b879">Stored</text>
+<text transform="translate(781,709)" font-size="18" style="fill:#c7d7b5">Writing</text>
+<text transform="translate(860,176)" font-size="18" style="fill:#c49a6c">Middleaged</text>
+<text transform="translate(1195,223)" font-size="18" style="fill:#8fb7d0">Noise</text>
+<text transform="translate(830,387)" font-size="18" style="fill:#d5d2c2">Anxiety</text>
+<text transform="translate(800,122)" font-size="18" style="fill:#a9b7a3">Ceiling</text>
+<text transform="translate(658,179)" font-size="18" style="fill:#c7d7b5">Government</text>
+<text transform="translate(1127,714)" font-size="18" style="fill:#8fb7d0">Outside</text>
+<text transform="translate(280,203)" font-size="18" style="fill:#8fb7d0">Clerk</text>
+<text transform="translate(959,709)" font-size="18" style="fill:#9fc9c5">Carrying</text>
+<text transform="translate(300,54) rotate(-90)" font-size="18" style="fill:#d88988">Bags</text>
+<text transform="translate(758,243)" font-size="18" style="fill:#d88988">Damp</text>
+<text transform="translate(148,197)" font-size="18" style="fill:#a9b7a3">Wall</text>
+<text transform="translate(1084,169)" font-size="18" style="fill:#c49a6c">News</text>
+<text transform="translate(795,410) rotate(-90)" font-size="18" style="fill:#9fc9c5">National</text>
+<text transform="translate(19,701) rotate(-90)" font-size="18" style="fill:#b6c3dd">Emergency</text>
+<text transform="translate(527,23)" font-size="18" style="fill:#c7d7b5">Stomach</text>
+<text transform="translate(17,595) rotate(-90)" font-size="18" style="fill:#9fc9c5">Water</text>
+<text transform="translate(449,541)" font-size="18" style="fill:#9fc9c5">Pot</text>
+<text transform="translate(332,701)" font-size="18" style="fill:#d9c89e">Say</text>
+<text transform="translate(1180,317)" font-size="18" style="fill:#d88988">Pancreas</text>
+<text transform="translate(200,353)" font-size="18" style="fill:#d5d2c2">Working</text>
+<text transform="translate(872,345) rotate(-90)" font-size="18" style="fill:#d9c89e">Supposed</text>
+<text transform="translate(679,581)" font-size="18" style="fill:#9fc9c5">Healthy</text>
+<text transform="translate(7,196)" font-size="18" style="fill:#d9c89e">Knocks</text>
+<text transform="translate(446,423)" font-size="18" style="fill:#d9c89e">Door</text>
+<text transform="translate(546,178)" font-size="18" style="fill:#d6a79f">Tomorrow</text>
+<text transform="translate(554,654)" font-size="18" style="fill:#d6a79f">Works</text>
+<text transform="translate(818,246) rotate(-90)" font-size="18" style="fill:#e0b879">Fasting</text>
 </svg>

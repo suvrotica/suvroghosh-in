@@ -1,54 +1,79 @@
 ---
 title: "When the Mind Refuses to Stay in One Place"
-description: "A personal essay on worry, bodily discomfort, loneliness, and the daily nuisance of living with a mind that keeps leaving the chair."
+description: "A personal essay on depression, loneliness, worry, bodily discomfort, and the strange daily business of living with a mind that does not always feel like an ally."
 date: "2026-05-27"
 thumbnail: "/images/Compress_20260527_102513_3412.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Personal Essay", "Worry", "Calcutta", "Inner Life", "Reflection", "SuvroGhosh"]
+tags: ["Video", "Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Loneliness", "Mood Swings", "Self Doubt", "Emotional Health", "Middle Age", "Calcutta Life", "Kolkata Blog", "Indian Mental Health", "Living With Depression", "Unemployment Shame", "Executive Dysfunction", "Nervous System", "Emotional Resilience", "Human Psychology", "Personal Reflection", "Readable Essays", "SuvroGhosh"]
 published: true
 color: "indigo"
 ---
-
 <TTS />
+<Pi src="Compress_20260527_102513_3412.jpg" />
 
-<Pi src="Compress_20260527_102513_3412.jpg" alt="Article illustration for an essay on a restless mind" />
 
-The chair is still, but the mind has left it.
+Depression does not always kick the door open. That would be too honest of it. Many days it enters like damp through a wall in an old Calcutta room, one faint stain first, then a smell, then a whole geography of gloom quietly spreading behind the almirah.
 
-That is the annoyance. The body sits in one room in Calcutta. The mind has gone to an unpaid bill, an old insult, a future humiliation, a message not answered, a health worry, a career worry, a small bodily sensation that suddenly demands a committee. It returns for three seconds, finds the chair inadequate, and leaves again.
+Today it came through loneliness, worry, and discomfort.
 
-People speak of distraction as if it were a lack of discipline.
+Not tragedy. Not thunder. Not some grand operatic collapse where I clutch the balcony railing and the violins behave like they have been personally insulted. Just ordinary things. The room too warm. The body slightly wrong. The mind too empty in one corner and too crowded in another. The phone silent except for advertisements, bill reminders, news alerts, and other tiny mosquitoes of modern life.
 
-Sometimes it is. Often it is more intimate than that. The mind is not browsing. It is patrolling. It checks doors that are already locked. It reviews conversations nobody else remembers. It examines small discomforts as if each one contains a prophecy. It tries to protect you by exhausting you first.
+This is how depression cheats. It does not always say, “You are sad.” That would be manageable. It says, “This is the truth.” It takes a lonely afternoon and turns it into a lifetime certificate. It takes one unpaid bill and makes it look like a biography. It takes a body that needs rest and announces, with the confidence of a corrupt local official, that the whole man is finished.
 
-This is a poor security system.
+And the worst part is that the voice sounds like mine.
 
-It produces alerts without triage. Everything becomes a possible emergency. A missed call, a tight muscle, a bank message, a news headline, a silence from someone who usually replies quickly. The system rings. The body responds. Then nothing happens, except energy has been spent and the day has become narrower.
+That is the small private horror: I do not have a stable relationship with my own mind. Some people wake up and their mind is a reasonable clerk. It opens files, stamps papers, says, “Tea first, then work,” and lets the day proceed. My mind is sometimes that clerk. On other days it is a committee meeting in a leaking municipal building where everyone is shouting, nobody has the correct file, and one ceiling fan is making a sound like a dying helicopter.
 
-Loneliness makes this worse.
+A mind like that is not romantic. It is tiring.
 
-When there is no easy witness, the mind becomes its own overheated newsroom. It reports, speculates, corrects, accuses, replays, predicts, and publishes updates to an audience of one. The problem is not simply being alone. Solitude can be clean. The problem is being alone with a mind that behaves like a badly run control room.
+People outside it often say cheerful things. Go for a walk. Think positive. Be grateful. Do yoga. Drink water. Make a plan. All good advice in the same way that “build a bridge” is good advice when you are standing on one side of a river wearing slippers and holding a plastic bag full of vegetables. Correct, yes. Immediately usable, not always.
 
-Calcutta provides background noise, but not always company.
+Because depression is not only a thought problem. It is also a body problem, a sleep problem, a money problem, a memory problem, a room problem, a weather problem, a loneliness problem. A man is not a floating brain in a glass jar, though some days the internet seems designed by people who believe this. A man is a stomach, a spine, a bank account, a chair, a fan, a past, a future, and a cup of tea gone cold beside the laptop.
 
-The city is full of voices, engines, vendors, utensils, neighbors, and footsteps. Yet one can sit in the middle of it and feel sealed behind glass. Noise is not companionship. Crowdedness is not recognition. A person can be surrounded and still have no place to put one honest sentence.
+The body matters more than we admit. A bad night’s sleep can turn a small worry into a courtroom drama. Heat can make the soul feel badly installed. A sour stomach, a sticky shirt, a noisy neighbor, a chair that attacks the lower back like a minor criminal—these things do not look serious from outside. From inside, they become evidence. Depression collects evidence the way a nosy para uncle collects gossip: selectively, eagerly, and without a trace of mercy.
 
-The trick, perhaps, is not to force the mind into obedience.
+Loneliness does the rest.
 
-That rarely works. Commanding the mind to be still is like commanding a leaking tap to consider the dignity of silence. Better to reduce the size of the task. Do not solve the life. Do not interrogate the body for hidden news. Do not answer every imaginary court summons. Put one object where it belongs. Drink water. Write the worry down and let paper hold it badly for a while.
+Loneliness is not just the absence of people. It is the absence of interruption. Nobody comes in and says something foolish. Nobody asks where the scissors are. Nobody complains about the price of tomatoes. Nobody distracts you from yourself. And when a person is alone too long, the mind starts chewing its own shirt collar. It manufactures news. It opens old cases. It brings up mistakes from 1998 with the freshness of breaking news.
 
-Paper is underrated because it does not interrupt.
+Meanwhile the real news goes on shouting. Markets rise, governments perform their usual circus tricks, artificial intelligence promises to change everything except the price of fish, and somewhere in the city a man is bargaining over coriander with more confidence than I have in my future. This is the peculiar comedy of being alive. The world continues to fry onions while your inner life is burning down a small shed.
 
-Once the worry is written, it becomes less fog and more item. Some items require action. Some require waiting. Some are merely old fear wearing today's shirt. The act of sorting does not cure anything, but it reduces the monarchy of panic. Not every thought deserves the throne.
+I am fifty-one. That number has a sound. At twenty-five, sadness feels like weather. At fifty-one, it starts carrying a file. It asks what you have done, what you failed to do, who stayed, who left, what money is coming, what work remains, what will happen if the mind slips again. A younger man can sometimes outrun these questions. A middle-aged man has to sit across from them and pretend the plastic chair is comfortable.
 
-There is also relief in ordinary physical proof.
+But here is the catch.
 
-Feet on the floor. Palm on the table. Cup warm in hand. A fan moving air. The small municipal fact of gravity. These do not solve the mind, but they remind it that the body has not vanished into speculation. The room exists. The chair exists. The present, however unimpressive, has not resigned.
+A depressed mind is not always a reliable witness.
 
-The mind may leave again.
+It may speak loudly. It may speak with grammar. It may even produce impressive arguments, complete with old memories, financial charts, emotional footnotes, and that special gloomy music it keeps in the cupboard for special occasions. But loudness is not truth. Fluency is not truth. The mind can be eloquent and still be wrong.
 
-Let it. It knows the lanes too well. It will return carrying some absurd file. When it does, I try, with mixed success, to behave like a patient clerk: receive the file, stamp it "not now," and place it on the side.
+That does not make the suffering fake. It makes the interpretation suspect.
 
-There are many papers on the side.
+This is important. Pain is real. The story pain tells may not be.
 
-The chair remains.
+Today the pain says loneliness proves failure. Not necessarily. Loneliness may prove only loneliness. Today the worry says uncertainty means disaster. Not necessarily. Uncertainty may mean only that tomorrow has not yet shown its face. Today discomfort says the body is betraying me. Not necessarily. It may simply be asking, with poor manners, for rest, food, water, medicine, air, or less doom-scrolling in a half-lit room.
+
+Small distinctions. Large consequences.
+
+I do not need to win the whole war today. That is too much cinema. I need to avoid becoming the enemy’s stenographer. I need not write down every cruel sentence the mind dictates. I can let some of them pass like political slogans from a loudspeaker van: noisy, repetitive, not legally binding.
+
+So the work becomes modest. Almost embarrassingly modest.
+
+Wash the face. Make tea. Eat something that did not come only from anxiety. Open the window. Move one object from the bed to the table. Reply to one message, not ten. Sit near light. Do not make a lifelong judgment while the nervous system is behaving like a goat trapped in a tin shed. Let the day become smaller. A day can be carried. A lifetime cannot.
+
+This is not inspirational. Good. Inspiration often behaves like cheap perfume in a crowded bus. Too much, too quickly, and no real help. I prefer the humbler truth: sometimes survival is not a heroic climb. Sometimes it is not adding extra poison to an already bitter cup.
+
+Do not insult yourself.
+
+That may be the first task.
+
+Not love yourself. That is advanced work, like repairing a ceiling fan while it is still rotating. Just do not insult yourself. Do not join the prosecution. Do not call one low day a verdict. Do not confuse a chemical shadow with moral knowledge. Do not let depression sit in your chair, drink your tea, and issue government orders in your name.
+
+I am still here. That sentence is not decorative. It has weight.
+
+Still here, in the sticky heat, with worry at the edge of the bed and loneliness standing near the window like an unpaid visitor. Still here, with a mind that will not always sit properly but has not yet left the room. Still here, not victorious, not cured, not shining like a motivational poster in a gym, but breathing, noticing, naming the trick.
+
+A flickering bulb is not darkness.
+
+It is a flickering bulb.
+
+And sometimes, in a room like this, that is enough light to find the cup.

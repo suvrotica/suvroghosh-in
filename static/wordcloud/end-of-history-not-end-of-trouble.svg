@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(112,663) rotate(-90)" font-size="118" style="fill:#d6a79f">Democracy</text>
-<text transform="translate(814,84)" font-size="87" style="fill:#c49a6c">History</text>
-<text transform="translate(136,219)" font-size="87" style="fill:#9fc9c5">Liberal</text>
-<text transform="translate(469,447)" font-size="87" style="fill:#d88988">Sometimes</text>
-<text transform="translate(564,685)" font-size="82" style="fill:#e0b879">End</text>
-<text transform="translate(563,263)" font-size="82" style="fill:#b6c3dd">Capitalism</text>
-<text transform="translate(731,534)" font-size="65" style="fill:#8fb7d0">War</text>
-<text transform="translate(215,115)" font-size="65" style="fill:#c49a6c">Fukuyama</text>
-<text transform="translate(906,663)" font-size="65" style="fill:#d5d2c2">Politics</text>
-<text transform="translate(611,587)" font-size="65" style="fill:#9fc9c5">Automatically</text>
-<text transform="translate(686,358)" font-size="65" style="fill:#b6c3dd">Calls</text>
-<text transform="translate(957,351)" font-size="58" style="fill:#d88988">Elections</text>
-<text transform="translate(849,134)" font-size="58" style="fill:#a9b7a3">Power</text>
-<text transform="translate(157,638)" font-size="58" style="fill:#e0b879">Market</text>
-<text transform="translate(229,589) rotate(-90)" font-size="58" style="fill:#e0b879">Dignity</text>
-<text transform="translate(977,528)" font-size="58" style="fill:#d6a79f">Defeated</text>
-<text transform="translate(399,670)" font-size="58" style="fill:#e0b879">Fear</text>
-<text transform="translate(395,540)" font-size="58" style="fill:#9fc9c5">Useful</text>
-<text transform="translate(245,713)" font-size="50" style="fill:#c49a6c">Phrase</text>
-<text transform="translate(250,333)" font-size="50" style="fill:#e0b879">Democratic</text>
-<text transform="translate(1214,259) rotate(-90)" font-size="50" style="fill:#e0b879">Soviet</text>
-<text transform="translate(521,190)" font-size="50" style="fill:#b6c3dd">Institutions</text>
-<text transform="translate(989,416)" font-size="50" style="fill:#d9c89e">Markets</text>
-<text transform="translate(360,61)" font-size="50" style="fill:#9fc9c5">Fascism</text>
-<text transform="translate(169,272)" font-size="50" style="fill:#8fb7d0">Authoritarian</text>
-<text transform="translate(981,473)" font-size="50" style="fill:#d9c89e">Leader</text>
-<text transform="translate(921,178)" font-size="50" style="fill:#9fc9c5">Contempt</text>
-<text transform="translate(527,123)" font-size="48" style="fill:#a9b7a3">Recognition</text>
-<text transform="translate(43,519) rotate(-90)" font-size="48" style="fill:#8fb7d0">Invisible</text>
-<text transform="translate(42,707)" font-size="48" style="fill:#a9b7a3">Hand</text>
-<text transform="translate(577,49)" font-size="48" style="fill:#b6c3dd">Argument</text>
-<text transform="translate(389,594)" font-size="48" style="fill:#d9c89e">Perhaps</text>
-<text transform="translate(292,379)" font-size="48" style="fill:#b6c3dd">Thesis</text>
-<text transform="translate(1119,573)" font-size="48" style="fill:#a9b7a3">Less</text>
-<text transform="translate(760,637)" font-size="48" style="fill:#d88988">India</text>
-<text transform="translate(160,47)" font-size="48" style="fill:#9fc9c5">Party</text>
-<text transform="translate(1125,712)" font-size="48" style="fill:#9fc9c5">Whole</text>
-<text transform="translate(344,539) rotate(-90)" font-size="48" style="fill:#d88988">Alive</text>
-<text transform="translate(723,714)" font-size="48" style="fill:#9fc9c5">Globalization</text>
-<text transform="translate(1253,289) rotate(-90)" font-size="48" style="fill:#a9b7a3">Suspicion</text>
-<text transform="translate(168,589) rotate(-90)" font-size="48" style="fill:#d9c89e">Prosperity</text>
-<text transform="translate(409,490)" font-size="48" style="fill:#d5d2c2">Version</text>
-<text transform="translate(783,487)" font-size="48" style="fill:#b6c3dd">Counts</text>
-<text transform="translate(778,302)" font-size="48" style="fill:#e0b879">Becomes</text>
-<text transform="translate(389,489) rotate(-90)" font-size="48" style="fill:#c7d7b5">Say</text>
-<text transform="translate(471,371)" font-size="48" style="fill:#9fc9c5">Better</text>
-<text transform="translate(1053,289)" font-size="39" style="fill:#8fb7d0">Morning</text>
-<text transform="translate(375,593) rotate(-90)" font-size="39" style="fill:#b6c3dd">Room</text>
-<text transform="translate(734,670)" font-size="39" style="fill:#8fb7d0">Weather</text>
-<text transform="translate(764,391)" font-size="39" style="fill:#e0b879">Means</text>
-<text transform="translate(619,490)" font-size="39" style="fill:#d88988">Cold</text>
-<text transform="translate(1146,616)" font-size="39" style="fill:#d5d2c2">World</text>
-<text transform="translate(1182,469)" font-size="39" style="fill:#d6a79f">Bloc</text>
-<text transform="translate(426,706)" font-size="39" style="fill:#c7d7b5">Rights</text>
-<text transform="translate(682,301)" font-size="39" style="fill:#d6a79f">Rule</text>
-<text transform="translate(257,568)" font-size="39" style="fill:#c49a6c">Law</text>
-<text transform="translate(302,530) rotate(-90)" font-size="39" style="fill:#d9c89e">Work</text>
-<text transform="translate(34,205) rotate(-90)" font-size="39" style="fill:#d6a79f">Worship</text>
-<text transform="translate(116,148)" font-size="38" style="fill:#d6a79f">Nationalism</text>
-<text transform="translate(1056,138)" font-size="38" style="fill:#8fb7d0">Sense</text>
-<text transform="translate(958,420) rotate(-90)" font-size="38" style="fill:#d9c89e">Human</text>
-<text transform="translate(206,670)" font-size="37" style="fill:#d9c89e">Produce</text>
-<text transform="translate(374,624)" font-size="36" style="fill:#9fc9c5">Francis</text>
-<text transform="translate(550,307)" font-size="36" style="fill:#d88988">Model</text>
-<text transform="translate(911,394) rotate(-90)" font-size="36" style="fill:#8fb7d0">Many</text>
-<text transform="translate(1167,249) rotate(-90)" font-size="36" style="fill:#8fb7d0">Won</text>
-<text transform="translate(956,212)" font-size="36" style="fill:#8fb7d0">Formal</text>
-<text transform="translate(266,476) rotate(-90)" font-size="36" style="fill:#d88988">Mood</text>
-<text transform="translate(1005,31)" font-size="36" style="fill:#d5d2c2">Problem</text>
-<text transform="translate(284,300)" font-size="34" style="fill:#e0b879">Greatness</text>
-<text transform="translate(462,148)" font-size="29" style="fill:#d88988">Minorities</text>
-<text transform="translate(848,519)" font-size="29" style="fill:#b6c3dd">Society</text>
-<text transform="translate(605,524)" font-size="29" style="fill:#c49a6c">Raised</text>
-<text transform="translate(138,270) rotate(-90)" font-size="29" style="fill:#a9b7a3">Clothes</text>
-<text transform="translate(675,75)" font-size="29" style="fill:#e0b879">Saying</text>
-<text transform="translate(1160,377)" font-size="27" style="fill:#c49a6c">Cruelty</text>
-<text transform="translate(549,333)" font-size="27" style="fill:#c7d7b5">Final</text>
-<text transform="translate(596,709)" font-size="27" style="fill:#b6c3dd">System</text>
-<text transform="translate(1165,23)" font-size="27" style="fill:#d6a79f">Answer</text>
-<text transform="translate(662,212)" font-size="27" style="fill:#9fc9c5">Form</text>
-<text transform="translate(571,86)" font-size="27" style="fill:#b6c3dd">Always</text>
-<text transform="translate(626,612)" font-size="27" style="fill:#d88988">Country</text>
-<text transform="translate(157,294)" font-size="25" style="fill:#a9b7a3">Speech</text>
-<text transform="translate(61,21)" font-size="23" style="fill:#a9b7a3">Capture</text>
-<text transform="translate(946,609)" font-size="23" style="fill:#d5d2c2">Obedience</text>
-<text transform="translate(678,150)" font-size="23" style="fill:#a9b7a3">Police</text>
-<text transform="translate(160,701)" font-size="23" style="fill:#9fc9c5">Family</text>
-<text transform="translate(508,563)" font-size="23" style="fill:#c49a6c">Showed</text>
-<text transform="translate(1200,410)" font-size="23" style="fill:#d88988">Walls</text>
-<text transform="translate(371,158)" font-size="23" style="fill:#c49a6c">Story</text>
-<text transform="translate(155,113)" font-size="23" style="fill:#c7d7b5">Lost</text>
-<text transform="translate(398,27)" font-size="23" style="fill:#b6c3dd">Smooth</text>
-<text transform="translate(1059,241)" font-size="23" style="fill:#c7d7b5">Cheap</text>
-<text transform="translate(555,394)" font-size="23" style="fill:#a9b7a3">Arrived</text>
-<text transform="translate(552,619)" font-size="23" style="fill:#c7d7b5">Real</text>
-<text transform="translate(1019,311)" font-size="23" style="fill:#a9b7a3">Modern</text>
-<text transform="translate(816,157)" font-size="23" style="fill:#d9c89e">Bread</text>
-<text transform="translate(145,73)" font-size="23" style="fill:#d88988">Phone</text>
-<text transform="translate(965,373)" font-size="23" style="fill:#d6a79f">School</text>
-<text transform="translate(22,690) rotate(-90)" font-size="23" style="fill:#9fc9c5">Government</text>
-<text transform="translate(240,589)" font-size="23" style="fill:#d88988">Survive</text>
-<text transform="translate(921,24)" font-size="23" style="fill:#c49a6c">Give</text>
-<text transform="translate(137,541) rotate(-90)" font-size="23" style="fill:#9fc9c5">Humiliated</text>
-<text transform="translate(370,399)" font-size="23" style="fill:#9fc9c5">Someone</text>
-<text transform="translate(1274,180) rotate(-90)" font-size="23" style="fill:#d88988">Humiliation</text>
-<text transform="translate(660,380)" font-size="23" style="fill:#a9b7a3">Return</text>
-<text transform="translate(124,662)" font-size="23" style="fill:#d6a79f">Solve</text>
-<text transform="translate(1055,373)" font-size="23" style="fill:#a9b7a3">Elected</text>
-<text transform="translate(502,23)" font-size="23" style="fill:#d88988">Equal</text>
-<text transform="translate(1275,308) rotate(-90)" font-size="23" style="fill:#a9b7a3">Citizen</text>
-<text transform="translate(1101,432)" font-size="17" style="fill:#d9c89e">Vocabulary</text>
-<text transform="translate(1050,104)" font-size="17" style="fill:#c49a6c">Freedom</text>
-<text transform="translate(995,434)" font-size="17" style="fill:#e0b879">Workplace</text>
-<text transform="translate(306,36)" font-size="17" style="fill:#b6c3dd">Order</text>
-<text transform="translate(1172,486)" font-size="17" style="fill:#d88988">Waiting</text>
-<text transform="translate(717,477)" font-size="17" style="fill:#a9b7a3">Theory</text>
-<text transform="translate(330,17)" font-size="17" style="fill:#c7d7b5">Read</text>
-<text transform="translate(664,18)" font-size="17" style="fill:#d5d2c2">Inevitable</text>
-<text transform="translate(47,309)" font-size="17" style="fill:#d9c89e">Questions</text>
-<text transform="translate(413,136)" font-size="12" style="fill:#c7d7b5">Page</text>
-<text transform="translate(533,674)" font-size="12" style="fill:#e0b879">Lies</text>
-<text transform="translate(1082,258)" font-size="12" style="fill:#9fc9c5">Open</text>
-<text transform="translate(413,448)" font-size="12" style="fill:#9fc9c5">Hot</text>
-<text transform="translate(287,601)" font-size="12" style="fill:#d5d2c2">Enters</text>
-<text transform="translate(257,386) rotate(-90)" font-size="12" style="fill:#d88988">Wearing</text>
-<text transform="translate(418,240)" font-size="12" style="fill:#d9c89e">Coat</text>
-<text transform="translate(1186,311)" font-size="12" style="fill:#d9c89e">Grand</text>
-<text transform="translate(279,160)" font-size="12" style="fill:#c49a6c">Magnificent</text>
-<text transform="translate(100,41)" font-size="12" style="fill:#d88988">Kind</text>
-<text transform="translate(883,599)" font-size="12" style="fill:#c49a6c">Expects</text>
+<text transform="translate(484,101)" font-size="102" style="fill:#c49a6c">Sometimes</text>
+<text transform="translate(773,278)" font-size="98" style="fill:#9fc9c5">History</text>
+<text transform="translate(1105,698)" font-size="90" style="fill:#e0b879">End</text>
+<text transform="translate(376,556) rotate(-90)" font-size="90" style="fill:#8fb7d0">Liberal</text>
+<text transform="translate(538,414)" font-size="78" style="fill:#9fc9c5">Capitalism</text>
+<text transform="translate(303,689)" font-size="73" style="fill:#8fb7d0">Fukuyama</text>
+<text transform="translate(629,180)" font-size="73" style="fill:#c49a6c">Read</text>
+<text transform="translate(802,631)" font-size="73" style="fill:#d5d2c2">Check</text>
+<text transform="translate(407,529)" font-size="68" style="fill:#9fc9c5">System</text>
+<text transform="translate(686,506)" font-size="63" style="fill:#b6c3dd">War</text>
+<text transform="translate(1031,489)" font-size="63" style="fill:#d88988">Human</text>
+<text transform="translate(258,155)" font-size="63" style="fill:#a9b7a3">Politics</text>
+<text transform="translate(650,586)" font-size="63" style="fill:#e0b879">Say</text>
+<text transform="translate(236,565) rotate(-90)" font-size="63" style="fill:#d5d2c2">Family</text>
+<text transform="translate(422,209)" font-size="63" style="fill:#d9c89e">Calls</text>
+<text transform="translate(383,310)" font-size="57" style="fill:#9fc9c5">Defeated</text>
+<text transform="translate(314,620)" font-size="57" style="fill:#d88988">Market</text>
+<text transform="translate(937,564)" font-size="57" style="fill:#e0b879">Political</text>
+<text transform="translate(230,327) rotate(-90)" font-size="57" style="fill:#e0b879">Fascism</text>
+<text transform="translate(947,187)" font-size="57" style="fill:#b6c3dd">Dignity</text>
+<text transform="translate(129,693)" font-size="57" style="fill:#d9c89e">Hand</text>
+<text transform="translate(211,83)" font-size="57" style="fill:#9fc9c5">India</text>
+<text transform="translate(1059,131)" font-size="57" style="fill:#8fb7d0">Wears</text>
+<text transform="translate(1013,399)" font-size="57" style="fill:#d9c89e">Becomes</text>
+<text transform="translate(664,696)" font-size="57" style="fill:#9fc9c5">Automatically</text>
+<text transform="translate(385,252)" font-size="51" style="fill:#d9c89e">Democratic</text>
+<text transform="translate(871,324)" font-size="51" style="fill:#e0b879">Final</text>
+<text transform="translate(1039,78)" font-size="51" style="fill:#a9b7a3">Model</text>
+<text transform="translate(736,457)" font-size="51" style="fill:#b6c3dd">Elections</text>
+<text transform="translate(176,597) rotate(-90)" font-size="51" style="fill:#d9c89e">Institutions</text>
+<text transform="translate(706,344)" font-size="51" style="fill:#b6c3dd">Power</text>
+<text transform="translate(1055,613)" font-size="51" style="fill:#a9b7a3">Markets</text>
+<text transform="translate(410,466)" font-size="51" style="fill:#d88988">Leader</text>
+<text transform="translate(530,637)" font-size="51" style="fill:#d9c89e">Idea</text>
+<text transform="translate(183,619)" font-size="51" style="fill:#c49a6c">Need</text>
+<text transform="translate(1048,359)" font-size="51" style="fill:#e0b879">Produce</text>
+<text transform="translate(801,501)" font-size="51" style="fill:#9fc9c5">Reading</text>
+<text transform="translate(1077,438)" font-size="45" style="fill:#d9c89e">Writing</text>
+<text transform="translate(780,539)" font-size="45" style="fill:#d5d2c2">Small</text>
+<text transform="translate(167,656)" font-size="45" style="fill:#b6c3dd">Man</text>
+<text transform="translate(822,174)" font-size="45" style="fill:#e0b879">Room</text>
+<text transform="translate(41,369) rotate(-90)" font-size="45" style="fill:#c7d7b5">Fear</text>
+<text transform="translate(393,362)" font-size="45" style="fill:#9fc9c5">Party</text>
+<text transform="translate(484,561)" font-size="39" style="fill:#8fb7d0">Country</text>
+<text transform="translate(275,326) rotate(-90)" font-size="39" style="fill:#b6c3dd">Soviet</text>
+<text transform="translate(542,36)" font-size="39" style="fill:#e0b879">Fascist</text>
+<text transform="translate(871,137)" font-size="39" style="fill:#e0b879">Francis</text>
+<text transform="translate(981,37)" font-size="39" style="fill:#d5d2c2">Claim</text>
+<text transform="translate(337,45)" font-size="39" style="fill:#d5d2c2">Modern</text>
+<text transform="translate(1260,308) rotate(-90)" font-size="39" style="fill:#c7d7b5">Authoritarian</text>
+<text transform="translate(286,531) rotate(-90)" font-size="39" style="fill:#c7d7b5">Contempt</text>
+<text transform="translate(34,258) rotate(-90)" font-size="39" style="fill:#d6a79f">Recognition</text>
+<text transform="translate(87,37)" font-size="39" style="fill:#a9b7a3">Invisible</text>
+<text transform="translate(392,411)" font-size="39" style="fill:#d9c89e">Trying</text>
+<text transform="translate(531,339)" font-size="29" style="fill:#d6a79f">Depression</text>
+<text transform="translate(879,566)" font-size="29" style="fill:#d6a79f">Yes</text>
+<text transform="translate(674,132)" font-size="29" style="fill:#8fb7d0">Even</text>
+<text transform="translate(165,201) rotate(-90)" font-size="29" style="fill:#d9c89e">Perhaps</text>
+<text transform="translate(25,702)" font-size="29" style="fill:#d9c89e">Merely</text>
+<text transform="translate(29,557) rotate(-90)" font-size="29" style="fill:#8fb7d0">Language</text>
+<text transform="translate(283,194)" font-size="29" style="fill:#d6a79f">Less</text>
+<text transform="translate(1210,318) rotate(-90)" font-size="29" style="fill:#d88988">Whole</text>
+<text transform="translate(733,267) rotate(-90)" font-size="29" style="fill:#8fb7d0">Form</text>
+<text transform="translate(303,302) rotate(-90)" font-size="29" style="fill:#8fb7d0">Police</text>
+<text transform="translate(1065,515)" font-size="29" style="fill:#d88988">Alive</text>
+<text transform="translate(242,571)" font-size="29" style="fill:#d5d2c2">Globalization</text>
+<text transform="translate(658,643)" font-size="27" style="fill:#a9b7a3">Suspicion</text>
+<text transform="translate(829,24)" font-size="24" style="fill:#c49a6c">Prosperity</text>
+<text transform="translate(837,196)" font-size="24" style="fill:#9fc9c5">Machine</text>
+<text transform="translate(1025,307)" font-size="24" style="fill:#b6c3dd">Version</text>
+<text transform="translate(909,364)" font-size="24" style="fill:#c49a6c">Counts</text>
+<text transform="translate(135,235) rotate(-90)" font-size="24" style="fill:#a9b7a3">Government</text>
+<text transform="translate(664,301)" font-size="24" style="fill:#e0b879">Someone</text>
+<text transform="translate(1078,212)" font-size="24" style="fill:#c49a6c">Free</text>
+<text transform="translate(618,360)" font-size="24" style="fill:#c7d7b5">Every</text>
+<text transform="translate(768,304)" font-size="24" style="fill:#d5d2c2">Better</text>
+<text transform="translate(1124,21)" font-size="20" style="fill:#d6a79f">Many</text>
+<text transform="translate(133,712)" font-size="20" style="fill:#d6a79f">Cold</text>
+<text transform="translate(609,203)" font-size="20" style="fill:#d88988">World</text>
+<text transform="translate(134,316) rotate(-90)" font-size="20" style="fill:#8fb7d0">Bloc</text>
+<text transform="translate(254,640)" font-size="20" style="fill:#9fc9c5">Nazi</text>
+<text transform="translate(582,480)" font-size="20" style="fill:#c49a6c">Germany</text>
+<text transform="translate(294,518)" font-size="20" style="fill:#a9b7a3">Italy</text>
+<text transform="translate(1036,641)" font-size="20" style="fill:#d5d2c2">Habits</text>
+<text transform="translate(270,715)" font-size="20" style="fill:#a9b7a3">Ideas</text>
+<text transform="translate(398,713)" font-size="20" style="fill:#9fc9c5">Phrase</text>
+<text transform="translate(525,710)" font-size="20" style="fill:#c49a6c">Ideological</text>
+<text transform="translate(55,673)" font-size="20" style="fill:#d5d2c2">Events</text>
+<text transform="translate(396,79)" font-size="20" style="fill:#c7d7b5">Cruelty</text>
+<text transform="translate(385,97)" font-size="20" style="fill:#b6c3dd">Rights</text>
+<text transform="translate(687,456)" font-size="20" style="fill:#c7d7b5">Rule</text>
+<text transform="translate(527,582)" font-size="20" style="fill:#c49a6c">Law</text>
+<text transform="translate(967,715)" font-size="20" style="fill:#8fb7d0">Economic</text>
+<text transform="translate(690,537)" font-size="20" style="fill:#d6a79f">Private</text>
+<text transform="translate(1162,635)" font-size="20" style="fill:#b6c3dd">Worship</text>
+<text transform="translate(728,715)" font-size="20" style="fill:#c7d7b5">Nationalism</text>
+<text transform="translate(20,714) rotate(-90)" font-size="20" style="fill:#d88988">National</text>
+<text transform="translate(761,33)" font-size="20" style="fill:#d6a79f">Adam</text>
+<text transform="translate(943,651)" font-size="20" style="fill:#9fc9c5">Smith</text>
+<text transform="translate(770,565)" font-size="20" style="fill:#d88988">Metaphor</text>
+<text transform="translate(253,102)" font-size="20" style="fill:#c49a6c">Central</text>
+<text transform="translate(445,644)" font-size="20" style="fill:#9fc9c5">Planner</text>
+<text transform="translate(1176,515)" font-size="20" style="fill:#9fc9c5">Traction</text>
+<text transform="translate(596,454)" font-size="20" style="fill:#d88988">Anxiety</text>
+<text transform="translate(300,460)" font-size="20" style="fill:#a9b7a3">Tooth</text>
+<text transform="translate(582,592)" font-size="20" style="fill:#d6a79f">Pain</text>
+<text transform="translate(492,272)" font-size="20" style="fill:#a9b7a3">Forms</text>
+<text transform="translate(401,537) rotate(-90)" font-size="20" style="fill:#a9b7a3">Paragraph</text>
+<text transform="translate(665,713)" font-size="20" style="fill:#d9c89e">Now</text>
+<text transform="translate(866,586)" font-size="20" style="fill:#d6a79f">Available</text>
+<text transform="translate(78,258)" font-size="20" style="fill:#d6a79f">Enter</text>
+<text transform="translate(148,65)" font-size="20" style="fill:#b6c3dd">Grand</text>
+<text transform="translate(736,198)" font-size="20" style="fill:#d88988">Argument</text>
+<text transform="translate(348,712)" font-size="20" style="fill:#a9b7a3">Let</text>
+<text transform="translate(466,18)" font-size="20" style="fill:#c7d7b5">Won</text>
+<text transform="translate(652,606)" font-size="20" style="fill:#d5d2c2">Regime</text>
+<text transform="translate(561,122)" font-size="20" style="fill:#d9c89e">Communism</text>
+<text transform="translate(1155,151)" font-size="20" style="fill:#c7d7b5">Mood</text>
+<text transform="translate(1225,495)" font-size="20" style="fill:#e0b879">Time</text>
+<text transform="translate(225,342)" font-size="20" style="fill:#9fc9c5">Reader</text>
+<text transform="translate(885,214)" font-size="20" style="fill:#9fc9c5">Deeper</text>
+<text transform="translate(937,342)" font-size="20" style="fill:#d5d2c2">Greatness</text>
+<text transform="translate(749,120)" font-size="20" style="fill:#d88988">Minorities</text>
+<text transform="translate(131,553) rotate(-90)" font-size="20" style="fill:#d6a79f">Society</text>
+<text transform="translate(463,486)" font-size="20" style="fill:#9fc9c5">Raised</text>
+<text transform="translate(563,169)" font-size="20" style="fill:#d9c89e">Face</text>
+<text transform="translate(680,282)" font-size="20" style="fill:#d9c89e">Useful</text>
+<text transform="translate(1216,80) rotate(-90)" font-size="20" style="fill:#8fb7d0">Saying</text>
+<text transform="translate(133,632) rotate(-90)" font-size="20" style="fill:#8fb7d0">Answer</text>
 </svg>

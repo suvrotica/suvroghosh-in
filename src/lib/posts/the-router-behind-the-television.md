@@ -13,48 +13,168 @@ color: "#22C55E"
 
 <Pi src="Compress_20260606_045423_3796.jpg" />
 
-Acronyms used: AI means Artificial Intelligence. MFA means Multi-Factor Authentication. VPN means Virtual Private Network. IoT means Internet of Things. Wi-Fi means Wireless Fidelity.
+Acronyms used in this post:
 
-The router behind the television blinks all night: green, amber, green, green. A small plastic box, warm with duty, sitting in dust beside cables, an old charger, and the ordinary domestic evidence of a life that did not expect to become an attack surface.
+AI: Artificial Intelligence, software that can imitate parts of human pattern recognition, language, decision-making, or generation.
 
-This is how the future enters a Calcutta room.
+MFA: Multi-Factor Authentication, a login method that asks for something more than a password, such as a code, app approval, hardware key, or biometric check.
 
-Not through a glass door in California. Not through a stage presentation full of blue light. Through a cheap router, an old Android phone, a discount smart bulb, a television that wants updates, and a password so weak it has no business guarding anything more serious than a grocery list.
+VPN: Virtual Private Network, a service that routes internet traffic through another network, often used for privacy, remote access, or hiding the original connection.
 
-Cybersecurity used to sound like a subject for heavy nouns: banks, airports, hospitals, governments, military systems, corporations with reception desks and lawyers. Now the target is also the ordinary room. Your room. Mine. The phone charging near the bed. The old tablet in the drawer. The router whose admin password was never changed because the installation man left quickly and everyone had other things to worry about.
+IoT: Internet of Things, everyday objects connected to the internet, such as smart bulbs, cameras, televisions, speakers, routers, watches, and other small obedient traitors.
 
-Modern cybercrime is becoming automatic and scalable. A worm does not need to know your name. In computing, a worm is malware that spreads from system to system, often by finding weak points without waiting for the user to install each copy. It looks for a hole. If it finds one, it enters. Then it looks again.
+Wi-Fi: Wireless Fidelity, the wireless network inside a home, office, shop, or tea-stained apartment where devices talk to the internet without cables.
 
-That is the insult. Not malice, exactly. Efficiency.
+---
 
-For years, ordinary users believed thieves were interested only in rich people and important offices. That belief is dangerous now. A compromised home router may be useful as a stepping stone. A smart camera may become one more node in a botnet. An old phone may still hold account sessions. A weak password reused across sites may let one breach unlock five doors.
+The router behind my television blinks all night like a cockroach that has somehow completed a PhD, green, green, amber, green, performing its tiny municipal light show while my rice cooker sits beside it with the tired dignity of an old clerk who knows the files are wrong but will stamp them anyway because lunch is still two hours away.
 
-Your home network is a small city. Every device is a house. Every password is a latch. Every unpatched system is a window left open because the owner assumes the street is too poor for thieves.
+This is how the future enters a lower-middle-class room in Calcutta.
 
-Automation changes the economics of attack. Crime used to have more labor cost. Someone had to search, target, type, test, and adjust. Once tools can scan, adapt, and repeat, the cost of the next attempt becomes tiny. One bad idea becomes thousands of attempts. One careless password becomes a pattern waiting to be found.
+Not through a glass door in California. Not through a stage where a man in sneakers explains the future as if he personally invented oxygen after breakfast. Not through a corporate video full of floating blue lines and solemn music.
 
-AI does not make this magic. There are still ports, permissions, updates, browser bugs, router firmware, phishing links, leaked databases, and badly configured accounts. But AI can help attackers write messages, vary scams, analyze targets, generate code, and industrialize nuisance. The pipes remain dull. The scale changes.
+No.
 
-That is why the ordinary person cannot wait for corporate poetry. Companies will say safety, guardrails, red-teaming, responsible release, and trusted partners. Some of that may be sincere. Some may be packaging. In security, "trust us" is not a strategy. It is a request to sleep through the audit.
+It comes through a cheap router, an old Android phone, a cracked tablet, a discount smart bulb, a television that asks for software updates more often than I ask for affection, and a password so weak it should be fed Horlicks and sent to bed.
 
-So we are left with small practical humiliations.
+Once, malware sounded like a gangster problem. Some Russian fellow in a basement. Some Chinese military unit with excellent posture. Some American teenager with too much sugar, too little supervision, and the soul of a damp towel. They attacked banks, hospitals, governments, power grids, companies with lawyers, acronyms, and proper reception desks.
 
-Use a password manager. The human memory is good at old songs, old insults, and the phone number from a previous decade. It is not good at generating and remembering unique strong passwords for every account.
+Now the target is also you.
 
-Stop reusing passwords. One leaked password should not open email, banking, shopping, social media, and the forgotten account created for one festival discount.
+And me.
 
-Turn on MFA. It is not perfect. Nothing is. But a second factor makes many attacks harder, and most opportunistic attackers prefer doors that open easily.
+A man in a faded vest, standing near a rice cooker, wondering whether the milk has gone sour, while his phone warms in his hand like a feverish squirrel.
 
-Patch devices. Phones, laptops, browsers, televisions, routers if possible. Updates are irritating. They consume time, battery, data, and patience. Still, patches close known holes. An unpatched device is an old argument with new consequences.
+That is the new insult. Not that criminals exist. Criminals have always existed. The first man who invented the wheel was probably followed within the hour by another man who invented wheel theft. The insult is that crime is becoming automatic, scalable, and almost lazy.
 
-Retire dead devices properly. The old phone in the drawer, still logged into accounts and remembering Wi-Fi, is not nostalgia. It is a keyring with a swollen battery.
+A worm does not need to hate you. It does not need your name. It does not care whether you are rich, poor, atheist, anxious, divorced, unemployed, underpaid, overeducated, or eating yesterday’s rice with too much salt because the month has become long and the wallet has become philosophical.
 
-Check router settings. Change the default admin password. Use WPA2 or WPA3 where available. Disable remote administration unless genuinely needed. Keep firmware current if the manufacturer allows it. Replace hardware that no longer receives updates. A router page may look like it was designed during a bad fever, but it is still the front gate.
+It looks for a hole.
 
-Be suspicious of links and messages that arrive wearing urgency: delivery problem, refund, tax issue, bank warning, parcel delay, account locked, prize, unpaid bill. Panic is part of the interface. The scammer wants your hand to move before your mind arrives.
+It enters.
 
-This is the comic burden of modern life. A person must now maintain not only health, roof, income, documents, and electricity, but also passwords, backups, recovery codes, app permissions, browser extensions, cloud storage, banking logins, device updates, and the discipline not to click on a friendly disaster.
+That is all.
 
-The future is not always sleek. Sometimes it is a blinking box behind the television, quietly connecting the household to a world where weakness is searchable. The task is not heroic. It is housekeeping with consequences.
+A human criminal has useful weaknesses. He gets sleepy. He gets bored. He has acidity. He fights with his wife. He forgets a command. His VPN drops. His laptop battery dies. His attention wanders because even villainy, after fourteen hours, becomes clerical.
 
-Tonight the router will blink again. I will not become a security saint. I will update what I can, lock what I can, distrust what smiles too easily, and remember that in the machinery of modern technology I am often just the tired doorman at the service entrance, trying not to fall asleep beside the wrong door.
+But autonomous malware has no such poetry.
+
+It does not need tea.
+
+It does not need a bathroom.
+
+It does not sit on the edge of the bed at 3:17 in the morning wondering where life took the wrong turn between Jadavpur, Texas, and a hot rented room near the edge of Calcutta.
+
+It crawls.
+
+From one badly maintained device to another. Not like an army with drums. More like damp on a bathroom wall. More like fungus under a cupboard. More like corruption in an office where everyone knows the rule and everyone knows the rule has a back door.
+
+This is not magic. That is important.
+
+We must not become neighborhood uncles about this and start muttering “AI, AI” the way people once muttered “foreign hand” whenever the ceiling fan stopped. There is still code. There are still passwords. There are still permissions, patches, accounts, routers, browsers, links, settings, and all the dull little pipes through which modern life flows.
+
+But dull pipes are where civilization usually leaks.
+
+Ask Calcutta.
+
+A city does not collapse because one giant demon arrives from the sky with a bucket. It collapses because drains clog, garbage piles up, small bribes become normal, everyone adjusts, everyone says “ki korbo,” and one day a street turns into a pond while a bus floats through it like an elderly buffalo with back pain.
+
+Computers are not so different.
+
+Your home network is a little city. Every device is a house. Every password is a door latch. Every unpatched system is a window left open because the owner thinks thieves only visit rich people.
+
+That belief is now dangerous.
+
+For years, cybersecurity sounded like a subject for important buildings. Banks. Hospitals. Airports. Military systems. Corporate networks. Big nouns. Heavy nouns. Nouns wearing conference badges.
+
+But your ordinary device is useful precisely because it is ordinary.
+
+It is the back lane. The service entrance. The unattended staircase beside the banquet hall where important people are eating mutton in air-conditioning and saying “resilience” with serious faces.
+
+An attacker may not want your life story. He may not even want your money at first. He may want your router as a stepping stone. Your phone as a mask. Your smart camera as one more obedient ant in a colony of compromised gadgets. Your child’s tablet, your old laptop, your dusty television box, all quietly humming in corners, can become part of something larger and uglier.
+
+A crowd.
+
+And crowds are how cowards become powerful.
+
+Here is the part that should make even a sleepy man sit up.
+
+Crime used to have labor costs. Someone had to plan, type, test, search, target, adjust, and repeat. There was effort involved. There was sweat. There was at least some small human inconvenience.
+
+Automation changes that. Once a worm is launched, if it can keep moving and adapting, the cost of the next attempt becomes tiny. Then tinier. Then almost nothing. One criminal effort becomes thousands of machine efforts. One bad idea becomes a swarm.
+
+This is why the age feels so obscene. We are building machines to help doctors, students, scientists, writers, lonely people, busy people, old people, frightened people. Good. Fine. Necessary.
+
+But we are also building machines that allow the laziest crook in the food chain to industrialize nuisance, theft, extortion, spying, and harassment until the planet begins to resemble one giant blinking slum of weak passwords.
+
+Naturally, companies will speak beautifully.
+
+They always do.
+
+They will say safety. They will say guardrails. They will say responsible release. They will say red-teaming, monitoring, mitigation, trusted partners, and other soft words that arrive in polished shoes and leave no fingerprints.
+
+Fine.
+
+But if nobody outside the temple knows what went into the idol, how does anyone check whether the idol has termites?
+
+Training matters. Testing matters. Datasets matter. What a system has seen matters. What it can imitate matters. What it refuses matters. What it half-refuses and then leaks through the side door like a tipsy uncle at a wedding matters.
+
+Security people cannot defend against fog forever.
+
+“Trust us” is not a cybersecurity strategy. It is a lullaby sung by people whose bonuses depend on everyone sleeping soundly.
+
+Meanwhile, the ordinary person cannot wait for corporate virtue. Corporate virtue is like a clean public toilet at Sealdah: rumored, occasionally photographed, rarely encountered when needed.
+
+So we are left with the small humiliating things.
+
+Use a password manager. Your brain is not a vault. It is a wet cauliflower full of childhood songs, unpaid bills, old insults, half-remembered phone numbers, and one advertisement jingle from 1998 that refuses to die.
+
+Stop reusing passwords. One leaked password should not open your email, bank account, social media, shopping site, and that ancient account you created to buy discounted underwear during some forgotten festival sale.
+
+Turn on MFA. Not because it is perfect. It is not. Nothing is perfect. Even pressure cookers betray us. But a second lock is still a second lock, and most thieves prefer doors that open with a polite push.
+
+Patch your devices.
+
+Yes, patch them.
+
+I know.
+
+Updates are irritating. They arrive like relatives. They eat data, time, battery, and patience. Sometimes they make the device worse, because software is a cathedral built by tired committees and repaired by people who probably dream in error messages.
+
+Still, patch.
+
+Patch the phone. Patch the laptop. Patch the browser. Patch the television if it allows you. Patch the router if you can find the setting, though many router pages look as if they were designed by a Soviet refrigerator during a nervous breakdown.
+
+And throw away dead devices.
+
+That old phone in the drawer, the one with the swollen battery and the cracked screen, still logged into three accounts and quietly remembering your Wi-Fi, is not nostalgia. It is a digital corpse with keys in its pocket.
+
+This is the great comic humiliation of modern life. Earlier a man had to maintain his body, his roof, his bicycle, his family relations, and his digestion. That was already plenty. Now he must maintain passwords, backups, apps, permissions, browser extensions, recovery codes, cloud storage, banking logins, device updates, and the self-control not to click on a message claiming a refund, delivery, prize, warning, tax problem, parcel delay, or charming stranger nearby who urgently wishes to meet a balding Bengali man with acidity and trust issues.
+
+The soul used to be a mystery.
+
+Now it has a login screen.
+
+And somewhere out there, small automated worms are learning the architecture of our laziness. Not with hatred. Worse. With efficiency.
+
+Hatred is human. It gets dramatic. It makes speeches. It wastes time. Efficiency does not. Efficiency is a steel spoon scraping the bottom of an empty bowl.
+
+The worm does not care that you are tired. It does not care that the heat has melted your ambition into a small puddle under the chair. It does not care that your mother is old, that your consulting income is uncertain, that the news has become a circus with better lighting, that you slept badly, that the gas cylinder is costly, that the rice stuck to the bottom again.
+
+It sees a device.
+
+It sees a weakness.
+
+It enters.
+
+That is the whole sermon, except there is no sermon. Sermons are for people who still believe words can improve behavior faster than fear, inconvenience, or bank fraud.
+
+So tonight, when the router blinks again behind the television, that little insect in the dust, I will do what a small man in a large foolish century can do.
+
+I will update what I can.
+
+Lock what I can.
+
+Distrust what smiles too easily.
+
+And accept that in the grand opera of modern technology I am not the hero or the villain. I am the sweaty doorman with digestive trouble, standing half-asleep beside the service entrance, while the machines whisper to one another in the dark.

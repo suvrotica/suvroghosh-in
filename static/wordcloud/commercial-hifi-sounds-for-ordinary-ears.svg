@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(696,604)" font-size="118" style="fill:#c49a6c">Sound</text>
-<text transform="translate(364,281)" font-size="106" style="fill:#8fb7d0">Speakers</text>
-<text transform="translate(928,272)" font-size="106" style="fill:#a9b7a3">Room</text>
-<text transform="translate(332,496) rotate(-90)" font-size="88" style="fill:#e0b879">Audio</text>
-<text transform="translate(621,79)" font-size="83" style="fill:#c7d7b5">Speaker</text>
-<text transform="translate(818,387)" font-size="83" style="fill:#8fb7d0">Subwoofer</text>
-<text transform="translate(178,601)" font-size="77" style="fill:#9fc9c5">Bass</text>
-<text transform="translate(663,703)" font-size="77" style="fill:#d9c89e">Better</text>
-<text transform="translate(107,376) rotate(-90)" font-size="77" style="fill:#c49a6c">Stereo</text>
-<text transform="translate(8,435)" font-size="77" style="fill:#b6c3dd">Means</text>
-<text transform="translate(385,482)" font-size="77" style="fill:#9fc9c5">Mono</text>
-<text transform="translate(522,407)" font-size="71" style="fill:#9fc9c5">DTS</text>
-<text transform="translate(145,181)" font-size="71" style="fill:#c49a6c">Bluetooth</text>
-<text transform="translate(733,465)" font-size="71" style="fill:#9fc9c5">Surround</text>
-<text transform="translate(760,154)" font-size="71" style="fill:#d9c89e">Channel</text>
-<text transform="translate(207,665)" font-size="71" style="fill:#c49a6c">System</text>
-<text transform="translate(272,120)" font-size="64" style="fill:#9fc9c5">Cinema</text>
-<text transform="translate(1055,204)" font-size="64" style="fill:#d9c89e">Ears</text>
-<text transform="translate(383,589)" font-size="64" style="fill:#c7d7b5">Dialogue</text>
-<text transform="translate(1010,689)" font-size="64" style="fill:#a9b7a3">Center</text>
-<text transform="translate(519,347)" font-size="57" style="fill:#d88988">Soundbar</text>
-<text transform="translate(66,613) rotate(-90)" font-size="57" style="fill:#b6c3dd">Dolby</text>
-<text transform="translate(1072,82)" font-size="57" style="fill:#d6a79f">Atmos</text>
-<text transform="translate(163,65)" font-size="57" style="fill:#d9c89e">Lossless</text>
-<text transform="translate(644,203)" font-size="54" style="fill:#9fc9c5">Recording</text>
-<text transform="translate(1230,615) rotate(-90)" font-size="54" style="fill:#c49a6c">Useful</text>
-<text transform="translate(336,714)" font-size="54" style="fill:#e0b879">Television</text>
-<text transform="translate(1099,151)" font-size="54" style="fill:#e0b879">Small</text>
-<text transform="translate(798,510)" font-size="54" style="fill:#b6c3dd">Ceiling</text>
-<text transform="translate(98,513)" font-size="54" style="fill:#a9b7a3">Real</text>
-<text transform="translate(343,530)" font-size="54" style="fill:#b6c3dd">Matter</text>
-<text transform="translate(27,667)" font-size="47" style="fill:#c49a6c">Home</text>
-<text transform="translate(80,714)" font-size="47" style="fill:#8fb7d0">Codecs</text>
-<text transform="translate(682,395)" font-size="47" style="fill:#8fb7d0">Many</text>
-<text transform="translate(456,73)" font-size="47" style="fill:#c49a6c">Voice</text>
-<text transform="translate(60,256) rotate(-90)" font-size="47" style="fill:#d5d2c2">Practical</text>
-<text transform="translate(1115,645) rotate(-90)" font-size="47" style="fill:#9fc9c5">Placement</text>
-<text transform="translate(587,466)" font-size="47" style="fill:#9fc9c5">Often</text>
-<text transform="translate(120,254)" font-size="47" style="fill:#d6a79f">Music</text>
-<text transform="translate(117,349)" font-size="47" style="fill:#e0b879">Films</text>
-<text transform="translate(867,309)" font-size="43" style="fill:#d5d2c2">Technology</text>
-<text transform="translate(725,645)" font-size="43" style="fill:#d9c89e">Convenience</text>
-<text transform="translate(152,599) rotate(-90)" font-size="43" style="fill:#e0b879">Bad</text>
-<text transform="translate(1164,633) rotate(-90)" font-size="43" style="fill:#e0b879">Listening</text>
-<text transform="translate(123,100)" font-size="43" style="fill:#8fb7d0">Buy</text>
-<text transform="translate(793,418)" font-size="35" style="fill:#d6a79f">Box</text>
-<text transform="translate(429,217)" font-size="35" style="fill:#d88988">Window</text>
-<text transform="translate(1275,576) rotate(-90)" font-size="35" style="fill:#8fb7d0">Hires</text>
-<text transform="translate(139,378)" font-size="35" style="fill:#d5d2c2">Watts</text>
-<text transform="translate(544,139)" font-size="35" style="fill:#d5d2c2">Calm</text>
-<text transform="translate(1051,31)" font-size="35" style="fill:#c7d7b5">Commercial</text>
-<text transform="translate(582,503)" font-size="35" style="fill:#c7d7b5">Ordinary</text>
-<text transform="translate(977,56)" font-size="35" style="fill:#e0b879">EMI</text>
-<text transform="translate(484,647)" font-size="35" style="fill:#d88988">Alan</text>
-<text transform="translate(343,400)" font-size="35" style="fill:#a9b7a3">Blumlein</text>
-<text transform="translate(335,346)" font-size="34" style="fill:#8fb7d0">Important</text>
-<text transform="translate(274,533)" font-size="34" style="fill:#d9c89e">LFE</text>
-<text transform="translate(873,418)" font-size="34" style="fill:#8fb7d0">Effects</text>
-<text transform="translate(539,533)" font-size="34" style="fill:#c49a6c">Digital</text>
-<text transform="translate(836,110)" font-size="34" style="fill:#d5d2c2">Families</text>
-<text transform="translate(175,206)" font-size="28" style="fill:#8fb7d0">Compressed</text>
-<text transform="translate(355,27)" font-size="28" style="fill:#a9b7a3">Hometheater</text>
-<text transform="translate(153,293)" font-size="28" style="fill:#c7d7b5">Systems</text>
-<text transform="translate(205,115)" font-size="28" style="fill:#d5d2c2">THX</text>
-<text transform="translate(1052,715)" font-size="28" style="fill:#8fb7d0">Certification</text>
-<text transform="translate(765,307)" font-size="28" style="fill:#d9c89e">Idea</text>
-<text transform="translate(382,614)" font-size="28" style="fill:#d9c89e">Format</text>
-<text transform="translate(579,638)" font-size="28" style="fill:#c7d7b5">FLAC</text>
-<text transform="translate(1270,284) rotate(-90)" font-size="28" style="fill:#b6c3dd">ALAC</text>
-<text transform="translate(1227,210) rotate(-90)" font-size="28" style="fill:#b6c3dd">MP3</text>
-<text transform="translate(604,671)" font-size="28" style="fill:#c49a6c">AAC</text>
-<text transform="translate(1074,564) rotate(-90)" font-size="28" style="fill:#d5d2c2">Codec</text>
-<text transform="translate(944,186)" font-size="28" style="fill:#a9b7a3">Head</text>
-<text transform="translate(631,139)" font-size="28" style="fill:#c7d7b5">Shape</text>
-<text transform="translate(922,703)" font-size="28" style="fill:#c49a6c">RMS</text>
-<text transform="translate(264,515) rotate(-90)" font-size="28" style="fill:#c49a6c">Numbers</text>
-<text transform="translate(89,460)" font-size="28" style="fill:#e0b879">Speech</text>
-<text transform="translate(112,629) rotate(-90)" font-size="28" style="fill:#d9c89e">Loves</text>
-<text transform="translate(1156,311)" font-size="28" style="fill:#c7d7b5">Always</text>
-<text transform="translate(958,81)" font-size="28" style="fill:#b6c3dd">Need</text>
-<text transform="translate(1171,641)" font-size="28" style="fill:#d9c89e">Singer</text>
-<text transform="translate(531,106)" font-size="28" style="fill:#e0b879">Channels</text>
-<text transform="translate(70,43)" font-size="28" style="fill:#c49a6c">Brain</text>
-<text transform="translate(565,206)" font-size="28" style="fill:#d6a79f">Air</text>
-<text transform="translate(469,435)" font-size="28" style="fill:#d88988">Screen</text>
-<text transform="translate(1241,285) rotate(-90)" font-size="28" style="fill:#8fb7d0">Came</text>
-<text transform="translate(873,264)" font-size="28" style="fill:#c49a6c">Low</text>
-<text transform="translate(940,673)" font-size="28" style="fill:#d88988">Main</text>
-<text transform="translate(544,164)" font-size="28" style="fill:#c49a6c">Adds</text>
-<text transform="translate(184,25)" font-size="28" style="fill:#b6c3dd">Near</text>
-<text transform="translate(561,309)" font-size="28" style="fill:#c7d7b5">Sounds</text>
-<text transform="translate(692,28)" font-size="28" style="fill:#d88988">Front</text>
-<text transform="translate(358,321)" font-size="28" style="fill:#d6a79f">Rain</text>
-<text transform="translate(891,26)" font-size="28" style="fill:#c7d7b5">Surrounds</text>
-<text transform="translate(937,334)" font-size="28" style="fill:#d88988">Behind</text>
-<text transform="translate(36,374) rotate(-90)" font-size="28" style="fill:#d5d2c2">Quality</text>
-<text transform="translate(258,706)" font-size="28" style="fill:#d88988">Badly</text>
-<text transform="translate(160,541)" font-size="28" style="fill:#a9b7a3">Placed</text>
-<text transform="translate(176,634) rotate(-90)" font-size="28" style="fill:#e0b879">Glass</text>
-<text transform="translate(134,206) rotate(-90)" font-size="28" style="fill:#d9c89e">Larger</text>
-<text transform="translate(644,427)" font-size="28" style="fill:#8fb7d0">Rooms</text>
-<text transform="translate(1196,418)" font-size="28" style="fill:#d88988">Less</text>
-<text transform="translate(275,226)" font-size="22" style="fill:#e0b879">Clarity</text>
-<text transform="translate(87,587) rotate(-90)" font-size="22" style="fill:#b6c3dd">Brochure</text>
-<text transform="translate(1187,573) rotate(-90)" font-size="22" style="fill:#e0b879">Film</text>
-<text transform="translate(68,62)" font-size="22" style="fill:#9fc9c5">Logo</text>
-<text transform="translate(847,531)" font-size="22" style="fill:#a9b7a3">Mostly</text>
-<text transform="translate(1151,104)" font-size="22" style="fill:#c7d7b5">Position</text>
-<text transform="translate(11,692)" font-size="22" style="fill:#e0b879">Place</text>
-<text transform="translate(277,554)" font-size="22" style="fill:#c7d7b5">Theater</text>
-<text transform="translate(140,657)" font-size="22" style="fill:#e0b879">Walls</text>
-<text transform="translate(527,667)" font-size="22" style="fill:#d6a79f">Fewer</text>
-<text transform="translate(557,37)" font-size="22" style="fill:#d5d2c2">Wires</text>
-<text transform="translate(21,249) rotate(-90)" font-size="22" style="fill:#e0b879">Sometimes</text>
-<text transform="translate(380,615) rotate(-90)" font-size="22" style="fill:#9fc9c5">Chain</text>
-<text transform="translate(1051,103)" font-size="22" style="fill:#8fb7d0">Master</text>
-<text transform="translate(442,367)" font-size="22" style="fill:#9fc9c5">File</text>
-<text transform="translate(1273,394) rotate(-90)" font-size="22" style="fill:#8fb7d0">Bit</text>
-<text transform="translate(336,418)" font-size="18" style="fill:#d88988">Mastering</text>
-<text transform="translate(506,613)" font-size="18" style="fill:#d5d2c2">Fine</text>
-<text transform="translate(714,365)" font-size="18" style="fill:#d5d2c2">Describes</text>
-<text transform="translate(1271,141) rotate(-90)" font-size="18" style="fill:#d9c89e">Amplifier</text>
-<text transform="translate(451,300)" font-size="18" style="fill:#c7d7b5">Curtains</text>
-<text transform="translate(698,97)" font-size="18" style="fill:#8fb7d0">Attention</text>
-<text transform="translate(679,163)" font-size="18" style="fill:#d88988">Honest</text>
-<text transform="translate(1219,680)" font-size="18" style="fill:#d9c89e">Setup</text>
-<text transform="translate(253,617)" font-size="15" style="fill:#8fb7d0">Headphones</text>
-<text transform="translate(990,204)" font-size="15" style="fill:#d5d2c2">Listen</text>
-<text transform="translate(655,637)" font-size="15" style="fill:#c49a6c">Modest</text>
-<text transform="translate(209,82)" font-size="15" style="fill:#d5d2c2">Longer</text>
+<text transform="translate(406,236)" font-size="102" style="fill:#8fb7d0">Audio</text>
+<text transform="translate(76,407)" font-size="88" style="fill:#a9b7a3">Room</text>
+<text transform="translate(883,483) rotate(-90)" font-size="85" style="fill:#e0b879">Speakers</text>
+<text transform="translate(141,78)" font-size="80" style="fill:#c7d7b5">Lossless</text>
+<text transform="translate(321,363)" font-size="71" style="fill:#8fb7d0">Stereo</text>
+<text transform="translate(438,530)" font-size="68" style="fill:#9fc9c5">Mono</text>
+<text transform="translate(898,86)" font-size="68" style="fill:#9fc9c5">Subwoofer</text>
+<text transform="translate(153,682)" font-size="65" style="fill:#b6c3dd">Surround</text>
+<text transform="translate(1075,429)" font-size="65" style="fill:#c49a6c">Music</text>
+<text transform="translate(279,226)" font-size="65" style="fill:#d5d2c2">DTS</text>
+<text transform="translate(954,227)" font-size="65" style="fill:#c49a6c">Speaker</text>
+<text transform="translate(854,664)" font-size="61" style="fill:#c7d7b5">Channel</text>
+<text transform="translate(36,243)" font-size="61" style="fill:#d9c89e">Cinema</text>
+<text transform="translate(79,686) rotate(-90)" font-size="61" style="fill:#d9c89e">System</text>
+<text transform="translate(460,432)" font-size="61" style="fill:#c49a6c">Bass</text>
+<text transform="translate(99,527)" font-size="61" style="fill:#9fc9c5">Small</text>
+<text transform="translate(154,156)" font-size="57" style="fill:#d9c89e">Dolby</text>
+<text transform="translate(409,306)" font-size="57" style="fill:#c7d7b5">THX</text>
+<text transform="translate(469,699)" font-size="57" style="fill:#a9b7a3">Bluetooth</text>
+<text transform="translate(1042,476)" font-size="53" style="fill:#d5d2c2">Digital</text>
+<text transform="translate(685,496) rotate(-90)" font-size="53" style="fill:#a9b7a3">Format</text>
+<text transform="translate(786,320) rotate(-90)" font-size="49" style="fill:#b6c3dd">Many</text>
+<text transform="translate(680,149) rotate(-90)" font-size="49" style="fill:#a9b7a3">Atmos</text>
+<text transform="translate(99,320)" font-size="49" style="fill:#9fc9c5">Codec</text>
+<text transform="translate(71,399) rotate(-90)" font-size="49" style="fill:#c49a6c">Ears</text>
+<text transform="translate(498,481)" font-size="49" style="fill:#c49a6c">Mean</text>
+<text transform="translate(1037,340)" font-size="49" style="fill:#a9b7a3">Means</text>
+<text transform="translate(397,139)" font-size="49" style="fill:#b6c3dd">Center</text>
+<text transform="translate(503,615)" font-size="49" style="fill:#e0b879">Badly</text>
+<text transform="translate(727,447) rotate(-90)" font-size="49" style="fill:#a9b7a3">Matters</text>
+<text transform="translate(643,421) rotate(-90)" font-size="49" style="fill:#e0b879">Matter</text>
+<text transform="translate(125,614)" font-size="45" style="fill:#8fb7d0">Recording</text>
+<text transform="translate(984,285)" font-size="45" style="fill:#8fb7d0">Quality</text>
+<text transform="translate(1093,597)" font-size="45" style="fill:#c7d7b5">Voice</text>
+<text transform="translate(196,569)" font-size="45" style="fill:#d9c89e">Channels</text>
+<text transform="translate(1019,157)" font-size="45" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(1106,635)" font-size="45" style="fill:#9fc9c5">Fine</text>
+<text transform="translate(51,450)" font-size="45" style="fill:#d6a79f">Dialogue</text>
+<text transform="translate(301,452)" font-size="45" style="fill:#e0b879">Proof</text>
+<text transform="translate(531,87)" font-size="40" style="fill:#d5d2c2">Disc</text>
+<text transform="translate(706,47)" font-size="40" style="fill:#9fc9c5">Home</text>
+<text transform="translate(1256,370) rotate(-90)" font-size="40" style="fill:#c7d7b5">Place</text>
+<text transform="translate(766,447) rotate(-90)" font-size="40" style="fill:#e0b879">Space</text>
+<text transform="translate(919,703)" font-size="40" style="fill:#d6a79f">Placement</text>
+<text transform="translate(797,519)" font-size="40" style="fill:#d88988">Ceiling</text>
+<text transform="translate(974,378) rotate(-90)" font-size="40" style="fill:#8fb7d0">Film</text>
+<text transform="translate(900,465)" font-size="40" style="fill:#b6c3dd">Hires</text>
+<text transform="translate(709,150)" font-size="40" style="fill:#9fc9c5">Mode</text>
+<text transform="translate(19,93)" font-size="40" style="fill:#d9c89e">Actor</text>
+<text transform="translate(1046,532)" font-size="40" style="fill:#a9b7a3">Different</text>
+<text transform="translate(21,58)" font-size="40" style="fill:#e0b879">Need</text>
+<text transform="translate(89,277)" font-size="40" style="fill:#c7d7b5">Information</text>
+<text transform="translate(372,397)" font-size="40" style="fill:#a9b7a3">Low</text>
+<text transform="translate(415,568)" font-size="40" style="fill:#8fb7d0">Television</text>
+<text transform="translate(906,409)" font-size="40" style="fill:#d9c89e">Less</text>
+<text transform="translate(140,352)" font-size="40" style="fill:#8fb7d0">Rooms</text>
+<text transform="translate(377,603)" font-size="40" style="fill:#c49a6c">Tea</text>
+<text transform="translate(36,137)" font-size="40" style="fill:#d5d2c2">Send</text>
+<text transform="translate(1267,692) rotate(-90)" font-size="40" style="fill:#9fc9c5">Real</text>
+<text transform="translate(926,348) rotate(-90)" font-size="40" style="fill:#d6a79f">Listening</text>
+<text transform="translate(690,640)" font-size="34" style="fill:#b6c3dd">Musical</text>
+<text transform="translate(1255,241) rotate(-90)" font-size="34" style="fill:#b6c3dd">Company</text>
+<text transform="translate(944,119)" font-size="34" style="fill:#d5d2c2">Blumlein</text>
+<text transform="translate(987,370)" font-size="34" style="fill:#8fb7d0">Important</text>
+<text transform="translate(148,190)" font-size="34" style="fill:#d9c89e">Common</text>
+<text transform="translate(13,175)" font-size="34" style="fill:#d9c89e">Family</text>
+<text transform="translate(141,714)" font-size="34" style="fill:#c7d7b5">Hometheater</text>
+<text transform="translate(30,459) rotate(-90)" font-size="34" style="fill:#b6c3dd">Theater</text>
+<text transform="translate(822,421) rotate(-90)" font-size="34" style="fill:#b6c3dd">Systems</text>
+<text transform="translate(136,108)" font-size="34" style="fill:#d5d2c2">Certification</text>
+<text transform="translate(750,186)" font-size="34" style="fill:#e0b879">Away</text>
+<text transform="translate(1052,43)" font-size="34" style="fill:#d6a79f">Data</text>
+<text transform="translate(684,88)" font-size="34" style="fill:#9fc9c5">Famous</text>
+<text transform="translate(284,525)" font-size="34" style="fill:#c49a6c">AAC</text>
+<text transform="translate(274,482)" font-size="30" style="fill:#c49a6c">Amplifier</text>
+<text transform="translate(464,648)" font-size="30" style="fill:#e0b879">Plastic</text>
+<text transform="translate(33,299) rotate(-90)" font-size="30" style="fill:#c7d7b5">Better</text>
+<text transform="translate(847,30)" font-size="30" style="fill:#b6c3dd">Little</text>
+<text transform="translate(1132,25)" font-size="30" style="fill:#d9c89e">Person</text>
+<text transform="translate(684,611) rotate(-90)" font-size="30" style="fill:#e0b879">Always</text>
+<text transform="translate(692,480)" font-size="30" style="fill:#9fc9c5">Singer</text>
+<text transform="translate(1140,114)" font-size="30" style="fill:#c7d7b5">Six</text>
+<text transform="translate(1143,682)" font-size="30" style="fill:#e0b879">Brain</text>
+<text transform="translate(1213,375) rotate(-90)" font-size="30" style="fill:#b6c3dd">Slightly</text>
+<text transform="translate(348,512)" font-size="30" style="fill:#c49a6c">Ear</text>
+<text transform="translate(26,709)" font-size="30" style="fill:#c49a6c">Side</text>
+<text transform="translate(801,692)" font-size="30" style="fill:#d88988">Air</text>
+<text transform="translate(531,44)" font-size="30" style="fill:#c49a6c">Fraud</text>
+<text transform="translate(169,27)" font-size="30" style="fill:#b6c3dd">Practical</text>
+<text transform="translate(378,29)" font-size="30" style="fill:#d88988">Problem</text>
+<text transform="translate(29,653) rotate(-90)" font-size="30" style="fill:#9fc9c5">Unless</text>
+<text transform="translate(92,569)" font-size="30" style="fill:#a9b7a3">Idea</text>
+<text transform="translate(454,168)" font-size="30" style="fill:#c7d7b5">Large</text>
+<text transform="translate(1167,557)" font-size="30" style="fill:#a9b7a3">Proper</text>
+<text transform="translate(328,302)" font-size="30" style="fill:#9fc9c5">Boom</text>
+<text transform="translate(363,711)" font-size="30" style="fill:#c7d7b5">Adds</text>
+<text transform="translate(1137,713)" font-size="30" style="fill:#a9b7a3">Films</text>
+<text transform="translate(315,400) rotate(-90)" font-size="30" style="fill:#d9c89e">Front</text>
+<text transform="translate(211,641)" font-size="30" style="fill:#b6c3dd">Behind</text>
+<text transform="translate(997,180)" font-size="26" style="fill:#d88988">Usually</text>
+<text transform="translate(953,144)" font-size="26" style="fill:#e0b879">Put</text>
+<text transform="translate(826,154) rotate(-90)" font-size="26" style="fill:#b6c3dd">Soundbar</text>
+<text transform="translate(129,714) rotate(-90)" font-size="26" style="fill:#e0b879">Mostly</text>
+<text transform="translate(598,370) rotate(-90)" font-size="26" style="fill:#9fc9c5">Ordinary</text>
+<text transform="translate(957,491)" font-size="26" style="fill:#a9b7a3">Fewer</text>
+<text transform="translate(788,710)" font-size="20" style="fill:#c7d7b5">Technology</text>
+<text transform="translate(1115,551)" font-size="20" style="fill:#8fb7d0">File</text>
+<text transform="translate(522,387)" font-size="20" style="fill:#d88988">Throw</text>
+<text transform="translate(1022,406)" font-size="20" style="fill:#e0b879">Part</text>
+<text transform="translate(1028,256)" font-size="20" style="fill:#e0b879">Bit</text>
+<text transform="translate(931,430)" font-size="20" style="fill:#c49a6c">Printed</text>
+<text transform="translate(529,312)" font-size="20" style="fill:#b6c3dd">Use</text>
+<text transform="translate(629,256)" font-size="20" style="fill:#d9c89e">Chain</text>
+<text transform="translate(286,351) rotate(-90)" font-size="20" style="fill:#a9b7a3">Link</text>
+<text transform="translate(48,268)" font-size="20" style="fill:#8fb7d0">Buy</text>
+<text transform="translate(319,168)" font-size="20" style="fill:#d88988">Changes</text>
+<text transform="translate(93,470)" font-size="20" style="fill:#d5d2c2">Hearing</text>
+<text transform="translate(381,627)" font-size="20" style="fill:#c49a6c">Lets</text>
+<text transform="translate(582,450)" font-size="16" style="fill:#a9b7a3">EMI</text>
+<text transform="translate(801,21)" font-size="16" style="fill:#a9b7a3">Alan</text>
+<text transform="translate(434,101)" font-size="16" style="fill:#9fc9c5">Early</text>
+<text transform="translate(338,142)" font-size="16" style="fill:#8fb7d0">LFE</text>
+<text transform="translate(312,244)" font-size="16" style="fill:#d88988">Effects</text>
+<text transform="translate(975,620)" font-size="16" style="fill:#d9c89e">DVD</text>
+<text transform="translate(835,535)" font-size="16" style="fill:#c7d7b5">Silver</text>
+<text transform="translate(558,146)" font-size="16" style="fill:#d5d2c2">Whose</text>
+<text transform="translate(1184,498)" font-size="16" style="fill:#c49a6c">Standard</text>
+<text transform="translate(9,18)" font-size="16" style="fill:#d5d2c2">Compressed</text>
+<text transform="translate(734,110)" font-size="16" style="fill:#8fb7d0">Formats</text>
 </svg>

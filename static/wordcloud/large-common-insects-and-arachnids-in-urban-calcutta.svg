@@ -1,134 +1,134 @@
 <svg role="img" aria-label="Pests we love" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Pests we love</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(388,117)" font-size="118" style="fill:#d5d2c2">Food</text>
-<text transform="translate(871,674) rotate(-90)" font-size="118" style="fill:#d6a79f">Spiders</text>
-<text transform="translate(111,694)" font-size="109" style="fill:#c7d7b5">Small</text>
-<text transform="translate(391,521)" font-size="109" style="fill:#e0b879">Water</text>
-<text transform="translate(1011,222)" font-size="89" style="fill:#d6a79f">Damp</text>
-<text transform="translate(1113,561) rotate(-90)" font-size="89" style="fill:#a9b7a3">Less</text>
-<text transform="translate(767,333) rotate(-90)" font-size="89" style="fill:#c7d7b5">Drains</text>
-<text transform="translate(229,311)" font-size="89" style="fill:#c49a6c">Wood</text>
-<text transform="translate(85,567) rotate(-90)" font-size="77" style="fill:#c49a6c">Pest</text>
-<text transform="translate(175,586)" font-size="77" style="fill:#d88988">Management</text>
-<text transform="translate(67,199)" font-size="77" style="fill:#c49a6c">Aedes</text>
-<text transform="translate(1085,146)" font-size="77" style="fill:#d88988">Rain</text>
-<text transform="translate(816,111)" font-size="77" style="fill:#d9c89e">Legs</text>
-<text transform="translate(879,686)" font-size="77" style="fill:#c49a6c">Antennae</text>
-<text transform="translate(980,562) rotate(-90)" font-size="77" style="fill:#9fc9c5">Urban</text>
-<text transform="translate(970,311) rotate(-90)" font-size="77" style="fill:#c49a6c">Wet</text>
-<text transform="translate(250,383)" font-size="77" style="fill:#c49a6c">Kitchens</text>
-<text transform="translate(104,454)" font-size="77" style="fill:#9fc9c5">Plants</text>
-<text transform="translate(20,379)" font-size="77" style="fill:#c7d7b5">Fear</text>
-<text transform="translate(375,215)" font-size="77" style="fill:#b6c3dd">Often</text>
-<text transform="translate(463,693)" font-size="77" style="fill:#d9c89e">Ticks</text>
-<text transform="translate(96,109)" font-size="77" style="fill:#d9c89e">Mites</text>
-<text transform="translate(913,612)" font-size="67" style="fill:#d5d2c2">Scorpions</text>
-<text transform="translate(1054,432) rotate(-90)" font-size="67" style="fill:#8fb7d0">Risk</text>
-<text transform="translate(860,56)" font-size="67" style="fill:#d88988">Interested</text>
-<text transform="translate(20,257)" font-size="67" style="fill:#b6c3dd">Nest</text>
-<text transform="translate(1073,315)" font-size="67" style="fill:#b6c3dd">Clean</text>
-<text transform="translate(678,441) rotate(-90)" font-size="67" style="fill:#d9c89e">Standing</text>
-<text transform="translate(156,513)" font-size="67" style="fill:#e0b879">Flies</text>
-<text transform="translate(760,673) rotate(-90)" font-size="67" style="fill:#d6a79f">Appear</text>
-<text transform="translate(444,313)" font-size="67" style="fill:#a9b7a3">Use</text>
-<text transform="translate(447,435)" font-size="55" style="fill:#b6c3dd">Means</text>
-<text transform="translate(124,35)" font-size="41" style="fill:#8fb7d0">Integrated</text>
-<text transform="translate(780,165)" font-size="41" style="fill:#e0b879">Anopheles</text>
-<text transform="translate(1141,384)" font-size="41" style="fill:#a9b7a3">Culex</text>
-<text transform="translate(50,307)" font-size="41" style="fill:#a9b7a3">Disease</text>
-<text transform="translate(424,626)" font-size="41" style="fill:#9fc9c5">Control</text>
-<text transform="translate(188,234)" font-size="41" style="fill:#c49a6c">Becomes</text>
-<text transform="translate(1147,514)" font-size="41" style="fill:#8fb7d0">Human</text>
-<text transform="translate(500,255)" font-size="41" style="fill:#d6a79f">Move</text>
-<text transform="translate(12,662)" font-size="41" style="fill:#8fb7d0">Air</text>
-<text transform="translate(716,625) rotate(-90)" font-size="41" style="fill:#d88988">Crack</text>
-<text transform="translate(913,548) rotate(-90)" font-size="41" style="fill:#b6c3dd">Excellent</text>
-<text transform="translate(1149,558)" font-size="41" style="fill:#d6a79f">Paper</text>
-<text transform="translate(704,705)" font-size="41" style="fill:#d88988">Pests</text>
-<text transform="translate(472,43)" font-size="41" style="fill:#9fc9c5">Line</text>
-<text transform="translate(242,145)" font-size="41" style="fill:#d6a79f">First</text>
-<text transform="translate(1118,453)" font-size="41" style="fill:#c49a6c">Simple</text>
-<text transform="translate(21,598)" font-size="41" style="fill:#e0b879">Wings</text>
-<text transform="translate(1001,257)" font-size="41" style="fill:#9fc9c5">Adults</text>
-<text transform="translate(445,143)" font-size="29" style="fill:#c7d7b5">Categories</text>
-<text transform="translate(781,38)" font-size="29" style="fill:#d5d2c2">Large</text>
-<text transform="translate(1102,715)" font-size="29" style="fill:#d9c89e">Cockroach</text>
-<text transform="translate(102,539)" font-size="29" style="fill:#d88988">Tube</text>
-<text transform="translate(704,363)" font-size="29" style="fill:#8fb7d0">Light</text>
-<text transform="translate(188,619)" font-size="29" style="fill:#8fb7d0">Storage</text>
-<text transform="translate(1070,343)" font-size="29" style="fill:#d88988">Residues</text>
-<text transform="translate(1134,415)" font-size="29" style="fill:#b6c3dd">Termites</text>
-<text transform="translate(32,139)" font-size="29" style="fill:#d5d2c2">Cardboard</text>
-<text transform="translate(1035,84)" font-size="29" style="fill:#e0b879">Corners</text>
-<text transform="translate(1132,639)" font-size="29" style="fill:#b6c3dd">Entered</text>
-<text transform="translate(253,539)" font-size="29" style="fill:#d9c89e">Walls</text>
-<text transform="translate(394,153) rotate(-90)" font-size="29" style="fill:#d5d2c2">Work</text>
-<text transform="translate(1192,265)" font-size="29" style="fill:#d88988">Sign</text>
-<text transform="translate(55,28)" font-size="29" style="fill:#d88988">Ants</text>
-<text transform="translate(276,60)" font-size="29" style="fill:#a9b7a3">Problem</text>
-<text transform="translate(841,264)" font-size="29" style="fill:#d6a79f">Wall</text>
-<text transform="translate(985,528)" font-size="29" style="fill:#d5d2c2">Spaces</text>
-<text transform="translate(9,686)" font-size="29" style="fill:#a9b7a3">Report</text>
-<text transform="translate(880,711)" font-size="29" style="fill:#b6c3dd">House</text>
-<text transform="translate(74,327)" font-size="22" style="fill:#d9c89e">Mosquitoes</text>
-<text transform="translate(196,715)" font-size="22" style="fill:#d6a79f">Containers</text>
-<text transform="translate(988,711)" font-size="22" style="fill:#b6c3dd">Matters</text>
-<text transform="translate(6,84)" font-size="22" style="fill:#8fb7d0">Lesson</text>
-<text transform="translate(460,336)" font-size="22" style="fill:#d88988">Remove</text>
-<text transform="translate(986,499)" font-size="22" style="fill:#b6c3dd">Waste</text>
-<text transform="translate(378,418)" font-size="22" style="fill:#b6c3dd">Fruit</text>
-<text transform="translate(767,481)" font-size="22" style="fill:#d5d2c2">Allowed</text>
-<text transform="translate(566,289)" font-size="22" style="fill:#c7d7b5">Helps</text>
-<text transform="translate(977,132)" font-size="22" style="fill:#c49a6c">Breeding</text>
-<text transform="translate(1113,167)" font-size="22" style="fill:#9fc9c5">Material</text>
-<text transform="translate(91,570)" font-size="22" style="fill:#d9c89e">Bees</text>
-<text transform="translate(15,61)" font-size="22" style="fill:#9fc9c5">Wasps</text>
-<text transform="translate(422,715)" font-size="22" style="fill:#9fc9c5">Different</text>
-<text transform="translate(1165,77)" font-size="22" style="fill:#d5d2c2">Usually</text>
-<text transform="translate(586,456)" font-size="22" style="fill:#8fb7d0">Unless</text>
-<text transform="translate(108,278)" font-size="22" style="fill:#9fc9c5">Disturbed</text>
-<text transform="translate(682,391)" font-size="22" style="fill:#8fb7d0">Hunters</text>
-<text transform="translate(378,236)" font-size="22" style="fill:#c49a6c">Gardens</text>
-<text transform="translate(603,613)" font-size="22" style="fill:#d9c89e">Cracks</text>
-<text transform="translate(544,162)" font-size="22" style="fill:#9fc9c5">Luggage</text>
-<text transform="translate(592,714)" font-size="22" style="fill:#8fb7d0">Contact</text>
-<text transform="translate(707,250) rotate(-90)" font-size="22" style="fill:#8fb7d0">Every</text>
-<text transform="translate(40,714)" font-size="22" style="fill:#b6c3dd">Seal</text>
-<text transform="translate(329,87)" font-size="22" style="fill:#9fc9c5">Aim</text>
-<text transform="translate(544,334)" font-size="22" style="fill:#c49a6c">Teaches</text>
-<text transform="translate(683,411)" font-size="22" style="fill:#d88988">Ecology</text>
-<text transform="translate(1000,101)" font-size="16" style="fill:#b6c3dd">Acronyms</text>
-<text transform="translate(10,619)" font-size="16" style="fill:#d88988">Used</text>
-<text transform="translate(1004,451)" font-size="16" style="fill:#b6c3dd">IPM</text>
-<text transform="translate(196,401)" font-size="16" style="fill:#8fb7d0">Mosquito</text>
-<text transform="translate(374,538)" font-size="16" style="fill:#c49a6c">Genera</text>
-<text transform="translate(324,204)" font-size="16" style="fill:#d88988">CDC</text>
-<text transform="translate(840,284)" font-size="16" style="fill:#c49a6c">Centers</text>
-<text transform="translate(26,484) rotate(-90)" font-size="16" style="fill:#c49a6c">Prevention</text>
-<text transform="translate(607,25)" font-size="16" style="fill:#c49a6c">Lift</text>
-<text transform="translate(1008,569)" font-size="16" style="fill:#d6a79f">Doormat</text>
-<text transform="translate(461,689) rotate(-90)" font-size="16" style="fill:#d6a79f">Second</text>
-<text transform="translate(668,641)" font-size="16" style="fill:#d5d2c2">Test</text>
-<text transform="translate(1184,485)" font-size="16" style="fill:#d88988">Flattened</text>
-<text transform="translate(125,714)" font-size="16" style="fill:#9fc9c5">Brown</text>
-<text transform="translate(291,255)" font-size="16" style="fill:#a9b7a3">Withdraws</text>
-<text transform="translate(772,194)" font-size="16" style="fill:#a9b7a3">Web</text>
-<text transform="translate(708,432)" font-size="16" style="fill:#d9c89e">Trembles</text>
-<text transform="translate(650,17)" font-size="16" style="fill:#b6c3dd">Stair</text>
-<text transform="translate(12,107)" font-size="16" style="fill:#c7d7b5">Building</text>
-<text transform="translate(499,538)" font-size="16" style="fill:#d88988">Shared</text>
-<text transform="translate(5,192)" font-size="16" style="fill:#e0b879">Along</text>
-<text transform="translate(621,251) rotate(-90)" font-size="16" style="fill:#a9b7a3">Habitat</text>
-<text transform="translate(328,712)" font-size="16" style="fill:#d9c89e">Warm</text>
-<text transform="translate(774,535)" font-size="16" style="fill:#9fc9c5">Crowded</text>
-<text transform="translate(303,170)" font-size="16" style="fill:#b6c3dd">Layered</text>
-<text transform="translate(792,131)" font-size="16" style="fill:#c7d7b5">Generous</text>
-<text transform="translate(1209,350)" font-size="16" style="fill:#b6c3dd">Scraps</text>
-<text transform="translate(798,319)" font-size="16" style="fill:#c49a6c">Terraces</text>
-<text transform="translate(20,366) rotate(-90)" font-size="16" style="fill:#9fc9c5">Courtyards</text>
-<text transform="translate(738,251)" font-size="16" style="fill:#8fb7d0">Potted</text>
-<text transform="translate(577,44)" font-size="16" style="fill:#e0b879">Roof</text>
-<text transform="translate(1013,153)" font-size="16" style="fill:#d5d2c2">Tanks</text>
-<text transform="translate(143,507) rotate(-90)" font-size="16" style="fill:#d9c89e">Broken</text>
+<text transform="translate(707,102)" font-size="118" style="fill:#d5d2c2">Insects</text>
+<text transform="translate(910,670) rotate(-90)" font-size="118" style="fill:#d6a79f">Often</text>
+<text transform="translate(248,608)" font-size="103" style="fill:#8fb7d0">Termites</text>
+<text transform="translate(10,197)" font-size="103" style="fill:#d88988">Ants</text>
+<text transform="translate(995,524)" font-size="93" style="fill:#a9b7a3">Water</text>
+<text transform="translate(676,259)" font-size="93" style="fill:#d6a79f">Large</text>
+<text transform="translate(485,492) rotate(-90)" font-size="89" style="fill:#a9b7a3">Small</text>
+<text transform="translate(377,368) rotate(-90)" font-size="85" style="fill:#c7d7b5">Spiders</text>
+<text transform="translate(56,487)" font-size="81" style="fill:#c49a6c">Drains</text>
+<text transform="translate(583,522) rotate(-90)" font-size="81" style="fill:#c49a6c">Cockroach</text>
+<text transform="translate(977,354)" font-size="81" style="fill:#c49a6c">Spider</text>
+<text transform="translate(209,692)" font-size="81" style="fill:#9fc9c5">Beetles</text>
+<text transform="translate(1003,607)" font-size="81" style="fill:#9fc9c5">Moths</text>
+<text transform="translate(1265,227) rotate(-90)" font-size="81" style="fill:#e0b879">Food</text>
+<text transform="translate(970,687)" font-size="81" style="fill:#d5d2c2">Urban</text>
+<text transform="translate(108,391)" font-size="77" style="fill:#9fc9c5">Damp</text>
+<text transform="translate(687,175)" font-size="77" style="fill:#d6a79f">Arachnids</text>
+<text transform="translate(622,403)" font-size="77" style="fill:#c49a6c">Wood</text>
+<text transform="translate(11,75)" font-size="73" style="fill:#a9b7a3">Usually</text>
+<text transform="translate(599,320)" font-size="73" style="fill:#b6c3dd">Wasps</text>
+<text transform="translate(451,226) rotate(-90)" font-size="73" style="fill:#9fc9c5">Flies</text>
+<text transform="translate(1017,237)" font-size="73" style="fill:#d5d2c2">Less</text>
+<text transform="translate(468,65)" font-size="69" style="fill:#d9c89e">Cracks</text>
+<text transform="translate(631,477)" font-size="69" style="fill:#d6a79f">Many</text>
+<text transform="translate(939,436)" font-size="69" style="fill:#d9c89e">Mosquito</text>
+<text transform="translate(94,299)" font-size="64" style="fill:#d9c89e">Wall</text>
+<text transform="translate(63,563)" font-size="64" style="fill:#a9b7a3">Rain</text>
+<text transform="translate(25,633)" font-size="64" style="fill:#d9c89e">Bees</text>
+<text transform="translate(549,702)" font-size="49" style="fill:#e0b879">Mosquitoes</text>
+<text transform="translate(44,549) rotate(-90)" font-size="49" style="fill:#d6a79f">Problem</text>
+<text transform="translate(310,535)" font-size="49" style="fill:#a9b7a3">Organic</text>
+<text transform="translate(49,708)" font-size="45" style="fill:#b6c3dd">Drain</text>
+<text transform="translate(575,651)" font-size="45" style="fill:#8fb7d0">Huntsman</text>
+<text transform="translate(597,532)" font-size="45" style="fill:#c49a6c">Wings</text>
+<text transform="translate(4,241)" font-size="45" style="fill:#c49a6c">Cockroaches</text>
+<text transform="translate(1034,279)" font-size="45" style="fill:#a9b7a3">Corners</text>
+<text transform="translate(86,417) rotate(-90)" font-size="45" style="fill:#c49a6c">Insect</text>
+<text transform="translate(34,114)" font-size="45" style="fill:#d9c89e">Garden</text>
+<text transform="translate(959,676) rotate(-90)" font-size="45" style="fill:#c49a6c">Visible</text>
+<text transform="translate(526,321) rotate(-90)" font-size="45" style="fill:#8fb7d0">Control</text>
+<text transform="translate(1108,148)" font-size="45" style="fill:#d6a79f">Wasp</text>
+<text transform="translate(105,434)" font-size="45" style="fill:#c49a6c">Webs</text>
+<text transform="translate(641,259) rotate(-90)" font-size="41" style="fill:#d88988">Walls</text>
+<text transform="translate(402,491) rotate(-90)" font-size="41" style="fill:#b6c3dd">Trees</text>
+<text transform="translate(17,661)" font-size="32" style="fill:#a9b7a3">Cupboards</text>
+<text transform="translate(262,428)" font-size="32" style="fill:#c7d7b5">Roof</text>
+<text transform="translate(596,98)" font-size="32" style="fill:#b6c3dd">Human</text>
+<text transform="translate(839,364) rotate(-90)" font-size="32" style="fill:#d88988">Kitchen</text>
+<text transform="translate(157,326)" font-size="32" style="fill:#c49a6c">Bathroom</text>
+<text transform="translate(451,635)" font-size="32" style="fill:#e0b879">Winged</text>
+<text transform="translate(865,30)" font-size="32" style="fill:#9fc9c5">Butterflies</text>
+<text transform="translate(674,432)" font-size="32" style="fill:#c7d7b5">Crickets</text>
+<text transform="translate(1267,703) rotate(-90)" font-size="32" style="fill:#d5d2c2">Dragonflies</text>
+<text transform="translate(670,272) rotate(-90)" font-size="32" style="fill:#c7d7b5">Scorpions</text>
+<text transform="translate(202,134)" font-size="32" style="fill:#d88988">Mites</text>
+<text transform="translate(996,715)" font-size="32" style="fill:#e0b879">Household</text>
+<text transform="translate(132,593)" font-size="32" style="fill:#d5d2c2">Timber</text>
+<text transform="translate(842,311)" font-size="32" style="fill:#d6a79f">Though</text>
+<text transform="translate(1060,390)" font-size="32" style="fill:#d5d2c2">Clean</text>
+<text transform="translate(1207,245)" font-size="32" style="fill:#e0b879">Eat</text>
+<text transform="translate(175,620)" font-size="32" style="fill:#d88988">Soil</text>
+<text transform="translate(1111,32)" font-size="32" style="fill:#b6c3dd">Gardens</text>
+<text transform="translate(1102,637)" font-size="32" style="fill:#d9c89e">Flowers</text>
+<text transform="translate(37,339) rotate(-90)" font-size="32" style="fill:#d5d2c2">Sting</text>
+<text transform="translate(831,203)" font-size="32" style="fill:#d88988">Predators</text>
+<text transform="translate(166,509)" font-size="24" style="fill:#d88988">Vegetation</text>
+<text transform="translate(790,31)" font-size="24" style="fill:#a9b7a3">Bed</text>
+<text transform="translate(886,706)" font-size="24" style="fill:#d6a79f">Rather</text>
+<text transform="translate(958,252)" font-size="24" style="fill:#d5d2c2">Dust</text>
+<text transform="translate(295,713)" font-size="21" style="fill:#9fc9c5">Furniture</text>
+<text transform="translate(1014,393)" font-size="21" style="fill:#a9b7a3">Ant</text>
+<text transform="translate(1171,374)" font-size="21" style="fill:#c7d7b5">Useful</text>
+<text transform="translate(56,21)" font-size="21" style="fill:#d5d2c2">Arthropods</text>
+<text transform="translate(9,575)" font-size="21" style="fill:#a9b7a3">Legs</text>
+<text transform="translate(807,642) rotate(-90)" font-size="21" style="fill:#c49a6c">Grasshoppers</text>
+<text transform="translate(200,96)" font-size="21" style="fill:#c7d7b5">Panic</text>
+<text transform="translate(760,128)" font-size="21" style="fill:#8fb7d0">Moisture</text>
+<text transform="translate(949,281)" font-size="21" style="fill:#d9c89e">Humans</text>
+<text transform="translate(926,373)" font-size="21" style="fill:#c49a6c">House</text>
+<text transform="translate(988,611) rotate(-90)" font-size="21" style="fill:#d9c89e">Different</text>
+<text transform="translate(1113,179)" font-size="21" style="fill:#c49a6c">Smaller</text>
+<text transform="translate(626,341)" font-size="21" style="fill:#c7d7b5">Move</text>
+<text transform="translate(239,274)" font-size="21" style="fill:#a9b7a3">Behind</text>
+<text transform="translate(473,173) rotate(-90)" font-size="21" style="fill:#d5d2c2">Cupboard</text>
+<text transform="translate(269,636)" font-size="21" style="fill:#c7d7b5">Adult</text>
+<text transform="translate(387,236)" font-size="21" style="fill:#d5d2c2">Paper</text>
+<text transform="translate(440,197)" font-size="21" style="fill:#9fc9c5">Live</text>
+<text transform="translate(782,594) rotate(-90)" font-size="21" style="fill:#8fb7d0">Line</text>
+<text transform="translate(468,714)" font-size="21" style="fill:#8fb7d0">World</text>
+<text transform="translate(938,457)" font-size="21" style="fill:#9fc9c5">Tiny</text>
+<text transform="translate(270,210)" font-size="21" style="fill:#8fb7d0">Near</text>
+<text transform="translate(253,184)" font-size="21" style="fill:#c49a6c">Nest</text>
+<text transform="translate(55,511)" font-size="21" style="fill:#d9c89e">Build</text>
+<text transform="translate(401,293)" font-size="21" style="fill:#9fc9c5">Bite</text>
+<text transform="translate(1154,457)" font-size="21" style="fill:#8fb7d0">Important</text>
+<text transform="translate(197,712)" font-size="21" style="fill:#b6c3dd">Plant</text>
+<text transform="translate(508,481) rotate(-90)" font-size="21" style="fill:#9fc9c5">Caterpillars</text>
+<text transform="translate(307,386)" font-size="21" style="fill:#c49a6c">Green</text>
+<text transform="translate(699,196)" font-size="21" style="fill:#d88988">Medically</text>
+<text transform="translate(175,344)" font-size="21" style="fill:#b6c3dd">Creatures</text>
+<text transform="translate(1059,547)" font-size="21" style="fill:#c49a6c">Vector</text>
+<text transform="translate(246,304)" font-size="21" style="fill:#e0b879">Lives</text>
+<text transform="translate(55,133)" font-size="21" style="fill:#8fb7d0">Habitat</text>
+<text transform="translate(583,671)" font-size="21" style="fill:#b6c3dd">Treatment</text>
+<text transform="translate(652,502)" font-size="21" style="fill:#a9b7a3">Larvae</text>
+<text transform="translate(872,353)" font-size="21" style="fill:#c49a6c">Common</text>
+<text transform="translate(517,19)" font-size="21" style="fill:#d9c89e">Remove</text>
+<text transform="translate(1188,298)" font-size="21" style="fill:#d6a79f">Every</text>
+<text transform="translate(1175,558)" font-size="21" style="fill:#d5d2c2">Feed</text>
+<text transform="translate(953,225)" font-size="21" style="fill:#d88988">Light</text>
+<text transform="translate(1186,712)" font-size="21" style="fill:#9fc9c5">Feel</text>
+<text transform="translate(612,466) rotate(-90)" font-size="21" style="fill:#a9b7a3">Suggests</text>
+<text transform="translate(889,121)" font-size="18" style="fill:#a9b7a3">Building</text>
+<text transform="translate(792,476)" font-size="18" style="fill:#d9c89e">Fish</text>
+<text transform="translate(839,683)" font-size="18" style="fill:#d9c89e">Bamboo</text>
+<text transform="translate(748,670)" font-size="18" style="fill:#d5d2c2">Monsoon</text>
+<text transform="translate(754,608) rotate(-90)" font-size="18" style="fill:#8fb7d0">Arthropod</text>
+<text transform="translate(252,155)" font-size="18" style="fill:#b6c3dd">Larger</text>
+<text transform="translate(605,254) rotate(-90)" font-size="18" style="fill:#a9b7a3">Theatrical</text>
+<text transform="translate(260,17)" font-size="18" style="fill:#d6a79f">Appear</text>
+<text transform="translate(485,105)" font-size="18" style="fill:#e0b879">Pond</text>
+<text transform="translate(604,131)" font-size="18" style="fill:#b6c3dd">Six</text>
+<text transform="translate(482,82)" font-size="18" style="fill:#b6c3dd">Antennae</text>
+<text transform="translate(212,526)" font-size="18" style="fill:#d6a79f">Mantises</text>
+<text transform="translate(929,502) rotate(-90)" font-size="18" style="fill:#9fc9c5">Damselflies</text>
+<text transform="translate(98,319)" font-size="18" style="fill:#8fb7d0">Ticks</text>
+<text transform="translate(687,355)" font-size="18" style="fill:#e0b879">Neither</text>
+<text transform="translate(1024,79)" font-size="18" style="fill:#d5d2c2">Great</text>
+<text transform="translate(380,625) rotate(-90)" font-size="18" style="fill:#d9c89e">Wet</text>
+<text transform="translate(652,21)" font-size="18" style="fill:#d5d2c2">Waste</text>
 </svg>

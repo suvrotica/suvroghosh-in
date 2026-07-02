@@ -1,10 +1,10 @@
 ---
 title: "Politics Is a Machine for Spoiling Ordinary People"
-description: "A systems-minded essay on how public office can turn common human weaknesses into public damage through money, loyalty, opacity, and delayed consequence."
+description: "Politicians are rarely clean fairy-tale villains. More often, politics turns normal human weakness into public damage by rewarding vanity, tribal loyalty, opaque money, bureaucratic evasion, and power without immediate consequence."
+thumbnail : "/images/Compress_20260428_160801_1383.jpg"
 date: "2026-04-28"
-thumbnail: "/images/Compress_20260428_160801_1383.jpg"
 category: "Politics"
-tags: ["Video", "Politics", "Indian Politics", "Political Corruption", "Governance", "Political Finance", "Electoral Bonds", "Accountability", "Public Institutions", "Calcutta", "Systems Thinking", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Politics As A Machine For Spoiling Ordinary People", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
 published: true
 color: "red"
 ---
@@ -13,95 +13,86 @@ color: "red"
 
 <Pi src="Compress_20260428_160801_1383.jpg" />
 
-A freshly printed campaign poster always looks cleaner than the wall behind it.
+Acronyms expanded in this post:
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
 
-That may be the most accurate introduction to politics I know. The face is smooth. The slogan is confident. The colors are selected with care. Behind it sit older stains, half-torn promises, damp plaster, old glue, and the stubborn evidence that public life is rarely renewed as neatly as public design.
+---
 
-Politicians are not usually born as finished villains. That would be simpler. Most begin as ordinary people with ordinary weaknesses: ambition, vanity, fear of irrelevance, loyalty to their own group, hunger for applause, discomfort with scrutiny, a talent for self-justification, and a private belief that their own compromise is more understandable than everyone else's.
+A politician is not usually born evil, which is disappointing for those of us who prefer our villains tidy, caped, skull-ringed, and considerate enough to leave a signed confession on official letterhead.
 
-Politics takes these common ingredients and gives them machinery.
+More often, politics is a machine that takes ordinary human ingredients—vanity, ambition, tribal loyalty, status anxiety, fear of irrelevance, appetite for applause, donor pressure, party discipline, bureaucratic fog, and the unusual privilege of ruining thousands of lives before lunch—and then announces, with the solemnity of a brass band falling down a staircase, “Congratulations, you are now a public servant.”
 
-That is the danger.
+The plain version is uglier and more useful: politicians often behave badly because the job rewards bad behavior.
 
-An ordinary person's vanity may irritate a room. A powerful person's vanity can shape a budget. An ordinary person's favoritism may spoil a family conversation. A minister's favoritism can direct contracts, transfers, licenses, and police attention. An ordinary person's lie may protect his pride. A party's lie can become policy language, media strategy, and public memory.
+Not always. Not everyone. Some are decent. Some enter politics with a working conscience, which in that profession is rather like bringing a violin to a knife fight. A conscience helps. It does not, by itself, beat money, media machinery, caste blocs, patronage networks, party whips, legal ambiguity, muscle power, donor expectations, and the permanent carnival of manufactured outrage. Purity without strategy is not politics. It is compost.
 
-The job rewards bad habits unless strong restraints exist.
+The central problem is power without immediate personal consequence. A shopkeeper cheats you, and you stop buying rice from him. A doctor harms patients, and there may be licensing consequences. A software vendor destroys a hospital billing system, and at least someone eventually sends a furious email with screenshots. But a politician damages a city, lies about it, blames “historical forces,” renames a bridge, opens a committee, garlands a statue, and may still be rewarded by people who have been taught that flags are an acceptable substitute for evidence.
 
-There are decent people in politics. It would be foolish to deny that. But decency is not a force field. A good intention enters a world of campaign finance, local factions, party discipline, donor expectations, bureaucracy, media pressure, legal delay, and the permanent temptation to treat the public as useful in bulk and inconvenient in detail.
+Power means the ability to make decisions that affect people who cannot easily say no. That last phrase is the hinge on which the whole rotten cupboard swings. If your decision injures people who cannot refuse it, cannot inspect it, cannot reverse it, cannot find who signed it, and cannot punish you before the next election cycle dissolves the memory into noise, you are not merely making policy. You are operating a consequence-displacement engine.
 
-The result is not always dramatic corruption. Often it is quieter. A file slows down. A tender seems shaped before it is opened. A local loyalist becomes a social worker with unusual access. A police matter develops political weather. A benefit list starts to know who attended which meeting. A reporter receives advice. A citizen is told to come later.
+Corruption is often imagined as an envelope of cash passed under a table in a room with one flickering tube light and three men pretending not to know one another. That version exists, of course; civilization has never been short of envelopes. But corruption is larger than bribery. Transparency International defines corruption as the abuse of entrusted power for private gain. The phrase “private gain” deserves a hard stare. It can mean money, but it can also mean party advantage, dynastic promotion, ideological dominance, caste consolidation, media control, donor protection, bureaucratic immunity, or the warm mammalian thrill of remaining important while other people stand in line.
 
-No one scene proves everything.
+Representation is supposed to mean that citizens’ interests travel into public decision-making. That is the schoolbook diagram: voter speaks, representative listens, law improves, sun rises, sparrows sing, democracy has combed its hair. Actual representation is messier. Citizens are filtered through parties, districts, campaign finance, media frames, information gaps, caste and class networks, administrative capacity, court delays, police discretion, and the small matter that millions of people are too exhausted earning a living to supervise the daily dentistry of the state.
 
-The pattern does.
+Accountability means the people in power can be watched, judged, and removed. Without it, politics becomes customer service run by a crocodile. The crocodile smiles. The crocodile thanks you for your feedback. The crocodile has constituted a committee to examine why your leg is missing.
 
-Corruption is commonly imagined as cash passed under a table. That still exists, with all the old boredom of human greed. But corruption is larger than cash. It is the abuse of public power for private, party, family, factional, ideological, or donor gain. It can wear a formal suit. It can speak in the language of reform. It can sign minutes. It can say "public interest" while quietly arranging private advantage.
+The least understood term is incentive capture. This is what happens when a politician’s real survival depends less on the public and more on donors, party bosses, lobbyists, caste contractors, media allies, bureaucratic networks, local strongmen, or whichever emperor controls the ladder. Once incentives are captured, public speech becomes theatre. The politician says “people,” but the real sentence is addressed elsewhere.
 
-Money is the most patient part of the machine.
+That is the first non-obvious truth: corruption is not mainly a defect in personality. It is often a defect in feedback design. The system collects applause from the crowd, money from the donor, discipline from the party, narrative from the media ally, procedural cover from the bureaucracy, and pain from the public. Then it stores those signals in separate boxes so nobody can connect the smell to the drain.
 
-Democracy needs money. Campaigns cost money. Organization costs money. Communication costs money. The problem begins when money becomes less visible than the influence it buys. International IDEA has long argued that political finance needs regulation and transparency because poorly controlled money can weaken accountability and public trust. This is not a foreign mystery. It is common sense with stationery.
+This is why looking for “good people” is necessary but pathetically insufficient. A good person entering a bad incentive system is not a solution. It is a stress test. The slogan “elect better leaders” sounds noble until the better leader discovers that roads are mediated by contractors, police postings by political loyalty, welfare delivery by local brokers, legislation by party command, campaign survival by money, and public attention by whatever nonsense is screaming from the nearest screen.
 
-If citizens cannot see who funds parties, they cannot properly judge policy. If large donors can speak privately while voters are expected to cheer publicly, democracy becomes a theatre with a hidden sponsor.
+Absurd analogy, because sometimes only nonsense can properly describe reality: politics is like giving a raccoon the keys to a sweet shop, then expressing moral disappointment when it does not conduct a transparent audit of the kaju barfi.
 
-India's electoral bonds case showed this clearly. The scheme was presented as a way to clean up funding by routing donations through banks. Its critics argued that it created large-scale anonymity. In February 2024, the Supreme Court struck down the scheme as unconstitutional, holding that it violated voters' right to information, and directed disclosure through the Election Commission of India.
+The common misunderstanding is that politicians are uniquely wicked people. No. Worse. They are ordinary people placed in unusually corrupting arrangements.
 
-The important lesson was not that politics can run without money. It cannot.
+Most humans want approval. Politicians need it industrially. Most humans bend truth to protect themselves. Politicians hire teams to varnish the bending. Most humans favor allies over strangers. Politicians build election machines out of that instinct and call it ground strategy. Most humans dislike accountability. Politicians often get to redesign the accountability mechanism while standing inside it with a screwdriver.
 
-The lesson was that citizens need to know where political money comes from before they can understand where public decisions may be going.
+The result is not always cartoon villainy. Often it is softer, more bureaucratic, and therefore more durable. A promise becomes a scheme. A scheme becomes an allocation. An allocation becomes a tender. A tender becomes a network. A network becomes a dependency. A dependency becomes a vote bank. A vote bank becomes an argument against reform. By the time the citizen asks why the drain still overflows, the answer has been distributed across forty signatures, six departments, three contractors, two legal opinions, and one man on television saying the opposition hates development.
 
-Opacity spoils people because it weakens consequence. A politician who knows funding is hidden, decisions are diffused, records are hard to inspect, and outrage will be redirected by friendly noise has more room to become worse. Not overnight. Slowly. Comfortably. With explanations.
+Political evil, in practice, is frequently administrative diffusion plus moral evaporation.
 
-This is why searching only for pure leaders is insufficient. A pure leader in an impure machine is a temporary experiment unless the machine is changed. The more adult question is not "Who has a clean soul?" The question is: who can observe power, who can stop abuse, who records decisions, who audits money, who protects whistleblowers, who punishes delay, who keeps the office from turning citizenship into pleading?
+Who benefits from misunderstanding this? Bad politicians benefit first, because if citizens believe corruption is just a personal defect, everyone goes hunting for saints instead of demanding rules. The public says, “We need an honest leader.” The machine says, “Splendid. Here is one. Let us see how long he lasts without money, party protection, bureaucratic cooperation, and immunity from slander.”
 
-Politics spoils ordinary people by separating action from consequence.
+Parties benefit too. They sell moral theatre. Our side is pure. Their side is corrupt. This is baby food for adults. All parties prefer citizens who think in flags, enemies, insults, and emotional weather. A citizen who asks about procurement rules, political finance, police independence, information rights, local government capacity, and audit trails is less convenient. Such a citizen is like a mosquito with a law degree.
 
-A shopkeeper who cheats openly may lose customers. A politician can damage a city through bad incentives and still appear at the next event to speak of sacrifice. A bureaucratic failure can be spread across enough desks that no desk feels guilty. A public contract can be nested inside procedure until responsibility becomes fog.
+Donors benefit. Opaque money turns democracy into a restaurant where citizens read the menu and financiers own the kitchen. The International Institute for Democracy and Electoral Assistance [International IDEA, an intergovernmental organization that supports democracy and electoral systems] makes the central point plainly: money is necessary for democratic participation, but poorly regulated political finance can undermine institutions, accountability, and democratic quality. There is no mystery here. Elections need money. Money needs disclosure. Disclosure needs enforcement. Enforcement needs independence. Independence needs political courage. Political courage, tragically, is not sold by the kilogram.
 
-The citizen faces the fog at street level.
+Bureaucracies benefit as well. Procedure can become a fog machine. Everyone signs something. Nobody is responsible. A file moves from desk to desk like a haunted pigeon. The citizen sees a system. The insider sees a maze of deniability. Each desk has a stamp, a rule, a precedent, a missing annexure, and an expression of wounded innocence.
 
-He enters an office and meets a system that seems both powerful and absent. Everyone has a rule. Nobody has responsibility. A missing annexure, a pending approval, a senior officer unavailable, a technical issue, a file moving, a committee reviewing, a matter under consideration. The state has many ways of saying no without admitting refusal.
+The media ecosystem benefits when politics is treated as a morality play rather than an institutional design problem. Rage is easier to sell than structure. A shouting match needs two microphones and a countdown clock. Explaining campaign finance, local patronage, administrative discretion, police transfers, judicial delay, and regulatory capture requires patience, documents, and the tragic willingness to bore people before enlightening them.
 
-In that fog, the broker becomes useful.
+India’s electoral bonds case is a useful example because it shows how clean words can carry dirty architecture. The official argument was that electoral bonds would clean up political funding by moving donations through banking channels. The practical design created anonymity at scale. Citizens were asked to trust a system in which large political donations could influence public life while the ordinary voter could not easily see who was funding whom.
 
-Once the broker is useful, the politician becomes useful in the wrong way.
+In February 2024, the Supreme Court of India struck down the electoral bonds scheme as unconstitutional, holding that it violated voters’ right to information. The court also directed the State Bank of India [SBI, the government-owned banking institution that issued the bonds] to stop issuing them and disclose details to the Election Commission of India [ECI, the constitutional body that administers Indian elections]. The issue was not whether political parties need money. They do. The issue was whether citizens can meaningfully judge power when money speaks privately and the public is told to clap loudly in the dark.
 
-This is the core machine. Weak public service creates dependence. Dependence creates local power. Local power creates votes. Votes protect the people who profit from weak public service. Then everyone gives a speech about the common citizen.
+That is the little gremlin at the heart of modern politics. When money can whisper privately while citizens are required to cheer publicly, policy begins to smell faintly of a boardroom.
 
-The machine is not unbeatable, but it is sturdy because many people benefit from partial failure. A fully working office reduces the value of the fixer. Transparent procurement reduces the value of the insider. Fast grievance systems reduce the value of the local strongman. Public funding data reduces the comfort of donors. Independent institutions reduce the joy of ruling parties. Real party democracy reduces the ease of family control.
+Notice how the language works. “Transparency” can be used to describe a system that hides the donor from the voter. “Reform” can mean redesigning accountability so it looks cleaner from far away while becoming more opaque up close. “National interest” can mean public welfare, party survival, donor preference, ideological consolidation, or one man’s need to appear fifty feet tall on every available wall. In politics, words are not merely descriptions. They are camouflage nets.
 
-Every repair threatens an income stream, a status position, or a private shortcut.
+A useful translation service would help.
 
-So repair is resisted in noble language.
+When a politician says, “We are committed to public service, national development, institutional integrity, and the aspirations of the common citizen,” the public version is, “We love you. Please clap. Also please forget the last scandal, which was complex, historical, regrettable, and somehow nobody’s fault.”
 
-Reform is delayed for consultation. Disclosure is delayed for privacy. Accountability is delayed for stability. Internal democracy is delayed for unity. Police reform is delayed for security. Court reform is delayed by process. The vocabulary changes. The old convenience remains.
+What it may actually mean is, “We operate inside a system where winning requires money, loyalty, manipulation, selective memory, and moral flexibility. Your outrage is useful during campaigns and inconvenient afterward.”
 
-In Calcutta, one sees the small version of this everywhere. A local wall changes posters. The same men remain near the same points of access. A public complaint becomes easier if someone knows someone. A citizen learns not the law first, but the route. Which desk, which number, which hour, which person, which phrase, which small humiliation must be accepted to get movement.
+This is not a counsel of despair. It is a plea to stop being childish about power. The mature question is not “Which leader has a pure soul?” The mature question is “What can this person do, who can observe it, who can stop it, who pays for it, who benefits from it, who records it, who audits it, who prosecutes abuse, and how quickly can the public know?”
 
-The republic is experienced as procedure.
+Democracy fails downward when citizens confuse emotional identification with supervision. A country is not your mother. A party is not your family. A leader is not your uncle. The state is not a sacred relative whose mistakes must be hidden from neighbors. The state is a coercive administrative machine funded by the public and authorized to tax, police, regulate, license, punish, distribute, and decide. It should be watched with the same tender trust one reserves for a pressure cooker with a suspicious whistle.
 
-Procedure without accountability is a maze.
+The design implications are plain, though not easy. Political finance must be visible enough for citizens, journalists, courts, and watchdogs to connect money to policy. Public procurement must be inspectable. Beneficial ownership must be harder to hide. Independent institutions must have budgets, tenure protections, and appointment processes that do not turn them into ornamental pets of the executive. Whistleblowers need protection before they are dead, ruined, transferred, or socially converted into cautionary tales. Local government data should show who approved what, when, under which budget line, with which contractor, at what revised cost, and after how many delays. This is not glamour. It is plumbing. But plumbing is what separates civilization from a puddle with a flag.
 
-The cure, therefore, is not moral thunder. Moral thunder is useful for ten minutes and then becomes weather. The cure is structure. Political funding visible in time to matter. Procurement data that citizens and journalists can inspect. Protection for people who expose wrongdoing. Independent investigators who do not become tools of the ruling party. Local budgets that can be followed. Service guarantees with deadlines. Internal party processes that are not private rituals. Fewer discretionary choke points where a citizen must bend to survive.
+The realistic constraint is that no clean solution exists because the people who benefit from opacity are often the people required to legislate against it. This is the locked-room comedy of reform. The burglar has the key, chairs the security committee, and is deeply concerned about theft.
 
-These reforms are dull, which is why they are serious.
+So reform comes unevenly. Courts intervene. Journalists uncover. Civil society litigates. Citizens organize. Bureaucrats leak. Election bodies resist or fold. Parties adapt. Donors find new channels. The machine changes shape. There is no final victory, only maintenance. Democracy is not a temple bell you ring every five years. It is a drainage system in monsoon. Ignore it, and one day the living room has fish.
 
-Democracy is not only voting. Voting decides who receives power. Governance decides what power is allowed to do after it enters the office and closes the door. A society that treats election day as the whole story will keep being surprised by what happens on ordinary weekdays.
+The funny but accurate takeaway is that politicians are “generally evil” only in the same sense that unattended milk generally spoils. The milk is not possessed by Satan. The fridge is broken, the kitchen is hot, the landlord is lying about electricity, and everyone is standing around writing patriotic poems about dairy.
 
-The uncomfortable truth is that politics often spoils people by giving them permission to become more intensely themselves. The vain become historic. The fearful become harsh. The loyal become blind. The ambitious become flexible. The mediocre become protected. The greedy become strategic. The obedient become disciplined. The cruel become strong.
+The task, then, is not to find milk with superior character. It is to fix the refrigerator, audit the landlord, check the wiring, label the bottle, shorten the time between spoilage and consequence, and stop applauding anyone who tells you curdling is part of national culture.
 
-Institutions exist because human beings should not be trusted too much with other people's lives.
+## Related Posts
 
-That sounds bleak.
-
-It is also the beginning of serious democracy.
-
-At dusk, the poster on the wall looks a little less new. Dust settles on the slogan. Someone pastes another face partly over the old one. The wall keeps receiving ambition and giving back evidence. It does not argue. It only holds the layers.
-
-Politics will keep spoiling ordinary people until rottenness becomes less useful than restraint.
-
-That is a slow repair, and it begins with refusing to admire the poster more than the wall.
-
-P.S. References
-
-- [International IDEA on money in politics](https://www.idea.int/theme/money-politics)
-- [Supreme Court Observer background on the electoral bonds case](https://www.scobserver.in/cases/association-for-democratic-reforms-electoral-bonds-case-background/)
+- [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
+- [Why India Has Such a Rich Assortment of Hoodlums and Goons](/blog/society/india-hoodlums-goons-assortment)
+- [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
+- [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)

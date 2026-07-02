@@ -1,134 +1,134 @@
-<svg role="img" aria-label="India&#x27;s Semiconductor Problem Is Not a Missing Slogan" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>India&#x27;s Semiconductor Problem Is Not a Missing Slogan</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<svg role="img" aria-label="India’s Semiconductor Problem Is Not a Missing Slogan" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>India’s Semiconductor Problem Is Not a Missing Slogan</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(867,434)" font-size="118" style="fill:#d9c89e">India</text>
-<text transform="translate(160,576)" font-size="109" style="fill:#d88988">Semiconductor</text>
-<text transform="translate(359,166)" font-size="109" style="fill:#8fb7d0">Packaging</text>
-<text transform="translate(566,698)" font-size="99" style="fill:#9fc9c5">Power</text>
-<text transform="translate(747,307)" font-size="99" style="fill:#e0b879">Chips</text>
-<text transform="translate(98,467) rotate(-90)" font-size="99" style="fill:#c49a6c">Design</text>
-<text transform="translate(975,123)" font-size="88" style="fill:#d6a79f">Chip</text>
-<text transform="translate(354,451)" font-size="87" style="fill:#b6c3dd">Industrial</text>
-<text transform="translate(368,265)" font-size="87" style="fill:#e0b879">Every</text>
-<text transform="translate(894,679)" font-size="87" style="fill:#b6c3dd">Factory</text>
-<text transform="translate(10,85)" font-size="87" style="fill:#c49a6c">Enjoy</text>
-<text transform="translate(456,67)" font-size="75" style="fill:#e0b879">Becomes</text>
-<text transform="translate(362,358)" font-size="75" style="fill:#8fb7d0">Supply</text>
-<text transform="translate(341,510) rotate(-90)" font-size="75" style="fill:#d6a79f">Fabrication</text>
-<text transform="translate(95,663)" font-size="75" style="fill:#a9b7a3">Water</text>
-<text transform="translate(325,664)" font-size="75" style="fill:#8fb7d0">Yield</text>
-<text transform="translate(947,247)" font-size="75" style="fill:#d88988">Silicon</text>
-<text transform="translate(1044,541)" font-size="75" style="fill:#8fb7d0">Help</text>
-<text transform="translate(1049,330)" font-size="75" style="fill:#d9c89e">Clean</text>
-<text transform="translate(212,485) rotate(-90)" font-size="75" style="fill:#d9c89e">Question</text>
-<text transform="translate(322,714)" font-size="61" style="fill:#b6c3dd">Often</text>
-<text transform="translate(825,54)" font-size="61" style="fill:#d9c89e">Work</text>
-<text transform="translate(981,601)" font-size="53" style="fill:#d88988">Component</text>
-<text transform="translate(670,628)" font-size="53" style="fill:#c49a6c">Cars</text>
-<text transform="translate(261,337) rotate(-90)" font-size="53" style="fill:#d9c89e">Systems</text>
-<text transform="translate(1009,44)" font-size="53" style="fill:#d6a79f">Telecom</text>
-<text transform="translate(51,703)" font-size="48" style="fill:#d6a79f">Equipment</text>
-<text transform="translate(750,495)" font-size="48" style="fill:#d5d2c2">Devices</text>
-<text transform="translate(642,349)" font-size="48" style="fill:#d88988">System</text>
-<text transform="translate(420,497)" font-size="48" style="fill:#d9c89e">Testing</text>
-<text transform="translate(1273,181) rotate(-90)" font-size="48" style="fill:#b6c3dd">Talent</text>
-<text transform="translate(958,473)" font-size="48" style="fill:#d5d2c2">Customers</text>
-<text transform="translate(138,571) rotate(-90)" font-size="48" style="fill:#d9c89e">Learning</text>
-<text transform="translate(1015,162)" font-size="48" style="fill:#b6c3dd">Many</text>
-<text transform="translate(350,52)" font-size="48" style="fill:#c49a6c">Fab</text>
-<text transform="translate(41,629) rotate(-90)" font-size="48" style="fill:#9fc9c5">Money</text>
-<text transform="translate(645,229)" font-size="48" style="fill:#e0b879">Press</text>
-<text transform="translate(440,208)" font-size="48" style="fill:#e0b879">Release</text>
-<text transform="translate(841,94)" font-size="48" style="fill:#a9b7a3">Mood</text>
-<text transform="translate(619,295)" font-size="48" style="fill:#d6a79f">Real</text>
-<text transform="translate(264,489) rotate(-90)" font-size="48" style="fill:#a9b7a3">Stay</text>
-<text transform="translate(873,715)" font-size="45" style="fill:#9fc9c5">Customer</text>
-<text transform="translate(803,604)" font-size="32" style="fill:#a9b7a3">Engineers</text>
-<text transform="translate(143,604)" font-size="32" style="fill:#b6c3dd">Electronics</text>
-<text transform="translate(1265,515) rotate(-90)" font-size="32" style="fill:#8fb7d0">Companies</text>
-<text transform="translate(444,310)" font-size="32" style="fill:#d6a79f">World</text>
-<text transform="translate(552,609)" font-size="32" style="fill:#c49a6c">Merely</text>
-<text transform="translate(1227,199) rotate(-90)" font-size="32" style="fill:#d88988">National</text>
-<text transform="translate(794,219)" font-size="32" style="fill:#d5d2c2">Strength</text>
-<text transform="translate(1147,276)" font-size="32" style="fill:#9fc9c5">Boring</text>
-<text transform="translate(170,32)" font-size="32" style="fill:#8fb7d0">Public</text>
-<text transform="translate(149,331) rotate(-90)" font-size="32" style="fill:#9fc9c5">Performance</text>
-<text transform="translate(950,347)" font-size="32" style="fill:#9fc9c5">State</text>
-<text transform="translate(619,102)" font-size="32" style="fill:#c49a6c">Whether</text>
-<text transform="translate(959,626)" font-size="23" style="fill:#e0b879">Phone</text>
-<text transform="translate(25,224) rotate(-90)" font-size="23" style="fill:#d5d2c2">Invisible</text>
-<text transform="translate(437,602)" font-size="23" style="fill:#d6a79f">Travels</text>
-<text transform="translate(817,334)" font-size="23" style="fill:#d88988">Finger</text>
-<text transform="translate(1144,354)" font-size="23" style="fill:#d5d2c2">Touched</text>
-<text transform="translate(359,384)" font-size="23" style="fill:#d88988">Glass</text>
-<text transform="translate(438,94)" font-size="23" style="fill:#9fc9c5">Message</text>
-<text transform="translate(647,391)" font-size="23" style="fill:#e0b879">Opened</text>
-<text transform="translate(1091,708)" font-size="23" style="fill:#b6c3dd">Payment</text>
-<text transform="translate(354,478)" font-size="23" style="fill:#e0b879">Map</text>
-<text transform="translate(737,377)" font-size="23" style="fill:#e0b879">Turned</text>
-<text transform="translate(67,652) rotate(-90)" font-size="23" style="fill:#a9b7a3">Somewhere</text>
-<text transform="translate(808,638)" font-size="23" style="fill:#a9b7a3">Device</text>
-<text transform="translate(358,187)" font-size="23" style="fill:#8fb7d0">Tiny</text>
-<text transform="translate(22,466) rotate(-90)" font-size="23" style="fill:#d9c89e">Civilization</text>
-<text transform="translate(349,289)" font-size="23" style="fill:#d5d2c2">Asking</text>
-<text transform="translate(632,479)" font-size="23" style="fill:#d5d2c2">Applause</text>
-<text transform="translate(1015,562)" font-size="22" style="fill:#e0b879">Invisibility</text>
-<text transform="translate(39,481)" font-size="22" style="fill:#a9b7a3">Talk</text>
-<text transform="translate(346,73)" font-size="22" style="fill:#8fb7d0">Easily</text>
-<text transform="translate(288,282) rotate(-90)" font-size="22" style="fill:#8fb7d0">Slogan</text>
-<text transform="translate(532,21)" font-size="22" style="fill:#8fb7d0">Selfreliant</text>
-<text transform="translate(58,22)" font-size="22" style="fill:#b6c3dd">Depend</text>
-<text transform="translate(658,249)" font-size="22" style="fill:#d6a79f">Foreign</text>
-<text transform="translate(964,182)" font-size="22" style="fill:#d6a79f">Chains</text>
-<text transform="translate(1038,267)" font-size="22" style="fill:#e0b879">Crucial</text>
-<text transform="translate(789,186)" font-size="22" style="fill:#d6a79f">Phones</text>
-<text transform="translate(1146,624)" font-size="22" style="fill:#c49a6c">Defense</text>
-<text transform="translate(682,21)" font-size="22" style="fill:#d88988">Satellites</text>
-<text transform="translate(532,397)" font-size="22" style="fill:#e0b879">Medical</text>
-<text transform="translate(1235,480) rotate(-90)" font-size="22" style="fill:#d5d2c2">Factories</text>
-<text transform="translate(871,512)" font-size="18" style="fill:#d6a79f">Infrastructure</text>
-<text transform="translate(86,615) rotate(-90)" font-size="18" style="fill:#e0b879">Ordinary</text>
-<text transform="translate(961,364)" font-size="18" style="fill:#d6a79f">Machines</text>
-<text transform="translate(792,398)" font-size="18" style="fill:#d5d2c2">Now</text>
-<text transform="translate(875,454)" font-size="18" style="fill:#c7d7b5">Contain</text>
-<text transform="translate(807,151) rotate(-90)" font-size="18" style="fill:#e0b879">Computation</text>
-<text transform="translate(413,558) rotate(-90)" font-size="18" style="fill:#9fc9c5">Yesterday</text>
-<text transform="translate(1196,560)" font-size="18" style="fill:#8fb7d0">Offices</text>
-<text transform="translate(946,141)" font-size="18" style="fill:#d5d2c2">True</text>
-<text transform="translate(565,713) rotate(-90)" font-size="18" style="fill:#d6a79f">Beginning</text>
-<text transform="translate(713,594)" font-size="18" style="fill:#9fc9c5">Problem</text>
-<text transform="translate(727,512)" font-size="18" style="fill:#9fc9c5">Solution</text>
-<text transform="translate(116,332) rotate(-90)" font-size="18" style="fill:#d9c89e">Ecosystem</text>
-<text transform="translate(958,489)" font-size="18" style="fill:#d6a79f">Nervous</text>
-<text transform="translate(39,396) rotate(-90)" font-size="18" style="fill:#d88988">Electronic</text>
-<text transform="translate(1198,181) rotate(-90)" font-size="18" style="fill:#c7d7b5">Automation</text>
-<text transform="translate(1125,176)" font-size="18" style="fill:#c49a6c">Tools</text>
-<text transform="translate(279,193) rotate(-90)" font-size="18" style="fill:#d5d2c2">Intellectual</text>
-<text transform="translate(869,435) rotate(-90)" font-size="18" style="fill:#d5d2c2">Property</text>
-<text transform="translate(41,115)" font-size="18" style="fill:#8fb7d0">Blocks</text>
-<text transform="translate(158,119)" font-size="18" style="fill:#c7d7b5">Gases</text>
-<text transform="translate(1272,709) rotate(-90)" font-size="18" style="fill:#b6c3dd">Chemicals</text>
-<text transform="translate(223,356)" font-size="18" style="fill:#d88988">Wafers</text>
-<text transform="translate(638,715)" font-size="17" style="fill:#b6c3dd">Photomasks</text>
-<text transform="translate(5,242)" font-size="14" style="fill:#8fb7d0">Deposition</text>
-<text transform="translate(355,599)" font-size="14" style="fill:#c7d7b5">Etching</text>
-<text transform="translate(1114,195)" font-size="14" style="fill:#d88988">Inspection</text>
-<text transform="translate(1126,61)" font-size="14" style="fill:#d9c89e">Metrology</text>
-<text transform="translate(791,713)" font-size="14" style="fill:#c7d7b5">Substrate</text>
-<text transform="translate(16,702) rotate(-90)" font-size="14" style="fill:#d88988">Logistics</text>
-<text transform="translate(224,503)" font-size="14" style="fill:#8fb7d0">Capital</text>
-<text transform="translate(647,310)" font-size="14" style="fill:#d5d2c2">Standards</text>
-<text transform="translate(160,558) rotate(-90)" font-size="14" style="fill:#d9c89e">Humbling</text>
-<text transform="translate(1171,487)" font-size="14" style="fill:#9fc9c5">Means</text>
-<text transform="translate(465,281)" font-size="14" style="fill:#d5d2c2">Usable</text>
-<text transform="translate(454,511)" font-size="14" style="fill:#d88988">Precision</text>
-<text transform="translate(972,46)" font-size="14" style="fill:#d6a79f">Exist</text>
-<text transform="translate(918,295) rotate(-90)" font-size="14" style="fill:#e0b879">Lose</text>
-<text transform="translate(446,398)" font-size="14" style="fill:#d9c89e">Poor</text>
-<text transform="translate(943,160)" font-size="14" style="fill:#b6c3dd">Perfect</text>
-<text transform="translate(559,466)" font-size="14" style="fill:#8fb7d0">Line</text>
-<text transform="translate(834,234)" font-size="14" style="fill:#d5d2c2">Waste</text>
-<text transform="translate(939,433) rotate(-90)" font-size="14" style="fill:#c7d7b5">Sufficiency</text>
-<text transform="translate(1047,178)" font-size="14" style="fill:#d6a79f">Built</text>
-<text transform="translate(1274,277) rotate(-90)" font-size="14" style="fill:#b6c3dd">Patriotic</text>
+<text transform="translate(457,684)" font-size="87" style="fill:#d88988">Chips</text>
+<text transform="translate(400,275)" font-size="87" style="fill:#8fb7d0">Chip</text>
+<text transform="translate(102,137)" font-size="82" style="fill:#b6c3dd">Semiconductor</text>
+<text transform="translate(61,484)" font-size="82" style="fill:#e0b879">Manufacturing</text>
+<text transform="translate(796,552) rotate(-90)" font-size="82" style="fill:#c49a6c">Domestic</text>
+<text transform="translate(752,113)" font-size="76" style="fill:#d6a79f">Systems</text>
+<text transform="translate(75,419) rotate(-90)" font-size="76" style="fill:#8fb7d0">Packaging</text>
+<text transform="translate(170,568)" font-size="76" style="fill:#c49a6c">Industrial</text>
+<text transform="translate(1011,623)" font-size="73" style="fill:#b6c3dd">Every</text>
+<text transform="translate(900,197)" font-size="70" style="fill:#c49a6c">Design</text>
+<text transform="translate(365,203)" font-size="70" style="fill:#e0b879">Power</text>
+<text transform="translate(570,362)" font-size="70" style="fill:#8fb7d0">Fab</text>
+<text transform="translate(857,591) rotate(-90)" font-size="70" style="fill:#d6a79f">Equipment</text>
+<text transform="translate(53,635)" font-size="67" style="fill:#a9b7a3">Process</text>
+<text transform="translate(26,707)" font-size="60" style="fill:#c49a6c">Materials</text>
+<text transform="translate(1242,326) rotate(-90)" font-size="56" style="fill:#c7d7b5">Software</text>
+<text transform="translate(827,684)" font-size="56" style="fill:#e0b879">Advanced</text>
+<text transform="translate(878,486)" font-size="52" style="fill:#e0b879">Electronics</text>
+<text transform="translate(414,45)" font-size="52" style="fill:#d88988">Research</text>
+<text transform="translate(103,262)" font-size="52" style="fill:#b6c3dd">Devices</text>
+<text transform="translate(1018,54)" font-size="52" style="fill:#d9c89e">Tools</text>
+<text transform="translate(95,396)" font-size="52" style="fill:#d88988">Discipline</text>
+<text transform="translate(888,534)" font-size="52" style="fill:#c49a6c">Engineers</text>
+<text transform="translate(1274,642) rotate(-90)" font-size="52" style="fill:#d88988">Defense</text>
+<text transform="translate(183,60)" font-size="52" style="fill:#9fc9c5">Demand</text>
+<text transform="translate(920,304)" font-size="52" style="fill:#9fc9c5">Capital</text>
+<text transform="translate(111,328)" font-size="52" style="fill:#8fb7d0">Procurement</text>
+<text transform="translate(901,249)" font-size="52" style="fill:#a9b7a3">China</text>
+<text transform="translate(140,204)" font-size="51" style="fill:#d5d2c2">Target</text>
+<text transform="translate(333,612)" font-size="51" style="fill:#d9c89e">Infrastructure</text>
+<text transform="translate(1198,184) rotate(-90)" font-size="51" style="fill:#b6c3dd">Need</text>
+<text transform="translate(468,411)" font-size="51" style="fill:#d5d2c2">Firms</text>
+<text transform="translate(11,570)" font-size="51" style="fill:#d9c89e">Long</text>
+<text transform="translate(841,42)" font-size="47" style="fill:#b6c3dd">Build</text>
+<text transform="translate(662,44)" font-size="47" style="fill:#c49a6c">Stack</text>
+<text transform="translate(1107,684)" font-size="47" style="fill:#9fc9c5">Rather</text>
+<text transform="translate(1060,578)" font-size="47" style="fill:#b6c3dd">State</text>
+<text transform="translate(785,630)" font-size="47" style="fill:#9fc9c5">Serious</text>
+<text transform="translate(574,217)" font-size="47" style="fill:#e0b879">Talent</text>
+<text transform="translate(403,359)" font-size="35" style="fill:#9fc9c5">Supplier</text>
+<text transform="translate(891,341)" font-size="35" style="fill:#d5d2c2">Less</text>
+<text transform="translate(722,482) rotate(-90)" font-size="32" style="fill:#d88988">Intelligence</text>
+<text transform="translate(20,517)" font-size="32" style="fill:#b6c3dd">Assembly</text>
+<text transform="translate(374,712) rotate(-90)" font-size="32" style="fill:#8fb7d0">Yield</text>
+<text transform="translate(640,713)" font-size="32" style="fill:#e0b879">Medical</text>
+<text transform="translate(912,140)" font-size="32" style="fill:#8fb7d0">EDA</text>
+<text transform="translate(632,561)" font-size="32" style="fill:#d6a79f">Wafer</text>
+<text transform="translate(388,715)" font-size="32" style="fill:#c49a6c">Fabrication</text>
+<text transform="translate(1274,182) rotate(-90)" font-size="32" style="fill:#d88988">Chemicals</text>
+<text transform="translate(994,332)" font-size="30" style="fill:#d5d2c2">Lithography</text>
+<text transform="translate(919,714)" font-size="30" style="fill:#9fc9c5">Global</text>
+<text transform="translate(630,77)" font-size="30" style="fill:#8fb7d0">Built</text>
+<text transform="translate(901,586)" font-size="30" style="fill:#a9b7a3">Enough</text>
+<text transform="translate(1147,365)" font-size="30" style="fill:#d5d2c2">Even</text>
+<text transform="translate(581,163)" font-size="30" style="fill:#c49a6c">Ecosystem</text>
+<text transform="translate(1063,153)" font-size="30" style="fill:#e0b879">First</text>
+<text transform="translate(884,267) rotate(-90)" font-size="30" style="fill:#d5d2c2">Telecom</text>
+<text transform="translate(782,714)" font-size="30" style="fill:#d6a79f">Silicon</text>
+<text transform="translate(1061,244)" font-size="30" style="fill:#d88988">Policy</text>
+<text transform="translate(224,287)" font-size="27" style="fill:#d5d2c2">Technology</text>
+<text transform="translate(713,662)" font-size="27" style="fill:#d88988">Country</text>
+<text transform="translate(107,162)" font-size="27" style="fill:#9fc9c5">Decades</text>
+<text transform="translate(1049,709)" font-size="27" style="fill:#e0b879">Capability</text>
+<text transform="translate(335,421)" font-size="27" style="fill:#9fc9c5">Matters</text>
+<text transform="translate(113,432)" font-size="27" style="fill:#8fb7d0">Product</text>
+<text transform="translate(320,249)" font-size="27" style="fill:#8fb7d0">Water</text>
+<text transform="translate(303,85)" font-size="27" style="fill:#a9b7a3">Automotive</text>
+<text transform="translate(491,80)" font-size="27" style="fill:#8fb7d0">Testing</text>
+<text transform="translate(28,230) rotate(-90)" font-size="27" style="fill:#d9c89e">Parts</text>
+<text transform="translate(307,515)" font-size="27" style="fill:#c7d7b5">Large</text>
+<text transform="translate(1268,353) rotate(-90)" font-size="27" style="fill:#b6c3dd">Companies</text>
+<text transform="translate(1239,468) rotate(-90)" font-size="27" style="fill:#9fc9c5">Indian</text>
+<text transform="translate(63,656)" font-size="22" style="fill:#e0b879">Sovereignty</text>
+<text transform="translate(204,351)" font-size="22" style="fill:#8fb7d0">Scale</text>
+<text transform="translate(225,21)" font-size="22" style="fill:#8fb7d0">Suppliers</text>
+<text transform="translate(99,346) rotate(-90)" font-size="22" style="fill:#8fb7d0">Customers</text>
+<text transform="translate(153,80)" font-size="22" style="fill:#8fb7d0">Mature</text>
+<text transform="translate(1171,23)" font-size="22" style="fill:#b6c3dd">Taiwan</text>
+<text transform="translate(629,239)" font-size="22" style="fill:#c49a6c">Boring</text>
+<text transform="translate(614,275)" font-size="22" style="fill:#c7d7b5">Secure</text>
+<text transform="translate(428,505)" font-size="22" style="fill:#d9c89e">Cleanroom</text>
+<text transform="translate(82,208)" font-size="22" style="fill:#d6a79f">Fabs</text>
+<text transform="translate(742,471) rotate(-90)" font-size="22" style="fill:#a9b7a3">Needs</text>
+<text transform="translate(259,513)" font-size="19" style="fill:#e0b879">AI</text>
+<text transform="translate(303,225)" font-size="19" style="fill:#d5d2c2">Machines</text>
+<text transform="translate(470,319)" font-size="19" style="fill:#d6a79f">Computing</text>
+<text transform="translate(1000,648)" font-size="19" style="fill:#d9c89e">United</text>
+<text transform="translate(23,690) rotate(-90)" font-size="19" style="fill:#e0b879">States</text>
+<text transform="translate(414,157)" font-size="19" style="fill:#d6a79f">Services</text>
+<text transform="translate(211,587)" font-size="19" style="fill:#d5d2c2">Machinery</text>
+<text transform="translate(577,305)" font-size="19" style="fill:#c7d7b5">Science</text>
+<text transform="translate(227,156)" font-size="19" style="fill:#e0b879">Export</text>
+<text transform="translate(757,156)" font-size="19" style="fill:#9fc9c5">Imaging</text>
+<text transform="translate(1091,112)" font-size="19" style="fill:#d5d2c2">Whole</text>
+<text transform="translate(22,364) rotate(-90)" font-size="19" style="fill:#d6a79f">Designs</text>
+<text transform="translate(730,131)" font-size="19" style="fill:#b6c3dd">Memory</text>
+<text transform="translate(279,351)" font-size="19" style="fill:#d5d2c2">Controllers</text>
+<text transform="translate(925,62)" font-size="19" style="fill:#d9c89e">Hardware</text>
+<text transform="translate(941,359)" font-size="19" style="fill:#c49a6c">Designed</text>
+<text transform="translate(1189,309) rotate(-90)" font-size="19" style="fill:#c49a6c">Specialized</text>
+<text transform="translate(1178,43)" font-size="19" style="fill:#9fc9c5">Real</text>
+<text transform="translate(654,532)" font-size="19" style="fill:#c49a6c">Labor</text>
+<text transform="translate(451,293)" font-size="19" style="fill:#c7d7b5">Important</text>
+<text transform="translate(136,546)" font-size="19" style="fill:#8fb7d0">Room</text>
+<text transform="translate(209,656)" font-size="19" style="fill:#a9b7a3">Institutions</text>
+<text transform="translate(803,62)" font-size="19" style="fill:#d88988">Produce</text>
+<text transform="translate(591,432)" font-size="19" style="fill:#b6c3dd">Wafers</text>
+<text transform="translate(557,503)" font-size="19" style="fill:#d88988">Products</text>
+<text transform="translate(448,430)" font-size="19" style="fill:#b6c3dd">Different</text>
+<text transform="translate(381,680)" font-size="19" style="fill:#c7d7b5">Markets</text>
+<text transform="translate(828,134)" font-size="19" style="fill:#d88988">Fabless</text>
+<text transform="translate(102,281)" font-size="19" style="fill:#d9c89e">Capacity</text>
+<text transform="translate(1097,84)" font-size="19" style="fill:#d88988">Often</text>
+<text transform="translate(26,533)" font-size="17" style="fill:#8fb7d0">Especially</text>
+<text transform="translate(781,307)" font-size="17" style="fill:#e0b879">EUV</text>
+<text transform="translate(1232,707)" font-size="17" style="fill:#d9c89e">Code</text>
+<text transform="translate(1168,509)" font-size="17" style="fill:#9fc9c5">Depends</text>
+<text transform="translate(108,45)" font-size="17" style="fill:#d5d2c2">Foreign</text>
+<text transform="translate(120,349)" font-size="17" style="fill:#d88988">Critical</text>
+<text transform="translate(103,22)" font-size="17" style="fill:#d6a79f">Supply</text>
+<text transform="translate(879,330) rotate(-90)" font-size="17" style="fill:#e0b879">System</text>
+<text transform="translate(378,633)" font-size="17" style="fill:#d9c89e">Question</text>
+<text transform="translate(693,578)" font-size="17" style="fill:#b6c3dd">Maturenode</text>
+<text transform="translate(1005,555)" font-size="17" style="fill:#8fb7d0">World</text>
+<text transform="translate(800,182)" font-size="17" style="fill:#d5d2c2">Energy</text>
+<text transform="translate(914,646)" font-size="17" style="fill:#d88988">Reliable</text>
+<text transform="translate(974,147)" font-size="17" style="fill:#d6a79f">Dies</text>
+<text transform="translate(1137,401) rotate(-90)" font-size="17" style="fill:#b6c3dd">Test</text>
+<text transform="translate(1102,641)" font-size="17" style="fill:#b6c3dd">Chiplets</text>
 </svg>

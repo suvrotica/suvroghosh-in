@@ -1,134 +1,134 @@
 <svg role="img" aria-label="When Diabetes Started Asking About Its Ancestors" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>When Diabetes Started Asking About Its Ancestors</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(168,374)" font-size="118" style="fill:#d88988">Family</text>
-<text transform="translate(549,618)" font-size="113" style="fill:#d9c89e">Kidney</text>
-<text transform="translate(593,217)" font-size="108" style="fill:#a9b7a3">Diabetes</text>
-<text transform="translate(714,373)" font-size="103" style="fill:#d6a79f">Disease</text>
-<text transform="translate(296,140)" font-size="97" style="fill:#c7d7b5">Study</text>
-<text transform="translate(601,683)" font-size="85" style="fill:#b6c3dd">Means</text>
-<text transform="translate(219,233)" font-size="78" style="fill:#d5d2c2">FIND</text>
-<text transform="translate(124,492)" font-size="78" style="fill:#a9b7a3">History</text>
-<text transform="translate(899,61)" font-size="71" style="fill:#d5d2c2">Question</text>
-<text transform="translate(166,671)" font-size="71" style="fill:#b6c3dd">Families</text>
-<text transform="translate(968,695)" font-size="71" style="fill:#9fc9c5">Risk</text>
-<text transform="translate(540,511)" font-size="71" style="fill:#a9b7a3">Clinical</text>
-<text transform="translate(811,275)" font-size="63" style="fill:#c7d7b5">Diabetic</text>
-<text transform="translate(645,435)" font-size="63" style="fill:#d5d2c2">Genetic</text>
-<text transform="translate(985,576)" font-size="63" style="fill:#8fb7d0">Kidneys</text>
-<text transform="translate(691,78)" font-size="63" style="fill:#9fc9c5">Blood</text>
-<text transform="translate(266,572)" font-size="54" style="fill:#b6c3dd">Somebody</text>
-<text transform="translate(113,304) rotate(-90)" font-size="54" style="fill:#8fb7d0">Room</text>
-<text transform="translate(958,480)" font-size="54" style="fill:#e0b879">Already</text>
-<text transform="translate(1268,369) rotate(-90)" font-size="54" style="fill:#c49a6c">Chronic</text>
-<text transform="translate(23,128)" font-size="54" style="fill:#d5d2c2">Together</text>
-<text transform="translate(1023,418)" font-size="54" style="fill:#b6c3dd">Biology</text>
-<text transform="translate(964,109)" font-size="54" style="fill:#d5d2c2">Genetics</text>
-<text transform="translate(79,570)" font-size="54" style="fill:#a9b7a3">Many</text>
-<text transform="translate(55,536) rotate(-90)" font-size="44" style="fill:#e0b879">Investigation</text>
-<text transform="translate(1011,618)" font-size="44" style="fill:#b6c3dd">DNA</text>
-<text transform="translate(564,448)" font-size="44" style="fill:#d6a79f">ACR</text>
-<text transform="translate(202,411)" font-size="44" style="fill:#9fc9c5">Egfr</text>
-<text transform="translate(354,36)" font-size="44" style="fill:#c7d7b5">GWAS</text>
-<text transform="translate(251,712)" font-size="44" style="fill:#9fc9c5">Genomewide</text>
-<text transform="translate(54,60)" font-size="44" style="fill:#d5d2c2">Association</text>
-<text transform="translate(85,712)" font-size="44" style="fill:#9fc9c5">Flat</text>
-<text transform="translate(159,302) rotate(-90)" font-size="44" style="fill:#a9b7a3">Merely</text>
-<text transform="translate(685,123)" font-size="44" style="fill:#a9b7a3">Careful</text>
-<text transform="translate(481,46)" font-size="44" style="fill:#8fb7d0">Story</text>
-<text transform="translate(244,294)" font-size="44" style="fill:#9fc9c5">Enough</text>
-<text transform="translate(469,262)" font-size="44" style="fill:#d5d2c2">Science</text>
-<text transform="translate(995,312)" font-size="44" style="fill:#d5d2c2">Others</text>
-<text transform="translate(748,551)" font-size="44" style="fill:#9fc9c5">Condition</text>
-<text transform="translate(198,603)" font-size="36" style="fill:#d88988">Complications</text>
-<text transform="translate(297,433)" font-size="36" style="fill:#b6c3dd">Biological</text>
-<text transform="translate(63,381)" font-size="36" style="fill:#9fc9c5">Sugar</text>
-<text transform="translate(35,678) rotate(-90)" font-size="36" style="fill:#e0b879">Injury</text>
-<text transform="translate(200,523)" font-size="36" style="fill:#e0b879">Inherited</text>
-<text transform="translate(624,715)" font-size="36" style="fill:#9fc9c5">Access</text>
-<text transform="translate(760,714)" font-size="36" style="fill:#b6c3dd">Care</text>
-<text transform="translate(674,267)" font-size="36" style="fill:#a9b7a3">Damage</text>
-<text transform="translate(549,708) rotate(-90)" font-size="36" style="fill:#d6a79f">Becomes</text>
-<text transform="translate(1126,636)" font-size="36" style="fill:#c7d7b5">System</text>
-<text transform="translate(933,521)" font-size="36" style="fill:#c49a6c">Public</text>
-<text transform="translate(954,145)" font-size="36" style="fill:#9fc9c5">Answer</text>
-<text transform="translate(440,215)" font-size="36" style="fill:#c49a6c">Person</text>
-<text transform="translate(110,425)" font-size="36" style="fill:#d5d2c2">Show</text>
-<text transform="translate(593,311)" font-size="36" style="fill:#c49a6c">Carry</text>
-<text transform="translate(299,171)" font-size="36" style="fill:#b6c3dd">Different</text>
-<text transform="translate(63,610)" font-size="36" style="fill:#c49a6c">San</text>
-<text transform="translate(1210,277) rotate(-90)" font-size="36" style="fill:#c7d7b5">Antonio</text>
-<text transform="translate(58,647)" font-size="36" style="fill:#d88988">Field</text>
-<text transform="translate(64,523)" font-size="36" style="fill:#b6c3dd">Health</text>
-<text transform="translate(1149,691)" font-size="36" style="fill:#c49a6c">Genes</text>
-<text transform="translate(1178,383) rotate(-90)" font-size="36" style="fill:#8fb7d0">Measurements</text>
-<text transform="translate(1097,523)" font-size="36" style="fill:#9fc9c5">Ordinary</text>
-<text transform="translate(819,304)" font-size="32" style="fill:#d88988">Filtering</text>
-<text transform="translate(385,81)" font-size="32" style="fill:#8fb7d0">Stress</text>
-<text transform="translate(322,401)" font-size="32" style="fill:#c49a6c">Numbers</text>
-<text transform="translate(867,708)" font-size="32" style="fill:#c7d7b5">Full</text>
-<text transform="translate(1146,283) rotate(-90)" font-size="32" style="fill:#d9c89e">Relatives</text>
-<text transform="translate(617,375)" font-size="32" style="fill:#d9c89e">Share</text>
-<text transform="translate(203,274) rotate(-90)" font-size="32" style="fill:#c7d7b5">Stories</text>
-<text transform="translate(812,150)" font-size="32" style="fill:#9fc9c5">Genome</text>
-<text transform="translate(671,138) rotate(-90)" font-size="32" style="fill:#a9b7a3">Linkage</text>
-<text transform="translate(1271,139) rotate(-90)" font-size="32" style="fill:#a9b7a3">Studies</text>
-<text transform="translate(862,679)" font-size="32" style="fill:#9fc9c5">Point</text>
-<text transform="translate(698,25)" font-size="28" style="fill:#c7d7b5">Statistical</text>
-<text transform="translate(504,303)" font-size="28" style="fill:#d88988">Work</text>
-<text transform="translate(102,83)" font-size="28" style="fill:#d5d2c2">Map</text>
-<text transform="translate(250,256)" font-size="26" style="fill:#8fb7d0">Environment</text>
-<text transform="translate(21,701)" font-size="26" style="fill:#d6a79f">Talk</text>
-<text transform="translate(874,121)" font-size="26" style="fill:#d5d2c2">Tests</text>
-<text transform="translate(44,24)" font-size="26" style="fill:#d9c89e">Character</text>
-<text transform="translate(508,525) rotate(-90)" font-size="26" style="fill:#d5d2c2">Drama</text>
-<text transform="translate(909,419)" font-size="26" style="fill:#d6a79f">Systems</text>
-<text transform="translate(39,667)" font-size="22" style="fill:#d9c89e">Population</text>
-<text transform="translate(885,395)" font-size="22" style="fill:#c7d7b5">Healthcare</text>
-<text transform="translate(658,457)" font-size="22" style="fill:#8fb7d0">Alone</text>
-<text transform="translate(1152,712)" font-size="22" style="fill:#e0b879">Connected</text>
-<text transform="translate(592,220) rotate(-90)" font-size="22" style="fill:#d6a79f">Pieces</text>
-<text transform="translate(418,535)" font-size="22" style="fill:#c49a6c">Tell</text>
-<text transform="translate(443,319) rotate(-90)" font-size="16" style="fill:#c7d7b5">Acronyms</text>
-<text transform="translate(750,458)" font-size="16" style="fill:#d9c89e">Used</text>
-<text transform="translate(594,339)" font-size="16" style="fill:#c7d7b5">Nephropathy</text>
-<text transform="translate(16,102) rotate(-90)" font-size="16" style="fill:#c49a6c">DKD</text>
-<text transform="translate(191,18)" font-size="16" style="fill:#c7d7b5">Deoxyribonucleic</text>
-<text transform="translate(1221,461)" font-size="16" style="fill:#d9c89e">Acid</text>
-<text transform="translate(40,162)" font-size="16" style="fill:#d88988">Molecule</text>
-<text transform="translate(1196,653)" font-size="16" style="fill:#a9b7a3">Carries</text>
-<text transform="translate(841,452)" font-size="16" style="fill:#c7d7b5">Instructions</text>
-<text transform="translate(953,713)" font-size="16" style="fill:#c49a6c">Albumintocreatinine</text>
-<text transform="translate(939,629)" font-size="16" style="fill:#8fb7d0">Ratio</text>
-<text transform="translate(1023,438)" font-size="16" style="fill:#c49a6c">Estimated</text>
-<text transform="translate(692,237)" font-size="16" style="fill:#e0b879">Glomerular</text>
-<text transform="translate(171,81)" font-size="16" style="fill:#d5d2c2">Filtration</text>
-<text transform="translate(1209,597)" font-size="16" style="fill:#9fc9c5">Rate</text>
-<text transform="translate(709,290)" font-size="16" style="fill:#d5d2c2">AI</text>
-<text transform="translate(376,53)" font-size="16" style="fill:#a9b7a3">Artificial</text>
-<text transform="translate(515,528)" font-size="16" style="fill:#9fc9c5">Intelligence</text>
-<text transform="translate(870,94)" font-size="16" style="fill:#b6c3dd">Afternoon</text>
-<text transform="translate(528,66)" font-size="16" style="fill:#8fb7d0">Light</text>
-<text transform="translate(1054,675) rotate(-90)" font-size="16" style="fill:#e0b879">Lies</text>
-<text transform="translate(604,279)" font-size="16" style="fill:#c7d7b5">Table</text>
-<text transform="translate(208,282)" font-size="16" style="fill:#b6c3dd">Fan</text>
-<text transform="translate(75,336)" font-size="16" style="fill:#c49a6c">Rearranges</text>
-<text transform="translate(206,145)" font-size="16" style="fill:#d5d2c2">Warm</text>
-<text transform="translate(392,360) rotate(-90)" font-size="16" style="fill:#a9b7a3">Air</text>
-<text transform="translate(536,487) rotate(-90)" font-size="16" style="fill:#c49a6c">Illness</text>
-<text transform="translate(565,403)" font-size="16" style="fill:#d9c89e">Feel</text>
-<text transform="translate(23,78)" font-size="16" style="fill:#d9c89e">Gossip</text>
-<text transform="translate(413,622)" font-size="16" style="fill:#d6a79f">Laboratory</text>
-<text transform="translate(144,612)" font-size="16" style="fill:#9fc9c5">Coat</text>
-<text transform="translate(494,190)" font-size="16" style="fill:#d88988">Failed</text>
-<text transform="translate(470,278)" font-size="16" style="fill:#9fc9c5">Warned</text>
-<text transform="translate(661,540)" font-size="16" style="fill:#e0b879">Moves</text>
-<text transform="translate(952,603)" font-size="16" style="fill:#9fc9c5">Knows</text>
-<text transform="translate(579,131)" font-size="16" style="fill:#d6a79f">Ending</text>
-<text transform="translate(704,394)" font-size="16" style="fill:#e0b879">Interested</text>
-<text transform="translate(1157,17)" font-size="16" style="fill:#d6a79f">Household</text>
-<text transform="translate(1194,499)" font-size="16" style="fill:#b6c3dd">Instinct</text>
-<text transform="translate(1182,477)" font-size="16" style="fill:#e0b879">Seriously</text>
-<text transform="translate(17,232) rotate(-90)" font-size="16" style="fill:#d9c89e">Surrendering</text>
-<text transform="translate(1228,320) rotate(-90)" font-size="16" style="fill:#d88988">Superstition</text>
+<text transform="translate(841,567)" font-size="118" style="fill:#d88988">FIND</text>
+<text transform="translate(53,503)" font-size="118" style="fill:#d9c89e">Kidney</text>
+<text transform="translate(327,338)" font-size="104" style="fill:#a9b7a3">Diabetes</text>
+<text transform="translate(758,171)" font-size="100" style="fill:#d6a79f">Family</text>
+<text transform="translate(212,184)" font-size="100" style="fill:#c7d7b5">Disease</text>
+<text transform="translate(175,617)" font-size="92" style="fill:#d5d2c2">Science</text>
+<text transform="translate(639,691)" font-size="87" style="fill:#d88988">Families</text>
+<text transform="translate(548,539)" font-size="82" style="fill:#d5d2c2">Study</text>
+<text transform="translate(291,696)" font-size="77" style="fill:#a9b7a3">DKD</text>
+<text transform="translate(32,58)" font-size="72" style="fill:#d5d2c2">Means</text>
+<text transform="translate(57,712)" font-size="72" style="fill:#b6c3dd">Urine</text>
+<text transform="translate(479,253)" font-size="72" style="fill:#d6a79f">Blood</text>
+<text transform="translate(1094,473) rotate(-90)" font-size="72" style="fill:#a9b7a3">Real</text>
+<text transform="translate(739,268)" font-size="72" style="fill:#c7d7b5">Take</text>
+<text transform="translate(634,92)" font-size="66" style="fill:#d5d2c2">Diabetic</text>
+<text transform="translate(414,399)" font-size="66" style="fill:#8fb7d0">Years</text>
+<text transform="translate(355,77)" font-size="66" style="fill:#9fc9c5">Person</text>
+<text transform="translate(613,449)" font-size="66" style="fill:#b6c3dd">Pressure</text>
+<text transform="translate(234,362) rotate(-90)" font-size="66" style="fill:#8fb7d0">Idea</text>
+<text transform="translate(668,399)" font-size="66" style="fill:#e0b879">Sometimes</text>
+<text transform="translate(146,359) rotate(-90)" font-size="60" style="fill:#c49a6c">DNA</text>
+<text transform="translate(16,640)" font-size="60" style="fill:#d5d2c2">Test</text>
+<text transform="translate(640,610)" font-size="60" style="fill:#b6c3dd">Many</text>
+<text transform="translate(932,289)" font-size="60" style="fill:#d5d2c2">Data</text>
+<text transform="translate(1081,676)" font-size="60" style="fill:#a9b7a3">Sugar</text>
+<text transform="translate(1170,342) rotate(-90)" font-size="60" style="fill:#e0b879">Small</text>
+<text transform="translate(154,401)" font-size="60" style="fill:#b6c3dd">Becomes</text>
+<text transform="translate(905,616)" font-size="60" style="fill:#d6a79f">Often</text>
+<text transform="translate(14,134)" font-size="53" style="fill:#9fc9c5">Across</text>
+<text transform="translate(1011,82)" font-size="53" style="fill:#d9c89e">Patterns</text>
+<text transform="translate(45,515) rotate(-90)" font-size="53" style="fill:#c49a6c">Exciting</text>
+<text transform="translate(1240,619) rotate(-90)" font-size="53" style="fill:#9fc9c5">Question</text>
+<text transform="translate(20,189)" font-size="53" style="fill:#d5d2c2">Human</text>
+<text transform="translate(460,712)" font-size="53" style="fill:#9fc9c5">Bad</text>
+<text transform="translate(1250,259) rotate(-90)" font-size="53" style="fill:#a9b7a3">Say</text>
+<text transform="translate(1133,127)" font-size="53" style="fill:#a9b7a3">Man</text>
+<text transform="translate(383,123)" font-size="53" style="fill:#8fb7d0">Time</text>
+<text transform="translate(1184,638) rotate(-90)" font-size="53" style="fill:#9fc9c5">Relatives</text>
+<text transform="translate(313,230)" font-size="53" style="fill:#d5d2c2">Every</text>
+<text transform="translate(823,332)" font-size="50" style="fill:#d6a79f">Biology</text>
+<text transform="translate(24,556)" font-size="50" style="fill:#9fc9c5">Genes</text>
+<text transform="translate(39,230)" font-size="50" style="fill:#d88988">Story</text>
+<text transform="translate(881,211)" font-size="49" style="fill:#b6c3dd">Taught</text>
+<text transform="translate(1003,37)" font-size="42" style="fill:#9fc9c5">Research</text>
+<text transform="translate(510,520) rotate(-90)" font-size="42" style="fill:#e0b879">Book</text>
+<text transform="translate(748,207)" font-size="42" style="fill:#c49a6c">Gives</text>
+<text transform="translate(734,36)" font-size="42" style="fill:#d88988">Filter</text>
+<text transform="translate(464,665)" font-size="42" style="fill:#e0b879">Protein</text>
+<text transform="translate(274,336) rotate(-90)" font-size="42" style="fill:#d6a79f">Egfr</text>
+<text transform="translate(726,274) rotate(-90)" font-size="42" style="fill:#c7d7b5">Kidneys</text>
+<text transform="translate(184,662)" font-size="42" style="fill:#d88988">GWAS</text>
+<text transform="translate(75,100)" font-size="42" style="fill:#d6a79f">Genetic</text>
+<text transform="translate(179,533)" font-size="37" style="fill:#b6c3dd">Computer</text>
+<text transform="translate(532,448)" font-size="37" style="fill:#d5d2c2">San</text>
+<text transform="translate(495,35)" font-size="37" style="fill:#c49a6c">Antonio</text>
+<text transform="translate(447,560)" font-size="37" style="fill:#d6a79f">Leak</text>
+<text transform="translate(265,434)" font-size="37" style="fill:#d5d2c2">Failure</text>
+<text transform="translate(1273,546) rotate(-90)" font-size="37" style="fill:#d5d2c2">Food</text>
+<text transform="translate(826,613) rotate(-90)" font-size="37" style="fill:#a9b7a3">Enough</text>
+<text transform="translate(568,121)" font-size="37" style="fill:#d6a79f">Water</text>
+<text transform="translate(19,589)" font-size="37" style="fill:#c7d7b5">Arrives</text>
+<text transform="translate(1117,160)" font-size="37" style="fill:#c49a6c">Albumin</text>
+<text transform="translate(89,405) rotate(-90)" font-size="37" style="fill:#c7d7b5">Looking</text>
+<text transform="translate(291,98) rotate(-90)" font-size="37" style="fill:#9fc9c5">Rain</text>
+<text transform="translate(1135,479) rotate(-90)" font-size="37" style="fill:#d88988">Answer</text>
+<text transform="translate(885,34)" font-size="37" style="fill:#8fb7d0">Clean</text>
+<text transform="translate(841,472)" font-size="27" style="fill:#c49a6c">Ancestry</text>
+<text transform="translate(1006,239)" font-size="27" style="fill:#d88988">Produce</text>
+<text transform="translate(1179,285)" font-size="27" style="fill:#c7d7b5">Badly</text>
+<text transform="translate(304,25)" font-size="27" style="fill:#b6c3dd">American</text>
+<text transform="translate(1183,314)" font-size="27" style="fill:#e0b879">Facts</text>
+<text transform="translate(244,356)" font-size="27" style="fill:#c49a6c">Risk</text>
+<text transform="translate(973,456)" font-size="27" style="fill:#d88988">Long</text>
+<text transform="translate(610,478)" font-size="27" style="fill:#e0b879">Number</text>
+<text transform="translate(1178,343)" font-size="27" style="fill:#d6a79f">Panic</text>
+<text transform="translate(285,258)" font-size="27" style="fill:#d9c89e">Windows</text>
+<text transform="translate(1060,711)" font-size="27" style="fill:#d88988">Later</text>
+<text transform="translate(1213,24)" font-size="22" style="fill:#d5d2c2">Used</text>
+<text transform="translate(568,603)" font-size="22" style="fill:#8fb7d0">Large</text>
+<text transform="translate(946,430)" font-size="22" style="fill:#c7d7b5">Asked</text>
+<text transform="translate(312,116)" font-size="22" style="fill:#d5d2c2">Runs</text>
+<text transform="translate(1185,715)" font-size="22" style="fill:#d9c89e">Others</text>
+<text transform="translate(891,618) rotate(-90)" font-size="22" style="fill:#d88988">Happen</text>
+<text transform="translate(570,688)" font-size="22" style="fill:#d88988">ACR</text>
+<text transform="translate(564,561)" font-size="22" style="fill:#a9b7a3">Early</text>
+<text transform="translate(614,713)" font-size="22" style="fill:#d5d2c2">Filtration</text>
+<text transform="translate(324,554)" font-size="22" style="fill:#d5d2c2">Filtering</text>
+<text transform="translate(854,714)" font-size="22" style="fill:#e0b879">Differences</text>
+<text transform="translate(1267,444) rotate(-90)" font-size="22" style="fill:#c7d7b5">Systems</text>
+<text transform="translate(962,637)" font-size="22" style="fill:#d6a79f">Trained</text>
+<text transform="translate(514,468)" font-size="22" style="fill:#c49a6c">Walking</text>
+<text transform="translate(177,326) rotate(-90)" font-size="22" style="fill:#c7d7b5">Remain</text>
+<text transform="translate(238,229)" font-size="22" style="fill:#d9c89e">Found</text>
+<text transform="translate(630,187)" font-size="22" style="fill:#c7d7b5">Night</text>
+<text transform="translate(997,125) rotate(-90)" font-size="22" style="fill:#c49a6c">Looks</text>
+<text transform="translate(99,155)" font-size="22" style="fill:#d88988">Disaster</text>
+<text transform="translate(674,26)" font-size="22" style="fill:#a9b7a3">Work</text>
+<text transform="translate(753,713)" font-size="22" style="fill:#d88988">Collect</text>
+<text transform="translate(849,664) rotate(-90)" font-size="22" style="fill:#b6c3dd">Difference</text>
+<text transform="translate(485,358)" font-size="20" style="fill:#c49a6c">Inheritance</text>
+<text transform="translate(91,523)" font-size="20" style="fill:#8fb7d0">Control</text>
+<text transform="translate(675,558)" font-size="20" style="fill:#a9b7a3">Room</text>
+<text transform="translate(590,276)" font-size="20" style="fill:#e0b879">Brain</text>
+<text transform="translate(1058,111)" font-size="20" style="fill:#d5d2c2">Fall</text>
+<text transform="translate(197,202)" font-size="20" style="fill:#b6c3dd">Sits</text>
+<text transform="translate(335,715)" font-size="20" style="fill:#d5d2c2">Thousands</text>
+<text transform="translate(6,89)" font-size="20" style="fill:#a9b7a3">Lunch</text>
+<text transform="translate(319,355)" font-size="20" style="fill:#9fc9c5">Goes</text>
+<text transform="translate(635,150)" font-size="20" style="fill:#b6c3dd">Salt</text>
+<text transform="translate(449,697) rotate(-90)" font-size="20" style="fill:#e0b879">Slowly</text>
+<text transform="translate(714,357)" font-size="20" style="fill:#c7d7b5">Genetics</text>
+<text transform="translate(747,469)" font-size="20" style="fill:#b6c3dd">Wedding</text>
+<text transform="translate(830,286)" font-size="20" style="fill:#c49a6c">Lesson</text>
+<text transform="translate(551,204)" font-size="16" style="fill:#9fc9c5">Everywhere</text>
+<text transform="translate(288,633)" font-size="14" style="fill:#c49a6c">Waterlogging</text>
+<text transform="translate(1110,605)" font-size="14" style="fill:#b6c3dd">Lane</text>
+<text transform="translate(102,409)" font-size="14" style="fill:#c49a6c">Tea</text>
+<text transform="translate(447,27)" font-size="14" style="fill:#d9c89e">Uncle</text>
+<text transform="translate(1083,262)" font-size="14" style="fill:#8fb7d0">Drains</text>
+<text transform="translate(1197,257) rotate(-90)" font-size="14" style="fill:#c7d7b5">Perfect</text>
+<text transform="translate(511,117)" font-size="14" style="fill:#d6a79f">Expect</text>
+<text transform="translate(425,416)" font-size="14" style="fill:#c49a6c">Interested</text>
+<text transform="translate(882,110)" font-size="14" style="fill:#d5d2c2">Somewhere</text>
+<text transform="translate(11,244)" font-size="14" style="fill:#d6a79f">Complications</text>
+<text transform="translate(439,269)" font-size="14" style="fill:#e0b879">Usually</text>
+<text transform="translate(256,593)" font-size="14" style="fill:#e0b879">Weight</text>
+<text transform="translate(909,354)" font-size="14" style="fill:#d6a79f">Stress</text>
+<text transform="translate(561,580)" font-size="14" style="fill:#8fb7d0">Medicines</text>
+<text transform="translate(741,487)" font-size="14" style="fill:#8fb7d0">Income</text>
+<text transform="translate(904,50)" font-size="14" style="fill:#e0b879">Decorative</text>
 </svg>

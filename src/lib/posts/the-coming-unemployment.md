@@ -4,7 +4,7 @@ description: "AI will not end work with a trumpet blast. It will first remove th
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260506_211530_0762.jpg"
 category: "AI"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "AI Unemployment", "Artificial Intelligence Jobs", "Future of Work", "Ghost Jobs", "Fake Job Postings", "Entry Level Jobs", "White Collar Jobs", "AI Layoffs", "India Tech Jobs", "Indian IT Sector", "Software Jobs", "Automation", "Job Market 2026", "Tech Layoffs", "AI and Society", "Middle Class Crisis", "Educated Unemployment", "AI Economy", "Labor Market Disruption", "Career Anxiety", "AI Agents", "Workforce Automation", "Social Commentary", "Kolkata Blog", "Calcutta Writing"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "AI unemployment", "artificial intelligence jobs", "future of work", "ghost jobs", "fake job postings", "entry level jobs", "white collar jobs", "AI layoffs", "India tech jobs", "Indian IT sector", "software jobs", "automation", "job market 2026", "tech layoffs", "AI and society", "middle class crisis", "educated unemployment", "AI economy", "labor market disruption", "career anxiety", "AI agents", "workforce automation", "social commentary", "dark humor", "Kolkata blog", "Calcutta writing"]
 published: true
 color: "slate"
 ---
@@ -13,106 +13,100 @@ color: "slate"
 
 <Pi src="Compress_20260506_211530_0762.jpg" />
 
-Acronyms used in this post:
-
-AI means Artificial Intelligence, software systems that can generate, reason, summarize, code, classify, and increasingly act through tools.
-
-IT means Information Technology, the industry of software, systems, data, support, outsourcing, and digital operations.
-
-WEF means World Economic Forum, a global business and policy organization that publishes employer surveys and future-of-work reports.
-
-HAI means Human-Centered Artificial Intelligence, Stanford University's institute studying AI's technical, economic, and social effects.
-
-CEO means Chief Executive Officer, the top executive responsible for a company's direction.
-
-API means Application Programming Interface, a controlled way for software systems to talk to other software systems.
+Acronyms used: Artificial Intelligence [AI, software systems that can generate, reason, summarize, code, classify, and increasingly act through tools]; Information Technology [IT, the industry of software, systems, data, support, outsourcing, and digital operations]; World Economic Forum [WEF, a global business and policy organization that publishes employer surveys and future-of-work reports]; Human-Centered Artificial Intelligence [HAI, Stanford University’s institute that studies AI’s technical, economic, and social effects]; Chief Executive Officer [CEO, the top executive responsible for a company’s direction]; Application Programming Interface [API, a controlled way for software systems to talk to other software systems].
 
 ---
 
-The first thing missing will not be the job. It will be the little wooden stool by which a young person climbed into the job.
+The job will not vanish first. The first thing to vanish will be the little wooden stool by which a young person climbed into the job.
 
-That is the trick nobody wants to inspect directly. Everyone says, in the soothing voice of a man selling insurance in a heatwave, that AI will mostly affect entry-level work. Only the junior coder. Only the trainee analyst. Only the support fresher. Only the young person whose main professional skill is still fear.
+That is the trick nobody wants to look at directly. Everyone says, with the soothing voice of a man selling life insurance in a heatwave, that AI will mostly hurt entry-level work. Only the junior coder. Only the trainee analyst. Only the first-year support person. Only the young chap whose main professional skill is still fear.
 
 Only.
 
 This is like saying the house is safe because only the staircase is burning.
 
-You do not become senior by being born senior. You become senior because the world tolerates your useful incompetence for a while. Somebody gives you a small ticket, a bad task, a clumsy report, a bug nobody important cares about, a spreadsheet with a strange smell of office sadness, and you do it badly. Then less badly. Then one day you catch a mistake before it catches you.
+You do not become senior by being born senior. You become senior by being tolerated when you are junior. Somebody gives you a small ticket, a bad task, a clumsy report, a bug nobody important cares about, a spreadsheet that smells faintly of office sadness, and you do it badly. Then less badly. Then one day you catch a mistake before it catches you. That is experience. Not a certificate. Not a course. Not a motivational LinkedIn paragraph with a sunrise behind it.
 
-That is experience.
-
-Not a certificate. Not a course. Not a sunrise paragraph on LinkedIn.
+Experience is what happens when the world allows you to be usefully incompetent for a while.
 
 AI is very good at eating useful incompetence.
 
-So the coming unemployment may not first look like old photographs of a breadline. It may look like silence. A young person in Behala applies to two hundred jobs and hears nothing. A graduate in Salt Lake does another automated assessment for a company that may not be hiring. A mid-career worker in the southern fringe of Calcutta refreshes email and wonders when the floor became a trapdoor.
+This is why the coming unemployment will not look, at first, like an old black-and-white photograph of a breadline. It will look like silence. A boy in Behala applying to two hundred jobs and hearing nothing. A girl in Salt Lake doing another online assessment for a company that may not even be hiring. A middle-aged man in the southern fringe of Calcutta, half consultant, half unpaid philosopher, drinking overboiled tea and wondering when the floor became a trapdoor.
 
 The rich will call it productivity.
 
 The rest of us will call it Tuesday.
 
-There is a cheerful story that AI will create more jobs than it destroys. The WEF has projected large job churn by 2030, with roles displaced and roles created. Fine. Let us not throw every report into the river. Some new jobs will be real. There will be AI auditors, workflow designers, model evaluators, safety testers, compliance people, cyber people, data cleaners, agent supervisors, and people whose job title sounds like a refrigerator manual translated twice.
+There is a cheerful story going around that AI will create more jobs than it destroys. The WEF has projected large job churn by 2030, with many roles displaced and many new ones created. Fine. Let us not throw the report into the Hooghly. Some new jobs will be real. There will be AI auditors, AI workflow designers, model evaluators, safety testers, data-cleaning priests, prompt engineers briefly, agent supervisors, compliance people, cybersecurity people, and people whose job title sounds like a fridge manual translated from Finnish.
 
 But a projected job is not a job.
 
-A job is salary. A joining date. A manager who answers email. A company that intends to hire. This distinction matters because the modern job market is full of ghost jobs: postings that sit on career pages like plastic fruit at a buffet. They look edible from a distance. Bite one and your teeth learn economics.
+A job is not a sentence in a report. It is salary. It is a joining date. It is a manager who answers email. It is a company that actually intends to hire. This distinction matters because the modern job market is now full of ghost jobs: postings that sit on career pages like plastic fruit in a wedding buffet. They look edible from a distance. Bite one and your teeth learn economics.
 
-Some companies post jobs to look like they are growing. Some collect resumes. Some benchmark salaries. Some reassure overworked staff that help is coming. Some hiring pipelines are automated enough to reject applicants for roles that may be imaginary. We used to fear being replaced by machines. Now even the rejection letter can be outsourced to fog.
+Some companies post jobs to look like they are growing. Some keep roles open to collect resumes. Some benchmark salaries. Some reassure overworked staff that help is coming, though help is not coming, only another town hall. Some hiring pipelines are so automated that applicants are rejected by machines for jobs that may be imaginary. We used to fear being replaced by robots. Now even our rejection letters have been outsourced to fog.
 
-If someone tells you there are millions of future jobs, ask a rude grocery question: how many are real, funded, open to ordinary people, reachable without elite networks, and not secretly asking for five years of experience in a tool born last winter?
+This poisons the optimism. If someone tells you there are millions of future jobs, ask a small rude question: how many are real, funded, open to ordinary people, reachable without elite networks, and not secretly asking for five years of experience in a technology born last winter?
 
 That is where the floor gives way.
 
-The old Indian bargain was never beautiful, but it had a shape. Study. Get marks. Learn computers. Join IT. Support a household. Buy a washing machine. Move from panic to mild panic. The middle class did not become rich, but it became narratively stable. The neighbors could say, "He is in software," and the sentence had weight.
+The old bargain in India was never beautiful, but it had a shape. Study. Get marks. Learn computers. Join IT. Support a family. Buy a washing machine. Move from panic to mild panic. The middle class did not become rich, but it became narratively stable. The parents could say, “Our son is in software.” The neighbors could nod. The tea shop could inflate its prices by two rupees.
 
-Now AI is chewing the kind of work that made this bargain possible: repeatable coding, testing, documentation, reporting, customer support, back-office reconciliation, content production, first-draft analysis, and the clerical glue of the white-collar world. It does not need to do everything perfectly. That is the naive argument. It only needs to do enough that one person with AI can do what three people did without it.
+Now AI is chewing exactly the kind of work that made this bargain possible: repeatable coding, testing, documentation, reporting, customer support, back-office reconciliation, content production, first-draft analysis, and all the clerical glue that held the white-collar world together. It does not need to do everything perfectly. That is the naïve argument. It only needs to do enough that one person with AI can do the work of three people without AI, while the fourth person is invited to explore exciting external opportunities.
 
-The corporate phrase is restructuring.
+The corporate phrase for this is restructuring.
 
 The household phrase is: what now?
 
-Before someone says upskill, let us pause and inspect the word like a fish of uncertain freshness.
+And before someone says “upskill,” let us pause, sip tea, and inspect that word like a fish of uncertain freshness.
 
-Upskilling is useful when there is a bridge. It is cruel when there is only a cliff with a motivational poster beside it. Of course people should learn AI tools. A coder should use coding assistants. An analyst should learn to work with models. Refusing AI now is like refusing email in 1998 because letters had more soul. Charming. Fatal.
+Upskilling is useful when there is a bridge. It is cruel when there is only a cliff with a motivational poster beside it. Of course people should learn AI tools. Of course a coder should use coding assistants. Of course an analyst should learn to work with models. Refusing AI now is like refusing email in 1998 because letters had more soul. Charming. Fatal.
 
-But upskilling cannot fix a labour market that removes the entry gate, posts fake openings, demands experience from beginners, hides hiring behind automated filters, and then tells rejected people their attitude is the problem. That is not advice. That is blame wearing deodorant.
+But upskilling cannot fix a labor market that removes the entry gate, posts fake openings, demands experience from beginners, hides hiring behind automated filters, and then tells rejected people that their attitude is the problem. That is not advice. That is blame with deodorant.
 
-The mid-level worker is not sitting safely either. Much mid-level work is translation. Translate the client's confused request into a ticket. Translate the ticket into a plan. Translate the plan into code. Translate the code into a status update. Translate the status update into a slide that makes senior management feel gravity has been defeated.
+The mid-level worker is not sitting safely under a banyan tree either. Much of mid-level work is translation. Translate the client’s confused request into a ticket. Translate the ticket into a plan. Translate the plan into code. Translate the code into a status update. Translate the status update into a slide that makes senior management feel gravity has been defeated. AI is astonishingly good at first drafts of translation. Often wrong, yes. But wrong at scale, wrong instantly, and wrong cheaply, which in many offices is close enough to right until the invoice clears.
 
-AI is very good at first drafts of translation. Often wrong, yes. But wrong instantly, wrong cheaply, and wrong in a polished dialect that some offices accept until the invoice clears.
+Then there is the senior person, the supposed last fort. The senior engineer. The senior analyst. The senior architect. The person who has seen enough disasters to know that the actual bug is usually not in the code but in the meeting where nobody admitted the requirement was nonsense.
 
-Senior judgment still matters. More than ever. The senior person knows that the real bug is often not in the code but in the meeting where nobody admitted the requirement was nonsense. The trouble is that organizations often accept the appearance of judgment when the appearance is cheaper. AI can draft the architecture memo, summarize risks, produce a migration plan, and speak in a consultant tone where every sentence is clean and very few sentences have lived.
+Good senior judgment still matters. More than ever, probably. But organizations have a bad habit: when a machine produces something that looks like judgment, they often accept the appearance because the appearance is cheaper. AI can draft the architecture memo, summarize the risks, produce the migration plan, compare the tools, and speak in that clean consultant dialect in which every sentence has showered but no sentence has lived.
 
 Sometimes it is useful.
 
-Sometimes it is wax fruit.
+Sometimes it is a wax fruit again.
 
-Meanwhile the cost of real participation rises. The largest models require expensive chips, huge data centers, electricity, cloud bills, private evaluations, and legal machinery. Ordinary people can use the box. We can ask it to write a letter, debug a function, summarize a report, or make a small song about a tram conductor in North Calcutta.
+The deeper danger is not that AI becomes wiser than us. The danger is that management becomes willing to treat plausible output as a substitute for wisdom. That is cheaper, faster, and much easier to put in a dashboard.
+
+Meanwhile the cost of real participation keeps rising. The biggest models require expensive chips, vast data centers, mountains of electricity, and cloud bills that look as if they were written by a moneylender with a physics degree. Ordinary people can use AI, yes. We can type into the box. We can ask it to write a letter, debug a function, summarize a report, or make a little song about a drunk tram conductor in North Calcutta.
 
 But using the box is not owning the box.
 
-A tenant can switch on a fan. He does not own the power station.
+A tenant can switch on the fan. He does not own the power station.
 
-India should be nervous, not theatrical. The services economy carries modern aspiration. If AI reduces hiring at the bottom while increasing profits at the top, the social result will be ugly: crowded coaching centers, fake hope, more scams, more migration dreams, more angry educated people with smartphones, and more households discovering that a degree can become a decorative wall tile.
+This is where the future becomes socially dangerous. Educated unemployment is not just an economic inconvenience. It is dry straw. Add political anger, religious provocation, family debt, exam failure, rising rent, social media humiliation, and a million young people told every morning that they are simultaneously overqualified and unemployable, and you have made a very efficient bonfire.
 
-The answer is not to smash the machines. That is theatre for people who do not pay monthly bills.
+India should be especially nervous. Not hysterical. Nervous. The services economy carries a huge part of modern aspiration. If AI reduces hiring at the bottom while increasing profits at the top, the social result will not be elegant. It will be crowded coaching centers, fake hope, delayed marriages, more migration dreams, more scams, more angry young men with smartphones, and more families discovering that a degree can become a decorative wall tile.
 
-The answer is dull and difficult. Measure real hiring, not job postings. Punish deceptive job ads. Build apprenticeships where beginners do supervised real work. Force companies that automate entry-level tasks to explain where future workers will learn. Treat AI infrastructure as a public-interest question, not only a billionaire aquarium. Create portable benefits for contract workers. Teach AI honestly, not as magic, not as doom, but as a power tool that removes fingers when handled with slogans.
+And yet the answer is not to smash the machines. That is romance for people who have never had to pay school fees.
+
+The answer is less dramatic and more difficult. Measure real hiring, not job postings. Punish deceptive job ads. Build apprenticeships where beginners do supervised real work. Force companies that automate entry-level tasks to explain where future workers will learn. Treat AI infrastructure as a public-interest question, not merely a billionaire aquarium. Create portable benefits for contract workers. Teach AI honestly, not as magic, not as doom, but as a power tool that removes fingers when handled with slogans.
 
 Most of all, stop lying.
 
-Do not tell young people everything is fine because the future will create jobs. Which future? Whose jobs? In which city? At what salary? Behind which automated gatekeeper? With which household feeding them while they transform themselves into the next required shape?
+Do not tell young people that everything is fine because the future will create new jobs. Which future? Whose jobs? In which city? At what salary? After how many months of unpaid learning? Behind which automated gatekeeper? With which family feeding them while they transform themselves into the next required creature?
 
-These are not pessimistic questions.
+These are not pessimistic questions. They are grocery questions.
 
-They are grocery questions.
+In my own small life, AI has the smell of both wonder and exile. I can see the beauty of it. I can use it. I can admire the trick. I can also feel myself being pushed toward the edge of a conversation I once belonged to. Once, an engineer with a laptop, stubbornness, and tea could feel he had one hand on the future’s railing. Now the railing is inside a private data center, guarded by lawyers, GPUs, subscription tiers, and men who say “democratization” while raising prices.
 
-I do not think everyone becomes unemployed next Thursday after lunch. That would be too simple, almost merciful. I think something slipperier is coming: fewer real entry-level openings, more ghost jobs, smaller teams, more contract work, more adults pretending to be entrepreneurs because employment has become a room with a bouncer.
+So no, I do not think everyone will become unemployed next Thursday after lunch.
+
+That would be too simple, almost merciful.
+
+I think something more slippery is coming. Fewer real entry-level openings. More ghost jobs. Smaller teams. More contract work. More “creator economy” desperation. More adults pretending they are entrepreneurs because employment has become a nightclub with a bouncer. More educated people living in the waiting room of life, refreshed by email, punished by silence, instructed to be grateful for tools that also helped remove the ladder.
 
 The machine does not need to hate us.
 
+That is childish cinema.
+
 It only needs to be useful to people who find other people expensive.
 
-That is not science fiction.
-
-That is procurement.
+And that, unfortunately, is not science fiction. That is procurement.

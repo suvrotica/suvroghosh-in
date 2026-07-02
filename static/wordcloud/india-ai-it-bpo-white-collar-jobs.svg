@@ -1,134 +1,134 @@
-<svg role="img" aria-label="India&#x27;s White-Collar Issue" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>India&#x27;s White-Collar Issue</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<svg role="img" aria-label="India’s White-Collar Issue" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>India’s White-Collar Issue</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(749,403)" font-size="118" style="fill:#d6a79f">AI</text>
-<text transform="translate(650,251)" font-size="98" style="fill:#9fc9c5">Work</text>
-<text transform="translate(69,253)" font-size="93" style="fill:#9fc9c5">Enough</text>
-<text transform="translate(922,633)" font-size="73" style="fill:#d5d2c2">Means</text>
-<text transform="translate(774,144)" font-size="73" style="fill:#e0b879">Process</text>
-<text transform="translate(379,685)" font-size="73" style="fill:#d6a79f">Operations</text>
-<text transform="translate(124,562)" font-size="73" style="fill:#d5d2c2">Model</text>
-<text transform="translate(1209,567) rotate(-90)" font-size="73" style="fill:#a9b7a3">Labor</text>
-<text transform="translate(780,538)" font-size="73" style="fill:#a9b7a3">India</text>
-<text transform="translate(425,525)" font-size="66" style="fill:#e0b879">Firms</text>
-<text transform="translate(1128,313) rotate(-90)" font-size="66" style="fill:#a9b7a3">Product</text>
-<text transform="translate(48,667)" font-size="66" style="fill:#e0b879">Risk</text>
-<text transform="translate(672,476)" font-size="66" style="fill:#d88988">Services</text>
-<text transform="translate(27,379)" font-size="66" style="fill:#d9c89e">Large</text>
-<text transform="translate(312,115)" font-size="66" style="fill:#c7d7b5">World</text>
-<text transform="translate(58,591) rotate(-90)" font-size="66" style="fill:#d88988">Plus</text>
-<text transform="translate(1037,405) rotate(-90)" font-size="66" style="fill:#e0b879">Fewer</text>
-<text transform="translate(522,598)" font-size="66" style="fill:#d6a79f">Problem</text>
-<text transform="translate(918,50)" font-size="59" style="fill:#d5d2c2">Data</text>
-<text transform="translate(1110,464) rotate(-90)" font-size="59" style="fill:#a9b7a3">BPO</text>
-<text transform="translate(319,417)" font-size="59" style="fill:#c49a6c">Business</text>
-<text transform="translate(245,611)" font-size="59" style="fill:#a9b7a3">Systems</text>
-<text transform="translate(128,336)" font-size="59" style="fill:#d6a79f">Whitecollar</text>
-<text transform="translate(715,58)" font-size="59" style="fill:#c49a6c">Learn</text>
-<text transform="translate(551,335)" font-size="59" style="fill:#8fb7d0">Scale</text>
-<text transform="translate(145,486)" font-size="59" style="fill:#c49a6c">Teams</text>
-<text transform="translate(988,680)" font-size="59" style="fill:#d9c89e">Better</text>
-<text transform="translate(45,96)" font-size="59" style="fill:#d88988">Many</text>
-<text transform="translate(1194,296) rotate(-90)" font-size="59" style="fill:#8fb7d0">Pressure</text>
-<text transform="translate(406,278)" font-size="59" style="fill:#d9c89e">Roles</text>
-<text transform="translate(230,58)" font-size="59" style="fill:#c7d7b5">Architecture</text>
-<text transform="translate(8,163)" font-size="59" style="fill:#d88988">Enterprise</text>
-<text transform="translate(386,185)" font-size="51" style="fill:#c49a6c">Software</text>
-<text transform="translate(519,137)" font-size="51" style="fill:#d6a79f">Service</text>
-<text transform="translate(209,711)" font-size="51" style="fill:#8fb7d0">GCC</text>
-<text transform="translate(466,467)" font-size="51" style="fill:#9fc9c5">Global</text>
-<text transform="translate(1240,327) rotate(-90)" font-size="51" style="fill:#d88988">Capability</text>
-<text transform="translate(94,438)" font-size="51" style="fill:#d5d2c2">Finance</text>
-<text transform="translate(743,309)" font-size="51" style="fill:#d6a79f">Value</text>
-<text transform="translate(503,378)" font-size="51" style="fill:#c49a6c">Produced</text>
-<text transform="translate(1263,646) rotate(-90)" font-size="51" style="fill:#e0b879">Economy</text>
-<text transform="translate(946,362) rotate(-90)" font-size="51" style="fill:#d9c89e">Indian</text>
-<text transform="translate(846,90)" font-size="38" style="fill:#b6c3dd">Managerial</text>
-<text transform="translate(847,700)" font-size="38" style="fill:#d88988">Hiring</text>
-<text transform="translate(673,637)" font-size="38" style="fill:#b6c3dd">Economic</text>
-<text transform="translate(370,569)" font-size="38" style="fill:#e0b879">Middle</text>
-<text transform="translate(1011,525)" font-size="38" style="fill:#c7d7b5">Status</text>
-<text transform="translate(622,520)" font-size="38" style="fill:#9fc9c5">Support</text>
-<text transform="translate(405,219)" font-size="38" style="fill:#d5d2c2">Quality</text>
-<text transform="translate(1073,350) rotate(-90)" font-size="38" style="fill:#c7d7b5">Whether</text>
-<text transform="translate(17,705)" font-size="38" style="fill:#b6c3dd">Question</text>
-<text transform="translate(336,461)" font-size="38" style="fill:#c49a6c">Often</text>
-<text transform="translate(18,40)" font-size="38" style="fill:#d5d2c2">Delivery</text>
-<text transform="translate(984,357) rotate(-90)" font-size="38" style="fill:#b6c3dd">Exception</text>
-<text transform="translate(233,370)" font-size="38" style="fill:#d5d2c2">Tools</text>
-<text transform="translate(885,575)" font-size="38" style="fill:#a9b7a3">Matters</text>
-<text transform="translate(214,668)" font-size="38" style="fill:#8fb7d0">Sector</text>
-<text transform="translate(1058,713)" font-size="38" style="fill:#d5d2c2">Education</text>
-<text transform="translate(642,93)" font-size="38" style="fill:#d9c89e">Built</text>
-<text transform="translate(330,532)" font-size="38" style="fill:#a9b7a3">Tool</text>
-<text transform="translate(736,187)" font-size="38" style="fill:#d5d2c2">Less</text>
-<text transform="translate(919,430)" font-size="38" style="fill:#d88988">Rather</text>
-<text transform="translate(659,284)" font-size="31" style="fill:#d88988">Used</text>
-<text transform="translate(718,432)" font-size="31" style="fill:#d9c89e">Office</text>
-<text transform="translate(675,715)" font-size="31" style="fill:#d6a79f">Outside</text>
-<text transform="translate(91,607)" font-size="31" style="fill:#d6a79f">Offshore</text>
-<text transform="translate(11,286)" font-size="31" style="fill:#9fc9c5">Multinational</text>
-<text transform="translate(87,576) rotate(-90)" font-size="31" style="fill:#a9b7a3">Technology</text>
-<text transform="translate(205,87)" font-size="31" style="fill:#d5d2c2">Shape</text>
-<text transform="translate(453,640)" font-size="31" style="fill:#e0b879">Billable</text>
-<text transform="translate(178,115)" font-size="31" style="fill:#d5d2c2">Hire</text>
-<text transform="translate(470,715)" font-size="31" style="fill:#d9c89e">Arithmetic</text>
-<text transform="translate(569,234)" font-size="31" style="fill:#e0b879">REST</text>
-<text transform="translate(1156,236) rotate(-90)" font-size="31" style="fill:#d6a79f">Households</text>
-<text transform="translate(1142,448) rotate(-90)" font-size="31" style="fill:#d6a79f">Private</text>
-<text transform="translate(1268,219) rotate(-90)" font-size="31" style="fill:#e0b879">Colleges</text>
-<text transform="translate(1000,492)" font-size="31" style="fill:#9fc9c5">Class</text>
-<text transform="translate(93,478)" font-size="31" style="fill:#d5d2c2">Now</text>
-<text transform="translate(853,664)" font-size="31" style="fill:#a9b7a3">Machine</text>
-<text transform="translate(544,91)" font-size="31" style="fill:#a9b7a3">Issue</text>
-<text transform="translate(1268,420) rotate(-90)" font-size="31" style="fill:#d6a79f">Depended</text>
-<text transform="translate(363,364)" font-size="31" style="fill:#e0b879">Routine</text>
-<text transform="translate(330,489)" font-size="31" style="fill:#e0b879">Human</text>
-<text transform="translate(1239,426) rotate(-90)" font-size="31" style="fill:#b6c3dd">Price</text>
-<text transform="translate(253,194)" font-size="31" style="fill:#d9c89e">Broad</text>
-<text transform="translate(598,416)" font-size="31" style="fill:#8fb7d0">Coding</text>
-<text transform="translate(1081,586)" font-size="31" style="fill:#d88988">Ticket</text>
-<text transform="translate(996,547)" font-size="25" style="fill:#d6a79f">Documentation</text>
-<text transform="translate(865,381)" font-size="25" style="fill:#d88988">Drafting</text>
-<text transform="translate(1138,609)" font-size="25" style="fill:#d5d2c2">Junior</text>
-<text transform="translate(415,138)" font-size="25" style="fill:#d6a79f">Leads</text>
-<text transform="translate(302,708)" font-size="25" style="fill:#d6a79f">Analysts</text>
-<text transform="translate(1002,170)" font-size="25" style="fill:#e0b879">Jobs</text>
-<text transform="translate(28,319)" font-size="25" style="fill:#a9b7a3">Job</text>
-<text transform="translate(8,210)" font-size="25" style="fill:#9fc9c5">Stop</text>
-<text transform="translate(1164,450) rotate(-90)" font-size="25" style="fill:#d9c89e">Commercial</text>
-<text transform="translate(202,403)" font-size="25" style="fill:#a9b7a3">Task</text>
-<text transform="translate(853,169)" font-size="25" style="fill:#d6a79f">Bundle</text>
-<text transform="translate(270,297)" font-size="25" style="fill:#d9c89e">Tasks</text>
-<text transform="translate(579,274)" font-size="25" style="fill:#e0b879">Whole</text>
-<text transform="translate(643,161)" font-size="25" style="fill:#d6a79f">Always</text>
-<text transform="translate(830,605)" font-size="25" style="fill:#c7d7b5">Layers</text>
-<text transform="translate(1056,22)" font-size="19" style="fill:#a9b7a3">Engineers</text>
-<text transform="translate(714,545)" font-size="19" style="fill:#c7d7b5">Senior</text>
-<text transform="translate(793,556)" font-size="19" style="fill:#d6a79f">Much</text>
-<text transform="translate(772,18)" font-size="19" style="fill:#d6a79f">Becomes</text>
-<text transform="translate(608,620)" font-size="19" style="fill:#8fb7d0">Years</text>
-<text transform="translate(562,20)" font-size="19" style="fill:#a9b7a3">Industrialized</text>
-<text transform="translate(832,272)" font-size="19" style="fill:#b6c3dd">Answer</text>
-<text transform="translate(1198,672)" font-size="19" style="fill:#c7d7b5">System</text>
-<text transform="translate(22,421) rotate(-90)" font-size="19" style="fill:#d88988">Language</text>
-<text transform="translate(522,542)" font-size="17" style="fill:#c49a6c">Increasingly</text>
-<text transform="translate(66,115)" font-size="17" style="fill:#8fb7d0">Safe</text>
-<text transform="translate(20,250)" font-size="17" style="fill:#b6c3dd">Every</text>
-<text transform="translate(131,193)" font-size="17" style="fill:#a9b7a3">Regulated</text>
-<text transform="translate(1158,629)" font-size="17" style="fill:#d5d2c2">Toward</text>
-<text transform="translate(647,494)" font-size="17" style="fill:#a9b7a3">Smaller</text>
-<text transform="translate(770,159) rotate(-90)" font-size="17" style="fill:#e0b879">Remaining</text>
-<text transform="translate(987,698)" font-size="17" style="fill:#9fc9c5">Harsher</text>
-<text transform="translate(658,52)" font-size="17" style="fill:#b6c3dd">First</text>
-<text transform="translate(151,504)" font-size="17" style="fill:#8fb7d0">Fresher</text>
-<text transform="translate(843,419)" font-size="17" style="fill:#e0b879">Survive</text>
-<text transform="translate(5,178)" font-size="17" style="fill:#d88988">Longer</text>
-<text transform="translate(118,570) rotate(-90)" font-size="17" style="fill:#e0b879">Exposure</text>
-<text transform="translate(440,294)" font-size="17" style="fill:#d5d2c2">Consequence</text>
-<text transform="translate(10,609)" font-size="17" style="fill:#c7d7b5">Turning</text>
-<text transform="translate(811,575)" font-size="17" style="fill:#c49a6c">Higher</text>
-<text transform="translate(305,641)" font-size="17" style="fill:#9fc9c5">Centers</text>
-<text transform="translate(1226,581) rotate(-90)" font-size="17" style="fill:#8fb7d0">Employability</text>
-<text transform="translate(1002,448)" font-size="17" style="fill:#8fb7d0">Social</text>
+<text transform="translate(46,262)" font-size="106" style="fill:#9fc9c5">Work</text>
+<text transform="translate(473,336)" font-size="85" style="fill:#9fc9c5">Labor</text>
+<text transform="translate(339,666)" font-size="85" style="fill:#8fb7d0">Roles</text>
+<text transform="translate(691,520)" font-size="81" style="fill:#d88988">Business</text>
+<text transform="translate(162,145)" font-size="77" style="fill:#e0b879">India</text>
+<text transform="translate(936,248)" font-size="72" style="fill:#a9b7a3">Process</text>
+<text transform="translate(371,503)" font-size="72" style="fill:#d5d2c2">Firms</text>
+<text transform="translate(913,691)" font-size="72" style="fill:#a9b7a3">Enough</text>
+<text transform="translate(958,470)" font-size="67" style="fill:#d5d2c2">Machine</text>
+<text transform="translate(475,162) rotate(-90)" font-size="67" style="fill:#d5d2c2">Now</text>
+<text transform="translate(749,84)" font-size="67" style="fill:#a9b7a3">Whitecollar</text>
+<text transform="translate(292,403)" font-size="67" style="fill:#e0b879">Many</text>
+<text transform="translate(23,474)" font-size="67" style="fill:#d5d2c2">Plus</text>
+<text transform="translate(546,70)" font-size="67" style="fill:#9fc9c5">Less</text>
+<text transform="translate(719,623)" font-size="62" style="fill:#c49a6c">Services</text>
+<text transform="translate(902,397)" font-size="62" style="fill:#a9b7a3">Systems</text>
+<text transform="translate(709,187)" font-size="62" style="fill:#c49a6c">Indian</text>
+<text transform="translate(43,321)" font-size="62" style="fill:#9fc9c5">Merely</text>
+<text transform="translate(707,249)" font-size="62" style="fill:#8fb7d0">Model</text>
+<text transform="translate(654,703) rotate(-90)" font-size="62" style="fill:#a9b7a3">Fewer</text>
+<text transform="translate(957,325)" font-size="62" style="fill:#c49a6c">Problem</text>
+<text transform="translate(442,595)" font-size="62" style="fill:#e0b879">Tool</text>
+<text transform="translate(256,614) rotate(-90)" font-size="56" style="fill:#d5d2c2">Product</text>
+<text transform="translate(535,119)" font-size="56" style="fill:#c49a6c">Scale</text>
+<text transform="translate(353,228)" font-size="56" style="fill:#8fb7d0">Middle</text>
+<text transform="translate(26,682)" font-size="56" style="fill:#c49a6c">Coding</text>
+<text transform="translate(1071,571)" font-size="56" style="fill:#8fb7d0">World</text>
+<text transform="translate(1065,130)" font-size="56" style="fill:#d6a79f">Teams</text>
+<text transform="translate(541,419)" font-size="56" style="fill:#c7d7b5">Large</text>
+<text transform="translate(161,61)" font-size="56" style="fill:#d5d2c2">Risk</text>
+<text transform="translate(935,177)" font-size="56" style="fill:#d6a79f">Operations</text>
+<text transform="translate(302,332)" font-size="56" style="fill:#e0b879">First</text>
+<text transform="translate(673,570)" font-size="56" style="fill:#c49a6c">Pressure</text>
+<text transform="translate(669,675)" font-size="56" style="fill:#d6a79f">Country</text>
+<text transform="translate(260,713)" font-size="56" style="fill:#d88988">Automation</text>
+<text transform="translate(318,623) rotate(-90)" font-size="56" style="fill:#d6a79f">Owning</text>
+<text transform="translate(1053,624)" font-size="56" style="fill:#c49a6c">Often</text>
+<text transform="translate(725,300)" font-size="49" style="fill:#d6a79f">Judgment</text>
+<text transform="translate(5,366)" font-size="49" style="fill:#c7d7b5">Market</text>
+<text transform="translate(9,559)" font-size="44" style="fill:#a9b7a3">Software</text>
+<text transform="translate(26,414)" font-size="44" style="fill:#d6a79f">Service</text>
+<text transform="translate(540,373)" font-size="44" style="fill:#d88988">Value</text>
+<text transform="translate(496,161)" font-size="44" style="fill:#b6c3dd">Industry</text>
+<text transform="translate(50,634)" font-size="44" style="fill:#d88988">Across</text>
+<text transform="translate(807,124)" font-size="44" style="fill:#b6c3dd">Logic</text>
+<text transform="translate(18,598)" font-size="44" style="fill:#e0b879">Human</text>
+<text transform="translate(1088,510)" font-size="44" style="fill:#c7d7b5">Exactly</text>
+<text transform="translate(724,442)" font-size="44" style="fill:#9fc9c5">Support</text>
+<text transform="translate(305,268)" font-size="44" style="fill:#d5d2c2">Whether</text>
+<text transform="translate(1267,406) rotate(-90)" font-size="44" style="fill:#c7d7b5">Question</text>
+<text transform="translate(711,715)" font-size="44" style="fill:#b6c3dd">Needs</text>
+<text transform="translate(9,133)" font-size="44" style="fill:#c49a6c">Longer</text>
+<text transform="translate(379,543)" font-size="44" style="fill:#d88988">Technical</text>
+<text transform="translate(7,510)" font-size="42" style="fill:#c49a6c">Delivery</text>
+<text transform="translate(443,455)" font-size="42" style="fill:#d88988">Answer</text>
+<text transform="translate(11,60)" font-size="42" style="fill:#8fb7d0">System</text>
+<text transform="translate(7,173)" font-size="32" style="fill:#d5d2c2">Increasingly</text>
+<text transform="translate(310,28)" font-size="32" style="fill:#d9c89e">Employment</text>
+<text transform="translate(764,28)" font-size="32" style="fill:#a9b7a3">Architecture</text>
+<text transform="translate(494,255)" font-size="32" style="fill:#d5d2c2">Consequence</text>
+<text transform="translate(938,129)" font-size="32" style="fill:#d88988">Global</text>
+<text transform="translate(358,598) rotate(-90)" font-size="32" style="fill:#d88988">Enterprise</text>
+<text transform="translate(581,202)" font-size="32" style="fill:#d9c89e">Better</text>
+<text transform="translate(1007,28)" font-size="32" style="fill:#9fc9c5">Professionals</text>
+<text transform="translate(303,71)" font-size="32" style="fill:#8fb7d0">Output</text>
+<text transform="translate(277,174)" font-size="32" style="fill:#d88988">Matter</text>
+<text transform="translate(591,478)" font-size="32" style="fill:#9fc9c5">Code</text>
+<text transform="translate(1257,688) rotate(-90)" font-size="28" style="fill:#c7d7b5">Data</text>
+<text transform="translate(618,502)" font-size="28" style="fill:#b6c3dd">BPO</text>
+<text transform="translate(1046,350)" font-size="27" style="fill:#d5d2c2">Outsourcing</text>
+<text transform="translate(17,708)" font-size="27" style="fill:#d5d2c2">Economy</text>
+<text transform="translate(607,22)" font-size="24" style="fill:#e0b879">Technology</text>
+<text transform="translate(1114,201)" font-size="24" style="fill:#d6a79f">Built</text>
+<text transform="translate(287,372) rotate(-90)" font-size="24" style="fill:#d6a79f">Several</text>
+<text transform="translate(340,356)" font-size="22" style="fill:#e0b879">Employability</text>
+<text transform="translate(983,561)" font-size="22" style="fill:#9fc9c5">Demand</text>
+<text transform="translate(619,275)" font-size="22" style="fill:#d5d2c2">Economic</text>
+<text transform="translate(916,712)" font-size="22" style="fill:#a9b7a3">Routine</text>
+<text transform="translate(978,270)" font-size="22" style="fill:#9fc9c5">Documentation</text>
+<text transform="translate(681,355)" font-size="22" style="fill:#9fc9c5">Status</text>
+<text transform="translate(149,605)" font-size="22" style="fill:#d9c89e">Job</text>
+<text transform="translate(81,86)" font-size="22" style="fill:#8fb7d0">Sense</text>
+<text transform="translate(1170,88)" font-size="22" style="fill:#b6c3dd">Bundle</text>
+<text transform="translate(452,401)" font-size="22" style="fill:#c49a6c">Tasks</text>
+<text transform="translate(709,116)" font-size="22" style="fill:#d88988">Quality</text>
+<text transform="translate(955,646)" font-size="22" style="fill:#a9b7a3">Institutional</text>
+<text transform="translate(573,222)" font-size="22" style="fill:#c7d7b5">Language</text>
+<text transform="translate(232,653)" font-size="22" style="fill:#a9b7a3">Compress</text>
+<text transform="translate(27,326) rotate(-90)" font-size="22" style="fill:#c49a6c">Necessarily</text>
+<text transform="translate(369,440)" font-size="22" style="fill:#d9c89e">Much</text>
+<text transform="translate(371,592)" font-size="22" style="fill:#d6a79f">Remain</text>
+<text transform="translate(1163,425)" font-size="22" style="fill:#d88988">Fresher</text>
+<text transform="translate(467,427)" font-size="22" style="fill:#e0b879">Great</text>
+<text transform="translate(1007,202)" font-size="22" style="fill:#a9b7a3">Tools</text>
+<text transform="translate(1150,271)" font-size="22" style="fill:#9fc9c5">Simply</text>
+<text transform="translate(17,20)" font-size="21" style="fill:#d9c89e">Capability</text>
+<text transform="translate(182,362)" font-size="21" style="fill:#a9b7a3">Higher</text>
+<text transform="translate(1149,710)" font-size="21" style="fill:#d6a79f">Migration</text>
+<text transform="translate(849,269)" font-size="21" style="fill:#d9c89e">Social</text>
+<text transform="translate(1161,388)" font-size="21" style="fill:#d6a79f">Story</text>
+<text transform="translate(480,117)" font-size="21" style="fill:#d6a79f">GCC</text>
+<text transform="translate(216,81)" font-size="21" style="fill:#d5d2c2">Domain</text>
+<text transform="translate(607,665) rotate(-90)" font-size="21" style="fill:#a9b7a3">Knowledge</text>
+<text transform="translate(53,385)" font-size="21" style="fill:#b6c3dd">Absorb</text>
+<text transform="translate(170,715)" font-size="21" style="fill:#d6a79f">Fine</text>
+<text transform="translate(962,540)" font-size="21" style="fill:#d9c89e">Toward</text>
+<text transform="translate(277,491) rotate(-90)" font-size="21" style="fill:#d5d2c2">Ambiguity</text>
+<text transform="translate(938,345)" font-size="21" style="fill:#a9b7a3">Security</text>
+<text transform="translate(943,579)" font-size="20" style="fill:#b6c3dd">Exception</text>
+<text transform="translate(389,613)" font-size="20" style="fill:#c7d7b5">Next</text>
+<text transform="translate(413,179)" font-size="20" style="fill:#b6c3dd">Transition</text>
+<text transform="translate(1152,646)" font-size="20" style="fill:#e0b879">Harder</text>
+<text transform="translate(371,288)" font-size="20" style="fill:#b6c3dd">Public</text>
+<text transform="translate(67,104)" font-size="20" style="fill:#a9b7a3">Billion</text>
+<text transform="translate(995,415)" font-size="16" style="fill:#d5d2c2">Outside</text>
+<text transform="translate(675,443)" font-size="16" style="fill:#a9b7a3">GDP</text>
+<text transform="translate(1194,54)" font-size="16" style="fill:#e0b879">Produced</text>
+<text transform="translate(113,199)" font-size="16" style="fill:#d5d2c2">Information</text>
+<text transform="translate(162,383)" font-size="16" style="fill:#b6c3dd">Train</text>
+<text transform="translate(1214,195)" font-size="16" style="fill:#a9b7a3">REST</text>
+<text transform="translate(478,89)" font-size="16" style="fill:#d88988">Urban</text>
+<text transform="translate(17,466) rotate(-90)" font-size="16" style="fill:#e0b879">Pipeline</text>
+<text transform="translate(1274,684) rotate(-90)" font-size="16" style="fill:#8fb7d0">Certifications</text>
+<text transform="translate(600,713)" font-size="16" style="fill:#c7d7b5">Noticed</text>
+<text transform="translate(479,60)" font-size="16" style="fill:#8fb7d0">Hiring</text>
+<text transform="translate(265,194)" font-size="16" style="fill:#a9b7a3">Depended</text>
+<text transform="translate(471,379)" font-size="16" style="fill:#9fc9c5">Price</text>
+<text transform="translate(882,323)" font-size="16" style="fill:#9fc9c5">Attack</text>
+<text transform="translate(883,231)" font-size="16" style="fill:#e0b879">Layer</text>
 </svg>

@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(16,470)" font-size="118" style="fill:#d9c89e">BA.3.2</text>
-<text transform="translate(739,175)" font-size="105" style="fill:#c7d7b5">Variant</text>
-<text transform="translate(592,302)" font-size="98" style="fill:#e0b879">Lineage</text>
-<text transform="translate(476,636)" font-size="90" style="fill:#d88988">Public</text>
-<text transform="translate(1241,449) rotate(-90)" font-size="82" style="fill:#9fc9c5">Attention</text>
-<text transform="translate(343,128)" font-size="82" style="fill:#d88988">Problem</text>
-<text transform="translate(562,537)" font-size="73" style="fill:#8fb7d0">Monitoring</text>
-<text transform="translate(799,701)" font-size="73" style="fill:#c7d7b5">Mean</text>
-<text transform="translate(473,433)" font-size="73" style="fill:#b6c3dd">Surveillance</text>
-<text transform="translate(78,183)" font-size="73" style="fill:#d9c89e">Virus</text>
-<text transform="translate(73,257)" font-size="63" style="fill:#e0b879">Table</text>
-<text transform="translate(883,615)" font-size="63" style="fill:#a9b7a3">Name</text>
-<text transform="translate(17,544)" font-size="63" style="fill:#c49a6c">Ordinary</text>
-<text transform="translate(1192,612) rotate(-90)" font-size="63" style="fill:#e0b879">Long</text>
-<text transform="translate(1098,425) rotate(-90)" font-size="63" style="fill:#d5d2c2">Health</text>
-<text transform="translate(80,654)" font-size="63" style="fill:#d9c89e">Antigenic</text>
-<text transform="translate(303,322)" font-size="63" style="fill:#d6a79f">Risk</text>
-<text transform="translate(24,377)" font-size="63" style="fill:#9fc9c5">Vaccines</text>
-<text transform="translate(806,67)" font-size="63" style="fill:#c7d7b5">Variants</text>
-<text transform="translate(462,692)" font-size="62" style="fill:#9fc9c5">Reporting</text>
-<text transform="translate(472,217)" font-size="62" style="fill:#d5d2c2">Silence</text>
-<text transform="translate(74,96)" font-size="51" style="fill:#c7d7b5">History</text>
-<text transform="translate(829,240)" font-size="51" style="fill:#c7d7b5">Names</text>
-<text transform="translate(1067,668)" font-size="51" style="fill:#a9b7a3">Labels</text>
-<text transform="translate(194,312)" font-size="51" style="fill:#c49a6c">Dry</text>
-<text transform="translate(595,44)" font-size="51" style="fill:#a9b7a3">Useful</text>
-<text transform="translate(459,664) rotate(-90)" font-size="51" style="fill:#c7d7b5">Matter</text>
-<text transform="translate(33,590)" font-size="51" style="fill:#d88988">Cicada</text>
-<text transform="translate(356,59)" font-size="51" style="fill:#b6c3dd">Omicron</text>
-<text transform="translate(529,352)" font-size="51" style="fill:#8fb7d0">Spike</text>
-<text transform="translate(695,475)" font-size="51" style="fill:#b6c3dd">Late</text>
-<text transform="translate(1160,449) rotate(-90)" font-size="51" style="fill:#a9b7a3">Changing</text>
-<text transform="translate(170,711)" font-size="51" style="fill:#c49a6c">Elsewhere</text>
-<text transform="translate(906,476)" font-size="51" style="fill:#e0b879">Enough</text>
-<text transform="translate(281,259)" font-size="51" style="fill:#d5d2c2">Often</text>
-<text transform="translate(43,227) rotate(-90)" font-size="51" style="fill:#d6a79f">Unusual</text>
-<text transform="translate(753,368)" font-size="51" style="fill:#d6a79f">Distance</text>
-<text transform="translate(328,366)" font-size="51" style="fill:#a9b7a3">Recent</text>
-<text transform="translate(88,40)" font-size="48" style="fill:#d88988">Tracking</text>
-<text transform="translate(14,300)" font-size="48" style="fill:#b6c3dd">Sample</text>
-<text transform="translate(1035,705)" font-size="43" style="fill:#a9b7a3">Changes</text>
-<text transform="translate(434,165)" font-size="43" style="fill:#9fc9c5">Evaluation</text>
-<text transform="translate(439,465)" font-size="32" style="fill:#9fc9c5">Antigenically</text>
-<text transform="translate(903,205)" font-size="32" style="fill:#d5d2c2">Reduced</text>
-<text transform="translate(797,644)" font-size="32" style="fill:#c7d7b5">Neutralization</text>
-<text transform="translate(222,589)" font-size="32" style="fill:#d9c89e">Laboratory</text>
-<text transform="translate(763,564)" font-size="32" style="fill:#b6c3dd">Severe</text>
-<text transform="translate(1272,520) rotate(-90)" font-size="32" style="fill:#c7d7b5">Disease</text>
-<text transform="translate(317,170)" font-size="32" style="fill:#9fc9c5">Boring</text>
-<text transform="translate(223,214)" font-size="32" style="fill:#c49a6c">Version</text>
-<text transform="translate(177,504)" font-size="32" style="fill:#d5d2c2">Global</text>
-<text transform="translate(178,136)" font-size="32" style="fill:#8fb7d0">Mutation</text>
-<text transform="translate(483,277)" font-size="32" style="fill:#e0b879">List</text>
-<text transform="translate(6,701)" font-size="32" style="fill:#c49a6c">Biology</text>
-<text transform="translate(1002,562)" font-size="32" style="fill:#d5d2c2">Becomes</text>
-<text transform="translate(689,79)" font-size="32" style="fill:#d9c89e">Larger</text>
-<text transform="translate(976,111)" font-size="32" style="fill:#e0b879">Move</text>
-<text transform="translate(825,466)" font-size="32" style="fill:#c49a6c">Case</text>
-<text transform="translate(1270,360) rotate(-90)" font-size="32" style="fill:#d5d2c2">Statement</text>
-<text transform="translate(435,242)" font-size="27" style="fill:#9fc9c5">Proportion</text>
-<text transform="translate(531,562)" font-size="27" style="fill:#d6a79f">Jn1descendant</text>
-<text transform="translate(1208,573)" font-size="27" style="fill:#c49a6c">Data</text>
-<text transform="translate(157,421)" font-size="27" style="fill:#d9c89e">Real</text>
-<text transform="translate(375,565) rotate(-90)" font-size="27" style="fill:#d5d2c2">Quiet</text>
-<text transform="translate(1014,520)" font-size="27" style="fill:#d5d2c2">Passed</text>
-<text transform="translate(838,94)" font-size="27" style="fill:#8fb7d0">Partly</text>
-<text transform="translate(1024,438) rotate(-90)" font-size="27" style="fill:#8fb7d0">Systems</text>
-<text transform="translate(440,25)" font-size="27" style="fill:#d5d2c2">Continues</text>
-<text transform="translate(302,429)" font-size="27" style="fill:#d9c89e">Grow</text>
-<text transform="translate(743,222)" font-size="27" style="fill:#d5d2c2">Tired</text>
-<text transform="translate(1093,96)" font-size="27" style="fill:#c7d7b5">Middle</text>
-<text transform="translate(228,614)" font-size="27" style="fill:#b6c3dd">Position</text>
-<text transform="translate(466,301)" font-size="27" style="fill:#8fb7d0">Watched</text>
-<text transform="translate(578,386)" font-size="27" style="fill:#d6a79f">World</text>
-<text transform="translate(1051,594)" font-size="27" style="fill:#d9c89e">Remains</text>
-<text transform="translate(1271,179) rotate(-90)" font-size="27" style="fill:#e0b879">Technical</text>
-<text transform="translate(1063,22)" font-size="22" style="fill:#d6a79f">Knowledge</text>
-<text transform="translate(66,181) rotate(-90)" font-size="22" style="fill:#d6a79f">Composition</text>
-<text transform="translate(1123,403) rotate(-90)" font-size="22" style="fill:#9fc9c5">Sometimes</text>
-<text transform="translate(379,201)" font-size="22" style="fill:#a9b7a3">Belongs</text>
-<text transform="translate(111,203)" font-size="22" style="fill:#d9c89e">Sarscov2</text>
-<text transform="translate(685,329)" font-size="16" style="fill:#d5d2c2">Small</text>
-<text transform="translate(597,63)" font-size="16" style="fill:#a9b7a3">Line</text>
-<text transform="translate(847,22)" font-size="16" style="fill:#d9c89e">Harmless</text>
-<text transform="translate(927,571)" font-size="16" style="fill:#d9c89e">Notices</text>
-<text transform="translate(521,530) rotate(-90)" font-size="16" style="fill:#9fc9c5">Much</text>
-<text transform="translate(1112,66)" font-size="16" style="fill:#c49a6c">Folded</text>
-<text transform="translate(816,319)" font-size="16" style="fill:#d9c89e">Appears</text>
-<text transform="translate(1048,193)" font-size="16" style="fill:#9fc9c5">Designed</text>
-<text transform="translate(820,113)" font-size="16" style="fill:#d6a79f">Committee</text>
-<text transform="translate(592,713)" font-size="16" style="fill:#b6c3dd">Determined</text>
-<text transform="translate(1097,539)" font-size="16" style="fill:#e0b879">Fail</text>
-<text transform="translate(199,57)" font-size="16" style="fill:#c7d7b5">Mythic</text>
-<text transform="translate(477,316)" font-size="16" style="fill:#d5d2c2">Storm</text>
-<text transform="translate(744,621) rotate(-90)" font-size="16" style="fill:#d6a79f">Even</text>
-<text transform="translate(704,239)" font-size="16" style="fill:#d5d2c2">Greekletter</text>
-<text transform="translate(89,117)" font-size="16" style="fill:#c7d7b5">Briefly</text>
-<text transform="translate(158,438)" font-size="16" style="fill:#a9b7a3">Everyone</text>
-<text transform="translate(988,700)" font-size="16" style="fill:#b6c3dd">Feel</text>
-<text transform="translate(52,486)" font-size="16" style="fill:#c49a6c">Virology</text>
-<text transform="translate(974,319)" font-size="16" style="fill:#8fb7d0">Airport</text>
-<text transform="translate(732,194)" font-size="16" style="fill:#a9b7a3">Announcement</text>
-<text transform="translate(726,159) rotate(-90)" font-size="16" style="fill:#b6c3dd">Label</text>
-<text transform="translate(19,617)" font-size="16" style="fill:#c49a6c">Nearly</text>
-<text transform="translate(972,660)" font-size="16" style="fill:#d88988">Invisible</text>
-<text transform="translate(799,600)" font-size="16" style="fill:#8fb7d0">Yet</text>
-<text transform="translate(1035,615)" font-size="16" style="fill:#c49a6c">Informally</text>
-<text transform="translate(1177,624)" font-size="16" style="fill:#e0b879">Nicknamed</text>
-<text transform="translate(837,387)" font-size="16" style="fill:#8fb7d0">Watchers</text>
-<text transform="translate(516,653)" font-size="16" style="fill:#e0b879">Attracted</text>
-<text transform="translate(167,395)" font-size="16" style="fill:#9fc9c5">Seemed</text>
-<text transform="translate(743,319)" font-size="16" style="fill:#d5d2c2">Step</text>
-<text transform="translate(380,538)" font-size="16" style="fill:#a9b7a3">View</text>
-<text transform="translate(111,608)" font-size="16" style="fill:#d88988">Older</text>
-<text transform="translate(791,581)" font-size="16" style="fill:#9fc9c5">Corridor</text>
-<text transform="translate(948,23)" font-size="16" style="fill:#a9b7a3">Metaphor</text>
-<text transform="translate(1198,593)" font-size="16" style="fill:#9fc9c5">Works</text>
-<text transform="translate(28,672)" font-size="16" style="fill:#8fb7d0">Handles</text>
-<text transform="translate(474,550)" font-size="16" style="fill:#b6c3dd">Gently</text>
-<text transform="translate(71,335)" font-size="16" style="fill:#8fb7d0">Creature</text>
-<text transform="translate(1011,83)" font-size="16" style="fill:#8fb7d0">Story</text>
-<text transform="translate(11,253)" font-size="16" style="fill:#d88988">Point</text>
-<text transform="translate(271,672)" font-size="16" style="fill:#d6a79f">Delay</text>
-<text transform="translate(416,77)" font-size="16" style="fill:#e0b879">Branch</text>
-<text transform="translate(324,17)" font-size="16" style="fill:#b6c3dd">Associated</text>
-<text transform="translate(6,654)" font-size="16" style="fill:#e0b879">Earlier</text>
-<text transform="translate(664,369)" font-size="16" style="fill:#e0b879">Appeared</text>
-<text transform="translate(338,677)" font-size="16" style="fill:#a9b7a3">Interval</text>
-<text transform="translate(293,399)" font-size="16" style="fill:#c49a6c">Carrying</text>
-<text transform="translate(454,709)" font-size="16" style="fill:#d88988">Heavily</text>
+<text transform="translate(370,157)" font-size="90" style="fill:#c7d7b5">Lineage</text>
+<text transform="translate(131,290)" font-size="74" style="fill:#e0b879">Evolution</text>
+<text transform="translate(846,555)" font-size="69" style="fill:#d88988">Variant</text>
+<text transform="translate(1229,255) rotate(-90)" font-size="69" style="fill:#9fc9c5">Severe</text>
+<text transform="translate(861,182)" font-size="69" style="fill:#d88988">Virus</text>
+<text transform="translate(937,672)" font-size="69" style="fill:#8fb7d0">Immune</text>
+<text transform="translate(643,680)" font-size="69" style="fill:#c7d7b5">Whether</text>
+<text transform="translate(135,573)" font-size="64" style="fill:#b6c3dd">Surveillance</text>
+<text transform="translate(157,189)" font-size="64" style="fill:#d9c89e">Spike</text>
+<text transform="translate(858,325)" font-size="64" style="fill:#e0b879">Real</text>
+<text transform="translate(668,606)" font-size="64" style="fill:#a9b7a3">Story</text>
+<text transform="translate(343,636)" font-size="58" style="fill:#b6c3dd">Sarscov2</text>
+<text transform="translate(597,489) rotate(-90)" font-size="58" style="fill:#e0b879">Disease</text>
+<text transform="translate(845,375) rotate(-90)" font-size="58" style="fill:#d5d2c2">Seems</text>
+<text transform="translate(243,375)" font-size="58" style="fill:#d9c89e">Much</text>
+<text transform="translate(615,468)" font-size="58" style="fill:#d6a79f">Evolutionary</text>
+<text transform="translate(878,396)" font-size="58" style="fill:#9fc9c5">Enough</text>
+<text transform="translate(350,228)" font-size="58" style="fill:#9fc9c5">Watch</text>
+<text transform="translate(23,676)" font-size="52" style="fill:#d88988">Branch</text>
+<text transform="translate(1065,622)" font-size="52" style="fill:#8fb7d0">Viral</text>
+<text transform="translate(636,290)" font-size="52" style="fill:#c7d7b5">Point</text>
+<text transform="translate(330,62)" font-size="52" style="fill:#c7d7b5">Matters</text>
+<text transform="translate(234,681)" font-size="52" style="fill:#a9b7a3">BA.3</text>
+<text transform="translate(569,232)" font-size="52" style="fill:#c49a6c">Public</text>
+<text transform="translate(871,49)" font-size="52" style="fill:#a9b7a3">Infection</text>
+<text transform="translate(54,238) rotate(-90)" font-size="52" style="fill:#d88988">Often</text>
+<text transform="translate(663,98)" font-size="52" style="fill:#d88988">Reduced</text>
+<text transform="translate(974,229)" font-size="52" style="fill:#a9b7a3">Less</text>
+<text transform="translate(386,513)" font-size="52" style="fill:#a9b7a3">Yet</text>
+<text transform="translate(112,375)" font-size="45" style="fill:#d5d2c2">Name</text>
+<text transform="translate(1003,299)" font-size="45" style="fill:#d5d2c2">Systems</text>
+<text transform="translate(87,46)" font-size="45" style="fill:#e0b879">Long</text>
+<text transform="translate(100,114)" font-size="45" style="fill:#d5d2c2">Apparent</text>
+<text transform="translate(1136,251) rotate(-90)" font-size="45" style="fill:#d6a79f">Cicada</text>
+<text transform="translate(454,696)" font-size="45" style="fill:#b6c3dd">Years</text>
+<text transform="translate(640,39)" font-size="45" style="fill:#a9b7a3">World</text>
+<text transform="translate(53,611)" font-size="45" style="fill:#e0b879">Monitoring</text>
+<text transform="translate(1056,492)" font-size="45" style="fill:#b6c3dd">Lineages</text>
+<text transform="translate(635,532)" font-size="45" style="fill:#a9b7a3">Biology</text>
+<text transform="translate(651,404)" font-size="45" style="fill:#9fc9c5">First</text>
+<text transform="translate(1247,452) rotate(-90)" font-size="45" style="fill:#9fc9c5">Appears</text>
+<text transform="translate(23,326)" font-size="45" style="fill:#d5d2c2">Better</text>
+<text transform="translate(884,602)" font-size="45" style="fill:#c7d7b5">Simply</text>
+<text transform="translate(882,106)" font-size="45" style="fill:#d9c89e">Heavily</text>
+<text transform="translate(1068,713)" font-size="45" style="fill:#a9b7a3">Risk</text>
+<text transform="translate(10,509)" font-size="45" style="fill:#e0b879">Currently</text>
+<text transform="translate(361,336)" font-size="45" style="fill:#c7d7b5">Vaccine</text>
+<text transform="translate(601,330)" font-size="39" style="fill:#e0b879">Antigenic</text>
+<text transform="translate(1136,554)" font-size="39" style="fill:#d5d2c2">Useful</text>
+<text transform="translate(533,523) rotate(-90)" font-size="39" style="fill:#8fb7d0">Severity</text>
+<text transform="translate(24,287)" font-size="39" style="fill:#e0b879">Now</text>
+<text transform="translate(838,715)" font-size="39" style="fill:#c49a6c">Search</text>
+<text transform="translate(631,715)" font-size="39" style="fill:#d5d2c2">Obvious</text>
+<text transform="translate(747,500)" font-size="39" style="fill:#d9c89e">Wastewater</text>
+<text transform="translate(475,102)" font-size="39" style="fill:#e0b879">Clinical</text>
+<text transform="translate(1263,252) rotate(-90)" font-size="39" style="fill:#b6c3dd">Sequencing</text>
+<text transform="translate(90,715)" font-size="39" style="fill:#a9b7a3">Descendants</text>
+<text transform="translate(1079,335)" font-size="32" style="fill:#c49a6c">AI</text>
+<text transform="translate(116,222)" font-size="32" style="fill:#9fc9c5">Data</text>
+<text transform="translate(223,328)" font-size="32" style="fill:#d6a79f">Used</text>
+<text transform="translate(1054,442)" font-size="32" style="fill:#c7d7b5">Tracking</text>
+<text transform="translate(224,29)" font-size="32" style="fill:#b6c3dd">COVID</text>
+<text transform="translate(1165,264) rotate(-90)" font-size="32" style="fill:#c49a6c">Coronavirus</text>
+<text transform="translate(516,190)" font-size="32" style="fill:#c7d7b5">Causes</text>
+<text transform="translate(879,258)" font-size="32" style="fill:#8fb7d0">Merely</text>
+<text transform="translate(470,28)" font-size="32" style="fill:#d5d2c2">Omicron</text>
+<text transform="translate(92,244) rotate(-90)" font-size="32" style="fill:#d9c89e">Descendant</text>
+<text transform="translate(721,189)" font-size="32" style="fill:#d5d2c2">History</text>
+<text transform="translate(1252,710) rotate(-90)" font-size="32" style="fill:#c7d7b5">Ordinary</text>
+<text transform="translate(396,599)" font-size="29" style="fill:#b6c3dd">Circulation</text>
+<text transform="translate(916,354)" font-size="29" style="fill:#8fb7d0">Nickname</text>
+<text transform="translate(1098,367)" font-size="29" style="fill:#d6a79f">Emerged</text>
+<text transform="translate(782,30)" font-size="29" style="fill:#d88988">Quiet</text>
+<text transform="translate(386,366)" font-size="29" style="fill:#c49a6c">Surface</text>
+<text transform="translate(860,422)" font-size="29" style="fill:#e0b879">Alongside</text>
+<text transform="translate(375,516) rotate(-90)" font-size="29" style="fill:#e0b879">Dominant</text>
+<text transform="translate(850,213)" font-size="29" style="fill:#8fb7d0">Single</text>
+<text transform="translate(314,532) rotate(-90)" font-size="29" style="fill:#a9b7a3">Important</text>
+<text transform="translate(643,365)" font-size="29" style="fill:#c49a6c">Attention</text>
+<text transform="translate(137,79)" font-size="25" style="fill:#b6c3dd">Trajectory</text>
+<text transform="translate(5,54)" font-size="25" style="fill:#c49a6c">Odd</text>
+<text transform="translate(770,121)" font-size="25" style="fill:#d9c89e">Usually</text>
+<text transform="translate(485,660)" font-size="23" style="fill:#e0b879">Interesting</text>
+<text transform="translate(90,565)" font-size="23" style="fill:#d9c89e">Low</text>
+<text transform="translate(955,139)" font-size="23" style="fill:#b6c3dd">Successful</text>
+<text transform="translate(202,225)" font-size="23" style="fill:#9fc9c5">Variants</text>
+<text transform="translate(4,537)" font-size="23" style="fill:#d9c89e">Highly</text>
+<text transform="translate(594,554)" font-size="23" style="fill:#b6c3dd">Different</text>
+<text transform="translate(433,446)" font-size="23" style="fill:#e0b879">Large</text>
+<text transform="translate(315,84)" font-size="23" style="fill:#c7d7b5">Mutational</text>
+<text transform="translate(352,177)" font-size="22" style="fill:#d5d2c2">Comparison</text>
+<text transform="translate(1268,373) rotate(-90)" font-size="22" style="fill:#d6a79f">Ancestor</text>
+<text transform="translate(762,63)" font-size="22" style="fill:#d5d2c2">Uses</text>
+<text transform="translate(198,56)" font-size="22" style="fill:#c7d7b5">Technical</text>
+<text transform="translate(605,492)" font-size="22" style="fill:#a9b7a3">Headlines</text>
+<text transform="translate(198,634)" font-size="22" style="fill:#b6c3dd">Unusual</text>
+<text transform="translate(546,525)" font-size="22" style="fill:#c49a6c">Harder</text>
+<text transform="translate(1095,400)" font-size="22" style="fill:#8fb7d0">Prolonged</text>
+<text transform="translate(996,704)" font-size="22" style="fill:#c7d7b5">Sense</text>
+<text transform="translate(34,348)" font-size="22" style="fill:#c7d7b5">Seen</text>
+<text transform="translate(36,631)" font-size="22" style="fill:#8fb7d0">Transmission</text>
+<text transform="translate(1185,99) rotate(-90)" font-size="22" style="fill:#d9c89e">Drift</text>
+<text transform="translate(358,659)" font-size="22" style="fill:#d88988">Changes</text>
+<text transform="translate(357,710)" font-size="22" style="fill:#d9c89e">JN.1</text>
+<text transform="translate(747,147)" font-size="22" style="fill:#e0b879">Compares</text>
+<text transform="translate(549,61)" font-size="20" style="fill:#e0b879">Landscape</text>
+<text transform="translate(364,685)" font-size="20" style="fill:#d88988">Becomes</text>
+<text transform="translate(1122,327)" font-size="20" style="fill:#d5d2c2">Evasive</text>
+<text transform="translate(1120,575)" font-size="20" style="fill:#e0b879">Studies</text>
+<text transform="translate(418,715)" font-size="20" style="fill:#a9b7a3">Neutralization</text>
+<text transform="translate(997,257)" font-size="20" style="fill:#d9c89e">Infected</text>
+<text transform="translate(198,131)" font-size="18" style="fill:#c7d7b5">Neutralizing</text>
+<text transform="translate(1053,73)" font-size="18" style="fill:#d9c89e">Spread</text>
+<text transform="translate(875,623)" font-size="18" style="fill:#8fb7d0">Plain</text>
+<text transform="translate(747,560)" font-size="18" style="fill:#8fb7d0">Language</text>
+<text transform="translate(916,67)" font-size="18" style="fill:#b6c3dd">Architecture</text>
+<text transform="translate(163,445)" font-size="18" style="fill:#8fb7d0">Worse</text>
+<text transform="translate(372,18)" font-size="18" style="fill:#8fb7d0">Behavior</text>
+<text transform="translate(7,374)" font-size="18" style="fill:#d88988">Efficient</text>
+<text transform="translate(603,421)" font-size="18" style="fill:#d6a79f">Mutated</text>
+<text transform="translate(792,388)" font-size="18" style="fill:#e0b879">Imagine</text>
+<text transform="translate(14,25)" font-size="18" style="fill:#b6c3dd">Escape</text>
+<text transform="translate(6,565)" font-size="18" style="fill:#e0b879">Current</text>
+<text transform="translate(156,426)" font-size="18" style="fill:#d9c89e">Reflects</text>
+<text transform="translate(8,706)" font-size="18" style="fill:#d88988">Exactly</text>
+<text transform="translate(1011,510)" font-size="18" style="fill:#c7d7b5">Vaccines</text>
+<text transform="translate(140,393)" font-size="18" style="fill:#d88988">Expected</text>
+<text transform="translate(1208,697) rotate(-90)" font-size="18" style="fill:#c7d7b5">Though</text>
+<text transform="translate(179,243)" font-size="18" style="fill:#c49a6c">Remains</text>
 </svg>

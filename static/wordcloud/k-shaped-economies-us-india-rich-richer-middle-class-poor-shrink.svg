@@ -1,134 +1,134 @@
 <svg role="img" aria-label="The K-Shaped Economy Is a Forked Road, and Most of Us Are on the Wrong Fork" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The K-Shaped Economy Is a Forked Road, and Most of Us Are on the Wrong Fork</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(138,260)" font-size="118" style="fill:#d6a79f">Economy</text>
-<text transform="translate(895,215)" font-size="118" style="fill:#d88988">Class</text>
-<text transform="translate(423,180)" font-size="118" style="fill:#d6a79f">India</text>
-<text transform="translate(769,621) rotate(-90)" font-size="118" style="fill:#d5d2c2">Better</text>
-<text transform="translate(499,712)" font-size="111" style="fill:#c7d7b5">Private</text>
-<text transform="translate(804,111)" font-size="103" style="fill:#d88988">Less</text>
-<text transform="translate(106,537) rotate(-90)" font-size="103" style="fill:#8fb7d0">Public</text>
-<text transform="translate(111,341)" font-size="95" style="fill:#c49a6c">Asset</text>
-<text transform="translate(1030,342)" font-size="95" style="fill:#e0b879">Rise</text>
-<text transform="translate(894,463)" font-size="95" style="fill:#d6a79f">Money</text>
-<text transform="translate(293,603)" font-size="95" style="fill:#d5d2c2">Debt</text>
-<text transform="translate(137,705)" font-size="95" style="fill:#d9c89e">Versus</text>
-<text transform="translate(176,90)" font-size="95" style="fill:#8fb7d0">Middle</text>
-<text transform="translate(166,455)" font-size="95" style="fill:#d6a79f">Poverty</text>
-<text transform="translate(1005,562)" font-size="95" style="fill:#d9c89e">Work</text>
-<text transform="translate(865,621) rotate(-90)" font-size="86" style="fill:#8fb7d0">Means</text>
-<text transform="translate(794,297)" font-size="86" style="fill:#d6a79f">EMI</text>
-<text transform="translate(72,167)" font-size="86" style="fill:#d5d2c2">Rent</text>
-<text transform="translate(933,641)" font-size="86" style="fill:#c7d7b5">School</text>
-<text transform="translate(1065,83)" font-size="86" style="fill:#9fc9c5">Poor</text>
-<text transform="translate(662,603) rotate(-90)" font-size="86" style="fill:#c7d7b5">Person</text>
-<text transform="translate(44,612)" font-size="85" style="fill:#d6a79f">Half</text>
-<text transform="translate(111,519)" font-size="74" style="fill:#9fc9c5">Household</text>
-<text transform="translate(987,701)" font-size="74" style="fill:#b6c3dd">Assets</text>
-<text transform="translate(468,381)" font-size="74" style="fill:#b6c3dd">Job</text>
-<text transform="translate(522,67)" font-size="66" style="fill:#a9b7a3">Average</text>
-<text transform="translate(777,360)" font-size="65" style="fill:#d6a79f">Income</text>
-<text transform="translate(225,394)" font-size="65" style="fill:#c7d7b5">Labor</text>
-<text transform="translate(1031,392)" font-size="60" style="fill:#c7d7b5">Enough</text>
-<text transform="translate(965,254)" font-size="46" style="fill:#9fc9c5">Consumption</text>
-<text transform="translate(1048,128)" font-size="46" style="fill:#d5d2c2">Kshaped</text>
-<text transform="translate(233,644)" font-size="45" style="fill:#b6c3dd">Education</text>
-<text transform="translate(577,625) rotate(-90)" font-size="45" style="fill:#b6c3dd">Grow</text>
-<text transform="translate(754,217)" font-size="45" style="fill:#8fb7d0">Lower</text>
-<text transform="translate(866,48)" font-size="45" style="fill:#8fb7d0">America</text>
-<text transform="translate(390,317)" font-size="37" style="fill:#d88988">Government</text>
-<text transform="translate(32,182) rotate(-90)" font-size="37" style="fill:#c49a6c">Coaching</text>
-<text transform="translate(291,121)" font-size="37" style="fill:#a9b7a3">Escape</text>
-<text transform="translate(1273,634) rotate(-90)" font-size="37" style="fill:#a9b7a3">Healthcare</text>
-<text transform="translate(12,705)" font-size="37" style="fill:#e0b879">Growth</text>
-<text transform="translate(60,82)" font-size="37" style="fill:#e0b879">Child</text>
-<text transform="translate(6,645)" font-size="32" style="fill:#c7d7b5">Phones</text>
-<text transform="translate(275,162)" font-size="32" style="fill:#9fc9c5">Sometimes</text>
-<text transform="translate(391,345)" font-size="32" style="fill:#a9b7a3">Food</text>
-<text transform="translate(784,173)" font-size="32" style="fill:#c7d7b5">Small</text>
-<text transform="translate(882,502)" font-size="32" style="fill:#b6c3dd">Prices</text>
-<text transform="translate(58,27)" font-size="32" style="fill:#c49a6c">Luxury</text>
-<text transform="translate(971,298)" font-size="32" style="fill:#d88988">Arm</text>
-<text transform="translate(869,536)" font-size="32" style="fill:#d6a79f">Receive</text>
-<text transform="translate(678,645)" font-size="32" style="fill:#d88988">Workers</text>
-<text transform="translate(905,564)" font-size="32" style="fill:#c7d7b5">Young</text>
-<text transform="translate(730,414)" font-size="32" style="fill:#d9c89e">Face</text>
-<text transform="translate(126,368)" font-size="32" style="fill:#8fb7d0">Upper</text>
-<text transform="translate(427,290)" font-size="32" style="fill:#c49a6c">Schools</text>
-<text transform="translate(876,390)" font-size="32" style="fill:#c7d7b5">Whether</text>
-<text transform="translate(1121,29)" font-size="32" style="fill:#e0b879">Survival</text>
-<text transform="translate(792,141)" font-size="32" style="fill:#d5d2c2">Rich</text>
-<text transform="translate(279,190)" font-size="32" style="fill:#8fb7d0">Indian</text>
-<text transform="translate(798,560) rotate(-90)" font-size="32" style="fill:#a9b7a3">Bad</text>
-<text transform="translate(691,341) rotate(-90)" font-size="32" style="fill:#d9c89e">Savings</text>
-<text transform="translate(527,511)" font-size="32" style="fill:#a9b7a3">Fail</text>
-<text transform="translate(25,671)" font-size="32" style="fill:#a9b7a3">Wants</text>
-<text transform="translate(1063,589)" font-size="32" style="fill:#8fb7d0">Returns</text>
-<text transform="translate(1196,283)" font-size="32" style="fill:#8fb7d0">Exam</text>
-<text transform="translate(695,105)" font-size="25" style="fill:#9fc9c5">Housing</text>
-<text transform="translate(713,25)" font-size="25" style="fill:#d6a79f">Unstable</text>
-<text transform="translate(13,306)" font-size="25" style="fill:#9fc9c5">Line</text>
-<text transform="translate(612,25)" font-size="25" style="fill:#d9c89e">Beside</text>
-<text transform="translate(22,513) rotate(-90)" font-size="20" style="fill:#8fb7d0">United</text>
-<text transform="translate(902,646) rotate(-90)" font-size="20" style="fill:#c49a6c">Country</text>
-<text transform="translate(1193,460)" font-size="20" style="fill:#e0b879">GDP</text>
-<text transform="translate(581,632)" font-size="20" style="fill:#9fc9c5">Market</text>
-<text transform="translate(526,89)" font-size="20" style="fill:#a9b7a3">Monthly</text>
-<text transform="translate(239,281)" font-size="20" style="fill:#c49a6c">Scooters</text>
-<text transform="translate(999,484)" font-size="20" style="fill:#a9b7a3">Appliances</text>
-<text transform="translate(132,540)" font-size="20" style="fill:#a9b7a3">International</text>
-<text transform="translate(120,110)" font-size="20" style="fill:#d6a79f">Studies</text>
-<text transform="translate(1182,426)" font-size="20" style="fill:#b6c3dd">Wages</text>
-<text transform="translate(441,22)" font-size="20" style="fill:#b6c3dd">Working</text>
-<text transform="translate(950,317)" font-size="20" style="fill:#e0b879">Rises</text>
-<text transform="translate(361,543)" font-size="20" style="fill:#9fc9c5">Fees</text>
-<text transform="translate(40,44)" font-size="20" style="fill:#d6a79f">Transport</text>
-<text transform="translate(1267,212) rotate(-90)" font-size="20" style="fill:#c7d7b5">Electricity</text>
-<text transform="translate(816,315)" font-size="20" style="fill:#c7d7b5">Portfolios</text>
-<text transform="translate(15,240)" font-size="20" style="fill:#a9b7a3">Upward</text>
-<text transform="translate(1077,504)" font-size="20" style="fill:#d88988">Owners</text>
-<text transform="translate(1170,478)" font-size="20" style="fill:#8fb7d0">Family</text>
-<text transform="translate(493,110)" font-size="20" style="fill:#a9b7a3">Business</text>
-<text transform="translate(1020,146)" font-size="20" style="fill:#c7d7b5">Connections</text>
-<text transform="translate(18,392) rotate(-90)" font-size="20" style="fill:#d9c89e">Homes</text>
-<text transform="translate(1270,411) rotate(-90)" font-size="20" style="fill:#c49a6c">Appreciate</text>
-<text transform="translate(500,703) rotate(-90)" font-size="20" style="fill:#a9b7a3">Children</text>
-<text transform="translate(758,475)" font-size="20" style="fill:#a9b7a3">Wage</text>
-<text transform="translate(670,199)" font-size="20" style="fill:#8fb7d0">Earners</text>
-<text transform="translate(652,280) rotate(-90)" font-size="20" style="fill:#d88988">Delivery</text>
-<text transform="translate(127,631)" font-size="20" style="fill:#d9c89e">Educated</text>
-<text transform="translate(251,470)" font-size="14" style="fill:#d9c89e">Unemployed</text>
-<text transform="translate(746,231)" font-size="14" style="fill:#c49a6c">Lowermiddleclass</text>
-<text transform="translate(923,166)" font-size="14" style="fill:#d6a79f">Eats</text>
-<text transform="translate(450,364)" font-size="14" style="fill:#c49a6c">Full</text>
-<text transform="translate(408,380)" font-size="14" style="fill:#c49a6c">Kshape</text>
-<text transform="translate(729,265)" font-size="14" style="fill:#c7d7b5">Accounts</text>
-<text transform="translate(157,281)" font-size="14" style="fill:#9fc9c5">Sleeping</text>
-<text transform="translate(545,477)" font-size="14" style="fill:#d6a79f">Earning</text>
-<text transform="translate(155,473)" font-size="14" style="fill:#b6c3dd">Investment</text>
-<text transform="translate(959,404)" font-size="14" style="fill:#a9b7a3">Interest</text>
-<text transform="translate(1174,146)" font-size="14" style="fill:#8fb7d0">Cushions</text>
-<text transform="translate(53,148) rotate(-90)" font-size="14" style="fill:#c7d7b5">Bureaucratic</text>
-<text transform="translate(943,188)" font-size="14" style="fill:#9fc9c5">Social</text>
-<text transform="translate(15,543)" font-size="14" style="fill:#d5d2c2">Security</text>
-<text transform="translate(523,396)" font-size="14" style="fill:#8fb7d0">Bankruptcy</text>
-<text transform="translate(418,71) rotate(-90)" font-size="14" style="fill:#c7d7b5">Legal</text>
-<text transform="translate(203,187)" font-size="14" style="fill:#d5d2c2">Systems</text>
-<text transform="translate(228,590)" font-size="14" style="fill:#8fb7d0">Everyone</text>
-<text transform="translate(247,562)" font-size="14" style="fill:#d5d2c2">Often</text>
-<text transform="translate(633,469)" font-size="14" style="fill:#d88988">Decides</text>
-<text transform="translate(895,15)" font-size="14" style="fill:#c49a6c">Schooling</text>
-<text transform="translate(1128,280)" font-size="14" style="fill:#d88988">Hospital</text>
-<text transform="translate(121,405)" font-size="14" style="fill:#a9b7a3">Queue</text>
-<text transform="translate(614,82)" font-size="14" style="fill:#d88988">Separates</text>
-<text transform="translate(565,452)" font-size="14" style="fill:#e0b879">Buys</text>
-<text transform="translate(347,470)" font-size="14" style="fill:#c7d7b5">Municipal</text>
-<text transform="translate(880,612) rotate(-90)" font-size="14" style="fill:#8fb7d0">Police</text>
-<text transform="translate(504,581)" font-size="14" style="fill:#8fb7d0">Roads</text>
-<text transform="translate(130,226) rotate(-90)" font-size="14" style="fill:#c7d7b5">Clinic</text>
-<text transform="translate(444,540)" font-size="14" style="fill:#b6c3dd">Cook</text>
-<text transform="translate(683,537) rotate(-90)" font-size="14" style="fill:#8fb7d0">Compares</text>
-<text transform="translate(967,715)" font-size="14" style="fill:#8fb7d0">Worries</text>
-<text transform="translate(559,21)" font-size="14" style="fill:#c49a6c">Feel</text>
-<text transform="translate(1058,406)" font-size="14" style="fill:#9fc9c5">Wealth</text>
+<text transform="translate(27,385)" font-size="118" style="fill:#d6a79f">India</text>
+<text transform="translate(817,189)" font-size="105" style="fill:#d88988">Economy</text>
+<text transform="translate(952,702)" font-size="105" style="fill:#c7d7b5">Class</text>
+<text transform="translate(703,307)" font-size="100" style="fill:#a9b7a3">Escape</text>
+<text transform="translate(328,159)" font-size="95" style="fill:#d9c89e">Better</text>
+<text transform="translate(810,570)" font-size="90" style="fill:#d88988">Family</text>
+<text transform="translate(172,242)" font-size="90" style="fill:#c7d7b5">Private</text>
+<text transform="translate(127,696)" font-size="90" style="fill:#9fc9c5">Public</text>
+<text transform="translate(477,680)" font-size="84" style="fill:#9fc9c5">Poor</text>
+<text transform="translate(565,519)" font-size="84" style="fill:#d88988">Less</text>
+<text transform="translate(509,384)" font-size="84" style="fill:#d6a79f">Middle</text>
+<text transform="translate(259,522)" font-size="84" style="fill:#d5d2c2">Work</text>
+<text transform="translate(954,73)" font-size="78" style="fill:#8fb7d0">Debt</text>
+<text transform="translate(110,619)" font-size="78" style="fill:#d6a79f">Versus</text>
+<text transform="translate(135,132)" font-size="78" style="fill:#d88988">Rich</text>
+<text transform="translate(607,61)" font-size="78" style="fill:#c7d7b5">Poverty</text>
+<text transform="translate(36,508)" font-size="78" style="fill:#8fb7d0">Away</text>
+<text transform="translate(641,439)" font-size="72" style="fill:#d6a79f">Money</text>
+<text transform="translate(1060,280)" font-size="72" style="fill:#d5d2c2">Man</text>
+<text transform="translate(962,496)" font-size="72" style="fill:#c7d7b5">Child</text>
+<text transform="translate(564,224)" font-size="72" style="fill:#9fc9c5">School</text>
+<text transform="translate(8,62)" font-size="71" style="fill:#c7d7b5">Healthcare</text>
+<text transform="translate(1254,572) rotate(-90)" font-size="71" style="fill:#d6a79f">Growth</text>
+<text transform="translate(701,611)" font-size="64" style="fill:#8fb7d0">EMI</text>
+<text transform="translate(113,443)" font-size="64" style="fill:#e0b879">Sometimes</text>
+<text transform="translate(983,395)" font-size="64" style="fill:#c7d7b5">Labor</text>
+<text transform="translate(401,577)" font-size="64" style="fill:#d5d2c2">Kshaped</text>
+<text transform="translate(335,312)" font-size="64" style="fill:#a9b7a3">Education</text>
+<text transform="translate(681,675)" font-size="63" style="fill:#d6a79f">Workers</text>
+<text transform="translate(116,265) rotate(-90)" font-size="63" style="fill:#c7d7b5">Young</text>
+<text transform="translate(1001,125)" font-size="63" style="fill:#c7d7b5">Whether</text>
+<text transform="translate(1118,633)" font-size="63" style="fill:#9fc9c5">Rise</text>
+<text transform="translate(671,154)" font-size="63" style="fill:#d5d2c2">Half</text>
+<text transform="translate(61,294) rotate(-90)" font-size="63" style="fill:#b6c3dd">Assets</text>
+<text transform="translate(67,667) rotate(-90)" font-size="63" style="fill:#e0b879">Many</text>
+<text transform="translate(651,715)" font-size="50" style="fill:#c49a6c">Government</text>
+<text transform="translate(830,614)" font-size="50" style="fill:#d6a79f">Survival</text>
+<text transform="translate(857,501)" font-size="50" style="fill:#d9c89e">Job</text>
+<text transform="translate(846,231)" font-size="50" style="fill:#a9b7a3">Housing</text>
+<text transform="translate(901,436)" font-size="49" style="fill:#a9b7a3">Permission</text>
+<text transform="translate(186,569)" font-size="49" style="fill:#e0b879">Next</text>
+<text transform="translate(133,278)" font-size="44" style="fill:#e0b879">Average</text>
+<text transform="translate(440,69)" font-size="44" style="fill:#9fc9c5">Income</text>
+<text transform="translate(1062,330)" font-size="44" style="fill:#9fc9c5">Asset</text>
+<text transform="translate(807,391)" font-size="44" style="fill:#a9b7a3">Lower</text>
+<text transform="translate(665,99)" font-size="44" style="fill:#c7d7b5">Families</text>
+<text transform="translate(460,441)" font-size="44" style="fill:#b6c3dd">Little</text>
+<text transform="translate(125,162)" font-size="30" style="fill:#d6a79f">Consumption</text>
+<text transform="translate(812,348)" font-size="30" style="fill:#a9b7a3">America</text>
+<text transform="translate(574,615)" font-size="30" style="fill:#d5d2c2">Social</text>
+<text transform="translate(677,551)" font-size="30" style="fill:#d5d2c2">Schools</text>
+<text transform="translate(1149,53)" font-size="30" style="fill:#d6a79f">Wealth</text>
+<text transform="translate(550,251)" font-size="30" style="fill:#9fc9c5">Coaching</text>
+<text transform="translate(417,612)" font-size="30" style="fill:#d5d2c2">Father</text>
+<text transform="translate(407,342)" font-size="30" style="fill:#c49a6c">Gets</text>
+<text transform="translate(632,465)" font-size="30" style="fill:#b6c3dd">Pressure</text>
+<text transform="translate(7,434)" font-size="30" style="fill:#d6a79f">Fees</text>
+<text transform="translate(1073,354)" font-size="30" style="fill:#9fc9c5">Person</text>
+<text transform="translate(445,26)" font-size="30" style="fill:#d5d2c2">Becomes</text>
+<text transform="translate(28,701)" font-size="30" style="fill:#a9b7a3">Real</text>
+<text transform="translate(496,714)" font-size="26" style="fill:#a9b7a3">United</text>
+<text transform="translate(390,371)" font-size="26" style="fill:#a9b7a3">Country</text>
+<text transform="translate(459,467)" font-size="26" style="fill:#d9c89e">Market</text>
+<text transform="translate(107,306)" font-size="26" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(1057,220)" font-size="26" style="fill:#a9b7a3">Phones</text>
+<text transform="translate(910,105)" font-size="26" style="fill:#d9c89e">Group</text>
+<text transform="translate(667,177)" font-size="26" style="fill:#c7d7b5">Arm</text>
+<text transform="translate(1262,308) rotate(-90)" font-size="26" style="fill:#8fb7d0">Children</text>
+<text transform="translate(375,402)" font-size="26" style="fill:#8fb7d0">Small</text>
+<text transform="translate(533,95)" font-size="26" style="fill:#e0b879">Delivery</text>
+<text transform="translate(144,715)" font-size="20" style="fill:#d88988">Lowermiddleclass</text>
+<text transform="translate(1132,19)" font-size="20" style="fill:#c7d7b5">Expensive</text>
+<text transform="translate(787,482)" font-size="20" style="fill:#b6c3dd">Luxury</text>
+<text transform="translate(781,242)" font-size="20" style="fill:#d88988">Teeth</text>
+<text transform="translate(327,557)" font-size="20" style="fill:#d88988">First</text>
+<text transform="translate(969,329)" font-size="20" style="fill:#d6a79f">Biryani</text>
+<text transform="translate(181,403)" font-size="20" style="fill:#d88988">Rent</text>
+<text transform="translate(354,183)" font-size="20" style="fill:#c7d7b5">Upper</text>
+<text transform="translate(467,500)" font-size="20" style="fill:#d88988">Cushions</text>
+<text transform="translate(20,557) rotate(-90)" font-size="20" style="fill:#d9c89e">Systems</text>
+<text transform="translate(975,666)" font-size="20" style="fill:#9fc9c5">Often</text>
+<text transform="translate(371,87)" font-size="20" style="fill:#d6a79f">State</text>
+<text transform="translate(90,528)" font-size="20" style="fill:#c7d7b5">Queue</text>
+<text transform="translate(30,411)" font-size="20" style="fill:#c7d7b5">Mother</text>
+<text transform="translate(329,464)" font-size="20" style="fill:#a9b7a3">Indian</text>
+<text transform="translate(835,632)" font-size="20" style="fill:#d88988">Household</text>
+<text transform="translate(405,629)" font-size="20" style="fill:#d5d2c2">Buys</text>
+<text transform="translate(1088,300)" font-size="20" style="fill:#c7d7b5">Police</text>
+<text transform="translate(465,397)" font-size="20" style="fill:#c7d7b5">Bad</text>
+<text transform="translate(895,446) rotate(-90)" font-size="20" style="fill:#d9c89e">Pays</text>
+<text transform="translate(448,266)" font-size="20" style="fill:#b6c3dd">Savings</text>
+<text transform="translate(123,550)" font-size="20" style="fill:#d88988">Fail</text>
+<text transform="translate(505,401)" font-size="20" style="fill:#c7d7b5">Returns</text>
+<text transform="translate(762,518)" font-size="20" style="fill:#8fb7d0">Exam</text>
+<text transform="translate(509,522)" font-size="20" style="fill:#b6c3dd">Every</text>
+<text transform="translate(1201,78)" font-size="20" style="fill:#d5d2c2">Tax</text>
+<text transform="translate(349,715)" font-size="20" style="fill:#d9c89e">Unstable</text>
+<text transform="translate(484,184)" font-size="20" style="fill:#d6a79f">Live</text>
+<text transform="translate(1065,515)" font-size="20" style="fill:#c49a6c">Hawker</text>
+<text transform="translate(597,712)" font-size="20" style="fill:#d6a79f">Line</text>
+<text transform="translate(1122,574)" font-size="20" style="fill:#b6c3dd">Enough</text>
+<text transform="translate(441,88)" font-size="20" style="fill:#d5d2c2">Version</text>
+<text transform="translate(1136,528)" font-size="20" style="fill:#d6a79f">Cities</text>
+<text transform="translate(600,270)" font-size="16" style="fill:#b6c3dd">States</text>
+<text transform="translate(944,359)" font-size="16" style="fill:#a9b7a3">High</text>
+<text transform="translate(1153,206)" font-size="16" style="fill:#8fb7d0">GDP</text>
+<text transform="translate(832,69) rotate(-90)" font-size="16" style="fill:#c7d7b5">Eat</text>
+<text transform="translate(898,122)" font-size="16" style="fill:#9fc9c5">Monthly</text>
+<text transform="translate(1201,589)" font-size="16" style="fill:#d5d2c2">Payment</text>
+<text transform="translate(266,16)" font-size="16" style="fill:#c7d7b5">Scooters</text>
+<text transform="translate(1155,231)" font-size="16" style="fill:#d5d2c2">Future</text>
+<text transform="translate(108,460)" font-size="16" style="fill:#8fb7d0">International</text>
+<text transform="translate(321,258)" font-size="16" style="fill:#d5d2c2">Studies</text>
+<text transform="translate(101,647) rotate(-90)" font-size="16" style="fill:#d88988">Employment</text>
+<text transform="translate(243,178)" font-size="16" style="fill:#c49a6c">Wages</text>
+<text transform="translate(726,628)" font-size="16" style="fill:#d88988">Working</text>
+<text transform="translate(720,175)" font-size="16" style="fill:#a9b7a3">Upward</text>
+<text transform="translate(299,82)" font-size="16" style="fill:#d88988">Stands</text>
+<text transform="translate(1137,546)" font-size="16" style="fill:#e0b879">Owners</text>
+<text transform="translate(868,247)" font-size="16" style="fill:#c7d7b5">Business</text>
+<text transform="translate(1274,504) rotate(-90)" font-size="16" style="fill:#8fb7d0">Connections</text>
+<text transform="translate(1229,285) rotate(-90)" font-size="16" style="fill:#c7d7b5">Homes</text>
+<text transform="translate(19,394) rotate(-90)" font-size="16" style="fill:#e0b879">Appreciate</text>
+<text transform="translate(130,191)" font-size="16" style="fill:#8fb7d0">Wage</text>
+<text transform="translate(352,16)" font-size="16" style="fill:#c49a6c">Earners</text>
+<text transform="translate(761,498)" font-size="16" style="fill:#9fc9c5">Educated</text>
+<text transform="translate(1204,491) rotate(-90)" font-size="16" style="fill:#9fc9c5">Unemployed</text>
+<text transform="translate(544,626) rotate(-90)" font-size="16" style="fill:#8fb7d0">Keep</text>
+<text transform="translate(221,529)" font-size="16" style="fill:#b6c3dd">Time</text>
+<text transform="translate(84,278)" font-size="16" style="fill:#a9b7a3">Grow</text>
 </svg>

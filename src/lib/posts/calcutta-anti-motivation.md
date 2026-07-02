@@ -1,10 +1,10 @@
 ---
 title: "I Am Probably the Least Motivational Blogger in India"
-description: "A Calcutta essay against motivational theatre, arguing for smaller, quieter forms of survival: reading, writing, honest thought, and a few decent conversations."
+description: "A middle-aged Bengali man in Calcutta explains why he distrusts motivational culture, why survival matters more than inspiration, and why freedom sometimes means giving up on changing everyone else."
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260512_213025_5005.jpg"
 category: "Society"
-tags: ["Calcutta", "Indian Society", "Motivation Culture", "Reading", "Writing", "Rationalism", "Middle Class India", "Public Life", "Reflection", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Calcutta", "Kolkata", "Middle Class India", "Depression", "Bipolar", "Indian Society", "Science", "Atheism", "Rationalism", "Indian Culture", "Self Reflection", "Mental Health", "Lower Middle Class", "Urban India", "Indian Blogger", "Reality Of India", "Life In Kolkata", "Modern India", "Human Nature", "Existentialism", "Indian Families", "Religion", "Skepticism", "Loneliness", "Single Life", "Bengali Writer"]
 published: true
 color: "stone"
 ---
@@ -13,34 +13,184 @@ color: "stone"
 
 <Pi src="Compress_20260512_213025_5005.jpg" />
 
-The motivational video begins before the tea cools. A man with bright teeth shouts at the camera while music rises behind him, and somewhere in the background there is usually a mountain, a car, or both. Apparently no one can improve life anymore unless the scenery has been rented in advance.
+
 
 I am probably the least motivational blogger in India.
 
-This is not branding. I have no talent for sunrise slogans. After a certain age, motivation often sounds less like wisdom and more like someone trying to sell a warranty on a refrigerator that already failed.
+This is not branding by the way. Not one of those fashionable internet poses where someone says, “I’m brutally honest,” and then posts a filtered gym selfie holding black coffee like an undercover philosopher.
 
-What I trust is smaller.
+I genuinely have no motivational energy.
 
-Make tea. Read slowly. Write a paragraph. Pay one bill. Call one sane person. Walk if the weather allows. Do not turn every difficult morning into a heroic advertisement.
+First off, I do not watch motivational videos. The entire thing feels suspicious to me. A sweaty man with unnaturally white teeth yelling “YOU CAN DO IT” while dramatic music explodes behind him like the trailer for a Christopher Nolan film. Somewhere in the background there is always a mountain. Or a lion. Or both. Apparently no one can improve their life anymore unless wildlife and violins are involved.
 
-India produces an enormous amount of motivational noise because ordinary life is so full of friction. The country runs on queues, family pressure, exams, job fear, office hierarchy, public shouting, religious certainty, bad infrastructure, and the old middle-class habit of postponing life until some respectable future approves it. In such a place, the motivational speaker becomes a pressure valve. He does not repair the machine. He gives the trapped person a few minutes of emotional steam.
+And anyway, after age fifty, motivation starts sounding less like wisdom and more like a salesman trying to push extended warranty on a refrigerator.
 
-That may help for an hour. It cannot become philosophy.
+Here is the uncomfortable thing I have learned.
 
-The deeper problem is curiosity. Many people are intelligent enough, but not curious enough. Without curiosity, the mind becomes a locked cupboard full of old papers. It can store slogans, marks, rules, gossip, ritual, and borrowed opinions. It cannot open itself to a better question.
+You cannot really change people in India in any meaningful way.
 
-This is why I do not write to save society. That is too grand and too comic. I write because writing remains one of the few activities that forces thought to walk rather than sprint. A sentence does not let you escape as quickly as a screen does. It asks what you actually mean. Often the answer is smaller than expected. Good. Better a small honest thought than a large borrowed certainty.
+Actually let me correct that. You *can*. But the effort-to-result ratio is so absurd that it resembles trying to cool Park Street in May using one table fan and optimism.
 
-The modern world has declared war on quiet. Every minute wants to become content, outrage, opinion, patriotism, self-improvement, productivity, market value, or proof that one is not wasting the permitted life. But some afternoons should be permitted to remain ordinary. Sit with a book. Let a thought fail. Let the ceiling fan do its tired work. Do not immediately convert the moment into a lesson for strangers.
+People here do not lack intelligence entirely. That would be unfair. What they often lack is curiosity. And without curiosity the brain becomes like an old locked almirah in a damp Bengali house. Heavy. Rusted. Full of old newspapers nobody has touched since the 1998 World Cup.
 
-This does not mean irresponsibility. Bills exist. Bodies have limits. Work must be done. Household duties do not vanish because one has read a paragraph of philosophy. But the opposite error is also common: living as if one is only a servant of future respectability.
+You can knock all day. Nothing opens.
 
-Middle-class India trains people to postpone joy with impressive discipline. Later, after the loan. Later, after the exam. Later, after the promotion. Later, after the child settles. Later, after retirement. Then later arrives with weak knees, health bills, and a room full of unused things bought for a life that never fully began.
+And, yes, this is true everywhere on Earth to some extent. Americans have conspiracy lunatics. Europeans have their own flavors of nonsense. But India has this special pressure cooker combination of mythology, bad education, pollution, heat, bureaucracy, and family conditioning that can turn even educated people into intellectual cauliflower.
 
-So here is my anti-motivation, if one insists on calling it that.
+I see it daily.
 
-Do not try to rescue every crowd. Do not argue with every inherited nonsense. Do not surrender your mind to every shouting face on a screen. Find a few people who can think without performing. Exchange books. Laugh at public absurdity. Discuss the weather like civilized survivors. Go home before the day becomes a committee.
+This morning the electricity vanished three times before breakfast. Somewhere outside, somebody was already shouting about politics. A stray dog was sleeping under a broken scooter like it had finally given up on civilization altogether. The tea tasted faintly of iron because Kolkata pipes have the emotional stability of wet cardboard. And then, while scrolling the news, I saw another crowd somewhere beating a man because WhatsApp University had awarded them honorary doctorates in madness overnight.
 
-No fireworks. No mountain. No leased luxury car.
+And then people ask me why I sound pessimistic.
 
-Only the small stubborn work of not letting the mind become rented property.
+My friend, look outside.
+
+The country is running partly on jugaad, partly on denial, and partly on gods who apparently cannot fix drainage systems.
+
+That last part especially fascinates me.
+
+India is drowning in religion but starving for science.
+
+You would think after enough bridge collapses, enough heat waves, enough hospital tragedies, enough stampedes, enough people dying because someone thought antibiotics are optional suggestions, there would be a national moment of collective awakening.
+
+But no.
+
+The average fellow still thinks chanting ancient poetry is somehow a substitute for scientific literacy.
+
+That is like trying to repair a Wi-Fi router by feeding it incense sticks.
+
+And before anyone accuses me of hating culture, no. I like culture. I am Bengali. We can turn fish curry and existential despair into an art form. I simply do not think mythology should be mistaken for engineering.
+
+Anyway, I do not write this blog hoping to save society.
+
+Good lord no.
+
+I write because I enjoy writing.
+
+That’s it.
+
+Some men drink.
+Some gamble.
+Some obsess over stock markets while losing hair in real time.
+Some spend six hours daily screaming at cricket statistics.
+
+I read books and write paragraphs.
+
+It is cheaper than therapy and marginally healthier than alcoholism.
+
+Also writing is one of the few activities left where a human being can still think slowly. Modern life wants everything immediate. Immediate outrage. Immediate opinion. Immediate patriotism. Immediate certainty. Nobody sits with thoughts anymore. They microwave conclusions.
+
+Reading and writing force the brain to walk instead of sprint.
+
+And honestly, our lives are much shorter than middle-class Indians admit to themselves.
+
+This country trains people to postpone happiness endlessly.
+
+“Save money.”
+“Don’t travel now.”
+“Later.”
+“After retirement.”
+“After marriage.”
+“After the children grow up.”
+“After the loan.”
+
+Then suddenly one day the man is sixty-three, diabetic, furious, exhausted, trapped in a hospital queue that smells like Dettol and despair, wondering when exactly life was supposed to begin.
+
+Meanwhile the neighborhood uncle who spent nothing on himself dies leaving behind four steel cupboards, seventeen bedsheets still wrapped in plastic, and enough unused utensils to equip a medium-sized submarine.
+
+Fantastic strategy.
+
+I am not saying become irresponsible. I am saying understand arithmetic.
+
+You are mortal.
+
+This should not be shocking information, yet people behave as if they are temporary inconveniences inside an eternal spreadsheet.
+
+Eat good food sometimes.
+Travel if possible.
+Buy the better tea occasionally.
+Sit with your friends.
+Waste one afternoon doing absolutely nothing.
+
+That last one is underrated.
+
+The modern world has declared war on silence.
+
+Everywhere there is noise. Reels. Notifications. Political shouting. News channels behaving like cocaine-powered wrestling commentators. Somewhere a motivational speaker is still yelling near a Lamborghini he rented for six hours.
+
+And there you are, a tired middle-aged Bengali man eating muri beside a lizard on the wall while wondering whether the ceiling fan sounds slightly more murderous than yesterday.
+
+Honestly, I trust the lizard more than most public intellectuals now.
+
+At least the lizard is sincere.
+
+And yes, my depression is bad. I do not romanticize it. Depression is not poetic when you are actually inside it. It is mostly administrative failure of the soul. You wake up tired. The day feels pre-chewed. Even brushing your teeth can seem like an unnecessary sequel.
+
+People online talk about “winning battles.” Depression is not always a battle. Sometimes it is weather. Damp mental weather. Kolkata monsoon inside the skull.
+
+You wait it out.
+
+I also do not particularly dream of long life anymore. Indians have strange fantasies about old age. They imagine grandchildren, laughter, soft sunlight, devotional songs floating from nearby temples.
+
+They do not imagine power cuts in forty-degree heat while arguing with a pharmacist who says the medicine is “coming tomorrow definitely.”
+
+Reality has poor cinematography.
+
+And because I think about death quite practically, I do not care much about ritual either. Burn me, bury me, recycle me, feed me to mushrooms, whatever is cheapest and environmentally efficient. We are atoms borrowing temporary shape. That is all.
+
+People become scandalized hearing this.
+
+But think about it carefully.
+
+Your body is basically rented chemistry.
+
+The carbon was here before you.
+The oxygen was here before you.
+The calcium was here before you.
+
+You are biological LEGO assembled temporarily by physics.
+
+Then disassembled.
+
+Nature runs the oldest recycling program on Earth.
+
+The truly difficult thing is not dying anyway. Everybody does that eventually. The difficult thing is freeing your own mind before death arrives.
+
+That is the real struggle.
+
+Not converting everybody else.
+
+I gave up on that fantasy years ago.
+
+You cannot drag people toward reason if irrationality gives them emotional comfort, social belonging, and ready-made answers. Human beings will protect comforting nonsense with astonishing aggression. Tell a man his football club is mediocre and he may argue. Tell him his entire worldview is built partly on inherited mythology and suddenly he behaves like a medieval crusader with broadband internet.
+
+So now my philosophy is smaller.
+
+Find a few intelligent people.
+
+Not many. You do not need many.
+
+Two or three decent minds are enough to make life survivable.
+
+Sit together.
+Talk honestly.
+Laugh at absurdity.
+Exchange books.
+Complain about the weather.
+Discuss why humanity keeps electing theatrical idiots.
+
+Then go home before the mosquitoes begin their night shift.
+
+That, I think, is enough civilization for one lifetime.
+
+And if somebody still wants motivation from me after all this, then here it is.
+
+Do not waste your limited years trying to rescue crowds who enjoy drowning.
+
+Save yourself first.
+
+Then make tea.
+
+Then call a friend.
+
+That is already a meaningful victory in modern India.

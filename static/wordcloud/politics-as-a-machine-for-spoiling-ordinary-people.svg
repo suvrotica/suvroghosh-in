@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(209,265)" font-size="118" style="fill:#a9b7a3">Public</text>
-<text transform="translate(1202,547) rotate(-90)" font-size="108" style="fill:#d6a79f">Money</text>
-<text transform="translate(731,277)" font-size="97" style="fill:#d88988">Becomes</text>
-<text transform="translate(10,608)" font-size="91" style="fill:#c7d7b5">Politics</text>
-<text transform="translate(370,370)" font-size="91" style="fill:#9fc9c5">Ordinary</text>
-<text transform="translate(758,510)" font-size="85" style="fill:#a9b7a3">Local</text>
-<text transform="translate(668,69)" font-size="78" style="fill:#d6a79f">Party</text>
-<text transform="translate(230,91)" font-size="78" style="fill:#d6a79f">Useful</text>
-<text transform="translate(136,413) rotate(-90)" font-size="78" style="fill:#c49a6c">Power</text>
-<text transform="translate(695,609)" font-size="78" style="fill:#8fb7d0">Democracy</text>
-<text transform="translate(655,708) rotate(-90)" font-size="78" style="fill:#d88988">Delayed</text>
-<text transform="translate(926,407)" font-size="71" style="fill:#d6a79f">Wall</text>
-<text transform="translate(921,200)" font-size="71" style="fill:#d88988">Private</text>
-<text transform="translate(903,74)" font-size="71" style="fill:#a9b7a3">Person</text>
-<text transform="translate(301,492)" font-size="71" style="fill:#c7d7b5">Citizen</text>
-<text transform="translate(9,151)" font-size="71" style="fill:#a9b7a3">Machine</text>
-<text transform="translate(717,674)" font-size="63" style="fill:#a9b7a3">Political</text>
-<text transform="translate(664,145)" font-size="63" style="fill:#d88988">Reform</text>
-<text transform="translate(92,669)" font-size="63" style="fill:#d5d2c2">Funding</text>
-<text transform="translate(151,432)" font-size="63" style="fill:#b6c3dd">Office</text>
-<text transform="translate(337,156)" font-size="63" style="fill:#d9c89e">Reduces</text>
-<text transform="translate(346,549)" font-size="54" style="fill:#c49a6c">Poster</text>
-<text transform="translate(879,331)" font-size="54" style="fill:#d5d2c2">Vanity</text>
-<text transform="translate(39,517)" font-size="54" style="fill:#c49a6c">Everyone</text>
-<text transform="translate(20,76)" font-size="54" style="fill:#a9b7a3">Common</text>
-<text transform="translate(922,124)" font-size="54" style="fill:#c49a6c">Family</text>
-<text transform="translate(655,198)" font-size="54" style="fill:#9fc9c5">Police</text>
-<text transform="translate(1245,673) rotate(-90)" font-size="54" style="fill:#d88988">Language</text>
-<text transform="translate(1063,712)" font-size="54" style="fill:#8fb7d0">Enters</text>
-<text transform="translate(745,550)" font-size="47" style="fill:#8fb7d0">Corruption</text>
-<text transform="translate(142,372)" font-size="47" style="fill:#8fb7d0">Matter</text>
-<text transform="translate(1129,126)" font-size="47" style="fill:#d5d2c2">Speak</text>
-<text transform="translate(1098,533) rotate(-90)" font-size="47" style="fill:#e0b879">Less</text>
-<text transform="translate(9,706)" font-size="37" style="fill:#b6c3dd">Accountability</text>
-<text transform="translate(830,711)" font-size="37" style="fill:#b6c3dd">Citizens</text>
-<text transform="translate(700,713)" font-size="37" style="fill:#d9c89e">Court</text>
-<text transform="translate(673,432)" font-size="37" style="fill:#d6a79f">Decisions</text>
-<text transform="translate(428,644)" font-size="37" style="fill:#c49a6c">Spoils</text>
-<text transform="translate(140,333)" font-size="37" style="fill:#d88988">Politician</text>
-<text transform="translate(616,312)" font-size="37" style="fill:#c49a6c">Procedure</text>
-<text transform="translate(1206,70)" font-size="37" style="fill:#d9c89e">Fog</text>
-<text transform="translate(55,32)" font-size="37" style="fill:#8fb7d0">Service</text>
-<text transform="translate(689,680) rotate(-90)" font-size="37" style="fill:#d5d2c2">Creates</text>
-<text transform="translate(542,107)" font-size="37" style="fill:#8fb7d0">Value</text>
-<text transform="translate(403,407)" font-size="37" style="fill:#d88988">Repair</text>
-<text transform="translate(500,72)" font-size="37" style="fill:#d6a79f">Someone</text>
-<text transform="translate(416,688)" font-size="30" style="fill:#b6c3dd">Campaign</text>
-<text transform="translate(388,292)" font-size="30" style="fill:#d88988">Always</text>
-<text transform="translate(1106,28)" font-size="30" style="fill:#c49a6c">Looks</text>
-<text transform="translate(500,294)" font-size="30" style="fill:#9fc9c5">Behind</text>
-<text transform="translate(469,605)" font-size="30" style="fill:#8fb7d0">Face</text>
-<text transform="translate(135,466)" font-size="30" style="fill:#d88988">Slogan</text>
-<text transform="translate(871,437)" font-size="30" style="fill:#c49a6c">Evidence</text>
-<text transform="translate(142,293)" font-size="30" style="fill:#d6a79f">Ambition</text>
-<text transform="translate(511,447)" font-size="30" style="fill:#b6c3dd">Gives</text>
-<text transform="translate(11,231)" font-size="30" style="fill:#d9c89e">Room</text>
-<text transform="translate(500,27)" font-size="30" style="fill:#d88988">Powerful</text>
-<text transform="translate(8,179)" font-size="30" style="fill:#9fc9c5">Favoritism</text>
-<text transform="translate(540,546)" font-size="30" style="fill:#d6a79f">Lie</text>
-<text transform="translate(606,247)" font-size="30" style="fill:#8fb7d0">Protect</text>
-<text transform="translate(23,446)" font-size="30" style="fill:#d6a79f">Policy</text>
-<text transform="translate(1094,663)" font-size="30" style="fill:#8fb7d0">Media</text>
-<text transform="translate(1126,625)" font-size="30" style="fill:#8fb7d0">Bad</text>
-<text transform="translate(1272,417) rotate(-90)" font-size="30" style="fill:#c7d7b5">Unless</text>
-<text transform="translate(812,378)" font-size="30" style="fill:#8fb7d0">Strong</text>
-<text transform="translate(659,478)" font-size="30" style="fill:#d6a79f">Exist</text>
-<text transform="translate(448,576)" font-size="30" style="fill:#b6c3dd">Finance</text>
-<text transform="translate(4,664)" font-size="30" style="fill:#d5d2c2">Donor</text>
-<text transform="translate(284,31)" font-size="30" style="fill:#e0b879">Delay</text>
-<text transform="translate(800,405)" font-size="30" style="fill:#8fb7d0">Often</text>
-<text transform="translate(989,28)" font-size="30" style="fill:#b6c3dd">File</text>
-<text transform="translate(360,715)" font-size="30" style="fill:#9fc9c5">Seems</text>
-<text transform="translate(543,193)" font-size="30" style="fill:#d88988">Access</text>
-<text transform="translate(1255,287) rotate(-90)" font-size="30" style="fill:#d5d2c2">Weather</text>
-<text transform="translate(1055,557) rotate(-90)" font-size="30" style="fill:#d6a79f">Benefit</text>
-<text transform="translate(34,385) rotate(-90)" font-size="30" style="fill:#d88988">Receives</text>
-<text transform="translate(18,472)" font-size="30" style="fill:#e0b879">Cash</text>
-<text transform="translate(1170,153)" font-size="30" style="fill:#d9c89e">Human</text>
-<text transform="translate(635,281)" font-size="30" style="fill:#c49a6c">Abuse</text>
-<text transform="translate(1137,414) rotate(-90)" font-size="30" style="fill:#d9c89e">Minutes</text>
-<text transform="translate(1119,570)" font-size="30" style="fill:#d88988">Needs</text>
-<text transform="translate(291,299)" font-size="30" style="fill:#d9c89e">Costs</text>
-<text transform="translate(67,358) rotate(-90)" font-size="30" style="fill:#d88988">Begins</text>
-<text transform="translate(918,217) rotate(-90)" font-size="30" style="fill:#d6a79f">Visible</text>
-<text transform="translate(654,92)" font-size="25" style="fill:#b6c3dd">International</text>
-<text transform="translate(298,374)" font-size="25" style="fill:#c49a6c">IDEA</text>
-<text transform="translate(663,393)" font-size="25" style="fill:#c49a6c">Argued</text>
-<text transform="translate(195,174)" font-size="25" style="fill:#b6c3dd">Parties</text>
-<text transform="translate(820,458)" font-size="25" style="fill:#a9b7a3">Donors</text>
-<text transform="translate(407,22)" font-size="25" style="fill:#d5d2c2">Voters</text>
-<text transform="translate(594,706) rotate(-90)" font-size="25" style="fill:#9fc9c5">Hidden</text>
-<text transform="translate(14,634)" font-size="25" style="fill:#d9c89e">India</text>
-<text transform="translate(1273,714) rotate(-90)" font-size="25" style="fill:#c49a6c">Electoral</text>
-<text transform="translate(529,415)" font-size="25" style="fill:#9fc9c5">Bonds</text>
-<text transform="translate(687,510)" font-size="25" style="fill:#a9b7a3">Case</text>
-<text transform="translate(118,203)" font-size="25" style="fill:#d6a79f">Scheme</text>
-<text transform="translate(11,203)" font-size="25" style="fill:#b6c3dd">Clean</text>
-<text transform="translate(1237,413) rotate(-90)" font-size="25" style="fill:#d5d2c2">Supreme</text>
-<text transform="translate(461,514)" font-size="24" style="fill:#b6c3dd">Disclosure</text>
-<text transform="translate(326,221) rotate(-90)" font-size="24" style="fill:#c49a6c">Election</text>
-<text transform="translate(32,538)" font-size="24" style="fill:#e0b879">Lesson</text>
-<text transform="translate(524,43)" font-size="18" style="fill:#d6a79f">Consequence</text>
-<text transform="translate(147,625)" font-size="18" style="fill:#8fb7d0">Knows</text>
-<text transform="translate(999,217)" font-size="18" style="fill:#c7d7b5">Records</text>
-<text transform="translate(1123,586)" font-size="18" style="fill:#c7d7b5">Inspect</text>
-<text transform="translate(377,438)" font-size="18" style="fill:#9fc9c5">Pure</text>
-<text transform="translate(320,626)" font-size="18" style="fill:#9fc9c5">Question</text>
-<text transform="translate(623,172) rotate(-90)" font-size="18" style="fill:#9fc9c5">Keeps</text>
-<text transform="translate(808,345)" font-size="18" style="fill:#d5d2c2">Failure</text>
-<text transform="translate(88,106)" font-size="18" style="fill:#b6c3dd">Desk</text>
-<text transform="translate(888,347)" font-size="15" style="fill:#e0b879">Responsibility</text>
-<text transform="translate(366,684)" font-size="15" style="fill:#b6c3dd">Many</text>
-<text transform="translate(789,217)" font-size="15" style="fill:#d88988">Broker</text>
-<text transform="translate(917,295)" font-size="15" style="fill:#c7d7b5">Weak</text>
-<text transform="translate(634,216)" font-size="15" style="fill:#c7d7b5">Dependence</text>
-<text transform="translate(28,525) rotate(-90)" font-size="15" style="fill:#d5d2c2">Votes</text>
-<text transform="translate(1128,217)" font-size="15" style="fill:#e0b879">Procurement</text>
-<text transform="translate(154,259)" font-size="15" style="fill:#c7d7b5">Reduce</text>
-<text transform="translate(233,30)" font-size="15" style="fill:#a9b7a3">Data</text>
-<text transform="translate(467,710)" font-size="15" style="fill:#d6a79f">Independent</text>
-<text transform="translate(236,534)" font-size="15" style="fill:#9fc9c5">Institutions</text>
-<text transform="translate(374,180)" font-size="15" style="fill:#d9c89e">Ruling</text>
-<text transform="translate(661,448)" font-size="15" style="fill:#b6c3dd">Internal</text>
-<text transform="translate(361,654)" font-size="15" style="fill:#b6c3dd">Changes</text>
-<text transform="translate(413,116) rotate(-90)" font-size="15" style="fill:#c7d7b5">Small</text>
-<text transform="translate(1008,709)" font-size="15" style="fill:#e0b879">Points</text>
-<text transform="translate(1269,271) rotate(-90)" font-size="15" style="fill:#b6c3dd">Cure</text>
-<text transform="translate(820,302)" font-size="15" style="fill:#d9c89e">Moral</text>
-<text transform="translate(814,160)" font-size="15" style="fill:#d88988">Thunder</text>
-<text transform="translate(1013,141)" font-size="15" style="fill:#d88988">Serious</text>
+<text transform="translate(819,566) rotate(-90)" font-size="114" style="fill:#d6a79f">Money</text>
+<text transform="translate(577,147)" font-size="101" style="fill:#d88988">Citizens</text>
+<text transform="translate(703,652)" font-size="101" style="fill:#c7d7b5">Political</text>
+<text transform="translate(365,408)" font-size="91" style="fill:#9fc9c5">Party</text>
+<text transform="translate(174,507)" font-size="91" style="fill:#a9b7a3">Becomes</text>
+<text transform="translate(867,78)" font-size="85" style="fill:#d6a79f">Politics</text>
+<text transform="translate(634,216)" font-size="85" style="fill:#d6a79f">Politicians</text>
+<text transform="translate(127,415) rotate(-90)" font-size="85" style="fill:#c49a6c">System</text>
+<text transform="translate(38,582)" font-size="79" style="fill:#8fb7d0">Often</text>
+<text transform="translate(1008,537) rotate(-90)" font-size="79" style="fill:#d88988">Power</text>
+<text transform="translate(138,327)" font-size="73" style="fill:#d6a79f">Donor</text>
+<text transform="translate(492,333)" font-size="73" style="fill:#d88988">Media</text>
+<text transform="translate(236,62)" font-size="73" style="fill:#a9b7a3">Mean</text>
+<text transform="translate(297,689)" font-size="73" style="fill:#d6a79f">Democracy</text>
+<text transform="translate(455,594)" font-size="73" style="fill:#d9c89e">Need</text>
+<text transform="translate(719,710)" font-size="66" style="fill:#d88988">Politician</text>
+<text transform="translate(962,282)" font-size="66" style="fill:#b6c3dd">Machine</text>
+<text transform="translate(54,485) rotate(-90)" font-size="66" style="fill:#d6a79f">Bureaucratic</text>
+<text transform="translate(415,80)" font-size="66" style="fill:#e0b879">Stop</text>
+<text transform="translate(167,148)" font-size="65" style="fill:#d88988">Corruption</text>
+<text transform="translate(902,501) rotate(-90)" font-size="65" style="fill:#8fb7d0">Parties</text>
+<text transform="translate(19,675)" font-size="65" style="fill:#c49a6c">Finance</text>
+<text transform="translate(1038,493)" font-size="65" style="fill:#d5d2c2">Police</text>
+<text transform="translate(342,633)" font-size="44" style="fill:#d9c89e">Accountability</text>
+<text transform="translate(287,571)" font-size="44" style="fill:#d9c89e">Local</text>
+<text transform="translate(748,468) rotate(-90)" font-size="44" style="fill:#c7d7b5">Citizen</text>
+<text transform="translate(1092,331)" font-size="44" style="fill:#c7d7b5">Benefit</text>
+<text transform="translate(956,476) rotate(-90)" font-size="44" style="fill:#c7d7b5">Electoral</text>
+<text transform="translate(692,503) rotate(-90)" font-size="44" style="fill:#d5d2c2">Needs</text>
+<text transform="translate(1135,551)" font-size="44" style="fill:#8fb7d0">India</text>
+<text transform="translate(566,37)" font-size="39" style="fill:#8fb7d0">Information</text>
+<text transform="translate(1125,370)" font-size="39" style="fill:#8fb7d0">Useful</text>
+<text transform="translate(168,367)" font-size="39" style="fill:#d5d2c2">Everyone</text>
+<text transform="translate(1052,428) rotate(-90)" font-size="39" style="fill:#e0b879">Caste</text>
+<text transform="translate(90,630)" font-size="39" style="fill:#9fc9c5">Election</text>
+<text transform="translate(245,448)" font-size="39" style="fill:#d5d2c2">Administrative</text>
+<text transform="translate(1149,419)" font-size="39" style="fill:#d88988">State</text>
+<text transform="translate(846,564)" font-size="39" style="fill:#d6a79f">Crocodile</text>
+<text transform="translate(1073,117)" font-size="39" style="fill:#c49a6c">Design</text>
+<text transform="translate(220,101)" font-size="39" style="fill:#d88988">Leader</text>
+<text transform="translate(73,65)" font-size="39" style="fill:#c49a6c">Moral</text>
+<text transform="translate(338,336)" font-size="39" style="fill:#d9c89e">Humans</text>
+<text transform="translate(1058,159)" font-size="39" style="fill:#8fb7d0">Reform</text>
+<text transform="translate(174,500) rotate(-90)" font-size="39" style="fill:#d5d2c2">Bonds</text>
+<text transform="translate(363,305)" font-size="34" style="fill:#8fb7d0">Evil</text>
+<text transform="translate(88,705)" font-size="34" style="fill:#d88988">Ordinary</text>
+<text transform="translate(1125,684)" font-size="34" style="fill:#d6a79f">Loyalty</text>
+<text transform="translate(183,411)" font-size="34" style="fill:#b6c3dd">Version</text>
+<text transform="translate(138,200)" font-size="34" style="fill:#d88988">Bad</text>
+<text transform="translate(63,30)" font-size="34" style="fill:#c49a6c">Networks</text>
+<text transform="translate(552,532)" font-size="34" style="fill:#9fc9c5">Committee</text>
+<text transform="translate(574,473)" font-size="34" style="fill:#d88988">Find</text>
+<text transform="translate(1056,581)" font-size="34" style="fill:#e0b879">Policy</text>
+<text transform="translate(604,65)" font-size="33" style="fill:#c49a6c">International</text>
+<text transform="translate(848,518) rotate(-90)" font-size="33" style="fill:#d6a79f">Protection</text>
+<text transform="translate(61,98)" font-size="33" style="fill:#c49a6c">Voter</text>
+<text transform="translate(1266,273) rotate(-90)" font-size="33" style="fill:#8fb7d0">Campaign</text>
+<text transform="translate(206,176)" font-size="33" style="fill:#d9c89e">Court</text>
+<text transform="translate(599,247)" font-size="33" style="fill:#8fb7d0">Service</text>
+<text transform="translate(164,534)" font-size="30" style="fill:#d5d2c2">Survival</text>
+<text transform="translate(357,532)" font-size="30" style="fill:#8fb7d0">Donors</text>
+<text transform="translate(308,715)" font-size="30" style="fill:#d6a79f">Contractors</text>
+<text transform="translate(1025,537)" font-size="30" style="fill:#8fb7d0">Defect</text>
+<text transform="translate(27,617) rotate(-90)" font-size="30" style="fill:#c7d7b5">Nobody</text>
+<text transform="translate(42,507)" font-size="30" style="fill:#8fb7d0">Audit</text>
+<text transform="translate(298,597)" font-size="30" style="fill:#d6a79f">Scheme</text>
+<text transform="translate(453,27)" font-size="30" style="fill:#b6c3dd">Tender</text>
+<text transform="translate(577,500)" font-size="30" style="fill:#9fc9c5">Bank</text>
+<text transform="translate(1086,434) rotate(-90)" font-size="30" style="fill:#e0b879">Benefits</text>
+<text transform="translate(1131,710)" font-size="20" style="fill:#d9c89e">Independence</text>
+<text transform="translate(35,695)" font-size="20" style="fill:#9fc9c5">Desk</text>
+<text transform="translate(668,551)" font-size="20" style="fill:#d88988">Clean</text>
+<text transform="translate(407,168)" font-size="20" style="fill:#d5d2c2">National</text>
+<text transform="translate(31,605)" font-size="20" style="fill:#d6a79f">Milk</text>
+<text transform="translate(531,167)" font-size="16" style="fill:#d88988">Practice</text>
+<text transform="translate(58,454)" font-size="16" style="fill:#e0b879">Operating</text>
+<text transform="translate(511,711)" font-size="16" style="fill:#9fc9c5">Systems</text>
+<text transform="translate(704,265)" font-size="16" style="fill:#c49a6c">Prefer</text>
+<text transform="translate(632,266)" font-size="16" style="fill:#d9c89e">Enough</text>
+<text transform="translate(564,350)" font-size="16" style="fill:#d88988">Signed</text>
+<text transform="translate(865,527)" font-size="16" style="fill:#d9c89e">Official</text>
+<text transform="translate(550,189)" font-size="16" style="fill:#d88988">Applause</text>
+<text transform="translate(1190,446)" font-size="16" style="fill:#d6a79f">Pressure</text>
+<text transform="translate(1172,18)" font-size="16" style="fill:#b6c3dd">Discipline</text>
+<text transform="translate(461,282)" font-size="16" style="fill:#d5d2c2">Fog</text>
+<text transform="translate(248,281)" font-size="16" style="fill:#c49a6c">Plain</text>
+<text transform="translate(645,360)" font-size="16" style="fill:#b6c3dd">Always</text>
+<text transform="translate(1158,386)" font-size="16" style="fill:#a9b7a3">Conscience</text>
+<text transform="translate(140,165)" font-size="16" style="fill:#d5d2c2">Rather</text>
+<text transform="translate(1111,429) rotate(-90)" font-size="16" style="fill:#d5d2c2">Patronage</text>
+<text transform="translate(783,584)" font-size="16" style="fill:#d5d2c2">Legal</text>
+<text transform="translate(1162,237)" font-size="16" style="fill:#a9b7a3">Outrage</text>
+<text transform="translate(319,226) rotate(-90)" font-size="16" style="fill:#d9c89e">Strategy</text>
+<text transform="translate(139,245)" font-size="16" style="fill:#c49a6c">Central</text>
+<text transform="translate(58,477)" font-size="16" style="fill:#c7d7b5">Problem</text>
+<text transform="translate(1236,209) rotate(-90)" font-size="16" style="fill:#d88988">Personal</text>
+<text transform="translate(71,220) rotate(-90)" font-size="16" style="fill:#b6c3dd">Consequence</text>
+<text transform="translate(280,619)" font-size="16" style="fill:#d5d2c2">Least</text>
+<text transform="translate(93,263)" font-size="16" style="fill:#b6c3dd">Historical</text>
+<text transform="translate(936,205) rotate(-90)" font-size="16" style="fill:#c49a6c">Flags</text>
+<text transform="translate(1162,509)" font-size="16" style="fill:#e0b879">Means</text>
+<text transform="translate(469,100)" font-size="16" style="fill:#d6a79f">Easily</text>
+<text transform="translate(325,394)" font-size="16" style="fill:#c7d7b5">Last</text>
+<text transform="translate(469,529)" font-size="16" style="fill:#c7d7b5">Phrase</text>
+<text transform="translate(465,353)" font-size="16" style="fill:#9fc9c5">Punish</text>
+<text transform="translate(179,427)" font-size="16" style="fill:#9fc9c5">Memory</text>
+<text transform="translate(1211,196) rotate(-90)" font-size="16" style="fill:#9fc9c5">Merely</text>
+<text transform="translate(1228,511)" font-size="16" style="fill:#e0b879">Room</text>
+<text transform="translate(673,574)" font-size="16" style="fill:#9fc9c5">Three</text>
+<text transform="translate(630,592)" font-size="16" style="fill:#b6c3dd">Exists</text>
+<text transform="translate(293,17)" font-size="16" style="fill:#8fb7d0">Civilization</text>
+<text transform="translate(1179,564)" font-size="14" style="fill:#b6c3dd">Transparency</text>
+<text transform="translate(1139,437)" font-size="14" style="fill:#d9c89e">Abuse</text>
+<text transform="translate(696,491)" font-size="14" style="fill:#c7d7b5">Private</text>
+<text transform="translate(468,221)" font-size="14" style="fill:#c7d7b5">Gain</text>
+<text transform="translate(710,714) rotate(-90)" font-size="14" style="fill:#a9b7a3">Hard</text>
+<text transform="translate(71,366) rotate(-90)" font-size="14" style="fill:#d6a79f">Ideological</text>
+<text transform="translate(1011,508)" font-size="14" style="fill:#a9b7a3">Consolidation</text>
+<text transform="translate(975,297)" font-size="14" style="fill:#c7d7b5">Immunity</text>
+<text transform="translate(679,87)" font-size="14" style="fill:#a9b7a3">Line</text>
+<text transform="translate(498,546)" font-size="14" style="fill:#d6a79f">Representation</text>
+<text transform="translate(357,104)" font-size="14" style="fill:#d5d2c2">Speaks</text>
+<text transform="translate(840,33)" font-size="14" style="fill:#a9b7a3">Law</text>
+<text transform="translate(147,218)" font-size="14" style="fill:#8fb7d0">Capacity</text>
+<text transform="translate(230,599)" font-size="14" style="fill:#c7d7b5">Delays</text>
+<text transform="translate(918,453) rotate(-90)" font-size="14" style="fill:#c7d7b5">Discretion</text>
+<text transform="translate(80,430)" font-size="14" style="fill:#b6c3dd">Living</text>
+<text transform="translate(1137,300)" font-size="14" style="fill:#a9b7a3">Watched</text>
+<text transform="translate(429,236) rotate(-90)" font-size="14" style="fill:#c49a6c">Feedback</text>
 </svg>

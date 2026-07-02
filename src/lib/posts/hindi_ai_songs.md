@@ -1,19 +1,17 @@
 ---
 title: "Hindi AI Songs"
-thumbnail: "/images/IMG-20260427-WA0016.jpg"
+thumbnail : "/images/IMG-20260427-WA0016.jpg"
 date: "2026-04-27"
-description: "Hindi AI-generated songs collected as a small listening page."
-tags: ["AI Music", "Hindi AI Songs", "Songs", "Synthetic Media", "Artificial Intelligence", "Music Commentary", "Calcutta", "SuvroGhosh"]
+description: "Hindi"
+tags: ["Songs", "Engineering Blog", "SuvroGhosh", "AI Music Song", "Hindi AI Songs", "AI Music", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Bengali Songs", "Synthetic Media", "Music Commentary"]
 category: "AI Music Song"
 published: true
-color: "amber"
 ---
 
-The speaker makes the desk vibrate just enough to remind me that digital things still need physical air. A Hindi line comes through, machine-made but not weightless, and the room takes it in the old way: through sound first, then suspicion.
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
 
-These Hindi AI songs belong to the same experiment as the Bengali and English pages. The language changes the pressure. A synthetic voice in Hindi can feel close in a different way, especially in a Calcutta room where languages keep passing through one another without asking permission.
-
-AI means artificial intelligence: software that generates or arranges sound and image from patterns. The work here is not a claim that machines have replaced human song. It is a small record of what happens when the machine is asked to stand near song and try.
+---
 
 <Vid 
   src="Kaam_Kahan_Gaya.mp4" 
@@ -33,6 +31,7 @@ AI means artificial intelligence: software that generates or arranges sound and 
   size={1} 
 />
 
+
 <Vid 
   src="Tram_Ke_Taaron_Mein.mp4" 
   layout="block" 
@@ -51,8 +50,9 @@ AI means artificial intelligence: software that generates or arranges sound and 
   size={1} 
 />
 
-## More AI Music
+## Related Posts
 
-- [AI Music](/blog/ai-music-song/ai_music)
 - [Bengali AI Songs](/blog/ai-music-song/ai_bengali_songs)
 - [English AI Songs](/blog/ai-music-song/ai_english_songs)
+- [AI Music](/blog/ai-music-song/ai_music)
+- [Chronic Traumatic Nihilism From Calcutta](/blog/personal-essay/chronic-traumatic-nihilism-calcutta)

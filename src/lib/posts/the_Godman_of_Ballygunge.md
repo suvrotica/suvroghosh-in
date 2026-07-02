@@ -1,31 +1,17 @@
 ---
-title: 'The Godman of Ballygunge'
-description: 'A Calcutta godman builds a private empire out of devotion, fear, and a poisonous flower, until the city and the plant remember what he has taken.'
-date: '2026-06-05'
-thumbnail: '/images/Compress_20260605_054753_3428.jpg'
-category: 'Short Fiction'
-tags:
-  [
-    'Video',
-    'Engineering Blog',
-    'SuvroGhosh',
-    'Short Fiction',
-    'Calcutta',
-    'Kolkata',
-    'Horror',
-    'Supernatural',
-    'Crime',
-    'Dhatura',
-    'Godman',
-    'Cult'
-  ]
+title: "The Godman of Ballygunge"
+description: "A Calcutta godman builds a private empire out of devotion, fear, and a poisonous flower, until the city and the plant remember what he has taken."
+date: "2026-06-05"
+thumbnail: "/images/Compress_20260605_054753_3428.jpg"
+category: "Short Fiction"
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Calcutta", "Kolkata", "Horror", "Supernatural", "Crime", "Dhatura", "Godman", "Cult"]
 published: true
-color: 'ash violet'
+color: "ash violet"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_054753_3428.jpg" alt="Article illustration for The Godman of Ballygunge" />
+<Pi src="Compress_20260605_054753_3428.jpg" />
 
 # THIS IS A WORK OF FICTION
 

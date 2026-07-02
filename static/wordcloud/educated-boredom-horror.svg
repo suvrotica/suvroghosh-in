@@ -1,134 +1,134 @@
 <svg role="img" aria-label="The Educated Horror of Having Nowhere to Go" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Educated Horror of Having Nowhere to Go</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(1123,525) rotate(-90)" font-size="118" style="fill:#b6c3dd">Boredom</text>
-<text transform="translate(234,248)" font-size="107" style="fill:#c49a6c">Enough</text>
-<text transform="translate(324,513)" font-size="107" style="fill:#e0b879">Almost</text>
-<text transform="translate(362,364)" font-size="95" style="fill:#9fc9c5">Person</text>
-<text transform="translate(750,630)" font-size="95" style="fill:#a9b7a3">Attention</text>
-<text transform="translate(542,69)" font-size="82" style="fill:#d6a79f">Feed</text>
-<text transform="translate(24,474)" font-size="67" style="fill:#c7d7b5">Bills</text>
-<text transform="translate(189,623)" font-size="67" style="fill:#9fc9c5">Middleaged</text>
-<text transform="translate(631,208)" font-size="67" style="fill:#c49a6c">Outrage</text>
-<text transform="translate(787,547)" font-size="67" style="fill:#9fc9c5">Read</text>
-<text transform="translate(893,413)" font-size="67" style="fill:#b6c3dd">Aged</text>
-<text transform="translate(116,62)" font-size="67" style="fill:#c7d7b5">Skill</text>
-<text transform="translate(71,414) rotate(-90)" font-size="67" style="fill:#c49a6c">Little</text>
-<text transform="translate(501,424)" font-size="67" style="fill:#9fc9c5">Duties</text>
-<text transform="translate(414,150)" font-size="67" style="fill:#b6c3dd">Difficult</text>
-<text transform="translate(1209,424) rotate(-90)" font-size="67" style="fill:#8fb7d0">Comparison</text>
-<text transform="translate(347,710)" font-size="67" style="fill:#d5d2c2">Found</text>
-<text transform="translate(713,487)" font-size="67" style="fill:#d6a79f">Laziness</text>
-<text transform="translate(746,694)" font-size="67" style="fill:#d9c89e">Movement</text>
-<text transform="translate(749,342)" font-size="67" style="fill:#e0b879">Future</text>
-<text transform="translate(183,358)" font-size="67" style="fill:#d9c89e">Book</text>
-<text transform="translate(78,532)" font-size="67" style="fill:#d88988">Small</text>
-<text transform="translate(172,323) rotate(-90)" font-size="67" style="fill:#8fb7d0">Modest</text>
-<text transform="translate(740,281)" font-size="67" style="fill:#a9b7a3">Someone</text>
-<text transform="translate(335,566)" font-size="66" style="fill:#8fb7d0">Document</text>
-<text transform="translate(137,683)" font-size="66" style="fill:#c7d7b5">Walls</text>
-<text transform="translate(195,135)" font-size="66" style="fill:#e0b879">Eats</text>
-<text transform="translate(793,136)" font-size="66" style="fill:#d88988">Repair</text>
-<text transform="translate(769,64)" font-size="66" style="fill:#d88988">Meaning</text>
-<text transform="translate(1063,683)" font-size="66" style="fill:#c49a6c">Days</text>
-<text transform="translate(202,424)" font-size="66" style="fill:#d6a79f">Passion</text>
-<text transform="translate(176,290)" font-size="44" style="fill:#c7d7b5">Architecture</text>
-<text transform="translate(625,289)" font-size="44" style="fill:#d88988">Walk</text>
-<text transform="translate(1196,522)" font-size="32" style="fill:#d9c89e">Room</text>
-<text transform="translate(557,687)" font-size="32" style="fill:#8fb7d0">Furniture</text>
-<text transform="translate(59,685) rotate(-90)" font-size="32" style="fill:#d6a79f">Books</text>
-<text transform="translate(344,49)" font-size="32" style="fill:#d5d2c2">Working</text>
-<text transform="translate(53,79) rotate(-90)" font-size="32" style="fill:#8fb7d0">Fan</text>
-<text transform="translate(910,173)" font-size="32" style="fill:#d9c89e">Nowhere</text>
-<text transform="translate(60,567)" font-size="32" style="fill:#e0b879">Particular</text>
-<text transform="translate(1271,202) rotate(-90)" font-size="32" style="fill:#a9b7a3">Horror</text>
-<text transform="translate(576,715)" font-size="32" style="fill:#a9b7a3">Educated</text>
-<text transform="translate(721,371)" font-size="32" style="fill:#d5d2c2">Emptiness</text>
-<text transform="translate(373,86)" font-size="32" style="fill:#d88988">Appetite</text>
-<text transform="translate(734,655) rotate(-90)" font-size="32" style="fill:#d9c89e">Trapped</text>
-<text transform="translate(965,545)" font-size="32" style="fill:#a9b7a3">Respectable</text>
-<text transform="translate(79,711)" font-size="32" style="fill:#d6a79f">Misunderstood</text>
-<text transform="translate(597,610)" font-size="32" style="fill:#a9b7a3">Child</text>
-<text transform="translate(222,166)" font-size="32" style="fill:#a9b7a3">Summer</text>
-<text transform="translate(337,179)" font-size="32" style="fill:#d88988">Fashionable</text>
-<text transform="translate(767,414)" font-size="32" style="fill:#e0b879">Youth</text>
-<text transform="translate(917,225)" font-size="32" style="fill:#e0b879">Travel</text>
-<text transform="translate(71,621)" font-size="32" style="fill:#b6c3dd">Style</text>
-<text transform="translate(1254,487) rotate(-90)" font-size="32" style="fill:#d88988">Reinvention</text>
-<text transform="translate(21,171)" font-size="32" style="fill:#d6a79f">World</text>
-<text transform="translate(107,387)" font-size="32" style="fill:#d5d2c2">Large</text>
-<text transform="translate(6,121)" font-size="32" style="fill:#a9b7a3">Worked</text>
-<text transform="translate(1158,324) rotate(-90)" font-size="32" style="fill:#b6c3dd">Waiting</text>
-<text transform="translate(243,466)" font-size="32" style="fill:#c7d7b5">Hear</text>
-<text transform="translate(531,306)" font-size="32" style="fill:#9fc9c5">Time</text>
-<text transform="translate(104,341) rotate(-90)" font-size="32" style="fill:#a9b7a3">Issuing</text>
-<text transform="translate(510,653)" font-size="32" style="fill:#d6a79f">Smaller</text>
-<text transform="translate(1179,570)" font-size="32" style="fill:#d6a79f">Notes</text>
-<text transform="translate(1239,193) rotate(-90)" font-size="32" style="fill:#a9b7a3">Education</text>
-<text transform="translate(755,442)" font-size="32" style="fill:#d6a79f">Sold</text>
-<text transform="translate(615,246)" font-size="32" style="fill:#b6c3dd">Motion</text>
-<text transform="translate(1129,447)" font-size="32" style="fill:#d5d2c2">Study</text>
-<text transform="translate(1151,137) rotate(-90)" font-size="32" style="fill:#9fc9c5">Qualify</text>
-<text transform="translate(943,371)" font-size="32" style="fill:#8fb7d0">Rise</text>
-<text transform="translate(602,106)" font-size="32" style="fill:#d88988">Leave</text>
-<text transform="translate(337,654)" font-size="32" style="fill:#9fc9c5">Return</text>
-<text transform="translate(832,88)" font-size="22" style="fill:#c49a6c">Specialize</text>
-<text transform="translate(250,82)" font-size="22" style="fill:#d6a79f">Useful</text>
-<text transform="translate(76,587)" font-size="22" style="fill:#9fc9c5">Legible</text>
-<text transform="translate(878,652)" font-size="22" style="fill:#b6c3dd">Institutions</text>
-<text transform="translate(540,445)" font-size="22" style="fill:#8fb7d0">Bargain</text>
-<text transform="translate(1147,483)" font-size="22" style="fill:#a9b7a3">Seemed</text>
-<text transform="translate(193,230) rotate(-90)" font-size="22" style="fill:#c7d7b5">Believable</text>
-<text transform="translate(924,567)" font-size="22" style="fill:#e0b879">Degrees</text>
-<text transform="translate(1274,428) rotate(-90)" font-size="22" style="fill:#b6c3dd">Doors</text>
-<text transform="translate(438,22)" font-size="22" style="fill:#8fb7d0">English</text>
-<text transform="translate(1016,21)" font-size="22" style="fill:#8fb7d0">Elevator</text>
-<text transform="translate(247,381)" font-size="22" style="fill:#d5d2c2">Technical</text>
-<text transform="translate(948,512)" font-size="22" style="fill:#c49a6c">Salary</text>
-<text transform="translate(99,414)" font-size="22" style="fill:#b6c3dd">Account</text>
-<text transform="translate(107,351)" font-size="22" style="fill:#d6a79f">Badge</text>
-<text transform="translate(936,196)" font-size="22" style="fill:#b6c3dd">Rented</text>
-<text transform="translate(62,77)" font-size="22" style="fill:#a9b7a3">Flat</text>
-<text transform="translate(1074,708)" font-size="22" style="fill:#c49a6c">Proof</text>
-<text transform="translate(774,158)" font-size="22" style="fill:#a9b7a3">Escaped</text>
-<text transform="translate(24,653) rotate(-90)" font-size="22" style="fill:#c49a6c">Helplessness</text>
-<text transform="translate(214,257) rotate(-90)" font-size="22" style="fill:#d6a79f">Machinery</text>
-<text transform="translate(1180,710)" font-size="22" style="fill:#b6c3dd">Changed</text>
-<text transform="translate(150,82)" font-size="22" style="fill:#d88988">Terms</text>
-<text transform="translate(975,439)" font-size="22" style="fill:#d6a79f">Degree</text>
-<text transform="translate(779,715)" font-size="22" style="fill:#c49a6c">Profession</text>
-<text transform="translate(610,631)" font-size="22" style="fill:#c7d7b5">Shifted</text>
-<text transform="translate(710,509)" font-size="22" style="fill:#d6a79f">Began</text>
-<text transform="translate(430,445)" font-size="22" style="fill:#b6c3dd">Charging</text>
-<text transform="translate(914,715)" font-size="22" style="fill:#d88988">Maintenance</text>
-<text transform="translate(553,270)" font-size="22" style="fill:#d88988">Fees</text>
-<text transform="translate(252,561)" font-size="22" style="fill:#d5d2c2">Family</text>
-<text transform="translate(9,141)" font-size="22" style="fill:#9fc9c5">Thickened</text>
-<text transform="translate(817,21)" font-size="22" style="fill:#9fc9c5">Remained</text>
-<text transform="translate(326,20)" font-size="22" style="fill:#d5d2c2">Internet</text>
-<text transform="translate(223,311)" font-size="22" style="fill:#d5d2c2">Engine</text>
-<text transform="translate(18,704)" font-size="22" style="fill:#b6c3dd">Mind</text>
-<text transform="translate(699,90)" font-size="22" style="fill:#8fb7d0">Trained</text>
-<text transform="translate(1049,355) rotate(-90)" font-size="22" style="fill:#b6c3dd">Difficulty</text>
-<text transform="translate(1179,538)" font-size="17" style="fill:#d5d2c2">Repeating</text>
-<text transform="translate(81,649)" font-size="17" style="fill:#b6c3dd">Tasks</text>
-<text transform="translate(614,17)" font-size="17" style="fill:#c7d7b5">Maintained</text>
-<text transform="translate(1215,254)" font-size="17" style="fill:#9fc9c5">Deepen</text>
-<text transform="translate(641,555)" font-size="17" style="fill:#c7d7b5">Refuses</text>
-<text transform="translate(419,306)" font-size="17" style="fill:#c49a6c">Available</text>
-<text transform="translate(540,86)" font-size="17" style="fill:#b6c3dd">Mostly</text>
-<text transform="translate(701,329)" font-size="17" style="fill:#b6c3dd">Forms</text>
-<text transform="translate(904,300)" font-size="17" style="fill:#b6c3dd">Matter</text>
-<text transform="translate(68,675)" font-size="17" style="fill:#a9b7a3">Scroll</text>
-<text transform="translate(1077,342)" font-size="17" style="fill:#c7d7b5">Scrolling</text>
-<text transform="translate(4,490)" font-size="17" style="fill:#c7d7b5">Finding</text>
-<text transform="translate(1273,93) rotate(-90)" font-size="17" style="fill:#c49a6c">Lowcost</text>
-<text transform="translate(57,559) rotate(-90)" font-size="17" style="fill:#d5d2c2">Exit</text>
-<text transform="translate(700,306)" font-size="17" style="fill:#a9b7a3">Flick</text>
-<text transform="translate(24,19)" font-size="17" style="fill:#9fc9c5">Offers</text>
-<text transform="translate(1233,671)" font-size="17" style="fill:#c49a6c">Six</text>
-<text transform="translate(734,225)" font-size="17" style="fill:#d9c89e">Seconds</text>
-<text transform="translate(272,491)" font-size="17" style="fill:#d6a79f">War</text>
-<text transform="translate(73,55)" font-size="17" style="fill:#c7d7b5">Joke</text>
-<text transform="translate(800,652)" font-size="17" style="fill:#a9b7a3">Lecture</text>
+<text transform="translate(1142,480) rotate(-90)" font-size="118" style="fill:#b6c3dd">Enough</text>
+<text transform="translate(421,274)" font-size="114" style="fill:#c49a6c">Boredom</text>
+<text transform="translate(203,505)" font-size="110" style="fill:#e0b879">Person</text>
+<text transform="translate(27,320)" font-size="110" style="fill:#9fc9c5">Repair</text>
+<text transform="translate(684,585)" font-size="88" style="fill:#a9b7a3">Middleaged</text>
+<text transform="translate(262,73)" font-size="88" style="fill:#d6a79f">Educated</text>
+<text transform="translate(332,665)" font-size="83" style="fill:#e0b879">Middle</text>
+<text transform="translate(124,151)" font-size="83" style="fill:#a9b7a3">Mind</text>
+<text transform="translate(375,135)" font-size="72" style="fill:#a9b7a3">Difficulty</text>
+<text transform="translate(67,641)" font-size="72" style="fill:#d88988">Move</text>
+<text transform="translate(674,378)" font-size="72" style="fill:#d88988">Often</text>
+<text transform="translate(723,483)" font-size="72" style="fill:#d9c89e">Almost</text>
+<text transform="translate(895,162)" font-size="72" style="fill:#e0b879">Put</text>
+<text transform="translate(790,675)" font-size="65" style="fill:#d5d2c2">Intelligence</text>
+<text transform="translate(72,549) rotate(-90)" font-size="65" style="fill:#d88988">Man</text>
+<text transform="translate(914,395)" font-size="65" style="fill:#c7d7b5">Time</text>
+<text transform="translate(453,340)" font-size="65" style="fill:#d88988">Class</text>
+<text transform="translate(337,381)" font-size="65" style="fill:#e0b879">Age</text>
+<text transform="translate(88,697)" font-size="65" style="fill:#c49a6c">Merely</text>
+<text transform="translate(320,566)" font-size="65" style="fill:#e0b879">Bored</text>
+<text transform="translate(1011,527)" font-size="65" style="fill:#e0b879">Feed</text>
+<text transform="translate(722,77)" font-size="65" style="fill:#a9b7a3">Attention</text>
+<text transform="translate(100,251)" font-size="65" style="fill:#8fb7d0">Small</text>
+<text transform="translate(29,412)" font-size="65" style="fill:#a9b7a3">Looks</text>
+<text transform="translate(1247,406) rotate(-90)" font-size="65" style="fill:#8fb7d0">Service</text>
+<text transform="translate(361,186)" font-size="65" style="fill:#d6a79f">Becomes</text>
+<text transform="translate(8,46)" font-size="58" style="fill:#8fb7d0">Systems</text>
+<text transform="translate(360,713)" font-size="58" style="fill:#d88988">America</text>
+<text transform="translate(132,559)" font-size="58" style="fill:#c49a6c">Young</text>
+<text transform="translate(417,433)" font-size="58" style="fill:#d6a79f">Education</text>
+<text transform="translate(810,327)" font-size="58" style="fill:#c7d7b5">Horror</text>
+<text transform="translate(1261,621) rotate(-90)" font-size="58" style="fill:#d88988">Family</text>
+<text transform="translate(896,251)" font-size="58" style="fill:#d9c89e">Keeps</text>
+<text transform="translate(1072,45)" font-size="49" style="fill:#8fb7d0">Society</text>
+<text transform="translate(1192,457) rotate(-90)" font-size="49" style="fill:#9fc9c5">Knows</text>
+<text transform="translate(156,196)" font-size="49" style="fill:#d9c89e">Parent</text>
+<text transform="translate(669,684) rotate(-90)" font-size="49" style="fill:#c7d7b5">System</text>
+<text transform="translate(849,201)" font-size="42" style="fill:#d5d2c2">Software</text>
+<text transform="translate(753,422)" font-size="42" style="fill:#c7d7b5">United</text>
+<text transform="translate(1113,711)" font-size="42" style="fill:#c7d7b5">States</text>
+<text transform="translate(80,496)" font-size="42" style="fill:#8fb7d0">Bills</text>
+<text transform="translate(30,196)" font-size="42" style="fill:#8fb7d0">Child</text>
+<text transform="translate(678,691)" font-size="42" style="fill:#8fb7d0">Soul</text>
+<text transform="translate(10,356)" font-size="42" style="fill:#d88988">Woman</text>
+<text transform="translate(873,713)" font-size="42" style="fill:#d5d2c2">Read</text>
+<text transform="translate(465,379)" font-size="42" style="fill:#d5d2c2">Smaller</text>
+<text transform="translate(646,308)" font-size="39" style="fill:#b6c3dd">Failing</text>
+<text transform="translate(11,119)" font-size="39" style="fill:#a9b7a3">Work</text>
+<text transform="translate(89,80)" font-size="39" style="fill:#9fc9c5">Present</text>
+<text transform="translate(54,715) rotate(-90)" font-size="39" style="fill:#d6a79f">Machine</text>
+<text transform="translate(845,619)" font-size="39" style="fill:#9fc9c5">Market</text>
+<text transform="translate(674,615)" font-size="35" style="fill:#d5d2c2">Language</text>
+<text transform="translate(519,553)" font-size="35" style="fill:#a9b7a3">Book</text>
+<text transform="translate(184,348)" font-size="32" style="fill:#d9c89e">Republic</text>
+<text transform="translate(323,595)" font-size="32" style="fill:#9fc9c5">Survival</text>
+<text transform="translate(1171,280) rotate(-90)" font-size="32" style="fill:#8fb7d0">Help</text>
+<text transform="translate(1161,104)" font-size="32" style="fill:#e0b879">Escape</text>
+<text transform="translate(696,181)" font-size="32" style="fill:#d6a79f">Someone</text>
+<text transform="translate(783,513)" font-size="32" style="fill:#b6c3dd">Medicine</text>
+<text transform="translate(228,416)" font-size="32" style="fill:#b6c3dd">Weather</text>
+<text transform="translate(119,588)" font-size="32" style="fill:#d6a79f">Meaning</text>
+<text transform="translate(796,27)" font-size="32" style="fill:#a9b7a3">Structure</text>
+<text transform="translate(623,478)" font-size="32" style="fill:#d6a79f">Noble</text>
+<text transform="translate(819,105)" font-size="32" style="fill:#b6c3dd">Architecture</text>
+<text transform="translate(6,155)" font-size="32" style="fill:#d5d2c2">Called</text>
+<text transform="translate(1148,76)" font-size="32" style="fill:#9fc9c5">Moral</text>
+<text transform="translate(359,293) rotate(-90)" font-size="32" style="fill:#8fb7d0">Loneliness</text>
+<text transform="translate(909,421)" font-size="27" style="fill:#d88988">Belonging</text>
+<text transform="translate(107,457)" font-size="27" style="fill:#9fc9c5">Relief</text>
+<text transform="translate(1070,208) rotate(-90)" font-size="27" style="fill:#c49a6c">Room</text>
+<text transform="translate(806,152)" font-size="27" style="fill:#d6a79f">Less</text>
+<text transform="translate(342,440)" font-size="22" style="fill:#9fc9c5">AI</text>
+<text transform="translate(642,712)" font-size="22" style="fill:#b6c3dd">Artificial</text>
+<text transform="translate(479,590)" font-size="22" style="fill:#8fb7d0">Operating</text>
+<text transform="translate(1057,632)" font-size="22" style="fill:#e0b879">Middleclass</text>
+<text transform="translate(942,289)" font-size="22" style="fill:#b6c3dd">Furniture</text>
+<text transform="translate(1185,132)" font-size="22" style="fill:#e0b879">Ruined</text>
+<text transform="translate(696,649)" font-size="22" style="fill:#e0b879">Quieter</text>
+<text transform="translate(1001,517) rotate(-90)" font-size="22" style="fill:#b6c3dd">Animal</text>
+<text transform="translate(613,207)" font-size="22" style="fill:#8fb7d0">Lives</text>
+<text transform="translate(716,25)" font-size="22" style="fill:#8fb7d0">World</text>
+<text transform="translate(1012,332)" font-size="22" style="fill:#d5d2c2">Aged</text>
+<text transform="translate(251,382)" font-size="22" style="fill:#c49a6c">Fear</text>
+<text transform="translate(599,498)" font-size="22" style="fill:#b6c3dd">Falling</text>
+<text transform="translate(21,233)" font-size="22" style="fill:#d6a79f">Joke</text>
+<text transform="translate(387,327)" font-size="22" style="fill:#b6c3dd">Leave</text>
+<text transform="translate(1275,307) rotate(-90)" font-size="22" style="fill:#a9b7a3">Institutions</text>
+<text transform="translate(778,708)" font-size="22" style="fill:#c49a6c">Bargain</text>
+<text transform="translate(996,33)" font-size="22" style="fill:#a9b7a3">Doors</text>
+<text transform="translate(520,299)" font-size="22" style="fill:#c49a6c">Technical</text>
+<text transform="translate(263,94)" font-size="22" style="fill:#d6a79f">Job</text>
+<text transform="translate(982,704)" font-size="22" style="fill:#b6c3dd">Salary</text>
+<text transform="translate(815,126)" font-size="22" style="fill:#d88988">Little</text>
+<text transform="translate(1122,606)" font-size="22" style="fill:#d6a79f">Private</text>
+<text transform="translate(487,207)" font-size="22" style="fill:#c49a6c">Somewhere</text>
+<text transform="translate(21,492) rotate(-90)" font-size="22" style="fill:#9fc9c5">Profession</text>
+<text transform="translate(709,505)" font-size="22" style="fill:#9fc9c5">Parts</text>
+<text transform="translate(383,20)" font-size="21" style="fill:#d88988">Maintenance</text>
+<text transform="translate(271,640)" font-size="21" style="fill:#c7d7b5">Fees</text>
+<text transform="translate(404,525)" font-size="21" style="fill:#d5d2c2">Parents</text>
+<text transform="translate(29,432)" font-size="21" style="fill:#9fc9c5">Invoices</text>
+<text transform="translate(756,198)" font-size="17" style="fill:#9fc9c5">Logistics</text>
+<text transform="translate(258,619)" font-size="17" style="fill:#d5d2c2">Trained</text>
+<text transform="translate(62,576)" font-size="17" style="fill:#9fc9c5">Found</text>
+<text transform="translate(854,290)" font-size="17" style="fill:#b6c3dd">Tasks</text>
+<text transform="translate(557,19)" font-size="17" style="fill:#8fb7d0">Laziness</text>
+<text transform="translate(76,715)" font-size="17" style="fill:#c49a6c">Movement</text>
+<text transform="translate(204,522)" font-size="17" style="fill:#d88988">Available</text>
+<text transform="translate(585,90)" font-size="17" style="fill:#c49a6c">Rule</text>
+<text transform="translate(853,438)" font-size="17" style="fill:#d9c89e">Choices</text>
+<text transform="translate(1188,204) rotate(-90)" font-size="17" style="fill:#d6a79f">Lived</text>
+<text transform="translate(5,81)" font-size="17" style="fill:#c7d7b5">Reality</text>
+<text transform="translate(1099,375)" font-size="17" style="fill:#c49a6c">Many</text>
+<text transform="translate(633,176)" font-size="17" style="fill:#b6c3dd">Change</text>
+<text transform="translate(75,539)" font-size="17" style="fill:#b6c3dd">Start</text>
+<text transform="translate(1026,268)" font-size="17" style="fill:#b6c3dd">Rent</text>
+<text transform="translate(98,513)" font-size="17" style="fill:#b6c3dd">Platform</text>
+<text transform="translate(664,153)" font-size="17" style="fill:#b6c3dd">Client</text>
+<text transform="translate(371,421)" font-size="17" style="fill:#c7d7b5">Risk</text>
+<text transform="translate(376,253) rotate(-90)" font-size="17" style="fill:#c49a6c">Turn</text>
+<text transform="translate(623,577) rotate(-90)" font-size="17" style="fill:#d5d2c2">Poem</text>
+<text transform="translate(514,395)" font-size="17" style="fill:#a9b7a3">Tired</text>
+<text transform="translate(889,344)" font-size="17" style="fill:#9fc9c5">Scrolls</text>
+<text transform="translate(1208,495) rotate(-90)" font-size="17" style="fill:#c49a6c">Scrolling</text>
+<text transform="translate(390,211)" font-size="17" style="fill:#d9c89e">Bad</text>
+<text transform="translate(1270,409) rotate(-90)" font-size="17" style="fill:#d6a79f">Emergency</text>
+<text transform="translate(389,292)" font-size="17" style="fill:#c7d7b5">Human</text>
+<text transform="translate(171,713)" font-size="17" style="fill:#a9b7a3">Instruments</text>
+<text transform="translate(287,218)" font-size="17" style="fill:#c49a6c">Slow</text>
+<text transform="translate(17,589) rotate(-90)" font-size="17" style="fill:#9fc9c5">Expensive</text>
 </svg>

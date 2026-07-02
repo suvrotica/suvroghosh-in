@@ -1,122 +1,98 @@
 ---
 title: "Samir Ranjan Das and the Visual Mind"
-description: "A personal reflection on Dr. Samir Ranjan Das, visual thinking, Bengal's habit of losing serious minds, and the quiet influence of a teacher whose ideas keep returning."
+description: "A personal essay on a PhD advisor, Bengal’s habit of losing brilliant minds, visual thinking, AI, inequality, and the strange business of trying to remain intellectually alive from the edge of Kolkata."
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_202547_7320.jpg"
 category: "Personal"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengal", "Bengali Essay", "Indian Academia", "Brain Drain", "PhD Advisor", "Samir Ranjan Das", "Visual Thinking", "Artificial Intelligence", "AI Inequality", "Gini Index", "OPNET", "InfraNodus", "Technology Reflection", "Middle Class India", "Academic Life", "Indian Education", "Science Writing", "Personal Technology Essay", "Bengali Intellectual Life", "US India", "Dengue Kolkata", "Public Health India", "Creative Nonfiction"]
 published: true
-color: "#6B5B45"
+color: "indigo"
 ---
 
-<TTS/>
+<TTS />
 
-<Pi src="/images/Compress_20260516_202547_7320.jpg" />
+<Pi src="Compress_20260516_202547_7320.jpg" />
 
-Acronyms used: PhD means Doctor of Philosophy, the highest research degree in most academic systems. US means United States. OPNET was a network simulation and modeling tool. AI means Artificial Intelligence. SUNY means State University of New York. WINGS means Wireless Networking and Systems Lab. RFC means Request for Comments, the publication series used for Internet standards and related technical documents. NSF means National Science Foundation. ACM means Association for Computing Machinery. IEEE means Institute of Electrical and Electronics Engineers.
+Acronyms used: PhD means Doctor of Philosophy, the highest university research degree. US means United States, where many Indian scientists, engineers, and professors build long careers. OPNET means Optimized Network Engineering Tools, a simulation platform once used for modeling communication networks. AI means Artificial Intelligence, software that performs tasks associated with reasoning, language, prediction, and pattern recognition. Gini index means a statistical measure of inequality, where a higher number usually means a more unequal society.
 
 ---
 
-The memory arrived with the dry smell of an old diagram.
+Some teachers do not explain the world to you. They quietly loosen one screw in your head, and twenty-five years later the whole machine begins making a different sound.
 
-Not with ceremony. Memory rarely respects protocol. It comes through a line on a screen, a box connected to another box, a graph that suddenly brings back a room, a decade, and a younger version of oneself trying to look less lost than he was.
+I remembered my PhD advisor yesterday. Dr. Samir Ranjan Das. He was once my go-to person in that fragile, nervous, immigrant-student way: not a guru on a tiger skin, not a motivational wall calendar, but a serious mind nearby when the fog came down. I still respect him deeply. That matters. Respect, after fifty, becomes rarer than good fish in a late evening market. Most things by then have been handled too much, priced wrongly, and left under a weak bulb.
 
-Yesterday, for no grand reason I can defend, I remembered Dr. Samir Ranjan Das.
+He lives in the US. I am glad he does.
 
-Samirda was my PhD advisor. At one time he was my go-to person, not in the thin modern sense in which people say "mentor" after two messages and one webinar, but in the older, weightier sense: a serious mind nearby. A mind one could turn toward when one's own thoughts were still trying to arrange themselves in a foreign country.
+That may sound odd, because we Bengalis have a theatrical attachment to return. Come back, we say. Serve the land. Build the nation. Eat muri, argue about Tagore, and die slowly under a leaking ceiling while someone’s cousin blocks your file. Bengal has a remarkable talent for losing its brilliant minds and then behaving as if the loss were an unfortunate weather condition. Ah, the monsoon came. Ah, the professor left. Ah, the drain overflowed. What can one do?
 
-I still respect him deeply.
+Quite a lot, actually.
 
-That is not casual. After fifty, respect becomes difficult to give. Too many public announcements have revealed the cardboard behind the painted backdrop. Too many clever men have turned out to be only fast talkers with good stationery. Respect becomes like good fish left in the market late in the evening: rare, inspected carefully under a tired bulb, and bought only if the hand and eye still trust each other.
+But we usually do not.
 
-Samirda lives in the US.
+There is no proper public register of this intellectual bleeding. No neat board at Howrah Station saying: this many toppers left, this many researchers left, this many teachers left, this many came back and were beaten into paste by office politics, family demands, municipal decay, and that special Indian invention, the permanently offended mediocre man. The best often go abroad and settle there. The lesser mortals who come back, like me, discover that the country has kept a welcome tray ready. On it are three items: a hockey stick, a lecture from relatives, and a silence so thick you can spread it on toast.
 
-I am glad he does.
+Samirda was light years ahead of most people I met. Technically sharp, intellectually clean, and modest in that old Bengali way which is now endangered, like the quiet tram conductor who knew every stop but never announced himself as a mobility solutions expert. He was not falsely sweet. He had no great patience for mediocrity. I liked that then. I like it more now.
 
-A Bengali saying this may sound like treason, because we have trained ourselves to perform longing for return. Come back, we say. Come back and serve Bengal, serve India, serve the old soil, the old language, the sentimental geography. Come back, eat muri, discuss culture, and then spend productive years being delayed by a clerk, flattened by committee politics, and rained upon by a ceiling that nobody with authority will repair.
+Age is a dangerous spice. Add a little and life gets flavor. Add too much and every sentence tastes burnt. These days I find myself becoming familiar with the irascible side of aging. This is not helped by living on the far edge of Kolkata, where the day begins with the sound of pressure pumps, crows, bargaining, and someone somewhere trying to repair civilization with a hammer. You step outside and immediately the city offers you five subjects for indignation before tea.
 
-Bengal has always produced brilliance. It has also perfected the art of making brilliance feel useful only after it is safely framed, garlanded, and unable to ask for laboratory funding.
+Dengue returns to Kolkata with the punctuality of a bad subscription. Every season the mosquito arrives like a tiny flying auditor and reviews our drainage, governance, garbage, and civic imagination. It finds many opportunities for improvement. The city, poor thing, has become a poster child for what happens when public health is treated like a press conference rather than a daily discipline. Stagnant water, tired hospitals, heroic nurses, private bills, political smiles. The usual orchestra.
 
-There should be a public register somewhere near Howrah Station, perhaps beside the tea stalls where people still argue as if civilization depends on yesterday's newspaper. It should list the departures. This many toppers left. This many researchers left. This many teachers left. This many returned and were worn down by family duty, office politics, municipal decay, and the splendid Indian creature who discovers procedure and mistakes obstruction for importance.
+And yet this essay is not really about dengue.
 
-No such register exists.
+It is about what a mind can do to another mind.
 
-So the bleeding continues without accounting.
+I went to Samirda in 1998 as a PhD candidate. His field was mobile wireless communication. I should confess, politely but honestly, that the subject did not make my inner sitar vibrate. Signals flew through the air, protocols negotiated, packets wandered about like confused relatives at a wedding, and I tried to look suitably scholarly. But something else happened. He introduced me to OPNET.
 
-I went to Samirda in 1998 as a PhD candidate. His field was mobile wireless communication. I will confess, respectfully, that the subject did not set fire to my inner lamp. Signals traveled through air. Protocols negotiated. Packets wandered through the invisible world like relatives at a large reception searching for the correct table. I tried to appear scholarly. I tried to look as if the invisible was exactly where I belonged.
+That was the crack in the wall.
 
-Then he introduced me to OPNET.
+I had always loved graphics. Diagrams. Visual structures. The strange relief of seeing an idea take shape. Some people can stare at code and hear music. I stare at code and often see a dead lizard until someone lets me draw the thing. Give me a graph, a state machine, a flow, a network of boxes and arrows, and suddenly the room lights up. The same lifeless instruction becomes a little city. Traffic moves. Signals change. Somebody is late. Somebody has taken the wrong turn. Now I can think.
 
-That changed something.
+This has bothered me for most of my life.
 
-Not everything. Life is not so obliging. But something.
+Not in a tragic way. More in the way a ceiling fan bothers you when it makes a faint clicking sound at night. You can live with it. But you cannot stop hearing it.
 
-I had always loved graphics, diagrams, visual structures, the relief of seeing an idea take shape in front of me. A page of code by itself can look like a sealed wall. I know there may be life, design, intention, even elegance inside it, but my first response is not music. It is suspicion.
+Why do some minds love symbols while others need shape? Why can one person build cathedrals out of pure code while another needs the scaffolding visible? Why does one brain swallow abstraction like rosogolla while another has to cut it into pieces, inspect the syrup, and ask whether the shop is trustworthy?
 
-Draw it, though, and the thing begins to breathe.
+I do not know the full answer. But I know this much: Samirda, perhaps without intending to, gave me permission to take my own way of seeing seriously. He did not drag me into his exact intellectual house and force me to sit on the approved chair. He opened a door. The room beyond it was mine.
 
-Put boxes around its parts. Connect them. Show movement. Show state. Show flow. A system that was previously a slab of instruction becomes a small city with roads, crossings, delays, accidents, and neighborhoods.
+That is a rare gift from a teacher.
 
-Then I can think.
+Many teachers hand you conclusions. Better teachers hand you tools. The best ones change your appetite. After them, you do not merely want answers. You want mechanisms. You want the back of the clock. You want to know why the trick works, why it fails, and why everyone in the audience is clapping at the wrong moment.
 
-This has followed me for most of my life as a persistent private question. Why do some minds feel at home inside symbols while others need shape before the idea becomes trustworthy? Why can some people build whole cathedrals out of code while another mind needs to see the scaffolding? Why does abstraction enter some brains smoothly, while another brain insists on cutting open the sweet, checking the texture, and asking which shop made it?
+This is why I still find visual tools fascinating. Take something like InfraNodus. It lets you look at the internal structure of a text as a network of ideas. Suddenly a paragraph is no longer a paragraph. It is a neighborhood. Some words are crowded markets. Some are lonely tea stalls. Some are bridges. Some are decorative lampposts pretending to be infrastructure. You begin to see where the thought is dense, where it is thin, where it repeats itself, where it hides its real obsession.
 
-I do not know the full answer.
+That matters even more now because AI has entered the room wearing a nice suit and speaking fluent confidence. It gives answers. Clean answers. Smooth answers. Sometimes useful answers. Sometimes rubbish in a silk kurta. But what is the shape inside the answer? What did it connect? What did it ignore? Which words became magnets? Which ideas were pushed to the edge like poor people during a beautification drive?
 
-But I know what Samirda did for me, perhaps without intending to. He made my way of seeing feel legitimate. He did not force me to live inside his exact intellectual house. He showed me a door, and beyond it was a room where graphics, systems, simulation, networks, and thought could belong together.
+A black box is not made less black because it speaks politely.
 
-That is no small gift.
+This is where the memory of Samirda returns. The next few decades will need people like him. Not influencers. Not panelists. Not professional visionaries who say “disruption” with the seriousness of a man announcing a cyclone. We will need serious minds with technical depth, moral impatience, and the ability to detect nonsense before it becomes a government scheme, a corporate platform, or a university brochure.
 
-Some teachers hand out conclusions. Better teachers hand out tools. The best teachers alter appetite itself. After them, an answer is not enough. You want the mechanism. The hidden hinge. The back of the clock. The failed gear. The reason the trick works, the reason it breaks, and the reason the audience applauds before understanding what happened.
+Unfortunately, academia often cuffs such minds. A professor should be a live wire. Too often the system turns him into a form-filling mammal. Grants, committees, administrative rituals, performance metrics, ranking games, polite frauds. The mind that could help shape a country is made to attend meetings where everyone says “stakeholder” and nobody risks a thought.
 
-This is why visual tools still hold me. InfraNodus, for example, fascinates me because it makes text visible as a network of ideas. A paragraph stops being flat and becomes a neighborhood. Some words sit like crowded markets. Some remain like lonely tea stalls at the edge of a para. Some act as bridges. Some pretend to be bridges but are only decorative lampposts with good posture.
+Meanwhile the world is being steered by brawn and bluster. India is not unique in this. We should not flatter ourselves even in failure. Everywhere, money has grown muscles. Noise has grown wings. Mediocrity has discovered branding. And now AI arrives, not as a neutral angel, but as a machine entering an already unequal room.
 
-You can see density, repetition, absence, obsession. You can see where a thought is working and where it is only making noise.
+Here is the part that should worry us.
 
-That matters even more now because AI has arrived with excellent manners and a frighteningly smooth voice.
+AI may increase inequality not because it is evil, but because tools usually strengthen the hands that already have grip. The person with data, capital, English, bandwidth, institutional access, and legal cover gets a telescope. The person without them gets a fogged window. Then everyone is told the future is here. Wonderful. For whom?
 
-It gives answers. Some are useful. Some are wrong. Some are rubbish in a silk kurta. The danger is not merely that AI may answer badly. Human beings have always been able to do that after two cups of tea and one newspaper editorial. The deeper problem is that the answer often arrives without an obvious shape.
+The Gini index may not care about our poetry. It measures inequality with the cold manners of a clerk. But behind the number are human days. A man waiting for freelance work. A woman teaching tuition in a damp room. A graduate applying for jobs that ask for five years of experience in a technology invented last Tuesday. A middle-aged single fellow in the southern fringe of Kolkata, drinking tea that has gone slightly overboiled, wondering whether his life became a footnote while the world upgraded its software.
 
-What did it connect? What did it ignore? Which words became central? Which ideas were pushed to the margin like poor people during a beautification drive? Where is the structure of the thought?
+This is not self-pity. Self-pity is too luxurious. This is inventory.
 
-A black box does not become transparent because it speaks politely.
+And yet, strange as it sounds, gratitude survives.
 
-This is where my memory of Samirda returns with force. The coming decades will need serious minds with technical depth, impatience toward nonsense, and enough moral steadiness to identify fraud before it becomes a platform, a policy, a grant proposal, a national mission, or a corporate brochure.
+I remember Dr. Samir Ranjan Das not because he solved my life. Nobody does that. Lives are not equations, and anyone who claims to solve them is usually selling a course. I remember him because he helped awaken a form of curiosity that remained mine through failure, detour, illness, return, unemployment, consulting scraps, and the long unglamorous business of trying to keep one’s mind from rusting.
 
-Unfortunately, academia often takes such minds and ties their shoelaces together. A professor should be a live wire. Too often the system turns him into a form-filling functionary: grants, committees, administrative rituals, performance measures, ranking exercises, meeting after meeting where everyone says "stakeholder" and nobody risks an honest thought.
+That is not a small thing.
 
-A mind that could help shape a country is asked to spend its best hours satisfying the paperwork appetite of institutions.
+A teacher may not give you a destination. Sometimes he gives you a lantern. Years later, when the road is broken, the city is feverish, the bank balance is sulking, and the future is behaving like a badly trained goat, you discover the lantern still works.
 
-Meanwhile the world is being run more and more by money with muscles. Noise has learned to fly. Mediocrity has discovered branding. Into this already unequal room walks AI, not as a neutral angel, but as a machine that will likely strengthen the hands already gripping the table.
+So yes, I am glad Samirda stayed in the US. Let him keep august company. Let him be among people and institutions that know at least somewhat better how to use a mind like his. Bengal will still produce brilliance. It always has. But unless it learns how to hold brilliance without strangling it, the best minds will keep leaving, and the rest of us will keep standing under the leaking roof, arguing about heritage while the water rises around our ankles.
 
-AI may increase inequality not because it has evil intentions, but because powerful tools usually favor those who already possess power. The person with data, capital, English, bandwidth, institutional access, and legal cover receives a telescope. The person without these things receives a fogged window. Then everyone is told the future has arrived.
-
-Wonderful.
-
-For whom?
-
-The Gini index measures inequality with the cold manners of a clerk. But behind that number are actual days: a graduate applying for jobs that demand five years of experience in a technology invented last Tuesday, a person teaching tuition in a damp room, a freelancer waiting for payment, a middle-aged fellow in the southern fringe of Calcutta drinking overboiled tea and wondering whether his life has become a footnote while the world upgrades its software.
-
-That is not self-pity.
-
-It is inventory.
-
-And yet gratitude remains, stubborn and slightly embarrassing.
-
-I remember Dr. Samir Ranjan Das not because he solved my life. Nobody does that. Lives are not equations, and anyone offering a final solution to yours is usually selling a course, a retreat, or a subscription. I remember him because he strengthened a form of curiosity that stayed with me through failure, return, scattered consulting work, and the long unglamorous labor of keeping the mind from rusting.
-
-That matters.
-
-A teacher may not give you a destination. Sometimes he gives you a way of holding a lantern. Years later, when the road is broken, the city is feverish, the bank balance is sulking, and the future behaves without discipline, you notice that the lantern still gives off a little light.
-
-So yes, I am glad Samirda stayed in the US.
-
-Let him remain among people and institutions that know somewhat better how to use a mind like his. Bengal will keep producing brilliance; that has never been the problem. The problem is what Bengal does afterward. Unless it learns to hold serious minds without choking them, the best will keep leaving, and the rest of us will keep standing under the leaking roof, arguing about heritage while the water rises around our ankles.
+The mosquito will hum.
 
 The machine will think.
 
-The city will argue.
+And somewhere, if we are lucky, one good teacher will still open one small door in one confused student’s head.
 
-And somewhere, if luck has not completely abandoned us, one good teacher will still open a small door inside one confused student's head.
-
-P.S. References: Dr. Samir R. Das's public Stony Brook University profile; RFC 3561.
+P.S. Dr. Samir R. Das is Professor and Chair of Computer Science at Stony Brook University, part of the State University of New York system. His work is in mobile and wireless networking, especially protocols, systems, and performance evaluation. He earned his PhD in Computer Science from Georgia Institute of Technology, after earlier studies at Jadavpur University in Kolkata and the Indian Institute of Science in Bangalore, and worked briefly at Indian Statistical Institute. Before Stony Brook, he held faculty positions at the University of Texas at San Antonio and the University of Cincinnati. He directs the Wireless Networking and Systems Lab, known as WINGS, and is one of the authors of RFC 3561, the Ad hoc On-Demand Distance Vector routing protocol for mobile ad hoc networks. His public Stony Brook profile also notes his NSF CAREER Award, ACM MobiSys Best Paper Award, IEEE Computer Society Distinguished Visitor role, major editorial service, and leadership in premier mobile networking conferences.

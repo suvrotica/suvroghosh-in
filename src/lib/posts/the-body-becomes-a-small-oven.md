@@ -1,10 +1,10 @@
 ---
 title: "The Body Becomes a Small Oven"
-description: "A Calcutta summer public-health note on heat, sleep, sugary relief, unsafe roadside drinks, dehydration, shade, and the ordinary biology of suffering in a city that needs cooling."
+description: "A Calcutta summer note on heat, insomnia, bipolar disorder, unsafe roadside cold drinks, diabetes, obesity, and the ordinary biology of suffering in a city that has forgotten shade."
 date: "2026-05-23"
 thumbnail: "/images/Compress_20260523_054251_1508.jpg"
 category: "Public Health"
-tags: ["Public Health", "Heat Wave", "Extreme Heat", "Calcutta", "Kolkata", "Urban Heat", "Climate Health", "Dehydration", "ORS", "Clean Water", "Food Safety", "Shade", "SuvroGhosh"]
+tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengali Life", "Heat Wave", "Extreme Heat", "May Heat", "Urban Heat", "Climate Change", "Public Health India", "Sleep", "Insomnia", "Bipolar Disorder", "Mental Health", "Diabetes", "Obesity", "Sugary Drinks", "Street Food Hygiene", "Roadside Juice", "Ice Cream", "Dehydration", "Heat Exhaustion", "Heatstroke", "ORS", "Urban Poverty", "Shade", "Clean Drinking Water", "Kolkata Summer", "Indian Cities", "Climate Health", "Middle Class Life", "Lower Middle Class India"]
 published: true
 color: "orange"
 ---
@@ -13,48 +13,132 @@ color: "orange"
 
 <Pi src="Compress_20260523_054251_1508.jpg" />
 
-The bedsheet is warm before the body touches it.
+Acronyms and short explanations:
 
-That is how summer announces itself in Calcutta. Not as weather, exactly, but as occupation. The room is taken first. Then the chair. Then the pillow. Then the glass of water beside the bed. By late May, even the ceiling fan seems less like a machine and more like a tired witness rotating above a minor civic failure.
+ORS — Oral Rehydration Solution, a measured mixture of salts and sugar used to replace water and electrolytes lost through sweating, diarrhea, or dehydration.
 
-Heat is physical, but it is also administrative. It forces the body to submit files all night. Drink water. Sweat. Fail to cool. Turn the pillow. Sit up. Lie down. Eat less. Eat badly. Wake at 2:30. Listen to the pump outside. Wonder why a city so old still behaves as if shade were a luxury item.
+---
 
-The body becomes a small oven because metabolism continues even when the air refuses mercy. Digestion makes heat. Movement makes heat. Worry makes heat in its own way, though not in the thermometer's vocabulary. Usually the body manages by sweating and shifting blood flow toward the skin. But humidity is a clerk with a missing stamp. Sweat sits there, sticky and underemployed, unable to evaporate efficiently. The cooling system has reported for duty and found the office locked.
+Heat is not a temperature in Calcutta. Heat is a tenant.
 
-WHO's India heat-wave page notes that heat waves usually occur from March to June, sometimes extending into July, with May as the peak month. The official criteria speak in thresholds and departures from normal. That language is necessary. It helps governments issue alerts. But the lived version is more intimate. Heat is whether a worker can continue at noon. Whether an older person in a top-floor room can sleep. Whether a delivery rider drinks water or another cold bottle of sugar. Whether a bus stop has shade. Whether a public tap works. Whether a child's stomach survives roadside ice.
+It enters the room around April with one small suitcase, says it will stay only a few days, then by May it has taken the bed, the pillow, the chair, the drinking glass, the towel, the lungs, and finally the mind. You lie there at night under a fan that is rotating with the confidence of a cabinet minister and producing the effect of a spoon stirring soup in hell.
 
-A weather app makes heat look democratic. It is not.
+Sleep does not come.
 
-The same temperature lands differently on different bodies and different bank balances. One person has an air-conditioned room and a flexible afternoon. Another has tin, concrete, street work, a long commute, debt, and no place to cool down. Add age, chronic disease, poor sleep, outdoor labor, poor housing, dehydration, and lack of shade, and the same afternoon becomes a different event altogether.
+For a normal person, this is bad. For a person with bipolar disorder, this is not merely bad. This is the local train arriving late, then catching fire, then announcing it will stop at every station of memory, fear, regret, hunger, irritation, and that one embarrassing thing you said in 2009. Bipolar brains like sleep the way old houses like roof repairs. You neglect it, and soon something starts leaking.
 
-Heat illness is not always cinematic. It can begin as headache, weakness, dizziness, nausea, cramps, irritability, confusion, or a person simply looking wrong. The practical response should be quick and plain: move to a cooler place, loosen tight clothing, cool the skin, sip safe fluids if the person is alert, and seek urgent care if there is confusion, collapse, persistent vomiting, very hot skin, or worsening symptoms. The body is clever, but it is not endlessly negotiable.
+I already have insomnia. It is an old acquaintance. It does not knock. It just sits on the chest at 2:40 in the morning and says, “So, shall we inspect your entire life?”
 
-Then comes the cold drink.
+Then the heat joins.
 
-In a Calcutta summer, a chilled bottle can feel like mercy. The cap opens, the throat receives sweetness, and for ten seconds civilization seems repaired. I understand the pleasure. Anyone who pretends not to understand it is either unusually disciplined or lying for public benefit.
+Now it becomes a committee.
 
-But public health lives in the bill that arrives later. Sugary drinks are not hydration with a halo. They are sugar delivery systems with excellent marketing. They may briefly comfort the mouth while doing little for the body's longer arithmetic. For people already struggling with blood sugar, weight, heat fatigue, or poor diet, summer can become an organized ambush: sweet tea, cold drinks, packaged juice, ice cream, syrup, snacks, and the vague belief that sweating has earned every indulgence.
+There is the fan, making a circular argument. There is the bedsheet, warm as stale toast. There is the pillow, which has become a fried luchi. There is the body, which is not lying down so much as gently cooking. The strangest part is this: I become afraid of eating.
 
-Roadside juice creates a different problem. The glass is cold, colorful, and immediate. The water may not be safe. The ice may have its own history. The fruit may have sat too long in heat. The machine may not have been cleaned properly. None of this is a complaint against street food as culture. It is a complaint against heat plus unsafe water plus storage plus poverty plus open-air commerce, all combining into a small laboratory near a drain.
+Not dramatically. I do not look at dal and rice and see a tiger. But I can feel the body heating up from inside after food, as if some small cook in the stomach has opened a coal oven and decided to make breakfast for the entire para. Eat a little, and the body says, “Excellent. Now we shall produce heat.” This is not imagination. Digestion costs energy. Metabolism is not a poem. It is work. Work makes heat.
 
-The neat advice is to drink clean water.
+Usually we do not notice. In May, in Calcutta, in a room where the air has the moral character of wet cement, you notice.
 
-Correct. Also incomplete.
+You notice everything.
 
-Where is the clean water? Who refilled it? Can the outdoor worker carry enough? Does the public place have a working tap? Can the family afford safer options? Does the commuter have shade while waiting? Does the contractor change work hours when the afternoon becomes dangerous? Public-health instructions often fail because they are written for people who already have the conditions needed to obey them.
+You notice the sweat that refuses to leave. Sweat is supposed to evaporate and cool you. But humidity comes along like a lazy clerk and says, “File pending.” The sweat stays on the skin, sticky and useless, like a promise from a municipal department. You drink water. You sit up. You lie down. You turn the pillow. You turn yourself. You become a human kebab rotating slowly under a fan.
 
-So yes, keep water nearby. Use oral rehydration solution when heavy sweating or dehydration makes it sensible. Eat lighter if large meals make the body feel hotter. Avoid heroic oily dinners in peak heat. Watch urine color. Take dizziness seriously. Check on older neighbors and people living under roofs that trap heat. Do not treat confusion in heat as drama. Treat it as danger.
+And still I have a roof.
 
-But the city also needs larger repairs. Trees are not decoration. Shade is not sentiment. Public drinking water is not charity. Work-hour changes are not softness. Heat alerts must reach people who do not read English advisories on expensive phones. Food safety must include the reality of outdoor vending, not only the fantasy of stainless-steel kitchens.
+This is the part that should make any decent person pause before making too grand a tragedy out of his own discomfort. I have a roof. I have a fan. I have water. I have a room. Many people in this city have only the sun, tin, tar, concrete, dust, and the clock.
 
-Climate is not only glaciers and charts. It is whether a person in Behala can sleep. Whether a worker in a lane can pause in shade. Whether a child drinks safe water. Whether the juice stall has clean ice. Whether the city understands that human beings are made mostly of water and quickly punished optimism.
+The rickshaw puller does not get to say, “I am feeling thermally challenged today.” The construction worker cannot inform cement that his electrolytes are in decline. The delivery boy cannot ask the afternoon to wait because his pulse is behaving like a tabla player with a deadline. The old woman in the tin-roofed room cannot uninstall May.
 
-At night, the fan keeps turning. It does what it can. The bedsheet remains warm. The glass beside the bed warms too, losing its small promise by degrees.
+This is how heat becomes cruel. It does not strike everyone equally. It looks democratic from the weather app, but it is a zamindar in practice.
 
-The body waits for morning as if morning will be kinder.
+One man experiences 39 degrees as inconvenience. Another experiences it as danger. Add age, diabetes, obesity, blood pressure, dehydration, mental illness, certain medicines, outdoor work, poor sleep, bad housing, and lack of shade, and the same sun becomes a different animal altogether.
 
-In May, that is not always a reasonable hope.
+You think heatstroke is a dramatic event. A man collapses, people shout, ambulance comes, cinema music rises.
 
-## P.S. References
+Not always.
 
-- [WHO India heat waves](https://www.who.int/india/heat-waves)
+Sometimes heat first appears as tiredness. Irritability. Headache. Dizziness. A dry mouth. Nausea. Cramps. Confusion. A strange weakness. A person who was merely sweating five minutes ago suddenly looks wrong. The body is a small kingdom, and in heat illness the ministries start failing one by one. Cooling, water balance, salt balance, heart rate, brain function. Nothing makes speeches. Things simply stop cooperating.
+
+That is the frightening bit.
+
+The body is clever, but not magical.
+
+Now look at the sketch. The large Bengali under the May sun, head thrown back, pouring down a cold sugary drink as if salvation has been bottled and sold for thirty rupees. It is grotesque, yes. It is comic, yes. It is also painfully accurate. I know that man. I am that man some days. So are many of us.
+
+Under that sun, a cold bottle is not a beverage. It is an emotion.
+
+The cap opens. The fizz rises. The throat receives one icy, sweet, glorious lie. For ten seconds, life becomes manageable. The road looks less cruel. The shirt sticks a little less obscenely. The universe appears to have reconsidered its position.
+
+Then the bill arrives inside the body.
+
+Calcutta is already walking into diabetes and obesity like a sleepy uncle walking into a wedding buffet. Bellies are everywhere. Sugar is everywhere. Sweet tea, cold drinks, packaged juice, syrupy sharbat, mishti doi, ice cream, biscuits, cakes, little snacks, big snacks, snacks hiding inside other snacks. We live in a civilization where even a harmless visit to someone’s house can become a carbohydrate ambush.
+
+And please, before anyone becomes holy with a steel glass of boiled water, let us be honest. Sweet things are not evil. Ice cream is not a criminal conspiracy. A cold drink on a hot day is one of the small pleasures left to people who cannot fly to hill stations, cannot install expensive cooling, and cannot sit all afternoon inside a shopping mall pretending to inspect shirts.
+
+The problem is not pleasure.
+
+The problem is that our summer survival kit has become sugar, dubious ice, and hope.
+
+Roadside juice looks innocent. Orange. Green. Red. A little crushed ice. A little salt. A little lemon. A man with quick hands. A plastic glass washed in water whose family history should not be investigated too closely. Beside him the drain conducts its own civic seminar. Flies attend regularly.
+
+This is not class disgust. I have eaten from enough roadside stalls to qualify as a digestive research project. I am not pretending to be some porcelain gentleman from a hill station bungalow. Street food is part of the city’s bloodstream. The problem is heat plus water plus storage plus hygiene plus human poverty plus bacteria, all doing a group dance in the open air.
+
+Cut fruit sitting in heat is not fruit anymore. It is a small laboratory.
+
+Ice made from unsafe water is not cooling. It is a Trojan horse with frost on its head.
+
+A juice machine that has not been properly cleaned is not rustic charm. It is plumbing with ambition.
+
+And yet people buy these things because the alternative is what? Walk under the sun with your tongue dry as old newspaper? Drink from a public tap if you can find one, and then gamble on the water? Carry clean water from home like a wise person, assuming home had enough clean water, and assuming life gave you time to be wise?
+
+This is where the neat advice breaks.
+
+Public health people say drink clean water. Correct. Very good. Sensible. Also: where?
+
+They say avoid the noon sun. Correct. Also: will the contractor pay you to avoid it? Will the food delivery app pause your rent? Will the office change attendance rules because your kidneys have philosophical objections to May?
+
+They say eat light. Correct. Also: have you seen what stress does to appetite? Some people cannot eat at all in heat. Some eat sugar because sugar is cheap comfort. Some drink cold soda because the body wants relief immediately, not after a balanced lecture.
+
+This is why I have grown suspicious of the word “lifestyle.” It often means, “We have arranged society badly, but please blame your own habits.”
+
+Yes, individual habits matter. I am not saying otherwise. Drink water before thirst becomes a police notice. Keep ORS at home if you sweat heavily or feel depleted. Eat smaller meals if big meals turn your stomach into a coal stove. Avoid heroic oily dinners in peak heat. Watch urine color. Rest in shade. Wet your head, arms, and neck if you are overheating. Check on older people. Take confusion and fainting seriously. If someone is hot, disoriented, vomiting, collapsing, or not making sense, do not debate philosophy. Cool them and get medical help.
+
+But do not stop there.
+
+A hot city needs shade the way a lung needs air. Trees are not decoration. Public drinking water is not charity. Cool shelters are not luxury. Safe food handling is not a middle-class hobby. Heat alerts must reach people who do not read English advisories on expensive phones. Work hours must bend when the sun becomes violent. Tin roofs need attention. Dense lanes need airflow. Pavements need trees. Bus stops need shade. The poor need more than instructions.
+
+They need conditions under which instructions are possible.
+
+Meanwhile, at home, the ordinary day continues with comic cruelty. The phone keeps showing news, outrage, AI miracles, political shouting, celebrity foolishness, and people explaining the nation’s destiny while I am mainly trying to decide whether one more glass of water will make me pee all night or save me from becoming a dried prawn. Outside, dogs bark at something only dogs can see. Somewhere a pump starts. Somewhere a transformer hums. Somewhere a man coughs. Somewhere a pressure cooker whistles late, because in Calcutta even dinner sometimes misses its train.
+
+The fan keeps turning.
+
+It deserves respect. Not admiration, exactly. Respect. It is doing what it can, like a tired schoolteacher in a class of seventy boys.
+
+But some nights the fan is not enough. Sleep does not arrive. The body feels swollen with heat. The mind starts making lists. Old failures. New worries. Rent. Work. Money. Health. Loneliness. The great circus of being fifty-one, single, lower-middle-class, educated enough to understand many things, and still not rich enough to escape the weather.
+
+There is a special comedy in that. Not happy comedy. Bengali comedy. The kind where you laugh because the alternative is to throw a chair at the wall, and chairs are expensive.
+
+The sketch is funny because it is excessive. The man is too large, too sweaty, too desperate, too bodily. But that is also why it works. Heat removes dignity. It makes philosophers scratch their necks. It makes respectable uncles lift their vests. It makes office clerks dream of ice. It makes thin people irritable and fat people miserable and old people vulnerable and mentally ill people more fragile than anyone wants to admit.
+
+Heat is not just outside.
+
+It enters the nervous system.
+
+It ruins sleep. Bad sleep worsens mood. Bad mood worsens appetite. Bad appetite worsens blood sugar. High blood sugar worsens dehydration. Dehydration worsens heat tolerance. Round and round it goes, like a ceiling fan powered by bad luck.
+
+And this is the small door into the large room: climate is not just glaciers and graphs. Climate is whether a man in Behala can sleep. Whether a woman in a tin room can breathe. Whether a diabetic grandfather drinks water or orange soda. Whether the juice stall has clean ice. Whether the worker gets shade. Whether the city remembers that human beings are made mostly of water and foolish optimism.
+
+In May, both run low.
+
+Tonight I will try the usual little rituals. Water beside the bed. A lighter dinner. No heroics with fried food. A wet towel. Maybe ORS if the sweating becomes ridiculous. Phone away, though the phone has the personality of a gossiping aunt and refuses exile. I will not pretend this is a grand solution. It is not. It is survival by small adjustments.
+
+But the city needs larger adjustments.
+
+Not slogans. Not posters of smiling people drinking water. Not speeches about resilience, that fashionable word used when authorities want citizens to suffer politely. We need shade, water, hygiene, cooling, work-hour changes, diabetes awareness, food safety, and some basic respect for biology.
+
+Because biology does not care about our speeches.
+
+The body is a loyal servant until it is not. Then it becomes a locked room with smoke under the door.
+
+And in Calcutta’s May heat, many people are already inside that room, knocking.

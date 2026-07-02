@@ -3,61 +3,23 @@
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(501,339)" font-size="118" style="fill:#b6c3dd">AI</text>
 <text transform="translate(126,200)" font-size="86" style="fill:#a9b7a3">Songs</text>
-<text transform="translate(440,190)" font-size="70" style="fill:#c7d7b5">Quite</text>
-<text transform="translate(401,455)" font-size="70" style="fill:#d5d2c2">Suspicion</text>
-<text transform="translate(692,244)" font-size="70" style="fill:#d6a79f">Curiosity</text>
-<text transform="translate(429,578)" font-size="70" style="fill:#c7d7b5">Important</text>
-<text transform="translate(451,699)" font-size="70" style="fill:#c49a6c">Pretend</text>
-<text transform="translate(668,338)" font-size="70" style="fill:#b6c3dd">Music</text>
-<text transform="translate(780,493)" font-size="51" style="fill:#9fc9c5">Play</text>
-<text transform="translate(107,529)" font-size="51" style="fill:#c49a6c">Button</text>
-<text transform="translate(1194,589) rotate(-90)" font-size="51" style="fill:#c49a6c">Sits</text>
-<text transform="translate(621,59)" font-size="51" style="fill:#c49a6c">Calm</text>
-<text transform="translate(104,348)" font-size="51" style="fill:#9fc9c5">Arrogance</text>
-<text transform="translate(996,714)" font-size="51" style="fill:#d9c89e">Small</text>
-<text transform="translate(823,154)" font-size="51" style="fill:#b6c3dd">Triangle</text>
-<text transform="translate(1079,573) rotate(-90)" font-size="51" style="fill:#b6c3dd">Press</text>
-<text transform="translate(449,112)" font-size="51" style="fill:#b6c3dd">Synthetic</text>
-<text transform="translate(165,313)" font-size="51" style="fill:#d88988">Voice</text>
-<text transform="translate(177,129)" font-size="51" style="fill:#d88988">Steps</text>
-<text transform="translate(958,333)" font-size="51" style="fill:#d88988">Room</text>
-<text transform="translate(162,609)" font-size="51" style="fill:#e0b879">Human</text>
-<text transform="translate(58,666)" font-size="51" style="fill:#9fc9c5">Absent</text>
-<text transform="translate(692,389)" font-size="51" style="fill:#d6a79f">Carrying</text>
-<text transform="translate(875,652)" font-size="51" style="fill:#d88988">Tune</text>
-<text transform="translate(1008,628)" font-size="51" style="fill:#d88988">Seems</text>
-<text transform="translate(184,86)" font-size="51" style="fill:#c7d7b5">Borrowed</text>
-<text transform="translate(57,460)" font-size="51" style="fill:#d5d2c2">Weather</text>
-<text transform="translate(779,86)" font-size="51" style="fill:#d88988">Grammar</text>
-<text transform="translate(377,521)" font-size="51" style="fill:#b6c3dd">Somewhere</text>
-<text transform="translate(550,622)" font-size="51" style="fill:#d88988">English</text>
-<text transform="translate(263,272)" font-size="51" style="fill:#d5d2c2">Gathered</text>
-<text transform="translate(30,403)" font-size="51" style="fill:#8fb7d0">Experiments</text>
-<text transform="translate(1062,410)" font-size="51" style="fill:#c49a6c">Mood</text>
-<text transform="translate(1000,75)" font-size="51" style="fill:#d88988">Language</text>
-<text transform="translate(12,709)" font-size="51" style="fill:#c49a6c">Machinemade</text>
-<text transform="translate(4,43)" font-size="51" style="fill:#c49a6c">Performance</text>
-<text transform="translate(1085,280)" font-size="51" style="fill:#c7d7b5">Listen</text>
-<text transform="translate(1083,133)" font-size="51" style="fill:#d88988">Useful</text>
-<text transform="translate(1040,197)" font-size="51" style="fill:#c49a6c">Harder</text>
-<text transform="translate(824,708)" font-size="51" style="fill:#d9c89e">Cure</text>
-<text transform="translate(4,84)" font-size="51" style="fill:#9fc9c5">Means</text>
-<text transform="translate(370,391)" font-size="51" style="fill:#c7d7b5">Artificial</text>
-<text transform="translate(1244,683) rotate(-90)" font-size="51" style="fill:#b6c3dd">Intelligence</text>
-<text transform="translate(4,254)" font-size="51" style="fill:#c7d7b5">Software</text>
-<text transform="translate(993,619) rotate(-90)" font-size="51" style="fill:#8fb7d0">Generates</text>
-<text transform="translate(360,669) rotate(-90)" font-size="51" style="fill:#8fb7d0">Arranges</text>
-<text transform="translate(438,60)" font-size="51" style="fill:#9fc9c5">Sound</text>
-<text transform="translate(825,281)" font-size="42" style="fill:#c49a6c">Learning</text>
-<text transform="translate(98,565)" font-size="42" style="fill:#8fb7d0">Patterns</text>
-<text transform="translate(1037,542) rotate(-90)" font-size="42" style="fill:#d88988">Machine</text>
-<text transform="translate(842,663) rotate(-90)" font-size="42" style="fill:#d9c89e">Result</text>
-<text transform="translate(7,122)" font-size="42" style="fill:#9fc9c5">Effect</text>
-<text transform="translate(797,44)" font-size="42" style="fill:#c49a6c">Listener</text>
-<text transform="translate(858,556)" font-size="42" style="fill:#d88988">Song</text>
-<text transform="translate(638,281)" font-size="42" style="fill:#c49a6c">Need</text>
-<text transform="translate(1074,39)" font-size="42" style="fill:#c7d7b5">Pulse</text>
-<text transform="translate(1088,234)" font-size="42" style="fill:#9fc9c5">Leave</text>
-<text transform="translate(649,174)" font-size="42" style="fill:#c49a6c">Bengali</text>
-<text transform="translate(16,612)" font-size="42" style="fill:#d9c89e">Hindi</text>
+<text transform="translate(476,195)" font-size="62" style="fill:#c7d7b5">Acronyms</text>
+<text transform="translate(977,406)" font-size="62" style="fill:#d5d2c2">Expanded</text>
+<text transform="translate(863,151)" font-size="62" style="fill:#d6a79f">Artificial</text>
+<text transform="translate(285,541)" font-size="62" style="fill:#c7d7b5">Intelligence</text>
+<text transform="translate(426,635)" font-size="62" style="fill:#c49a6c">Software</text>
+<text transform="translate(161,395)" font-size="62" style="fill:#b6c3dd">Generates</text>
+<text transform="translate(420,479)" font-size="62" style="fill:#9fc9c5">Classifies</text>
+<text transform="translate(623,403)" font-size="62" style="fill:#c49a6c">Predicts</text>
+<text transform="translate(100,699) rotate(-90)" font-size="62" style="fill:#c49a6c">Summarizes</text>
+<text transform="translate(1005,64)" font-size="62" style="fill:#c49a6c">Acts</text>
+<text transform="translate(763,310)" font-size="62" style="fill:#9fc9c5">Patterns</text>
+<text transform="translate(604,60)" font-size="62" style="fill:#b6c3dd">Data</text>
+<text transform="translate(524,121)" font-size="62" style="fill:#c49a6c">Related</text>
+<text transform="translate(84,317)" font-size="62" style="fill:#b6c3dd">Posts</text>
+<text transform="translate(870,536)" font-size="62" style="fill:#d88988">Music</text>
+<text transform="translate(18,252)" font-size="62" style="fill:#d88988">Hindi</text>
+<text transform="translate(948,239)" font-size="62" style="fill:#d88988">Pests</text>
+<text transform="translate(1096,687)" font-size="62" style="fill:#e0b879">Love</text>
+<text transform="translate(137,670)" font-size="62" style="fill:#d5d2c2">Bengali</text>
 </svg>

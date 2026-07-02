@@ -1,54 +1,123 @@
 ---
 title: "The Great Indian Fence-Sitter"
-description: "A satirical Society essay on false balance, moral evasion, and the habit of calling cowardice maturity when fraud and nonsense need to be named plainly."
+description: "A sharp satirical essay on the Indian habit of calling cowardice balance, fraud enterprise, and stupidity culture while ordinary people are asked to adjust."
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_145142_2841.jpg"
 category: "Society"
-tags: ["India", "Indian Society", "False Balance", "Public Discourse", "Corruption", "Civic Failure", "Political Satire", "Middle Class India", "Calcutta", "SuvroGhosh"]
+tags: ["India", "Indian Society", "Indian Politics", "Social Satire", "Political Satire", "Indian Middle Class", "Corruption in India", "Fraud in India", "Fence Sitting", "False Balance", "Moral Cowardice", "Public Discourse", "YouTube Commentary", "Indian Media", "Bureaucracy", "Institutional Decay", "Civic Failure", "Middle Class India", "Calcutta", "Kolkata", "Bengali Essay", "Social Commentary", "SuvroGhosh"]
 published: true
 color: "slate"
 ---
+
+
 
 <TTS />
 
 <Pi src="Compress_20260613_145142_2841.jpg" />
 
-The fence is always comfortable for the person who does not have to build the house. He sits there, adjusts his voice, and announces that both sides have a point.
+
+There is a particular Indian I have met too many times in life, and not always from the safe zoological distance advised by doctors, lawyers, and experienced aunties, who does not take a position. Taking a position requires spine. What he does instead is lower his entire oily administrative backside onto a fence and announce, with the grave expression of a man who has discovered moral philosophy inside a cold singara, that both sides have a point.
 
 Both sides.
 
 Always both sides.
 
-One side has lied. The other side has been cheated. One side has broken a public trust. The other is asking why the trust is on the floor. One side has converted a civic problem into private gain. The other is still holding the bill. And there sits the great Indian fence-sitter, praising balance as if balance were always wisdom.
+One side is stupidity. The other side is fraud. And there he sits, the great national centaur of evasion, one buttock warmed by idiocy, the other lovingly polished by scam, his middle so tightly joined to the fence that if you pulled him off suddenly, the fence would limp for three generations.
 
-Balance is not always wisdom. Sometimes it is fear wearing polished shoes.
+I am tired of these people.
 
-There are situations where the middle is necessary. Most adult life is messy. Evidence takes time. People are complicated. Every accusation should not become a hanging. A society without due process becomes another kind of cruelty.
+Not tired in the mild Bengali way, where one says “ki bolbo,” drinks tea from a cup with a hairline crack, and returns tomorrow to the same swamp with better pronunciation. I mean tired in the marrow. Tired like an old ceiling fan in June, rotating not from enthusiasm but from ancestral duty. Tired like a government file that has been eaten by silverfish, humidity, paan spit, and the idea of procedure. Tired like a man in a small rented room on the southern fringe of Calcutta, opening YouTube before breakfast and realizing that the day has already been pre-ruined by a panel discussion.
 
-But there is also the false middle: the place where fraud and stupidity meet for tea while respectable people call the meeting nuanced.
+You know the kind.
 
-India loves the false middle because it protects relationships, status, networks, future favors, and the small hope that no one will ask us to pay the price of saying a clear thing. We say maybe. We say let us not generalize. We say there may be another angle. We say do not be negative. We say both parties are responsible.
+Someone has lied. Someone has stolen. Someone has converted public trust into private marble flooring. A bridge has cracked, a bank has evaporated, a hospital has behaved like a ransom gang with air-conditioning, a politician has defected with the innocence of a goat wandering into another field, and some businessman whose moral compass points directly toward the nearest invoice has given a lecture on national progress.
 
-Sometimes those sentences are careful. Often they are umbrellas.
+Then comes the fence-sitter.
 
-Under them stand every delayed file, fake bill, theatrical expert, dishonest contractor, corrupt local power, loud empty leader, and family elder who has mistaken age for accuracy.
+He arrives with folded hands, soft voice, well-oiled hair, and the spiritual temperature of refrigerated khichuri.
 
-The fence-sitter does not always support the wrong thing directly. That would be too crude. He softens it. He translates theft into irregularity, fear into maturity, lies into narrative, cowardice into pragmatism, and public anger into bitterness.
+“Let us not jump to conclusions.”
 
-This is how rot moves smoothly.
+“Maybe there is another angle.”
 
-Adjustment is the national grammar of survival. Walk around the broken road. Learn the side entrance. Find the person who knows the person. Do not offend the wrong official. Do not name the cheat until the cheat cheats someone important. Keep life moving. There is practical wisdom here, because the honest citizen cannot fight every battle without losing rent, sleep, work, or health.
+“Maybe both parties are responsible.”
 
-But adjustment becomes poisonous when it turns into moral fog.
+“Maybe we should not be negative.”
 
-Children notice. Students notice. Workers notice. They see the fool rewarded, the cheat protected, the careful person mocked, the honest person called difficult. After enough lessons, they learn the real syllabus: law is negotiable, skill optional, honesty decorative, fraud respectable if performed at sufficient scale.
+Notice the “maybe.” It is his umbrella, his mosquito net, his bail bond, his ancestral property. Under that one word he shelters every fraud, every idiot, every professional liar, every holy man with imported bathroom fittings, every startup founder whose only scalable product is unpaid work, every uncle who forwards medical advice from a man whose profile picture is a tiger wearing sunglasses.
 
-That is not a culture problem in the shallow sense. It is a civic education delivered by everyday example.
+And while he is maybe-ing, the country is being reverse-engineered into a landfill.
 
-The truth does not always live in the middle. Sometimes the middle is only where people gather so history cannot count them.
+This is our special genius. We do not collapse plainly, like normal civilizations with some remaining dignity. We collapse with commentary. We collapse with caveats. We collapse with someone’s cousin saying, “Actually, technically speaking,” while the floor gives way under everyone’s feet.
 
-This does not mean becoming reckless or cruel. It means preserving the adult ability to name things. Fraud is fraud. A lie is a lie. A fake expert is not a misunderstood entrepreneur. A public failure is not automatically tradition. A loud slogan is not evidence. A person asking for accountability is not automatically negative.
+There is something almost clean about the fraudster. I do not mean good. I mean clean in shape. He wants money, power, status, immunity, contracts, respectability without deserving it, and preferably a photograph with a garland. Fine. A snake is a snake. One may dislike the snake, but one does not feel personally betrayed when it behaves like rope with teeth.
 
-In Calcutta, the fan turns and the panel discussion continues somewhere on a screen. The fence-sitter looks calm. Calm is cheap when someone else is standing on the cracked floor.
+The idiot too has his own natural history. He believes nonsense because nonsense flatters him. It tells him he is ancient, special, chosen, misunderstood, victimized, genetically superior, spiritually advanced, historically wronged, cosmically audited, or whatever warm syrup is being ladled that afternoon into the national feeding trough.
 
-The fence may be comfortable. It is still not a spine.
+But the fence-sitter is worse.
+
+The fence-sitter is the lubricant of disaster.
+
+He makes rot slide smoothly.
+
+He allows stupidity to continue because he will not call it stupidity. He allows fraud to continue because he will not call it fraud. He mistakes cowardice for nuance because he once read half an editorial while waiting for his tyre to be repaired. He thinks judgment is vulgar. He thinks clarity is extremism. He thinks if a man is robbing your house, the mature thing is to ask whether the furniture also had historical grievances.
+
+And India loves this fellow.
+
+We give him chairs on committees. We call him balanced. We invite him to discussions. We say he is sensible. Sensible! In this country, sensible often means frightened in good shoes. He knows the thing is dirty. He smells the drain. He sees the fake bill. He hears the lie. But he has trained himself to behave as if saying the obvious is childish.
+
+So he leans back, adjusts his spectacles, and says, “We must be balanced.”
+
+Balanced?
+
+A corpse is balanced too if you lay it properly.
+
+This is the little trick nobody wants to discuss. Balance is not always wisdom. Sometimes balance is just fear wearing aftershave. Sometimes the middle is not the golden path. Sometimes the middle is where fraud and stupidity meet for tea and decide whose nephew gets the tender.
+
+The tragedy is not that villains exist. Villains have always existed. History is basically the minutes of meetings held by bastards in better clothes. The tragedy is that so many bystanders have become professional fog machines. They do not support wrongdoing directly. No, no, that would be crude. They merely soften it. They translate theft into “irregularity.” They translate lies into “narratives.” They translate cowardice into “maturity.” Then they look at you, the person still rude enough to notice the smell, and say you are bitter.
+
+Maybe I am bitter.
+
+Good.
+
+Bitterness is not always a defect. Sometimes bitterness is the tongue filing an accurate report from the poison department.
+
+I live in Calcutta, not in some marble conference room where people say “stakeholder” and expect oxygen to continue cooperating. I know what adjustment means. Adjustment means the road is broken, so you walk around the crater. Adjustment means the queue is fake, so you learn the side entrance. Adjustment means the school is bad, the air is bad, the work is underpaid, the bill is inflated, the promise is decorative, and the man who caused half the mess is now delivering a speech on values.
+
+Adjustment is the national religion of the practical man.
+
+And like all religions, it has priests.
+
+The fence-sitter is one of them.
+
+He will tell the young to adjust. Adjust to bad schools. Adjust to bad air. Adjust to bribes. Adjust to lies. Adjust to fake experts. Adjust to rich men giving moral lectures. Adjust to talent leaving. Adjust to work without dignity. Adjust to institutions that behave like old cupboards: swollen in the rain, jammed at the hinge, full of things nobody wants to touch.
+
+This is how a country becomes not a country but a workaround.
+
+And the young notice. Do not think they do not. A child may not understand corruption, but he understands unfairness before he can spell it. A student may not understand institutional decay, but she understands when the fool is rewarded, the cheat is protected, and the honest person is asked why he is being difficult. After enough such lessons, the mind learns the real syllabus.
+
+Honesty is decorative.
+
+Law is negotiable.
+
+Skill is optional.
+
+Knowledge is suspicious.
+
+Fraud, if performed at the right scale, becomes respectability.
+
+This is not apocalypse. Apocalypse is too dramatic, too cinematic, too generous. This is slower. This is a damp wall spreading its stain year after year while everyone discusses paint brands. This is a country becoming tired in public and dishonest in private. This is the sound of a nation clearing its throat while the furniture is being carried away.
+
+And above it all, perched on the national fence like a philosophical baboon with piles, sits the great moderate Indian saying, “We should not generalize.”
+
+Of course we should not generalize. That is always the first shelter of the guilty audience. But after enough scams, enough collapses, enough fake wisdom, enough educated silence, enough “both sides,” enough fraud dressed as ambition and stupidity dressed as culture, one is permitted to notice a pattern without submitting an affidavit in triplicate.
+
+The truth does not always live in the middle.
+
+Sometimes the middle is only where cowards gather so history cannot count them.
+
+I would rather be bitter than become one more polished cushion on that fence. I would rather say the thing is rotten while the room still smells than wait for the official postmortem, conducted by the same men who sold the organs.
+
+If this country is not done for, it will not be saved by the slippery apostles of balance. It will be saved, if at all, by people impolite enough to say fraud is fraud, stupidity is stupidity, and sitting between them is not wisdom.
+
+It is how a civilization gets a splinter in its soul and calls it heritage.

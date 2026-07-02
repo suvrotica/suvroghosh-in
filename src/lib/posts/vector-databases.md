@@ -1,226 +1,126 @@
 ---
-title: 'Vector Databases and the Shape of Clinical Memory'
-description: 'A Calcutta-grounded essay on vector databases in healthcare IT: embeddings, approximate nearest neighbor search, hybrid retrieval, privacy, drift, and the danger of mistaking geometric closeness for clinical truth.'
-date: '2026-04-23'
-thumbnail: '/images/IMG-20260423-WA0024.jpg'
-category: 'healthcare-it'
-tags:
-  [
-    'Vector Databases',
-    'Healthcare IT',
-    'SuvroGhosh',
-    'Engineering Blog',
-    'Video',
-    'Healthcare Data',
-    'Suvro Ghosh',
-    'Calcutta',
-    'Kolkata',
-    'Bengali Essay',
-    'Indian Middle Class',
-    'Lower Middle Class India',
-    'Kolkata Bengali Writing',
-    'Longform Essay',
-    'Personal Blog',
-    'Systems Thinking',
-    'India',
-    'South Asia',
-    'Urban India',
-    'Clinical Informatics',
-    'Health IT Architecture',
-    'Medical Data Systems',
-    'Interoperability',
-    'Artificial Intelligence',
-    'AI Commentary',
-    'AI Ethics',
-    'AI Safety',
-    'Large Language Models',
-    'AI in India',
-    'Agentic AI',
-    'Technology Culture',
-    'Kolkata Life',
-    'Calcutta Bengali',
-    'Bengali Culture',
-    'West Bengal',
-    'Urban Kolkata',
-    'India Commentary',
-    'Indian Politics',
-    'Indian Society',
-    'Indian Economy',
-    'Public Systems',
-    'Mathematics',
-    'Statistics',
-    'Science Writing',
-    'Education',
-    'First Principles'
-  ]
+title: "Vector Databases"
+description: "A system-level examination of vector databases for healthcare IT and serious technical readers. This post separates the glamour of embeddings from the harder realities of retrieval, semantics, filtering, latency, and representational loss."
+thumbnail : "/images/IMG-20260423-WA0024.jpg"
+date: "2026-04-23"
+category: "healthcare it"
+tags: ["Vector Databases", "Healthcare IT", "SuvroGhosh", "Engineering Blog", "Video", "Healthcare Data", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
 published: true
-color: 'indigo'
+color: "indigo"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0024.jpg" alt="Article illustration for vector databases and geometric search" />
+<Pi src="IMG-20260423-WA0024.jpg" />
 
-## Vector Databases and the Shape of Clinical Memory
+Acronyms expanded in this post:
+- AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
+- API: Application Programming Interface. a controlled doorway through which software systems exchange data or actions.
+- ANN: Approximate Nearest Neighbor. a search method that finds close matches quickly without checking every item exactly.
+- CDA: Clinical Document Architecture. an older Health Level Seven standard for structured clinical documents.
+- EHR: Electronic Health Record. the clinical system where patient care is documented and managed.
+- FHIR: Fast Healthcare Interoperability Resources. the modern web-friendly Health Level Seven healthcare data exchange standard.
+- HL7: Health Level Seven. the family of healthcare messaging and data exchange standards.
+- HL7 v2: Health Level Seven version 2. the older event-message standard still running much hospital integration.
+- IT: Information Technology. the practice of building, operating, and supporting computing systems.
+- LLM: Large Language Model. a statistical language system trained to generate and interpret text.
+- RAG: Retrieval-Augmented Generation. an AI pattern where a model retrieves external evidence before answering.
+- SQL: Structured Query Language. the language commonly used to query relational databases.
+- VA: Veterans Affairs. the United States public healthcare system serving military veterans.
 
-The ceiling fan in a Calcutta clinic does not rotate with elegance. It chops the damp air into tired pieces, and beneath it the paper files soften at the corners from years of fingers, dust, sweat, and monsoon air.
+---
 
-In such a room, searching is not abstract. Searching means a clerk leaning into a steel almirah and asking whether the spelling of a name changed between visits. It means a doctor remembering that the old man with the cough came once before, perhaps after Durga Puja, perhaps with a daughter, perhaps carrying a scan folded into a plastic packet. It means similarity before software: this case feels like that case, this symptom cluster resembles that earlier one, this pattern has appeared somewhere in the institution's memory.
+A vector database is a very clever filing clerk who has forgotten the alphabet and now arranges documents by smell, mood, cousinship, and geometric nearness. This is not an insult. It is the whole point. Ordinary search asks, “Which document contains these words?” Vector search asks, “Which stored thing feels mathematically close to this new thing?” That sounds like a party trick until you realize how much of life, medicine, law, research, and human confusion is not stored in exact words.
 
-Vector databases are the modern, expensive, mathematically disciplined version of that instinct.
+You say “heart attack.” The note says “myocardial infarction.” The old system says “MI.” The billing extract says something coded. The cardiologist writes a sentence with the emotional warmth of a railway timetable. Keyword search may stand there like a clerk in a government office, adjusting its spectacles and saying, “No exact match, come tomorrow.” Vector search at least has the decency to squint and say, “These may be related.”
 
-They do not merely ask whether two records share the same words. They ask whether two things occupy nearby positions in a learned space of resemblance. A clinical note, a CT image, a pathology slide, a molecular graph, a discharge summary, a patient profile, a research paper, even a spoken complaint after transcription can be transformed into an embedding: an ordered array of numbers. The database then stores those arrays and retrieves the nearest neighbors according to cosine similarity, dot product, Euclidean distance, or some related measure.
+That is the good part.
 
-This sounds clean. It is not clean.
+The bad part is that people hear this and immediately start building a temple.
 
-It is a beautiful compromise built on compression, approximation, and faith.
+A vector database does not understand medicine. It does not understand your patient, your hospital, your research study, your billing logic, your Veterans Affairs [VA] data extract, your clinician’s weary note written at 11:42 p.m., or the small tragedy hiding inside the phrase “patient lost to follow-up.” It stores numbers. Many numbers. Each document, sentence, image, form, paragraph, or chunk of text is turned into an embedding, which is a dense numerical representation created by an embedding model. That embedding becomes a point in a high-dimensional space. Search then becomes a geometry problem.
 
-## From Words To Coordinates
+This is both beautiful and faintly ridiculous. We took language, that old street dog of civilization, and converted it into coordinates.
 
-Older search systems mostly searched for words. Relational databases gave us structured certainty. Inverted indexes gave us document search. Boolean logic gave us AND, OR, NOT, the tidy grammar of librarians and lawyers. These tools still matter. Healthcare cannot function without exact identifiers, codes, timestamps, accession numbers, lab values, and structured fields.
+The central architectural fact, after removing the marketing perfume, is this: vector databases do not store meaning. They store representations of meaning produced by some model under some assumptions at some time. If the representation is weak, biased, badly chunked, stripped of context, or pointed at the wrong question, the database will preserve the mistake with impressive speed.
 
-But healthcare also contains a vast amount of meaning that refuses to sit neatly in columns.
+This is why a vector database is less like a brain and more like a pressure cooker. Useful, powerful, slightly dangerous, and not improved by worship.
 
-A patient does not always arrive with the vocabulary of the diagnosis. A note may say "crushing chest pressure with sweating and pain traveling down the left arm" without saying "myocardial infarction." A radiology report may hedge with phrases that only make sense to people trained to read uncertainty. A scan may resemble earlier scans even when its metadata is useless. A pathology image may carry a pattern that cannot be expressed in a short string. A Bengali-speaking patient may describe a sensation in words that do not map cleanly to the English phrases in the model's training data.
+In a typical modern AI system, the raw material may be documents, clinical notes, policies, research protocols, product manuals, lab narratives, discharge summaries, PDFs, emails, transcripts, or helpdesk tickets. The system breaks them into chunks. Then it sends those chunks through an embedding model. The resulting vectors are stored in the vector database along with metadata such as source, date, patient, document type, department, author, tenant, or security boundary. When a user asks a question, that question is also converted into a vector. The database then finds stored vectors near it.
 
-Keyword search sees surface overlap.
+Near is the dangerous word.
 
-Vector search tries to see semantic proximity.
+In mathematics, near has a clean smell. In human affairs, near can be a swamp. “Diabetes medication held before surgery” may be near “diabetes medication started after discharge,” but clinically they are not the same animal. “No evidence of pneumonia” may be near “evidence of pneumonia” if the embedding is sloppy or the chunk is stupidly cut. A patient’s mother having cancer is not the same as the patient having cancer, though both can sit in the same sentence like two suspicious uncles at a wedding.
 
-That is the promise. The danger is hidden inside the same promise. A vector is not the thing itself. It is a translation of the thing into geometry. Once the translation happens, some details become prominent and some vanish. The database does not know which lost detail mattered clinically. It only knows the coordinate it was given.
+This is why healthcare makes vector search nervous. Healthcare data is full of negation, temporality, family history, uncertainty, copy-forward residue, billing distortion, operational shortcuts, and human fatigue. It is not merely text. It is workflow sediment.
 
-## What A Vector Database Actually Is
+The distinction between data transport and semantic meaning matters here. You can move an HL7 v2 message perfectly from one system to another and still misunderstand what the message means. You can expose a FHIR resource through a clean API and still lose the clinical context that made the data meaningful. In the same way, you can insert vectors perfectly into a database and still retrieve the wrong evidence. Transport says the parcel arrived. Semantics asks whether anyone knows what is inside the parcel, why it was sent, whether it is current, and whether touching it will cause trouble.
 
-A vector database is a storage and retrieval system for high-dimensional vectors, usually produced by embedding models. The raw object may be text, image, audio, genomic sequence, chemical structure, waveform, or a multimodal bundle. The embedding model compresses that object into a fixed-length numerical representation. The database stores the vector with metadata and makes it searchable at speed.
+Most bad vector systems fail because they confuse these two things. They think successful movement equals successful understanding.
 
-At small scale, the search is simple. Compare the query vector with every stored vector. Sort by distance. Return the closest results.
+It does not.
 
-At healthcare scale, that approach collapses.
+The first ugly little goblin is chunking. Chunking sounds harmless, like cutting fish before frying it. But in retrieval architecture, chunking is an act of philosophy performed by tired engineers under deadline pressure. You are deciding what a unit of meaning is. Is it a sentence? A paragraph? A section? A whole clinical note? A FHIR resource? A visit? A patient timeline? A discharge summary plus the medication list plus the lab trend? Each answer creates a different world.
 
-A hospital network, research consortium, payer, public health platform, or pharmaceutical lab may need to search millions or billions of embeddings. Exact nearest-neighbor search becomes too slow and too expensive. The system therefore uses approximate nearest neighbor search. It gives up a little certainty in exchange for usable latency.
+Cut too small and you lose context. Cut too large and the embedding becomes a semantic khichuri where everything is mixed, warm, and impossible to separate. A paragraph about kidney disease, diabetes, medication adherence, transport difficulty, and insurance denial may be meaningful to a human because the human sees the story. The embedding model may compress it into a vague blob of “chronic illness things.” Then a search asks a specific question, and the system returns a cousin of the answer rather than the answer.
 
-That word, approximate, should never be treated as decoration.
+This is not always a data quality problem.
 
-In a shopping app, approximate similarity may show someone the wrong pair of shoes. In healthcare, approximate similarity can shape what literature a clinician sees, what cases a radiologist reviews, what cohort a researcher builds, which patient is flagged for outreach, which trial candidate is surfaced, or which prior case becomes the quiet precedent for a present decision.
+That phrase, “data quality problem,” is one of the great dustbins of enterprise life. Everything embarrassing is thrown into it. Bad mapping? Data quality. Bad workflow? Data quality. Bad model? Data quality. Bad governance? Data quality. Representation failure? Also data quality. Soon the phrase means nothing except “something hurt us and we lack the courage to name it.”
 
-The database is not only a database then. It becomes inference infrastructure.
+Many vector failures are representation failures. The source data may be perfectly adequate for its original purpose. A note may make sense to the clinician who wrote it. An HL7 v2 message may work fine for operational routing. A CDA document may satisfy the medico-legal document requirement. But once you flatten, chunk, strip, embed, and index it, you may lose the very relationships needed for retrieval. The data did not rot. The representation did.
 
-## The Older Roots Of A New Fashion
+This is not a small distinction. It changes the remedy. If the data is bad, you clean the data. If the representation is bad, you redesign the pipeline.
 
-Vector databases did not appear from nowhere when large language models made embeddings fashionable.
+The second goblin is filtering. In demo-land, you ask the vector database a question and it cheerfully returns beautiful matches from the whole corpus. In production, some grim adult enters the room and says: only this patient, only this facility, only this study, only this tenant, only this date range, only this consent class, only this document type, only what this user is allowed to see. At that point the lovely open meadow of vector search becomes a Kolkata lane during monsoon, with one scooter, three goats, a taxi, a political procession, and an electrical cable hanging at face level.
 
-The deeper idea reaches back to information retrieval research in the 1950s and 1960s. Gerard Salton's SMART system at Cornell represented documents as vectors of term weights. The early vector space model made a radical suggestion that now feels ordinary: documents could be treated as points, and similarity could be treated as distance.
+Vector search is easy when it can search everything. Healthcare search must not search everything. It must search what is allowed, relevant, current, and safe. That means metadata is not garnish. Metadata is architecture.
 
-Then came TF-IDF, which corrected the crude habit of counting all words as if they mattered equally. The word "the" should not carry the same retrieval weight as "troponin" or "tuberculosis." Latent Semantic Analysis in the late 1980s used singular value decomposition to discover hidden relationships between terms and documents. It was still built from word statistics, but it gestured toward a compressed semantic space where "heart attack" and "myocardial infarction" could live near each other.
+If patient identity, encounter date, source system, document class, authoring workflow, security label, and provenance are not carried alongside the embedding, the vector database becomes a reckless gossip. It may know interesting things, but it has no discipline.
 
-The 2013 word2vec work from Tomas Mikolov and colleagues at Google made dense neural embeddings culturally legible to the wider engineering world. Words became points in a space where relationships could be manipulated. The famous king, man, woman, queen arithmetic became overused because it was memorable, but beneath the anecdote was a profound shift: representation was becoming learned rather than hand-built.
+The third goblin is versioning. Embeddings are not eternal truths. They are coordinates created by a specific model. Change the embedding model and the geometry changes. Change the preprocessing and the geometry changes. Change the chunking strategy and the geometry changes. Add new documents and old neighborhoods shift in importance. Keep mixing vectors from different model versions without tracking lineage and you have built a small museum of incompatible maps.
 
-In 2017, the transformer architecture described in "Attention Is All You Need" opened the door to contextual embeddings at scale. BERT, GPT, and the broader large language model ecosystem changed the unit of representation. It was no longer only a word with a fixed vector. It could be a word inside a sentence, a sentence inside a clinical note, a report inside a chart, a fragment of language whose meaning changed with context.
+This is especially dangerous because the system may still work well enough to fool you. Bad architecture rarely collapses on the first day. It smiles. It gives plausible answers. It passes a few demos. Then one month later someone asks why a new policy is not being retrieved, why an old note outranks a current one, why pediatric content appears in an adult workflow, or why two semantically different concepts have become neighbors in the machine’s little geometry bazaar.
 
-By the early 2020s, the problem had moved downstream. We could generate dense vectors from many kinds of data. Now we needed systems that could store and search them. Pinecone launched its managed service in 2021. Weaviate, Milvus from the Zilliz ecosystem, Chroma, Qdrant, pgvector for PostgreSQL, Redis vector search, and Elasticsearch dense vector support all became part of the infrastructure conversation.
+The answer is usually not one thing. It is five things wearing one raincoat.
 
-The glamour attached itself to the newest names. The underlying question remained old: how do we organize memory so resemblance can be found?
+The fourth goblin is the fantasy that vector databases can replace structured systems. They cannot. A relational database remains better for exact facts, transactions, joins, counts, constraints, and well-defined records. A terminology service remains better for controlled vocabulary relationships. A graph database may be better for explicit networks of entities and relationships. A time-series system may be better for ordered measurements. A document store may be better for preserving document shape. A vector database is for similarity retrieval. That is a powerful job. It is not every job.
 
-## Why Healthcare Wants This So Badly
+Architecture begins when you stop asking one machine to become all machines.
 
-Healthcare is almost designed to tempt vector search.
+This matters for RAG, because RAG is now where many vector databases are sold, installed, praised, cursed, and quietly misunderstood. In RAG, the system retrieves relevant material and gives it to an LLM so the LLM can answer with some grounding. This is sensible. It is also fragile. The LLM is only as good as the evidence retrieved. If retrieval brings the wrong chunk, stale chunk, context-free chunk, or legally forbidden chunk, the LLM may produce a confident answer with the moral authority of a drunk uncle quoting Wikipedia from memory.
 
-It has oceans of unstructured text: progress notes, discharge summaries, referral letters, operative reports, nursing notes, triage narratives, call-center transcripts, appeal letters, and scanned documents that should have become clean data years ago but did not.
+The charm of language models is fluency. The danger of language models is also fluency. A bad SQL query often looks ugly. A bad generated answer can look like it went to finishing school.
 
-It has images: X-rays, CT, MRI, ultrasound, pathology slides, retinal scans, endoscopy frames.
+So the retrieval layer must be judged separately from the generation layer. Did it find the right evidence? Did it preserve source links? Did it respect metadata filters? Did it rank recent and authoritative material correctly? Did it handle negation? Did it distinguish “suspected” from “confirmed,” “family history” from “personal history,” “ordered” from “administered,” “active” from “discontinued”? Did it return nothing when nothing safe and relevant existed?
 
-It has waveforms: ECG traces, ICU telemetry, sleep studies, fetal monitoring, device streams.
+Nothing is an underrated answer. Many systems would be safer if they learned to say it.
 
-It has molecular and genomic data: sequences, variants, protein structures, chemical graphs.
+The less obvious machinery underneath is that vector databases are not mainly search infrastructure. They are representation infrastructure. The real design decision is not “Which vector database should we buy?” It is “What are we willing to turn into geometry, what context must remain outside geometry, and how do we keep the two tied together without pretending they are the same?”
 
-It has operational data: queues, appointment histories, claims, capacity signals, bed movement, referral leakage, outreach logs.
+For healthcare IT, this means the vector layer should be downstream and derived. The EHR remains the operational source. The warehouse or lakehouse may remain the analytical substrate. The terminology service remains the guardian of coded meaning. The integration engine remains the traffic controller for HL7 v2 and other feeds. The vector database should sit as a retrieval accelerator, not as the throne room of truth.
 
-Traditional databases store all this. They do not make all of it meaningfully searchable.
+Use vectors to find candidates. Use metadata to constrain the search. Use structured systems to verify facts. Use reranking to improve relevance. Use provenance to show where evidence came from. Use governance to decide what may be retrieved. Use human review where the task carries clinical, legal, or operational consequence.
 
-A vector database can support semantic search across clinical notes and literature. A physician can describe a case in ordinary language and retrieve papers, guidelines, and earlier cases that use different words. A health system can find similar patient journeys without relying only on billing codes. A radiologist can compare an ambiguous nodule against visually similar historical cases. A pathology workflow can retrieve slides whose cellular architecture resembles the current slide. A trial team can search for patients whose profiles resemble eligibility patterns rather than only matching exact fields. Drug discovery teams can search molecular embeddings for functional similarity, not merely chemical name or surface structure.
+This is not glamorous. Good architecture rarely is. It is mostly preventing tomorrow’s disaster from being born today.
 
-This is why retrieval-augmented generation became so important in healthcare AI. A language model without retrieval may speak fluently from a fog of learned patterns. A model connected to a governed retrieval layer can be forced back toward specific notes, policies, guidelines, documents, and evidence. The vector database becomes the memory shelf from which the system pulls context.
+A practical design starts with boring questions. What exactly is being retrieved? Policies? Clinical notes? Prior authorization rules? Research eligibility criteria? Patient education material? Interface documentation? Incident tickets? What is the acceptable failure mode? Is missing a result worse than returning a noisy result? Must the system explain itself? Does the answer need source citations? Are users allowed to see all retrieved material? How fresh must the index be? Does the source data change every minute, every night, or once every committee finally stops arguing?
 
-But the shelf matters. The labels matter. The dust matters.
+Then come the technical questions. Which embedding model? What chunk size? What overlap? What metadata schema? What ANN index? What hybrid search method? What reranker? What monitoring? What evaluation set? What re-embedding plan? What rollback plan? What happens when the embedding model changes or the vendor changes its pricing or the API develops indigestion during a release window?
 
-If the embeddings are poor, the retrieval is poor. If the metadata is weak, filtering is weak. If the source documents are outdated, the answer inherits the age. If the clinical record is incomplete, the patient vector becomes an incomplete shadow with mathematical confidence around it.
+The realistic constraint is that clean solutions are often impossible because healthcare systems are already old cities, not empty plots of land. There are legacy feeds, vendor contracts, half-documented interfaces, departmental databases, research spreadsheets, compliance rules, and unofficial workflows that became official by surviving long enough. You cannot march into this with a shiny vector database and announce semantic liberation. The old systems will look at you, sip tea, and continue being old systems.
 
-## Who Builds The Geometry
+So the sensible path is incremental. Start with bounded retrieval. Choose a corpus whose purpose is clear. Preserve source identifiers. Keep metadata rich. Evaluate with real questions from real users. Track failures. Separate retrieval quality from answer quality. Do not use the vector store as a dumping ground for everything with text in it. Do not let a successful demo become production policy. Do not confuse “the answer sounds good” with “the evidence is correct.”
 
-The vector database is not built by one kind of person.
+Vector databases are useful because human language is slippery and enterprise data is worse. They help us search across paraphrase, abbreviation, and conceptual resemblance. In healthcare, that is valuable. A good vector layer can help an analyst find relevant documentation, help an engineer search interface notes, help a clinical informaticist compare protocols, help a support team retrieve prior incidents, and help an AI assistant ground its answer in local knowledge rather than floating away into generic cloud vapor.
 
-Embedding researchers decide how raw data becomes a vector. They choose architectures, training corpora, objectives, dimensionality, loss functions, and evaluation tasks. Their decisions shape the space before any database engineer touches it.
+But the machine is not understanding in the old human sense. It is arranging shadows in a mathematical room. Sometimes the shadows reveal the object better than a keyword ever could. Sometimes they merge two objects that should never be merged. The architect’s job is to know the difference before some poor user has to discover it at 2 a.m.
 
-Database engineers build the retrieval machinery. They worry about memory, indexing, replication, partitions, recall, latency, throughput, cache behavior, concurrent writes, rebuild costs, and failure modes. Their daily problem is brutally practical: how to find approximate neighbors of a point in a 768, 1024, or 1536-dimensional space in milliseconds without drowning the budget in RAM.
+That, finally, is the sober beauty of vector databases. They are not magic. They are not nonsense either. They are a new retrieval instrument, sharp and useful, but only when held by people who remember that meaning does not live in the index alone. Meaning lives in workflow, context, time, provenance, permission, terminology, and human purpose. The vector only points. The architecture must decide whether it is pointing at the truth, a cousin of the truth, or a well-dressed lie.
 
-Clinical informaticists and health IT architects carry the geometry into the institution. They must connect embeddings to EHRs, PACS, document stores, data lakes, FHIR APIs, terminology services, identity systems, audit logs, and governance boards. They must explain why an embedding derived from protected health information is still sensitive even if it is not human-readable. They must understand HIPAA, GDPR, India's proposed Digital Information Security in Healthcare Act, and the local privacy expectations that never fit cleanly into legal acronyms.
+## Related Posts
 
-Clinicians and patients live with the result.
-
-This division of labor creates a dangerous gap. The people who make the space may not know the clinic. The people who maintain the index may not know the social meaning of missing data. The people who use the result may not know how much approximation sits below the interface. A search box can make all of this look simple.
-
-It is not simple.
-
-## The Machinery Under The Floor
-
-The common algorithms are less mystical than their marketing, but their trade-offs are real.
-
-HNSW, or Hierarchical Navigable Small World graphs, described by Yu. A. Malkov and D. A. Yashunin in 2016, is one of the dominant production approaches. It builds a layered graph. Higher layers let the search move quickly across long distances. Lower layers let it refine the local neighborhood. The intuition is like moving through a city: first the main roads, then the neighborhood roads, then the lane.
-
-HNSW is fast and usually strong on recall, but it uses memory heavily. Index construction can be slow. Updates and deletes are not free. Performance depends on parameters that ordinary product demos rarely discuss.
-
-IVF, or inverted file indexing, clusters the vector space into regions, often using k-means. At query time, the system searches the nearest clusters rather than the whole collection. IVF can reduce memory pressure and work well at large scale, but it risks missing neighbors that fall just across a cluster boundary.
-
-Product quantization compresses vectors by splitting them into sub-vectors and replacing each sub-vector with a compact codebook representation. It can make billion-scale search financially possible. It also introduces error. In healthcare language, this means the system is compressing representations of meaning and then searching the compressed version.
-
-Graph methods, tree methods, locality-sensitive hashing, and learned indices all attempt variations on the same bargain: reduce the cost of search while keeping enough fidelity for the answer to be useful. Every bargain has a bill. Sometimes the bill is recall. Sometimes it is latency. Sometimes it is explainability. Sometimes it is operational complexity so large that a proof of concept quietly dies before production.
-
-## The Parts That Hurt In Production
-
-The first hard truth is representational loss.
-
-An embedding is lossy compression. A 2,000-word clinical note becomes a fixed vector. The model preserves some patterns and discards others. Rare disease presentations, local idioms, uncertain phrasing, Bengali or Hindi symptom descriptions, unusual life context, and edge-case clinical details may compress badly if the training distribution did not respect them.
-
-The second hard truth is dimensional fragility.
-
-High-dimensional spaces behave strangely. Distances can become less intuitive. Approximate nearest neighbor systems do not defeat the curse of dimensionality; they negotiate with it. Bigger vectors do not automatically mean richer meaning. Sometimes they mean more expensive confusion.
-
-The third hard truth is drift.
-
-Medicine changes. Guidelines change. disease patterns change. coding habits change. Documentation templates change. If the embedding model and the index do not evolve carefully, the vector space becomes a museum of older practice while the interface continues to return results with fresh confidence.
-
-The fourth hard truth is privacy.
-
-Embeddings are not plain text, but they are not harmless dust either. Inversion attacks and membership inference attacks have shown that representations can leak information under certain conditions. A clinical embedding should be governed like derived health data, not treated as a magic anonymization layer.
-
-The fifth hard truth is hybrid search.
-
-Real clinical retrieval rarely asks for pure similarity. It asks for similarity plus constraints: age band, lab range, facility, date window, diagnosis code, language, payer, geography, consent status, imaging modality, or trial criterion. Pre-filtering can damage vector recall. Post-filtering can return too few results. Vendor behavior differs. Benchmarks often hide the mess.
-
-The sixth hard truth is accountability.
-
-If a system retrieves ten similar cases, who explains why those ten appeared? The model vendor? The database vendor? The hospital data team? The clinical application? The informaticist who chose the threshold? The answer cannot be "the vector did it." Geometry is not a moral actor.
-
-## The Patient Is Not The Point
-
-Calcutta teaches a person to distrust neat maps.
-
-A map may show the road. It may not show the tea stall that blocks half of it every evening, the tram line that changes the rhythm of traffic, the lane that floods first, the shortcut everyone knows but nobody names. The map is useful precisely until someone mistakes it for the city.
-
-A vector is like that.
-
-It is not the patient. It is not the note. It is not the scan. It is not the memory of the clinician who has seen this pattern before in a room with bad light and a tired family waiting outside. It is a coordinate produced by a model, stored by an index, retrieved by an approximation, filtered by metadata, displayed inside a workflow, and interpreted by a human who may or may not know how much has been lost along the way.
-
-Vector databases will matter in healthcare. They already do. They will make literature search less brittle, cohort discovery more flexible, imaging retrieval more useful, drug discovery more exploratory, and AI systems more anchored to institutional memory. They may help us find patterns that older systems kept invisible.
-
-But they will also tempt us to believe that closeness is understanding.
-
-Two points near each other are not necessarily two lives alike. Two cases retrieved together are not necessarily clinically equivalent. A missing neighbor may matter more than the ten that appear. A beautiful embedding space may still be provincial, biased, stale, insecure, or wrong in ways that only become visible after people trust it.
-
-The steel almirah in the Calcutta clinic was crude, but everyone knew it was crude. Nobody mistook it for truth. They knew files were missing. They knew names were misspelled. They knew memory was human, partial, and tired.
-
-The vector database is more powerful and less visibly humble.
-
-That is why it needs architects who can count milliseconds and also notice shadows. It needs clinicians who can use retrieval without surrendering judgment. It needs governance that treats embeddings as clinical artifacts, not decorative math. It needs patients to remain more real than their coordinates.
-
-Somewhere under the fan, the clerk is still searching. The modern system searches faster. The unresolved question is whether it searches with enough doubt.
+- [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
+- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

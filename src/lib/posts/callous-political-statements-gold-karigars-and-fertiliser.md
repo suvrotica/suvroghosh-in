@@ -1,6 +1,6 @@
 ---
 title: "Gold Karigars, Fertiliser Slogans, and the Knife Hidden Inside a Political Sentence"
-description: "A personal essay on callous political statements, Bengal's hidden jewellery workers, gold import duty, and the danger of turning fertiliser policy into patriotic theatre."
+description: "A personal essay on callous political statements, Bengal’s hidden jewellery workers, gold import duty, and the danger of turning fertiliser policy into patriotic theatre."
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_164830_0882.jpg"
 category: "Political Economy"
@@ -13,41 +13,46 @@ color: "amber"
 
 <Pi src="Compress_20260514_164830_0882.jpg" />
 
-Acronyms used in this post:
+Acronyms used: LPG means Liquefied Petroleum Gas, the cylinder fuel used in many homes and small workshops. MSME means Micro, Small, and Medium Enterprise, the official bucket for small businesses that often includes workshops too small to have a lobby but large enough to be crushed by policy. CAD means Current Account Deficit, the gap created when a country spends more foreign currency on imports and payments than it earns from exports and income. ETF means Exchange Traded Fund, a market-traded investment basket that can track gold, silver, stocks, or other assets.
 
-LPG means Liquefied Petroleum Gas, the cylinder fuel used in many homes and small workshops.
-
-MSME means Micro, Small, and Medium Enterprise, the official bucket for small businesses that often includes workshops too small to have a lobby but large enough to be crushed by policy.
-
-CAD means Current Account Deficit, the gap created when a country spends more foreign currency on imports and payments than it earns from exports and income.
-
-ETF means Exchange Traded Fund, a market-traded investment basket that can track gold, silver, stocks, or other assets.
 
 ---
 
-Gold dust clings to fingers in a way speeches never do.
+A political sentence can look harmless from a podium and still arrive like a brick through the window of a poor man’s kitchen.
 
-That is what comes back when a leader says people should not buy gold for a year, or when policy makes legal gold suddenly more expensive in the name of conserving foreign exchange. The line travels through television as sacrifice. It reaches investors as allocation. It reaches the comfortable classes as something to discuss over tea.
+That is what bothers me. Not politics as wrestling. That circus has gone on since the first village headman discovered the usefulness of a loud throat. What bothers me is the casual sentence. The sentence tossed into the air by a powerful man and caught, not by economists, not by television anchors, not by the agreeable gentlemen in linen jackets, but by people who live in one rented room, count LPG refills, postpone dental treatment, and know the price of onions the way astronomers know the movement of planets.
 
-Then it reaches South Sinthee.
+I do not want to pick random political comments and make a garland of irritation. Life is short, and the ceiling fan in my Calcutta room already makes enough noise without help from Delhi. But some statements have a special ugliness. They are not merely foolish. They are foolish in a way that travels downward.
 
-I went to WWA Cossipore English School and lived near Dum Dum when I was a child. South Sinthee had its own texture: damp walls, divided rooms, narrow lanes, the smell of fish and metalwork, old houses repeatedly cut into smaller spaces until a room became an argument against air. In many of those spaces lived jewellery workers we called shekra.
+“Do not buy gold for a year,” says the voice from above.
+
+The middle class hears sacrifice. The rich hear portfolio adjustment. The television panel hears nationalism with commercial breaks.
+
+I hear South Sinthee.
+
+I went to WWA Cossipore English School and lived near Dum Dum when I was a child. South Sinthee then had a particular smell and texture: damp walls, narrow lanes, fish market air, tram and train noises from somewhere not too far away, kerosene memory, old houses divided and subdivided until a room had become less a room and more a legal argument against oxygen. In many of those houses, except ours and a few others, lived jewellery workers we called shekra.
 
 Karigars.
 
-Gold men, though not because they owned gold. That would be too tidy. They worked on it. They bent over it, soldered it, polished it, set stones into it, and spent their eyesight on ornaments that would later sit under bright showroom lights while a customer asked for something heavier.
+Gold men.
 
-That chain is what policy language often hides.
+Not gold men because they had gold, obviously. That would be too neat, like a moral story written by someone who has never missed rent. They worked on gold. They bent over it. They soldered it. They set gems into it. They breathed its dust and heat and tension. A single room would be chopped into tiny working cubicles, and in each little burrow a man would sit curled like a beetle, making delicate ornaments for people who would later stand in bright shops and say, “Show me something heavier.”
 
-Gold is not only a yellow metal imported against foreign exchange. It is a human chain. Traders, showrooms, investors, banks, smugglers, and consumers stand on one side of the story. On the other side are artisans, polishers, furnace workers, delivery boys, small workshop owners, migrant families, and people whose main asset is a pair of trained hands.
+That was the magic trick. The necklace glittered in Park Street or Bowbazar or some high-end showroom. The beginning of the necklace was a man sweating in a hot subdivision of a rented room near Dum Dum, probably thinking of money owed, money sent home, and whether the landlord would become poetic again at the end of the month.
 
-Raise import duty from 6 percent to 15 percent and the newspaper may say CAD, rupee pressure, foreign exchange, and trade deficit. Those concerns are not fake. India imports a great deal of gold. Gold can drain foreign currency. A country cannot eat bangles when crude oil prices rise and ships near the Strait of Hormuz begin to behave nervously.
+This is why gold policy is not only gold policy.
 
-Fair enough.
+Gold is not just a yellow metal imported against foreign exchange. It is also a chain of human beings. Some are wealthy traders. Some are showroom owners. Some are investors with solemn faces and excellent air-conditioning. But at the bottom there are artisans, polishers, setters, furnace workers, delivery boys, small workshop owners, migrant families, and men whose eyesight is spent one ornament at a time.
 
-But a decent policy asks the next question. Who pays first?
+Raise import duty from 6% to 15%, and the newspaper will say foreign exchange. It will say CAD. It will say rupee pressure. It will say global crisis. These are not imaginary concerns. India does import an enormous amount of gold. Gold does drain foreign currency. Gold can worsen the trade balance. A country cannot eat wedding bangles when crude oil prices rise and ships begin behaving nervously near the Strait of Hormuz.
 
-Not the family with coins in a locker. Not the investor who buys an ETF and calls it prudence. Not the politician whose austerity speech arrives with a convoy. The first chill often reaches the informal worker.
+Fair.
+
+But here is the small cockroach under the silver plate: when demand slows, who slows first?
+
+Not the family with twenty-five gold coins in a locker. Not the gentleman who buys an ETF before lunch and calls it strategic allocation. Not the politician whose austerity speech arrives after a convoy has burned enough fuel to move a small wedding party to Digha and back.
+
+The first to feel the cold draught is often the informal worker.
 
 The karigar.
 
@@ -55,60 +60,104 @@ The man at the bench.
 
 The man who cannot diversify into asset classes because his main asset class is his right hand.
 
-If the government must discourage gold demand, it must also ask what happens to labour-intensive jewellery production. Do small workshops get working capital support? Are artisans visible in the model? Does policy separate speculative hoarding from craft work? Does anyone distinguish between a luxury purchase and the bench economy that depends on ordinary orders moving through the chain?
+You may say, “But the government must protect foreign exchange.” Yes. It must. A state cannot be run like a para club during Durga Puja where everyone promises money and then vanishes when the bill comes. But a serious policy asks a second question immediately: who pays for the protection?
+
+A callous policy stops at the first question.
+
+A decent policy keeps walking.
+
+If you ask citizens not to buy gold, and then raise duties so sharply that legal gold becomes more expensive, you must also ask what happens to the artisan economy. Do small jewellers get working capital relief? Do workshops get temporary support? Does policy distinguish between speculative gold demand and labour-intensive jewellery production? Are karigars visible in the official model at all, or are they merely the invisible ants carrying the sugar cube?
 
 That invisibility is the wound.
 
-In Bengal, jewellery work was never simply an industry. It was migration, caste, craft, apprenticeship, informal credit, family survival, skill, heat, and exploitation. There is no reason to wrap it in nostalgia. Many of those rooms were underpaid, cramped, disciplined, and hard. But they produced beauty delicate enough to make the better-dressed classes sentimental.
+In Bengal, jewellery work was never just an industry. It was migration, caste, craft, apprenticeship, informal credit, family survival, eyesight, skill, and a little bit of fire. It was also exploitation. Let us not wrap it in nostalgia and apply sandalwood paste. Those rooms were often sweatshops with Bengali characteristics: cramped, clever, disciplined, underpaid, and somehow still producing beauty delicate enough to make rich people sentimental.
 
-A person may spend a life making ornaments that signal prosperity without ever living inside prosperity.
+A man may spend his life making ornaments that signal prosperity and never once experience prosperity as a household condition.
 
-There is the economy in one cruel little picture.
+There is your whole economy in one cruel little picture.
 
-Then another slogan arrives: reduce chemical fertilizer, move toward organic or natural farming, cut dependence on imports.
+And then, while that picture is still fresh, another sentence arrives: reduce chemical fertiliser, move toward natural or organic farming, cut dependence on imports.
 
-Again, the words are attractive. Soil health. Self-reliance. Natural farming. Less overuse. Long-term repair. Put them in a row and they look well-behaved.
+Again, the nouns are attractive. Soil health. Self-reliance. Natural farming. Less chemical overuse. Better long-term agriculture. If you put these words in a row, they look like good boys in school uniform.
 
-But crops do not respond to patriotic persuasion.
+But crops are not schoolboys.
 
-Fertilizer is not a moral defect. It is chemistry, timing, nitrogen, phosphorus, potassium, micronutrients, soil testing, water, pest pressure, yield expectation, procurement price, farmer debt, and the Indian habit of making the weakest person absorb the grandest theory.
+Rice does not respond to patriotic persuasion. Wheat does not care about hashtags. A brinjal plant will not say, “I support foreign exchange conservation,” and produce twice as much out of civic emotion.
 
-Organic transition may be useful in many places. Natural farming may reduce input costs in some settings. Chemical overuse has damaged soil in many regions. None of that should be denied. But "go organic" becomes dangerous when spoken like a shortcut during a supply shock.
+Fertiliser is not a moral defect. It is chemistry. It is timing. It is nitrogen, phosphorus, potassium, micronutrients, soil testing, water, pests, yield expectations, procurement prices, farmer debt, and that terrifying Indian habit of making the weakest person absorb the grandest theory.
+
+Organic farming may be useful in many places. Natural farming may reduce input costs in some contexts. Overuse of chemical fertiliser has damaged soil in many regions. Nobody sensible should deny that. But the phrase “go organic” becomes dangerous when spoken like a shortcut during a supply shock.
 
 Ask Sri Lanka.
 
-In 2021, Sri Lanka attempted a sudden national turn away from chemical fertilizers and pesticides. It was sold partly as an organic future and partly as a foreign exchange necessity. Then reality arrived in the field. Yields fell. Farmers suffered. Food prices rose. The policy was reversed, but crop calendars are not social media posts. You cannot delete a damaged season.
+In 2021, Sri Lanka tried a sudden national push away from chemical fertilisers and pesticides. It was sold partly as an organic turn, partly as a foreign exchange necessity, partly as a clean green future arriving by government order, like a municipal notice pasted on a wall. Then reality arrived with muddy feet. Yields fell. Farmers suffered. Food prices rose. The government reversed course, but crop calendars are not WhatsApp messages. You cannot delete for everyone.
 
-That is why the slogan angers me. Not because I dislike organic farming. I dislike magical farming.
+Once a season is damaged, the field remembers.
 
-Organic transition is slow work. Compost supply chains do not appear because a speech is morally confident. Bio-inputs do not scale overnight. Soil does not rebuild in a news cycle. Farmers cannot gamble national food security because oil, gold, fertilizer, shipping costs, and foreign exchange have all begun arguing at once.
+This is why I get angry. Not because I hate organic farming. I hate magical farming. There is a difference.
 
-Here in Calcutta, global crisis enters the room through a phone screen. Hormuz, Iran, oil, freight rates, rupee pressure, gold duty, fertilizer anxiety. A maritime choke point thousands of kilometres away can walk into a Kolkata kitchen and change the price of dinner.
+Organic transition is slow work. Compost does not appear because a speech has moral confidence. Bio-input supply chains do not scale overnight. Soil does not rebuild in a news cycle. Farmers cannot gamble national food security because the country’s foreign exchange wallet has become thin after oil, gold, fertiliser, and shipping costs start dancing like drunk uncles at a wedding.
 
-A ship slows somewhere, and a farmer in Nadia worries about urea.
+Here in the southern fringe of Calcutta, my own day is modest enough to be audited by a sparrow. Tea. News. Work if work exists. A fan turning above like a tired bureaucrat. A vegetable seller shouting from the lane. Someone’s pressure cooker whistling with the urgency of a small locomotive. The phone brings global crisis into the room: Hormuz, Iran, oil, freight rates, rupee pressure, gold duty, fertiliser anxiety. The world has become so connected that a maritime choke point thousands of kilometres away can walk into a Kolkata kitchen and change the price of dinner.
+
+That is the modern miracle. Also the modern trap.
+
+A ship slows somewhere, and a farmer in Nadia wonders about urea.
 
 A duty rises in Delhi, and a karigar in Bengal waits for orders.
 
-A leader says sacrifice, and the sacrifice looks around for the nearest poor person.
+A leader says “sacrifice,” and the sacrifice looks around for the nearest poor man.
 
-Political language often pretends the nation is one body. We must reduce. We must conserve. We must sacrifice. The sound is noble until you ask which part of the body is being cut.
+This is the part that should make us pause.
 
-The rich person's inconvenience is not the poor person's crisis. One postpones a purchase. The other loses bench work. One rearranges a portfolio. The other waits for an order that may not come. The same word lands as different wounds.
+Political language often pretends that the nation is one body. “We must reduce.” “We must conserve.” “We must sacrifice.” It sounds noble until you ask: which part of the body is being cut?
 
-A serious speech would say: gold imports are stressing foreign exchange, so we will discourage unnecessary demand while protecting small jewellery workshops and artisans from sudden collapse. We will monitor smuggling. We will not punish the legal worker while rewarding the illegal channel.
+The rich man’s inconvenience is not the poor man’s crisis. One postpones a gold purchase. The other loses bench work. One reduces foreign travel. The other loses a hotel job. One eats less imported oil and calls it wellness. The other buys cheaper food and calls it Tuesday.
 
-A serious speech would say: fertilizer imports are vulnerable, so we will reduce waste scientifically. Soil tests first. Crop-wise plans. District-level advisories. Transitional support. Domestic production. Bio-input pilots where evidence supports them. No sudden purity theatre.
+The same word, different wound.
 
-But seriousness is boring. It requires charts, district officers, agronomists, cooperative banks, storage, transport, compensation, and humility. It is inconvenient television.
+This is why callous political statements matter. They are not just sound. They are early policy weather. Officials hear them and begin to improvise. Markets hear them and adjust prices. Traders hear them and hoard or dump. Television hears them and manufactures virtue. The poor hear them last, usually through consequences.
 
-So instead the poor are asked to carry visible virtue.
+By then the sentence has become a bill.
 
-I keep thinking of those shekra workers from childhood: the small rooms, bent shoulders, exact hands, and the absurdity of beauty emerging from conditions that had very little of it. Perhaps much has improved. I would be glad to be wrong in the happiest way.
+A serious leader would say: gold imports are hurting our foreign exchange position, so we are discouraging unnecessary purchases, but we will protect small jewellery workshops and artisans from sudden demand collapse. We will separate luxury hoarding from labour-intensive craftsmanship. We will monitor smuggling. We will not punish the legal worker while rewarding the illegal channel.
 
-But when policy speaks about gold, it should remember the hands that touch gold before the customer does.
+A serious leader would say: fertiliser imports are vulnerable because Hormuz and West Asia are unstable, so we will reduce waste scientifically. Soil tests first. Crop-wise plans. District-wise advisories. Transitional subsidies. Domestic production. Bio-input pilots where evidence supports them. No sudden national romance with purity. No Sri Lanka cosplay.
 
-And when policy speaks about fertilizer, it should remember that food security is soil, season, chemistry, debt, rain, labour, and luck, all arguing in the same field.
+But that kind of speech is boring.
 
-A country is not built by asking invisible people to perform visible patriotism.
+It does not fit into a slogan. It cannot be shouted from a stage with the smoothness of a devotional chorus. It requires charts, district officers, agronomists, cooperative banks, storage, transport, compensation, and humility. Very inconvenient things. Almost anti-television.
+
+So instead we get a moral drama.
+
+Do not buy gold.
+
+Use less fertiliser.
+
+Become self-reliant.
+
+Save foreign exchange.
+
+Lovely. Now show me the person who absorbs the shock.
+
+That is the test. Always. Follow the shock. If it ends in a boardroom, fine. If it ends in a rented room in South Sinthee where a man bends over a tiny flame making jewellery he cannot afford, then do not call it national discipline without blushing. If it ends in a paddy field where a farmer has been told to cut fertiliser before the system has given him a reliable alternative, do not call it natural farming. Call it risk transfer with a green scarf.
+
+The country must conserve. Yes.
+
+The country must become less import-dependent. Yes.
+
+The country must protect soil. Yes.
+
+The country must reduce wasteful consumption. Yes.
+
+But the country must not confuse the poor man’s suffering with patriotism. That old trick has been performed too often, and the audience is tired.
+
+I keep thinking of those shekra workers from my childhood. The small rooms. The bent shoulders. The astonishing delicacy of the work. The absurdity of beauty being produced in conditions that had none. Perhaps their situation has improved. I hope so. I would like to be wrong in the happiest possible way.
+
+But I know this much: when policy speaks about gold, it must remember the hands that touch gold before the bride does.
+
+And when policy speaks about fertiliser, it must remember that food security is not a motivational poster. It is soil, season, chemistry, debt, rain, labour, and luck, all arguing in the same field.
+
+A country is not built by asking invisible people to carry visible virtue.
 
 It is built by seeing them before the speech is written.

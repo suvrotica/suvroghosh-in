@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(404,272)" font-size="118" style="fill:#d9c89e">AI</text>
-<text transform="translate(493,511)" font-size="111" style="fill:#a9b7a3">Local</text>
-<text transform="translate(101,681) rotate(-90)" font-size="103" style="fill:#c49a6c">Machine</text>
-<text transform="translate(597,139)" font-size="95" style="fill:#d88988">Buy</text>
-<text transform="translate(944,647)" font-size="95" style="fill:#e0b879">Every</text>
-<text transform="translate(30,195)" font-size="95" style="fill:#d5d2c2">Work</text>
-<text transform="translate(189,505)" font-size="95" style="fill:#8fb7d0">Wait</text>
-<text transform="translate(551,252)" font-size="86" style="fill:#c49a6c">Person</text>
-<text transform="translate(847,374)" font-size="77" style="fill:#d88988">Real</text>
-<text transform="translate(400,408)" font-size="77" style="fill:#d88988">Matters</text>
-<text transform="translate(110,254)" font-size="77" style="fill:#9fc9c5">Money</text>
-<text transform="translate(539,63)" font-size="66" style="fill:#c49a6c">Future</text>
-<text transform="translate(154,611)" font-size="66" style="fill:#c49a6c">Memory</text>
-<text transform="translate(966,553)" font-size="66" style="fill:#e0b879">Cloud</text>
-<text transform="translate(160,95)" font-size="66" style="fill:#8fb7d0">Ordinary</text>
-<text transform="translate(991,157)" font-size="66" style="fill:#c49a6c">Cheaper</text>
-<text transform="translate(955,475)" font-size="54" style="fill:#d6a79f">Job</text>
-<text transform="translate(761,185)" font-size="54" style="fill:#e0b879">Cook</text>
-<text transform="translate(1140,435) rotate(-90)" font-size="54" style="fill:#c49a6c">Hardware</text>
-<text transform="translate(418,618)" font-size="54" style="fill:#c49a6c">NVIDIA</text>
-<text transform="translate(673,622)" font-size="54" style="fill:#a9b7a3">DGX</text>
-<text transform="translate(156,317)" font-size="54" style="fill:#d5d2c2">Spark</text>
-<text transform="translate(601,694)" font-size="54" style="fill:#d6a79f">Personal</text>
-<text transform="translate(425,694)" font-size="54" style="fill:#c49a6c">Large</text>
-<text transform="translate(1223,537) rotate(-90)" font-size="54" style="fill:#e0b879">Development</text>
-<text transform="translate(946,81)" font-size="54" style="fill:#c7d7b5">Workloads</text>
-<text transform="translate(493,561)" font-size="54" style="fill:#b6c3dd">Developer</text>
-<text transform="translate(155,669)" font-size="54" style="fill:#c7d7b5">Small</text>
-<text transform="translate(486,323)" font-size="54" style="fill:#d6a79f">Benefit</text>
-<text transform="translate(155,420)" font-size="54" style="fill:#d5d2c2">Models</text>
-<text transform="translate(142,554)" font-size="54" style="fill:#a9b7a3">Workflows</text>
-<text transform="translate(755,310)" font-size="54" style="fill:#d5d2c2">Model</text>
-<text transform="translate(883,639) rotate(-90)" font-size="54" style="fill:#d88988">Data</text>
-<text transform="translate(888,262)" font-size="54" style="fill:#b6c3dd">Useful</text>
-<text transform="translate(392,404) rotate(-90)" font-size="54" style="fill:#d5d2c2">Kitchen</text>
-<text transform="translate(898,713)" font-size="54" style="fill:#b6c3dd">Whether</text>
-<text transform="translate(363,50)" font-size="54" style="fill:#d6a79f">Tool</text>
-<text transform="translate(342,158)" font-size="54" style="fill:#c7d7b5">Leaving</text>
-<text transform="translate(830,419)" font-size="54" style="fill:#e0b879">Clients</text>
-<text transform="translate(190,714)" font-size="54" style="fill:#d88988">Product</text>
-<text transform="translate(942,211)" font-size="54" style="fill:#d5d2c2">First</text>
-<text transform="translate(929,649) rotate(-90)" font-size="54" style="fill:#d88988">Already</text>
-<text transform="translate(770,125)" font-size="52" style="fill:#b6c3dd">Waiting</text>
-<text transform="translate(778,47)" font-size="45" style="fill:#d6a79f">Buying</text>
-<text transform="translate(924,299)" font-size="45" style="fill:#d88988">Buyers</text>
-<text transform="translate(139,473) rotate(-90)" font-size="45" style="fill:#c49a6c">Studio</text>
-<text transform="translate(156,368)" font-size="45" style="fill:#b6c3dd">Beware</text>
-<text transform="translate(14,84)" font-size="45" style="fill:#9fc9c5">Heat</text>
-<text transform="translate(50,38)" font-size="45" style="fill:#c7d7b5">Noise</text>
-<text transform="translate(1075,469)" font-size="45" style="fill:#8fb7d0">Less</text>
-<text transform="translate(1030,581)" font-size="33" style="fill:#e0b879">Pressure</text>
-<text transform="translate(536,440)" font-size="33" style="fill:#c49a6c">Cooker</text>
-<text transform="translate(68,706)" font-size="33" style="fill:#c49a6c">Sits</text>
-<text transform="translate(654,353)" font-size="33" style="fill:#b6c3dd">Shelf</text>
-<text transform="translate(1261,301) rotate(-90)" font-size="33" style="fill:#c49a6c">Dignity</text>
-<text transform="translate(1070,33)" font-size="33" style="fill:#d9c89e">Benchmark</text>
-<text transform="translate(1169,417) rotate(-90)" font-size="33" style="fill:#a9b7a3">Chart</text>
-<text transform="translate(1126,113)" font-size="33" style="fill:#b6c3dd">Imitate</text>
-<text transform="translate(231,33)" font-size="33" style="fill:#c49a6c">Steam</text>
-<text transform="translate(570,177)" font-size="33" style="fill:#c7d7b5">Weight</text>
-<text transform="translate(465,647)" font-size="33" style="fill:#d88988">Whistle</text>
-<text transform="translate(498,109)" font-size="33" style="fill:#b6c3dd">Tells</text>
-<text transform="translate(1258,714) rotate(-90)" font-size="33" style="fill:#e0b879">Household</text>
-<text transform="translate(645,651)" font-size="33" style="fill:#c49a6c">Happening</text>
-<text transform="translate(1268,494) rotate(-90)" font-size="33" style="fill:#a9b7a3">Glamorous</text>
-<text transform="translate(18,116)" font-size="33" style="fill:#b6c3dd">Glamour</text>
-<text transform="translate(808,453)" font-size="33" style="fill:#c7d7b5">Rice</text>
-<text transform="translate(223,125)" font-size="33" style="fill:#b6c3dd">Merely</text>
-<text transform="translate(1047,676)" font-size="33" style="fill:#d88988">Sounds</text>
-<text transform="translate(398,323)" font-size="33" style="fill:#d5d2c2">Late</text>
-<text transform="translate(471,560) rotate(-90)" font-size="33" style="fill:#c49a6c">Serious</text>
-<text transform="translate(334,659)" font-size="33" style="fill:#d88988">Idea</text>
-<text transform="translate(29,378) rotate(-90)" font-size="33" style="fill:#c7d7b5">Compact</text>
-<text transform="translate(131,664) rotate(-90)" font-size="33" style="fill:#b6c3dd">System</text>
-<text transform="translate(1074,498)" font-size="33" style="fill:#d5d2c2">Built</text>
-<text transform="translate(726,409)" font-size="33" style="fill:#a9b7a3">Grace</text>
-<text transform="translate(474,350)" font-size="30" style="fill:#8fb7d0">Blackwell</text>
-<text transform="translate(542,277)" font-size="28" style="fill:#a9b7a3">Architecture</text>
-<text transform="translate(399,183)" font-size="28" style="fill:#c7d7b5">Unified</text>
-<text transform="translate(1049,115)" font-size="28" style="fill:#d6a79f">Mind</text>
-<text transform="translate(1123,710)" font-size="28" style="fill:#8fb7d0">Meant</text>
-<text transform="translate(278,200)" font-size="28" style="fill:#d5d2c2">Need</text>
-<text transform="translate(773,338)" font-size="28" style="fill:#c49a6c">Test</text>
-<text transform="translate(1074,455) rotate(-90)" font-size="28" style="fill:#c49a6c">Validate</text>
-<text transform="translate(1165,313) rotate(-90)" font-size="28" style="fill:#c49a6c">Finetune</text>
-<text transform="translate(941,29)" font-size="24" style="fill:#d88988">Prototype</text>
-<text transform="translate(907,156)" font-size="24" style="fill:#d5d2c2">Run</text>
-<text transform="translate(717,371)" font-size="20" style="fill:#c7d7b5">Meaningful</text>
-<text transform="translate(693,432)" font-size="20" style="fill:#b6c3dd">Close</text>
-<text transform="translate(778,68)" font-size="20" style="fill:#d9c89e">Desk</text>
-<text transform="translate(1104,394) rotate(-90)" font-size="20" style="fill:#9fc9c5">Rather</text>
-<text transform="translate(11,223)" font-size="20" style="fill:#a9b7a3">Sending</text>
-<text transform="translate(19,610) rotate(-90)" font-size="20" style="fill:#9fc9c5">Experiment</text>
-<text transform="translate(668,713)" font-size="20" style="fill:#c7d7b5">Infrastructure</text>
-<text transform="translate(218,337)" font-size="20" style="fill:#d9c89e">Direction</text>
-<text transform="translate(832,503)" font-size="20" style="fill:#9fc9c5">Toy</text>
-<text transform="translate(187,277)" font-size="20" style="fill:#9fc9c5">Privacy</text>
-<text transform="translate(655,195)" font-size="20" style="fill:#e0b879">Latency</text>
-<text transform="translate(858,667)" font-size="20" style="fill:#b6c3dd">Iteration</text>
-<text transform="translate(938,497)" font-size="20" style="fill:#d6a79f">Researchers</text>
-<text transform="translate(490,547) rotate(-90)" font-size="20" style="fill:#d9c89e">Consultants</text>
-<text transform="translate(941,574)" font-size="20" style="fill:#d6a79f">Studios</text>
-<text transform="translate(773,555)" font-size="20" style="fill:#b6c3dd">Teams</text>
-<text transform="translate(665,19)" font-size="20" style="fill:#b6c3dd">Machines</text>
-<text transform="translate(775,605)" font-size="20" style="fill:#c7d7b5">Handle</text>
-<text transform="translate(262,440)" font-size="20" style="fill:#d9c89e">Agent</text>
-<text transform="translate(105,500)" font-size="20" style="fill:#d88988">Renting</text>
-<text transform="translate(754,578)" font-size="20" style="fill:#d6a79f">Remote</text>
-<text transform="translate(1147,434)" font-size="20" style="fill:#d88988">GPU</text>
-<text transform="translate(804,150)" font-size="20" style="fill:#e0b879">Hour</text>
-<text transform="translate(582,715)" font-size="20" style="fill:#e0b879">Jewel</text>
-<text transform="translate(270,153)" font-size="20" style="fill:#d9c89e">Number</text>
-<text transform="translate(192,631)" font-size="20" style="fill:#b6c3dd">Looks</text>
-<text transform="translate(854,75)" font-size="20" style="fill:#c7d7b5">Largest</text>
-<text transform="translate(95,135)" font-size="20" style="fill:#d6a79f">Brochure</text>
-<text transform="translate(372,426)" font-size="20" style="fill:#d5d2c2">Usable</text>
-<text transform="translate(1187,341) rotate(-90)" font-size="20" style="fill:#d6a79f">Coherent</text>
-<text transform="translate(345,381) rotate(-90)" font-size="20" style="fill:#d88988">Environment</text>
-<text transform="translate(437,509) rotate(-90)" font-size="20" style="fill:#c7d7b5">Often</text>
-<text transform="translate(437,715)" font-size="20" style="fill:#d5d2c2">Fails</text>
-<text transform="translate(859,204)" font-size="20" style="fill:#e0b879">Quietly</text>
-<text transform="translate(630,650) rotate(-90)" font-size="20" style="fill:#b6c3dd">Context</text>
-<text transform="translate(670,83)" font-size="20" style="fill:#b6c3dd">Workflow</text>
-<text transform="translate(1093,253) rotate(-90)" font-size="20" style="fill:#9fc9c5">Fit</text>
-<text transform="translate(358,115)" font-size="20" style="fill:#c7d7b5">Spends</text>
-<text transform="translate(832,474)" font-size="20" style="fill:#e0b879">Time</text>
-<text transform="translate(397,341)" font-size="20" style="fill:#8fb7d0">Moving</text>
-<text transform="translate(281,174)" font-size="20" style="fill:#d88988">Size</text>
-<text transform="translate(416,290)" font-size="20" style="fill:#a9b7a3">Buyer</text>
-<text transform="translate(4,706)" font-size="20" style="fill:#b6c3dd">India</text>
+<text transform="translate(254,683)" font-size="93" style="fill:#a9b7a3">RTX</text>
+<text transform="translate(141,616) rotate(-90)" font-size="93" style="fill:#c49a6c">Local</text>
+<text transform="translate(420,146)" font-size="90" style="fill:#d88988">Memory</text>
+<text transform="translate(595,595)" font-size="81" style="fill:#c49a6c">Spark</text>
+<text transform="translate(901,472)" font-size="78" style="fill:#9fc9c5">Machine</text>
+<text transform="translate(108,242)" font-size="67" style="fill:#d5d2c2">NVIDIA</text>
+<text transform="translate(978,632)" font-size="67" style="fill:#c49a6c">Small</text>
+<text transform="translate(739,484)" font-size="63" style="fill:#c7d7b5">Work</text>
+<text transform="translate(225,622) rotate(-90)" font-size="63" style="fill:#9fc9c5">Let</text>
+<text transform="translate(1070,553)" font-size="63" style="fill:#b6c3dd">Wait</text>
+<text transform="translate(798,57)" font-size="59" style="fill:#d9c89e">Model</text>
+<text transform="translate(333,579)" font-size="59" style="fill:#d6a79f">Agents</text>
+<text transform="translate(413,506)" font-size="54" style="fill:#e0b879">Used</text>
+<text transform="translate(6,134)" font-size="54" style="fill:#8fb7d0">Workloads</text>
+<text transform="translate(561,250)" font-size="54" style="fill:#c49a6c">Every</text>
+<text transform="translate(630,363)" font-size="54" style="fill:#d6a79f">Tools</text>
+<text transform="translate(1026,134)" font-size="54" style="fill:#e0b879">Models</text>
+<text transform="translate(946,301) rotate(-90)" font-size="54" style="fill:#c49a6c">Column</text>
+<text transform="translate(303,401)" font-size="49" style="fill:#c49a6c">Software</text>
+<text transform="translate(240,520)" font-size="49" style="fill:#a9b7a3">Brand</text>
+<text transform="translate(1028,246)" font-size="49" style="fill:#d5d2c2">Compute</text>
+<text transform="translate(696,670)" font-size="49" style="fill:#d6a79f">Unified</text>
+<text transform="translate(1033,699)" font-size="49" style="fill:#c49a6c">Number</text>
+<text transform="translate(92,322) rotate(-90)" font-size="49" style="fill:#e0b879">Second</text>
+<text transform="translate(571,79)" font-size="49" style="fill:#c7d7b5">Cloud</text>
+<text transform="translate(968,376)" font-size="49" style="fill:#b6c3dd">Person</text>
+<text transform="translate(876,107)" font-size="49" style="fill:#b6c3dd">Real</text>
+<text transform="translate(122,304)" font-size="49" style="fill:#d6a79f">Private</text>
+<text transform="translate(967,317)" font-size="49" style="fill:#c49a6c">Important</text>
+<text transform="translate(814,546)" font-size="49" style="fill:#d5d2c2">Build</text>
+<text transform="translate(587,679) rotate(-90)" font-size="49" style="fill:#c49a6c">Understand</text>
+<text transform="translate(625,487) rotate(-90)" font-size="44" style="fill:#8fb7d0">Hardware</text>
+<text transform="translate(283,451)" font-size="44" style="fill:#b6c3dd">Graphics</text>
+<text transform="translate(894,257) rotate(-90)" font-size="44" style="fill:#d5d2c2">GPU</text>
+<text transform="translate(756,420)" font-size="44" style="fill:#b6c3dd">Unit</text>
+<text transform="translate(205,38)" font-size="44" style="fill:#d6a79f">System</text>
+<text transform="translate(121,170)" font-size="44" style="fill:#c7d7b5">Systems</text>
+<text transform="translate(1071,55)" font-size="44" style="fill:#e0b879">Power</text>
+<text transform="translate(687,706)" font-size="44" style="fill:#d88988">Performance</text>
+<text transform="translate(58,660)" font-size="44" style="fill:#d5d2c2">Large</text>
+<text transform="translate(281,76)" font-size="44" style="fill:#d88988">Pay</text>
+<text transform="translate(998,200)" font-size="44" style="fill:#b6c3dd">First</text>
+<text transform="translate(436,683)" font-size="44" style="fill:#9fc9c5">Now</text>
+<text transform="translate(340,316)" font-size="44" style="fill:#d88988">Laptop</text>
+<text transform="translate(768,269) rotate(-90)" font-size="44" style="fill:#c49a6c">Files</text>
+<text transform="translate(180,352)" font-size="44" style="fill:#b6c3dd">Document</text>
+<text transform="translate(798,159)" font-size="44" style="fill:#9fc9c5">Earn</text>
+<text transform="translate(469,42)" font-size="44" style="fill:#c7d7b5">Desk</text>
+<text transform="translate(806,360)" font-size="44" style="fill:#8fb7d0">Money</text>
+<text transform="translate(1155,420)" font-size="44" style="fill:#d88988">Poor</text>
+<text transform="translate(653,531)" font-size="44" style="fill:#c49a6c">Buy</text>
+<text transform="translate(858,606)" font-size="44" style="fill:#c49a6c">Need</text>
+<text transform="translate(17,42)" font-size="44" style="fill:#d9c89e">Buying</text>
+<text transform="translate(40,697) rotate(-90)" font-size="44" style="fill:#9fc9c5">Cheaper</text>
+<text transform="translate(597,208)" font-size="44" style="fill:#9fc9c5">Price</text>
+<text transform="translate(629,307)" font-size="44" style="fill:#b6c3dd">Confuse</text>
+<text transform="translate(145,388)" font-size="44" style="fill:#c49a6c">Change</text>
+<text transform="translate(1141,190)" font-size="44" style="fill:#c7d7b5">Needs</text>
+<text transform="translate(480,180)" font-size="38" style="fill:#d88988">Code</text>
+<text transform="translate(46,703)" font-size="38" style="fill:#b6c3dd">Ordinary</text>
+<text transform="translate(1250,707) rotate(-90)" font-size="38" style="fill:#e0b879">Branding</text>
+<text transform="translate(408,362)" font-size="38" style="fill:#d5d2c2">Modern</text>
+<text transform="translate(29,86)" font-size="38" style="fill:#a9b7a3">Processor</text>
+<text transform="translate(1158,372)" font-size="38" style="fill:#b6c3dd">Heavy</text>
+<text transform="translate(900,671)" font-size="38" style="fill:#a9b7a3">CPU</text>
+<text transform="translate(408,75)" font-size="38" style="fill:#b6c3dd">Normal</text>
+<text transform="translate(42,489) rotate(-90)" font-size="38" style="fill:#d88988">Running</text>
+<text transform="translate(321,141)" font-size="38" style="fill:#d5d2c2">Gpus</text>
+<text transform="translate(35,325) rotate(-90)" font-size="38" style="fill:#c49a6c">Floating</text>
+<text transform="translate(861,411)" font-size="38" style="fill:#d6a79f">Point</text>
+<text transform="translate(577,29)" font-size="33" style="fill:#d6a79f">Operations</text>
+<text transform="translate(517,300)" font-size="33" style="fill:#d88988">Per</text>
+<text transform="translate(518,707)" font-size="33" style="fill:#d5d2c2">Storage</text>
+<text transform="translate(433,642)" font-size="33" style="fill:#e0b879">Method</text>
+<text transform="translate(237,547)" font-size="33" style="fill:#d5d2c2">Arm</text>
+<text transform="translate(369,711)" font-size="33" style="fill:#d5d2c2">Indian</text>
+<text transform="translate(1180,504)" font-size="33" style="fill:#8fb7d0">Heat</text>
+<text transform="translate(1022,133) rotate(-90)" font-size="33" style="fill:#d88988">Three</text>
+<text transform="translate(286,710)" font-size="33" style="fill:#c7d7b5">Part</text>
+<text transform="translate(1032,500)" font-size="33" style="fill:#9fc9c5">Later</text>
+<text transform="translate(658,490)" font-size="33" style="fill:#d88988">Sit</text>
+<text transform="translate(274,609)" font-size="33" style="fill:#d6a79f">Man</text>
+<text transform="translate(204,457)" font-size="33" style="fill:#c49a6c">Yes</text>
+<text transform="translate(70,556) rotate(-90)" font-size="33" style="fill:#9fc9c5">Serious</text>
+<text transform="translate(632,435)" font-size="33" style="fill:#8fb7d0">Often</text>
+<text transform="translate(745,90)" font-size="33" style="fill:#c7d7b5">Bigger</text>
+<text transform="translate(847,322) rotate(-90)" font-size="33" style="fill:#e0b879">Workshop</text>
+<text transform="translate(973,277)" font-size="33" style="fill:#a9b7a3">Numbers</text>
+<text transform="translate(724,625)" font-size="33" style="fill:#d9c89e">Better</text>
+<text transform="translate(379,175)" font-size="33" style="fill:#9fc9c5">Less</text>
+<text transform="translate(863,331)" font-size="33" style="fill:#a9b7a3">Lunch</text>
+<text transform="translate(1091,84)" font-size="33" style="fill:#9fc9c5">Research</text>
+<text transform="translate(1155,278)" font-size="33" style="fill:#c7d7b5">Toward</text>
+<text transform="translate(977,406)" font-size="33" style="fill:#d9c89e">Workload</text>
+<text transform="translate(160,428)" font-size="33" style="fill:#9fc9c5">Future</text>
+<text transform="translate(994,162)" font-size="33" style="fill:#9fc9c5">Becomes</text>
+<text transform="translate(634,395)" font-size="29" style="fill:#e0b879">Already</text>
+<text transform="translate(409,605)" font-size="29" style="fill:#b6c3dd">Learning</text>
+<text transform="translate(599,651)" font-size="29" style="fill:#d6a79f">Even</text>
+<text transform="translate(1180,26)" font-size="29" style="fill:#b6c3dd">Test</text>
+<text transform="translate(379,25)" font-size="29" style="fill:#c49a6c">Agent</text>
+<text transform="translate(962,540)" font-size="29" style="fill:#d9c89e">Months</text>
+<text transform="translate(1057,345)" font-size="29" style="fill:#e0b879">Write</text>
+<text transform="translate(910,494)" font-size="24" style="fill:#e0b879">Acronyms</text>
+<text transform="translate(164,600) rotate(-90)" font-size="24" style="fill:#a9b7a3">Intelligence</text>
+<text transform="translate(280,477)" font-size="24" style="fill:#d88988">Uses</text>
+<text transform="translate(1109,652)" font-size="24" style="fill:#d6a79f">Generate</text>
+<text transform="translate(986,574)" font-size="24" style="fill:#d88988">Summarize</text>
+<text transform="translate(247,263)" font-size="24" style="fill:#e0b879">Search</text>
+<text transform="translate(611,680)" font-size="24" style="fill:#c49a6c">Clean</text>
+<text transform="translate(371,231) rotate(-90)" font-size="24" style="fill:#8fb7d0">Usage</text>
+<text transform="translate(1275,712) rotate(-90)" font-size="24" style="fill:#d9c89e">Platforms</text>
+<text transform="translate(972,656)" font-size="24" style="fill:#b6c3dd">Realtime</text>
+<text transform="translate(212,657)" font-size="24" style="fill:#c7d7b5">Ray</text>
+<text transform="translate(982,212) rotate(-90)" font-size="24" style="fill:#b6c3dd">Tracing</text>
+<text transform="translate(387,529)" font-size="24" style="fill:#b6c3dd">Acceleration</text>
+<text transform="translate(512,322)" font-size="24" style="fill:#b6c3dd">Family</text>
+<text transform="translate(964,25)" font-size="24" style="fill:#e0b879">School</text>
+<text transform="translate(789,269) rotate(-90)" font-size="24" style="fill:#c7d7b5">Processing</text>
+<text transform="translate(843,568)" font-size="24" style="fill:#d5d2c2">Parallel</text>
+<text transform="translate(65,341)" font-size="24" style="fill:#e0b879">Runs</text>
+<text transform="translate(55,272) rotate(-90)" font-size="24" style="fill:#b6c3dd">Program</text>
+<text transform="translate(544,275)" font-size="24" style="fill:#a9b7a3">Device</text>
+<text transform="translate(740,504)" font-size="21" style="fill:#8fb7d0">Architecture</text>
+<text transform="translate(441,422)" font-size="21" style="fill:#d88988">Platform</text>
+<text transform="translate(257,323)" font-size="21" style="fill:#d9c89e">FP4</text>
+<text transform="translate(81,624)" font-size="21" style="fill:#d88988">Compact</text>
+<text transform="translate(746,118)" font-size="21" style="fill:#d88988">Lowpower</text>
+<text transform="translate(595,506)" font-size="21" style="fill:#a9b7a3">Data</text>
 </svg>
