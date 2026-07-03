@@ -29,7 +29,7 @@ He picked up the bottle. The glass was smooth, and the liquid inside moved as th
 
 "Or both," said a voice from the doorway.
 
-They jumped. The man who stepped out was tall, with a white beard like a paintbrush, and in the middle of his forehead he had one enormous eye, brown and bright, with a pupil that swivelled like a fish in a bowl. He wore a faded kurta the colour of old mustard, and no shoes, and his feet were dusty on the step. He looked at them with his single eye, and the eye did not blink.
+They jumped. The man who stepped out was tall, and in the middle of his forehead he had one enormous eye, brown and bright, with a pupil that swivelled like a fish in a bowl. He wore a faded kurta the colour of old mustard, and no shoes, and his feet were dusty on the step. He looked at them with his single eye, and the eye did not blink.
 
 Poltu took a step back. Jhuma took two.
 
