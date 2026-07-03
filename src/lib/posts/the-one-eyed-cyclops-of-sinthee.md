@@ -1,9 +1,8 @@
-the-one-eyed-cyclops-of-sinthee.md
 ---
 title: "The One-Eyed Cyclops of Sinthee"
 description: "When a locked house in Calcutta opens its door, two children discover a man who sees the hidden truth of their neighbourhood—and need their help to save it."
 date: "2026-07-04"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260704_010515_5707.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Children's Fiction", "Adventure", "Curious", "Justice"]
 published: true
@@ -12,7 +11,7 @@ color: "#D2691E"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260704_010515_5707.jpg" />
 
 # THIS IS A WORK OF FICTION
 
