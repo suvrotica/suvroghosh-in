@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T14:41:23.263770+00:00",
+  "generatedAt": "2026-07-04T17:50:17.011339+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -9497,6 +9497,29 @@
         "Artificial",
         "Fishy",
         "AI"
+      ],
+      "wordCount": 130
+    },
+    "the-thermodynamics-of-shame": {
+      "generatedAt": "2026-07-04T17:50:16.866212+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-thermodynamics-of-shame.svg",
+      "source": "src/lib/posts/the-thermodynamics-of-shame.md",
+      "sourceHash": "10e025e1d935f269e7f905f81b5119ba75d33b46ad45b81ba141885642d2386c",
+      "sourceModified": "2026-07-04T17:50:04.758745+00:00",
+      "topWords": [
+        "World",
+        "Child",
+        "Believe",
+        "Pages",
+        "Except",
+        "Time",
+        "Man",
+        "Rice",
+        "Cooker",
+        "Exactly",
+        "Somewhere",
+        "Fox"
       ],
       "wordCount": 130
     },
