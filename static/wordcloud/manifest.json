@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T08:55:38.443655+00:00",
+  "generatedAt": "2026-07-04T14:10:46.772869+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -9106,6 +9106,29 @@
         "Small",
         "Sound",
         "Solitude"
+      ],
+      "wordCount": 130
+    },
+    "the-rice-pullers-of-new-garia": {
+      "generatedAt": "2026-07-04T14:10:46.611674+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-rice-pullers-of-new-garia.svg",
+      "source": "src/lib/posts/the-rice-pullers-of-new-garia.md",
+      "sourceHash": "18c2e6b7cc48a3e525007189665d5abf18bc755e4123ae1460ecfcc1fb307ad1",
+      "sourceModified": "2026-07-04T14:10:34.729424+00:00",
+      "topWords": [
+        "Jojo",
+        "Rice",
+        "Mimi",
+        "Man",
+        "Pump",
+        "Harmonium",
+        "Bowl",
+        "Polo",
+        "Crowd",
+        "Bag",
+        "Compass",
+        "Three"
       ],
       "wordCount": 130
     },
