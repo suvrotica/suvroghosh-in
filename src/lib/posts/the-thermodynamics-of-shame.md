@@ -2,7 +2,7 @@
 title: "The Thermodynamics of Shame: A South Calcutta Canticle"
 description: "A fevered, unwashed monologue from a decaying South Calcutta flat, where childhood Bengali fairy tales collide with the American Semiquincentennial, rice cooker theology, and the slow erosion of a man who consults for crumbs."
 date: "2026-07-04"
-thumbnail: "/images/"
+thumbnail: "/photos/Compress_20260704_231636_6936.jpg"
 category: "Essay"
 tags: ["Personal", "Calcutta", "Mental Health", "Satire", "Essay", "Bipolar", "NRI"]
 published: true
@@ -11,7 +11,7 @@ color: "#3a2e2e"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="/photos/Compress_20260704_231636_6936.jpg" />
 
 The pages of *Bhul barite dhuke (entered the wrong house)* parted with the sound of two damp tongues ungluing, releasing a spore-cloud of naphthalene, desiccated silverfish carapace—*Lepisma saccharina*, that glorious consumer of polysaccharides and dead skin, named not for any metallic sheen but for the way it slithers, fish-like, across your almirah—and the ghost of a glucose biscuit I had wedged between the pages sometime in the eighties, back when my frontal lobe was still a vacant lot waiting for zoning permits and the future seemed less like a deferred maintenance bill and more like an actual, you know, *future*. 
 
