@@ -2,7 +2,7 @@
 title: "The Green Light on Bondel Road"
 description: "When the sweetshop on Bondel Road shuts its doors at the wrong hour, three children uncover a strange extortion plot involving an American mask, a chain of frightened shopkeepers, and a very ordinary villain."
 date: "2026-07-04"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260704_140216_6585.jpg"
 category: "Short Fiction"
 tags: ["Short Fiction", "Children's Fiction", "Adventure", "Warm", "Mystery"]
 published: true
@@ -11,7 +11,7 @@ color: "#4CAF50"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260704_140216_6585.jpg" />
 
 # THIS IS A WORK OF FICTION
 
