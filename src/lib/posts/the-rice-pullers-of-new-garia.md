@@ -187,22 +187,4 @@ Jojo looked at his watch. It was quarter to seven. The lane would be waiting.
 
 They ran. The pump bounced against Jojo's leg, and the football was in Polo's arms, and Mimi carried the needle valve because she was the most responsible. The sun was fully up now, and the crows were shouting properly, and the smell of the city was the smell of mustard oil and dust and possibility.
 
-At the lane, the older boys were picking teams. Jojo ran up, breathless, and held out the pump.
-
-'I found it,' he said. 'And I can bowl. I can really bowl.'
-
-The captain, a boy named Rono who was thirteen and usually dismissive, looked at Jojo's dirty knees and his fierce eyes. 'All right,' he said. 'First over. But if you bowl wides, you're back to long-on.'
-
-Jojo pumped the football until it was tight and round and perfect. The air hissed through the valve, cool and quick. Then he took the ball and walked to the end of the lane.
-
-The lane was narrow, with a gutter down the off-side and a mango tree overhanging the leg-side boundary. Jojo bounced the ball once. It hit a patch of packed mud and kicked up a puff of red dust. Rono, the batsman, was chewing a toothpick and looking bored. He thought Jojo was just a child. Jojo gripped the ball hard, feeling the cracked seam bite into his fingertips.
-
-He ran in. He bowled. The ball swung late, missed the batsman's edge, and clipped the top of off-stump.
-
-The wicket shattered. The bails flew into the gutter.
-
-'Howzat!' shouted Jojo.
-
-The fielders cheered. Rono clapped. Mimi and Polo, sitting on a boundary wall with their feet dangling, shared the last of the jhalmuri and grinned.
-
 Jojo did not feel ten anymore. He felt exactly the right age for everything. The sun was hot. The ball was true. And somewhere beyond the lane, the city hummed with a thousand ordinary miracles waiting for someone curious enough to look.
