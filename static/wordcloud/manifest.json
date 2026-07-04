@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T20:10:22.989145+00:00",
+  "generatedAt": "2026-07-04T08:55:38.443655+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -8025,6 +8025,29 @@
         "Think",
         "Refuses",
         "Wanting"
+      ],
+      "wordCount": 130
+    },
+    "the-green-light-on-bondel-road": {
+      "generatedAt": "2026-07-04T08:55:38.188340+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-green-light-on-bondel-road.svg",
+      "source": "src/lib/posts/the-green-light-on-bondel-road.md",
+      "sourceHash": "96cfd2960799631acfbd7dcef2a5173d8543ebdd78a455fd83196ccc6baba12d",
+      "sourceModified": "2026-07-04T08:55:28.737847+00:00",
+      "topWords": [
+        "Ananya",
+        "Bijoy",
+        "Green",
+        "Fatima",
+        "Sen",
+        "Dogs",
+        "Sweetshop",
+        "Light",
+        "Money",
+        "Man",
+        "Mother",
+        "Wallah"
       ],
       "wordCount": 130
     },
