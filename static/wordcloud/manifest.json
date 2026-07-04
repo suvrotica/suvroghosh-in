@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T18:20:26.957753+00:00",
+  "generatedAt": "2026-07-04T18:30:11.986671+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -9501,12 +9501,12 @@
       "wordCount": 130
     },
     "the-thermodynamics-of-shame": {
-      "generatedAt": "2026-07-04T18:20:26.842587+00:00",
+      "generatedAt": "2026-07-04T18:30:11.822429+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/the-thermodynamics-of-shame.svg",
       "source": "src/lib/posts/the-thermodynamics-of-shame.md",
-      "sourceHash": "62b88ec44d7627fd4881e951e8b75b09aed59aa5981e125e07ad82aa3435f3f4",
-      "sourceModified": "2026-07-04T18:20:15.269899+00:00",
+      "sourceHash": "56fca64e5937e99701b591256433faeed41b04a0b9cdc01e9ffccc2b43bb53bc",
+      "sourceModified": "2026-07-04T18:29:59.664446+00:00",
       "topWords": [
         "World",
         "Child",

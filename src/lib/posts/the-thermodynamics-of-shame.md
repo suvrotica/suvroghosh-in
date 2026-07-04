@@ -19,7 +19,7 @@ I sit here. In this South Calcutta flat that smells of damp cement and the parti
 
 It is the Fourth of July, 2026.
 
-The United States of America is turning two hundred and fifty. A semiquincentennial. A word that sounds like a medical condition involving the intestine. Consult. The word derives from the Latin *consultare*, to deliberate, but in practice it means performing low-skill cognitive labor for people I have never met, whose avatar on LinkedIn looks like a thumb, while he celebrates freedom with grilled meat and explosive devices, while my bills becomes due.
+The United States of America is turning two hundred and fifty. A semiquincentennial. A word that sounds like a medical condition involving the intestine. Consult. The word derives from the Latin *consultare*, to deliberate, but in practice it means performing low-skill cognitive labor for people I can't fathom at all, whose avatar on LinkedIn looks like a disguise, while he celebrates freedom with grilled meat and explosive devices, while my bills become due.
 
 The rice cooker is silent. I am getting fed by my neighbour downstairs.
 
