@@ -1,5 +1,5 @@
 ---
-title: "Tubifex in Tollygunge: A Billing Cliff"
+title: "Tubifex in Trouble: A Billing Cliff"
 description: "A manic-depressive rant from a fifty-one-year-old canceled Bengali consultant in South Calcutta, contemplating AI governance, rice cookers, and the ontology of sewer worms."
 date: "2026-07-05"
 thumbnail: "/images/Compress_20260705_225250_0447.jpg"
