@@ -1,9 +1,8 @@
-calcutta-drain-worm.md
 ---
 title: "Tubifex in Tollygunge: A Billing Cliff"
 description: "A manic-depressive rant from a fifty-one-year-old canceled Bengali consultant in South Calcutta, contemplating AI governance, rice cookers, and the ontology of sewer worms."
 date: "2026-07-05"
-thumbnail: "/images/"
+thumbnail: "/images/Compress_20260705_225250_0447.jpg"
 category: "Essay"
 tags: ["Calcutta", "Bipolar", "AI", "Consulting", "SuvroGhosh", "Rant"]
 published: true
@@ -12,7 +11,7 @@ color: "#1a1a1a"
 
 <TTS />
 
-<Pi src="" />
+<Pi src="Compress_20260705_225250_0447.jpg" />
 
 I feel like an ugly but harried and terrified Calcutta drain worm if there is such a thing, a pinkish-grey, segmented, hermaphroditic *Tubifex tubifex*, writhing in the anaerobic muck of a Tollygunge sewer outflow, my cuticle glistening with the effluvia of a city that cannot decide whether it is a metropolis or a compost heap, and I am late, I am always late, even for my own decomposition, because my payments are on hold, in the US, where the heat index has apparently cancelled the Fourth of July in many cities like a bad subscription service. The make-believe voluntary AI standards the White House is threatening to announce next week, as if governance were a thing you could opt into like a gym membership, as if Anthropic’s Fable 5, that sanctimonious chatbot recently paroled from its nineteen-day government-imposed exile, cares one whit about my billing cliff, my existential July seventh, the day after which even my meager hallucinations will require usage credits.
 
