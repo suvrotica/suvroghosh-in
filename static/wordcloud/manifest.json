@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T21:00:43.558016+00:00",
+  "generatedAt": "2026-07-05T17:26:18.850959+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -1539,6 +1539,29 @@
         "Protein",
         "Food",
         "Less"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-drain-worm": {
+      "generatedAt": "2026-07-05T17:26:14.806049+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/calcutta-drain-worm.svg",
+      "source": "src/lib/posts/calcutta-drain-worm.md",
+      "sourceHash": "bb75a2f49918d9cfa9b2c4bd3854b3727475b80b90237b0c91e9db884c8a28bf",
+      "sourceModified": "2026-07-05T17:26:05.518838+00:00",
+      "topWords": [
+        "Drain",
+        "Worm",
+        "Rice",
+        "Cooker",
+        "Man",
+        "July",
+        "AI",
+        "Black",
+        "Abeyance",
+        "Tea",
+        "Death",
+        "Harried"
       ],
       "wordCount": 130
     },
