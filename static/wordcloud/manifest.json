@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T17:26:18.850959+00:00",
+  "generatedAt": "2026-07-07T22:34:05.471503+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -6599,6 +6599,29 @@
         "Square",
         "Little",
         "Sadness"
+      ],
+      "wordCount": 130
+    },
+    "storage": {
+      "generatedAt": "2026-07-07T22:34:03.512782+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/storage.svg",
+      "source": "src/lib/posts/storage.md",
+      "sourceHash": "d26f818fba453cab9cca37fd278edb2316d2117f0837e8f2a0c75633899e9838",
+      "sourceModified": "2026-07-07T22:33:47.052904+00:00",
+      "topWords": [
+        "Cane",
+        "Sun",
+        "Open",
+        "Door",
+        "Bed",
+        "Village",
+        "Pradeep",
+        "Came",
+        "Skin",
+        "Sweet",
+        "Eyes",
+        "Neighbor"
       ],
       "wordCount": 130
     },
