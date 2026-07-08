@@ -62,7 +62,13 @@ function parseFrontmatter(file) {
 			const items = [];
 			while (i + 1 < lines.length && lines[i + 1].trim().startsWith('- ')) {
 				i += 1;
-				items.push(lines[i].trim().slice(2).trim().replace(/^["']|["']$/g, ''));
+				items.push(
+					lines[i]
+						.trim()
+						.slice(2)
+						.trim()
+						.replace(/^["']|["']$/g, '')
+				);
 			}
 			data[key] = items.filter(Boolean);
 			continue;
@@ -87,6 +93,21 @@ function postPath(metadata, slug) {
 	return `/blog/${slugifyCategory(metadata.category)}/${encodeURIComponent(slug)}`;
 }
 
+function redirectedPostSlugs() {
+	const postHelpers = read(path.join(root, 'src', 'lib', 'content', 'posts.ts'));
+	const aliases = postHelpers.match(/export const postPathAliases[\s\S]*?=\s*\{([\s\S]*?)\};/);
+	if (!aliases) {
+		errors.push('Could not read postPathAliases from src/lib/content/posts.ts.');
+		return new Set();
+	}
+
+	return new Set(
+		Array.from(aliases[1].matchAll(/['"]([^'"]+)['"]\s*:/g)).map((match) =>
+			match[1].split('/').slice(1).join('/')
+		)
+	);
+}
+
 function assertAbsoluteUrl(label, value) {
 	if (!/^https:\/\/www\.suvroghosh\.in(\/|$)/.test(value)) {
 		errors.push(`${label} must be an absolute production URL: ${value}`);
@@ -95,8 +116,12 @@ function assertAbsoluteUrl(label, value) {
 
 const postFiles = fs.readdirSync(postsDir).filter((file) => file.endsWith('.md'));
 const publishedPosts = [];
+const redirectedSlugs = redirectedPostSlugs();
 
 for (const file of postFiles) {
+	const slug = file.replace(/\.md$/, '');
+	if (redirectedSlugs.has(slug)) continue;
+
 	const fullPath = path.join(postsDir, file);
 	const metadata = parseFrontmatter(fullPath);
 	const published = metadata.published !== false;
@@ -121,15 +146,15 @@ for (const file of postFiles) {
 
 	publishedPosts.push({
 		file,
-		slug: file.replace(/\.md$/, ''),
+		slug,
 		metadata,
-		url: `https://www.suvroghosh.in${postPath(metadata, file.replace(/\.md$/, ''))}`
+		url: `https://www.suvroghosh.in${postPath(metadata, slug)}`
 	});
 }
 
 const sitemapSource = read(path.join(root, 'src', 'routes', 'sitemap.xml', '+server.ts'));
-if (sitemapSource.includes('published === false')) {
-	// Good: unpublished posts are explicitly excluded.
+if (sitemapSource.includes('isIndexablePost') || sitemapSource.includes('published === false')) {
+	// Good: unpublished and redirect-source posts are explicitly excluded.
 } else {
 	errors.push('sitemap.xml generator should explicitly exclude unpublished posts.');
 }
@@ -175,8 +200,7 @@ function isAllowedSharedThumbnail(posts) {
 	return posts.every((post) => {
 		const title = normalizeIdentity(post.metadata.title);
 		return (
-			seriesBaseTitle(post.metadata.title) === seriesBase &&
-			/\b(?:part|pt)\s+\d+\b/i.test(title)
+			seriesBaseTitle(post.metadata.title) === seriesBase && /\b(?:part|pt)\s+\d+\b/i.test(title)
 		);
 	});
 }

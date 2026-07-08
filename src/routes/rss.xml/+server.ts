@@ -1,5 +1,10 @@
 import { siteUrl, siteTitle, siteDescription } from '$lib/components/seo/SEO';
-import { postPath, validatePublishedPostMetadata, type BlogPostMetadata } from '$lib/content/posts';
+import {
+	isIndexablePost,
+	postPath,
+	validatePublishedPostMetadata,
+	type BlogPostMetadata
+} from '$lib/content/posts';
 
 type RssPost = {
 	title: string;
@@ -20,10 +25,8 @@ export async function GET() {
 	const posts = Object.entries(modules)
 		.map(([path, file]) => {
 			const metadata = file.metadata;
-			if (!metadata || metadata.published === false || !metadata.title) return null;
-
 			const slug = path.split('/').pop()?.slice(0, -3);
-			if (!slug) return null;
+			if (!slug || !isIndexablePost(metadata, slug) || !metadata.title) return null;
 			validatePublishedPostMetadata(metadata, `${slug}.md`);
 			const link = siteUrl + postPath({ category: metadata.category || 'uncategorized', slug });
 

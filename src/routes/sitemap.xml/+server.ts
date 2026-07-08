@@ -1,6 +1,11 @@
 import { siteUrl } from '$lib/components/seo/SEO';
 import { slugifyCategory } from '$lib/content/categories';
-import { postPath, validatePublishedPostMetadata, type BlogPostMetadata } from '$lib/content/posts';
+import {
+	isIndexablePost,
+	postPath,
+	validatePublishedPostMetadata,
+	type BlogPostMetadata
+} from '$lib/content/posts';
 
 export const prerender = true;
 
@@ -22,10 +27,8 @@ export async function GET() {
 	const posts = Object.entries(modules)
 		.map(([path, file]) => {
 			const metadata = file.metadata;
-			if (!metadata || metadata.published === false || !metadata.category) return null;
-
 			const slug = path.split('/').pop()?.slice(0, -3);
-			if (!slug) return null;
+			if (!slug || !isIndexablePost(metadata, slug) || !metadata.category) return null;
 			validatePublishedPostMetadata(metadata, `${slug}.md`);
 			const category = slugifyCategory(metadata.category);
 			const lastMod = metadata.dateModified || metadata.date;

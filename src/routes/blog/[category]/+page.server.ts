@@ -2,7 +2,11 @@ import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 // IMPORT our centralized taxonomy handlers
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
-import { validatePublishedPostMetadata, type BlogPostMetadata } from '$lib/content/posts';
+import {
+	isIndexablePost,
+	validatePublishedPostMetadata,
+	type BlogPostMetadata
+} from '$lib/content/posts';
 
 interface Post {
 	slug: string;
@@ -32,7 +36,7 @@ export const load: PageServerLoad = async ({ params }) => {
 			const file = postFiles[path];
 			const slug = path.split('/').pop()?.replace('.md', '');
 
-			if (file && file.metadata && slug && file.metadata.published !== false) {
+			if (file && file.metadata && slug && isIndexablePost(file.metadata, slug)) {
 				validatePublishedPostMetadata(file.metadata, `${slug}.md`);
 				posts.push({
 					...file.metadata,

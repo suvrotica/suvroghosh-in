@@ -11,30 +11,17 @@ import {
 	schemaGraph
 } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
-import { validatePublishedPostMetadata, postPath, type BlogPostMetadata } from '$lib/content/posts';
-
-const postPathAliases: Record<string, string> = {
-	'artificial-intelligence/ai-meaningful-work-and-the-trust-collapse':
-		'/blog/artificial-intelligence/ai-meaningful-work-trust-collapse',
-	'career/intro': '/blog/career/the-new-mantra',
-	'healthcare-it/arrow_uncertainty_medical_care_healthcare_it':
-		'/blog/economics/kenneth-arrow-medical-care',
-	'healthcare-it/confounding-factors-healthcare-it-analytics':
-		'/blog/healthcare-it/confounding-factors',
-	'healthcare-it/-a-read-this-first': '/blog/career/-a-read-this-first',
-	'healthcare-it/hie-first-principles-openhie': '/blog/healthcare-it/hie-from-first-principles',
-	'healthcare-it/latent-space-in-healthcare-data':
-		'/blog/healthcare-it/latent-space-healthcare-data',
-	'healthcare-it/trolley-problem-healthcare-it':
-		'/blog/healthcare-it/the-trolley-problem-is-already-hiding-in-healthcare',
-	'healthcare-it/va-healthcare-data-systems-mumps-to-sql':
-		'/blog/healthcare-it/how-va-healthcare-data-systems-work',
-	'personal-essay/trapezoid-for-my-mother': '/blog/personal-essay/a-trapezoid-in-low-light'
-};
+import {
+	isIndexablePost,
+	postPath,
+	redirectedPostPath,
+	validatePublishedPostMetadata,
+	type BlogPostMetadata
+} from '$lib/content/posts';
 
 export const load: PageLoad = async ({ params }) => {
 	const { category, slug } = params;
-	const aliasPath = postPathAliases[`${slugifyCategory(category)}/${slug}`];
+	const aliasPath = redirectedPostPath(category, slug);
 	if (aliasPath) {
 		redirect(308, aliasPath);
 	}
@@ -109,7 +96,7 @@ export const load: PageLoad = async ({ params }) => {
 			const loader = postModules[path];
 			const meta = await loader();
 
-			if (meta.published === false || !meta.title) continue;
+			if (!isIndexablePost(meta, fileName) || !meta.title) continue;
 
 			const postCat = slugifyCategory(meta.category || 'uncategorized');
 			const sharedTags = Array.isArray(meta.tags)

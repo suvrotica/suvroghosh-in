@@ -1,6 +1,10 @@
 import type { PageLoad } from './$types';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
-import { validatePublishedPostMetadata, type BlogPostSummary } from '$lib/content/posts';
+import {
+	isIndexablePost,
+	validatePublishedPostMetadata,
+	type BlogPostSummary
+} from '$lib/content/posts';
 
 export const load: PageLoad = async () => {
 	const postFiles = import.meta.glob<{ metadata: BlogPostSummary }>('/src/lib/posts/*.md');
@@ -9,7 +13,7 @@ export const load: PageLoad = async () => {
 		const mod = await resolver();
 		const { metadata } = mod;
 		const slug = path.split('/').pop()?.replace('.md', '') ?? '';
-		if (!metadata || metadata.published === false) return null;
+		if (!isIndexablePost(metadata, slug)) return null;
 		validatePublishedPostMetadata(metadata, `${slug}.md`);
 		return { ...metadata, slug };
 	});
