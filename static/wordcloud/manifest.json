@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T22:34:05.471503+00:00",
+  "generatedAt": "2026-07-08T00:47:40.149317+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -5840,6 +5840,29 @@
         "Someone",
         "Bad",
         "Small"
+      ],
+      "wordCount": 130
+    },
+    "receipt": {
+      "generatedAt": "2026-07-08T00:47:39.325177+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/receipt.svg",
+      "source": "src/lib/posts/receipt.md",
+      "sourceHash": "6f0ecf4fda41d3ee9fed909b3d5db16eeaa495cacaf5d70382c6d2562cb1510e",
+      "sourceModified": "2026-07-08T00:47:26.794065+00:00",
+      "topWords": [
+        "Jessie",
+        "Darlene",
+        "Crab",
+        "Didn",
+        "Face",
+        "Crabs",
+        "Father",
+        "Dent",
+        "Temple",
+        "Died",
+        "Found",
+        "Bus"
       ],
       "wordCount": 130
     },
