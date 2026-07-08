@@ -36,6 +36,8 @@ export const postPathAliases: Record<string, string> = {
 	'healthcare-it/-a-read-this-first': '/blog/personal/schooling-in-calcutta',
 	'career/-a-read-this-first': '/blog/personal/schooling-in-calcutta',
 	'personal/-a-read-this-first': '/blog/personal/schooling-in-calcutta',
+	'healthcare-it/fhir-for-a-curious-student-in-calcutta':
+		'/blog/healthcare-it/fhir-the-universal-language-of-health-data',
 	'healthcare-it/hie-from-first-principles': '/blog/healthcare-it/hie-first-principles-openhie',
 	'healthcare-it/latent-space-healthcare-data':
 		'/blog/healthcare-it/latent-space-in-healthcare-data',
