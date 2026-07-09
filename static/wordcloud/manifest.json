@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T14:58:00.454193+00:00",
+  "generatedAt": "2026-07-09T18:27:45.254293+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -4046,6 +4046,29 @@
         "Work",
         "Education",
         "Parents"
+      ],
+      "wordCount": 130
+    },
+    "indigenous-robot-dogs-and-the-flatulence-of-governance": {
+      "generatedAt": "2026-07-09T18:27:44.419302+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/indigenous-robot-dogs-and-the-flatulence-of-governance.svg",
+      "source": "src/lib/posts/indigenous-robot-dogs-and-the-flatulence-of-governance.md",
+      "sourceHash": "145b2adf1ce2217d3bb3f799515d17590c37fb2b6c9806f7b4f10e5e9c4777ce",
+      "sourceModified": "2026-07-09T18:27:34.543583+00:00",
+      "topWords": [
+        "AI",
+        "Five",
+        "India",
+        "Model",
+        "Imagine",
+        "Already",
+        "Even",
+        "Power",
+        "Now",
+        "Indigenous",
+        "Year",
+        "Indian"
       ],
       "wordCount": 130
     },
