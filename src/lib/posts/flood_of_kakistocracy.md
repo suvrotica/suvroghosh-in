@@ -1,5 +1,5 @@
 ---
-title: "The Consommé of Governance: A July Meditation on Backflow and Bad Air"
+title: "The Consommé of Governance"
 description: "A manic-depressive monologue from Calcutta on flooded streets, invisible pollution, and the comic cruelty of kakistocracy in monsoon season."
 date: "2026-07-10"
 thumbnail: "/images/Compress_20260710_041434_4428.jpg"
