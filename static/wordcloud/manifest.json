@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T02:44:58.782134+00:00",
+  "generatedAt": "2026-07-09T14:58:00.454193+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -8922,6 +8922,29 @@
         "Morning",
         "Tea",
         "Nothing"
+      ],
+      "wordCount": 130
+    },
+    "the-perpendicular-shadow": {
+      "generatedAt": "2026-07-09T14:58:00.268131+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-perpendicular-shadow.svg",
+      "source": "src/lib/posts/the-perpendicular-shadow.md",
+      "sourceHash": "46e306cdd73aad413311c7a3c41da4b5d431941a744459417e539ca1355e44a5",
+      "sourceModified": "2026-07-09T14:57:45.525886+00:00",
+      "topWords": [
+        "Shadow",
+        "Thinking",
+        "Tea",
+        "Meaning",
+        "World",
+        "Perpendicular",
+        "Cup",
+        "AI",
+        "Algorithms",
+        "Space",
+        "Cold",
+        "Now"
       ],
       "wordCount": 130
     },
