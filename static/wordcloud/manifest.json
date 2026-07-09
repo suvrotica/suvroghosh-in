@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T18:27:45.254293+00:00",
+  "generatedAt": "2026-07-09T22:48:56.298273+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -3034,6 +3034,29 @@
         "Say",
         "Man",
         "Small"
+      ],
+      "wordCount": 130
+    },
+    "flood_of_kakistocracy": {
+      "generatedAt": "2026-07-09T22:48:52.051341+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/flood_of_kakistocracy.svg",
+      "source": "src/lib/posts/flood_of_kakistocracy.md",
+      "sourceHash": "0d74d9ba4cba07f8eb6a646b7a421e16174a5b7b423d843880a779f458bd6546",
+      "sourceModified": "2026-07-09T22:48:38.317301+00:00",
+      "topWords": [
+        "Winter",
+        "Governance",
+        "Particulate",
+        "Matter",
+        "Water",
+        "Rickshawwallah",
+        "Calves",
+        "Pollution",
+        "Air",
+        "Gods",
+        "Rancor",
+        "Continues"
       ],
       "wordCount": 130
     },
