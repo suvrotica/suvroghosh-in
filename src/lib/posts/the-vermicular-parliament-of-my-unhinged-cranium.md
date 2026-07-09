@@ -1,5 +1,5 @@
 ---
-title: "The Vermicular Parliament of My Unhinged Cranium: A Bipolar Rant on the Ninth of July, Two Thousand and Twenty-Six"
+title: "The Vermicular Parliament"
 description: "A fifty-one-year-old Bengali hikikomori's manic-depressive monologue about the worms of anxiety gnawing behind his mask of normalcy, set against the decay of South Calcutta and the absurdity of global tech conferences."
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_053000_0143.jpg"

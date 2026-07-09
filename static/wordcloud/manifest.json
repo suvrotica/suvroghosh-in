@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T00:54:45.824935+00:00",
+  "generatedAt": "2026-07-09T01:00:35.092241+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -9777,12 +9777,12 @@
       "wordCount": 130
     },
     "the-vermicular-parliament-of-my-unhinged-cranium": {
-      "generatedAt": "2026-07-09T00:54:45.709004+00:00",
+      "generatedAt": "2026-07-09T01:00:34.974467+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/the-vermicular-parliament-of-my-unhinged-cranium.svg",
       "source": "src/lib/posts/the-vermicular-parliament-of-my-unhinged-cranium.md",
-      "sourceHash": "d559cdaa63225f4f969cf38c65662b9bb7dd0a8cfe8d1fd8ad71e4115689e3cf",
-      "sourceModified": "2026-07-09T00:54:32.871347+00:00",
+      "sourceHash": "6ea227c408afb1fd86c9949e2eab9346e0d3df835cf5b5004e33363e0a3ea477",
+      "sourceModified": "2026-07-09T01:00:21.641463+00:00",
       "topWords": [
         "Worms",
         "Every",
