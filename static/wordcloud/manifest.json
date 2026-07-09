@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T01:00:35.092241+00:00",
+  "generatedAt": "2026-07-09T02:22:12.504232+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -7634,6 +7634,29 @@
         "Importance",
         "Bengali",
         "Ancestral"
+      ],
+      "wordCount": 130
+    },
+    "the-digital-charnel-house": {
+      "generatedAt": "2026-07-09T02:22:10.659840+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-digital-charnel-house.svg",
+      "source": "src/lib/posts/the-digital-charnel-house.md",
+      "sourceHash": "3c4ae18379a78e8076fcc6e909dd3c276f1fec3a660b1a142f87b519a6908749",
+      "sourceModified": "2026-07-09T02:21:58.395485+00:00",
+      "topWords": [
+        "Slop",
+        "AI",
+        "Internet",
+        "Now",
+        "Never",
+        "Nothing",
+        "Digital",
+        "Shovel",
+        "Think",
+        "Part",
+        "Bengali",
+        "Youtube"
       ],
       "wordCount": 130
     },
