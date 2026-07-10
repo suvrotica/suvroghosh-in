@@ -1,6 +1,7 @@
 <script lang="ts">
 	let {
 		src,
+		title = '',
 		caption = '',
 		layout = 'block',
 		size = 1,
@@ -11,6 +12,7 @@
 		preload = 'none'
 	}: {
 		src: string;
+		title?: string;
 		caption?: string;
 		layout?: 'block' | 'iL' | 'iR';
 		size?: number;
@@ -32,6 +34,14 @@
 				: `/images/${poster}`
 			: undefined
 	);
+
+	function formatTitle(filename: string) {
+		const name = filename.split('/').pop() ?? filename;
+		const noExtension = name.split('.').slice(0, -1).join('.');
+		return noExtension.replace(/[-_]+/g, ' ').replace(/\s+/g, ' ').trim();
+	}
+
+	let accessibleTitle = $derived(title.trim() || caption.trim() || formatTitle(src));
 
 	let containerStyle = $derived(`width: ${size * 100}%; max-width: 100%;`);
 
@@ -58,8 +68,11 @@
 		{muted}
 		playsinline
 		{preload}
+		aria-label={`${accessibleTitle} video`}
 		class={videoClasses}
-	></video>
+	>
+		Your browser does not support embedded video.
+	</video>
 
 	{#if caption}
 		<figcaption
