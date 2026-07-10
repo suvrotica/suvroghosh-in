@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { contactPageSchema, personSchema, schemaGraph, siteUrl } from '$lib/components/seo/SEO';
 	import { Button } from '$lib/components/ui/button';
+	import type { SubmitFunction } from '@sveltejs/kit';
 	import type { ActionData } from './$types';
 
 	let { form }: { form?: ActionData } = $props();
@@ -12,6 +14,7 @@
 	const canonicalUrl = siteUrl + '/contact';
 
 	const email = 'contact@suvroghosh.in';
+	let submitting = $state(false);
 
 	type ContactFormErrors = { name?: string; email?: string; message?: string; form?: string };
 
@@ -24,6 +27,18 @@
 			message: ''
 		}
 	);
+
+	const enhanceContact: SubmitFunction = () => {
+		submitting = true;
+
+		return async ({ update }) => {
+			try {
+				await update();
+			} finally {
+				submitting = false;
+			}
+		};
+	};
 </script>
 
 <SEO
@@ -65,7 +80,14 @@
 			</div>
 		{/if}
 
-		<form method="POST" class="space-y-5" novalidate>
+		<form
+			method="POST"
+			class="space-y-5"
+			novalidate
+			use:enhance={enhanceContact}
+			aria-busy={submitting}
+			aria-describedby="contact-privacy"
+		>
 			<div>
 				<label
 					for="name"
@@ -149,7 +171,21 @@
 				<input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
 			</div>
 
-			<Button type="submit" class="w-full sm:w-auto">Send message</Button>
+			<Button type="submit" class="min-h-11 w-full sm:w-auto" disabled={submitting}>
+				{submitting ? 'Sending…' : 'Send message'}
+			</Button>
+
+			<p
+				id="contact-privacy"
+				class="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
+			>
+				Your details are used only to reply to this message. They are not added to a mailing list or
+				shared for marketing.
+			</p>
+
+			{#if submitting}
+				<p class="sr-only" role="status" aria-live="polite">Sending your message.</p>
+			{/if}
 		</form>
 
 		<div
