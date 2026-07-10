@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:19:56.386896+00:00",
+  "generatedAt": "2026-07-10T20:18:45.230987+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -6691,6 +6691,29 @@
         "Bappa",
         "Sat",
         "Cloth"
+      ],
+      "wordCount": 130
+    },
+    "spudcell-and-the-border-of-life": {
+      "generatedAt": "2026-07-10T20:18:44.907218+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/spudcell-and-the-border-of-life.svg",
+      "source": "src/lib/posts/spudcell-and-the-border-of-life.md",
+      "sourceHash": "0f4261d60751cc078680f8a52aabc61dd7413b964f661716c620bc41c2350582",
+      "sourceModified": "2026-07-10T20:18:34.176106+00:00",
+      "topWords": [
+        "Spudcell",
+        "Cell",
+        "Biology",
+        "System",
+        "Genetic",
+        "Genome",
+        "Molecular",
+        "Synthetic",
+        "Cells",
+        "Ribosomes",
+        "Proteins",
+        "DNA"
       ],
       "wordCount": 130
     },

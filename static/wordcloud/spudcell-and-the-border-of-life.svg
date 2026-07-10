@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The SpudCell and the Border of Life" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The SpudCell and the Border of Life</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(62,271)" font-size="118" style="fill:#8fb7d0">Spudcell</text>
+<text transform="translate(202,560)" font-size="84" style="fill:#c7d7b5">Cell</text>
+<text transform="translate(754,495)" font-size="74" style="fill:#b6c3dd">Biology</text>
+<text transform="translate(835,262)" font-size="74" style="fill:#c49a6c">System</text>
+<text transform="translate(684,388) rotate(-90)" font-size="72" style="fill:#c49a6c">Genetic</text>
+<text transform="translate(952,104)" font-size="70" style="fill:#b6c3dd">Genome</text>
+<text transform="translate(308,662)" font-size="68" style="fill:#d88988">Molecular</text>
+<text transform="translate(125,97)" font-size="64" style="fill:#d9c89e">Synthetic</text>
+<text transform="translate(694,664)" font-size="62" style="fill:#d5d2c2">Cells</text>
+<text transform="translate(305,468)" font-size="60" style="fill:#b6c3dd">Ribosomes</text>
+<text transform="translate(501,581)" font-size="58" style="fill:#e0b879">Proteins</text>
+<text transform="translate(977,689) rotate(-90)" font-size="56" style="fill:#b6c3dd">DNA</text>
+<text transform="translate(66,377)" font-size="56" style="fill:#d6a79f">Machinery</text>
+<text transform="translate(690,160)" font-size="54" style="fill:#d6a79f">Components</text>
+<text transform="translate(1204,710) rotate(-90)" font-size="54" style="fill:#d9c89e">Researchers</text>
+<text transform="translate(12,639)" font-size="54" style="fill:#a9b7a3">Cellular</text>
+<text transform="translate(752,350)" font-size="52" style="fill:#c7d7b5">Chemistry</text>
+<text transform="translate(502,521)" font-size="52" style="fill:#8fb7d0">Yet</text>
+<text transform="translate(1059,191)" font-size="52" style="fill:#d6a79f">Living</text>
+<text transform="translate(31,437)" font-size="52" style="fill:#8fb7d0">Division</text>
+<text transform="translate(501,57)" font-size="52" style="fill:#a9b7a3">Natural</text>
+<text transform="translate(289,709)" font-size="50" style="fill:#8fb7d0">Research</text>
+<text transform="translate(904,48)" font-size="50" style="fill:#d88988">Work</text>
+<text transform="translate(806,556)" font-size="50" style="fill:#b6c3dd">Generations</text>
+<text transform="translate(689,419)" font-size="50" style="fill:#c49a6c">Laboratory</text>
+<text transform="translate(212,313)" font-size="50" style="fill:#d88988">Complete</text>
+<text transform="translate(793,100)" font-size="48" style="fill:#c7d7b5">First</text>
+<text transform="translate(372,390)" font-size="48" style="fill:#d9c89e">Membrane</text>
+<text transform="translate(961,300)" font-size="48" style="fill:#b6c3dd">Enzymes</text>
+<text transform="translate(268,137)" font-size="46" style="fill:#c7d7b5">Evolution</text>
+<text transform="translate(501,344)" font-size="46" style="fill:#d9c89e">Many</text>
+<text transform="translate(55,162)" font-size="46" style="fill:#9fc9c5">Systems</text>
+<text transform="translate(19,678)" font-size="46" style="fill:#c7d7b5">Protein</text>
+<text transform="translate(505,105)" font-size="43" style="fill:#d88988">Grow</text>
+<text transform="translate(1015,609)" font-size="43" style="fill:#d6a79f">Alive</text>
+<text transform="translate(98,714)" font-size="43" style="fill:#9fc9c5">Several</text>
+<text transform="translate(670,505) rotate(-90)" font-size="43" style="fill:#9fc9c5">July</text>
+<text transform="translate(1035,142)" font-size="43" style="fill:#9fc9c5">Adamala</text>
+<text transform="translate(252,599)" font-size="43" style="fill:#b6c3dd">Molecules</text>
+<text transform="translate(561,705)" font-size="43" style="fill:#d88988">Replication</text>
+<text transform="translate(20,558)" font-size="40" style="fill:#9fc9c5">Droplet</text>
+<text transform="translate(62,488)" font-size="40" style="fill:#d6a79f">Purified</text>
+<text transform="translate(1026,40)" font-size="40" style="fill:#b6c3dd">University</text>
+<text transform="translate(984,698)" font-size="40" style="fill:#b6c3dd">Matters</text>
+<text transform="translate(30,34)" font-size="40" style="fill:#d6a79f">Biological</text>
+<text transform="translate(981,652)" font-size="40" style="fill:#e0b879">Build</text>
+<text transform="translate(55,351) rotate(-90)" font-size="40" style="fill:#9fc9c5">Rather</text>
+<text transform="translate(1265,488) rotate(-90)" font-size="40" style="fill:#e0b879">Particular</text>
+<text transform="translate(429,169)" font-size="40" style="fill:#d6a79f">Rnas</text>
+<text transform="translate(800,203)" font-size="39" style="fill:#a9b7a3">Manufacture</text>
+<text transform="translate(131,193)" font-size="36" style="fill:#d6a79f">Question</text>
+<text transform="translate(1190,348) rotate(-90)" font-size="36" style="fill:#c49a6c">Copy</text>
+<text transform="translate(1018,398)" font-size="36" style="fill:#9fc9c5">Divide</text>
+<text transform="translate(396,427)" font-size="36" style="fill:#d5d2c2">Minnesota</text>
+<text transform="translate(992,436)" font-size="36" style="fill:#a9b7a3">Building</text>
+<text transform="translate(703,612)" font-size="36" style="fill:#9fc9c5">Understand</text>
+<text transform="translate(278,31)" font-size="36" style="fill:#d9c89e">Chemically</text>
+<text transform="translate(723,50)" font-size="36" style="fill:#d6a79f">Growth</text>
+<text transform="translate(765,378)" font-size="32" style="fill:#c7d7b5">Instructions</text>
+<text transform="translate(1273,695) rotate(-90)" font-size="32" style="fill:#d88988">Selection</text>
+<text transform="translate(338,164)" font-size="32" style="fill:#a9b7a3">Five</text>
+<text transform="translate(694,293)" font-size="32" style="fill:#b6c3dd">Supplied</text>
+<text transform="translate(598,529)" font-size="32" style="fill:#d9c89e">Autonomous</text>
+<text transform="translate(19,520)" font-size="32" style="fill:#d6a79f">Transfer</text>
+<text transform="translate(401,544)" font-size="32" style="fill:#c7d7b5">Much</text>
+<text transform="translate(1127,235)" font-size="32" style="fill:#b6c3dd">Energy</text>
+<text transform="translate(1232,685) rotate(-90)" font-size="32" style="fill:#d88988">Science</text>
+<text transform="translate(689,246)" font-size="32" style="fill:#c7d7b5">Perhaps</text>
+<text transform="translate(1275,247) rotate(-90)" font-size="32" style="fill:#d5d2c2">Artificial</text>
+<text transform="translate(462,299)" font-size="32" style="fill:#a9b7a3">Possible</text>
+<text transform="translate(28,251) rotate(-90)" font-size="32" style="fill:#8fb7d0">Information</text>
+<text transform="translate(344,195)" font-size="29" style="fill:#d9c89e">Though</text>
+<text transform="translate(1230,525) rotate(-90)" font-size="29" style="fill:#a9b7a3">Assembled</text>
+<text transform="translate(691,205)" font-size="29" style="fill:#e0b879">Simple</text>
+<text transform="translate(325,338)" font-size="29" style="fill:#a9b7a3">Metabolic</text>
+<text transform="translate(900,710) rotate(-90)" font-size="29" style="fill:#8fb7d0">Story</text>
+<text transform="translate(1076,524)" font-size="29" style="fill:#8fb7d0">Built</text>
+<text transform="translate(710,507) rotate(-90)" font-size="29" style="fill:#d9c89e">Less</text>
+<text transform="translate(1042,357)" font-size="29" style="fill:#d88988">Merely</text>
+<text transform="translate(392,504)" font-size="29" style="fill:#d5d2c2">Lipids</text>
+<text transform="translate(106,586)" font-size="29" style="fill:#e0b879">Plasmids</text>
+<text transform="translate(84,328)" font-size="29" style="fill:#d88988">Minimal</text>
+<text transform="translate(779,125)" font-size="29" style="fill:#d5d2c2">Functional</text>
+<text transform="translate(802,580)" font-size="28" style="fill:#a9b7a3">Constructed</text>
+<text transform="translate(4,583)" font-size="28" style="fill:#c49a6c">Acids</text>
+<text transform="translate(643,614)" font-size="28" style="fill:#d88988">RNA</text>
+<text transform="translate(616,86)" font-size="28" style="fill:#8fb7d0">Conditions</text>
+<text transform="translate(529,129)" font-size="28" style="fill:#e0b879">Within</text>
+<text transform="translate(537,173)" font-size="28" style="fill:#a9b7a3">Small</text>
+<text transform="translate(837,518)" font-size="22" style="fill:#b6c3dd">Fragmented</text>
+<text transform="translate(33,118)" font-size="22" style="fill:#c7d7b5">Designed</text>
+<text transform="translate(295,491)" font-size="22" style="fill:#c7d7b5">Feeder</text>
+<text transform="translate(301,411)" font-size="22" style="fill:#d88988">Depends</text>
+<text transform="translate(1058,487)" font-size="22" style="fill:#9fc9c5">Produce</text>
+<text transform="translate(21,475) rotate(-90)" font-size="22" style="fill:#9fc9c5">Heredity</text>
+<text transform="translate(227,660)" font-size="22" style="fill:#b6c3dd">Useful</text>
+<text transform="translate(503,602)" font-size="22" style="fill:#9fc9c5">Remains</text>
+<text transform="translate(1112,252)" font-size="20" style="fill:#d9c89e">Potato</text>
+<text transform="translate(851,299)" font-size="20" style="fill:#c7d7b5">Nonliving</text>
+<text transform="translate(1062,58)" font-size="20" style="fill:#d5d2c2">Materials</text>
+<text transform="translate(875,68)" font-size="20" style="fill:#9fc9c5">Far</text>
+<text transform="translate(72,64)" font-size="20" style="fill:#d88988">Ask</text>
+<text transform="translate(1223,364) rotate(-90)" font-size="20" style="fill:#d6a79f">Engelhart</text>
+<text transform="translate(924,675) rotate(-90)" font-size="20" style="fill:#d9c89e">Years</text>
+<text transform="translate(7,699)" font-size="20" style="fill:#8fb7d0">Human</text>
+<text transform="translate(1074,325)" font-size="20" style="fill:#e0b879">Already</text>
+<text transform="translate(224,127)" font-size="20" style="fill:#e0b879">Set</text>
+<text transform="translate(64,290)" font-size="20" style="fill:#e0b879">Fully</text>
+<text transform="translate(420,620)" font-size="20" style="fill:#d6a79f">Controlled</text>
+<text transform="translate(1071,463)" font-size="20" style="fill:#9fc9c5">Chassis</text>
+<text transform="translate(1162,658) rotate(-90)" font-size="20" style="fill:#d6a79f">Inherited</text>
+<text transform="translate(717,19)" font-size="20" style="fill:#d9c89e">Functions</text>
+<text transform="translate(584,17)" font-size="17" style="fill:#e0b879">Engineered</text>
+<text transform="translate(1057,715)" font-size="17" style="fill:#c49a6c">Behaviors</text>
+<text transform="translate(697,110)" font-size="17" style="fill:#c49a6c">Supplies</text>
+<text transform="translate(39,85)" font-size="17" style="fill:#c7d7b5">Daughter</text>
+<text transform="translate(707,436)" font-size="17" style="fill:#b6c3dd">Variants</text>
+<text transform="translate(1228,149) rotate(-90)" font-size="17" style="fill:#a9b7a3">Form</text>
+<text transform="translate(46,454)" font-size="17" style="fill:#d9c89e">Chemical</text>
+<text transform="translate(247,333)" font-size="17" style="fill:#9fc9c5">Seven</text>
+<text transform="translate(419,560)" font-size="17" style="fill:#d6a79f">Machine</text>
+<text transform="translate(532,76)" font-size="17" style="fill:#8fb7d0">Process</text>
+<text transform="translate(699,260)" font-size="14" style="fill:#9fc9c5">Externally</text>
+<text transform="translate(259,631)" font-size="14" style="fill:#d6a79f">Upon</text>
+<text transform="translate(906,702)" font-size="14" style="fill:#d88988">Synthesis</text>
+<text transform="translate(623,423) rotate(-90)" font-size="14" style="fill:#8fb7d0">Technologies</text>
+<text transform="translate(295,45)" font-size="12" style="fill:#8fb7d0">Potatoshaped</text>
+<text transform="translate(33,66)" font-size="12" style="fill:#9fc9c5">Mean</text>
+<text transform="translate(557,311)" font-size="12" style="fill:#d5d2c2">Fundamental</text>
+<text transform="translate(1240,132) rotate(-90)" font-size="12" style="fill:#d88988">Lipid</text>
+</svg>
