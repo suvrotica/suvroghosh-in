@@ -153,7 +153,11 @@ for (const file of postFiles) {
 }
 
 const sitemapSource = read(path.join(root, 'src', 'routes', 'sitemap.xml', '+server.ts'));
-if (sitemapSource.includes('isIndexablePost') || sitemapSource.includes('published === false')) {
+if (
+	sitemapSource.includes('getPublishedPosts') ||
+	sitemapSource.includes('isIndexablePost') ||
+	sitemapSource.includes('published === false')
+) {
 	// Good: unpublished and redirect-source posts are explicitly excluded.
 } else {
 	errors.push('sitemap.xml generator should explicitly exclude unpublished posts.');

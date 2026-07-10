@@ -1,46 +1,22 @@
 import { siteUrl, siteTitle, siteDescription } from '$lib/components/seo/SEO';
-import {
-	isIndexablePost,
-	postPath,
-	validatePublishedPostMetadata,
-	type BlogPostMetadata
-} from '$lib/content/posts';
-
-type RssPost = {
-	title: string;
-	description: string;
-	date: string;
-	link: string;
-	guid: string;
-	category: string;
-};
+import { postPath } from '$lib/content/posts';
+import { getPublishedPosts } from '$lib/server/content/posts';
 
 export const prerender = true;
 
 export async function GET() {
-	const modules = import.meta.glob<{ metadata: BlogPostMetadata }>('/src/lib/posts/*.md', {
-		eager: true
-	});
-
-	const posts = Object.entries(modules)
-		.map(([path, file]) => {
-			const metadata = file.metadata;
-			const slug = path.split('/').pop()?.slice(0, -3);
-			if (!slug || !isIndexablePost(metadata, slug) || !metadata.title) return null;
-			validatePublishedPostMetadata(metadata, `${slug}.md`);
-			const link = siteUrl + postPath({ category: metadata.category || 'uncategorized', slug });
-
+	const posts = getPublishedPosts()
+		.map((post) => {
+			const link = siteUrl + postPath(post);
 			return {
-				title: metadata.title,
-				description: metadata.description || '',
-				date: metadata.date,
+				title: post.title,
+				description: post.description,
+				date: post.date,
 				link,
 				guid: link,
-				category: metadata.category || 'uncategorized'
+				category: post.category
 			};
 		})
-		.filter((post): post is RssPost => Boolean(post))
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 		.slice(0, 25);
 
 	const items = posts
