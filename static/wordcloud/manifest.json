@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T22:54:30.251024+00:00",
+  "generatedAt": "2026-07-10T14:31:15.129160+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -4115,6 +4115,29 @@
         "Everyone",
         "Enough",
         "Give"
+      ],
+      "wordCount": 130
+    },
+    "intolerable-cruelty": {
+      "generatedAt": "2026-07-10T14:31:10.507140+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/intolerable-cruelty.svg",
+      "source": "src/lib/posts/intolerable-cruelty.md",
+      "sourceHash": "72a35a85fe31e71349d068da17125f440bbd6092ea3fa38b3b34806b1adee286",
+      "sourceModified": "2026-07-10T14:30:56.807396+00:00",
+      "topWords": [
+        "Water",
+        "Now",
+        "First",
+        "Intolerable",
+        "Stop",
+        "Say",
+        "Cruelty",
+        "Four",
+        "Billion",
+        "AI",
+        "Data",
+        "Enough"
       ],
       "wordCount": 130
     },
