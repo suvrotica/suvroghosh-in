@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { Input } from '$lib/components/ui/input';
 	import { Button } from '$lib/components/ui/button';
 
@@ -13,7 +13,7 @@
 		{ href: '/healthcare-it-gulf', label: 'Gulf / Kuwait' },
 		{ href: '/writing', label: 'Writing' },
 		{ href: '/contact', label: 'Contact' }
-	];
+	] as const;
 
 	let mobileOpen = $state(false);
 
@@ -22,12 +22,6 @@
 	}
 
 	let searchQuery = $state(page.url.searchParams.get('search') ?? '');
-
-	function handleSearch(e: SubmitEvent) {
-		e.preventDefault();
-		const query = searchQuery.trim();
-		goto(query ? '/blog?search=' + encodeURIComponent(query) : '/blog');
-	}
 </script>
 
 <header
@@ -35,16 +29,16 @@
 >
 	<div class="container mx-auto flex items-center justify-between gap-4 p-4">
 		<a
-			href="/"
+			href={resolve('/')}
 			class="text-lg font-bold whitespace-nowrap text-neutral-900 transition-colors hover:text-neutral-400 dark:text-neutral-100"
 		>
 			SuvroGhosh<span class="text-neutral-400">.In</span>
 		</a>
 
 		<nav class="hidden items-center gap-5 md:flex" aria-label="Main navigation">
-			{#each navLinks as link}
+			{#each navLinks as link (link.href)}
 				<a
-					href={link.href}
+					href={resolve(link.href)}
 					class="nav-link text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-400 dark:text-neutral-300"
 					aria-current={currentPath === link.href ? 'page' : undefined}
 				>
@@ -54,16 +48,42 @@
 		</nav>
 
 		<div class="flex items-center gap-3">
-			<form onsubmit={handleSearch} class="flex items-center gap-1" role="search">
+			<a
+				href={resolve('/blog')}
+				class="flex h-11 w-11 items-center justify-center rounded-md hover:bg-neutral-200 sm:hidden dark:hover:bg-neutral-800"
+				aria-label="Search writing"
+			>
+				<svg
+					class="h-5 w-5"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+					/>
+				</svg>
+			</a>
+
+			<form
+				action={resolve('/blog')}
+				method="get"
+				class="hidden items-center gap-1 sm:flex"
+				role="search"
+			>
 				<Input
 					type="search"
 					name="search"
 					bind:value={searchQuery}
 					placeholder="Search posts..."
 					aria-label="Search posts"
-					class="h-8 w-28 sm:w-40"
+					class="h-10 w-40"
 				/>
-				<Button type="submit" variant="ghost" size="icon" aria-label="Search" class="h-8 w-8">
+				<Button type="submit" variant="ghost" size="icon" aria-label="Search" class="h-10 w-10">
 					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path
 							stroke-linecap="round"
@@ -76,7 +96,7 @@
 			</form>
 
 			<button
-				class="cursor-pointer rounded-md p-2 hover:bg-neutral-200 md:hidden dark:hover:bg-neutral-800"
+				class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-md hover:bg-neutral-200 md:hidden dark:hover:bg-neutral-800"
 				onclick={() => (mobileOpen = !mobileOpen)}
 				aria-label="Toggle navigation menu"
 				aria-expanded={mobileOpen}
@@ -113,10 +133,10 @@
 			aria-label="Mobile navigation"
 		>
 			<ul class="flex flex-col gap-2">
-				{#each navLinks as link}
+				{#each navLinks as link (link.href)}
 					<li>
 						<a
-							href={link.href}
+							href={resolve(link.href)}
 							onclick={closeMobile}
 							class="block rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-400 dark:text-neutral-300 dark:hover:bg-neutral-800"
 							aria-current={currentPath === link.href ? 'page' : undefined}

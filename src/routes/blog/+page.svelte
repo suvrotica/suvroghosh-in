@@ -2,7 +2,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { collectionPageSchema, siteUrl } from '$lib/components/seo/SEO';
 	import PostTabs from '$lib/components/blog/PostTabs.svelte';
-	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	import PostSearch from '$lib/components/search/PostSearch.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 
 	let { data } = $props();
@@ -42,29 +42,15 @@
 			</p>
 		</header>
 
-		{#if data.search}
-			<div
-				class="mb-6 flex items-center justify-between border-b border-neutral-300 pb-2 dark:border-neutral-700"
-			>
-				<p class="text-sm text-neutral-600 dark:text-neutral-400">
-					{#if data.posts.length > 0}
-						Showing {data.posts.length}
-						{data.posts.length === 1 ? 'result' : 'results'} for &ldquo;{data.search}&rdquo;
-					{:else}
-						No posts found for &ldquo;{data.search}&rdquo;
-					{/if}
-				</p>
-				<a
-					href="/blog"
-					class="text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400"
-				>
-					Clear &times;
-				</a>
-			</div>
-
-			{#if data.posts.length > 0}
-				<PostGallery posts={data.posts} />
-			{/if}
+		{#if data.isSearching}
+			<PostSearch
+				initialQuery={data.search}
+				initialCategory={data.category}
+				initialYear={data.year}
+				initialSort={data.sort}
+				fallbackPosts={data.posts}
+				facets={data.facets}
+			/>
 		{:else if data.posts.length > 0}
 			<PostTabs posts={data.posts} basePath="/blog" />
 		{:else}

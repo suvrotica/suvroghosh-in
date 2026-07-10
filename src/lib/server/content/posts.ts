@@ -50,6 +50,31 @@ export function getPublishedPostsByCategory(category: string) {
 	return publishedPosts.filter((post) => post.categorySlug === categorySlug);
 }
 
+export function getPostSearchFacets() {
+	const categoryCounts = new Map<string, { label: string; count: number }>();
+	const yearCounts = new Map<string, number>();
+
+	for (const post of publishedPosts) {
+		const category = categoryCounts.get(post.categorySlug);
+		categoryCounts.set(post.categorySlug, {
+			label: post.categoryLabel,
+			count: (category?.count ?? 0) + 1
+		});
+
+		const year = /^\d{4}/.exec(post.date)?.[0];
+		if (year) yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
+	}
+
+	return {
+		categories: Array.from(categoryCounts, ([slug, value]) => ({ slug, ...value })).sort((a, b) =>
+			a.label.localeCompare(b.label)
+		),
+		years: Array.from(yearCounts, ([value, count]) => ({ value, count })).sort((a, b) =>
+			b.value.localeCompare(a.value)
+		)
+	};
+}
+
 export function getRelatedPosts(slug: string, limit = 4) {
 	const current = getPublishedPost(slug);
 	if (!current) return [];
