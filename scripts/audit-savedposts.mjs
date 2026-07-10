@@ -54,7 +54,13 @@ function parseFrontmatter(file) {
 			const items = [];
 			while (i + 1 < lines.length && lines[i + 1].trim().startsWith('- ')) {
 				i += 1;
-				items.push(lines[i].trim().slice(2).trim().replace(/^["']|["']$/g, ''));
+				items.push(
+					lines[i]
+						.trim()
+						.slice(2)
+						.trim()
+						.replace(/^["']|["']$/g, '')
+				);
 			}
 			metadata[key] = items.filter(Boolean);
 			continue;

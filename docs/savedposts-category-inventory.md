@@ -81,6 +81,7 @@ Total category buckets: 69
 ## Posts
 
 ### Personal Essay (`personal-essay`) - 102
+
 - A Meaningless Number on an Average Star (`src/lib/SavedPosts/a-meaningless-number-on-an-average-star.md`; category: `Personal Essay`)
 - A Private Nuisance at Five-Thirty in Calcutta (`src/lib/SavedPosts/private-nuisance-at-five-thirty-in-calcutta.md`; category: `Personal Essay`)
 - A Trapezoid for My Mother (`src/lib/SavedPosts/trapezoid-for-my-mother.md`; category: `Personal Essay`)
@@ -185,6 +186,7 @@ Total category buckets: 69
 - Writing Nothing From the Edge of Calcutta (`src/lib/SavedPosts/writing-nothing-from-calcutta.md`; category: `Personal Essay`)
 
 ### Healthcare IT (`healthcare-it`) - 26
+
 Exact metadata values: `Healthcare IT`, `healthcare it`, `healthcare-it`
 
 - Applied Multivariate Statistical Modeling in Healthcare IT Part 1 (`src/lib/SavedPosts/multivariate-statistical-modeling-in-healthcare-it.md`; category: `Healthcare IT`)
@@ -215,6 +217,7 @@ Exact metadata values: `Healthcare IT`, `healthcare it`, `healthcare-it`
 - Why EHR and HIE Struggle in India but AI Diagnostics might not (`src/lib/SavedPosts/india-ehr-hie-ai-constraints.md`; category: `healthcare it`)
 
 ### Society (`society`) - 26
+
 Exact metadata values: `Society`, `society`
 
 - Babu Culture and the Indian Art of Bending (`src/lib/SavedPosts/babu-culture-vip-india-obsequiousness.md`; category: `Society`)
@@ -245,6 +248,7 @@ Exact metadata values: `Society`, `society`
 - Why India Produces So Many Different Species of Goons (`src/lib/SavedPosts/india-hoodlums-goons-assortment.md`; category: `Society`)
 
 ### Artificial Intelligence (`artificial-intelligence`) - 16
+
 - A Calcutta Bengali’s Guide to the Various Schools of AI (`src/lib/SavedPosts/calcutta-bengalis-guide-to-ai-tribes.md`; category: `Artificial Intelligence`)
 - AI Agents Will Not Democratize Power Neatly (`src/lib/SavedPosts/agentic-ai-and-the-asymmetry-of-will.md`; category: `Artificial Intelligence`)
 - AI and Denial (`src/lib/SavedPosts/ai-psychology-denial-oscillation-and-the-social-theater-of-competence.md`; category: `Artificial Intelligence`)
@@ -263,6 +267,7 @@ Exact metadata values: `Society`, `society`
 - Why Physics Keeps Sneaking Into Deep Learning (`src/lib/SavedPosts/physics-and-deep-neural-networks-calcutta-scale-story.md`; category: `Artificial Intelligence`)
 
 ### Essay (`essay`) - 15
+
 - A Cup of Cha Is Not a Small Thing (`src/lib/SavedPosts/a-cup-of-cha-is-not-a-small-thing.md`; category: `Essay`)
 - Cholai and the Chemistry of Forgetting (`src/lib/SavedPosts/cholai-bengali-moonshine-chemistry-of-forgetting.md`; category: `Essay`)
 - Frog in the Robot Century (`src/lib/SavedPosts/frog-in-the-robot-century.md`; category: `Essay`)
@@ -280,6 +285,7 @@ Exact metadata values: `Society`, `society`
 - Twaddle Tendency (`src/lib/SavedPosts/twaddle-tendency.md`; category: `Essay`)
 
 ### Technology (`technology`) - 15
+
 Exact metadata values: `Technology`, `technology`
 
 - Do Not Sell Your Pressure Cooker for RTX Spark (`src/lib/SavedPosts/do-not-sell-your-pressure-cooker-for-rtx-spark.md`; category: `Technology`)
@@ -299,6 +305,7 @@ Exact metadata values: `Technology`, `technology`
 - Why Scrolling Beats Reading, Until It Ruins the Reader (`src/lib/SavedPosts/scrolling-versus-reading-sequential-mind.md`; category: `Technology`)
 
 ### Mental Health (`mental-health`) - 11
+
 - Bad Logic at Three in the Morning (`src/lib/SavedPosts/tautology-metaphor-strawman-ruminative-depression.md`; category: `Mental Health`)
 - Depression Arrives as Weather (`src/lib/SavedPosts/depression-arrives-as-weather.md`; category: `Mental Health`)
 - Square Peg, Round Hole, Bad Weather (`src/lib/SavedPosts/square-peg-in-a-world-of-round-holes.md`; category: `Mental Health`)
@@ -312,6 +319,7 @@ Exact metadata values: `Technology`, `technology`
 - When the Mind Refuses to Stay in One Place (`src/lib/SavedPosts/mind-not-staying-in-one-place.md`; category: `Mental Health`)
 
 ### Science (`science`) - 11
+
 Exact metadata values: `Science`, `science`
 
 - AI, Erdős, and the Great Dot Mischief (`src/lib/SavedPosts/ai-solved-erdos-dot-problem.md`; category: `Science`)
@@ -327,6 +335,7 @@ Exact metadata values: `Science`, `science`
 - What a Diffusion Model Is, and Why Pi Sneaks Into the Hospital (`src/lib/SavedPosts/basel-problem-what-diffusion-model-means.md`; category: `Science`)
 
 ### Politics (`politics`) - 8
+
 - Election Puja And The Common Eye (`src/lib/SavedPosts/election-puja-and-the-common-eye.md`; category: `Politics`)
 - India’s Noise Machine and the Small Man Under It (`src/lib/SavedPosts/india-noise-machine-small-man.md`; category: `Politics`)
 - Political Promises and the Hard Floor of Reality (`src/lib/SavedPosts/political-promises-and-reality.md`; category: `Politics`)
@@ -337,6 +346,7 @@ Exact metadata values: `Science`, `science`
 - The Test Is Congress Where Congress Rules (`src/lib/SavedPosts/the-test-is-congress-where-congress-rules.md`; category: `Politics`)
 
 ### Calcutta (`calcutta`) - 7
+
 - Maybe the Body Is Not Broken (`src/lib/SavedPosts/body-going-to-plan.md`; category: `Calcutta`)
 - Mindfulness? (`src/lib/SavedPosts/mindfulness-calcutta-4am.md`; category: `Calcutta`)
 - One More Bhaar Cha Before Night Falls (`src/lib/SavedPosts/calcutta-tea-stall-evening-adda.md`; category: `Calcutta`)
@@ -346,6 +356,7 @@ Exact metadata values: `Science`, `science`
 - The Zeitgeist of Calcutta Has Changed (`src/lib/SavedPosts/the-zeitgeist-of-calcutta-has-changed.md`; category: `Calcutta`)
 
 ### Culture (`culture`) - 5
+
 - Bar English for Bengalis Who Have Escaped the Tea Stall (`src/lib/SavedPosts/bar-english-for-bengalis.md`; category: `Culture`)
 - Facial Pleasure Receipts (`src/lib/SavedPosts/facial-pleasure-receipts-and-modern-euphemism.md`; category: `Culture`)
 - Hilsa and the Family Court of Appetite (`src/lib/SavedPosts/hilsa-and-the-family-court-of-appetite.md`; category: `Culture`)
@@ -353,6 +364,7 @@ Exact metadata values: `Science`, `science`
 - Woke: How a Tiny American Word Became a Full-Time Street Fight (`src/lib/SavedPosts/woke-word-calcutta-redux.md`; category: `Culture`)
 
 ### Public Health (`public-health`) - 5
+
 Exact metadata values: `Public Health`, `public-health`
 
 - Cicada, BA.3.2 (`src/lib/SavedPosts/cicada-ba32-covid-variant.md`; category: `public-health`)
@@ -362,6 +374,7 @@ Exact metadata values: `Public Health`, `public-health`
 - The Body Becomes a Small Oven (`src/lib/SavedPosts/the-body-becomes-a-small-oven.md`; category: `Public Health`)
 
 ### Satire (`satire`) - 5
+
 - ASMR: The Softly Whispered Apocalypse (`src/lib/SavedPosts/asmr-soft-apocalypse.md`; category: `Satire`)
 - Bengali Tintin In The Republic Of Garbage (`src/lib/SavedPosts/bengali-tintin-in-kolkata.md`; category: `Satire`)
 - Calcutta Smog and the Coming Winter (`src/lib/SavedPosts/calcutta-smog-and-the-coming-winter.md`; category: `Satire`)
@@ -369,12 +382,14 @@ Exact metadata values: `Public Health`, `public-health`
 - If Lies Had Noses Again (`src/lib/SavedPosts/if-lies-had-noses-again.md`; category: `Satire`)
 
 ### Ai Music Song (`ai-music-song`) - 4
+
 - AI Music (`src/lib/SavedPosts/ai_music.md`; category: `AI Music Song`)
 - Bengali AI Songs (`src/lib/SavedPosts/ai_bengali_songs.md`; category: `AI Music Song`)
 - English AI Songs (`src/lib/SavedPosts/ai_english_songs.md`; category: `AI Music Song`)
 - Hindi AI Songs (`src/lib/SavedPosts/hindi_ai_songs.md`; category: `AI Music Song`)
 
 ### Healthcare AI (`healthcare-ai`) - 4
+
 Exact metadata values: `healthcare ai`, `Healthcare AI`
 
 - AI Health Insurance and Cruelty (`src/lib/SavedPosts/ai-health-insurance-surreptitious-risk-scoring.md`; category: `healthcare ai`)
@@ -383,6 +398,7 @@ Exact metadata values: `healthcare ai`, `Healthcare AI`
 - The Negative Infinity Before the Singularity (`src/lib/SavedPosts/ai-in-india-the-negative-infinity-before-the-singularity.md`; category: `Healthcare AI`)
 
 ### Geopolitics (`geopolitics`) - 3
+
 Exact metadata values: `Geopolitics`, `geopolitics`
 
 - China Rose Like A Factory, India Is Rising Like A Bazaar (`src/lib/SavedPosts/china-india-rise-2026-evolutionary-thinking.md`; category: `Geopolitics`)
@@ -390,6 +406,7 @@ Exact metadata values: `Geopolitics`, `geopolitics`
 - The Thucydides Trap, Two Superpowers, and a Very Old Greek Headache (`src/lib/SavedPosts/thucydides-trap-greek-mythology-america-china.md`; category: `Geopolitics`)
 
 ### Healthcare (`healthcare`) - 3
+
 Exact metadata values: `Healthcare`, `healthcare`
 
 - Propofol, Nightmares (`src/lib/SavedPosts/propofol-dream-recall-nightmares.md`; category: `healthcare`)
@@ -397,6 +414,7 @@ Exact metadata values: `Healthcare`, `healthcare`
 - The Nightmare of Indian Healthcare for the Common Man (`src/lib/SavedPosts/nightmare-of-indian-healthcare.md`; category: `Healthcare`)
 
 ### Mathematics (`mathematics`) - 3
+
 Exact metadata values: `Mathematics`, `mathematics`
 
 - Benford’s Law and the Ledger That Sweats (`src/lib/SavedPosts/benfords-law-and-the-ledger-that-sweats.md`; category: `Mathematics`)
@@ -404,183 +422,234 @@ Exact metadata values: `Mathematics`, `mathematics`
 - The Four Fundamental Subspaces of Linear Algebra (`src/lib/SavedPosts/four-fundamental-subspaces.md`; category: `mathematics`)
 
 ### Social Commentary (`social-commentary`) - 3
+
 - Hawkers Are Not Rubbish To Be Swept Before Breakfast (`src/lib/SavedPosts/hawkers-are-not-rubbish.md`; category: `Social Commentary`)
 - Synthetic Jest and the Great Bengali Smile Factory (`src/lib/SavedPosts/synthetic-jest-fake-laughter-bengali-modernity.md`; category: `Social Commentary`)
 - Truth, Adjustment, and the Cost of Coming Back (`src/lib/SavedPosts/truth-adjustment-and-the-cost-of-coming-back.md`; category: `Social Commentary`)
 
 ### Ai (`ai`) - 2
+
 - Claude Fable 5, Mythos in a Muzzle, and the Poor Man’s Future (`src/lib/SavedPosts/claude-fable-5-warning-label.md`; category: `AI`)
 - The Coming Unemployment (`src/lib/SavedPosts/the-coming-unemployment.md`; category: `AI`)
 
 ### Ai And Society (`ai-and-society`) - 2
+
 - The AI Moat Is the Missing Salary (`src/lib/SavedPosts/ai-moat-labor-displacement.md`; category: `AI and Society`)
 - The Tea Stall as an Anti-AI Safety System (`src/lib/SavedPosts/the-tea-stall-as-an-anti-ai-safety-system.md`; category: `AI and Society`)
 
 ### Economy (`economy`) - 2
+
 - The K-Shaped Economy Is a Forked Road, and Most of Us Are on the Wrong Fork (`src/lib/SavedPosts/k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.md`; category: `Economy`)
 - What India Meant by Demonetization, and Where We Are (`src/lib/SavedPosts/what-india-meant-by-demonetization-and-where-we-are.md`; category: `Economy`)
 
 ### India (`india`) - 2
+
 Exact metadata values: `india`, `India`
 
 - India’s White-Collar Issue (`src/lib/SavedPosts/india-ai-it-bpo-white-collar-jobs.md`; category: `india`)
 - Jogar, Jugaad, and the Greedy Improvisation of India (`src/lib/SavedPosts/jogar-jugaad-and-the-greedy-improvisation-of-india.md`; category: `India`)
 
 ### Life (`life`) - 2
+
 - Fellow Passengers and the Broken Record (`src/lib/SavedPosts/fellow_passengers_and_the_broken_record.md`; category: `Life`)
 - The Geography of Contentment (`src/lib/SavedPosts/the-geography-of-contentment.md`; category: `Life`)
 
 ### Memoir (`memoir`) - 2
+
 - Can't Go Back to Childhood—Except as a Misremembering Ghost (`src/lib/SavedPosts/cant-go-back-to-childhood-except-as-a-misremembering-ghost.md`; category: `Memoir`)
 - The English Medium Urine Stain (`src/lib/SavedPosts/english-medium-urine-stain-and-the-school-that-lit-the-fuse.md`; category: `Memoir`)
 
 ### Philosophy (`philosophy`) - 2
+
 Exact metadata values: `Philosophy`, `philosophy`
 
 - The Ghost as Perception (`src/lib/SavedPosts/the-ghost-as-perception.md`; category: `philosophy`)
 - The Prognosis Is Clarity (`src/lib/SavedPosts/prognosis-as-philosophy.md`; category: `Philosophy`)
 
 ### Political Economy (`political-economy`) - 2
+
 Exact metadata values: `Political Economy`, `political economy`
 
 - Gold Karigars, Fertiliser Slogans, and the Knife Hidden Inside a Political Sentence (`src/lib/SavedPosts/callous-political-statements-gold-karigars-and-fertiliser.md`; category: `Political Economy`)
 - Universal Basic Income in India After Work Stops Being a Promise (`src/lib/SavedPosts/ubi-india-ai-unemployment-democracy.md`; category: `political economy`)
 
 ### Science And Society (`science-and-society`) - 2
+
 - The Curious Day When the Sun Pauses and Humanity Stretches (`src/lib/SavedPosts/world-yoga-day-summer-solstice-2026.md`; category: `Science and Society`)
 - The Plague of Pseudoscience in India (`src/lib/SavedPosts/plague-of-pseudoscience-india-scientific-temper.md`; category: `Science and Society`)
 
 ### Systems Thinking (`systems-thinking`) - 2
+
 - Natural Selection Is Not Just About Animals (`src/lib/SavedPosts/natural-selection-across-timescales.md`; category: `Systems Thinking`)
 - The Useful Box and the Bengali Problem of Too Many Choices (`src/lib/SavedPosts/the-useful-box-and-the-bengali-problem-of-too-many-choices.md`; category: `Systems Thinking`)
 
 ### Technology And Society (`technology-and-society`) - 2
+
 - Bogosity, Enshittification, and the Glittering Drain (`src/lib/SavedPosts/bogosity-enshittification-and-the-glittering-drain.md`; category: `Technology and Society`)
 - The Desperation Premium (`src/lib/SavedPosts/the-desperation-premium.md`; category: `Technology and Society`)
 
 ### Ai Economics (`ai-economics`) - 1
+
 - The AI Layoff Trap: How Companies Can Fire Their Own Customers (`src/lib/SavedPosts/ai-layoff-trap-firing-your-customers.md`; category: `AI Economics`)
 
 ### Ai Economy (`ai-economy`) - 1
+
 - India Slept Through the AI Alarm, and the Market Has Started Packing Its Bags (`src/lib/SavedPosts/india-ai-market-darling-boondocks-dragon.md`; category: `AI Economy`)
 
 ### Ai Education (`ai-education`) - 1
+
 - How To Start Machine Learning Without Buying Magic Beans (`src/lib/SavedPosts/how-to-start-machine-learning-without-buying-magic-beans.md`; category: `AI Education`)
 
 ### Ai Safety (`ai-safety`) - 1
+
 - The Chatbot Arrived Before the Seatbelt (`src/lib/SavedPosts/premature-llm-deployment-clinical-trials-ai-safety.md`; category: `AI Safety`)
 
 ### AI Security (`ai-security`) - 1
+
 - Is Claude Mythos, a Myth? (`src/lib/SavedPosts/claude-mythos-hype-and-security-hygiene.md`; category: `AI Security`)
 
 ### Art History (`art-history`) - 1
+
 - The Vitruvian Man: A Naked Man, Two Shapes, and Our Old Hunger for Order (`src/lib/SavedPosts/vitruvian-man.md`; category: `Art History`)
 
 ### Audio Technology (`audio-technology`) - 1
+
 - Hi-Fi Sound Without the Perfume: Mono, Stereo, 5.1, Dolby, DTS, Atmos, and the Great Audio Bazaar (`src/lib/SavedPosts/commercial-hifi-sounds-for-ordinary-ears.md`; category: `Audio Technology`)
 
 ### Calcutta Life (`calcutta-life`) - 1
+
 - Clay Stoves, Hormuz, and the Price of Breath in Calcutta (`src/lib/SavedPosts/clay-stove-calcutta-lpg-smoke-and-breath.md`; category: `Calcutta Life`)
 
 ### Career (`career`) - 1
+
 - Intro (`src/lib/SavedPosts/intro.md`; category: `career`)
 
 ### Climate (`climate`) - 1
+
 - The Calcutta Summer of 2026 (`src/lib/SavedPosts/calcutta-summer-of-2026.md`; category: `Climate`)
 
 ### Cybersecurity (`cybersecurity`) - 1
+
 - The Router Behind the Television (`src/lib/SavedPosts/the-router-behind-the-television.md`; category: `Cybersecurity`)
 
 ### Education (`education`) - 1
+
 - English Is Not a Subject. It Is a Passport. (`src/lib/SavedPosts/english-is-not-a-subject-it-is-a-passport.md`; category: `Education`)
 
 ### Energy (`energy`) - 1
+
 - LPG debacle (`src/lib/SavedPosts/hormuz-lpg-shortage-indian-cooking-choices.md`; category: `energy`)
 
 ### Food (`food`) - 1
+
 - The Fish Bengalis Eat (`src/lib/SavedPosts/calcutta-fish-field-guide.md`; category: `food`)
 
 ### Food and Culture (`food-and-culture`) - 1
+
 Exact metadata values: `food-and-culture`
 
 - Tea (`src/lib/SavedPosts/tea-darjeeling-orange-pekoe-first-flush-and-matcha.md`; category: `food-and-culture`)
 
 ### Health (`health`) - 1
+
 - The Thin-Fat Bengali and the Treacherous Little Belly (`src/lib/SavedPosts/thin-fat-bellied-bengali-insulin-resistance.md`; category: `Health`)
 
 ### Health And Society (`health-and-society`) - 1
+
 Exact metadata values: `Health & Society`
 
 - Calcutta’s Sugar Problem Is Not Only Sugar (`src/lib/SavedPosts/calcutta-carbohydrate-problem.md`; category: `Health & Society`)
 
 ### Healthcare Science (`healthcare-science`) - 1
+
 - When Diabetes Started Asking About Its Ancestors (`src/lib/SavedPosts/find-study-diabetes-kidney-family-tree.md`; category: `Healthcare Science`)
 
 ### Healthcare Systems (`healthcare-systems`) - 1
+
 Exact metadata values: `healthcare-systems`
 
 - Homeopathy (`src/lib/SavedPosts/homeopathy-pseudoscience-persistence.md`; category: `healthcare-systems`)
 
 ### History (`history`) - 1
+
 - Pohela Baisakh (`src/lib/SavedPosts/pohela-baisakh-mughal-calendar-memory.md`; category: `history`)
 
 ### History of Science (`history-of-science`) - 1
+
 Exact metadata values: `history-of-science`
 
-- Trigonometric  Colonization (`src/lib/SavedPosts/great-trigonometrical-survey-india-trigonometry-empire.md`; category: `history-of-science`)
+- Trigonometric Colonization (`src/lib/SavedPosts/great-trigonometrical-survey-india-trigonometry-empire.md`; category: `history-of-science`)
 
 ### Ideas (`ideas`) - 1
+
 - The End of History, and Other Overconfident Announcements (`src/lib/SavedPosts/end-of-history-not-end-of-trouble.md`; category: `Ideas`)
 
 ### Knowledge (`knowledge`) - 1
+
 - The Epistemic Iceberg Effect (`src/lib/SavedPosts/epistemic-iceberg-effect.md`; category: `knowledge`)
 
 ### Mental Health Systems (`mental-health-systems`) - 1
+
 - Depression as Mathematics: States, Switches, Attractors, and the Treacherous Algebra of Mood (`src/lib/SavedPosts/depression-as-mathematics.md`; category: `Mental Health Systems`)
 
 ### Mental Models (`mental-models`) - 1
+
 - Why Myths Multiply When Randomness Is Left Unexplained (`src/lib/SavedPosts/randomness-chaos-complexity-calcutta.md`; category: `Mental Models`)
 
 ### Natural History (`natural-history`) - 1
+
 - Pests we love (`src/lib/SavedPosts/large-common-insects-and-arachnids-in-urban-calcutta.md`; category: `natural history`)
 
 ### Neuroscience (`neuroscience`) - 1
+
 - Mind Is What the Brain Does, Not a Ghost in the Attic (`src/lib/SavedPosts/mind-as-emergence-not-magic.md`; category: `Neuroscience`)
 
 ### Personal Reflections (`personal-reflections`) - 1
+
 - This Blog's History (`src/lib/SavedPosts/this-blogs-history.md`; category: `Personal Reflections`)
 
 ### Personal Satire (`personal-satire`) - 1
+
 - How Are You and Other Small Cruelties (`src/lib/SavedPosts/how-are-you-and-other-small-cruelties.md`; category: `Personal Satire`)
 
 ### Personal Science (`personal-science`) - 1
+
 - Newton’s First Law and the Bladder (`src/lib/SavedPosts/newtons-first-law-and-the-bladder.md`; category: `Personal Science`)
 
 ### Philosophy And Ai (`philosophy-and-ai`) - 1
+
 - Fog Machines in the Temple: Mandukya, AI, and the Dangerous Answer to Who Am I? (`src/lib/SavedPosts/fog-machines-in-the-temple.md`; category: `Philosophy and AI`)
 
 ### Politics And Society (`politics-and-society`) - 1
+
 - Bengal Changed Color, Not Yet Character (`src/lib/SavedPosts/bengal-changed-color-not-character.md`; category: `Politics and Society`)
 
 ### Psychology (`psychology`) - 1
+
 - The Courage to Be Disliked in a Sweating Calcutta Room (`src/lib/SavedPosts/courage-to-be-disliked-in-calcutta.md`; category: `Psychology`)
 
 ### Science And Healthcare It (`science-and-healthcare-it`) - 1
+
 Exact metadata values: `Science & Healthcare IT`
 
 - The Lake That Lit Up Genes: Maracaibo, Memory, and Huntington’s Disease (`src/lib/SavedPosts/lake-maracaibo-lightning-gene-hunt.md`; category: `Science & Healthcare IT`)
 
 ### Science Essay (`science-essay`) - 1
+
 - Entropy in a Rented Room (`src/lib/SavedPosts/entropy-in-a-rented-room.md`; category: `Science Essay`)
 
 ### Statistics (`statistics`) - 1
+
 - Bessel Correction Without the Mathematical Chilli Powder (`src/lib/SavedPosts/bessel-correction-for-variance.md`; category: `Statistics`)
 
 ### Thinking (`thinking`) - 1
+
 - The Toolbox Theory of Thinking: Why Simple Models Help Us Survive a Complicated World (`src/lib/SavedPosts/toolbox-thinking-simplicity-complexity.md`; category: `Thinking`)
 
 ### Useful Mental Models (`useful-mental-models`) - 1
+
 - First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality (`src/lib/SavedPosts/first-principles-thinking-calcutta-healthcare-it.md`; category: `Useful Mental Models`)
 
 ### Work, Migration, India (`work-migration-india`) - 1
+
 - The Returnee Who No Longer Fits (`src/lib/SavedPosts/returning_home_after_america.md`; category: `work, migration, India`)

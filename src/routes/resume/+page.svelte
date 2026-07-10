@@ -340,7 +340,7 @@
 		</h3>
 
 		<div class="space-y-4 text-lg leading-relaxed text-neutral-800 dark:text-neutral-200">
-			{#each executiveSummary as paragraph, i}
+			{#each executiveSummary as paragraph, i (paragraph)}
 				<p class={i === 0 ? 'font-bold' : ''}>{paragraph}</p>
 			{/each}
 		</div>
@@ -354,7 +354,7 @@
 		</h3>
 
 		<div class="space-y-4 text-neutral-800 dark:text-neutral-200">
-			{#each positioning as paragraph}
+			{#each positioning as paragraph (paragraph)}
 				<p class="leading-relaxed">{paragraph}</p>
 			{/each}
 		</div>
@@ -366,7 +366,7 @@
 		</h3>
 
 		<div class="grid grid-cols-1 gap-3 text-sm md:grid-cols-2">
-			{#each targetRoles as role}
+			{#each targetRoles as role (role)}
 				<div
 					class="rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 font-semibold text-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
 				>
@@ -382,7 +382,7 @@
 		</h3>
 
 		<ul class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
-			{#each targetMarkets as market}
+			{#each targetMarkets as market (market)}
 				<li class="leading-relaxed">• {market}</li>
 			{/each}
 		</ul>
@@ -394,7 +394,7 @@
 		</h3>
 
 		<div class="grid grid-cols-1 gap-x-6 gap-y-4 text-sm md:grid-cols-2">
-			{#each coreSkills as skill}
+			{#each coreSkills as skill (skill.category)}
 				<div>
 					<h4 class="m-0 mb-1 font-bold text-neutral-900 dark:text-neutral-100">
 						{skill.category}
@@ -413,7 +413,7 @@
 		</h3>
 
 		<div class="space-y-10">
-			{#each experiences as job}
+			{#each experiences as job (`${job.company}-${job.period}`)}
 				<div class="relative border-l-2 border-neutral-300 pl-5 dark:border-neutral-700">
 					<div
 						class="absolute top-1.5 -left-[5px] h-2 w-2 rounded-full bg-neutral-900 dark:bg-neutral-100"
@@ -435,14 +435,14 @@
 					</div>
 
 					<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-						{#each job.details as detail}
+						{#each job.details as detail (detail)}
 							<li class="leading-relaxed">• {detail}</li>
 						{/each}
 					</ul>
 
 					{#if job.videos && job.videos.length > 0}
 						<div class="mt-5 flex flex-col gap-6 pb-2">
-							{#each job.videos as videoUrl, vIndex}
+							{#each job.videos as videoUrl, vIndex (videoUrl)}
 								<Yt
 									src={videoUrl}
 									title={`Overview of ${job.company} - Part ${vIndex + 1}`}
@@ -462,7 +462,7 @@
 		</h3>
 
 		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
-			{#each projects as project}
+			{#each projects as project (project.name)}
 				<div>
 					<h4 class="m-0 mb-1 font-bold text-neutral-900 dark:text-neutral-100">
 						{project.name}
@@ -480,7 +480,7 @@
 			</h3>
 
 			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-				{#each consultingServices as service}
+				{#each consultingServices as service (service)}
 					<li class="leading-relaxed">• {service}</li>
 				{/each}
 			</ul>
@@ -497,7 +497,7 @@
 			</p>
 
 			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-				{#each professionalDevelopment as item}
+				{#each professionalDevelopment as item (item)}
 					<li class="leading-relaxed">• {item}</li>
 				{/each}
 			</ul>
@@ -510,7 +510,7 @@
 		</h3>
 
 		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
-			{#each marketFit as market}
+			{#each marketFit as market (market.region)}
 				<div>
 					<h4 class="m-0 mb-1 font-bold text-neutral-900 dark:text-neutral-100">
 						{market.region}

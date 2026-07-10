@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
+	import { SvelteMap } from 'svelte/reactivity';
 	import PostGallery from './PostGallery.svelte';
 	import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 
@@ -13,10 +15,10 @@
 		published?: boolean;
 	};
 
-	let { posts, basePath = '/blog' }: { posts: Post[]; basePath?: string } = $props();
+	let { posts }: { posts: Post[] } = $props();
 
 	let tabs = $derived.by(() => {
-		const groups = new Map<string, Post[]>();
+		const groups = new SvelteMap<string, Post[]>();
 		for (const post of posts) {
 			const slug = slugifyCategory(post.category || 'uncategorized');
 			if (!groups.has(slug)) groups.set(slug, []);
@@ -26,35 +28,36 @@
 			.map(([slug, articles]) => ({
 				slug,
 				label: categoryLabel(slug),
-				posts: articles.sort(
-					(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-				)
+				posts: articles.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 			}))
 			.sort((a, b) => a.label.localeCompare(b.label));
 	});
 
 	let tabKeys = $derived(tabs.map((t) => t.slug));
-	let defaultTab = $derived(tabKeys.includes('healthcare-it') ? 'healthcare-it' : (tabKeys[0] ?? ''));
+	let defaultTab = $derived(
+		tabKeys.includes('healthcare-it') ? 'healthcare-it' : (tabKeys[0] ?? '')
+	);
 
 	let activeTab = $derived(page.url.searchParams.get('tab') ?? defaultTab);
 
 	function selectTab(slug: string) {
-		goto(`${basePath}?tab=${slug}`, { keepFocus: true, noScroll: true });
+		goto(resolve(`/blog?tab=${slug}`), { keepFocus: true, noScroll: true });
 	}
 
-	let visiblePosts = $derived(
-		tabs.find((t) => t.slug === activeTab)?.posts ?? []
-	);
+	let visiblePosts = $derived(tabs.find((t) => t.slug === activeTab)?.posts ?? []);
 </script>
 
 <div class="mb-6">
-	<div class="flex flex-wrap gap-1 border-b border-neutral-300 dark:border-neutral-700 overflow-x-auto">
+	<div
+		class="flex flex-wrap gap-1 overflow-x-auto border-b border-neutral-300 dark:border-neutral-700"
+	>
 		{#each tabs as tab (tab.slug)}
 			<button
 				onclick={() => selectTab(tab.slug)}
-				class="nav-link px-4 py-2 text-sm font-medium transition-colors border-b-2 -mb-px whitespace-nowrap {activeTab === tab.slug
+				class="nav-link -mb-px border-b-2 px-4 py-2 text-sm font-medium whitespace-nowrap transition-colors {activeTab ===
+				tab.slug
 					? 'border-neutral-400 text-neutral-400'
-					: 'border-transparent text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}"
+					: 'border-transparent text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100'}"
 				aria-current={activeTab === tab.slug ? 'page' : undefined}
 			>
 				{tab.label}
@@ -66,7 +69,9 @@
 {#if visiblePosts.length > 0}
 	<PostGallery posts={visiblePosts} />
 {:else}
-	<div class="py-12 text-center text-neutral-500 border-2 border-dashed border-neutral-300 dark:border-neutral-700 rounded-lg">
+	<div
+		class="rounded-lg border-2 border-dashed border-neutral-300 py-12 text-center text-neutral-500 dark:border-neutral-700"
+	>
 		<p>No posts in this category yet.</p>
 	</div>
 {/if}

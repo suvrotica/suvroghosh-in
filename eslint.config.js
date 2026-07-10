@@ -40,5 +40,21 @@ export default defineConfig(
 		// Override or add rule settings here, such as:
 		// 'svelte/button-has-type': 'error'
 		rules: {}
+	},
+	{
+		// These shadcn/Bits UI adapters intentionally bridge generic component props.
+		files: ['src/lib/components/ui/**/*.svelte'],
+		rules: {
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-unused-vars': 'off',
+			'svelte/no-navigation-without-resolve': 'off'
+		}
+	},
+	{
+		// These components bind user/content-provided absolute external URLs.
+		files: ['src/lib/components/blog/YouTube.svelte', 'src/lib/components/layout/Footer.svelte'],
+		rules: {
+			'svelte/no-navigation-without-resolve': 'off'
+		}
 	}
 );

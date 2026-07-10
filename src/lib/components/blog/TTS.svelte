@@ -5,10 +5,8 @@
 	let speaking = $state(false);
 	let paused = $state(false);
 	let supported = $state(false);
-	let buffering = $state(false);
 	let chunks: string[] = $state([]);
 	let currentChunkIndex = $state(0);
-	let currentUtterance: SpeechSynthesisUtterance | null = null;
 
 	const icons = {
 		play: 'M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z',
@@ -54,7 +52,6 @@
 
 		const chunkText = chunks[currentChunkIndex];
 		const utt = new SpeechSynthesisUtterance(chunkText);
-		currentUtterance = utt;
 
 		const voices = window.speechSynthesis.getVoices();
 		const voice =
@@ -65,9 +62,6 @@
 		if (voice) utt.voice = voice;
 		utt.rate = 1.0;
 
-		utt.onstart = () => {
-			buffering = false;
-		};
 		utt.onend = () => {
 			if (speaking && !paused) {
 				currentChunkIndex++;
@@ -105,7 +99,6 @@
 		currentChunkIndex = 0;
 		speaking = true;
 		paused = false;
-		buffering = true;
 		setTimeout(speakNextChunk, 50);
 	}
 
@@ -114,7 +107,6 @@
 			window.speechSynthesis.cancel();
 			speaking = false;
 			paused = false;
-			buffering = false;
 			currentChunkIndex = 0;
 		}
 	}

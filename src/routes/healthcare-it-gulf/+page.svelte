@@ -69,7 +69,7 @@
 				Where I Can Help
 			</h2>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-				{#each areas as area}
+				{#each areas as area (area.title)}
 					<div>
 						<h3 class="mb-1 text-lg font-bold text-neutral-900 dark:text-neutral-100">
 							{area.title}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { SvelteURLSearchParams } from 'svelte/reactivity';
+
 	let {
 		src,
 		title = 'Embedded YouTube video',
@@ -12,7 +14,8 @@
 	} = $props();
 
 	function parseYouTubeId(url: string): string | null {
-		const regex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
+		const regex =
+			/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
 		const match = url.match(regex);
 		return match ? match[1] : null;
 	}
@@ -29,7 +32,7 @@
 		const videoId = parseYouTubeId(src);
 		const baseUrl = 'https://www.youtube.com/embed/';
 
-		const params = new URLSearchParams({
+		const params = new SvelteURLSearchParams({
 			playsinline: '1',
 			controls: '1',
 			fs: '1',
@@ -52,10 +55,13 @@
 </script>
 
 {#if embedSrc}
-	<figure class="my-8 mx-auto w-full block clear-both not-prose">
-		<div class="relative w-full overflow-hidden rounded-lg shadow-md border border-neutral-200 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-900" style:aspect-ratio={aspectRatio}>
+	<figure class="not-prose clear-both mx-auto my-8 block w-full">
+		<div
+			class="relative w-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-100 shadow-md dark:border-neutral-800 dark:bg-neutral-900"
+			style:aspect-ratio={aspectRatio}
+		>
 			<iframe
-				class="absolute top-0 left-0 w-full h-full"
+				class="absolute top-0 left-0 h-full w-full"
 				src={embedSrc}
 				{title}
 				frameborder="0"
@@ -65,11 +71,18 @@
 			></iframe>
 		</div>
 		{#if caption || playlistId}
-			<figcaption class="mt-2 text-sm italic text-neutral-600 dark:text-neutral-400 text-center leading-tight">
+			<figcaption
+				class="mt-2 text-center text-sm leading-tight text-neutral-600 italic dark:text-neutral-400"
+			>
 				{caption}
 				{#if playlistId}
-					<br/>
-					<a href={src} target="_blank" rel="noopener noreferrer" class="text-xs text-sky-600 dark:text-sky-400 hover:underline">
+					<br />
+					<a
+						href={src}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="text-xs text-sky-600 hover:underline dark:text-sky-400"
+					>
 						(Open Playlist on YouTube)
 					</a>
 				{/if}
@@ -77,7 +90,9 @@
 		{/if}
 	</figure>
 {:else}
-	<div class="my-6 p-4 rounded-lg border border-red-300 bg-red-50 dark:bg-red-900/20 text-center text-red-600 dark:text-red-400 text-sm font-bold">
+	<div
+		class="my-6 rounded-lg border border-red-300 bg-red-50 p-4 text-center text-sm font-bold text-red-600 dark:bg-red-900/20 dark:text-red-400"
+	>
 		<p>Invalid YouTube URL provided: {src}</p>
 	</div>
 {/if}

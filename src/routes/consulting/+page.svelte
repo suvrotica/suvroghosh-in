@@ -81,7 +81,7 @@
 				What I Help With
 			</h2>
 			<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-				{#each services as service}
+				{#each services as service (service.title)}
 					<div>
 						<h3 class="mb-1 text-lg font-bold text-neutral-900 dark:text-neutral-100">
 							{service.title}
@@ -101,7 +101,7 @@
 				Best-Fit Projects
 			</h2>
 			<ul class="space-y-2 text-sm text-neutral-700 dark:text-neutral-300">
-				{#each bestFit as item}
+				{#each bestFit as item (item)}
 					<li class="leading-relaxed">&bull; {item}</li>
 				{/each}
 			</ul>

@@ -3,9 +3,7 @@
 	import { siteSEO, personSchema, websiteSchema } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Button } from '$lib/components/ui/button';
-	import type { PageData } from './$types';
-
-	let { data }: { data: PageData } = $props();
+	import { resolve } from '$app/paths';
 </script>
 
 <SEO
@@ -64,19 +62,19 @@
 			</p>
 			<div class="mt-4 flex flex-wrap gap-2">
 				<a
-					href="/resume"
+					href={resolve('/resume')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
 					>Resume</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
-					href="/consulting"
+					href={resolve('/consulting')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
 					>Consulting</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
-					href="/healthcare-it-gulf"
+					href={resolve('/healthcare-it-gulf')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
 					>Gulf / Kuwait</a
 				>
@@ -92,13 +90,13 @@
 			</p>
 			<div class="mt-4 flex flex-wrap gap-2">
 				<a
-					href="/writing"
+					href={resolve('/writing')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
 					>Writing &amp; Essays</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
-					href="/blog"
+					href={resolve('/blog')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
 					>All Posts</a
 				>

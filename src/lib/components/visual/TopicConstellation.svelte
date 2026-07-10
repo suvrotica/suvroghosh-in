@@ -17,9 +17,19 @@
 	];
 
 	const edges = [
-		[0, 1], [1, 2], [0, 3], [1, 4], [2, 5],
-		[3, 4], [4, 5], [3, 6], [4, 7], [5, 7],
-		[0, 4], [1, 5], [6, 7]
+		[0, 1],
+		[1, 2],
+		[0, 3],
+		[1, 4],
+		[2, 5],
+		[3, 4],
+		[4, 5],
+		[3, 6],
+		[4, 7],
+		[5, 7],
+		[0, 4],
+		[1, 5],
+		[6, 7]
 	];
 
 	const nodeRadius = 5;
@@ -27,12 +37,12 @@
 
 <svg
 	viewBox="0 0 600 360"
-	class="w-full h-auto {className}"
+	class="h-auto w-full {className}"
 	fill="none"
 	aria-hidden="true"
 	preserveAspectRatio="xMidYMid meet"
 >
-	{#each edges as [from, to], i}
+	{#each edges as [from, to], i (`${from}-${to}`)}
 		<line
 			x1={nodes[from].x}
 			y1={nodes[from].y}
@@ -43,7 +53,7 @@
 		/>
 	{/each}
 
-	{#each nodes as node, i}
+	{#each nodes as node, i (node.id)}
 		<circle
 			cx={node.x}
 			cy={node.y}
@@ -60,11 +70,7 @@
 			stroke-width="0.5"
 			opacity="0.3"
 		/>
-		<text
-			x={node.x}
-			y={node.y - 12}
-			class="constellation-label"
-		>
+		<text x={node.x} y={node.y - 12} class="constellation-label">
 			{node.label}
 		</text>
 	{/each}

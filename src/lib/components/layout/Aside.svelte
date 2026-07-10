@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 	import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 
 	let categories = $derived(page.data.categories || []);
@@ -7,38 +8,45 @@
 	let currentTab = $derived(page.url.searchParams.get('tab') ?? '');
 </script>
 
-<aside class="h-full p-4 overflow-y-auto">
+<aside class="h-full overflow-y-auto p-4">
 	<nav class="space-y-8">
 		<div class="sidebar-group space-y-2">
-			<a href="/blog"
-				class="sidebar-topic block text-sm font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 hover:text-neutral-400 transition-colors"
-				class:text-neutral-400={currentPath === '/blog' && !currentTab}>
+			<a
+				href={resolve('/blog')}
+				class="sidebar-topic block text-sm font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400 dark:text-neutral-400"
+				class:text-neutral-400={currentPath === '/blog' && !currentTab}
+			>
 				All Posts
 			</a>
 
-			<a href="/resume"
-				class="sidebar-topic block text-sm font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 hover:text-neutral-400 transition-colors"
-				class:text-neutral-400={currentPath === '/resume'}>
+			<a
+				href={resolve('/resume')}
+				class="sidebar-topic block text-sm font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400 dark:text-neutral-400"
+				class:text-neutral-400={currentPath === '/resume'}
+			>
 				Resume
 			</a>
 		</div>
-		{#each categories as category}
+		{#each categories as category (category.name)}
 			{@const catSlug = slugifyCategory(category.name)}
 			<div class="sidebar-group mb-6">
 				<a
-					href="/blog?tab={catSlug}"
-					class="sidebar-topic block mb-3 text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-500 hover:text-neutral-400 transition-colors"
+					href={resolve(`/blog?tab=${catSlug}`)}
+					class="sidebar-topic mb-3 block text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400 dark:text-neutral-500"
 					class:text-neutral-400={currentTab === catSlug}
 				>
 					{categoryLabel(category.name)}
 				</a>
 
 				<ul class="space-y-1">
-					{#each category.articles as article}
+					{#each category.articles as article (article.slug)}
 						<li>
 							<a
-								href="/blog/{category.name}/{article.slug}"
-								class="block px-3 py-2 rounded-md text-sm text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-800 transition-all border-l-2 border-transparent"
+								href={resolve('/blog/[category]/[slug]', {
+									category: category.name,
+									slug: article.slug
+								})}
+								class="block rounded-md border-l-2 border-transparent px-3 py-2 text-sm text-neutral-700 transition-all hover:bg-neutral-200 dark:text-neutral-300 dark:hover:bg-neutral-800"
 								class:border-neutral-400={currentPath.includes(article.slug)}
 								class:bg-neutral-200={currentPath.includes(article.slug)}
 								class:dark:bg-neutral-800={currentPath.includes(article.slug)}

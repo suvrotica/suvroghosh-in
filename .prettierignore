@@ -5,5 +5,21 @@ yarn.lock
 bun.lock
 bun.lockb
 
-# Miscellaneous
-/static/
+# Generated output and static assets
+.svelte-kit/
+.vercel/
+build/
+static/
+
+# Published content and retained archives
+# Frontmatter/SEO are validated separately by `npm run validate:seo`.
+src/lib/posts/
+src/lib/SavedPosts/
+suvroghosh-post-backups/
+
+# Local Codex artifacts and browser smoke-test logs
+.agents/
+.codex/
+.codex-artifacts/
+preview-*.log
+preview-*.err.log

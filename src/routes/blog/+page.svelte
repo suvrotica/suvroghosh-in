@@ -52,7 +52,7 @@
 				facets={data.facets}
 			/>
 		{:else if data.posts.length > 0}
-			<PostTabs posts={data.posts} basePath="/blog" />
+			<PostTabs posts={data.posts} />
 		{:else}
 			<div class="py-12 text-center text-neutral-500">
 				<p>No posts found.</p>

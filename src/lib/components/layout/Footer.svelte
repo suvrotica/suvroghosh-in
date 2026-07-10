@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
+	import { resolve } from '$app/paths';
 
 	const year = new Date().getFullYear();
 	const email = 'contact@suvroghosh.in';
@@ -11,7 +11,7 @@
 		{ href: '/writing', label: 'Writing & Essays' },
 		{ href: '/blog', label: 'All Posts' },
 		{ href: '/contact', label: 'Contact' }
-	];
+	] as const;
 
 	const socialLinks = [
 		{
@@ -31,13 +31,10 @@
 	class="mt-12 border-t border-neutral-300 bg-neutral-100 py-8 font-sans dark:border-neutral-700 dark:bg-neutral-900"
 >
 	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-		<nav
-			class="mb-6 flex flex-wrap items-center gap-x-5 gap-y-2"
-			aria-label="Footer"
-		>
-			{#each footerLinks as link}
+		<nav class="mb-6 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Footer">
+			{#each footerLinks as link (link.href)}
 				<a
-					href={link.href}
+					href={resolve(link.href)}
 					class="text-xs font-medium text-neutral-600 underline-offset-4 transition-colors hover:text-neutral-400 dark:text-neutral-400"
 				>
 					{link.label}
@@ -56,18 +53,18 @@
 				</a>
 				&middot;
 				<a
-					href="/rss.xml"
+					href={resolve('/rss.xml')}
 					class="underline underline-offset-4 transition-colors hover:text-neutral-400">RSS</a
 				>
 				&middot;
 				<a
-					href="/sitemap.xml"
+					href={resolve('/sitemap.xml')}
 					class="underline underline-offset-4 transition-colors hover:text-neutral-400">Sitemap</a
 				>
 			</p>
 
 			<div class="flex items-center gap-3">
-				{#each socialLinks as link}
+				{#each socialLinks as link (link.href)}
 					<a
 						href={link.href}
 						target="_blank"
