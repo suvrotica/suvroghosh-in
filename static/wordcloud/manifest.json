@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T14:31:15.129160+00:00",
+  "generatedAt": "2026-07-10T19:19:56.386896+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -1723,6 +1723,29 @@
         "Nostalgia",
         "Brain",
         "Even"
+      ],
+      "wordCount": 130
+    },
+    "capex-and-the-geometry-of-obsolescence": {
+      "generatedAt": "2026-07-10T19:19:43.926672+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/capex-and-the-geometry-of-obsolescence.svg",
+      "source": "src/lib/posts/capex-and-the-geometry-of-obsolescence.md",
+      "sourceHash": "70bbe154bc37a630a568b32194c7049904f87a58b5867070e26b7c0068f4759a",
+      "sourceModified": "2026-07-10T19:19:31.614122+00:00",
+      "topWords": [
+        "Now",
+        "Billion",
+        "Man",
+        "Machine",
+        "Young",
+        "Dollars",
+        "Infrastructure",
+        "Say",
+        "Great",
+        "Human",
+        "AI",
+        "Building"
       ],
       "wordCount": 130
     },
