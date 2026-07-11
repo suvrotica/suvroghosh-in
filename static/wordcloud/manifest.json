@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T16:42:35.971457+00:00",
+  "generatedAt": "2026-07-11T16:46:54.157000+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -7132,25 +7132,25 @@
       "wordCount": 130
     },
     "the-alimentary-residue-of-infinity": {
-      "generatedAt": "2026-07-11T16:42:35.674423+00:00",
+      "generatedAt": "2026-07-11T16:46:53.850662+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/the-alimentary-residue-of-infinity.svg",
       "source": "src/lib/posts/the-alimentary-residue-of-infinity.md",
-      "sourceHash": "1d109280b38beb902e53157704960182ee9eb7293f7f442f722f08e1f35c4fa0",
-      "sourceModified": "2026-07-11T16:42:26.434608+00:00",
+      "sourceHash": "3af66cdb6837c26efddff3cdc063dcae3be16bc55f0fcbbe641235ec348a6c23",
+      "sourceModified": "2026-07-11T16:46:44.882208+00:00",
       "topWords": [
         "Book",
-        "Tea",
         "Never",
+        "Tea",
         "Cold",
         "Mathematics",
-        "Exactly",
         "Fan",
         "Attention",
         "Mind",
         "Number",
         "Trying",
-        "Numbers"
+        "Numbers",
+        "Particular"
       ],
       "wordCount": 130
     },
