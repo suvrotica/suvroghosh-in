@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T21:59:10.052136+00:00",
+  "generatedAt": "2026-07-11T02:54:43.877070+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -10371,6 +10371,29 @@
         "Someone",
         "Building",
         "Three"
+      ],
+      "wordCount": 130
+    },
+    "the_pharmakon_of_woodlice": {
+      "generatedAt": "2026-07-11T02:54:43.759211+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the_pharmakon_of_woodlice.svg",
+      "source": "src/lib/posts/the_pharmakon_of_woodlice.md",
+      "sourceHash": "03a1951608ac0f0ef90b64fca2f7be41652a94c42ccbba149b0da1c10aa40ee6",
+      "sourceModified": "2026-07-11T02:54:34.089367+00:00",
+      "topWords": [
+        "Read",
+        "Small",
+        "Mind",
+        "Patient",
+        "World",
+        "Dark",
+        "Circling",
+        "Yet",
+        "Morning",
+        "Particular",
+        "Man",
+        "Pills"
       ],
       "wordCount": 130
     },
