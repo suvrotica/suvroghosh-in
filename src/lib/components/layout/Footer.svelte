@@ -43,7 +43,7 @@
 </script>
 
 <footer
-	class="mt-auto border-t border-neutral-300 bg-neutral-100 font-sans dark:border-neutral-700 dark:bg-neutral-950"
+	class="mt-auto border-t border-neutral-300 bg-neutral-100 font-sans dark:border-neutral-700 dark:bg-neutral-950 print:hidden"
 >
 	<div class="container mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
 		<div class="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">

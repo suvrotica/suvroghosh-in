@@ -32,7 +32,7 @@
 </script>
 
 <div
-	class="reading-progress-bar fixed top-0 right-0 left-0 z-50 h-0.5 bg-gold"
+	class="reading-progress-bar fixed top-0 right-0 left-0 z-50 h-0.5 bg-gold print:hidden"
 	style="transform: scaleX({progress})"
 	aria-hidden="true"
 ></div>

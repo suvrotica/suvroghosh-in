@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
+	import ArticleActions from '$lib/components/blog/ArticleActions.svelte';
 	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
 	import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
@@ -20,10 +21,13 @@
 <SEO {...data.seo} />
 
 <div
-	class="page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:grid xl:grid-cols-[minmax(0,48rem)_16rem] xl:items-start xl:gap-12"
+	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:grid xl:w-[72rem] xl:max-w-none xl:grid-cols-[minmax(0,48rem)_16rem] xl:items-start xl:gap-12"
 >
-	<article class="mx-auto max-w-3xl min-w-0 xl:mx-0">
-		<nav aria-label="Breadcrumb" class="mb-8 text-sm text-neutral-500 dark:text-neutral-400">
+	<article class="article-print mx-auto max-w-3xl min-w-0 xl:mx-0">
+		<nav
+			aria-label="Breadcrumb"
+			class="mb-8 text-sm text-neutral-500 dark:text-neutral-400 print:hidden"
+		>
 			<ol class="flex flex-wrap items-center gap-2">
 				<li><a href={resolve('/')} class="transition-colors hover:text-neutral-400">Home</a></li>
 				<li><span aria-hidden="true">/</span></li>
@@ -84,7 +88,7 @@
 					This is a living essay and may be updated as facts change.
 				</p>{/if}
 			{#if data.metadata.tags && data.metadata.tags.length > 0}
-				<nav aria-label="Post topics" class="mt-6 flex flex-wrap gap-2">
+				<nav aria-label="Post topics" class="mt-6 flex flex-wrap gap-2 print:hidden">
 					{#each data.metadata.tags as tag (tag)}
 						<a
 							href={resolve(tagSearchPath(tag) as `/blog?${string}`)}
@@ -95,9 +99,13 @@
 					{/each}
 				</nav>
 			{/if}
+
+			<ArticleActions title={data.metadata.title} />
 		</header>
 
-		<TableOfContents {headings} variant="mobile" />
+		<div class="print:hidden">
+			<TableOfContents {headings} variant="mobile" />
+		</div>
 
 		{#if data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length}
 			<section
@@ -151,16 +159,20 @@
 			<PostContent />
 		</div>
 
-		<ScrollReveal>
-			<Separator class="mt-16" />
-			<WordCloud slug={data.slug} title={data.metadata.title} />
-		</ScrollReveal>
+		<div class="print:hidden">
+			<ScrollReveal>
+				<Separator class="mt-16" />
+				<WordCloud slug={data.slug} title={data.metadata.title} />
+			</ScrollReveal>
+		</div>
 
-		<PostNavigation newer={postNavigation.newer} older={postNavigation.older} />
+		<div class="print:hidden">
+			<PostNavigation newer={postNavigation.newer} older={postNavigation.older} />
+		</div>
 
 		{#if relatedPosts.length > 0}
 			<ScrollReveal delay={100}>
-				<section aria-labelledby="related-reading-heading" class="mt-12">
+				<section aria-labelledby="related-reading-heading" class="mt-12 print:hidden">
 					<h2
 						id="related-reading-heading"
 						class="mb-2 text-2xl font-bold text-neutral-900 dark:text-white"
@@ -205,7 +217,7 @@
 	</article>
 
 	{#if headings.length >= 2}
-		<aside class="hidden xl:block xl:pt-20">
+		<aside class="hidden xl:block xl:pt-20 print:hidden">
 			<TableOfContents {headings} variant="desktop" />
 		</aside>
 	{/if}
