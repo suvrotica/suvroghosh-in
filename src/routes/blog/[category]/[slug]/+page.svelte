@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
+	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
 	import { Separator } from '$lib/components/ui/separator';
 	import { tagSearchPath } from '$lib/content/posts';
@@ -10,6 +11,7 @@
 	let { data }: { data: PageData } = $props();
 
 	let PostContent = $derived(data.content);
+	let postNavigation = $derived(data.postNavigation);
 	let relatedPosts = $derived(data.relatedPosts ?? []);
 </script>
 
@@ -145,27 +147,45 @@
 		<WordCloud slug={data.slug} title={data.metadata.title} />
 	</ScrollReveal>
 
+	<PostNavigation newer={postNavigation.newer} older={postNavigation.older} />
+
 	{#if relatedPosts.length > 0}
 		<ScrollReveal delay={100}>
-			<section class="mt-16">
-				<Separator class="mb-8" />
-				<h2 class="mb-6 text-2xl font-bold text-neutral-900 dark:text-white">Read Next</h2>
+			<section aria-labelledby="related-reading-heading" class="mt-12">
+				<h2
+					id="related-reading-heading"
+					class="mb-2 text-2xl font-bold text-neutral-900 dark:text-white"
+				>
+					Related reading
+				</h2>
+				<p class="mb-6 text-sm text-neutral-600 dark:text-neutral-400">
+					Selected by shared topics and section, with closer publication dates breaking ties.
+				</p>
 				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
 					{#each relatedPosts as post (post.slug)}
 						<a
 							href={resolve('/blog/[category]/[slug]', {
-								category: post.category,
+								category: post.categorySlug,
 								slug: post.slug
 							})}
-							class="post-card group block rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm dark:border-neutral-800 dark:bg-neutral-800/50"
+							class="post-card group flex min-h-32 flex-col rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/50 dark:focus-visible:outline-neutral-300"
 						>
 							<div class="mb-1 text-xs font-medium tracking-wider text-neutral-400 uppercase">
-								{post.category}
+								{post.categoryLabel}
 							</div>
 							<div
 								class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-400 dark:text-neutral-100"
 							>
 								{post.title}
+							</div>
+							<div
+								class="mt-auto pt-3 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400"
+							>
+								{#if post.sharedTags.length > 0}
+									Shared topics: {post.sharedTags.join(' · ')}
+								{:else}
+									More in {post.categoryLabel}
+								{/if}
 							</div>
 						</a>
 					{/each}

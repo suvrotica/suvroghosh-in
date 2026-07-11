@@ -12,7 +12,7 @@ import {
 } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 import { postPath, redirectedPostPath } from '$lib/content/posts';
-import { getPublishedPost, getRelatedPosts } from '$lib/server/content/posts';
+import { getPostNavigation, getPublishedPost, getRelatedPosts } from '$lib/server/content/posts';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const { category, slug } = params;
@@ -41,6 +41,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	return {
 		slug,
+		postNavigation: getPostNavigation(slug),
 		relatedPosts: getRelatedPosts(slug),
 		metadata: {
 			...metadata,
