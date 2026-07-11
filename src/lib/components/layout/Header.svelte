@@ -4,53 +4,89 @@
 	import { Input } from '$lib/components/ui/input';
 	import { Button } from '$lib/components/ui/button';
 
+	type NavigationItem = {
+		href: '/' | '/writing' | '/consulting' | '/resume' | '/contact';
+		label: string;
+		sections: readonly string[];
+	};
+
+	const navLinks: readonly NavigationItem[] = [
+		{ href: '/', label: 'Home', sections: ['/'] },
+		{ href: '/writing', label: 'Writing', sections: ['/writing', '/blog'] },
+		{
+			href: '/consulting',
+			label: 'Healthcare IT',
+			sections: ['/consulting', '/healthcare-it-gulf']
+		},
+		{ href: '/resume', label: 'Resume', sections: ['/resume'] },
+		{ href: '/contact', label: 'Contact', sections: ['/contact'] }
+	];
+
 	let currentPath = $derived(page.url.pathname);
+	let searchQuery = $state(page.url.searchParams.get('search') ?? '');
+	let mobileMenu: HTMLDetailsElement;
+	let menuSummary: HTMLElement;
 
-	const navLinks = [
-		{ href: '/', label: 'Home' },
-		{ href: '/resume', label: 'Resume' },
-		{ href: '/consulting', label: 'Healthcare IT' },
-		{ href: '/healthcare-it-gulf', label: 'Gulf / Kuwait' },
-		{ href: '/writing', label: 'Writing' },
-		{ href: '/contact', label: 'Contact' }
-	] as const;
-
-	let mobileOpen = $state(false);
-
-	function closeMobile() {
-		mobileOpen = false;
+	function isCurrent(item: NavigationItem) {
+		return item.sections.some((section) =>
+			section === '/'
+				? currentPath === '/'
+				: currentPath === section || currentPath.startsWith(`${section}/`)
+		);
 	}
 
-	let searchQuery = $state(page.url.searchParams.get('search') ?? '');
+	function closeMobile() {
+		if (mobileMenu) mobileMenu.open = false;
+	}
+
+	function handleMenuKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Escape' || !mobileMenu?.open) return;
+		closeMobile();
+		menuSummary?.focus();
+	}
 </script>
 
+<svelte:window onkeydown={handleMenuKeydown} />
+
 <header
-	class="sticky top-0 z-30 border-b border-neutral-300 bg-neutral-100/95 backdrop-blur-sm transition-colors dark:border-neutral-700 dark:bg-neutral-900/95"
+	class="relative sticky top-0 z-40 border-b border-neutral-300/90 bg-neutral-100/95 pt-[env(safe-area-inset-top)] shadow-[0_1px_0_rgb(255_255_255/0.6)] backdrop-blur-md transition-colors dark:border-neutral-700/90 dark:bg-neutral-950/95 dark:shadow-none"
 >
-	<div class="container mx-auto flex items-center justify-between gap-4 p-4">
+	<div class="container mx-auto flex min-h-18 items-center justify-between gap-4 px-4 py-3 sm:px-6">
 		<a
 			href={resolve('/')}
-			class="text-lg font-bold whitespace-nowrap text-neutral-900 transition-colors hover:text-neutral-400 dark:text-neutral-100"
+			onclick={closeMobile}
+			class="group shrink-0 rounded-sm text-neutral-950 outline-offset-4 dark:text-neutral-50"
+			aria-label="Suvro Ghosh — home"
 		>
-			SuvroGhosh<span class="text-neutral-400">.In</span>
+			<span class="block font-serif text-lg leading-none font-bold tracking-tight sm:text-xl">
+				Suvro Ghosh<span
+					class="text-neutral-500 transition-colors group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200"
+					>.in</span
+				>
+			</span>
+			<span
+				class="mt-1 hidden text-[0.625rem] leading-none font-semibold tracking-[0.18em] text-neutral-500 uppercase sm:block dark:text-neutral-400"
+			>
+				Writing &amp; systems
+			</span>
 		</a>
 
-		<nav class="hidden items-center gap-5 md:flex" aria-label="Main navigation">
+		<nav class="hidden items-center gap-6 xl:flex" aria-label="Primary navigation">
 			{#each navLinks as link (link.href)}
 				<a
 					href={resolve(link.href)}
-					class="nav-link text-sm font-medium text-neutral-700 transition-colors hover:text-neutral-400 dark:text-neutral-300"
-					aria-current={currentPath === link.href ? 'page' : undefined}
+					class="nav-link rounded-sm py-2 text-sm font-semibold text-neutral-700 outline-offset-4 transition-colors hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white"
+					aria-current={isCurrent(link) ? 'page' : undefined}
 				>
 					{link.label}
 				</a>
 			{/each}
 		</nav>
 
-		<div class="flex items-center gap-3">
+		<div class="flex items-center gap-2 sm:gap-3">
 			<a
 				href={resolve('/blog')}
-				class="flex h-11 w-11 items-center justify-center rounded-md hover:bg-neutral-200 sm:hidden dark:hover:bg-neutral-800"
+				class="flex h-11 w-11 items-center justify-center rounded-md text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-950 lg:hidden dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white"
 				aria-label="Search writing"
 			>
 				<svg
@@ -72,19 +108,31 @@
 			<form
 				action={resolve('/blog')}
 				method="get"
-				class="hidden items-center gap-1 sm:flex"
+				class="hidden items-center gap-1 lg:flex"
 				role="search"
 			>
 				<Input
 					type="search"
 					name="search"
 					bind:value={searchQuery}
-					placeholder="Search posts..."
-					aria-label="Search posts"
-					class="h-10 w-40"
+					placeholder="Search writing"
+					aria-label="Search writing"
+					class="h-10 w-40 bg-white/70 dark:bg-neutral-900/80"
 				/>
-				<Button type="submit" variant="ghost" size="icon" aria-label="Search" class="h-10 w-10">
-					<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<Button
+					type="submit"
+					variant="ghost"
+					size="icon"
+					aria-label="Submit search"
+					class="h-10 w-10"
+				>
+					<svg
+						class="h-5 w-5"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
@@ -95,57 +143,66 @@
 				</Button>
 			</form>
 
-			<button
-				class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-md hover:bg-neutral-200 md:hidden dark:hover:bg-neutral-800"
-				onclick={() => (mobileOpen = !mobileOpen)}
-				aria-label="Toggle navigation menu"
-				aria-expanded={mobileOpen}
-			>
-				<svg
-					class="h-6 w-6 text-neutral-800 dark:text-neutral-200"
-					fill="none"
-					stroke="currentColor"
-					viewBox="0 0 24 24"
+			<details bind:this={mobileMenu} class="group xl:hidden">
+				<summary
+					bind:this={menuSummary}
+					class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-md text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-200 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950 [&::-webkit-details-marker]:hidden"
 				>
-					{#if mobileOpen}
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M6 18L18 6M6 6l12 12"
-						/>
-					{:else}
+					<span class="sr-only">Navigation menu</span>
+					<svg
+						class="h-6 w-6 group-open:hidden"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+					>
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
 							stroke-width="2"
 							d="M4 6h16M4 12h16M4 18h16"
 						/>
-					{/if}
-				</svg>
-			</button>
+					</svg>
+					<svg
+						class="hidden h-6 w-6 group-open:block"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+						aria-hidden="true"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M6 18L18 6M6 6l12 12"
+						/>
+					</svg>
+				</summary>
+
+				<nav
+					class="absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-b border-neutral-300 bg-neutral-100 px-4 py-4 shadow-xl sm:px-6 dark:border-neutral-700 dark:bg-neutral-950"
+					aria-label="Mobile and tablet navigation"
+				>
+					<ul class="container mx-auto grid gap-1 sm:grid-cols-2 sm:gap-2 lg:max-w-3xl">
+						{#each navLinks as link (link.href)}
+							<li>
+								<a
+									href={resolve(link.href)}
+									onclick={closeMobile}
+									class="flex min-h-11 items-center rounded-md border-l-2 px-4 py-2.5 text-sm font-semibold transition-colors {isCurrent(
+										link
+									)
+										? 'border-neutral-800 bg-neutral-200 text-neutral-950 dark:border-neutral-200 dark:bg-neutral-800 dark:text-white'
+										: 'border-transparent text-neutral-700 hover:bg-neutral-200 hover:text-neutral-950 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white'}"
+									aria-current={isCurrent(link) ? 'page' : undefined}
+								>
+									{link.label}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</nav>
+			</details>
 		</div>
 	</div>
-
-	{#if mobileOpen}
-		<nav
-			class="border-t border-neutral-300 px-4 py-3 md:hidden dark:border-neutral-700"
-			aria-label="Mobile navigation"
-		>
-			<ul class="flex flex-col gap-2">
-				{#each navLinks as link (link.href)}
-					<li>
-						<a
-							href={resolve(link.href)}
-							onclick={closeMobile}
-							class="block rounded-md px-3 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-400 dark:text-neutral-300 dark:hover:bg-neutral-800"
-							aria-current={currentPath === link.href ? 'page' : undefined}
-						>
-							{link.label}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</nav>
-	{/if}
 </header>
