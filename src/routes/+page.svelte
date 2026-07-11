@@ -104,9 +104,3 @@
 		</div>
 	</div>
 </ScrollReveal>
-
-<style>
-	:global(#main-content > footer) {
-		margin-top: 0;
-	}
-</style>

@@ -4,16 +4,28 @@
 	const year = new Date().getFullYear();
 	const email = 'contact@suvroghosh.in';
 
-	const footerLinks = [
-		{ href: '/resume', label: 'Resume' },
-		{ href: '/consulting', label: 'Healthcare IT Consulting' },
-		{ href: '/healthcare-it-gulf', label: 'Gulf / Kuwait' },
-		{ href: '/writing', label: 'Writing & Essays' },
-		{ href: '/blog', label: 'All Posts' },
-		{ href: '/contact', label: 'Contact' }
+	const footerGroups = [
+		{
+			id: 'footer-explore',
+			label: 'Explore',
+			links: [
+				{ href: '/writing', label: 'Writing' },
+				{ href: '/blog', label: 'Search & archive' },
+				{ href: '/resume', label: 'Resume' }
+			]
+		},
+		{
+			id: 'footer-work',
+			label: 'Professional',
+			links: [
+				{ href: '/consulting', label: 'Healthcare IT' },
+				{ href: '/healthcare-it-gulf', label: 'Gulf & Kuwait' },
+				{ href: '/contact', label: 'Contact' }
+			]
+		}
 	] as const;
 
-	const socialLinks = [
+	const externalLinks = [
 		{
 			href: 'https://www.linkedin.com/in/suvro-ghosh-78a5aa278',
 			label: 'LinkedIn',
@@ -24,60 +36,100 @@
 			label: 'YouTube',
 			icon: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'
 		}
-	];
+	] as const;
+
+	const footerLinkClass =
+		'inline-flex min-h-11 items-center rounded-sm text-sm font-medium text-neutral-600 underline-offset-4 transition-colors hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-400 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950';
 </script>
 
 <footer
-	class="mt-12 border-t border-neutral-300 bg-neutral-100 py-8 font-sans dark:border-neutral-700 dark:bg-neutral-900"
+	class="mt-auto border-t border-neutral-300 bg-neutral-100 font-sans dark:border-neutral-700 dark:bg-neutral-950"
 >
-	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
-		<nav class="mb-6 flex flex-wrap items-center gap-x-5 gap-y-2" aria-label="Footer">
-			{#each footerLinks as link (link.href)}
+	<div class="container mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
+		<div class="grid gap-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:gap-12">
+			<div class="max-w-sm">
 				<a
-					href={resolve(link.href)}
-					class="text-xs font-medium text-neutral-600 underline-offset-4 transition-colors hover:text-neutral-400 dark:text-neutral-400"
+					href={resolve('/')}
+					class="inline-flex min-h-11 items-center rounded-sm font-serif text-xl font-bold tracking-tight text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 				>
-					{link.label}
+					Suvro Ghosh<span class="text-neutral-500 dark:text-neutral-400">.in</span>
 				</a>
-			{/each}
-		</nav>
+				<p
+					class="mt-3 !mb-0 max-w-xs !text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
+				>
+					Essays, healthcare systems, science, and Calcutta—written and maintained independently.
+				</p>
+			</div>
 
-		<div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-			<p class="text-left text-sm text-neutral-600 dark:text-neutral-400">
-				&copy; {year} Suvro Ghosh &middot;
-				<a
-					href={'mailto:' + email}
-					class="underline underline-offset-4 transition-colors hover:text-neutral-400"
-				>
-					{email}
-				</a>
-				&middot;
-				<a
-					href={resolve('/rss.xml')}
-					class="underline underline-offset-4 transition-colors hover:text-neutral-400">RSS</a
-				>
-				&middot;
-				<a
-					href={resolve('/sitemap.xml')}
-					class="underline underline-offset-4 transition-colors hover:text-neutral-400">Sitemap</a
-				>
-			</p>
-
-			<div class="flex items-center gap-3">
-				{#each socialLinks as link (link.href)}
-					<a
-						href={link.href}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="text-neutral-500 transition-colors hover:text-neutral-300 dark:text-neutral-400"
-						aria-label={link.label}
-						title={link.label}
+			{#each footerGroups as group (group.id)}
+				<nav aria-labelledby={group.id}>
+					<h2
+						id={group.id}
+						class="!m-0 !text-xs !leading-5 font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
 					>
-						<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-							<path d={link.icon} />
-						</svg>
-					</a>
-				{/each}
+						{group.label}
+					</h2>
+					<ul class="mt-2">
+						{#each group.links as link (link.href)}
+							<li>
+								<a href={resolve(link.href)} class={footerLinkClass}>{link.label}</a>
+							</li>
+						{/each}
+					</ul>
+				</nav>
+			{/each}
+
+			<nav aria-labelledby="footer-follow">
+				<h2
+					id="footer-follow"
+					class="!m-0 !text-xs !leading-5 font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
+				>
+					Follow &amp; subscribe
+				</h2>
+				<ul class="mt-2">
+					{#each externalLinks as link (link.href)}
+						<li>
+							<a href={link.href} target="_blank" rel="noopener noreferrer" class={footerLinkClass}>
+								<svg
+									class="mr-2 h-4 w-4 shrink-0 text-neutral-500"
+									fill="currentColor"
+									viewBox="0 0 24 24"
+									aria-hidden="true"
+								>
+									<path d={link.icon} />
+								</svg>
+								{link.label}<span class="sr-only">, opens in a new tab</span>
+								<svg
+									class="ml-1.5 h-3.5 w-3.5 text-neutral-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+									aria-hidden="true"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M14 5h5v5m0-5L10 14M5 7v12h12v-5"
+									/>
+								</svg>
+							</a>
+						</li>
+					{/each}
+					<li><a href={resolve('/rss.xml')} class={footerLinkClass}>RSS feed</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div
+			class="mt-9 flex flex-col gap-2 border-t border-neutral-300 pt-6 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-800"
+		>
+			<p class="!mb-0 !text-left text-xs text-neutral-500 dark:text-neutral-500">
+				&copy; {year} Suvro Ghosh. All writing and opinions are my own.
+			</p>
+			<div class="flex flex-wrap items-center gap-x-5">
+				<a href={'mailto:' + email} class={footerLinkClass}>{email}</a>
+				<a href={resolve('/sitemap.xml')} class={footerLinkClass}>Sitemap</a>
 			</div>
 		</div>
 	</div>

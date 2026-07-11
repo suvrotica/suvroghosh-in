@@ -19,13 +19,16 @@
 
 <ReadingProgress />
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="flex min-h-dvh flex-col">
+	<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<Header />
+	<Header />
 
-<main id="main-content" class="scrollable-main flex-1 overflow-y-auto scroll-smooth">
-	<div class="container mx-auto max-w-4xl px-4 py-8 lg:py-12">
-		{@render children()}
-	</div>
+	<main id="main-content" tabindex="-1" class="flex-1 scroll-smooth focus:outline-none">
+		<div class="container mx-auto max-w-4xl px-4 py-8 lg:py-12">
+			{@render children()}
+		</div>
+	</main>
+
 	<Footer />
-</main>
+</div>
