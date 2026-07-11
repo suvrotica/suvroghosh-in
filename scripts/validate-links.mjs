@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { parsePostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
@@ -32,21 +33,6 @@ function relativeFile(file) {
 
 function lineNumber(text, index) {
 	return text.slice(0, index).split('\n').length;
-}
-
-function parseFrontmatter(text) {
-	const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-	if (!match) return {};
-
-	const metadata = {};
-	for (const line of match[1].split(/\r?\n/)) {
-		const field = line.match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
-		if (!field) continue;
-
-		const value = field[2].trim().replace(/^["']|["']$/g, '');
-		metadata[field[1]] = value === 'false' ? false : value === 'true' ? true : value;
-	}
-	return metadata;
 }
 
 function slugifyCategory(category = 'uncategorized') {
@@ -180,7 +166,15 @@ const posts = [];
 
 for (const file of walk(postsDir).filter((candidate) => candidate.endsWith('.md'))) {
 	const text = read(file);
-	const metadata = parseFrontmatter(text);
+	let metadata;
+	try {
+		metadata = parsePostFrontmatter(text, relativeFile(file));
+	} catch (error) {
+		errors.push(
+			error instanceof Error ? error.message : `${relativeFile(file)} has invalid frontmatter.`
+		);
+		continue;
+	}
 	const slug = path.basename(file, '.md');
 	if (metadata.published === false || redirectedSlugs.has(slug)) continue;
 

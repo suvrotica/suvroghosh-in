@@ -7,7 +7,7 @@ export type BlogPostMetadata = {
 	dateModified?: string;
 	category: string;
 	tags: string[];
-	published?: boolean;
+	published: boolean;
 	thumbnail?: string;
 	thumbnailAlt?: string;
 	color?: string;
