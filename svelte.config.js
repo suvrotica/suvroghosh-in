@@ -90,6 +90,35 @@ function rehypeDemotePostH1() {
 	};
 }
 
+function headingText(node) {
+	if (node.type === 'text') return node.value ?? '';
+	if (!node.children) return '';
+	return node.children.map(headingText).join('');
+}
+
+function rehypeCollectHeadings() {
+	return (tree, vFile) => {
+		const headings = [];
+
+		function walk(node) {
+			if (node.type === 'element' && /^h[1-6]$/.test(node.tagName)) {
+				const id = typeof node.properties?.id === 'string' ? node.properties.id : '';
+				const text = headingText(node).replace(/\s+/g, ' ').trim();
+				if (id && text) {
+					headings.push({ id, text, level: Number(node.tagName.slice(1)) });
+				}
+			}
+
+			if (node.children) {
+				for (const child of node.children) walk(child);
+			}
+		}
+
+		walk(tree);
+		if (vFile.data.fm) vFile.data.fm.headings = headings;
+	};
+}
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: [
@@ -103,6 +132,7 @@ const config = {
 				[rehypeAutolinkHeadings, { behavior: 'wrap' }],
 				rehypeKatexSvelte,
 				rehypeDemotePostH1,
+				rehypeCollectHeadings,
 				rehypeSquareBrackets // 2. Inject the custom plugin here
 			]
 		})

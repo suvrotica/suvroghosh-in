@@ -17,6 +17,13 @@ export type BlogPostMetadata = {
 	inPlainEnglish?: string;
 	keyTerms?: string[];
 	faq?: { question: string; answer: string }[];
+	headings?: PostHeading[];
+};
+
+export type PostHeading = {
+	id: string;
+	text: string;
+	level: number;
 };
 
 export type BlogPostSummary = BlogPostMetadata & {
