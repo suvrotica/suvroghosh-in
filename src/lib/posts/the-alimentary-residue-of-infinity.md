@@ -11,7 +11,7 @@ color: "#5DADE2"
 
 <TTS />
 
-<Pi src="Compress_20260711_203027_7116.jpg" />
+<Pi src="/photos/Compress_20260711_203027_7116.jpg" />
 
 The tea has gone cold, that particular temperature of abandonment where the milk separates into a thin, greasy scum and the surface reflects the ceiling fan's lazy rotation like a dyspeptic eye staring back at my own stupidity, and there it sits, *The New York Times Book of Mathematics*, edited by Gina Kolata, foreworded by Paul Hoffman, a sky-blue slab of paper and pretension that I have opened and closed perhaps seventeen times this month alone, not because I am learning anything—Christ, no, learning requires a continuity of consciousness that my brain, this traitorous, serotonin-deficient organ, treats with the same reliable consistency as a Calcutta tram during monsoon—but because an essay, you see, an essay is a manageable unit of failure, a self-contained catastrophe that I can abandon at the bottom of a page without the guilt of having deserted a novel, a career, or any other sustained narrative arc that demands emotional continuity I am medically incapable of providing. And this is precisely why I write these essays and these short, grotesquely truncated posts for my blog—because my attention, that despicable fraction of a fraction, that paan-stained, debased currency of consciousness, has been broken into such microscopic denominations that only the essay, only the blog post, only the literary equivalent of a two-rupee coin, can be exchanged in the marketplace of my own shattered mind without the entire transaction collapsing into the Hooghly silt.
 
