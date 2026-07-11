@@ -75,7 +75,7 @@ In healthcare IT, the lesson is not about homeopathy per se. It is about the dan
 
 ## Related Posts
 
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
 - [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

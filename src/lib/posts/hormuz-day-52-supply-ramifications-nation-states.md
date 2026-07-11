@@ -81,4 +81,4 @@ It is whether the state understands what actually runs through it.
 - [India’s Semiconductor Problem Is Not a Missing Slogan](/blog/technology/india-semiconductor-sufficiency-beyond-lip-service)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
 - [The Nightmare of Indian Healthcare for the Ordinary Patient](/blog/healthcare/nightmare-of-indian-healthcare)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)

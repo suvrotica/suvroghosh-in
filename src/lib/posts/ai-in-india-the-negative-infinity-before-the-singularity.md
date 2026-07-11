@@ -69,7 +69,7 @@ The singularity, if one insists on using that overfed word, will not arrive as a
 
 ## Related Posts
 
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)
 - [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
 - [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)

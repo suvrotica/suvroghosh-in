@@ -75,7 +75,7 @@ And thin evidence is where medicine gets itself into trouble when fascination ou
 
 ## Related Posts
 
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox](/blog/healthcare-it/mental-health-polypharmacy-decision-support)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)

@@ -65,7 +65,7 @@ The dragon may still be in the cave. But if strangers can get near enough to war
 
 ## Related Posts
 
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
 - [AI Agents Will Not Democratize Power Neatly](/blog/artificial-intelligence/agentic-ai-and-the-asymmetry-of-will)
 - [Anthropic Is Coming for Wall Street](/blog/artificial-intelligence/anthropic-is-coming-for-wall-street)

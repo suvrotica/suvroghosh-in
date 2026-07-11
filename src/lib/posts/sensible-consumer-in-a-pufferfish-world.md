@@ -123,5 +123,5 @@ P.S. For the literal background: fugu is a Japanese preparation of puffer fish c
 
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
 - [India’s White-Collar Issue](/blog/india/india-ai-it-bpo-white-collar-jobs)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

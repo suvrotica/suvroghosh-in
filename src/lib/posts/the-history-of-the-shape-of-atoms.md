@@ -92,6 +92,6 @@ Which is to say: the atom did not become blurrier. We merely stopped lying about
 ## Related Posts
 
 - [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

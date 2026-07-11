@@ -98,4 +98,4 @@ I will be building demos in public: a mock EHR extract, a toy interface engine, 
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)

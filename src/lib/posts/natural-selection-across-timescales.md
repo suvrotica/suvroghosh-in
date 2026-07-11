@@ -74,6 +74,6 @@ The world is not merely full of things. It is full of auditions. Molecules audit
 ## Related Posts
 
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
 - [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)

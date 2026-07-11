@@ -121,6 +121,6 @@ That, finally, is the sober beauty of vector databases. They are not magic. They
 ## Related Posts
 
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)

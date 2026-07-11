@@ -7,7 +7,7 @@
 		"dev": "vite dev",
 		"wordclouds": "python scripts/generate_wordclouds.py",
 		"wordclouds:install": "python -m pip install --user -r requirements-wordcloud.txt",
-		"prebuild": "python scripts/prebuild_wordclouds.py && npm run validate:media && npm run search:index",
+		"prebuild": "python scripts/prebuild_wordclouds.py && npm run validate:media && npm run search:index && npm run validate:links",
 		"build": "vite build",
 		"search:index": "node scripts/build-search-index.mjs",
 		"preview": "vite preview",
@@ -16,6 +16,7 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"validate:seo": "node scripts/validate-seo.mjs",
 		"validate:media": "node scripts/validate-media.mjs",
+		"validate:links": "node scripts/validate-links.mjs",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},

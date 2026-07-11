@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T02:54:43.877070+00:00",
+  "generatedAt": "2026-07-11T03:06:10.374085+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -140,12 +140,12 @@
       "wordCount": 130
     },
     "agentic-ai-and-the-asymmetry-of-will": {
-      "generatedAt": "2026-07-02T20:05:49.207274+00:00",
+      "generatedAt": "2026-07-11T03:05:11.413769+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/agentic-ai-and-the-asymmetry-of-will.svg",
       "source": "src/lib/posts/agentic-ai-and-the-asymmetry-of-will.md",
-      "sourceHash": "4e18ae1824c3bde0270b87f6de2a4048a43d284c69997a11ef9db9b6ec30125a",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "87bdb683e20cd1d7f3f626d977c18fd059879e26a4fdc50611484afa32eb7c51",
+      "sourceModified": "2026-07-11T03:03:37.793204+00:00",
       "topWords": [
         "Agent",
         "Agents",
@@ -255,12 +255,12 @@
       "wordCount": 130
     },
     "ai-genie-out-of-the-bottle": {
-      "generatedAt": "2026-07-02T20:05:52.411129+00:00",
+      "generatedAt": "2026-07-11T03:05:13.062079+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/ai-genie-out-of-the-bottle.svg",
       "source": "src/lib/posts/ai-genie-out-of-the-bottle.md",
-      "sourceHash": "fed1b79a985ad00b2fbcb2e5f6dcbb7351fbab2cc5533167e26644d5e4e46c54",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "58a7411ae66f4d76d0fab2f2d389ab51fad08ee8586091b956d253b7feab9d00",
+      "sourceModified": "2026-07-11T03:03:37.808398+00:00",
       "topWords": [
         "Human",
         "AI",
@@ -301,12 +301,12 @@
       "wordCount": 130
     },
     "ai-health-insurance-surreptitious-risk-scoring": {
-      "generatedAt": "2026-07-02T20:05:53.728142+00:00",
+      "generatedAt": "2026-07-11T03:05:15.032178+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/ai-health-insurance-surreptitious-risk-scoring.svg",
       "source": "src/lib/posts/ai-health-insurance-surreptitious-risk-scoring.md",
-      "sourceHash": "5838648e82859539c1c3803815aee68dd473a3cd8595ab575955af2c0942e859",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "eeb549c975a2f8ab6c94c4b4ae73e77c06e0ec615df600682fdf8d90fb107067",
+      "sourceModified": "2026-07-11T03:03:37.812415+00:00",
       "topWords": [
         "Data",
         "Model",
@@ -324,12 +324,12 @@
       "wordCount": 130
     },
     "ai-in-india-the-negative-infinity-before-the-singularity": {
-      "generatedAt": "2026-07-02T20:05:54.322489+00:00",
+      "generatedAt": "2026-07-11T03:05:16.970588+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/ai-in-india-the-negative-infinity-before-the-singularity.svg",
       "source": "src/lib/posts/ai-in-india-the-negative-infinity-before-the-singularity.md",
-      "sourceHash": "35edca7720d09f1d25d1da45bcdb32709afaed8342ff7120630f6d29fe2d19c4",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "6b7304b7fa43f5b6a99966bd72b19e407bdc645037f003f3f26dc6029e09d9f6",
+      "sourceModified": "2026-07-11T03:03:37.814701+00:00",
       "topWords": [
         "AI",
         "Fake",
@@ -439,12 +439,12 @@
       "wordCount": 130
     },
     "ai-psychology-denial-oscillation-and-the-social-theater-of-competence": {
-      "generatedAt": "2026-07-02T20:05:56.711914+00:00",
+      "generatedAt": "2026-07-11T03:05:18.805727+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/ai-psychology-denial-oscillation-and-the-social-theater-of-competence.svg",
       "source": "src/lib/posts/ai-psychology-denial-oscillation-and-the-social-theater-of-competence.md",
-      "sourceHash": "0b1265ff330c8c3eb5fd4cbc02059e03e611b0019a2dbfb1b13b03a15e8eaf58",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "5706a63a68d2b15a5ac50cab9a7be98a80ddcdc078afd4648dfd12ff6291bbca",
+      "sourceModified": "2026-07-11T03:03:37.822744+00:00",
       "topWords": [
         "AI",
         "Language",
@@ -485,12 +485,12 @@
       "wordCount": 130
     },
     "ai-wave-social-isolation-mental-health-infrastructure": {
-      "generatedAt": "2026-07-02T20:05:57.948369+00:00",
+      "generatedAt": "2026-07-11T03:05:20.616723+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/ai-wave-social-isolation-mental-health-infrastructure.svg",
       "source": "src/lib/posts/ai-wave-social-isolation-mental-health-infrastructure.md",
-      "sourceHash": "461c4a70e2a58a3c9f35d2b1ed9107fcb4792584467a17bba4b1ac0629f6c489",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "8c1162ec0dabc53e0b631e82c1a1263a64cc00f1c898a211ad012100e521ab1f",
+      "sourceModified": "2026-07-11T03:03:37.839558+00:00",
       "topWords": [
         "Data",
         "Health",
@@ -1842,12 +1842,12 @@
       "wordCount": 130
     },
     "cicada-ba32-covid-variant": {
-      "generatedAt": "2026-07-02T20:06:44.058376+00:00",
+      "generatedAt": "2026-07-11T03:05:22.715990+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/cicada-ba32-covid-variant.svg",
       "source": "src/lib/posts/cicada-ba32-covid-variant.md",
-      "sourceHash": "c0100bf9d18acd8314ae20d10819e35b0b4b2f943f6bb9307129c477bbb54f78",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "ff1c510e67a27740c88333dad0c02f6bcd1690d640dcfc47fa0bc656aee4b6a6",
+      "sourceModified": "2026-07-11T03:03:37.887279+00:00",
       "topWords": [
         "BA.3.2",
         "Lineage",
@@ -1934,12 +1934,12 @@
       "wordCount": 130
     },
     "claude-mythos-hype-and-security-hygiene": {
-      "generatedAt": "2026-07-02T20:06:46.525759+00:00",
+      "generatedAt": "2026-07-11T03:05:24.549338+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/claude-mythos-hype-and-security-hygiene.svg",
       "source": "src/lib/posts/claude-mythos-hype-and-security-hygiene.md",
-      "sourceHash": "e1c64660d037123545a0501dcf5e4ab740a7c6b8b13f95415f1dae0220a365fd",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "ad6212fbb356553f7e4fa00cbbe0365b834140631fb06ea154a4b3bb63f8ee80",
+      "sourceModified": "2026-07-11T03:03:37.887279+00:00",
       "topWords": [
         "Model",
         "Mythos",
@@ -2417,12 +2417,12 @@
       "wordCount": 130
     },
     "dogs-bad-people-myth-science": {
-      "generatedAt": "2026-07-02T20:06:58.336045+00:00",
+      "generatedAt": "2026-07-11T03:05:26.351551+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/dogs-bad-people-myth-science.svg",
       "source": "src/lib/posts/dogs-bad-people-myth-science.md",
-      "sourceHash": "f9ed941d6d265dc58f84b966a0f253f67f3d5b05e9d7771c9b06323dcaa71522",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "dad96b670e211134f363309538c4b068829c11a49234b52b5a8252134b6ca0dd",
+      "sourceModified": "2026-07-11T03:03:37.903322+00:00",
       "topWords": [
         "Dogs",
         "Human",
@@ -2693,12 +2693,12 @@
       "wordCount": 130
     },
     "explaining-the-healthcare-it-gap-as-continuity": {
-      "generatedAt": "2026-07-02T20:07:05.299730+00:00",
+      "generatedAt": "2026-07-11T03:05:28.209748+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/explaining-the-healthcare-it-gap-as-continuity.svg",
       "source": "src/lib/posts/explaining-the-healthcare-it-gap-as-continuity.md",
-      "sourceHash": "f8a0cbabf8d2eb3ed522b71030c24054ea5fc0781065d2c9c744e166049fa263",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "3d67b796333cea60547b2b66894f79cab6ea7ebbd12213d3029025921a79ed21",
+      "sourceModified": "2026-07-11T03:03:37.908099+00:00",
       "topWords": [
         "Healthcare",
         "Data",
@@ -2992,12 +2992,12 @@
       "wordCount": 130
     },
     "first-principles-thinking-calcutta-healthcare-it": {
-      "generatedAt": "2026-07-02T20:07:11.777192+00:00",
+      "generatedAt": "2026-07-11T03:05:30.114312+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/first-principles-thinking-calcutta-healthcare-it.svg",
       "source": "src/lib/posts/first-principles-thinking-calcutta-healthcare-it.md",
-      "sourceHash": "50f3de9d191234fae97dcc2878702a2ef4868cc5a2172325c1d6bc53a8bceb07",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "4f8e044f22d4170f07c97e49e7224aa364b5b534688f765f6543246b4cf3463d",
+      "sourceModified": "2026-07-11T03:03:37.934985+00:00",
       "topWords": [
         "Data",
         "Healthcare",
@@ -3383,12 +3383,12 @@
       "wordCount": 130
     },
     "healthcare-ai-wrong-objective": {
-      "generatedAt": "2026-07-02T20:07:20.640237+00:00",
+      "generatedAt": "2026-07-11T03:05:31.952443+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/healthcare-ai-wrong-objective.svg",
       "source": "src/lib/posts/healthcare-ai-wrong-objective.md",
-      "sourceHash": "8d76aa37459266385d0eaf31c24e7f98072a0392c72fa2961f61e51a923c58d0",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "455875dd59f1b44654cfabafa6dfb9e05cbe5578e0ad45e572f81c4845f56bcb",
+      "sourceModified": "2026-07-11T03:03:37.951210+00:00",
       "topWords": [
         "Model",
         "Data",
@@ -3567,12 +3567,12 @@
       "wordCount": 130
     },
     "homeopathy-pseudoscience-persistence": {
-      "generatedAt": "2026-07-02T20:07:24.377990+00:00",
+      "generatedAt": "2026-07-11T03:05:33.826938+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/homeopathy-pseudoscience-persistence.svg",
       "source": "src/lib/posts/homeopathy-pseudoscience-persistence.md",
-      "sourceHash": "9e154c04462bbe797568de4bdd0b10ab56fb6e0c73b6424c48f75d057cf2fb2b",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "9eb931736bb97724d1b859ecd2ac95fb917aec2de4d2e119da42f2fd3bb383b5",
+      "sourceModified": "2026-07-11T03:03:37.956339+00:00",
       "topWords": [
         "Data",
         "Homeopathy",
@@ -3613,12 +3613,12 @@
       "wordCount": 130
     },
     "hormuz-day-52-supply-ramifications-nation-states": {
-      "generatedAt": "2026-07-02T20:07:25.665788+00:00",
+      "generatedAt": "2026-07-11T03:05:35.753763+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/hormuz-day-52-supply-ramifications-nation-states.svg",
       "source": "src/lib/posts/hormuz-day-52-supply-ramifications-nation-states.md",
-      "sourceHash": "f6bab82bc631b5d9729ecd9fd215c59804b9bbdc554eff340c5923c396c0271d",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "2708a10e3750b7b7f8d1a780c23e4bdb2c33fff05ddc20a2b5b9695eb4091b9d",
+      "sourceModified": "2026-07-11T03:03:37.956339+00:00",
       "topWords": [
         "Systems",
         "Fertilizer",
@@ -3866,12 +3866,12 @@
       "wordCount": 130
     },
     "india-ai-it-bpo-white-collar-jobs": {
-      "generatedAt": "2026-07-02T20:07:31.158300+00:00",
+      "generatedAt": "2026-07-11T03:05:37.615594+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/india-ai-it-bpo-white-collar-jobs.svg",
       "source": "src/lib/posts/india-ai-it-bpo-white-collar-jobs.md",
-      "sourceHash": "02a809d7947df8a1f3063941db87f612b28c6614d70157e042e1a82c65aafbac",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "059d4383d900c5eba6d4b2347397db7a6f75495fa5bbcb64b1ba19df2347b42d",
+      "sourceModified": "2026-07-11T03:03:37.969266+00:00",
       "topWords": [
         "AI",
         "Work",
@@ -3912,12 +3912,12 @@
       "wordCount": 130
     },
     "india-ai-moat-width-without-depth": {
-      "generatedAt": "2026-07-02T20:07:32.395379+00:00",
+      "generatedAt": "2026-07-11T03:05:39.414414+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/india-ai-moat-width-without-depth.svg",
       "source": "src/lib/posts/india-ai-moat-width-without-depth.md",
-      "sourceHash": "2dc448ef9402933a0303c1f767610c02eb526863a88a483dffa802e22dc1a089",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "b447c07b23ec83881b7bba5072c2c3efc7d35c2b7eb8de4392da1e2cad57e544",
+      "sourceModified": "2026-07-11T03:03:37.972295+00:00",
       "topWords": [
         "AI",
         "India",
@@ -4050,12 +4050,12 @@
       "wordCount": 130
     },
     "india-semiconductor-sufficiency-beyond-lip-service": {
-      "generatedAt": "2026-07-02T20:07:36.269902+00:00",
+      "generatedAt": "2026-07-11T03:05:41.166385+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/india-semiconductor-sufficiency-beyond-lip-service.svg",
       "source": "src/lib/posts/india-semiconductor-sufficiency-beyond-lip-service.md",
-      "sourceHash": "3d9583004b9090406257ba6d3a305f6db0bfc9638871fe02bf2d3b2f53f3ae52",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "052881283fca7573976fdce4e978b35676ecb0904216661acdab314f122493f8",
+      "sourceModified": "2026-07-11T03:03:37.978324+00:00",
       "topWords": [
         "India",
         "Chips",
@@ -4257,12 +4257,12 @@
       "wordCount": 130
     },
     "jogar-jugaad-and-the-greedy-improvisation-of-india": {
-      "generatedAt": "2026-07-02T20:07:40.784443+00:00",
+      "generatedAt": "2026-07-11T03:05:43.013180+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/jogar-jugaad-and-the-greedy-improvisation-of-india.svg",
       "source": "src/lib/posts/jogar-jugaad-and-the-greedy-improvisation-of-india.md",
-      "sourceHash": "880c1a913cecf372fcd60e901537b11bc3ad5a42bfd468538f813eb4adc5d607",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "b719c39efe44866d307166fd3dfa781ac9af7e62fd3fd7a1db73a2b27dc2f200",
+      "sourceModified": "2026-07-11T03:03:37.992226+00:00",
       "topWords": [
         "Jugaad",
         "Becomes",
@@ -4510,12 +4510,12 @@
       "wordCount": 130
     },
     "last-economy-intelligence-inversion": {
-      "generatedAt": "2026-07-02T20:07:45.214809+00:00",
+      "generatedAt": "2026-07-11T03:05:44.975966+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/last-economy-intelligence-inversion.svg",
       "source": "src/lib/posts/last-economy-intelligence-inversion.md",
-      "sourceHash": "b78f347e1d4c533caf9a6df839aa29145cd46afd4cf4439560ab680dea4d5b4d",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "f7965308a6ac9dab843dd9aa927bc06295bfe4269ae598fecbf54e7bf0165387",
+      "sourceModified": "2026-07-11T03:03:38.002460+00:00",
       "topWords": [
         "Economy",
         "Human",
@@ -4763,12 +4763,12 @@
       "wordCount": 130
     },
     "mental-health-polypharmacy-decision-support": {
-      "generatedAt": "2026-07-02T20:07:52.027224+00:00",
+      "generatedAt": "2026-07-11T03:05:46.787519+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/mental-health-polypharmacy-decision-support.svg",
       "source": "src/lib/posts/mental-health-polypharmacy-decision-support.md",
-      "sourceHash": "2407d067d6b1df14d82b496c4b3c9afdc2cd5af4868d21eecdafc5b6e6fdd0de",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "e51e28c730601ca20ec376dad874cb1aed045dc8e4513bf7d59659c165e7e98a",
+      "sourceModified": "2026-07-11T03:03:38.017900+00:00",
       "topWords": [
         "System",
         "Patient",
@@ -4901,12 +4901,12 @@
       "wordCount": 130
     },
     "missing-scientists-us": {
-      "generatedAt": "2026-07-02T20:07:56.470232+00:00",
+      "generatedAt": "2026-07-11T03:05:48.629341+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/missing-scientists-us.svg",
       "source": "src/lib/posts/missing-scientists-us.md",
-      "sourceHash": "8c14df62fc8091302bbd95a70e4dd8c6b996b217deff126a0a749a4d2212204f",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "f8440b28400be9e5b9dbf5b41bf8c7a855cbbd2f788df3ddd5512f0af1fb391a",
+      "sourceModified": "2026-07-11T03:03:38.023933+00:00",
       "topWords": [
         "Scientists",
         "Missing",
@@ -5039,12 +5039,12 @@
       "wordCount": 130
     },
     "natural-selection-across-timescales": {
-      "generatedAt": "2026-07-02T20:08:02.460600+00:00",
+      "generatedAt": "2026-07-11T03:05:50.404376+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/natural-selection-across-timescales.svg",
       "source": "src/lib/posts/natural-selection-across-timescales.md",
-      "sourceHash": "6e01e60f7f0d8fcd1853c4a5e4eb8a94063ec3706a5c5ec44993e58753ef5b78",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "4f4ada8850a3a60ab43062711d1539fb6dbeeac84ef5add0ec98243e53a30e6f",
+      "sourceModified": "2026-07-11T03:03:38.032259+00:00",
       "topWords": [
         "Selection",
         "Select",
@@ -5269,12 +5269,12 @@
       "wordCount": 130
     },
     "openclaw-balanced-intro": {
-      "generatedAt": "2026-07-02T20:08:11.947196+00:00",
+      "generatedAt": "2026-07-11T03:05:52.083494+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/openclaw-balanced-intro.svg",
       "source": "src/lib/posts/openclaw-balanced-intro.md",
-      "sourceHash": "26f05d248f85622ca0bde8062e56b5877ed6c414f3e65a217f610109d5b2325f",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "c637a9863fb25f01fdd5347c18ca828f1e27af206e1a524cab517a9981ba70ce",
+      "sourceModified": "2026-07-11T03:03:38.038283+00:00",
       "topWords": [
         "Systems",
         "Language",
@@ -5729,12 +5729,12 @@
       "wordCount": 130
     },
     "propofol-dream-recall-nightmares": {
-      "generatedAt": "2026-07-02T20:08:30.762508+00:00",
+      "generatedAt": "2026-07-11T03:05:53.830655+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/propofol-dream-recall-nightmares.svg",
       "source": "src/lib/posts/propofol-dream-recall-nightmares.md",
-      "sourceHash": "da7e06efd7bcbd437402b26a68dec3a7aff1fe975a6d5d810a1da6a3b831063b",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "534533a35c0824f1a8f7aea00a0424a8b17fdeb0fb1ffeefd14aef424213eac0",
+      "sourceModified": "2026-07-11T03:03:38.050954+00:00",
       "topWords": [
         "Dream",
         "Propofol",
@@ -5890,12 +5890,12 @@
       "wordCount": 130
     },
     "randomness-chaos-complexity-calcutta": {
-      "generatedAt": "2026-07-02T20:08:35.774420+00:00",
+      "generatedAt": "2026-07-11T03:05:55.668388+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/randomness-chaos-complexity-calcutta.svg",
       "source": "src/lib/posts/randomness-chaos-complexity-calcutta.md",
-      "sourceHash": "105c713dddaa17ce0adfedd4e8b31eaf4024ba315c4b8672c6f876aeb0f2b035",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "3aeb5c7b84d767af9e2c4dd3f3e7d9d76c4d4626c33873449c8b0dae32d26c7b",
+      "sourceModified": "2026-07-11T03:03:38.057547+00:00",
       "topWords": [
         "System",
         "Data",
@@ -6189,12 +6189,12 @@
       "wordCount": 130
     },
     "science-is-not-a-solitary-organ": {
-      "generatedAt": "2026-07-02T20:08:43.195789+00:00",
+      "generatedAt": "2026-07-11T03:05:57.331309+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/science-is-not-a-solitary-organ.svg",
       "source": "src/lib/posts/science-is-not-a-solitary-organ.md",
-      "sourceHash": "ed95d034755f945bb31c3801e42982fe69cb19fd9d801d4be13320ed4877aede",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "7e462020b23fa5c94177c90b8befb679dd95a5ac0f8feb670bf743c1763fdf2b",
+      "sourceModified": "2026-07-11T03:03:38.063565+00:00",
       "topWords": [
         "Research",
         "Data",
@@ -6258,12 +6258,12 @@
       "wordCount": 130
     },
     "self-gaslit-minds-and-ai-pretension": {
-      "generatedAt": "2026-07-02T20:08:44.594822+00:00",
+      "generatedAt": "2026-07-11T03:05:59.162284+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/self-gaslit-minds-and-ai-pretension.svg",
       "source": "src/lib/posts/self-gaslit-minds-and-ai-pretension.md",
-      "sourceHash": "cc4618e69b2e046be36172f5ec5c79438235937f1afbac4a2e78c0d1ad73c24f",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "051ae0a72eb4e59278e11e860144b8876928f01ac5f59c14d1d9f756070f646a",
+      "sourceModified": "2026-07-11T03:03:38.070337+00:00",
       "topWords": [
         "AI",
         "Becomes",
@@ -6281,12 +6281,12 @@
       "wordCount": 130
     },
     "sensible-consumer-in-a-pufferfish-world": {
-      "generatedAt": "2026-07-02T20:08:45.234260+00:00",
+      "generatedAt": "2026-07-11T03:06:01.006294+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/sensible-consumer-in-a-pufferfish-world.svg",
       "source": "src/lib/posts/sensible-consumer-in-a-pufferfish-world.md",
-      "sourceHash": "172f9bb0b1616367957182d82dda7b4495870b7734861f22b78ab71aa76745d0",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "7642a5b94f38d144d571f72c1e80f6e3c9fcc56acdbf56b5728fab3ee1b455d8",
+      "sourceModified": "2026-07-11T03:03:38.074693+00:00",
       "topWords": [
         "Systems",
         "Modern",
@@ -6511,12 +6511,12 @@
       "wordCount": 130
     },
     "sitala-manasa-public-health-superstition": {
-      "generatedAt": "2026-07-02T20:08:49.253073+00:00",
+      "generatedAt": "2026-07-11T03:06:02.689038+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/sitala-manasa-public-health-superstition.svg",
       "source": "src/lib/posts/sitala-manasa-public-health-superstition.md",
-      "sourceHash": "f053af4fae5cc7894b288f4b074f5f750e0f1e2600a8773b33b1145ac049a4eb",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "0ad356ee593c53172a444f28c186040e87cb95c48a9e2307c4f4c797ecde0115",
+      "sourceModified": "2026-07-11T03:03:38.088602+00:00",
       "topWords": [
         "Health",
         "Data",
@@ -8374,12 +8374,12 @@
       "wordCount": 130
     },
     "the-history-of-the-shape-of-atoms": {
-      "generatedAt": "2026-07-02T20:09:20.251298+00:00",
+      "generatedAt": "2026-07-11T03:06:04.630209+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/the-history-of-the-shape-of-atoms.svg",
       "source": "src/lib/posts/the-history-of-the-shape-of-atoms.md",
-      "sourceHash": "bfd71d2871b350b87b4a9ee23cf6a53b65dde5677ce7a94bc4393d68aed85799",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "e6244b81419ee0c9ed98c8b05091897fc048db623114a052e920a53b7a9908c6",
+      "sourceModified": "2026-07-11T03:03:38.170755+00:00",
       "topWords": [
         "Atom",
         "Shape",
@@ -10835,12 +10835,12 @@
       "wordCount": 130
     },
     "vector-databases": {
-      "generatedAt": "2026-07-02T20:09:54.714432+00:00",
+      "generatedAt": "2026-07-11T03:06:06.726591+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/vector-databases.svg",
       "source": "src/lib/posts/vector-databases.md",
-      "sourceHash": "aee94126ace72f117afd6c110851be39e0a76a9e339c409ef81704728a17db64",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "2cd75f21ac8688fe03e3e45b24cedb36a014a129a46afd632dc424bcbff1b133",
+      "sourceModified": "2026-07-11T03:03:38.239569+00:00",
       "topWords": [
         "Vector",
         "Data",
@@ -10927,12 +10927,12 @@
       "wordCount": 130
     },
     "war-spillovers-ukraine-iran-technology": {
-      "generatedAt": "2026-07-02T20:09:57.323047+00:00",
+      "generatedAt": "2026-07-11T03:06:08.610815+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/war-spillovers-ukraine-iran-technology.svg",
       "source": "src/lib/posts/war-spillovers-ukraine-iran-technology.md",
-      "sourceHash": "2602a5543a558e9b333405ee8cf4ecd0e9cea278b83d4ed249e171869f9f4114",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "fbab032e62426c2415d23215e92c3f6cc5945c27c5b16a2011f8d57a99579bb9",
+      "sourceModified": "2026-07-11T03:03:38.239569+00:00",
       "topWords": [
         "Civilian",
         "War",
@@ -11019,12 +11019,12 @@
       "wordCount": 130
     },
     "when-structure-loses-its-map": {
-      "generatedAt": "2026-07-02T20:09:59.978888+00:00",
+      "generatedAt": "2026-07-11T03:06:10.342994+00:00",
       "generatorVersion": "2026-07-01.1",
       "output": "static/wordcloud/when-structure-loses-its-map.svg",
       "source": "src/lib/posts/when-structure-loses-its-map.md",
-      "sourceHash": "c5371a5d324607f2e25a993a72cf06bc28bc408df5e49edfa3e73dd4fd4c8894",
-      "sourceModified": "2026-06-23T08:51:08+00:00",
+      "sourceHash": "f540f96b6dbd5ebe5ed68b765ea24a4a643146cf8fb359bf110cfee425b9591d",
+      "sourceModified": "2026-07-11T03:03:38.255635+00:00",
       "topWords": [
         "Society",
         "Police",

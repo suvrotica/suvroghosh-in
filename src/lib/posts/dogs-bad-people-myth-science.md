@@ -43,6 +43,6 @@ What follows from all this is a much sharper sentence than the mystical cliché.
 ## Related Posts
 
 - [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [The History of the Shape of Atoms](/blog/science/the-history-of-the-shape-of-atoms)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

@@ -71,6 +71,6 @@ Maa Sitala and Maa Manasa should be studied not because they are quaint relics b
 ## Related Posts
 
 - [Why Myths Multiply When Randomness Is Left Unexplained](/blog/mental-models/randomness-chaos-complexity-calcutta)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [The Negative Infinity Before the Singularity](/blog/healthcare-ai/ai-in-india-the-negative-infinity-before-the-singularity)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

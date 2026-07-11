@@ -120,7 +120,7 @@ Some will break trust so quietly that by the time anyone notices, the audit trai
 
 ## Related Posts
 
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)
 - [Anthropic Is Coming for Wall Street](/blog/artificial-intelligence/anthropic-is-coming-for-wall-street)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

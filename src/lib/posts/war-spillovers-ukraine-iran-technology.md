@@ -93,5 +93,5 @@ Cheap enough to lose. Smart enough to coordinate. Resilient enough to keep worki
 
 - [India’s Semiconductor Problem Is Not a Missing Slogan](/blog/technology/india-semiconductor-sufficiency-beyond-lip-service)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

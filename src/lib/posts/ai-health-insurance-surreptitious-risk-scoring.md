@@ -75,6 +75,6 @@ The real question is therefore not whether a statute somewhere describes a noble
 ## Related Posts
 
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Healthcare AI and the Wrong Objective](/blog/healthcare-ai/healthcare-ai-wrong-objective)
 - [Confounding Factors](/blog/healthcare-it/confounding-factors-healthcare-it-analytics)

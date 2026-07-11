@@ -86,5 +86,5 @@ We tend to admire structured societies because they do not look chaotic. Their p
 
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
-- [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
+- [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
