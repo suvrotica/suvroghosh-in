@@ -5,7 +5,7 @@
 
 	let categories = $derived(page.data.categories || []);
 	let currentPath = $derived(page.url.pathname as string);
-	let currentTab = $derived(page.url.searchParams.get('tab') ?? '');
+	let currentCategory = $derived(page.url.searchParams.get('category') ?? '');
 </script>
 
 <aside class="h-full overflow-y-auto p-4">
@@ -14,7 +14,7 @@
 			<a
 				href={resolve('/blog')}
 				class="sidebar-topic block text-sm font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400 dark:text-neutral-400"
-				class:text-neutral-400={currentPath === '/blog' && !currentTab}
+				class:text-neutral-400={currentPath === '/blog' && !currentCategory}
 			>
 				All Posts
 			</a>
@@ -31,9 +31,9 @@
 			{@const catSlug = slugifyCategory(category.name)}
 			<div class="sidebar-group mb-6">
 				<a
-					href={resolve(`/blog?tab=${catSlug}`)}
+					href={resolve(`/blog?category=${catSlug}`)}
 					class="sidebar-topic mb-3 block text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400 dark:text-neutral-500"
-					class:text-neutral-400={currentTab === catSlug}
+					class:text-neutral-400={currentCategory === catSlug}
 				>
 					{categoryLabel(category.name)}
 				</a>

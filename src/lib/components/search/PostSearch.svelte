@@ -194,6 +194,7 @@
 		action="/blog"
 		method="get"
 		role="search"
+		aria-label="Filter writing archive"
 		class="mb-8 rounded-lg border border-neutral-300 bg-neutral-100 p-4 dark:border-neutral-700 dark:bg-neutral-800/60"
 		onsubmit={submitSearch}
 	>

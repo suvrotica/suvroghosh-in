@@ -110,6 +110,7 @@
 				method="get"
 				class="hidden items-center gap-1 lg:flex"
 				role="search"
+				aria-label="Site search"
 			>
 				<Input
 					type="search"
