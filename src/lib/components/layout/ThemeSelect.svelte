@@ -101,8 +101,8 @@
 		disabled={!ready}
 		aria-label={variant === 'compact' ? 'Colour theme' : undefined}
 		class={variant === 'menu'
-			? 'h-9 min-w-28 rounded-md border-neutral-300 bg-white py-1 pr-8 pl-3 text-sm font-medium text-neutral-800 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100'
-			: 'h-10 w-[5.75rem] rounded-md border-neutral-300 bg-white/70 py-1 pr-7 pl-2 text-xs font-semibold text-neutral-700 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-900/80 dark:text-neutral-300'}
+			? 'h-11 min-w-28 rounded-md border-neutral-300 bg-white py-1 pr-8 pl-3 text-sm font-medium text-neutral-800 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100'
+			: 'h-11 w-[5.75rem] rounded-md border-neutral-300 bg-white/70 py-1 pr-7 pl-2 text-xs font-semibold text-neutral-700 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-900/80 dark:text-neutral-300'}
 	>
 		<option value="system">System</option>
 		<option value="light">Light</option>

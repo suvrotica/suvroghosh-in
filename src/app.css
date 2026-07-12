@@ -259,6 +259,25 @@
 			text-decoration: none;
 		}
 	}
+
+	/* A dependable keyboard fallback for native and lightly styled controls. */
+	:where(
+		a,
+		button,
+		input,
+		select,
+		textarea,
+		summary,
+		[tabindex]:not([tabindex='-1'])
+	):focus-visible {
+		outline: 2px solid currentColor;
+		outline-color: currentColor !important;
+		outline-offset: 2px;
+	}
+
+	:where(button, select, summary, a.card, a.post-card) {
+		touch-action: manipulation;
+	}
 }
 
 .article-prose .not-prose {
@@ -497,6 +516,47 @@
 	.post-card:hover,
 	.post-card:focus-visible {
 		transform: none !important;
+	}
+}
+
+/* Preserve structure and keyboard location when Windows replaces authored colours. */
+@media (forced-colors: active) {
+	.nav-link::after {
+		display: none;
+	}
+
+	.nav-link:hover,
+	.nav-link[aria-current='page'] {
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 0.35rem;
+	}
+
+	.card,
+	.post-card {
+		border-color: CanvasText;
+	}
+
+	.reading-progress-bar {
+		background: Highlight !important;
+	}
+
+	:where(
+		a,
+		button,
+		input,
+		select,
+		textarea,
+		summary,
+		[tabindex]:not([tabindex='-1'])
+	):focus-visible {
+		outline: 2px solid Highlight !important;
+		outline-offset: 3px !important;
+	}
+
+	:where(button, input, select, textarea):disabled {
+		border-color: GrayText;
+		color: GrayText;
 	}
 }
 
