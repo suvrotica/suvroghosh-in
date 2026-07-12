@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T16:46:54.157000+00:00",
+  "generatedAt": "2026-07-12T00:04:10.942108+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -4920,6 +4920,29 @@
         "Science",
         "Political",
         "Personnel"
+      ],
+      "wordCount": 130
+    },
+    "mojo-the-python-killer": {
+      "generatedAt": "2026-07-12T00:04:10.487460+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/mojo-the-python-killer.svg",
+      "source": "src/lib/posts/mojo-the-python-killer.md",
+      "sourceHash": "58059326d71c5d604f51902ad2976cafcaf161ee05f50f39b0083d1f9def7d55",
+      "sourceModified": "2026-07-12T00:04:03.058085+00:00",
+      "topWords": [
+        "Mojo",
+        "Python",
+        "Language",
+        "Code",
+        "Compiler",
+        "Systems",
+        "Hardware",
+        "Programming",
+        "Memory",
+        "Every",
+        "Modular",
+        "Rust"
       ],
       "wordCount": 130
     },

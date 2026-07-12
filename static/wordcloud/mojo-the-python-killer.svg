@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Mojo: The Python Killer?" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Mojo: The Python Killer?</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(211,552)" font-size="118" style="fill:#d9c89e">Mojo</text>
+<text transform="translate(51,231)" font-size="111" style="fill:#d5d2c2">Python</text>
+<text transform="translate(501,433)" font-size="79" style="fill:#a9b7a3">Language</text>
+<text transform="translate(420,68)" font-size="66" style="fill:#e0b879">Code</text>
+<text transform="translate(1134,384) rotate(-90)" font-size="64" style="fill:#c7d7b5">Compiler</text>
+<text transform="translate(713,169)" font-size="54" style="fill:#b6c3dd">Systems</text>
+<text transform="translate(1014,571)" font-size="50" style="fill:#8fb7d0">Hardware</text>
+<text transform="translate(460,287)" font-size="46" style="fill:#d6a79f">Programming</text>
+<text transform="translate(369,110)" font-size="45" style="fill:#e0b879">Memory</text>
+<text transform="translate(800,107)" font-size="44" style="fill:#d5d2c2">Every</text>
+<text transform="translate(716,357)" font-size="42" style="fill:#d6a79f">Modular</text>
+<text transform="translate(537,115)" font-size="42" style="fill:#d5d2c2">Rust</text>
+<text transform="translate(566,544)" font-size="42" style="fill:#e0b879">Compiled</text>
+<text transform="translate(168,656)" font-size="42" style="fill:#d6a79f">Performance</text>
+<text transform="translate(837,46)" font-size="40" style="fill:#d88988">Rather</text>
+<text transform="translate(830,472)" font-size="40" style="fill:#9fc9c5">Kernels</text>
+<text transform="translate(1042,479)" font-size="38" style="fill:#e0b879">Merely</text>
+<text transform="translate(103,698) rotate(-90)" font-size="38" style="fill:#d9c89e">Computing</text>
+<text transform="translate(204,690)" font-size="38" style="fill:#d9c89e">MLIR</text>
+<text transform="translate(688,696)" font-size="38" style="fill:#b6c3dd">AI</text>
+<text transform="translate(845,300)" font-size="38" style="fill:#9fc9c5">Operations</text>
+<text transform="translate(474,658)" font-size="38" style="fill:#d88988">Runtime</text>
+<text transform="translate(971,154)" font-size="38" style="fill:#8fb7d0">GPU</text>
+<text transform="translate(144,618) rotate(-90)" font-size="36" style="fill:#9fc9c5">Libraries</text>
+<text transform="translate(501,602)" font-size="36" style="fill:#e0b879">Software</text>
+<text transform="translate(993,421)" font-size="36" style="fill:#9fc9c5">Programmer</text>
+<text transform="translate(1208,178) rotate(-90)" font-size="36" style="fill:#c7d7b5">Library</text>
+<text transform="translate(896,551)" font-size="36" style="fill:#d9c89e">Data</text>
+<text transform="translate(289,422)" font-size="34" style="fill:#8fb7d0">Languages</text>
+<text transform="translate(117,303)" font-size="34" style="fill:#c7d7b5">Machine</text>
+<text transform="translate(1193,231)" font-size="34" style="fill:#e0b879">LLVM</text>
+<text transform="translate(861,707)" font-size="34" style="fill:#8fb7d0">Infrastructure</text>
+<text transform="translate(689,178) rotate(-90)" font-size="34" style="fill:#b6c3dd">Designed</text>
+<text transform="translate(354,391) rotate(-90)" font-size="34" style="fill:#8fb7d0">Enough</text>
+<text transform="translate(581,347)" font-size="32" style="fill:#e0b879">Modern</text>
+<text transform="translate(826,504)" font-size="32" style="fill:#8fb7d0">Ecosystem</text>
+<text transform="translate(944,653)" font-size="32" style="fill:#8fb7d0">Increasingly</text>
+<text transform="translate(114,111)" font-size="32" style="fill:#d88988">Time</text>
+<text transform="translate(902,225)" font-size="32" style="fill:#c7d7b5">Ownership</text>
+<text transform="translate(166,29)" font-size="30" style="fill:#d5d2c2">Model</text>
+<text transform="translate(294,618)" font-size="30" style="fill:#e0b879">Lattner</text>
+<text transform="translate(914,352)" font-size="30" style="fill:#d5d2c2">Written</text>
+<text transform="translate(234,107)" font-size="30" style="fill:#8fb7d0">Cpython</text>
+<text transform="translate(136,347)" font-size="30" style="fill:#9fc9c5">Much</text>
+<text transform="translate(693,568)" font-size="30" style="fill:#8fb7d0">Gpus</text>
+<text transform="translate(950,95)" font-size="30" style="fill:#e0b879">Program</text>
+<text transform="translate(1013,512)" font-size="30" style="fill:#9fc9c5">Matters</text>
+<text transform="translate(303,149)" font-size="30" style="fill:#9fc9c5">Compilation</text>
+<text transform="translate(326,702)" font-size="30" style="fill:#d88988">Documentation</text>
+<text transform="translate(363,272)" font-size="28" style="fill:#e0b879">Stack</text>
+<text transform="translate(610,206)" font-size="28" style="fill:#d5d2c2">Whether</text>
+<text transform="translate(208,263)" font-size="28" style="fill:#a9b7a3">Yet</text>
+<text transform="translate(953,617)" font-size="28" style="fill:#9fc9c5">Programmers</text>
+<text transform="translate(1002,44)" font-size="28" style="fill:#e0b879">Ordinary</text>
+<text transform="translate(25,69)" font-size="28" style="fill:#d9c89e">Compatibility</text>
+<text transform="translate(210,458)" font-size="28" style="fill:#b6c3dd">Different</text>
+<text transform="translate(380,331)" font-size="28" style="fill:#8fb7d0">Type</text>
+<text transform="translate(887,403)" font-size="28" style="fill:#e0b879">Call</text>
+<text transform="translate(486,461)" font-size="28" style="fill:#d9c89e">Optimized</text>
+<text transform="translate(855,578)" font-size="28" style="fill:#a9b7a3">Types</text>
+<text transform="translate(678,634)" font-size="28" style="fill:#c7d7b5">Specialized</text>
+<text transform="translate(511,237)" font-size="28" style="fill:#a9b7a3">Support</text>
+<text transform="translate(597,712)" font-size="28" style="fill:#a9b7a3">Work</text>
+<text transform="translate(794,305) rotate(-90)" font-size="28" style="fill:#8fb7d0">Control</text>
+<text transform="translate(788,560) rotate(-90)" font-size="28" style="fill:#d88988">Useful</text>
+<text transform="translate(565,495)" font-size="28" style="fill:#b6c3dd">Programs</text>
+<text transform="translate(10,133)" font-size="28" style="fill:#d88988">SIMD</text>
+<text transform="translate(559,162)" font-size="26" style="fill:#8fb7d0">Speed</text>
+<text transform="translate(1161,224) rotate(-90)" font-size="26" style="fill:#c49a6c">Engineers</text>
+<text transform="translate(267,67)" font-size="26" style="fill:#d88988">Fast</text>
+<text transform="translate(1141,296)" font-size="26" style="fill:#9fc9c5">Project</text>
+<text transform="translate(870,643)" font-size="26" style="fill:#c7d7b5">Now</text>
+<text transform="translate(1244,404) rotate(-90)" font-size="26" style="fill:#9fc9c5">Built</text>
+<text transform="translate(496,320)" font-size="26" style="fill:#d6a79f">Upon</text>
+<text transform="translate(56,393)" font-size="26" style="fill:#d6a79f">Require</text>
+<text transform="translate(1203,523) rotate(-90)" font-size="26" style="fill:#d5d2c2">Allows</text>
+<text transform="translate(141,142)" font-size="26" style="fill:#d88988">Modules</text>
+<text transform="translate(190,614)" font-size="26" style="fill:#a9b7a3">Native</text>
+<text transform="translate(755,663)" font-size="26" style="fill:#c49a6c">Syntax</text>
+<text transform="translate(62,528) rotate(-90)" font-size="26" style="fill:#d6a79f">Many</text>
+<text transform="translate(540,375)" font-size="26" style="fill:#d88988">Standard</text>
+<text transform="translate(856,257)" font-size="26" style="fill:#d9c89e">Compiletime</text>
+<text transform="translate(8,27)" font-size="26" style="fill:#d9c89e">Build</text>
+<text transform="translate(753,71)" font-size="26" style="fill:#b6c3dd">Execution</text>
+<text transform="translate(147,577)" font-size="26" style="fill:#9fc9c5">Optimization</text>
+<text transform="translate(102,368) rotate(-90)" font-size="24" style="fill:#c49a6c">World</text>
+<text transform="translate(332,53)" font-size="24" style="fill:#c7d7b5">Began</text>
+<text transform="translate(678,600)" font-size="24" style="fill:#b6c3dd">Development</text>
+<text transform="translate(61,366) rotate(-90)" font-size="24" style="fill:#8fb7d0">Early</text>
+<text transform="translate(189,370)" font-size="24" style="fill:#b6c3dd">Loops</text>
+<text transform="translate(22,517) rotate(-90)" font-size="24" style="fill:#c7d7b5">Interoperability</text>
+<text transform="translate(958,191)" font-size="24" style="fill:#d6a79f">Remain</text>
+<text transform="translate(1072,593)" font-size="24" style="fill:#e0b879">Accelerators</text>
+<text transform="translate(931,376)" font-size="24" style="fill:#b6c3dd">Silicon</text>
+<text transform="translate(567,135)" font-size="24" style="fill:#d5d2c2">Never</text>
+<text transform="translate(1155,623)" font-size="24" style="fill:#9fc9c5">Portions</text>
+<text transform="translate(920,674)" font-size="24" style="fill:#8fb7d0">Networks</text>
+<text transform="translate(1166,703)" font-size="24" style="fill:#e0b879">Becomes</text>
+<text transform="translate(375,381)" font-size="24" style="fill:#c49a6c">Dynamic</text>
+<text transform="translate(616,308)" font-size="24" style="fill:#c7d7b5">Problem</text>
+<text transform="translate(1180,651)" font-size="24" style="fill:#d5d2c2">Across</text>
+<text transform="translate(798,527)" font-size="24" style="fill:#d9c89e">Toward</text>
+<text transform="translate(126,713)" font-size="24" style="fill:#9fc9c5">Beta</text>
+<text transform="translate(462,353)" font-size="24" style="fill:#d88988">Numpy</text>
+<text transform="translate(911,321)" font-size="24" style="fill:#d9c89e">Extensions</text>
+<text transform="translate(263,26)" font-size="24" style="fill:#d9c89e">Accelerator</text>
+<text transform="translate(675,383)" font-size="24" style="fill:#c49a6c">Conventions</text>
+<text transform="translate(745,28)" font-size="24" style="fill:#8fb7d0">Exists</text>
+<text transform="translate(231,711)" font-size="22" style="fill:#d9c89e">Almost</text>
+<text transform="translate(1249,124) rotate(-90)" font-size="22" style="fill:#d5d2c2">Neural</text>
+<text transform="translate(496,564)" font-size="22" style="fill:#c49a6c">Interpreter</text>
+<text transform="translate(11,638)" font-size="22" style="fill:#a9b7a3">Vast</text>
+<text transform="translate(1012,73)" font-size="22" style="fill:#d5d2c2">Researchers</text>
+<text transform="translate(816,197)" font-size="22" style="fill:#c49a6c">Understand</text>
+<text transform="translate(19,105)" font-size="22" style="fill:#d9c89e">First</text>
+<text transform="translate(586,61)" font-size="22" style="fill:#9fc9c5">Faster</text>
+<text transform="translate(449,194)" font-size="22" style="fill:#d5d2c2">Intermediate</text>
+<text transform="translate(24,549)" font-size="22" style="fill:#8fb7d0">GIL</text>
+<text transform="translate(437,623)" font-size="22" style="fill:#8fb7d0">Freethreaded</text>
+<text transform="translate(199,326)" font-size="22" style="fill:#d9c89e">Remains</text>
+<text transform="translate(1146,253)" font-size="22" style="fill:#e0b879">Practical</text>
+<text transform="translate(696,465)" font-size="22" style="fill:#c49a6c">Write</text>
+<text transform="translate(901,68)" font-size="22" style="fill:#d5d2c2">Function</text>
+<text transform="translate(651,238)" font-size="22" style="fill:#e0b879">Static</text>
+<text transform="translate(717,98)" font-size="22" style="fill:#d5d2c2">System</text>
+<text transform="translate(106,418)" font-size="22" style="fill:#8fb7d0">Abstractions</text>
+<text transform="translate(365,452)" font-size="22" style="fill:#c49a6c">Highlevel</text>
+<text transform="translate(736,698)" font-size="22" style="fill:#9fc9c5">Requiring</text>
+<text transform="translate(308,325) rotate(-90)" font-size="22" style="fill:#a9b7a3">Writing</text>
+<text transform="translate(32,291)" font-size="22" style="fill:#e0b879">Offers</text>
+</svg>
