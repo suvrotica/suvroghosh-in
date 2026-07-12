@@ -359,15 +359,15 @@
 	}
 
 	.category-header {
-		@apply mb-12 border-b border-gray-200 pb-8;
+		@apply mb-12 border-b border-neutral-300 pb-8 dark:border-neutral-700;
 	}
 
 	.category-header h1 {
-		@apply text-4xl font-extrabold tracking-tight text-slate-900 capitalize md:text-5xl;
+		@apply text-4xl font-extrabold tracking-tight text-neutral-950 capitalize md:text-5xl dark:text-neutral-50;
 	}
 
 	.category-header p {
-		@apply mt-4 text-xl text-slate-600;
+		@apply mt-4 text-xl text-neutral-700 dark:text-neutral-300;
 	}
 }
 
