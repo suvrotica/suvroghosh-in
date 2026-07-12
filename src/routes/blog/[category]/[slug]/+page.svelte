@@ -156,7 +156,7 @@
 		{/if}
 
 		<div
-			class="prose max-w-none prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-img:rounded-xl"
+			class="article-prose mx-auto prose max-w-[var(--article-width)] font-serif prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-sans prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
 		>
 			<PostContent />
 		</div>

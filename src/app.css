@@ -148,9 +148,14 @@
 
 /* Tailwind 4 Theme Configuration */
 @theme {
-	--font-sans: 'Source Sans Pro', ui-sans-serif, system-ui, sans-serif;
-	--font-serif: 'Merriweather', ui-serif, Georgia, serif;
-	--font-mono: 'Fira Code', ui-monospace, monospace;
+	--font-sans:
+		ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text',
+		'Segoe UI', 'Noto Sans Bengali', sans-serif;
+	--font-serif:
+		'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Noto Serif Bengali', Georgia, Cambria,
+		serif;
+	--font-mono:
+		ui-monospace, 'Cascadia Code', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
 
 	/* Accent colour - light gray, in keeping with the neutral palette */
 	--color-accent: #9ca3af;
@@ -170,86 +175,94 @@
 	--ease-emphatic: cubic-bezier(0.16, 1, 0.3, 1);
 
 	/* Layout tokens */
-	--article-width: 42rem;
+	--article-width: 65ch;
 	--content-width: 56rem;
 }
 
-* {
-	border-color: var(--border);
-}
-
-/* Global Styles */
-body {
-	@apply bg-neutral-200 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-300;
-	@apply transition-colors;
-	transition-duration: var(--motion-medium);
-	@apply overflow-x-hidden;
-}
-
-/* Typography Overrides */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-blockquote {
-	@apply my-4 leading-tight font-bold tracking-tight text-neutral-900 subpixel-antialiased md:tracking-wide dark:text-neutral-100;
-}
-
-h1 {
-	@apply text-5xl md:text-6xl;
-}
-h2 {
-	@apply text-4xl md:text-5xl;
-}
-h3 {
-	@apply text-3xl md:text-4xl;
-}
-h4 {
-	@apply text-2xl md:text-3xl;
-}
-h5 {
-	@apply text-xl md:text-2xl;
-}
-h6 {
-	@apply text-lg md:text-xl;
-}
-
-p {
-	@apply mb-4 text-justify text-base leading-relaxed text-neutral-800 dark:text-neutral-300;
-}
-
-/* Links: Neutral Hover */
-a {
-	@apply underline decoration-neutral-400/50 transition-colors;
-	transition-duration: var(--motion-fast);
-	&:hover {
-		@apply decoration-neutral-500;
+@layer base {
+	* {
+		border-color: var(--border);
 	}
-}
 
-/* Non-button links get hover color accent */
-a:not([class]):hover {
-	color: var(--color-accent-light);
-}
+	/* Global styles */
+	body {
+		@apply overflow-x-hidden bg-neutral-200 text-neutral-800 transition-colors dark:bg-neutral-900 dark:text-neutral-300;
+		transition-duration: var(--motion-medium);
+	}
 
-/* Heading links */
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	@apply text-inherit no-underline;
-}
+	/* Typography defaults; utilities remain free to override these per component. */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	blockquote {
+		@apply my-4 leading-tight font-bold tracking-tight text-neutral-900 subpixel-antialiased md:tracking-wide dark:text-neutral-100;
+		text-wrap: balance;
+		overflow-wrap: break-word;
+	}
 
-/* Buttons rendered as <a> do not get link underline */
-a[class] {
-	text-decoration: none;
-	&:hover {
+	h1 {
+		@apply text-5xl md:text-6xl;
+	}
+	h2 {
+		@apply text-4xl md:text-5xl;
+	}
+	h3 {
+		@apply text-3xl md:text-4xl;
+	}
+	h4 {
+		@apply text-2xl md:text-3xl;
+	}
+	h5 {
+		@apply text-xl md:text-2xl;
+	}
+	h6 {
+		@apply text-lg md:text-xl;
+	}
+
+	p {
+		@apply mb-4 text-base leading-relaxed text-neutral-800 dark:text-neutral-300;
+		text-align: start;
+		text-wrap: pretty;
+	}
+
+	/* Links: neutral hover */
+	a {
+		@apply underline decoration-neutral-400/50 transition-colors;
+		transition-duration: var(--motion-fast);
+		&:hover {
+			@apply decoration-neutral-500;
+		}
+	}
+
+	/* Non-button links get hover color accent. */
+	a:not([class]):hover {
+		color: var(--color-accent-light);
+	}
+
+	/* Heading links */
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a {
+		@apply text-inherit no-underline;
+	}
+
+	/* Buttons rendered as <a> do not get link underline. */
+	a[class] {
 		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
 	}
+}
+
+.article-prose .not-prose {
+	font-family: var(--font-sans);
 }
 
 /* Layout Utilities */
