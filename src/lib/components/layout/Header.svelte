@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import { Input } from '$lib/components/ui/input';
 	import { Button } from '$lib/components/ui/button';
+	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 
 	type NavigationItem = {
 		href: '/' | '/writing' | '/consulting' | '/resume' | '/contact';
@@ -144,6 +145,10 @@
 				</Button>
 			</form>
 
+			<div class="hidden xl:block">
+				<ThemeSelect id="desktop-theme" />
+			</div>
+
 			<details bind:this={mobileMenu} class="group xl:hidden">
 				<summary
 					bind:this={menuSummary}
@@ -201,6 +206,9 @@
 								</a>
 							</li>
 						{/each}
+						<li class="mt-2 sm:col-span-2">
+							<ThemeSelect id="mobile-theme" variant="menu" />
+						</li>
 					</ul>
 				</nav>
 			</details>

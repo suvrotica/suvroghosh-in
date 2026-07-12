@@ -7,6 +7,7 @@
 
 /* ── shadcn-svelte design tokens (neutral base) ── */
 :root {
+	color-scheme: light;
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0 0);
 	--card: oklch(1 0 0);
@@ -37,6 +38,7 @@
 }
 
 .dark {
+	color-scheme: dark;
 	--background: oklch(0.145 0 0);
 	--foreground: oklch(0.985 0 0);
 	--card: oklch(0.205 0 0);
@@ -63,6 +65,50 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 20%);
 	--sidebar-ring: oklch(0.556 0 0);
+}
+
+.theme-sepia {
+	color-scheme: light;
+	--background: #faf6ed;
+	--foreground: #332a22;
+	--card: #fdf9f1;
+	--card-foreground: #332a22;
+	--popover: #fdf9f1;
+	--popover-foreground: #332a22;
+	--primary: #403329;
+	--primary-foreground: #fffaf1;
+	--secondary: #eee3d0;
+	--secondary-foreground: #403329;
+	--muted: #eee3d0;
+	--muted-foreground: #6f5c46;
+	--accent: #e4d4ba;
+	--accent-foreground: #403329;
+	--border: #d7c5aa;
+	--input: #d7c5aa;
+	--ring: #7d684f;
+	--sidebar: #f4ecdc;
+	--sidebar-foreground: #332a22;
+	--sidebar-primary: #403329;
+	--sidebar-primary-foreground: #fffaf1;
+	--sidebar-accent: #e8dcc7;
+	--sidebar-accent-foreground: #403329;
+	--sidebar-border: #d7c5aa;
+	--sidebar-ring: #7d684f;
+
+	--color-neutral-50: #faf6ed;
+	--color-neutral-100: #f4ecdc;
+	--color-neutral-200: #e8dcc7;
+	--color-neutral-300: #d7c5aa;
+	--color-neutral-400: #725e47;
+	--color-neutral-500: #7d684f;
+	--color-neutral-600: #62513d;
+	--color-neutral-700: #4a3c2f;
+	--color-neutral-800: #332a22;
+	--color-neutral-900: #231e19;
+	--color-neutral-950: #17130f;
+	--color-accent: #a58b68;
+	--color-accent-light: #62513d;
+	--color-accent-dark: #7d684f;
 }
 
 /* Map shadcn tokens to Tailwind color utilities.

@@ -1,9 +1,35 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
+		<script>
+			(() => {
+				const root = document.documentElement;
+				const preferences = ['system', 'light', 'dark', 'sepia'];
+				let preference = 'system';
+
+				try {
+					const stored = window.localStorage.getItem('site-theme');
+					if (stored && preferences.includes(stored)) preference = stored;
+				} catch {
+					// Keep the system preference when browser storage is unavailable.
+				}
+
+				const resolved =
+					preference === 'system'
+						? window.matchMedia('(prefers-color-scheme: dark)').matches
+							? 'dark'
+							: 'light'
+						: preference;
+
+				root.dataset.theme = preference;
+				root.classList.toggle('dark', resolved === 'dark');
+				root.classList.toggle('theme-sepia', resolved === 'sepia');
+				root.style.colorScheme = resolved === 'dark' ? 'dark' : 'light';
+			})();
+		</script>
 		<link rel="icon" href="https://fav.farm/%F0%9F%9A%91" />
 		<link
 			rel="alternate"
