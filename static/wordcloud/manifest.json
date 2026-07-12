@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T00:04:10.942108+00:00",
+  "generatedAt": "2026-07-12T02:32:44.229430+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -7956,6 +7956,29 @@
         "Person",
         "Enough",
         "Becomes"
+      ],
+      "wordCount": 130
+    },
+    "the-erasure-is-a-palimpsest": {
+      "generatedAt": "2026-07-12T02:32:43.958219+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-erasure-is-a-palimpsest.svg",
+      "source": "src/lib/posts/the-erasure-is-a-palimpsest.md",
+      "sourceHash": "a1e759f9a99c3225000f5109b3db0c906b1a9cdca3be0f05f02800403eaf1677",
+      "sourceModified": "2026-07-12T02:32:32.753156+00:00",
+      "topWords": [
+        "White",
+        "Man",
+        "Already",
+        "Now",
+        "Memory",
+        "Medication",
+        "Never",
+        "Write",
+        "Self",
+        "Read",
+        "Yet",
+        "Brain"
       ],
       "wordCount": 130
     },
