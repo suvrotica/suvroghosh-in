@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T02:32:44.229430+00:00",
+  "generatedAt": "2026-07-12T03:39:39.502636+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -6806,6 +6806,29 @@
         "Metro",
         "Three",
         "Small"
+      ],
+      "wordCount": 130
+    },
+    "subscription-to-oblivion": {
+      "generatedAt": "2026-07-12T03:39:39.136082+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/subscription-to-oblivion.svg",
+      "source": "src/lib/posts/subscription-to-oblivion.md",
+      "sourceHash": "144acc979a1ba1f2d70126c5a3bd1ef6ebc90272f2b7b231430afaf51c734b09",
+      "sourceModified": "2026-07-12T03:39:30.174428+00:00",
+      "topWords": [
+        "Human",
+        "Even",
+        "Perform",
+        "Agentic",
+        "Persistent",
+        "Yet",
+        "Merely",
+        "Upon",
+        "Now",
+        "Act",
+        "Basket",
+        "Void"
       ],
       "wordCount": 130
     },
