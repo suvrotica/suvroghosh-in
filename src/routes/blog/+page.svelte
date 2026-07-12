@@ -48,11 +48,20 @@
 				initialCategory={data.category}
 				initialYear={data.year}
 				initialSort={data.sort}
+				initialPage={data.page}
 				fallbackPosts={data.posts}
+				fallbackResultCount={data.totalResults}
+				fallbackPageCount={data.totalPages}
 				facets={data.facets}
 			/>
 		{:else if data.posts.length > 0}
-			<PostBrowse posts={data.posts} facets={data.facets} />
+			<PostBrowse
+				posts={data.posts}
+				facets={data.facets}
+				page={data.page}
+				totalResults={data.totalResults}
+				totalPages={data.totalPages}
+			/>
 		{:else}
 			<div class="py-12 text-center text-neutral-500">
 				<p>No posts found.</p>

@@ -2,6 +2,7 @@ import type { PageServerLoad } from './$types';
 import { slugifyCategory } from '$lib/content/categories';
 import { getPostSearchFacets, getPublishedPosts } from '$lib/server/content/posts';
 import { searchPublishedPosts, type PostSearchSort } from '$lib/server/content/search';
+import { paginate, parsePageNumber } from '$lib/content/pagination';
 
 const searchSorts = new Set<PostSearchSort>(['relevance', 'newest', 'oldest']);
 
@@ -13,18 +14,23 @@ export const load: PageServerLoad = async ({ url }) => {
 	const year = /^\d{4}$/.test(rawYear) ? rawYear : '';
 	const rawSort = url.searchParams.get('sort')?.trim() as PostSearchSort | undefined;
 	const sort = rawSort && searchSorts.has(rawSort) ? rawSort : 'relevance';
+	const requestedPage = parsePageNumber(url.searchParams.get('page'));
 	const isSearching = Boolean(search || category || year);
-	const posts = isSearching
+	const matchingPosts = isSearching
 		? await searchPublishedPosts({ query: search, category, year, sort })
 		: getPublishedPosts();
+	const paginated = paginate(matchingPosts, requestedPage);
 
 	return {
-		posts,
+		posts: paginated.items,
 		search,
 		category,
 		year,
 		sort,
 		isSearching,
+		page: paginated.page,
+		totalResults: paginated.totalItems,
+		totalPages: paginated.totalPages,
 		facets: getPostSearchFacets()
 	};
 };

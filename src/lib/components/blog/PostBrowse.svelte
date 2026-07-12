@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import type { BlogPostSummary } from '$lib/content/posts';
+	import { BLOG_PAGE_SIZE } from '$lib/content/pagination';
+	import ArchivePagination from './ArchivePagination.svelte';
 	import PostGallery from './PostGallery.svelte';
 
 	type SearchFacets = {
@@ -9,14 +11,20 @@
 
 	let {
 		posts,
-		facets
+		facets,
+		page,
+		totalResults,
+		totalPages
 	}: {
 		posts: BlogPostSummary[];
 		facets: SearchFacets;
+		page: number;
+		totalResults: number;
+		totalPages: number;
 	} = $props();
 
-	const latestLimit = 24;
-	let latestPosts = $derived(posts.slice(0, latestLimit));
+	let rangeStart = $derived(totalResults > 0 ? (page - 1) * BLOG_PAGE_SIZE + 1 : 0);
+	let rangeEnd = $derived(rangeStart + posts.length - 1);
 </script>
 
 <section aria-labelledby="archive-tools-heading">
@@ -74,7 +82,7 @@
 				type="submit"
 				class="h-11 rounded-md bg-neutral-900 px-6 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-white dark:focus-visible:outline-neutral-300"
 			>
-				Explore
+				Search
 			</button>
 		</form>
 	</div>
@@ -91,9 +99,10 @@
 			</h2>
 		</div>
 		<p class="!mb-0 !text-left text-sm text-neutral-500 dark:text-neutral-400">
-			Showing {latestPosts.length} of {posts.length} posts
+			Showing {rangeStart}–{rangeEnd} of {totalResults} posts · Page {page} of {totalPages}
 		</p>
 	</div>
 
-	<PostGallery posts={latestPosts} />
+	<PostGallery {posts} />
+	<ArchivePagination currentPage={page} {totalPages} label="All posts pagination" />
 </section>

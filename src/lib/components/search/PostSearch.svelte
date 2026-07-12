@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import { resolve } from '$app/paths';
+	import ArchivePagination from '$lib/components/blog/ArchivePagination.svelte';
 	import PostGallery from '$lib/components/blog/PostGallery.svelte';
 	import type { BlogPostSummary } from '$lib/content/posts';
+	import { BLOG_PAGE_SIZE } from '$lib/content/pagination';
 
 	type SearchSort = 'relevance' | 'newest' | 'oldest';
 	type SearchFacets = {
@@ -47,7 +49,10 @@
 		initialCategory: string;
 		initialYear: string;
 		initialSort: SearchSort;
+		initialPage: number;
 		fallbackPosts: BlogPostSummary[];
+		fallbackResultCount: number;
+		fallbackPageCount: number;
 		facets: SearchFacets;
 	};
 
@@ -56,11 +61,13 @@
 		initialCategory: category,
 		initialYear: year,
 		initialSort: sort,
+		initialPage: currentPage,
 		fallbackPosts,
+		fallbackResultCount,
+		fallbackPageCount,
 		facets
 	}: Props = $props();
 
-	const pageSize = 20;
 	let results = $state<PagefindResultData[]>([]);
 	let resultHandles: PagefindResultHandle[] = [];
 	let resultCount = $state(0);
@@ -69,7 +76,10 @@
 	let errorMessage = $state('');
 	let requestSequence = 0;
 	let pagefindPromise: Promise<PagefindModule> | null = null;
-	let displayedResultCount = $derived(enhanced ? resultCount : fallbackPosts.length);
+	let displayedResultCount = $derived(enhanced ? resultCount : fallbackResultCount);
+	let displayedPageCount = $derived(
+		enhanced ? Math.ceil(resultCount / BLOG_PAGE_SIZE) : fallbackPageCount
+	);
 
 	function pagefindOptions(): PagefindSearchOptions {
 		const filters: Record<string, string> = {};
@@ -78,7 +88,7 @@
 
 		return {
 			...(Object.keys(filters).length > 0 ? { filters } : {}),
-			...(sort === 'newest'
+			...(sort === 'newest' || (sort === 'relevance' && !query.trim())
 				? { sort: { date: 'desc' as const } }
 				: sort === 'oldest'
 					? { sort: { date: 'asc' as const } }
@@ -111,7 +121,13 @@
 
 	function syncUrl() {
 		const url = new URL(window.location.href);
-		const values = { search: query.trim(), category, year, sort };
+		const values = {
+			search: query.trim(),
+			category,
+			year,
+			sort,
+			page: currentPage > 1 ? String(currentPage) : ''
+		};
 
 		for (const [key, value] of Object.entries(values)) {
 			if (value && !(key === 'sort' && value === 'relevance')) {
@@ -123,13 +139,17 @@
 		window.history.replaceState(window.history.state, '', url);
 	}
 
-	async function loadResultPage(sequence: number, count: number) {
-		const loaded = await Promise.all(resultHandles.slice(0, count).map((result) => result.data()));
+	async function loadResultPage(sequence: number, pageNumber: number) {
+		const start = (pageNumber - 1) * BLOG_PAGE_SIZE;
+		const loaded = await Promise.all(
+			resultHandles.slice(start, start + BLOG_PAGE_SIZE).map((result) => result.data())
+		);
 		if (sequence === requestSequence) results = loaded;
 	}
 
-	async function runSearch(immediate = false) {
+	async function runSearch(immediate = false, resetPage = true) {
 		const sequence = ++requestSequence;
+		if (resetPage) currentPage = 1;
 		loading = true;
 		errorMessage = '';
 
@@ -143,7 +163,9 @@
 			if (!response || sequence !== requestSequence) return;
 			resultHandles = response.results;
 			resultCount = resultHandles.length;
-			await loadResultPage(sequence, pageSize);
+			const pageCount = Math.ceil(resultCount / BLOG_PAGE_SIZE);
+			currentPage = pageCount === 0 ? 1 : Math.min(currentPage, pageCount);
+			await loadResultPage(sequence, currentPage);
 			if (sequence !== requestSequence) return;
 			enhanced = true;
 			syncUrl();
@@ -154,15 +176,6 @@
 			enhanced = false;
 		} finally {
 			if (sequence === requestSequence) loading = false;
-		}
-	}
-
-	async function loadMore() {
-		loading = true;
-		try {
-			await loadResultPage(requestSequence, results.length + pageSize);
-		} finally {
-			loading = false;
 		}
 	}
 
@@ -184,8 +197,9 @@
 			: date.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
 	}
 
-	onMount(() => {
-		void runSearch(true);
+	afterNavigate(() => {
+		enhanced = false;
+		void runSearch(true, false);
 	});
 </script>
 
@@ -297,7 +311,11 @@
 		{#if loading}
 			Searching…
 		{:else}
-			{displayedResultCount} {displayedResultCount === 1 ? 'result' : 'results'}
+			{displayedResultCount}
+			{displayedResultCount === 1 ? 'result' : 'results'}
+			{#if displayedResultCount > 0 && displayedPageCount > 0}
+				· Page {currentPage} of {displayedPageCount}
+			{/if}
 		{/if}
 	</p>
 
@@ -352,18 +370,11 @@
 				{/each}
 			</ol>
 
-			{#if results.length < resultCount}
-				<div class="mt-6 text-center">
-					<button
-						type="button"
-						disabled={loading}
-						class="rounded-md border border-neutral-400 px-5 py-2.5 text-sm font-semibold text-neutral-800 hover:bg-neutral-200 disabled:opacity-60 dark:border-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-800"
-						onclick={() => void loadMore()}
-					>
-						Load more results
-					</button>
-				</div>
-			{/if}
+			<ArchivePagination
+				{currentPage}
+				totalPages={displayedPageCount}
+				label="Search results pagination"
+			/>
 		{:else}
 			<div
 				class="rounded-lg border border-dashed border-neutral-400 px-5 py-10 text-center dark:border-neutral-600"
@@ -376,6 +387,11 @@
 		{/if}
 	{:else if fallbackPosts.length > 0}
 		<PostGallery posts={fallbackPosts} />
+		<ArchivePagination
+			{currentPage}
+			totalPages={displayedPageCount}
+			label="Search results pagination"
+		/>
 	{:else}
 		<div
 			class="rounded-lg border border-dashed border-neutral-400 px-5 py-10 text-center dark:border-neutral-600"
