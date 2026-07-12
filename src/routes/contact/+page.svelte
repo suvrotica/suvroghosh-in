@@ -56,7 +56,10 @@
 		<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-5xl dark:text-neutral-100">
 			Contact
 		</h1>
-		<p class="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+		<p
+			class="text-center text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
+			style="text-align: center;"
+		>
 			For healthcare IT consulting, interoperability, clinical data systems, advisory.
 		</p>
 	</header>

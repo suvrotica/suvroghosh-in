@@ -306,8 +306,7 @@
 				aria-valuenow={progressPct}
 			/>
 			<p id="audio-article-description" class="m-0 text-xs text-neutral-500 dark:text-neutral-500">
-				Uses the speech voice supplied by your browser or device. The article below is the complete
-				text.
+				Uses the speech voice supplied by your browser or device.
 			</p>
 		</div>
 

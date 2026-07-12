@@ -4,6 +4,17 @@
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { resolve } from '$app/paths';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
+
+	function formatDate(value: string) {
+		return new Intl.DateTimeFormat('en-GB', {
+			day: 'numeric',
+			month: 'short',
+			year: 'numeric'
+		}).format(new Date(value));
+	}
 </script>
 
 <SEO
@@ -104,3 +115,68 @@
 		</div>
 	</div>
 </ScrollReveal>
+
+<section
+	class="mt-14 border-t border-neutral-300 pt-8 dark:border-neutral-700"
+	aria-labelledby="recent-writing-heading"
+>
+	<div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+		<div>
+			<p
+				class="mb-2 text-xs font-bold tracking-widest text-neutral-500 uppercase dark:text-neutral-400"
+			>
+				Recently published
+			</p>
+			<h2
+				id="recent-writing-heading"
+				class="m-0 text-2xl text-neutral-900 md:text-3xl dark:text-neutral-100"
+			>
+				Latest from the library
+			</h2>
+		</div>
+		<a
+			href={resolve('/blog')}
+			class="w-fit text-sm font-semibold text-neutral-700 underline decoration-neutral-400 underline-offset-4 hover:text-neutral-500 dark:text-neutral-300 dark:hover:text-neutral-100"
+		>
+			Browse all writing <span aria-hidden="true">→</span>
+		</a>
+	</div>
+
+	<ol
+		class="grid list-none grid-cols-1 border-t border-neutral-300 p-0 sm:grid-cols-2 dark:border-neutral-700"
+	>
+		{#each data.recentPosts as post (post.slug)}
+			<li
+				class="border-b border-neutral-300 sm:odd:pr-6 sm:even:border-l sm:even:pl-6 dark:border-neutral-700"
+			>
+				<a
+					href={resolve('/blog/[category]/[slug]', {
+						category: post.categorySlug,
+						slug: post.slug
+					})}
+					class="group block py-6 no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-neutral-600 dark:focus-visible:outline-neutral-300"
+				>
+					<div
+						class="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-wide text-neutral-500 dark:text-neutral-400"
+					>
+						<span class="font-semibold uppercase">{post.categoryLabel}</span>
+						<span aria-hidden="true">·</span>
+						<time datetime={post.date}>{formatDate(post.date)}</time>
+					</div>
+					<h3
+						class="m-0 text-xl leading-snug text-neutral-900 transition-colors group-hover:text-neutral-500 dark:text-neutral-100 dark:group-hover:text-neutral-300"
+					>
+						{post.title}
+					</h3>
+					{#if post.description}
+						<p
+							class="mt-2 mb-0 line-clamp-2 text-left text-sm text-neutral-600 dark:text-neutral-400"
+						>
+							{post.description}
+						</p>
+					{/if}
+				</a>
+			</li>
+		{/each}
+	</ol>
+</section>
