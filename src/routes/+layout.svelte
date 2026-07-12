@@ -27,7 +27,7 @@
 	<Header />
 
 	<main id="main-content" tabindex="-1" class="flex-1 scroll-smooth focus:outline-none">
-		<div class="container mx-auto max-w-4xl px-4 py-8 lg:py-12">
+		<div class="container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
 			{@render children()}
 		</div>
 	</main>

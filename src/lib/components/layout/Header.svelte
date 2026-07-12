@@ -52,7 +52,9 @@
 <header
 	class="relative sticky top-0 z-40 border-b border-neutral-300/90 bg-neutral-100/95 pt-[env(safe-area-inset-top)] shadow-[0_1px_0_rgb(255_255_255/0.6)] backdrop-blur-md transition-colors dark:border-neutral-700/90 dark:bg-neutral-950/95 dark:shadow-none print:hidden"
 >
-	<div class="container mx-auto flex min-h-18 items-center justify-between gap-4 px-4 py-3 sm:px-6">
+	<div
+		class="container mx-auto flex min-h-18 items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8"
+	>
 		<a
 			href={resolve('/')}
 			onclick={closeMobile}
