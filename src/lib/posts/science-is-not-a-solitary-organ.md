@@ -4,7 +4,7 @@ description: "A reflection on why real scientific work, especially in clinical r
 thumbnail: "/images/Compress_20260504_143135_5600.jpg"
 date: "2026-05-04"
 category: "Science"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Science", "Science Is Not A Solitary Organ", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
+tags: ["Source Systems","Health Science","Statistician","Research","Collaboration","Analyst","Data","Clinical","Science","Veterans"]
 published: true
 color: "blue"
 ---

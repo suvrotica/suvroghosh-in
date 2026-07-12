@@ -4,7 +4,7 @@ description: "A personal essay on depression, maternal mercy, and the small edit
 date: "2026-06-20"
 thumbnail: "/images/Compress_20260620_115927_7094.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Mother", "Bengali Family", "Calcutta Life", "Kolkata", "Middle Age", "Loneliness", "Aging Parents", "Caregiving", "Indian Family", "Lower Middle Class Life", "Atheism", "Science And Suffering", "Readable Essays", "Memoir", "Literary Essay", "SuvroGhosh"]
+tags: ["Don’t Worry Means","Trapezoid","Rectangle","Introspection","Mother","Worry","Depression","Don’t","Reads","Feeling"]
 published: true
 color: "brown"
 ---

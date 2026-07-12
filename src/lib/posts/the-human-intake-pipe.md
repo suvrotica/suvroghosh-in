@@ -4,7 +4,7 @@ description: "AI can now manufacture words, images, code, plans, summaries, and 
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_122759_9248.jpg"
 category: "Science"
-tags: ["Artificial Intelligence", "AI", "Generative AI", "Large Language Models", "LLM", "Brain Computer Interface", "BCI", "Neuroscience", "Human Attention", "Cognitive Science", "Information Overload", "AI Productivity", "AI Slop", "Human Cognition", "Neural Interfaces", "Brain Machine Interface", "Future of Work", "Future of Reading", "Future of Knowledge", "Human AI Merger", "Synthetic Cognition", "Hive Mind", "Attention Economy", "Digital Overload", "Cognitive Bottleneck", "Technology Philosophy", "Science Essay", "Calcutta Essays", "Kolkata Writer", "SuvroGhosh"]
+tags: ["AI","BCI","Hive","Bottleneck","Brain","Help","Stimulate","Stimulation","Mind","Writing"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "A Calcutta essay on sadness that does not behave like sadness, but
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_173505_5897.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Depression", "Bipolar Disorder", "Bipolar Depression", "Anxiety", "Irritability", "Anger", "Depressive Rage", "Mood Disorder", "Executive Dysfunction", "Loneliness", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "Single Man", "Urban Loneliness", "Indian Mental Health", "Mental Health India", "Personal Essay", "Memoir Essay", "SuvroGhosh"]
+tags: ["Nervous System","Normal People","Beetle","Rage","Sadness","Motorbike","Scarab","Irritation","Mine","Agitation"]
 published: true
 color: "red"
 ---

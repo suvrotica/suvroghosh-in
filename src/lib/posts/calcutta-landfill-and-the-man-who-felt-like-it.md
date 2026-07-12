@@ -4,7 +4,7 @@ description: "A blunt, humane essay on bipolar depression, unemployment, middle 
 date: "2026-05-10"
 thumbnail: "/images/Compress_20260510_180901_1081.jpg"
 category: "Personal"
-tags: ["Video", "Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Bipolar Disorder", "Unemployment", "Middle Age", "Male Mental Health", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class", "Shame", "Self Worth", "Loneliness", "Urban Life", "Stagnant Water", "Landfill", "Survival", "Resilience", "Neuroscience", "Emotional Health", "Life Writing", "SuvroGhosh"]
+tags: ["Bipolar Depression","Depression","Sure","Landfill","Skepticism","Bipolar","Sadness","Bath","Ending","Tea"]
 published: true
 color: "#3f3f3f"
 ---

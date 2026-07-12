@@ -4,7 +4,7 @@ description: "A personal essay on middle age, bipolar depression, poverty, educa
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_030551_1659.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Bipolar Depression", "Anxiety", "Middle Age", "Artificial Intelligence", "AI And Writing", "Kolkata Life", "Calcutta Bengali", "Bengali Essay", "Creative Writing", "Human Expression", "Digital Culture", "Technology And Society", "Reading Crisis", "Writing Therapy", "Loneliness", "Atheism", "Hope", "Poverty", "Education", "Future Of Reading", "Future Of Writing", "SuvroGhosh"]
+tags: ["Breaking News","Writing","Hope","Sentence","Write","Mind","AI","Breaking","Feeling","Comfort"]
 published: true
 color: "indigo"
 ---

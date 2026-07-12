@@ -4,7 +4,7 @@ description: "A clear historical and scientific account of how the mind came to 
 thumbnail :  "/images/IMG-20260425-WA0012.jpg" 
 date: "2026-04-25"
 category: "Neuroscience"
-tags: ["SuvroGhosh", "Neuroscience", "Mind As Emergence Not Magic", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Mental Life","Brain","Neurons","Mind","Perception","Experience","Woo","Mental","Neuron","Soul"]
 published: true
 color: "slate"
 ---

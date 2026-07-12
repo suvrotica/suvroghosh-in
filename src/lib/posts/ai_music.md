@@ -3,7 +3,7 @@ title: "AI Music"
 thumbnail : "/images/Resize_20260428_134350_0013.jpg"
 description: "A reflection on artificial intelligence, music, authorship, and the strange new machinery of creative production."
 date: "2026-04-27"
-tags: ["Audio", "Music", "SuvroGhosh", "AI Music Song", "AI Music", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Bengali Songs", "Synthetic Media", "Music Commentary"]
+tags: ["AI Songs","AI","Songs"]
 category: "AI Music Song"
 published: true
 ---

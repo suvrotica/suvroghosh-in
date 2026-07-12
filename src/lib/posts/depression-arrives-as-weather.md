@@ -4,7 +4,7 @@ description: "A plainspoken personal essay on bipolar depression, anhedonia, and
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_161843_3392.jpg"
 category: "Mental Health"
-tags: ["Depression", "Bipolar Depression", "Anhedonia", "Mental Health", "Calcutta", "Kolkata", "Middle Age", "Loneliness", "Anxiety", "Mood Disorder", "Personal Essay", "Bengali Writing", "Lower Middle Class Life", "Men And Depression", "Emotional Pain", "Psychiatric Illness", "Mental Health Awareness", "Urban Loneliness", "Calcutta Essays", "SuvroGhosh"]
+tags: ["Depression","Anhedonia","Depressions","Department","Weather","Cloud","Gratitude","Sadness","Feel","Eggs"]
 published: true
 color: "slate"
 ---

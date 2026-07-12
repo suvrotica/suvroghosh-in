@@ -4,7 +4,7 @@ description: "A personal essay on writing, drawing, satire, darkness, digital ob
 date: "2026-05-02"
 thumbnail : "/images/Compress_20260502_143442_2990.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Why I Write What I Write", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Art","Grotesque","Draw","Write","Darkness","Furniture","Cartoon","Skull","Mask","Decency"]
 published: true
 color: "#7C2D12"
 ---

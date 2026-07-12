@@ -4,7 +4,7 @@ description: "In a rain-sour Calcutta lane, a butcher begins offering cheap medi
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_105719_9912.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Medical Debt"]
+tags: ["Tram Bell","Red Cloth","Gobu Shop","Rina Thought","Rina","Gobu","Bela","Bappa","Ear","Cleaver"]
 published: true
 color: "maroon"
 ---

@@ -4,7 +4,7 @@ description: "A grotesque little Calcutta satire: Tintin becomes Bengali, Snowy 
 date: "2026-05-27"
 thumbnail: "/images/Compress_20260527_233750_0425.jpg"
 category: "Satire"
-tags: ["Video", "Satire", "Kolkata", "Calcutta", "Bengal", "Tintin", "Urban Decay", "Political Satire", "Bengali Humor", "SuvroGhosh"]
+tags: ["Tintin","Heap","Garbage","Flowers","Bengal","Dog","Calcutta","Fish"]
 published: true
 color: "crimson"
 ---

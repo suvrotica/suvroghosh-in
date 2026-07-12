@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay on depression, bodily discomfort, mi
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_110032_2690.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Essay", "Kolkata Essay", "Bengali Life", "Middle Age", "Depression", "Anxiety", "Bipolar Depression", "Executive Dysfunction", "Loneliness", "Single Man", "Lower Middle Class", "South Calcutta", "Kolkata Summer", "Bengali Humor", "Dark Humor", "Existential Comedy", "Mental Health Writing", "Urban India", "Indian Middle Class", "Personal Blog", "SuvroGhosh"]
+tags: ["Pod Mara Gechhe","Rice Cooker","Mara","Gechhe","Pod","Doorbell","Mirror","Rice","Hope","Tea"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "A modest Calcutta electrician discovers that a celebrated godmanâ€
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_161137_7456.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Faith and Fraud"]
+tags: ["Baba Shabdananda","Tea Stall","Nirmal","Baba","Mili","Shabdananda","Prabal","Bangle","Pandal","Cabinet"]
 published: true
 color: "Charcoal"
 ---

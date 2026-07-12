@@ -4,7 +4,7 @@ description: "A Calcutta essay on middle-class poverty, household margin, delaye
 date: "2026-06-20"
 thumbnail: "/images/Compress_20260620_132622_2856.jpg"
 category: "Personal Essay"
-tags: ["India", "Indian Middle Class", "Middle Class Poverty", "Lower Middle Class India", "Calcutta", "Kolkata", "Bengali Life", "Household Budget", "Personal Finance", "Inflation", "Hunger", "Food Insecurity", "Rice Cooker", "Bookkeeping", "Accountancy", "Family Budget", "Poverty In India", "Urban Poverty", "Precarious Income", "Consulting Life", "Single Man", "Bengal", "SuvroGhosh", "Personal Essay", "Society", "Economics", "Everyday India"]
+tags: ["Middle Class","Rice Cooker","Minus","Hunger","Margin","Rice","Cooker","Middle-Class","Phone","Repair"]
 published: true
 color: "brown"
 ---

@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay on intelligence, depression, memory,
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_232338_8437.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Loneliness", "Memory", "Trauma", "Intelligence", "Overthinking", "Urban India", "Lower Middle Class Life", "Personal Essay", "Dark Humor", "Neuroscience", "Brain", "SuvroGhosh"]
+tags: ["Steals Current","Carrying Forward","Second Chance","Brain","Stupidity","Wish","Remove","Cauliflower","Depression","Steals"]
 published: true
 color: "slate"
 ---

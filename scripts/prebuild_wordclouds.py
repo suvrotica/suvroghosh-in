@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "src" / "lib" / "posts"
 OUTPUT_DIR = ROOT / "static" / "wordcloud"
 MANIFEST_PATH = OUTPUT_DIR / "manifest.json"
-GENERATOR_VERSION = "2026-07-01.1"
+GENERATOR_VERSION = "2026-07-13.1"
 REQUIRED_MODULES = ("wordcloud", "PIL", "numpy", "yaml")
 
 
@@ -25,6 +25,11 @@ def missing_modules() -> list[str]:
 
 def source_hash(text: str) -> str:
 	return hashlib.sha256((GENERATOR_VERSION + "\n" + text).encode("utf-8")).hexdigest()
+
+
+def article_body(raw_text: str) -> str:
+	match = re.match(r"\A---\s*\r?\n.*?\r?\n---\s*(?:\r?\n)?(.*)\Z", raw_text, re.DOTALL)
+	return match.group(1) if match else raw_text
 
 
 def output_slug(markdown_path: Path, seen: dict[str, int]) -> str:
@@ -62,7 +67,7 @@ def verify_committed_wordclouds() -> int:
 		output_path = OUTPUT_DIR / f"{slug}.svg"
 		entry = manifest_posts.get(slug)
 		raw_text = markdown_path.read_text(encoding="utf-8")
-		current_hash = source_hash(raw_text)
+		current_hash = source_hash(article_body(raw_text))
 
 		if not output_path.exists():
 			problems.append(f"{slug}: missing {output_path.relative_to(ROOT).as_posix()}")

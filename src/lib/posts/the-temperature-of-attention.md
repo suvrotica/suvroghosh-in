@@ -4,7 +4,7 @@ description: "During a June heat wave in Calcutta, a hospital data contractor di
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_050121_1354.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Calcutta", "Heatwave", "Speculative Fiction", "SuvroGhosh"]
+tags: ["Azure Heights","North Star","Low ATTENTION DETECTED","ATTENTION INDEX","Server Room","Arindam","Mina","Hospital","Server","Scored"]
 published: true
 color: "copper"
 ---

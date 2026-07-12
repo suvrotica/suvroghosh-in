@@ -4,7 +4,7 @@ description: "During Durga Puja in Calcutta, a temporary electrician follows a p
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_133242_2016.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Strange Fiction", "Dread", "Memory"]
+tags: ["Junction Box","Behala Team","Lahiri Whispered","Nirmal Asked","Nirmal Thought","Lahiri","Tublu","Wetland","Worms","Riju"]
 published: true
 color: "Black"
 ---

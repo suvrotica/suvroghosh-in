@@ -4,7 +4,7 @@ description: "India has world-class hospitals, brilliant doctors, and ambitious 
 date: "2026-05-11"
 thumbnail : "/images/Compress_20260428_162412_2865.jpg"
 category: "Healthcare"
-tags: ["Indian Healthcare", "Healthcare in India", "Public Health India", "Private Hospitals India", "Medical Debt India", "Out of Pocket Healthcare Costs", "Ayushman Bharat", "PM-JAY", "Health Insurance India", "Primary Care India", "Hospital Costs India", "Rural Healthcare India", "Urban Poor Healthcare", "Healthcare Inequality", "Healthcare Access", "Medical Poverty", "Common Man Healthcare", "Indian Public Hospitals", "Healthcare Reform India", "Universal Health Coverage", "SuvroGhosh"]
+tags: ["Kidney Disease","Indian Healthcare","India","Patient","Hospital","Healthcare","Medicine","Disease","Hospitalization","Referral"]
 published: true
 color: "#111827"
 ---

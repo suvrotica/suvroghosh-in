@@ -4,7 +4,7 @@ description: "A satirical but serious reflection on why language models can soun
 date: "2026-05-08"
 thumbnail: "/images/Compress_20260508_174835_5424.jpg"
 category: "Artificial Intelligence"
-tags: ["SuvroGhosh", "Artificial Intelligence", "Sludgegpt And The Mirage Of Machine Understanding", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
+tags: ["Cube Root","Cube","SludgeGPT","Model","Machine","AI","Root","Statistical","LLM","Roots"]
 published: true
 color: "slate"
 ---

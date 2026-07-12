@@ -4,7 +4,7 @@ description: "A Calcutta Bengali essay on hilsa, mustard oil, memory, river ecol
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_141556_6381.jpg"
 category: "Culture"
-tags: ["Hilsa", "Ilish", "Bengali Food", "Bengali Cuisine", "Calcutta Essay", "Kolkata Essay", "Bengal Culture", "Padma Ilish", "Shorshe Ilish", "Mustard Oil", "Fish Market", "River Ecology", "Bengali Memory", "Food Writing", "Cultural Essay", "Indian Food Essay", "Monsoon Food", "Bengali Lunch", "SuvroGhosh"]
+tags: ["Mustard Oil","Hilsa","Rivers","Mustard","Fish","Swims","Salmon","River","Plate","Fishmonger"]
 published: true
 color: "silver"
 ---

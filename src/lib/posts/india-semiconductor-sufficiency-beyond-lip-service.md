@@ -4,7 +4,7 @@ description: "India is late to semiconductor manufacturing not because it lacks 
 thumbnail :  "/images/IMG-20260427-WA0014.jpg"
 date: "2026-04-27"
 category: "Technology"
-tags: ["SuvroGhosh", "India", "Technology", "India Semiconductor Sufficiency Beyond Lip Service", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Advanced Packaging","United States","Semiconductor","Manufacturing","Chips","Chip","Fab","India","Packaging","Industrial"]
 published: true
 color: "slate"
 ---

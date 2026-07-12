@@ -4,7 +4,7 @@ description: "A technical history of how the atom changed shape in the scientifi
 thumbnail : "/images/IMG-20260423-WA0023.jpg"
 date: "2026-04-23"
 category: "science"
-tags: ["SuvroGhosh", "science", "The History Of The Shape Of Atoms", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Electron Density","Quantum Mechanics","Positive Charge","Atom","Electron","Quantum","Atoms","Atomic","Nucleus","Bohr"]
 published: true
 color: "indigo"
 ---

@@ -4,7 +4,7 @@ description: "A woman in a West Bengal village discovers that her body has becom
 date: "2026-07-08"
 thumbnail: "/images/Compress_20260707_202310_0018.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Claustrophobic", "Appetite"]
+tags: ["Neighbor Radio","Pradeep","Cane","Sun","Harvesters","Village","Harvest","Yield","Juice","Ports"]
 published: true
 color: "#5D4037"
 ---

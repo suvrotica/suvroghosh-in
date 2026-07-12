@@ -4,7 +4,7 @@ description: "A middle-aged Calcutta essay about childhood ambition, adult invis
 date: "2026-06-03"
 thumbnail: "/photos/Compress_20260603_094652_2288.jpg"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Middle Class", "Middle Age", "Childhood Dreams", "Adult Failure", "Loneliness", "Depression Writing", "Bipolar Depression", "Anxiety", "Lower Middle Class", "Indian Middle Class", "Life Essay", "Memoir", "Aging", "Failure", "Hope", "Disillusionment", "Readable Essays", "Personal Blog", "Suvro Ghosh"]
+tags: ["Adjust","Respected","Merit","Childhood","Books","Middle-Class","Serious","Lower","Large","Funny"]
 published: true
 color: "slate"
 ---

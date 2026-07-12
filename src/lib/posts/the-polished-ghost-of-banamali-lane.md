@@ -4,7 +4,7 @@ description: "A faceless gentleman in a suit begins visiting corrupt men across 
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_062727_7107.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Ghost Story", "Kolkata", "Supernatural Horror", "Political Corruption", "SuvroGhosh"]
+tags: ["Banamali Lane","Bowler Hat","Mahim Ghosh","Air Conditioner","Dark Suit","Riddhi","Mahim","Piya","Banamali","Ghost"]
 published: true
 color: "Midnight Blue"
 ---

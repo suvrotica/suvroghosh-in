@@ -4,7 +4,7 @@ description: "A technically grounded analysis of homeopathy’s origins, interna
 thumbnail : "/images/IMG-20260423-WA0015.jpg"
 date: "2026-04-21"
 category: "healthcare-systems"
-tags: ["SuvroGhosh", "healthcare-systems", "Homeopathy Pseudoscience Persistence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Health Level Seven","Evidence-Based Medicine","Human Experience","Homeopathy","Healthcare","Evidence-Based","Data","Clinical","Systems","Narrative"]
 published: true
 color: "red"
 ---

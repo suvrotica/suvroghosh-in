@@ -4,7 +4,7 @@ description: "World Yoga Day and the Summer Solstice share a date, but the conne
 date: "2026-06-21"
 thumbnail: "/images/Compress_20260621_171233_3434.jpg"
 category: "Science and Society"
-tags: ["World Yoga Day", "Summer Solstice", "Astronomy", "Yoga", "Science", "India", "Sun", "Earth", "Seasonal Change", "Culture", "Health", "Human Behavior", "SuvroGhosh"]
+tags: ["Yoga","Solstice","Sun","June","Earth","Summer"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "A meditation on modern euphemism, synthetic happiness, and the soc
 thumbnail :  "/images/IMG-20260427-WA0001.jpg" 
 date: "2026-04-27"
 category: "Culture"
-tags: ["SuvroGhosh", "Culture", "Facial Pleasure Receipts And Modern Euphemism", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
+tags: ["Plain Speech","Smile","Sophistication","Pleasure","Speech","Violence","Suffering","Synthetic","Expression","Horror"]
 published: true
 color: "charcoal"
 ---

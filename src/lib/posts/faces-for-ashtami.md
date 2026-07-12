@@ -4,7 +4,7 @@ description: "Before Durga Puja, a Bengali scientist grows Triassic creatures wi
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_164136_6970.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Festival Dread", "Human Instinct"]
+tags: ["Number Four","Iron Rod","Goat Liver","Arunava","Sulekha","Mili","Paromita","Pandal","Number","Tank"]
 published: true
 color: "maroon"
 ---

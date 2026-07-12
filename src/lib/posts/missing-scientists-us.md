@@ -4,7 +4,7 @@ description: "Why the louder story is not espionage or cinematic disappearance, 
 thumbnail : "/images/IMG-20260423-WA0016.jpg"
 date: "2026-04-22"
 category: "healthcare-it"
-tags: ["SuvroGhosh", "Healthcare IT", "healthcare-it", "Missing Scientists US", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Administration","Agencies","Research"]
 published: true
 color: "blue"
 ---

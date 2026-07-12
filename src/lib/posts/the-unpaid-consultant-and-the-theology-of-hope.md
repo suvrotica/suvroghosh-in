@@ -4,7 +4,7 @@ description: "A sharp, readable essay on unpaid consulting, soft promises, vapor
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_172646_6015.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Unpaid Consulting", "Freelance Life", "Consulting Income", "Middle Age", "Calcutta Life", "Kolkata Essay", "Bengali Writer", "Lower Middle Class", "Work Anxiety", "Unemployment", "Financial Precarity", "Vapor Pay", "Soft Promises", "Future Payment", "Freelancer Problems", "Consultant Life", "Bipolar Depression", "Mental Health Essay", "Single Man Life", "Urban Loneliness", "Indian Middle Class", "Professional Burnout", "Hope And Desperation", "Economic Anxiety", "Work Without Pay", "Life In Kolkata", "Personal Blog", "SuvroGhosh"]
+tags: ["Unpaid Consulting","Payment","Vague","Future","Unpaid","Work","Hope","Money","Consulting","Client"]
 published: true
 color: "slate"
 ---

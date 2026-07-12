@@ -4,7 +4,7 @@ description: "A talking bird arrives in a damp Calcutta flat, drinks tea, smokes
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_092515_5525.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Domestic Dread", "Family Duty"]
+tags: ["Cushioned Support","Maniktala House","Bird Watched","Bird","Anirban","Mina","Sofa","Father","Support","Biri"]
 published: true
 color: "teal"
 ---

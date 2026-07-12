@@ -4,7 +4,7 @@ description: "A rigorous reading of Emad Mostaque’s The Last Economy: its core
 thumbnail : "/images/IMG-20260423-WA0002.jpg" 
 date: "2026-04-23"
 category: "technology"
-tags: ["SuvroGhosh", "technology", "Last Economy Intelligence Inversion", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
+tags: ["Artificial Intelligence","Political Economy","Hypothesis","Hypotheses","Economy","Book","Abundance","Cognition","Abundant","Labor"]
 published: true
 color: "slate"
 ---

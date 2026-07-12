@@ -4,7 +4,7 @@ description: "A lucid, technically careful explanation of the four fundamental s
 thumbnail: "/images/IMG-20260425-WA0000.jpg"
 date: "2026-04-25"
 category: "mathematics"
-tags: ["SuvroGhosh", "mathematics", "Four Fundamental Subspaces", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Statistics"]
+tags: ["Four Fundamental Subspaces","Column Space","Row Space","Linear Algebra","Ask Whether","Nullspace","Matrix","Column","Output","Input"]
 published: true
 color: "indigo"
 ---

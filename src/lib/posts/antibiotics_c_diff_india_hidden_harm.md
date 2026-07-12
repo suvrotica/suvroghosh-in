@@ -4,7 +4,7 @@ description: "In India, strong antibiotics are often prescribed as if they are h
 date: "2026-05-29"
 thumbnail: "/images/Compress_20260529_114503_3371.jpg"
 category: "Healthcare"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Healthcare", "Antibiotics India", "Antibiotic Misuse", "Antimicrobial Resistance", "C Difficile", "C Diff Infection", "Antibiotic Stewardship", "Public Health India", "Gut Health", "Patient Safety", "Doctor Prescribing", "Dental Antibiotics", "Clindamycin Risk", "Broad Spectrum Antibiotics", "Healthcare Awareness", "Medical Education India", "Diarrhea After Antibiotics", "Colitis", "AMR India", "Clinical Safety", "Over The Counter Antibiotics", "Rational Drug Use"]
+tags: ["Antibiotic","Difficile","Antibiotics","Diarrhea","Patient","Prescription","Colon","Gut","Infection","Viral"]
 published: true
 color: "red"
 ---

@@ -4,7 +4,7 @@ description: "A manic-depressive rant from a fifty-one-year-old canceled Bengali
 date: "2026-07-05"
 thumbnail: "/images/Compress_20260705_225250_0447.jpg"
 category: "Essay"
-tags: ["Calcutta", "Bipolar", "AI", "Consulting", "SuvroGhosh", "Rant"]
+tags: ["Drain Worm","Rice Cooker","Worm","Abeyance","Tubifex","July","Harried","Drain","Sewer","Illusion"]
 published: true
 color: "#1a1a1a"
 ---

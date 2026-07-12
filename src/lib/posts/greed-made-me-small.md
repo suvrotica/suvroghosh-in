@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay about greed, selfishness, fear, with
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_123507_7458.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Writing", "Middle Age", "Loneliness", "Depression", "Anxiety", "Bipolar Depression", "Social Criticism", "Greed", "Selfishness", "Superficial People", "Trust Issues", "Emotional Exhaustion", "Urban India", "Lower Middle Class Life", "Mental Health Writing", "Dark Humor", "Satirical Essay", "Indian Society", "Kolkata Bengali", "Human Behavior", "Cynicism", "Withdrawal", "Fear of People", "SuvroGhosh"]
+tags: ["Greed","Selfishness","Selfish","Shrunk","Removes","Afraid","Fear","Bird","Betrayal","Lever"]
 published: true
 color: "brown"
 ---

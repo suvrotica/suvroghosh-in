@@ -4,7 +4,7 @@ description: "India cannot become a serious scientific civilization while treati
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_170049_9569.jpg"
 category: "Science and Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Pseudoscience", "Scientific Temper", "Science Education India", "Indian Education System", "Rationalism India", "Anti Science Propaganda", "Mythology And Science", "Evolution Education", "NCERT Curriculum", "India China Science Gap", "Research And Development India", "Science Policy India", "Public Reason", "Secular India", "Critical Thinking", "Evidence Based Thinking", "Science Communication", "Indian Politics", "Religion And Politics", "WhatsApp Misinformation", "Social Media Misinformation", "Faith Healing", "Gurus In India", "Superstition India", "Science Literacy", "Nehru Scientific Temper", "Atheism India", "Modern India", "Bengali Essays", "Kolkata Essays", "Calcutta Blog"]
+tags: ["Scientific Temper","Science","Evolution","Scientific","Certainty","Teach","China","Build","Research","Evidence"]
 published: true
 color: "#7C2D12"
 ---

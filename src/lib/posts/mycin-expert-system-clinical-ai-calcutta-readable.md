@@ -4,7 +4,7 @@ description: "MYCIN was an early Stanford expert system for infectious disease d
 date: "2026-05-26"
 thumbnail: "/images/Compress_20260526_121024_4895.jpg"
 category: "Healthcare IT"
-tags: ["MYCIN", "Expert Systems", "Clinical AI", "Medical AI", "Healthcare IT", "Clinical Decision Support", "Artificial Intelligence", "Stanford AI", "Rule Based Systems", "Explainable AI", "Infectious Disease", "Antibiotic Therapy", "EHR", "FHIR", "HL7", "Health Informatics", "Digital Health", "Medical Informatics", "Healthcare Data", "AI History", "Healthcare Architecture", "Interoperability", "Clinical Reasoning", "SuvroGhosh"]
+tags: ["Inference Engine","Knowledge Base","User Interface","MYCIN","Clinical","Stanford","Expert","Interface","Rules","User"]
 published: true
 color: "red"
 ---

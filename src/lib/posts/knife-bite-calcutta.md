@@ -4,7 +4,7 @@ description: "A Calcutta biscuit jingle begins as a small nuisance in the ear, t
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_105956_6470.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta Horror", "Speculative Fiction", "Body Horror", "Advertising", "Earworm"]
+tags: ["Knife Bite","Ritwick","Nilanjana","Mira","Jingle","Khabo","Bite","Eyelids","Audio","Tune"]
 published: true
 color: "blood orange"
 ---

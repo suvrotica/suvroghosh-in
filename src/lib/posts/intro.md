@@ -4,7 +4,7 @@ description: "From Pascal at Jadavpur University to healthcare data systems, dis
 thumbnail : "/images/IMG-20260422-WA0009.jpg"
 date: "2026-04-22"
 category: "career"
-tags: ["SuvroGhosh", "career", "Intro", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["SQL Server","Machine Learning","Programming","SQL","Statistical","Language","UML","Data","Software","Modeling"]
 published: true
 color: "blue"
 ---

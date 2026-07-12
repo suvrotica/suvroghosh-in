@@ -4,7 +4,7 @@ description: "A practical field guide to the fish commonly eaten in Kolkata, wit
 thumbnail : "/images/IMG-20260422-WA0006.jpg"
 date: "2026-04-22"
 category: "food"
-tags: ["SuvroGhosh", "Calcutta", "food", "Calcutta Fish Field Guide", "Calcutta Bengali", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Bengali Culture", "West Bengal", "Urban Kolkata"]
+tags: ["Frequent Eating","Large Predators","Fish Eaten Whole","Good Reasons","Fish","Labeo","Pabda","Predatory","Bata","Frequent"]
 published: true
 color: "blue"
 ---

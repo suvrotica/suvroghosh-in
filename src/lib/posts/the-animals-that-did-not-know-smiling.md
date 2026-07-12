@@ -4,7 +4,7 @@ description: "When a cheap brand of children's crayons floods Kolkata, the drawi
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_090456_6566.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Fantasy Horror", "Kolkata", "Supernatural", "SuvroGhosh"]
+tags: ["Happy Jaanu","Jaanu Wax Colours","Mira Asked","Human Eye","Mira","Nandita","Ishaan","Crayons","Crayon","Wax"]
 published: true
 color: "Charcoal"
 ---

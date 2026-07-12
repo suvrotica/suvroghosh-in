@@ -4,7 +4,7 @@ description: "A plain, witty guide to commercial hi-fi sound labels, from mono a
 date: "2026-05-26"
 thumbnail: "/images/Compress_20260526_081512_2710.jpg"
 category: "Audio Technology"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "HiFi Audio", "Home Theater", "Mono Sound", "Stereo Sound", "Surround Sound", "5.1 Audio", "7.1 Audio", "Dolby Atmos", "DTS X", "THX", "Lossless Audio", "Hi Res Audio", "Bluetooth Audio", "Soundbar", "Subwoofer", "Speaker Setup", "Audiophile", "Music Streaming", "Spatial Audio", "Home Audio", "Audio Codecs", "Indian Tech Blog", "Beginner Audio Guide", "Consumer Electronics", "Speaker Buying Guide"]
+tags: ["Audio Codec","Center Channel","Lossless","Audio","Mono","Subwoofer","Stereo","Speakers","DTS","Surround"]
 published: true
 color: "slate"
 ---

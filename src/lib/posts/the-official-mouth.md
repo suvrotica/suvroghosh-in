@@ -4,7 +4,7 @@ description: "After a June lightning storm, a quiet Dhakuria tutor wakes with a 
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_124806_6003.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Ritual"]
+tags: ["Haradhan Dey","Nirmal","Buro-da","Haradhan","Haru","Mitali","Proboscis","Dey","Baba","Register"]
 published: true
 color: "#4B0F1E"
 ---

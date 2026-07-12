@@ -4,7 +4,7 @@ description: "A street-level explanation of how the word 'woke' escaped Black Am
 date: "2026-05-13"
 thumbnail: "/images/Compress_20260513_055339_9541.jpg"
 category: "Culture"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "woke meaning", "american politics", "culture war", "social media", "political correctness", "modern america", "language and politics", "cancel culture", "american society", "culture wars explained", "identity politics", "internet culture", "media criticism", "george carlin style humor", "calcutta perspective", "american slang explained", "ordinary people politics"]
+tags: ["Human Beings","Social Media","Woke","Corporations","Injustice","American","Social","Television","Media","Eventually"]
 published: true
 color: "stone"
 ---

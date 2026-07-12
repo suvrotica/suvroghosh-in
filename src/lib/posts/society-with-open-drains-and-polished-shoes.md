@@ -4,7 +4,7 @@ description: "A darkly comic Kolkata essay on moral rot, fake advice, failed amb
 date: "2026-05-21"
 thumbnail: "/images/Compress_20260521_232804_4936.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengali Essay", "Personal Essay", "Dark Humor", "Satire", "Social Satire", "Middle Class Life", "Lower Middle Class Kolkata", "Urban Decay", "Moral Decay", "Fake Friends", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Loneliness", "Misanthropy", "Indian Society", "Kolkata Life", "Calcutta Summer", "Entrepreneurship Failure", "Self Help Culture", "Scam Culture", "Political Rot", "Human Nature", "Social Commentary", "Literary Essay", "Readable Essays", "Funny Sad Writing", "Modern India", "Everyday Philosophy", "Personal Blog"]
+tags: ["Shape","Advice","Opportunity","Confidence","Friend","Means","Sentence","Arrives","Hot","Cup"]
 published: true
 color: "charcoal"
 ---

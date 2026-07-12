@@ -4,7 +4,7 @@ description: "Why the WHO-monitored SARS-CoV-2 lineage BA.3.2 matters: its delay
 thumbnail : "/images/IMG-20260423-WA0012.jpg" 
 date: "2026-04-21"
 category: "public-health"
-tags: ["SuvroGhosh", "public-health", "Cicada Ba32 Covid Variant", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Watch Whether","Severe Disease","Lineage","Variant","SARS-CoV-2","Evolution","Virus","Spike","Immune","Severe"]
 published: true
 color: "violet"
 ---

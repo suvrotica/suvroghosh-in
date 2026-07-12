@@ -4,7 +4,7 @@ description: "A darkly comic personal essay using quantum mechanics as a street-
 date: "2026-06-20"
 thumbnail: "/images/Compress_20260620_151428_8987.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Quantum Mechanics", "Middle Age", "Male Invisibility", "Calcutta Essay", "Kolkata Writing", "Bengali Middle Class", "Loneliness", "Unemployment", "Job Market", "Recruitment", "Rejected Applications", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Single Man", "Lower Middle Class Life", "Science Metaphor", "Social Commentary", "Dark Humor", "Indian Middle Class", "Masculinity", "Ageing", "Dignity", "Hope", "SuvroGhosh"]
+tags: ["Quantum Mechanics","Man Desire","Quantum","Desire","Collapse","Particle","Version","Mechanics","Observation","Uncertainty"]
 published: true
 color: "slate"
 ---

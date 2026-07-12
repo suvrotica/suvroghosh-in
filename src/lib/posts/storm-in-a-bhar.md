@@ -4,7 +4,7 @@ description: "A Calcutta tea-stall joke about chaos theory becomes a street-leve
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_202804_4190.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Science Fiction", "Chaos Theory"]
+tags: ["Professor Lahiri","Coaching Center","Delivery Riders","Pen Drive","Insurance Clerk","Arka","Gopal-da","Mithun","Father","Lahiri"]
 published: true
 color: "charcoal"
 ---

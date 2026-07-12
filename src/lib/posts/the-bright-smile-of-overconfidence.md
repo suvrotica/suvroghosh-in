@@ -4,7 +4,7 @@ description: "A caustic reflection on corporate positivity, fake certainty, expl
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_154131_1600.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "The Bright Smile Of Overconfidence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Negativity","Productivity","Project","Tools","Corporate","Optimism","Sounds","Process","Trick","Office"]
 published: true
 color: "amber"
 ---

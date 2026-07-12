@@ -4,7 +4,7 @@ description: "A first-person essay on how tautologies, bad metaphors, straw man 
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_034648_8214.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Depression", "Anxiety", "Bipolar Disorder", "Rumination", "Loneliness", "Cognitive Distortions", "Overthinking", "Negative Thinking", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "Mental Health Writing", "Psychology", "Self Reflection", "Emotional Health", "Social Isolation", "Bankrupt Middle Class", "Anxiety Disorder", "Depressive Thinking", "Thought Loops", "Metaphors", "Straw Man Arguments", "Tautology", "SuvroGhosh"]
+tags: ["Connected","Circle","Tautology","Metaphor","Loneliness","Mind","Defective","Depression","Round","Labels"]
 published: true
 color: "indigo"
 ---

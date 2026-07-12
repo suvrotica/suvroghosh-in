@@ -4,7 +4,7 @@ description: "A readable but technically serious healthcare IT post on the Poiss
 date: "2026-05-21"
 thumbnail: "/images/Compress_20260521_044534_4224.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Poisson Distribution", "Probability Theory", "Statistics", "Healthcare IT", "Clinical Informatics", "Rare Events", "Rare Event Modeling", "Healthcare Analytics", "EHR Analytics", "FHIR", "HL7", "HL7 v2", "CDA", "Healthcare Interoperability", "Patient Safety", "Hospital Operations", "Emergency Department Analytics", "Queueing Theory", "Epidemiology", "Population Health", "Infection Surveillance", "Medication Safety", "Interface Engines", "Data Quality", "Semantic Interoperability", "Statistical Process Control", "Poisson Regression", "Negative Binomial Model", "Overdispersion", "Clinical Data Warehouse", "Health Data Architecture", "AI in Healthcare", "Healthcare Data Science", "Public Health Surveillance", "Claims Analytics", "Clinical Research Informatics", "CDISC", "SDTM", "CTMS", "CDMS", "Data Governance", "Health Information Exchange", "Production Healthcare Systems"]
+tags: ["Poisson Regression","Poisson Distribution","Clinical Trial","Public Health","Data Quality","Lambda","Clinical","Healthcare","Events","Count"]
 published: true
 color: "#4F7CAC"
 ---

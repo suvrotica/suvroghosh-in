@@ -4,7 +4,7 @@ description: "A personal and philosophical essay on loneliness, bipolar depressi
 date: "2026-05-11"
 thumbnail: "/images/Compress_20260511_034747_7258.jpg"
 category: "Personal"
-tags: ["Video", "Personal Essay", "SuvroGhosh", "loneliness", "bipolar depression", "mental health", "depression", "middle age", "single life", "divorce", "living alone", "Bengali life", "Calcutta", "Kolkata", "lower middle class life", "urban loneliness", "Indian society", "male loneliness", "philosophy of loneliness", "self estrangement", "introspection", "solitude", "alienation", "mother and son", "emotional isolation", "mental health writing", "personal blog", "life after divorce", "existential loneliness", "modern loneliness", "lonely man", "Bengali society", "ordinary life", "reflective essay", "philosophical essay"]
+tags: ["Empty Room","Loneliness","Friendly","Self","Empty","Divorced","Chair","Mind","Taught","Kolkata"]
 published: true
 color: "#4A5568"
 ---

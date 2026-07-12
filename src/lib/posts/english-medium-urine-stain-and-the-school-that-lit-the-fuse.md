@@ -4,7 +4,7 @@ description: "A raw memoir on English-medium schooling, childhood anxiety, mytho
 thumbnail: "/images/Compress_20260502_004133_3146.jpg"
 date: "2026-05-02"
 category: "Memoir"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Memoir", "English Medium Urine Stain And The School That Lit The Fuse", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["School","Childhood","Dragon","Lout","Mythology","Gave","Religious","Mine","Remember","WWA"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "Why some of us cling to the first chance, first love, first job, o
 date: "2026-05-21"
 thumbnail: "/images/Compress_20260521_061552_2162.jpg"
 category: "Science"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Psychology", "Decision Theory", "Statistics", "Optimal Stopping", "Human Behavior", "Love At First Sight", "First Choice Bias", "Scarcity Mindset", "Attachment Theory", "Bayesian Thinking", "Bounded Rationality", "Satisficing", "Memory And Emotion", "Regret", "Life Choices", "Behavioral Science", "Neuroscience", "Cognitive Bias", "Calcutta Essay", "Kolkata Writing", "Middle Age", "Loneliness", "Opportunity", "Human Attention", "Readable Science", "Popular Science", "Emotional Decision Making", "Exploration And Exploitation"]
+tags: ["Mere Exposure Effect","Optimal Stopping","Best Possible","Halo Effect","Prior Belief","Bayesian","Optimal","Satisficing","Attachment","Mere"]
 published: true
 color: "amber"
 ---

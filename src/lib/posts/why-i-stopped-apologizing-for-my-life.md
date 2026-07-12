@@ -4,7 +4,7 @@ description: "A middle-aged Bengali healthcare IT architect writes honestly abou
 date: "2026-05-11"
 thumbnail: "/images/Compress_20260511_221054_4931.jpg"
 category: "Personal"
-tags: ["Healthcare IT", "Indian Startup Failure", "Middle Age", "Kolkata Life", "NRI Return", "US Healthcare", "Healthcare Architecture", "Career Burnout", "Indian Corporate Culture", "Loneliness", "Mental Health", "Brown Immigrant Experience", "Technology Careers", "Consulting Life", "Life In Kolkata", "Aging In Tech", "Indian Society", "Startup Reality", "Healthcare Technology", "Personal Essay", "SuvroGhosh"]
+tags: ["Healthcare","Systems","Organizations","Perform","Wonder","Afraid","Corruption","Performance","Somebody","Meanwhile"]
 published: true
 color: "slate"
 ---

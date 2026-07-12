@@ -4,7 +4,7 @@ description: "A plain-language Calcutta-friendly explanation of how AI made a se
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_154743_3738.jpg"
 category: "Science"
-tags: ["AI", "Artificial Intelligence", "Erdos Problem", "Paul Erdos", "Unit Distance Problem", "Mathematics", "Math Explained Simply", "OpenAI", "Discrete Geometry", "Combinatorial Geometry", "Algebraic Number Theory", "Machine Learning", "Reasoning Models", "AI Research", "Science Writing", "Popular Science", "Mathematical Discovery", "Human And AI Collaboration", "Calcutta Blog", "Kolkata Writing", "Bengali Reader", "SuvroGhosh"]
+tags: ["Algebraic Number Theory","Paul Erdős","Unit Distance","Proper Response","Distance Problem","Dots","Erdős","AI","Mathematics","Unit"]
 published: true
 color: "charcoal"
 ---

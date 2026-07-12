@@ -4,7 +4,7 @@ description: "A wandering, darkly funny meditation on AI consciousness, human mi
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260506_221407_7021.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI consciousness", "machine learning", "neural networks", "AI philosophy", "human psychology", "technology ethics", "machine ethics", "future of AI", "AI alignment", "AI satire", "existentialism", "dark humor", "mental health", "computer science", "deep learning", "LLM", "generative AI", "consciousness", "human condition", "AI dystopia", "philosophy of mind", "technology and society", "AI risks", "automation", "digital culture", "internet culture"]
+tags: ["Maybe","Machine","Emotionally","AI","Humanity","Equivalent","Truly","Humans","Minds","Networks"]
 published: true
 color: "zinc"
 ---

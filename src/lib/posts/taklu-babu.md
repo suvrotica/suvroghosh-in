@@ -4,7 +4,7 @@ description: "A bald street cat in Calcutta discovers that fish carry memories, 
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_124351_1146.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Dark Comedy", "Memory", "Power", "Hunger"]
+tags: ["Taklu Babu","Pink Scalp","College Girl","Taklu","Babu","Bald","Steered","Rickshaw-Wallah","Fish","Cat"]
 published: true
 color: "#2c3e50"
 ---

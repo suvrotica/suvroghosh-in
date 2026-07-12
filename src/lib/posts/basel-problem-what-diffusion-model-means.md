@@ -4,7 +4,7 @@ description: "A plain-English explanation of biological diffusion models and why
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_174301_1039.jpg"
 category: "Science"
-tags: ["Basel Problem", "Pi Squared Over Six", "Diffusion Model", "Biological Diffusion", "Biomedical Mathematics", "Medical Mathematics", "Mathematical Biology", "Healthcare AI", "Diffusion MRI", "MRI Physics", "Pharmacokinetics", "Drug Transport", "Oxygen Transport", "Contrast Dye", "Heat Transfer", "Signal Analysis", "Fourier Series", "Infinite Series", "Normalization", "Partial Differential Equations", "Biomedical Engineering", "Applied Mathematics", "Science Explained", "Math Explained Simply", "Calcutta Science Writing", "Kolkata Blog", "SuvroGhosh"]
+tags: ["Diffusion Model","Basel Identity","Drug Oxygen","Model Begins","Diffusion","Basel","Dye","Frac","Drug","Spreading"]
 published: true
 color: "indigo"
 ---

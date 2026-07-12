@@ -4,7 +4,7 @@ description: "The central risk is not that insurers openly announce an artificia
 thumbnail : "/images/IMG-20260424-WA0001.jpg"
 date: "2026-04-24"
 category: "healthcare ai"
-tags: ["SuvroGhosh", "Healthcare IT", "healthcare ai", "AI Health Insurance Surreptitious Risk Scoring", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Somewhat Skewed","Appeals","Data","Model","Healthcare","Members","Review","Utilization","Inferred","Fraud"]
 published: true
 color: "indigo"
 ---

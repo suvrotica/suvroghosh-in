@@ -4,7 +4,7 @@ description: "A personal analytical essay on why deep skepticism is not cynicism
 date: "2026-05-31"
 thumbnail: "/images/Compress_20260531_125421_1265.jpg"
 category: "Personal Essay"
-tags: ["India", "Indian Society", "Skepticism", "Critical Thinking", "Scientific Temper", "Corruption", "Kakistocracy", "Nepotism", "Superstition", "Jingoism", "Propaganda", "Media Literacy", "Indian Politics", "Social Commentary", "Calcutta", "Kolkata", "Bengali Life", "Middle Class India", "Lower Middle Class India", "Urban India", "Indian Bureaucracy", "Indian Media", "Indian Family", "Indian Workplace", "Rationalism", "Atheism", "Everyday India", "Civic Life", "Public Trust", "SuvroGhosh"]
+tags: ["Skepticism","Jingoism","India","Earned","Propaganda","Ask","Speech","UPI","Trust","Glowing"]
 published: true
 color: "amber"
 ---

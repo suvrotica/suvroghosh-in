@@ -4,7 +4,7 @@ description: "A technically serious look at how sweets, rice, refined starch, hi
 date: "2026-04-29"
 thumbnail : "/images/Compress_20260429_200325_5063.jpg"
 category: "Health & Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Health & Society", "Calcutta Carbohydrate Problem", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
+tags: ["Insulin Resistance","Fatty Liver","Blood Pressure","Glucose","Metabolic","Liver","Insulin","Carbohydrate","Protein","Sugar"]
 published: true
 color: "amber"
 ---

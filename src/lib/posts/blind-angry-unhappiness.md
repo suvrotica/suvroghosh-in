@@ -4,7 +4,7 @@ description: "A Calcutta essay on heat, age, bipolar irritability, loneliness, a
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_201237_7311.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Mental Health Essay", "Bipolar Depression", "Anxiety", "Loneliness", "Urban India", "Indian Summer", "Heatwave", "Aging", "Anger", "Hope", "Despair", "Single Man", "Lower Middle Class", "Indian Life", "Personal Blog", "SuvroGhosh"]
+tags: ["Unhappiness","Irritability","Unhappy","Frightens","Loneliness","Contained","Anger","Blaming","Blind","Sleep"]
 published: true
 color: "slate"
 ---

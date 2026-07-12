@@ -4,7 +4,7 @@ description: "When a trail of strange white rice and a missing bicycle pump lead
 date: "2026-07-04"
 thumbnail: "/images/Compress_20260704_193744_4418.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Children's Fiction", "Adventure", "Curious", "Justice"]
+tags: ["Faded Sari","Inspector Banerjee","Low Chord","Loudspeaker Man","Mustard Oil","Jojo","Mimi","Polo","Harmonium","Rice"]
 published: true
 color: "#E67E22"
 ---

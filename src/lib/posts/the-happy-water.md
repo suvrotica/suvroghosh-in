@@ -4,7 +4,7 @@ description: "After a dismissed water department employee poisons Kolkata’s ol
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_103901_1947.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Kolkata", "Water", "Urban Decay", "Crime", "SuvroGhosh"]
+tags: ["Partha Pal","Eastern Spring","Pumping Station","Bottling Plant","Tala Pumping","Ira","Partha","Rafiq","Bhattacharya","Tala"]
 published: true
 color: "blue"
 ---

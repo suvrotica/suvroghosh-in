@@ -4,7 +4,7 @@ description: "A personal essay on a PhD advisor, Bengal’s habit of losing bril
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_202547_7320.jpg"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengal", "Bengali Essay", "Indian Academia", "Brain Drain", "PhD Advisor", "Samir Ranjan Das", "Visual Thinking", "Artificial Intelligence", "AI Inequality", "Gini Index", "OPNET", "InfraNodus", "Technology Reflection", "Middle Class India", "Academic Life", "Indian Education", "Science Writing", "Personal Technology Essay", "Bengali Intellectual Life", "US India", "Dengue Kolkata", "Public Health India", "Creative Nonfiction"]
+tags: ["Stony Brook","Samirda","PhD","University","Samir","Stony","Brook","Minds","Wireless","Inequality"]
 published: true
 color: "indigo"
 ---

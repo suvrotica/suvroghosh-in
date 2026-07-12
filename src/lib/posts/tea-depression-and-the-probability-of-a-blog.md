@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in Calcutta asks whether depression and 
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_172945_5757.jpg"
 category: "Personal Essay"
-tags: ["Depression", "Bipolar Disorder", "Anxiety", "Mental Health", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Personal Essay", "Philosophy", "Mathematics", "Probability", "Introspection", "Writing Life", "Creativity", "Mania", "Caffeine", "Tea", "Lower Middle Class", "Indian Life", "Urban Loneliness", "Existential Essay", "Readable Philosophy", "SuvroGhosh"]
+tags: ["Depression","Supplies","Mania","Normal","Headache","Tea","Mathematics","Caffeine","Damage","Turn"]
 published: true
 color: "brown"
 ---

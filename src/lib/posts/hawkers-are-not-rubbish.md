@@ -4,7 +4,7 @@ description: "A Calcutta street-level argument against evicting hawkers without 
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_083931_1020.jpg"
 category: "Social Commentary"
-tags: ["Calcutta", "Kolkata", "Hawker Eviction", "Street Vendors", "Urban Poverty", "Livelihood Rights", "Informal Economy", "West Bengal", "Howrah Station", "Sealdah", "New Market", "Street Vendors Act 2014", "Rehabilitation", "Unemployment", "Urban Planning", "Pavement Politics", "Lower Middle Class India", "Economic Justice", "Public Space", "Bulldozer Politics", "Kolkata Poverty", "Indian Cities", "Social Justice", "Working Poor", "Livelihood Crisis", "Inflation", "Jobs Crisis", "Civic Governance", "Human Rights", "Bengali Essay", "SuvroGhosh"]
+tags: ["Vending Zones","Street Vending","Street Vendors","Less Visible","Public Space","Livelihood","Hawker","Zones","Hawkers","Extortion"]
 published: true
 color: "red"
 ---

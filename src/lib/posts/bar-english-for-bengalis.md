@@ -4,7 +4,7 @@ description: "A sharp, funny, plain-English Kolkata guide to American-style bar 
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_100111_1953.jpg"
 category: "Culture"
-tags: ["Kolkata", "Calcutta", "Bengali Life", "Bengali Humor", "Indian Humor", "Bar Culture", "Drinking Culture", "Alcohol Vocabulary", "Cocktail Guide", "Whiskey Guide", "Proof Alcohol", "ABV", "American Bars", "British Proof", "Happy Hour", "Mocktails", "Martini", "Craft Beer", "IPA", "Urban India", "Middle Class India", "Language Guide", "English Vocabulary", "Satire", "Cultural Commentary", "SuvroGhosh"]
+tags: ["Happy Hour","Rocks Means","Proof System","Call Means","ABV","Alcohol","Drink","Whiskey","Vermouth","Ice"]
 published: true
 color: "#6B3A1E"
 ---

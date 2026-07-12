@@ -4,7 +4,7 @@ description: "A failed pathology lab assistant in Calcutta thinks he has found a
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_055556_6872.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Horror", "Calcutta", "Speculative Fiction", "Medical Horror"]
+tags: ["Diagnostic Center","Partha","Nilotpal","Hari","Diagnostic","Mother","Queues","Plastic","Bhowmik","Incubator"]
 published: true
 color: "charcoal"
 ---

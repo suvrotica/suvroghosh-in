@@ -4,7 +4,7 @@ description: "A Calcutta monsoon essay about waterlogging, disaster television, 
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_042233_3922.jpg"
 category: "Essay"
-tags: ["Calcutta", "Kolkata", "Monsoon", "Waterlogging", "Urban Flooding", "Civic Failure", "Indian Cities", "Kolkata Rain", "Disaster Media", "Indian Television News", "Urban Infrastructure", "Potholes", "Drainage", "Climate Risk", "Municipal Governance", "Lower Middle Class Life", "Bengali Essay", "Satirical Essay", "Personal Essay", "Monsoon Essay", "Civic Satire", "Media Criticism", "Environmental Decay", "City Life", "South Kolkata", "SuvroGhosh"]
+tags: ["Reporter","Pothole","Rain","Television","Anchor","Citizen","Drain","Blame","Disaster","Adjustment"]
 published: true
 color: "slate"
 ---

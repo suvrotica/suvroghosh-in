@@ -4,7 +4,7 @@ description: "A darkly comic personal essay on aging, bipolar depression, shrink
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_165336_6854.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression Writing", "Aging", "Middle Age", "Calcutta", "Kolkata Life", "South Calcutta", "Loneliness", "Hope", "Hopelessness", "AI Anxiety", "Artificial Intelligence", "India", "America", "Trump Era", "Healthcare IT", "Single Life", "Lower Middle Class", "Urban India", "Existential Essay", "Dark Humor", "Bengali Writer", "SuvroGhosh"]
+tags: ["Black Hole","Maybe","Rice","Twenty-Five","Black","Hope","Steam","Hole","Positive","Towel"]
 published: true
 color: "charcoal"
 ---

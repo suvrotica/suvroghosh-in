@@ -4,7 +4,7 @@ description: "A skeptical, comic, and human argument against the new cheerful ad
 date: "2026-06-20"
 thumbnail: "/images/Compress_20260620_140958_8565.jpg"
 category: "Technology"
-tags: ["AI", "Artificial Intelligence", "Automation", "Future of Work", "Jobs", "Job Loss", "Labor Market", "Middle Class India", "Calcutta", "Kolkata", "Startup Culture", "Entrepreneurship", "Creator Economy", "Gig Economy", "Freelancing", "Economic Anxiety", "Underemployment", "Technology Criticism", "AI Hype", "AI Bubble", "AI Tools", "Generative AI", "Prompt Engineering", "Personal Branding", "Digital Work", "Capitalism", "SuvroGhosh"]
+tags: ["AI","One-Person","Show","Knot","Advice","Generate","Summarize","Column","Business","Help"]
 published: true
 color: "slate"
 ---

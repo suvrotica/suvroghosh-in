@@ -4,7 +4,7 @@ description: "A Calcutta preschool receives a carton of donated picture books th
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_045407_7366.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Ghost Story", "Calcutta", "Synthetic Drugs", "SuvroGhosh"]
+tags: ["Yellow Duck","Duck Book","Reading Corner","Good Morning Moon","Tea Stall","Nandita","Mou","Tia","Books","Arka"]
 published: true
 color: "charcoal"
 ---

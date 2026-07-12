@@ -4,7 +4,7 @@ description: "A personal essay about a middle-aged Bengali man in the southern f
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_113206_6041.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Middle Class", "Bengali Personal Writing", "Depression Essay", "Bipolar Depression", "Anxiety", "Loneliness", "Middle Age", "Unemployment", "Financial Anxiety", "Single Life", "Divorced Life", "Lower Middle Class Life", "South Calcutta", "Calcutta Suburbs", "Mental Health Writing", "Suspended Animation", "Waiting For Life", "Existential Essay", "Urban Loneliness", "Indian Middle Class", "Bengali Man", "Life Restart", "Personal Struggle", "Consulting Life", "Dignity", "Shame", "Hope", "SuvroGhosh"]
+tags: ["Waiting Room","Waiting","Shrinks","Wait","Waits","Mornings","Give","Stuck","Contain","Messages"]
 published: true
 color: "slate"
 ---

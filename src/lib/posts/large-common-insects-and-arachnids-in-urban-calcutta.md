@@ -4,7 +4,7 @@ description: "A field-wise, city-wise guide to the conspicuous insects and arach
 thumbnail : "/images/IMG-20260424-WA0004.jpg"
 date: "2026-04-24"
 category: "natural history"
-tags: ["SuvroGhosh", "Calcutta", "natural history", "Large Common Insects And Arachnids In Urban Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Bed Bugs","Host Plants","Insects","Arachnids","Termites","Spiders","Ants","Spider","Moths","Wasps"]
 published: true
 color: "green"
 ---

@@ -4,7 +4,7 @@ description: "A middle-aged Bengali healthcare IT architect from Kolkata wrestle
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_162504_4412.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "India vs China", "Kolkata", "Calcutta", "Digital Health", "Hospital Systems", "Electronic Health Records", "Healthcare Architecture", "Indian Infrastructure", "Technology and Society", "Public Health", "Middle Class India", "Data Systems", "Interoperability", "FHIR", "HL7", "Healthcare Reform", "Indian Cities", "System Failure", "Urban Decay", "Medical Technology", "Indian Healthcare", "Health Informatics", "Software Architecture", "Bengali Writing", "Tech Blog", "Healthcare Data", "Legacy Systems", "Healthcare Analytics"]
+tags: ["Healthcare","China","Patient","Writing","Diabetes","Systems","Digital","Data","India","Interoperability"]
 published: true
 color: "zinc"
 ---

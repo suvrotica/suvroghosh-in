@@ -4,7 +4,7 @@ description: "A sharp, darkly comic essay on depression, restraint, unpaid invoi
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_170300_0686.jpg"
 category: "Personal Essay"
-tags: ["Shiva", "Nilakantha", "Samudra Manthan", "Halahala", "Depression Essay", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Calcutta Essay", "Kolkata Writing", "Bengali Life", "Middle Age", "Lower Middle Class Life", "Unpaid Invoices", "Consulting Life", "Indian Society", "Indian Mythology", "Atheist Writing", "Personal Essay", "Satirical Essay", "Dark Humor", "Civilization", "Rage", "Humiliation", "Loneliness", "SuvroGhosh"]
+tags: ["Poison","Throat","Shiva","Nectar","Rage","Immortality","Swallow","Restraint","Produces","Neck"]
 published: true
 color: "blue"
 ---

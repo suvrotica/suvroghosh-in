@@ -4,7 +4,7 @@ description: "A satirical essay on the overeducated, under-executing Bengali mal
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_132554_4247.jpg"
 category: "Personal Essay"
-tags: ["Bengali Satire", "Calcutta Essay", "Kolkata Writing", "Bengali Middle Class", "Self Sabotage", "Overthinking", "Adda Culture", "Indian Society", "Bengal Culture", "Middle Age", "Failure", "Depression Writing", "Anxiety Writing", "Indian Masculinity", "Lower Middle Class Life", "Personal Essay", "Humor Essay", "Social Satire", "Literary Satire", "SuvroGhosh"]
+tags: ["Phone Calls","Mentions","Bengali","Adda","Ditch","Revolution","Surface","Bengal","Football","Action"]
 published: true
 color: "brown"
 ---

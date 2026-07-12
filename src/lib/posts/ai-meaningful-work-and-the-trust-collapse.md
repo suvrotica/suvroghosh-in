@@ -4,7 +4,7 @@ description: "A technically serious reflection on why AI does not merely automat
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_182117_7717.jpg"
 category: "Artificial Intelligence"
-tags: ["AI", "Artificial Intelligence", "Generative AI", "GenAI", "AI Slop", "Workslop", "Future of Work", "Meaningful Work", "Creative Work", "Human Creativity", "AI and Jobs", "AI Job Loss", "AI Automation", "Trust Collapse", "Synthetic Media", "Synthetic Content", "Digital Trust", "AI Ethics", "AI Productivity", "Attention Economy", "Human Authorship", "AI Content Flood", "Creative Economy", "Writers and AI", "Artists and AI", "AI Detection", "Provenance", "Authenticity", "Human Work", "Machine Slop", "Search Engine Optimization", "SEO", "Digital Culture", "Engineering Blog", "SuvroGhosh"]
+tags: ["Synthetic","AI","Rubbish","Human","Work","Machine","Song","Output","Learns","Slop"]
 published: true
 color: "slate"
 ---

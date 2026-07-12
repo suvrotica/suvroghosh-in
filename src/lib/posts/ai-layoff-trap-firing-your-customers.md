@@ -4,7 +4,7 @@ description: "A readable dissection of The AI Layoff Trap, the paper arguing tha
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_160236_6664.jpg"
 category: "AI Economics"
-tags: ["Artificial Intelligence", "AI Layoffs", "AI Job Loss", "Automation", "Future of Work", "AI Economy", "Economic Collapse", "Demand Externality", "AI Layoff Trap", "Universal Basic Income", "UBI", "Automation Tax", "Pigouvian Tax", "Tech Layoffs", "White Collar Jobs", "Software Jobs", "AI Productivity", "AI Business Risk", "Labor Market", "Capitalism", "Business Strategy", "AI Infrastructure", "AI Policy", "SuvroGhosh"]
+tags: ["AI Layoff","Layoff Trap","Firm","Firms","AI","Automation","Demand","Automates","Spending","Company"]
 published: true
 color: "slate"
 ---

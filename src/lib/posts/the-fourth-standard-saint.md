@@ -4,7 +4,7 @@ description: "A barely literate man finds an old book on persuasion and becomes 
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_134928_8970.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Faith"]
+tags: ["Tapan Baba","Red Ribbon","Tea Seller","Blue Cover","Madhabi","Tapan","Rimli","Mili","Book","Baba"]
 published: true
 color: "saffron"
 ---

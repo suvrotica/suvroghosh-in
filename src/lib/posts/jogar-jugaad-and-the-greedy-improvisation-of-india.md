@@ -4,7 +4,7 @@ description: "A sharp essay on how improvisation, once a survival skill, mutates
 thumbnail : "/images/IMG-20260426-WA0001.jpg" 
 date: "2026-04-26"
 category: "India"
-tags: ["SuvroGhosh", "India", "Jogar Jugaad And The Greedy Improvisation Of India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Ask Whether","Jugaad","India","Improvisation","Corruption","Exceptions","Resilience","Repairing","Humane","Rule"]
 published: true
 color: "#b45309"
 ---

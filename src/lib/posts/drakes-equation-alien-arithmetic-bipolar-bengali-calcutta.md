@@ -4,7 +4,7 @@ description: "A Calcutta-flavored explanation of Drake’s equation, the Fermi p
 date: "2026-05-19"
 thumbnail: "/images/Compress_20260519_212615_5409.jpg"
 category: "Science"
-tags: ["Science", "Astronomy", "Astrobiology", "Drake Equation", "Fermi Paradox", "Great Filter", "Extraterrestrial Life", "Alien Life", "Life Beyond Earth", "Milky Way", "Exoplanets", "SETI", "Biosignatures", "Sara Seager", "Frank Drake", "Rare Earth Hypothesis", "Science Essay", "Popular Science", "Calcutta", "Kolkata", "Bengali Essay", "Bengali Science Writing", "Bipolar Bengali", "Atheist Writing", "Cosmic Loneliness", "Space Science", "Science Communication", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Drake Equation","Fermi Paradox","Great Filter","Space Telescope","Drake","Planets","Equation","Detectable","Civilizations","Galaxy"]
 published: true
 color: "#202A44"
 ---

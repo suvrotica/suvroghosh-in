@@ -4,7 +4,7 @@ description: "Meditation is simple. Living inside your own head is not. A sleepl
 date: "2026-02-11"
 thumbnail: "/images/Compress_20260513_042026_6712.jpg"
 category: "Calcutta"
-tags: ["Mindfulness", "Meditation", "Calcutta", "Kolkata", "Bipolar Disorder", "Mental Health", "Anxiety", "Writing", "Insomnia", "Lower Middle Class Life", "Indian Life", "Tea Stall", "Urban India", "Stray Cats", "Loneliness", "Middle Age", "Depression", "Neuroscience", "Default Mode Network", "Ordinary Life", "Bengali Blogger", "Street Philosophy", "4AM Thoughts", "Human Condition", "Modern Life", "Overthinking", "Existential Humor", "City Life", "Mindfulness Meditation", "Mental Noise", "Self Reflection", "Calcutta Weather", "Indian Society", "Daily Life", "SuvroGhosh"]
+tags: ["Meditation","Mindfulness","Wanders","Writing","Somebody","Bring","Chewing","Thoughts","Honestly","Boring"]
 published: true
 color: "black"
 ---

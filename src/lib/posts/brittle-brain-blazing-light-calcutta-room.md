@@ -4,7 +4,7 @@ description: "A Calcutta rumination on bipolar fear, middle age, loneliness, sma
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_070709_9817.jpg"
 category: "Personal"
-tags: ["Rumination", "Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression", "Anxiety", "Loneliness", "Middle Age", "Single Life", "Calcutta", "Kolkata", "Lower Middle Class Life", "Bengali Writing", "Personal Essay", "Autobiographical Essay", "Fear", "Fragility", "Emotional Survival", "Mental Health Writing", "Indian Middle Class", "Urban Loneliness", "Precarious Income", "Existential Anxiety", "Modern Life", "News Anxiety", "Brittle Brain", "Aging", "Poverty", "Room As Prison", "Psychological Reflection", "Video", "SuvroGhosh"]
+tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Cup","Rise","Fear","Mind"]
 published: true
 color: "#374151"
 ---

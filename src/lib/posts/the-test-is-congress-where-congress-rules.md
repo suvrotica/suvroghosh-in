@@ -4,7 +4,7 @@ description: "A skeptical but sympathetic essay on Rahul Gandhi, Congress, corru
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_102539_9599.jpg"
 category: "Politics"
-tags: ["India Politics", "Rahul Gandhi", "Indian National Congress", "Congress Party", "Indian Democracy", "Constitution of India", "Corruption in India", "Political Reform", "Electoral Reform", "Anti Defection Law", "Karnataka Politics", "Telangana Politics", "Himachal Pradesh Politics", "Dynasty Politics", "Party Democracy", "Constitutional Reform", "Voter Power", "Common Man", "Political Accountability", "Indian Opposition", "SuvroGhosh"]
+tags: ["Rahul Gandhi","Criminal Cases","Plastic Chair","Congress","Rahul","Party","Gandhi","Karnataka","Democracy","PRS"]
 published: true
 color: "indigo"
 ---

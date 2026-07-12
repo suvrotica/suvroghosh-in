@@ -4,7 +4,7 @@ description: "When Priya's uncle vanishes into the Hooghly River on a sweltering
 date: "2026-06-30"
 thumbnail: "/images/Compress_20260630_200233_3781.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Children's Fiction", "Adventure", "Warm", "Curiosity"]
+tags: ["Thorn Bush","Bicycle Horn","Ferry Ghat","Priya Put","Priya","Kaku","Crate","Fish","Didima","River"]
 published: true
 color: "#2E8B57"
 ---

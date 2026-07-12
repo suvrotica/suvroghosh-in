@@ -4,7 +4,7 @@ description: "When a maintenance painter on Howrah Bridge notices bone-white thr
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_135747_7487.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Creature Horror", "Dread", "Survival"]
+tags: ["Pedestrian Path","Inspection Hatch","Howrah Bridge","Nirmal Cut","Nirmal","Spider","Mukherjee","Bishu","Rini","Bridge"]
 published: true
 color: "bone-white"
 ---

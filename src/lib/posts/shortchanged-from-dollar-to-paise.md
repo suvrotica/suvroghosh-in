@@ -4,7 +4,7 @@ description: "A raw Calcutta essay on invisibility, America, boredom, return, en
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_173112_2115.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Essay", "Kolkata Life", "Bengali Writing", "Indian Middle Class", "Lower Middle Class Life", "America To India", "Reverse Migration", "Returning To India", "Indian Entrepreneurship", "Startup Failure", "Career Regret", "Life After Fifty", "Boredom", "Hedonic Adaptation", "Bipolar Depression", "Anxiety", "Social Invisibility", "Indian Society", "Bengali Culture", "Modi Era", "Urban India", "Indian Startups", "Life Choices", "Personal Blog", "SuvroGhosh"]
+tags: ["San Antonio","Slime","Boredom","I-35","Busy-small","Crotch","Mistook","America","Highway","WWA"]
 published: true
 color: "slate"
 ---

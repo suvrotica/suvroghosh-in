@@ -4,7 +4,7 @@ description: "A system-level look at how Indian kitchens are adapting to the Liq
 thumbnail : "/images/IMG-20260424-WA0005.jpg"
 date: "2026-04-24"
 category: "energy"
-tags: ["SuvroGhosh", "India", "energy", "Hormuz Lpg Shortage Indian Cooking Choices", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
+tags: ["Saves Fuel","Rice Dal","Indian Cooking","Pressure Cooker","LPG","Cooking","Induction","Fuel","PNG","Biogas"]
 published: true
 color: "amber"
 ---

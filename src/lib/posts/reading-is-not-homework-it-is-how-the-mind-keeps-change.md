@@ -4,7 +4,7 @@ description: "A plainspoken defense of reading without making it a religion. Boo
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_211115_5741.jpg"
 category: "Essay"
-tags: ["Reading", "Books", "Learning", "Education", "Attention", "Human Intelligence", "Artificial Intelligence", "AI", "Deep Reading", "Knowledge Work", "Self Learning", "Critical Thinking", "Cognitive Science", "Digital Culture", "Book Culture", "Lifelong Learning", "Kolkata Essays", "Calcutta Life", "Middle Class Life", "Personal Essay", "SuvroGhosh"]
+tags: ["Reading","Mind","Books","Stay","Difficulty","Shelves","Knowledge","Friction","Explain","Summary"]
 published: true
 color: "amber"
 ---

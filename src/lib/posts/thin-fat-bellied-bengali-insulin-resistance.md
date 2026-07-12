@@ -4,7 +4,7 @@ description: "A Kolkata street-level essay on the thin-fat Bengali body, insulin
 date: "2026-05-10"
 thumbnail: "/images/Compress_20260510_221242_2792.jpg"
 category: "Health"
-tags: ["Video", "Health", "Metabolism", "Insulin Resistance", "Thin Fat", "Thin Fat Bengali", "Bengali Health", "South Asian Diabetes", "Indian Diabetes Risk", "Kolkata Health", "Calcutta Health", "Belly Fat", "Visceral Fat", "Central Obesity", "Metabolic Syndrome", "Prediabetes", "Type 2 Diabetes", "Fatty Liver", "Waist Circumference", "Bengali Diet", "Rice And Diabetes", "South Asian Metabolism", "Urban India Health", "Middle Age Health", "Men Health", "Public Health India", "Lifestyle Disease", "SuvroGhosh"]
+tags: ["Insulin Resistance","Tea Stall","Fat","Insulin","Mishti","Muscle","Liver","Sugar","Belly","BMI"]
 published: true
 color: "amber"
 ---

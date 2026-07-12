@@ -4,7 +4,7 @@ description: "A reflection on human potential, broken incentive structures, AI a
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260512_193939_9310.jpg"
 category: "Artificial Intelligence"
-tags: ["AI alignment", "human intelligence", "education systems", "incentives", "India society", "talent migration", "system design", "learning environments", "cognitive development", "social structure", "inequality", "behavioral systems"]
+tags: ["Outlives","Systems","Minds","Environments","Optimize","Alignment","Environment","Drift","Intelligence","Rewards"]
 published: true
 color: "muted"
 ---

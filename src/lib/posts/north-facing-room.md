@@ -4,7 +4,7 @@ description: "During a June heat wave, a solar storm knocks Calcutta dark, and a
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_123944_4675.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Heat Dread", "Moral Choice"]
+tags: ["Azure Nest","Shantiniketan Apartments","Courier Boy","North-Facing Room","Tram Wires","Partha","Noor","North-Facing","Basu","Shantiniketan"]
 published: true
 color: "ember"
 ---

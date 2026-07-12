@@ -4,7 +4,7 @@ description: "A first-person account of a decade spent outside conventional corp
 thumbnail : "/images/IMG-20260425-WA0007.jpg"
 date: "2026-04-25"
 category: "Healthcare IT"
-tags: ["SuvroGhosh", "Healthcare IT", "Explaining The Healthcare IT Gap As Continuity", "Healthcare Data", "Health IT Architecture", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["United States","Health Science","Healthcare","Data","Clinical","Representation","VA","Systems","FHIR","AI"]
 published: true
 color: "slate"
 ---

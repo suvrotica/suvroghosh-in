@@ -4,7 +4,7 @@ description: "A personal essay on middle-aged male unattractiveness as a whole w
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_184824_4565.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Middle Age", "Male Loneliness", "Male Depression", "Bengali Essay", "Calcutta Essay", "Kolkata Life", "Lower Middle Class", "Single Man", "Aging Men", "Male Insecurity", "Romantic Irrelevance", "Social Status", "Financial Ruin", "Dental Decay", "Self Image", "Mental Health Writing", "Depression Essay", "Loneliness Essay", "Bipolar Depression", "Class Anxiety", "Urban Loneliness", "Unattractive Man", "Modern Masculinity", "Life After Fifty", "Human Condition", "Autobiographical Essay", "SuvroGhosh"]
+tags: ["Dental","Heartbreak","Money","Shirt","Teeth","Possibility","Personality","Posture","Middle-Aged","Beauty"]
 published: true
 color: "slate"
 ---

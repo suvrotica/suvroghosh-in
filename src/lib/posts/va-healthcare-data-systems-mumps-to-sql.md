@@ -4,7 +4,7 @@ description: "A technical explanation of how Veterans Affairs healthcare data mo
 thumbnail :  "/images/IMG-20260425-WA0005.jpg" 
 date: "2026-04-25"
 category: "Healthcare IT"
-tags: ["SuvroGhosh", "Healthcare IT", "VA Healthcare Data Systems Mumps To Sql", "Healthcare Data", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay"]
+tags: ["Patient Record","SQL","VistA","VA","FileMan","Data","MUMPS","Healthcare","Clinical","Medication"]
 published: true
 color: "blue"
 ---

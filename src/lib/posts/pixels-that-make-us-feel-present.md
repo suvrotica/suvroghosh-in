@@ -4,7 +4,7 @@ description: "Social media and YouTube do not merely show us the world; they len
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_224335_5080.jpg"
 category: "Society"
-tags: ["Social Media", "YouTube", "Digital Immersion", "Attention Economy", "Algorithmic Manipulation", "Emotional Contagion", "Media Literacy", "Online Persuasion", "Digital Addiction", "False Participation", "Internet Culture", "Doomscrolling", "AI Algorithms", "Misinformation", "Disinformation", "Calcutta Essay", "Middle Class India", "Digital Psychology", "Human Behavior", "SuvroGhosh"]
+tags: ["Clip","Thumbnail","Participation","Offers","Real","Doorway","Recommendation","Ask","YouTube","Emotional"]
 published: true
 color: "amber"
 ---

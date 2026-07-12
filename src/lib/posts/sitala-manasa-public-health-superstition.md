@@ -4,7 +4,7 @@ description: "A technical and historical reading of Bengal’s disease and serpe
 thumbnail : "/images/IMG-20260426-WA0014.jpg"
 date: "2026-04-26"
 category: "Public Health"
-tags: ["SuvroGhosh", "Public Health", "Sitala Manasa Public Health Superstition", "Health IT Architecture", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Health Level Seven","Public Health","Data Model","Maa Sitala","Maa Manasa","Manasa","Sitala","Snakebite","Antivenom","Rural"]
 published: true
 color: "amber"
 ---

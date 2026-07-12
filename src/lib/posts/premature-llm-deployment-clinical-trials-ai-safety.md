@@ -4,7 +4,7 @@ description: "A plainspoken, skeptical, and balanced post on why LLMs should not
 date: "2026-05-11"
 thumbnail :  "/images/IMG-20260427-WA0008.jpg" 
 category: "AI Safety"
-tags: ["Artificial Intelligence", "AI Safety", "Large Language Models", "LLM Risk", "ChatGPT", "AI Chatbots", "Healthcare AI", "Mental Health AI", "Digital Health", "Clinical Trials", "AI Regulation", "AI Ethics", "AI Governance", "Patient Safety", "AI Companions", "Responsible AI", "Technology Policy", "Human Computer Interaction", "Healthcare IT", "SuvroGhosh"]
+tags: ["LLMs","Chatbot","Pill","Users","Conversation","Engagement","Boring","Drug","User","Software"]
 published: true
 color: "slate"
 ---

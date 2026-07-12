@@ -4,7 +4,7 @@ description: "Healthcare does not wait for a dramatic philosopher with a lever. 
 date: "2026-05-29"
 thumbnail: "/images/Compress_20260529_135024_4353.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "Healthcare AI", "Clinical Informatics", "Digital Health", "Healthcare Ethics", "Trolley Problem", "Medical Ethics", "EHR", "FHIR", "HL7", "Clinical Decision Support", "CDS", "Interoperability", "Health Data", "Semantic Interoperability", "Health Systems", "Hospital Workflow", "Triage", "Prior Authorization", "Population Health", "Risk Models", "Healthcare Architecture", "Data Governance", "Healthcare Automation", "Algorithmic Bias", "Clinical Workflows", "Health Policy", "Medical Decision Making", "Care Delivery", "Healthcare Systems Thinking", "Health IT Architecture", "Patient Safety", "AI Governance", "Healthcare Data Quality", "Health Analytics", "Ethical AI", "Clinical Risk"]
+tags: ["Sees No-Show","Data Exchange","Research Data","Trolley Problem","Representation Failure","Trolley","Healthcare","Clinical","Model","Patient"]
 published: true
 color: "black"
 ---

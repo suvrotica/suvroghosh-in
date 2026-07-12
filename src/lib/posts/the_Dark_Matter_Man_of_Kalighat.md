@@ -4,7 +4,7 @@ description: "A failed cosmologist turned hospital data worker meets a future vi
 date: "2026-05-29"
 thumbnail: "/images/Compress_20260529_110838_8356.jpg"
 category: "Short Fiction"
-tags: ["Science Fiction", "Kolkata", "Dark Matter", "Speculative Fiction", "Horror", "SuvroGhosh"]
+tags: ["Eastern Regency","Riddhi Sen","Mira Nandi","Riddhi Asked","Dark Matter","Abhra","Mira","Nandi","Haru","Subtraction"]
 published: true
 color: "charcoal"
 ---

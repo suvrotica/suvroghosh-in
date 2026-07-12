@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in Kolkata wrestles with depression, fai
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_031419_9577.jpg"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "existential crisis", "bengali hikikomori", "depression", "mental health", "midlife crisis", "kolkata life", "loneliness", "alienation", "nihilism", "philosophy", "anxiety", "bipolar depression", "self reflection", "underachievement", "urban isolation", "modern life", "social critique", "dark humor", "identity crisis", "psychology", "inner darkness", "lost potential", "ordinary life", "calcutta essays", "human condition", "despair", "introspection"]
+tags: ["Japanese","Everybody","Somebody","Completely","Anxiety","Depression","Feels","Sadness","Kolkata","Meanwhile"]
 published: true
 color: "#1f2937"
 ---

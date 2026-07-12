@@ -4,7 +4,7 @@ description: "Claude Fable 5 is not just marketing incense, but neither is it a 
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_100245_5058.jpg"
 category: "AI"
-tags: ["AI", "Artificial Intelligence", "Claude Fable 5", "Claude Mythos 5", "Anthropic", "Generative AI", "Frontier AI", "AI Agents", "Agentic AI", "Cybersecurity AI", "AI Safety", "AI Hype", "AI Jobs", "Future of Work", "Technology Essay", "Calcutta Blog", "Kolkata Writer", "Bengali Essay", "Middle Class India", "SuvroGhosh"]
+tags: ["Sliced Bread","Claude Fable","Fable","Mythos","Claude","Anthropic","Model","Sliced","Bread","Inherit"]
 published: true
 color: "purple"
 ---

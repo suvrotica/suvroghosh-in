@@ -4,7 +4,7 @@ description: "What happens if intelligent machines invent their own rules instea
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_020201_1913.jpg"
 category: "Artificial Intelligence"
-tags: ["Artificial Intelligence", "AI Ethics", "Isaac Asimov", "Robotics", "Machine Intelligence", "Future Technology", "Philosophy of Technology", "AI Alignment", "Large Language Models", "Machine Learning", "Automation", "Human Nature", "Technology and Society", "Calcutta Essays", "Science Writing", "Speculative Technology", "Existential Risk", "Digital Civilization", "Computing", "Entropy", "Consciousness", "Algorithms", "Tech Culture", "AI Safety", "Software Systems", "Future of Humanity", "Indian Tech Writing", "Longform Essays", "Thought Experiment", "Robots"]
+tags: ["Hates Nothing","Humans","Humanity","Robot","Asimov","AI","Machines","Robots","Intelligence","Entropy"]
 published: true
 color: "zinc"
 ---

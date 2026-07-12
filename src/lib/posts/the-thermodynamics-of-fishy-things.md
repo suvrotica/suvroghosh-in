@@ -4,7 +4,7 @@ description: "A man in Calcutta, drenched in a record heat wave, reads about a J
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_021009_9774.jpg"
 category: "Artificial Intelligence"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Artificial Intelligence","Collective Intelligence","Sakana","Fugu","Fishy","Smells","Swimming","Fish","Collective","Sweat"]
 published: true
 color: "#4a5759"
 ---

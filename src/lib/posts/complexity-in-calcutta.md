@@ -4,7 +4,7 @@ description: "A personal reflection on living with the layered, unresolvable com
 date: "2026-06-24"
 thumbnail: "/images/Compress_20260624_172038_8596.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Complexity","Anxieties","Perpetual","Approximately","Mango","Genuine","Particular","Pleasures","Choices","Capacity"]
 published: true
 color: "#4a6741"
 ---

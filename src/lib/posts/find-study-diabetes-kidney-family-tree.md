@@ -4,7 +4,7 @@ description: "A human, layman-friendly explanation of the FIND study, diabetic k
 date: "2026-05-11"
 thumbnail: "/images/Compress_20260511_004312_2168.jpg"
 category: "Healthcare Science"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "FIND Study", "Family Investigation of Nephropathy and Diabetes", "Diabetes", "Diabetic Kidney Disease", "Kidney Disease", "Nephropathy", "Genetics", "Medical Genetics", "Family Health", "San Antonio", "UTHSCSA", "Mexican American Health", "Public Health", "Chronic Disease", "Diabetes Research", "Kidney Failure", "Albuminuria", "Creatinine", "Genome Research", "Health Data", "Clinical Research", "Layman Science", "Calcutta", "Kolkata", "Science Writing", "Healthcare Research"]
+tags: ["San Antonio","Kidney Disease","Urine Test","Blood Pressure","Kidney","DKD","Diabetes","FIND","Disease","Diabetic"]
 published: true
 color: "blue"
 ---

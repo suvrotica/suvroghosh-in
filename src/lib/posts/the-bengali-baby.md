@@ -4,7 +4,7 @@ description: "A winter afternoon in Calcutta becomes a meditation on sunlight, e
 date: "2024-12-01"
 thumbnail: "/images/Compress_20260522_033652_2556.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Bengal", "Bengali", "Calcutta", "Kolkata", "Personal Essay", "Winter Afternoon", "Urban Melancholy", "Exile", "Alienation", "Middle Class Bengal", "Lower Middle Class Life", "Bengali Identity", "Social Criticism", "Bengal Politics", "Cultural Decay", "Hope", "Failure", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Atheist Essay", "Indian Society", "Kolkata Life", "Boondocks of Calcutta", "Winter Smog", "Sunset Essay", "Modern Bengal", "Bengali Renaissance", "Postcolonial Bengal", "Indian Middle Class", "Civic Failure", "Urban India", "Social Commentary", "Literary Essay", "Readable Prose", "Wit", "Human Condition", "Loneliness", "Migration", "Leaving India", "Ordinary Life", "Philosophical Essay", "South Asian Writing", "Bengali Blog", "Suvro Ghosh"]
+tags: ["Baby","Sun","Bengal","Winter","Haze","Write","Clearly","Afternoon","Repaired","Rage"]
 published: true
 color: "#C8892B"
 ---

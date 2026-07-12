@@ -4,7 +4,7 @@ description: "When a large asteroid is announced to be heading for Calcutta, a h
 date: "2026-05-26"
 thumbnail: "/images/Compress_20260529_130736_6731.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Calcutta", "Science Fiction", "Mystery", "Asteroid", "Urban Horror"]
+tags: ["Delivery Rider","Shantimoy MEMORIAL","Coaching Center","Debabrata Sen","Hard Enough","Mira","Rafiq","Asteroid","Shantimoy","Debabrata"]
 published: true
 color: "indigo"
 ---

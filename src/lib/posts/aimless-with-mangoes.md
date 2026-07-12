@@ -4,7 +4,7 @@ description: "A middle-aged Calcutta essay on aimlessness, shrinking opportunity
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_110119_9578.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Life", "Kolkata Essay", "Middle Age", "Aimlessness", "Bengali Writing", "Lower Middle Class India", "Depression Writing", "Anxiety", "Bipolar Depression", "Urban India", "Indian Middle Age", "Loneliness", "Poverty", "Consulting Life", "Personal Blog", "Life Essay", "Aging", "Existential Essay", "SuvroGhosh"]
+tags: ["Mango","Aim","Aimlessness","Arrow","Autobiography","Crow","Fruit","Fifty-One","Fragments","Continues"]
 published: true
 color: "amber"
 ---

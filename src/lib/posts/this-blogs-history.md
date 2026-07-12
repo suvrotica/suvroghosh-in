@@ -4,7 +4,7 @@ description: "A personal travel-and-writing reflection on how this blog wandered
 date: "2024-01-03"
 thumbnail: "/images/Compress_20260506_165933_3433.jpg"
 category: "Personal Reflections"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "personal blog", "blogging journey", "travel writing", "Calcutta writer", "Kolkata writer", "Indian blogger", "middle aged writer", "personal reflections", "creative nonfiction", "writing life", "blog history", "digital publishing", "self publishing", "online writing", "second hand books", "Fiji travel", "New Zealand travel", "Abu Dhabi travel", "Dubai books", "reader attention", "internet culture", "loneliness and writing", "resilience", "independent writer", "literary essay", "modern Bengali life", "lower middle class life", "blog monetization", "SEO writing", "authentic voice"]
+tags: ["Future Self","Money Helps","Fiji","Bookstall","Dubai","Books","Money","Read","Second-Hand","Effort"]
 published: true
 color: "#dcb775"
 ---

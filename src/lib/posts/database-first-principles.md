@@ -4,7 +4,7 @@ description: "A practical architectural primer on what databases and data wareho
 thumbnail : "/images/IMG-20260423-WA0006.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
-tags: ["SuvroGhosh", "Healthcare IT", "healthcare-it", "Database First Principles", "Healthcare Data", "First Principles", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education"]
+tags: ["Health Level Seven","Data Quality","Data Warehouses","Warehouse","Operational","Authoritative","Architecture","Analytical","Event","Enterprise"]
 published: true
 color: "slate"
 ---

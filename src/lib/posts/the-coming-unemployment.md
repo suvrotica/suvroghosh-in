@@ -4,7 +4,7 @@ description: "AI will not end work with a trumpet blast. It will first remove th
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260506_211530_0762.jpg"
 category: "AI"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "AI unemployment", "artificial intelligence jobs", "future of work", "ghost jobs", "fake job postings", "entry level jobs", "white collar jobs", "AI layoffs", "India tech jobs", "Indian IT sector", "software jobs", "automation", "job market 2026", "tech layoffs", "AI and society", "middle class crisis", "educated unemployment", "AI economy", "labor market disruption", "career anxiety", "AI agents", "workforce automation", "social commentary", "dark humor", "Kolkata blog", "Calcutta writing"]
+tags: ["Software Systems","AI","Senior","Jobs","Hiring","Translate","Job","Entry-Level","Analyst","Automated"]
 published: true
 color: "slate"
 ---

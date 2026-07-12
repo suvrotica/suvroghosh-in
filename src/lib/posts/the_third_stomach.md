@@ -4,7 +4,7 @@ description: "At a small Calcutta temple a caretaker discovers that a holy man's
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_205242_2401.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Strange Horror", "Dread", "Faith"]
+tags: ["Bhola Baba","Donation Box","Bell Rang","Baba Mat","Sanctum Wall","Nirmal","Haradhan","Cow","Sefali","Sanctum"]
 published: true
 color: "Ochre"
 ---

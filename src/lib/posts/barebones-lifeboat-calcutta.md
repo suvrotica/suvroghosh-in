@@ -4,7 +4,7 @@ description: "A returnee’s life in Calcutta is not always a story of triumphan
 thumbnail : "/images/Compress_20260428_193723_3458.jpg"
 date: "2026-04-28"
 category: "Personal"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "America", "Calcutta", "Personal", "Barebones Lifeboat Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Consulting Income","United States","America","Returnee","Calcutta","Barebones","Pollution","Lifeboat","Bullies","Afford"]
 published: true
 color: "#7C3AED"
 ---

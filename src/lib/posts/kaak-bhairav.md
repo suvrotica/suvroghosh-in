@@ -4,7 +4,7 @@ description: "A Jadavpur computer science student builds a crow-headed humanoid 
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_151729_9684.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Science Fiction", "Calcutta", "Jadavpur", "AI", "Godman", "SuvroGhosh"]
+tags: ["Kaak Bhairav","Saffron Cloth","Bhairav Sat","Shrine Room","Crow Head","Pritam","Kaak","Nandini","Beak","Devotees"]
 published: true
 color: "Charcoal"
 ---

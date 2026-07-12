@@ -4,7 +4,7 @@ description: "Leonardo da Vinci’s Vitruvian Man is not just a famous Renaissan
 date: "2026-05-27"
 thumbnail: "/images/Compress_20260527_231749_9546.jpg"
 category: "Art History"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Vitruvian Man", "Leonardo da Vinci", "Renaissance Art", "Art History", "Human Proportion", "Geometry in Art", "Classical Architecture", "Vitruvius", "De Architectura", "Anatomy and Art", "Science and Art", "European Renaissance", "Humanism", "Symmetry", "Circle and Square", "Famous Drawings", "Cultural History", "Philosophy of Art", "Body and Geometry", "Da Vinci Drawing", "Western Art", "Art Explained", "Readable Art History", "Kolkata Essays", "Calcutta Writing"]
+tags: ["Leonardo","Drawing","Vitruvius","Vitruvian","Square","Circle","Geometry","Perfection","Roman","Proportions"]
 published: true
 color: "amber"
 ---

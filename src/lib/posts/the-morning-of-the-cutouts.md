@@ -4,7 +4,7 @@ description: "A boy wakes in a Howrah-side slum to find everyone gone, except fo
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_184755_5224.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Science Fiction", "Horror"]
+tags: ["SETU VISTA","Five Hundred Rupees","Likeness Asset","Paper Khokon","Paper Piyali","Tuhin","Robot","Khokon-kaku","Cutout","Piyali"]
 published: true
 color: "#3b3b36"
 ---

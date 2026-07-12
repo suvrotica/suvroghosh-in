@@ -4,7 +4,7 @@ description: "A system-level essay on how kinship, visibility, parsimony, and so
 date: "2026-04-30"
 thumbnail : "/images/Compress_20260429_181247_7639.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Society", "Kinship Range Limit Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
+tags: ["Middle-Aged Single Man","United States","People Ask","Invokes","Kinship","Hermit","Society","Frugal","Socially","Parent"]
 published: true
 color: "#6F5B4F"
 ---

@@ -4,7 +4,7 @@ description: "Politicians are rarely clean fairy-tale villains. More often, poli
 thumbnail : "/images/Compress_20260428_160801_1383.jpg"
 date: "2026-04-28"
 category: "Politics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Politics As A Machine For Spoiling Ordinary People", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Electoral Bonds","Political Finance","Citizens","Donor","Politicians","Electoral","Party","Bonds","Public","Parties"]
 published: true
 color: "red"
 ---

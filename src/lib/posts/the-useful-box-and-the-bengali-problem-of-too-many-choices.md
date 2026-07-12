@@ -4,7 +4,7 @@ description: "A clear, witty, human essay on why freedom without boundaries ofte
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_092735_5845.jpg"
 category: "Systems Thinking"
-tags: ["Systems Thinking", "Constraints", "Creativity", "Attention", "Focus", "Decision Making", "Productivity", "Modern Work", "Digital Distraction", "AI", "Healthcare IT", "Software Design", "Innovation", "Problem Solving", "Subtraction", "Mental Models", "Cognitive Science", "Behavioral Science", "Calcutta", "Kolkata Life", "Middle Class Life", "Bengali Essays", "Work Culture", "Personal Essay", "SuvroGhosh"]
+tags: ["Real Bottleneck","Useful Constraint","Constraint","Bottleneck","Expand","Box","Produces","Constraints","Features","Humane"]
 published: true
 color: "slate"
 ---

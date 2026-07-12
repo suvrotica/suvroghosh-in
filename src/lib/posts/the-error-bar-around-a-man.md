@@ -4,7 +4,7 @@ description: "A personal science essay about depression, bankruptcy, loneliness,
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_140717_7011.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Depression", "Bipolar Disorder", "Mental Health", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "Unemployment", "Bankruptcy", "Loneliness", "Science Writing", "Statistics", "Error Bar", "Uncertainty", "Self Worth", "Aging", "Lower Middle Class", "Anhedonia", "Social Judgment", "Healthcare", "Data", "SuvroGhosh"]
+tags: ["Error Bar","Mark Sheet","Error","Minus","Plus","Unattractive","Measurement","Rejected","Bankrupt","Bar"]
 published: true
 color: "slate"
 ---

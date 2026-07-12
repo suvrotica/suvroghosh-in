@@ -4,7 +4,7 @@ description: "A sharper, cleaner, more readable Calcutta monologue about being c
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_135723_3467.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta", "Kolkata", "Bengali Writing", "Middle Age", "Lower Middle Class", "Mental Health", "Bipolar Disorder", "Depression", "Anxiety", "Loneliness", "Social Shame", "Social Satire", "Indian Society", "Urban Life", "Class Anxiety", "Failure", "Respectability Politics", "Atheist Writing", "Dark Humor", "Rant Essay", "Monologue", "Memoir", "Creative Nonfiction", "Human Condition", "Modern Life", "South Calcutta"]
+tags: ["Rice Cooker","Clap","Low","Giggle","Curse","Subject","Language","Filth","Holy","Sometimes"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "In a heat-struck Calcutta, a dismissed municipal data analyst noti
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_063022_2977.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Climate Fiction", "Kolkata", "Urban Horror", "SuvroGhosh"]
+tags: ["Cleaner Version Meant","Lake Market","Red Zones","Aritra","Sanyal","Mili","Cockroach","Taps","Dum","Mother"]
 published: true
 color: "sickly green"
 ---

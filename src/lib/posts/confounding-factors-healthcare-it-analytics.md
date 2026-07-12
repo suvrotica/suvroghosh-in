@@ -4,7 +4,7 @@ description: "A technical guide to understanding, detecting, and handling confou
 thumbnail : "/images/IMG-20260423-WA0013.jpg" 
 date: "2026-04-22"
 category: "healthcare-it"
-tags: ["SuvroGhosh", "Healthcare IT", "healthcare-it", "Confounding Factors Healthcare IT Analytics", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Enrolled Patients","Healthcare Analytics","Confounding","Patients","Healthcare","Intervention","Workflow","Causal","Analytic","Data"]
 published: true
 color: "blue"
 ---

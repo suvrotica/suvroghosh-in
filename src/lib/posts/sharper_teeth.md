@@ -4,7 +4,7 @@ description: "A feverish, bipolar polemic on Lotka-Volterra equations, AI, capit
 date: "2026-06-23"
 thumbnail: "/images/Compress_20260623_140359_9910.jpg"
 category: "Essay"
-tags: ["Essay", "Economics", "AI", "Capitalism", "Bengali", "Polemic", "SuvroGhosh"]
+tags: ["Rabbits Breed","Rabbit Wakes","Nostril Hair","Rabbit Laughs","Sharper Teeth","Wolf","Rabbits","Wolves","Nostril","Equations"]
 published: true
 color: "#8B0000"
 ---

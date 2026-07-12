@@ -4,7 +4,7 @@ description: "In a humid Calcutta where app food, imported office habits, and sw
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_041131_1164.jpg"
 category: "Short Fiction"
-tags: ["Medical Horror", "Body Horror", "Calcutta", "Obesity", "Healthcare", "Short Fiction", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["SweetBelly Calm","Nine Hundred","Medical College","Ishani","Ananya","Rafiq","NutriNest","SweetBelly","Dessert","Polymer"]
 published: true
 color: "maroon"
 ---

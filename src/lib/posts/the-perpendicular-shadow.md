@@ -4,7 +4,7 @@ description: "A bipolar polemicist's manic-depressive rant about AI, meaning, an
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_202155_5311.jpg"
 category: "Personal Essay"
-tags: ["AI", "Technology", "Calcutta", "Bipolar", "Manic-Depressive", "SuvroGhosh", "Engineering Blog"]
+tags: ["Smooth Frictionless","Plumb Line","AI Overlords","Grey Couch","Cold Tea","Shadow","Perpendicular","Perpendicularity","Algorithms","Couch"]
 published: true
 color: "#8B4513"
 ---

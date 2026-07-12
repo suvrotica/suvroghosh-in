@@ -4,7 +4,7 @@ description: "A reflective essay on the paradox of loneliness in crowded Calcutt
 date: "2026-06-28"
 thumbnail: "/images/Compress_20260628_010953_3988.jpg"
 category: "Culture"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["NRI Gatherings","Gatherings","Taratala","Solitude","Grown","Inhabit","Social","Density","Obligation","Adda"]
 published: true
 color: "#2c3e50"
 ---

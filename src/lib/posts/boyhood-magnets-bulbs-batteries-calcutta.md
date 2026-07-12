@@ -4,7 +4,7 @@ description: "A science memoir about boyhood curiosity, cheap magnets, glowing b
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_172719_9415.jpg"
 category: "Personal"
-tags: ["Science Writing", "Childhood Science", "Boyhood Curiosity", "Physics for Everyone", "Electricity", "Magnetism", "Incandescent Bulb", "LED", "AI", "Calcutta", "Kolkata", "Middle Class Life", "Science Memoir", "Popular Science", "Bill Bryson Style", "Bengali Blog", "Curiosity", "Michael Faraday", "Thomas Edison", "Simple Experiments", "Old Blog Rewrite", "SuvroGhosh"]
+tags: ["Bulb","Magnet","Battery","Magnetism","Filament","Magnets","Circuit","Glow","Current","Objects"]
 published: true
 color: "amber"
 ---

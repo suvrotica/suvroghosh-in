@@ -4,7 +4,7 @@ description: "A technical but readable exploration of how unipolar depression an
 thumbnail: "/images/Compress_20260506_103338_8816.jpg"
 date: "2026-05-06"
 category: "Mental Health Systems"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Mental Health", "Mental Health Systems", "Depression As Mathematics", "Mathematics", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Unipolar Depression","Sleep Loss","Bipolar Disorder","Depressive Attractor","Dynamical System","Activation","Unipolar","Mood","Depression","Eta"]
 published: true
 color: "slate"
 ---

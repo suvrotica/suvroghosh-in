@@ -4,7 +4,7 @@ description: "A Calcutta room, a lonely middle-aged mind, and a blog that surviv
 date: "2026-06-16"
 thumbnail: "/images/Compress_20260616_115442_2337.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Blog", "Kolkata Life", "Bengali Writer", "Middle Age", "Loneliness", "Depression Writing", "Mental Health Essay", "Bipolar Depression", "Anxiety", "Artificial Intelligence", "AI And Writing", "Human Writing", "Creative Writing", "Indian Blogger", "Lower Middle Class Life", "Life In Kolkata", "Expat Return", "America To India", "Blogging", "Writing As Survival", "Modern Loneliness", "Social Isolation", "Urban India", "SuvroGhosh"]
+tags: ["Thoughts","America","Sentences","Loneliness","Funny","Skull","Aging","Synthetic","Bengali","Rented"]
 published: true
 color: "slate"
 ---

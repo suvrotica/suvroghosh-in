@@ -4,7 +4,7 @@ description: "A personal essay on Gen X loneliness, aging, bipolar depression, s
 date: "2026-05-31"
 thumbnail: "/images/Compress_20260531_064004_4075.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Loneliness", "Gen X Loneliness", "Gen Z Loneliness", "Middle Age Loneliness", "Bipolar Depression", "Mental Health Essay", "Calcutta Life", "Kolkata Life", "Modern Isolation", "Smartphone Addiction", "Artificial Intelligence", "AI Loneliness", "Digital Life", "Social Isolation", "Human Connection", "Aging Parents", "Neurobiology", "Depression", "Anxiety", "Technology and Society", "Modern Life", "Personal Blog", "Indian Blogger", "Bengali Writer", "SuvroGhosh"]
+tags: ["Gen","Lonely","Loneliness","Separate","Generation","AI","Human","Solutions","Differently","Partly"]
 published: true
 color: "indigo"
 ---

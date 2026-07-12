@@ -4,7 +4,7 @@ description: "A personal Calcutta essay on rain, heat, power cuts, noisy nationa
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_071427_7686.jpg"
 category: "Personal Essay"
-tags: ["Video", "Personal Essay", "SuvroGhosh", "India", "Calcutta", "Kolkata", "Bengali Writing", "Indian Middle Class", "Lower Middle Class India", "Power Cut", "Load Shedding", "Rain in Kolkata", "Kolkata Heat", "Indian Summer", "Sultry Weather", "Jingoism", "Nationalism", "Common Man", "Indian Infrastructure", "Indian Politics", "Everyday India", "Urban India", "Civic Failure", "Public Services", "Indian Society", "Hope and Despair", "Father and Son", "Diaspora Return", "India After America", "Personal Reflection", "Middle Aged Life", "Bipolar Depression", "Anxiety", "Consulting Life", "Ordinary Life", "Social Commentary"]
+tags: ["Adjust","Quicksand","Fireworks","Transformer","Country","Fan","Heat","Plumbing","Power","Fully"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "A system-level essay on why repeated failure is often the real ing
 date: "2026-05-01"
 thumbnail: "/images/Compress_20260430_194445_5279.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "Failing Well Without Looking Successful", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
+tags: ["Mud Teaches","Failed Attempts","Formal Rule","Lived Reality","Failure","Fail","Shallow","Reveal","Taught","Signal"]
 published: true
 color: "#6B7280"
 ---

@@ -4,7 +4,7 @@ description: "A sharp Calcutta essay on doubt, obedience, poverty, propaganda, c
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_153519_9316.jpg"
 category: "Personal Essay"
-tags: ["India", "Calcutta", "Kolkata", "Bengali Essay", "Middle Class India", "Lower Middle Class Life", "Political Satire", "Indian Society", "Corruption", "Propaganda", "Religion And Politics", "Democracy", "Civic Anger", "Atheism", "Bipolar Depression", "Mental Health Writing", "Social Criticism", "Personal Essay", "Indian Politics", "Working Class India", "Urban India", "SuvroGhosh"]
+tags: ["Rainfall","Produces","Sometimes","Doubt","Filth","Power","Country","India","Obedience","Fellow"]
 published: true
 color: "orange"
 ---

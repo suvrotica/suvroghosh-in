@@ -4,7 +4,7 @@ description: "AI deployment in healthcare is not a modeling problem—it is a re
 thumbnail : "/images/IMG-20260423-WA0008.jpg" 
 date: "2026-04-21"
 category: "healthcare ai"
-tags: ["SuvroGhosh", "healthcare ai", "AI Deployment Evidence Over Opinion", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Health Level Seven","Shadow Mode","Evidence-Driven Deployment","Deployment","Model","Clinical","Evidence-Driven","AI","Healthcare","Data"]
 published: true
 color: "red"
 ---

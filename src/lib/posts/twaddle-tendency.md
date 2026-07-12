@@ -4,7 +4,7 @@ description: "A sharp, comic essay on how human beings use word-soup, jargon, sl
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_124658_8567.jpg"
 category: "Essay"
-tags: ["Language", "Satire", "Humor Essay", "Corporate Jargon", "Bullshit", "Communication", "Plain English", "Indian Society", "Kolkata Blog", "Bengali Essay", "Pseudoscience", "Astrology", "Political Rhetoric", "Bureaucracy", "Euphemism", "Critical Thinking", "Public Discourse", "Motivational Speakers", "Godmen", "LinkedIn Culture", "Meetings", "Middle Class India", "Social Commentary", "SuvroGhosh"]
+tags: ["Twaddle Calls","Silence Asks","Twaddle","Ding","Framework","Nodding","Scalable","Sentence","Beside","Row"]
 published: true
 color: "slate"
 ---

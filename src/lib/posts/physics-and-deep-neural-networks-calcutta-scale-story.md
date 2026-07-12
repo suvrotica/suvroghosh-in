@@ -4,7 +4,7 @@ description: "A readable, research-backed explanation of the state-of-the-art co
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_014330_0107.jpg"
 category: "Artificial Intelligence"
-tags: ["Artificial Intelligence", "AI", "Machine Learning", "Deep Learning", "Neural Networks", "Deep Neural Networks", "Physics and AI", "Physics-Informed AI", "Scientific Machine Learning", "Renormalization", "Statistical Mechanics", "Tensor Networks", "Diffusion Models", "Score-Based Models", "Neural Operators", "Fourier Neural Operator", "Physics-Informed Neural Networks", "Geometric Deep Learning", "Equivariant Neural Networks", "Symmetry in AI", "Large Language Models", "Generative AI", "AI Research", "Modern Physics", "Complex Systems", "Scale and Complexity", "SuvroGhosh"]
+tags: ["Tensor Networks","Neural Network","Neural Operators","Layers Catch","Deep Learning","Physics","Diffusion","Model","DNNs","DNN"]
 published: true
 color: "indigo"
 ---

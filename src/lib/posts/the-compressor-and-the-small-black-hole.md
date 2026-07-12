@@ -4,7 +4,7 @@ description: "A Calcutta room, a tired brain, a coughing air conditioner, and th
 date: "2026-06-17"
 thumbnail: "/images/Compress_20260617_164332_2862.jpg"
 category: "Personal Essay"
-tags: ["Calcutta Essay", "Kolkata Life", "Bengali Writing", "Middle Age", "Depression Essay", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Loneliness", "Urban India", "Lower Middle Class India", "Personal Blog", "Indian Personal Essay", "Everyday Philosophy", "Brain Fog", "Fatigue", "Purpose", "Modern Life", "Solitude", "Aging", "SuvroGhosh"]
+tags: ["Black Hole","Hole","Exhibit","Compressor","Blur","Black","Sadness","Stick","Thought","Seconds"]
 published: true
 color: "slate"
 ---

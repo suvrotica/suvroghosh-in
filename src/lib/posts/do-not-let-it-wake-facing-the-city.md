@@ -4,7 +4,7 @@ description: "A Calcutta girl helping with a school bridge project discovers tha
 date: "2026-06-27"
 thumbnail: "/images/Compress_20260627_021235_5350.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Children's Fiction", "Adventure", "Ominous", "Calcutta"]
+tags: ["Wake Facing","Howrah Bridge","Tea Seller","Anjali","Kitten","Prabir","Bridge","Mina","Dutta","Bappa"]
 published: true
 color: "#4a4a4a"
 ---

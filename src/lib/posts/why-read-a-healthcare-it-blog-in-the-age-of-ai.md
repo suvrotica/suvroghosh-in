@@ -4,7 +4,7 @@ description: "An exploration of why human-written, skeptical, and curiosity-driv
 date: "2026-06-26"
 thumbnail: "/images/Compress_20260626_134922_2939.jpg"
 category: "Healthcare-IT"
-tags: ["Healthcare IT", "Artificial Intelligence", "Medical Informatics", "Critical Thinking", "SuvroGhosh", "Opinion", "Industry 4.0"]
+tags: ["Bodyshopping Moat","Linear Algebra","Adversarial Attacks","AI-driven Healthcare","Model Drift","Healthcare","AI","Systems","Genetic","Clinical"]
 published: true
 color: "#2E5C8A"
 ---

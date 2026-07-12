@@ -4,7 +4,7 @@ description: "A personal Calcutta reflection on mortality, atheism, aging, pover
 date: "2026-05-18"
 thumbnail: "/images/Compress_20260518_172757_7093.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Existential Reflection", "Atheism", "One Life", "Mortality", "Time", "Aging", "Midlife", "Kolkata", "Calcutta", "Bengali Writer", "Indian Atheist", "Lower Middle Class India", "Mental Health", "Bipolar Depression", "Anxiety", "Scientific Curiosity", "Serendipity", "AI", "Artificial Intelligence", "Human Condition", "Urban India", "Life Reflection", "Memoir", "SuvroGhosh"]
+tags: ["Matters","Enough","Youth","Curiosity","Sentence","Teaches","Whole","Depression","Time","Calcutta"]
 published: true
 color: "indigo"
 ---

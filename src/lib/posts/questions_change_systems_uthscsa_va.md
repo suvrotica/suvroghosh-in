@@ -4,7 +4,7 @@ description: "Why longitudinal analysis, population insights, and predictive mod
 thumbnail : "/images/IMG-20260423-WA0010.jpg" 
 date: "2026-04-21"
 category: "healthcare it"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "VA", "UTHSCSA", "Questions Change Systems Uthscsa VA", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics"]
+tags: ["Health Level Seven","United States","Health Science Center","Longitudinal Analysis","Predictive Modeling","VA","UTHSCSA","Data","Clinical","Patient"]
 published: true
 color: "indigo"
 ---

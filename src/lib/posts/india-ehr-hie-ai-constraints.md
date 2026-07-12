@@ -4,7 +4,7 @@ description: "A system-level analysis of why Electronic Health Records and Healt
 thumbnail : "/images/IMG-20260423-WA0009.jpg" 
 date: "2026-04-21"
 category: "healthcare it"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "EHR", "HIE", "AI Diagnostics", "India", "Healthcare IT", "India Ehr Hie AI Constraints", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary"]
+tags: ["Health Level Seven","AI Diagnostics","Digital Health","Care Documents","EHR","Clinical","HIE","Diagnostics","Data","Healthcare"]
 published: true
 color: "teal"
 ---

@@ -4,7 +4,7 @@ description: "A technical and human argument for first principles thinking as a 
 thumbnail :  "/images/IMG-20260425-WA0009.jpg" 
 date: "2026-04-26"
 category: "Useful Mental Models"
-tags: ["SuvroGhosh", "Calcutta", "Healthcare IT", "Mental Health", "Useful Mental Models", "First Principles Thinking Calcutta Healthcare IT", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Health Level Seven","Principles","Clinical","Healthcare","Data","First-Principles","Model","Representation","Health","Meaning"]
 published: true
 color: "indigo"
 ---

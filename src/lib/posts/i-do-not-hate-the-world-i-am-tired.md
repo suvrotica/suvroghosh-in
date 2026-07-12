@@ -4,7 +4,7 @@ description: "A darkly funny personal essay about anger, bipolar depression, mas
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_105701_1999.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Mental Health Essay", "Bipolar Depression", "Anxiety", "Anger", "Emotional Exhaustion", "Loneliness", "Masculinity", "Men And Society", "Misanthropy", "Not Misanthropic", "Middle Class India", "Lower Middle Class Life", "Kolkata", "Calcutta", "Bengali Life", "Social Commentary", "Family Betrayal", "Failure", "Class Anxiety", "Respectability", "Atheism", "Dark Humor", "Indian Society", "Urban India", "Single Man Life", "SuvroGhosh"]
+tags: ["Hatred","Nibble","Weariness","Hate","Self-Pity","Tired","Rotten","Anger","Maybe","Refuse"]
 published: true
 color: "slate"
 ---

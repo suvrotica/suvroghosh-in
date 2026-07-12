@@ -4,7 +4,7 @@ description: "A personal Calcutta Bengali essay on Darjeeling’s counterfeit ma
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_075335_5425.jpg"
 category: "Personal Essay"
-tags: ["Darjeeling", "Darjeeling Tourism", "Darjeeling Pollution", "Darjeeling Hotels", "Darjeeling Travel", "Darjeeling Waste Problem", "Darjeeling Garbage Burning", "Darjeeling Traffic", "Kanchenjunga", "Tiger Hill", "Counterfeit Products", "Fake Branded Clothing", "Fake Shoes", "Fake Jackets", "Fake Imported Goods", "Counterfeit Tea", "Darjeeling Tea", "Hill Station Tourism", "Overtourism", "Sustainable Tourism", "Responsible Travel", "North Bengal", "Kolkata Travel", "Calcutta Bengali", "Indian Hill Stations", "Himalayan Towns", "Vehicle Pollution", "Deforestation", "Urban Decay", "Alcohol Problems", "Drug Abuse", "Mountain Ecology", "Environmental Crisis", "Travel Essay", "Personal Essay", "SuvroGhosh"]
+tags: ["Darjeeling","Fake","Tourist","Hill","Mountain","Hotels","Town","Hotel","Kanchenjunga","Tourism"]
 published: true
 color: "green"
 ---

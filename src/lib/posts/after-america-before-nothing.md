@@ -4,7 +4,7 @@ description: "A personal essay about returning from serious healthcare IT work i
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_175314_4056.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Suvro Ghosh", "Calcutta", "Kolkata", "America", "USA", "Return Migration", "Bengali Life", "Middle Age", "Lower Middle Class", "Healthcare IT", "Health Data", "Hospital Systems", "VA Data", "NIH Studies", "Clinical Data", "Data Pipelines", "Professional Decline", "Downward Mobility", "Bipolar Depression", "Anxiety", "Unpaid Consulting", "Work and Dignity", "Loneliness", "Personal Essay", "Indian Middle Class", "Kolkata Life", "South Calcutta", "Career Loss", "After America", "Competence", "Modern India", "Bengali Essay", "SuvroGhosh.IN"]
+tags: ["America","American","Data","Payment","Healthcare","Past","Systems","Competence","Invoice","Calcutta"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "A sharp Calcutta personal essay about class, failed careers, old s
 date: "2024-09-12"
 thumbnail: "/images/Compress_20260515_042649_9877.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Blog", "Kolkata Essay", "Indian Middle Class", "Lower Middle Class Life", "Career Failure", "LinkedIn Culture", "Indian Job Market", "Workplace Honesty", "School Classmates", "St Xaviers", "Cossipore English School", "Fish Market", "Kasim Bazar", "Bengali Life", "Mental Weather", "Class Anxiety", "Social Status", "Unemployment", "Consulting Life", "Personal Blog", "SuvroGhosh"]
+tags: ["Fish Market","Merit","Fish","Moon","Adults","Obedience","Books","Inconvenient","Project","Platform"]
 published: true
 color: "amber"
 ---

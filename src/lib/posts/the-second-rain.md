@@ -4,7 +4,7 @@ description: "When two impossible cloudbursts strike Calcutta within three hours
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_164005_5829.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Flood"]
+tags: ["Red Ribbons","Projection Room","Tram Wires","Medicine Shop","Rent Money","Piu","Nirmal","Farida","Bela","Mukherjee-mashi"]
 published: true
 color: "indigo"
 ---

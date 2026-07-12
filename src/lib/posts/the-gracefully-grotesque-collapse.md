@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay on the crooked human body, the vanit
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_092416_6561.jpg"
 category: "Essay"
-tags: ["Essay", "Calcutta Writing", "Kolkata Essay", "Dark Humor", "Existential Humor", "Human Body", "Spine", "Back Pain", "Evolution", "Nietzsche", "Quasimodo", "Richard III", "Middle Class Life", "Bengali Essay", "Satirical Prose", "Philosophy", "Aging", "Body And Mind", "Personal Essay", "SuvroGhosh"]
+tags: ["Bends","Hump","Bending","Humps","Backwards","Gibbus","Bend","Nietzsche","Grotesque","Crooked"]
 published: true
 color: "slate"
 ---

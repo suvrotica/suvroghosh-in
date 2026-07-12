@@ -4,7 +4,7 @@ description: "A darkly funny Calcutta essay on depression, executive dysfunction
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_152430_0018.jpg"
 category: "Personal Science"
-tags: ["Depression", "Executive Dysfunction", "Mental Health", "Bipolar Depression", "Anhedonia", "Newton First Law", "Physics of Depression", "Inertia", "Calcutta Essay", "Kolkata Writing", "Middle Age", "Lower Middle Class Life", "Loneliness", "Motivation", "Human Body", "Neuroscience", "Attention", "Daily Life", "Self Respect", "Personal Essay", "Science Essay", "Bengali Writer", "SuvroGhosh"]
+tags: ["Acted Upon","External Force","Bowel","Bladder","Motion","Mass","Force","REST","Laptop","Rejected"]
 published: true
 color: "slate"
 ---

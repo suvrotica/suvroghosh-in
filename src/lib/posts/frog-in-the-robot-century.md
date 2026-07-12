@@ -4,7 +4,7 @@ description: "A sharp Calcutta essay on clean water, power cuts, AI, robotics, a
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_184608_8009.jpg"
 category: "Essay"
-tags: ["Artificial Intelligence", "AI", "Robotics", "Automation", "India", "Calcutta", "Kolkata", "Technology", "Machine Century", "Future of Work", "Climate Heat", "Power Cuts", "Water Crisis", "Dengue", "Infrastructure", "Economic Inequality", "Digital Divide", "Modernity", "Middle Class India", "Lower Middle Class Life", "Urban India", "San Francisco", "China Technology", "Shenzhen", "Global Technology Race", "Automation Anxiety", "Skills", "Learning", "Digital Skills", "Future Poor", "Civilizational Decline", "Social Commentary", "Personal Essay", "Bengali Essay", "SuvroGhosh"]
+tags: ["Machine Century","Lies","Learn","AI","Century","Modernity","Machine","Assume","Robotics","Adjustment"]
 published: true
 color: "slate"
 ---

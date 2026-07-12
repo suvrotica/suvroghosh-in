@@ -4,7 +4,7 @@ description: "A manic-depressive rant from a bitter Bengali man in South Calcutt
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_134746_6031.jpg"
 category: "Personal Essay"
-tags: ["Wealth Inequality", "Bipolar", "Calcutta", "Elon Musk", "Satire", "Mental Health", "Social Commentary", "SuvroGhosh"]
+tags: ["Per Minute","Elon Musk","Black Hole","Fan Rattles","Rice Cooker","Trillionaire","Livestock","Trillion","Dollars","Billion"]
 published: true
 color: "#1a1a1a"
 ---

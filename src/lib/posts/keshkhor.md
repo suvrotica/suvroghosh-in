@@ -4,7 +4,7 @@ description: "A miracle shampoo gives Kolkata the hair it has been praying for, 
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_095341_1784.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Body Horror", "Calcutta", "Speculative Fiction", "SuvroGhosh"]
+tags: ["Tea Stall","Arka","Rishav","Hair","Keshjol","Sachet","Mother","K-Index","Scalp","Cosmetic"]
 published: true
 color: "black"
 ---

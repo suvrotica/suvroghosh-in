@@ -4,7 +4,7 @@ description: "A bipolar monologue from a defeated Calcutta flat on the rising ti
 date: "2026-07-10"
 thumbnail: "/images/Compress_20260710_195219_9631.jpg"
 category: "Monologue"
-tags: ["Mental Health", "Technology", "Calcutta", "Capitalism", "SuvroGhosh"]
+tags: ["Intolerable Cruelty","Intolerable","Billion","Blindness","Dollars","Algorithmic","Reaches","Cruelty","Cure","Corporate"]
 published: true
 color: "#1a1a2e"
 ---

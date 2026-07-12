@@ -4,7 +4,7 @@ description: "A healthcare IT architect’s view of applied multivariate statist
 thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 date: "2026-05-05"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "Multivariate Statistical Modeling In Healthcare IT", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education"]
+tags: ["Smoking Status","Inner Diameter","Outer Diameter","Clinical Trial","Social Risk","Model","Healthcare","Data","Variables","Washer"]
 published: true
 color: "blue"
 ---

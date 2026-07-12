@@ -4,7 +4,7 @@ description: "A sleepless Calcutta morning becomes a small argument for doubt, i
 date: "2026-05-28"
 thumbnail: "/images/Compress_20260528_064842_2623.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Atheism", "Richard Dawkins", "The God Delusion", "Science And Wonder", "Existential Reflection", "Kolkata Writing", "Calcutta Essay", "Middle Age", "Sleeplessness", "Anxiety", "Depression", "Bipolar Life", "Indian Politics", "Democracy", "Religious Irrationality", "Casteism", "Secularism", "Humanism", "Skepticism", "Free Thought", "Ordinary Life", "Lower Middle Class Life", "Urban India", "Morning Thoughts", "Personal Blog", "Philosophy", "Cosmic Perspective", "Social Satire", "Political Satire", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Richard Dawkins","Dawkins","Richard","Repeat","Superstition","Offended","Lucky","Dawn","Caste","Pride"]
 published: true
 color: "slate"
 ---

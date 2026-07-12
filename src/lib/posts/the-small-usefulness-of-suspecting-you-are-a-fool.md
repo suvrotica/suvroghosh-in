@@ -4,7 +4,7 @@ description: "A sharp, clean, comic essay on self-doubt, intelligence, certainty
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_071422_2768.jpg"
 category: "Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Self Doubt", "Critical Thinking", "Dunning Kruger Effect", "Bengali Essay", "Calcutta Writing", "Kolkata Essay", "Indian Middle Class", "Skepticism", "Intelligence", "Human Psychology", "Cognitive Bias", "Scientific Method", "Philosophy", "Everyday Philosophy", "Humor Essay", "Personal Essay", "Readable Philosophy", "Mental Models", "Rational Thinking", "Epistemic Humility", "Life Lessons", "Clear Thinking", "Indian Society", "Bengali Middle Class", "Science And Society", "Psychology Essay", "Modern Life"]
+tags: ["Ask Whether","Beginner","Opinions","Ask","Mind","Rage","Breeze","Certainty","Sees","Maybe"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "A system-level look at how a prolonged Strait of Hormuz disruption
 thumbnail : "/images/IMG-20260423-WA0011.jpg"
 date: "2026-04-21"
 category: "geopolitics"
-tags: ["SuvroGhosh", "geopolitics", "Hormuz Day 52 Supply Ramifications Nation States", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Energy Security", "War Technology", "Global Supply Chains"]
+tags: ["Weaker Currencies","Reuters Reported","Fertilizer","Gulf","LNG","Hormuz","Reuters","Imports","Freight","Inflation"]
 published: true
 color: "amber"
 ---

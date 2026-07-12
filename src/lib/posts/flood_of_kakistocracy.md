@@ -4,7 +4,7 @@ description: "A manic-depressive monologue from Calcutta on flooded streets, inv
 date: "2026-07-10"
 thumbnail: "/images/Compress_20260710_041434_4428.jpg"
 category: "Essay"
-tags: ["Calcutta", "Monsoon", "Pollution", "Kakistocracy", "Mental Health", "Satire", "SuvroGhosh"]
+tags: ["Micrograms Per Cubic","Cubic Meter","Particulate Matter","Artificial Intelligence","Particulate","Rancor","Rickshaw-Wallah","PM2","Backflow","Kakistocratic"]
 published: true
 color: "#2F4F4F"
 ---

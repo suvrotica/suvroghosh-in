@@ -4,7 +4,7 @@ description: "A fossil preparator finds a Cretaceous crab whose carapace bears h
 date: "2026-07-08"
 thumbnail: "/images/Compress_20260708_060120_0194.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Dread", "Sacrifice"]
+tags: ["Seventy Million","Trailer Door","Darlene","Jessie","Crab","Crabs","Dent","Henley","Truck","Trailer"]
 published: true
 color: "#8B4513"
 ---

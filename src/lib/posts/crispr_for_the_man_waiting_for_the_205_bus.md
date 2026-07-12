@@ -4,7 +4,7 @@ description: "CRISPR sounds like a villain from a science fiction film, but its 
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260512_181005_5984.jpg"
 category: "Science"
-tags: ["CRISPR", "Gene Editing", "DNA", "Genetics", "Biotechnology", "Science Explained", "CRISPR Cas9", "Molecular Biology", "Future Medicine", "Human Genome", "Biology For Beginners", "Scientific Discoveries", "History of Science", "Genome Editing", "Popular Science", "Medical Science", "Technology", "Science History", "Genetic Engineering", "SuvroGhosh"]
+tags: ["Human Beings","CRISPR","Bacteria","Genetic","DNA","Genes","Scientists","Humanity","Bacterial","Biology"]
 published: true
 color: "emerald"
 ---

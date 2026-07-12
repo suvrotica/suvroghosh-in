@@ -4,7 +4,7 @@ description: "A sharp essay on how technical pretension, fear of ignorance, and 
 thumbnail : "/images/Compress_20260503_164121_1110.jpg"
 date: "2026-05-03"
 category: "Technology"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Technology", "Self Gaslit Minds And AI Pretension", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing"]
+tags: ["Interface Conceals","Good Engineer","Ignorance","Glitters","Represent","Pretends","AI","Conceals","Comprehension","Engineer"]
 published: true
 color: "slate"
 ---

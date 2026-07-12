@@ -4,7 +4,7 @@ description: "When a locked house in Calcutta opens its door, two children disco
 date: "2026-07-04"
 thumbnail: "/images/Compress_20260704_010515_5707.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Children's Fiction", "Adventure", "Curious", "Justice"]
+tags: ["Tin Box","Poltu Put","Single Eye","Brass Torch","Poltu","Bhattacharya","Jhuma","Playground","Eye","Chatterjee"]
 published: true
 color: "#D2691E"
 ---

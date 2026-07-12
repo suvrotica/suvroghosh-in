@@ -4,7 +4,7 @@ description: "A Calcutta-grounded essay on the invisible regulatory, ethical, te
 date: "2026-06-23"
 thumbnail: "/images/Compress_20260624_013106_6822.jpg"
 category: "Healthcare-IT"
-tags: ["Artificial Intelligence", "Clinical Medicine", "Healthcare Infrastructure", "Medical Ethics", "Regulatory Science", "Digital Health", "Patient Safety", "SuvroGhosh"]
+tags: ["Shadow Architecture","Deep Learning","Patient Cares Whether","Shadow Holds","Clinical AI","Clinical","AI","Model","Validation","Monitoring"]
 published: true
 color: "#2C3E50"
 ---

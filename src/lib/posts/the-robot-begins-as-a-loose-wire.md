@@ -4,7 +4,7 @@ description: "A witty, clear, technically grounded post on the state of robotics
 date: "2026-06-16"
 thumbnail: "/images/Compress_20260616_133616_6244.jpg"
 category: "Technology"
-tags: ["Robotics", "Artificial Intelligence", "AI Robotics", "Humanoid Robots", "Robot Learning", "Vision Language Action Models", "Embodied AI", "Robot Foundation Models", "Control Theory", "PID Control", "ROS 2", "Arduino Robotics", "ESP32 Robotics", "Raspberry Pi Robot", "Computer Vision", "OpenCV", "Robot Sensors", "Robot Grippers", "Robot Hands", "Autonomous Robots", "Warehouse Robots", "Home Robots", "Eldercare Robots", "STEM Education", "Engineering Blog", "Technology Essay", "Science Writing", "SuvroGhosh"]
+tags: ["Computer Vision","Robot","Robotics","Robots","Humanoid","Motors","Sensor","ROS","Wheels","Sensors"]
 published: true
 color: "slate"
 ---

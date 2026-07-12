@@ -4,7 +4,7 @@ description: "A plainspoken, sharp look at how AI threatens the old Indian IT se
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_112944_4716.jpg"
 category: "Technology"
-tags: ["Artificial Intelligence", "AI", "Indian IT", "IT Services", "TCS", "Infosys", "Wipro", "HCLTech", "Tech Mahindra", "Software Engineering", "Generative AI", "Indian Economy", "Automation", "Future of Work", "Freshers", "Engineering Graduates", "Corporate India", "Labor Market", "Offshore Outsourcing", "Billing Hours", "Productivity", "Middle Class India", "Kolkata", "Sector V", "Salt Lake", "Technology Commentary", "Software Jobs", "AI Disruption", "Reskilling", "Legacy Systems", "Enterprise Software", "SuvroGhosh"]
+tags: ["AI","Code","Software","Companies","Y2K","Frown","Indian","Judgment","Add","Engineering"]
 published: true
 color: "slate"
 ---

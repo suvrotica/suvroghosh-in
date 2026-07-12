@@ -4,7 +4,7 @@ description: "A personal essay on depression, loneliness, worry, bodily discomfo
 date: "2026-05-27"
 thumbnail: "/images/Compress_20260527_102513_3412.jpg"
 category: "Mental Health"
-tags: ["Video", "Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Loneliness", "Mood Swings", "Self Doubt", "Emotional Health", "Middle Age", "Calcutta Life", "Kolkata Blog", "Indian Mental Health", "Living With Depression", "Unemployment Shame", "Executive Dysfunction", "Nervous System", "Emotional Resilience", "Human Psychology", "Personal Reflection", "Readable Essays", "SuvroGhosh"]
+tags: ["Loneliness","Mind","Worry","Depression","Necessarily","REST","News","Sometimes","Chair","Truth"]
 published: true
 color: "indigo"
 ---

@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay on depression, failed expectations, 
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_141755_5869.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Calcutta", "Kolkata", "South Calcutta", "Bengali Life", "Middle Age", "Aging", "Loneliness", "Poverty", "Underemployment", "Indian Society", "Indian Bureaucracy", "Lower Middle Class", "Existential Essay", "Dark Humor", "Social Commentary", "Life In India", "Urban India", "Rice Cooker", "Anhedonia", "Civic Decay", "Personal Writing", "SuvroGhosh"]
+tags: ["Rice Cooker","Energy","Nethermost","Flatness","Muck","Rice","Expectations","India","Proper","Cooker"]
 published: true
 color: "brown"
 ---

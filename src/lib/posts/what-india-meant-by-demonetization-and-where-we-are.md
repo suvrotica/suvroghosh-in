@@ -4,7 +4,7 @@ description: "A plainspoken, skeptical look at India’s 2016 demonetization: wh
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_222640_0073.jpg"
 category: "Economy"
-tags: ["India Demonetization", "Demonetization 2016", "Indian Economy", "Cash Economy India", "Digital India", "UPI India", "Black Money India", "Informal Economy", "Indian Middle Class", "Indian Politics", "Economic Policy India", "Currency Ban India", "Reserve Bank of India", "NPCI", "Digital Payments", "Financial Inclusion", "Cashless India", "Indian Tax System", "Kolkata Essays", "SuvroGhosh"]
+tags: ["Less Helpless","Black Money","Digital Payments","Demonetization","Cash","UPI","India","Cashless","Helpless","Payments"]
 published: true
 color: "amber"
 ---

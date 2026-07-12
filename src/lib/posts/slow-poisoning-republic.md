@@ -4,7 +4,7 @@ description: "A sharp Calcutta essay on everyday cheating, public distrust, and 
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_162833_3531.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Society", "Calcutta", "Kolkata", "Corruption", "Everyday Corruption", "Civic Trust", "Public Life", "Middle Class India", "Lower Middle Class India", "Indian Politics", "Social Commentary", "Indian Economy", "Trust Deficit", "Civic Failure", "Urban India", "Fraud Culture", "Jugaad", "Public Infrastructure", "Digital India", "Nationalism", "Bengali Essay", "Satire", "Social Satire", "Indian Democracy", "Moral Decay", "Citizen Responsibility", "Suvro Ghosh"]
+tags: ["Don’t Worry","Cheats","Calls","Cheat","Trust","Sewage","Country","Everyone","Build","Snow"]
 published: true
 color: "rust"
 ---

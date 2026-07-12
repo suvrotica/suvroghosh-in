@@ -4,7 +4,7 @@ description: "A feverish, serpentine monologue from a burnt-out Bengali polemici
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_182829_9457.jpg"
 category: "Personal Essay"
-tags: ["Bipolar Rant", "AI Displacement", "Calcutta", "Labor", "Existential Dread", "SuvroGhosh"]
+tags: ["Canceled Bruised Burnt","Silicon Valley","Cloud Nine","Human Beings","Pyramid","Fungal","Utterly","Bacterial","Seceding","Calcutta"]
 published: true
 color: "#8B0000"
 ---

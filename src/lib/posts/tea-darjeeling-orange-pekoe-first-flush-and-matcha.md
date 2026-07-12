@@ -4,7 +4,7 @@ description: "A clear-eyed guide to what Darjeeling Orange Pekoe actually means,
 thumbnail : "/images/IMG-20260424-WA0002.jpg"
 date: "2026-04-24"
 category: "food-and-culture"
-tags: ["SuvroGhosh", "food-and-culture", "Tea Darjeeling Orange Pekoe First Flush And Matcha", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary"]
+tags: ["Orange Pekoe","Japanese Green","Plucking Standard","Second Flush","Black Tea","Leaf","Darjeeling","Flush","Pekoe","Matcha"]
 published: true
 color: "amber"
 ---

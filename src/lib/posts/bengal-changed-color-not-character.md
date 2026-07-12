@@ -4,7 +4,7 @@ description: "A middle-aged Calcutta reflection on Bengal’s political earthqua
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_182901_1938.jpg"
 category: "Politics and Society"
-tags: ["West Bengal Politics", "Bengal Election 2026", "Special Intensive Revision", "SIR 2026", "West Bengal SIR", "Electoral Roll Revision", "Voter Deletion", "Voter Disenfranchisement", "Bengal Democracy", "Election Commission of India", "ECI", "BJP Bengal", "Trinamool Congress", "TMC", "Suvendu Adhikari", "Mamata Banerjee", "Kolkata Politics", "Calcutta Politics", "Indian Democracy", "Electoral Rolls India", "Voter List Controversy", "Political Patronage", "Bengal Governance", "Hindutva Politics", "Indian Elections", "Democracy in India", "Bengal Political Change", "Civic Decay", "Middle Class Bengal", "Lower Middle Class India", "Calcutta Essay", "SuvroGhosh"]
+tags: ["Chief Minister","Dead Voters","Electoral Rolls","Poor Man","TMC","Rolls","Democracy","Voters","Voter","Bengal"]
 published: true
 color: "#78350f"
 ---

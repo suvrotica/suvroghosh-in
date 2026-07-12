@@ -4,7 +4,7 @@ description: "In a humid Calcutta of hospitals, app deliveries, and old para gos
 date: "2026-05-29"
 thumbnail: "/images/Compress_20260529_091946_6601.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Science Fiction", "Calcutta", "Kolkata", "Cannibal Horror", "Short Fiction", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Meera","Kartik","Arunava","Lopa","LifeCrown","ANNAPURNA","K-19","Mansion","Gun","Signed"]
 published: true
 color: "charcoal"
 ---

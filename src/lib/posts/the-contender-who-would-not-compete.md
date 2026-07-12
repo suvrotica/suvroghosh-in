@@ -4,7 +4,7 @@ description: "A satirical personal essay on writing, India, ambition, public spe
 thumbnail: "/images/Compress_20260502_014710_0769.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "The Contender Who Would Not Compete", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Hurry","Country","Adjective","Longing","Maintenance","India","Saved","Refusal","Sensible","Horse"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "What canine cognition research actually suggests about trust, dece
 thumbnail : "/images/IMG-20260423-WA0018.jpg"
 date: "2026-04-22"
 category: "science"
-tags: ["SuvroGhosh", "science", "Dogs Bad People Myth Science", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Dogs","Breed","Dog","Interaction","Cues","Misleading","Owner","Unfamiliar","Odor","Social"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "A sound engineer records Calcutta’s traffic and builds a horror 
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_084723_3858.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Noise"]
+tags: ["Maati Dao","Gola Dao","Give Earth","Anirban","Raka","Maati","Chant","Recorder","Rail","Asphalt"]
 published: true
 color: "Charcoal"
 ---

@@ -4,7 +4,7 @@ description: "A fifty-one-year-old bipolar polemicist in Calcutta ruminates on t
 date: "2026-07-11"
 thumbnail: "/images/Compress_20260711_080323_3681.jpg"
 category: "Essay"
-tags: ["Bipolar", "Mental Health", "Books", "Calcutta", "Pharmacology", "Solitude"]
+tags: ["Circling","Pills","Synthetic","Precise","Sentences","Irritation","Particular","Read","Patient","Dark"]
 published: true
 color: "#5D4037"
 ---

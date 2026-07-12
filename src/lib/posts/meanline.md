@@ -4,7 +4,7 @@ description: "A height supplement in Kolkata promises to defeat heredity, age, a
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_051806_6539.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Science Fiction", "Kolkata", "Body Horror", "SuvroGhosh"]
+tags: ["Sayan Dutta","Height Potential","Week Eight Height","Tea Stall","Nandita Asked","Arka","Nandita","Sayan","MEANLINE","Inches"]
 published: true
 color: "Charcoal"
 ---

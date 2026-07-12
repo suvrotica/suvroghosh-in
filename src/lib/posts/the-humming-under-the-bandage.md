@@ -4,7 +4,7 @@ description: "An NRI family returns from Texas to Calcutta carrying a small, unn
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_153151_1076.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Homecoming"]
+tags: ["Brass Bowl","Nine Years","Arun","Bela","Nandita","Mira","Purnima","Calf","Bandage","Flies"]
 published: true
 color: "oxblood"
 ---

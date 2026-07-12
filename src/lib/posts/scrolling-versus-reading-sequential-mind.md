@@ -4,7 +4,7 @@ description: "Endless scrolling and reading are both sequential mental acts, but
 thumbnail : "/images/IMG-20260427-WA0017.jpg"
 date: "2026-04-27"
 category: "Technology"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Endless Scrolling", "Reading Habits", "Attention Economy", "Dopamine", "Digital Addiction", "Social Media", "Brain Science", "Human Attention", "Working Memory", "Deep Reading", "Slow Reading", "Cognitive Load", "Screen Time", "Mindfulness", "Calcutta Blog", "Kolkata Writer", "Middle Age", "Modern Life", "Digital Distraction", "Neuroscience Of Attention", "Books Versus Social Media", "Information Overload", "Mental Health And Technology"]
+tags: ["Scrolling","Reading","Book","Feed","Sequential","Rebellious","Mind","Maybe","Remember","Clip"]
 published: true
 color: "indigo"
 ---

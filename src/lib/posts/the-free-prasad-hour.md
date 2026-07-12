@@ -4,7 +4,7 @@ description: "In a humid Calcutta afternoon, a televised miracle gathering becom
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_110848_8382.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Psychological Suspense", "Dread", "Spectacle"]
+tags: ["FREE SAREE","Baba Bijoyananda","VIP Enclosure","Running Order","West Counter","Nandita","Rishav","Pulak","Baba","Coupon"]
 published: true
 color: "maroon"
 ---

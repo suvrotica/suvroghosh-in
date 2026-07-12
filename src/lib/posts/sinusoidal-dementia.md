@@ -4,7 +4,7 @@ description: "A grotesquely swollen monologue on FM static, eighties melodies, a
 date: "2026-07-12"
 thumbnail: "/images/Compress_20260712_225635_5357.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Bengali", "FM Radio", "Transhumanism", "Mania", "Depression", "Calcutta"]
+tags: ["Transhumanists","Melodies","Well-Adjusted","Ruminations","Generated","Attempting","Pathetic","Brain","Obsolete","Rickshaw"]
 published: true
 color: "#8B0000"
 ---

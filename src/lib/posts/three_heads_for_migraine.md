@@ -4,7 +4,7 @@ description: "A new Calcutta headache medicine promises relief for the city’s 
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_131043_3530.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Medical Horror", "Calcutta", "Kolkata", "Speculative Fiction", "SuvroGhosh"]
+tags: ["Ishani Roy","Splitting Headache","Tea Stall","Power Cut","Arka","Trinocet-MR","Heads","Prabal","Asterion","Migraine"]
 published: true
 color: "crimson"
 ---

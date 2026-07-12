@@ -4,7 +4,7 @@ description: "China and India are both rising, but they are not climbing the sam
 date: "2026-05-26"
 thumbnail: "/images/Compress_20260526_083225_5452.jpg"
 category: "Geopolitics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "China Rise", "India Rise", "China vs India 2026", "Evolutionary Thinking", "Natural Selection", "Deng Xiaoping", "Economic Reforms", "Reform And Opening Up", "Indian Economy", "Chinese Economy", "Geopolitics 2026", "Manufacturing", "Digital Public Infrastructure", "UPI", "DPI", "Demographics", "Youth Unemployment", "State Capacity", "Economic Development", "Global South", "AI Economy", "Electric Vehicles", "EV Supply Chain", "India Manufacturing", "China Manufacturing", "Comparative Development", "World Economy", "Economic History", "Asian Century", "Public Policy", "Institutional Evolution", "Bureaucracy", "Calcutta Essay"]
+tags: ["China Rise","China","India","Manufacturing","Export","UPI","Queues","Variation","Plus","Investment"]
 published: true
 color: "amber"
 ---

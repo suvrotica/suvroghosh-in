@@ -4,7 +4,7 @@ description: "At Mallick Ghat on a furnace-bright morning, devotees enter the ri
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_052637_7382.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Heat"]
+tags: ["Flower Market","Railway Exam","Black Mud","Gobinda","Mina","Riju","Bhola","Nirmal","River","Monster"]
 published: true
 color: "river-green"
 ---

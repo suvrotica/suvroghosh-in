@@ -4,7 +4,7 @@ description: "During a murderous Calcutta heat wave, a decent man sells cheap co
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_095409_9999.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Science Horror", "Heat Dread", "Survival"]
+tags: ["Desperate Enough","Cold Storage","Tea Stall","Nirmal","Rupa","Joydeep","Gel","Hari","Patch","Transparent"]
 published: true
 color: "blue"
 ---

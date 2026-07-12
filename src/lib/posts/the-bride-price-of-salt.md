@@ -4,7 +4,7 @@ description: "At a Calcutta wedding feast, a seafood restaurant serves oysters b
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_193206_6725.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Class Anxiety"]
+tags: ["Red Slipper","Tea Stall","Nirmal Saw","Nirmal","Debnath","Raka","Mili","Arko","Oyster","Kartik"]
 published: true
 color: "#4B5D53"
 ---

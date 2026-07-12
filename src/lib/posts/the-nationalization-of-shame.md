@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in the outskirts of Calcutta thinks thro
 date: "2026-06-16"
 thumbnail: "/images/Compress_20260616_160214_4513.jpg"
 category: "Personal Essay"
-tags: ["Calcutta Essay", "Kolkata Life", "Bengali Writer", "Middle Age", "Poverty", "Debt Anxiety", "Mental Health", "Bipolar Depression", "Urban India", "Lower Middle Class India", "Indian Society", "Return Migration", "Life After America", "Indian Bureaucracy", "Economic Anxiety", "Loneliness", "Masculinity", "Aging", "Personal Essay", "Social Satire", "Indian Middle Class", "Existential Essay", "Shame", "Phone Anxiety", "Calcutta Poverty", "SuvroGhosh"]
+tags: ["Trained Mind","Pressure Cooker","Dot","Caller","Poor","Articulate","Call","Phone","Poverty","Demon"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "In a Calcutta maternity clinic, newborns begin arriving impossibly
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_074511_1368.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Medical Horror", "Calcutta Horror", "Supernatural Fiction", "Body Horror", "Short Fiction"]
+tags: ["Supramatrin Gold","Matri Sadan","Grey Paste","Nursing Home","Tea Stall","Nandini","Ruma","Piyali","Supramatrin","Tapas"]
 published: true
 color: "maroon"
 ---

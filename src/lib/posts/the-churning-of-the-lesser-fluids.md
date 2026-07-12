@@ -4,7 +4,7 @@ description: "A manic-depressive monologue from a canceled Calcutta NRI, ruminat
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_161236_6828.jpg"
 category: "Essay"
-tags: ["Personal Essay", "Mental Health", "Calcutta", "Satire", "SuvroGhosh"]
+tags: ["Sando Genji","Rice Starch","Samudra Manthan","Lesser Fluids","Mount Mandara","Nectar","Churning","Mister","Starch","Asuras"]
 published: true
 color: "#2c2c2c"
 ---

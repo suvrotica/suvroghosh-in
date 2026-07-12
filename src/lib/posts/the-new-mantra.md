@@ -5,7 +5,7 @@ date: "2026-07-01"
 thumbnail: "/images/IMG-20260422-WA0009.jpg"
 thumbnailAlt: "Article illustration for The New Mantra"
 category: "Career"
-tags: ["Career", "Programming", "Artificial Intelligence", "AI Coding", "Software Engineering", "Calcutta", "Personal Essay", "SuvroGhosh"]
+tags: ["Function","Code","Tests","Agent","Test","Patch","Enough","File","Request","Tools"]
 published: true
 color: "#2c3e50"
 ---

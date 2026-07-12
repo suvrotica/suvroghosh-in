@@ -4,7 +4,7 @@ description: "An alien girl pauses over Calcutta for one harmless taste of stree
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_114531_1411.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Strange Science Fiction", "Tender", "Belonging"]
+tags: ["News Vans","Tamarind Water","Metal Band","Tram Wire","Ila","Piu","Mili","Fuchka","Nirmal","Saucer"]
 published: true
 color: "tamarind gold"
 ---

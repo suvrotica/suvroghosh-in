@@ -4,7 +4,7 @@ description: "A technical analysis of the Claude Mythos access reports and the C
 thumbnail : "/images/IMG-20260424-WA0014.jpg"
 date: "2026-04-24"
 category: "AI Security"
-tags: ["SuvroGhosh", "AI Security", "Claude Mythos Hype And Security Hygiene", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Claude Mythos","Model Weights","Mythos","Model","Anthropic","Release","Access","AI-assisted","Capability","Credentials"]
 published: true
 color: "slate"
 ---

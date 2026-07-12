@@ -4,7 +4,7 @@ description: "A South Calcutta lane turns into a laboratory of bass, dust, roadw
 date: "2026-01-08"
 thumbnail: "/images/Compress_20260603_080501_1072.jpg"
 category: "Personal"
-tags: ["Kolkata", "Calcutta", "South Kolkata", "South Calcutta", "Noise Pollution", "Bass Noise", "Urban Noise", "Air Pollution", "Dust Pollution", "PM2.5", "Road Construction", "Civic Failure", "Middle Class Life", "Lower Middle Class", "Bengali Essay", "Kolkata Essay", "Calcutta Essay", "Urban India", "Indian Cities", "Public Health", "Respiratory Health", "Caregiving", "Mother", "Aging Parents", "Bipolar Depression", "Anxiety", "Atheist Writing", "Personal Essay", "Urban Decay", "Civic Neglect", "Everyday India", "SuvroGhosh"]
+tags: ["Bass","Dhup","Road","Ledge","Noise","Character","Backhoe","Dust","Speaker","Purifier"]
 published: true
 color: "orange"
 ---

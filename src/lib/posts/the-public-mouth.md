@@ -4,7 +4,7 @@ description: "A proofreader in Calcutta meets a stranger whose giant molars turn
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_213256_6239.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Satirical Horror", "Dread", "Public Speech"]
+tags: ["College Street","CITY LISTEN","Bhaduri","Stranger","Riju","Molars","Press","Sentinel","Talking","Haradhan"]
 published: true
 color: "Ink Black"
 ---

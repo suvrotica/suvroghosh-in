@@ -5,9 +5,12 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"tags:generate": "node scripts/generate-post-tags.mjs",
+		"tags:test": "node --test scripts/generate-post-tags.test.mjs",
 		"wordclouds": "python scripts/generate_wordclouds.py",
 		"wordclouds:install": "python -m pip install --user -r requirements-wordcloud.txt",
-		"prebuild": "python scripts/prebuild_wordclouds.py && npm run validate:content && npm run validate:seo && npm run validate:media && npm run search:index && npm run validate:links",
+		"content:generate": "npm run tags:generate && python scripts/prebuild_wordclouds.py",
+		"prebuild": "npm run content:generate && npm run validate:content && npm run validate:seo && npm run validate:media && npm run search:index && npm run validate:links",
 		"build": "vite build",
 		"search:index": "node scripts/build-search-index.mjs",
 		"preview": "vite preview",

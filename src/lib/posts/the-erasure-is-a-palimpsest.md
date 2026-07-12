@@ -4,7 +4,7 @@ description: "A bipolar polemic on memory erasure, technological obsolescence, a
 date: "2026-07-12"
 thumbnail: "/images/Compress_20260712_074450_0572.jpg"
 category: "Mental Health"
-tags: ["Bipolar", "Memory", "Calcutta", "Mental Health", "SuvroGhosh"]
+tags: ["White Noise","Medication","White","Self","Consciousness","Write","Forgotten","Already","Raise","Digital"]
 published: true
 color: "#556B2F"
 ---

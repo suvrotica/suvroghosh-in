@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in the boondocks of Calcutta writes abou
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_174427_7792.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta", "Kolkata", "Bengali Writing", "Middle Age", "Lower Middle Class Life", "Depression", "Bipolar Disorder", "Anxiety", "Books", "Reading", "Writing", "Science", "Atheism", "Memory", "Ordinary Life", "Loneliness", "Creative Writing", "Satire", "Humor Essay", "Indian Society", "South Calcutta", "Boondocks", "Modern Culture", "Attention Economy", "Social Media", "Algorithms", "Reality", "Curiosity", "Human Condition", "Everyday Philosophy"]
+tags: ["Yesterday Tea","Fresh Tea","Book","Science","Pan","Ordinary","Sketch","Books","Desire","Show"]
 published: true
 color: "brown"
 ---

@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in the shanty boondocks of Calcutta trie
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_185317_7879.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Life", "Kolkata Essay", "Bengali Writer", "Middle Age", "Lower Middle Class India", "Indian Life", "Income Anxiety", "Rent Anxiety", "Bipolar Depression", "Anxiety", "Mental Health Writing", "Physics Metaphor", "Many Body Problem", "Chaos Theory", "Indian Middle Class", "Urban India", "Heatwave", "Unpaid Clients", "Freelance Life", "Consulting Life", "Underemployment", "Aging Parents", "Shame", "Memory", "Ordinary Life", "Science And Life", "SuvroGhosh"]
+tags: ["Orbit Intersects","Rice Cooker","Intersects","Pulls","Orbit","Throb","Try","Tooth","Income","Mass"]
 published: true
 color: "#8A4F2A"
 ---

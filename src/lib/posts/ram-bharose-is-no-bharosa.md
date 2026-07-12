@@ -4,7 +4,7 @@ description: "A raw Calcutta essay on unemployment, ageism, institutional collap
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_135824_4917.jpg"
 category: "Personal Essay"
-tags: ["India", "Calcutta", "Kolkata", "South Calcutta", "Bengali Essay", "Indian Society", "Unemployment", "Ageism", "Middle Age", "Mental Health", "Bipolar Depression", "Financial Fragility", "Lower Middle Class", "Institutional Collapse", "Public Institutions", "Kakistocracy", "Ram Bharose", "Indian Politics", "Indian Democracy", "Election Promises", "Social Invisibility", "Hunger", "Slow Starvation", "Artificial Intelligence", "AI Unemployment", "Job Market", "Economic Anxiety", "Personal Essay", "Social Commentary", "Political Satire", "Dark Humor", "SuvroGhosh"]
+tags: ["Ram Bharose","Bright Boy","Dada","Ram","Bharose","Demolition","Rice","Unfairness","Don’t","Institutions"]
 published: true
 color: "amber"
 ---

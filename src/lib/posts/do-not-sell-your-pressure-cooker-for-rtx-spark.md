@@ -4,7 +4,7 @@ description: "RTX Spark may become a serious local AI machine, but for most brok
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_152745_5752.jpg"
 category: "Technology"
-tags: ["AI", "Artificial Intelligence", "RTX Spark", "NVIDIA RTX Spark", "NVIDIA", "Microsoft", "Windows on Arm", "Local AI", "AI PC", "Personal AI Computer", "DGX Spark", "Blackwell GPU", "Grace CPU", "Unified Memory", "128GB Memory", "CUDA", "FP4", "Local LLM", "AI Agents", "Agentic AI", "Cloud AI", "Edge AI", "Generative AI", "Laptop Buying Advice", "AI Hardware India", "Tech Buying Advice India", "Kolkata Tech", "Calcutta Technology", "Broke Creator Tools", "Middle Class Technology", "Creator Economy", "Machine Learning Hardware", "Personal Computing", "SuvroGhosh"]
+tags: ["RTX Spark","Operations Per Second","Unified Memory","AI Performance","Column Write","RTX","Spark","AI","NVIDIA","Workloads"]
 published: true
 color: "indigo"
 ---

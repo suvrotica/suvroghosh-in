@@ -4,7 +4,7 @@ description: "A humid, philosophically inclined reflection from Calcutta on the 
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_155848_8591.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Heat Dome","Niño","Dome","Heat","Warming","Egrets","Pacific","Cart","Inverter","Monsoon"]
 published: true
 color: "#8B4513"
 ---

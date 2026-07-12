@@ -4,7 +4,7 @@ description: "A personal essay on depression, rumination, regret, and the absurd
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_060140_0665.jpg"
 category: "Personal Essay"
-tags: ["Depression", "Rumination", "Mental Health", "Bipolar Depression", "Anxiety", "Kolkata", "Calcutta", "Middle Age", "Loneliness", "Lower Middle Class Life", "Personal Essay", "Indian Mental Health", "Bengali Writer", "Regret", "Overthinking", "Emotional Survival", "Urban Loneliness", "Boondocks Life", "Psychological Essay", "Life After Failure", "Aging Alone", "Dignity", "Shame", "Resilience", "SuvroGhosh"]
+tags: ["File Marked","Government Office","Depressive Mind","File","Regrets","Depressive","Rumination","Mind","Department","Clerks"]
 published: true
 color: "slate"
 ---

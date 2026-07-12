@@ -4,7 +4,7 @@ description: "A comic and bitter Calcutta essay about knowledge, childhood, supe
 date: "2026-06-16"
 thumbnail: "/images/Compress_20260616_163940_0515.jpg"
 category: "Essay"
-tags: ["Essay", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Atheism", "Knowledge", "Ignorance", "Superstition", "Childhood", "Nostalgia", "Loneliness", "Poverty", "Mental Health", "Bipolar Depression", "Anxiety", "Indian Society", "Class", "Science", "Rationalism", "Skepticism", "WhatsApp Culture", "Urban India", "Lower Middle Class", "Personal Essay", "Satire", "Humor", "Social Commentary", "Modern India", "SuvroGhosh"]
+tags: ["Ceiling Fan","Stupidity","Knowing","Miss","Stupid","Jealous","Filth","Entropy","Knowledge","Format"]
 published: true
 color: "amber"
 ---

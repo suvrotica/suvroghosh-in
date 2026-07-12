@@ -4,7 +4,7 @@ description: "A humid evening portrait of tea stall adda, middle-aged panic, cra
 date: "2026-05-13"
 thumbnail: "/images/Compress_20260513_184315_5629.jpg"
 category: "Calcutta"
-tags: ["Calcutta", "Kolkata", "Bengali Adda", "Tea Stall", "Middle Class Bengali", "Lower Middle Class Life", "Calcutta Summer", "Bengali Culture", "Indian Urban Life", "Mental Health", "Bipolar Depression", "Loneliness", "Single Middle Age", "City of Joy", "North Calcutta", "South Calcutta", "Bengali Tea Culture", "Calcutta Streets", "Indian Middle Class", "Modern Bengal", "Existential Humor", "Bengali Conversations", "Kolkata Monsoon", "Calcutta Nostalgia", "Indian Everyday Life", "Bengali Literary Essay", "Urban Decay", "Tea Shop Philosophy", "Calcutta Evenings"]
+tags: ["Tea Stall","Hantavirus","Somebody","Cow","Tea","Adda","Hormuz","Fear","Stall","Discussing"]
 published: true
 color: "brown"
 ---

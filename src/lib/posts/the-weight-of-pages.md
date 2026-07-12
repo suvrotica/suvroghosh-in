@@ -4,7 +4,7 @@ description: "A reflective essay on the compulsion to acquire books one cannot a
 date: "2026-06-27"
 thumbnail: "/photos/Compress_20260627_142204_4685.jpg"
 category: "Culture"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh", "Books", "Calcutta", "Memory"]
+tags: ["Glass Bead Game","Remember Choosing","Forgetting Curve","Books","Book","Contentment","Remember","Read","Constitute","Ebbinghaus"]
 published: true
 color: "#8B4513"
 ---

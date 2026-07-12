@@ -4,7 +4,7 @@ description: "A darkly comic birthday reckoning on superstition, age, ambition, 
 date: "2024-04-16"
 thumbnail: "/images/Compress_20260504_232318_8029.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "A Meaningless Number On An Average Star", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Infinity","Corner","Infinities","Universe","Cosmic","Existence","Dreams","Date","Meetings","God"]
 published: true
 color: "slate"
 ---

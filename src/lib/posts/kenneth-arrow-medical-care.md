@@ -4,7 +4,7 @@ description: "A Calcutta-grounded essay on Kenneth Arrow's 1963 medical-care pap
 date: "2026-06-24"
 thumbnail: "/images/IMG-20260426-WA0008.jpg"
 category: "Economics"
-tags: ["Healthcare Economics", "Kenneth Arrow", "Market Failure", "Medical Care", "Information Asymmetry", "Welfare Economics", "Insurance", "Uncertainty", "Public Policy"]
+tags: ["Adverse Selection","Public Provision","Moral Hazard","Medical Care","United States","Arrow","Insurance","Care","Patient","Medical"]
 published: true
 color: "#2c5282"
 ---

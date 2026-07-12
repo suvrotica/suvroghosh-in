@@ -4,7 +4,7 @@ description: "In a crumbling Calcutta flat, a lonely proofreader discovers that 
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_062600_0744.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Melancholy", "Grief"]
+tags: ["Anirban","Mili","Nirmal-da","Trunk","Desk","Bread","Nagen","Mother","Father","Stay"]
 published: true
 color: "Charcoal"
 ---

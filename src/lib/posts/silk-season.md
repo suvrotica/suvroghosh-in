@@ -4,7 +4,7 @@ description: "After a new household pesticide turns Calcutta’s huntsman spider
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_155930_0658.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Romantic Horror", "Kolkata", "Spider Horror", "Speculative Fiction"]
+tags: ["Prabir Babu","Huntsman Spider","Spider Women","Rice Cooker","Ritwick","Mala","Shuddho-Home","Spiders","Spray","Silk"]
 published: true
 color: "indigo"
 ---

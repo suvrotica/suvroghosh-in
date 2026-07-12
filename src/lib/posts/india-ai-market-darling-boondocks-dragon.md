@@ -4,7 +4,7 @@ description: "A sharp, street-level Calcutta-fringe essay on India’s AI-market
 date: "2026-05-18"
 thumbnail: "/images/Compress_20260518_194331_1231.jpg"
 category: "AI Economy"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India AI", "Indian Economy", "Indian Stock Market", "AI Bubble", "AI Infrastructure", "AI Jobs", "Indian IT Services", "Nifty IT", "TCS", "Infosys", "Wipro", "HCLTech", "Semiconductors", "GPU", "AI Compute", "IndiaAI Mission", "Tata Electronics", "ASML", "Dholera", "R&D Spending", "Research And Development", "Global Capability Centres", "Outsourcing", "Automation", "Generative AI", "Technology Strategy", "Economic Reality", "Kolkata", "Calcutta", "Bengali Commentary", "Middle Class India", "Future Of Work", "AI Disruption", "Startup India", "Digital India", "Taiwan", "South Korea", "Nvidia", "TSMC", "AI Supply Chain", "Deep Tech India"]
+tags: ["AI","India","Compute","Industry","Digital","Wake","Build","Capital","Coding","Indians"]
 published: true
 color: "crimson"
 ---

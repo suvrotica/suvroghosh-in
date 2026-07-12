@@ -4,7 +4,7 @@ description: "A technical and humane look at how social disconnection, economic 
 thumbnail : "/images/IMG-20260425-WA0010.jpg" 
 date: "2026-04-26"
 category: "Artificial Intelligence"
-tags: ["SuvroGhosh", "Artificial Intelligence", "Mental Health", "AI Wave Social Isolation Mental Health Infrastructure", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Mental Health","Health Level Seven","Chronic Disease","Clinical","Care","Data","Systems","Healthcare","Mental","Social"]
 published: true
 color: "slate"
 ---

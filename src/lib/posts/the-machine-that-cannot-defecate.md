@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in Calcutta looks at Artificial Intellig
 thumbnail: "/images/Compress_20260506_214131_1484.jpg"
 date: "2026-05-13"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI", "Calcutta", "Kolkata", "Middle Class", "Bipolar Depression", "Technology", "Humanity", "Machine Learning", "Existentialism", "Humor", "Social Commentary", "Future of AI", "Human Consciousness", "Automation", "Loneliness", "Modern Life", "Unemployment", "Mental Health", "Bengali Writer", "Digital Society", "Tech Culture", "Philosophy", "Life in Kolkata", "Human vs Machine"]
+tags: ["Love Beautifully","Perform Love","Human Beings","AI","Boredom","Disagrees","Machines","Digestion","Human","Built"]
 published: true
 color: "slate"
 ---

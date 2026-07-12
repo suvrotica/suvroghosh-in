@@ -4,7 +4,7 @@ description: "A personal essay on how acute and chronic trauma can turn into a c
 date: "2026-05-28"
 thumbnail: "/images/Compress_20260528_022609_9120.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Trauma", "Bipolar Disorder", "Depression", "Anxiety", "Loneliness", "Relationships", "Entrepreneurship", "India", "Kolkata", "Personal Essay", "Video", "SuvroGhosh"]
+tags: ["Bipolar Disorder","Nervous System","Injury","Trauma","Betrayal","Disorder","Business","Bipolar","Relationships","Unsafe"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "In a Calcutta psychiatric ward, a lifelong vegetarian discovers th
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_104130_0905.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Supernatural", "Calcutta", "Psychological Horror", "SuvroGhosh"]
+tags: ["Sister Madhuri","Nirmalya","Madhuri","Bappa","Vegetarian","Sister","Ward","Subho","Harish","Dutta"]
 published: true
 color: "dark green"
 ---

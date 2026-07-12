@@ -4,7 +4,7 @@ description: "A Calcutta-side essay on how failed education, gullible publics, a
 date: "2026-05-20"
 thumbnail: "/images/Compress_20260520_022406_6425.jpg"
 category: "Technology and Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Internet Decay", "Enshittification", "Bogosity", "AI", "Artificial Intelligence", "Social Media", "Algorithmic Feeds", "Misinformation", "Disinformation", "Media Literacy", "Digital Literacy", "Failed Education", "Gullibility", "Platform Capitalism", "Attention Economy", "Online Manipulation", "AI Slop", "Synthetic Content", "Information Pollution", "Internet Culture", "Technology Criticism", "Calcutta Writing", "Kolkata Blog", "Bengali Perspective", "Critical Thinking", "Digital Society", "Fake News", "Algorithmic Manipulation", "Online Trust", "Content Farms", "Human Attention", "Public Reason", "Education Crisis"]
+tags: ["Internet","Fake","AI","Teach","Attention","Taught","Feed","Library","Platform","Brings"]
 published: true
 color: "charcoal"
 ---

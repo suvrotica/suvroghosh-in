@@ -4,7 +4,7 @@ description: "After losing his job to the man he was ordered to train, a Texas p
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_080940_0677.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Technological Horror", "Slow Dread", "Revenge"]
+tags: ["San Antonio","Colin","Arindam","Meera","Luz","Garage","Mother","Worm","Texas","Generator"]
 published: true
 color: "charcoal"
 ---

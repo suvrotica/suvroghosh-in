@@ -4,7 +4,7 @@ description: "Healthcare AI failures often begin long before an algorithm makes 
 date: "2026-06-21"
 thumbnail: "/images/Compress_20260621_014107_7684.jpg"
 category: "Healthcare IT"
-tags: ["Healthcare AI","Machine Learning","Linear Algebra","FHIR","HL7","EHR","Clinical Informatics","Healthcare Architecture","Data Science","Medical AI","Health IT","Digital Health","Interoperability","Data Governance","Vector Embeddings","Healthcare Engineering","Healthcare Analytics","SuvroGhosh"]
+tags: ["Linear Algebra","Matrix Operations","Data Quality","AI Systems","Healthcare","Mathematical","Vectors","Coordinates","Matrix","AI"]
 published: true
 color: "blue"
 ---

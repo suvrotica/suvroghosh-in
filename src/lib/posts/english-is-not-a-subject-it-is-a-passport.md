@@ -4,7 +4,7 @@ description: "A plain-spoken Calcutta essay on why English has become more impor
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_072953_3744.jpg"
 category: "Education"
-tags: ["English", "English Learning", "Education", "India", "Indian Students", "Calcutta", "Kolkata", "Language Skills", "Reading Habit", "Writing Skills", "Communication Skills", "Career Growth", "Science Education", "Technology", "Artificial Intelligence", "AI", "Software", "Global Economy", "Higher Education", "Study Skills", "Competitive Exams", "Employability", "Digital Literacy", "Knowledge Economy", "Language And Thinking", "Sapir Whorf", "Bengali Students", "Middle Class India", "Self Improvement", "SuvroGhosh"]
+tags: ["Mother Tongue","Ask Whether","Dangerous Means","English","Participant","Manuals","Writing","Language","Write","AI"]
 published: true
 color: "indigo"
 ---

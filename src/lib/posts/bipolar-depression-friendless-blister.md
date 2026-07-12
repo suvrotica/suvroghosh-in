@@ -4,7 +4,7 @@ description: "A personal essay on bipolar depression as self-recrimination, anxi
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_111032_2983.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression", "Anxiety", "Anhedonia", "Akathisia", "Self Disgust", "Self Recrimination", "Agitated Depression", "Insomnia", "Kolkata Mental Health", "Calcutta Depression", "Middle Age", "Loneliness", "Exhaustion", "Mood Disorder", "Healthcare IT", "Personal Essay", "Bengali Writer", "SuvroGhosh"]
+tags: ["Feel Guilty","Bipolar Depression","Depression","Blister","Disgust","Permission","Anhedonia","REST","Feel","Lack"]
 published: true
 color: "charcoal"
 ---

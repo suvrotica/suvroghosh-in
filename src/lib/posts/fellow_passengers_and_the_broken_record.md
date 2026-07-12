@@ -4,7 +4,7 @@ description: "A small, human meditation on the people who pass through life like
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_030820_0932.jpg"
 category: "Life"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata Life", "Calcutta Essay", "Personal Essay", "Middle Age", "Loneliness", "Human Relationships", "Everyday Philosophy", "Life Reflection", "Emotional Survival", "Urban Life", "Bengali Life", "Lower Middle Class Life", "Modern India", "Attention Economy", "Mental Health Reflection", "Atheist Writing", "Readable Essay", "Human Condition", "Companionship", "Patience", "Adjustment", "Ordinary Life", "Social Commentary", "Memoir Style", "Indian Blog", "Kolkata Blog", "Personal Growth"]
+tags: ["Song","Listening","Noise","Sometimes","Luck","Hidden","Others","Attention","Suffering","Dog"]
 published: true
 color: "amber"
 ---

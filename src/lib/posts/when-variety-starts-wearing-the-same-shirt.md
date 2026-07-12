@@ -4,7 +4,7 @@ description: "A Calcutta essay on cultural flattening, aspirational sameness, so
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_125358_8197.jpg"
 category: "Culture"
-tags: ["Culture", "Calcutta", "Kolkata", "Bengali Life", "Cultural Homogenization", "Globalization", "Artificial Intelligence", "AI", "Social Media", "Attention Economy", "Digital Culture", "Modern India", "Aspirational Class", "Middle Class India", "Consumer Culture", "Cultural Identity", "Urban Life", "Postcolonial India", "Westernization", "Smartphones", "Algorithmic Culture", "Local Culture", "Human Variety", "Technology And Society", "Online Culture", "Cultural Memory", "Digital Homogeneity", "Class Anxiety", "India And Globalization", "SuvroGhosh"]
+tags: ["Social Media","Variety","AI","Sameness","Imitate","Culture","Learn","English","Mixture","Photocopy"]
 published: true
 color: "#6A4A2F"
 ---

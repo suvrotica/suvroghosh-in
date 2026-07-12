@@ -4,7 +4,7 @@ description: "A study of the ghost not as superstition but as a problem in movem
 thumbnail : "/images/IMG-20260425-WA0001.jpg"
 date: "2026-04-25"
 category: "philosophy"
-tags: ["SuvroGhosh", "philosophy", "The Ghost As Perception", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Ghost","Perception","Figure","Presence","Ghosts","Movement","Memory","Supernatural","Living","Human"]
 published: true
 color: "slate"
 ---

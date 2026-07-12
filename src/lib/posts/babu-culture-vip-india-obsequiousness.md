@@ -4,7 +4,7 @@ description: "A personal, satirical, street-level essay on Indian obsequiousness
 date: "2026-05-18"
 thumbnail: "/images/Compress_20260518_022157_7757.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Society", "Babu Culture", "VIP Culture", "Indian Bureaucracy", "Obsequiousness", "Sycophancy", "Clerical Culture", "Power Distance", "Hierarchy", "Colonial Legacy", "Postcolonial India", "Kolkata", "Calcutta", "Indian Middle Class", "Indian Offices", "Indian Politics", "Indian Administration", "Patronage", "Nepotism", "Jugaad", "Corruption", "Public Life", "Social Commentary", "Civic Culture", "Indian Democracy", "Workplace Culture", "Power And Status", "Everyday India"]
+tags: ["Yes Sir","Babu","India","Sir","VIP","Boss","Beep","Flattery","Bends","Hierarchy"]
 published: true
 color: "ochre"
 ---

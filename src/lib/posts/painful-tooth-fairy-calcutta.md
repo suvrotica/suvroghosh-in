@@ -4,7 +4,7 @@ description: "A middle-aged man in Calcutta discovers that dental pain is not me
 thumbnail : "/images/Compress_20260502_230343_3926.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Personal Essay", "Painful Tooth Fairy Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy"]
+tags: ["Painful Tooth Fairy","Deferred Maintenance","Artificial Intelligence","Tooth","Fairy","Decay","Pain","Jaw","Nerve","Dentist"]
 published: true
 color: "#5B1E1E"
 ---

@@ -4,7 +4,7 @@ description: "How Obama’s 2008 health IT promise became the 2009 HITECH incent
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_202821_1802.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Obama EHR Incentives", "HITECH Act", "ARRA 2009", "Electronic Health Records", "EHR Adoption", "Meaningful Use", "Healthcare IT History", "Health Information Technology", "ONC", "CMS", "Medicare Incentives", "Medicaid Incentives", "Interoperability", "FHIR", "HL7", "CDA", "VA Healthcare IT", "VistA", "CPRS", "UTHSCSA", "Healthcare Modernization", "Health Policy", "Digital Health", "Clinical Data", "Healthcare Data Quality", "AI in Healthcare", "Population Health Analytics", "Semantic Interoperability", "Healthcare Architecture"]
+tags: ["Medication Lists","EHR Adoption","Health Information","Patient Safety","American Healthcare","EHR","HITECH","Healthcare","Health","Obama"]
 published: true
 color: "blue"
 ---

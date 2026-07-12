@@ -4,7 +4,7 @@ description: "A personal essay on bipolar disorder, solitude, middle-aged life i
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260506_174701_1947.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Mental Health", "Bipolar Disorder", "Bipolar Recovery", "Depression", "Pathological Sadness", "Solitude", "Living Alone", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "Atheist Writer", "Personal Essay", "Mental Health India", "Urban Loneliness", "Reclusive Life", "Emotional Regulation", "Anger Management", "Mood Disorder", "Therapy", "Medication", "Recovery", "Lower Middle Class Life", "Single Man", "Contemporary India", "Neurodivergence", "Anxiety", "Quiet Living"]
+tags: ["Canned Food","Solitude","Canned","Agitation","Maybe","Fence","Terrace","Mind","Matters","Considered"]
 published: true
 color: "slate"
 ---

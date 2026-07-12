@@ -4,7 +4,7 @@ description: "A rambling reflection from a third-floor flat in Calcutta on India
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_213656_6130.jpg"
 category: "Artificial Intelligence"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Billion Dollars","Hundred Billion","Foundational Models","Seven Hundred","AI","Arbitrage","Dollars","Drain","Geopolitical","Model"]
 published: true
 color: "#5C6B73"
 ---

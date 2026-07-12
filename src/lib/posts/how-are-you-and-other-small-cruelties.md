@@ -4,7 +4,7 @@ description: "A bitter comic meditation on the impossible social arithmetic hidd
 date: "2026-05-06"
 thumbnail : "/images/Compress_20260506_112925_5240.jpg"
 category: "Personal Satire"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Satire", "How Are You And Other Small Cruelties", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata"]
+tags: ["Fine Means","Fine","Lower-Middle-Class","Honesty","Produce","Correct","Lying","Yes","Ceiling","Asks"]
 published: true
 color: "gray"
 ---

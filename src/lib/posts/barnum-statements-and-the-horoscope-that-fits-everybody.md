@@ -4,7 +4,7 @@ description: "A Calcutta rationalist’s tour of Barnum statements, astrology, b
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_115651_1393.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Barnum Effect", "Barnum Statements", "Astrology", "Horoscope", "Indian Astrology", "Pseudoscience", "Godmen", "Babadom", "Political Rhetoric", "Populism", "Confirmation Bias", "Cognitive Bias", "Critical Thinking", "Rationalism", "Skepticism", "India", "Calcutta", "Kolkata", "Social Commentary", "Psychology", "Mass Persuasion", "WhatsApp Forwards", "Vastu", "Palmistry", "Fortune Telling"]
+tags: ["Barnum Statement","Barnum Statements","Astrologer","Statements","Horoscope","Personality","Forer","Hears","Statement","Vague"]
 published: true
 color: "amber"
 ---

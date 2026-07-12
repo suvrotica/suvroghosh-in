@@ -4,7 +4,7 @@ description: "A luxury apartment in Calcutta traps the monsoon inside imported t
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_092518_8609.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Gentrification"]
+tags: ["Jaladhar Heights","Decision Column","Red Thread","Steel Mesh","Dada Pull","Madhab","Basu","Piu","Tak","Ratan"]
 published: true
 color: "slate"
 ---

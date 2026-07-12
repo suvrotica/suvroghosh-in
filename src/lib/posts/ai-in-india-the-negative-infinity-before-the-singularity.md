@@ -4,7 +4,7 @@ description: "Artificial Intelligence in India will not arrive first as a gleami
 thumbnail : "/images/IMG-20260426-WA0010.jpg"
 date: "2026-04-26"
 category: "Healthcare AI"
-tags: ["SuvroGhosh", "India", "Healthcare IT", "Healthcare AI", "AI In India The Negative Infinity Before The Singularity", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Health Level Seven","Offers Immediate","Public Hospitals","Healthcare Interoperability","AI","Healthcare","Fake","Clinical","Synthetic","Provenance"]
 published: true
 color: "red"
 ---

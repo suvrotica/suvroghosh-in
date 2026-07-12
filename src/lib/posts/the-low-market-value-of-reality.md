@@ -4,7 +4,7 @@ description: "A personal essay from Calcutta’s margins on school envy, dead me
 date: "2026-05-20"
 thumbnail: "/images/Compress_20260520_035321_1185.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Society", "Middle Class Bengal", "Lower Middle Class Life", "Science Writing", "Math Writing", "Reality", "Rationalism", "Atheism", "Skepticism", "Superstition", "Pseudoscience", "Astrology", "Horoscope", "Homeopathy", "Meritocracy", "Office Politics", "Gaslighting", "Sycophancy", "Bipolar Depression", "Anxiety", "Outcast", "Pariah", "Personal Essay", "Bengali Blogger", "Indian Society", "Education", "School Life", "Workplace Culture", "Truth", "Evidence", "Corruption", "Social Criticism", "Intellectual Honesty", "Writing Life", "Kolkata Blogger", "Rational Bengali", "Science And Society", "Modern India", "Mental Health", "Poverty", "Loneliness", "Satire", "Essay"]
+tags: ["Write","Mathematics","Bill","Reality","Teacher","Nonsense","Popular","Comfort","Science","Maybe"]
 published: true
 color: "slate"
 ---

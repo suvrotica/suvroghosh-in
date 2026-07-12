@@ -4,7 +4,7 @@ description: "A feverishly tender polemic on India's cosmetic AI sovereignty, ge
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_235349_9416.jpg"
 category: "Polemic"
-tags: ["AI", "India", "Calcutta", "SuvroGhosh", "July 2026", "Gerontocracy", "Satire"]
+tags: ["Negative Infinity","AI","Indigenous","Infinity","Frontier","Five","Compute","India","Uncles","Negative"]
 published: true
 color: "#4A0000"
 ---

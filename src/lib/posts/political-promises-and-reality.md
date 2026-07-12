@@ -4,7 +4,7 @@ description: "A bleak but practical essay on why political promises so often col
 date: "2026-05-02"
 thumbnail : "/images/Compress_20260503_161828_8206.jpg"
 category: "Politics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Politics", "Political Promises And Reality", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
+tags: ["Middle Class","Lower Middle","Promise","Class","Save","Voter","Leader","Politics","Public","Political"]
 published: true
 color: "slate"
 ---

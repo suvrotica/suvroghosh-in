@@ -4,7 +4,7 @@ description: "A Calcutta child with a missing tiffin carrier meets Arjun of Flat
 date: "2026-06-28"
 thumbnail: "/images/Compress_20260628_232447_7373.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Children's Fiction", "Adventure", "Intimate", "Calcutta"]
+tags: ["Alur Dom","Mrs Banerjee","Mrs Gomes","Glucose Biscuits","Red Ribbon","Rini","Arjun","Neel","Ronit","Tiffin"]
 published: true
 color: "#8B0000"
 ---

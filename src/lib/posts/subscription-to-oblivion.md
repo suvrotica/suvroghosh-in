@@ -4,7 +4,7 @@ description: "A manic-depressive rant on algorithmic invisibility, agentic AI, a
 date: "2026-07-12"
 thumbnail: "/images/Compress_20260712_085232_2670.jpg"
 category: "Essay"
-tags: ["AI", "Obsolescence", "Calcutta", "Mania", "Despair", "Agentic", "Panopticon"]
+tags: ["Agentic","Persistent","Shunya","Basket","Void","Trams","Upon","Perform","Algorithmic","Agents"]
 published: true
 color: "#8B0000"
 ---

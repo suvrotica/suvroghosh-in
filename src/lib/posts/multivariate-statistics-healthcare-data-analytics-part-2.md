@@ -4,7 +4,7 @@ thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 description: "A beginner-friendly second post on multivariate statistics for healthcare data analytics, showing how real hospital problems become statistical questions, models, and practical decisions."
 date: "2026-05-20"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Healthcare Data Analytics", "Multivariate Statistics", "Healthcare IT", "Clinical Analytics", "Hospital Data", "EHR Data", "Patient Outcomes", "Readmission Analytics", "Emergency Department Analytics", "Healthcare Statistics", "Beginner Statistics", "Data Science for Healthcare", "Clinical Informatics", "Public Health Data", "Regression", "PCA", "MANOVA", "SEM", "Covariance Matrix", "Correlation Matrix", "Healthcare AI", "Predictive Modeling", "Data Quality", "Statistical Modeling", "Healthcare Architecture", "Analytics Education", "Suvro Ghosh"]
+tags: ["Blood Pressure","Discharge Destination","Multivariate Statistics","Explanatory Variables","Statistical Solution","Variables","Readmissions","Multivariate","Covariance","Patients"]
 published: true
 color: "blue"
 ---

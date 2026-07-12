@@ -4,7 +4,7 @@ description: "In a rain-soaked Calcutta lane, dengue begins choosing its victims
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_073554_4430.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Medical Horror", "Slow Dread", "Happiness"]
+tags: ["Tapan Dey","Coconut Shells","Neem Tree","Brass Bowl","Main Road","Mitali","Rini","Bula","Arup","Larvae"]
 published: true
 color: "green"
 ---

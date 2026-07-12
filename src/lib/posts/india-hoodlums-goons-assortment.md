@@ -4,7 +4,7 @@ description: "From para dadas to political strongmen, India’s strange biodiver
 date: "2026-05-11"
 thumbnail : "/images/Compress_20260428_173311_1250.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Politics", "Goons", "Crime", "Kolkata", "Bengal", "Political Violence", "Street Power", "Corruption", "Indian Society", "Muscle Power", "Indian Democracy", "Local Politics", "Urban India", "Indian Mafia", "Social Commentary", "Governance", "Police", "Indian Culture", "Power Structures", "Real Estate Mafia", "Middle Class India"]
+tags: ["Goon","Somebody","India","Goons","Indian","Permanently","Controls","Undocumented","Fellow","Gap"]
 published: true
 color: "maroon"
 ---

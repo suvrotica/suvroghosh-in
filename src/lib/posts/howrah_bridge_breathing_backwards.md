@@ -4,7 +4,7 @@ description: "When a wormhole opens on Howrah Bridge, Calcutta discovers that th
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_202519_9501.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Science Fiction", "Dread", "Time"]
+tags: ["Tiffin Carrier","Union Office","Howrah Bridge","Haripada","Reba","Bappa","Nagen","Bridge","Tiffin","Wormhole"]
 published: true
 color: "#536878"
 ---

@@ -4,7 +4,7 @@ description: "A proud Calcutta godman turns shame into sacrament and commerce in
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_150923_3785.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Satirical Dread", "Faith and Contagion"]
+tags: ["Anandomoy Baba","Free Spoon","Baba Eyes","Nirmal","Tublu","Amrit-Gut","Sanyal","Mina","Anandomoy","Attendants"]
 published: true
 color: "Ochre"
 ---

@@ -4,7 +4,7 @@ description: "A personal essay on solitude, memory, middle age, poverty, depress
 date: "2026-06-17"
 thumbnail: "/images/Compress_20260617_122644_4463.jpg"
 category: "Personal Essay"
-tags: ["Essay", "Personal Essay", "Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Solitude", "Loneliness", "Middle Age", "Aging", "Memory", "Regret", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class", "India", "Urban Loneliness", "Existential Essay", "Atheism", "Personal Blog", "SuvroGhosh"]
+tags: ["Future Tense","Solitude","Crossings","Tense","Fog","Memory","Road","Witness","Towel","Future"]
 published: true
 color: "slate"
 ---

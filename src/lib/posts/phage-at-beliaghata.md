@@ -4,7 +4,7 @@ description: "A Bengali doctoral researcher studying antibiotic resistance wakes
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_045909_9124.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Science Horror", "Dread", "Antibiotic Resistance"]
+tags: ["Sharmila Sen","Arka","Chatterjee","Mili","Freezer","Bacteria","Sharmila","Phage","Mother","Vial"]
 published: true
 color: "indigo"
 ---

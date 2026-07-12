@@ -4,7 +4,7 @@ description: "A reflective essay from Calcutta on the quiet cost of speaking pla
 date: "2026-06-24"
 thumbnail: "/images/Compress_20260624_225624_4190.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Wobbling Fan","Dinner Party","Warehouse Collapse","Porcupine","Benches","Wobble","Campaign","Quills","Pariah","Lukewarm"]
 published: true
 color: "#5a6e7c"
 ---

@@ -4,7 +4,7 @@ description: "A historically grounded examination of how the Great Trigonometric
 thumbnail : "/images/IMG-20260423-WA0022.jpg"
 date: "2026-04-21"
 category: "history-of-science"
-tags: ["SuvroGhosh", "India", "history-of-science", "Great Trigonometrical Survey India Trigonometry Empire", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Great Trigonometrical Survey","Trigonometrical","Survey","Trigonometry","Baseline","Geodetic","Lambton","Triangulation","Distances","Revenue"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "When students die mysteriously in a narrow metro passage near an o
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_143811_1448.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Institutional Neglect"]
+tags: ["Professor Bose","Metro Entrance","Tea Stall","Bursar Banerjee","Madhab Sat","Madhab","Ritoban","Banerjee","Ray","Bose"]
 published: true
 color: "Slate"
 ---

@@ -4,7 +4,7 @@ description: "A cleaner, sharper, more human rant about money, age, illness, fai
 date: "2026-05-31"
 thumbnail: "/images/Compress_20260531_164417_7793.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class", "Middle Age", "Bipolar Depression", "Mental Health", "Unemployment", "Bankruptcy", "Loneliness", "Aging", "Class Anxiety", "Single Man", "Urban India", "Indian Middle Class", "Bengali Society", "Life After Fifty", "Personal Blog", "SuvroGhosh"]
+tags: ["Calculation","America","Fix","Considered","Somebody","Bengali","Settled","Maintenance","Depressed","Illness"]
 published: true
 color: "slate"
 ---

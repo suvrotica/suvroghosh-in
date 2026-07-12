@@ -4,7 +4,7 @@ description: "A plainspoken public-health warning about cigarettes, biri, khaini
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_181715_5274.jpg"
 category: "Public Health"
-tags: ["Nicotine", "Tobacco", "Biri", "Beedi", "Smoking", "Cigarettes", "Vaping", "Vape Health Risks", "Nicotine Pouches", "Nicotine Gum", "Nicotine Patch", "Khaini", "Gutkha", "Zarda", "Paan Masala", "Smokeless Tobacco", "Snuff", "Bengal", "Kolkata", "Calcutta", "Public Health India", "Tobacco Addiction", "Quit Smoking", "Cancer Prevention", "Heart Health", "Oral Cancer", "Lung Health", "Middle Age Health", "SuvroGhosh"]
+tags: ["Zarda Paan","Nicotine Pouches","Nicotine","Biri","Tobacco","Vape","Khaini","Zarda","NRT","Pouch"]
 published: true
 color: "amber"
 ---

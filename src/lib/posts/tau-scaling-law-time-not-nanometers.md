@@ -4,7 +4,7 @@ description: "Huawei’s Tau Scaling Law is not magic and not nonsense. It is a 
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_040041_1818.jpg"
 category: "Technology"
-tags: ["Tau Scaling Law", "Huawei Tau Scaling", "LogicFolding", "Moore's Law", "Semiconductors", "Chip Design", "AI Chips", "Kirin 2026", "Advanced Packaging", "3D Chips", "Post Moore Era", "Computer Architecture", "Signal Delay", "Transistor Density", "EUV Lithography", "China Technology", "US Chip Sanctions", "Semiconductor Geopolitics", "AI Hardware", "Technology Explained", "Engineering Blog", "SuvroGhosh"]
+tags: ["Tau Scaling","Moore Law","Time Leaks","Real Job","Huawei","Tau","Chip","Moore","Scaling","Chips"]
 published: true
 color: "slate"
 ---

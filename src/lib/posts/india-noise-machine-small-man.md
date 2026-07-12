@@ -4,7 +4,7 @@ description: "A street-level political essay on India’s loud public theatre, p
 date: "2026-05-21"
 thumbnail: "/images/Compress_20260521_213304_4601.jpg"
 category: "Politics"
-tags: ["India Politics", "Indian Democracy", "Paid Media", "Godi Media", "Political Propaganda", "Majoritarianism", "Hindutva Politics", "Religious Bigotry", "Hindu Bigotry", "Corruption in India", "Nepotism", "Cronyism", "Public Institutions", "Indian Media", "Television News", "Democracy Crisis", "Civil Liberties", "Minority Rights", "Free Speech", "Press Freedom", "Political Hypocrisy", "Nationalism", "Authoritarianism", "Kolkata", "Calcutta", "Middle Class India", "Lower Middle Class India", "Public Life", "Indian Society", "Civic Decay", "Secularism", "Social Commentary", "Opinion Essay", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Corruption","Wrongdoing","Hindu","Nepotism","India","Asks","Religious","Party","Anchor","Enemies"]
 published: true
 color: "saffron"
 ---

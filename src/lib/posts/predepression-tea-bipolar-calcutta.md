@@ -4,7 +4,7 @@ description: "A Calcutta personal essay on bipolar depression, bad tea, early wa
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_021934_4568.jpg"
 category: "Personal Essay"
-tags: ["Bipolar Depression", "Depression Essay", "Mental Health", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class Life", "Middle Age", "Anxiety", "Rumination", "Hypomania", "Depressive Episode", "Metacognition", "Attention", "Tea", "Indian Mental Health", "Personal Writing", "Mood Disorder", "Everyday Psychology", "SuvroGhosh"]
+tags: ["Tea","Depression","Cup","Leaf","Mind","Milk","Workshop","Depressive","Bipolar","Warnings"]
 published: true
 color: "slate"
 ---

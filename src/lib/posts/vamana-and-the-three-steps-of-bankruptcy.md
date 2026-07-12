@@ -4,7 +4,7 @@ description: "A Calcutta essay on how tiny expenses turn into cosmic humiliation
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_200636_6399.jpg"
 category: "Personal Essay"
-tags: ["Vamana", "King Bali", "Bankruptcy", "Calcutta Life", "Kolkata Essay", "Middle Class India", "Lower Middle Class", "Financial Anxiety", "Debt", "Rent", "Medicine", "Dental Pain", "Laptop Repair", "Dignity", "Bipolar Depression", "Anxiety", "Personal Essay", "Indian Mythology", "Mythology Essay", "Everyday Poverty", "Urban India", "South Calcutta", "Bengali Life", "Mental Health Essay", "Economic Humiliation", "SuvroGhosh"]
+tags: ["Buffer Means","Step Covers","Money Fear","Buffer","Bali","Vamana","Laptop","Dwarf","Step","Bankruptcy"]
 published: true
 color: "brown"
 ---

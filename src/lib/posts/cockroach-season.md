@@ -4,7 +4,7 @@ description: "A man seeking genetic treatment for Huntington’s disease receive
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_111522_2382.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Body Horror", "Calcutta", "Genetic Therapy", "SuvroGhosh"]
+tags: ["Raka Lahiri","Forty Percent","Tea Stall","Nilotpal","Mili","Raka","Cockroaches","Clinic","Lahiri","Nil"]
 published: true
 color: "black"
 ---

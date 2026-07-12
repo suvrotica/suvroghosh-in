@@ -4,7 +4,7 @@ description: "A personal essay on atheism, cooperation, bipolar fragility, ambit
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260515_150426_6813.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Atheism", "Humanism", "Rationality", "Cooperation", "Religion And Society", "Bipolar Disorder", "Mental Health", "Kolkata Life", "Calcutta Essay", "Middle Class Life", "Lower Middle Class India", "Personal Philosophy", "Existential Essay", "Secular Humanism", "Social Commentary", "Science And Wonder", "Meaning Without God", "Survival Of Species", "Imagination", "Human Connection", "Corruption", "Scarcity", "Floods", "Modern India", "Bengali Writing", "SuvroGhosh"]
+tags: ["Visible Work","Ideals","Imaginary","Cooperation","Atheism","Work","Species","Visible","Fashionable","Career"]
 published: true
 color: "amber"
 ---

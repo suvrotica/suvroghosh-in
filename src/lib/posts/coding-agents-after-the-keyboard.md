@@ -4,7 +4,7 @@ description: "A sharp, readable explanation of how coding moved from hand-writte
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_041824_4827.jpg"
 category: "Artificial Intelligence"
-tags: ["AI Coding Agents", "Agentic Coding", "Cursor AI", "Claude Code", "OpenAI Codex", "GitHub Copilot", "Software Engineering", "Developer Tools", "AI Programming", "Codebase Indexing", "RAG", "Vector Search", "LLM", "IDE", "Tree-sitter", "Embeddings", "Speculative Decoding", "Mixture of Experts", "MoE", "Reinforcement Learning", "Cloud Agents", "Shadow Workspaces", "Git Worktrees", "AI Software Development", "Future of Programming", "Programming Tools", "Code Generation", "AI Productivity", "Engineering Blog", "SuvroGhosh"]
+tags: ["Coding Agents","Agent","Coding","Model","Tests","Code","Codebase","Agents","Repository","MoE"]
 published: true
 color: "#0f766e"
 ---

@@ -4,7 +4,7 @@ description: "A personal essay on depression, failed ambition, solitude, aging, 
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260506_141951_1567.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Personal Essay", "Calcutta", "Kolkata", "Bengali Writing", "Indian Blogger", "Depression Essay", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Midlife Crisis", "Failure", "Failed Ambition", "Solitude", "Loneliness", "Creative Nonfiction", "Memoir", "Life in India", "Lower Middle Class Life", "Urban India", "Atheist Writing", "Single Man", "Aging", "Disillusionment", "Kolkata Life", "Human Condition", "Dark Humor", "Literary Essay", "Personal Blog", "SEO Writing", "Artificial Intelligence", "Current Affairs"]
+tags: ["Destiny","Falls","Enough","Leave","Depression","Extra","Feels","India","Mother","Plastic"]
 published: true
 color: "slate"
 ---

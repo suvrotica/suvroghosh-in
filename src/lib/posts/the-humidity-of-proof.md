@@ -4,7 +4,7 @@ description: "A humid Calcutta bar essay about drink vocabulary, civic collapse,
 date: "2026-06-27"
 thumbnail: "/photos/Compress_20260627_114717_7761.jpg"
 category: "Culture"
-tags: ["Kolkata", "Calcutta", "Bengali Life", "Bengali Humor", "Indian Humor", "Bar Culture", "Drinking Culture", "Alcohol Vocabulary", "Cocktail Guide", "Whiskey Guide", "Proof Alcohol", "ABV", "American Bars", "British Proof", "Happy Hour", "Mocktails", "Martini", "Craft Beer", "IPA", "Urban India", "Middle Class India", "Language Guide", "English Vocabulary", "Satire", "Cultural Commentary", "SuvroGhosh"]
+tags: ["Happy Hour","Bar English","Operating System","Ceiling Fan","Alcohol","Whiskey","Drink","Vermouth","Bar","ABV"]
 published: true
 color: "#6B3A1E"
 ---

@@ -4,7 +4,7 @@ description: "Wars do not ennoble technology. They compress it. A look at what t
 thumbnail : "/images/IMG-20260423-WA0000.jpg" 
 date: "2026-04-23"
 category: "technology"
-tags: ["SuvroGhosh", "technology", "War Spillovers Ukraine Iran Technology", "War Technology", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Geopolitics", "Energy Security", "Global Supply Chains"]
+tags: ["Civilian","Ukraine","Drones","War","Navigation","Infrastructure","Robotics","Interceptor","Iran","Wartime"]
 published: true
 color: "slate"
 ---

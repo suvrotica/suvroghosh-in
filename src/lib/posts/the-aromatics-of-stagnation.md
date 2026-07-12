@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay about depression, stalled work, Arti
 date: "2026-02-12"
 thumbnail: "/images/Compress_20260515_134124_4704.jpg"
 category: "Calcutta"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Essay", "Bengali Life", "Middle Age", "Lower Middle Class India", "Mental Health", "Depression", "Bipolar Disorder", "Anxiety", "Artificial Intelligence", "AI", "Technology Jobs", "Job Loss", "Automation", "Future of Work", "Loneliness", "Urban Isolation", "Indian Tech Industry", "Career Collapse", "Personal Essay", "Dark Humor", "Satire", "Social Commentary", "Modern India", "Kolkata Life", "Work and Identity", "Economic Anxiety"]
+tags: ["Soap","Annoyance","Lizard","Venture","Tap","Sometimes","Bathroom","Learn","AI","Nonsense"]
 published: true
 color: "black"
 ---

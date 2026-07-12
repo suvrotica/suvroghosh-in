@@ -4,7 +4,7 @@ description: "A 51-year-old in Calcutta reflects on why he still writes long-for
 date: "2026-06-24"
 thumbnail: "/images/Compress_20260624_195048_8696.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Write","Algorithm","Fan","Singularity","Power","Read","Fatigue","Thoughts","Dying","Internet"]
 published: true
 color: "#8B4513"
 ---

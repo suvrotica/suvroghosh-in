@@ -4,7 +4,7 @@ description: "India may yet build a real Artificial Intelligence moat, but it is
 thumbnail : "/images/IMG-20260423-WA0004.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
-tags: ["SuvroGhosh", "India", "Healthcare IT", "healthcare-it", "India AI Moat Width Without Depth", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Chip Design","Selective Sovereignty","Failure Point","Model Work","Moat","AI","Model","Frontier","Implementation","Hardware"]
 published: true
 color: "indigo"
 ---

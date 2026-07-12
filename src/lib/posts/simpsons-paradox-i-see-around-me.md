@@ -4,7 +4,7 @@ description: "A Calcutta resident reflects on how statistical illusion mirrors e
 date: "2026-06-27"
 thumbnail: "/images/Compress_20260627_201325_5812.jpg"
 category: "Statistics"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Simpson's Paradox","Suggest Otherwise","United States","Disaggregated Reality","Aggregate Number","Aggregate","Disaggregated","Particular","Paradox","Simpson's"]
 published: true
 color: "#5B6D5B"
 ---

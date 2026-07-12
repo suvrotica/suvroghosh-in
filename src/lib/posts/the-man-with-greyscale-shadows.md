@@ -4,7 +4,7 @@ description: "A Calcutta child follows a strange Bengali man whose body casts ma
 date: "2026-06-30"
 thumbnail: "/images/charcoal-horror-zigzag-presence.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Children's Fiction", "Adventure", "Eerie", "Calcutta Shadows"]
+tags: ["Guava Tree","Seven Shadows","Pale Silver","Library Book","Red Thread","Tuli","Kite","Nirmal-kaku","Paltu","Ronit-da"]
 published: true
 color: "charcoal"
 ---

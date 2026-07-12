@@ -4,7 +4,7 @@ description: "A personal essay about an old Honda Accord, vanished Texas highway
 date: "2026-01-01"
 thumbnail: "/photos/Compress_20260510_235335_5542.jpg"
 category: "personal"
-tags: ["Personal Essay", "Memoir", "Calcutta Life", "Kolkata Life", "Middle Age", "Loneliness", "Honda Accord", "Texas Memories", "Austin", "San Antonio", "Immigrant Life", "Reverse Migration", "Bengali Essay", "Urban India", "Lower Middle Class Life", "Mental Health Writing", "Objects And Memory", "Cars And Memory", "American Life", "Indian Life", "Everyday Philosophy", "Aging", "Solitude", "SuvroGhosh"]
+tags: ["San Antonio","Rice Cooker","Accord","Car","Honda","Bottle","Books","Texas","Cooker","Austin"]
 published: true
 color: "black"
 ---

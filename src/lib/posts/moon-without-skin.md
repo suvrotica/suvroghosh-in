@@ -4,7 +4,7 @@ description: "When cancerous growths appear across the face of the moon, a retir
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_065220_0026.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Science Fiction", "Kolkata", "SuvroGhosh"]
+tags: ["Partha","Ananya","Riddhi","Moon","Lunar","Lump","Lumps","Mother","Growths","Kolkata"]
 published: true
 color: "black"
 ---

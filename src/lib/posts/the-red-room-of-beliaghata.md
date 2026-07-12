@@ -4,7 +4,7 @@ description: "During a load-shedding night in Calcutta, a sealed parcel is misha
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_153952_2294.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Contagion"]
+tags: ["Courier Boy","Shambhu Dutta","Dutta Whispered","Wooden Box","Tea Stall","Mrinalini","Bela","Arko","Courier","Box"]
 published: true
 color: "Crimson"
 ---

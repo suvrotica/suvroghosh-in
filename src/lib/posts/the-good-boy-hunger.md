@@ -4,7 +4,7 @@ description: "A genteel Calcutta man tries to end his life quietly and wakes int
 date: "2026-06-16"
 thumbnail: "/images/Compress_20260616_182840_0996.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Shame"]
+tags: ["Raw Chicken","Good Boy","Anirban","Sabitri","Montu","Ghosh","Mrs","Father","Mother","Hunger"]
 published: true
 color: "Maroon"
 ---

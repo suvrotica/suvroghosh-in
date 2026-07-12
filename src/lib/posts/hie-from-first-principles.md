@@ -4,7 +4,7 @@ description: "A Calcutta-grounded essay on Health Information Exchange, OpenHIE,
 date: "2026-04-21"
 thumbnail: "/images/IMG-20260423-WA0021.jpg"
 category: "healthcare-it"
-tags: ["HIE", "Engineering Blog", "SuvroGhosh", "Healthcare IT", "Hie First Principles Openhie", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing"]
+tags: ["Community Health Workers","Interoperability Layer","United States","Data Quality","OpenHIE Shape","HIE","OpenHIE","Health","Systems","FHIR"]
 published: true
 color: "blue"
 ---

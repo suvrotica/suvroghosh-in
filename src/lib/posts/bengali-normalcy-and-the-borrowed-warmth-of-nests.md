@@ -4,7 +4,7 @@ description: "A personal essay on middle age, loneliness, family life, privacy, 
 date: "2026-05-31"
 thumbnail: "/images/Compress_20260531_074301_1393.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Bengali Life", "Kolkata", "Calcutta", "Middle Age", "Loneliness", "Family Life", "Bengali Family", "Mental Health", "Bipolar Depression", "Anxiety", "Single Life", "Lower Middle Class", "Urban Loneliness", "Domestic Life", "Privacy", "Social Life", "Aging", "Indian Middle Class", "Personal Blog", "Life Writing", "Kolkata Essay", "Calcutta Essay", "Human Connection", "Modern Loneliness", "Everyday Life", "SuvroGhosh"]
+tags: ["Nest","Hen","Privacy","Bearable","Nests","Disturbing","Family","Happiness","Father","Bengali"]
 published: true
 color: "amber"
 ---

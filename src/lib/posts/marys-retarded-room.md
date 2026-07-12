@@ -4,7 +4,7 @@ date: "2026-01-12"
 thumbnail: "/images/Compress_20260605_132149_9212.jpg"
 description: "A Calcutta essay on Mary’s Room, color, consciousness, qualia, and why knowing everything about red is not the same as seeing a ripe mango split open in summer."
 category: "personal"
-tags: ["Marys Room", "Philosophy", "Consciousness", "Qualia", "Mind Body Problem", "Neuroscience", "Color Perception", "Philosophy of Mind", "Thought Experiment", "Calcutta Essay", "Kolkata Writing", "Bengali Blogger", "Personal Essay", "Atheism", "Science and Philosophy", "Human Experience", "Depression Writing", "Middle Class Life", "SuvroGhosh"]
+tags: ["Thought Experiment","Rice Cooker","Mary","Red","Color","Experience","Learned","Brain","Philosophy","Consciousness"]
 published: true
 color: "orange"
 ---

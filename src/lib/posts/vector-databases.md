@@ -4,7 +4,7 @@ description: "A system-level examination of vector databases for healthcare IT a
 thumbnail : "/images/IMG-20260423-WA0024.jpg"
 date: "2026-04-23"
 category: "healthcare it"
-tags: ["Vector Databases", "Healthcare IT", "SuvroGhosh", "Engineering Blog", "Video", "Healthcare Data", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Health Level Seven","Diabetes Medication","Vector Databases","Vector Database","Data Quality","Embedding","Search","Retrieval","Database","Chunk"]
 published: true
 color: "indigo"
 ---

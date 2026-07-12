@@ -4,7 +4,7 @@ description: "A Calcutta essay on softening the truth, household kindness, geome
 date: "2026-06-20"
 thumbnail: "/images/Compress_20260620_115927_7094.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta", "Kolkata", "Geometry", "Trapezoid", "Kindness", "Worry", "Truth", "Reflection", "SuvroGhosh"]
+tags: ["Rectangle","Tea"]
 published: true
 color: "blue"
 ---

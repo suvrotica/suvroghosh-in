@@ -4,7 +4,7 @@ description: "A Calcutta essay on superstition, nationalism, poverty, failed pub
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_192137_7295.jpg"
 category: "Society"
-tags: ["India", "Calcutta", "Kolkata", "Bengali Essay", "Indian Society", "Social Satire", "Political Satire", "Atheism", "Rationalism", "Superstition", "Pseudoscience", "Nationalism", "Poverty", "Middle Class India", "Lower Middle Class Life", "Public Reason", "Science And Society", "Urban India", "Civic Life", "Sanitation", "Corruption", "Everyday India", "Social Commentary", "SuvroGhosh"]
+tags: ["Adjust","Boring","Shamelessness","Pride","Superstition","Shameless","Rot","Bridges","Repair","Evidence"]
 published: true
 color: "#6B3F2A"
 ---

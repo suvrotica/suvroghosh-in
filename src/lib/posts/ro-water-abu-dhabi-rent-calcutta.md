@@ -4,7 +4,7 @@ description: "A sharp, darkly comic essay on bad water, impossible rent, civic d
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_192653_3719.jpg"
 category: "Personal Essay"
-tags: ["Calcutta", "Kolkata", "RO Water", "Water Quality", "Drinking Water", "Urban Life", "Indian Real Estate", "Rental Housing", "Cost of Living India", "Lower Middle Class India", "Middle Class Anxiety", "Civic Infrastructure", "Urban Decay", "Municipal Failure", "Returning From America", "Bengali Life", "Calcutta Housing", "Mental Health", "Bipolar Depression", "Anxiety", "Single Man Life", "India Commentary", "Personal Essay", "SuvroGhosh"]
+tags: ["Abu Dhabi","Rent Listings","Rent","Coli","Dhabi","Abu","Less","Poverty","Listings","Filter"]
 published: true
 color: "#7A5638"
 ---

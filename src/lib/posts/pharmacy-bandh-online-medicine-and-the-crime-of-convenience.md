@@ -4,7 +4,7 @@ description: "India’s retail pharmacy bandh against online medicine platforms 
 date: "2026-05-20"
 thumbnail: "/images/Compress_20260520_194050_0867.jpg"
 category: "Healthcare IT"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Pharmacy Strike", "Pharmacy Bandh", "Dharmaghat", "Online Pharmacy India", "E Pharmacy Regulation", "Amazon Pharmacy India", "Medicine Delivery", "Drug Safety India", "Counterfeit Medicines", "Expired Medicines", "Fake Prescriptions", "Prescription Drug Abuse", "Controlled Drugs", "Sedatives", "Anxiolytics", "Stimulants", "ADHD Medicines", "Narcolepsy Medicines", "Retail Chemists India", "AIOCD", "CDSCO", "GSR 817E", "GSR 220E", "Public Health", "Healthcare Regulation", "Medicine Supply Chain", "Pharmaceutical Crime", "Healthcare Corruption", "Patient Safety", "Drug Traceability", "Healthcare Governance", "India Healthcare", "Pharmacy Law India"]
+tags: ["Online Pharmacies","Online Pharmacy","Chemists","GSR","Retail","Prescription","Medicine","Pharmacies","Pharmacy","Chemist"]
 published: true
 color: "red"
 ---

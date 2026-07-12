@@ -4,7 +4,7 @@ description: "A personal essay on middle age, social invisibility, worklessness,
 date: "2026-06-20"
 thumbnail: "/images/Compress_20260620_123845_5292.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Loneliness", "Social Invisibility", "Depression", "Anxiety", "Unemployment", "Lower Middle Class", "Single Man", "Aging", "Family", "Romance", "Worklessness", "Urban Life", "South Calcutta", "Kolkata Essay", "Indian Society", "Modern India", "Bengali Middle Class", "Mental Health Writing", "Dark Humor", "Literary Nonfiction", "Autobiographical Essay", "Social Erasure", "Precarious Life", "SuvroGhosh"]
+tags: ["Erasure","Women","Romance","Death","Thins","Affection","Family","Brochure","Hair","Brain"]
 published: true
 color: "#4A3B36"
 ---

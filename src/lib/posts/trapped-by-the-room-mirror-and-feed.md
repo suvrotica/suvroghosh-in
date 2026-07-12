@@ -4,7 +4,7 @@ description: "A Calcutta-flavored reflection on feeling trapped by memory, illne
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_043139_9997.jpg"
 category: "Mental Health"
-tags: ["Mental Health", "Bipolar Depression", "Bipolar Disorder", "Anxiety", "Trauma", "Loneliness", "Addiction", "Social Media Anxiety", "Modern Life", "Digital Life", "Artificial Intelligence", "Large Language Models", "LLM", "AI", "Chatbots", "Calcutta Life", "Kolkata Blog", "Personal Essay", "Middle Age", "Psychology", "Technology And Society", "Attention Economy", "Dystopia", "Brave New World", "1984", "SuvroGhosh"]
+tags: ["Intend Harm","Intend","Trapped","Mirror","LLM","Harm","Trap","Future","Window","Real"]
 published: true
 color: "#4B5563"
 ---

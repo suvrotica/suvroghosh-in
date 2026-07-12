@@ -4,7 +4,7 @@ description: "When a water-borne parasite enters Kolkata’s drinking-water netw
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_144743_3968.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Ghost Story", "Kolkata", "Water", "Parasite", "Urban Dread", "SuvroGhosh"]
+tags: ["Chhaya Bari","Niloy Phone","Specimen Box","Tea Stalls","Niloy Thought","Mira","Dutta","Ashfaq","Worms","Reservoir"]
 published: true
 color: "slate"
 ---

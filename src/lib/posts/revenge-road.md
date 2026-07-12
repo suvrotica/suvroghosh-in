@@ -4,7 +4,7 @@ description: "A ruined healthcare founder in South Calcutta begins hearing that 
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_151422_2879.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Moral Debt"]
+tags: ["Rakesh Jalan","Mrinal Senapati","Anirban MUKHERJEE","Nirmal Dutta","Cash Flow","Anirban","Jalan","Nandini","Ledger","Bhaduri"]
 published: true
 color: "#4A2F2F"
 ---

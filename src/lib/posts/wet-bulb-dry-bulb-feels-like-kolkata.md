@@ -4,7 +4,7 @@ description: "A clear, local, practical explanation of dry-bulb temperature, wet
 date: "2026-05-28"
 thumbnail: "/images/Compress_20260528_013933_3751.jpg"
 category: "Science"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata Heat", "Calcutta Weather", "Wet Bulb Temperature", "Dry Bulb Temperature", "Feels Like Temperature", "Humidity", "Heat Index", "Evaporation", "Climate", "Science Explainer", "Public Health"]
+tags: ["Dry-Bulb Temperature","Wet-Bulb Temperature","Wet Cloth","Dry-Bulb","Wet-Bulb","Evaporation","Air","Heat","Thermometer","Evaporates"]
 published: true
 color: "orange"
 ---

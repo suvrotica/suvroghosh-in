@@ -4,7 +4,7 @@ description: "A Calcutta essay on boiling water, burnt rice, middle-aged failure
 date: "2026-06-17"
 thumbnail: "/images/Compress_20260617_201411_1261.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Blog", "Kolkata Essay", "Middle Age", "Phase Transition", "Physics of Life", "Latent Heat", "Depression Essay", "Loneliness", "Bengali Writer", "Failure", "Reinvention", "Mental Health Writing", "Atheist Essay", "Lower Middle Class Life", "Indian Society", "Kolkata Life", "Personal Reflection", "Aging", "Hope", "Burnout", "Survival", "Science Metaphor", "Everyday Physics", "Tea", "Rice Cooker", "SuvroGhosh"]
+tags: ["Man Reinvents","Latent Heat","Reinvents","Surely","Heat","Fifty-One","Hope","Physics","Latent","Young"]
 published: true
 color: "#7A4F2A"
 ---

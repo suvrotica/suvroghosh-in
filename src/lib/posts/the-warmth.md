@@ -4,7 +4,7 @@ description: "A dismissed laboratory assistant boards the Calcutta Metro convinc
 date: "2026-07-05"
 thumbnail: "/images/Compress_20260705_022650_0245.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Horror", "Psychological", "Guilt"]
+tags: ["Eight Months","Arun","Jacket","Compartment","Bapi","Toddler","Mala","Ore","Mother","Lining"]
 published: true
 color: "#5C0000"
 ---

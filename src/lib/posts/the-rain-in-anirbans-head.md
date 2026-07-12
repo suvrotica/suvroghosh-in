@@ -4,7 +4,7 @@ description: "In the boondocks of Calcutta, a failed healthcare entrepreneur’s
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_081644_4173.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Calcutta Horror", "Psychological Horror", "Speculative Fiction", "Healthcare IT"]
+tags: ["Inspector Ghosh","Source Node","Tea Stall","Anirban","Debolina","Rini","SomaLink","Cloud","Rain","Inspector"]
 published: true
 color: "charcoal"
 ---

@@ -4,7 +4,7 @@ description: "A counterfeit milk habit begins as a private shame in Calcutta and
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_090627_7821.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta Horror", "Speculative Fiction", "Urban Horror", "Counterfeit Food"]
+tags: ["Low Complaint Probability","SHUDDHO GOLD","Milk Powder","Power Cut","Mira Read","Mira","Ramji","Ishan","Phoolmati","Milk"]
 published: true
 color: "Bone White"
 ---

@@ -4,7 +4,7 @@ description: "A sharp, funny, street-level essay on aging, Chyavana, lost youth,
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_144902_2574.jpg"
 category: "Personal Essay"
-tags: ["Aging", "Middle Age", "Chyavana", "Indian Mythology", "Vedic Mythology", "Calcutta Essay", "Kolkata Life", "Bengali Writing", "Personal Essay", "Depression", "Bipolar Depression", "Male Aging", "Loneliness", "Dignity", "Failure", "Resilience", "Mortality", "Atheist Essay", "Lower Middle Class India", "South Calcutta", "Mental Health", "Aging Body", "Lost Youth", "Mythology and Modern Life", "SuvroGhosh"]
+tags: ["Chyavana","Youth","Fantasy","Physicians","Remember","Age","Divine","Jars","Dignity","Number"]
 published: true
 color: "#7A4B2A"
 ---

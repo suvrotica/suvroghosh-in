@@ -4,7 +4,7 @@ description: "A readable Calcutta-flavored essay on the Thucydides Trap, Greek m
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_061746_6927.jpg"
 category: "Geopolitics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Thucydides Trap", "Thucydides", "Peloponnesian War", "Greek Mythology", "Athens", "Sparta", "America China Rivalry", "US China Relations", "Trump Xi", "Geopolitics", "Great Power Competition", "China Rise", "American Empire", "Foreign Policy", "International Relations", "War and Peace", "History Lessons", "Ancient Greece", "Cassandra", "Icarus", "Trojan Horse", "Minotaur", "Hubris", "Power Transition", "Strategic Rivalry", "World Politics", "Semiconductors", "Taiwan", "Trade War", "Modern Empire", "Political Mythology", "Global Order", "Readable History", "Calcutta Essays"]
+tags: ["Thucydides Trap","Thucydides","Sparta","War","Athens","Hubris","Trap","Disguised","Cassandra","Fear"]
 published: true
 color: "crimson"
 ---

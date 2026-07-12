@@ -4,7 +4,7 @@ description: "A middle-aged unemployed man in Calcutta wonders whether bipolar d
 date: "2026-05-13"
 thumbnail : "/images/Compress_20260506_160241_1669.jpg"
 category: "Calcutta"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "bipolar depression", "anxiety disorder", "mental health", "Calcutta life", "middle class India", "unemployment", "urban loneliness", "modern life stress", "human psychology", "DNA and behavior", "evolutionary psychology", "bengali writer", "depression essay", "single middle aged man", "Kolkata", "psychology and society", "ordinary life philosophy", "neuroscience", "dopamine", "stress and society", "modernity", "mental illness", "human condition", "life in India", "existential writing"]
+tags: ["Bipolar Depression","Nervous System","Depression","Bipolar","Anxiety","Somebody","Nervous","Maybe","Survived","Fellow"]
 published: true
 color: "#3f3f46"
 ---

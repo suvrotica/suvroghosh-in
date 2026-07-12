@@ -4,7 +4,7 @@ description: "At the edge of Calcutta, a clerk overseeing a contractor’s mirac
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_100753_3619.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Science Horror", "Slow Dread", "Memory"]
+tags: ["Grey Shine","Garbage Mountain","Blue Cloth","Nirmal Asked","Debu","Nirmal","Bappa","Heap","Swarm","Sen"]
 published: true
 color: "#4D4030"
 ---

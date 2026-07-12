@@ -4,7 +4,7 @@ description: "A feverish, bile-soaked rant from a fifty-one-year-old Bengali rec
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_071147_7792.jpg"
 category: "Personal Essay"
-tags: ["AI Slop", "Enshittification", "Late Capitalism", "Internet Rot", "Bengali", "Manic-Depressive", "Digital Nausea", "SuvroGhosh"]
+tags: ["Digital Ganges","Mill Grinds","Loading Screen","Business Model","Slop","Shovel","AI","Hikkikomori","Internet","Enshittification"]
 published: true
 color: "#8B0000"
 ---

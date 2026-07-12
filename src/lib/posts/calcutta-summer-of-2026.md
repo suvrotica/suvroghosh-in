@@ -4,7 +4,7 @@ description: "A street-level, India-focused look at why Calcutta’s 2026 summer
 date: "2026-05-18"
 thumbnail: "/images/Compress_20260518_035724_4679.jpg"
 category: "Climate"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta Summer 2026", "Kolkata Heatwave", "India Heatwave 2026", "West Bengal Weather", "South Asia Heatwave", "Climate Change India", "Extreme Heat India", "Urban Heat Island", "Heat Stress", "Wet Bulb Temperature", "Heat Index", "Public Health India", "Worker Safety India", "Informal Labor India", "Kolkata Climate Risk", "Kolkata Climate Action Plan", "Heat Action Plan", "IMD Heatwave", "NCDC Heat Advisory", "Monsoon 2026", "Hot And Humid Weather", "Calcutta Weather", "Climate Adaptation India"]
+tags: ["Cooling","Heat","Shade","Boring","Heat-Aware","Niño","Ward-Level","Shaded","Climate","Calcutta"]
 published: true
 color: "orange"
 ---

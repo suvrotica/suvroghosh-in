@@ -4,7 +4,7 @@ description: "A technically serious but readable argument for why ordinary peopl
 thumbnail : "/images/IMG-20260426-WA0006.jpg"
 date: "2026-04-26"
 category: "Mental Models"
-tags: ["SuvroGhosh", "Calcutta", "Mental Models", "Randomness Chaos Complexity Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Health Level Seven","Complex","Healthcare","Data","System","Complexity","Myths","Causality","Incentives","Uncertainty"]
 published: true
 color: "indigo"
 ---

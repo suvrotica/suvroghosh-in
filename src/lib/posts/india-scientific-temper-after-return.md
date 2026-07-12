@@ -4,7 +4,7 @@ description: "A returning Indian looks at the strange coexistence of technical b
 thumbnail : "/images/IMG-20260428-WA0001.jpg"
 date: "2026-04-28"
 category: "Society"
-tags: ["SuvroGhosh", "India", "Society", "India Scientific Temper After Return", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Scientific Temper","United States","Temper","Scientific","Threatens","Science","Asks","India","Astrology","Indians"]
 published: true
 color: "amber"
 ---

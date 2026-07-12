@@ -4,7 +4,7 @@ description: "Indian politics is not rotten because Indians are uniquely immoral
 date: "2026-05-11"
 thumbnail: "/images/Compress_20260511_013248_8860.jpg"
 category: "Politics"
-tags: ["Indian Politics", "Political Corruption", "Democracy in India", "Electoral Reform", "Political Finance", "Electoral Bonds", "Criminalization of Politics", "Indian Democracy", "Governance Reform", "Public Institutions", "Civic Reform", "Bureaucracy", "Police Reform", "Judicial Delay", "Voter Behavior", "Caste Politics", "Welfare Politics", "State Capacity", "Political History", "Institutional Reform", "Calcutta Essays", "India Commentary", "SuvroGhosh"]
+tags: ["Criminal Cases","Police Station","Party Worker","Political Funding","Indian Politics","Candidate","Parties","Democracy","Police","Vote"]
 published: true
 color: "amber"
 ---

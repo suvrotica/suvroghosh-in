@@ -4,7 +4,7 @@ description: "A billionaire’s private resurrection park near the wetlands prom
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_085848_8252.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Prehistory"]
+tags: ["Sadhan Kaku","Flightless Bird","Son School","Fish Meal","Malati Found","Malati","Sadhan","Basu","Animals","Borobilli"]
 published: true
 color: "Moss Green"
 ---

@@ -4,7 +4,7 @@ description: "A satirical lament on the common citizen in a democracy where elec
 date: "2026-05-20"
 thumbnail: "/images/Compress_20260520_234056_6566.jpg"
 category: "Politics"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India Democracy", "Common Man", "Kakistocracy", "Kleptocracy", "Oligarchy", "Gerontocracy", "Political Satire", "Crony Capitalism", "Electoral Bonds", "Indian Politics", "Press Freedom", "Inequality", "Youth Unemployment", "Fugitive Economic Offenders", "Public Sector Banks", "Citizenship", "Authoritarianism", "Democratic Backsliding", "Goonda Politics", "Influencer Culture", "Media Capture", "Corruption", "Rule of Law", "Middle Class India", "Calcutta", "Kolkata Writing", "Social Commentary"]
+tags: ["Economic Offenders","Criminal Cases","Electoral Bonds","Common Man","Democratic Reforms","Inequality","Offenders","India","Percent","Citizen"]
 published: true
 color: "#3F3F46"
 ---

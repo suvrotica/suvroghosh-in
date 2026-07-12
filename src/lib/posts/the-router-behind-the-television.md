@@ -4,7 +4,7 @@ description: "A funny, uneasy Calcutta essay on routers, weak passwords, smart d
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_045423_3796.jpg"
 category: "Cybersecurity"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Cybersecurity", "AI Security", "Artificial Intelligence", "Autonomous Malware", "Computer Worms", "Digital Privacy", "Password Security", "MFA", "VPN", "IoT Security", "Smart Devices", "Router Security", "Home Network Security", "Android Security", "Firmware Updates", "Patch Management", "Cybercrime", "Consumer Technology", "Technology Essay", "Kolkata", "Calcutta", "Digital India", "Online Safety", "Data Security", "Personal Cybersecurity", "AI Risks", "Malware Protection", "Privacy Awareness"]
+tags: ["Router","Password","Patch","Device","Passwords","Worm","Updates","Nouns","Corporate","Television"]
 published: true
 color: "#22C55E"
 ---

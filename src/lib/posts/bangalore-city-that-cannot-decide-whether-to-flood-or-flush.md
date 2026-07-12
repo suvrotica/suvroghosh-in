@@ -4,7 +4,7 @@ description: "A satirical rewrite of an old blog post on Bangalore’s floods, w
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_161629_9681.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "Bangalore City That Cannot Decide Whether To Flood Or Flush", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Geopolitics", "Energy Security", "War Technology", "Global Supply Chains"]
+tags: ["Real Estate","Artificial Intelligence","Middle Class","Tanker","Tankers","Borewells","Bangalore","Floodwater","Flush","Clean"]
 published: true
 color: "amber"
 ---

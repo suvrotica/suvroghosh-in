@@ -4,7 +4,7 @@ description: "When a stalled typhoon drowns Calcutta for seven days, a school cl
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_205659_9778.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Climate Horror", "Dread", "Memory"]
+tags: ["Paper Boats","Salt Lake","Nirmalya","Shibu","Mili","Mother","Ground-Floor","Boat","Courtyard","Boats"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "When a man's head opens in a crowded Calcutta crossing and somethi
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_105104_4133.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Strange Horror", "Slow Dread", "Memory"]
+tags: ["Prabir Sen","Hatibagan Crossing","Red Thread","Clay Cup","Cinema Hall","Mrinmoy","Raka","Prabir","Listener","Tublu"]
 published: true
 color: "charcoal"
 ---

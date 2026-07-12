@@ -4,7 +4,7 @@ description: "A sharp, human science essay about entropy, depression, Calcutta h
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_131317_7911.jpg"
 category: "Science Essay"
-tags: ["Entropy", "Thermodynamics", "Depression Essay", "Bipolar Depression", "Mental Health Writing", "Calcutta Essay", "Kolkata Life", "Middle Age", "Lower Middle Class Life", "Science Writing", "Popular Science", "Personal Essay", "Indian Writing", "Bengali Essay", "Urban Loneliness", "Heat And Humidity", "Rented Room", "Everyday Science", "Physics Of Life", "Statistical Mechanics", "SuvroGhosh"]
+tags: ["Rice Cooker","Entropy","Rice","Boundary","Towel","Laptop","Options","Ant","Bill","Newton"]
 published: true
 color: "slate"
 ---

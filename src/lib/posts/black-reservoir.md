@@ -4,7 +4,7 @@ description: "A lonely Calcutta geneticist breeds fish to cleanse a poisoned mun
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_082228_8378.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Strange Fiction", "Dread", "Pollution"]
+tags: ["Toy Bus","Nose Ring","Nirmal","Haru","Babai","Reservoir","Nalini","Arch","Ghat","Fish"]
 published: true
 color: "black"
 ---

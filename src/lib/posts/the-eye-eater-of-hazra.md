@@ -4,7 +4,7 @@ description: "A city already trained to look away becomes terrified of seeing, a
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_103546_6526.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Ghost Story", "Calcutta", "Bengali", "SuvroGhosh"]
+tags: ["Tuition Teacher","Rupa Asked","Beautiful Eyes","Mrinmoy","Rupa","Nabaneeta","Krishna","Eyes","Nirmal","Fleck"]
 published: true
 color: "Black"
 ---

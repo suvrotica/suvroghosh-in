@@ -4,7 +4,7 @@ description: "A hot June afternoon in Calcutta turns into a funny, bruised, and 
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_150523_3394.jpg"
 category: "Personal Essay"
-tags: ["Calcutta", "Kolkata", "Bengali Life", "Middle Class India", "Lower Middle Class", "South Calcutta", "Depression", "Bipolar Depression", "Mental Health", "Anhedonia", "Heatwave", "Indian Summer", "Urban Loneliness", "Single Middle Aged Man", "Failure", "Class Humiliation", "Personal Essay", "Indian Blog", "Bengali Blog", "Life Writing", "Social Satire", "Everyday Philosophy", "Existential Humor", "Dark Humor", "SuvroGhosh"]
+tags: ["Pressure Cooker","Ceiling Fan","Trivial","Sweats","Hot","Sweating","Humiliation","Depression","Leaves","Biscuit"]
 published: true
 color: "amber"
 ---

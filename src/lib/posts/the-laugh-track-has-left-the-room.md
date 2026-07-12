@@ -4,7 +4,7 @@ description: "A personal essay on comedy, depression, anhedonia, aging, and the 
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_125634_4509.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Depression", "Anhedonia", "Comedy", "Laughter", "Bengali Essay", "Calcutta Life", "Kolkata Writing", "Middle Age", "Loneliness", "Bipolar Depression", "Personal Essay", "Neuroscience", "Attention", "Everyday Philosophy", "Dark Humor", "Existential Comedy", "Indian Middle Class", "Urban Loneliness", "Emotional Numbness", "Aging", "Self Reflection", "Readable Nonfiction", "SuvroGhosh"]
+tags: ["Laugh Track","Comedy","Laugh","Laughter","Scene","Funny","Joke","Film","Pretends","Comic"]
 published: true
 color: "charcoal"
 ---

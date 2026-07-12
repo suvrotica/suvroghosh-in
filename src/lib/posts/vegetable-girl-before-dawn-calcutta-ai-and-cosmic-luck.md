@@ -4,7 +4,7 @@ description: "A dawn meditation from the shanty edges of Calcutta on poverty, AI
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_002849_9914.jpg"
 category: "Personal Essay"
-tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Life", "Indian Middle Class", "Lower Middle Class India", "Morning Reflection", "Early Morning Thoughts", "Vegetable Vendor", "Street Life", "Poverty In India", "Artificial Intelligence", "AI In India", "Negative Singularity", "Future Of Work", "Existential Reflection", "Cosmic Luck", "Human Imagination", "Atheist Spirituality", "Modern India", "Urban India", "Indian Society", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Personal Blog", "Indian Blog", "Readable Essays", "Philosophy Of Everyday Life", "Life In Kolkata", "Technology And Society", "AI And Inequality", "Social Commentary", "Ordinary People", "Dawn Essay", "Attention And Meaning"]
+tags: ["Selling Vegetables","Girl","Vegetables","Child","AI","Peace","Lane","Minutes","Selling","Paper"]
 published: true
 color: "indigo"
 ---

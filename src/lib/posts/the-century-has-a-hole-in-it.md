@@ -4,7 +4,7 @@ description: "A small question about calendars turns into a larger meditation on
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260507_164649_9699.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "2026 century explanation", "why 2026 is 21st century", "year zero explained", "calendar confusion", "common era", "century calculation", "funny philosophy", "Bengali essays", "Calcutta writer", "middle class India", "curiosity and logic", "history of calendars", "human contradictions", "readable essays", "ordinary life philosophy", "Indian cultural commentary", "thinking and skepticism", "personal reflections"]
+tags: ["21st Century","Century","21st","Zero","Calendar","Forever","Kolkata","Runs","Modern","Longer"]
 published: true
 color: "stone"
 ---

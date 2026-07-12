@@ -4,7 +4,7 @@ description: "A sharp social essay using H. G. Wells’s The Time Machine to thi
 date: "2026-05-28"
 thumbnail: "/images/Compress_20260528_003105_5364.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Politics", "Class", "Oligarchy", "H. G. Wells", "The Time Machine", "Common People", "Power", "Inequality", "Calcutta"]
+tags: ["Predator","Extractable","Wells","Eloi","Prey","Morlocks","Dull","Fees","Differently","Vote"]
 published: true
 color: "crimson"
 ---

@@ -4,7 +4,7 @@ description: "A middle-aged Bengali consultant in a hot Calcutta room asks wheth
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_154901_1091.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Life", "Kolkata Blog", "Bengali Writer", "Middle Age", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Consulting Life", "Freelance Work", "Remote Work", "Inbox Anxiety", "Work and Dignity", "Modern Work", "Turing Test", "Alan Turing", "Artificial Intelligence", "Human Usefulness", "Lower Middle Class Life", "South Calcutta", "Indian Middle Class", "Technology and Society", "Email Culture", "Burnout", "Invisible Labor", "Professional Politeness", "SuvroGhosh"]
+tags: ["Market Asks","EOD","Turing","Judge","Market","Invoice","Means","End","Document","Survived"]
 published: true
 color: "#4B5563"
 ---

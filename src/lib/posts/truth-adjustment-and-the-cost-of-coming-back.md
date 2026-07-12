@@ -4,7 +4,7 @@ description: "A returning Bengali entrepreneur discovers that in India plain spe
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_175735_5525.jpg"
 category: "Social Commentary"
-tags: ["India", "Calcutta", "Kolkata", "Bengali Essay", "Indian Society", "Business Ethics", "Corruption in India", "Entrepreneurship in India", "Returning to India", "Foreign Returned Indian", "Truth and Society", "Adjustment Culture", "Indian Middle Class", "Indian Business Culture", "Moral Decline", "Ethics", "Governance", "Rule of Law", "Contract Enforcement", "Indian Democracy", "Religion and Society", "Atheist Writing", "Social Satire", "Political Satire", "Urban India", "Lower Middle Class India", "Kolkata Life", "Indian Economy", "Foreign Investment", "FDI", "UPI", "Bureaucracy", "Kakistocracy", "SuvroGhosh"]
+tags: ["Adjust","Spine","Rules","Truth","Treated","Boring","Country","India","Tolerate","Learns"]
 published: true
 color: "burnt-orange"
 ---

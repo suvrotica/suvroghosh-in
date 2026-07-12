@@ -4,7 +4,7 @@ description: "A plain-English explanation of why sample variance divides by one 
 date: "2026-05-07"
 thumbnail: "/images/Compress_20260507_192047_7281.jpg"
 category: "Statistics"
-tags: ["Statistics", "Bessel Correction", "Sample Variance", "Variance Explained", "Degrees Of Freedom", "n minus 1", "Mathematics For Beginners", "Statistics For Beginners", "Data Science", "Machine Learning Basics", "Vector Geometry", "Dimensionality", "Mean Centering", "Residuals", "Population Variance", "Sample Mean", "Calcutta Writing", "Bill Bryson Style", "Educational Blog", "SuvroGhosh"]
+tags: ["Sample Mean","Independent Direction","Bessel Correction","Flat Sheet","Observations Give","Sample","Deviations","Variance","N-1","Observations"]
 published: true
 color: "indigo"
 ---

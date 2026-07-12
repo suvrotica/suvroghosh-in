@@ -4,7 +4,7 @@ description: "A manic-depressive rant on AI infrastructure, ruined education, an
 date: "2026-07-11"
 thumbnail: "/images/Compress_20260711_002556_6222.jpg"
 category: "Polemic"
-tags: ["Polemic", "Artificial Intelligence", "Economic Anxiety", "Calcutta", "SuvroGhosh"]
+tags: ["Kentucky","Billion","Capex","Dollars","Microsoft","Compute","Pretty","Capital","Infrastructure","Young"]
 published: true
 color: "#4A0000"
 ---

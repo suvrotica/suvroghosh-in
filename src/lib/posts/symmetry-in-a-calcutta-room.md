@@ -4,7 +4,7 @@ description: "A plain, witty essay on symmetry, from mirrors and wallpaper to pa
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_151948_8935.jpg"
 category: "Mathematics"
-tags: ["Mathematics", "Symmetry", "Geometry", "Algebra", "Physics", "Quantum Mechanics", "Linear Algebra", "Group Theory", "Representation Theory", "Wallpaper Groups", "Platonic Solids", "Dynkin Diagrams", "Yang Baxter Equation", "Mathematical Physics", "Science Writing", "Popular Mathematics", "Calcutta Essays", "Kolkata Writing", "Bengali Writer", "Readable Mathematics", "Mathematics Explained", "Geometry Explained", "Science Essays", "SuvroGhosh"]
+tags: ["Wallpaper Pattern","Symmetry","Rotate","Mathematics","Wallpaper","Transform","Ball","Square","Mathematicians","Quantum"]
 published: true
 color: "indigo"
 ---

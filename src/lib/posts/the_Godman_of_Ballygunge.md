@@ -4,7 +4,7 @@ description: "A Calcutta godman builds a private empire out of devotion, fear, a
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_054753_3428.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Calcutta", "Kolkata", "Horror", "Supernatural", "Crime", "Dhatura", "Godman", "Cult"]
+tags: ["Baba Shibananda","Blue Curtains","Silver Cup","Riddhi Asked","Riddhi","Baba","Tuli","Sanchari","Shibananda","Ashram"]
 published: true
 color: "ash violet"
 ---

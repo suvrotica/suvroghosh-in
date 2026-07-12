@@ -4,7 +4,7 @@ description: "A comic, wounded, and unsentimental essay about depression, respec
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_073610_0990.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Mental Health Essay", "Bipolar Depression", "Anxiety", "Kolkata Life", "Calcutta Essay", "Bengali Writer", "Middle Age", "Lower Middle Class Life", "Urban Loneliness", "Indian Society", "Social Satire", "Capitalism Critique", "Modern Life", "Depression Writing", "Existential Humor", "Shame", "Failure", "Solitude", "Atheism", "Self Respect", "Working Class Life", "Authentic Writing", "Humor Essay", "SuvroGhosh"]
+tags: ["Packaged","Alchemy","Sells","Speaks","Call","Crow","Tea","Success","Lower-Middle-Class","Society"]
 published: true
 color: "charcoal"
 ---

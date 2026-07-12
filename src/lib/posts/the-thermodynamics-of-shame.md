@@ -4,7 +4,7 @@ description: "A fevered, unwashed monologue from a decaying South Calcutta flat,
 date: "2026-07-04"
 thumbnail: "/photos/Compress_20260704_231636_6936.jpg"
 category: "Essay"
-tags: ["Personal", "Calcutta", "Mental Health", "Satire", "Essay", "Bipolar", "NRI"]
+tags: ["Rice Cooker","Fox","Loose-Leaf","Silverfish","Envied","Pages","Believe","South","Except","Believed"]
 published: true
 color: "#3a2e2e"
 ---

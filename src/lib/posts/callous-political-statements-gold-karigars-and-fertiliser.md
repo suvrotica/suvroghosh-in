@@ -4,7 +4,7 @@ description: "A personal essay on callous political statements, Bengal’s hidde
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_164830_0882.jpg"
 category: "Political Economy"
-tags: ["Video", "Political Economy", "India Economy", "Kolkata Essay", "Calcutta Life", "Gold Import Duty", "Gold Prices India", "Gold Artisans", "Bengal Goldsmiths", "Shekra Karigar", "Jewellery Workers", "Informal Economy India", "Working Class India", "South Sinthee", "Cossipore", "Dum Dum", "Strait of Hormuz", "Hormuz Crisis", "Foreign Exchange Reserves", "India Trade Deficit", "Fertiliser Crisis", "Chemical Fertiliser", "Organic Farming", "Natural Farming", "Sri Lanka Fertiliser Ban", "Food Security", "Agriculture Policy", "Modi Gold Appeal", "Policy Failure", "SuvroGhosh"]
+tags: ["Sri Lanka","Foreign Exchange","South Sinthee","Natural Farming","Buy Gold","Gold","Fertiliser","Farming","Jewellery","Foreign"]
 published: true
 color: "amber"
 ---

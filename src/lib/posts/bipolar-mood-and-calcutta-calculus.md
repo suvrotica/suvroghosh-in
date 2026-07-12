@@ -4,7 +4,7 @@ description: "A personal essay on bipolar agitation, solitude, Calcutta, cheap v
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260515_050745_5205.jpg"
 category: "Personal Essay"
-tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta", "Kolkata", "Bipolar Mood", "Mental Health Writing", "Middle Class Life", "Lower Middle Class Bengal", "Bengali Essay", "Calcutta Life", "Kolkata Summer", "Power Cuts", "Monsoon Kolkata", "Urban Survival", "Solitude", "Recluse Life", "Personal Blog", "Indian Personal Essay", "Bengali Middle Age", "Mental Weather", "Everyday Economics", "Vegetable Market", "City Essay", "Atheist Writing", "Readable Essay", "Life in Kolkata"]
+tags: ["Calculus","Mind","Vegetables","Coriander","Calculate","Mood","Maintenance","Fish","Future","Writing"]
 published: true
 color: "slate"
 ---

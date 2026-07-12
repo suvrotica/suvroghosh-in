@@ -4,7 +4,7 @@ description: "A satirical speculative social post about Pinocchio, public lying,
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_235702_2787.jpg"
 category: "Satire"
-tags: ["Pinocchio satire", "lies and society", "truth and politics", "social satire", "speculative satire", "modern morality", "public dishonesty", "media lies", "political satire", "Calcutta writing", "Kolkata satire", "Bengali essay", "middle class India", "social commentary", "moral fiction", "truth in public life", "fake news culture", "digital misinformation", "satirical essay", "contemporary India", "human behavior", "ordinary life satire", "civic trust", "public morality", "SuvroGhosh"]
+tags: ["Nose","Pinocchio","Lie","Nasal","Noses","Lies","Dishonesty","Give","Liar","Grew"]
 published: true
 color: "amber"
 ---

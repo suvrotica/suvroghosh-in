@@ -4,7 +4,7 @@ description: "A darkly funny Calcutta essay on older depression, morning self-di
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_143000_0691.jpg"
 category: "Mental Health"
-tags: ["Depression", "Older Depression", "Middle Age", "Mental Health", "Bipolar Depression", "Anhedonia", "Morning Anxiety", "Self Loathing", "Loneliness", "Calcutta", "Kolkata", "Bengali Life", "Lower Middle Class Life", "Neuroscience", "Predictive Brain", "Circadian Rhythm", "Cortisol", "Aging", "Financial Stress", "Survival Essay", "Personal Essay", "Dark Humor", "Indian Mental Health", "SuvroGhosh"]
+tags: ["Bank Balance","Depression","Exhibit","Verdict","Bankruptcy","Fate","Weather","Mind","Mirror","Prediction"]
 published: true
 color: "slate"
 ---

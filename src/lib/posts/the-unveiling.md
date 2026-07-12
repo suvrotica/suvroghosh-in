@@ -4,7 +4,7 @@ description: "A rambling reflection from Calcutta on ghost jobs, synthetic profe
 date: "2026-06-28"
 thumbnail: "/images/Compress_20260629_014348_8354.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Reflection", "SuvroGhosh"]
+tags: ["Middle Class","Job Boards","Unveiling","Naukri","Listings","Watched","AI","Algorithmic","Congratulations","Mills"]
 published: true
 color: "#2c3e50"
 ---

@@ -4,7 +4,7 @@ description: "A sharp, funny, personal essay on social approval, rejection, anxi
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_180715_5488.jpg"
 category: "Psychology"
-tags: ["Psychology", "Mental Health", "Anxiety", "Social Approval", "Rejection", "Self Respect", "Authenticity", "Alfred Adler", "Adlerian Psychology", "Evolutionary Psychology", "Social Media", "WhatsApp", "Facebook", "YouTube", "Loneliness", "Middle Age", "Calcutta", "Kolkata", "Bengali Life", "South Calcutta", "Bipolar Depression", "Modern Life", "Digital Anxiety", "Self Help", "Personal Essay", "Humor Essay", "SuvroGhosh"]
+tags: ["Adler","Disliked","Task","Call","Approval","Keep","Silence","Society","Check","Nervous"]
 published: true
 color: "slate"
 ---

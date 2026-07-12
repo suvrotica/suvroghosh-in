@@ -4,7 +4,7 @@ description: "After a chemical spill near a Calcutta canal, something old and sm
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_053211_1558.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Body Horror"]
+tags: ["Iron Rod","Haripada","Kedar","Mili","Gecko","Belly","Tok","Canal","Shutter","Wall"]
 published: true
 color: "sickly green"
 ---

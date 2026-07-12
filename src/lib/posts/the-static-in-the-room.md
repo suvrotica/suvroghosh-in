@@ -4,7 +4,7 @@ description: "A personal essay from a middle-aged Calcutta life about depression
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_170100_0664.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Depression", "Anhedonia", "Bipolar Depression", "Anxiety", "Loneliness", "Isolation", "Middle Age", "Kolkata", "Calcutta", "Bengali Life", "Lower Middle Class", "Unemployment", "Meaninglessness", "Personal Essay", "Mental Health Writing", "Urban Loneliness", "Existential Depression", "Life In Kolkata", "SuvroGhosh"]
+tags: ["Hide","Remember","Hiding","Sitting","Skull","Music","Writing","Work","Flat","Teeth"]
 published: true
 color: "slate"
 ---

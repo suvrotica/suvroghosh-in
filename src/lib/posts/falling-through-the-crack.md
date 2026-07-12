@@ -4,7 +4,7 @@ description: "A darkly comic personal essay about usefulness, failure, time, wor
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_064736_6352.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Kolkata Essay", "Calcutta Writing", "Middle Class Life", "Atheist Writing", "Work And Meaning", "Failure Essay", "Dark Humor", "Satirical Essay", "Indian Blog", "Bengali Writer", "Life In Kolkata", "Modern Loneliness", "Mental Health Reflection", "Social Commentary", "Existential Essay", "Human Purpose", "Unemployment", "Creative Nonfiction", "SuvroGhosh"]
+tags: ["Crack","Tick","Pending","Witness","Falling","Time","Family","Counter","Career","Society"]
 published: true
 color: "slate"
 ---

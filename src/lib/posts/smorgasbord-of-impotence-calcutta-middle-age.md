@@ -4,7 +4,7 @@ description: "A sharp, intimate essay on middle age, bipolar depression, unemplo
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_043341_1678.jpg"
 category: "Personal Essay"
-tags: ["Video", "Personal Essay", "SuvroGhosh", "Calcutta", "Kolkata", "Middle Age", "Unemployment", "Bipolar Depression", "Mental Health Essay", "Male Loneliness", "Single Middle Aged Man", "Lower Middle Class Life", "Broke In Calcutta", "Aging And Desire", "Impotence", "Depression And Desire", "Urban Loneliness", "Indian Middle Class", "Personal Blog", "Literary Essay", "Memoir", "Life In Kolkata", "Masculinity", "Economic Anxiety", "Solitude", "Survival", "Bengali Life"]
+tags: ["Impotence","Desire","Fail","Unemployment","Percent","Bipolar","Version","Mind","Fifty-One","Broke"]
 published: true
 color: "charcoal"
 ---

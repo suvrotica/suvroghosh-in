@@ -4,7 +4,7 @@ description: "A practical explanation of why HL7 and FHIR are not enemies, why h
 thumbnail : "/images/IMG-20260425-WA0006.jpg" 
 date: "2026-04-25"
 category: "Healthcare IT"
-tags: ["SuvroGhosh", "Healthcare IT", "HL7 Vs FHIR Explained Simply", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["HL7 Version","Layer Reflects","Healthcare Interoperability","Source System","FHIR","HL7","Healthcare","Data","Clinical","Version"]
 published: true
 color: "blue"
 ---

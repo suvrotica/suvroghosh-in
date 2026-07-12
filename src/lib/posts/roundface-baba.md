@@ -4,7 +4,7 @@ description: "A broke Calcutta freelancer is hired by a grinning spiritual fraud
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_150418_8216.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Horror", "Dark Comedy", "Fraud"]
+tags: ["Buck Teeth","White-Sari Woman","BEST STATEMENT","PRICE TOLERANCE","Damp Patch","Baba","Buck","Devotees","Grin","Statements"]
 published: true
 color: "maroon"
 ---

@@ -4,7 +4,7 @@ description: "A plague begins in Calcutta with a man splitting from the head dow
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_215732_2937.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Horror", "Calcutta", "Plague"]
+tags: ["Tea Stall","Paper Plate","Balcony Grill","Long Enough","Red Line","Niharika","Arko","Kabir","Father","Split"]
 published: true
 color: "charcoal"
 ---

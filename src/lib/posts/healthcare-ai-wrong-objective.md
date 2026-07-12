@@ -4,7 +4,7 @@ description: "A technical warning about future healthcare Artificial Intelligenc
 thumbnail : "/images/IMG-20260426-WA0002.jpg"
 date: "2026-04-26"
 category: "Healthcare AI"
-tags: ["SuvroGhosh", "Healthcare AI", "Healthcare AI Wrong Objective", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Health Level Seven","Model Selected","Future Healthcare","Ask Whether","Model","Healthcare","Clinical","Data","AI","Objective"]
 published: true
 color: "slate"
 ---

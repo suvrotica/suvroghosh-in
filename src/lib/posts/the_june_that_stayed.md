@@ -4,7 +4,7 @@ description: "A heat dome settles over Calcutta and refuses to move. As electric
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_032454_4137.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Horror", "Climate Horror", "Kolkata", "SuvroGhosh"]
+tags: ["Heat Dome","Delivery Bag","Arindam","Nandita","Rafiq","Mira","Heat","Gel","Roof","Repeater"]
 published: true
 color: "burnt orange"
 ---

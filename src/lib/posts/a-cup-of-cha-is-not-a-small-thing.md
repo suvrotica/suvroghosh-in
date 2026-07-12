@@ -4,7 +4,7 @@ description: "Tea looks like a humble brown drink, but inside that cup sits Chin
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_065606_6517.jpg"
 category: "Essay"
-tags: ["Tea", "Cha", "Calcutta", "Kolkata", "Bengali Tea", "Roadside Cha", "History of Tea", "Tea Etymology", "Colonialism", "British Empire", "East India Company", "Robert Fortune", "Wardian Case", "Botanical Espionage", "Assam Tea", "Darjeeling Tea", "Indian Tea History", "Chinese Tea", "Camellia Sinensis", "Tea Plantation", "Porcelain", "Opium Trade", "Silver Drain", "Newton Cooling Law", "Thermodynamics", "Entropy", "Sanskrit Wisdom", "Bengali Life", "Middle Class Kolkata", "Existential Humor", "Cynical Humor", "Cultural History", "Food History", "Everyday Philosophy", "SuvroGhosh"]
+tags: ["Cha","Tea","Chinese","Dutch","British","Plants","China","Empire","Porcelain","Wardian"]
 published: true
 color: "#8B5A2B"
 ---

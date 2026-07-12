@@ -4,7 +4,7 @@ description: "A Class Ten biology student in north Kolkata tries to raise an imp
 date: "2026-05-20"
 thumbnail: "/images/Compress_20260520_203404_4420.jpg"
 category: "Short Fiction"
-tags: ["Science Fiction", "Horror", "Kolkata", "Dinosaur", "Bioengineering", "Short Fiction", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Tea Stall","Ishaan","Ketu","Mitali","Aquarium","Sen","Sourav","Father","Roof","Cossipore"]
 published: true
 color: "charcoal"
 ---

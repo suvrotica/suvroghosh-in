@@ -4,7 +4,7 @@ description: "A Calcutta man looks back at America’s clean insulation and Calc
 date: "2026-01-05"
 thumbnail: "/images/Compress_20260510_040559_9236.jpg"
 category: "personal"
-tags: ["America", "Calcutta", "Kolkata", "India", "Bengali Life", "Bengali Essay", "Personal Essay", "Immigrant Life", "Return To India", "Life In America", "Life In Kolkata", "Middle Class Life", "Lower Middle Class India", "Urban India", "Texas", "San Antonio", "Austin", "Expat Life", "Reverse Migration", "Sensory Memory", "City Life", "Indian Middle Class", "Mental Health", "Bipolar Disorder", "Loneliness", "Infrastructure", "Nostalgia", "Home", "Culture Shock", "SuvroGhosh"]
+tags: ["Beep Means","Pressure Cooker","America","Calcutta","Horn","Gave","Beep","Insulation","Air","Cooled"]
 published: true
 color: "orange"
 ---

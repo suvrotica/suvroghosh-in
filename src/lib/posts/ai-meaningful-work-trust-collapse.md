@@ -4,20 +4,7 @@ description: 'A reflection on why artificial intelligence does not merely automa
 date: '2026-06-24'
 thumbnail: '/images/Compress_20260507_182117_7717.jpg'
 category: 'Artificial Intelligence'
-tags:
-  [
-    'AI',
-    'Artificial Intelligence',
-    'Generative AI',
-    'Future of Work',
-    'Meaningful Work',
-    'Trust Collapse',
-    'Human Authorship',
-    'Creative Work',
-    'Personal Essay',
-    'Reflection',
-    'SuvroGhosh'
-  ]
+tags: ["Synthetic","AI","Rubbish","Human","Machine","Work","Song","Output","Learns","Slop"]
 published: true
 color: 'slate'
 ---

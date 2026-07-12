@@ -4,17 +4,7 @@ description: "A Calcutta-grounded essay on FHIR, the health data standard that t
 date: "2026-06-23"
 thumbnail: "/images/IMG-20260427-WA0009.jpg"
 category: "Healthcare-IT"
-tags:
-  [
-    "FHIR",
-    "Healthcare Interoperability",
-    "Health Data Standards",
-    "HL7",
-    "Digital Health",
-    "APIs",
-    "Medical Informatics",
-    "SuvroGhosh"
-  ]
+tags: ["Implementation Guides","United States","Cures Act","Blood Pressure","Public Health","FHIR","Health","JSON","Resource","HL7"]
 published: true
 color: "#0D7377"
 ---

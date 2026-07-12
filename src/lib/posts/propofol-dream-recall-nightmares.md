@@ -4,7 +4,7 @@ description: "An architecturally grounded look at the experimental use of propof
 thumbnail : "/images/IMG-20260423-WA0019.jpg"
 date: "2026-04-22"
 category: "healthcare"
-tags: ["SuvroGhosh", "healthcare", "Propofol Dream Recall Nightmares", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Dream Induction","Propofol","Dream","Emergence","Recall","Nightmares","Anesthesia","Trauma","Anesthetic","Imagery"]
 published: true
 color: "indigo"
 ---

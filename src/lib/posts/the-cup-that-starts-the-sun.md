@@ -4,7 +4,7 @@ description: "A Calcutta morning essay on depression, tea, caffeine, shame, bodi
 date: "2026-06-15"
 thumbnail: "/images/Compress_20260615_140543_3271.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Depression", "Bipolar Depression", "Anxiety", "Calcutta Life", "Kolkata Essay", "Bengali Writing", "Middle Age", "Lower Middle Class India", "Morning Tea", "Caffeine", "Adenosine", "Executive Dysfunction", "Personal Essay", "Indian Mental Health", "Urban Loneliness", "Single Man Life", "South Calcutta", "SuvroGhosh"]
+tags: ["Tea Dust","Pan","Tea","Laziness","Cup","Headache","Clouds","Shame","Depression","Milk"]
 published: true
 color: "charcoal"
 ---

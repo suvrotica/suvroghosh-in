@@ -4,7 +4,7 @@ description: "Pohela Baisakh is usually narrated as timeless Bengali tradition. 
 thumbnail : "/images/IMG-20260422-WA0012.jpg"
 date: "2026-04-22"
 category: "history"
-tags: ["SuvroGhosh", "history", "Pohela Baisakh Mughal Calendar Memory", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Pohela Baisakh","Mughal","Baisakh","Pohela","Muslim","Hybrid","Gregorian","Akbar","Calendar","Agrarian"]
 published: true
 color: "red"
 ---

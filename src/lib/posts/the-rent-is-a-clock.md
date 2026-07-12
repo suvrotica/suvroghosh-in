@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man in the boondocks of Calcutta writes from
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_053723_3927.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Kolkata", "Calcutta", "Bengali Life", "Indian Middle Class", "Lower Middle Class India", "Unemployment India", "Financial Insecurity", "Rent Crisis", "Precarious Income", "Consulting Life", "AI Job Loss", "Automation", "Robotics", "White Collar Jobs", "Blue Collar Jobs", "Indian Youth", "Meritocracy Myth", "Mental Health", "Bipolar Depression", "Anxiety", "Loneliness", "Poverty", "Urban India", "South Kolkata", "Garia", "Sonarpur", "Economic Anxiety", "Class Anxiety", "Future of Work", "Indian Economy", "Social Commentary", "SuvroGhosh"]
+tags: ["Income","Learn","Tick","Merit","Young","Rent","Writing","India","Payment","Health"]
 published: true
 color: "slate"
 ---

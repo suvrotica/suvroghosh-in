@@ -4,7 +4,7 @@ description: "A satirical reflection on overcrowded transport, civic decay, unsa
 thumbnail : "/images/Compress_20260504_184912_2345.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Personal Essay", "Kolkata Bat Waiting For A Bus", "Suvro Ghosh", "Calcutta", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Serves","Biri","Bat","Salary","Salaries","Passengers","Kolkata","Bus","Everybody","Bag"]
 published: true
 color: "slate"
 ---

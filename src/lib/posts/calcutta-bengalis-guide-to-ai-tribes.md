@@ -4,7 +4,7 @@ description: "A lively guide to the major tribes of artificial intelligence, fro
 date: "2026-05-06"
 thumbnail : "/images/Compress_20260506_184203_3225.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI Tribes", "AI Schools", "Machine Learning", "Deep Learning", "Neural Networks", "Symbolic AI", "Bayesian AI", "Reinforcement Learning", "Explainable AI", "Generative AI", "Large Language Models", "AGI", "Calcutta Blog", "Kolkata Writer", "AI Explained Simply", "Beginner AI Guide", "Technology Essay", "Computer Science", "Data Science", "AI Humor"]
+tags: ["Expert Systems","People Gave","Artificial Intelligence","Symbolic","AI","Neural","Rules","AGI","Tribes","Reward"]
 published: true
 color: "indigo"
 ---

@@ -4,7 +4,7 @@ description: "A municipal mosquito worker in Calcutta discovers that the city’
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_080959_9483.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Science Horror", "Dread", "Grief"]
+tags: ["Chandra Pukur","Bamboo Platform","Tram Depot","Fogging Machine","Haripada Thought","Haripada","Nandita","Pond","Sen","Cylinders"]
 published: true
 color: "green"
 ---

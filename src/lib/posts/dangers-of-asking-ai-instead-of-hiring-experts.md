@@ -4,7 +4,7 @@ description: "AI can make ordinary people feel suddenly competent, which is usef
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_125730_0847.jpg"
 category: "Technology"
-tags: ["AI", "Artificial Intelligence", "Expertise", "Human Judgment", "Automation", "Knowledge Work", "Digital Transformation", "Healthcare IT", "AI Risk", "AI Safety", "Professional Services", "Self Service Economy", "Expert Labor", "Hidden Costs", "Productivity", "Automation Risk", "Decision Making", "Technical Debt", "Data Quality", "Semantic Meaning", "EHR", "FHIR", "HL7", "Software Architecture", "Business Risk", "Consulting", "Middle Class Work", "Kolkata", "Calcutta", "Engineering Blog", "SuvroGhosh"]
+tags: ["Non-Expert Sees","Expert Asks","Ask AI","AI","Expert","Experts","Basically","Ask","Data","Non-Expert"]
 published: true
 color: "#B45309"
 ---

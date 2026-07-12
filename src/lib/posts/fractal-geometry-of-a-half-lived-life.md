@@ -4,7 +4,7 @@ description: "A personal essay on fractal geometry, depression, bipolar recurren
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_193401_1537.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Bengali Essay", "Calcutta Life", "Kolkata Life", "Middle Age", "Fractal Geometry", "Mandelbrot Set", "Mathematics and Life", "Depression Essay", "Bipolar Disorder", "Anxiety", "Loneliness", "Poverty", "Lower Middle Class Life", "Indian Writing", "Science Writing", "Philosophy", "Atheism", "Everyday Life", "Mental Health Writing", "SuvroGhosh"]
+tags: ["Fractal Geometry","Middle Third","Tea Stain","Rice Cooker","Whole Life","Fractal","Ruler","Coastline","Self-similarity","Fern"]
 published: true
 color: "brown"
 ---

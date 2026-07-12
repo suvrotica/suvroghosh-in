@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay about middle age, class descent, une
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_102059_9408.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Unemployment", "Class Anxiety", "Lower Middle Class", "Mental Health", "Bipolar Depression", "Anxiety", "Survival", "Poverty", "Dignity", "White Collar Work", "Tuition Teacher", "Hawker Economy", "Street Vendors", "Rickshaw Puller", "Urban India", "Indian Middle Class", "Economic Insecurity", "Social Satire", "Dark Humor", "Life Writing", "Memoir", "SuvroGhosh"]
+tags: ["Hawking","Moat","Tuition","Asks","Business","Rickshaw","Pull","Matching","Invoices","Force"]
 published: true
 color: "slate"
 ---

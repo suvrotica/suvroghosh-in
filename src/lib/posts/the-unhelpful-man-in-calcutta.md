@@ -4,7 +4,7 @@ description: "A middle-aged, unemployed, middle-class recluse in Calcutta reflec
 thumbnail: "/images/Compress_20260504_174433_3743.jpg"
 date: "2026-05-04"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Personal Essay", "The Unhelpful Man In Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Middle Class","Receipt","Rebel","Recluse","Reality","Hate","Unemployed","Truth","Bitter","Kindness"]
 published: true
 color: "slate"
 ---

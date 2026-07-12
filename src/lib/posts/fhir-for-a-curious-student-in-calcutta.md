@@ -4,7 +4,7 @@ description: "A rigorous but readable introduction to HL7 FHIR for serious begin
 thumbnail : "/images/IMG-20260423-WA0007.jpg"
 date: "2026-04-23"
 category: "healthcare it"
-tags: ["FHIR", "US Healthcare IT", "Calcutta Healthcare IT", "Engineering Blog", "SuvroGhosh", "Calcutta", "Healthcare IT", "FHIR For A Curious Student In Calcutta", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics"]
+tags: ["Health Level Seven","Public Health","Diagnosis Classification","Artificial Intelligence","Active Medication","FHIR","Healthcare","Resource","Clinical","Data"]
 published: true
 color: "blue"
 ---

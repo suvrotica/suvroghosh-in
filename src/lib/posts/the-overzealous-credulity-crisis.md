@@ -4,7 +4,7 @@ description: "Chatbots sound wise because language is the most expensive costume
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_161043_3982.jpg"
 category: "Artificial Intelligence"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Artificial Intelligence", "AI", "Generative AI", "ChatGPT", "Large Language Models", "LLM", "AI Hallucination", "AI Sycophancy", "AI Credulity", "AI Hype", "AI Bubble", "RLHF", "GPU", "Machine Learning", "Digital Literacy", "Critical Thinking", "Technology Criticism", "Autocomplete", "Automation", "Human Judgment", "AI Ethics", "Future of Work", "Cognitive Bias", "Language Models", "AI Safety", "Media Literacy", "Tech Culture"]
+tags: ["Chatbot","Autocomplete","Ask","Language","Crisis","Machine","Fluent","Danger","Romantic","Tools"]
 published: true
 color: "amber"
 ---

@@ -4,7 +4,7 @@ description: "A sharp essay on the social ecology of loud incompetence, narcissi
 thumbnail: "/images/IMG-20260424-WA0013.jpg"
 date: "2026-04-24"
 category: "society"
-tags: ["SuvroGhosh", "society", "Invasive Human Weed Species And The Dunning Kruger Collapse", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Human Weed","Invasive","Weed","Dunning-Kruger","Ignorance","Institutions","Incompetence","Socially","Treats","Competence"]
 published: true
 color: "slate"
 ---

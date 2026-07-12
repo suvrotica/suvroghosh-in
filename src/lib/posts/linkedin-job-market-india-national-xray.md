@@ -4,7 +4,7 @@ description: "A hard, satirical look at India’s job market, credential factori
 date: "2026-05-03"
 thumbnail: "/images/Compress_20260504_165300_0245.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Society", "Linkedin Job Market India National Xray", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Job Market","Work Hard","Performs","Employability","Jobs","Young","India","Qualified","Public","Talent"]
 published: true
 color: "red"
 ---

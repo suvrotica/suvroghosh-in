@@ -4,7 +4,7 @@ description: "A Calcutta essay on tea, memory, childhood, solitude, bipolar inte
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260506_115419_9095.jpg"
 category: "Personal Essay"
-tags: ["Calcutta", "Kolkata", "Bengali Essay", "Personal Essay", "Memoir", "Memory", "Childhood", "Middle Age", "South Sinthee", "North Kolkata", "Bipolar Disorder", "Mental Health", "Depression", "Anxiety", "Solitude", "Terrace", "Tea", "Atheism", "Urban India", "Lower Middle Class Life", "Bengali Life", "Nostalgia", "Indian Writing", "Creative Nonfiction", "Literary Essay", "Video", "Engineering Blog", "SuvroGhosh"]
+tags: ["Terrace","Matchboxes","Magnets","Wondered","Lamp","Boy","Brick","Walls","Stamps","Books"]
 published: true
 color: "#8B5E3C"
 ---

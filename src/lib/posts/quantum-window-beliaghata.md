@@ -4,7 +4,7 @@ description: "A retired physicist in Beliaghata opens a homemade quantum window 
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_135628_8812.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Science Fiction Horror", "Uncanny", "Evolution"]
+tags: ["Anirban Understood","Far Side","Anirban","Pond","Tap","Bappa","Mantis","Tapped","Mira","Mosquito"]
 published: true
 color: "#31412f"
 ---

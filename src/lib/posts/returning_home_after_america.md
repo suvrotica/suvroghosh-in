@@ -4,7 +4,7 @@ description: "A sensitive, evidence-grounded essay on Indian professionals retur
 thumbnail : "/images/IMG-20260424-WA0007.jpg" 
 date: "2026-04-24"
 category: "work, migration, India"
-tags: ["SuvroGhosh", "India", "work, migration, India", "Returning Home After America", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "AI Music", "Bengali Songs", "Synthetic Media", "Music Commentary", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["United States","Foreign Experience","Returnee","Returnees","Indian","Experience","Visa","Professional","Senior","India"]
 published: true
 color: "slate"
 ---

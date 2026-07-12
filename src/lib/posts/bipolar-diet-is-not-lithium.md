@@ -4,7 +4,7 @@ description: "A readable, skeptical Calcutta essay on bipolar disorder, diet, su
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_094716_6304.jpg"
 category: "Mental Health"
-tags: ["Bipolar Disorder", "Bipolar Depression", "Mania", "Hypomania", "Mood Stabilizers", "Lithium", "Mental Health", "Depression", "Anxiety", "Sleep", "Insomnia", "Caffeine", "Alcohol", "Nutrition", "Diet", "Supplements", "Omega 3", "NAC", "Magnesium", "Folate", "CoQ10", "Probiotics", "Gut Brain Axis", "Inflammation", "Mindfulness", "MBCT", "IPSRT", "Ayurveda", "Brahmi", "Jatamansi", "Evidence Based Medicine", "Psychiatry", "Kolkata", "Calcutta", "India", "Healthcare", "Patient Safety", "SuvroGhosh"]
+tags: ["Oxidative Stress","Systematic Review","Bipolar Disorder","Bipolar","Probiotics","Magnesium","Sleep","Mood","MBCT","Alcohol"]
 published: true
 color: "indigo"
 ---

@@ -4,7 +4,7 @@ description: "A comic personal essay about toothache, loneliness, Bengali dress,
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_191129_9936.jpg"
 category: "Personal"
-tags: ["Calcutta", "Kolkata", "Bengali Essay", "Personal Essay", "Toothache", "Middle Class Life", "Lower Middle Class India", "Bengali Babu", "Dhoti", "Indian Humor", "Kolkata Humor", "Bengali Culture", "Urban India", "Aging", "Loneliness", "Mental Health Writing", "Atheist Essay", "Satirical Essay", "Indian Society", "Family Memory", "Personal Blog", "SuvroGhosh", "Video"]
+tags: ["Dhoti","Toothache","Safe"]
 published: true
 color: "mustard"
 ---

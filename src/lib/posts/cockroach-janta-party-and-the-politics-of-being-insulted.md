@@ -4,7 +4,7 @@ description: "A fact-based, readable look at how a satirical online party turned
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_205830_0242.jpg"
 category: "Politics"
-tags: ["Video", "Politics", "India", "Indian Democracy", "Youth Politics", "Gen Z India", "Cockroach Janta Party", "Abhijeet Dipke", "Ravish Kumar", "Political Satire", "Digital Protest", "Social Media Politics", "Instagram Politics", "X Withheld India", "Free Speech India", "Platform Censorship", "NEET Paper Leak", "NEET UG", "Exam Scams India", "Youth Unemployment India", "West Bengal Elections", "Voter Roll Controversy", "Election Integrity India", "Opposition Politics India", "BJP", "Congress", "AAP", "Democracy Crisis", "Civil Liberties", "Online Movements", "Meme Politics", "Indian Students", "Digital India", "SuvroGhosh"]
+tags: ["Fifteen Million","Social Media","Young Indians","CJP","Cockroach","India","Young","Indians","Satire","Party"]
 published: true
 color: "#7C3AED"
 ---

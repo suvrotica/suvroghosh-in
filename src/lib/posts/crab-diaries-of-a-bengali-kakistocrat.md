@@ -4,7 +4,7 @@ description: "A manic-depressive monologue from a burnt, bitter Calcutta man rum
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_211303_3563.jpg"
 category: "Personal Essay"
-tags: ["Essay", "Satire", "Calcutta", "Bipolar", "SuvroGhosh"]
+tags: ["Crab","Cockroach","Crabs","Pissing","Telegram","Scuttling","Corrupt","Fractal","Pheromones","Communicate"]
 published: true
 color: "#8B0000"
 ---

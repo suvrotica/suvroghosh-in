@@ -4,7 +4,7 @@ description: "A critical look at how fear of mediocrity, social exposure, and pu
 thumbnail : "/images/IMG-20260423-WA0017.jpg"
 date: "2026-04-21"
 category: "society"
-tags: ["SuvroGhosh", "India", "society", "India Ambition Validation Fear Of Mediocrity", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Mediocrity","Fear","Ambition","Striving","Performative","Substance","Obscurity","Destination","Fame","Excellence"]
 published: true
 color: "amber"
 ---

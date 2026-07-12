@@ -4,7 +4,7 @@ description: "An unruly, excessively detailed exploration of how Mojo—a langua
 date: "2026-07-12"
 thumbnail: "/images/Compress_20260712_052102_2404.jpg"
 category: "Engineering Blog"
-tags: ["Mojo", "Python", "AI", "LLM", "Compiler Engineering", "Chris Lattner", "Performance", "Data Science", "Systems Programming"]
+tags: ["Standard Library","Progress Bars","Chris Lattner","MAX Kernels","Matrix Multiplication","Mojo","Python","Compiler","Compiled","Kernels"]
 published: true
 color: "#FF6B35"
 ---

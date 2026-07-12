@@ -4,7 +4,7 @@ description: "In monsoon Calcutta, a small private clinic receives twelve desper
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_081913_3915.jpg"
 category: "Short Fiction"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Short Fiction", "Medical Horror", "Calcutta", "Kolkata", "Pandemic Horror", "Monsoon", "Speculative Fiction"]
+tags: ["Young Doctor","Bappa Dutta","Nirmalya Asked","Twelve Men","Nirmalya","Pascal","Mili","Bappa","Clinic","Doctor"]
 published: true
 color: "dark green"
 ---

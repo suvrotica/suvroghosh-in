@@ -4,7 +4,7 @@ description: "A future Calcutta essay on artificial intelligence displacement, w
 date: "2026-04-29"
 thumbnail: "/images/Compress_20260429_133236_6875.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "When The Office Learns To Beg", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society"]
+tags: ["Coaching Center","Begging","White-Collar","Derelict","AI","Displaced","Fraud","Suburb","Enforcement","Panhandler"]
 published: true
 color: "slate"
 ---

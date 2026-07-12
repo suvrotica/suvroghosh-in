@@ -4,7 +4,7 @@ description: "A Calcutta essay about living on the rough southern edge of the ci
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_074741_1755.jpg"
 category: "Personal Essay"
-tags: ["Calcutta", "Kolkata", "South Kolkata", "Southern Fringe", "Bengali Essay", "Personal Essay", "Middle Age", "Lower Middle Class Life", "Depression", "Bipolar Depression", "Anxiety", "Urban Decay", "City Life", "Kolkata Drainage", "Bad Infrastructure", "Poverty", "Survival", "Loneliness", "Single Man", "Bengali Life", "Calcutta Memoir", "Urban India", "Mental Health", "SuvroGhosh"]
+tags: ["Shines","Preferably","Municipality","Unfinished","Eggs","Lane","Outside","Smells","Drain","Edge"]
 published: true
 color: "#4A4A4A"
 ---

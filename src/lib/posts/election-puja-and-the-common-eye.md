@@ -4,7 +4,7 @@ description: "A Calcutta-side political essay on campaign promises, welfare thea
 date: "2026-05-13"
 thumbnail: "/images/Compress_20260513_233123_3744.jpg"
 category: "Politics"
-tags: ["Video", "Politics", "Indian Politics", "West Bengal Politics", "Calcutta", "Kolkata", "Bengal Election", "BJP", "TMC", "Election Promises", "Welfare Politics", "Cash Transfer Schemes", "Democracy", "Indian Democracy", "Political Satire", "Middle Class India", "Lower Middle Class India", "Civic Life", "Governance", "Corruption", "Public Welfare", "SuvroGhosh"]
+tags: ["Tea Stall","Provided","Welfare","Bengal","Access","Leakage","Party","BJP","TMC","Corruption"]
 published: true
 color: "red"
 ---

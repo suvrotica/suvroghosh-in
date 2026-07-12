@@ -4,7 +4,7 @@ description: "A Calcutta essay on Bengali moonshine, poverty, chemistry, state h
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_133715_5968.jpg"
 category: "Essay"
-tags: ["Bengali Culture", "Bengal", "Calcutta", "Kolkata", "Cholai", "Bengali Moonshine", "Mahua", "Palm Toddy", "Hooch", "Alcohol", "Methanol Poisoning", "Ethanol", "Fermentation", "Distillation", "Poverty", "Public Health", "Excise Tax", "State Revenue", "Rural Bengal", "Urban Bengal", "Lower Middle Class Life", "Indian Society", "Addiction", "Folk Culture", "Chemistry", "Science Writing", "Personal Essay", "Satire", "Social Commentary", "SuvroGhosh"]
+tags: ["Public Health","Alcohol","Cholai","Drinks","Liquor","Fermentation","Shows","Drink","Thirst","Liquid"]
 published: true
 color: "amber"
 ---

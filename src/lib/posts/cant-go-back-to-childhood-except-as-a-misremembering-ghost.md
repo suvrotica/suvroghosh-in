@@ -4,7 +4,7 @@ description: "A funny, sharp, Calcutta-flavored essay on childhood, nostalgia, m
 date: "2025-03-24"
 thumbnail: "/images/Compress_20260528_070926_6026.jpg"
 category: "Memoir"
-tags: ["childhood", "nostalgia", "memory", "neuroscience", "cognition", "psychology", "ghost", "humor", "satire", "Calcutta", "Kolkata", "memoir", "Bengali", "middle age", "aging", "brain", "childhood memories", "memory distortion", "nostalgia essay", "funny essay", "personal essay", "popular neuroscience", "emotional memory", "urban memory", "North Calcutta", "South Calcutta", "Indian memoir", "Bengali writing", "mental life", "human brain", "misremembering", "memory and identity", "suvrotica", "suvroghosh"]
+tags: ["Childhood","Nostalgia","Learn","Past","Memory","Moss","Brings","Adults","Lane","Brain"]
 published: true
 color: "amber"
 ---

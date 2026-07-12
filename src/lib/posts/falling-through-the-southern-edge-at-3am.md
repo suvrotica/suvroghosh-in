@@ -4,7 +4,7 @@ description: "A middle-aged Bengali man with bipolar disorder, unemployment, and
 date: "2026-05-13"
 thumbnail: "/images/Compress_20260513_040346_6756.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Bipolar Disorder", "Calcutta", "Kolkata", "Middle Class Bengali", "Unemployment", "Depression", "Anxiety", "Urban Isolation", "Indian Middle Class", "South Kolkata", "Aging Alone", "Modern India", "Existential Writing", "Psychological Struggle", "Loneliness", "Bengali Life", "Life In Kolkata", "Economic Anxiety", "Single Men", "Ordinary Life", "Late Capitalism", "Human Condition", "Personal Narrative", "Contemporary India", "Calcutta Streets", "Bengali Essay", "Urban Decay", "Modern Loneliness", "Consulting Life", "Mental Illness", "Nightmare"]
+tags: ["BPD","Dream","Darkness","Depression","Apartment","Falling","Sadness","Half","Tea","Tiny"]
 published: true
 color: "#343434"
 ---

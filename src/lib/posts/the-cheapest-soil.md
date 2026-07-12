@@ -4,7 +4,7 @@ description: "At age fifty, every alumnus of a forgotten North Calcutta English 
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_020332_2623.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Fiction", "Horror", "Language"]
+tags: ["Tongue Shaped","Shaped Priya","Original Tongue","Arjun","Tongues","Upper","Priya","Lower","Mouth","Headmaster"]
 published: true
 color: "#8B0000"
 ---

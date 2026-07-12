@@ -4,7 +4,7 @@ description: "A personal essay on bipolar depression, unemployment, insomnia, ir
 date: "2026-05-31"
 thumbnail: "/images/Compress_20260531_054547_7919.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Mental Health Essay", "Bipolar Depression", "Bipolar Disorder", "Depression Writing", "Anxiety", "Anhedonia", "Insomnia", "Unemployment", "Middle Age", "Loneliness", "Calcutta Life", "Kolkata Life", "Bengali Writer", "Bengali Middle Class", "Lower Middle Class Life", "Financial Stress", "Doomscrolling", "Morning Depression", "Tooth Pain", "Ketorol", "Personal Blog", "Emotional Essay", "Lived Experience", "SuvroGhosh"]
+tags: ["Flail","Molar","Zero","Aching","Try","Fight","Writing","Tea","Sunrise","Relationship"]
 published: true
 color: "slate"
 ---

@@ -4,7 +4,7 @@ description: "A Calcutta street-level essay on dopamine, anhedonia, depression, 
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_153752_2501.jpg"
 category: "Mental Health"
-tags: ["Dopamine", "Dopamine Economy", "Anhedonia", "Depression", "Bipolar Depression", "Mental Health", "Neuroscience", "Brain Chemistry", "Reward System", "Motivation", "Attention", "Wanting", "Pleasure", "Calcutta", "Kolkata", "Bengali Essay", "Middle Age", "Loneliness", "Urban Life", "South Calcutta", "Personal Essay", "Psychology", "Human Behavior", "Existential Essay", "Science Writing", "Readable Neuroscience", "SuvroGhosh"]
+tags: ["Dopamine","Refresh","Disgust","Pleasure","Chase","Song","Reward","Worth","Music","Anger"]
 published: true
 color: "#6B4F2A"
 ---

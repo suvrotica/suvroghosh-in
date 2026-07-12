@@ -4,7 +4,7 @@ description: "A middle-aged Calcutta essay on writing, disappointment, poverty, 
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_190824_4666.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Blog", "Kolkata Writing", "Middle Age", "Bengali Life", "Mental Health Essay", "Bipolar Depression", "Anxiety", "Poverty", "Authenticity", "Writing Life", "Digital Culture", "Social Media Criticism", "YouTube Culture", "Creator Economy", "Loneliness", "Unemployment", "Lower Middle Class India", "Urban India", "Indian Society", "Modern Life", "Self Reflection", "Personal Blog", "SuvroGhosh"]
+tags: ["Packaged","Disappointment","Camera","Writing","Cup","Suffering","Mosquito","Skin","Tea","Evidence"]
 published: true
 color: "brown"
 ---

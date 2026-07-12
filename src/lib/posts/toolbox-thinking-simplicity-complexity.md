@@ -4,7 +4,7 @@ description: "A clear, lively explanation of why models like Miller’s Law, Occ
 date: "2026-05-23"
 thumbnail: "/images/Compress_20260524_233657_7100.jpg"
 category: "Thinking"
-tags: ["Thinking Tools", "Mental Models", "Simplicity", "Complexity", "Decision Making", "Miller's Law", "Occam's Razor", "Gall's Law", "Paradox of Choice", "John Maeda", "Barry Schwartz", "Foucault", "Education", "Work", "Technology", "Everyday Life", "SuvroGhosh"]
+tags: ["Occam Razor","Gall Law","Miller Law","Simplicity","Miller","Gall","Maeda","Occam","Complexity","Razor"]
 published: true
 color: "slate"
 ---

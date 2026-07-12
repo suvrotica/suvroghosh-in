@@ -4,7 +4,7 @@ description: "A Calcutta summer note on heat, insomnia, bipolar disorder, unsafe
 date: "2026-05-23"
 thumbnail: "/images/Compress_20260523_054251_1508.jpg"
 category: "Public Health"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Kolkata", "Calcutta", "Bengali Life", "Heat Wave", "Extreme Heat", "May Heat", "Urban Heat", "Climate Change", "Public Health India", "Sleep", "Insomnia", "Bipolar Disorder", "Mental Health", "Diabetes", "Obesity", "Sugary Drinks", "Street Food Hygiene", "Roadside Juice", "Ice Cream", "Dehydration", "Heat Exhaustion", "Heatstroke", "ORS", "Urban Poverty", "Shade", "Clean Drinking Water", "Kolkata Summer", "Indian Cities", "Climate Health", "Middle Class Life", "Lower Middle Class India"]
+tags: ["Heat","Ice","Worsens","Shade","Dehydration","Drink","Sun","Sugar","Juice","ORS"]
 published: true
 color: "orange"
 ---

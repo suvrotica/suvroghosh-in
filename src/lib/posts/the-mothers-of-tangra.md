@@ -4,7 +4,7 @@ description: "A cheap-protein factory near Tangra begins producing meat that rem
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_083528_8762.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Biological Horror", "Dread", "Hunger"]
+tags: ["SaltMeat Foods","Vat Seven","Rendering Room","Clay Cup","Cheap Protein","Mira","Bose","Sanyal","Vat","Mrs"]
 published: true
 color: "maroon"
 ---

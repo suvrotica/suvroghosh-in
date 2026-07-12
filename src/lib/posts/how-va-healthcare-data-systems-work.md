@@ -4,7 +4,7 @@ description: "A Calcutta-grounded essay on how VA healthcare data moves from Vis
 date: "2026-06-24"
 thumbnail: "/images/IMG-20260425-WA0005.jpg"
 category: "Healthcare-IT"
-tags: ["Healthcare IT", "Veterans Affairs", "VistA", "MUMPS", "Data Migration", "SQL", "Medical Informatics", "SuvroGhosh"]
+tags: ["Oracle Cerner","Microsoft SQL Server","VA Corporate Data","Veterans Affairs","Layer Cake","VistA","MUMPS","SQL","VA","FileMan"]
 published: true
 color: "#1a4d8f"
 ---

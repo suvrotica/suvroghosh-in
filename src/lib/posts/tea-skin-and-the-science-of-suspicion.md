@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay on why suspicion in India is not cyn
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_130320_0306.jpg"
 category: "Essay"
-tags: ["India", "Kolkata", "Calcutta", "Bengali Life", "Indian Society", "Suspicion", "Trust", "Low Trust Society", "Everyday Corruption", "Middle Class India", "Lower Middle Class Life", "Indian Bureaucracy", "Urban India", "Social Commentary", "Satire", "Indian Satire", "Calcutta Essay", "Kolkata Essay", "Bengali Essay", "Personal Essay", "Civic Life", "Indian Politics", "Nationalism", "Spirituality", "Masculinity", "Science", "Skepticism", "Human Behavior", "Neuroscience", "Survival", "Fraud", "Aadhaar", "Public Trust", "Modern India", "SuvroGhosh"]
+tags: ["Suspicion","Worms","Guy","India","Evil","Tea","Holy","Number","Indian","Trust"]
 published: true
 color: "#8B5A2B"
 ---

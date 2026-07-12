@@ -4,7 +4,7 @@ description: "When whole fish begin forcing their way out of Calcutta bodies, a 
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_183058_8488.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Surreal Horror", "Dread", "Buried Memory"]
+tags: ["Benu Babu","Aqua Residency","Returned Fish","Anima","Paltu","Fish","Haru","Benu","Lahiri","Mrs"]
 published: true
 color: "charcoal"
 ---

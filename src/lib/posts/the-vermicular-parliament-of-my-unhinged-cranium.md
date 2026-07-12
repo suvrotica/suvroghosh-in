@@ -4,7 +4,7 @@ description: "A fifty-one-year-old Bengali hikikomori's manic-depressive monolog
 date: "2026-07-09"
 thumbnail: "/images/Compress_20260709_053000_0143.jpg"
 category: "Personal Essay"
-tags: ["Bipolar", "Mental Health", "Calcutta", "Personal Essay", "SuvroGhosh", "Mania", "Depression", "Anxiety", "Vermicular"]
+tags: ["South Calcutta","Worms","Gnawing","Cancelled","Formerly","Prediction","Drone","Bile","Quantum","Mask"]
 published: true
 color: "#3e2723"
 ---

@@ -4,7 +4,7 @@ description: "A bankrupt middle-aged Bengali in the southern edge of Calcutta be
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_131646_6816.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Claustrophobic", "Body"]
+tags: ["Chair Leg","Broken Chair","Nirmal-babu","Arindam","Minati-di","Terrace","Tap","Knocking","Father","Opened"]
 published: true
 color: "Charcoal"
 ---

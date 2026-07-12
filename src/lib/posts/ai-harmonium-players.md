@@ -4,7 +4,7 @@ description: "A comic, skeptical, Calcutta-flavored essay on AI, human dependenc
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_131434_4033.jpg"
 category: "Technology"
-tags: ["AI", "Artificial Intelligence", "AI Essay", "Generative AI", "ChatGPT", "Machine Learning", "Deep Learning", "Transformers", "Technology Criticism", "Human Thinking", "Digital Dependency", "Future of Work", "AI and Education", "AI and Society", "Attention Economy", "Calcutta Essays", "Kolkata Writing", "Bengali Essay", "Middle Class Life", "Technology and Culture", "Philosophy of Technology", "Human Creativity", "Digital Life", "Automation", "SuvroGhosh"]
+tags: ["Hate Pauses","AI","Harmonium","Pauses","Machine","Internet","Laziness","Keys","Consultants","Students"]
 published: true
 color: "slate"
 ---

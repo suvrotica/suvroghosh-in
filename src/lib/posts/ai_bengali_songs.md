@@ -3,7 +3,7 @@ title: "Bengali AI Songs"
 thumbnail : "/images/IMG-20260427-WA0002.jpg"
 date: "2026-04-27"
 description: "Bengali"
-tags: ["Songs", "Engineering Blog", "SuvroGhosh", "AI Music Song", "AI Bengali Songs", "AI Music", "Bengali Songs", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Synthetic Media", "Music Commentary"]
+tags: ["Tracks Whenever","AI"]
 category: "AI Music Song"
 published: true
 ---

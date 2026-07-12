@@ -4,7 +4,7 @@ description: "A Calcutta-grounded essay on latent space in healthcare data: what
 date: "2026-04-24"
 thumbnail: "/images/IMG-20260424-WA0008.jpg"
 category: "Healthcare-IT"
-tags: ["SuvroGhosh", "Healthcare IT", "Latent Space In Healthcare Data", "Healthcare Data", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Federated Learning","Differential Privacy","Latent Spaces","Latent Space","Deep Learning","Space","Data","Vector","Model","Coordinate"]
 published: true
 color: "blue"
 ---

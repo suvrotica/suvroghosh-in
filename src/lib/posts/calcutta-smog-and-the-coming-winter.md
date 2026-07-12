@@ -4,7 +4,7 @@ description: "A satirical field note on Calcutta’s winter air, civic evasion, 
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_214328_8458.jpg"
 category: "Satire"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Satire", "Calcutta Smog And The Coming Winter", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Past Winters","Garbage Burning","Road Dust","Winter","Air","Public-Health","Pollution","Winters","AQI","Smog"]
 published: true
 color: "gray"
 ---

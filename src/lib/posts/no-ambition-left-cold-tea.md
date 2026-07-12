@@ -4,7 +4,7 @@ description: "A Calcutta middle-aged essay on ambition running out, the body car
 date: "2026-06-17"
 thumbnail: "/images/Compress_20260617_142228_8095.jpg"
 category: "Personal Essay"
-tags: ["Calcutta Essay", "Kolkata Life", "Middle Age", "Bengali Writer", "Personal Essay", "Depression Writing", "Bipolar Depression", "Mental Health Essay", "Loneliness", "Ambition", "Jaded Life", "Lower Middle Class Life", "Indian Middle Class", "Caregiver Life", "Mother And Son", "Cold Tea", "Existential Essay", "Atheist Writing", "Indian Society", "Urban India", "Life After Fifty", "SuvroGhosh"]
+tags: ["Biscuit","Ambition","Healthcare","Department","Plan","Believe","Databases","Standards","Tea","Hope"]
 published: true
 color: "brown"
 ---

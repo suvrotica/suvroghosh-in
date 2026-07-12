@@ -4,7 +4,7 @@ description: "India’s old labor-arbitrage model in IT and business process out
 thumbnail : "/images/IMG-20260423-WA0014.jpg"
 date: "2026-04-22"
 category: "india"
-tags: ["SuvroGhosh", "India", "India AI IT Bpo White Collar Jobs", "AI in India", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems"]
+tags: ["Domain Knowledge","Business Process Outsourcing","Fewer People","Labor Market","Roles","AI","Firms","White-Collar","Labor","Business"]
 published: true
 color: "blue"
 ---

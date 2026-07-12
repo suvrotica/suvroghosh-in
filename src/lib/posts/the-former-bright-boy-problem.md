@@ -4,7 +4,7 @@ description: "A satirical Calcutta essay about old ranks, damp certificates, gif
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_081233_3516.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Essay", "Kolkata Writing", "Bengali Middle Class", "Gifted Child", "Former Bright Boy", "Bipolar Depression", "Midlife Failure", "Indian Education System", "Joint Entrance", "Jadavpur University", "St Xaviers Kolkata", "Cossipore", "Park Street", "Lower Middle Class Life", "Mental Health Writing", "Satirical Essay", "Indian Middle Class", "Memoir", "Autobiographical Essay", "Social Satire", "Education Pressure", "Career Failure", "Life After America", "Healthcare IT", "SuvroGhosh"]
+tags: ["Former Bright Boy","Gift Grows","Park Street","Family Pride","Boy","Rank","Bright","Sees","Potential","Former"]
 published: true
 color: "gray"
 ---

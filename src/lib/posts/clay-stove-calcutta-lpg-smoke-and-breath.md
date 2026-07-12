@@ -4,7 +4,7 @@ description: "A street-level Calcutta essay on clay stoves, LPG prices, cooking 
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_172338_8335.jpg"
 category: "Calcutta Life"
-tags: ["Calcutta", "Kolkata", "Bengal", "India", "Clay Stove", "Chulha", "LPG Crisis", "LPG Price", "Black Market LPG", "Hormuz Crisis", "Strait of Hormuz", "Cooking Smoke", "Air Pollution", "Indoor Air Pollution", "PM2.5", "AQI", "Poor Air Quality", "Respiratory Health", "Pertussis", "Whooping Cough", "Damaged Lungs", "Urban Poverty", "Lower Middle Class India", "Village Cooking", "Biomass Fuel", "Household Air Pollution", "Public Health", "Energy Poverty", "Calcutta Essay", "Indian Middle Class", "Shanty Boondocks", "SuvroGhosh"]
+tags: ["Clay Stove","Smoke","Stove","Adjust","Clay","Lungs","Cough","Air","Fuel","Cardboard"]
 published: true
 color: "slate"
 ---

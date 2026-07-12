@@ -4,7 +4,7 @@ description: "A sharp, personal essay on how Kolkata’s moral weather has shift
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260515_202343_3686.jpg"
 category: "Calcutta"
-tags: ["Kolkata", "Calcutta", "Kolkata Culture", "Calcutta Essay", "Bengali Essay", "Urban Life", "City Life", "Kolkata Society", "Calcutta Society", "Modern Kolkata", "Old Calcutta", "Kolkata Nightlife", "Park Street", "Shobhabazar", "Bengali Middle Class", "Bhadralok", "Moral Decline", "Social Satire", "Bengali Satire", "Urban Morality", "Religion And Society", "Hypocrisy", "Selfishness", "Loneliness", "Social Media Culture", "Kolkata Streets", "Bengali Life", "Indian Society", "Cultural Change", "Personal Reflection", "Video", "SuvroGhosh"]
+tags: ["Somebody","Pleasure","Hypocrisy","Paid","Speaks","Tea","Defeated","Bar","Fish","Appetite"]
 published: true
 color: "crimson"
 ---

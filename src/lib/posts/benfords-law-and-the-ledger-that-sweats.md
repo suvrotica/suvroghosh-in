@@ -4,7 +4,7 @@ description: "A clear, witty, street-level explanation of how Benford’s Law ca
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_212229_9274.jpg"
 category: "Mathematics"
-tags: ["Benford’s Law", "Statistics", "Forensic Accounting", "Financial Fraud", "Cooked Books", "Indian Corruption", "Audit Analytics", "Public Procurement", "Government Contracts", "Expense Fraud", "Invoice Fraud", "Data Science", "Mathematics Explained", "Applied Statistics", "Civic Technology", "Open Data", "Anti Corruption", "Digital Governance", "Public Finance", "GST Fraud Detection", "Procurement Analytics", "Forensic Data Analysis", "India", "Kolkata", "Calcutta", "SuvroGhosh"]
+tags: ["Benford Law","Numbers Beginning","Benford","Digits","Numbers","Digit","Law","Logarithm","Add","Ledger"]
 published: true
 color: "charcoal"
 ---

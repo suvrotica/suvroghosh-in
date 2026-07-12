@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "src" / "lib" / "posts"
 OUTPUT_DIR = ROOT / "static" / "wordcloud"
 MANIFEST_PATH = OUTPUT_DIR / "manifest.json"
-GENERATOR_VERSION = "2026-07-01.1"
+GENERATOR_VERSION = "2026-07-13.1"
 MAX_WORDS = 130
 
 TECHNICAL_DISPLAY = {
@@ -388,7 +388,7 @@ def main() -> int:
 		try:
 			raw_text = markdown_path.read_text(encoding="utf-8")
 			metadata, body = split_frontmatter(raw_text)
-			content_hash = source_hash(raw_text)
+			content_hash = source_hash(body)
 			source_modified = datetime.fromtimestamp(markdown_path.stat().st_mtime, timezone.utc).isoformat()
 			manifest_entry = manifest_posts.get(slug, {})
 

@@ -4,7 +4,7 @@ description: "A sharp, comic, Calcutta-flavored satire on how human rights are p
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_135601_1961.jpg"
 category: "Society"
-tags: ["Human Rights", "Civil Liberties", "Free Speech", "Right To Protest", "Democracy", "Social Justice", "Political Satire", "Bureaucracy", "Kolkata", "Calcutta", "India", "Power And Society", "Rights And Dignity", "Public Life", "State Power", "Citizen Rights", "Freedom", "Inequality", "Institutional Hypocrisy", "Satirical Essay", "SuvroGhosh"]
+tags: ["Human Rights","Rights","Temporarily","Resilient","Human","Equality","Brochure","Folder","Ceremony","Proof"]
 published: true
 color: "slate"
 ---

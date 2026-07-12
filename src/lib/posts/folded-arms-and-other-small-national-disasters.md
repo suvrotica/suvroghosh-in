@@ -4,7 +4,7 @@ description: "A sharp, comic essay on the smug folded-arms posture, petty author
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_183950_0378.jpg"
 category: "Satire"
-tags: ["Satire", "Indian Satire", "Kolkata Essay", "Calcutta Life", "Bengali Writing", "Bengali Humor", "Social Commentary", "Body Language", "Folded Arms", "Arms Crossed", "Smug Posture", "Indian Masculinity", "Petty Authority", "Bureaucracy", "Middle Class India", "Apartment Politics", "Tea Stall Culture", "Colonial Hangover", "Everyday India", "Urban India", "Kolkata Middle Class", "Indian Society", "Observational Humor", "Comic Essay", "Personal Essay", "SuvroGhosh"]
+tags: ["Arms Crossed","Folded Arms","Folded-Arms","Sideways","Chin","Posture","Folds","Guarding","Male","Slap"]
 published: true
 color: "#4A342E"
 ---

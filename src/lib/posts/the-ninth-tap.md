@@ -4,7 +4,7 @@ description: "When Delhi’s drinking water begins to smell faintly of drains, a
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_204352_2237.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Public Failure"]
+tags: ["Ninth Tap","Blue Bottle","Mitali Blue","Anirban","Yadav","Naseem","Tara","Tap","Mitali","Colony"]
 published: true
 color: "slate"
 ---

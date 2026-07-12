@@ -4,7 +4,7 @@ description: "A comic and uneasy Calcutta essay about cockroaches, bureaucracy, 
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_134536_6914.jpg"
 category: "Personal Essay"
-tags: ["Kolkata", "Calcutta", "Bengali Essay", "Indian Society", "India", "Bureaucracy", "Satire", "Personal Essay", "Middle Class India", "Urban India", "Cockroach", "Metaphor", "Language", "Human Behavior", "Civic Life", "Queue Culture", "Corruption", "Loneliness", "Mental Health Writing", "Bipolar Depression", "Lower Middle Class Life", "Social Commentary", "Everyday India", "Dark Humor", "Clean Satire", "SuvroGhosh"]
+tags: ["Pest","Cockroach","Coli","Slipper","Biology","Behavior","Rat","Fungus","Philosopher","Metaphor"]
 published: true
 color: "#7a4a2a"
 ---

@@ -4,7 +4,7 @@ description: "A personal essay on bipolar depression, irritability, and the stra
 date: "2026-06-10"
 thumbnail: "/images/Compress_20260610_161354_4273.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Bipolar Depression", "Bipolar Disorder", "Depression Essay", "Anger", "Irritability", "Agitated Depression", "Executive Dysfunction", "Middle Age", "Calcutta Life", "Kolkata Essay", "Bengali Life", "Lower Middle Class", "Loneliness", "Anxiety", "Men And Mental Health", "Personal Essay", "Dark Humor", "Survival", "Emotional Numbness", "SuvroGhosh"]
+tags: ["Anger","Depression","Brick","Fridge","Press","Sadness","Don’t","Grateful","Spoon","Inner"]
 published: true
 color: "gray"
 ---

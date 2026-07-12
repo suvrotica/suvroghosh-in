@@ -4,7 +4,7 @@ description: "A skeptical, readable reflection on Fukuyama’s End of History th
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_055842_2255.jpg"
 category: "Ideas"
-tags: ["End of History", "Francis Fukuyama", "Political Philosophy", "Liberal Democracy", "Fascism", "Capitalism", "Globalization", "Trump", "India Democracy", "Recognition", "Hegel", "Alexandre Kojeve", "Adam Smith", "Cold War", "Modern Politics", "Authoritarianism", "Public Life", "History", "Books", "Reading", "Writing", "Mental Health", "Bipolar Depression", "Calcutta", "Kolkata", "Personal Essay", "SuvroGhosh"]
+tags: ["Liberal Democracy","Francis Fukuyama","Market Capitalism","Liberal","Democracy","Fukuyama","Capitalism","Fascism","History","End"]
 published: true
 color: "#4F46E5"
 ---

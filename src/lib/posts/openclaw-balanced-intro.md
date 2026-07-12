@@ -4,7 +4,7 @@ description: "A balanced introduction to OpenClaw-style AI agents: why they matt
 thumbnail : "/images/IMG-20260427-WA0013.jpg"
 date: "2026-04-27"
 category: "Artificial Intelligence"
-tags: ["SuvroGhosh", "Artificial Intelligence", "Openclaw Balanced Intro", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Artificial Intelligence","Large Language","Software Systems","Language Model","Agent","Execution","LLM","Web","Systems","Tools"]
 published: true
 color: "slate"
 ---

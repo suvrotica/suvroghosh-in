@@ -4,7 +4,7 @@ description: "In a rain-darkened Calcutta temple lane, a sacred cow begins speak
 date: "2026-06-04"
 thumbnail: "/images/Compress_20260604_171552_2091.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Supernatural", "Horror", "Calcutta", "SuvroGhosh"]
+tags: ["Banyan Tree","Parimal","Gouri","Cow","Haradhan","Bappa","Temple","Cows","Accent","Priest"]
 published: true
 color: "maroon"
 ---

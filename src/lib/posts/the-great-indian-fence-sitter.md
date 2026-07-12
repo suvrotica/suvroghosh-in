@@ -4,7 +4,7 @@ description: "A sharp satirical essay on the Indian habit of calling cowardice b
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_145142_2841.jpg"
 category: "Society"
-tags: ["India", "Indian Society", "Indian Politics", "Social Satire", "Political Satire", "Indian Middle Class", "Corruption in India", "Fraud in India", "Fence Sitting", "False Balance", "Moral Cowardice", "Public Discourse", "YouTube Commentary", "Indian Media", "Bureaucracy", "Institutional Decay", "Civic Failure", "Middle Class India", "Calcutta", "Kolkata", "Bengali Essay", "Social Commentary", "SuvroGhosh"]
+tags: ["Adjustment Means","Adjust","Fence-Sitter","Fence","Fraud","Stupidity","Adjustment","Balanced","Country","Translate"]
 published: true
 color: "slate"
 ---

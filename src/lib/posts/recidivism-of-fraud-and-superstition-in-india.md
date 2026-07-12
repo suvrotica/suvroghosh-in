@@ -4,7 +4,7 @@ description: "A Calcutta essay on how India keeps returning to superstition, pet
 date: "2026-06-13"
 thumbnail: "/images/Compress_20260613_162345_5284.jpg"
 category: "Essay"
-tags: ["India", "Calcutta", "Kolkata", "Bengal", "Fraud", "Superstition", "Recidivism", "Religiosity", "Godmen", "Petty Corruption", "Bank Fraud", "Loan Default", "Public Memory", "Scientific Temper", "Atheism", "Middle Class India", "Lower Middle Class Life", "Indian Society", "Social Satire", "Political Satire", "Cultural Criticism", "Everyday Corruption", "Indian Bureaucracy", "Financial Fraud", "Moral Decay", "Urban India", "South Calcutta", "SuvroGhosh"]
+tags: ["Third Offense","Second Offense","Recidivism","Fraud","Returns","Banker","Worry","Prevention","Cost","Astrologer"]
 published: true
 color: "amber"
 ---

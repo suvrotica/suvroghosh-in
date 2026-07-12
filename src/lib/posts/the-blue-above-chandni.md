@@ -4,7 +4,7 @@ description: "When Calcutta begins to burn under an oddly polished sky, a specta
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_144100_0775.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Strange Disaster", "Dread", "Grudge"]
+tags: ["Dark Glasses","Nirmal","Haru","Raka","Mitali","Glasses","Shop","Chowringhee","Chandni","Refrigerant"]
 published: true
 color: "ultraviolet"
 ---

@@ -4,7 +4,7 @@ description: "A Calcutta-grounded essay on how confounding factors enter healthc
 date: "2026-06-24"
 thumbnail: "/images/IMG-20260423-WA0013.jpg"
 category: "healthcare-it"
-tags: ["SuvroGhosh", "Healthcare IT", "Confounding Factors", "Clinical Analytics", "Health IT Architecture", "Medical Data Systems", "AI Ethics", "Statistics", "Systems Thinking", "Data Quality", "Causal Inference", "Population Health", "EHR", "Health Informatics", "Data Engineering", "Suvro Ghosh", "Kolkata", "Bengali Essay", "Indian Middle Class", "Longform Essay", "Technology Culture", "India Commentary", "Science Writing", "Education", "First Principles"]
+tags: ["Target Trial Emulation","Familiar Shapes","Distortion Enters","Keeps Happening","AI Learns","Confounding","Causal","Outcome","Exposure","Data"]
 published: true
 color: "blue"
 ---

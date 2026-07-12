@@ -4,7 +4,7 @@ description: "In a small South Sinthee lane, people begin dying from impossible 
 date: "2026-06-02"
 thumbnail: "/images/Compress_20260602_075554_4121.jpg"
 category: "Short Fiction"
-tags: ["Horror", "Calcutta", "Body Horror", "Supernatural", "SuvroGhosh"]
+tags: ["South Sinthee","Bodies Popped","Tea Stall","Anirban","Riju","Pal","Minati","Worms","Sinthee","Dhoom"]
 published: true
 color: "sickly green"
 ---

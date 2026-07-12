@@ -4,7 +4,7 @@ description: "Indian healthcare does not merely suffer from medical mistakes. It
 date: "2026-06-01"
 thumbnail: "/images/Compress_20260601_075059_9881.jpg"
 category: "Healthcare IT"
-tags: ["Healthcare IT", "Indian Healthcare", "Patient Safety", "Medical Error", "Preventable Harm", "Fake Doctors", "Medical Corruption", "NEET Paper Leak", "Medical Education", "Hospital Safety", "Understaffed Hospitals", "Doctor Burnout", "Nursing Shortage", "Counterfeit Medical Equipment", "Biomedical Equipment", "Medical Negligence", "Hospital Governance", "Healthcare Documentation", "Clinical Informatics", "Health Policy India", "Public Health India", "Private Hospitals India", "Medication Errors", "Hospital Acquired Infection", "Healthcare Associated Infection", "Audit Trails", "Patient Rights", "Digital Health India", "ABDM", "Medical Records", "Health Data", "SuvroGhosh"]
+tags: ["Prominent","India","Patient","Healthcare","Record","Staffing","Ward","Patients","Doctor","Nurse"]
 published: true
 color: "red"
 ---

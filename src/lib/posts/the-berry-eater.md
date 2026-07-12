@@ -4,7 +4,7 @@ description: "A gallery caretaker with failing sight confronts a cursed painting
 date: "2026-07-12"
 thumbnail: "/images/Compress_20260712_205045_5085.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Dread", "Shame"]
+tags: ["Stone Slab","Hemanta Bose","Brass Bowl","Pratim","Rhea","Painting","Bishnu","Berries","Canvas","Creature"]
 published: true
 color: "#3E2723"
 ---

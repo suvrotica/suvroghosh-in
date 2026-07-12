@@ -4,7 +4,7 @@ description: "In a damp North Calcutta lane, a failed physics graduate returns w
 date: "2026-06-08"
 thumbnail: "/images/Compress_20260608_113614_4700.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Resentment"]
+tags: ["Young Men","Anirban","Nandita","Haradhan","Madan","Buro","Leela","Spectacles","Baba","Dasgupta"]
 published: true
 color: "charcoal"
 ---

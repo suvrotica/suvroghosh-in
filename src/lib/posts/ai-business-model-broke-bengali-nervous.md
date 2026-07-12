@@ -4,7 +4,7 @@ description: "AI may be real, useful, and still financially overcooked. The trou
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_073622_2338.jpg"
 category: "Technology"
-tags: ["AI", "Artificial Intelligence", "AI Business Model", "AI Bubble", "AI Infrastructure", "AI Data Centers", "AI Capex", "AI Debt Financing", "OpenAI Stargate", "Abilene Data Center", "Microsoft AI Capacity", "Amazon Project Rainier", "Anthropic", "xAI Colossus", "Nvidia GPUs", "GPU Shortage", "Data Center Power Demand", "AI Energy Use", "AI Economics", "AI Valuation", "Big Tech Capex", "Private Credit", "Cloud Infrastructure", "Technology Bubble", "AI Finance", "Engineering Blog", "SuvroGhosh"]
+tags: ["AI Infrastructure","AI","Capacity","Real","Data-Center","Colossus","Chips","Power","Cooling","Stargate"]
 published: true
 color: "#7F1D1D"
 ---

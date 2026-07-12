@@ -4,7 +4,7 @@ description: "A frank, readable guide for confused beginners who want to enter m
 date: "2026-05-14"
 thumbnail: "/images/Compress_20260514_043636_6238.jpg"
 category: "AI Education"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Machine Learning", "Artificial Intelligence", "AI Learning Path", "Learn Machine Learning", "Machine Learning Beginner Guide", "Large Language Models", "LLM Beginner Guide", "Deep Learning", "Data Science", "Python Programming", "Linear Algebra", "Probability", "Statistics", "Neural Networks", "AI Career", "AI Skills", "AI Education", "Prompt Engineering", "Generative AI", "Data Literacy", "Model Evaluation", "Mathematics for AI", "AI for Beginners", "Kolkata Writer"]
+tags: ["Linear Algebra","ML","AI","Learn","Model","LLM","Linear","Probability","Data","Python"]
 published: true
 color: "indigo"
 ---

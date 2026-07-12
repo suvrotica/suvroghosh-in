@@ -4,7 +4,7 @@ description: "A darkly funny Calcutta essay about sketching human beings as inse
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_164625_5148.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Writing", "Kolkata Essay", "Bengali Life", "Middle Age", "Lower Middle Class", "Satirical Essay", "Dark Humor", "Social Satire", "Indian Society", "Bengal", "Urban Loneliness", "Bipolar Depression", "Mental Health Writing", "Anxiety", "Sketching", "Insect Metaphor", "Kafka", "Swift", "Gogol", "Darwin", "Linnaeus", "Human Failure", "Fraudsters", "Freeloaders", "Bureaucracy", "Indian Bureaucracy", "Rent", "Unpaid Invoices", "Rented Room", "Single Man", "Absurdism", "Literary Nonfiction", "Memoir Essay", "SuvroGhosh"]
+tags: ["Empire Loved","Draw","Insects","Rat","Beetle","Kafka","Termite","Insect","Fly","Antennae"]
 published: true
 color: "charcoal"
 ---

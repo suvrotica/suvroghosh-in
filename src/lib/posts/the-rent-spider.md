@@ -4,7 +4,7 @@ description: "In a damp Calcutta room, a defeated Bengali tuition teacher begins
 date: "2026-06-14"
 thumbnail: "/images/Compress_20260614_112536_6388.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Defeat"]
+tags: ["Terrace Room","Somnath","Nirmal","Minati","Rini","Father","Fractions","Terrace","Hairs","Thread"]
 published: true
 color: "charcoal"
 ---

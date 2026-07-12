@@ -4,7 +4,7 @@ description: "A bankrupt middle-aged Bengali writes honestly about bipolar weath
 date: "2026-06-07"
 thumbnail: "/images/Compress_20260607_070937_7811.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Illness"]
+tags: ["Hidden Pages","Please Write","Ordinary Weather","Arindam","Raka","Mita","Wrote","Pages","Mother","Write"]
 published: true
 color: "Slate Gray"
 ---

@@ -4,7 +4,7 @@ description: "A system-level analysis of why people who depend on Artificial Int
 thumbnail : "/images/IMG-20260424-WA0000.jpg"
 date: "2026-04-23"
 category: "Artificial Intelligence"
-tags: ["SuvroGhosh", "Artificial Intelligence", "AI Psychology Denial Oscillation And The Social Theater Of Competence", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare IT", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Information Technology","Professional Identity","Visible Signs","AI","Parrot","Dependence","Output","Draft","Conscious","Language"]
 published: true
 color: "indigo"
 ---

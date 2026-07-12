@@ -4,7 +4,7 @@ description: "A human, slightly chaotic journey through Venezuela’s lightning 
 date: "2026-05-12"
 thumbnail: "/images/Compress_20260512_191418_8592.jpg"
 category: "Science & Healthcare IT"
-tags: ["Huntington disease genetics", "Lake Maracaibo Venezuela", "genetic marker discovery", "neurodegenerative disease research", "DNA repeat expansion", "linkage analysis history", "medical genetics story", "neurology inheritance patterns", "global health history", "gene mapping breakthrough", "rare disease epidemiology", "biomedical discovery narrative"]
+tags: ["Huntington Disease","Lake Maracaibo","Huntington","Maracaibo","Disease","Gene","DNA","Marker","Lightning","Inheritance"]
 published: true
 color: "deep-blue"
 ---

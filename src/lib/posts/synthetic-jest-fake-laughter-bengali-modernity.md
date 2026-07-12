@@ -4,7 +4,7 @@ description: "A social satire on fake laughter, saccharine smiles, Bengali middl
 date: "2026-05-30"
 thumbnail: "/images/Compress_20260530_085115_5705.jpg"
 category: "Social Commentary"
-tags: ["Video", "Essay", "SuvroGhosh", "Bengali Modernity", "Indian Modernity", "Kolkata Life", "Calcutta Essays", "Fake Laughter", "Synthetic Jest", "Saccharine Smiles", "Middle Class India", "Bengali Middle Class", "Social Satire", "Indian Society", "Kolkata Culture", "Bengali Society", "Modern Life", "Social Media Culture", "Family Pressure", "Office Culture", "Urban Loneliness", "Performative Happiness", "WhatsApp Society", "Apartment Culture", "Indian Weddings", "Middle Aged Life", "Lower Middle Class Life", "Cultural Criticism", "Human Comedy", "Social Circus", "Everyday India"]
+tags: ["Positive Means","Real Laughter","Grin","Laughter","Smile","Happiness","Positive","Fake","Posted","Laugh"]
 published: true
 color: "#7A2E2E"
 ---

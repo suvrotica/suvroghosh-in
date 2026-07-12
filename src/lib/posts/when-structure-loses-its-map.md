@@ -3,7 +3,7 @@ title: "When Structure Loses Its Map"
 description: "A reflection on the deaths of Zamil Limon and Nahida Bristy, and how modern institutions can appear orderly while losing the practical ability to see danger moving through their own seams."
 thumbnail : "/images/Compress_20260428_113403_3563.jpg"
 date: "2026-04-28"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Society", "When Structure Loses Its Map", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "Mental Health", "Bipolar Depression", "Anxiety", "Depression Writing", "Mental Health India", "Loneliness", "Middle Age", "Personal Essay"]
+tags: ["Court Filings","Artificial Intelligence","Campus","Roommate","Bristy","Limon","Off-Campus","Housing","Missing-Person","Society"]
 category: "Society"
 published: true
 color: "slate"

@@ -4,7 +4,7 @@ description: "Kenneth Arrow’s 1963 essay remains essential because it explains
 thumbnail : "/images/IMG-20260426-WA0008.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"
-tags: ["SuvroGhosh", "Healthcare IT", "Arrow Uncertainty Medical Care Healthcare IT", "Suvro Ghosh", "Calcutta", "Kolkata", "Bengali Essay", "Indian Middle Class", "Lower Middle Class India", "Kolkata Bengali Writing", "Longform Essay", "Personal Blog", "Systems Thinking", "India", "South Asia", "Urban India", "Healthcare Data", "Clinical Informatics", "Health IT Architecture", "Medical Data Systems", "Interoperability", "Artificial Intelligence", "AI Commentary", "AI Ethics", "AI Safety", "Large Language Models", "AI in India", "Agentic AI", "Technology Culture", "Kolkata Life", "Calcutta Bengali", "Bengali Culture", "West Bengal", "Urban Kolkata", "India Commentary", "Indian Politics", "Indian Society", "Indian Economy", "Public Systems", "Mathematics", "Statistics", "Science Writing", "Education", "First Principles"]
+tags: ["Health Level Seven","Welfare Economics","Medical Care","Clinical","Arrow","Healthcare","Data","Uncertainty","Patient","Care"]
 published: true
 color: "blue"
 ---

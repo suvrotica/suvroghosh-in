@@ -4,7 +4,7 @@ description: "A sharp, lighter essay on Bengali adda, tea stalls, and why interr
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_031218_8443.jpg"
 category: "AI and Society"
-tags: ["Artificial Intelligence", "AI Safety", "Generative AI", "ChatGPT", "Epistemic Safety", "Critical Thinking", "Bengali Adda", "Kolkata Adda", "Calcutta Tea Stall", "Social Friction", "Human Judgment", "AI Ethics", "Technology Culture", "Digital Society", "Misinformation", "Belief Formation", "AI and Loneliness", "AI and Society", "Cognitive Bias", "Public Reasoning", "Engineering Blog", "SuvroGhosh"]
+tags: ["Tea Stall","Stall","Friction","AI","Tea","Interruption","Safety","Belief","Theory","Thoughts"]
 published: true
 color: "amber"
 ---

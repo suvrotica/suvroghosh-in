@@ -4,7 +4,7 @@ description: "A sharp, readable social essay on selfie culture, narcissism, crue
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_023545_5156.jpg"
 category: "Society"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "India", "Indian Society", "Social Media Culture", "Selfie Culture", "Narcissism", "Attention Economy", "Consumerism", "Religious Bigotry", "Nationalism", "Jingoism", "Irrationality", "Public Life", "Modern India", "Kolkata", "Calcutta", "Middle Class Anxiety", "Inequality", "Status Anxiety", "Digital Culture", "Hedonism", "Moral Decay", "Civic Life", "Urban India", "Loneliness", "Algorithmic Culture", "Political Noise", "Cultural Criticism", "Social Commentary"]
+tags: ["Step Aside","Pyramid","Prove","Treadmill","Bigotry","Tribal","Everyone","Consume","Called","Climb"]
 published: true
 color: "charcoal"
 ---

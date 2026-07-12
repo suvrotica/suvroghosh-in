@@ -4,7 +4,7 @@ description: "A personal essay from South Calcutta on depression, shame, heat, u
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_160853_3270.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta Essay", "Kolkata Writing", "Bengali Life", "Middle Age", "Depression Essay", "Bipolar Depression", "Mental Health Writing", "Signal To Noise Ratio", "Science Writing", "Claude Shannon", "Information Theory", "Lower Middle Class Life", "South Calcutta", "Loneliness", "Shame", "Resilience", "Atheist Essay", "Personal Nonfiction", "SuvroGhosh"]
+tags: ["Rice Cooker","Unpaid Work","Corrupts","Signal","Static","Wit","Noise","Shame","Rice","Disgust"]
 published: true
 color: "slate"
 ---

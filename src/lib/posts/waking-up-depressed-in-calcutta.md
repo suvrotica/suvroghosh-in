@@ -4,7 +4,7 @@ description: "A personal essay on waking into depression before language, hope, 
 date: "2026-05-19"
 thumbnail: "/images/Compress_20260519_174327_7150.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Depression", "Morning Depression", "Waking Up Depressed", "Calcutta", "Kolkata", "Bengali Life", "Middle Age", "Lower Middle Class Life", "Anxiety", "Bipolar Depression", "Loneliness", "Personal Essay", "Indian Mental Health", "Urban India", "Emotional Survival", "Everyday Life", "Mental Fog", "Headache", "Ibuprofen", "Brufen", "Calcutta Boondocks", "Memoir", "Readable Essays", "Human Condition", "SuvroGhosh"]
+tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Physical","Cup","Fog","Mind"]
 published: true
 color: "slate"
 ---

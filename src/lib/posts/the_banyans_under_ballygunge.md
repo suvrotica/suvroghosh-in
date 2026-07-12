@@ -4,7 +4,7 @@ description: "A grieving botanist plants shade trees along Calcutta’s broken p
 date: "2026-06-09"
 thumbnail: "/images/Compress_20260609_093627_7182.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Supernatural Horror", "Slow Dread", "Grief"]
+tags: ["Aerial Roots","Ananya Roy","Tea Stall","Nirmal","Malini","Roots","Saplings","Root","Ananya","Pavement"]
 published: true
 color: "Green"
 ---

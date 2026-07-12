@@ -4,7 +4,7 @@ description: "A darkly comic Calcutta essay about aging, heat, pollution, bodily
 date: "2026-05-20"
 thumbnail: "/images/Compress_20260520_071606_6125.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Calcutta", "Kolkata", "Bengali Life", "Personal Essay", "Satire", "Dark Humor", "Aging", "Middle Age", "Urban Heat", "Calcutta Summer", "Kolkata Heatwave", "Climate Anxiety", "Air Pollution", "Depression", "Bipolar Depression", "Anxiety", "Lower Middle Class Life", "Single Life", "Body Humor", "Family Expectations", "Indian Cities", "Urban Decay", "Survival", "Atheist Writing", "Bengali Satire", "Heat Stress", "Everyday India", "Life Writing"]
+tags: ["Air Conditioner","Nostril Hair","Nostril","Conditioner","Air","Hairs","Heat","Improves","Complain","Keeps"]
 published: true
 color: "brown"
 ---

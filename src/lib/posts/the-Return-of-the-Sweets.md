@@ -4,7 +4,7 @@ description: "A grieving man returns to Calcutta and discovers his late father h
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_180713_3083.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Body Horror", "Familial Dread", "Biological Inheritance"]
+tags: ["Flight Attendant","Sweet Shop","Amit","Father","Dimpled","Mouth","Budding","Rosogollas","Flight","Rosogolla"]
 published: true
 color: "#F5F5DC"
 ---

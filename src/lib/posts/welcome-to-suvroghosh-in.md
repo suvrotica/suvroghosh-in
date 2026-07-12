@@ -4,7 +4,7 @@ description: "A Kolkata-flavored blog manifesto about science, skepticism, satir
 date: "2019-01-05"
 thumbnail: "/images/Compress_20260523_024207_7823.jpg"
 category: "Personal Essay"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Suvro Ghosh Blog", "SuvroGhosh.IN", "Kolkata Blog", "Calcutta Blog", "Bengali Blog", "Indian Personal Blog", "Science Blog India", "Skepticism", "Atheism", "Pseudoscience Critique", "Rationalism", "Satire", "Dark Humor", "Personal Essay", "Bengali Writer", "Middle Aged Blogger", "Mental Health Writing", "Bipolar Depression", "Anxiety", "Creative Nonfiction", "Irreverent Writing", "Kolkata Satire", "Science And Society", "Philosophy Blog", "Literature", "Failure", "Guitar Learning", "Sketching", "Existential Humor", "Urban India", "North Calcutta", "Dum Dum", "Tea Stall Philosophy", "Indian Rationalist Writing", "Longform Essay", "Readable Essay", "Human Blog"]
+tags: ["Sometimes Silence","Guitar","Science","Literature","Satire","Sometimes","Learning","Meet","Bengali","Philosophy"]
 published: true
 color: "orange"
 ---

@@ -4,7 +4,7 @@ description: "A Kolkata essay on depression, loneliness, income fear, and the pe
 date: "2026-05-28"
 thumbnail: "/images/Compress_20260528_090229_9541.jpg"
 category: "Mental Health"
-tags: ["Video", "Personal Essay", "Mental Health", "Depression", "Anxiety", "Loneliness", "Bipolar Depression", "Middle Age", "Kolkata", "Calcutta", "Bengali Life", "Lower Middle Class", "Unemployment", "No Income", "Precarious Life", "Misfit", "Square Peg", "Alienation", "Modern Life", "Social Pressure", "Existential Crisis", "Mental Health Writing", "Indian Mental Health", "Urban Loneliness", "Life Writing", "SuvroGhosh"]
+tags: ["Square Peg","Peg","Frittering","Verbs","Square","Sadness","Lie","Depression","Loneliness","Real"]
 published: true
 color: "slate"
 ---

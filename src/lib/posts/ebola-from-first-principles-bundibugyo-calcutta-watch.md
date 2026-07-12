@@ -4,7 +4,7 @@ description: "A plain, lively biology introduction to Ebola, its major strains, 
 date: "2026-05-19"
 thumbnail: "/images/Compress_20260519_015740_0133.jpg"
 category: "Public Health"
-tags: ["Video", "Engineering Blog", "SuvroGhosh", "Ebola", "Ebola Virus", "Ebola Virus Disease", "Bundibugyo Ebola", "Bundibugyo Virus", "Zaire Ebola", "Sudan Ebola", "Reston Ebola", "Taï Forest Ebola", "Bombali Ebola", "Viral Hemorrhagic Fever", "Virus Biology", "First Principles Biology", "Public Health", "Global Health", "Outbreak Preparedness", "Pandemic Preparedness", "Epidemic", "World Health Organization", "Centers for Disease Control and Prevention", "DR Congo", "Uganda", "Ituri Province", "Calcutta", "Kolkata", "India Health", "Travel Health", "Infectious Disease", "Emerging Viruses", "Zoonotic Disease", "Fruit Bats", "RNA Virus", "PCR Testing", "Contact Tracing", "Safe Burial", "Health Systems", "Medical Explainer", "Science Writing"]
+tags: ["Public Health","Healthcare Workers","Outbreak Response","Ebola","Outbreak","Virus","Bundibugyo","RNA","Zaire","Uganda"]
 published: true
 color: "red"
 ---

@@ -4,7 +4,7 @@ description: "A widow’s rosacea becomes a conduit for the voices of Calcutta i
 date: "2026-06-22"
 thumbnail: "/images/Compress_20260622_224433_3263.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Memory"]
+tags: ["Loudon Street","Film Dialogue","Boy Mother","Tania's Father","Keya","Arun","Suman","Cream","Mites","Rana"]
 published: true
 color: "#6B1C1C"
 ---

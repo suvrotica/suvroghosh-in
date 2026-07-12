@@ -4,7 +4,7 @@ description: "A Calcutta-bred, skeptical reading of the Mandukya Upanishad, iden
 date: "2026-05-09"
 thumbnail: "/images/Compress_20260509_022428_8451.jpg"
 category: "Philosophy and AI"
-tags: ["Mandukya Upanishad", "Who Am I", "Advaita Vedanta", "Atman", "Brahman", "Turiya", "Om", "Artificial Intelligence", "AI Dogmatism", "AI Sycophancy", "Large Language Models", "LLM Safety", "Chatbot Persuasion", "AI and Society", "Spiritual Gaslighting", "Digital Culture", "Consciousness", "Indian Philosophy", "Calcutta Essays", "Bengali Blogger", "Philosophy of Self", "Epistemology", "SuvroGhosh"]
+tags: ["Deep Sleep","Pure Consciousness","Mandukya","AI","Mode","Pretends","Waking","Dream","Guru","Self"]
 published: true
 color: "indigo"
 ---

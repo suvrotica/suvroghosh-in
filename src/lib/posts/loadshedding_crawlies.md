@@ -4,7 +4,7 @@ description: "During a power cut in a narrow Calcutta lane, everyone in one neig
 date: "2026-06-19"
 thumbnail: "/images/Compress_20260619_210439_9413.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Weird Horror", "Loadshedding", "Metamorphosis"]
+tags: ["Consumer Number","Club Boys","Mustard Oil","Main Road","Six Legs","Bablu","Bina-di","Legs","Lane","Candle"]
 published: true
 color: "#1b1715"
 ---
