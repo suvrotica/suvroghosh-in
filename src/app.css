@@ -149,11 +149,11 @@
 /* Tailwind 4 Theme Configuration */
 @theme {
 	--font-sans:
-		ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text',
-		'Segoe UI', 'Noto Sans Bengali', sans-serif;
+		'Roboto Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI Variable Text', 'Segoe UI', 'Noto Sans Bengali', sans-serif;
 	--font-serif:
-		'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Noto Serif Bengali', Georgia, Cambria,
-		serif;
+		'Roboto Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI Variable Text', 'Segoe UI', 'Noto Sans Bengali', sans-serif;
 	--font-mono:
 		ui-monospace, 'Cascadia Code', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
 
@@ -263,6 +263,30 @@
 
 .article-prose .not-prose {
 	font-family: var(--font-sans);
+}
+
+.article-prose a {
+	overflow-wrap: anywhere;
+}
+
+/* Heading anchors remain useful link targets without decorating the heading text. */
+.article-prose > a,
+.article-prose :where(h1, h2, h3, h4, h5, h6) > a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.article-prose > a:hover,
+.article-prose :where(h1, h2, h3, h4, h5, h6) > a:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+.article-prose > a:focus-visible,
+.article-prose :where(h1, h2, h3, h4, h5, h6) > a:focus-visible {
+	border-radius: 0.125rem;
+	outline: 2px solid currentColor;
+	outline-offset: 0.25rem;
 }
 
 /* Layout Utilities */

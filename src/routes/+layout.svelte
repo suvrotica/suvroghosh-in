@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '@fontsource-variable/roboto/wght.css';
+	import '@fontsource-variable/roboto/wght-italic.css';
 	import '../app.css';
 	import 'katex/dist/katex.min.css';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';

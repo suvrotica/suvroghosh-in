@@ -63,6 +63,7 @@
 		"yaml": "^2.9.0"
 	},
 	"dependencies": {
+		"@fontsource-variable/roboto": "^5.2.10",
 		"@vercel/analytics": "^2.0.1",
 		"@vercel/speed-insights": "^2.0.0",
 		"resend": "^6.14.0"
