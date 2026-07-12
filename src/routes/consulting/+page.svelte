@@ -1,8 +1,12 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl, personSchema } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
 
 	const title = 'Healthcare IT Consulting | Suvro Ghosh';
 	const description =
@@ -54,6 +58,14 @@
 		'ABDM and FHIR readiness for Indian healthtech',
 		'Vendor oversight and project rescue'
 	];
+
+	function formatDate(value: string) {
+		return new Date(value).toLocaleDateString('en-IN', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric'
+		});
+	}
 </script>
 
 <SEO {title} {description} {canonicalUrl} schema={personSchema} />
@@ -132,6 +144,75 @@
 			</p>
 		</div>
 	</ScrollReveal>
+
+	<section
+		class="mb-9 border-y border-neutral-300 py-8 dark:border-neutral-700"
+		aria-labelledby="selected-analysis-heading"
+	>
+		<header class="mb-6 max-w-3xl">
+			<p
+				class="mb-2 text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
+			>
+				Public analysis
+			</p>
+			<h2
+				id="selected-analysis-heading"
+				class="mb-3 scroll-mt-24 text-2xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
+			>
+				Selected healthcare systems analysis
+			</h2>
+			<p class="m-0 text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+				These are public technical analyses, not client case studies. They show how I reason about
+				interoperability, legacy clinical systems, analytics, and AI-ready healthcare data.
+			</p>
+		</header>
+
+		<ol
+			class="grid gap-px overflow-hidden border border-neutral-300 bg-neutral-300 sm:grid-cols-2 dark:border-neutral-700 dark:bg-neutral-700"
+		>
+			{#each data.selectedAnalysis as post (post.slug)}
+				<li class="min-w-0 bg-white dark:bg-neutral-900">
+					<a
+						href={resolve('/blog/[category]/[slug]', {
+							category: post.categorySlug,
+							slug: post.slug
+						})}
+						class="group flex h-full min-h-52 flex-col p-5 no-underline transition-colors hover:bg-neutral-50 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:outline-none focus-visible:ring-inset dark:hover:bg-neutral-800/70 dark:focus-visible:ring-neutral-300"
+					>
+						<div class="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1">
+							<span
+								class="text-xs font-bold tracking-[0.1em] text-neutral-500 uppercase dark:text-neutral-400"
+							>
+								{post.focus}
+							</span>
+							<span class="text-neutral-400" aria-hidden="true">·</span>
+							<time class="text-xs text-neutral-500 dark:text-neutral-400" datetime={post.date}
+								>{formatDate(post.date)}</time
+							>
+						</div>
+						<h3
+							class="mb-2 text-lg leading-snug font-bold text-neutral-950 transition-colors group-hover:text-neutral-600 dark:text-neutral-50 dark:group-hover:text-neutral-300"
+						>
+							{post.title}
+						</h3>
+						<p class="m-0 text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+							{post.description}
+						</p>
+						<span class="mt-auto pt-4 text-sm font-semibold text-neutral-700 dark:text-neutral-300">
+							Read analysis <span aria-hidden="true">→</span>
+						</span>
+					</a>
+				</li>
+			{/each}
+		</ol>
+
+		<a
+			href={resolve('/blog/[category]', { category: 'healthcare-it' })}
+			class="mt-5 inline-flex min-h-11 items-center text-sm font-semibold text-neutral-700 underline decoration-neutral-400 underline-offset-4 transition-colors hover:text-neutral-950 hover:decoration-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-300 dark:decoration-neutral-600 dark:hover:text-white dark:hover:decoration-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+		>
+			Browse all Healthcare IT writing <span class="ml-1" aria-hidden="true">→</span>
+		</a>
+	</section>
 
 	<div class="flex flex-wrap gap-3">
 		<Button href="/resume" size="lg">View Resume</Button>
