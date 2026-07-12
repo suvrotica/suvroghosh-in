@@ -57,12 +57,12 @@
 			href={resolve('/')}
 			onclick={closeMobile}
 			class="group shrink-0 rounded-sm text-neutral-950 outline-offset-4 dark:text-neutral-50"
-			aria-label="Suvro Ghosh — home"
+			aria-label="SuvroGhosh.IN — home"
 		>
 			<span class="block font-serif text-lg leading-none font-bold tracking-tight sm:text-xl">
-				Suvro Ghosh<span
+				SuvroGhosh<span
 					class="text-neutral-500 transition-colors group-hover:text-neutral-700 dark:text-neutral-400 dark:group-hover:text-neutral-200"
-					>.in</span
+					>.IN</span
 				>
 			</span>
 			<span

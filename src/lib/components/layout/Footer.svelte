@@ -52,7 +52,7 @@
 					href={resolve('/')}
 					class="inline-flex min-h-11 items-center rounded-sm font-serif text-xl font-bold tracking-tight text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 				>
-					Suvro Ghosh<span class="text-neutral-500 dark:text-neutral-400">.in</span>
+					SuvroGhosh<span class="text-neutral-500 dark:text-neutral-400">.IN</span>
 				</a>
 				<p
 					class="mt-3 !mb-0 max-w-xs !text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400"
