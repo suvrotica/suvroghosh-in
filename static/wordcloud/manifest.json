@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T15:59:40.381135+00:00",
+  "generatedAt": "2026-07-12T17:47:56.274405+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -6530,6 +6530,29 @@
         "Reality",
         "Building",
         "Pattern"
+      ],
+      "wordCount": 130
+    },
+    "sinusoidal-dementia": {
+      "generatedAt": "2026-07-12T17:47:55.949548+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/sinusoidal-dementia.svg",
+      "source": "src/lib/posts/sinusoidal-dementia.md",
+      "sourceHash": "2f6135c03ed1fd653136e3620345fe06f6ee985bd71ad8d19e966989de7523ad",
+      "sourceModified": "2026-07-12T17:47:48.272584+00:00",
+      "topWords": [
+        "Brain",
+        "Always",
+        "Generated",
+        "Normal",
+        "Emotional",
+        "Melodies",
+        "Already",
+        "Transhumanists",
+        "World",
+        "Skull",
+        "Now",
+        "Attempting"
       ],
       "wordCount": 130
     },
