@@ -12,11 +12,21 @@
 
 	let element: HTMLElement;
 	let observer: IntersectionObserver | null = null;
+	let fallbackTimer: number | undefined;
 	let isVisible = $state(false);
 
 	onMount(() => {
-		if (typeof IntersectionObserver === 'undefined') {
+		const reveal = () => {
 			isVisible = true;
+			observer?.disconnect();
+			if (fallbackTimer !== undefined) {
+				window.clearTimeout(fallbackTimer);
+				fallbackTimer = undefined;
+			}
+		};
+
+		if (typeof IntersectionObserver === 'undefined') {
+			reveal();
 			return;
 		}
 
@@ -26,8 +36,7 @@
 			(entries) => {
 				for (const entry of entries) {
 					if (entry.isIntersecting) {
-						isVisible = true;
-						observer?.disconnect();
+						reveal();
 					}
 				}
 			},
@@ -38,11 +47,14 @@
 
 		// Fallback: if IntersectionObserver doesn't fire (e.g. no scroll root),
 		// make visible after a short delay
-		setTimeout(() => {
-			if (!isVisible) isVisible = true;
+		fallbackTimer = window.setTimeout(() => {
+			if (!isVisible) reveal();
 		}, 500);
 
-		return () => observer?.disconnect();
+		return () => {
+			observer?.disconnect();
+			if (fallbackTimer !== undefined) window.clearTimeout(fallbackTimer);
+		};
 	});
 </script>
 

@@ -301,16 +301,19 @@ a[class] {
 
 /* Scroll reveal */
 .reveal {
-	opacity: 0;
-	transform: translateY(1.5rem);
-	transition:
-		opacity var(--motion-slow) var(--ease-emphatic),
-		transform var(--motion-slow) var(--ease-emphatic);
-	transition-delay: var(--reveal-delay, 0ms);
-}
-.reveal.is-visible {
 	opacity: 1;
-	transform: translateY(0);
+	transform: none;
+}
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+	.reveal {
+		transform: translateY(0.75rem);
+		transition: transform var(--motion-slow) var(--ease-emphatic);
+		transition-delay: var(--reveal-delay, 0ms);
+	}
+	.reveal.is-visible {
+		transform: translateY(0);
+	}
 }
 
 /* Reading progress bar */
