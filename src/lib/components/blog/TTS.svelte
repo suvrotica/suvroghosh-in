@@ -2,11 +2,20 @@
 	import { onMount } from 'svelte';
 	import { Progress } from '$lib/components/ui/progress';
 
+	const MAX_CHUNK_LENGTH = 280;
+
 	let speaking = $state(false);
 	let paused = $state(false);
+	let finished = $state(false);
 	let supported = $state(false);
+	let capabilityChecked = $state(false);
 	let chunks: string[] = $state([]);
 	let currentChunkIndex = $state(0);
+	let voices: SpeechSynthesisVoice[] = [];
+	let utterance: SpeechSynthesisUtterance | null = null;
+	let nextTimer: ReturnType<typeof setTimeout> | undefined;
+	let resetTimer: ReturnType<typeof setTimeout> | undefined;
+	let announcement = $state('');
 
 	const icons = {
 		play: 'M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z',
@@ -14,120 +23,253 @@
 			'M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z'
 	};
 
-	let progressPct = $derived(
-		chunks.length > 0 ? Math.min(100, Math.round((currentChunkIndex / chunks.length) * 100)) : 0
-	);
-
-	onMount(() => {
-		if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-			supported = true;
-			window.speechSynthesis.getVoices();
-			window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
-		}
-		return () => cancel();
+	let progressPct = $derived.by(() => {
+		if (finished) return 100;
+		if (chunks.length === 0 || (!speaking && !paused)) return 0;
+		return Math.min(100, Math.max(1, Math.round(((currentChunkIndex + 1) / chunks.length) * 100)));
 	});
 
-	function getText(): string {
-		const article =
-			document.querySelector('article') || document.querySelector('.prose') || document.body;
-		const clone = article.cloneNode(true) as HTMLElement;
-		const self = clone.querySelector('[data-tts-exclude]');
-		if (self) self.remove();
-		clone.querySelectorAll('button, script, style, .no-read').forEach((el: Element) => el.remove());
-		return clone.innerText || '';
+	let playbackLabel = $derived.by(() => {
+		if (finished) return 'Audio complete';
+		if (paused) return `Paused at part ${currentChunkIndex + 1} of ${chunks.length}`;
+		if (speaking) return `Reading part ${currentChunkIndex + 1} of ${chunks.length}`;
+		return 'Audio article';
+	});
+
+	let playButtonLabel = $derived.by(() => {
+		if (paused) return 'Resume article audio';
+		if (speaking) return 'Pause article audio';
+		if (finished) return 'Listen to article again';
+		return 'Listen to article';
+	});
+
+	onMount(() => {
+		supported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+		capabilityChecked = true;
+
+		if (!supported) return;
+
+		const updateVoices = () => {
+			voices = window.speechSynthesis.getVoices();
+		};
+
+		updateVoices();
+		window.speechSynthesis.addEventListener('voiceschanged', updateVoices);
+
+		return () => {
+			window.speechSynthesis.removeEventListener('voiceschanged', updateVoices);
+			resetPlayback();
+		};
+	});
+
+	function getText() {
+		const articleBody = document.querySelector<HTMLElement>('.prose');
+		if (!articleBody) return '';
+
+		const clone = articleBody.cloneNode(true) as HTMLElement;
+		clone
+			.querySelectorAll(
+				[
+					'[data-tts-exclude]',
+					'.no-read',
+					'button',
+					'nav',
+					'aside',
+					'audio',
+					'video',
+					'iframe',
+					'script',
+					'style',
+					'noscript',
+					'pre',
+					'code',
+					'kbd',
+					'samp',
+					'svg'
+				].join(', ')
+			)
+			.forEach((element) => element.remove());
+
+		return (clone.innerText || clone.textContent || '').replace(/\s+/g, ' ').trim();
 	}
 
-	function splitIntoChunks(text: string): string[] {
-		const rawChunks = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
-		return rawChunks.map((c: string) => c.trim()).filter((c: string) => c.length > 0);
+	function splitIntoChunks(text: string) {
+		const language = document.documentElement.lang || 'en';
+		let sentences: string[];
+
+		if (typeof Intl.Segmenter === 'function') {
+			const segmenter = new Intl.Segmenter(language, { granularity: 'sentence' });
+			sentences = Array.from(segmenter.segment(text), ({ segment }) => segment.trim());
+		} else {
+			sentences = (text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) ?? [text]).map((sentence) =>
+				sentence.trim()
+			);
+		}
+
+		return sentences.flatMap(splitLongChunk).filter(Boolean);
+	}
+
+	function splitLongChunk(text: string) {
+		const parts: string[] = [];
+		let remaining = text.trim();
+
+		while (remaining.length > MAX_CHUNK_LENGTH) {
+			const candidate = remaining.slice(0, MAX_CHUNK_LENGTH + 1);
+			const breakAt = Math.max(
+				candidate.lastIndexOf(', '),
+				candidate.lastIndexOf('; '),
+				candidate.lastIndexOf(' ')
+			);
+			const splitAt = breakAt >= MAX_CHUNK_LENGTH * 0.6 ? breakAt + 1 : MAX_CHUNK_LENGTH;
+
+			parts.push(remaining.slice(0, splitAt).trim());
+			remaining = remaining.slice(splitAt).trim();
+		}
+
+		if (remaining) parts.push(remaining);
+		return parts;
+	}
+
+	function preferredVoice() {
+		const pageLanguage = document.documentElement.lang || 'en';
+		const preferences = pageLanguage.includes('-')
+			? [pageLanguage, 'en-IN', 'en-GB', 'en-US']
+			: ['en-IN', 'en-GB', 'en-US', pageLanguage];
+
+		for (const language of preferences) {
+			const match = voices.find(
+				(voice) => voice.lang.toLocaleLowerCase('en') === language.toLocaleLowerCase('en')
+			);
+			if (match) return match;
+		}
+
+		return voices.find((voice) => voice.lang.toLocaleLowerCase('en').startsWith('en')) ?? null;
 	}
 
 	function speakNextChunk() {
+		if (!speaking || paused) return;
 		if (currentChunkIndex >= chunks.length) {
-			speaking = false;
-			paused = false;
-			currentChunkIndex = 0;
+			finishPlayback();
 			return;
 		}
 
 		const chunkText = chunks[currentChunkIndex];
-		const utt = new SpeechSynthesisUtterance(chunkText);
+		const nextUtterance = new SpeechSynthesisUtterance(chunkText);
+		const voice = preferredVoice();
 
-		const voices = window.speechSynthesis.getVoices();
-		const voice =
-			voices.find((v) => v.name.includes('Google US English')) ||
-			voices.find((v) => v.lang === 'en-US') ||
-			null;
+		if (voice) nextUtterance.voice = voice;
+		nextUtterance.lang = voice?.lang ?? document.documentElement.lang ?? 'en';
+		nextUtterance.rate = 1;
 
-		if (voice) utt.voice = voice;
-		utt.rate = 1.0;
-
-		utt.onend = () => {
-			if (speaking && !paused) {
-				currentChunkIndex++;
-				speakNextChunk();
-			}
-		};
-		utt.onerror = (e: SpeechSynthesisErrorEvent) => {
-			if (e.error === 'interrupted') return;
-			currentChunkIndex++;
-			setTimeout(speakNextChunk, 100);
+		nextUtterance.onend = () => {
+			utterance = null;
+			if (!speaking || paused) return;
+			currentChunkIndex += 1;
+			speakNextChunk();
 		};
 
-		window.speechSynthesis.speak(utt);
+		nextUtterance.onerror = (event: SpeechSynthesisErrorEvent) => {
+			utterance = null;
+			if (event.error === 'interrupted' || event.error === 'canceled' || !speaking) return;
+			currentChunkIndex += 1;
+			nextTimer = setTimeout(speakNextChunk, 100);
+		};
+
+		utterance = nextUtterance;
+		window.speechSynthesis.speak(nextUtterance);
 	}
 
 	function togglePlay() {
 		if (!supported) return;
+
 		if (speaking && !paused) {
-			window.speechSynthesis.cancel();
+			window.speechSynthesis.pause();
 			paused = true;
-			return;
-		}
-		if (paused) {
-			paused = false;
-			speaking = true;
-			speakNextChunk();
+			announcement = 'Audio paused.';
 			return;
 		}
 
-		window.speechSynthesis.cancel();
+		if (speaking && paused) {
+			window.speechSynthesis.resume();
+			paused = false;
+			announcement = 'Audio resumed.';
+			return;
+		}
+
+		resetPlayback();
 		const text = getText();
-		if (!text.trim()) return;
+		if (!text) {
+			announcement = 'No readable article text was found.';
+			return;
+		}
 
 		chunks = splitIntoChunks(text);
 		currentChunkIndex = 0;
 		speaking = true;
-		paused = false;
-		setTimeout(speakNextChunk, 50);
+		announcement = 'Audio playback started.';
+		nextTimer = setTimeout(speakNextChunk, 50);
 	}
 
-	function cancel() {
+	function stopPlayback() {
+		resetPlayback();
+		announcement = 'Audio stopped.';
+	}
+
+	function finishPlayback() {
+		clearTimers();
+		utterance = null;
+		speaking = false;
+		paused = false;
+		finished = true;
+		currentChunkIndex = chunks.length;
+		announcement = 'Audio playback finished.';
+		resetTimer = setTimeout(() => {
+			finished = false;
+			chunks = [];
+			currentChunkIndex = 0;
+		}, 4000);
+	}
+
+	function resetPlayback() {
+		clearTimers();
+		if (utterance) {
+			utterance.onend = null;
+			utterance.onerror = null;
+		}
 		if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
 			window.speechSynthesis.cancel();
-			speaking = false;
-			paused = false;
-			currentChunkIndex = 0;
 		}
+		utterance = null;
+		speaking = false;
+		paused = false;
+		finished = false;
+		chunks = [];
+		currentChunkIndex = 0;
+	}
+
+	function clearTimers() {
+		if (nextTimer) clearTimeout(nextTimer);
+		if (resetTimer) clearTimeout(resetTimer);
+		nextTimer = undefined;
+		resetTimer = undefined;
 	}
 </script>
 
-{#if supported}
-	<div
+{#if !capabilityChecked || supported}
+	<section
 		data-tts-exclude
-		class="not-prose my-8 flex items-center gap-4 rounded-xl border border-neutral-200 bg-white/50 p-4 shadow-sm backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/50"
+		aria-label="Audio article"
+		class="not-prose my-8 flex items-center gap-4 rounded-xl border border-neutral-200 bg-white/50 p-4 shadow-sm backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-900/50 print:hidden"
 	>
 		<button
+			type="button"
 			onclick={togglePlay}
-			class="flex h-12 w-12 flex-none touch-manipulation items-center justify-center rounded-full bg-neutral-900 text-white shadow-md transition-all hover:scale-105 active:scale-95 dark:bg-white dark:text-neutral-900"
-			aria-label={speaking && !paused ? 'Pause' : 'Listen to post'}
+			disabled={!supported}
+			aria-label={playButtonLabel}
+			aria-describedby="audio-article-description"
+			class="flex h-12 w-12 flex-none touch-manipulation items-center justify-center rounded-full bg-neutral-900 text-white shadow-md transition-colors hover:bg-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none disabled:cursor-wait disabled:opacity-60 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-				fill="currentColor"
-				class="h-6 w-6"
-			>
+			<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
 				{#if speaking && !paused}
 					<path d={icons.pause} />
 				{:else}
@@ -137,29 +279,40 @@
 		</button>
 
 		<div class="flex min-w-0 flex-1 flex-col gap-1.5">
-			<div class="flex items-center justify-between">
+			<div class="flex min-h-11 items-center justify-between gap-3">
 				<span
 					class="text-xs font-bold tracking-widest text-neutral-500 uppercase dark:text-neutral-400"
 				>
-					{#if speaking && !paused}
-						Reading chunk {currentChunkIndex + 1} of {chunks.length}
-					{:else if paused}
-						Paused
-					{:else}
-						Audio Article
-					{/if}
+					{playbackLabel}
 				</span>
-				{#if speaking || paused}
+				{#if speaking}
 					<button
-						onclick={cancel}
-						class="p-2 text-xs font-medium tracking-wider text-red-500 uppercase transition-colors hover:text-red-600"
+						type="button"
+						onclick={stopPlayback}
+						class="inline-flex min-h-11 items-center rounded-md px-3 text-xs font-semibold tracking-wider text-red-600 uppercase transition-colors hover:bg-red-50 hover:text-red-700 focus-visible:ring-2 focus-visible:ring-red-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-red-400 dark:hover:bg-red-950/40 dark:hover:text-red-300 dark:focus-visible:ring-red-400 dark:focus-visible:ring-offset-neutral-950"
 					>
 						Stop
 					</button>
 				{/if}
 			</div>
 
-			<Progress value={progressPct} class="h-1.5" />
+			<Progress
+				value={progressPct}
+				class="h-1.5"
+				role="progressbar"
+				aria-label="Audio progress"
+				aria-valuemin={0}
+				aria-valuemax={100}
+				aria-valuenow={progressPct}
+			/>
+			<p id="audio-article-description" class="m-0 text-xs text-neutral-500 dark:text-neutral-500">
+				Uses the speech voice supplied by your browser or device. The article below is the complete
+				text.
+			</p>
 		</div>
-	</div>
+
+		<span class="sr-only" role="status" aria-live="polite" aria-atomic="true">
+			{announcement}
+		</span>
+	</section>
 {/if}

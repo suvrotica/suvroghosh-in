@@ -27,16 +27,13 @@
 		textarea.style.opacity = '0';
 		document.body.append(textarea);
 
-		let copied = false;
 		try {
 			textarea.select();
-			copied = document.execCommand('copy');
+			return document.execCommand('copy');
 		} finally {
 			textarea.remove();
 			if (previouslyFocused instanceof HTMLElement) previouslyFocused.focus();
 		}
-
-		return copied;
 	}
 
 	async function writeLink() {
