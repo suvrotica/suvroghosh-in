@@ -6,11 +6,13 @@
 	let {
 		currentPage,
 		totalPages,
-		label = 'Archive pagination'
+		label = 'Archive pagination',
+		basePath = '/blog'
 	}: {
 		currentPage: number;
 		totalPages: number;
 		label?: string;
+		basePath?: string;
 	} = $props();
 
 	let pageItems = $derived(buildPageItems(currentPage, totalPages));
@@ -22,7 +24,7 @@
 		return [1, 'ellipsis', current, 'ellipsis', total];
 	}
 
-	function pageHref(targetPage: number): '/blog' | `/blog?${string}` {
+	function pageHref(targetPage: number) {
 		const params = new SvelteURLSearchParams(page.url.searchParams);
 
 		for (const key of ['search', 'category', 'year']) {
@@ -34,7 +36,7 @@
 		else params.set('page', String(targetPage));
 
 		const query = params.toString();
-		return query ? `/blog?${query}` : '/blog';
+		return query ? `${basePath}?${query}` : basePath;
 	}
 
 	const linkClass =
@@ -50,7 +52,7 @@
 	>
 		{#if currentPage > 1}
 			<a
-				href={resolve(pageHref(currentPage - 1))}
+				href={resolve(pageHref(currentPage - 1) as '/blog')}
 				rel="prev"
 				class={`${linkClass} justify-self-start`}
 				aria-label={`Previous page, page ${currentPage - 1}`}
@@ -81,8 +83,10 @@
 						{item}
 					</span>
 				{:else}
-					<a href={resolve(pageHref(item))} class={linkClass} aria-label={`Go to page ${item}`}
-						>{item}</a
+					<a
+						href={resolve(pageHref(item) as '/blog')}
+						class={linkClass}
+						aria-label={`Go to page ${item}`}>{item}</a
 					>
 				{/if}
 			{/each}
@@ -90,7 +94,7 @@
 
 		{#if currentPage < totalPages}
 			<a
-				href={resolve(pageHref(currentPage + 1))}
+				href={resolve(pageHref(currentPage + 1) as '/blog')}
 				rel="next"
 				class={`${linkClass} col-start-2 row-start-1 justify-self-end sm:col-start-3`}
 				aria-label={`Next page, page ${currentPage + 1}`}
