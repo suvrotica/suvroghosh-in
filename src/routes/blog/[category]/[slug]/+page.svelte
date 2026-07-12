@@ -3,6 +3,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import ArticleActions from '$lib/components/blog/ArticleActions.svelte';
+	import AuthorPanel from '$lib/components/blog/AuthorPanel.svelte';
 	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
 	import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
@@ -13,6 +14,8 @@
 	let { data }: { data: PageData } = $props();
 
 	let PostContent = $derived(data.content);
+	let authorName = $derived(data.metadata.author?.trim() || 'Suvro Ghosh');
+	let isSiteAuthor = $derived(authorName.toLocaleLowerCase('en') === 'suvro ghosh');
 	let headings = $derived(data.metadata.headings ?? []);
 	let postNavigation = $derived(data.postNavigation);
 	let relatedPosts = $derived(data.relatedPosts ?? []);
@@ -61,8 +64,7 @@
 					>By <a
 						href={resolve('/resume')}
 						rel="author"
-						class="font-medium transition-colors hover:text-neutral-400"
-						>{data.metadata.author ?? 'Suvro Ghosh'}</a
+						class="font-medium transition-colors hover:text-neutral-400">{authorName}</a
 					></span
 				>
 				{#if data.metadata.date}<span aria-hidden="true">&middot;</span><time
@@ -158,6 +160,10 @@
 		>
 			<PostContent />
 		</div>
+
+		{#if isSiteAuthor}
+			<AuthorPanel />
+		{/if}
 
 		<div class="print:hidden">
 			<ScrollReveal>
