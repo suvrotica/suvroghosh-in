@@ -2,17 +2,23 @@
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
-	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Badge } from '$lib/components/ui/badge';
-	import { slugifyCategory } from '$lib/content/categories';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 
 	const title = 'Writing & Essays | Suvro Ghosh';
 	const description =
-		'Essays, satire, fiction, sketches, and reflections on technology, illness, corruption, society, and ordinary life in Calcutta. The literary side of Suvro Ghosh.';
+		'Long-form writing by Suvro Ghosh across essays, fiction, healthcare systems, science, technology, society, and ordinary life in Calcutta.';
 	const canonicalUrl = siteUrl + '/writing';
+
+	function formatDate(value: string) {
+		return new Intl.DateTimeFormat('en-GB', {
+			day: 'numeric',
+			month: 'short',
+			year: 'numeric'
+		}).format(new Date(value));
+	}
 </script>
 
 <SEO {title} {description} {canonicalUrl} />
@@ -23,81 +29,101 @@
 			Writing &amp; Essays
 		</h1>
 		<p class="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
-			This is the literary side of the site: essays, satire, fiction, sketches, and reflections on
-			technology, illness, corruption, society, and ordinary life in Calcutta. The writing is
-			personal, analytical, sometimes comic, sometimes dark, and intentionally human.
+			A reading room for essays, fiction, healthcare systems, science, technology, society, and
+			ordinary life in Calcutta. The work is personal and analytical, sometimes comic, sometimes
+			dark, and intentionally human.
 		</p>
 	</header>
 
-	<ScrollReveal>
-		<div class="mb-12">
-			<div
-				class="mb-6 flex items-end justify-between border-b border-neutral-300 pb-2 dark:border-neutral-700"
+	<section class="mb-12" aria-labelledby="recent-writing-heading">
+		<div
+			class="mb-6 flex flex-col gap-3 border-b border-neutral-300 pb-3 sm:flex-row sm:items-end sm:justify-between dark:border-neutral-700"
+		>
+			<h2
+				id="recent-writing-heading"
+				class="m-0 text-2xl font-bold text-neutral-900 dark:text-neutral-100"
 			>
-				<h2 class="m-0 text-2xl font-bold text-neutral-900 dark:text-neutral-100">Recent Posts</h2>
+				Recent writing
+			</h2>
+			<a
+				href={resolve('/blog')}
+				class="w-fit text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-700 dark:hover:text-neutral-200"
+			>
+				Search the complete archive &rarr;
+			</a>
+		</div>
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+			{#each data.recentPosts as post (post.slug)}
 				<a
-					href={resolve('/blog')}
-					class="mb-1 text-xs font-bold tracking-wider text-neutral-500 uppercase transition-colors hover:text-neutral-400"
-				>
-					View All &rarr;
-				</a>
-			</div>
-			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-				{#each data.recentPosts as post (post.slug)}
-					{@const href = resolve('/blog/[category]/[slug]', {
-						category: slugifyCategory(post.category || 'uncategorized'),
+					href={resolve('/blog/[category]/[slug]', {
+						category: post.categorySlug,
 						slug: post.slug
 					})}
-					<a
-						{href}
-						class="post-card group block rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm dark:border-neutral-800 dark:bg-neutral-800/50"
+					class="post-card group block rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm dark:border-neutral-800 dark:bg-neutral-800/50"
+				>
+					<div
+						class="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-wide text-neutral-500 dark:text-neutral-400"
 					>
-						<div class="mb-1 text-xs font-medium tracking-wider text-neutral-400 uppercase">
-							{post.category}
-						</div>
-						<div
-							class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-400 dark:text-neutral-100"
+						<span class="font-semibold uppercase">{post.categoryLabel}</span>
+						<span aria-hidden="true">·</span>
+						<time datetime={post.date}>{formatDate(post.date)}</time>
+					</div>
+					<div
+						class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-400 dark:text-neutral-100"
+					>
+						{post.title}
+					</div>
+					{#if post.description}
+						<p
+							class="mt-2 mb-0 line-clamp-2 text-left text-sm text-neutral-600 dark:text-neutral-400"
 						>
-							{post.title}
-						</div>
-						{#if post.description}
-							<p class="mt-1 line-clamp-2 text-sm text-neutral-600 dark:text-neutral-400">
-								{post.description}
-							</p>
-						{/if}
-					</a>
-				{/each}
-			</div>
+							{post.description}
+						</p>
+					{/if}
+				</a>
+			{/each}
 		</div>
-	</ScrollReveal>
+	</section>
 
-	<ScrollReveal>
-		<div>
+	<section aria-labelledby="major-categories-heading">
+		<div class="mb-6 border-b border-neutral-300 pb-4 dark:border-neutral-700">
 			<h2
-				class="mb-6 border-b border-neutral-300 pb-2 text-2xl font-bold text-neutral-900 dark:border-neutral-700 dark:text-neutral-100"
+				id="major-categories-heading"
+				class="m-0 text-2xl font-bold text-neutral-900 dark:text-neutral-100"
 			>
-				Browse by Category
+				Major shelves
 			</h2>
-			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-				{#each data.categories as cat (cat.slug)}
-					<a
-						href={resolve('/blog/[category]', { category: cat.slug })}
-						class="card group block no-underline"
-					>
-						<h3 class="m-0 mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-100">
-							{cat.label}
-						</h3>
-						<Badge variant="secondary" class="mb-3"
-							>{cat.count} {cat.count === 1 ? 'post' : 'posts'}</Badge
-						>
-						<ul class="space-y-1">
-							{#each cat.posts as post (post.slug)}
-								<li class="text-sm text-neutral-600 dark:text-neutral-400">{post.title}</li>
-							{/each}
-						</ul>
-					</a>
-				{/each}
-			</div>
+			<p class="mt-2 mb-0 text-left text-sm text-neutral-600 dark:text-neutral-400">
+				The twelve categories with the largest published catalogues. The complete archive currently
+				contains {data.categoryCount} categories.
+			</p>
 		</div>
-	</ScrollReveal>
+		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+			{#each data.majorCategories as cat (cat.slug)}
+				<a
+					href={resolve('/blog/[category]', { category: cat.slug })}
+					aria-label={`Browse ${cat.label}: ${cat.count} ${cat.count === 1 ? 'post' : 'posts'}`}
+					class="card group block no-underline"
+				>
+					<h3 class="m-0 mb-2 text-lg font-bold text-neutral-900 dark:text-neutral-100">
+						{cat.label}
+					</h3>
+					<Badge variant="secondary" class="mb-3"
+						>{cat.count} {cat.count === 1 ? 'post' : 'posts'}</Badge
+					>
+					<ul class="space-y-1">
+						{#each cat.posts as post (post.slug)}
+							<li class="text-sm text-neutral-600 dark:text-neutral-400">{post.title}</li>
+						{/each}
+					</ul>
+				</a>
+			{/each}
+		</div>
+		<a
+			href={resolve('/blog')}
+			class="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-neutral-700 underline decoration-neutral-400 underline-offset-4 hover:text-neutral-500 dark:text-neutral-300 dark:hover:text-neutral-100"
+		>
+			Browse and search every category <span class="ml-1" aria-hidden="true">→</span>
+		</a>
+	</section>
 </section>

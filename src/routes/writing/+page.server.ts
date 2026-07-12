@@ -2,7 +2,18 @@ import type { PageServerLoad } from './$types';
 import { categoryLabel } from '$lib/content/categories';
 import { getPublishedPosts } from '$lib/server/content/posts';
 
-export const load: PageServerLoad = async () => {
+function postSummary(post: ReturnType<typeof getPublishedPosts>[number]) {
+	return {
+		slug: post.slug,
+		title: post.title,
+		description: post.description,
+		date: post.date,
+		categorySlug: post.categorySlug,
+		categoryLabel: post.categoryLabel
+	};
+}
+
+export const load: PageServerLoad = () => {
 	const posts = getPublishedPosts();
 	const groups = new Map<string, typeof posts>();
 
@@ -17,12 +28,13 @@ export const load: PageServerLoad = async () => {
 			slug,
 			label: categoryLabel(slug),
 			count: articles.length,
-			posts: articles.slice(0, 3)
+			posts: articles.slice(0, 3).map(postSummary)
 		}))
-		.sort((a, b) => a.label.localeCompare(b.label));
+		.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 
 	return {
-		recentPosts: posts.filter((post) => post.categorySlug === 'healthcare-it').slice(0, 6),
-		categories
+		recentPosts: posts.slice(0, 6).map(postSummary),
+		majorCategories: categories.slice(0, 12),
+		categoryCount: categories.length
 	};
 };
