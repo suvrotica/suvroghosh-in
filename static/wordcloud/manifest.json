@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T05:13:15.964719+00:00",
+  "generatedAt": "2026-07-12T15:59:40.381135+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-02T20:05:46.706606+00:00",
@@ -7312,6 +7312,29 @@
         "Somewhere",
         "Afternoon",
         "Much"
+      ],
+      "wordCount": 130
+    },
+    "the-berry-eater": {
+      "generatedAt": "2026-07-12T15:59:40.043292+00:00",
+      "generatorVersion": "2026-07-01.1",
+      "output": "static/wordcloud/the-berry-eater.svg",
+      "source": "src/lib/posts/the-berry-eater.md",
+      "sourceHash": "8cbcdca35ef9b3d1f9a76f77e3b2314bf82b646f1de258818d3fb3998265023c",
+      "sourceModified": "2026-07-12T15:59:31.800509+00:00",
+      "topWords": [
+        "Pratim",
+        "Eyes",
+        "Creature",
+        "Painting",
+        "Hands",
+        "Rhea",
+        "Man",
+        "Sound",
+        "Canvas",
+        "White",
+        "Bishnu",
+        "Dark"
       ],
       "wordCount": 130
     },
