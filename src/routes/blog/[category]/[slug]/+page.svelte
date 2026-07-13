@@ -8,7 +8,6 @@
 	import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
 	import { Separator } from '$lib/components/ui/separator';
-	import { tagSearchPath } from '$lib/content/posts';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -18,6 +17,7 @@
 	let isSiteAuthor = $derived(authorName.toLocaleLowerCase('en') === 'suvro ghosh');
 	let headings = $derived(data.metadata.headings ?? []);
 	let postNavigation = $derived(data.postNavigation);
+	let postTopics = $derived(data.postTopics ?? []);
 	let relatedPosts = $derived(data.relatedPosts ?? []);
 </script>
 
@@ -103,14 +103,15 @@
 				>
 					This is a living essay and may be updated as facts change.
 				</p>{/if}
-			{#if data.metadata.tags && data.metadata.tags.length > 0}
+			{#if postTopics.length > 0}
 				<nav aria-label="Post topics" class="mt-6 flex flex-wrap gap-2 print:hidden">
-					{#each data.metadata.tags as tag (tag)}
+					{#each postTopics as topic (topic.href)}
 						<a
-							href={resolve(tagSearchPath(tag) as `/blog?${string}`)}
-							class="inline-flex min-h-8 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+							href={resolve(topic.href as '/blog')}
+							class="inline-flex min-h-11 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+							title={topic.hasLandingPage ? `Browse the ${topic.label} topic` : undefined}
 						>
-							{tag}
+							{topic.label}
 						</a>
 					{/each}
 				</nav>

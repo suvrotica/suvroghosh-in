@@ -1,9 +1,17 @@
 import { categoryLabel, slugifyCategory } from '$lib/content/categories';
 import {
 	isIndexablePost,
+	tagSearchPath,
 	validatePublishedPostMetadata,
 	type BlogPostMetadata
 } from '$lib/content/posts';
+import {
+	canonicalTopicSlug,
+	isNavigationalTopic,
+	MIN_TOPIC_CATEGORIES,
+	MIN_TOPIC_POSTS,
+	topicPath
+} from '$lib/content/topics';
 
 export type PublishedPost = BlogPostMetadata & {
 	slug: string;
@@ -47,6 +55,23 @@ function normalizeTag(tag: string) {
 
 const tagDocumentFrequency = new Map<string, number>();
 
+type TopicAccumulator = {
+	posts: PublishedPost[];
+	labels: Map<string, number>;
+	categories: Set<string>;
+	lastModified: string;
+};
+
+export type PublishedTopic = {
+	slug: string;
+	label: string;
+	count: number;
+	categoryCount: number;
+	lastModified: string;
+};
+
+const topicAccumulators = new Map<string, TopicAccumulator>();
+
 for (const post of publishedPosts) {
 	const uniqueTags = new Set(
 		(post.tags ?? []).map(normalizeTag).filter((tag) => tag && !nonTopicalTags.has(tag))
@@ -55,7 +80,49 @@ for (const post of publishedPosts) {
 	for (const tag of uniqueTags) {
 		tagDocumentFrequency.set(tag, (tagDocumentFrequency.get(tag) ?? 0) + 1);
 	}
+
+	const seenTopics = new Set<string>();
+	for (const rawTag of post.tags ?? []) {
+		const label = rawTag.trim();
+		const topicSlug = canonicalTopicSlug(label);
+		if (!label || !isNavigationalTopic(label) || seenTopics.has(topicSlug)) continue;
+
+		seenTopics.add(topicSlug);
+		const lastModified = post.dateModified ?? post.date;
+		const topic = topicAccumulators.get(topicSlug) ?? {
+			posts: [],
+			labels: new Map<string, number>(),
+			categories: new Set<string>(),
+			lastModified
+		};
+
+		topic.posts.push(post);
+		topic.labels.set(label, (topic.labels.get(label) ?? 0) + 1);
+		topic.categories.add(post.categorySlug);
+		if (new Date(lastModified).getTime() > new Date(topic.lastModified).getTime()) {
+			topic.lastModified = lastModified;
+		}
+		topicAccumulators.set(topicSlug, topic);
+	}
 }
+
+function preferredTopicLabel(labels: Map<string, number>) {
+	return Array.from(labels.entries()).sort(
+		(a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'en', { sensitivity: 'base' })
+	)[0]?.[0];
+}
+
+const publishedTopics: PublishedTopic[] = Array.from(topicAccumulators, ([slug, topic]) => ({
+	slug,
+	label: preferredTopicLabel(topic.labels) ?? slug,
+	count: topic.posts.length,
+	categoryCount: topic.categories.size,
+	lastModified: topic.lastModified
+}))
+	.filter((topic) => topic.count >= MIN_TOPIC_POSTS && topic.categoryCount >= MIN_TOPIC_CATEGORIES)
+	.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+
+const publishedTopicsBySlug = new Map(publishedTopics.map((topic) => [topic.slug, topic]));
 
 function postLink(post: PublishedPost) {
 	return {
@@ -85,6 +152,40 @@ export function getPublishedPostsByYear(year: string) {
 	return publishedPosts.filter((post) => post.date.startsWith(`${year}-`));
 }
 
+export function getPublishedTopics() {
+	return publishedTopics.slice();
+}
+
+export function getPublishedTopic(topic: string) {
+	return publishedTopicsBySlug.get(canonicalTopicSlug(topic));
+}
+
+export function getPublishedPostsByTopic(topic: string) {
+	const slug = canonicalTopicSlug(topic);
+	if (!publishedTopicsBySlug.has(slug)) return [];
+	return topicAccumulators.get(slug)?.posts.slice() ?? [];
+}
+
+export function getPostTopicLinks(tags: string[]) {
+	const seenTopics = new Set<string>();
+
+	return tags.flatMap((rawTag) => {
+		const label = rawTag.trim();
+		const slug = canonicalTopicSlug(label);
+		if (!label || !slug || seenTopics.has(slug)) return [];
+
+		seenTopics.add(slug);
+		const topic = publishedTopicsBySlug.get(slug);
+		return [
+			{
+				label: topic?.label ?? label,
+				href: topic ? topicPath(topic.slug) : tagSearchPath(label),
+				hasLandingPage: Boolean(topic)
+			}
+		];
+	});
+}
+
 export function getPostSearchFacets() {
 	const categoryCounts = new Map<string, { label: string; count: number }>();
 	const yearCounts = new Map<string, number>();
@@ -106,7 +207,8 @@ export function getPostSearchFacets() {
 		),
 		years: Array.from(yearCounts, ([value, count]) => ({ value, count })).sort((a, b) =>
 			b.value.localeCompare(a.value)
-		)
+		),
+		topics: getPublishedTopics()
 	};
 }
 

@@ -1,6 +1,7 @@
 import { siteUrl } from '$lib/components/seo/SEO';
 import { postPath } from '$lib/content/posts';
-import { getPublishedPosts } from '$lib/server/content/posts';
+import { topicPath } from '$lib/content/topics';
+import { getPublishedPosts, getPublishedTopics } from '$lib/server/content/posts';
 
 export const prerender = true;
 
@@ -46,6 +47,18 @@ export async function GET() {
 		url: siteUrl + '/blog/archive/' + year,
 		lastMod
 	}));
+	const publishedTopics = getPublishedTopics();
+	const topics = publishedTopics.map((topic) => ({
+		url: siteUrl + topicPath(topic.slug),
+		lastMod: topic.lastModified
+	}));
+	const topicIndexLastMod = publishedTopics.reduce(
+		(latest, topic) =>
+			new Date(topic.lastModified).getTime() > new Date(latest).getTime()
+				? topic.lastModified
+				: latest,
+		'1970-01-01'
+	);
 
 	const pages = [
 		{ url: siteUrl + '/', lastMod: '2026-06-26' },
@@ -54,9 +67,10 @@ export async function GET() {
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/writing', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/blog', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
 		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }
 	];
-	const urls = [...pages, ...years, ...categories, ...posts];
+	const urls = [...pages, ...years, ...topics, ...categories, ...posts];
 
 	const xml =
 		'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

@@ -8,6 +8,7 @@
 	type SearchFacets = {
 		categories: { slug: string; label: string; count: number }[];
 		years: { value: string; count: number }[];
+		topics: { slug: string; label: string; count: number; categoryCount: number }[];
 	};
 
 	let {
@@ -107,6 +108,41 @@
 								{year.value}
 								<span class="ml-1.5 text-xs font-normal text-neutral-500 dark:text-neutral-400"
 									>({year.count})</span
+								>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+		{/if}
+
+		{#if facets.topics.length > 0}
+			<nav
+				aria-label="Browse recurring topics"
+				class="mt-5 border-t border-neutral-300 pt-4 dark:border-neutral-700"
+			>
+				<div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+					<p
+						class="!m-0 !text-left text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
+					>
+						Recurring topics
+					</p>
+					<a
+						href={resolve('/blog/topics')}
+						class="inline-flex min-h-11 items-center text-xs font-semibold text-neutral-600 underline decoration-neutral-400 underline-offset-4 transition-colors hover:text-neutral-950 hover:decoration-neutral-700 dark:text-neutral-400 dark:hover:text-white"
+						>Browse all topics</a
+					>
+				</div>
+				<ul class="flex flex-wrap gap-2">
+					{#each facets.topics.slice(0, 12) as topic (topic.slug)}
+						<li>
+							<a
+								href={resolve('/blog/topics/[topic]', { topic: topic.slug })}
+								class="inline-flex min-h-11 items-center rounded-md border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-700 no-underline transition-colors hover:border-neutral-500 hover:bg-neutral-200 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:outline-neutral-300"
+							>
+								{topic.label}
+								<span class="ml-1.5 text-xs font-normal text-neutral-500 dark:text-neutral-400"
+									>({topic.count})</span
 								>
 							</a>
 						</li>
