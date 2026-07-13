@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { tick } from 'svelte';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { contactPageSchema, personSchema, schemaGraph, siteUrl } from '$lib/components/seo/SEO';
 	import { Button } from '$lib/components/ui/button';
@@ -34,6 +35,13 @@
 		return async ({ update }) => {
 			try {
 				await update();
+				await tick();
+
+				const firstInvalid = document.querySelector<HTMLElement>(
+					'#contact-form [aria-invalid="true"]'
+				);
+				const feedback = document.querySelector<HTMLElement>('[data-contact-feedback]');
+				(firstInvalid ?? feedback)?.focus();
 			} finally {
 				submitting = false;
 			}
@@ -67,8 +75,10 @@
 	<div class="card">
 		{#if form?.success}
 			<div
+				data-contact-feedback
 				class="mb-6 rounded-md border border-green-600/30 bg-green-50 px-4 py-3 text-sm text-green-900 dark:border-green-400/30 dark:bg-green-950/40 dark:text-green-100"
 				role="status"
+				tabindex="-1"
 			>
 				Thanks. Your message has been sent.
 			</div>
@@ -76,14 +86,17 @@
 
 		{#if errors?.form}
 			<div
+				data-contact-feedback
 				class="mb-6 rounded-md border border-red-600/30 bg-red-50 px-4 py-3 text-sm text-red-900 dark:border-red-400/30 dark:bg-red-950/40 dark:text-red-100"
 				role="alert"
+				tabindex="-1"
 			>
 				{errors.form}
 			</div>
 		{/if}
 
 		<form
+			id="contact-form"
 			method="POST"
 			class="space-y-5"
 			novalidate
@@ -108,7 +121,7 @@
 					value={values.name}
 					aria-invalid={errors?.name ? 'true' : undefined}
 					aria-describedby={errors?.name ? 'name-error' : undefined}
-					class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+					class="min-h-11 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
 				/>
 				{#if errors?.name}
 					<p id="name-error" class="mt-2 text-left text-sm text-red-700 dark:text-red-300">
@@ -134,7 +147,7 @@
 					value={values.email}
 					aria-invalid={errors?.email ? 'true' : undefined}
 					aria-describedby={errors?.email ? 'email-error' : undefined}
-					class="w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
+					class="min-h-11 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 shadow-sm transition-colors placeholder:text-neutral-500 focus:border-neutral-500 focus:ring-2 focus:ring-neutral-500/20 focus:outline-none dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100 dark:placeholder:text-neutral-500"
 				/>
 				{#if errors?.email}
 					<p id="email-error" class="mt-2 text-left text-sm text-red-700 dark:text-red-300">
