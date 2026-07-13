@@ -7,6 +7,7 @@
 
 	type SearchFacets = {
 		categories: { slug: string; label: string; count: number }[];
+		years: { value: string; count: number }[];
 	};
 
 	let {
@@ -85,6 +86,34 @@
 				Search
 			</button>
 		</form>
+
+		{#if facets.years.length > 0}
+			<nav
+				aria-label="Browse archive by year"
+				class="mt-5 border-t border-neutral-300 pt-4 dark:border-neutral-700"
+			>
+				<p
+					class="!mb-2 !text-left text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
+				>
+					Browse by year
+				</p>
+				<ul class="flex flex-wrap gap-2">
+					{#each facets.years as year (year.value)}
+						<li>
+							<a
+								href={resolve('/blog/archive/[year]', { year: year.value })}
+								class="inline-flex min-h-11 items-center rounded-md border border-neutral-300 bg-white px-3 text-sm font-semibold text-neutral-700 no-underline transition-colors hover:border-neutral-500 hover:bg-neutral-200 hover:text-neutral-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:outline-neutral-300"
+							>
+								{year.value}
+								<span class="ml-1.5 text-xs font-normal text-neutral-500 dark:text-neutral-400"
+									>({year.count})</span
+								>
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</nav>
+		{/if}
 	</div>
 
 	<div class="mt-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">

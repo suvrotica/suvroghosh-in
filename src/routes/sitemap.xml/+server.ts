@@ -15,13 +15,21 @@ function escapeXml(value: string) {
 
 export async function GET() {
 	const categoryLastMod = new Map<string, string>();
+	const yearLastMod = new Map<string, string>();
 
 	const posts = getPublishedPosts().map((post) => {
 		const category = post.categorySlug ?? 'uncategorized';
+		const year = /^\d{4}/.exec(post.date)?.[0];
 		const lastMod = post.dateModified ?? post.date;
 		const previous = categoryLastMod.get(category);
 		if (!previous || new Date(lastMod).getTime() > new Date(previous).getTime()) {
 			categoryLastMod.set(category, lastMod);
+		}
+		if (year) {
+			const previousYear = yearLastMod.get(year);
+			if (!previousYear || new Date(lastMod).getTime() > new Date(previousYear).getTime()) {
+				yearLastMod.set(year, lastMod);
+			}
 		}
 
 		return {
@@ -34,6 +42,10 @@ export async function GET() {
 		url: siteUrl + '/blog/' + category,
 		lastMod
 	}));
+	const years = Array.from(yearLastMod.entries()).map(([year, lastMod]) => ({
+		url: siteUrl + '/blog/archive/' + year,
+		lastMod
+	}));
 
 	const pages = [
 		{ url: siteUrl + '/', lastMod: '2026-06-26' },
@@ -44,7 +56,7 @@ export async function GET() {
 		{ url: siteUrl + '/blog', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }
 	];
-	const urls = [...pages, ...categories, ...posts];
+	const urls = [...pages, ...years, ...categories, ...posts];
 
 	const xml =
 		'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

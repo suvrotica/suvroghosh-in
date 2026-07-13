@@ -80,6 +80,11 @@ export function getPublishedPostsByCategory(category: string) {
 	return publishedPosts.filter((post) => post.categorySlug === categorySlug);
 }
 
+export function getPublishedPostsByYear(year: string) {
+	if (!/^\d{4}$/.test(year)) return [];
+	return publishedPosts.filter((post) => post.date.startsWith(`${year}-`));
+}
+
 export function getPostSearchFacets() {
 	const categoryCounts = new Map<string, { label: string; count: number }>();
 	const yearCounts = new Map<string, number>();

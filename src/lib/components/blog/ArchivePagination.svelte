@@ -25,7 +25,10 @@
 	}
 
 	function pageHref(targetPage: number) {
-		const params = new SvelteURLSearchParams(page.url.searchParams);
+		const params =
+			basePath === '/blog'
+				? new SvelteURLSearchParams(page.url.searchParams)
+				: new SvelteURLSearchParams();
 
 		for (const key of ['search', 'category', 'year']) {
 			if (!params.get(key)?.trim()) params.delete(key);
