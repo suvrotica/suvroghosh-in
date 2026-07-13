@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T16:34:13.834068+00:00",
+  "generatedAt": "2026-07-13T23:37:53.518618+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -7266,6 +7266,29 @@
         "Trying",
         "Numbers",
         "Particular"
+      ],
+      "wordCount": 130
+    },
+    "the-alpine-glow-of-embezzlement": {
+      "generatedAt": "2026-07-13T23:37:53.229451+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-alpine-glow-of-embezzlement.svg",
+      "source": "src/lib/posts/the-alpine-glow-of-embezzlement.md",
+      "sourceHash": "93c1e181e7977b51de55625bf753762a8d189ca59220a6eb71d355bfed4f20ba",
+      "sourceModified": "2026-07-13T23:37:49.316151+00:00",
+      "topWords": [
+        "Woodlice",
+        "Rising",
+        "Data",
+        "Even",
+        "Population",
+        "Already",
+        "Municipal",
+        "Watched",
+        "Holy",
+        "Manic",
+        "Say",
+        "Swiss"
       ],
       "wordCount": 130
     },
