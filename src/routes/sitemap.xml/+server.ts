@@ -1,7 +1,11 @@
 import { siteUrl } from '$lib/components/seo/SEO';
 import { postPath } from '$lib/content/posts';
 import { topicPath } from '$lib/content/topics';
-import { getPublishedPosts, getPublishedTopics } from '$lib/server/content/posts';
+import {
+	getCuratedReadingPaths,
+	getPublishedPosts,
+	getPublishedTopics
+} from '$lib/server/content/posts';
 
 export const prerender = true;
 
@@ -59,9 +63,16 @@ export async function GET() {
 				: latest,
 		'1970-01-01'
 	);
+	const startHereLastMod = getCuratedReadingPaths()
+		.flatMap((path) => path.posts)
+		.reduce((latest, post) => {
+			const lastModified = post.dateModified ?? post.date;
+			return new Date(lastModified).getTime() > new Date(latest).getTime() ? lastModified : latest;
+		}, '1970-01-01');
 
 	const pages = [
 		{ url: siteUrl + '/', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
 		{ url: siteUrl + '/resume', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/consulting', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },

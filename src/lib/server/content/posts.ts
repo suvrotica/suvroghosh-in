@@ -12,6 +12,7 @@ import {
 	MIN_TOPIC_POSTS,
 	topicPath
 } from '$lib/content/topics';
+import { readingPathDefinitions } from '$lib/content/reading-paths';
 
 export type PublishedPost = BlogPostMetadata & {
 	slug: string;
@@ -140,6 +141,31 @@ export function getPublishedPosts() {
 
 export function getPublishedPost(slug: string) {
 	return postsBySlug.get(slug);
+}
+
+export function getCuratedReadingPaths() {
+	return readingPathDefinitions.map(({ postSlugs, ...path }) => ({
+		...path,
+		posts: postSlugs.map((slug) => {
+			const post = getPublishedPost(slug);
+			if (!post) {
+				throw new Error(
+					`Curated reading path "${path.id}" references an unpublished post: ${slug}`
+				);
+			}
+
+			return {
+				slug: post.slug,
+				title: post.title,
+				description: post.description,
+				date: post.date,
+				dateModified: post.dateModified,
+				readingTime: post.readingTime,
+				categorySlug: post.categorySlug,
+				categoryLabel: post.categoryLabel
+			};
+		})
+	}));
 }
 
 export function getPublishedPostsByCategory(category: string) {

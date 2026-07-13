@@ -7,13 +7,14 @@
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 
 	type NavigationItem = {
-		href: '/' | '/writing' | '/consulting' | '/resume' | '/contact';
+		href: '/' | '/start-here' | '/writing' | '/consulting' | '/resume' | '/contact';
 		label: string;
 		sections: readonly string[];
 	};
 
 	const navLinks: readonly NavigationItem[] = [
 		{ href: '/', label: 'Home', sections: ['/'] },
+		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
 		{ href: '/writing', label: 'Writing', sections: ['/writing', '/blog'] },
 		{
 			href: '/consulting',
@@ -103,7 +104,7 @@
 			</span>
 		</a>
 
-		<nav class="hidden items-center gap-6 xl:flex" aria-label="Primary navigation">
+		<nav class="hidden items-center gap-5 xl:flex" aria-label="Primary navigation">
 			{#each navLinks as link (link.href)}
 				<a
 					href={resolve(link.href)}

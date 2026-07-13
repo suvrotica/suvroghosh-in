@@ -62,6 +62,35 @@
 	</div>
 </section>
 
+<section
+	class="mb-10 flex flex-col gap-5 border-y border-neutral-300 py-6 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-700"
+	aria-labelledby="start-here-heading"
+>
+	<div>
+		<p
+			class="mb-2 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
+		>
+			New to the site?
+		</p>
+		<h2
+			id="start-here-heading"
+			class="mb-2 text-2xl font-bold text-neutral-950 dark:text-neutral-50"
+		>
+			Not sure where to begin?
+		</h2>
+		<p class="mb-0 max-w-2xl text-left text-sm text-neutral-600 dark:text-neutral-400">
+			Follow five short reading paths through the essays, healthcare systems work, science,
+			Calcutta, and fiction.
+		</p>
+	</div>
+	<a
+		href={resolve('/start-here')}
+		class="inline-flex min-h-11 shrink-0 items-center rounded-md border border-neutral-400 px-4 py-2 text-sm font-semibold text-neutral-800 no-underline transition-colors hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:outline-neutral-300"
+	>
+		Explore the reading paths <span class="ml-2" aria-hidden="true">→</span>
+	</a>
+</section>
+
 <ScrollReveal>
 	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 		<div class="card">

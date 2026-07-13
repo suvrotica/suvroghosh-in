@@ -9,6 +9,7 @@
 			id: 'footer-explore',
 			label: 'Explore',
 			links: [
+				{ href: '/start-here', label: 'Start here' },
 				{ href: '/writing', label: 'Writing' },
 				{ href: '/blog', label: 'Search & archive' },
 				{ href: '/blog/topics', label: 'Topics' },
