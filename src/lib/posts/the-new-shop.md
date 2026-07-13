@@ -4,7 +4,7 @@ description: "A widowed proofreader orders sweets from a discount shop for his n
 date: "2026-07-13"
 thumbnail: "/images/Compress_20260713_213758_8476.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Grief"]
+tags: ["White Spheres","Young Man","Anirban","Mala","Sweets","Tiya","Groom","Hall","Balaram","White"]
 published: true
 color: "#5C3A21"
 ---

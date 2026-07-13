@@ -7905,6 +7905,22 @@
 				"Silk"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/the-new-shop.md": {
+			"bodyHash": "c126365edde763813e5f082a2b3980593ba8f08a4c6115ea89b9dc9665a6cad6",
+			"generatedTags": [
+				"White Spheres",
+				"Young Man",
+				"Anirban",
+				"Mala",
+				"Sweets",
+				"Tiya",
+				"Groom",
+				"Hall",
+				"Balaram",
+				"White"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

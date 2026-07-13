@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T13:50:59.207709+00:00",
+  "generatedAt": "2026-07-13T16:34:13.834068+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -9106,6 +9106,29 @@
         "Work",
         "Less",
         "Read"
+      ],
+      "wordCount": 130
+    },
+    "the-new-shop": {
+      "generatedAt": "2026-07-13T16:34:10.293921+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-new-shop.svg",
+      "source": "src/lib/posts/the-new-shop.md",
+      "sourceHash": "a037d7664077d41e5510409e48667ea42790117f23e34f39a3c29449b2472dec",
+      "sourceModified": "2026-07-13T16:33:54.206443+00:00",
+      "topWords": [
+        "Anirban",
+        "White",
+        "Sweets",
+        "Held",
+        "Mala",
+        "Hall",
+        "Man",
+        "Mother",
+        "Eyes",
+        "Warm",
+        "Face",
+        "Groom"
       ],
       "wordCount": 130
     },
