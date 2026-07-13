@@ -4,7 +4,7 @@ description: "In a sweltering Calcutta summer, a widow discovers that spiders ar
 date: "2026-07-13"
 thumbnail: "/images/Compress_20260713_191444_4996.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Psychological Horror", "Gothic", "Grief"]
+tags: ["Legs Curled","Middle Class","Second Landing","Single Thread","Tram Wires","Beam","Spiders","Spider","Rana's","Silk"]
 published: true
 color: "#2c1810"
 ---
