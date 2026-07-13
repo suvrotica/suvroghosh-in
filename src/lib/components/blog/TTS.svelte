@@ -2,19 +2,23 @@
 	import { onMount } from 'svelte';
 	import { Progress } from '$lib/components/ui/progress';
 
-	const MAX_CHUNK_LENGTH = 280;
+	const MAX_CHUNK_LENGTH = 180;
+	const CHUNK_STALL_TIMEOUT_MS = 40_000;
 
 	let speaking = $state(false);
 	let paused = $state(false);
+	let needsRecovery = $state(false);
 	let finished = $state(false);
 	let supported = $state(false);
 	let capabilityChecked = $state(false);
 	let chunks: string[] = $state([]);
 	let currentChunkIndex = $state(0);
+	let currentChunkOffset = 0;
 	let voices: SpeechSynthesisVoice[] = [];
 	let utterance: SpeechSynthesisUtterance | null = null;
 	let nextTimer: ReturnType<typeof setTimeout> | undefined;
 	let resetTimer: ReturnType<typeof setTimeout> | undefined;
+	let stallTimer: ReturnType<typeof setTimeout> | undefined;
 	let announcement = $state('');
 
 	const icons = {
@@ -31,12 +35,15 @@
 
 	let playbackLabel = $derived.by(() => {
 		if (finished) return 'Audio complete';
+		if (needsRecovery)
+			return `Playback interrupted at part ${currentChunkIndex + 1} of ${chunks.length}`;
 		if (paused) return `Paused at part ${currentChunkIndex + 1} of ${chunks.length}`;
 		if (speaking) return `Reading part ${currentChunkIndex + 1} of ${chunks.length}`;
 		return 'Audio article';
 	});
 
 	let playButtonLabel = $derived.by(() => {
+		if (needsRecovery) return 'Continue article audio from interruption';
 		if (paused) return 'Resume article audio';
 		if (speaking) return 'Pause article audio';
 		if (finished) return 'Listen to article again';
@@ -147,52 +154,97 @@
 	}
 
 	function speakNextChunk() {
+		nextTimer = undefined;
 		if (!speaking || paused) return;
 		if (currentChunkIndex >= chunks.length) {
 			finishPlayback();
 			return;
 		}
 
-		const chunkText = chunks[currentChunkIndex];
+		const sourceChunk = chunks[currentChunkIndex];
+		if (currentChunkOffset >= sourceChunk.length) {
+			currentChunkIndex += 1;
+			currentChunkOffset = 0;
+			speakNextChunk();
+			return;
+		}
+
+		const chunkStartOffset = currentChunkOffset;
+		const chunkText = sourceChunk.slice(chunkStartOffset);
 		const nextUtterance = new SpeechSynthesisUtterance(chunkText);
 		const voice = preferredVoice();
 
 		if (voice) nextUtterance.voice = voice;
 		nextUtterance.lang = voice?.lang ?? document.documentElement.lang ?? 'en';
 		nextUtterance.rate = 1;
+		nextUtterance.onboundary = (event) => {
+			if (utterance !== nextUtterance || !Number.isFinite(event.charIndex)) return;
+
+			currentChunkOffset = Math.min(
+				sourceChunk.length,
+				Math.max(currentChunkOffset, chunkStartOffset + event.charIndex)
+			);
+			armStallTimer(nextUtterance);
+		};
 
 		nextUtterance.onend = () => {
+			clearStallTimer();
+			if (utterance !== nextUtterance) return;
 			utterance = null;
 			if (!speaking || paused) return;
 			currentChunkIndex += 1;
-			speakNextChunk();
+			currentChunkOffset = 0;
+			scheduleNextChunk();
 		};
 
 		nextUtterance.onerror = (event: SpeechSynthesisErrorEvent) => {
+			clearStallTimer();
+			if (utterance !== nextUtterance) return;
 			utterance = null;
-			if (event.error === 'interrupted' || event.error === 'canceled' || !speaking) return;
-			currentChunkIndex += 1;
-			nextTimer = setTimeout(speakNextChunk, 100);
+			if (!speaking) return;
+
+			if (Number.isFinite(event.charIndex)) {
+				currentChunkOffset = Math.min(
+					sourceChunk.length,
+					Math.max(currentChunkOffset, chunkStartOffset + event.charIndex)
+				);
+			}
+			paused = true;
+			needsRecovery = true;
+			announcement = 'Audio was interrupted. Press Play to continue from where it stopped.';
 		};
 
 		utterance = nextUtterance;
 		window.speechSynthesis.speak(nextUtterance);
+		armStallTimer(nextUtterance);
 	}
 
 	function togglePlay() {
 		if (!supported) return;
 
 		if (speaking && !paused) {
+			if (!utterance || !window.speechSynthesis.speaking) {
+				restartCurrentChunk();
+				return;
+			}
+
 			window.speechSynthesis.pause();
+			clearStallTimer();
 			paused = true;
+			needsRecovery = false;
 			announcement = 'Audio paused.';
 			return;
 		}
 
 		if (speaking && paused) {
-			window.speechSynthesis.resume();
-			paused = false;
-			announcement = 'Audio resumed.';
+			if (utterance && window.speechSynthesis.paused && !needsRecovery) {
+				window.speechSynthesis.resume();
+				paused = false;
+				armStallTimer(utterance);
+				announcement = 'Audio resumed.';
+			} else {
+				restartCurrentChunk();
+			}
 			return;
 		}
 
@@ -205,9 +257,43 @@
 
 		chunks = splitIntoChunks(text);
 		currentChunkIndex = 0;
+		currentChunkOffset = 0;
 		speaking = true;
+		needsRecovery = false;
 		announcement = 'Audio playback started.';
-		nextTimer = setTimeout(speakNextChunk, 50);
+		scheduleNextChunk();
+	}
+
+	function restartCurrentChunk() {
+		clearStallTimer();
+		clearNextTimer();
+		detachUtterance();
+		window.speechSynthesis.cancel();
+		utterance = null;
+		paused = false;
+		needsRecovery = false;
+		speaking = true;
+		announcement = 'Audio resumed from where it stopped.';
+		scheduleNextChunk(100);
+	}
+
+	function scheduleNextChunk(delay = 50) {
+		clearNextTimer();
+		nextTimer = setTimeout(speakNextChunk, delay);
+	}
+
+	function armStallTimer(activeUtterance: SpeechSynthesisUtterance) {
+		clearStallTimer();
+		stallTimer = setTimeout(() => {
+			if (utterance !== activeUtterance || !speaking || paused) return;
+
+			detachUtterance();
+			window.speechSynthesis.cancel();
+			utterance = null;
+			paused = true;
+			needsRecovery = true;
+			announcement = 'Audio timed out. Press Play to continue from where it stopped.';
+		}, CHUNK_STALL_TIMEOUT_MS);
 	}
 
 	function stopPlayback() {
@@ -220,37 +306,56 @@
 		utterance = null;
 		speaking = false;
 		paused = false;
+		needsRecovery = false;
 		finished = true;
 		currentChunkIndex = chunks.length;
+		currentChunkOffset = 0;
 		announcement = 'Audio playback finished.';
 		resetTimer = setTimeout(() => {
 			finished = false;
 			chunks = [];
 			currentChunkIndex = 0;
+			currentChunkOffset = 0;
 		}, 4000);
 	}
 
 	function resetPlayback() {
 		clearTimers();
-		if (utterance) {
-			utterance.onend = null;
-			utterance.onerror = null;
-		}
+		detachUtterance();
 		if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
 			window.speechSynthesis.cancel();
 		}
 		utterance = null;
 		speaking = false;
 		paused = false;
+		needsRecovery = false;
 		finished = false;
 		chunks = [];
 		currentChunkIndex = 0;
+		currentChunkOffset = 0;
+	}
+
+	function detachUtterance() {
+		if (!utterance) return;
+		utterance.onboundary = null;
+		utterance.onend = null;
+		utterance.onerror = null;
+	}
+
+	function clearNextTimer() {
+		if (nextTimer) clearTimeout(nextTimer);
+		nextTimer = undefined;
+	}
+
+	function clearStallTimer() {
+		if (stallTimer) clearTimeout(stallTimer);
+		stallTimer = undefined;
 	}
 
 	function clearTimers() {
-		if (nextTimer) clearTimeout(nextTimer);
+		clearNextTimer();
+		clearStallTimer();
 		if (resetTimer) clearTimeout(resetTimer);
-		nextTimer = undefined;
 		resetTimer = undefined;
 	}
 </script>
