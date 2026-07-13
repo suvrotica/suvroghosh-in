@@ -16,6 +16,8 @@ export const socialUrls = [
 ];
 
 export const defaultOgImage = `${siteUrl}/images/IMG-20260427-WA0001.jpg`;
+export const indexRobots =
+	'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 
 export function absoluteUrl(pathOrUrl?: string) {
 	if (!pathOrUrl) return undefined;

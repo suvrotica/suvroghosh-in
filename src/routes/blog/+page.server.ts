@@ -16,7 +16,7 @@ export const load: PageServerLoad = async ({ url }) => {
 	const rawSort = url.searchParams.get('sort')?.trim() as PostSearchSort | undefined;
 	const sort = rawSort && searchSorts.has(rawSort) ? rawSort : 'relevance';
 	const requestedPage = parsePageNumber(url.searchParams.get('page'));
-	const isSearching = Boolean(search || category || tag || year);
+	const isSearching = Boolean(search || category || tag || year || sort !== 'relevance');
 	const matchingPosts = isSearching
 		? await searchPublishedPosts({ query: search, category, tag, year, sort })
 		: getPublishedPosts();

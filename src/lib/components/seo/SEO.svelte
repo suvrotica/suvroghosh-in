@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { siteSEO, websiteSchema } from './SEO';
+	import { indexRobots, siteSEO, websiteSchema } from './SEO';
 	type Props = {
 		title?: string;
 		description?: string;
@@ -14,6 +14,7 @@
 		author?: string;
 		category?: string;
 		tags?: string[];
+		robots?: string;
 	};
 
 	// We set the default values to fall back to your new SEO profile
@@ -30,7 +31,8 @@
 		modifiedTime,
 		author = 'Suvro Ghosh',
 		category,
-		tags
+		tags,
+		robots = indexRobots
 	}: Props = $props();
 
 	let jsonLd = $derived(
@@ -52,10 +54,7 @@
 	<meta property="og:site_name" content="SuvroGhosh.In" />
 	<meta name="author" content={author} />
 
-	<meta
-		name="robots"
-		content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
-	/>
+	<meta name="robots" content={robots} />
 
 	{#if type === 'article' && publishedTime}
 		<meta property="article:published_time" content={publishedTime} />

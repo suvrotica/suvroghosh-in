@@ -1,17 +1,30 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { collectionPageSchema, siteUrl } from '$lib/components/seo/SEO';
+	import { collectionPageSchema, indexRobots, siteUrl } from '$lib/components/seo/SEO';
 	import PostBrowse from '$lib/components/blog/PostBrowse.svelte';
 	import PostSearch from '$lib/components/search/PostSearch.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 
 	let { data } = $props();
+
+	let canonicalUrl = $derived(
+		data.isSearching || data.page <= 1 ? `${siteUrl}/blog` : `${siteUrl}/blog?page=${data.page}`
+	);
+	let pageTitle = $derived(
+		`All Posts${!data.isSearching && data.page > 1 ? ` — Page ${data.page}` : ''} | SuvroGhosh.In`
+	);
+	let pageDescription = $derived(
+		data.isSearching
+			? 'Filtered archive of essays by Suvro Ghosh.'
+			: `Complete archive of essays by Suvro Ghosh on healthcare IT, AI, systems thinking, public health, Calcutta culture, and first-principles analysis${data.page > 1 ? ` — page ${data.page}` : ''}.`
+	);
 </script>
 
 <SEO
-	title="All Posts | SuvroGhosh.In"
-	description="Complete archive of essays by Suvro Ghosh on healthcare IT, AI, systems thinking, public health, Calcutta culture, and first-principles analysis."
-	canonicalUrl={siteUrl + '/blog'}
+	title={pageTitle}
+	description={pageDescription}
+	{canonicalUrl}
+	robots={data.isSearching ? 'noindex,follow' : indexRobots}
 	keywords={[
 		'Blog',
 		'Essays',
@@ -24,10 +37,9 @@
 		'Healthcare Interoperability'
 	]}
 	schema={collectionPageSchema({
-		name: 'All Posts',
-		description:
-			'Complete archive of essays by Suvro Ghosh on healthcare IT, AI, systems thinking, public health, Calcutta culture, and first-principles analysis.',
-		url: siteUrl + '/blog',
+		name: data.page > 1 && !data.isSearching ? `All Posts — Page ${data.page}` : 'All Posts',
+		description: pageDescription,
+		url: canonicalUrl,
 		about: 'Essays and blog posts'
 	})}
 />
