@@ -31,7 +31,7 @@
 			aria-label="Breadcrumb"
 			class="mb-8 text-sm text-neutral-500 dark:text-neutral-400 print:hidden"
 		>
-			<ol class="flex flex-wrap items-center gap-2">
+			<ol class="flex min-w-0 flex-wrap items-center gap-2">
 				<li>
 					<a
 						href={resolve('/')}
@@ -53,8 +53,12 @@
 						>{data.metadata.categoryLabel}</a
 					>
 				</li>
-				<li><span aria-hidden="true">/</span></li>
-				<li class="truncate font-medium text-neutral-900 dark:text-neutral-200" aria-current="page">
+				<li class="hidden sm:block"><span aria-hidden="true">/</span></li>
+				<li
+					class="hidden min-w-0 flex-1 truncate font-medium text-neutral-900 sm:block dark:text-neutral-200"
+					aria-current="page"
+					title={data.metadata.title}
+				>
 					{data.metadata.title}
 				</li>
 			</ol>
