@@ -46,6 +46,7 @@
 			<PostSearch
 				initialQuery={data.search}
 				initialCategory={data.category}
+				initialTag={data.tag}
 				initialYear={data.year}
 				initialSort={data.sort}
 				initialPage={data.page}

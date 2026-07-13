@@ -105,5 +105,5 @@ export function postPath(post: { category: string; slug: string }) {
 }
 
 export function tagSearchPath(tag: string) {
-	return `/blog?search=${encodeURIComponent(tag)}`;
+	return `/blog?tag=${encodeURIComponent(tag)}`;
 }

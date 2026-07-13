@@ -10,14 +10,15 @@ export const load: PageServerLoad = async ({ url }) => {
 	const search = url.searchParams.get('search')?.trim() ?? '';
 	const rawCategory = url.searchParams.get('category')?.trim() ?? '';
 	const category = rawCategory ? slugifyCategory(rawCategory) : '';
+	const tag = url.searchParams.get('tag')?.trim() ?? '';
 	const rawYear = url.searchParams.get('year')?.trim() ?? '';
 	const year = /^\d{4}$/.test(rawYear) ? rawYear : '';
 	const rawSort = url.searchParams.get('sort')?.trim() as PostSearchSort | undefined;
 	const sort = rawSort && searchSorts.has(rawSort) ? rawSort : 'relevance';
 	const requestedPage = parsePageNumber(url.searchParams.get('page'));
-	const isSearching = Boolean(search || category || year);
+	const isSearching = Boolean(search || category || tag || year);
 	const matchingPosts = isSearching
-		? await searchPublishedPosts({ query: search, category, year, sort })
+		? await searchPublishedPosts({ query: search, category, tag, year, sort })
 		: getPublishedPosts();
 	const paginated = paginate(matchingPosts, requestedPage);
 
@@ -25,6 +26,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		posts: paginated.items,
 		search,
 		category,
+		tag,
 		year,
 		sort,
 		isSearching,

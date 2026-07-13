@@ -5,6 +5,7 @@ export type PostSearchSort = 'relevance' | 'newest' | 'oldest';
 type PostSearchOptions = {
 	query?: string;
 	category?: string;
+	tag?: string;
 	year?: string;
 	sort?: PostSearchSort;
 };
@@ -12,11 +13,19 @@ type PostSearchOptions = {
 export function searchPublishedPosts({
 	query = '',
 	category = '',
+	tag = '',
 	year = '',
 	sort = 'relevance'
 }: PostSearchOptions) {
+	const normalizedTag = tag.trim().toLocaleLowerCase('en');
 	let posts = getPublishedPosts().filter((post) => {
 		if (category && post.categorySlug !== category) return false;
+		if (
+			normalizedTag &&
+			!post.tags.some((postTag) => postTag.trim().toLocaleLowerCase('en') === normalizedTag)
+		) {
+			return false;
+		}
 		if (year && !post.date.startsWith(year)) return false;
 		return true;
 	});

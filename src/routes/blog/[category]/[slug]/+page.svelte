@@ -104,7 +104,7 @@
 					{#each data.metadata.tags as tag (tag)}
 						<a
 							href={resolve(tagSearchPath(tag) as `/blog?${string}`)}
-							class="rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+							class="inline-flex min-h-8 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
 						>
 							{tag}
 						</a>

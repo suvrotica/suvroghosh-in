@@ -47,6 +47,7 @@
 	type Props = {
 		initialQuery: string;
 		initialCategory: string;
+		initialTag: string;
 		initialYear: string;
 		initialSort: SearchSort;
 		initialPage: number;
@@ -59,6 +60,7 @@
 	let {
 		initialQuery: query,
 		initialCategory: category,
+		initialTag: tag,
 		initialYear: year,
 		initialSort: sort,
 		initialPage: currentPage,
@@ -84,6 +86,7 @@
 	function pagefindOptions(): PagefindSearchOptions {
 		const filters: Record<string, string> = {};
 		if (category) filters.category = category;
+		if (tag) filters.tag = tag;
 		if (year) filters.year = year;
 
 		return {
@@ -124,6 +127,7 @@
 		const values = {
 			search: query.trim(),
 			category,
+			tag,
 			year,
 			sort,
 			page: currentPage > 1 ? String(currentPage) : ''
@@ -213,6 +217,9 @@
 		onsubmit={submitSearch}
 	>
 		<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-[minmax(16rem,2fr)_1fr_1fr_1fr_auto]">
+			{#if tag}
+				<input type="hidden" name="tag" value={tag} />
+			{/if}
 			<label
 				class="flex flex-col gap-1.5 text-sm font-semibold text-neutral-700 dark:text-neutral-200"
 			>
@@ -287,6 +294,21 @@
 			</button>
 		</div>
 	</form>
+
+	{#if tag}
+		<div
+			class="mb-5 flex flex-wrap items-center gap-2 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2 text-sm text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800/60 dark:text-neutral-200"
+		>
+			<span class="font-semibold">Topic</span>
+			<span class="rounded-sm bg-white px-2 py-1 font-medium dark:bg-neutral-900">{tag}</span>
+			<a
+				href={resolve('/blog')}
+				class="ml-auto inline-flex min-h-8 items-center font-semibold underline underline-offset-4 hover:text-neutral-950 dark:hover:text-white"
+			>
+				Clear topic
+			</a>
+		</div>
+	{/if}
 
 	<div class="mb-5 flex flex-wrap items-center justify-between gap-3">
 		<h2
