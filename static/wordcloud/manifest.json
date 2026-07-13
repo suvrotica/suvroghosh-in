@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T19:53:50.364971+00:00",
+  "generatedAt": "2026-07-13T01:18:17.180147+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -734,6 +734,29 @@
         "Number",
         "Small",
         "National"
+      ],
+      "wordCount": 130
+    },
+    "arachnoid-in-the-boondocks": {
+      "generatedAt": "2026-07-13T01:18:16.480000+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/arachnoid-in-the-boondocks.svg",
+      "source": "src/lib/posts/arachnoid-in-the-boondocks.md",
+      "sourceHash": "7eb05e28df100055d26f6dfa1f1547e31983ea687b7c13ae35c03536e506c2bc",
+      "sourceModified": "2026-07-13T01:18:13.389172+00:00",
+      "topWords": [
+        "Every",
+        "Though",
+        "Arachnoid",
+        "Web",
+        "Call",
+        "Never",
+        "Merely",
+        "Lens",
+        "Ceiling",
+        "Complete",
+        "Dark",
+        "Learned"
       ],
       "wordCount": 130
     },

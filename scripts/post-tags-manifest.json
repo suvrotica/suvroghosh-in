@@ -7873,6 +7873,22 @@
 				"Arka"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/arachnoid-in-the-boondocks.md": {
+			"bodyHash": "433acc033e04e37cb68cd30b4f149b7f2bfdd3e6c1b934c29574a4dfeaeca26d",
+			"generatedTags": [
+				"Arachnoid",
+				"Web",
+				"Dermatophytes",
+				"Consensus",
+				"Lobe",
+				"Thigh",
+				"Fungal",
+				"Lens",
+				"Mania",
+				"Symptom"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

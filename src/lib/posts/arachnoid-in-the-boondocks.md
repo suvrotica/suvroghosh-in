@@ -4,7 +4,7 @@ description: "A grotesquely swollen bipolar monologue from a fifty-one-year-old 
 date: "2026-07-13"
 thumbnail: "/images/Compress_20260713_064335_5868.jpg"
 category: "Essay"
-tags: ["Bipolar", "Mania", "Depression", "Calcutta", "Mental Health", "Essay"]
+tags: ["Arachnoid","Web","Dermatophytes","Consensus","Lobe","Thigh","Fungal","Lens","Mania","Symptom"]
 published: true
 color: "#3A1C1C"
 ---
