@@ -414,6 +414,16 @@
 	transform: none;
 }
 
+.search-shortcut-hint {
+	display: none;
+}
+
+@media (scripting: enabled) and (min-width: 64rem) {
+	.search-shortcut-hint {
+		display: inline-flex;
+	}
+}
+
 @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
 	.reveal {
 		transform: translateY(0.75rem);

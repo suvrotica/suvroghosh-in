@@ -25,6 +25,7 @@
 
 	let currentPath = $derived(page.url.pathname);
 	let searchQuery = $state(page.url.searchParams.get('search') ?? '');
+	let searchInput = $state<HTMLInputElement>();
 	let mobileMenu: HTMLDetailsElement;
 	let menuSummary: HTMLElement;
 
@@ -40,14 +41,41 @@
 		if (mobileMenu) mobileMenu.open = false;
 	}
 
-	function handleMenuKeydown(event: KeyboardEvent) {
-		if (event.key !== 'Escape' || !mobileMenu?.open) return;
-		closeMobile();
-		menuSummary?.focus();
+	function isEditableTarget(target: EventTarget | null) {
+		return (
+			target instanceof HTMLElement &&
+			(target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
+		);
+	}
+
+	function handleWindowKeydown(event: KeyboardEvent) {
+		if (event.key === 'Escape' && mobileMenu?.open) {
+			closeMobile();
+			menuSummary?.focus();
+			return;
+		}
+
+		if (
+			event.defaultPrevented ||
+			event.key !== '/' ||
+			event.altKey ||
+			event.ctrlKey ||
+			event.metaKey ||
+			event.shiftKey ||
+			isEditableTarget(event.target) ||
+			!searchInput ||
+			searchInput.offsetParent === null
+		) {
+			return;
+		}
+
+		event.preventDefault();
+		searchInput.focus();
+		searchInput.select();
 	}
 </script>
 
-<svelte:window onkeydown={handleMenuKeydown} />
+<svelte:window onkeydown={handleWindowKeydown} />
 
 <header
 	class="relative sticky top-0 z-40 border-b border-neutral-300/90 bg-neutral-100/95 pt-[env(safe-area-inset-top)] shadow-[0_1px_0_rgb(255_255_255/0.6)] backdrop-blur-md transition-colors dark:border-neutral-700/90 dark:bg-neutral-950/95 dark:shadow-none print:hidden"
@@ -115,20 +143,30 @@
 				role="search"
 				aria-label="Site search"
 			>
-				<Input
-					type="search"
-					name="search"
-					bind:value={searchQuery}
-					placeholder="Search writing"
-					aria-label="Search writing"
-					class="h-10 w-40 bg-white/70 dark:bg-neutral-900/80"
-				/>
+				<div class="relative">
+					<Input
+						bind:ref={searchInput}
+						type="search"
+						name="search"
+						bind:value={searchQuery}
+						placeholder="Search writing"
+						aria-label="Search writing"
+						aria-keyshortcuts="/"
+						class="h-11 w-44 bg-white/70 pr-9 dark:bg-neutral-900/80"
+					/>
+					<kbd
+						aria-hidden="true"
+						class="search-shortcut-hint pointer-events-none absolute top-1/2 right-2 min-w-5 -translate-y-1/2 items-center justify-center rounded border border-neutral-300 bg-neutral-100 px-1 text-[0.65rem] leading-5 font-semibold text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400"
+					>
+						/
+					</kbd>
+				</div>
 				<Button
 					type="submit"
 					variant="ghost"
 					size="icon"
 					aria-label="Submit search"
-					class="h-10 w-10"
+					class="h-11 w-11"
 				>
 					<svg
 						class="h-5 w-5"
