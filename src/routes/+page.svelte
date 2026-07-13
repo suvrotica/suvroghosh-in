@@ -74,19 +74,19 @@
 			<div class="mt-4 flex flex-wrap gap-2">
 				<a
 					href={resolve('/resume')}
-					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>Resume</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
 					href={resolve('/consulting')}
-					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>Consulting</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
 					href={resolve('/healthcare-it-gulf')}
-					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>Gulf / Kuwait</a
 				>
 			</div>
@@ -102,13 +102,13 @@
 			<div class="mt-4 flex flex-wrap gap-2">
 				<a
 					href={resolve('/writing')}
-					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>Writing &amp; Essays</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
 					href={resolve('/blog')}
-					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-400"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>All Posts</a
 				>
 			</div>

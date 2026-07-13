@@ -69,7 +69,7 @@
 						<time datetime={post.date}>{formatDate(post.date)}</time>
 					</div>
 					<div
-						class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-400 dark:text-neutral-100"
+						class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-600 dark:text-neutral-100 dark:group-hover:text-neutral-300"
 					>
 						{post.title}
 					</div>

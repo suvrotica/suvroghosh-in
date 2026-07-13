@@ -32,16 +32,25 @@
 			class="mb-8 text-sm text-neutral-500 dark:text-neutral-400 print:hidden"
 		>
 			<ol class="flex flex-wrap items-center gap-2">
-				<li><a href={resolve('/')} class="transition-colors hover:text-neutral-400">Home</a></li>
+				<li>
+					<a
+						href={resolve('/')}
+						class="transition-colors hover:text-neutral-950 dark:hover:text-neutral-100">Home</a
+					>
+				</li>
 				<li><span aria-hidden="true">/</span></li>
 				<li>
-					<a href={resolve('/blog')} class="transition-colors hover:text-neutral-400">Blog</a>
+					<a
+						href={resolve('/blog')}
+						class="transition-colors hover:text-neutral-950 dark:hover:text-neutral-100">Blog</a
+					>
 				</li>
 				<li><span aria-hidden="true">/</span></li>
 				<li>
 					<a
 						href={resolve('/blog/[category]', { category: data.metadata.categorySlug })}
-						class="transition-colors hover:text-neutral-400">{data.metadata.categoryLabel}</a
+						class="transition-colors hover:text-neutral-950 dark:hover:text-neutral-100"
+						>{data.metadata.categoryLabel}</a
 					>
 				</li>
 				<li><span aria-hidden="true">/</span></li>
@@ -64,7 +73,8 @@
 					>By <a
 						href={resolve('/resume')}
 						rel="author"
-						class="font-medium transition-colors hover:text-neutral-400">{authorName}</a
+						class="font-medium transition-colors hover:text-neutral-950 dark:hover:text-neutral-100"
+						>{authorName}</a
 					></span
 				>
 				{#if data.metadata.date}<span aria-hidden="true">&middot;</span><time
@@ -201,7 +211,7 @@
 									{post.categoryLabel}
 								</div>
 								<div
-									class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-400 dark:text-neutral-100"
+									class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-600 dark:text-neutral-100 dark:group-hover:text-neutral-300"
 								>
 									{post.title}
 								</div>

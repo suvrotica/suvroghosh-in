@@ -202,7 +202,7 @@
 			</p>
 			<a
 				href={'mailto:' + email}
-				class="text-xl font-bold text-neutral-900 underline underline-offset-4 hover:text-neutral-400 dark:text-neutral-100"
+				class="text-xl font-bold text-neutral-900 underline underline-offset-4 hover:text-neutral-600 dark:text-neutral-100 dark:hover:text-neutral-300"
 			>
 				{email}
 			</a>
