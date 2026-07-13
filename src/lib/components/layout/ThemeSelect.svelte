@@ -15,7 +15,7 @@
 	const themeEvent = 'site-theme-change';
 	const validPreferences: readonly ThemePreference[] = ['system', 'light', 'dark', 'sepia'];
 
-	let preference = $state<ThemePreference>('system');
+	let preference = $state<ThemePreference>('sepia');
 	let ready = $state(false);
 
 	function isThemePreference(value: string | undefined): value is ThemePreference {
@@ -58,7 +58,7 @@
 	onMount(() => {
 		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 		const initial = document.documentElement.dataset.theme;
-		const initialPreference = isThemePreference(initial) ? initial : 'system';
+		const initialPreference = isThemePreference(initial) ? initial : 'sepia';
 
 		applyTheme(initialPreference, mediaQuery, false);
 		ready = true;

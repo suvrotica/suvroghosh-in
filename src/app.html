@@ -8,13 +8,13 @@
 			(() => {
 				const root = document.documentElement;
 				const preferences = ['system', 'light', 'dark', 'sepia'];
-				let preference = 'system';
+				let preference = 'sepia';
 
 				try {
 					const stored = window.localStorage.getItem('site-theme');
 					if (stored && preferences.includes(stored)) preference = stored;
 				} catch {
-					// Keep the system preference when browser storage is unavailable.
+					// Keep the sepia default when browser storage is unavailable.
 				}
 
 				const resolved =
