@@ -7937,6 +7937,22 @@
 				"Holy"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/neel-soda.md": {
+			"bodyHash": "50e93a24de91631d36e896b17103ca56ad05923343e52df1854a7236fe8ef03f",
+			"generatedTags": [
+				"Neel Soda",
+				"Blue Fluid",
+				"Keya",
+				"Bimal-da",
+				"Bottles",
+				"Blue",
+				"Nihar",
+				"Perforations",
+				"Drink",
+				"Fluid"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

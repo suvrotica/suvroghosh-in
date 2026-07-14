@@ -4,7 +4,7 @@ description: "A daughter's cheap remedy for her diabetic father's cravings unlea
 date: "2026-07-14"
 thumbnail: "/images/Compress_20260714_065333_3173.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Guilt"]
+tags: ["Neel Soda","Blue Fluid","Keya","Bimal-da","Bottles","Blue","Nihar","Perforations","Drink","Fluid"]
 published: true
 color: "#1a3a5c"
 ---
