@@ -4,7 +4,7 @@ description: "A grotesquely swollen, self-reflective bipolar monologue from a fi
 date: "2026-07-15"
 thumbnail: "/images/Compress_20260715_004805_5236.jpg"
 category: "Personal Essay"
-tags: ["Bipolar", "Rant", "Attention Span", "AI", "Calcutta", "SuvroGhosh", "Satire", "Grotesque"]
+tags: ["Pubic Louse","Tesla Robotaxi","Rebound Rate","Metastatic Result","Bus Conductor","Epic","Metastatic","Pubic","Scuttling","Rebound"]
 published: true
 color: "#8B0000"
 ---
