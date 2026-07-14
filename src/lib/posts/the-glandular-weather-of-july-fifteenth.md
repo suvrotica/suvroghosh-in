@@ -4,7 +4,7 @@ description: "A grotesquely swollen, self-reflective bipolar rant from a fifty-o
 date: "2026-07-15"
 thumbnail: "/images/Compress_20260715_041130_0366.jpg"
 category: "Personal Essay"
-tags: ["Bipolar", "Manic-Depressive", "Calcutta", "AI", "Monsoon", "Grotesque", "Satire", "Recursive", "SuvroGhosh"]
+tags: ["Santa Claus Congress","Electrostatic Chucks","Electrostatic Chuck","Glandular Weather","Partly Cloudy","Irritated","Chucks","Kardashians","Humidity","Glandular"]
 published: true
 color: "#8B0000"
 ---

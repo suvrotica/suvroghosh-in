@@ -1,5 +1,5 @@
 ---
-title: "The Miasma of Mistakes: A Flatland Report from the Tepid Plateau"
+title: "The Miasma of Mistakes"
 description: "A 51-year-old Calcutta recluse examines the grotesque comedy of self-dislike, the forced self-liking of solitude, AI consciousness, and the design rethink of surviving alone on July 14, 2026."
 date: "2026-07-14"
 thumbnail: "/images/Compress_20260714_234650_0433.jpg"
