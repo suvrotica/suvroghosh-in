@@ -4,7 +4,7 @@ description: "A 51-year-old Calcutta recluse examines the grotesque comedy of se
 date: "2026-07-14"
 thumbnail: "/images/Compress_20260714_234650_0433.jpg"
 category: "Personal"
-tags: ["Mental Health", "Calcutta", "Technology", "Bipolar", "SuvroGhosh"]
+tags: ["Consciousness","Grudging","Ekla","Self","Realized","Alone","Hallucination","Server","Particular","AI"]
 published: true
 color: "#8B4513"
 ---
