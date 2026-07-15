@@ -4,7 +4,7 @@ description: "A grotesquely swollen, self-reflective rant from a fifty-one-year-
 date: "2026-07-15"
 thumbnail: "/images/Compress_20260715_051824_4346.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Calcutta", "Bipolar", "Satire", "Existentialism", "SuvroGhosh"]
+tags: ["Moving Slower","Howrah Bridge","Cock","Raving","Carousel","Insignificant","SUVs","Simultaneously","Manic","Utterly"]
 published: true
 color: "#8B0000"
 ---

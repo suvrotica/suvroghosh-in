@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T22:47:42.649053+00:00",
+  "generatedAt": "2026-07-15T01:28:15.003536+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -1700,6 +1700,29 @@
         "Three",
         "Adda",
         "Long"
+      ],
+      "wordCount": 130
+    },
+    "calcutta_morning_malaise": {
+      "generatedAt": "2026-07-15T01:27:53.220909+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/calcutta_morning_malaise.svg",
+      "source": "src/lib/posts/calcutta_morning_malaise.md",
+      "sourceHash": "a09637a016bed279a56f1044dca8b7a252c107bc31baf10c8b366c24d343b5f6",
+      "sourceModified": "2026-07-15T01:27:43.597922+00:00",
+      "topWords": [
+        "Think",
+        "Never",
+        "World",
+        "Almost",
+        "Nothing",
+        "Man",
+        "Walls",
+        "Cock",
+        "Even",
+        "Continue",
+        "Raving",
+        "Moving"
       ],
       "wordCount": 130
     },
