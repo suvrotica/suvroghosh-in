@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T01:28:15.003536+00:00",
+  "generatedAt": "2026-07-16T01:40:08.689355+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -10739,6 +10739,29 @@
         "Someone",
         "Building",
         "Three"
+      ],
+      "wordCount": 130
+    },
+    "the_marrow_of_existence": {
+      "generatedAt": "2026-07-16T01:40:08.637772+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the_marrow_of_existence.svg",
+      "source": "src/lib/posts/the_marrow_of_existence.md",
+      "sourceHash": "b94593cd805f9b8ea581bd658243a459cdcbc88095b24dffc24a1b690ef10354",
+      "sourceModified": "2026-07-16T01:40:04.026045+00:00",
+      "topWords": [
+        "Adulterated",
+        "Merely",
+        "Adulteration",
+        "Cut",
+        "Powder",
+        "Substance",
+        "Think",
+        "Existence",
+        "Chalk",
+        "Sawdust",
+        "Ground",
+        "Bones"
       ],
       "wordCount": 130
     },

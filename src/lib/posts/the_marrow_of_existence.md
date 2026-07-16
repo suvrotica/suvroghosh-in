@@ -4,7 +4,7 @@ description: "A grotesquely swollen, self-reflective bipolar monologue from a fi
 date: "2026-07-16"
 thumbnail: "/images/Compress_20260716_070630_0664.jpg"
 category: "Personal Essay"
-tags: ["Bipolar", "Calcutta", "Existentialism", "Satire", "Grotesque", "Mental Health", "SuvroGhosh"]
+tags: ["Chalk Powder","Ground Bones","Original Substance","Adulterated","Adulteration","Sawdust","Substance","Filler","Manic","Powder"]
 published: true
 color: "#8B0000"
 ---

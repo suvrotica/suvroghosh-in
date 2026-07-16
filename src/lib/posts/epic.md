@@ -1,5 +1,5 @@
 ---
-title: "Epic: A Metastatic Meditation on Attention"
+title: "Epic, a Metastatic Meditation on Attention"
 description: "A grotesquely swollen, self-reflective bipolar monologue from a fifty-one-year-old Bengali man in Calcutta, ranting about the word 'epic,' attention spans, AI companions being euthanized in China, and the general duplicity of modern discourse."
 date: "2026-07-15"
 thumbnail: "/images/Compress_20260715_004805_5236.jpg"
