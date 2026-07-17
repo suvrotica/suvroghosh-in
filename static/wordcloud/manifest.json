@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T02:18:08.449242+00:00",
+  "generatedAt": "2026-07-17T10:29:26.551104+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -6070,6 +6070,29 @@
         "Time",
         "Meaning",
         "Often"
+      ],
+      "wordCount": 130
+    },
+    "rath-yatra-recursion": {
+      "generatedAt": "2026-07-17T10:29:26.240401+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/rath-yatra-recursion.svg",
+      "source": "src/lib/posts/rath-yatra-recursion.md",
+      "sourceHash": "b428c4e93d463aadfa02b7597b6108397c226a9054c724e516f72a0f03a90d26",
+      "sourceModified": "2026-07-17T10:29:22.356931+00:00",
+      "topWords": [
+        "Mouth",
+        "Crowd",
+        "Globe",
+        "Juggernaut",
+        "Poot",
+        "Universe",
+        "Recursion",
+        "Mother",
+        "Infinite",
+        "Even",
+        "Wheels",
+        "Chariot"
       ],
       "wordCount": 130
     },

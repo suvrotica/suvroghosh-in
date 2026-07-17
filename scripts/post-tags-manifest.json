@@ -8065,6 +8065,22 @@
 				"Grotesque"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/rath-yatra-recursion.md": {
+			"bodyHash": "76e669f5b5af3e9a7c55ada3540b1019f3057a9e045d298c52eb2e894b8d2d09",
+			"generatedTags": [
+				"Rath Yatra",
+				"Juggernaut",
+				"Globe",
+				"Poot",
+				"Recursion",
+				"Chariot",
+				"Yatra",
+				"Rath",
+				"Chariots",
+				"Yashoda"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

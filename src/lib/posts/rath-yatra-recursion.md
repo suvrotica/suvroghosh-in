@@ -4,7 +4,7 @@ description: "A grotesquely swollen, bipolar monologue from a fifty-one-year-old
 date: "2026-07-17"
 thumbnail: "/images/Compress_20260717_154008_8652.jpg"
 category: "Personal Essay"
-tags: ["Rath Yatra", "Calcutta", "Bipolar", "Recursion", "Grotesque", "Satire", "Krishna", "Juggernaut", "Made in China", "SuvroGhosh"]
+tags: ["Rath Yatra","Juggernaut","Globe","Poot","Recursion","Chariot","Yatra","Rath","Chariots","Yashoda"]
 published: true
 color: "#8B0000"
 ---
