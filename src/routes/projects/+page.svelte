@@ -230,18 +230,6 @@
 								/>
 							</div>
 						{/if}
-
-						{#if project.sourceUrl}
-							<a
-								href="https://github.com/suvrotica/suvroghosh-in"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-neutral-700 underline decoration-neutral-400 underline-offset-4 transition-colors hover:text-neutral-950 hover:decoration-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:text-neutral-300 dark:hover:text-white dark:focus-visible:outline-neutral-300"
-							>
-								View public source code <span class="ml-1" aria-hidden="true">↗</span>
-								<span class="sr-only">, opens in a new tab</span>
-							</a>
-						{/if}
 					</div>
 				</div>
 			</section>

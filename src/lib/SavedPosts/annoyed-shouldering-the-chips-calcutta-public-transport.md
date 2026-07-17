@@ -4,7 +4,7 @@ description: "A clean but sharp satirical Calcutta commute essay about minibuses
 date: "2025-06-02"
 thumbnail: "/images/Compress_20260602_052320_0414.jpg"
 category: "Calcutta"
-tags: ["Calcutta", "Kolkata", "Public Transport", "Calcutta Minibus", "Kolkata Bus", "Bengali Life", "Middle Class Bengali", "Lower Middle Class", "Daily Commute", "Urban India", "Indian Cities", "City Life", "Humidity", "Climate", "Heat", "Crowded Bus", "Satire", "Clean Satire", "Bengali Satire", "Observational Comedy", "Daily Life", "Urban Chaos", "Transportation", "Bus Ride", "Civic Neglect", "Indian Public Transport", "Kolkata Humour", "Bengali Humour", "Rants", "Essays", "suvrotica", "suvroghosh"]
+tags: ["Calcutta", "Kolkata", "Public Transport", "Calcutta Minibus", "Kolkata Bus", "Bengali Life", "Middle Class Bengali", "Lower Middle Class", "Daily Commute", "Urban India", "Indian Cities", "City Life", "Humidity", "Climate", "Heat", "Crowded Bus", "Satire", "Clean Satire", "Bengali Satire", "Observational Comedy", "Daily Life", "Urban Chaos", "Transportation", "Bus Ride", "Civic Neglect", "Indian Public Transport", "Kolkata Humour", "Bengali Humour", "Rants", "Essays", "suvroghosh"]
 published: true
 color: "#e3f4b7"
 ---

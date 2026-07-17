@@ -52,11 +52,16 @@
 				illness, corruption, society, and ordinary life in Calcutta.
 			</p>
 
-			<div class="mt-8 flex flex-wrap gap-3">
-				<Button href="/resume" size="lg">View Resume</Button>
-				<Button href="/consulting" variant="outline" size="lg">Healthcare IT Consulting</Button>
-				<Button href="/writing" variant="outline" size="lg">Writing &amp; Essays</Button>
-				<Button href="/contact" variant="ghost" size="lg">Contact</Button>
+			<div class="mt-8 flex flex-wrap gap-x-2 gap-y-3">
+				<Button href="/resume" size="lg" class="px-6">View Resume</Button>
+				<Button href="/projects" variant="outline" size="lg" class="px-6">Projects</Button>
+				<Button href="/consulting" variant="outline" size="lg" class="px-6"
+					>Healthcare IT Consulting</Button
+				>
+				<Button href="/writing" variant="outline" size="lg" class="px-6"
+					>Writing &amp; Essays</Button
+				>
+				<Button href="/contact" variant="ghost" size="lg" class="px-6">Contact</Button>
 			</div>
 		</div>
 	</div>

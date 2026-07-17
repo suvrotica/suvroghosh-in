@@ -16,7 +16,6 @@ export type ProfessionalProject = {
 		url: string;
 		title: string;
 	};
-	sourceUrl?: string;
 };
 
 export const professionalProjects: readonly ProfessionalProject[] = [
@@ -101,7 +100,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 	{
 		id: 'editorial-publishing-system',
 		name: 'SuvroGhosh.IN Editorial Publishing System',
-		context: 'Independent publishing · Public source code',
+		context: 'Independent publishing · Editorial infrastructure',
 		detail:
 			'Designed and maintain the static-first SvelteKit publishing system behind this site and its large long-form archive.',
 		contributions: [
@@ -110,7 +109,6 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'Automated incremental post tagging, word-cloud generation, search indexing, image optimisation, and content validation during builds.'
 		],
 		disciplines: ['SvelteKit', 'Information architecture', 'Accessibility', 'Build automation'],
-		relatedPostSlugs: [],
-		sourceUrl: 'https://github.com/suvrotica/suvroghosh-in'
+		relatedPostSlugs: []
 	}
 ];
