@@ -9,7 +9,7 @@
 		loop = false,
 		muted = false,
 		poster = '',
-		preload = 'none'
+		preload = 'metadata'
 	}: {
 		src: string;
 		title?: string;
