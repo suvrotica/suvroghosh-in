@@ -23,3 +23,6 @@ suvroghosh-post-backups/
 .codex-artifacts/
 preview-*.log
 preview-*.err.log
+
+# Deterministic generated manifests
+scripts/image-optimization-manifest.json
