@@ -3,6 +3,7 @@ import { postPath } from '$lib/content/posts';
 import { topicPath } from '$lib/content/topics';
 import {
 	getCuratedReadingPaths,
+	getPublishedArchiveMonths,
 	getPublishedPosts,
 	getPublishedTopics
 } from '$lib/server/content/posts';
@@ -51,6 +52,10 @@ export async function GET() {
 		url: siteUrl + '/blog/archive/' + year,
 		lastMod
 	}));
+	const months = getPublishedArchiveMonths().map((month) => ({
+		url: `${siteUrl}/blog/archive/${month.year}/${month.month}`,
+		lastMod: month.lastModified
+	}));
 	const publishedTopics = getPublishedTopics();
 	const topics = publishedTopics.map((topic) => ({
 		url: siteUrl + topicPath(topic.slug),
@@ -82,7 +87,7 @@ export async function GET() {
 		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
 		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }
 	];
-	const urls = [...pages, ...years, ...topics, ...categories, ...posts];
+	const urls = [...pages, ...years, ...months, ...topics, ...categories, ...posts];
 
 	const xml =
 		'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +

@@ -20,6 +20,13 @@ export type PublishedPost = BlogPostMetadata & {
 	categoryLabel: string;
 };
 
+export type PublishedArchiveMonth = {
+	year: string;
+	month: string;
+	count: number;
+	lastModified: string;
+};
+
 const metadataModules = import.meta.glob<BlogPostMetadata>('/src/lib/posts/*.md', {
 	eager: true,
 	import: 'metadata'
@@ -46,6 +53,34 @@ publishedPosts.sort((a, b) => {
 	const dateDifference = new Date(b.date).getTime() - new Date(a.date).getTime();
 	return dateDifference || a.slug.localeCompare(b.slug);
 });
+
+const archiveMonthAccumulators = new Map<
+	string,
+	{ year: string; month: string; count: number; lastModified: string }
+>();
+
+for (const post of publishedPosts) {
+	const dateParts = /^(\d{4})-(\d{2})-\d{2}$/.exec(post.date);
+	if (!dateParts) continue;
+
+	const [, year, month] = dateParts;
+	const key = `${year}-${month}`;
+	const lastModified = post.dateModified ?? post.date;
+	const archiveMonth = archiveMonthAccumulators.get(key) ?? {
+		year,
+		month,
+		count: 0,
+		lastModified
+	};
+
+	archiveMonth.count += 1;
+	if (lastModified > archiveMonth.lastModified) archiveMonth.lastModified = lastModified;
+	archiveMonthAccumulators.set(key, archiveMonth);
+}
+
+const publishedArchiveMonths: readonly PublishedArchiveMonth[] = Array.from(
+	archiveMonthAccumulators.values()
+).sort((a, b) => `${b.year}-${b.month}`.localeCompare(`${a.year}-${a.month}`));
 
 const postsBySlug = new Map(publishedPosts.map((post) => [post.slug, post]));
 const nonTopicalTags = new Set(['suvroghosh', 'suvro ghosh']);
@@ -176,6 +211,17 @@ export function getPublishedPostsByCategory(category: string) {
 export function getPublishedPostsByYear(year: string) {
 	if (!/^\d{4}$/.test(year)) return [];
 	return publishedPosts.filter((post) => post.date.startsWith(`${year}-`));
+}
+
+export function getPublishedPostsByMonth(year: string, month: string) {
+	if (!/^\d{4}$/.test(year) || !/^(?:0[1-9]|1[0-2])$/.test(month)) return [];
+	return publishedPosts.filter((post) => post.date.startsWith(`${year}-${month}-`));
+}
+
+export function getPublishedArchiveMonths(year?: string) {
+	return publishedArchiveMonths
+		.filter((archiveMonth) => !year || archiveMonth.year === year)
+		.map((archiveMonth) => ({ ...archiveMonth }));
 }
 
 export function getPublishedTopics() {
