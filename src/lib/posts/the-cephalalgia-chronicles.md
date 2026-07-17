@@ -4,7 +4,7 @@ description: "A fifty-one-year-old Calcutta man spirals through manic-depressive
 date: "2026-07-16"
 thumbnail: "/images/Compress_20260717_073210_0162.jpg"
 category: "Personal Essay"
-tags: ["Calcutta", "Mental Health", "SuvroGhosh", "Bipolar", "Existential", "Satire", "Engineering Blog"]
+tags: ["Hundred Milligrams","Twelve Hundred","Return Tomorrow","Ibuprofen","Headache","Headaches","Dust","Throbbing","Milligrams","Grotesque"]
 published: true
 color: "#8B4513"
 ---

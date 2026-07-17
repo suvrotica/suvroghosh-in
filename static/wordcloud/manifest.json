@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T01:05:25.541434+00:00",
+  "generatedAt": "2026-07-17T02:18:08.449242+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -7680,6 +7680,29 @@
         "System",
         "Power",
         "Longer"
+      ],
+      "wordCount": 130
+    },
+    "the-cephalalgia-chronicles": {
+      "generatedAt": "2026-07-17T02:18:07.941327+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-cephalalgia-chronicles.svg",
+      "source": "src/lib/posts/the-cephalalgia-chronicles.md",
+      "sourceHash": "7c512a713349acad0bc53444c7e0d9fe88e4dc4ec4a658a72a62df504eba6314",
+      "sourceModified": "2026-07-17T02:18:03.216237+00:00",
+      "topWords": [
+        "Dust",
+        "Headache",
+        "Ibuprofen",
+        "Say",
+        "Kind",
+        "Now",
+        "Return",
+        "Hundred",
+        "Headaches",
+        "Tea",
+        "Much",
+        "Every"
       ],
       "wordCount": 130
     },
