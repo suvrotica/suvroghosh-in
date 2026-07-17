@@ -4,7 +4,7 @@ description: "A grotesquely swollen, self-reflective monologue on constipation, 
 date: "2026-07-16"
 thumbnail: "/images/Compress_20260717_061710_0985.jpg"
 category: "Personal Essay"
-tags: ["Essay", "Satire", "Bipolar", "Calcutta", "American Empire", "AI", "Cyclospora", "Grotesque", "Manic-Depressive", "SuvroGhosh"]
+tags: ["Bloated Oversized","Fifty Million","Bolus","Cyclospora","Constipated","Americans","Faeces","Constipation","Testosterone","Oversized"]
 published: true
 color: "#8B0000"
 ---
