@@ -4,7 +4,7 @@ description: "A sweltering, serpentine meditation on the four species of human f
 date: "2026-07-17"
 thumbnail: "/images/Compress_20260717_215929_9424.jpg"
 category: "Essay"
-tags: ["Calcutta", "Bipolar", "Social Observation", "Satire", "SuvroGhosh"]
+tags: ["Glee Merchants","Saccharine Saints","Glee","Cretins","Saccharine","Merchants","Cornered","Engineered","Species","Bacteria"]
 published: true
 color: "#8B4513"
 ---

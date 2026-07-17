@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T10:29:26.551104+00:00",
+  "generatedAt": "2026-07-17T16:49:51.714585+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -10164,6 +10164,29 @@
         "Gandhi",
         "Show",
         "Political"
+      ],
+      "wordCount": 130
+    },
+    "the-thermodynamics-of-envy": {
+      "generatedAt": "2026-07-17T16:49:51.179596+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-thermodynamics-of-envy.svg",
+      "source": "src/lib/posts/the-thermodynamics-of-envy.md",
+      "sourceHash": "94dcc7b9249c0876098ebbb393dc7d838b9e9a0a814f900534bec5f2326080e6",
+      "sourceModified": "2026-07-17T16:49:41.454018+00:00",
+      "topWords": [
+        "Now",
+        "Heat",
+        "Man",
+        "Always",
+        "Kind",
+        "Species",
+        "Perhaps",
+        "Even",
+        "Years",
+        "Exactly",
+        "Whether",
+        "Understand"
       ],
       "wordCount": 130
     },
