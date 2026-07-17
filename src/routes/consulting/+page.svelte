@@ -216,6 +216,7 @@
 
 	<div class="flex flex-wrap gap-3">
 		<Button href="/resume" size="lg">View Resume</Button>
+		<Button href="/projects" variant="outline" size="lg">Selected Projects</Button>
 		<Button href="/healthcare-it-gulf" variant="outline" size="lg"
 			>Gulf / Kuwait Opportunities</Button
 		>

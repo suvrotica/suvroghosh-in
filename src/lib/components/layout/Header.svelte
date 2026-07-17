@@ -7,7 +7,7 @@
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 
 	type NavigationItem = {
-		href: '/' | '/start-here' | '/writing' | '/consulting' | '/resume' | '/contact';
+		href: '/' | '/start-here' | '/writing' | '/consulting' | '/projects' | '/resume' | '/contact';
 		label: string;
 		sections: readonly string[];
 	};
@@ -21,6 +21,7 @@
 			label: 'Healthcare IT',
 			sections: ['/consulting', '/healthcare-it-gulf']
 		},
+		{ href: '/projects', label: 'Projects', sections: ['/projects'] },
 		{ href: '/resume', label: 'Resume', sections: ['/resume'] },
 		{ href: '/contact', label: 'Contact', sections: ['/contact'] }
 	];

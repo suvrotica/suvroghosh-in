@@ -74,6 +74,7 @@ export async function GET() {
 		{ url: siteUrl + '/', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
 		{ url: siteUrl + '/resume', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/projects', lastMod: '2026-07-18' },
 		{ url: siteUrl + '/consulting', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/writing', lastMod: '2026-06-26' },

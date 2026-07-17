@@ -20,6 +20,7 @@
 			id: 'footer-work',
 			label: 'Professional',
 			links: [
+				{ href: '/projects', label: 'Projects' },
 				{ href: '/consulting', label: 'Healthcare IT' },
 				{ href: '/healthcare-it-gulf', label: 'Gulf & Kuwait' },
 				{ href: '/contact', label: 'Contact' }

@@ -9,6 +9,8 @@
 	} from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { professionalProjects as projects } from '$lib/content/professional-projects';
+	import { resolve } from '$app/paths';
 
 	type SkillGroup = {
 		category: string;
@@ -231,34 +233,6 @@
 		}
 	];
 
-	const projects = [
-		{
-			name: 'VA Hospital Research Data Warehouse',
-			detail:
-				'Built and supported healthcare research data warehouses integrating VA hospital data, national datasets, and multi-domain clinical sources.'
-		},
-		{
-			name: 'NIH-Funded FIND Study Registry',
-			detail:
-				'Designed registry structures for nephrology and chronic disease research, balancing protocol-driven data collection with real-world clinical variability.'
-		},
-		{
-			name: 'Functional Job Analysis System',
-			detail:
-				'Developed a system for hospital operations research by modeling human work, task overlap, and workflow structure as analyzable data.'
-		},
-		{
-			name: 'Clinical Trial Data Systems',
-			detail:
-				'Designed CTMS/CDMS/eCRF components, validation logic, and clinical trial data workflows aligned with structured research-data requirements.'
-		},
-		{
-			name: 'Meta-Analysis Platform',
-			detail:
-				'Created a platform for synthesizing heterogeneous research outputs where data alignment, definition consistency, and comparability were core challenges.'
-		}
-	];
-
 	const consultingServices = [
 		'EHR / EMR / HIE implementation advisory',
 		'HL7 / FHIR data mapping and interoperability review',
@@ -457,9 +431,15 @@
 	</div>
 
 	<div class="card mb-8">
-		<h3 class="mb-4 border-b border-neutral-300 pb-2 text-2xl font-bold dark:border-neutral-700">
-			Key Projects & Research Systems
-		</h3>
+		<div class="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+			<h3 class="m-0 text-2xl font-bold">Key Projects &amp; Research Systems</h3>
+			<a
+				href={resolve('/projects')}
+				class="inline-flex min-h-11 items-center text-sm font-semibold text-neutral-600 underline decoration-neutral-400 underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white"
+			>
+				View expanded project notes <span class="ml-1" aria-hidden="true">→</span>
+			</a>
+		</div>
 
 		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
 			{#each projects as project (project.name)}

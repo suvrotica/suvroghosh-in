@@ -102,6 +102,12 @@
 			</p>
 			<div class="mt-4 flex flex-wrap gap-2">
 				<a
+					href={resolve('/projects')}
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
+					>Projects</a
+				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
 					href={resolve('/resume')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>Resume</a
