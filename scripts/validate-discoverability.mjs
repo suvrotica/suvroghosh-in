@@ -259,7 +259,7 @@ async function runRenderedChecks() {
 
 	if (!fs.existsSync(path.join(root, '.svelte-kit', 'output'))) {
 		console.log('Building site for rendered-output checks...');
-		await run('npm', ['run', 'build']);
+		await run('npm', ['run', 'build:site']);
 	}
 
 	const preview = spawn('npm', ['run', 'preview', '--', '--port', String(PREVIEW_PORT)], {
