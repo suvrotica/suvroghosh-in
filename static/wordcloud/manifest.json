@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T23:55:58.560217+00:00",
+  "generatedAt": "2026-07-18T00:36:13.006590+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -5495,6 +5495,29 @@
         "Fairy",
         "Dental",
         "Merely"
+      ],
+      "wordCount": 130
+    },
+    "perceptron-from-scratch-in-mojo": {
+      "generatedAt": "2026-07-18T00:36:12.346977+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/perceptron-from-scratch-in-mojo.svg",
+      "source": "src/lib/posts/perceptron-from-scratch-in-mojo.md",
+      "sourceHash": "0e2cdcc026097d09af8bcc89c22a95fc9c442ad8a9661351cb7954c0e9bf40ad",
+      "sourceModified": "2026-07-18T00:36:03.101885+00:00",
+      "topWords": [
+        "Notebook",
+        "Mojo",
+        "Small",
+        "Perceptron",
+        "Error",
+        "Training",
+        "Cells",
+        "Cell",
+        "Source",
+        "Hello",
+        "World",
+        "Useful"
       ],
       "wordCount": 130
     },

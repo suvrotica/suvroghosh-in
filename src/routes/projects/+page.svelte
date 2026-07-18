@@ -14,7 +14,7 @@
 
 	const title = 'Projects & Systems Work | Suvro Ghosh';
 	const description =
-		'Selected healthcare data, research systems, interoperability, clinical-trial, workflow, and independent publishing projects by Suvro Ghosh.';
+		'Selected healthcare data, research systems, interoperability, clinical-trial, computational notebook, workflow, and independent publishing projects by Suvro Ghosh.';
 	const canonicalUrl = `${siteUrl}/projects`;
 </script>
 
@@ -28,7 +28,8 @@
 		'Health information exchange',
 		'Clinical trial systems',
 		'Healthcare data warehouse',
-		'SvelteKit'
+		'SvelteKit',
+		'Mojo notebooks'
 	]}
 	schema={schemaGraph([
 		collectionPageSchema({
@@ -89,7 +90,8 @@
 			class="mb-0 max-w-3xl text-left text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
 		>
 			Healthcare data warehouses, research registries, interoperability and clinical-trial
-			platforms, workflow systems, and the independent publishing infrastructure behind this site.
+			platforms, computational notebooks, workflow systems, and the independent publishing
+			infrastructure behind this site.
 		</p>
 	</header>
 

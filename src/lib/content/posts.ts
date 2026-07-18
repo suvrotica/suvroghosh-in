@@ -13,6 +13,7 @@ export type BlogPostMetadata = {
 	color?: string;
 	author?: string;
 	readingTime?: string;
+	notebook?: string;
 	status?: string;
 	inPlainEnglish?: string;
 	keyTerms?: string[];

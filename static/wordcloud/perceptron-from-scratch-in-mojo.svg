@@ -1,0 +1,134 @@
+<svg role="img" aria-label="A Perceptron from Scratch in Mojo" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>A Perceptron from Scratch in Mojo</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(317,577)" font-size="118" style="fill:#8fb7d0">Notebook</text>
+<text transform="translate(300,206)" font-size="109" style="fill:#b6c3dd">Mojo</text>
+<text transform="translate(95,84)" font-size="79" style="fill:#d9c89e">Small</text>
+<text transform="translate(769,104)" font-size="79" style="fill:#c49a6c">Perceptron</text>
+<text transform="translate(901,407)" font-size="79" style="fill:#8fb7d0">Error</text>
+<text transform="translate(243,457)" font-size="79" style="fill:#c49a6c">Training</text>
+<text transform="translate(978,654)" font-size="79" style="fill:#9fc9c5">Cells</text>
+<text transform="translate(113,707)" font-size="79" style="fill:#9fc9c5">Cell</text>
+<text transform="translate(567,207)" font-size="79" style="fill:#d88988">Source</text>
+<text transform="translate(679,326)" font-size="65" style="fill:#9fc9c5">Hello</text>
+<text transform="translate(682,393)" font-size="65" style="fill:#d88988">World</text>
+<text transform="translate(879,181)" font-size="65" style="fill:#d5d2c2">Useful</text>
+<text transform="translate(156,641) rotate(-90)" font-size="65" style="fill:#b6c3dd">Single</text>
+<text transform="translate(192,633)" font-size="65" style="fill:#9fc9c5">Hidden</text>
+<text transform="translate(743,262)" font-size="65" style="fill:#a9b7a3">Activation</text>
+<text transform="translate(790,671)" font-size="65" style="fill:#9fc9c5">Step</text>
+<text transform="translate(66,394)" font-size="65" style="fill:#c49a6c">Rule</text>
+<text transform="translate(215,330)" font-size="65" style="fill:#b6c3dd">Complete</text>
+<text transform="translate(917,326)" font-size="65" style="fill:#c7d7b5">Contains</text>
+<text transform="translate(417,114)" font-size="65" style="fill:#9fc9c5">Four</text>
+<text transform="translate(503,689)" font-size="65" style="fill:#d88988">Remains</text>
+<text transform="translate(1004,568)" font-size="65" style="fill:#c49a6c">Loop</text>
+<text transform="translate(1033,516)" font-size="65" style="fill:#d88988">Model</text>
+<text transform="translate(93,188)" font-size="65" style="fill:#d9c89e">Wrong</text>
+<text transform="translate(611,140)" font-size="65" style="fill:#a9b7a3">Bias</text>
+<text transform="translate(636,376) rotate(-90)" font-size="65" style="fill:#c49a6c">Zero</text>
+<text transform="translate(15,257)" font-size="65" style="fill:#8fb7d0">Moves</text>
+<text transform="translate(333,49)" font-size="59" style="fill:#e0b879">Learningrate</text>
+<text transform="translate(73,149) rotate(-90)" font-size="59" style="fill:#b6c3dd">Next</text>
+<text transform="translate(462,631)" font-size="59" style="fill:#e0b879">Learn</text>
+<text transform="translate(904,446)" font-size="43" style="fill:#9fc9c5">Builds</text>
+<text transform="translate(1133,223)" font-size="43" style="fill:#d9c89e">First</text>
+<text transform="translate(663,436)" font-size="43" style="fill:#b6c3dd">Mojollm</text>
+<text transform="translate(231,382)" font-size="43" style="fill:#e0b879">Computational</text>
+<text transform="translate(656,496)" font-size="43" style="fill:#e0b879">Begins</text>
+<text transform="translate(1013,700)" font-size="43" style="fill:#d6a79f">Customary</text>
+<text transform="translate(290,682)" font-size="43" style="fill:#a9b7a3">Replaces</text>
+<text transform="translate(817,43)" font-size="43" style="fill:#d5d2c2">Greeting</text>
+<text transform="translate(27,328)" font-size="43" style="fill:#c7d7b5">Machine</text>
+<text transform="translate(375,276)" font-size="43" style="fill:#e0b879">Trained</text>
+<text transform="translate(55,715) rotate(-90)" font-size="43" style="fill:#e0b879">Reproduce</text>
+<text transform="translate(1265,618) rotate(-90)" font-size="43" style="fill:#8fb7d0">Logical</text>
+<text transform="translate(820,618)" font-size="43" style="fill:#d88988">Gate</text>
+<text transform="translate(1085,43)" font-size="43" style="fill:#c49a6c">Nothing</text>
+<text transform="translate(1102,152)" font-size="43" style="fill:#b6c3dd">Behind</text>
+<text transform="translate(173,568)" font-size="43" style="fill:#9fc9c5">Numpy</text>
+<text transform="translate(861,500)" font-size="43" style="fill:#d9c89e">Tensor</text>
+<text transform="translate(99,124)" font-size="43" style="fill:#d5d2c2">Package</text>
+<text transform="translate(1007,352)" font-size="29" style="fill:#b6c3dd">Machinelearning</text>
+<text transform="translate(535,715)" font-size="29" style="fill:#a9b7a3">Framework</text>
+<text transform="translate(197,493)" font-size="29" style="fill:#d9c89e">Defines</text>
+<text transform="translate(230,238)" font-size="29" style="fill:#b6c3dd">Function</text>
+<text transform="translate(1118,431)" font-size="29" style="fill:#d6a79f">Update</text>
+<text transform="translate(1138,388)" font-size="29" style="fill:#8fb7d0">Directly</text>
+<text transform="translate(189,429)" font-size="29" style="fill:#d88988">Set</text>
+<text transform="translate(936,590)" font-size="29" style="fill:#8fb7d0">Rows</text>
+<text transform="translate(6,432)" font-size="29" style="fill:#c49a6c">Every</text>
+<text transform="translate(892,529)" font-size="29" style="fill:#8fb7d0">Change</text>
+<text transform="translate(636,624)" font-size="29" style="fill:#d9c89e">Enough</text>
+<text transform="translate(1133,265)" font-size="29" style="fill:#c7d7b5">Inspect</text>
+<text transform="translate(389,503)" font-size="29" style="fill:#c7d7b5">Read</text>
+<text transform="translate(301,111)" font-size="29" style="fill:#d6a79f">Follow</text>
+<text transform="translate(358,707)" font-size="29" style="fill:#d9c89e">Rendered</text>
+<text transform="translate(1175,581)" font-size="29" style="fill:#c7d7b5">Top</text>
+<text transform="translate(199,531)" font-size="29" style="fill:#8fb7d0">Bottom</text>
+<text transform="translate(785,698)" font-size="29" style="fill:#d9c89e">Program</text>
+<text transform="translate(1115,177)" font-size="29" style="fill:#d88988">Required</text>
+<text transform="translate(5,283)" font-size="29" style="fill:#c7d7b5">Pythonbacked</text>
+<text transform="translate(81,642) rotate(-90)" font-size="29" style="fill:#d5d2c2">Integration</text>
+<text transform="translate(583,323) rotate(-90)" font-size="29" style="fill:#a9b7a3">Early</text>
+<text transform="translate(668,341) rotate(-90)" font-size="29" style="fill:#d6a79f">Isolate</text>
+<text transform="translate(801,137)" font-size="29" style="fill:#e0b879">Idea</text>
+<text transform="translate(654,76)" font-size="29" style="fill:#8fb7d0">Time</text>
+<text transform="translate(888,213)" font-size="29" style="fill:#d88988">Final</text>
+<text transform="translate(898,426) rotate(-90)" font-size="29" style="fill:#e0b879">Assembles</text>
+<text transform="translate(1016,208)" font-size="29" style="fill:#b6c3dd">Ideas</text>
+<text transform="translate(482,489)" font-size="29" style="fill:#c7d7b5">Full</text>
+<text transform="translate(229,275)" font-size="29" style="fill:#d9c89e">Verifies</text>
+<text transform="translate(26,198) rotate(-90)" font-size="29" style="fill:#d5d2c2">Predictions</text>
+<text transform="translate(756,458)" font-size="27" style="fill:#d6a79f">Important</text>
+<text transform="translate(62,214)" font-size="27" style="fill:#c7d7b5">Transition</text>
+<text transform="translate(921,134)" font-size="27" style="fill:#c7d7b5">Large</text>
+<text transform="translate(645,508) rotate(-90)" font-size="27" style="fill:#c7d7b5">Printing</text>
+<text transform="translate(508,139)" font-size="27" style="fill:#a9b7a3">Fixed</text>
+<text transform="translate(144,26)" font-size="27" style="fill:#c7d7b5">String</text>
+<text transform="translate(879,558)" font-size="25" style="fill:#d6a79f">Changing</text>
+<text transform="translate(1063,460)" font-size="25" style="fill:#c49a6c">Evidence</text>
+<text transform="translate(906,472)" font-size="25" style="fill:#d5d2c2">Current</text>
+<text transform="translate(676,597)" font-size="22" style="fill:#8fb7d0">Parameters</text>
+<text transform="translate(486,234)" font-size="22" style="fill:#b6c3dd">Line</text>
+<text transform="translate(21,683) rotate(-90)" font-size="22" style="fill:#c7d7b5">Example</text>
+<text transform="translate(517,403)" font-size="22" style="fill:#d6a79f">Computes</text>
+<text transform="translate(1012,589)" font-size="22" style="fill:#d9c89e">Predicts</text>
+<text transform="translate(165,448)" font-size="22" style="fill:#9fc9c5">Greater</text>
+<text transform="translate(101,708) rotate(-90)" font-size="22" style="fill:#d6a79f">Prediction</text>
+<text transform="translate(576,84)" font-size="22" style="fill:#8fb7d0">Weight</text>
+<text transform="translate(930,692)" font-size="22" style="fill:#e0b879">Input</text>
+<text transform="translate(694,714)" font-size="22" style="fill:#9fc9c5">Modest</text>
+<text transform="translate(492,71)" font-size="22" style="fill:#8fb7d0">Basic</text>
+<text transform="translate(365,136)" font-size="22" style="fill:#c49a6c">Rhythm</text>
+<text transform="translate(765,154)" font-size="18" style="fill:#b6c3dd">Supervised</text>
+<text transform="translate(329,78)" font-size="18" style="fill:#d88988">Learning</text>
+<text transform="translate(392,652)" font-size="18" style="fill:#b6c3dd">Predict</text>
+<text transform="translate(460,348)" font-size="18" style="fill:#d88988">Compare</text>
+<text transform="translate(349,476)" font-size="18" style="fill:#a9b7a3">Correct</text>
+<text transform="translate(1209,665)" font-size="18" style="fill:#d5d2c2">Repeat</text>
+<text transform="translate(180,658) rotate(-90)" font-size="18" style="fill:#a9b7a3">Running</text>
+<text transform="translate(639,158)" font-size="18" style="fill:#d88988">Embedded</text>
+<text transform="translate(562,648)" font-size="18" style="fill:#d88988">Version</text>
+<text transform="translate(146,141)" font-size="18" style="fill:#d5d2c2">Static</text>
+<text transform="translate(282,350)" font-size="18" style="fill:#c49a6c">HTML</text>
+<text transform="translate(44,411)" font-size="18" style="fill:#a9b7a3">Fast</text>
+<text transform="translate(1168,616) rotate(-90)" font-size="18" style="fill:#a9b7a3">Safe</text>
+<text transform="translate(905,715)" font-size="18" style="fill:#d5d2c2">Readable</text>
+<text transform="translate(682,95)" font-size="18" style="fill:#9fc9c5">Ordinary</text>
+<text transform="translate(930,344)" font-size="18" style="fill:#d9c89e">File</text>
+<text transform="translate(497,508)" font-size="18" style="fill:#c49a6c">Standard</text>
+<text transform="translate(1039,123)" font-size="18" style="fill:#d5d2c2">Ipynb</text>
+<text transform="translate(1163,546)" font-size="18" style="fill:#c7d7b5">Using</text>
+<text transform="translate(958,281)" font-size="18" style="fill:#d88988">Python</text>
+<text transform="translate(1271,304) rotate(-90)" font-size="18" style="fill:#d5d2c2">Kernel</text>
+<text transform="translate(1109,672)" font-size="18" style="fill:#d6a79f">Official</text>
+<text transform="translate(676,248)" font-size="18" style="fill:#9fc9c5">Magic</text>
+<text transform="translate(753,18)" font-size="18" style="fill:#d5d2c2">Linux</text>
+<text transform="translate(693,648)" font-size="18" style="fill:#d9c89e">Macos</text>
+<text transform="translate(725,345)" font-size="18" style="fill:#d88988">Windows</text>
+<text transform="translate(977,205)" font-size="18" style="fill:#9fc9c5">WSL</text>
+<text transform="translate(20,387) rotate(-90)" font-size="18" style="fill:#d5d2c2">Install</text>
+<text transform="translate(321,399)" font-size="18" style="fill:#d88988">Jupyter</text>
+<text transform="translate(1066,282)" font-size="18" style="fill:#c49a6c">Tools</text>
+</svg>

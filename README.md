@@ -51,4 +51,41 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
+## Mojo notebooks
+
+Notebook sources live in `src/lib/notebooks`. Install the native Jupyter rendering and authoring
+tools, then render every notebook to an isolated HTML document under `static/notebooks`:
+
+```sh
+npm run notebooks:install
+npm run notebooks:render
+```
+
+Use `npm run notebooks:lab` to open the source notebooks in JupyterLab. A notebook can be attached
+to a first-class notebook post with frontmatter:
+
+```yaml
+notebook: 'perceptron-from-scratch-in-mojo'
+```
+
+It can also be placed at a specific point in any Markdown post because `Notebook` is globally
+available to mdsvex files:
+
+```svelte
+<Notebook src="perceptron-from-scratch-in-mojo" title="A Perceptron from Scratch in Mojo" />
+```
+
+Mojo notebooks use the official Python-kernel integration: the first Python cell imports
+`mojo.notebook`, and complete Mojo programs run in cells beginning with `%%mojo`. Mojo itself runs
+on Linux, macOS, or Windows through WSL; from a supported system, install the reproducible Mojo and
+Jupyter environment in this repository with Pixi:
+
+```sh
+pixi install
+pixi run notebooks
+```
+
+The normal site prebuild renders notebooks when `nbconvert` is available. Otherwise it verifies
+that the committed HTML matches the source notebook, keeping deployment deterministic.
+
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

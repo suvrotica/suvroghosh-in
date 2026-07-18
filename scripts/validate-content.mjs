@@ -4,6 +4,7 @@ import { readPostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
+const notebooksDir = path.join(root, 'src', 'lib', 'notebooks');
 const requiredFields = ['title', 'description', 'date', 'category', 'tags', 'published'];
 const stringFields = [
 	'title',
@@ -16,6 +17,7 @@ const stringFields = [
 	'color',
 	'author',
 	'readingTime',
+	'notebook',
 	'status',
 	'inPlainEnglish'
 ];
@@ -147,6 +149,14 @@ for (const file of postFiles) {
 			!/^\/(?:images|photos)\/.+\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(metadata.thumbnail)
 		) {
 			errors.push(`${file}: thumbnail must be a root-relative supported image path.`);
+		}
+	}
+
+	if (typeof metadata.notebook === 'string') {
+		if (!/^[A-Za-z0-9_-]+$/.test(metadata.notebook)) {
+			errors.push(`${file}: notebook must be a filename-safe notebook slug.`);
+		} else if (!fs.existsSync(path.join(notebooksDir, `${metadata.notebook}.ipynb`))) {
+			errors.push(`${file}: notebook source “${metadata.notebook}.ipynb” does not exist.`);
 		}
 	}
 

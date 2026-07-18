@@ -4,6 +4,7 @@
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import ArticleActions from '$lib/components/blog/ArticleActions.svelte';
 	import AuthorPanel from '$lib/components/blog/AuthorPanel.svelte';
+	import Notebook from '$lib/components/blog/Notebook.svelte';
 	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
 	import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
@@ -168,6 +169,14 @@
 					</div>
 				{/if}
 			</section>
+		{/if}
+
+		{#if data.metadata.notebook}
+			<Notebook
+				src={data.metadata.notebook}
+				title={`${data.metadata.title} — Mojo notebook`}
+				caption="Rendered from the source notebook during the site build."
+			/>
 		{/if}
 
 		<div

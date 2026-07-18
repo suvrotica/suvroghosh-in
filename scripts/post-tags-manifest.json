@@ -8097,6 +8097,20 @@
 				"Bacteria"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/perceptron-from-scratch-in-mojo.md": {
+			"bodyHash": "a353528d761c819236b79225458e581e0987c146036f159e3172be052b1190c9",
+			"generatedTags": [
+				"Notebook Builds",
+				"Source Notebook",
+				"Mojo's",
+				"Perceptron",
+				"Cell",
+				"Cells",
+				"Training",
+				"Source"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

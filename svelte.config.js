@@ -14,6 +14,7 @@ import Dl from '$lib/components/blog/Doggerel.svelte';
 import TTS from '$lib/components/blog/TTS.svelte';
 import ChatterboxTTS from '$lib/components/tts/ChatterboxTTS.svelte';
 import Vid from '$lib/components/blog/PostVideo.svelte';
+import Notebook from '$lib/components/blog/Notebook.svelte';
 `;
 
 const autoImport = {

@@ -5,6 +5,7 @@ export type ProfessionalProject = {
 		| 'hie-clinical-trial-platforms'
 		| 'functional-job-analysis'
 		| 'meta-analysis-platform'
+		| 'mojollm-notebooks'
 		| 'editorial-publishing-system';
 	name: string;
 	context: string;
@@ -96,6 +97,20 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		],
 		disciplines: ['Research data', 'Semantic alignment', 'Data modelling'],
 		relatedPostSlugs: []
+	},
+	{
+		id: 'mojollm-notebooks',
+		name: 'mojoLLM Computational Notebooks',
+		context: 'Mojo · Machine learning education · Literate programming',
+		detail:
+			'A growing collection of Python-style, browser-readable notebooks that use Mojo to build machine-learning ideas from first principles.',
+		contributions: [
+			'Added a reproducible Jupyter-to-HTML publishing pipeline with isolated, responsive notebook embeds for any Markdown essay.',
+			'Established a first-class mojoLLM category so notebook essays remain browsable as a distinct body of project work.',
+			'Created the opening notebook: a perceptron implemented from scratch, with each prediction and weight update exposed step by step.'
+		],
+		disciplines: ['Mojo', 'Jupyter', 'Machine learning', 'Literate programming'],
+		relatedPostSlugs: ['perceptron-from-scratch-in-mojo']
 	},
 	{
 		id: 'editorial-publishing-system',
