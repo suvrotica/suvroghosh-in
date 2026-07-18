@@ -1,0 +1,134 @@
+<svg role="img" aria-label="XOR from Scratch in Mojo with Multiple Perceptrons" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>XOR from Scratch in Mojo with Multiple Perceptrons</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(141,287)" font-size="118" style="fill:#e0b879">Perceptron</text>
+<text transform="translate(556,622)" font-size="99" style="fill:#a9b7a3">Hidden</text>
+<text transform="translate(602,130)" font-size="91" style="fill:#e0b879">Inputs</text>
+<text transform="translate(630,454)" font-size="91" style="fill:#d5d2c2">Output</text>
+<text transform="translate(327,490)" font-size="83" style="fill:#8fb7d0">Three</text>
+<text transform="translate(26,384)" font-size="83" style="fill:#d9c89e">Zero</text>
+<text transform="translate(232,192)" font-size="83" style="fill:#c49a6c">Network</text>
+<text transform="translate(990,282)" font-size="83" style="fill:#c49a6c">NAND</text>
+<text transform="translate(1114,592) rotate(-90)" font-size="74" style="fill:#c49a6c">XOR</text>
+<text transform="translate(938,676)" font-size="64" style="fill:#d88988">Notebook</text>
+<text transform="translate(39,616)" font-size="64" style="fill:#9fc9c5">Trained</text>
+<text transform="translate(298,106)" font-size="64" style="fill:#c7d7b5">Straight</text>
+<text transform="translate(459,676)" font-size="64" style="fill:#d9c89e">Boundary</text>
+<text transform="translate(726,364)" font-size="64" style="fill:#9fc9c5">Perceptrons</text>
+<text transform="translate(56,677)" font-size="64" style="fill:#9fc9c5">Units</text>
+<text transform="translate(112,451)" font-size="64" style="fill:#b6c3dd">Final</text>
+<text transform="translate(63,105)" font-size="52" style="fill:#d6a79f">Single</text>
+<text transform="translate(77,59)" font-size="52" style="fill:#d9c89e">Gate</text>
+<text transform="translate(705,53)" font-size="52" style="fill:#8fb7d0">Positive</text>
+<text transform="translate(334,335)" font-size="52" style="fill:#d5d2c2">Point</text>
+<text transform="translate(743,203)" font-size="52" style="fill:#d9c89e">Points</text>
+<text transform="translate(999,416)" font-size="52" style="fill:#c49a6c">Small</text>
+<text transform="translate(33,552)" font-size="52" style="fill:#8fb7d0">Differ</text>
+<text transform="translate(940,153)" font-size="52" style="fill:#d6a79f">Captures</text>
+<text transform="translate(325,567)" font-size="52" style="fill:#c49a6c">Remain</text>
+<text transform="translate(607,528)" font-size="52" style="fill:#c7d7b5">Representation</text>
+<text transform="translate(251,390)" font-size="52" style="fill:#d6a79f">First</text>
+<text transform="translate(491,361)" font-size="52" style="fill:#d88988">Useful</text>
+<text transform="translate(1041,216)" font-size="52" style="fill:#d9c89e">Asks</text>
+<text transform="translate(1269,399) rotate(-90)" font-size="52" style="fill:#8fb7d0">Whether</text>
+<text transform="translate(26,500)" font-size="52" style="fill:#a9b7a3">Active</text>
+<text transform="translate(33,195)" font-size="52" style="fill:#a9b7a3">Neural</text>
+<text transform="translate(1071,64)" font-size="52" style="fill:#8fb7d0">Unit</text>
+<text transform="translate(311,616)" font-size="52" style="fill:#c7d7b5">Trains</text>
+<text transform="translate(1204,589) rotate(-90)" font-size="52" style="fill:#c49a6c">Learning</text>
+<text transform="translate(407,405)" font-size="52" style="fill:#d9c89e">Exactly</text>
+<text transform="translate(850,252)" font-size="52" style="fill:#d6a79f">Step</text>
+<text transform="translate(201,42)" font-size="50" style="fill:#8fb7d0">Original</text>
+<text transform="translate(189,332)" font-size="50" style="fill:#d5d2c2">Rows</text>
+<text transform="translate(906,561)" font-size="36" style="fill:#c49a6c">Stops</text>
+<text transform="translate(883,713)" font-size="36" style="fill:#e0b879">Previous</text>
+<text transform="translate(531,37)" font-size="36" style="fill:#c49a6c">Mojollm</text>
+<text transform="translate(958,98)" font-size="36" style="fill:#9fc9c5">Reproduce</text>
+<text transform="translate(1127,620)" font-size="36" style="fill:#b6c3dd">Worked</text>
+<text transform="translate(266,486)" font-size="36" style="fill:#8fb7d0">Put</text>
+<text transform="translate(957,481)" font-size="36" style="fill:#8fb7d0">Lone</text>
+<text transform="translate(775,696)" font-size="36" style="fill:#9fc9c5">Side</text>
+<text transform="translate(246,684)" font-size="36" style="fill:#d88988">Negative</text>
+<text transform="translate(852,298)" font-size="36" style="fill:#d5d2c2">Famous</text>
+<text transform="translate(1015,455)" font-size="36" style="fill:#d5d2c2">Refusal</text>
+<text transform="translate(987,314)" font-size="36" style="fill:#e0b879">Returns</text>
+<text transform="translate(598,706)" font-size="36" style="fill:#c7d7b5">Agree</text>
+<text transform="translate(607,199)" font-size="36" style="fill:#8fb7d0">Sit</text>
+<text transform="translate(1240,587) rotate(-90)" font-size="36" style="fill:#d6a79f">Opposite</text>
+<text transform="translate(80,707)" font-size="36" style="fill:#e0b879">Corners</text>
+<text transform="translate(1225,197) rotate(-90)" font-size="36" style="fill:#e0b879">Square</text>
+<text transform="translate(781,660)" font-size="36" style="fill:#a9b7a3">Outside</text>
+<text transform="translate(1265,181) rotate(-90)" font-size="36" style="fill:#e0b879">Training</text>
+<text transform="translate(4,300)" font-size="36" style="fill:#a9b7a3">Longer</text>
+<text transform="translate(13,254)" font-size="36" style="fill:#d6a79f">Repair</text>
+<text transform="translate(1062,706)" font-size="36" style="fill:#c49a6c">Express</text>
+<text transform="translate(31,141) rotate(-90)" font-size="36" style="fill:#c49a6c">Answer</text>
+<text transform="translate(616,485)" font-size="36" style="fill:#b6c3dd">Failure</text>
+<text transform="translate(393,521)" font-size="36" style="fill:#d9c89e">Visible</text>
+<text transform="translate(38,141)" font-size="36" style="fill:#d88988">Keeps</text>
+<text transform="translate(423,707)" font-size="35" style="fill:#c7d7b5">Updating</text>
+<text transform="translate(287,652)" font-size="35" style="fill:#c7d7b5">Mistakes</text>
+<text transform="translate(848,487)" font-size="35" style="fill:#c7d7b5">Never</text>
+<text transform="translate(911,625)" font-size="35" style="fill:#d9c89e">Fall</text>
+<text transform="translate(394,437)" font-size="35" style="fill:#d88988">Smallest</text>
+<text transform="translate(259,562) rotate(-90)" font-size="35" style="fill:#d88988">Solve</text>
+<text transform="translate(770,392)" font-size="27" style="fill:#8fb7d0">Composing</text>
+<text transform="translate(965,593)" font-size="27" style="fill:#8fb7d0">Least</text>
+<text transform="translate(644,309)" font-size="27" style="fill:#c49a6c">Input</text>
+<text transform="translate(24,447)" font-size="27" style="fill:#a9b7a3">Acts</text>
+<text transform="translate(1266,493) rotate(-90)" font-size="27" style="fill:#d9c89e">Fires</text>
+<text transform="translate(526,311)" font-size="27" style="fill:#c7d7b5">Answers</text>
+<text transform="translate(25,692) rotate(-90)" font-size="27" style="fill:#c49a6c">Resulting</text>
+<text transform="translate(583,154)" font-size="27" style="fill:#d9c89e">Identity</text>
+<text transform="translate(955,50)" font-size="27" style="fill:#d6a79f">Already</text>
+<text transform="translate(304,218)" font-size="27" style="fill:#8fb7d0">Draws</text>
+<text transform="translate(738,156)" font-size="27" style="fill:#d5d2c2">Combines</text>
+<text transform="translate(789,322)" font-size="27" style="fill:#8fb7d0">Boundaries</text>
+<text transform="translate(14,412)" font-size="27" style="fill:#8fb7d0">Region</text>
+<text transform="translate(263,514)" font-size="27" style="fill:#d6a79f">Create</text>
+<text transform="translate(365,135)" font-size="27" style="fill:#d6a79f">Program</text>
+<text transform="translate(94,327)" font-size="27" style="fill:#b6c3dd">Paste</text>
+<text transform="translate(1140,583) rotate(-90)" font-size="27" style="fill:#c7d7b5">Magical</text>
+<text transform="translate(791,557)" font-size="27" style="fill:#d5d2c2">Weights</text>
+<text transform="translate(939,218)" font-size="27" style="fill:#d88988">Truth</text>
+<text transform="translate(933,192)" font-size="27" style="fill:#d88988">Tables</text>
+<text transform="translate(446,215)" font-size="27" style="fill:#a9b7a3">Converts</text>
+<text transform="translate(234,715)" font-size="25" style="fill:#d88988">Predictions</text>
+<text transform="translate(990,617)" font-size="25" style="fill:#8fb7d0">Dataset</text>
+<text transform="translate(37,221)" font-size="25" style="fill:#d5d2c2">Models</text>
+<text transform="translate(1216,310) rotate(-90)" font-size="25" style="fill:#d88988">Use</text>
+<text transform="translate(445,42)" font-size="25" style="fill:#e0b879">Rule</text>
+<text transform="translate(1164,404) rotate(-90)" font-size="25" style="fill:#c7d7b5">Clarity</text>
+<text transform="translate(593,482) rotate(-90)" font-size="25" style="fill:#d9c89e">Rate</text>
+<text transform="translate(189,128)" font-size="25" style="fill:#e0b879">Learned</text>
+<text transform="translate(953,22)" font-size="25" style="fill:#8fb7d0">Parameters</text>
+<text transform="translate(654,75)" font-size="17" style="fill:#c49a6c">Wholenumbervalued</text>
+<text transform="translate(648,383)" font-size="17" style="fill:#d6a79f">Float64s</text>
+<text transform="translate(532,575) rotate(-90)" font-size="17" style="fill:#d5d2c2">State</text>
+<text transform="translate(889,72)" font-size="17" style="fill:#d88988">Tie</text>
+<text transform="translate(1135,18)" font-size="17" style="fill:#8fb7d0">Convention</text>
+<text transform="translate(1097,115)" font-size="17" style="fill:#d88988">Explicitly</text>
+<text transform="translate(1028,171)" font-size="17" style="fill:#d88988">Activation</text>
+<text transform="translate(303,418)" font-size="17" style="fill:#9fc9c5">Strictly</text>
+<text transform="translate(743,715)" font-size="17" style="fill:#b6c3dd">Greater</text>
+<text transform="translate(88,573)" font-size="17" style="fill:#d9c89e">Produce</text>
+<text transform="translate(378,60)" font-size="17" style="fill:#b6c3dd">Choosing</text>
+<text transform="translate(610,214)" font-size="17" style="fill:#a9b7a3">Happens</text>
+<text transform="translate(954,412)" font-size="17" style="fill:#d9c89e">Part</text>
+<text transform="translate(615,53)" font-size="17" style="fill:#a9b7a3">Defining</text>
+<text transform="translate(212,213)" font-size="17" style="fill:#d88988">Function</text>
+<text transform="translate(941,436)" font-size="17" style="fill:#c7d7b5">Law</text>
+<text transform="translate(407,352)" font-size="17" style="fill:#d9c89e">Nature</text>
+<text transform="translate(915,583)" font-size="17" style="fill:#d9c89e">Yet</text>
+<text transform="translate(328,346) rotate(-90)" font-size="17" style="fill:#d6a79f">Separately</text>
+<text transform="translate(1274,648) rotate(-90)" font-size="17" style="fill:#9fc9c5">Architecture</text>
+<text transform="translate(875,676)" font-size="17" style="fill:#8fb7d0">Chosen</text>
+<text transform="translate(42,643) rotate(-90)" font-size="17" style="fill:#a9b7a3">Hand</text>
+<text transform="translate(687,399)" font-size="17" style="fill:#8fb7d0">Modern</text>
+<text transform="translate(1165,566) rotate(-90)" font-size="17" style="fill:#d9c89e">Multilayer</text>
+<text transform="translate(159,147)" font-size="17" style="fill:#d6a79f">Instead</text>
+<text transform="translate(882,268)" font-size="17" style="fill:#8fb7d0">Learns</text>
+<text transform="translate(436,15)" font-size="14" style="fill:#8fb7d0">Interacting</text>
+<text transform="translate(175,514)" font-size="14" style="fill:#9fc9c5">Layers</text>
+<text transform="translate(213,69)" font-size="14" style="fill:#e0b879">Shared</text>
+</svg>

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T00:36:13.006590+00:00",
+  "generatedAt": "2026-07-18T04:56:10.547727+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -11774,6 +11774,29 @@
         "Dead",
         "Lahiri",
         "Three"
+      ],
+      "wordCount": 130
+    },
+    "xor-with-multiple-perceptrons-in-mojo": {
+      "generatedAt": "2026-07-18T04:56:10.547727+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/xor-with-multiple-perceptrons-in-mojo.svg",
+      "source": "src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md",
+      "sourceHash": "d741b0872f8b9cc4233a3d7e498c6c22701c60f4025ec76fd32f460e93910e42",
+      "sourceModified": "2026-07-18T04:55:36.391002+00:00",
+      "topWords": [
+        "Perceptron",
+        "Hidden",
+        "Inputs",
+        "Output",
+        "Three",
+        "Zero",
+        "Network",
+        "NAND",
+        "XOR",
+        "Notebook",
+        "Trained",
+        "Straight"
       ],
       "wordCount": 130
     }

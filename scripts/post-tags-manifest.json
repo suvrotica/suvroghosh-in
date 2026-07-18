@@ -8111,6 +8111,22 @@
 				"Source"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/xor-with-multiple-perceptrons-in-mojo.md": {
+			"bodyHash": "fc2ecfc95aff81c251e1b889e3147141c7b7020425290121bbcb5013b130503f",
+			"generatedTags": [
+				"Single Perceptron",
+				"Smallest Useful Network",
+				"Straight Boundary",
+				"Output Perceptron",
+				"Final Table",
+				"Inputs",
+				"Perceptrons",
+				"NAND",
+				"Output",
+				"XOR"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

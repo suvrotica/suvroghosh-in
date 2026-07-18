@@ -107,10 +107,10 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		contributions: [
 			'Added a reproducible Jupyter-to-HTML publishing pipeline with isolated, responsive notebook embeds for any Markdown essay.',
 			'Established a first-class mojoLLM category so notebook essays remain browsable as a distinct body of project work.',
-			'Created the opening notebook: a perceptron implemented from scratch, with each prediction and weight update exposed step by step.'
+			'Created a from-scratch notebook sequence that moves from one perceptron to an XOR network of three trained perceptrons.'
 		],
 		disciplines: ['Mojo', 'Jupyter', 'Machine learning', 'Literate programming'],
-		relatedPostSlugs: ['perceptron-from-scratch-in-mojo']
+		relatedPostSlugs: ['perceptron-from-scratch-in-mojo', 'xor-with-multiple-perceptrons-in-mojo']
 	},
 	{
 		id: 'editorial-publishing-system',
