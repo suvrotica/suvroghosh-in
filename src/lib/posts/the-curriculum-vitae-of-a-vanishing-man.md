@@ -4,7 +4,7 @@ description: "A fifty-one-year-old man examines failure, ordinariness, ambition,
 date: "2026-07-19"
 thumbnail: "/photos/Compress_20260719_032411_1278.jpg"
 category: "Monologue"
-tags: ["Monologue", "Personal Essay", "Failure", "Middle Age", "Calcutta", "Social Satire", "Memory", "Mental Health", "SuvroGhosh"]
+tags: ["Curriculum Vitae","Vanishing Man","Joins","Ceremonial","Infant","Plans","Ordinary","Upon","Leadership","Resembles"]
 published: true
 color: "#4A4036"
 ---

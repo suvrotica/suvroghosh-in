@@ -8191,6 +8191,22 @@
 				"Examination"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/the-curriculum-vitae-of-a-vanishing-man.md": {
+			"bodyHash": "e75cab265ed271f45e78b09dbbb6f440dfcef89d2dff02a67657973195b34680",
+			"generatedTags": [
+				"Curriculum Vitae",
+				"Vanishing Man",
+				"Joins",
+				"Ceremonial",
+				"Infant",
+				"Plans",
+				"Ordinary",
+				"Upon",
+				"Leadership",
+				"Resembles"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

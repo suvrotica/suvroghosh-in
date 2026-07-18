@@ -8239,6 +8239,22 @@
       "sourceBytes": 469323,
       "sourceHash": "7112a3fb168055aab5bf36eb089f308dcaec6ff380a4428cc8de87c6cac743d5",
       "width": 1148
+    },
+    "static/photos/Compress_20260719_032411_1278.jpg": {
+      "format": "JPEG",
+      "height": 1448,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1448,
+      "originalWidth": 1086,
+      "outputBytes": 157385,
+      "outputHash": "fb917b1e49742814229252366a81df226e905430604ae5facf0c103c4f9b80ba",
+      "psnrDb": 41.35,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 483108,
+      "sourceHash": "2d6c18d1351d5501378aff01646b895472828314d0c27894e7b178b8c2f841b9",
+      "width": 1086
     }
   },
   "settings": {
