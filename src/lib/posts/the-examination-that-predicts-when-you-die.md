@@ -15,8 +15,6 @@ color: "#2c3e50"
 
 # THIS IS A WORK OF FICTION
 
-# The Examination That Predicts When You Die
-
 The question paper on every desk was blank except for the first line, which read: *Which friend will leave you during the fire?*
 
 Underneath, in smaller print, it said: *You have forty minutes. Do not turn over until instructed.*
