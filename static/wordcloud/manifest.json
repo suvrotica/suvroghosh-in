@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T04:56:10.547727+00:00",
+  "generatedAt": "2026-07-18T07:45:48.935007+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -6369,6 +6369,29 @@
         "Phd",
         "Indian",
         "Tools"
+      ],
+      "wordCount": 130
+    },
+    "saturday-mathematics-and-the-end-of-usefulness": {
+      "generatedAt": "2026-07-18T07:45:48.113479+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/saturday-mathematics-and-the-end-of-usefulness.svg",
+      "source": "src/lib/posts/saturday-mathematics-and-the-end-of-usefulness.md",
+      "sourceHash": "f914854e9498b4c2f61ba8bcd028f32d75ff8816a06e1a4b9d404805bb506500",
+      "sourceModified": "2026-07-18T07:45:40.895460+00:00",
+      "topWords": [
+        "Negative",
+        "Perhaps",
+        "Last",
+        "Man",
+        "RAM",
+        "Three",
+        "Currently",
+        "Robot",
+        "Anything",
+        "Book",
+        "Somehow",
+        "Ceiling"
       ],
       "wordCount": 130
     },

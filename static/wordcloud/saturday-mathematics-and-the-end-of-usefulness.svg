@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Saturday Mathematics and the End of Usefulness" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Saturday Mathematics and the End of Usefulness</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(594,186)" font-size="118" style="fill:#c7d7b5">Negative</text>
+<text transform="translate(664,328)" font-size="118" style="fill:#a9b7a3">Perhaps</text>
+<text transform="translate(554,628)" font-size="109" style="fill:#d5d2c2">Last</text>
+<text transform="translate(143,96)" font-size="99" style="fill:#c49a6c">Man</text>
+<text transform="translate(307,437)" font-size="99" style="fill:#d5d2c2">RAM</text>
+<text transform="translate(499,329) rotate(-90)" font-size="99" style="fill:#d88988">Three</text>
+<text transform="translate(512,440)" font-size="99" style="fill:#9fc9c5">Currently</text>
+<text transform="translate(199,632)" font-size="99" style="fill:#d6a79f">Robot</text>
+<text transform="translate(85,528)" font-size="99" style="fill:#c49a6c">Anything</text>
+<text transform="translate(905,681)" font-size="88" style="fill:#c7d7b5">Book</text>
+<text transform="translate(6,178)" font-size="88" style="fill:#a9b7a3">Somehow</text>
+<text transform="translate(882,568)" font-size="88" style="fill:#9fc9c5">Ceiling</text>
+<text transform="translate(130,326)" font-size="88" style="fill:#d88988">Fan</text>
+<text transform="translate(534,73)" font-size="88" style="fill:#d6a79f">Saturday</text>
+<text transform="translate(330,711)" font-size="88" style="fill:#c49a6c">Hundred</text>
+<text transform="translate(4,240)" font-size="69" style="fill:#d5d2c2">Biological</text>
+<text transform="translate(560,485)" font-size="53" style="fill:#a9b7a3">Approximately</text>
+<text transform="translate(967,230)" font-size="53" style="fill:#a9b7a3">Floating</text>
+<text transform="translate(20,675)" font-size="53" style="fill:#9fc9c5">AI</text>
+<text transform="translate(13,443)" font-size="53" style="fill:#c7d7b5">Failure</text>
+<text transform="translate(96,394)" font-size="53" style="fill:#d5d2c2">Screen</text>
+<text transform="translate(149,710)" font-size="53" style="fill:#8fb7d0">Never</text>
+<text transform="translate(984,45)" font-size="52" style="fill:#e0b879">Rectangle</text>
+<text transform="translate(1081,377)" font-size="52" style="fill:#b6c3dd">Higher</text>
+<text transform="translate(1072,447)" font-size="45" style="fill:#b6c3dd">Purple</text>
+<text transform="translate(623,366)" font-size="45" style="fill:#d5d2c2">Mathematics</text>
+<text transform="translate(520,287)" font-size="45" style="fill:#d5d2c2">Human</text>
+<text transform="translate(132,696) rotate(-90)" font-size="45" style="fill:#c49a6c">Face</text>
+<text transform="translate(612,541)" font-size="45" style="fill:#a9b7a3">Afternoon</text>
+<text transform="translate(310,283)" font-size="45" style="fill:#e0b879">Slow</text>
+<text transform="translate(700,682)" font-size="45" style="fill:#a9b7a3">Already</text>
+<text transform="translate(840,610)" font-size="45" style="fill:#d5d2c2">Positive</text>
+<text transform="translate(1035,105)" font-size="45" style="fill:#a9b7a3">Optimism</text>
+<text transform="translate(300,361)" font-size="44" style="fill:#e0b879">Professional</text>
+<text transform="translate(321,113)" font-size="44" style="fill:#d5d2c2">Call</text>
+<text transform="translate(503,220)" font-size="38" style="fill:#c7d7b5">Apparently</text>
+<text transform="translate(1128,647)" font-size="38" style="fill:#d88988">Openai</text>
+<text transform="translate(422,467)" font-size="38" style="fill:#c49a6c">Four</text>
+<text transform="translate(1032,715)" font-size="38" style="fill:#d6a79f">Future</text>
+<text transform="translate(35,565)" font-size="38" style="fill:#a9b7a3">Crisis</text>
+<text transform="translate(807,230)" font-size="38" style="fill:#c49a6c">Machine</text>
+<text transform="translate(201,672)" font-size="38" style="fill:#b6c3dd">Years</text>
+<text transform="translate(256,35)" font-size="38" style="fill:#9fc9c5">Whether</text>
+<text transform="translate(77,349) rotate(-90)" font-size="38" style="fill:#d9c89e">Room</text>
+<text transform="translate(1262,334) rotate(-90)" font-size="38" style="fill:#d5d2c2">Grotesque</text>
+<text transform="translate(663,117)" font-size="38" style="fill:#d88988">Drain</text>
+<text transform="translate(1054,488)" font-size="35" style="fill:#e0b879">Municipal</text>
+<text transform="translate(34,394) rotate(-90)" font-size="35" style="fill:#c7d7b5">Exactly</text>
+<text transform="translate(938,259)" font-size="35" style="fill:#8fb7d0">Venture</text>
+<text transform="translate(36,65)" font-size="35" style="fill:#d5d2c2">Now</text>
+<text transform="translate(316,320)" font-size="35" style="fill:#c49a6c">Year</text>
+<text transform="translate(682,512)" font-size="29" style="fill:#a9b7a3">Obsolescence</text>
+<text transform="translate(1155,682)" font-size="29" style="fill:#a9b7a3">Version</text>
+<text transform="translate(476,175)" font-size="29" style="fill:#c7d7b5">Forced</text>
+<text transform="translate(1065,597)" font-size="29" style="fill:#d5d2c2">Species</text>
+<text transform="translate(4,608)" font-size="29" style="fill:#9fc9c5">Blood</text>
+<text transform="translate(6,107)" font-size="29" style="fill:#d6a79f">Pressure</text>
+<text transform="translate(349,556)" font-size="29" style="fill:#8fb7d0">Remains</text>
+<text transform="translate(142,352)" font-size="29" style="fill:#d88988">Detectors</text>
+<text transform="translate(527,150) rotate(-90)" font-size="29" style="fill:#9fc9c5">Garbage</text>
+<text transform="translate(724,706)" font-size="24" style="fill:#d9c89e">Mastered</text>
+<text transform="translate(901,422)" font-size="24" style="fill:#c49a6c">Art</text>
+<text transform="translate(14,27)" font-size="24" style="fill:#9fc9c5">Precise</text>
+<text transform="translate(507,322)" font-size="24" style="fill:#c49a6c">Promises</text>
+<text transform="translate(543,652)" font-size="24" style="fill:#c7d7b5">Equations</text>
+<text transform="translate(304,324) rotate(-90)" font-size="24" style="fill:#e0b879">Asked</text>
+<text transform="translate(590,563)" font-size="24" style="fill:#c49a6c">Indifferent</text>
+<text transform="translate(1164,621)" font-size="24" style="fill:#d6a79f">Given</text>
+<text transform="translate(963,371)" font-size="24" style="fill:#c7d7b5">Heat</text>
+<text transform="translate(1273,606) rotate(-90)" font-size="24" style="fill:#c49a6c">Transformed</text>
+<text transform="translate(804,102)" font-size="24" style="fill:#b6c3dd">Trying</text>
+<text transform="translate(884,708)" font-size="24" style="fill:#b6c3dd">Attempting</text>
+<text transform="translate(325,56)" font-size="24" style="fill:#d5d2c2">Quantity</text>
+<text transform="translate(739,251)" font-size="24" style="fill:#d9c89e">Multiplied</text>
+<text transform="translate(11,498)" font-size="24" style="fill:#d88988">Bank</text>
+<text transform="translate(44,86)" font-size="24" style="fill:#d9c89e">Account</text>
+<text transform="translate(171,652) rotate(-90)" font-size="24" style="fill:#d5d2c2">Career</text>
+<text transform="translate(1046,404)" font-size="24" style="fill:#a9b7a3">Slowly</text>
+<text transform="translate(962,67)" font-size="24" style="fill:#a9b7a3">Whatever</text>
+<text transform="translate(145,464)" font-size="22" style="fill:#d88988">Technology</text>
+<text transform="translate(1201,409)" font-size="22" style="fill:#c7d7b5">Apple</text>
+<text transform="translate(392,653)" font-size="22" style="fill:#e0b879">Involving</text>
+<text transform="translate(577,242)" font-size="22" style="fill:#d6a79f">Company</text>
+<text transform="translate(10,713)" font-size="22" style="fill:#d88988">Artificial</text>
+<text transform="translate(538,91)" font-size="17" style="fill:#d5d2c2">Intelligence</text>
+<text transform="translate(838,634)" font-size="17" style="fill:#c7d7b5">Street</text>
+<text transform="translate(455,287)" font-size="17" style="fill:#c49a6c">Skin</text>
+<text transform="translate(103,123)" font-size="17" style="fill:#b6c3dd">Shame</text>
+<text transform="translate(470,609)" font-size="17" style="fill:#b6c3dd">Continues</text>
+<text transform="translate(874,17)" font-size="17" style="fill:#c49a6c">Drive</text>
+<text transform="translate(1040,554) rotate(-90)" font-size="17" style="fill:#c7d7b5">Particularly</text>
+<text transform="translate(265,118)" font-size="17" style="fill:#b6c3dd">Irony</text>
+<text transform="translate(254,566)" font-size="17" style="fill:#d5d2c2">Afford</text>
+<text transform="translate(761,646)" font-size="17" style="fill:#a9b7a3">Let</text>
+<text transform="translate(234,413)" font-size="17" style="fill:#d88988">Seems</text>
+<text transform="translate(433,248) rotate(-90)" font-size="17" style="fill:#d6a79f">Increasingly</text>
+<text transform="translate(346,467)" font-size="17" style="fill:#d6a79f">Prone</text>
+<text transform="translate(49,400) rotate(-90)" font-size="17" style="fill:#8fb7d0">Every</text>
+<text transform="translate(1171,715)" font-size="17" style="fill:#d6a79f">Thousand</text>
+<text transform="translate(299,453) rotate(-90)" font-size="17" style="fill:#d9c89e">Energy</text>
+<text transform="translate(670,17)" font-size="17" style="fill:#b6c3dd">Infrastructure</text>
+<text transform="translate(420,20)" font-size="17" style="fill:#c49a6c">Technically</text>
+<text transform="translate(502,416) rotate(-90)" font-size="17" style="fill:#d88988">Wants</text>
+<text transform="translate(94,304)" font-size="17" style="fill:#d6a79f">Ride</text>
+<text transform="translate(946,84)" font-size="17" style="fill:#c49a6c">Capacity</text>
+<text transform="translate(784,557)" font-size="17" style="fill:#8fb7d0">Speaking</text>
+<text transform="translate(1205,315) rotate(-90)" font-size="17" style="fill:#b6c3dd">Dead</text>
+<text transform="translate(13,470)" font-size="17" style="fill:#d88988">Actually</text>
+<text transform="translate(146,667)" font-size="17" style="fill:#e0b879">Much</text>
+<text transform="translate(1158,160)" font-size="17" style="fill:#d6a79f">Manual</text>
+<text transform="translate(1162,332)" font-size="17" style="fill:#d88988">Milieu</text>
+<text transform="translate(1109,258)" font-size="17" style="fill:#b6c3dd">Notes</text>
+<text transform="translate(161,196)" font-size="17" style="fill:#c49a6c">Effluvial</text>
+<text transform="translate(31,628)" font-size="17" style="fill:#8fb7d0">Laugh</text>
+<text transform="translate(1199,76)" font-size="17" style="fill:#e0b879">Sounds</text>
+<text transform="translate(1156,194)" font-size="17" style="fill:#9fc9c5">Potholes</text>
+<text transform="translate(94,395) rotate(-90)" font-size="17" style="fill:#9fc9c5">Robotics</text>
+<text transform="translate(1166,134)" font-size="17" style="fill:#9fc9c5">Capital</text>
+<text transform="translate(136,18)" font-size="17" style="fill:#a9b7a3">Relevance</text>
+<text transform="translate(929,345)" font-size="17" style="fill:#b6c3dd">Nothing</text>
+<text transform="translate(190,649) rotate(-90)" font-size="17" style="fill:#9fc9c5">Desperation</text>
+<text transform="translate(242,433)" font-size="17" style="fill:#b6c3dd">Say</text>
+<text transform="translate(586,304)" font-size="17" style="fill:#9fc9c5">Linkedin</text>
+<text transform="translate(488,628)" font-size="17" style="fill:#e0b879">Friends</text>
+<text transform="translate(467,246)" font-size="17" style="fill:#d5d2c2">Available</text>
+<text transform="translate(1162,512)" font-size="17" style="fill:#8fb7d0">Preorder</text>
+<text transform="translate(330,196)" font-size="17" style="fill:#d9c89e">Read</text>
+<text transform="translate(998,628)" font-size="17" style="fill:#8fb7d0">Next</text>
+<text transform="translate(25,520)" font-size="17" style="fill:#e0b879">Final</text>
+<text transform="translate(384,572)" font-size="17" style="fill:#d9c89e">Direct</text>
+</svg>

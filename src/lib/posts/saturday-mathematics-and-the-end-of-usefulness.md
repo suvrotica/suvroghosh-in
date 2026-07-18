@@ -4,7 +4,7 @@ description: "A bilious, spiraling meditation on middle age, obsolete competence
 date: "2026-07-18"
 thumbnail: "/images/Compress_20260718_124446_6177.jpg"
 category: "Personal Essay"
-tags: ["Essay", "Technology", "Existential Dread", "Calcutta", "Manic Depressive", "SuvroGhosh"]
+tags: ["Floating Robot","Purple Book","RAM Crisis","Ceiling Fan","Blood Pressure","Saturday","RAM","Negative","Robot","Approximately"]
 published: true
 color: "#7B68EE"
 ---

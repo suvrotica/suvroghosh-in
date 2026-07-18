@@ -8127,6 +8127,22 @@
 				"XOR"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/saturday-mathematics-and-the-end-of-usefulness.md": {
+			"bodyHash": "b7250905a48bbca834fcfedb817595f3b350a68e9a4020157490f78baaab5a2b",
+			"generatedTags": [
+				"Floating Robot",
+				"Purple Book",
+				"RAM Crisis",
+				"Ceiling Fan",
+				"Blood Pressure",
+				"Saturday",
+				"RAM",
+				"Negative",
+				"Robot",
+				"Approximately"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10
