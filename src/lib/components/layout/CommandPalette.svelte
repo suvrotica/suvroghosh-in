@@ -72,7 +72,7 @@
 <a
 	href={resolve('/blog')}
 	onclick={enhanceTrigger}
-	class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+	class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none lg:hidden dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 	aria-label="Open search and shortcuts"
 	aria-haspopup="dialog"
 	aria-controls={dialogId}
