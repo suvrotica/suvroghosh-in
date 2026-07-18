@@ -8159,6 +8159,22 @@
 				"Bose"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/the-student-model-eats-the-teacher.md": {
+			"bodyHash": "324225d9e9d0b251edc14a17cf82b4bf5a861c89a701ba6b3272946381090aa2",
+			"generatedTags": [
+				"China",
+				"Frontier",
+				"Model",
+				"Benchmark",
+				"Teacher",
+				"Open-Weight",
+				"Student",
+				"Chinese",
+				"Distilled",
+				"Humanity"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

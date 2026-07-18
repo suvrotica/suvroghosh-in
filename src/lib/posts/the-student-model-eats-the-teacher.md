@@ -4,7 +4,7 @@ description: "A fevered monologue about model distillation, industrial plagiaris
 date: "2026-07-19"
 thumbnail: "/images/Compress_20260719_012146_6497.jpg"
 category: "Monologue"
-tags: ["Artificial Intelligence", "LLM", "Model Distillation", "China", "United States", "Calcutta", "Bipolar", "Technology"]
+tags: ["China","Frontier","Model","Benchmark","Teacher","Open-Weight","Student","Chinese","Distilled","Humanity"]
 published: true
 color: "#5B191D"
 ---

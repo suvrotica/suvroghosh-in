@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T12:13:04.190414+00:00",
+  "generatedAt": "2026-07-18T19:56:21.851601+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -10072,6 +10072,29 @@
         "Sitting",
         "World",
         "Somewhere"
+      ],
+      "wordCount": 130
+    },
+    "the-student-model-eats-the-teacher": {
+      "generatedAt": "2026-07-18T19:56:21.618551+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-student-model-eats-the-teacher.svg",
+      "source": "src/lib/posts/the-student-model-eats-the-teacher.md",
+      "sourceHash": "583eda0ab453798f5626d3522dcb64ac2182d6f16d77f384923e1b9c8b026886",
+      "sourceModified": "2026-07-18T19:56:16.268941+00:00",
+      "topWords": [
+        "Model",
+        "China",
+        "Teacher",
+        "Student",
+        "Every",
+        "Frontier",
+        "Matters",
+        "Merely",
+        "Answer",
+        "American",
+        "Chinese",
+        "Benchmark"
       ],
       "wordCount": 130
     },
