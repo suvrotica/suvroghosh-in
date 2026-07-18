@@ -32,9 +32,15 @@ export const load: PageServerLoad = () => {
 		}))
 		.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 
+	const visualizations = categories.find((category) => category.slug === 'visualizations');
+	const majorCategories = categories
+		.filter((category) => category.slug !== 'visualizations')
+		.slice(0, visualizations ? 11 : 12);
+	if (visualizations) majorCategories.unshift(visualizations);
+
 	return {
 		recentPosts: posts.slice(0, 6).map(postSummary),
-		majorCategories: categories.slice(0, 12),
+		majorCategories,
 		categoryCount: categories.length
 	};
 };

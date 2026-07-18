@@ -13,6 +13,7 @@
 				{ href: '/writing', label: 'Writing' },
 				{ href: '/blog', label: 'Search & archive' },
 				{ href: '/blog/topics', label: 'Topics' },
+				{ href: '/blog/visualizations', label: 'Visualizations' },
 				{ href: '/resume', label: 'Resume' }
 			]
 		},

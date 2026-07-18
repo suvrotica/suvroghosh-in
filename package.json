@@ -7,6 +7,8 @@
 		"dev": "vite dev",
 		"tags:generate": "node scripts/generate-post-tags.mjs",
 		"tags:test": "node --test scripts/generate-post-tags.test.mjs",
+		"visualizations:test": "node --test scripts/visualizations.test.mjs",
+		"test": "npm run tags:test && npm run visualizations:test",
 		"music:generate": "node scripts/generate-music-posts.mjs",
 		"images:optimize": "python scripts/optimize_images.py",
 		"images:verify": "python scripts/optimize_images.py --verify",
@@ -76,6 +78,7 @@
 		"@fontsource-variable/roboto": "^5.2.10",
 		"@vercel/analytics": "^2.0.1",
 		"@vercel/speed-insights": "^2.0.0",
+		"p5": "^2.3.0",
 		"resend": "^6.14.0"
 	}
 }

@@ -9,6 +9,11 @@
 		{ href: '/writing', label: 'Writing', description: 'Browse the reading room' },
 		{ href: '/blog', label: 'All posts', description: 'Search the complete archive' },
 		{ href: '/blog/topics', label: 'Topics', description: 'Follow recurring subjects' },
+		{
+			href: '/blog/visualizations',
+			label: 'Visualizations',
+			description: 'Explore the interactive science laboratory'
+		},
 		{ href: '/consulting', label: 'Healthcare IT', description: 'Consulting and systems work' },
 		{ href: '/projects', label: 'Projects', description: 'Review selected systems work' },
 		{ href: '/resume', label: 'Resume', description: 'Experience and capabilities' },

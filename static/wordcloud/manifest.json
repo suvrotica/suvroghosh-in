@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T22:25:02.961477+00:00",
+  "generatedAt": "2026-07-18T23:28:43.978426+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -3540,6 +3540,29 @@
         "Little",
         "Family",
         "Phone"
+      ],
+      "wordCount": 130
+    },
+    "hello-fragment-your-first-shader-from-scratch": {
+      "generatedAt": "2026-07-18T23:28:43.479470+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/hello-fragment-your-first-shader-from-scratch.svg",
+      "source": "src/lib/posts/hello-fragment-your-first-shader-from-scratch.md",
+      "sourceHash": "e957b8e78202456cde8824010fd99eed76c669a5b60dfbfd73ae989a33a55753",
+      "sourceModified": "2026-07-18T23:27:38.225965+00:00",
+      "topWords": [
+        "Shader",
+        "Fragment",
+        "Colour",
+        "Canvas",
+        "Pixel",
+        "Time",
+        "Every",
+        "Distance",
+        "GPU",
+        "Rectangle",
+        "Coordinates",
+        "Pointer"
       ],
       "wordCount": 130
     },

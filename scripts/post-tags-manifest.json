@@ -8207,6 +8207,22 @@
 				"Time"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/hello-fragment-your-first-shader-from-scratch.md": {
+			"bodyHash": "0305a9c49ff7b864caefae1187e1c67b493cec0c9c619463aaf8737aa344433f",
+			"generatedTags": [
+				"Narrow Luminous Ridges",
+				"Four Numbers",
+				"Fragment Shader",
+				"Wave Sources",
+				"Messages Shared",
+				"Shader",
+				"Fragment",
+				"Colour",
+				"Pixel",
+				"Canvas"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

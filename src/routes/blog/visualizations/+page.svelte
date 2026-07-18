@@ -1,0 +1,59 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+	import SEO from '$lib/components/seo/SEO.svelte';
+	import VisualizationsLanding from '$lib/components/visualizations/VisualizationsLanding.svelte';
+	import {
+		breadcrumbSchema,
+		collectionPageSchema,
+		siteUrl,
+		withSiteGraph
+	} from '$lib/components/seo/SEO';
+	import { postPath } from '$lib/content/posts';
+
+	let { data }: { data: PageData } = $props();
+
+	const title = 'Visualizations — Interactive Science Gallery | SuvroGhosh.In';
+	const description =
+		'Interactive educational experiments by Suvro Ghosh, using simulation, generative graphics, p5.js, and GPU shaders to make science and computing memorable.';
+	const canonicalUrl = `${siteUrl}/blog/visualizations`;
+</script>
+
+<SEO
+	{title}
+	{description}
+	{canonicalUrl}
+	keywords={[
+		'Interactive visualizations',
+		'p5.js',
+		'GLSL shaders',
+		'Science simulations',
+		'Computer science education',
+		'Suvro Ghosh'
+	]}
+	schema={withSiteGraph([
+		collectionPageSchema({
+			name: 'Visualizations — Interactive Science Gallery',
+			description,
+			url: canonicalUrl,
+			about: 'Interactive science, mathematics, computer science, and machine-learning education'
+		}),
+		breadcrumbSchema([
+			{ name: 'Home', url: siteUrl },
+			{ name: 'Blog', url: `${siteUrl}/blog` },
+			{ name: 'Visualizations', url: canonicalUrl }
+		]),
+		{
+			'@context': 'https://schema.org',
+			'@type': 'ItemList',
+			name: 'Published interactive experiments',
+			itemListElement: data.posts.map((post, index) => ({
+				'@type': 'ListItem',
+				position: index + 1,
+				url: siteUrl + postPath(post),
+				name: post.title
+			}))
+		}
+	])}
+/>
+
+<VisualizationsLanding posts={data.posts} totalResults={data.totalResults} />

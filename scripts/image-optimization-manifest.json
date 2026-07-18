@@ -8032,6 +8032,22 @@
       "sourceHash": "b0d6630a15e06ee4cec1f10670bce1c87ce1e0ea4aec773abe1f5027f4dc9cd7",
       "width": 1600
     },
+    "static/images/visualizations/hello-fragment-poster.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 163655,
+      "outputHash": "662ca7f606fc4d6236e8111e05d3e6143ebee8c9940cbbe5abe9946c9ebaaa32",
+      "psnrDb": 38.16,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 199622,
+      "sourceHash": "20b19e641d65231999bc0d9be16cb32d879dee54b7702ceca37d7b0295c1a7ac",
+      "width": 1672
+    },
     "static/photos/Compress_20260510_235335_5542.jpg": {
       "format": "JPEG",
       "height": 1056,

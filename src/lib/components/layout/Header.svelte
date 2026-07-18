@@ -7,7 +7,15 @@
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 
 	type NavigationItem = {
-		href: '/' | '/start-here' | '/writing' | '/consulting' | '/projects' | '/resume' | '/contact';
+		href:
+			| '/'
+			| '/start-here'
+			| '/writing'
+			| '/blog/visualizations'
+			| '/consulting'
+			| '/projects'
+			| '/resume'
+			| '/contact';
 		label: string;
 		sections: readonly string[];
 	};
@@ -16,6 +24,11 @@
 		{ href: '/', label: 'Home', sections: ['/'] },
 		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
 		{ href: '/writing', label: 'Writing', sections: ['/writing', '/blog'] },
+		{
+			href: '/blog/visualizations',
+			label: 'Visualizations',
+			sections: ['/blog/visualizations']
+		},
 		{
 			href: '/consulting',
 			label: 'Healthcare IT',
@@ -33,6 +46,9 @@
 	let menuSummary: HTMLElement;
 
 	function isCurrent(item: NavigationItem) {
+		if (currentPath.startsWith('/blog/visualizations')) {
+			return item.href === '/blog/visualizations';
+		}
 		return item.sections.some((section) =>
 			section === '/'
 				? currentPath === '/'

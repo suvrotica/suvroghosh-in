@@ -14,7 +14,7 @@
 
 	const title = 'Projects & Systems Work | Suvro Ghosh';
 	const description =
-		'Selected healthcare data, research systems, interoperability, clinical-trial, computational notebook, workflow, and independent publishing projects by Suvro Ghosh.';
+		'Selected healthcare data, research systems, interoperability, interactive visualization, computational notebook, workflow, and independent publishing projects by Suvro Ghosh.';
 	const canonicalUrl = `${siteUrl}/projects`;
 </script>
 
@@ -29,7 +29,9 @@
 		'Clinical trial systems',
 		'Healthcare data warehouse',
 		'SvelteKit',
-		'Mojo notebooks'
+		'Mojo notebooks',
+		'Interactive visualizations',
+		'GLSL shaders'
 	]}
 	schema={withSiteGraph([
 		collectionPageSchema({
@@ -90,8 +92,8 @@
 			class="mb-0 max-w-3xl text-left text-lg leading-relaxed text-neutral-700 dark:text-neutral-300"
 		>
 			Healthcare data warehouses, research registries, interoperability and clinical-trial
-			platforms, computational notebooks, workflow systems, and the independent publishing
-			infrastructure behind this site.
+			platforms, interactive visualizations, computational notebooks, workflow systems, and the
+			independent publishing infrastructure behind this site.
 		</p>
 	</header>
 
@@ -132,39 +134,58 @@
 		{#each data.projects as project, index (project.id)}
 			<section
 				id={project.id}
-				class="scroll-mt-28 py-10 md:py-14"
+				class="scroll-mt-28 py-10 md:py-14 {project.id === 'visualizations'
+					? 'my-6 rounded-2xl border border-cyan-700/40 bg-gradient-to-br from-neutral-950 via-neutral-900 to-cyan-950/80 px-5 text-white shadow-2xl shadow-neutral-950/20 sm:px-7'
+					: ''}"
 				aria-labelledby={`${project.id}-heading`}
 			>
 				<div class="grid gap-5 md:grid-cols-[7rem_1fr] md:gap-8">
-					<p class="mb-0 text-sm font-bold text-neutral-400 dark:text-neutral-500">
+					<p
+						class="mb-0 text-sm font-bold {project.id === 'visualizations'
+							? 'text-cyan-300'
+							: 'text-neutral-400 dark:text-neutral-500'}"
+					>
 						{String(index + 1).padStart(2, '0')} / {String(data.projects.length).padStart(2, '0')}
 					</p>
 
 					<div class="min-w-0">
 						<p
-							class="mb-2 text-xs font-bold tracking-[0.12em] text-neutral-500 uppercase dark:text-neutral-400"
+							class="mb-2 text-xs font-bold tracking-[0.12em] uppercase {project.id ===
+							'visualizations'
+								? 'text-cyan-300'
+								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
 							{project.context}
 						</p>
 						<h2
 							id={`${project.id}-heading`}
-							class="mb-4 text-2xl leading-tight font-bold text-neutral-950 md:text-3xl dark:text-neutral-50"
+							class="mb-4 text-2xl leading-tight font-bold md:text-3xl {project.id ===
+							'visualizations'
+								? 'text-white'
+								: 'text-neutral-950 dark:text-neutral-50'}"
 						>
 							{project.name}
 						</h2>
 						<p
-							class="mb-6 max-w-3xl text-left leading-relaxed text-neutral-700 dark:text-neutral-300"
+							class="mb-6 max-w-3xl text-left leading-relaxed {project.id === 'visualizations'
+								? 'text-neutral-200'
+								: 'text-neutral-700 dark:text-neutral-300'}"
 						>
 							{project.detail}
 						</p>
 
 						<h3
-							class="mb-3 text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
+							class="mb-3 text-xs font-bold tracking-[0.14em] uppercase {project.id ===
+							'visualizations'
+								? 'text-cyan-300'
+								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
 							Contribution
 						</h3>
 						<ul
-							class="mb-6 space-y-3 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+							class="mb-6 space-y-3 text-sm leading-relaxed {project.id === 'visualizations'
+								? 'text-neutral-200'
+								: 'text-neutral-700 dark:text-neutral-300'}"
 						>
 							{#each project.contributions as contribution (contribution)}
 								<li class="grid grid-cols-[1rem_1fr] gap-2">
@@ -177,12 +198,24 @@
 						<ul class="mb-0 flex flex-wrap gap-2" aria-label="Relevant disciplines">
 							{#each project.disciplines as discipline (discipline)}
 								<li
-									class="rounded-full border border-neutral-300 px-3 py-1 text-xs font-semibold text-neutral-600 dark:border-neutral-700 dark:text-neutral-400"
+									class="rounded-full border px-3 py-1 text-xs font-semibold {project.id ===
+									'visualizations'
+										? 'border-cyan-800 text-cyan-100'
+										: 'border-neutral-300 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400'}"
 								>
 									{discipline}
 								</li>
 							{/each}
 						</ul>
+
+						{#if project.href}
+							<a
+								href={resolve(project.href as '/blog/visualizations')}
+								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-neutral-950 no-underline hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+							>
+								Enter the interactive laboratory <span class="ml-1" aria-hidden="true">→</span>
+							</a>
+						{/if}
 
 						{#if project.relatedPosts.length > 0}
 							<div class="mt-7">

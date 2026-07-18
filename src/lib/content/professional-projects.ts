@@ -6,6 +6,7 @@ export type ProfessionalProject = {
 		| 'functional-job-analysis'
 		| 'meta-analysis-platform'
 		| 'mojollm-notebooks'
+		| 'visualizations'
 		| 'editorial-publishing-system';
 	name: string;
 	context: string;
@@ -13,6 +14,7 @@ export type ProfessionalProject = {
 	contributions: readonly string[];
 	disciplines: readonly string[];
 	relatedPostSlugs: readonly string[];
+	href?: string;
 	demo?: {
 		url: string;
 		title: string;
@@ -111,6 +113,21 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		],
 		disciplines: ['Mojo', 'Jupyter', 'Machine learning', 'Literate programming'],
 		relatedPostSlugs: ['perceptron-from-scratch-in-mojo', 'xor-with-multiple-perceptrons-in-mojo']
+	},
+	{
+		id: 'visualizations',
+		name: 'Visualizations Interactive Laboratory',
+		context: 'Ongoing laboratory · Science and computing education',
+		detail:
+			'An interactive laboratory for exploring physics, chemistry, biology, mathematics, computer science, and machine learning through simulations, generative graphics, and GPU shaders.',
+		contributions: [
+			'Built a lazy, server-safe p5.js and WebGL framework for interactive experiments inside ordinary Markdown posts.',
+			'Designed accessible controls, touch and keyboard interaction, reduced-motion behaviour, static fallbacks, and isolated multi-sketch lifecycle management.',
+			'Opened the collection with a first-principles fragment-shader exhibit that exposes every source file, uniform, preset, and mathematical stage.'
+		],
+		disciplines: ['p5.js', 'GLSL', 'WebGL', 'Interactive education'],
+		relatedPostSlugs: ['hello-fragment-your-first-shader-from-scratch'],
+		href: '/blog/visualizations'
 	},
 	{
 		id: 'editorial-publishing-system',
