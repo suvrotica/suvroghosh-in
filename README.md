@@ -77,8 +77,8 @@ available to mdsvex files:
 
 Mojo notebooks use the official Python-kernel integration: the first Python cell imports
 `mojo.notebook`, and complete Mojo programs run in cells beginning with `%%mojo`. Mojo itself runs
-on Linux, macOS, or Windows through WSL; from a supported system, install the reproducible Mojo and
-Jupyter environment in this repository with Pixi:
+on Linux, macOS, or Windows through WSL; from a supported system, install the repository's pinned
+Mojo 1.0.0b2 and version-constrained Jupyter environment with Pixi:
 
 ```sh
 pixi install

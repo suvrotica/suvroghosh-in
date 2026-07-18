@@ -1,4 +1,4 @@
-<!-- Generated from src/lib/notebooks/perceptron-from-scratch-in-mojo.ipynb; source-sha256: c1b060092e40c8cf147bcc3159e05869a8b30ab33539a2bbf2ba1879b7d5423a; renderer: 2026-07-18.2. -->
+<!-- Generated from src/lib/notebooks/perceptron-from-scratch-in-mojo.ipynb; source-sha256: 39bc8e3a6d807230df13fd80d9415025704a510b2f48dfa7f6752a974ab84ee1; renderer: 2026-07-18.2. -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -8072,7 +8072,7 @@ def main():
     var w1: Float64 = 0.0
     var w2: Float64 = 0.0
     var bias: Float64 = 0.0
-    var learning_rate: Float64 = 0.2
+    var learning_rate: Float64 = 0.25
 
     var guess = predict(x1, x2, w1, w2, bias)
     var error = target - guess
@@ -8096,7 +8096,7 @@ def main():
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>prediction: 1 error: -1
 before -&gt; w1: 0.0 w2: 0.0 bias: 0.0
-after  -&gt; w1: 0.0 w2: 0.0 bias: -0.2
+after  -&gt; w1: 0.0 w2: 0.0 bias: -0.25
 </pre>
 </div>
 </div>
@@ -8108,7 +8108,7 @@ after  -&gt; w1: 0.0 w2: 0.0 bias: -0.2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Train-on-all-four-rows">5. Train on all four rows<a class="anchor-link" href="#5.-Train-on-all-four-rows">¶</a></h2><p>One pass through the dataset is an <strong>epoch</strong>. The program below repeats the update rule for four epochs, counts mistakes, and then prints the learned truth table. No model state is hidden: <code>w1</code>, <code>w2</code>, and <code>bias</code> are the complete model.</p>
+<h2 id="5.-Train-on-all-four-rows">5. Train on all four rows<a class="anchor-link" href="#5.-Train-on-all-four-rows">¶</a></h2><p>One pass through the dataset is an <strong>epoch</strong>. The program below repeats the update rule for six epochs, counts mistakes, and then prints the learned truth table. No model state is hidden: <code>w1</code>, <code>w2</code>, and <code>bias</code> are the complete model.</p>
 </div>
 </div>
 </div>
@@ -8128,12 +8128,12 @@ def main():
     var x1: List[Float64] = [0.0, 0.0, 1.0, 1.0]
     var x2: List[Float64] = [0.0, 1.0, 0.0, 1.0]
     var targets: List[Int] = [0, 0, 0, 1]
-    var learning_rate: Float64 = 0.2
+    var learning_rate: Float64 = 0.25
     var w1: Float64 = 0.0
     var w2: Float64 = 0.0
     var bias: Float64 = 0.0
 
-    for epoch in range(4):
+    for epoch in range(6):
         var mistakes: Int = 0
         for i in range(len(targets)):
             var guess = predict(x1[i], x2[i], w1, w2, bias)
@@ -8161,10 +8161,12 @@ def main():
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>epoch 1 mistakes: 2 w1: 0.2 w2: 0.2 bias: 0.0
-epoch 2 mistakes: 3 w1: 0.4 w2: 0.2 bias: -0.2
-epoch 3 mistakes: 3 w1: 0.4 w2: 0.2 bias: -0.4000000000000001
-epoch 4 mistakes: 0 w1: 0.4 w2: 0.2 bias: -0.4000000000000001
+<pre>epoch 1 mistakes: 2 w1: 0.25 w2: 0.25 bias: 0.0
+epoch 2 mistakes: 3 w1: 0.5 w2: 0.25 bias: -0.25
+epoch 3 mistakes: 3 w1: 0.5 w2: 0.25 bias: -0.5
+epoch 4 mistakes: 2 w1: 0.5 w2: 0.5 bias: -0.5
+epoch 5 mistakes: 1 w1: 0.5 w2: 0.25 bias: -0.75
+epoch 6 mistakes: 0 w1: 0.5 w2: 0.25 bias: -0.75
 
 Learned AND gate
 x1 x2 | target prediction
@@ -8183,7 +8185,7 @@ x1 x2 | target prediction
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-Read-the-result">6. Read the result<a class="anchor-link" href="#6.-Read-the-result">¶</a></h2><p>By the fourth epoch the model makes no mistakes. The learned boundary is <code>0.4*x1 + 0.2*x2 - 0.4 &gt;= 0</code>. Only <code>(1, 1)</code> crosses it.</p>
+<h2 id="6.-Read-the-result">6. Read the result<a class="anchor-link" href="#6.-Read-the-result">¶</a></h2><p>By the sixth epoch, the model makes no mistakes. The learned decision rule is <code>0.5*x1 + 0.25*x2 - 0.75 &gt;= 0</code>. Only <code>(1, 1)</code> meets the positive threshold. Because <code>0.25</code>, <code>0.5</code>, and <code>0.75</code> are exact binary fractions, this conclusion does not depend on a floating-point rounding residue.</p>
 <p>This is genuinely learning, but it is still limited. One straight decision boundary cannot represent XOR. A later notebook can solve that by composing several perceptrons into a tiny multilayer network.</p>
 </div>
 </div>
