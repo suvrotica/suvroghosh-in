@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T21:57:57.396527+00:00",
+  "generatedAt": "2026-07-18T22:25:02.961477+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -8098,25 +8098,25 @@
       "wordCount": 130
     },
     "the-curriculum-vitae-of-a-vanishing-man": {
-      "generatedAt": "2026-07-18T21:57:57.097041+00:00",
+      "generatedAt": "2026-07-18T22:25:02.704059+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-curriculum-vitae-of-a-vanishing-man.svg",
       "source": "src/lib/posts/the-curriculum-vitae-of-a-vanishing-man.md",
-      "sourceHash": "231ec2db4fd540b6d834515491c0b1eaee6e4cc22a05a568f91b93e78d1afdaa",
-      "sourceModified": "2026-07-18T21:57:48.871981+00:00",
+      "sourceHash": "81442e0ee12d853975107736887a3cc10ca0b58e5adac984ed82d7d429c927f5",
+      "sourceModified": "2026-07-18T22:24:56.408316+00:00",
       "topWords": [
-        "Joins",
-        "Ordinary",
-        "Perhaps",
-        "Nobody",
-        "Man",
         "Every",
-        "Failure",
-        "Wearing",
-        "Language",
-        "Whose",
-        "Plans",
-        "Becomes"
+        "Man",
+        "Photograph",
+        "Time",
+        "Merely",
+        "Even",
+        "Soul",
+        "Now",
+        "Thick",
+        "Ambition",
+        "Real",
+        "Ordinary"
       ],
       "wordCount": 130
     },
