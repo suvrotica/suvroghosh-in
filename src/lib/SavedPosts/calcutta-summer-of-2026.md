@@ -40,7 +40,7 @@ ORS: Oral Rehydration Salts, a cheap salt-sugar-water mixture used to treat dehy
 ---
 
 <Vid 
-  src="রোদে_ভাজা_কলকাতা.mp4" 
+  src="music/রোদে_ভাজা_কলকাতা.mp4" 
   layout="block" 
   size={1} 
 />
@@ -84,7 +84,7 @@ This is where the polite language collapses.
 “Do not go out between 11 a.m. and 4 p.m.” is not advice for a domestic worker who must reach three houses before noon.
 
 <Vid 
-  src="বরফ_দে (1).mp4" 
+  src="music/বরফ_দে (1).mp4" 
   layout="block" 
   size={1} 
 />

@@ -4,7 +4,7 @@ description: "A Calcutta rumination on bipolar fear, middle age, loneliness, sma
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_070709_9817.jpg"
 category: "Personal"
-tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Cup","Rise","Fear","Mind"]
+tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Fear","Rise","Cup","Mind"]
 published: true
 color: "#374151"
 ---
@@ -14,7 +14,7 @@ color: "#374151"
 <Pi src="Compress_20260522_070709_9817.jpg" />
 
 <Vid 
-  src="জানলা_খোলা_রাখি.mp4" 
+  src="music/জানলা_খোলা_রাখি.mp4" 
   layout="block" 
   size={1} 
 />

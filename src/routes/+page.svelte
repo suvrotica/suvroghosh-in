@@ -151,6 +151,12 @@
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>All Posts</a
 				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
+					href={resolve('/blog/topics/[topic]', { topic: 'music' })}
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
+					>Music</a
+				>
 			</div>
 		</div>
 	</div>

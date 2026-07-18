@@ -30,7 +30,7 @@ AI: Artificial Intelligence, software systems that imitate or automate forms of 
 ---
 
 <Vid 
-  src="আলমারিতে_বন্দি_দেশ.mp4" 
+  src="music/আলমারিতে_বন্দি_দেশ.mp4" 
   layout="block" 
   size={1} 
 />

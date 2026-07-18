@@ -14,38 +14,38 @@ Acronyms expanded in this post:
 ---
 
 <Vid 
-  src="Kaam_Kahan_Gaya.mp4" 
+  src="music/Kaam_Kahan_Gaya.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Tu_Ab_Bhi_Hai_Insaan.mp4" 
+  src="music/Tu_Ab_Bhi_Hai_Insaan.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="College_Street_Ki_Chai.mp4" 
+  src="music/College_Street_Ki_Chai.mp4" 
   layout="block" 
   size={1} 
 />
 
 
 <Vid 
-  src="Tram_Ke_Taaron_Mein.mp4" 
+  src="music/Tram_Ke_Taaron_Mein.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Khaali_Din.mp4" 
+  src="music/Khaali_Din.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Silli_Silli_Si_Shaam.mp4" 
+  src="music/Silli_Silli_Si_Shaam.mp4" 
   layout="block" 
   size={1} 
 />

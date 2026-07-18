@@ -11,187 +11,187 @@ published: true
 ### Refresh often I add new tracks whenever I feel like it
 
 <Vid 
-  src="কাপের_তলায়_চাঁদ.mp4" 
+  src="music/কাপের_তলায়_চাঁদ.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="বাঁকা_গ্লাসে_শহর.mp4" 
+  src="music/বাঁকা_গ্লাসে_শহর.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="দাদা_বাড়ি_যাও.mp4" 
+  src="music/দাদা_বাড়ি_যাও.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="বরফ_দে (1).mp4" 
+  src="music/বরফ_দে (1).mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="তোরে_বাবা_বড়_গরম_.mp4" 
+  src="music/তোরে_বাবা_বড়_গরম_.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="মানুষ_এখনো_বাকি.mp4" 
+  src="music/মানুষ_এখনো_বাকি.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="ট্রামলাইন_ভিজে_আছে.mp4" 
+  src="music/ট্রামলাইন_ভিজে_আছে.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="আলমারিতে_বন্দি_দেশ.mp4" 
+  src="music/আলমারিতে_বন্দি_দেশ.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="সব_প্রেম_কি_বলা_লাগে_.mp4" 
+  src="music/সব_প্রেম_কি_বলা_লাগে_.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="রোদে_ভাজা_কলকাতা.mp4" 
+  src="music/রোদে_ভাজা_কলকাতা.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="শহর_তবু_ফুল.mp4" 
+  src="music/শহর_তবু_ফুল.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="আয়নার_অন্য_পারে.mp4" 
+  src="music/আয়নার_অন্য_পারে.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="জানলা_খোলা_রাখি.mp4" 
+  src="music/জানলা_খোলা_রাখি.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="দরজা_আধখোলা.mp4" 
+  src="music/দরজা_আধখোলা.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="মুড়ির_বাটিতে_চাঁদ.mp4" 
+  src="music/মুড়ির_বাটিতে_চাঁদ.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="সস্তা_আগুন.mp4" 
+  src="music/সস্তা_আগুন.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="গরমে_ঘামি.mp4" 
+  src="music/গরমে_ঘামি.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="মানুষ_মোটা_জানোয়ার.mp4" 
+  src="music/মানুষ_মোটা_জানোয়ার.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="দুই_রোদ্দুর_চোর.mp4" 
+  src="music/দুই_রোদ্দুর_চোর.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="বাকির_খাতা.mp4" 
+  src="music/বাকির_খাতা.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Ektu_ghumai_ne.mp4" 
+  src="music/Ektu_ghumai_ne.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="ভয়ের_শহর.mp4" 
+  src="music/ভয়ের_শহর.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="পার্ক_স্ট্রিটের_শেষ_পেগ.mp4" 
+  src="music/পার্ক_স্ট্রিটের_শেষ_পেগ.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="স্ক্যামের_গায়ে_চন্দন.mp4" 
+  src="music/স্ক্যামের_গায়ে_চন্দন.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="লেখাপড়া_করে_যে.mp4" 
+  src="music/লেখাপড়া_করে_যে.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="বৃষ্টি_সাক্ষী.mp4" 
+  src="music/বৃষ্টি_সাক্ষী.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="ও_বাবু_তোমার_রসগোল্লা.mp4" 
+  src="music/ও_বাবু_তোমার_রসগোল্লা.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="লুঙ্গি_আর_লজিক.mp4" 
+  src="music/লুঙ্গি_আর_লজিক.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="বই_খুললেই_রোদ্দুর.mp4" 
+  src="music/বই_খুললেই_রোদ্দুর.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="মানুষ_হলে_বুঝতিস.mp4" 
+  src="music/মানুষ_হলে_বুঝতিস.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="বাকির_খাতা (1).mp4" 
+  src="music/বাকির_খাতা (1).mp4" 
   layout="block" 
   size={1} 
 />

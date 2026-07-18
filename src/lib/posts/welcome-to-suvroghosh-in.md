@@ -13,7 +13,7 @@ color: "orange"
 <Pi src="Compress_20260523_024207_7823.jpg" />
 
 <Vid 
-  src="কাপের_তলায়_চাঁদ.mp4" 
+  src="music/কাপের_তলায়_চাঁদ.mp4" 
   layout="block" 
   size={1} 
 />

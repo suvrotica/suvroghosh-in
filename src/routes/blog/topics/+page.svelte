@@ -55,8 +55,9 @@
 			in reverse chronological order.
 		</p>
 		<p class="mb-0 max-w-2xl text-left text-sm text-neutral-500 dark:text-neutral-500">
-			A topic appears here only after occurring in at least {MIN_TOPIC_POSTS} published articles across
-			at least {MIN_TOPIC_CATEGORIES} categories. Rarer tags remain available through archive search.
+			A topic usually appears here after occurring in at least {MIN_TOPIC_POSTS} published articles across
+			at least {MIN_TOPIC_CATEGORIES} categories. Media collections such as Music are assembled automatically
+			from the post body. Rarer tags remain available through archive search.
 		</p>
 	</header>
 

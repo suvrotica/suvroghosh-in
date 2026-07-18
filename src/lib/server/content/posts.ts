@@ -13,11 +13,13 @@ import {
 	topicPath
 } from '$lib/content/topics';
 import { readingPathDefinitions } from '$lib/content/reading-paths';
+import { musicPostSlugs } from '$lib/generated/music-posts';
 
 export type PublishedPost = BlogPostMetadata & {
 	slug: string;
 	categorySlug: string;
 	categoryLabel: string;
+	derivedTopics: string[];
 };
 
 export type PublishedArchiveMonth = {
@@ -33,6 +35,7 @@ const metadataModules = import.meta.glob<BlogPostMetadata>('/src/lib/posts/*.md'
 });
 
 const publishedPosts: PublishedPost[] = [];
+const musicPostSlugSet = new Set<string>(musicPostSlugs);
 
 for (const [path, metadata] of Object.entries(metadataModules)) {
 	const slug = path.split('/').pop()?.replace(/\.md$/, '') ?? '';
@@ -45,7 +48,8 @@ for (const [path, metadata] of Object.entries(metadataModules)) {
 		...metadata,
 		slug,
 		categorySlug,
-		categoryLabel: categoryLabel(categorySlug)
+		categoryLabel: categoryLabel(categorySlug),
+		derivedTopics: musicPostSlugSet.has(slug) ? ['Music'] : []
 	});
 }
 
@@ -118,7 +122,7 @@ for (const post of publishedPosts) {
 	}
 
 	const seenTopics = new Set<string>();
-	for (const rawTag of post.tags ?? []) {
+	for (const rawTag of [...(post.tags ?? []), ...post.derivedTopics]) {
 		const label = rawTag.trim();
 		const topicSlug = canonicalTopicSlug(label);
 		if (!label || !isNavigationalTopic(label) || seenTopics.has(topicSlug)) continue;
@@ -155,7 +159,11 @@ const publishedTopics: PublishedTopic[] = Array.from(topicAccumulators, ([slug, 
 	categoryCount: topic.categories.size,
 	lastModified: topic.lastModified
 }))
-	.filter((topic) => topic.count >= MIN_TOPIC_POSTS && topic.categoryCount >= MIN_TOPIC_CATEGORIES)
+	.filter(
+		(topic) =>
+			topic.slug === 'music' ||
+			(topic.count >= MIN_TOPIC_POSTS && topic.categoryCount >= MIN_TOPIC_CATEGORIES)
+	)
 	.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 
 const publishedTopicsBySlug = new Map(publishedTopics.map((topic) => [topic.slug, topic]));

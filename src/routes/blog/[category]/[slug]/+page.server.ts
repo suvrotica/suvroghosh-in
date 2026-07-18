@@ -33,9 +33,8 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	const canonicalUrl = blogPostUrl(metadata.category, slug);
 	const catLabel = categoryLabel(normalizedCategory);
-	const keywords = [...metadata.tags, metadata.category, 'Suvro Ghosh']
-		.filter(Boolean)
-		.slice(0, 15);
+	const topicLabels = [...metadata.tags, ...metadata.derivedTopics];
+	const keywords = [...topicLabels, metadata.category, 'Suvro Ghosh'].filter(Boolean).slice(0, 15);
 
 	const breadcrumbs = breadcrumbSchema([
 		{ name: 'Home', url: siteUrl },
@@ -47,7 +46,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	return {
 		slug,
 		postNavigation: getPostNavigation(slug),
-		postTopics: getPostTopicLinks(metadata.tags),
+		postTopics: getPostTopicLinks(topicLabels),
 		relatedPosts: getRelatedPosts(slug),
 		metadata: {
 			...metadata,
@@ -66,10 +65,11 @@ export const load: PageServerLoad = async ({ params }) => {
 			author: metadata.author ?? 'Suvro Ghosh',
 			keywords,
 			category: catLabel,
-			tags: metadata.tags,
+			tags: topicLabels,
 			schema: schemaGraph([
 				blogPostingSchema({
 					...metadata,
+					tags: topicLabels,
 					slug,
 					category: catLabel,
 					canonicalUrl

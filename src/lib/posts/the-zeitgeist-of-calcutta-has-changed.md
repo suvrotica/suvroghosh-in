@@ -4,7 +4,7 @@ description: "A sharp, personal essay on how Kolkata’s moral weather has shift
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260515_202343_3686.jpg"
 category: "Calcutta"
-tags: ["Somebody","Pleasure","Hypocrisy","Paid","Speaks","Tea","Defeated","Bar","Fish","Appetite"]
+tags: ["Somebody","Pleasure","Hypocrisy","Speaks","Paid","Tea","Defeated","Bar","Fish","Appetite"]
 published: true
 color: "crimson"
 ---
@@ -14,7 +14,7 @@ color: "crimson"
 <Pi src="Compress_20260515_202343_3686.jpg" />
 
 <Vid 
-  src="বাঁকা_গ্লাসে_শহর.mp4" 
+  src="music/বাঁকা_গ্লাসে_শহর.mp4" 
   layout="block" 
   size={1} 
 />
@@ -60,7 +60,7 @@ That is the comedy. Also the wound.
 I live far from the polished postcard version of the city. My Calcutta is not only Park Street lights and puja awards. It is also damp rooms, unpaid bills, cracked plastic buckets, medicine strips, suspicious landlords, tea with too much sugar, and the daily mathematics of a lower-middle-class single man trying to keep life from sliding off the plate. Some mornings the news arrives before the tea boils: another scandal, another outrage, another video, another leader speaking as if language itself has resigned. You look at the phone and think, “Should I read this now, or should I preserve one spoonful of sanity for breakfast?”
 
 <Vid 
-  src="দাদা_বাড়ি_যাও.mp4" 
+  src="music/দাদা_বাড়ি_যাও.mp4" 
   layout="block" 
   size={1} 
 />
@@ -116,7 +116,7 @@ One public prayer used to cover one private rot.
 One more laugh sold under colored light.
 
 <Vid 
-  src="বাকির_খাতা (1).mp4" 
+  src="music/বাকির_খাতা (1).mp4" 
   layout="block" 
   size={1} 
 />

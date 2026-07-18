@@ -14,37 +14,37 @@ Acronyms expanded in this post:
 ---
 
 <Vid 
-  src="Someone_Hold_The_Door.mp4" 
+  src="music/Someone_Hold_The_Door.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Under_Flooded_Skies.mp4" 
+  src="music/Under_Flooded_Skies.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Tea_at_the_End.mp4" 
+  src="music/Tea_at_the_End.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="My_Human_Throat.mp4" 
+  src="music/My_Human_Throat.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Cold_Tea_and_Tram_Wires.mp4" 
+  src="music/Cold_Tea_and_Tram_Wires.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Calcutta_Under_The_Rain.mp4" 
+  src="music/Calcutta_Under_The_Rain.mp4" 
   layout="block" 
   size={1} 
 />

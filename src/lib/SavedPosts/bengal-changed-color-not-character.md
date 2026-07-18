@@ -14,7 +14,7 @@ color: "#78350f"
 <Pi src="Compress_20260509_182901_1938.jpg" />
 
 <Vid 
-  src="বাকির_খাতা (1).mp4" 
+  src="music/বাকির_খাতা (1).mp4" 
   layout="block" 
   size={1} 
 />
@@ -48,7 +48,7 @@ Opposition parties alleged something darker: that the exercise could remove legi
 The picture is complex and it was never botany, neither meristematic foliage nor lotus.
 
 <Vid 
-  src="শহর_তবু_ফুল.mp4" 
+  src="music/শহর_তবু_ফুল.mp4" 
   layout="block" 
   size={1} 
 />

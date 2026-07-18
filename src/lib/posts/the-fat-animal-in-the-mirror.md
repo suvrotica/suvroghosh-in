@@ -14,7 +14,7 @@ color: "green"
 <Pi src="Compress_20260515_210105_5217.jpg" />
 
 <Vid 
-  src="মানুষ_মোটা_জানোয়ার.mp4" 
+  src="music/মানুষ_মোটা_জানোয়ার.mp4" 
   layout="block" 
   size={1} 
 />

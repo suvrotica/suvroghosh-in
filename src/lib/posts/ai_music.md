@@ -14,80 +14,80 @@ Acronyms expanded in this post:
 ---
 
 <Vid 
-  src="House_Lights_Down.mp4" 
+  src="music/House_Lights_Down.mp4" 
   layout="block" 
   size={1} 
 />
 
 
 <Vid 
-  src="Cobblestone_Procession.mp4" 
+  src="music/Cobblestone_Procession.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Lanterns_on_the_Cobblestone.mp4" 
+  src="music/Lanterns_on_the_Cobblestone.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="A_Turn_Toward_The_Harbor.mp4" 
+  src="music/A_Turn_Toward_The_Harbor.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Lanterns_by_the_Frozen_River.mp4" 
+  src="music/Lanterns_by_the_Frozen_River.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Patterns_on_the_Glass.mp4" 
+  src="music/Patterns_on_the_Glass.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Passing_the_Last_Station.mp4"  
+  src="music/Passing_the_Last_Station.mp4"  
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Light_Through_the_Tall_Grass.mp4" 
+  src="music/Light_Through_the_Tall_Grass.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Linen_and_Late_Light.mp4" 
+  src="music/Linen_and_Late_Light.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Monsoon_on_the_Balcony.mp4" 
+  src="music/Monsoon_on_the_Balcony.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="After_Hours_on_Fifth.mp4" 
+  src="music/After_Hours_on_Fifth.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Last_Motel_Before_Dawn.mp4" 
+  src="music/Last_Motel_Before_Dawn.mp4" 
   layout="block" 
   size={1} 
 />
 
 <Vid 
-  src="Morning_Over_the_High_Pass.mp4" 
+  src="music/Morning_Over_the_High_Pass.mp4" 
   layout="block" 
   size={1} 
 />

@@ -4,7 +4,7 @@ description: "A personal essay on waking into depression before language, hope, 
 date: "2026-05-19"
 thumbnail: "/images/Compress_20260519_174327_7150.jpg"
 category: "Personal Essay"
-tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Physical","Cup","Fog","Mind"]
+tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Cup","Fog","Physical","Mind"]
 published: true
 color: "slate"
 ---
@@ -20,7 +20,7 @@ NSAID: Nonsteroidal Anti-Inflammatory Drug, a class of pain-relieving and anti-i
 ---
 
 <Vid 
-  src="দরজা_আধখোলা.mp4" 
+  src="music/দরজা_আধখোলা.mp4" 
   layout="block" 
   size={1} 
 />
