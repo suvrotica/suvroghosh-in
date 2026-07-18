@@ -21,6 +21,7 @@ import { readPostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
+const viteCli = path.join(root, 'node_modules', 'vite', 'bin', 'vite.js');
 const SITE = 'https://www.suvroghosh.in';
 const PERSON_ID = `${SITE}/#person`;
 const WEBSITE_ID = `${SITE}/#website`;
@@ -167,7 +168,7 @@ if (!/dateModified \?\? post\.date|post\.dateModified/.test(sitemapSource)) {
 
 function run(cmd, args) {
 	return new Promise((resolvePromise, rejectPromise) => {
-		const child = spawn(cmd, args, { cwd: root, shell: true, stdio: 'ignore' });
+		const child = spawn(cmd, args, { cwd: root, stdio: 'ignore' });
 		child.on('exit', (code) =>
 			code === 0
 				? resolvePromise()
@@ -259,12 +260,11 @@ async function runRenderedChecks() {
 
 	if (!fs.existsSync(path.join(root, '.svelte-kit', 'output'))) {
 		console.log('Building site for rendered-output checks...');
-		await run('npm', ['run', 'build:site']);
+		await run(process.execPath, [viteCli, 'build']);
 	}
 
-	const preview = spawn('npm', ['run', 'preview', '--', '--port', String(PREVIEW_PORT)], {
+	const preview = spawn(process.execPath, [viteCli, 'preview', '--port', String(PREVIEW_PORT)], {
 		cwd: root,
-		shell: true,
 		stdio: 'ignore'
 	});
 

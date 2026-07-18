@@ -4,7 +4,7 @@ description: "When a neighbourhood Durga idol begins to sweat warm salt water, a
 date: "2026-07-18"
 thumbnail: "/images/Compress_20260718_173308_8326.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Horror", "Dread", "Sacrifice"]
+tags: ["Hari Mondal","Jharna Das","Kartik Bose","Lakshmi Nagar","Anirban Pal","Subir","Madhuri","Idol","Clay","Bose"]
 published: true
 color: "#8B0000"
 ---

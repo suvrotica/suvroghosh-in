@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T07:45:48.935007+00:00",
+  "generatedAt": "2026-07-18T12:13:04.190414+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -8899,6 +8899,29 @@
         "Don",
         "Calf",
         "Bandage"
+      ],
+      "wordCount": 130
+    },
+    "the-idol-who-dreamed-of-blood": {
+      "generatedAt": "2026-07-18T12:13:03.979554+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-idol-who-dreamed-of-blood.svg",
+      "source": "src/lib/posts/the-idol-who-dreamed-of-blood.md",
+      "sourceHash": "594debadfabc8e78110c43d0bbbac467ac948fe7f5139701022a6d22a2b5777c",
+      "sourceModified": "2026-07-18T12:12:53.269516+00:00",
+      "topWords": [
+        "Subir",
+        "Idol",
+        "Clay",
+        "Madhuri",
+        "Bose",
+        "Beneath",
+        "Committee",
+        "Anirban",
+        "Towards",
+        "Heart",
+        "Goddess",
+        "Rear"
       ],
       "wordCount": 130
     },

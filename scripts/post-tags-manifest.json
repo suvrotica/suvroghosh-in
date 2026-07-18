@@ -8143,6 +8143,22 @@
 				"Approximately"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/the-idol-who-dreamed-of-blood.md": {
+			"bodyHash": "753569a247e77d7ba1f89e5f0d61b4b50c019aab1be00a3cd85aaf711677b51e",
+			"generatedTags": [
+				"Hari Mondal",
+				"Jharna Das",
+				"Kartik Bose",
+				"Lakshmi Nagar",
+				"Anirban Pal",
+				"Subir",
+				"Madhuri",
+				"Idol",
+				"Clay",
+				"Bose"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10
