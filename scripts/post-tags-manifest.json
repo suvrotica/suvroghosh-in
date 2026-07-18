@@ -8161,7 +8161,7 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/the-student-model-eats-the-teacher.md": {
-			"bodyHash": "324225d9e9d0b251edc14a17cf82b4bf5a861c89a701ba6b3272946381090aa2",
+			"bodyHash": "4ecadc12711fbfcccdcba804673c3b67ce6632fd165d67675c27aa474a72642f",
 			"generatedTags": [
 				"China",
 				"Frontier",
@@ -8173,6 +8173,22 @@
 				"Chinese",
 				"Distilled",
 				"Humanity"
+			],
+			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/the-examination-that-predicts-when-you-die.md": {
+			"bodyHash": "1612043b8ee18f1729dd9ffe7b0515b0aaa6b3230242ff504f3cf52cd91a8908",
+			"generatedTags": [
+				"Singara Seller",
+				"Tiffin Box",
+				"Steel Cabinet",
+				"Meena",
+				"Das",
+				"Vikram",
+				"Priya",
+				"Riya",
+				"Ledger",
+				"Examination"
 			],
 			"generatorVersion": "2026-07-13.1"
 		}

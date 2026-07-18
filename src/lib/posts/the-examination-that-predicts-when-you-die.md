@@ -4,7 +4,7 @@ description: "Students at an elite Calcutta coaching centre receive a surprise e
 date: "2026-07-19"
 thumbnail: "/images/Compress_20260719_015938_8142.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Young Adult", "Dark Fantasy", "Suspense", "Mystery", "Calcutta"]
+tags: ["Singara Seller","Tiffin Box","Steel Cabinet","Meena","Das","Vikram","Priya","Riya","Ledger","Examination"]
 published: true
 color: "#2c3e50"
 ---
