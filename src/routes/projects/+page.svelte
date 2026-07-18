@@ -5,8 +5,8 @@
 	import {
 		breadcrumbSchema,
 		collectionPageSchema,
-		schemaGraph,
-		siteUrl
+		siteUrl,
+		withSiteGraph
 	} from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 
@@ -31,7 +31,7 @@
 		'SvelteKit',
 		'Mojo notebooks'
 	]}
-	schema={schemaGraph([
+	schema={withSiteGraph([
 		collectionPageSchema({
 			name: 'Projects & Systems Work',
 			description,

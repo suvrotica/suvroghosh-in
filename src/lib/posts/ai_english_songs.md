@@ -2,7 +2,7 @@
 title: "English AI Songs"
 thumbnail : "/images/IMG-20260427-WA0010.jpg"
 date: "2026-04-27"
-description: "English"
+description: "A collection of AI-generated English songs by Suvro Ghosh, with the original music videos."
 tags: ["AI"]
 category: "AI Music Song"
 published: true

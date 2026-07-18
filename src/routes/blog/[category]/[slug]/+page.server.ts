@@ -8,7 +8,8 @@ import {
 	blogPostUrl,
 	blogPostingSchema,
 	breadcrumbSchema,
-	schemaGraph
+	faqPageSchema,
+	withSiteGraph
 } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 import { postPath, redirectedPostPath } from '$lib/content/posts';
@@ -66,7 +67,7 @@ export const load: PageServerLoad = async ({ params }) => {
 			keywords,
 			category: catLabel,
 			tags: topicLabels,
-			schema: schemaGraph([
+			schema: withSiteGraph([
 				blogPostingSchema({
 					...metadata,
 					tags: topicLabels,
@@ -74,7 +75,8 @@ export const load: PageServerLoad = async ({ params }) => {
 					category: catLabel,
 					canonicalUrl
 				}),
-				breadcrumbs
+				breadcrumbs,
+				...(metadata.faq?.length ? [faqPageSchema(metadata.faq, canonicalUrl)] : [])
 			])
 		}
 	};

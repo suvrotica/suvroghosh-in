@@ -2,7 +2,7 @@
 title: "Bengali AI Songs"
 thumbnail : "/images/IMG-20260427-WA0002.jpg"
 date: "2026-04-27"
-description: "Bengali"
+description: "A collection of AI-generated Bengali songs by Suvro Ghosh, with the original music videos."
 tags: ["Tracks Whenever","AI"]
 category: "AI Music Song"
 published: true

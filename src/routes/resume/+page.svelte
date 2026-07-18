@@ -2,10 +2,9 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import {
 		defaultOgImage,
-		personSchema,
 		profilePageSchema,
-		schemaGraph,
-		siteUrl
+		siteUrl,
+		withSiteGraph
 	} from '$lib/components/seo/SEO';
 	import Yt from '$lib/components/blog/YouTube.svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -279,10 +278,7 @@
 	{keywords}
 	ogImageUrl={defaultOgImage}
 	ogImageAlt="Suvro Ghosh - Healthcare IT Architect"
-	schema={schemaGraph([
-		personSchema,
-		profilePageSchema({ name: title, description, url: canonicalUrl })
-	])}
+	schema={withSiteGraph([profilePageSchema({ name: title, description, url: canonicalUrl })])}
 />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">

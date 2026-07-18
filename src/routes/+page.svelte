@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteSEO, personSchema, websiteSchema } from '$lib/components/seo/SEO';
+	import { siteSEO, withSiteGraph } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { resolve } from '$app/paths';
@@ -17,13 +17,7 @@
 	}
 </script>
 
-<SEO
-	{...siteSEO}
-	schema={{
-		'@context': 'https://schema.org',
-		'@graph': [personSchema, websiteSchema]
-	}}
-/>
+<SEO {...siteSEO} schema={withSiteGraph()} />
 
 <section class="page-enter mb-12">
 	<div

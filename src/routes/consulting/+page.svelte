@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { siteUrl, personSchema } from '$lib/components/seo/SEO';
+	import { siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import type { PageData } from './$types';
@@ -68,7 +68,7 @@
 	}
 </script>
 
-<SEO {title} {description} {canonicalUrl} schema={personSchema} />
+<SEO {title} {description} {canonicalUrl} schema={withSiteGraph()} />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10">

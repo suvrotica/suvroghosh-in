@@ -2,7 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { tick } from 'svelte';
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { contactPageSchema, personSchema, schemaGraph, siteUrl } from '$lib/components/seo/SEO';
+	import { contactPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import { Button } from '$lib/components/ui/button';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import type { ActionData } from './$types';
@@ -53,10 +53,7 @@
 	{title}
 	{description}
 	{canonicalUrl}
-	schema={schemaGraph([
-		personSchema,
-		contactPageSchema({ name: title, description, url: canonicalUrl })
-	])}
+	schema={withSiteGraph([contactPageSchema({ name: title, description, url: canonicalUrl })])}
 />
 
 <section class="page-enter mx-auto max-w-2xl py-8 md:py-12">

@@ -1,6 +1,6 @@
 ---
 title: "Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market"
-description: "Kenneth Arrow’s 1963 essay remains essential because it explains why healthcare resists ordinary market logic: uncertainty, trust, asymmetry, insurance, professional ethics, and institutional substitutes for missing knowledge. In modern Healthcare IT, the same argument reappears inside EHR data, coding systems, interoperability standards, and AI decision support."
+description: "Kenneth Arrow's 1963 essay explains why healthcare resists ordinary market logic: uncertainty, trust, asymmetry, and insurance. The same argument reappears in EHR data, interoperability standards, and AI decision support."
 thumbnail : "/images/IMG-20260426-WA0008.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"

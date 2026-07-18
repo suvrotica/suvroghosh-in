@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { indexRobots, siteSEO, websiteSchema } from './SEO';
+	import { indexRobots, siteSEO, withSiteGraph } from './SEO';
 	type Props = {
 		title?: string;
 		description?: string;
@@ -25,7 +25,7 @@
 		ogImageUrl = siteSEO.ogImageUrl,
 		ogImageAlt = siteSEO.ogImageAlt,
 		keywords = siteSEO.keywords,
-		schema = websiteSchema, // Defaults to WebSite schema, override with BlogPosting for articles
+		schema = withSiteGraph(), // Default to the shared site graph; pages pass page-specific entities
 		type = 'website',
 		publishedTime,
 		modifiedTime,

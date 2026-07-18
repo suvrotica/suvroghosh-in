@@ -5,7 +5,7 @@
 	import ArchivePagination from '$lib/components/blog/ArchivePagination.svelte';
 	import PostGallery from '$lib/components/blog/PostGallery.svelte';
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { collectionPageSchema, siteUrl } from '$lib/components/seo/SEO';
+	import { collectionPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 
 	let { data }: { data: PageData } = $props();
@@ -26,12 +26,14 @@
 	description={`Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`}
 	{canonicalUrl}
 	keywords={[data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog']}
-	schema={collectionPageSchema({
-		name: `${data.categoryDisplay} Essays`,
-		description: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`,
-		url: `${siteUrl}/blog/${data.categorySlug}`,
-		about: data.categoryDisplay
-	})}
+	schema={withSiteGraph([
+		collectionPageSchema({
+			name: `${data.categoryDisplay} Essays`,
+			description: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`,
+			url: `${siteUrl}/blog/${data.categorySlug}`,
+			about: data.categoryDisplay
+		})
+	])}
 />
 
 <section class="category-layout page-enter">

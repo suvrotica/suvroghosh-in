@@ -18,7 +18,7 @@
 		"notebooks:render": "python scripts/render_notebooks.py",
 		"notebooks:verify": "python scripts/render_notebooks.py --check",
 		"content:generate": "npm run tags:generate && npm run music:generate && npm run images:optimize && python scripts/prebuild_wordclouds.py && python scripts/prebuild_notebooks.py",
-		"prebuild": "npm run content:generate && npm run validate:content && npm run validate:seo && npm run validate:media && npm run search:index && npm run validate:links",
+		"prebuild": "npm run content:generate && npm run validate:content && npm run validate:seo && npm run validate:media && npm run search:index && npm run validate:links && npm run validate:discoverability",
 		"build": "vite build",
 		"search:index": "node scripts/build-search-index.mjs",
 		"preview": "vite preview",
@@ -29,6 +29,7 @@
 		"validate:content": "node scripts/validate-content.mjs",
 		"validate:media": "node scripts/validate-media.mjs",
 		"validate:links": "node scripts/validate-links.mjs",
+		"validate:discoverability": "node scripts/validate-discoverability.mjs",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},

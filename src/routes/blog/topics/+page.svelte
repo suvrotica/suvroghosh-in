@@ -2,7 +2,7 @@
 	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { collectionPageSchema, siteUrl } from '$lib/components/seo/SEO';
+	import { collectionPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import { MIN_TOPIC_CATEGORIES, MIN_TOPIC_POSTS } from '$lib/content/topics';
 
 	let { data }: { data: PageData } = $props();
@@ -18,12 +18,14 @@
 	{description}
 	{canonicalUrl}
 	keywords={['Topics', 'Essays', 'Writing archive', 'Suvro Ghosh']}
-	schema={collectionPageSchema({
-		name: 'Recurring Topics',
-		description,
-		url: canonicalUrl,
-		about: 'Recurring subjects in the writing of Suvro Ghosh'
-	})}
+	schema={withSiteGraph([
+		collectionPageSchema({
+			name: 'Recurring Topics',
+			description,
+			url: canonicalUrl,
+			about: 'Recurring subjects in the writing of Suvro Ghosh'
+		})
+	])}
 />
 
 <section class="page-enter mx-auto max-w-4xl py-4 md:py-8">

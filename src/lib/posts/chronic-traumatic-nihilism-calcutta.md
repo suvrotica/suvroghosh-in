@@ -1,6 +1,6 @@
 ---
 title: "Chronic Traumatic Nihilism From Calcutta"
-description: "A middle-aged middle-class Bengali meditation on how repeated social, economic, and psychological bruising can turn disbelief into a daily weather system. This is not grand philosophical nihilism, but the smaller, nastier kind that grows in rent receipts, dental pain, job markets, family shame, and the unpaid electricity bill."
+description: "A middle-class Bengali meditation on how repeated social, economic, and psychological bruising turns disbelief into a daily weather system - the smaller, nastier nihilism of rent receipts, dental pain, and the unpaid electricity bill."
 thumbnail: "/images/Compress_20260504_043352_2368.jpg"
 date: "2026-05-04"
 category: "Personal Essay"

@@ -89,3 +89,18 @@ The normal site prebuild renders notebooks when `nbconvert` is available. Otherw
 that the committed HTML matches the source notebook, keeping deployment deterministic.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+## Search & discoverability validation
+
+Content, media, link, and SEO checks run automatically before every build via `prebuild`.
+A dedicated discoverability validator checks every published post's frontmatter and inspects the
+actual server-rendered HTML of representative routes (single H1, canonical URL, parseable JSON-LD,
+stable `#person` / `#website` entity IDs, BlogPosting author linkage, and visible-FAQ/FAQPage
+agreement):
+
+```sh
+npm run validate:discoverability
+```
+
+The audit of what was checked and changed lives in `docs/GEO_AUDIT.md`; post-deployment monitoring
+steps live in `docs/GEO_MEASUREMENT.md`.

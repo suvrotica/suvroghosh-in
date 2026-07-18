@@ -5,8 +5,8 @@
 	import {
 		breadcrumbSchema,
 		collectionPageSchema,
-		schemaGraph,
-		siteUrl
+		siteUrl,
+		withSiteGraph
 	} from '$lib/components/seo/SEO';
 
 	let { data }: { data: PageData } = $props();
@@ -30,7 +30,7 @@
 	{description}
 	{canonicalUrl}
 	keywords={['Start here', 'Essays', 'Healthcare IT', 'Science', 'Calcutta', 'Short fiction']}
-	schema={schemaGraph([
+	schema={withSiteGraph([
 		collectionPageSchema({
 			name: 'Start Here',
 			description,

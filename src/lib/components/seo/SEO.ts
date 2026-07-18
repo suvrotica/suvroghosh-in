@@ -19,6 +19,11 @@ export const defaultOgImage = `${siteUrl}/images/IMG-20260427-WA0001.jpg`;
 export const indexRobots =
 	'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 
+// Stable, absolute entity IDs shared by every page on the site. Pages reference these
+// IDs instead of redefining the entities, so crawlers see one coherent graph.
+export const personId = `${siteUrl}/#person`;
+export const websiteId = `${siteUrl}/#website`;
+
 export function absoluteUrl(pathOrUrl?: string) {
 	if (!pathOrUrl) return undefined;
 	if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
@@ -60,7 +65,7 @@ export const siteSEO = {
 export const personSchema: WithContext<Person> = {
 	'@context': 'https://schema.org',
 	'@type': 'Person',
-	'@id': `${siteUrl}/#person`,
+	'@id': personId,
 	name: 'Suvro Ghosh',
 	url: siteUrl,
 	image: defaultOgImage,
@@ -71,14 +76,30 @@ export const personSchema: WithContext<Person> = {
 export const websiteSchema: WithContext<WebSite> = {
 	'@context': 'https://schema.org',
 	'@type': 'WebSite',
+	'@id': websiteId,
 	name: siteTitle,
 	url: siteUrl,
 	description: siteDescription,
 	publisher: {
-		'@id': `${siteUrl}/#person`
+		'@id': personId
 	},
-	inLanguage: 'en-US'
+	inLanguage: 'en'
 };
+
+/**
+ * Wrap page-specific schema entities together with the shared Person and WebSite
+ * entities in a single `@graph`. Every page therefore emits the same stable
+ * `#person` and `#website` definitions, so cross-page `@id` references always
+ * resolve within the same document. Entities already carrying an `@context` are
+ * inserted as-is; plain entity objects are left context-free because the graph
+ * itself declares the context.
+ */
+export function withSiteGraph(pageEntities: unknown[] = []) {
+	return {
+		'@context': 'https://schema.org',
+		'@graph': [personSchema, websiteSchema, ...pageEntities]
+	};
+}
 
 export function blogPostingSchema(post: {
 	title: string;
@@ -93,27 +114,25 @@ export function blogPostingSchema(post: {
 	wordCount?: number;
 }) {
 	const schema: Record<string, unknown> = {
-		'@context': 'https://schema.org',
 		'@type': 'BlogPosting',
+		'@id': `${post.canonicalUrl}#blogposting`,
 		headline: post.title,
 		description: post.description,
 		image: absoluteUrl(post.thumbnail) ?? defaultOgImage,
 		datePublished: post.date,
 		dateModified: post.dateModified ?? post.date,
 		author: {
-			'@type': 'Person',
-			'@id': `${siteUrl}/#person`,
-			name: 'Suvro Ghosh',
-			url: siteUrl
+			'@id': personId
 		},
 		publisher: {
-			'@type': 'Person',
-			'@id': `${siteUrl}/#person`,
-			name: 'Suvro Ghosh'
+			'@id': personId
 		},
 		mainEntityOfPage: {
 			'@type': 'WebPage',
 			'@id': post.canonicalUrl
+		},
+		isPartOf: {
+			'@id': websiteId
 		},
 		articleSection: post.category,
 		keywords: post.tags ?? [],
@@ -125,6 +144,23 @@ export function blogPostingSchema(post: {
 	return schema as unknown as WithContext<BlogPosting>;
 }
 
+export function faqPageSchema(items: { question: string; answer: string }[], pageUrl: string) {
+	return {
+		'@type': 'FAQPage',
+		'@id': `${pageUrl}#faq`,
+		isPartOf: { '@id': pageUrl },
+		mainEntity: items.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer
+			}
+		})),
+		inLanguage: 'en'
+	};
+}
+
 export function collectionPageSchema(page: {
 	name: string;
 	description: string;
@@ -132,12 +168,12 @@ export function collectionPageSchema(page: {
 	about?: string;
 }) {
 	return {
-		'@context': 'https://schema.org',
 		'@type': 'CollectionPage',
+		'@id': page.url,
 		name: page.name,
 		description: page.description,
 		url: page.url,
-		isPartOf: { '@id': `${siteUrl}/#website` },
+		isPartOf: { '@id': websiteId },
 		about: page.about,
 		inLanguage: 'en'
 	};
@@ -145,13 +181,14 @@ export function collectionPageSchema(page: {
 
 export function contactPageSchema(page: { name: string; description: string; url: string }) {
 	return {
-		'@context': 'https://schema.org',
 		'@type': 'ContactPage',
+		'@id': page.url,
 		name: page.name,
 		description: page.description,
 		url: page.url,
+		isPartOf: { '@id': websiteId },
 		mainEntity: {
-			'@id': `${siteUrl}/#person`
+			'@id': personId
 		},
 		inLanguage: 'en'
 	};
@@ -159,13 +196,14 @@ export function contactPageSchema(page: { name: string; description: string; url
 
 export function profilePageSchema(page: { name: string; description: string; url: string }) {
 	return {
-		'@context': 'https://schema.org',
 		'@type': 'ProfilePage',
+		'@id': page.url,
 		name: page.name,
 		description: page.description,
 		url: page.url,
+		isPartOf: { '@id': websiteId },
 		mainEntity: {
-			'@id': `${siteUrl}/#person`
+			'@id': personId
 		},
 		inLanguage: 'en'
 	};
@@ -173,7 +211,6 @@ export function profilePageSchema(page: { name: string; description: string; url
 
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
 	return {
-		'@context': 'https://schema.org',
 		'@type': 'BreadcrumbList',
 		itemListElement: items.map((item, index) => ({
 			'@type': 'ListItem',
@@ -181,9 +218,14 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
 			name: item.name,
 			item: item.url
 		}))
-	} satisfies WithContext<BreadcrumbList>;
+	} satisfies Omit<WithContext<BreadcrumbList>, '@context'>;
 }
 
+/**
+ * @deprecated Prefer `withSiteGraph` so every page also emits the shared
+ * Person and WebSite entities. This remains for backwards compatibility and
+ * simply wraps the given entities in a bare `@graph`.
+ */
 export function schemaGraph(items: unknown[]) {
 	return {
 		'@context': 'https://schema.org',

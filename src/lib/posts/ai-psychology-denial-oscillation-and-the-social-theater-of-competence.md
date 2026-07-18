@@ -1,6 +1,6 @@
 ---
 title: "AI and Denial"
-description: "A system-level analysis of why people who depend on Artificial Intelligence often minimize it in public, and why public opinion swings so wildly between mystical overstatement and contemptuous dismissal. The deeper issue is less about the tool than about status, authorship, labor, and the unsettling rearrangement of human competence."
+description: "Why people who depend on AI often minimize it in public, and why opinion swings between mystical overstatement and contempt. The deeper issue is status, authorship, labor, and the rearrangement of human competence."
 thumbnail : "/images/IMG-20260424-WA0000.jpg"
 date: "2026-04-23"
 category: "Artificial Intelligence"

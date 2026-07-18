@@ -1,6 +1,6 @@
 ---
 title: "Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox"
-description: "Resistant mental illness often leaves a long medication trail, but most systems treat that trail as scattered history instead of active clinical risk. The urgent architectural task is to make psychiatric medication history, interaction burden, adverse effects, and treatment failure visible before the next prescription adds another brick to the patient’s backpack."
+description: "Resistant mental illness leaves a long medication trail that most systems treat as scattered history, not active clinical risk. The task is to make interaction burden and treatment failure visible before the next prescription."
 thumbnail : "/images/IMG-20260425-WA0013.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"

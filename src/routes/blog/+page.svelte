@@ -1,6 +1,11 @@
 <script lang="ts">
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { collectionPageSchema, indexRobots, siteUrl } from '$lib/components/seo/SEO';
+	import {
+		collectionPageSchema,
+		indexRobots,
+		siteUrl,
+		withSiteGraph
+	} from '$lib/components/seo/SEO';
 	import PostBrowse from '$lib/components/blog/PostBrowse.svelte';
 	import PostSearch from '$lib/components/search/PostSearch.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
@@ -36,12 +41,14 @@
 		'Public Health',
 		'Healthcare Interoperability'
 	]}
-	schema={collectionPageSchema({
-		name: data.page > 1 && !data.isSearching ? `All Posts — Page ${data.page}` : 'All Posts',
-		description: pageDescription,
-		url: canonicalUrl,
-		about: 'Essays and blog posts'
-	})}
+	schema={withSiteGraph([
+		collectionPageSchema({
+			name: data.page > 1 && !data.isSearching ? `All Posts — Page ${data.page}` : 'All Posts',
+			description: pageDescription,
+			url: canonicalUrl,
+			about: 'Essays and blog posts'
+		})
+	])}
 />
 
 <ScrollReveal class="page-enter">

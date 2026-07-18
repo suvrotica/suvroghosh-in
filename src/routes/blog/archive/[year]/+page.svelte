@@ -5,7 +5,7 @@
 	import ArchivePagination from '$lib/components/blog/ArchivePagination.svelte';
 	import PostGallery from '$lib/components/blog/PostGallery.svelte';
 	import SEO from '$lib/components/seo/SEO.svelte';
-	import { collectionPageSchema, siteUrl } from '$lib/components/seo/SEO';
+	import { collectionPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 
 	let { data }: { data: PageData } = $props();
@@ -38,12 +38,14 @@
 	description={pageDescription}
 	{canonicalUrl}
 	keywords={[data.year, 'Suvro Ghosh', 'Writing archive', 'Essays', 'Blog']}
-	schema={collectionPageSchema({
-		name: `Writing from ${data.year}${data.page > 1 ? ` — Page ${data.page}` : ''}`,
-		description: pageDescription,
-		url: canonicalUrl,
-		about: `Writing published in ${data.year}`
-	})}
+	schema={withSiteGraph([
+		collectionPageSchema({
+			name: `Writing from ${data.year}${data.page > 1 ? ` — Page ${data.page}` : ''}`,
+			description: pageDescription,
+			url: canonicalUrl,
+			about: `Writing published in ${data.year}`
+		})
+	])}
 />
 
 <section class="page-enter mx-auto max-w-4xl py-4 md:py-8">

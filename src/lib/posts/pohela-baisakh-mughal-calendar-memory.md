@@ -1,6 +1,6 @@
 ---
 title: "Pohela Baisakh"
-description: "Pohela Baisakh is usually narrated as timeless Bengali tradition. It is older than that in some layers, but the calendar as socially organized year-start, fiscally usable cycle, and April-aligned public rhythm bears a decisive Mughal stamp. Forgetting that is not accidental. It fits a larger Indian habit of sanding Muslim contributions out of historical memory while continuing to live inside their institutions."
+description: "Pohela Baisakh is narrated as timeless Bengali tradition, but the calendar as a fiscally usable, April-aligned year-start bears a decisive Mughal stamp - one a larger Indian habit prefers to sand out of memory."
 thumbnail : "/images/IMG-20260422-WA0012.jpg"
 date: "2026-04-22"
 category: "history"
