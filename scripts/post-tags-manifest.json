@@ -8239,6 +8239,22 @@
 				"Mother"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/the-citys-ai-has-depression.md": {
+			"bodyHash": "cc31e197724b3a65dd2db41c61e2c01eda5f8c6df07046d6a4c24d11fbf65a16",
+			"generatedTags": [
+				"Objective Function",
+				"Tea Stall",
+				"Salt Lake",
+				"Servers Hummed",
+				"Direct Channel",
+				"Arup",
+				"Array",
+				"Typed",
+				"Temporary",
+				"Basement"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

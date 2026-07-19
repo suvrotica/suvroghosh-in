@@ -4,7 +4,7 @@ description: "A weary systems engineer in Calcutta must persuade a city-sized in
 date: "2026-07-19"
 thumbnail: "/images/Compress_20260719_094247_7744.jpg"
 category: "Short Fiction"
-tags: ["Short Fiction", "Calcutta", "Philosophical Science Fiction", "Melancholic", "Existentialism"]
+tags: ["Objective Function","Tea Stall","Salt Lake","Servers Hummed","Direct Channel","Arup","Array","Typed","Temporary","Basement"]
 published: true
 color: "#2c3e50"
 ---
