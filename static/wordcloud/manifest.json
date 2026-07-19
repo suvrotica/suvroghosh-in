@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T04:22:00.623747+00:00",
+  "generatedAt": "2026-07-19T16:57:26.451652+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -3379,6 +3379,29 @@
         "Arrive",
         "Afraid",
         "Removes"
+      ],
+      "wordCount": 130
+    },
+    "groundhog-cud": {
+      "generatedAt": "2026-07-19T16:57:25.947745+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/groundhog-cud.svg",
+      "source": "src/lib/posts/groundhog-cud.md",
+      "sourceHash": "787123fc81f8b7e253405274935cc885eb38c99242611434b5c7c3e920fc13c4",
+      "sourceModified": "2026-07-19T16:57:20.839804+00:00",
+      "topWords": [
+        "Ceiling",
+        "Fan",
+        "Think",
+        "Itch",
+        "Cud",
+        "Chewing",
+        "Now",
+        "Loop",
+        "Scratched",
+        "Scratching",
+        "Memory",
+        "Consciousness"
       ],
       "wordCount": 130
     },

@@ -4,7 +4,7 @@ description: "A grotesquely swollen, manic-depressive monologue from a fifty-one
 date: "2026-07-19"
 thumbnail: "/images/Compress_20260719_132339_9546.jpg"
 category: "Personal Essay"
-tags: ["Mental Health", "Manic Depression", "Calcutta", "Existentialism", "Technology Satire", "Recursive Thought"]
+tags: ["Phil Connors","Ceiling Fan","Dopamine Hit","Forced Labor","Cud","Itch","Groundhog","Itches","Ceiling","Chewing"]
 published: true
 color: "#2d1b4e"
 ---

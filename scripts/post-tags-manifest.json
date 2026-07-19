@@ -8255,6 +8255,22 @@
 				"Basement"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/groundhog-cud.md": {
+			"bodyHash": "5833112816ef5186b3b56763458ba9a786f946d35eec5158a1f857c4bf1c7ae9",
+			"generatedTags": [
+				"Phil Connors",
+				"Ceiling Fan",
+				"Dopamine Hit",
+				"Forced Labor",
+				"Cud",
+				"Itch",
+				"Groundhog",
+				"Itches",
+				"Ceiling",
+				"Chewing"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10
