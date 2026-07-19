@@ -70,3 +70,28 @@ test('the framework exposes a deterministic no-WebGL test path', () => {
 	const webgl = read('src', 'lib', 'visualizations', 'webgl.ts');
 	assert.match(webgl, /get\('webgl'\) === 'off'/);
 });
+
+test('the shader maths and teaching copy keep the corrected technical invariants', () => {
+	const fragment = read(
+		'src',
+		'lib',
+		'visualizations',
+		'experiments',
+		'hello-fragment',
+		'fragment.glsl'
+	);
+	const stages = read('src', 'lib', 'visualizations', 'experiments', 'hello-fragment', 'stages.ts');
+	const post = read('src', 'lib', 'posts', 'hello-fragment-your-first-shader-from-scratch.md');
+	const teachingCopy = `${post}\n${stages}`;
+
+	assert.match(fragment, /uv \*= u_scale;\s+mouse \*= u_scale;/);
+	assert.match(fragment, /colour \*= 1\.0 - smoothstep\(0\.18, 1\.15, length\(uv\) \* 0\.72\);/);
+	assert.doesNotMatch(teachingCopy, /pixel address|distance-field habit|dark cancellation lanes/);
+	assert.doesNotMatch(teachingCopy, /smoothstep\(1\.15, 0\.18/);
+	assert.match(teachingCopy, /window space, measured in framebuffer pixels/);
+	assert.match(
+		teachingCopy,
+		/Bright ridges trace places where the combined field passes through zero/
+	);
+	assert.match(post, /does not solve a physical wave equation/);
+});

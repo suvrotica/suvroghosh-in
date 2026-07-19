@@ -3,7 +3,7 @@ title: "Hello, Fragment: Your First Shader from Scratch"
 description: "Build a luminous, pointer-responsive fragment shader from an empty p5.js WebGL canvas, learning pixels, coordinates, uniforms, colour, time, and interference one visible step at a time."
 date: "2026-07-19"
 category: "Visualizations"
-tags: ["Narrow Luminous Ridges","Four Numbers","Fragment Shader","Wave Sources","Messages Shared","Shader","Fragment","Colour","Pixel","Canvas"]
+tags: ["Four Numbers","Fragment Shader","Wave Sources","Messages Shared","Reduce Motion","Shader","Fragment","Colour","Pixel","Canvas"]
 published: true
 thumbnail: "/images/visualizations/hello-fragment-poster.jpg"
 thumbnailAlt: "Luminous cyan, violet, and gold interference rings around a bright focal point beside the words Hello, Fragment"
@@ -90,7 +90,7 @@ The shader eventually returns a `vec4`: a vector containing four numbers.
 gl_FragColor = vec4(red, green, blue, alpha);
 ```
 
-Each channel normally runs from `0.0` to `1.0`.
+For the ordinary normalized framebuffer used here, displayed channel values are normally described as running from `0.0` to `1.0`. Calculations inside the shader may temporarily go outside that range before the framebuffer stores the result.
 
 - `vec4(1.0, 0.0, 0.0, 1.0)` is opaque red.
 - `vec4(0.0, 1.0, 0.0, 1.0)` is opaque green.
@@ -101,7 +101,7 @@ Nothing requires the red number to be fixed. It may come from horizontal positio
 
 # Coordinates that survive any screen
 
-`gl_FragCoord.xy` gives the current fragment's pixel address. On a 720-pixel-wide canvas, the horizontal value might be 360. On a phone, the middle could be 180. Hard-coding either number would make the picture depend on one screen.
+`gl_FragCoord.xy` gives the current fragment's position in window space, measured in framebuffer pixels. On a 720-pixel-wide canvas, the horizontal value might be around 360. On a phone, the middle could be around 180. Hard-coding either number would make the picture depend on one screen.
 
 So the shader receives the canvas resolution and divides by it. Pixel coordinates become normalized coordinates: small portable numbers describing *where* rather than *which physical pixel*.
 
@@ -146,10 +146,13 @@ The complete fragment shader is available in the live exhibit's source drawer. I
 GLSL's `length()` measures the distance from a coordinate to a point.
 
 ```glsl
+uv *= u_scale;
+mouse *= u_scale;
+
 float pointerDistance = length(uv - mouse);
 ```
 
-Every coordinate at the same distance has the same value. Those equal-distance locations form a circle.
+Both positions enter the same scaled coordinate space, so changing **Field scale** does not pull the mathematical pointer away from the visible cursor. Every coordinate at the same distance has the same value. Those equal-distance locations form a circle.
 
 ## 2. Turn distance into repeating rings
 
@@ -173,7 +176,9 @@ float interference = (
 ) / 2.7;
 ```
 
-Where peaks meet peaks, their values reinforce. Where a peak meets a trough, they cancel. Nothing in the code explicitly draws a bright crossing or a dark lane. Those structures emerge from addition.
+Where peaks meet peaks, their values reinforce. Where a peak meets a trough, they cancel. Addition creates the scalar field, but it does not by itself decide which values should look bright. The next operation deliberately highlights the field's zero crossings.
+
+This is an abstract procedural field. It borrows the idea of superposition, but it does not solve a physical wave equation or simulate literal water, sound, or electromagnetic waves.
 
 ## 4. Make narrow luminous ridges
 
@@ -183,7 +188,7 @@ The expression below becomes large when the absolute wave value approaches zero.
 float ridges = pow(1.0 - abs(field), 4.0);
 ```
 
-This is a simple distance-field habit: reshape a broad numerical transition until it becomes a crisp visible boundary.
+This is a simple contour-shaping trick: it turns the zero crossings of a broad scalar field into narrow visible ridges. Those crossings include destructive-interference nodes, where positive and negative contributions cancel. Reinforced peaks and troughs remain visible through the surrounding colour field rather than receiving this extra ridge glow.
 
 ## 5. Choose colour
 
@@ -233,7 +238,7 @@ If the operating system requests reduced motion, the experiment begins paused. I
 
 # What to notice before leaving
 
-Try Calm Field and lower the ring frequency. The image becomes broad enough to read as individual waves. Switch to Electric Interference and look for the dark cancellation lanes. Then choose Cellular Pulse: the same interference field remains, but a second crossed-sine function folds it towards something that resembles a membrane.
+Try Calm Field and lower the ring frequency. The image becomes broad enough to read as individual waves. Switch to Electric Interference and look for the luminous cancellation contours. Then choose Cellular Pulse: the same interference field remains, but a second crossed-sine function folds it towards something that resembles a membrane.
 
 The shader contains no photograph, no pre-rendered animation, and no simulated particles. Every visible frame is reconstructed from coordinates and a handful of numbers.
 

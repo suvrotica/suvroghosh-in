@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T23:28:43.978426+00:00",
+  "generatedAt": "2026-07-19T00:04:00.833453+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -3544,25 +3544,25 @@
       "wordCount": 130
     },
     "hello-fragment-your-first-shader-from-scratch": {
-      "generatedAt": "2026-07-18T23:28:43.479470+00:00",
+      "generatedAt": "2026-07-19T00:04:00.404843+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hello-fragment-your-first-shader-from-scratch.svg",
       "source": "src/lib/posts/hello-fragment-your-first-shader-from-scratch.md",
-      "sourceHash": "e957b8e78202456cde8824010fd99eed76c669a5b60dfbfd73ae989a33a55753",
-      "sourceModified": "2026-07-18T23:27:38.225965+00:00",
+      "sourceHash": "26b23a655150ef3a492b1037e90d6ccad9f87ff4e8d7d5ee83a9ad140ecb4453",
+      "sourceModified": "2026-07-19T00:03:56.479003+00:00",
       "topWords": [
         "Shader",
         "Fragment",
         "Colour",
+        "Field",
         "Canvas",
-        "Pixel",
         "Time",
+        "Pixel",
         "Every",
         "Distance",
+        "Pointer",
         "GPU",
-        "Rectangle",
-        "Coordinates",
-        "Pointer"
+        "Rectangle"
       ],
       "wordCount": 130
     },

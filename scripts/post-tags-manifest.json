@@ -8209,13 +8209,13 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/hello-fragment-your-first-shader-from-scratch.md": {
-			"bodyHash": "0305a9c49ff7b864caefae1187e1c67b493cec0c9c619463aaf8737aa344433f",
+			"bodyHash": "f454f37e19754b8eeb164cf9f54dcf48a433bd5926ef82ae912cfa456399a6c1",
 			"generatedTags": [
-				"Narrow Luminous Ridges",
 				"Four Numbers",
 				"Fragment Shader",
 				"Wave Sources",
 				"Messages Shared",
+				"Reduce Motion",
 				"Shader",
 				"Fragment",
 				"Colour",

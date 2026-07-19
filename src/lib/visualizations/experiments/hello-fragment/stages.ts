@@ -97,7 +97,7 @@ void main() {
 		label: '05',
 		title: 'Turn pixels into normalized coordinates',
 		explanation:
-			'Dividing by resolution turns a device-specific pixel address into a portable coordinate. The same maths now works on a phone or a large monitor.',
+			'Dividing a window-space position by resolution turns device-specific framebuffer coordinates into a portable coordinate. The same maths now works on a phone or a large monitor.',
 		callout:
 			'After centring, zero is in the middle and one unit has the same scale in both directions.',
 		filename: 'fragment.glsl',
@@ -175,7 +175,8 @@ float rings = sin(distanceToMouse * 28.0 - u_time * 3.0);`,
 		title: 'Overlap several waves',
 		explanation:
 			'Two circles can reinforce or cancel each other. Adding their sine waves produces interference: complexity emerging from simple repetition.',
-		callout: 'Bright ridges appear where the waves agree; dark lanes appear where they disagree.',
+		callout:
+			'Bright ridges trace places where the combined field passes through zero, including destructive-interference nodes. Reinforced peaks and troughs appear through the surrounding colour field.',
 		filename: 'fragment.glsl',
 		language: 'glsl',
 		code: `float waveA = sin(length(uv - sourceA) * 18.0 - time);
@@ -203,7 +204,7 @@ float ridges = pow(1.0 - abs(interference), 4.0);
 vec3 colour = palette(colourPhase, u_palette);
 colour += ridges * vec3(0.28, 0.34, 0.42) * u_glow;`,
 		previewFragmentSource: previewFragment(
-			'  vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution) / min(u_resolution.x, u_resolution.y);\n  vec2 mouse = (u_mouse - 0.5 * u_resolution) / min(u_resolution.x, u_resolution.y);\n  float d = length(uv - mouse);\n  uv += normalize(uv - mouse + vec2(0.0001)) * sin(d * 10.0 - u_time * 2.0) * 0.055;\n  vec2 a = vec2(sin(u_time * 0.31), cos(u_time * 0.23)) * 0.34;\n  vec2 b = vec2(cos(u_time * 0.27), sin(u_time * 0.37)) * 0.32;\n  float waves = (sin(length(uv - a) * 19.0 - u_time * 2.2) + sin(length(uv - b) * 20.5 - u_time * 1.8) + sin(d * 23.0 - u_time * 3.0) * 0.7) / 2.7;\n  float ridges = pow(1.0 - abs(waves), 4.0);\n  float phase = 0.5 + 0.5 * sin(waves * 6.283 + length(uv) * 3.0 - u_time * 0.6);\n  vec3 colour = mix(vec3(0.07, 0.01, 0.16), vec3(0.25, 0.9, 1.0), phase);\n  colour += ridges * vec3(0.55, 0.25, 0.8);\n  colour *= smoothstep(1.15, 0.18, length(uv) * 0.72);\n  gl_FragColor = vec4(colour, 1.0);'
+			'  vec2 uv = (gl_FragCoord.xy - 0.5 * u_resolution) / min(u_resolution.x, u_resolution.y);\n  vec2 mouse = (u_mouse - 0.5 * u_resolution) / min(u_resolution.x, u_resolution.y);\n  float d = length(uv - mouse);\n  uv += normalize(uv - mouse + vec2(0.0001)) * sin(d * 10.0 - u_time * 2.0) * 0.055;\n  vec2 a = vec2(sin(u_time * 0.31), cos(u_time * 0.23)) * 0.34;\n  vec2 b = vec2(cos(u_time * 0.27), sin(u_time * 0.37)) * 0.32;\n  float waves = (sin(length(uv - a) * 19.0 - u_time * 2.2) + sin(length(uv - b) * 20.5 - u_time * 1.8) + sin(d * 23.0 - u_time * 3.0) * 0.7) / 2.7;\n  float ridges = pow(1.0 - abs(waves), 4.0);\n  float phase = 0.5 + 0.5 * sin(waves * 6.283 + length(uv) * 3.0 - u_time * 0.6);\n  vec3 colour = mix(vec3(0.07, 0.01, 0.16), vec3(0.25, 0.9, 1.0), phase);\n  colour += ridges * vec3(0.55, 0.25, 0.8);\n  colour *= 1.0 - smoothstep(0.18, 1.15, length(uv) * 0.72);\n  gl_FragColor = vec4(colour, 1.0);'
 		)
 	}
 ];

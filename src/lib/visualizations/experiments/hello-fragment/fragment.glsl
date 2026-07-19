@@ -39,6 +39,7 @@ void main() {
 	float time = u_time * u_speed;
 
 	uv *= u_scale;
+	mouse *= u_scale;
 	float pointerDistance = length(uv - mouse);
 	float pointerWarp = sin(pointerDistance * 10.0 - time * 2.0) * u_warp * 0.06;
 	uv += normalize(uv - mouse + vec2(0.0001)) * pointerWarp;
@@ -60,7 +61,7 @@ void main() {
 	float colourPhase = 0.5 + 0.5 * sin(field * TAU + length(uv) * 3.0 - time * 0.6);
 	vec3 colour = palette(clamp(colourPhase * 0.72 + brightness * 0.28, 0.0, 1.0), u_palette);
 	colour += ridges * vec3(0.28, 0.34, 0.42) * u_glow;
-	colour *= smoothstep(1.15, 0.18, length(uv) * 0.72);
+	colour *= 1.0 - smoothstep(0.18, 1.15, length(uv) * 0.72);
 
 	gl_FragColor = vec4(colour, 1.0);
 }
