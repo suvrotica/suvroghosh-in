@@ -6944,6 +6944,22 @@
       "sourceHash": "7e2b386298baa3c676b0a26975af87ab40f3512e48c552ae741c52b5b6735769",
       "width": 1050
     },
+    "static/images/Compress_20260720_021301_1881.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 390309,
+      "outputHash": "f2e44783f9bc473f9ba1fedfd70940de37429e98ff9ca138297dc72a61da1745",
+      "psnrDb": 36.57,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 476004,
+      "sourceHash": "a41db7e38440c0e2db7f5c0db0b00aee62922135ce1fc3e39ece3a9368624b94",
+      "width": 1672
+    },
     "static/images/IMG-20260422-WA0001.jpg": {
       "format": "JPEG",
       "height": 1048,

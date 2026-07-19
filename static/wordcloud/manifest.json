@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T18:07:27.063619+00:00",
+  "generatedAt": "2026-07-19T20:46:18.184728+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -7588,6 +7588,29 @@
         "AI",
         "Human",
         "Wrong"
+      ],
+      "wordCount": 130
+    },
+    "the-atrophy-of-attention": {
+      "generatedAt": "2026-07-19T20:46:10.990947+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-atrophy-of-attention.svg",
+      "source": "src/lib/posts/the-atrophy-of-attention.md",
+      "sourceHash": "9a05f14b44ca7c0dc1149538e0723abd69efa54a1d36d9f4b8542c9f912e59a3",
+      "sourceModified": "2026-07-19T20:45:44.111521+00:00",
+      "topWords": [
+        "Think",
+        "Fact",
+        "Thought",
+        "Slow",
+        "Small",
+        "Enough",
+        "World",
+        "Almost",
+        "Process",
+        "Little",
+        "Grinding",
+        "Resistance"
       ],
       "wordCount": 130
     },

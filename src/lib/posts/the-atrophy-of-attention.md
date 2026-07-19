@@ -4,7 +4,7 @@ description: "A grotesquely swollen, self-reflective bipolar rant from a fifty-o
 date: "2026-07-19"
 thumbnail: "/images/Compress_20260720_021301_1881.jpg"
 category: "Personal Essay"
-tags: ["AI", "Cognitive Atrophy", "Calcutta", "Nursery Rhymes", "Attention Economy", "Bipolar Monologue", "Technology Critique", "Memory", "Intelligence", "SuvroGhosh"]
+tags: ["Grinding Masticatory Process","Nursery Rhymes","Sixty Thousand","Brain-Dead Zombies","Slow Grinding","Masticatory","Firecrackers","Rhymes","Atrophy","Nursery"]
 published: true
 color: "#2d2d2d"
 ---
