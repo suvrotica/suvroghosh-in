@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T00:04:00.833453+00:00",
+  "generatedAt": "2026-07-19T01:03:01.127186+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -5449,6 +5449,29 @@
         "Even",
         "Second",
         "Perhaps"
+      ],
+      "wordCount": 130
+    },
+    "one-program-at-a-time": {
+      "generatedAt": "2026-07-19T01:02:52.986277+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/one-program-at-a-time.svg",
+      "source": "src/lib/posts/one-program-at-a-time.md",
+      "sourceHash": "9a1c4d11a74e2165ed567a16479ab7e304790eab7311e1c578334ea81e7a6549",
+      "sourceModified": "2026-07-19T01:02:32.712050+00:00",
+      "topWords": [
+        "Photograph",
+        "Computer",
+        "Future",
+        "Small",
+        "Mother",
+        "Father",
+        "Ordinary",
+        "Curtains",
+        "Age",
+        "Merely",
+        "Enough",
+        "Love"
       ],
       "wordCount": 130
     },

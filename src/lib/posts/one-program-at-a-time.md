@@ -4,7 +4,7 @@ description: "An old photograph of a desktop computer, hand-painted walls, and c
 date: "2026-07-19"
 thumbnail: "/photos/Compress_20260719_062743_3541.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Calcutta", "Kolkata", "South Sinthee", "Family", "Memory", "Parents", "Middle Age", "Failure", "Persistence", "Jadavpur University", "Computer Science", "Old Computers", "Bengali Life", "Howrah Bridge", "SuvroGhosh"]
+tags: ["Photograph","Computer","Curtains","Extraordinary","Father","Mattered","Program","Future","Painted","Mother"]
 published: true
 color: "#7A4B35"
 ---

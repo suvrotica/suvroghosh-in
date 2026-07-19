@@ -8223,6 +8223,22 @@
 				"Canvas"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/one-program-at-a-time.md": {
+			"bodyHash": "30c8611b6e1d73e498a20fa606de7ed39f6a7cb27c5f27b50eb51aeecf3a0902",
+			"generatedTags": [
+				"Photograph",
+				"Computer",
+				"Curtains",
+				"Extraordinary",
+				"Father",
+				"Mattered",
+				"Program",
+				"Future",
+				"Painted",
+				"Mother"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

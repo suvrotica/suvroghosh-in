@@ -6896,6 +6896,22 @@
       "sourceHash": "987d818a13b415e0a86cbe80f319b8c0c02e0ed6c185f365c49cd33fa0728265",
       "width": 1122
     },
+    "static/images/Compress_20260719_030443_3148.jpg": {
+      "format": "JPEG",
+      "height": 941,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 238371,
+      "outputHash": "74e632c44cef25b52c07a6044276dbeb98b3f2e2ab9d7632c333fb2d721a9aa7",
+      "psnrDb": 36.18,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 480286,
+      "sourceHash": "4d99927549e4bb6ff3ce264a0a004389b92bc02441da3b3cba01d2ed6a2854db",
+      "width": 1672
+    },
     "static/images/IMG-20260422-WA0001.jpg": {
       "format": "JPEG",
       "height": 1048,
@@ -8271,6 +8287,22 @@
       "sourceBytes": 483108,
       "sourceHash": "2d6c18d1351d5501378aff01646b895472828314d0c27894e7b178b8c2f841b9",
       "width": 1086
+    },
+    "static/photos/Compress_20260719_062743_3541.jpg": {
+      "format": "JPEG",
+      "height": 1086,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1086,
+      "originalWidth": 1448,
+      "outputBytes": 240592,
+      "outputHash": "b95c49b21e1bbbbb1f0488ec65334309a6df81816894600b5e4ddca2282babdf",
+      "psnrDb": 36.11,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 476044,
+      "sourceHash": "a1e5829ab3841da47e40e1d4823abee85933781ab3dda3da476d409368962823",
+      "width": 1448
     }
   },
   "settings": {
