@@ -31,6 +31,8 @@
 		'SvelteKit',
 		'Mojo notebooks',
 		'Interactive visualizations',
+		'D3',
+		'Observable notebooks',
 		'GLSL shaders'
 	]}
 	schema={withSiteGraph([

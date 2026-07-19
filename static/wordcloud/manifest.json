@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T16:57:26.451652+00:00",
+  "generatedAt": "2026-07-19T18:07:27.063619+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-12T19:38:24.717251+00:00",
@@ -3586,6 +3586,29 @@
         "Pointer",
         "GPU",
         "Rectangle"
+      ],
+      "wordCount": 130
+    },
+    "hello-observable-your-first-living-d3-visualization": {
+      "generatedAt": "2026-07-19T18:07:26.344703+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/hello-observable-your-first-living-d3-visualization.svg",
+      "source": "src/lib/posts/hello-observable-your-first-living-d3-visualization.md",
+      "sourceHash": "07e72d4441462cc68de8b2a080dfd7890a39536168587db3ebb07472a5cae7ec",
+      "sourceModified": "2026-07-19T17:58:36.655396+00:00",
+      "topWords": [
+        "Data",
+        "Observable",
+        "SVG",
+        "Cell",
+        "Javascript",
+        "Notebook",
+        "Changes",
+        "Visualization",
+        "Cells",
+        "Marks",
+        "Result",
+        "Circle"
       ],
       "wordCount": 130
     },

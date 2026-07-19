@@ -12,7 +12,8 @@
 	let { posts, totalResults }: Props = $props();
 	const postSubjects: Record<string, readonly string[]> = {
 		'hello-fragment-your-first-shader-from-scratch':
-			visualizationSummaries['hello-fragment'].subjects
+			visualizationSummaries['hello-fragment'].subjects,
+		'hello-observable-your-first-living-d3-visualization': ['Mathematics']
 	};
 	const subjects = [
 		'All',
@@ -20,8 +21,11 @@
 		'Chemistry',
 		'Biology',
 		'Mathematics',
+		'Statistics',
+		'Algorithms',
 		'Computer Science',
-		'Machine Learning'
+		'Machine Learning',
+		'Scientific Computing'
 	] as const;
 	const upcoming = [
 		{
@@ -80,8 +84,9 @@
 				Visualizations
 			</h1>
 			<p class="mb-0 max-w-3xl text-left text-lg leading-relaxed !text-neutral-200 sm:text-xl">
-				An interactive laboratory for exploring physics, chemistry, biology, mathematics, computer
-				science, and machine learning through simulations, generative graphics, and GPU shaders.
+				An interactive laboratory for exploring science, mathematics, statistics, algorithms,
+				computer science, and machine learning with D3, Observable notebooks, p5.js, Canvas, SVG,
+				GLSL, and WebGL.
 			</p>
 		</div>
 	</section>
@@ -172,6 +177,20 @@
 									class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
 									loading="lazy"
 								/>
+							{:else}
+								<div
+									class="visualization-card-placeholder grid h-full place-items-center p-6 text-center"
+									role="img"
+									aria-label={`Interactive preview placeholder for ${post.title}`}
+								>
+									<div>
+										<span
+											class="mb-2 block font-mono text-xs tracking-[0.2em] text-cyan-300 uppercase"
+											>Live notebook</span
+										>
+										<strong class="block text-xl text-white">Observable × D3</strong>
+									</div>
+								</div>
 							{/if}
 						</div>
 						<div class="p-5">
@@ -260,5 +279,16 @@
 			linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
 		background-size: 3rem 3rem;
 		mask-image: radial-gradient(circle at 35% 45%, black, transparent 78%);
+	}
+
+	.visualization-card-placeholder {
+		background-image:
+			linear-gradient(rgba(34, 211, 238, 0.12) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(34, 211, 238, 0.12) 1px, transparent 1px),
+			radial-gradient(circle at 50% 55%, rgba(217, 70, 239, 0.28), transparent 48%);
+		background-size:
+			2rem 2rem,
+			2rem 2rem,
+			auto;
 	}
 </style>

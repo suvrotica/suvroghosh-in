@@ -13,7 +13,9 @@
 		size?: number;
 	} = $props();
 
-	let fullSrc = $derived(src.startsWith('/') || src.startsWith('http') ? src : `/images/${src}`);
+	let fullSrc = $derived(
+		src.trim() === '' ? '' : src.startsWith('/') || src.startsWith('http') ? src : `/images/${src}`
+	);
 
 	function formatAlt(filename: string) {
 		const name = filename.split('/').pop() ?? filename;
@@ -35,7 +37,23 @@
 </script>
 
 <figure class={figureClasses} style={containerStyle}>
-	<img src={fullSrc} alt={finalAlt} loading="lazy" decoding="async" class={imgClasses} />
+	{#if fullSrc}
+		<img src={fullSrc} alt={finalAlt} loading="lazy" decoding="async" class={imgClasses} />
+	{:else}
+		<div
+			class="image-placeholder grid aspect-video w-full place-items-center overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 p-6 text-center shadow-sm dark:border-neutral-700 dark:bg-neutral-950"
+			role="img"
+			aria-label={finalAlt || 'Image placeholder'}
+		>
+			<div>
+				<span
+					class="mb-2 block text-xs font-bold tracking-[0.18em] text-cyan-700 uppercase dark:text-cyan-300"
+					>Interactive article</span
+				>
+				<strong class="block text-xl text-neutral-900 dark:text-white">Image coming soon</strong>
+			</div>
+		</div>
+	{/if}
 	{#if caption}
 		<figcaption
 			class="mt-2 text-center text-sm leading-tight text-neutral-600 italic dark:text-neutral-400"
@@ -44,3 +62,16 @@
 		</figcaption>
 	{/if}
 </figure>
+
+<style>
+	.image-placeholder {
+		background-image:
+			linear-gradient(rgba(8, 145, 178, 0.1) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(8, 145, 178, 0.1) 1px, transparent 1px),
+			radial-gradient(circle at 50% 55%, rgba(192, 38, 211, 0.14), transparent 48%);
+		background-size:
+			2rem 2rem,
+			2rem 2rem,
+			auto;
+	}
+</style>

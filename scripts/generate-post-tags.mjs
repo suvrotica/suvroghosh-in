@@ -59,6 +59,7 @@ const acronymDisplay = new Map(
 		cds: 'CDS',
 		cpu: 'CPU',
 		csv: 'CSV',
+		d3: 'D3',
 		ehr: 'EHR',
 		etl: 'ETL',
 		fhir: 'FHIR',

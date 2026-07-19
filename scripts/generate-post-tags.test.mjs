@@ -69,3 +69,13 @@ test('body hashes ignore frontmatter-only changes', () => {
 
 	assert.equal(bodyHash(first.body), bodyHash(second.body));
 });
+
+test('short visualization technology names keep their canonical display form', () => {
+	const body = `
+D3 maps data to marks. D3 scales translate values. D3 selections update SVG.
+Observable cells use D3 to render data, and D3 keeps the document data-driven.
+`;
+	const tags = extractTags(body, 10, corpus);
+
+	assert.ok(tags.includes('D3'));
+});

@@ -8271,6 +8271,22 @@
 				"Chewing"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/hello-observable-your-first-living-d3-visualization.md": {
+			"bodyHash": "2afa93f411c762160613a96a0b719505e5a8fdb16463610850298682bca1f029",
+			"generatedTags": [
+				"Data Visualization",
+				"Interactive Learning",
+				"Reactive State",
+				"Visual Mark",
+				"Screen Coordinates",
+				"D3",
+				"SVG",
+				"Observable",
+				"JavaScript",
+				"Visualization"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

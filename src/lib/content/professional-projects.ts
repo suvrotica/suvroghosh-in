@@ -119,14 +119,18 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		name: 'Visualizations Interactive Laboratory',
 		context: 'Ongoing laboratory · Science and computing education',
 		detail:
-			'An interactive laboratory for exploring physics, chemistry, biology, mathematics, computer science, and machine learning through simulations, generative graphics, and GPU shaders.',
+			'An interactive laboratory for exploring physics, chemistry, biology, mathematics, statistics, algorithms, computer science, machine learning, and scientific computing through reactive notebooks, simulations, generative graphics, and GPU shaders.',
 		contributions: [
 			'Built a lazy, server-safe p5.js and WebGL framework for interactive experiments inside ordinary Markdown posts.',
+			'Added native Observable runtime and D3 notebook cells with responsive SVG, reactive controls, accessible descriptions, reduced-motion defaults, and deterministic cleanup.',
 			'Designed accessible controls, touch and keyboard interaction, reduced-motion behaviour, static fallbacks, and isolated multi-sketch lifecycle management.',
-			'Opened the collection with a first-principles fragment-shader exhibit that exposes every source file, uniform, preset, and mathematical stage.'
+			'Publishes first-principles lessons with live output and executable source across D3, Observable notebooks, p5.js, GLSL, Canvas, SVG, and WebGL.'
 		],
-		disciplines: ['p5.js', 'GLSL', 'WebGL', 'Interactive education'],
-		relatedPostSlugs: ['hello-fragment-your-first-shader-from-scratch'],
+		disciplines: ['D3', 'Observable', 'p5.js', 'GLSL', 'Canvas', 'SVG', 'WebGL'],
+		relatedPostSlugs: [
+			'hello-fragment-your-first-shader-from-scratch',
+			'hello-observable-your-first-living-d3-visualization'
+		],
 		href: '/blog/visualizations'
 	},
 	{
