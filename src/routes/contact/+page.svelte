@@ -4,6 +4,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { contactPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import { Button } from '$lib/components/ui/button';
+	import { substackLinks } from '$lib/config/links';
 	import type { SubmitFunction } from '@sveltejs/kit';
 	import type { ActionData } from './$types';
 
@@ -226,6 +227,18 @@
 	</div>
 
 	<div class="mt-8 flex items-center justify-center gap-4">
+		<Button
+			href={substackLinks.subscribe}
+			target="_blank"
+			rel="noopener noreferrer"
+			variant="outline"
+			size="icon"
+			aria-label="Substack newsletter"
+		>
+			<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+				<path d="M3 3h18v3H3V3zm0 5h18v3H3V8zm1 5h16v8l-8-4.5L4 21v-8z" />
+			</svg>
+		</Button>
 		<Button
 			href="https://www.linkedin.com/in/suvro-ghosh-78a5aa278"
 			target="_blank"

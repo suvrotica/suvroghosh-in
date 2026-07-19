@@ -1,6 +1,7 @@
 import { dev } from '$app/environment';
 import type { WithContext, WebSite, Person, BlogPosting, BreadcrumbList } from 'schema-dts';
 import { slugifyCategory } from '$lib/content/categories';
+import { substackLinks } from '$lib/config/links';
 
 export const siteTitle = 'Suvro Ghosh';
 export const siteTitleLong =
@@ -11,6 +12,7 @@ export const siteDescription =
 export const siteUrl = dev ? 'http://localhost:5173' : 'https://www.suvroghosh.in';
 
 export const socialUrls = [
+	substackLinks.profile,
 	'https://www.youtube.com/@SuvroGhoshIN',
 	'https://www.linkedin.com/in/suvro-ghosh-78a5aa278'
 ];

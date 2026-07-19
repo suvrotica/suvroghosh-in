@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { substackLinks } from '$lib/config/links';
 
 	const links = [
 		{ href: '/writing', label: 'More writing' },
@@ -43,11 +44,23 @@
 				Calcutta.
 			</p>
 			<p class="mt-3 mb-0 text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-				Questions, factual corrections, and thoughtful disagreements are welcome.
+				The Substack newsletter carries a curated selection of essays from this site. Questions,
+				factual corrections, and thoughtful disagreements are also welcome.
 			</p>
 
 			<nav aria-label="About the author" class="mt-4">
 				<ul class="flex flex-wrap gap-x-5 gap-y-1">
+					<li>
+						<a
+							href={substackLinks.subscribe}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-flex min-h-11 items-center text-sm font-bold text-neutral-950 underline decoration-neutral-500 underline-offset-4 transition-colors hover:text-neutral-600 hover:decoration-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-100 dark:decoration-neutral-500 dark:hover:text-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+						>
+							Subscribe on Substack<span class="ml-1" aria-hidden="true">↗</span>
+							<span class="sr-only">, opens in a new tab</span>
+						</a>
+					</li>
 					{#each links as link (link.href)}
 						<li>
 							<a

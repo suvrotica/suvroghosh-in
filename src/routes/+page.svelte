@@ -3,6 +3,7 @@
 	import { siteSEO, withSiteGraph } from '$lib/components/seo/SEO';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { substackLinks } from '$lib/config/links';
 	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 
@@ -150,6 +151,14 @@
 					href={resolve('/blog/topics/[topic]', { topic: 'music' })}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>Music</a
+				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
+					href={substackLinks.subscribe}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
+					>Newsletter<span class="sr-only">, opens in a new tab</span></a
 				>
 			</div>
 		</div>

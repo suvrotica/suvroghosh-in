@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { substackLinks } from '$lib/config/links';
 
 	const year = new Date().getFullYear();
 	const email = 'contact@suvroghosh.in';
@@ -30,6 +31,11 @@
 	] as const;
 
 	const externalLinks = [
+		{
+			href: substackLinks.subscribe,
+			label: 'Substack newsletter',
+			icon: 'M3 3h18v3H3V3zm0 5h18v3H3V8zm1 5h16v8l-8-4.5L4 21v-8z'
+		},
 		{
 			href: 'https://www.linkedin.com/in/suvro-ghosh-78a5aa278',
 			label: 'LinkedIn',

@@ -52,7 +52,14 @@ export default defineConfig(
 	},
 	{
 		// These components bind user/content-provided absolute external URLs.
-		files: ['src/lib/components/blog/YouTube.svelte', 'src/lib/components/layout/Footer.svelte'],
+		files: [
+			'src/lib/components/blog/YouTube.svelte',
+			'src/lib/components/blog/AuthorPanel.svelte',
+			'src/lib/components/layout/Footer.svelte',
+			'src/lib/components/layout/Header.svelte',
+			'src/routes/+page.svelte',
+			'src/routes/writing/+page.svelte'
+		],
 		rules: {
 			'svelte/no-navigation-without-resolve': 'off'
 		}

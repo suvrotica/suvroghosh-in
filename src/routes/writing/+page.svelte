@@ -3,6 +3,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
 	import { Badge } from '$lib/components/ui/badge';
+	import { substackLinks } from '$lib/config/links';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -34,6 +35,35 @@
 			dark, and intentionally human.
 		</p>
 	</header>
+
+	<aside
+		aria-labelledby="newsletter-heading"
+		class="mb-12 flex flex-col gap-5 rounded-lg border border-neutral-300 bg-neutral-100 p-5 sm:flex-row sm:items-center sm:justify-between dark:border-neutral-700 dark:bg-neutral-900/70"
+	>
+		<div>
+			<p
+				class="mb-1 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
+			>
+				SuvroGhosh.IN — Writing &amp; Systems
+			</p>
+			<h2 id="newsletter-heading" class="mb-1 text-xl font-bold text-neutral-950 dark:text-white">
+				Selected essays, sent occasionally
+			</h2>
+			<p class="mb-0 max-w-2xl text-left text-sm text-neutral-600 dark:text-neutral-400">
+				Subscribe on Substack for a curated selection from this library—healthcare systems, applied
+				AI, science, technology, society, and life in Calcutta.
+			</p>
+		</div>
+		<a
+			href={substackLinks.subscribe}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="inline-flex min-h-11 shrink-0 items-center justify-center rounded-md bg-neutral-900 px-5 py-2.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:bg-neutral-100 dark:text-neutral-950 dark:hover:bg-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+		>
+			Subscribe on Substack <span class="ml-2" aria-hidden="true">↗</span>
+			<span class="sr-only">, opens in a new tab</span>
+		</a>
+	</aside>
 
 	<section class="mb-12" aria-labelledby="recent-writing-heading">
 		<div
