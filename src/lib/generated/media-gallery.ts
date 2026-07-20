@@ -3671,6 +3671,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	],
 	"thumbnails": [
 		{
+			"name": "art-ai-layoff-trap-firing-your-customers.jpg",
+			"src": "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg",
+			"bytes": 139001,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "safe-a-cup-of-cha-is-not-a-small-thing.jpg",
 			"src": "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg",
 			"bytes": 119540,
@@ -3772,13 +3779,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
 			"src": "/thumbnail/safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
 			"bytes": 127613,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-layoff-trap-firing-your-customers.jpg",
-			"src": "/thumbnail/safe-ai-layoff-trap-firing-your-customers.jpg",
-			"bytes": 134356,
 			"width": 1200,
 			"height": 800
 		},

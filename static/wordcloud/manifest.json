@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T02:54:42.675254+00:00",
+  "generatedAt": "2026-07-20T03:18:08.034776+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -347,12 +347,12 @@
       "wordCount": 130
     },
     "ai-layoff-trap-firing-your-customers": {
-      "generatedAt": "2026-07-20T02:02:05.115736+00:00",
+      "generatedAt": "2026-07-20T03:18:07.256403+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-layoff-trap-firing-your-customers.svg",
       "source": "src/lib/posts/ai-layoff-trap-firing-your-customers.md",
-      "sourceHash": "1628187b2afa847c628cbec5b26ec50117cf6652c4c2c1ce5b15eb5e05799f6b",
-      "sourceModified": "2026-07-20T02:01:41.998285+00:00",
+      "sourceHash": "1a7c08a6b81266e19410a5e7c4c82b58337a88f5e7518dc11676ff41c0854064",
+      "sourceModified": "2026-07-20T03:15:48.182896+00:00",
       "topWords": [
         "AI",
         "Firm",

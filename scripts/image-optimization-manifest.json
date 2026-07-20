@@ -8352,6 +8352,22 @@
       "sourceHash": "a1e5829ab3841da47e40e1d4823abee85933781ab3dda3da476d409368962823",
       "width": 1448
     },
+    "static/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 139001,
+      "outputHash": "68d88a8aa16965931b3c8f50fe0963c5d885e5b3df05489f147420c21460a254",
+      "psnrDb": 37.22,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 197452,
+      "sourceHash": "f32f17696f65e89b9416c8f4945c16cab9a10269073728691815407b92274032",
+      "width": 1200
+    },
     "static/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -8590,22 +8606,6 @@
       "resized": false,
       "sourceBytes": 138929,
       "sourceHash": "e1c1f8fc06e91475a7fdaa66d2aeb9843c6171be78740b313a5b8373d2c2e61c",
-      "width": 1200
-    },
-    "static/thumbnail/safe-ai-layoff-trap-firing-your-customers.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 134356,
-      "outputHash": "5fba55e4ebb69bc647b7dbdb7b73b3364161eca1f6d42f8e47c869ce18a0963f",
-      "psnrDb": 41.87,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 146520,
-      "sourceHash": "01c68067b6b9a0eef388d8a2c60685fc73d7da65e8425a6c89a9b7a2728c2eb9",
       "width": 1200
     },
     "static/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg": {

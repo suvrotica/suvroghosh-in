@@ -6,12 +6,12 @@ category: "AI Economics"
 tags: ["AI Layoff","Layoff Trap","Firm","Firms","AI","Automation","Automates","Demand","Spending","Company"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-ai-layoff-trap-firing-your-customers.jpg"
+thumbnail: "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-layoff-trap-firing-your-customers.jpg" />
+<Pi src="/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg" />
 
 Acronyms used: AI means Artificial Intelligence, software that performs tasks normally requiring human judgment or cognition. UBI means Universal Basic Income, a recurring cash payment given to people without requiring employment. CEO means Chief Executive Officer, the top executive responsible for running a company. SaaS means Software as a Service, software delivered online by subscription. GDP means Gross Domestic Product, the total value of goods and services produced in an economy.
 
