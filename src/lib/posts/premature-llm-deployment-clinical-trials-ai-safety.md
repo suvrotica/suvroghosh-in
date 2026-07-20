@@ -6,12 +6,12 @@ category: "AI Safety"
 tags: ["LLMs","Chatbot","Pill","Users","Conversation","Engagement","Boring","User","Drug","Software"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-premature-llm-deployment-clinical-trials-ai-safety.jpg"
+thumbnail: "/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-premature-llm-deployment-clinical-trials-ai-safety.jpg" />
+<Pi src="/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg" />
 
 Large Language Models [LLMs: AI systems trained to generate text and other outputs by predicting patterns in language.]
 

@@ -3678,6 +3678,62 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-calcutta-summer-of-2026.jpg",
+			"src": "/thumbnail/art-calcutta-summer-of-2026.jpg",
+			"bytes": 133548,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-claude-mythos-hype-and-security-hygiene.jpg",
+			"src": "/thumbnail/art-claude-mythos-hype-and-security-hygiene.jpg",
+			"bytes": 128735,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-commercial-hifi-sounds-for-ordinary-ears.jpg",
+			"src": "/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg",
+			"bytes": 181608,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-intro.jpg",
+			"src": "/thumbnail/art-intro.jpg",
+			"bytes": 141043,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-kenneth-arrow-medical-care.jpg",
+			"src": "/thumbnail/art-kenneth-arrow-medical-care.jpg",
+			"bytes": 111284,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
+			"src": "/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
+			"bytes": 90681,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-new-mantra.jpg",
+			"src": "/thumbnail/art-the-new-mantra.jpg",
+			"bytes": 103240,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-router-behind-the-television.jpg",
+			"src": "/thumbnail/art-the-router-behind-the-television.jpg",
+			"bytes": 99803,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "safe-a-cup-of-cha-is-not-a-small-thing.jpg",
 			"src": "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg",
 			"bytes": 119540,
@@ -4098,13 +4154,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-calcutta-summer-of-2026.jpg",
-			"src": "/thumbnail/safe-calcutta-summer-of-2026.jpg",
-			"bytes": 134431,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-callous-political-statements-gold-karigars-and-fertiliser.jpg",
 			"src": "/thumbnail/safe-callous-political-statements-gold-karigars-and-fertiliser.jpg",
 			"bytes": 123549,
@@ -4161,23 +4210,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-claude-mythos-hype-and-security-hygiene.jpg",
-			"src": "/thumbnail/safe-claude-mythos-hype-and-security-hygiene.jpg",
-			"bytes": 123696,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-coding-agents-after-the-keyboard.jpg",
 			"src": "/thumbnail/safe-coding-agents-after-the-keyboard.jpg",
 			"bytes": 128820,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-commercial-hifi-sounds-for-ordinary-ears.jpg",
-			"src": "/thumbnail/safe-commercial-hifi-sounds-for-ordinary-ears.jpg",
-			"bytes": 114679,
 			"width": 1200,
 			"height": 800
 		},
@@ -4714,13 +4749,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-intro.jpg",
-			"src": "/thumbnail/safe-intro.jpg",
-			"bytes": 131658,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg",
 			"src": "/thumbnail/safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg",
 			"bytes": 107331,
@@ -4752,13 +4780,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg",
 			"src": "/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg",
 			"bytes": 120226,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-kenneth-arrow-medical-care.jpg",
-			"src": "/thumbnail/safe-kenneth-arrow-medical-care.jpg",
-			"bytes": 116503,
 			"width": 1200,
 			"height": 800
 		},
@@ -5067,13 +5088,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-predepression-tea-bipolar-calcutta.jpg",
 			"src": "/thumbnail/safe-predepression-tea-bipolar-calcutta.jpg",
 			"bytes": 123608,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-premature-llm-deployment-clinical-trials-ai-safety.jpg",
-			"src": "/thumbnail/safe-premature-llm-deployment-clinical-trials-ai-safety.jpg",
-			"bytes": 109540,
 			"width": 1200,
 			"height": 800
 		},
@@ -5701,13 +5715,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-new-mantra.jpg",
-			"src": "/thumbnail/safe-the-new-mantra.jpg",
-			"bytes": 120082,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-ordinary-things.jpg",
 			"src": "/thumbnail/safe-the-ordinary-things.jpg",
 			"bytes": 123664,
@@ -5767,13 +5774,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-robot-begins-as-a-loose-wire.jpg",
 			"src": "/thumbnail/safe-the-robot-begins-as-a-loose-wire.jpg",
 			"bytes": 120833,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-router-behind-the-television.jpg",
-			"src": "/thumbnail/safe-the-router-behind-the-television.jpg",
-			"bytes": 117749,
 			"width": 1200,
 			"height": 800
 		},

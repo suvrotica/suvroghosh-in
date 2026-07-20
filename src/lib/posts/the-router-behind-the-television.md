@@ -6,12 +6,12 @@ category: "Cybersecurity"
 tags: ["Router","Patch","Password","Device","Passwords","Worm","Updates","Nouns","Corporate","Television"]
 published: true
 color: "#22C55E"
-thumbnail: "/thumbnail/safe-the-router-behind-the-television.jpg"
+thumbnail: "/thumbnail/art-the-router-behind-the-television.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-router-behind-the-television.jpg" />
+<Pi src="/thumbnail/art-the-router-behind-the-television.jpg" />
 
 Acronyms used in this post:
 

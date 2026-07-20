@@ -6,12 +6,12 @@ category: "career"
 tags: ["SQL Server","Machine Learning","Programming","SQL","Statistical","Language","UML","Data","Software","Systems"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-intro.jpg"
+thumbnail: "/thumbnail/art-intro.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-intro.jpg" />
+<Pi src="/thumbnail/art-intro.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

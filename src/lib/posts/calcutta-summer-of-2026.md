@@ -6,12 +6,12 @@ category: "Climate"
 tags: ["Cooling","Heat","Shade","Boring","Heat-Aware","Niño","Ward-Level","Shaded","Climate","Calcutta"]
 published: true
 color: "orange"
-thumbnail: "/thumbnail/safe-calcutta-summer-of-2026.jpg"
+thumbnail: "/thumbnail/art-calcutta-summer-of-2026.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-summer-of-2026.jpg" />
+<Pi src="/thumbnail/art-calcutta-summer-of-2026.jpg" />
 
 Acronyms used in this post:
 

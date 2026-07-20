@@ -6,12 +6,12 @@ category: "AI Security"
 tags: ["Claude Mythos","Model Weights","Mythos","Model","Anthropic","Release","Access","AI-assisted","Capability","Credentials"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-claude-mythos-hype-and-security-hygiene.jpg"
+thumbnail: "/thumbnail/art-claude-mythos-hype-and-security-hygiene.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-claude-mythos-hype-and-security-hygiene.jpg" />
+<Pi src="/thumbnail/art-claude-mythos-hype-and-security-hygiene.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

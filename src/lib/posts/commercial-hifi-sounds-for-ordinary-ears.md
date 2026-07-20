@@ -6,12 +6,12 @@ category: "Audio Technology"
 tags: ["Audio Codec","Center Channel","Lossless","Audio","Mono","Subwoofer","Stereo","Speakers","DTS","Surround"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-commercial-hifi-sounds-for-ordinary-ears.jpg"
+thumbnail: "/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-commercial-hifi-sounds-for-ordinary-ears.jpg" />
+<Pi src="/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg" />
 
 Acronyms and short explanations:
 

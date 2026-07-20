@@ -6,12 +6,12 @@ category: "Economics"
 tags: ["Adverse Selection","Public Provision","Moral Hazard","Medical Care","United States","Arrow","Insurance","Care","Patient","Medical"]
 published: true
 color: "#2c5282"
-thumbnail: "/thumbnail/safe-kenneth-arrow-medical-care.jpg"
+thumbnail: "/thumbnail/art-kenneth-arrow-medical-care.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-kenneth-arrow-medical-care.jpg" />
+<Pi src="/thumbnail/art-kenneth-arrow-medical-care.jpg" />
 
 The plastic chair in a clinic waiting room does not invite economic theory.
 
