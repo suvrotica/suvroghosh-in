@@ -2,16 +2,16 @@
 title: "The Wetland Under the Lights"
 description: "During Durga Puja in Calcutta, a temporary electrician follows a pattern of failing lights into a hidden artificial wetland where something ancient has been taught to remember a human name."
 date: "2026-06-13"
-thumbnail: "/images/Compress_20260613_133242_2016.jpg"
 category: "Short Fiction"
 tags: ["Junction Box","Behala Team","Lahiri Whispered","Nirmal Asked","Nirmal Thought","Lahiri","Tublu","Wetland","Worms","Riju"]
 published: true
 color: "Black"
+thumbnail: "/thumbnail/safe-the-wetland-under-the-lights.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_133242_2016.jpg" />
+<Pi src="/thumbnail/safe-the-wetland-under-the-lights.jpg" />
 
 # THIS IS A WORK OF FICTION
 

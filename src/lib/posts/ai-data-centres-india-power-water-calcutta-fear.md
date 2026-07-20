@@ -2,16 +2,16 @@
 title: "The AI Cloud Will Also Need a Pump, a Plug, and a Tanker"
 description: "India’s AI data centre boom is being sold as a national leap into the future, but for people living with weak power, water stress, heat, and climate anxiety, the real question is simpler: who gets the reliable electricity and who waits in the dark?"
 date: "2026-05-14"
-thumbnail: "/images/Compress_20260514_063232_2544.jpg"
 category: "Technology"
 tags: ["Data Centre","Data Centres","Centre","AI","Centres","Wastewater","Power","India","Grid","Groundwater"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-ai-data-centres-india-power-water-calcutta-fear.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260514_063232_2544.jpg" />
+<Pi src="/thumbnail/safe-ai-data-centres-india-power-water-calcutta-fear.jpg" />
 
 Acronyms used here:
 

@@ -2,16 +2,16 @@
 title: "The Static in the Room"
 description: "A personal essay from a middle-aged Calcutta life about depression, anhedonia, hiding indoors, and the strange business of continuing when the inner music has stopped."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_170100_0664.jpg"
 category: "Personal Essay"
 tags: ["Hide","Remember","Hiding","Sitting","Skull","Music","Writing","Work","Flat","Teeth"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-static-in-the-room.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_170100_0664.jpg" />
+<Pi src="/thumbnail/safe-the-static-in-the-room.jpg" />
 
 
 

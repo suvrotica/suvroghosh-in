@@ -2,16 +2,16 @@
 title: "The Vegetarian"
 description: "In a Calcutta psychiatric ward, a lifelong vegetarian discovers that purity is only another appetite wearing clean clothes."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_104130_0905.jpg"
 category: "Short Fiction"
 tags: ["Sister Madhuri","Nirmalya","Madhuri","Bappa","Vegetarian","Sister","Ward","Subho","Harish","Dutta"]
 published: true
 color: "dark green"
+thumbnail: "/thumbnail/safe-food-chain-reversal.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_104130_0905.jpg" />
+<Pi src="/thumbnail/safe-food-chain-reversal.jpg" />
 
 # THIS IS A WORK OF FICTION
 

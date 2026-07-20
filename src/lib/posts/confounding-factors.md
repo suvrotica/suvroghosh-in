@@ -2,16 +2,16 @@
 title: "Confounding Factors and the Dashboard That Lied Politely"
 description: "A Calcutta-grounded essay on how confounding factors enter healthcare IT, clinical analytics, dashboards, and AI models before anyone notices the conclusion has already been bent."
 date: "2026-06-24"
-thumbnail: "/images/IMG-20260423-WA0013.jpg"
 category: "healthcare-it"
-tags: ["Target Trial Emulation","Familiar Shapes","Distortion Enters","Keeps Happening","AI Learns","Confounding","Causal","Outcome","Exposure","Data"]
+tags: ["Target Trial Emulation","Familiar Shapes","Distortion Enters","Keeps Happening","AI Learns","Confounding","Causal","Exposure","Outcome","Data"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-confounding-factors.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0013.jpg" />
+<Pi src="/thumbnail/safe-confounding-factors.jpg" />
 
 The dashboard is usually too clean.
 

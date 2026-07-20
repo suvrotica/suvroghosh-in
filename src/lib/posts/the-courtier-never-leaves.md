@@ -2,16 +2,16 @@
 title: "The Courtier Never Leaves"
 description: "A grotesquely swollen bipolar monologue from a fifty-one-year-old Calcutta consciousness, ruminating on depression as courtier, the flatness of manic-depressive existence, and the precarious nausea of being alive in July 2026."
 date: "2026-07-11"
-thumbnail: "/images/Compress_20260711_101717_7907.jpg"
 category: "Mental Health"
-tags: ["Thin Infrequent","Courtier","Infrequent","July","Manic","Phantom","Wonder","Amygdala","Endlessly","Bipolar"]
+tags: ["Thin Infrequent","Courtier","Infrequent","July","Amygdala","Phantom","Wonder","Manic","Endlessly","Bipolar"]
 published: true
 color: "#2d3436"
+thumbnail: "/thumbnail/safe-the-courtier-never-leaves.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260711_101717_7907.jpg" />
+<Pi src="/thumbnail/safe-the-courtier-never-leaves.jpg" />
 
 Waking up is an act of geological treachery, a slow volcanic effusion of the self into a consciousness that feels less like awakening and more like being extruded through a colonic aperture of time itself, and this morning—if one can dignify the grey smear between 3 AM and 11 AM with such a word—my mouth tastes of copper pennies and the metaphysical afterbirth of dreams that died in committee, the kind of taste that makes you wonder whether your tongue has been marinating in the bilious secretions of a disappointed god or whether this is simply what fifty-one years of unprocessed cortisol does to a man's mucous membranes, and I lie there, supine, staring upward at a surface that has never once in three decades offered anything resembling an epiphany, a surface the color of old phlegm, and I think: depression is my most consistent courtier, through ups and downs certainly in downs naturally I can always find this old companion since I started having my bipolar swings in my adolescence, unnamed as it went for a long time until it was diagnosed in the US, and yes, the US, that glittering hemorrhoid of a nation where they charge you three hundred dollars to be told your brain is a defective radio picking up static from the Pleistocene, where the psychiatrists speak in the tonal register of automated customer service and prescribe you pills that make your genitals feel like abandoned real estate, but I digress, or rather, I regress, because that is the only direction this mind knows how to travel, backward, sideways, into the cul-de-sacs of memory where the wallpaper is peeling and the plumbing groans with the sound of ancestral disappointment.
 

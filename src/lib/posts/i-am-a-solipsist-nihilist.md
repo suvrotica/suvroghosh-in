@@ -2,16 +2,16 @@
 title: "I Am a Solipsist Nihilist, Unfortunately Before Breakfast"
 description: "A personal essay on doubt, meaning, atheism, depression, and the small daily comedy of trying to live in Calcutta when the universe has misplaced its instruction manual."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_141117_7335.jpg"
 category: "Personal Essay"
-tags: ["Solipsist Nihilist","Nothing Matters","Nihilist","Nihilism","Solipsist","Meaning","Matters","Cancel","Maybe","Universe"]
+tags: ["Solipsist Nihilist","Nothing Matters","Nihilist","Nihilism","Solipsist","Meaning","Matters","Maybe","Cancel","Universe"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-i-am-a-solipsist-nihilist.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_141117_7335.jpg" />
+<Pi src="/thumbnail/safe-i-am-a-solipsist-nihilist.jpg" />
 
 Acronyms and terms:
 

@@ -2,16 +2,16 @@
 title: "The Zeitgeist of Calcutta Has Changed"
 description: "A sharp, personal essay on how Kolkata’s moral weather has shifted from old neighborhood shame to new public display, nightlife, selfishness, religiosity, and everyday duplicity."
 date: "2026-05-15"
-thumbnail: "/images/Compress_20260515_202343_3686.jpg"
 category: "Calcutta"
 tags: ["Somebody","Pleasure","Hypocrisy","Speaks","Paid","Tea","Defeated","Bar","Fish","Appetite"]
 published: true
 color: "crimson"
+thumbnail: "/thumbnail/safe-the-zeitgeist-of-calcutta-has-changed.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260515_202343_3686.jpg" />
+<Pi src="/thumbnail/safe-the-zeitgeist-of-calcutta-has-changed.jpg" />
 
 <Vid 
   src="music/বাঁকা_গ্লাসে_শহর.mp4" 

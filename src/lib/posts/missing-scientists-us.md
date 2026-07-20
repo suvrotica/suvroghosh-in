@@ -1,17 +1,17 @@
 ---
 title: "The Missing Scientists"
 description: "Why the louder story is not espionage or cinematic disappearance, but bureaucratic rupture, workforce attrition, institutional fear, and a political culture that treats science as disposable until it wants a spectacle."
-thumbnail : "/images/IMG-20260423-WA0016.jpg"
 date: "2026-04-22"
 category: "healthcare-it"
-tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Administration","Agencies","Research"]
+tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Research","Administration","Agency"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-missing-scientists-us.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0016.jpg" />
+<Pi src="/thumbnail/safe-missing-scientists-us.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

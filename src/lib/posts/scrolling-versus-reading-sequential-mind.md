@@ -1,17 +1,17 @@
 ---
 title: "Why Scrolling Beats Reading, Until It Ruins the Reader"
 description: "Endless scrolling and reading are both sequential mental acts, but they make opposite demands on attention, memory, and responsibility. One feeds the mind with novelty; the other asks the mind to become a structure."
-thumbnail : "/images/IMG-20260427-WA0017.jpg"
 date: "2026-04-27"
 category: "Technology"
 tags: ["Scrolling","Reading","Book","Feed","Sequential","Rebellious","Mind","Maybe","Remember","Clip"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-scrolling-versus-reading-sequential-mind.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260427-WA0017.jpg" />
+<Pi src="/thumbnail/safe-scrolling-versus-reading-sequential-mind.jpg" />
 
 
 

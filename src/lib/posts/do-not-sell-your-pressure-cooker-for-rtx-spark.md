@@ -2,16 +2,16 @@
 title: "Do Not Sell Your Pressure Cooker for RTX Spark"
 description: "RTX Spark may become a serious local AI machine, but for most broke Calcuttans it is not a rescue boat. It is a costly tool, and costly tools must earn before they are worshipped."
 date: "2026-06-07"
-thumbnail: "/images/Compress_20260607_152745_5752.jpg"
 category: "Technology"
 tags: ["RTX Spark","Operations Per Second","Unified Memory","AI Performance","Column Write","RTX","Spark","AI","NVIDIA","Workloads"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260607_152745_5752.jpg" />
+<Pi src="/thumbnail/safe-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg" />
 
 Acronyms and terms used in this post:
 

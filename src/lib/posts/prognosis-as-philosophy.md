@@ -1,17 +1,17 @@
 ---
 title: "The Prognosis Is Clarity"
 description: "A philosophical essay on aging, bitterness, Schopenhauer, disappointment, and the strange late-life discovery that not every sour older person is morally defective. Some have simply watched the conjurer’s trick too many times."
-thumbnail : "/images/Compress_20260502_180443_3646.jpg"
 date: "2026-05-02"
 category: "Philosophy"
 tags: ["Bitterness","Schopenhauer","Desire","Bitter","Mankind","Trick","Happiness","Love","Young","Wisdom"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-prognosis-as-philosophy.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260502_180443_3646.jpg" />
+<Pi src="/thumbnail/safe-prognosis-as-philosophy.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

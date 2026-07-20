@@ -2,16 +2,16 @@
 title: "Trapped by the Room, the Mirror, and the Feed"
 description: "A Calcutta-flavored reflection on feeling trapped by memory, illness, anxiety, social media, modern artificial life, and the new soft authority of machines that sound too confident."
 date: "2026-05-30"
-thumbnail: "/images/Compress_20260530_043139_9997.jpg"
 category: "Mental Health"
-tags: ["Intend Harm","Intend","Trapped","Mirror","LLM","Harm","Trap","Future","Window","Real"]
+tags: ["Intend Harm","Intend","Trapped","LLM","Mirror","Harm","Trap","Future","Real","Window"]
 published: true
 color: "#4B5563"
+thumbnail: "/thumbnail/safe-trapped-by-the-room-mirror-and-feed.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260530_043139_9997.jpg" />
+<Pi src="/thumbnail/safe-trapped-by-the-room-mirror-and-feed.jpg" />
 
 
 

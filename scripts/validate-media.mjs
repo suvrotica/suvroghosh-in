@@ -5,7 +5,7 @@ import path from 'node:path';
 const root = process.cwd();
 const sourceRoot = path.join(root, 'src');
 const staticRoot = path.join(root, 'static');
-const mediaDirectories = ['images', 'photos', 'videos', 'audio'];
+const mediaDirectories = ['images', 'photos', 'thumbnail', 'videos', 'audio'];
 const sourceExtensions = new Set(['.md', '.svx', '.svelte', '.ts', '.js', '.mjs', '.css', '.html']);
 const mediaExtensions = new Set([
 	'.avif',
@@ -68,8 +68,8 @@ function addReference(references, value, source) {
 
 function extractReferences(file, references) {
 	const text = fs.readFileSync(file, 'utf8');
-	const quotedPath = /(["'])(\/(?:images|photos|videos|audio)\/[^"'`\r\n]+?)\1/g;
-	const markdownPath = /\]\((\/(?:images|photos|videos|audio)\/[^)\s]+)\)/g;
+	const quotedPath = /(["'])(\/(?:images|photos|thumbnail|videos|audio)\/[^"'`\r\n]+?)\1/g;
+	const markdownPath = /\]\((\/(?:images|photos|thumbnail|videos|audio)\/[^)\s]+)\)/g;
 	const component = /<(Pi|PostImage|Vid|PostVideo)\b[\s\S]*?>/g;
 
 	for (const match of text.matchAll(quotedPath)) addReference(references, match[2], file);

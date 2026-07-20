@@ -2,16 +2,16 @@
 title: "Why You Still Want to Read a Healthcare IT Blog in the Age of AI"
 description: "An exploration of why human-written, skeptical, and curiosity-driven healthcare IT commentary remains indispensable in an era of AI-generated noise, marketing jargon, and technological conceit."
 date: "2026-06-26"
-thumbnail: "/images/Compress_20260626_134922_2939.jpg"
 category: "Healthcare-IT"
 tags: ["Bodyshopping Moat","Linear Algebra","Adversarial Attacks","AI-driven Healthcare","Model Drift","Healthcare","AI","Systems","Genetic","Clinical"]
 published: true
 color: "#2E5C8A"
+thumbnail: "/thumbnail/safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260626_134922_2939.jpg" />
+<Pi src="/thumbnail/safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg" />
 
 
 ## The Uncomfortable Premise

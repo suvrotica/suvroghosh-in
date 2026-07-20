@@ -2,16 +2,16 @@
 title: "The Plague of Pseudoscience in India"
 description: "India cannot become a serious scientific civilization while treating superstition as culture, pseudoscience as pride, and science as an exam subject. This essay argues for scientific temper, better schools, public skepticism, and a practical route out of the fog."
 date: "2026-05-17"
-thumbnail: "/images/Compress_20260517_170049_9569.jpg"
 category: "Science and Society"
-tags: ["Scientific Temper","Science","Evolution","Scientific","Certainty","Teach","China","Build","Research","Evidence"]
+tags: ["Scientific Temper","Science","Evolution","Scientific","Teach","Certainty","Build","China","Research","Evidence"]
 published: true
 color: "#7C2D12"
+thumbnail: "/thumbnail/safe-plague-of-pseudoscience-india-scientific-temper.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260517_170049_9569.jpg" />
+<Pi src="/thumbnail/safe-plague-of-pseudoscience-india-scientific-temper.jpg" />
 
 Acronyms used in this post:
 

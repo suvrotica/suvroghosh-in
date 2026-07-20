@@ -2,16 +2,16 @@
 title: "Receipt"
 description: "A fossil preparator finds a Cretaceous crab whose carapace bears her dead father's face, and a second crab that wears her living daughter's."
 date: "2026-07-08"
-thumbnail: "/images/Compress_20260708_060120_0194.jpg"
 category: "Short Fiction"
-tags: ["Seventy Million","Trailer Door","Darlene","Jessie","Crab","Crabs","Dent","Henley","Truck","Trailer"]
+tags: ["Seventy Million","Trailer Door","Darlene","Jessie","Crab","Crabs","Dent","Henley","Trailer","Truck"]
 published: true
 color: "#8B4513"
+thumbnail: "/thumbnail/safe-receipt.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260708_060120_0194.jpg" />
+<Pi src="/thumbnail/safe-receipt.jpg" />
 
 # THIS IS A WORK OF FICTION
 

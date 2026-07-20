@@ -1,17 +1,17 @@
 ---
 title: "Homeopathy"
 description: "A technically grounded analysis of homeopathy’s origins, internal logic, empirical failure, and systemic persistence across modern healthcare environments."
-thumbnail : "/images/IMG-20260423-WA0015.jpg"
 date: "2026-04-21"
 category: "healthcare-systems"
-tags: ["Health Level Seven","Evidence-Based Medicine","Human Experience","Homeopathy","Healthcare","Evidence-Based","Data","Clinical","Systems","Narrative"]
+tags: ["Health Level Seven","Evidence-Based Medicine","Human Experience","Homeopathy","Healthcare","Evidence-Based","Data","Clinical","Systems","Measurable"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-homeopathy-pseudoscience-persistence.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0015.jpg" />
+<Pi src="/thumbnail/safe-homeopathy-pseudoscience-persistence.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

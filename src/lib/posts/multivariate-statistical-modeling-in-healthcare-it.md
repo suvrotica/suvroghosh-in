@@ -1,17 +1,17 @@
 ---
 title: "Applied Multivariate Statistical Modeling in Healthcare IT Part 1"
 description: "A healthcare IT architect’s view of applied multivariate statistical modeling: what variables really mean, why covariance matters, and why models are only as honest as the systems that generate their data."
-thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 date: "2026-05-05"
 category: "Healthcare IT"
 tags: ["Smoking Status","Inner Diameter","Outer Diameter","Clinical Trial","Social Risk","Model","Healthcare","Data","Variables","Washer"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-multivariate-statistical-modeling-in-healthcare-it.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260505_135010_0561.jpg" />
+<Pi src="/thumbnail/safe-multivariate-statistical-modeling-in-healthcare-it.jpg" />
 
 
 

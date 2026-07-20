@@ -2,17 +2,17 @@
 title: "Society With Open Drains and Polished Shoes"
 description: "A darkly comic Kolkata essay on moral rot, fake advice, failed ambition, loneliness, and the small stubborn dignity of noticing what everyone else has agreed to perfume."
 date: "2026-05-21"
-thumbnail: "/images/Compress_20260521_232804_4936.jpg"
 category: "Personal Essay"
 tags: ["Shape","Advice","Opportunity","Confidence","Friend","Means","Sentence","Arrives","Hot","Cup"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-society-with-open-drains-and-polished-shoes.jpg"
 ---
 <TTS />
 
 
 
-<Pi src="Compress_20260521_232804_4936.jpg" />
+<Pi src="/thumbnail/safe-society-with-open-drains-and-polished-shoes.jpg" />
 
 The nice thing about living in a society that smells faintly of open drain, cheap perfume, and committee tea is that bad people do not have to be searched for with binoculars.
 

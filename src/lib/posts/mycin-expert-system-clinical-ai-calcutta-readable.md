@@ -2,16 +2,16 @@
 title: "MYCIN: The 1970s Medical AI That Knew How to Explain Itself"
 description: "MYCIN was an early Stanford expert system for infectious disease diagnosis and antibiotic therapy. Its real lesson is not that old AI was crude, but that medicine is painfully hard to squeeze into rules, screens, and databases."
 date: "2026-05-26"
-thumbnail: "/images/Compress_20260526_121024_4895.jpg"
 category: "Healthcare IT"
 tags: ["Inference Engine","Knowledge Base","User Interface","MYCIN","Clinical","Stanford","Expert","Interface","Rules","User"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260526_121024_4895.jpg" />
+<Pi src="/thumbnail/safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg" />
 
 Acronyms and terms used in this post:
 

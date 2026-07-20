@@ -2,16 +2,16 @@
 title: "The Fifth Window"
 description: "After a software professional returns to his old Calcutta building from a psychiatric hospital, a sequence of deaths begins to arrange itself like a mathematical proof. A retired schoolteacher, a young delivery rider, and the city itself slowly discover that numbers can be both pattern and prison."
 date: "2026-06-04"
-thumbnail: "/images/Compress_20260604_085305_5318.jpg"
 category: "Short Fiction"
 tags: ["Purnima Basu","Malabika","Ritwik","Ira","Purnima","Naren","Dutta","Parimal","ArcNest","Murders"]
 published: true
 color: "Charcoal"
+thumbnail: "/thumbnail/safe-thefifthwindow.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260604_085305_5318.jpg" />
+<Pi src="/thumbnail/safe-thefifthwindow.jpg" />
 
 # THIS IS A WORK OF FICTION
 

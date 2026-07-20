@@ -2,16 +2,16 @@
 title: "Pod Mara Gechhe: A Calcutta Weather Report From the Lower End of the Soul"
 description: "A darkly comic Calcutta essay on depression, bodily discomfort, middle-aged loneliness, Bengali overthinking, and the private comedy of continuing to exist with a rice cooker, a laptop, and unpaid bills."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_110032_2690.jpg"
 category: "Personal Essay"
-tags: ["Pod Mara Gechhe","Rice Cooker","Mara","Gechhe","Pod","Doorbell","Mirror","Rice","Hope","Tea"]
+tags: ["Pod Mara Gechhe","Rice Cooker","Mara","Gechhe","Pod","Doorbell","Rice","Mirror","Tea","Hope"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-pod-mara-gechhe-calcutta-essay.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260610_110032_2690.jpg" />
+<Pi src="/thumbnail/safe-pod-mara-gechhe-calcutta-essay.jpg" />
 
 
 

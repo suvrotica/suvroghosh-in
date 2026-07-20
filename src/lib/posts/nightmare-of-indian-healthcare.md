@@ -2,16 +2,16 @@
 title: "The Nightmare of Indian Healthcare for the Common Man"
 description: "India has world-class hospitals, brilliant doctors, and ambitious public schemes, yet ordinary illness can still become a family financial disaster. This post looks at healthcare in India from the street-level view of the patient who cannot buy his way out."
 date: "2026-05-11"
-thumbnail : "/images/Compress_20260428_162412_2865.jpg"
 category: "Healthcare"
-tags: ["Kidney Disease","Indian Healthcare","India","Patient","Hospital","Healthcare","Medicine","Disease","Hospitalization","Referral"]
+tags: ["Kidney Disease","Indian Healthcare","India","Hospital","Patient","Healthcare","Medicine","Disease","Hospitalization","Health"]
 published: true
 color: "#111827"
+thumbnail: "/thumbnail/safe-nightmare-of-indian-healthcare.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260428_162412_2865.jpg" />
+<Pi src="/thumbnail/safe-nightmare-of-indian-healthcare.jpg" />
 
 
 Acronyms used here: OOPE — Out-of-Pocket Expenditure, the money a household pays directly for care; OPD — Outpatient Department, routine care without hospital admission; PM-JAY — Pradhan Mantri Jan Arogya Yojana, India’s large public hospitalization insurance program under Ayushman Bharat; ICU — Intensive Care Unit, where very sick patients are monitored and supported; PHC — Primary Health Centre, the first formal rural public medical facility; CHC — Community Health Centre, the higher rural facility meant to handle more serious care; NCD — Non-Communicable Disease, long-term illness such as diabetes, hypertension, heart disease, kidney disease, chronic lung disease, and cancer; NSS — National Sample Survey, India’s official household survey system; NHA — National Health Accounts, India’s official health spending accounting framework; GDP — Gross Domestic Product, the broad measure of national economic output; ABDM — Ayushman Bharat Digital Mission, India’s national digital health records and identity infrastructure.

@@ -2,16 +2,16 @@
 title: "Trying to Write About Healthcare IT While the Ceiling Paint Falls Into the Dal"
 description: "A middle-aged Bengali healthcare IT architect from Kolkata wrestles with technical blogging, Indian decline, China comparisons, broken systems, and the exhausting theater of patriotism."
 date: "2026-05-12"
-thumbnail: "/images/Compress_20260507_162504_4412.jpg"
 category: "Healthcare IT"
-tags: ["Healthcare","China","Patient","Writing","Diabetes","Systems","Digital","Data","India","Interoperability"]
+tags: ["Healthcare","China","Patient","Systems","Diabetes","Writing","Digital","Data","India","Interoperability"]
 published: true
 color: "zinc"
+thumbnail: "/thumbnail/safe-technical-blogging-in-a-country-of-missing-systems.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260507_162504_4412.jpg" />
+<Pi src="/thumbnail/safe-technical-blogging-in-a-country-of-missing-systems.jpg" />
 
 Acronyms used in this post:
 

@@ -2,18 +2,18 @@
 title: "The Recidivism of Fraud"
 description: "A Calcutta essay on how India keeps returning to superstition, petty adjustment, respectable fraud, public amnesia, and the old national habit of calling deception culture."
 date: "2026-06-13"
-thumbnail: "/images/Compress_20260613_162345_5284.jpg"
 category: "Essay"
 tags: ["Third Offense","Second Offense","Recidivism","Fraud","Returns","Banker","Worry","Prevention","Cost","Astrologer"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-recidivism-of-fraud-and-superstition-in-india.jpg"
 ---
 
 Acronyms used in this post: None.
 
 <TTS />
 
-<Pi src="Compress_20260613_162345_5284.jpg" />
+<Pi src="/thumbnail/safe-recidivism-of-fraud-and-superstition-in-india.jpg" />
 
 ---
 

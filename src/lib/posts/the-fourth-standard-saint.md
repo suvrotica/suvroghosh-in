@@ -2,16 +2,16 @@
 title: "The Fourth-Standard Saint"
 description: "A barely literate man finds an old book on persuasion and becomes a Calcutta godman whose words enter the private wounds of young women. When deaths begin to gather around him, a tired investigator follows the pattern into a room where faith, shame, and language have learned to feed."
 date: "2026-06-12"
-thumbnail: "/images/Compress_20260613_134928_8970.jpg"
 category: "Short Fiction"
 tags: ["Tapan Baba","Red Ribbon","Tea Seller","Blue Cover","Madhabi","Tapan","Rimli","Mili","Book","Baba"]
 published: true
 color: "saffron"
+thumbnail: "/thumbnail/safe-the-fourth-standard-saint.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_134928_8970.jpg" />
+<Pi src="/thumbnail/safe-the-fourth-standard-saint.jpg" />
 
 # THIS IS A WORK OF FICTION
 

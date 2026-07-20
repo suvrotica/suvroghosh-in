@@ -1,17 +1,17 @@
 ---
 title: "AI and Denial"
 description: "Why people who depend on AI often minimize it in public, and why opinion swings between mystical overstatement and contempt. The deeper issue is status, authorship, labor, and the rearrangement of human competence."
-thumbnail : "/images/IMG-20260424-WA0000.jpg"
 date: "2026-04-23"
 category: "Artificial Intelligence"
-tags: ["Information Technology","Professional Identity","Visible Signs","AI","Parrot","Dependence","Output","Draft","Conscious","Language"]
+tags: ["Information Technology","Professional Identity","Visible Signs","AI","Parrot","Dependence","Output","Draft","Language","Conscious"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0000.jpg" />
+<Pi src="/thumbnail/safe-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

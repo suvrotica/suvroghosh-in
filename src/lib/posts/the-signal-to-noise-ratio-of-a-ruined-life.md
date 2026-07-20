@@ -2,16 +2,16 @@
 title: "The Signal-to-Noise Ratio of a Ruined Life"
 description: "A personal essay from South Calcutta on depression, shame, heat, unpaid work, memory, and the stubborn little signal that survives inside the static."
 date: "2026-06-11"
-thumbnail: "/images/Compress_20260613_160853_3270.jpg"
 category: "Personal Essay"
 tags: ["Rice Cooker","Unpaid Work","Corrupts","Signal","Static","Wit","Noise","Shame","Rice","Disgust"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-signal-to-noise-ratio-of-a-ruined-life.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_160853_3270.jpg" />
+<Pi src="/thumbnail/safe-the-signal-to-noise-ratio-of-a-ruined-life.jpg" />
 
 Acronyms used: VA [Veterans Affairs, the United States healthcare system for military veterans]; NIH [National Institutes of Health, the major United States biomedical research agency]; LOINC [Logical Observation Identifiers Names and Codes, a standard naming system for laboratory and clinical observations].
 

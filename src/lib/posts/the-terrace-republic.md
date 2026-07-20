@@ -2,16 +2,16 @@
 title: "The Terrace Republic"
 description: "A Calcutta essay on tea, memory, childhood, solitude, bipolar intensity, and the private republic a boy builds when the world insists on queues, walls, and polite lies."
 date: "2026-05-15"
-thumbnail: "/images/Compress_20260506_115419_9095.jpg"
 category: "Personal Essay"
 tags: ["Terrace","Matchboxes","Magnets","Wondered","Lamp","Boy","Brick","Walls","Stamps","Books"]
 published: true
 color: "#8B5E3C"
+thumbnail: "/thumbnail/safe-the-terrace-republic.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_115419_9095.jpg" />
+<Pi src="/thumbnail/safe-the-terrace-republic.jpg" />
 
 ---
 

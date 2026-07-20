@@ -2,16 +2,16 @@
 title: "The Sword in the Frame"
 description: "A middle-aged Bengali man in North Calcutta takes up an old blade against impossible reptiles, only to discover the battlefield is stranger than madness. The city, the monsters, and his own face begin to repeat."
 date: "2026-06-07"
-thumbnail: "/images/Compress_20260607_161730_0686.jpg"
 category: "Short Fiction"
 tags: ["Reptile King","Mosquito Net","Tram Bell","Exercise Books","Fish Stall","Bishwanath","Reptile","Mitali","Blade","Haru"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-sword-in-the-frame.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260607_161730_0686.jpg" />
+<Pi src="/thumbnail/safe-the-sword-in-the-frame.jpg" />
 
 # THIS IS A WORK OF FICTION
 

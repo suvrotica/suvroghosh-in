@@ -2,16 +2,16 @@
 title: "Circle of Death"
 description: "After losing his job to the man he was ordered to train, a Texas programmer builds a revenge that escapes its target. In Calcutta and San Antonio, two men discover that old humiliation can travel farther than justice."
 date: "2026-06-07"
-thumbnail: "/images/Compress_20260607_080940_0677.jpg"
 category: "Short Fiction"
-tags: ["San Antonio","Colin","Arindam","Meera","Luz","Garage","Mother","Worm","Texas","Generator"]
+tags: ["San Antonio","Colin","Arindam","Meera","Luz","Garage","Mother","Texas","Worm","Generator"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-circle-of-death.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260607_080940_0677.jpg" />
+<Pi src="/thumbnail/safe-circle-of-death.jpg" />
 
 # THIS IS A WORK OF FICTION
 

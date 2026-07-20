@@ -2,16 +2,16 @@
 title: "The Man Who Knew Everybody"
 description: "A broke Calcutta freelancer is hired by a grinning spiritual fraud whose vague blessings make rich people feel seen. Then the vague things begin to come true."
 date: "2026-06-19"
-thumbnail: "/images/Compress_20260619_150418_8216.jpg"
 category: "Short Fiction"
 tags: ["Buck Teeth","White-Sari Woman","BEST STATEMENT","PRICE TOLERANCE","Damp Patch","Baba","Buck","Devotees","Grin","Statements"]
 published: true
 color: "maroon"
+thumbnail: "/thumbnail/safe-roundface-baba.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260619_150418_8216.jpg" />
+<Pi src="/thumbnail/safe-roundface-baba.jpg" />
 
 # THIS IS A WORK OF FICTION
 

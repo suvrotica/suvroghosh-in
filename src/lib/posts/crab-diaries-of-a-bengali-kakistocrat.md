@@ -2,16 +2,16 @@
 title: "Crab Diaries of a Bengali Kakistocrat"
 description: "A manic-depressive monologue from a burnt, bitter Calcutta man ruminating on crabs, corruption, and the fractal nature of Indian incompetence while Telegram is blocked and NEET leaks again."
 date: "2026-06-22"
-thumbnail: "/images/Compress_20260622_211303_3563.jpg"
 category: "Personal Essay"
 tags: ["Crab","Cockroach","Crabs","Pissing","Telegram","Scuttling","Corrupt","Fractal","Pheromones","Communicate"]
 published: true
 color: "#8B0000"
+thumbnail: "/thumbnail/safe-crab-diaries-of-a-bengali-kakistocrat.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260622_211303_3563.jpg" />
+<Pi src="/thumbnail/safe-crab-diaries-of-a-bengali-kakistocrat.jpg" />
 
 I am standing in my bathroom at four in the morning, staring at a cockroach the size of a small Fiat, and I am thinking about crabs. Not the cockroach, though the resemblance is—what is the word—fractal, yes, fractally uncanny, the way both creatures scuttle sideways with that particular arthropod indignity, the way both communicate through excretion, the way both have survived every extinction event that murdered the dinosaurs and will probably survive the heat death of the universe and the heat death of my own liver, which, let me tell you, is proceeding apace, thank you very much, thank you for asking, no one is asking, no one ever asks, but I am telling you anyway because that is what I do, I tell, I vomit words, I am a fifty-one-year-old atheist Bengali man from Calcutta, not Kolkata, never Kolkata, Kolkata is the name the government gave the city when they decided that colonialism was bad but renaming things was good, as if a name change could scrub the cholera out of the Hooghly, as if calling it Kolkata would make the traffic move, as if Kolkata would somehow produce fewer corrupt politicians, fewer NEET paper leaks, fewer Telegram blocks, fewer everything, and here I am, staring at this cockroach, and I am thinking about crabs.
 

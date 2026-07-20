@@ -2,16 +2,16 @@
 title: "The Visible Work of Imaginary Things"
 description: "A personal essay on atheism, cooperation, bipolar fragility, ambition, and why invisible stories must be judged by the visible work they produce."
 date: "2026-05-15"
-thumbnail: "/images/Compress_20260515_150426_6813.jpg"
 category: "Personal Essay"
 tags: ["Visible Work","Ideals","Imaginary","Cooperation","Atheism","Work","Species","Visible","Fashionable","Career"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-the-visible-work-of-imaginary-things.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260515_150426_6813.jpg" />
+<Pi src="/thumbnail/safe-the-visible-work-of-imaginary-things.jpg" />
 
 
 

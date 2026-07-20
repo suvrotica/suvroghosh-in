@@ -2,16 +2,16 @@
 title: "The Godman of Ballygunge"
 description: "A Calcutta godman builds a private empire out of devotion, fear, and a poisonous flower, until the city and the plant remember what he has taken."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_054753_3428.jpg"
 category: "Short Fiction"
 tags: ["Baba Shibananda","Blue Curtains","Silver Cup","Riddhi Asked","Riddhi","Baba","Tuli","Sanchari","Shibananda","Ashram"]
 published: true
 color: "ash violet"
+thumbnail: "/thumbnail/safe-the-godman-of-ballygunge.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_054753_3428.jpg" />
+<Pi src="/thumbnail/safe-the-godman-of-ballygunge.jpg" />
 
 # THIS IS A WORK OF FICTION
 

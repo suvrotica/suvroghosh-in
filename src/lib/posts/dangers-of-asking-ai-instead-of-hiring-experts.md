@@ -2,16 +2,16 @@
 title: "The Hidden Bill for Asking AI Instead of Hiring an Expert"
 description: "AI can make ordinary people feel suddenly competent, which is useful until the work needs judgment, memory of failure, and responsibility. The danger is not that AI gives bad answers; it is that it gives good-looking answers to questions we were never qualified to ask."
 date: "2026-05-30"
-thumbnail: "/images/Compress_20260530_125730_0847.jpg"
 category: "Technology"
 tags: ["Non-Expert Sees","Expert Asks","Ask AI","AI","Expert","Experts","Basically","Ask","Data","Non-Expert"]
 published: true
 color: "#B45309"
+thumbnail: "/thumbnail/safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260530_125730_0847.jpg" />
+<Pi src="/thumbnail/safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg" />
 
 Acronyms used in this post:
 

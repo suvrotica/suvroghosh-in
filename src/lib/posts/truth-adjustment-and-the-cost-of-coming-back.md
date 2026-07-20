@@ -2,16 +2,16 @@
 title: "Truth, Adjustment, and the Cost of Coming Back"
 description: "A returning Bengali entrepreneur discovers that in India plain speech often behaves less like virtue and more like social vandalism. A sharp, readable Calcutta essay on adjustment, business ethics, obedience, corruption, capital, religion, and the private cost of honesty."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_175735_5525.jpg"
 category: "Social Commentary"
-tags: ["Adjust","Spine","Rules","Truth","Treated","Boring","Country","India","Tolerate","Learns"]
+tags: ["Adjust","Spine","Rules","Truth","Treated","Boring","India","Country","Tolerate","Learns"]
 published: true
 color: "burnt-orange"
+thumbnail: "/thumbnail/safe-truth-adjustment-and-the-cost-of-coming-back.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_175735_5525.jpg" />
+<Pi src="/thumbnail/safe-truth-adjustment-and-the-cost-of-coming-back.jpg" />
 
 Acronyms used here:
 

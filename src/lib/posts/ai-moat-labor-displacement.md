@@ -2,16 +2,16 @@
 title: "The AI Moat Is the Missing Salary"
 description: "AI companies are not spending fortunes to make office life slightly smoother. The economics make sense only when the target is paid human labor."
 date: "2026-05-23"
-thumbnail: "/images/Compress_20260523_005308_8999.jpg"
 category: "AI and Society"
 tags: ["Tea-Stall Money","Good Enough","Business Model","AI","Worker","Moat","Labor","Company","Machine","Replacement"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-ai-moat-labor-displacement.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260523_005308_8999.jpg" />
+<Pi src="/thumbnail/safe-ai-moat-labor-displacement.jpg" />
 
 Acronyms used in this post:
 

@@ -2,11 +2,11 @@
 title: "Tea, Depression, and the Probability of a Blog"
 description: "A middle-aged Bengali man in Calcutta asks whether depression and manic writing energy created the strange angle of vision from which his blog exists."
 date: "2026-06-15"
-thumbnail: "/images/Compress_20260615_172945_5757.jpg"
 category: "Personal Essay"
-tags: ["Depression","Supplies","Mania","Normal","Headache","Tea","Mathematics","Caffeine","Damage","Turn"]
+tags: ["Depression","Supplies","Mania","Normal","Headache","Tea","Caffeine","Mathematics","Damage","Turn"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-tea-depression-and-the-probability-of-a-blog.jpg"
 ---
 
 CESC: Calcutta Electric Supply Corporation, the power utility whose failures can turn a humid evening into a small domestic apocalypse.
@@ -14,7 +14,7 @@ CESC: Calcutta Electric Supply Corporation, the power utility whose failures can
 
 <TTS />
 
-<Pi src="Compress_20260615_172945_5757.jpg" />
+<Pi src="/thumbnail/safe-tea-depression-and-the-probability-of-a-blog.jpg" />
 
 ---
 

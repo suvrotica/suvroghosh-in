@@ -2,16 +2,16 @@
 title: "The Polished Ghost of Banamali Lane"
 description: "A faceless gentleman in a suit begins visiting corrupt men across Calcutta at night, leaving resignations, deaths, and a city drunk on justice. One failed writer discovers the ghost may not be hunting the people everyone thinks it is."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_062727_7107.jpg"
 category: "Short Fiction"
 tags: ["Banamali Lane","Bowler Hat","Mahim Ghosh","Air Conditioner","Dark Suit","Riddhi","Mahim","Piya","Banamali","Ghost"]
 published: true
 color: "Midnight Blue"
+thumbnail: "/thumbnail/safe-the-polished-ghost-of-banamali-lane.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_062727_7107.jpg" />
+<Pi src="/thumbnail/safe-the-polished-ghost-of-banamali-lane.jpg" />
 
 # THIS IS A WORK OF FICTION
 

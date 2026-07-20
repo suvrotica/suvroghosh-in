@@ -2,16 +2,16 @@
 title: "Fellow Passengers and the Broken Record"
 description: "A small, human meditation on the people who pass through life like brief songs, the people who stay like noise, and the patience needed to find tenderness without becoming anyone’s doormat."
 date: "2026-05-17"
-thumbnail: "/images/Compress_20260517_030820_0932.jpg"
 category: "Life"
 tags: ["Song","Listening","Noise","Sometimes","Luck","Hidden","Others","Attention","Suffering","Dog"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-fellow-passengers-and-the-broken-record.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260517_030820_0932.jpg" />
+<Pi src="/thumbnail/safe-fellow-passengers-and-the-broken-record.jpg" />
 
 
 

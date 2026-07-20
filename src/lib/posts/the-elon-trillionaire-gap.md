@@ -2,16 +2,16 @@
 title: "The Trillionaire Gap: A Bipolar Ramble from South Calcutta"
 description: "A manic-depressive rant from a bitter Bengali man in South Calcutta, grappling with Elon Musk's trillionaire status and the dissolution of human dignity in the face of obscene wealth inequality."
 date: "2026-06-22"
-thumbnail: "/images/Compress_20260622_134746_6031.jpg"
 category: "Personal Essay"
-tags: ["Per Minute","Elon Musk","Black Hole","Fan Rattles","Rice Cooker","Trillionaire","Livestock","Trillion","Dollars","Billion"]
+tags: ["Per Minute","Elon Musk","Black Hole","Fan Rattles","Rice Cooker","Trillionaire","Livestock","Trillion","Dollars","Gecko"]
 published: true
 color: "#1a1a1a"
+thumbnail: "/thumbnail/safe-the-elon-trillionaire-gap.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260622_134746_6031.jpg" />
+<Pi src="/thumbnail/safe-the-elon-trillionaire-gap.jpg" />
 
 The ceiling fan in this South Calcutta flat—this glorified concrete coffin with its peeling distemper and the perpetual olfactory assault of fried hilsa from the neighbor's kitchen—makes a sound like a dying man's last rattle, and I am staring at my phone, which tells me, with the cheerful indifference of a digital harbinger, that Elon Musk, that South African-American techno-messiah with the facial expressions of a man perpetually smelling his own flatulence, has ascended to the exalted, previously mythical status of trillionaire, one point one trillion American dollars, a figure so grotesquely swollen that my brain, already pickled in decades of useless erudition and underemployment, refuses to process it, much like a cockroach refuses to process the concept of nuclear winter—it simply keeps scuttling, which is, I suppose, the only honest response to annihilation.
 

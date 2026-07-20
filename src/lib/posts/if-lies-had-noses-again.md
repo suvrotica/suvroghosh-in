@@ -2,16 +2,16 @@
 title: "If Lies Had Noses Again"
 description: "A satirical speculative social post about Pinocchio, public lying, and the small miracle of visible consequences in a world where falsehood now travels first class."
 date: "2026-05-14"
-thumbnail: "/images/Compress_20260514_235702_2787.jpg"
 category: "Satire"
-tags: ["Nose","Pinocchio","Lie","Nasal","Noses","Lies","Dishonesty","Give","Liar","Grew"]
+tags: ["Nose","Pinocchio","Lie","Nasal","Noses","Lies","Dishonesty","Give","Fake","Liar"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-if-lies-had-noses-again.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260514_235702_2787.jpg" />
+<Pi src="/thumbnail/safe-if-lies-had-noses-again.jpg" />
 
 
 

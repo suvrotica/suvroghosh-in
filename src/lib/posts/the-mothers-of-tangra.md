@@ -2,16 +2,16 @@
 title: "The Mothers of Tangra"
 description: "A cheap-protein factory near Tangra begins producing meat that remembers too much. When one worker hears her dead mother’s voice from a vat, hunger becomes a family matter."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_083528_8762.jpg"
 category: "Short Fiction"
 tags: ["SaltMeat Foods","Vat Seven","Rendering Room","Clay Cup","Cheap Protein","Mira","Bose","Sanyal","Vat","Mrs"]
 published: true
 color: "maroon"
+thumbnail: "/thumbnail/safe-the-mothers-of-tangra.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_083528_8762.jpg" />
+<Pi src="/thumbnail/safe-the-mothers-of-tangra.jpg" />
 
 # THIS IS A WORK OF FICTION
 

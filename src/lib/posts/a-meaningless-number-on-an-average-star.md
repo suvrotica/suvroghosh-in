@@ -2,16 +2,16 @@
 title: "A Meaningless Number on an Average Star"
 description: "A darkly comic birthday reckoning on superstition, age, ambition, depression, cosmic scale, and the absurd narcissism of attaching destiny to dates."
 date: "2024-04-16"
-thumbnail: "/images/Compress_20260504_232318_8029.jpg"
 category: "Personal Essay"
 tags: ["Infinity","Corner","Infinities","Universe","Cosmic","Existence","Dreams","Date","Meetings","God"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-a-meaningless-number-on-an-average-star.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260504_232318_8029.jpg" />
+<Pi src="/thumbnail/safe-a-meaningless-number-on-an-average-star.jpg" />
 
 Acronyms expanded in this post: No central technical acronyms need expansion here.
 

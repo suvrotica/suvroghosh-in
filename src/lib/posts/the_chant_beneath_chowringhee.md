@@ -2,16 +2,16 @@
 title: "The Chant Beneath Chowringhee"
 description: "A sound engineer records Calcutta’s traffic and builds a horror podcast from its hidden frequencies. But the city has been saying something for decades, and it has been waiting for someone to listen properly."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_084723_3858.jpg"
 category: "Short Fiction"
 tags: ["Maati Dao","Gola Dao","Give Earth","Anirban","Raka","Maati","Chant","Recorder","Rail","Asphalt"]
 published: true
 color: "Charcoal"
+thumbnail: "/thumbnail/safe-the-chant-beneath-chowringhee.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_084723_3858.jpg" />
+<Pi src="/thumbnail/safe-the-chant-beneath-chowringhee.jpg" />
 
 # THIS IS A WORK OF FICTION
 

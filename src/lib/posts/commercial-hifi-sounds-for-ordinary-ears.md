@@ -2,16 +2,16 @@
 title: "Hi-Fi Sound Without the Perfume: Mono, Stereo, 5.1, Dolby, DTS, Atmos, and the Great Audio Bazaar"
 description: "A plain, witty guide to commercial hi-fi sound labels, from mono and stereo to surround sound, Dolby Atmos, DTS, THX, lossless audio, Bluetooth, soundbars, and why the room often matters more than the logo."
 date: "2026-05-26"
-thumbnail: "/images/Compress_20260526_081512_2710.jpg"
 category: "Audio Technology"
 tags: ["Audio Codec","Center Channel","Lossless","Audio","Mono","Subwoofer","Stereo","Speakers","DTS","Surround"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-commercial-hifi-sounds-for-ordinary-ears.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260526_081512_2710.jpg" />
+<Pi src="/thumbnail/safe-commercial-hifi-sounds-for-ordinary-ears.jpg" />
 
 Acronyms and short explanations:
 

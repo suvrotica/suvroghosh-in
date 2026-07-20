@@ -1,17 +1,17 @@
 ---
 title: "Building VA Data Warehouses"
 description: "A high-level but technically serious primer on how data warehouses are actually built from Department of Veterans Affairs operational systems. It explains why extraction is the easy part, why semantic stability is the hard part, and where warehousing efforts usually go wrong."
-thumbnail : "/images/IMG-20260423-WA0020.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 tags: ["Accidentally Count","Lab Result","Healthcare Data","Data Quality","Warehouse","VA","FHIR","Source","Operational","Healthcare"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-va-data-warehouse-reality.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0020.jpg" />
+<Pi src="/thumbnail/safe-va-data-warehouse-reality.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

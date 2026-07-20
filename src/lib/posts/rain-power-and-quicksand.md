@@ -2,16 +2,16 @@
 title: "Rain, Power Cuts, and India Standing on Quicksand"
 description: "A personal Calcutta essay on rain, heat, power cuts, noisy nationalism, and the old inherited habit of hoping that India will one day care about ordinary people."
 date: "2026-05-30"
-thumbnail: "/images/Compress_20260530_071427_7686.jpg"
 category: "Personal Essay"
-tags: ["Adjust","Quicksand","Fireworks","Transformer","Country","Fan","Heat","Plumbing","Power","Fully"]
+tags: ["Adjust","Quicksand","Fireworks","Transformer","Country","Fan","Heat","Plumbing","Power","Common"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-rain-power-and-quicksand.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260530_071427_7686.jpg" />
+<Pi src="/thumbnail/safe-rain-power-and-quicksand.jpg" />
 
 
 

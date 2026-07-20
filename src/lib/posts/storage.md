@@ -2,16 +2,16 @@
 title: "Storage"
 description: "A woman in a West Bengal village discovers that her body has become the field."
 date: "2026-07-08"
-thumbnail: "/images/Compress_20260707_202310_0018.jpg"
 category: "Short Fiction"
-tags: ["Neighbor Radio","Pradeep","Cane","Sun","Harvesters","Village","Harvest","Yield","Juice","Ports"]
+tags: ["Neighbor Radio","Pradeep","Cane","Harvesters","Sun","Village","Harvest","Yield","Juice","Ports"]
 published: true
 color: "#5D4037"
+thumbnail: "/thumbnail/safe-storage.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260707_202310_0018.jpg" />
+<Pi src="/thumbnail/safe-storage.jpg" />
 
 # THIS IS A WORK OF FICTION
 

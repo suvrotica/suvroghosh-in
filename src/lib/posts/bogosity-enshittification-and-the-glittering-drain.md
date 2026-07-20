@@ -2,16 +2,16 @@
 title: "Bogosity, Enshittification, and the Glittering Drain"
 description: "A Calcutta-side essay on how failed education, gullible publics, algorithmic social media, and now AI have turned the internet from a library into a fluorescent fish market of confident nonsense."
 date: "2026-05-20"
-thumbnail: "/images/Compress_20260520_022406_6425.jpg"
 category: "Technology and Society"
-tags: ["Internet","Fake","AI","Teach","Attention","Taught","Feed","Library","Platform","Brings"]
+tags: ["Internet","Fake","AI","Teach","Attention","Taught","Feed","Library","Nonsense","Brings"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-bogosity-enshittification-and-the-glittering-drain.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260520_022406_6425.jpg" />
+<Pi src="/thumbnail/safe-bogosity-enshittification-and-the-glittering-drain.jpg" />
 
 Acronyms used in this post:
 

@@ -2,16 +2,16 @@
 title: "Nostril Hairs and the Tainted Calcutta Summer"
 description: "A darkly comic Calcutta essay about aging, heat, pollution, bodily indignity, family expectations, and the stubborn little absurdities that keep a man alive when the city itself feels half-cooked."
 date: "2026-05-20"
-thumbnail: "/images/Compress_20260520_071606_6125.jpg"
 category: "Personal Essay"
 tags: ["Air Conditioner","Nostril Hair","Nostril","Conditioner","Air","Hairs","Heat","Improves","Complain","Keeps"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-nostril-hairs-and-the-tainted-calcutta-summer.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260520_071606_6125.jpg" />
+<Pi src="/thumbnail/safe-nostril-hairs-and-the-tainted-calcutta-summer.jpg" />
 
 Acronyms and Notes:
 

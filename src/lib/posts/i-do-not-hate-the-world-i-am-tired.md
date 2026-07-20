@@ -2,16 +2,16 @@
 title: "I Do Not Hate the World. I Am Tired."
 description: "A darkly funny personal essay about anger, bipolar depression, masculinity, class fatigue, Calcutta loneliness, and the difference between hating humanity and being slowly nibbled by fate."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_105701_1999.jpg"
 category: "Personal Essay"
-tags: ["Hatred","Nibble","Weariness","Hate","Self-Pity","Tired","Rotten","Anger","Maybe","Refuse"]
+tags: ["Hatred","Nibble","Weariness","Hate","Self-Pity","Tired","Rotten","Maybe","Anger","Refuse"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260614_105701_1999.jpg" />
+<Pi src="/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg" />
 
 
 

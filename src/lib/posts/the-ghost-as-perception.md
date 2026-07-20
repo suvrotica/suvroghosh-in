@@ -1,17 +1,17 @@
 ---
 title: "The Ghost as Perception"
 description: "A study of the ghost not as superstition but as a problem in movement, attention, memory, and fractured human perception. The apparition becomes less a monster than a fault line in how the living organize reality."
-thumbnail : "/images/IMG-20260425-WA0001.jpg"
 date: "2026-04-25"
 category: "philosophy"
 tags: ["Ghost","Perception","Figure","Presence","Ghosts","Movement","Memory","Supernatural","Living","Human"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-ghost-as-perception.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0001.jpg" />
+<Pi src="/thumbnail/safe-the-ghost-as-perception.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

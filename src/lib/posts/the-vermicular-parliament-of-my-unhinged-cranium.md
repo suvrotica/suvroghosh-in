@@ -2,16 +2,16 @@
 title: "The Vermicular Parliament"
 description: "A fifty-one-year-old Bengali hikikomori's manic-depressive monologue about the worms of anxiety gnawing behind his mask of normalcy, set against the decay of South Calcutta and the absurdity of global tech conferences."
 date: "2026-07-09"
-thumbnail: "/images/Compress_20260709_053000_0143.jpg"
 category: "Personal Essay"
-tags: ["South Calcutta","Worms","Gnawing","Cancelled","Formerly","Prediction","Drone","Bile","Quantum","Mask"]
+tags: ["South Calcutta","Worms","Gnawing","Formerly","Cancelled","Prediction","Drone","Mask","Bile","Quantum"]
 published: true
 color: "#3e2723"
+thumbnail: "/thumbnail/safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260709_053000_0143.jpg" />
+<Pi src="/thumbnail/safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg" />
 
 I woke up this morning and the left side of my skull was unlatched again, the parietal bone swinging open on a hinge of gristle and bad faith, and the whole squirming constituency was there, pallid and segmented, glistening in the sodium-yellow pollution-light that seeps through the grimy window of this cheap South Calcutta flat where the plaster peels like the skin of a leper in a heatwave, my personal helminthic congress, the worries, the anxieties, the future-devouring nematodes that I keep stuffed behind the mask of normalcy, the mask I strap on every morning with the enthusiasm of a goat being led to understand its own mortality, the mask that says, "Oh, yes, I am a perfectly functional fifty-one-year-old Bengali man, formerly of North Calcutta-South Sinthee, formerly of Texas where I earned my master's and spent fifteen years being professionally invisible, formerly of having a life that resembled anything other than a compost heap of aborted intentions," when in fact I am nothing more than a bruised and brittle assemblage of unlaundered punjabis and unprocessed dread, a cancelled atheist hikikomori renting decay in the suburban sprawls south of the city, over-read in the most useless way possible, introverted to the point of being a biological hermit crab who has misplaced his shell.
 

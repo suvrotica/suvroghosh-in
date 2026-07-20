@@ -2,16 +2,16 @@
 title: "Folded Arms and Other Small National Disasters"
 description: "A sharp, comic essay on the smug folded-arms posture, petty authority, Indian social theater, and the little chest-fortresses people build when competence has quietly left the room."
 date: "2026-06-06"
-thumbnail: "/images/Compress_20260606_183950_0378.jpg"
 category: "Satire"
 tags: ["Arms Crossed","Folded Arms","Folded-Arms","Sideways","Chin","Posture","Folds","Guarding","Male","Slap"]
 published: true
 color: "#4A342E"
+thumbnail: "/thumbnail/safe-folded-arms-and-other-small-national-disasters.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260606_183950_0378.jpg" />
+<Pi src="/thumbnail/safe-folded-arms-and-other-small-national-disasters.jpg" />
 
 Acronyms and terms used in this post:
 

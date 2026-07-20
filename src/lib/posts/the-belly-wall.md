@@ -2,16 +2,16 @@
 title: "The Belly Wall"
 description: "After a chemical spill near a Calcutta canal, something old and small grows monstrously large, and the city’s respectable bellies become warm nests."
 date: "2026-06-06"
-thumbnail: "/images/Compress_20260606_053211_1558.jpg"
 category: "Short Fiction"
-tags: ["Iron Rod","Haripada","Kedar","Mili","Gecko","Belly","Tok","Canal","Shutter","Wall"]
+tags: ["Iron Rod","Haripada","Kedar","Mili","Gecko","Belly","Tok","Canal","Wall","Tok-tok"]
 published: true
 color: "sickly green"
+thumbnail: "/thumbnail/safe-the-belly-wall.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260606_053211_1558.jpg" />
+<Pi src="/thumbnail/safe-the-belly-wall.jpg" />
 
 # THIS IS A WORK OF FICTION
 

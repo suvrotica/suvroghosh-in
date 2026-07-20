@@ -2,16 +2,16 @@
 title: "Blood Sugar"
 description: "A Calcutta child with a missing tiffin carrier meets Arjun of Flat 3B, a lonely man who can taste the hidden sweetness and trouble in the people around him. Together they must solve a small building mystery before fear turns into something worse."
 date: "2026-06-28"
-thumbnail: "/images/Compress_20260628_232447_7373.jpg"
 category: "Short Fiction"
-tags: ["Alur Dom","Mrs Banerjee","Mrs Gomes","Glucose Biscuits","Red Ribbon","Rini","Arjun","Neel","Ronit","Tiffin"]
+tags: ["Mrs Banerjee","Alur Dom","Mrs Gomes","Glucose Biscuits","Red Ribbon","Rini","Arjun","Neel","Ronit","Tiffin"]
 published: true
 color: "#8B0000"
+thumbnail: "/thumbnail/safe-blood-sugar.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260628_232447_7373.jpg" />
+<Pi src="/thumbnail/safe-blood-sugar.jpg" />
 
 # THIS IS A WORK OF FICTION
 

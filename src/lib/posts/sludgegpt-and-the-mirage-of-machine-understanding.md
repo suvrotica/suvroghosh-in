@@ -2,16 +2,16 @@
 title: "SludgeGPT and the Mirage of Machine Understanding"
 description: "A satirical but serious reflection on why language models can sound magnificent while being wrong, and why abstraction becomes dangerous when fluency masquerades as understanding."
 date: "2026-05-08"
-thumbnail: "/images/Compress_20260508_174835_5424.jpg"
 category: "Artificial Intelligence"
-tags: ["Cube Root","Cube","SludgeGPT","Model","Machine","AI","Root","Statistical","LLM","Roots"]
+tags: ["Cube Root","Cube","SludgeGPT","Model","Machine","AI","Root","Statistical","LLM","Wrong"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-sludgegpt-and-the-mirage-of-machine-understanding.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260508_174835_5424.jpg" />
+<Pi src="/thumbnail/safe-sludgegpt-and-the-mirage-of-machine-understanding.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

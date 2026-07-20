@@ -2,16 +2,16 @@
 title: "Bengal Changed Color, Not Yet Character"
 description: "A middle-aged Calcutta reflection on Bengal’s political earthquake, why party change is not social repair, and how ordinary citizens keep losing to the local machine."
 date: "2026-05-09"
-thumbnail: "/images/Compress_20260509_182901_1938.jpg"
 category: "Politics and Society"
 tags: ["Chief Minister","Dead Voters","Electoral Rolls","Poor Man","TMC","Rolls","Democracy","Voters","Voter","Bengal"]
 published: true
 color: "#78350f"
+thumbnail: "/thumbnail/safe-bengal-changed-color-not-character.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260509_182901_1938.jpg" />
+<Pi src="/thumbnail/safe-bengal-changed-color-not-character.jpg" />
 
 <Vid 
   src="music/বাকির_খাতা (1).mp4" 

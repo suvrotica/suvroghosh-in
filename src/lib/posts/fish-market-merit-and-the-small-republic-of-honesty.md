@@ -2,16 +2,16 @@
 title: "Fish Market Merit and the Small Republic of Honesty"
 description: "A sharp Calcutta personal essay about class, failed careers, old school status, LinkedIn polish, fish-market survival, and the inconvenient dignity of telling the truth."
 date: "2024-09-12"
-thumbnail: "/images/Compress_20260515_042649_9877.jpg"
 category: "Personal Essay"
-tags: ["Fish Market","Merit","Fish","Moon","Adults","Obedience","Books","Inconvenient","Project","Platform"]
+tags: ["Fish Market","Merit","Fish","Moon","Adults","Obedience","Books","Inconvenient","Project","Improve"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-fish-market-merit-and-the-small-republic-of-honesty.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260515_042649_9877.jpg" />
+<Pi src="/thumbnail/safe-fish-market-merit-and-the-small-republic-of-honesty.jpg" />
 
 Acronyms used here: AI means artificial intelligence, the software machinery now making pictures, songs, essays, predictions, mistakes, miracles, and occasionally very confident nonsense. CV means curriculum vitae, the little document in which a human life is boiled down until it resembles hospital soup. IT means information technology, the trade of making computers behave just well enough for humans to blame each other.
 

@@ -2,16 +2,16 @@
 title: "The Tea Stall as an Anti-AI Safety System"
 description: "A sharp, lighter essay on Bengali adda, tea stalls, and why interruption may be one of the oldest safety systems for human thinking. Artificial intelligence can privately strengthen half-cooked beliefs; the tea stall publicly boils them, spills them, and sometimes saves us from drinking the whole bad cup."
 date: "2026-05-09"
-thumbnail: "/images/Compress_20260509_031218_8443.jpg"
 category: "AI and Society"
-tags: ["Tea Stall","Stall","Friction","AI","Tea","Interruption","Safety","Belief","Theory","Thoughts"]
+tags: ["Tea Stall","Stall","Friction","Tea","AI","Interruption","Safety","Belief","Theory","Private"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-the-tea-stall-as-an-anti-ai-safety-system.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260509_031218_8443.jpg" />
+<Pi src="/thumbnail/safe-the-tea-stall-as-an-anti-ai-safety-system.jpg" />
 
 Artificial Intelligence [AI, software systems that generate or act on patterns learned from data]. Large Language Model [LLM, an AI system trained on large amounts of text to predict and generate language]. Epistemic Safety [the practical art of keeping belief from turning into private madness before evidence has had a chance to slap it around]. Adda [the Bengali habit of long informal conversation where argument, gossip, literature, politics, memory, and nonsense sit together like quarrelsome cousins]. User Interface [UI, the visible surface through which a person interacts with software].
 

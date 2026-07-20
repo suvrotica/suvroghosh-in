@@ -15,7 +15,11 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MEDIA_DIRECTORIES = (ROOT / "static" / "images", ROOT / "static" / "photos")
+MEDIA_DIRECTORIES = (
+	ROOT / "static" / "images",
+	ROOT / "static" / "photos",
+	ROOT / "static" / "thumbnail",
+)
 MANIFEST_PATH = ROOT / "scripts" / "image-optimization-manifest.json"
 OPTIMIZER_VERSION = "2026-07-18.1"
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
@@ -28,7 +32,9 @@ MIN_SAVINGS_BYTES = 1024
 
 def parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(
-		description="Incrementally optimise images in static/images and static/photos."
+		description=(
+			"Incrementally optimise images in static/images, static/photos, and static/thumbnail."
+		)
 	)
 	parser.add_argument(
 		"--force", action="store_true", help="Reanalyse files even when their manifest hashes match."

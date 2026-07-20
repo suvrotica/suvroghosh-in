@@ -2,16 +2,16 @@
 title: "The Vegetable Girl Before Dawn"
 description: "A dawn meditation from the shanty edges of Calcutta on poverty, AI, attention, cosmic luck, and the strange privilege of being alive when the world feels half-broken."
 date: "2026-05-14"
-thumbnail: "/images/Compress_20260514_002849_9914.jpg"
 category: "Personal Essay"
 tags: ["Selling Vegetables","Girl","Vegetables","Child","AI","Peace","Lane","Minutes","Selling","Paper"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260514_002849_9914.jpg" />
+<Pi src="/thumbnail/safe-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg" />
 
 Acronyms: Artificial Intelligence [AI, computer systems trained to recognize patterns, generate language, make predictions, and increasingly act like decision-making clerks with better grammar and fewer tea breaks].
 

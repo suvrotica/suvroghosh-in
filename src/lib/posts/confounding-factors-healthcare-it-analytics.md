@@ -1,17 +1,17 @@
 ---
 title: "Confounding Factors"
 description: "A technical guide to understanding, detecting, and handling confounding factors in healthcare IT, clinical analytics, and population health systems without mistaking correlation for architecture-grade truth."
-thumbnail : "/images/IMG-20260423-WA0013.jpg" 
 date: "2026-04-22"
 category: "healthcare-it"
 tags: ["Enrolled Patients","Healthcare Analytics","Confounding","Patients","Healthcare","Intervention","Workflow","Causal","Analytic","Data"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0013.jpg" />
+<Pi src="/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

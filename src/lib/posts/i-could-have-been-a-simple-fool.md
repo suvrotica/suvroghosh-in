@@ -2,11 +2,11 @@
 title: "I Could Have Been a Simple Fool"
 description: "A sharp Calcutta essay on doubt, obedience, poverty, propaganda, corruption, political spectacle, and the small personal misfortune of being unable to call sewage incense."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_153519_9316.jpg"
 category: "Personal Essay"
-tags: ["Rainfall","Produces","Sometimes","Doubt","Filth","Power","Country","India","Obedience","Fellow"]
+tags: ["Rainfall","Produces","Sometimes","Doubt","Filth","Power","India","Obedience","Country","Fellow"]
 published: true
 color: "orange"
+thumbnail: "/thumbnail/safe-i-could-have-been-a-simple-fool.jpg"
 ---
 
 US — United States, the country where I studied and worked for many years before returning to India.
@@ -15,7 +15,7 @@ SUV — Sport Utility Vehicle, the large high-clearance car beloved by men who b
 
 <TTS />
 
-<Pi src="Compress_20260610_153519_9316.jpg" />
+<Pi src="/thumbnail/safe-i-could-have-been-a-simple-fool.jpg" />
 
 ---
 

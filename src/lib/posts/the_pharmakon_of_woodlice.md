@@ -2,16 +2,16 @@
 title: "The Pharmakon of Woodlice"
 description: "A fifty-one-year-old bipolar polemicist in Calcutta ruminates on the synthetic deceit of psychiatric medication, the superior companionship of books, and the grotesque aptness of woodlice circling themselves to death under streetlights."
 date: "2026-07-11"
-thumbnail: "/images/Compress_20260711_080323_3681.jpg"
 category: "Essay"
-tags: ["Circling","Pills","Synthetic","Precise","Sentences","Irritation","Particular","Read","Patient","Dark"]
+tags: ["Circling","Pills","Synthetic","Sentences","Precise","Irritation","Particular","Read","Patient","Dark"]
 published: true
 color: "#5D4037"
+thumbnail: "/thumbnail/safe-the-pharmakon-of-woodlice.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260711_080323_3681.jpg" />
+<Pi src="/thumbnail/safe-the-pharmakon-of-woodlice.jpg" />
 
 The morning arrives not with light but with a taste, that particular metallurgical tang of a mouth that has spent eight hours fermenting its own bacterial flora into something resembling the floor of a tannery where small mammals have expired in droves, and I lie there, supine, contemplating the pharmaceutical architecture of my hypothalamus as one might contemplate the structural integrity of a termite-ridden howdah, which is to say: with the resigned expertise of a man who has paid for his education in sleeplessness and the particular, viscous variety of despair that collects in the lower intestines like unprocessed grief.
 

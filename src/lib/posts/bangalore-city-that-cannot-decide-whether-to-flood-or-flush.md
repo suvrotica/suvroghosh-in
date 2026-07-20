@@ -2,16 +2,16 @@
 title: "Bangalore and the Plumbing of Pretension"
 description: "A satirical rewrite of an old blog post on Bangalore’s floods, water scarcity, corporate confidence, civic failure, and the undignified politics of sanitation."
 date: "2026-05-05"
-thumbnail: "/images/Compress_20260505_161629_9681.jpg"
 category: "Society"
 tags: ["Real Estate","Artificial Intelligence","Middle Class","Tanker","Tankers","Borewells","Bangalore","Floodwater","Flush","Clean"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260505_161629_9681.jpg" />
+<Pi src="/thumbnail/safe-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

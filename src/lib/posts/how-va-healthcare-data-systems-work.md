@@ -2,16 +2,16 @@
 title: "VistA, MUMPS, and the Warehouse After Midnight"
 description: "A Calcutta-grounded essay on how VA healthcare data moves from VistA's MUMPS and FileMan world into SQL warehouses, and why that translation is historical, clinical, and technical all at once."
 date: "2026-06-24"
-thumbnail: "/images/IMG-20260425-WA0005.jpg"
 category: "Healthcare-IT"
 tags: ["Oracle Cerner","Microsoft SQL Server","VA Corporate Data","Veterans Affairs","Layer Cake","VistA","MUMPS","SQL","VA","FileMan"]
 published: true
 color: "#1a4d8f"
+thumbnail: "/thumbnail/safe-how-va-healthcare-data-systems-work.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0005.jpg" />
+<Pi src="/thumbnail/safe-how-va-healthcare-data-systems-work.jpg" />
 
 A server room has a particular smell.
 

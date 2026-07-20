@@ -2,16 +2,16 @@
 title: "Why India Produces So Many Different Species of Goons"
 description: "From para dadas to political strongmen, India’s strange biodiversity of hoodlums did not appear by accident. They grow in the warm swamp between weak systems, public fear, social hierarchy, and everyday survival."
 date: "2026-05-11"
-thumbnail : "/images/Compress_20260428_173311_1250.jpg"
 category: "Society"
-tags: ["Goon","Somebody","India","Goons","Indian","Permanently","Controls","Undocumented","Fellow","Gap"]
+tags: ["Goon","Somebody","India","Goons","Indian","Permanently","Undocumented","Controls","Fellow","Gap"]
 published: true
 color: "maroon"
+thumbnail: "/thumbnail/safe-india-hoodlums-goons-assortment.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260428_173311_1250.jpg" />
+<Pi src="/thumbnail/safe-india-hoodlums-goons-assortment.jpg" />
 
 Acronyms and Terms Used
 

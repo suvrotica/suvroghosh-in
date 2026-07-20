@@ -2,16 +2,16 @@
 title: "The Third Stomach"
 description: "At a small Calcutta temple a caretaker discovers that a holy man's miracle has begun to grow teeth, horns, and a hunger older than prayer."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_205242_2401.jpg"
 category: "Short Fiction"
-tags: ["Bhola Baba","Donation Box","Bell Rang","Baba Mat","Sanctum Wall","Nirmal","Haradhan","Cow","Sefali","Sanctum"]
+tags: ["Bhola Baba","Donation Box","Bell Rang","Baba Mat","Sanctum Wall","Nirmal","Haradhan","Cow","Sefali","Temple"]
 published: true
 color: "Ochre"
+thumbnail: "/thumbnail/safe-the-third-stomach.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260610_205242_2401.jpg" />
+<Pi src="/thumbnail/safe-the-third-stomach.jpg" />
 
 # THIS IS A WORK OF FICTION
 

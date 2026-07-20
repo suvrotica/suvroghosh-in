@@ -1,17 +1,17 @@
 ---
 title: "The Returnee Who No Longer Fits"
 description: "A sensitive, evidence-grounded essay on Indian professionals returning from the United States into a labor market that often misunderstands age, foreign experience, independence, and grief."
-thumbnail : "/images/IMG-20260424-WA0007.jpg" 
 date: "2026-04-24"
 category: "work, migration, India"
 tags: ["United States","Foreign Experience","Returnee","Returnees","Indian","Experience","Visa","Professional","Senior","India"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-returning-home-after-america.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0007.jpg" />
+<Pi src="/thumbnail/safe-returning-home-after-america.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -2,16 +2,16 @@
 title: "The Post That Took the Weather"
 description: "A bankrupt middle-aged Bengali writes honestly about bipolar weather on his little blog, and strangers begin to recover. Then Calcutta starts asking what, exactly, has been cured—and where it has gone."
 date: "2026-06-07"
-thumbnail: "/images/Compress_20260607_070937_7811.jpg"
 category: "Short Fiction"
 tags: ["Hidden Pages","Please Write","Ordinary Weather","Arindam","Raka","Mita","Wrote","Pages","Mother","Write"]
 published: true
 color: "Slate Gray"
+thumbnail: "/thumbnail/safe-the-post-that-took-the-weather.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260607_070937_7811.jpg" />
+<Pi src="/thumbnail/safe-the-post-that-took-the-weather.jpg" />
 
 # THIS IS A WORK OF FICTION
 

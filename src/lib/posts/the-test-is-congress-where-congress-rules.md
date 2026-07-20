@@ -2,16 +2,16 @@
 title: "The Test Is Congress Where Congress Rules"
 description: "A skeptical but sympathetic essay on Rahul Gandhi, Congress, corruption, and why democracy cannot depend on one good man or one famous family."
 date: "2026-06-07"
-thumbnail: "/images/Compress_20260607_102539_9599.jpg"
 category: "Politics"
 tags: ["Rahul Gandhi","Criminal Cases","Plastic Chair","Congress","Rahul","Party","Gandhi","Karnataka","Democracy","PRS"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-the-test-is-congress-where-congress-rules.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260607_102539_9599.jpg" />
+<Pi src="/thumbnail/safe-the-test-is-congress-where-congress-rules.jpg" />
 
 Acronyms expanded and explained:
 

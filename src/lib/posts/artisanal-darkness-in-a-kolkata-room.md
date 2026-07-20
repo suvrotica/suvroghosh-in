@@ -2,16 +2,16 @@
 title: "Artisanal Darkness in a Kolkata Room"
 description: "A comic, wounded, and unsentimental essay about depression, respectability, shame, packaging, and the absurd modern duty to look market-ready while falling apart."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_073610_0990.jpg"
 category: "Personal Essay"
 tags: ["Packaged","Alchemy","Sells","Speaks","Call","Crow","Tea","Success","Lower-Middle-Class","Society"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-artisanal-darkness-in-a-kolkata-room.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260614_073610_0990.jpg" />
+<Pi src="/thumbnail/safe-artisanal-darkness-in-a-kolkata-room.jpg" />
 
 
 

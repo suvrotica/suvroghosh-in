@@ -2,16 +2,16 @@
 title: "A Trapezoid for My Mother"
 description: "A personal essay on depression, maternal mercy, and the small edits by which a damaged life is made bearable for someone who loves too much."
 date: "2026-06-20"
-thumbnail: "/images/Compress_20260620_115927_7094.jpg"
 category: "Personal Essay"
 tags: ["Don’t Worry Means","Trapezoid","Rectangle","Introspection","Mother","Worry","Depression","Don’t","Reads","Feeling"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-trapezoid-for-my-mother.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260620_115927_7094.jpg" />
+<Pi src="/thumbnail/safe-trapezoid-for-my-mother.jpg" />
 
 
 

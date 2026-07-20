@@ -2,16 +2,16 @@
 title: "Keshkhor"
 description: "A miracle shampoo gives Kolkata the hair it has been praying for, until the gift begins to take payment in inches, bones, and memory."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_095341_1784.jpg"
 category: "Short Fiction"
 tags: ["Tea Stall","Arka","Rishav","Hair","Keshjol","Sachet","Mother","K-Index","Scalp","Cosmetic"]
 published: true
 color: "black"
+thumbnail: "/thumbnail/safe-keshkhor.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_095341_1784.jpg" />
+<Pi src="/thumbnail/safe-keshkhor.jpg" />
 
 # THIS IS A WORK OF FICTION
 

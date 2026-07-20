@@ -1,17 +1,17 @@
 ---
 title: "When Nothing Beats Something"
 description: "Synthetic music will not end human creativity, but it will change the economics of attention, taste, labor, and artistic trust. The new scarcity will not be sound; it will be the human capacity to care."
-thumbnail : "/images/Compress_20260429_215618_8491.jpg"
 date: "2026-04-29"
 category: "Technology"
-tags: ["Synthetic Music","Music","Artists","Listeners","Singer","Composer","Artist","AI","Creators","Synthetic"]
+tags: ["Synthetic Music","Music","Artists","Singer","Listeners","Composer","AI","Artist","Creators","Synthetic"]
 published: true
 color: "violet"
+thumbnail: "/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260429_215618_8491.jpg" />
+<Pi src="/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

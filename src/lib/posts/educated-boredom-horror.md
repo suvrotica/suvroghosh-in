@@ -2,16 +2,16 @@
 title: "The Educated Horror of Having Nowhere to Go"
 description: "A systems-level essay on middle-aged middle-class boredom: not laziness, not decadence, but a failure of purpose, mobility, trust, and usable civic life."
 date: "2026-04-29"
-thumbnail : "/images/Compress_20260429_171024_4392.jpg"
 category: "Society"
-tags: ["United States","Middle Class","Middle Age","Boredom","Repair","Difficulty","Educated","Middle-Aged","Parent","Enough"]
+tags: ["United States","Middle Class","Middle Age","Boredom","Repair","Difficulty","Educated","Middle-Aged","Enough","Parent"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-educated-boredom-horror.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260429_171024_4392.jpg" />
+<Pi src="/thumbnail/safe-educated-boredom-horror.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -1,17 +1,17 @@
 ---
 title: "The Painful Tooth Fairy"
 description: "A middle-aged man in Calcutta discovers that dental pain is not merely biological but economic, civic, historical, and absurdly literary. At fifty-one, the tooth becomes a small white bureaucrat issuing notices from inside the skull."
-thumbnail : "/images/Compress_20260502_230343_3926.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
 tags: ["Painful Tooth Fairy","Deferred Maintenance","Artificial Intelligence","Tooth","Fairy","Decay","Pain","Jaw","Nerve","Dentist"]
 published: true
 color: "#5B1E1E"
+thumbnail: "/thumbnail/safe-painful-tooth-fairy-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260502_230343_3926.jpg" />
+<Pi src="/thumbnail/safe-painful-tooth-fairy-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

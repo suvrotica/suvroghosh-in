@@ -2,16 +2,16 @@
 title: "Shortchanged From Dollar To Paise"
 description: "A raw Calcutta essay on invisibility, America, boredom, return, entrepreneurship, sweat, regret, and the expensive mistake of choosing bad change over good boredom."
 date: "2026-06-19"
-thumbnail: "/images/Compress_20260619_173112_2115.jpg"
 category: "Personal Essay"
 tags: ["San Antonio","Slime","Boredom","I-35","Busy-small","Crotch","Mistook","America","Highway","WWA"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-shortchanged-from-dollar-to-paise.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260619_173112_2115.jpg" />
+<Pi src="/thumbnail/safe-shortchanged-from-dollar-to-paise.jpg" />
 
 WWA: WWA Cossipore English School, my childhood school in north Calcutta.
 

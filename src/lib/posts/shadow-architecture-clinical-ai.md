@@ -2,16 +2,16 @@
 title: "Clinical AI Needs A Shadow Architecture First"
 description: "A Calcutta-grounded essay on the invisible regulatory, ethical, technical, workflow, and human infrastructure required before artificial intelligence can safely enter clinical care."
 date: "2026-06-23"
-thumbnail: "/images/Compress_20260624_013106_6822.jpg"
 category: "Healthcare-IT"
 tags: ["Shadow Architecture","Deep Learning","Patient Cares Whether","Shadow Holds","Clinical AI","Clinical","AI","Model","Validation","Monitoring"]
 published: true
 color: "#2C3E50"
+thumbnail: "/thumbnail/safe-shadow-architecture-clinical-ai.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260624_013106_6822.jpg" />
+<Pi src="/thumbnail/safe-shadow-architecture-clinical-ai.jpg" />
 
 The alert appears before anyone can admire the algorithm.
 

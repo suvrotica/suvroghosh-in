@@ -2,16 +2,16 @@
 title: "The Ninth Tap"
 description: "When Delhi’s drinking water begins to smell faintly of drains, a widower in a government colony notices that the complaints, the deaths, and the water itself are following an older map."
 date: "2026-06-06"
-thumbnail: "/images/Compress_20260606_204352_2237.jpg"
 category: "Short Fiction"
-tags: ["Ninth Tap","Blue Bottle","Mitali Blue","Anirban","Yadav","Naseem","Tara","Tap","Mitali","Colony"]
+tags: ["Ninth Tap","Blue Bottle","Mitali Blue","Anirban","Yadav","Naseem","Tara","Tap","Colony","Mitali"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-ninth-tap.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260606_204352_2237.jpg" />
+<Pi src="/thumbnail/safe-the-ninth-tap.jpg" />
 
 # THIS IS A WORK OF FICTION
 

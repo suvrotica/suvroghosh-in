@@ -2,16 +2,16 @@
 title: "The Gut of God"
 description: "A proud Calcutta godman turns shame into sacrament and commerce into contagion. One grocery clerk follows the smell back to its source."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_150923_3785.jpg"
 category: "Short Fiction"
 tags: ["Anandomoy Baba","Free Spoon","Baba Eyes","Nirmal","Tublu","Amrit-Gut","Sanyal","Mina","Anandomoy","Attendants"]
 published: true
 color: "Ochre"
+thumbnail: "/thumbnail/safe-the-gut-of-god.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_150923_3785.jpg" />
+<Pi src="/thumbnail/safe-the-gut-of-god.jpg" />
 
 # THIS IS A WORK OF FICTION
 

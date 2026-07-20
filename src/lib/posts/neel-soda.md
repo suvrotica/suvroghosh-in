@@ -2,16 +2,16 @@
 title: "Neel Soda"
 description: "A daughter's cheap remedy for her diabetic father's cravings unleashes a transformation that spreads through a north Calcutta neighborhood."
 date: "2026-07-14"
-thumbnail: "/images/Compress_20260714_065333_3173.jpg"
 category: "Short Fiction"
 tags: ["Neel Soda","Blue Fluid","Keya","Bimal-da","Bottles","Blue","Nihar","Perforations","Drink","Fluid"]
 published: true
 color: "#1a3a5c"
+thumbnail: "/thumbnail/safe-neel-soda.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260714_065333_3173.jpg" />
+<Pi src="/thumbnail/safe-neel-soda.jpg" />
 
 # THIS IS A WORK OF FICTION
 

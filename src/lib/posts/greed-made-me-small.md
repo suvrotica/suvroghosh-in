@@ -2,16 +2,16 @@
 title: "Greed Made Me Small"
 description: "A darkly comic Calcutta essay about greed, selfishness, fear, withdrawal, and the slow shrinking of a middle-aged man who has been scraped too often by people with polished manners and small appetites."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_123507_7458.jpg"
 category: "Personal Essay"
 tags: ["Greed","Selfishness","Selfish","Shrunk","Removes","Afraid","Fear","Bird","Betrayal","Lever"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-greed-made-me-small.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_123507_7458.jpg" />
+<Pi src="/thumbnail/safe-greed-made-me-small.jpg" />
 
 
 

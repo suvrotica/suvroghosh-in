@@ -1,17 +1,17 @@
 ---
 title: "Pohela Baisakh"
 description: "Pohela Baisakh is narrated as timeless Bengali tradition, but the calendar as a fiscally usable, April-aligned year-start bears a decisive Mughal stamp - one a larger Indian habit prefers to sand out of memory."
-thumbnail : "/images/IMG-20260422-WA0012.jpg"
 date: "2026-04-22"
 category: "history"
 tags: ["Pohela Baisakh","Mughal","Baisakh","Pohela","Muslim","Hybrid","Gregorian","Akbar","Calendar","Agrarian"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-pohela-baisakh-mughal-calendar-memory.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260422-WA0012.jpg" />
+<Pi src="/thumbnail/safe-pohela-baisakh-mughal-calendar-memory.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

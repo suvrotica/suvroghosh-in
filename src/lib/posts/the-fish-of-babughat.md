@@ -2,16 +2,16 @@
 title: "The Fish of Babughat"
 description: "When Priya's uncle vanishes into the Hooghly River on a sweltering June day, she finds a puffer fish with his exact scar—and must carry it across Kolkata to bring him home."
 date: "2026-06-30"
-thumbnail: "/images/Compress_20260630_200233_3781.jpg"
 category: "Short Fiction"
-tags: ["Thorn Bush","Bicycle Horn","Ferry Ghat","Priya Put","Priya","Kaku","Crate","Fish","Didima","River"]
+tags: ["Thorn Bush","Bicycle Horn","Ferry Ghat","Priya Put","Priya","Kaku","Crate","Fish","Didima","Puffed"]
 published: true
 color: "#2E8B57"
+thumbnail: "/thumbnail/safe-the-fish-of-babughat.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260630_200233_3781.jpg" />
+<Pi src="/thumbnail/safe-the-fish-of-babughat.jpg" />
 
 # THIS IS A WORK OF FICTION
 

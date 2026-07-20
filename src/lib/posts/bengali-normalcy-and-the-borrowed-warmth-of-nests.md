@@ -2,16 +2,16 @@
 title: "Bengali Normalcy and the Borrowed Warmth of Nests"
 description: "A personal essay on middle age, loneliness, family life, privacy, and the strange comfort of borrowing warmth from other people’s ordinary homes through a screen."
 date: "2026-05-31"
-thumbnail: "/images/Compress_20260531_074301_1393.jpg"
 category: "Personal Essay"
-tags: ["Nest","Hen","Privacy","Bearable","Nests","Disturbing","Family","Happiness","Father","Bengali"]
+tags: ["Nest","Hen","Privacy","Bearable","Nests","Family","Disturbing","Happiness","Father","Bengali"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260531_074301_1393.jpg" />
+<Pi src="/thumbnail/safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg" />
 
 Acronyms and notes: None used. A few Bengali words appear naturally: luchi is a fried flatbread, para is the neighborhood, and adda is that magnificent Bengali technology by which five people can waste three hours and call it civilization.
 

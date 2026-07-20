@@ -2,16 +2,16 @@
 title: "The Corridor That Forgot to Breathe"
 description: "When students die mysteriously in a narrow metro passage near an old Calcutta college, a tired clerk follows the trail of unpaid wages, hidden ledgers, and a grief that has learned to wear another man's face."
 date: "2026-06-13"
-thumbnail: "/images/Compress_20260613_143811_1448.jpg"
 category: "Short Fiction"
-tags: ["Professor Bose","Metro Entrance","Tea Stall","Bursar Banerjee","Madhab Sat","Madhab","Ritoban","Banerjee","Ray","Bose"]
+tags: ["Metro Entrance","Professor Bose","Tea Stall","Bursar Banerjee","Madhab Sat","Madhab","Ritoban","Banerjee","Ray","Anik"]
 published: true
 color: "Slate"
+thumbnail: "/thumbnail/safe-the-corridor-that-forgot-to-breathe.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_143811_1448.jpg" />
+<Pi src="/thumbnail/safe-the-corridor-that-forgot-to-breathe.jpg" />
 
 # THIS IS A WORK OF FICTION
 

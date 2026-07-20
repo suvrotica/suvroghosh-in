@@ -2,16 +2,16 @@
 title: "Twaddle Tendency"
 description: "A sharp, comic essay on how human beings use word-soup, jargon, slogans, euphemism, and fake profundity to avoid plain truth."
 date: "2026-06-19"
-thumbnail: "/images/Compress_20260619_124658_8567.jpg"
 category: "Essay"
 tags: ["Twaddle Calls","Silence Asks","Twaddle","Ding","Framework","Nodding","Scalable","Sentence","Beside","Row"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-twaddle-tendency.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260619_124658_8567.jpg" />
+<Pi src="/thumbnail/safe-twaddle-tendency.jpg" />
 
 Acronyms used in this post:
 

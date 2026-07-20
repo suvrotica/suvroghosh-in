@@ -2,16 +2,16 @@
 title: "Benford’s Law and the Ledger That Sweats"
 description: "A clear, witty, street-level explanation of how Benford’s Law can help auditors, citizens, journalists, and investigators smell trouble in cooked books without pretending mathematics can replace justice."
 date: "2026-06-06"
-thumbnail: "/images/Compress_20260606_212229_9274.jpg"
 category: "Mathematics"
-tags: ["Benford Law","Numbers Beginning","Benford","Digits","Numbers","Digit","Law","Logarithm","Add","Ledger"]
+tags: ["Benford Law","Numbers Beginning","Benford","Digits","Numbers","Digit","Law","Logarithm","Add","Payments"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-benfords-law-and-the-ledger-that-sweats.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260606_212229_9274.jpg" />
+<Pi src="/thumbnail/safe-benfords-law-and-the-ledger-that-sweats.jpg" />
 
 Acronyms used in this post:
 

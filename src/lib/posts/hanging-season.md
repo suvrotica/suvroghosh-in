@@ -2,16 +2,16 @@
 title: "Hanging Season"
 description: "In a sweltering Calcutta summer, a widow discovers that spiders are hanging themselves across the city—and that her own bedroom is the pattern's oldest node."
 date: "2026-07-13"
-thumbnail: "/images/Compress_20260713_191444_4996.jpg"
 category: "Short Fiction"
 tags: ["Legs Curled","Middle Class","Second Landing","Single Thread","Tram Wires","Beam","Spiders","Spider","Rana's","Silk"]
 published: true
 color: "#2c1810"
+thumbnail: "/thumbnail/safe-hanging-season.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260713_191444_4996.jpg" />
+<Pi src="/thumbnail/safe-hanging-season.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -2,16 +2,16 @@
 title: "The Rice Cooker and the Black Hole"
 description: "A darkly comic personal essay on aging, bipolar depression, shrinking hope, Calcutta, AI, and the small stubborn act of continuing."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_165336_6854.jpg"
 category: "Personal Essay"
 tags: ["Black Hole","Maybe","Rice","Twenty-Five","Black","Hope","Steam","Hole","Positive","Towel"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-rice-cooker-and-the-black-hole.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_165336_6854.jpg" />
+<Pi src="/thumbnail/safe-the-rice-cooker-and-the-black-hole.jpg" />
 
 Acronyms used in this post:
 

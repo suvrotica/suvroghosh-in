@@ -2,16 +2,16 @@
 title: "The Thin-Fat Bengali and the Treacherous Little Belly"
 description: "A Kolkata street-level essay on the thin-fat Bengali body, insulin resistance, belly fat, rice, stress, muscle, and the quiet metabolic danger hiding under ordinary shirts."
 date: "2026-05-10"
-thumbnail: "/images/Compress_20260510_221242_2792.jpg"
 category: "Health"
-tags: ["Insulin Resistance","Tea Stall","Fat","Insulin","Mishti","Muscle","Liver","Sugar","Belly","BMI"]
+tags: ["Insulin Resistance","Tea Stall","Fat","Insulin","Mishti","Muscle","Liver","Belly","Sugar","BMI"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-thin-fat-bellied-bengali-insulin-resistance.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260510_221242_2792.jpg" />
+<Pi src="/thumbnail/safe-thin-fat-bellied-bengali-insulin-resistance.jpg" />
 
 Acronyms used: BMI — Body Mass Index, a rough height-weight number that often misses hidden belly fat. HbA1c — Hemoglobin A1c, a blood test that estimates average blood sugar over about three months. HDL — High-Density Lipoprotein, often called good cholesterol. LDL — Low-Density Lipoprotein, often called bad cholesterol. TG — Triglycerides, a blood fat commonly raised in insulin resistance. BP — Blood Pressure, the force of blood against artery walls. IR — Insulin Resistance, when the body needs more insulin than normal to handle blood sugar. NAFLD — Non-Alcoholic Fatty Liver Disease, fat build-up in the liver not mainly caused by alcohol. T2D — Type 2 Diabetes, the common diabetes pattern linked with insulin resistance and declining insulin control.
 

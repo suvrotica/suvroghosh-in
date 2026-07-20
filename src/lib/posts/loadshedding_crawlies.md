@@ -2,16 +2,16 @@
 title: "The Loadshedding Shape"
 description: "During a power cut in a narrow Calcutta lane, everyone in one neighborhood becomes a skull-faced crawling thing—and keeps talking. The terror is not that they changed, but that they may have been waiting for permission."
 date: "2026-06-19"
-thumbnail: "/images/Compress_20260619_210439_9413.jpg"
 category: "Short Fiction"
 tags: ["Consumer Number","Club Boys","Mustard Oil","Main Road","Six Legs","Bablu","Bina-di","Legs","Lane","Candle"]
 published: true
 color: "#1b1715"
+thumbnail: "/thumbnail/safe-loadshedding-crawlies.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260619_210439_9413.jpg" />
+<Pi src="/thumbnail/safe-loadshedding-crawlies.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -2,16 +2,16 @@
 title: "Woke: How a Tiny American Word Became a Full-Time Street Fight"
 description: "A street-level explanation of how the word 'woke' escaped Black American slang, wandered into politics, corporations, social media, and somehow ended up screaming at everybody from television screens."
 date: "2026-05-13"
-thumbnail: "/images/Compress_20260513_055339_9541.jpg"
 category: "Culture"
 tags: ["Human Beings","Social Media","Woke","Corporations","Injustice","American","Social","Television","Media","Eventually"]
 published: true
 color: "stone"
+thumbnail: "/thumbnail/safe-woke-word-calcutta-redux.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260513_055339_9541.jpg" />
+<Pi src="/thumbnail/safe-woke-word-calcutta-redux.jpg" />
 
 Acronyms and Terms
 

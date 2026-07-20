@@ -2,16 +2,16 @@
 title: "The Compressor and the Small Black Hole"
 description: "A Calcutta room, a tired brain, a coughing air conditioner, and the private physics of depression, purposelessness, and small mechanical mercies."
 date: "2026-06-17"
-thumbnail: "/images/Compress_20260617_164332_2862.jpg"
 category: "Personal Essay"
-tags: ["Black Hole","Hole","Exhibit","Compressor","Blur","Black","Sadness","Stick","Thought","Seconds"]
+tags: ["Black Hole","Hole","Compressor","Exhibit","Blur","Black","Sadness","Stick","Thought","Sometimes"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-compressor-and-the-small-black-hole.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260617_164332_2862.jpg" />
+<Pi src="/thumbnail/safe-the-compressor-and-the-small-black-hole.jpg" />
 
 AC: Air Conditioner, the machine that cools a room while making sounds like an elderly taxi clearing its throat.
 

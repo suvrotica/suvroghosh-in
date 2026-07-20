@@ -1,17 +1,17 @@
 ---
 title: "Vector Databases"
 description: "A system-level examination of vector databases for healthcare IT and serious technical readers. This post separates the glamour of embeddings from the harder realities of retrieval, semantics, filtering, latency, and representational loss."
-thumbnail : "/images/IMG-20260423-WA0024.jpg"
 date: "2026-04-23"
 category: "healthcare it"
 tags: ["Health Level Seven","Diabetes Medication","Vector Databases","Vector Database","Data Quality","Embedding","Search","Retrieval","Database","Chunk"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-vector-databases.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0024.jpg" />
+<Pi src="/thumbnail/safe-vector-databases.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

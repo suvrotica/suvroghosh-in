@@ -2,16 +2,16 @@
 title: "Storm in a Bhar"
 description: "A Calcutta tea-stall joke about chaos theory becomes a street-level experiment, and one flutter above a cup teaches North Calcutta the old city is never merely background noise."
 date: "2026-05-14"
-thumbnail: "/images/Compress_20260514_202804_4190.jpg"
 category: "Short Fiction"
 tags: ["Professor Lahiri","Coaching Center","Delivery Riders","Pen Drive","Insurance Clerk","Arka","Gopal-da","Mithun","Father","Lahiri"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-storm-in-a-bhar.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260514_202804_4190.jpg" />
+<Pi src="/thumbnail/safe-storm-in-a-bhar.jpg" />
 
 # THIS IS A WORK OF FICTION
 

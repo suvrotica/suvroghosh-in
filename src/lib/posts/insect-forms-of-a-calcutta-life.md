@@ -2,11 +2,11 @@
 title: "Insect Forms of a Calcutta Life"
 description: "A darkly funny Calcutta essay about sketching human beings as insects, the small machinery of social extraction, and the unpleasant honesty of seeing oneself among the crawling things."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_164625_5148.jpg"
 category: "Personal Essay"
 tags: ["Empire Loved","Draw","Insects","Rat","Beetle","Kafka","Termite","Insect","Fly","Antennae"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg"
 ---
 
 Acronyms and terms used in this post:
@@ -17,7 +17,7 @@ DNA: Deoxyribonucleic Acid, the molecule that carries genetic instructions in li
 
 <TTS />
 
-<Pi src="Compress_20260614_164625_5148.jpg" />
+<Pi src="/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg" />
 
 ---
 

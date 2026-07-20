@@ -2,16 +2,16 @@
 title: "The Room, the Light, and the Brittle Brain"
 description: "A Calcutta rumination on bipolar fear, middle age, loneliness, small income, and the uneasy question of whether the room is a prison or a shelter from a madder world."
 date: "2026-05-22"
-thumbnail: "/images/Compress_20260522_070709_9817.jpg"
 category: "Personal"
-tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Fear","Rise","Cup","Mind"]
+tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Fear","Cup","Rise","Mind"]
 published: true
 color: "#374151"
+thumbnail: "/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260522_070709_9817.jpg" />
+<Pi src="/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg" />
 
 <Vid 
   src="music/জানলা_খোলা_রাখি.mp4" 

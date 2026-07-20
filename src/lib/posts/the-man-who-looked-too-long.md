@@ -2,16 +2,16 @@
 title: "The Man Who Looked Too Long"
 description: "In a damp North Calcutta lane, a failed physics graduate returns with a pair of strange spectacles and a talent for making people suffer without touching them."
 date: "2026-06-08"
-thumbnail: "/images/Compress_20260608_113614_4700.jpg"
 category: "Short Fiction"
 tags: ["Young Men","Anirban","Nandita","Haradhan","Madan","Buro","Leela","Spectacles","Baba","Dasgupta"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-man-who-looked-too-long.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260608_113614_4700.jpg" />
+<Pi src="/thumbnail/safe-the-man-who-looked-too-long.jpg" />
 
 # THIS IS A WORK OF FICTION
 

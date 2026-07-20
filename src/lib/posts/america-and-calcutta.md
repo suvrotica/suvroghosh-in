@@ -2,16 +2,16 @@
 title: "America and Calcutta"
 description: "A Calcutta man looks back at America’s clean insulation and Calcutta’s noisy intimacy, not to choose one over the other but to understand what each place did to his body, mind, and sense of home."
 date: "2026-01-05"
-thumbnail: "/images/Compress_20260510_040559_9236.jpg"
 category: "personal"
-tags: ["Beep Means","Pressure Cooker","America","Calcutta","Horn","Gave","Beep","Insulation","Air","Cooled"]
+tags: ["Beep Means","Pressure Cooker","America","Calcutta","Horn","Gave","Insulation","Beep","Cooled","Air"]
 published: true
 color: "orange"
+thumbnail: "/thumbnail/safe-america-and-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260510_040559_9236.jpg" />
+<Pi src="/thumbnail/safe-america-and-calcutta.jpg" />
 
 Acronyms used in this post:
 

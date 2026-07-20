@@ -2,16 +2,16 @@
 title: "The Good Boy Hunger"
 description: "A genteel Calcutta man tries to end his life quietly and wakes into a hunger that belongs to something older than shame. As the city presses in, his manners become the last thin door between grief and appetite."
 date: "2026-06-16"
-thumbnail: "/images/Compress_20260616_182840_0996.jpg"
 category: "Short Fiction"
 tags: ["Raw Chicken","Good Boy","Anirban","Sabitri","Montu","Ghosh","Mrs","Father","Mother","Hunger"]
 published: true
 color: "Maroon"
+thumbnail: "/thumbnail/safe-the-good-boy-hunger.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260616_182840_0996.jpg" />
+<Pi src="/thumbnail/safe-the-good-boy-hunger.jpg" />
 
 # THIS IS A WORK OF FICTION
 

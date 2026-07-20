@@ -2,16 +2,16 @@
 title: "The Pharmacy Bandh Is Not About Apps. It Is About Trust Being Sold by the Strip."
 description: "India’s retail pharmacy bandh against online medicine platforms is being treated as a shopkeeper-versus-app fight, but the darker issue is chain of custody, fake prescriptions, counterfeit risk, expired drug recycling, and a governance system too weak or too compromised to protect ordinary patients."
 date: "2026-05-20"
-thumbnail: "/images/Compress_20260520_194050_0867.jpg"
 category: "Healthcare IT"
 tags: ["Online Pharmacies","Online Pharmacy","Chemists","GSR","Retail","Prescription","Medicine","Pharmacies","Pharmacy","Chemist"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260520_194050_0867.jpg" />
+<Pi src="/thumbnail/safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg" />
 
 Acronyms used in this post: AIOCD — All India Organisation of Chemists and Druggists, the national body representing retail and wholesale chemists in India. CDSCO — Central Drugs Standard Control Organisation, India’s national drug regulatory authority. GSR — Government Statutory Rules, a formal government notification used to create or amend rules. ADHD — Attention Deficit Hyperactivity Disorder, a condition for which stimulant medicines may sometimes be prescribed. WHO — World Health Organization, the global public health agency of the United Nations. FDA — Food and Drug Administration, the United States drug regulator.
 

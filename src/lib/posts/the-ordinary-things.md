@@ -2,18 +2,18 @@
 title: "The Ordinary Things"
 description: "A middle-aged Bengali man in the boondocks of Calcutta writes about books, bad tea, depression, memory, science, shame, and why ordinary things may be the last honest republic left."
 date: "2026-06-13"
-thumbnail: "/images/Compress_20260613_174427_7792.jpg"
 category: "Personal Essay"
 tags: ["Yesterday Tea","Fresh Tea","Book","Science","Pan","Ordinary","Sketch","Books","Desire","Show"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-the-ordinary-things.jpg"
 ---
 
 
 
 <TTS />
 
-<Pi src="Compress_20260613_174427_7792.jpg" />
+<Pi src="/thumbnail/safe-the-ordinary-things.jpg" />
 
 
 

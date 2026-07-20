@@ -2,16 +2,16 @@
 title: "The Marrow of Existence"
 description: "A grotesquely swollen, self-reflective bipolar monologue from a fifty-one-year-old Bengali man in Calcutta, ruminating on the meaninglessness of existence, the adulteration of conscience, and the slow rot of a subverted democracy."
 date: "2026-07-16"
-thumbnail: "/images/Compress_20260716_070630_0664.jpg"
 category: "Personal Essay"
-tags: ["Chalk Powder","Ground Bones","Original Substance","Adulterated","Adulteration","Sawdust","Substance","Filler","Manic","Powder"]
+tags: ["Chalk Powder","Ground Bones","Original Substance","Adulterated","Adulteration","Sawdust","Substance","Filler","Powder","Manic"]
 published: true
 color: "#8B0000"
+thumbnail: "/thumbnail/safe-the-marrow-of-existence.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260716_070630_0664.jpg" />
+<Pi src="/thumbnail/safe-the-marrow-of-existence.jpg" />
 
 I woke up this morning with the distinct and not entirely unwelcome sensation that my left eyeball had been gently, almost lovingly, marinated overnight in a solution of lukewarm gutter water and the distilled essence of every unfulfilled promise I have ever made to myself, which is to say that the humidity of Calcutta—this city that sweats like a guilty man before a magistrate—had once again conspired with my own internal chemistry, that treacherous alchemy of serotonin and spite, to produce a morning that felt less like a beginning and more like a continuation of some interminable, poorly written play where the protagonist, yours truly, is simultaneously the audience, the critic, and the janitor sweeping up the peanut shells of other people's happiness after the show has long since ended and the lights have been dimmed not for drama but for the municipal corporation's inability to pay the electricity bill, a bill that is, I am certain, padded with the same casual fraudulence that pads our milk, our spices, our very souls, because food adulteration in India is not merely a matter of economics, oh no, it is the symptom, the external suppurating wound, of a deeper and more terminal condition: the adulteration of the Indian conscience, a conscience that has been so thoroughly cut with chalk powder, with sawdust, with the ground bones of scruples long since discarded, that one can no longer tell where the original substance ends and the filler begins, and I lie there, this fifty-one-year-old carcass of a man, this Bengali specimen of educated futility, staring at the ceiling which is stained in patterns that resemble, if one squints and is sufficiently medicated, the map of a country that no longer exists except in the fevered nostalgia of men like me who remember a time when the air did not taste like burnt rubber and the water did not carry the faint, sweet undertone of industrial effluent, and I think, with the manic clarity that sometimes visits me like a drunken uncle at a wedding, that my blogs are like this because I have given up on life as I live it now, as you can probably tell, I just exist now, and existence, let me tell you, is the most insulting of all verbs, a grammatical middle finger from the universe, because to exist is not to live, it is merely to occupy space and consume oxygen that could be better used by a street dog or a potted plant, both of which, incidentally, contribute more to the ecosystem than I do on my best days.
 

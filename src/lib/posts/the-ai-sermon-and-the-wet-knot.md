@@ -2,16 +2,16 @@
 title: "The AI Sermon and the Wet Knot"
 description: "A skeptical, comic, and human argument against the new cheerful advice that ordinary people can survive job loss, precarity, and social decay simply by using AI harder."
 date: "2026-06-20"
-thumbnail: "/images/Compress_20260620_140958_8565.jpg"
 category: "Technology"
 tags: ["AI","One-Person","Show","Knot","Advice","Generate","Summarize","Column","Business","Help"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-ai-sermon-and-the-wet-knot.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260620_140958_8565.jpg" />
+<Pi src="/thumbnail/safe-the-ai-sermon-and-the-wet-knot.jpg" />
 
 AI: Artificial Intelligence, meaning software systems that can generate, classify, summarize, translate, recommend, code, search, and automate by learning patterns from data.
 

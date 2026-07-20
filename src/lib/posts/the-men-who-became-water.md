@@ -2,16 +2,16 @@
 title: "The Men Who Became Water"
 description: "During a murderous Calcutta heat wave, a decent man sells cheap cooling patches to survive, until sweat wakes something inside the gel. Soon the city’s skin begins to turn clear."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_095409_9999.jpg"
 category: "Short Fiction"
-tags: ["Desperate Enough","Cold Storage","Tea Stall","Nirmal","Rupa","Joydeep","Gel","Hari","Patch","Transparent"]
+tags: ["Desperate Enough","Cold Storage","Tea Stall","Nirmal","Rupa","Joydeep","Gel","Patch","Hari","Transparent"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-the-men-who-became-water.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_095409_9999.jpg" />
+<Pi src="/thumbnail/safe-the-men-who-became-water.jpg" />
 
 # THIS IS A WORK OF FICTION
 

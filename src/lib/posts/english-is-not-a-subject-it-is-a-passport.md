@@ -2,16 +2,16 @@
 title: "English Is Not a Subject. It Is a Passport."
 description: "A plain-spoken Calcutta essay on why English has become more important than ever for students, workers, readers, writers, and anyone trying to survive science, commerce, software, and AI."
 date: "2026-06-04"
-thumbnail: "/images/Compress_20260604_072953_3744.jpg"
 category: "Education"
 tags: ["Mother Tongue","Ask Whether","Dangerous Means","English","Participant","Manuals","Writing","Language","Write","AI"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-english-is-not-a-subject-it-is-a-passport.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260604_072953_3744.jpg" />
+<Pi src="/thumbnail/safe-english-is-not-a-subject-it-is-a-passport.jpg" />
 
 Acronyms and terms used in this post:
 

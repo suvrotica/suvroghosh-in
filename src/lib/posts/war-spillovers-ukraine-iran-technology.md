@@ -1,17 +1,17 @@
 ---
 title: "What the Ukraine and Iran Wars May Leave Behind in Civilian Technology"
 description: "Wars do not ennoble technology. They compress it. A look at what the Ukraine war and the current Iran war may yield for civilian systems, and what earlier conflicts already gave the modern world."
-thumbnail : "/images/IMG-20260423-WA0000.jpg" 
 date: "2026-04-23"
 category: "technology"
-tags: ["Civilian","Ukraine","Drones","War","Navigation","Infrastructure","Robotics","Interceptor","Iran","Wartime"]
+tags: ["Civilian","Ukraine","Drones","War","Navigation","Infrastructure","Robotics","Interceptor","Wartime","Iran"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0000.jpg" />
+<Pi src="/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

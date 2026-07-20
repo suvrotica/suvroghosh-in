@@ -1,17 +1,17 @@
 ---
 title: "Mind Is What the Brain Does, Not a Ghost in the Attic"
 description: "A clear historical and scientific account of how the mind came to be understood as an emergent activity of the brain, and why popular language still keeps smuggling in little spirits wearing lab coats."
-thumbnail :  "/images/IMG-20260425-WA0012.jpg" 
 date: "2026-04-25"
 category: "Neuroscience"
-tags: ["Mental Life","Brain","Neurons","Mind","Perception","Experience","Woo","Mental","Neuron","Soul"]
+tags: ["Mental Life","Brain","Neurons","Mind","Perception","Experience","Woo","Mental","Neuron","Anesthesia"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-mind-as-emergence-not-magic.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0012.jpg" />
+<Pi src="/thumbnail/safe-mind-as-emergence-not-magic.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

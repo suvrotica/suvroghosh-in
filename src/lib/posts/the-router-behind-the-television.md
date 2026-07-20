@@ -2,16 +2,16 @@
 title: "The Router Behind the Television"
 description: "A funny, uneasy Calcutta essay on routers, weak passwords, smart devices, and the new age of automatic malware. The future does not always arrive in chrome and glass; sometimes it blinks behind the television."
 date: "2026-06-06"
-thumbnail: "/images/Compress_20260606_045423_3796.jpg"
 category: "Cybersecurity"
-tags: ["Router","Password","Patch","Device","Passwords","Worm","Updates","Nouns","Corporate","Television"]
+tags: ["Router","Patch","Password","Device","Passwords","Worm","Updates","Nouns","Corporate","Television"]
 published: true
 color: "#22C55E"
+thumbnail: "/thumbnail/safe-the-router-behind-the-television.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260606_045423_3796.jpg" />
+<Pi src="/thumbnail/safe-the-router-behind-the-television.jpg" />
 
 Acronyms used in this post:
 

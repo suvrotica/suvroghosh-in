@@ -2,16 +2,16 @@
 title: "Groundhog Cud: A Recursive Ramble on the Infinite Loop of Being"
 description: "A grotesquely swollen, manic-depressive monologue from a fifty-one-year-old Calcutta man, chewing the same cud of consciousness while the world installs AI lobsters door-to-door."
 date: "2026-07-19"
-thumbnail: "/images/Compress_20260719_132339_9546.jpg"
 category: "Personal Essay"
 tags: ["Phil Connors","Ceiling Fan","Dopamine Hit","Forced Labor","Cud","Itch","Groundhog","Itches","Ceiling","Chewing"]
 published: true
 color: "#2d1b4e"
+thumbnail: "/thumbnail/safe-groundhog-cud.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260719_132339_9546.jpg" />
+<Pi src="/thumbnail/safe-groundhog-cud.jpg" />
 
 The ceiling fan in this room is doing that thing again, that metronomic, metonymic, metempsychotic thing where it rotates with the exact same angular velocity as my thoughts, which is to say it is rotating with the exact same angular velocity as the earth, which is to say it is not rotating at all if you are standing on it, which is the whole problem, isn't it, the whole gelatinous, glistening, grotesque problem of perspective, because I am standing on my own thoughts and they feel stationary and yet they are moving, they are always moving, they are moving in circles like a cow chewing its cud, which is what I am doing, I am chewing my own vomited thoughts and swallowing them and vomiting them again, and the ceiling fan is my witness, my silent, whirring, indifferent witness, spinning the same hot Calcutta air that has been spun since 1690 when Job Charnock allegedly founded this city on a swamp and a prayer and probably a very bad case of dysentery, and I think about Job Charnock now, I think about how he must have stood in this exact same humidity, this exact same soup of particulate matter and despair, and thought, yes, this is where I will build a city, this is where I will impose order on chaos, this is where I will make something permanent, and now three hundred and thirty-six years later I am lying on my back watching a ceiling fan that costs less than a decent meal at Bhojohori Manna and I am thinking about permanence, I am thinking about how nothing is permanent, I am thinking about how the word permanent comes from the Latin permanere, to remain throughout, which is hilarious, which is grotesquely, obscenely hilarious, because nothing remains throughout, nothing, not even the atoms in my body which are constantly being replaced, which means the me that started this sentence is already dead, already compost, already part of the Calcutta air that the ceiling fan is redistributing with its mindless, mechanical benevolence.
 

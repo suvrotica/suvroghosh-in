@@ -2,16 +2,16 @@
 title: "The Filth That Learned to Stand"
 description: "In a heat-struck Calcutta, a dismissed municipal data analyst notices that the city’s garbage is moving before the people do. When the cockroaches rise, the real mutation is not only in their bodies."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_063022_2977.jpg"
 category: "Short Fiction"
 tags: ["Cleaner Version Meant","Lake Market","Red Zones","Aritra","Sanyal","Mili","Cockroach","Taps","Dum","Mother"]
 published: true
 color: "sickly green"
+thumbnail: "/thumbnail/safe-the-filth-that-learned-to-stand.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_063022_2977.jpg" />
+<Pi src="/thumbnail/safe-the-filth-that-learned-to-stand.jpg" />
 
 # THIS IS A WORK OF FICTION
 

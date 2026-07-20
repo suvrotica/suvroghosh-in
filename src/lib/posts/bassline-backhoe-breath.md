@@ -2,16 +2,16 @@
 title: "Bassline, Backhoe, Breath"
 description: "A South Calcutta lane turns into a laboratory of bass, dust, roadwork, television shouting, and civic forgetfulness, while one ordinary household tries to keep breathing."
 date: "2026-01-08"
-thumbnail: "/images/Compress_20260603_080501_1072.jpg"
 category: "Personal"
 tags: ["Bass","Dhup","Road","Ledge","Noise","Character","Backhoe","Dust","Speaker","Purifier"]
 published: true
 color: "orange"
+thumbnail: "/thumbnail/safe-bassline-backhoe-breath.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260603_080501_1072.jpg" />
+<Pi src="/thumbnail/safe-bassline-backhoe-breath.jpg" />
 
 Acronyms and terms:
 

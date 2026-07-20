@@ -1,17 +1,17 @@
 ---
 title: "Databases and Data Warehouses"
 description: "A practical architectural primer on what databases and data warehouses are actually for, how they fail under real operating conditions, and why the decisive variable is rarely the tool itself. The deeper story lives in workload shape, data semantics, ownership, time, and the often invisible architecture around them."
-thumbnail : "/images/IMG-20260423-WA0006.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
 tags: ["Health Level Seven","Data Quality","Data Warehouses","Warehouse","Operational","Authoritative","Architecture","Analytical","Event","Enterprise"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-database-first-principles.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0006.jpg" />
+<Pi src="/thumbnail/safe-database-first-principles.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -2,16 +2,16 @@
 title: "Head Tax"
 description: "In a rain-sour Calcutta lane, a butcher begins offering cheap medical cures to people who cannot afford doctors. A woman looking for help for her mother discovers that the city has a frightening way of accepting whatever reduces pain."
 date: "2026-06-08"
-thumbnail: "/images/Compress_20260608_105719_9912.jpg"
 category: "Short Fiction"
 tags: ["Tram Bell","Red Cloth","Gobu Shop","Rina Thought","Rina","Gobu","Bela","Bappa","Ear","Cleaver"]
 published: true
 color: "maroon"
+thumbnail: "/thumbnail/safe-head-tax.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260608_105719_9912.jpg" />
+<Pi src="/thumbnail/safe-head-tax.jpg" />
 
 # THIS IS A WORK OF FICTION
 

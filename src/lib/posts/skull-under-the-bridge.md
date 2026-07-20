@@ -2,16 +2,16 @@
 title: "The Skull Under the Bridge"
 description: "When a maintenance painter on Howrah Bridge notices bone-white threads clinging to the old steel, he thinks first of rust, then neglect, then hunger. By evening, Calcutta learns what has been living beneath its most familiar crossing."
 date: "2026-06-07"
-thumbnail: "/images/Compress_20260607_135747_7487.jpg"
 category: "Short Fiction"
 tags: ["Pedestrian Path","Inspection Hatch","Howrah Bridge","Nirmal Cut","Nirmal","Spider","Mukherjee","Bishu","Rini","Bridge"]
 published: true
 color: "bone-white"
+thumbnail: "/thumbnail/safe-skull-under-the-bridge.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260607_135747_7487.jpg" />
+<Pi src="/thumbnail/safe-skull-under-the-bridge.jpg" />
 
 # THIS IS A WORK OF FICTION
 

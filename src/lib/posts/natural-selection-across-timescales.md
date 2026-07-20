@@ -1,17 +1,17 @@
 ---
 title: "Natural Selection Is Not Just About Animals"
 description: "Natural selection is a general pattern: variation is tested against constraints, and some forms persist while others vanish. The same logic appears across biology, geology, cosmology, engineering, institutions, and civilization, though the clock runs at wildly different speeds."
-thumbnail : "/images/IMG-20260426-WA0004.jpg" 
 date: "2026-04-26"
 category: "Systems Thinking"
-tags: ["Natural Selection","Selection Pressures","Model Selected","Select","Selected","Natural","Timescales","Pressures","Constraint","Clock"]
+tags: ["Natural Selection","Selection Pressures","Model Selected","Select","Selected","Natural","Timescales","Pressures","Constraint","Timescale"]
 published: true
 color: "green"
+thumbnail: "/thumbnail/safe-natural-selection-across-timescales.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260426-WA0004.jpg" />
+<Pi src="/thumbnail/safe-natural-selection-across-timescales.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

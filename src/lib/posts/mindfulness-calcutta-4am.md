@@ -2,11 +2,11 @@
 title: "Mindfulness?"
 description: "Meditation is simple. Living inside your own head is not. A sleepless 4 a.m. ramble from the damp edges of Calcutta about writing, bipolarity, tea, gurus, stray cats, and the strange business of staying sane."
 date: "2026-02-11"
-thumbnail: "/images/Compress_20260513_042026_6712.jpg"
 category: "Calcutta"
-tags: ["Meditation","Mindfulness","Wanders","Writing","Somebody","Bring","Chewing","Thoughts","Honestly","Boring"]
+tags: ["Meditation","Mindfulness","Wanders","Writing","Somebody","Bring","Chewing","Honestly","Thoughts","Boring"]
 published: true
 color: "black"
+thumbnail: "/thumbnail/safe-mindfulness-calcutta-4am.jpg"
 ---
 
 
@@ -20,7 +20,7 @@ DMN — Default Mode Network. A network in the brain associated with self-talk, 
 
 <TTS />
 
-<Pi src="Compress_20260513_042026_6712.jpg" />
+<Pi src="/thumbnail/safe-mindfulness-calcutta-4am.jpg" />
 
 
 When people talk about mindfulness meditation these days, they usually speak in the tone of someone recommending an expensive air fryer. Very calm. Very certain. Very suspiciously moisturized. Somewhere there is always bamboo furniture involved.

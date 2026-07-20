@@ -2,14 +2,14 @@
 title: "Can't Go Back to Childhood—Except as a Misremembering Ghost"
 description: "A funny, sharp, Calcutta-flavored essay on childhood, nostalgia, memory, and the brain’s cheerful habit of forging emotional documents."
 date: "2025-03-24"
-thumbnail: "/images/Compress_20260528_070926_6026.jpg"
 category: "Memoir"
-tags: ["Childhood","Nostalgia","Learn","Past","Memory","Moss","Brings","Adults","Lane","Brain"]
+tags: ["Childhood","Nostalgia","Learn","Past","Memory","Moss","Brings","Lane","Adults","Brain"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg"
 ---
 <TTS />
-<Pi src="Compress_20260528_070926_6026.jpg" />
+<Pi src="/thumbnail/safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg" />
 Acronyms and terms: Joint Photographic Experts Group [JPEG, a common compressed image format that loses detail when squeezed too much]. Global Positioning System [GPS, a satellite-based navigation system that tells you where you are, though not always who you have become]. Search Engine Optimization [SEO, the practice of making online writing easier for search engines and readers to find].
 
 ---

@@ -1,17 +1,17 @@
 ---
 title: "Is Claude Mythos, a Myth?"
 description: "A technical analysis of the Claude Mythos access reports and the Claude Code source exposure, separating real security concern from theatrical overclaiming."
-thumbnail : "/images/IMG-20260424-WA0014.jpg"
 date: "2026-04-24"
 category: "AI Security"
 tags: ["Claude Mythos","Model Weights","Mythos","Model","Anthropic","Release","Access","AI-assisted","Capability","Credentials"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-claude-mythos-hype-and-security-hygiene.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0014.jpg" />
+<Pi src="/thumbnail/safe-claude-mythos-hype-and-security-hygiene.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

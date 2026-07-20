@@ -1,17 +1,17 @@
 ---
 title: "The City That Begs at the Window"
 description: "Calcutta’s street begging is not a plague of people; it is a public system failure made intimate, theatrical, and impossible to ignore."
-thumbnail : "/images/Compress_20260429_121822_2096.jpg"
 date: "2026-04-29"
 category: "Society"
 tags: ["Middle Class","Public Space","Formal Rules","Lived Reality","Plague","Compassion","Begging","Transgender","Hijra","Gender"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-city-that-begs-at-the-window.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260429_121822_2096.jpg" />
+<Pi src="/thumbnail/safe-the-city-that-begs-at-the-window.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -2,17 +2,17 @@
 title: "Existential Arithmetic at Bread Level"
 description: "A Calcutta essay on shrinking ambition down to groceries, rent, electricity, and the next meal while AI quietly saws through the old white-collar ladder."
 date: "2026-05-10"
-thumbnail: "/images/Compress_20260510_225922_2340.jpg"
 category: "Personal"
 tags: ["Okay Means","Career Ladder","Okay","Ladder","Future","Month","Arithmetic","Understands","Engineering","Career"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-existential-arithmetic-at-bread-level.jpg"
 ---
 
 
 <TTS />
 
-<Pi src="Compress_20260510_225922_2340.jpg" />
+<Pi src="/thumbnail/safe-existential-arithmetic-at-bread-level.jpg" />
 
 Acronyms used in this post: Artificial Intelligence [AI, computer systems that can generate, summarize, classify, code, analyze, imitate, and automate parts of human knowledge work].
 

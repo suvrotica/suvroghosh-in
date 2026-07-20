@@ -2,16 +2,16 @@
 title: "Faces for Ashtami"
 description: "Before Durga Puja, a Bengali scientist grows Triassic creatures with human faces and human instincts. Calcutta receives them first as rumor, then as appetite."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_164136_6970.jpg"
 category: "Short Fiction"
-tags: ["Number Four","Iron Rod","Goat Liver","Arunava","Sulekha","Mili","Paromita","Pandal","Number","Tank"]
+tags: ["Number Four","Iron Rod","Goat Liver","Arunava","Sulekha","Mili","Paromita","Pandal","Number","Creature"]
 published: true
 color: "maroon"
+thumbnail: "/thumbnail/safe-faces-for-ashtami.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260610_164136_6970.jpg" />
+<Pi src="/thumbnail/safe-faces-for-ashtami.jpg" />
 
 # THIS IS A WORK OF FICTION
 

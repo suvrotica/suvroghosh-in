@@ -1,17 +1,17 @@
 ---
 title: "Pests we love"
 description: "A field-wise, city-wise guide to the conspicuous insects and arachnids of Kolkata: what they are, why they appear, what they do, which ones matter medically, and why most of them are not the villains we imagine."
-thumbnail : "/images/IMG-20260424-WA0004.jpg"
 date: "2026-04-24"
 category: "natural history"
-tags: ["Bed Bugs","Host Plants","Insects","Arachnids","Termites","Spiders","Ants","Spider","Moths","Wasps"]
+tags: ["Bed Bugs","Host Plants","Insects","Arachnids","Termites","Spiders","Ants","Moths","Wasps","Spider"]
 published: true
 color: "green"
+thumbnail: "/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0004.jpg" />
+<Pi src="/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

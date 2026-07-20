@@ -1,17 +1,17 @@
 ---
 title: "Universal Basic Income in India After Work Stops Being a Promise"
 description: "A sharp look at Universal Basic Income in India if educated and skilled unemployment becomes catastrophic under Artificial Intelligence and robotics. The post treats UBI not as charity, but as constitutional shock absorption in a state weakened by corruption, inequality, and democratic decay."
-thumbnail : "/images/IMG-20260425-WA0008.jpg"
 date: "2026-04-25"
 category: "political economy"
 tags: ["Public Health","Basic Income","UBI","Income","Welfare","India","Employment","Poverty","Wealth","Basic"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-ubi-india-ai-unemployment-democracy.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0008.jpg" />
+<Pi src="/thumbnail/safe-ubi-india-ai-unemployment-democracy.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

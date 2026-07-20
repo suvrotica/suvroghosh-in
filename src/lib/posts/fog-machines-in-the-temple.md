@@ -2,16 +2,16 @@
 title: "Fog Machines in the Temple: Mandukya, AI, and the Dangerous Answer to Who Am I?"
 description: "A Calcutta-bred, skeptical reading of the Mandukya Upanishad, identity, social gaslighting, and why AI can become a private priest for the lonely, gullible, wounded, and over-persuaded."
 date: "2026-05-09"
-thumbnail: "/images/Compress_20260509_022428_8451.jpg"
 category: "Philosophy and AI"
 tags: ["Deep Sleep","Pure Consciousness","Mandukya","AI","Mode","Pretends","Waking","Dream","Guru","Self"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-fog-machines-in-the-temple.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260509_022428_8451.jpg" />
+<Pi src="/thumbnail/safe-fog-machines-in-the-temple.jpg" />
 
 Artificial Intelligence [AI, computer systems that generate or act on patterns learned from data]
 

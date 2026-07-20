@@ -1,17 +1,17 @@
 ---
 title: "India’s AI Moat"
 description: "India may yet build a real Artificial Intelligence moat, but it is unlikely to look like Silicon Valley’s. The stronger case is not frontier-model supremacy but a harder, more infrastructural advantage built from diffusion, public rails, language reach, and brutal implementation experience."
-thumbnail : "/images/IMG-20260423-WA0004.jpg"
 date: "2026-04-23"
 category: "healthcare-it"
-tags: ["Chip Design","Selective Sovereignty","Failure Point","Model Work","Moat","AI","Model","Frontier","Implementation","Hardware"]
+tags: ["Chip Design","Selective Sovereignty","Failure Point","Model Work","Moat","AI","Model","Frontier","Implementation","India"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-india-ai-moat-width-without-depth.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0004.jpg" />
+<Pi src="/thumbnail/safe-india-ai-moat-width-without-depth.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

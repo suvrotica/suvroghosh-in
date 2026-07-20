@@ -2,16 +2,16 @@
 title: "The Calcutta Summer of 2026"
 description: "A street-level, India-focused look at why Calcutta’s 2026 summer is not merely hot, but structurally dangerous: humidity, labor, housing, health surveillance, and the small tyrannies of daily life."
 date: "2026-05-18"
-thumbnail: "/images/Compress_20260518_035724_4679.jpg"
 category: "Climate"
 tags: ["Cooling","Heat","Shade","Boring","Heat-Aware","Niño","Ward-Level","Shaded","Climate","Calcutta"]
 published: true
 color: "orange"
+thumbnail: "/thumbnail/safe-calcutta-summer-of-2026.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260518_035724_4679.jpg" />
+<Pi src="/thumbnail/safe-calcutta-summer-of-2026.jpg" />
 
 Acronyms used in this post:
 

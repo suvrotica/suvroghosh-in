@@ -2,11 +2,11 @@
 title: "The Local Disgrace Still Making Noise"
 description: "A sharper, cleaner, more readable Calcutta monologue about being called useless, strange, obscene, and failed by a society that forgives cruelty more easily than oddness."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_135723_3467.jpg"
 category: "Personal Essay"
 tags: ["Rice Cooker","Clap","Low","Giggle","Curse","Subject","Language","Filth","Holy","Sometimes"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-local-disgrace-still-making-noise.jpg"
 ---
 
 Acronyms and terms:
@@ -14,7 +14,7 @@ Acronyms and terms:
 
 <TTS />
 
-<Pi src="Compress_20260610_135723_3467.jpg" />
+<Pi src="/thumbnail/safe-local-disgrace-still-making-noise.jpg" />
 
 
 

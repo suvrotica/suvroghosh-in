@@ -2,16 +2,16 @@
 title: "The Heap That Remembered"
 description: "At the edge of Calcutta, a clerk overseeing a contractor’s miracle garbage cure finds that the city’s waste is not being destroyed. It is being judged."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_100753_3619.jpg"
 category: "Short Fiction"
 tags: ["Grey Shine","Garbage Mountain","Blue Cloth","Nirmal Asked","Debu","Nirmal","Bappa","Heap","Swarm","Sen"]
 published: true
 color: "#4D4030"
+thumbnail: "/thumbnail/safe-the-heap-that-remembered.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_100753_3619.jpg" />
+<Pi src="/thumbnail/safe-the-heap-that-remembered.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -146,7 +146,9 @@ for (const file of postFiles) {
 	if (metadata.thumbnail !== undefined) {
 		if (
 			typeof metadata.thumbnail === 'string' &&
-			!/^\/(?:images|photos)\/.+\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(metadata.thumbnail)
+			!/^\/(?:images|photos|thumbnail)\/.+\.(?:avif|gif|jpe?g|png|svg|webp)$/i.test(
+				metadata.thumbnail
+			)
 		) {
 			errors.push(`${file}: thumbnail must be a root-relative supported image path.`);
 		}

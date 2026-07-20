@@ -2,16 +2,16 @@
 title: "The Thermodynamics of Envy"
 description: "A sweltering, serpentine meditation on the four species of human fauna observed through the lens of a returning prodigal, wherein bacteria, quantum deceit, and the arithmetic of schadenfreude conspire to explain why everything smells like defeat."
 date: "2026-07-17"
-thumbnail: "/images/Compress_20260717_215929_9424.jpg"
 category: "Essay"
 tags: ["Glee Merchants","Saccharine Saints","Glee","Cretins","Saccharine","Merchants","Cornered","Engineered","Species","Bacteria"]
 published: true
 color: "#8B4513"
+thumbnail: "/thumbnail/safe-the-thermodynamics-of-envy.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260717_215929_9424.jpg" />
+<Pi src="/thumbnail/safe-the-thermodynamics-of-envy.jpg" />
 
 The heat does not merely sit upon Calcutta; it incubates, it festers, it performs a kind of grotesque osmosis through the skin until you are not sweating but rather secreting the city itself, and this morning, stepping over a rivulet of human effluvium that had achieved a viscosity suggesting sentience—perhaps even political ambition—I recalled, with the involuntary precision of a seizure, that in America they have now engineered a toilet so intelligent it will text your relatives if you fail to defecate within an eight-hour window, a porcelain panopticon of familial surveillance that reduces the most ancient and democratic of human functions to a data point, a notification, a beep, and I thought, standing there in the alley where the stench performed a duet with the humidity, that perhaps this is the true measure of civilizational divergence: not in the rockets we launch toward Mars—which Perseverance now drives across with the bored persistence of a marathon runner, having clocked twenty-six point two miles of red dust in five years, a feat that would impress me more if the planet were not simply a future graveyard for billionaires—but in our relationship to the fundamental substrates of biology, the ordure and the obloquy and the heat that cooks them both into a kind of moral soup.
 

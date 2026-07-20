@@ -2,16 +2,16 @@
 title: "The Free Prasad Hour"
 description: "In a humid Calcutta afternoon, a televised miracle gathering becomes a trap, and one woman begins to understand that crowds can be murdered like individuals. A story about spectacle, faith, poverty, and the lethal vanity of being seen."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_110848_8382.jpg"
 category: "Short Fiction"
 tags: ["FREE SAREE","Baba Bijoyananda","VIP Enclosure","Running Order","West Counter","Nandita","Rishav","Pulak","Baba","Coupon"]
 published: true
 color: "maroon"
+thumbnail: "/thumbnail/safe-the-free-prasad-hour.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_110848_8382.jpg" />
+<Pi src="/thumbnail/safe-the-free-prasad-hour.jpg" />
 
 # THIS IS A WORK OF FICTION
 

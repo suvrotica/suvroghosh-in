@@ -2,16 +2,16 @@
 title: "LinkedIn, Unemployment, and the National X-Ray"
 description: "A hard, satirical look at India’s job market, credential factories, ghost jobs, nepotism, religious fog, and the bruised hope of young people trying to earn a living on a heating planet."
 date: "2026-05-03"
-thumbnail: "/images/Compress_20260504_165300_0245.jpg"
 category: "Society"
-tags: ["Job Market","Work Hard","Performs","Employability","Jobs","Young","India","Qualified","Public","Talent"]
+tags: ["Job Market","Work Hard","Performs","Employability","Jobs","India","Young","Qualified","Public","Talent"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-linkedin-job-market-india-national-xray.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260504_165300_0245.jpg" />
+<Pi src="/thumbnail/safe-linkedin-job-market-india-national-xray.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

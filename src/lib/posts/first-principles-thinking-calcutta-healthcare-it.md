@@ -1,17 +1,17 @@
 ---
 title: "First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality"
 description: "A technical and human argument for first principles thinking as a survival tool, an architectural discipline, and a way to separate reality from inherited vocabulary in healthcare IT."
-thumbnail :  "/images/IMG-20260425-WA0009.jpg" 
 date: "2026-04-26"
 category: "Useful Mental Models"
-tags: ["Health Level Seven","Principles","Clinical","Healthcare","Data","First-Principles","Model","Representation","Health","Meaning"]
+tags: ["Health Level Seven","Principles","Clinical","Healthcare","Data","First-Principles","Model","Representation","Health","Artifact"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0009.jpg" />
+<Pi src="/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

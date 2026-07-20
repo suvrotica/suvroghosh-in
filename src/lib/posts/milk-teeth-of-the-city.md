@@ -2,16 +2,16 @@
 title: "Milk Teeth of the City"
 description: "A counterfeit milk habit begins as a private shame in Calcutta and turns into a public undoing. One man’s violence becomes the first clue to a citywide regression."
 date: "2026-06-03"
-thumbnail: "/images/Compress_20260603_090627_7821.jpg"
 category: "Short Fiction"
 tags: ["Low Complaint Probability","SHUDDHO GOLD","Milk Powder","Power Cut","Mira Read","Mira","Ramji","Ishan","Phoolmati","Milk"]
 published: true
 color: "Bone White"
+thumbnail: "/thumbnail/safe-milk-teeth-of-the-city.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260603_090627_7821.jpg" />
+<Pi src="/thumbnail/safe-milk-teeth-of-the-city.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -1,17 +1,17 @@
 ---
 title: "Why EHR and HIE Struggle in India but AI Diagnostics might not"
 description: "A system-level analysis of why Electronic Health Records and Health Information Exchange architectures remain impractical in India, and how structural gaps may paradoxically enable AI-driven diagnostics."
-thumbnail : "/images/IMG-20260423-WA0009.jpg" 
 date: "2026-04-21"
 category: "healthcare it"
-tags: ["Health Level Seven","AI Diagnostics","Digital Health","Care Documents","EHR","Clinical","HIE","Diagnostics","Data","Healthcare"]
+tags: ["Health Level Seven","AI Diagnostics","Digital Health","Care Documents","EHR","Clinical","HIE","Data","Diagnostics","Healthcare"]
 published: true
 color: "teal"
+thumbnail: "/thumbnail/safe-india-ehr-hie-ai-constraints.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0009.jpg" />
+<Pi src="/thumbnail/safe-india-ehr-hie-ai-constraints.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

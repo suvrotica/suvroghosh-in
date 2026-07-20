@@ -2,11 +2,11 @@
 title: "Symmetry in a Calcutta Room"
 description: "A plain, witty essay on symmetry, from mirrors and wallpaper to particles, mathematics, and the strange human need to know what remains unchanged when everything else gets shoved around."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_151948_8935.jpg"
 category: "Mathematics"
-tags: ["Wallpaper Pattern","Symmetry","Rotate","Mathematics","Wallpaper","Transform","Ball","Square","Mathematicians","Quantum"]
+tags: ["Wallpaper Pattern","Symmetry","Rotate","Mathematics","Wallpaper","Transform","Ball","Square","Mathematicians","Diagrams"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-symmetry-in-a-calcutta-room.jpg"
 ---
 
 Acronyms used in this post:
@@ -17,7 +17,7 @@ MIT: Massachusetts Institute of Technology, a major American university known fo
 
 <TTS />
 
-<Pi src="Compress_20260614_151948_8935.jpg" />
+<Pi src="/thumbnail/safe-symmetry-in-a-calcutta-room.jpg" />
 
 ---
 

@@ -1,17 +1,17 @@
 ---
 title: "The Questions You Ask"
 description: "Why longitudinal analysis, population insights, and predictive modeling diverge sharply between academic medical centers and VA systems—and what that reveals about data architecture."
-thumbnail : "/images/IMG-20260423-WA0010.jpg" 
 date: "2026-04-21"
 category: "healthcare it"
 tags: ["Health Level Seven","United States","Health Science Center","Longitudinal Analysis","Predictive Modeling","VA","UTHSCSA","Data","Clinical","Patient"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-questions-change-systems-uthscsa-va.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0010.jpg" />
+<Pi src="/thumbnail/safe-questions-change-systems-uthscsa-va.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

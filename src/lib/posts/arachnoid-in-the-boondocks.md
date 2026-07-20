@@ -2,16 +2,16 @@
 title: "The Arachnoid in the Boondocks"
 description: "A grotesquely swollen bipolar monologue from a fifty-one-year-old Calcutta polemicist, tracing the fungal cartographies of manic depression through brick-and-mortar consciousness and the bureaucratic necropolis of psychiatric consensus."
 date: "2026-07-13"
-thumbnail: "/images/Compress_20260713_064335_5868.jpg"
 category: "Essay"
-tags: ["Arachnoid","Web","Dermatophytes","Consensus","Lobe","Thigh","Fungal","Lens","Mania","Symptom"]
+tags: ["Arachnoid","Web","Dermatophytes","Consensus","Lobe","Thigh","Lens","Fungal","Mania","Symptom"]
 published: true
 color: "#3A1C1C"
+thumbnail: "/thumbnail/safe-arachnoid-in-the-boondocks.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260713_064335_5868.jpg" />
+<Pi src="/thumbnail/safe-arachnoid-in-the-boondocks.jpg" />
 
 I woke at four in the stinking ante-meridian with the distinct sensation that a colony of microscopic dermatophytes had convened a municipal council beneath the cleft of my left thigh, their mycelial tendrils casting votes on the humidity index while a single bead of sweat—salty, ancestral, reeking of last night’s fried hilsa and pharmaceutical despair—traced a cartographic route down the crease of my scrotum, mapping a nation-state of fungal democracy that no election commission could ever hope to supervise, and I lay there, staring at the ceiling that was not a sky but merely the plastered, lime-and-sand mortared underside of someone else’s floor above, where a water stain had expanded its territorial claims into a shape resembling the delta of the Ganges, complete with tributaries of efflorescence and a capital city of black mold that pulsed in the dark like a municipal heartbeat, and I thought that this is what the textbooks, those leather-bound catacombs of consensus, would call a depressive episode with atypical features, as though my misery were a postage stamp to be licked and affixed to some bureaucratic envelope bound for the dead letter office of the American Psychiatric Association.
 

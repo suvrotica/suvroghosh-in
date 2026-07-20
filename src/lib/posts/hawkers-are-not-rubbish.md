@@ -2,16 +2,16 @@
 title: "Hawkers Are Not Rubbish To Be Swept Before Breakfast"
 description: "A Calcutta street-level argument against evicting hawkers without real rehabilitation, jobs, dignity, or an honest urban plan."
 date: "2026-06-01"
-thumbnail: "/images/Compress_20260601_083931_1020.jpg"
 category: "Social Commentary"
 tags: ["Vending Zones","Street Vending","Street Vendors","Less Visible","Public Space","Livelihood","Hawker","Zones","Hawkers","Extortion"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-hawkers-are-not-rubbish.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260601_083931_1020.jpg" />
+<Pi src="/thumbnail/safe-hawkers-are-not-rubbish.jpg" />
 
 Acronyms and terms used in this post:
 

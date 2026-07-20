@@ -2,16 +2,16 @@
 title: "Knife Bite"
 description: "A Calcutta biscuit jingle begins as a small nuisance in the ear, then crawls into the eyes, the teeth, and the hunger of the city."
 date: "2026-06-03"
-thumbnail: "/images/Compress_20260603_105956_6470.jpg"
 category: "Short Fiction"
 tags: ["Knife Bite","Ritwick","Nilanjana","Mira","Jingle","Khabo","Bite","Eyelids","Audio","Tune"]
 published: true
 color: "blood orange"
+thumbnail: "/thumbnail/safe-knife-bite-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260603_105956_6470.jpg" />
+<Pi src="/thumbnail/safe-knife-bite-calcutta.jpg" />
 
 # THIS IS A WORK OF FICTION
 

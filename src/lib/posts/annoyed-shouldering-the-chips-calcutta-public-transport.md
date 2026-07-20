@@ -2,16 +2,16 @@
 title: "Shouldering the Chips: A Bengali Odyssey Through Calcutta’s Public Transport"
 description: "A clean but sharp satirical Calcutta commute essay about minibuses, heat, humidity, crowding, middle-class irritation, and the little resentments Bengalis carry like family heirlooms."
 date: "2025-06-02"
-thumbnail: "/images/Compress_20260602_052320_0414.jpg"
 category: "Calcutta"
-tags: ["Calcutta Minibus","Minibus","Conductor","Bus","Chips","Driver","Schedules","Watch","Passengers","Calcutta"]
+tags: ["Calcutta Minibus","Minibus","Conductor","Bus","Chips","Driver","Watch","Schedules","Passengers","Calcutta"]
 published: true
 color: "#e3f4b7"
+thumbnail: "/thumbnail/safe-annoyed-shouldering-the-chips-calcutta-public-transport.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_052320_0414.jpg" />
+<Pi src="/thumbnail/safe-annoyed-shouldering-the-chips-calcutta-public-transport.jpg" />
 
 
 A Calcutta minibus in summer is not a vehicle. It is a pressure cooker that has lost faith in civilization.

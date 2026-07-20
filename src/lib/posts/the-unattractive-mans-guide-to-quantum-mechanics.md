@@ -2,16 +2,16 @@
 title: "The Unattractive Man’s Guide to Quantum Mechanics"
 description: "A darkly comic personal essay using quantum mechanics as a street-level metaphor for middle-aged invisibility, job-market rejection, desire, dignity, and the strange half-life of hope."
 date: "2026-06-20"
-thumbnail: "/images/Compress_20260620_151428_8987.jpg"
 category: "Personal Essay"
-tags: ["Quantum Mechanics","Man Desire","Quantum","Desire","Collapse","Particle","Version","Mechanics","Observation","Uncertainty"]
+tags: ["Quantum Mechanics","Man Desire","Quantum","Collapse","Desire","Version","Particle","Mechanics","Observation","Uncertainty"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260620_151428_8987.jpg" />
+<Pi src="/thumbnail/safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg" />
 
 CV: Curriculum Vitae, the formal document where human life is compressed into polite evidence of usefulness.
 

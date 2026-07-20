@@ -2,16 +2,16 @@
 title: "Bar English for Bengalis Who Have Escaped the Tea Stall"
 description: "A sharp, funny, plain-English Kolkata guide to American-style bar vocabulary, from neat whiskey and bar tabs to proof, ABV, happy hour, martinis, and the dangerous little word shot."
 date: "2026-06-08"
-thumbnail: "/images/Compress_20260608_100111_1953.jpg"
 category: "Culture"
 tags: ["Happy Hour","Rocks Means","Proof System","Call Means","ABV","Alcohol","Drink","Whiskey","Vermouth","Ice"]
 published: true
 color: "#6B3A1E"
+thumbnail: "/thumbnail/safe-bar-english-for-bengalis.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260608_100111_1953.jpg" />
+<Pi src="/thumbnail/safe-bar-english-for-bengalis.jpg" />
 
 Acronyms and terms used in this post:
 

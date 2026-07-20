@@ -2,17 +2,17 @@
 title: "The New Mantra"
 description: "A programmer in Calcutta watches AI coding tools move from autocomplete to agency, and tries to understand what remains of craft when the machine can write the code."
 date: "2026-07-01"
-thumbnail: "/images/IMG-20260422-WA0009.jpg"
 thumbnailAlt: "Article illustration for The New Mantra"
 category: "Career"
 tags: ["Function","Code","Tests","Agent","Test","Patch","Enough","File","Request","Tools"]
 published: true
 color: "#2c3e50"
+thumbnail: "/thumbnail/safe-the-new-mantra.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260422-WA0009.jpg" alt="Article illustration for The New Mantra" />
+<Pi src="/thumbnail/safe-the-new-mantra.jpg" alt="Article illustration for The New Mantra" />
 
 The ceiling fan above my desk has settled into a loose, uneven rhythm, fast enough to move the monsoon air but not fast enough to make it lighter. It is the first day of July, 2026, in Calcutta. The rain has come down with that particular confidence it gets after the city has already surrendered. The balcony rail is wet. The laptop is warm. My fingers leave a faint dampness on the keys, and on the screen Claude Code is thinking through a problem that, ten years ago, would have kept me pinned to the chair for half a day.
 

@@ -2,16 +2,16 @@
 title: "Cockroach Season"
 description: "A man seeking genetic treatment for Huntington’s disease receives the wrong bottle in Calcutta, and the city’s oldest survivors begin to call to him from the drains."
 date: "2026-06-01"
-thumbnail: "/images/Compress_20260601_111522_2382.jpg"
 category: "Short Fiction"
 tags: ["Raka Lahiri","Forty Percent","Tea Stall","Nilotpal","Mili","Raka","Cockroaches","Clinic","Lahiri","Nil"]
 published: true
 color: "black"
+thumbnail: "/thumbnail/safe-cockroach-season.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260601_111522_2382.jpg" />
+<Pi src="/thumbnail/safe-cockroach-season.jpg" />
 
 # THIS IS A WORK OF FICTION
 

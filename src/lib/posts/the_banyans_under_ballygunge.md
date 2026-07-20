@@ -2,16 +2,16 @@
 title: "The Banyans Under Ballygunge"
 description: "A grieving botanist plants shade trees along Calcutta’s broken pavements, hoping to cool the city that took his wife. When entire lanes begin sinking into root-darkness, he must learn what kind of shade he has made."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_093627_7182.jpg"
 category: "Short Fiction"
 tags: ["Aerial Roots","Ananya Roy","Tea Stall","Nirmal","Malini","Roots","Saplings","Root","Ananya","Pavement"]
 published: true
 color: "Green"
+thumbnail: "/thumbnail/safe-the-banyans-under-ballygunge.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_093627_7182.jpg" />
+<Pi src="/thumbnail/safe-the-banyans-under-ballygunge.jpg" />
 
 # THIS IS A WORK OF FICTION
 

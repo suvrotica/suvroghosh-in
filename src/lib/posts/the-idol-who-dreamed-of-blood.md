@@ -2,16 +2,16 @@
 title: "The Idol Who Dreamed of Blood"
 description: "When a neighbourhood Durga idol begins to sweat warm salt water, an electrician discovers something impossible inside its clay—and the disappearances begin."
 date: "2026-07-18"
-thumbnail: "/images/Compress_20260718_173308_8326.jpg"
 category: "Short Fiction"
-tags: ["Hari Mondal","Jharna Das","Kartik Bose","Lakshmi Nagar","Anirban Pal","Subir","Madhuri","Idol","Clay","Bose"]
+tags: ["Hari Mondal","Jharna Das","Lakshmi Nagar","Kartik Bose","Anirban Pal","Subir","Madhuri","Idol","Clay","Bose"]
 published: true
 color: "#8B0000"
+thumbnail: "/thumbnail/safe-the-idol-who-dreamed-of-blood.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260718_173308_8326.jpg" />
+<Pi src="/thumbnail/safe-the-idol-who-dreamed-of-blood.jpg" />
 
 THIS IS A WORK OF FICTION
 

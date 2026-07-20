@@ -2,16 +2,16 @@
 title: "Poison Often Wears a Clean Shirt"
 description: "A sharp, readable essay on why harmful people often arrive looking ordinary, respectable, and harmless, and why recognizing them too late can leave deep damage."
 date: "2026-05-30"
-thumbnail: "/images/Compress_20260530_100944_4233.jpg"
 category: "Personal Essay"
-tags: ["Poisonous Person","Poisonous","Trust","Doubt","Carry","Pattern","Everyone","Distance","Careful","Calm"]
+tags: ["Poisonous Person","Poisonous","Trust","Doubt","Carry","Pattern","Everyone","Distance","Careful","Public"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-poison-wears-a-clean-shirt.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260530_100944_4233.jpg" />
+<Pi src="/thumbnail/safe-poison-wears-a-clean-shirt.jpg" />
 
 
 

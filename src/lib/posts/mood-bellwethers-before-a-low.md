@@ -2,17 +2,17 @@
 title: "Mood Bellwethers Before a Low"
 description: "A personal essay on those strange bodily warnings—indigestion, insomnia, stray thoughts—that sometimes arrive before a depressive dip."
 date: "2026-05-15"
-thumbnail : "/images/Compress_20260515_021049_9074.jpg"
 category: "Personal Essay"
-tags: ["Weather","Mood","Witness","Thoughts","Refuse","Living","Avoid","Sleep","Tomorrow","Philosophical"]
+tags: ["Weather","Mood","Witness","Refuse","Thoughts","Living","Avoid","Sleep","Philosophical","Tomorrow"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-mood-bellwethers-before-a-low.jpg"
 ---
 
 
 <TTS />
 
-<Pi src="Compress_20260515_021049_9074.jpg" />
+<Pi src="/thumbnail/safe-mood-bellwethers-before-a-low.jpg" />
 
 ---
 

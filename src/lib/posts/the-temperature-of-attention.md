@@ -2,16 +2,16 @@
 title: "The Temperature of Attention"
 description: "During a June heat wave in Calcutta, a hospital data contractor discovers that the city’s poorest bodies are not merely dying from heat, but being edited out of consciousness itself."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_050121_1354.jpg"
 category: "Short Fiction"
-tags: ["Azure Heights","North Star","Low ATTENTION DETECTED","ATTENTION INDEX","Server Room","Arindam","Mina","Hospital","Server","Scored"]
+tags: ["Azure Heights","North Star","Low ATTENTION DETECTED","ATTENTION INDEX","Server Room","Arindam","Mina","Hospital","Server","Rickshaw-Wala"]
 published: true
 color: "copper"
+thumbnail: "/thumbnail/safe-the-temperature-of-attention.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_050121_1354.jpg" />
+<Pi src="/thumbnail/safe-the-temperature-of-attention.jpg" />
 
 # THIS IS A WORK OF FICTION
 

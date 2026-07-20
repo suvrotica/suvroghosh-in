@@ -1,17 +1,17 @@
 ---
 title: "The Last Economy"
 description: "A rigorous reading of Emad Mostaque’s The Last Economy: its core hypotheses, the idea of intelligence inversion, and why futurism usually says more about the present than the future."
-thumbnail : "/images/IMG-20260423-WA0002.jpg" 
 date: "2026-04-23"
 category: "technology"
-tags: ["Artificial Intelligence","Political Economy","Hypothesis","Hypotheses","Economy","Book","Abundance","Cognition","Abundant","Labor"]
+tags: ["Artificial Intelligence","Political Economy","Hypothesis","Hypotheses","Economy","Book","Abundance","Abundant","Labor","Cognition"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-last-economy-intelligence-inversion.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0002.jpg" />
+<Pi src="/thumbnail/safe-last-economy-intelligence-inversion.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

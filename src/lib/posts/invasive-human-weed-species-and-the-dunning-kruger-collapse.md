@@ -1,17 +1,17 @@
 ---
 title: "The Invasive Human Weed Species"
 description: "A sharp essay on the social ecology of loud incompetence, narcissistic certainty, and why the popular Dunning-Kruger explanation is both useful and flawed."
-thumbnail: "/images/IMG-20260424-WA0013.jpg"
 date: "2026-04-24"
 category: "society"
 tags: ["Human Weed","Invasive","Weed","Dunning-Kruger","Ignorance","Institutions","Incompetence","Socially","Treats","Competence"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0013.jpg" />
+<Pi src="/thumbnail/safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

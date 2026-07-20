@@ -2,16 +2,16 @@
 title: "Administratively Deleted"
 description: "A personal essay on middle age, social invisibility, worklessness, desire, family usefulness, and the quiet Calcutta bureaucracy of being erased before death."
 date: "2026-06-20"
-thumbnail: "/images/Compress_20260620_123845_5292.jpg"
 category: "Personal Essay"
-tags: ["Erasure","Women","Romance","Death","Thins","Affection","Family","Brochure","Hair","Brain"]
+tags: ["Erasure","Women","Romance","Death","Thins","Family","Affection","Brochure","Hair","Brain"]
 published: true
 color: "#4A3B36"
+thumbnail: "/thumbnail/safe-administratively-deleted.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260620_123845_5292.jpg" />
+<Pi src="/thumbnail/safe-administratively-deleted.jpg" />
 
 Acronyms and short forms used in this post:
 

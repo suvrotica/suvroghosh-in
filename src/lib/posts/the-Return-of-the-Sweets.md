@@ -2,16 +2,16 @@
 title: "The Return of the Sweets"
 description: "A grieving man returns to Calcutta and discovers his late father has engineered a rosogolla that replicates inside the human body, using familial tissue to rebuild itself."
 date: "2026-06-25"
-thumbnail: "/images/Compress_20260625_180713_3083.jpg"
 category: "Short Fiction"
-tags: ["Flight Attendant","Sweet Shop","Amit","Father","Dimpled","Mouth","Budding","Rosogollas","Flight","Rosogolla"]
+tags: ["Flight Attendant","Sweet Shop","Amit","Father","Dimpled","Mouth","Budding","Rosogollas","Flight","Plane"]
 published: true
 color: "#F5F5DC"
+thumbnail: "/thumbnail/safe-the-return-of-the-sweets.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260625_180713_3083.jpg" />
+<Pi src="/thumbnail/safe-the-return-of-the-sweets.jpg" />
 
 # THIS IS A WORK OF FICTION
 

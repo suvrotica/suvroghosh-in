@@ -2,16 +2,16 @@
 title: "Kenneth Arrow in the Waiting Room"
 description: "A Calcutta-grounded essay on Kenneth Arrow's 1963 medical-care paper, and why healthcare refuses to behave like an ordinary market."
 date: "2026-06-24"
-thumbnail: "/images/IMG-20260426-WA0008.jpg"
 category: "Economics"
 tags: ["Adverse Selection","Public Provision","Moral Hazard","Medical Care","United States","Arrow","Insurance","Care","Patient","Medical"]
 published: true
 color: "#2c5282"
+thumbnail: "/thumbnail/safe-kenneth-arrow-medical-care.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260426-WA0008.jpg" />
+<Pi src="/thumbnail/safe-kenneth-arrow-medical-care.jpg" />
 
 The plastic chair in a clinic waiting room does not invite economic theory.
 

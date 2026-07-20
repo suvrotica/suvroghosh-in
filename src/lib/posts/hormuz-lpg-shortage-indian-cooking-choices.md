@@ -1,17 +1,17 @@
 ---
 title: "LPG debacle"
 description: "A system-level look at how Indian kitchens are adapting to the Liquefied Petroleum Gas shortage triggered by the Strait of Hormuz blockade, and what those choices reveal about energy, class, cooking, and resilience."
-thumbnail : "/images/IMG-20260424-WA0005.jpg"
 date: "2026-04-24"
 category: "energy"
 tags: ["Saves Fuel","Rice Dal","Indian Cooking","Pressure Cooker","LPG","Cooking","Induction","Fuel","PNG","Biogas"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-hormuz-lpg-shortage-indian-cooking-choices.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0005.jpg" />
+<Pi src="/thumbnail/safe-hormuz-lpg-shortage-indian-cooking-choices.jpg" />
 
 Acronyms expanded in this post:
 - LPG: Liquefied Petroleum Gas. bottled cooking gas used in many Indian homes.

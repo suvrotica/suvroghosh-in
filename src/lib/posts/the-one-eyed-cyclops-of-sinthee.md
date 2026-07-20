@@ -2,16 +2,16 @@
 title: "The One-Eyed Cyclops of Sinthee"
 description: "When a locked house in Calcutta opens its door, two children discover a man who sees the hidden truth of their neighbourhood—and need their help to save it."
 date: "2026-07-04"
-thumbnail: "/images/Compress_20260704_010515_5707.jpg"
 category: "Short Fiction"
 tags: ["Tin Box","Poltu Put","Single Eye","Brass Torch","Poltu","Bhattacharya","Jhuma","Playground","Eye","Chatterjee"]
 published: true
 color: "#D2691E"
+thumbnail: "/thumbnail/safe-the-one-eyed-cyclops-of-sinthee.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260704_010515_5707.jpg" />
+<Pi src="/thumbnail/safe-the-one-eyed-cyclops-of-sinthee.jpg" />
 
 # THIS IS A WORK OF FICTION
 

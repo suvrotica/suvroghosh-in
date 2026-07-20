@@ -1,17 +1,17 @@
 ---
 title: "The History of the Shape of Atoms"
 description: "A technical history of how the atom changed shape in the scientific imagination, from indivisible bead to quantum probability cloud. The story is not merely about better pictures, but about the hard collision between measurement, mathematics, and the limits of representation."
-thumbnail : "/images/IMG-20260423-WA0023.jpg"
 date: "2026-04-23"
 category: "science"
 tags: ["Electron Density","Quantum Mechanics","Positive Charge","Atom","Electron","Quantum","Atoms","Atomic","Nucleus","Bohr"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-the-history-of-the-shape-of-atoms.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0023.jpg" />
+<Pi src="/thumbnail/safe-the-history-of-the-shape-of-atoms.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

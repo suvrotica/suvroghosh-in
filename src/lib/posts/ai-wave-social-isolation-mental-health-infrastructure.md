@@ -1,17 +1,17 @@
 ---
 title: "The Mental Health System Will Meet the AI Wave at Its Weakest Joint"
 description: "A technical and humane look at how social disconnection, economic displacement, and fragile care infrastructure may collide as Artificial Intelligence reshapes work and identity."
-thumbnail : "/images/IMG-20260425-WA0010.jpg" 
 date: "2026-04-26"
 category: "Artificial Intelligence"
 tags: ["Mental Health","Health Level Seven","Chronic Disease","Clinical","Care","Data","Systems","Healthcare","Mental","Social"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-ai-wave-social-isolation-mental-health-infrastructure.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0010.jpg" />
+<Pi src="/thumbnail/safe-ai-wave-social-isolation-mental-health-infrastructure.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

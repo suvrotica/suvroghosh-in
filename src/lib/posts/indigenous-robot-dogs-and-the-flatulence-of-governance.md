@@ -2,16 +2,16 @@
 title: "Indigenous Robot Dogs"
 description: "A feverishly tender polemic on India's cosmetic AI sovereignty, gerontocratic subversion of frontier intelligence, and the urinary effluvium of ministerial oratory in the age of GPT-Live."
 date: "2026-07-09"
-thumbnail: "/images/Compress_20260709_235349_9416.jpg"
 category: "Polemic"
 tags: ["Negative Infinity","AI","Indigenous","Infinity","Frontier","Five","Compute","India","Uncles","Negative"]
 published: true
 color: "#4A0000"
+thumbnail: "/thumbnail/safe-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260709_235349_9416.jpg" />
+<Pi src="/thumbnail/safe-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg" />
 
 The robot dog—if one could grace that Chinese-manufactured Unitree Go2, that glorified toy from Galgotias University's fraudulent pavilion, with the dignity of canine nomenclature—smelled, when its plastic haunches finally ceased their pitiful whirring beneath the February Delhi sun, precisely like the scrotal sweat of a polyester salesman who had just attempted conjugal gymnastics with a malfunctioning photocopier, which is to say, it smelled exactly like indigenous innovation in the year of our Lord 2026, a year already so marinated in algorithmic excrement that even the flies have developed a taste for press releases, and I mean this with the utmost sincerity of a man who has watched, with his own bloodshot eyes, the IT Minister delete his own tweet of congratulation with the same frantic energy a teenager employs when erasing his browser history before his mother enters the room, except the mother here is the entire Indian populace and the browser history is our collective self-respect.
 

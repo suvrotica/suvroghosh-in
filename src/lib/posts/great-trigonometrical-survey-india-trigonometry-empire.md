@@ -1,17 +1,17 @@
 ---
 title: "Trigonometric  Colonization"
 description: "A historically grounded examination of how the Great Trigonometrical Survey turned trigonometry into an instrument of colonial power, converting angles into territory, revenue, and military advantage."
-thumbnail : "/images/IMG-20260423-WA0022.jpg"
 date: "2026-04-21"
 category: "history-of-science"
 tags: ["Great Trigonometrical Survey","Trigonometrical","Survey","Trigonometry","Baseline","Geodetic","Lambton","Triangulation","Distances","Revenue"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-great-trigonometrical-survey-india-trigonometry-empire.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0022.jpg" />
+<Pi src="/thumbnail/safe-great-trigonometrical-survey-india-trigonometry-empire.jpg" />
 
 Acronyms expanded in this post: No central technical acronyms need expansion here.
 

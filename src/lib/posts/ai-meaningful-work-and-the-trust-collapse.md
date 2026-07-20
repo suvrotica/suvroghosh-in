@@ -2,16 +2,16 @@
 title: "AI, Meaningful Work, and the Trust Collapse"
 description: "A technically serious reflection on why AI does not merely automate tasks, but corrodes the social machinery that makes work, authorship, and creative attention feel meaningful."
 date: "2026-05-07"
-thumbnail: "/images/Compress_20260507_182117_7717.jpg"
 category: "Artificial Intelligence"
-tags: ["Synthetic","AI","Rubbish","Human","Work","Machine","Song","Output","Learns","Slop"]
+tags: ["Synthetic","AI","Rubbish","Human","Work","Machine","Song","Output","Learns","Apprenticeship"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260507_182117_7717.jpg" />
+<Pi src="/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg" />
 
 
 

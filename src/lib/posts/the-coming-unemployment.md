@@ -2,16 +2,16 @@
 title: "The Coming Unemployment"
 description: "AI will not end work with a trumpet blast. It will first remove the entry ramp, fog the job market with ghost postings, and make ordinary educated people feel foolish for believing the old bargain."
 date: "2026-05-15"
-thumbnail: "/images/Compress_20260506_211530_0762.jpg"
 category: "AI"
 tags: ["Software Systems","AI","Senior","Jobs","Hiring","Translate","Job","Entry-Level","Analyst","Automated"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-coming-unemployment.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_211530_0762.jpg" />
+<Pi src="/thumbnail/safe-the-coming-unemployment.jpg" />
 
 Acronyms used: Artificial Intelligence [AI, software systems that can generate, reason, summarize, code, classify, and increasingly act through tools]; Information Technology [IT, the industry of software, systems, data, support, outsourcing, and digital operations]; World Economic Forum [WEF, a global business and policy organization that publishes employer surveys and future-of-work reports]; Human-Centered Artificial Intelligence [HAI, Stanford University’s institute that studies AI’s technical, economic, and social effects]; Chief Executive Officer [CEO, the top executive responsible for a company’s direction]; Application Programming Interface [API, a controlled way for software systems to talk to other software systems].
 

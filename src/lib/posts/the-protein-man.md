@@ -2,15 +2,15 @@
 title: "The Protein Man"
 description: "In a humid Calcutta of hospitals, app deliveries, and old para gossip, a failed biotech trial returns as a hunger walking on two legs. A data man follows the trail and finds the city has been feeding something it does not want to name."
 date: "2026-05-29"
-thumbnail: "/images/Compress_20260529_091946_6601.jpg"
 category: "Short Fiction"
 tags: ["Meera","Kartik","Arunava","Lopa","LifeCrown","ANNAPURNA","K-19","Mansion","Gun","Signed"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-protein-man.jpg"
 ---
 
 <TTS />
-<Pi src="Compress_20260529_091946_6601.jpg" />
+<Pi src="/thumbnail/safe-the-protein-man.jpg" />
 
 # THIS IS A WORK OF FICTION
 

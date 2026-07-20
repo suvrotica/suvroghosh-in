@@ -2,16 +2,16 @@
 title: "Drake’s Equation, Alien Arithmetic, and the Bengali Who Refuses to Be Fooled by the Sky"
 description: "A Calcutta-flavored explanation of Drake’s equation, the Fermi paradox, the Great Filter, and other ways scientists think about extraterrestrial life without turning ignorance into fireworks."
 date: "2026-05-19"
-thumbnail: "/images/Compress_20260519_212615_5409.jpg"
 category: "Science"
 tags: ["Drake Equation","Fermi Paradox","Great Filter","Space Telescope","Drake","Planets","Equation","Detectable","Civilizations","Galaxy"]
 published: true
 color: "#202A44"
+thumbnail: "/thumbnail/safe-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260519_212615_5409.jpg" />
+<Pi src="/thumbnail/safe-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg" />
 
 Acronyms used in this post:
 

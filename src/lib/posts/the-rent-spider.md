@@ -2,16 +2,16 @@
 title: "The Rent Spider"
 description: "In a damp Calcutta room, a defeated Bengali tuition teacher begins changing into something that can climb walls, taste fear, and remember every unpaid humiliation."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_112536_6388.jpg"
 category: "Short Fiction"
 tags: ["Terrace Room","Somnath","Nirmal","Minati","Rini","Father","Fractions","Terrace","Hairs","Thread"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-rent-spider.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260614_112536_6388.jpg" />
+<Pi src="/thumbnail/safe-the-rent-spider.jpg" />
 
 # THIS IS A WORK OF FICTION
 

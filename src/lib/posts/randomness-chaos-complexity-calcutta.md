@@ -1,17 +1,17 @@
 ---
 title: "Why Myths Multiply When Randomness Is Left Unexplained"
 description: "A technically serious but readable argument for why ordinary people need a working grasp of randomness, chaos, and complexity, especially in a crowded, rumor-rich, infrastructure-fragile city like Calcutta."
-thumbnail : "/images/IMG-20260426-WA0006.jpg"
 date: "2026-04-26"
 category: "Mental Models"
 tags: ["Health Level Seven","Complex","Healthcare","Data","System","Complexity","Myths","Causality","Incentives","Uncertainty"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-randomness-chaos-complexity-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260426-WA0006.jpg" />
+<Pi src="/thumbnail/safe-randomness-chaos-complexity-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

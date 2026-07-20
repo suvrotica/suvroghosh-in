@@ -2,16 +2,16 @@
 title: "Do Not Let It Wake Facing the City"
 description: "A Calcutta girl helping with a school bridge project discovers that Howrah Bridge breathes at 3:17 every morning. To save a stuck kitten and a frightened city, she must learn why an old warning says the bridge must never wake facing Calcutta."
 date: "2026-06-27"
-thumbnail: "/images/Compress_20260627_021235_5350.jpg"
 category: "Short Fiction"
 tags: ["Wake Facing","Howrah Bridge","Tea Seller","Anjali","Kitten","Prabir","Bridge","Mina","Dutta","Bappa"]
 published: true
 color: "#4a4a4a"
+thumbnail: "/thumbnail/safe-do-not-let-it-wake-facing-the-city.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260627_021235_5350.jpg" />
+<Pi src="/thumbnail/safe-do-not-let-it-wake-facing-the-city.jpg" />
 
 # THIS IS A WORK OF FICTION
 

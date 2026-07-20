@@ -2,11 +2,11 @@
 title: "The Unpaid Consultant and the Theology of Hope"
 description: "A sharp, readable essay on unpaid consulting, soft promises, vapor-pay, middle-aged precarity, and the little religion of hope desperate intelligent people invent when work becomes mostly theater."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_172646_6015.jpg"
 category: "Personal Essay"
 tags: ["Unpaid Consulting","Payment","Vague","Future","Unpaid","Work","Hope","Money","Consulting","Client"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-unpaid-consultant-and-the-theology-of-hope.jpg"
 ---
 
 <TTS />
@@ -21,7 +21,7 @@ SEO — Search Engine Optimization, the craft of making writing easier for searc
 
 ---
 
-<Pi src="Compress_20260609_172646_6015.jpg" />
+<Pi src="/thumbnail/safe-the-unpaid-consultant-and-the-theology-of-hope.jpg" />
 
 The cruelest work is not free work. Free work at least has the decency to arrive naked. It says, “I am charity,” or “I am foolishness,” or “I am your cousin’s son needing help with his college project.” You may curse it, but you know what it is.
 

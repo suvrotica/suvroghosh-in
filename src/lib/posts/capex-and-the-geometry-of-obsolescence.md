@@ -2,16 +2,16 @@
 title: "The Slow Dribble of My Irrelevance"
 description: "A manic-depressive rant on AI infrastructure, ruined education, and the unprofitable mourning of ugly old men in the Global South."
 date: "2026-07-11"
-thumbnail: "/images/Compress_20260711_002556_6222.jpg"
 category: "Polemic"
-tags: ["Kentucky","Billion","Capex","Dollars","Microsoft","Compute","Pretty","Capital","Infrastructure","Young"]
+tags: ["Kentucky","Billion","Capex","Dollars","Microsoft","Compute","Pretty","Infrastructure","Capital","Young"]
 published: true
 color: "#4A0000"
+thumbnail: "/thumbnail/safe-capex-and-the-geometry-of-obsolescence.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260711_002556_6222.jpg" />
+<Pi src="/thumbnail/safe-capex-and-the-geometry-of-obsolescence.jpg" />
 
 The copper taste of preemptive regret pools under my tongue like the Hooghly’s annual offering of industrial phosphorescence, and I am staring at this rectangular little Judas in my palm telling me that Amazon, that bookseller-turned-Behemoth, is currently attempting to raise twenty-five billion American dollars—not rupees, not cowrie shells, not the tear-stained IOUs of my generation—through a bond sale, the proceeds of which shall be hurled into the insatiable maw of artificial intelligence infrastructure, which is to say, warehouses full of sweating silicon in Kentucky and Virginia and other places where the air conditioning costs more per annum than the GDP of my entire municipal ward, and I think, with the slow-building horror of a man who has just discovered his own flatulent fugue echoing in a crowded tramcar, that we have finally achieved the perfect inversion: software, that once-ethereal mist of pure logic that scaled on the cheap labor of caffeinated boys in basements, has now metastasized into a hardware-greedy colossus that devours electricity and capital with the same unthinking avidity that a starving mongrel applies to a discarded mango kernel on Chowringhee.
 

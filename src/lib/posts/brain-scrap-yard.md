@@ -2,11 +2,11 @@
 title: "The Brain Scrap Yard"
 description: "A darkly comic Calcutta essay on intelligence, depression, memory, trauma, and the impossible wish to become less clever and less wounded."
 date: "2026-06-15"
-thumbnail: "/images/Compress_20260615_232338_8437.jpg"
 category: "Personal Essay"
 tags: ["Steals Current","Carrying Forward","Second Chance","Brain","Stupidity","Wish","Remove","Cauliflower","Depression","Steals"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-brain-scrap-yard.jpg"
 ---
 
 Acronyms and terms used in this post:
@@ -15,7 +15,7 @@ AC — Air Conditioner, the household cooling machine that becomes a minor god d
 
 <TTS />
 
-<Pi src="Compress_20260615_232338_8437.jpg" />
+<Pi src="/thumbnail/safe-brain-scrap-yard.jpg" />
 
 ---
 

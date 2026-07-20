@@ -2,17 +2,17 @@
 title: "Entropy in a Rented Room"
 description: "A sharp, human science essay about entropy, depression, Calcutta heat, rented rooms, and the daily energy cost of keeping a life from scattering."
 date: "2026-06-11"
-thumbnail: "/images/Compress_20260613_131317_7911.jpg"
 category: "Science Essay"
-tags: ["Rice Cooker","Entropy","Rice","Boundary","Towel","Laptop","Options","Ant","Bill","Newton"]
+tags: ["Rice Cooker","Entropy","Rice","Towel","Boundary","Laptop","Options","Ant","Bill","Newton"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-entropy-in-a-rented-room.jpg"
 ---
 
 Acronyms used: European Organization for Nuclear Research [CERN, the large European physics laboratory famous for particle accelerators and experiments on the basic particles of matter].
 
 <TTS />
-<Pi src="Compress_20260613_131317_7911.jpg" />
+<Pi src="/thumbnail/safe-entropy-in-a-rented-room.jpg" />
 
 The room does not collapse with thunder. It collapses politely, like a clerk taking leave without telling anyone.
 

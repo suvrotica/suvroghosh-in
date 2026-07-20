@@ -2,16 +2,16 @@
 title: "The Official Mouth"
 description: "After a June lightning storm, a quiet Dhakuria tutor wakes with a blood-drinking proboscis and a ruined tongue. Calcutta, being Calcutta, first gossips, then worships, then opens a counter."
 date: "2026-06-14"
-thumbnail: "/images/Compress_20260614_124806_6003.jpg"
 category: "Short Fiction"
 tags: ["Haradhan Dey","Nirmal","Buro-da","Haradhan","Haru","Mitali","Proboscis","Dey","Baba","Register"]
 published: true
 color: "#4B0F1E"
+thumbnail: "/thumbnail/safe-the-official-mouth.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260614_124806_6003.jpg" />
+<Pi src="/thumbnail/safe-the-official-mouth.jpg" />
 
 # THIS IS A WORK OF FICTION
 

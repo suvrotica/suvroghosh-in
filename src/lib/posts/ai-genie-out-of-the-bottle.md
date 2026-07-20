@@ -1,17 +1,17 @@
 ---
 title: "The Genie Is Out of the Bottle"
 description: "Generative AI has moved from laboratory spectacle to social infrastructure. The hard question is no longer whether the genie is real, but whether we can build the lamps, locks, audits, and habits needed to live with it."
-thumbnail : "/images/Compress_20260430_194653_3256.jpg"
 date: "2026-05-01"
 category: "Artificial Intelligence"
 tags: ["Large Language","AI","Genie","Human","Oversight","Automated","Student","Tutor","Summary","Synthetic"]
 published: true
 color: "black"
+thumbnail: "/thumbnail/safe-ai-genie-out-of-the-bottle.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260430_194653_3256.jpg" />
+<Pi src="/thumbnail/safe-ai-genie-out-of-the-bottle.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

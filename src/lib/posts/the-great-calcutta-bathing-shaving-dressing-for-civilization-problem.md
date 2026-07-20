@@ -2,17 +2,17 @@
 title: "The Great Calcutta Bathing, Shaving, Dressing for Civilization Problem"
 description: "A painfully honest Calcutta essay about depression, bathing, shaving, dressing, body shame, executive dysfunction, and the small daily collapse that cheerful people mistake for laziness."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_092705_5403.jpg"
 category: "Personal Essay"
-tags: ["Decide Whether","Bathroom Door","Soap","Towel","Razor","Bathroom","Shirt","Bathing","Mirror","Bucket"]
+tags: ["Decide Whether","Bathroom Door","Soap","Towel","Razor","Bathroom","Shirt","Bathing","Bucket","Mirror"]
 published: true
 color: "#334155"
+thumbnail: "/thumbnail/safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg"
 ---
 
 
 <TTS />
 
-<Pi src="Compress_20260610_092705_5403.jpg" />
+<Pi src="/thumbnail/safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg" />
 
 
 

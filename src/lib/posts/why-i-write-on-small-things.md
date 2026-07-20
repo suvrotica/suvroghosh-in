@@ -2,16 +2,16 @@
 title: "Why I Write on Small Things"
 description: "A hot June afternoon in Calcutta turns into a funny, bruised, and unsentimental essay on depression, class humiliation, ordinary failure, and the stubborn need to keep naming life honestly."
 date: "2026-06-11"
-thumbnail: "/images/Compress_20260613_150523_3394.jpg"
 category: "Personal Essay"
 tags: ["Pressure Cooker","Ceiling Fan","Trivial","Sweats","Hot","Sweating","Humiliation","Depression","Leaves","Biscuit"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-why-i-write-on-small-things.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_150523_3394.jpg" />
+<Pi src="/thumbnail/safe-why-i-write-on-small-things.jpg" />
 
 
 

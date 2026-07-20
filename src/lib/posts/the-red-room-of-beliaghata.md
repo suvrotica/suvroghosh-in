@@ -2,16 +2,16 @@
 title: "The Red Room of Beliaghata"
 description: "During a load-shedding night in Calcutta, a sealed parcel is mishandled in an old apartment building. By morning, the city’s most ordinary faces begin to change."
 date: "2026-06-18"
-thumbnail: "/images/Compress_20260618_153952_2294.jpg"
 category: "Short Fiction"
-tags: ["Courier Boy","Shambhu Dutta","Dutta Whispered","Wooden Box","Tea Stall","Mrinalini","Bela","Arko","Courier","Box"]
+tags: ["Courier Boy","Shambhu Dutta","Dutta Whispered","Wooden Box","Tea Stall","Mrinalini","Bela","Arko","Courier","Parcel"]
 published: true
 color: "Crimson"
+thumbnail: "/thumbnail/safe-the-red-room-of-beliaghata.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260618_153952_2294.jpg" />
+<Pi src="/thumbnail/safe-the-red-room-of-beliaghata.jpg" />
 
 # THIS IS A WORK OF FICTION
 

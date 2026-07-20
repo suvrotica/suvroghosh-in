@@ -2,16 +2,16 @@
 title: "The Breath That Came By Rain"
 description: "In monsoon Calcutta, a small private clinic receives twelve desperate foreign patients, and a doctor discovers that the city has begun coughing in a new language."
 date: "2026-06-05"
-thumbnail: "/images/Compress_20260605_081913_3915.jpg"
 category: "Short Fiction"
 tags: ["Young Doctor","Bappa Dutta","Nirmalya Asked","Twelve Men","Nirmalya","Pascal","Mili","Bappa","Clinic","Doctor"]
 published: true
 color: "dark green"
+thumbnail: "/thumbnail/safe-the-breath-that-came-by-rain.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_081913_3915.jpg" />
+<Pi src="/thumbnail/safe-the-breath-that-came-by-rain.jpg" />
 
 # THIS IS A WORK OF FICTION
 

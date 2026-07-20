@@ -2,16 +2,16 @@
 title: "Calcutta’s Sugar Problem Is Not Only Sugar"
 description: "A technically serious look at how sweets, rice, refined starch, hidden sugars, obesity, insulin resistance, diabetes, kidney disease, and fatty liver are part of one metabolic system in Bengali life."
 date: "2026-04-29"
-thumbnail : "/images/Compress_20260429_200325_5063.jpg"
 category: "Health & Society"
 tags: ["Insulin Resistance","Fatty Liver","Blood Pressure","Glucose","Metabolic","Liver","Insulin","Carbohydrate","Protein","Sugar"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-calcutta-carbohydrate-problem.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260429_200325_5063.jpg" />
+<Pi src="/thumbnail/safe-calcutta-carbohydrate-problem.jpg" />
 
 Acronyms expanded in this post:
 - IT: Information Technology. the practice of building, operating, and supporting computing systems.

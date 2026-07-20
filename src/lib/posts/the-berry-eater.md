@@ -2,16 +2,16 @@
 title: "The Berry Eater"
 description: "A gallery caretaker with failing sight confronts a cursed painting that comes alive at noon in a decaying North Calcutta house."
 date: "2026-07-12"
-thumbnail: "/images/Compress_20260712_205045_5085.jpg"
 category: "Short Fiction"
-tags: ["Stone Slab","Hemanta Bose","Brass Bowl","Pratim","Rhea","Painting","Bishnu","Berries","Canvas","Creature"]
+tags: ["Stone Slab","Hemanta Bose","Brass Bowl","Pratim","Rhea","Painting","Bishnu","Berries","Creature","Canvas"]
 published: true
 color: "#3E2723"
+thumbnail: "/thumbnail/safe-the-berry-eater.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260712_205045_5085.jpg" />
+<Pi src="/thumbnail/safe-the-berry-eater.jpg" />
 
 # THIS IS A WORK OF FICTION
 

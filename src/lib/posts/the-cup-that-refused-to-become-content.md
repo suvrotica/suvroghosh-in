@@ -2,11 +2,11 @@
 title: "The Cup That Refused to Become Content"
 description: "A middle-aged Calcutta essay on writing, disappointment, poverty, anxiety, and the small stubborn dignity of refusing to turn private pain into algorithmic performance."
 date: "2026-06-18"
-thumbnail: "/images/Compress_20260618_190824_4666.jpg"
 category: "Personal Essay"
 tags: ["Packaged","Disappointment","Camera","Writing","Cup","Suffering","Mosquito","Skin","Tea","Evidence"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-the-cup-that-refused-to-become-content.jpg"
 ---
 
 Acronyms:
@@ -19,7 +19,7 @@ CCTV — Closed-circuit television, a camera system used for surveillance, here 
 
 <TTS />
 
-<Pi src="Compress_20260618_190824_4666.jpg" />
+<Pi src="/thumbnail/safe-the-cup-that-refused-to-become-content.jpg" />
 
 The tea had grown a roof.
 

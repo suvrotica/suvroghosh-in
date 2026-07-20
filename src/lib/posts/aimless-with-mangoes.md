@@ -2,16 +2,16 @@
 title: "Aimless With Mangoes"
 description: "A middle-aged Calcutta essay on aimlessness, shrinking opportunity, small pleasures, and the strange relief of no longer pretending every life must fly toward a target."
 date: "2026-06-19"
-thumbnail: "/images/Compress_20260619_110119_9578.jpg"
 category: "Personal Essay"
 tags: ["Mango","Aim","Aimlessness","Arrow","Autobiography","Crow","Fruit","Fifty-One","Fragments","Continues"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-aimless-with-mangoes.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260619_110119_9578.jpg" />
+<Pi src="/thumbnail/safe-aimless-with-mangoes.jpg" />
 
 Acronyms used:
 

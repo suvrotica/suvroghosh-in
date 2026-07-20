@@ -2,16 +2,16 @@
 title: "The Smorgasbord of Impotence"
 description: "A sharp, intimate essay on middle age, bipolar depression, unemployment, loneliness, fading desire, and the small stubborn ways a broke single man in Calcutta still keeps himself alive."
 date: "2026-05-16"
-thumbnail: "/images/Compress_20260516_043341_1678.jpg"
 category: "Personal Essay"
-tags: ["Impotence","Desire","Fail","Unemployment","Percent","Bipolar","Version","Mind","Fifty-One","Broke"]
+tags: ["Impotence","Desire","Fail","Unemployment","Percent","Version","Bipolar","Mind","Fifty-One","Broke"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-smorgasbord-of-impotence-calcutta-middle-age.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260516_043341_1678.jpg" />
+<Pi src="/thumbnail/safe-smorgasbord-of-impotence-calcutta-middle-age.jpg" />
 
 
 

@@ -2,16 +2,16 @@
 title: "The Chatbot Arrived Before the Seatbelt"
 description: "A plainspoken, skeptical, and balanced post on why LLMs should not be rushed into intimate, clinical, emotional, and child-facing use before society knows how to test them properly."
 date: "2026-05-11"
-thumbnail :  "/images/IMG-20260427-WA0008.jpg" 
 category: "AI Safety"
-tags: ["LLMs","Chatbot","Pill","Users","Conversation","Engagement","Boring","Drug","User","Software"]
+tags: ["LLMs","Chatbot","Pill","Users","Conversation","Engagement","Boring","User","Drug","Software"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-premature-llm-deployment-clinical-trials-ai-safety.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260427-WA0008.jpg" />
+<Pi src="/thumbnail/safe-premature-llm-deployment-clinical-trials-ai-safety.jpg" />
 
 Large Language Models [LLMs: AI systems trained to generate text and other outputs by predicting patterns in language.]
 

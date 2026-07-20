@@ -1,17 +1,17 @@
 ---
 title: "Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox"
 description: "Resistant mental illness leaves a long medication trail that most systems treat as scattered history, not active clinical risk. The task is to make interaction burden and treatment failure visible before the next prescription."
-thumbnail : "/images/IMG-20260425-WA0013.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"
 tags: ["Adverse Effects","Dopamine Agonists","Dopamine Agonist","Primary Care","Health Level Seven","Psychiatric","Medication","CDS","Adverse","Clinical"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0013.jpg" />
+<Pi src="/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

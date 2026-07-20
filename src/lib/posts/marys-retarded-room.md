@@ -1,17 +1,17 @@
 ---
 title: "Mary's Room, Red Mangoes, and the Poor Man's Philosophy of Color"
 date: "2026-01-12"
-thumbnail: "/images/Compress_20260605_132149_9212.jpg"
 description: "A Calcutta essay on Mary’s Room, color, consciousness, qualia, and why knowing everything about red is not the same as seeing a ripe mango split open in summer."
 category: "personal"
-tags: ["Thought Experiment","Rice Cooker","Mary","Red","Color","Experience","Learned","Brain","Philosophy","Consciousness"]
+tags: ["Thought Experiment","Rice Cooker","Mary","Red","Color","Experience","Learned","Brain","Philosophy","Explanation"]
 published: true
 color: "orange"
+thumbnail: "/thumbnail/safe-marys-retarded-room.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260605_132149_9212.jpg" />
+<Pi src="/thumbnail/safe-marys-retarded-room.jpg" />
 
 RGB: Red Green Blue, the common digital color model used by screens to mix colors from red, green, and blue light.
 

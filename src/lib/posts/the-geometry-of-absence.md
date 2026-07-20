@@ -2,16 +2,16 @@
 title: "The Geometry of Absence: On Solitude, Density, and the Mathematics of Belonging"
 description: "A reflective essay on the paradox of loneliness in crowded Calcutta, the sociology of Bengali group dynamics abroad, and the quiet liberation of choosing solitude over performative congregation."
 date: "2026-06-28"
-thumbnail: "/images/Compress_20260628_010953_3988.jpg"
 category: "Culture"
 tags: ["NRI Gatherings","Gatherings","Taratala","Solitude","Grown","Inhabit","Social","Density","Obligation","Adda"]
 published: true
 color: "#2c3e50"
+thumbnail: "/thumbnail/safe-the-geometry-of-absence.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260628_010953_3988.jpg" />
+<Pi src="/thumbnail/safe-the-geometry-of-absence.jpg" />
 
 The ceiling fan in my study turns with the lethargic indifference of a bureaucrat processing paperwork on a Friday afternoon, each rotation a small, humid triumph against the June air that presses against the windows like a creditor demanding entry. I have been watching it for eleven minutes, which is not meditation but merely the neurological equivalent of a screensaver, the brain's default mode network flickering on while the prefrontal cortex takes a cigarette break. Outside, somewhere in the labyrinth of Calcutta that I have navigated for a few years now, the city performs its eternal choreography of density—rickshaws threading through traffic with the precision of antibodies, the Metro rumbling beneath Park Street like a mechanical bowel movement, and somewhere in Taratala, the wreckage of a warehouse still fresh from its collapse four days prior, concrete and rebar forming a grotesque origami of municipal incompetence. Five dead. Eighteen trapped. The Chief Minister suspending construction until July 31, as if calendars could contain catastrophe. I read this in the morning paper over tea that had grown cold, and felt the familiar sensation of living in a city where the infrastructure of trust collapses with slightly less fanfare than the infrastructure of concrete.
 

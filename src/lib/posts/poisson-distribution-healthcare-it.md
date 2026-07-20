@@ -2,16 +2,16 @@
 title: "Poisson Distribution: Counting Rare Trouble Before It Becomes a Queue, a Claim, or a Crisis"
 description: "A readable but technically serious healthcare IT post on the Poisson distribution, from its historical roots in rare-event counting to its everyday use in hospital operations, EHR analytics, patient safety, interface monitoring, epidemiology, and AI-era healthcare data."
 date: "2026-05-21"
-thumbnail: "/images/Compress_20260521_044534_4224.jpg"
 category: "Healthcare IT"
-tags: ["Poisson Regression","Poisson Distribution","Clinical Trial","Public Health","Data Quality","Lambda","Clinical","Healthcare","Events","Count"]
+tags: ["Poisson Regression","Poisson Distribution","Clinical Trial","Public Health","Data Quality","Lambda","Clinical","Healthcare","Events","Distribution"]
 published: true
 color: "#4F7CAC"
+thumbnail: "/thumbnail/safe-poisson-distribution-healthcare-it.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260521_044534_4224.jpg" />
+<Pi src="/thumbnail/safe-poisson-distribution-healthcare-it.jpg" />
 
 Acronyms used in this post:
 

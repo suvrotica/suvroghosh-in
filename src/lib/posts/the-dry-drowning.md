@@ -2,16 +2,16 @@
 title: "The Dry Drowning"
 description: "A luxury apartment in Calcutta traps the monsoon inside imported tanks, and the water begins listening through the pipes. When residents start drowning in dry rooms, a caretaker must open what the building was designed to hide."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_092518_8609.jpg"
 category: "Short Fiction"
 tags: ["Jaladhar Heights","Decision Column","Red Thread","Steel Mesh","Dada Pull","Madhab","Basu","Piu","Tak","Ratan"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-dry-drowning.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_092518_8609.jpg" />
+<Pi src="/thumbnail/safe-the-dry-drowning.jpg" />
 
 # THIS IS A WORK OF FICTION
 

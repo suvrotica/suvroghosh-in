@@ -1,17 +1,17 @@
 ---
 title: "Applied Multivariate Statistical Modeling in Healthcare IT Part 2"
-thumbnail : "/images/Compress_20260505_135010_0561.jpg"
 description: "A beginner-friendly second post on multivariate statistics for healthcare data analytics, showing how real hospital problems become statistical questions, models, and practical decisions."
 date: "2026-05-20"
 category: "Healthcare IT"
 tags: ["Blood Pressure","Discharge Destination","Multivariate Statistics","Explanatory Variables","Statistical Solution","Variables","Readmissions","Multivariate","Covariance","Patients"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260505_135010_0561.jpg" />
+<Pi src="/thumbnail/safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg" />
 
 Acronyms used in this post:
 

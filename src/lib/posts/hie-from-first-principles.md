@@ -2,16 +2,16 @@
 title: "HIE From First Principles, With The Patient Still In The Room"
 description: "A Calcutta-grounded essay on Health Information Exchange, OpenHIE, and why interoperability is less about software than continuity, governance, trust, and memory."
 date: "2026-04-21"
-thumbnail: "/images/IMG-20260423-WA0021.jpg"
 category: "healthcare-it"
 tags: ["Community Health Workers","Interoperability Layer","United States","Data Quality","OpenHIE Shape","HIE","OpenHIE","Health","Systems","FHIR"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-hie-from-first-principles.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0021.jpg" />
+<Pi src="/thumbnail/safe-hie-from-first-principles.jpg" />
 
 The paper folder arrives with the patient, if it arrives at all.
 

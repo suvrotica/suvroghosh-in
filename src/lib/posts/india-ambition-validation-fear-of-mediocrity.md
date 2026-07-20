@@ -1,17 +1,17 @@
 ---
 title: "Costume Ambition"
 description: "A critical look at how fear of mediocrity, social exposure, and public comparison reshape ambition into performance, especially in modern India."
-thumbnail : "/images/IMG-20260423-WA0017.jpg"
 date: "2026-04-21"
 category: "society"
-tags: ["Mediocrity","Fear","Ambition","Striving","Performative","Substance","Obscurity","Destination","Fame","Excellence"]
+tags: ["Mediocrity","Fear","Ambition","Striving","Performative","Obscurity","Substance","Destination","Fame","Excellence"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-india-ambition-validation-fear-of-mediocrity.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0017.jpg" />
+<Pi src="/thumbnail/safe-india-ambition-validation-fear-of-mediocrity.jpg" />
 
 Acronyms expanded in this post:
 - IT: Information Technology. the practice of building, operating, and supporting computing systems.

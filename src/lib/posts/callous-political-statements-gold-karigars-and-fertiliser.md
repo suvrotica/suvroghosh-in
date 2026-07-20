@@ -2,16 +2,16 @@
 title: "Gold Karigars, Fertiliser Slogans, and the Knife Hidden Inside a Political Sentence"
 description: "A personal essay on callous political statements, Bengal’s hidden jewellery workers, gold import duty, and the danger of turning fertiliser policy into patriotic theatre."
 date: "2026-05-14"
-thumbnail: "/images/Compress_20260514_164830_0882.jpg"
 category: "Political Economy"
 tags: ["Sri Lanka","Foreign Exchange","South Sinthee","Natural Farming","Buy Gold","Gold","Fertiliser","Farming","Jewellery","Foreign"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-callous-political-statements-gold-karigars-and-fertiliser.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260514_164830_0882.jpg" />
+<Pi src="/thumbnail/safe-callous-political-statements-gold-karigars-and-fertiliser.jpg" />
 
 Acronyms used: LPG means Liquefied Petroleum Gas, the cylinder fuel used in many homes and small workshops. MSME means Micro, Small, and Medium Enterprise, the official bucket for small businesses that often includes workshops too small to have a lobby but large enough to be crushed by policy. CAD means Current Account Deficit, the gap created when a country spends more foreign currency on imports and payments than it earns from exports and income. ETF means Exchange Traded Fund, a market-traded investment basket that can track gold, silver, stocks, or other assets.
 

@@ -2,16 +2,16 @@
 title: "Phase Transition at Fifty-One"
 description: "A Calcutta essay on boiling water, burnt rice, middle-aged failure, depression, loneliness, and the small ugly possibility of changing state after life has already stamped you rejected."
 date: "2026-06-17"
-thumbnail: "/images/Compress_20260617_201411_1261.jpg"
 category: "Personal Essay"
 tags: ["Man Reinvents","Latent Heat","Reinvents","Surely","Heat","Fifty-One","Hope","Physics","Latent","Young"]
 published: true
 color: "#7A4F2A"
+thumbnail: "/thumbnail/safe-phase-transition-at-fifty-one.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260617_201411_1261.jpg" />
+<Pi src="/thumbnail/safe-phase-transition-at-fifty-one.jpg" />
 
 AC: Air Conditioner, the household machine that cools the room by moving heat elsewhere and then announces its labor with a compressor sound that can interrupt a man’s private ruin.
 

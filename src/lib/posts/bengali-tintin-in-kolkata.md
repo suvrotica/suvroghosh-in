@@ -2,14 +2,14 @@
 title: "Bengali Tintin In The Republic Of Garbage"
 description: "A grotesque little Calcutta satire: Tintin becomes Bengali, Snowy steals fish, and the city supplies garbage, gods, politics, and public disorder with its usual municipal generosity."
 date: "2026-05-27"
-thumbnail: "/images/Compress_20260527_233750_0425.jpg"
 category: "Satire"
 tags: ["Tintin","Heap","Garbage","Flowers","Bengal","Dog","Calcutta","Fish"]
 published: true
 color: "crimson"
+thumbnail: "/thumbnail/safe-bengali-tintin-in-kolkata.jpg"
 ---
 <TTS />
-<Pi src="Compress_20260527_233750_0425.jpg" />
+<Pi src="/thumbnail/safe-bengali-tintin-in-kolkata.jpg" />
 
 I have long suffered from a strange artistic itch: to take Tintin, that tidy Belgian boy-reporter with the moral posture of a church candle, and drop him into Calcutta until the starch leaves his shorts.
 

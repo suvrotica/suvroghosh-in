@@ -1,17 +1,17 @@
 ---
 title: "Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market"
 description: "Kenneth Arrow's 1963 essay explains why healthcare resists ordinary market logic: uncertainty, trust, asymmetry, and insurance. The same argument reappears in EHR data, interoperability standards, and AI decision support."
-thumbnail : "/images/IMG-20260426-WA0008.jpg"
 date: "2026-04-26"
 category: "Healthcare IT"
 tags: ["Health Level Seven","Welfare Economics","Medical Care","Clinical","Arrow","Healthcare","Data","Uncertainty","Patient","Care"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-arrow-uncertainty-medical-care-healthcare-it.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260426-WA0008.jpg" />
+<Pi src="/thumbnail/safe-arrow-uncertainty-medical-care-healthcare-it.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

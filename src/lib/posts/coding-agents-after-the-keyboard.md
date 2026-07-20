@@ -2,16 +2,16 @@
 title: "Coding After the Keyboard: How AI Agents Learned to Roam the Codebase"
 description: "A sharp, readable explanation of how coding moved from hand-written instructions to AI coding agents that search, edit, test, and sometimes blunder through real repositories."
 date: "2026-05-09"
-thumbnail: "/images/Compress_20260509_041824_4827.jpg"
 category: "Artificial Intelligence"
 tags: ["Coding Agents","Agent","Coding","Model","Tests","Code","Codebase","Agents","Repository","MoE"]
 published: true
 color: "#0f766e"
+thumbnail: "/thumbnail/safe-coding-agents-after-the-keyboard.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260509_041824_4827.jpg" />
+<Pi src="/thumbnail/safe-coding-agents-after-the-keyboard.jpg" />
 
 Acronyms: AI [Artificial Intelligence, software that performs tasks normally associated with human judgment or pattern recognition]; IDE [Integrated Development Environment, the editor-and-tooling cockpit where developers write, run, debug, and manage code]; LLM [Large Language Model, a neural network trained to predict and generate text, code, and structured instructions]; RAG [Retrieval-Augmented Generation, a method where a model searches external material before answering or acting]; AST [Abstract Syntax Tree, the parsed tree-like structure of code after the grammar has been understood]; API [Application Programming Interface, a defined way for software systems to call each other]; PR [Pull Request, a proposed code change submitted for review before merging]; CI/CD [Continuous Integration and Continuous Delivery, automated build, test, and deployment machinery]; VM [Virtual Machine, an isolated computer environment running inside another system]; MCP [Model Context Protocol, a protocol for connecting AI tools to external systems and data sources]; GPU [Graphics Processing Unit, the chip class used heavily for AI computation]; MoE [Mixture of Experts, a model architecture where selected internal neural sub-networks handle parts of the computation]; RL [Reinforcement Learning, training a model by rewarding better behavior across repeated attempts]; EHR [Electronic Health Record, the clinical system used to document patient care]; HL7 v2 [Health Level Seven version 2, the ancient but still everywhere hospital messaging standard]; FHIR [Fast Healthcare Interoperability Resources, a modern healthcare data API standard built around modular resources].
 

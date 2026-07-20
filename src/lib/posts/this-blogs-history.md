@@ -2,16 +2,16 @@
 title: "This Blog's History"
 description: "A personal travel-and-writing reflection on how this blog wandered through Fiji, New Zealand, Abu Dhabi, Dubai, books, doubt, vanished friends, and the stubborn need to keep writing."
 date: "2024-01-03"
-thumbnail: "/images/Compress_20260506_165933_3433.jpg"
 category: "Personal Reflections"
 tags: ["Future Self","Money Helps","Fiji","Bookstall","Dubai","Books","Money","Read","Second-Hand","Effort"]
 published: true
 color: "#dcb775"
+thumbnail: "/thumbnail/safe-this-blogs-history.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_165933_3433.jpg" />
+<Pi src="/thumbnail/safe-this-blogs-history.jpg" />
 
 
 SEO [Search Engine Optimization, the practical art of helping search engines and readers discover a page without turning the writing into boiled cabbage].

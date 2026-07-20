@@ -2,16 +2,16 @@
 title: "Taklu Babu Eats the River"
 description: "A bald street cat in Calcutta discovers that fish carry memories, and that humans are easier to steer than rickshaws."
 date: "2026-06-22"
-thumbnail: "/images/Compress_20260622_124351_1146.jpg"
 category: "Short Fiction"
-tags: ["Taklu Babu","Pink Scalp","College Girl","Taklu","Babu","Bald","Steered","Rickshaw-Wallah","Fish","Cat"]
+tags: ["Taklu Babu","Pink Scalp","College Girl","Taklu","Babu","Bald","Steered","Fish","Rickshaw-Wallah","Cat"]
 published: true
 color: "#2c3e50"
+thumbnail: "/thumbnail/safe-taklu-babu.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260622_124351_1146.jpg" />
+<Pi src="/thumbnail/safe-taklu-babu.jpg" />
 
 # THIS IS A WORK OF FICTION
 

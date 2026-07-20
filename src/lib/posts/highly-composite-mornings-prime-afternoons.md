@@ -2,16 +2,16 @@
 title: "Highly Composite Mornings, Prime Afternoons"
 description: "A Calcutta essay on bipolar mood, Ramanujan, highly composite numbers, prime numbers, and the strange arithmetic by which a mind becomes crowded or unreachable."
 date: "2026-06-11"
-thumbnail: "/images/Compress_20260613_132518_8802.jpg"
 category: "Personal Essay"
 tags: ["Highly Composite","Ramanujan","Divisible","Composite","Prime","Divisors","Mania","Highly","Number","Numbers"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_132518_8802.jpg" />
+<Pi src="/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg" />
 
 Highly Composite Number [HCN, a number with more divisors than any smaller positive integer before it]
 

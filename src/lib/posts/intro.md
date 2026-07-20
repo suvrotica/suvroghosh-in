@@ -1,17 +1,17 @@
 ---
 title: "Intro"
 description: "From Pascal at Jadavpur University to healthcare data systems, distributed databases, telemedicine architecture, and ride-hailing platforms, a technical life shaped by translation between systems, disciplines, and people."
-thumbnail : "/images/IMG-20260422-WA0009.jpg"
 date: "2026-04-22"
 category: "career"
-tags: ["SQL Server","Machine Learning","Programming","SQL","Statistical","Language","UML","Data","Software","Modeling"]
+tags: ["SQL Server","Machine Learning","Programming","SQL","Statistical","Language","UML","Data","Software","Systems"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-intro.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260422-WA0009.jpg" />
+<Pi src="/thumbnail/safe-intro.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

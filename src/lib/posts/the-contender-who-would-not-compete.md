@@ -1,17 +1,17 @@
 ---
 title: "The Contender Who Would Not Compete"
 description: "A satirical personal essay on writing, India, ambition, public spectacle, private exhaustion, and the strange civic theater of being told that everything is improving while the pothole outside quietly studies your ankle."
-thumbnail: "/images/Compress_20260502_014710_0769.jpg"
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Hurry","Country","Adjective","Longing","Maintenance","India","Saved","Refusal","Sensible","Horse"]
+tags: ["Hurry","Country","Longing","Adjective","Maintenance","India","Saved","Sensible","Refusal","Horse"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-the-contender-who-would-not-compete.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260502_014710_0769.jpg" />
+<Pi src="/thumbnail/safe-the-contender-who-would-not-compete.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

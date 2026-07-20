@@ -2,16 +2,16 @@
 title: "The Voice Under the Loudspeaker"
 description: "A modest Calcutta electrician discovers that a celebrated godman’s divine voice has a machine hidden inside it. But the deeper sound is not the one coming from the amplifier."
 date: "2026-06-09"
-thumbnail: "/images/Compress_20260609_161137_7456.jpg"
 category: "Short Fiction"
-tags: ["Baba Shabdananda","Tea Stall","Nirmal","Baba","Mili","Shabdananda","Prabal","Bangle","Pandal","Cabinet"]
+tags: ["Baba Shabdananda","Tea Stall","Nirmal","Baba","Mili","Shabdananda","Prabal","Bangle","Pandal","Wire"]
 published: true
 color: "Charcoal"
+thumbnail: "/thumbnail/safe-the-voice-under-the-loudspeaker.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260609_161137_7456.jpg" />
+<Pi src="/thumbnail/safe-the-voice-under-the-loudspeaker.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -2,16 +2,16 @@
 title: "The Laugh Track Has Left The Room"
 description: "A personal essay on comedy, depression, anhedonia, aging, and the strange humiliation of seeing where the joke is while no longer being able to laugh."
 date: "2026-06-12"
-thumbnail: "/images/Compress_20260613_125634_4509.jpg"
 category: "Personal Essay"
 tags: ["Laugh Track","Comedy","Laugh","Laughter","Scene","Funny","Joke","Film","Pretends","Comic"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-the-laugh-track-has-left-the-room.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260613_125634_4509.jpg" />
+<Pi src="/thumbnail/safe-the-laugh-track-has-left-the-room.jpg" />
 
 The laugh track comes out of the laptop like someone shaking a tin box full of old buttons, and I sit there in my Calcutta room, one knee folded under me, tea going cold, the ceiling fan making its heroic but frankly limited contribution to civilization, watching some man on screen trip over a sofa and become internationally hilarious.
 

@@ -1,17 +1,17 @@
 ---
 title: "FHIR"
 description: "A rigorous but readable introduction to HL7 FHIR for serious beginners, grounded in history, healthcare architecture, and the lived texture of real systems. This post explains what FHIR actually is, what it is not, and why its promise is both enormous and frequently misunderstood."
-thumbnail : "/images/IMG-20260423-WA0007.jpg"
 date: "2026-04-23"
 category: "healthcare it"
 tags: ["Health Level Seven","Public Health","Diagnosis Classification","Artificial Intelligence","Active Medication","FHIR","Healthcare","Resource","Clinical","Data"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0007.jpg" />
+<Pi src="/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

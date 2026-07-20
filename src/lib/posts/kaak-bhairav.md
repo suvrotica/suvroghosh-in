@@ -2,16 +2,16 @@
 title: "Kaak Bhairav"
 description: "A Jadavpur computer science student builds a crow-headed humanoid trained on scripture and obedience, then discovers that fraud is not the most frightening thing a god can learn."
 date: "2026-06-01"
-thumbnail: "/images/Compress_20260601_151729_9684.jpg"
 category: "Short Fiction"
 tags: ["Kaak Bhairav","Saffron Cloth","Bhairav Sat","Shrine Room","Crow Head","Pritam","Kaak","Nandini","Beak","Devotees"]
 published: true
 color: "Charcoal"
+thumbnail: "/thumbnail/safe-kaak-bhairav.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260601_151729_9684.jpg" />
+<Pi src="/thumbnail/safe-kaak-bhairav.jpg" />
 
 # THIS IS A WORK OF FICTION
 

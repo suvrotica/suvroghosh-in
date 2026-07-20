@@ -2,16 +2,16 @@
 title: "A Trapezoid in Low Light"
 description: "A Calcutta essay on softening the truth, household kindness, geometry, worry, and the small edits by which a crooked day is made bearable."
 date: "2026-06-20"
-thumbnail: "/images/Compress_20260620_115927_7094.jpg"
 category: "Personal Essay"
 tags: ["Rectangle","Tea"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-a-trapezoid-in-low-light.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260620_115927_7094.jpg" alt="Article illustration for A Trapezoid in Low Light" />
+<Pi src="/thumbnail/safe-a-trapezoid-in-low-light.jpg" alt="Article illustration for A Trapezoid in Low Light" />
 
 The tea had grown a thin brown skin on top.
 

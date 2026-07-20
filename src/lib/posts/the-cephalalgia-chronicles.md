@@ -2,16 +2,16 @@
 title: "The Cephalalgia Chronicles"
 description: "A fifty-one-year-old Calcutta man spirals through manic-depressive ruminations on headaches, dust allergies, financial entrapment, and the grotesque comedy of being alive in a city that refuses to let you breathe."
 date: "2026-07-16"
-thumbnail: "/images/Compress_20260717_073210_0162.jpg"
 category: "Personal Essay"
 tags: ["Hundred Milligrams","Twelve Hundred","Return Tomorrow","Ibuprofen","Headache","Headaches","Dust","Throbbing","Milligrams","Grotesque"]
 published: true
 color: "#8B4513"
+thumbnail: "/thumbnail/safe-the-cephalalgia-chronicles.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260717_073210_0162.jpg" />
+<Pi src="/thumbnail/safe-the-cephalalgia-chronicles.jpg" />
 
 The headache arrives like a viceroy who has forgotten he was deposed, a colonial phantom still demanding tribute from the sinuses, and I am the subject who must pay in ibuprofen—four hundred milligrams, eight hundred, twelve hundred at the worst, which is to say at the best, because the worst is when even twelve hundred milligrams of that blessed white tablet, that tiny pharmaceutical obelisk, fails to erect itself against the siege, and then I am left with nothing but the throbbing, the pulsing, the grand mal of the frontal lobe that makes me wonder, in my more manic moments, whether this is what it felt like to be Lord Curzon trying to partition Bengal in 1905, that same splitting, that same arrogant cleaving of a whole into wounded halves, though of course I am no Lord Curzon, I am a fifty-one-year-old Bengali man in Calcutta with a dust allergy and a landlord who thinks construction is a form of prayer, and the only partition happening here is the one between my skull and my sanity.
 

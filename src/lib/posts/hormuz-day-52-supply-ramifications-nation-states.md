@@ -1,17 +1,17 @@
 ---
 title: "Hormuz, Day 52"
 description: "A system-level look at how a prolonged Strait of Hormuz disruption propagates through energy, fertilizer, food, healthcare, transport, finance, and state capacity—and why the damage is asymmetric across countries."
-thumbnail : "/images/IMG-20260423-WA0011.jpg"
 date: "2026-04-21"
 category: "geopolitics"
-tags: ["Weaker Currencies","Reuters Reported","Fertilizer","Gulf","LNG","Hormuz","Reuters","Imports","Freight","Inflation"]
+tags: ["Weaker Currencies","Reuters Reported","Fertilizer","Gulf","LNG","Hormuz","Reuters","Freight","Imports","Inflation"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-hormuz-day-52-supply-ramifications-nation-states.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0011.jpg" />
+<Pi src="/thumbnail/safe-hormuz-day-52-supply-ramifications-nation-states.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -2,17 +2,17 @@
 title: "Vamana and the Three Steps of Bankruptcy"
 description: "A Calcutta essay on how tiny expenses turn into cosmic humiliations. Rent, medicine, dental work, laptop repair, and unpaid bills become the three steps by which bankruptcy measures a man."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_200636_6399.jpg"
 category: "Personal Essay"
 tags: ["Buffer Means","Step Covers","Money Fear","Buffer","Bali","Vamana","Laptop","Dwarf","Step","Bankruptcy"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-vamana-and-the-three-steps-of-bankruptcy.jpg"
 ---
 
 
 <TTS />
 
-<Pi src="Compress_20260610_200636_6399.jpg" />
+<Pi src="/thumbnail/safe-vamana-and-the-three-steps-of-bankruptcy.jpg" />
 
 
 

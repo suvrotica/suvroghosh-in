@@ -2,16 +2,16 @@
 title: "Bessel Correction Without the Mathematical Chilli Powder"
 description: "A plain-English explanation of why sample variance divides by one less than the number of observations, written for someone who would rather cross Esplanade in peak traffic than stare at formulas."
 date: "2026-05-07"
-thumbnail: "/images/Compress_20260507_192047_7281.jpg"
 category: "Statistics"
 tags: ["Sample Mean","Independent Direction","Bessel Correction","Flat Sheet","Observations Give","Sample","Deviations","Variance","N-1","Observations"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-bessel-correction-for-variance.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260507_192047_7281.jpg" />
+<Pi src="/thumbnail/safe-bessel-correction-for-variance.jpg" />
 
 
 

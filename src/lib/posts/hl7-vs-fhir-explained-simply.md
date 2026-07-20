@@ -1,17 +1,17 @@
 ---
 title: "HL7 vs FHIR, Explained Simply"
 description: "A practical explanation of why HL7 and FHIR are not enemies, why hospitals still run on older interfaces, and what FHIR actually improves without magically fixing healthcare data."
-thumbnail : "/images/IMG-20260425-WA0006.jpg" 
 date: "2026-04-25"
 category: "Healthcare IT"
 tags: ["HL7 Version","Layer Reflects","Healthcare Interoperability","Source System","FHIR","HL7","Healthcare","Data","Clinical","Version"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0006.jpg" />
+<Pi src="/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

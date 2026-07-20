@@ -2,16 +2,16 @@
 title: "Hope Dies at Different Rates"
 description: "A personal essay on middle age, bipolar depression, poverty, education, writing, and the fear that AI may steal from future generations the old human habit of turning pain into words."
 date: "2026-05-30"
-thumbnail: "/images/Compress_20260530_030551_1659.jpg"
 category: "Personal Essay"
 tags: ["Breaking News","Writing","Hope","Sentence","Write","Mind","AI","Breaking","Feeling","Comfort"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-hope-dies-at-different-rates.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260530_030551_1659.jpg" />
+<Pi src="/thumbnail/safe-hope-dies-at-different-rates.jpg" />
 
 Hope does not die like a cinema hero, one hand on the chest, violins swelling, rain arriving exactly on cue. Hope dies more like a cheap ceiling fan in a rented room. First it makes a noise. Then it runs only on speed three. Then someone ties the regulator with tape. Then one day it moves so slowly that you cannot decide whether it is working or only remembering its former profession.
 

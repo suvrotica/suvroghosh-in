@@ -1,17 +1,17 @@
 ---
 title: "Latent Space in Healthcare Data, From the Beginning"
 description: "A system-level explanation of latent space in healthcare data: what it is, why it matters, where it fails, and how architects should treat it in real clinical and research systems."
-thumbnail : "/images/IMG-20260424-WA0008.jpg" 
 date: "2026-04-24"
 category: "Healthcare IT"
-tags: ["Usually Called","Latent Space","Health Level Seven","Representational Loss","Diagnosis Code","Latent","Clinical","Space","Representations","Data"]
+tags: ["Usually Called","Latent Space","Health Level Seven","Representational Loss","Diagnosis Code","Latent","Clinical","Representations","Data","Space"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-latent-space-in-healthcare-data.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0008.jpg" />
+<Pi src="/thumbnail/safe-latent-space-in-healthcare-data.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

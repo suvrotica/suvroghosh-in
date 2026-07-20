@@ -2,16 +2,16 @@
 title: "How Are You and Other Small Cruelties"
 description: "A bitter comic meditation on the impossible social arithmetic hidden inside the harmless question, How are you?"
 date: "2026-05-06"
-thumbnail : "/images/Compress_20260506_112925_5240.jpg"
 category: "Personal Satire"
 tags: ["Fine Means","Fine","Lower-Middle-Class","Honesty","Produce","Correct","Lying","Yes","Ceiling","Asks"]
 published: true
 color: "gray"
+thumbnail: "/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_112925_5240.jpg" />
+<Pi src="/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

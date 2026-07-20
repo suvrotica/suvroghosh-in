@@ -2,16 +2,16 @@
 title: "The Horoscope That Fits Everybody"
 description: "A Calcutta rationalist’s tour of Barnum statements, astrology, babadom, pseudoscience, and political rhetoric in India."
 date: "2026-06-19"
-thumbnail: "/images/Compress_20260619_115651_1393.jpg"
 category: "Society"
 tags: ["Barnum Statement","Barnum Statements","Astrologer","Statements","Horoscope","Personality","Forer","Hears","Statement","Vague"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260619_115651_1393.jpg" />
+<Pi src="/thumbnail/safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg" />
 
 Acronyms and shorthand: P. T. Barnum means Phineas Taylor Barnum, the nineteenth-century American showman whose name became attached to crowd-pleasing spectacle and mass gullibility. EMI means equated monthly installment, the fixed monthly loan payment that keeps many Indian households spiritually alert. TED means Technology, Entertainment, Design, the conference brand whose lighting has made many ordinary statements look newly ironed.
 

@@ -2,15 +2,15 @@
 title: "Hardy’s Law in Genetics for the Callow Calcuttan"
 description: "A street-level explanation of the Hardy-Weinberg law: why dominant genes do not automatically take over, why recessive genes do not politely vanish, and why evolution needs a disturbance."
 date: "2026-05-26"
-thumbnail: "/images/Compress_20260526_034630_0962.jpg"
 category: "Science"
 tags: ["Hardy Law","Allele","Hardy","Gene","Recessive","Dominant","Population","Proportions","Evolution","Alleles"]
 published: true
 color: "green"
+thumbnail: "/thumbnail/safe-hardys-law-genetics-callow-calcuttan.jpg"
 ---
 <TTS />
 
-<Pi src="Compress_20260526_034630_0962.jpg" />
+<Pi src="/thumbnail/safe-hardys-law-genetics-callow-calcuttan.jpg" />
 
 Acronyms and terms used in this post:
 

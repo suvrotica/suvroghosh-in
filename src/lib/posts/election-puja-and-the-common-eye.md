@@ -2,16 +2,16 @@
 title: "Election Puja And The Common Eye"
 description: "A Calcutta-side political essay on campaign promises, welfare theatrics, voter fatigue, and the old Indian art of turning public hope into private furniture."
 date: "2026-05-13"
-thumbnail: "/images/Compress_20260513_233123_3744.jpg"
 category: "Politics"
 tags: ["Tea Stall","Provided","Welfare","Bengal","Access","Leakage","Party","BJP","TMC","Corruption"]
 published: true
 color: "red"
+thumbnail: "/thumbnail/safe-election-puja-and-the-common-eye.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260513_233123_3744.jpg" />
+<Pi src="/thumbnail/safe-election-puja-and-the-common-eye.jpg" />
 
 Acronyms used: BJP [Bharatiya Janata Party, the national political party that has made major electoral promises in Bengal]; TMC [Trinamool Congress, the party that ruled West Bengal before the recent change]; EC [Election Commission, the body that conducts elections]; CAA [Citizenship Amendment Act, a citizenship law that often enters political arguments about identity and eligibility]; SIR [Special Intensive Revision, a large-scale voter-list verification exercise]; MLA [Member of Legislative Assembly, an elected state-level representative].
 

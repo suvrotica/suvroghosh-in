@@ -2,16 +2,16 @@
 title: "The City’s AI Has Depression"
 description: "A weary systems engineer in Calcutta must persuade a city-sized intelligence that imperfect maintenance is still worth performing before the monsoon arrives."
 date: "2026-07-19"
-thumbnail: "/images/Compress_20260719_094247_7744.jpg"
 category: "Short Fiction"
 tags: ["Objective Function","Tea Stall","Salt Lake","Servers Hummed","Direct Channel","Arup","Array","Typed","Temporary","Basement"]
 published: true
 color: "#2c3e50"
+thumbnail: "/thumbnail/safe-the-citys-ai-has-depression.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260719_094247_7744.jpg" />
+<Pi src="/thumbnail/safe-the-citys-ai-has-depression.jpg" />
 
 # THIS IS A WORK OF FICTION
 

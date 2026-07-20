@@ -2,16 +2,16 @@
 title: "The K-Shaped Economy Is a Forked Road, and Most of Us Are on the Wrong Fork"
 description: "A readable, street-level look at how the rich keep rising while the middle class and poor are squeezed in the United States and India, with India carrying the harsher and more dangerous version."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_113402_2894.jpg"
 category: "Economy"
 tags: ["K-shaped Economy","Middle Class","Unstable Work","K-shaped","Escape","Versus","Economy","India","Class","Assets"]
 published: true
 color: "#4A3F35"
+thumbnail: "/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_113402_2894.jpg" />
+<Pi src="/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg" />
 
 Acronyms and terms used in this post:
 

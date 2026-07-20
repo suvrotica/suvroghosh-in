@@ -2,16 +2,16 @@
 title: "Maybe the Body Is Not Broken"
 description: "A middle-aged unemployed man in Calcutta wonders whether bipolar depression and anxiety are not defects, but ancient survival machinery trapped inside a world of notifications, rent, loneliness, and artificial modern life."
 date: "2026-05-13"
-thumbnail : "/images/Compress_20260506_160241_1669.jpg"
 category: "Calcutta"
-tags: ["Bipolar Depression","Nervous System","Depression","Bipolar","Anxiety","Somebody","Nervous","Maybe","Survived","Fellow"]
+tags: ["Bipolar Depression","Nervous System","Depression","Bipolar","Anxiety","Somebody","Nervous","Maybe","Fellow","Survived"]
 published: true
 color: "#3f3f46"
+thumbnail: "/thumbnail/safe-body-going-to-plan.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_160241_1669.jpg" />
+<Pi src="/thumbnail/safe-body-going-to-plan.jpg" />
 
 Acronyms and Terms
 

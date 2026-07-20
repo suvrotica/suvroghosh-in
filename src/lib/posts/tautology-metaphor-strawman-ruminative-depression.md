@@ -2,16 +2,16 @@
 title: "Bad Logic at Three in the Morning"
 description: "A first-person essay on how tautologies, bad metaphors, straw man arguments, and concentric thinking can quietly worsen rumination, depression, anxiety, and loneliness."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_034648_8214.jpg"
 category: "Mental Health"
-tags: ["Connected","Circle","Tautology","Metaphor","Loneliness","Mind","Defective","Depression","Round","Labels"]
+tags: ["Connected","Circle","Tautology","Metaphor","Loneliness","Mind","Defective","Depression","Round","Toothache"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-tautology-metaphor-strawman-ruminative-depression.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_034648_8214.jpg" />
+<Pi src="/thumbnail/safe-tautology-metaphor-strawman-ruminative-depression.jpg" />
 
 Acronyms and terms used in this post:
 

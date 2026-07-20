@@ -1,17 +1,17 @@
 ---
 title: "Healthcare AI and the Wrong Objective"
 description: "A technical warning about future healthcare Artificial Intelligence systems built on distorted objectives, brittle representations, historical bias, and deployment incentives that confuse measurable performance with clinical truth."
-thumbnail : "/images/IMG-20260426-WA0002.jpg"
 date: "2026-04-26"
 category: "Healthcare AI"
 tags: ["Health Level Seven","Model Selected","Future Healthcare","Ask Whether","Model","Healthcare","Clinical","Data","AI","Objective"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-healthcare-ai-wrong-objective.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260426-WA0002.jpg" />
+<Pi src="/thumbnail/safe-healthcare-ai-wrong-objective.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

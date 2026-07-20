@@ -2,16 +2,16 @@
 title: "A Private Nuisance at Five-Thirty in Calcutta"
 description: "A personal essay on bipolar depression, unemployment, insomnia, irritation, tooth pain, loneliness, and the slow morning time of a bankrupt middle-aged Bengali man in Calcutta."
 date: "2026-05-31"
-thumbnail: "/images/Compress_20260531_054547_7919.jpg"
 category: "Personal Essay"
-tags: ["Flail","Molar","Zero","Aching","Try","Fight","Writing","Tea","Sunrise","Relationship"]
+tags: ["Flail","Molar","Aching","Try","Fight","Zero","Writing","Tea","Sunrise","Relationship"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-private-nuisance-at-five-thirty-in-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260531_054547_7919.jpg" />
+<Pi src="/thumbnail/safe-private-nuisance-at-five-thirty-in-calcutta.jpg" />
 
 Acronyms and terms:
 

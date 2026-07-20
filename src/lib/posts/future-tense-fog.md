@@ -2,18 +2,18 @@
 title: "The Fog of Future Tense"
 description: "A personal essay on solitude, memory, middle age, poverty, depression, and the strange punishment of becoming too much oneself in a small Calcutta room."
 date: "2026-06-17"
-thumbnail: "/images/Compress_20260617_122644_4463.jpg"
 category: "Personal Essay"
 tags: ["Future Tense","Solitude","Crossings","Tense","Fog","Memory","Road","Witness","Towel","Future"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-future-tense-fog.jpg"
 ---
 
 Acronyms used: OTP [One-Time Password, a temporary verification code used by websites and apps to confirm identity]
 
 <TTS />
 
-<Pi src="Compress_20260617_122644_4463.jpg" />
+<Pi src="/thumbnail/safe-future-tense-fog.jpg" />
 
 ---
 

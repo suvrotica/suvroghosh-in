@@ -2,16 +2,16 @@
 title: "The Range Limit of Kinship"
 description: "A system-level essay on how kinship, visibility, parsimony, and social insulation work for a middle-aged single man living quietly in Calcutta."
 date: "2026-04-30"
-thumbnail : "/images/Compress_20260429_181247_7639.jpg"
 category: "Society"
 tags: ["Middle-Aged Single Man","United States","People Ask","Invokes","Kinship","Hermit","Society","Frugal","Socially","Parent"]
 published: true
 color: "#6F5B4F"
+thumbnail: "/thumbnail/safe-kinship-range-limit-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260429_181247_7639.jpg" />
+<Pi src="/thumbnail/safe-kinship-range-limit-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

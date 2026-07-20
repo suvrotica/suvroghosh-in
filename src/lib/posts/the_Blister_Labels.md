@@ -2,16 +2,16 @@
 title: "The Blister Labels"
 description: "In a rain-stained Calcutta para, a small pharmacy’s altered expiry dates begin a plague of thirst, hunger, and impossible tongues."
 date: "2026-06-02"
-thumbnail: "/images/Compress_20260602_121411_1900.jpg"
 category: "Short Fiction"
 tags: ["Shanti Medical Hall","Eastern Meridian Pharma","Nalin Dutta","Tea Stall","Stock Register","Arka","Nalin","Mili","Roy","Tongue"]
 published: true
 color: "dark red"
+thumbnail: "/thumbnail/safe-the-blister-labels.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260602_121411_1900.jpg" />
+<Pi src="/thumbnail/safe-the-blister-labels.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -2,16 +2,16 @@
 title: "A Calcutta Bengali’s Guide to the Various Schools of AI"
 description: "A lively guide to the major tribes of artificial intelligence, from symbolic reasoning and neural networks to Bayes, evolution, reinforcement learning, explainability, and the current deep learning carnival."
 date: "2026-05-06"
-thumbnail : "/images/Compress_20260506_184203_3225.jpg"
 category: "Artificial Intelligence"
 tags: ["Expert Systems","People Gave","Artificial Intelligence","Symbolic","AI","Neural","Rules","AGI","Tribes","Reward"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-calcutta-bengalis-guide-to-ai-tribes.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_184203_3225.jpg" />
+<Pi src="/thumbnail/safe-calcutta-bengalis-guide-to-ai-tribes.jpg" />
 
 
 

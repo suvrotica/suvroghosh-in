@@ -2,18 +2,18 @@
 title: "Frog in the Robot Century"
 description: "A sharp Calcutta essay on clean water, power cuts, AI, robotics, and the cruel new wall forming between countries that build the machine century and countries that keep mistaking slogans for progress."
 date: "2026-06-15"
-thumbnail: "/images/Compress_20260615_184608_8009.jpg"
 category: "Essay"
 tags: ["Machine Century","Lies","Learn","AI","Century","Modernity","Machine","Assume","Robotics","Adjustment"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-frog-in-the-robot-century.jpg"
 ---
 
 Acronyms used in this post: AI — Artificial Intelligence, meaning software systems that can learn patterns, generate language, make predictions, recognize images, write code, and automate tasks once thought to require human judgment.
 
 <TTS />
 
-<Pi src="Compress_20260615_184608_8009.jpg" />
+<Pi src="/thumbnail/safe-frog-in-the-robot-century.jpg" />
 
 ---
 

@@ -2,16 +2,16 @@
 title: "Meanline"
 description: "A height supplement in Kolkata promises to defeat heredity, age, and ordinary statistical gravity. What it creates is not ambition fulfilled, but a city of people growing toward a vanishing point."
 date: "2026-06-03"
-thumbnail: "/images/Compress_20260603_051806_6539.jpg"
 category: "Short Fiction"
 tags: ["Sayan Dutta","Height Potential","Week Eight Height","Tea Stall","Nandita Asked","Arka","Nandita","Sayan","MEANLINE","Inches"]
 published: true
 color: "Charcoal"
+thumbnail: "/thumbnail/safe-meanline.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260603_051806_6539.jpg" />
+<Pi src="/thumbnail/safe-meanline.jpg" />
 
 # THIS IS A WORK OF FICTION
 

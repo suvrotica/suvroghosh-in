@@ -2,16 +2,16 @@
 title: "The Rice Cooker Kind of Solitude"
 description: "A middle-aged Bengali man in a small rented room on the southern edge of Calcutta discovers that solitude is not spiritual, poetic, or noble. It is rice, heat, unpaid bills, a ceiling fan, and the giant invisible noise of not being necessary to anyone’s day."
 date: "2026-06-10"
-thumbnail: "/images/Compress_20260610_083746_6111.jpg"
 category: "Personal Essay"
 tags: ["Rice Cooker","Solitude","Rice","Heat","Cooker","Bends","Sits","Enough","Mattress","Unnecessary"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-rice-cooker-kind-of-solitude.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260610_083746_6111.jpg" />
+<Pi src="/thumbnail/safe-the-rice-cooker-kind-of-solitude.jpg" />
 
 Acronyms used in this post:
 

@@ -2,16 +2,16 @@
 title: "The Low Market Value of Reality"
 description: "A personal essay from Calcutta’s margins on school envy, dead meritocracy, superstition, science, poverty, and the stubborn refusal to sell comforting nonsense."
 date: "2026-05-20"
-thumbnail: "/images/Compress_20260520_035321_1185.jpg"
 category: "Personal Essay"
 tags: ["Write","Mathematics","Bill","Reality","Teacher","Nonsense","Popular","Comfort","Science","Maybe"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-low-market-value-of-reality.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260520_035321_1185.jpg" />
+<Pi src="/thumbnail/safe-the-low-market-value-of-reality.jpg" />
 
 
 There are two kinds of outcast. One burns down the village granary and runs away at midnight. The other answers correctly in class, refuses to flatter idiots at work, and later writes about science and mathematics in a society that would rather buy a horoscope with laminated edges.

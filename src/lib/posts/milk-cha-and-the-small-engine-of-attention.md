@@ -2,16 +2,16 @@
 title: "Milk Cha and the Small Engine of Attention"
 description: "A warm, comic Calcutta-side reflection on why strong milk tea with sugar can sometimes help a tired, anxious, attention-scattered mind work better than delicate liquor tea."
 date: "2026-05-22"
-thumbnail: "/images/Compress_20260522_224121_1932.jpg"
 category: "Personal Essay"
 tags: ["Liquor Tea","Darjeeling Liquor","Milk Cha","Twenty Minutes","Cha","Milk","Darjeeling","Cup","CTC","Sugar"]
 published: true
 color: "amber"
+thumbnail: "/thumbnail/safe-milk-cha-and-the-small-engine-of-attention.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260522_224121_1932.jpg" />
+<Pi src="/thumbnail/safe-milk-cha-and-the-small-engine-of-attention.jpg" />
 
 Acronyms and terms:
 

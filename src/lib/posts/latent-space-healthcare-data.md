@@ -2,16 +2,16 @@
 title: "Latent Space and the Hidden Map of Healthcare Data"
 description: "A Calcutta-grounded essay on latent space in healthcare data: what it compresses, what it reveals, where it fails, and why architects must treat embeddings as maps rather than truth."
 date: "2026-04-24"
-thumbnail: "/images/IMG-20260424-WA0008.jpg"
 category: "Healthcare-IT"
-tags: ["Federated Learning","Differential Privacy","Latent Spaces","Latent Space","Deep Learning","Space","Data","Vector","Model","Coordinate"]
+tags: ["Federated Learning","Differential Privacy","Latent Spaces","Latent Space","Deep Learning","Space","Data","Vector","Model","Models"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-latent-space-healthcare-data.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260424-WA0008.jpg" />
+<Pi src="/thumbnail/safe-latent-space-healthcare-data.jpg" />
 
 The server fan has a way of making thought feel smaller.
 

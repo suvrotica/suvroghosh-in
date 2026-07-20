@@ -2,16 +2,16 @@
 title: "The Nationalization of Shame"
 description: "A middle-aged Bengali man in the outskirts of Calcutta thinks through poverty, debt, anxiety, education, return migration, and the terrible comedy of having a trained mind without practical power."
 date: "2026-06-16"
-thumbnail: "/images/Compress_20260616_160214_4513.jpg"
 category: "Personal Essay"
 tags: ["Trained Mind","Pressure Cooker","Dot","Caller","Poor","Articulate","Call","Phone","Poverty","Demon"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-nationalization-of-shame.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260616_160214_4513.jpg" />
+<Pi src="/thumbnail/safe-the-nationalization-of-shame.jpg" />
 
 
 

@@ -1,17 +1,17 @@
 ---
 title: "HIE from First Principles"
 description: "A system-level dissection of Health Information Exchange (HIE) from first principles, using OpenHIE as the architectural lens."
-thumbnail : "/images/IMG-20260423-WA0021.jpg"
 date: "2026-04-21"
 category: "healthcare it"
 tags: ["Health Level Seven","Data Quality","Public Health","Facility Authority","Clinical","Facility","Healthcare","OpenHIE","IOL","SHR"]
 published: true
 color: "blue"
+thumbnail: "/thumbnail/safe-hie-first-principles-openhie.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0021.jpg" />
+<Pi src="/thumbnail/safe-hie-first-principles-openhie.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

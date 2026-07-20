@@ -2,16 +2,16 @@
 title: "Wrong Shelf"
 description: "A Calcutta preschool receives a carton of donated picture books that should never have entered a classroom. As children fall asleep and do not wake, a teacher follows the trail of paper into the city’s newest appetite."
 date: "2026-06-01"
-thumbnail: "/images/Compress_20260601_045407_7366.jpg"
 category: "Short Fiction"
-tags: ["Yellow Duck","Duck Book","Reading Corner","Good Morning Moon","Tea Stall","Nandita","Mou","Tia","Books","Arka"]
+tags: ["Yellow Duck","Duck Book","Reading Corner","Good Morning Moon","Tea Stall","Nandita","Mou","Tia","Books","Children"]
 published: true
 color: "charcoal"
+thumbnail: "/thumbnail/safe-wrong-shelf.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260601_045407_7366.jpg" />
+<Pi src="/thumbnail/safe-wrong-shelf.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -2,16 +2,16 @@
 title: "Faces in the Municipal Water"
 description: "When a water-borne parasite enters Kolkata’s drinking-water network, the city begins losing the one thing even poverty, politics, and shame had left intact: the human face."
 date: "2026-06-03"
-thumbnail: "/images/Compress_20260603_144743_3968.jpg"
 category: "Short Fiction"
 tags: ["Chhaya Bari","Niloy Phone","Specimen Box","Tea Stalls","Niloy Thought","Mira","Dutta","Ashfaq","Worms","Reservoir"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-faces-in-the-municipal-water.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260603_144743_3968.jpg" />
+<Pi src="/thumbnail/safe-faces-in-the-municipal-water.jpg" />
 
 # THIS IS A WORK OF FICTION
 

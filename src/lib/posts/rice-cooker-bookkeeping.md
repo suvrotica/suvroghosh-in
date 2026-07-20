@@ -2,16 +2,16 @@
 title: "Rice Cooker Bookkeeping"
 description: "A Calcutta essay on middle-class poverty, household margin, delayed hunger, and the small arithmetic that turns respectable life into a knife-edge."
 date: "2026-06-20"
-thumbnail: "/images/Compress_20260620_132622_2856.jpg"
 category: "Personal Essay"
 tags: ["Middle Class","Rice Cooker","Minus","Hunger","Margin","Rice","Cooker","Middle-Class","Phone","Repair"]
 published: true
 color: "brown"
+thumbnail: "/thumbnail/safe-rice-cooker-bookkeeping.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260620_132622_2856.jpg" />
+<Pi src="/thumbnail/safe-rice-cooker-bookkeeping.jpg" />
 
 Acronyms used in this post:
 

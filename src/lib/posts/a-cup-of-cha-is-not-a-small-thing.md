@@ -2,16 +2,16 @@
 title: "A Cup of Cha Is Not a Small Thing"
 description: "Tea looks like a humble brown drink, but inside that cup sits China, empire, stolen plants, Bengali roadside life, colonial labor, and the merciless physics of cooling."
 date: "2026-06-04"
-thumbnail: "/images/Compress_20260604_065606_6517.jpg"
 category: "Essay"
-tags: ["Cha","Tea","Chinese","Dutch","British","Plants","China","Empire","Porcelain","Wardian"]
+tags: ["Cha","Tea","Chinese","Dutch","British","Plants","Empire","China","Wardian","Plantation"]
 published: true
 color: "#8B5A2B"
+thumbnail: "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260604_065606_6517.jpg" />
+<Pi src="/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg" />
 
 Acronyms and terms:
 

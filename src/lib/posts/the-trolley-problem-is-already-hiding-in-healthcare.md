@@ -2,16 +2,16 @@
 title: "The Trolley Problem Is In The Healthcare Queue"
 description: "A Calcutta-grounded essay on how healthcare turns moral choice into queues, dashboards, alerts, codes, claims, risk models, prior authorization rules, and ordinary workflow."
 date: "2026-05-29"
-thumbnail: "/images/Compress_20260529_135024_4353.jpg"
 category: "Healthcare-IT"
-tags: ["Prior Authorization","Moral Crumple Zone","Population Health","Decision Support","Morally Neutral","Lever","Trolley","Pulls","Patient","Authorization"]
+tags: ["Prior Authorization","Moral Crumple Zone","Population Health","Decision Support","Morally Neutral","Lever","Trolley","Pulls","Clinician","Authorization"]
 published: true
 color: "black"
+thumbnail: "/thumbnail/safe-the-trolley-problem-is-already-hiding-in-healthcare.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260529_135024_4353.jpg" />
+<Pi src="/thumbnail/safe-the-trolley-problem-is-already-hiding-in-healthcare.jpg" />
 
 ## The Lever Became A Queue
 

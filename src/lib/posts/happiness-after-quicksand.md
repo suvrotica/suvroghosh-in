@@ -2,16 +2,16 @@
 title: "Happiness After Quicksand"
 description: "A personal essay on bipolar disorder, solitude, middle-aged life in Calcutta, and the small unfashionable arrangements that sometimes keep sadness and anger from becoming a public disaster."
 date: "2026-05-15"
-thumbnail: "/images/Compress_20260506_174701_1947.jpg"
 category: "Personal Essay"
-tags: ["Canned Food","Solitude","Canned","Agitation","Maybe","Fence","Terrace","Mind","Matters","Considered"]
+tags: ["Canned Food","Solitude","Canned","Maybe","Agitation","Fence","Terrace","Mind","Matters","Considered"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-happiness-after-quicksand.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260506_174701_1947.jpg" />
+<Pi src="/thumbnail/safe-happiness-after-quicksand.jpg" />
 
 Acronyms used in this post:
 

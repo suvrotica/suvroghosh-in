@@ -1,17 +1,17 @@
 ---
 title: "The Shadow Architecture: Lessons from a Decade Bootstrapping Healthcare Data Systems"
 description: "A first-person account of a decade spent outside conventional corporate structures—operating as a founder and independent architect to understand the deep, structural realities of healthcare data, markets, and AI representation."
-thumbnail : "/images/IMG-20260425-WA0007.jpg"
 date: "2026-04-25"
 category: "Healthcare IT"
-tags: ["United States","Health Science","Healthcare","Data","Clinical","Representation","VA","Systems","FHIR","AI"]
+tags: ["United States","Health Science","Healthcare","Data","Clinical","Representation","VA","Systems","FHIR","MUMPS"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260425-WA0007.jpg" />
+<Pi src="/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

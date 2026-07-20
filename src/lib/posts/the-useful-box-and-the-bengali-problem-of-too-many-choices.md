@@ -2,16 +2,16 @@
 title: "The Useful Box and the Bengali Problem of Too Many Choices"
 description: "A clear, witty, human essay on why freedom without boundaries often turns into fog, and why good constraints can rescue work, creativity, attention, and ordinary life."
 date: "2026-06-01"
-thumbnail: "/images/Compress_20260601_092735_5845.jpg"
 category: "Systems Thinking"
-tags: ["Real Bottleneck","Useful Constraint","Constraint","Bottleneck","Expand","Box","Produces","Constraints","Features","Humane"]
+tags: ["Real Bottleneck","Useful Constraint","Constraint","Bottleneck","Expand","Box","Produces","Constraints","Humane","Features"]
 published: true
 color: "slate"
+thumbnail: "/thumbnail/safe-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260601_092735_5845.jpg" />
+<Pi src="/thumbnail/safe-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg" />
 
 Acronyms and terms used:
 

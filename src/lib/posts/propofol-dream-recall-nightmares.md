@@ -1,17 +1,17 @@
 ---
 title: "Propofol, Nightmares"
 description: "An architecturally grounded look at the experimental use of propofol-induced dream states, delayed emergence, and active dream recall as a possible intervention for trauma-related nightmares and PTSD symptoms."
-thumbnail : "/images/IMG-20260423-WA0019.jpg"
 date: "2026-04-22"
 category: "healthcare"
-tags: ["Dream Induction","Propofol","Dream","Emergence","Recall","Nightmares","Anesthesia","Trauma","Anesthetic","Imagery"]
+tags: ["Dream Induction","Propofol","Dream","Emergence","Nightmares","Recall","Anesthesia","Trauma","Anesthetic","Imagery"]
 published: true
 color: "indigo"
+thumbnail: "/thumbnail/safe-propofol-dream-recall-nightmares.jpg"
 ---
 
 <TTS />
 
-<Pi src="IMG-20260423-WA0019.jpg" />
+<Pi src="/thumbnail/safe-propofol-dream-recall-nightmares.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

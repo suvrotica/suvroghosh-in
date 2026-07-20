@@ -2,15 +2,15 @@
 title: "Welcome To SuvroGhosh.IN"
 description: "A Kolkata-flavored blog manifesto about science, skepticism, satire, failure, bipolar weather, and the stubborn need to keep writing even when the room is empty."
 date: "2019-01-05"
-thumbnail: "/images/Compress_20260523_024207_7823.jpg"
 category: "Personal Essay"
 tags: ["Sometimes Silence","Guitar","Science","Literature","Satire","Sometimes","Learning","Meet","Bengali","Philosophy"]
 published: true
 color: "orange"
+thumbnail: "/thumbnail/safe-welcome-to-suvroghosh-in.jpg"
 ---
 <TTS />
 
-<Pi src="Compress_20260523_024207_7823.jpg" />
+<Pi src="/thumbnail/safe-welcome-to-suvroghosh-in.jpg" />
 
 <Vid 
   src="music/কাপের_তলায়_চাঁদ.mp4" 

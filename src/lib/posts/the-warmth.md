@@ -2,16 +2,16 @@
 title: "The Warmth"
 description: "A dismissed laboratory assistant boards the Calcutta Metro convinced he carries a cure in his jacket, until the poison begins to leak."
 date: "2026-07-05"
-thumbnail: "/images/Compress_20260705_022650_0245.jpg"
 category: "Short Fiction"
 tags: ["Eight Months","Arun","Jacket","Compartment","Bapi","Toddler","Mala","Ore","Mother","Lining"]
 published: true
 color: "#5C0000"
+thumbnail: "/thumbnail/safe-the-warmth.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260705_022650_0245.jpg" />
+<Pi src="/thumbnail/safe-the-warmth.jpg" />
 
 # THIS IS A WORK OF FICTION
 

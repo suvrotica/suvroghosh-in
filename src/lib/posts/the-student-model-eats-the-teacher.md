@@ -2,16 +2,16 @@
 title: "The Student Model Eats the Teacher and Calls It Tuition"
 description: "A fevered monologue about model distillation, industrial plagiarism, the shrinking American lead over China, and a city that mistakes downloading the future for manufacturing it."
 date: "2026-07-19"
-thumbnail: "/images/Compress_20260719_012146_6497.jpg"
 category: "Monologue"
-tags: ["China","Frontier","Model","Benchmark","Teacher","Open-Weight","Student","Chinese","Distilled","Humanity"]
+tags: ["China","Frontier","Model","Benchmark","Teacher","Open-Weight","Student","Chinese","Distilled","American"]
 published: true
 color: "#5B191D"
+thumbnail: "/thumbnail/safe-the-student-model-eats-the-teacher.jpg"
 ---
 
 <TTS />
 
-<Pi src="Compress_20260719_012146_6497.jpg" />
+<Pi src="/thumbnail/safe-the-student-model-eats-the-teacher.jpg" />
 
 The phrase *model distillation* enters my mouth like a spoonful of warm laboratory mucus, sweetened with venture capital and served in a tiny crystal glass by a smiling computational sommelier who assures me that the pale secretion contains notes of efficiency, democratization, apricot, and intellectual property violation, although perhaps I am being unfair to mucus, which at least belongs to the organism that produced it and does not issue a press release claiming it has achieved parity with the nose.
 
