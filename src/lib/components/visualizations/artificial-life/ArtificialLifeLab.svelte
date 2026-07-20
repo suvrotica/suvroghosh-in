@@ -171,7 +171,7 @@
 				class="lab-toolbar-button"
 				aria-describedby="generation-window-help"
 			>
-				Step generation
+				Advance 8 simulated seconds
 			</button>
 			<button type="button" onclick={restart} class="lab-toolbar-button">Restart</button>
 		</div>
@@ -201,8 +201,8 @@
 		class="flex flex-col gap-1 border-t border-neutral-800 bg-neutral-900/70 px-4 py-3 text-xs text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-5"
 	>
 		<p id="generation-window-help" class="m-0">
-			“Step generation” advances 240 fixed ticks; generations overlap, so it does not promise a
-			birth.
+			This advances exactly 240 fixed ticks. Generations overlap, so zero, one, or many births may
+			occur.
 		</p>
 		<p class="m-0 font-mono text-neutral-300" aria-live="polite">{status}</p>
 	</div>

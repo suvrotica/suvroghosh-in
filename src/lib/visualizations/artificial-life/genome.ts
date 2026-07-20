@@ -62,14 +62,21 @@ export function boundGenome(genome: Genome): Genome {
 	return bounded;
 }
 
+export function effectiveMutationProbability(parentMutationRate: number, baseline: number) {
+	const inheritedMutationPressure = clamp(parentMutationRate / 0.16, 0.35, 2.5);
+	return clamp(baseline * inheritedMutationPressure, 0, 0.95);
+}
+
 export function inheritGenome(
 	parent: Genome,
 	random: SeededRandom,
 	parameters: SimulationParameters
 ) {
 	const child = { ...parent };
-	const inheritedMutationPressure = clamp(parent.mutationRate / 0.16, 0.35, 2.5);
-	const probability = clamp(parameters.mutationProbability * inheritedMutationPressure, 0, 0.95);
+	const probability = effectiveMutationProbability(
+		parent.mutationRate,
+		parameters.mutationProbability
+	);
 
 	for (const key of Object.keys(GENOME_BOUNDS) as (keyof Genome)[]) {
 		if (!random.chance(probability)) continue;

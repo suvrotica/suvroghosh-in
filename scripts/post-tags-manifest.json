@@ -8305,7 +8305,7 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.md": {
-			"bodyHash": "dbcddcdd64df3f69db4413361e0ade3e8fe3f8653258b978211b39ed64ff36bb",
+			"bodyHash": "fc2cf6296f20a9155e41f9cc062e4508b987caf703b0b03f94507b7afc7d10f5",
 			"generatedTags": [
 				"Prey Arms Race",
 				"Predator Prey",
@@ -8313,10 +8313,10 @@
 				"Abundant Garden",
 				"Phenotype Packed",
 				"Population",
-				"Garden",
 				"Mutation",
+				"Garden",
 				"Energy",
-				"Predators"
+				"Lineage"
 			],
 			"generatorVersion": "2026-07-13.1"
 		}

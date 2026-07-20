@@ -88,9 +88,9 @@
 				type="button"
 				onclick={onstep}
 				class="lab-button"
-				title="Pause and advance a fixed 240-tick generation window"
+				aria-describedby="advance-fixed-time-help"
 			>
-				Step one generation
+				Advance 8 simulated seconds
 			</button>
 			<button type="button" onclick={onrestart} class="lab-button">Restart</button>
 			<button type="button" onclick={onrandomize} class="lab-button">Randomize parameters</button>
@@ -181,8 +181,8 @@
 								>
 							</span>
 							<span class="mt-1 block text-[0.7rem] leading-relaxed text-neutral-400">
-								The same seed and parameters reproduce the same random history; change it to test
-								drift.
+								The same seed, parameters, and exact fixed-step sequence reproduce the engine
+								history. Real-time actions can occur at different simulation times across devices.
 							</span>
 							<input
 								type="text"
@@ -223,9 +223,12 @@
 								class="mt-1 h-5 w-5 shrink-0 accent-cyan-300"
 							/>
 							<span>
-								<strong class="block text-xs text-neutral-100">Highlight oldest lineage</strong>
+								<strong class="block text-xs text-neutral-100"
+									>Highlight deepest surviving lineage</strong
+								>
 								<span class="mt-1 block text-[0.7rem] leading-relaxed text-neutral-400">
-									Adds a white membrane ring to descendants of the oldest surviving founder.
+									Adds a white membrane ring to the lineage containing the highest-generation living
+									descendant.
 								</span>
 							</span>
 						</label>
@@ -282,11 +285,16 @@
 			<div>
 				<dt class="font-bold text-cyan-200">Carrying capacity</dt>
 				<dd class="m-0 text-xs text-neutral-400">
-					Resources and the population cap bound how many organisms persist.
+					Food, energy costs, competition, and mortality shape an emergent sustainable population.
+					The separate population cap is only a browser safety limit.
 				</dd>
 			</div>
 		</dl>
 	</details>
+	<p id="advance-fixed-time-help" class="sr-only">
+		Pauses the live run and advances exactly 240 fixed simulation ticks, equal to 8 simulated
+		seconds.
+	</p>
 </section>
 
 <style>

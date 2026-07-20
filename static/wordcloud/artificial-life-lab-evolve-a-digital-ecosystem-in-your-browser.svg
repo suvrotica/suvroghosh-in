@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(770,714) rotate(-90)" font-size="118" style="fill:#d5d2c2">Population</text>
-<text transform="translate(289,633)" font-size="111" style="fill:#c49a6c">Food</text>
-<text transform="translate(858,395)" font-size="111" style="fill:#c7d7b5">Energy</text>
-<text transform="translate(197,471)" font-size="93" style="fill:#8fb7d0">Garden</text>
-<text transform="translate(810,503)" font-size="84" style="fill:#8fb7d0">Mutation</text>
-<text transform="translate(128,325)" font-size="84" style="fill:#e0b879">Organism</text>
-<text transform="translate(851,662)" font-size="79" style="fill:#b6c3dd">Predators</text>
-<text transform="translate(29,103)" font-size="74" style="fill:#d88988">Movement</text>
-<text transform="translate(911,248) rotate(-90)" font-size="74" style="fill:#d6a79f">Model</text>
-<text transform="translate(938,287)" font-size="74" style="fill:#9fc9c5">Change</text>
-<text transform="translate(281,184)" font-size="69" style="fill:#a9b7a3">Every</text>
-<text transform="translate(58,581) rotate(-90)" font-size="69" style="fill:#9fc9c5">Pressure</text>
-<text transform="translate(264,534)" font-size="69" style="fill:#b6c3dd">Predator</text>
-<text transform="translate(1051,559)" font-size="69" style="fill:#d9c89e">Step</text>
-<text transform="translate(23,672)" font-size="64" style="fill:#d6a79f">History</text>
-<text transform="translate(954,166)" font-size="64" style="fill:#d9c89e">Genome</text>
-<text transform="translate(292,695)" font-size="64" style="fill:#d5d2c2">Organisms</text>
-<text transform="translate(420,56)" font-size="64" style="fill:#9fc9c5">Lineage</text>
-<text transform="translate(917,79)" font-size="64" style="fill:#d5d2c2">Phenotype</text>
-<text transform="translate(67,157)" font-size="64" style="fill:#d88988">Fixed</text>
-<text transform="translate(529,256)" font-size="64" style="fill:#d5d2c2">Cost</text>
-<text transform="translate(197,238)" font-size="64" style="fill:#e0b879">Engine</text>
-<text transform="translate(1096,223)" font-size="64" style="fill:#d6a79f">Seed</text>
-<text transform="translate(810,566)" font-size="64" style="fill:#8fb7d0">Canvas</text>
-<text transform="translate(314,383)" font-size="58" style="fill:#e0b879">Variation</text>
-<text transform="translate(412,122)" font-size="58" style="fill:#e0b879">Small</text>
-<text transform="translate(566,607)" font-size="58" style="fill:#e0b879">Age</text>
-<text transform="translate(810,713)" font-size="58" style="fill:#d5d2c2">Animation</text>
-<text transform="translate(95,53)" font-size="58" style="fill:#c49a6c">Visible</text>
-<text transform="translate(69,568)" font-size="58" style="fill:#c49a6c">Speed</text>
-<text transform="translate(848,393) rotate(-90)" font-size="58" style="fill:#8fb7d0">Generation</text>
-<text transform="translate(62,393)" font-size="58" style="fill:#c7d7b5">Bounded</text>
-<text transform="translate(800,428)" font-size="38" style="fill:#d5d2c2">Reproduction</text>
-<text transform="translate(116,513)" font-size="38" style="fill:#a9b7a3">Chance</text>
-<text transform="translate(1004,113)" font-size="38" style="fill:#c49a6c">Radius</text>
-<text transform="translate(15,706)" font-size="38" style="fill:#d9c89e">Biological</text>
-<text transform="translate(488,160)" font-size="38" style="fill:#d9c89e">Changing</text>
-<text transform="translate(38,616)" font-size="38" style="fill:#c7d7b5">Harshness</text>
-<text transform="translate(667,531) rotate(-90)" font-size="38" style="fill:#d5d2c2">Descendants</text>
-<text transform="translate(94,520) rotate(-90)" font-size="38" style="fill:#d9c89e">Limit</text>
-<text transform="translate(775,601)" font-size="38" style="fill:#c49a6c">Simulation</text>
-<text transform="translate(60,207)" font-size="38" style="fill:#c7d7b5">Rather</text>
-<text transform="translate(1148,614)" font-size="38" style="fill:#d5d2c2">Trait</text>
-<text transform="translate(21,244)" font-size="34" style="fill:#d6a79f">Whether</text>
-<text transform="translate(1130,698)" font-size="34" style="fill:#d6a79f">Microbe</text>
-<text transform="translate(535,463)" font-size="34" style="fill:#e0b879">Rules</text>
-<text transform="translate(943,319)" font-size="34" style="fill:#8fb7d0">Sensing</text>
-<text transform="translate(699,604) rotate(-90)" font-size="34" style="fill:#8fb7d0">Death</text>
-<text transform="translate(915,212)" font-size="34" style="fill:#d6a79f">Reproduce</text>
-<text transform="translate(481,203)" font-size="34" style="fill:#d88988">Evolution</text>
-<text transform="translate(1264,579) rotate(-90)" font-size="34" style="fill:#d6a79f">Offspring</text>
-<text transform="translate(446,415)" font-size="34" style="fill:#d88988">Selection</text>
-<text transform="translate(555,649)" font-size="34" style="fill:#a9b7a3">Costs</text>
-<text transform="translate(987,30)" font-size="34" style="fill:#9fc9c5">Environment</text>
-<text transform="translate(439,238)" font-size="34" style="fill:#d5d2c2">Hue</text>
-<text transform="translate(1171,122)" font-size="34" style="fill:#c49a6c">Gene</text>
-<text transform="translate(806,321) rotate(-90)" font-size="34" style="fill:#c7d7b5">Random</text>
-<text transform="translate(576,102)" font-size="34" style="fill:#b6c3dd">Second</text>
-<text transform="translate(364,567)" font-size="34" style="fill:#8fb7d0">Founder</text>
-<text transform="translate(1030,595)" font-size="34" style="fill:#d5d2c2">State</text>
-<text transform="translate(1189,318)" font-size="34" style="fill:#e0b879">Keep</text>
-<text transform="translate(291,129)" font-size="29" style="fill:#c49a6c">Useful</text>
-<text transform="translate(416,272)" font-size="29" style="fill:#c7d7b5">Colour</text>
-<text transform="translate(540,305)" font-size="29" style="fill:#d6a79f">Local</text>
-<text transform="translate(796,544) rotate(-90)" font-size="29" style="fill:#b6c3dd">Environmental</text>
-<text transform="translate(1114,415) rotate(-90)" font-size="29" style="fill:#b6c3dd">Run</text>
-<text transform="translate(773,26)" font-size="27" style="fill:#e0b879">Scarcity</text>
-<text transform="translate(613,550) rotate(-90)" font-size="27" style="fill:#c7d7b5">Watch</text>
-<text transform="translate(10,43)" font-size="27" style="fill:#d6a79f">Turn</text>
-<text transform="translate(102,354)" font-size="27" style="fill:#d5d2c2">Oldest</text>
-<text transform="translate(1115,449)" font-size="27" style="fill:#d9c89e">Several</text>
-<text transform="translate(99,424)" font-size="27" style="fill:#c49a6c">Simple</text>
-<text transform="translate(1274,284) rotate(-90)" font-size="27" style="fill:#d5d2c2">Inheritance</text>
-<text transform="translate(878,526)" font-size="27" style="fill:#d9c89e">Resources</text>
-<text transform="translate(112,458)" font-size="27" style="fill:#d9c89e">Alive</text>
-<text transform="translate(264,628) rotate(-90)" font-size="27" style="fill:#c7d7b5">Sense</text>
-<text transform="translate(740,661)" font-size="27" style="fill:#e0b879">Heading</text>
-<text transform="translate(873,294)" font-size="27" style="fill:#d9c89e">Real</text>
-<text transform="translate(586,126)" font-size="27" style="fill:#d6a79f">Numbers</text>
-<text transform="translate(571,328)" font-size="27" style="fill:#d88988">Copy</text>
-<text transform="translate(177,267)" font-size="20" style="fill:#d6a79f">Lifespan</text>
-<text transform="translate(151,181)" font-size="20" style="fill:#b6c3dd">Persist</text>
-<text transform="translate(295,414)" font-size="20" style="fill:#d6a79f">Drift</text>
-<text transform="translate(1089,324)" font-size="20" style="fill:#9fc9c5">Carrying</text>
-<text transform="translate(998,233)" font-size="20" style="fill:#8fb7d0">Capacity</text>
-<text transform="translate(938,97)" font-size="20" style="fill:#b6c3dd">Size</text>
-<text transform="translate(691,382) rotate(-90)" font-size="20" style="fill:#c7d7b5">Directly</text>
-<text transform="translate(616,562)" font-size="20" style="fill:#a9b7a3">Less</text>
-<text transform="translate(31,194) rotate(-90)" font-size="20" style="fill:#9fc9c5">Reaches</text>
-<text transform="translate(315,264)" font-size="20" style="fill:#9fc9c5">Larger</text>
-<text transform="translate(37,309)" font-size="20" style="fill:#9fc9c5">Quickly</text>
-<text transform="translate(673,161)" font-size="20" style="fill:#a9b7a3">Changes</text>
-<text transform="translate(412,655)" font-size="20" style="fill:#d6a79f">Seeded</text>
-<text transform="translate(259,714)" font-size="20" style="fill:#a9b7a3">Control</text>
-<text transform="translate(458,78)" font-size="20" style="fill:#e0b879">Per</text>
-<text transform="translate(119,531)" font-size="20" style="fill:#e0b879">Census</text>
-<text transform="translate(941,445)" font-size="20" style="fill:#d5d2c2">Danger</text>
-<text transform="translate(1168,715)" font-size="20" style="fill:#9fc9c5">Uses</text>
-<text transform="translate(515,714)" font-size="20" style="fill:#d9c89e">Browser</text>
-<text transform="translate(144,589)" font-size="20" style="fill:#d5d2c2">Advances</text>
-<text transform="translate(494,489)" font-size="20" style="fill:#d6a79f">Genomes</text>
-<text transform="translate(1187,144)" font-size="20" style="fill:#8fb7d0">Birth</text>
-<text transform="translate(341,37)" font-size="20" style="fill:#d6a79f">Arrays</text>
-<text transform="translate(853,263)" font-size="20" style="fill:#b6c3dd">Living</text>
-<text transform="translate(703,372)" font-size="20" style="fill:#d6a79f">Move</text>
-<text transform="translate(308,491)" font-size="20" style="fill:#d5d2c2">Deaths</text>
-<text transform="translate(599,275)" font-size="20" style="fill:#e0b879">Habitat</text>
-<text transform="translate(100,476)" font-size="20" style="fill:#c7d7b5">Dominant</text>
-<text transform="translate(414,714)" font-size="20" style="fill:#d9c89e">Charts</text>
-<text transform="translate(681,712) rotate(-90)" font-size="20" style="fill:#9fc9c5">Abundant</text>
-<text transform="translate(704,423)" font-size="20" style="fill:#d5d2c2">Many</text>
-<text transform="translate(797,176) rotate(-90)" font-size="20" style="fill:#d5d2c2">Different</text>
-<text transform="translate(52,205) rotate(-90)" font-size="20" style="fill:#d6a79f">Lineages</text>
-<text transform="translate(779,618)" font-size="20" style="fill:#b6c3dd">Repeat</text>
-<text transform="translate(289,633) rotate(-90)" font-size="20" style="fill:#d6a79f">Starting</text>
-<text transform="translate(400,141)" font-size="20" style="fill:#a9b7a3">Restart</text>
-<text transform="translate(949,175) rotate(-90)" font-size="20" style="fill:#d5d2c2">Remain</text>
-<text transform="translate(1230,549) rotate(-90)" font-size="20" style="fill:#d88988">Resource</text>
-<text transform="translate(1050,183)" font-size="16" style="fill:#d5d2c2">Kind</text>
-<text transform="translate(577,432)" font-size="16" style="fill:#c7d7b5">Record</text>
-<text transform="translate(1204,251)" font-size="16" style="fill:#c7d7b5">Path</text>
-<text transform="translate(870,453)" font-size="16" style="fill:#e0b879">Start</text>
-<text transform="translate(689,220)" font-size="14" style="fill:#8fb7d0">Competition</text>
-<text transform="translate(675,469)" font-size="14" style="fill:#b6c3dd">Average</text>
-<text transform="translate(1271,102) rotate(-90)" font-size="14" style="fill:#9fc9c5">Highlight</text>
-<text transform="translate(82,272)" font-size="14" style="fill:#d88988">Load</text>
-<text transform="translate(280,197) rotate(-90)" font-size="14" style="fill:#c49a6c">Prey</text>
-<text transform="translate(97,327)" font-size="14" style="fill:#d5d2c2">Arms</text>
-<text transform="translate(1199,95)" font-size="14" style="fill:#a9b7a3">Race</text>
-<text transform="translate(534,274)" font-size="14" style="fill:#8fb7d0">Compare</text>
+<text transform="translate(372,634)" font-size="112" style="fill:#c49a6c">Food</text>
+<text transform="translate(250,375)" font-size="109" style="fill:#c7d7b5">Energy</text>
+<text transform="translate(338,491)" font-size="87" style="fill:#8fb7d0">Garden</text>
+<text transform="translate(819,634)" font-size="83" style="fill:#8fb7d0">Mutation</text>
+<text transform="translate(94,236)" font-size="79" style="fill:#c49a6c">Lineage</text>
+<text transform="translate(301,148)" font-size="79" style="fill:#c7d7b5">Organism</text>
+<text transform="translate(840,443)" font-size="75" style="fill:#d9c89e">Predators</text>
+<text transform="translate(778,354)" font-size="70" style="fill:#9fc9c5">Movement</text>
+<text transform="translate(774,126)" font-size="70" style="fill:#a9b7a3">Model</text>
+<text transform="translate(31,519)" font-size="70" style="fill:#8fb7d0">Change</text>
+<text transform="translate(65,82)" font-size="65" style="fill:#e0b879">Every</text>
+<text transform="translate(76,705)" font-size="65" style="fill:#d9c89e">Pressure</text>
+<text transform="translate(61,633)" font-size="65" style="fill:#d6a79f">Predator</text>
+<text transform="translate(1029,705)" font-size="65" style="fill:#a9b7a3">Fixed</text>
+<text transform="translate(826,282)" font-size="65" style="fill:#d5d2c2">Simulation</text>
+<text transform="translate(513,57)" font-size="65" style="fill:#9fc9c5">Cost</text>
+<text transform="translate(894,206)" font-size="65" style="fill:#d5d2c2">Engine</text>
+<text transform="translate(985,64)" font-size="65" style="fill:#d88988">Canvas</text>
+<text transform="translate(835,524)" font-size="60" style="fill:#d5d2c2">History</text>
+<text transform="translate(434,284)" font-size="60" style="fill:#e0b879">Genome</text>
+<text transform="translate(13,429)" font-size="60" style="fill:#d6a79f">Organisms</text>
+<text transform="translate(285,543)" font-size="60" style="fill:#8fb7d0">Bounded</text>
+<text transform="translate(1050,159)" font-size="60" style="fill:#e0b879">Chance</text>
+<text transform="translate(52,366) rotate(-90)" font-size="60" style="fill:#e0b879">Biological</text>
+<text transform="translate(392,702)" font-size="54" style="fill:#c7d7b5">Harshness</text>
+<text transform="translate(160,41)" font-size="49" style="fill:#b6c3dd">Descendants</text>
+<text transform="translate(77,562)" font-size="49" style="fill:#c49a6c">Cap</text>
+<text transform="translate(778,694)" font-size="49" style="fill:#b6c3dd">Browser</text>
+<text transform="translate(63,278)" font-size="49" style="fill:#8fb7d0">Phenotype</text>
+<text transform="translate(1129,114)" font-size="49" style="fill:#c7d7b5">Seed</text>
+<text transform="translate(265,81)" font-size="45" style="fill:#d5d2c2">Variation</text>
+<text transform="translate(1137,222)" font-size="45" style="fill:#a9b7a3">Small</text>
+<text transform="translate(93,369)" font-size="45" style="fill:#d9c89e">Age</text>
+<text transform="translate(1021,482)" font-size="45" style="fill:#d5d2c2">Animation</text>
+<text transform="translate(429,216)" font-size="45" style="fill:#c7d7b5">Visible</text>
+<text transform="translate(1117,335)" font-size="45" style="fill:#c7d7b5">Speed</text>
+<text transform="translate(61,147)" font-size="45" style="fill:#d5d2c2">Advances</text>
+<text transform="translate(805,559)" font-size="34" style="fill:#d9c89e">Reproduction</text>
+<text transform="translate(187,578)" font-size="34" style="fill:#c49a6c">Radius</text>
+<text transform="translate(232,180)" font-size="34" style="fill:#c7d7b5">Changing</text>
+<text transform="translate(545,522)" font-size="34" style="fill:#d5d2c2">Costs</text>
+<text transform="translate(1161,381)" font-size="34" style="fill:#d6a79f">Gene</text>
+<text transform="translate(774,169)" font-size="34" style="fill:#c49a6c">Step</text>
+<text transform="translate(675,650) rotate(-90)" font-size="34" style="fill:#d6a79f">Living</text>
+<text transform="translate(1145,538)" font-size="34" style="fill:#8fb7d0">Trait</text>
+<text transform="translate(671,507) rotate(-90)" font-size="30" style="fill:#8fb7d0">Microbe</text>
+<text transform="translate(678,352) rotate(-90)" font-size="30" style="fill:#c49a6c">Rules</text>
+<text transform="translate(119,468)" font-size="30" style="fill:#d88988">Competition</text>
+<text transform="translate(129,318)" font-size="30" style="fill:#d6a79f">Deepest</text>
+<text transform="translate(1112,564)" font-size="30" style="fill:#d88988">Surviving</text>
+<text transform="translate(334,404)" font-size="30" style="fill:#9fc9c5">Sensing</text>
+<text transform="translate(782,48)" font-size="30" style="fill:#e0b879">Death</text>
+<text transform="translate(31,705) rotate(-90)" font-size="30" style="fill:#8fb7d0">Reproduce</text>
+<text transform="translate(482,246)" font-size="30" style="fill:#c49a6c">Evolution</text>
+<text transform="translate(802,526) rotate(-90)" font-size="30" style="fill:#c7d7b5">Offspring</text>
+<text transform="translate(87,108)" font-size="30" style="fill:#b6c3dd">Parent</text>
+<text transform="translate(194,660)" font-size="30" style="fill:#8fb7d0">Selection</text>
+<text transform="translate(935,381)" font-size="30" style="fill:#d5d2c2">Environment</text>
+<text transform="translate(956,308)" font-size="30" style="fill:#e0b879">Hue</text>
+<text transform="translate(977,96)" font-size="30" style="fill:#c49a6c">Starting</text>
+<text transform="translate(439,311)" font-size="30" style="fill:#c7d7b5">Inherited</text>
+<text transform="translate(776,198)" font-size="30" style="fill:#d6a79f">Per</text>
+<text transform="translate(536,176)" font-size="30" style="fill:#b6c3dd">Genomes</text>
+<text transform="translate(1245,715) rotate(-90)" font-size="30" style="fill:#a9b7a3">Lineages</text>
+<text transform="translate(575,87)" font-size="30" style="fill:#e0b879">Second</text>
+<text transform="translate(1275,375) rotate(-90)" font-size="30" style="fill:#d6a79f">Founder</text>
+<text transform="translate(826,470)" font-size="30" style="fill:#d6a79f">Different</text>
+<text transform="translate(896,39)" font-size="30" style="fill:#d5d2c2">Many</text>
+<text transform="translate(822,661)" font-size="30" style="fill:#d9c89e">State</text>
+<text transform="translate(778,223)" font-size="30" style="fill:#c49a6c">Keep</text>
+<text transform="translate(61,650) rotate(-90)" font-size="30" style="fill:#d5d2c2">Rather</text>
+<text transform="translate(814,383)" font-size="26" style="fill:#d9c89e">Useful</text>
+<text transform="translate(323,311)" font-size="26" style="fill:#d9c89e">Whether</text>
+<text transform="translate(30,536) rotate(-90)" font-size="26" style="fill:#8fb7d0">Colour</text>
+<text transform="translate(552,428)" font-size="26" style="fill:#e0b879">Local</text>
+<text transform="translate(1050,23)" font-size="25" style="fill:#d9c89e">Environmental</text>
+<text transform="translate(635,210)" font-size="25" style="fill:#d6a79f">Run</text>
+<text transform="translate(882,149)" font-size="25" style="fill:#d88988">Scarcity</text>
+<text transform="translate(954,662)" font-size="25" style="fill:#d5d2c2">Watch</text>
+<text transform="translate(945,715)" font-size="25" style="fill:#9fc9c5">Turn</text>
+<text transform="translate(399,432)" font-size="24" style="fill:#d5d2c2">Highlight</text>
+<text transform="translate(326,276)" font-size="24" style="fill:#9fc9c5">Several</text>
+<text transform="translate(429,658)" font-size="24" style="fill:#8fb7d0">Simple</text>
+<text transform="translate(1110,504)" font-size="24" style="fill:#b6c3dd">Inheritance</text>
+<text transform="translate(91,168)" font-size="24" style="fill:#8fb7d0">Alive</text>
+<text transform="translate(647,371)" font-size="24" style="fill:#c49a6c">Sense</text>
+<text transform="translate(843,304)" font-size="24" style="fill:#9fc9c5">Heading</text>
+<text transform="translate(1132,182)" font-size="24" style="fill:#d88988">Real</text>
+<text transform="translate(553,543)" font-size="24" style="fill:#c7d7b5">Numbers</text>
+<text transform="translate(1050,559)" font-size="24" style="fill:#a9b7a3">Copy</text>
+<text transform="translate(534,657)" font-size="24" style="fill:#e0b879">Lifespan</text>
+<text transform="translate(459,566)" font-size="24" style="fill:#a9b7a3">Persist</text>
+<text transform="translate(791,70)" font-size="24" style="fill:#e0b879">Drift</text>
+<text transform="translate(783,715)" font-size="24" style="fill:#d6a79f">Sustainable</text>
+<text transform="translate(63,25)" font-size="24" style="fill:#d88988">Safety</text>
+<text transform="translate(683,167)" font-size="24" style="fill:#9fc9c5">Limit</text>
+<text transform="translate(191,374)" font-size="24" style="fill:#8fb7d0">Size</text>
+<text transform="translate(1095,656)" font-size="24" style="fill:#9fc9c5">Directly</text>
+<text transform="translate(961,579)" font-size="24" style="fill:#c7d7b5">Less</text>
+<text transform="translate(857,228)" font-size="24" style="fill:#c7d7b5">Reaches</text>
+<text transform="translate(728,285)" font-size="24" style="fill:#d6a79f">Larger</text>
+<text transform="translate(77,379) rotate(-90)" font-size="24" style="fill:#c49a6c">Quickly</text>
+<text transform="translate(692,520) rotate(-90)" font-size="24" style="fill:#d5d2c2">Changes</text>
+<text transform="translate(1019,228)" font-size="24" style="fill:#e0b879">Seconds</text>
+<text transform="translate(1269,117) rotate(-90)" font-size="24" style="fill:#c7d7b5">Baseline</text>
+<text transform="translate(113,658)" font-size="24" style="fill:#d88988">Cent</text>
+<text transform="translate(877,67)" font-size="24" style="fill:#8fb7d0">Control</text>
+<text transform="translate(1172,302)" font-size="24" style="fill:#a9b7a3">Rate</text>
+<text transform="translate(818,647) rotate(-90)" font-size="24" style="fill:#c49a6c">Census</text>
+<text transform="translate(1274,709) rotate(-90)" font-size="24" style="fill:#c7d7b5">Predation</text>
+<text transform="translate(444,169)" font-size="24" style="fill:#d6a79f">Danger</text>
+<text transform="translate(1190,182)" font-size="24" style="fill:#b6c3dd">Random</text>
+<text transform="translate(695,426)" font-size="24" style="fill:#d6a79f">Uses</text>
+<text transform="translate(1020,310)" font-size="24" style="fill:#a9b7a3">Time</text>
+<text transform="translate(377,100)" font-size="21" style="fill:#d5d2c2">Simulated</text>
+<text transform="translate(86,206) rotate(-90)" font-size="21" style="fill:#d88988">Runs</text>
+<text transform="translate(210,118)" font-size="21" style="fill:#d5d2c2">Births</text>
+<text transform="translate(177,346)" font-size="21" style="fill:#c7d7b5">Arrays</text>
+<text transform="translate(698,222)" font-size="21" style="fill:#c7d7b5">Move</text>
+<text transform="translate(1117,583)" font-size="21" style="fill:#e0b879">Deaths</text>
+<text transform="translate(1162,241)" font-size="21" style="fill:#8fb7d0">Habitat</text>
+<text transform="translate(700,144) rotate(-90)" font-size="21" style="fill:#b6c3dd">Statistics</text>
+<text transform="translate(787,20)" font-size="20" style="fill:#c7d7b5">Dominant</text>
+<text transform="translate(701,644) rotate(-90)" font-size="20" style="fill:#c49a6c">Generation</text>
+<text transform="translate(1079,535)" font-size="20" style="fill:#d6a79f">Lower</text>
+<text transform="translate(63,708) rotate(-90)" font-size="20" style="fill:#9fc9c5">Text</text>
+<text transform="translate(307,591)" font-size="20" style="fill:#d5d2c2">Charts</text>
+<text transform="translate(1156,352)" font-size="18" style="fill:#a9b7a3">Abundant</text>
+<text transform="translate(309,565)" font-size="18" style="fill:#8fb7d0">Repeat</text>
 </svg>

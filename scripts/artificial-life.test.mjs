@@ -12,7 +12,7 @@ const vite = await createServer({
 const { ArtificialLifeEngine } = await vite.ssrLoadModule(
 	'/src/lib/visualizations/artificial-life/artificialLifeEngine.ts'
 );
-const { inheritGenome, GENOME_BOUNDS } = await vite.ssrLoadModule(
+const { inheritGenome, GENOME_BOUNDS, effectiveMutationProbability } = await vite.ssrLoadModule(
 	'/src/lib/visualizations/artificial-life/genome.ts'
 );
 const { SeededRandom } = await vite.ssrLoadModule(
@@ -34,6 +34,7 @@ function snapshot(engine) {
 		time: Number(engine.simulationTime.toFixed(6)),
 		births: engine.totalBirths,
 		deaths: { ...engine.deathCounts },
+		lineageSelection: { ...engine.lineageSelection },
 		organisms: engine.organisms
 			.map((organism) => ({
 				id: organism.id,
@@ -89,6 +90,13 @@ test('inheritance copies an unchanged genome when mutation is disabled', () => {
 
 	assert.deepEqual(child, parent);
 	assert.notEqual(child, parent);
+});
+
+test('the inherited mutation-rate gene scales the baseline per-gene probability', () => {
+	assert.equal(effectiveMutationProbability(0.08, 0.16), 0.08);
+	assert.equal(effectiveMutationProbability(0.16, 0.16), 0.16);
+	assert.equal(effectiveMutationProbability(0.24, 0.16), 0.24);
+	assert.equal(effectiveMutationProbability(0.5, 0.8), 0.95);
 });
 
 test('mutation changes inherited traits but never leaves their declared bounds', () => {
@@ -187,6 +195,42 @@ test('starvation and ageing remove organisms and record the death cause', () => 
 	ageing.step(FIXED_TIME_STEP);
 	assert.equal(ageing.organisms.length, 0);
 	assert.equal(ageing.deathCounts.age, 1);
+});
+
+test('the engine selects one deepest surviving lineage for statistics and highlighting', () => {
+	const engine = new ArtificialLifeEngine(
+		{
+			...DEFAULT_SIMULATION_PARAMETERS,
+			startingPopulation: 3,
+			foodSpawnRate: 0,
+			reproductionThreshold: 180,
+			basalEnergyCost: 0.1,
+			movementEnergyCost: 0.05,
+			maximumLifespan: 240,
+			environmentalHarshness: 0,
+			populationLimit: 10,
+			predatorsEnabled: false
+		},
+		'deepest-lineage'
+	);
+	engine.food.length = 0;
+	engine.organisms[0].generation = 2;
+	engine.organisms[1].generation = 5;
+	engine.organisms[2].generation = 5;
+	engine.organisms.push({
+		...engine.organisms[2],
+		id: 999,
+		generation: 1,
+		energy: 50,
+		age: 0
+	});
+
+	engine.step(FIXED_TIME_STEP);
+	const stats = engine.statistics();
+
+	assert.equal(engine.lineageSelection.id, engine.organisms[2].lineageId);
+	assert.equal(stats.deepestSurvivingLineageId, engine.lineageSelection.id);
+	assert.match(stats.deepestSurvivingLineage, /generation 5 · 2 living/);
 });
 
 test('founders and offspring never exceed the configured population limit', () => {

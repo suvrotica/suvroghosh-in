@@ -57,9 +57,9 @@ export const SIMULATION_CONTROLS: readonly SimulationControlDefinition[] = [
 	},
 	{
 		key: 'populationLimit',
-		label: 'Population limit',
+		label: 'Population cap — browser safety limit',
 		description:
-			'A hard carrying-capacity guard: births stop, and excess organisms are removed, when the habitat reaches this size.',
+			'A computational guard: births stop, and excess organisms are removed, when the habitat reaches this size. Resource economics determine the emergent sustainable population below it.',
 		group: 'World',
 		minimum: 40,
 		maximum: 500,
@@ -125,9 +125,9 @@ export const SIMULATION_CONTROLS: readonly SimulationControlDefinition[] = [
 	},
 	{
 		key: 'mutationProbability',
-		label: 'Mutation probability',
+		label: 'Baseline mutation probability',
 		description:
-			'The chance that each inherited trait changes; mutation creates variation but does not guarantee improvement.',
+			'The environment-wide baseline chance that each inherited trait mutates. The parent’s inherited mutation-rate gene scales it, so lineages can mutate at different rates.',
 		group: 'Evolution and pressure',
 		minimum: 0,
 		maximum: 0.8,

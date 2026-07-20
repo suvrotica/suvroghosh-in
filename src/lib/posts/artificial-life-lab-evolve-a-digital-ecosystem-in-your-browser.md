@@ -3,7 +3,7 @@ title: "Artificial Life Lab: Evolve a Digital Ecosystem in Your Browser"
 description: "Grow a seeded digital ecosystem in the browser: microbes inherit traits, forage, reproduce with mutation, face selection pressure, drift, predators, ageing, and death."
 date: "2026-07-20"
 category: "Visualizations"
-tags: ["Prey Arms Race","Predator Prey","Keeping Mutation Bounded","Abundant Garden","Phenotype Packed","Population","Garden","Mutation","Energy","Predators"]
+tags: ["Prey Arms Race","Predator Prey","Keeping Mutation Bounded","Abundant Garden","Phenotype Packed","Population","Mutation","Garden","Energy","Lineage"]
 series: ["Artificial Life Lab"]
 published: true
 thumbnail: "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg"
@@ -17,9 +17,9 @@ faq:
   - question: "Are the digital organisms alive or conscious?"
     answer: "No. They are data records updated by explicit rules. The model can demonstrate variation, inheritance, selection, drift, and energy constraints without implying sensation, intention, or biological completeness."
   - question: "Why does the same seed sometimes seem to produce the same history?"
-    answer: "All random choices come from a seeded pseudo-random number generator, while the engine advances in fixed time steps. The same seed, parameters, and sequence of actions therefore reproduce the same model history."
-  - question: "Does Step generation create exactly one biological generation?"
-    answer: "No. Generations overlap in this model. The button advances a documented window of 240 fixed simulation ticks, during which zero, one, or many births may occur."
+    answer: "All random choices come from a seeded pseudo-random number generator, while the engine advances in fixed time steps. Identical seeds, parameters, and fixed-step sequences reproduce the same engine history. Real-time runs may diverge when actions occur at different simulation times or a browser drops catch-up time."
+  - question: "Does Advance 8 simulated seconds correspond to one biological generation?"
+    answer: "No. Generations overlap in this model. The button advances exactly 240 fixed simulation ticks, during which zero, one, or many births may occur."
   - question: "What does fitness mean here?"
     answer: "Fitness means leaving descendants that survive under the current conditions. It is not a moral score, strength score, or universal ranking; a useful trait in one preset may be costly in another."
 ---
@@ -56,7 +56,7 @@ A pond can look still while being furiously negotiated. Something is eating. Som
 
 The **Evolving Microbe Garden** is a deliberately small version of that kind of history. Every coloured microbe is a record containing position, energy, age, ancestry, and an inheritable genome. No animation path tells it where to go. No plot declares which colour must win. The visible population comes from organisms following the same local rules under shared environmental pressure.
 
-Start by letting the default garden run. Then try **Scarcity and Competition** and watch average energy and population. Turn on **Highlight oldest lineage**. Finally, load **Predator–Prey Arms Race** and compare movement speed and sensing over several generation windows.
+Start by letting the default garden run. Then try **Scarcity and Competition** and watch average energy and population. Turn on **Highlight deepest surviving lineage**. Finally, load **Predator–Prey Arms Race** and compare movement speed and sensing over several fixed-time advances.
 
 <ArtificialLifeLab
 	title="Evolving Microbe Garden"
@@ -78,7 +78,7 @@ Within those limits, it makes six important ideas visible:
 - **Selection pressure:** food, energy costs, predators, harshness, and lifespan change which variants leave descendants.
 - **Fitness:** success means producing descendants that persist *in this environment*, not being universally superior.
 - **Drift:** in a finite population, chance alone can make a lineage common or extinct.
-- **Carrying capacity:** resources and the explicit population limit bound growth.
+- **Carrying capacity:** food, energy costs, competition, and mortality shape an emergent sustainable population. The separate population cap is only a browser safety limit.
 
 # The genome: phenotype packed into eleven numbers
 
@@ -119,9 +119,21 @@ const GENOME_BOUNDS = {
 };
 ```
 
-Offspring copy every parental value. For each gene, a seeded random draw decides whether mutation occurs. A mutation adds or subtracts a fraction of that gene's permitted range, scaled by the **Mutation magnitude** control. The final value is clamped into bounds.
+Offspring copy every parental value. **Baseline mutation probability** is the environment-wide starting chance for each gene. The parent’s inherited `mutationRate` gene scales that baseline: a parent with `mutationRate` 0.08 halves the default multiplier, while 0.24 multiplies it by 1.5. The multiplier is bounded between 0.35 and 2.5, and the final per-gene probability is capped at 95 per cent.
 
 ```javascript
+const inheritedMutationPressure = clamp(
+  parent.mutationRate / 0.16,
+  0.35,
+  2.5
+);
+
+const perGeneProbability = clamp(
+  parameters.mutationProbability * inheritedMutationPressure,
+  0,
+  0.95
+);
+
 for (const key of genomeKeys) {
   const [minimum, maximum] = GENOME_BOUNDS[key];
   let value = parent[key];
@@ -131,6 +143,8 @@ for (const key of genomeKeys) {
   child[key] = clamp(value, minimum, maximum);
 }
 ```
+
+When mutation occurs, it adds or subtracts a fraction of that gene's permitted range, scaled by **Mutation magnitude**. The final value is clamped into bounds. The baseline control therefore does not promise one universal mutation rate: inherited genomes make some lineages mutate more readily than others.
 
 Mutation is not an improvement operation. It has no view of the environment and no goal. Most changes are neutral or costly in a particular moment; occasionally a change helps its bearer leave more surviving descendants.
 
@@ -185,9 +199,9 @@ while (accumulator >= FIXED_TIME_STEP && steps < 8) {
 
 The eight-step guard prevents a backgrounded or struggling tab from attempting an enormous catch-up. When the garden leaves the viewport, its observer cancels the animation frame entirely. Returning starts a fresh display clock without inventing hours of invisible evolution.
 
-All chance comes from a tiny seeded pseudo-random generator. Food positions, founder genomes, mutations, wandering, pressure, and predator creation consume the same reproducible random stream. With the same seed, parameters, and button sequence, the engine produces the same history.
+All chance comes from a tiny seeded pseudo-random generator. Food positions, founder genomes, mutations, wandering, pressure, and predator creation consume the same reproducible random stream. With the same seed, parameters, and exact sequence and number of fixed simulation steps, the engine produces the same history. Real-time interactive runs may diverge if actions occur at different simulation times or a struggling browser drops catch-up time.
 
-This is also why **Step generation** has a precise but modest meaning. Biological generations overlap; parents and children coexist. The button therefore pauses the garden and advances 240 fixed ticks—eight simulated seconds at the base step. It is a reproducible observation window, not a promise that exactly one birth will occur.
+**Advance 8 simulated seconds** has a literal meaning. Biological generations overlap; parents and children coexist. The button pauses the garden and advances exactly 240 fixed ticks—eight simulated seconds at the base step. Zero, one, or many births may occur during that interval.
 
 # How one engine step works
 
@@ -203,7 +217,7 @@ Each fixed step follows this order:
 
 Rendering reads the resulting state. It draws a dark elliptical habitat, food points, movement traces, phenotype membranes, nuclei, cilia, predators, birth rings, and death specks. The renderer may change its shapes tomorrow without changing a single biological outcome.
 
-The statistics panel also reads the model. It calculates averages across the living population, finds the dominant hue family, estimates the deepest extant generation, and labels the oldest surviving founder lineage. Lightweight SVG charts keep only the latest 120 samples rather than allowing an unbounded history.
+The statistics panel also reads the model. It calculates averages across the living population, finds the dominant hue family, estimates the deepest extant generation, and identifies the **deepest surviving lineage**: the founder lineage containing the highest-generation living descendant. Ties go to the lineage with more living descendants and then the lower lineage ID. The engine returns that lineage's ID and label to both the statistics and Canvas renderer, so the text and white highlight rings cannot disagree. Lightweight SVG charts keep only the latest 120 samples rather than allowing an unbounded history.
 
 # Experiments worth trying
 
@@ -223,15 +237,15 @@ Frequent, large mutations explore trait space quickly. The result need not be fa
 
 ## Predator–Prey Arms Race
 
-Coral predators make sensing, avoidance, and speed useful, but moving faster remains expensive. Highlight the oldest lineage and watch which descendants persist. Then raise movement cost. A trait that helped under the old energy budget can become unaffordable under the new one.
+Coral predators make sensing, avoidance, and speed useful, but moving faster remains expensive. Highlight the deepest surviving lineage and watch which descendants persist. Then raise movement cost. A trait that helped under the old energy budget can become unaffordable under the new one.
 
 ## A founder-effect experiment
 
-Restore defaults, reduce **Starting population** to eight, set a seed, and restart. Record the dominant phenotype after several step windows. Repeat with different seeds. Now use 150 founders. Larger starting populations sample more initial variation and usually make the early result less hostage to a few chance genomes.
+Restore defaults, reduce **Starting population** to eight, set a seed, and restart. Record the dominant phenotype after several eight-second advances. Repeat with different seeds. Now use 150 founders. Larger starting populations sample more initial variation and usually make the early result less hostage to a few chance genomes.
 
-## Test carrying capacity
+## Test the hard population cap
 
-Load Abundant Garden and lower **Population limit** while the simulation runs. Births stop at the limit, and if the new limit is below the current census, the weakest-energy organisms are removed as pressure deaths. This hard guard is computational protection and a simplified ecological ceiling; natural carrying capacity is normally an emergent consequence of resources rather than one sharp number.
+Load Abundant Garden and lower **Population cap — browser safety limit** while the simulation runs. Births stop at the cap, and if the new cap is below the current census, the weakest-energy organisms are removed as pressure deaths. This is a computational guard, not biological carrying capacity. The closer ecological analogue is the emergent sustainable population produced by food renewal, food energy, competition, metabolic cost, harshness, predation, and ageing.
 
 # Reading the charts without telling stories too quickly
 

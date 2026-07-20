@@ -83,6 +83,11 @@ export type DeathCause = 'starvation' | 'age' | 'predation' | 'pressure';
 
 export type DeathCounts = Record<DeathCause, number>;
 
+export type LineageSelection = {
+	id: number | null;
+	label: string;
+};
+
 export type SimulationStats = {
 	simulationTime: number;
 	population: number;
@@ -95,7 +100,8 @@ export type SimulationStats = {
 	averageSize: number;
 	averageSensoryRadius: number;
 	averageMutationRate: number;
-	oldestLineage: string;
+	deepestSurvivingLineageId: number | null;
+	deepestSurvivingLineage: string;
 	dominantPhenotype: string;
 	foodAvailability: number;
 	predatorCount: number;
@@ -137,7 +143,8 @@ export const EMPTY_SIMULATION_STATS: SimulationStats = {
 	averageSize: 0,
 	averageSensoryRadius: 0,
 	averageMutationRate: 0,
-	oldestLineage: 'No extant lineage',
+	deepestSurvivingLineageId: null,
+	deepestSurvivingLineage: 'No extant lineage',
 	dominantPhenotype: 'No dominant phenotype',
 	foodAvailability: 0,
 	predatorCount: 0,

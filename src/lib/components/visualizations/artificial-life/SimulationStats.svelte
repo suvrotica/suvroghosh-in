@@ -81,8 +81,8 @@
 				</dd>
 			</div>
 			<div>
-				<dt class="text-xs text-neutral-500">Oldest lineage</dt>
-				<dd class="mt-1 mb-0 text-neutral-100">{stats.oldestLineage}</dd>
+				<dt class="text-xs text-neutral-500">Deepest surviving lineage</dt>
+				<dd class="mt-1 mb-0 text-neutral-100">{stats.deepestSurvivingLineage}</dd>
 			</div>
 			<div>
 				<dt class="text-xs text-neutral-500">Dominant phenotype</dt>

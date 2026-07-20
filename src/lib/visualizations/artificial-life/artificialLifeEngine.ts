@@ -16,6 +16,7 @@ import type {
 	DeathCause,
 	DeathCounts,
 	FoodParticle,
+	LineageSelection,
 	Organism,
 	Predator,
 	SimulationEvent,
@@ -52,11 +53,11 @@ export class ArtificialLifeEngine {
 	simulationTime = 0;
 	totalBirths = 0;
 	deathCounts: DeathCounts = { starvation: 0, age: 0, predation: 0, pressure: 0 };
+	lineageSelection: LineageSelection = { id: null, label: 'No extant lineage' };
 	private foodAccumulator = 0;
 	private nextOrganismId = 1;
 	private nextFoodId = 1;
 	private nextPredatorId = 1;
-	private lineageBornAt = new Map<number, number>();
 
 	constructor(
 		parameters: SimulationParameters = DEFAULT_SIMULATION_PARAMETERS,
@@ -83,7 +84,7 @@ export class ArtificialLifeEngine {
 		this.nextOrganismId = 1;
 		this.nextFoodId = 1;
 		this.nextPredatorId = 1;
-		this.lineageBornAt.clear();
+		this.lineageSelection = { id: null, label: 'No extant lineage' };
 
 		const founderCount = Math.min(
 			Math.round(this.parameters.startingPopulation),
@@ -93,12 +94,12 @@ export class ArtificialLifeEngine {
 			const organism = createFounder(this.nextOrganismId, this.random, this.parameters);
 			this.nextOrganismId += 1;
 			this.organisms.push(organism);
-			this.lineageBornAt.set(organism.lineageId, 0);
 		}
 
 		const startingFood = Math.min(Math.max(30, founderCount * 2), this.maximumFoodParticles());
 		for (let index = 0; index < startingFood; index += 1) this.spawnFood();
 		this.synchronizePredators();
+		this.refreshLineageSelection();
 	}
 
 	setParameters(parameters: SimulationParameters) {
@@ -113,6 +114,7 @@ export class ArtificialLifeEngine {
 			this.removeOrganism(weakestIndex, 'pressure');
 		}
 		this.synchronizePredators();
+		this.refreshLineageSelection();
 	}
 
 	private maximumFoodParticles() {
@@ -139,6 +141,31 @@ export class ArtificialLifeEngine {
 			this.nextPredatorId += 1;
 		}
 		if (this.predators.length > targetCount) this.predators.length = targetCount;
+	}
+
+	private refreshLineageSelection() {
+		const lineages = new Map<number, { deepestGeneration: number; livingCount: number }>();
+		for (const organism of this.organisms) {
+			const summary = lineages.get(organism.lineageId) ?? {
+				deepestGeneration: 0,
+				livingCount: 0
+			};
+			summary.deepestGeneration = Math.max(summary.deepestGeneration, organism.generation);
+			summary.livingCount += 1;
+			lineages.set(organism.lineageId, summary);
+		}
+
+		const selected = Array.from(lineages, ([id, summary]) => ({ id, ...summary })).sort(
+			(a, b) =>
+				b.deepestGeneration - a.deepestGeneration || b.livingCount - a.livingCount || a.id - b.id
+		)[0];
+
+		this.lineageSelection = selected
+			? {
+					id: selected.id,
+					label: `L-${String(selected.id).padStart(3, '0')} · generation ${selected.deepestGeneration} · ${selected.livingCount} living`
+				}
+			: { id: null, label: 'No extant lineage' };
 	}
 
 	private effectiveTrait(
@@ -338,6 +365,7 @@ export class ArtificialLifeEngine {
 		this.updateOrganisms(step);
 		this.updatePredators(step);
 		this.updateEvents(step);
+		this.refreshLineageSelection();
 	}
 
 	stepMany(steps: number, deltaTime: number) {
@@ -356,7 +384,6 @@ export class ArtificialLifeEngine {
 		let totalMutationRate = 0;
 		let generationEstimate = 0;
 		const phenotypes = new Map<string, number>();
-		const lineages = new Map<number, number>();
 
 		for (const organism of this.organisms) {
 			totalEnergy += organism.energy;
@@ -367,22 +394,12 @@ export class ArtificialLifeEngine {
 			generationEstimate = Math.max(generationEstimate, organism.generation);
 			const phenotype = phenotypeName(organism.genome.hue);
 			phenotypes.set(phenotype, (phenotypes.get(phenotype) ?? 0) + 1);
-			lineages.set(
-				organism.lineageId,
-				Math.max(lineages.get(organism.lineageId) ?? 0, organism.generation)
-			);
 		}
 
 		const dominantPhenotype =
 			Array.from(phenotypes.entries()).sort(
 				(a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
 			)[0]?.[0] ?? 'No dominant phenotype';
-		const oldestLineageEntry = Array.from(lineages.entries()).sort((a, b) => {
-			const birthDifference =
-				(this.lineageBornAt.get(a[0]) ?? 0) - (this.lineageBornAt.get(b[0]) ?? 0);
-			return birthDifference || b[1] - a[1] || a[0] - b[0];
-		})[0];
-
 		return {
 			simulationTime: this.simulationTime,
 			population: this.organisms.length,
@@ -395,9 +412,8 @@ export class ArtificialLifeEngine {
 			averageSize: average(totalSize, this.organisms.length),
 			averageSensoryRadius: average(totalSensoryRadius, this.organisms.length),
 			averageMutationRate: average(totalMutationRate, this.organisms.length),
-			oldestLineage: oldestLineageEntry
-				? `L-${String(oldestLineageEntry[0]).padStart(3, '0')} · ${oldestLineageEntry[1]} gen`
-				: 'No extant lineage',
+			deepestSurvivingLineageId: this.lineageSelection.id,
+			deepestSurvivingLineage: this.lineageSelection.label,
 			dominantPhenotype,
 			foodAvailability: this.food.length,
 			predatorCount: this.predators.length,

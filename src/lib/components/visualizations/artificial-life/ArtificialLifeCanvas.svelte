@@ -74,13 +74,6 @@
 		onupdate({ stats, history, distributions: engine.traitDistributions() });
 	}
 
-	function oldestExtantLineage() {
-		if (!engine || engine.organisms.length === 0) return -1;
-		let lineage = engine.organisms[0].lineageId;
-		for (const organism of engine.organisms) lineage = Math.min(lineage, organism.lineageId);
-		return lineage;
-	}
-
 	function render() {
 		if (!engine || !canvasEnabled || !canvas) return;
 		const context = canvas.getContext('2d', { alpha: false });
@@ -158,7 +151,7 @@
 			}
 		}
 
-		const highlightedLineage = highlightLineage ? oldestExtantLineage() : -1;
+		const highlightedLineage = highlightLineage ? (engine.lineageSelection.id ?? -1) : -1;
 		for (const organism of engine.organisms) {
 			const size = organism.genome.bodySize;
 			const energyAlpha = Math.min(1, Math.max(0.38, organism.energy / 95));
@@ -276,7 +269,7 @@
 			engine.stepMany(steps, FIXED_TIME_STEP);
 			stepBudget -= steps;
 			if (stepBudget === 0) {
-				onstatus('Generation window complete: 240 deterministic simulation ticks advanced.');
+				onstatus('Advance complete: 8 simulated seconds (240 fixed ticks).');
 				publish(true);
 			}
 		}
@@ -330,7 +323,7 @@
 		if (!engine || stepToken === lastStepToken) return;
 		lastStepToken = stepToken;
 		stepBudget += GENERATION_WINDOW_STEPS;
-		onstatus('Advancing one 240-tick generation window…');
+		onstatus('Advancing 8 simulated seconds (240 fixed ticks)…');
 		schedule();
 	});
 
