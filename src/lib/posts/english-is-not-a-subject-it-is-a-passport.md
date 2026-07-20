@@ -6,12 +6,12 @@ category: "Education"
 tags: ["Mother Tongue","Ask Whether","Dangerous Means","English","Participant","Manuals","Writing","Language","Write","AI"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-english-is-not-a-subject-it-is-a-passport.jpg"
+thumbnail: "/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-english-is-not-a-subject-it-is-a-passport.jpg" />
+<Pi src="/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg" />
 
 Acronyms and terms used in this post:
 

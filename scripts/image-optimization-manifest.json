@@ -8368,6 +8368,38 @@
       "sourceHash": "f32f17696f65e89b9416c8f4945c16cab9a10269073728691815407b92274032",
       "width": 1200
     },
+    "static/thumbnail/art-calcutta-carbohydrate-problem.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 245698,
+      "outputHash": "bbb1b876d1b7c4bb8857ac499d144a48518f0bbc45a3fbb14a38809df3abf286",
+      "psnrDb": 37.44,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 283210,
+      "sourceHash": "086f6547a01f00a4eef333f6b18bbb8cd367b9e3474c0cf8c43b5fc111cc5fae",
+      "width": 1200
+    },
+    "static/thumbnail/art-calcutta-fish-field-guide.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 260144,
+      "outputHash": "df8085bb42446bbca65ec41416421c15c78fa465f37ff6a7ed154dccf6065e89",
+      "psnrDb": 37.56,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 298870,
+      "sourceHash": "1e6842b4ec952a5e34eaaae44f5ed35b2a19f577e2b16b13b9a7919ebc1b4b6e",
+      "width": 1200
+    },
     "static/thumbnail/art-calcutta-summer-of-2026.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -8416,6 +8448,54 @@
       "sourceHash": "689f3ed7b9dd5c8a6a45978dbc3d67ae770d285c8e4074f369e4a8a0b6a913a6",
       "width": 1200
     },
+    "static/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 178735,
+      "outputHash": "ea01b0c90bb117ed98b22a6eef0015c3b11cabb3488768369b24ae6bcfd39275",
+      "psnrDb": 36.87,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 218878,
+      "sourceHash": "1760a75ab083eb0d54deb26275ea9f147ec5ca3477d5d2df0c71edaeddb3d01c",
+      "width": 1200
+    },
+    "static/thumbnail/art-hormuz-day-52-supply-ramifications-nation-states.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 217760,
+      "outputHash": "43cf421fba36f19278f58d7f0a9cc4355ff33420065c73bf1a58f54d43dcd6ef",
+      "psnrDb": 37.52,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 252046,
+      "sourceHash": "124b3ad722cca5edcd38443444c9bff3e9fa23cb080edda28b51428e5d15acec",
+      "width": 1200
+    },
+    "static/thumbnail/art-hormuz-lpg-shortage-indian-cooking-choices.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 130604,
+      "outputHash": "f1dd6d9f27580c1d6d98a989f400d80e147234301e2d1c50e9010f627a6eba5d",
+      "psnrDb": 37.23,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 184798,
+      "sourceHash": "3d46e386ce9129d398fea934da1af6b393c87b7730c49f90b37e372458ee04ef",
+      "width": 1200
+    },
     "static/thumbnail/art-intro.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -8448,6 +8528,22 @@
       "sourceHash": "4e3158b6f44512e6c17ae530ef4c4b55aa3b7cdcb66e885c16da0b9d60011466",
       "width": 1200
     },
+    "static/thumbnail/art-mojo-the-python-killer.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 123977,
+      "outputHash": "d5ea661053d51dd86ea00e564a71eab49f60a939887f0e275bfc38df4d9b6ef1",
+      "psnrDb": 36.15,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 180457,
+      "sourceHash": "77712770355097305bd6297dd97fefb97bb6b5ca194f5bfc7c00fdc3912e820d",
+      "width": 1200
+    },
     "static/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -8462,6 +8558,22 @@
       "resized": false,
       "sourceBytes": 131795,
       "sourceHash": "41f7affeabcf9827aa95b84b69b1267b343feacfd9be87e0319f0d21e11925cd",
+      "width": 1200
+    },
+    "static/thumbnail/art-propofol-dream-recall-nightmares.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 108822,
+      "outputHash": "16bceeb876788f62394850e91509f988f6acd9767ee1a2d16bb47adc13ad3934",
+      "psnrDb": 38.22,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 155014,
+      "sourceHash": "3bbab1f109b2d7e53350de825f3c65b7831b81493c5de7fd52adcee4a2b0d813",
       "width": 1200
     },
     "static/thumbnail/art-the-new-mantra.jpg": {
@@ -8494,6 +8606,22 @@
       "resized": false,
       "sourceBytes": 143196,
       "sourceHash": "a52d195b1730b93a32a57cf4240a06e0182f495bc300672e842a04a1355c3944",
+      "width": 1200
+    },
+    "static/thumbnail/art-thin-fat-bellied-bengali-insulin-resistance.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 149400,
+      "outputHash": "d634c6cc64fe70d816ec93f4d6abe55a50ffdf898ceb5cd4ba575e51272f7c59",
+      "psnrDb": 37.04,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 204847,
+      "sourceHash": "b15812e2060a3f4076d5152309b4602ac07eb16797f806f2c6d4c37f14bc0dce",
       "width": 1200
     },
     "static/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg": {
@@ -9376,22 +9504,6 @@
       "sourceHash": "1dbbcd39c4aa2481f33f2f6d8d017fc3bbc0cdbd7dcd1a14db7aa2ed74c7b373",
       "width": 1200
     },
-    "static/thumbnail/safe-calcutta-carbohydrate-problem.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 118518,
-      "outputHash": "87a7772331653d5947d1237b5bd698ae88c552f3a12d9c5754b0eb88dcde778f",
-      "psnrDb": 43.08,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 128569,
-      "sourceHash": "db36e691ae1b659a67ac2f016f3f8be9ce826b5162007072137bd1d4a0349bb5",
-      "width": 1200
-    },
     "static/thumbnail/safe-calcutta-drain-worm.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -9406,22 +9518,6 @@
       "resized": false,
       "sourceBytes": 128469,
       "sourceHash": "c26f09a3b153b0f56cb782833a8f8d3d18ef7654062d33a0af468463d5fd7991",
-      "width": 1200
-    },
-    "static/thumbnail/safe-calcutta-fish-field-guide.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 128745,
-      "outputHash": "e7131a11a84183988b6423a32bf70fa5c565d94ffeff1062e626a178824c69b6",
-      "psnrDb": 42.43,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 140267,
-      "sourceHash": "a9414b899e19ccd832b8b0284d8a6c505027ab78c7ed0d45195e0ddde058aad3",
       "width": 1200
     },
     "static/thumbnail/safe-calcutta-morning-malaise.jpg": {
@@ -9886,22 +9982,6 @@
       "resized": false,
       "sourceBytes": 133207,
       "sourceHash": "781603e6d07351082953e4b91741a9c2c421bf4974716e63514be77ace352706",
-      "width": 1200
-    },
-    "static/thumbnail/safe-english-is-not-a-subject-it-is-a-passport.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115873,
-      "outputHash": "45f690ca4af90c3194eea92413bb3b1ae6164b00c7ec9f5eaf3fbd6de1748407",
-      "psnrDb": 43.34,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 125630,
-      "sourceHash": "8baec055e567288f06d362d323887b4f08302c06a99c9ea844e3c462d58b91f3",
       "width": 1200
     },
     "static/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg": {
@@ -10478,38 +10558,6 @@
       "resized": false,
       "sourceBytes": 136481,
       "sourceHash": "9efd71d1d28f32efe9cff44a187aea1080eb4ef452c32cb33f77e6ccdf0c74d2",
-      "width": 1200
-    },
-    "static/thumbnail/safe-hormuz-day-52-supply-ramifications-nation-states.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 128934,
-      "outputHash": "da2f944c595cb4bd09d2211d8db0a1d2ce0edf4c8a7783b52ea9ee0431e0413c",
-      "psnrDb": 42.31,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 140429,
-      "sourceHash": "9a9ffbaa736687a4b903507aa3051237733fc5720a8086dd3dcbace56ff89335",
-      "width": 1200
-    },
-    "static/thumbnail/safe-hormuz-lpg-shortage-indian-cooking-choices.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120663,
-      "outputHash": "190d1f319f207667ff820cce96237e07c5fd8a86531d26f3ff4895322d9b20c5",
-      "psnrDb": 42.91,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 130946,
-      "sourceHash": "796372dfc41d6ee02a6c710eea476e1d66820cad45e01e73e788fd086135a0f3",
       "width": 1200
     },
     "static/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg": {
@@ -11168,22 +11216,6 @@
       "sourceHash": "fcfb9384e5c1c37daa797450afac1f978c779077dc82cc692139bf758bad30b4",
       "width": 1200
     },
-    "static/thumbnail/safe-mojo-the-python-killer.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 123985,
-      "outputHash": "65c2b1723a62178fe352adf895531103101ce73f88c6ff3a2c2046e79c320324",
-      "psnrDb": 42.64,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 134798,
-      "sourceHash": "79474f6d313120701b679fe712d52772db7b51dff6b04739194a6da4b58ae7e2",
-      "width": 1200
-    },
     "static/thumbnail/safe-mood-bellwethers-before-a-low.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11630,22 +11662,6 @@
       "resized": false,
       "sourceBytes": 132119,
       "sourceHash": "55eeaf813d9a69d2917b552fdbb683250755a5e8449f3822f1f06791afe6a851",
-      "width": 1200
-    },
-    "static/thumbnail/safe-propofol-dream-recall-nightmares.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 118323,
-      "outputHash": "54ba62649a41048a72c5f2dfc33c3fb65bdcd9c94e2b91a4f75a7093781bd34e",
-      "psnrDb": 43.07,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 128331,
-      "sourceHash": "0866ed35dfdde2a504cd8b3287cc02655b0dc4188eacc781f6ccb8c8f5bc19f8",
       "width": 1200
     },
     "static/thumbnail/safe-questions-change-systems-uthscsa-va.jpg": {
@@ -13502,22 +13518,6 @@
       "resized": false,
       "sourceBytes": 131059,
       "sourceHash": "7e203fc4c753b1db5508bc40fe345f5aeb209e2bea479d00a44d96495bf919b0",
-      "width": 1200
-    },
-    "static/thumbnail/safe-thin-fat-bellied-bengali-insulin-resistance.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 117451,
-      "outputHash": "5b8cb91804b1e4356b26ca277562129dfe1ac86f3af19d4ab14a9c402249c160",
-      "psnrDb": 43.23,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 127356,
-      "sourceHash": "fcfd32c08f7fe4dfc397cca431bcc975b1e9ff6f31241e8d3d10c48f65967ae6",
       "width": 1200
     },
     "static/thumbnail/safe-this-blogs-history.jpg": {

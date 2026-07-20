@@ -6,12 +6,12 @@ category: "healthcare"
 tags: ["Dream Induction","Propofol","Dream","Emergence","Nightmares","Recall","Anesthesia","Trauma","Anesthetic","Imagery"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-propofol-dream-recall-nightmares.jpg"
+thumbnail: "/thumbnail/art-propofol-dream-recall-nightmares.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-propofol-dream-recall-nightmares.jpg" />
+<Pi src="/thumbnail/art-propofol-dream-recall-nightmares.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -6,12 +6,12 @@ category: "energy"
 tags: ["Saves Fuel","Rice Dal","Indian Cooking","Pressure Cooker","LPG","Cooking","Induction","Fuel","PNG","Biogas"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-hormuz-lpg-shortage-indian-cooking-choices.jpg"
+thumbnail: "/thumbnail/art-hormuz-lpg-shortage-indian-cooking-choices.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hormuz-lpg-shortage-indian-cooking-choices.jpg" />
+<Pi src="/thumbnail/art-hormuz-lpg-shortage-indian-cooking-choices.jpg" />
 
 Acronyms expanded in this post:
 - LPG: Liquefied Petroleum Gas. bottled cooking gas used in many Indian homes.

@@ -6,12 +6,12 @@ category: "Engineering Blog"
 tags: ["Standard Library","Progress Bars","Chris Lattner","MAX Kernels","Matrix Multiplication","Mojo","Python","Compiler","Compiled","Kernels"]
 published: true
 color: "#FF6B35"
-thumbnail: "/thumbnail/safe-mojo-the-python-killer.jpg"
+thumbnail: "/thumbnail/art-mojo-the-python-killer.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-mojo-the-python-killer.jpg" />
+<Pi src="/thumbnail/art-mojo-the-python-killer.jpg" />
 
 # The Uncomfortable Truth About Progress Bars
 

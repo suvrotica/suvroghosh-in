@@ -6,12 +6,12 @@ category: "food"
 tags: ["Frequent Eating","Large Predators","Fish Eaten Whole","Good Reasons","Fish","Labeo","Pabda","Predatory","Bata","Frequent"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-calcutta-fish-field-guide.jpg"
+thumbnail: "/thumbnail/art-calcutta-fish-field-guide.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-fish-field-guide.jpg" />
+<Pi src="/thumbnail/art-calcutta-fish-field-guide.jpg" />
 
 Acronyms expanded in this post: No central technical acronyms need expansion here.
 

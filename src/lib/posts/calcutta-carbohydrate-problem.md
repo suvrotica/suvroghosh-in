@@ -6,12 +6,12 @@ category: "Health & Society"
 tags: ["Insulin Resistance","Fatty Liver","Blood Pressure","Glucose","Metabolic","Liver","Insulin","Carbohydrate","Protein","Sugar"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-calcutta-carbohydrate-problem.jpg"
+thumbnail: "/thumbnail/art-calcutta-carbohydrate-problem.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-carbohydrate-problem.jpg" />
+<Pi src="/thumbnail/art-calcutta-carbohydrate-problem.jpg" />
 
 Acronyms expanded in this post:
 - IT: Information Technology. the practice of building, operating, and supporting computing systems.

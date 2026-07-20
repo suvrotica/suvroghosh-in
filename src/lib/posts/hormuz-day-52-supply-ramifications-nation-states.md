@@ -6,12 +6,12 @@ category: "geopolitics"
 tags: ["Weaker Currencies","Reuters Reported","Fertilizer","Gulf","LNG","Hormuz","Reuters","Freight","Imports","Inflation"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-hormuz-day-52-supply-ramifications-nation-states.jpg"
+thumbnail: "/thumbnail/art-hormuz-day-52-supply-ramifications-nation-states.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hormuz-day-52-supply-ramifications-nation-states.jpg" />
+<Pi src="/thumbnail/art-hormuz-day-52-supply-ramifications-nation-states.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

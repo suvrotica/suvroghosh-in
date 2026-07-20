@@ -3678,6 +3678,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-calcutta-carbohydrate-problem.jpg",
+			"src": "/thumbnail/art-calcutta-carbohydrate-problem.jpg",
+			"bytes": 245698,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-fish-field-guide.jpg",
+			"src": "/thumbnail/art-calcutta-fish-field-guide.jpg",
+			"bytes": 260144,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-calcutta-summer-of-2026.jpg",
 			"src": "/thumbnail/art-calcutta-summer-of-2026.jpg",
 			"bytes": 133548,
@@ -3699,6 +3713,27 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-english-is-not-a-subject-it-is-a-passport.jpg",
+			"src": "/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg",
+			"bytes": 178735,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hormuz-day-52-supply-ramifications-nation-states.jpg",
+			"src": "/thumbnail/art-hormuz-day-52-supply-ramifications-nation-states.jpg",
+			"bytes": 217760,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hormuz-lpg-shortage-indian-cooking-choices.jpg",
+			"src": "/thumbnail/art-hormuz-lpg-shortage-indian-cooking-choices.jpg",
+			"bytes": 130604,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-intro.jpg",
 			"src": "/thumbnail/art-intro.jpg",
 			"bytes": 141043,
@@ -3713,9 +3748,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-mojo-the-python-killer.jpg",
+			"src": "/thumbnail/art-mojo-the-python-killer.jpg",
+			"bytes": 123977,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
 			"src": "/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
 			"bytes": 90681,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-propofol-dream-recall-nightmares.jpg",
+			"src": "/thumbnail/art-propofol-dream-recall-nightmares.jpg",
+			"bytes": 108822,
 			"width": 1200,
 			"height": 800
 		},
@@ -3730,6 +3779,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-the-router-behind-the-television.jpg",
 			"src": "/thumbnail/art-the-router-behind-the-television.jpg",
 			"bytes": 99803,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-thin-fat-bellied-bengali-insulin-resistance.jpg",
+			"src": "/thumbnail/art-thin-fat-bellied-bengali-insulin-resistance.jpg",
+			"bytes": 149400,
 			"width": 1200,
 			"height": 800
 		},
@@ -4119,23 +4175,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-calcutta-carbohydrate-problem.jpg",
-			"src": "/thumbnail/safe-calcutta-carbohydrate-problem.jpg",
-			"bytes": 118518,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-calcutta-drain-worm.jpg",
 			"src": "/thumbnail/safe-calcutta-drain-worm.jpg",
 			"bytes": 118408,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-fish-field-guide.jpg",
-			"src": "/thumbnail/safe-calcutta-fish-field-guide.jpg",
-			"bytes": 128745,
 			"width": 1200,
 			"height": 800
 		},
@@ -4339,13 +4381,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-end-of-history-not-end-of-trouble.jpg",
 			"src": "/thumbnail/safe-end-of-history-not-end-of-trouble.jpg",
 			"bytes": 122520,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-english-is-not-a-subject-it-is-a-passport.jpg",
-			"src": "/thumbnail/safe-english-is-not-a-subject-it-is-a-passport.jpg",
-			"bytes": 115873,
 			"width": 1200,
 			"height": 800
 		},
@@ -4598,20 +4633,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-hope-dies-at-different-rates.jpg",
 			"src": "/thumbnail/safe-hope-dies-at-different-rates.jpg",
 			"bytes": 125465,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hormuz-day-52-supply-ramifications-nation-states.jpg",
-			"src": "/thumbnail/safe-hormuz-day-52-supply-ramifications-nation-states.jpg",
-			"bytes": 128934,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hormuz-lpg-shortage-indian-cooking-choices.jpg",
-			"src": "/thumbnail/safe-hormuz-lpg-shortage-indian-cooking-choices.jpg",
-			"bytes": 120663,
 			"width": 1200,
 			"height": 800
 		},
@@ -4903,13 +4924,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-mojo-the-python-killer.jpg",
-			"src": "/thumbnail/safe-mojo-the-python-killer.jpg",
-			"bytes": 123985,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-mood-bellwethers-before-a-low.jpg",
 			"src": "/thumbnail/safe-mood-bellwethers-before-a-low.jpg",
 			"bytes": 109712,
@@ -5102,13 +5116,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-prognosis-as-philosophy.jpg",
 			"src": "/thumbnail/safe-prognosis-as-philosophy.jpg",
 			"bytes": 121569,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-propofol-dream-recall-nightmares.jpg",
-			"src": "/thumbnail/safe-propofol-dream-recall-nightmares.jpg",
-			"bytes": 118323,
 			"width": 1200,
 			"height": 800
 		},
@@ -5921,13 +5928,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-zeitgeist-of-calcutta-has-changed.jpg",
 			"src": "/thumbnail/safe-the-zeitgeist-of-calcutta-has-changed.jpg",
 			"bytes": 120537,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-thin-fat-bellied-bengali-insulin-resistance.jpg",
-			"src": "/thumbnail/safe-thin-fat-bellied-bengali-insulin-resistance.jpg",
-			"bytes": 117451,
 			"width": 1200,
 			"height": 800
 		},
