@@ -8319,6 +8319,22 @@
 				"Lineage"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/chatgpt-enters-healthcare-compliance-is-the-easy-part.md": {
+			"bodyHash": "55b5492259cd41e1262ddaf5e560b5e81eca9fa22e441bfd666e282681c536f0",
+			"generatedTags": [
+				"Protected Health Information",
+				"Prior Authorization",
+				"OpenAI",
+				"Information",
+				"Healthcare",
+				"AI",
+				"Clinical",
+				"ChatGPT",
+				"Payer",
+				"Approved"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

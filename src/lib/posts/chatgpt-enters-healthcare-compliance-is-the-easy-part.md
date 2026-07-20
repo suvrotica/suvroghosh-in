@@ -4,7 +4,7 @@ description: "OpenAI’s healthcare platform is important not because it makes a
 date: "2026-07-21"
 thumbnail: "/photos/Compress_20260721_033941_1365.jpg"
 category: "Healthcare IT"
-tags: ["Healthcare IT", "Artificial Intelligence", "OpenAI", "ChatGPT for Healthcare", "Clinical AI", "HIPAA", "Data Governance", "Semantic Interoperability", "RAG", "EHR", "Healthcare Architecture", "SuvroGhosh"]
+tags: ["Protected Health Information","Prior Authorization","OpenAI","Information","Healthcare","AI","Clinical","ChatGPT","Payer","Approved"]
 published: true
 color: "#315c72"
 ---

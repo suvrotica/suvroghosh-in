@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T20:38:17.857766+00:00",
+  "generatedAt": "2026-07-20T22:13:50.036709+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -1815,6 +1815,29 @@
         "Human",
         "AI",
         "Building"
+      ],
+      "wordCount": 130
+    },
+    "chatgpt-enters-healthcare-compliance-is-the-easy-part": {
+      "generatedAt": "2026-07-20T22:13:49.383908+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/chatgpt-enters-healthcare-compliance-is-the-easy-part.svg",
+      "source": "src/lib/posts/chatgpt-enters-healthcare-compliance-is-the-easy-part.md",
+      "sourceHash": "eaa6e0fe48e86c83041299b64916d772b36118346bf9b635ccde6d03aeb76357",
+      "sourceModified": "2026-07-20T22:13:41.609938+00:00",
+      "topWords": [
+        "Information",
+        "AI",
+        "Healthcare",
+        "Data",
+        "Health",
+        "Clinical",
+        "Openai",
+        "Hospital",
+        "System",
+        "Model",
+        "Patient",
+        "Systems"
       ],
       "wordCount": 130
     },

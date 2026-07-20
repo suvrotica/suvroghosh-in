@@ -8368,6 +8368,22 @@
       "sourceHash": "a1e5829ab3841da47e40e1d4823abee85933781ab3dda3da476d409368962823",
       "width": 1448
     },
+    "static/photos/Compress_20260721_033941_1365.jpg": {
+      "format": "JPEG",
+      "height": 1038,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1038,
+      "originalWidth": 1515,
+      "outputBytes": 464957,
+      "outputHash": "e4d0806dd0d71cff8cd298c2457002dab2fdadb72dc2e5b778099356293bb12b",
+      "psnrDb": 38.23,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 469672,
+      "sourceHash": "8e36b3af9dfadcd52cff1db4de3bc6ac5429ff596209a14ff65c4d12cb6bea81",
+      "width": 1515
+    },
     "static/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg": {
       "format": "JPEG",
       "height": 800,
