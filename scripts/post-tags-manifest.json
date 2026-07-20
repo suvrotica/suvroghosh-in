@@ -8305,13 +8305,13 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.md": {
-			"bodyHash": "fc2cf6296f20a9155e41f9cc062e4508b987caf703b0b03f94507b7afc7d10f5",
+			"bodyHash": "a981fd3ec0dc8b63c13e7079e97ec7f94060d1e3cacc0160ec471f82f5e849c8",
 			"generatedTags": [
 				"Prey Arms Race",
-				"Predator Prey",
+				"Sensory Radius",
+				"Reproduction Threshold",
 				"Keeping Mutation Bounded",
 				"Abundant Garden",
-				"Phenotype Packed",
 				"Population",
 				"Mutation",
 				"Garden",

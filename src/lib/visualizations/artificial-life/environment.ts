@@ -52,7 +52,8 @@ export function createPredator(id: number, random: SeededRandom): Predator {
 		previousY: position.y,
 		heading: random.range(0, Math.PI * 2),
 		radius: random.range(10, 15),
-		cooldown: 0
+		cooldown: 0,
+		feedingPulse: 0
 	};
 }
 

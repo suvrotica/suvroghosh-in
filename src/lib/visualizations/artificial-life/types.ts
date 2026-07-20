@@ -50,6 +50,9 @@ export type Organism = {
 	heading: number;
 	energy: number;
 	age: number;
+	feedingPulse: number;
+	collisionPulse: number;
+	birthPulse: number;
 };
 
 export type FoodParticle = {
@@ -68,18 +71,20 @@ export type Predator = {
 	heading: number;
 	radius: number;
 	cooldown: number;
+	feedingPulse: number;
 };
 
+export type DeathCause = 'starvation' | 'age' | 'predation' | 'pressure';
+
 export type SimulationEvent = {
-	kind: 'birth' | 'death';
+	kind: 'birth' | 'death' | 'feeding' | 'collision';
 	x: number;
 	y: number;
 	hue: number;
 	age: number;
 	duration: number;
+	cause?: DeathCause;
 };
-
-export type DeathCause = 'starvation' | 'age' | 'predation' | 'pressure';
 
 export type DeathCounts = Record<DeathCause, number>;
 

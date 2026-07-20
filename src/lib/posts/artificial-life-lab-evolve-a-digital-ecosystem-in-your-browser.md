@@ -3,7 +3,7 @@ title: "Artificial Life Lab: Evolve a Digital Ecosystem in Your Browser"
 description: "Grow a seeded digital ecosystem in the browser: microbes inherit traits, forage, reproduce with mutation, face selection pressure, drift, predators, ageing, and death."
 date: "2026-07-20"
 category: "Visualizations"
-tags: ["Prey Arms Race","Predator Prey","Keeping Mutation Bounded","Abundant Garden","Phenotype Packed","Population","Mutation","Garden","Energy","Lineage"]
+tags: ["Prey Arms Race","Sensory Radius","Reproduction Threshold","Keeping Mutation Bounded","Abundant Garden","Population","Mutation","Garden","Energy","Lineage"]
 series: ["Artificial Life Lab"]
 published: true
 thumbnail: "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg"
@@ -31,6 +31,8 @@ faq:
 	import genomeSource from '$lib/visualizations/artificial-life/genome.ts?raw';
 	import organismSource from '$lib/visualizations/artificial-life/organism.ts?raw';
 	import environmentSource from '$lib/visualizations/artificial-life/environment.ts?raw';
+	import appearanceSource from '$lib/visualizations/artificial-life/microbeAppearance.ts?raw';
+	import rendererSource from '$lib/visualizations/artificial-life/microbeRenderer.ts?raw';
 	import randomSource from '$lib/visualizations/artificial-life/seededRandom.ts?raw';
 	import presetsSource from '$lib/visualizations/artificial-life/simulationPresets.ts?raw';
 
@@ -39,6 +41,8 @@ faq:
 		{ id: 'genome', label: 'Genome', filename: 'genome.ts', language: 'javascript', source: genomeSource },
 		{ id: 'organism', label: 'Organism', filename: 'organism.ts', language: 'javascript', source: organismSource },
 		{ id: 'environment', label: 'Environment', filename: 'environment.ts', language: 'javascript', source: environmentSource },
+		{ id: 'appearance', label: 'Visible traits', filename: 'microbeAppearance.ts', language: 'javascript', source: appearanceSource },
+		{ id: 'renderer', label: 'Renderer', filename: 'microbeRenderer.ts', language: 'javascript', source: rendererSource },
 		{ id: 'random', label: 'Seeded random', filename: 'seededRandom.ts', language: 'javascript', source: randomSource },
 		{ id: 'presets', label: 'Presets', filename: 'simulationPresets.ts', language: 'javascript', source: presetsSource }
 	];
@@ -60,7 +64,7 @@ Start by letting the default garden run. Then try **Scarcity and Competition** a
 
 <ArtificialLifeLab
 	title="Evolving Microbe Garden"
-	caption="Amber particles are food; membrane colour and size are inherited phenotypes; coral shapes are predators. Expanding rings mark births and dispersing orange specks mark deaths."
+	caption="Every body is a visible phenotype: speed lengthens the cell and its flagella, sensing adds cilia, avoidance grows armour, efficiency adds internal vacuoles, and mutation pressure adds membrane speckles. Gold gulps mark feeding, cyan ripples mark collisions, bright rings mark births, and coral hunters visibly swallow prey."
 />
 
 # What this model is—and is not
@@ -82,7 +86,7 @@ Within those limits, it makes six important ideas visible:
 
 # The genome: phenotype packed into eleven numbers
 
-The visible membrane is not merely decoration. Body size and hue come directly from the genome, while less visible genes change behaviour and energy economics.
+The visible membrane is not merely decoration. Every inherited number now has a readable visual echo. Speed makes the body more streamlined and grows additional flagella; sensory radius adds longer, denser cilia; danger avoidance grows defensive spines; efficiency fills the cell with more vacuoles; reproduction threshold changes the nucleus; turning tendency bends the silhouette; food attraction enlarges the feeding groove; and mutation rate increases coloured membrane speckles. These are honest visual encodings of the model's numbers, not claims that real microbes express those traits in exactly this way.
 
 ```javascript
 type Genome = {
@@ -166,7 +170,7 @@ const movement = (
 organism.energy -= (basal + movement) * deltaTime;
 ```
 
-Touching an amber nutrient particle transfers its energy to the organism, modified slightly by inherited efficiency. Reaching the effective reproduction threshold divides the available energy: 55 per cent remains with the parent and 45 per cent starts the offspring. Reproduction therefore has a real immediate cost.
+Touching an amber nutrient particle transfers its energy to the organism, modified slightly by inherited efficiency. The cell briefly swells, its feeding groove turns gold, nutrient sparks converge, and a **GULP** marker names the event. Reaching the effective reproduction threshold divides the available energy: 55 per cent remains with the parent and 45 per cent starts the offspring. Reproduction therefore has a real immediate cost, shown as a bright division ring around the small translucent child and its parent.
 
 An organism dies when energy reaches zero or age reaches its inherited, environmentally scaled lifespan. Harshness adds a small background pressure. Predators, when enabled, pursue the nearest organism and can cause a fourth kind of death. The census records starvation, age, pressure, and predation separately even though the headline displays their sum.
 
@@ -177,7 +181,7 @@ The microbes have no map and perform no path search. At each step the engine ask
 1. Is food inside this organism's effective sensory radius?
 2. Is a predator inside a slightly larger danger radius?
 
-The heading bends towards detected food according to **food attraction** and away from danger according to **danger avoidance**. A small random turn prevents perfectly straight, mechanical routes. After movement, the elliptical boundary pushes an escaping organism back inside and changes its heading.
+The heading bends towards detected food according to **food attraction** and away from danger according to **danger avoidance**. A small random turn prevents perfectly straight, mechanical routes. When two microbes overlap, a spatial collision pass separates them, turns their headings apart, briefly squashes both bodies, and produces a cyan **BUMP** ripple. After movement, the elliptical boundary pushes an escaping organism back inside and changes its heading.
 
 This produces behaviour that looks purposeful, but the distinction matters: apparent pursuit emerges from repeated steering arithmetic. Nothing in the code represents desire.
 
@@ -212,10 +216,11 @@ Each fixed step follows this order:
 1. Accumulate the requested food spawn rate and add bounded nutrient particles.
 2. Synchronise predators with the enabled state and harshness.
 3. For every living organism, sense, steer, move, pay energy, eat, age, die, or reproduce.
-4. Update predators and resolve contact deaths.
-5. Age birth and death events, removing expired ones.
+4. Resolve nearby organism collisions with a small spatial grid rather than comparing every possible pair.
+5. Update predators and resolve contact deaths.
+6. Age birth, feeding, collision, and cause-specific death events, removing expired ones.
 
-Rendering reads the resulting state. It draws a dark elliptical habitat, food points, movement traces, phenotype membranes, nuclei, cilia, predators, birth rings, and death specks. The renderer may change its shapes tomorrow without changing a single biological outcome.
+Rendering reads the resulting state. Instead of identical moving dots, it draws soft-bodied procedural microbes with inherited silhouettes, flagella, cilia, armour, nuclei, vacuoles, speckles, and feeding grooves. Juveniles begin small and translucent, adults become vivid, and elders fade, lose some cilia, and acquire membrane scars as they approach their effective lifespan. Low energy deflates the body. Feeding, collision, division, starvation, old age, environmental pressure, and predation have distinct short-lived animations and labels. Coral predators now have mouths, eyes, tentacles, and a visible golden stomach pulse after swallowing prey. The renderer can exaggerate these cues for legibility without changing the inherited values or survival rules they report.
 
 The statistics panel also reads the model. It calculates averages across the living population, finds the dominant hue family, estimates the deepest extant generation, and identifies the **deepest surviving lineage**: the founder lineage containing the highest-generation living descendant. Ties go to the lineage with more living descendants and then the lower lineage ID. The engine returns that lineage's ID and label to both the statistics and Canvas renderer, so the text and white highlight rings cannot disagree. Lightweight SVG charts keep only the latest 120 samples rather than allowing an unbounded history.
 

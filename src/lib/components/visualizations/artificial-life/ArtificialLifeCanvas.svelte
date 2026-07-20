@@ -2,10 +2,16 @@
 	import { onMount } from 'svelte';
 	import { ArtificialLifeEngine } from '$lib/visualizations/artificial-life/artificialLifeEngine';
 	import {
+		drawMicrobe,
+		drawPredator,
+		drawSimulationEvent
+	} from '$lib/visualizations/artificial-life/microbeRenderer';
+	import {
 		FIXED_TIME_STEP,
 		GENERATION_WINDOW_STEPS,
 		WORLD_HEIGHT,
 		WORLD_WIDTH,
+		type SimulationEvent,
 		type SimulationHistoryPoint,
 		type SimulationParameters,
 		type SimulationUpdate
@@ -55,6 +61,21 @@
 	let lastHistoryAt = -1;
 	let framesSinceTelemetry = 0;
 	let framesPerSecond = 0;
+
+	function visibleEvents(events: readonly SimulationEvent[]) {
+		const selected: SimulationEvent[] = [];
+		let feeding = 0;
+		let collisions = 0;
+		for (let index = events.length - 1; index >= 0 && selected.length < 24; index -= 1) {
+			const event = events[index];
+			if (event.kind === 'feeding' && feeding >= 6) continue;
+			if (event.kind === 'collision' && collisions >= 4) continue;
+			if (event.kind === 'feeding') feeding += 1;
+			if (event.kind === 'collision') collisions += 1;
+			selected.unshift(event);
+		}
+		return selected;
+	}
 
 	function publish(forceHistory = false) {
 		if (!engine) return;
@@ -133,9 +154,25 @@
 		}
 
 		for (const food of engine.food) {
+			const foodHue = 42 + (food.id % 4) * 19;
+			const foodRadius = 2.4 + Math.min(2.8, food.energy / 18);
 			context.beginPath();
-			context.arc(food.x, food.y, 2.2 + Math.min(2.5, food.energy / 20), 0, Math.PI * 2);
-			context.fillStyle = 'rgba(251, 191, 36, 0.76)';
+			context.arc(food.x, food.y, foodRadius + 3, 0, Math.PI * 2);
+			context.fillStyle = `hsla(${foodHue}, 96%, 60%, 0.1)`;
+			context.fill();
+			context.beginPath();
+			context.arc(food.x, food.y, foodRadius, 0, Math.PI * 2);
+			context.fillStyle = `hsla(${foodHue}, 92%, 62%, 0.82)`;
+			context.fill();
+			context.beginPath();
+			context.arc(
+				food.x - foodRadius * 0.25,
+				food.y - foodRadius * 0.3,
+				foodRadius * 0.28,
+				0,
+				Math.PI * 2
+			);
+			context.fillStyle = 'rgba(255, 251, 235, 0.86)';
 			context.fill();
 		}
 
@@ -151,82 +188,25 @@
 			}
 		}
 
-		const highlightedLineage = highlightLineage ? (engine.lineageSelection.id ?? -1) : -1;
+		const highlightedLineage = highlightLineage ? engine.lineageSelection.id : null;
+		const crowdingScale = Math.max(0.78, Math.min(1.18, 1.24 - engine.organisms.length / 1050));
 		for (const organism of engine.organisms) {
-			const size = organism.genome.bodySize;
-			const energyAlpha = Math.min(1, Math.max(0.38, organism.energy / 95));
-			context.save();
-			context.translate(organism.x, organism.y);
-			context.rotate(organism.heading);
-			context.beginPath();
-			context.arc(0, 0, size, 0, Math.PI * 2);
-			context.fillStyle = `hsla(${organism.genome.hue}, 78%, 58%, ${energyAlpha})`;
-			context.fill();
-			context.lineWidth = Math.max(1.2, size * 0.18);
-			context.strokeStyle = `hsla(${(organism.genome.hue + 42) % 360}, 92%, 78%, 0.84)`;
-			context.stroke();
-			context.beginPath();
-			context.arc(size * 0.2, -size * 0.12, Math.max(1.4, size * 0.26), 0, Math.PI * 2);
-			context.fillStyle = 'rgba(4, 12, 16, 0.72)';
-			context.fill();
-			context.beginPath();
-			context.moveTo(-size * 0.75, 0);
-			context.quadraticCurveTo(-size * 1.55, size * 0.6, -size * 2.1, -size * 0.05);
-			context.strokeStyle = `hsla(${organism.genome.hue}, 90%, 75%, 0.62)`;
-			context.lineWidth = Math.max(1, size * 0.13);
-			context.stroke();
-			if (organism.lineageId === highlightedLineage) {
-				context.beginPath();
-				context.arc(0, 0, size + 4, 0, Math.PI * 2);
-				context.strokeStyle = 'rgba(255, 255, 255, 0.92)';
-				context.lineWidth = 1.5;
-				context.stroke();
-			}
-			context.restore();
+			drawMicrobe(
+				context,
+				organism,
+				parameters,
+				engine.simulationTime,
+				crowdingScale,
+				reducedMotion,
+				organism.lineageId === highlightedLineage
+			);
 		}
 
 		for (const predator of engine.predators) {
-			context.save();
-			context.translate(predator.x, predator.y);
-			context.rotate(predator.heading);
-			context.beginPath();
-			context.moveTo(predator.radius * 1.35, 0);
-			context.lineTo(-predator.radius, predator.radius * 0.8);
-			context.lineTo(-predator.radius * 0.52, 0);
-			context.lineTo(-predator.radius, -predator.radius * 0.8);
-			context.closePath();
-			context.fillStyle = 'rgba(251, 113, 133, 0.72)';
-			context.fill();
-			context.strokeStyle = 'rgba(254, 205, 211, 0.9)';
-			context.lineWidth = 2;
-			context.stroke();
-			context.restore();
+			drawPredator(context, predator, engine.simulationTime, reducedMotion);
 		}
 
-		for (const event of engine.events) {
-			const progress = event.age / event.duration;
-			context.beginPath();
-			context.arc(event.x, event.y, 5 + progress * 18, 0, Math.PI * 2);
-			context.strokeStyle =
-				event.kind === 'birth'
-					? `hsla(${event.hue}, 88%, 72%, ${1 - progress})`
-					: `rgba(251, 146, 60, ${1 - progress})`;
-			context.lineWidth = event.kind === 'birth' ? 2.4 : 1.6;
-			context.stroke();
-			if (event.kind === 'death') {
-				for (let speck = 0; speck < 4; speck += 1) {
-					const angle = (speck / 4) * Math.PI * 2 + event.hue;
-					const distance = 5 + progress * 14;
-					context.fillStyle = `rgba(251, 146, 60, ${0.75 * (1 - progress)})`;
-					context.fillRect(
-						event.x + Math.cos(angle) * distance,
-						event.y + Math.sin(angle) * distance,
-						2.2,
-						2.2
-					);
-				}
-			}
-		}
+		for (const event of visibleEvents(engine.events)) drawSimulationEvent(context, event);
 		context.restore();
 
 		context.save();
@@ -304,13 +284,17 @@
 	}
 
 	$effect(() => {
-		if (engine) engine.setParameters(parameters);
+		const currentParameters = parameters;
+		if (engine) engine.setParameters(currentParameters);
 	});
 
 	$effect(() => {
-		if (!engine || restartToken === lastRestartToken) return;
-		lastRestartToken = restartToken;
-		engine.restart(parameters, seed);
+		const currentRestartToken = restartToken;
+		const currentParameters = parameters;
+		const currentSeed = seed;
+		if (!engine || currentRestartToken === lastRestartToken) return;
+		lastRestartToken = currentRestartToken;
+		engine.restart(currentParameters, currentSeed);
 		history = [];
 		lastHistoryAt = -1;
 		stepBudget = 0;
@@ -320,8 +304,9 @@
 	});
 
 	$effect(() => {
-		if (!engine || stepToken === lastStepToken) return;
-		lastStepToken = stepToken;
+		const currentStepToken = stepToken;
+		if (!engine || currentStepToken === lastStepToken) return;
+		lastStepToken = currentStepToken;
 		stepBudget += GENERATION_WINDOW_STEPS;
 		onstatus('Advancing 8 simulated seconds (240 fixed ticks)…');
 		schedule();
@@ -380,7 +365,7 @@
 		<canvas
 			bind:this={canvas}
 			class="block h-full w-full"
-			aria-label="A living digital ecosystem. Coloured microbes forage for amber food inside a petri dish; coral predators hunt when enabled. Birth rings expand around offspring and orange specks mark deaths."
+			aria-label="A living digital ecosystem. Inherited traits visibly change each microbe's body shape, cilia, flagella, armour, internal organelles, and colour. Young microbes are small and translucent; adults are vivid; elders become pale and scarred. Gold gulps mark feeding, cyan ripples mark collisions, bright rings mark births, and coral hunters visibly swallow prey."
 		>
 			<img src={poster} alt="Static poster for the Evolving Microbe Garden" />
 		</canvas>
@@ -391,6 +376,19 @@
 			class="h-full w-full object-cover"
 		/>
 	{/if}
+	<div
+		class="pointer-events-none absolute inset-x-2 bottom-2 flex flex-wrap justify-center gap-x-3 gap-y-1 rounded-md bg-black/70 px-2 py-1 font-mono text-[10px] tracking-wide text-neutral-200 uppercase backdrop-blur-sm sm:text-[11px]"
+		role="list"
+		aria-label="Visual event legend"
+	>
+		<span role="listitem"><span class="text-amber-300">●</span> gulp</span>
+		<span role="listitem"><span class="text-cyan-300">◎</span> bump</span>
+		<span role="listitem"><span class="text-emerald-300">◎</span> birth</span>
+		<span role="listitem"><span class="text-rose-300">◆</span> hunted</span>
+		<span role="listitem" class="hidden sm:inline"
+			>young translucent → adult vivid → elder pale</span
+		>
+	</div>
 	<noscript>
 		<img
 			src={poster}

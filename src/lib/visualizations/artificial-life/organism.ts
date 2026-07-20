@@ -19,7 +19,10 @@ export function createFounder(
 		previousY: position.y,
 		heading: random.range(0, Math.PI * 2),
 		energy: random.range(58, 82),
-		age: random.range(0, 8)
+		age: random.range(0, 8),
+		feedingPulse: 0,
+		collisionPulse: 0,
+		birthPulse: 0
 	};
 }
 
@@ -43,6 +46,9 @@ export function createOffspring(
 		previousY: parent.y,
 		heading: parent.heading + random.signed() * 0.45,
 		energy,
-		age: 0
+		age: 0,
+		feedingPulse: 0,
+		collisionPulse: 0,
+		birthPulse: 1
 	};
 }

@@ -185,7 +185,8 @@ export class ArtificialLifeEngine {
 			y: organism.y,
 			hue: organism.genome.hue,
 			age: 0,
-			duration: 0.8
+			duration: cause === 'predation' ? 1 : 0.9,
+			cause
 		});
 		this.deathCounts[cause] += 1;
 		swapRemove(this.organisms, index);
@@ -197,6 +198,9 @@ export class ArtificialLifeEngine {
 			const organism = this.organisms[index];
 			if (!organism) continue;
 			const genome = organism.genome;
+			organism.feedingPulse = Math.max(0, organism.feedingPulse - deltaTime * 1.8);
+			organism.collisionPulse = Math.max(0, organism.collisionPulse - deltaTime * 2.4);
+			organism.birthPulse = Math.max(0, organism.birthPulse - deltaTime * 1.35);
 			const effectiveSensoryRadius = this.effectiveTrait(
 				genome.sensoryRadius,
 				this.parameters.sensoryRange,
@@ -256,6 +260,15 @@ export class ArtificialLifeEngine {
 				const particle = this.food[nearestFood];
 				if (Math.hypot(particle.x - organism.x, particle.y - organism.y) <= genome.bodySize + 4) {
 					organism.energy += particle.energy * (0.8 + genome.energyEfficiency * 0.2);
+					organism.feedingPulse = 1;
+					this.events.push({
+						kind: 'feeding',
+						x: organism.x,
+						y: organism.y,
+						hue: organism.genome.hue,
+						age: 0,
+						duration: 0.7
+					});
 					swapRemove(this.food, nearestFood);
 				}
 			}
@@ -289,6 +302,7 @@ export class ArtificialLifeEngine {
 			) {
 				const availableEnergy = organism.energy;
 				organism.energy = availableEnergy * 0.55;
+				organism.birthPulse = 1;
 				const childGenome = inheritGenome(genome, this.random, this.parameters);
 				const child = createOffspring(
 					this.nextOrganismId,
@@ -313,11 +327,82 @@ export class ArtificialLifeEngine {
 		}
 	}
 
+	private resolveOrganismCollisions() {
+		const cellSize = 30;
+		const cells = new Map<number, number[]>();
+		let emittedEvents = 0;
+
+		for (let index = 0; index < this.organisms.length; index += 1) {
+			const organism = this.organisms[index];
+			const cellX = Math.floor(organism.x / cellSize);
+			const cellY = Math.floor(organism.y / cellSize);
+
+			for (let offsetY = -1; offsetY <= 1; offsetY += 1) {
+				for (let offsetX = -1; offsetX <= 1; offsetX += 1) {
+					const neighbours = cells.get(cellX + offsetX + (cellY + offsetY) * 64);
+					if (!neighbours) continue;
+					for (const otherIndex of neighbours) {
+						const other = this.organisms[otherIndex];
+						let deltaX = organism.x - other.x;
+						let deltaY = organism.y - other.y;
+						let distance = Math.hypot(deltaX, deltaY);
+						const minimumDistance = (organism.genome.bodySize + other.genome.bodySize) * 0.82;
+						if (distance >= minimumDistance) continue;
+
+						if (distance < 0.001) {
+							const angle = (((organism.id * 97 + other.id * 53) % 360) * Math.PI) / 180;
+							deltaX = Math.cos(angle);
+							deltaY = Math.sin(angle);
+							distance = 1;
+						}
+
+						const normalX = deltaX / distance;
+						const normalY = deltaY / distance;
+						const correction = (minimumDistance - distance) * 0.52;
+						organism.x += normalX * correction;
+						organism.y += normalY * correction;
+						other.x -= normalX * correction;
+						other.y -= normalY * correction;
+
+						const collisionAngle = Math.atan2(normalY, normalX);
+						organism.heading += angleDifference(collisionAngle, organism.heading) * 0.42;
+						other.heading += angleDifference(collisionAngle + Math.PI, other.heading) * 0.42;
+
+						const freshCollision = organism.collisionPulse <= 0.05 && other.collisionPulse <= 0.05;
+						organism.collisionPulse = 1;
+						other.collisionPulse = 1;
+						if (freshCollision && emittedEvents < 6) {
+							this.events.push({
+								kind: 'collision',
+								x: (organism.x + other.x) / 2,
+								y: (organism.y + other.y) / 2,
+								hue: (organism.genome.hue + other.genome.hue) / 2,
+								age: 0,
+								duration: 0.45
+							});
+							emittedEvents += 1;
+						}
+					}
+				}
+			}
+
+			const key = cellX + cellY * 64;
+			const members = cells.get(key);
+			if (members) members.push(index);
+			else cells.set(key, [index]);
+		}
+
+		for (const organism of this.organisms) {
+			keepInsideDish(organism, this.random, organism.genome.bodySize + 8);
+		}
+	}
+
 	private updatePredators(deltaTime: number) {
 		for (const predator of this.predators) {
 			predator.previousX = predator.x;
 			predator.previousY = predator.y;
 			predator.cooldown = Math.max(0, predator.cooldown - deltaTime);
+			predator.feedingPulse = Math.max(0, predator.feedingPulse - deltaTime * 1.5);
 			const targetIndex = nearestOrganismIndex(predator.x, predator.y, this.organisms);
 			if (targetIndex >= 0) {
 				const target = this.organisms[targetIndex];
@@ -341,6 +426,7 @@ export class ArtificialLifeEngine {
 			) {
 				this.removeOrganism(targetIndex, 'predation');
 				predator.cooldown = 0.55;
+				predator.feedingPulse = 1;
 			}
 		}
 	}
@@ -363,6 +449,7 @@ export class ArtificialLifeEngine {
 		}
 		this.synchronizePredators();
 		this.updateOrganisms(step);
+		this.resolveOrganismCollisions();
 		this.updatePredators(step);
 		this.updateEvents(step);
 		this.refreshLineageSelection();

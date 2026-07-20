@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T14:36:52.288023+00:00",
+  "generatedAt": "2026-07-20T20:38:17.857766+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -784,25 +784,25 @@
       "wordCount": 130
     },
     "artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser": {
-      "generatedAt": "2026-07-20T14:36:50.831436+00:00",
+      "generatedAt": "2026-07-20T20:38:17.149620+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.svg",
       "source": "src/lib/posts/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.md",
-      "sourceHash": "5247e48e1c0af7f04e55da270bdcb19841f9a2ca78be98dab5690e2a55c7afa3",
-      "sourceModified": "2026-07-20T14:36:38.633295+00:00",
+      "sourceHash": "8d59b8cc34dfd329114446e40d780835ac164d67cbd6ff87cce056cc8e8aad93",
+      "sourceModified": "2026-07-20T20:38:12.414004+00:00",
       "topWords": [
         "Population",
         "Food",
         "Energy",
         "Garden",
         "Mutation",
-        "Lineage",
         "Organism",
-        "Predators",
-        "Movement",
+        "Lineage",
+        "Every",
         "Model",
-        "Change",
-        "Every"
+        "Predators",
+        "Small",
+        "Pressure"
       ],
       "wordCount": 130
     },

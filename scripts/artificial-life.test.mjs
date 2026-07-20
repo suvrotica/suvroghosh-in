@@ -21,6 +21,9 @@ const { SeededRandom } = await vite.ssrLoadModule(
 const { DEFAULT_SIMULATION_PARAMETERS } = await vite.ssrLoadModule(
 	'/src/lib/visualizations/artificial-life/simulationPresets.ts'
 );
+const { effectiveOrganismLifespan, microbeAppearance } = await vite.ssrLoadModule(
+	'/src/lib/visualizations/artificial-life/microbeAppearance.ts'
+);
 const { FIXED_TIME_STEP } = await vite.ssrLoadModule(
 	'/src/lib/visualizations/artificial-life/types.ts'
 );
@@ -44,6 +47,9 @@ function snapshot(engine) {
 				y: Number(organism.y.toFixed(5)),
 				energy: Number(organism.energy.toFixed(5)),
 				age: Number(organism.age.toFixed(5)),
+				feedingPulse: Number(organism.feedingPulse.toFixed(5)),
+				collisionPulse: Number(organism.collisionPulse.toFixed(5)),
+				birthPulse: Number(organism.birthPulse.toFixed(5)),
 				genome: Object.fromEntries(
 					Object.entries(organism.genome).map(([key, value]) => [key, Number(value.toFixed(6))])
 				)
@@ -143,6 +149,98 @@ test('living and moving consumes energy when there is no food', () => {
 	engine.stepMany(10, FIXED_TIME_STEP);
 
 	assert.ok(engine.organisms[0].energy < before);
+});
+
+test('feeding produces a visible pulse and a named short-lived event', () => {
+	const parameters = {
+		...DEFAULT_SIMULATION_PARAMETERS,
+		startingPopulation: 1,
+		foodSpawnRate: 0,
+		basalEnergyCost: 0.1,
+		movementEnergyCost: 0.05,
+		reproductionThreshold: 180,
+		predatorsEnabled: false
+	};
+	const engine = new ArtificialLifeEngine(parameters, 'visible-feeding');
+	const organism = engine.organisms[0];
+	organism.genome.movementSpeed = 0;
+	organism.energy = 20;
+	engine.food.length = 0;
+	engine.food.push({ id: 999, x: organism.x, y: organism.y, energy: 24 });
+
+	engine.step(FIXED_TIME_STEP);
+
+	assert.equal(engine.food.length, 0);
+	assert.ok(organism.feedingPulse > 0);
+	assert.ok(engine.events.some((event) => event.kind === 'feeding'));
+});
+
+test('overlapping microbes separate, turn apart, and expose collision pulses', () => {
+	const parameters = {
+		...DEFAULT_SIMULATION_PARAMETERS,
+		startingPopulation: 2,
+		foodSpawnRate: 0,
+		basalEnergyCost: 0.1,
+		movementEnergyCost: 0.05,
+		reproductionThreshold: 180,
+		predatorsEnabled: false
+	};
+	const engine = new ArtificialLifeEngine(parameters, 'visible-collision');
+	engine.food.length = 0;
+	const [first, second] = engine.organisms;
+	first.x = second.x = 500;
+	first.y = second.y = 310;
+	first.genome.movementSpeed = 0;
+	second.genome.movementSpeed = 0;
+
+	engine.step(FIXED_TIME_STEP);
+
+	assert.ok(Math.hypot(first.x - second.x, first.y - second.y) > 1);
+	assert.ok(first.collisionPulse > 0);
+	assert.ok(second.collisionPulse > 0);
+	assert.ok(engine.events.some((event) => event.kind === 'collision'));
+});
+
+test('age and inherited traits map to visibly different procedural bodies', () => {
+	const parameters = { ...DEFAULT_SIMULATION_PARAMETERS, startingPopulation: 1 };
+	const engine = new ArtificialLifeEngine(parameters, 'visible-phenotype');
+	const organism = engine.organisms[0];
+	organism.age = 0;
+	const juvenile = microbeAppearance(organism, parameters);
+	organism.age = effectiveOrganismLifespan(organism, parameters) * 0.86;
+	const elder = microbeAppearance(organism, parameters);
+	const subtle = microbeAppearance(
+		{
+			...organism,
+			genome: {
+				...organism.genome,
+				movementSpeed: 24,
+				sensoryRadius: 24,
+				dangerAvoidance: 0.2
+			}
+		},
+		parameters
+	);
+	const expressive = microbeAppearance(
+		{
+			...organism,
+			genome: {
+				...organism.genome,
+				movementSpeed: 88,
+				sensoryRadius: 190,
+				dangerAvoidance: 2.6
+			}
+		},
+		parameters
+	);
+
+	assert.equal(juvenile.stage, 'juvenile');
+	assert.equal(elder.stage, 'elder');
+	assert.ok(juvenile.growthScale < elder.growthScale);
+	assert.ok(expressive.bodyLength > subtle.bodyLength);
+	assert.ok(expressive.flagellaCount > subtle.flagellaCount);
+	assert.ok(expressive.ciliaCount > subtle.ciliaCount);
+	assert.ok(expressive.spikeCount > subtle.spikeCount);
 });
 
 test('an organism above its effective threshold reproduces and shares energy', () => {
