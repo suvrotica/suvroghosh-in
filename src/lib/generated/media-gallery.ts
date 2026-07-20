@@ -3713,9 +3713,37 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-end-of-history-not-end-of-trouble.jpg",
+			"src": "/thumbnail/art-end-of-history-not-end-of-trouble.jpg",
+			"bytes": 186772,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-english-is-not-a-subject-it-is-a-passport.jpg",
 			"src": "/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg",
 			"bytes": 178735,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-find-study-diabetes-kidney-family-tree.jpg",
+			"src": "/thumbnail/art-find-study-diabetes-kidney-family-tree.jpg",
+			"bytes": 127156,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
+			"src": "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
+			"bytes": 224679,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-homeopathy-pseudoscience-persistence.jpg",
+			"src": "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg",
+			"bytes": 136683,
 			"width": 1200,
 			"height": 800
 		},
@@ -3734,9 +3762,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-india-ai-it-bpo-white-collar-jobs.jpg",
+			"src": "/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg",
+			"bytes": 110622,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-intro.jpg",
 			"src": "/thumbnail/art-intro.jpg",
 			"bytes": 141043,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg",
+			"src": "/thumbnail/art-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg",
+			"bytes": 232896,
 			"width": 1200,
 			"height": 800
 		},
@@ -3751,6 +3793,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-mojo-the-python-killer.jpg",
 			"src": "/thumbnail/art-mojo-the-python-killer.jpg",
 			"bytes": 123977,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-nightmare-of-indian-healthcare.jpg",
+			"src": "/thumbnail/art-nightmare-of-indian-healthcare.jpg",
+			"bytes": 152903,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-pohela-baisakh-mughal-calendar-memory.jpg",
+			"src": "/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg",
+			"bytes": 250494,
 			"width": 1200,
 			"height": 800
 		},
@@ -4378,13 +4434,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-end-of-history-not-end-of-trouble.jpg",
-			"src": "/thumbnail/safe-end-of-history-not-end-of-trouble.jpg",
-			"bytes": 122520,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg",
 			"src": "/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg",
 			"bytes": 107973,
@@ -4451,13 +4500,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-fhir-for-a-curious-student-in-calcutta.jpg",
 			"src": "/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg",
 			"bytes": 111938,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-find-study-diabetes-kidney-family-tree.jpg",
-			"src": "/thumbnail/safe-find-study-diabetes-kidney-family-tree.jpg",
-			"bytes": 120294,
 			"width": 1200,
 			"height": 800
 		},
@@ -4539,13 +4581,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-great-trigonometrical-survey-india-trigonometry-empire.jpg",
-			"src": "/thumbnail/safe-great-trigonometrical-survey-india-trigonometry-empire.jpg",
-			"bytes": 113244,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-greed-made-me-small.jpg",
 			"src": "/thumbnail/safe-greed-made-me-small.jpg",
 			"bytes": 120458,
@@ -4623,13 +4658,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-homeopathy-pseudoscience-persistence.jpg",
-			"src": "/thumbnail/safe-homeopathy-pseudoscience-persistence.jpg",
-			"bytes": 120028,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-hope-dies-at-different-rates.jpg",
 			"src": "/thumbnail/safe-hope-dies-at-different-rates.jpg",
 			"bytes": 125465,
@@ -4682,13 +4710,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-if-lies-had-noses-again.jpg",
 			"src": "/thumbnail/safe-if-lies-had-noses-again.jpg",
 			"bytes": 122167,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-ai-it-bpo-white-collar-jobs.jpg",
-			"src": "/thumbnail/safe-india-ai-it-bpo-white-collar-jobs.jpg",
-			"bytes": 114656,
 			"width": 1200,
 			"height": 800
 		},
@@ -4794,13 +4815,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
 			"src": "/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
 			"bytes": 108313,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg",
-			"src": "/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg",
-			"bytes": 120226,
 			"width": 1200,
 			"height": 800
 		},
@@ -4973,13 +4987,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-nightmare-of-indian-healthcare.jpg",
-			"src": "/thumbnail/safe-nightmare-of-indian-healthcare.jpg",
-			"bytes": 128080,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-nightmare-wrapped-in-skin.jpg",
 			"src": "/thumbnail/safe-nightmare-wrapped-in-skin.jpg",
 			"bytes": 120162,
@@ -5067,13 +5074,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-pod-mara-gechhe-calcutta-essay.jpg",
 			"src": "/thumbnail/safe-pod-mara-gechhe-calcutta-essay.jpg",
 			"bytes": 108705,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-pohela-baisakh-mughal-calendar-memory.jpg",
-			"src": "/thumbnail/safe-pohela-baisakh-mughal-calendar-memory.jpg",
-			"bytes": 115926,
 			"width": 1200,
 			"height": 800
 		},

@@ -6,12 +6,12 @@ category: "Ideas"
 tags: ["Liberal Democracy","Francis Fukuyama","Market Capitalism","Liberal","Democracy","Fukuyama","Capitalism","Fascism","History","End"]
 published: true
 color: "#4F46E5"
-thumbnail: "/thumbnail/safe-end-of-history-not-end-of-trouble.jpg"
+thumbnail: "/thumbnail/art-end-of-history-not-end-of-trouble.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-end-of-history-not-end-of-trouble.jpg" />
+<Pi src="/thumbnail/art-end-of-history-not-end-of-trouble.jpg" />
 
 Acronyms and terms:
 

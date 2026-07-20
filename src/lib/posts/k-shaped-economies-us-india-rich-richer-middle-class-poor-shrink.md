@@ -6,12 +6,12 @@ category: "Economy"
 tags: ["K-shaped Economy","Middle Class","Unstable Work","K-shaped","Escape","Versus","Economy","India","Class","Assets"]
 published: true
 color: "#4A3F35"
-thumbnail: "/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg"
+thumbnail: "/thumbnail/art-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg" />
+<Pi src="/thumbnail/art-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg" />
 
 Acronyms and terms used in this post:
 

@@ -6,12 +6,12 @@ category: "india"
 tags: ["Domain Knowledge","Business Process Outsourcing","Fewer People","Labor Market","Roles","AI","Firms","White-Collar","Labor","Business"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-india-ai-it-bpo-white-collar-jobs.jpg"
+thumbnail: "/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-india-ai-it-bpo-white-collar-jobs.jpg" />
+<Pi src="/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

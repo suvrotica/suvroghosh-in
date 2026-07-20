@@ -6,12 +6,12 @@ category: "history"
 tags: ["Pohela Baisakh","Mughal","Baisakh","Pohela","Muslim","Hybrid","Gregorian","Akbar","Calendar","Agrarian"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-pohela-baisakh-mughal-calendar-memory.jpg"
+thumbnail: "/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-pohela-baisakh-mughal-calendar-memory.jpg" />
+<Pi src="/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

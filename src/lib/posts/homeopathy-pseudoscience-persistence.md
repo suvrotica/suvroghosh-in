@@ -6,12 +6,12 @@ category: "healthcare-systems"
 tags: ["Health Level Seven","Evidence-Based Medicine","Human Experience","Homeopathy","Healthcare","Evidence-Based","Data","Clinical","Systems","Measurable"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-homeopathy-pseudoscience-persistence.jpg"
+thumbnail: "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-homeopathy-pseudoscience-persistence.jpg" />
+<Pi src="/thumbnail/art-homeopathy-pseudoscience-persistence.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

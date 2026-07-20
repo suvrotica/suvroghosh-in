@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T04:11:19.681899+00:00",
+  "generatedAt": "2026-07-20T04:56:40.954101+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2624,12 +2624,12 @@
       "wordCount": 130
     },
     "end-of-history-not-end-of-trouble": {
-      "generatedAt": "2026-07-20T02:03:09.985565+00:00",
+      "generatedAt": "2026-07-20T04:56:28.048350+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/end-of-history-not-end-of-trouble.svg",
       "source": "src/lib/posts/end-of-history-not-end-of-trouble.md",
-      "sourceHash": "6917cb092ba73b2b0efe2f4a1ade290f46bc451295d3fbbce2b038f52a4ca194",
-      "sourceModified": "2026-07-20T02:00:12.536444+00:00",
+      "sourceHash": "4e631c785ea69a6fc877c301144a045cd6fabd561baade404d23fadfa943ef56",
+      "sourceModified": "2026-07-20T04:52:57.407391+00:00",
       "topWords": [
         "Democracy",
         "Sometimes",
@@ -3038,12 +3038,12 @@
       "wordCount": 130
     },
     "find-study-diabetes-kidney-family-tree": {
-      "generatedAt": "2026-07-20T02:03:20.681792+00:00",
+      "generatedAt": "2026-07-20T04:56:29.609438+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/find-study-diabetes-kidney-family-tree.svg",
       "source": "src/lib/posts/find-study-diabetes-kidney-family-tree.md",
-      "sourceHash": "5b3ef7419eae3a711ceb902a29902a0ecec53a620e21f57c9ae1690e70f9ab99",
-      "sourceModified": "2026-07-20T02:00:12.299140+00:00",
+      "sourceHash": "f640da008c446c33b27bb6bde06a18af1f3cb870fc05540fa91980417ebf3183",
+      "sourceModified": "2026-07-20T04:52:57.396672+00:00",
       "topWords": [
         "FIND",
         "Kidney",
@@ -3337,12 +3337,12 @@
       "wordCount": 130
     },
     "great-trigonometrical-survey-india-trigonometry-empire": {
-      "generatedAt": "2026-07-20T02:03:30.556844+00:00",
+      "generatedAt": "2026-07-20T04:56:31.644745+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/great-trigonometrical-survey-india-trigonometry-empire.svg",
       "source": "src/lib/posts/great-trigonometrical-survey-india-trigonometry-empire.md",
-      "sourceHash": "4d2d2cabb782520b520773461b2a5ac7d2aa51b86feb68b6f7499a35e19dbe38",
-      "sourceModified": "2026-07-20T02:00:12.423715+00:00",
+      "sourceHash": "46f5a725352a045f5e7720acb73cac5fad0444826d8208656a72118927843b1f",
+      "sourceModified": "2026-07-20T04:52:57.403891+00:00",
       "topWords": [
         "Survey",
         "Great",
@@ -3751,12 +3751,12 @@
       "wordCount": 130
     },
     "homeopathy-pseudoscience-persistence": {
-      "generatedAt": "2026-07-20T02:03:41.295077+00:00",
+      "generatedAt": "2026-07-20T04:56:33.631505+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/homeopathy-pseudoscience-persistence.svg",
       "source": "src/lib/posts/homeopathy-pseudoscience-persistence.md",
-      "sourceHash": "cd7b61b589de33bff16f43df1a26a1c613630f8b21023884bc7c6f27175b89d5",
-      "sourceModified": "2026-07-20T02:01:42.868382+00:00",
+      "sourceHash": "a3c135f494b8fe9b6e29a2ff9156f669724c6c3f130f9e1c8c3f24f5c4e17b76",
+      "sourceModified": "2026-07-20T04:52:57.399575+00:00",
       "topWords": [
         "Data",
         "Homeopathy",
@@ -4050,12 +4050,12 @@
       "wordCount": 130
     },
     "india-ai-it-bpo-white-collar-jobs": {
-      "generatedAt": "2026-07-20T02:03:49.951961+00:00",
+      "generatedAt": "2026-07-20T04:56:35.426851+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/india-ai-it-bpo-white-collar-jobs.svg",
       "source": "src/lib/posts/india-ai-it-bpo-white-collar-jobs.md",
-      "sourceHash": "ffc718179074cb5124d010437f6bcc2f72218bfdd19de1e1b9ded04e1a21470d",
-      "sourceModified": "2026-07-20T02:00:12.612723+00:00",
+      "sourceHash": "e9c15b64879e0101a25cb8c92dd09a04320062d3e7d8901536ee2aabbc597db8",
+      "sourceModified": "2026-07-20T04:52:57.409399+00:00",
       "topWords": [
         "AI",
         "Work",
@@ -4464,12 +4464,12 @@
       "wordCount": 130
     },
     "k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink": {
-      "generatedAt": "2026-07-20T02:04:02.957948+00:00",
+      "generatedAt": "2026-07-20T04:56:36.887896+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.svg",
       "source": "src/lib/posts/k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.md",
-      "sourceHash": "b4596011253fb7a1bbf2afd52445ff87fb210893a35b2472e53c9445b20e703b",
-      "sourceModified": "2026-07-20T02:00:12.403912+00:00",
+      "sourceHash": "984ef9b0c2baf07aa48bf55ff8b4fb74e4078fa710099ebb66d2cb64ba9d6af7",
+      "sourceModified": "2026-07-20T04:52:57.387082+00:00",
       "topWords": [
         "India",
         "Economy",
@@ -5338,12 +5338,12 @@
       "wordCount": 130
     },
     "nightmare-of-indian-healthcare": {
-      "generatedAt": "2026-07-20T02:04:29.832039+00:00",
+      "generatedAt": "2026-07-20T04:56:38.604923+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/nightmare-of-indian-healthcare.svg",
       "source": "src/lib/posts/nightmare-of-indian-healthcare.md",
-      "sourceHash": "06acc73d01bfc14cb815122d449ebc74855162455d55615353e3f09f39c94c93",
-      "sourceModified": "2026-07-20T02:01:43.378507+00:00",
+      "sourceHash": "9a7a5d0111f5df208238ea67bffebf08f3ff155c17aa085e22a766e2270f6a6b",
+      "sourceModified": "2026-07-20T04:52:57.393616+00:00",
       "topWords": [
         "India",
         "Hospital",
@@ -5798,12 +5798,12 @@
       "wordCount": 130
     },
     "pohela-baisakh-mughal-calendar-memory": {
-      "generatedAt": "2026-07-20T02:04:42.322836+00:00",
+      "generatedAt": "2026-07-20T04:56:40.254117+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/pohela-baisakh-mughal-calendar-memory.svg",
       "source": "src/lib/posts/pohela-baisakh-mughal-calendar-memory.md",
-      "sourceHash": "22e30fe04c4e721b553e687c0eabe19a7f60c37e5f6f9b35b2a69138979a9dce",
-      "sourceModified": "2026-07-20T02:00:12.253249+00:00",
+      "sourceHash": "8e7d32361a3d578c5e9dd33fae6f02a9e5ee394f4ccc15b1477872ce13bb7893",
+      "sourceModified": "2026-07-20T04:52:57.401532+00:00",
       "topWords": [
         "Mughal",
         "Year",

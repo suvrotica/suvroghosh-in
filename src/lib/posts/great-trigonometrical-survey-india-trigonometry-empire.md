@@ -6,12 +6,12 @@ category: "history-of-science"
 tags: ["Great Trigonometrical Survey","Trigonometrical","Survey","Trigonometry","Baseline","Geodetic","Lambton","Triangulation","Distances","Revenue"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-great-trigonometrical-survey-india-trigonometry-empire.jpg"
+thumbnail: "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-great-trigonometrical-survey-india-trigonometry-empire.jpg" />
+<Pi src="/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg" />
 
 Acronyms expanded in this post: No central technical acronyms need expansion here.
 

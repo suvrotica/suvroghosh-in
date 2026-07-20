@@ -8448,6 +8448,22 @@
       "sourceHash": "689f3ed7b9dd5c8a6a45978dbc3d67ae770d285c8e4074f369e4a8a0b6a913a6",
       "width": 1200
     },
+    "static/thumbnail/art-end-of-history-not-end-of-trouble.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 186772,
+      "outputHash": "82057d5e1928403fd2726bd0164943b05694e1191c17f2efd74ade6575711133",
+      "psnrDb": 36.71,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 229571,
+      "sourceHash": "2021ca51aa23c856940fc23fe4882843ca5a68ca028d019b7d87dd71ca8ab91d",
+      "width": 1200
+    },
     "static/thumbnail/art-english-is-not-a-subject-it-is-a-passport.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -8462,6 +8478,54 @@
       "resized": false,
       "sourceBytes": 218878,
       "sourceHash": "1760a75ab083eb0d54deb26275ea9f147ec5ca3477d5d2df0c71edaeddb3d01c",
+      "width": 1200
+    },
+    "static/thumbnail/art-find-study-diabetes-kidney-family-tree.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 127156,
+      "outputHash": "e74275a3c134de485baadcab99c596090ba11b329492a1c8b3380a3e93eb99ab",
+      "psnrDb": 37.91,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 179204,
+      "sourceHash": "1b1d35cd89c6e7c2fb7776a68ad619b4fb6cad719d42dcf2bfd74547386166d6",
+      "width": 1200
+    },
+    "static/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 224679,
+      "outputHash": "c6330269360beb2bb96263488a4c7d74cb42df5e86c3e76889a32435942248d2",
+      "psnrDb": 36.39,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 267050,
+      "sourceHash": "c323c2d285b6533d47ea2bb215304c759dd216bf0a4079d9c2a944446972b1d4",
+      "width": 1200
+    },
+    "static/thumbnail/art-homeopathy-pseudoscience-persistence.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 136683,
+      "outputHash": "006577163f2283b0421c481998761c49cc637e6276d570e11fd26b80f31d6340",
+      "psnrDb": 37.7,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 188943,
+      "sourceHash": "321e0cf566233e60da5f81f858f03aed7aacbf95a76477d0f1092257d1aec634",
       "width": 1200
     },
     "static/thumbnail/art-hormuz-day-52-supply-ramifications-nation-states.jpg": {
@@ -8496,6 +8560,22 @@
       "sourceHash": "3d46e386ce9129d398fea934da1af6b393c87b7730c49f90b37e372458ee04ef",
       "width": 1200
     },
+    "static/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 110622,
+      "outputHash": "8feadb16b4639c7df975fe7729245d0031bac147a479823731cef77bcb057102",
+      "psnrDb": 38.76,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 154705,
+      "sourceHash": "f67ff9db74a9839eccd1f4c3c04dfe51ed6a32377b35d86eaea31861a39c34f8",
+      "width": 1200
+    },
     "static/thumbnail/art-intro.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -8510,6 +8590,22 @@
       "resized": false,
       "sourceBytes": 196328,
       "sourceHash": "dea2e93e70e07d7eea71b8fb659be8685d5fa200479b8e43cf5bb317bb92c236",
+      "width": 1200
+    },
+    "static/thumbnail/art-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 232896,
+      "outputHash": "fc9ca318442036f4d208372b8d022405a3fdbfe5d2e8f8a2606d6616ef4eadc0",
+      "psnrDb": 36.54,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 274379,
+      "sourceHash": "d1421df8af6720b4eb6e0ee20bdd4c34d3451333eac021702b2676755f9ddabe",
       "width": 1200
     },
     "static/thumbnail/art-kenneth-arrow-medical-care.jpg": {
@@ -8542,6 +8638,38 @@
       "resized": false,
       "sourceBytes": 180457,
       "sourceHash": "77712770355097305bd6297dd97fefb97bb6b5ca194f5bfc7c00fdc3912e820d",
+      "width": 1200
+    },
+    "static/thumbnail/art-nightmare-of-indian-healthcare.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 152903,
+      "outputHash": "e85f5540d342edb8626d50950848043a980621fc8f3e4c6993716a9971038d68",
+      "psnrDb": 36.45,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 209007,
+      "sourceHash": "7e44afe294504d39e138d5a612a207201d087c4697bf05e9e8d0c27a8cc8793e",
+      "width": 1200
+    },
+    "static/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 250494,
+      "outputHash": "52d7aa9bc580f2a6064f8766af3569f35acebc617ad39d4cce8b023a8c763f4a",
+      "psnrDb": 37.22,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 289341,
+      "sourceHash": "19dc4dbdc6763f573061a2a90fa4eb524bdd9f5c4d17df619258f192c4a3364a",
       "width": 1200
     },
     "static/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg": {
@@ -9968,22 +10096,6 @@
       "sourceHash": "b7b37f28ab27dd0b70b853be68ccc6ec085855dac3051dfbe9a7c1b78d21edb6",
       "width": 1200
     },
-    "static/thumbnail/safe-end-of-history-not-end-of-trouble.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 122520,
-      "outputHash": "d2ded959c8a250257534cbdb51a5d1c955dce8973b42297a5e53508a16779fd6",
-      "psnrDb": 42.88,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 133207,
-      "sourceHash": "781603e6d07351082953e4b91741a9c2c421bf4974716e63514be77ace352706",
-      "width": 1200
-    },
     "static/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -10142,22 +10254,6 @@
       "resized": false,
       "sourceBytes": 121338,
       "sourceHash": "b793494fa54f0bc127364d67aa730bbe69928069028c47bdc29b5b6200c9ec3d",
-      "width": 1200
-    },
-    "static/thumbnail/safe-find-study-diabetes-kidney-family-tree.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120294,
-      "outputHash": "11d1894602f1b65591365a70762b8c721f009f9f94a562258f337db23a3ef36f",
-      "psnrDb": 42.98,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 130517,
-      "sourceHash": "c4c3856340c59dd15ed4f0d134662ae1df91c75af6d70cf455594e2a5ec03e7f",
       "width": 1200
     },
     "static/thumbnail/safe-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg": {
@@ -10336,22 +10432,6 @@
       "sourceHash": "4227cf99459e08d61c375efb441bff30e86bf49e0f405a82296f57001f0e5f66",
       "width": 1200
     },
-    "static/thumbnail/safe-great-trigonometrical-survey-india-trigonometry-empire.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 113244,
-      "outputHash": "933369fdb5c102f566ea764e680c5bb3f2aed491b1b0a682da88c78f311ae062",
-      "psnrDb": 43.59,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 122591,
-      "sourceHash": "3af0abce2916b93139db39746f9fab6b39f703dde75559ad9b5afc4db79666de",
-      "width": 1200
-    },
     "static/thumbnail/safe-greed-made-me-small.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -10528,22 +10608,6 @@
       "sourceHash": "98d2002341b9322987adcec2cf4c5b5a1e079cbf157511b5b17c815077d71669",
       "width": 1200
     },
-    "static/thumbnail/safe-homeopathy-pseudoscience-persistence.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120028,
-      "outputHash": "67e36424f1d424c2df337d4af0509bb3df9af725798d36c41c6277fc98470c52",
-      "psnrDb": 43.03,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 130274,
-      "sourceHash": "0003648760f95b724fdedfa7b082ce3621bc95cebcd79a8702c69435d46eeb34",
-      "width": 1200
-    },
     "static/thumbnail/safe-hope-dies-at-different-rates.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -10670,22 +10734,6 @@
       "resized": false,
       "sourceBytes": 132785,
       "sourceHash": "006cd2949031435d86296fb321d6573224bd8b8f52cd7914df2ce17a5eecce4a",
-      "width": 1200
-    },
-    "static/thumbnail/safe-india-ai-it-bpo-white-collar-jobs.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 114656,
-      "outputHash": "c4303799dd56e28d247b0dddae0e1d9763b88d9cf93bef6f187ab47f8883a789",
-      "psnrDb": 43.39,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 124199,
-      "sourceHash": "fa781c7814d713fe816fd82f606844f98d5ac3a54c879a046013686fb645dd0f",
       "width": 1200
     },
     "static/thumbnail/safe-india-ai-moat-width-without-depth.jpg": {
@@ -10926,22 +10974,6 @@
       "resized": false,
       "sourceBytes": 117197,
       "sourceHash": "7eb311d1421f72dce5b0d125e378d24b1d42dabe0fe9ebe510dd4dba90c4a9ff",
-      "width": 1200
-    },
-    "static/thumbnail/safe-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120226,
-      "outputHash": "979b102279ed498c5fc575e210ebc326c998b16a78ad7b192a3fda673ada7002",
-      "psnrDb": 43.02,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 130504,
-      "sourceHash": "7d486d8c34c36b1f23679040f401204c760a652902bc3674942397dc9ef8d478",
       "width": 1200
     },
     "static/thumbnail/safe-kinship-range-limit-calcutta.jpg": {
@@ -11328,22 +11360,6 @@
       "sourceHash": "d689ee3d855b68addd7afabb0445c1608bb867809d7f37c76b46f39819e93b8e",
       "width": 1200
     },
-    "static/thumbnail/safe-nightmare-of-indian-healthcare.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 128080,
-      "outputHash": "f3f389d4c4e5f5f3ebfafa1aba46c9e0e964b8d121844db6aecf5c4249ec4f01",
-      "psnrDb": 42.47,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 139351,
-      "sourceHash": "1df7a31ed811d512da5f9e67fb156c95bec3c8a070c31557f7042cfb38a94fd3",
-      "width": 1200
-    },
     "static/thumbnail/safe-nightmare-wrapped-in-skin.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11550,22 +11566,6 @@
       "resized": false,
       "sourceBytes": 117675,
       "sourceHash": "a550ebceb32cf6b001fe3ab455e9db978aeb818a8e3bbe72bf8d247feba60b7c",
-      "width": 1200
-    },
-    "static/thumbnail/safe-pohela-baisakh-mughal-calendar-memory.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115926,
-      "outputHash": "0225bfc36375b06691252331a5f9126408e5a9932ec4ee3d7d4a04279e1549f3",
-      "psnrDb": 43.33,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 125706,
-      "sourceHash": "397205631ed13d536670c92d42475e0550366adc83eba2e6366773ced21c1641",
       "width": 1200
     },
     "static/thumbnail/safe-poison-wears-a-clean-shirt.jpg": {
