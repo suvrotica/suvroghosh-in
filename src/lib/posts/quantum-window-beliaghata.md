@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Anirban Understood","Far Side","Anirban","Pond","Tap","Bappa","Mantis","Tapped","Mira","Mosquito"]
 published: true
 color: "#31412f"
-thumbnail: "/thumbnail/safe-quantum-window-beliaghata.jpg"
+thumbnail: "/images/Compress_20260619_135628_8812.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-quantum-window-beliaghata.jpg" />
+<Pi src="Compress_20260619_135628_8812.jpg" />
 
 # THIS IS A WORK OF FICTION
 

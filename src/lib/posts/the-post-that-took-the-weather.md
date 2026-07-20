@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Hidden Pages","Please Write","Ordinary Weather","Arindam","Raka","Mita","Wrote","Pages","Mother","Write"]
 published: true
 color: "Slate Gray"
-thumbnail: "/thumbnail/safe-the-post-that-took-the-weather.jpg"
+thumbnail: "/images/Compress_20260607_070937_7811.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-post-that-took-the-weather.jpg" />
+<Pi src="Compress_20260607_070937_7811.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Paper Boats","Salt Lake","Nirmalya","Shibu","Mili","Mother","Boat","Ground-Floor","Courtyard","Boats"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-week-of-low-water.jpg"
+thumbnail: "/images/Compress_20260618_205659_9778.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-week-of-low-water.jpg" />
+<Pi src="Compress_20260618_205659_9778.jpg" />
 
 # THIS IS A WORK OF FICTION
 

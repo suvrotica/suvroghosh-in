@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Azure Heights","North Star","Low ATTENTION DETECTED","ATTENTION INDEX","Server Room","Arindam","Mina","Hospital","Server","Rickshaw-Wala"]
 published: true
 color: "copper"
-thumbnail: "/thumbnail/safe-the-temperature-of-attention.jpg"
+thumbnail: "/images/Compress_20260605_050121_1354.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-temperature-of-attention.jpg" />
+<Pi src="Compress_20260605_050121_1354.jpg" />
 
 # THIS IS A WORK OF FICTION
 

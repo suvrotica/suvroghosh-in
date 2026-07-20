@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Dark Glasses","Nirmal","Haru","Raka","Mitali","Shop","Glasses","Chowringhee","Chandni","Refrigerant"]
 published: true
 color: "ultraviolet"
-thumbnail: "/thumbnail/safe-the-blue-above-chandni.jpg"
+thumbnail: "/images/Compress_20260605_144100_0775.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-blue-above-chandni.jpg" />
+<Pi src="Compress_20260605_144100_0775.jpg" />
 
 # THIS IS A WORK OF FICTION
 

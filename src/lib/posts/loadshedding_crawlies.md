@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Consumer Number","Club Boys","Mustard Oil","Main Road","Six Legs","Bablu","Bina-di","Legs","Lane","Candle"]
 published: true
 color: "#1b1715"
-thumbnail: "/thumbnail/safe-loadshedding-crawlies.jpg"
+thumbnail: "/images/Compress_20260619_210439_9413.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-loadshedding-crawlies.jpg" />
+<Pi src="Compress_20260619_210439_9413.jpg" />
 
 # THIS IS A WORK OF FICTION
 

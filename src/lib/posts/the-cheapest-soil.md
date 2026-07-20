@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tongue Shaped","Shaped Priya","Original Tongue","Arjun","Tongues","Upper","Priya","Lower","Mouth","Headmaster"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-the-cheapest-soil.jpg"
+thumbnail: "/images/Compress_20260709_020332_2623.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-cheapest-soil.jpg" />
+<Pi src="Compress_20260709_020332_2623.jpg" />
 
 # THIS IS A WORK OF FICTION
 

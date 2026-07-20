@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Faded Sari","Inspector Banerjee","Low Chord","Loudspeaker Man","Mustard Oil","Jojo","Mimi","Polo","Harmonium","Rice"]
 published: true
 color: "#E67E22"
-thumbnail: "/thumbnail/safe-the-rice-pullers-of-new-garia.jpg"
+thumbnail: "/images/Compress_20260704_193744_4418.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-rice-pullers-of-new-garia.jpg" />
+<Pi src="Compress_20260704_193744_4418.jpg" />
 
 # THIS IS A WORK OF FICTION
 

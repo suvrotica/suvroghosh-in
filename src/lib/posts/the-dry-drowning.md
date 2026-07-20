@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Jaladhar Heights","Decision Column","Red Thread","Steel Mesh","Dada Pull","Madhab","Basu","Piu","Tak","Ratan"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-dry-drowning.jpg"
+thumbnail: "/images/Compress_20260609_092518_8609.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-dry-drowning.jpg" />
+<Pi src="Compress_20260609_092518_8609.jpg" />
 
 # THIS IS A WORK OF FICTION
 

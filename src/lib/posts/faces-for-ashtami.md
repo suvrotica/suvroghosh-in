@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Number Four","Iron Rod","Goat Liver","Arunava","Sulekha","Mili","Paromita","Pandal","Number","Creature"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-faces-for-ashtami.jpg"
+thumbnail: "/images/Compress_20260610_164136_6970.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-faces-for-ashtami.jpg" />
+<Pi src="Compress_20260610_164136_6970.jpg" />
 
 # THIS IS A WORK OF FICTION
 

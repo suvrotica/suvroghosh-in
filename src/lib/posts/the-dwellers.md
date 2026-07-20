@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Loudon Street","Film Dialogue","Boy Mother","Tania's Father","Keya","Arun","Suman","Cream","Mites","Rana"]
 published: true
 color: "#6B1C1C"
-thumbnail: "/thumbnail/safe-the-dwellers.jpg"
+thumbnail: "/images/Compress_20260622_224433_3263.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-dwellers.jpg" />
+<Pi src="Compress_20260622_224433_3263.jpg" />
 
 # THIS IS A WORK OF FICTION
 

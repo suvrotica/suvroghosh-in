@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tea Stall","Ishaan","Ketu","Mitali","Aquarium","Sen","Sourav","Father","Roof","Cossipore"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-bridgerat-of-cossipore.jpg"
+thumbnail: "/images/Compress_20260520_203404_4420.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-bridgerat-of-cossipore.jpg" />
+<Pi src="Compress_20260520_203404_4420.jpg" />
 
 # THIS IS A WORK OF FICTION
 

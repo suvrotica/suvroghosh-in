@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Cushioned Support","Maniktala House","Bird Watched","Bird","Anirban","Mina","Sofa","Support","Father","Biri"]
 published: true
 color: "teal"
-thumbnail: "/thumbnail/safe-sofa-bird.jpg"
+thumbnail: "/images/Compress_20260607_092515_5525.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-sofa-bird.jpg" />
+<Pi src="Compress_20260607_092515_5525.jpg" />
 
 # THIS IS A WORK OF FICTION
 

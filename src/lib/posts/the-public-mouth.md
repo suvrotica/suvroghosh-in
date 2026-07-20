@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["College Street","CITY LISTEN","Bhaduri","Stranger","Riju","Molars","Press","Sentinel","Haradhan","Talking"]
 published: true
 color: "Ink Black"
-thumbnail: "/thumbnail/safe-the-public-mouth.jpg"
+thumbnail: "/images/Compress_20260615_213256_6239.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-public-mouth.jpg" />
+<Pi src="Compress_20260615_213256_6239.jpg" />
 
 # THIS IS A WORK OF FICTION
 

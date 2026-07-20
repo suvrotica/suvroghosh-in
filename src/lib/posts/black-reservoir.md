@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Toy Bus","Nose Ring","Nirmal","Haru","Babai","Reservoir","Nalini","Arch","Ghat","Fish"]
 published: true
 color: "black"
-thumbnail: "/thumbnail/safe-black-reservoir.jpg"
+thumbnail: "/images/Compress_20260609_082228_8378.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-black-reservoir.jpg" />
+<Pi src="Compress_20260609_082228_8378.jpg" />
 
 # THIS IS A WORK OF FICTION
 

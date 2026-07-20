@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Stone Slab","Hemanta Bose","Brass Bowl","Pratim","Rhea","Painting","Bishnu","Berries","Creature","Canvas"]
 published: true
 color: "#3E2723"
-thumbnail: "/thumbnail/safe-the-berry-eater.jpg"
+thumbnail: "/images/Compress_20260712_205045_5085.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-berry-eater.jpg" />
+<Pi src="Compress_20260712_205045_5085.jpg" />
 
 # THIS IS A WORK OF FICTION
 

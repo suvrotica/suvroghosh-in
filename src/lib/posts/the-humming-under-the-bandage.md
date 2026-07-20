@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Brass Bowl","Nine Years","Arun","Bela","Nandita","Mira","Purnima","Calf","Bandage","Flies"]
 published: true
 color: "oxblood"
-thumbnail: "/thumbnail/safe-the-humming-under-the-bandage.jpg"
+thumbnail: "/images/Compress_20260605_153151_1076.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-humming-under-the-bandage.jpg" />
+<Pi src="Compress_20260605_153151_1076.jpg" />
 
 # THIS IS A WORK OF FICTION
 

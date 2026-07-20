@@ -83,6 +83,7 @@ export async function GET() {
 		{ url: siteUrl + '/consulting', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/writing', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
 		{ url: siteUrl + '/blog', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
 		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Pedestrian Path","Inspection Hatch","Howrah Bridge","Nirmal Cut","Nirmal","Spider","Mukherjee","Bishu","Rini","Bridge"]
 published: true
 color: "bone-white"
-thumbnail: "/thumbnail/safe-skull-under-the-bridge.jpg"
+thumbnail: "/images/Compress_20260607_135747_7487.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-skull-under-the-bridge.jpg" />
+<Pi src="Compress_20260607_135747_7487.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Anandomoy Baba","Free Spoon","Baba Eyes","Nirmal","Tublu","Amrit-Gut","Sanyal","Mina","Anandomoy","Attendants"]
 published: true
 color: "Ochre"
-thumbnail: "/thumbnail/safe-the-gut-of-god.jpg"
+thumbnail: "/images/Compress_20260609_150923_3785.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-gut-of-god.jpg" />
+<Pi src="Compress_20260609_150923_3785.jpg" />
 
 # THIS IS A WORK OF FICTION
 

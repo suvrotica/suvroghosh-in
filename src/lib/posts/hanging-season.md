@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Legs Curled","Middle Class","Second Landing","Single Thread","Tram Wires","Beam","Spiders","Spider","Rana's","Silk"]
 published: true
 color: "#2c1810"
-thumbnail: "/thumbnail/safe-hanging-season.jpg"
+thumbnail: "/images/Compress_20260713_191444_4996.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hanging-season.jpg" />
+<Pi src="Compress_20260713_191444_4996.jpg" />
 
 # THIS IS A WORK OF FICTION
 

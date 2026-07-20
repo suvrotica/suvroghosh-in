@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Ninth Tap","Blue Bottle","Mitali Blue","Anirban","Yadav","Naseem","Tara","Tap","Colony","Mitali"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-ninth-tap.jpg"
+thumbnail: "/images/Compress_20260606_204352_2237.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-ninth-tap.jpg" />
+<Pi src="Compress_20260606_204352_2237.jpg" />
 
 # THIS IS A WORK OF FICTION
 

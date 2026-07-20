@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Haradhan Dey","Nirmal","Buro-da","Haradhan","Haru","Mitali","Proboscis","Dey","Baba","Register"]
 published: true
 color: "#4B0F1E"
-thumbnail: "/thumbnail/safe-the-official-mouth.jpg"
+thumbnail: "/images/Compress_20260614_124806_6003.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-official-mouth.jpg" />
+<Pi src="Compress_20260614_124806_6003.jpg" />
 
 # THIS IS A WORK OF FICTION
 

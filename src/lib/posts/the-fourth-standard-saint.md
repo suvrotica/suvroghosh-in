@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tapan Baba","Red Ribbon","Tea Seller","Blue Cover","Madhabi","Tapan","Rimli","Mili","Book","Baba"]
 published: true
 color: "saffron"
-thumbnail: "/thumbnail/safe-the-fourth-standard-saint.jpg"
+thumbnail: "/images/Compress_20260613_134928_8970.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-fourth-standard-saint.jpg" />
+<Pi src="Compress_20260613_134928_8970.jpg" />
 
 # THIS IS A WORK OF FICTION
 

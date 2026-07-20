@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Neighbor Radio","Pradeep","Cane","Harvesters","Sun","Village","Harvest","Yield","Juice","Ports"]
 published: true
 color: "#5D4037"
-thumbnail: "/thumbnail/safe-storage.jpg"
+thumbnail: "/images/Compress_20260707_202310_0018.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-storage.jpg" />
+<Pi src="Compress_20260707_202310_0018.jpg" />
 
 # THIS IS A WORK OF FICTION
 

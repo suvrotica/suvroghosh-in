@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["SaltMeat Foods","Vat Seven","Rendering Room","Clay Cup","Cheap Protein","Mira","Bose","Sanyal","Vat","Mrs"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-the-mothers-of-tangra.jpg"
+thumbnail: "/images/Compress_20260609_083528_8762.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-mothers-of-tangra.jpg" />
+<Pi src="Compress_20260609_083528_8762.jpg" />
 
 # THIS IS A WORK OF FICTION
 

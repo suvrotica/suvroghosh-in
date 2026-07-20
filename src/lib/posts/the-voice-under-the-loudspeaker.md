@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Baba Shabdananda","Tea Stall","Nirmal","Baba","Mili","Shabdananda","Prabal","Bangle","Pandal","Wire"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-the-voice-under-the-loudspeaker.jpg"
+thumbnail: "/images/Compress_20260609_161137_7456.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-voice-under-the-loudspeaker.jpg" />
+<Pi src="Compress_20260609_161137_7456.jpg" />
 
 # THIS IS A WORK OF FICTION
 

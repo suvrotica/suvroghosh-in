@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Young Men","Anirban","Nandita","Haradhan","Madan","Buro","Leela","Spectacles","Baba","Dasgupta"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-man-who-looked-too-long.jpg"
+thumbnail: "/images/Compress_20260608_113614_4700.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-man-who-looked-too-long.jpg" />
+<Pi src="Compress_20260608_113614_4700.jpg" />
 
 # THIS IS A WORK OF FICTION
 

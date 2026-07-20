@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Eight Months","Arun","Jacket","Compartment","Bapi","Toddler","Mala","Ore","Mother","Lining"]
 published: true
 color: "#5C0000"
-thumbnail: "/thumbnail/safe-the-warmth.jpg"
+thumbnail: "/images/Compress_20260705_022650_0245.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-warmth.jpg" />
+<Pi src="Compress_20260705_022650_0245.jpg" />
 
 # THIS IS A WORK OF FICTION
 

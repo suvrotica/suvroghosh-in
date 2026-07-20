@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Yellow Duck","Duck Book","Reading Corner","Good Morning Moon","Tea Stall","Nandita","Mou","Tia","Books","Children"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-wrong-shelf.jpg"
+thumbnail: "/images/Compress_20260601_045407_7366.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-wrong-shelf.jpg" />
+<Pi src="Compress_20260601_045407_7366.jpg" />
 
 # THIS IS A WORK OF FICTION
 

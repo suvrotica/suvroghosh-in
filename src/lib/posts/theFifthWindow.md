@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Purnima Basu","Malabika","Ritwik","Ira","Purnima","Naren","Dutta","Parimal","ArcNest","Murders"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-thefifthwindow.jpg"
+thumbnail: "/images/Compress_20260604_085305_5318.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-thefifthwindow.jpg" />
+<Pi src="Compress_20260604_085305_5318.jpg" />
 
 # THIS IS A WORK OF FICTION
 

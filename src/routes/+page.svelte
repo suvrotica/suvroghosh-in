@@ -53,9 +53,7 @@
 				<Button href="/consulting" variant="outline" size="lg" class="px-6"
 					>Healthcare IT Consulting</Button
 				>
-				<Button href="/writing" variant="outline" size="lg" class="px-6"
-					>Writing &amp; Essays</Button
-				>
+				<Button href="/writing" variant="outline" size="lg" class="px-6">Writings</Button>
 				<Button href="/contact" variant="ghost" size="lg" class="px-6">Contact</Button>
 			</div>
 		</div>
@@ -138,13 +136,19 @@
 				<a
 					href={resolve('/writing')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
-					>Writing &amp; Essays</a
+					>Writings</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a
 					href={resolve('/blog')}
 					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
 					>All Posts</a
+				>
+				<span class="text-neutral-400">&middot;</span>
+				<a
+					href={resolve('/images')}
+					class="text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-100"
+					>Images</a
 				>
 				<span class="text-neutral-400">&middot;</span>
 				<a

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Metro Entrance","Professor Bose","Tea Stall","Bursar Banerjee","Madhab Sat","Madhab","Ritoban","Banerjee","Ray","Anik"]
 published: true
 color: "Slate"
-thumbnail: "/thumbnail/safe-the-corridor-that-forgot-to-breathe.jpg"
+thumbnail: "/images/Compress_20260613_143811_1448.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-corridor-that-forgot-to-breathe.jpg" />
+<Pi src="Compress_20260613_143811_1448.jpg" />
 
 # THIS IS A WORK OF FICTION
 

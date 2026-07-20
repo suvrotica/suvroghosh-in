@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Seventy Million","Trailer Door","Darlene","Jessie","Crab","Crabs","Dent","Henley","Trailer","Truck"]
 published: true
 color: "#8B4513"
-thumbnail: "/thumbnail/safe-receipt.jpg"
+thumbnail: "/images/Compress_20260708_060120_0194.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-receipt.jpg" />
+<Pi src="Compress_20260708_060120_0194.jpg" />
 
 # THIS IS A WORK OF FICTION
 

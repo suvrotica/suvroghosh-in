@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Aerial Roots","Ananya Roy","Tea Stall","Nirmal","Malini","Roots","Saplings","Root","Ananya","Pavement"]
 published: true
 color: "Green"
-thumbnail: "/thumbnail/safe-the-banyans-under-ballygunge.jpg"
+thumbnail: "/images/Compress_20260609_093627_7182.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-banyans-under-ballygunge.jpg" />
+<Pi src="Compress_20260609_093627_7182.jpg" />
 
 # THIS IS A WORK OF FICTION
 

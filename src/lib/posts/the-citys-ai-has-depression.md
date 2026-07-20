@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Objective Function","Tea Stall","Salt Lake","Servers Hummed","Direct Channel","Arup","Array","Typed","Temporary","Basement"]
 published: true
 color: "#2c3e50"
-thumbnail: "/thumbnail/safe-the-citys-ai-has-depression.jpg"
+thumbnail: "/images/Compress_20260719_094247_7744.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-citys-ai-has-depression.jpg" />
+<Pi src="Compress_20260719_094247_7744.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Kaak Bhairav","Saffron Cloth","Bhairav Sat","Shrine Room","Crow Head","Pritam","Kaak","Nandini","Beak","Devotees"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-kaak-bhairav.jpg"
+thumbnail: "/images/Compress_20260601_151729_9684.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-kaak-bhairav.jpg" />
+<Pi src="Compress_20260601_151729_9684.jpg" />
 
 # THIS IS A WORK OF FICTION
 

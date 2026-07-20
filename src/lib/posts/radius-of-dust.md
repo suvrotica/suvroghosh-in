@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Anirban","Mili","Nirmal-da","Trunk","Desk","Bread","Nagen","Mother","Father","Stay"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-radius-of-dust.jpg"
+thumbnail: "/images/Compress_20260607_062600_0744.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-radius-of-dust.jpg" />
+<Pi src="Compress_20260607_062600_0744.jpg" />
 
 # THIS IS A WORK OF FICTION
 

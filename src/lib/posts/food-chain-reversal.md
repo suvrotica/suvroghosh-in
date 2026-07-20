@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Sister Madhuri","Nirmalya","Madhuri","Bappa","Vegetarian","Sister","Ward","Subho","Harish","Dutta"]
 published: true
 color: "dark green"
-thumbnail: "/thumbnail/safe-food-chain-reversal.jpg"
+thumbnail: "/images/Compress_20260602_104130_0905.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-food-chain-reversal.jpg" />
+<Pi src="Compress_20260602_104130_0905.jpg" />
 
 # THIS IS A WORK OF FICTION
 

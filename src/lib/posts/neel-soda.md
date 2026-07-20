@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Neel Soda","Blue Fluid","Keya","Bimal-da","Bottles","Blue","Nihar","Perforations","Drink","Fluid"]
 published: true
 color: "#1a3a5c"
-thumbnail: "/thumbnail/safe-neel-soda.jpg"
+thumbnail: "/images/Compress_20260714_065333_3173.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-neel-soda.jpg" />
+<Pi src="Compress_20260714_065333_3173.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Hari Mondal","Jharna Das","Lakshmi Nagar","Kartik Bose","Anirban Pal","Subir","Madhuri","Idol","Clay","Bose"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-the-idol-who-dreamed-of-blood.jpg"
+thumbnail: "/images/Compress_20260718_173308_8326.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-idol-who-dreamed-of-blood.jpg" />
+<Pi src="Compress_20260718_173308_8326.jpg" />
 
 THIS IS A WORK OF FICTION
 

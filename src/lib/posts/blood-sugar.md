@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Mrs Banerjee","Alur Dom","Mrs Gomes","Glucose Biscuits","Red Ribbon","Rini","Arjun","Neel","Ronit","Tiffin"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-blood-sugar.jpg"
+thumbnail: "/images/Compress_20260628_232447_7373.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-blood-sugar.jpg" />
+<Pi src="Compress_20260628_232447_7373.jpg" />
 
 # THIS IS A WORK OF FICTION
 

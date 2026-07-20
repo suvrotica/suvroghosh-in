@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tuition Teacher","Rupa Asked","Beautiful Eyes","Mrinmoy","Rupa","Nabaneeta","Krishna","Eyes","Nirmal","Fleck"]
 published: true
 color: "Black"
-thumbnail: "/thumbnail/safe-the-eye-eater-of-hazra.jpg"
+thumbnail: "/images/Compress_20260605_103546_6526.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-eye-eater-of-hazra.jpg" />
+<Pi src="Compress_20260605_103546_6526.jpg" />
 
 # THIS IS A WORK OF FICTION
 

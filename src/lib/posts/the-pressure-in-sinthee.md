@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["South Sinthee","Bodies Popped","Tea Stall","Anirban","Riju","Pal","Minati","Worms","Sinthee","Dhoom"]
 published: true
 color: "sickly green"
-thumbnail: "/thumbnail/safe-the-pressure-in-sinthee.jpg"
+thumbnail: "/images/Compress_20260602_075554_4121.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-pressure-in-sinthee.jpg" />
+<Pi src="Compress_20260602_075554_4121.jpg" />
 
 # THIS IS A WORK OF FICTION
 

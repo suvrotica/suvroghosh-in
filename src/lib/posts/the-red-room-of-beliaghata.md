@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Courier Boy","Shambhu Dutta","Dutta Whispered","Wooden Box","Tea Stall","Mrinalini","Bela","Arko","Courier","Parcel"]
 published: true
 color: "Crimson"
-thumbnail: "/thumbnail/safe-the-red-room-of-beliaghata.jpg"
+thumbnail: "/images/Compress_20260618_153952_2294.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-red-room-of-beliaghata.jpg" />
+<Pi src="Compress_20260618_153952_2294.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Thorn Bush","Bicycle Horn","Ferry Ghat","Priya Put","Priya","Kaku","Crate","Fish","Didima","Puffed"]
 published: true
 color: "#2E8B57"
-thumbnail: "/thumbnail/safe-the-fish-of-babughat.jpg"
+thumbnail: "/images/Compress_20260630_200233_3781.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-fish-of-babughat.jpg" />
+<Pi src="Compress_20260630_200233_3781.jpg" />
 
 # THIS IS A WORK OF FICTION
 

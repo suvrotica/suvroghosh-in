@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Baba Shibananda","Blue Curtains","Silver Cup","Riddhi Asked","Riddhi","Baba","Tuli","Sanchari","Shibananda","Ashram"]
 published: true
 color: "ash violet"
-thumbnail: "/thumbnail/safe-the-godman-of-ballygunge.jpg"
+thumbnail: "/images/Compress_20260605_054753_3428.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-godman-of-ballygunge.jpg" />
+<Pi src="Compress_20260605_054753_3428.jpg" />
 
 # THIS IS A WORK OF FICTION
 

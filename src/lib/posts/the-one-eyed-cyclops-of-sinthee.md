@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tin Box","Poltu Put","Single Eye","Brass Torch","Poltu","Bhattacharya","Jhuma","Playground","Eye","Chatterjee"]
 published: true
 color: "#D2691E"
-thumbnail: "/thumbnail/safe-the-one-eyed-cyclops-of-sinthee.jpg"
+thumbnail: "/images/Compress_20260704_010515_5707.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-one-eyed-cyclops-of-sinthee.jpg" />
+<Pi src="Compress_20260704_010515_5707.jpg" />
 
 # THIS IS A WORK OF FICTION
 

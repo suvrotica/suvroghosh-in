@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Phuchka Wallah","Bondel Road","Lime Soda","Electrician Son","Green Handprint","Ananya","Bijoy","Fatima","Sweetshop","Green"]
 published: true
 color: "#4CAF50"
-thumbnail: "/thumbnail/safe-the-green-light-on-bondel-road.jpg"
+thumbnail: "/images/Compress_20260704_140216_6585.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-green-light-on-bondel-road.jpg" />
+<Pi src="Compress_20260704_140216_6585.jpg" />
 
 # THIS IS A WORK OF FICTION
 

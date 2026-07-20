@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Flight Attendant","Sweet Shop","Amit","Father","Dimpled","Mouth","Budding","Rosogollas","Flight","Plane"]
 published: true
 color: "#F5F5DC"
-thumbnail: "/thumbnail/safe-the-return-of-the-sweets.jpg"
+thumbnail: "/images/Compress_20260625_180713_3083.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-return-of-the-sweets.jpg" />
+<Pi src="Compress_20260625_180713_3083.jpg" />
 
 # THIS IS A WORK OF FICTION
 

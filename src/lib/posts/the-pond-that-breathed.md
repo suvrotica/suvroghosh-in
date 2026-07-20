@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Chandra Pukur","Bamboo Platform","Tram Depot","Fogging Machine","Haripada Thought","Haripada","Nandita","Pond","Sen","Cylinders"]
 published: true
 color: "green"
-thumbnail: "/thumbnail/safe-the-pond-that-breathed.jpg"
+thumbnail: "/images/Compress_20260609_080959_9483.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-pond-that-breathed.jpg" />
+<Pi src="Compress_20260609_080959_9483.jpg" />
 
 # THIS IS A WORK OF FICTION
 

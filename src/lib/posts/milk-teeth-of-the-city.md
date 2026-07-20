@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Low Complaint Probability","SHUDDHO GOLD","Milk Powder","Power Cut","Mira Read","Mira","Ramji","Ishan","Phoolmati","Milk"]
 published: true
 color: "Bone White"
-thumbnail: "/thumbnail/safe-milk-teeth-of-the-city.jpg"
+thumbnail: "/images/Compress_20260603_090627_7821.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-milk-teeth-of-the-city.jpg" />
+<Pi src="Compress_20260603_090627_7821.jpg" />
 
 # THIS IS A WORK OF FICTION
 

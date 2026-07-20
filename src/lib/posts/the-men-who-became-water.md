@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Desperate Enough","Cold Storage","Tea Stall","Nirmal","Rupa","Joydeep","Gel","Patch","Hari","Transparent"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-the-men-who-became-water.jpg"
+thumbnail: "/images/Compress_20260609_095409_9999.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-men-who-became-water.jpg" />
+<Pi src="Compress_20260609_095409_9999.jpg" />
 
 # THIS IS A WORK OF FICTION
 

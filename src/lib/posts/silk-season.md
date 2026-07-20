@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Prabir Babu","Huntsman Spider","Spider Women","Rice Cooker","Ritwick","Mala","Shuddho-Home","Spiders","Spray","Silk"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-silk-season.jpg"
+thumbnail: "/images/Compress_20260604_155930_0658.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-silk-season.jpg" />
+<Pi src="Compress_20260604_155930_0658.jpg" />
 
 # THIS IS A WORK OF FICTION
 

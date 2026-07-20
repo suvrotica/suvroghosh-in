@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Partha Pal","Eastern Spring","Pumping Station","Bottling Plant","Tala Pumping","Ira","Partha","Rafiq","Bhattacharya","Tala"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-the-happy-water.jpg"
+thumbnail: "/images/Compress_20260601_103901_1947.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-happy-water.jpg" />
+<Pi src="Compress_20260601_103901_1947.jpg" />
 
 # THIS IS A WORK OF FICTION
 

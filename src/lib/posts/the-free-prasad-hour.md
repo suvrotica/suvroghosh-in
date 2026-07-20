@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["FREE SAREE","Baba Bijoyananda","VIP Enclosure","Running Order","West Counter","Nandita","Rishav","Pulak","Baba","Coupon"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-the-free-prasad-hour.jpg"
+thumbnail: "/images/Compress_20260605_110848_8382.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-free-prasad-hour.jpg" />
+<Pi src="Compress_20260605_110848_8382.jpg" />
 
 # THIS IS A WORK OF FICTION
 

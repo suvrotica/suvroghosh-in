@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Flower Market","Railway Exam","Black Mud","Gobinda","Mina","Riju","Bhola","Nirmal","River","Monster"]
 published: true
 color: "river-green"
-thumbnail: "/thumbnail/safe-mallick-ghat-nessie.jpg"
+thumbnail: "/images/Compress_20260607_052637_7382.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-mallick-ghat-nessie.jpg" />
+<Pi src="Compress_20260607_052637_7382.jpg" />
 
 # THIS IS A WORK OF FICTION
 

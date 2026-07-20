@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Buck Teeth","White-Sari Woman","BEST STATEMENT","PRICE TOLERANCE","Damp Patch","Baba","Buck","Devotees","Grin","Statements"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-roundface-baba.jpg"
+thumbnail: "/images/Compress_20260619_150418_8216.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-roundface-baba.jpg" />
+<Pi src="Compress_20260619_150418_8216.jpg" />
 
 # THIS IS A WORK OF FICTION
 

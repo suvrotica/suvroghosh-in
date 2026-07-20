@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Shanti Medical Hall","Eastern Meridian Pharma","Nalin Dutta","Tea Stall","Stock Register","Arka","Nalin","Mili","Roy","Tongue"]
 published: true
 color: "dark red"
-thumbnail: "/thumbnail/safe-the-blister-labels.jpg"
+thumbnail: "/images/Compress_20260602_121411_1900.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-blister-labels.jpg" />
+<Pi src="Compress_20260602_121411_1900.jpg" />
 
 # THIS IS A WORK OF FICTION
 

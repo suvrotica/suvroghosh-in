@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Azure Nest","Shantiniketan Apartments","Courier Boy","North-Facing Room","Tram Wires","Partha","Noor","North-Facing","Basu","Shantiniketan"]
 published: true
 color: "ember"
-thumbnail: "/thumbnail/safe-north-facing-room.jpg"
+thumbnail: "/images/Compress_20260607_123944_4675.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-north-facing-room.jpg" />
+<Pi src="Compress_20260607_123944_4675.jpg" />
 
 # THIS IS A WORK OF FICTION
 

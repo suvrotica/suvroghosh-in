@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Young Doctor","Bappa Dutta","Nirmalya Asked","Twelve Men","Nirmalya","Pascal","Mili","Bappa","Clinic","Doctor"]
 published: true
 color: "dark green"
-thumbnail: "/thumbnail/safe-the-breath-that-came-by-rain.jpg"
+thumbnail: "/images/Compress_20260605_081913_3915.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-breath-that-came-by-rain.jpg" />
+<Pi src="Compress_20260605_081913_3915.jpg" />
 
 # THIS IS A WORK OF FICTION
 

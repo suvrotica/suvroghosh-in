@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tram Bell","Red Cloth","Gobu Shop","Rina Thought","Rina","Gobu","Bela","Bappa","Ear","Cleaver"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-head-tax.jpg"
+thumbnail: "/images/Compress_20260608_105719_9912.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-head-tax.jpg" />
+<Pi src="Compress_20260608_105719_9912.jpg" />
 
 # THIS IS A WORK OF FICTION
 

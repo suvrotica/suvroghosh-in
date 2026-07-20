@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Raka Lahiri","Forty Percent","Tea Stall","Nilotpal","Mili","Raka","Cockroaches","Clinic","Lahiri","Nil"]
 published: true
 color: "black"
-thumbnail: "/thumbnail/safe-cockroach-season.jpg"
+thumbnail: "/images/Compress_20260601_111522_2382.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-cockroach-season.jpg" />
+<Pi src="Compress_20260601_111522_2382.jpg" />
 
 # THIS IS A WORK OF FICTION
 

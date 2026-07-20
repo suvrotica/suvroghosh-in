@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Sharmila Sen","Arka","Chatterjee","Mili","Freezer","Bacteria","Sharmila","Phage","Mother","Vial"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-phage-at-beliaghata.jpg"
+thumbnail: "/images/Compress_20260608_045909_9124.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-phage-at-beliaghata.jpg" />
+<Pi src="Compress_20260608_045909_9124.jpg" />
 
 # THIS IS A WORK OF FICTION
 

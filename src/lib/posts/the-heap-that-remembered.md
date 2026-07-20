@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Grey Shine","Garbage Mountain","Blue Cloth","Nirmal Asked","Debu","Nirmal","Bappa","Heap","Swarm","Sen"]
 published: true
 color: "#4D4030"
-thumbnail: "/thumbnail/safe-the-heap-that-remembered.jpg"
+thumbnail: "/images/Compress_20260609_100753_3619.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-heap-that-remembered.jpg" />
+<Pi src="Compress_20260609_100753_3619.jpg" />
 
 # THIS IS A WORK OF FICTION
 

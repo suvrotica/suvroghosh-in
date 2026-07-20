@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Banamali Lane","Bowler Hat","Mahim Ghosh","Air Conditioner","Dark Suit","Riddhi","Mahim","Piya","Banamali","Ghost"]
 published: true
 color: "Midnight Blue"
-thumbnail: "/thumbnail/safe-the-polished-ghost-of-banamali-lane.jpg"
+thumbnail: "/images/Compress_20260605_062727_7107.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-polished-ghost-of-banamali-lane.jpg" />
+<Pi src="Compress_20260605_062727_7107.jpg" />
 
 # THIS IS A WORK OF FICTION
 

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Junction Box","Behala Team","Lahiri Whispered","Nirmal Asked","Nirmal Thought","Lahiri","Tublu","Wetland","Worms","Riju"]
 published: true
 color: "Black"
-thumbnail: "/thumbnail/safe-the-wetland-under-the-lights.jpg"
+thumbnail: "/images/Compress_20260613_133242_2016.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-wetland-under-the-lights.jpg" />
+<Pi src="Compress_20260613_133242_2016.jpg" />
 
 # THIS IS A WORK OF FICTION
 

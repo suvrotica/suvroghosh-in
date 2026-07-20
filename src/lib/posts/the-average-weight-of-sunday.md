@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["SweetBelly Calm","Nine Hundred","Medical College","Ishani","Ananya","Rafiq","NutriNest","SweetBelly","Dessert","Polymer"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-the-average-weight-of-sunday.jpg"
+thumbnail: "/images/Compress_20260603_041131_1164.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-average-weight-of-sunday.jpg" />
+<Pi src="Compress_20260603_041131_1164.jpg" />
 
 # THIS IS A WORK OF FICTION
 

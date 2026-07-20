@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tea Stall","Paper Plate","Balcony Grill","Long Enough","Red Line","Niharika","Arko","Kabir","Split","Father"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-second-mouth.jpg"
+thumbnail: "/images/Compress_20260514_215732_2937.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-second-mouth.jpg" />
+<Pi src="Compress_20260514_215732_2937.jpg" />
 
 # THIS IS A WORK OF FICTION
 

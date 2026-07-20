@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Maati Dao","Gola Dao","Give Earth","Anirban","Raka","Maati","Chant","Recorder","Rail","Asphalt"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-the-chant-beneath-chowringhee.jpg"
+thumbnail: "/images/Compress_20260609_084723_3858.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-chant-beneath-chowringhee.jpg" />
+<Pi src="Compress_20260609_084723_3858.jpg" />
 
 # THIS IS A WORK OF FICTION
 

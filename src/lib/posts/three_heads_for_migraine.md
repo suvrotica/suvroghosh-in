@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Ishani Roy","Splitting Headache","Tea Stall","Power Cut","Arka","Trinocet-MR","Heads","Prabal","Asterion","Migraine"]
 published: true
 color: "crimson"
-thumbnail: "/thumbnail/safe-three-heads-for-migraine.jpg"
+thumbnail: "/images/Compress_20260604_131043_3530.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-three-heads-for-migraine.jpg" />
+<Pi src="Compress_20260604_131043_3530.jpg" />
 
 # THIS IS A WORK OF FICTION
 

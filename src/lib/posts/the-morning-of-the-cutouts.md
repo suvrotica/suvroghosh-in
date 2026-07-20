@@ -6,14 +6,14 @@ category: "Short Fiction"
 tags: ["SETU VISTA","Five Hundred Rupees","Likeness Asset","Paper Khokon","Paper Piyali","Tuhin","Robot","Khokon-kaku","Cutout","Piyali"]
 published: true
 color: "#3b3b36"
-thumbnail: "/thumbnail/safe-the-morning-of-the-cutouts.jpg"
+thumbnail: "/images/Compress_20260514_184755_5224.jpg"
 ---
 
 <TTS />
 
 # THIS IS A WORK OF FICTION
 
-<Pi src="/thumbnail/safe-the-morning-of-the-cutouts.jpg" />
+<Pi src="Compress_20260514_184755_5224.jpg" />
 
 Tuhin woke because the morning had forgotten how to be morning.
 

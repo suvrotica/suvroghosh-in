@@ -8,7 +8,7 @@
 
 	let { data }: { data: PageData } = $props();
 
-	const title = 'Writing & Essays | Suvro Ghosh';
+	const title = 'Writings | Suvro Ghosh';
 	const description =
 		'Long-form writing by Suvro Ghosh across essays, fiction, healthcare systems, science, technology, society, and ordinary life in Calcutta.';
 	const canonicalUrl = siteUrl + '/writing';
@@ -27,7 +27,7 @@
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
 	<header class="mb-10">
 		<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-5xl dark:text-neutral-100">
-			Writing &amp; Essays
+			Writings
 		</h1>
 		<p class="text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
 			A reading room for essays, fiction, healthcare systems, science, technology, society, and

@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Chair Leg","Broken Chair","Nirmal-babu","Arindam","Minati-di","Terrace","Tap","Knocking","Father","Opened"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-body-rent.jpg"
+thumbnail: "/images/Compress_20260607_131646_6816.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-body-rent.jpg" />
+<Pi src="Compress_20260607_131646_6816.jpg" />
 
 # THIS IS A WORK OF FICTION
 

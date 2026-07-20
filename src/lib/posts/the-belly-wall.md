@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Iron Rod","Haripada","Kedar","Mili","Gecko","Belly","Tok","Canal","Wall","Tok-tok"]
 published: true
 color: "sickly green"
-thumbnail: "/thumbnail/safe-the-belly-wall.jpg"
+thumbnail: "/images/Compress_20260606_053211_1558.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-belly-wall.jpg" />
+<Pi src="Compress_20260606_053211_1558.jpg" />
 
 # THIS IS A WORK OF FICTION
 

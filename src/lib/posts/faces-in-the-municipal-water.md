@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Chhaya Bari","Niloy Phone","Specimen Box","Tea Stalls","Niloy Thought","Mira","Dutta","Ashfaq","Worms","Reservoir"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-faces-in-the-municipal-water.jpg"
+thumbnail: "/images/Compress_20260603_144743_3968.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-faces-in-the-municipal-water.jpg" />
+<Pi src="Compress_20260603_144743_3968.jpg" />
 
 # THIS IS A WORK OF FICTION
 

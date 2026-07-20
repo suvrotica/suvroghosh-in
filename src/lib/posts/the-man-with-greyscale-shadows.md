@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Guava Tree","Seven Shadows","Pale Silver","Library Book","Blue Kite","Tuli","Kite","Nirmal-kaku","Paltu","Ronit-da"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-man-with-greyscale-shadows.jpg"
+thumbnail: "/images/charcoal-horror-zigzag-presence.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-man-with-greyscale-shadows.jpg" />
+<Pi src="charcoal-horror-zigzag-presence.jpg" />
 
 # THIS IS A WORK OF FICTION
 

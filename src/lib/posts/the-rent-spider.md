@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Terrace Room","Somnath","Nirmal","Minati","Rini","Father","Fractions","Terrace","Hairs","Thread"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-rent-spider.jpg"
+thumbnail: "/images/Compress_20260614_112536_6388.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-rent-spider.jpg" />
+<Pi src="Compress_20260614_112536_6388.jpg" />
 
 # THIS IS A WORK OF FICTION
 

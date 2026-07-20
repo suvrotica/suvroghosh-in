@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Benu Babu","Aqua Residency","Returned Fish","Anima","Paltu","Fish","Haru","Benu","Lahiri","Mrs"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-fish-that-remembered.jpg"
+thumbnail: "/images/Compress_20260613_183058_8488.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-fish-that-remembered.jpg" />
+<Pi src="Compress_20260613_183058_8488.jpg" />
 
 # THIS IS A WORK OF FICTION
 

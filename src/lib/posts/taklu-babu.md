@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Taklu Babu","Pink Scalp","College Girl","Taklu","Babu","Bald","Steered","Fish","Rickshaw-Wallah","Cat"]
 published: true
 color: "#2c3e50"
-thumbnail: "/thumbnail/safe-taklu-babu.jpg"
+thumbnail: "/images/Compress_20260622_124351_1146.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-taklu-babu.jpg" />
+<Pi src="Compress_20260622_124351_1146.jpg" />
 
 # THIS IS A WORK OF FICTION
 

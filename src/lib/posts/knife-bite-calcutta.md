@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Knife Bite","Ritwick","Nilanjana","Mira","Jingle","Khabo","Bite","Eyelids","Audio","Tune"]
 published: true
 color: "blood orange"
-thumbnail: "/thumbnail/safe-knife-bite-calcutta.jpg"
+thumbnail: "/images/Compress_20260603_105956_6470.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-knife-bite-calcutta.jpg" />
+<Pi src="Compress_20260603_105956_6470.jpg" />
 
 # THIS IS A WORK OF FICTION
 

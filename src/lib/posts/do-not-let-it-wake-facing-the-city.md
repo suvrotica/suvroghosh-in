@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Wake Facing","Howrah Bridge","Tea Seller","Anjali","Kitten","Prabir","Bridge","Mina","Dutta","Bappa"]
 published: true
 color: "#4a4a4a"
-thumbnail: "/thumbnail/safe-do-not-let-it-wake-facing-the-city.jpg"
+thumbnail: "/images/Compress_20260627_021235_5350.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-do-not-let-it-wake-facing-the-city.jpg" />
+<Pi src="Compress_20260627_021235_5350.jpg" />
 
 # THIS IS A WORK OF FICTION
 

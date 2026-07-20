@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Cleaner Version Meant","Lake Market","Red Zones","Aritra","Sanyal","Mili","Cockroach","Taps","Dum","Mother"]
 published: true
 color: "sickly green"
-thumbnail: "/thumbnail/safe-the-filth-that-learned-to-stand.jpg"
+thumbnail: "/images/Compress_20260602_063022_2977.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-filth-that-learned-to-stand.jpg" />
+<Pi src="Compress_20260602_063022_2977.jpg" />
 
 # THIS IS A WORK OF FICTION
 

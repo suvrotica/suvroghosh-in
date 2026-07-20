@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["San Antonio","Colin","Arindam","Meera","Luz","Garage","Mother","Texas","Worm","Generator"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-circle-of-death.jpg"
+thumbnail: "/images/Compress_20260607_080940_0677.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-circle-of-death.jpg" />
+<Pi src="Compress_20260607_080940_0677.jpg" />
 
 # THIS IS A WORK OF FICTION
 

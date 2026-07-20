@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Supramatrin Gold","Matri Sadan","Grey Paste","Nursing Home","Tea Stall","Nandini","Ruma","Piyali","Supramatrin","Tapas"]
 published: true
 color: "maroon"
-thumbnail: "/thumbnail/safe-ten-kilo-children.jpg"
+thumbnail: "/images/Compress_20260605_074511_1368.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ten-kilo-children.jpg" />
+<Pi src="Compress_20260605_074511_1368.jpg" />
 
 # THIS IS A WORK OF FICTION
 

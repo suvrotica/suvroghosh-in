@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Tea Stall","Arka","Rishav","Hair","Keshjol","Sachet","Mother","K-Index","Scalp","Cosmetic"]
 published: true
 color: "black"
-thumbnail: "/thumbnail/safe-keshkhor.jpg"
+thumbnail: "/images/Compress_20260602_095341_1784.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-keshkhor.jpg" />
+<Pi src="Compress_20260602_095341_1784.jpg" />
 
 # THIS IS A WORK OF FICTION
 

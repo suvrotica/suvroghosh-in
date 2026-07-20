@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Bhola Baba","Donation Box","Bell Rang","Baba Mat","Sanctum Wall","Nirmal","Haradhan","Cow","Sefali","Temple"]
 published: true
 color: "Ochre"
-thumbnail: "/thumbnail/safe-the-third-stomach.jpg"
+thumbnail: "/images/Compress_20260610_205242_2401.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-third-stomach.jpg" />
+<Pi src="Compress_20260610_205242_2401.jpg" />
 
 # THIS IS A WORK OF FICTION
 

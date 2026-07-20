@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Heat Dome","Delivery Bag","Arindam","Nandita","Rafiq","Mira","Heat","Gel","Roof","Delivery"]
 published: true
 color: "burnt orange"
-thumbnail: "/thumbnail/safe-the-june-that-stayed.jpg"
+thumbnail: "/images/Compress_20260603_032454_4137.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-june-that-stayed.jpg" />
+<Pi src="Compress_20260603_032454_4137.jpg" />
 
 # THIS IS A WORK OF FICTION
 

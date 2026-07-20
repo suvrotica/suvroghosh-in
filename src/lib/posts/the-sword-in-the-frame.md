@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Reptile King","Mosquito Net","Tram Bell","Exercise Books","Fish Stall","Bishwanath","Reptile","Mitali","Blade","Haru"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-sword-in-the-frame.jpg"
+thumbnail: "/images/Compress_20260607_161730_0686.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-sword-in-the-frame.jpg" />
+<Pi src="Compress_20260607_161730_0686.jpg" />
 
 # THIS IS A WORK OF FICTION
 

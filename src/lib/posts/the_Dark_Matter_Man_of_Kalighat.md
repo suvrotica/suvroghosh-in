@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Eastern Regency","Riddhi Sen","Mira Nandi","Riddhi Asked","Dark Matter","Abhra","Mira","Nandi","Haru","Subtraction"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-dark-matter-man-of-kalighat.jpg"
+thumbnail: "/images/Compress_20260529_110838_8356.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-dark-matter-man-of-kalighat.jpg" />
+<Pi src="Compress_20260529_110838_8356.jpg" />
 
 # THIS IS A WORK OF FICTION
 

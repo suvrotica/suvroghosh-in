@@ -6,11 +6,11 @@ category: "Short Fiction"
 tags: ["Meera","Kartik","Arunava","Lopa","LifeCrown","ANNAPURNA","K-19","Mansion","Gun","Signed"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-protein-man.jpg"
+thumbnail: "/images/Compress_20260529_091946_6601.jpg"
 ---
 
 <TTS />
-<Pi src="/thumbnail/safe-the-protein-man.jpg" />
+<Pi src="Compress_20260529_091946_6601.jpg" />
 
 # THIS IS A WORK OF FICTION
 

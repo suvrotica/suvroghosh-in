@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Sayan Dutta","Height Potential","Week Eight Height","Tea Stall","Nandita Asked","Arka","Nandita","Sayan","MEANLINE","Inches"]
 published: true
 color: "Charcoal"
-thumbnail: "/thumbnail/safe-meanline.jpg"
+thumbnail: "/images/Compress_20260603_051806_6539.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-meanline.jpg" />
+<Pi src="Compress_20260603_051806_6539.jpg" />
 
 # THIS IS A WORK OF FICTION
 

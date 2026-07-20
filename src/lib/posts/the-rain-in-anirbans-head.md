@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Inspector Ghosh","Source Node","Tea Stall","Anirban","Debolina","Rini","SomaLink","Cloud","Rain","Inspector"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-rain-in-anirbans-head.jpg"
+thumbnail: "/images/Compress_20260604_081644_4173.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-rain-in-anirbans-head.jpg" />
+<Pi src="Compress_20260604_081644_4173.jpg" />
 
 # THIS IS A WORK OF FICTION
 

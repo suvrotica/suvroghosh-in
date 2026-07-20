@@ -6,12 +6,12 @@ category: "Short Fiction"
 tags: ["Raw Chicken","Good Boy","Anirban","Sabitri","Montu","Ghosh","Mrs","Father","Mother","Hunger"]
 published: true
 color: "Maroon"
-thumbnail: "/thumbnail/safe-the-good-boy-hunger.jpg"
+thumbnail: "/images/Compress_20260616_182840_0996.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-good-boy-hunger.jpg" />
+<Pi src="Compress_20260616_182840_0996.jpg" />
 
 # THIS IS A WORK OF FICTION
 
