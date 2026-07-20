@@ -8096,6 +8096,22 @@
       "sourceHash": "b0d6630a15e06ee4cec1f10670bce1c87ce1e0ea4aec773abe1f5027f4dc9cd7",
       "width": 1600
     },
+    "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 209994,
+      "outputHash": "0d6679431772bd8d87d53e8812c7c06f0b629b0528cb1ab3ea129e255c0b6ca5",
+      "psnrDb": 37.53,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 253289,
+      "sourceHash": "5c3c078c5a7160aff5084c77b12d11ef68cfd54315f55f84f8b05a1a2a44e7d0",
+      "width": 1600
+    },
     "static/images/visualizations/hello-fragment-poster.jpg": {
       "format": "JPEG",
       "height": 941,

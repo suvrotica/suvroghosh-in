@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import Visualization from './Visualization.svelte';
+	import ArtificialLifeLab from './artificial-life/ArtificialLifeLab.svelte';
 	import type { BlogPostSummary } from '$lib/content/posts';
 	import { visualizationSummaries } from '$lib/visualizations/registry';
 
@@ -13,7 +13,11 @@
 	const postSubjects: Record<string, readonly string[]> = {
 		'hello-fragment-your-first-shader-from-scratch':
 			visualizationSummaries['hello-fragment'].subjects,
-		'hello-observable-your-first-living-d3-visualization': ['Mathematics']
+		'hello-observable-your-first-living-d3-visualization': ['Mathematics'],
+		'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser': [
+			'Biology',
+			'Computer Science'
+		]
 	};
 	const subjects = [
 		'All',
@@ -103,20 +107,19 @@
 					id="featured-experiment-heading"
 					class="m-0 text-2xl text-neutral-950 sm:text-3xl dark:text-white"
 				>
-					A fragment shader you can touch
+					An ecosystem that writes its own history
 				</h2>
 			</div>
 			<p class="m-0 text-left text-sm text-neutral-600 dark:text-neutral-400">
-				Move across the field to bend its coordinates.
+				Change resources and inheritance; watch selection emerge.
 			</p>
 		</div>
 
-		<Visualization
-			sketch="hello-fragment"
-			title="Hello, Fragment — gallery preview"
+		<ArtificialLifeLab
+			title="Evolving Microbe Garden — gallery preview"
+			compact={true}
 			controls={false}
-			source={false}
-			caption="The complete exhibit includes presets, controls, source files, and an incremental code walkthrough."
+			caption="The complete exhibit adds scientific presets, 13 numeric controls, trait distributions, and an annotated source walkthrough."
 		/>
 	</section>
 
@@ -194,6 +197,13 @@
 							{/if}
 						</div>
 						<div class="p-5">
+							{#if post.series?.length}
+								<p
+									class="mb-2 text-xs font-bold tracking-[0.12em] text-cyan-700 uppercase dark:text-cyan-300"
+								>
+									{post.series.join(' · ')}
+								</p>
+							{/if}
 							<div class="mb-3 flex flex-wrap gap-2">
 								{#each [...(postSubjects[post.slug] ?? []), ...(post.tags ?? [])]
 									.filter((tag, index, values) => subjects.includes(tag as (typeof subjects)[number]) && values.indexOf(tag) === index)

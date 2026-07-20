@@ -10,6 +10,12 @@ The runtime dependencies are deliberately narrow. `p5` supports instance-mode We
 
 ```text
 src/lib/components/visualizations/
+  artificial-life/
+    ArtificialLifeLab.svelte   # mdsvex/gallery shell and experiment state
+    ArtificialLifeCanvas.svelte # Canvas rendering, RAF, visibility, fallback
+    SimulationControls.svelte  # scientific controls, presets, actions
+    SimulationStats.svelte     # textual census and chart composition
+    TraitChart.svelte          # lightweight live SVG charts
   ObservableNotebook.svelte     # selected cells, native DOM output, runtime lifecycle
   Visualization.svelte          # compact mdsvex authoring entrypoint
   VisualizationShell.svelte     # lazy loading, state, fallback, fullscreen
@@ -22,6 +28,14 @@ src/lib/components/visualizations/
   WebGLFallback.svelte           # static fallback state
 
 src/lib/visualizations/
+  artificial-life/
+    artificialLifeEngine.ts    # deterministic fixed-step model, no rendering
+    genome.ts                  # genome creation, inheritance, mutation bounds
+    organism.ts                # founder and offspring factories
+    environment.ts             # petri-dish geometry, food, predators, sensing
+    seededRandom.ts            # reproducible pseudo-random stream
+    simulationPresets.ts       # controls, defaults, four scientific presets
+    types.ts                   # model state and telemetry interfaces
   observable.ts                 # notebook and cell metadata types
   registry.ts                    # small ID-to-dynamic-import map
   types.ts                       # experiment, parameter, preset, and source types
@@ -61,6 +75,22 @@ Add an incremental code-and-result sequence when the experiment exports stages:
 ```svelte
 <CodeWalkthrough sketch="hello-fragment" />
 ```
+
+## Embed an Artificial Life Lab
+
+Artificial-life posts use a direct typed model rather than the shader registry. The model stays reusable and testable because the Canvas and controls only read or update engine state.
+
+```svelte
+<script>
+	import ArtificialLifeLab from '$lib/components/visualizations/artificial-life/ArtificialLifeLab.svelte';
+</script>
+
+<ArtificialLifeLab title="Evolving Microbe Garden" caption="A concise, model-specific caption." />
+```
+
+Set `compact={true}` and `controls={false}` for a gallery preview. New posts in the series should add `series: ["Artificial Life Lab"]` to front matter. Series values flow into search filters, SEO topics, and related-post scoring, while `category: "Visualizations"` keeps the ordinary archive, sitemap, RSS, and project routes intact.
+
+To create a related model, reuse `SeededRandom`, the fixed-step lifecycle, telemetry interfaces, and shell where their assumptions still fit. Add model-specific genes and environmental rules in `src/lib/visualizations/artificial-life`; do not place biological rules in the Canvas renderer. Any new random event must consume the engine-owned seeded stream. Any new trait must define founder values, safe bounds, inheritance behaviour, statistics if relevant, and a visible or behavioural consequence.
 
 ## Embed Observable cells in Markdown
 
@@ -131,6 +161,8 @@ Each embed creates p5 in instance mode. There are no global `setup`, `draw`, sha
 `ObservableNotebook` follows the same boundary. Its server-rendered shell contains headings, cell descriptions, loading text, captions, and a `<noscript>` explanation. `onMount` sets up the reduced-motion query and lazily imports both `@observablehq/runtime` and `d3` when the embed approaches the viewport. Each component instance owns one runtime. On unmount it disconnects its intersection observer, removes the media-query listener, calls `runtime.dispose()`, and clears generated nodes.
 
 Runtime disposal resolves Observable invalidation. Notebook cells must use that signal for cell-owned work: the first tutorial removes the form's `input` listener and stops its `d3.timer`. Reactive recomputation invalidates the old cell before starting its replacement, so slider changes do not accumulate timers.
+
+`ArtificialLifeCanvas` starts its browser-only engine in `onMount`, advances it at a fixed 30 Hz model step, and renders through `requestAnimationFrame`. `IntersectionObserver` cancels the frame loop offscreen; `ResizeObserver` maintains a responsive Canvas with device-pixel ratio capped at 1.5. Unmounting cancels RAF and disconnects both observers and the visibility listener. The population, food, history, and transient-event collections are bounded. Append `?canvas=off` to verify the static-poster fallback and `?motion=reduce` to verify the deterministic reduced-motion path.
 
 ## Accessibility and input
 

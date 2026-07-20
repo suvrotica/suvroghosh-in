@@ -21,7 +21,7 @@ const stringFields = [
 	'status',
 	'inPlainEnglish'
 ];
-const allowedFields = new Set([...stringFields, 'tags', 'published', 'keyTerms', 'faq']);
+const allowedFields = new Set([...stringFields, 'tags', 'series', 'published', 'keyTerms', 'faq']);
 const errors = [];
 let publishedCount = 0;
 let unpublishedCount = 0;
@@ -120,6 +120,7 @@ for (const file of postFiles) {
 	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });
+	if (metadata.series !== undefined) validateStringArray(file, 'series', metadata.series);
 	if (metadata.keyTerms !== undefined) validateStringArray(file, 'keyTerms', metadata.keyTerms);
 
 	if (typeof metadata.date === 'string' && !isCalendarDate(metadata.date)) {

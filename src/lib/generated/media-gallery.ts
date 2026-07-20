@@ -3555,6 +3555,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 553
 		},
 		{
+			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
+			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
+			"bytes": 209994,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "visualizations/hello-fragment-poster.jpg",
 			"src": "/images/visualizations/hello-fragment-poster.jpg",
 			"bytes": 163655,

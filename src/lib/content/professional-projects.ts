@@ -123,13 +123,22 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		contributions: [
 			'Built a lazy, server-safe p5.js and WebGL framework for interactive experiments inside ordinary Markdown posts.',
 			'Added native Observable runtime and D3 notebook cells with responsive SVG, reactive controls, accessible descriptions, reduced-motion defaults, and deterministic cleanup.',
+			'Engineered a seeded artificial-life system with inherited genomes, bounded mutation, explicit energy accounting, predator pressure, fixed-step simulation, and reproducible presets.',
 			'Designed accessible controls, touch and keyboard interaction, reduced-motion behaviour, static fallbacks, and isolated multi-sketch lifecycle management.',
 			'Publishes first-principles lessons with live output and executable source across D3, Observable notebooks, p5.js, GLSL, Canvas, SVG, and WebGL.'
 		],
-		disciplines: ['D3', 'Observable', 'p5.js', 'GLSL', 'Canvas', 'SVG', 'WebGL'],
+		disciplines: [
+			'Artificial life',
+			'Evolutionary modelling',
+			'TypeScript',
+			'D3',
+			'Canvas',
+			'WebGL'
+		],
 		relatedPostSlugs: [
 			'hello-fragment-your-first-shader-from-scratch',
-			'hello-observable-your-first-living-d3-visualization'
+			'hello-observable-your-first-living-d3-visualization',
+			'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser'
 		],
 		href: '/blog/visualizations'
 	},

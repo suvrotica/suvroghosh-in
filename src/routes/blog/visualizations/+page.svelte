@@ -14,7 +14,7 @@
 
 	const title = 'Visualizations — Interactive Science Gallery | SuvroGhosh.In';
 	const description =
-		'Interactive educational experiments by Suvro Ghosh, using D3, Observable notebooks, SVG, Canvas, p5.js, generative graphics, and GPU shaders to make science and computing memorable.';
+		'Interactive educational experiments by Suvro Ghosh, including deterministic artificial-life and evolution models, D3 notebooks, Canvas simulations, generative graphics, and GPU shaders.';
 	const canonicalUrl = `${siteUrl}/blog/visualizations`;
 </script>
 
@@ -30,6 +30,9 @@
 		'Canvas',
 		'p5.js',
 		'GLSL shaders',
+		'Artificial life',
+		'Evolution simulation',
+		'Evolving Microbe Garden',
 		'Science simulations',
 		'Computer science education',
 		'Suvro Ghosh'
@@ -39,7 +42,8 @@
 			name: 'Visualizations — Interactive Science Gallery',
 			description,
 			url: canonicalUrl,
-			about: 'Interactive science, mathematics, computer science, and machine-learning education'
+			about:
+				'Interactive science, artificial life, mathematics, computer science, and machine-learning education'
 		}),
 		breadcrumbSchema([
 			{ name: 'Home', url: siteUrl },

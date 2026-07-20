@@ -8303,6 +8303,22 @@
 				"Nursery"
 			],
 			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.md": {
+			"bodyHash": "dbcddcdd64df3f69db4413361e0ade3e8fe3f8653258b978211b39ed64ff36bb",
+			"generatedTags": [
+				"Prey Arms Race",
+				"Predator Prey",
+				"Keeping Mutation Bounded",
+				"Abundant Garden",
+				"Phenotype Packed",
+				"Population",
+				"Garden",
+				"Mutation",
+				"Energy",
+				"Predators"
+			],
+			"generatorVersion": "2026-07-13.1"
 		}
 	},
 	"maxTags": 10

@@ -114,7 +114,9 @@ const topicAccumulators = new Map<string, TopicAccumulator>();
 
 for (const post of publishedPosts) {
 	const uniqueTags = new Set(
-		(post.tags ?? []).map(normalizeTag).filter((tag) => tag && !nonTopicalTags.has(tag))
+		[...(post.tags ?? []), ...(post.series ?? [])]
+			.map(normalizeTag)
+			.filter((tag) => tag && !nonTopicalTags.has(tag))
 	);
 
 	for (const tag of uniqueTags) {
@@ -122,7 +124,7 @@ for (const post of publishedPosts) {
 	}
 
 	const seenTopics = new Set<string>();
-	for (const rawTag of [...(post.tags ?? []), ...post.derivedTopics]) {
+	for (const rawTag of [...(post.tags ?? []), ...(post.series ?? []), ...post.derivedTopics]) {
 		const label = rawTag.trim();
 		const topicSlug = canonicalTopicSlug(label);
 		if (!label || !isNavigationalTopic(label) || seenTopics.has(topicSlug)) continue;
@@ -308,7 +310,7 @@ export function getRelatedPosts(slug: string, limit = 4) {
 	if (!current) return [];
 
 	const currentTags = new Map<string, string>();
-	for (const tag of current.tags ?? []) {
+	for (const tag of [...(current.tags ?? []), ...(current.series ?? [])]) {
 		const normalizedTag = normalizeTag(tag);
 		if (normalizedTag && !nonTopicalTags.has(normalizedTag) && !currentTags.has(normalizedTag)) {
 			currentTags.set(normalizedTag, tag.trim());
@@ -320,7 +322,7 @@ export function getRelatedPosts(slug: string, limit = 4) {
 	return publishedPosts
 		.filter((post) => post.slug !== slug)
 		.map((post) => {
-			const postTags = new Set((post.tags ?? []).map(normalizeTag));
+			const postTags = new Set([...(post.tags ?? []), ...(post.series ?? [])].map(normalizeTag));
 			const sharedTags = Array.from(currentTags, ([normalizedTag, label]) => ({
 				label,
 				weight:

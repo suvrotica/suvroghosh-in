@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T04:56:40.954101+00:00",
+  "generatedAt": "2026-07-20T13:27:30.859463+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -780,6 +780,29 @@
         "Systems",
         "Medical",
         "Often"
+      ],
+      "wordCount": 130
+    },
+    "artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser": {
+      "generatedAt": "2026-07-20T13:27:30.164543+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.svg",
+      "source": "src/lib/posts/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.md",
+      "sourceHash": "b171482ff7ea28ae08af4c12636201a99a37e684a6fe496792ff80b3ac5d18aa",
+      "sourceModified": "2026-07-20T13:27:13.590290+00:00",
+      "topWords": [
+        "Population",
+        "Food",
+        "Energy",
+        "Garden",
+        "Mutation",
+        "Organism",
+        "Predators",
+        "Movement",
+        "Model",
+        "Change",
+        "Every",
+        "Pressure"
       ],
       "wordCount": 130
     },

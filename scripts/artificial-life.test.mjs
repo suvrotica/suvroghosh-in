@@ -1,0 +1,211 @@
+import assert from 'node:assert/strict';
+import { after, test } from 'node:test';
+import { createServer } from 'vite';
+
+const vite = await createServer({
+	configFile: false,
+	root: process.cwd(),
+	appType: 'custom',
+	server: { middlewareMode: true }
+});
+
+const { ArtificialLifeEngine } = await vite.ssrLoadModule(
+	'/src/lib/visualizations/artificial-life/artificialLifeEngine.ts'
+);
+const { inheritGenome, GENOME_BOUNDS } = await vite.ssrLoadModule(
+	'/src/lib/visualizations/artificial-life/genome.ts'
+);
+const { SeededRandom } = await vite.ssrLoadModule(
+	'/src/lib/visualizations/artificial-life/seededRandom.ts'
+);
+const { DEFAULT_SIMULATION_PARAMETERS } = await vite.ssrLoadModule(
+	'/src/lib/visualizations/artificial-life/simulationPresets.ts'
+);
+const { FIXED_TIME_STEP } = await vite.ssrLoadModule(
+	'/src/lib/visualizations/artificial-life/types.ts'
+);
+
+after(async () => {
+	await vite.close();
+});
+
+function snapshot(engine) {
+	return {
+		time: Number(engine.simulationTime.toFixed(6)),
+		births: engine.totalBirths,
+		deaths: { ...engine.deathCounts },
+		organisms: engine.organisms
+			.map((organism) => ({
+				id: organism.id,
+				lineageId: organism.lineageId,
+				generation: organism.generation,
+				x: Number(organism.x.toFixed(5)),
+				y: Number(organism.y.toFixed(5)),
+				energy: Number(organism.energy.toFixed(5)),
+				age: Number(organism.age.toFixed(5)),
+				genome: Object.fromEntries(
+					Object.entries(organism.genome).map(([key, value]) => [key, Number(value.toFixed(6))])
+				)
+			}))
+			.sort((a, b) => a.id - b.id),
+		food: engine.food
+			.map((particle) => ({
+				id: particle.id,
+				x: Number(particle.x.toFixed(5)),
+				y: Number(particle.y.toFixed(5)),
+				energy: particle.energy
+			}))
+			.sort((a, b) => a.id - b.id)
+	};
+}
+
+test('the same seed and parameters produce the same fixed-step history', () => {
+	const parameters = {
+		...DEFAULT_SIMULATION_PARAMETERS,
+		startingPopulation: 24,
+		populationLimit: 90,
+		predatorsEnabled: true
+	};
+	const first = new ArtificialLifeEngine(parameters, 'repeatable-garden-17');
+	const second = new ArtificialLifeEngine(parameters, 'repeatable-garden-17');
+
+	first.stepMany(360, FIXED_TIME_STEP);
+	second.stepMany(360, FIXED_TIME_STEP);
+
+	assert.deepEqual(snapshot(first), snapshot(second));
+});
+
+test('inheritance copies an unchanged genome when mutation is disabled', () => {
+	const engine = new ArtificialLifeEngine(
+		{ ...DEFAULT_SIMULATION_PARAMETERS, startingPopulation: 1 },
+		'parent-genome'
+	);
+	const parent = engine.organisms[0].genome;
+	const child = inheritGenome(parent, new SeededRandom('no-mutation'), {
+		...DEFAULT_SIMULATION_PARAMETERS,
+		mutationProbability: 0,
+		mutationMagnitude: 0.45
+	});
+
+	assert.deepEqual(child, parent);
+	assert.notEqual(child, parent);
+});
+
+test('mutation changes inherited traits but never leaves their declared bounds', () => {
+	const engine = new ArtificialLifeEngine(
+		{ ...DEFAULT_SIMULATION_PARAMETERS, startingPopulation: 1 },
+		'mutating-parent'
+	);
+	const parent = { ...engine.organisms[0].genome, mutationRate: 0.5 };
+	const random = new SeededRandom('bounded-mutation');
+	let changedTraits = 0;
+
+	for (let sample = 0; sample < 80; sample += 1) {
+		const child = inheritGenome(parent, random, {
+			...DEFAULT_SIMULATION_PARAMETERS,
+			mutationProbability: 0.8,
+			mutationMagnitude: 0.45
+		});
+		for (const [key, [minimum, maximum]] of Object.entries(GENOME_BOUNDS)) {
+			assert.ok(child[key] >= minimum, `${key} fell below its bound`);
+			assert.ok(child[key] <= maximum, `${key} exceeded its bound`);
+			if (child[key] !== parent[key]) changedTraits += 1;
+		}
+	}
+
+	assert.ok(changedTraits > 0);
+});
+
+test('living and moving consumes energy when there is no food', () => {
+	const engine = new ArtificialLifeEngine(
+		{
+			...DEFAULT_SIMULATION_PARAMETERS,
+			startingPopulation: 1,
+			foodSpawnRate: 0,
+			basalEnergyCost: 1,
+			movementEnergyCost: 1,
+			environmentalHarshness: 0,
+			predatorsEnabled: false
+		},
+		'energy-ledger'
+	);
+	engine.food.length = 0;
+	const before = engine.organisms[0].energy;
+
+	engine.stepMany(10, FIXED_TIME_STEP);
+
+	assert.ok(engine.organisms[0].energy < before);
+});
+
+test('an organism above its effective threshold reproduces and shares energy', () => {
+	const parameters = {
+		...DEFAULT_SIMULATION_PARAMETERS,
+		startingPopulation: 1,
+		foodSpawnRate: 0,
+		reproductionThreshold: 55,
+		populationLimit: 10,
+		predatorsEnabled: false
+	};
+	const engine = new ArtificialLifeEngine(parameters, 'reproduction');
+	engine.food.length = 0;
+	engine.organisms[0].genome.reproductionThreshold = 55;
+	engine.organisms[0].energy = 200;
+
+	engine.step(FIXED_TIME_STEP);
+
+	assert.equal(engine.totalBirths, 1);
+	assert.equal(engine.organisms.length, 2);
+	assert.equal(engine.organisms[1].generation, 1);
+	assert.equal(engine.organisms[1].lineageId, engine.organisms[0].lineageId);
+	assert.ok(engine.organisms[0].energy < 200);
+});
+
+test('starvation and ageing remove organisms and record the death cause', () => {
+	const starvation = new ArtificialLifeEngine(
+		{
+			...DEFAULT_SIMULATION_PARAMETERS,
+			startingPopulation: 1,
+			foodSpawnRate: 0,
+			basalEnergyCost: 3,
+			movementEnergyCost: 1.5,
+			environmentalHarshness: 0,
+			predatorsEnabled: false
+		},
+		'starvation'
+	);
+	starvation.food.length = 0;
+	starvation.organisms[0].energy = 0.001;
+	starvation.step(FIXED_TIME_STEP);
+	assert.equal(starvation.organisms.length, 0);
+	assert.equal(starvation.deathCounts.starvation, 1);
+
+	const ageing = new ArtificialLifeEngine(
+		{ ...DEFAULT_SIMULATION_PARAMETERS, startingPopulation: 1, predatorsEnabled: false },
+		'ageing'
+	);
+	ageing.organisms[0].age = ageing.organisms[0].genome.lifespan + 1;
+	ageing.step(FIXED_TIME_STEP);
+	assert.equal(ageing.organisms.length, 0);
+	assert.equal(ageing.deathCounts.age, 1);
+});
+
+test('founders and offspring never exceed the configured population limit', () => {
+	const parameters = {
+		...DEFAULT_SIMULATION_PARAMETERS,
+		startingPopulation: 40,
+		foodSpawnRate: 0,
+		reproductionThreshold: 55,
+		populationLimit: 7,
+		predatorsEnabled: false
+	};
+	const engine = new ArtificialLifeEngine(parameters, 'population-cap');
+	assert.equal(engine.organisms.length, 7);
+
+	for (const organism of engine.organisms) {
+		organism.genome.reproductionThreshold = 55;
+		organism.energy = 300;
+	}
+	engine.stepMany(60, FIXED_TIME_STEP);
+
+	assert.ok(engine.organisms.length <= parameters.populationLimit);
+});

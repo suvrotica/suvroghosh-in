@@ -34,7 +34,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	const canonicalUrl = blogPostUrl(metadata.category, slug);
 	const catLabel = categoryLabel(normalizedCategory);
-	const topicLabels = [...metadata.tags, ...metadata.derivedTopics];
+	const topicLabels = [...metadata.tags, ...(metadata.series ?? []), ...metadata.derivedTopics];
 	const keywords = [...topicLabels, metadata.category, 'Suvro Ghosh'].filter(Boolean).slice(0, 15);
 
 	const breadcrumbs = breadcrumbSchema([
