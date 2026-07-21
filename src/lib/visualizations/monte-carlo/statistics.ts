@@ -1,7 +1,8 @@
 import {
 	MINIMUM_CONFIDENCE_SAMPLES,
 	type ConvergenceObservation,
-	type MonteCarloStatistics
+	type MonteCarloStatistics,
+	type SamplingMethod
 } from './types';
 
 export function classifyPoint(x: number, y: number) {
@@ -9,6 +10,7 @@ export function classifyPoint(x: number, y: number) {
 }
 
 export function calculateStatistics(
+	method: SamplingMethod,
 	totalSamples: number,
 	insideSamples: number,
 	displayedSamples = totalSamples
@@ -21,6 +23,7 @@ export function calculateStatistics(
 			estimate: null,
 			absoluteError: null,
 			percentageError: null,
+			iidReferenceStandardError: null,
 			standardError: null,
 			confidenceInterval: null
 		};
@@ -30,12 +33,13 @@ export function calculateStatistics(
 	const estimate = 4 * proportion;
 	const absoluteError = Math.abs(estimate - Math.PI);
 	const percentageError = (absoluteError / Math.PI) * 100;
-	const standardError = 4 * Math.sqrt((proportion * (1 - proportion)) / totalSamples);
+	const iidReferenceStandardError = 4 * Math.sqrt((proportion * (1 - proportion)) / totalSamples);
+	const standardError = method === 'pseudorandom' ? iidReferenceStandardError : null;
 	const confidenceInterval =
-		totalSamples >= MINIMUM_CONFIDENCE_SAMPLES
+		method === 'pseudorandom' && totalSamples >= MINIMUM_CONFIDENCE_SAMPLES
 			? {
-					lower: estimate - 1.96 * standardError,
-					upper: estimate + 1.96 * standardError
+					lower: estimate - 1.96 * iidReferenceStandardError,
+					upper: estimate + 1.96 * iidReferenceStandardError
 				}
 			: null;
 
@@ -46,22 +50,24 @@ export function calculateStatistics(
 		estimate,
 		absoluteError,
 		percentageError,
+		iidReferenceStandardError,
 		standardError,
 		confidenceInterval
 	};
 }
 
 export function statisticsObservation(
+	method: SamplingMethod,
 	totalSamples: number,
 	insideSamples: number
 ): ConvergenceObservation {
-	const statistics = calculateStatistics(totalSamples, insideSamples);
+	const statistics = calculateStatistics(method, totalSamples, insideSamples);
 	return {
 		sampleCount: totalSamples,
 		estimate: statistics.estimate ?? 0,
 		absoluteError: statistics.absoluteError ?? Math.PI,
 		percentageError: statistics.percentageError ?? 100,
-		standardError: statistics.standardError ?? 0
+		standardError: statistics.standardError
 	};
 }
 

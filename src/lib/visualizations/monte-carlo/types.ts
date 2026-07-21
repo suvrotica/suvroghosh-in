@@ -28,6 +28,7 @@ export type MonteCarloStatistics = {
 	estimate: number | null;
 	absoluteError: number | null;
 	percentageError: number | null;
+	iidReferenceStandardError: number | null;
 	standardError: number | null;
 	confidenceInterval: ConfidenceInterval | null;
 };
@@ -37,7 +38,7 @@ export type ConvergenceObservation = {
 	estimate: number;
 	absoluteError: number;
 	percentageError: number;
-	standardError: number;
+	standardError: number | null;
 };
 
 export type GenerationResult = {

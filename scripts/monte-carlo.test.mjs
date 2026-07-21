@@ -86,18 +86,26 @@ test('point classification includes the circle boundary and rejects outside coor
 	assert.equal(classifyPoint(1, 1), false);
 });
 
-test('the pi estimate, standard error, and confidence interval use the declared formulae', () => {
-	const statistics = calculateStatistics(100, 80);
+test('IID uncertainty is calculated only for pseudorandom sampling', () => {
+	const statistics = calculateStatistics('pseudorandom', 100, 80);
 	const expectedEstimate = 3.2;
 	const expectedStandardError = 4 * Math.sqrt((0.8 * 0.2) / 100);
 	assert.equal(statistics.estimate, expectedEstimate);
 	assert.equal(statistics.absoluteError, Math.abs(expectedEstimate - Math.PI));
+	assert.equal(statistics.iidReferenceStandardError, expectedStandardError);
 	assert.equal(statistics.standardError, expectedStandardError);
 	assert.deepEqual(statistics.confidenceInterval, {
 		lower: expectedEstimate - 1.96 * expectedStandardError,
 		upper: expectedEstimate + 1.96 * expectedStandardError
 	});
-	assert.equal(calculateStatistics(29, 20).confidenceInterval, null);
+	assert.equal(calculateStatistics('pseudorandom', 29, 20).confidenceInterval, null);
+
+	for (const method of ['stratified', 'halton']) {
+		const designStatistics = calculateStatistics(method, 100, 80);
+		assert.equal(designStatistics.iidReferenceStandardError, expectedStandardError);
+		assert.equal(designStatistics.standardError, null);
+		assert.equal(designStatistics.confidenceInterval, null);
+	}
 });
 
 test('resetting identical experiment settings reproduces samples and statistics', () => {
@@ -147,6 +155,9 @@ test('logarithmic checkpoint recording remains bounded at one million samples', 
 	});
 	experiment.generate(1_000_000);
 	assert.equal(experiment.observations.length, checkpoints.length);
+	assert.equal(experiment.statistics().standardError, null);
+	assert.equal(experiment.statistics().confidenceInterval, null);
+	assert.ok(experiment.observations.every((observation) => observation.standardError === null));
 });
 
 test('the published laboratory uses the normal post pipeline and meaningful WebGL2 shaders', () => {
@@ -169,10 +180,16 @@ test('the published laboratory uses the normal post pipeline and meaningful WebG
 	assert.match(post, /<MonteCarloLab \/>/);
 	assert.match(shaders, /#version 300 es/);
 	assert.match(shaders, /gl_PointCoord/);
-	assert.match(shaders, /smoothstep/);
+	assert.match(shaders, /1\.0 - smoothstep\(0\.25, 1\.55, length\(coordinate\)\)/);
+	assert.doesNotMatch(shaders, /smoothstep\(1\.55, 0\.25/);
+	assert.doesNotMatch(post, /approximate integrals/);
+	assert.match(post, /seed-generated additive shift/);
+	assert.match(post, /How large must \$N\$ become/);
 	assert.match(component, /IntersectionObserver/);
 	assert.match(component, /visibilitychange/);
 	assert.match(component, /aria-live="polite"/);
+	assert.match(component, /IID reference SE · not method uncertainty/);
+	assert.match(component, /disabled=\{method !== 'pseudorandom'\}/);
 	assert.ok(fs.existsSync(thumbnail));
 	assert.doesNotMatch(fs.readFileSync(thumbnail, 'utf8'), /<script/i);
 });

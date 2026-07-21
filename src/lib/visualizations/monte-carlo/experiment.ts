@@ -55,7 +55,7 @@ export class MonteCarloExperiment {
 	}
 
 	statistics(): MonteCarloStatistics {
-		return calculateStatistics(this.total, this.inside, this.visible);
+		return calculateStatistics(this.settings.method, this.total, this.inside, this.visible);
 	}
 
 	generate(requestedSamples: number): GenerationResult {
@@ -81,7 +81,9 @@ export class MonteCarloExperiment {
 				this.checkpointIndex < this.checkpoints.length &&
 				this.total >= this.checkpoints[this.checkpointIndex]
 			) {
-				this.observations.push(statisticsObservation(this.total, this.inside));
+				this.observations.push(
+					statisticsObservation(this.settings.method, this.total, this.inside)
+				);
 				this.checkpointIndex += 1;
 			}
 		}

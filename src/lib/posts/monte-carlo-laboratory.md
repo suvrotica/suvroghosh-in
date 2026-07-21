@@ -1,6 +1,6 @@
 ---
 title: "The Casino That Calculates: An Interactive Monte Carlo Laboratory"
-description: "A shader-powered laboratory for watching random samples estimate π, approximate integrals, reveal statistical error, and demonstrate why Monte Carlo methods work."
+description: "A shader-powered laboratory for watching sampled points estimate π, reveal statistical error, and demonstrate how Monte Carlo methods converge."
 date: "2026-07-21"
 thumbnail: "/images/monte-carlo-laboratory.svg"
 thumbnailAlt: "A mathematical square and inscribed circle filled with classified Monte Carlo samples beside a restrained convergence curve"
@@ -16,7 +16,7 @@ faq:
   - question: "Does this simulation discover the value of π?"
     answer: "No. π is already known and deterministic. The experiment approximates it from a sampled area ratio so that statistical convergence and error are visible."
   - question: "Are the displayed points truly random?"
-    answer: "No. Pseudorandom and stratified modes use a deterministic seeded Mulberry32 generator. Halton mode is an explicitly deterministic low-discrepancy sequence. A repeated seed and method produce the same samples."
+    answer: "No. Pseudorandom and stratified modes use a deterministic seeded Mulberry32 generator. Halton mode applies a reproducible seed-generated shift to a base-2/base-3 low-discrepancy sequence. Every mode is deterministic once its seed is fixed."
   - question: "Why can the error increase after adding samples?"
     answer: "The law of large numbers describes long-run convergence, not improvement after every new observation. A finite run can temporarily move farther from π even while its typical uncertainty shrinks."
 ---
@@ -87,9 +87,9 @@ Three sampling methods change the sequence itself:
 
 - **Pseudorandom** uses a seeded Mulberry32 generator to produce independent-looking uniform coordinates. This is the ordinary Monte Carlo baseline.
 - **Stratified** divides the square into cells, visits every cell once per cycle, and jitters a sample inside it. Coverage is deliberately spread out.
-- **Halton** uses radical-inverse sequences in bases two and three, shifted by the seed. It is deterministic low-discrepancy sampling, usually called quasi-Monte Carlo rather than random sampling.
+- **Halton** uses a reproducible seed-generated additive shift of radical-inverse sequences in bases two and three. It is a randomized quasi-Monte Carlo construction: deterministic once the seed is fixed, but designed to preserve low-discrepancy coverage.
 
-Use the chart selector to plot the estimate or absolute error. The horizontal axis is logarithmic, and observations are kept only near 10, 20, 50, 100, 200, 500, and so on. This preserves the shape of a long run without storing every animation frame. In error view, the dashed theoretical guide shows one standard error with its characteristic **1/√N** slope. Every plotted checkpoint is keyboard-focusable and the same data are available in an expandable table.
+Use the chart selector to plot the estimate or absolute error. The horizontal axis is logarithmic, and observations are kept only near 10, 20, 50, 100, 200, 500, and so on. This preserves the shape of a long run without storing every animation frame. In pseudorandom error view, the dashed theoretical guide shows one IID standard error with its characteristic **1/√N** slope. It is hidden for the other designs because it is not their uncertainty estimate. Every plotted checkpoint is keyboard-focusable and the same data are available in an expandable table.
 
 # Why the dots do not become orderly
 
@@ -107,7 +107,7 @@ $$
 \operatorname{SE}(\hat\pi)=4\sqrt{\frac{\hat p(1-\hat p)}{N}}.
 $$
 
-The approximate 95 per cent confidence interval shown by the instrument is **π̂ ± 1.96 × SE(π̂)**. It appears only after 30 samples because the normal approximation is especially crude at tiny counts. Even later, it is an approximation built on assumptions; it is not a force field guaranteed to contain π in every run.
+In pseudorandom mode, the instrument uses **π̂ ± 1.96 × SE(π̂)** as an approximate 95 per cent confidence interval. It appears only after 30 samples because the normal approximation is especially crude at tiny counts. Even later, it is an approximation built on the independent, identically distributed sampling model; it is not a force field guaranteed to contain π in every run.
 
 The denominator contains **√N**, which creates Monte Carlo's expensive bargain. Halving the typical error requires roughly four times as many independent samples. Gaining about one extra decimal digit may require around one hundred times as many. These are statistical rates, not promises for each seed, but the log-scaled error chart makes the general slope difficult to miss.
 
@@ -115,9 +115,9 @@ The denominator contains **√N**, which creates Monte Carlo's expensive bargain
 
 Ordinary pseudorandom sampling can leave accidental gaps and clusters. Stratification spends the same budget more evenly: a region that has already supplied its allotted sample cannot consume the entire early run. For the smooth boundary in this two-dimensional example, that often reduces variance.
 
-The Halton sequence goes further. Its points are constructed to keep discrepancy—the mismatch between sampled coverage and ideal uniform coverage—small. There is no claim that its next point is random. Quasi-Monte Carlo replaces part of random sampling's clumping with deterministic space filling.
+The shifted Halton sequence goes further. Its underlying points are constructed to keep discrepancy—the mismatch between sampled coverage and ideal uniform coverage—small. A seed-generated additive shift moves the entire sequence reproducibly without turning individual points into IID draws. This randomized quasi-Monte Carlo construction replaces part of random sampling's clumping with structured space filling.
 
-Neither method is universally superior. Dimensionality, smoothness, discontinuities, coordinate ordering, and correlations all matter. A low-discrepancy sequence can perform poorly when a problem's important structure is awkwardly aligned, and uncertainty estimation is less straightforward when the sequence is deterministic. Stratification also becomes costly when a high-dimensional domain creates an astronomical number of cells. Sampling strategy is part of the model, not a cosmetic dot pattern.
+Neither method is universally superior. Dimensionality, smoothness, discontinuities, coordinate ordering, and correlations all matter. A low-discrepancy sequence can perform poorly when a problem's important structure is awkwardly aligned, and uncertainty estimation requires a design-aware procedure. For randomized quasi-Monte Carlo, one common approach runs several independent seed shifts and measures variation among their final estimates. Stratification needs variance information from its strata. It also becomes costly when a high-dimensional domain creates an astronomical number of cells. Sampling strategy is part of the model, not a cosmetic dot pattern.
 
 # Why anyone uses Monte Carlo
 
@@ -127,7 +127,7 @@ Its unusual strength is dimensionality. A good one-dimensional quadrature rule c
 
 # What this demonstration hides
 
-The browser uses finite-precision floating-point numbers. Mulberry32 is a small deterministic generator chosen for reproducibility and teaching, not cryptography. A visually uniform field does not prove independence, and a pattern with clusters is not automatically biased. Confidence intervals rely on a sampling model; the ordinary formula shown here does not transfer unchanged to deterministic Halton points.
+The browser uses finite-precision floating-point numbers. Mulberry32 is a small deterministic generator chosen for reproducibility and teaching, not cryptography. A visually uniform field does not prove independence, and a pattern with clusters is not automatically biased. Confidence intervals rely on a sampling model. The laboratory therefore shows its IID interval only for pseudorandom sampling; stratified and shifted-Halton modes show the same IID expression solely as a labelled reference scale, not as method-specific uncertainty.
 
 The displayed-point cap means a completed million-sample run is not a literal picture of every calculation. The WebGL fragment shader softens point edges and blends density for legibility, but it never votes on whether a point is inside. Context loss can erase a GPU buffer; the CPU state remains the source of truth and is uploaded again if the context returns.
 
@@ -135,6 +135,6 @@ Finally, estimating π is a diagnostic exercise, not a sensible production algor
 
 # A closing experiment
 
-Choose a budget of 10,000. Run pseudorandom sampling with several seeds, recording the final error. Repeat with stratification and Halton. Which method usually reaches a small error sooner? Does it win every run? Does error fall smoothly? How large must (N) become before the first three decimal places look stable?
+Choose a budget of 10,000. Run pseudorandom sampling with several seeds, recording the final error. Repeat with stratification and Halton. Which method usually reaches a small error sooner? Does it win every run? Does error fall smoothly? How large must $N$ become before the first three decimal places look stable?
 
 Then hide the outside points. The estimate does not change because visibility is not evidence. Ask whether the denser-looking field necessarily has the better numerical result. The paradox survives every control: the samples remain uncertain one by one, while carefully measuring them turns uncertainty into a computational tool.

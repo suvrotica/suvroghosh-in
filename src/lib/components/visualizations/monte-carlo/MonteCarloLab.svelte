@@ -19,7 +19,7 @@
 		stratified:
 			'The square is divided into equal cells. One jittered sample visits each cell before the cycle repeats, deliberately spreading coverage.',
 		halton:
-			'A deterministic low-discrepancy sequence in bases 2 and 3 fills gaps evenly. This is quasi-Monte Carlo, not ordinary randomness.'
+			'A base-2/base-3 Halton sequence receives a reproducible seed-generated shift. It is randomized quasi-Monte Carlo: deterministic once the seed is fixed.'
 	};
 
 	let canvas = $state<HTMLCanvasElement>();
@@ -52,7 +52,7 @@
 	let webglAvailable = $state(true);
 	let status = $state('Preparing the laboratory…');
 	let contextMessage = $state('');
-	let statistics = $state<MonteCarloStatistics>(calculateStatistics(0, 0, 0));
+	let statistics = $state<MonteCarloStatistics>(calculateStatistics('pseudorandom', 0, 0, 0));
 	let observations = $state<ConvergenceObservation[]>([]);
 	let liveSummary = $state('No samples have been calculated yet.');
 
@@ -261,7 +261,7 @@
 	function methodLabel(value: SamplingMethod) {
 		if (value === 'pseudorandom') return 'Pseudorandom sampling';
 		if (value === 'stratified') return 'Stratified sampling';
-		return 'Halton sequence';
+		return 'Shifted Halton sequence';
 	}
 
 	function updateVisualSetting(callback: () => void) {
@@ -471,17 +471,32 @@
 						>{formatPercentage(statistics.percentageError)}</strong
 					>
 				</div>
-				<div class="metric">
-					<span>Approx. standard error</span><strong>{formatError(statistics.standardError)}</strong
-					>
-				</div>
-				{#if confidenceEnabled}
+				{#if method === 'pseudorandom'}
+					<div class="metric">
+						<span>Approx. IID standard error</span><strong
+							>{formatError(statistics.standardError)}</strong
+						>
+					</div>
+				{:else}
+					<div class="metric">
+						<span>IID reference SE · not method uncertainty</span><strong
+							>{formatError(statistics.iidReferenceStandardError)}</strong
+						>
+					</div>
+				{/if}
+				{#if confidenceEnabled && method === 'pseudorandom'}
 					<div class="metric interval">
-						<span>Approx. 95% confidence interval</span><strong>{formatInterval()}</strong>
+						<span>Approx. IID 95% confidence interval</span><strong>{formatInterval()}</strong>
 					</div>
 				{/if}
 			</section>
-			{#if confidenceEnabled && statistics.totalSamples > 0 && !statistics.confidenceInterval}
+			{#if method !== 'pseudorandom'}
+				<p class="confidence-note">
+					{methodLabel(method)} does not produce independent Bernoulli trials. The IID reference above
+					is a comparison scale, not a standard error or confidence interval for this method. Replicated
+					designs are required to estimate its uncertainty.
+				</p>
+			{:else if confidenceEnabled && statistics.totalSamples > 0 && !statistics.confidenceInterval}
 				<p class="confidence-note">
 					The normal-approximation interval appears after 30 samples; before that it can be
 					misleading.
@@ -634,14 +649,18 @@
 					<option value="error">Absolute error (log scale)</option>
 				</select>
 				<label class="check-row"
-					><input type="checkbox" bind:checked={confidenceEnabled} /><span
-						>Show 95% confidence interval</span
-					></label
+					><input
+						type="checkbox"
+						bind:checked={confidenceEnabled}
+						disabled={method !== 'pseudorandom'}
+					/><span>Show IID 95% confidence interval (pseudorandom only)</span></label
 				>
 				<label class="check-row"
-					><input type="checkbox" bind:checked={theoreticalGuide} /><span
-						>Show theoretical 1/√N guide</span
-					></label
+					><input
+						type="checkbox"
+						bind:checked={theoreticalGuide}
+						disabled={method !== 'pseudorandom'}
+					/><span>Show IID 1/√N guide (pseudorandom only)</span></label
 				>
 			</fieldset>
 		</aside>
@@ -652,7 +671,7 @@
 		mode={chartMode}
 		{targetSamples}
 		{showTrail}
-		showGuide={theoreticalGuide}
+		showGuide={theoreticalGuide && method === 'pseudorandom'}
 	/>
 
 	<footer>

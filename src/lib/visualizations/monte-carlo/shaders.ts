@@ -50,7 +50,7 @@ void main() {
 		return;
 	}
 
-	float vignette = smoothstep(1.55, 0.25, length(coordinate));
+	float vignette = 1.0 - smoothstep(0.25, 1.55, length(coordinate));
 	vec3 colour = mix(u_background, u_field, 0.82 + 0.12 * vignette);
 
 	if (u_show_grid) {
