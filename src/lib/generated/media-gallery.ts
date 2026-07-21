@@ -3685,6 +3685,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	],
 	"thumbnails": [
 		{
+			"name": "algorithmic-complexity-in-the-age-of-ai.jpg",
+			"src": "/thumbnail/algorithmic-complexity-in-the-age-of-ai.jpg",
+			"bytes": 218013,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ai-layoff-trap-firing-your-customers.jpg",
 			"src": "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg",
 			"bytes": 139001,

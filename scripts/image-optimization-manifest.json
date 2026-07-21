@@ -8384,6 +8384,22 @@
       "sourceHash": "8e36b3af9dfadcd52cff1db4de3bc6ac5429ff596209a14ff65c4d12cb6bea81",
       "width": 1515
     },
+    "static/thumbnail/algorithmic-complexity-in-the-age-of-ai.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 218013,
+      "outputHash": "cf56e810bfa90cdd11ce76acd033e91fa50b3c0a57ff326362f1a11572029e6e",
+      "psnrDb": 36.12,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 257627,
+      "sourceHash": "31bb4db23d41ff56ad6c68165f2f37ff162f9d2d94d40428b4fe9657797d6389",
+      "width": 1200
+    },
     "static/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg": {
       "format": "JPEG",
       "height": 800,

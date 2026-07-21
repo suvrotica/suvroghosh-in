@@ -8321,18 +8321,34 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/chatgpt-enters-healthcare-compliance-is-the-easy-part.md": {
-			"bodyHash": "55b5492259cd41e1262ddaf5e560b5e81eca9fa22e441bfd666e282681c536f0",
+			"bodyHash": "d59aba9426396302f8eeea18cb7b39638ce27905c464c14ad68aac45367a4901",
 			"generatedTags": [
-				"Protected Health Information",
-				"Prior Authorization",
+				"Feels Scientific",
+				"Plastic Chair",
+				"Creator",
+				"Novelty",
 				"OpenAI",
-				"Information",
+				"Framework",
+				"Craft",
 				"Healthcare",
-				"AI",
-				"Clinical",
-				"ChatGPT",
-				"Payer",
-				"Approved"
+				"Proof",
+				"Pretense"
+			],
+			"generatorVersion": "2026-07-13.1"
+		},
+		"src/lib/posts/algorithmic-complexity-in-the-age-of-ai.md": {
+			"bodyHash": "62f874b2b62c33c3137ec34e03b70a162a3a2c7b39526f94806db15d82de4ffa",
+			"generatedTags": [
+				"Memory Bandwidth",
+				"Neural Information Processing",
+				"Arxiv Preprint",
+				"Black Box",
+				"Gentle Field Guide",
+				"Complexity",
+				"Bouncer",
+				"Big-O",
+				"Nightclub",
+				"Algorithms"
 			],
 			"generatorVersion": "2026-07-13.1"
 		}
