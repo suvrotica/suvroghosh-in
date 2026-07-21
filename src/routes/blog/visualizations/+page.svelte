@@ -14,7 +14,7 @@
 
 	const title = 'Visualizations — Interactive Science Gallery | SuvroGhosh.In';
 	const description =
-		'Interactive educational experiments by Suvro Ghosh, including deterministic artificial-life and evolution models, D3 notebooks, Canvas simulations, generative graphics, and GPU shaders.';
+		'Interactive educational experiments by Suvro Ghosh, including deterministic artificial life, generative art, living-pigment painting, D3 notebooks, Canvas simulations, and GPU shaders.';
 	const canonicalUrl = `${siteUrl}/blog/visualizations`;
 </script>
 
@@ -30,6 +30,9 @@
 		'Canvas',
 		'p5.js',
 		'GLSL shaders',
+		'Generative art',
+		'Living pigment studio',
+		'Watercolor simulation',
 		'Artificial life',
 		'Evolution simulation',
 		'Evolving Microbe Garden',

@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Create Art: A Living Pigment Studio" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Create Art: A Living Pigment Studio</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(179,309)" font-size="118" style="fill:#8fb7d0">Pigment</text>
+<text transform="translate(358,538)" font-size="87" style="fill:#b6c3dd">Brush</text>
+<text transform="translate(274,127)" font-size="84" style="fill:#d9c89e">Painting</text>
+<text transform="translate(339,434)" font-size="84" style="fill:#8fb7d0">Surface</text>
+<text transform="translate(773,432)" font-size="81" style="fill:#e0b879">Paint</text>
+<text transform="translate(681,683)" font-size="78" style="fill:#d6a79f">Moisture</text>
+<text transform="translate(929,97)" font-size="75" style="fill:#a9b7a3">Water</text>
+<text transform="translate(375,628)" font-size="75" style="fill:#d9c89e">Studio</text>
+<text transform="translate(671,572)" font-size="75" style="fill:#d9c89e">Material</text>
+<text transform="translate(735,348)" font-size="75" style="fill:#d6a79f">Rather</text>
+<text transform="translate(792,239)" font-size="75" style="fill:#c49a6c">Local</text>
+<text transform="translate(1037,616)" font-size="72" style="fill:#c49a6c">Color</text>
+<text transform="translate(27,534)" font-size="72" style="fill:#d9c89e">Drying</text>
+<text transform="translate(1064,329)" font-size="72" style="fill:#8fb7d0">Wash</text>
+<text transform="translate(67,469) rotate(-90)" font-size="72" style="fill:#d5d2c2">Simulation</text>
+<text transform="translate(708,143)" font-size="65" style="fill:#b6c3dd">Oil</text>
+<text transform="translate(165,653)" font-size="65" style="fill:#d6a79f">Paper</text>
+<text transform="translate(305,213)" font-size="65" style="fill:#d9c89e">Dry</text>
+<text transform="translate(727,482)" font-size="65" style="fill:#d88988">Browser</text>
+<text transform="translate(1050,192)" font-size="61" style="fill:#9fc9c5">Grain</text>
+<text transform="translate(337,602) rotate(-90)" font-size="61" style="fill:#b6c3dd">Motion</text>
+<text transform="translate(160,411) rotate(-90)" font-size="61" style="fill:#9fc9c5">Field</text>
+<text transform="translate(732,424) rotate(-90)" font-size="61" style="fill:#d9c89e">Current</text>
+<text transform="translate(411,52)" font-size="57" style="fill:#c49a6c">Seed</text>
+<text transform="translate(1049,486)" font-size="57" style="fill:#b6c3dd">Mobile</text>
+<text transform="translate(273,701)" font-size="57" style="fill:#a9b7a3">Absorption</text>
+<text transform="translate(587,49)" font-size="57" style="fill:#e0b879">Texture</text>
+<text transform="translate(460,204)" font-size="53" style="fill:#d88988">Mark</text>
+<text transform="translate(99,55)" font-size="53" style="fill:#c7d7b5">Diffusion</text>
+<text transform="translate(134,194)" font-size="53" style="fill:#e0b879">State</text>
+<text transform="translate(1274,277) rotate(-90)" font-size="53" style="fill:#a9b7a3">Artwork</text>
+<text transform="translate(1057,432) rotate(-90)" font-size="53" style="fill:#d5d2c2">Wetness</text>
+<text transform="translate(77,124)" font-size="53" style="fill:#d5d2c2">Leaves</text>
+<text transform="translate(827,154)" font-size="53" style="fill:#e0b879">Shader</text>
+<text transform="translate(1016,538)" font-size="53" style="fill:#e0b879">Velocity</text>
+<text transform="translate(1075,378)" font-size="53" style="fill:#9fc9c5">Stores</text>
+<text transform="translate(295,449) rotate(-90)" font-size="49" style="fill:#e0b879">Less</text>
+<text transform="translate(75,615)" font-size="49" style="fill:#a9b7a3">Wet</text>
+<text transform="translate(49,681)" font-size="49" style="fill:#8fb7d0">Edge</text>
+<text transform="translate(109,375) rotate(-90)" font-size="49" style="fill:#d6a79f">Small</text>
+<text transform="translate(652,617)" font-size="49" style="fill:#8fb7d0">Granulation</text>
+<text transform="translate(455,361)" font-size="49" style="fill:#9fc9c5">Canvas</text>
+<text transform="translate(805,283)" font-size="49" style="fill:#d9c89e">Stroke</text>
+<text transform="translate(1076,48)" font-size="49" style="fill:#c7d7b5">Size</text>
+<text transform="translate(675,88)" font-size="41" style="fill:#9fc9c5">Restrained</text>
+<text transform="translate(857,36)" font-size="41" style="fill:#b6c3dd">Palette</text>
+<text transform="translate(251,486) rotate(-90)" font-size="41" style="fill:#d6a79f">Knife</text>
+<text transform="translate(341,471)" font-size="41" style="fill:#d9c89e">Direction</text>
+<text transform="translate(1061,696)" font-size="41" style="fill:#d9c89e">Every</text>
+<text transform="translate(1066,652)" font-size="41" style="fill:#e0b879">Staining</text>
+<text transform="translate(1020,130)" font-size="37" style="fill:#8fb7d0">Deposition</text>
+<text transform="translate(1074,227)" font-size="37" style="fill:#9fc9c5">Mathbf</text>
+<text transform="translate(1062,426)" font-size="37" style="fill:#9fc9c5">Changes</text>
+<text transform="translate(828,193)" font-size="37" style="fill:#c7d7b5">Colors</text>
+<text transform="translate(38,714) rotate(-90)" font-size="37" style="fill:#d88988">Pigments</text>
+<text transform="translate(281,159)" font-size="34" style="fill:#c7d7b5">Pointer</text>
+<text transform="translate(85,439)" font-size="34" style="fill:#8fb7d0">Moves</text>
+<text transform="translate(818,715)" font-size="34" style="fill:#c49a6c">Carries</text>
+<text transform="translate(413,232)" font-size="32" style="fill:#c49a6c">Neighboring</text>
+<text transform="translate(702,512)" font-size="32" style="fill:#c49a6c">Watercolor</text>
+<text transform="translate(104,83)" font-size="31" style="fill:#b6c3dd">Viscosity</text>
+<text transform="translate(500,566)" font-size="31" style="fill:#c7d7b5">Pause</text>
+<text transform="translate(1061,262)" font-size="31" style="fill:#c49a6c">Export</text>
+<text transform="translate(625,715)" font-size="31" style="fill:#d5d2c2">Place</text>
+<text transform="translate(168,600)" font-size="31" style="fill:#9fc9c5">Result</text>
+<text transform="translate(591,471)" font-size="31" style="fill:#a9b7a3">Control</text>
+<text transform="translate(438,156)" font-size="31" style="fill:#d6a79f">Visible</text>
+<text transform="translate(301,368)" font-size="31" style="fill:#c7d7b5">Pressure</text>
+<text transform="translate(342,656)" font-size="31" style="fill:#d6a79f">Different</text>
+<text transform="translate(72,466)" font-size="27" style="fill:#d9c89e">Deposited</text>
+<text transform="translate(103,149)" font-size="27" style="fill:#d9c89e">Instead</text>
+<text transform="translate(152,712)" font-size="27" style="fill:#d6a79f">Records</text>
+<text transform="translate(593,196)" font-size="27" style="fill:#9fc9c5">Flow</text>
+<text transform="translate(78,219)" font-size="27" style="fill:#c7d7b5">Procedural</text>
+<text transform="translate(736,170)" font-size="27" style="fill:#c49a6c">Three</text>
+<text transform="translate(623,512)" font-size="27" style="fill:#c7d7b5">GPU</text>
+<text transform="translate(199,413) rotate(-90)" font-size="27" style="fill:#a9b7a3">Region</text>
+<text transform="translate(758,246) rotate(-90)" font-size="27" style="fill:#b6c3dd">Uses</text>
+<text transform="translate(368,568)" font-size="27" style="fill:#d6a79f">Controls</text>
+<text transform="translate(572,658)" font-size="27" style="fill:#d9c89e">Mixing</text>
+<text transform="translate(977,712)" font-size="27" style="fill:#d6a79f">Model</text>
+<text transform="translate(137,567)" font-size="24" style="fill:#9fc9c5">Digital</text>
+<text transform="translate(562,383)" font-size="24" style="fill:#c7d7b5">Simulated</text>
+<text transform="translate(580,170)" font-size="24" style="fill:#9fc9c5">Becomes</text>
+<text transform="translate(997,470)" font-size="24" style="fill:#e0b879">Try</text>
+<text transform="translate(217,151)" font-size="24" style="fill:#9fc9c5">Use</text>
+<text transform="translate(41,23)" font-size="24" style="fill:#c49a6c">Save</text>
+<text transform="translate(1214,105) rotate(-90)" font-size="24" style="fill:#e0b879">Project</text>
+<text transform="translate(598,570)" font-size="24" style="fill:#9fc9c5">Large</text>
+<text transform="translate(688,291) rotate(-90)" font-size="24" style="fill:#c49a6c">Smaller</text>
+<text transform="translate(66,635) rotate(-90)" font-size="24" style="fill:#9fc9c5">Brushes</text>
+<text transform="translate(1121,400)" font-size="24" style="fill:#d5d2c2">Remains</text>
+<text transform="translate(745,281)" font-size="24" style="fill:#c49a6c">Area</text>
+<text transform="translate(577,77) rotate(-90)" font-size="24" style="fill:#8fb7d0">Along</text>
+<text transform="translate(182,309) rotate(-90)" font-size="24" style="fill:#d9c89e">Toward</text>
+<text transform="translate(729,710)" font-size="24" style="fill:#d5d2c2">Fields</text>
+<text transform="translate(1189,699)" font-size="24" style="fill:#d9c89e">Moving</text>
+<text transform="translate(739,369)" font-size="24" style="fill:#d5d2c2">Textures</text>
+<text transform="translate(259,332)" font-size="24" style="fill:#c49a6c">Blue</text>
+<text transform="translate(171,674)" font-size="24" style="fill:#a9b7a3">Layer</text>
+<text transform="translate(22,134) rotate(-90)" font-size="24" style="fill:#c49a6c">Advection</text>
+<text transform="translate(544,326)" font-size="17" style="fill:#e0b879">Approximation</text>
+<text transform="translate(1225,278) rotate(-90)" font-size="17" style="fill:#d88988">Boundary</text>
+<text transform="translate(590,75)" font-size="17" style="fill:#b6c3dd">Produce</text>
+<text transform="translate(907,375)" font-size="17" style="fill:#c49a6c">Partly</text>
+<text transform="translate(215,292)" font-size="17" style="fill:#e0b879">Damp</text>
+<text transform="translate(902,504)" font-size="17" style="fill:#c7d7b5">Controlled</text>
+<text transform="translate(417,72)" font-size="17" style="fill:#9fc9c5">Light</text>
+<text transform="translate(967,173)" font-size="17" style="fill:#d9c89e">Repeated</text>
+<text transform="translate(325,72)" font-size="17" style="fill:#e0b879">Values</text>
+<text transform="translate(829,105)" font-size="17" style="fill:#b6c3dd">Laboratory</text>
+<text transform="translate(972,299)" font-size="17" style="fill:#d5d2c2">Frame</text>
+<text transform="translate(1004,598)" font-size="17" style="fill:#d9c89e">Set</text>
+<text transform="translate(1129,146)" font-size="15" style="fill:#9fc9c5">Real</text>
+<text transform="translate(55,700)" font-size="15" style="fill:#9fc9c5">Path</text>
+<text transform="translate(1214,438)" font-size="15" style="fill:#c49a6c">Center</text>
+<text transform="translate(1152,568)" font-size="15" style="fill:#9fc9c5">Gesture</text>
+<text transform="translate(17,356) rotate(-90)" font-size="15" style="fill:#e0b879">Begins</text>
+<text transform="translate(1171,98) rotate(-90)" font-size="15" style="fill:#e0b879">Helps</text>
+<text transform="translate(354,585) rotate(-90)" font-size="15" style="fill:#a9b7a3">Composition</text>
+<text transform="translate(1027,555)" font-size="15" style="fill:#e0b879">Background</text>
+<text transform="translate(90,634)" font-size="15" style="fill:#c49a6c">Starting</text>
+<text transform="translate(318,16)" font-size="15" style="fill:#b6c3dd">Beginning</text>
+<text transform="translate(984,621) rotate(-90)" font-size="15" style="fill:#d6a79f">Soft</text>
+<text transform="translate(1218,30)" font-size="15" style="fill:#d88988">Create</text>
+<text transform="translate(1156,669)" font-size="15" style="fill:#c49a6c">Action</text>
+<text transform="translate(622,542)" font-size="15" style="fill:#b6c3dd">Adds</text>
+<text transform="translate(936,522)" font-size="15" style="fill:#b6c3dd">Add</text>
+<text transform="translate(1095,712)" font-size="15" style="fill:#c7d7b5">Solvent</text>
+<text transform="translate(1183,713)" font-size="15" style="fill:#9fc9c5">Movement</text>
+</svg>

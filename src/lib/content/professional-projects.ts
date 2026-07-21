@@ -125,6 +125,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'Added native Observable runtime and D3 notebook cells with responsive SVG, reactive controls, accessible descriptions, reduced-motion defaults, and deterministic cleanup.',
 			'Engineered a seeded artificial-life system with inherited genomes, bounded mutation, explicit energy accounting, predator pressure, fixed-step simulation, and reproducible presets.',
 			'Built a WebGL2 Monte Carlo instrument with seeded pseudorandom, stratified, and Halton sampling, bounded GPU point storage, confidence estimates, and an accessible logarithmic convergence chart.',
+			'Created a WebGL2 living-pigment studio with ping-pong texture fields for mobile and deposited pigment, local moisture, velocity, granulation, staining, bounded GPU history, and local artwork/project export.',
 			'Designed accessible controls, touch and keyboard interaction, reduced-motion behaviour, static fallbacks, and isolated multi-sketch lifecycle management.',
 			'Publishes first-principles lessons with live output and executable source across D3, Observable notebooks, p5.js, GLSL, Canvas, SVG, and WebGL.'
 		],
@@ -136,13 +137,16 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'TypeScript',
 			'D3',
 			'Canvas',
-			'WebGL'
+			'WebGL',
+			'Generative art',
+			'GPU simulation'
 		],
 		relatedPostSlugs: [
 			'hello-fragment-your-first-shader-from-scratch',
 			'hello-observable-your-first-living-d3-visualization',
 			'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser',
-			'monte-carlo-laboratory'
+			'monte-carlo-laboratory',
+			'create-art-living-pigment-studio'
 		],
 		href: '/blog/visualizations'
 	},

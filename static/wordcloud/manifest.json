@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T10:56:44.028369+00:00",
+  "generatedAt": "2026-07-21T21:04:38.582372+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2344,6 +2344,29 @@
         "Telegram",
         "Urine",
         "Pissing"
+      ],
+      "wordCount": 130
+    },
+    "create-art-living-pigment-studio": {
+      "generatedAt": "2026-07-21T21:04:38.103493+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/create-art-living-pigment-studio.svg",
+      "source": "src/lib/posts/create-art-living-pigment-studio.md",
+      "sourceHash": "89f25d552190bee85df670da8e20c04ec50279e402716b08b0e4c3e1472ec161",
+      "sourceModified": "2026-07-21T20:22:40.581503+00:00",
+      "topWords": [
+        "Pigment",
+        "Brush",
+        "Painting",
+        "Surface",
+        "Paint",
+        "Moisture",
+        "Water",
+        "Studio",
+        "Material",
+        "Rather",
+        "Local",
+        "Color"
       ],
       "wordCount": 130
     },

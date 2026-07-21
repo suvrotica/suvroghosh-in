@@ -3065,6 +3065,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "create-art-living-pigment-studio.webp",
+			"src": "/images/create-art-living-pigment-studio.webp",
+			"bytes": 439806,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "IMG-20260422-WA0001.jpg",
 			"src": "/images/IMG-20260422-WA0001.jpg",
 			"bytes": 409248,

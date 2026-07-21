@@ -18,7 +18,8 @@
 			'Biology',
 			'Computer Science'
 		],
-		'monte-carlo-laboratory': ['Mathematics', 'Statistics', 'Scientific Computing']
+		'monte-carlo-laboratory': ['Mathematics', 'Statistics', 'Scientific Computing'],
+		'create-art-living-pigment-studio': ['Generative Art', 'Chemistry', 'Computer Science']
 	};
 	const subjects = [
 		'All',
@@ -30,7 +31,8 @@
 		'Algorithms',
 		'Computer Science',
 		'Machine Learning',
-		'Scientific Computing'
+		'Scientific Computing',
+		'Generative Art'
 	] as const;
 	const upcoming = [
 		{

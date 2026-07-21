@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { SvelteURLSearchParams } from 'svelte/reactivity';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { collectionPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
 	import type { MediaGalleryTab } from '$lib/generated/media-gallery';
@@ -31,7 +32,7 @@
 	}
 
 	function pageHref(targetPage: number) {
-		const params = new URLSearchParams();
+		const params = new SvelteURLSearchParams();
 		if (data.activeTab !== 'images') params.set('tab', data.activeTab);
 		if (targetPage > 1) params.set('page', String(targetPage));
 		const query = params.toString();
@@ -121,7 +122,7 @@
 					class="min-w-0 overflow-hidden rounded-lg border border-neutral-300 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900"
 				>
 					<a
-						href={asset.src}
+						href={resolve(asset.src as '/images')}
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group block h-full no-underline focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"

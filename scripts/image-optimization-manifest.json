@@ -8016,6 +8016,22 @@
       "sourceHash": "d8f0f155bb29721603a5e938a9fa7dcaec207979f7180a9bcea24b29fba36df6",
       "width": 960
     },
+    "static/images/create-art-living-pigment-studio.webp": {
+      "format": "WEBP",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 439806,
+      "outputHash": "70cf8179e7fd84fee4516e07594043927991510a921da1623d81029f7ae517e8",
+      "psnrDb": 36.62,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 554528,
+      "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
+      "width": 1536
+    },
     "static/images/p0.jpeg": {
       "format": "JPEG",
       "height": 1600,
