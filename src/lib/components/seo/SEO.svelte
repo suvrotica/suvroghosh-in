@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { xProfile } from '$lib/config/links';
 	import { indexRobots, siteSEO, withSiteGraph } from './SEO';
 	type Props = {
 		title?: string;
@@ -88,6 +89,7 @@
 	{/if}
 
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content={xProfile.handle} />
 	{#if canonicalUrl}
 		<meta property="twitter:url" content={canonicalUrl} />
 	{/if}
