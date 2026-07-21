@@ -17,7 +17,8 @@
 		'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser': [
 			'Biology',
 			'Computer Science'
-		]
+		],
+		'monte-carlo-laboratory': ['Mathematics', 'Statistics', 'Scientific Computing']
 	};
 	const subjects = [
 		'All',
