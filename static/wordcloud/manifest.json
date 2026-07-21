@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T05:56:05.671015+00:00",
+  "generatedAt": "2026-07-21T06:58:37.144336+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2436,6 +2436,29 @@
         "Different",
         "Source",
         "Healthcare"
+      ],
+      "wordCount": 130
+    },
+    "democracy_on_installments": {
+      "generatedAt": "2026-07-21T06:58:36.286292+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/democracy_on_installments.svg",
+      "source": "src/lib/posts/democracy_on_installments.md",
+      "sourceHash": "29076d4f54e9db7fccfe105cb98f2b9fa43ae03cd8d6189e2c82f942041da82f",
+      "sourceModified": "2026-07-21T06:58:25.281777+00:00",
+      "topWords": [
+        "Every",
+        "Television",
+        "Party",
+        "Man",
+        "Democracy",
+        "Though",
+        "Screen",
+        "First",
+        "Jantar",
+        "Mantar",
+        "Struck",
+        "Beneath"
       ],
       "wordCount": 130
     },

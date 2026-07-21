@@ -4,7 +4,7 @@ description: "A fifty-one-year-old Bengali man watches a march near Jantar Manta
 date: "2026-07-21"
 thumbnail: "/thumbnail/Compress_20260721_122416_6834.jpg"
 category: "Personal Essay"
-tags: ["Personal Essay", "Political Satire", "Democracy", "Jantar Mantar", "Calcutta", "Manic Depression"]
+tags: ["Jantar Mantar","Party President","Jantar","Mantar","Petition","Supporters","Lathi","Acceleration","Democracy","Television"]
 published: true
 color: "#8B3A3A"
 ---
