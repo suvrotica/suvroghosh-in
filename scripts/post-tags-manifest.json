@@ -8369,16 +8369,18 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/monte-carlo-laboratory.md": {
-			"bodyHash": "51a68828e88c7c674e7210f32b74c524510b37f3f16d5222782c51d39ee82125",
+			"bodyHash": "c370b3e645cf1972b1e439c775ab9b2472275a24fa5702e15068c72f9d70accb",
 			"generatedTags": [
 				"Monte Carlo",
-				"Probability",
-				"Statistics",
-				"Shaders",
-				"WebGL",
-				"GLSL",
-				"Mathematics",
-				"Interactive Visualization"
+				"Randomized Quasi-Monte Carlo",
+				"Expensive Square-Root Law",
+				"Deliberate Ignorance",
+				"Demonstration Hides",
+				"Sampling",
+				"Monte",
+				"Pseudorandom",
+				"Samples",
+				"Estimate"
 			],
 			"generatorVersion": "2026-07-13.1"
 		}

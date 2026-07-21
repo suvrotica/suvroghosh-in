@@ -5,12 +5,12 @@ date: "2026-07-21"
 thumbnail: "/images/monte-carlo-laboratory.svg"
 thumbnailAlt: "A mathematical square and inscribed circle filled with classified Monte Carlo samples beside a restrained convergence curve"
 category: "Visualizations"
-tags: ["Monte Carlo", "Probability", "Statistics", "Shaders", "WebGL", "GLSL", "Mathematics", "Interactive Visualization"]
+tags: ["Monte Carlo","Randomized Quasi-Monte Carlo","Expensive Square-Root Law","Deliberate Ignorance","Demonstration Hides","Sampling","Monte","Pseudorandom","Samples","Estimate"]
 published: true
 color: "#355C7D"
 author: "Suvro Ghosh"
 readingTime: "12 min"
-inPlainEnglish: "Monte Carlo methods approximate a fixed answer by counting or averaging many carefully generated samples. This laboratory estimates π, measures the remaining uncertainty, and compares pseudorandom, stratified, and low-discrepancy sampling."
+inPlainEnglish: "Monte Carlo methods approximate a fixed answer by counting or averaging over many carefully generated samples. This laboratory estimates π, measures the remaining uncertainty, and compares pseudorandom, stratified, and low-discrepancy sampling."
 keyTerms: ["Monte Carlo simulation", "Pseudorandom number generator", "Stratified sampling", "Halton sequence", "Quasi-Monte Carlo", "Standard error", "Confidence interval", "Law of large numbers"]
 faq:
   - question: "Does this simulation discover the value of π?"
