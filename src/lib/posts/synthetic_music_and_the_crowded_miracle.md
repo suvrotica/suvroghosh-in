@@ -98,6 +98,6 @@ If an impatient fool can make a song in minutes, the miracle has not vanished. I
 ## Related Posts
 
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-trust-collapse)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)
 - [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)

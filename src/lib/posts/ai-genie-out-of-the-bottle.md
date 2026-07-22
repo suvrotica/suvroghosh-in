@@ -198,5 +198,5 @@ Not a return to the bottle. A constitution for the genie.
 
 - [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
-- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-trust-collapse)
 - [Political Promises and the Hard Floor of Reality](/blog/politics/political-promises-and-reality)

@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { bodyHash, extractTags, replaceTags, splitPost } from './generate-post-tags.mjs';
+import {
+	bodyHash,
+	extractTags,
+	mergePinnedTags,
+	replaceTags,
+	splitPost
+} from './generate-post-tags.mjs';
 
 const corpus = {
 	documentCount: 3,
@@ -78,4 +84,17 @@ Observable cells use D3 to render data, and D3 keeps the document data-driven.
 	const tags = extractTags(body, 10, corpus);
 
 	assert.ok(tags.includes('D3'));
+});
+
+test('authored pinned tags survive ahead of deterministic body-derived tags', () => {
+	assert.deepEqual(
+		mergePinnedTags(
+			['Simulation', 'Pigment', 'Brush', 'Painting'],
+			['Shaders', 'WebGL', 'Watercolor', 'Simulation', 'Interactive Art'],
+			7
+		),
+		['Shaders', 'WebGL', 'Watercolor', 'Simulation', 'Interactive Art', 'Pigment', 'Brush']
+	);
+	assert.throws(() => mergePinnedTags(['Data'], 'not-an-array'), /array of strings/);
+	assert.throws(() => mergePinnedTags(['Data'], [''], 10), /non-empty strings/);
 });

@@ -142,4 +142,4 @@ Not to make the mess disappear. To stop pretending it means something before you
 - [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
-- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/healthcare-it/arrow_uncertainty_medical_care_healthcare_it)
+- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/economics/kenneth-arrow-medical-care)

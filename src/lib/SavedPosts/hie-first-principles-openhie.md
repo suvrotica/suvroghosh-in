@@ -117,6 +117,6 @@ OpenHIE does not remove the difficulty. It gives the difficulty proper rooms to 
 ## Related Posts
 
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
 - [First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality](/blog/useful-mental-models/first-principles-thinking-calcutta-healthcare-it)

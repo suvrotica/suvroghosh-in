@@ -103,5 +103,5 @@ That, in the end, is what building a data warehouse from VA operational systems 
 
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)
 - [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)

@@ -83,6 +83,6 @@ For now, I will keep asking it for cube roots. Not because cube roots are the su
 ## Related Posts
 
 - [A Calcutta Bengali’s Guide to the Various Schools of AI](/blog/artificial-intelligence/calcutta-bengalis-guide-to-ai-tribes)
-- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-trust-collapse)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
 - [The Genie Is Out of the Bottle](/blog/artificial-intelligence/ai-genie-out-of-the-bottle)

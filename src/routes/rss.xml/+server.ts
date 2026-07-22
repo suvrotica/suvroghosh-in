@@ -12,12 +12,17 @@ export async function GET() {
 				title: post.title,
 				description: post.description,
 				date: post.date,
+				dateModified: post.dateModified,
 				link,
 				guid: link,
 				category: post.category
 			};
 		})
 		.slice(0, 25);
+	const lastBuildDate = posts.reduce((latest, post) => {
+		const changedAt = new Date(post.dateModified ?? post.date);
+		return changedAt.getTime() > latest.getTime() ? changedAt : latest;
+	}, new Date(0));
 
 	const items = posts
 		.map(
@@ -40,7 +45,7 @@ export async function GET() {
 		<link>${siteUrl}</link>
 		<description><![CDATA[${siteDescription}]]></description>
 		<language>en</language>
-		<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+		<lastBuildDate>${lastBuildDate.toUTCString()}</lastBuildDate>
 		<atom:link href="${siteUrl}/rss.xml" rel="self" type="application/rss+xml" />
 ${items}
 	</channel>

@@ -21,7 +21,16 @@ const stringFields = [
 	'status',
 	'inPlainEnglish'
 ];
-const allowedFields = new Set([...stringFields, 'tags', 'series', 'published', 'keyTerms', 'faq']);
+const allowedFields = new Set([
+	...stringFields,
+	'tags',
+	'pinnedTags',
+	'series',
+	'published',
+	'mediaReviewed',
+	'keyTerms',
+	'faq'
+]);
 const errors = [];
 let publishedCount = 0;
 let unpublishedCount = 0;
@@ -118,8 +127,24 @@ for (const file of postFiles) {
 	} else {
 		unpublishedCount += 1;
 	}
+	if (metadata.mediaReviewed !== undefined && typeof metadata.mediaReviewed !== 'boolean') {
+		errors.push(`${file}: mediaReviewed must be true or false, without quotes.`);
+	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });
+	if (metadata.pinnedTags !== undefined) {
+		validateStringArray(file, 'pinnedTags', metadata.pinnedTags, { required: true });
+		if (Array.isArray(metadata.pinnedTags) && metadata.pinnedTags.length > 10) {
+			errors.push(`${file}: pinnedTags must not contain more than 10 entries.`);
+		}
+		if (Array.isArray(metadata.pinnedTags) && Array.isArray(metadata.tags)) {
+			for (const pinnedTag of metadata.pinnedTags) {
+				if (typeof pinnedTag === 'string' && !metadata.tags.includes(pinnedTag)) {
+					errors.push(`${file}: pinned tag “${pinnedTag}” must also appear in tags.`);
+				}
+			}
+		}
+	}
 	if (metadata.series !== undefined) validateStringArray(file, 'series', metadata.series);
 	if (metadata.keyTerms !== undefined) validateStringArray(file, 'keyTerms', metadata.keyTerms);
 

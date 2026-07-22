@@ -8,7 +8,7 @@ import { parseDocument } from 'yaml';
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
 const manifestPath = path.join(root, 'scripts', 'post-tags-manifest.json');
-const generatorVersion = '2026-07-13.1';
+const generatorVersion = '2026-07-22.1';
 const defaultMaxTags = 10;
 const minimumTags = 1;
 
@@ -410,6 +410,28 @@ function tagsEqual(left, right) {
 	return left.every((tag, index) => typeof tag === 'string' && tag === right[index]);
 }
 
+function mergePinnedTags(generatedTags, pinnedTags = [], maxTags = defaultMaxTags) {
+	if (!Array.isArray(pinnedTags)) throw new Error('pinnedTags must be an array of strings');
+	if (pinnedTags.length > maxTags) {
+		throw new Error(`pinnedTags cannot contain more than ${maxTags} entries`);
+	}
+
+	const merged = [];
+	const seen = new Set();
+	for (const tag of [...pinnedTags, ...generatedTags]) {
+		if (typeof tag !== 'string' || tag.trim() === '') {
+			throw new Error('pinnedTags must contain non-empty strings');
+		}
+		const normalized = tag.trim();
+		const key = normalized.toLocaleLowerCase('en');
+		if (seen.has(key)) continue;
+		seen.add(key);
+		merged.push(normalized);
+		if (merged.length >= maxTags) break;
+	}
+	return merged;
+}
+
 function loadManifest() {
 	if (!fs.existsSync(manifestPath)) return { version: generatorVersion, posts: {} };
 	try {
@@ -486,21 +508,26 @@ async function main() {
 		try {
 			const rawText = fs.readFileSync(fullPath, 'utf8');
 			const post = splitPost(rawText, source);
+			const pinnedTags = post.metadata.pinnedTags ?? [];
+			mergePinnedTags([], pinnedTags, options.maxTags);
 			const hash = bodyHash(post.body);
 			const cache = manifestPosts[source];
 			const cachedTags = cache?.generatedTags;
+			const cachedPinnedTags = cache?.pinnedTags ?? [];
 			if (
 				!options.force &&
 				cache?.bodyHash === hash &&
 				cache?.generatorVersion === generatorVersion &&
 				Array.isArray(cachedTags) &&
-				tagsEqual(post.metadata.tags, cachedTags)
+				tagsEqual(post.metadata.tags, cachedTags) &&
+				tagsEqual(pinnedTags, cachedPinnedTags)
 			) {
 				skipped += 1;
 				continue;
 			}
 
-			const tags = extractTags(post.body, options.maxTags, corpus);
+			const generatedTags = extractTags(post.body, options.maxTags, corpus);
+			const tags = mergePinnedTags(generatedTags, pinnedTags, options.maxTags);
 			if (tags.length < minimumTags) {
 				throw new Error(`only ${tags.length} meaningful body-derived tags were available`);
 			}
@@ -518,6 +545,7 @@ async function main() {
 			manifestPosts[source] = {
 				bodyHash: hash,
 				generatedTags: tags,
+				pinnedTags,
 				generatorVersion
 			};
 		} catch (error) {
@@ -558,4 +586,4 @@ if (path.resolve(process.argv[1] ?? '') === fileURLToPath(import.meta.url)) {
 	}
 }
 
-export { bodyHash, buildCorpusStatistics, extractTags, replaceTags, splitPost };
+export { bodyHash, buildCorpusStatistics, extractTags, mergePinnedTags, replaceTags, splitPost };

@@ -213,13 +213,14 @@ for (const reference of uniqueReferences.values()) {
 		errors.push(`${file}:${line}: malformed internal link ${target}.`);
 		continue;
 	}
+	if (aliases.has(pathname)) {
+		errors.push(
+			`${file}:${line}: internal link ${target} uses a redirect alias; use the canonical destination ${aliases.get(pathname)}.`
+		);
+		continue;
+	}
 
-	if (
-		knownRoutes.has(pathname) ||
-		staticFileExists(pathname) ||
-		canonicalPosts.has(pathname) ||
-		aliases.has(pathname)
-	) {
+	if (knownRoutes.has(pathname) || staticFileExists(pathname) || canonicalPosts.has(pathname)) {
 		continue;
 	}
 

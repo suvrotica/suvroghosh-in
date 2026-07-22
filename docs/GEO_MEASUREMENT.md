@@ -1,9 +1,14 @@
 # GEO Measurement — suvroghosh.in
 
-This document describes the **manual** work required after deploying the discoverability changes and
-how to record progress. Code changes alone do not produce citations; they only make the site
-technically eligible for crawling, indexing, retrieval, and possible training consideration. The
-events below are distinct and must not be reported as one number:
+The technical discoverability release at Git commit
+`5398bacd272e6a1558ffe78f4b80ab3599ebad5d` was verified as the active Vercel production deployment
+on 2026-07-22. This document records that baseline and the **manual** work that remains. The separate
+editorial pilot in [GEO_CONTENT_QUEUE.md](GEO_CONTENT_QUEUE.md) is not yet deployed; its actual
+production release will be measurement day zero (`D0`) for the 30/60/90 comparison.
+
+Code changes alone do not produce citations. They only make the site technically eligible for
+crawling, indexing, retrieval, and possible training consideration. The events below are distinct
+and must not be reported as one number:
 
 1. **Technical eligibility** — pages are crawlable, canonical, and carry valid structured data.
 2. **Indexing** — a search engine has fetched and stored the page.
@@ -16,24 +21,42 @@ Schema markup and crawler access do **not** guarantee any of stages 2–6.
 
 ---
 
-## 1. One-time setup
+## 1. Console and measurement status on 2026-07-22
 
 ### Bing Webmaster Tools
 
-1. Verify the same property (import from Search Console is fastest).
-2. Submit `https://www.suvroghosh.in/sitemap.xml`.
-3. Inspect the [AI Performance report](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview) for citation count, cited URLs,
-   and sampled grounding queries. OpenAI currently names Bing as one of ChatGPT Search's providers,
-   making this the highest-value provider console for the current objective.
-4. Configure [IndexNow](https://www.bing.com/indexnow/getstarted) if prompt notification of new or
-   substantively updated posts is worth maintaining. Submit only real publication/update events;
-   neither IndexNow nor a sitemap guarantees indexing or citation.
+- The correct site-add/verification flow was reached in an authenticated session.
+- An HTML verification meta element is present in the local working changes. It is not evidence of
+  ownership until that exact change is deployed and Bing successfully verifies the live page.
+- Sitemap processing, URL indexing, crawl/canonical errors, the
+  [AI Performance report](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview),
+  and existing IndexNow status remain **unverified** until property verification completes.
+- Owner action after the approved deployment: click **Verify**, submit
+  `https://www.suvroghosh.in/sitemap.xml` once if it is not already present, wait for processing, and
+  save the first AI Performance baseline. These are external account actions, not local code work.
+- [IndexNow](https://www.bing.com/indexnow/getstarted) is optional. Add it only if publication-time
+  notification is worth maintaining, and notify only on a genuine publication or substantive
+  update—not on every build. Neither IndexNow nor a sitemap guarantees indexing or citation.
 
 ### Google Search Console
 
-1. Verify ownership of `https://www.suvroghosh.in` (DNS TXT record is cleanest for a Vercel site).
-2. Submit `https://www.suvroghosh.in/sitemap.xml` and continue using the conventional Performance
-   and indexing reports as a broad web-discovery baseline.
+- The signed-in Google account did not have access to the `suvroghosh.in` domain property. No
+  indexing, sitemap, canonical-selection, Core Web Vitals, query, impression, or click baseline
+  could therefore be read.
+- Owner action: grant this account access to the existing property or complete ownership
+  verification deliberately. A DNS change must not be made implicitly. Once access exists, record
+  the tables below and submit the existing sitemap once if it is absent.
+
+### Vercel and analytics
+
+- The production project was accessible in the authenticated Vercel session, and the active
+  production deployment was verified against commit
+  `5398bacd272e6a1558ffe78f4b80ab3599ebad5d`.
+- Vercel Analytics and Speed Insights are installed in the site. The available 30-day Analytics
+  view supplied a site-level baseline and a sparse page table; it did not establish search indexing,
+  AI citation, crawler identity, or human intent.
+- If longer referrer or request-log retention is unavailable on the current plan, first use periodic
+  exports or dated manual snapshots. Do not add a paid analytics service without owner approval.
 
 ### Chinese search ecosystems (optional)
 
@@ -51,7 +74,7 @@ Do this only if Chinese-language or mainland-China discovery is an actual audien
 
 ### Log / analytics access
 
-- Ensure you can inspect Vercel access logs or analytics referrer data so generative-referral
+- Inspect Vercel access logs or analytics referrer data, where retention permits, so generative-referral
   domains (`chatgpt.com`, `claude.ai`, `perplexity.ai`, `copilot.microsoft.com`, `bing.com`,
   `kimi.com`, and any distinct Chinese-product referrers) can be distinguished from conventional
   search. OpenAI documents `utm_source=chatgpt.com` on its outbound links.
@@ -60,51 +83,74 @@ Do this only if Chinese-language or mainland-China discovery is an actual audien
 
 ---
 
-## 2. Recurring measurements
+## 2. Thirty-, sixty-, and ninety-day schedule
 
-Record the following at **7, 30, and 90 days** after deployment.
+Start this schedule only when the editorial pilot is actually deployed. Record the production URL,
+Git SHA, timestamp, and the four released pilot pages at `D0`. Take comparable snapshots at **D+30,
+D+60, and D+90**; do not backdate the schedule to the technical release.
+
+| Review | Purpose                                                                                                | Minimum decision                                                    |
+| ------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| D0     | Save pre/post-release technical and analytics baselines; confirm all pilot canonicals and redirects.   | Proceed only if the deployed pages match the reviewed local output. |
+| D+30   | Check discovery, indexing, first impressions/citations/referrals, engagement, and obvious regressions. | Correct technical defects; do not expand on anecdotal traffic.      |
+| D+60   | Compare pilot direction with untouched pages and inspect query/citation accuracy.                      | Draft an expansion recommendation only if evidence is coherent.     |
+| D+90   | Evaluate qualified discovery, professional conversions, and editorial cost.                            | Expand, adjust, or stop; a flat result is a valid finding.          |
 
 ### Indexing coverage (Search Console → Pages / Coverage)
 
-| Metric                  | Day 7 | Day 30 | Day 90 |
-| ----------------------- | ----- | ------ | ------ |
-| Indexed pages           |       |        |        |
-| Discovered, not indexed |       |        |        |
-| Crawled, not indexed    |       |        |        |
-| Excluded (reason)       |       |        |        |
+| Metric                  | D0  | D+30 | D+60 | D+90 |
+| ----------------------- | --- | ---- | ---- | ---- |
+| Indexed pages           |     |      |      |      |
+| Discovered, not indexed |     |      |      |      |
+| Crawled, not indexed    |     |      |      |      |
+| Excluded (reason)       |     |      |      |      |
 
 ### Conventional search performance (Search Console → Performance)
 
-| Metric              | Day 7 | Day 30 | Day 90 |
-| ------------------- | ----- | ------ | ------ |
-| Total impressions   |       |        |        |
-| Total clicks        |       |        |        |
-| Avg. CTR            |       |        |        |
-| Avg. position       |       |        |        |
-| Top 5 query groups  |       |        |        |
-| Top 5 landing pages |       |        |        |
+| Metric              | D0  | D+30 | D+60 | D+90 |
+| ------------------- | --- | ---- | ---- | ---- |
+| Total impressions   |     |      |      |      |
+| Total clicks        |     |      |      |      |
+| Avg. CTR            |     |      |      |      |
+| Avg. position       |     |      |      |      |
+| Top 5 query groups  |     |      |      |      |
+| Top 5 landing pages |     |      |      |      |
 
 ### Microsoft AI citations (Bing Webmaster Tools → AI Performance)
 
-| Metric                    | Day 7 | Day 30 | Day 90 |
-| ------------------------- | ----- | ------ | ------ |
-| Total citations           |       |        |        |
-| Distinct cited URLs       |       |        |        |
-| Top grounding query       |       |        |        |
-| Top cited article         |       |        |        |
-| Citation/referral overlap |       |        |        |
+| Metric                    | D0  | D+30 | D+60 | D+90 |
+| ------------------------- | --- | ---- | ---- | ---- |
+| Total citations           |     |      |      |      |
+| Distinct cited URLs       |     |      |      |      |
+| Top grounding query       |     |      |      |      |
+| Top cited article         |     |      |      |      |
+| Citation/referral overlap |     |      |      |      |
 
 ### Generative referral traffic (analytics referrers / logs)
 
-| Source                             | Day 7 visits | Day 30 visits | Day 90 visits | Landing pages |
-| ---------------------------------- | ------------ | ------------- | ------------- | ------------- |
-| chatgpt.com / chat.openai.com      |              |               |               |               |
-| claude.ai                          |              |               |               |               |
-| perplexity.ai                      |              |               |               |               |
-| copilot.microsoft.com              |              |               |               |               |
-| bing.com (Copilot answers)         |              |               |               |               |
-| kimi.com                           |              |               |               |               |
-| Chinese AI products (if separable) |              |               |               |               |
+| Source                             | D0 visits | D+30 visits | D+60 visits | D+90 visits | Landing pages |
+| ---------------------------------- | --------- | ----------- | ----------- | ----------- | ------------- |
+| chatgpt.com / chat.openai.com      |           |             |             |             |               |
+| claude.ai                          |           |             |             |             |               |
+| perplexity.ai                      |           |             |             |             |               |
+| copilot.microsoft.com              |           |             |             |             |               |
+| bing.com (Copilot answers)         |           |             |             |             |               |
+| kimi.com                           |           |             |             |             |               |
+| Chinese AI products (if separable) |           |             |             |             |               |
+
+### Reader engagement and professional conversion
+
+The inspected Vercel view did not expose verified contact, consulting, résumé, or subscription
+conversion counts. Record them only after a privacy-conscious event or destination-page method is
+approved; do not infer a conversion from an ordinary page view.
+
+| Outcome                                    | D0  | D+30 | D+60 | D+90 | Measurement rule                                                    |
+| ------------------------------------------ | --- | ---- | ---- | ---- | ------------------------------------------------------------------- |
+| Pilot-page engaged visits                  |     |      |      |      | Use one stable engagement definition across all windows.            |
+| Contact enquiries attributable to the site |     |      |      |      | Count completed enquiries, not contact-page views.                  |
+| Consulting enquiries                       |     |      |      |      | Count qualified messages with source where voluntarily supplied.    |
+| Résumé actions                             |     |      |      |      | Define once: meaningful click/download, not every résumé page view. |
+| Subscription completions                   |     |      |      |      | Count confirmed subscriptions, not form impressions.                |
 
 ### Verified crawler activity (access logs)
 
@@ -140,14 +186,48 @@ named/linked, the exact query, the cited URL, and whether the answer accurately 
 
 ---
 
-## 3. Baseline record (fill in at deployment)
+## 3. Recorded baseline
 
-- **Deployment date of this branch:** `____-__-__`
-- **Published post count before this deployment:** **530**
-- **Posts using `dateModified` before this deployment:** **0**
-- **Search Console verified:** ☐ **Bing Webmaster verified:** ☐ **Sitemap submitted:** ☐
-- **Bing AI Performance baseline saved:** ☐ **IndexNow configured (optional):** ☐
-- **Baidu / Sogou / Shenma submitted (optional):** ☐ / ☐ / ☐
+### Technical discoverability release
+
+- **Production verification date:** 2026-07-22
+- **Verified production Git commit:** `5398bacd272e6a1558ffe78f4b80ab3599ebad5d`
+- **Vercel production status:** active production deployment verified in the authenticated project
+- **Published Markdown source count recorded by the prior audit:** 530
+- **Posts with a substantive `dateModified` in that production release:** 0
+- **Editorial pilot deployment date / SHA:** not yet deployed; record at `D0`
+
+### Vercel Analytics: 2026-06-22 through 2026-07-22
+
+| Metric      | Baseline |
+| ----------- | -------: |
+| Visitors    |    1,330 |
+| Page views  |    4,490 |
+| Bounce rate |      71% |
+
+The canonical `va-healthcare-data-systems-mumps-to-sql` page recorded 5 visitors and 5 views. The
+canonical `hie-first-principles-openhie`, `confounding-factors-healthcare-it-analytics`, and
+`latent-space-in-healthcare-data` paths had no matching result in the available page table; that is
+**missing table evidence**, not a measured zero. Redirected siblings recorded 6 visitors/10 views
+(`how-va-healthcare-data-systems-work`), 3/4 (`hie-from-first-principles`), 4/7
+(`confounding-factors`), and 0 reported (`latent-space-healthcare-data`). Do not sum canonical and
+redirected rows as unique readers.
+
+Roughly 50% of the traffic shown in the available geography view was attributed to Singapore while
+referrer detail was unusually sparse. Treat that as an unresolved measurement anomaly—not a target
+market or proof of qualified readership—until a longer window or privacy-conscious request logs can
+distinguish genuine readers from bots, proxies, privacy effects, and internal traffic.
+
+### Console baseline
+
+| System                 | Status on 2026-07-22                                                                                                        | Next owner action                                                                                                                    |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Vercel                 | Production project and commit verified; 30-day Analytics view inspected.                                                    | Preserve dated snapshots; decide later whether existing retention is sufficient.                                                     |
+| Bing Webmaster Tools   | Authenticated verification flow reached; local meta verification change is not yet live; property reports not yet readable. | Deploy the reviewed change, click Verify, submit/check the sitemap, then save indexing and AI Performance baselines.                 |
+| Google Search Console  | Signed-in account lacks access to the domain property; no reports inspected.                                                | Grant access or deliberately complete ownership verification; then record sitemap, indexing, CWV, query, and landing-page baselines. |
+| Baidu / Sogou / Shenma | Not submitted; optional.                                                                                                    | Act only after deciding mainland-China discovery is a real goal.                                                                     |
+| Bing AI Performance    | No baseline yet.                                                                                                            | Inspect after Bing property verification.                                                                                            |
+| IndexNow               | Existing configuration not established.                                                                                     | Decide after Bing onboarding; if adopted, notify only genuine publish/update events.                                                 |
 
 ---
 
@@ -177,6 +257,6 @@ Choose a small cohort of high-value technical pages and improve only what is tru
 6. Keep fiction and satire visibly identified. Add a future `contentMode` only to ambiguous hybrids
    such as reported explanation, opinion, memoir, or personal-cultural essays.
 
-Compare that cohort with untouched pages at 30 and 90 days. Do not mass-produce FAQs, summaries,
+Compare that cohort with untouched pages at 30, 60, and 90 days. Do not mass-produce FAQs, summaries,
 or keyword variants merely to create machine-facing text; that would make the archive less
 distinctive and make causal measurement impossible.

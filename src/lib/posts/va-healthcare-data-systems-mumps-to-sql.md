@@ -2,16 +2,22 @@
 title: "How VA Healthcare Data Systems Work: From MUMPS to SQL"
 description: "A technical explanation of how Veterans Affairs healthcare data moves from VistA’s MUMPS and FileMan world into SQL warehouses, and why that translation is never merely a database conversion."
 date: "2026-04-25"
+dateModified: "2026-07-22"
 category: "Healthcare IT"
-tags: ["Patient Record","SQL","VistA","VA","FileMan","Data","MUMPS","Healthcare","Clinical","Medication"]
+tags: ["VistA","MUMPS","FileMan","SQL","Corporate Data Warehouse","VINCI","Healthcare Data Architecture","Data Provenance","Semantic Interoperability","Electronic Health Records"]
+pinnedTags: ["VistA", "MUMPS", "FileMan", "SQL", "Corporate Data Warehouse", "VINCI", "Healthcare Data Architecture", "Data Provenance", "Semantic Interoperability", "Electronic Health Records"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg"
+thumbnailAlt: "Muted abstract layers and contour lines suggesting clinical data moving between operational and analytical systems"
+mediaReviewed: true
+inPlainEnglish: "Moving VA clinical data from VistA’s MUMPS and FileMan environment into SQL is not chiefly a database conversion. It is a semantic translation from operational care into institutional measurement, and that translation needs an explicit interpretation contract."
+keyTerms: ["VistA", "MUMPS", "FileMan", "Corporate Data Warehouse", "Data Provenance", "Interpretation Contract"]
 ---
 
 
 
-<Pi src="/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg" />
+<Pi src="/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg" alt="" />
 
 
 
@@ -22,7 +28,11 @@ Acronyms used in this post: VA [Veterans Affairs, the United States department r
 
 ---
 
-VA healthcare data did not begin life as a polite row in a table. It began in MUMPS globals, those strange, persistent, tree-like structures that look to a SQL person like a banyan tree wandered into an accounting office and refused to leave.
+## The system grew rather than arrived
+
+> **Basis and scope.** This analysis draws on my work with VA hospital and research data. The examples are generalized and contain no patient information, restricted implementation detail, or confidential institutional material. Public system facts are sourced below; the architectural interpretation is mine. My related work is summarized in [Projects](/projects) and [Consulting](/consulting).
+
+VA healthcare data did not begin life as a polite row in a table. It began in MUMPS globals, those strange, persistent, tree-like structures that look to a SQL person like a banyan tree wandered into an accounting office and refused to leave. The official [VA VistA Monograph](https://www.va.gov/vdl/documents/Monograph/Monograph/vista_monograph_0723_r.pdf) documents VistA’s M/MUMPS foundation, distributed history, and clinical applications; it is a useful public map, not a complete inventory of every 2026 deployment.
 
 That one fact explains half the trouble.
 
@@ -34,7 +44,9 @@ The MUMPS world is not just a storage choice. In VistA, the application and the 
 
 That is why “MUMPS to SQL” sounds easier than it is. The phrase makes it sound like a carpenter’s job. Take this old wooden cupboard, sand it, polish it, put it in the new flat. But the cupboard contains legal papers, grandfather’s spectacles, expired medicine, one rupee coins, and a key to a lock nobody has seen since 1989. You can move the wood. The meaning is another matter.
 
-FileMan is the great interpreter inside this older VA universe. It tells VistA what files exist, what fields mean, what values are permitted, what prompts users see, what cross-references fire, what pointers connect one thing to another, and how values should be entered or displayed. To a SQL person, a FileMan file can look like a table, a record like a row, and a field like a column. That resemblance is useful, but it is also a trap. A coconut and a skull are both round. You should still be careful which one you crack open.
+## FileMan is hierarchy with executable context
+
+[FileMan](https://www.va.gov/vdl/documents/Infrastructure/Fileman/fm22_2dg.pdf) is the great interpreter inside this older VA universe. It tells VistA what files exist, what fields mean, what values are permitted, what prompts users see, what cross-references fire, what pointers connect one thing to another, and how values should be entered or displayed. To a SQL person, a FileMan file can look like a table, a record like a row, and a field like a column. That resemblance is useful, but it is also a trap. A coconut and a skull are both round. You should still be careful which one you crack open.
 
 FileMan supports hierarchy naturally. A patient record can contain multiples, and those multiples can contain more detail. SQL prefers separate tables and relationships through keys. This is not a moral difference. It is a difference in worldview. FileMan is comfortable saying, “Here is this patient, and inside this patient’s record are nested clinical facts.” SQL says, “Please stand in separate queues, bring identifiers, and do not crowd the counter.”
 
@@ -46,9 +58,11 @@ A medication order in VistA is not merely a medication row. It is pharmacy workf
 
 When these things move into SQL, they gain visibility but can lose smell, texture, and street address.
 
-The SQL warehouse wants a clean representation. It wants a lab table, medication table, patient table, visit table, provider table, diagnosis table, procedure table. This is necessary. No national analytics program can operate by rummaging directly through every local operational corner forever. CDW exists because VHA needs enterprise reporting, research data, population health analytics, quality measurement, operations management, surveillance, planning, and accountability. You cannot run a national health system by shouting into local databases one at a time.
+## From operational care to enterprise measurement
 
-So the data travels. Local VistA systems store clinical and administrative facts in MUMPS globals governed by FileMan and package logic. Extraction processes pull selected data. Transformation logic reshapes it. Mapping logic tries to make local terms behave nationally. Loading processes put it into SQL structures. Analysts, researchers, dashboard developers, informaticists, and program offices query it downstream.
+The SQL warehouse wants a clean representation. It wants a lab table, medication table, patient table, visit table, provider table, diagnosis table, procedure table. This is necessary. No national analytics program can operate by rummaging directly through every local operational corner forever. The public [Corporate Data Warehouse record](https://www.data.va.gov/dataset/Corporate-Data-Warehouse-CDW-/ftpi-epf7) describes CDW as an enterprise implementation that consolidates disparate sources for a coherent data model. CDW exists because VHA needs enterprise reporting, research data, population health analytics, quality measurement, operations management, surveillance, planning, and accountability. You cannot run a national health system by shouting into local databases one at a time.
+
+So the data travels. Local VistA systems store clinical and administrative facts in MUMPS globals governed by FileMan and package logic. Extraction processes pull selected data. Transformation logic reshapes it. Mapping logic tries to make local terms behave nationally. Loading processes put it into SQL structures. Analysts, researchers, dashboard developers, informaticists, and program offices query it downstream. VA’s public [VINCI overview](https://www.research.va.gov/programs/vinci/default.cfm) shows the research side of this coexistence, including CDW extractions from VistA and other SQL-based sources.
 
 That is the brochure version. In production, every verb in that paragraph has a small knife.
 
@@ -64,6 +78,8 @@ A value can be perfectly meaningful inside its native workflow and nearly useles
 
 Calling this “data quality” is sometimes like blaming the fish because your bucket has a hole.
 
+## A change in theory of knowledge
+
 The non-obvious architectural point is this: moving VA data from MUMPS to SQL is not mainly a database conversion. It is a change in theory of knowledge.
 
 MUMPS and FileMan ask, “How do we support the clinical and administrative work?” SQL asks, “How do we make the work measurable across people, facilities, programs, and time?” Those are both noble questions, but they do not produce the same data shape. One is concerned with action. The other is concerned with legibility. Work first, measurement later. Except in real institutions the measurement comes back and starts controlling the work, like a school inspector who first observes the class and then rearranges the children.
@@ -78,6 +94,8 @@ This is why source of record and source of truth must be separated. The source o
 
 This sounds untidy because it is untidy. Large healthcare institutions are not single machines. They are federations of departments, incentives, regulations, clinical habits, local histories, budget scars, and software layers. The data architecture records that federalism. If a patient has one body but six official representations, that is not because architects are fools. It is because each representation was produced by a different piece of the institution trying to survive its own day.
 
+## Time, provenance, and interpretation contracts
+
 The MUMPS-to-SQL crossing also changes time. In the operational system, a clinician may see a current state. In the warehouse, the same fact may arrive after extraction, transformation, validation, and loading. A patient discharged at noon may not appear discharged downstream yet. A consult may be closed administratively but not clinically resolved. A lab may be collected, resulted, verified, and loaded at different times. For a casual report this may be tolerable. For safety surveillance or operational intervention, it can be the difference between useful and misleading.
 
 Time in healthcare data is not one column. It is a family dispute.
@@ -90,13 +108,26 @@ The practical artifact every important data product needs is not just a schema. 
 
 A schema says: here are the columns. An interpretation contract says: here is what this row claims to represent; here is how it was derived; here are the source domains; here are the timestamps; here is what counts and what does not; here are the known ambiguities; here is how local variation is handled; here is the terminology mapping; here is the update behavior; here is what you must not use this for unless you enjoy public embarrassment.
 
+This is my conceptual model, not an official VA architecture diagram:
+
+| Layer | Primary job | Evidence that must survive |
+| --- | --- | --- |
+| VistA and FileMan | Support clinical and administrative action | Source identifiers, local workflow, internal values, event context |
+| Source-like extraction | Preserve a reproducible copy of selected operational facts | Extract logic, source time, load time, omissions |
+| Curated SQL domains | Make enterprise questions consistently answerable | Mapping versions, transformations, local-to-national relationships |
+| Published metric or research data product | Support a named decision or analysis | Cohort definition, denominator, refresh policy, limitations, accountable owner |
+
 This matters especially for research and quality measurement. A cohort definition is not “just a query.” It is a clinical argument expressed in SQL. A hypertension cohort, a diabetes registry, a suicide-risk analytic extract, a readmission measure, a medication safety dashboard, a cancer screening numerator—each is a claim about reality. The SQL may run successfully and still be wrong in the way a neatly printed train ticket can be wrong if it sends you to Siliguri when you meant Sealdah.
+
+## Modernization does not repeal ambiguity
 
 The clean solution, naturally, does not exist. That sentence should be embroidered above every healthcare architecture meeting room.
 
-Why not? Because legacy systems cannot simply stop while everyone redesigns meaning. Regulations keep moving. Clinical work continues. Budgets arrive with strings. Procurement creates its own weather. Local facilities have real workflows. National programs need comparable measures. Modernization introduces hybrid periods where VistA, newer EHR systems, community care data, national services, interfaces, claims-adjacent feeds, and migrated history all coexist like relatives at a wedding who know too much about each other.
+Why not? Because legacy systems cannot simply stop while everyone redesigns meaning. Regulations keep moving. Clinical work continues. Budgets arrive with strings. Procurement creates its own weather. Local facilities have real workflows. National programs need comparable measures. Modernization introduces hybrid periods where VistA, newer EHR systems, community care data, national services, interfaces, claims-adjacent feeds, and migrated history all coexist like relatives at a wedding who know too much about each other. [As of 17 July 2026, VA reported](https://digital.va.gov/ehr-modernization/frequently-asked-question/) that the Federal EHR was in use at 14 VA medical centers while the department transitioned more than 130 VistA instances, with systemwide completion expected as early as 2031. Those counts and dates are volatile; the semantic coexistence is the durable point.
 
 VA EHR modernization changes the source landscape, but it does not abolish the semantic problem. Replacing or supplementing old systems can improve many things, but it does not repeal ambiguity. Modern platforms still have configuration, interface queues, local workflow, documentation burden, data conversion issues, reporting definitions, and user workarounds. A shiny system can produce old confusion at higher speed and with better fonts.
+
+## An architectural direction
 
 So what is the architectural direction?
 
@@ -110,6 +141,8 @@ Fourth, keep local variation visible long enough to understand it. Standardizati
 
 Fifth, design for correction. Healthcare data systems should assume future reinterpretation. Terminologies change. Measures change. clinical knowledge changes. Workflows change. Old mappings become suspect. New use cases appear. A warehouse that cannot explain its past is a warehouse that will eventually lie with confidence.
 
+## Two kinds of institutional memory
+
 The best mental model is simple. VistA in MUMPS/FileMan is the operational memory of care. SQL warehouses like CDW are the enterprise memory of measurement. One remembers the clinic in motion. The other makes the institution legible to itself. The crossing between them is where architecture earns its rice and lentils.
 
 And that crossing is not merely technical. It is moral in the ordinary, unglamorous sense. Bad representation can move resources, miscount work, distort quality, mislead research, burden clinicians, and make a veteran disappear statistically while still sitting very much alive in the waiting room.
@@ -118,6 +151,13 @@ The map is not the territory. Fine. We all learned that. But in healthcare, the 
 
 That is the real story of VA healthcare data systems. Not old MUMPS becoming respectable SQL. Not legacy giving way to modernity like a sepia photograph fading into a cloud dashboard. The real story is harder and more interesting: a vast healthcare system trying to convert the messy, local, time-bound grammar of care into national knowledge without squeezing the patient out of the sentence.
 
+## Sources and currency note
+
+- [VA VistA Monograph, July 2023](https://www.va.gov/vdl/documents/Monograph/Monograph/vista_monograph_0723_r.pdf)
+- [VA FileMan 22.2 Developer’s Guide, July 2025](https://www.va.gov/vdl/documents/Infrastructure/Fileman/fm22_2dg.pdf)
+- [VA Open Data Portal: Corporate Data Warehouse](https://www.data.va.gov/dataset/Corporate-Data-Warehouse-CDW-/ftpi-epf7)
+- [VA Office of Research and Development: VINCI](https://www.research.va.gov/programs/vinci/default.cfm)
+- [VA EHR Modernization FAQ, updated 17 July 2026](https://digital.va.gov/ehr-modernization/frequently-asked-question/)
 
 
 
@@ -125,5 +165,5 @@ That is the real story of VA healthcare data systems. Not old MUMPS becoming res
 
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [Building VA Data Warehouses](/blog/healthcare-it/va_data_warehouse_reality)
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)
 - [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

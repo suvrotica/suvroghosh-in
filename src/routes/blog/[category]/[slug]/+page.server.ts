@@ -62,7 +62,7 @@ export const load: PageServerLoad = async ({ params }) => {
 			ogImageAlt: metadata.thumbnailAlt ?? metadata.title,
 			type: 'article' as const,
 			publishedTime: metadata.date,
-			modifiedTime: metadata.dateModified ?? metadata.date,
+			modifiedTime: metadata.dateModified,
 			author: metadata.author ?? 'Suvro Ghosh',
 			keywords,
 			category: catLabel,

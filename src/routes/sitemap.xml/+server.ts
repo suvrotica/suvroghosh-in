@@ -22,8 +22,9 @@ function escapeXml(value: string) {
 export async function GET() {
 	const categoryLastMod = new Map<string, string>();
 	const yearLastMod = new Map<string, string>();
+	const publishedPosts = getPublishedPosts();
 
-	const posts = getPublishedPosts().map((post) => {
+	const posts = publishedPosts.map((post) => {
 		const category = post.categorySlug ?? 'uncategorized';
 		const year = /^\d{4}/.exec(post.date)?.[0];
 		const lastMod = post.dateModified ?? post.date;
@@ -43,6 +44,10 @@ export async function GET() {
 			lastMod
 		};
 	});
+	const blogLastMod = posts.reduce(
+		(latest, post) => (post.lastMod > latest ? post.lastMod : latest),
+		'1970-01-01'
+	);
 
 	const categories = Array.from(categoryLastMod.entries()).map(([category, lastMod]) => ({
 		url: siteUrl + '/blog/' + category,
@@ -76,15 +81,15 @@ export async function GET() {
 		}, '1970-01-01');
 
 	const pages = [
-		{ url: siteUrl + '/', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/', lastMod: blogLastMod },
 		{ url: siteUrl + '/start-here', lastMod: startHereLastMod },
 		{ url: siteUrl + '/resume', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/projects', lastMod: '2026-07-18' },
 		{ url: siteUrl + '/consulting', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
-		{ url: siteUrl + '/writing', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/writing', lastMod: blogLastMod },
 		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
-		{ url: siteUrl + '/blog', lastMod: '2026-06-26' },
+		{ url: siteUrl + '/blog', lastMod: blogLastMod },
 		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
 		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }
 	];

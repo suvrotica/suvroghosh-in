@@ -105,5 +105,5 @@ Latent space begins with mathematics, but in healthcare it ends as architecture.
 
 - [How VA Healthcare Data Systems Work: From MUMPS to SQL](/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
 - [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)
-- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/healthcare-it/arrow_uncertainty_medical_care_healthcare_it)
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/economics/kenneth-arrow-medical-care)
+- [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)

@@ -89,7 +89,7 @@ And that, in the end, is the important distinction. A thing need not be a person
 
 ## Related Posts
 
-- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-trust-collapse)
 - [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)

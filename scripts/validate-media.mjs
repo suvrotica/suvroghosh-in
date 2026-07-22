@@ -1,9 +1,11 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { parsePostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const sourceRoot = path.join(root, 'src');
+const postsRoot = path.join(sourceRoot, 'lib', 'posts');
 const staticRoot = path.join(root, 'static');
 const mediaDirectories = ['images', 'photos', 'thumbnail', 'videos', 'audio'];
 const sourceExtensions = new Set(['.md', '.svx', '.svelte', '.ts', '.js', '.mjs', '.css', '.html']);
@@ -57,6 +59,60 @@ function normalizeReference(value) {
 	return value.trim().split(/[?#]/, 1)[0];
 }
 
+function lineNumber(text, index) {
+	return text.slice(0, index).split('\n').length;
+}
+
+function literalAttribute(component, name) {
+	const match = component.match(new RegExp(`(?:^|\\s)${name}\\s*=\\s*(["'])([\\s\\S]*?)\\1`));
+	return match ? match[2] : null;
+}
+
+function validateReviewedMedia(file, text, reviewErrors) {
+	let metadata;
+	try {
+		metadata = parsePostFrontmatter(text, toPosix(path.relative(root, file)));
+	} catch {
+		// validate:content owns frontmatter syntax errors. Avoid reporting the same defect twice here.
+		return null;
+	}
+	if (metadata.mediaReviewed !== true) return null;
+
+	const source = toPosix(path.relative(root, file));
+	if (typeof metadata.thumbnailAlt !== 'string' || metadata.thumbnailAlt.trim() === '') {
+		reviewErrors.push(`${source}: mediaReviewed posts require a non-empty authored thumbnailAlt.`);
+	}
+
+	const imageComponent = /<(Pi|PostImage)\b[\s\S]*?>/g;
+	let reviewedImageCount = 0;
+	for (const match of text.matchAll(imageComponent)) {
+		reviewedImageCount += 1;
+		const line = lineNumber(text, match.index);
+		const alt = literalAttribute(match[0], 'alt');
+		if (alt === null) {
+			reviewErrors.push(
+				`${source}:${line}: mediaReviewed image requires an explicit authored alt; use alt="" only when the image is decorative.`
+			);
+			continue;
+		}
+		if (alt === '') continue;
+		if (alt.trim() === '') {
+			reviewErrors.push(
+				`${source}:${line}: decorative image alt must be exactly alt=""; whitespace is not a valid authored alternative.`
+			);
+			continue;
+		}
+
+		const caption = literalAttribute(match[0], 'caption');
+		if (caption === null || caption.trim() === '') {
+			reviewErrors.push(
+				`${source}:${line}: meaningful mediaReviewed image requires a non-empty authored caption.`
+			);
+		}
+	}
+	return reviewedImageCount;
+}
+
 function addReference(references, value, source) {
 	const reference = normalizeReference(value);
 	if (!reference.startsWith('/') || !isMediaPath(reference)) return;
@@ -66,8 +122,7 @@ function addReference(references, value, source) {
 	references.set(reference, sources);
 }
 
-function extractReferences(file, references) {
-	const text = fs.readFileSync(file, 'utf8');
+function extractReferences(file, references, text = fs.readFileSync(file, 'utf8')) {
 	const quotedPath = /(["'])(\/(?:images|photos|thumbnail|videos|audio)\/[^"'`\r\n]+?)\1/g;
 	const markdownPath = /\]\((\/(?:images|photos|thumbnail|videos|audio)\/[^)\s]+)\)/g;
 	const component = /<(Pi|PostImage|Vid|PostVideo)\b[\s\S]*?>/g;
@@ -96,15 +151,28 @@ const sourceFiles = walk(sourceRoot).filter(
 		!toPosix(path.relative(sourceRoot, file)).startsWith('lib/SavedPosts/')
 );
 const references = new Map();
+const mediaReviewErrors = [];
+let reviewedPostCount = 0;
+let reviewedImageCount = 0;
 
-for (const file of sourceFiles) extractReferences(file, references);
+for (const file of sourceFiles) {
+	const text = fs.readFileSync(file, 'utf8');
+	extractReferences(file, references, text);
+	if (path.dirname(file) === postsRoot && path.extname(file) === '.md') {
+		const reviewedImages = validateReviewedMedia(file, text, mediaReviewErrors);
+		if (reviewedImages != null) {
+			reviewedPostCount += 1;
+			reviewedImageCount += reviewedImages;
+		}
+	}
+}
 
 const mediaFiles = mediaDirectories.flatMap((directory) => walk(path.join(staticRoot, directory)));
 const assets = new Map(mediaFiles.map((file) => [publicPath(file), file]));
 const assetsByLowercasePath = new Map(
 	Array.from(assets.keys(), (assetPath) => [assetPath.toLowerCase(), assetPath])
 );
-const errors = [];
+const errors = [...mediaReviewErrors];
 
 for (const [reference, sources] of references) {
 	if (assets.has(reference)) continue;
@@ -195,5 +263,6 @@ if (errors.length > 0) {
 
 console.log(
 	`Media validation passed: ${references.size} references checked against ${assets.size} assets; ` +
-		`${unreferenced.length} unreferenced candidate(s) (${formatMiB(unreferencedBytes)}).`
+		`${unreferenced.length} unreferenced candidate(s) (${formatMiB(unreferencedBytes)}); ` +
+		`${reviewedPostCount} media-reviewed post(s) with ${reviewedImageCount} Pi/PostImage embed(s) audited.`
 );

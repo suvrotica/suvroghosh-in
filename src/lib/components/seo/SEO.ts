@@ -138,7 +138,6 @@ export function blogPostingSchema(post: {
 		description: post.description,
 		image: absoluteUrl(post.thumbnail) ?? defaultOgImage,
 		datePublished: post.date,
-		dateModified: post.dateModified ?? post.date,
 		author: {
 			'@id': personId
 		},
@@ -158,6 +157,9 @@ export function blogPostingSchema(post: {
 		isAccessibleForFree: true,
 		inLanguage: 'en'
 	};
+	if (post.dateModified) {
+		schema.dateModified = post.dateModified;
+	}
 	if (post.wordCount) {
 		schema.wordCount = post.wordCount;
 	}

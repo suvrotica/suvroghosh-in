@@ -7,10 +7,12 @@ export type BlogPostMetadata = {
 	dateModified?: string;
 	category: string;
 	tags: string[];
+	pinnedTags?: string[];
 	series?: string[];
 	published: boolean;
 	thumbnail?: string;
 	thumbnailAlt?: string;
+	mediaReviewed?: boolean;
 	color?: string;
 	author?: string;
 	readingTime?: string;

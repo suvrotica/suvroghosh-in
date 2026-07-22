@@ -73,5 +73,5 @@ AI will not create human loneliness from nothing. It will accelerate what modern
 
 - [The Premature Bedside Manner of Large Language Models](/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety)
 - [Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox](/blog/healthcare-it/mental-health-polypharmacy-decision-support)
-- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-trust-collapse)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)

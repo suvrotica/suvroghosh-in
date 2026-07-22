@@ -125,5 +125,5 @@ That is the real story of VA healthcare data systems. Not old MUMPS becoming res
 
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [Building VA Data Warehouses](/blog/healthcare-it/va_data_warehouse_reality)
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)
 - [Applied Multivariate Statistical Modeling in Healthcare IT](/blog/healthcare-it/multivariate-statistical-modeling-in-healthcare-it)

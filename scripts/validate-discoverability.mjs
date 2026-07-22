@@ -156,6 +156,23 @@ for (const post of published) {
 	seenPaths.set(key, post.file);
 }
 
+const postRoutingSource = fs.readFileSync(
+	path.join(root, 'src', 'lib', 'content', 'posts.ts'),
+	'utf8'
+);
+const aliasBlock = postRoutingSource.match(
+	/export const postPathAliases[\s\S]*?=\s*\{([\s\S]*?)\};/
+);
+if (!aliasBlock) {
+	fail('src/lib/content/posts.ts: could not inspect postPathAliases for canonical render samples.');
+}
+const redirectAliasRoutes = new Set(
+	aliasBlock
+		? Array.from(aliasBlock[1].matchAll(/["']([^"']+)["']\s*:/g), ([, source]) => `/blog/${source}`)
+		: []
+);
+const indexablePublished = published.filter((post) => !redirectAliasRoutes.has(post.path));
+
 /* -------------------------------------------------------------------------- */
 /* 2. robots.txt + sitemap source checks                                       */
 /* -------------------------------------------------------------------------- */
@@ -223,7 +240,7 @@ const sitemapSource = fs.readFileSync(
 if (!/getPublishedPosts|isIndexablePost|published === false/.test(sitemapSource)) {
 	fail('sitemap.xml generator should exclude unpublished posts.');
 }
-if (!/dateModified \?\? post\.date|post\.dateModified/.test(sitemapSource)) {
+if (!/post\.dateModified\s*\?\?\s*post\.date/.test(sitemapSource)) {
 	fail('sitemap.xml post lastmod should prefer dateModified over the publication date.');
 }
 
@@ -293,6 +310,70 @@ function flattenGraph(docs) {
 
 const byType = (nodes, type) => nodes.filter((n) => n && n['@type'] === type);
 
+function htmlAttribute(tag, name) {
+	const match = tag.match(new RegExp(`\\b${name}\\s*=\\s*(["'])(.*?)\\1`, 'i'));
+	return match?.[2];
+}
+
+function metaPropertyValues(html, property) {
+	const values = [];
+	for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
+		if (htmlAttribute(match[0], 'property') !== property) continue;
+		const content = htmlAttribute(match[0], 'content');
+		if (content != null) values.push(content);
+	}
+	return values;
+}
+
+function visibleUpdatedDates(html) {
+	const withoutComments = html.replace(/<!--[\s\S]*?-->/g, '');
+	return Array.from(
+		withoutComments.matchAll(/Updated\s*<time\b[^>]*\bdatetime\s*=\s*(["'])(.*?)\1/gi),
+		(match) => match[2]
+	);
+}
+
+function checkModifiedDateSignals(route, html, posting, metadata) {
+	const expected = metadata.dateModified;
+	const visibleDates = visibleUpdatedDates(html);
+	const openGraphDates = metaPropertyValues(html, 'article:modified_time');
+	const hasJsonLdDate =
+		posting != null && Object.prototype.hasOwnProperty.call(posting, 'dateModified');
+
+	if (expected == null) {
+		if (visibleDates.length > 0) {
+			fail(
+				`${route}: unmodified article renders a visible Updated date (${visibleDates.join(', ')}).`
+			);
+		}
+		if (openGraphDates.length > 0) {
+			fail(
+				`${route}: unmodified article emits article:modified_time (${openGraphDates.join(', ')}).`
+			);
+		}
+		if (hasJsonLdDate) {
+			fail(`${route}: unmodified BlogPosting emits JSON-LD dateModified.`);
+		}
+		return;
+	}
+
+	if (visibleDates.length !== 1 || visibleDates[0] !== expected) {
+		fail(
+			`${route}: visible Updated date must exactly match frontmatter dateModified ${expected}; found ${visibleDates.length > 0 ? visibleDates.join(', ') : 'none'}.`
+		);
+	}
+	if (openGraphDates.length !== 1 || openGraphDates[0] !== expected) {
+		fail(
+			`${route}: article:modified_time must exactly match frontmatter dateModified ${expected}; found ${openGraphDates.length > 0 ? openGraphDates.join(', ') : 'none'}.`
+		);
+	}
+	if (!hasJsonLdDate || posting.dateModified !== expected) {
+		fail(
+			`${route}: BlogPosting.dateModified must exactly match frontmatter dateModified ${expected}; found ${hasJsonLdDate ? posting.dateModified : 'none'}.`
+		);
+	}
+}
+
 function checkCommon(route, html) {
 	const h1Count = (html.match(/<h1[\s>]/g) || []).length;
 	if (h1Count !== 1) fail(`${route}: expected exactly one <h1>, found ${h1Count}.`);
@@ -333,10 +414,12 @@ async function runRenderedChecks() {
 		fail('No published posts found to render.');
 		return;
 	}
-	const faqSample = published.find(
+	const faqSample = indexablePublished.find(
 		(post) => Array.isArray(post.metadata.faq) && post.metadata.faq.length > 0
 	);
-	const renderedPostSamples = [sample, faqSample].filter(
+	const modifiedSamples = indexablePublished.filter((post) => post.metadata.dateModified != null);
+	const unmodifiedSample = indexablePublished.find((post) => post.metadata.dateModified == null);
+	const renderedPostSamples = [sample, unmodifiedSample, faqSample, ...modifiedSamples].filter(
 		(post, index, posts) =>
 			post && posts.findIndex((candidate) => candidate?.path === post.path) === index
 	);
@@ -383,29 +466,28 @@ async function runRenderedChecks() {
 			const renderedPost = renderedPostByRoute.get(route);
 			if (renderedPost) {
 				const postings = byType(nodes, 'BlogPosting');
+				const posting = postings[0];
 				if (postings.length !== 1) {
 					fail(`${route}: expected one BlogPosting entity, found ${postings.length}.`);
 				} else {
-					const post = postings[0];
-					for (const field of [
-						'headline',
-						'description',
-						'datePublished',
-						'dateModified',
-						'image',
-						'genre'
-					]) {
-						if (!post[field]) fail(`${route}: BlogPosting is missing "${field}".`);
+					for (const field of ['headline', 'description', 'datePublished', 'image', 'genre']) {
+						if (!posting[field]) fail(`${route}: BlogPosting is missing "${field}".`);
 					}
-					if (post.isAccessibleForFree !== true)
+					if (posting.datePublished !== renderedPost.metadata.date) {
+						fail(
+							`${route}: BlogPosting.datePublished must exactly match frontmatter date ${renderedPost.metadata.date}.`
+						);
+					}
+					if (posting.isAccessibleForFree !== true)
 						fail(`${route}: BlogPosting should identify the public article as free to access.`);
-					if (post.author?.['@id'] !== PERSON_ID)
+					if (posting.author?.['@id'] !== PERSON_ID)
 						fail(`${route}: BlogPosting.author must reference ${PERSON_ID}.`);
-					if (post.isPartOf?.['@id'] !== WEBSITE_ID)
+					if (posting.isPartOf?.['@id'] !== WEBSITE_ID)
 						fail(`${route}: BlogPosting.isPartOf must reference ${WEBSITE_ID}.`);
-					if (post.mainEntityOfPage?.['@id'] !== `${SITE}${route}`)
+					if (posting.mainEntityOfPage?.['@id'] !== `${SITE}${route}`)
 						fail(`${route}: BlogPosting.mainEntityOfPage must equal the canonical article URL.`);
 				}
+				checkModifiedDateSignals(route, html, posting, renderedPost.metadata);
 
 				if (!/aria-label="Breadcrumb"/.test(html)) {
 					fail(`${route}: visible breadcrumb nav not found next to BreadcrumbList schema.`);

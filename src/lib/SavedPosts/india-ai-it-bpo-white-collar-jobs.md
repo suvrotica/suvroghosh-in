@@ -106,4 +106,4 @@ P.S. References: India’s GCC market is widely estimated in the $60–65 billio
 - [Failing Well Without Looking Successful](/blog/society/failing-well-without-looking-successful)
 - [The Coming Unemployment](/blog/artificial-intelligence/the-coming-unemployment)
 - [The Premature Bedside Manner of Large Language Models](/blog/healthcare-it/premature-llm-deployment-clinical-trials-ai-safety)
-- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-and-the-trust-collapse)
+- [AI, Meaningful Work, and the Trust Collapse](/blog/artificial-intelligence/ai-meaningful-work-trust-collapse)

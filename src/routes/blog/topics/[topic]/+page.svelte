@@ -16,7 +16,7 @@
 		data.page > 1 ? `${siteUrl}${archivePath}?page=${data.page}` : `${siteUrl}${archivePath}`
 	);
 	let pageTitle = $derived(
-		`${data.topic.label}${data.page > 1 ? ` — Page ${data.page}` : ''} | SuvroGhosh.In`
+		`${data.topic.label} Topic${data.page > 1 ? ` — Page ${data.page}` : ''} | SuvroGhosh.In`
 	);
 	let pageDescription = $derived(
 		`Essays and articles by Suvro Ghosh about ${data.topic.label}${data.page > 1 ? ` — page ${data.page}` : ''}.`
@@ -32,7 +32,7 @@
 	keywords={[data.topic.label, 'Suvro Ghosh', 'Essays', 'Writing']}
 	schema={withSiteGraph([
 		collectionPageSchema({
-			name: `${data.topic.label}${data.page > 1 ? ` — Page ${data.page}` : ''}`,
+			name: `${data.topic.label} Topic${data.page > 1 ? ` — Page ${data.page}` : ''}`,
 			description: pageDescription,
 			url: canonicalUrl,
 			about: data.topic.label

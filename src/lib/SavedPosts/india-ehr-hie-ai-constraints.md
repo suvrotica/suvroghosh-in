@@ -117,7 +117,7 @@ And in India, one learns not to sneer at the small working thing.
 
 ## Related Posts
 
-- [FHIR](/blog/healthcare-it/fhir-for-a-curious-student-in-calcutta)
+- [FHIR](/blog/healthcare-it/fhir-the-universal-language-of-health-data)
 - [Latent Space in Healthcare Data, From the Beginning](/blog/healthcare-it/latent-space-in-healthcare-data)
 - [HIE from First Principles](/blog/healthcare-it/hie-first-principles-openhie)
-- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/healthcare-it/arrow_uncertainty_medical_care_healthcare_it)
+- [Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market](/blog/economics/kenneth-arrow-medical-care)

@@ -5,7 +5,8 @@ date: "2026-07-22"
 thumbnail: "/images/create-art-living-pigment-studio.webp"
 thumbnailAlt: "Abstract living pigments with translucent blue watercolor blooms, rust-red granulation, and thick ochre oil-like ridges"
 category: "Visualizations"
-tags: ["Soft Wash","Colors Mix","Simulation Simplifies","Field Records","Mobile Pigment","Pigment","Brush","Painting","Moisture","Simulation"]
+tags: ["Shaders","WebGL","Watercolor","Simulation","Interactive Art","GPU Computing","Digital Painting","Generative Art","Fragment Shaders","Procedural Art"]
+pinnedTags: ["Shaders", "WebGL", "Watercolor", "Simulation", "Interactive Art", "GPU Computing", "Digital Painting", "Generative Art", "Fragment Shaders", "Procedural Art"]
 published: true
 color: "#7A5B4D"
 author: "Suvro Ghosh"

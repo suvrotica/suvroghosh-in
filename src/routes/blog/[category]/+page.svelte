@@ -15,7 +15,7 @@
 		data.page > 1 ? `${siteUrl}${categoryPath}?page=${data.page}` : `${siteUrl}${categoryPath}`
 	);
 	let pageTitle = $derived(
-		`${data.categoryDisplay}${data.page > 1 ? ` — Page ${data.page}` : ''} | SuvroGhosh.In`
+		`${data.categoryDisplay} Category${data.page > 1 ? ` — Page ${data.page}` : ''} | SuvroGhosh.In`
 	);
 	let rangeStart = $derived((data.page - 1) * BLOG_PAGE_SIZE + 1);
 	let rangeEnd = $derived(rangeStart + data.posts.length - 1);
@@ -28,7 +28,7 @@
 	keywords={[data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog']}
 	schema={withSiteGraph([
 		collectionPageSchema({
-			name: `${data.categoryDisplay} Essays`,
+			name: `${data.categoryDisplay} Category Essays`,
 			description: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`,
 			url: canonicalUrl,
 			about: data.categoryDisplay
@@ -44,6 +44,11 @@
 		>
 			<span aria-hidden="true">←</span>&nbsp;All posts
 		</a>
+		<p
+			class="mb-2 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
+		>
+			Category archive
+		</p>
 		<h1>{data.categoryDisplay}</h1>
 		<p>
 			Browse {data.totalResults}

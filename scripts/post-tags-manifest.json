@@ -1,5 +1,5 @@
 {
-	"version": "2026-07-13.1",
+	"version": "2026-07-22.1",
 	"posts": {
 		"src/lib/posts/-a-read-this-first.md": {
 			"bodyHash": "b2d98832fb21e8c0d08eb5e60b320367244838af800a8f22b16ca69a950b2361",
@@ -1428,20 +1428,32 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/confounding-factors-healthcare-it-analytics.md": {
-			"bodyHash": "1bc0e28ba547ba1f66af4025be01652b241b0f9b2caac9e92ba14bdf9670d961",
+			"bodyHash": "823eb6874b2b5a69e0ebb467849603da122d00cd4564d57b8adac47759188193",
 			"generatedTags": [
-				"Enrolled Patients",
-				"Healthcare Analytics",
 				"Confounding",
-				"Patients",
-				"Healthcare",
-				"Intervention",
-				"Workflow",
-				"Causal",
-				"Analytic",
-				"Data"
+				"Causal Inference",
+				"Healthcare Analytics",
+				"Target Trial",
+				"Directed Acyclic Graphs",
+				"Selection Bias",
+				"Time Zero",
+				"Missing Data",
+				"Data-Generating Process",
+				"Healthcare Data"
 			],
-			"generatorVersion": "2026-07-13.1"
+			"pinnedTags": [
+				"Confounding",
+				"Causal Inference",
+				"Healthcare Analytics",
+				"Target Trial",
+				"Directed Acyclic Graphs",
+				"Selection Bias",
+				"Time Zero",
+				"Missing Data",
+				"Data-Generating Process",
+				"Healthcare Data"
+			],
+			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/confounding-factors.md": {
 			"bodyHash": "ca582cd6347eabc49c0d309786d91b131af5ff8966809f6026fb77fda60226a8",
@@ -2340,20 +2352,32 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/hie-first-principles-openhie.md": {
-			"bodyHash": "d00551ce49483c4bd6bd6e02f125a57228dc9aa59a3739227f32342ef709b342",
+			"bodyHash": "83e2d0d42887499a83030fa49e77a7d2900425c58e92f18abe9b28c05cf67714",
 			"generatedTags": [
-				"Health Level Seven",
-				"Data Quality",
-				"Public Health",
-				"Facility Authority",
-				"Clinical",
-				"Facility",
-				"Healthcare",
+				"HIE",
 				"OpenHIE",
-				"IOL",
-				"SHR"
+				"FHIR",
+				"Healthcare Interoperability",
+				"Client Registry",
+				"Shared Health Record",
+				"Interoperability Layer",
+				"Health Information Systems",
+				"Data Provenance",
+				"Health Data Standards"
 			],
-			"generatorVersion": "2026-07-13.1"
+			"pinnedTags": [
+				"HIE",
+				"OpenHIE",
+				"FHIR",
+				"Healthcare Interoperability",
+				"Client Registry",
+				"Shared Health Record",
+				"Interoperability Layer",
+				"Health Information Systems",
+				"Data Provenance",
+				"Health Data Standards"
+			],
+			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/hie-from-first-principles.md": {
 			"bodyHash": "982bc3e96067be59924b6415bf914b2cf0842156902f1f35d1de2790e66f4898",
@@ -3113,20 +3137,32 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/latent-space-in-healthcare-data.md": {
-			"bodyHash": "e931c40b0c5efe88b8b3776ec63b12bdcb92415f4568e953f14cb583cf6bd37e",
+			"bodyHash": "cb55e281368c57508a4bdcf2af1f075f4aa608b383d19c9f243964602f320111",
 			"generatedTags": [
-				"Usually Called",
 				"Latent Space",
-				"Health Level Seven",
-				"Representational Loss",
-				"Diagnosis Code",
-				"Latent",
-				"Clinical",
-				"Representations",
-				"Data",
-				"Space"
+				"Clinical Embeddings",
+				"Healthcare Data",
+				"Representation Learning",
+				"Electronic Health Records",
+				"Data Provenance",
+				"FHIR",
+				"Temporal Modeling",
+				"Algorithmic Bias",
+				"Clinical Informatics"
 			],
-			"generatorVersion": "2026-07-13.1"
+			"pinnedTags": [
+				"Latent Space",
+				"Clinical Embeddings",
+				"Healthcare Data",
+				"Representation Learning",
+				"Electronic Health Records",
+				"Data Provenance",
+				"FHIR",
+				"Temporal Modeling",
+				"Algorithmic Bias",
+				"Clinical Informatics"
+			],
+			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/linkedin-job-market-india-national-xray.md": {
 			"bodyHash": "2a2a8765390304f5e34562effd37ca5324fad748102d49dcec0eff3d1f1c784e",
@@ -7534,20 +7570,32 @@
 			"generatorVersion": "2026-07-13.1"
 		},
 		"src/lib/posts/va-healthcare-data-systems-mumps-to-sql.md": {
-			"bodyHash": "49ca8e96854261d644c33854a9c7a4bd0ea0eb880efd2a9637078af1576ae79f",
+			"bodyHash": "8305ac6e45deedb08e70b21ea487f4a5419e7a6ce8e7fcb7e4c2f75d12596e59",
 			"generatedTags": [
-				"Patient Record",
-				"SQL",
 				"VistA",
-				"VA",
-				"FileMan",
-				"Data",
 				"MUMPS",
-				"Healthcare",
-				"Clinical",
-				"Medication"
+				"FileMan",
+				"SQL",
+				"Corporate Data Warehouse",
+				"VINCI",
+				"Healthcare Data Architecture",
+				"Data Provenance",
+				"Semantic Interoperability",
+				"Electronic Health Records"
 			],
-			"generatorVersion": "2026-07-13.1"
+			"pinnedTags": [
+				"VistA",
+				"MUMPS",
+				"FileMan",
+				"SQL",
+				"Corporate Data Warehouse",
+				"VINCI",
+				"Healthcare Data Architecture",
+				"Data Provenance",
+				"Semantic Interoperability",
+				"Electronic Health Records"
+			],
+			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/va_data_warehouse_reality.md": {
 			"bodyHash": "d2379c2cb45cc32328f3773a92959ce68d9d7da7875441e0d48079800531691d",
@@ -8387,18 +8435,30 @@
 		"src/lib/posts/create-art-living-pigment-studio.md": {
 			"bodyHash": "05589fb95eaa02c304ebd1554fb6b253644bba7659674071f35f3c82cf6f2890",
 			"generatedTags": [
-				"Soft Wash",
-				"Colors Mix",
-				"Simulation Simplifies",
-				"Field Records",
-				"Mobile Pigment",
-				"Pigment",
-				"Brush",
-				"Painting",
-				"Moisture",
-				"Simulation"
+				"Shaders",
+				"WebGL",
+				"Watercolor",
+				"Simulation",
+				"Interactive Art",
+				"GPU Computing",
+				"Digital Painting",
+				"Generative Art",
+				"Fragment Shaders",
+				"Procedural Art"
 			],
-			"generatorVersion": "2026-07-13.1"
+			"pinnedTags": [
+				"Shaders",
+				"WebGL",
+				"Watercolor",
+				"Simulation",
+				"Interactive Art",
+				"GPU Computing",
+				"Digital Painting",
+				"Generative Art",
+				"Fragment Shaders",
+				"Procedural Art"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
