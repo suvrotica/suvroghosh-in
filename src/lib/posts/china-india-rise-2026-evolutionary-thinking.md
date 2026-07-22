@@ -4,7 +4,7 @@ description: "China and India are both rising, but they are not climbing the sam
 date: "2026-05-26"
 thumbnail: "/images/Compress_20260526_083225_5452.jpg"
 category: "Geopolitics"
-tags: ["China Rise","China","India","Manufacturing","Export","UPI","Queues","Variation","Plus","Investment"]
+tags: ["China Rise","China","India","Manufacturing","UPI","Export","Queues","Investment","Plus","Variation"]
 published: true
 color: "amber"
 ---

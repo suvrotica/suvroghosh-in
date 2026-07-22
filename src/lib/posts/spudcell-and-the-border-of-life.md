@@ -4,7 +4,7 @@ description: "A deep dive into SpudCell, a bottom-up synthetic cell capable of g
 date: "2026-07-11"
 thumbnail: "/images/Compress_20260711_014421_1403.jpg"
 category: "Science"
-tags: ["Amino Acids","Transfer RNAs","Craig Venter","Potato-Shaped Droplet","Base Pairs","SpudCell","Ribosomes","Genome","Cell","Genetic"]
+tags: ["Amino Acids","Transfer RNAs","Craig Venter","Potato-Shaped Droplet","Venter Institute","SpudCell","Ribosomes","Genome","Cell","Genetic"]
 published: true
 color: "#2E7D32"
 ---

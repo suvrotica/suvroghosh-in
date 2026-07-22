@@ -4,7 +4,7 @@ description: "A reflective essay from Calcutta on the invisible geology of riskâ
 date: "2026-06-25"
 thumbnail: "/images/Compress_20260625_133137_7976.jpg"
 category: "Personal Essay"
-tags: ["Long Term","Ground","Tremor","Build","Term","Tower","Subsidence","Foundation","Solid","Towers"]
+tags: ["Long Term","Ground","Tremor","Build","Tower","Term","Subsidence","Foundation","Towers","Solid"]
 published: true
 color: "#8B7355"
 ---

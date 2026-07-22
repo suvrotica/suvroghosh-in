@@ -3,7 +3,7 @@ title: "The Many-Body Problem of Indian Life"
 description: "A middle-aged Bengali man in the shanty boondocks of Calcutta tries to solve one clean problem, income, while rent, heat, illness, memory, family, and shame pull him apart like bad celestial mechanics."
 date: "2026-06-14"
 category: "Personal Essay"
-tags: ["Orbit Intersects","Rice Cooker","Intersects","Pulls","Orbit","Throb","Try","Tooth","Income","Mass"]
+tags: ["Orbit Intersects","Rice Cooker","Intersects","Pulls","Orbit","Throb","Try","Tooth","Income","Client"]
 published: true
 color: "#8A4F2A"
 thumbnail: "/thumbnail/safe-the-many-body-problem-of-indian-life.jpg"

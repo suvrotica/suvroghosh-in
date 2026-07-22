@@ -4,7 +4,7 @@ description: "A personal essay about an old Honda Accord, vanished Texas highway
 date: "2026-01-01"
 thumbnail: "/photos/Compress_20260510_235335_5542.jpg"
 category: "personal"
-tags: ["San Antonio","Rice Cooker","Accord","Car","Honda","Bottle","Books","Texas","Cooker","Austin"]
+tags: ["San Antonio","Rice Cooker","Accord","Car","Honda","Bottle","Books","Texas","Cooker","Rice"]
 published: true
 color: "black"
 ---

@@ -3,7 +3,7 @@ title: "The Missing Scientists"
 description: "Why the louder story is not espionage or cinematic disappearance, but bureaucratic rupture, workforce attrition, institutional fear, and a political culture that treats science as disposable until it wants a spectacle."
 date: "2026-04-22"
 category: "healthcare-it"
-tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Research","Administration","Agency"]
+tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Research","Agency","Administration"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/safe-missing-scientists-us.jpg"

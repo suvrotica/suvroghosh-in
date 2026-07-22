@@ -3,7 +3,7 @@ title: "The Student Model Eats the Teacher and Calls It Tuition"
 description: "A fevered monologue about model distillation, industrial plagiarism, the shrinking American lead over China, and a city that mistakes downloading the future for manufacturing it."
 date: "2026-07-19"
 category: "Monologue"
-tags: ["China","Frontier","Model","Benchmark","Teacher","Open-Weight","Student","Chinese","Distilled","American"]
+tags: ["China","Frontier","Model","Benchmark","Teacher","Open-Weight","Student","Chinese","Distilled","Humanity"]
 published: true
 color: "#5B191D"
 thumbnail: "/thumbnail/safe-the-student-model-eats-the-teacher.jpg"

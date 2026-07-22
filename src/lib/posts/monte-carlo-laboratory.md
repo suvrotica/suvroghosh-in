@@ -5,7 +5,7 @@ date: "2026-07-21"
 thumbnail: "/images/monte-carlo-laboratory.svg"
 thumbnailAlt: "A mathematical square and inscribed circle filled with classified Monte Carlo samples beside a restrained convergence curve"
 category: "Visualizations"
-tags: ["Monte Carlo","Randomized Quasi-Monte Carlo","Expensive Square-Root Law","Deliberate Ignorance","Demonstration Hides","Sampling","Monte","Pseudorandom","Samples","Estimate"]
+tags: ["Monte Carlo","Randomized Quasi-Monte Carlo","Expensive Square-Root Law","Deliberate Ignorance","Demonstration Hides","Sampling","Pseudorandom","Monte","Samples","Estimate"]
 published: true
 color: "#355C7D"
 author: "Suvro Ghosh"

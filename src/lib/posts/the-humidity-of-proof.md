@@ -4,7 +4,7 @@ description: "A humid Calcutta bar essay about drink vocabulary, civic collapse,
 date: "2026-06-27"
 thumbnail: "/photos/Compress_20260627_114717_7761.jpg"
 category: "Culture"
-tags: ["Happy Hour","Bar English","Operating System","Ceiling Fan","Alcohol","Whiskey","Drink","Vermouth","Bar","ABV"]
+tags: ["Happy Hour","Bar English","Operating System","Ceiling Fan","Alcohol","Whiskey","Drink","Vermouth","ABV","Bar"]
 published: true
 color: "#6B3A1E"
 ---

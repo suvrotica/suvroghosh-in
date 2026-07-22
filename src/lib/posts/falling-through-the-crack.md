@@ -3,7 +3,7 @@ title: "Falling Through the Crack"
 description: "A darkly comic personal essay about usefulness, failure, time, work, belief, and the strange third category of people who neither serve the known world nor discover the unknown one."
 date: "2026-05-17"
 category: "Personal Essay"
-tags: ["Crack","Tick","Pending","Witness","Falling","Family","Time","Counter","Career","Society"]
+tags: ["Crack","Tick","Pending","Witness","Falling","Family","Counter","Time","Career","Society"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-falling-through-the-crack.jpg"

@@ -3,7 +3,7 @@ title: "The Badly Lit Municipality of Myself"
 description: "A Calcutta essay about living on the rough southern edge of the city, where bad drainage, broken roads, poverty, depression, and middle-aged survival begin to resemble one another too closely."
 date: "2026-06-10"
 category: "Personal Essay"
-tags: ["Shines","Preferably","Municipality","Unfinished","Eggs","Lane","Outside","Smells","Drain","Edge"]
+tags: ["Shines","Preferably","Municipality","Unfinished","Eggs","Lane","Outside","Smells","Drain","Tea"]
 published: true
 color: "#4A4A4A"
 thumbnail: "/thumbnail/safe-badly-lit-municipality-of-myself.jpg"

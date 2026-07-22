@@ -3,7 +3,7 @@ title: "The AI Sermon and the Wet Knot"
 description: "A skeptical, comic, and human argument against the new cheerful advice that ordinary people can survive job loss, precarity, and social decay simply by using AI harder."
 date: "2026-06-20"
 category: "Technology"
-tags: ["AI","One-Person","Show","Knot","Advice","Generate","Summarize","Column","Business","Help"]
+tags: ["AI","One-Person","Show","Knot","Advice","Generate","Column","Summarize","Business","Help"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-the-ai-sermon-and-the-wet-knot.jpg"

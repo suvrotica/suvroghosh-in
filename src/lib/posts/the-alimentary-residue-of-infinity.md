@@ -4,7 +4,7 @@ description: "A bipolar bibliophile in Calcutta ruminates on the New York Times 
 date: "2026-07-11"
 thumbnail: "/photos/Compress_20260711_203027_7116.jpg"
 category: "Mathematics"
-tags: ["Paul Hoffman","Cold Tea","Divisible","Book","Hoffman","Ford","Trillionaire","Mathematics","Prime","Quantum"]
+tags: ["Paul Hoffman","Cold Tea","Divisible","Book","Hoffman","Ford","Trillionaire","Mathematics","Prime","Paul"]
 published: true
 color: "#5DADE2"
 ---

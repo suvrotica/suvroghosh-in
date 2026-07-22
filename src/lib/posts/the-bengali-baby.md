@@ -3,7 +3,7 @@ title: "The Bengali Baby"
 description: "A winter afternoon in Calcutta becomes a meditation on sunlight, exile, failure, Bengal’s arrested adulthood, and the stubborn refusal to stop trying."
 date: "2024-12-01"
 category: "Personal Essay"
-tags: ["Baby","Sun","Bengal","Winter","Haze","Write","Clearly","Afternoon","Everyone","Repaired"]
+tags: ["Baby","Sun","Bengal","Winter","Haze","Write","Clearly","Afternoon","Everyone","Rage"]
 published: true
 color: "#C8892B"
 thumbnail: "/thumbnail/safe-the-bengali-baby.jpg"

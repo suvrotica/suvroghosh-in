@@ -4,7 +4,7 @@ description: "A darkly funny Calcutta essay on older depression, morning self-di
 date: "2026-06-12"
 thumbnail: "/images/Compress_20260613_143000_0691.jpg"
 category: "Mental Health"
-tags: ["Bank Balance","Depression","Exhibit","Verdict","Bankruptcy","Fate","Weather","Mind","Mirror","Prediction"]
+tags: ["Bank Balance","Depression","Exhibit","Verdict","Bankruptcy","Fate","Weather","Mind","Mirror","Suffering"]
 published: true
 color: "slate"
 ---

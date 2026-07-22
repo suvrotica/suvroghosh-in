@@ -3,7 +3,7 @@ title: "Tau Scaling Law: The Chip Race Has Found a New Clock"
 description: "Huawei’s Tau Scaling Law is not magic and not nonsense. It is a serious bet that the next semiconductor race may be won by shortening time, not merely shrinking transistors."
 date: "2026-06-01"
 category: "Technology"
-tags: ["Tau Scaling","Moore Law","Time Leaks","Real Job","Tau","Huawei","Chip","Scaling","Moore","Chips"]
+tags: ["Tau Scaling","Moore Law","Time Leaks","Real Job","Tau","Huawei","Chip","Moore","Scaling","Chips"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-tau-scaling-law-time-not-nanometers.jpg"

@@ -3,7 +3,7 @@ title: "Dogs Detect Violations."
 description: "What canine cognition research actually suggests about trust, deception, scent, and social evaluation—and why the myth that dogs can 'sense bad people' is much less mystical and much more interesting."
 date: "2026-04-22"
 category: "science"
-tags: ["Dogs","Breed","Dog","Interaction","Misleading","Cues","Owner","Unfamiliar","Social","Odor"]
+tags: ["Dogs","Breed","Dog","Interaction","Misleading","Owner","Unfamiliar","Cues","Social","Odor"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/safe-dogs-bad-people-myth-science.jpg"

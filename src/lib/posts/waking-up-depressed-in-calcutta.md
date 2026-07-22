@@ -3,7 +3,7 @@ title: "Waking Up Depressed in Calcutta"
 description: "A personal essay on waking into depression before language, hope, or ordinary meaning has arrived. From the shanty edge of Calcutta, it follows the strange morning work of rebuilding a self from scraps."
 date: "2026-05-19"
 category: "Personal Essay"
-tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Cup","Fog","Physical","Mind"]
+tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Cup","Fog","Mind","Physical"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-waking-up-depressed-in-calcutta.jpg"

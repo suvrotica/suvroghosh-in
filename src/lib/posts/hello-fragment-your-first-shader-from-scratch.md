@@ -3,7 +3,7 @@ title: "Hello, Fragment: Your First Shader from Scratch"
 description: "Build a luminous, pointer-responsive fragment shader from an empty p5.js WebGL canvas, learning pixels, coordinates, uniforms, colour, time, and interference one visible step at a time."
 date: "2026-07-19"
 category: "Visualizations"
-tags: ["Four Numbers","Fragment Shader","Wave Sources","Messages Shared","Reduce Motion","Shader","Fragment","Colour","Pixel","Canvas"]
+tags: ["Four Numbers","Fragment Shader","Wave Sources","Messages Shared","Reduce Motion","Shader","Fragment","Colour","Canvas","Pixel"]
 published: true
 thumbnail: "/images/visualizations/hello-fragment-poster.jpg"
 thumbnailAlt: "Luminous cyan, violet, and gold interference rings around a bright focal point beside the words Hello, Fragment"

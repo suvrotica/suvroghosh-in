@@ -4,7 +4,7 @@ description: "A plain-language Calcutta-friendly explanation of how AI made a se
 date: "2026-06-06"
 thumbnail: "/images/Compress_20260606_154743_3738.jpg"
 category: "Science"
-tags: ["Algebraic Number Theory","Paul Erdős","Unit Distance","Proper Response","Distance Problem","Dots","Erdős","AI","Mathematics","Unit"]
+tags: ["Algebraic Number Theory","Paul Erdős","Unit Distance","Proper Response","Distance Problem","Erdős","Dots","AI","Mathematics","Unit"]
 published: true
 color: "charcoal"
 ---

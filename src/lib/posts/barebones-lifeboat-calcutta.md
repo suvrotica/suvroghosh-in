@@ -3,7 +3,7 @@ title: "The Barebones Lifeboat: America, Calcutta, and the Price of Staying Aflo
 description: "A returnee’s life in Calcutta is not always a story of triumphant homecoming or dollar-fed comfort. Sometimes it is simply the place where a modest life remains possible."
 date: "2026-04-28"
 category: "Personal"
-tags: ["Consulting Income","United States","America","Returnee","Calcutta","Barebones","Lifeboat","Bullies","Pollution","Afford"]
+tags: ["Consulting Income","United States","America","Returnee","Calcutta","Barebones","Pollution","Lifeboat","Bullies","Afford"]
 published: true
 color: "#7C3AED"
 thumbnail: "/thumbnail/safe-barebones-lifeboat-calcutta.jpg"

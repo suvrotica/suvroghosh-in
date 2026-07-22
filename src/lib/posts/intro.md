@@ -3,7 +3,7 @@ title: "Intro"
 description: "From Pascal at Jadavpur University to healthcare data systems, distributed databases, telemedicine architecture, and ride-hailing platforms, a technical life shaped by translation between systems, disciplines, and people."
 date: "2026-04-22"
 category: "career"
-tags: ["SQL Server","Machine Learning","Programming","SQL","Statistical","Language","UML","Data","Software","Systems"]
+tags: ["SQL Server","Machine Learning","Programming","SQL","Statistical","Language","UML","Data","Software","Modeling"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/art-intro.jpg"

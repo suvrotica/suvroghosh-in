@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T21:04:38.582372+00:00",
+  "generatedAt": "2026-07-22T02:02:24.030514+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -255,12 +255,12 @@
       "wordCount": 130
     },
     "ai-genie-out-of-the-bottle": {
-      "generatedAt": "2026-07-20T02:02:01.736954+00:00",
+      "generatedAt": "2026-07-22T02:02:00.993624+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-genie-out-of-the-bottle.svg",
       "source": "src/lib/posts/ai-genie-out-of-the-bottle.md",
-      "sourceHash": "cf7e4a4c470c718f170a7df6f64bddfc341e8fec05bb12984780ba164cef3331",
-      "sourceModified": "2026-07-20T02:00:12.283902+00:00",
+      "sourceHash": "5f73e84603606a77425bfef64164739d4aa3ffc6ccb3063850135c5a660d3383",
+      "sourceModified": "2026-07-22T01:23:44.627272+00:00",
       "topWords": [
         "Human",
         "AI",
@@ -439,12 +439,12 @@
       "wordCount": 130
     },
     "ai-psychology-denial-oscillation-and-the-social-theater-of-competence": {
-      "generatedAt": "2026-07-20T02:02:08.617806+00:00",
+      "generatedAt": "2026-07-22T02:02:02.402147+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-psychology-denial-oscillation-and-the-social-theater-of-competence.svg",
       "source": "src/lib/posts/ai-psychology-denial-oscillation-and-the-social-theater-of-competence.md",
-      "sourceHash": "f863ef20e9356901d4f68ca64adc3d2713f9d7d96d2ebd859cef7d463f801eae",
-      "sourceModified": "2026-07-20T02:01:42.030106+00:00",
+      "sourceHash": "4952991dc2ebe2d0cd52c776a4f80892fb351499e4972723c07fa7e52193a487",
+      "sourceModified": "2026-07-22T01:23:44.638018+00:00",
       "topWords": [
         "AI",
         "Language",
@@ -485,12 +485,12 @@
       "wordCount": 130
     },
     "ai-wave-social-isolation-mental-health-infrastructure": {
-      "generatedAt": "2026-07-20T02:02:09.533341+00:00",
+      "generatedAt": "2026-07-22T02:02:03.804223+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-wave-social-isolation-mental-health-infrastructure.svg",
       "source": "src/lib/posts/ai-wave-social-isolation-mental-health-infrastructure.md",
-      "sourceHash": "71de67d9ec82e3789d5f723f964b12fdcd740e8a06e156992de51453e0ceba2f",
-      "sourceModified": "2026-07-20T02:00:12.387844+00:00",
+      "sourceHash": "449c56d4716066b76e9bd1f54b657fd58adadf862bfa85bc364ab782bf6c016c",
+      "sourceModified": "2026-07-22T01:23:44.638987+00:00",
       "topWords": [
         "Data",
         "Health",
@@ -2256,25 +2256,25 @@
       "wordCount": 130
     },
     "confounding-factors-healthcare-it-analytics": {
-      "generatedAt": "2026-07-20T02:02:57.563762+00:00",
+      "generatedAt": "2026-07-22T02:02:05.922766+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/confounding-factors-healthcare-it-analytics.svg",
       "source": "src/lib/posts/confounding-factors-healthcare-it-analytics.md",
-      "sourceHash": "9833fed3b8c37a3aec6d456397f1e0caf39992b57983e61453850ef381398223",
-      "sourceModified": "2026-07-20T02:00:12.463691+00:00",
+      "sourceHash": "f4d1359e95f810cc66a3ca1d06b760529960a357197e012fd8671f5cc7da5678",
+      "sourceModified": "2026-07-22T01:47:15.116753+00:00",
       "topWords": [
+        "Data",
         "Healthcare",
         "Confounding",
-        "Data",
         "Patients",
         "Model",
         "Time",
         "Workflow",
         "Intervention",
-        "Often",
         "Systems",
-        "Clinical",
-        "Patient"
+        "Often",
+        "Causal",
+        "Clinical"
       ],
       "wordCount": 130
     },
@@ -2854,12 +2854,12 @@
       "wordCount": 130
     },
     "epistemic-iceberg-effect": {
-      "generatedAt": "2026-07-12T19:42:01.929924+00:00",
+      "generatedAt": "2026-07-22T02:02:07.307936+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/epistemic-iceberg-effect.svg",
       "source": "src/lib/posts/epistemic-iceberg-effect.md",
-      "sourceHash": "c7c95b2c26049bdf94a0ad2c2790eb8a830cd6dabb7bf145c4347fbd2f102dea",
-      "sourceModified": "2026-07-12T19:37:37.617292+00:00",
+      "sourceHash": "438a870d8bcc047f5acec79ac71dc11f173bab1548fac3ebe04b19134501f23d",
+      "sourceModified": "2026-07-22T01:23:44.661056+00:00",
       "topWords": [
         "Learning",
         "Knowledge",
@@ -3728,12 +3728,12 @@
       "wordCount": 130
     },
     "hie-first-principles-openhie": {
-      "generatedAt": "2026-07-20T02:03:38.287971+00:00",
+      "generatedAt": "2026-07-22T02:02:09.081961+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hie-first-principles-openhie.svg",
       "source": "src/lib/posts/hie-first-principles-openhie.md",
-      "sourceHash": "04f184ba1965394888d37a2e5c6e2693b58fd11254faee37118ca7163b263ea4",
-      "sourceModified": "2026-07-20T02:00:12.450156+00:00",
+      "sourceHash": "1eb52a5fb7545d24681986f8940d277db17295e7ed00e31f3606394a18fc7145",
+      "sourceModified": "2026-07-22T01:47:15.158340+00:00",
       "topWords": [
         "Health",
         "Data",
@@ -3742,11 +3742,11 @@
         "Patient",
         "Healthcare",
         "Systems",
+        "Architecture",
+        "Openhie",
         "Identity",
         "Facility",
-        "Local",
-        "Exchange",
-        "Standard"
+        "Local"
       ],
       "wordCount": 130
     },
@@ -3843,12 +3843,12 @@
       "wordCount": 22
     },
     "hl7-vs-fhir-explained-simply": {
-      "generatedAt": "2026-07-20T02:03:40.577509+00:00",
+      "generatedAt": "2026-07-22T02:02:10.372353+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hl7-vs-fhir-explained-simply.svg",
       "source": "src/lib/posts/hl7-vs-fhir-explained-simply.md",
-      "sourceHash": "e6c7c41a3f9d7fa6f64246863a399d4952cd141e5014229341908d6173472add",
-      "sourceModified": "2026-07-20T02:00:12.485632+00:00",
+      "sourceHash": "699a87f9a9772d4b4887ae1efe3b3f1a1ac9e7aad02f54200f780624fd62e5c5",
+      "sourceModified": "2026-07-22T01:23:44.677877+00:00",
       "topWords": [
         "FHIR",
         "Data",
@@ -4165,12 +4165,12 @@
       "wordCount": 130
     },
     "india-ai-it-bpo-white-collar-jobs": {
-      "generatedAt": "2026-07-20T04:56:35.426851+00:00",
+      "generatedAt": "2026-07-22T02:02:11.820686+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/india-ai-it-bpo-white-collar-jobs.svg",
       "source": "src/lib/posts/india-ai-it-bpo-white-collar-jobs.md",
-      "sourceHash": "e9c15b64879e0101a25cb8c92dd09a04320062d3e7d8901536ee2aabbc597db8",
-      "sourceModified": "2026-07-20T04:52:57.409399+00:00",
+      "sourceHash": "01a055a92d296e96c1ae8ed74ff3da1e93b24c4d24ed863bfed11daa5a36cc2d",
+      "sourceModified": "2026-07-22T01:23:44.682506+00:00",
       "topWords": [
         "AI",
         "Work",
@@ -4257,12 +4257,12 @@
       "wordCount": 130
     },
     "india-ehr-hie-ai-constraints": {
-      "generatedAt": "2026-07-20T02:03:52.173154+00:00",
+      "generatedAt": "2026-07-22T02:02:13.215345+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/india-ehr-hie-ai-constraints.svg",
       "source": "src/lib/posts/india-ehr-hie-ai-constraints.md",
-      "sourceHash": "a9dbb4b2d0f0c5685b7dec646920fe8c3b5b820a99b6e8a3d4963bdd1fc38d23",
-      "sourceModified": "2026-07-20T02:01:43.008762+00:00",
+      "sourceHash": "df12f7d5a722c086272a28a093ed5dada3a0ce7eea4625fd64856e362a779b84",
+      "sourceModified": "2026-07-22T01:23:44.683857+00:00",
       "topWords": [
         "Data",
         "Clinical",
@@ -4855,25 +4855,25 @@
       "wordCount": 130
     },
     "latent-space-in-healthcare-data": {
-      "generatedAt": "2026-07-20T02:04:10.729862+00:00",
+      "generatedAt": "2026-07-22T02:02:14.693166+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/latent-space-in-healthcare-data.svg",
       "source": "src/lib/posts/latent-space-in-healthcare-data.md",
-      "sourceHash": "298eeb019593293658ea861fcba8950a7484bb1d04750a4dab163e87bebc4b65",
-      "sourceModified": "2026-07-20T02:01:43.232163+00:00",
+      "sourceHash": "d0cc725082a927d915e916e9da20f9535bddff170cc6ab96747ed36d32194f1a",
+      "sourceModified": "2026-07-22T01:47:15.177782+00:00",
       "topWords": [
         "Data",
-        "Latent",
         "Clinical",
+        "Latent",
         "Space",
         "Healthcare",
         "Patient",
-        "Usually",
         "Model",
-        "Called",
-        "Representations",
+        "Usually",
         "Time",
-        "Terminology"
+        "Called",
+        "Architecture",
+        "Health"
       ],
       "wordCount": 130
     },
@@ -6718,12 +6718,12 @@
       "wordCount": 130
     },
     "self-gaslit-minds-and-ai-pretension": {
-      "generatedAt": "2026-07-20T02:05:04.097411+00:00",
+      "generatedAt": "2026-07-22T02:02:16.600708+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/self-gaslit-minds-and-ai-pretension.svg",
       "source": "src/lib/posts/self-gaslit-minds-and-ai-pretension.md",
-      "sourceHash": "f7dc120d57cb2ea11a563a2ab084e419eae2ee2f226f4ae519e85fdd16c43054",
-      "sourceModified": "2026-07-20T02:01:43.668343+00:00",
+      "sourceHash": "7fe05f97b2f4c475cc0fbbadcd5b387dffda4f895a4d70769ee5b293248303c1",
+      "sourceModified": "2026-07-22T01:23:44.705977+00:00",
       "topWords": [
         "AI",
         "Becomes",
@@ -7086,12 +7086,12 @@
       "wordCount": 130
     },
     "sludgegpt-and-the-mirage-of-machine-understanding": {
-      "generatedAt": "2026-07-20T02:05:14.760609+00:00",
+      "generatedAt": "2026-07-22T02:02:18.110489+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/sludgegpt-and-the-mirage-of-machine-understanding.svg",
       "source": "src/lib/posts/sludgegpt-and-the-mirage-of-machine-understanding.md",
-      "sourceHash": "576d8f9917dba669ad25f8e95fb265cafbe282de05fa7d6698dcc7e4f1e2349a",
-      "sourceModified": "2026-07-20T02:01:43.749411+00:00",
+      "sourceHash": "f111d3fbb026a8bea1831ab1fa4d58aeef0d8a42ab79a202d91b04511551bba6",
+      "sourceModified": "2026-07-22T01:23:44.710984+00:00",
       "topWords": [
         "Machine",
         "Model",
@@ -7339,12 +7339,12 @@
       "wordCount": 130
     },
     "synthetic_music_and_the_crowded_miracle": {
-      "generatedAt": "2026-07-20T02:05:21.700929+00:00",
+      "generatedAt": "2026-07-22T02:02:19.572957+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/synthetic_music_and_the_crowded_miracle.svg",
       "source": "src/lib/posts/synthetic_music_and_the_crowded_miracle.md",
-      "sourceHash": "bed5da8be1c040e7deb1ca6fafe2d91eaff53326acd04a2847ec11e851178477",
-      "sourceModified": "2026-07-20T02:01:43.802887+00:00",
+      "sourceHash": "3ee2c85dd5201ec4d6fc6a0ec9d7556309159a051a52e4ad554f2a42a35e4a9f",
+      "sourceModified": "2026-07-22T02:01:49.684440+00:00",
       "topWords": [
         "Music",
         "Human",
@@ -11663,35 +11663,35 @@
       "wordCount": 130
     },
     "va-healthcare-data-systems-mumps-to-sql": {
-      "generatedAt": "2026-07-20T02:07:17.519701+00:00",
+      "generatedAt": "2026-07-22T02:02:22.454766+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/va-healthcare-data-systems-mumps-to-sql.svg",
       "source": "src/lib/posts/va-healthcare-data-systems-mumps-to-sql.md",
-      "sourceHash": "90dbea991beaac42f252458fad8eaf81792dd8f70d296e6913766e3012193411",
-      "sourceModified": "2026-07-20T02:00:12.616189+00:00",
+      "sourceHash": "aaa1c863a27a7b8f0252f8ac4e16286998d8a927c041f4cabdaa71e08d39c144",
+      "sourceModified": "2026-07-22T01:47:15.195840+00:00",
       "topWords": [
         "Data",
+        "VA",
         "SQL",
         "Healthcare",
         "Local",
+        "Vista",
         "Clinical",
         "System",
-        "VA",
-        "Vista",
         "Patient",
-        "Table",
-        "Date",
-        "Source"
+        "Source",
+        "Fileman",
+        "Warehouse"
       ],
       "wordCount": 130
     },
     "va_data_warehouse_reality": {
-      "generatedAt": "2026-07-20T02:07:18.304484+00:00",
+      "generatedAt": "2026-07-22T02:02:23.687290+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/va_data_warehouse_reality.svg",
       "source": "src/lib/posts/va_data_warehouse_reality.md",
-      "sourceHash": "4e827ef245c0767a3159ba0d22c3557f926b16f73e1e7c58c0ef992618be1194",
-      "sourceModified": "2026-07-20T02:00:12.510605+00:00",
+      "sourceHash": "e02d9a13b897123b0421db6f8f9cd7a6d383143d727470292371f896609712b6",
+      "sourceModified": "2026-07-22T01:23:44.738375+00:00",
       "topWords": [
         "Data",
         "Warehouse",

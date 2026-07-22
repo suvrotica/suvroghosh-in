@@ -4,7 +4,7 @@ description: "A plainspoken defense of reading without making it a religion. Boo
 date: "2026-05-17"
 thumbnail: "/images/Compress_20260517_211115_5741.jpg"
 category: "Essay"
-tags: ["Reading","Mind","Books","Stay","Difficulty","Shelves","Knowledge","Friction","Explain","Summary"]
+tags: ["Reading","Mind","Books","Stay","Difficulty","Shelves","Friction","Knowledge","Explain","Book"]
 published: true
 color: "amber"
 ---

@@ -3,7 +3,7 @@ title: "The Contender Who Would Not Compete"
 description: "A satirical personal essay on writing, India, ambition, public spectacle, private exhaustion, and the strange civic theater of being told that everything is improving while the pothole outside quietly studies your ankle."
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Hurry","Country","Longing","Adjective","Maintenance","India","Saved","Sensible","Refusal","Horse"]
+tags: ["Hurry","Country","Longing","Adjective","India","Maintenance","Saved","Sensible","Refusal","Horse"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/safe-the-contender-who-would-not-compete.jpg"

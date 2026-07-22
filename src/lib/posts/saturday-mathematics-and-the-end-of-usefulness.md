@@ -3,7 +3,7 @@ title: "Saturday Mathematics and the End of Usefulness"
 description: "A bilious, spiraling meditation on middle age, obsolete competence, and the absurdity of seeking algebraic comfort while the AI apocalypse IPOs around you."
 date: "2026-07-18"
 category: "Personal Essay"
-tags: ["Purple Book","RAM Crisis","Floating Robot","Ceiling Fan","Blood Pressure","RAM","Saturday","Negative","Robot","Detectors"]
+tags: ["Purple Book","Floating Robot","RAM Crisis","Ceiling Fan","Blood Pressure","RAM","Saturday","Negative","Robot","Detectors"]
 published: true
 color: "#7B68EE"
 thumbnail: "/thumbnail/safe-saturday-mathematics-and-the-end-of-usefulness.jpg"

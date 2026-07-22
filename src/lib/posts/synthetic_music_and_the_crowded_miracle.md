@@ -3,7 +3,7 @@ title: "When Nothing Beats Something"
 description: "Synthetic music will not end human creativity, but it will change the economics of attention, taste, labor, and artistic trust. The new scarcity will not be sound; it will be the human capacity to care."
 date: "2026-04-29"
 category: "Technology"
-tags: ["Synthetic Music","Music","Artists","Singer","Listeners","Composer","AI","Artist","Creators","Synthetic"]
+tags: ["Synthetic Music","Music","Artists","Singer","Composer","Listeners","AI","Artist","Creators","Synthetic"]
 published: true
 color: "violet"
 thumbnail: "/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg"

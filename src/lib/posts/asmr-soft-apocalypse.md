@@ -3,7 +3,7 @@ title: "ASMR: The Softly Whispered Apocalypse"
 description: "A sharp, funny, street-level satire on ASMR, internet relaxation, fake profundity, loneliness, and the modern hunger for manufactured calm."
 date: "2026-06-04"
 category: "Satire"
-tags: ["ASMR","Sensory","Whispers","Whispering","Brushing","Internet","Ear","Microphone","Softly","Minutes"]
+tags: ["ASMR","Whispers","Whispering","Sensory","Brushing","Internet","Ear","Microphone","Softly","Minutes"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/safe-asmr-soft-apocalypse.jpg"

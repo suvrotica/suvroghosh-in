@@ -3,7 +3,7 @@ title: "The Chair and the Drain"
 description: "A rambling reflection from a third-floor flat in Calcutta on India's IT sector, the illusion of AI sovereignty, and the municipal drain that never closes."
 date: "2026-06-25"
 category: "Artificial Intelligence"
-tags: ["Billion Dollars","Hundred Billion","Foundational Models","Seven Hundred","AI","Arbitrage","Dollars","Drain","Geopolitical","Model"]
+tags: ["Billion Dollars","Hundred Billion","Foundational Models","Seven Hundred","AI","Arbitrage","Dollars","Drain","Geopolitical","Issuance"]
 published: true
 color: "#5C6B73"
 thumbnail: "/thumbnail/safe-the-chair-and-the-drain.jpg"

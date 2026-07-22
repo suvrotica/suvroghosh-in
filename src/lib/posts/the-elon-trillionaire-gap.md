@@ -3,7 +3,7 @@ title: "The Trillionaire Gap: A Bipolar Ramble from South Calcutta"
 description: "A manic-depressive rant from a bitter Bengali man in South Calcutta, grappling with Elon Musk's trillionaire status and the dissolution of human dignity in the face of obscene wealth inequality."
 date: "2026-06-22"
 category: "Personal Essay"
-tags: ["Per Minute","Elon Musk","Black Hole","Fan Rattles","Rice Cooker","Trillionaire","Livestock","Trillion","Dollars","Gecko"]
+tags: ["Elon Musk","Per Minute","Black Hole","Fan Rattles","Rice Cooker","Trillionaire","Livestock","Trillion","Dollars","Gecko"]
 published: true
 color: "#1a1a1a"
 thumbnail: "/thumbnail/safe-the-elon-trillionaire-gap.jpg"

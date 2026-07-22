@@ -3,7 +3,7 @@ title: "The Invisible Radius"
 description: "A personal essay on trust, bipolar caution, loneliness, and the small defensive circle a damaged but still-living man draws around himself."
 date: "2026-05-31"
 category: "Personal Essay"
-tags: ["Radius","Sometimes","Crosses","Maybe","Shame","Affection","Limited","Somebody","Limits","Clouds"]
+tags: ["Radius","Sometimes","Crosses","Maybe","Shame","Affection","Somebody","Limited","Clouds","Limits"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-invisible-radius.jpg"

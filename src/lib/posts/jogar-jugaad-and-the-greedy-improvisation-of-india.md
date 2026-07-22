@@ -3,7 +3,7 @@ title: "Jogar, Jugaad, and the Greedy Improvisation of India"
 description: "A sharp essay on how improvisation, once a survival skill, mutates into a national operating system when detached from competence, ethics, and accountability."
 date: "2026-04-26"
 category: "India"
-tags: ["Ask Whether","Jugaad","India","Improvisation","Corruption","Exceptions","Resilience","Transport","Humane","Repairing"]
+tags: ["Ask Whether","Jugaad","India","Improvisation","Corruption","Exceptions","Resilience","Humane","Transport","Repairing"]
 published: true
 color: "#b45309"
 thumbnail: "/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg"

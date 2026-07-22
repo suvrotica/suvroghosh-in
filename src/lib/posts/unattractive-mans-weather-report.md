@@ -3,7 +3,7 @@ title: "The Unattractive Man’s Weather Report"
 description: "A personal essay on middle-aged male unattractiveness as a whole weather system of money, teeth, clothes, posture, loneliness, fatigue, status, and vanished confidence."
 date: "2026-06-09"
 category: "Personal Essay"
-tags: ["Dental","Heartbreak","Money","Shirt","Teeth","Possibility","Personality","Posture","Middle-Aged","Beauty"]
+tags: ["Dental","Heartbreak","Money","Shirt","Teeth","Possibility","Personality","Middle-Aged","Posture","Beauty"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-unattractive-mans-weather-report.jpg"

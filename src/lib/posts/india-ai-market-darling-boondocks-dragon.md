@@ -4,7 +4,7 @@ description: "A sharp, street-level Calcutta-fringe essay on India’s AI-market
 date: "2026-05-18"
 thumbnail: "/images/Compress_20260518_194331_1231.jpg"
 category: "AI Economy"
-tags: ["AI","India","Compute","Industry","Digital","Wake","Build","Capital","Coding","Indians"]
+tags: ["AI","India","Compute","Industry","Build","Digital","Wake","Coding","Capital","Indians"]
 published: true
 color: "crimson"
 ---

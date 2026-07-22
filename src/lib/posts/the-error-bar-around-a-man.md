@@ -3,7 +3,7 @@ title: "The Error Bar Around a Man"
 description: "A personal science essay about depression, bankruptcy, loneliness, social judgment, and why no human life should be reduced to one cruel number."
 date: "2026-06-12"
 category: "Personal Essay"
-tags: ["Error Bar","Mark Sheet","Error","Minus","Plus","Unattractive","Measurement","Rejected","Bankrupt","Bar"]
+tags: ["Error Bar","Mark Sheet","Error","Minus","Plus","Unattractive","Measurement","Bankrupt","Rejected","Bar"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-the-error-bar-around-a-man.jpg"

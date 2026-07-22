@@ -3,7 +3,7 @@ title: "The Bengali Hikikomori and the Shrinking Map of His Life"
 description: "A middle-aged Bengali man in Kolkata wrestles with depression, failure, madness, modernity, and the strange humiliation of becoming smaller while the world grows louder."
 date: "2026-05-12"
 category: "Personal"
-tags: ["Japanese","Everybody","Somebody","Completely","Anxiety","Depression","Feels","Sadness","Kolkata","Healthcare"]
+tags: ["Japanese","Everybody","Somebody","Completely","Anxiety","Depression","Feels","Sadness","Kolkata","Meanwhile"]
 published: true
 color: "#1f2937"
 thumbnail: "/thumbnail/safe-bengali-hikikomori-shadow.jpg"

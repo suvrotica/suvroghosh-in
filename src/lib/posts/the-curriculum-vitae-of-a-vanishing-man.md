@@ -4,7 +4,7 @@ description: "A fifty-one-year-old man examines failure, ordinariness, ambition,
 date: "2026-07-19"
 thumbnail: "/photos/Compress_20260719_032411_1278.jpg"
 category: "Monologue"
-tags: ["Sonnets","Photograph","Outlast","Forgotten","Thick","Soul","Ambition","Merely","Rice","Time"]
+tags: ["Sonnets","Photograph","Outlast","Forgotten","Thick","Soul","Ambition","Rice","Merely","Time"]
 published: true
 color: "#4A4036"
 ---

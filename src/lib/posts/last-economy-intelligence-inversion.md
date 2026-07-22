@@ -3,7 +3,7 @@ title: "The Last Economy"
 description: "A rigorous reading of Emad Mostaque’s The Last Economy: its core hypotheses, the idea of intelligence inversion, and why futurism usually says more about the present than the future."
 date: "2026-04-23"
 category: "technology"
-tags: ["Artificial Intelligence","Political Economy","Hypothesis","Hypotheses","Economy","Book","Abundance","Abundant","Labor","Cognition"]
+tags: ["Artificial Intelligence","Political Economy","Hypothesis","Hypotheses","Economy","Book","Abundance","Abundant","Cognition","Intelligence"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-last-economy-intelligence-inversion.jpg"

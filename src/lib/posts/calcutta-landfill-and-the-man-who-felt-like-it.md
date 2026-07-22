@@ -4,7 +4,7 @@ description: "A blunt, humane essay on bipolar depression, unemployment, middle 
 date: "2026-05-10"
 thumbnail: "/images/Compress_20260510_180901_1081.jpg"
 category: "Personal"
-tags: ["Bipolar Depression","Depression","Sure","Landfill","Skepticism","Bipolar","Sadness","Bath","Ending","Tea"]
+tags: ["Bipolar Depression","Depression","Sure","Landfill","Skepticism","Bipolar","Sadness","Bath","Tea","Ending"]
 published: true
 color: "#3f3f3f"
 ---

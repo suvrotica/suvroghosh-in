@@ -3,7 +3,7 @@ title: "The Public Mouth"
 description: "A proofreader in Calcutta meets a stranger whose giant molars turn listeners into unstoppable speakers. As speech spreads through the city, silence becomes contraband and truth becomes another sound."
 date: "2026-06-15"
 category: "Short Fiction"
-tags: ["College Street","CITY LISTEN","Bhaduri","Stranger","Riju","Molars","Press","Sentinel","Haradhan","Talking"]
+tags: ["College Street","CITY LISTEN","Bhaduri","Stranger","Riju","Molars","Sentinel","Press","Haradhan","Talking"]
 published: true
 color: "Ink Black"
 thumbnail: "/images/Compress_20260615_213256_6239.jpg"

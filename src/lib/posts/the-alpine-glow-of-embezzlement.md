@@ -4,7 +4,7 @@ description: "A manic-depressive rant on the arithmetic of civic sedation, Swiss
 date: "2026-07-13"
 thumbnail: "/images/Compress_20260713_212019_9276.jpg"
 category: "Essay"
-tags: ["Data Centers","Woodlice","Swiss","Excise","Manic","Villas","Oblivion","Sedation","Orbital","Holy"]
+tags: ["Data Centers","Woodlice","Swiss","Excise","Villas","Manic","Oblivion","Sedation","Orbital","Holy"]
 published: true
 color: "#5c1a1b"
 ---

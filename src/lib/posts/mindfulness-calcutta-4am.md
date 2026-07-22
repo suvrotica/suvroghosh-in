@@ -3,7 +3,7 @@ title: "Mindfulness?"
 description: "Meditation is simple. Living inside your own head is not. A sleepless 4 a.m. ramble from the damp edges of Calcutta about writing, bipolarity, tea, gurus, stray cats, and the strange business of staying sane."
 date: "2026-02-11"
 category: "Calcutta"
-tags: ["Meditation","Mindfulness","Wanders","Writing","Somebody","Bring","Chewing","Honestly","Thoughts","Boring"]
+tags: ["Meditation","Mindfulness","Wanders","Writing","Somebody","Bring","Chewing","Thoughts","Honestly","Boring"]
 published: true
 color: "black"
 thumbnail: "/thumbnail/safe-mindfulness-calcutta-4am.jpg"

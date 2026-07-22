@@ -3,7 +3,7 @@ title: "The Courtier Never Leaves"
 description: "A grotesquely swollen bipolar monologue from a fifty-one-year-old Calcutta consciousness, ruminating on depression as courtier, the flatness of manic-depressive existence, and the precarious nausea of being alive in July 2026."
 date: "2026-07-11"
 category: "Mental Health"
-tags: ["Thin Infrequent","Courtier","Infrequent","July","Amygdala","Phantom","Wonder","Manic","Endlessly","Bipolar"]
+tags: ["Thin Infrequent","Courtier","Infrequent","July","Amygdala","Phantom","Wonder","Endlessly","Manic","Bipolar"]
 published: true
 color: "#2d3436"
 thumbnail: "/thumbnail/safe-the-courtier-never-leaves.jpg"

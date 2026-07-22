@@ -3,7 +3,7 @@ title: "When Variety Starts Wearing the Same Shirt"
 description: "A Calcutta essay on cultural flattening, aspirational sameness, social media taste, and AI as the new pocket machine that may polish human variety into one smooth global surface."
 date: "2026-06-05"
 category: "Culture"
-tags: ["Social Media","Variety","AI","Sameness","Imitate","Culture","Learn","English","Photocopy","Mixture"]
+tags: ["Social Media","Variety","AI","Sameness","Imitate","Culture","Learn","English","Photocopy","Media"]
 published: true
 color: "#6A4A2F"
 thumbnail: "/thumbnail/safe-when-variety-starts-wearing-the-same-shirt.jpg"

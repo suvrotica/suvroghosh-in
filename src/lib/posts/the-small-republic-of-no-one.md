@@ -4,7 +4,7 @@ description: "A middle-aged Calcutta essay about childhood ambition, adult invis
 date: "2026-06-03"
 thumbnail: "/photos/Compress_20260603_094652_2288.jpg"
 category: "Personal"
-tags: ["Adjust","Respected","Merit","Childhood","Books","Middle-Class","Serious","Lower","Large","Funny"]
+tags: ["Adjust","Respected","Merit","Childhood","Middle-Class","Books","Serious","Large","Lower","Funny"]
 published: true
 color: "slate"
 ---

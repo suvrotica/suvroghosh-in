@@ -4,7 +4,7 @@ description: "A humid evening portrait of tea stall adda, middle-aged panic, cra
 date: "2026-05-13"
 thumbnail: "/images/Compress_20260513_184315_5629.jpg"
 category: "Calcutta"
-tags: ["Tea Stall","Hantavirus","Somebody","Cow","Tea","Adda","Hormuz","Fear","Stall","Discussing"]
+tags: ["Tea Stall","Somebody","Hantavirus","Cow","Tea","Adda","Hormuz","Fear","Stall","Healthcare"]
 published: true
 color: "brown"
 ---

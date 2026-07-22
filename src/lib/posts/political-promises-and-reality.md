@@ -3,7 +3,7 @@ title: "Political Promises and the Hard Floor of Reality"
 description: "A bleak but practical essay on why political promises so often collapse into pain for the middle class, lower middle class, and poor, and why the failure is not merely moral but structural."
 date: "2026-05-02"
 category: "Politics"
-tags: ["Middle Class","Lower Middle","Promise","Class","Save","Voter","Leader","Politics","Public","Political"]
+tags: ["Middle Class","Lower Middle","Promise","Class","Save","Voter","Politics","Leader","Public","Political"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-political-promises-and-reality.jpg"

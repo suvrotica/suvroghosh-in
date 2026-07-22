@@ -3,7 +3,7 @@ title: "Anger: The Last Working Appliance"
 description: "A personal essay on bipolar depression, irritability, and the strange survival value of anger when the rest of the mind has gone numb."
 date: "2026-06-10"
 category: "Personal Essay"
-tags: ["Anger","Depression","Brick","Fridge","Press","Don’t","Sadness","Grateful","Spoon","Inner"]
+tags: ["Anger","Depression","Brick","Fridge","Don’t","Sadness","Press","Grateful","Spoon","Inner"]
 published: true
 color: "gray"
 thumbnail: "/thumbnail/safe-anger-the-last-working-appliance.jpg"

@@ -4,7 +4,7 @@ description: "A personal essay on a PhD advisor, Bengal’s habit of losing bril
 date: "2026-05-16"
 thumbnail: "/images/Compress_20260516_202547_7320.jpg"
 category: "Personal"
-tags: ["Stony Brook","Samirda","PhD","University","Samir","Stony","Brook","Minds","Wireless","Inequality"]
+tags: ["Stony Brook","Samirda","University","PhD","Samir","Stony","Brook","Minds","Wireless","Inequality"]
 published: true
 color: "indigo"
 ---

@@ -3,7 +3,7 @@ title: "Loneliness Is Not a Generation"
 description: "A personal essay on Gen X loneliness, aging, bipolar depression, smartphones, AI, and the strange modern habit of being connected to everyone while sitting utterly alone."
 date: "2026-05-31"
 category: "Personal Essay"
-tags: ["Gen","Lonely","Loneliness","Separate","Generation","AI","Human","Solutions","Differently","Partly"]
+tags: ["Gen","Lonely","Loneliness","Separate","Generation","AI","Human","Differently","Solutions","Partly"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/safe-loneliness-is-not-a-generation.jpg"

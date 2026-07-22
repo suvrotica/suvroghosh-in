@@ -3,7 +3,7 @@ title: "The AI Harmonium Players"
 description: "A comic, skeptical, Calcutta-flavored essay on AI, human dependency, thinking, laziness, and the danger of outsourcing the first painful movement of the mind."
 date: "2026-06-10"
 category: "Technology"
-tags: ["Hate Pauses","AI","Harmonium","Pauses","Machine","Internet","Laziness","Keys","Consultants","Students"]
+tags: ["Hate Pauses","AI","Harmonium","Pauses","Machine","Laziness","Internet","Keys","Consultants","Students"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-ai-harmonium-players.jpg"

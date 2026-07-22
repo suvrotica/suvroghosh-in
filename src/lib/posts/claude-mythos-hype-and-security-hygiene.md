@@ -3,7 +3,7 @@ title: "Is Claude Mythos, a Myth?"
 description: "A technical analysis of the Claude Mythos access reports and the Claude Code source exposure, separating real security concern from theatrical overclaiming."
 date: "2026-04-24"
 category: "AI Security"
-tags: ["Claude Mythos","Model Weights","Mythos","Model","Anthropic","Release","Access","AI-assisted","Capability","Credentials"]
+tags: ["Claude Mythos","Model Weights","Mythos","Model","Anthropic","Release","Access","AI-assisted","Credentials","Capability"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-claude-mythos-hype-and-security-hygiene.jpg"

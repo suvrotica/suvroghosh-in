@@ -3,7 +3,7 @@ title: "This Blog's History"
 description: "A personal travel-and-writing reflection on how this blog wandered through Fiji, New Zealand, Abu Dhabi, Dubai, books, doubt, vanished friends, and the stubborn need to keep writing."
 date: "2024-01-03"
 category: "Personal Reflections"
-tags: ["Future Self","Money Helps","Fiji","Bookstall","Dubai","Books","Money","Read","Second-Hand","Effort"]
+tags: ["Future Self","Money Helps","Fiji","Dubai","Bookstall","Books","Money","Read","Second-Hand","Effort"]
 published: true
 color: "#dcb775"
 thumbnail: "/thumbnail/safe-this-blogs-history.jpg"

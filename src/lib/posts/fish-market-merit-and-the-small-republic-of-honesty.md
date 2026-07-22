@@ -3,7 +3,7 @@ title: "Fish Market Merit and the Small Republic of Honesty"
 description: "A sharp Calcutta personal essay about class, failed careers, old school status, LinkedIn polish, fish-market survival, and the inconvenient dignity of telling the truth."
 date: "2024-09-12"
 category: "Personal Essay"
-tags: ["Fish Market","Merit","Fish","Moon","Adults","Obedience","Books","Inconvenient","Project","Improve"]
+tags: ["Fish Market","Merit","Fish","Moon","Obedience","Adults","Books","Inconvenient","Project","Improve"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/safe-fish-market-merit-and-the-small-republic-of-honesty.jpg"

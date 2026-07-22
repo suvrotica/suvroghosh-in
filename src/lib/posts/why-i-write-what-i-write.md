@@ -3,7 +3,7 @@ title: "Why I Write What I Write"
 description: "A personal essay on writing, drawing, satire, darkness, digital obscurity, and the strange relief of forcing private weather into public shape."
 date: "2026-05-02"
 category: "Personal Essay"
-tags: ["Art","Grotesque","Draw","Write","Darkness","Furniture","Cartoon","Skull","Mask","Decency"]
+tags: ["Art","Grotesque","Write","Draw","Darkness","Furniture","Cartoon","Skull","Mask","Decency"]
 published: true
 color: "#7C2D12"
 thumbnail: "/thumbnail/safe-why-i-write-what-i-write.jpg"

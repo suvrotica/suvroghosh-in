@@ -3,7 +3,7 @@ title: "Intolerable Cruelty and the God-Zila of El Niño"
 description: "A bipolar monologue from a defeated Calcutta flat on the rising tide of AI capitalism, agentic ransomware, and the hydraulic geometry of modern despair."
 date: "2026-07-10"
 category: "Monologue"
-tags: ["Intolerable Cruelty","Intolerable","Billion","Blindness","Dollars","Algorithmic","Reaches","Cruelty","Cure","Corporate"]
+tags: ["Intolerable Cruelty","Intolerable","Billion","Blindness","Dollars","Algorithmic","Cruelty","Reaches","Cure","Corporate"]
 published: true
 color: "#1a1a2e"
 thumbnail: "/thumbnail/safe-intolerable-cruelty.jpg"

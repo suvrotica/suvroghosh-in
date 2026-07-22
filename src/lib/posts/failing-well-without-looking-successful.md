@@ -4,7 +4,7 @@ description: "A system-level essay on why repeated failure is often the real ing
 date: "2026-05-01"
 thumbnail: "/images/Compress_20260430_194445_5279.jpg"
 category: "Society"
-tags: ["Mud Teaches","Failed Attempts","Formal Rule","Lived Reality","Failure","Fail","Shallow","Reveal","Taught","Signal"]
+tags: ["Mud Teaches","Failed Attempts","Formal Rule","Lived Reality","Failure","Fail","Shallow","Reveal","Signal","Taught"]
 published: true
 color: "#6B7280"
 ---

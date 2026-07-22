@@ -3,7 +3,7 @@ title: "The Fish Bengalis Eat"
 description: "A practical field guide to the fish commonly eaten in Kolkata, with Bengali names, English and scientific names, and a hardheaded look at which fish are best for regular eating, which are occasional luxuries, and which are poor bets."
 date: "2026-04-22"
 category: "food"
-tags: ["Frequent Eating","Large Predators","Fish Eaten Whole","Good Reasons","Fish","Labeo","Pabda","Predatory","Bata","Frequent"]
+tags: ["Frequent Eating","Large Predators","Fish Eaten Whole","Good Reasons","Fish","Labeo","Pabda","Predatory","Bata","Catla"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/art-calcutta-fish-field-guide.jpg"

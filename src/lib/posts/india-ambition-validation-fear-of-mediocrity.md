@@ -3,7 +3,7 @@ title: "Costume Ambition"
 description: "A critical look at how fear of mediocrity, social exposure, and public comparison reshape ambition into performance, especially in modern India."
 date: "2026-04-21"
 category: "society"
-tags: ["Mediocrity","Fear","Ambition","Striving","Performative","Obscurity","Substance","Destination","Fame","Excellence"]
+tags: ["Mediocrity","Fear","Ambition","Striving","Performative","Destination","Obscurity","Fame","Substance","Excellence"]
 published: true
 color: "amber"
 thumbnail: "/thumbnail/safe-india-ambition-validation-fear-of-mediocrity.jpg"

@@ -3,7 +3,7 @@ title: "The Humming Under the Bandage"
 description: "An NRI family returns from Texas to Calcutta carrying a small, unnoticed horror. In the city’s heat, among stray animals, leaking drains, and old family wounds, something hungry discovers abundance."
 date: "2026-06-05"
 category: "Short Fiction"
-tags: ["Brass Bowl","Nine Years","Arun","Bela","Nandita","Mira","Purnima","Calf","Bandage","Flies"]
+tags: ["Brass Bowl","Nine Years","Arun","Bela","Nandita","Mira","Calf","Purnima","Bandage","Flies"]
 published: true
 color: "oxblood"
 thumbnail: "/images/Compress_20260605_153151_1076.jpg"

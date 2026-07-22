@@ -4,7 +4,7 @@ description: "A readable, research-backed explanation of the state-of-the-art co
 date: "2026-05-22"
 thumbnail: "/images/Compress_20260522_014330_0107.jpg"
 category: "Artificial Intelligence"
-tags: ["Tensor Networks","Neural Network","Neural Operators","Layers Catch","Deep Learning","Physics","Diffusion","Model","DNNs","DNN"]
+tags: ["Tensor Networks","Neural Network","Neural Operators","Layers Catch","Deep Learning","Physics","Model","Diffusion","DNNs","DNN"]
 published: true
 color: "indigo"
 ---

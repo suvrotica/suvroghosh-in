@@ -3,7 +3,7 @@ title: "The Cheapest Soil"
 description: "At age fifty, every alumnus of a forgotten North Calcutta English school grows two extra tongues, and the three languages they were beaten into speaking finally turn on their throats."
 date: "2026-07-09"
 category: "Short Fiction"
-tags: ["Tongue Shaped","Shaped Priya","Original Tongue","Arjun","Tongues","Upper","Priya","Lower","Mouth","Headmaster"]
+tags: ["Tongue Shaped","Shaped Priya","Original Tongue","Arjun","Tongues","Upper","Priya","Mouth","Lower","Headmaster"]
 published: true
 color: "#8B0000"
 thumbnail: "/images/Compress_20260709_020332_2623.jpg"

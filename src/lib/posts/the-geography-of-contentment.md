@@ -4,7 +4,7 @@ description: "A personal essay on why happiness does not live neatly inside Amer
 date: "2026-05-15"
 thumbnail: "/images/Compress_20260515_233018_8846.jpg"
 category: "Life"
-tags: ["America","Drove","Terrace","Happiness","Country","Streets","American","Long","Calcutta","India"]
+tags: ["America","Drove","Terrace","Happiness","Country","Streets","Long","American","Calcutta","India"]
 published: true
 color: "amber"
 ---

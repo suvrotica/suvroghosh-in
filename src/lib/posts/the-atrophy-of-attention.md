@@ -3,7 +3,7 @@ title: "The Atrophy of Attention"
 description: "A grotesquely swollen, self-reflective bipolar rant from a fifty-one-year-old Calcutta man, tracing the death of human intelligence through AI offloading, the hidden horrors of nursery rhymes, and the vicarious nationalism of World Cup firecrackers."
 date: "2026-07-19"
 category: "Personal Essay"
-tags: ["Grinding Masticatory Process","Nursery Rhymes","Sixty Thousand","Brain-Dead Zombies","Slow Grinding","Masticatory","Firecrackers","Rhymes","Atrophy","Nursery"]
+tags: ["Grinding Masticatory Process","Nursery Rhymes","Sixty Thousand","Brain-Dead Zombies","Slow Grinding","Masticatory","Firecrackers","Rhymes","Atrophy","Brain-Dead"]
 published: true
 color: "#2d2d2d"
 thumbnail: "/thumbnail/safe-the-atrophy-of-attention.jpg"

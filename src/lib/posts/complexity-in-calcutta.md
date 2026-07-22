@@ -3,7 +3,7 @@ title: "Complexity in Calcutta"
 description: "A personal reflection on living with the layered, unresolvable complexity of contemporary life in a city that refuses to simplify itself."
 date: "2026-06-24"
 category: "Personal Essay"
-tags: ["Complexity","Anxieties","Mango","Approximately","Perpetual","Genuine","Particular","Pleasures","Choices","Capacity"]
+tags: ["Complexity","Anxieties","Mango","Approximately","Perpetual","Genuine","Particular","Pleasures","Choices","Aware"]
 published: true
 color: "#4a6741"
 thumbnail: "/thumbnail/safe-complexity-in-calcutta.jpg"

@@ -3,7 +3,7 @@ title: "Highly Composite Mornings, Prime Afternoons"
 description: "A Calcutta essay on bipolar mood, Ramanujan, highly composite numbers, prime numbers, and the strange arithmetic by which a mind becomes crowded or unreachable."
 date: "2026-06-11"
 category: "Personal Essay"
-tags: ["Highly Composite","Ramanujan","Divisible","Composite","Prime","Divisors","Mania","Highly","Number","Numbers"]
+tags: ["Highly Composite","Ramanujan","Divisible","Prime","Composite","Divisors","Mania","Highly","Number","Numbers"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg"

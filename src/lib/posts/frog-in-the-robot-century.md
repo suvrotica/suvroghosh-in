@@ -3,7 +3,7 @@ title: "Frog in the Robot Century"
 description: "A sharp Calcutta essay on clean water, power cuts, AI, robotics, and the cruel new wall forming between countries that build the machine century and countries that keep mistaking slogans for progress."
 date: "2026-06-15"
 category: "Essay"
-tags: ["Machine Century","Lies","Learn","AI","Century","Modernity","Machine","Assume","Robotics","Adjustment"]
+tags: ["Machine Century","Lies","Learn","AI","Modernity","Century","Machine","Assume","Robotics","Adjustment"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-frog-in-the-robot-century.jpg"

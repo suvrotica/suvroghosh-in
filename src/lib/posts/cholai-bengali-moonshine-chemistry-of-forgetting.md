@@ -4,7 +4,7 @@ description: "A Calcutta essay on Bengali moonshine, poverty, chemistry, state h
 date: "2026-06-18"
 thumbnail: "/images/Compress_20260618_133715_5968.jpg"
 category: "Essay"
-tags: ["Public Health","Alcohol","Cholai","Drinks","Liquor","Fermentation","Shows","Drink","Thirst","Liquid"]
+tags: ["Public Health","Alcohol","Cholai","Drinks","Liquor","Fermentation","Shows","Drink","Liquid","Thirst"]
 published: true
 color: "amber"
 ---

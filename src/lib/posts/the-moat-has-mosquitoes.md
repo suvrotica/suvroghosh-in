@@ -3,7 +3,7 @@ title: "The Moat Has Mosquitoes"
 description: "A darkly comic Calcutta essay about middle age, class descent, unemployment, illness, pride, and the small arithmetic of survival."
 date: "2026-06-14"
 category: "Personal Essay"
-tags: ["Hawking","Moat","Tuition","Asks","Business","Rickshaw","Pull","Matching","Invoices","Force"]
+tags: ["Hawking","Moat","Tuition","Asks","Business","Rickshaw","Pull","Invoices","Matching","Society"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-the-moat-has-mosquitoes.jpg"

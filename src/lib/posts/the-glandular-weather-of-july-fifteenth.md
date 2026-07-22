@@ -3,7 +3,7 @@ title: "The Glandular Weather"
 description: "A grotesquely swollen, self-reflective bipolar rant from a fifty-one-year-old Bengali man in Calcutta, channeling manic irritation through convoluted prose, scientific digressions, and the absurdity of a world where AI agents follow umbrellas and toilets power semiconductors."
 date: "2026-07-15"
 category: "Personal Essay"
-tags: ["Santa Claus Congress","Electrostatic Chucks","Electrostatic Chuck","Glandular Weather","Partly Cloudy","Irritated","Chucks","Kardashians","Humidity","Glandular"]
+tags: ["Santa Claus Congress","Electrostatic Chucks","Electrostatic Chuck","Glandular Weather","Partly Cloudy","Irritated","Chucks","Kardashians","Humidity","Probability"]
 published: true
 color: "#8B0000"
 thumbnail: "/thumbnail/safe-the-glandular-weather-of-july-fifteenth.jpg"

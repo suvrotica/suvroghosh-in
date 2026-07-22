@@ -3,7 +3,7 @@ title: "Why 2026 Is Still the 21st Century"
 description: "A small question about calendars turns into a larger meditation on how ordinary people glide past contradictions without ever stopping to poke them with a stick."
 date: "2026-05-12"
 category: "Personal Essay"
-tags: ["21st Century","Century","21st","Zero","Calendar","Forever","Kolkata","Runs","Modern","Longer"]
+tags: ["21st Century","21st","Century","Zero","Calendar","Forever","Kolkata","Runs","Modern","Longer"]
 published: true
 color: "stone"
 thumbnail: "/thumbnail/safe-the-century-has-a-hole-in-it.jpg"

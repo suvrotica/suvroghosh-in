@@ -4,7 +4,7 @@ description: "A caustic reflection on corporate positivity, fake certainty, expl
 date: "2026-05-05"
 thumbnail: "/images/Compress_20260505_154131_1600.jpg"
 category: "Society"
-tags: ["Negativity","Productivity","Project","Tools","Corporate","Optimism","Sounds","Process","Trick","Office"]
+tags: ["Negativity","Productivity","Project","Tools","Corporate","Sounds","Optimism","Process","Trick","Office"]
 published: true
 color: "amber"
 ---

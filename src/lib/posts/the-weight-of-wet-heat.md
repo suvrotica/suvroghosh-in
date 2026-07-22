@@ -3,7 +3,7 @@ title: "The Weight of Wet Heat"
 description: "A humid, philosophically inclined reflection from Calcutta on the relentless tropical heat, the science of heat domes and El Niño, and the quiet dread of a monsoon that may never arrive as promised."
 date: "2026-06-25"
 category: "Personal Essay"
-tags: ["Heat Dome","Niño","Dome","Heat","Egrets","Warming","Pacific","Cart","Inverter","Monsoon"]
+tags: ["Heat Dome","Niño","Dome","Heat","Egrets","Warming","Pacific","Inverter","Cart","Monsoon"]
 published: true
 color: "#8B4513"
 thumbnail: "/thumbnail/safe-the-weight-of-wet-heat.jpg"

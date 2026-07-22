@@ -3,7 +3,7 @@ title: "Nightmare Wrapped in Skin"
 description: "A bleak, unsentimental personal essay on depression, alienation, books, childhood comics, and the small private refuges that keep a life from collapsing entirely."
 date: "2026-05-04"
 category: "Personal Essay"
-tags: ["Tintin","Maybe","Grow","Ridiculous","Trouble","Child","Book","Childhood","Arrive","Reading"]
+tags: ["Tintin","Maybe","Grow","Ridiculous","Trouble","Child","Childhood","Book","Arrive","Reading"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-nightmare-wrapped-in-skin.jpg"

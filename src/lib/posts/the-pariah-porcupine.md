@@ -3,7 +3,7 @@ title: "The Pariah Porcupine"
 description: "A reflective essay from Calcutta on the quiet cost of speaking plainly about civic failure, generational apathy, and the slow collapse of public healthcare in India."
 date: "2026-06-24"
 category: "Personal Essay"
-tags: ["Wobbling Fan","Dinner Party","Warehouse Collapse","Porcupine","Benches","Wobble","Quills","Campaign","Pariah","Lukewarm"]
+tags: ["Wobbling Fan","Dinner Party","Warehouse Collapse","Porcupine","Benches","Wobble","Campaign","Quills","Pariah","Lukewarm"]
 published: true
 color: "#5a6e7c"
 thumbnail: "/thumbnail/safe-the-pariah-porcupine.jpg"

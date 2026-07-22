@@ -4,7 +4,7 @@ description: "A displaced Calcutta software professional takes a desperate image
 date: "2026-06-11"
 thumbnail: "/images/Compress_20260613_160142_2362.jpg"
 category: "Short Fiction"
-tags: ["Blue Shirt","Nirmal Asked","Indian Roads","Anirban","Nirmal","Bela","Shuttle","Road","Sensor","Taxi"]
+tags: ["Blue Shirt","Nirmal Asked","Indian Roads","Anirban","Nirmal","Bela","Shuttle","Road","Taxi","Sensor"]
 published: true
 color: "Charcoal"
 ---

@@ -4,7 +4,7 @@ description: "A readable, skeptical Calcutta essay on bipolar disorder, diet, su
 date: "2026-06-05"
 thumbnail: "/images/Compress_20260605_094716_6304.jpg"
 category: "Mental Health"
-tags: ["Oxidative Stress","Systematic Review","Bipolar Disorder","Bipolar","Probiotics","Magnesium","Sleep","Mood","MBCT","Alcohol"]
+tags: ["Oxidative Stress","Systematic Review","Bipolar Disorder","Bipolar","Probiotics","Magnesium","Sleep","Mood","Alcohol","MBCT"]
 published: true
 color: "indigo"
 ---

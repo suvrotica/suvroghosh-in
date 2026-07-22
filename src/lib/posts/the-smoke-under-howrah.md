@@ -4,7 +4,7 @@ description: "When smoke begins rising from cracks near Howrah Bridge, a disgrac
 date: "2026-06-03"
 thumbnail: "/images/Compress_20260603_122054_4966.jpg"
 category: "Short Fiction"
-tags: ["Strand Road","Eastern Habitat","Howrah Bridge","Amended Report","Caught Fire","Paromita","Arka","Riddhi","Ash","Bridge"]
+tags: ["Strand Road","Howrah Bridge","Eastern Habitat","Amended Report","Caught Fire","Paromita","Arka","Riddhi","Ash","Bridge"]
 published: true
 color: "Ash Gray"
 ---

@@ -5,7 +5,7 @@ date: "2026-07-21"
 thumbnail: "/thumbnail/algorithmic-complexity-in-the-age-of-ai.jpg"
 thumbnailAlt: "A nightclub bouncer, an oversized clock, and an illuminated AI black box stand before rows of servers and rising complexity curves"
 category: "Computer Science"
-tags: ["Memory Bandwidth","Neural Information Processing","Arxiv Preprint","Black Box","Gentle Field Guide","Complexity","Bouncer","Big-O","Nightclub","Algorithms"]
+tags: ["Memory Bandwidth","Neural Information Processing","Arxiv Preprint","Black Box","Gentle Field Guide","Bouncer","Complexity","Big-O","Nightclub","Algorithms"]
 published: true
 color: "#4A90E2"
 ---

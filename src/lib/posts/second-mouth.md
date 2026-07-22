@@ -3,7 +3,7 @@ title: "The Second Mouth"
 description: "A plague begins in Calcutta with a man splitting from the head downward, leaving behind not a corpse but two hungry copies. As the city tries to name the disease, one doctor discovers the infection has been waiting for a very old human permission."
 date: "2026-05-14"
 category: "Short Fiction"
-tags: ["Tea Stall","Paper Plate","Balcony Grill","Long Enough","Red Line","Niharika","Arko","Kabir","Split","Father"]
+tags: ["Tea Stall","Paper Plate","Balcony Grill","Long Enough","Red Line","Niharika","Arko","Kabir","Father","Split"]
 published: true
 color: "charcoal"
 thumbnail: "/images/Compress_20260514_215732_2937.jpg"

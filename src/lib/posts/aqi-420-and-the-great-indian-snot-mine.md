@@ -3,7 +3,7 @@ title: "AQI 420 and the Great Indian Snot Mine"
 date: "2026-01-15"
 description: "A wheezy Calcutta satire on bad air, middle-class lungs, sparkly snot, and the national talent for turning every discomfort into a development model."
 category: "personal"
-tags: ["AQI","Fuss","Nostril","Respiratory","Particulate","Shine","Nose","Sparkle","Mucus","Filter"]
+tags: ["AQI","Fuss","Nostril","Respiratory","Particulate","Shine","Nose","Sparkle","Filter","Mucus"]
 published: true
 color: "orange"
 thumbnail: "/thumbnail/safe-aqi-420-and-the-great-indian-snot-mine.jpg"
