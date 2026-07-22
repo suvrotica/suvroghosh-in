@@ -8112,6 +8112,22 @@
       "sourceHash": "b0d6630a15e06ee4cec1f10670bce1c87ce1e0ea4aec773abe1f5027f4dc9cd7",
       "width": 1600
     },
+    "static/images/spacetime-laboratory-einstein-equations.webp": {
+      "format": "WEBP",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 21508,
+      "outputHash": "32b793394f545417be4e2f0d1001b5f5df361d9d3ad9738bf2eb2967b091d5b3",
+      "psnrDb": 42.29,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 34786,
+      "sourceHash": "1bdfc09bd6c926bba9941ae43d1fee98cbedfd2822fb564d31ded057a100c840",
+      "width": 1200
+    },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",
       "height": 900,

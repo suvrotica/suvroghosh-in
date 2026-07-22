@@ -3569,6 +3569,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 553
 		},
 		{
+			"name": "spacetime-laboratory-einstein-equations.webp",
+			"src": "/images/spacetime-laboratory-einstein-equations.webp",
+			"bytes": 21508,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T03:35:26.860353+00:00",
+  "generatedAt": "2026-07-22T06:13:25.226725+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -7197,6 +7197,29 @@
         "Bappa",
         "Sat",
         "Cloth"
+      ],
+      "wordCount": 130
+    },
+    "spacetime-laboratory-einstein-equations": {
+      "generatedAt": "2026-07-22T06:13:24.902349+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/spacetime-laboratory-einstein-equations.svg",
+      "source": "src/lib/posts/spacetime-laboratory-einstein-equations.md",
+      "sourceHash": "f70f2b22b13645b1dbe8cd3c80c3c6fa8db073b40bb541c01de948c2f6234b80",
+      "sourceModified": "2026-07-22T06:13:19.768277+00:00",
+      "topWords": [
+        "Geometry",
+        "Horizon",
+        "Equation",
+        "Metric",
+        "Light",
+        "Frac",
+        "Mode",
+        "Universe",
+        "Mass",
+        "Schwarzschild",
+        "Spacetime",
+        "Field"
       ],
       "wordCount": 130
     },

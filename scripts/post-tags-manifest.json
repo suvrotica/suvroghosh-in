@@ -9001,6 +9001,23 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/spacetime-laboratory-einstein-equations.md": {
+			"bodyHash": "ffab6aa9f25160b208b60e8d3ad179fdd861923d45590f77af28c7b5ae2ade9c",
+			"generatedTags": [
+				"Boyer Lindquist",
+				"Black Holes",
+				"Anti-De Sitter",
+				"Visualization Deliberately Simplifies",
+				"Cosmological Constant",
+				"Horizon",
+				"Schwarzschild",
+				"Metric",
+				"Frac",
+				"Geometry"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
