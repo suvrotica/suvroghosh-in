@@ -4,7 +4,7 @@ description: "A bilious, recursive monologue from a fifty-one-year-old Bengali p
 date: "2026-07-22"
 thumbnail: "/thumbnail/Compress_20260722_083743_3384.jpg"
 category: "Polemic"
-tags: ["AI", "Calcutta", "Technology", "Existential Nausea", "Polemic", "Satire", "SuvroGhosh"]
+tags: ["Leaderboard","Benchmark","Suzetrigine","Genuine","Apotheosis","Benchmarks","Hype","Manic","Marketing","Optimized"]
 published: true
 color: "#8B0000"
 ---

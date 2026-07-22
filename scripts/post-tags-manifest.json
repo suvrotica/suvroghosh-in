@@ -8984,6 +8984,23 @@
 				"Procedural Art"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ai-leaderboard-ichor.md": {
+			"bodyHash": "b1352c18236b1ae812f27698bb5351ad774dabe0f7964268ecce22beb480cc9c",
+			"generatedTags": [
+				"Leaderboard",
+				"Benchmark",
+				"Suzetrigine",
+				"Genuine",
+				"Apotheosis",
+				"Benchmarks",
+				"Hype",
+				"Manic",
+				"Marketing",
+				"Optimized"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
