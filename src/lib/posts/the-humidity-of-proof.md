@@ -2,7 +2,9 @@
 title: "The Humidity of Proof"
 description: "A humid Calcutta bar essay about drink vocabulary, civic collapse, AI money, middle age, and the small humiliations hidden inside public confidence."
 date: "2026-06-27"
+dateModified: "2026-07-23"
 thumbnail: "/photos/Compress_20260627_114717_7761.jpg"
+thumbnailAlt: "Beer bottle, filled glass, snack bowl and poetry anthology on a Park Street bar table"
 category: "Culture"
 tags: ["Happy Hour","Bar English","Operating System","Ceiling Fan","Alcohol","Whiskey","Drink","Vermouth","ABV","Bar"]
 published: true
@@ -11,11 +13,11 @@ color: "#6B3A1E"
 
 <TTS />
 
-<Pi src="Compress_20260608_100111_1953.jpg" />
+<Pi src="Compress_20260608_100111_1953.jpg" alt="Monochrome charcoal drawing of a distressed man's head and shoulders compressed inside a wine glass" />
 
 The ceiling fan above this Park Street establishment rotates with the exhausted diligence of a man who has already submitted his retirement papers and is now merely serving out the fortnight, and I am sitting beneath it with a glass of beer that has begun to weep against the varnished wood, watching a single bead of condensation travel southward with the solemn attention I usually reserve for descending elevators, tax notices, or the final stages of a chess game in which I have already lost my queen but remain too stubborn to resign. 
 
-<Pi src="/photos/Compress_20260627_114717_7761.jpg" />
+<Pi src="/photos/Compress_20260627_114717_7761.jpg" alt="Beer bottle, filled glass, snack bowl and poetry anthology on a Park Street bar table" caption="A beer and a book beneath the patterned ceiling of a Park Street bar." />
 
 Let's say may be, it is the twenty-seventh of June, 2026. Outside, Calcutta performs its annual miracle of converting air into soup. The FIFA World Cup is currently unfolding across three North American time zones—an event I am not watching, though the flatscreen behind the bar insists on showing it, and every twenty-three minutes the room erupts in a brief, performative groan whenever Argentina, or Germany, or some other nation whose colonial history intersects inconveniently with our own, fails to convert a penalty. I have never understood the religious devotion inspired by twenty-two men chasing a sphere. But I understand the groan. It is the same sound the city made three days ago when a warehouse in Taratala collapsed and buried eighteen men under concrete that had apparently been poured by contractors who understood engineering the way I understand tensor calculus: I have read the words, I can pronounce them, and I would not trust myself to build anything more structurally ambitious than a sandwich.
 

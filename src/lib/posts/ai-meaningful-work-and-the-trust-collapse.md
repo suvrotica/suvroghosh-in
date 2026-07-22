@@ -4,7 +4,7 @@ description: "A technically serious reflection on why AI does not merely automat
 date: "2026-05-07"
 category: "Artificial Intelligence"
 tags: ["Synthetic","AI","Rubbish","Human","Work","Machine","Song","Output","Learns","Apprenticeship"]
-published: true
+published: false
 color: "slate"
 thumbnail: "/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg"
 ---

@@ -1,8 +1,10 @@
 ---
 title: "One Program at a Time"
-description: "An old photograph of a desktop computer, hand-painted walls, and carefully chosen curtains opens a ledger of family, ambition, failure, and the stubborn work of continuing."
+description: "An old desktop-computer photograph opens a ledger of family, ambition, failure, and the stubborn work of continuing in a Calcutta home."
 date: "2026-07-19"
+dateModified: "2026-07-23"
 thumbnail: "/photos/Compress_20260719_062743_3541.jpg"
+thumbnailAlt: "An early-2000s desktop computer, printer and speakers beside gold curtains in a Calcutta home"
 category: "Personal Essay"
 tags: ["Photograph","Computer","Curtains","Extraordinary","Father","Mattered","Program","Future","Painted","Mother"]
 published: true
@@ -53,7 +55,7 @@ One post at a time. One program at a time. One idea carried a little farther tha
 
 But a small effort matters because it keeps the machinery from seizing. A paragraph written today establishes that I was here today. A program completed proves that my mind can still take an abstract thought, break it into instructions, and make a machine obey. These are humble acts, but survival is largely composed of humble acts performed without applause.
 
-<Pi src="Compress_20260719_030443_3148.jpg" />
+<Pi src="Compress_20260719_030443_3148.jpg" alt="Surreal Howrah Bridge built from bones beneath an enormous red setting sun" caption="The Howrah Bridge recast as an old, overburdened skeleton that continues to hold." />
 
 My persistence resembles the Howrah Bridge against a hellscape of a red setting sun: old, overburdened, unglamorous, and still carrying traffic. The bridge does not ask whether the people crossing it admire its emotional resilience. It holds. Buses grind across it, taxis honk, pedestrians hurry, the river moves below, and the iron continues doing the work for which it was built.
 

@@ -1,6 +1,8 @@
 import { getPublishedPost } from '$lib/server/content/posts';
 import type { PageServerLoad } from './$types';
 
+export const prerender = true;
+
 const selectedAnalysis = [
 	{
 		slug: 'fhir-the-universal-language-of-health-data',

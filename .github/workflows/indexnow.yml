@@ -1,0 +1,57 @@
+name: Notify IndexNow after production deployment
+
+on:
+  deployment_status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+
+jobs:
+  submit-sitemap:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       (github.event.deployment.environment == 'Production' ||
+        github.event.deployment.environment == 'production'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+    steps:
+      - name: Check out the deployed revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.ref || github.ref }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Restore the previous production sitemap
+        uses: actions/cache@v4
+        with:
+          path: .cache/indexnow/sitemap.xml
+          key: indexnow-sitemap-${{ github.event.deployment.sha || github.sha }}
+          restore-keys: |
+            indexnow-sitemap-
+
+      - name: Verify IndexNow configuration
+        shell: bash
+        run: |
+          if [[ ! "$INDEXNOW_KEY" =~ ^[A-Za-z0-9-]{8,128}$ ]]; then
+            echo "INDEXNOW_KEY must be configured as a GitHub Actions secret."
+            exit 1
+          fi
+
+      - name: Submit canonical sitemap URLs
+        run: >-
+          node scripts/indexnow.mjs
+          --sitemap "https://www.suvroghosh.in/sitemap.xml?deployment=${{ github.event.deployment.sha || github.sha }}"
+          --previous-sitemap-file .cache/indexnow/sitemap.xml
+          --save-sitemap-file .cache/indexnow/sitemap.xml

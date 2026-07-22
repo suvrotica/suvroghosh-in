@@ -1,12 +1,23 @@
 ---
 title: "Why You Still Want to Read a Healthcare IT Blog in the Age of AI"
-description: "An exploration of why human-written, skeptical, and curiosity-driven healthcare IT commentary remains indispensable in an era of AI-generated noise, marketing jargon, and technological conceit."
+description: "Why practitioner-written healthcare IT analysis still matters amid AI-generated noise, vendor jargon, and systems that resist generic answers."
 date: "2026-06-26"
+dateModified: "2026-07-23"
 category: "Healthcare-IT"
 tags: ["Bodyshopping Moat","Linear Algebra","Adversarial Attacks","AI-driven Healthcare","Model Drift","Healthcare","AI","Systems","Genetic","Clinical"]
 published: true
 color: "#2E5C8A"
 thumbnail: "/thumbnail/safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg"
+thumbnailAlt: "Textured abstract waves in cream, rust, plum and blue crossed by fine contour lines"
+inPlainEnglish: "AI can summarize healthcare technology, but practitioner-written analysis remains valuable because real clinical systems are shaped by local workflows, legacy constraints, governance, failure modes, and consequences that generic answers often flatten."
+keyTerms: ["Healthcare IT", "Clinical Data Systems", "AI in Healthcare", "Model Drift", "Interoperability", "Data Governance"]
+faq:
+  - question: "Why read a healthcare IT blog when AI can answer questions?"
+    answer: "A practitioner can connect standards and product claims to implementation history, local workflows, organizational incentives, and failure modes. Those details determine whether a technically plausible answer will work in a real clinical system."
+  - question: "Can AI replace practitioner analysis in healthcare IT?"
+    answer: "AI can summarize documentation and generate useful starting points, but it does not automatically know which source is authoritative, how a particular organization actually operates, or where a polished generic recommendation will fail."
+  - question: "What makes healthcare IT commentary trustworthy?"
+    answer: "Trustworthy commentary distinguishes standards from governance, marketing from deployed capability, and model performance from clinical usefulness while remaining explicit about uncertainty, maintenance, and patient consequences."
 ---
 
 <TTS />
@@ -110,7 +121,7 @@ The method is **concentric**. Most pertinent posts begin with the big picture—
 
 The method is **interdisciplinary**. A post about hiring practices in healthcare IT might draw on organizational psychology, economics, and my direct experience running companies. A post about linear algebra in healthcare might connect matrix operations to the geometry of genetic variation. A post about a book like Dan Bader's *Python Tricks* might explore how programming craftsmanship intersects with clinical software reliability. The boundaries between disciplines are treated as permeable, because in reality they are. And personal and very very human in my case.
 
-<Pi src="/photos/Compress_20260626_135253_3863.jpg" />
+<Pi src="/photos/Compress_20260626_135253_3863.jpg" alt="A mug of milky tea resting on Dan Bader's blue Python Tricks book" caption="Programming craft and ordinary tea: the blog's technical method in miniature." />
 
 The method is **skeptical but not cynical**. There is a difference. Cynicism is the lazy assumption that everything is corrupt and nothing can be improved. Skepticism is the rigorous demand for evidence, the willingness to ask uncomfortable questions, and the humility to say "I don't know" when that is the honest answer. I claim no more knowledge than I possess, and I treat the ability to entertain blunt answers like "I don't know" as a strength, not a weakness. It is exactly because I can admit ignorance that I have the thirst to go out and look for what I don't know, to fill the gap with a beginning.
 

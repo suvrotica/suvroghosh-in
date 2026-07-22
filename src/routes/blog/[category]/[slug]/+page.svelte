@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'katex/dist/katex.min.css';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
@@ -25,7 +26,7 @@
 <SEO {...data.seo} />
 
 <div
-	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:grid xl:w-[72rem] xl:max-w-none xl:grid-cols-[minmax(0,48rem)_16rem] xl:items-start xl:gap-12"
+	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-none xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_16rem] xl:items-start xl:gap-12"
 >
 	<article class="article-print mx-auto max-w-3xl min-w-0 xl:mx-0">
 		<nav
@@ -184,6 +185,46 @@
 		>
 			<PostContent />
 		</div>
+
+		{#if data.metadata.categorySlug === 'healthcare-it'}
+			<section
+				data-tts-exclude
+				aria-labelledby="healthcare-it-consulting-heading"
+				class="mt-12 rounded-lg border border-neutral-300 bg-neutral-50 p-6 dark:border-neutral-700 dark:bg-neutral-900/60 print:hidden"
+			>
+				<p
+					class="mb-2 text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
+				>
+					Healthcare IT consulting
+				</p>
+				<h2
+					id="healthcare-it-consulting-heading"
+					class="mb-3 text-xl font-bold tracking-tight text-neutral-950 dark:text-neutral-50"
+				>
+					Working through a difficult clinical data or interoperability problem?
+				</h2>
+				<p
+					class="m-0 max-w-2xl text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
+				>
+					I advise on HIE and EHR architecture, HL7/FHIR interoperability, clinical data migration,
+					terminology, analytics, and AI data readiness.
+				</p>
+				<div class="mt-5 flex flex-wrap gap-x-5 gap-y-2">
+					<a
+						href={resolve('/consulting')}
+						class="inline-flex min-h-11 items-center text-sm font-bold text-neutral-950 underline decoration-neutral-500 underline-offset-4 transition-colors hover:text-neutral-600 hover:decoration-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-100 dark:decoration-neutral-500 dark:hover:text-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+					>
+						See healthcare IT consulting <span class="ml-1" aria-hidden="true">→</span>
+					</a>
+					<a
+						href={resolve('/healthcare-it-gulf')}
+						class="inline-flex min-h-11 items-center text-sm font-semibold text-neutral-700 underline decoration-neutral-400 underline-offset-4 transition-colors hover:text-neutral-950 hover:decoration-neutral-700 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-300 dark:decoration-neutral-600 dark:hover:text-white dark:hover:decoration-neutral-300 dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+					>
+						Gulf &amp; Kuwait healthcare IT <span class="ml-1" aria-hidden="true">→</span>
+					</a>
+				</div>
+			</section>
+		{/if}
 
 		{#if isSiteAuthor}
 			<AuthorPanel />

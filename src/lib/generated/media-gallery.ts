@@ -3523,8 +3523,8 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "monte-carlo-laboratory.svg",
 			"src": "/images/monte-carlo-laboratory.svg",
 			"bytes": 4642,
-			"width": null,
-			"height": null
+			"width": 1200,
+			"height": 630
 		},
 		{
 			"name": "p0.jpeg",

@@ -1,8 +1,8 @@
 ---
 title: "Latent Space in Healthcare Data, From the Beginning"
-description: "A system-level explanation of latent space in healthcare data: what it is, why it matters, where it fails, and how architects should treat it in real clinical and research systems."
+description: "How clinical embeddings represent hidden patterns in healthcare data, where they fail, and why every patient vector needs provenance and an audit path."
 date: "2026-04-24"
-dateModified: "2026-07-22"
+dateModified: "2026-07-23"
 category: "Healthcare IT"
 tags: ["Latent Space","Clinical Embeddings","Healthcare Data","Representation Learning","Electronic Health Records","Data Provenance","FHIR","Temporal Modeling","Algorithmic Bias","Clinical Informatics"]
 pinnedTags: ["Latent Space", "Clinical Embeddings", "Healthcare Data", "Representation Learning", "Electronic Health Records", "Data Provenance", "FHIR", "Temporal Modeling", "Algorithmic Bias", "Clinical Informatics"]
@@ -13,6 +13,13 @@ thumbnailAlt: "Muted overlapping shapes and contour lines suggesting a hidden ge
 mediaReviewed: true
 inPlainEnglish: "Clinical embeddings turn unresolved problems of identity, time, terminology, missingness, and provenance into geometry. A patient vector can therefore be numerically stable, useful, and clinically false at the same time; safe architecture must preserve an audit path from the vector back to its evidence."
 keyTerms: ["Latent Space", "Clinical Embedding", "Representation Learning", "Provenance", "Temporal Modeling", "Representational Loss"]
+faq:
+  - question: "What is latent space in healthcare data?"
+    answer: "Latent space is a learned numerical representation in which patients, notes, images, codes, or events are positioned by patterns of similarity that may not appear in ordinary tables."
+  - question: "What are clinical embeddings useful for?"
+    answer: "They can support semantic search, cohort discovery, similarity retrieval, imaging triage, risk modeling, and synthesis of weak signals across long or heterogeneous records."
+  - question: "Why do clinical embeddings need provenance?"
+    answer: "Similarity is not clinical truth. An audit path must show which source facts, timestamps, mappings, transformations, and model version shaped a vector so people can inspect misleading resemblance."
 ---
 
 <TTS />

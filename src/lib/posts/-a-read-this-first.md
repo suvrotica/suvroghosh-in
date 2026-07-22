@@ -2,11 +2,13 @@
 title: "Schooling in Calcutta"
 description: "A Calcutta self-portrait stitched from school shame, books, bipolar weather, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2024-01-01"
+dateModified: "2026-07-23"
 category: "Personal"
 tags: ["Less Alone","School","Cossipore","Children","Shame","Childhood","Books","Don’t","Read","English-medium"]
 published: true
 color: "orange"
 thumbnail: "/thumbnail/safe-a-read-this-first.jpg"
+thumbnailAlt: "Textured abstract arcs in muted rust, cream, blue and plum crossed by fine contour lines"
 ---
 
 <TTS />
@@ -19,11 +21,11 @@ Acronyms used: ICSE — Indian Certificate of Secondary Education, the school ex
 
 I was not manufactured for childhood. Some children bloom like hibiscus. I developed like damp paperwork in a North Calcutta cupboard. Middle row, left-most.
 
-<Pi src="/photos/Compress_20260524_125448_8402.jpg" />
+<Pi src="/photos/Compress_20260524_125448_8402.jpg" alt="Black-and-white class photograph of Cossipore English School pupils and teachers arranged in three rows" caption="A Cossipore school class assembled outside the school building." />
 
 School is where this story begins, because school is where a Bengali middle-class child is first told, with chalk, prayer, punishment, and sharpened pencils, that life has a syllabus and failure has handwriting. Mine began in Cossipore, or Kashipur, depending on whether you were speaking as a Bengali, an English-medium hopeful, or a colonial ghost still mispronouncing local geography from the afterlife.
 
-<Pi src="/photos/Compress_20260524_125448_8591.jpg" />
+<Pi src="/photos/Compress_20260524_125448_8591.jpg" alt="Eight school friends standing together beneath a tree in the Cossipore school grounds" caption="School friends in Cossipore, away from the discipline of the classroom." />
 
 Cossipore sounded to me like coughing, which was suitable. I had lungs that behaved like old harmoniums: wheezy, emotional, and ready to collapse during performance. I almost vanished from whooping cough as a child, then returned to the world through the professional confidence of Dr. Bhaskar Mani and antibiotics strong enough to make microbes reconsider their career choices. I survived. The lungs did too, though they remain dramatic. Today, when Calcutta air enters them, they react like two elderly uncles reading the electricity bill.
 
@@ -31,7 +33,7 @@ The name Cossipore, alas, does not come from coughing Bengalis, though the air q
 
 My school name had WWA attached to it, which gave it an air of institutional virtue. I cannot say I saw much welfare being distributed. I saw classrooms, uniforms, discipline, long skirts, water bottles, chalk dust, fear, and teachers who seemed enormous to my thin, coughing, bespectacled self. One teacher, Ira Paul, our English teacher, had grace. Children notice grace. They may not know the word yet, but they know when an adult enters a room without making the room smaller.
 
-<Pi src="/photos/Compress_20260524_130646_6472.jpg" />
+<Pi src="/photos/Compress_20260524_130646_6472.jpg" alt="School friends sharing fruit in the shade beside a weathered boundary wall" caption="A quieter interval with school friends beneath the trees." />
 
 The building smelled of childhood illness, wet walls, old wood, ink, and the faint panic of examinations. This was not the golden school of sentimental songs. No slow-motion sunlight. No violin. No gentle voiceover saying, “Those were the days.” Those were days of ambition, shame, cough, digestive emergencies, bookish escape, and the early suspicion that the world was built by people who had never been children, or had forgotten the evidence.
 
@@ -47,7 +49,7 @@ One of my earliest discoveries was that the body is a traitor. Adults sell child
 
 The school toilet was my first lesson in Indian public infrastructure. It taught me more about civilization than civics did. It was a place where water was theoretical, smell was democratic, and courage had to be summoned at the door. I learned to hold my bowels with the seriousness of a border guard. Twice I failed. On a hand-pulled rickshaw, over potholes that seemed personally designed by geologists with grudges, I came home carrying the kind of shame that does not make a speech. It simply sits inside the child and becomes furniture.
 
-<Pi src="/photos/Compress_20260526_081512_2854.jpg" />
+<Pi src="/photos/Compress_20260526_081512_2854.jpg" alt="Portrait of the author's mother wearing glasses and a white-and-blue sari" caption="My mother, whose largely unseen labour held childhood together." />
 
 My mother cleaned what had to be cleaned. This was before washing machines entered the North Calcutta middle-class imagination. We did not have domestic backup teams, scented sprays, or elegant solutions. We had buckets, soap, tired mothers, and the mute economy of love. Much of childhood is sustained by labor children cannot yet see.
 

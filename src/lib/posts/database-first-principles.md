@@ -1,12 +1,23 @@
 ---
 title: "Databases and Data Warehouses"
-description: "A practical architectural primer on what databases and data warehouses are actually for, how they fail under real operating conditions, and why the decisive variable is rarely the tool itself. The deeper story lives in workload shape, data semantics, ownership, time, and the often invisible architecture around them."
+description: "Databases support live operations; warehouses support analysis across time. Learn how workload, semantics, provenance, and ownership shape both."
 date: "2026-04-23"
+dateModified: "2026-07-23"
 category: "healthcare-it"
 tags: ["Health Level Seven","Data Quality","Data Warehouses","Warehouse","Operational","Authoritative","Architecture","Analytical","Event","Enterprise"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-database-first-principles.jpg"
+thumbnailAlt: "Abstract overlapping waves in muted orange, plum, slate blue, and cream"
+inPlainEnglish: "An operational database keeps current workflows reliable; a data warehouse reconstructs history for analysis across systems. A warehouse does not repair source ambiguity automatically, so good architecture preserves provenance, separates time concepts, declares grain, and makes semantic choices explicit."
+keyTerms: ["Operational Database", "Data Warehouse", "OLTP", "OLAP", "ETL", "Data Provenance"]
+faq:
+  - question: "What is the difference between a database and a data warehouse?"
+    answer: "An operational database supports fast, reliable transactions and current application state. A data warehouse supports historical, cross-domain analysis, cohorts, trends, aggregates, and repeated analytical questions."
+  - question: "Does a data warehouse fix source-system data quality?"
+    answer: "No. It inherits source omissions, local meanings, workflow distortions, and timing problems. Integration can standardize them, but it must preserve provenance and document each representational choice."
+  - question: "What layers make a data warehouse more trustworthy?"
+    answer: "Preserve raw ingestion with lineage, build standardized intermediate representations without erasing source meaning, then publish curated models with explicit grain, time rules, ownership, and mappings."
 ---
 
 <TTS />

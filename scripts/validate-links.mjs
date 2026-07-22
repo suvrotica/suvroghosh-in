@@ -146,6 +146,25 @@ function extractCodeReferences(file) {
 	}
 }
 
+function extractLlmsReferences(file) {
+	if (!fs.existsSync(file)) return;
+	const text = read(file);
+	const markdownLink = /\[[^\]]*\]\((https:\/\/www\.suvroghosh\.in\/[^)\s]*)\)/g;
+
+	for (const match of text.matchAll(markdownLink)) {
+		let url;
+		try {
+			url = new URL(match[1]);
+		} catch {
+			errors.push(
+				`${relativeFile(file)}:${lineNumber(text, match.index)}: malformed site URL ${match[1]}.`
+			);
+			continue;
+		}
+		addReference(file, text, match.index, `${url.pathname}${url.search}`);
+	}
+}
+
 function staticFileExists(pathname) {
 	let decoded;
 	try {
@@ -201,6 +220,7 @@ for (const post of posts) extractPostReferences(post);
 for (const file of [...walk(routesDir), ...walk(componentsDir)]) {
 	if (/\.(?:js|mjs|ts|svelte)$/.test(file)) extractCodeReferences(file);
 }
+extractLlmsReferences(path.join(staticDir, 'llms.txt'));
 
 const uniqueReferences = new Map();
 for (const reference of references) {

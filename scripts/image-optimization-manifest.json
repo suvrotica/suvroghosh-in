@@ -8032,6 +8032,18 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/monte-carlo-laboratory.svg": {
+      "format": "SVG",
+      "height": 630,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 4642,
+      "outputHash": "7a443e2f67fa54014ad27303430bf2f09f965ba4654ced8a81a81cce033dcb9d",
+      "reason": "vector source retained",
+      "sourceBytes": 4642,
+      "sourceHash": "7a443e2f67fa54014ad27303430bf2f09f965ba4654ced8a81a81cce033dcb9d",
+      "width": 1200
+    },
     "static/images/p0.jpeg": {
       "format": "JPEG",
       "height": 1600,

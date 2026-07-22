@@ -1,5 +1,5 @@
 import { error, redirect } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import type { EntryGenerator, PageServerLoad } from './$types';
 import {
 	siteUrl,
 	siteTitle,
@@ -13,12 +13,20 @@ import {
 } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
 import { postPath, redirectedPostPath } from '$lib/content/posts';
+import { getImageDimensions } from '$lib/server/image-metadata';
 import {
 	getPostNavigation,
 	getPostTopicLinks,
 	getPublishedPost,
+	getPublishedPosts,
 	getRelatedPosts
 } from '$lib/server/content/posts';
+
+// Canonical posts are static, while the server fallback preserves legacy/category redirects.
+export const prerender = 'auto';
+
+export const entries: EntryGenerator = () =>
+	getPublishedPosts().map(({ categorySlug, slug }) => ({ category: categorySlug, slug }));
 
 export const load: PageServerLoad = async ({ params }) => {
 	const { category, slug } = params;
@@ -36,6 +44,9 @@ export const load: PageServerLoad = async ({ params }) => {
 	const catLabel = categoryLabel(normalizedCategory);
 	const topicLabels = [...metadata.tags, ...(metadata.series ?? []), ...metadata.derivedTopics];
 	const keywords = [...topicLabels, metadata.category, 'Suvro Ghosh'].filter(Boolean).slice(0, 15);
+	const ogImageDimensions = metadata.thumbnail
+		? getImageDimensions(metadata.thumbnail)
+		: { width: 1200, height: 800 };
 
 	const breadcrumbs = breadcrumbSchema([
 		{ name: 'Home', url: siteUrl },
@@ -60,6 +71,8 @@ export const load: PageServerLoad = async ({ params }) => {
 			canonicalUrl,
 			ogImageUrl: absoluteUrl(metadata.thumbnail) ?? defaultOgImage,
 			ogImageAlt: metadata.thumbnailAlt ?? metadata.title,
+			ogImageWidth: ogImageDimensions?.width ?? 0,
+			ogImageHeight: ogImageDimensions?.height ?? 0,
 			type: 'article' as const,
 			publishedTime: metadata.date,
 			modifiedTime: metadata.dateModified,

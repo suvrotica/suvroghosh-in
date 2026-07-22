@@ -1,12 +1,23 @@
 ---
 title: "HL7 vs FHIR, Explained Simply"
-description: "A practical explanation of why HL7 and FHIR are not enemies, why hospitals still run on older interfaces, and what FHIR actually improves without magically fixing healthcare data."
+description: "HL7 v2 and FHIR solve different interoperability problems. Learn when event messages, web APIs, profiles, and terminology governance each belong."
 date: "2026-04-25"
+dateModified: "2026-07-23"
 category: "Healthcare IT"
 tags: ["HL7 Version","Layer Reflects","Healthcare Interoperability","Source System","FHIR","HL7","Healthcare","Data","Clinical","Version"]
 published: true
 color: "blue"
 thumbnail: "/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg"
+thumbnailAlt: "Abstract layered arcs and contour lines in navy, teal, coral, plum, and cream"
+inPlainEnglish: "HL7 v2 and FHIR are complementary rather than rival standards. HL7 v2 remains effective for event-driven hospital messages, while FHIR provides modular resources and web APIs; neither removes the need for profiles, terminology, provenance, and local agreements."
+keyTerms: ["HL7 v2", "FHIR", "Healthcare Interoperability", "FHIR Resource", "FHIR Profile", "Implementation Guide"]
+faq:
+  - question: "Is FHIR replacing HL7 v2?"
+    answer: "Not everywhere. HL7 v2 still carries large volumes of operational hospital events, while FHIR is often better for web APIs, apps, patient access, and query-based exchange. Many architectures use both."
+  - question: "When should a healthcare system use HL7 v2 or FHIR?"
+    answer: "HL7 v2 often fits event-driven boundaries such as admissions, orders, and results. FHIR often fits patient-facing, ecosystem-facing, service-oriented, or query-based boundaries."
+  - question: "Does FHIR guarantee that two systems mean the same thing?"
+    answer: "No. Resources improve structure, but shared meaning still depends on profiles, implementation guides, terminology bindings, provenance, identity rules, and explicit local agreements."
 ---
 
 <TTS />

@@ -3,7 +3,9 @@ import test from 'node:test';
 import {
 	bodyHash,
 	extractTags,
+	freshnessIssue,
 	mergePinnedTags,
+	postRevisionHash,
 	replaceTags,
 	splitPost
 } from './generate-post-tags.mjs';
@@ -74,6 +76,87 @@ test('body hashes ignore frontmatter-only changes', () => {
 	const second = splitPost(`---\ntitle: Second\ntags: [Two]\n---\nSame body.\n`, 'second.md');
 
 	assert.equal(bodyHash(first.body), bodyHash(second.body));
+});
+
+test('revision hashes ignore generated metadata but track meaningful post changes', () => {
+	const first = splitPost(
+		`---\ntitle: First\ndescription: Original\ntags: [One]\ndateModified: '2026-07-22'\n---\nSame body.\n`,
+		'first.md'
+	);
+	const generatedMetadataOnly = splitPost(
+		`---\ntitle: First\ndescription: Original\ntags: [Two]\ndateModified: '2026-07-23'\n---\nSame body.\n`,
+		'second.md'
+	);
+	const meaningfulEdit = splitPost(
+		`---\ntitle: First\ndescription: Revised\ntags: [Two]\ndateModified: '2026-07-23'\n---\nSame body.\n`,
+		'third.md'
+	);
+
+	assert.equal(postRevisionHash(first), postRevisionHash(generatedMetadataOnly));
+	assert.notEqual(postRevisionHash(first), postRevisionHash(meaningfulEdit));
+});
+
+test('changed published content must add or advance dateModified', () => {
+	const previous = splitPost(
+		`---\ntitle: First\ntags: [One]\ndateModified: '2026-07-22'\npublished: true\n---\nOld body.\n`,
+		'previous.md'
+	);
+	const previousCache = {
+		bodyHash: bodyHash(previous.body),
+		revisionHash: postRevisionHash(previous),
+		dateModified: '2026-07-22'
+	};
+	const withoutDate = splitPost(
+		`---\ntitle: First\ntags: [One]\npublished: true\n---\nNew body.\n`,
+		'without-date.md'
+	);
+	const unchangedDate = splitPost(
+		`---\ntitle: First\ntags: [One]\ndateModified: '2026-07-22'\npublished: true\n---\nNew body.\n`,
+		'unchanged-date.md'
+	);
+	const advancedDate = splitPost(
+		`---\ntitle: First\ntags: [One]\ndateModified: '2026-07-23'\npublished: true\n---\nNew body.\n`,
+		'advanced-date.md'
+	);
+
+	assert.match(
+		freshnessIssue(
+			previousCache,
+			withoutDate,
+			bodyHash(withoutDate.body),
+			postRevisionHash(withoutDate)
+		),
+		/add dateModified/
+	);
+	assert.match(
+		freshnessIssue(
+			previousCache,
+			unchangedDate,
+			bodyHash(unchangedDate.body),
+			postRevisionHash(unchangedDate),
+			'2026-07-23'
+		),
+		/advance it to the edit date/
+	);
+	assert.equal(
+		freshnessIssue(
+			previousCache,
+			unchangedDate,
+			bodyHash(unchangedDate.body),
+			postRevisionHash(unchangedDate),
+			'2026-07-22'
+		),
+		null
+	);
+	assert.equal(
+		freshnessIssue(
+			previousCache,
+			advancedDate,
+			bodyHash(advancedDate.body),
+			postRevisionHash(advancedDate)
+		),
+		null
+	);
 });
 
 test('short visualization technology names keep their canonical display form', () => {

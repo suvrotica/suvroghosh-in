@@ -28,3 +28,4 @@ preview-*.err.log
 # Deterministic generated manifests
 scripts/image-optimization-manifest.json
 src/lib/generated/media-gallery.ts
+src/lib/server/generated/image-dimensions.js

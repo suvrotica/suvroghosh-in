@@ -162,6 +162,84 @@ function bodyHash(body) {
 	return crypto.createHash('sha256').update(body, 'utf8').digest('hex');
 }
 
+function canonicalize(value) {
+	if (Array.isArray(value)) return value.map(canonicalize);
+	if (!value || typeof value !== 'object') return value;
+	return Object.fromEntries(
+		Object.keys(value)
+			.sort()
+			.map((key) => [key, canonicalize(value[key])])
+	);
+}
+
+function postRevisionHash(post) {
+	const metadata = { ...post.metadata };
+	delete metadata.tags;
+	delete metadata.pinnedTags;
+	delete metadata.dateModified;
+	return crypto
+		.createHash('sha256')
+		.update(JSON.stringify(canonicalize(metadata)), 'utf8')
+		.update('\0')
+		.update(post.body, 'utf8')
+		.digest('hex');
+}
+
+function normalizedDateModified(metadata) {
+	return typeof metadata.dateModified === 'string' && metadata.dateModified.trim()
+		? metadata.dateModified.trim()
+		: null;
+}
+
+function currentSiteDate() {
+	const parts = new Intl.DateTimeFormat('en-US', {
+		timeZone: 'Asia/Kolkata',
+		year: 'numeric',
+		month: '2-digit',
+		day: '2-digit'
+	})
+		.formatToParts(new Date())
+		.reduce((values, part) => ({ ...values, [part.type]: part.value }), {});
+	return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
+function freshnessIssue(
+	cache,
+	post,
+	currentBodyHash,
+	currentRevisionHash,
+	today = currentSiteDate()
+) {
+	if (!cache || post.metadata.published === false) return null;
+	const contentChanged = cache.revisionHash
+		? cache.revisionHash !== currentRevisionHash
+		: cache.bodyHash !== currentBodyHash;
+	if (!contentChanged) return null;
+
+	const currentDateModified = normalizedDateModified(post.metadata);
+	if (!currentDateModified) {
+		return 'published content changed; add dateModified so schema, sitemap freshness, and IndexNow stay accurate';
+	}
+	const previousDateModified = cache.dateModified ?? null;
+	if (previousDateModified && currentDateModified < previousDateModified) {
+		return `published content changed but dateModified moved backwards from ${previousDateModified} to ${currentDateModified}`;
+	}
+	if (
+		previousDateModified &&
+		previousDateModified === currentDateModified &&
+		currentDateModified !== today
+	) {
+		return `published content changed but dateModified is still ${currentDateModified}; advance it to the edit date`;
+	}
+	return null;
+}
+
+function updateRevisionCache(cache, revisionHash, dateModified) {
+	cache.revisionHash = revisionHash;
+	if (dateModified) cache.dateModified = dateModified;
+	else delete cache.dateModified;
+}
+
 function cleanBody(body) {
 	return body
 		.normalize('NFC')
@@ -511,17 +589,22 @@ async function main() {
 			const pinnedTags = post.metadata.pinnedTags ?? [];
 			mergePinnedTags([], pinnedTags, options.maxTags);
 			const hash = bodyHash(post.body);
+			const revisionHash = postRevisionHash(post);
+			const dateModified = normalizedDateModified(post.metadata);
 			const cache = manifestPosts[source];
+			const staleFreshness = freshnessIssue(cache, post, hash, revisionHash);
+			if (staleFreshness) throw new Error(staleFreshness);
 			const cachedTags = cache?.generatedTags;
 			const cachedPinnedTags = cache?.pinnedTags ?? [];
-			if (
+			const coreCacheIsCurrent =
 				!options.force &&
 				cache?.bodyHash === hash &&
 				cache?.generatorVersion === generatorVersion &&
 				Array.isArray(cachedTags) &&
 				tagsEqual(post.metadata.tags, cachedTags) &&
-				tagsEqual(pinnedTags, cachedPinnedTags)
-			) {
+				tagsEqual(pinnedTags, cachedPinnedTags);
+			if (coreCacheIsCurrent) {
+				updateRevisionCache(cache, revisionHash, dateModified);
 				skipped += 1;
 				continue;
 			}
@@ -544,9 +627,11 @@ async function main() {
 			}
 			manifestPosts[source] = {
 				bodyHash: hash,
+				revisionHash,
 				generatedTags: tags,
 				pinnedTags,
-				generatorVersion
+				generatorVersion,
+				...(dateModified ? { dateModified } : {})
 			};
 		} catch (error) {
 			failed += 1;
@@ -586,4 +671,13 @@ if (path.resolve(process.argv[1] ?? '') === fileURLToPath(import.meta.url)) {
 	}
 }
 
-export { bodyHash, buildCorpusStatistics, extractTags, mergePinnedTags, replaceTags, splitPost };
+export {
+	bodyHash,
+	buildCorpusStatistics,
+	extractTags,
+	freshnessIssue,
+	mergePinnedTags,
+	postRevisionHash,
+	replaceTags,
+	splitPost
+};

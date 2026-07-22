@@ -1,8 +1,8 @@
 ---
 title: "Confounding Factors"
-description: "A technical guide to understanding, detecting, and handling confounding factors in healthcare IT, clinical analytics, and population health systems without mistaking correlation for architecture-grade truth."
+description: "How confounding enters healthcare analytics through workflows, selection, time, missingness, and site differences—and how to design more honest analyses."
 date: "2026-04-22"
-dateModified: "2026-07-22"
+dateModified: "2026-07-23"
 category: "healthcare-it"
 tags: ["Confounding","Causal Inference","Healthcare Analytics","Target Trial","Directed Acyclic Graphs","Selection Bias","Time Zero","Missing Data","Data-Generating Process","Healthcare Data"]
 pinnedTags: ["Confounding", "Causal Inference", "Healthcare Analytics", "Target Trial", "Directed Acyclic Graphs", "Selection Bias", "Time Zero", "Missing Data", "Data-Generating Process", "Healthcare Data"]
@@ -13,6 +13,13 @@ thumbnailAlt: "Overlapping muted shapes and contour lines suggesting hidden fact
 mediaReviewed: true
 inPlainEnglish: "Confounding in healthcare analytics is often manufactured upstream—through eligibility, workflow, documentation, denominators, timestamps, missingness, and capture boundaries—before a statistical model is fitted. Statistical adjustment cannot repair a question whose population, time zero, or data-generating process was defined badly."
 keyTerms: ["Confounding", "Denominator", "Causal Inference", "Target Trial", "Directed Acyclic Graph", "Data-Generating Process"]
+faq:
+  - question: "What is confounding in healthcare analytics?"
+    answer: "Confounding occurs when a third factor—such as illness severity, access, site, workflow, or documentation behavior—distorts the apparent relationship between an exposure and an outcome."
+  - question: "Why can’t statistical adjustment always fix confounding?"
+    answer: "Adjustment cannot rescue a badly defined population, misaligned time zero, missing capture boundary, or misunderstood assignment process. Those design errors are created before a model is fitted."
+  - question: "How can healthcare teams reduce confounding?"
+    answer: "Define the causal question and assignment process first, map the workflow, anchor cohorts in time, use clinical knowledge and causal diagrams, preserve lineage, test assumptions, and run sensitivity analyses."
 ---
 
 <TTS />

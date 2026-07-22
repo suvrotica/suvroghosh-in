@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '@fontsource-variable/roboto/wght.css';
 	import '@fontsource-variable/roboto/wght-italic.css';
+	import robotoLatinUrl from '@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2?url';
 	import '../app.css';
-	import 'katex/dist/katex.min.css';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { dev } from '$app/environment';
@@ -18,6 +18,10 @@
 		injectSpeedInsights();
 	});
 </script>
+
+<svelte:head>
+	<link rel="preload" href={robotoLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+</svelte:head>
 
 <ReadingProgress />
 

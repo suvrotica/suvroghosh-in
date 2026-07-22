@@ -2,11 +2,18 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { parsePostFrontmatter } from './lib/post-metadata.mjs';
+import {
+	imageDimensions,
+	imageManifestKey,
+	literalAttribute,
+	transformPostImageComponents
+} from './lib/post-image-metadata.mjs';
 
 const root = process.cwd();
 const sourceRoot = path.join(root, 'src');
 const postsRoot = path.join(sourceRoot, 'lib', 'posts');
 const staticRoot = path.join(root, 'static');
+const imageManifestPath = path.join(root, 'scripts', 'image-optimization-manifest.json');
 const mediaDirectories = ['images', 'photos', 'thumbnail', 'videos', 'audio'];
 const sourceExtensions = new Set(['.md', '.svx', '.svelte', '.ts', '.js', '.mjs', '.css', '.html']);
 const mediaExtensions = new Set([
@@ -63,11 +70,6 @@ function lineNumber(text, index) {
 	return text.slice(0, index).split('\n').length;
 }
 
-function literalAttribute(component, name) {
-	const match = component.match(new RegExp(`(?:^|\\s)${name}\\s*=\\s*(["'])([\\s\\S]*?)\\1`));
-	return match ? match[2] : null;
-}
-
 function validateReviewedMedia(file, text, reviewErrors) {
 	let metadata;
 	try {
@@ -113,6 +115,64 @@ function validateReviewedMedia(file, text, reviewErrors) {
 	return reviewedImageCount;
 }
 
+function validatePostImageDimensions(file, text, imageManifest, dimensionErrors) {
+	const source = toPosix(path.relative(root, file));
+	transformPostImageComponents(text, (component, index) => {
+		const src = literalAttribute(component, 'src');
+		const hasAuthoredDimensions =
+			/(?:^|\s)width\s*=/.test(component) && /(?:^|\s)height\s*=/.test(component);
+		if (src === null) {
+			if (!hasAuthoredDimensions) {
+				dimensionErrors.push(
+					`${source}:${lineNumber(text, index)}: dynamic Pi/PostImage src requires explicit width and height props.`
+				);
+			}
+			return component;
+		}
+		if (src.trim() === '') return component;
+
+		const manifestKey = imageManifestKey(src);
+		if (!manifestKey) {
+			if (!hasAuthoredDimensions) {
+				dimensionErrors.push(
+					`${source}:${lineNumber(text, index)}: Pi/PostImage source ${JSON.stringify(src)} is not a manifest-backed local image; add explicit width and height props.`
+				);
+			}
+			return component;
+		}
+
+		if (!imageDimensions(imageManifest, src) && !hasAuthoredDimensions) {
+			dimensionErrors.push(
+				`${source}:${lineNumber(text, index)}: ${manifestKey} has no valid intrinsic dimensions in the image optimisation manifest.`
+			);
+		}
+		return component;
+	});
+}
+
+function validateSecondaryPostImageAlternatives(file, text, alternativeErrors) {
+	const source = toPosix(path.relative(root, file));
+	let imageIndex = 0;
+	transformPostImageComponents(text, (component, index) => {
+		const isLeadImage = imageIndex === 0;
+		imageIndex += 1;
+		if (isLeadImage) return component;
+
+		const hasAlt = /(?:^|\s)alt\s*=/.test(component);
+		const alt = literalAttribute(component, 'alt');
+		if (!hasAlt) {
+			alternativeErrors.push(
+				`${source}:${lineNumber(text, index)}: every Pi/PostImage after the lead image requires an explicit authored alt; use alt="" only when decorative.`
+			);
+		} else if (alt !== null && alt !== '' && alt.trim() === '') {
+			alternativeErrors.push(
+				`${source}:${lineNumber(text, index)}: decorative image alt must be exactly alt=""; whitespace is not a valid authored alternative.`
+			);
+		}
+		return component;
+	});
+}
+
 function addReference(references, value, source) {
 	const reference = normalizeReference(value);
 	if (!reference.startsWith('/') || !isMediaPath(reference)) return;
@@ -152,13 +212,34 @@ const sourceFiles = walk(sourceRoot).filter(
 );
 const references = new Map();
 const mediaReviewErrors = [];
+const imageDimensionErrors = [];
+const secondaryImageAltErrors = [];
 let reviewedPostCount = 0;
 let reviewedImageCount = 0;
+let imageManifest = {};
+
+try {
+	const parsedManifest = JSON.parse(fs.readFileSync(imageManifestPath, 'utf8'));
+	if (
+		!parsedManifest ||
+		typeof parsedManifest.files !== 'object' ||
+		parsedManifest.files === null
+	) {
+		throw new Error('manifest must contain a files object');
+	}
+	imageManifest = parsedManifest.files;
+} catch (error) {
+	imageDimensionErrors.push(
+		`scripts/image-optimization-manifest.json: unable to load image dimensions (${error.message}).`
+	);
+}
 
 for (const file of sourceFiles) {
 	const text = fs.readFileSync(file, 'utf8');
 	extractReferences(file, references, text);
+	validatePostImageDimensions(file, text, imageManifest, imageDimensionErrors);
 	if (path.dirname(file) === postsRoot && path.extname(file) === '.md') {
+		validateSecondaryPostImageAlternatives(file, text, secondaryImageAltErrors);
 		const reviewedImages = validateReviewedMedia(file, text, mediaReviewErrors);
 		if (reviewedImages != null) {
 			reviewedPostCount += 1;
@@ -172,7 +253,7 @@ const assets = new Map(mediaFiles.map((file) => [publicPath(file), file]));
 const assetsByLowercasePath = new Map(
 	Array.from(assets.keys(), (assetPath) => [assetPath.toLowerCase(), assetPath])
 );
-const errors = [...mediaReviewErrors];
+const errors = [...mediaReviewErrors, ...imageDimensionErrors, ...secondaryImageAltErrors];
 
 for (const [reference, sources] of references) {
 	if (assets.has(reference)) continue;

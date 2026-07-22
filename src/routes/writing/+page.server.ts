@@ -2,6 +2,8 @@ import type { PageServerLoad } from './$types';
 import { categoryLabel } from '$lib/content/categories';
 import { getPublishedPosts } from '$lib/server/content/posts';
 
+export const prerender = true;
+
 function postSummary(post: ReturnType<typeof getPublishedPosts>[number]) {
 	return {
 		slug: post.slug,

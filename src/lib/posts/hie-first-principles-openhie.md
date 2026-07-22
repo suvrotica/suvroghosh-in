@@ -1,8 +1,8 @@
 ---
 title: "HIE from First Principles"
-description: "A system-level dissection of Health Information Exchange (HIE) from first principles, using OpenHIE as the architectural lens."
+description: "How Health Information Exchange and OpenHIE coordinate patient identity, terminology, provenance, registries, and shared records across health systems."
 date: "2026-04-21"
-dateModified: "2026-07-22"
+dateModified: "2026-07-23"
 category: "healthcare it"
 tags: ["HIE","OpenHIE","FHIR","Healthcare Interoperability","Client Registry","Shared Health Record","Interoperability Layer","Health Information Systems","Data Provenance","Health Data Standards"]
 pinnedTags: ["HIE", "OpenHIE", "FHIR", "Healthcare Interoperability", "Client Registry", "Shared Health Record", "Interoperability Layer", "Health Information Systems", "Data Provenance", "Health Data Standards"]
@@ -13,6 +13,13 @@ thumbnailAlt: "Muted abstract layers and connecting contour lines suggesting sep
 mediaReviewed: true
 inPlainEnglish: "A health information exchange is not merely a data pipe. It is a governed agreement about identity, terminology, provenance, time, authority, and what may safely cross an institutional boundary; OpenHIE is useful because its component model makes those agreements visible."
 keyTerms: ["Health Information Exchange", "OpenHIE", "Client Registry", "Interoperability Layer", "Shared Health Record", "Provenance"]
+faq:
+  - question: "What is a health information exchange?"
+    answer: "A health information exchange organizes the sharing of clinical information across separate organizations. It must govern identity, terminology, provenance, time, authority, and access—not merely transport data."
+  - question: "What is OpenHIE?"
+    answer: "OpenHIE is an open reference architecture that separates responsibilities such as client, facility, and health-worker registries, terminology services, the interoperability layer, and the shared health record."
+  - question: "Is FHIR enough to build an HIE?"
+    answer: "No. FHIR supplies a modern language for representing and exchanging data, but it cannot decide patient identity, source authority, terminology ownership, consent, or which facts are safe to share."
 ---
 
 <TTS />

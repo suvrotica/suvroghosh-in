@@ -1,8 +1,8 @@
 ---
 title: "How VA Healthcare Data Systems Work: From MUMPS to SQL"
-description: "A technical explanation of how Veterans Affairs healthcare data moves from VistA’s MUMPS and FileMan world into SQL warehouses, and why that translation is never merely a database conversion."
+description: "How VA clinical data moves from VistA, MUMPS, and FileMan into SQL warehouses—and why the journey is semantic translation, not simple conversion."
 date: "2026-04-25"
-dateModified: "2026-07-22"
+dateModified: "2026-07-23"
 category: "Healthcare IT"
 tags: ["VistA","MUMPS","FileMan","SQL","Corporate Data Warehouse","VINCI","Healthcare Data Architecture","Data Provenance","Semantic Interoperability","Electronic Health Records"]
 pinnedTags: ["VistA", "MUMPS", "FileMan", "SQL", "Corporate Data Warehouse", "VINCI", "Healthcare Data Architecture", "Data Provenance", "Semantic Interoperability", "Electronic Health Records"]
@@ -13,6 +13,13 @@ thumbnailAlt: "Muted abstract layers and contour lines suggesting clinical data 
 mediaReviewed: true
 inPlainEnglish: "Moving VA clinical data from VistA’s MUMPS and FileMan environment into SQL is not chiefly a database conversion. It is a semantic translation from operational care into institutional measurement, and that translation needs an explicit interpretation contract."
 keyTerms: ["VistA", "MUMPS", "FileMan", "Corporate Data Warehouse", "Data Provenance", "Interpretation Contract"]
+faq:
+  - question: "What are VistA, MUMPS, and FileMan?"
+    answer: "VistA is the VA’s long-running clinical and administrative information system. Much of it grew in the MUMPS language and database environment, with FileMan defining and governing data structures and access."
+  - question: "Why is moving VistA data to SQL not a simple database conversion?"
+    answer: "The move changes hierarchical, workflow-dependent operational data into relational structures for enterprise analysis. Source context, time, local codes, provenance, and meaning can be lost unless the translation is explicit."
+  - question: "What is an interpretation contract for healthcare data?"
+    answer: "It documents what a row claims to represent, how it was derived, its sources and timestamps, terminology mappings, update behavior, known ambiguities, exclusions, and unsafe uses."
 ---
 
 

@@ -1,12 +1,23 @@
 ---
 title: "FHIR and the Clerk With the Clipboard"
-description: "A Calcutta-grounded essay on FHIR, the health data standard that tries to make clinics, labs, apps, and public health systems speak to one another without losing meaning."
+description: "How FHIR uses web APIs, resources, profiles, and terminology to exchange health data—and why a standard alone cannot fix fragmented care."
 date: "2026-06-23"
+dateModified: "2026-07-23"
 thumbnail: "/images/IMG-20260427-WA0009.jpg"
+thumbnailAlt: "Monochrome charcoal illustration of a skeletal figure reading a large book"
 category: "Healthcare-IT"
 tags: ["Implementation Guides","United States","Cures Act","Public Health","Blood Pressure","FHIR","Health","JSON","Resource","HL7"]
 published: true
 color: "#0D7377"
+inPlainEnglish: "FHIR is a healthcare data exchange standard built from modular resources and familiar web technologies. It makes information easier to request and share, but useful interoperability still depends on profiles, terminology, identity, governance, and workflow agreements."
+keyTerms: ["FHIR", "FHIR Resource", "FHIR Profile", "Implementation Guide", "HL7 v2", "Clinical Terminology"]
+faq:
+  - question: "What does FHIR stand for?"
+    answer: "FHIR stands for Fast Healthcare Interoperability Resources. It is an HL7 standard for representing and exchanging healthcare information through modular resources and web-friendly formats such as JSON."
+  - question: "How is FHIR different from HL7 v2?"
+    answer: "HL7 v2 commonly pushes event messages such as admissions, orders, and results. FHIR exposes modular resources through web APIs, making query-based, patient-facing, and app integration easier; many systems use both."
+  - question: "Can FHIR fix fragmented healthcare data by itself?"
+    answer: "No. FHIR can carry structured information, but it cannot by itself resolve patient identity, poor source data, inconsistent terminology, privacy rules, vendor incentives, or local workflow differences."
 ---
 
 <TTS />

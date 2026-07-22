@@ -10,6 +10,7 @@ import os
 import sys
 import tempfile
 import time
+import xml.etree.ElementTree as ElementTree
 from pathlib import Path
 from typing import Any
 
@@ -22,7 +23,7 @@ MEDIA_DIRECTORIES = (
 )
 MANIFEST_PATH = ROOT / "scripts" / "image-optimization-manifest.json"
 OPTIMIZER_VERSION = "2026-07-18.1"
-SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".svg", ".webp"}
 JPEG_QUALITY_STEPS = (76, 78, 80, 82, 84, 86)
 MIN_PSNR_DB = 36.0
 MAX_DIMENSION = 1920
@@ -250,8 +251,34 @@ def optimise_webp(source: Any) -> tuple[bytes, dict[str, Any]]:
 	}
 
 
+def svg_dimensions(source_bytes: bytes) -> tuple[int, int]:
+	root = ElementTree.fromstring(source_bytes)
+	view_box = root.attrib.get("viewBox", "")
+	values = [value for value in view_box.replace(",", " ").split() if value]
+	if len(values) != 4:
+		raise ValueError("SVG requires a four-value viewBox for intrinsic dimensions")
+
+	try:
+		width = float(values[2])
+		height = float(values[3])
+	except ValueError as exc:
+		raise ValueError("SVG viewBox dimensions must be numeric") from exc
+	if not math.isfinite(width) or not math.isfinite(height) or width <= 0 or height <= 0:
+		raise ValueError("SVG viewBox dimensions must be positive")
+	return round(width), round(height)
+
+
 def optimise_file(path: Path, original_bytes: bytes) -> tuple[bytes, dict[str, Any]]:
 	from PIL import Image
+	if path.suffix.lower() == ".svg":
+		width, height = svg_dimensions(original_bytes)
+		return original_bytes, {
+			"format": "SVG",
+			"optimized": False,
+			"reason": "vector source retained",
+			"width": width,
+			"height": height,
+		}
 
 	with Image.open(io.BytesIO(original_bytes)) as source:
 		source.load()
@@ -315,6 +342,14 @@ def verify_manifest() -> int:
 			continue
 		if entry.get("optimizerVersion") != OPTIMIZER_VERSION:
 			problems.append(f"{key}: stale optimizer version")
+			continue
+		if any(
+			not isinstance(entry.get(dimension), int)
+			or isinstance(entry.get(dimension), bool)
+			or entry[dimension] <= 0
+			for dimension in ("width", "height")
+		):
+			problems.append(f"{key}: missing valid intrinsic dimensions")
 			continue
 		if entry.get("outputHash") != sha256_bytes(path.read_bytes()):
 			problems.append(f"{key}: file changed since optimization")

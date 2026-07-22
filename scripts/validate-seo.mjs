@@ -6,6 +6,11 @@ const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
 const requiredFields = ['title', 'description', 'date', 'category', 'tags'];
 const errors = [];
+const descriptionWarnings = [];
+const thumbnailAltWarnings = [];
+const descriptionPolicyStart = '2026-07-23';
+const descriptionMinLength = 70;
+const descriptionMaxLength = 165;
 
 function read(file) {
 	return fs.readFileSync(file, 'utf8');
@@ -79,6 +84,30 @@ for (const file of postFiles) {
 
 	if (metadata.dateModified && Number.isNaN(Date.parse(metadata.dateModified))) {
 		errors.push(`${file} has an invalid dateModified: ${metadata.dateModified}`);
+	}
+
+	if (typeof metadata.description === 'string') {
+		const descriptionLength = metadata.description.trim().length;
+		if (descriptionLength < descriptionMinLength || descriptionLength > descriptionMaxLength) {
+			const isNewOrUpdated =
+				metadata.date >= descriptionPolicyStart ||
+				(metadata.dateModified && metadata.dateModified >= descriptionPolicyStart);
+			const message =
+				`${file} has a ${descriptionLength}-character description; ` +
+				`keep descriptions between ${descriptionMinLength} and ${descriptionMaxLength} characters.`;
+
+			if (isNewOrUpdated) errors.push(message);
+			else descriptionWarnings.push(message);
+		}
+	}
+
+	if (metadata.thumbnail && !metadata.thumbnailAlt) {
+		const isNewOrUpdated =
+			metadata.date >= descriptionPolicyStart ||
+			(metadata.dateModified && metadata.dateModified >= descriptionPolicyStart);
+		const message = `${file} has a thumbnail but no authored thumbnailAlt.`;
+		if (isNewOrUpdated) errors.push(message);
+		else thumbnailAltWarnings.push(message);
 	}
 
 	publishedPosts.push({
@@ -208,6 +237,22 @@ if (errors.length > 0) {
 	console.error(`SEO validation failed with ${errors.length} issue(s):`);
 	for (const error of errors) console.error(`- ${error}`);
 	process.exit(1);
+}
+
+if (descriptionWarnings.length > 0) {
+	console.warn(
+		`SEO warning: ${descriptionWarnings.length} legacy post description(s) fall outside ` +
+			`${descriptionMinLength}-${descriptionMaxLength} characters. They are grandfathered, but new or ` +
+			`updated posts dated ${descriptionPolicyStart} or later must meet the range.`
+	);
+}
+
+if (thumbnailAltWarnings.length > 0) {
+	console.warn(
+		`SEO warning: ${thumbnailAltWarnings.length} legacy post thumbnail(s) lack authored alternative ` +
+			`text. They are grandfathered, but new or updated posts dated ${descriptionPolicyStart} or later ` +
+			`must provide thumbnailAlt.`
+	);
 }
 
 console.log(

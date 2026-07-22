@@ -39,9 +39,10 @@
 			<p
 				class="m-0 max-w-2xl text-left text-sm leading-relaxed text-neutral-700 dark:text-neutral-300"
 			>
-				Suvro Ghosh is a healthcare IT and clinical data systems architect who also writes essays,
-				fiction, satire, and explanations of science, mathematics, AI, and public systems from
-				Calcutta.
+				Suvro Ghosh is a healthcare IT and clinical data systems architect with more than 15 years
+				of experience across EHR, HIE, interoperability, clinical data warehousing, and health
+				informatics. He also writes essays, fiction, satire, and explanations of science,
+				mathematics, AI, and public systems from Calcutta.
 			</p>
 			<p class="mt-3 mb-0 text-left text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
 				The Substack newsletter carries a curated selection of essays from this site. Questions,

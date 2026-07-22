@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
+	import { browser } from '$app/environment';
 	import { Input } from '$lib/components/ui/input';
 	import { Button } from '$lib/components/ui/button';
 	import CommandPalette from '$lib/components/layout/CommandPalette.svelte';
@@ -41,7 +42,9 @@
 	];
 
 	let currentPath = $derived(page.url.pathname);
-	let searchQuery = $state(page.url.searchParams.get('search') ?? '');
+	// Avoid reading query parameters during prerender while still deriving the
+	// initial value and client-side navigation updates in the browser.
+	let searchQuery = $derived(browser ? (page.url.searchParams.get('search') ?? '') : '');
 	let searchInput = $state<HTMLInputElement>();
 	let mobileMenu: HTMLDetailsElement;
 	let menuSummary: HTMLElement;

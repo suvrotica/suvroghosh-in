@@ -41,6 +41,20 @@ CONTACT_FROM_EMAIL=noreply@suvroghosh.in
 
 `CONTACT_FROM_EMAIL` must be a sender address allowed by your Resend domain configuration.
 
+## IndexNow environment
+
+Production deployments expose the IndexNow verification file through a secret-backed route and
+diff the live sitemap against the prior successful deployment, submitting only added, modified, or
+deleted URLs. Generate one unguessable 32-character
+value containing only letters, numbers, or dashes, then configure the identical value in both
+places:
+
+- Vercel environment variable: `INDEXNOW_KEY`
+- GitHub Actions repository secret: `INDEXNOW_KEY`
+
+Rotate any key that has previously been committed or otherwise disclosed. The verification URL is
+`https://www.suvroghosh.in/<INDEXNOW_KEY>.txt`; do not publish that URL separately.
+
 ## Building
 
 To create a production version of your app:

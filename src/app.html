@@ -31,7 +31,36 @@
 				root.style.colorScheme = resolved === 'dark' ? 'dark' : 'light';
 			})();
 		</script>
-		<link rel="icon" href="https://fav.farm/%F0%9F%9A%91" />
+		<script>
+			// Responsive image requests can fail before Svelte hydrates (for example in a local
+			// production preview or if the deploy-time optimiser is temporarily unavailable).
+			// Capture that early error and retry the original asset immediately.
+			document.addEventListener(
+				'error',
+				(event) => {
+					const image = event.target;
+					if (!(image instanceof HTMLImageElement)) return;
+					const original = image.dataset.originalSrc;
+					if (!original || image.dataset.originalFallback === 'true') return;
+
+					image.dataset.originalFallback = 'true';
+					// Preserve the server-rendered node tree until Svelte hydrates. Removing the
+					// <source> here makes the hydrator encounter <img> where it expects <source>.
+					image
+						.closest('picture')
+						?.querySelectorAll('source[data-responsive-image]')
+						.forEach((source) => source.removeAttribute('srcset'));
+					image.removeAttribute('srcset');
+					image.src = original;
+				},
+				true
+			);
+		</script>
+		<meta name="theme-color" content="#171717" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+		<link rel="manifest" href="/site.webmanifest" />
 		<link
 			rel="alternate"
 			type="application/rss+xml"

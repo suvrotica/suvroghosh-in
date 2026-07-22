@@ -1,12 +1,23 @@
 ---
 title: "Clinical AI Needs A Shadow Architecture First"
-description: "A Calcutta-grounded essay on the invisible regulatory, ethical, technical, workflow, and human infrastructure required before artificial intelligence can safely enter clinical care."
+description: "What clinical AI needs beyond a model: validation, monitoring, workflow design, governance, accountability, and human review before deployment."
 date: "2026-06-23"
+dateModified: "2026-07-23"
 category: "Healthcare-IT"
 tags: ["Shadow Architecture","Deep Learning","Patient Cares Whether","Shadow Holds","Clinical AI","Clinical","AI","Model","Validation","Monitoring"]
 published: true
 color: "#2C3E50"
 thumbnail: "/thumbnail/safe-shadow-architecture-clinical-ai.jpg"
+thumbnailAlt: "Abstract intersecting waves and fine contour lines in navy, coral, plum, and cream"
+inPlainEnglish: "A clinical AI model is only the visible part of a care system. Safe use also requires representative data, external and temporal validation, workflow integration, human review, monitoring, audit trails, escalation rules, security, governance, and accountable ownership."
+keyTerms: ["Clinical AI", "Shadow Architecture", "External Validation", "Model Monitoring", "MLOps", "Human Factors"]
+faq:
+  - question: "What is shadow architecture in clinical AI?"
+    answer: "It is the surrounding safety system a model needs: data governance, validation, workflow design, human review, monitoring, audit logs, escalation, security, training, regulation, and accountability."
+  - question: "Is model accuracy enough for safe clinical AI?"
+    answer: "No. A model can be accurate yet late, noisy, biased, poorly calibrated, clinically useless, or harmful in a local workflow. External, temporal, subgroup, and clinical-utility evaluation are also needed."
+  - question: "Why must clinical AI be monitored after deployment?"
+    answer: "Patient populations, devices, documentation, workflows, and clinical practice change. Monitoring detects drift and supports recalibration, incident response, retraining, rollback, or retirement."
 ---
 
 <TTS />

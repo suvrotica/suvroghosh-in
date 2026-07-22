@@ -2,11 +2,13 @@
 title: "Schooling in Calcutta"
 description: "A Calcutta self-portrait stitched from school shame, books, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2024-01-01"
+dateModified: "2026-07-23"
 category: "Personal"
 tags: ["Thick Glasses","Less Alone","School","Cossipore","Teach","Childhood","English-medium","Suspicion","Adults","Books"]
 published: true
 color: "orange"
 thumbnail: "/thumbnail/safe-schooling-in-calcutta.jpg"
+thumbnailAlt: "Textured abstract waves in navy, cream, rust and plum crossed by fine contour lines"
 ---
 
 <TTS />
@@ -19,13 +21,13 @@ Acronyms used: ICSE — Indian Certificate of Secondary Education, the school ex
 
 The old school photograph has me fixed in the middle row, left-most, a thin child with thick glasses and the expression of someone already suspicious of the syllabus.
 
-<Pi src="/photos/Compress_20260524_125448_8402.jpg" />
+<Pi src="/photos/Compress_20260524_125448_8402.jpg" alt="Black-and-white class photograph of Cossipore English School pupils and teachers arranged in three rows" caption="A Cossipore school class assembled outside the school building." />
 
 School is where this story begins, because school is where a Bengali middle-class child is first told, with chalk, prayer, punishment, and sharpened pencils, that life has a syllabus and failure has handwriting.
 
 Mine began in Cossipore, or Kashipur, depending on whether one was speaking as a Bengali, an English-medium hopeful, or a colonial ghost still mispronouncing local geography from the afterlife.
 
-<Pi src="/photos/Compress_20260524_125448_8591.jpg" />
+<Pi src="/photos/Compress_20260524_125448_8591.jpg" alt="Eight school friends standing together beneath a tree in the Cossipore school grounds" caption="School friends in Cossipore, away from the discipline of the classroom." />
 
 Cossipore sounded to me like coughing, which was suitable. My lungs had a theatrical temperament. As a child I nearly disappeared into whooping cough, then returned through the professional confidence of Dr. Bhaskar Mani and care strong enough to make microbes reconsider their career plans. I survived. The lungs did too, though Calcutta air still makes them behave like two elderly uncles examining an electricity bill.
 
@@ -37,7 +39,7 @@ One teacher, Ira Paul, our English teacher, had grace.
 
 Children notice grace. They may not know the word, but they know when an adult enters a room without making the room smaller.
 
-<Pi src="/photos/Compress_20260524_130646_6472.jpg" />
+<Pi src="/photos/Compress_20260524_130646_6472.jpg" alt="School friends sharing fruit in the shade beside a weathered boundary wall" caption="A quieter interval with school friends beneath the trees." />
 
 The building smelled of wet walls, old wood, ink, and the faint panic of examinations. This was not the golden school of sentimental songs. No slow-motion sunlight. No violin. No gentle voiceover saying those were the days. Those were days of ambition, shame, cough, digestive emergencies, bookish escape, and the early suspicion that the world had been built by people who had forgotten the evidence of childhood.
 
@@ -53,7 +55,7 @@ One of my earliest discoveries was that the body is unruly. Adults sell childhoo
 
 The school toilet was my first lesson in Indian public infrastructure. It taught me more about civilization than civics did. It was a place where water was theoretical, smell was democratic, and courage had to be summoned at the door. I learned, too early, that respectability is often the art of pretending bodies do not happen.
 
-<Pi src="/photos/Compress_20260526_081512_2854.jpg" />
+<Pi src="/photos/Compress_20260526_081512_2854.jpg" alt="Portrait of the author's mother wearing glasses and a white-and-blue sari" caption="My mother, whose largely unseen labour held childhood together." />
 
 There was also the College Street incident, which deserves a small brass plaque in the museum of childhood embarrassment. I was there with other children, all apparently equipped with superior internal plumbing. I had to use a makeshift arrangement in an English bookstore. The flush had vanished from history. When I asked for water, the shop clerk suggested I carry a leaking bucket across the street in my school uniform. I fled instead, not heroically, but practically.
 

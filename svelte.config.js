@@ -5,6 +5,12 @@ import remarkMath from 'remark-math';
 import rehypeKatexSvelte from 'rehype-katex-svelte';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { enrichPostImageMarkup, loadImageManifest } from './scripts/lib/post-image-metadata.mjs';
+import { parsePostFrontmatter } from './scripts/lib/post-metadata.mjs';
+
+const imageManifest = loadImageManifest(
+	new URL('./scripts/image-optimization-manifest.json', import.meta.url)
+);
 
 const globalImports = `
 import Pi from '$lib/components/blog/PostImage.svelte';
@@ -21,10 +27,19 @@ const autoImport = {
 	name: 'auto-import',
 	markup: ({ content, filename }) => {
 		if (!filename || !filename.endsWith('.md')) return;
-		if (content.includes('<script>')) {
-			return { code: content.replace('<script>', `<script>\n${globalImports}`) };
+		const metadata = parsePostFrontmatter(content, filename);
+		const thumbnailAlt =
+			typeof metadata.thumbnailAlt === 'string' ? metadata.thumbnailAlt.trim() : '';
+		const title = typeof metadata.title === 'string' ? metadata.title.trim() : '';
+		const enrichedContent = enrichPostImageMarkup(content, imageManifest, {
+			// Authored visual descriptions win. Legacy posts receive a useful title-based fallback;
+			// validate:seo requires thumbnailAlt whenever a post is newly published or updated.
+			leadAlt: thumbnailAlt || title
+		});
+		if (enrichedContent.includes('<script>')) {
+			return { code: enrichedContent.replace('<script>', `<script>\n${globalImports}`) };
 		}
-		return { code: content + `\n<script>\n${globalImports}\n</script>` };
+		return { code: enrichedContent + `\n<script>\n${globalImports}\n</script>` };
 	}
 };
 
@@ -140,7 +155,22 @@ const config = {
 	],
 	extensions: ['.svelte', '.md'],
 	kit: {
-		adapter: adapter()
+		prerender: {
+			handleHttpError: ({ path, message }) => {
+				// Vercel provides this optimizer endpoint after deployment, not during prerender crawling.
+				if (path === '/_vercel/image') return;
+				throw new Error(message);
+			}
+		},
+		adapter: adapter({
+			images: {
+				// Keep in sync with RESPONSIVE_WIDTHS in PostImage.svelte.
+				sizes: [320, 480, 640, 768, 960, 1200, 1600, 1920],
+				domains: [],
+				formats: ['image/webp'],
+				minimumCacheTTL: 2678400
+			}
+		})
 	}
 };
 

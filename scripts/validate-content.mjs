@@ -32,6 +32,7 @@ const allowedFields = new Set([
 	'faq'
 ]);
 const errors = [];
+const healthcareGeoPolicyStart = '2026-07-23';
 let publishedCount = 0;
 let unpublishedCount = 0;
 const categorySlugs = new Set();
@@ -167,6 +168,23 @@ for (const file of postFiles) {
 		const categorySlug = slugifyCategory(metadata.category);
 		if (!categorySlug) errors.push(`${file}: category must produce a usable URL slug.`);
 		else categorySlugs.add(categorySlug);
+
+		const requiresHealthcareAnswerLayer =
+			metadata.published === true &&
+			categorySlug === 'healthcare-it' &&
+			typeof metadata.dateModified === 'string' &&
+			metadata.dateModified >= healthcareGeoPolicyStart;
+		if (requiresHealthcareAnswerLayer) {
+			if (typeof metadata.inPlainEnglish !== 'string' || metadata.inPlainEnglish.trim() === '') {
+				errors.push(`${file}: updated healthcare-IT posts require inPlainEnglish.`);
+			}
+			if (!Array.isArray(metadata.keyTerms) || metadata.keyTerms.length < 5) {
+				errors.push(`${file}: updated healthcare-IT posts require at least five keyTerms.`);
+			}
+			if (!Array.isArray(metadata.faq) || metadata.faq.length < 3) {
+				errors.push(`${file}: updated healthcare-IT posts require at least three FAQ entries.`);
+			}
+		}
 	}
 
 	if (metadata.thumbnail !== undefined) {

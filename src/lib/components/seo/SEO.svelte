@@ -7,6 +7,8 @@
 		canonicalUrl?: string;
 		ogImageUrl?: string;
 		ogImageAlt?: string;
+		ogImageWidth?: number;
+		ogImageHeight?: number;
 		keywords?: string[];
 		schema?: unknown;
 		type?: 'website' | 'article';
@@ -25,6 +27,8 @@
 		canonicalUrl = siteSEO.canonicalUrl,
 		ogImageUrl = siteSEO.ogImageUrl,
 		ogImageAlt = siteSEO.ogImageAlt,
+		ogImageWidth = ogImageUrl === siteSEO.ogImageUrl ? 1200 : undefined,
+		ogImageHeight = ogImageUrl === siteSEO.ogImageUrl ? 800 : undefined,
 		keywords = siteSEO.keywords,
 		schema = withSiteGraph(), // Default to the shared site graph; pages pass page-specific entities
 		type = 'website',
@@ -83,6 +87,10 @@
 
 	{#if ogImageUrl}
 		<meta property="og:image" content={ogImageUrl} />
+		{#if (ogImageWidth ?? 0) > 0 && (ogImageHeight ?? 0) > 0}
+			<meta property="og:image:width" content={String(ogImageWidth)} />
+			<meta property="og:image:height" content={String(ogImageHeight)} />
+		{/if}
 	{/if}
 	{#if ogImageAlt}
 		<meta property="og:image:alt" content={ogImageAlt} />
@@ -97,6 +105,9 @@
 	<meta name="twitter:description" content={description} />
 	{#if ogImageUrl}
 		<meta name="twitter:image" content={ogImageUrl} />
+		{#if ogImageAlt}
+			<meta name="twitter:image:alt" content={ogImageAlt} />
+		{/if}
 	{/if}
 
 	{#if keywords && keywords.length > 0}
