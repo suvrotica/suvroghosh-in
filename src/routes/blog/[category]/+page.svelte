@@ -30,7 +30,7 @@
 		collectionPageSchema({
 			name: `${data.categoryDisplay} Essays`,
 			description: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`,
-			url: `${siteUrl}/blog/${data.categorySlug}`,
+			url: canonicalUrl,
 			about: data.categoryDisplay
 		})
 	])}

@@ -2,6 +2,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import {
 		defaultOgImage,
+		personId,
 		profilePageSchema,
 		siteUrl,
 		withSiteGraph
@@ -278,8 +279,29 @@
 	{canonicalUrl}
 	{keywords}
 	ogImageUrl={defaultOgImage}
-	ogImageAlt="Suvro Ghosh - Healthcare IT Architect"
-	schema={withSiteGraph([profilePageSchema({ name: title, description, url: canonicalUrl })])}
+	ogImageAlt="Abstract illustration for Suvro Ghosh’s healthcare IT portfolio"
+	schema={withSiteGraph([
+		profilePageSchema({ name: title, description, url: canonicalUrl }),
+		{
+			'@type': 'ScholarlyArticle',
+			'@id': 'https://doi.org/10.1097/00115514-200609000-00005',
+			headline: 'Task Overlap Among Primary Care Team Members: An Opportunity for System Redesign?',
+			url: 'https://doi.org/10.1097/00115514-200609000-00005',
+			datePublished: '2006-09-01',
+			author: [
+				{ '@type': 'Person', name: 'Richard G. Best' },
+				{ '@type': 'Person', name: 'Sylvia J. Hysong' },
+				{ '@type': 'Person', name: 'Jacqueline A. Pugh' },
+				{ '@id': personId },
+				{ '@type': 'Person', name: 'Frank I. Moore' }
+			],
+			isPartOf: {
+				'@type': 'Periodical',
+				name: 'Journal of Healthcare Management'
+			},
+			pagination: '295-306'
+		}
+	])}
 />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
@@ -529,11 +551,21 @@
 			<ul class="space-y-3 text-sm text-neutral-700 dark:text-neutral-300">
 				<li>
 					Co-author:
-					<em class="font-medium text-neutral-900 dark:text-neutral-100">
-						Task Overlap Among Primary Care Team Members
-					</em>
+					<a
+						href="https://doi.org/10.1097/00115514-200609000-00005"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="font-medium text-neutral-900 underline decoration-neutral-400 underline-offset-4 hover:text-neutral-600 dark:text-neutral-100 dark:hover:text-neutral-300"
+					>
+						<em
+							>Task Overlap Among Primary Care Team Members: An Opportunity for System Redesign?</em
+						>
+					</a>
 					<br />
-					<span class="text-xs text-neutral-500">Journal of Healthcare Management</span>
+					<span class="text-xs text-neutral-500">
+						Journal of Healthcare Management, 51(5), 295–306 (2006) · DOI
+						10.1097/00115514-200609000-00005
+					</span>
 				</li>
 
 				<li>Multiple abstracts presented at National Kidney Foundation Clinical Meetings</li>

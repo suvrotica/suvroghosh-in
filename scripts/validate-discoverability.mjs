@@ -6,8 +6,9 @@
  * Layer 1 checks every published post's frontmatter.
  * Layer 2 builds the site (if needed), serves the production build locally, and
  * inspects the actual server-rendered HTML of representative routes: JSON-LD
- * validity, single H1, canonical URLs, stable Person/WebSite entity IDs, article
- * author linkage, breadcrumb presence, and visible-FAQ/schema agreement.
+ * validity, single H1, canonical URLs (including pagination), stable
+ * Person/WebSite entity IDs, article and project creator linkage, publication
+ * proof, breadcrumb presence, and visible-FAQ/schema agreement.
  *
  * Exits non-zero and names the affected route/post on any genuine defect.
  *
@@ -25,7 +26,25 @@ const viteCli = path.join(root, 'node_modules', 'vite', 'bin', 'vite.js');
 const SITE = 'https://www.suvroghosh.in';
 const PERSON_ID = `${SITE}/#person`;
 const WEBSITE_ID = `${SITE}/#website`;
-const PREVIEW_PORT = 4473;
+const PREVIEW_PORT = 40000 + (process.pid % 20000);
+const EXPLICITLY_ALLOWED_CRAWLERS = [
+	'OAI-SearchBot',
+	'GPTBot',
+	'ChatGPT-User',
+	'Claude-SearchBot',
+	'ClaudeBot',
+	'Claude-User',
+	'PerplexityBot',
+	'Perplexity-User',
+	'Kimi-SearchBot',
+	'KimiBot',
+	'Kimi-User',
+	'CCBot',
+	'Baiduspider',
+	'Sogou web spider',
+	'Sogou inst spider',
+	'yisouspider'
+];
 
 const errors = [];
 const fail = (msg) => errors.push(msg);
@@ -147,8 +166,54 @@ if (fs.existsSync(robotsPath)) {
 	if (!/^Sitemap:\s*https:\/\/www\.suvroghosh\.in\/sitemap\.xml\s*$/im.test(robots)) {
 		fail('static/robots.txt is missing an absolute Sitemap: declaration.');
 	}
+
+	const groups = robots
+		.split(/\r?\n\s*\r?\n/)
+		.map((group) =>
+			group
+				.split(/\r?\n/)
+				.map((line) => line.replace(/\s+#.*$/, '').trim())
+				.filter((line) => line && !line.startsWith('#'))
+		)
+		.filter((group) => group.length > 0);
+
+	for (const crawler of EXPLICITLY_ALLOWED_CRAWLERS) {
+		const crawlerGroups = groups.filter((lines) =>
+			lines.some((line) => line.toLowerCase() === `user-agent: ${crawler}`.toLowerCase())
+		);
+		if (
+			crawlerGroups.length === 0 ||
+			!crawlerGroups.some((lines) => lines.some((line) => /^Allow:\s*\/$/i.test(line)))
+		) {
+			fail(`static/robots.txt should explicitly allow ${crawler} at the site root.`);
+		}
+		if (crawlerGroups.some((lines) => lines.some((line) => /^Disallow:\s*\S+/i.test(line)))) {
+			fail(`static/robots.txt contains a conflicting Disallow rule for ${crawler}.`);
+		}
+	}
 } else {
 	fail('static/robots.txt not found.');
+}
+
+const llmsPath = path.join(root, 'static', 'llms.txt');
+if (fs.existsSync(llmsPath)) {
+	const llms = fs.readFileSync(llmsPath, 'utf8');
+	const requiredGuideUrls = [
+		`${SITE}/resume`,
+		`${SITE}/projects`,
+		`${SITE}/start-here`,
+		`${SITE}/blog`,
+		`${SITE}/sitemap.xml`,
+		`${SITE}/rss.xml`
+	];
+	if (!/^# Suvro Ghosh\s*$/m.test(llms)) {
+		fail('static/llms.txt should begin with a clear site/author heading.');
+	}
+	for (const url of requiredGuideUrls) {
+		if (!llms.includes(url)) fail(`static/llms.txt is missing the canonical guide URL ${url}.`);
+	}
+} else {
+	fail('static/llms.txt not found.');
 }
 
 const sitemapSource = fs.readFileSync(
@@ -176,6 +241,17 @@ function run(cmd, args) {
 		);
 		child.on('error', rejectPromise);
 	});
+}
+
+function newestMtimeMs(target) {
+	if (!fs.existsSync(target)) return 0;
+	const stat = fs.statSync(target);
+	if (!stat.isDirectory()) return stat.mtimeMs;
+	let newest = stat.mtimeMs;
+	for (const entry of fs.readdirSync(target, { withFileTypes: true })) {
+		newest = Math.max(newest, newestMtimeMs(path.join(target, entry.name)));
+	}
+	return newest;
 }
 
 async function waitForServer(url, timeoutMs = 60000) {
@@ -242,6 +318,9 @@ function checkCommon(route, html) {
 	if (people.length !== 1 || people[0]['@id'] !== PERSON_ID) {
 		fail(`${route}: expected exactly one Person with @id ${PERSON_ID}.`);
 	}
+	if (people[0]?.image) {
+		fail(`${route}: Person.image must remain absent until a verified author portrait is supplied.`);
+	}
 	if (sites.length !== 1 || sites[0]['@id'] !== WEBSITE_ID) {
 		fail(`${route}: expected exactly one WebSite with @id ${WEBSITE_ID}.`);
 	}
@@ -254,11 +333,32 @@ async function runRenderedChecks() {
 		fail('No published posts found to render.');
 		return;
 	}
-	const articleRoute = sample.path;
+	const faqSample = published.find(
+		(post) => Array.isArray(post.metadata.faq) && post.metadata.faq.length > 0
+	);
+	const renderedPostSamples = [sample, faqSample].filter(
+		(post, index, posts) =>
+			post && posts.findIndex((candidate) => candidate?.path === post.path) === index
+	);
+	const renderedPostByRoute = new Map(renderedPostSamples.map((post) => [post.path, post]));
 	const categoryRoute = `/blog/${slugifyCategory(sample.metadata.category)}`;
-	const routes = ['/', articleRoute, categoryRoute];
+	const paginatedCategoryRoute = `${categoryRoute}?page=2`;
+	const routes = [
+		'/',
+		...renderedPostByRoute.keys(),
+		categoryRoute,
+		paginatedCategoryRoute,
+		'/resume',
+		'/projects'
+	];
 
-	if (!fs.existsSync(path.join(root, '.svelte-kit', 'output'))) {
+	const outputEntry = path.join(root, '.svelte-kit', 'output', 'server', 'index.js');
+	const newestSource = Math.max(
+		newestMtimeMs(path.join(root, 'src')),
+		newestMtimeMs(path.join(root, 'svelte.config.js')),
+		newestMtimeMs(path.join(root, 'vite.config.ts'))
+	);
+	if (!fs.existsSync(outputEntry) || fs.statSync(outputEntry).mtimeMs < newestSource) {
 		console.log('Building site for rendered-output checks...');
 		await run(process.execPath, [viteCli, 'build']);
 	}
@@ -280,7 +380,8 @@ async function runRenderedChecks() {
 			const html = await res.text();
 			const nodes = checkCommon(route, html);
 
-			if (route === articleRoute) {
+			const renderedPost = renderedPostByRoute.get(route);
+			if (renderedPost) {
 				const postings = byType(nodes, 'BlogPosting');
 				if (postings.length !== 1) {
 					fail(`${route}: expected one BlogPosting entity, found ${postings.length}.`);
@@ -291,15 +392,18 @@ async function runRenderedChecks() {
 						'description',
 						'datePublished',
 						'dateModified',
-						'image'
+						'image',
+						'genre'
 					]) {
 						if (!post[field]) fail(`${route}: BlogPosting is missing "${field}".`);
 					}
+					if (post.isAccessibleForFree !== true)
+						fail(`${route}: BlogPosting should identify the public article as free to access.`);
 					if (post.author?.['@id'] !== PERSON_ID)
 						fail(`${route}: BlogPosting.author must reference ${PERSON_ID}.`);
 					if (post.isPartOf?.['@id'] !== WEBSITE_ID)
 						fail(`${route}: BlogPosting.isPartOf must reference ${WEBSITE_ID}.`);
-					if (post.mainEntityOfPage?.['@id'] !== `${SITE}${articleRoute}`)
+					if (post.mainEntityOfPage?.['@id'] !== `${SITE}${route}`)
 						fail(`${route}: BlogPosting.mainEntityOfPage must equal the canonical article URL.`);
 				}
 
@@ -307,7 +411,9 @@ async function runRenderedChecks() {
 					fail(`${route}: visible breadcrumb nav not found next to BreadcrumbList schema.`);
 				}
 
-				const declaredFaq = Array.isArray(sample.metadata.faq) ? sample.metadata.faq : [];
+				const declaredFaq = Array.isArray(renderedPost.metadata.faq)
+					? renderedPost.metadata.faq
+					: [];
 				const faqPages = byType(nodes, 'FAQPage');
 				if (declaredFaq.length > 0) {
 					if (faqPages.length !== 1) {
@@ -326,6 +432,45 @@ async function runRenderedChecks() {
 					}
 				} else if (faqPages.length > 0) {
 					fail(`${route}: FAQPage JSON-LD emitted without matching faq frontmatter.`);
+				}
+			}
+
+			if (route === paginatedCategoryRoute) {
+				const expectedUrl = `${SITE}${paginatedCategoryRoute}`;
+				const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+				if (canonical?.[1] !== expectedUrl) {
+					fail(`${route}: canonical should equal the page-specific URL ${expectedUrl}.`);
+				}
+				const collections = byType(nodes, 'CollectionPage');
+				if (collections.length !== 1) {
+					fail(`${route}: expected one CollectionPage entity, found ${collections.length}.`);
+				} else if (collections[0].url !== expectedUrl || collections[0]['@id'] !== expectedUrl) {
+					fail(`${route}: CollectionPage URL and @id must match its page-specific canonical.`);
+				}
+			}
+
+			if (route === '/resume') {
+				const publications = byType(nodes, 'ScholarlyArticle');
+				const publication = publications.find(
+					(node) => node['@id'] === 'https://doi.org/10.1097/00115514-200609000-00005'
+				);
+				const authors = Array.isArray(publication?.author) ? publication.author : [];
+				if (!publication || !authors.some((author) => author?.['@id'] === PERSON_ID)) {
+					fail(`${route}: verified journal publication must link Suvro Ghosh via ${PERSON_ID}.`);
+				}
+			}
+
+			if (route === '/projects') {
+				const lists = byType(nodes, 'ItemList');
+				const works = lists.flatMap((list) =>
+					Array.isArray(list.itemListElement)
+						? list.itemListElement.map((entry) => entry?.item).filter(Boolean)
+						: []
+				);
+				if (works.length === 0) {
+					fail(`${route}: project ItemList has no CreativeWork entries.`);
+				} else if (works.some((work) => work.creator?.['@id'] !== PERSON_ID)) {
+					fail(`${route}: every listed CreativeWork must link its creator to ${PERSON_ID}.`);
 				}
 			}
 		}

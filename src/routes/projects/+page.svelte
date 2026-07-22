@@ -5,6 +5,7 @@
 	import {
 		breadcrumbSchema,
 		collectionPageSchema,
+		personId,
 		siteUrl,
 		withSiteGraph
 	} from '$lib/components/seo/SEO';
@@ -57,7 +58,8 @@
 					'@type': 'CreativeWork',
 					name: project.name,
 					description: project.detail,
-					url: `${canonicalUrl}#${project.id}`
+					url: `${canonicalUrl}#${project.id}`,
+					creator: { '@id': personId }
 				}
 			}))
 		}

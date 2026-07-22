@@ -18,7 +18,9 @@ export const socialUrls = [
 	xProfile.url
 ];
 
-export const defaultOgImage = `${siteUrl}/images/IMG-20260427-WA0001.jpg`;
+// A neutral, non-personal image for pages without their own social card. Keep this
+// separate from Person.image: an illustration is not a portrait of the author.
+export const defaultOgImage = `${siteUrl}/thumbnail/safe-hie-first-principles-openhie.jpg`;
 export const indexRobots =
 	'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 
@@ -42,7 +44,7 @@ export const siteSEO = {
 	description: siteDescription,
 	canonicalUrl: siteUrl,
 	ogImageUrl: defaultOgImage,
-	ogImageAlt: 'Suvro Ghosh - Healthcare IT Architect & Clinical Data Systems Consultant',
+	ogImageAlt: 'Abstract illustration for Suvro Ghosh’s healthcare IT and writing portfolio',
 	keywords: [
 		'Suvro Ghosh',
 		'Healthcare IT Architect',
@@ -71,9 +73,22 @@ export const personSchema: WithContext<Person> = {
 	'@id': personId,
 	name: 'Suvro Ghosh',
 	url: siteUrl,
-	image: defaultOgImage,
+	description:
+		'Healthcare IT architect and clinical data systems consultant in Calcutta, and an independent writer on technology, science, society, and ordinary life.',
 	sameAs: socialUrls,
-	jobTitle: ['Healthcare IT Architect', 'Clinical Data Systems Consultant']
+	jobTitle: ['Healthcare IT Architect', 'Clinical Data Systems Consultant'],
+	knowsAbout: [
+		'Healthcare interoperability',
+		'HL7',
+		'FHIR',
+		'Health Information Exchange',
+		'Clinical data systems',
+		'Healthcare data architecture',
+		'SQL and ETL',
+		'Clinical trial systems',
+		'Health informatics',
+		'AI-ready healthcare data'
+	]
 };
 
 export const websiteSchema: WithContext<WebSite> = {
@@ -138,7 +153,9 @@ export function blogPostingSchema(post: {
 			'@id': websiteId
 		},
 		articleSection: post.category,
+		genre: post.category,
 		keywords: post.tags ?? [],
+		isAccessibleForFree: true,
 		inLanguage: 'en'
 	};
 	if (post.wordCount) {

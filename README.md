@@ -96,7 +96,8 @@ Content, media, link, and SEO checks run automatically before every build via `p
 A dedicated discoverability validator checks every published post's frontmatter and inspects the
 actual server-rendered HTML of representative routes (single H1, canonical URL, parseable JSON-LD,
 stable `#person` / `#website` entity IDs, BlogPosting author linkage, and visible-FAQ/FAQPage
-agreement):
+agreement). It also guards the explicit search/retrieval/training crawler policy, the curated
+`/llms.txt` guide, and the separation between editorial social artwork and the author's identity:
 
 ```sh
 npm run validate:discoverability

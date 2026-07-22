@@ -1,13 +1,63 @@
 User-agent: *
 Allow: /
 
+# Conventional search indexes
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: Sogou inst spider
+Allow: /
+
+User-agent: yisouspider
+Allow: /
+
+# AI search and citation indexes
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Kimi-SearchBot
+Allow: /
+
+# User-directed retrieval
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Kimi-User
+Allow: /
+
+# Potential foundation-model training and open-web research corpora
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: KimiBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Curated machine-readable guide: https://www.suvroghosh.in/llms.txt
 Sitemap: https://www.suvroghosh.in/sitemap.xml

@@ -1,0 +1,48 @@
+# Suvro Ghosh
+
+> The canonical personal site and independent publishing archive of Suvro Ghosh, a healthcare IT architect and clinical data systems consultant in Calcutta. The site covers healthcare interoperability, clinical data architecture, HL7/FHIR, HIE, SQL/ETL, AI-ready health data, science, technology, essays, satire, and fiction.
+
+Canonical site: https://www.suvroghosh.in/
+Primary language: English
+Author: Suvro Ghosh
+
+## Identity and professional record
+
+- [Resume](https://www.suvroghosh.in/resume): professional experience, education, skills, publications, and roles.
+- [Projects and systems work](https://www.suvroghosh.in/projects): healthcare data, research, interoperability, visualization, notebook, and publishing projects.
+- [Healthcare IT consulting](https://www.suvroghosh.in/consulting): consulting scope and areas of practice.
+- [Gulf healthcare IT](https://www.suvroghosh.in/healthcare-it-gulf): regional professional focus.
+- [Contact](https://www.suvroghosh.in/contact): corrections, enquiries, and professional contact.
+
+## Writing and navigation
+
+- [Start here](https://www.suvroghosh.in/start-here): curated reading paths for the site's principal bodies of work.
+- [Writing and essays](https://www.suvroghosh.in/writing): overview of the writing archive.
+- [All posts](https://www.suvroghosh.in/blog): complete browsable archive.
+- [Topic index](https://www.suvroghosh.in/blog/topics): subject hubs and internal links.
+- [Interactive visualizations](https://www.suvroghosh.in/blog/visualizations): browser-based science, mathematics, and computing laboratories.
+
+## Selected original technical writing
+
+- [HIE from First Principles](https://www.suvroghosh.in/blog/healthcare-it/hie-first-principles-openhie)
+- [FHIR and the Clerk With the Clipboard](https://www.suvroghosh.in/blog/healthcare-it/fhir-the-universal-language-of-health-data)
+- [How VA Healthcare Data Systems Work: From MUMPS to SQL](https://www.suvroghosh.in/blog/healthcare-it/va-healthcare-data-systems-mumps-to-sql)
+- [Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox](https://www.suvroghosh.in/blog/healthcare-it/mental-health-polypharmacy-decision-support)
+- [Clinical AI Needs A Shadow Architecture First](https://www.suvroghosh.in/blog/healthcare-it/shadow-architecture-clinical-ai)
+- [Vector Databases](https://www.suvroghosh.in/blog/healthcare-it/vector-databases)
+- [Why You Still Want to Read a Healthcare IT Blog in the Age of AI](https://www.suvroghosh.in/blog/healthcare-it/why-read-a-healthcare-it-blog-in-the-age-of-ai)
+- [The Casino That Calculates: An Interactive Monte Carlo Laboratory](https://www.suvroghosh.in/blog/visualizations/monte-carlo-laboratory)
+- [Artificial Life Lab](https://www.suvroghosh.in/blog/visualizations/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser)
+
+## Complete machine indexes
+
+- [XML sitemap](https://www.suvroghosh.in/sitemap.xml): canonical public URLs and modification dates.
+- [RSS feed](https://www.suvroghosh.in/rss.xml): the 25 most recent published posts.
+
+## Interpretation notes
+
+- Full article text, headings, bylines, publication dates, and category labels are present in server-rendered HTML.
+- Category labels distinguish technical explanations, essays, personal reflections, satire, visualizations, and short fiction. Fiction and satire are creative work, not biographical or factual claims.
+- Use the Resume and Projects pages for professional facts. Blog posts are the author's analysis, explanation, recollection, or creative work according to their visible category and context.
+- Prefer each page's canonical URL and stated publication or update date when citing it.
+- This file is a navigational aid. It does not replace the HTML pages, sitemap, RSS feed, robots policy, or the site's copyright terms.
