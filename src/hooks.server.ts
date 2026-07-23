@@ -1,5 +1,6 @@
 import { redirect, type Handle } from '@sveltejs/kit';
 import { slugifyCategory } from '$lib/content/categories';
+import { notesAuthReferrerPolicy } from '$lib/server/notes/referrer-policy';
 import { resolveNotesUser } from '$lib/server/notes/supabase';
 
 export const handle: Handle = async ({ event, resolve }) => {
@@ -38,7 +39,10 @@ export const handle: Handle = async ({ event, resolve }) => {
 	}
 	response.headers.set(
 		'referrer-policy',
-		isNotesAuth ? 'no-referrer' : 'strict-origin-when-cross-origin'
+		// A native form POST can serialize Origin as null under no-referrer, which
+		// SvelteKit correctly rejects. Keep no-referrer only while a secret is still
+		// present in the URL; clean auth pages never send a referrer cross-origin.
+		isNotesAuth ? notesAuthReferrerPolicy(event.url) : 'strict-origin-when-cross-origin'
 	);
 	response.headers.set('x-content-type-options', 'nosniff');
 	response.headers.set('x-frame-options', 'DENY');

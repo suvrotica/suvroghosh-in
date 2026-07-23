@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import type { ActionData, PageData } from './$types';
@@ -29,7 +30,7 @@
 				Your password was changed. Sign in with the new password.
 			</p>
 		{/if}
-		<form method="POST">
+		<form method="POST" use:enhance>
 			<input type="hidden" name="returnTo" value={data.returnTo} />
 			<label>
 				<span>Email</span>

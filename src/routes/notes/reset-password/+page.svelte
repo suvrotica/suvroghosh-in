@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import type { ActionData, PageData } from './$types';
@@ -31,7 +32,7 @@
 			The link is ready, but it has not been used yet. Continue only if you requested this password
 			change.
 		</p>
-		<form method="POST" action="?/confirm">
+		<form method="POST" action="?/confirm" use:enhance>
 			<p class="security-note">
 				This confirmation prevents email preview tools from silently consuming your one-time link.
 			</p>
@@ -44,7 +45,7 @@
 		<p class="intro">
 			Use a unique passphrase of at least 12 characters. You will sign in again after it is changed.
 		</p>
-		<form method="POST" action="?/update">
+		<form method="POST" action="?/update" use:enhance>
 			<label>
 				<span>New password</span>
 				<input

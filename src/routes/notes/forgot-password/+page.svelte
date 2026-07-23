@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import type { ActionData, PageData } from './$types';
@@ -32,7 +33,7 @@
 				<p>The link expires, can be used once, and should only be opened by you.</p>
 			</div>
 		{:else}
-			<form method="POST">
+			<form method="POST" use:enhance>
 				<label>
 					<span>Email</span>
 					<input
