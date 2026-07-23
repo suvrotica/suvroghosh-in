@@ -4,6 +4,9 @@ import {
 	bodyHash,
 	extractTags,
 	freshnessIssue,
+	legacyBodyHash,
+	legacyCacheMatchesPost,
+	legacyPostRevisionHash,
 	mergePinnedTags,
 	postRevisionHash,
 	replaceTags,
@@ -76,6 +79,48 @@ test('body hashes ignore frontmatter-only changes', () => {
 	const second = splitPost(`---\ntitle: Second\ntags: [Two]\n---\nSame body.\n`, 'second.md');
 
 	assert.equal(bodyHash(first.body), bodyHash(second.body));
+});
+
+test('body, revision, and generated-tag results are identical for LF and CRLF checkouts', () => {
+	const lfRaw = `---
+title: Cross-platform hashing
+description: Stable on Windows and Linux
+tags: [Old]
+published: true
+---
+Healthcare data interoperability matters across clinical systems.
+FHIR supports healthcare data exchange across clinical systems.
+Healthcare data interoperability keeps clinical systems connected.
+FHIR keeps healthcare data exchange explicit and meaningful.
+`;
+	const lfPost = splitPost(lfRaw, 'lf.md');
+	const crlfPost = splitPost(lfRaw.replaceAll('\n', '\r\n'), 'crlf.md');
+
+	assert.equal(bodyHash(lfPost.body), bodyHash(crlfPost.body));
+	assert.equal(postRevisionHash(lfPost), postRevisionHash(crlfPost));
+	assert.deepEqual(extractTags(lfPost.body, 10, corpus), extractTags(crlfPost.body, 10, corpus));
+});
+
+test('legacy hash migration accepts line-ending changes but rejects real edits', () => {
+	const lfPost = splitPost(
+		`---\ntitle: Migration\ntags: [One]\npublished: true\n---\nSame body.\n`,
+		'lf.md'
+	);
+	const crlfPost = splitPost(
+		`---\r\ntitle: Migration\r\ntags: [One]\r\npublished: true\r\n---\r\nSame body.\r\n`,
+		'crlf.md'
+	);
+	const editedPost = splitPost(
+		`---\ntitle: Migration\ntags: [One]\npublished: true\n---\nActually changed.\n`,
+		'edited.md'
+	);
+	const legacyCache = {
+		bodyHash: legacyBodyHash(crlfPost.body),
+		revisionHash: legacyPostRevisionHash(crlfPost)
+	};
+
+	assert.equal(legacyCacheMatchesPost(legacyCache, lfPost), true);
+	assert.equal(legacyCacheMatchesPost(legacyCache, editedPost), false);
 });
 
 test('revision hashes ignore generated metadata but track meaningful post changes', () => {

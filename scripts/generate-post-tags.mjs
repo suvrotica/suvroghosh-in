@@ -9,6 +9,7 @@ const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
 const manifestPath = path.join(root, 'scripts', 'post-tags-manifest.json');
 const generatorVersion = '2026-07-22.1';
+const hashVersion = 2;
 const defaultMaxTags = 10;
 const minimumTags = 1;
 
@@ -158,7 +159,15 @@ function splitPost(rawText, source) {
 	return { opening, frontmatter, closing, body, metadata };
 }
 
+function normalizeLineEndings(value) {
+	return value.replace(/\r\n?/g, '\n');
+}
+
 function bodyHash(body) {
+	return crypto.createHash('sha256').update(normalizeLineEndings(body), 'utf8').digest('hex');
+}
+
+function legacyBodyHash(body) {
 	return crypto.createHash('sha256').update(body, 'utf8').digest('hex');
 }
 
@@ -172,7 +181,7 @@ function canonicalize(value) {
 	);
 }
 
-function postRevisionHash(post) {
+function legacyPostRevisionHash(post, body = post.body) {
 	const metadata = { ...post.metadata };
 	delete metadata.tags;
 	delete metadata.pinnedTags;
@@ -181,8 +190,23 @@ function postRevisionHash(post) {
 		.createHash('sha256')
 		.update(JSON.stringify(canonicalize(metadata)), 'utf8')
 		.update('\0')
-		.update(post.body, 'utf8')
+		.update(body, 'utf8')
 		.digest('hex');
+}
+
+function postRevisionHash(post) {
+	return legacyPostRevisionHash(post, normalizeLineEndings(post.body));
+}
+
+function legacyCacheMatchesPost(cache, post) {
+	if (!cache?.bodyHash) return false;
+	const lfBody = normalizeLineEndings(post.body);
+	const variants = [...new Set([post.body, lfBody, lfBody.replaceAll('\n', '\r\n')])];
+	return variants.some(
+		(body) =>
+			legacyBodyHash(body) === cache.bodyHash &&
+			(!cache.revisionHash || legacyPostRevisionHash(post, body) === cache.revisionHash)
+	);
 }
 
 function normalizedDateModified(metadata) {
@@ -235,13 +259,14 @@ function freshnessIssue(
 }
 
 function updateRevisionCache(cache, revisionHash, dateModified) {
+	cache.hashVersion = hashVersion;
 	cache.revisionHash = revisionHash;
 	if (dateModified) cache.dateModified = dateModified;
 	else delete cache.dateModified;
 }
 
 function cleanBody(body) {
-	return body
+	return normalizeLineEndings(body)
 		.normalize('NFC')
 		.replace(/```[\s\S]*?```/g, ' ')
 		.replace(/~~~[\s\S]*?~~~/g, ' ')
@@ -314,8 +339,9 @@ function candidateSimilarity(left, right) {
 }
 
 function extractTags(body, maxTags, corpus) {
-	const cleaned = cleanBody(body);
-	const headingKeys = headingPhrases(body);
+	const normalizedBody = normalizeLineEndings(body);
+	const cleaned = cleanBody(normalizedBody);
+	const headingKeys = headingPhrases(normalizedBody);
 	const segments = cleaned.split(/[\n.!?;:()[\]{}]|\s+[–—]\s+/u);
 	const wordFrequency = new Map();
 	const wordDegree = new Map();
@@ -511,7 +537,9 @@ function mergePinnedTags(generatedTags, pinnedTags = [], maxTags = defaultMaxTag
 }
 
 function loadManifest() {
-	if (!fs.existsSync(manifestPath)) return { version: generatorVersion, posts: {} };
+	if (!fs.existsSync(manifestPath)) {
+		return { version: generatorVersion, hashVersion, posts: {} };
+	}
 	try {
 		const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
 		if (!manifest || typeof manifest !== 'object' || Array.isArray(manifest)) throw new Error();
@@ -576,6 +604,7 @@ async function main() {
 	let analysed = 0;
 	let updated = 0;
 	let skipped = 0;
+	let migrated = 0;
 	let failed = 0;
 	const currentSources = new Set();
 
@@ -592,17 +621,35 @@ async function main() {
 			const revisionHash = postRevisionHash(post);
 			const dateModified = normalizedDateModified(post.metadata);
 			const cache = manifestPosts[source];
-			const staleFreshness = freshnessIssue(cache, post, hash, revisionHash);
+			const cacheUsesCurrentHashes = cache?.hashVersion === hashVersion;
+			// Hash version 1 used platform-specific line endings. Migrate only when both
+			// legacy hashes prove that the post is otherwise unchanged.
+			const safeLegacyMigration =
+				Boolean(cache) && !cacheUsesCurrentHashes && legacyCacheMatchesPost(cache, post);
+			const staleFreshness =
+				cacheUsesCurrentHashes || (cache && !safeLegacyMigration)
+					? freshnessIssue(cache, post, hash, revisionHash)
+					: null;
 			if (staleFreshness) throw new Error(staleFreshness);
 			const cachedTags = cache?.generatedTags;
 			const cachedPinnedTags = cache?.pinnedTags ?? [];
-			const coreCacheIsCurrent =
-				!options.force &&
-				cache?.bodyHash === hash &&
+			const generatedCacheIsCurrent =
 				cache?.generatorVersion === generatorVersion &&
 				Array.isArray(cachedTags) &&
 				tagsEqual(post.metadata.tags, cachedTags) &&
 				tagsEqual(pinnedTags, cachedPinnedTags);
+			if (!options.force && safeLegacyMigration && generatedCacheIsCurrent) {
+				cache.bodyHash = hash;
+				updateRevisionCache(cache, revisionHash, dateModified);
+				migrated += 1;
+				skipped += 1;
+				continue;
+			}
+			const coreCacheIsCurrent =
+				!options.force &&
+				cacheUsesCurrentHashes &&
+				cache?.bodyHash === hash &&
+				generatedCacheIsCurrent;
 			if (coreCacheIsCurrent) {
 				updateRevisionCache(cache, revisionHash, dateModified);
 				skipped += 1;
@@ -627,6 +674,7 @@ async function main() {
 			}
 			manifestPosts[source] = {
 				bodyHash: hash,
+				hashVersion,
 				revisionHash,
 				generatedTags: tags,
 				pinnedTags,
@@ -646,6 +694,7 @@ async function main() {
 			}
 		}
 		manifest.version = generatorVersion;
+		if (options.files.length === 0 && failed === 0) manifest.hashVersion = hashVersion;
 		manifest.maxTags = options.maxTags;
 		fs.mkdirSync(path.dirname(manifestPath), { recursive: true });
 		const prettierConfig = (await resolveConfig(manifestPath)) ?? {};
@@ -657,7 +706,7 @@ async function main() {
 	}
 
 	console.log(
-		`Post tags: scanned ${files.length}, analysed ${analysed}, updated ${updated}, skipped ${skipped}, failed ${failed}${options.dryRun ? ' (dry run)' : ''}.`
+		`Post tags: scanned ${files.length}, analysed ${analysed}, updated ${updated}, migrated ${migrated}, skipped ${skipped}, failed ${failed}${options.dryRun ? ' (dry run)' : ''}.`
 	);
 	if (failed > 0) process.exitCode = 1;
 }
@@ -676,6 +725,9 @@ export {
 	buildCorpusStatistics,
 	extractTags,
 	freshnessIssue,
+	legacyBodyHash,
+	legacyCacheMatchesPost,
+	legacyPostRevisionHash,
 	mergePinnedTags,
 	postRevisionHash,
 	replaceTags,
