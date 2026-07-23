@@ -3,12 +3,13 @@
 	import { resolve } from '$app/paths';
 	import ArchivePagination from '$lib/components/blog/ArchivePagination.svelte';
 	import PostGallery from '$lib/components/blog/PostGallery.svelte';
+	import { categoryLabel } from '$lib/content/categories';
 	import type { BlogPostSummary } from '$lib/content/posts';
 	import { BLOG_PAGE_SIZE } from '$lib/content/pagination';
 
 	type SearchSort = 'relevance' | 'newest' | 'oldest';
 	type SearchFacets = {
-		categories: { slug: string; label: string; count: number }[];
+		sections: { slug: string; label: string; count: number }[];
 		years: { value: string; count: number }[];
 	};
 	type PagefindResultData = {
@@ -46,6 +47,7 @@
 
 	type Props = {
 		initialQuery: string;
+		initialSection: string;
 		initialCategory: string;
 		initialTag: string;
 		initialYear: string;
@@ -59,6 +61,7 @@
 
 	let {
 		initialQuery: query,
+		initialSection: section,
 		initialCategory: category,
 		initialTag: tag,
 		initialYear: year,
@@ -85,6 +88,7 @@
 
 	function pagefindOptions(): PagefindSearchOptions {
 		const filters: Record<string, string> = {};
+		if (section) filters.section = section;
 		if (category) filters.category = category;
 		if (tag) filters.tag = tag;
 		if (year) filters.year = year;
@@ -110,7 +114,8 @@
 						metaWeights: {
 							title: 5,
 							description: 2,
-							category: 1.5,
+							section: 1.5,
+							category: 1,
 							tags: 1.25
 						}
 					}
@@ -126,6 +131,7 @@
 		const url = new URL(window.location.href);
 		const values = {
 			search: query.trim(),
+			section,
 			category,
 			tag,
 			year,
@@ -193,6 +199,14 @@
 		void runSearch();
 	}
 
+	function changeSection() {
+		// Category remains in old archive links for URL compatibility. Once a reader
+		// chooses the new, broader section taxonomy, it should no longer constrain
+		// the results invisibly.
+		category = '';
+		void runSearch(true);
+	}
+
 	function formatDate(value: string | undefined) {
 		if (!value) return '';
 		const date = new Date(value);
@@ -220,6 +234,9 @@
 			{#if tag}
 				<input type="hidden" name="tag" value={tag} />
 			{/if}
+			{#if category}
+				<input type="hidden" name="category" value={category} />
+			{/if}
 			<label
 				class="flex flex-col gap-1.5 text-sm font-semibold text-neutral-700 dark:text-neutral-200"
 			>
@@ -239,15 +256,15 @@
 			<label
 				class="flex flex-col gap-1.5 text-sm font-semibold text-neutral-700 dark:text-neutral-200"
 			>
-				Category
+				Section
 				<select
-					name="category"
-					bind:value={category}
+					name="section"
+					bind:value={section}
 					class="h-11 rounded-md border border-neutral-300 bg-white px-3 text-sm text-neutral-900 dark:border-neutral-600 dark:bg-neutral-900 dark:text-neutral-100"
-					onchange={() => void runSearch(true)}
+					onchange={changeSection}
 				>
-					<option value="">All categories</option>
-					{#each facets.categories as option (option.slug)}
+					<option value="">All sections</option>
+					{#each facets.sections as option (option.slug)}
 						<option value={option.slug}>{option.label} ({option.count})</option>
 					{/each}
 				</select>
@@ -294,6 +311,24 @@
 			</button>
 		</div>
 	</form>
+
+	{#if category}
+		<div
+			class="mb-5 flex flex-wrap items-center gap-2 rounded-md border border-neutral-300 bg-neutral-100 px-3 py-2 text-sm text-neutral-700 dark:border-neutral-700 dark:bg-neutral-800/60 dark:text-neutral-200"
+		>
+			<span class="font-semibold">Category</span>
+			<span class="rounded-sm bg-white px-2 py-1 font-medium dark:bg-neutral-900">
+				{categoryLabel(category)}
+			</span>
+			<span class="text-neutral-500 dark:text-neutral-400">from an older archive link</span>
+			<a
+				href={resolve('/blog')}
+				class="ml-auto inline-flex min-h-8 items-center font-semibold underline underline-offset-4 hover:text-neutral-950 dark:hover:text-white"
+			>
+				Clear category
+			</a>
+		</div>
+	{/if}
 
 	{#if tag}
 		<div
@@ -359,7 +394,7 @@
 						<div
 							class="mb-1 text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400"
 						>
-							{result.meta.category}
+							{result.meta.section || result.meta.category}
 							{#if result.meta.date}<span aria-hidden="true"> · </span>{formatDate(
 									result.meta.date
 								)}{/if}

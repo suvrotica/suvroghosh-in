@@ -21,15 +21,8 @@
 <SEO {...siteSEO} schema={withSiteGraph()} />
 
 <section class="page-enter mb-12">
-	<div
-		class="relative overflow-hidden rounded-xl border border-neutral-300 bg-gradient-to-br from-neutral-100 to-neutral-200 p-8 md:p-12 dark:border-neutral-700 dark:from-neutral-800/60 dark:to-neutral-900"
-	>
-		<div
-			class="absolute top-0 right-0 -mt-16 -mr-16 h-48 w-48 rounded-full bg-neutral-400/5 blur-3xl"
-			aria-hidden="true"
-		></div>
-
-		<div class="relative">
+	<div class="border-y border-rule py-10 md:py-14">
+		<div>
 			<p class="mb-3 text-sm font-semibold tracking-widest text-neutral-400 uppercase">
 				Healthcare IT &middot; Interoperability &middot; Applied AI &middot; Calcutta
 			</p>
@@ -212,7 +205,7 @@
 					<div
 						class="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-wide text-neutral-500 dark:text-neutral-400"
 					>
-						<span class="font-semibold uppercase">{post.categoryLabel}</span>
+						<span class="font-semibold uppercase">{post.sectionLabel}</span>
 						<span aria-hidden="true">·</span>
 						<time datetime={post.date}>{formatDate(post.date)}</time>
 					</div>

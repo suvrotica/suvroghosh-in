@@ -5,30 +5,41 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="msvalidate.01" content="42109724287F9B19E5AB5196F3C807BF" />
 		<meta name="text-scale" content="scale" />
+		<meta name="theme-color" content="#f7f2e7" />
 		<script>
 			(() => {
 				const root = document.documentElement;
-				const preferences = ['system', 'light', 'dark', 'sepia'];
-				let preference = 'sepia';
+				const preferences = ['system', 'paper', 'light', 'night', 'high-contrast'];
+				const aliases = { sepia: 'paper', dark: 'night' };
+				let preference = 'paper';
 
 				try {
 					const stored = window.localStorage.getItem('site-theme');
-					if (stored && preferences.includes(stored)) preference = stored;
+					const normalized = aliases[stored] ?? stored;
+					if (normalized && preferences.includes(normalized)) preference = normalized;
 				} catch {
-					// Keep the sepia default when browser storage is unavailable.
+					// Keep the paper default when browser storage is unavailable.
 				}
 
 				const resolved =
 					preference === 'system'
 						? window.matchMedia('(prefers-color-scheme: dark)').matches
-							? 'dark'
+							? 'night'
 							: 'light'
 						: preference;
 
-				root.dataset.theme = preference;
-				root.classList.toggle('dark', resolved === 'dark');
-				root.classList.toggle('theme-sepia', resolved === 'sepia');
-				root.style.colorScheme = resolved === 'dark' ? 'dark' : 'light';
+				root.dataset.themePreference = preference;
+				root.dataset.theme = resolved;
+				root.classList.toggle('dark', resolved === 'night');
+				root.style.colorScheme = resolved === 'night' ? 'dark' : 'light';
+				document
+					.querySelector('meta[name="theme-color"]')
+					?.setAttribute(
+						'content',
+						{ paper: '#f7f2e7', light: '#fbfaf7', night: '#171512', 'high-contrast': '#ffffff' }[
+							resolved
+						]
+					);
 			})();
 		</script>
 		<script>
@@ -56,7 +67,6 @@
 				true
 			);
 		</script>
-		<meta name="theme-color" content="#171717" />
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />

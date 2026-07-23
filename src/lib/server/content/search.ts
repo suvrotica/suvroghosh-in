@@ -4,6 +4,7 @@ export type PostSearchSort = 'relevance' | 'newest' | 'oldest';
 
 type PostSearchOptions = {
 	query?: string;
+	section?: string;
 	category?: string;
 	tag?: string;
 	year?: string;
@@ -12,6 +13,7 @@ type PostSearchOptions = {
 
 export function searchPublishedPosts({
 	query = '',
+	section = '',
 	category = '',
 	tag = '',
 	year = '',
@@ -19,6 +21,7 @@ export function searchPublishedPosts({
 }: PostSearchOptions) {
 	const normalizedTag = tag.trim().toLocaleLowerCase('en');
 	let posts = getPublishedPosts().filter((post) => {
+		if (section && post.sectionSlug !== section) return false;
 		if (category && post.categorySlug !== category) return false;
 		if (
 			normalizedTag &&
@@ -34,7 +37,14 @@ export function searchPublishedPosts({
 
 	if (words.length > 0) {
 		posts = posts.filter((post) => {
-			const haystack = [post.title, post.description, post.category, post.slug, post.tags.join(' ')]
+			const haystack = [
+				post.title,
+				post.description,
+				post.sectionLabel,
+				post.category,
+				post.slug,
+				post.tags.join(' ')
+			]
 				.join(' ')
 				.toLowerCase();
 

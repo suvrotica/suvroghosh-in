@@ -1,5 +1,11 @@
 import { categoryLabel, slugifyCategory } from '$lib/content/categories';
 import {
+	SECTIONS,
+	requireSectionSlug,
+	sectionLabel as displaySectionLabel,
+	type SectionSlug
+} from '$lib/content/sections';
+import {
 	isIndexablePost,
 	tagSearchPath,
 	validatePublishedPostMetadata,
@@ -19,6 +25,8 @@ export type PublishedPost = BlogPostMetadata & {
 	slug: string;
 	categorySlug: string;
 	categoryLabel: string;
+	sectionSlug: SectionSlug;
+	sectionLabel: string;
 	derivedTopics: string[];
 };
 
@@ -43,12 +51,15 @@ for (const [path, metadata] of Object.entries(metadataModules)) {
 
 	validatePublishedPostMetadata(metadata, `${slug}.md`);
 	const categorySlug = slugifyCategory(metadata.category);
+	const sectionSlug = requireSectionSlug(metadata.category, slug);
 
 	publishedPosts.push({
 		...metadata,
 		slug,
 		categorySlug,
 		categoryLabel: categoryLabel(categorySlug),
+		sectionSlug,
+		sectionLabel: displaySectionLabel(sectionSlug),
 		derivedTopics: musicPostSlugSet.has(slug) ? ['Music'] : []
 	});
 }
@@ -218,6 +229,10 @@ export function getPublishedPostsByCategory(category: string) {
 	return publishedPosts.filter((post) => post.categorySlug === categorySlug);
 }
 
+export function getPublishedPostsBySection(section: string) {
+	return publishedPosts.filter((post) => post.sectionSlug === section);
+}
+
 export function getPublishedPostsByYear(year: string) {
 	if (!/^\d{4}$/.test(year)) return [];
 	return publishedPosts.filter((post) => post.date.startsWith(`${year}-`));
@@ -270,6 +285,7 @@ export function getPostTopicLinks(tags: string[]) {
 
 export function getPostSearchFacets() {
 	const categoryCounts = new Map<string, { label: string; count: number }>();
+	const sectionCounts = new Map<SectionSlug, number>();
 	const yearCounts = new Map<string, number>();
 
 	for (const post of publishedPosts) {
@@ -278,12 +294,18 @@ export function getPostSearchFacets() {
 			label: post.categoryLabel,
 			count: (category?.count ?? 0) + 1
 		});
+		sectionCounts.set(post.sectionSlug, (sectionCounts.get(post.sectionSlug) ?? 0) + 1);
 
 		const year = /^\d{4}/.exec(post.date)?.[0];
 		if (year) yearCounts.set(year, (yearCounts.get(year) ?? 0) + 1);
 	}
 
 	return {
+		sections: (Object.keys(SECTIONS) as SectionSlug[]).map((slug) => ({
+			slug,
+			label: displaySectionLabel(slug),
+			count: sectionCounts.get(slug) ?? 0
+		})),
 		categories: Array.from(categoryCounts, ([slug, value]) => ({ slug, ...value })).sort((a, b) =>
 			a.label.localeCompare(b.label)
 		),

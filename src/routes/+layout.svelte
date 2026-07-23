@@ -1,7 +1,8 @@
 <script lang="ts">
-	import '@fontsource-variable/roboto/wght.css';
-	import '@fontsource-variable/roboto/wght-italic.css';
-	import robotoLatinUrl from '@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2?url';
+	import '@fontsource-variable/source-serif-4/standard.css';
+	import '@fontsource-variable/source-serif-4/wght-italic.css';
+	import '@fontsource-variable/noto-serif-bengali/wght.css';
+	import sourceSerifLatinUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-standard-normal.woff2?url';
 	import '../app.css';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
@@ -9,7 +10,6 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
-	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
 
 	let { children } = $props();
 
@@ -20,10 +20,14 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" href={robotoLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+	<link
+		rel="preload"
+		href={sourceSerifLatinUrl}
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
 </svelte:head>
-
-<ReadingProgress />
 
 <div class="flex min-h-dvh flex-col">
 	<a href="#main-content" class="skip-link">Skip to main content</a>

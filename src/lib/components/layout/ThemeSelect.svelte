@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	type ThemePreference = 'system' | 'light' | 'dark' | 'sepia';
+	type ThemePreference = 'system' | 'paper' | 'light' | 'night' | 'high-contrast';
 	type ResolvedTheme = Exclude<ThemePreference, 'system'>;
 
 	let {
@@ -13,9 +13,21 @@
 	} = $props();
 
 	const themeEvent = 'site-theme-change';
-	const validPreferences: readonly ThemePreference[] = ['system', 'light', 'dark', 'sepia'];
+	const validPreferences: readonly ThemePreference[] = [
+		'system',
+		'paper',
+		'light',
+		'night',
+		'high-contrast'
+	];
+	const themeColors: Record<ResolvedTheme, string> = {
+		paper: '#f7f2e7',
+		light: '#fbfaf7',
+		night: '#171512',
+		'high-contrast': '#ffffff'
+	};
 
-	let preference = $state<ThemePreference>('sepia');
+	let preference = $state<ThemePreference>('paper');
 	let ready = $state(false);
 
 	function isThemePreference(value: string | undefined): value is ThemePreference {
@@ -23,7 +35,7 @@
 	}
 
 	function resolveTheme(next: ThemePreference, mediaQuery: MediaQueryList): ResolvedTheme {
-		if (next === 'system') return mediaQuery.matches ? 'dark' : 'light';
+		if (next === 'system') return mediaQuery.matches ? 'night' : 'light';
 		return next;
 	}
 
@@ -32,10 +44,13 @@
 		const root = document.documentElement;
 
 		preference = next;
-		root.dataset.theme = next;
-		root.classList.toggle('dark', resolved === 'dark');
-		root.classList.toggle('theme-sepia', resolved === 'sepia');
-		root.style.colorScheme = resolved === 'dark' ? 'dark' : 'light';
+		root.dataset.themePreference = next;
+		root.dataset.theme = resolved;
+		root.classList.toggle('dark', resolved === 'night');
+		root.style.colorScheme = resolved === 'night' ? 'dark' : 'light';
+		document
+			.querySelector('meta[name="theme-color"]')
+			?.setAttribute('content', themeColors[resolved]);
 
 		if (persist) {
 			try {
@@ -57,8 +72,8 @@
 
 	onMount(() => {
 		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-		const initial = document.documentElement.dataset.theme;
-		const initialPreference = isThemePreference(initial) ? initial : 'sepia';
+		const initial = document.documentElement.dataset.themePreference;
+		const initialPreference = isThemePreference(initial) ? initial : 'paper';
 
 		applyTheme(initialPreference, mediaQuery, false);
 		ready = true;
@@ -102,11 +117,12 @@
 		aria-label={variant === 'compact' ? 'Colour theme' : undefined}
 		class={variant === 'menu'
 			? 'h-11 min-w-28 rounded-md border-neutral-300 bg-white py-1 pr-8 pl-3 text-sm font-medium text-neutral-800 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100'
-			: 'h-11 w-[5.75rem] rounded-md border-neutral-300 bg-white/70 py-1 pr-7 pl-2 text-xs font-semibold text-neutral-700 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-900/80 dark:text-neutral-300'}
+			: 'h-11 w-32 rounded-md border-neutral-300 bg-white/70 py-1 pr-7 pl-2 text-xs font-semibold text-neutral-700 disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-900/80 dark:text-neutral-300'}
 	>
 		<option value="system">System</option>
+		<option value="paper">Paper</option>
 		<option value="light">Light</option>
-		<option value="dark">Dark</option>
-		<option value="sepia">Sepia</option>
+		<option value="night">Night</option>
+		<option value="high-contrast">High contrast</option>
 	</select>
 </div>

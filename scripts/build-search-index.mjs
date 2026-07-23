@@ -6,6 +6,9 @@ const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
 const staticDir = path.resolve(root, 'static');
 const outputDir = path.resolve(staticDir, 'pagefind');
+const taxonomy = JSON.parse(
+	await fs.readFile(path.join(root, 'src', 'lib', 'content', 'sections.json'), 'utf8')
+);
 
 if (path.dirname(outputDir) !== staticDir) {
 	throw new Error(`Refusing to write Pagefind files outside ${staticDir}`);
@@ -177,15 +180,19 @@ try {
 		const date = String(metadata.date ?? '').trim();
 		const category = String(metadata.category ?? '').trim();
 		const categorySlug = slugify(category);
+		const sectionSlug =
+			taxonomy.postSectionOverrides[slug] ?? taxonomy.legacyCategoryToSection[categorySlug];
+		const section = taxonomy.sections[sectionSlug];
 		const tags = stringArray(metadata.tags);
 		const year = /^\d{4}/.exec(date)?.[0] ?? '';
 		const timestamp = Date.parse(date);
 
-		if (!title || !description || !date || !category || tags.length === 0 || !year) {
+		if (!title || !description || !date || !category || !section || tags.length === 0 || !year) {
 			throw new Error(`${filename} is missing metadata required for the search index`);
 		}
 
 		const filters = {
+			section: [sectionSlug],
 			category: [categorySlug],
 			year: [year],
 			tag: tags,
@@ -200,6 +207,8 @@ try {
 			description,
 			category,
 			category_slug: categorySlug,
+			section,
+			section_slug: sectionSlug,
 			date,
 			year,
 			tags: tags.join(', ')

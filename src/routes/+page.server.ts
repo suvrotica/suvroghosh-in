@@ -6,12 +6,13 @@ export const prerender = true;
 export const load: PageServerLoad = () => ({
 	recentPosts: getPublishedPosts()
 		.slice(0, 4)
-		.map(({ slug, title, description, date, categorySlug, categoryLabel }) => ({
+		.map(({ slug, title, description, date, categorySlug, categoryLabel, sectionLabel }) => ({
 			slug,
 			title,
 			description,
 			date,
 			categorySlug,
-			categoryLabel
+			categoryLabel,
+			sectionLabel
 		}))
 });

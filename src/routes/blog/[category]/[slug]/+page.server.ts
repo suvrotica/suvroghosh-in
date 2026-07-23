@@ -12,7 +12,7 @@ import {
 	withSiteGraph
 } from '$lib/components/seo/SEO';
 import { slugifyCategory, categoryLabel } from '$lib/content/categories';
-import { postPath, redirectedPostPath } from '$lib/content/posts';
+import { postPath, redirectedPostPath, sanitizeEssayInk } from '$lib/content/posts';
 import { getImageDimensions } from '$lib/server/image-metadata';
 import {
 	getPostNavigation,
@@ -57,6 +57,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	return {
 		slug,
+		essayInk: sanitizeEssayInk(metadata.color),
 		postNavigation: getPostNavigation(slug),
 		postTopics: getPostTopicLinks(topicLabels),
 		relatedPosts: getRelatedPosts(slug),

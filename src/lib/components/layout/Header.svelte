@@ -1,51 +1,33 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import { browser } from '$app/environment';
-	import { Input } from '$lib/components/ui/input';
-	import { Button } from '$lib/components/ui/button';
 	import CommandPalette from '$lib/components/layout/CommandPalette.svelte';
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
 	import { substackLinks } from '$lib/config/links';
 
 	type NavigationItem = {
-		href:
-			| '/'
-			| '/start-here'
-			| '/writing'
-			| '/blog/visualizations'
-			| '/consulting'
-			| '/projects'
-			| '/resume'
-			| '/contact';
+		href: '/start-here' | '/blog' | '/blog/visualizations' | '/projects' | '/resume';
 		label: string;
 		sections: readonly string[];
 	};
 
 	const navLinks: readonly NavigationItem[] = [
-		{ href: '/', label: 'Home', sections: ['/'] },
 		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
-		{ href: '/writing', label: 'Writing', sections: ['/writing', '/blog'] },
+		{ href: '/blog', label: 'Essays', sections: ['/writing', '/blog'] },
 		{
 			href: '/blog/visualizations',
-			label: 'Visualizations',
+			label: 'Lab',
 			sections: ['/blog/visualizations']
 		},
 		{
-			href: '/consulting',
-			label: 'Healthcare IT',
-			sections: ['/consulting', '/healthcare-it-gulf']
+			href: '/projects',
+			label: 'Work',
+			sections: ['/projects', '/consulting', '/healthcare-it-gulf']
 		},
-		{ href: '/projects', label: 'Projects', sections: ['/projects'] },
-		{ href: '/resume', label: 'Resume', sections: ['/resume'] },
-		{ href: '/contact', label: 'Contact', sections: ['/contact'] }
+		{ href: '/resume', label: 'Resume', sections: ['/resume'] }
 	];
 
 	let currentPath = $derived(page.url.pathname);
-	// Avoid reading query parameters during prerender while still deriving the
-	// initial value and client-side navigation updates in the browser.
-	let searchQuery = $derived(browser ? (page.url.searchParams.get('search') ?? '') : '');
-	let searchInput = $state<HTMLInputElement>();
 	let mobileMenu: HTMLDetailsElement;
 	let menuSummary: HTMLElement;
 
@@ -64,37 +46,11 @@
 		if (mobileMenu) mobileMenu.open = false;
 	}
 
-	function isEditableTarget(target: EventTarget | null) {
-		return (
-			target instanceof HTMLElement &&
-			(target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
-		);
-	}
-
 	function handleWindowKeydown(event: KeyboardEvent) {
 		if (event.key === 'Escape' && mobileMenu?.open) {
 			closeMobile();
 			menuSummary?.focus();
-			return;
 		}
-
-		if (
-			event.defaultPrevented ||
-			event.key !== '/' ||
-			event.altKey ||
-			event.ctrlKey ||
-			event.metaKey ||
-			event.shiftKey ||
-			isEditableTarget(event.target) ||
-			!searchInput ||
-			searchInput.offsetParent === null
-		) {
-			return;
-		}
-
-		event.preventDefault();
-		searchInput.focus();
-		searchInput.select();
 	}
 </script>
 
@@ -119,13 +75,14 @@
 				>
 			</span>
 			<span
-				class="mt-1 hidden text-[0.625rem] leading-none font-semibold tracking-[0.18em] text-neutral-500 uppercase sm:block dark:text-neutral-400"
+				lang="bn"
+				class="mt-1 hidden font-serif text-[0.7rem] leading-none font-semibold tracking-[0.08em] text-neutral-500 sm:block dark:text-neutral-400"
 			>
-				Writing &amp; systems
+				সুভ্র ঘোষ
 			</span>
 		</a>
 
-		<nav class="hidden items-center gap-5 xl:flex" aria-label="Primary navigation">
+		<nav class="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Primary navigation">
 			{#each navLinks as link (link.href)}
 				<a
 					href={resolve(link.href)}
@@ -161,60 +118,11 @@
 				<span class="sr-only">, opens in a new tab</span>
 			</a>
 
-			<form
-				action={resolve('/blog')}
-				method="get"
-				class="hidden items-center gap-1 lg:flex"
-				role="search"
-				aria-label="Site search"
-			>
-				<div class="relative">
-					<Input
-						bind:ref={searchInput}
-						type="search"
-						name="search"
-						bind:value={searchQuery}
-						placeholder="Search writing"
-						aria-label="Search writing"
-						aria-keyshortcuts="/"
-						class="h-11 w-44 bg-white/70 pr-9 dark:bg-neutral-900/80"
-					/>
-					<kbd
-						aria-hidden="true"
-						class="search-shortcut-hint pointer-events-none absolute top-1/2 right-2 min-w-5 -translate-y-1/2 items-center justify-center rounded border border-neutral-300 bg-neutral-100 px-1 text-[0.65rem] leading-5 font-semibold text-neutral-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400"
-					>
-						/
-					</kbd>
-				</div>
-				<Button
-					type="submit"
-					variant="ghost"
-					size="icon"
-					aria-label="Submit search"
-					class="h-11 w-11"
-				>
-					<svg
-						class="h-5 w-5"
-						fill="none"
-						stroke="currentColor"
-						viewBox="0 0 24 24"
-						aria-hidden="true"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							stroke-width="2"
-							d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-						/>
-					</svg>
-				</Button>
-			</form>
-
-			<div class="hidden xl:block">
+			<div class="hidden lg:block">
 				<ThemeSelect id="desktop-theme" />
 			</div>
 
-			<details bind:this={mobileMenu} class="group xl:hidden">
+			<details bind:this={mobileMenu} class="group lg:hidden">
 				<summary
 					bind:this={menuSummary}
 					class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-md text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-200 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950 [&::-webkit-details-marker]:hidden"

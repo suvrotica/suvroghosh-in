@@ -5,4 +5,4 @@
 	let { class: className, ...restProps }: HTMLAttributes<HTMLHeadingElement> = $props();
 </script>
 
-<h4 class={cn('font-semibold text-foreground', className)} {...restProps}></h4>
+<h4 class={cn('font-sans text-lg font-semibold text-foreground', className)} {...restProps}></h4>

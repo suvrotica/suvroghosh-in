@@ -9,6 +9,7 @@
 		thumbnail?: string;
 		thumbnailAlt?: string;
 		category: string;
+		sectionLabel?: string;
 		date: string;
 	};
 
@@ -64,7 +65,7 @@
 									variant="secondary"
 									class="border-transparent bg-black/40 text-neutral-200 backdrop-blur-sm"
 								>
-									{post.category}
+									{post.sectionLabel ?? post.category}
 								</Badge>
 								<time datetime={post.date} class="text-xs text-neutral-200">
 									{formatDate(post.date)}
@@ -83,7 +84,7 @@
 						</div>
 						<div class="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
 							<Badge variant="outline" class="text-[11px] tracking-wide uppercase">
-								{post.category}
+								{post.sectionLabel ?? post.category}
 							</Badge>
 							<time datetime={post.date} class="text-xs text-neutral-500 dark:text-neutral-400">
 								{formatDate(post.date)}

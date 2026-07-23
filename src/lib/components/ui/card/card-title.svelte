@@ -5,4 +5,7 @@
 	let { class: className, ...restProps }: HTMLAttributes<HTMLHeadingElement> = $props();
 </script>
 
-<h3 class={cn('leading-none font-semibold tracking-tight', className)} {...restProps}></h3>
+<h3
+	class={cn('font-sans text-lg leading-none font-semibold tracking-tight', className)}
+	{...restProps}
+></h3>

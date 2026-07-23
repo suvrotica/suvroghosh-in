@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
+	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
 	import ArticleActions from '$lib/components/blog/ArticleActions.svelte';
 	import AuthorPanel from '$lib/components/blog/AuthorPanel.svelte';
 	import Notebook from '$lib/components/blog/Notebook.svelte';
@@ -27,7 +28,9 @@
 
 <div
 	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-none xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_16rem] xl:items-start xl:gap-12"
+	data-essay-ink={data.essayInk}
 >
+	<ReadingProgress ink="var(--essay-ink)" />
 	<article class="article-print mx-auto max-w-3xl min-w-0 xl:mx-0">
 		<nav
 			aria-label="Breadcrumb"
@@ -59,7 +62,6 @@
 				<li
 					class="hidden min-w-0 flex-1 truncate font-medium text-neutral-900 sm:block dark:text-neutral-200"
 					aria-current="page"
-					title={data.metadata.title}
 				>
 					{data.metadata.title}
 				</li>
@@ -68,10 +70,11 @@
 
 		<header class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800">
 			<h1
-				class="mb-6 text-3xl font-bold tracking-tight text-neutral-900 md:text-5xl md:leading-tight dark:text-white"
+				class="mb-4 font-serif text-display leading-[1.15] font-bold tracking-tight text-neutral-900 dark:text-white"
 			>
 				{data.metadata.title}
 			</h1>
+			<div class="mb-6 h-px w-20 bg-[var(--essay-ink)]" aria-hidden="true"></div>
 			<div
 				class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-600 dark:text-neutral-400"
 			>
@@ -181,7 +184,7 @@
 		{/if}
 
 		<div
-			class="article-prose mx-auto prose max-w-[var(--article-width)] font-serif prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-sans prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
+			class="article-prose mx-auto prose max-w-[var(--article-width)] font-serif prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-serif prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
 		>
 			<PostContent />
 		</div>

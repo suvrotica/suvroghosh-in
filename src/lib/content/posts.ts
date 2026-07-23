@@ -30,10 +30,75 @@ export type PostHeading = {
 	level: number;
 };
 
+export type EssayInkFamily =
+	| 'site'
+	| 'red'
+	| 'amber'
+	| 'green'
+	| 'blue'
+	| 'violet'
+	| 'brown'
+	| 'neutral';
+
+const editorialInkFamilies: readonly [RegExp, EssayInkFamily][] = [
+	[/red|blood|crimson|oxblood|maroon|ember/, 'red'],
+	[/amber|orange|copper|rust|burnt|saffron|mustard|ochre|tamarind|gold/, 'amber'],
+	[/green|emerald|moss|river/, 'green'],
+	[/blue|indigo|midnight/, 'blue'],
+	[/violet|purple|ultraviolet/, 'violet'],
+	[/brown/, 'brown'],
+	[/slate|ash|silver|zinc|stone|gr[ae]y|charcoal|black|muted|bone/, 'neutral']
+];
+
+function hexInkFamily(value: string): EssayInkFamily | null {
+	const match = /^#([0-9a-f]{3}|[0-9a-f]{6})$/.exec(value);
+	if (!match) return null;
+
+	const expanded =
+		match[1].length === 3
+			? match[1]
+					.split('')
+					.map((digit) => digit + digit)
+					.join('')
+			: match[1];
+	const [red, green, blue] = expanded
+		.match(/.{2}/g)!
+		.map((part) => Number.parseInt(part, 16) / 255);
+	const maximum = Math.max(red, green, blue);
+	const minimum = Math.min(red, green, blue);
+	const chroma = maximum - minimum;
+	if (chroma < 0.12) return 'neutral';
+
+	let hue: number;
+	if (maximum === red) hue = ((green - blue) / chroma) % 6;
+	else if (maximum === green) hue = (blue - red) / chroma + 2;
+	else hue = (red - green) / chroma + 4;
+	hue = (hue * 60 + 360) % 360;
+
+	if (hue < 15 || hue >= 345) return 'red';
+	if (hue < 65) return maximum < 0.58 ? 'brown' : 'amber';
+	if (hue < 170) return 'green';
+	if (hue < 250) return 'blue';
+	if (hue < 330) return 'violet';
+	return 'red';
+}
+
+/** Convert free-form editorial colours into a contrast-normalized theme family. */
+export function sanitizeEssayInk(value: string | null | undefined) {
+	const normalized = value?.trim().toLocaleLowerCase('en') ?? '';
+	return (
+		hexInkFamily(normalized) ??
+		editorialInkFamilies.find(([pattern]) => pattern.test(normalized))?.[1] ??
+		'site'
+	);
+}
+
 export type BlogPostSummary = BlogPostMetadata & {
 	slug: string;
 	categorySlug?: string;
 	categoryLabel?: string;
+	sectionSlug?: string;
+	sectionLabel?: string;
 };
 
 export const postPathAliases: Record<string, string> = {

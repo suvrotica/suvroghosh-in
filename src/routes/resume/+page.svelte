@@ -389,7 +389,7 @@
 		<div class="grid grid-cols-1 gap-x-6 gap-y-4 text-sm md:grid-cols-2">
 			{#each coreSkills as skill (skill.category)}
 				<div>
-					<h4 class="m-0 mb-1 font-bold text-neutral-900 dark:text-neutral-100">
+					<h4 class="m-0 mb-1 text-base font-bold text-neutral-900 dark:text-neutral-100">
 						{skill.category}
 					</h4>
 					<p class="m-0 leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -463,7 +463,7 @@
 		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
 			{#each projects as project (project.name)}
 				<div>
-					<h4 class="m-0 mb-1 font-bold text-neutral-900 dark:text-neutral-100">
+					<h4 class="m-0 mb-1 text-base font-bold text-neutral-900 dark:text-neutral-100">
 						{project.name}
 					</h4>
 					<p class="m-0 leading-relaxed">{project.detail}</p>
@@ -511,7 +511,7 @@
 		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
 			{#each marketFit as market (market.region)}
 				<div>
-					<h4 class="m-0 mb-1 font-bold text-neutral-900 dark:text-neutral-100">
+					<h4 class="m-0 mb-1 text-base font-bold text-neutral-900 dark:text-neutral-100">
 						{market.region}
 					</h4>
 					<p class="m-0 leading-relaxed">{market.fit}</p>

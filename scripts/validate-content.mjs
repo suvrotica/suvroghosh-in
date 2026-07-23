@@ -5,6 +5,7 @@ import { readPostFrontmatter } from './lib/post-metadata.mjs';
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
 const notebooksDir = path.join(root, 'src', 'lib', 'notebooks');
+const sectionsFile = path.join(root, 'src', 'lib', 'content', 'sections.json');
 const requiredFields = ['title', 'description', 'date', 'category', 'tags', 'published'];
 const stringFields = [
 	'title',
@@ -32,6 +33,27 @@ const allowedFields = new Set([
 	'faq'
 ]);
 const errors = [];
+let taxonomy = { sections: {}, legacyCategoryToSection: {}, postSectionOverrides: {} };
+
+try {
+	taxonomy = JSON.parse(fs.readFileSync(sectionsFile, 'utf8'));
+} catch (error) {
+	errors.push(
+		`sections.json could not be read: ${error instanceof Error ? error.message : String(error)}`
+	);
+}
+
+const sectionSlugs = new Set(Object.keys(taxonomy.sections ?? {}));
+if (sectionSlugs.size !== 6) {
+	errors.push(
+		`sections.json must define exactly six permanent sections; found ${sectionSlugs.size}.`
+	);
+}
+for (const [section, label] of Object.entries(taxonomy.sections ?? {})) {
+	if (slugifyCategory(section) !== section || typeof label !== 'string' || label.trim() === '') {
+		errors.push(`sections.json: section “${section}” needs a canonical slug and non-empty label.`);
+	}
+}
 const healthcareGeoPolicyStart = '2026-07-23';
 let publishedCount = 0;
 let unpublishedCount = 0;
@@ -169,6 +191,16 @@ for (const file of postFiles) {
 		if (!categorySlug) errors.push(`${file}: category must produce a usable URL slug.`);
 		else categorySlugs.add(categorySlug);
 
+		if (metadata.published === true) {
+			const section =
+				taxonomy.postSectionOverrides?.[slug] ?? taxonomy.legacyCategoryToSection?.[categorySlug];
+			if (!section || !sectionSlugs.has(section)) {
+				errors.push(
+					`${file}: category “${metadata.category}” has no valid six-section taxonomy mapping.`
+				);
+			}
+		}
+
 		const requiresHealthcareAnswerLayer =
 			metadata.published === true &&
 			categorySlug === 'healthcare-it' &&
@@ -222,6 +254,24 @@ for (const file of postFiles) {
 				}
 			}
 		}
+	}
+}
+
+for (const [category, section] of Object.entries(taxonomy.legacyCategoryToSection ?? {})) {
+	if (slugifyCategory(category) !== category || !sectionSlugs.has(section)) {
+		errors.push(
+			`sections.json: category mapping “${category}” points to invalid section “${section}”.`
+		);
+	}
+}
+
+const postSlugs = new Set(postFiles.map((file) => file.replace(/\.md$/, '')));
+for (const [slug, section] of Object.entries(taxonomy.postSectionOverrides ?? {})) {
+	if (!postSlugs.has(slug)) {
+		errors.push(`sections.json: override references unknown post slug “${slug}”.`);
+	}
+	if (!sectionSlugs.has(section)) {
+		errors.push(`sections.json: override for “${slug}” points to invalid section “${section}”.`);
 	}
 }
 

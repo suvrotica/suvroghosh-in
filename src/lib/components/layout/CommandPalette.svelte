@@ -56,14 +56,15 @@
 	}
 
 	function handleWindowKeydown(event: KeyboardEvent) {
-		if (
-			event.defaultPrevented ||
-			event.key.toLocaleLowerCase('en') !== 'k' ||
-			(!event.ctrlKey && !event.metaKey) ||
-			event.altKey ||
-			event.shiftKey ||
-			isEditableTarget(event.target)
-		) {
+		const commandK =
+			event.key.toLocaleLowerCase('en') === 'k' &&
+			(event.ctrlKey || event.metaKey) &&
+			!event.altKey &&
+			!event.shiftKey;
+		const slash =
+			event.key === '/' && !event.ctrlKey && !event.metaKey && !event.altKey && !event.shiftKey;
+
+		if (event.defaultPrevented || (!commandK && !slash) || isEditableTarget(event.target)) {
 			return;
 		}
 
@@ -77,11 +78,11 @@
 <a
 	href={resolve('/blog')}
 	onclick={enhanceTrigger}
-	class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none lg:hidden dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
+	class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-neutral-700 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 	aria-label="Open search and shortcuts"
 	aria-haspopup="dialog"
 	aria-controls={dialogId}
-	aria-keyshortcuts="Control+K Meta+K"
+	aria-keyshortcuts="Control+K Meta+K /"
 >
 	<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 		<path
@@ -196,7 +197,7 @@
 			<ThemeSelect id="palette-theme" variant="menu" />
 			<p class="mt-3 mb-0 text-center text-xs text-neutral-500 dark:text-neutral-400">
 				<kbd class="rounded border border-neutral-300 px-1.5 py-0.5 dark:border-neutral-700"
-					>Ctrl/⌘ K</kbd
+					>/ or Ctrl/⌘ K</kbd
 				>
 				opens this panel ·
 				<kbd class="rounded border border-neutral-300 px-1.5 py-0.5 dark:border-neutral-700"

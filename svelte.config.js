@@ -2,6 +2,7 @@ import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import remarkMath from 'remark-math';
+import rehypeBengaliLang from './scripts/lib/rehype-bengali-lang.mjs';
 import rehypeKatexSvelte from 'rehype-katex-svelte';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -67,7 +68,7 @@ function rehypeSquareBrackets() {
 										tagName: 'span',
 										// Changed to muted grays to sink closer into the background
 										properties: {
-											className: ['font-semibold', 'text-neutral-400', 'dark:text-neutral-600']
+											className: ['font-semibold', 'text-neutral-400', 'dark:text-neutral-500']
 										},
 										children: [{ type: 'text', value: part }]
 									};
@@ -149,6 +150,7 @@ const config = {
 				rehypeKatexSvelte,
 				rehypeDemotePostH1,
 				rehypeCollectHeadings,
+				rehypeBengaliLang,
 				rehypeSquareBrackets // 2. Inject the custom plugin here
 			]
 		})

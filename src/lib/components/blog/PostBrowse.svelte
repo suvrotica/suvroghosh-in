@@ -6,7 +6,7 @@
 	import PostGallery from './PostGallery.svelte';
 
 	type SearchFacets = {
-		categories: { slug: string; label: string; count: number }[];
+		sections: { slug: string; label: string; count: number }[];
 		years: { value: string; count: number }[];
 		topics: { slug: string; label: string; count: number; categoryCount: number }[];
 	};
@@ -41,7 +41,7 @@
 				Find something to read
 			</h2>
 			<p class="!mb-0 !text-left text-sm text-neutral-600 dark:text-neutral-400">
-				Search the complete archive or narrow it to one category. More filters appear with the
+				Search the complete archive or narrow it to one section. More filters appear with the
 				results.
 			</p>
 		</div>
@@ -68,14 +68,14 @@
 			<label
 				class="flex flex-col gap-1.5 text-sm font-semibold text-neutral-700 dark:text-neutral-200"
 			>
-				Category
+				Section
 				<select
-					name="category"
+					name="section"
 					class="h-11 min-w-0 rounded-md border border-neutral-300 bg-white px-3 text-sm font-normal text-neutral-950 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-600 dark:bg-neutral-950 dark:text-neutral-100 dark:focus-visible:outline-neutral-300"
 				>
-					<option value="">All categories</option>
-					{#each facets.categories as category (category.slug)}
-						<option value={category.slug}>{category.label} ({category.count})</option>
+					<option value="">All sections</option>
+					{#each facets.sections as section (section.slug)}
+						<option value={section.slug}>{section.label} ({section.count})</option>
 					{/each}
 				</select>
 			</label>
