@@ -5,6 +5,58 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Roboto is intentionally limited to Latin and Latin Extended. Bengali prose
+   uses the dedicated Noto face below, so the other Roboto subsets add no value. */
+@font-face {
+	font-family: 'Roboto Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url('@fontsource-variable/roboto/files/roboto-latin-ext-wght-normal.woff2')
+		format('woff2-variations');
+	unicode-range:
+		U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+		U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
+}
+
+@font-face {
+	font-family: 'Roboto Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url('@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2')
+		format('woff2-variations');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Roboto Variable';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url('@fontsource-variable/roboto/files/roboto-latin-ext-wght-italic.woff2')
+		format('woff2-variations');
+	unicode-range:
+		U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+		U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
+}
+
+@font-face {
+	font-family: 'Roboto Variable';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 100 900;
+	src: url('@fontsource-variable/roboto/files/roboto-latin-wght-italic.woff2')
+		format('woff2-variations');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* Press & Practice theme primitives. Components can migrate from the neutral
    compatibility bridge below to these semantic tokens without a flag day. */
 :root,
@@ -14,15 +66,17 @@
 	--paper-soft: #eee5d5;
 	--paper-raised: #fdfaf3;
 	--rule: #d5c7ae;
-	--control-border: #93836b;
+	--control-border: #8d7c63;
 	--ink: #2b241c;
 	--ink-muted: #5c4f3e;
-	--ink-faint: #7b6b55;
+	--ink-faint: #725f49;
 	--accent: #2f4a43;
 	--focus: #2b241c;
 	--selection: color-mix(in oklab, var(--essay-ink, var(--accent)) 25%, transparent);
 	--essay-ink: var(--accent);
 	--shadow-overlay: 0 8px 30px rgb(43 36 28 / 18%);
+	--paper-texture-opacity: 0.065;
+	--paper-texture-size: clamp(12rem, 24vw, 22rem);
 
 	--background: var(--paper);
 	--foreground: var(--ink);
@@ -81,6 +135,7 @@
 	--selection: color-mix(in oklab, var(--essay-ink, var(--accent)) 35%, transparent);
 	--essay-ink: var(--accent);
 	--shadow-overlay: 0 8px 30px rgb(0 0 0 / 50%);
+	--paper-texture-opacity: 0;
 
 	--background: var(--paper);
 	--foreground: var(--ink);
@@ -136,6 +191,7 @@
 	--selection: color-mix(in oklab, var(--essay-ink, var(--accent)) 25%, transparent);
 	--essay-ink: var(--accent);
 	--shadow-overlay: 0 8px 30px rgb(29 27 23 / 16%);
+	--paper-texture-opacity: 0;
 
 	--background: var(--paper);
 	--foreground: var(--ink);
@@ -191,6 +247,7 @@
 	--selection: #ffeb3b;
 	--essay-ink: var(--accent);
 	--shadow-overlay: 0 0 0 2px #000000;
+	--paper-texture-opacity: 0;
 	--background: var(--paper);
 	--foreground: var(--ink);
 	--card: var(--paper-raised);
@@ -331,8 +388,8 @@
 /* Tailwind 4 Theme Configuration */
 @theme {
 	--font-sans:
-		ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI Variable Text',
-		'Segoe UI', sans-serif;
+		'Roboto Variable', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+		'Segoe UI Variable Text', 'Segoe UI', sans-serif;
 	--font-serif:
 		'Source Serif 4 Variable', 'Noto Serif Bengali Variable', Georgia, 'Times New Roman', serif;
 	--font-mono:
@@ -370,7 +427,22 @@
 	/* Global styles */
 	body {
 		@apply overflow-x-hidden bg-paper font-sans text-ink transition-colors;
+		position: relative;
+		isolation: isolate;
 		transition-duration: var(--motion-medium);
+	}
+
+	body::before {
+		content: '';
+		position: fixed;
+		z-index: -1;
+		inset: 0;
+		pointer-events: none;
+		background-image: url('/textures/paper-grain.svg');
+		background-repeat: repeat;
+		background-size: var(--paper-texture-size);
+		mix-blend-mode: multiply;
+		opacity: var(--paper-texture-opacity);
 	}
 
 	::selection {
@@ -477,6 +549,21 @@
 	line-height: 1.65;
 }
 
+/* Blog pages use the requested Roboto reading voice while the rest of the site
+   can retain Source Serif for editorial display headings. */
+.blog-type {
+	font-family: var(--font-sans);
+}
+
+.blog-type
+	:where(h1, h2, h3, h4, h5, h6, blockquote):not(:where(.not-prose, .not-prose *)):not(:lang(bn)) {
+	font-family: var(--font-sans);
+}
+
+.blog-type :lang(bn) {
+	font-family: 'Noto Serif Bengali Variable', serif;
+}
+
 .article-prose :where(p, li, blockquote):not(:where(.not-prose, .not-prose *)) {
 	font-size: inherit;
 	line-height: inherit;
@@ -499,6 +586,29 @@
 .article-prose .not-prose :where(h1, h2, h3, h4, h5, h6) {
 	font-family: var(--font-sans);
 	font-optical-sizing: auto;
+}
+
+/* Wide visualizations live in the left column of the desktop article/TOC grid.
+   This shared offset centres them on the viewport instead of that column. */
+.article-shell {
+	--article-breakout-offset: 0rem;
+}
+
+.article-breakout {
+	left: calc(50% + var(--article-breakout-offset, 0rem));
+}
+
+html .article-breakout:fullscreen {
+	left: 0;
+	margin: 0;
+	transform: none;
+	translate: none;
+}
+
+@media (min-width: 80rem) {
+	.article-shell {
+		--article-breakout-offset: 10rem;
+	}
 }
 
 .article-prose a {
@@ -751,6 +861,10 @@
 
 /* Preserve structure and keyboard location when Windows replaces authored colours. */
 @media (forced-colors: active) {
+	body::before {
+		display: none;
+	}
+
 	.nav-link::after {
 		display: none;
 	}
@@ -823,6 +937,10 @@
 		background: #fff !important;
 		color: #111 !important;
 		font-size: 11pt;
+	}
+
+	body::before {
+		display: none !important;
 	}
 
 	main#main-content,

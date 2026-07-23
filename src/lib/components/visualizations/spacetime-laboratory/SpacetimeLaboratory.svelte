@@ -116,7 +116,11 @@
 
 <svelte:window onkeydown={handleKeydown} />
 
-<section bind:this={shell} class="spacetime-lab not-prose" aria-labelledby="{uid}-heading">
+<section
+	bind:this={shell}
+	class="spacetime-lab article-breakout not-prose"
+	aria-labelledby="{uid}-heading"
+>
 	<header class="lab-header">
 		<div>
 			<p class="lab-kicker">Interactive · General relativity</p>
@@ -201,7 +205,6 @@
 <style>
 	.spacetime-lab {
 		position: relative;
-		left: 50%;
 		width: min(84rem, calc(100vw - 1.5rem));
 		transform: translateX(-50%);
 		margin: 2.5rem 0;

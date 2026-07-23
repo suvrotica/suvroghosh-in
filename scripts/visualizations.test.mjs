@@ -182,3 +182,24 @@ test('the existing Visualizations project links both native visualization tutori
 	}
 	assert.match(landing, /Observable × D3/);
 });
+
+test('wide article visualizations share the viewport-centred breakout contract', () => {
+	const appCss = read('src', 'app.css');
+	const components = [
+		['artificial-life', 'ArtificialLifeLab.svelte'],
+		['living-pigment', 'LivingPigmentStudio.svelte'],
+		['monte-carlo', 'MonteCarloLab.svelte'],
+		['spacetime-laboratory', 'SpacetimeLaboratory.svelte']
+	];
+
+	assert.match(
+		appCss,
+		/\.article-breakout\s*\{[\s\S]*?left:\s*calc\(50% \+ var\(--article-breakout-offset, 0rem\)\)/
+	);
+	assert.match(appCss, /@media \(min-width: 80rem\)[\s\S]*?--article-breakout-offset:\s*10rem/);
+
+	for (const [directory, filename] of components) {
+		const component = read('src', 'lib', 'components', 'visualizations', directory, filename);
+		assert.match(component, /class="[^"]*\barticle-breakout\b/);
+	}
+});

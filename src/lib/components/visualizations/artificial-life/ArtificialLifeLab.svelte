@@ -144,7 +144,7 @@
 </script>
 
 <section
-	class="not-prose relative left-1/2 my-10 w-[min(78rem,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 text-neutral-100 shadow-2xl shadow-black/30"
+	class="artificial-life-lab article-breakout not-prose relative my-10 w-[min(78rem,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950 text-neutral-100 shadow-2xl shadow-black/30"
 	aria-labelledby="artificial-life-lab-heading"
 >
 	<header

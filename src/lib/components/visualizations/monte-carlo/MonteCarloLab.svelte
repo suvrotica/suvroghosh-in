@@ -363,7 +363,7 @@
 
 <section
 	bind:this={laboratory}
-	class="monte-carlo-lab not-prose relative left-1/2 my-10 w-[min(80rem,calc(100vw-1.5rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-950 text-neutral-100 shadow-2xl shadow-black/30"
+	class="monte-carlo-lab article-breakout not-prose relative my-10 w-[min(80rem,calc(100vw-1.5rem))] -translate-x-1/2 overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-950 text-neutral-100 shadow-2xl shadow-black/30"
 	aria-labelledby="monte-carlo-lab-heading"
 >
 	<header class="lab-header">

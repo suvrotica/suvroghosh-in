@@ -2,7 +2,7 @@
 	import '@fontsource-variable/source-serif-4/standard.css';
 	import '@fontsource-variable/source-serif-4/wght-italic.css';
 	import '@fontsource-variable/noto-serif-bengali/wght.css';
-	import sourceSerifLatinUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-standard-normal.woff2?url';
+	import robotoLatinUrl from '@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2?url';
 	import '../app.css';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
@@ -20,13 +20,7 @@
 </script>
 
 <svelte:head>
-	<link
-		rel="preload"
-		href={sourceSerifLatinUrl}
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
+	<link rel="preload" href={robotoLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
 </svelte:head>
 
 <div class="flex min-h-dvh flex-col">

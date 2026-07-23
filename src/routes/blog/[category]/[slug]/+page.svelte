@@ -70,7 +70,7 @@
 
 		<header class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800">
 			<h1
-				class="mb-4 font-serif text-display leading-[1.15] font-bold tracking-tight text-neutral-900 dark:text-white"
+				class="mb-4 font-sans text-display leading-[1.15] font-bold tracking-tight text-neutral-900 dark:text-white"
 			>
 				{data.metadata.title}
 			</h1>
@@ -184,7 +184,7 @@
 		{/if}
 
 		<div
-			class="article-prose mx-auto prose max-w-[var(--article-width)] font-serif prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-serif prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
+			class="article-prose mx-auto prose max-w-[var(--article-width)] font-sans prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-sans prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
 		>
 			<PostContent />
 		</div>

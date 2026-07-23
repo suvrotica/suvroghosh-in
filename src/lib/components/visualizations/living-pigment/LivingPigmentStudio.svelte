@@ -971,7 +971,7 @@
 
 <section
 	bind:this={laboratory}
-	class="living-pigment-studio not-prose relative left-1/2 my-10 w-[min(94rem,calc(100vw-1rem))] overflow-hidden rounded-2xl border border-stone-500 bg-stone-950 text-stone-100 shadow-2xl shadow-black/30"
+	class="living-pigment-studio article-breakout not-prose relative my-10 w-[min(94rem,calc(100vw-1rem))] overflow-hidden rounded-2xl border border-stone-500 bg-stone-950 text-stone-100 shadow-2xl shadow-black/30"
 	aria-labelledby={`${uid}-title`}
 >
 	<header class="studio-header">
