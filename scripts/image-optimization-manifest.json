@@ -8032,6 +8032,21 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/handwritten-notes-social-card.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 609197,
+      "outputHash": "90d0b01233f7b59277e7bc83739b3ca0ad47185aa82d1eea8c05c7705dafc72b",
+      "resized": false,
+      "sourceBytes": 609197,
+      "sourceHash": "90d0b01233f7b59277e7bc83739b3ca0ad47185aa82d1eea8c05c7705dafc72b",
+      "width": 1200
+    },
     "static/images/monte-carlo-laboratory.svg": {
       "format": "SVG",
       "height": 630,

@@ -65,6 +65,32 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
+## Handwritten notes
+
+The site now includes a public handwritten-notes library at `/notes` and an owner-only infinite
+canvas studio at `/notes/studio`. Images can be dropped or uploaded anywhere on the canvas, moved
+independently, grouped with handwriting, or wrapped in a movable tile.
+
+The implementation, trade-offs, security model, setup, and acceptance criteria are documented in
+[`docs/handwritten-notes-architecture.md`](docs/handwritten-notes-architecture.md). The shortest
+production setup path is:
+
+```sh
+# PowerShell
+Copy-Item .env.example .env.local
+
+# macOS or Linux
+cp .env.example .env.local
+
+npm install
+npm run notes:test
+npm run check
+```
+
+Then apply `supabase/migrations/202607230001_handwritten_notes.sql`, create the single Supabase Auth
+owner, insert that immutable user UUID into `note_owners`, and install the one-minute publication
+job from `supabase/cron.sql`. Do not expose the service-role key to browser code.
+
 ## Mojo notebooks
 
 Notebook sources live in `src/lib/notebooks`. Install the native Jupyter rendering and authoring

@@ -157,6 +157,28 @@ const config = {
 	],
 	extensions: ['.svelte', '.md'],
 	kit: {
+		csp: {
+			mode: 'auto',
+			directives: {
+				'default-src': ['self'],
+				'script-src': ['self', 'https://va.vercel-scripts.com'],
+				'style-src': ['self', 'unsafe-inline'],
+				'img-src': ['self', 'data:', 'blob:', 'https:'],
+				'font-src': ['self', 'data:'],
+				'connect-src': [
+					'self',
+					'https://*.supabase.co',
+					'wss://*.supabase.co',
+					'https://va.vercel-scripts.com',
+					'https://vitals.vercel-insights.com'
+				],
+				'worker-src': ['self', 'blob:'],
+				'object-src': ['none'],
+				'base-uri': ['self'],
+				'form-action': ['self'],
+				'frame-ancestors': ['none']
+			}
+		},
 		prerender: {
 			handleHttpError: ({ path, message }) => {
 				// Vercel provides this optimizer endpoint after deployment, not during prerender crawling.

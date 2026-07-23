@@ -6,7 +6,7 @@
 	import { substackLinks } from '$lib/config/links';
 
 	type NavigationItem = {
-		href: '/start-here' | '/blog' | '/blog/visualizations' | '/projects' | '/resume';
+		href: '/start-here' | '/blog' | '/notes' | '/blog/visualizations' | '/projects' | '/resume';
 		label: string;
 		sections: readonly string[];
 	};
@@ -14,6 +14,7 @@
 	const navLinks: readonly NavigationItem[] = [
 		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
 		{ href: '/blog', label: 'Essays', sections: ['/writing', '/blog'] },
+		{ href: '/notes', label: 'Notes', sections: ['/notes'] },
 		{
 			href: '/blog/visualizations',
 			label: 'Lab',

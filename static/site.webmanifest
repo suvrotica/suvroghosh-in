@@ -6,6 +6,21 @@
 	"display": "standalone",
 	"background_color": "#fafafa",
 	"theme_color": "#171717",
+	"shortcuts": [
+		{
+			"name": "Handwritten notes",
+			"short_name": "Notes",
+			"description": "Open the public handwritten-notes library.",
+			"url": "/notes",
+			"icons": [
+				{
+					"src": "/apple-touch-icon.png",
+					"sizes": "180x180",
+					"type": "image/png"
+				}
+			]
+		}
+	],
 	"icons": [
 		{
 			"src": "/apple-touch-icon.png",

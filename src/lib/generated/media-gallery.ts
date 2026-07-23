@@ -3072,6 +3072,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "handwritten-notes-social-card.png",
+			"src": "/images/handwritten-notes-social-card.png",
+			"bytes": 609197,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "IMG-20260422-WA0001.jpg",
 			"src": "/images/IMG-20260422-WA0001.jpg",
 			"bytes": 409248,

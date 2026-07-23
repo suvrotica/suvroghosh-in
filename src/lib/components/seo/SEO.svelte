@@ -40,10 +40,21 @@
 		robots = indexRobots
 	}: Props = $props();
 
+	function serializeJsonLd(value: unknown) {
+		return JSON.stringify(value, null, 2).replace(/[<>&\u2028\u2029]/g, (character) => {
+			const escapes: Record<string, string> = {
+				'<': '\\u003c',
+				'>': '\\u003e',
+				'&': '\\u0026',
+				'\u2028': '\\u2028',
+				'\u2029': '\\u2029'
+			};
+			return escapes[character] ?? character;
+		});
+	}
+
 	let jsonLd = $derived(
-		schema
-			? `<script type="application/ld+json">${JSON.stringify(schema, null, 2)}</${'script'}>`
-			: ''
+		schema ? `<script type="application/ld+json">${serializeJsonLd(schema)}</${'script'}>` : ''
 	);
 </script>
 

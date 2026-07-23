@@ -61,3 +61,4 @@ Allow: /
 
 # Curated machine-readable guide: https://www.suvroghosh.in/llms.txt
 Sitemap: https://www.suvroghosh.in/sitemap.xml
+Sitemap: https://www.suvroghosh.in/notes/sitemap.xml

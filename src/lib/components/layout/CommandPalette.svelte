@@ -10,6 +10,11 @@
 		{ href: '/blog', label: 'All posts', description: 'Search the complete archive' },
 		{ href: '/blog/topics', label: 'Topics', description: 'Follow recurring subjects' },
 		{
+			href: '/notes',
+			label: 'Handwritten notes',
+			description: 'Explore ink, diagrams, and field notes'
+		},
+		{
 			href: '/blog/visualizations',
 			label: 'Visualizations',
 			description: 'Explore the interactive science laboratory'
