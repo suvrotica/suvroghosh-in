@@ -171,9 +171,21 @@ export const noteMetadataInputSchema = z
 			.min(1)
 			.max(180)
 			.regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/)
-			.refine((value) => !['studio', 'sign-in', 'sitemap', 'rss'].includes(value), {
-				message: 'That note address is reserved.'
-			}),
+			.refine(
+				(value) =>
+					![
+						'studio',
+						'sign-in',
+						'forgot-password',
+						'reset-password',
+						'auth',
+						'sitemap',
+						'rss'
+					].includes(value),
+				{
+					message: 'That note address is reserved.'
+				}
+			),
 		excerpt: z.string().trim().max(500).default(''),
 		status: z.enum(['draft', 'scheduled', 'published', 'archived', 'private']),
 		tags: z.array(z.string().trim().min(1).max(48)).max(20).default([]),

@@ -11,6 +11,20 @@ const buildAssets = new Set(build);
 const PUBLIC_NOTE_TTL_MS = 30 * 24 * 60 * 60 * 1_000;
 const MAX_PUBLIC_NOTE_ENTRIES = 240;
 const BUILD_CACHE_MARKER = '/__suvroghosh-build-cache-created__';
+const PRIVATE_NOTES_PATHS = [
+	'/notes/studio',
+	'/notes/sign-in',
+	'/notes/forgot-password',
+	'/notes/reset-password',
+	'/notes/auth',
+	'/api/notes'
+];
+
+function matchesPrivateNotesPath(pathname: string) {
+	return PRIVATE_NOTES_PATHS.some(
+		(privatePath) => pathname === privatePath || pathname.startsWith(`${privatePath}/`)
+	);
+}
 
 worker.addEventListener('install', (event) => {
 	event.waitUntil(
@@ -140,13 +154,7 @@ worker.addEventListener('fetch', (event) => {
 	const url = new URL(request.url);
 	if (url.origin !== worker.location.origin) return;
 
-	if (
-		url.pathname.startsWith('/notes/studio') ||
-		url.pathname.startsWith('/notes/sign-in') ||
-		url.pathname.startsWith('/api/notes/')
-	) {
-		return;
-	}
+	if (matchesPrivateNotesPath(url.pathname)) return;
 
 	if (buildAssets.has(url.pathname) || url.pathname.startsWith('/_app/immutable/')) {
 		event.respondWith(cacheFirst(request));
@@ -159,7 +167,10 @@ worker.addEventListener('fetch', (event) => {
 	const isPublishedNotePage =
 		/^\/notes\/[^/]+\/?$/.test(url.pathname) &&
 		url.pathname !== '/notes/sign-in' &&
-		url.pathname !== '/notes/studio';
+		url.pathname !== '/notes/studio' &&
+		url.pathname !== '/notes/forgot-password' &&
+		url.pathname !== '/notes/reset-password' &&
+		url.pathname !== '/notes/auth';
 	if (isPublicDocument || isPublicNoteAsset || isPublishedNotePage) {
 		event.respondWith(networkFirstPublicNote(request));
 	}

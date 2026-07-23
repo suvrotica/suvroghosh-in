@@ -306,8 +306,8 @@ collide with their source. The editable JSON export preserves all object and gro
 
 Supabase email/password auth is used only for the owner studio. `@supabase/ssr` reads and refreshes
 the session through `httpOnly`, `SameSite=Lax` cookies with `Secure` outside localhost. SvelteKit
-hooks resolve auth only for `/notes/studio`, `/notes/sign-in`, and `/api/notes/*`, avoiding session
-work on unrelated public pages.
+hooks resolve auth only for the studio, owner sign-in/reset routes, and protected notes APIs,
+avoiding session work on unrelated public pages.
 
 Authorization is defence in depth:
 
@@ -325,6 +325,22 @@ Owner login is fail-closed when the service key or throttle salt is absent. The 
 allows 20 attempts per IP and 6 per IP-and-email in 15 minutes, then blocks for 30 minutes.
 Identifiers are salted SHA-256 hashes; raw IPs and email addresses are not stored in the throttle
 table.
+
+Password recovery is also owner-only and fail-closed. `/notes/forgot-password` applies separate
+five-per-IP and three-per-account hourly limits, looks up the configured owner UUID with the admin
+client, and returns the same public response for a match, mismatch, throttle, or ordinary mail
+delivery failure. The Recovery email carries a bounded `TokenHash` to `/notes/reset-password`.
+The initial GET stores that token in a short-lived, secure, HTTP-only cookie and redirects to a
+clean URL without verifying it. Only the user's same-origin **Continue securely** POST consumes
+the one-time token, preventing ordinary mail preview scanners from invalidating the link.
+
+Successful verification must return the exact configured owner UUID. It creates a ten-minute
+HMAC-SHA-256 recovery grant, domain-separated from the durable throttle hashes and signed with
+`NOTES_RATE_LIMIT_SALT`. A normal owner session without that grant cannot use the reset form.
+After a matching 12–128-character password pair is accepted by Supabase, the grant is deleted,
+all refresh sessions are revoked, and the owner must sign in again. All owner-auth pages are
+`private, no-store`, `noindex`, and `Referrer-Policy: no-referrer`; the service worker never handles
+them.
 
 Public users have no session requirement. Anonymous RLS exposes only snapshots where
 `activated_at IS NOT NULL AND revoked_at IS NULL`. Draft/private/scheduled rows and the mutable
@@ -359,7 +375,8 @@ src/
 │  └─ server/notes/
 │     ├─ supabase.ts                       public/session/admin clients
 │     ├─ auth.ts                           owner, freshness, CSRF helpers
-│     ├─ rate-limit.ts                     durable login throttling
+│     ├─ recovery.ts                       token, grant, password, and redirect validation
+│     ├─ rate-limit.ts                     durable login and recovery throttling
 │     ├─ images.ts                         Sharp decode/re-encode
 │     └─ repository.ts                     owner/public database operations
 └─ routes/
@@ -368,6 +385,8 @@ src/
    │  ├─ [slug]/+page.*                    public metadata, SEO, viewer
    │  ├─ sitemap.xml/+server.ts             note sitemap
    │  ├─ sign-in/+page.*                   owner login
+   │  ├─ forgot-password/+page.*            non-enumerating recovery request
+   │  ├─ reset-password/+page.*             prefetch-safe token confirmation and password update
    │  └─ studio/
    │     ├─ +layout.server.ts               owner gate
    │     ├─ +page.*                         dashboard/actions
@@ -467,6 +486,9 @@ default palm-rejection policy.
 | Method/action      | Path                                                 | Authorization and contract                                                          |
 | ------------------ | ---------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `POST` form        | `/notes/sign-in`                                     | Same-origin, durable throttling, Supabase password login, exact owner UUID          |
+| `POST` form        | `/notes/forgot-password`                             | Same-origin, owner-only mail, generic response, durable IP/account throttling       |
+| `confirm` action   | `/notes/reset-password`                              | Same-origin, one-time recovery TokenHash verification, exact owner UUID             |
+| `update` action    | `/notes/reset-password`                              | Owner recovery grant, matching strong password, global sign-out                     |
 | `create` action    | `/notes/studio`                                      | Owner; creates draft with collision-resistant slug                                  |
 | `duplicate` action | `/notes/studio` or editor                            | Owner; clones document, metadata, and every referenced private image                |
 | `archive` action   | dashboard/editor                                     | Fresh owner session; revokes live/pending snapshots and sets archived               |
@@ -918,7 +940,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
    paste it into the Supabase SQL editor. Do this first because it creates tables, RLS, functions,
    grants, and the private `notes-private` bucket.
 2. In Supabase Auth, create the one email/password owner. Copy the user UUID—not the email—into
-   `NOTES_OWNER_USER_ID`.
+   `NOTES_OWNER_USER_ID`, then disable public email sign-ups.
 3. Seed the allow-list once:
 
    ```sql
@@ -931,9 +953,23 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
    **Integrations → Cron**. Confirm successful rows appear in `cron.job_run_details`.
 5. Confirm the `notes-private` Storage bucket is private, limited to WebP and 2 MiB, and that no
    `notes-public` bucket is public.
-6. Put the environment values in `.env.local`, restart the dev server, sign in at
+6. In **Authentication → URL Configuration**, set the production Site URL to
+   `https://www.suvroghosh.in` and add the exact allowed redirect
+   `https://www.suvroghosh.in/notes/reset-password`. Do not use a production wildcard.
+7. In **Authentication → Email Templates → Reset password**, replace the link with:
+
+   ```html
+   <a href="{{ .SiteURL }}/notes/reset-password?token_hash={{ .TokenHash }}"> Reset password </a>
+   ```
+
+   This server-side TokenHash flow works when the email is opened in a different browser or on a
+   different device. Discard previously generated links and request a fresh one after saving the
+   template.
+
+8. Put the environment values in `.env.local`, restart the dev server, sign in at
    `/notes/sign-in`, and create a draft.
-7. Test upload, cloud save, immediate publish, unpublish, and a scheduled publish a few minutes in
+9. Test the forgot/reset flow, upload, cloud save, immediate publish, unpublish, and a scheduled
+   publish a few minutes in
    the future. Query as anon to prove drafts and pending snapshots are invisible.
 
 ### Vercel setup
@@ -944,8 +980,8 @@ the service key, owner UUID check, or rate-limit salt through `PUBLIC_` variable
 existing CSP and security headers in `svelte.config.js` and `vercel.json`.
 
 After deployment, verify `/notes`, `/notes/sitemap.xml`, a public note’s canonical/OG/JSON-LD,
-studio `no-store/noindex`, public ETags, revoked-image 404, and the service worker’s exclusion of
-protected routes.
+studio and recovery `no-store/noindex`, public ETags, revoked-image 404, the service worker’s
+exclusion of protected routes, and one fresh cross-device password-recovery link.
 
 # 20. Acceptance criteria for each major feature
 

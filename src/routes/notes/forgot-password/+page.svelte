@@ -4,75 +4,71 @@
 	import type { ActionData, PageData } from './$types';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();
+	const confirmationMessage =
+		'If that address belongs to the Notes Studio owner, a password-reset link has been sent.';
 </script>
 
 <SEO
-	title="Owner Sign In | Handwritten Notes"
-	description="Private owner access for the SuvroGhosh.IN handwritten-notes studio."
+	title="Forgot Password | Handwritten Notes"
+	description="Secure password recovery for the private SuvroGhosh.IN Notes Studio."
 	canonicalUrl={undefined}
 	robots="noindex,nofollow,noarchive"
 	schema={null}
 />
 
-<section class="sign-in-shell" aria-labelledby="sign-in-heading">
-	<div class="sign-in-mark" aria-hidden="true">✎</div>
+<section class="auth-shell" aria-labelledby="forgot-password-heading">
+	<div class="auth-mark" aria-hidden="true">✉</div>
 	<p class="eyebrow">Private authoring</p>
-	<h1 id="sign-in-heading">Notes studio</h1>
+	<h1 id="forgot-password-heading">Reset access</h1>
 	<p class="intro">
-		Published notes are public. Creating, editing, organising, and publishing them is restricted to
-		the site owner.
+		Enter the email address for the Notes Studio owner. The response is deliberately private and
+		will not reveal whether an account exists.
 	</p>
 
 	{#if data.configured}
-		{#if data.passwordReset}
-			<p class="form-success" role="status">
-				Your password was changed. Sign in with the new password.
-			</p>
+		{#if form?.sent}
+			<div class="form-success" role="status">
+				<p>{confirmationMessage}</p>
+				<p>The link expires, can be used once, and should only be opened by you.</p>
+			</div>
+		{:else}
+			<form method="POST">
+				<label>
+					<span>Email</span>
+					<input
+						type="email"
+						name="email"
+						value={form?.email ?? ''}
+						autocomplete="email"
+						inputmode="email"
+						required
+						maxlength="320"
+					/>
+				</label>
+				{#if form?.message}
+					<p class="form-error" role="alert">{form.message}</p>
+				{/if}
+				<button type="submit">Send a secure reset link</button>
+			</form>
 		{/if}
-		<form method="POST">
-			<input type="hidden" name="returnTo" value={data.returnTo} />
-			<label>
-				<span>Email</span>
-				<input
-					type="email"
-					name="email"
-					value={form?.email ?? ''}
-					autocomplete="username"
-					required
-					maxlength="320"
-				/>
-			</label>
-			<label>
-				<span>Password</span>
-				<input
-					type="password"
-					name="password"
-					autocomplete="current-password"
-					required
-					maxlength="512"
-				/>
-			</label>
-			{#if form?.message}
-				<p class="form-error" role="alert">{form.message}</p>
-			{/if}
-			<button type="submit">Sign in to the studio</button>
-			<a class="forgot-link" href={resolve('/notes/forgot-password')}>Forgot password?</a>
-		</form>
 	{:else}
 		<div class="setup-needed" role="status">
-			<h2>Backend setup is still required</h2>
+			<h2>Password recovery is not configured</h2>
 			<p>
-				Connect the Supabase project, apply the notes migration, create the single owner account,
-				and add the server environment values listed in the setup guide.
+				The owner must finish the Supabase and server environment setup before a reset email can be
+				requested.
 			</p>
 		</div>
 	{/if}
 
-	<a class="public-link" href={resolve('/notes')}>Return to published notes</a>
+	<nav class="auth-links" aria-label="Password recovery links">
+		<a href={resolve('/notes/sign-in')}>Return to owner sign in</a>
+		<a href={resolve('/notes')}>View published notes</a>
+	</nav>
 </section>
 
 <style>
-	.sign-in-shell {
+	.auth-shell {
 		max-width: 30rem;
 		margin: clamp(2rem, 8vh, 6rem) auto;
 		padding: clamp(1.25rem, 4vw, 2.5rem);
@@ -81,7 +77,7 @@
 		box-shadow: 0 18px 50px rgb(43 36 28 / 10%);
 	}
 
-	.sign-in-mark {
+	.auth-mark {
 		width: 3.2rem;
 		height: 3.2rem;
 		display: grid;
@@ -90,7 +86,7 @@
 		border-radius: 50%;
 		color: var(--accent);
 		font-family: var(--font-serif);
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 	}
 
 	.eyebrow {
@@ -152,30 +148,30 @@
 		cursor: pointer;
 	}
 
-	.form-error {
+	.form-error,
+	.form-success {
 		margin: 0;
 		border-left: 3px solid var(--destructive);
 		background: color-mix(in oklab, var(--destructive) 8%, transparent);
-		padding: 0.65rem;
+		padding: 0.75rem;
 		color: var(--destructive);
-		font-size: 0.8rem;
-	}
-
-	.form-success {
-		margin: 0 0 1rem;
-		border-left: 3px solid var(--accent);
-		background: color-mix(in oklab, var(--accent) 8%, transparent);
-		padding: 0.65rem;
-		color: var(--ink-muted);
-		font-size: 0.8rem;
+		font-size: 0.82rem;
 		line-height: 1.5;
 	}
 
-	.forgot-link {
-		justify-self: start;
+	.form-success {
+		border-left-color: var(--accent);
+		background: color-mix(in oklab, var(--accent) 8%, transparent);
 		color: var(--ink-muted);
-		font-size: 0.78rem;
-		text-underline-offset: 0.25em;
+	}
+
+	.form-success p {
+		margin: 0;
+	}
+
+	.form-success p + p {
+		margin-top: 0.45rem;
+		font-size: 0.76rem;
 	}
 
 	.setup-needed {
@@ -196,9 +192,14 @@
 		line-height: 1.55;
 	}
 
-	.public-link {
-		display: inline-block;
+	.auth-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.65rem 1rem;
 		margin-top: 1.4rem;
+	}
+
+	.auth-links a {
 		color: var(--ink-muted);
 		font-size: 0.8rem;
 		text-underline-offset: 0.25em;

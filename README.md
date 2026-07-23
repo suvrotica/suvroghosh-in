@@ -91,6 +91,18 @@ Then apply `supabase/migrations/202607230001_handwritten_notes.sql`, create the 
 owner, insert that immutable user UUID into `note_owners`, and install the one-minute publication
 job from `supabase/cron.sql`. Do not expose the service-role key to browser code.
 
+For hosted password recovery, set the Supabase Auth **Site URL** to
+`https://www.suvroghosh.in`, allow the exact redirect
+`https://www.suvroghosh.in/notes/reset-password`, and change the Recovery email template link to:
+
+```html
+<a href="{{ .SiteURL }}/notes/reset-password?token_hash={{ .TokenHash }}">Reset password</a>
+```
+
+The app deliberately waits for a same-origin **Continue securely** form before consuming the
+one-time token, so email link previews cannot silently invalidate it. Request a new email after
+changing the template; links generated from the old localhost template will not work.
+
 ## Mojo notebooks
 
 Notebook sources live in `src/lib/notebooks`. Install the native Jupyter rendering and authoring

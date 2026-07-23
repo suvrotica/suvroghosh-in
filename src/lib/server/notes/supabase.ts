@@ -14,13 +14,15 @@ export function createNotesServerClient(event: RequestEvent): SupabaseClient | n
 	return createServerClient(url, key, {
 		cookies: {
 			getAll: () => event.cookies.getAll(),
-			setAll: (cookies) => {
+			setAll: (cookies, headers) => {
 				for (const cookie of cookies) {
 					event.cookies.set(cookie.name, cookie.value, {
 						...cookie.options,
 						path: cookie.options.path ?? '/'
 					});
 				}
+				event.locals.supabaseResponseHeaders ??= {};
+				Object.assign(event.locals.supabaseResponseHeaders, headers);
 			}
 		},
 		cookieOptions: {

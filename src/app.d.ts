@@ -7,6 +7,7 @@ declare global {
 			supabase: import('@supabase/supabase-js').SupabaseClient | null;
 			user: import('@supabase/supabase-js').User | null;
 			requestId: string;
+			supabaseResponseHeaders: Record<string, string>;
 		}
 		// interface PageData {}
 		// interface PageState {}

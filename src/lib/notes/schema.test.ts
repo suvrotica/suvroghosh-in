@@ -158,9 +158,19 @@ describe('note schemas', () => {
 		).toBe(true);
 	});
 
-	it('reserves owner route slugs', () => {
-		const base = metadata({ title: 'Studio collision', slug: 'studio' });
-		expect(noteMetadataInputSchema.safeParse(base).success).toBe(false);
-		expect(noteMetadataInputSchema.safeParse({ ...base, slug: 'studio-notes' }).success).toBe(true);
+	it.each(['studio', 'sign-in', 'forgot-password', 'reset-password', 'auth', 'sitemap', 'rss'])(
+		'reserves the %s route slug',
+		(slug) => {
+			expect(
+				noteMetadataInputSchema.safeParse(metadata({ title: 'Route collision', slug })).success
+			).toBe(false);
+		}
+	);
+
+	it('accepts a non-reserved slug containing a route word', () => {
+		expect(
+			noteMetadataInputSchema.safeParse(metadata({ title: 'Studio notes', slug: 'studio-notes' }))
+				.success
+		).toBe(true);
 	});
 });

@@ -52,6 +52,38 @@ export async function consumeOwnerSignInLimit(event: RequestEvent, email: string
 	};
 }
 
+export async function consumeOwnerRecoveryLimit(event: RequestEvent, email: string) {
+	const client = createNotesAdminClient();
+	const address = clientAddress(event);
+	const normalizedEmail = email.trim().toLowerCase();
+	const ipKey = await hashKey(`recovery-ip:${address}`);
+	const accountKey = await hashKey(`recovery-account:${normalizedEmail}`);
+	if (!client || !ipKey || !accountKey) {
+		return { configured: false, allowed: false };
+	}
+	const [ip, account] = await Promise.all([
+		client.rpc('consume_note_auth_rate_limit', {
+			p_key_hash: ipKey,
+			p_limit: 5,
+			p_window_seconds: 3600,
+			p_block_seconds: 3600
+		}),
+		client.rpc('consume_note_auth_rate_limit', {
+			p_key_hash: accountKey,
+			p_limit: 3,
+			p_window_seconds: 3600,
+			p_block_seconds: 3600
+		})
+	]);
+	if (ip.error || account.error) {
+		return { configured: false, allowed: false };
+	}
+	return {
+		configured: true,
+		allowed: ip.data === true && account.data === true
+	};
+}
+
 export async function clearSuccessfulSignInLimit(accountKey: string | null) {
 	if (!accountKey) return;
 	await createNotesAdminClient()?.rpc('clear_note_auth_rate_limit', {

@@ -2,24 +2,24 @@ import { env } from '$env/dynamic/private';
 import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 import { assertSameOrigin, isConfiguredOwner } from '$lib/server/notes/auth';
+import { safeStudioReturnTo } from '$lib/server/notes/recovery';
 import { createNotesServerClient, notesBackendConfigured } from '$lib/server/notes/supabase';
 import { clearSuccessfulSignInLimit, consumeOwnerSignInLimit } from '$lib/server/notes/rate-limit';
 
-function safeReturnTo(value: FormDataEntryValue | string | null) {
-	const path = typeof value === 'string' ? value : '';
-	return path.startsWith('/notes/studio') && !path.startsWith('//') ? path : '/notes/studio';
-}
-
 export const load: PageServerLoad = ({ locals, url }) => {
 	if (isConfiguredOwner(locals.user?.id))
-		throw redirect(303, safeReturnTo(url.searchParams.get('returnTo')));
+		throw redirect(303, safeStudioReturnTo(url.searchParams.get('returnTo')));
 	return {
 		configured:
 			notesBackendConfigured() &&
 			Boolean(
-				env.NOTES_OWNER_USER_ID && env.SUPABASE_SERVICE_ROLE_KEY && env.NOTES_RATE_LIMIT_SALT
+				env.NOTES_OWNER_USER_ID &&
+				env.SUPABASE_SERVICE_ROLE_KEY &&
+				env.NOTES_RATE_LIMIT_SALT &&
+				env.NOTES_RATE_LIMIT_SALT.length >= 32
 			),
-		returnTo: safeReturnTo(url.searchParams.get('returnTo'))
+		returnTo: safeStudioReturnTo(url.searchParams.get('returnTo')),
+		passwordReset: url.searchParams.get('passwordReset') === '1'
 	};
 };
 
@@ -37,7 +37,7 @@ export const actions: Actions = {
 			.trim()
 			.slice(0, 320);
 		const password = String(form.get('password') ?? '').slice(0, 512);
-		const returnTo = safeReturnTo(form.get('returnTo'));
+		const returnTo = safeStudioReturnTo(form.get('returnTo'));
 		if (!email || !password) {
 			return fail(400, { message: 'Enter the owner email address and password.', email });
 		}
