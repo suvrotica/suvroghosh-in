@@ -6,12 +6,12 @@ category: "Neuroscience"
 tags: ["Mental Life","Brain","Neurons","Mind","Perception","Experience","Woo","Mental","Neuron","Anesthesia"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-mind-as-emergence-not-magic.jpg"
+thumbnail: "/thumbnail/art-mind-as-emergence-not-magic.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-mind-as-emergence-not-magic.jpg" />
+<Pi src="/thumbnail/art-mind-as-emergence-not-magic.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

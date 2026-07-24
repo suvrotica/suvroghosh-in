@@ -3846,6 +3846,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
+			"src": "/thumbnail/art-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
+			"bytes": 196857,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mind-as-emergence-not-magic.jpg",
+			"src": "/thumbnail/art-mind-as-emergence-not-magic.jpg",
+			"bytes": 179241,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-mojo-the-python-killer.jpg",
 			"src": "/thumbnail/art-mojo-the-python-killer.jpg",
 			"bytes": 123977,

@@ -6,12 +6,12 @@ category: "natural history"
 tags: ["Bed Bugs","Host Plants","Insects","Arachnids","Termites","Spiders","Ants","Moths","Wasps","Spider"]
 published: true
 color: "green"
-thumbnail: "/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg"
+thumbnail: "/thumbnail/art-large-common-insects-and-arachnids-in-urban-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg" />
+<Pi src="/thumbnail/art-large-common-insects-and-arachnids-in-urban-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

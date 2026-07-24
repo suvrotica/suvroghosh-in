@@ -9913,6 +9913,38 @@
       "sourceHash": "4e3158b6f44512e6c17ae530ef4c4b55aa3b7cdcb66e885c16da0b9d60011466",
       "width": 1200
     },
+    "static/thumbnail/art-large-common-insects-and-arachnids-in-urban-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 196857,
+      "outputHash": "46d5c3fad5a37d522744238fd0397d32ce1ad3853de965c242486622a293f096",
+      "psnrDb": 36.52,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 230149,
+      "sourceHash": "08f94b5f18741fbb88dcab37a6ba413ab80849272d57fd66720f020ee554a610",
+      "width": 1200
+    },
+    "static/thumbnail/art-mind-as-emergence-not-magic.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 179241,
+      "outputHash": "5a2fe02648a635dbad9de048a8795a21736efa2391fafb913b97a2f5720d21ba",
+      "psnrDb": 36.35,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 214377,
+      "sourceHash": "a2edab1749f19f301d2656e9f5d852db6c3deb91d7393c845edf71b3ef5c0110",
+      "width": 1200
+    },
     "static/thumbnail/art-mojo-the-python-killer.jpg": {
       "format": "JPEG",
       "height": 800,
