@@ -6,12 +6,12 @@ category: "Psychology"
 tags: ["Adler","Disliked","Task","Call","Approval","Keep","Silence","Society","Nervous","Check"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-courage-to-be-disliked-in-calcutta.jpg"
+thumbnail: "/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-courage-to-be-disliked-in-calcutta.jpg" />
+<Pi src="/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg" />
 
 
 

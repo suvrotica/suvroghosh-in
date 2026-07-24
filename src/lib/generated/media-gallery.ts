@@ -3727,6 +3727,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bengal-changed-color-not-character.jpg",
+			"src": "/thumbnail/art-bengal-changed-color-not-character.jpg",
+			"bytes": 260463,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-calcutta-carbohydrate-problem.jpg",
 			"src": "/thumbnail/art-calcutta-carbohydrate-problem.jpg",
 			"bytes": 245698,
@@ -3758,6 +3765,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-commercial-hifi-sounds-for-ordinary-ears.jpg",
 			"src": "/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg",
 			"bytes": 181608,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-courage-to-be-disliked-in-calcutta.jpg",
+			"src": "/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg",
+			"bytes": 158441,
 			"width": 1200,
 			"height": 800
 		},

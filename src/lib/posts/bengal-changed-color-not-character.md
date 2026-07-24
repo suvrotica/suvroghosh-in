@@ -6,12 +6,12 @@ category: "Politics and Society"
 tags: ["Chief Minister","Dead Voters","Electoral Rolls","Poor Man","TMC","Rolls","Democracy","Voters","Voter","Bengal"]
 published: true
 color: "#78350f"
-thumbnail: "/thumbnail/safe-bengal-changed-color-not-character.jpg"
+thumbnail: "/thumbnail/art-bengal-changed-color-not-character.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-bengal-changed-color-not-character.jpg" />
+<Pi src="/thumbnail/art-bengal-changed-color-not-character.jpg" />
 
 <Vid 
   src="music/বাকির_খাতা (1).mp4" 

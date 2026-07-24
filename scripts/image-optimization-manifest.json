@@ -9641,6 +9641,22 @@
       "sourceHash": "f32f17696f65e89b9416c8f4945c16cab9a10269073728691815407b92274032",
       "width": 1200
     },
+    "static/thumbnail/art-bengal-changed-color-not-character.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 260463,
+      "outputHash": "2adc342b8e3ce8c19ec79a2f89a2b6119205c05a05c2afaa93968e45e2be7340",
+      "psnrDb": 36.73,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 297491,
+      "sourceHash": "79d8f228e994f3e802c732de6e6189a796621130846ef26cab161d66c5dd3520",
+      "width": 1200
+    },
     "static/thumbnail/art-calcutta-carbohydrate-problem.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -9719,6 +9735,22 @@
       "resized": false,
       "sourceBytes": 222465,
       "sourceHash": "689f3ed7b9dd5c8a6a45978dbc3d67ae770d285c8e4074f369e4a8a0b6a913a6",
+      "width": 1200
+    },
+    "static/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 158441,
+      "outputHash": "d439303bca9ee01381b426f1e31a0de026c14e7943ff2280ac28ffec19403e83",
+      "psnrDb": 38.32,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 189425,
+      "sourceHash": "6c611c483c4c41af6ed9addc60b262593761750c71b505fffc27613ce1491f72",
       "width": 1200
     },
     "static/thumbnail/art-depression-as-mathematics.jpg": {
