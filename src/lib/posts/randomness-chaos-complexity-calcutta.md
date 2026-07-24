@@ -6,12 +6,12 @@ category: "Mental Models"
 tags: ["Health Level Seven","Complex","Healthcare","Data","System","Complexity","Myths","Causality","Incentives","Uncertainty"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-randomness-chaos-complexity-calcutta.jpg"
+thumbnail: "/thumbnail/art-randomness-chaos-complexity-calcutta.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-randomness-chaos-complexity-calcutta.jpg" />
+<Pi src="/thumbnail/art-randomness-chaos-complexity-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

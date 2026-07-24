@@ -9721,6 +9721,22 @@
       "sourceHash": "689f3ed7b9dd5c8a6a45978dbc3d67ae770d285c8e4074f369e4a8a0b6a913a6",
       "width": 1200
     },
+    "static/thumbnail/art-depression-as-mathematics.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 142578,
+      "outputHash": "071aa6b559ab549f83d0b9f89935978bbf55d9f0f435ade2d3f82e8bd697a8a0",
+      "psnrDb": 38.68,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 171894,
+      "sourceHash": "e00740282373cc6797a58324d38f61c08e856de593b5372577cc440e06df4f90",
+      "width": 1200
+    },
     "static/thumbnail/art-end-of-history-not-end-of-trouble.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -9975,6 +9991,22 @@
       "resized": false,
       "sourceBytes": 155014,
       "sourceHash": "3bbab1f109b2d7e53350de825f3c65b7831b81493c5de7fd52adcee4a2b0d813",
+      "width": 1200
+    },
+    "static/thumbnail/art-randomness-chaos-complexity-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 235746,
+      "outputHash": "4dfedf973353b379b7fdec62ef63db48dd5fe9fe3cb11f12648c85fb95790223",
+      "psnrDb": 36.47,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 273642,
+      "sourceHash": "e12bc6efd2c5dc573df1a4c39ecfdc7f02e4f83f4909691eacc7506dfc45978d",
       "width": 1200
     },
     "static/thumbnail/art-the-new-mantra.jpg": {

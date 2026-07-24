@@ -3762,6 +3762,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-depression-as-mathematics.jpg",
+			"src": "/thumbnail/art-depression-as-mathematics.jpg",
+			"bytes": 142578,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-end-of-history-not-end-of-trouble.jpg",
 			"src": "/thumbnail/art-end-of-history-not-end-of-trouble.jpg",
 			"bytes": 186772,
@@ -3870,6 +3877,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-propofol-dream-recall-nightmares.jpg",
 			"src": "/thumbnail/art-propofol-dream-recall-nightmares.jpg",
 			"bytes": 108822,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-randomness-chaos-complexity-calcutta.jpg",
+			"src": "/thumbnail/art-randomness-chaos-complexity-calcutta.jpg",
+			"bytes": 235746,
 			"width": 1200,
 			"height": 800
 		},

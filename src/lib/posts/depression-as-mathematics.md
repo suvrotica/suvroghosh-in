@@ -6,12 +6,12 @@ category: "Mental Health Systems"
 tags: ["Unipolar Depression","Sleep Loss","Bipolar Disorder","Depressive Attractor","Dynamical System","Activation","Unipolar","Mood","Depression","Eta"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-depression-as-mathematics.jpg"
+thumbnail: "/thumbnail/art-depression-as-mathematics.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-depression-as-mathematics.jpg" />
+<Pi src="/thumbnail/art-depression-as-mathematics.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
