@@ -10,6 +10,8 @@
 		nextRoomName?: string | null;
 		pointerLocked: boolean;
 		pointerLockAvailable: boolean;
+		fullscreenActive?: boolean;
+		fullscreenAvailable?: boolean;
 		onPrevious: () => void;
 		onNext: () => void;
 		onPreviousRoom?: () => void;
@@ -17,6 +19,7 @@
 		onDetails: () => void;
 		onReset: () => void;
 		onPointerLock: () => void;
+		onFullscreen?: () => void;
 		onExit: () => void;
 		onTouchMove: (strafe: number, forward: number) => void;
 	};
@@ -30,6 +33,8 @@
 		nextRoomName = null,
 		pointerLocked,
 		pointerLockAvailable,
+		fullscreenActive = false,
+		fullscreenAvailable = false,
 		onPrevious,
 		onNext,
 		onPreviousRoom = () => {},
@@ -37,6 +42,7 @@
 		onDetails,
 		onReset,
 		onPointerLock,
+		onFullscreen = () => {},
 		onExit,
 		onTouchMove
 	}: Props = $props();
@@ -174,6 +180,17 @@
 				title="Pointer lock follows your mouse and is released with Escape"
 			>
 				{pointerLocked ? 'Release look' : 'Mouse look'}
+			</button>
+		{/if}
+		{#if fullscreenAvailable}
+			<button
+				type="button"
+				onclick={onFullscreen}
+				aria-pressed={fullscreenActive}
+				aria-label={fullscreenActive ? 'Exit full screen' : 'Enter full screen'}
+				title={fullscreenActive ? 'Exit full screen' : 'Open the gallery full screen'}
+			>
+				{fullscreenActive ? 'Exit full screen' : 'Full screen'}
 			</button>
 		{/if}
 		<button type="button" class="exit-button" onclick={onExit}>Return to collection</button>

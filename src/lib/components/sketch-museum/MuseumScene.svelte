@@ -95,6 +95,8 @@
 	let currentSlug = $state<string | null>(null);
 	let pointerLocked = $state(false);
 	let pointerLockAvailable = $state(false);
+	let fullscreenActive = $state(false);
+	let fullscreenAvailable = $state(false);
 	let initialised = $state(false);
 	let currentArtwork = $derived(
 		currentSlug ? (artworks.find((artwork) => artwork.slug === currentSlug) ?? null) : null
@@ -212,7 +214,7 @@
 	const fixtureMaterial = new MeshStandardMaterial({
 		color: '#6d5434',
 		emissive: '#c89045',
-		emissiveIntensity: 0.42,
+		emissiveIntensity: 0.28,
 		roughness: 0.45,
 		metalness: 0.55
 	});
@@ -309,11 +311,11 @@
 		group.add(ceilingFixture);
 		const roomLight = new PointLight(
 			'#ffe5b9',
-			quality === 'low' ? 24 : 36,
+			quality === 'low' ? 14 : 20,
 			Math.max(room.width, room.depth),
 			1.45
 		);
-		roomLight.position.y = room.height - 0.72;
+		roomLight.position.y = room.height - 0.95;
 		group.add(roomLight);
 
 		const navigationMeshes: Mesh[] = [];
@@ -724,8 +726,35 @@
 		void canvas.requestPointerLock();
 	}
 
-	function exitMuseum() {
+	function handleFullscreenChange() {
+		fullscreenActive = document.fullscreenElement === shell;
+		pressedKeys.clear();
+		requestAnimationFrame(sizeRenderer);
+	}
+
+	async function toggleFullscreen() {
+		if (!fullscreenAvailable) return;
+		try {
+			if (document.fullscreenElement === shell) {
+				await document.exitFullscreen();
+			} else {
+				if (document.fullscreenElement) await document.exitFullscreen();
+				await shell.requestFullscreen();
+			}
+		} catch (error) {
+			console.warn('Sketch Museum could not change full-screen mode.', error);
+		}
+	}
+
+	async function exitMuseum() {
 		if (document.pointerLockElement === canvas) document.exitPointerLock();
+		if (document.fullscreenElement === shell) {
+			try {
+				await document.exitFullscreen();
+			} catch (error) {
+				console.warn('Sketch Museum could not exit full-screen mode.', error);
+			}
+		}
 		onExit();
 	}
 
@@ -1013,7 +1042,7 @@
 			renderer.setPixelRatio(renderPixelDensity());
 			renderer.outputColorSpace = SRGBColorSpace;
 			renderer.toneMapping = ACESFilmicToneMapping;
-			renderer.toneMappingExposure = 1.08;
+			renderer.toneMappingExposure = 0.92;
 			renderer.shadowMap.enabled = quality !== 'low';
 			renderer.shadowMap.type = PCFSoftShadowMap;
 
@@ -1023,10 +1052,15 @@
 			camera = new PerspectiveCamera(58, 1, 0.08, 90);
 			camera.position.set(...layout.startPosition);
 			activeRoomId = layout.rooms[0]?.id ?? '';
+			fullscreenAvailable =
+				document.fullscreenEnabled &&
+				typeof shell.requestFullscreen === 'function' &&
+				typeof document.exitFullscreen === 'function';
+			handleFullscreenChange();
 
-			scene.add(new HemisphereLight('#ffe9c8', '#3b2418', quality === 'low' ? 1.45 : 1.12));
-			scene.add(new AmbientLight('#fff1d8', quality === 'low' ? 0.92 : 0.68));
-			const directional = new DirectionalLight('#ffe4b8', quality === 'high' ? 0.88 : 0.64);
+			scene.add(new HemisphereLight('#ffe9c8', '#3b2418', quality === 'low' ? 0.9 : 0.72));
+			scene.add(new AmbientLight('#fff1d8', quality === 'low' ? 0.42 : 0.3));
+			const directional = new DirectionalLight('#ffe4b8', quality === 'high' ? 0.56 : 0.4);
 			directional.position.set(-4, 6, 3);
 			directional.castShadow = quality === 'high';
 			scene.add(directional);
@@ -1034,7 +1068,7 @@
 			for (let index = 0; index < (quality === 'low' ? 1 : 3); index += 1) {
 				const spot = new SpotLight(
 					'#ffd69a',
-					quality === 'high' ? 92 : quality === 'medium' ? 78 : 58,
+					quality === 'high' ? 76 : quality === 'medium' ? 64 : 50,
 					14,
 					0.48,
 					0.76,
@@ -1088,6 +1122,7 @@
 			window.addEventListener('keyup', handleKeyUp);
 			document.addEventListener('visibilitychange', handleVisibility);
 			document.addEventListener('pointerlockchange', handlePointerLockChange);
+			document.addEventListener('fullscreenchange', handleFullscreenChange);
 			canvas.addEventListener('pointerdown', handlePointerDown);
 			canvas.addEventListener('pointermove', handlePointerMove);
 			canvas.addEventListener('pointerup', handlePointerUp);
@@ -1117,12 +1152,14 @@
 		window.removeEventListener('keyup', handleKeyUp);
 		document.removeEventListener('visibilitychange', handleVisibility);
 		document.removeEventListener('pointerlockchange', handlePointerLockChange);
+		document.removeEventListener('fullscreenchange', handleFullscreenChange);
 		canvas?.removeEventListener('pointerdown', handlePointerDown);
 		canvas?.removeEventListener('pointermove', handlePointerMove);
 		canvas?.removeEventListener('pointerup', handlePointerUp);
 		canvas?.removeEventListener('pointercancel', handlePointerCancel);
 		canvas?.removeEventListener('webglcontextlost', handleContextLost);
 		if (document.pointerLockElement === canvas) document.exitPointerLock();
+		if (document.fullscreenElement === shell) void document.exitFullscreen();
 		for (const runtime of runtimes.values()) releaseTexture(runtime);
 		if (scene) disposeObjectTree(scene);
 		lightPoolTexture?.dispose();
@@ -1183,6 +1220,8 @@
 		nextRoomName={nextRoom?.name ?? null}
 		{pointerLocked}
 		{pointerLockAvailable}
+		{fullscreenActive}
+		{fullscreenAvailable}
 		onPreviousRoom={() => previousRoom && navigateToRoom(previousRoom.id)}
 		onNextRoom={() => nextRoom && navigateToRoom(nextRoom.id)}
 		onPrevious={() => selectNearest(-1)}
@@ -1190,6 +1229,7 @@
 		onDetails={openDetails}
 		onReset={resetPosition}
 		onPointerLock={requestPointerLook}
+		onFullscreen={toggleFullscreen}
 		onExit={exitMuseum}
 		onTouchMove={updateTouchMove}
 	/>
@@ -1208,6 +1248,17 @@
 			0 1.4rem 4rem rgb(24 17 12 / 28%),
 			inset 0 0 0 1px rgb(220 196 151 / 22%);
 		isolation: isolate;
+	}
+
+	.scene-shell:fullscreen {
+		width: 100vw;
+		height: 100dvh;
+		min-height: 0;
+		border-radius: 0;
+	}
+
+	.scene-shell:fullscreen::backdrop {
+		background: #19130f;
 	}
 
 	canvas {

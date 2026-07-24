@@ -4,6 +4,2661 @@ import type { SketchArtwork } from '$lib/sketches/types';
 
 export const sketchManifest = [
 	{
+		"slug": "wide-eyed-creature-face",
+		"title": "Wide-Eyed Creature Face",
+		"description": "A creature-like face has bulging blue eyes, pointed ears, pink facial hair, and a dark tapering neck.",
+		"alt": "A creature-like face has bulging blue eyes, pointed ears, pink facial hair, and a dark tapering neck.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/00f8f7c6-4412-4ccf-8501-abbe11c8ea77.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 280567
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/wide-eyed-creature-face/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 59952
+			},
+			"preview": {
+				"src": "/sketch/_generated/wide-eyed-creature-face/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 163962
+			},
+			"museum": {
+				"src": "/sketch/_generated/wide-eyed-creature-face/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 331980
+			},
+			"detail": {
+				"src": "/sketch/_generated/wide-eyed-creature-face/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 102624
+			}
+		}
+	},
+	{
+		"slug": "wrinkled-profile",
+		"title": "Wrinkled Profile",
+		"description": "A dense black line drawing shows a deeply wrinkled head in profile.",
+		"alt": "A dense black line drawing shows a deeply wrinkled head in profile.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/01e32d26-0e5e-43fb-bea3-71117cc16bb6.png",
+			"width": 761,
+			"height": 1800,
+			"bytes": 1962827
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/wrinkled-profile/thumbnail.webp",
+				"width": 203,
+				"height": 480,
+				"bytes": 60950
+			},
+			"preview": {
+				"src": "/sketch/_generated/wrinkled-profile/preview.webp",
+				"width": 406,
+				"height": 960,
+				"bytes": 240706
+			},
+			"museum": {
+				"src": "/sketch/_generated/wrinkled-profile/museum.webp",
+				"width": 676,
+				"height": 1600,
+				"bytes": 614642
+			},
+			"detail": {
+				"src": "/sketch/_generated/wrinkled-profile/detail.webp",
+				"width": 761,
+				"height": 1800,
+				"bytes": 742942
+			}
+		}
+	},
+	{
+		"slug": "yellow-haired-profile-with-tongue",
+		"title": "Yellow-Haired Profile with Tongue",
+		"description": "A flat-colour side profile with bright yellow hair extends a red tongue against a green background.",
+		"alt": "A flat-colour side profile with bright yellow hair extends a red tongue against a green background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/04b304de-b579-49e6-8ec8-f6fbaddb6421.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 176334
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/yellow-haired-profile-with-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 23944
+			},
+			"preview": {
+				"src": "/sketch/_generated/yellow-haired-profile-with-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 56034
+			},
+			"museum": {
+				"src": "/sketch/_generated/yellow-haired-profile-with-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 113306
+			},
+			"detail": {
+				"src": "/sketch/_generated/yellow-haired-profile-with-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 57486
+			}
+		}
+	},
+	{
+		"slug": "two-overlapping-faces",
+		"title": "Two Overlapping Faces",
+		"description": "Two black line faces overlap vertically on a white field.",
+		"alt": "Two black line faces overlap vertically on a white field.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/04ea7ac9-6f98-4b2f-aa4a-0855d5e9f4be.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 356805
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/two-overlapping-faces/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 24202
+			},
+			"preview": {
+				"src": "/sketch/_generated/two-overlapping-faces/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 60814
+			},
+			"museum": {
+				"src": "/sketch/_generated/two-overlapping-faces/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 114460
+			},
+			"detail": {
+				"src": "/sketch/_generated/two-overlapping-faces/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 114022
+			}
+		}
+	},
+	{
+		"slug": "shouting-man-in-a-suit",
+		"title": "Shouting Man in a Suit",
+		"description": "A black-and-white side profile shows a suited man throwing his head back with his mouth open.",
+		"alt": "A black-and-white side profile shows a suited man throwing his head back with his mouth open.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/04f0b892-57a3-4950-967a-98a3e992c036.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 413925
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/shouting-man-in-a-suit/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 26342
+			},
+			"preview": {
+				"src": "/sketch/_generated/shouting-man-in-a-suit/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 65756
+			},
+			"museum": {
+				"src": "/sketch/_generated/shouting-man-in-a-suit/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 132564
+			},
+			"detail": {
+				"src": "/sketch/_generated/shouting-man-in-a-suit/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 145550
+			}
+		}
+	},
+	{
+		"slug": "face-and-raised-hand",
+		"title": "Face and Raised Hand",
+		"description": "A black-and-white profile fills the foreground while another face and an angular raised hand appear behind it.",
+		"alt": "A black-and-white profile fills the foreground while another face and an angular raised hand appear behind it.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/04fc41cd-140e-4c5c-a5f1-1e22d83160af.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 474332
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/face-and-raised-hand/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 35862
+			},
+			"preview": {
+				"src": "/sketch/_generated/face-and-raised-hand/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 88658
+			},
+			"museum": {
+				"src": "/sketch/_generated/face-and-raised-hand/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 163742
+			},
+			"detail": {
+				"src": "/sketch/_generated/face-and-raised-hand/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 159084
+			}
+		}
+	},
+	{
+		"slug": "bald-profile-with-goatee",
+		"title": "Bald Profile with Goatee",
+		"description": "A bald man with a dark goatee is shown in side profile against an orange background.",
+		"alt": "A bald man with a dark goatee is shown in side profile against an orange background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0a111213-734f-43fc-99e5-e920586d1fb5.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 134972
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/bald-profile-with-goatee/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 25264
+			},
+			"preview": {
+				"src": "/sketch/_generated/bald-profile-with-goatee/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 59622
+			},
+			"museum": {
+				"src": "/sketch/_generated/bald-profile-with-goatee/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 98516
+			},
+			"detail": {
+				"src": "/sketch/_generated/bald-profile-with-goatee/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 44356
+			}
+		}
+	},
+	{
+		"slug": "seated-man-before-buildings",
+		"title": "Seated Man Before Buildings",
+		"description": "A seated man gestures in front of a dense group of buildings topped by a small sign reading GOD.",
+		"alt": "A seated man gestures in front of a dense group of buildings topped by a small sign reading GOD.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/0b117555-9ba5-4946-a41f-347818ab3198.png",
+			"width": 600,
+			"height": 900,
+			"bytes": 409109
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/seated-man-before-buildings/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 62056
+			},
+			"preview": {
+				"src": "/sketch/_generated/seated-man-before-buildings/preview.webp",
+				"width": 600,
+				"height": 900,
+				"bytes": 134800
+			},
+			"museum": {
+				"src": "/sketch/_generated/seated-man-before-buildings/museum.webp",
+				"width": 600,
+				"height": 900,
+				"bytes": 134800
+			},
+			"detail": {
+				"src": "/sketch/_generated/seated-man-before-buildings/detail.webp",
+				"width": 600,
+				"height": 900,
+				"bytes": 134800
+			}
+		}
+	},
+	{
+		"slug": "winged-black-figure",
+		"title": "Winged Black Figure",
+		"description": "A tall curved black figure with yellow edging and red textured wings stands against blue.",
+		"alt": "A tall curved black figure with yellow edging and red textured wings stands against blue.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0b62d596-1c81-4264-a2f8-a62eb5e19eb0.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 725785
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/winged-black-figure/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 43898
+			},
+			"preview": {
+				"src": "/sketch/_generated/winged-black-figure/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 132248
+			},
+			"museum": {
+				"src": "/sketch/_generated/winged-black-figure/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 340762
+			},
+			"detail": {
+				"src": "/sketch/_generated/winged-black-figure/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 392622
+			}
+		}
+	},
+	{
+		"slug": "grinning-profile-in-red-cap",
+		"title": "Grinning Profile in Red Cap",
+		"description": "A dark-faced figure in a red cap and green shirt grins upward against a slate background.",
+		"alt": "A dark-faced figure in a red cap and green shirt grins upward against a slate background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0bd44256-4154-4278-9d22-e84c37f49eeb.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 1943208
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/grinning-profile-in-red-cap/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 102952
+			},
+			"preview": {
+				"src": "/sketch/_generated/grinning-profile-in-red-cap/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 330790
+			},
+			"museum": {
+				"src": "/sketch/_generated/grinning-profile-in-red-cap/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 769762
+			},
+			"detail": {
+				"src": "/sketch/_generated/grinning-profile-in-red-cap/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 911074
+			}
+		}
+	},
+	{
+		"slug": "tall-haired-bearded-profile",
+		"title": "Tall-Haired Bearded Profile",
+		"description": "A stark black-and-white profile has a tall block of hair and a large dark beard.",
+		"alt": "A stark black-and-white profile has a tall block of hair and a large dark beard.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/0c7854fc-2585-4705-9ce5-fcaccb19216d.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 255918
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/tall-haired-bearded-profile/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 17962
+			},
+			"preview": {
+				"src": "/sketch/_generated/tall-haired-bearded-profile/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 42782
+			},
+			"museum": {
+				"src": "/sketch/_generated/tall-haired-bearded-profile/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 79112
+			},
+			"detail": {
+				"src": "/sketch/_generated/tall-haired-bearded-profile/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 82106
+			}
+		}
+	},
+	{
+		"slug": "man-holding-a-blue-cup",
+		"title": "Man Holding a Blue Cup",
+		"description": "A seated black-clad man holds a small blue cup against divided orange and blue fields.",
+		"alt": "A seated black-clad man holds a small blue cup against divided orange and blue fields.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0c7a35e9-e377-43db-b859-9a1b7a55bdef.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 268802
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/man-holding-a-blue-cup/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 37862
+			},
+			"preview": {
+				"src": "/sketch/_generated/man-holding-a-blue-cup/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 88244
+			},
+			"museum": {
+				"src": "/sketch/_generated/man-holding-a-blue-cup/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 159082
+			},
+			"detail": {
+				"src": "/sketch/_generated/man-holding-a-blue-cup/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 88546
+			}
+		}
+	},
+	{
+		"slug": "giant-pink-tongue",
+		"title": "Giant Pink Tongue",
+		"description": "A close-up face opens its mouth around a large curling pink tongue on a turquoise ground.",
+		"alt": "A close-up face opens its mouth around a large curling pink tongue on a turquoise ground.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0c8d24b5-5503-423e-a7c2-9c0450a3f911.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 222513
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/giant-pink-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 29002
+			},
+			"preview": {
+				"src": "/sketch/_generated/giant-pink-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 70124
+			},
+			"museum": {
+				"src": "/sketch/_generated/giant-pink-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 128950
+			},
+			"detail": {
+				"src": "/sketch/_generated/giant-pink-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 74576
+			}
+		}
+	},
+	{
+		"slug": "large-eyed-creature-head",
+		"title": "Large-Eyed Creature Head",
+		"description": "A finely textured line drawing shows a creature head with a huge round eye and open jaws.",
+		"alt": "A finely textured line drawing shows a creature head with a huge round eye and open jaws.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/0ceb1033-726a-499e-a5b8-cec3abc0d80a.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 596308
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/large-eyed-creature-head/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 39218
+			},
+			"preview": {
+				"src": "/sketch/_generated/large-eyed-creature-head/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 128058
+			},
+			"museum": {
+				"src": "/sketch/_generated/large-eyed-creature-head/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 292076
+			},
+			"detail": {
+				"src": "/sketch/_generated/large-eyed-creature-head/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 205862
+			}
+		}
+	},
+	{
+		"slug": "human-faced-bird",
+		"title": "Human-Faced Bird",
+		"description": "A plump bird-like body with a human face leans forward over pebbled ground.",
+		"alt": "A plump bird-like body with a human face leans forward over pebbled ground.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "landscape",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/0d318762-6614-42d4-a86d-aa2f31fb9906.png",
+			"width": 1800,
+			"height": 1200,
+			"bytes": 342221
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/human-faced-bird/thumbnail.webp",
+				"width": 480,
+				"height": 320,
+				"bytes": 22662
+			},
+			"preview": {
+				"src": "/sketch/_generated/human-faced-bird/preview.webp",
+				"width": 960,
+				"height": 640,
+				"bytes": 55428
+			},
+			"museum": {
+				"src": "/sketch/_generated/human-faced-bird/museum.webp",
+				"width": 1600,
+				"height": 1067,
+				"bytes": 105496
+			},
+			"detail": {
+				"src": "/sketch/_generated/human-faced-bird/detail.webp",
+				"width": 1800,
+				"height": 1200,
+				"bytes": 107538
+			}
+		}
+	},
+	{
+		"slug": "crowd-of-elongated-faces",
+		"title": "Crowd of Elongated Faces",
+		"description": "Several long overlapping faces fill a muted grey-green composition.",
+		"alt": "Several long overlapping faces fill a muted grey-green composition.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0d7d6667-3ba8-401c-b83b-45bd78ce510a.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 539777
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/crowd-of-elongated-faces/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 49940
+			},
+			"preview": {
+				"src": "/sketch/_generated/crowd-of-elongated-faces/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 122502
+			},
+			"museum": {
+				"src": "/sketch/_generated/crowd-of-elongated-faces/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 233536
+			},
+			"detail": {
+				"src": "/sketch/_generated/crowd-of-elongated-faces/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 232784
+			}
+		}
+	},
+	{
+		"slug": "backward-fall",
+		"title": "Backward Fall",
+		"description": "A stout figure falls backward as footwear, an umbrella, fruit, and other objects scatter overhead.",
+		"alt": "A stout figure falls backward as footwear, an umbrella, fruit, and other objects scatter overhead.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "landscape",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0dabb951-d5d8-4b0e-b15b-b822d6982147.png",
+			"width": 1800,
+			"height": 1200,
+			"bytes": 1468326
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/backward-fall/thumbnail.webp",
+				"width": 480,
+				"height": 320,
+				"bytes": 74162
+			},
+			"preview": {
+				"src": "/sketch/_generated/backward-fall/preview.webp",
+				"width": 960,
+				"height": 640,
+				"bytes": 255598
+			},
+			"museum": {
+				"src": "/sketch/_generated/backward-fall/museum.webp",
+				"width": 1600,
+				"height": 1067,
+				"bytes": 680508
+			},
+			"detail": {
+				"src": "/sketch/_generated/backward-fall/detail.webp",
+				"width": 1800,
+				"height": 1200,
+				"bytes": 769828
+			}
+		}
+	},
+	{
+		"slug": "red-figure-with-staff",
+		"title": "Red Figure with Staff",
+		"description": "A crouching red figure grips a long staff beneath a small yellow star.",
+		"alt": "A crouching red figure grips a long staff beneath a small yellow star.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0dce5cf3-344f-4a05-ad0f-6e1b6ea210a0.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 362924
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/red-figure-with-staff/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 36386
+			},
+			"preview": {
+				"src": "/sketch/_generated/red-figure-with-staff/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 95982
+			},
+			"museum": {
+				"src": "/sketch/_generated/red-figure-with-staff/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 180150
+			},
+			"detail": {
+				"src": "/sketch/_generated/red-figure-with-staff/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 140942
+			}
+		}
+	},
+	{
+		"slug": "head-beneath-a-dark-cloud",
+		"title": "Head Beneath a Dark Cloud",
+		"description": "A clenched-toothed head supports a narrow stack topped by a dense black cloud shape.",
+		"alt": "A clenched-toothed head supports a narrow stack topped by a dense black cloud shape.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/0edb3ada-5c47-4612-a8f5-1149b88d3e30.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 392034
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/head-beneath-a-dark-cloud/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 25686
+			},
+			"preview": {
+				"src": "/sketch/_generated/head-beneath-a-dark-cloud/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 64730
+			},
+			"museum": {
+				"src": "/sketch/_generated/head-beneath-a-dark-cloud/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 121216
+			},
+			"detail": {
+				"src": "/sketch/_generated/head-beneath-a-dark-cloud/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 124070
+			}
+		}
+	},
+	{
+		"slug": "wide-eyed-figure-with-lettered-collar",
+		"title": "Wide-Eyed Figure with Lettered Collar",
+		"description": "A wide-eyed figure in a patterned hat raises a hand to its face above a shape bearing partial letters.",
+		"alt": "A wide-eyed figure in a patterned hat raises a hand to its face above a shape bearing partial letters.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/0fb1b074-c5e7-4f68-aa05-465b68351e04.png",
+			"width": 600,
+			"height": 900,
+			"bytes": 441604
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/wide-eyed-figure-with-lettered-collar/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 66070
+			},
+			"preview": {
+				"src": "/sketch/_generated/wide-eyed-figure-with-lettered-collar/preview.webp",
+				"width": 600,
+				"height": 900,
+				"bytes": 138186
+			},
+			"museum": {
+				"src": "/sketch/_generated/wide-eyed-figure-with-lettered-collar/museum.webp",
+				"width": 600,
+				"height": 900,
+				"bytes": 138186
+			},
+			"detail": {
+				"src": "/sketch/_generated/wide-eyed-figure-with-lettered-collar/detail.webp",
+				"width": 600,
+				"height": 900,
+				"bytes": 138186
+			}
+		}
+	},
+	{
+		"slug": "two-faces-across-a-blue-gap",
+		"title": "Two Faces Across a Blue Gap",
+		"description": "A large green face and a smaller tan face look toward one another across a bright blue gap.",
+		"alt": "A large green face and a smaller tan face look toward one another across a bright blue gap.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0fb1df64-2725-4854-baec-3ee7bb0e1aba.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 232425
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/two-faces-across-a-blue-gap/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 34752
+			},
+			"preview": {
+				"src": "/sketch/_generated/two-faces-across-a-blue-gap/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 83082
+			},
+			"museum": {
+				"src": "/sketch/_generated/two-faces-across-a-blue-gap/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 151002
+			},
+			"detail": {
+				"src": "/sketch/_generated/two-faces-across-a-blue-gap/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 75544
+			}
+		}
+	},
+	{
+		"slug": "face-above-a-clenched-fist",
+		"title": "Face Above a Clenched Fist",
+		"description": "A pale close-up face looks downward toward a brown clenched fist beneath its chin.",
+		"alt": "A pale close-up face looks downward toward a brown clenched fist beneath its chin.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/0fe63263-169c-4ad5-8a1d-18a729039e03.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 208179
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/face-above-a-clenched-fist/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 19016
+			},
+			"preview": {
+				"src": "/sketch/_generated/face-above-a-clenched-fist/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 45692
+			},
+			"museum": {
+				"src": "/sketch/_generated/face-above-a-clenched-fist/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 91238
+			},
+			"detail": {
+				"src": "/sketch/_generated/face-above-a-clenched-fist/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 59022
+			}
+		}
+	},
+	{
+		"slug": "bespectacled-profile-with-tongue",
+		"title": "Bespectacled Profile with Tongue",
+		"description": "A side profile in a cap and glasses extends a pink tongue toward a small tan object.",
+		"alt": "A side profile in a cap and glasses extends a pink tongue toward a small tan object.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/1a3ff8ac-634c-42ca-b688-eeb10d17f187.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 213624
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/bespectacled-profile-with-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 28104
+			},
+			"preview": {
+				"src": "/sketch/_generated/bespectacled-profile-with-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 68406
+			},
+			"museum": {
+				"src": "/sketch/_generated/bespectacled-profile-with-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 123790
+			},
+			"detail": {
+				"src": "/sketch/_generated/bespectacled-profile-with-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 66990
+			}
+		}
+	},
+	{
+		"slug": "three-shouting-profiles",
+		"title": "Three Shouting Profiles",
+		"description": "A tall bearded profile rises behind two smaller open-mouthed faces with red accents.",
+		"alt": "A tall bearded profile rises behind two smaller open-mouthed faces with red accents.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/1ca3b6d4-99d9-4787-ab87-d018dd34ac79.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 472008
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/three-shouting-profiles/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 29030
+			},
+			"preview": {
+				"src": "/sketch/_generated/three-shouting-profiles/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 69612
+			},
+			"museum": {
+				"src": "/sketch/_generated/three-shouting-profiles/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 137256
+			},
+			"detail": {
+				"src": "/sketch/_generated/three-shouting-profiles/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 138630
+			}
+		}
+	},
+	{
+		"slug": "snail-under-an-umbrella",
+		"title": "Snail Under an Umbrella",
+		"description": "A large snail-like figure shelters beneath a turquoise umbrella amid sun and raindrops.",
+		"alt": "A large snail-like figure shelters beneath a turquoise umbrella amid sun and raindrops.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/1d45b669-4a9c-40e6-92e1-228c59001ea3.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 606512
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/snail-under-an-umbrella/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 69532
+			},
+			"preview": {
+				"src": "/sketch/_generated/snail-under-an-umbrella/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 156210
+			},
+			"museum": {
+				"src": "/sketch/_generated/snail-under-an-umbrella/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 275702
+			},
+			"detail": {
+				"src": "/sketch/_generated/snail-under-an-umbrella/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 270294
+			}
+		}
+	},
+	{
+		"slug": "hands-raised-before-a-dark-shape",
+		"title": "Hands Raised Before a Dark Shape",
+		"description": "A wide-eyed monochrome figure raises both hands toward a striped form emerging from a black silhouette.",
+		"alt": "A wide-eyed monochrome figure raises both hands toward a striped form emerging from a black silhouette.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/1d714c78-95dc-4ed8-b775-e437609cc2bf.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 337825
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/hands-raised-before-a-dark-shape/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 22422
+			},
+			"preview": {
+				"src": "/sketch/_generated/hands-raised-before-a-dark-shape/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 56430
+			},
+			"museum": {
+				"src": "/sketch/_generated/hands-raised-before-a-dark-shape/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 109372
+			},
+			"detail": {
+				"src": "/sketch/_generated/hands-raised-before-a-dark-shape/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 107386
+			}
+		}
+	},
+	{
+		"slug": "confronting-profiles",
+		"title": "Confronting Profiles",
+		"description": "Two close side profiles face one another against a vivid blue background.",
+		"alt": "Two close side profiles face one another against a vivid blue background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/1dc7be7b-0772-4c88-a795-d38847345cbe.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 312382
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/confronting-profiles/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 37898
+			},
+			"preview": {
+				"src": "/sketch/_generated/confronting-profiles/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 90914
+			},
+			"museum": {
+				"src": "/sketch/_generated/confronting-profiles/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 167458
+			},
+			"detail": {
+				"src": "/sketch/_generated/confronting-profiles/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 102352
+			}
+		}
+	},
+	{
+		"slug": "long-chinned-profile-with-tongue",
+		"title": "Long-Chinned Profile with Tongue",
+		"description": "A black-and-white profile with dark hair, a long chin, and a protruding tongue faces left.",
+		"alt": "A black-and-white profile with dark hair, a long chin, and a protruding tongue faces left.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/1defadf8-f65b-4ba0-871e-8f9cd154191f.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 176249
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/long-chinned-profile-with-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 11152
+			},
+			"preview": {
+				"src": "/sketch/_generated/long-chinned-profile-with-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 27162
+			},
+			"museum": {
+				"src": "/sketch/_generated/long-chinned-profile-with-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 53820
+			},
+			"detail": {
+				"src": "/sketch/_generated/long-chinned-profile-with-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 53486
+			}
+		}
+	},
+	{
+		"slug": "four-interlocking-faces",
+		"title": "Four Interlocking Faces",
+		"description": "Four differently coloured heads overlap in a tight vertical arrangement.",
+		"alt": "Four differently coloured heads overlap in a tight vertical arrangement.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/1e5c9819-30e3-4461-bf5e-13159ccfc492.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 269159
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/four-interlocking-faces/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 37404
+			},
+			"preview": {
+				"src": "/sketch/_generated/four-interlocking-faces/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 86584
+			},
+			"museum": {
+				"src": "/sketch/_generated/four-interlocking-faces/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 154058
+			},
+			"detail": {
+				"src": "/sketch/_generated/four-interlocking-faces/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 84978
+			}
+		}
+	},
+	{
+		"slug": "screaming-lined-face",
+		"title": "Screaming Lined Face",
+		"description": "A heavily lined black profile opens an exaggerated mouth filled with blocky teeth.",
+		"alt": "A heavily lined black profile opens an exaggerated mouth filled with blocky teeth.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/1e96c1d8-c086-4795-8e1f-a423fa800d92.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 534619
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/screaming-lined-face/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 35738
+			},
+			"preview": {
+				"src": "/sketch/_generated/screaming-lined-face/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 87826
+			},
+			"museum": {
+				"src": "/sketch/_generated/screaming-lined-face/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 171428
+			},
+			"detail": {
+				"src": "/sketch/_generated/screaming-lined-face/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 178680
+			}
+		}
+	},
+	{
+		"slug": "man-holding-a-leafy-stem",
+		"title": "Man Holding a Leafy Stem",
+		"description": "A long-faced man holds a leafy stem close to his open mouth.",
+		"alt": "A long-faced man holds a leafy stem close to his open mouth.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/1fbc98d1-8d7e-4110-9029-0c01cd2cf463.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 450689
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/man-holding-a-leafy-stem/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 29340
+			},
+			"preview": {
+				"src": "/sketch/_generated/man-holding-a-leafy-stem/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 74400
+			},
+			"museum": {
+				"src": "/sketch/_generated/man-holding-a-leafy-stem/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 142838
+			},
+			"detail": {
+				"src": "/sketch/_generated/man-holding-a-leafy-stem/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 135494
+			}
+		}
+	},
+	{
+		"slug": "round-face-under-a-hanging-weight",
+		"title": "Round Face Under a Hanging Weight",
+		"description": "A round stubbled face sits beneath a suspended black form while small yellow drops surround it.",
+		"alt": "A round stubbled face sits beneath a suspended black form while small yellow drops surround it.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2a29e7b0-60e8-49f3-bbb9-e89bef905810.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 446117
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/round-face-under-a-hanging-weight/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 25854
+			},
+			"preview": {
+				"src": "/sketch/_generated/round-face-under-a-hanging-weight/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 67592
+			},
+			"museum": {
+				"src": "/sketch/_generated/round-face-under-a-hanging-weight/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 132202
+			},
+			"detail": {
+				"src": "/sketch/_generated/round-face-under-a-hanging-weight/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 132656
+			}
+		}
+	},
+	{
+		"slug": "long-necked-figure-with-rounded-torso",
+		"title": "Long-Necked Figure with Rounded Torso",
+		"description": "A sparse line drawing connects a small open-mouthed head to an extremely long neck and rounded torso.",
+		"alt": "A sparse line drawing connects a small open-mouthed head to an extremely long neck and rounded torso.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/2b107845-cdc1-4eb4-aef2-6c406e0e8d04.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 160501
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/long-necked-figure-with-rounded-torso/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 9384
+			},
+			"preview": {
+				"src": "/sketch/_generated/long-necked-figure-with-rounded-torso/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 25792
+			},
+			"museum": {
+				"src": "/sketch/_generated/long-necked-figure-with-rounded-torso/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 47654
+			},
+			"detail": {
+				"src": "/sketch/_generated/long-necked-figure-with-rounded-torso/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 46176
+			}
+		}
+	},
+	{
+		"slug": "sweating-man-with-pipe",
+		"title": "Sweating Man with Pipe",
+		"description": "A long narrow face sweats heavily while holding a small pipe between its lips.",
+		"alt": "A long narrow face sweats heavily while holding a small pipe between its lips.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/2b21dd54-6d5d-4766-abfd-a1ca3e3a022f.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 676024
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/sweating-man-with-pipe/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 40306
+			},
+			"preview": {
+				"src": "/sketch/_generated/sweating-man-with-pipe/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 107750
+			},
+			"museum": {
+				"src": "/sketch/_generated/sweating-man-with-pipe/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 214800
+			},
+			"detail": {
+				"src": "/sketch/_generated/sweating-man-with-pipe/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 229928
+			}
+		}
+	},
+	{
+		"slug": "bearded-face-with-orange-tongue",
+		"title": "Bearded Face with Orange Tongue",
+		"description": "A close-up black-bearded face extends an orange tongue over a blue background.",
+		"alt": "A close-up black-bearded face extends an orange tongue over a blue background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2b3f52b1-d8d0-4d38-b44e-beb3e85b6755.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 124265
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/bearded-face-with-orange-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 21210
+			},
+			"preview": {
+				"src": "/sketch/_generated/bearded-face-with-orange-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 49358
+			},
+			"museum": {
+				"src": "/sketch/_generated/bearded-face-with-orange-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 87704
+			},
+			"detail": {
+				"src": "/sketch/_generated/bearded-face-with-orange-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 38844
+			}
+		}
+	},
+	{
+		"slug": "knot-of-interlocking-faces",
+		"title": "Knot of Interlocking Faces",
+		"description": "Several brightly coloured face-like profiles interlock in a circular cluster on burgundy.",
+		"alt": "Several brightly coloured face-like profiles interlock in a circular cluster on burgundy.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2b7fb186-eaa7-4789-a4c2-5af504e3a502.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 309588
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/knot-of-interlocking-faces/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 48814
+			},
+			"preview": {
+				"src": "/sketch/_generated/knot-of-interlocking-faces/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 119906
+			},
+			"museum": {
+				"src": "/sketch/_generated/knot-of-interlocking-faces/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 221116
+			},
+			"detail": {
+				"src": "/sketch/_generated/knot-of-interlocking-faces/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 106966
+			}
+		}
+	},
+	{
+		"slug": "blue-face-with-towering-hair",
+		"title": "Blue Face with Towering Hair",
+		"description": "A blue side-facing head has a towering mass of black hair within a narrow frame.",
+		"alt": "A blue side-facing head has a towering mass of black hair within a narrow frame.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2bc4749b-9fc0-408a-b594-ab9710b2c951.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 345943
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/blue-face-with-towering-hair/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 32730
+			},
+			"preview": {
+				"src": "/sketch/_generated/blue-face-with-towering-hair/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 83050
+			},
+			"museum": {
+				"src": "/sketch/_generated/blue-face-with-towering-hair/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 150890
+			},
+			"detail": {
+				"src": "/sketch/_generated/blue-face-with-towering-hair/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 148928
+			}
+		}
+	},
+	{
+		"slug": "open-mouthed-long-nosed-face",
+		"title": "Open-Mouthed Long-Nosed Face",
+		"description": "A grey-green long-nosed profile opens a pink mouth around a dark tongue.",
+		"alt": "A grey-green long-nosed profile opens a pink mouth around a dark tongue.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2bc98100-9056-4ef1-a8e3-c691581f1b5a.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 269575
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/open-mouthed-long-nosed-face/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 23880
+			},
+			"preview": {
+				"src": "/sketch/_generated/open-mouthed-long-nosed-face/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 59390
+			},
+			"museum": {
+				"src": "/sketch/_generated/open-mouthed-long-nosed-face/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 120758
+			},
+			"detail": {
+				"src": "/sketch/_generated/open-mouthed-long-nosed-face/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 84794
+			}
+		}
+	},
+	{
+		"slug": "rider-on-a-winged-creature",
+		"title": "Rider on a Winged Creature",
+		"description": "A shouting figure with outstretched arms rides a pale winged creature beneath a red sun.",
+		"alt": "A shouting figure with outstretched arms rides a pale winged creature beneath a red sun.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2c423eef-68c5-4ede-ae86-28c1b5c9695d.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 460129
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/rider-on-a-winged-creature/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 44782
+			},
+			"preview": {
+				"src": "/sketch/_generated/rider-on-a-winged-creature/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 110994
+			},
+			"museum": {
+				"src": "/sketch/_generated/rider-on-a-winged-creature/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 210742
+			},
+			"detail": {
+				"src": "/sketch/_generated/rider-on-a-winged-creature/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 208814
+			}
+		}
+	},
+	{
+		"slug": "face-with-circular-hair-pattern",
+		"title": "Face with Circular Hair Pattern",
+		"description": "A black line face sticks out its tongue beneath a large circular radiating mass of hair.",
+		"alt": "A black line face sticks out its tongue beneath a large circular radiating mass of hair.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/2c46ab4c-f0bb-4efa-9682-10d89f2311e2.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 930719
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/face-with-circular-hair-pattern/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 47340
+			},
+			"preview": {
+				"src": "/sketch/_generated/face-with-circular-hair-pattern/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 146580
+			},
+			"museum": {
+				"src": "/sketch/_generated/face-with-circular-hair-pattern/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 346592
+			},
+			"detail": {
+				"src": "/sketch/_generated/face-with-circular-hair-pattern/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 367580
+			}
+		}
+	},
+	{
+		"slug": "three-stacked-line-faces",
+		"title": "Three Stacked Line Faces",
+		"description": "Three sparse black faces are linked in a vertical continuous-line arrangement.",
+		"alt": "Three sparse black faces are linked in a vertical continuous-line arrangement.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/2c81c7b9-24dc-40df-85f6-4dd610f6587a.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 131766
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/three-stacked-line-faces/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 6700
+			},
+			"preview": {
+				"src": "/sketch/_generated/three-stacked-line-faces/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 18878
+			},
+			"museum": {
+				"src": "/sketch/_generated/three-stacked-line-faces/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 36420
+			},
+			"detail": {
+				"src": "/sketch/_generated/three-stacked-line-faces/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 36886
+			}
+		}
+	},
+	{
+		"slug": "bald-man-with-green-creature",
+		"title": "Bald Man with Green Creature",
+		"description": "A bald man holds a small textured green creature between his open jaws.",
+		"alt": "A bald man holds a small textured green creature between his open jaws.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2da87a02-b1a5-4dd5-8e7a-b31f3e6c66bd.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 672537
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/bald-man-with-green-creature/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 52544
+			},
+			"preview": {
+				"src": "/sketch/_generated/bald-man-with-green-creature/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 148426
+			},
+			"museum": {
+				"src": "/sketch/_generated/bald-man-with-green-creature/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 322706
+			},
+			"detail": {
+				"src": "/sketch/_generated/bald-man-with-green-creature/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 364896
+			}
+		}
+	},
+	{
+		"slug": "tall-man-with-dotted-tie",
+		"title": "Tall Man with Dotted Tie",
+		"description": "An elongated side-facing man in a pale green hat holds a spotted tie-shaped form beneath his chin.",
+		"alt": "An elongated side-facing man in a pale green hat holds a spotted tie-shaped form beneath his chin.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2e94afc2-f900-4c2c-99fb-dae2c62f344f.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 245747
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/tall-man-with-dotted-tie/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 25038
+			},
+			"preview": {
+				"src": "/sketch/_generated/tall-man-with-dotted-tie/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 59856
+			},
+			"museum": {
+				"src": "/sketch/_generated/tall-man-with-dotted-tie/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 109912
+			},
+			"detail": {
+				"src": "/sketch/_generated/tall-man-with-dotted-tie/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 74144
+			}
+		}
+	},
+	{
+		"slug": "seated-bearded-man-pointing",
+		"title": "Seated Bearded Man Pointing",
+		"description": "A seated man with a long nose and black beard raises one pointing finger.",
+		"alt": "A seated man with a long nose and black beard raises one pointing finger.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2edbd73a-c9d6-4775-860b-86207db23e58.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 185938
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/seated-bearded-man-pointing/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 20134
+			},
+			"preview": {
+				"src": "/sketch/_generated/seated-bearded-man-pointing/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 48896
+			},
+			"museum": {
+				"src": "/sketch/_generated/seated-bearded-man-pointing/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 97868
+			},
+			"detail": {
+				"src": "/sketch/_generated/seated-bearded-man-pointing/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 59564
+			}
+		}
+	},
+	{
+		"slug": "face-expelling-a-grey-mass",
+		"title": "Face Expelling a Grey Mass",
+		"description": "A close-up profile expels a large textured grey mass from its red-outlined mouth.",
+		"alt": "A close-up profile expels a large textured grey mass from its red-outlined mouth.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/2f07b5bc-0b55-4feb-a193-48e8699c2e8c.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 800316
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/face-expelling-a-grey-mass/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 58878
+			},
+			"preview": {
+				"src": "/sketch/_generated/face-expelling-a-grey-mass/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 164650
+			},
+			"museum": {
+				"src": "/sketch/_generated/face-expelling-a-grey-mass/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 360678
+			},
+			"detail": {
+				"src": "/sketch/_generated/face-expelling-a-grey-mass/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 409284
+			}
+		}
+	},
+	{
+		"slug": "short-haired-womans-portrait",
+		"title": "Short-Haired Woman's Portrait",
+		"description": "A detailed monochrome portrait shows a woman with closely cropped hair, dark lips, and a small hoop earring.",
+		"alt": "A detailed monochrome portrait shows a woman with closely cropped hair, dark lips, and a small hoop earring.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/3a31a461-c9da-46e4-8831-99066f304103.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 1272973
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/short-haired-womans-portrait/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 63764
+			},
+			"preview": {
+				"src": "/sketch/_generated/short-haired-womans-portrait/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 235934
+			},
+			"museum": {
+				"src": "/sketch/_generated/short-haired-womans-portrait/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 410094
+			},
+			"detail": {
+				"src": "/sketch/_generated/short-haired-womans-portrait/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 483200
+			}
+		}
+	},
+	{
+		"slug": "red-lipped-profile",
+		"title": "Red-Lipped Profile",
+		"description": "A minimalist pale profile with large red lips faces a divided blue-and-white background.",
+		"alt": "A minimalist pale profile with large red lips faces a divided blue-and-white background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/3a6fd3d7-a0fa-4e68-abe8-05e207db2b15.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 177231
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/red-lipped-profile/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 15916
+			},
+			"preview": {
+				"src": "/sketch/_generated/red-lipped-profile/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 37342
+			},
+			"museum": {
+				"src": "/sketch/_generated/red-lipped-profile/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 69978
+			},
+			"detail": {
+				"src": "/sketch/_generated/red-lipped-profile/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 52652
+			}
+		}
+	},
+	{
+		"slug": "patterned-beard-with-pipe",
+		"title": "Patterned Beard with Pipe",
+		"description": "A black-and-white profile smokes a short pipe above a large beard filled with pale patterned shapes.",
+		"alt": "A black-and-white profile smokes a short pipe above a large beard filled with pale patterned shapes.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/3b806c2a-b6d2-42bb-a196-0c44ff9b7816.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 357978
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/patterned-beard-with-pipe/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 24196
+			},
+			"preview": {
+				"src": "/sketch/_generated/patterned-beard-with-pipe/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 61130
+			},
+			"museum": {
+				"src": "/sketch/_generated/patterned-beard-with-pipe/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 117582
+			},
+			"detail": {
+				"src": "/sketch/_generated/patterned-beard-with-pipe/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 117046
+			}
+		}
+	},
+	{
+		"slug": "branching-abstract-forms",
+		"title": "Branching Abstract Forms",
+		"description": "Irregular coloured shapes sprout branching black lines and small yellow droplets on a grey field.",
+		"alt": "Irregular coloured shapes sprout branching black lines and small yellow droplets on a grey field.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/3bb7b9d7-ab6b-43d3-9941-b65e0d38b06b.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 353108
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/branching-abstract-forms/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 40856
+			},
+			"preview": {
+				"src": "/sketch/_generated/branching-abstract-forms/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 100084
+			},
+			"museum": {
+				"src": "/sketch/_generated/branching-abstract-forms/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 183440
+			},
+			"detail": {
+				"src": "/sketch/_generated/branching-abstract-forms/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 109858
+			}
+		}
+	},
+	{
+		"slug": "open-mouthed-profile-in-black-and-white",
+		"title": "Open-Mouthed Profile in Black and White",
+		"description": "A stark black-and-white side profile opens its mouth around a long narrow tongue.",
+		"alt": "A stark black-and-white side profile opens its mouth around a long narrow tongue.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/3d114933-efaa-44d1-b83a-e84af851f2cc.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 186768
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/open-mouthed-profile-in-black-and-white/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 11788
+			},
+			"preview": {
+				"src": "/sketch/_generated/open-mouthed-profile-in-black-and-white/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 28706
+			},
+			"museum": {
+				"src": "/sketch/_generated/open-mouthed-profile-in-black-and-white/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 56078
+			},
+			"detail": {
+				"src": "/sketch/_generated/open-mouthed-profile-in-black-and-white/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 57538
+			}
+		}
+	},
+	{
+		"slug": "multi-armed-musician-with-swan",
+		"title": "Multi-Armed Musician with Swan",
+		"description": "An ornate line drawing shows a multi-armed woman holding a long stringed instrument beside a swan.",
+		"alt": "An ornate line drawing shows a multi-armed woman holding a long stringed instrument beside a swan.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/3d1a6ce1-5cf8-49d3-a7a2-68504950e029.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 746421
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/multi-armed-musician-with-swan/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 30702
+			},
+			"preview": {
+				"src": "/sketch/_generated/multi-armed-musician-with-swan/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 94904
+			},
+			"museum": {
+				"src": "/sketch/_generated/multi-armed-musician-with-swan/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 234654
+			},
+			"detail": {
+				"src": "/sketch/_generated/multi-armed-musician-with-swan/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 289286
+			}
+		}
+	},
+	{
+		"slug": "large-figure-holding-a-small-child",
+		"title": "Large Figure Holding a Small Child",
+		"description": "A large long-necked profile looks down toward a small bald figure held against its chest.",
+		"alt": "A large long-necked profile looks down toward a small bald figure held against its chest.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "ink",
+		"source": {
+			"src": "/sketch/3e43afd8-5e32-4000-ae95-4c1999c28186.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 213262
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/large-figure-holding-a-small-child/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 13886
+			},
+			"preview": {
+				"src": "/sketch/_generated/large-figure-holding-a-small-child/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 33706
+			},
+			"museum": {
+				"src": "/sketch/_generated/large-figure-holding-a-small-child/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 63426
+			},
+			"detail": {
+				"src": "/sketch/_generated/large-figure-holding-a-small-child/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 63430
+			}
+		}
+	},
+	{
+		"slug": "man-blowing-a-grey-bubble",
+		"title": "Man Blowing a Grey Bubble",
+		"description": "A close-up side profile blows a large round grey bubble from its mouth.",
+		"alt": "A close-up side profile blows a large round grey bubble from its mouth.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/3ec09b7d-317b-4c56-9787-8a2c78f16d6f.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 189374
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/man-blowing-a-grey-bubble/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 20632
+			},
+			"preview": {
+				"src": "/sketch/_generated/man-blowing-a-grey-bubble/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 46610
+			},
+			"museum": {
+				"src": "/sketch/_generated/man-blowing-a-grey-bubble/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 94654
+			},
+			"detail": {
+				"src": "/sketch/_generated/man-blowing-a-grey-bubble/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 58484
+			}
+		}
+	},
+	{
+		"slug": "split-colour-heart",
+		"title": "Split-Colour Heart",
+		"description": "A heart divided into pink and blue halves sits on a tilted orange rectangle over blue.",
+		"alt": "A heart divided into pink and blue halves sits on a tilted orange rectangle over blue.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/3ecffc90-e5ef-4580-8bcc-77f0ed4473c6.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 111531
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/split-colour-heart/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 18168
+			},
+			"preview": {
+				"src": "/sketch/_generated/split-colour-heart/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 41036
+			},
+			"museum": {
+				"src": "/sketch/_generated/split-colour-heart/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 76748
+			},
+			"detail": {
+				"src": "/sketch/_generated/split-colour-heart/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 51944
+			}
+		}
+	},
+	{
+		"slug": "orange-face-with-coloured-tongue",
+		"title": "Orange Face with Coloured Tongue",
+		"description": "A close-up orange face with a yellow eye opens its mouth around a magenta tongue and green-tipped black shape.",
+		"alt": "A close-up orange face with a yellow eye opens its mouth around a magenta tongue and green-tipped black shape.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/4a703bc5-8975-405b-b176-cc29857b0bfe.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 219774
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/orange-face-with-coloured-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 34670
+			},
+			"preview": {
+				"src": "/sketch/_generated/orange-face-with-coloured-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 80538
+			},
+			"museum": {
+				"src": "/sketch/_generated/orange-face-with-coloured-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 152306
+			},
+			"detail": {
+				"src": "/sketch/_generated/orange-face-with-coloured-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 71460
+			}
+		}
+	},
+	{
+		"slug": "wide-mouthed-face-with-long-pink-tongue",
+		"title": "Wide-Mouthed Face with Long Pink Tongue",
+		"description": "A brown face with a large nose opens a black mouth above an extended pink tongue.",
+		"alt": "A brown face with a large nose opens a black mouth above an extended pink tongue.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/4a755bad-cbb6-4dd5-aab5-018c56260743.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 263250
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/wide-mouthed-face-with-long-pink-tongue/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 26506
+			},
+			"preview": {
+				"src": "/sketch/_generated/wide-mouthed-face-with-long-pink-tongue/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 64742
+			},
+			"museum": {
+				"src": "/sketch/_generated/wide-mouthed-face-with-long-pink-tongue/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 126406
+			},
+			"detail": {
+				"src": "/sketch/_generated/wide-mouthed-face-with-long-pink-tongue/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 84158
+			}
+		}
+	},
+	{
+		"slug": "black-haired-side-profile",
+		"title": "Black-Haired Side Profile",
+		"description": "A black-haired man in a blue shirt looks sideways against a pale grey background.",
+		"alt": "A black-haired man in a blue shirt looks sideways against a pale grey background.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/4a962df9-1b34-479b-8e78-9b05e91c2ef9.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 220598
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/black-haired-side-profile/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 29250
+			},
+			"preview": {
+				"src": "/sketch/_generated/black-haired-side-profile/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 69986
+			},
+			"museum": {
+				"src": "/sketch/_generated/black-haired-side-profile/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 129922
+			},
+			"detail": {
+				"src": "/sketch/_generated/black-haired-side-profile/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 69866
+			}
+		}
+	},
+	{
+		"slug": "blue-face-with-oversized-lower-lip",
+		"title": "Blue Face with Oversized Lower Lip",
+		"description": "A blue side profile has a greatly enlarged pale-yellow lower lip with an orange inner section.",
+		"alt": "A blue side profile has a greatly enlarged pale-yellow lower lip with an orange inner section.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/4b032b8e-aabd-4a61-9a52-dc1a799216f8.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 133774
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/blue-face-with-oversized-lower-lip/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 17388
+			},
+			"preview": {
+				"src": "/sketch/_generated/blue-face-with-oversized-lower-lip/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 41408
+			},
+			"museum": {
+				"src": "/sketch/_generated/blue-face-with-oversized-lower-lip/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 76720
+			},
+			"detail": {
+				"src": "/sketch/_generated/blue-face-with-oversized-lower-lip/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 41552
+			}
+		}
+	},
+	{
+		"slug": "giant-tongue-above-a-small-face",
+		"title": "Giant Tongue Above a Small Face",
+		"description": "A large bespectacled head opens its mouth over an orange tongue that curves toward a smaller face below.",
+		"alt": "A large bespectacled head opens its mouth over an orange tongue that curves toward a smaller face below.",
+		"date": null,
+		"medium": "Digital sketch",
+		"orientation": "portrait",
+		"room": null,
+		"featured": false,
+		"needsMetadata": false,
+		"canvasMode": "original",
+		"source": {
+			"src": "/sketch/4b2eb454-9070-4524-bb9b-f82fc7e6bf40.png",
+			"width": 1200,
+			"height": 1800,
+			"bytes": 183952
+		},
+		"variants": {
+			"thumbnail": {
+				"src": "/sketch/_generated/giant-tongue-above-a-small-face/thumbnail.webp",
+				"width": 320,
+				"height": 480,
+				"bytes": 26380
+			},
+			"preview": {
+				"src": "/sketch/_generated/giant-tongue-above-a-small-face/preview.webp",
+				"width": 640,
+				"height": 960,
+				"bytes": 61984
+			},
+			"museum": {
+				"src": "/sketch/_generated/giant-tongue-above-a-small-face/museum.webp",
+				"width": 1067,
+				"height": 1600,
+				"bytes": 111810
+			},
+			"detail": {
+				"src": "/sketch/_generated/giant-tongue-above-a-small-face/detail.webp",
+				"width": 1200,
+				"height": 1800,
+				"bytes": 58068
+			}
+		}
+	},
+	{
 		"slug": "bird-on-branch",
 		"title": "Bird on a Branch",
 		"description": "A monochrome pencil drawing of a plump bird perched on a short branch.",

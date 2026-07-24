@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { SvelteURL } from 'svelte/reactivity';
+	import { replaceState } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import {
@@ -80,11 +80,10 @@
 
 	function replaceArtworkUrl(artwork: SketchArtwork | null) {
 		if (typeof window === 'undefined') return;
-		const url = new SvelteURL(window.location.href);
-		if (artwork) url.searchParams.set('art', artwork.slug);
-		else url.searchParams.delete('art');
-		url.hash = artwork ? 'sketch-collection' : '';
-		window.history.replaceState(window.history.state, '', url.href);
+		const route = artwork
+			? (`/images/sketches?art=${encodeURIComponent(artwork.slug)}#sketch-collection` as const)
+			: ('/images/sketches' as const);
+		replaceState(resolve(route), {});
 	}
 
 	function selectInMuseum(slug: string) {
@@ -160,8 +159,8 @@
 		<p class="eyebrow">Drawings in rooms</p>
 		<h1>Sketch Museum</h1>
 		<p>
-			A first curated hanging of birds, plants, boats, buildings, objects, and abstract forms. Enter
-			the atmospheric gallery or browse every work in the complete collection below.
+			An expanding hanging of figures, faces, creatures, objects, landscapes, and abstract forms.
+			Enter the atmospheric gallery or browse every work in the complete collection below.
 		</p>
 	</header>
 

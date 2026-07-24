@@ -9,8 +9,8 @@ The Sketch Museum is integrated into the existing Images section at
 - **Accessible Collection View** is ordinary server-rendered HTML containing every
   approved sketch and its metadata.
 
-The initial collection contains 22 conservatively curated sketches. The source
-drawings live in `static/sketch`; 88 generated WebP variants live under
+The collection contains 81 sketches. The source drawings live in
+`static/sketch`; 324 generated WebP variants live under
 `static/sketch/_generated`.
 
 The repository, rather than the external sketchbook folder, is the publishing
@@ -131,6 +131,13 @@ When content is uncertain, leave it out of the first-pass collection. The
 whitelist is represented by the deliberately curated contents of
 `static/sketch`.
 
+The 59-work batch recorded in `scripts/sketch-batch-2-import.json` is a deliberate
+exception to the first-pass review procedure: the owner confirmed that they had
+already reviewed every file and explicitly requested that the complete batch be
+published without another content-filtering pass. The catalog records the
+factual titles, descriptions, orientations, and display modes used for that
+import.
+
 ## Source files and filename convention
 
 The generator discovers these static source extensions recursively under
@@ -145,7 +152,7 @@ The generator discovers these static source extensions recursively under
 Use static, single-image sources. PNG is preferred for the current white-background
 digital sketches because it preserves faint linework and near-white variation.
 
-Use a descriptive lower-case kebab-case filename:
+For ordinary additions, use a descriptive lower-case kebab-case filename:
 
 ```text
 bird-on-branch.png
@@ -156,6 +163,20 @@ The filename stem becomes the fallback slug, generated-asset directory, and deep
 link. Avoid UUIDs, spaces, underscores, dates that are not part of the work's
 known title, and generic names such as `image-1`. Do not rename a published slug
 without accepting that existing `?art=<slug>` links will change.
+
+Batch 2 intentionally retains its original UUID source filenames so each
+repository copy maps directly back to the identically named file in the external
+`Selected` folder. Its sidecars provide stable descriptive slugs, so public deep
+links and generated-asset directories remain readable. Reproduce or verify that
+mapping with:
+
+```powershell
+node scripts/import-sketch-batch.mjs --source "<batch-directory>" --catalog scripts/sketch-batch-2-import.json
+```
+
+The importer accounts for every batch file, verifies orientation and SHA-256
+identity, refuses conflicting copies or sidecars, and deterministically resolves
+any descriptive-slug collision.
 
 Two different source files may not resolve to the same slug. The generator stops
 with an error rather than silently overwriting variants.
@@ -224,7 +245,7 @@ classify colour automatically.
   composition. This displays the original colour texture without the luminance
   replacement shader.
 
-The initial collection explicitly assigns 14 works to `ink` and eight to
+The current collection explicitly assigns 36 works to `ink` and 45 to
 `original`.
 
 ## Optimisation and manifest generation
@@ -471,8 +492,12 @@ Desktop controls:
 - `Shift` changes walking speed from 2.15 to 3.15 world units per second.
 - “Mouse look” requests pointer lock only after an explicit button action.
   Browser `Escape` behaviour releases pointer lock.
-- Previous artwork, Next artwork, Details, Reset, and Return to collection
-  remain ordinary focusable buttons.
+- Previous artwork, Next artwork, Details, Reset, Full screen, and Return to
+  collection remain ordinary focusable buttons.
+- Full screen uses the standard browser Fullscreen API on the complete scene
+  shell, including its canvas and controls. The label follows
+  `document.fullscreenElement`, and the control is omitted when the API is not
+  available or permitted.
 - The location card reports “Room N of M” and provides separate Previous room
   and Next room buttons. Each button names its destination; the unavailable
   direction is visibly disabled at the start or end of the tour.
@@ -553,8 +578,8 @@ At runtime:
 - rendering pauses while the document is hidden;
 - resize handling uses one `ResizeObserver`; and
 - unmounting cancels animation, disconnects observers, removes event listeners,
-  exits pointer lock, disposes textures/materials/geometries, disposes the
-  renderer, and forces context loss.
+  exits pointer lock and full-screen mode, disposes
+  textures/materials/geometries, disposes the renderer, and forces context loss.
 
 Room definitions and placements are deterministic manifest data, but Three.js
 geometry is streamed per current/adjacent room. This keeps entry cost and

@@ -95,6 +95,26 @@ describe('museum room layout', () => {
 		expect(first.rooms[1].connections).toHaveLength(2);
 	});
 
+	it('scales the complete 81-work collection across nine connected rooms', () => {
+		const expandedCollection = Array.from({ length: 81 }, (_, index) => {
+			const [width, height] = [
+				[800, 1200],
+				[1400, 800],
+				[1000, 1000]
+			][index % 3];
+			return artwork(`expanded-${String(index + 1).padStart(2, '0')}`, width, height);
+		});
+		const layout = createMuseumLayout(expandedCollection);
+
+		expect(layout.rooms).toHaveLength(9);
+		expect(layout.placements).toHaveLength(81);
+		expect(layout.rooms.every((room) => room.artworkSlugs.length <= 10)).toBe(true);
+		expect(layout.rooms.at(-1)?.name).toBe('Gallery 09');
+		expect(layout.rooms[0].connections).toHaveLength(1);
+		expect(layout.rooms.at(-1)?.connections).toHaveLength(1);
+		expect(layout.rooms.slice(1, -1).every((room) => room.connections.length === 2)).toBe(true);
+	});
+
 	it('activates only the current room and its immediate neighbours', () => {
 		const layout = createMuseumLayout(collection);
 		expect([...activeRoomIdsFor(layout, 'gallery-2')]).toEqual([
