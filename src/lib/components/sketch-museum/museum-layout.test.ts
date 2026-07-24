@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import type { SketchArtwork } from '$lib/sketches/types';
 import {
+	DOOR_HEIGHT,
+	DOOR_WIDTH,
+	WAYFINDING_SIGN_CENTER_Y,
+	WAYFINDING_SIGN_HEIGHT,
+	WAYFINDING_SIGN_WALL_INSET,
+	WAYFINDING_SIGN_WIDTH,
 	activeRoomIdsFor,
 	calculateArtworkFootprint,
 	calculateFrameDimensions,
@@ -8,7 +14,8 @@ import {
 	createMuseumLayout,
 	ensureWalkableViewPosition,
 	isWalkable,
-	isWalkableSegment
+	isWalkableSegment,
+	roomWayfindingFor
 } from './museum-layout';
 
 function artwork(slug: string, width: number, height: number, room: string | null = null) {
@@ -98,6 +105,106 @@ describe('museum room layout', () => {
 		expect([...activeRoomIdsFor(layout, 'gallery-1')]).toEqual(['gallery-1', 'gallery-2']);
 	});
 
+	it('creates deterministic first, middle, and last room wayfinding', () => {
+		const layout = createMuseumLayout(collection);
+		const [first, middle, last] = layout.rooms;
+
+		expect(roomWayfindingFor(layout, first.id)).toMatchObject([
+			{
+				id: 'gallery-1-next-gallery-2',
+				roomId: first.id,
+				targetRoomId: middle.id,
+				targetRoomName: 'North Gallery',
+				wall: 'north',
+				direction: 'next',
+				rotationY: 0
+			}
+		]);
+		expect(roomWayfindingFor(layout, middle.id)).toMatchObject([
+			{
+				id: 'gallery-2-previous-gallery-1',
+				roomId: middle.id,
+				targetRoomId: first.id,
+				targetRoomName: 'Opening Gallery',
+				wall: 'south',
+				direction: 'previous',
+				rotationY: Math.PI
+			},
+			{
+				id: 'gallery-2-next-gallery-3',
+				roomId: middle.id,
+				targetRoomId: last.id,
+				targetRoomName: 'East Gallery',
+				wall: 'east',
+				direction: 'next',
+				rotationY: -Math.PI / 2
+			}
+		]);
+		expect(roomWayfindingFor(layout, last.id)).toMatchObject([
+			{
+				id: 'gallery-3-previous-gallery-2',
+				roomId: last.id,
+				targetRoomId: middle.id,
+				targetRoomName: 'North Gallery',
+				wall: 'west',
+				direction: 'previous',
+				rotationY: Math.PI / 2
+			}
+		]);
+
+		expect(roomWayfindingFor(layout, 'missing-room')).toEqual([]);
+		expect(roomWayfindingFor(createMuseumLayout([...collection].reverse()), middle.id)).toEqual(
+			roomWayfindingFor(layout, middle.id)
+		);
+	});
+
+	it('keeps wayfinding signs centred over doorway headers and inside their room walls', () => {
+		const layout = createMuseumLayout(collection);
+
+		expect(WAYFINDING_SIGN_WIDTH).toBeLessThanOrEqual(DOOR_WIDTH);
+		expect(WAYFINDING_SIGN_CENTER_Y - WAYFINDING_SIGN_HEIGHT / 2).toBeGreaterThan(DOOR_HEIGHT);
+
+		for (const room of layout.rooms) {
+			for (const sign of roomWayfindingFor(layout, room.id)) {
+				expect(sign.localPosition[1]).toBe(WAYFINDING_SIGN_CENTER_Y);
+				switch (sign.wall) {
+					case 'north':
+						expect(sign.localPosition).toEqual([
+							0,
+							WAYFINDING_SIGN_CENTER_Y,
+							-room.depth / 2 + WAYFINDING_SIGN_WALL_INSET
+						]);
+						expect(sign.rotationY).toBe(0);
+						break;
+					case 'south':
+						expect(sign.localPosition).toEqual([
+							0,
+							WAYFINDING_SIGN_CENTER_Y,
+							room.depth / 2 - WAYFINDING_SIGN_WALL_INSET
+						]);
+						expect(sign.rotationY).toBe(Math.PI);
+						break;
+					case 'east':
+						expect(sign.localPosition).toEqual([
+							room.width / 2 - WAYFINDING_SIGN_WALL_INSET,
+							WAYFINDING_SIGN_CENTER_Y,
+							0
+						]);
+						expect(sign.rotationY).toBe(-Math.PI / 2);
+						break;
+					case 'west':
+						expect(sign.localPosition).toEqual([
+							-room.width / 2 + WAYFINDING_SIGN_WALL_INSET,
+							WAYFINDING_SIGN_CENTER_Y,
+							0
+						]);
+						expect(sign.rotationY).toBe(Math.PI / 2);
+						break;
+				}
+			}
+		}
+	});
+
 	it.each([
 		['portrait-weighted', collection],
 		['portrait, landscape, and square', mixedAspectCollection]
@@ -136,6 +243,20 @@ describe('museum room layout', () => {
 		expect(layout.rooms).toHaveLength(2);
 		expect(layout.rooms.every((room) => room.name === 'Quiet Room')).toBe(true);
 		expect(layout.rooms.every((room) => room.artworkSlugs.length <= 10)).toBe(true);
+	});
+
+	it('backs guided views far enough away to include the complete frame and title plaque', () => {
+		const layout = createMuseumLayout(mixedAspectCollection);
+
+		for (const placement of layout.placements) {
+			const distance = Math.hypot(
+				placement.viewPosition[0] - placement.position[0],
+				placement.viewPosition[2] - placement.position[2]
+			);
+			const footprint = calculateArtworkFootprint(placement.frame);
+			const completeHangingHeight = footprint.maxY - footprint.minY;
+			expect(distance).toBeGreaterThanOrEqual(completeHangingHeight * 1.1);
+		}
 	});
 
 	it('keeps guided movement inside rooms and clear of the central bench', () => {

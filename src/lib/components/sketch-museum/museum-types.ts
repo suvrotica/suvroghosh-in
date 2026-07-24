@@ -3,6 +3,7 @@ import type { SketchArtwork } from '$lib/sketches/types';
 export type Vector3Tuple = readonly [number, number, number];
 export type MuseumWall = 'north' | 'east' | 'south' | 'west';
 export type MuseumQuality = 'high' | 'medium' | 'low';
+export type RoomWayfindingDirection = 'previous' | 'next';
 
 export interface FrameDimensions {
 	artWidth: number;
@@ -43,4 +44,15 @@ export interface MuseumLayout {
 	rooms: MuseumRoomLayout[];
 	placements: ArtworkPlacement[];
 	startPosition: Vector3Tuple;
+}
+
+export interface RoomWayfindingPlacement {
+	id: string;
+	roomId: string;
+	targetRoomId: string;
+	targetRoomName: string;
+	wall: MuseumWall;
+	direction: RoomWayfindingDirection;
+	localPosition: Vector3Tuple;
+	rotationY: number;
 }

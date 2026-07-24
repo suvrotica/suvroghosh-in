@@ -345,7 +345,9 @@ Current constants are:
 - room height: 6.4;
 - eye height: 1.68;
 - artwork eye line: 2.55;
-- doorway width: 2.6; and
+- doorway width: 2.6;
+- doorway height: 3.35;
+- doorway wayfinding sign: 2.35 × 0.72, centred above the opening; and
 - works per room: 10.
 
 The layout process is:
@@ -360,9 +362,24 @@ The layout process is:
 8. Generate wall slots that keep frames away from connected doorways.
 9. Size each frame from its source aspect ratio and place it at a clamped,
    believable height.
+10. Generate deterministic previous-then-next wayfinding placements above each
+    connected doorway.
 
 Portrait, landscape, and square work use the same frame algorithm without
 stretching. Wall offsets are fixed and tested for non-overlap.
+
+### Room wayfinding
+
+Every real inter-room doorway has a high-contrast sign centred immediately above
+its opening. The sign identifies the destination and whether it is the previous
+or next room in the generated tour. Selecting or tapping it moves to an artwork
+in that room. First and final rooms show only their real connection rather than
+inventing a doorway.
+
+`roomWayfindingFor` derives these placements entirely from the room graph. It
+returns previous before next, uses the same inward-facing wall rotations as
+artworks, and supplies local coordinates so streamed room geometry can create
+and dispose signs with the rest of that room.
 
 ### Manual room assignment
 
@@ -419,14 +436,20 @@ than altering the source if an image loses important colour or white detail.
 ### Procedural materials, frames, and lighting
 
 - The woven normal map is a generated 64×64 `DataTexture`.
-- Distant warm light pools are generated in a local canvas.
+- Warm artwork light pools are generated in a local canvas and remain visible
+  around the frame edges.
 - Frames use reusable dark-walnut, carved-walnut, restrained-gilt, and bronze
   materials with aspect-aware extruded rings and lightweight corner ornaments.
-- The physical bronze plaque mesh is decorative and centred below its frame.
-  Readable title, description, known date, and medium are provided by the
-  semantic DOM HUD, not a low-resolution texture.
-- The scene uses hemisphere, ambient, and directional light plus a bounded pool
-  of nearby spotlights.
+- Each physical bronze plaque is centred below its frame and carries a
+  high-contrast artwork title on a light inset face. The semantic DOM HUD remains
+  the authoritative accessible source for the full title, description, known
+  date, and medium.
+- The scene uses brighter hemisphere, ambient, and directional fill, one warm
+  ceiling fixture per instantiated room, and a bounded pool of nearby artwork
+  spotlights.
+- Each active artwork spotlight has a restrained additive cone as well as a
+  light pool, so its direction remains visible without requiring volumetric
+  rendering.
 - Low quality creates one real spotlight and no dynamic shadows.
 - Medium/high create three real spotlights; only the first high-quality
   spotlight casts a shadow.
@@ -448,8 +471,13 @@ Desktop controls:
 - `Shift` changes walking speed from 2.15 to 3.15 world units per second.
 - “Mouse look” requests pointer lock only after an explicit button action.
   Browser `Escape` behaviour releases pointer lock.
-- Previous, Next, Details, Reset, and Return to collection remain ordinary
-  focusable buttons.
+- Previous artwork, Next artwork, Details, Reset, and Return to collection
+  remain ordinary focusable buttons.
+- The location card reports “Room N of M” and provides separate Previous room
+  and Next room buttons. Each button names its destination; the unavailable
+  direction is visibly disabled at the start or end of the tour.
+- Doorway signs can be selected directly and have equivalent semantic room
+  buttons for keyboard and assistive-technology users.
 - Selecting a canvas artwork focuses it; walking interrupts a guided focus
   animation. Same-room movement animates only when the sampled path is
   collision-safe. Cross-room or bench-blocked focus uses a short fade and
@@ -461,6 +489,7 @@ Touch/coarse-pointer controls:
 - A 6.25rem movement pad supplies forward/back and strafe input.
 - Dragging the scene looks around.
 - A short tap on an artwork selects it; a drag is not mistaken for selection.
+- A short tap on a doorway sign moves to its named room.
 - HUD actions become a compact grid and retain large touch targets.
 - Phone layouts remain supported; Museum View is never the only way to reach a
   sketch.
@@ -481,7 +510,8 @@ Additional accessibility behaviour includes:
 - a second Skip Museum View link beside the museum heading;
 - an explicitly labelled, keyboard-focusable canvas;
 - `aria-live` loading, room, and current-artwork status;
-- named HUD controls with visible focus treatment;
+- named HUD controls with visible focus treatment, including a semantic Room
+  navigation region with explicit destination labels;
 - an ordinary fallback message and collection link when WebGL, dynamic import,
   renderer initialisation, or the context fails;
 - a native modal `<dialog>` for larger inspection, previous/next navigation,
@@ -543,9 +573,9 @@ npm run sketches:test
 This runs Node tests for discovery, metadata fallbacks and validation,
 deterministic cached variants, source preservation, and `_generated` exclusion,
 followed by Vitest coverage of portrait/landscape/square frames, connected-room
-determinism, complete frame-and-plaque non-overlap, manual room caps, room
-neighbourhood selection, collision-safe guided paths, bench boundaries, and
-keyboard-input scoping.
+determinism, first/middle/final-room wayfinding and door clearance, complete
+frame-and-plaque non-overlap, manual room caps, room neighbourhood selection,
+collision-safe guided paths, bench boundaries, and keyboard-input scoping.
 
 Focused verification:
 

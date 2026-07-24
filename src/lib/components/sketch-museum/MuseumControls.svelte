@@ -4,10 +4,16 @@
 	type Props = {
 		currentArtwork: SketchArtwork | null;
 		roomName: string;
+		roomIndex?: number;
+		roomCount?: number;
+		previousRoomName?: string | null;
+		nextRoomName?: string | null;
 		pointerLocked: boolean;
 		pointerLockAvailable: boolean;
 		onPrevious: () => void;
 		onNext: () => void;
+		onPreviousRoom?: () => void;
+		onNextRoom?: () => void;
 		onDetails: () => void;
 		onReset: () => void;
 		onPointerLock: () => void;
@@ -18,10 +24,16 @@
 	let {
 		currentArtwork,
 		roomName,
+		roomIndex = 0,
+		roomCount = 1,
+		previousRoomName = null,
+		nextRoomName = null,
 		pointerLocked,
 		pointerLockAvailable,
 		onPrevious,
 		onNext,
+		onPreviousRoom = () => {},
+		onNextRoom = () => {},
 		onDetails,
 		onReset,
 		onPointerLock,
@@ -75,41 +87,81 @@
 </script>
 
 <div class="museum-hud" aria-label="Museum controls">
-	<div class="museum-location" aria-live="polite" aria-atomic="true">
-		<span class="room-name">{roomName}</span>
-		{#if currentArtwork}
-			<strong>{currentArtwork.title}</strong>
-			{#if currentArtwork.description}
-				<p>{currentArtwork.description}</p>
+	<div class="museum-location">
+		<div class="museum-location-status" aria-live="polite" aria-atomic="true">
+			<div class="room-heading">
+				<span class="room-name">{roomName}</span>
+				<span class="room-progress"
+					>Room {Math.min(roomIndex + 1, Math.max(roomCount, 1))} of {Math.max(roomCount, 1)}</span
+				>
+			</div>
+			{#if currentArtwork}
+				<strong>{currentArtwork.title}</strong>
+				{#if currentArtwork.description}
+					<p>{currentArtwork.description}</p>
+				{/if}
+				{#if currentArtwork.date || currentArtwork.medium}
+					<dl class="artwork-metadata">
+						{#if currentArtwork.date}
+							<div>
+								<dt>Date</dt>
+								<dd>
+									<time datetime={currentArtwork.date}>{formatDate(currentArtwork.date)}</time>
+								</dd>
+							</div>
+						{/if}
+						{#if currentArtwork.medium}
+							<div>
+								<dt>Medium</dt>
+								<dd>{currentArtwork.medium}</dd>
+							</div>
+						{/if}
+					</dl>
+				{/if}
+			{:else}
+				<strong>Walk towards a framed sketch</strong>
 			{/if}
-			{#if currentArtwork.date || currentArtwork.medium}
-				<dl class="artwork-metadata">
-					{#if currentArtwork.date}
-						<div>
-							<dt>Date</dt>
-							<dd><time datetime={currentArtwork.date}>{formatDate(currentArtwork.date)}</time></dd>
-						</div>
-					{/if}
-					{#if currentArtwork.medium}
-						<div>
-							<dt>Medium</dt>
-							<dd>{currentArtwork.medium}</dd>
-						</div>
-					{/if}
-				</dl>
-			{/if}
-		{:else}
-			<strong>Walk towards a framed sketch</strong>
-		{/if}
+		</div>
+
+		<nav class="room-navigation" aria-label="Room navigation">
+			<button
+				type="button"
+				onclick={onPreviousRoom}
+				disabled={!previousRoomName}
+				aria-label={previousRoomName
+					? `Go to previous room, ${previousRoomName}`
+					: 'Previous room unavailable; this is the first room'}
+			>
+				<span aria-hidden="true">←</span>
+				<span>
+					<strong>Previous room</strong>
+					<small>{previousRoomName ?? 'Start of tour'}</small>
+				</span>
+			</button>
+			<button
+				type="button"
+				onclick={onNextRoom}
+				disabled={!nextRoomName}
+				aria-label={nextRoomName
+					? `Go to next room, ${nextRoomName}`
+					: 'Next room unavailable; this is the final room'}
+			>
+				<span>
+					<strong>Next room</strong>
+					<small>{nextRoomName ?? 'End of tour'}</small>
+				</span>
+				<span aria-hidden="true">→</span>
+			</button>
+		</nav>
 	</div>
 
 	<div class="museum-actions">
 		<button type="button" onclick={onPrevious} aria-label="Move to previous artwork">
 			<span aria-hidden="true">←</span>
-			<span>Previous</span>
+			<span>Previous artwork</span>
 		</button>
 		<button type="button" onclick={onNext} aria-label="Move to next artwork">
-			<span>Next</span>
+			<span>Next artwork</span>
 			<span aria-hidden="true">→</span>
 		</button>
 		<button type="button" onclick={onDetails} disabled={!currentArtwork}>Details</button>
@@ -181,12 +233,27 @@
 
 	.room-name {
 		display: block;
-		margin-bottom: 0.25rem;
 		color: #cbb58a;
 		font-size: 0.66rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
+	}
+
+	.room-heading {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.65rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.room-progress {
+		flex: none;
+		color: #d9c9aa;
+		font-size: 0.64rem;
+		font-weight: 750;
+		letter-spacing: 0.05em;
 	}
 
 	.museum-location strong {
@@ -237,6 +304,57 @@
 		color: #eee3cf;
 		font-size: 0.68rem;
 		line-height: 1.35;
+	}
+
+	.room-navigation {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.4rem;
+		margin-top: 0.65rem;
+		padding-top: 0.55rem;
+		border-top: 1px solid rgb(221 199 155 / 24%);
+		pointer-events: auto;
+	}
+
+	.room-navigation button {
+		display: flex;
+		min-width: 0;
+		min-height: 3rem;
+		align-items: center;
+		gap: 0.45rem;
+		justify-content: flex-start;
+		padding: 0.42rem 0.55rem;
+		text-align: left;
+	}
+
+	.room-navigation button:last-child {
+		justify-content: flex-end;
+		text-align: right;
+	}
+
+	.room-navigation button > span:not([aria-hidden='true']) {
+		min-width: 0;
+	}
+
+	.room-navigation strong,
+	.room-navigation small {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.room-navigation strong {
+		font-family: var(--font-sans);
+		font-size: 0.7rem;
+		line-height: 1.15;
+	}
+
+	.room-navigation small {
+		display: block;
+		margin-top: 0.12rem;
+		color: #d6c7aa;
+		font-size: 0.6rem;
+		line-height: 1.2;
 	}
 
 	.museum-actions {
@@ -325,6 +443,15 @@
 		.museum-location p,
 		.desktop-instructions {
 			display: none;
+		}
+
+		.room-navigation {
+			margin-top: 0.5rem;
+			padding-top: 0.45rem;
+		}
+
+		.room-navigation button {
+			min-height: 2.75rem;
 		}
 
 		.museum-instructions {

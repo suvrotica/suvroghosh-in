@@ -23,7 +23,7 @@
 		"indexnow:test": "node --test scripts/indexnow.test.mjs",
 		"notes:sql:test": "node --test scripts/handwritten-notes-migration.test.mjs",
 		"notes:test": "vitest run && npm run notes:sql:test",
-		"sketches:test": "node --test scripts/sketch-manifest.test.mjs && vitest run src/lib/components/sketch-museum/museum-layout.test.ts",
+		"sketches:test": "node --test scripts/sketch-manifest.test.mjs && vitest run src/lib/components/sketch-museum",
 		"test": "npm run tags:test && npm run bengali:test && npm run post-images:test && npm run sketches:test && npm run visualizations:test && npm run artificial-life:test && npm run monte-carlo:test && npm run living-pigment:test && npm run spacetime:test && npm run indexnow:test && npm run notes:test",
 		"music:generate": "node scripts/generate-music-posts.mjs",
 		"images:optimize": "python scripts/optimize_images.py",

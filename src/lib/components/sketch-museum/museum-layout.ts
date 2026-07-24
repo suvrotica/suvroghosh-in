@@ -4,7 +4,8 @@ import type {
 	FrameDimensions,
 	MuseumLayout,
 	MuseumRoomLayout,
-	MuseumWall
+	MuseumWall,
+	RoomWayfindingPlacement
 } from './museum-types';
 
 export const ROOM_WIDTH = 15;
@@ -13,9 +14,14 @@ export const ROOM_HEIGHT = 6.4;
 export const EYE_HEIGHT = 1.68;
 export const ART_EYE_LINE = 2.55;
 export const DOOR_WIDTH = 2.6;
+export const DOOR_HEIGHT = 3.35;
 export const WORKS_PER_ROOM = 10;
-export const PLAQUE_HEIGHT = 0.38;
-export const PLAQUE_GAP = 0.18;
+export const PLAQUE_HEIGHT = 0.46;
+export const PLAQUE_GAP = 0.17;
+export const WAYFINDING_SIGN_WIDTH = 2.35;
+export const WAYFINDING_SIGN_HEIGHT = 0.72;
+export const WAYFINDING_SIGN_WALL_INSET = 0.19;
+export const WAYFINDING_SIGN_CENTER_Y = DOOR_HEIGHT + WAYFINDING_SIGN_HEIGHT / 2 + 0.11;
 
 const BENCH_WIDTH = 2.7;
 const BENCH_DEPTH = 0.78;
@@ -68,7 +74,10 @@ export function calculateFrameDimensions(aspectRatio: number): FrameDimensions {
 }
 
 export function calculatePlaqueLayout(frame: FrameDimensions) {
-	const width = Math.min(1.25, Math.max(0.76, frame.outerWidth * 0.46));
+	const width = Math.min(
+		frame.outerWidth - 0.18,
+		Math.min(1.7, Math.max(1.05, frame.outerWidth * 0.68))
+	);
 	return {
 		width,
 		height: PLAQUE_HEIGHT,
@@ -207,7 +216,8 @@ function placeOnWall(
 ): Pick<ArtworkPlacement, 'position' | 'rotationY' | 'viewPosition'> {
 	const [centerX, centerZ] = room.center;
 	const wallInset = 0.16;
-	const viewingDistance = 2.45;
+	const completeHangingHeight = frame.outerHeight + PLAQUE_GAP + PLAQUE_HEIGHT;
+	const viewingDistance = clamp(completeHangingHeight * 1.18, 2.75, 4.15);
 	const centerY = clamp(
 		ART_EYE_LINE,
 		frame.outerHeight / 2 + 0.45,
@@ -289,6 +299,61 @@ export function activeRoomIdsFor(layout: MuseumLayout, roomId: string) {
 	return room
 		? new Set([room.id, ...room.connections.map((connection) => connection.toRoomId)])
 		: new Set<string>();
+}
+
+function wayfindingTransform(
+	room: MuseumRoomLayout,
+	wall: MuseumWall
+): Pick<RoomWayfindingPlacement, 'localPosition' | 'rotationY'> {
+	switch (wall) {
+		case 'north':
+			return {
+				localPosition: [0, WAYFINDING_SIGN_CENTER_Y, -room.depth / 2 + WAYFINDING_SIGN_WALL_INSET],
+				rotationY: 0
+			};
+		case 'south':
+			return {
+				localPosition: [0, WAYFINDING_SIGN_CENTER_Y, room.depth / 2 - WAYFINDING_SIGN_WALL_INSET],
+				rotationY: Math.PI
+			};
+		case 'east':
+			return {
+				localPosition: [room.width / 2 - WAYFINDING_SIGN_WALL_INSET, WAYFINDING_SIGN_CENTER_Y, 0],
+				rotationY: -Math.PI / 2
+			};
+		case 'west':
+			return {
+				localPosition: [-room.width / 2 + WAYFINDING_SIGN_WALL_INSET, WAYFINDING_SIGN_CENTER_Y, 0],
+				rotationY: Math.PI / 2
+			};
+	}
+}
+
+export function roomWayfindingFor(layout: MuseumLayout, roomId: string): RoomWayfindingPlacement[] {
+	const room = layout.rooms.find((candidate) => candidate.id === roomId);
+	if (!room) return [];
+
+	return room.connections
+		.map((connection): RoomWayfindingPlacement | null => {
+			const target = layout.rooms.find((candidate) => candidate.id === connection.toRoomId);
+			if (!target || target.index === room.index) return null;
+			const direction = target.index < room.index ? 'previous' : 'next';
+			return {
+				id: `${room.id}-${direction}-${target.id}`,
+				roomId: room.id,
+				targetRoomId: target.id,
+				targetRoomName: target.name,
+				wall: connection.wall,
+				direction,
+				...wayfindingTransform(room, connection.wall)
+			};
+		})
+		.filter((placement): placement is RoomWayfindingPlacement => placement !== null)
+		.sort(
+			(left, right) =>
+				(left.direction === 'previous' ? 0 : 1) - (right.direction === 'previous' ? 0 : 1) ||
+				left.targetRoomId.localeCompare(right.targetRoomId, 'en')
+		);
 }
 
 export function isWalkable(layout: MuseumLayout, x: number, z: number, margin = 0.48) {

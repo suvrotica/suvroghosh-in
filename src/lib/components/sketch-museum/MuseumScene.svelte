@@ -3,6 +3,7 @@
 	import { SvelteMap, SvelteSet } from 'svelte/reactivity';
 	import {
 		ACESFilmicToneMapping,
+		AdditiveBlending,
 		AmbientLight,
 		BoxGeometry,
 		Color,
@@ -20,6 +21,7 @@
 		PCFSoftShadowMap,
 		PerspectiveCamera,
 		PlaneGeometry,
+		PointLight,
 		Raycaster,
 		Scene,
 		SpotLight,
@@ -38,6 +40,7 @@
 		createBaroqueFrame,
 		createMountedSketchMaterial,
 		createPlaceholderArtwork,
+		createRoomNavigationSign,
 		createSoftLightPoolTexture,
 		disposeObjectTree,
 		disposeSharedMuseumMaterials,
@@ -45,13 +48,16 @@
 	} from './museum-materials';
 	import { shouldHandleMuseumMovementKey } from './museum-input';
 	import {
+		DOOR_HEIGHT,
 		DOOR_WIDTH,
 		EYE_HEIGHT,
 		activeRoomIdsFor,
+		calculateArtworkFootprint,
 		createMuseumLayout,
 		ensureWalkableViewPosition,
 		isWalkable,
-		isWalkableSegment
+		isWalkableSegment,
+		roomWayfindingFor
 	} from './museum-layout';
 	import type {
 		ArtworkPlacement,
@@ -123,7 +129,7 @@
 	let pitch = 0;
 	let lastFrameTime = 0;
 	let frameCounter = 0;
-	let activeRoomId = '';
+	let activeRoomId = $state('');
 	let activeRoomIds: Set<string> = new SvelteSet<string>();
 	let roomActivationId = 0;
 	let lightPoolTexture: Texture | null = null;
@@ -135,6 +141,14 @@
 	let focusFading = $state(false);
 	let focusRequestId = 0;
 	let autoSelectionArmed = true;
+	let activeRoomIndex = $derived(
+		Math.max(
+			0,
+			layout.rooms.findIndex((room) => room.id === activeRoomId)
+		)
+	);
+	let previousRoom = $derived(layout.rooms[activeRoomIndex - 1] ?? null);
+	let nextRoom = $derived(layout.rooms[activeRoomIndex + 1] ?? null);
 	let focusAnimation: {
 		startedAt: number;
 		duration: number;
@@ -149,14 +163,19 @@
 	const pressedKeys = new SvelteSet<string>();
 	const roomGroups = new SvelteMap<string, Group>();
 	const runtimes = new SvelteMap<string, RuntimeArtwork>();
+	const roomNavigationMeshes = new SvelteMap<string, Mesh[]>();
 	const activeSpots: SpotLight[] = [];
 	const spotTargets: Object3D[] = [];
+	const activeSpotBeams: Array<Mesh<CylinderGeometry, MeshBasicMaterial>> = [];
 	const raycaster = new Raycaster();
 	const pointer = new Vector2();
 	const forward = new Vector3();
 	const right = new Vector3();
 	const candidatePosition = new Vector3();
 	const worldPosition = new Vector3();
+	const beamDirection = new Vector3();
+	const beamMidpoint = new Vector3();
+	const worldUp = new Vector3(0, 1, 0);
 	const textureLoader = new TextureLoader();
 
 	const waitingMaterial = new MeshStandardMaterial({
@@ -165,22 +184,22 @@
 		metalness: 0
 	});
 	const wallMaterial = new MeshStandardMaterial({
-		color: '#aa9a7d',
+		color: '#b9aa8f',
 		roughness: 0.96,
 		metalness: 0
 	});
 	const wallInsetMaterial = new MeshStandardMaterial({
-		color: '#8d7c61',
+		color: '#9d8a6b',
 		roughness: 0.92,
 		metalness: 0
 	});
 	const floorMaterial = new MeshStandardMaterial({
-		color: '#211711',
+		color: '#2a1d16',
 		roughness: 0.58,
 		metalness: 0.08
 	});
 	const ceilingMaterial = new MeshStandardMaterial({
-		color: '#c9bda5',
+		color: '#d8ccb5',
 		roughness: 1,
 		metalness: 0,
 		side: DoubleSide
@@ -191,7 +210,9 @@
 		metalness: 0.03
 	});
 	const fixtureMaterial = new MeshStandardMaterial({
-		color: '#4c3a26',
+		color: '#6d5434',
+		emissive: '#c89045',
+		emissiveIntensity: 0.42,
 		roughness: 0.45,
 		metalness: 0.55
 	});
@@ -245,7 +266,7 @@
 			return;
 		}
 
-		const doorHeight = 3.35;
+		const doorHeight = DOOR_HEIGHT;
 		const sideLength = (length - DOOR_WIDTH) / 2;
 		const sideOffset = DOOR_WIDTH / 2 + sideLength / 2;
 		wallPiece(group, wall, -sideOffset, sideLength, room.height / 2, room.height, room);
@@ -282,6 +303,30 @@
 		for (const wall of ['north', 'east', 'south', 'west'] as const) {
 			addWall(group, room, wall);
 		}
+
+		const ceilingFixture = new Mesh(new CylinderGeometry(0.42, 0.42, 0.12, 24), fixtureMaterial);
+		ceilingFixture.position.y = room.height - 0.16;
+		group.add(ceilingFixture);
+		const roomLight = new PointLight(
+			'#ffe5b9',
+			quality === 'low' ? 24 : 36,
+			Math.max(room.width, room.depth),
+			1.45
+		);
+		roomLight.position.y = room.height - 0.72;
+		group.add(roomLight);
+
+		const navigationMeshes: Mesh[] = [];
+		for (const wayfinding of roomWayfindingFor(layout, room.id)) {
+			const sign = createRoomNavigationSign(wayfinding.direction, wayfinding.targetRoomName);
+			sign.group.position.set(...wayfinding.localPosition);
+			sign.group.rotation.y = wayfinding.rotationY;
+			sign.hitTarget.userData.targetRoomId = wayfinding.targetRoomId;
+			sign.hitTarget.userData.roomId = room.id;
+			navigationMeshes.push(sign.hitTarget);
+			group.add(sign.group);
+		}
+		roomNavigationMeshes.set(room.id, navigationMeshes);
 
 		const dado = new Mesh(new BoxGeometry(room.width - 0.4, 0.13, 0.1), wallInsetMaterial);
 		dado.position.set(0, 1.05, -room.depth / 2 + 0.15);
@@ -332,9 +377,10 @@
 			const poolMaterial = new MeshBasicMaterial({
 				map: poolTexture,
 				transparent: true,
-				opacity: 0.72,
+				opacity: 0.94,
 				depthWrite: false,
-				color: '#ffe1a0'
+				color: '#ffe2a3',
+				toneMapped: false
 			});
 			poolMaterial.userData.museumRoomOwned = true;
 			const pool = new Mesh(
@@ -346,7 +392,7 @@
 		}
 
 		group.add(createBaroqueFrame(placement.frame));
-		group.add(createArtworkPlaque(placement.frame));
+		group.add(createArtworkPlaque(placement.frame, placement.artwork.title));
 
 		const canvasMesh = new Mesh(
 			new PlaneGeometry(placement.frame.artWidth, placement.frame.artHeight),
@@ -457,6 +503,7 @@
 
 		const geometries = new SvelteSet<{ dispose: () => void }>();
 		const ownedMaterials = new SvelteSet<{ dispose: () => void }>();
+		const ownedTextures = new SvelteSet<Texture>();
 		group.traverse((object) => {
 			const mesh = object as Mesh;
 			if (mesh.geometry) geometries.add(mesh.geometry);
@@ -466,13 +513,21 @@
 					? [mesh.material]
 					: [];
 			for (const material of materials) {
-				if (material.userData.museumRoomOwned === true) ownedMaterials.add(material);
+				if (material.userData.museumRoomOwned !== true) continue;
+				ownedMaterials.add(material);
+				for (const value of Object.values(material) as unknown[]) {
+					if (value instanceof Texture && value.userData.museumRoomOwned === true) {
+						ownedTextures.add(value);
+					}
+				}
 			}
 		});
 
 		group.removeFromParent();
 		roomGroups.delete(roomId);
+		roomNavigationMeshes.delete(roomId);
 		for (const geometry of geometries) geometry.dispose();
+		for (const texture of ownedTextures) texture.dispose();
 		for (const material of ownedMaterials) material.dispose();
 	}
 
@@ -535,6 +590,16 @@
 		};
 	}
 
+	function artworkFocusTarget(placement: ArtworkPlacement) {
+		const footprint = calculateArtworkFootprint(placement.frame);
+		const verticalOffset = (footprint.minY + footprint.maxY) / 2;
+		return new Vector3(
+			placement.position[0],
+			placement.position[1] + verticalOffset,
+			placement.position[2]
+		);
+	}
+
 	function clamp(value: number, minimum: number, maximum: number) {
 		return Math.min(maximum, Math.max(minimum, value));
 	}
@@ -560,7 +625,7 @@
 			placement.viewPosition
 		);
 		const endPosition = new Vector3(...safeViewPosition);
-		const target = new Vector3(...placement.position);
+		const target = artworkFocusTarget(placement);
 		const angles = viewingAngles(endPosition, target);
 		const currentRoom = roomContaining(camera.position);
 		const canInterpolate =
@@ -604,14 +669,25 @@
 	}
 
 	function selectNearest(direction: 1 | -1) {
-		if (artworks.length === 0) return;
+		const orderedArtworks = layout.placements.map((placement) => placement.artwork);
+		if (orderedArtworks.length === 0) return;
 		const currentIndex = currentSlug
-			? artworks.findIndex((artwork) => artwork.slug === currentSlug)
+			? orderedArtworks.findIndex((artwork) => artwork.slug === currentSlug)
 			: direction === 1
 				? -1
 				: 0;
-		const nextIndex = (currentIndex + direction + artworks.length) % artworks.length;
-		void focusArtwork(artworks[nextIndex].slug, true);
+		const nextIndex = (currentIndex + direction + orderedArtworks.length) % orderedArtworks.length;
+		void focusArtwork(orderedArtworks[nextIndex].slug, true);
+	}
+
+	function navigateToRoom(roomId: string) {
+		const targetRoom = layout.rooms.find((room) => room.id === roomId);
+		if (!targetRoom) return;
+		const enteringFromLaterRoom = targetRoom.index < activeRoomIndex;
+		const targetSlug = enteringFromLaterRoom
+			? targetRoom.artworkSlugs.at(-1)
+			: targetRoom.artworkSlugs[0];
+		if (targetSlug) void focusArtwork(targetSlug, true);
 	}
 
 	function cancelGuidedFocus() {
@@ -736,7 +812,16 @@
 				return activeRoomIds.has(placement.roomId) && roomGroup?.visible === true;
 			})
 			.map((runtime) => runtime.canvasMesh);
-		const intersection = raycaster.intersectObjects(visibleArtworkMeshes, false)[0];
+		const visibleNavigationMeshes = roomNavigationMeshes.get(activeRoomId) ?? [];
+		const intersection = raycaster.intersectObjects(
+			[...visibleArtworkMeshes, ...visibleNavigationMeshes],
+			false
+		)[0];
+		const targetRoomId = intersection?.object.userData.targetRoomId;
+		if (typeof targetRoomId === 'string') {
+			navigateToRoom(targetRoomId);
+			return;
+		}
 		const slug = intersection?.object.userData.slug;
 		if (typeof slug === 'string' && artworkBySlug.has(slug)) void focusArtwork(slug, true);
 	}
@@ -827,8 +912,10 @@
 
 		for (const [index, light] of activeSpots.entries()) {
 			const match = nearby[index];
+			const beam = activeSpotBeams[index];
 			if (!match) {
 				light.visible = false;
+				if (beam) beam.visible = false;
 				continue;
 			}
 			light.visible = true;
@@ -841,6 +928,15 @@
 				(room?.height ?? 6.4) - 0.38,
 				placement.viewPosition[2]
 			);
+			if (beam) {
+				beam.visible = true;
+				beamDirection.subVectors(target.position, light.position);
+				const beamLength = beamDirection.length();
+				beamMidpoint.copy(light.position).add(target.position).multiplyScalar(0.5);
+				beam.position.copy(beamMidpoint);
+				beam.scale.set(1, beamLength, 1);
+				beam.quaternion.setFromUnitVectors(worldUp, beamDirection.normalize());
+			}
 		}
 	}
 
@@ -917,26 +1013,33 @@
 			renderer.setPixelRatio(renderPixelDensity());
 			renderer.outputColorSpace = SRGBColorSpace;
 			renderer.toneMapping = ACESFilmicToneMapping;
-			renderer.toneMappingExposure = 0.82;
+			renderer.toneMappingExposure = 1.08;
 			renderer.shadowMap.enabled = quality !== 'low';
 			renderer.shadowMap.type = PCFSoftShadowMap;
 
 			scene = new Scene();
-			scene.background = new Color('#19130f');
-			scene.fog = new FogExp2('#2d251f', quality === 'low' ? 0.013 : 0.018);
+			scene.background = new Color('#241b15');
+			scene.fog = new FogExp2('#3b322a', quality === 'low' ? 0.009 : 0.012);
 			camera = new PerspectiveCamera(58, 1, 0.08, 90);
 			camera.position.set(...layout.startPosition);
 			activeRoomId = layout.rooms[0]?.id ?? '';
 
-			scene.add(new HemisphereLight('#ecd8b8', '#241710', quality === 'low' ? 1.1 : 0.82));
-			scene.add(new AmbientLight('#fff1d8', quality === 'low' ? 0.72 : 0.42));
-			const directional = new DirectionalLight('#ffe4b8', quality === 'high' ? 0.65 : 0.38);
+			scene.add(new HemisphereLight('#ffe9c8', '#3b2418', quality === 'low' ? 1.45 : 1.12));
+			scene.add(new AmbientLight('#fff1d8', quality === 'low' ? 0.92 : 0.68));
+			const directional = new DirectionalLight('#ffe4b8', quality === 'high' ? 0.88 : 0.64);
 			directional.position.set(-4, 6, 3);
 			directional.castShadow = quality === 'high';
 			scene.add(directional);
 
 			for (let index = 0; index < (quality === 'low' ? 1 : 3); index += 1) {
-				const spot = new SpotLight('#ffd69a', quality === 'high' ? 18 : 12, 12, 0.46, 0.72, 1.55);
+				const spot = new SpotLight(
+					'#ffd69a',
+					quality === 'high' ? 92 : quality === 'medium' ? 78 : 58,
+					14,
+					0.48,
+					0.76,
+					1.4
+				);
 				spot.castShadow = quality === 'high' && index === 0;
 				spot.shadow.mapSize.set(512, 512);
 				const target = new Object3D();
@@ -945,6 +1048,25 @@
 				activeSpots.push(spot);
 				spotTargets.push(target);
 				scene.add(spot);
+
+				const beamMaterial = new MeshBasicMaterial({
+					color: '#ffe0a1',
+					transparent: true,
+					opacity: quality === 'low' ? 0.065 : 0.085,
+					depthWrite: false,
+					side: DoubleSide,
+					blending: AdditiveBlending,
+					toneMapped: false
+				});
+				beamMaterial.fog = false;
+				const beam = new Mesh(
+					new CylinderGeometry(0.82, 0.04, 1, quality === 'low' ? 12 : 20, 1, true),
+					beamMaterial
+				);
+				beam.visible = false;
+				beam.renderOrder = 1;
+				activeSpotBeams.push(beam);
+				scene.add(beam);
 			}
 
 			lightPoolTexture = createSoftLightPoolTexture();
@@ -952,7 +1074,7 @@
 			const initialPlacement = selectedSlug ? placementBySlug.get(selectedSlug) : undefined;
 			if (initialPlacement) {
 				camera.position.set(...initialPlacement.viewPosition);
-				const angles = viewingAngles(camera.position, new Vector3(...initialPlacement.position));
+				const angles = viewingAngles(camera.position, artworkFocusTarget(initialPlacement));
 				yaw = angles.yaw;
 				pitch = angles.pitch;
 				currentSlug = initialPlacement.artwork.slug;
@@ -1007,7 +1129,11 @@
 		lightPoolTexture = null;
 		roomGroups.clear();
 		runtimes.clear();
+		roomNavigationMeshes.clear();
 		activeRoomIds.clear();
+		activeSpots.length = 0;
+		spotTargets.length = 0;
+		activeSpotBeams.length = 0;
 		for (const material of [
 			waitingMaterial,
 			wallMaterial,
@@ -1051,8 +1177,14 @@
 	<MuseumControls
 		{currentArtwork}
 		{roomName}
+		roomIndex={activeRoomIndex}
+		roomCount={layout.rooms.length}
+		previousRoomName={previousRoom?.name ?? null}
+		nextRoomName={nextRoom?.name ?? null}
 		{pointerLocked}
 		{pointerLockAvailable}
+		onPreviousRoom={() => previousRoom && navigateToRoom(previousRoom.id)}
+		onNextRoom={() => nextRoom && navigateToRoom(nextRoom.id)}
 		onPrevious={() => selectNearest(-1)}
 		onNext={() => selectNearest(1)}
 		onDetails={openDetails}

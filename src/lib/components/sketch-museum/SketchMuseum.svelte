@@ -117,8 +117,9 @@
 				<p class="entrance-eyebrow">{artworks.length} works · procedurally arranged rooms</p>
 				<h3>Step into the opening gallery</h3>
 				<p>
-					Walk among framed sketches under focused gallery lights. Use a mouse, keyboard, touch, or
-					the guided previous and next controls. Movement begins only when you choose to enter.
+					Walk among framed sketches under focused gallery lights. Follow the illuminated room signs
+					above each doorway, or use the guided artwork and room controls. Movement begins only when
+					you choose to enter.
 				</p>
 				<div class="entrance-actions">
 					<button bind:this={enterButton} type="button" onclick={enterMuseum} disabled={loading}>

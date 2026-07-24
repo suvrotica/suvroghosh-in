@@ -6,10 +6,13 @@ import {
 	ExtrudeGeometry,
 	Group,
 	LinearFilter,
+	LinearMipmapLinearFilter,
 	Mesh,
+	MeshBasicMaterial,
 	MeshStandardMaterial,
 	Object3D,
 	Path,
+	PlaneGeometry,
 	RGBAFormat,
 	Shape,
 	SRGBColorSpace,
@@ -45,12 +48,146 @@ const restrainedGilt = new MeshStandardMaterial({
 	metalness: 0.48
 });
 const plaqueBronze = new MeshStandardMaterial({
-	color: new Color('#665334'),
-	roughness: 0.58,
-	metalness: 0.42
+	color: new Color('#9a793f'),
+	emissive: new Color('#241606'),
+	emissiveIntensity: 0.18,
+	roughness: 0.5,
+	metalness: 0.38
 });
 
 let sharedNormalMap: DataTexture | undefined;
+
+const TEXT_SURFACE_WIDTH = 1024;
+const TEXT_SURFACE_BACKGROUND = '#f1e3bd';
+const TEXT_SURFACE_INK = '#1a120c';
+const TEXT_SURFACE_BORDER = '#80632f';
+
+type TextMeasure = (text: string) => number;
+
+export function splitMuseumTitleLines(
+	title: string,
+	maximumWidth: number,
+	measure: TextMeasure
+): string[] {
+	const normalizedTitle = title.trim().replace(/\s+/g, ' ') || 'Untitled';
+	if (measure(normalizedTitle) <= maximumWidth) return [normalizedTitle];
+
+	const words = normalizedTitle.split(' ');
+	if (words.length < 2) return [normalizedTitle];
+
+	let bestLines = [normalizedTitle];
+	let bestWidth = Number.POSITIVE_INFINITY;
+	for (let breakIndex = 1; breakIndex < words.length; breakIndex += 1) {
+		const lines = [words.slice(0, breakIndex).join(' '), words.slice(breakIndex).join(' ')];
+		const widestLine = Math.max(...lines.map(measure));
+		if (widestLine < bestWidth) {
+			bestLines = lines;
+			bestWidth = widestLine;
+		}
+	}
+	return bestLines;
+}
+
+function prepareTextSurface(context: CanvasRenderingContext2D, width: number, height: number) {
+	context.fillStyle = TEXT_SURFACE_BACKGROUND;
+	context.fillRect(0, 0, width, height);
+
+	context.strokeStyle = TEXT_SURFACE_BORDER;
+	context.lineWidth = 12;
+	context.strokeRect(12, 12, width - 24, height - 24);
+	context.strokeStyle = 'rgba(128, 99, 47, 0.42)';
+	context.lineWidth = 3;
+	context.strokeRect(29, 29, width - 58, height - 58);
+
+	context.fillStyle = TEXT_SURFACE_INK;
+	context.textAlign = 'center';
+	context.textBaseline = 'middle';
+}
+
+function createOwnedTextTexture(
+	physicalWidth: number,
+	physicalHeight: number,
+	draw: (context: CanvasRenderingContext2D, width: number, height: number) => void
+) {
+	const canvas = document.createElement('canvas');
+	canvas.width = TEXT_SURFACE_WIDTH;
+	canvas.height = Math.min(
+		512,
+		Math.max(304, Math.round((TEXT_SURFACE_WIDTH * physicalHeight) / physicalWidth))
+	);
+	const context = canvas.getContext('2d');
+	if (!context) return null;
+
+	prepareTextSurface(context, canvas.width, canvas.height);
+	draw(context, canvas.width, canvas.height);
+
+	const texture = new CanvasTexture(canvas);
+	texture.colorSpace = SRGBColorSpace;
+	texture.minFilter = LinearMipmapLinearFilter;
+	texture.magFilter = LinearFilter;
+	texture.generateMipmaps = true;
+	texture.anisotropy = 4;
+	texture.needsUpdate = true;
+	texture.userData.museumRoomOwned = true;
+	return texture;
+}
+
+function createOwnedTextMaterial(texture: Texture) {
+	const material = new MeshBasicMaterial({
+		map: texture,
+		toneMapped: false
+	});
+	material.userData.museumRoomOwned = true;
+	return material;
+}
+
+function drawFittedArtworkTitle(
+	context: CanvasRenderingContext2D,
+	title: string,
+	width: number,
+	height: number
+) {
+	const maximumWidth = width - 128;
+	const maximumHeight = height - 104;
+	let fontSize = Math.min(116, Math.round(height * 0.34));
+	let lines: string[] = [];
+	let lineHeight = 0;
+
+	while (fontSize >= 46) {
+		context.font = `700 ${fontSize}px Georgia, "Times New Roman", serif`;
+		lines = splitMuseumTitleLines(title, maximumWidth, (line) => context.measureText(line).width);
+		lineHeight = fontSize * 1.08;
+		if (
+			lines.every((line) => context.measureText(line).width <= maximumWidth) &&
+			lines.length * lineHeight <= maximumHeight
+		) {
+			break;
+		}
+		fontSize -= 2;
+	}
+
+	const firstLineY = height / 2 - ((lines.length - 1) * lineHeight) / 2;
+	for (const [index, line] of lines.entries()) {
+		context.fillText(line, width / 2, firstLineY + index * lineHeight);
+	}
+}
+
+function fittedSingleLineFontSize(
+	context: CanvasRenderingContext2D,
+	text: string,
+	maximumWidth: number,
+	startingSize: number,
+	minimumSize: number,
+	fontFamily: string
+) {
+	let fontSize = startingSize;
+	while (fontSize > minimumSize) {
+		context.font = `700 ${fontSize}px ${fontFamily}`;
+		if (context.measureText(text).width <= maximumWidth) break;
+		fontSize -= 2;
+	}
+	return fontSize;
+}
 
 function createCanvasNormalMap() {
 	if (sharedNormalMap) return sharedNormalMap;
@@ -232,28 +369,105 @@ export function createBaroqueFrame(frame: FrameDimensions) {
 	return group;
 }
 
-export function createArtworkPlaque(frame: FrameDimensions) {
+export function createArtworkPlaque(frame: FrameDimensions, title: string) {
 	const layout = calculatePlaqueLayout(frame);
-	const plaque = new Mesh(new BoxGeometry(layout.width, layout.height, 0.065), plaqueBronze);
-	plaque.position.set(layout.centerX, layout.centerY, 0.055);
-	plaque.castShadow = true;
-	plaque.name = 'artwork-plaque';
-	return plaque;
+	const group = new Group();
+	group.name = 'artwork-plaque';
+	group.position.set(layout.centerX, layout.centerY, 0.055);
+
+	const backing = new Mesh(new BoxGeometry(layout.width, layout.height, 0.065), plaqueBronze);
+	backing.castShadow = true;
+	backing.name = 'artwork-plaque-backing';
+	group.add(backing);
+
+	const faceWidth = Math.max(0.1, layout.width - 0.075);
+	const faceHeight = Math.max(0.1, layout.height - 0.075);
+	const texture = createOwnedTextTexture(faceWidth, faceHeight, (context, width, height) => {
+		drawFittedArtworkTitle(context, title, width, height);
+	});
+	if (texture) {
+		const faceMaterial = createOwnedTextMaterial(texture);
+		const face = new Mesh(new PlaneGeometry(faceWidth, faceHeight), faceMaterial);
+		face.position.z = 0.036;
+		face.name = 'artwork-plaque-title';
+		group.add(face);
+	}
+
+	return group;
+}
+
+export function createRoomNavigationSign(
+	direction: 'previous' | 'next',
+	targetRoomName: string
+): { group: Group; hitTarget: Mesh } {
+	const signWidth = 2.35;
+	const signHeight = 0.72;
+	const group = new Group();
+	group.name = `room-navigation-sign-${direction}`;
+
+	const backing = new Mesh(new BoxGeometry(signWidth, signHeight, 0.08), plaqueBronze);
+	backing.castShadow = true;
+	backing.name = `room-navigation-sign-${direction}-backing`;
+	backing.userData.roomNavigationDirection = direction;
+	backing.userData.targetRoomName = targetRoomName;
+	group.add(backing);
+
+	const faceWidth = signWidth - 0.09;
+	const faceHeight = signHeight - 0.09;
+	const texture = createOwnedTextTexture(faceWidth, faceHeight, (context, width, height) => {
+		const heading = `${direction === 'previous' ? 'PREVIOUS' : 'NEXT'} ROOM ↓`;
+		const maximumWidth = width - 128;
+		const headingSize = fittedSingleLineFontSize(
+			context,
+			heading,
+			maximumWidth,
+			58,
+			42,
+			'Arial, Helvetica, sans-serif'
+		);
+		context.font = `800 ${headingSize}px Arial, Helvetica, sans-serif`;
+		context.fillText(heading, width / 2, height * 0.34);
+
+		const roomName = targetRoomName.trim().replace(/\s+/g, ' ') || 'Gallery';
+		const roomNameSize = fittedSingleLineFontSize(
+			context,
+			roomName,
+			maximumWidth,
+			92,
+			48,
+			'Georgia, "Times New Roman", serif'
+		);
+		context.font = `700 ${roomNameSize}px Georgia, "Times New Roman", serif`;
+		context.fillText(roomName, width / 2, height * 0.69);
+	});
+	if (texture) {
+		const faceMaterial = createOwnedTextMaterial(texture);
+		const face = new Mesh(new PlaneGeometry(faceWidth, faceHeight), faceMaterial);
+		face.position.z = 0.043;
+		face.name = `room-navigation-sign-${direction}-face`;
+		group.add(face);
+	}
+
+	return { group, hitTarget: backing };
 }
 
 export function createSoftLightPoolTexture() {
 	const canvas = document.createElement('canvas');
-	canvas.width = canvas.height = 128;
+	canvas.width = canvas.height = 192;
 	const context = canvas.getContext('2d');
 	if (!context) return null;
-	const gradient = context.createRadialGradient(64, 64, 4, 64, 64, 62);
-	gradient.addColorStop(0, 'rgba(255, 232, 183, 0.30)');
-	gradient.addColorStop(0.5, 'rgba(255, 220, 158, 0.12)');
-	gradient.addColorStop(1, 'rgba(255, 210, 140, 0)');
+	const gradient = context.createRadialGradient(96, 96, 5, 96, 96, 93);
+	gradient.addColorStop(0, 'rgba(255, 239, 203, 0.46)');
+	gradient.addColorStop(0.36, 'rgba(255, 228, 174, 0.24)');
+	gradient.addColorStop(0.7, 'rgba(255, 216, 146, 0.08)');
+	gradient.addColorStop(1, 'rgba(255, 205, 125, 0)');
 	context.fillStyle = gradient;
-	context.fillRect(0, 0, 128, 128);
+	context.fillRect(0, 0, canvas.width, canvas.height);
 	const texture = new CanvasTexture(canvas);
 	texture.colorSpace = SRGBColorSpace;
+	texture.minFilter = LinearFilter;
+	texture.magFilter = LinearFilter;
+	texture.userData.museumShared = true;
 	return texture;
 }
 
@@ -278,17 +492,27 @@ export function createPlaceholderArtwork(width: number, height: number) {
 }
 
 export function disposeObjectTree(root: Object3D) {
+	const geometries = new Set<{ dispose: () => void }>();
+	const textures = new Set<Texture>();
+	const materials = new Set<{ dispose: () => void }>();
+
 	root.traverse((object) => {
 		const mesh = object as Mesh;
-		if (mesh.geometry) mesh.geometry.dispose();
-		const materials = Array.isArray(mesh.material)
+		if (mesh.geometry) geometries.add(mesh.geometry);
+		const meshMaterials = Array.isArray(mesh.material)
 			? mesh.material
 			: mesh.material
 				? [mesh.material]
 				: [];
-		for (const material of materials) {
+		for (const material of meshMaterials) {
 			for (const value of Object.values(material) as unknown[]) {
-				if (value instanceof Texture && value !== sharedNormalMap) value.dispose();
+				if (
+					value instanceof Texture &&
+					value !== sharedNormalMap &&
+					value.userData.museumShared !== true
+				) {
+					textures.add(value);
+				}
 			}
 			if (
 				material !== walnut &&
@@ -296,10 +520,14 @@ export function disposeObjectTree(root: Object3D) {
 				material !== restrainedGilt &&
 				material !== plaqueBronze
 			) {
-				material.dispose();
+				materials.add(material);
 			}
 		}
 	});
+
+	for (const geometry of geometries) geometry.dispose();
+	for (const texture of textures) texture.dispose();
+	for (const material of materials) material.dispose();
 }
 
 export function disposeSharedMuseumMaterials() {
