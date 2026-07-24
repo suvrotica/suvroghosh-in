@@ -7,7 +7,8 @@ export default defineConfig({
 		include: [
 			'src/lib/notes/**/*.test.ts',
 			'src/lib/server/notes/**/*.test.ts',
-			'src/lib/components/sketch-museum/**/*.test.ts'
+			'src/lib/components/sketch-museum/**/*.test.ts',
+			'src/lib/visualizations/domain-coloring/**/*.test.ts'
 		],
 		environment: 'node',
 		coverage: {

@@ -8032,6 +8032,18 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/domain-coloring-explorer.svg": {
+      "format": "SVG",
+      "height": 675,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 2641,
+      "outputHash": "286f4e8c7660f0f77109b836450a6b594810137d0d01011c0059282711dbd383",
+      "reason": "vector source retained",
+      "sourceBytes": 2641,
+      "sourceHash": "286f4e8c7660f0f77109b836450a6b594810137d0d01011c0059282711dbd383",
+      "width": 1200
+    },
     "static/images/handwritten-notes-social-card.png": {
       "format": "PNG",
       "height": 630,

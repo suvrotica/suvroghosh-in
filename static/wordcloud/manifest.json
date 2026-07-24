@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T20:34:52.830004+00:00",
+  "generatedAt": "2026-07-24T22:09:30.931197+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2643,6 +2643,29 @@
         "Patterns",
         "Bad",
         "Interaction"
+      ],
+      "wordCount": 130
+    },
+    "domain-coloring-complex-functions-explorer": {
+      "generatedAt": "2026-07-24T22:09:30.431158+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/domain-coloring-complex-functions-explorer.svg",
+      "source": "src/lib/posts/domain-coloring-complex-functions-explorer.md",
+      "sourceHash": "a9cb1dee044b53f15bad56670815c320c6c00147d123007130772c760f07a8ba",
+      "sourceModified": "2026-07-24T22:09:21.360712+00:00",
+      "topWords": [
+        "Hue",
+        "Real",
+        "Magnitude",
+        "Zeros",
+        "Complex",
+        "Function",
+        "Angle",
+        "Zero",
+        "Changes",
+        "Branch",
+        "Every",
+        "Input"
       ],
       "wordCount": 130
     },

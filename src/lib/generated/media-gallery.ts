@@ -3072,6 +3072,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "domain-coloring-explorer.svg",
+			"src": "/images/domain-coloring-explorer.svg",
+			"bytes": 2641,
+			"width": 1200,
+			"height": 675
+		},
+		{
 			"name": "handwritten-notes-social-card.png",
 			"src": "/images/handwritten-notes-social-card.png",
 			"bytes": 609197,

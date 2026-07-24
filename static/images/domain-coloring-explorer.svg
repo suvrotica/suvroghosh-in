@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+	<title id="title">Domain colouring of the identity function</title>
+	<desc id="description">A cyclic field of phase colours surrounds a dark zero at the origin, with logarithmically spaced circular magnitude contours and real and imaginary axes.</desc>
+	<rect width="1200" height="675" fill="#070b13"/>
+	<g>
+		<path d="M600 337.5 L1600 337.5 A1000 1000 0 0 1 1466 837.5 Z" fill="#f43f5e"/>
+		<path d="M600 337.5 L1466 837.5 A1000 1000 0 0 1 1100 1203.5 Z" fill="#d946ef"/>
+		<path d="M600 337.5 L1100 1203.5 A1000 1000 0 0 1 600 1337.5 Z" fill="#8b5cf6"/>
+		<path d="M600 337.5 L600 1337.5 A1000 1000 0 0 1 100 1203.5 Z" fill="#4f46e5"/>
+		<path d="M600 337.5 L100 1203.5 A1000 1000 0 0 1 -266 837.5 Z" fill="#0ea5e9"/>
+		<path d="M600 337.5 L-266 837.5 A1000 1000 0 0 1 -400 337.5 Z" fill="#06b6d4"/>
+		<path d="M600 337.5 L-400 337.5 A1000 1000 0 0 1 -266 -162.5 Z" fill="#14b8a6"/>
+		<path d="M600 337.5 L-266 -162.5 A1000 1000 0 0 1 100 -528.5 Z" fill="#22c55e"/>
+		<path d="M600 337.5 L100 -528.5 A1000 1000 0 0 1 600 -662.5 Z" fill="#84cc16"/>
+		<path d="M600 337.5 L600 -662.5 A1000 1000 0 0 1 1100 -528.5 Z" fill="#eab308"/>
+		<path d="M600 337.5 L1100 -528.5 A1000 1000 0 0 1 1466 -162.5 Z" fill="#f97316"/>
+		<path d="M600 337.5 L1466 -162.5 A1000 1000 0 0 1 1600 337.5 Z" fill="#ef4444"/>
+	</g>
+	<g fill="none" stroke="#05070d" stroke-opacity=".36">
+		<circle cx="600" cy="337.5" r="34" stroke-width="9"/>
+		<circle cx="600" cy="337.5" r="68" stroke-width="10"/>
+		<circle cx="600" cy="337.5" r="136" stroke-width="12"/>
+		<circle cx="600" cy="337.5" r="272" stroke-width="14"/>
+		<circle cx="600" cy="337.5" r="544" stroke-width="16"/>
+	</g>
+	<g stroke="#05070d" stroke-opacity=".2" stroke-width="7">
+		<path d="M600 337.5 L1600 337.5"/>
+		<path d="M600 337.5 L1466 837.5"/>
+		<path d="M600 337.5 L1100 1203.5"/>
+		<path d="M600 337.5 L600 1337.5"/>
+		<path d="M600 337.5 L100 1203.5"/>
+		<path d="M600 337.5 L-266 837.5"/>
+		<path d="M600 337.5 L-400 337.5"/>
+		<path d="M600 337.5 L-266 -162.5"/>
+		<path d="M600 337.5 L100 -528.5"/>
+		<path d="M600 337.5 L600 -662.5"/>
+		<path d="M600 337.5 L1100 -528.5"/>
+		<path d="M600 337.5 L1466 -162.5"/>
+	</g>
+	<g stroke="#fff" stroke-opacity=".55" stroke-width="2">
+		<path d="M0 337.5 H1200"/>
+		<path d="M600 0 V675"/>
+	</g>
+	<circle cx="600" cy="337.5" r="18" fill="#02040c"/>
+	<g fill="#fff" font-family="ui-monospace,monospace" font-size="22" font-weight="700">
+		<text x="1166" y="324" text-anchor="end">Re z</text>
+		<text x="616" y="30">Im z</text>
+	</g>
+</svg>
+

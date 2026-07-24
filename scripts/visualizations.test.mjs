@@ -189,7 +189,8 @@ test('wide article visualizations share the viewport-centred breakout contract',
 		['artificial-life', 'ArtificialLifeLab.svelte'],
 		['living-pigment', 'LivingPigmentStudio.svelte'],
 		['monte-carlo', 'MonteCarloLab.svelte'],
-		['spacetime-laboratory', 'SpacetimeLaboratory.svelte']
+		['spacetime-laboratory', 'SpacetimeLaboratory.svelte'],
+		['domain-coloring', 'DomainColoringExplorer.svelte']
 	];
 
 	assert.match(
@@ -202,4 +203,30 @@ test('wide article visualizations share the viewport-centred breakout contract',
 		const component = read('src', 'lib', 'components', 'visualizations', directory, filename);
 		assert.match(component, /class="[^"]*\barticle-breakout\b/);
 	}
+});
+
+test('the domain-colouring exhibit uses a safe parser, GPU renderer, fallback, and normal post route', () => {
+	const expression = read('src', 'lib', 'visualizations', 'domain-coloring', 'expression.ts');
+	const renderer = read('src', 'lib', 'visualizations', 'domain-coloring', 'renderer.ts');
+	const component = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'domain-coloring',
+		'DomainColoringExplorer.svelte'
+	);
+	const post = read('src', 'lib', 'posts', 'domain-coloring-complex-functions-explorer.md');
+	const poster = path.join(root, 'static', 'images', 'domain-coloring-explorer.svg');
+
+	assert.doesNotMatch(expression, /\beval\s*\(|new Function/);
+	assert.match(expression, /maximumExpressionLength/);
+	assert.match(renderer, /expressionToGlsl/);
+	assert.match(renderer, /logMagnitude \/ log\(2\.0\)/);
+	assert.match(component, /onpointerdown/);
+	assert.match(component, /onwheel/);
+	assert.match(component, /aria-pressed=\{gridVisible\}/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /<DomainColoringExplorer \/>/);
+	assert.ok(fs.existsSync(poster));
 });

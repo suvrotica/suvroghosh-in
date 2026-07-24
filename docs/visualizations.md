@@ -90,6 +90,22 @@ Artificial-life posts use a direct typed model rather than the shader registry. 
 
 Set `compact={true}` and `controls={false}` for a gallery preview. New posts in the series should add `series: ["Artificial Life Lab"]` to front matter. Series values flow into search filters, SEO topics, and related-post scoring, while `category: "Visualizations"` keeps the ordinary archive, sitemap, RSS, and project routes intact.
 
+## Embed the domain-colouring explorer
+
+Domain colouring uses a dedicated typed component because its expression parser, coordinate gestures, and demand-rendered shader do not fit the time-driven experiment registry:
+
+```svelte
+<script>
+	import DomainColoringExplorer from '$lib/components/visualizations/domain-coloring/DomainColoringExplorer.svelte';
+</script>
+
+<DomainColoringExplorer />
+```
+
+The safe parser in `src/lib/visualizations/domain-coloring/expression.ts` accepts only the documented complex-expression grammar and compiles its AST to known GLSL helper calls. Never interpolate user text directly into a shader. Keep CPU arithmetic, parser and compiler, presets, viewport transforms, colour reference logic, and the renderer in separate modules so their numerical invariants remain independently testable.
+
+The renderer draws only after a resize, view change, or expression change; it owns no animation loop. Its vertical complex-plane span and the canvas aspect ratio determine the horizontal span, so circles stay circular. The overlaid Canvas 2D grid carries labelled axes independently of the colour field. `?webgl=off` selects the static identity-map poster, matching the deterministic fallback convention used by the other GPU exhibits.
+
 To create a related model, reuse `SeededRandom`, the fixed-step lifecycle, telemetry interfaces, and shell where their assumptions still fit. Add model-specific genes and environmental rules in `src/lib/visualizations/artificial-life`; do not place biological rules in the Canvas renderer. Any new random event must consume the engine-owned seeded stream. Any new trait must define founder values, safe bounds, inheritance behaviour, statistics if relevant, and a visible or behavioural consequence.
 
 ## Embed Observable cells in Markdown

@@ -126,6 +126,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'Engineered a seeded artificial-life system with inherited genomes, bounded mutation, explicit energy accounting, predator pressure, fixed-step simulation, and reproducible presets.',
 			'Built a WebGL2 Monte Carlo instrument with seeded pseudorandom, stratified, and Halton sampling, bounded GPU point storage, confidence estimates, and an accessible logarithmic convergence chart.',
 			'Created a WebGL2 living-pigment studio with ping-pong texture fields for mobile and deposited pigment, local moisture, velocity, granulation, staining, bounded GPU history, and local artwork/project export.',
+			'Built a safe domain-colouring explorer that compiles a constrained complex-expression syntax tree into demand-rendered WebGL, with logarithmic contours, branch-aware functions, and aspect-correct pan and zoom.',
 			'Designed accessible controls, touch and keyboard interaction, reduced-motion behaviour, static fallbacks, and isolated multi-sketch lifecycle management.',
 			'Publishes first-principles lessons with live output and executable source across D3, Observable notebooks, p5.js, GLSL, Canvas, SVG, and WebGL.'
 		],
@@ -139,14 +140,16 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'Canvas',
 			'WebGL',
 			'Generative art',
-			'GPU simulation'
+			'GPU simulation',
+			'Complex analysis'
 		],
 		relatedPostSlugs: [
 			'hello-fragment-your-first-shader-from-scratch',
 			'hello-observable-your-first-living-d3-visualization',
 			'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser',
 			'monte-carlo-laboratory',
-			'create-art-living-pigment-studio'
+			'create-art-living-pigment-studio',
+			'domain-coloring-complex-functions-explorer'
 		],
 		href: '/blog/visualizations'
 	},

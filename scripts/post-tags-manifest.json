@@ -10122,6 +10122,25 @@
 			"revisionHash": "31c3548d26f5e45fcf03358335002599ef01577526f6e148ecc6f69658f409b1",
 			"hashVersion": 2,
 			"dateModified": "2026-07-24"
+		},
+		"src/lib/posts/domain-coloring-complex-functions-explorer.md": {
+			"bodyHash": "9fa0d8700874ace92508acd6ef590bf2db3cf612ba813454239448e4a06383dd",
+			"hashVersion": 2,
+			"revisionHash": "09a74c1518172941a0789f19dd16a30288a942a17c88ccf9ea996c9fca2995ba",
+			"generatedTags": [
+				"Safe Custom Expressions",
+				"Real Axis",
+				"Branch Cuts",
+				"Zeros Poles",
+				"Hue",
+				"Magnitude",
+				"Zeros",
+				"Contours",
+				"Exponential",
+				"Colours"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
