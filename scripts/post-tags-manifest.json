@@ -10141,6 +10141,26 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-flatulent-exhalation-of-being.md": {
+			"bodyHash": "4eaa880b068ee346fd17393dc79234403b987c7fffbe3c4e1a03690897e4eae0",
+			"hashVersion": 2,
+			"revisionHash": "e589221a93d4d8099bd375bd3b2e1260cf4ced439046ec00bfc2f1bd3f8f34aa",
+			"generatedTags": [
+				"Algorithm",
+				"Fifty-One",
+				"Data",
+				"Time",
+				"Finally",
+				"Screen",
+				"AI",
+				"Single",
+				"Shirt",
+				"Waiting"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-25"
 		}
 	},
 	"maxTags": 10

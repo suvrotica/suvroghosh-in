@@ -1,17 +1,22 @@
 ---
 title: "Notes from a Terminally Insignificant Data Center"
-description: "A recursive, grotesque monologue on aging, obsolete ambition, and the cybernetic micturation of consciousness into the vulvic void of the internet, delivered from the malarial dusk of a city that runs on nostalgia and burnt copper."
+description: "An aging Calcutta blogger confronts obsolete ambition, AI excess, digital memory, and the stubborn need to keep writing into the void."
 date: "2026-07-25"
+dateModified: "2026-07-25"
 thumbnail: "/thumbnail/Compress_20260725_035427_7400.jpg"
+thumbnailAlt: "A middle-aged man works at a laptop in a dim, book-cluttered Calcutta room at night"
 category: "Essay"
-tags: ["Essay", "Manic Monologue", "Calcutta", "Memory", "Aging", "Technology", "SuvroGhosh"]
+tags: ["Algorithm","Fifty-One","Data","Time","Finally","Screen","AI","Single","Shirt","Waiting"]
 published: true
 color: "#3E2723"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/Compress_20260725_035427_7400.jpg" />
+<Pi
+	src="/thumbnail/Compress_20260725_035427_7400.jpg"
+	alt="A middle-aged man works at a laptop in a dim, book-cluttered Calcutta room at night"
+/>
 
 There I am, or rather, there he is, that pustulant little narcissus squinting back at me from the sulfurous yellow of a Kodak print circa 1998, his jawline sharp enough to slice a mango, his hair a black monsoon that has since receded like the Hooghly under a famine sun, and I want to reach into the album, through the laminate, and strangle him with his own optimism, that smug, unearned conviction that the world was a paan-stained staircase he would ascend while the rest of Calcutta rotted below in the humidity, because he did not yet know that time is not a staircase but a tram on broken tracks, lurching from Dum Dum to Tollygunge with no conductor and a permanent smell of ozone and armpit, and he did not know that I would be sitting here, fifty-one, osteoporotic, my reflection in the laptop screen looking like a ghee-soaked dumpling that has been rejected by even the most desperate of gods, staring at his face as if it were a mugshot of a terrorist who blew up my future.
 
