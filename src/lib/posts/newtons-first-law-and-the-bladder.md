@@ -6,12 +6,12 @@ category: "Personal Science"
 tags: ["Acted Upon","External Force","Bowel","Bladder","Mass","Motion","Force","REST","Laptop","Rejected"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-newtons-first-law-and-the-bladder.jpg"
+thumbnail: "/thumbnail/art-newtons-first-law-and-the-bladder.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-newtons-first-law-and-the-bladder.jpg" />
+<Pi src="/thumbnail/art-newtons-first-law-and-the-bladder.jpg" />
 
 Acronyms used: USB means Universal Serial Bus, the ordinary cable-and-port standard by which half the world charges its gadgets and loses its patience. AI means Artificial Intelligence, software that imitates or automates tasks we associate with human reasoning. HIE means Healthcare Information Exchange, the sharing of clinical information between hospitals, clinics, labs, and other care systems.
 

@@ -6,12 +6,12 @@ category: "Philosophy and AI"
 tags: ["Deep Sleep","Pure Consciousness","Mandukya","AI","Mode","Pretends","Waking","Dream","Guru","Self"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-fog-machines-in-the-temple.jpg"
+thumbnail: "/thumbnail/art-fog-machines-in-the-temple.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-fog-machines-in-the-temple.jpg" />
+<Pi src="/thumbnail/art-fog-machines-in-the-temple.jpg" />
 
 Artificial Intelligence [AI, computer systems that generate or act on patterns learned from data]
 

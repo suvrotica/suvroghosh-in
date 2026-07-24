@@ -9785,6 +9785,22 @@
       "sourceHash": "1b1d35cd89c6e7c2fb7776a68ad619b4fb6cad719d42dcf2bfd74547386166d6",
       "width": 1200
     },
+    "static/thumbnail/art-fog-machines-in-the-temple.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 134546,
+      "outputHash": "dc114dcbcf5b8b73662f778e40a1b3d5b6fcd710c633f7439d7309779d7ff983",
+      "psnrDb": 39.66,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 162315,
+      "sourceHash": "edf32a5564186f9c61ea249c20b2f3c778b670d303e516e6c681b41d55d91f92",
+      "width": 1200
+    },
     "static/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -9975,6 +9991,22 @@
       "resized": false,
       "sourceBytes": 180457,
       "sourceHash": "77712770355097305bd6297dd97fefb97bb6b5ca194f5bfc7c00fdc3912e820d",
+      "width": 1200
+    },
+    "static/thumbnail/art-newtons-first-law-and-the-bladder.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 149315,
+      "outputHash": "0b5bf48fecb612270557d0b5da62b6f66956850c704f38db1174ed831ab22e29",
+      "psnrDb": 38.94,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 177797,
+      "sourceHash": "77ee1ccb842cacc3fdd541ccf93bb0abb9e09b10a2c1eab8e6269b0091fe5217",
       "width": 1200
     },
     "static/thumbnail/art-nightmare-of-indian-healthcare.jpg": {

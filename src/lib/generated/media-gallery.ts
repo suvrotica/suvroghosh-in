@@ -3790,6 +3790,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-fog-machines-in-the-temple.jpg",
+			"src": "/thumbnail/art-fog-machines-in-the-temple.jpg",
+			"bytes": 134546,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"src": "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"bytes": 224679,
@@ -3870,6 +3877,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-mojo-the-python-killer.jpg",
 			"src": "/thumbnail/art-mojo-the-python-killer.jpg",
 			"bytes": 123977,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-newtons-first-law-and-the-bladder.jpg",
+			"src": "/thumbnail/art-newtons-first-law-and-the-bladder.jpg",
+			"bytes": 149315,
 			"width": 1200,
 			"height": 800
 		},
