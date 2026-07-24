@@ -1,12 +1,23 @@
 ---
-title: "The Linear Algebra Blind Spot: Why Healthcare AI Is Only as Safe as Its Underlying Math"
-description: "Healthcare AI failures often begin long before an algorithm makes a prediction. The real risk lies in how patient reality is translated into mathematical structures that machines can process."
+title: "The Linear Algebra Blind Spot in Healthcare AI"
+description: "How healthcare AI can fail when patient reality is translated into vectors, matrices, and mathematical structures before prediction begins."
 date: "2026-06-21"
+dateModified: "2026-07-24"
 thumbnail: "/images/Compress_20260621_014107_7684.jpg"
+thumbnailAlt: "Black-and-white graphic reading Linear Algebra for Healthcare AI with equations and a network diagram"
 category: "Healthcare IT"
 tags: ["Linear Algebra","Matrix Operations","Data Quality","AI Systems","Healthcare","Mathematical","Vectors","Coordinates","Matrix","AI"]
 published: true
 color: "blue"
+inPlainEnglish: "Healthcare AI converts records into vectors and matrices before it predicts anything. If that mathematical representation loses context, merges unlike meanings, or encodes workflow bias, every later calculation inherits the distortion; safe governance must therefore inspect embeddings, provenance, terminology, and what vectorization discarded."
+keyTerms: ["Linear Algebra", "Vector", "Matrix", "Clinical Embedding", "Representation Failure", "Data Provenance"]
+faq:
+  - question: "Why does linear algebra matter to healthcare AI?"
+    answer: "Clinical AI turns lab values, diagnoses, medications, notes, and images into vectors, then uses matrix operations to transform those representations into predictions. The model therefore depends on how patient reality was encoded mathematically."
+  - question: "What is a representation failure in healthcare AI?"
+    answer: "A representation failure occurs when source facts may be accurate but their mathematical encoding distorts relationships, loses context, or treats different clinical meanings as equivalent. Downstream calculations then inherit that distortion."
+  - question: "What should healthcare leaders review beyond model performance?"
+    answer: "They should examine how embeddings and feature vectors were constructed, which terminology mappings and assumptions were used, whether provenance is preserved, and what information disappeared during vectorization."
 ---
 
 <TTS />

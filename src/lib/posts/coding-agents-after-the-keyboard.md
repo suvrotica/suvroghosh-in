@@ -1,12 +1,14 @@
 ---
-title: "Coding After the Keyboard: How AI Agents Learned to Roam the Codebase"
-description: "A sharp, readable explanation of how coding moved from hand-written instructions to AI coding agents that search, edit, test, and sometimes blunder through real repositories."
+title: "Coding After the Keyboard"
+description: "How coding evolved from hand-written instructions to AI agents that search, edit, test, and sometimes blunder through real repositories."
 date: "2026-05-09"
+dateModified: "2026-07-24"
 category: "Artificial Intelligence"
 tags: ["Coding Agents","Agent","Coding","Model","Tests","Code","Codebase","Agents","Repository","LLM"]
 published: true
 color: "#0f766e"
 thumbnail: "/thumbnail/safe-coding-agents-after-the-keyboard.jpg"
+thumbnailAlt: "Abstract layers of navy, teal, cream, rust, and purple with fine contour lines"
 ---
 
 <TTS />

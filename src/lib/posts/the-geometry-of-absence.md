@@ -1,12 +1,14 @@
 ---
-title: "The Geometry of Absence: On Solitude, Density, and the Mathematics of Belonging"
-description: "A reflective essay on the paradox of loneliness in crowded Calcutta, the sociology of Bengali group dynamics abroad, and the quiet liberation of choosing solitude over performative congregation."
+title: "The Geometry of Absence"
+description: "A reflective essay on loneliness in crowded Calcutta, Bengali group dynamics abroad, and choosing solitude over performative congregation."
 date: "2026-06-28"
+dateModified: "2026-07-24"
 category: "Culture"
 tags: ["NRI Gatherings","Gatherings","Taratala","Solitude","Grown","Inhabit","Social","Obligation","Density","Adda"]
 published: true
 color: "#2c3e50"
 thumbnail: "/thumbnail/safe-the-geometry-of-absence.jpg"
+thumbnailAlt: "Textured abstract arcs in coral, purple, cream, teal, and navy with fine contour lines"
 ---
 
 <TTS />

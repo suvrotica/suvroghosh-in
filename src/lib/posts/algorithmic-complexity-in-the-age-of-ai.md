@@ -1,7 +1,8 @@
 ---
-title: "The Bouncer, the Clock, and the Black Box: A Field Guide to Algorithmic Complexity in the Age of AI"
+title: "The Bouncer, the Clock, and Big O"
 description: "An essay on Big O notation, time and space complexity, and how the rise of LLMs and AI black boxes is quietly expanding the algorithmic cost landscape."
 date: "2026-07-21"
+dateModified: "2026-07-24"
 thumbnail: "/thumbnail/algorithmic-complexity-in-the-age-of-ai.jpg"
 thumbnailAlt: "A nightclub bouncer, an oversized clock, and an illuminated AI black box stand before rows of servers and rising complexity curves"
 category: "Computer Science"

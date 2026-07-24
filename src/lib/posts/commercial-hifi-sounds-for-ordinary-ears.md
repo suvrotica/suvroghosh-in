@@ -1,12 +1,14 @@
 ---
-title: "Hi-Fi Sound Without the Perfume: Mono, Stereo, 5.1, Dolby, DTS, Atmos, and the Great Audio Bazaar"
-description: "A plain, witty guide to commercial hi-fi sound labels, from mono and stereo to surround sound, Dolby Atmos, DTS, THX, lossless audio, Bluetooth, soundbars, and why the room often matters more than the logo."
+title: "Hi-Fi Sound Without the Perfume"
+description: "A plain, witty guide to mono, stereo, surround sound, Dolby Atmos, DTS, lossless audio, Bluetooth, soundbars, and why the room matters most."
 date: "2026-05-26"
+dateModified: "2026-07-24"
 category: "Audio Technology"
 tags: ["Audio Codec","Center Channel","Lossless","Audio","Mono","Subwoofer","Stereo","Speakers","DTS","Surround"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg"
+thumbnailAlt: "A bespectacled man sits barefoot in an armchair facing wooden speakers and a small amplifier"
 ---
 
 <TTS />

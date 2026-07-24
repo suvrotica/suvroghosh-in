@@ -1,12 +1,23 @@
 ---
-title: "Poisson Distribution: Counting Rare Trouble Before It Becomes a Queue, a Claim, or a Crisis"
-description: "A readable but technically serious healthcare IT post on the Poisson distribution, from its historical roots in rare-event counting to its everyday use in hospital operations, EHR analytics, patient safety, interface monitoring, epidemiology, and AI-era healthcare data."
+title: "Poisson Distribution: Counting Rare Trouble"
+description: "A practical guide to the Poisson distribution in hospital operations, EHR analytics, patient safety, interface monitoring, and epidemiology."
 date: "2026-05-21"
+dateModified: "2026-07-24"
 category: "Healthcare IT"
 tags: ["Poisson Regression","Poisson Distribution","Clinical Trial","Public Health","Data Quality","Lambda","Clinical","Healthcare","Events","Distribution"]
 published: true
 color: "#4F7CAC"
 thumbnail: "/thumbnail/safe-poisson-distribution-healthcare-it.jpg"
+thumbnailAlt: "Abstract overlapping warm and cool curves with delicate wavy contour lines"
+inPlainEnglish: "The Poisson distribution estimates how many events to expect within a defined window or amount of exposure. In healthcare, using it honestly requires precise event definitions, governed denominators, reliable timing and provenance, plus checks for overdispersion and workflow changes."
+keyTerms: ["Poisson Distribution", "Lambda", "Exposure", "Event Definition", "Overdispersion", "Poisson Regression"]
+faq:
+  - question: "What does lambda mean in a Poisson distribution?"
+    answer: "Lambda is the expected number of events in the chosen window or amount of exposure—for example, failed messages per hour or patient falls per 1,000 patient-days."
+  - question: "Why does exposure matter when comparing healthcare event counts?"
+    answer: "The same count can imply very different risk when the opportunities differ. Ten infections across 500 device-days do not mean the same thing as ten across 50,000 device-days, so denominators must be modeled and governed."
+  - question: "When may an ordinary Poisson model be a poor fit?"
+    answer: "It may be too confident when variance exceeds the mean, zeros are unusually common, rates change over time, or sites and patient groups differ substantially. Negative binomial, zero-inflated, time-varying, or hierarchical models may then fit better."
 ---
 
 <TTS />

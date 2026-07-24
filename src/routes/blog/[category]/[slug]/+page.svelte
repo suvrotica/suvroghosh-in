@@ -1,5 +1,6 @@
 <script lang="ts">
 	import 'katex/dist/katex.min.css';
+	import courierPrimeLatinUrl from '@fontsource/courier-prime/files/courier-prime-latin-400-normal.woff2?url';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
@@ -23,6 +24,16 @@
 	let postTopics = $derived(data.postTopics ?? []);
 	let relatedPosts = $derived(data.relatedPosts ?? []);
 </script>
+
+<svelte:head>
+	<link
+		rel="preload"
+		href={courierPrimeLatinUrl}
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	/>
+</svelte:head>
 
 <SEO {...data.seo} />
 
@@ -70,7 +81,7 @@
 
 		<header class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800">
 			<h1
-				class="mb-4 font-sans text-display leading-[1.15] font-bold tracking-tight text-neutral-900 dark:text-white"
+				class="article-title mb-4 font-sans font-bold tracking-tight text-neutral-900 dark:text-white"
 			>
 				{data.metadata.title}
 			</h1>
@@ -184,7 +195,7 @@
 		{/if}
 
 		<div
-			class="article-prose mx-auto prose max-w-[var(--article-width)] font-sans prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-sans prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
+			class="article-prose mx-auto prose max-w-[var(--article-width)] prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-sans prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
 		>
 			<PostContent />
 		</div>

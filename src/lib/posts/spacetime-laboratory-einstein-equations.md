@@ -1,7 +1,8 @@
 ---
-title: "Spacetime Laboratory: See the Universe Through Einstein’s Equations"
-description: "An interactive shader laboratory for exploring curved spacetime, black holes, gravitational lensing, rotating universes, cosmic expansion, and gravitational waves through important solutions of Einstein’s field equation."
+title: "Spacetime Laboratory"
+description: "An interactive shader laboratory for exploring black holes, gravitational lensing, cosmic expansion, gravitational waves, and Einstein’s field equation."
 date: "2026-07-22"
+dateModified: "2026-07-24"
 thumbnail: "/images/spacetime-laboratory-einstein-equations.webp"
 thumbnailAlt: "A black hole bending starlight into arcs and an Einstein ring beside a luminous warped accretion disk"
 category: "Visualizations"

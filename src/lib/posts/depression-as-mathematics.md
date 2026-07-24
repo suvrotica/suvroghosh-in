@@ -1,12 +1,14 @@
 ---
-title: "Depression as Mathematics: States, Switches, Attractors, and the Treacherous Algebra of Mood"
-description: "A technical but readable exploration of how unipolar depression and bipolar disorder might be described using mathematical language: dynamical systems, stochastic processes, phase spaces, thresholds, feedback loops, and state transitions."
+title: "Depression as Mathematics"
+description: "A readable mathematical view of unipolar depression and bipolar disorder through dynamical systems, stochastic processes, thresholds, and feedback loops."
 date: "2026-05-06"
+dateModified: "2026-07-24"
 category: "Mental Health Systems"
 tags: ["Unipolar Depression","Sleep Loss","Bipolar Disorder","Depressive Attractor","Dynamical System","Activation","Unipolar","Mood","Depression","Eta"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-depression-as-mathematics.jpg"
+thumbnailAlt: "A man sits on a bed as glowing orbital lines swirl through a dark, worn room"
 ---
 
 <TTS />

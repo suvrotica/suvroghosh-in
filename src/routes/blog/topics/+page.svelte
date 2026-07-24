@@ -49,7 +49,7 @@
 		>
 			Thematic index
 		</p>
-		<h1 class="mb-3 text-4xl font-bold text-neutral-950 md:text-5xl dark:text-neutral-50">
+		<h1 class="archive-title mb-3 font-bold text-neutral-950 dark:text-neutral-50">
 			Recurring topics
 		</h1>
 		<p class="mb-3 max-w-2xl text-left text-base text-neutral-600 dark:text-neutral-400">

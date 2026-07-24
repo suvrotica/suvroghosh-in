@@ -1,8 +1,10 @@
 ---
-title: "Wet-Bulb, Dry-Bulb, and Feels Like: Why Kolkata Heat Is Not Just Heat"
-description: "A clear, local, practical explanation of dry-bulb temperature, wet-bulb temperature, and feels-like temperature for anyone who has survived a Kolkata summer and still wonders why some days feel personally insulting."
+title: "Wet-Bulb, Dry-Bulb, and Kolkata Heat"
+description: "A practical guide to dry-bulb, wet-bulb, and feels-like temperatures, and why some Kolkata summer days feel especially punishing."
 date: "2026-05-28"
+dateModified: "2026-07-24"
 thumbnail: "/images/Compress_20260528_013933_3751.jpg"
+thumbnailAlt: "Infographic comparing wet-bulb and dry-bulb temperatures across humidity levels and evaporative cooling"
 category: "Science"
 tags: ["Dry-Bulb Temperature","Wet-Bulb Temperature","Wet Cloth","Dry-Bulb","Wet-Bulb","Evaporation","Air","Heat","Thermometer","Evaporates"]
 published: true

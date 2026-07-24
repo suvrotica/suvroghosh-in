@@ -56,10 +56,7 @@ test('shader uses WebGL2 GLSL ES 3.00 and has safety limits', () => {
 
 test('post front matter is valid and category is Visualizations', () => {
 	const post = read('src/lib/posts/spacetime-laboratory-einstein-equations.md');
-	assert.match(
-		post,
-		/title: "Spacetime Laboratory: See the Universe Through Einstein’s Equations"/
-	);
+	assert.match(post, /title: "Spacetime Laboratory"/);
 	assert.match(post, /category: "Visualizations"/);
 	assert.match(post, /published: true/);
 	assert.match(post, /thumbnail: "\/images\/spacetime-laboratory-einstein-equations\.webp"/);

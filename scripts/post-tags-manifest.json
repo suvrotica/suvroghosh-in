@@ -1645,8 +1645,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1bc576fd24a293a7b2d78db4f3894e88a76482e5d77c55bafdfd409d5b605393",
-			"hashVersion": 2
+			"revisionHash": "407809a8bfe9bd20216e2e4d531c8b6002e9bfd6d8313bf7a62397f37b432e20",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/commercial-hifi-sounds-for-ordinary-ears.md": {
 			"bodyHash": "36141f80e6023086cea34b5b02fedcbf31a044a4d0aa327156d506ba79c7d669",
@@ -1664,8 +1665,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "50ae3d74b1070c002624c8ebc1a9e569f4d9b9c41ecd7ec3d625c0d2757d7b0b",
-			"hashVersion": 2
+			"revisionHash": "d3a9e9ca9f0ff6107c91c0c5765b0b15d67bbf8b3437ddee6bf734728c9ff2a5",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/complexity-in-calcutta.md": {
 			"bodyHash": "b33e97a4d47b803a6fca6bfee6f5e18fe0c32c1be8197a9c258a2f7f852f1cd1",
@@ -1890,7 +1892,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/depression-as-mathematics.md": {
-			"bodyHash": "b3b9198b91b3b439aabc79113d0d43f53b105e0f4c79da4aa4e30ae4dc01092c",
+			"bodyHash": "26f9c3b7de8db53c1f39c389e55da10272f2758cb86a1777b3a8521b6595cb40",
+			"hashVersion": 2,
+			"revisionHash": "f0e5d8a6f635146aeda6df27c843cbaa489dd2a9be33c35568449ae27aa55ac7",
 			"generatedTags": [
 				"Unipolar Depression",
 				"Sleep Loss",
@@ -1905,8 +1909,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "e9e894ac41adea4d184f155ecdd6299c75682de5bb98ca9ebbae1c6ad3b67267",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/depressive-mind-government-office-after-rain.md": {
 			"bodyHash": "d95def5b5d2116f3c520c06110245b4f88f3feb4421b4cba4e9e1a25a66496da",
@@ -2209,8 +2212,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "91500d4f740b219183ed0e94f16783a18775dafd8cef99404451531ad652bdce",
-			"hashVersion": 2
+			"revisionHash": "ccbd7911e649b6efe476746f3d4ef1d6949ce40294c9ea33b7700352a84d6e2a",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/faces-for-ashtami.md": {
 			"bodyHash": "70d555740032bb72e88316b0123487f4fc2e23ef8e8d28b135b171ff8207ec9a",
@@ -4618,8 +4622,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "59348e5d9c13c39215c77daf6d488d2ae57abc71933fe025f9eee56c76acff45",
-			"hashVersion": 2
+			"revisionHash": "f96a0b2ae641d40c6da0e7e792f40083589aa28f75570fea385d7511ea259679",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/political-promises-and-reality.md": {
 			"bodyHash": "ee1c101c8e9203139440e4c0584b7ac489e3e15e7a850af267918a15281fb5f5",
@@ -6813,8 +6818,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "aba61b5851aeb1a43dfe49c8213a6f0d02ce47b7f7af718b170728b987be11de",
-			"hashVersion": 2
+			"revisionHash": "a51747c93fb6d2de9ca831e93cb72e6abf3cff807000f37f16f69e66a9901956",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/the-ghost-as-perception.md": {
 			"bodyHash": "b7ccae21463e8d2516794206a460d697f0a3a83f377306cfd99ddbf9f5d6f815",
@@ -7156,8 +7162,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "4a57a23f7833238c11bcdd933497dd859534891cb8eaeca36fa2894a20772621",
-			"hashVersion": 2
+			"revisionHash": "e4b61d51b6dd1005a5b3a0b71dffc3172f758a9abd5592157eb672ea49813538",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/the-low-market-value-of-reality.md": {
 			"bodyHash": "da6f9936ab90463616a158b10879605dbcd0c98fdd5c4899627ee2be5508b03a",
@@ -8828,8 +8835,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "fe3bf32ca0aa80a4cdeaa73babbddb83cf13ab41ccd1860d5f90e79605e809b0",
-			"hashVersion": 2
+			"revisionHash": "e944df5ddf568a5645a674126136902ea21260aadea6abc58471a813b11001d5",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/trapezoid-for-my-mother.md": {
 			"bodyHash": "7e6c115e750f8d2343dcde6a3613c728a7c9318a20805d75df36faaeeb0ee24d",
@@ -9163,8 +9171,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "f8d5efab51de9a9b6757eea633def23b3aede741f6da011f05eeb215e6a5498c",
-			"hashVersion": 2
+			"revisionHash": "af5b491bf6d2927a0069ada2953bd5a29e295d41d3ada94bfe8e1a34cf69222d",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/welcome-to-suvroghosh-in.md": {
 			"bodyHash": "77a0d2e489c71abd9b517eb6ae63489eadf60845240e966665f7a4d179785a1a",
@@ -9201,8 +9210,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1a1c84d2db18b56277d3e3af550b36343b7b07be090f9bdc92ef8565b1d0feab",
-			"hashVersion": 2
+			"revisionHash": "2e62ddf40af3126905f2927cb586b315c6703b451d3b16c007079c19a32be197",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/what-india-meant-by-demonetization-and-where-we-are.md": {
 			"bodyHash": "66040057064b894f14a3c5973b3c4c5aca8dbd149189a53fdcac25f0e0135a08",
@@ -9988,8 +9998,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "42e20e8d483c7548323be566477e258e88fea8a93c68b6773ad9b629939a3264",
-			"hashVersion": 2
+			"revisionHash": "6a1af1ce71a9865da3e464896a0efe32b6368d9428587700ef94260a7925eef1",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/democracy_on_installments.md": {
 			"bodyHash": "f5f822bb5964ac5189ca68c76ce5d5b7b55eb3362e330de5d951fad197900948",
@@ -10075,8 +10086,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "13cb91f05ff80c2e4cf0d915ed5825575b69d4812af17d6ca4a6a14384474a3c",
-			"hashVersion": 2
+			"revisionHash": "7c8712a08c332a19ed96bf57c9c2162208af44f14b48a0025450f99df78262f7",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/spacetime-laboratory-einstein-equations.md": {
 			"bodyHash": "3742b20e5e1b225d625107740d49682481b7e72bf656dab834b89360fb231231",
@@ -10094,8 +10106,9 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "3c1e8ba3c3e79c4cabd537c0e33f9cc39521f5443676f2bd7e52523b86c69aa4",
-			"hashVersion": 2
+			"revisionHash": "31c3548d26f5e45fcf03358335002599ef01577526f6e148ecc6f69658f409b1",
+			"hashVersion": 2,
+			"dateModified": "2026-07-24"
 		}
 	},
 	"maxTags": 10

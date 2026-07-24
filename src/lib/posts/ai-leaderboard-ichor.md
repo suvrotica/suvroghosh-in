@@ -1,8 +1,10 @@
 ---
-title: "The Ichor of the Ordinal: A Calcutta Polemic on Synthetic Validation"
-description: "A bilious, recursive monologue from a fifty-one-year-old Bengali polemicist contemplating the theological absurdity of AI benchmark leaderboards, perovskite solar cells, and the metaphysics of digital snake oil in the summer of 2026."
+title: "The Ichor of AI Leaderboards"
+description: "A bilious Calcutta polemic on AI benchmark leaderboards, synthetic validation, hype, and the digital snake oil hiding behind numerical victories."
 date: "2026-07-22"
+dateModified: "2026-07-24"
 thumbnail: "/thumbnail/Compress_20260722_083743_3384.jpg"
+thumbnailAlt: "A heavyset man in a black vest kneels on a bed in a dim room"
 category: "Polemic"
 tags: ["Leaderboard","Benchmark","Suzetrigine","Genuine","Apotheosis","Benchmarks","Hype","Manic","Marketing","Optimized"]
 published: true

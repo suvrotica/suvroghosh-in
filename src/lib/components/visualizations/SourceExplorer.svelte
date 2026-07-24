@@ -24,7 +24,7 @@
 </script>
 
 {#if activeFile}
-	<details class="group border-t border-neutral-700 bg-neutral-950 text-neutral-100">
+	<details class="not-prose group border-t border-neutral-700 bg-neutral-950 text-neutral-100">
 		<summary
 			class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-sm font-bold sm:px-5 [&::-webkit-details-marker]:hidden"
 		>

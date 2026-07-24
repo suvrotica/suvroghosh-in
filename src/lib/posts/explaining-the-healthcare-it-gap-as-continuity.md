@@ -1,12 +1,23 @@
 ---
-title: "The Shadow Architecture: Lessons from a Decade Bootstrapping Healthcare Data Systems"
-description: "A first-person account of a decade spent outside conventional corporate structures—operating as a founder and independent architect to understand the deep, structural realities of healthcare data, markets, and AI representation."
+title: "The Shadow Architecture of Healthcare Data"
+description: "A first-person account of a decade spent as a founder and independent architect learning the structural realities of healthcare data, markets, and AI."
 date: "2026-04-25"
+dateModified: "2026-07-24"
 category: "Healthcare IT"
 tags: ["United States","Health Science","Healthcare","Data","Clinical","Representation","VA","Systems","FHIR","MUMPS"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg"
+thumbnailAlt: "Layered blue, cream, rust, and purple abstract curves crossed by fine contour lines"
+inPlainEnglish: "A decade spent building healthcare software independently was not a departure from healthcare IT. It exposed how workflows, incentives, standards, workarounds, and unresolved meanings form a shadow architecture beneath clinical data—and why trustworthy AI must begin with representation and provenance."
+keyTerms: ["Shadow Architecture", "Healthcare Data", "Semantic Interoperability", "Data Provenance", "Clinical Workflow", "Healthcare AI"]
+faq:
+  - question: "What is shadow architecture in healthcare IT?"
+    answer: "Shadow architecture is the collection of spreadsheets, workarounds, local translations, habits, and undocumented decisions through which real healthcare work gets done. These practices are part of the operating system, not merely contamination around it."
+  - question: "Why does the author describe independent entrepreneurship as career continuity?"
+    answer: "Building Health Information Exchange and Clinical Trial Management System products kept the work focused on the same problems: how clinical data is represented, moved, cleaned, interpreted, and trusted, even outside conventional employment."
+  - question: "Why should healthcare AI begin with representation?"
+    answer: "AI models operate on encoded versions of healthcare reality rather than on patients and workflows directly. If those representations are incomplete, biased, or semantically confused, the model can scale the confusion instead of repairing it."
 ---
 
 <TTS />

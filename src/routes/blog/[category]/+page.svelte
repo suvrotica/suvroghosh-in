@@ -49,7 +49,7 @@
 		>
 			Category archive
 		</p>
-		<h1>{data.categoryDisplay}</h1>
+		<h1 class="archive-title">{data.categoryDisplay}</h1>
 		<p>
 			Browse {data.totalResults}
 			{data.totalResults === 1 ? 'post' : 'posts'} in this category, newest first.

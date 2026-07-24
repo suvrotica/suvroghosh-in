@@ -1,12 +1,14 @@
 ---
-title: "What the Ukraine and Iran Wars May Leave Behind in Civilian Technology"
-description: "Wars do not ennoble technology. They compress it. A look at what the Ukraine war and the current Iran war may yield for civilian systems, and what earlier conflicts already gave the modern world."
+title: "Ukraine, Iran, and Civilian Technology"
+description: "How the wars in Ukraine and Iran may accelerate civilian drones, robotics, navigation, infrastructure, and other technologies."
 date: "2026-04-23"
+dateModified: "2026-07-24"
 category: "technology"
 tags: ["Civilian","Ukraine","Drones","War","Navigation","Infrastructure","Robotics","Interceptor","Wartime","Iran"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg"
+thumbnailAlt: "Textured abstract layers of navy, teal, cream, orange, and purple with looping lines"
 ---
 
 <TTS />

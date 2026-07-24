@@ -1,8 +1,10 @@
 ---
-title: "The Toolbox Theory of Thinking: Why Simple Models Help Us Survive a Complicated World"
-description: "A clear, lively explanation of why models like Miller’s Law, Occam’s Razor, Gall’s Law, the Paradox of Choice, and the Laws of Simplicity are useful tools for everyday thinking."
+title: "The Toolbox Theory of Thinking"
+description: "Why Miller’s Law, Occam’s Razor, Gall’s Law, the Paradox of Choice, and other simple models are useful tools for everyday thinking."
 date: "2026-05-23"
+dateModified: "2026-07-24"
 thumbnail: "/images/Compress_20260524_233657_7100.jpg"
+thumbnailAlt: "Monochrome charcoal drawing of two fused male profiles with gaping, needle-toothed mouths"
 category: "Thinking"
 tags: ["Occam Razor","Gall Law","Miller Law","Simplicity","Miller","Gall","Maeda","Occam","Complexity","Razor"]
 published: true
