@@ -1,12 +1,14 @@
 ---
 title: "Bengal Changed Color, Not Yet Character"
-description: "A middle-aged Calcutta reflection on Bengal’s political earthquake, why party change is not social repair, and how ordinary citizens keep losing to the local machine."
+description: "A middle-aged Calcutta reflection on Bengal’s political earthquake, why party change is not social repair, and how citizens keep losing to the local machine."
 date: "2026-05-09"
+dateModified: "2026-07-24"
 category: "Politics and Society"
 tags: ["Chief Minister","Dead Voters","Electoral Rolls","Poor Man","TMC","Rolls","Democracy","Voters","Voter","Bengal"]
 published: true
 color: "#78350f"
 thumbnail: "/thumbnail/art-bengal-changed-color-not-character.jpg"
+thumbnailAlt: "Calcutta residents face a crumbling, brightly painted building whose broken wall exposes interlocking gears beneath a mounted loudspeaker."
 ---
 
 <TTS />

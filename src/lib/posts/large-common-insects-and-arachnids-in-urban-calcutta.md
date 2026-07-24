@@ -1,12 +1,14 @@
 ---
 title: "Pests we love"
-description: "A field-wise, city-wise guide to the conspicuous insects and arachnids of Kolkata: what they are, why they appear, what they do, which ones matter medically, and why most of them are not the villains we imagine."
+description: "A city field guide to Kolkata’s conspicuous insects and arachnids: what they are, why they appear, which matter medically, and why most are not villains."
 date: "2026-04-24"
+dateModified: "2026-07-24"
 category: "natural history"
 tags: ["Bed Bugs","Host Plants","Insects","Arachnids","Termites","Spiders","Ants","Moths","Wasps","Spider"]
 published: true
 color: "green"
 thumbnail: "/thumbnail/art-large-common-insects-and-arachnids-in-urban-calcutta.jpg"
+thumbnailAlt: "A dragonfly, spider, moth, nesting wasp, and bee gather around a damp balcony and glowing light."
 ---
 
 <TTS />

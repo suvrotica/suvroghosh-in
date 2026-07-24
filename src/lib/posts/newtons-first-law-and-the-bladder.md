@@ -2,11 +2,13 @@
 title: "Newton’s First Law and the Bladder"
 description: "A darkly funny Calcutta essay on depression, executive dysfunction, inertia, bodily urgency, and why getting out of bed is sometimes physics before it is willpower."
 date: "2026-06-12"
+dateModified: "2026-07-24"
 category: "Personal Science"
 tags: ["Acted Upon","External Force","Bowel","Bladder","Mass","Motion","Force","REST","Laptop","Rejected"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-newtons-first-law-and-the-bladder.jpg"
+thumbnailAlt: "A man sits on the edge of a bed facing an open bathroom as sketched physics arrows trace forces and motion across the room."
 ---
 
 <TTS />

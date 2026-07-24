@@ -834,7 +834,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/bengal-changed-color-not-character.md": {
-			"bodyHash": "c7040abdb91c411c371a06a9b3f99147f9eac90453d33272b93da675bae51dfe",
+			"bodyHash": "fd1c3e4eb8993dbce7681fbac2dcc95842e430006199242e8824136f2903094e",
+			"hashVersion": 2,
+			"revisionHash": "73cc1f0a7b4a4dd592ddc1d557249ce70666f91ee3cff66b2b357512a6948c84",
 			"generatedTags": [
 				"Chief Minister",
 				"Dead Voters",
@@ -849,8 +851,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "4eafff38cfe148925a5451e7668db77a8857ec224bd245ddac9f150b4444a173",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/bengali-hikikomori-shadow.md": {
 			"bodyHash": "cbab60aad922a65bafaa2ea5fccec1281a122a95deb705b731aed3ba02445160",
@@ -1758,7 +1759,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/courage-to-be-disliked-in-calcutta.md": {
-			"bodyHash": "34715c8d1de5310888bf20a600b183d9e6bbf526dcec35ef484dc53c76a7f04e",
+			"bodyHash": "634958414814f668e2f5b28c6ac9aa789238b1ed2354b837638fd2923acfdade",
+			"hashVersion": 2,
+			"revisionHash": "3f3a8383ff934ce25f011f1797ea7706058848120b90fe491d4c8bd35766423c",
 			"generatedTags": [
 				"Adler",
 				"Disliked",
@@ -1773,8 +1776,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1a72d808eb4467d209638bd51fa4720511504c218939bb7d6e8bf6db9ff9be34",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/crab-diaries-of-a-bengali-kakistocrat.md": {
 			"bodyHash": "a6a88f2b6351a1368c373d5a3825f8c7eb0b63458c5f9f6fbbc25d172474e4c9",
@@ -2140,7 +2142,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/entropy-in-a-rented-room.md": {
-			"bodyHash": "4f028001c19e6a74cb95239d92ea6cf0ff14a9aecf4c2e4c3fd6573895e933f7",
+			"bodyHash": "018de698d785504a1422c7153aba2eb4c9493bb30677985cc893e5b082457eba",
+			"hashVersion": 2,
+			"revisionHash": "42bbdd8593d2c3a57eb358869597b8c09b1d0eb8faf97d73b7661208a9f05c22",
 			"generatedTags": [
 				"Rice Cooker",
 				"Entropy",
@@ -2155,8 +2159,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "08c601b694c46040bbbefdda038e578db0ab8fb5da20a75f9610568ffc509f54",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/epistemic-iceberg-effect.md": {
 			"bodyHash": "e21af55dce76087a895e6c4d5e5757fb5538c84bea2d7d040c347ad788527f82",
@@ -2446,12 +2449,14 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/first-principles-thinking-calcutta-healthcare-it.md": {
-			"bodyHash": "1668d3e92ab0e83bfb5630b9669b16638536272def8864b40076c008e44678ec",
+			"bodyHash": "b9681831a3cb7193223066884b701e2782bef0f6e2fd999c5999b17834556ed3",
+			"hashVersion": 2,
+			"revisionHash": "9b396cfba6f9d4c5f3ed1b008c078008d82a1e3a6bd7e00e6f278545663c6d4e",
 			"generatedTags": [
 				"Health Level Seven",
 				"Principles",
-				"Clinical",
 				"Healthcare",
+				"Clinical",
 				"Data",
 				"First-Principles",
 				"Model",
@@ -2461,8 +2466,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "ebed757b0d8acf83bd01e80988e5815303cdfba4a76444657bda9ad2b01f93c1",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/fish-and-the-press-conference.md": {
 			"bodyHash": "912e3948d3e97b3d2a402b7589d34c2f9ecd270200a471e921c91f10a327f80f",
@@ -2522,7 +2526,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/fog-machines-in-the-temple.md": {
-			"bodyHash": "8d604542675af06deb815d357c6e3c8b4bcc55b1e039d91e03477b73e7c01d43",
+			"bodyHash": "e996e044d72d288937ccb872f1184dc6374aec5a1bd115fcee961747a88c05c6",
+			"hashVersion": 2,
+			"revisionHash": "d3fd1be1edbd4577d53000b6c3710a80fa740194beceb613e6ad9242ce461804",
 			"generatedTags": [
 				"Deep Sleep",
 				"Pure Consciousness",
@@ -2537,8 +2543,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "ce5f1601037acd542fecf4853f71d9c754391c17ea21f62e082ee77c6d7b3150",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/folded-arms-and-other-small-national-disasters.md": {
 			"bodyHash": "22ffcf586caa1b08110fcf8933d9c15a9e18fcdc4d02b5ed554ea5658a2ce560",
@@ -2999,7 +3004,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/how-are-you-and-other-small-cruelties.md": {
-			"bodyHash": "7e14aca0eab45e1a9d12709dedcdf2702972583de5512e7a55307ae0899d4705",
+			"bodyHash": "52e1a96b817f572e8e082e74dc3911182b900aa9875cdc9023c5b8ebf27f3909",
+			"hashVersion": 2,
+			"revisionHash": "0d8b4b774187f099392fffb47d19992e66af84d5addcd6717aa29e76363a2c2d",
 			"generatedTags": [
 				"Fine Means",
 				"Fine",
@@ -3014,8 +3021,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "4867706f879d80f1282ef98e4b08952a9137203babea836525d89b9ac042175b",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/how-to-start-machine-learning-without-buying-magic-beans.md": {
 			"bodyHash": "cfd1d3aaaf2863712a1eb6da7bd0877c21fabc255d9ce0e01ac8ca7f0edf3f1b",
@@ -3493,7 +3499,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/jogar-jugaad-and-the-greedy-improvisation-of-india.md": {
-			"bodyHash": "dfe8554c8a32ac8d3aa193247dc65298f0f7a8545ba2b44adf68130d20a3b78c",
+			"bodyHash": "7a8ed255c63eabd3da15a663133145dd19f52306d605b6f23cca248e50bfa777",
+			"hashVersion": 2,
+			"revisionHash": "9080825ab4ec40ca91a89afd90e5a316df4e741e295d8e4b8b1c2c7e41a87147",
 			"generatedTags": [
 				"Ask Whether",
 				"Jugaad",
@@ -3508,8 +3516,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "394b2a420d4fcc3d538102dc6bc9c4878183e5be20e674f8741fbb10643c2110",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.md": {
 			"bodyHash": "81557aeb6ce991a6288bd5bb0f30308dd7a12689f416b2d42c4958e75523b1e7",
@@ -3683,7 +3690,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/large-common-insects-and-arachnids-in-urban-calcutta.md": {
-			"bodyHash": "c9f6a27b6468586610875bc65c2f8cc14ac6af8a39a46efa8f1ec8e4018be079",
+			"bodyHash": "e9161aebb342d39fbf6296f0752b601e136b8f1a6099fd4619590a429bd78655",
+			"hashVersion": 2,
+			"revisionHash": "7e92bdf1ba2784dff47b00a5b8b9b175d81bd80f3335e3eb3707ae7e770410ff",
 			"generatedTags": [
 				"Bed Bugs",
 				"Host Plants",
@@ -3698,8 +3707,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "49d311e96d63b208a2be47850fd77f2b24efb5f3a2805a2e8d3bb9af76ea8e27",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/last-economy-intelligence-inversion.md": {
 			"bodyHash": "cfcf6fcfa08b86581a488c63ed55945f795bc3b6eaeb76c5f8da2b7a40f15ed6",
@@ -3980,7 +3988,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/mind-as-emergence-not-magic.md": {
-			"bodyHash": "c952c6f615501379767b916903d1e7a956536ada0b0a20055ec239af9430895c",
+			"bodyHash": "713d094e7a3f0bb294b9aa5a63981acec3da458c5578634631c54815ef12dc32",
+			"hashVersion": 2,
+			"revisionHash": "fe5c2b04a841406b6e00ac0cedc76b52e9e4fdc7152f07c06ae74b28e145a800",
 			"generatedTags": [
 				"Mental Life",
 				"Brain",
@@ -3995,8 +4005,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "888a90bcc630708bf235374d5b95a67e887e6168bf9ef2d4033b4d7e1c890aad",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/mind-not-staying-in-one-place.md": {
 			"bodyHash": "54f3f8d373b9cb42a8f51e990995ebece61c95a988b4c0ec1baacbec58563cbe",
@@ -4189,7 +4198,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/newtons-first-law-and-the-bladder.md": {
-			"bodyHash": "e47077625c84ce8e3edb30d0be8771fc2d5927dca13b3dc63a565dc36d65c9a6",
+			"bodyHash": "bccc26c373b3c8cfcd12e2897f6ad41617bd2b88eff10cda115808eb36a66233",
+			"hashVersion": 2,
+			"revisionHash": "cfe56282e3d211c0e7ba0fd4bc81a3fc558f7d37cc44659acbe137e1ff57cac3",
 			"generatedTags": [
 				"Acted Upon",
 				"External Force",
@@ -4204,8 +4215,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8cae7e2e960869a1eeab647772a3ffd5984a60204e1c22eb20cb7ea3057f35e2",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/nicotine-biri-and-the-great-bengali-bargain.md": {
 			"bodyHash": "3649454d407d92f022674a13ca4797fd8ed3f459b816d231b18c5348a55e7abe",
@@ -4874,7 +4884,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/randomness-chaos-complexity-calcutta.md": {
-			"bodyHash": "484c449c8129a968f4a1410c80be7c18804ceb342b8c6879b848080755321050",
+			"bodyHash": "7203180cace7a6e37147b526d9694dc7d7a86bf7f8e348fb8d076e8da8fc059a",
+			"hashVersion": 2,
+			"revisionHash": "09d2d598e98723ca8806805d448eb3ff15a78a13083070d03c72a4de75f8a1bc",
 			"generatedTags": [
 				"Health Level Seven",
 				"Complex",
@@ -4889,8 +4901,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "22eb44cedac3da3240cbaff2b7de5d30b03059b4a131c391f5ccc28c6a32e922",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/reading-is-not-homework-it-is-how-the-mind-keeps-change.md": {
 			"bodyHash": "77ab6cf305ad803bdd7089420e06dfcec16d5c2ec6b3b83669a9b737990e8c8c",
@@ -4950,7 +4961,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/returning_home_after_america.md": {
-			"bodyHash": "c616142ff85286ad89bd923a0218e0c93ce4ae861ca1f319513891dbc1aa300f",
+			"bodyHash": "092ca8588d9e5aa6dd6d11d3a5732450e810dbc449d0a3ad50ee7461f3961930",
+			"hashVersion": 2,
+			"revisionHash": "493a73350221a70cbf5293c5139b49b3147aabea108ca0866b59cbae14dd175e",
 			"generatedTags": [
 				"United States",
 				"Foreign Experience",
@@ -4960,13 +4973,12 @@
 				"Experience",
 				"Visa",
 				"Professional",
-				"Senior",
-				"India"
+				"India",
+				"Senior"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "f3083a9113dc64aa8f96e6301112e45dc7c1f8b5fc7f5939c086cb584b570ceb",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/revenge-road.md": {
 			"bodyHash": "c87a8f06849d5444fcf09117a0522d87a8769ba8d2ec5b9a66a5eef94ab76ea6",
@@ -8763,7 +8775,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/this-blogs-history.md": {
-			"bodyHash": "20eb0908ea814df73c78d3a86bdbec4040c20dc6cf5d52a97c16b69358b6e5dc",
+			"bodyHash": "12677e324df46494d5700b072db96668f011a43a74ac3f74e9c87a5bb41c7de8",
+			"hashVersion": 2,
+			"revisionHash": "5ab0dab7da6bbd58c78d07f21566a821f5583d2e4738f7ef16e0deb7e9f73b20",
 			"generatedTags": [
 				"Future Self",
 				"Money Helps",
@@ -8778,8 +8792,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "398301a78514bb388169f259791e02892a8ee11576f4d7e4bab0d89bb984f232",
-			"hashVersion": 2
+			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/three_heads_for_migraine.md": {
 			"bodyHash": "bdbc9a082256986d25c283261f7606be4cd5724e0f8dc45a005eefa4b44b1671",

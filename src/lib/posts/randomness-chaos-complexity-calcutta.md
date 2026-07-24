@@ -1,12 +1,14 @@
 ---
 title: "Why Myths Multiply When Randomness Is Left Unexplained"
-description: "A technically serious but readable argument for why ordinary people need a working grasp of randomness, chaos, and complexity, especially in a crowded, rumor-rich, infrastructure-fragile city like Calcutta."
+description: "Why ordinary people need working models of randomness, chaos, and complexity in a crowded, rumour-rich, infrastructure-fragile city like Calcutta."
 date: "2026-04-26"
+dateModified: "2026-07-24"
 category: "Mental Models"
 tags: ["Health Level Seven","Complex","Healthcare","Data","System","Complexity","Myths","Causality","Incentives","Uncertainty"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/art-randomness-chaos-complexity-calcutta.jpg"
+thumbnailAlt: "Buses, a tram, rickshaws, pedestrians, and a crowded tea stall converge on a rain-soaked Calcutta street."
 ---
 
 <TTS />

@@ -1,12 +1,14 @@
 ---
 title: "Mind Is What the Brain Does, Not a Ghost in the Attic"
-description: "A clear historical and scientific account of how the mind came to be understood as an emergent activity of the brain, and why popular language still keeps smuggling in little spirits wearing lab coats."
+description: "How science came to understand the mind as an emergent activity of the brain, and why everyday language still smuggles ghosts into explanations of thought."
 date: "2026-04-25"
+dateModified: "2026-07-24"
 category: "Neuroscience"
 tags: ["Mental Life","Brain","Neurons","Mind","Perception","Experience","Woo","Mental","Neuron","Anesthesia"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-mind-as-emergence-not-magic.jpg"
+thumbnailAlt: "Two luminous human profiles formed from neural networks rise from a microscope slide in an old laboratory."
 ---
 
 <TTS />

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T23:30:35.162443+00:00",
+  "generatedAt": "2026-07-24T20:34:52.830004+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -1152,12 +1152,12 @@
       "wordCount": 130
     },
     "bengal-changed-color-not-character": {
-      "generatedAt": "2026-07-20T02:02:26.775997+00:00",
+      "generatedAt": "2026-07-24T20:34:22.856787+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/bengal-changed-color-not-character.svg",
       "source": "src/lib/posts/bengal-changed-color-not-character.md",
-      "sourceHash": "42976afbb4f077af17e61b2550935dffa97a658d91d7a5fceb610e1d4c554895",
-      "sourceModified": "2026-07-20T02:00:12.709157+00:00",
+      "sourceHash": "0df965c99179e10f339cc0acbccee354335bab4fb0cadc5ce0608a933ecdea9a",
+      "sourceModified": "2026-07-24T20:32:42.732305+00:00",
       "topWords": [
         "Bengal",
         "Democracy",
@@ -2325,12 +2325,12 @@
       "wordCount": 130
     },
     "courage-to-be-disliked-in-calcutta": {
-      "generatedAt": "2026-07-20T02:02:59.856847+00:00",
+      "generatedAt": "2026-07-24T20:34:25.297185+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/courage-to-be-disliked-in-calcutta.svg",
       "source": "src/lib/posts/courage-to-be-disliked-in-calcutta.md",
-      "sourceHash": "ddd236c474d85634dee7b9ecb6071ccfd59255867038b59c71d1a3d57bc1686b",
-      "sourceModified": "2026-07-20T02:01:42.480462+00:00",
+      "sourceHash": "7b58692a78acf802ca341eabdf23e42901e1bc5ccc7f628048b075f718665c5c",
+      "sourceModified": "2026-07-24T20:32:42.739123+00:00",
       "topWords": [
         "Say",
         "Call",
@@ -2532,12 +2532,12 @@
       "wordCount": 130
     },
     "depression-as-mathematics": {
-      "generatedAt": "2026-07-20T02:03:03.669575+00:00",
+      "generatedAt": "2026-07-24T20:34:27.569706+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/depression-as-mathematics.svg",
       "source": "src/lib/posts/depression-as-mathematics.md",
-      "sourceHash": "29f3af6a2d819786dc8dc709da59f1a3549afa312c6f4d858e6986fb6bcf9e1c",
-      "sourceModified": "2026-07-20T02:00:12.395891+00:00",
+      "sourceHash": "bc1ee70dd5ea410c73657653cd500dee9662f2a3a673c137a160d83fd62ee7c1",
+      "sourceModified": "2026-07-24T14:48:07.076061+00:00",
       "topWords": [
         "System",
         "Mood",
@@ -2831,12 +2831,12 @@
       "wordCount": 130
     },
     "entropy-in-a-rented-room": {
-      "generatedAt": "2026-07-20T02:03:12.154401+00:00",
+      "generatedAt": "2026-07-24T20:34:29.847493+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/entropy-in-a-rented-room.svg",
       "source": "src/lib/posts/entropy-in-a-rented-room.md",
-      "sourceHash": "5aa3d1437d1691925473b98b4b70d074c5fd067a44b1edc3810032b5aff533d6",
-      "sourceModified": "2026-07-20T02:01:42.598276+00:00",
+      "sourceHash": "b5751e8b52572cba4d3757a3fce619389c6e8bc6d652da82384fb101f8c3d270",
+      "sourceModified": "2026-07-24T20:32:42.741215+00:00",
       "topWords": [
         "Room",
         "Rice",
@@ -3222,12 +3222,12 @@
       "wordCount": 130
     },
     "first-principles-thinking-calcutta-healthcare-it": {
-      "generatedAt": "2026-07-20T02:03:22.236822+00:00",
+      "generatedAt": "2026-07-24T20:34:32.181803+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/first-principles-thinking-calcutta-healthcare-it.svg",
       "source": "src/lib/posts/first-principles-thinking-calcutta-healthcare-it.md",
-      "sourceHash": "d30a7177362b87cf2c7742a67a1e63998aeeaffbcd35a70de14c9ad21f631c53",
-      "sourceModified": "2026-07-20T02:01:42.705094+00:00",
+      "sourceHash": "b9223052c02ec76e5d9bd77a641238d758809cfb3ae15d3aafc9114f906f60d1",
+      "sourceModified": "2026-07-24T20:33:25.201153+00:00",
       "topWords": [
         "Data",
         "Healthcare",
@@ -3314,12 +3314,12 @@
       "wordCount": 130
     },
     "fog-machines-in-the-temple": {
-      "generatedAt": "2026-07-20T02:03:25.337988+00:00",
+      "generatedAt": "2026-07-24T20:34:34.304099+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/fog-machines-in-the-temple.svg",
       "source": "src/lib/posts/fog-machines-in-the-temple.md",
-      "sourceHash": "0a4e1b1b945efa89158257d576d79248294bb01229328c48abf5b0c034d551b4",
-      "sourceModified": "2026-07-20T02:00:12.581981+00:00",
+      "sourceHash": "4b7f6975d74b254a90bf8bcedcf8d7f20c241353ec52aad96d7e5a1a206d82cc",
+      "sourceModified": "2026-07-24T20:32:42.746143+00:00",
       "topWords": [
         "AI",
         "Person",
@@ -3981,12 +3981,12 @@
       "wordCount": 130
     },
     "how-are-you-and-other-small-cruelties": {
-      "generatedAt": "2026-07-20T02:03:44.446412+00:00",
+      "generatedAt": "2026-07-24T20:34:36.540521+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/how-are-you-and-other-small-cruelties.svg",
       "source": "src/lib/posts/how-are-you-and-other-small-cruelties.md",
-      "sourceHash": "2ccd4bdb1caf419d461e07f96a66c9e55ce0ac6e615d3c36b5d378b74adfaba7",
-      "sourceModified": "2026-07-20T02:00:12.521722+00:00",
+      "sourceHash": "29dfdaba7478f39423d79ee372d909c821d67ac7eb58597fc39739883d19f09b",
+      "sourceModified": "2026-07-24T20:32:42.749970+00:00",
       "topWords": [
         "Fine",
         "Say",
@@ -4579,12 +4579,12 @@
       "wordCount": 130
     },
     "jogar-jugaad-and-the-greedy-improvisation-of-india": {
-      "generatedAt": "2026-07-20T02:04:02.272680+00:00",
+      "generatedAt": "2026-07-24T20:34:38.791956+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/jogar-jugaad-and-the-greedy-improvisation-of-india.svg",
       "source": "src/lib/posts/jogar-jugaad-and-the-greedy-improvisation-of-india.md",
-      "sourceHash": "3cd1d7edf66add2685e826cbb7cc280de845263db5b3f0fdf0ad38f8f668587f",
-      "sourceModified": "2026-07-20T02:01:43.122769+00:00",
+      "sourceHash": "2e75ac058560bbc838c2f9943582062d448d41d5fd0cb1bc864dbf4af927dec7",
+      "sourceModified": "2026-07-24T20:32:42.752159+00:00",
       "topWords": [
         "Jugaad",
         "Becomes",
@@ -4809,12 +4809,12 @@
       "wordCount": 130
     },
     "large-common-insects-and-arachnids-in-urban-calcutta": {
-      "generatedAt": "2026-07-20T02:04:08.515676+00:00",
+      "generatedAt": "2026-07-24T20:34:40.980988+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/large-common-insects-and-arachnids-in-urban-calcutta.svg",
       "source": "src/lib/posts/large-common-insects-and-arachnids-in-urban-calcutta.md",
-      "sourceHash": "59ee7a48b2599b6d383aead99274b0996da4511fc07c97e7b3147b0c52d078f9",
-      "sourceModified": "2026-07-20T02:01:43.207348+00:00",
+      "sourceHash": "726450e8566d18ee36f0b5178dcd9117e99fc4ce12cbc06660e393d82b187e2c",
+      "sourceModified": "2026-07-24T20:32:42.756181+00:00",
       "topWords": [
         "Insects",
         "Often",
@@ -5154,12 +5154,12 @@
       "wordCount": 130
     },
     "mind-as-emergence-not-magic": {
-      "generatedAt": "2026-07-20T02:04:19.640408+00:00",
+      "generatedAt": "2026-07-24T20:34:43.136378+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/mind-as-emergence-not-magic.svg",
       "source": "src/lib/posts/mind-as-emergence-not-magic.md",
-      "sourceHash": "5816bc941932c068125254df332434e861a1e6d964c206fdee3364d046b6f4df",
-      "sourceModified": "2026-07-20T02:01:43.298200+00:00",
+      "sourceHash": "e1f4a03d259de2a018f34f0b3b93443660c05cb3ad0fcbd1f46086a68b6062e4",
+      "sourceModified": "2026-07-24T20:32:42.758188+00:00",
       "topWords": [
         "Brain",
         "Mind",
@@ -5453,12 +5453,12 @@
       "wordCount": 130
     },
     "newtons-first-law-and-the-bladder": {
-      "generatedAt": "2026-07-20T02:04:28.224849+00:00",
+      "generatedAt": "2026-07-24T20:34:45.340739+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/newtons-first-law-and-the-bladder.svg",
       "source": "src/lib/posts/newtons-first-law-and-the-bladder.md",
-      "sourceHash": "68accb9ef1f81df35a5da3b17119ae96a2216bf5120d77fc003b88056116a5cd",
-      "sourceModified": "2026-07-20T02:01:43.365437+00:00",
+      "sourceHash": "ae37b954ad150385159e449d0e419d0a060f056f185932f5cd771ea4d694f32a",
+      "sourceModified": "2026-07-24T20:32:42.763189+00:00",
       "topWords": [
         "Man",
         "Force",
@@ -6327,12 +6327,12 @@
       "wordCount": 130
     },
     "randomness-chaos-complexity-calcutta": {
-      "generatedAt": "2026-07-20T02:04:52.717684+00:00",
+      "generatedAt": "2026-07-24T20:34:47.666519+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/randomness-chaos-complexity-calcutta.svg",
       "source": "src/lib/posts/randomness-chaos-complexity-calcutta.md",
-      "sourceHash": "6f5725eba8c29cf31140634815d770e8b18c2b6aceb3be2dce2db643b7313235",
-      "sourceModified": "2026-07-20T02:00:12.276931+00:00",
+      "sourceHash": "9dae8d3a7c40676ebb9df98bc2958525db3453e8dd59c890d1b585d3657b1add",
+      "sourceModified": "2026-07-24T20:32:42.768093+00:00",
       "topWords": [
         "System",
         "Data",
@@ -6442,12 +6442,12 @@
       "wordCount": 130
     },
     "returning_home_after_america": {
-      "generatedAt": "2026-07-20T02:04:55.714276+00:00",
+      "generatedAt": "2026-07-24T20:34:49.847342+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/returning_home_after_america.svg",
       "source": "src/lib/posts/returning_home_after_america.md",
-      "sourceHash": "2e19958df18403e05dc0429edf2f2304a3e98bebf0dea3445cd1383d7497b048",
-      "sourceModified": "2026-07-20T02:00:12.245232+00:00",
+      "sourceHash": "b2fe16347c3a7d98b4c72b23386a470b5c80af46fc7ce0915a6aa6d58aa5c151",
+      "sourceModified": "2026-07-24T20:33:25.317814+00:00",
       "topWords": [
         "Indian",
         "Person",
@@ -11410,12 +11410,12 @@
       "wordCount": 130
     },
     "this-blogs-history": {
-      "generatedAt": "2026-07-20T02:07:10.039199+00:00",
+      "generatedAt": "2026-07-24T20:34:52.681085+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/this-blogs-history.svg",
       "source": "src/lib/posts/this-blogs-history.md",
-      "sourceHash": "a1fd0948e72d3f9299d8b717512fd0d4bfa9f7baf4ade7ab61765965cb381c4d",
-      "sourceModified": "2026-07-20T02:00:12.271829+00:00",
+      "sourceHash": "3eac6c4c64160d34944eef0a8658226cd3779639aa4c9bac837f97810c48f65d",
+      "sourceModified": "2026-07-24T20:32:42.775394+00:00",
       "topWords": [
         "Man",
         "Money",

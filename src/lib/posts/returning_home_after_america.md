@@ -1,12 +1,14 @@
 ---
 title: "The Returnee Who No Longer Fits"
-description: "A sensitive, evidence-grounded essay on Indian professionals returning from the United States into a labor market that often misunderstands age, foreign experience, independence, and grief."
+description: "An evidence-grounded essay on Indian professionals returning from the US to a labor market that misreads age, foreign experience, independence, and grief."
 date: "2026-04-24"
+dateModified: "2026-07-24"
 category: "work, migration, India"
-tags: ["United States","Foreign Experience","Returnee","Returnees","Indian","Experience","Visa","Professional","Senior","India"]
+tags: ["United States","Foreign Experience","Returnee","Returnees","Indian","Experience","Visa","Professional","India","Senior"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-returning-home-after-america.jpg"
+thumbnailAlt: "A middle-aged man with a suitcase and documents stands between an empty office overlooking a city skyline and a crowded hiring desk."
 ---
 
 <TTS />

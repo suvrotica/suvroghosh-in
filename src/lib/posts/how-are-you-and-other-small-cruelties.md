@@ -2,11 +2,13 @@
 title: "How Are You and Other Small Cruelties"
 description: "A bitter comic meditation on the impossible social arithmetic hidden inside the harmless question, How are you?"
 date: "2026-05-06"
+dateModified: "2026-07-24"
 category: "Personal Satire"
 tags: ["Fine Means","Fine","Lower-Middle-Class","Honesty","Produce","Correct","Lying","Yes","Ceiling","Asks"]
 published: true
 color: "gray"
 thumbnail: "/thumbnail/art-how-are-you-and-other-small-cruelties.jpg"
+thumbnailAlt: "Two men talk over tea at a street stall beside a wall mural balancing a clock, pills, letters, a telephone, and an empty chair."
 ---
 
 <TTS />

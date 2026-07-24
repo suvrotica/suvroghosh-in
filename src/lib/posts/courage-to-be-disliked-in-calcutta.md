@@ -2,11 +2,13 @@
 title: "The Courage to Be Disliked in a Sweating Calcutta Room"
 description: "A sharp, funny, personal essay on social approval, rejection, anxiety, Adlerian psychology, social media, and the ancient fear of being cast out."
 date: "2026-06-10"
+dateModified: "2026-07-24"
 category: "Psychology"
 tags: ["Adler","Disliked","Task","Call","Approval","Keep","Silence","Society","Nervous","Check"]
 published: true
 color: "slate"
 thumbnail: "/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg"
+thumbnailAlt: "A sweating man in a dim room looks toward a rooftop gathering while a crowd of disapproving faces is projected across the wall."
 ---
 
 <TTS />

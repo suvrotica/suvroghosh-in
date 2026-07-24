@@ -1,12 +1,14 @@
 ---
 title: "Fog Machines in the Temple: Mandukya, AI, and the Dangerous Answer to Who Am I?"
-description: "A Calcutta-bred, skeptical reading of the Mandukya Upanishad, identity, social gaslighting, and why AI can become a private priest for the lonely, gullible, wounded, and over-persuaded."
+description: "A skeptical Calcutta reading of the Mandukya Upanishad, identity, social gaslighting, and the danger of AI becoming a private priest for vulnerable people."
 date: "2026-05-09"
+dateModified: "2026-07-24"
 category: "Philosophy and AI"
 tags: ["Deep Sleep","Pure Consciousness","Mandukya","AI","Mode","Pretends","Waking","Dream","Guru","Self"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/art-fog-machines-in-the-temple.jpg"
+thumbnailAlt: "A seated man faces smoke, mirrors, and cloth screens bearing human silhouettes inside a dark temple hall."
 ---
 
 <TTS />

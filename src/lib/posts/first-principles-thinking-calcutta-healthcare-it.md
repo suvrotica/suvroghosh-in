@@ -1,12 +1,14 @@
 ---
 title: "First Principles Thinking in Calcutta, Healthcare, and the Machinery of Reality"
-description: "A technical and human argument for first principles thinking as a survival tool, an architectural discipline, and a way to separate reality from inherited vocabulary in healthcare IT."
+description: "A technical and human case for first-principles thinking as a survival tool, an architectural discipline, and a way to test inherited assumptions in healthcare IT."
 date: "2026-04-26"
+dateModified: "2026-07-24"
 category: "Useful Mental Models"
-tags: ["Health Level Seven","Principles","Clinical","Healthcare","Data","First-Principles","Model","Representation","Health","Artifact"]
+tags: ["Health Level Seven","Principles","Healthcare","Clinical","Data","First-Principles","Model","Representation","Health","Artifact"]
 published: true
 color: "indigo"
 thumbnail: "/thumbnail/art-first-principles-thinking-calcutta-healthcare-it.jpg"
+thumbnailAlt: "A man repairs a mechanical device at a hospital workbench while a ward operates behind a glass partition."
 ---
 
 <TTS />
