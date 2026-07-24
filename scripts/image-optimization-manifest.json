@@ -9801,6 +9801,22 @@
       "sourceHash": "1760a75ab083eb0d54deb26275ea9f147ec5ca3477d5d2df0c71edaeddb3d01c",
       "width": 1200
     },
+    "static/thumbnail/art-entropy-in-a-rented-room.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 158080,
+      "outputHash": "ab2d81453852670bfe419e7970cd7171de5faf8d87ba219b89ec641f128f0907",
+      "psnrDb": 37.62,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 191183,
+      "sourceHash": "f07b21ac5254138e7800608fc2bf9392defa90210a518e796dc6a14c62f2f74a",
+      "width": 1200
+    },
     "static/thumbnail/art-find-study-diabetes-kidney-family-tree.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -9815,6 +9831,22 @@
       "resized": false,
       "sourceBytes": 179204,
       "sourceHash": "1b1d35cd89c6e7c2fb7776a68ad619b4fb6cad719d42dcf2bfd74547386166d6",
+      "width": 1200
+    },
+    "static/thumbnail/art-first-principles-thinking-calcutta-healthcare-it.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 162658,
+      "outputHash": "5cf3f435bd9022214b3fb11b4cfefdbae5ac0744ea2960113e92443307975eb3",
+      "psnrDb": 38.13,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 194151,
+      "sourceHash": "9da7d19d477c587ef1b00fa49c9169a49c05b194e9cb508a0dfc044a8e3422ae",
       "width": 1200
     },
     "static/thumbnail/art-fog-machines-in-the-temple.jpg": {
@@ -9943,6 +9975,22 @@
       "resized": false,
       "sourceBytes": 196328,
       "sourceHash": "dea2e93e70e07d7eea71b8fb659be8685d5fa200479b8e43cf5bb317bb92c236",
+      "width": 1200
+    },
+    "static/thumbnail/art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 268030,
+      "outputHash": "d45ae94a0e7fdfd1e38a752c84ac0a00dbd4339bf6973e4442070162822eea05",
+      "psnrDb": 36.51,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 305931,
+      "sourceHash": "cbd41ee74af75d8c7441e455c713d8609176eab72858e119b46727c264598c19",
       "width": 1200
     },
     "static/thumbnail/art-k-shaped-economies-us-india-rich-richer-middle-class-poor-shrink.jpg": {
@@ -10119,6 +10167,22 @@
       "resized": false,
       "sourceBytes": 273642,
       "sourceHash": "e12bc6efd2c5dc573df1a4c39ecfdc7f02e4f83f4909691eacc7506dfc45978d",
+      "width": 1200
+    },
+    "static/thumbnail/art-returning-home-after-america.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 136429,
+      "outputHash": "05b7ef58fa2201a4a4eb29685129f05b68a972ecf50ac582cbd479e882f8b197",
+      "psnrDb": 39.93,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 162220,
+      "sourceHash": "abb135aed72c3d7078f7208ef672db853d739495ff0fc2cf5a75c6bb1bc687a5",
       "width": 1200
     },
     "static/thumbnail/art-the-new-mantra.jpg": {

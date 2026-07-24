@@ -6,13 +6,13 @@ category: "Science Essay"
 tags: ["Rice Cooker","Entropy","Rice","Towel","Boundary","Laptop","Options","Ant","Bill","Newton"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-entropy-in-a-rented-room.jpg"
+thumbnail: "/thumbnail/art-entropy-in-a-rented-room.jpg"
 ---
 
 Acronyms used: European Organization for Nuclear Research [CERN, the large European physics laboratory famous for particle accelerators and experiments on the basic particles of matter].
 
 <TTS />
-<Pi src="/thumbnail/safe-entropy-in-a-rented-room.jpg" />
+<Pi src="/thumbnail/art-entropy-in-a-rented-room.jpg" />
 
 The room does not collapse with thunder. It collapses politely, like a clerk taking leave without telling anyone.
 

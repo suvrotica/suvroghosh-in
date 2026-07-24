@@ -6,12 +6,12 @@ category: "work, migration, India"
 tags: ["United States","Foreign Experience","Returnee","Returnees","Indian","Experience","Visa","Professional","Senior","India"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-returning-home-after-america.jpg"
+thumbnail: "/thumbnail/art-returning-home-after-america.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-returning-home-after-america.jpg" />
+<Pi src="/thumbnail/art-returning-home-after-america.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

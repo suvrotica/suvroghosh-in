@@ -3797,9 +3797,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-entropy-in-a-rented-room.jpg",
+			"src": "/thumbnail/art-entropy-in-a-rented-room.jpg",
+			"bytes": 158080,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-find-study-diabetes-kidney-family-tree.jpg",
 			"src": "/thumbnail/art-find-study-diabetes-kidney-family-tree.jpg",
 			"bytes": 127156,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-first-principles-thinking-calcutta-healthcare-it.jpg",
+			"src": "/thumbnail/art-first-principles-thinking-calcutta-healthcare-it.jpg",
+			"bytes": 162658,
 			"width": 1200,
 			"height": 800
 		},
@@ -3856,6 +3870,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-intro.jpg",
 			"src": "/thumbnail/art-intro.jpg",
 			"bytes": 141043,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
+			"src": "/thumbnail/art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
+			"bytes": 268030,
 			"width": 1200,
 			"height": 800
 		},
@@ -3933,6 +3954,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-randomness-chaos-complexity-calcutta.jpg",
 			"src": "/thumbnail/art-randomness-chaos-complexity-calcutta.jpg",
 			"bytes": 235746,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-returning-home-after-america.jpg",
+			"src": "/thumbnail/art-returning-home-after-america.jpg",
+			"bytes": 136429,
 			"width": 1200,
 			"height": 800
 		},

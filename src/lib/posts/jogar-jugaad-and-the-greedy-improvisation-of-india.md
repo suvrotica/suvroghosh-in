@@ -6,12 +6,12 @@ category: "India"
 tags: ["Ask Whether","Jugaad","India","Improvisation","Corruption","Exceptions","Resilience","Humane","Transport","Repairing"]
 published: true
 color: "#b45309"
-thumbnail: "/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg"
+thumbnail: "/thumbnail/art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg" />
+<Pi src="/thumbnail/art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

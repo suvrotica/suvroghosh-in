@@ -6,12 +6,12 @@ category: "Useful Mental Models"
 tags: ["Health Level Seven","Principles","Clinical","Healthcare","Data","First-Principles","Model","Representation","Health","Artifact"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg"
+thumbnail: "/thumbnail/art-first-principles-thinking-calcutta-healthcare-it.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg" />
+<Pi src="/thumbnail/art-first-principles-thinking-calcutta-healthcare-it.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
