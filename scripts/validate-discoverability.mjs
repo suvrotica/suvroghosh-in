@@ -431,6 +431,7 @@ async function runRenderedChecks() {
 		...renderedPostByRoute.keys(),
 		categoryRoute,
 		paginatedCategoryRoute,
+		'/images/sketches',
 		'/resume',
 		'/projects'
 	];

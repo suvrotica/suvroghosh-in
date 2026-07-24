@@ -28,5 +28,7 @@ preview-*.err.log
 
 # Deterministic generated manifests
 scripts/image-optimization-manifest.json
+scripts/sketch-generation-manifest.json
 src/lib/generated/media-gallery.ts
+src/lib/generated/sketch-manifest.ts
 src/lib/server/generated/image-dimensions.js

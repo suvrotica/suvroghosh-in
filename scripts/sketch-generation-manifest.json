@@ -1,0 +1,1480 @@
+{
+  "version": "2026-07-24.1",
+  "signature": "b45fd2edf6c13f9396738e571c2a404e3ee66eaff53c78c8f6fc01e5591a3384",
+  "sources": {
+    "bird-on-branch.png": {
+      "sourceHash": "eba0e21ee3a728f80530764c817759bdafe0c19a18fce0ceb5ec82261e02343c",
+      "sidecarHash": "9ed32046e40bd6fa48a0d0ec86379934cb6f45a66dc7dd2868e7fd72e21ec90d",
+      "item": {
+        "slug": "bird-on-branch",
+        "title": "Bird on a Branch",
+        "description": "A monochrome pencil drawing of a plump bird perched on a short branch.",
+        "alt": "Pencil drawing of a plump bird perched on a branch.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "landscape",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/bird-on-branch.png",
+          "width": 1200,
+          "height": 977,
+          "bytes": 514524
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/bird-on-branch/thumbnail.webp",
+            "width": 480,
+            "height": 391,
+            "bytes": 45344
+          },
+          "preview": {
+            "src": "/sketch/_generated/bird-on-branch/preview.webp",
+            "width": 960,
+            "height": 782,
+            "bytes": 147954
+          },
+          "museum": {
+            "src": "/sketch/_generated/bird-on-branch/museum.webp",
+            "width": 1200,
+            "height": 977,
+            "bytes": 161530
+          },
+          "detail": {
+            "src": "/sketch/_generated/bird-on-branch/detail.webp",
+            "width": 1200,
+            "height": 977,
+            "bytes": 161530
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/bird-on-branch/thumbnail.webp",
+          "hash": "d6021be563f7c874bab80c962a3ed06dd09ff88801db7b461e91db7202def380"
+        },
+        "preview": {
+          "path": "_generated/bird-on-branch/preview.webp",
+          "hash": "f01bdd05be58f508e33e58581ae39c11b6a806fafceb3c90973a056bc97fc123"
+        },
+        "museum": {
+          "path": "_generated/bird-on-branch/museum.webp",
+          "hash": "5c8a2c8c0dd4730eca5c727eb1de1f624fce49edad9e469161ad9e5f21bee7fb"
+        },
+        "detail": {
+          "path": "_generated/bird-on-branch/detail.webp",
+          "hash": "5c8a2c8c0dd4730eca5c727eb1de1f624fce49edad9e469161ad9e5f21bee7fb"
+        }
+      }
+    },
+    "blue-winged-bird.png": {
+      "sourceHash": "42e8d962526dc77c266900cb61f388c6ce5403e6f396e25af28e0fece11ac5cd",
+      "sidecarHash": "d033613a928b365ed0d060d438aca9b38a41319058ee142e24379fe3ff5bee79",
+      "item": {
+        "slug": "blue-winged-bird",
+        "title": "Blue-Winged Bird",
+        "description": "A flat-colour bird with a black body and bright blue wing against an orange field.",
+        "alt": "Black bird with a bright blue wing on an orange background.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "landscape",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/blue-winged-bird.png",
+          "width": 1800,
+          "height": 1200,
+          "bytes": 208439
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/blue-winged-bird/thumbnail.webp",
+            "width": 480,
+            "height": 320,
+            "bytes": 28484
+          },
+          "preview": {
+            "src": "/sketch/_generated/blue-winged-bird/preview.webp",
+            "width": 960,
+            "height": 640,
+            "bytes": 75642
+          },
+          "museum": {
+            "src": "/sketch/_generated/blue-winged-bird/museum.webp",
+            "width": 1600,
+            "height": 1067,
+            "bytes": 138564
+          },
+          "detail": {
+            "src": "/sketch/_generated/blue-winged-bird/detail.webp",
+            "width": 1800,
+            "height": 1200,
+            "bytes": 66714
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/blue-winged-bird/thumbnail.webp",
+          "hash": "f576136eff03398946ee1046593b8a13ce2d61567b625e04ec2a8801a0519218"
+        },
+        "preview": {
+          "path": "_generated/blue-winged-bird/preview.webp",
+          "hash": "df90318317e937fd93b00379d70124515f4c1267cbf9c45a1e3dae03ff522ea1"
+        },
+        "museum": {
+          "path": "_generated/blue-winged-bird/museum.webp",
+          "hash": "0284ab7d015788101d7175c6e28c11a4deecdc879a5df20653805c64a9e7c695"
+        },
+        "detail": {
+          "path": "_generated/blue-winged-bird/detail.webp",
+          "hash": "90df96e27471c3cc336b01df4643e87ca807b5918cf31d453c3abb1b6adf1e80"
+        }
+      }
+    },
+    "bold-leaf.png": {
+      "sourceHash": "7495ce37b49e3f9944bbf228ee65257a93fb85bebba91b4bc4c76b2c9f637c1c",
+      "sidecarHash": "5ffca734330fa1de6ebb7941f8621607a28673be4bf69be4584126468bd485e5",
+      "item": {
+        "slug": "bold-leaf",
+        "title": "Bold Leaf",
+        "description": "A bold black outline drawing of a single leaf with branching veins.",
+        "alt": "Bold black outline of a single veined leaf.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/bold-leaf.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 271070
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/bold-leaf/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 22808
+          },
+          "preview": {
+            "src": "/sketch/_generated/bold-leaf/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 47894
+          },
+          "museum": {
+            "src": "/sketch/_generated/bold-leaf/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 89720
+          },
+          "detail": {
+            "src": "/sketch/_generated/bold-leaf/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 73956
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/bold-leaf/thumbnail.webp",
+          "hash": "b69922f95e439f9979fea51ca4a9c57c2049dd23ad1107c9b4c8562f58f0df69"
+        },
+        "preview": {
+          "path": "_generated/bold-leaf/preview.webp",
+          "hash": "49b2f5b47bb7022a3ee3e010549d5e284fec2787fa73fef76a8a6f2a06e3902a"
+        },
+        "museum": {
+          "path": "_generated/bold-leaf/museum.webp",
+          "hash": "297877e66293bcef913ae6e352793efb2bc39309ad2d83a7a3a70e41ef6378c2"
+        },
+        "detail": {
+          "path": "_generated/bold-leaf/detail.webp",
+          "hash": "4865eb13a42a464cceef26f3771ea187da8a139a65edc9af4a7454235eb70a6c"
+        }
+      }
+    },
+    "bristly-seed-head.png": {
+      "sourceHash": "ec2833ae7ce32013a434becbfaefff880cf56b9b0d55c38ebb3a1c5568cf7650",
+      "sidecarHash": "53364d154951f745df14b38d3273d405bd9774bc718d777668747e0749c97430",
+      "item": {
+        "slug": "bristly-seed-head",
+        "title": "Bristly Seed Head",
+        "description": "A monochrome drawing of a rounded bristly seed head on a short tapered stem.",
+        "alt": "Rounded bristly seed head drawn in black and white.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/bristly-seed-head.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 1233861
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/bristly-seed-head/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 55298
+          },
+          "preview": {
+            "src": "/sketch/_generated/bristly-seed-head/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 180262
+          },
+          "museum": {
+            "src": "/sketch/_generated/bristly-seed-head/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 395266
+          },
+          "detail": {
+            "src": "/sketch/_generated/bristly-seed-head/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 480546
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/bristly-seed-head/thumbnail.webp",
+          "hash": "cf76e28c5672e2912eb10e0e1c58ec544ba511c61b6c117fbd1b9cd916d42914"
+        },
+        "preview": {
+          "path": "_generated/bristly-seed-head/preview.webp",
+          "hash": "dbfc11ec8ca52da1fdd135bb013b00242e7fd4821bcbc4d26248b4f3940219e0"
+        },
+        "museum": {
+          "path": "_generated/bristly-seed-head/museum.webp",
+          "hash": "9f326c5472e8907ebf961fa2ab16845f94daeb5362a2995e3f72c570a1404982"
+        },
+        "detail": {
+          "path": "_generated/bristly-seed-head/detail.webp",
+          "hash": "6dbf64d3181dd55e9b7455ccc55cf44d3339620dc27faa6174a1225dedac3b14"
+        }
+      }
+    },
+    "clustered-houses-and-boats.png": {
+      "sourceHash": "78016a88761b717539b110406eba51198b7b9fd4431a74d501e4d50b693e2c0c",
+      "sidecarHash": "97547f06e75e5f239198beb2a94029430cc14d85e933b3315d1332ecb961b955",
+      "item": {
+        "slug": "clustered-houses-and-boats",
+        "title": "Clustered Houses and Boats",
+        "description": "A black line drawing of clustered houses among curved boat-like forms above a textured field.",
+        "alt": "Black line drawing of clustered houses and small boat-like forms.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/clustered-houses-and-boats.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 836741
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/clustered-houses-and-boats/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 54984
+          },
+          "preview": {
+            "src": "/sketch/_generated/clustered-houses-and-boats/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 141448
+          },
+          "museum": {
+            "src": "/sketch/_generated/clustered-houses-and-boats/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 272468
+          },
+          "detail": {
+            "src": "/sketch/_generated/clustered-houses-and-boats/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 282690
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/clustered-houses-and-boats/thumbnail.webp",
+          "hash": "10e9179c0e384aeccac3ef11bf13ca5b37ca295536ea6d5d2c80d6b2e504d21b"
+        },
+        "preview": {
+          "path": "_generated/clustered-houses-and-boats/preview.webp",
+          "hash": "6bd523f71e6bcf0a22c792e9dacc1833176deba572b07cc0434ef3d5c9ef8e14"
+        },
+        "museum": {
+          "path": "_generated/clustered-houses-and-boats/museum.webp",
+          "hash": "97301962d24848dd9ef8db467db36bde22dade9df903f6764ed51c2f1bb41505"
+        },
+        "detail": {
+          "path": "_generated/clustered-houses-and-boats/detail.webp",
+          "hash": "11fd9189816ae9e2675326c1df946ff25480edaa702938671d1dada6970753a9"
+        }
+      }
+    },
+    "contour-pattern-fish.png": {
+      "sourceHash": "ad0a38edc09ef1091efd742eb91c7fc5ae395d0389d81bac8a10387c81318e72",
+      "sidecarHash": "2b735f3fb25212736b9eae558ba239fbb8191244cd407fd152a5f020f592e054",
+      "item": {
+        "slug": "contour-pattern-fish",
+        "title": "Contour-Pattern Fish",
+        "description": "A black line drawing of a fish filled with dense wavy contour patterns.",
+        "alt": "Black line drawing of a fish filled with wavy contour patterns.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/contour-pattern-fish.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 680756
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/contour-pattern-fish/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 36364
+          },
+          "preview": {
+            "src": "/sketch/_generated/contour-pattern-fish/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 101072
+          },
+          "museum": {
+            "src": "/sketch/_generated/contour-pattern-fish/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 213654
+          },
+          "detail": {
+            "src": "/sketch/_generated/contour-pattern-fish/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 244648
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/contour-pattern-fish/thumbnail.webp",
+          "hash": "e9885b88a13959347ff5a1a17ee989027d1ca26f2f1feda33d5bc0152ba17eb4"
+        },
+        "preview": {
+          "path": "_generated/contour-pattern-fish/preview.webp",
+          "hash": "24382950d83efde281026241a05359f75585dcf046b0e55276c7461608ecc2da"
+        },
+        "museum": {
+          "path": "_generated/contour-pattern-fish/museum.webp",
+          "hash": "4ebbda7170f791ee28c2e7342b5030f83aee0bd2bbdc2740167a7dd3ede42f0b"
+        },
+        "detail": {
+          "path": "_generated/contour-pattern-fish/detail.webp",
+          "hash": "bf4a9e7ce822a8cb72f1ac197821b1725b236dec5d7a3f88bb4c749e2a284b9a"
+        }
+      }
+    },
+    "gateway-and-orange-sun.png": {
+      "sourceHash": "2e408cc0f35a496d2b7fcf8df19e3bb60bd0e0b51bef9b3f68008b8b2e961a65",
+      "sidecarHash": "2fc93f5a8a555798d0789a9deebdc076b0542189297a10255eb494f2eab23977",
+      "item": {
+        "slug": "gateway-and-orange-sun",
+        "title": "Gateway and Orange Sun",
+        "description": "A yellow stone gateway and wall stand beneath a large orange sun against a blue background.",
+        "alt": "Yellow stone gateway beneath a large orange sun on blue.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/gateway-and-orange-sun.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 481714
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/gateway-and-orange-sun/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 57520
+          },
+          "preview": {
+            "src": "/sketch/_generated/gateway-and-orange-sun/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 136606
+          },
+          "museum": {
+            "src": "/sketch/_generated/gateway-and-orange-sun/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 268088
+          },
+          "detail": {
+            "src": "/sketch/_generated/gateway-and-orange-sun/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 183912
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/gateway-and-orange-sun/thumbnail.webp",
+          "hash": "6a6da40e1185dea46b59efa8ec6ae04984b17fd85b7269775fd9f662adb2b9d0"
+        },
+        "preview": {
+          "path": "_generated/gateway-and-orange-sun/preview.webp",
+          "hash": "0d61df9a699dc7a48be2d7177abfc96073838fb30820a296f865c059debb41f0"
+        },
+        "museum": {
+          "path": "_generated/gateway-and-orange-sun/museum.webp",
+          "hash": "efdf8930ca5cb23d6a6004505c18c6f261c59a42c50c6a2ef96e1a3653b17d28"
+        },
+        "detail": {
+          "path": "_generated/gateway-and-orange-sun/detail.webp",
+          "hash": "9bb847bcee28b86ea49993b320c542e371fa762a1c04289f550c8eae20e3c463"
+        }
+      }
+    },
+    "geometric-kite-over-rocks.png": {
+      "sourceHash": "33d9a91bab81aab3112a2c6dd362a2ac0fe613681787eea129a44175cb9ca6ab",
+      "sidecarHash": "852181959b0cb2efeb124b69eeb228c97636e4b666f9c08515888167b5024bd2",
+      "item": {
+        "slug": "geometric-kite-over-rocks",
+        "title": "Geometric Kite over Rocks",
+        "description": "A black line drawing of a striped geometric kite above a small dotted rocky mound.",
+        "alt": "Striped geometric kite above a small rocky mound.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/geometric-kite-over-rocks.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 408227
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/geometric-kite-over-rocks/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 32118
+          },
+          "preview": {
+            "src": "/sketch/_generated/geometric-kite-over-rocks/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 71516
+          },
+          "museum": {
+            "src": "/sketch/_generated/geometric-kite-over-rocks/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 132310
+          },
+          "detail": {
+            "src": "/sketch/_generated/geometric-kite-over-rocks/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 123410
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/geometric-kite-over-rocks/thumbnail.webp",
+          "hash": "165211bb61ffb34ba61f2d674ad9f801476445608ed59b7012878a9c77ad1d51"
+        },
+        "preview": {
+          "path": "_generated/geometric-kite-over-rocks/preview.webp",
+          "hash": "088787d2becfd90a7ce44576fc70856be339e609765f1b725593a3ecf8608a02"
+        },
+        "museum": {
+          "path": "_generated/geometric-kite-over-rocks/museum.webp",
+          "hash": "719e53ca770367ec3f803a7f2ee313e5ed454023bb2936bee60de14b8f753e0d"
+        },
+        "detail": {
+          "path": "_generated/geometric-kite-over-rocks/detail.webp",
+          "hash": "46495c2c8bb07fc69f431fbf07556982ec50d57fc235db263c1b617b440cc150"
+        }
+      }
+    },
+    "hillside-buildings.png": {
+      "sourceHash": "50572bcd69748ba058e6405980139e70c96e39cbf64278d8114d08b1318d42ee",
+      "sidecarHash": "899ef76145762f760f8668b3166b8fa488ec3cad96171d1f8d9f844101e9a61f",
+      "item": {
+        "slug": "hillside-buildings",
+        "title": "Hillside Buildings",
+        "description": "White rectangular buildings are stacked along a steep black-and-white hillside against bright blue.",
+        "alt": "White buildings stacked on a steep hillside against a blue background.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/hillside-buildings.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 562081
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/hillside-buildings/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 36386
+          },
+          "preview": {
+            "src": "/sketch/_generated/hillside-buildings/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 90606
+          },
+          "museum": {
+            "src": "/sketch/_generated/hillside-buildings/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 184468
+          },
+          "detail": {
+            "src": "/sketch/_generated/hillside-buildings/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 171952
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/hillside-buildings/thumbnail.webp",
+          "hash": "cb8c506e85bdf1f53f229018ed44aa19877cdb7ec65d5f66e14d6200b5e87a8e"
+        },
+        "preview": {
+          "path": "_generated/hillside-buildings/preview.webp",
+          "hash": "5bb9af8f9207585a36ccd0cd4e5428881e37c991ddd43d58dd694a68433df236"
+        },
+        "museum": {
+          "path": "_generated/hillside-buildings/museum.webp",
+          "hash": "302aa577e43fe1edee88ca270e3d33e575e3b50527c55f8af51a695b43a5325f"
+        },
+        "detail": {
+          "path": "_generated/hillside-buildings/detail.webp",
+          "hash": "92d36d5a784221bd904910d38209a7b054636427397acb3bb29071f7b3060d44"
+        }
+      }
+    },
+    "horses-head.png": {
+      "sourceHash": "c74797057871e184b8d3c5220474815c09602e6bcf239b0371a5262729a7f52e",
+      "sidecarHash": "dd3d0295eb0c8bb7167211ff598735d6d9ec71f57404938535b74de22ee90a45",
+      "item": {
+        "slug": "horses-head",
+        "title": "Horse's Head",
+        "description": "A soft monochrome pencil sketch of a horse's head in side view.",
+        "alt": "Monochrome pencil sketch of a horse's head in profile.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/horses-head.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 1225385
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/horses-head/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 42978
+          },
+          "preview": {
+            "src": "/sketch/_generated/horses-head/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 145172
+          },
+          "museum": {
+            "src": "/sketch/_generated/horses-head/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 361956
+          },
+          "detail": {
+            "src": "/sketch/_generated/horses-head/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 429146
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/horses-head/thumbnail.webp",
+          "hash": "890658edab729b2c448bc834b689e6feae6f0f6919200340f7ea6c8a3ca3fd51"
+        },
+        "preview": {
+          "path": "_generated/horses-head/preview.webp",
+          "hash": "04c5e5bc7033fd076c83f27f91283b943d23a2d7f20672ac681c8d4e5c089fbc"
+        },
+        "museum": {
+          "path": "_generated/horses-head/museum.webp",
+          "hash": "c0882a66076311b3f34014f2b501c51b2b18ae6a40ec27a22f56850365de7d83"
+        },
+        "detail": {
+          "path": "_generated/horses-head/detail.webp",
+          "hash": "fc9ddbace814b6e889b06d1c89a16dc51c3bce0edcba63e775eaa1d007a941e6"
+        }
+      }
+    },
+    "layered-leaves.png": {
+      "sourceHash": "e1b0e19d589e227e3e14bc2e48c089b37dcbebd4271a47de813d1bd1f595974b",
+      "sidecarHash": "c3df87a4a40b5c764a8b0f414ec0c46793eaf98d05f7e166291c272244b44f3b",
+      "item": {
+        "slug": "layered-leaves",
+        "title": "Layered Leaves",
+        "description": "Several overlapping angular leaves appear in muted grey and brown on a blue-grey ground.",
+        "alt": "Overlapping grey and brown leaves on a blue-grey background.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/layered-leaves.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 309654
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/layered-leaves/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 23256
+          },
+          "preview": {
+            "src": "/sketch/_generated/layered-leaves/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 58218
+          },
+          "museum": {
+            "src": "/sketch/_generated/layered-leaves/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 119624
+          },
+          "detail": {
+            "src": "/sketch/_generated/layered-leaves/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 112556
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/layered-leaves/thumbnail.webp",
+          "hash": "3adf8c3056788fbbcb42938f9dead66deff2c4f8bc04dc6ccc37373f04bb885b"
+        },
+        "preview": {
+          "path": "_generated/layered-leaves/preview.webp",
+          "hash": "a05b8f47be13530831ec3575f57b691b14dba4835dfd52d2c2f7e6c361addf0b"
+        },
+        "museum": {
+          "path": "_generated/layered-leaves/museum.webp",
+          "hash": "96f9490173d7dc2d5b13cb6973b4088729180d6033093becb52406951e1d2714"
+        },
+        "detail": {
+          "path": "_generated/layered-leaves/detail.webp",
+          "hash": "b1b1ef802c895d8c4c837735f82284503fa3bead438647059fcbd655c37c975d"
+        }
+      }
+    },
+    "leafy-stem-and-flower.png": {
+      "sourceHash": "4973282dead2bf7b26f8b2588d348d2fe0ce9eb5d679009c4c1b417a84dda6e1",
+      "sidecarHash": "47068fae3e579279f40d7f917dfdfa0a909ff6a2a2a872d88655a5ff63f28fe1",
+      "item": {
+        "slug": "leafy-stem-and-flower",
+        "title": "Leafy Stem and Flower",
+        "description": "A black line drawing of a leafy stem ending in an abstract hanging bloom.",
+        "alt": "Black line drawing of a leafy stem with an abstract hanging flower.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/leafy-stem-and-flower.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 564298
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/leafy-stem-and-flower/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 24000
+          },
+          "preview": {
+            "src": "/sketch/_generated/leafy-stem-and-flower/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 73664
+          },
+          "museum": {
+            "src": "/sketch/_generated/leafy-stem-and-flower/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 177158
+          },
+          "detail": {
+            "src": "/sketch/_generated/leafy-stem-and-flower/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 216358
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/leafy-stem-and-flower/thumbnail.webp",
+          "hash": "d836f0b776bca3662479a431851d2700b6b31cc91f4dfd50e448bf4648f1364c"
+        },
+        "preview": {
+          "path": "_generated/leafy-stem-and-flower/preview.webp",
+          "hash": "703f7cb8ded4cec3158692550d518c917028923f15cd8d72a31ad20192c91bfb"
+        },
+        "museum": {
+          "path": "_generated/leafy-stem-and-flower/museum.webp",
+          "hash": "83a96304e4fbf5af6e7f4e259ab6e1f8d886b5ac6b5f1618522e428389d14ec0"
+        },
+        "detail": {
+          "path": "_generated/leafy-stem-and-flower/detail.webp",
+          "hash": "1ec69b2cf7160e1d49d690566fa532917de08a1f471b6190883cb2c6b37fd5e1"
+        }
+      }
+    },
+    "orange-fish-and-branch.png": {
+      "sourceHash": "f85c37b6e1898fd87e99140bd1f5d9bde4c19103bab7de78143ca73d1b5aa797",
+      "sidecarHash": "255e0fb0823254196c79436e2f7182732053c8909680ea8441b170249eb96914",
+      "item": {
+        "slug": "orange-fish-and-branch",
+        "title": "Orange Fish and Branch",
+        "description": "An orange fish-shaped figure appears above a dark branch with small green leaves.",
+        "alt": "Orange fish-shaped figure above a leafy branch on a dark background.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/orange-fish-and-branch.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 1618417
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/orange-fish-and-branch/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 79730
+          },
+          "preview": {
+            "src": "/sketch/_generated/orange-fish-and-branch/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 323178
+          },
+          "museum": {
+            "src": "/sketch/_generated/orange-fish-and-branch/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 850734
+          },
+          "detail": {
+            "src": "/sketch/_generated/orange-fish-and-branch/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 954420
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/orange-fish-and-branch/thumbnail.webp",
+          "hash": "e90c295c4551eabb272d74f22d034c88363d19f8db48d913e620757177fbe141"
+        },
+        "preview": {
+          "path": "_generated/orange-fish-and-branch/preview.webp",
+          "hash": "4452ef0011afd74ace46390ae710bd209f5cd79f47b6ec61b663b9de6abe2567"
+        },
+        "museum": {
+          "path": "_generated/orange-fish-and-branch/museum.webp",
+          "hash": "6a93e960e6877cc9bf4c58fa6fdf2db60fdaada41b9adc608b8acde60c646f09"
+        },
+        "detail": {
+          "path": "_generated/orange-fish-and-branch/detail.webp",
+          "hash": "4b9cf3e0c89836eeec3d045ddd7da0c6021081446fad75407921937ec4e997fa"
+        }
+      }
+    },
+    "patterned-fish.png": {
+      "sourceHash": "5a47800af37a53a34cb8853fb698401300423791a7a31eb72c9774bdccee856f",
+      "sidecarHash": "63526e05de869b49aaeeef19463bd01781c2ff90942d6b04cfc7aad759700b07",
+      "item": {
+        "slug": "patterned-fish",
+        "title": "Patterned Fish",
+        "description": "A black line drawing of a curved fish with patterned scales and long fins.",
+        "alt": "Black line drawing of a curved fish with patterned scales and fins.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/patterned-fish.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 642902
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/patterned-fish/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 34368
+          },
+          "preview": {
+            "src": "/sketch/_generated/patterned-fish/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 99218
+          },
+          "museum": {
+            "src": "/sketch/_generated/patterned-fish/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 207872
+          },
+          "detail": {
+            "src": "/sketch/_generated/patterned-fish/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 210360
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/patterned-fish/thumbnail.webp",
+          "hash": "19dc5e17ab7229f3db5e1ad3b2f7fff80f6e0a22416cf464761cbba49435cf39"
+        },
+        "preview": {
+          "path": "_generated/patterned-fish/preview.webp",
+          "hash": "f95b6f28eecbd3be57c4177a714c49b61ab96c588559d68ea015018c82b08599"
+        },
+        "museum": {
+          "path": "_generated/patterned-fish/museum.webp",
+          "hash": "f5e098ae05c76ee190acf6160853f97f6a9f9b3f01aa6980cd0fa7b1601d4312"
+        },
+        "detail": {
+          "path": "_generated/patterned-fish/detail.webp",
+          "hash": "dc538376d7bbd4bb4cc5910c5eb2e2e0aa791b66d8cc4d3de1c8041ddbfbbb13"
+        }
+      }
+    },
+    "pink-bird.png": {
+      "sourceHash": "e828f18651678bfb641b04b3ac7480d855c458c521596e41a2dfcb0c1aa7350e",
+      "sidecarHash": "03af9954bda0cd06df895c9a1cf67180f97e2bdcb92dd8b40aaa658fc098ba56",
+      "item": {
+        "slug": "pink-bird",
+        "title": "Pink Bird",
+        "description": "A flat graphic of a pink bird with orange and pale blue accents on black.",
+        "alt": "Pink bird with orange and pale blue accents on a black background.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "landscape",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/pink-bird.png",
+          "width": 1800,
+          "height": 1200,
+          "bytes": 178909
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/pink-bird/thumbnail.webp",
+            "width": 480,
+            "height": 320,
+            "bytes": 25256
+          },
+          "preview": {
+            "src": "/sketch/_generated/pink-bird/preview.webp",
+            "width": 960,
+            "height": 640,
+            "bytes": 59216
+          },
+          "museum": {
+            "src": "/sketch/_generated/pink-bird/museum.webp",
+            "width": 1600,
+            "height": 1067,
+            "bytes": 108502
+          },
+          "detail": {
+            "src": "/sketch/_generated/pink-bird/detail.webp",
+            "width": 1800,
+            "height": 1200,
+            "bytes": 86058
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/pink-bird/thumbnail.webp",
+          "hash": "b31acecd4ddd6303b48b47e48d0baf743b07a2e864d81bdae7de4122cbd3e764"
+        },
+        "preview": {
+          "path": "_generated/pink-bird/preview.webp",
+          "hash": "da9122ff5402a3ad1c410a41b5855dcd2b4e8dd97932ce302b37ba4fcdcce21d"
+        },
+        "museum": {
+          "path": "_generated/pink-bird/museum.webp",
+          "hash": "691f35cfd20cf26a56afd5b251e1af77479ed1a401ea5911c0a7fa5317b315ef"
+        },
+        "detail": {
+          "path": "_generated/pink-bird/detail.webp",
+          "hash": "79207939b1e950434cdd6c63fe74ea535d10b35955511dd27f8e07e26e63f3c9"
+        }
+      }
+    },
+    "radial-flower-motif.png": {
+      "sourceHash": "42b3ef6a28c0bba1e2e47f89979a49b9ddf414aa24c10b144d6ef51dd5f0a9fd",
+      "sidecarHash": "4484bfff765c07e231c74b35232ac9dd90ab0c99839956b0213025e2877b2acb",
+      "item": {
+        "slug": "radial-flower-motif",
+        "title": "Radial Flower Motif",
+        "description": "A blue-and-cream radial flower form with a dark circular centre on a textured grey background.",
+        "alt": "Blue-and-cream radial flower motif with a dark centre on grey.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/radial-flower-motif.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 3146672
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/radial-flower-motif/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 154638
+          },
+          "preview": {
+            "src": "/sketch/_generated/radial-flower-motif/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 486706
+          },
+          "museum": {
+            "src": "/sketch/_generated/radial-flower-motif/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 1140004
+          },
+          "detail": {
+            "src": "/sketch/_generated/radial-flower-motif/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 1371178
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/radial-flower-motif/thumbnail.webp",
+          "hash": "f9729ee83aabe674d0aa08368b20c1f07c541f58f71f6c3d37ef92372a0ba77d"
+        },
+        "preview": {
+          "path": "_generated/radial-flower-motif/preview.webp",
+          "hash": "6e45d522365e9359f7ab9e496df55c6f711594a67d1f4bccd9cf9c033c27bffc"
+        },
+        "museum": {
+          "path": "_generated/radial-flower-motif/museum.webp",
+          "hash": "4bc9e169906c23a9f1671ed3737aadfbb3c6dab7dd137bc656e221900d074b19"
+        },
+        "detail": {
+          "path": "_generated/radial-flower-motif/detail.webp",
+          "hash": "2c34cf13420ea52758160e4e32c527ebd9bad6de891f7787162e6385f7c33752"
+        }
+      }
+    },
+    "sailboat-under-clouds.png": {
+      "sourceHash": "e6f563babdf4566831ba95a5059944978e0945db7a815fa450e71c710cd9701e",
+      "sidecarHash": "b322b90b2c1286828aefceedbfe5eec55b6907a26bafc0731e656b553b8c9678",
+      "item": {
+        "slug": "sailboat-under-clouds",
+        "title": "Sailboat under Clouds",
+        "description": "A small black sailboat with tan sails sits on bright blue water beneath rounded tan and red cloud forms.",
+        "alt": "Small sailboat with tan sails beneath rounded clouds on a blue field.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "original",
+        "source": {
+          "src": "/sketch/sailboat-under-clouds.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 348771
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/sailboat-under-clouds/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 54470
+          },
+          "preview": {
+            "src": "/sketch/_generated/sailboat-under-clouds/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 128554
+          },
+          "museum": {
+            "src": "/sketch/_generated/sailboat-under-clouds/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 230314
+          },
+          "detail": {
+            "src": "/sketch/_generated/sailboat-under-clouds/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 137168
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/sailboat-under-clouds/thumbnail.webp",
+          "hash": "2e538941934e7d38207c7df8f6c9ca169e1a5b7434ece7615731a73970297213"
+        },
+        "preview": {
+          "path": "_generated/sailboat-under-clouds/preview.webp",
+          "hash": "acc54cdb967d6e8216cd5d64be235f4980e4d34f8b3cce6fbfd8d2f23b6dcbb8"
+        },
+        "museum": {
+          "path": "_generated/sailboat-under-clouds/museum.webp",
+          "hash": "6adec8ba17ff4a9fa58705bf75b16db84a7ab8f66dbcc8c458f7bf0d5a4da1ae"
+        },
+        "detail": {
+          "path": "_generated/sailboat-under-clouds/detail.webp",
+          "hash": "2e4bd4d4e9e7ac558ef03b03abb3974c0cd58e72fba73cc2e0a529446bc84567"
+        }
+      }
+    },
+    "seahorse.png": {
+      "sourceHash": "0a88801ba5fc13ade76ef55ae07f9b6a56319a93e976cfa3722ac4fcc59514d5",
+      "sidecarHash": "dfaa0bcb1455844d933ac51bbdf44b706614bd7bc17b6c055d4254188ad1f332",
+      "item": {
+        "slug": "seahorse",
+        "title": "Seahorse",
+        "description": "A detailed black line drawing of a seahorse with a curled tail and fringed crest.",
+        "alt": "Detailed black line drawing of a seahorse with a curled tail.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/seahorse.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 722492
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/seahorse/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 33708
+          },
+          "preview": {
+            "src": "/sketch/_generated/seahorse/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 99542
+          },
+          "museum": {
+            "src": "/sketch/_generated/seahorse/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 217696
+          },
+          "detail": {
+            "src": "/sketch/_generated/seahorse/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 243466
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/seahorse/thumbnail.webp",
+          "hash": "fa1eade4f00562743f8d02f691e87ebf201192fd77e18c671333785ea6f7d1ea"
+        },
+        "preview": {
+          "path": "_generated/seahorse/preview.webp",
+          "hash": "688bb3f78e19a192720b3f7f2c2ebd28c5b54fc5644eb16da19ec4180416a6cd"
+        },
+        "museum": {
+          "path": "_generated/seahorse/museum.webp",
+          "hash": "a5b5939469972b9593c261538e631cba659f2ab9e7b713ff26557075020e76fc"
+        },
+        "detail": {
+          "path": "_generated/seahorse/detail.webp",
+          "hash": "9654a009e2f57f813ed8eebb543b0b422b49c22942da2105adadc08553ff912b"
+        }
+      }
+    },
+    "small-bird-raised-wings.png": {
+      "sourceHash": "4e62523c0ca3af90ca7464b33b8297e63398bf95e61f6173755b0d33f7131ed3",
+      "sidecarHash": "86a96803cb33dfd4b1e21671cf2c7cf6984d5e03bcfdcfe11815fa6e5164f85f",
+      "item": {
+        "slug": "small-bird-raised-wings",
+        "title": "Small Bird with Raised Wings",
+        "description": "A black line drawing of a small bird with both wings lifted.",
+        "alt": "Black line drawing of a small bird with both wings raised.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": true,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/small-bird-raised-wings.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 401474
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/small-bird-raised-wings/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 29660
+          },
+          "preview": {
+            "src": "/sketch/_generated/small-bird-raised-wings/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 73462
+          },
+          "museum": {
+            "src": "/sketch/_generated/small-bird-raised-wings/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 135628
+          },
+          "detail": {
+            "src": "/sketch/_generated/small-bird-raised-wings/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 117868
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/small-bird-raised-wings/thumbnail.webp",
+          "hash": "d4acfca4c75bcee34565b0dd44bdbc6db0e92e19cb7ca1311f03acee61525b0f"
+        },
+        "preview": {
+          "path": "_generated/small-bird-raised-wings/preview.webp",
+          "hash": "b334767d4aae4a34eddcddc889289d754353ede1f2f74f2fb01548c08ba41efa"
+        },
+        "museum": {
+          "path": "_generated/small-bird-raised-wings/museum.webp",
+          "hash": "a7e52600aa00bfc85c41cfcc665a8725b06d474d18890111a2e9bdf9edd6ac8d"
+        },
+        "detail": {
+          "path": "_generated/small-bird-raised-wings/detail.webp",
+          "hash": "6fa3fbf88be8a23dc06066c0d33b3d7d48b26058c40a71552ad1f391ab62ac7a"
+        }
+      }
+    },
+    "tapered-seed-cluster.png": {
+      "sourceHash": "a3e6604ce10cc383a0ba9a76dc967b3b55de4e27f5b9d7b475d62c7aa7859962",
+      "sidecarHash": "d09b2c5d9ab0704f6b3eac07c654dcd93bcdcfcf248ad3d4feb2bb2e1124cdef",
+      "item": {
+        "slug": "tapered-seed-cluster",
+        "title": "Tapered Seed Cluster",
+        "description": "A pencil sketch of a tapered cluster of small round seeds on a curved stalk.",
+        "alt": "Pencil drawing of a tapered seed cluster on a curved stalk.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/tapered-seed-cluster.png",
+          "width": 965,
+          "height": 1186,
+          "bytes": 1057855
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/tapered-seed-cluster/thumbnail.webp",
+            "width": 391,
+            "height": 480,
+            "bytes": 86220
+          },
+          "preview": {
+            "src": "/sketch/_generated/tapered-seed-cluster/preview.webp",
+            "width": 781,
+            "height": 960,
+            "bytes": 302678
+          },
+          "museum": {
+            "src": "/sketch/_generated/tapered-seed-cluster/museum.webp",
+            "width": 965,
+            "height": 1186,
+            "bytes": 432578
+          },
+          "detail": {
+            "src": "/sketch/_generated/tapered-seed-cluster/detail.webp",
+            "width": 965,
+            "height": 1186,
+            "bytes": 432578
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/tapered-seed-cluster/thumbnail.webp",
+          "hash": "87a856273b8acb0e13abb5e9fe2d9b34ebbee80023fd5e1ad689910354a3ee30"
+        },
+        "preview": {
+          "path": "_generated/tapered-seed-cluster/preview.webp",
+          "hash": "4d2f08994fb310ddc8b45ae251d062ba37f9708a0deb1d4d1245e9c6bfac0532"
+        },
+        "museum": {
+          "path": "_generated/tapered-seed-cluster/museum.webp",
+          "hash": "ca4d124d60283e8736b31377201d0df7d2835264156485dce3f742dc58b492d0"
+        },
+        "detail": {
+          "path": "_generated/tapered-seed-cluster/detail.webp",
+          "hash": "ca4d124d60283e8736b31377201d0df7d2835264156485dce3f742dc58b492d0"
+        }
+      }
+    },
+    "teapot-cup-and-fruit.png": {
+      "sourceHash": "6d0328f2713b3e0b18fc2e9adc6fc702fe5147c15c1975bdcf15e8aedcba9f16",
+      "sidecarHash": "bf2f3f51e2d96f9836b701336222b6d79f3f7b88ad3f1c335af1f10884725157",
+      "item": {
+        "slug": "teapot-cup-and-fruit",
+        "title": "Teapot, Cup and Fruit",
+        "description": "A black line drawing of a striped teapot, cup and saucer with three round fruits.",
+        "alt": "Striped teapot with a cup, saucer and three round fruits.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/teapot-cup-and-fruit.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 431532
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/teapot-cup-and-fruit/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 25650
+          },
+          "preview": {
+            "src": "/sketch/_generated/teapot-cup-and-fruit/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 66908
+          },
+          "museum": {
+            "src": "/sketch/_generated/teapot-cup-and-fruit/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 137972
+          },
+          "detail": {
+            "src": "/sketch/_generated/teapot-cup-and-fruit/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 154190
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/teapot-cup-and-fruit/thumbnail.webp",
+          "hash": "1e534577820b6821ebe36ebebdb2fcd318a98fc99e2613737bf06786a29953dc"
+        },
+        "preview": {
+          "path": "_generated/teapot-cup-and-fruit/preview.webp",
+          "hash": "218aba20106bb5ea1cd8ee4049db589ad28f65e2dcc3b9aed7e482f94528ab67"
+        },
+        "museum": {
+          "path": "_generated/teapot-cup-and-fruit/museum.webp",
+          "hash": "41e285023c20080ee27a98ee10fd01dba4eb76123a85fe63872287ba286d717b"
+        },
+        "detail": {
+          "path": "_generated/teapot-cup-and-fruit/detail.webp",
+          "hash": "cb5d736c752b25c42f8ec891297f10387e6941edb26056c7b613f036460d138c"
+        }
+      }
+    },
+    "tree-above-water.png": {
+      "sourceHash": "f49fdcb1eebf7a384e09b6eff66d68e861cbb14d5dfc068d4520c1564ff3acab",
+      "sidecarHash": "cded01446e7b5a728dd24af9875e980a47041a4cce20afeaf032e3fc28078cd5",
+      "item": {
+        "slug": "tree-above-water",
+        "title": "Tree above Water",
+        "description": "A black line drawing of a leafy tree above horizontal water lines, with a fish below the trunk.",
+        "alt": "Leafy tree above rippling water with a fish beneath the trunk.",
+        "date": null,
+        "medium": "Digital sketch",
+        "orientation": "portrait",
+        "room": null,
+        "featured": false,
+        "needsMetadata": false,
+        "canvasMode": "ink",
+        "source": {
+          "src": "/sketch/tree-above-water.png",
+          "width": 1200,
+          "height": 1800,
+          "bytes": 2139285
+        },
+        "variants": {
+          "thumbnail": {
+            "src": "/sketch/_generated/tree-above-water/thumbnail.webp",
+            "width": 320,
+            "height": 480,
+            "bytes": 82436
+          },
+          "preview": {
+            "src": "/sketch/_generated/tree-above-water/preview.webp",
+            "width": 640,
+            "height": 960,
+            "bytes": 261480
+          },
+          "museum": {
+            "src": "/sketch/_generated/tree-above-water/museum.webp",
+            "width": 1067,
+            "height": 1600,
+            "bytes": 569902
+          },
+          "detail": {
+            "src": "/sketch/_generated/tree-above-water/detail.webp",
+            "width": 1200,
+            "height": 1800,
+            "bytes": 668142
+          }
+        }
+      },
+      "variantFiles": {
+        "thumbnail": {
+          "path": "_generated/tree-above-water/thumbnail.webp",
+          "hash": "cc350d995d2b683548d8a2d44a0f1badf953fb6ddafb8d3757d49c05d62a2976"
+        },
+        "preview": {
+          "path": "_generated/tree-above-water/preview.webp",
+          "hash": "ef94ea9fb1e84199c8d68a2f54e912afcec5c218ac36b5cc89269ecd43d61916"
+        },
+        "museum": {
+          "path": "_generated/tree-above-water/museum.webp",
+          "hash": "60c1a99ed45d699d8fb7a04d53ab94f01d6651767f9f8d6eb772a71b93cddc23"
+        },
+        "detail": {
+          "path": "_generated/tree-above-water/detail.webp",
+          "hash": "5bf7010c66d79a14fea6215dd42eb1aed86fbc72185a2a9b49c841e4a0ef527a"
+        }
+      }
+    }
+  }
+}

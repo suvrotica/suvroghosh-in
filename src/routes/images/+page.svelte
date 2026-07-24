@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import { SvelteURLSearchParams } from 'svelte/reactivity';
+	import ImageCollectionNav from '$lib/components/images/ImageCollectionNav.svelte';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { collectionPageSchema, siteUrl, withSiteGraph } from '$lib/components/seo/SEO';
-	import type { MediaGalleryTab } from '$lib/generated/media-gallery';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -25,10 +25,6 @@
 		if (current <= 4) return [1, 2, 3, 4, 'ellipsis', total];
 		if (current >= total - 3) return [1, 'ellipsis', total - 3, total - 2, total - 1, total];
 		return [1, 'ellipsis', current - 1, current, current + 1, 'ellipsis', total];
-	}
-
-	function tabHref(tab: MediaGalleryTab) {
-		return tab === 'images' ? '/images' : `/images?tab=${tab}`;
 	}
 
 	function pageHref(targetPage: number) {
@@ -75,33 +71,12 @@
 			Images
 		</h1>
 		<p class="max-w-3xl text-left text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
-			Browse the site’s images, photos, and generated thumbnails. Select a thumbnail to open the
-			full-size file in a new browser tab.
+			Browse the site’s images, photos, sketches, and generated thumbnails. Select a thumbnail to
+			open the full-size file in a new browser tab.
 		</p>
 	</header>
 
-	<nav
-		class="mb-6 grid grid-cols-3 overflow-hidden rounded-lg border border-neutral-300 bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900"
-		aria-label="Image collections"
-	>
-		{#each data.tabs as tab (tab.key)}
-			<a
-				href={resolve(tabHref(tab.key) as '/images')}
-				aria-current={tab.key === data.activeTab ? 'page' : undefined}
-				class={`flex min-h-12 items-center justify-center gap-2 border-r border-neutral-300 px-2 py-3 text-center text-sm font-semibold no-underline last:border-r-0 dark:border-neutral-700 ${
-					tab.key === data.activeTab
-						? 'bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-950'
-						: 'text-neutral-600 transition-colors hover:bg-neutral-200 hover:text-neutral-950 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-white'
-				}`}
-			>
-				<span>{tab.label}</span>
-				<span
-					class={`rounded-full px-2 py-0.5 text-xs ${tab.key === data.activeTab ? 'bg-white/20 dark:bg-black/10' : 'bg-neutral-200 dark:bg-neutral-800'}`}
-					>{tab.count}</span
-				>
-			</a>
-		{/each}
-	</nav>
+	<ImageCollectionNav tabs={data.tabs} activeKey={data.activeTab} />
 
 	<div class="mb-4 flex flex-wrap items-baseline justify-between gap-2">
 		<h2 class="m-0 text-xl font-bold text-neutral-900 dark:text-neutral-100">{activeLabel}</h2>

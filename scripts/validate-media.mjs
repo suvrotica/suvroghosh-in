@@ -14,7 +14,7 @@ const sourceRoot = path.join(root, 'src');
 const postsRoot = path.join(sourceRoot, 'lib', 'posts');
 const staticRoot = path.join(root, 'static');
 const imageManifestPath = path.join(root, 'scripts', 'image-optimization-manifest.json');
-const mediaDirectories = ['images', 'photos', 'thumbnail', 'videos', 'audio'];
+const mediaDirectories = ['images', 'photos', 'thumbnail', 'sketch', 'videos', 'audio'];
 const sourceExtensions = new Set(['.md', '.svx', '.svelte', '.ts', '.js', '.mjs', '.css', '.html']);
 const mediaExtensions = new Set([
 	'.avif',
@@ -183,8 +183,8 @@ function addReference(references, value, source) {
 }
 
 function extractReferences(file, references, text = fs.readFileSync(file, 'utf8')) {
-	const quotedPath = /(["'])(\/(?:images|photos|thumbnail|videos|audio)\/[^"'`\r\n]+?)\1/g;
-	const markdownPath = /\]\((\/(?:images|photos|thumbnail|videos|audio)\/[^)\s]+)\)/g;
+	const quotedPath = /(["'])(\/(?:images|photos|thumbnail|sketch|videos|audio)\/[^"'`\r\n]+?)\1/g;
+	const markdownPath = /\]\((\/(?:images|photos|thumbnail|sketch|videos|audio)\/[^)\s]+)\)/g;
 	const component = /<(Pi|PostImage|Vid|PostVideo)\b[\s\S]*?>/g;
 
 	for (const match of text.matchAll(quotedPath)) addReference(references, match[2], file);

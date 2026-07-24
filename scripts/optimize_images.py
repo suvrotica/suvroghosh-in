@@ -16,10 +16,13 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SKETCH_DIRECTORY = ROOT / "static" / "sketch"
+SKETCH_GENERATED_DIRECTORY = SKETCH_DIRECTORY / "_generated"
 MEDIA_DIRECTORIES = (
 	ROOT / "static" / "images",
 	ROOT / "static" / "photos",
 	ROOT / "static" / "thumbnail",
+	SKETCH_DIRECTORY,
 )
 MANIFEST_PATH = ROOT / "scripts" / "image-optimization-manifest.json"
 OPTIMIZER_VERSION = "2026-07-18.1"
@@ -34,7 +37,7 @@ MIN_SAVINGS_BYTES = 1024
 def parse_args() -> argparse.Namespace:
 	parser = argparse.ArgumentParser(
 		description=(
-			"Incrementally optimise images in static/images, static/photos, and static/thumbnail."
+			"Incrementally optimise site images while retaining static/sketch sources unchanged."
 		)
 	)
 	parser.add_argument(
@@ -66,8 +69,16 @@ def scan_images() -> list[Path]:
 		for directory in MEDIA_DIRECTORIES
 		if directory.exists()
 		for path in directory.rglob("*")
-		if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS
+		if (
+			path.is_file()
+			and path.suffix.lower() in SUPPORTED_EXTENSIONS
+			and SKETCH_GENERATED_DIRECTORY not in path.parents
+		)
 	)
+
+
+def is_sketch_source(path: Path) -> bool:
+	return path.is_relative_to(SKETCH_DIRECTORY) and SKETCH_GENERATED_DIRECTORY not in path.parents
 
 
 def load_manifest() -> dict[str, Any]:
@@ -114,6 +125,8 @@ def save_manifest(manifest: dict[str, Any]) -> None:
 		"maxDimension": MAX_DIMENSION,
 		"minimumPsnrDb": MIN_PSNR_DB,
 		"minimumSavingsRatio": MIN_SAVINGS_RATIO,
+		"preserveSketchSources": True,
+		"sketchGeneratedDirectory": relative_path(SKETCH_GENERATED_DIRECTORY),
 	}
 	encoded = (json.dumps(manifest, indent=2, sort_keys=True) + "\n").encode("utf-8")
 	if MANIFEST_PATH.exists() and MANIFEST_PATH.read_bytes() == encoded:
@@ -268,6 +281,34 @@ def svg_dimensions(source_bytes: bytes) -> tuple[int, int]:
 	return round(width), round(height)
 
 
+def inspect_sketch_source(path: Path, original_bytes: bytes) -> dict[str, Any]:
+	from PIL import Image, ImageOps
+
+	if path.suffix.lower() == ".svg":
+		width, height = svg_dimensions(original_bytes)
+		return {
+			"format": "SVG",
+			"optimized": False,
+			"reason": "sketch source retained unchanged",
+			"width": width,
+			"height": height,
+		}
+
+	with Image.open(io.BytesIO(original_bytes)) as source:
+		source.load()
+		oriented = ImageOps.exif_transpose(source)
+		image_format = (source.format or path.suffix.removeprefix(".")).upper()
+		return {
+			"format": image_format,
+			"originalWidth": source.width,
+			"originalHeight": source.height,
+			"optimized": False,
+			"reason": "sketch source retained unchanged",
+			"width": oriented.width,
+			"height": oriented.height,
+		}
+
+
 def optimise_file(path: Path, original_bytes: bytes) -> tuple[bytes, dict[str, Any]]:
 	from PIL import Image
 	if path.suffix.lower() == ".svg":
@@ -398,7 +439,11 @@ def optimise_all(force: bool) -> int:
 			continue
 
 		try:
-			output_bytes, details = optimise_file(path, original_bytes)
+			if is_sketch_source(path):
+				output_bytes = original_bytes
+				details = inspect_sketch_source(path, original_bytes)
+			else:
+				output_bytes, details = optimise_file(path, original_bytes)
 		except Exception as exc:
 			print(f"Image optimisation failed for {key}: {exc}", file=sys.stderr)
 			return 1

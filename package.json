@@ -9,6 +9,7 @@
 		}
 	},
 	"scripts": {
+		"predev": "npm run sketches:generate",
 		"dev": "vite dev",
 		"tags:generate": "node scripts/generate-post-tags.mjs",
 		"tags:test": "node --test scripts/generate-post-tags.test.mjs",
@@ -22,10 +23,13 @@
 		"indexnow:test": "node --test scripts/indexnow.test.mjs",
 		"notes:sql:test": "node --test scripts/handwritten-notes-migration.test.mjs",
 		"notes:test": "vitest run && npm run notes:sql:test",
-		"test": "npm run tags:test && npm run bengali:test && npm run post-images:test && npm run visualizations:test && npm run artificial-life:test && npm run monte-carlo:test && npm run living-pigment:test && npm run spacetime:test && npm run indexnow:test && npm run notes:test",
+		"sketches:test": "node --test scripts/sketch-manifest.test.mjs && vitest run src/lib/components/sketch-museum/museum-layout.test.ts",
+		"test": "npm run tags:test && npm run bengali:test && npm run post-images:test && npm run sketches:test && npm run visualizations:test && npm run artificial-life:test && npm run monte-carlo:test && npm run living-pigment:test && npm run spacetime:test && npm run indexnow:test && npm run notes:test",
 		"music:generate": "node scripts/generate-music-posts.mjs",
 		"images:optimize": "python scripts/optimize_images.py",
 		"gallery:generate": "node scripts/generate-media-gallery.mjs",
+		"sketches:generate": "node scripts/generate-sketch-manifest.mjs",
+		"sketches:verify": "node scripts/generate-sketch-manifest.mjs --verify",
 		"images:verify": "python scripts/optimize_images.py --verify",
 		"images:install": "python -m pip install --user -r requirements-images.txt",
 		"wordclouds": "python scripts/generate_wordclouds.py",
@@ -34,7 +38,7 @@
 		"notebooks:lab": "python -m jupyterlab --notebook-dir=src/lib/notebooks",
 		"notebooks:render": "python scripts/render_notebooks.py",
 		"notebooks:verify": "python scripts/render_notebooks.py --check",
-		"content:generate": "npm run tags:generate && npm run music:generate && npm run images:optimize && npm run gallery:generate && python scripts/prebuild_wordclouds.py && python scripts/prebuild_notebooks.py",
+		"content:generate": "npm run tags:generate && npm run music:generate && npm run images:optimize && npm run sketches:generate && npm run gallery:generate && python scripts/prebuild_wordclouds.py && python scripts/prebuild_notebooks.py",
 		"prebuild": "npm run content:generate && npm run validate:content && npm run validate:contrast && npm run validate:seo && npm run validate:media && npm run search:index && npm run validate:links",
 		"build:site": "vite build",
 		"build": "npm run build:site && npm run validate:discoverability",
@@ -64,6 +68,7 @@
 		"@tailwindcss/vite": "^4.2.2",
 		"@types/d3": "^7.4.3",
 		"@types/node": "^24",
+		"@types/three": "^0.180.0",
 		"bits-ui": "^2.18.1",
 		"clsx": "^2.1.1",
 		"eslint": "^10.0.3",
@@ -109,6 +114,7 @@
 		"perfect-freehand": "^1.2.3",
 		"resend": "^6.14.0",
 		"sharp": "^0.35.3",
+		"three": "^0.180.0",
 		"zod": "^4.4.3"
 	}
 }
