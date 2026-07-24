@@ -6,12 +6,12 @@ category: "Personal Satire"
 tags: ["Fine Means","Fine","Lower-Middle-Class","Honesty","Produce","Correct","Lying","Yes","Ceiling","Asks"]
 published: true
 color: "gray"
-thumbnail: "/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg"
+thumbnail: "/thumbnail/art-how-are-you-and-other-small-cruelties.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg" />
+<Pi src="/thumbnail/art-how-are-you-and-other-small-cruelties.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

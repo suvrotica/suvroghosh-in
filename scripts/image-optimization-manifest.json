@@ -9849,6 +9849,22 @@
       "sourceHash": "3d46e386ce9129d398fea934da1af6b393c87b7730c49f90b37e372458ee04ef",
       "width": 1200
     },
+    "static/thumbnail/art-how-are-you-and-other-small-cruelties.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 184204,
+      "outputHash": "8fae162cff94703494be2bb2b6cc85e73d68a27d308e73785b32ccdd2d383988",
+      "psnrDb": 36.58,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 220520,
+      "sourceHash": "c1e2d5421988a30f25ae1252daadbe56ef40a0d49c11d95b507579cf12cb999e",
+      "width": 1200
+    },
     "static/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -10087,6 +10103,22 @@
       "resized": false,
       "sourceBytes": 204847,
       "sourceHash": "b15812e2060a3f4076d5152309b4602ac07eb16797f806f2c6d4c37f14bc0dce",
+      "width": 1200
+    },
+    "static/thumbnail/art-this-blogs-history.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 160062,
+      "outputHash": "c2178661057275a4cb392362b2d051737421d5b010e6694dc7134ab3488ccbf4",
+      "psnrDb": 37.48,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 192997,
+      "sourceHash": "421225902e85b78de212f83e2bd829d35162401ab3f26733abbc4c1049ee9e78",
       "width": 1200
     },
     "static/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg": {

@@ -6,12 +6,12 @@ category: "Personal Reflections"
 tags: ["Future Self","Money Helps","Fiji","Dubai","Bookstall","Books","Money","Read","Second-Hand","Effort"]
 published: true
 color: "#dcb775"
-thumbnail: "/thumbnail/safe-this-blogs-history.jpg"
+thumbnail: "/thumbnail/art-this-blogs-history.jpg"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-this-blogs-history.jpg" />
+<Pi src="/thumbnail/art-this-blogs-history.jpg" />
 
 
 SEO [Search Engine Optimization, the practical art of helping search engines and readers discover a page without turning the writing into boiled cabbage].

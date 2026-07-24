@@ -3818,6 +3818,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-how-are-you-and-other-small-cruelties.jpg",
+			"src": "/thumbnail/art-how-are-you-and-other-small-cruelties.jpg",
+			"bytes": 184204,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-india-ai-it-bpo-white-collar-jobs.jpg",
 			"src": "/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg",
 			"bytes": 110622,
@@ -3919,6 +3926,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-thin-fat-bellied-bengali-insulin-resistance.jpg",
 			"src": "/thumbnail/art-thin-fat-bellied-bengali-insulin-resistance.jpg",
 			"bytes": 149400,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-this-blogs-history.jpg",
+			"src": "/thumbnail/art-this-blogs-history.jpg",
+			"bytes": 160062,
 			"width": 1200,
 			"height": 800
 		},
