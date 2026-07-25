@@ -1,13 +1,17 @@
 ---
 title: "The Lumpy Edge of Bijon Setu"
-description: "A grotesquely cynical, bipolar monologue from a fifty-one-year-old Bengali man excavating the sensory archaeology of 1970s Calcutta through the lens of present-day global absurdities."
+description: "A darkly comic monologue tracing childhood memories of Bijon Setu and South Sinthee through the noise, decay, and absurdity of present-day Calcutta."
 date: "2026-07-25"
+dateModified: "2026-07-25"
 thumbnail: "/photos/Compress_20260725_133327_7064.jpg"
+thumbnailAlt: "A childhood photograph connected to memories of Bijon Setu and South Sinthee"
 category: "Essay"
-tags: ["Mama Bari","Bijon Setu","Lumpy Edge","South Sinthee","Lumpy","Bari","Mama","Bijon","Practicing","Sinthee"]
+tags: ["Mama Bari", "Bijon Setu", "Lumpy Edge", "South Sinthee", "Lumpy", "Bari", "Mama", "Bijon", "Practicing", "Sinthee"]
 published: true
 color: "#8B4513"
 ---
+
+
 
 <TTS />
 

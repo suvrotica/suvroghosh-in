@@ -10213,9 +10213,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/lumpy-edge-of-bijon-setu.md": {
-			"bodyHash": "5a32459bb797f7dc834d264d76991ae3adcf072724d17d0d0fa847ba188e7857",
+			"bodyHash": "661b039d33a4479619768f07f82f7d887fc54154b12940cd0308cfba2faa3740",
 			"hashVersion": 2,
-			"revisionHash": "2c3b9ebe260c85854371197788677cbda949abb12af67714b1a364211e111a0d",
+			"revisionHash": "61a225a9a42c11dd7135c595c1d1e5836f264185e0e8d84ec8cea62890ef0b91",
 			"generatedTags": [
 				"Mama Bari",
 				"Bijon Setu",
@@ -10229,7 +10229,8 @@
 				"Sinthee"
 			],
 			"pinnedTags": [],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-25"
 		}
 	},
 	"maxTags": 10
