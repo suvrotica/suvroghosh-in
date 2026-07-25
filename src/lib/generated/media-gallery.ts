@@ -3555,6 +3555,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "neuron-zoo-social.jpg",
+			"src": "/images/neuron-zoo-social.jpg",
+			"bytes": 57090,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "p0.jpeg",
 			"src": "/images/p0.jpeg",
 			"bytes": 189953,

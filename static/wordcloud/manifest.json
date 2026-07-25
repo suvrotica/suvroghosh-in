@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T00:35:32.340929+00:00",
+  "generatedAt": "2026-07-25T04:54:38.120217+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -9796,6 +9796,29 @@
         "Even",
         "Needs",
         "Proper"
+      ],
+      "wordCount": 130
+    },
+    "the-neuron-zoo": {
+      "generatedAt": "2026-07-25T04:54:37.763531+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-neuron-zoo.svg",
+      "source": "src/lib/posts/the-neuron-zoo.md",
+      "sourceHash": "9934b1f14a3dea14b96e3ab46de993588d3cdbf84ec6242c8f8e07329631455d",
+      "sourceModified": "2026-07-25T04:54:17.161109+00:00",
+      "topWords": [
+        "Text",
+        "Frac",
+        "Model",
+        "Reset",
+        "Time",
+        "Membrane",
+        "Current",
+        "Command",
+        "Event",
+        "Qquad",
+        "Hodgkin",
+        "Huxley"
       ],
       "wordCount": 130
     },

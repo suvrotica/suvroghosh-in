@@ -8098,6 +8098,22 @@
       "sourceHash": "7a443e2f67fa54014ad27303430bf2f09f965ba4654ced8a81a81cce033dcb9d",
       "width": 1200
     },
+    "static/images/neuron-zoo-social.jpg": {
+      "format": "JPEG",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 57090,
+      "outputHash": "e82d829ebc0b330f1296c1210c24e7601fc58f9dbf303a123d0abd35a3ba67d0",
+      "psnrDb": 40.24,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 68647,
+      "sourceHash": "04edccaab976ca52067a3b2eae87e8726c9b0cdf53ddbb17583e638f76a9ec76",
+      "width": 1200
+    },
     "static/images/p0.jpeg": {
       "format": "JPEG",
       "height": 1600,

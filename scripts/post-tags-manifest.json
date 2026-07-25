@@ -10181,6 +10181,36 @@
 			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Satire", "Svelte"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-25"
+		},
+		"src/lib/posts/the-neuron-zoo.md": {
+			"bodyHash": "26bd6fa96655dfe647a587a21e4c3a0c4dc0606f608e960036f7cbe08e5a603e",
+			"hashVersion": 2,
+			"revisionHash": "7425a20354f0d7a4712103a77489cc270afcbc491ff099c6b8bdda6487c66b9c",
+			"generatedTags": [
+				"Hodgkin–Huxley",
+				"McCulloch–Pitts",
+				"FitzHugh–Nagumo",
+				"Leaky Integrate-and-Fire",
+				"Izhikevich Model",
+				"Computational Neuroscience",
+				"Neuron Models",
+				"Fixed-Step Simulation",
+				"Web Worker",
+				"Scientific Visualization"
+			],
+			"pinnedTags": [
+				"Hodgkin–Huxley",
+				"McCulloch–Pitts",
+				"FitzHugh–Nagumo",
+				"Leaky Integrate-and-Fire",
+				"Izhikevich Model",
+				"Computational Neuroscience",
+				"Neuron Models",
+				"Fixed-Step Simulation",
+				"Web Worker",
+				"Scientific Visualization"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

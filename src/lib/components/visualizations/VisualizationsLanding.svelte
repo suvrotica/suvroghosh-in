@@ -20,7 +20,8 @@
 		],
 		'monte-carlo-laboratory': ['Mathematics', 'Statistics', 'Scientific Computing'],
 		'create-art-living-pigment-studio': ['Generative Art', 'Chemistry', 'Computer Science'],
-		'domain-coloring-complex-functions-explorer': ['Mathematics', 'Scientific Computing']
+		'domain-coloring-complex-functions-explorer': ['Mathematics', 'Scientific Computing'],
+		'the-neuron-zoo': ['Biology', 'Mathematics', 'Scientific Computing']
 	};
 	const subjects = [
 		'All',

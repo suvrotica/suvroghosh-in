@@ -230,3 +230,52 @@ test('the domain-colouring exhibit uses a safe parser, GPU renderer, fallback, a
 	assert.match(post, /<DomainColoringExplorer \/>/);
 	assert.ok(fs.existsSync(poster));
 });
+
+test('the Neuron Zoo article uses the normal publishing pipeline and preserves its scientific contract', () => {
+	const post = read('src', 'lib', 'posts', 'the-neuron-zoo.md');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /thumbnail: "\/images\/neuron-zoo-social\.jpg"/);
+	assert.match(
+		post,
+		/import NeuronZoo from '\$lib\/components\/visualizations\/neuron-zoo\/NeuronZoo\.svelte'/
+	);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /<NeuronZoo \/>/);
+	assert.match(post, /\\Delta t=0\.025\\ \\text\{ms\}/);
+	assert.match(post, /I_\{LIF\}=500\\,s\(t\)\\ \\text\{pA\}/);
+	assert.match(post, /I_\{HH\}=20\\,s\(t\)\\ \\mu\\text\{A\}\/\\text\{cm\}\^2/);
+	assert.match(post, /Biological energy: not identifiable from this model’s state equations/);
+	assert.match(post, /modern absolute-voltage convention/);
+	assert.match(post, /Q_\{excess\}=\\max\(Q_\{stimulus\}-Q_\{baseline\},0\)/);
+
+	for (const model of [
+		'McCulloch–Pitts',
+		'Leaky integrate-and-fire',
+		'Izhikevich',
+		'FitzHugh–Nagumo',
+		'Hodgkin–Huxley'
+	]) {
+		assert.match(post, new RegExp(model));
+	}
+
+	for (const doi of [
+		'10.1007/BF02478259',
+		'10.1113/jphysiol.1952.sp004764',
+		'10.1016/S0006-3495(61)86902-6',
+		'10.1109/JRPROC.1962.288235',
+		'10.1109/TNN.2003.820440'
+	]) {
+		assert.match(post, new RegExp(doi.replace(/[./()]/g, '\\$&'), 'i'));
+	}
+
+	assert.match(landing, /'the-neuron-zoo': \['Biology', 'Mathematics', 'Scientific Computing'\]/);
+});
