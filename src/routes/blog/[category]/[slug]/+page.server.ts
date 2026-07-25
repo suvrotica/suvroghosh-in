@@ -26,7 +26,9 @@ import {
 export const prerender = 'auto';
 
 export const entries: EntryGenerator = () =>
-	getPublishedPosts().map(({ categorySlug, slug }) => ({ category: categorySlug, slug }));
+	getPublishedPosts()
+		.filter(({ categorySlug }) => categorySlug !== 'games')
+		.map(({ categorySlug, slug }) => ({ category: categorySlug, slug }));
 
 export const load: PageServerLoad = async ({ params }) => {
 	const { category, slug } = params;

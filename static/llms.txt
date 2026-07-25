@@ -21,6 +21,7 @@ Author: Suvro Ghosh
 - [All posts](https://www.suvroghosh.in/blog): complete browsable archive.
 - [Topic index](https://www.suvroghosh.in/blog/topics): subject hubs and internal links.
 - [Interactive visualizations](https://www.suvroghosh.in/blog/visualizations): browser-based science, mathematics, and computing laboratories.
+- [Games](https://www.suvroghosh.in/blog/games): original browser games, beginning with a full-screen Calcutta footpath survival game.
 
 ## Selected original technical writing
 
@@ -33,6 +34,7 @@ Author: Suvro Ghosh
 - [Why You Still Want to Read a Healthcare IT Blog in the Age of AI](https://www.suvroghosh.in/blog/healthcare-it/why-read-a-healthcare-it-blog-in-the-age-of-ai)
 - [The Casino That Calculates: An Interactive Monte Carlo Laboratory](https://www.suvroghosh.in/blog/visualizations/monte-carlo-laboratory)
 - [Artificial Life Lab](https://www.suvroghosh.in/blog/visualizations/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser)
+- [Calcutta Footpath Simulator](https://www.suvroghosh.in/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan)
 
 ## Complete machine indexes
 

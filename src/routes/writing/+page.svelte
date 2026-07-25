@@ -124,8 +124,8 @@
 				Major shelves
 			</h2>
 			<p class="mt-2 mb-0 text-left text-sm text-neutral-600 dark:text-neutral-400">
-				Eleven of the largest published catalogues, plus the interactive Visualizations laboratory.
-				The complete archive currently contains {data.categoryCount} categories.
+				Ten of the largest published catalogues, plus the interactive Games and Visualizations
+				shelves. The complete archive currently contains {data.categoryCount} categories.
 			</p>
 		</div>
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

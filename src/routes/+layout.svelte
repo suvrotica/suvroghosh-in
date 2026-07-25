@@ -16,6 +16,7 @@
 	let studioShell = $derived(
 		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
 	);
+	let gameShell = $derived(page.url.pathname.startsWith('/blog/games/'));
 
 	onMount(() => {
 		injectAnalytics({ mode: dev ? 'development' : 'production' });
@@ -31,6 +32,13 @@
 	<div class="min-h-dvh">
 		<a href="#main-content" class="skip-link">Skip to canvas and studio controls</a>
 		<main id="main-content" tabindex="-1" class="min-h-dvh focus:outline-none">
+			{@render children()}
+		</main>
+	</div>
+{:else if gameShell}
+	<div class="min-h-svh bg-[#171612]">
+		<a href="#main-content" class="skip-link">Skip to game and controls</a>
+		<main id="main-content" tabindex="-1" class="min-h-svh focus:outline-none">
 			{@render children()}
 		</main>
 	</div>

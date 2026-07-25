@@ -6,7 +6,14 @@
 	import { substackLinks } from '$lib/config/links';
 
 	type NavigationItem = {
-		href: '/start-here' | '/blog' | '/notes' | '/blog/visualizations' | '/projects' | '/resume';
+		href:
+			| '/start-here'
+			| '/blog'
+			| '/notes'
+			| '/blog/visualizations'
+			| '/blog/games'
+			| '/projects'
+			| '/resume';
 		label: string;
 		sections: readonly string[];
 	};
@@ -20,6 +27,7 @@
 			label: 'Lab',
 			sections: ['/blog/visualizations']
 		},
+		{ href: '/blog/games', label: 'Games', sections: ['/blog/games'] },
 		{
 			href: '/projects',
 			label: 'Work',
@@ -33,6 +41,9 @@
 	let menuSummary: HTMLElement;
 
 	function isCurrent(item: NavigationItem) {
+		if (currentPath.startsWith('/blog/games')) {
+			return item.href === '/blog/games';
+		}
 		if (currentPath.startsWith('/blog/visualizations')) {
 			return item.href === '/blog/visualizations';
 		}

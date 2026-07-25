@@ -19,6 +19,11 @@
 			label: 'Visualizations',
 			description: 'Explore the interactive science laboratory'
 		},
+		{
+			href: '/blog/games',
+			label: 'Games',
+			description: 'Play strange browser games from Calcutta'
+		},
 		{ href: '/consulting', label: 'Healthcare IT', description: 'Consulting and systems work' },
 		{ href: '/projects', label: 'Projects', description: 'Review selected systems work' },
 		{ href: '/resume', label: 'Resume', description: 'Experience and capabilities' },

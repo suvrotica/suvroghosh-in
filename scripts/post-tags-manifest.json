@@ -10161,6 +10161,26 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-25"
+		},
+		"src/lib/posts/calcutta-footpath-simulator-ekdom-side-diye-jaan.md": {
+			"bodyHash": "ff02e2be373dcffd48d1794bf4bb88a5fc575194213f48f11d1cefa109f9c14e",
+			"hashVersion": 2,
+			"revisionHash": "61eb9453930938528df4ee7783d61248d6edb46572be6823857f683dab2e5399",
+			"generatedTags": [
+				"Games",
+				"Calcutta",
+				"Kolkata",
+				"Browser Game",
+				"Satire",
+				"Svelte",
+				"Saved Scores",
+				"Technical Notes",
+				"Browser",
+				"Game"
+			],
+			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Satire", "Svelte"],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-25"
 		}
 	},
 	"maxTags": 10

@@ -85,7 +85,8 @@
 		"science-essay": "science",
 		"thinking": "science",
 		"useful-mental-models": "science",
-		"visualizations": "lab"
+		"visualizations": "lab",
+		"games": "lab"
 	},
 	"postSectionOverrides": {}
 }

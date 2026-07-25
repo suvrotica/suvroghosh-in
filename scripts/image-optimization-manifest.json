@@ -8044,6 +8044,33 @@
       "sourceHash": "286f4e8c7660f0f77109b836450a6b594810137d0d01011c0059282711dbd383",
       "width": 1200
     },
+    "static/images/games/calcutta-footpath-simulator-cover.png": {
+      "format": "PNG",
+      "height": 800,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 362834,
+      "outputHash": "603d86ceb0f56128e050a806671c3e7dcc46a588ea3db896e178280b801cae31",
+      "resized": false,
+      "sourceBytes": 362834,
+      "sourceHash": "603d86ceb0f56128e050a806671c3e7dcc46a588ea3db896e178280b801cae31",
+      "width": 1200
+    },
+    "static/images/games/calcutta-footpath-simulator-cover.svg": {
+      "format": "SVG",
+      "height": 800,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 7047,
+      "outputHash": "40d3ae478cf57738c3195f71b67cbd91f404a489b2e31d3564ab2de8cc4fa89b",
+      "reason": "vector source retained",
+      "sourceBytes": 7047,
+      "sourceHash": "40d3ae478cf57738c3195f71b67cbd91f404a489b2e31d3564ab2de8cc4fa89b",
+      "width": 1200
+    },
     "static/images/handwritten-notes-social-card.png": {
       "format": "PNG",
       "height": 630,

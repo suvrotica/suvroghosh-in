@@ -34,11 +34,13 @@ export const load: PageServerLoad = () => {
 		}))
 		.sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
 
-	const visualizations = categories.find((category) => category.slug === 'visualizations');
+	const featuredShelves = categories.filter((category) =>
+		['games', 'visualizations'].includes(category.slug)
+	);
 	const majorCategories = categories
-		.filter((category) => category.slug !== 'visualizations')
-		.slice(0, visualizations ? 11 : 12);
-	if (visualizations) majorCategories.unshift(visualizations);
+		.filter((category) => !featuredShelves.some((featured) => featured.slug === category.slug))
+		.slice(0, 12 - featuredShelves.length);
+	majorCategories.unshift(...featuredShelves);
 
 	return {
 		recentPosts: posts.slice(0, 6).map(postSummary),

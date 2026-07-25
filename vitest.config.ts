@@ -8,7 +8,8 @@ export default defineConfig({
 			'src/lib/notes/**/*.test.ts',
 			'src/lib/server/notes/**/*.test.ts',
 			'src/lib/components/sketch-museum/**/*.test.ts',
-			'src/lib/visualizations/domain-coloring/**/*.test.ts'
+			'src/lib/visualizations/domain-coloring/**/*.test.ts',
+			'src/lib/games/**/*.test.ts'
 		],
 		environment: 'node',
 		coverage: {

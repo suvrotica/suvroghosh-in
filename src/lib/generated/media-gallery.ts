@@ -3079,6 +3079,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 675
 		},
 		{
+			"name": "games/calcutta-footpath-simulator-cover.png",
+			"src": "/images/games/calcutta-footpath-simulator-cover.png",
+			"bytes": 362834,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "games/calcutta-footpath-simulator-cover.svg",
+			"src": "/images/games/calcutta-footpath-simulator-cover.svg",
+			"bytes": 7047,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "handwritten-notes-social-card.png",
 			"src": "/images/handwritten-notes-social-card.png",
 			"bytes": 609197,

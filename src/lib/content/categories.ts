@@ -70,6 +70,7 @@ export const categoryLabels: Record<string, string> = {
 	'short-fiction': 'Short Fiction',
 	satire: 'Satire',
 	mathematics: 'Mathematics',
+	games: 'Games',
 	visualizations: 'Visualizations',
 	'social-commentary': 'Social Commentary',
 	philosophy: 'Philosophy',

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T22:35:59.416260+00:00",
+  "generatedAt": "2026-07-25T00:35:32.340929+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -1677,6 +1677,29 @@
         "Pabda",
         "Species",
         "Whole"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-footpath-simulator-ekdom-side-diye-jaan": {
+      "generatedAt": "2026-07-25T00:35:30.688109+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/calcutta-footpath-simulator-ekdom-side-diye-jaan.svg",
+      "source": "src/lib/posts/calcutta-footpath-simulator-ekdom-side-diye-jaan.md",
+      "sourceHash": "e7b440f3cab7e3b28f6a99d1be325c5006c7043f8e19363e42f61aa7f4596066",
+      "sourceModified": "2026-07-25T00:35:00.791072+00:00",
+      "topWords": [
+        "Game",
+        "Pause",
+        "Browser",
+        "Fullscreen",
+        "Walk",
+        "Street",
+        "Use",
+        "Press",
+        "Mute",
+        "Touch",
+        "Stamina",
+        "Morale"
       ],
       "wordCount": 130
     },
