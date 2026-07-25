@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T09:14:12.341386+00:00",
+  "generatedAt": "2026-07-25T23:06:36.309876+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -6507,6 +6507,29 @@
         "Return",
         "System",
         "Evidence"
+      ],
+      "wordCount": 130
+    },
+    "resignare": {
+      "generatedAt": "2026-07-25T23:06:36.077298+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/resignare.svg",
+      "source": "src/lib/posts/resignare.md",
+      "sourceHash": "16a513b596090f1a67ab32f04c31bbaf7161374267bc48090a5db278732b22e9",
+      "sourceModified": "2026-07-25T23:06:29.150966+00:00",
+      "topWords": [
+        "Minister",
+        "Seats",
+        "Cockroaches",
+        "Thousand",
+        "Upon",
+        "Next",
+        "Resignation",
+        "July",
+        "System",
+        "Existence",
+        "Collective",
+        "Recursive"
       ],
       "wordCount": 130
     },

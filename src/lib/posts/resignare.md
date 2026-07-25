@@ -6,7 +6,7 @@ dateModified: "2026-07-26"
 thumbnail: "/thumbnail/Compress_20260726_043133_3865.jpg"
 thumbnailAlt: "Editorial image accompanying the essay"
 category: "Essay"
-tags: ["Politics", "Technology", "Satire", "India", "AI"]
+tags: ["Seats","Cockroaches","Minister","Resignation","Asymmetry","Antennae","Recursive","Fungal","July","Upon"]
 published: true
 color: "#5D4037"
 ---
