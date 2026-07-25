@@ -10211,6 +10211,25 @@
 				"Scientific Visualization"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/lumpy-edge-of-bijon-setu.md": {
+			"bodyHash": "5a32459bb797f7dc834d264d76991ae3adcf072724d17d0d0fa847ba188e7857",
+			"hashVersion": 2,
+			"revisionHash": "2c3b9ebe260c85854371197788677cbda949abb12af67714b1a364211e111a0d",
+			"generatedTags": [
+				"Mama Bari",
+				"Bijon Setu",
+				"Lumpy Edge",
+				"South Sinthee",
+				"Lumpy",
+				"Bari",
+				"Mama",
+				"Bijon",
+				"Practicing",
+				"Sinthee"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

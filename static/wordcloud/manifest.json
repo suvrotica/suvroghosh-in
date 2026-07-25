@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T04:54:38.120217+00:00",
+  "generatedAt": "2026-07-25T09:14:12.341386+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -5058,6 +5058,29 @@
         "Often",
         "Man",
         "Dawkins"
+      ],
+      "wordCount": 130
+    },
+    "lumpy-edge-of-bijon-setu": {
+      "generatedAt": "2026-07-25T09:14:12.098120+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/lumpy-edge-of-bijon-setu.svg",
+      "source": "src/lib/posts/lumpy-edge-of-bijon-setu.md",
+      "sourceHash": "d157dba3e51d5e1904e749fc7bee8332d7417f876f7b34251048df3571f2677b",
+      "sourceModified": "2026-07-25T09:14:06.874384+00:00",
+      "topWords": [
+        "Never",
+        "Lumpy",
+        "Bus",
+        "Bari",
+        "Bridge",
+        "Edge",
+        "Small",
+        "Hundred",
+        "Point",
+        "Mama",
+        "Distance",
+        "South"
       ],
       "wordCount": 130
     },

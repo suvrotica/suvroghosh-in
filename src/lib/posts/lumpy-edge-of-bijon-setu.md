@@ -4,7 +4,7 @@ description: "A grotesquely cynical, bipolar monologue from a fifty-one-year-old
 date: "2026-07-25"
 thumbnail: "/photos/Compress_20260725_133327_7064.jpg"
 category: "Essay"
-tags: ["Essay", "Calcutta", "Memory", "Bipolar", "SuvroGhosh", "Grotesque", "Manic-Depressive"]
+tags: ["Mama Bari","Bijon Setu","Lumpy Edge","South Sinthee","Lumpy","Bari","Mama","Bijon","Practicing","Sinthee"]
 published: true
 color: "#8B4513"
 ---
