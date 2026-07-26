@@ -6,7 +6,7 @@ dateModified: "2026-07-26"
 thumbnail: "/thumbnail/Compress_20260726_130146_6578.jpg"
 thumbnailAlt: "Generic thumbnail placeholder without a discernible subject"
 category: "Essay"
-tags: ["Monologue", "Calcutta", "AI", "Existential", "SuvroGhosh", "Manic-Depressive"]
+tags: ["Quantum Device","Gone Rogue","Rogue","Blob","Singularity","Lettuce","Oversupply","Fodder","Cyclospora","Infirmities"]
 published: true
 color: "#1a1a1a"
 ---

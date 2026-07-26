@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T07:17:19.048291+00:00",
+  "generatedAt": "2026-07-26T07:56:48.790487+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -11061,6 +11061,29 @@
         "Labor",
         "Jobs",
         "Digital"
+      ],
+      "wordCount": 130
+    },
+    "the-urine-of-discontent": {
+      "generatedAt": "2026-07-26T07:56:48.736545+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-urine-of-discontent.svg",
+      "source": "src/lib/posts/the-urine-of-discontent.md",
+      "sourceHash": "76f91cc0c3392831415b826d28f59897337ba5a26f72258861c3f884b50aca11",
+      "sourceModified": "2026-07-26T07:56:43.912614+00:00",
+      "topWords": [
+        "Rogue",
+        "Blob",
+        "Yet",
+        "Singularity",
+        "Mother",
+        "Let",
+        "Existence",
+        "Perhaps",
+        "Men",
+        "Somewhere",
+        "Say",
+        "Think"
       ],
       "wordCount": 130
     },
