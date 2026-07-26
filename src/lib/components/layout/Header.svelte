@@ -8,6 +8,7 @@
 	type NavigationItem = {
 		href:
 			| '/start-here'
+			| '/topics'
 			| '/blog'
 			| '/notes'
 			| '/blog/visualizations'
@@ -20,6 +21,7 @@
 
 	const navLinks: readonly NavigationItem[] = [
 		{ href: '/start-here', label: 'Start Here', sections: ['/start-here'] },
+		{ href: '/topics', label: 'Topics', sections: ['/topics'] },
 		{ href: '/blog', label: 'Essays', sections: ['/writing', '/blog'] },
 		{ href: '/notes', label: 'Notes', sections: ['/notes'] },
 		{

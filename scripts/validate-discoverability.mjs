@@ -27,6 +27,13 @@ const SITE = 'https://www.suvroghosh.in';
 const PERSON_ID = `${SITE}/#person`;
 const WEBSITE_ID = `${SITE}/#website`;
 const PREVIEW_PORT = 40000 + (process.pid % 20000);
+const TOPIC_RENDER_ROUTES = [
+	'/topics',
+	'/topics/calcutta',
+	'/topics/hl7-fhir',
+	'/topics/bipolar-depression'
+];
+const TOPIC_DETAIL_ROUTES = new Set(TOPIC_RENDER_ROUTES.filter((route) => route !== '/topics'));
 const EXPLICITLY_ALLOWED_CRAWLERS = [
 	'OAI-SearchBot',
 	'GPTBot',
@@ -333,6 +340,148 @@ function visibleUpdatedDates(html) {
 	);
 }
 
+function topicHeaderUpdatedDates(html) {
+	const articleStart = html.indexOf('<article');
+	if (articleStart < 0) return [];
+	const headerStart = html.indexOf('<header', articleStart);
+	if (headerStart < 0) return [];
+	const headerEnd = html.indexOf('</header>', headerStart);
+	if (headerEnd < 0) return [];
+	return visibleUpdatedDates(html.slice(headerStart, headerEnd + '</header>'.length));
+}
+
+function decodeHtmlEntities(value) {
+	const named = {
+		amp: '&',
+		apos: "'",
+		gt: '>',
+		lt: '<',
+		nbsp: ' ',
+		quot: '"'
+	};
+
+	return value.replace(/&(#(?:x[\da-f]+|\d+)|amp|apos|gt|lt|nbsp|quot);/gi, (entity, token) => {
+		if (token.startsWith('#x') || token.startsWith('#X')) {
+			return String.fromCodePoint(Number.parseInt(token.slice(2), 16));
+		}
+		if (token.startsWith('#')) {
+			return String.fromCodePoint(Number.parseInt(token.slice(1), 10));
+		}
+		return named[token.toLowerCase()] ?? entity;
+	});
+}
+
+function normalizedText(value) {
+	return decodeHtmlEntities(String(value))
+		.replace(/<!--[\s\S]*?-->/g, ' ')
+		.replace(/<[^>]+>/g, ' ')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+function visibleTopicFaqs(html) {
+	const sectionStart = html.search(/<section\b[^>]*\bid\s*=\s*(["'])faq\1[^>]*>/i);
+	if (sectionStart < 0) return [];
+	const sectionEnd = html.indexOf('</section>', sectionStart);
+	if (sectionEnd < 0) return [];
+	const faqSection = html.slice(sectionStart, sectionEnd + '</section>'.length);
+
+	return Array.from(faqSection.matchAll(/<details\b[^>]*>([\s\S]*?)<\/details>/gi), (match) => {
+		const details = match[1];
+		const summary = details.match(/<summary\b[^>]*>([\s\S]*?)<\/summary>/i);
+		const questionSpan = summary?.[1].match(/<span\b[^>]*>([\s\S]*?)<\/span>/i);
+		const answer = details
+			.slice(summary?.index != null ? summary.index + summary[0].length : 0)
+			.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i);
+
+		return {
+			question: normalizedText(questionSpan?.[1] ?? ''),
+			answer: normalizedText(answer?.[1] ?? '')
+		};
+	});
+}
+
+function checkTopicPage(route, html, nodes) {
+	const expectedUrl = `${SITE}${route}`;
+	const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+	if (canonical?.[1] !== expectedUrl) {
+		fail(
+			`${route}: canonical should equal the Topic Headquarters URL ${expectedUrl}; found ${canonical?.[1] ?? 'none'}.`
+		);
+	}
+
+	const collections = byType(nodes, 'CollectionPage');
+	if (collections.length !== 1) {
+		fail(`${route}: expected exactly one CollectionPage entity, found ${collections.length}.`);
+	} else {
+		const collection = collections[0];
+		if (collection.url !== expectedUrl || collection['@id'] !== expectedUrl) {
+			fail(`${route}: CollectionPage URL and @id must equal ${expectedUrl}.`);
+		}
+
+		const visibleDates = topicHeaderUpdatedDates(html);
+		if (
+			typeof collection.dateModified !== 'string' ||
+			visibleDates.length !== 1 ||
+			visibleDates[0] !== collection.dateModified
+		) {
+			fail(
+				`${route}: visible Updated date and CollectionPage.dateModified must match exactly; found visible ${visibleDates.join(', ') || 'none'} and schema ${collection.dateModified ?? 'none'}.`
+			);
+		}
+	}
+
+	const breadcrumbs = byType(nodes, 'BreadcrumbList');
+	if (breadcrumbs.length !== 1) {
+		fail(`${route}: expected exactly one BreadcrumbList entity, found ${breadcrumbs.length}.`);
+	} else {
+		const items = Array.isArray(breadcrumbs[0].itemListElement)
+			? breadcrumbs[0].itemListElement
+			: [];
+		const finalItem = items.at(-1);
+		if (finalItem?.item !== expectedUrl) {
+			fail(`${route}: final BreadcrumbList item must equal ${expectedUrl}.`);
+		}
+	}
+	if (!/aria-label="Breadcrumb"/.test(html)) {
+		fail(`${route}: visible breadcrumb nav not found next to BreadcrumbList schema.`);
+	}
+
+	const faqPages = byType(nodes, 'FAQPage');
+	const visibleFaqs = visibleTopicFaqs(html);
+	if (!TOPIC_DETAIL_ROUTES.has(route)) {
+		if (faqPages.length > 0 || visibleFaqs.length > 0) {
+			fail(`${route}: the topic index must not emit detail-page FAQ content or FAQPage schema.`);
+		}
+		return;
+	}
+
+	if (faqPages.length !== 1) {
+		fail(`${route}: expected exactly one FAQPage entity, found ${faqPages.length}.`);
+		return;
+	}
+	if (faqPages[0]['@id'] !== `${expectedUrl}#faq`) {
+		fail(`${route}: FAQPage @id must equal ${expectedUrl}#faq.`);
+	}
+	if (faqPages[0].isPartOf?.['@id'] !== expectedUrl) {
+		fail(`${route}: FAQPage.isPartOf must reference ${expectedUrl}.`);
+	}
+
+	const schemaFaqs = Array.isArray(faqPages[0].mainEntity)
+		? faqPages[0].mainEntity.map((question) => ({
+				question: normalizedText(question?.name ?? ''),
+				answer: normalizedText(question?.acceptedAnswer?.text ?? '')
+			}))
+		: [];
+	if (visibleFaqs.length === 0) {
+		fail(`${route}: FAQPage schema was emitted without a visible FAQ section.`);
+	} else if (JSON.stringify(schemaFaqs) !== JSON.stringify(visibleFaqs)) {
+		fail(
+			`${route}: visible FAQs and FAQPage schema must have identical ordered questions and answers (visible ${visibleFaqs.length}, schema ${schemaFaqs.length}).`
+		);
+	}
+}
+
 function checkModifiedDateSignals(route, html, posting, metadata) {
 	const expected = metadata.dateModified;
 	const visibleDates = visibleUpdatedDates(html);
@@ -431,6 +580,7 @@ async function runRenderedChecks() {
 		...renderedPostByRoute.keys(),
 		categoryRoute,
 		paginatedCategoryRoute,
+		...TOPIC_RENDER_ROUTES,
 		'/images/sketches',
 		'/resume',
 		'/projects'
@@ -463,6 +613,10 @@ async function runRenderedChecks() {
 			}
 			const html = await res.text();
 			const nodes = checkCommon(route, html);
+
+			if (TOPIC_RENDER_ROUTES.includes(route)) {
+				checkTopicPage(route, html, nodes);
+			}
 
 			const renderedPost = renderedPostByRoute.get(route);
 			if (renderedPost) {

@@ -70,7 +70,7 @@
 		{#each data.topics as topic (topic.slug)}
 			<li>
 				<a
-					href={resolve('/blog/topics/[topic]', { topic: topic.slug })}
+					href={resolve(topic.href as '/blog')}
 					class="group flex h-full min-h-28 flex-col rounded-lg border border-neutral-300 bg-white p-4 no-underline shadow-sm transition-colors hover:border-neutral-500 hover:bg-neutral-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-500 dark:hover:bg-neutral-800 dark:focus-visible:outline-neutral-300"
 				>
 					<span class="text-lg font-bold text-neutral-950 dark:text-neutral-50">{topic.label}</span>

@@ -188,6 +188,8 @@ export function collectionPageSchema(page: {
 	description: string;
 	url: string;
 	about?: string;
+	datePublished?: string;
+	dateModified?: string;
 }) {
 	return {
 		'@type': 'CollectionPage',
@@ -197,7 +199,49 @@ export function collectionPageSchema(page: {
 		url: page.url,
 		isPartOf: { '@id': websiteId },
 		about: page.about,
+		...(page.datePublished ? { datePublished: page.datePublished } : {}),
+		...(page.dateModified ? { dateModified: page.dateModified } : {}),
 		inLanguage: 'en'
+	};
+}
+
+export function itemListSchema(list: {
+	name: string;
+	url: string;
+	items: { name: string; url: string }[];
+}) {
+	return {
+		'@type': 'ItemList',
+		'@id': `${list.url}#reading-list`,
+		name: list.name,
+		itemListOrder: 'https://schema.org/ItemListOrderAscending',
+		numberOfItems: list.items.length,
+		itemListElement: list.items.map((item, index) => ({
+			'@type': 'ListItem',
+			position: index + 1,
+			name: item.name,
+			url: item.url
+		}))
+	};
+}
+
+export function definedTermSetSchema(terms: {
+	name: string;
+	url: string;
+	items: { term: string; definition: string; url?: string }[];
+}) {
+	return {
+		'@type': 'DefinedTermSet',
+		'@id': `${terms.url}#glossary`,
+		name: terms.name,
+		url: `${terms.url}#glossary`,
+		hasDefinedTerm: terms.items.map((item) => ({
+			'@type': 'DefinedTerm',
+			name: item.term,
+			description: item.definition,
+			...(item.url ? { url: item.url } : {}),
+			inDefinedTermSet: { '@id': `${terms.url}#glossary` }
+		}))
 	};
 }
 

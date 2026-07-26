@@ -1,7 +1,7 @@
 import { error, redirect } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { paginate, parsePageNumber } from '$lib/content/pagination';
-import { canonicalTopicSlug, topicPath } from '$lib/content/topics';
+import { canonicalTopicSlug, promotedTopicPath, topicPath } from '$lib/content/topics';
 import {
 	getPublishedPostsByTopic,
 	getPublishedTopic,
@@ -9,6 +9,11 @@ import {
 } from '$lib/server/content/posts';
 
 export const load: PageServerLoad = ({ params, url }) => {
+	const headquartersPath = promotedTopicPath(params.topic);
+	if (headquartersPath) {
+		redirect(308, headquartersPath);
+	}
+
 	const canonicalSlug = canonicalTopicSlug(params.topic);
 	if (!canonicalSlug) {
 		error(404, 'That topic address is not valid.');

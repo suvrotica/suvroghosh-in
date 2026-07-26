@@ -16,6 +16,7 @@ import {
 	isNavigationalTopic,
 	MIN_TOPIC_CATEGORIES,
 	MIN_TOPIC_POSTS,
+	promotedTopicPath,
 	topicPath
 } from '$lib/content/topics';
 import { readingPathDefinitions } from '$lib/content/reading-paths';
@@ -116,6 +117,7 @@ type TopicAccumulator = {
 export type PublishedTopic = {
 	slug: string;
 	label: string;
+	href: string;
 	count: number;
 	categoryCount: number;
 	lastModified: string;
@@ -168,6 +170,7 @@ function preferredTopicLabel(labels: Map<string, number>) {
 const publishedTopics: PublishedTopic[] = Array.from(topicAccumulators, ([slug, topic]) => ({
 	slug,
 	label: preferredTopicLabel(topic.labels) ?? slug,
+	href: promotedTopicPath(slug) ?? topicPath(slug),
 	count: topic.posts.length,
 	categoryCount: topic.categories.size,
 	lastModified: topic.lastModified
@@ -264,20 +267,25 @@ export function getPublishedPostsByTopic(topic: string) {
 }
 
 export function getPostTopicLinks(tags: string[]) {
-	const seenTopics = new Set<string>();
+	const seenDestinations = new Set<string>();
 
 	return tags.flatMap((rawTag) => {
 		const label = rawTag.trim();
 		const slug = canonicalTopicSlug(label);
-		if (!label || !slug || seenTopics.has(slug)) return [];
+		if (!label || !slug) return [];
 
-		seenTopics.add(slug);
+		const headquartersPath = promotedTopicPath(label);
 		const topic = publishedTopicsBySlug.get(slug);
+		const href = headquartersPath ?? (topic ? topicPath(topic.slug) : tagSearchPath(label));
+		if (seenDestinations.has(href)) return [];
+
+		seenDestinations.add(href);
 		return [
 			{
 				label: topic?.label ?? label,
-				href: topic ? topicPath(topic.slug) : tagSearchPath(label),
-				hasLandingPage: Boolean(topic)
+				href,
+				hasLandingPage: Boolean(headquartersPath || topic),
+				isHeadquarters: Boolean(headquartersPath)
 			}
 		];
 	});

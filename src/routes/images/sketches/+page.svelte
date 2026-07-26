@@ -14,14 +14,14 @@
 	import ArtworkDetail from '$lib/components/sketch-museum/ArtworkDetail.svelte';
 	import SketchCollection from '$lib/components/sketch-museum/SketchCollection.svelte';
 	import SketchMuseum from '$lib/components/sketch-museum/SketchMuseum.svelte';
+	import { sketchMuseumResource } from '$lib/content/site-resources';
 	import type { SketchArtwork } from '$lib/sketches/types';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
 
-	const title = 'Sketch Museum | Suvro Ghosh';
-	const description =
-		'Explore an atmospheric three-dimensional museum and an accessible collection of digital sketches by Suvro Ghosh.';
+	const title = `${sketchMuseumResource.title} | Suvro Ghosh`;
+	const description = sketchMuseumResource.description;
 	const canonicalUrl = `${siteUrl}/images/sketches`;
 	let featuredArtwork = $derived(
 		data.artworks.find((artwork) => artwork.featured) ?? data.artworks[0] ?? null

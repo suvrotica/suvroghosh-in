@@ -200,7 +200,7 @@
 				>All posts</a
 			>
 			<a
-				href={resolve('/blog/topics')}
+				href={resolve('/topics')}
 				class="inline-flex min-h-11 items-center rounded-md border border-neutral-400 px-4 py-2 text-sm font-semibold text-neutral-800 no-underline transition-colors hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-600 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus-visible:outline-neutral-300"
 				>Browse topics</a
 			>

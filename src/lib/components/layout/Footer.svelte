@@ -13,7 +13,7 @@
 				{ href: '/start-here', label: 'Start here' },
 				{ href: '/writing', label: 'Writing' },
 				{ href: '/blog', label: 'Search & archive' },
-				{ href: '/blog/topics', label: 'Topics' },
+				{ href: '/topics', label: 'Topics' },
 				{ href: '/notes', label: 'Handwritten notes' },
 				{ href: '/blog/visualizations', label: 'Visualizations' },
 				{ href: '/blog/games', label: 'Games' },

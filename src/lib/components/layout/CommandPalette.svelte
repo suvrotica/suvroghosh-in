@@ -8,7 +8,11 @@
 		{ href: '/start-here', label: 'Start Here', description: 'Follow five curated reading paths' },
 		{ href: '/writing', label: 'Writing', description: 'Browse the reading room' },
 		{ href: '/blog', label: 'All posts', description: 'Search the complete archive' },
-		{ href: '/blog/topics', label: 'Topics', description: 'Follow recurring subjects' },
+		{
+			href: '/topics',
+			label: 'Topic Headquarters',
+			description: 'Follow guided routes through substantial subjects'
+		},
 		{
 			href: '/notes',
 			label: 'Handwritten notes',

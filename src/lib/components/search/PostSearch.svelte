@@ -12,8 +12,9 @@
 		sections: { slug: string; label: string; count: number }[];
 		years: { value: string; count: number }[];
 	};
+	type PagefindResultPath = `/blog/${string}/${string}` | `/topics/${string}`;
 	type PagefindResultData = {
-		url: string;
+		url: PagefindResultPath;
 		excerpt: string;
 		plain_excerpt: string;
 		meta: Record<string, string>;
@@ -394,16 +395,17 @@
 						<div
 							class="mb-1 text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400"
 						>
-							{result.meta.section || result.meta.category}
+							{result.meta.content_type === 'topic'
+								? 'Topic Headquarters'
+								: result.meta.section || result.meta.category}
 							{#if result.meta.date}<span aria-hidden="true"> · </span>{formatDate(
 									result.meta.date
 								)}{/if}
 						</div>
 						<a
-							href={resolve('/blog/[category]/[slug]', {
-								category: result.meta.category_slug,
-								slug: result.meta.slug
-							})}
+							href={result.url.startsWith('/topics/')
+								? resolve(result.url as `/topics/${string}`)
+								: resolve(result.url as `/blog/${string}/${string}`)}
 							class="text-lg font-bold text-neutral-900 hover:text-neutral-600 dark:text-neutral-100 dark:hover:text-neutral-300"
 						>
 							{result.meta.title}

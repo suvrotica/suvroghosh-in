@@ -127,7 +127,7 @@
 							class="inline-flex min-h-11 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
 							title={topic.hasLandingPage ? `Browse the ${topic.label} topic` : undefined}
 						>
-							{topic.label}
+							{topic.isHeadquarters ? `Explore ${topic.label}` : topic.label}
 						</a>
 					{/each}
 				</nav>

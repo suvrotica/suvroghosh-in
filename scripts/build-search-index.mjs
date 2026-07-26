@@ -1,9 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import * as pagefind from 'pagefind';
+import { parsePostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
+const topicsDir = path.join(root, 'src', 'lib', 'topics');
 const staticDir = path.resolve(root, 'static');
 const outputDir = path.resolve(staticDir, 'pagefind');
 const taxonomy = JSON.parse(
@@ -14,70 +16,11 @@ if (path.dirname(outputDir) !== staticDir) {
 	throw new Error(`Refusing to write Pagefind files outside ${staticDir}`);
 }
 
-function parseValue(rawValue) {
-	const value = rawValue.trim();
-	if (value.startsWith('[') && value.endsWith(']')) {
-		return value
-			.slice(1, -1)
-			.split(',')
-			.map((item) => item.trim().replace(/^["']|["']$/g, ''))
-			.filter(Boolean);
-	}
-	if (value === 'true' || value === 'false') return value === 'true';
-	return value.replace(/^["']|["']$/g, '');
-}
-
-function splitPostSource(source) {
-	const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n)?([\s\S]*)$/);
-	if (!match) return { metadata: {}, body: source };
-
-	const metadata = {};
-	const lines = match[1].split(/\r?\n/);
-
-	for (let index = 0; index < lines.length; index += 1) {
-		const field = lines[index].match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
-		if (!field) continue;
-
-		const [, key, rawValue] = field;
-		let value = rawValue.trim();
-
-		if (!value && lines[index + 1]?.trim().startsWith('[')) {
-			const arrayLines = [];
-			index += 1;
-			while (index < lines.length) {
-				arrayLines.push(lines[index].trim());
-				if (lines[index].trim().endsWith(']')) break;
-				index += 1;
-			}
-			value = arrayLines.join(' ');
-		} else if (value.startsWith('[') && !value.endsWith(']')) {
-			const arrayLines = [value];
-			while (index + 1 < lines.length) {
-				index += 1;
-				arrayLines.push(lines[index].trim());
-				if (lines[index].trim().endsWith(']')) break;
-			}
-			value = arrayLines.join(' ');
-		} else if (!value && lines[index + 1]?.trim().startsWith('- ')) {
-			const items = [];
-			while (index + 1 < lines.length && lines[index + 1].trim().startsWith('- ')) {
-				index += 1;
-				items.push(
-					lines[index]
-						.trim()
-						.slice(2)
-						.trim()
-						.replace(/^["']|["']$/g, '')
-				);
-			}
-			metadata[key] = items.filter(Boolean);
-			continue;
-		}
-
-		metadata[key] = parseValue(value);
-	}
-
-	return { metadata, body: match[2] };
+function splitMarkdownSource(source, sourceLabel) {
+	const metadata = parsePostFrontmatter(source, sourceLabel);
+	const match = source.match(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)([\s\S]*)$/);
+	if (!match) throw new Error(`${sourceLabel} is missing content after its YAML frontmatter.`);
+	return { metadata, body: match[1] };
 }
 
 function slugify(value = 'uncategorized') {
@@ -123,6 +66,26 @@ function languageCode(value) {
 	return /^[a-z]{2}$/.test(code) ? code : 'en';
 }
 
+function topicSearchableText(metadata, body) {
+	const glossary = Array.isArray(metadata.glossary)
+		? metadata.glossary.flatMap((entry) => [entry?.term, entry?.definition])
+		: [];
+	const faqs = Array.isArray(metadata.faqs)
+		? metadata.faqs.flatMap((entry) => [entry?.question, entry?.answer])
+		: [];
+	const contrarian = metadata.contrarianView;
+	const contrarianText =
+		contrarian && typeof contrarian === 'object'
+			? [contrarian.heading, ...stringArray(contrarian.paragraphs)]
+			: [];
+
+	return searchableText(
+		[metadata.description, body, ...glossary, ...faqs, ...contrarianText]
+			.filter((value) => typeof value === 'string' && value.trim())
+			.join('\n\n')
+	);
+}
+
 async function redirectedSlugs() {
 	const helpers = await fs.readFile(path.join(root, 'src', 'lib', 'content', 'posts.ts'), 'utf8');
 	const aliases = helpers.match(/export const postPathAliases[\s\S]*?=\s*\{([\s\S]*?)\};/);
@@ -165,14 +128,15 @@ if (createErrors.length > 0 || !index) {
 try {
 	const aliases = await redirectedSlugs();
 	const filenames = (await fs.readdir(postsDir)).filter((file) => file.endsWith('.md')).sort();
-	let indexed = 0;
+	let indexedPosts = 0;
+	let indexedTopics = 0;
 
 	for (const filename of filenames) {
 		const slug = filename.replace(/\.md$/, '');
 		if (aliases.has(slug)) continue;
 
 		const source = await fs.readFile(path.join(postsDir, filename), 'utf8');
-		const { metadata, body } = splitPostSource(source);
+		const { metadata, body } = splitMarkdownSource(source, filename);
 		if (metadata.published === false) continue;
 
 		const title = String(metadata.title ?? '').trim();
@@ -211,7 +175,8 @@ try {
 			section_slug: sectionSlug,
 			date,
 			year,
-			tags: tags.join(', ')
+			tags: tags.join(', '),
+			content_type: 'post'
 		};
 		if (metadata.thumbnail) meta.image = String(metadata.thumbnail);
 		if (metadata.thumbnailAlt) meta.image_alt = String(metadata.thumbnailAlt);
@@ -230,7 +195,60 @@ try {
 		if (errors.length > 0) {
 			throw new Error(`${filename} could not be indexed: ${errors.join('; ')}`);
 		}
-		indexed += 1;
+		indexedPosts += 1;
+	}
+
+	const topicFilenames = (await fs.readdir(topicsDir))
+		.filter((file) => file.endsWith('.md') && file.toLowerCase() !== 'readme.md')
+		.sort();
+
+	for (const filename of topicFilenames) {
+		const source = await fs.readFile(path.join(topicsDir, filename), 'utf8');
+		const { metadata, body } = splitMarkdownSource(source, filename);
+		const title = String(metadata.title ?? '').trim();
+		const slug = String(metadata.slug ?? '').trim();
+		const description = String(metadata.description ?? '').trim();
+		const publishedDate = String(metadata.date ?? '').trim();
+		const date = String(metadata.dateModified ?? '').trim();
+		const tags = stringArray(metadata.sourceTags);
+		const year = /^\d{4}/.exec(date)?.[0] ?? '';
+		const timestamp = Date.parse(date);
+
+		if (!title || !slug || !description || !publishedDate || !date || tags.length === 0 || !year) {
+			throw new Error(`${filename} is missing metadata required for the search index`);
+		}
+		if (filename !== `${slug}.md`) {
+			throw new Error(`${filename} must match its Topic Headquarters slug "${slug}"`);
+		}
+
+		const { errors } = await index.addCustomRecord({
+			url: `/topics/${encodeURIComponent(slug)}`,
+			content: topicSearchableText(metadata, body),
+			language: 'en',
+			meta: {
+				title,
+				slug,
+				description,
+				date,
+				date_published: publishedDate,
+				year,
+				tags: tags.join(', '),
+				content_type: 'topic'
+			},
+			filters: {
+				year: [year],
+				tag: tags,
+				content_type: ['topic']
+			},
+			sort: {
+				date: Number.isNaN(timestamp) ? date : String(timestamp)
+			}
+		});
+
+		if (errors.length > 0) {
+			throw new Error(`${filename} could not be indexed: ${errors.join('; ')}`);
+		}
+		indexedTopics += 1;
 	}
 
 	await fs.rm(outputDir, { recursive: true, force: true });
@@ -241,7 +259,7 @@ try {
 
 	const size = await directorySize(outputDir);
 	console.log(
-		`Pagefind: indexed ${indexed} posts into ${size.files} files (${(size.bytes / 1024).toFixed(1)} KiB).`
+		`Pagefind: indexed ${indexedPosts} posts and ${indexedTopics} Topic Headquarters into ${size.files} files (${(size.bytes / 1024).toFixed(1)} KiB).`
 	);
 } finally {
 	await index.deleteIndex();

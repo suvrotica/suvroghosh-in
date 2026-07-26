@@ -79,6 +79,9 @@
 	{#if type === 'article' && modifiedTime}
 		<meta property="article:modified_time" content={modifiedTime} />
 	{/if}
+	{#if type === 'website' && modifiedTime}
+		<meta property="og:updated_time" content={modifiedTime} />
+	{/if}
 
 	{#if type === 'article' && category}
 		<meta property="article:section" content={category} />

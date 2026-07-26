@@ -1,12 +1,14 @@
 import { siteUrl } from '$lib/components/seo/SEO';
 import { postPath } from '$lib/content/posts';
-import { topicPath } from '$lib/content/topics';
+import { sketchMuseumResource } from '$lib/content/site-resources';
+import { promotedTopicPath, topicHeadquartersPath, topicPath } from '$lib/content/topics';
 import {
 	getCuratedReadingPaths,
 	getPublishedArchiveMonths,
 	getPublishedPosts,
 	getPublishedTopics
 } from '$lib/server/content/posts';
+import { getTopicHeadquartersSummaries } from '$lib/server/content/topic-headquarters';
 
 export const prerender = true;
 
@@ -62,15 +64,26 @@ export async function GET() {
 		lastMod: month.lastModified
 	}));
 	const publishedTopics = getPublishedTopics();
-	const topics = publishedTopics.map((topic) => ({
+	const legacyTopics = publishedTopics.filter((topic) => !promotedTopicPath(topic.slug));
+	const topics = legacyTopics.map((topic) => ({
 		url: siteUrl + topicPath(topic.slug),
 		lastMod: topic.lastModified
 	}));
-	const topicIndexLastMod = publishedTopics.reduce(
+	const topicIndexLastMod = legacyTopics.reduce(
 		(latest, topic) =>
 			new Date(topic.lastModified).getTime() > new Date(latest).getTime()
 				? topic.lastModified
 				: latest,
+		'1970-01-01'
+	);
+	const topicHeadquarters = getTopicHeadquartersSummaries();
+	const headquartersPages = topicHeadquarters.map((topic) => ({
+		url: siteUrl + topicHeadquartersPath(topic.slug),
+		lastMod: topic.effectiveDateModified
+	}));
+	const headquartersIndexLastMod = topicHeadquarters.reduce(
+		(latest, topic) =>
+			topic.effectiveDateModified > latest ? topic.effectiveDateModified : latest,
 		'1970-01-01'
 	);
 	const startHereLastMod = getCuratedReadingPaths()
@@ -89,12 +102,24 @@ export async function GET() {
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/writing', lastMod: blogLastMod },
 		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
-		{ url: siteUrl + '/images/sketches', lastMod: '2026-07-24' },
+		{
+			url: siteUrl + sketchMuseumResource.path,
+			lastMod: sketchMuseumResource.dateModified ?? sketchMuseumResource.date
+		},
 		{ url: siteUrl + '/blog', lastMod: blogLastMod },
 		{ url: siteUrl + '/blog/topics', lastMod: topicIndexLastMod },
+		{ url: siteUrl + '/topics', lastMod: headquartersIndexLastMod },
 		{ url: siteUrl + '/contact', lastMod: '2026-06-26' }
 	];
-	const urls = [...pages, ...years, ...months, ...topics, ...categories, ...posts];
+	const urls = [
+		...pages,
+		...years,
+		...months,
+		...topics,
+		...headquartersPages,
+		...categories,
+		...posts
+	];
 
 	const xml =
 		'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
