@@ -10273,11 +10273,27 @@
 			"dateModified": "2026-07-26"
 		},
 		"src/lib/posts/screenagers-growing-up-in-the-digital-age.md": {
-			"bodyHash": "b82e6681924b842763b33092e4b27c9c2d8a9a10690d3c37dea8b4dfad6bd5b8",
+			"bodyHash": "084cd7456d43f6867b5da26b0045dae2eded50a21fc0e50d567a9dba3aaf6c4e",
 			"hashVersion": 2,
-			"revisionHash": "93137fdce5f8cf6fed412f0554384f2e1392afe28233d647ff6ed94fe818438c",
+			"revisionHash": "2fbb848b1cda1259ecc53245db393eea77f59a54ff04b0e42f6e5b6acc68cd87",
 			"generatedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
 			"pinnedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-26"
+		},
+		"src/lib/posts/mysteries-of-mental-illness-pbs-documentary-series.md": {
+			"bodyHash": "1318ca38c62f3ea10ef2b7c549e76864ef072e9cfe393bfd95994203c1c7310f",
+			"hashVersion": 2,
+			"revisionHash": "724c57cd22267f33a2ede0476535204e889236581c2cd04de88ca24aa03b10c3",
+			"generatedTags": [
+				"Video",
+				"Mental Illness",
+				"Psychiatry",
+				"Mental Health History",
+				"Episode",
+				"History"
+			],
+			"pinnedTags": ["Video", "Mental Illness", "Psychiatry", "Mental Health History"],
 			"generatorVersion": "2026-07-22.1"
 		}
 	},

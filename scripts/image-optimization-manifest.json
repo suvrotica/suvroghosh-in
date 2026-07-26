@@ -8098,6 +8098,22 @@
       "sourceHash": "7a443e2f67fa54014ad27303430bf2f09f965ba4654ced8a81a81cce033dcb9d",
       "width": 1200
     },
+    "static/images/mysteries-of-mental-illness-pbs-series.jpg": {
+      "format": "JPEG",
+      "height": 720,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 720,
+      "originalWidth": 1280,
+      "outputBytes": 101337,
+      "outputHash": "74d59870ca31a3178a9f91245b3d90d9e208a6c50a7f9c34ef7b746a3bd3744e",
+      "psnrDb": 40.25,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 121368,
+      "sourceHash": "099ef3ace7613be79879aaa866017a13ce24338d0c11568efcd778a0a56dc1a6",
+      "width": 1280
+    },
     "static/images/neuron-zoo-social.jpg": {
       "format": "JPEG",
       "height": 630,

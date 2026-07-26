@@ -2,6 +2,7 @@
 title: "Watch: Screenagers on Growing Up with Screens"
 description: "Delaney Ruston’s documentary follows families confronting social media, gaming and screen-time limits, pairing personal stories with expert guidance."
 date: "2026-07-26"
+dateModified: "2026-07-26"
 category: "Video"
 tags: ["Video","Screen Time","Teenagers","Digital Wellbeing"]
 pinnedTags: ["Video","Screen Time","Teenagers","Digital Wellbeing"]
@@ -27,6 +28,6 @@ The film is worth watching because it does not treat the problem as a simple con
 	title="Screenagers: Growing Up in the Digital Age, in Romanian"
 />
 
-Pay particular attention to the shift from warning signs to negotiation. The most useful idea here is not that every screen is inherently harmful, but that families and schools need explicit habits around attention, sleep, gaming and social media. The upload was published by **Eliberat prin Adevar – Madalin Potoroaca**; YouTube does not provide captions for it, and its spoken language is Romanian.
+Pay particular attention to the shift from warning signs to negotiation. The most useful idea here is not that every screen is inherently harmful, but that families and schools need explicit habits around attention, sleep, gaming and social media. The upload was published by **Eliberat prin Adevar – Madalin Potoroaca**; 
 
 <Yc href="https://www.youtube.com/watch?v=RtD2IHZMoxI" />

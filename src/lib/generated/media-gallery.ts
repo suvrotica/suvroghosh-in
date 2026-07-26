@@ -3555,6 +3555,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "mysteries-of-mental-illness-pbs-series.jpg",
+			"src": "/images/mysteries-of-mental-illness-pbs-series.jpg",
+			"bytes": 101337,
+			"width": 1280,
+			"height": 720
+		},
+		{
 			"name": "neuron-zoo-social.jpg",
 			"src": "/images/neuron-zoo-social.jpg",
 			"bytes": 57090,

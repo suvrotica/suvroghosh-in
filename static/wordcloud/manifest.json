@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T01:05:47.382677+00:00",
+  "generatedAt": "2026-07-26T03:23:32.693594+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -5475,6 +5475,29 @@
       ],
       "wordCount": 130
     },
+    "mysteries-of-mental-illness-pbs-documentary-series": {
+      "generatedAt": "2026-07-26T03:23:31.931003+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/mysteries-of-mental-illness-pbs-documentary-series.svg",
+      "source": "src/lib/posts/mysteries-of-mental-illness-pbs-documentary-series.md",
+      "sourceHash": "b1dab5b706a6776190e7dfc9bae3e3e30ccea9d9455451c54ce256a306186e0b",
+      "sourceModified": "2026-07-26T03:23:00.348522+00:00",
+      "topWords": [
+        "Episode",
+        "History",
+        "Series",
+        "Mental",
+        "Illness",
+        "Normal",
+        "Institutions",
+        "Psychiatry",
+        "Diagnosis",
+        "Experience",
+        "PBS",
+        "Fourpart"
+      ],
+      "wordCount": 119
+    },
     "natural-selection-across-timescales": {
       "generatedAt": "2026-07-20T02:04:26.532188+00:00",
       "generatorVersion": "2026-07-13.1",
@@ -6787,12 +6810,12 @@
       "wordCount": 130
     },
     "screenagers-growing-up-in-the-digital-age": {
-      "generatedAt": "2026-07-26T01:05:47.145326+00:00",
+      "generatedAt": "2026-07-26T03:23:32.449093+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/screenagers-growing-up-in-the-digital-age.svg",
       "source": "src/lib/posts/screenagers-growing-up-in-the-digital-age.md",
-      "sourceHash": "b4023071442750dd847be7bcbbb08251670316884340d29886e97f9a395c8d22",
-      "sourceModified": "2026-07-26T01:05:35.531003+00:00",
+      "sourceHash": "359c1694a881dc8dba8369132cb25f02198bd5db153dad767ea97fb7229397d2",
+      "sourceModified": "2026-07-26T03:23:17.869734+00:00",
       "topWords": [
         "Upload",
         "Ruston",
@@ -6807,7 +6830,7 @@
         "Attention",
         "Romanianlanguage"
       ],
-      "wordCount": 95
+      "wordCount": 89
     },
     "scrolling-versus-reading-sequential-mind": {
       "generatedAt": "2026-07-20T02:05:02.565701+00:00",
