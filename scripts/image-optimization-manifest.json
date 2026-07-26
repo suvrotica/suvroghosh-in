@@ -8274,6 +8274,22 @@
       "sourceHash": "20b19e641d65231999bc0d9be16cb32d879dee54b7702ceca37d7b0295c1a7ac",
       "width": 1672
     },
+    "static/images/visualizations/how-a-scanner-sees-ct-reconstruction.webp": {
+      "format": "WEBP",
+      "height": 630,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 29760,
+      "outputHash": "6848e0c76cec5efdbc137f2edc5210d1f28a8bb2f052c6ea40cef35f7a8bc966",
+      "psnrDb": 41.77,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 39614,
+      "sourceHash": "9743ea8247d9ad260c41e963d47ee1be2a6d602cdb5c92bc0f56a7eb8dac7ed1",
+      "width": 1200
+    },
     "static/photos/Compress_20260510_235335_5542.jpg": {
       "format": "JPEG",
       "height": 1056,

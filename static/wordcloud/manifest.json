@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T03:23:32.693594+00:00",
+  "generatedAt": "2026-07-26T05:56:15.020566+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -4023,6 +4023,29 @@
         "India",
         "Household",
         "Waste"
+      ],
+      "wordCount": 130
+    },
+    "how-a-scanner-sees-reconstructing-a-body-from-shadows": {
+      "generatedAt": "2026-07-26T05:56:14.434472+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/how-a-scanner-sees-reconstructing-a-body-from-shadows.svg",
+      "source": "src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md",
+      "sourceHash": "968cd5bf72ec607c120fdb084775840f203850db95dc534887345e138d3ceea0",
+      "sourceModified": "2026-07-26T05:56:01.941446+00:00",
+      "topWords": [
+        "Detector",
+        "Projection",
+        "Attenuation",
+        "Theta",
+        "Line",
+        "Angles",
+        "Reconstruction",
+        "Along",
+        "Backprojection",
+        "Sinogram",
+        "Angle",
+        "Ray"
       ],
       "wordCount": 130
     },

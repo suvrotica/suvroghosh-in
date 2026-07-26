@@ -10295,6 +10295,37 @@
 			],
 			"pinnedTags": ["Video", "Mental Illness", "Psychiatry", "Mental Health History"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md": {
+			"bodyHash": "a1413a501b2101c1d06f582b3ffe46693c00d40b2519a8c3f85cb0c11e605aeb",
+			"hashVersion": 2,
+			"revisionHash": "e6feb3b3a51b468d9119a3e313a0ed964739bcf9ee64ec70ad4aa8c76c98ac00",
+			"generatedTags": [
+				"CT",
+				"Medical Imaging",
+				"Image Reconstruction",
+				"Fourier Transform",
+				"Interactive Mathematics",
+				"Healthcare",
+				"Radon Transform",
+				"Sinogram",
+				"Filtered Back-Projection",
+				"Signal Processing"
+			],
+			"pinnedTags": [
+				"CT",
+				"Medical Imaging",
+				"Image Reconstruction",
+				"Fourier Transform",
+				"Interactive Mathematics",
+				"Healthcare",
+				"Radon Transform",
+				"Sinogram",
+				"Filtered Back-Projection",
+				"Signal Processing"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-26"
 		}
 	},
 	"maxTags": 10

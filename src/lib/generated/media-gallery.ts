@@ -3637,6 +3637,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 163655,
 			"width": 1672,
 			"height": 941
+		},
+		{
+			"name": "visualizations/how-a-scanner-sees-ct-reconstruction.webp",
+			"src": "/images/visualizations/how-a-scanner-sees-ct-reconstruction.webp",
+			"bytes": 29760,
+			"width": 1200,
+			"height": 630
 		}
 	],
 	"photos": [
