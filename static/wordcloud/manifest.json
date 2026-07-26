@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T23:06:36.309876+00:00",
+  "generatedAt": "2026-07-26T00:45:25.289653+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -11406,6 +11406,29 @@
         "Benu",
         "Mrs",
         "Pond"
+      ],
+      "wordCount": 130
+    },
+    "the_gastric_gospel_of_generative_regurgitation": {
+      "generatedAt": "2026-07-26T00:45:25.111568+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the_gastric_gospel_of_generative_regurgitation.svg",
+      "source": "src/lib/posts/the_gastric_gospel_of_generative_regurgitation.md",
+      "sourceHash": "5fe6a46500046d74859ea909308d36c2a03087addff543e782a7525190ea5a3b",
+      "sourceModified": "2026-07-26T00:45:12.642778+00:00",
+      "topWords": [
+        "Next",
+        "Except",
+        "Yet",
+        "Exactly",
+        "Machine",
+        "Five",
+        "Slop",
+        "Regurgitation",
+        "Now",
+        "Models",
+        "Human",
+        "Someone"
       ],
       "wordCount": 130
     },

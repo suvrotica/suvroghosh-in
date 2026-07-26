@@ -6,7 +6,7 @@ dateModified: "2026-07-26"
 thumbnail: "/thumbnail/Compress_20260726_061242_2329.jpg"
 thumbnailAlt: "Abstract illustration evoking recursive AI output and an unruly mind sealed within itself."
 category: "Essay"
-tags: ["Essay", "Artificial Intelligence", "Calcutta", "SuvroGhosh"]
+tags: ["Five Billion","Regurgitation","Slop","Except","Depressive","Manic","Models","Algorithm","Mood","Billion"]
 published: true
 color: "#3D2B1F"
 ---
