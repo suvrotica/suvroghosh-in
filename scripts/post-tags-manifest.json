@@ -10271,6 +10271,14 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-26"
+		},
+		"src/lib/posts/screenagers-growing-up-in-the-digital-age.md": {
+			"bodyHash": "b82e6681924b842763b33092e4b27c9c2d8a9a10690d3c37dea8b4dfad6bd5b8",
+			"hashVersion": 2,
+			"revisionHash": "93137fdce5f8cf6fed412f0554384f2e1392afe28233d647ff6ed94fe818438c",
+			"generatedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
+			"pinnedTags": ["Video", "Screen Time", "Teenagers", "Digital Wellbeing"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

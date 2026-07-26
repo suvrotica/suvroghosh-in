@@ -3604,6 +3604,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 553
 		},
 		{
+			"name": "screenagers-growing-up-in-the-digital-age.jpg",
+			"src": "/images/screenagers-growing-up-in-the-digital-age.jpg",
+			"bytes": 58756,
+			"width": 1280,
+			"height": 720
+		},
+		{
 			"name": "spacetime-laboratory-einstein-equations.webp",
 			"src": "/images/spacetime-laboratory-einstein-equations.webp",
 			"bytes": 21508,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T00:45:25.289653+00:00",
+  "generatedAt": "2026-07-26T01:05:47.382677+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -6785,6 +6785,29 @@
         "Patient"
       ],
       "wordCount": 130
+    },
+    "screenagers-growing-up-in-the-digital-age": {
+      "generatedAt": "2026-07-26T01:05:47.145326+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/screenagers-growing-up-in-the-digital-age.svg",
+      "source": "src/lib/posts/screenagers-growing-up-in-the-digital-age.md",
+      "sourceHash": "b4023071442750dd847be7bcbbb08251670316884340d29886e97f9a395c8d22",
+      "sourceModified": "2026-07-26T01:05:35.531003+00:00",
+      "topWords": [
+        "Upload",
+        "Ruston",
+        "Children",
+        "Family",
+        "Social",
+        "Media",
+        "Gaming",
+        "Adults",
+        "Useful",
+        "Every",
+        "Attention",
+        "Romanianlanguage"
+      ],
+      "wordCount": 95
     },
     "scrolling-versus-reading-sequential-mind": {
       "generatedAt": "2026-07-20T02:05:02.565701+00:00",

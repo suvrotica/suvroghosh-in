@@ -8194,6 +8194,22 @@
       "sourceHash": "b0d6630a15e06ee4cec1f10670bce1c87ce1e0ea4aec773abe1f5027f4dc9cd7",
       "width": 1600
     },
+    "static/images/screenagers-growing-up-in-the-digital-age.jpg": {
+      "format": "JPEG",
+      "height": 720,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 720,
+      "originalWidth": 1280,
+      "outputBytes": 58756,
+      "outputHash": "dbe4b61c84a3e06b13a4558fb455aa063223134ba89d0172ce024ce84903c93e",
+      "psnrDb": 45.88,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 59871,
+      "sourceHash": "8d2006abe17dff566ad920e44611d169f228c0564b39db93dd1fc25bd253cb9c",
+      "width": 1280
+    },
     "static/images/spacetime-laboratory-einstein-equations.webp": {
       "format": "WEBP",
       "height": 630,

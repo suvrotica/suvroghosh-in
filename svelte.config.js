@@ -173,6 +173,7 @@ const config = {
 					'https://vitals.vercel-insights.com'
 				],
 				'worker-src': ['self', 'blob:'],
+				'frame-src': ['self', 'https://www.youtube.com'],
 				'object-src': ['none'],
 				'base-uri': ['self'],
 				'form-action': ['self'],

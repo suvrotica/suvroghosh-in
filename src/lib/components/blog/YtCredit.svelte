@@ -1,3 +1,11 @@
+<script lang="ts">
+	let {
+		href = ''
+	}: {
+		href?: string;
+	} = $props();
+</script>
+
 <div class="not-prose mx-auto my-8 max-w-2xl">
 	<div
 		class="flex flex-col items-center justify-center rounded-xl border-2 border-neutral-200 bg-neutral-50 p-6 text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,0.05)] dark:border-neutral-800 dark:bg-neutral-900/50 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.05)]"
@@ -23,5 +31,15 @@
 			make a few cents, but to introduce them to a wider world who may not have yet stumbled on
 			them.
 		</p>
+		{#if href}
+			<a
+				class="mt-4 inline-flex items-center rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-red-700 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:bg-red-500 dark:text-neutral-950 dark:hover:bg-red-400"
+				{href}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Watch on YouTube and join the discussion
+			</a>
+		{/if}
 	</div>
 </div>
