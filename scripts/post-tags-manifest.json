@@ -10326,6 +10326,26 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-26"
+		},
+		"src/lib/posts/holding.md": {
+			"bodyHash": "0c560fa414483da6f53882605c9d4c957e2c6c845c922469f7763adca0605a53",
+			"hashVersion": 2,
+			"revisionHash": "2f6602d9e8f0960dcb0ff09eb26544a513e063743435b60ad7a3e15ec14e9605",
+			"generatedTags": [
+				"Recursive Self-Modeling",
+				"Wellness Routing",
+				"Hold Music",
+				"Six Years",
+				"Eleven Minutes",
+				"Ernesto",
+				"Clarke",
+				"Elena",
+				"Irrational",
+				"ResolveHub"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-26"
 		}
 	},
 	"maxTags": 10

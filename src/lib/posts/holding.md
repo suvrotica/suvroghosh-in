@@ -6,7 +6,7 @@ dateModified: "2026-07-26"
 thumbnail: "/thumbnail/Compress_20260726_113834_4485.jpg"
 thumbnailAlt: "A lone call-centre agent seated at a desk in an otherwise empty room"
 category: "Short Fiction"
-tags: ["Short Fiction", "Speculative Fiction", "Science Fiction", "Horror", "Satire", "Philippines"]
+tags: ["Recursive Self-Modeling","Wellness Routing","Hold Music","Six Years","Eleven Minutes","Ernesto","Clarke","Elena","Irrational","ResolveHub"]
 published: true
 color: "#3D5A6C"
 ---

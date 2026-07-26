@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T05:56:15.020566+00:00",
+  "generatedAt": "2026-07-26T07:17:19.048291+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -3931,6 +3931,29 @@
         "Exchange",
         "Standard",
         "Result"
+      ],
+      "wordCount": 130
+    },
+    "holding": {
+      "generatedAt": "2026-07-26T07:17:18.501112+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/holding.svg",
+      "source": "src/lib/posts/holding.md",
+      "sourceHash": "50e028b9ff712995bdf6f08695133dc52d0feda8730322c9f3e8e1c79150131e",
+      "sourceModified": "2026-07-26T07:17:09.129692+00:00",
+      "topWords": [
+        "Ernesto",
+        "Don",
+        "Voice",
+        "Clarke",
+        "Elena",
+        "Line",
+        "Call",
+        "Photograph",
+        "Umbrella",
+        "Love",
+        "Green",
+        "Hear"
       ],
       "wordCount": 130
     },
