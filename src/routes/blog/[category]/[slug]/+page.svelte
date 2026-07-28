@@ -80,7 +80,10 @@
 			</ol>
 		</nav>
 
-		<header class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800">
+		<header
+			class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800"
+			data-route-atmosphere-region
+		>
 			<h1
 				class="article-title mb-4 font-sans font-bold tracking-tight text-neutral-900 dark:text-white"
 			>

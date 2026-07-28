@@ -7,20 +7,87 @@
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { dev } from '$app/environment';
+	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
+	import RouteAtmosphere from '$lib/components/motion/RouteAtmosphere.svelte';
+	import { normaliseMotionPreference, resolveMotion } from '$lib/motion/preferences';
+	import { resolveRouteMotion, shouldUseViewTransition } from '$lib/motion/route-biomes';
+	import type { ResolvedMotion } from '$lib/motion/types';
 
 	let { children } = $props();
+	let routeMotion = $derived(resolveRouteMotion(page.url.pathname));
 	let studioShell = $derived(
 		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
 	);
 	let gameShell = $derived(page.url.pathname.startsWith('/blog/games/'));
 
+	function resolvedMotion(): ResolvedMotion {
+		const value = document.documentElement.dataset.motion;
+		return value === 'still' || value === 'alive' ? value : 'gentle';
+	}
+
+	onNavigate((navigation) => {
+		const from = navigation.from?.url;
+		const to = navigation.to?.url;
+
+		if (typeof document.startViewTransition !== 'function') {
+			document.documentElement.dataset.viewTransitions = 'unavailable';
+			return;
+		}
+
+		if (
+			navigation.willUnload ||
+			!from ||
+			!to ||
+			!shouldUseViewTransition(from.pathname, to.pathname, resolvedMotion())
+		) {
+			return;
+		}
+
+		return new Promise<void>((navigationMayContinue) => {
+			try {
+				const transition = document.startViewTransition(async () => {
+					navigationMayContinue();
+					await navigation.complete;
+				});
+
+				void transition.finished.catch(() => {
+					// Navigation already owns error handling; animation failure is non-fatal.
+				});
+			} catch {
+				// A partial or failing implementation must never block normal navigation.
+				document.documentElement.dataset.viewTransitions = 'unavailable';
+				navigationMayContinue();
+			}
+		});
+	});
+
+	$effect(() => {
+		document.documentElement.dataset.biome = routeMotion.biome;
+	});
+
 	onMount(() => {
 		injectAnalytics({ mode: dev ? 'development' : 'production' });
 		injectSpeedInsights();
+
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const enforceSystemMotion = () => {
+			const root = document.documentElement;
+			const preference = normaliseMotionPreference(root.dataset.motionPreference);
+			root.dataset.motion = resolveMotion(preference, reducedMotion.matches);
+		};
+
+		document.documentElement.dataset.viewTransitions =
+			typeof document.startViewTransition === 'function' ? 'available' : 'unavailable';
+		enforceSystemMotion();
+		reducedMotion.addEventListener('change', enforceSystemMotion);
+
+		return () => {
+			reducedMotion.removeEventListener('change', enforceSystemMotion);
+		};
 	});
 </script>
 
@@ -43,8 +110,16 @@
 		</main>
 	</div>
 {:else}
-	<div class="flex min-h-dvh flex-col">
+	<div
+		class="site-shell flex min-h-dvh flex-col"
+		data-biome={routeMotion.biome}
+		data-motion-intensity={routeMotion.intensity}
+	>
 		<a href="#main-content" class="skip-link">Skip to main content</a>
+
+		{#if routeMotion.biome !== 'off'}
+			<RouteAtmosphere pathname={page.url.pathname} config={routeMotion} />
+		{/if}
 
 		<Header />
 

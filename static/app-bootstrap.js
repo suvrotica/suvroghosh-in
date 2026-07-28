@@ -31,6 +31,34 @@
 				resolved
 			]
 		);
+
+	const motionPreferences = ['system', 'still', 'gentle', 'alive'];
+	let motionPreference = 'system';
+	let reducedMotion = false;
+
+	try {
+		const storedMotion = window.localStorage.getItem('site-motion');
+		if (storedMotion && motionPreferences.includes(storedMotion)) {
+			motionPreference = storedMotion;
+		}
+	} catch {
+		// Keep the system default when browser storage is unavailable.
+	}
+
+	try {
+		reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	} catch {
+		// A missing media-query implementation resolves system motion to gentle.
+	}
+
+	const resolvedMotion = reducedMotion
+		? 'still'
+		: motionPreference === 'system'
+			? 'gentle'
+			: motionPreference;
+
+	root.dataset.motionPreference = motionPreference;
+	root.dataset.motion = resolvedMotion;
 })();
 
 // Responsive image requests can fail before Svelte hydrates (for example in a local production

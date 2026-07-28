@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
+	import type { Attachment } from 'svelte/attachments';
 
 	const RESPONSIVE_WIDTHS = [320, 480, 640, 768, 960, 1200, 1600, 1920] as const;
 
@@ -69,13 +70,22 @@
 
 	let imgClasses = $derived('h-auto w-full rounded-lg shadow-md');
 
-	function useOriginalImage(event: Event) {
-		const image = event.currentTarget as HTMLImageElement;
-		if (optimizerFailed || !responsiveSrcset) return;
+	const useOriginalImage: Attachment<HTMLImageElement> = (image) => {
+		const handleError = () => {
+			if (optimizerFailed || !responsiveSrcset) return;
 
-		optimizerFailed = true;
-		image.src = fullSrc;
-	}
+			optimizerFailed = true;
+			image.src = fullSrc;
+		};
+
+		image.addEventListener('error', handleError);
+
+		if (image.complete && image.naturalWidth === 0) {
+			handleError();
+		}
+
+		return () => image.removeEventListener('error', handleError);
+	};
 </script>
 
 <figure class={figureClasses} style={containerStyle}>
@@ -85,6 +95,7 @@
 				<source
 					data-responsive-image
 					type="image/webp"
+					media="(scripting: enabled)"
 					srcset={responsiveSrcset}
 					sizes={responsiveSizes}
 				/>
@@ -99,7 +110,7 @@
 				{fetchpriority}
 				decoding="async"
 				class={imgClasses}
-				onerror={useOriginalImage}
+				{@attach useOriginalImage}
 			/>
 		</picture>
 	{:else}

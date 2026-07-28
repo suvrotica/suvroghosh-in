@@ -152,6 +152,19 @@
 	--paper-texture-opacity: 0.065;
 	--paper-texture-size: clamp(12rem, 24vw, 22rem);
 
+	/* Living Archive motion contract. Existing fast/medium/slow tokens remain
+	   available to stable components while new motion uses this shared scale. */
+	--motion-instant: 80ms;
+	--motion-base: 420ms;
+	--motion-scene: 900ms;
+	--motion-breathe: 18s;
+	--ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-soft-spring: cubic-bezier(0.2, 0.8, 0.2, 1.08);
+	--motion-distance: 12px;
+	--motion-parallax: 10px;
+	--motion-tilt: 0deg;
+	--motion-ambient-opacity: 0.32;
+
 	--background: var(--paper);
 	--foreground: var(--ink);
 	--card: var(--paper-raised);
@@ -191,6 +204,27 @@
 	--color-neutral-800: #332a22;
 	--color-neutral-900: var(--ink);
 	--color-neutral-950: #17130f;
+}
+
+html[data-motion='still'] {
+	--motion-distance: 0px;
+	--motion-parallax: 0px;
+	--motion-tilt: 0deg;
+	--motion-ambient-opacity: 0.12;
+}
+
+html[data-motion='gentle'] {
+	--motion-distance: 10px;
+	--motion-parallax: 8px;
+	--motion-tilt: 0deg;
+	--motion-ambient-opacity: 0.28;
+}
+
+html[data-motion='alive'] {
+	--motion-distance: 16px;
+	--motion-parallax: 14px;
+	--motion-tilt: 1.15deg;
+	--motion-ambient-opacity: 0.42;
 }
 
 .dark,
@@ -868,6 +902,217 @@ html .article-breakout:fullscreen {
 	}
 }
 
+/* One theme-adaptive decorative layer belongs to the normal shell. The two
+   CSS layers are the complete SSR/no-JavaScript fallback; Canvas is optional. */
+.site-shell {
+	position: relative;
+	isolation: isolate;
+}
+
+.site-shell > main,
+.site-shell > footer {
+	position: relative;
+	z-index: 1;
+}
+
+.route-atmosphere {
+	--biome-primary: var(--accent);
+	--biome-secondary: var(--ink-faint);
+	--ambient-line: var(--accent);
+	--ambient-line: color-mix(in oklab, var(--biome-primary) 62%, transparent);
+	--ambient-node: var(--ink-faint);
+	--ambient-node: color-mix(in oklab, var(--biome-secondary) 76%, transparent);
+	--ambient-pulse: var(--accent);
+	--ambient-pulse: color-mix(in oklab, var(--biome-primary) 82%, var(--paper));
+	position: fixed;
+	z-index: 0;
+	inset: 0;
+	overflow: hidden;
+	contain: strict;
+	pointer-events: none;
+	opacity: var(--motion-ambient-opacity);
+	transition: opacity var(--motion-base) var(--ease-out-quart);
+}
+
+.route-atmosphere[data-biome='writing'] {
+	--biome-primary: var(--essay-ink, var(--accent));
+	--biome-secondary: var(--ink-muted);
+}
+
+.route-atmosphere[data-biome='healthcare'] {
+	--biome-primary: var(--accent);
+	--biome-secondary: var(--rule);
+}
+
+.route-atmosphere[data-biome='calcutta'] {
+	--biome-primary: var(--accent);
+	--biome-primary: color-mix(in oklab, var(--accent) 68%, var(--ink-faint));
+	--biome-secondary: var(--ink-faint);
+}
+
+.route-atmosphere[data-biome='lab'] {
+	--biome-primary: var(--accent);
+	--biome-secondary: var(--ink);
+}
+
+.route-atmosphere[data-biome='notes'] {
+	--biome-primary: var(--ink-faint);
+	--biome-secondary: var(--rule);
+}
+
+.route-atmosphere[data-biome='quiet'] {
+	--biome-primary: var(--ink-faint);
+	--biome-secondary: var(--paper-soft);
+}
+
+.route-atmosphere__wash,
+.route-atmosphere__lines,
+.ambient-field {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.route-atmosphere__wash {
+	background:
+		radial-gradient(circle at 88% 12%, var(--biome-primary) 0, transparent 34%),
+		radial-gradient(ellipse at 7% 74%, var(--biome-secondary) 0, transparent 38%);
+	background:
+		radial-gradient(
+			circle at 88% 12%,
+			color-mix(in oklab, var(--biome-primary) 20%, transparent) 0,
+			transparent 34%
+		),
+		radial-gradient(
+			ellipse at 7% 74%,
+			color-mix(in oklab, var(--biome-secondary) 15%, transparent) 0,
+			transparent 38%
+		);
+	-webkit-mask-image: linear-gradient(to bottom, #000 0%, rgb(0 0 0 / 84%) 48%, transparent 98%);
+	mask-image: linear-gradient(to bottom, #000 0%, rgb(0 0 0 / 84%) 48%, transparent 98%);
+}
+
+.route-atmosphere__lines {
+	background-image:
+		repeating-linear-gradient(118deg, transparent 0 4.9rem, var(--biome-primary) 5rem 5.05rem),
+		radial-gradient(
+			circle at 82% 18%,
+			transparent 0 9rem,
+			var(--biome-secondary) 9.05rem 9.12rem,
+			transparent 9.18rem
+		);
+	background-image:
+		repeating-linear-gradient(
+			118deg,
+			transparent 0 4.9rem,
+			color-mix(in oklab, var(--biome-primary) 8%, transparent) 5rem 5.05rem
+		),
+		radial-gradient(
+			circle at 82% 18%,
+			transparent 0 9rem,
+			color-mix(in oklab, var(--biome-secondary) 13%, transparent) 9.05rem 9.12rem,
+			transparent 9.18rem
+		);
+	opacity: 0.72;
+	-webkit-mask-image: linear-gradient(
+		to right,
+		rgb(0 0 0 / 92%),
+		rgb(0 0 0 / 24%) 48%,
+		rgb(0 0 0 / 82%)
+	);
+	mask-image: linear-gradient(to right, rgb(0 0 0 / 92%), rgb(0 0 0 / 24%) 48%, rgb(0 0 0 / 82%));
+}
+
+.route-atmosphere[data-biome='writing'] .route-atmosphere__lines {
+	background-image:
+		repeating-linear-gradient(
+			172deg,
+			transparent 0 7.4rem,
+			color-mix(in oklab, var(--biome-primary) 9%, transparent) 7.5rem 7.54rem
+		),
+		radial-gradient(
+			ellipse at 15% 68%,
+			transparent 0 18rem,
+			color-mix(in oklab, var(--biome-secondary) 11%, transparent) 18.05rem 18.12rem,
+			transparent 18.18rem
+		);
+}
+
+.route-atmosphere[data-biome='healthcare'] .route-atmosphere__lines {
+	background-image:
+		linear-gradient(color-mix(in oklab, var(--biome-primary) 7%, transparent) 1px, transparent 1px),
+		linear-gradient(
+			90deg,
+			color-mix(in oklab, var(--biome-secondary) 8%, transparent) 1px,
+			transparent 1px
+		);
+	background-size: 5rem 5rem;
+}
+
+.route-atmosphere[data-biome='calcutta'] .route-atmosphere__lines {
+	background-image:
+		repeating-linear-gradient(
+			82deg,
+			transparent 0 6.3rem,
+			color-mix(in oklab, var(--biome-primary) 10%, transparent) 6.38rem 6.43rem
+		),
+		repeating-linear-gradient(
+			96deg,
+			transparent 0 10.2rem,
+			color-mix(in oklab, var(--biome-secondary) 7%, transparent) 10.28rem 10.32rem
+		);
+}
+
+.route-atmosphere[data-biome='lab'] .route-atmosphere__lines {
+	background-image:
+		repeating-radial-gradient(
+			circle at 76% 22%,
+			transparent 0 4.75rem,
+			color-mix(in oklab, var(--biome-primary) 10%, transparent) 4.8rem 4.86rem
+		),
+		linear-gradient(
+			115deg,
+			transparent 0 58%,
+			color-mix(in oklab, var(--biome-secondary) 6%, transparent) 58.1% 58.2%,
+			transparent 58.3%
+		);
+}
+
+.route-atmosphere[data-biome='notes'] .route-atmosphere__lines,
+.route-atmosphere[data-biome='quiet'] .route-atmosphere__lines {
+	background-image: linear-gradient(
+		164deg,
+		transparent 0 63%,
+		color-mix(in oklab, var(--biome-primary) 8%, transparent) 63.08% 63.14%,
+		transparent 63.22%
+	);
+	opacity: 0.52;
+}
+
+.route-atmosphere[data-intensity='header-only'][data-active='false'] {
+	opacity: 0.06;
+}
+
+.route-atmosphere[data-ambient='static'] .ambient-field,
+html[data-motion='still'] .ambient-field {
+	display: none;
+}
+
+.ambient-field {
+	display: block;
+	color: var(--biome-primary);
+	border-color: var(--biome-secondary);
+	outline-color: var(--biome-primary);
+	opacity: 1;
+	transition: opacity var(--motion-fast) linear;
+}
+
+.ambient-field[data-ambient-active='false'] {
+	opacity: 0;
+}
+
 /* Animation keyframes */
 @keyframes fade-in-up {
 	from {
@@ -922,13 +1167,17 @@ html .article-breakout:fullscreen {
 }
 
 @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
-	.reveal {
-		transform: translateY(0.75rem);
-		transition: transform var(--motion-slow) var(--ease-emphatic);
+	html:not([data-motion='still']) .reveal.reveal-enhanced {
+		transition: transform var(--motion-base) var(--ease-out-quart);
 		transition-delay: var(--reveal-delay, 0ms);
 	}
-	.reveal.is-visible {
-		transform: translateY(0);
+
+	html:not([data-motion='still']) .reveal.reveal-enhanced:not(.is-visible) {
+		transform: translateY(var(--motion-distance, 0.75rem));
+	}
+
+	.reveal.reveal-enhanced.is-visible {
+		transform: none;
 	}
 }
 
@@ -977,6 +1226,102 @@ html .article-breakout:fullscreen {
 	animation: fade-in-up var(--motion-medium) var(--ease-emphatic) both;
 }
 
+@keyframes archive-view-out {
+	to {
+		opacity: 0.92;
+		clip-path: inset(0 0 1.5% 0);
+	}
+}
+
+@keyframes archive-view-in {
+	from {
+		opacity: 0.9;
+		clip-path: inset(1.5% 0 0 0);
+	}
+}
+
+@keyframes route-atmosphere-arrive-a {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes route-atmosphere-arrive-b {
+	from {
+		opacity: 0;
+	}
+}
+
+html[data-view-transitions='unavailable']:not([data-motion='still'])
+	.route-atmosphere[data-route-phase='a'] {
+	animation: route-atmosphere-arrive-a 280ms var(--ease-out-quart);
+}
+
+html[data-view-transitions='unavailable']:not([data-motion='still'])
+	.route-atmosphere[data-route-phase='b'] {
+	animation: route-atmosphere-arrive-b 280ms var(--ease-out-quart);
+}
+
+::view-transition-old(root) {
+	animation: archive-view-out 180ms var(--ease-out-quart) both;
+}
+
+::view-transition-new(root) {
+	animation: archive-view-in 320ms var(--ease-out-quart) both;
+}
+
+html[data-motion='still'] body,
+html[data-motion='still'] .site-shell a {
+	transition-duration: 0ms;
+}
+
+html[data-motion='still']
+	.site-shell
+	:where(.page-enter, .constellation-line, .constellation-node) {
+	animation: none !important;
+}
+
+html[data-motion='still'] .site-shell :where(.reveal, .post-card, a.card, .btn-primary) {
+	transform: none !important;
+	transition: none !important;
+}
+
+html[data-motion='still'] .site-shell [class~='transition-transform'] {
+	transition: none !important;
+}
+
+html[data-motion='still']
+	.site-shell
+	:where(
+		[class*='hover:translate-'],
+		[class*='hover:-translate-'],
+		[class*='hover:scale-'],
+		[class*='hover:-scale-'],
+		[class*='hover:rotate-'],
+		[class*='hover:-rotate-']
+	) {
+	transform: none !important;
+	transition: none !important;
+}
+
+html[data-motion='still'] .site-shell > header *,
+html[data-motion='still'] .site-shell > header *::before,
+html[data-motion='still'] .site-shell > header *::after {
+	animation-duration: 0.001ms !important;
+	animation-iteration-count: 1 !important;
+	transition-duration: 0ms !important;
+}
+
+html[data-motion='still'] .route-atmosphere {
+	animation: none;
+	transition: none;
+}
+
+html[data-motion='still'] .site-shell .nav-link::after,
+html[data-motion='still'] .site-shell .reading-progress-bar {
+	transition: none !important;
+}
+
 /* Topic constellation */
 .constellation-line {
 	stroke: var(--color-accent);
@@ -1006,6 +1351,14 @@ html .article-breakout:fullscreen {
 		transform: none !important;
 		transition: none !important;
 	}
+	.ambient-field {
+		display: none !important;
+	}
+	.route-atmosphere {
+		animation: none !important;
+		opacity: 0.12;
+		transition: none;
+	}
 	.page-enter {
 		animation: none !important;
 	}
@@ -1027,10 +1380,38 @@ html .article-breakout:fullscreen {
 	.post-card:focus-visible {
 		transform: none !important;
 	}
+	.site-shell [class~='transition-transform'] {
+		transition: none !important;
+	}
+	.site-shell
+		:where(
+			[class*='hover:translate-'],
+			[class*='hover:-translate-'],
+			[class*='hover:scale-'],
+			[class*='hover:-scale-'],
+			[class*='hover:rotate-'],
+			[class*='hover:-rotate-']
+		) {
+		transform: none !important;
+		transition: none !important;
+	}
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none !important;
+	}
 }
 
 /* Preserve structure and keyboard location when Windows replaces authored colours. */
 @media (forced-colors: active) {
+	.route-atmosphere {
+		display: none !important;
+	}
+
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none !important;
+	}
+
 	body::before {
 		display: none;
 	}
@@ -1074,6 +1455,10 @@ html .article-breakout:fullscreen {
 	}
 }
 
+[data-theme='high-contrast'] .route-atmosphere {
+	display: none;
+}
+
 /* Skip link for accessibility */
 .skip-link {
 	position: absolute;
@@ -1111,6 +1496,15 @@ html .article-breakout:fullscreen {
 
 	body::before {
 		display: none !important;
+	}
+
+	.route-atmosphere {
+		display: none !important;
+	}
+
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none !important;
 	}
 
 	main#main-content,

@@ -3,6 +3,7 @@
 	import { resolve } from '$app/paths';
 	import CommandPalette from '$lib/components/layout/CommandPalette.svelte';
 	import ThemeSelect from '$lib/components/layout/ThemeSelect.svelte';
+	import MotionSelect from '$lib/components/motion/MotionSelect.svelte';
 	import { substackLinks } from '$lib/config/links';
 
 	type NavigationItem = {
@@ -136,6 +137,10 @@
 				<ThemeSelect id="desktop-theme" />
 			</div>
 
+			<div class="hidden lg:block">
+				<MotionSelect id="desktop-motion" />
+			</div>
+
 			<details bind:this={mobileMenu} class="group lg:hidden">
 				<summary
 					bind:this={menuSummary}
@@ -207,6 +212,9 @@
 						</li>
 						<li class="mt-2 sm:col-span-2">
 							<ThemeSelect id="mobile-theme" variant="menu" />
+						</li>
+						<li class="sm:col-span-2">
+							<MotionSelect id="mobile-motion" variant="menu" />
 						</li>
 					</ul>
 				</nav>

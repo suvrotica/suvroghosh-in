@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import type { Attachment } from 'svelte/attachments';
 
 	type Props = {
 		slug: string;
@@ -13,9 +14,19 @@
 	const imageSrc = $derived(`${base}/wordcloud/${encodeURIComponent(slug)}.svg`);
 	const visible = $derived(Boolean(slug) && missingSlug !== slug);
 
-	function hideMissingImage() {
-		missingSlug = slug;
-	}
+	const watchImageFailure: Attachment<HTMLImageElement> = (image) => {
+		const hideMissingImage = () => {
+			missingSlug = slug;
+		};
+
+		image.addEventListener('error', hideMissingImage);
+
+		if (image.complete && image.naturalWidth === 0) {
+			hideMissingImage();
+		}
+
+		return () => image.removeEventListener('error', hideMissingImage);
+	};
 </script>
 
 {#if visible}
@@ -27,7 +38,7 @@
 				alt={`Word cloud for ${title}`}
 				loading="lazy"
 				decoding="async"
-				onerror={hideMissingImage}
+				{@attach watchImageFailure}
 			/>
 		</figure>
 	</section>
