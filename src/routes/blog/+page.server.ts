@@ -4,6 +4,7 @@ import { isSectionSlug } from '$lib/content/sections';
 import { getPostSearchFacets, getPublishedPosts } from '$lib/server/content/posts';
 import { searchPublishedPosts, type PostSearchSort } from '$lib/server/content/search';
 import { paginate, parsePageNumber } from '$lib/content/pagination';
+import { getComicEpisodeMetadata } from '$lib/server/comics/catalog';
 
 const searchSorts = new Set<PostSearchSort>(['relevance', 'newest', 'oldest']);
 
@@ -24,6 +25,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		? await searchPublishedPosts({ query: search, section, category, tag, year, sort })
 		: getPublishedPosts();
 	const paginated = paginate(matchingPosts, requestedPage);
+	const comic = getComicEpisodeMetadata();
 
 	return {
 		posts: paginated.items,
@@ -37,6 +39,13 @@ export const load: PageServerLoad = async ({ url }) => {
 		page: paginated.page,
 		totalResults: paginated.totalItems,
 		totalPages: paginated.totalPages,
-		facets: getPostSearchFacets()
+		facets: getPostSearchFacets(),
+		comic: {
+			title: comic.title,
+			description: comic.description,
+			href: comic.canonicalPath,
+			pageCount: comic.storyPageCount,
+			published: comic.published
+		}
 	};
 };

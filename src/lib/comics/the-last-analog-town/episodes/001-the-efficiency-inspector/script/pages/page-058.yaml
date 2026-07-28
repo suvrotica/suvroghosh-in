@@ -1,0 +1,742 @@
+page: 58
+title: 'Provisionally existent'
+purpose: 'Resolve the utility contradiction through bounded hybrid procedure
+  rather than influence or sabotage.'
+location: golmohar-municipal-hall
+time: pre-dawn
+layout: 'Six-step resolution: source separation, reasoned attestation, physical
+  confirmation, provisional category, accessible appeal and timed restoration.'
+panelCount: 6
+dialogueGoal: 'Show a fast decision that remains attributable, time-limited,
+  correctable and open to review.'
+pageTurn: 'The server restarts with uncertainty visible instead of hidden.'
+visualMotif: 'Seven conflicting property records supporting one temporary bridge
+  rather than one false merge.'
+continuity:
+  - 'The exception records reason, responsible humans, physical evidence, expiry
+    and appeal trail.'
+  - 'The seven Hall property sources remain distinct.'
+  - 'Vale opens human recourse without the impossible post-submission complaint
+    number.'
+panels:
+  - id: p58-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide evidence-table view beside the utility point'
+    location: golmohar-municipal-hall
+    time: pre-dawn
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: disciplined confidence,
+          pose: 'Arranging seven property records as sources around one occupied-site
+            pane',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: source preservation,
+          pose: 'Holding each record on its own rail',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: formal scrutiny,
+          pose: 'Checking that no false merge occurs',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: practical readiness,
+          pose: 'Holding the red ledger open for attestation',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        vale-silver-tablet,
+        municipal-red-ledger,
+        waterproof-document-tube
+      ]
+    foreground: 'Seven blank records remain visibly separate.'
+    middleGround: 'A central occupied-site case references all seven without replacing them.'
+    background: 'The isolation lever remains down.'
+    action: 'Riju submits conflicting property records as provenance rather than
+      forcing one property identity.'
+    dialogue:
+      - id: p58-01-d01
+        speaker: riju-dhar
+        text: 'Seven sources, one site. I kept them separate.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.45,
+            y: 0.012,
+            width: 0.30,
+            height: 0.075,
+            z: 10,
+            tailTarget: { x: 0.37, y: 0.19557023663591738 },
+            tailDirection: left,
+            fontScale: 0.58,
+            manualBreaks: [ "Seven sources, one site. I kept them separate." ]
+          }
+      - id: p58-01-d02
+        speaker: director-vale
+        text: 'Evidence, not merger.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.80,
+            y: 0.56,
+            width: 0.18,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.85, y: 0.06320946995588142 },
+            tailDirection: none,
+            fontScale: 0.58,
+            manualBreaks: [ 'Evidence,', 'not merger.' ]
+          }
+    continuity:
+      [
+        'All seven sources remain intact.',
+        'The occupied-site case is provisional.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool pre-dawn and warm evidence lamps at the utility point.',
+        palette: 'Paper cream, moss, municipal red, graphite, silver and cream enamel.',
+        composition: 'Seven records ring a central occupied-site pane; four principals
+          form an outer audit ring; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.23-0.73, y 0.03-0.22',
+            'lower-right: x 0.63-0.99, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Seven property records remain separate around one occupied-site case.',
+        description: 'Riju arranges seven blank Hall records around a central
+          physical-site pane. Cecil keeps every source on its own rail, while
+          Vale accepts the group as evidence rather than a forced merger.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-058/p58-01__r1.png,
+        final: panels/approved/page-058/p58-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p58-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Close side view of Ila making the emergency attestation'
+    location: golmohar-municipal-hall
+    time: pre-dawn
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre,
+          emotion: accountable resolve,
+          pose: 'Writing the need, scope, expiry and review time in the red ledger',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: procedural attention,
+          pose: "Witnessing rather than replacing Ila's authority",
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: careful support,
+          pose: 'Adding the utility order source beside the attestation',
+          facing: right
+        }
+    props: [ municipal-red-ledger, vale-silver-tablet, waterproof-document-tube ]
+    foreground: 'Attestation and utility order remain separate documents.'
+    middleGround: 'Ila states the emergency reason and limits in public view.'
+    background: 'The crew waits within hearing distance.'
+    action: 'Ila issues a reasoned emergency attestation with an expiry and review
+      date.'
+    dialogue:
+      - id: p58-02-d01
+        speaker: ila-dastidar
+        text: 'Site stays open till noon. Property review at ten.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.35,
+            y: 0.012,
+            width: 0.425,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.55, y: 0.46031286894923257 },
+            tailDirection: down,
+            fontScale: 0.68,
+            manualBreaks: [ 'Site stays open till noon.', 'Property review at ten.' ]
+          }
+    continuity:
+      [
+        'Attestation has reason, author, expiry and review.',
+        'Ila does not rely on private influence.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm ledger light against cool pre-dawn doorway.',
+        palette: 'Municipal red, paper cream, graphite, silver and moss.',
+        composition: 'Ledger and separate utility order anchor the public attestation;
+          reserve upper-centre.',
+        balloonSafeAreas: [ 'upper-centre: x 0.22-0.90, y 0.02-0.24' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila issues a time-limited emergency attestation for the occupied site.',
+        description: 'Ila writes the public need, expiry and review time in the red
+          ledger while Riju keeps the utility order separate and Vale witnesses
+          the bounded decision.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-058/p58-02__r1.png,
+        final: panels/approved/page-058/p58-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p58-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Physical inspection view from the utility meter towards the occupied Hall'
+    location: golmohar-municipal-hall
+    time: pre-dawn
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: field verification,
+          pose: 'Observing the meter, occupied rooms and server cable route',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: site measurement,
+          pose: 'Recording structure, meter and active public use',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: cautious relief,
+          pose: 'Holding the seven-source case without instructing the crew',
+          facing: right
+        }
+    props: [ vale-silver-tablet, cecil-stamp-arm, waterproof-document-tube ]
+    foreground: 'A utility crew member physically checks the meter and cable.'
+    middleGround: 'Cecil records the occupied rooms and public counter.'
+    background: 'Residents and staff visibly use the old Hall.'
+    action: 'The crew confirms that the disputed property physically exists and is
+      occupied.'
+    dialogue:
+      - id: p58-03-d01
+        speaker: cecil-c17
+        text: 'Site observed. Structure, meter and public use confirmed.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.37,
+            y: 0.012,
+            width: 0.24,
+            height: 0.235,
+            z: 10,
+            tailTarget: { x: 0.49, y: 0.3280224321133412 },
+            tailDirection: down,
+            fontScale: 0.58,
+            manualBreaks: [ 'Site observed.', 'Structure,', 'meter and public', 'use confirmed.' ]
+          }
+      - id: p58-03-d02
+        speaker: director-vale
+        text: 'I''ve attached it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.83,
+            y: 0.59,
+            width: 0.158,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.85, y: 0.03698347107438016 },
+            tailDirection: up,
+            fontScale: 0.58,
+            manualBreaks: [ "I've", 'attached', 'it.' ]
+          }
+    continuity:
+      [
+        'Physical confirmation comes from the crew and Cecil.',
+        'The disputed identifiers remain unresolved.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool pre-dawn with utility work lamps on meter and cable.',
+        palette: 'Brick red, plaster cream, utility yellow, graphite and cream enamel.',
+        composition: 'Meter foreground links occupied Hall background through visible
+          cable route; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.27-0.86, y 0.03-0.22',
+            'lower-right: x 0.62-0.98, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The utility crew physically confirms the Hall, meter and public use.',
+        description: 'A crew member checks the meter and cable while Cecil records the
+          occupied rooms and open public counter. Vale attaches the physical
+          observation to the unresolved property case.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-058/p58-03__r1.png,
+        final: panels/approved/page-058/p58-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p58-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Comic close view of Cecil stamping the old wall'
+    location: golmohar-municipal-hall
+    time: pre-dawn
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: provisional certainty,
+          pose: 'Applying a blank temporary stamp substrate to the wall beside seven
+            undersized forms',
+          facing: front
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: dry approval,
+          pose: 'Holding all seven forms while none has room',
+          facing: right
+        }
+    props: [ cecil-stamp-arm, municipal-red-ledger ]
+    foreground: 'Seven property forms overlap without containing the full building.'
+    middleGround: 'Cecil stamps the physical wall as the one substrate large enough.'
+    background: "The wall's old plaster is visibly uneven."
+    action: 'Cecil classifies the building as provisionally existent pending
+      correction.'
+    dialogue:
+      - id: p58-04-d01
+        speaker: cecil-c17
+        text: 'Provisionally existent pending property correction.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.27,
+            y: 0.012,
+            width: 0.70,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.41, y: 0.4338547815820543 },
+            tailDirection: down,
+            fontScale: 0.80,
+            manualBreaks: [ 'Provisionally existent', 'pending property correction.' ]
+          }
+      - id: p58-04-d02
+        speaker: ila-dastidar
+        text: 'The wall will take it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.02,
+            y: 0.72,
+            width: 0.28,
+            height: 0.155,
+            z: 10,
+            tailTarget: { x: 0.16, y: 0.14281582054309333 },
+            tailDirection: none,
+            fontScale: 0.65,
+            manualBreaks: [ 'The wall will', 'take it.' ]
+          }
+    visualJoke: 'No form can contain all seven identities, so Cecil stamps the
+      building itself.'
+    continuity:
+      [
+        'Stamp text is a deterministic overlay.',
+        'The wall remains visibly uneven for page 62.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm work light on old plaster, paper edges and stamp arm.',
+        palette: 'Plaster cream, municipal red, cream enamel, uncertainty amber and
+          graphite.',
+        composition: 'Seven small forms frame one broad wall-stamp action; reserve
+          upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.24-0.96, y 0.03-0.21',
+            'lower-left: x 0.03-0.38, y 0.73-0.92'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil stamps the Hall wall because no property form can contain all seven
+          identities.',
+        description: 'Seven overlapping forms are too small to represent the whole
+          building. Cecil applies the provisional status to a blank substrate on
+          the actual uneven wall while Ila holds the conflicting records.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-058/p58-04__r1.png,
+        final: panels/approved/page-058/p58-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p58-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Frontal view of Vale opening the appeal before the blank number field'
+    location: golmohar-municipal-hall
+    time: pre-dawn
+    characters:
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: procedural correction,
+          pose: 'Opening a human appeal pane beside the empty complaint-number field',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: attentive relief,
+          pose: 'Linking the seven sources and physical observation to the appeal',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: testing scepticism,
+          pose: 'Checking that the intake is available before a number',
+          facing: right
+        }
+    props:
+      [
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        municipal-red-ledger,
+        grievance-token-drum
+      ]
+    foreground: 'The complaint-number field remains empty.'
+    middleGround: 'A human appeal is visibly open before number generation.'
+    background: 'The utility crew can see the reason, evidence and expiry.'
+    action: 'Vale corrects the circular grievance route and opens recourse at the
+      point of harm.'
+    dialogue:
+      - id: p58-05-d01
+        speaker: ila-dastidar
+        text: 'Complaint first?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.012,
+            width: 0.18,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.13, y: 0.24864817001180642 },
+            tailDirection: down,
+            fontScale: 0.65,
+            manualBreaks: [ 'Complaint first?' ]
+          }
+      - id: p58-05-d02
+        speaker: director-vale
+        text: 'The appeal''s open.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.592,
+            y: 0.012,
+            width: 0.18,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.84, y: 0.16927390791027158 },
+            tailDirection: right,
+            fontScale: 0.58,
+            manualBreaks: [ The appeal's open. ]
+          }
+    visualJoke: 'The new complaint route performs the radical act of accepting a
+      complaint first.'
+    continuity:
+      [
+        'Human appeal is open without a prior number.',
+        'Source, reason and expiry are visible to the crew.'
+      ]
+    prompt:
+      {
+        lighting: 'Balanced pre-dawn and interface light with the empty number field
+          subdued.',
+        palette: 'Graphite, silver, moss, municipal red and uncertainty amber.',
+        composition: 'Open appeal pane sits before empty number field; Ila tests from
+          left and Vale authorises from right; reserve upper-right and
+          lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.42-0.97, y 0.03-0.22',
+            'lower-left: x 0.03-0.49, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale opens the human appeal before any complaint number exists.',
+        description: 'The complaint-number field remains empty while Vale opens a
+          separate human appeal pane. Riju attaches the seven sources and
+          physical inspection, and Ila confirms that intake now comes before
+          numbering.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-058/p58-05__r1.png,
+        final: panels/approved/page-058/p58-05__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p58-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low wide shot as the isolation lever rises and server restarts'
+    location: golmohar-municipal-hall
+    time: pre-dawn
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: restrained hope,
+          pose: 'Watching the terminal restart with amber uncertainty panes',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: vigilant relief,
+          pose: 'Holding the signed exception open for public view',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: formal satisfaction,
+          pose: 'Recording the timed restoration and appeal trail',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: power recovery,
+          pose: 'Status light brightening without changing colour',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        municipal-red-ledger,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        server-closet-table-fan
+      ]
+    foreground: 'The crew raises the physical isolation lever.'
+    middleGround: 'Server lights return with amber unresolved states visible among
+      green ones.'
+    background: 'The table fan begins turning; the public counter remains occupied.'
+    action: 'Power is restored under the recorded, time-limited exception.'
+    dialogue:
+      - id: p58-06-d01
+        speaker: riju-dhar
+        text: 'Better.'
+        style: speech
+        readingOrder: 1
+        narrationOrder: 3
+        balloon:
+          {
+            x: 0.43,
+            y: 0.012,
+            width: 0.17,
+            height: 0.085,
+            z: 10,
+            tailTarget: { x: 0.48, y: 0.22204238997192452 },
+            tailDirection: down,
+            fontScale: 0.90,
+            manualBreaks: [ 'Better.' ]
+          }
+      - id: p58-06-d02
+        speaker: cecil-c17
+        text: 'Power restored. Unresolved states retained.'
+        style: robot
+        readingOrder: 2
+        narrationOrder: 4
+        balloon:
+          {
+            x: 0.73,
+            y: 0.012,
+            width: 0.25,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.84, y: 0.5132360766680036 },
+            tailDirection: down,
+            fontScale: 0.82,
+            manualBreaks: [ 'Power restored.', 'Unresolved states retained.' ]
+          }
+    soundEffects:
+      - {
+          text: 'THUNK',
+          description: 'The isolation lever locks into the restored position.',
+          narrationOrder: 1,
+          position: { x: 0.16, y: 0.61, z: 8 }
+        }
+      - {
+          text: 'WHRRR',
+          description: 'The server-cupboard table fan starts turning again.',
+          narrationOrder: 2,
+          position: { x: 0.82, y: 0.74, z: 7 }
+        }
+    continuity:
+      [
+        'Restoration has reason, evidence, responsible humans, expiry and
+          appeal trail.',
+        'Uncertainty is visible after restart.'
+      ]
+    prompt:
+      {
+        lighting: 'Pre-dawn light mixed with returning server glow and amber unresolved
+          panes.',
+        palette: 'Muted blue, uncertainty amber, ledger green, municipal red, graphite
+          and cream enamel.',
+        composition: 'Rising lever leads to servers with mixed green and amber states;
+          public exception remains visible; reserve upper-right and
+          lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.58-0.98, y 0.03-0.21',
+            'lower-centre: x 0.29-0.52, y 0.73-0.91'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Power returns with unresolved states still visible.',
+        description: 'The utility lever rises, the server cupboard relights and the
+          table fan starts. Amber unresolved panes remain among green ones while
+          Ila displays the signed exception and Vale records its expiry and
+          appeal trail.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-058/p58-06__r1.png,
+        final: panels/approved/page-058/p58-06__r1.png,
+        width: 1672,
+        height: 941
+      }

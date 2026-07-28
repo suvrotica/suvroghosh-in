@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 33</title>
+	<desc id="description">Begin the failure cascade with a small case directly linked to Riju&apos;s default.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p33-01">
+<clipPath id="clip-p33-01"><rect x="48" y="58" width="1504" height="639.5020080321285" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="639.5020080321285" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-033/p33-01__r1.png" x="48" y="58" width="1504" height="639.5020080321285" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p33-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p33-01-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 957.4434294247133 140.18399071807488 Q 949.3472 148.68138473895584 940.7744 149.19298634538154 Q 949.3472 148.68138473895584 958.3965705752867 156.15557554698535 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-01-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="957.92" y="89.97510040160643" width="466.24" height="89.530281124498" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="975.92" y="146.53944096385544" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="975.92" dy="0">It needs a parcel number.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p33-01-d02" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 368.56653022367897 269.09509158198216 Q 374.66880000000003 254.71081767068273 385.648 246.84494297188755 Q 374.66880000000003 254.71081767068273 359.113469776321 256.18619355858004 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-01-d02" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="93.12" y="262.6406425702811" width="541.4399999999999" height="89.530281124498" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="111.12" y="319.2049831325301" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="111.12" dy="0">The patient needs medicine.</tspan></text>
+<rect x="48" y="58" width="1504" height="639.5020080321285" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p33-02">
+<clipPath id="clip-p33-02"><rect x="48" y="721.5020080321285" width="740" height="419.5314591700134" rx="6"/></clipPath>
+<rect x="48" y="721.5020080321285" width="740" height="419.5314591700134" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-033/p33-02__r1.png" x="48" y="721.5020080321285" width="740" height="419.5314591700134" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p33-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p33-02-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 169.5393669871746 790.2587720877028 Q 178.018 794.6682945113789 178.60999999999999 799.82853145917 Q 178.018 794.6682945113789 185.4606330128254 788.6734367476387 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-02-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="177.5" y="742.4785809906292" width="296" height="58.73440428380189" rx="29.367202141900943" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="195.5" y="778.9149831325301" font-family="Arial,'Noto Sans',sans-serif" font-size="16.439999999999998" fill="#111"><tspan x="195.5" dy="0">The map has found the pond.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p33-02-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 588.2997810331346 875.4821368391049 Q 595.896 870.3517697456493 599.818 872.3235676037483 Q 595.896 870.3517697456493 595.5002189668653 861.1939006441614 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-02-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="425.40000000000003" y="868.3380187416332" width="333" height="62.92971887550201" rx="31.464859437751006" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="443.40000000000003" y="897.4480781793842" font-family="Arial,'Noto Sans',sans-serif" font-size="16.82" fill="#111"><tspan x="443.40000000000003" dy="0">And misplaced everyone beside</tspan><tspan x="443.40000000000003" dy="19.174799999999998">it.</tspan></text>
+<rect x="48" y="721.5020080321285" width="740" height="419.5314591700134" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p33-03">
+<clipPath id="clip-p33-03"><rect x="812" y="721.5020080321285" width="740" height="419.5314591700134" rx="6"/></clipPath>
+<rect x="812" y="721.5020080321285" width="740" height="419.5314591700134" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-033/p33-03__r1.png" x="812" y="721.5020080321285" width="740" height="419.5314591700134" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p33-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p33-03-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 1150.0196366289424 886.7167145364738 Q 1163.5 876.3510696117805 1172.972 869.5127068273092 Q 1163.5 876.3510696117805 1147.3803633710577 870.9358959052934 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-03-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="967.4" y="878.8263052208836" width="518" height="75.51566265060241" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="985.4" y="913.4313365461848" font-family="Arial,'Noto Sans',sans-serif" font-size="22.52" fill="#111"><tspan x="985.4" dy="0">I can find the person. That doesn&apos;t</tspan><tspan x="985.4" dy="25.6728">mean your system can.</tspan></text>
+<rect x="812" y="721.5020080321285" width="740" height="419.5314591700134" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p33-04">
+<clipPath id="clip-p33-04"><rect x="48" y="1165.033467202142" width="845.7142857142858" height="479.46452476572966" rx="6"/></clipPath>
+<rect x="48" y="1165.033467202142" width="845.7142857142858" height="479.46452476572966" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-033/p33-04__r2.png" x="48" y="1165.033467202142" width="845.7142857142858" height="479.46452476572966" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p33-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p33-04-d01" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 239.52058160908075 1268.0772742558095 Q 252.66285714285715 1283.5570977242303 258.2445714285715 1301.345231593039 Q 252.66285714285715 1283.5570977242303 254.81084696234785 1263.3647605500807 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-04-d01" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="90.28571428571429" y="1189.0066934404285" width="448.2285714285715" height="76.71432396251674" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="108.28571428571429" y="1224.177455421687" font-family="Arial,'Noto Sans',sans-serif" font-size="22.76" fill="#111"><tspan x="108.28571428571429" dy="0">The medicine arrived. The</tspan><tspan x="108.28571428571429" dy="25.9464">account says it escaped.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p33-04-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 565.3721339682388 1238.7812879548285 Q 546.1257142857144 1289.2627255689426 519.9085714285716 1335.8187309236948 Q 546.1257142857144 1289.2627255689426 579.3135803174755 1246.632152473552 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-04-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="572.3428571428572" y="1189.0066934404285" width="296" height="67.12503346720216" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="590.3428571428572" y="1219.9876101740297" font-family="Arial,'Noto Sans',sans-serif" font-size="18.439999999999998" fill="#111"><tspan x="590.3428571428572" dy="0">I can correct the</tspan><tspan x="590.3428571428572" dy="21.021599999999996">address.</tspan></text>
+<rect x="48" y="1165.033467202142" width="845.7142857142858" height="479.46452476572966" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p33-05">
+<clipPath id="clip-p33-05"><rect x="917.7142857142858" y="1165.033467202142" width="634.2857142857143" height="479.46452476572966" rx="6"/></clipPath>
+<rect x="917.7142857142858" y="1165.033467202142" width="634.2857142857143" height="479.46452476572966" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-033/p33-05__r1.png" x="917.7142857142858" y="1165.033467202142" width="634.2857142857143" height="479.46452476572966" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p33-05)"/>
+<rect class="comic-balloon" data-dialogue-id="p33-05-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="1323.6571428571428" y="1179.417402945114" width="209.31428571428575" height="115.07148594377512" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1341.6571428571428" y="1211.7371459170015" font-family="Arial,'Noto Sans',sans-serif" font-size="19.7" fill="#111"><tspan x="1341.6571428571428" dy="0">One source</tspan><tspan x="1341.6571428571428" dy="22.458">link, then</tspan><tspan x="1341.6571428571428" dy="22.458">deliveries</tspan><tspan x="1341.6571428571428" dy="22.458">start again.</tspan></text>
+<rect x="917.7142857142858" y="1165.033467202142" width="634.2857142857143" height="479.46452476572966" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p33-06">
+<clipPath id="clip-p33-06"><rect x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" rx="6"/></clipPath>
+<rect x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-033/p33-06__r1.png" x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p33-06)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p33-06-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 877.7594962247821 1782.0091324392204 Q 843.7664 1788.724369477912 809.9264000000001 1787.5093156626508 Q 843.7664 1788.724369477912 877.152503775218 1797.997614548732 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-06-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="574.4" y="1700.473092369478" width="466.24" height="89.530281124498" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="592.4" y="1757.0374329317272" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="592.4" dy="0">I corrected one address.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p33-06-d02" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 434.36463515191144 1970.1460843014142 Q 434.37760000000003 1961.5817622489963 437.0848 1960.4306586345383 Q 434.37760000000003 1961.5817622489963 428.6753648480885 1955.1917470238873 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p33-06-d02" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="93.12" y="1962.6689156626508" width="676.8000000000001" height="95.92530120481928" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="111.12" y="2021.9491662650603" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="111.12" dy="0">You changed one household everywhere.</tspan></text>
+<rect x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">33</text>
+</svg>

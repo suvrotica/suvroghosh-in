@@ -9,6 +9,7 @@ import {
 	getPublishedTopics
 } from '$lib/server/content/posts';
 import { getTopicHeadquartersSummaries } from '$lib/server/content/topic-headquarters';
+import { getComicEpisodeMetadata, getComicSeriesSource } from '$lib/server/comics/catalog';
 
 export const prerender = true;
 
@@ -92,6 +93,15 @@ export async function GET() {
 			const lastModified = post.dateModified ?? post.date;
 			return new Date(lastModified).getTime() > new Date(latest).getTime() ? lastModified : latest;
 		}, '1970-01-01');
+	const comicSeries = getComicSeriesSource();
+	const comicEpisode = getComicEpisodeMetadata();
+	const comicPages = [
+		{ url: siteUrl + comicSeries.routes.category, lastMod: comicEpisode.dateModified },
+		{ url: siteUrl + comicSeries.routes.series, lastMod: comicEpisode.dateModified },
+		...(comicEpisode.published
+			? [{ url: siteUrl + comicEpisode.canonicalPath, lastMod: comicEpisode.dateModified }]
+			: [])
+	];
 
 	const pages = [
 		{ url: siteUrl + '/', lastMod: blogLastMod },
@@ -117,6 +127,7 @@ export async function GET() {
 		...months,
 		...topics,
 		...headquartersPages,
+		...comicPages,
 		...categories,
 		...posts
 	];

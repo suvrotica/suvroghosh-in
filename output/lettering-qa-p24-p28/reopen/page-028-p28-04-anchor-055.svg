@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 28</title>
+	<desc id="description">Show the train-information improvement changing ordinary behaviour.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p28-01">
+<clipPath id="clip-p28-01"><rect x="48" y="58" width="1504" height="595.7284190106692" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="595.7284190106692" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../../src/lib/comics/the-last-analog-town/episodes/001-the-efficiency-inspector/panels/approved/page-028/p28-01__r1.png" x="48" y="58" width="1504" height="595.7284190106692" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p28-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p28-01-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 516.3155057491113 192.53775658246468 Q 521.3088 185.06887177497572 525.3696 185.60502735208536 Q 521.3088 185.06887177497572 518.1804942508888 176.6468214970697 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p28-01-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="517.248" y="150.33790494665374" width="248.16000000000003" height="68.50876818622696" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="535.248" y="182.3186890397672" font-family="Arial,'Noto Sans',sans-serif" font-size="16.24" fill="#111"><tspan x="535.248" dy="0">Not 12:14.</tspan><tspan x="535.248" dy="18.513599999999997">Use 12:10–12:20.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p28-01-d02" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1212.8597088439942 193.00914614011907 Q 1120.6527999999998 209.61288263821532 1027.7056 218.19137187196893 Q 1120.6527999999998 209.61288263821532 1214.340291156006 208.94049498500215 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p28-01-d02" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="true" x="1138.3999999999999" y="81.82913676042676" width="376" height="119.14568380213385" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1156.3999999999999" y="137.5603786614937" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="1156.3999999999999" dy="0">Less precise. More</tspan><tspan x="1156.3999999999999" dy="31.281599999999994">useful.</tspan></text>
+<rect x="48" y="58" width="1504" height="595.7284190106692" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p28-02">
+<clipPath id="clip-p28-02"><rect x="48" y="677.7284190106692" width="740" height="390.81474296799223" rx="6"/></clipPath>
+<rect x="48" y="677.7284190106692" width="740" height="390.81474296799223" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../../src/lib/comics/the-last-analog-town/episodes/001-the-efficiency-inspector/panels/approved/page-028/p28-02__r1.png" x="48" y="677.7284190106692" width="740" height="390.81474296799223" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p28-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p28-02-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 692.5780831930077 793.0828195235752 Q 690.32 806.2673879728418 682.5500000000001 813.6147051406401 Q 690.32 806.2673879728418 703.6019168069921 804.6791591379185 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p28-02-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="558.5999999999999" y="689.452861299709" width="214.6" height="109.42812803103783" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="576.5999999999999" y="727.6949253152279" font-family="Arial,'Noto Sans',sans-serif" font-size="23.2" fill="#111"><tspan x="576.5999999999999" dy="0">Now they know</tspan><tspan x="576.5999999999999" dy="26.447999999999997">they&apos;ve got</tspan><tspan x="576.5999999999999" dy="26.447999999999997">ten minutes.</tspan></text>
+<rect x="48" y="677.7284190106692" width="740" height="390.81474296799223" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p28-03">
+<clipPath id="clip-p28-03"><rect x="812" y="677.7284190106692" width="740" height="390.81474296799223" rx="6"/></clipPath>
+<rect x="812" y="677.7284190106692" width="740" height="390.81474296799223" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../../src/lib/comics/the-last-analog-town/episodes/001-the-efficiency-inspector/panels/approved/page-028/p28-03__r1.png" x="812" y="677.7284190106692" width="740" height="390.81474296799223" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p28-03)"/>
+<text x="1078.4" y="923.9417070805043" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">HUMM</text>
+<rect x="812" y="677.7284190106692" width="740" height="390.81474296799223" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p28-04">
+<clipPath id="clip-p28-04"><rect x="48" y="1092.5431619786614" width="1504" height="595.7284190106692" rx="6"/></clipPath>
+<rect x="48" y="1092.5431619786614" width="1504" height="595.7284190106692" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../../src/lib/comics/the-last-analog-town/episodes/001-the-efficiency-inspector/panels/approved/page-028/p28-04__r1.png" x="48" y="1092.5431619786614" width="1504" height="595.7284190106692" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p28-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p28-04-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 782.0736738467492 1188.9808330987398 Q 810.528 1306.4692372453926 832.9376000000001 1425.0191926285158 Q 810.528 1306.4692372453926 793.8623261532507 1186.738584941997 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p28-04-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="439.04" y="1104.4577303588749" width="436.15999999999997" height="83.4019786614937" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="457.04" y="1143.0227196896217" font-family="Arial,'Noto Sans',sans-serif" font-size="22.400000000000002" fill="#111"><tspan x="457.04" dy="0">Arrival falls within the</tspan><tspan x="457.04" dy="25.536">published range.</tspan></text>
+<rect x="48" y="1092.5431619786614" width="1504" height="595.7284190106692" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p28-05">
+<clipPath id="clip-p28-05"><rect x="48" y="1712.2715809893307" width="1504" height="595.7284190106692" rx="6"/></clipPath>
+<rect x="48" y="1712.2715809893307" width="1504" height="595.7284190106692" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../../src/lib/comics/the-last-analog-town/episodes/001-the-efficiency-inspector/panels/approved/page-028/p28-05__r1.png" x="48" y="1712.2715809893307" width="1504" height="595.7284190106692" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p28-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p28-05-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 398.6298267295045 2018.1990544029427 Q 408.8096 1950.5033757516974 426.55679999999995 1884.9136768186227 Q 408.8096 1950.5033757516974 383.1941732704956 2013.9870949666015 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p28-05-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="66.048" y="2016.093074684772" width="406.08000000000004" height="131.06025218234723" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="84.048" y="2063.7312007759456" font-family="Arial,'Noto Sans',sans-serif" font-size="25.2" fill="#111"><tspan x="84.048" dy="0">These records might</tspan><tspan x="84.048" dy="28.727999999999998">match. The counter will</tspan><tspan x="84.048" dy="28.727999999999998">let you decide.</tspan></text>
+<rect x="48" y="1712.2715809893307" width="1504" height="595.7284190106692" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">28</text>
+</svg>

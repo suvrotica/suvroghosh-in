@@ -23,6 +23,7 @@
 	let postNavigation = $derived(data.postNavigation);
 	let postTopics = $derived(data.postTopics ?? []);
 	let relatedPosts = $derived(data.relatedPosts ?? []);
+	let relatedComic = $derived(data.relatedComic);
 </script>
 
 <svelte:head>
@@ -255,7 +256,7 @@
 			<PostNavigation newer={postNavigation.newer} older={postNavigation.older} />
 		</div>
 
-		{#if relatedPosts.length > 0}
+		{#if relatedPosts.length > 0 || relatedComic}
 			<ScrollReveal delay={100}>
 				<section aria-labelledby="related-reading-heading" class="mt-12 print:hidden">
 					<h2
@@ -268,6 +269,25 @@
 						Selected by shared topics and section, with closer publication dates breaking ties.
 					</p>
 					<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+						{#if relatedComic}
+							<a
+								href={relatedComic.href}
+								class="group flex min-h-32 flex-col rounded-lg border border-[#a99777] bg-[#fff9e9] p-4 text-[#29241d] no-underline shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600"
+							>
+								<div class="mb-1 text-xs font-bold tracking-wider text-[#8e342d] uppercase">
+									{relatedComic.label}
+								</div>
+								<div class="font-semibold transition-colors group-hover:text-[#8e342d]">
+									{relatedComic.title}
+								</div>
+								<p class="mt-2 mb-0 line-clamp-2 text-left text-xs text-[#685d4d]">
+									{relatedComic.description}
+								</p>
+								<div class="mt-auto pt-3 text-xs leading-relaxed text-[#685d4d]">
+									Shared topics: {relatedComic.sharedTags.join(' · ')}
+								</div>
+							</a>
+						{/if}
 						{#each relatedPosts as post (post.slug)}
 							<a
 								href={resolve('/blog/[category]/[slug]', {

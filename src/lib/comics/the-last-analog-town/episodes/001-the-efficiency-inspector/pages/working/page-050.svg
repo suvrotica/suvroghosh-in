@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 50</title>
+	<desc id="description">Activate the Old Exchange as a fallback while exposing the limits of local social knowledge.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p50-01">
+<clipPath id="clip-p50-01"><rect x="48" y="58" width="1504" height="639.5020080321285" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="639.5020080321285" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-050/p50-01__r1.png" x="48" y="58" width="1504" height="639.5020080321285" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p50-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p50-01-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 371.67457557169644 309.0242470991903 Q 367.7504 288.4765236947791 371.6608 269.54726425702813 Q 367.7504 288.4765236947791 356.0054244283035 305.78731916587 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-01-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="93.12" y="307.40578313253013" width="541.4399999999999" height="95.92530120481928" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="111.12" y="351.8152337349398" font-family="Arial,'Noto Sans',sans-serif" font-size="25.38" fill="#111"><tspan x="111.12" dy="0">Clinic first.</tspan><tspan x="111.12" dy="28.933199999999996">Then the halt, buses and the Hall.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p50-01-d02" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 1172.4507691180534 567.5935759814392 Q 1226.0832 527.7142248995984 1283.8368 494.77987148594383 Q 1226.0832 527.7142248995984 1164.5092308819467 553.7035806450667 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-01-d02" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="732.32" y="544.0215261044177" width="436.15999999999997" height="83.13526104417672" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="750.32" y="581.9967566265061" font-family="Arial,'Noto Sans',sans-serif" font-size="25.66" fill="#111"><tspan x="750.32" dy="0">Clinic line&apos;s through.</tspan><tspan x="750.32" dy="29.252399999999998">Patient&apos;s stable.</tspan></text>
+<text x="769.92" y="441.7012048192771" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">KLAK</text>
+<rect x="48" y="58" width="1504" height="639.5020080321285" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p50-02">
+<clipPath id="clip-p50-02"><rect x="48" y="721.5020080321285" width="845.7142857142858" height="479.46452476572966" rx="6"/></clipPath>
+<rect x="48" y="721.5020080321285" width="845.7142857142858" height="479.46452476572966" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-050/p50-02__r1.png" x="48" y="721.5020080321285" width="845.7142857142858" height="479.46452476572966" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p50-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p50-02-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 487.76301932216586 867.495058332212 Q 436.85942857142857 855.8959143239625 380.8731428571429 846.2586773761714 Q 436.85942857142857 855.8959143239625 481.85983782069127 882.366253582112 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-02-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="369.3714285714286" y="874.930655957162" width="329.8285714285715" height="76.71432396251674" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="387.3714285714286" y="910.2330179384204" font-family="Arial,'Noto Sans',sans-serif" font-size="21.82" fill="#111"><tspan x="387.3714285714286" dy="0">It only becomes data if</tspan><tspan x="387.3714285714286" dy="24.874799999999997">I record who told me.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p50-02-d02" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 752.0135567758108 984.8218551411044 Q 741.4011428571429 930.8841659973226 738.864 876.5608353413655 Q 741.4011428571429 930.8841659973226 736.0321575099034 985.5931381654552 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-02-d02" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="690.7428571428572" y="985.2074966532798" width="152.22857142857143" height="47.94645247657297" rx="23.973226238286486" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="708.7428571428572" y="1018.1419228915663" font-family="Arial,'Noto Sans',sans-serif" font-size="20.84" fill="#111"><tspan x="708.7428571428572" dy="0">And when.</tspan></text>
+<rect x="48" y="721.5020080321285" width="845.7142857142858" height="479.46452476572966" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p50-03">
+<clipPath id="clip-p50-03"><rect x="917.7142857142858" y="721.5020080321285" width="634.2857142857143" height="479.46452476572966" rx="6"/></clipPath>
+<rect x="917.7142857142858" y="721.5020080321285" width="634.2857142857143" height="479.46452476572966" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-050/p50-03__r1.png" x="917.7142857142858" y="721.5020080321285" width="634.2857142857143" height="479.46452476572966" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p50-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p50-03-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1444.5435165702875 821.598021396315 Q 1447.2794285714285 854.8410923694779 1444.0445714285715 887.4926265060242 Q 1447.2794285714285 854.8410923694779 1456.4850548582845 822.7810950695485 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-03-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="1285.6000000000001" y="731.0912985274431" width="253.71428571428575" height="91.09825970548864" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1303.6000000000001" y="765.2662283801874" font-family="Arial,'Noto Sans',sans-serif" font-size="16.02" fill="#111"><tspan x="1303.6000000000001" dy="0">Incoming request.</tspan><tspan x="1303.6000000000001" dy="18.2628">Destination absent from</tspan><tspan x="1303.6000000000001" dy="18.2628">trusted-call list.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p50-03-d02" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 1084.7341773907733 949.9307361489365 Q 1074.8268571428573 942.1036358768407 1072.7337142857143 932.5622918340027 Q 1074.8268571428573 942.1036358768407 1069.1058226092268 953.3592236904209 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-03-d02" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="true" x="936.7428571428572" y="951.6449799196787" width="215.6571428571429" height="69.5223560910308" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="954.7428571428572" y="983.6453579651941" font-family="Arial,'Noto Sans',sans-serif" font-size="19.72" fill="#111"><tspan x="954.7428571428572" dy="0">I don&apos;t know</tspan><tspan x="954.7428571428572" dy="22.480799999999995">that lane.</tspan></text>
+<rect x="917.7142857142858" y="721.5020080321285" width="634.2857142857143" height="479.46452476572966" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p50-04">
+<clipPath id="clip-p50-04"><rect x="48" y="1224.9665327978582" width="740" height="419.5314591700134" rx="6"/></clipPath>
+<rect x="48" y="1224.9665327978582" width="740" height="419.5314591700134" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-050/p50-04__r1.png" x="48" y="1224.9665327978582" width="740" height="419.5314591700134" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p50-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p50-04-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 313.1108609577839 1421.3947181488506 Q 315.954 1396.8485716198127 326.018 1375.704186077644 Q 315.954 1396.8485716198127 298.66913904221605 1414.5072898832782 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-04-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="70.2" y="1417.9510040160644" width="362.59999999999997" height="71.32034805890228" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="88.2" y="1451.3515780455155" font-family="Arial,'Noto Sans',sans-serif" font-size="16.14" fill="#111"><tspan x="88.2" dy="0">Leave it unknown. I need two</tspan><tspan x="88.2" dy="18.3996">witnesses and a route I can check.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p50-04-d02" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 677.9665715216962 1543.5762540252945 Q 666.418 1422.5238969210175 662.866 1301.2373520749666 Q 666.418 1422.5238969210175 661.9734284783038 1544.0446295088423 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-04-d02" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="true" x="492" y="1543.8104417670684" width="273.8" height="69.22269076305221" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="510" y="1575.8177871485946" font-family="Arial,'Noto Sans',sans-serif" font-size="18.599999999999998" fill="#111"><tspan x="510" dy="0">My driver crossed that</tspan><tspan x="510" dy="21.203999999999997">footbridge yesterday.</tspan></text>
+<rect x="48" y="1224.9665327978582" width="740" height="419.5314591700134" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p50-05">
+<clipPath id="clip-p50-05"><rect x="812" y="1224.9665327978582" width="740" height="419.5314591700134" rx="6"/></clipPath>
+<rect x="812" y="1224.9665327978582" width="740" height="419.5314591700134" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-050/p50-05__r1.png" x="812" y="1224.9665327978582" width="740" height="419.5314591700134" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p50-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p50-05-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 1324.8004602114172 1293.1370560222344 Q 1338.732 1294.5248487282465 1347.464 1301.9925087014726 Q 1338.732 1294.5248487282465 1335.1995397885828 1280.977321487806 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-05-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="1056.2" y="1233.3571619812585" width="273.8" height="67.12503346720214" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1074.2" y="1264.3324787148597" font-family="Arial,'Noto Sans',sans-serif" font-size="18.48" fill="#111"><tspan x="1074.2" dy="0">I know it now. Doesn&apos;t</tspan><tspan x="1074.2" dy="21.0672">mean I always did.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p50-05-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1131.6972685055305 1542.6151082146607 Q 1127.758 1547.7959906291835 1125.316 1547.1666934404286 Q 1127.758 1547.7959906291835 1128.7027314944696 1554.2354674212165 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-05-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="true" x="834.2" y="1535.419812583668" width="296" height="65.02737617135207" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="852.2" y="1565.4303006693442" font-family="Arial,'Noto Sans',sans-serif" font-size="17.88" fill="#111"><tspan x="852.2" dy="0">Provisional destination</tspan><tspan x="852.2" dy="20.3832">accepted.</tspan></text>
+<rect x="812" y="1224.9665327978582" width="740" height="419.5314591700134" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p50-06">
+<clipPath id="clip-p50-06"><rect x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" rx="6"/></clipPath>
+<rect x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-050/p50-06__r1.png" x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p50-06)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p50-06-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 1145.8333399530654 1750.0402535050628 Q 1169.5328 1742.2965236947794 1193.1456 1742.6162746987955 Q 1169.5328 1742.2965236947794 1146.0066600469347 1734.0411922780702 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-06-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="574.4" y="1687.6830522088355" width="571.52" height="108.71534136546185" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="592.4" y="1738.4343228915664" font-family="Arial,'Noto Sans',sans-serif" font-size="25.76" fill="#111"><tspan x="592.4" dy="0">The utility crew&apos;s at the Hall.</tspan><tspan x="592.4" dy="29.3664">Their order is live.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p50-06-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 914.2392325416109 1958.0684697694721 Q 907.8367999999999 1955.3146425702814 907.3856000000001 1951.7973815261046 Q 907.8367999999999 1955.3146425702814 902.3367674583889 1959.595337459444 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p50-06-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="66.048" y="1892.3236947791167" width="842.2400000000001" height="102.32032128514057" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="84.048" y="1940.034255421687" font-family="Arial,'Noto Sans',sans-serif" font-size="24.64" fill="#111"><tspan x="84.048" dy="0">Audio coupling complete.</tspan><tspan x="84.048" dy="28.089599999999997">Packet transmitted by fabric-insulated route.</tspan></text>
+<rect x="48" y="1668.4979919678717" width="1504" height="639.5020080321285" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">50</text>
+</svg>

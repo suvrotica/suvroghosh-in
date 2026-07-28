@@ -1,0 +1,567 @@
+page: 8
+title: 'Turn left where the cinema used to be'
+purpose: 'Make landmark addresses simultaneously legible, useful and unsafe for
+  strangers.'
+location: junction-square
+time: late afternoon
+layout: 'Wide travelling opener, two comic navigation beats, a sober medium
+  reversal, and a busy wide address turn.'
+panelCount: 5
+dialogueGoal: 'Let Babul-da explain routes as social chains while Vale names the
+  real emergency cost.'
+pageTurn: 'Cecil discovers that a resident at the landmark exists as three
+  separate people.'
+visualMotif: 'A remembered landmark remaining fixed while the buildings around it change.'
+continuity:
+  - 'The route begins outside Municipal Hall and loops through lanes still
+    treated as the Junction Square location.'
+  - 'The old cinema is gone but remains the shared directional anchor.'
+  - 'The pond-road mismatch is visible and persists into later map and flood
+    sequences.'
+panels:
+  - id: p08-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Eye-level travelling wide shot along a narrow lane'
+    location: junction-square
+    time: late afternoon
+    characters:
+      - {
+          id: babul-courier,
+          position: foreground-left,
+          emotion: easy concentration,
+          pose: 'Walking the cycle van and pointing ahead with one hand',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-left,
+          emotion: attentive scepticism,
+          pose: 'Following with tablet angled towards the lane',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-right,
+          emotion: note-taking focus,
+          pose: 'Walking while balancing pencil and forms',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: route calculation,
+          pose: 'Rolling close to the driest edge',
+          facing: right
+        }
+    props:
+      [
+        babul-cycle-van,
+        babul-authoritative-bell,
+        vale-silver-tablet,
+        riju-form-satchel,
+        cecil-stamp-arm
+      ]
+    foreground: 'A lane widens around a tree and narrows again beside old plaster walls.'
+    middleGround: 'Babul-da leads the inspection as if following an invisible line.'
+    background: 'Three unrelated shopfronts occupy pieces of a former cinema
+      frontage; all sign areas remain blank.'
+    action: 'Babul-da begins translating a lived route into landmarks the Mission
+      cannot see.'
+    dialogue:
+      - id: p08-01-d01
+        speaker: babul-courier
+        text: 'Left where the cinema used to be.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.04,
+            y: 0.05,
+            width: 0.39,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.50 },
+            tailDirection: down,
+            fontScale: 0.95
+          }
+    visualJoke: 'The vanished cinema is the most stable object on the route.'
+    continuity:
+      [
+        'Cycle-van document tube remains strapped beneath the cargo-bed rail.',
+        'No shop lettering is generated.'
+      ]
+    prompt:
+      {
+        lighting: 'Long warm late-afternoon light broken by verandah shade.',
+        palette: 'Ochre, indigo, old plaster cream, moss green, graphite and dusty
+          blue.',
+        composition: 'Travelling procession reads left to right towards three blank
+          former-cinema fronts; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.45, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Babul-da guides the inspectors towards three shops where a cinema once
+          stood.',
+        description: 'Babul-da walks his cycle van through a lane that widens and
+          narrows around old structures. Vale, Riju and Cecil follow as he
+          directs them by a cinema now divided into three unrelated shops.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-008/p08-01__r1.png,
+        final: panels/approved/page-008/p08-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p08-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Frontal medium shot at the three-way former-cinema frontage'
+    location: junction-square
+    time: late afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: categorical impasse,
+          pose: 'Head rotating between three blank storefronts',
+          facing: front
+        }
+      - {
+          id: babul-courier,
+          position: right,
+          emotion: patient certainty,
+          pose: 'Resting both hands on the handlebars',
+          facing: left
+        }
+    props: [ babul-cycle-van, cecil-stamp-arm ]
+    foreground: 'Three painted arrows point towards three blank shop faces.'
+    middleGround: 'Cecil occupies the exact point where the arrows separate.'
+    background: 'Fragments of one old cinema arch survive above all three shops.'
+    action: 'Cecil asks which building now fulfils the landmark.'
+    dialogue:
+      - id: p08-02-d01
+        speaker: cecil-c17
+        text: 'Which one was the cinema?'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.05,
+            y: 0.05,
+            width: 0.39,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.43, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.96
+          }
+      - id: p08-02-d02
+        speaker: babul-courier
+        text: 'All of them.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.64,
+            y: 0.06,
+            width: 0.27,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.75, y: 0.49 },
+            tailDirection: down,
+            fontScale: 1
+          }
+    visualJoke: 'Three rival shops are united only by being one absent building.'
+    continuity:
+      [
+        "Cecil's shutters widen equally towards all three options.",
+        'Storefront lettering areas stay blank.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm frontage light with deep shop shade and a bright old arch.',
+        palette: 'Faded terracotta, cream, muted blue, cream enamel and ochre.',
+        composition: 'Three-way symmetry centred on Cecil, with Babul-da breaking it on
+          right; preserve upper corners.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.45, y 0.03-0.21',
+            'upper-right reserve: x 0.61-0.94, y 0.03-0.20'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil faces three shops that all occupy the former cinema.',
+        description: 'Three arrows point towards separate storefronts beneath fragments
+          of one old cinema arch. Cecil asks which shop was the cinema; Babul-da
+          answers that all three were.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-008/p08-02__r1.png,
+        final: panels/approved/page-008/p08-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p08-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Over-Babul medium view towards a pond hidden behind a mapped road'
+    location: junction-square
+    time: late afternoon
+    characters:
+      - {
+          id: babul-courier,
+          position: foreground-left,
+          emotion: factual calm,
+          pose: 'Pointing beyond a low wall with one broad hand',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: technical surprise,
+          pose: 'Comparing a blank map pane on his terminal with the view',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: sharpened attention,
+          pose: 'Looking over the tablet at the physical pond',
+          facing: left
+        }
+    props: [ babul-cycle-van, riju-reconciliation-terminal, vale-silver-tablet ]
+    foreground: 'A road edge ends at a low wall.'
+    middleGround: "Riju's blank map pane indicates a route continuing forwards."
+    background: 'A real pond occupies the mapped continuation.'
+    action: 'Babul-da reveals that the mapped road still contains a pond.'
+    dialogue:
+      - id: p08-03-d01
+        speaker: babul-courier
+        text: 'Then right before the road becomes water.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.27,
+            y: 0.03,
+            width: 0.44,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.22, y: 0.50 },
+            tailDirection: down,
+            fontScale: 0.93
+          }
+      - id: p08-03-d02
+        speaker: riju-dhar
+        text: 'The map says it stays a road.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.72,
+            y: 0.54,
+            width: 0.26,
+            height: 0.22,
+            z: 10,
+            tailTarget: { x: 0.49, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.95
+          }
+    continuity:
+      [
+        'The pond remains physically present for pages 17 and 19.',
+        'All map lines and labels are composited.'
+      ]
+    prompt:
+      {
+        lighting: 'Golden lane light over cooler green pond reflections.',
+        palette: 'Old plaster cream, pond green, moss vest, graphite and ochre.',
+        composition: 'Terminal and road line aim towards the contradictory pond;
+          preserve upper-left and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.52, y 0.03-0.22',
+            'lower-centre reserve: x 0.34-0.79, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Babul-da points to a pond where Riju's map continues a road.",
+        description: "A real pond lies beyond a low wall where Riju's blank digital map
+          shows the road continuing. Babul-da uses the transition from road to
+          water as an ordinary route instruction."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-008/p08-03__r1.png,
+        final: panels/approved/page-008/p08-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p08-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: "Tight sober two-shot beside Babul-da's van"
+    location: junction-square
+    time: late afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: serious concern,
+          pose: 'Holding the tablet inactive at their side',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: right,
+          emotion: reluctant gravity,
+          pose: 'Looking down with one hand on the document tube',
+          facing: left
+        }
+    props: [ vale-silver-tablet, waterproof-document-tube, babul-cycle-van ]
+    foreground: "The waterproof document tube rests beneath Babul-da's hand."
+    middleGround: 'Vale asks about emergency use without consulting their tablet.'
+    background: "The lane's turns blur behind them."
+    action: 'Babul-da admits that an unfamiliar ambulance once lost critical time.'
+    dialogue:
+      - id: p08-04-d01
+        speaker: director-vale
+        text: 'Could an ambulance follow that?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.34,
+            width: 0.42,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.29, y: 0.48 },
+            tailDirection: up,
+            fontScale: 0.96
+          }
+      - id: p08-04-d02
+        speaker: babul-courier
+        text: 'Not a new driver. Last time we lost eleven minutes.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.50,
+            y: 0.35,
+            width: 0.47,
+            height: 0.23,
+            z: 10,
+            tailTarget: { x: 0.72, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.86
+          }
+    continuity:
+      [
+        'The beat is played without visual comedy.',
+        "Babul-da's answer acknowledges a real cost of social routing."
+      ]
+    prompt:
+      {
+        lighting: 'Restrained warm side light with soft lane shadow.',
+        palette: 'Graphite, ochre, indigo, dark brown and muted cream.',
+        composition: 'Close opposed faces with document tube low; keep both upper
+          corners clear and background quiet.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.47, y 0.03-0.21',
+            'upper-right reserve: x 0.47-0.97, y 0.03-0.27'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Vale asks whether an ambulance could follow Babul-da's landmark route.",
+        description: 'Vale lowers their tablet and asks about emergency access. Babul-da
+          looks down and says that a new ambulance driver once lost eleven
+          minutes trying to follow the route.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-008/p08-04__r1.png,
+        final: panels/approved/page-008/p08-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p08-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide overhead-oblique shot of a lane junction and competing directions'
+    location: junction-square
+    time: late afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: saturated processing,
+          pose: 'Head turned between several pointing residents',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: fascinated concern,
+          pose: 'Trying to capture several routes on separate blank forms',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: analytical restraint,
+          pose: 'Holding the tablet without choosing a route',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: foreground-right,
+          emotion: unsurprised,
+          pose: 'Resting beside the cycle van',
+          facing: left
+        }
+    props: [ cecil-stamp-arm, riju-form-satchel, vale-silver-tablet, babul-cycle-van ]
+    foreground: 'Several anonymous hands point in directions that form a rough but
+      contradictory star.'
+    middleGround: 'Cecil stands at the centre while Riju captures each route separately.'
+    background: 'At the shared landmark, one resident is approached by three service
+      messengers.'
+    action: 'Residents supply different accurate routes as Cecil finds three digital
+      identities at the destination.'
+    dialogue:
+      - id: p08-05-d01
+        speaker: cecil-c17
+        text: 'The destination contains three residents.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.30,
+            y: 0.03,
+            width: 0.31,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.52, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.93
+          }
+      - id: p08-05-d02
+        speaker: babul-courier
+        text: 'One resident. Three offices.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.69,
+            y: 0.37,
+            width: 0.28,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.79, y: 0.58 },
+            tailDirection: up,
+            fontScale: 0.96
+          }
+    visualJoke: 'The directions disagree less than the three official identities
+      waiting at the end.'
+    continuity:
+      [
+        "The three-identity resident becomes page 9's demonstration case.",
+        'Anonymous pointing figures have no political or cultural stereotype
+          coding.'
+      ]
+    prompt:
+      {
+        lighting: 'Late golden light creating long directional shadows.',
+        palette: 'Dusty cream, moss green, graphite, ochre, indigo and muted blue.',
+        composition: 'Pointing hands form a visual star around Cecil; destination and
+          three messengers sit deep background; preserve top-centre and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.30-0.76, y 0.03-0.22',
+            'lower-right reserve: x 0.59-0.97, y 0.74-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Conflicting pointing hands surround Cecil as one resident has three
+          official identities.',
+        description: 'Several residents point along different but workable routes while
+          Cecil stands at their centre. Riju records each route, and three
+          official messengers approach the same person at the shared landmark.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-008/p08-05__r1.png,
+        final: panels/approved/page-008/p08-05__r1.png,
+        width: 1672,
+        height: 941
+      }

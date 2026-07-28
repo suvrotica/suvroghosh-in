@@ -1,0 +1,569 @@
+page: 52
+title: 'The building that cannot owe money'
+purpose: 'Trigger the peak failure through the same address logic that harmed
+  residents.'
+location: golmohar-municipal-hall
+time: night
+layout: 'Wide procedural confrontation, a seven-record insert, two jurisdiction
+  deadlocks, and a disconnection turn.'
+panelCount: 5
+dialogueGoal: 'Keep the utility crew humane and procedural while the circular
+  grievance rule returns at civic scale.'
+pageTurn: 'The valid disconnection order executes.'
+visualMotif: 'Seven valid building identities surrounding one property account
+  that cannot attach to any of them.'
+continuity:
+  - 'Reuse the Hall property identities from page 6, map conflict from page 19
+    and circular complaint rule from page 7.'
+  - 'The utility order is valid under its approved records.'
+  - 'Riju, Vale, Cecil and Ila cannot produce an authorised property category
+    before execution.'
+panels:
+  - id: p52-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide confrontation at the generator shed and server-cupboard junction'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: urgent restraint,
+          pose: 'Presenting the waterproof evidence tube without obstructing the crew',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: formal urgency,
+          pose: 'Holding Mission credentials beside the order device',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: quiet fury,
+          pose: 'Opening the red ledger to the building accounts',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: order validation,
+          pose: 'Reading the blank disconnection order',
+          facing: left
+        }
+    props:
+      [
+        waterproof-document-tube,
+        vale-silver-tablet,
+        municipal-red-ledger,
+        cecil-stamp-arm,
+        server-closet-table-fan
+      ]
+    foreground: 'The utility crew stands inside the building beside the live
+      isolation lever.'
+    middleGround: 'Riju, Vale and Ila present evidence while leaving the crew
+      physical room to work.'
+    background: 'The server cupboard continues running behind a grille.'
+    action: 'The crew explains that the server account cannot attach to a property
+      the utility database recognises.'
+    dialogue:
+      - id: p52-01-d01
+        speaker: cecil-c17
+        text: 'Disconnection order is valid.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.39,
+            y: 0.54,
+            width: 0.28,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.68, y: 0.57 },
+            tailDirection: right,
+            fontScale: 0.98,
+            manualBreaks: [ 'Disconnection order is valid.' ]
+          }
+      - id: p52-01-d02
+        speaker: ila-dastidar
+        text: 'For a building you''re standing in.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.02,
+            y: 0.72,
+            width: 0.35,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.13, y: 0.29 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        'The crew is shown following a live order, not enjoying the harm.',
+        'Order text and device prompts remain blank.'
+      ]
+    prompt:
+      {
+        lighting: 'Harsh utility work light against warm Hall lamps and cool server
+          glow.',
+        palette: 'Municipal red, utility yellow, graphite, moss, cream enamel and
+          silver.',
+        composition: 'Isolation lever anchors right while evidence enters from left;
+          preserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.65-0.98, y 0.03-0.21',
+            'lower-left: x 0.02-0.48, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A valid utility order is presented inside the building it says does not
+          exist.',
+        description: 'The utility crew stands beside the live isolation lever within
+          Municipal Hall. Riju offers the evidence tube, Vale presents
+          credentials and Ila opens the ledger while Cecil reads the order
+          display.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-052/p52-01__r1.png, final: panels/approved/page-052/p52-01__r1.png, width: 1672, height: 941 }
+  - id: p52-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Top-down view of seven conflicting Hall property records'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: disciplined urgency,
+          pose: 'Spreading seven source records without merging them',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: property comparison,
+          pose: 'Stamp arm marking each source valid within its office',
+          facing: left
+        }
+    props: [ waterproof-document-tube, riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: 'Seven blank property records differ in footprint, use and identifier.'
+    middleGround: 'Riju shows that each describes part of the current Hall.'
+    background: 'The utility account pane has no valid attachment point.'
+    action: 'The maps prove occupancy and conflict but cannot satisfy a single
+      utility property key.'
+    dialogue:
+      - id: p52-02-d01
+        speaker: riju-dhar
+        text: 'Seven records. Seven sources. One occupied building.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.41,
+            y: 0.02,
+            width: 0.30,
+            height: 0.23,
+            z: 10,
+            tailTarget: { x: 0.39, y: 0.25 },
+            tailDirection: down,
+            fontScale: 0.94,
+            manualBreaks: [ 'Seven records.', 'Seven sources.', 'One occupied building.' ]
+          }
+      - id: p52-02-d02
+        speaker: cecil-c17
+        text: 'One property key: absent.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.75,
+            y: 0.73,
+            width: 0.22,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.83, y: 0.29 },
+            tailDirection: up,
+            fontScale: 0.98,
+            manualBreaks: [ 'One property key:', 'absent.' ]
+          }
+    continuity:
+      [
+        'All seven records remain separate sources.',
+        'The evidence is not forced into a false merge.'
+      ]
+    prompt:
+      {
+        lighting: 'Flat evidence light on seven differently shaped records.',
+        palette: 'Paper cream, municipal red, muted blue, moss and cream enamel.',
+        composition: 'Seven records surround one empty central key slot; reserve
+          upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.51, y 0.03-0.22',
+            'lower-right: x 0.55-0.95, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Seven valid records surround an empty utility property key.',
+        description: 'Riju spreads seven blank building records with different
+          footprints and uses. Cecil validates each within its source office,
+          but the central utility property-key position remains empty.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-052/p52-02__r1.png, final: panels/approved/page-052/p52-02__r1.png, width: 1448, height: 1086 }
+  - id: p52-03
+    panel: 3
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Dead-on view of the circular appeal interface'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: bitter recognition,
+          pose: 'Holding the evidence packet beside the blank complaint-number field',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: restrained anger,
+          pose: 'Pointing from the required number to the unsubmitted appeal',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, municipal-red-ledger, grievance-token-drum ]
+    foreground: 'A blank field requires the complaint number generated only after
+      submission.'
+    middleGround: 'The submission control remains unavailable.'
+    background: 'The valid disconnection order timer continues.'
+    action: 'The same circular grievance rule that blocked residents now blocks the
+      Hall.'
+    dialogue:
+      - id: p52-03-d01
+        speaker: riju-dhar
+        text: 'It needs the number the appeal would generate.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.37,
+            y: 0.03,
+            width: 0.31,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.33, y: 0.34 },
+            tailDirection: down,
+            fontScale: 0.94,
+            manualBreaks: [ 'It needs the number the appeal would generate.' ]
+          }
+      - id: p52-03-d02
+        speaker: ila-dastidar
+        text: 'Only after it accepts the appeal.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.61,
+            y: 0.76,
+            width: 0.34,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.73, y: 0.39 },
+            tailDirection: up,
+            fontScale: 0.97
+          }
+    visualJoke: 'The Hall encounters its own impossible complaint form at full civic
+      scale.'
+    continuity:
+      [
+        'Complaint rule matches page 7.',
+        'All interface wording remains composited.'
+      ]
+    prompt:
+      {
+        lighting: 'Cold interface glow with a red timer edge.',
+        palette: 'Terminal grey, municipal red, moss, paper cream and warning amber.',
+        composition: 'Circular field and inactive submit control sit between Riju and
+          Ila; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.55, y 0.03-0.22',
+            'lower-right: x 0.54-0.96, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: "The Hall's appeal requires a complaint number generated only after
+          submission.",
+        description: 'Riju and Ila face a blank complaint-number field beside an
+          unavailable submit control. The disconnection timer continues while
+          the form demands the number that only the blocked appeal could
+          create.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-052/p52-03__r1.png, final: panels/approved/page-052/p52-03__r1.png, width: 1254, height: 1254 }
+  - id: p52-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Balanced shot on Vale, Cecil and the utility order'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: grave persistence,
+          pose: 'Presenting Mission authority and emergency evidence as separate sources',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: category mismatch,
+          pose: 'Stamp arm indicating that neither source attaches to the property class',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: lower-left,
+          emotion: helpless urgency,
+          pose: "Holding the seven maps below Vale's tablet",
+          facing: right
+        }
+    props: [ vale-silver-tablet, cecil-stamp-arm, waterproof-document-tube ]
+    foreground: 'Mission credential, emergency reason and property class remain
+      three unjoined panes.'
+    middleGround: 'Vale exhausts the available formal route.'
+    background: 'The crew waits beside the isolation lever.'
+    action: "Vale's genuine authority cannot attach to the building's unresolved
+      property category."
+    dialogue:
+      - id: p52-04-d01
+        speaker: director-vale
+        text: 'Emergency, yes. Property record, no.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.01,
+            width: 0.36,
+            height: 0.19,
+            z: 10,
+            tailTarget: { x: 0.44, y: 0.21 },
+            tailDirection: right,
+            fontScale: 0.90,
+            manualBreaks:
+              [
+                'Emergency, yes.',
+                'Property record, no.'
+              ]
+          }
+      - id: p52-04-d02
+        speaker: cecil-c17
+        text: 'Authority match not found.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.66,
+            y: 0.78,
+            width: 0.31,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.65, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.98,
+            manualBreaks: [ 'Authority match not found.' ]
+          }
+    continuity:
+      [
+        "Vale's competence is preserved; the category defeats the route.",
+        'No undocumented order is given to the crew.'
+      ]
+    prompt:
+      {
+        lighting: 'Harsh utility light with cool device highlights.',
+        palette: 'Graphite, silver, cream enamel, moss and warning amber.',
+        composition: 'Three unjoined panes align above the waiting isolation lever;
+          reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.53, y 0.03-0.22',
+            'lower-right: x 0.57-0.98, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: "Vale's emergency authority cannot attach to the unresolved property.",
+        description: 'Vale presents Mission credentials and the emergency reason while
+          Riju holds the seven maps. Cecil indicates that none attaches to the
+          utility property class, and the crew continues waiting beside the
+          isolation lever.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-052/p52-04__r1.png, final: panels/approved/page-052/p52-04__r1.png, width: 1448, height: 1086 }
+  - id: p52-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low wide shot on the utility lever and server-cupboard grille'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: braced anger,
+          pose: 'Closing the red ledger around the failed appeal evidence',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: dread,
+          pose: 'Holding the evidence tube as the lever moves',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: sober witness,
+          pose: 'Recording execution of the valid order',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: power-transition preparation,
+          pose: 'Locking wheels and dimming nonessential functions',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        waterproof-document-tube,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        server-closet-table-fan
+      ]
+    foreground: "A crew member's gloved hand pulls the physical isolation lever."
+    middleGround: 'The cast watches without pretending the order is invalid.'
+    background: 'Server lights and the table fan are still on for the final instant.'
+    action: 'The valid disconnection order executes.'
+    dialogue:
+      - id: p52-05-d01
+        speaker: director-vale
+        text: 'It''s done. Don''t lose why it failed.'
+        style: speech
+        readingOrder: 1
+        narrationOrder: 2
+        balloon:
+          {
+            x: 0.73,
+            y: 0.03,
+            width: 0.25,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.71, y: 0.24 },
+            tailDirection: down,
+            fontScale: 0.93,
+            manualBreaks: [ 'It''s done.', 'Don''t lose why it failed.' ]
+          }
+    soundEffects:
+      - {
+          text: 'CLUNK',
+          description: 'The physical utility isolation lever locks down.',
+          narrationOrder: 1,
+          position: { x: 0.19, y: 0.63, z: 8 }
+        }
+    continuity:
+      [
+        'Power loss is caused by the utility property contradiction.',
+        'Cecil transitions to limited battery.',
+        "The crew's action is recorded."
+      ]
+    prompt:
+      {
+        lighting: 'One final mix of work light and server glow at the moment of
+          disconnection.',
+        palette: 'Utility yellow, municipal red, graphite, moss, silver and cream
+          enamel.',
+        composition: 'Lever foreground leads to the four witnesses and lit server
+          beyond; reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right: x 0.52-0.97, y 0.03-0.22' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The utility isolation lever is pulled inside Municipal Hall.',
+        description: 'A crew member pulls the physical lever while Ila, Riju, Vale and
+          Cecil witness the valid order being executed. The server lights and
+          table fan remain on for the final instant before the cut.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-052/p52-05__r1.png, final: panels/approved/page-052/p52-05__r1.png, width: 1672, height: 941 }

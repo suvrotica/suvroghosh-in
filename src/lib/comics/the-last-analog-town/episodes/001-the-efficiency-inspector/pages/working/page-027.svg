@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 27</title>
+	<desc id="description">Establish a concrete health benefit that makes later rollback morally unacceptable.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p27-01">
+<clipPath id="clip-p27-01"><rect x="48" y="58" width="1504" height="567.0083085444661" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="567.0083085444661" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-027/p27-01__r1.png" x="48" y="58" width="1504" height="567.0083085444661" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p27-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p27-01-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 562.3417483753054 333.9529983030936 Q 638.32 272.83944810749824 718.6336 218.29324882552058 Q 638.32 272.83944810749824 553.3702516246946 320.7048948141492 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p27-01-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="100.64000000000001" y="327.3289465586214" width="571.52" height="90.72132936711458" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="118.64000000000001" y="369.39681124217867" font-family="Arial,'Noto Sans',sans-serif" font-size="23.52" fill="#111"><tspan x="118.64000000000001" dy="0">Five systems, five journeys. Together</tspan><tspan x="118.64000000000001" dy="26.812799999999996">they find the crate.</tspan></text>
+<rect x="48" y="58" width="1504" height="567.0083085444661" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p27-02">
+<clipPath id="clip-p27-02"><rect x="48" y="649.0083085444661" width="740" height="371.97353574725616" rx="6"/></clipPath>
+<rect x="48" y="649.0083085444661" width="740" height="371.97353574725616" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-027/p27-02__r1.png" x="48" y="649.0083085444661" width="740" height="371.97353574725616" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p27-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p27-02-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 635.2124856940785 726.0185205449052 Q 639.3340000000001 736.608076212945 637.484 746.1305987280747 Q 639.3340000000001 736.608076212945 647.0075143059215 728.2269815578745 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p27-02-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="395.79999999999995" y="660.1675146168838" width="377.40000000000003" height="66.9552364345061" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="413.79999999999995" y="691.0187328341368" font-family="Arial,'Noto Sans',sans-serif" font-size="18.76" fill="#111"><tspan x="413.79999999999995" dy="0">End-to-end custody is now</tspan><tspan x="413.79999999999995" dy="21.3864">traceable.</tspan></text>
+<rect x="48" y="649.0083085444661" width="740" height="371.97353574725616" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p27-03">
+<clipPath id="clip-p27-03"><rect x="812" y="649.0083085444661" width="740" height="371.97353574725616" rx="6"/></clipPath>
+<rect x="812" y="649.0083085444661" width="740" height="371.97353574725616" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-027/p27-03__r1.png" x="812" y="649.0083085444661" width="740" height="371.97353574725616" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p27-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p27-03-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 1226.494613041913 685.6456923304328 Q 1220.1100000000001 693.5707381269874 1213.894 693.5335407734127 Q 1220.1100000000001 693.5707381269874 1226.3053869580872 701.6445733378408 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p27-03-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="1226.4" y="660.1675146168838" width="296" height="66.9552364345061" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1244.4" y="691.0187328341368" font-family="Arial,'Noto Sans',sans-serif" font-size="18.76" fill="#111"><tspan x="1244.4" dy="0">Found is useful.</tspan><tspan x="1244.4" dy="21.3864">Delivered is better.</tspan></text>
+<rect x="812" y="649.0083085444661" width="740" height="371.97353574725616" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p27-04">
+<clipPath id="clip-p27-04"><rect x="48" y="1044.9818442917222" width="1504" height="672.0098471638117" rx="6"/></clipPath>
+<rect x="48" y="1044.9818442917222" width="1504" height="672.0098471638117" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-027/p27-04__r1.png" x="48" y="1044.9818442917222" width="1504" height="672.0098471638117" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p27-04)"/>
+<rect x="48" y="1044.9818442917222" width="1504" height="672.0098471638117" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p27-05">
+<clipPath id="clip-p27-05"><rect x="48" y="1740.9916914555338" width="1504" height="567.0083085444661" rx="6"/></clipPath>
+<rect x="48" y="1740.9916914555338" width="1504" height="567.0083085444661" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-027/p27-05__r1.png" x="48" y="1740.9916914555338" width="1504" height="567.0083085444661" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p27-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p27-05-d01" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 454.08136957928633 1827.7863675514066 Q 467.0144 1824.3986136424248 476.79040000000003 1828.4243726330906 Q 467.0144 1824.3986136424248 460.0946304207137 1812.9593417521116 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p27-05-d01" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="66.048" y="1758.0019407118677" width="391.04" height="124.74182787978255" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="84.048" y="1817.2368546517591" font-family="Arial,'Noto Sans',sans-serif" font-size="22.400000000000002" fill="#111"><tspan x="84.048" dy="0">That saved us hours. Put</tspan><tspan x="84.048" dy="25.536">that in the review too.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p27-05-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1244.3183297193718 2166.081313112504 Q 943.4816000000001 2100.588360734434 1219.616 2016.9546352241255 Q 943.4816000000001 2100.588360734434 1241.537670280628 2177.7546987861515 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p27-05-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="1100.8" y="2171.918005949328" width="406.08000000000004" height="96.39141245255925" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1118.8" y="2216.4289121756074" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="1118.8" dy="0">Rail position source</tspan><tspan x="1118.8" dy="30.0048">updated.</tspan></text>
+<rect x="48" y="1740.9916914555338" width="1504" height="567.0083085444661" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">27</text>
+</svg>

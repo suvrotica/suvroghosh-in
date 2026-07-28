@@ -1,0 +1,556 @@
+page: 31
+title: 'The drains that were paid for'
+purpose: 'Make the system expose genuine local corruption and force Ila to choose scrutiny over loyalty.'
+location: new-development
+time: late afternoon
+layout: 'A prestige-wide contradiction, two verification beats, a pressure two-shot, an order close-up, and a political turn.'
+panelCount: 6
+dialogueGoal: 'Let Vale be right that audit protects residents and Ila prove autonomy cannot mean shielding allies.'
+pageTurn: 'News of the frozen payment turns the Mission from a ceremony into a political success.'
+visualMotif: 'Perfect rectangular payment records sit over pump-shaped absences in mud.'
+continuity:
+  - 'The New Development retains absent pumps, nonfunctioning drains, blocked water paths, active surveillance, and contractor completion certificates.'
+  - 'Vale verifies the physical site before concluding that the accounting match is corrupt.'
+  - "Ila freezes the next payment and orders inspection despite the contractor's local political ties."
+panels:
+  - id: p31-01
+    panel: 1
+    size: wide
+    aspectRatio: '21:9'
+    camera: 'Panoramic low-angle view from an empty pump plinth towards the model district'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: controlled apprehension,
+          pose: 'Standing at the broken drain with ledger under left arm',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: disbelieving attention,
+          pose: 'Comparing the physical site with the terminal',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: rigorous concern,
+          pose: 'Crouching to inspect the empty pump mount',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: physical-evidence scan,
+          pose: 'Measuring disconnected drain depth',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        blank-surveillance-camera
+      ]
+    foreground: 'An empty pump plinth, capped pipe, and drain terminating in rubble provide physical evidence.'
+    middleGround: 'The team inspects rather than relying on the clean account record.'
+    background: 'Active surveillance masts, empty towers, and the model pavilion remain pristine above unfinished land.'
+    action: 'The linked procurement record claims full payment and continuous service at a site with no pump and no completed drain.'
+    dialogue:
+      - id: p31-01-d01
+        speaker: riju-dhar
+        text: 'Paid, installed, tested, and absent.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.18,
+            y: 0.35,
+            width: 0.25,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.36, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.96
+          }
+      - id: p31-01-d02
+        speaker: director-vale
+        text: 'The records agree. The site doesn''t.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.69,
+            y: 0.72,
+            width: 0.29,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.66, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.88
+          }
+    continuity:
+      [
+        "Vale's field jacket may have the hem clipped back but remains non-military and otherwise immaculate.",
+        'All certificates, account lines, plaques, and camera identifiers stay blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool late-afternoon concrete light with warm mud and vegetation.',
+        palette: 'Pale concrete, cool blue-grey, mud brown, invasive green, municipal red and graphite.',
+        composition: 'Empty pump plinth and dead drain dominate foreground; team verifies at human scale; polished development and cameras loom behind; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.18-0.63, y 0.03-0.21',
+            'lower-right reserve: x 0.48-0.98, y 0.71-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The team inspects an empty pump site that records say is installed and working.',
+        description: 'An empty plinth, capped pipe, and drain ending in rubble fill the foreground. Vale crouches to inspect the physical site while Riju reads a paid and tested account trail; active cameras and empty towers stand behind.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-031/p31-01__r1.png, final: panels/approved/page-031/p31-01__r1.png, width: 1915, height: 821 }
+  - id: p31-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Close procedural shot pairing paid milestones with empty mounting bolts'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: evidentiary certainty,
+          pose: 'Holding the tablet beside the unused bolts',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: left,
+          emotion: measurement confirmed,
+          pose: 'Stamp arm measuring dust and corrosion without stamping',
+          facing: right
+        }
+    props: [vale-silver-tablet, cecil-stamp-arm]
+    foreground: 'Unused anchor bolts retain undisturbed dust and matching corrosion.'
+    middleGround: 'Vale aligns a blank paid-milestone panel with the physical absence.'
+    background: 'No displaced pump or connecting pipe exists nearby.'
+    action: 'Vale confirms that the pump was not recently removed; the clean payment trail describes work that never existed.'
+    dialogue:
+      - id: p31-02-d01
+        speaker: cecil-c17
+        text: 'No installation marks detected.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.06,
+            y: 0.05,
+            width: 0.44,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.30, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.96
+          }
+      - id: p31-02-d02
+        speaker: director-vale
+        text: 'Then the mismatch is not harmless paperwork.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.28,
+            y: 0.39,
+            width: 0.38,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.74, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.92
+          }
+    continuity:
+      [
+        'Cecil records measurement without making a moral judgement.',
+        'Tablet milestones and every inspection mark are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Raking late-afternoon light revealing undisturbed dust.',
+        palette: 'Concrete grey, rust, matte silver, cream enamel and Grid blue.',
+        composition: "Unused bolts and dust foreground; Cecil's measure left, Vale's tablet right; negative space confirms absence; reserve upper-left and lower-right.",
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.53, y 0.03-0.21',
+            'lower-right reserve: x 0.45-0.98, y 0.71-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Unused mounting bolts prove the paid pump was never installed.',
+        description: 'Undisturbed dust and uniform corrosion cover the empty anchor bolts. Cecil finds no installation marks, and Vale aligns that evidence with a blank paid-milestone record.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-031/p31-02__r1.png, final: panels/approved/page-031/p31-02__r1.png, width: 1448, height: 1086 }
+  - id: p31-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Medium shot on a polished plaque above the absent pump'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: bitter recognition,
+          pose: 'Holding the terminal beneath the blank plaque',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: contained anger,
+          pose: 'Looking from the plaque to the empty plinth',
+          facing: left
+        }
+    props: [riju-reconciliation-terminal, municipal-red-ledger, blank-surveillance-camera]
+    foreground: 'A polished plaque substrate thanks an empty concrete space.'
+    middleGround: "Riju's account trail terminates at the absent object."
+    background: 'A functioning camera points faithfully at the nonfunctioning drain.'
+    action: 'The ceremonial claim and the accounting record agree perfectly with each other and not with the site.'
+    dialogue:
+      - id: p31-03-d01
+        speaker: ila-dastidar
+        text: 'The plaque received better maintenance than the drain.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.65,
+            y: 0.44,
+            width: 0.33,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.73, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+    visualJoke: 'A polished plaque thanks the absent pump for continuous service.'
+    continuity:
+      [
+        'Plaque lettering is added during deterministic composition and never generated.',
+        'The surveillance camera remains powered and fixed to its canonical field of view.'
+      ]
+    prompt:
+      {
+        lighting: 'Late sun gleaming on polished plaque above matte empty concrete.',
+        palette: 'Pale concrete, brass, municipal red, moss green, cool camera grey and mud.',
+        composition: 'Blank plaque and empty pump space make one contradiction; Ila and Riju flank it; working camera watches behind; reserve upper-right.',
+        balloonSafeAreas: ['upper-right reserve: x 0.39-0.97, y 0.03-0.22'],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A polished service plaque hangs above an empty pump plinth.',
+        description: "A pristine blank plaque celebrates the space where a pump should stand. Riju's account trail ends at the absence, Ila looks from plaque to drain, and a functioning camera watches the failed works."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-031/p31-03__r1.png, final: panels/approved/page-031/p31-03__r1.png, width: 1448, height: 1086 }
+  - id: p31-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Compressed two-shot with the contractor kept outside the speaking frame'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: politically pressured calm,
+          pose: 'Listening with ledger closed beneath her arm',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: watchful restraint,
+          pose: "Waiting for Ila's decision without prompting it",
+          facing: left
+        }
+    props: [municipal-red-ledger, ila-cracked-phone, vale-silver-tablet]
+    foreground: "A contractor's manicured hand offers a blank completion certificate from outside frame."
+    middleGround: 'Ila does not take the certificate; her cracked phone vibrates in her pocket.'
+    background: 'Vale watches the local pressure and the empty drain in the same line.'
+    action: 'The politically connected contractor asks Ila to treat the mismatch as paperwork and settle it privately.'
+    caption: 'The contractor requests a private correction before the record becomes public.'
+    dialogue:
+      - id: p31-04-d01
+        speaker: ila-dastidar
+        text: 'If it is paperwork, you will survive an inspection.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.37,
+            y: 0.02,
+            width: 0.36,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.28, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+    continuity:
+      [
+        'The contractor remains an unnamed local pressure, not a caricature or canonical cast addition.',
+        'Certificate, phone screen, and caption substrate remain blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool shade at the gate with warm late sun beyond.',
+        palette: 'Municipal red, ink blue, graphite, paper cream and pale concrete.',
+        composition: 'Off-frame certificate hand intrudes foreground; Ila refuses at left, Vale waits at right, failed drain visible behind; reserve upper-left and small caption zone.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.61, y 0.03-0.22',
+            'lower-centre caption reserve: x 0.27-0.75, y 0.80-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            villainous caricature
+          ]
+      }
+    accessibility:
+      {
+        alt: "Ila refuses an off-frame contractor's completion certificate while Vale waits.",
+        description: "An unnamed contractor's hand offers a blank certificate from outside the frame. Ila does not take it and says an inspection should be harmless if this is merely paperwork; Vale watches without taking the decision from her."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-031/p31-04__r1.png, final: panels/approved/page-031/p31-04__r1.png, width: 1448, height: 1086 }
+  - id: p31-05
+    panel: 5
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Close-up on Ila recording the payment freeze'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre,
+          emotion: quiet resolve,
+          pose: 'Writing the reason in the red ledger while lowering the cracked phone',
+          facing: front
+        }
+      - {
+          id: cecil-c17,
+          position: lower-right,
+          emotion: order capture,
+          pose: 'Stamp arm poised beside the reason field',
+          facing: left
+        }
+    props: [municipal-red-ledger, ila-cracked-phone, cecil-stamp-arm]
+    foreground: 'The ledger opens to a broad blank reason field beside the next-payment marker.'
+    middleGround: 'Ila writes before giving the order; Cecil waits for the recorded authority.'
+    background: 'The empty pump plinth remains visible beyond her hand.'
+    action: 'Ila freezes the next payment and orders a physical inspection with her reason on record.'
+    dialogue:
+      - id: p31-05-d01
+        speaker: ila-dastidar
+        text: 'Freeze the next payment. Inspect every drain.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.59,
+            y: 0.02,
+            width: 0.39,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.52 },
+            tailDirection: left,
+            fontScale: 0.9
+          }
+    continuity:
+      [
+        "Ila's order is swift, reasoned, and logged rather than an invisible favour.",
+        'Ledger writing, payment status, phone screen, and stamp remain deterministic lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm late sun across red cloth, hand, and cream page.',
+        palette: 'Municipal red, paper cream, brass, cream enamel and cool concrete.',
+        composition: "Ledger reason field and Ila's writing hand fill frame; Cecil waits at lower-right; absent pump remains small but legible behind; reserve upper field.",
+        balloonSafeAreas: ['upper reserve: x 0.06-0.91, y 0.03-0.22'],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Ila records her reason and freezes the contractor's next payment.",
+        description: 'Ila writes in the worn red ledger before ordering the next payment frozen and every drain inspected. Cecil waits to stamp the recorded authority; the empty pump plinth remains visible.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-031/p31-05__r1.png, final: panels/approved/page-031/p31-05__r1.png, width: 1254, height: 1254 }
+  - id: p31-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide gate shot as the order travels back towards town'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre-left,
+          emotion: braced determination,
+          pose: 'Walking away from the contractor with ledger under left arm',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: surprised respect,
+          pose: 'Sending the verified freeze record from the terminal',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: sober approval,
+          pose: 'Keeping the physical-site evidence open on the tablet',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: evidence package complete,
+          pose: 'Rolling beside the active surveillance conduit',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        blank-surveillance-camera
+      ]
+    foreground: 'The blank freeze notice travels through a connected public-works node towards Junction Square.'
+    middleGround: 'The team leaves the pristine gate and failed drainage behind together.'
+    background: 'The camera still works perfectly above the absent pump site.'
+    action: "Verified evidence and Ila's order become public, turning the Mission's audit into a local political success."
+    dialogue:
+      - id: p31-06-d01
+        speaker: director-vale
+        text: 'This is what a public audit is for.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.74,
+            y: 0.02,
+            width: 0.24,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.70, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.94
+          }
+      - id: p31-06-d02
+        speaker: ila-dastidar
+        text: 'Then let it inspect all of us.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.40,
+            y: 0.65,
+            width: 0.36,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.35, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.98
+          }
+    continuity:
+      [
+        'Contractor evidence, absent works, and payment freeze persist into later audit and crisis.',
+        'Public notice, evidence, interfaces, and camera identifier remain blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Long late-afternoon light across pale gate and unfinished ground.',
+        palette: 'Pale concrete, mud, municipal red, Grid blue, graphite and invasive green.',
+        composition: 'Team walks left from failed site while verified record travels towards town; active camera above frames physical contradiction; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.54-0.97, y 0.03-0.22',
+            'lower-left reserve: x 0.11-0.53, y 0.72-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: "The team leaves the failed drainage site as Ila's freeze order becomes public.",
+        description: 'Ila, Riju, Vale, and Cecil walk away from the pristine gate and empty pump site. The verified record travels towards town while the functioning surveillance camera continues watching the failed drain.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-031/p31-06__r1.png, final: panels/approved/page-031/p31-06__r1.png, width: 1672, height: 940 }

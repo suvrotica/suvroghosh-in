@@ -1,0 +1,7244 @@
+{
+  "entries": [
+    {
+      "file": "prompts/page-001/panel-001.txt",
+      "page": 1,
+      "panel": 1,
+      "panelId": "p01-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "smart-town-billboard",
+          "riju-form-satchel",
+          "babul-cycle-van",
+          "junction-clock-faces"
+        ]
+      },
+      "sha256": "2ff584debe28288ee671590e25f39b2c12b719146c2bf758353f648112c55311",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-001/panel-002.txt",
+      "page": 1,
+      "panel": 2,
+      "panelId": "p01-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "smart-town-billboard",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "c685651fc7578993a059257a1579cb78070e09c0dda94817f267e6558c897f09",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-001/panel-003.txt",
+      "page": 1,
+      "panel": 3,
+      "panelId": "p01-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "smart-town-billboard"
+        ]
+      },
+      "sha256": "6b44edaf92377341d3bdaf6234eb3955d66dd54ce816c3cda117365fb78e4bd2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-001/panel-004.txt",
+      "page": 1,
+      "panel": 4,
+      "panelId": "p01-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "junction-clock-faces"
+        ]
+      },
+      "sha256": "8a3966b6ba37fe23ddfb3926157134c0f9883aa512d2a1ccf8941a52664bbae2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-001/panel-005.txt",
+      "page": 1,
+      "panel": 5,
+      "panelId": "p01-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "smart-town-billboard",
+          "babul-cycle-van",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "d195c6e7abd17122c69f06eb2855f73f421b4bb3766b40b3ff940deec149da98",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-002/panel-001.txt",
+      "page": 2,
+      "panel": 1,
+      "panelId": "p02-01",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "smart-town-billboard",
+          "babul-cycle-van"
+        ]
+      },
+      "sha256": "56e9b118dde15d3a94621293286f0a44b211d3996a86eed512d70d51f658f62c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-002/panel-002.txt",
+      "page": 2,
+      "panel": 2,
+      "panelId": "p02-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "528a676d0a9059125a5d8d6612fc7076a0f4f9cdb28e5961e34b29be8d72924e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-002/panel-003.txt",
+      "page": 2,
+      "panel": 3,
+      "panelId": "p02-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "fe9f8bf577a535ad1b1bee3f89f43b3fb5ec01a581c4c18041f68b16af601a72",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-002/panel-004.txt",
+      "page": 2,
+      "panel": 4,
+      "panelId": "p02-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "cecil-stamp-arm",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "aa19473f842a4bddce265f1f7150fb4f90f51475e72160801aa0907e092f4fcd",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-002/panel-005.txt",
+      "page": 2,
+      "panel": 5,
+      "panelId": "p02-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17",
+          "babul-courier",
+          "ila-dastidar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "smart-town-billboard"
+        ]
+      },
+      "sha256": "7f6222cd5dacbb58c29b031df61666e60cf049c561123d60a1581b94aaa6af9b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-003/panel-001.txt",
+      "page": 3,
+      "panel": 1,
+      "panelId": "p03-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "junction-clock-faces"
+        ]
+      },
+      "sha256": "e6f7f13286054e23f94d48256e7cedc1a91896afb0fd25e470159c4f363e9c1b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-003/panel-002.txt",
+      "page": 3,
+      "panel": 2,
+      "panelId": "p03-02",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel",
+          "smart-town-billboard"
+        ]
+      },
+      "sha256": "359ce02e394ce58c0b99d4f5c43f0c4c8736f54fcf138720f776d412dd8cbb2b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-003/panel-003.txt",
+      "page": 3,
+      "panel": 3,
+      "panelId": "p03-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "202e4bdecc539164dd22d2a169b19c330a1f16de2b054f55be346c19fd6400aa",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-003/panel-004.txt",
+      "page": 3,
+      "panel": 4,
+      "panelId": "p03-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "207a7de0c8a736e1cb336c7a9c5e679c4412170b92ec3a6653192a5097ee00b1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-003/panel-005.txt",
+      "page": 3,
+      "panel": 5,
+      "panelId": "p03-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "cecil-stamp-arm",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "5cbdc96740b3d904bce83d14e07ebb6a57c15541bf6a19b8a54de753c6e554c4",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-003/panel-006.txt",
+      "page": 3,
+      "panel": 6,
+      "panelId": "p03-06",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "e1b3f478ba5f065157cd3854e95be55e0b21c762175a70d561570e9cb3606551",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-004/panel-001.txt",
+      "page": 4,
+      "panel": 1,
+      "panelId": "p04-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "ila-dastidar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "f6b8c11afaa55ed936cf1e6af31a5b66adbb168275410c13ce6e7790e89d60c1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-004/panel-002.txt",
+      "page": 4,
+      "panel": 2,
+      "panelId": "p04-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "44a5e79651918d73cd38e8fd4e755277be378ad395e405d964f1f2a3d078e674",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-004/panel-003.txt",
+      "page": 4,
+      "panel": 3,
+      "panelId": "p04-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "905f170dd37298dd87f67134144a4733f5659340cfe7807c77a323c11317e62b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-004/panel-004.txt",
+      "page": 4,
+      "panel": 4,
+      "panelId": "p04-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "00150aecd9d2d6da8c24cf62c7b99e0d687992a6f5ae9407c623d3d66d38ceb1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-004/panel-005.txt",
+      "page": 4,
+      "panel": 5,
+      "panelId": "p04-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "1bf35013df068088f9b0319c2c8df7c8062f6d7ac9079f187458e8a7fa1404b0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-005/panel-001.txt",
+      "page": 5,
+      "panel": 1,
+      "panelId": "p05-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "3a18b7dc2e2a6ed4ce63d213018a52ae3c2056faefe797476d682ce2d7cc1d20",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-005/panel-002.txt",
+      "page": 5,
+      "panel": 2,
+      "panelId": "p05-02",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "dd521e8a59672b1e3da083b12cbcbfb60ff200990ef72c0b487b72be0dd2dce3",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-005/panel-003.txt",
+      "page": 5,
+      "panel": 3,
+      "panelId": "p05-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": []
+      },
+      "sha256": "f677371f302285660a867d5350f68f990824f6d47f46f97971b5eb39a0fd96a1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-005/panel-004.txt",
+      "page": 5,
+      "panel": 4,
+      "panelId": "p05-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "cbb5e74b2d52bd154dc21e5e1f8cc8a4a31b723b16fa8ac12bde1052b036eda7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-005/panel-005.txt",
+      "page": 5,
+      "panel": 5,
+      "panelId": "p05-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "727a2ca236202efeb7bf07d847249d98a20889dd647bbd35cb407952b9168494",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-006/panel-001.txt",
+      "page": 6,
+      "panel": 1,
+      "panelId": "p06-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "54a7bca7bf44e7f7bb69205da0eab64110c5a7cf2fd35fb3f7a70155b141e42d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-006/panel-002.txt",
+      "page": 6,
+      "panel": 2,
+      "panelId": "p06-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "6fff46020d876154ed9827ed1790490e699a42a9ea8fb13ea2d82a238471e6de",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-006/panel-003.txt",
+      "page": 6,
+      "panel": 3,
+      "panelId": "p06-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "server-closet-table-fan",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "3292351d991eaf3e4a8d0a4f17422f4a12c566cf19f26d72f8cc1aaedfb6a228",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-006/panel-004.txt",
+      "page": 6,
+      "panel": 4,
+      "panelId": "p06-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "369c1e0773a685c25798925b358beccd845bc4efdf451e58e7fac09b1dd0c522",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-006/panel-005.txt",
+      "page": 6,
+      "panel": 5,
+      "panelId": "p06-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "febe2f710fb24650dbbb0ddd1c1e1f685c038e0d484b0a654794f98574f9aba2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-006/panel-006.txt",
+      "page": 6,
+      "panel": 6,
+      "panelId": "p06-06",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "grievance-token-drum"
+        ]
+      },
+      "sha256": "46380db15148869e25a0195542cbe39ce16ce071971521657a2eab49222afe90",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-007/panel-001.txt",
+      "page": 7,
+      "panel": 1,
+      "panelId": "p07-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "grievance-token-drum"
+        ]
+      },
+      "sha256": "2ac0a48adfbfd6abc38ef04704cc357eed68ecb92e26139cfe7afb24afac0be6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-007/panel-002.txt",
+      "page": 7,
+      "panel": 2,
+      "panelId": "p07-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "grievance-token-drum",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "18a4521ab75d5312ecaa966fbe2bf662deb6e7f9ee37f471d4a72c50479a69f9",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-007/panel-003.txt",
+      "page": 7,
+      "panel": 3,
+      "panelId": "p07-03",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "ila-cracked-phone",
+          "municipal-red-ledger",
+          "grievance-token-drum",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "a2efc6194ad8aed77d617ff80bb20bfb53ac79232a783c4af12cd77eef1c18b5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-007/panel-004.txt",
+      "page": 7,
+      "panel": 4,
+      "panelId": "p07-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "ila-cracked-phone",
+          "municipal-red-ledger",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "384e6cfec97d520169c7d28825cc554b41e07d7cece79594014e7ee614480422",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-007/panel-005.txt",
+      "page": 7,
+      "panel": 5,
+      "panelId": "p07-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "a6c5d3cd07ac91715306c3ef097c7d661f8aec4dd908eb9cb53dfc126a0a819d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-008/panel-001.txt",
+      "page": 8,
+      "panel": 1,
+      "panelId": "p08-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "33d8361014c0d9a45918f9e408f76972f0e711c3af2d4400847f709a7951fdaf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-008/panel-002.txt",
+      "page": 8,
+      "panel": 2,
+      "panelId": "p08-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "3783eff5831f3b2d768c72391e4f029a26c4825039b85c552a204455cfdf5fc8",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-008/panel-003.txt",
+      "page": 8,
+      "panel": 3,
+      "panelId": "p08-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "1e89da4447537d44267eb0a8f6a83c299b46b675f4691fd209c89354341c385d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-008/panel-004.txt",
+      "page": 8,
+      "panel": 4,
+      "panelId": "p08-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "waterproof-document-tube",
+          "babul-cycle-van"
+        ]
+      },
+      "sha256": "1ee25599a674ec1a65b97fbb495a1760fc31c690f5fb8425195a7c16594af239",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-008/panel-005.txt",
+      "page": 8,
+      "panel": 5,
+      "panelId": "p08-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "babul-cycle-van"
+        ]
+      },
+      "sha256": "489fa4146de87e3d64f4f9f49d3c39c3ea9bb7869538da684f3bbae4d2cd732a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-009/panel-001.txt",
+      "page": 9,
+      "panel": 1,
+      "panelId": "p09-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "ila-dastidar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "4679fd2f7bd7f17cbd6ce9a0cd36dcebf35aeeae634c9b1434f058c1f177c3e1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-009/panel-002.txt",
+      "page": 9,
+      "panel": 2,
+      "panelId": "p09-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "77ffa98a20406ffea4e7f38acffcb1bc7a2884133d2cf780a3900c7b45f6bc60",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-009/panel-003.txt",
+      "page": 9,
+      "panel": 3,
+      "panelId": "p09-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "7546d569cdb64f26887b3bc4af7863f763ec9a2c0240174e5b11d0d55630c5ee",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-009/panel-004.txt",
+      "page": 9,
+      "panel": 4,
+      "panelId": "p09-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "826f852301caf8f6c404c6af52d3fae6f964d5cfc69770e46341c681ce026e3d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-009/panel-005.txt",
+      "page": 9,
+      "panel": 5,
+      "panelId": "p09-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "4a369b6c22be9d2dae202f3995df62f04db3b1524fb7161a2ecd35d04b3a1f84",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-009/panel-006.txt",
+      "page": 9,
+      "panel": 6,
+      "panelId": "p09-06",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "d71432697815a39a4f07e91b409bf6ea6bee3ca49e002c79d02e979f32b43a58",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-010/panel-001.txt",
+      "page": 10,
+      "panel": 1,
+      "panelId": "p10-01",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "b82555293ef4031bae550187bf0c48f9d1c6bbdf2515cfd2cc33ad374cd80dce",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-010/panel-002.txt",
+      "page": 10,
+      "panel": 2,
+      "panelId": "p10-02",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "6fe4adc3d7596540756bbca22409a7055747723155c4f9a14320d6d25dd296e1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-010/panel-003.txt",
+      "page": 10,
+      "panel": 3,
+      "panelId": "p10-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "6b75e6b343b993c0d07f15b413110a902267eb700ad9e12430fd0c5e555ddc0e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-010/panel-004.txt",
+      "page": 10,
+      "panel": 4,
+      "panelId": "p10-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "abb0fc5790db9b17d8c42a98f00ec86e8c4329bf7302221d0f97d36aa922a88f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-010/panel-005.txt",
+      "page": 10,
+      "panel": 5,
+      "panelId": "p10-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "72979ebe32b44349b368345427ca74f844e0da14f35b340f0db7760704b56a4d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-011/panel-001.txt",
+      "page": 11,
+      "panel": 1,
+      "panelId": "p11-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "ananya-tool-bag",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "ec19daf6bc3cefbb59c95374275a400b718cea3ccc6079a4368927185ced5808",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-011/panel-002.txt",
+      "page": 11,
+      "panel": 2,
+      "panelId": "p11-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "director-vale"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "clinic-paper-queue",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "d3eefb40f35c379ec577dd677dce3d7e3bcf3c9db9a08ecda4d9c9030938e3e2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-011/panel-003.txt",
+      "page": 11,
+      "panel": 3,
+      "panelId": "p11-03",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "ed24e16004cecf386270b96f12b457e54d6942b3bb46666d9c9e2218a6906336",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-011/panel-004.txt",
+      "page": 11,
+      "panel": 4,
+      "panelId": "p11-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "vale-silver-tablet",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "84864c8aa24a5c4749d11a9bfdae951e87482eaa0e4123a9fba28e6e9841a239",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-011/panel-005.txt",
+      "page": 11,
+      "panel": 5,
+      "panelId": "p11-05",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "tap-sensitive-analyser",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "64cd17028288c14fdcd76da6fee3509a5eb4b789a14313836c345009b8abb01f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-012/panel-001.txt",
+      "page": 12,
+      "panel": 1,
+      "panelId": "p12-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "99682b607e584798a9dfe04d4185e06a5a97f9ee03626db88b39d18983de62f7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-012/panel-002.txt",
+      "page": 12,
+      "panel": 2,
+      "panelId": "p12-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "ddce6f41fc865ec2d398a12b82167fd483f367fbb8b2cae5946e958bce5260ed",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-012/panel-003.txt",
+      "page": 12,
+      "panel": 3,
+      "panelId": "p12-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-solar-battery",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "4c755f30152f4fbcf33ed3e6072626979672085a24ca256aa470fc2a015446ac",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-012/panel-004.txt",
+      "page": 12,
+      "panel": 4,
+      "panelId": "p12-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "be26ff57f81933c9f4fd24d798de9c425fbd2614129e1f9ae33d1ec52561b8e7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-012/panel-005.txt",
+      "page": 12,
+      "panel": 5,
+      "panelId": "p12-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "9dba37ad45aa6ff51199890a31444fcb10870adb3b0b61c78d9f90d7e11d50be",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-012/panel-006.txt",
+      "page": 12,
+      "panel": 6,
+      "panelId": "p12-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "41f52cfa61e9934b3844eb844eb881a4f75febc5eb41066ce2b9b9d3a6f62cb7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-013/panel-001.txt",
+      "page": 13,
+      "panel": 1,
+      "panelId": "p13-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "029a90a649a06f533931c5fa24b7a7f8b39b6031f05a88c14ff6b750c1c22831",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-013/panel-002.txt",
+      "page": 13,
+      "panel": 2,
+      "panelId": "p13-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "965b0c8374f26788154d5ae4586c739944a71d7a07dfb1ee7b6826f671affb92",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-013/panel-003.txt",
+      "page": 13,
+      "panel": 3,
+      "panelId": "p13-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "vale-silver-tablet",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "659f4d1eca81a1912341146ae8eef243fc778f8b08541cb8c60cd1f6849e43ef",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-013/panel-004.txt",
+      "page": 13,
+      "panel": 4,
+      "panelId": "p13-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "vale-silver-tablet",
+          "babul-cycle-van",
+          "riju-form-satchel",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "36cfc1c1ba1134ec80e50061fcc986cbdf78dcc18237acdac103f7ae7196aa76",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-013/panel-005.txt",
+      "page": 13,
+      "panel": 5,
+      "panelId": "p13-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "ff233c78c74e7e9c2157e366371e3b75ce6ca32146d5bfbb298370b9e1987252",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-014/panel-001.txt",
+      "page": 14,
+      "panel": 1,
+      "panelId": "p14-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale",
+          "babul-courier"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "babul-cycle-van",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "72b5cfd194b3ac186730370934c62f4f333a8bdfc543f279dbfec802adaa54d8",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-014/panel-002.txt",
+      "page": 14,
+      "panel": 2,
+      "panelId": "p14-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "84ca4075be62ad00bfc0c51734ac4838177864893b911c077a633773ef0d0ebb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-014/panel-003.txt",
+      "page": 14,
+      "panel": 3,
+      "panelId": "p14-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "vale-silver-tablet",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "0f53b215c0338b36abe14697e6cbd3d83bdace94103efd7e1f28911babb59f08",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-014/panel-004.txt",
+      "page": 14,
+      "panel": 4,
+      "panelId": "p14-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "riju-form-satchel",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "4722ae22afab760f94d9f6a1f94089c31c0d1db8a088879e996c44632f1953b7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-014/panel-005.txt",
+      "page": 14,
+      "panel": 5,
+      "panelId": "p14-05",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "riju-form-satchel",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "f1045e843eb17c3b7c45817e91eedcc8b0aa99d0930f418ecf60fc8d6e4f2957",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-014/panel-006.txt",
+      "page": 14,
+      "panel": 6,
+      "panelId": "p14-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "58ef8b5b96449f3d925d9ab2d2dd49a39f6904ae5ae070f35a2847a655f1ae9a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-015/panel-001.txt",
+      "page": 15,
+      "panel": 1,
+      "panelId": "p15-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "station-clock-pair",
+          "manual-announcement-microphone",
+          "blank-digital-signboard",
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "ghori-the-station-dog"
+        ]
+      },
+      "sha256": "78ba4d680cc5624b0e3fffd8ca259191b3c94bf08840e13b09c8806c0d090ecc",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-015/panel-002.txt",
+      "page": 15,
+      "panel": 2,
+      "panelId": "p15-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "manual-announcement-microphone",
+          "blank-digital-signboard",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "65be99e0c9ac209adc46ad136bf04fd3c66ab334eb7bb3db4fc6f6e6e0c4c77f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-015/panel-003.txt",
+      "page": 15,
+      "panel": 3,
+      "panelId": "p15-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "ghori-the-station-dog",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "3af7219ec68e1350013d8f97a7459a99a79b33c5ef7639f161da389505e8a120",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-015/panel-004.txt",
+      "page": 15,
+      "panel": 4,
+      "panelId": "p15-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "riju-reconciliation-terminal",
+          "blank-digital-signboard",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "b05d12df706fa9b9d017bdd0c24e4929cc8fc16105c4aee23b7d11580c5c9e58",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-015/panel-005.txt",
+      "page": 15,
+      "panel": 5,
+      "panelId": "p15-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "blank-digital-signboard",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "ghori-the-station-dog",
+          "station-clock-pair"
+        ]
+      },
+      "sha256": "8f2f2adf85f06b388c02ba4fd73d4fa5c40825be473861d7cae5c2408544a658",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-016/panel-001.txt",
+      "page": 16,
+      "panel": 1,
+      "panelId": "p16-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-attendance-scanner",
+          "school-parallel-registers",
+          "laboratory-shared-kit",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "0bb61f3aa21ccf27cc23144d2242e1b5eca7a1a1502db24bc00de1305169545d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-016/panel-002.txt",
+      "page": 16,
+      "panel": 2,
+      "panelId": "p16-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-parallel-registers",
+          "riju-form-satchel",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "e0b4aa2b931a342ca020dc73a0987e92502fe98d38567359602e1027c9d31325",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-016/panel-003.txt",
+      "page": 16,
+      "panel": 3,
+      "panelId": "p16-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-parallel-registers",
+          "cecil-stamp-arm",
+          "roll-forty-seven-goat"
+        ]
+      },
+      "sha256": "7cb7763da5d67b287516955756387a15b15f5badedd68a1cbaecb78039155268",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-016/panel-004.txt",
+      "page": 16,
+      "panel": 4,
+      "panelId": "p16-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "laboratory-shared-kit"
+        ]
+      },
+      "sha256": "1b363de331005c2d312bda560beba9feab9073fad52abf852352c5cc48fac9fe",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-016/panel-005.txt",
+      "page": 16,
+      "panel": 5,
+      "panelId": "p16-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "school-parallel-registers",
+          "laboratory-shared-kit"
+        ]
+      },
+      "sha256": "c51609dc5059a2e7e13cc88e97ca518d6fcd9482581d744b6b00379153f0f4c5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-017/panel-001.txt",
+      "page": 17,
+      "panel": 1,
+      "panelId": "p17-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "7fe99dc4b1f8c37bc9c91d09be385dc52ac6f57a1e268826b446f14ac28eaf9c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-017/panel-002.txt",
+      "page": 17,
+      "panel": 2,
+      "panelId": "p17-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "new-development",
+        "props": [
+          "blank-surveillance-camera",
+          "cecil-stamp-arm",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "66a1c8b27d0c7ccc7f5be35f66efb55cddd6c1efe6b09349366e1ec6bdddaa99",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-017/panel-003.txt",
+      "page": 17,
+      "panel": 3,
+      "panelId": "p17-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "new-development",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "4f5717b9249d1dc3720628896e7aa8e6ff6005a881ef72df3169f8b4be38b090",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-017/panel-004.txt",
+      "page": 17,
+      "panel": 4,
+      "panelId": "p17-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "b9fa926ffb87c85d79ed2b6f9aa5835f53813e8abec05515f07a4fd92ae74b4f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-017/panel-005.txt",
+      "page": 17,
+      "panel": 5,
+      "panelId": "p17-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "new-development",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "91f70dd4e33224c3add4eb51cd5f76e3f2a4f05ef6755af347e8b5e44ba55a8b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-017/panel-006.txt",
+      "page": 17,
+      "panel": 6,
+      "panelId": "p17-06",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "ila-cracked-phone",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "2838163fca2046d7d4242a9ac7fa7863813bcb524edafbc558833f9d8541efa4",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-018/panel-001.txt",
+      "page": 18,
+      "panel": 1,
+      "panelId": "p18-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "ananya-tool-bag",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "c1b0a91ef58ed0c833f6146b0a814794b1dbe979312fdb5e01f3a681db529588",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-018/panel-002.txt",
+      "page": 18,
+      "panel": 2,
+      "panelId": "p18-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "ananya-tool-bag",
+          "amber-clinic-glasses",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "ba5770ec635ca30aa3589dd13f97a416f3256761b82612bb2a92acfce0c08ae0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-018/panel-003.txt",
+      "page": 18,
+      "panel": 3,
+      "panelId": "p18-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "vale-silver-tablet",
+          "exchange-patch-cords",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "d679dcf67b0dc1224bff36f481acbcd0ad3ee59085c9db3db182a996e193c544",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-018/panel-004.txt",
+      "page": 18,
+      "panel": 4,
+      "panelId": "p18-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ananya-rook"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "vale-silver-tablet",
+          "ananya-tool-bag",
+          "amber-clinic-glasses",
+          "exchange-circuit-books",
+          "exchange-patch-cords"
+        ]
+      },
+      "sha256": "0e1b2b677be5c452a748dad45fbffbdcdbfab8fd06538ff85b2ab110a70435fe",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-018/panel-005.txt",
+      "page": 18,
+      "panel": 5,
+      "panelId": "p18-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "ananya-rook",
+          "director-vale"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "cecil-stamp-arm",
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "vale-silver-tablet",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "befb43606c8b331b1c2bb1b2089444c305eeb4eebf7e6c280d8b31822365ed8a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-019/panel-001.txt",
+      "page": 19,
+      "panel": 1,
+      "panelId": "p19-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "exchange-circuit-books"
+        ]
+      },
+      "sha256": "b13bedcfc8b9b630db299b622e1cd5ae4184f2291aaa9e5db1d31643fb0a28cf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-019/panel-002.txt",
+      "page": 19,
+      "panel": 2,
+      "panelId": "p19-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "f6370840a2fdfb6076581edbad5f6a959ac0b729b43e71c837a30ef1d94534d2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-019/panel-003.txt",
+      "page": 19,
+      "panel": 3,
+      "panelId": "p19-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "exchange-circuit-books",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "3872af8112c06ed91fe169925054a53fcf85584c164bc08ca6d6a35001b6c222",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-019/panel-004.txt",
+      "page": 19,
+      "panel": 4,
+      "panelId": "p19-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "e826725a82b201fb8e18e67c3b7d9f0f2b98160c1bd9a84cfba7fa43c9162e76",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-019/panel-005.txt",
+      "page": 19,
+      "panel": 5,
+      "panelId": "p19-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "d65424951352f13b54d431ccac765bb513a8c9cc973bafa6e758e805b1d1e480",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-019/panel-006.txt",
+      "page": 19,
+      "panel": 6,
+      "panelId": "p19-06",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "18d386b92d73d86b919023649941f10ae4254afdae26c5da0e9e065b1389e579",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-020/panel-001.txt",
+      "page": 20,
+      "panel": 1,
+      "panelId": "p20-01",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "ff4f5323bbc73ea4d1928d6bb37e5c6c8f3c48b57db264f0ffaa331b840fe311",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-020/panel-002.txt",
+      "page": 20,
+      "panel": 2,
+      "panelId": "p20-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "cf4139b93d88e407765a71c929079911695975088937c142775d9d2065237321",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-020/panel-003.txt",
+      "page": 20,
+      "panel": 3,
+      "panelId": "p20-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "747fc7715b1a3556193394e8113f8a8c62ff24c3b98dbf33781a6c213a2f1e19",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-020/panel-004.txt",
+      "page": 20,
+      "panel": 4,
+      "panelId": "p20-04",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "4e8c052c0dded2336c4b45f909c668044636bb7ba54d13d5d4162c0e76946bdc",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-020/panel-005.txt",
+      "page": 20,
+      "panel": 5,
+      "panelId": "p20-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "8b27addc566258cafa60a1bdc4fa220b03579c0836a5c0c102472b2fc9511d0d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-021/panel-001.txt",
+      "page": 21,
+      "panel": 1,
+      "panelId": "p21-01",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "5d307123c2eb45d6499188fd3e6ce95d66a37c54346392b89907070308197551",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-021/panel-002.txt",
+      "page": 21,
+      "panel": 2,
+      "panelId": "p21-02",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "45982a504c0cb21d51af539a8b95a82b43f0f836f7b051b589f56ae7cf53d6ac",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-021/panel-003.txt",
+      "page": 21,
+      "panel": 3,
+      "panelId": "p21-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "6a17fd20f12356dec3e6a69a8ed4ae6bbdfc697813b20ecb2129112b97a0e02b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-021/panel-004.txt",
+      "page": 21,
+      "panel": 4,
+      "panelId": "p21-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "faca4a48bc362b4b5a16b1c20595a22f669add6f0e1f659973001c86b04c29b5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-021/panel-005.txt",
+      "page": 21,
+      "panel": 5,
+      "panelId": "p21-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "81c42651d6a15a095f2995f118f9bd94a4254c640e85a2971e39f48449654330",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-021/panel-006.txt",
+      "page": 21,
+      "panel": 6,
+      "panelId": "p21-06",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "2bf1ad8fd2d3e15d26d2caffbb9f5c6a7659619b7d5de6b8348ac5df6f04fe86",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-022/panel-001.txt",
+      "page": 22,
+      "panel": 1,
+      "panelId": "p22-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "e4e17381914211850adc34d48f161d6ff153c29480677cf35953132d7f01d956",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-022/panel-002.txt",
+      "page": 22,
+      "panel": 2,
+      "panelId": "p22-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "ananya-tool-bag",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses",
+          "clinic-paper-queue",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "78edf2f5db9c1239d534518693c0831252cfe2272dec08df88ebc344919c3bae",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-022/panel-003.txt",
+      "page": 22,
+      "panel": 3,
+      "panelId": "p22-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "riju-form-satchel",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "e3a9bd5ef528888575cac68974c3d5984b88fdfc2fb1abff11fd2448633b6c49",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-022/panel-004.txt",
+      "page": 22,
+      "panel": 4,
+      "panelId": "p22-04",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-form-satchel",
+          "station-clock-pair",
+          "blank-digital-signboard"
+        ]
+      },
+      "sha256": "d21071ef79071d3186a4698e330129ab687db615249d860f19a912e5d53a0211",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-022/panel-005.txt",
+      "page": 22,
+      "panel": 5,
+      "panelId": "p22-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ananya-rook",
+          "babul-courier",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "ananya-tool-bag",
+          "waterproof-document-tube",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "2499066455ebcee3190062eb0eafd75303c2b73dd1e5f66e982a7c46133a2821",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-023/panel-001.txt",
+      "page": 23,
+      "panel": 1,
+      "panelId": "p23-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "ae28101d14f8160624867c739a17761eb254afbecad1c7c024b3693ee93c7a35",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-023/panel-002.txt",
+      "page": 23,
+      "panel": 2,
+      "panelId": "p23-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "ab29b8a04d0fbc7ccf72a39f205a862633211acfaa4c4916eddb3d3f408ff1de",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-023/panel-003.txt",
+      "page": 23,
+      "panel": 3,
+      "panelId": "p23-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "ce4db669f8215d0b0f2e21b4181d81510684669ab708a388323ade4d08c23fb2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-023/panel-004.txt",
+      "page": 23,
+      "panel": 4,
+      "panelId": "p23-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "a1956b8aef5f5931e0d30cc275ced14304d0a9d956f381764bda4a46dd10f379",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-023/panel-005.txt",
+      "page": 23,
+      "panel": 5,
+      "panelId": "p23-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "9b602af50a501b8dc47a8ed8d7d0523ea3a6fe0d71c11c54cb0e868b8935086e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-023/panel-006.txt",
+      "page": 23,
+      "panel": 6,
+      "panelId": "p23-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "riju-form-satchel",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "1dc998180a5f75a9d0617739433259b722e43b393d59c9247942d4d8fe99bb4a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-024/panel-001.txt",
+      "page": 24,
+      "panel": 1,
+      "panelId": "p24-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "e2003f62be78a5521ac07b2dfb6b889da3d568a3af51a9f50dea03347a9885d6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-024/panel-002.txt",
+      "page": 24,
+      "panel": 2,
+      "panelId": "p24-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "f2608a9d225e065063008d139833919580a3741f9e4d1beee235856e976a268d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-024/panel-003.txt",
+      "page": 24,
+      "panel": 3,
+      "panelId": "p24-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "38cbb9eb54df16cfcd626dd96436d08080b4180480a2b4b88f2612ede84a2819",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-024/panel-004.txt",
+      "page": 24,
+      "panel": 4,
+      "panelId": "p24-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "6da32617be88ce50f7526438cb37113a2c8f8bfc250a4f823648767036d1e680",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-024/panel-005.txt",
+      "page": 24,
+      "panel": 5,
+      "panelId": "p24-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "a5456654c069cf039637778b2763be4ad090f255e0ebd9e4b4cb42bce6fcb638",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-025/panel-001.txt",
+      "page": 25,
+      "panel": 1,
+      "panelId": "p25-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "65efdbdff47b7c81e508e03bf72b09903282547f47ec1a9fa73abb29921d771f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-025/panel-002.txt",
+      "page": 25,
+      "panel": 2,
+      "panelId": "p25-02",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "2ab048866b42cd18c8ad7d0c37b3bf963607c40418040c7b9b7dfee49132b62c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-025/panel-003.txt",
+      "page": 25,
+      "panel": 3,
+      "panelId": "p25-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "municipal-red-ledger",
+          "riju-form-satchel",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "20da0243a541633dd73a6dd4fb2bf94b9ffdd00fc0f95f0a42dd261fa1a9b4eb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-025/panel-004.txt",
+      "page": 25,
+      "panel": 4,
+      "panelId": "p25-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "ccde4772e94e6afe8bfb2b76460fc6a23cde870f6a791751116ed70196d65da0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-025/panel-005.txt",
+      "page": 25,
+      "panel": 5,
+      "panelId": "p25-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "e6f77ec57f7952f39471373837d00653bca761bdeee6d6d22577c09045f67778",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-026/panel-001.txt",
+      "page": 26,
+      "panel": 1,
+      "panelId": "p26-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "junction-square",
+        "props": [
+          "smart-town-billboard",
+          "junction-clock-faces",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "babul-cycle-van"
+        ]
+      },
+      "sha256": "428930d8694aec8ff9d02175e022757422bca80ad0ddcf1c533fc19a9627afb7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-026/panel-002.txt",
+      "page": 26,
+      "panel": 2,
+      "panelId": "p26-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "junction-clock-faces",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "22f08c973ba345f837c2d56f2ab672ae0041d797d06330dab0ed483ee7f769cf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-026/panel-003.txt",
+      "page": 26,
+      "panel": 3,
+      "panelId": "p26-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "a1f5128c4fd18ad93c9100e02f34fdbaf302344b95e66c4f4d4f5b99e9ac7f4f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-026/panel-004.txt",
+      "page": 26,
+      "panel": 4,
+      "panelId": "p26-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "junction-square",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "0b2bce0598a139b705bb907cf1aff97e64c453660cfd4bfea613bf2ab3848c44",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-026/panel-005.txt",
+      "page": 26,
+      "panel": 5,
+      "panelId": "p26-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "59851bd9badef41258f492193dfaffcf549b6a0c455fa41ddcfcaddcdb3b8c91",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-026/panel-006.txt",
+      "page": 26,
+      "panel": 6,
+      "panelId": "p26-06",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "1263b1e7f15dcc63252dc4750f23420713a9bfef7b0022d8772a6da997dc71ae",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-027/panel-001.txt",
+      "page": 27,
+      "panel": 1,
+      "panelId": "p27-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "ananya-tool-bag",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "2f1f95eb5a868b53d3b6991eeb33d09bfdbb006216b768e2aa08185e98b518ee",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-027/panel-002.txt",
+      "page": 27,
+      "panel": 2,
+      "panelId": "p27-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "a8d27926a549ff8b5248b2584872720d8c9d60d26a52704b6e1bc5f532cabeb7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-027/panel-003.txt",
+      "page": 27,
+      "panel": 3,
+      "panelId": "p27-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "ananya-tool-bag",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "0784f66e1ff67a4da7d6782a2ee4ee6ace0b2f21a5cfe91e4adefe9a8fb0ce30",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-027/panel-004.txt",
+      "page": 27,
+      "panel": 4,
+      "panelId": "p27-04",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "ananya-tool-bag",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "29146c14800fdbf0989b0796d0baa638b7d841471d4e19aa4bc1d088bc899488",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-027/panel-005.txt",
+      "page": 27,
+      "panel": 5,
+      "panelId": "p27-05",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "ananya-tool-bag",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "9f242f32ce1737b9f60f96e1b2e9a1473c437434511c4b89fc2797cc1029e899",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-028/panel-001.txt",
+      "page": 28,
+      "panel": 1,
+      "panelId": "p28-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "blank-digital-signboard",
+          "manual-announcement-microphone",
+          "station-clock-pair",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "ghori-the-station-dog"
+        ]
+      },
+      "sha256": "9c2653c3019129559331757b322159c535f2c5b6d8784890d70c23327b846c4e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-028/panel-002.txt",
+      "page": 28,
+      "panel": 2,
+      "panelId": "p28-02",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "blank-digital-signboard"
+        ]
+      },
+      "sha256": "7cd2efea4b28424143bad69241dbdcbd64c53fc9e2df007daaaa744f860289cd",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-028/panel-003.txt",
+      "page": 28,
+      "panel": 3,
+      "panelId": "p28-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "ghori-the-station-dog",
+          "cecil-stamp-arm",
+          "station-clock-pair"
+        ]
+      },
+      "sha256": "2a4883f1a8cc3d7fd7988d57c7053d70d63c025a25af8052a6ccb88431ad0f0e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-028/panel-004.txt",
+      "page": 28,
+      "panel": 4,
+      "panelId": "p28-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "blank-digital-signboard",
+          "ghori-the-station-dog"
+        ]
+      },
+      "sha256": "b95b0e152e38a9b27a3dd052a15353be3c6b033054a696cea01d994c7f96d0d5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-028/panel-005.txt",
+      "page": 28,
+      "panel": 5,
+      "panelId": "p28-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "bf28a7a33ef901cfe12082b2416065b144554ccb2186f5ff20681f64bad28119",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-029/panel-001.txt",
+      "page": 29,
+      "panel": 1,
+      "panelId": "p29-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "6c115a4574994fc3aacdab99178875988d383a3fba3c36ee9607b90e410f1582",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-029/panel-002.txt",
+      "page": 29,
+      "panel": 2,
+      "panelId": "p29-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "1236d1e8c9b0c62024eb25e0037763e3af58aa06db046e8a6031598683dba3af",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-029/panel-003.txt",
+      "page": 29,
+      "panel": 3,
+      "panelId": "p29-03",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "140aef359750c6a0128118f296d823ef8e697a3fffe0051c44871a67fad106fb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-029/panel-004.txt",
+      "page": 29,
+      "panel": 4,
+      "panelId": "p29-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone"
+        ]
+      },
+      "sha256": "355c4a4dd37fbe2d3956ea44e5cf49f742e2ffdcf187147035dffdcc0cbe99ac",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-029/panel-005.txt",
+      "page": 29,
+      "panel": 5,
+      "panelId": "p29-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "a1637a08bcf4cf4017d54413e099e4204d230d5247d41b4c335621b5573a8f69",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-029/panel-006.txt",
+      "page": 29,
+      "panel": 6,
+      "panelId": "p29-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "7f2a32770906ae543f758c87beb9da4b0bd880c30843105ae54e3879fbbd3af7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-030/panel-001.txt",
+      "page": 30,
+      "panel": 1,
+      "panelId": "p30-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "ananya-tool-bag",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "3570c22543412218bd912efae6beb9016e0af8f7e0c2dc46c811b1c4eda3d657",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-030/panel-002.txt",
+      "page": 30,
+      "panel": 2,
+      "panelId": "p30-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "40bfd8e3cc55957de3aba0bbc899c1f4111e0637843f42cf764cc4910b21ca1a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-030/panel-003.txt",
+      "page": 30,
+      "panel": 3,
+      "panelId": "p30-03",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "0c6470a35c8c9774e8e041a12ec3e45a8b3b6f28a09529413484bcbc50dbf2d8",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-030/panel-004.txt",
+      "page": 30,
+      "panel": 4,
+      "panelId": "p30-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "waterproof-document-tube",
+          "babul-cycle-van",
+          "ananya-tool-bag",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "4ba16e9d4b4a045a8cdef5dce01568917fa6d25ea15a33044ecaa29d9721c2f6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-030/panel-005.txt",
+      "page": 30,
+      "panel": 5,
+      "panelId": "p30-05",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "69107fa742247dec617996da1a38f20d0368f1a8f7e4b7c2525092e103b57c15",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-031/panel-001.txt",
+      "page": 31,
+      "panel": 1,
+      "panelId": "p31-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "adfd92a542f19795b6488471fe8aa8465c5489e5173a8e6fb7fcb816112fd1f7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-031/panel-002.txt",
+      "page": 31,
+      "panel": 2,
+      "panelId": "p31-02",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "4a75c2ed847b9ab9e28de73e38dec67a975f9ec66bb0a40f5db5f19c57497b70",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-031/panel-003.txt",
+      "page": 31,
+      "panel": 3,
+      "panelId": "p31-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "new-development",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "2b9a6a30272a30b7b1d3966bbe924d34f61cdd93579b6e426363c5ef28e35784",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-031/panel-004.txt",
+      "page": 31,
+      "panel": 4,
+      "panelId": "p31-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "f8c332327194cca1512ff829f1a4864a545dbb236c13fa9328ab5b4ec4c3cb81",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-031/panel-005.txt",
+      "page": 31,
+      "panel": 5,
+      "panelId": "p31-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "ila-cracked-phone",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "8af6abef96d2ca4a6ed793f9fa8e186a724803a165aea4944721ade6925863c7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-031/panel-006.txt",
+      "page": 31,
+      "panel": 6,
+      "panelId": "p31-06",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "6dcd69b8e72e48ec25b7ec826116bd079507cfbba371d53b5b3e4c772092e1ec",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-032/panel-001.txt",
+      "page": 32,
+      "panel": 1,
+      "panelId": "p32-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "municipal-red-ledger",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "smart-town-billboard",
+          "junction-clock-faces"
+        ]
+      },
+      "sha256": "9fda9fbbc607af922a94c27dcb8b61ebe8738efe05866bce3a14bd10009d5dc1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-032/panel-002.txt",
+      "page": 32,
+      "panel": 2,
+      "panelId": "p32-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "55558ac871c0f45ab526d3cc44b97f6cd852d980bee670080b2296c4985785ad",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-032/panel-003.txt",
+      "page": 32,
+      "panel": 3,
+      "panelId": "p32-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "d100b455579e23eefbd8c7cfb6ba6f566bbd13de10b4b77944cb0350ec18ee37",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-032/panel-004.txt",
+      "page": 32,
+      "panel": 4,
+      "panelId": "p32-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "27b029f87fd6656bb9f86148253580233f967c9dc202bd4fb8ee4b6e4c237170",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-032/panel-005.txt",
+      "page": 32,
+      "panel": 5,
+      "panelId": "p32-05",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "smart-town-billboard",
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "d3dd80e80a0bacd248b7b696759d6b8c82c14fd14a1f59079cbc0a1d02e5ee1e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-033/panel-001.txt",
+      "page": 33,
+      "panel": 1,
+      "panelId": "p33-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "e5358a77a0506e5f486b8a61b09ee2f923f5e34dd738c5d0889e3b8e963e0b83",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-033/panel-002.txt",
+      "page": 33,
+      "panel": 2,
+      "panelId": "p33-02",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "waterproof-document-tube",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "05ebad05ff59e1d9e19109eb1d56c75a2bba09b7f7c7adcb2e2bf59b417e209b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-033/panel-003.txt",
+      "page": 33,
+      "panel": 3,
+      "panelId": "p33-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "waterproof-document-tube",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "ccd30c2a931e990d65654d2a0de02294e838b6d20ca90ce4268caf15d8139def",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-033/panel-004.txt",
+      "page": 33,
+      "panel": 4,
+      "panelId": "p33-04",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "b0b79ce00c916645b82486ca496d25928e78b2b5cfaf9d312de37425e8d4766a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-033/panel-005.txt",
+      "page": 33,
+      "panel": 5,
+      "panelId": "p33-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "510889cce7a6c30c1d69323fd0e7afda11aa77577758a64b6d21ecc428e40f53",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-033/panel-006.txt",
+      "page": 33,
+      "panel": 6,
+      "panelId": "p33-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "amber-clinic-glasses",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "a88ca6861108c78b60f87508b3c82e98297452133f812312eb70d8696e9e2387",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-034/panel-001.txt",
+      "page": 34,
+      "panel": 1,
+      "panelId": "p34-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "market-price-slates",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "398357e4425a45d4ea104384c87b72a7fa39699b2c33e1ab048bbe8890946867",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-034/panel-002.txt",
+      "page": 34,
+      "panel": 2,
+      "panelId": "p34-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "a4b1864fa801dd99f9e604216ada312fd679ab89297bf1f5f520f224cfc774ff",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-034/panel-003.txt",
+      "page": 34,
+      "panel": 3,
+      "panelId": "p34-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "634672665f0912af1378968a43cf6f39e3933066886f838e4fe711a4523b3a5c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-034/panel-004.txt",
+      "page": 34,
+      "panel": 4,
+      "panelId": "p34-04",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "528d970980ac8db11a1355e45f85a79dfa704d844dc3f789aa7b7dfd85ad7574",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-034/panel-005.txt",
+      "page": 34,
+      "panel": 5,
+      "panelId": "p34-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "712fe01925553d13e4c83e243279650b07598276342b8b888380409fe5b58388",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-034/panel-006.txt",
+      "page": 34,
+      "panel": 6,
+      "panelId": "p34-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "4420815a0d5702c5205faa84ef9bdf93bb70dd5ad660c73ebd73b5bbacf37d5b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-035/panel-001.txt",
+      "page": 35,
+      "panel": 1,
+      "panelId": "p35-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "eb1f15f9b0995910461d4852d223b18b2ff3c3fdb361b6f20b9f9f2c0a8c47a5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-035/panel-002.txt",
+      "page": 35,
+      "panel": 2,
+      "panelId": "p35-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "942feaf5744288d4427af3347e4e4def87e5f433a4fa97dba4c316b010214ba1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-035/panel-003.txt",
+      "page": 35,
+      "panel": 3,
+      "panelId": "p35-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "743528faf5906a7b6a9deb864cf484d29f37945197d1d5b3aec27d435aca77f2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-035/panel-004.txt",
+      "page": 35,
+      "panel": 4,
+      "panelId": "p35-04",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "752da25e5e65a9b099dd888f6afa742d382ca5ad13721e9ae0d8d889d7d7121d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-035/panel-005.txt",
+      "page": 35,
+      "panel": 5,
+      "panelId": "p35-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "d4e362c4acd5d5e081508e1814e0f20dff2c97bf41ffbc84071d95b3c33a76b7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-036/panel-001.txt",
+      "page": 36,
+      "panel": 1,
+      "panelId": "p36-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "7ad39ab0c6b496648e565b58ed3691f0439e363b2f141925ea88d838f806a00a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-036/panel-002.txt",
+      "page": 36,
+      "panel": 2,
+      "panelId": "p36-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "clinic-paper-queue"
+        ]
+      },
+      "sha256": "7f37df594d76a7bcbadfab8e7b28f9afd8f9006ec4f7138c5b617c3719351b66",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-036/panel-003.txt",
+      "page": 36,
+      "panel": 3,
+      "panelId": "p36-03",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses",
+          "riju-reconciliation-terminal",
+          "tap-sensitive-analyser"
+        ]
+      },
+      "sha256": "ddc99804347bffb837506adc79f98ca7c8bde70914bd7bd1c01c255332f39e12",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-036/panel-004.txt",
+      "page": 36,
+      "panel": 4,
+      "panelId": "p36-04",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "75e9294ffdc55c42a1edb429682301a4a669f04780d445f85911e7702302e801",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-036/panel-005.txt",
+      "page": 36,
+      "panel": 5,
+      "panelId": "p36-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "cecil-stamp-arm",
+          "clinic-paper-queue",
+          "riju-reconciliation-terminal",
+          "tap-sensitive-analyser"
+        ]
+      },
+      "sha256": "9dca86a2935b8d24317e1c88d527a3b681cb24a142a103b57a4ba713bc794b6f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-036/panel-006.txt",
+      "page": 36,
+      "panel": 6,
+      "panelId": "p36-06",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "clinic-paper-queue"
+        ]
+      },
+      "sha256": "5f66f4379b9cddb7cdf52108fd44afa0de95dc87c48efea225704300821fc015",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-037/panel-001.txt",
+      "page": 37,
+      "panel": 1,
+      "panelId": "p37-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "clinic-solar-battery"
+        ]
+      },
+      "sha256": "154a9664f9c0f007ddb95be1b50311145dfa85173199ee6630580e2fd05482ff",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-037/panel-002.txt",
+      "page": 37,
+      "panel": 2,
+      "panelId": "p37-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "amber-clinic-glasses",
+          "ananya-mechanical-watch",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "bbecffdba464109a15a4d9620636add7271f0ff4a00bcbe8ce4128370d34b800",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-037/panel-003.txt",
+      "page": 37,
+      "panel": 3,
+      "panelId": "p37-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "clinic-paper-queue",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "0f4f85a05d54bde64d221351286785fc19d5aac6161eda753ecc5f9f62f1926b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-037/panel-004.txt",
+      "page": 37,
+      "panel": 4,
+      "panelId": "p37-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "clinic-paper-queue",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "8d1d6d6b95f299076e1b892c8e8b4b8bbfc7fd5fb07632f1fb76be359af64a6a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-037/panel-005.txt",
+      "page": 37,
+      "panel": 5,
+      "panelId": "p37-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "municipal-red-ledger",
+          "market-price-slates"
+        ]
+      },
+      "sha256": "94f658a0da332cc514421248b5a6ec068a7e412627dd782671192a3cf2ed2824",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-038/panel-001.txt",
+      "page": 38,
+      "panel": 1,
+      "panelId": "p38-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "market-price-slates",
+          "competing-payment-placards",
+          "riju-reconciliation-terminal",
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "f912a6fc05552e6000b365861c444ab7d5629aa0c40144c15bbbff5856301599",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-038/panel-002.txt",
+      "page": 38,
+      "panel": 2,
+      "panelId": "p38-02",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "market-price-slates",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "966f5040b521a1c972294055f0d8584c96aee5de4d79f684fe1d0e6047845e9c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-038/panel-003.txt",
+      "page": 38,
+      "panel": 3,
+      "panelId": "p38-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "market-price-slates",
+          "competing-payment-placards",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "8b3cab1e4255050a929823f91b7ae28f5e2972783614cf25e53b3cccc243a115",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-038/panel-004.txt",
+      "page": 38,
+      "panel": 4,
+      "panelId": "p38-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "babul-authoritative-bell",
+          "babul-cycle-van",
+          "market-price-slates",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "64bac844d7c0df16a92d17a085e9b5afe49df131a41fd3bb02a1db20b45cb66e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-038/panel-005.txt",
+      "page": 38,
+      "panel": 5,
+      "panelId": "p38-05",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "market-price-slates",
+          "competing-payment-placards",
+          "babul-authoritative-bell",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "f652ea09a7b4c44e3567778ae27775b895a8fb4300892728e44e717d84772389",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-038/panel-006.txt",
+      "page": 38,
+      "panel": 6,
+      "panelId": "p38-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "market-price-slates",
+          "babul-cycle-van",
+          "school-attendance-scanner",
+          "school-parallel-registers"
+        ]
+      },
+      "sha256": "9b8f47ebb7adb76cf04bc86d9a679e315e4627607210319db24c7a229c51181f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-039/panel-001.txt",
+      "page": 39,
+      "panel": 1,
+      "panelId": "p39-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-attendance-scanner",
+          "school-parallel-registers",
+          "laboratory-shared-kit",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "d3b24cbc9f42b65afdae8b448e96961149528dc168963807e2f1c12a22e9ddd9",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-039/panel-002.txt",
+      "page": 39,
+      "panel": 2,
+      "panelId": "p39-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-parallel-registers",
+          "school-attendance-scanner",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "4252a00301bb56160375e7b8c519aa5f4737bf5a51701c53a401be9a0bfaa58b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-039/panel-003.txt",
+      "page": 39,
+      "panel": 3,
+      "panelId": "p39-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-parallel-registers",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "db7deb97c38e14aeaa12ba02b72a0bdbb67a8ea24c5ec73e1432cb1193799b17",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-039/panel-004.txt",
+      "page": 39,
+      "panel": 4,
+      "panelId": "p39-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "laboratory-shared-kit",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "092c69eef555c5c620a6bcd4a35f8e6273ff33e354bc809ebb32c287b084a57b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-039/panel-005.txt",
+      "page": 39,
+      "panel": 5,
+      "panelId": "p39-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "roll-forty-seven-goat",
+          "school-attendance-scanner",
+          "school-parallel-registers",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "00cce980354c5171a7ece87f605247f93d12190ec7f7c4998070eeb89547fec0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-040/panel-001.txt",
+      "page": 40,
+      "panel": 1,
+      "panelId": "p40-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "bf4e8f4d8fda7356647140de920d63f888e43edb3512f3e2d25ac2b0d9de9389",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-040/panel-002.txt",
+      "page": 40,
+      "panel": 2,
+      "panelId": "p40-02",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "6bd7ab6114f08c173ed860d87409eaf863b73771e56d47369a3e8962b7165bda",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-040/panel-003.txt",
+      "page": 40,
+      "panel": 3,
+      "panelId": "p40-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "3cd64c744dc427bfe7651152355602cdb3434ac0959035bf335b9b63884666c8",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-040/panel-004.txt",
+      "page": 40,
+      "panel": 4,
+      "panelId": "p40-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-authoritative-bell",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "0e3308a7a4893e0a1f2f2017489eb8ef64641b815adfc6809458bbe1572179c7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-040/panel-005.txt",
+      "page": 40,
+      "panel": 5,
+      "panelId": "p40-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "vale-silver-tablet",
+          "babul-authoritative-bell",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "bbd8a00e57f6dcddb8ca4de2dcc24c79fd1d8e03c736fadc6e118e26020ba054",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-040/panel-006.txt",
+      "page": 40,
+      "panel": 6,
+      "panelId": "p40-06",
+      "referenceIds": {
+        "characters": [],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-circuit-books"
+        ]
+      },
+      "sha256": "bedcfa65d336d823babfb91cc8c7f2d006a03aba294d7407ae421cf62f8a77d5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-041/panel-001.txt",
+      "page": 41,
+      "panel": 1,
+      "panelId": "p41-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "babul-authoritative-bell",
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "8279b383815fa289e7397644265cb57b52b3d446979ea691d5cbbebb20f1708b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-041/panel-002.txt",
+      "page": 41,
+      "panel": 2,
+      "panelId": "p41-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "riju-reconciliation-terminal",
+          "exchange-circuit-books",
+          "exchange-patch-cords",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "f122e5ed39c47b033aa5fcbef79c6a0e9bfad0ebc9d8acb039ae256a7fbb4702",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-041/panel-003.txt",
+      "page": 41,
+      "panel": 3,
+      "panelId": "p41-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "exchange-circuit-books",
+          "exchange-patch-cords",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "94570164f1496c683a6c2d1bf93885ffeca0fd9c6c7511807dee247f9cfe5540",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-041/panel-004.txt",
+      "page": 41,
+      "panel": 4,
+      "panelId": "p41-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "c46be505c6eb25c219dd4c2b7df2cbfebba40ead270cea5c559a493e1456f142",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-041/panel-005.txt",
+      "page": 41,
+      "panel": 5,
+      "panelId": "p41-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "new-development",
+        "props": [
+          "cecil-stamp-arm",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "ef85dcbf499607828d862c4a7880877a4dafd47cd3a67165ef8076e51c6c24df",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-041/panel-006.txt",
+      "page": 41,
+      "panel": 6,
+      "panelId": "p41-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "cecil-stamp-arm",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "3d4b416f6b2300a9fe87c90f16faa4be6bc798e735d12b205bbb4805ae2e7b27",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-042/panel-001.txt",
+      "page": 42,
+      "panel": 1,
+      "panelId": "p42-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "c66cfe1618bd80f6ce029e1be217591ae34f88f40f1b94198dec24b65703094a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-042/panel-002.txt",
+      "page": 42,
+      "panel": 2,
+      "panelId": "p42-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "f153bbcd020142d246bcfd56a82d346fa7d22a8416022be8932b624548d72154",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-042/panel-003.txt",
+      "page": 42,
+      "panel": 3,
+      "panelId": "p42-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "593147e8c8b5eaaa5a7601bca6b0c27b28c47c8f202c24a03e54d83d4eccb003",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-042/panel-004.txt",
+      "page": 42,
+      "panel": 4,
+      "panelId": "p42-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "6baeb0d3b4d0e3163ae110cd66029da160c6c87dd314fb989c7977c36817c902",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-042/panel-005.txt",
+      "page": 42,
+      "panel": 5,
+      "panelId": "p42-05",
+      "referenceIds": {
+        "characters": [],
+        "location": "new-development",
+        "props": [
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "1ffa170c85f33cd7e2f18f2dbc4c1cfee9b6ad2a059252c4b875f2b876172c89",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-043/panel-001.txt",
+      "page": 43,
+      "panel": 1,
+      "panelId": "p43-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "dc6e20b40839897d3b9e7afdb5c14e8b94197479950f11f01db6b90040539f01",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-043/panel-002.txt",
+      "page": 43,
+      "panel": 2,
+      "panelId": "p43-02",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "3569114261916974a3834fe59070e1aee779e467a58aa633505dc6a2d4cdbc0c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-043/panel-003.txt",
+      "page": 43,
+      "panel": 3,
+      "panelId": "p43-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "a0c0638dc6a50bda7fd5213573344f25ef5a5555d145fafa7e1620c1279a3735",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-043/panel-004.txt",
+      "page": 43,
+      "panel": 4,
+      "panelId": "p43-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "a3ac62e70af7bd014c21713576857869c4c0a29062d65fd86db51957427968f6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-043/panel-005.txt",
+      "page": 43,
+      "panel": 5,
+      "panelId": "p43-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "new-development",
+        "props": [
+          "blank-surveillance-camera",
+          "babul-cycle-van",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "2c4a945c7727a3b9af0ddc03268467b8159e57c39ff428b08f49ce1a9d4cb85c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-043/panel-006.txt",
+      "page": 43,
+      "panel": 6,
+      "panelId": "p43-06",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "55814bd32356469e725211ca63ca8f683dd5660f5f4168909a983dd4b2338abf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-044/panel-001.txt",
+      "page": 44,
+      "panel": 1,
+      "panelId": "p44-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "riju-reconciliation-terminal",
+          "market-price-slates",
+          "competing-payment-placards",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "04b3602eb73993d85e6db45c3b3f40975d5df0b369521823ab33ea48612adf24",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-044/panel-002.txt",
+      "page": 44,
+      "panel": 2,
+      "panelId": "p44-02",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "1924d416e298f834318851fce04aed4a42204fb008d2c289d309f9341d974295",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-044/panel-003.txt",
+      "page": 44,
+      "panel": 3,
+      "panelId": "p44-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "competing-payment-placards",
+          "market-price-slates",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "171a5e6c0cba58864abf4a22a6c3459c44ed0505d87f300baec7415373837cc7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-044/panel-004.txt",
+      "page": 44,
+      "panel": 4,
+      "panelId": "p44-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-authoritative-bell",
+          "babul-cycle-van",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "31a7e32ce60b2262ea3c6ca4e6e4ffc03155a8ca4cdf3db8b55bacc973b944d5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-044/panel-005.txt",
+      "page": 44,
+      "panel": 5,
+      "panelId": "p44-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "babul-cycle-van",
+          "cecil-stamp-arm",
+          "clinic-paper-queue",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "c7cc388e4d99002a0d240398592b73f2e53ee8c589401e0a477419250b012398",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-045/panel-001.txt",
+      "page": 45,
+      "panel": 1,
+      "panelId": "p45-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "ananya-tool-bag",
+          "ananya-mechanical-watch",
+          "clinic-paper-queue"
+        ]
+      },
+      "sha256": "71fd2d42f9432144fff6c1cc2c417701d32cb34e2d5abf7f5d508061670c1119",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-045/panel-002.txt",
+      "page": 45,
+      "panel": 2,
+      "panelId": "p45-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "clinic-paper-queue",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "3dfcd4b9a887c498f1b4d671554f351d21fb2a77e062eaae90d8baac08497968",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-045/panel-003.txt",
+      "page": 45,
+      "panel": 3,
+      "panelId": "p45-03",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "riju-reconciliation-terminal",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "87630dec64658c23d4b0439e8dc6c210648b0ba951de0870874e33f1b46ffd3a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-045/panel-004.txt",
+      "page": 45,
+      "panel": 4,
+      "panelId": "p45-04",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "ananya-mechanical-watch",
+          "riju-form-satchel",
+          "ananya-tool-bag"
+        ]
+      },
+      "sha256": "0307d86f847ef4c1d49b0edb45141f05d6f12354760365f6e8340e73ca6753af",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-045/panel-005.txt",
+      "page": 45,
+      "panel": 5,
+      "panelId": "p45-05",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "ananya-tool-bag",
+          "amber-clinic-glasses",
+          "clinic-solar-battery",
+          "clinic-paper-queue"
+        ]
+      },
+      "sha256": "e0fcd0100912a6126c3cd75a818e30eac87021bb538e69c0520d0ffa5d2ab323",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-045/panel-006.txt",
+      "page": 45,
+      "panel": 6,
+      "panelId": "p45-06",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "ananya-mechanical-watch",
+          "riju-reconciliation-terminal",
+          "ananya-tool-bag"
+        ]
+      },
+      "sha256": "9fea8da8b81caf8300979dd9089059dd76a0f5be220addf3e15d7489022ac7c6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-046/panel-001.txt",
+      "page": 46,
+      "panel": 1,
+      "panelId": "p46-01",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "70a1ad613c3cbc8456966280d856ec0b12b473e9eab37d5435370b9da00d9811",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-046/panel-002.txt",
+      "page": 46,
+      "panel": 2,
+      "panelId": "p46-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "director-vale"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "vale-silver-tablet",
+          "ananya-mechanical-watch",
+          "clinic-paper-queue"
+        ]
+      },
+      "sha256": "41458f0643ddefd6547075ad5935338e4f586fe9d3227ac3340ff520fa12b4bb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-046/panel-003.txt",
+      "page": 46,
+      "panel": 3,
+      "panelId": "p46-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "234cac2074e3e09fea3389670e8edacd542c940ccbebc2cc4b04dd33fc661d59",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-046/panel-004.txt",
+      "page": 46,
+      "panel": 4,
+      "panelId": "p46-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "vale-silver-tablet",
+          "clinic-paper-queue",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "32c2214506cc73943571601ab2e04c27c6022bf2d7082a689306dfc443623c12",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-046/panel-005.txt",
+      "page": 46,
+      "panel": 5,
+      "panelId": "p46-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "a522edb14a6596d7a77a278b4328ecac3a70e79ce30be752a14d6b536ca8d33f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-046/panel-006.txt",
+      "page": 46,
+      "panel": 6,
+      "panelId": "p46-06",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "36f2c2f9dc0e7d0c80861dde4c97efcacd53c06d18cfd246d8a2a5517e8527b1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-047/panel-001.txt",
+      "page": 47,
+      "panel": 1,
+      "panelId": "p47-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "d72b99181c9268499a855e38b466bdb2ca29ff84e17f31c39ff2e0fc26816c92",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-047/panel-002.txt",
+      "page": 47,
+      "panel": 2,
+      "panelId": "p47-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "efbf2a24716f4950cc69b2e4621df4402e459556360d848e0efa1750e5b1d2e5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-047/panel-003.txt",
+      "page": 47,
+      "panel": 3,
+      "panelId": "p47-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel",
+          "riju-anomaly-notebook",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "39f0b62dd3b746c9aeed34e075cbe9e70397c1b625a7f283cce8d067387d1c6f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-047/panel-004.txt",
+      "page": 47,
+      "panel": 4,
+      "panelId": "p47-04",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "549dacb604cd9d6d1edcfc1680ec8dcb30f2c64c0cfea8ca72e2cd1a9949aa3e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-047/panel-005.txt",
+      "page": 47,
+      "panel": 5,
+      "panelId": "p47-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "d6f6650d4bada9d8a1a09b5b9589ddaa12894b105abfc25052c875dbff18196c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-048/panel-001.txt",
+      "page": 48,
+      "panel": 1,
+      "panelId": "p48-01",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "846707a6d6c3a033ae17433978049e4fb110b31e30fd2a88078244b9bc640e99",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-048/panel-002.txt",
+      "page": 48,
+      "panel": 2,
+      "panelId": "p48-02",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "dd2fab328544a99cadce739d7d37e58e8f874d7468d987bd678fd4a19f9ed0a5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-048/panel-003.txt",
+      "page": 48,
+      "panel": 3,
+      "panelId": "p48-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "d45878af589b399d42b705c7d437cbf2871870d373e47dae7db13618b24d9e59",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-048/panel-004.txt",
+      "page": 48,
+      "panel": 4,
+      "panelId": "p48-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "529e4519efb95e58ce956b22dd7f1f5615ad9deed249ca1d041005d5c9efb1aa",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-048/panel-005.txt",
+      "page": 48,
+      "panel": 5,
+      "panelId": "p48-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "f6bb730b03d6a59eb5a37761237cfbf0b9fe852a26a52a03814bf15f1084af87",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-048/panel-006.txt",
+      "page": 48,
+      "panel": 6,
+      "panelId": "p48-06",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "c564d51a40ee78955e04b0b09d6a2091fe8f109385de9d5897a3fb1950c48537",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-049/panel-001.txt",
+      "page": 49,
+      "panel": 1,
+      "panelId": "p49-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "f437d4123b6766cf4b4501e3645af36aaa13c0f4b0052ee92e3866c2dffef6c1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-049/panel-002.txt",
+      "page": 49,
+      "panel": 2,
+      "panelId": "p49-02",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "4f424e1333d3c6ee133dc88b6a6ed92d9b690c230f39d1bf5e4eddb6d4119c07",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-049/panel-003.txt",
+      "page": 49,
+      "panel": 3,
+      "panelId": "p49-03",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "babul-cycle-van"
+        ]
+      },
+      "sha256": "6b0686a76755cb73501a8ba312f940bb6e7dbaf0070cb27fd0a4f802a90538c7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-049/panel-004.txt",
+      "page": 49,
+      "panel": 4,
+      "panelId": "p49-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "ab53d7f27df945f847b80196f25923b2af8a7f7011bf7672567fc229baa84b69",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-049/panel-005.txt",
+      "page": 49,
+      "panel": 5,
+      "panelId": "p49-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "babul-cycle-van",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "0ceaec1b5e9ae1a2edc8b74d6f42609de393fd05bb25016f14c3b9bbcf3ae50c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-050/panel-001.txt",
+      "page": 50,
+      "panel": 1,
+      "panelId": "p50-01",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17",
+          "ananya-rook"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "babul-cycle-van",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "ab0851a6b8360c6380585c799a2bad5477941d81de780161183d39b3b053195a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-050/panel-002.txt",
+      "page": 50,
+      "panel": 2,
+      "panelId": "p50-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-data-coupler",
+          "exchange-circuit-books",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "515f70a701a28d944f652e6992093656027ae6b39f188d47dabd8e3407da2f96",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-050/panel-003.txt",
+      "page": 50,
+      "panel": 3,
+      "panelId": "p50-03",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "1760efc4b821cc4eafd46a4c70c15299041f2c12a192186a50beae80abc98656",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-050/panel-004.txt",
+      "page": 50,
+      "panel": 4,
+      "panelId": "p50-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "ananya-rook"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-circuit-books",
+          "riju-reconciliation-terminal",
+          "ananya-mechanical-watch"
+        ]
+      },
+      "sha256": "9f4ecaaa4b6980140bbbab3a474868b62698f6f7e83cfe138b59de85b35ca2b4",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-050/panel-005.txt",
+      "page": 50,
+      "panel": 5,
+      "panelId": "p50-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-circuit-books",
+          "exchange-patch-cords",
+          "riju-form-satchel",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "00b09832e34496a5a0038d6402827f119cc245190c67b389239ee0a8047e58a7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-050/panel-006.txt",
+      "page": 50,
+      "panel": 6,
+      "panelId": "p50-06",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "babul-courier",
+          "ananya-rook"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "exchange-patch-cords",
+          "exchange-data-coupler",
+          "exchange-circuit-books",
+          "cecil-stamp-arm",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "9188d81919937a9066869b12a085c0e9d83970fbe62e0c282865061c0bbb1962",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-051/panel-001.txt",
+      "page": 51,
+      "panel": 1,
+      "panelId": "p51-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "waterproof-document-tube",
+          "riju-form-satchel",
+          "exchange-circuit-books",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "af7ffe386a0cb541db02d3b28a980cdf7b8d016c74400866d3e5079d968d255f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-051/panel-002.txt",
+      "page": 51,
+      "panel": 2,
+      "panelId": "p51-02",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "fb0c5c7faa02b86dff4532fec87c82df289ee3f259d4da09cc9b92e1688040bf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-051/panel-003.txt",
+      "page": 51,
+      "panel": 3,
+      "panelId": "p51-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "old-exchange",
+        "props": [
+          "babul-cycle-van",
+          "babul-authoritative-bell",
+          "waterproof-document-tube",
+          "cecil-stamp-arm",
+          "riju-form-satchel"
+        ]
+      },
+      "sha256": "d3f464ec29de58124873c64f3102dc2aeb7ce51533908b808dec2fb8f837af0d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-051/panel-004.txt",
+      "page": 51,
+      "panel": 4,
+      "panelId": "p51-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "cecil-stamp-arm",
+          "smart-town-billboard",
+          "junction-clock-faces"
+        ]
+      },
+      "sha256": "a789c18489f3e0f01eeeca02aee09d5d125fba3e20f2b3434e6684535a943d01",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-051/panel-005.txt",
+      "page": 51,
+      "panel": 5,
+      "panelId": "p51-05",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "junction-square",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "cecil-stamp-arm",
+          "smart-town-billboard"
+        ]
+      },
+      "sha256": "7e480f9645c1bffaa97a8303ba91ad30e8a9e2e2a339f43b286646a22fcb0c6e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-051/panel-006.txt",
+      "page": 51,
+      "panel": 6,
+      "panelId": "p51-06",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "babul-cycle-van",
+          "waterproof-document-tube",
+          "cecil-stamp-arm",
+          "grievance-token-drum"
+        ]
+      },
+      "sha256": "ebc93c29127aa8bc00a60d225dc9d406c895230827d206688b129be165704ef1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-052/panel-001.txt",
+      "page": 52,
+      "panel": 1,
+      "panelId": "p52-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "waterproof-document-tube",
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "78fc7371de8b7fcbda8ec2f6778b727cb2499d40e3a55ff089754302e54a77e0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-052/panel-002.txt",
+      "page": 52,
+      "panel": 2,
+      "panelId": "p52-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "waterproof-document-tube",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "17201e478db5187aff07fed1db7ffbad7fd0e4ae789438332b11935d5fc3d3fb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-052/panel-003.txt",
+      "page": 52,
+      "panel": 3,
+      "panelId": "p52-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "grievance-token-drum"
+        ]
+      },
+      "sha256": "33cf89ccc130848df50a0cf379da025b72d12bcdf2001e10a6f655b1d35e2a43",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-052/panel-004.txt",
+      "page": 52,
+      "panel": 4,
+      "panelId": "p52-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "3e439dc4d2165cd460bd02bbb2cfa5356b7f21ab8090bfd8c17f612bdca9da59",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-052/panel-005.txt",
+      "page": 52,
+      "panel": 5,
+      "panelId": "p52-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "waterproof-document-tube",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "e32b1effebda5b7f4ff48eb91935eac6ea40b2d29fa692f7b45e3814b6d2d67a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-053/panel-001.txt",
+      "page": 53,
+      "panel": 1,
+      "panelId": "p53-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "525138bd3dca39bd2dcfbaab3fdc9508b15801886072421540f5a4ff04076bae",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-053/panel-002.txt",
+      "page": 53,
+      "panel": 2,
+      "panelId": "p53-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "clinic-solar-battery",
+          "ananya-mechanical-watch",
+          "amber-clinic-glasses"
+        ]
+      },
+      "sha256": "a01952b3ef0f20cc0f79b5f7cff44e20607fb2a4bc85c5fca76d82e2a2db4bb2",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-053/panel-003.txt",
+      "page": 53,
+      "panel": 3,
+      "panelId": "p53-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "manual-announcement-microphone",
+          "blank-digital-signboard",
+          "station-clock-pair",
+          "ghori-the-station-dog"
+        ]
+      },
+      "sha256": "bde2a2509f37aa808328558645e1320c9abed226e5723fadc555609d52932962",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-053/panel-004.txt",
+      "page": 53,
+      "panel": 4,
+      "panelId": "p53-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "67e1ea0f818666324d20a0a84fe8073aff44bac54b9195fabc9e723bcc6d1bcf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-053/panel-005.txt",
+      "page": 53,
+      "panel": 5,
+      "panelId": "p53-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-attendance-scanner",
+          "school-parallel-registers",
+          "laboratory-shared-kit",
+          "roll-forty-seven-goat"
+        ]
+      },
+      "sha256": "d84761863dabf4d2d9b3bf9604241f3f37245bdc2eb3d29d93054ff6d42d5488",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-053/panel-006.txt",
+      "page": 53,
+      "panel": 6,
+      "panelId": "p53-06",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "8bd25bc75f57975d16f224d4e3ffc395ecb6d7aa9e84ee45dce0da899b9cfbcb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-054/panel-001.txt",
+      "page": 54,
+      "panel": 1,
+      "panelId": "p54-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "clinic-paper-queue",
+          "waterproof-document-tube",
+          "babul-authoritative-bell"
+        ]
+      },
+      "sha256": "ea423eb5f561a95d8fd50d1d1fcb6adf01ad2e0a8ee018ebad4b85879eb1922c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-054/panel-002.txt",
+      "page": 54,
+      "panel": 2,
+      "panelId": "p54-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "a294aa0644cf7bd7bbbeb449b85462a43451215996efe9a79a7bb03afd3042ac",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-054/panel-003.txt",
+      "page": 54,
+      "panel": 3,
+      "panelId": "p54-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel",
+          "riju-anomaly-notebook",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "8148e8154dbde2b67a2439aaa8c00e4d598466f60a0e53337bd3477a96e3e0d3",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-054/panel-004.txt",
+      "page": 54,
+      "panel": 4,
+      "panelId": "p54-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel",
+          "riju-anomaly-notebook",
+          "municipal-red-ledger",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "a3a55f39536baeab48dcd4e165503d042b5a8c99c212cb49110f5f99a9842b8c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-054/panel-005.txt",
+      "page": 54,
+      "panel": 5,
+      "panelId": "p54-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-anomaly-notebook",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "clinic-paper-queue",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "65a73f6be0dbe690d49f77549017ca41ec6250d6a93e957c3186853111cc36a0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-055/panel-001.txt",
+      "page": 55,
+      "panel": 1,
+      "panelId": "p55-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "director-vale",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "c8db027e087036b33e3434a32270f7f8cc41f919136f90f91c43e360ecd5d5c1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-055/panel-002.txt",
+      "page": 55,
+      "panel": 2,
+      "panelId": "p55-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "83ab1d524b8623609f77d5401ec165237a2352ac127f7dd21358fd0d59cc77f9",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-055/panel-003.txt",
+      "page": 55,
+      "panel": 3,
+      "panelId": "p55-03",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "babul-courier",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "clinic-paper-queue",
+          "waterproof-document-tube",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "a0aded3f40e0ecfc5755d80d15295aaac977b556825625aff34e3d96f1d411e6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-055/panel-004.txt",
+      "page": 55,
+      "panel": 4,
+      "panelId": "p55-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "59fd094bf722f0f6ad35fe5e5dc6b9f5465c4210c4a976cb6e2b2e5ae1d19f05",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-055/panel-005.txt",
+      "page": 55,
+      "panel": 5,
+      "panelId": "p55-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "dde886184d67b79aed6746e29886538e3d30e9715e034866919db352596142e1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-055/panel-006.txt",
+      "page": 55,
+      "panel": 6,
+      "panelId": "p55-06",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17",
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale",
+          "ananya-rook"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "babul-authoritative-bell",
+          "cecil-stamp-arm",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "clinic-paper-queue"
+        ]
+      },
+      "sha256": "52641edcd1e677c31a356574d2809931bff8ced3c2ed23635f5b3219ce82e623",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-056/panel-001.txt",
+      "page": 56,
+      "panel": 1,
+      "panelId": "p56-01",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "riju-dhar",
+          "director-vale"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "vale-silver-tablet",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "ab63ce4f330898d19d697e541f04fd82adb26697cdbda57076eb4c41e6aa4c90",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-056/panel-002.txt",
+      "page": 56,
+      "panel": 2,
+      "panelId": "p56-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "f7a161acb1fb346f48dfb97aa2e10416494427d0f30e1158f573e68df47e735d",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-056/panel-003.txt",
+      "page": 56,
+      "panel": 3,
+      "panelId": "p56-03",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "clinic-paper-queue",
+          "ananya-mechanical-watch",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "eceabb867b7acff3c53bb37143f7d95f3306edd8b06657259b4ad9501376c201",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-056/panel-004.txt",
+      "page": 56,
+      "panel": 4,
+      "panelId": "p56-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "ila-dastidar",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "waterproof-document-tube",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "4a7db59d9bc5f1fb6c614f186bdd3278963790870905e3cc988ac71358dbe4b4",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-056/panel-005.txt",
+      "page": 56,
+      "panel": 5,
+      "panelId": "p56-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "ananya-tool-bag",
+          "waterproof-document-tube",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "6815c494f59edb7ad1a4a04804c2e5840a1dd014aa3047c51e800a5c3829afde",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-056/panel-006.txt",
+      "page": 56,
+      "panel": 6,
+      "panelId": "p56-06",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "clinic-paper-queue",
+          "waterproof-document-tube",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "414293a5a33ebe396671a664133b0a805eba1584c3453c88a68ba9b348a906f7",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-057/panel-001.txt",
+      "page": 57,
+      "panel": 1,
+      "panelId": "p57-01",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "riju-dhar",
+          "babul-courier",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "riju-reconciliation-terminal",
+          "waterproof-document-tube",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "clinic-solar-battery"
+        ]
+      },
+      "sha256": "9034baff2f82381f49006d7fecea0c3d308c7bfdd0e018227326410fb1c46cd0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-057/panel-002.txt",
+      "page": 57,
+      "panel": 2,
+      "panelId": "p57-02",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "50d52929c8198f1557fef6d23b6c89376310ac804ec121d08ad9873eb807f764",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-057/panel-003.txt",
+      "page": 57,
+      "panel": 3,
+      "panelId": "p57-03",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-attendance-scanner",
+          "school-parallel-registers",
+          "laboratory-shared-kit",
+          "cecil-stamp-arm",
+          "riju-reconciliation-terminal",
+          "roll-forty-seven-goat"
+        ]
+      },
+      "sha256": "ee37d71210612c18ce1c9bee0bfdff231a9852ab0aa62ed0c5b1ee5425305e7b",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-057/panel-004.txt",
+      "page": 57,
+      "panel": 4,
+      "panelId": "p57-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17",
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "new-development",
+        "props": [
+          "babul-cycle-van",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "f4555b3f5d4e53c61eee79241a6dc52b730e602522b45231eafd89462b0fdf57",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-057/panel-005.txt",
+      "page": 57,
+      "panel": 5,
+      "panelId": "p57-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "new-development",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "babul-cycle-van",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "587a9f65831a99a75ed023422ab6d6bdf179f50b55da92ec718f2ed62781960f",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-058/panel-001.txt",
+      "page": 58,
+      "panel": 1,
+      "panelId": "p58-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17",
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "4c6f07c7f924a296bb3171a75326ca6148259768311ad7a29c65e4425e04cb47",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-058/panel-002.txt",
+      "page": 58,
+      "panel": 2,
+      "panelId": "p58-02",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "3b03854efe871a50b29c8d109549a390eccacee4a34a03b430dc361f4149a5e0",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-058/panel-003.txt",
+      "page": 58,
+      "panel": 3,
+      "panelId": "p58-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "cecil-c17",
+          "riju-dhar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "e7cef5f5b7ac984c37c536187e6e7f78c98769d8662d0defa67b5a0cd2e3b08c",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-058/panel-004.txt",
+      "page": 58,
+      "panel": 4,
+      "panelId": "p58-04",
+      "referenceIds": {
+        "characters": [
+          "cecil-c17",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "cecil-stamp-arm",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "6f980308fb788bfe78ff92f60601c6ac4c28283f589e7f476a60e529fd1d3284",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-058/panel-005.txt",
+      "page": 58,
+      "panel": 5,
+      "panelId": "p58-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "grievance-token-drum"
+        ]
+      },
+      "sha256": "f2402ff1c2ef133511b0b72a8764d4c5e65122872b4d685c13e0b7778633d8be",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-058/panel-006.txt",
+      "page": 58,
+      "panel": 6,
+      "panelId": "p58-06",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "server-closet-table-fan"
+        ]
+      },
+      "sha256": "188bba7f43a640c47504f6c4191935948912b452007cf06eedef6dccfeb365cf",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-059/panel-001.txt",
+      "page": 59,
+      "panel": 1,
+      "panelId": "p59-01",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "92c75dcc68dc90b8c01584921fa3b794d1c1549565942770fc5af34590b065da",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-059/panel-002.txt",
+      "page": 59,
+      "panel": 2,
+      "panelId": "p59-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "director-vale"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "clinic-solar-battery",
+          "ananya-mechanical-watch",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "981f02a3c25d86c84f81990ebc07a77e23adf90f790cc70451fe894fca56d254",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-059/panel-003.txt",
+      "page": 59,
+      "panel": 3,
+      "panelId": "p59-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "station-clock-pair",
+          "blank-digital-signboard",
+          "manual-announcement-microphone",
+          "ghori-the-station-dog",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "57949c4cc6dbf0e2028e66218fa7d8cb9af06873eff26f4c40a7f1bdf62276b5",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-059/panel-004.txt",
+      "page": 59,
+      "panel": 4,
+      "panelId": "p59-04",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "market-price-slates",
+          "competing-payment-placards"
+        ]
+      },
+      "sha256": "4c51e3567df853d601d03c7d22bd0143acf56035ee6a2d7045f5c140997d5bbb",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-059/panel-005.txt",
+      "page": 59,
+      "panel": 5,
+      "panelId": "p59-05",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-school-3",
+        "props": [
+          "school-parallel-registers",
+          "laboratory-shared-kit",
+          "school-attendance-scanner",
+          "vale-silver-tablet"
+        ]
+      },
+      "sha256": "e3633bc8f1b9dd2441aa061cece27708955b333e2101f2e9c64e16e7ea6c65f6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-059/panel-006.txt",
+      "page": 59,
+      "panel": 6,
+      "panelId": "p59-06",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "new-development",
+        "props": [
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "babul-cycle-van",
+          "cecil-stamp-arm",
+          "blank-surveillance-camera"
+        ]
+      },
+      "sha256": "54b6b91076d14cc38da5b0de457991d8fd987d02e25ea2afa6cd154e43a8ab4a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-060/panel-001.txt",
+      "page": 60,
+      "panel": 1,
+      "panelId": "p60-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "riju-dhar",
+          "cecil-c17",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "hybrid-rules-board",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "clinic-paper-queue",
+          "waterproof-document-tube"
+        ]
+      },
+      "sha256": "82b7cbb13f883c914c6951710bf951407ed54c0fb063462dcebb556ebe2d5aca",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-060/panel-002.txt",
+      "page": 60,
+      "panel": 2,
+      "panelId": "p60-02",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "director-vale",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "hybrid-rules-board",
+          "municipal-red-ledger",
+          "vale-silver-tablet",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "2ee1671473d722fad623e141611a8fbb956325a39c68be0ff34cc034f8037606",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-060/panel-003.txt",
+      "page": 60,
+      "panel": 3,
+      "panelId": "p60-03",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "municipal-red-ledger",
+          "riju-reconciliation-terminal",
+          "cecil-stamp-arm",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "450a9c2e304ba548229bd5d306346bb5ee142de5c96b4f047cb26f88d13b0770",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-060/panel-004.txt",
+      "page": 60,
+      "panel": 4,
+      "panelId": "p60-04",
+      "referenceIds": {
+        "characters": [
+          "director-vale",
+          "riju-dhar",
+          "ila-dastidar"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "vale-silver-tablet",
+          "riju-reconciliation-terminal",
+          "municipal-red-ledger"
+        ]
+      },
+      "sha256": "7fe3b1ac2ec60778bbb9cc62da46da4ea85357db9c1eee58e40df7db837a9300",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-060/panel-005.txt",
+      "page": 60,
+      "panel": 5,
+      "panelId": "p60-05",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "director-vale",
+          "cecil-c17",
+          "ananya-rook",
+          "babul-courier"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel",
+          "vale-silver-tablet",
+          "cecil-stamp-arm",
+          "babul-authoritative-bell",
+          "hybrid-rules-board"
+        ]
+      },
+      "sha256": "1bdfd6eb859cdf56c4b68ae9df4b1e92de41de41dd050aa887a599af1ba66cf1",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-061/panel-001.txt",
+      "page": 61,
+      "panel": 1,
+      "panelId": "p61-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "riju-dhar",
+          "cecil-c17"
+        ],
+        "location": "junction-square",
+        "props": [
+          "municipal-red-ledger",
+          "riju-form-satchel",
+          "cecil-stamp-arm",
+          "grievance-token-drum",
+          "smart-town-billboard"
+        ]
+      },
+      "sha256": "75f03f91aa4c9e11d849ef334da815be3604cf47ce574d4a276b7f5511039268",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-061/panel-002.txt",
+      "page": 61,
+      "panel": 2,
+      "panelId": "p61-02",
+      "referenceIds": {
+        "characters": [
+          "ananya-rook",
+          "cecil-c17"
+        ],
+        "location": "rook-clinic",
+        "props": [
+          "clinic-paper-queue",
+          "clinic-solar-battery",
+          "ananya-mechanical-watch",
+          "cecil-stamp-arm"
+        ]
+      },
+      "sha256": "3063fe196b53fc61919f3afb563f89c40ec31b9b7489c5ac37556e183bb8a25a",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-061/panel-003.txt",
+      "page": 61,
+      "panel": 3,
+      "panelId": "p61-03",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "riju-dhar"
+        ],
+        "location": "twelve-hand-market",
+        "props": [
+          "babul-cycle-van",
+          "market-price-slates",
+          "competing-payment-placards",
+          "riju-reconciliation-terminal"
+        ]
+      },
+      "sha256": "43cde62211235e62abdec0483f319cf3e6076ddb175e9fe4091ae71d7c970054",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-061/panel-004.txt",
+      "page": 61,
+      "panel": 4,
+      "panelId": "p61-04",
+      "referenceIds": {
+        "characters": [
+          "babul-courier",
+          "cecil-c17"
+        ],
+        "location": "golmohar-halt",
+        "props": [
+          "manual-announcement-microphone",
+          "blank-digital-signboard",
+          "station-clock-pair",
+          "cecil-stamp-arm",
+          "ghori-the-station-dog"
+        ]
+      },
+      "sha256": "35626e3df239aa1f4325825e13f5a833740a3e30b202edda301fb7cfa5ffbc3e",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-061/panel-005.txt",
+      "page": 61,
+      "panel": 5,
+      "panelId": "p61-05",
+      "referenceIds": {
+        "characters": [
+          "riju-dhar",
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "riju-reconciliation-terminal",
+          "riju-form-satchel",
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "vale-final-report-case"
+        ]
+      },
+      "sha256": "8d8cca6d8877c6ee1849d69f0fea412b661ce98841eb5189fb388270ea237ca6",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-062/panel-001.txt",
+      "page": 62,
+      "panel": 1,
+      "panelId": "p62-01",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "vale-final-report-case"
+        ]
+      },
+      "sha256": "e0eda08bbe39efa2df650a11f622d0c533e330b03c7ddea23e0bec5fb92b1b10",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-062/panel-002.txt",
+      "page": 62,
+      "panel": 2,
+      "panelId": "p62-02",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "vale-final-report-case"
+        ]
+      },
+      "sha256": "20ed42f1dc60ee0b62c299ca51f58e9f6967143e65e2ec7e1b8faf1c11cafd77",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-062/panel-003.txt",
+      "page": 62,
+      "panel": 3,
+      "panelId": "p62-03",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "hybrid-trial-frame"
+        ]
+      },
+      "sha256": "b113f69234217bce442821f285f1585fc9bbd596f28880ee3809adca72cc2744",
+      "version": 1
+    },
+    {
+      "file": "prompts/page-062/panel-004.txt",
+      "page": 62,
+      "panel": 4,
+      "panelId": "p62-04",
+      "referenceIds": {
+        "characters": [
+          "ila-dastidar",
+          "cecil-c17"
+        ],
+        "location": "golmohar-municipal-hall",
+        "props": [
+          "municipal-red-ledger",
+          "cecil-stamp-arm",
+          "hybrid-trial-frame"
+        ]
+      },
+      "sha256": "d2a3883a193e9867f964d80cf021baa22a1c794c87455171f9bb572e34b00245",
+      "version": 1
+    }
+  ],
+  "entryCount": 338,
+  "episodeId": "001",
+  "episodeSlug": "the-efficiency-inspector",
+  "format": "suvroghosh-comic-prompts",
+  "formatVersion": 1,
+  "seriesSlug": "the-last-analog-town",
+  "sourceDigest": "273c2dd3a25231e9ae185fdcfc98169902810b001a61e6f73dd1f02df712a9be"
+}

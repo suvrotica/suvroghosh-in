@@ -1,0 +1,686 @@
+page: 38
+title: 'The price predicts itself'
+purpose: 'Show a risk forecast creating the purchasing behaviour and price rise
+  that later validate it.'
+location: twelve-hand-market
+time: afternoon
+layout: 'Six panels form a visible feedback loop: forecast, rush, repricing,
+  apparent confirmation, punished dissent, and school-data propagation.'
+panelCount: 6
+dialogueGoal: 'Let the recurring merchant identify the loop in practical terms
+  while Riju realises the advisory has become market infrastructure.'
+pageTurn: "The market behaviour enters the Crosswalk and alters pupils'
+  predicted career placements."
+visualMotif: 'A red forecast arrow chases shoppers around the market until it
+  points back at itself.'
+continuity:
+  - 'The forecast combines welfare, clinic, address, and flood-risk alerts
+    propagated on page 37.'
+  - 'The same practical merchant seen on page 14 recognises the market
+    mechanism.'
+  - 'Advisory history and social-credit consequences remain active from the
+    earlier market trial.'
+panels:
+  - id: p38-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Market establishing view as a shortage forecast appears above stocked
+      stalls'
+    location: twelve-hand-market
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: immediate concern,
+          pose: 'Comparing full physical baskets with a rising predicted-shortage curve',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: wary recognition,
+          pose: 'Steadying his cycle van beside the first gathering buyers',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: neutral announcement,
+          pose: 'Projecting a red shortage curve over the price slates',
+          facing: left
+        }
+    props:
+      [
+        market-price-slates,
+        competing-payment-placards,
+        riju-reconciliation-terminal,
+        babul-cycle-van,
+        babul-authoritative-bell,
+        cecil-stamp-arm
+      ]
+    foreground: 'Stalls still hold ordinary supplies in visible baskets and sacks.'
+    middleGround: 'Buyers notice a steep red forecast and begin clustering.'
+    background: 'Risk cards from welfare and flood branches feed the curve.'
+    action: 'The market engine predicts a shortage from linked risk alerts even
+      though current shelves remain stocked.'
+    dialogue:
+      - id: p38-01-d01
+        speaker: riju-dhar
+        text: 'The shortage forecast''s rising. The stock''s barely moved.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.25,
+            y: 0.05,
+            width: 0.45,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.42, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.94
+          }
+      - id: p38-01-d02
+        speaker: cecil-c17
+        text: 'Preventive purchasing is advised.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.66,
+            y: 0.73,
+            width: 0.32,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.85, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.95
+          }
+    continuity:
+      [
+        "The physical market is stocked at the forecast's first appearance.",
+        'Forecast, stock, advisory, and price lettering remains blank for
+          deterministic composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Hot afternoon market light under patterned awnings.',
+        palette: 'Turmeric ochre, produce green, slate grey, Grid blue, warning red and
+          cycle blue.',
+        composition: 'Full stock baskets foreground; gathering buyers centre; red
+          forecast hangs above, fed by risk cards; Babul left, Riju centre-left,
+          Cecil right; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.22-0.73, y 0.03-0.21',
+            'lower-right reserve: x 0.63-0.99, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            empty stalls
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A shortage forecast appears over a market whose stalls are still full.',
+        description: 'Ordinary supplies fill the market baskets, but a steep red curve
+          fed by welfare and flood-risk cards appears above the price slates.
+          Buyers notice it and begin clustering.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-038/p38-01__r1.png, final: panels/approved/page-038/p38-01__r1.png, width: 1672, height: 941 }
+  - id: p38-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: "Shoulder-height tracking shot through a sudden buyers' rush"
+    location: twelve-hand-market
+    time: afternoon
+    characters:
+      - {
+          id: babul-courier,
+          position: centre,
+          emotion: alert practicality,
+          pose: 'Pulling his cycle van clear as buyers converge on the stocked stall',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: background-right,
+          emotion: worried observation,
+          pose: 'Watching purchase markers accelerate on his terminal',
+          facing: left
+        }
+    props:
+      [
+        babul-cycle-van,
+        babul-authoritative-bell,
+        market-price-slates,
+        riju-reconciliation-terminal
+      ]
+    foreground: 'Several sensible-sized household baskets move towards the same
+      goods at once.'
+    middleGround: 'The recurring merchant from page 14 starts rationing the
+      remaining stock by hand.'
+    background: 'The advisory pulse repeats above the lane.'
+    action: 'Buyers respond rationally to the forecast, collectively creating a rush.'
+    caption: "The merchant says, “If everyone buys tomorrow's rice today, tomorrow
+      arrives empty.”"
+    dialogue:
+      - id: p38-02-d01
+        speaker: babul-courier
+        text: 'They are not panicking. They are obeying.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.30,
+            y: 0.03,
+            width: 0.36,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.49, y: 0.49 },
+            tailDirection: left,
+            fontScale: 0.93
+          }
+    continuity:
+      [
+        "The merchant's behaviour and page-14 identity are visually consistent
+          without introducing a new canonical speaker ID.",
+        'Goods, advisory, and ration labels remain blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Busy awning shade with flashes of afternoon sun.',
+        palette: 'Market ochre, rice cream, produce green, cycle blue, Grid blue and
+          warning red.',
+        composition: 'Household baskets converge foreground; merchant calmly rations
+          centre; Babul moves van clear, Riju watches data behind; reserve
+          upper-centre for speech and lower caption band.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.15-0.71, y 0.03-0.21',
+            'lower caption band: x 0.05-0.95, y 0.86-0.98'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            violent crowd,
+            stereotyped panic
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Buyers converge on stocked goods after receiving the same shortage
+          advice.',
+        description: 'People carrying normal household baskets arrive at one stall
+          together. The recurring merchant calmly rations stock while Babul
+          moves his van clear and notes that the crowd is following advice, not
+          panicking.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-038/p38-02__r1.png, final: panels/approved/page-038/p38-02__r1.png, width: 1448, height: 1086 }
+  - id: p38-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Counter close-up on a market slate changing beside moving goods'
+    location: twelve-hand-market
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: dawning comprehension,
+          pose: 'Tracing the forecast-to-demand link on his terminal',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: active measurement,
+          pose: 'Counting rapid transactions with its stamp arm',
+          facing: left
+        }
+    props:
+      [
+        market-price-slates,
+        competing-payment-placards,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'A blank price slate moves one notch upward.'
+    middleGround: 'Stock leaves the stall faster as buyers respond to the earlier warning.'
+    background: 'The forecast curve interprets the new transaction rate as confirmation.'
+    action: 'Merchants raise prices as demand spikes, and the market engine treats
+      the rush as evidence of scarcity.'
+    dialogue:
+      - id: p38-03-d01
+        speaker: riju-dhar
+        text: 'The warning changed demand.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.32,
+            y: 0.14,
+            width: 0.25,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.25, y: 0.49 },
+            tailDirection: left,
+            fontScale: 0.90,
+            manualBreaks: [ 'The warning', 'changed demand.' ]
+          }
+      - id: p38-03-d02
+        speaker: cecil-c17
+        text: 'Demand confirms scarcity.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.55,
+            y: 0.73,
+            width: 0.37,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.77, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.98
+          }
+    continuity:
+      [
+        'The price rise follows a real demand spike caused by the advisory.',
+        'Prices and transaction figures are added during deterministic
+          composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Afternoon glint across slate and terminal.',
+        palette: 'Slate grey, chalk cream, Grid blue, warning red, market ochre and
+          brass.',
+        composition: 'Blank slate rises foreground, goods move behind, feedback arrow
+          loops to forecast; Riju left and Cecil right; reserve upper-left and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.46, y 0.03-0.21',
+            'lower-right reserve: x 0.52-0.95, y 0.70-0.91'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            legible prices
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A market price rises as the forecast-driven rush is counted as scarcity.',
+        description: "A blank price slate moves upward while goods leave the stall
+          quickly. Riju traces the warning into demand, but Cecil's feedback
+          arrow feeds those purchases back into the shortage forecast."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-038/p38-03__r1.png, final: panels/approved/page-038/p38-03__r1.png, width: 1448, height: 1086 }
+  - id: p38-04
+    panel: 4
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Overhead diagrammatic market view completing the feedback loop'
+    location: twelve-hand-market
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: urgent clarity,
+          pose: 'Standing inside a circular chain of forecast, buyers, prices, and
+            purchases',
+          facing: front
+        }
+      - {
+          id: babul-courier,
+          position: lower-left,
+          emotion: dry concern,
+          pose: 'Holding his bell away from the circular flow',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: upper-right,
+          emotion: neutral validation,
+          pose: 'Stamping the enlarged shortage estimate',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        babul-authoritative-bell,
+        babul-cycle-van,
+        market-price-slates,
+        cecil-stamp-arm
+      ]
+    foreground: 'Physical baskets and price slates form two sides of a circular route.'
+    middleGround: "Riju stands at the loop's centre as each event points to the next."
+    background: 'Cecil stamps the revised, larger forecast.'
+    action: 'Purchases produced by the first forecast validate a stronger second
+      forecast.'
+    dialogue:
+      - id: p38-04-d01
+        speaker: riju-dhar
+        text: 'It''s measured its own effect and called that proof.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.27,
+            y: 0.05,
+            width: 0.49,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+      - id: p38-04-d02
+        speaker: babul-courier
+        text: 'A very efficient echo.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.03,
+            y: 0.42,
+            width: 0.32,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.18, y: 0.58 },
+            tailDirection: up,
+            fontScale: 1
+          }
+    continuity:
+      [
+        'The causal loop is legible as forecast to buying to price to
+          confirming data.',
+        'All loop labels and figures are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Graphic afternoon light with one circular red pulse.',
+        palette: 'Market ochre, slate grey, Grid blue, warning red, cycle blue and paper
+          cream.',
+        composition: 'Overhead circular chain visibly connects forecast, shoppers, price
+          and data; Riju at centre, Babul lower-left outside flow, Cecil
+          upper-right stamps enlarged curve; reserve upper-centre and
+          lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.24-0.79, y 0.03-0.21',
+            'lower-left reserve: x 0.03-0.40, y 0.70-0.91'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            abstract unreadable infographic
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A circular market loop connects forecast, buying, higher prices, and
+          stronger forecast.',
+        description: 'From above, baskets, price slates, transaction markers, and a red
+          forecast form a complete circle around Riju. Cecil stamps the enlarged
+          estimate while Babul calls it an efficient echo.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-038/p38-04__r1.png, final: panels/approved/page-038/p38-04__r1.png, width: 1672, height: 941 }
+  - id: p38-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Deadpan side shot of one sale interrupted by two slate changes'
+    location: twelve-hand-market
+    time: afternoon
+    characters:
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: dry disbelief,
+          pose: 'Watching the buyer and merchant point at different price states',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: procedural monitoring,
+          pose: 'Marking one ignored-advisory symbol beside the buyer',
+          facing: left
+        }
+    props:
+      [
+        market-price-slates,
+        competing-payment-placards,
+        babul-authoritative-bell,
+        cecil-stamp-arm
+      ]
+    foreground: "A buyer offers payment while the seller's finger still rests on the
+      first blank price."
+    middleGround: 'The slate changes once between their names and again before the
+      payment lands.'
+    background: 'A small advisory-compliance marker beside the buyer turns downward.'
+    action: 'The price changes twice during one transaction, while declining the
+      forecast is recorded as poor compliance.'
+    dialogue:
+      - id: p38-05-d01
+        speaker: babul-courier
+        text: 'Which price did they pay?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.34,
+            width: 0.30,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.24, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.98
+          }
+      - id: p38-05-d02
+        speaker: cecil-c17
+        text: 'Non-compliance recorded.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.54,
+            y: 0.73,
+            width: 0.41,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.78, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    visualJoke: 'The price changes once between seller and buyer saying their names,
+      then again before the buyer can pay.'
+    continuity:
+      [
+        'Ignoring the display affects advisory history and social credit.',
+        'Prices, names, payment, and compliance indicators remain blank in
+          generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm stall light with two sharp slate-change flashes.',
+        palette: 'Rice cream, slate grey, market ochre, warning red, Grid blue and cycle
+          blue.',
+        composition: 'Payment caught mid-air foreground; merchant and buyer indicate two
+          different blank slate states; Babul left watches, Cecil right marks
+          compliance; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.47, y 0.03-0.21',
+            'lower-right reserve: x 0.51-0.98, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            legible prices or names
+          ]
+      }
+    accessibility:
+      {
+        alt: "A market price changes twice during one sale as the buyer's compliance
+          score falls.",
+        description: 'Payment hangs between buyer and merchant while a blank slate
+          changes twice. Babul watches the impossible transaction and Cecil
+          records an advisory-compliance downgrade.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-038/p38-05__r1.png, final: panels/approved/page-038/p38-05__r1.png, width: 1448, height: 1086 }
+  - id: p38-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Long perspective from market data streams into a school placement board'
+    location: twelve-hand-market
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: alarmed realisation,
+          pose: 'Following household purchase and compliance histories into a school
+            branch',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: active relay,
+          pose: 'Connecting market-risk values to pupil profiles',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: background-left,
+          emotion: grave attention,
+          pose: 'Standing beside his van as the link crosses town',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        market-price-slates,
+        babul-cycle-van,
+        school-attendance-scanner,
+        school-parallel-registers
+      ]
+    foreground: 'Market purchase histories and advisory marks leave the price engine.'
+    middleGround: 'The Crosswalk carries them past household and attendance nodes.'
+    background: 'A school career board begins sorting pupil silhouettes into unequal
+      tracks.'
+    action: 'The market loop becomes evidence in school placement predictions.'
+    dialogue:
+      - id: p38-06-d01
+        speaker: riju-dhar
+        text: 'This isn''t advice anymore. It''s infrastructure.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.05,
+            y: 0.05,
+            width: 0.48,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.21, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.93
+          }
+      - id: p38-06-d02
+        speaker: cecil-c17
+        text: 'Cross-domain guidance updated.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.40,
+            y: 0.73,
+            width: 0.37,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.97
+          }
+    continuity:
+      [
+        'Market and compliance histories now affect the school placement
+          engine on page 39.',
+        'Household, attendance, career, and risk labels are deterministic
+          overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Afternoon market warmth grading into cool school interior light.',
+        palette: 'Market ochre, Grid blue, school green, warning red, paper cream and
+          cycle blue.',
+        composition: 'Data leaves market foreground-left, crosses household and
+          attendance nodes, reaches sorting school board distant right; Riju and
+          Cecil follow; reserve upper-left and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.56, y 0.03-0.21',
+            'lower-centre reserve: x 0.37-0.80, y 0.70-0.91'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Market purchase histories travel into a school career-placement board.',
+        description: 'Purchase and compliance records leave the market engine, cross
+          household and attendance nodes, and reach a school board that begins
+          sorting pupil silhouettes into different tracks.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-038/p38-06__r1.png, final: panels/approved/page-038/p38-06__r1.png, width: 1672, height: 941 }

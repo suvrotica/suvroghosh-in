@@ -1,0 +1,483 @@
+page: 2
+title: 'The Mission dismounts'
+purpose: 'Introduce Vale and Cecil through action rather than exposition.'
+location: junction-square
+time: late morning
+layout: 'Wide arrival panel, two descending medium/tall mechanical beats, then
+  two widening reaction panels.'
+panelCount: 5
+dialogueGoal: 'Make Vale reasonable and unflustered while Cecil exposes the gap
+  between a valid route and a usable surface.'
+pageTurn: 'Ila begins the ceremony before the empty convoy has finished reaching
+  its mark.'
+visualMotif: 'Administrative precision repeatedly transferred by human hands.'
+continuity:
+  - 'The convoy begins stopped behind the billboard support exactly where page 1
+    ended.'
+  - "Cecil's lower-left torso dent, right-side stamp arm and blue status light
+    remain visible."
+  - "Vale's silver tablet stays in the left hand and pale-grey gloves remain on."
+panels:
+  - id: p02-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Eye-level wide shot across the stopped convoy and improvised lane'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: director-vale,
+          position: middle-ground-right,
+          emotion: composed interest,
+          pose: 'Stepping out of the lead vehicle with silver tablet held low',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: foreground-left,
+          emotion: breathless embarrassment,
+          pose: 'Hurrying forwards with one apologetic hand raised',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: foreground-right,
+          emotion: observant calm,
+          pose: 'Standing beside the cycle van with both hands on the handlebars',
+          facing: left
+        }
+    props: [ vale-silver-tablet, smart-town-billboard, babul-cycle-van ]
+    foreground: "The painted route arrow stops beneath Babul-da's front wheel."
+    middleGround: 'Vale steps neatly between halted vehicles as Riju approaches.'
+    background: 'The blank billboard face and crooked clock dominate the square.'
+    action: 'Vale leaves the blocked convoy and chooses to walk into the ceremony.'
+    dialogue:
+      - id: p02-01-d01
+        speaker: riju-dhar
+        text: 'Director Vale, the route was clear yesterday.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.04,
+            y: 0.05,
+            width: 0.36,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.29, y: 0.61 },
+            tailDirection: down,
+            fontScale: 0.95
+          }
+      - id: p02-01-d02
+        speaker: director-vale
+        text: 'Please don''t move the whole town for me.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.57,
+            y: 0.05,
+            width: 0.37,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.69, y: 0.54 },
+            tailDirection: down,
+            fontScale: 0.95
+          }
+    visualJoke: "Vale's first act of optimisation is abandoning the optimised vehicle."
+    continuity:
+      - "Vale's graphite jacket is immaculate and unwrinkled."
+      - "Riju's satchel stays behind at the billboard support from page 1 and is
+        not shown here."
+    prompt:
+      lighting: 'Clean late-morning sunlight glancing from silver vehicles into dusty
+        square haze.'
+      palette: 'Graphite grey, Grid silver, dusty ochre, moss green and faded civic
+        red.'
+      composition: 'Vale and Riju approach on opposing thirds with Babul-da grounding
+        the foreground; reserve clean upper corners for two balloons.'
+      balloonSafeAreas:
+        [
+          'upper-left reserve: x 0.03-0.42, y 0.03-0.22',
+          'upper-right reserve: x 0.55-0.96, y 0.03-0.23'
+        ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Vale leaves the blocked convoy as an embarrassed Riju hurries forward.'
+      description: 'Director Vale steps from the sleek lead vehicle holding a silver
+        tablet, composed despite the obstruction. Riju rushes to apologise while
+        Babul-da watches beside the cycle van.'
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-002/p02-01__r1.png,
+        final: panels/approved/page-002/p02-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p02-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: "Low medium shot from behind Cecil's deployment ramp"
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: procedurally assured,
+          pose: 'Rolling down the ramp with head assembly level',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: background-left,
+          emotion: attentive,
+          pose: "Pausing to observe Cecil's route",
+          facing: right
+        }
+    props: [ vale-silver-tablet, cecil-stamp-arm ]
+    foreground: 'A clean ramp ends at cracked paving crossed by a painted line.'
+    middleGround: 'Cecil descends with all four wheels aligned.'
+    background: 'Vale stands clear of the ramp; the square remains visually irregular.'
+    action: 'Cecil follows the approved ceremonial path towards the broken paving.'
+    dialogue:
+      - id: p02-02-d01
+        speaker: cecil-c17
+        text: 'Ceremonial arrival path validated.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.51,
+            y: 0.06,
+            width: 0.42,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.53, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.94
+          }
+    visualJoke: "The approved line continues beyond the ramp across paving that
+      visibly cannot support Cecil's wheels."
+    continuity:
+      - "Cecil's wheels are clean before entering the broken paving."
+      - 'Blue status light is steady and moderately bright.'
+    prompt:
+      lighting: 'Bright reflected light from the ramp with warm square shadows.'
+      palette: 'Cream enamel, muted blue, graphite, road grey and pale rust.'
+      composition: 'Centre Cecil on the painted line with the broken surface filling
+        the lower third; leave upper-right clean.'
+      balloonSafeAreas: [ 'upper-right reserve: x 0.49-0.95, y 0.04-0.22' ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Cecil rolls down a clean ramp towards cracked paving.'
+      description: "Cecil confidently announces that the ceremonial route is valid
+        while rolling down the convoy ramp. The painted line ahead continues
+        over jagged paving unsuitable for the robot's small wheels."
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-002/p02-02__r1.png,
+        final: panels/approved/page-002/p02-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p02-03
+    panel: 3
+    size: tall
+    aspectRatio: '3:4'
+    camera: "Ground-level close shot along Cecil's front wheels"
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: procedural interruption,
+          pose: 'Chassis level while one front wheel drops into a narrow crack',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: background-left,
+          emotion: braced concern,
+          pose: 'Reaching towards Cecil without yet touching',
+          facing: right
+        }
+    props: [ cecil-stamp-arm ]
+    foreground: 'One small rubber wheel sits firmly wedged between broken stones.'
+    middleGround: "Cecil's cabinet remains rigid while the other wheels hover unevenly."
+    background: "Riju's long hands enter the frame above the road."
+    action: 'Cecil stops exactly on the validated line because the paving grips one
+      wheel.'
+    dialogue: []
+    soundEffects:
+      - {
+          text: 'KRRNK',
+          description: 'A small wheel catches hard between two paving stones.',
+          position: { x: 0.66, y: 0.29, z: 8 }
+        }
+    visualJoke: 'Cecil remains perfectly level everywhere except the ground.'
+    continuity:
+      - 'The front-left wheel is wedged but not damaged.'
+      - "Cecil's blue status light brightens without changing hue."
+    prompt:
+      lighting: 'Hard low reflections on cream enamel and textured road shadow.'
+      palette: 'Cream, muted blue, dark rubber, dusty stone and moss green.'
+      composition: "Use the tall panel to run from trapped wheel to rigid chassis to
+        Riju's reaching hands; preserve upper-right sound-effect space."
+      balloonSafeAreas: [ 'upper-right sound-effect reserve: x 0.60-0.92, y 0.18-0.38' ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: "Cecil's small front wheel catches between broken paving stones."
+      description: "A ground-level view shows Cecil's front-left wheel jammed in a
+        crack along the approved route. The rigid robot stays level above the
+        uneven surface as Riju reaches forward in concern."
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-002/p02-03__r1.png,
+        final: panels/approved/page-002/p02-03__r1.png,
+        width: 1024,
+        height: 1536
+      }
+  - id: p02-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Eye-level medium two-shot beside Cecil'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: practical focus,
+          pose: "Lifting Cecil's chassis squarely with bent knees",
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: formal objection,
+          pose: 'Wheels hanging clear while head turns towards Babul-da',
+          facing: left
+        }
+    props: [ cecil-stamp-arm, babul-authoritative-bell ]
+    foreground: "Babul-da's large boots brace on either side of the crack."
+    middleGround: 'Cecil rises just enough for the wheel to clear.'
+    background: 'The painted ceremonial line continues undisturbed.'
+    action: 'Babul-da manually relocates Cecil by thirty centimetres.'
+    dialogue:
+      - id: p02-04-d01
+        speaker: cecil-c17
+        text: 'Manual relocation was not scheduled.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.48,
+            y: 0.03,
+            width: 0.46,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.68, y: 0.45 },
+            tailDirection: down,
+            fontScale: 0.94
+          }
+      - id: p02-04-d02
+        speaker: babul-courier
+        text: 'It is now.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.08,
+            y: 0.23,
+            width: 0.25,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.32, y: 0.42 },
+            tailDirection: down,
+            fontScale: 1
+          }
+    visualJoke: 'A town courier becomes an unscheduled robot-handling protocol.'
+    continuity:
+      - "Babul-da lifts beneath the chassis, not by Cecil's head or stamp arm."
+      - "Cecil's lower-left dent remains visible and no new damage occurs."
+    prompt:
+      lighting: 'Warm sun softened by billboard shade across both figures.'
+      palette: 'Ochre, indigo, cream enamel, muted blue and road grey.'
+      composition: "Balance Babul-da's broad human silhouette against Cecil's compact
+        geometry; keep two separate upper balloon reserves."
+      balloonSafeAreas:
+        [
+          'upper-right reserve: x 0.45-0.97, y 0.02-0.21',
+          'second-tier left reserve: x 0.05-0.36, y 0.20-0.39'
+        ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Babul-da lifts Cecil free while the robot formally objects.'
+      description: "Babul-da braces his boots and lifts Cecil's chassis just clear of
+        the trapped wheel. Cecil's wheels hang free as its rectangular head
+        turns towards him."
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-002/p02-04__r1.png,
+        final: panels/approved/page-002/p02-04__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p02-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide lateral shot of the improvised arrival tableau'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: director-vale,
+          position: foreground-left,
+          emotion: analytical composure,
+          pose: 'Watching with tablet held at waist',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: foreground-centre,
+          emotion: suspended embarrassment,
+          pose: 'Half-turned between Vale and the vehicle',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: foreground-right,
+          emotion: resumed procedure,
+          pose: 'Rolling on safe paving towards the platform',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: middle-ground-right,
+          emotion: quietly amused,
+          pose: 'Returning one hand to the cycle-van handlebar',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: background-centre,
+          emotion: determined punctuality,
+          pose: 'Already speaking at the distant lectern while the vehicle is still being
+            pushed',
+          facing: front
+        }
+    props:
+      [
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        babul-cycle-van,
+        smart-town-billboard
+      ]
+    foreground: 'The four principals occupy a clean reading line after the interruption.'
+    middleGround: 'Municipal workers push the now-empty lead vehicle around the billboard.'
+    background: 'Ila has already begun speaking on the distant ceremony platform
+      beneath blank banners.'
+    action: 'The people and robot proceed on foot while Ila starts the ceremony and
+      the empty official vehicle is still being pushed to its marker.'
+    dialogue:
+      - id: p02-05-d01
+        speaker: director-vale
+        text: 'Well. One variance already.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.15,
+            y: 0.02,
+            width: 0.20,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.19, y: 0.50 },
+            tailDirection: left,
+            fontScale: 0.90
+          }
+    visualJoke: 'The empty inspection vehicle reaches the ceremonial mark only
+      through manual labour.'
+    continuity:
+      - "Cecil's freed wheel turns normally and gains only a light dust mark."
+      - 'The distant platform carries into page 3; all banner faces remain blank
+        in generated art.'
+    prompt:
+      lighting: 'Warm public-square sunlight with clean silver highlights on the
+        pushed vehicle.'
+      palette: 'Graphite, cream, Grid blue, ochre, muted civic red and dusty green.'
+      composition: 'Foreground cast reads left to right towards the platform while the
+        manually pushed empty vehicle supplies the background joke; reserve
+        upper-left.'
+      balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.41, y 0.03-0.22' ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Ila starts the ceremony while workers still push the empty inspection
+        vehicle.'
+      description: 'Vale calmly records a variance while Riju, Cecil and Babul-da
+        continue towards the ceremony on foot. In the same view, Ila is already
+        speaking at the distant lectern as municipal workers manually push the
+        empty official vehicle around the obstruction.'
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-002/p02-05__r1.png,
+        final: panels/approved/page-002/p02-05__r1.png,
+        width: 1536,
+        height: 1024
+      }

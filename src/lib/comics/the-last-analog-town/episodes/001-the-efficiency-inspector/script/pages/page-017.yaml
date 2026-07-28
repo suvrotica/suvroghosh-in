@@ -1,0 +1,649 @@
+page: 17
+title: 'Smart above, unfinished below'
+purpose: 'Expose prestige infrastructure, plant the genuine contractor fraud and
+  let Vale insist on physical verification.'
+location: new-development
+time: late afternoon
+layout: 'Wide gate-and-tower opener, four descending
+  surveillance/drainage/evidence beats, and a wide political turn.'
+panelCount: 6
+dialogueGoal: "Make Vale the first to privilege observed infrastructure over a
+  clean dashboard and show Ila's discomfort with a connected contractor."
+pageTurn: 'The completion certificates trace to a municipal map showing a road
+  across the surviving pond.'
+visualMotif: 'Perfect geometric systems mounted above unfinished, waterlogged foundations.'
+continuity:
+  - 'The New Development has working access control and surveillance but absent
+    pumps, blocked drainage and a road ending in mud.'
+  - 'A blank surveillance camera is physically hidden behind a blank political
+    banner area.'
+  - 'All certificates, plaques, billboards and interfaces remain blank for
+    deterministic composition.'
+panels:
+  - id: p17-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low wide establishing shot through the smart access gates'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: foreground-left,
+          emotion: guarded unease,
+          pose: 'Entering with ledger clamped under left arm',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-left,
+          emotion: exacting attention,
+          pose: 'Walking beyond the promotional threshold with tablet lowered',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-right,
+          emotion: visual disbelief,
+          pose: 'Comparing terminal map with the road',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: site scan,
+          pose: 'Rolling along the flawless paving',
+          facing: right
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        blank-surveillance-camera
+      ]
+    foreground: 'Elegant access gates open onto a polished road.'
+    middleGround: 'The road carries the inspection towards empty concrete-and-glass towers.'
+    background: 'The perfect paving ends abruptly in mud and invasive weeds.'
+    action: 'The team enters a smart district whose finished entrance cannot conceal
+      its unfinished body.'
+    dialogue: []
+    visualJoke: 'The prestige road achieves perfection by stopping before the
+      difficult ground.'
+    continuity:
+      [
+        "Ila's ledger remains under her left arm.",
+        "Cecil's wheels are clean on the paved section and do not enter mud
+          yet."
+      ]
+    prompt:
+      {
+        lighting: 'Hard late-afternoon construction glare with long gate shadows.',
+        palette: 'Concrete grey, glass blue, municipal red, moss green, cream enamel and
+          mud brown.',
+        composition: 'Strong road perspective from elegant gate to abrupt muddy end;
+          cast moves left to right; reserve upper-centre and all promotional
+          surfaces blank.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.34-0.68, y 0.03-0.19' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The inspection enters a smart district where a perfect road ends in mud.',
+        description: 'Elegant gates and flawless paving lead Ila, Vale, Riju and Cecil
+          towards empty unfinished towers. The road stops abruptly at mud and
+          weeds beyond the polished entrance.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-017/p17-01__r1.png,
+        final: panels/approved/page-017/p17-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p17-02
+    panel: 2
+    size: tall
+    aspectRatio: '3:4'
+    camera: 'Vertical shot up a surveillance pole hidden behind a banner'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: foreground-centre,
+          emotion: procedural confirmation,
+          pose: 'Looking straight up with status light reflected in the camera lens',
+          facing: away
+        }
+      - {
+          id: riju-dhar,
+          position: lower-left,
+          emotion: incredulous attention,
+          pose: 'Peering around the blank banner edge',
+          facing: right
+        }
+    props: [ blank-surveillance-camera, cecil-stamp-arm, riju-form-satchel ]
+    foreground: 'Cecil and Riju stand at the pole base.'
+    middleGround: "A broad blank political banner covers the camera's line of sight."
+    background: 'The powered camera housing and cable remain immaculate above.'
+    action: 'The camera reports operational status while seeing only the back of a
+      banner.'
+    dialogue:
+      - id: p17-02-d01
+        speaker: cecil-c17
+        text: 'Camera operational.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.735,
+            y: 0.78,
+            width: 0.25,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.620, y: 0.770 },
+            tailDirection: left,
+            fontScale: 0.90,
+            manualBreaks: [ 'Camera', 'operational.' ]
+          }
+      - id: p17-02-d02
+        speaker: riju-dhar
+        text: 'Then we can''t see anything.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.01,
+            y: 0.82,
+            width: 0.47,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.240, y: 0.600 },
+            tailDirection: up,
+            fontScale: 0.88,
+            manualBreaks: [ 'Then we can''t', 'see anything.' ]
+          }
+    visualJoke: "The camera's uptime is perfect because nobody measures its view."
+    continuity:
+      [
+        'Banner carries no generated party symbol or text.',
+        'Camera remains powered for the later flood sequence.'
+      ]
+    prompt:
+      {
+        lighting: 'Bright sky glare around a shaded pole and blank cloth banner.',
+        palette: 'Concrete grey, blank faded cloth, muted blue, cream enamel and moss.',
+        composition: 'Use vertical height from small figures to blocked lens; reserve
+          top-right and a second tier at upper-left for dialogue; no symbols.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.47-0.96, y 0.02-0.20',
+            'second-tier left reserve: x 0.03-0.51, y 0.20-0.40'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A powered surveillance camera looks directly into the back of a banner.',
+        description: 'Cecil confirms that the camera is operational while Riju peers
+          around the blank political banner covering its entire view. The
+          hardware and cable appear perfectly maintained.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-017/p17-02__r1.png,
+        final: panels/approved/page-017/p17-02__r1.png,
+        width: 1086,
+        height: 1448
+      }
+  - id: p17-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Ground-level medium shot along a drain ending in rubble'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: sharpened concern,
+          pose: 'Crouching to inspect the drain outlet with one glove kept clear',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: embarrassed confusion,
+          pose: 'Holding a blank completion pane above the rubble',
+          facing: left
+        }
+    props: [ vale-silver-tablet, riju-reconciliation-terminal ]
+    foreground: 'A clean concrete channel terminates in construction debris.'
+    middleGround: "Vale looks into the physical blockage while Riju's screen shows
+      completed geometry."
+    background: 'A promotional model-waterfall display glows above a real stagnant puddle.'
+    action: 'The inspected drainage ends before reaching any outflow.'
+    dialogue:
+      - id: p17-03-d01
+        speaker: director-vale
+        text: 'Where does this drain go?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.34,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.285, y: 0.350 },
+            tailDirection: down,
+            fontScale: 0.92,
+            manualBreaks: [ 'Where does this', 'drain go?' ]
+          }
+      - id: p17-03-d02
+        speaker: riju-dhar
+        text: 'It only says it got this far.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.40,
+            y: 0.02,
+            width: 0.28,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.810, y: 0.155 },
+            tailDirection: right,
+            fontScale: 0.88,
+            manualBreaks: [ 'It only says it', 'got this far.' ]
+          }
+    visualJoke: 'The virtual waterfall works above the real water that cannot leave.'
+    continuity:
+      [
+        'Drain rubble and stagnant puddle persist.',
+        "Vale's glove remains clean because he does not touch uncertain waste."
+      ]
+    prompt:
+      {
+        lighting: 'Harsh low sun across concrete texture with cool model-display glow.',
+        palette: 'Concrete grey, mud brown, stagnant green, graphite and moss.',
+        composition: 'Drain forms a leading line into rubble, with blank completion pane
+          above and virtual display in background; reserve upper corners.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.40, y 0.03-0.20',
+            'upper-right reserve: x 0.53-0.96, y 0.03-0.21'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale inspects a concrete drain that ends in construction rubble.',
+        description: "A new drainage channel stops at a pile of debris while Riju's
+          blank completion pane shows finished geometry. Above it, a virtual
+          waterfall plays beside a real stagnant puddle."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-017/p17-03__r1.png,
+        final: panels/approved/page-017/p17-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p17-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Silent top-down comparison of certificates and absent pump base'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: edge-left,
+          emotion: private recognition,
+          pose: 'Holding a stack of blank certificates above an empty mounting pad',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: edge-right,
+          emotion: object search,
+          pose: 'Stamp arm aligned with empty bolt holes',
+          facing: left
+        }
+    props: [ municipal-red-ledger, cecil-stamp-arm ]
+    foreground: 'Four unused pump bolts surround an empty concrete rectangle.'
+    middleGround: 'Completion certificates overlap the outline of the missing
+      machine; each reserves a deterministic fictional pump-wheel seal.'
+    background: "Ila's thumb stops on the same pump-wheel seal and signature area
+      used by the contractor."
+    action: 'The documents certify a pump the inspection cannot find.'
+    dialogue: []
+    continuity:
+      [
+        'Certificate writing, fictional pump-wheel seal and signature remain
+          deterministic.',
+        'The same pump-wheel seal appears on the incoming contractor call in
+          panel p17-06.',
+        'Ila recognises a politically connected contractor but does not
+          conceal the evidence.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm raking light revealing empty bolt shadows.',
+        palette: 'Concrete grey, cream paper, municipal red and cream enamel.',
+        composition: 'Empty pump footprint centred beneath overlapping blank
+          certificates with clean fields for a repeated fictional pump-wheel
+          seal; Ila and Cecil enter edges; keep top quiet.',
+        balloonSafeAreas: [ 'upper-centre quiet reserve: x 0.28-0.72, y 0.03-0.19' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Matching contractor seals appear on certificates over the empty base of a
+          missing pump.',
+        description: "Four unused bolts outline a missing pump on a concrete pad. Ila
+          holds completion certificates with fields for the same fictional
+          pump-wheel seal while Cecil's stamp arm searches the empty bolt
+          pattern."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-017/p17-04__r1.png,
+        final: panels/approved/page-017/p17-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p17-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Low eye-level three-shot at the muddy road end'
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: centre,
+          emotion: documented disapproval,
+          pose: 'Standing with one shoe at the exact paving edge and tablet lowered',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: chastened attention,
+          pose: 'Looking from blank dashboard to mud',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: controlled discomfort,
+          pose: 'Holding certificates against the ledger',
+          facing: left
+        }
+    props: [ vale-silver-tablet, riju-reconciliation-terminal, municipal-red-ledger ]
+    foreground: 'Perfect paving stops in a straight line before mud.'
+    middleGround: 'Vale places the physical boundary between the dashboard and the claim.'
+    background: 'Empty smart towers rise beyond weeds.'
+    action: 'Vale rejects the completion record after direct site observation.'
+    dialogue:
+      - id: p17-05-d01
+        speaker: director-vale
+        text: 'The dashboard is not the drain.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.15,
+            y: 0.72,
+            width: 0.36,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.440, y: 0.205 },
+            tailDirection: up,
+            fontScale: 0.90,
+            manualBreaks: [ 'The dashboard is', 'not the drain.' ]
+          }
+      - id: p17-05-d02
+        speaker: ila-dastidar
+        text: 'For once, we agree before a meeting.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.58,
+            y: 0.72,
+            width: 0.39,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.850, y: 0.245 },
+            tailDirection: up,
+            fontScale: 0.88,
+            manualBreaks: [ 'For once, we agree', 'before a meeting.' ]
+          }
+    continuity:
+      [
+        'Vale verifies before accusing.',
+        'Ila accepts the evidence despite political discomfort.'
+      ]
+    prompt:
+      {
+        lighting: 'Golden construction light on paving edge with cooler tower shade.',
+        palette: 'Graphite, municipal red, moss, concrete grey and mud brown.',
+        composition: 'Straight paving edge crosses foreground beneath centred Vale; Ila
+          and Riju flank; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.27-0.74, y 0.03-0.21',
+            'lower-right reserve: x 0.53-0.98, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale stands where the finished smart road stops abruptly in mud.',
+        description: 'Vale lowers their tablet and stands at the exact edge between
+          perfect paving and mud, stating that a dashboard is not a drain. Ila
+          accepts the physical evidence with dry reluctance.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-017/p17-05__r1.png,
+        final: panels/approved/page-017/p17-05__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p17-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: "Wide dusk shot linking Ila's phone, certificates and the distant pond
+      line"
+    location: new-development
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: politically cornered resolve,
+          pose: 'Silencing an incoming call on her cracked phone while holding
+            certificates',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: investigative surprise,
+          pose: 'Tracing the certificate parcel onto a blank municipal map',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: focused scrutiny,
+          pose: 'Looking from map line to physical horizon',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: conflict detected,
+          pose: 'Stamp arm pointing where mapped road meets pond',
+          facing: left
+        }
+    props:
+      [
+        ila-cracked-phone,
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm
+      ]
+    foreground: 'Ila rejects a caller whose deterministic overlay carries the same
+      fictional pump-wheel seal as the certificates.'
+    middleGround: "Riju's blank map carries the paid works parcel towards a road line."
+    background: 'The surviving pond catches the last light where the map claims road.'
+    action: 'Ila refuses quiet contractor pressure as the records lead back to the
+      impossible pond-road.'
+    dialogue:
+      - id: p17-06-d01
+        speaker: ila-dastidar
+        text: 'Tell the contractor—not now.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.01,
+            y: 0.40,
+            width: 0.27,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.175, y: 0.300 },
+            tailDirection: up,
+            fontScale: 0.86,
+            manualBreaks: [ 'Tell the', 'contractor—not now.' ]
+          }
+      - id: p17-06-d02
+        speaker: riju-dhar
+        text: 'The certificate follows a road through the pond.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.295,
+            y: 0.40,
+            width: 0.43,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.385, y: 0.305 },
+            tailDirection: up,
+            fontScale: 0.86,
+            manualBreaks:
+              [ 'The certificate follows a road', 'through the pond.' ]
+          }
+    continuity:
+      [
+        'The fictional pump-wheel seal matches panel p17-04; the caller
+          remains unnamed.',
+        'The team follows the map problem to the Old Exchange before archive
+          review.'
+      ]
+    prompt:
+      {
+        lighting: 'Late golden light on pond with deepening blue construction shadows.',
+        palette: 'Municipal red, faded phone blue, moss, graphite, pond green and
+          concrete grey.',
+        composition: "Ila's silenced phone and clean seal field start a left-to-right
+          evidence line through Riju and Cecil to distant pond; reserve
+          upper-left and upper-centre.",
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.02-0.37, y 0.02-0.21',
+            'upper-centre reserve: x 0.25-0.80, y 0.03-0.22'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Ila rejects the pump contractor's call as Riju traces paid works onto a
+          road crossing the pond.",
+        description: 'The incoming call carries the same fictional pump-wheel seal
+          reserved on the completion certificates. Ila tells the pump contractor
+          not now without hiding the evidence. Riju follows the parcel towards a
+          mapped road that crosses the surviving pond.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-017/p17-06__r1.png,
+        final: panels/approved/page-017/p17-06__r1.png,
+        width: 1672,
+        height: 941
+      }

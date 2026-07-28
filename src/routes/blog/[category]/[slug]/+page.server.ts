@@ -21,6 +21,7 @@ import {
 	getPublishedPosts,
 	getRelatedPosts
 } from '$lib/server/content/posts';
+import { getComicEpisodeMetadata } from '$lib/server/comics/catalog';
 
 // Canonical posts are static, while the server fallback preserves legacy/category redirects.
 export const prerender = 'auto';
@@ -49,6 +50,9 @@ export const load: PageServerLoad = async ({ params }) => {
 	const ogImageDimensions = metadata.thumbnail
 		? getImageDimensions(metadata.thumbnail)
 		: { width: 1200, height: 800 };
+	const comicEpisode = getComicEpisodeMetadata();
+	const comicTags = new Set(comicEpisode.tags.map((tag) => tag.toLocaleLowerCase('en')));
+	const sharedComicTags = topicLabels.filter((tag) => comicTags.has(tag.toLocaleLowerCase('en')));
 
 	const breadcrumbs = breadcrumbSchema([
 		{ name: 'Home', url: siteUrl },
@@ -63,6 +67,16 @@ export const load: PageServerLoad = async ({ params }) => {
 		postNavigation: getPostNavigation(slug),
 		postTopics: getPostTopicLinks(topicLabels),
 		relatedPosts: getRelatedPosts(slug),
+		relatedComic:
+			sharedComicTags.length > 0
+				? {
+						title: comicEpisode.title,
+						description: comicEpisode.description,
+						href: comicEpisode.canonicalPath,
+						label: comicEpisode.published ? 'Comic episode' : 'Comic production edition',
+						sharedTags: sharedComicTags.slice(0, 3)
+					}
+				: null,
 		metadata: {
 			...metadata,
 			categorySlug: normalizedCategory,

@@ -1,0 +1,476 @@
+page: 28
+title: 'A time people can use'
+purpose: 'Show the train-information improvement changing ordinary behaviour.'
+location: golmohar-halt
+time: midday
+layout: 'A wide range reveal, two ordinary-life beats, a dog-and-train beat, and
+  a welfare handoff.'
+panelCount: 5
+dialogueGoal: 'Seed the rule that honestly communicated uncertainty can be more
+  useful than precise fiction.'
+pageTurn: 'A commuter uses the newly reconciled identity to open a welfare case.'
+visualMotif: 'A useful time range opens space for people to act instead of
+  pinning them to one false minute.'
+continuity:
+  - 'Golmohar Halt retains one working line, unfinished second platform, east
+    office, west tea stall, and disagreeing clock pair.'
+  - 'The updated prediction is a range, not a false exact time; every display
+    and announcement is deterministic lettering.'
+  - 'Ghori responds to rail vibration and routine, never to written time.'
+panels:
+  - id: p28-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Platform-wide establishing shot beneath the blank digital signboard'
+    location: golmohar-halt
+    time: midday
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: earned confidence,
+          pose: 'Comparing the rail feed with the manual microphone log',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: attentive approval,
+          pose: 'Reading the range on the silver tablet',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: prediction verification,
+          pose: 'Sensor band aimed along the east-west track',
+          facing: left
+        }
+    props:
+      [
+        blank-digital-signboard,
+        manual-announcement-microphone,
+        station-clock-pair,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        ghori-the-station-dog
+      ]
+    foreground: 'Passengers remain near the south working platform without crowding
+      the track.'
+    middleGround: 'The signboard and manual microphone receive the same arrival range.'
+    background: 'The unfinished platform and locked north landing stay visibly unused.'
+    action: 'The Crosswalk replaces a false exact arrival with an honest range
+      shared by sign and announcement.'
+    dialogue:
+      - id: p28-01-d01
+        speaker: riju-dhar
+        text: 'Not 12:14. Use 12:10–12:20.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.03,
+            width: 0.165,
+            height: 0.115,
+            z: 10,
+            tailTarget: { x: 0.22, y: 0.49 },
+            tailDirection: right,
+            fontScale: 0.58,
+            manualBreaks: [ 'Not 12:14.', 'Use 12:10–12:20.' ]
+          }
+      - id: p28-01-d02
+        speaker: director-vale
+        text: 'Less precise. More useful.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.70,
+            y: 0.04,
+            width: 0.20,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.65, y: 0.57 },
+            tailDirection: down,
+            fontScale: 0.98
+          }
+    continuity:
+      [
+        'The digital signboard keeps its far-left dead-pixel cluster and the
+          mechanical clock remains above the east office.',
+        'All times, ranges, station signs, and microphone labels remain blank
+          in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Bright humid midday under the corrugated roof with soft track glare.',
+        palette: 'Railway red, cream, steel grey, Grid blue, vegetation green and warm
+          skin tones.',
+        composition: 'One working track and both platforms legible; blank signboard
+          high, principals mid-platform, passengers safely foreground; reserve
+          upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.57, y 0.03-0.23',
+            'lower-right reserve: x 0.56-0.96, y 0.72-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The halt displays an honest train-arrival range while Riju and Vale
+          compare it.',
+        description: 'On the single working platform, the blank digital signboard and
+          manual microphone share one arrival range. Riju contrasts it with a
+          false exact minute, and Vale calls the less precise information more
+          useful.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-028/p28-01__r1.png, final: panels/approved/page-028/p28-01__r1.png, width: 1672, height: 941 }
+  - id: p28-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Observational medium shot towards the west tea stall'
+    location: golmohar-halt
+    time: midday
+    characters:
+      - {
+          id: director-vale,
+          position: background-right,
+          emotion: empirical interest,
+          pose: 'Watching commuters use the waiting interval',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: background-left,
+          emotion: quiet satisfaction,
+          pose: 'Lowering the terminal after the update',
+          facing: right
+        }
+    props: [ vale-silver-tablet, riju-form-satchel, blank-digital-signboard ]
+    foreground: 'A commuter buys tea while another makes a work call from the shaded
+      platform.'
+    middleGround: 'People spread into useful tasks without leaving the safe waiting area.'
+    background: 'The blank range display remains visible under the centre roof.'
+    action: 'The honest range lets commuters use the wait rather than guard against
+      an invented minute.'
+    dialogue:
+      - id: p28-02-d01
+        speaker: director-vale
+        text: 'Now they know they''ve got ten minutes.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.69,
+            y: 0.03,
+            width: 0.29,
+            height: 0.28,
+            z: 10,
+            tailTarget: { x: 0.75, y: 0.50 },
+            tailDirection: down,
+            fontScale: 0.9
+          }
+    continuity:
+      [
+        'Passengers remain purposeful individuals rather than a single crowd
+          reaction.',
+        'No tea-stall, phone, or sign lettering is generated.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm midday filtered through platform roof shade.',
+        palette: 'Tea brown, railway red, cream, Grid blue and cool steel.',
+        composition: 'Tea purchase and work call carry foreground; Riju and Vale observe
+          small in background; blank range board stays readable as substrate;
+          reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right reserve: x 0.34-0.97, y 0.03-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Commuters buy tea and call work during the honest waiting interval.',
+        description: 'Instead of standing rigidly beneath a false exact time, commuters
+          use the range to buy tea and make work calls. Vale observes that
+          uncertainty has produced usable time.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-028/p28-02__r1.png, final: panels/approved/page-028/p28-02__r1.png, width: 1448, height: 1086 }
+  - id: p28-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Low trackside medium shot on Ghori resting near the tea stall'
+    location: golmohar-halt
+    time: midday
+    characters:
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: sensor comparison,
+          pose: 'Aiming the sensor band at rail and dog without approaching the edge',
+          facing: left
+        }
+    props: [ ghori-the-station-dog, cecil-stamp-arm, station-clock-pair ]
+    foreground: 'Ghori lies safely back from the platform edge with one notched ear
+      lifted.'
+    middleGround: 'A faint vibration reaches a tea glass before any official chime.'
+    background: 'The two clocks remain physically separated in their canonical positions.'
+    action: 'Ghori senses the rail vibration, rises, and moves one second before the
+      waiting commuters.'
+    dialogue: []
+    soundEffects:
+      - {
+          text: 'HUMM',
+          description: 'Distant rail vibration reaches the platform.',
+          position: { x: 0.36, y: 0.63, z: 6 }
+        }
+    visualJoke: 'The station dog waits for the official update, then moves one
+      second before everyone else.'
+    continuity:
+      [
+        'Ghori retains tan coat, white chest blaze, dark muzzle, notched right
+          ear, and faded green collar.',
+        'The dog responds to physical rail vibration, not literacy or
+          prediction.'
+      ]
+    prompt:
+      {
+        lighting: 'Platform shade with a bright line along the rail.',
+        palette: 'Tan, faded green, railway red, steel grey and cream enamel.',
+        composition: 'Ghori foreground safely away from edge; vibration visible through
+          tea glass and rail; Cecil observes from right; preserve SFX space.',
+        balloonSafeAreas: [ 'upper-left quiet reserve: x 0.04-0.40, y 0.03-0.18' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            anthropomorphic dog behaviour
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ghori senses the approaching train just before the commuters move.',
+        description: 'The tan station dog lies safely back from the track, lifts its
+          notched right ear at a faint rail vibration, and rises one beat before
+          the waiting commuters. Cecil observes the physical cue.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-028/p28-03__r1.png, final: panels/approved/page-028/p28-03__r1.png, width: 1448, height: 1086 }
+  - id: p28-04
+    panel: 4
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Long-lens wide shot as the train enters the range window'
+    location: golmohar-halt
+    time: midday
+    characters:
+      - {
+          id: riju-dhar,
+          position: foreground-left,
+          emotion: delighted confirmation,
+          pose: "Checking Ananya's mechanical-style interval note against the terminal",
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: foreground-right,
+          emotion: measured satisfaction,
+          pose: 'Watching the train enter the working platform',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: range confirmed,
+          pose: 'Sensor band aligned with the arriving train',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        blank-digital-signboard,
+        ghori-the-station-dog
+      ]
+    foreground: 'Ghori settles beside the regular passengers at a safe distance.'
+    middleGround: 'The train arrives on the one working platform within the stated range.'
+    background: 'The unfinished platform remains grassed and unused.'
+    action: 'The train arrives within the honest interval and ordinary passengers
+      act on information they can trust.'
+    dialogue:
+      - id: p28-04-d01
+        speaker: cecil-c17
+        text: 'Arrival falls within the published range.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.26,
+            y: 0.02,
+            width: 0.29,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.52, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.80
+          }
+    continuity:
+      [
+        'No passenger enters the track; the train uses only the south working
+          platform.',
+        'Train livery, signboard, clocks, and range text have no real branding
+          or generated words.'
+      ]
+    prompt:
+      {
+        lighting: 'Midday track light with warm brake dust haze.',
+        palette: 'Railway red, steel, cream, Grid blue, tan and vegetation green.',
+        composition: 'Train approaches from established east-west line; safe passengers
+          and Ghori foreground; unfinished platform visible; reserve
+          upper-centre.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.34-0.86, y 0.03-0.21' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            unsafe railway behaviour
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The train reaches the working platform within the announced arrival
+          range.',
+        description: 'The commuter train enters the only working platform inside the
+          stated interval. Cecil confirms the range while passengers and Ghori
+          wait safely; the unfinished second platform remains unused.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-028/p28-04__r1.png, final: panels/approved/page-028/p28-04__r1.png, width: 1672, height: 941 }
+  - id: p28-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Platform-exit wide shot following one commuter towards a welfare prompt'
+    location: golmohar-halt
+    time: midday
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: helpful attention,
+          pose: 'Showing a commuter a possible duplicate-record notice without linking it',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: observant approval,
+          pose: 'Watching the referral rather than the score',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: far-right,
+          emotion: identity-source check,
+          pose: 'Keeping both source branches visible',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        vale-silver-tablet,
+        cecil-stamp-arm
+      ]
+    foreground: 'A commuter receives two separate blank record cards marked only as
+      a possible match.'
+    middleGround: 'Riju directs the commuter to the staffed welfare counter for
+      identity review.'
+    background: 'The arrived train unloads while the signboard retains its range.'
+    action: 'The system surfaces a possible duplicate identity without deciding it,
+      and Riju directs the commuter to the counter for informed review.'
+    dialogue:
+      - id: p28-05-d01
+        speaker: riju-dhar
+        text: 'These records might match. The counter will let you decide.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.01,
+            y: 0.46,
+            width: 0.22,
+            height: 0.22,
+            z: 10,
+            tailTarget: { x: 0.42, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.9
+          }
+    continuity:
+      [
+        'No consent, merge or welfare claim occurs at the Halt; those steps
+          are reserved for page 29.',
+        'Both possible-match sources remain separate.',
+        'Identity cards, referral prompt, and source text remain blank in
+          generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Open platform-exit daylight with soft station shade.',
+        palette: 'Paper cream, moss green, Grid blue, graphite and railway red.',
+        composition: 'Two separate possible-match cards foreground, Riju and commuter
+          mid-frame, Vale and Cecil observing at right; train and range board
+          behind; reserve upper-centre.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.14-0.72, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju gives a commuter a possible duplicate-record referral to the welfare
+          counter.',
+        description: 'At the platform exit, two separate source cards surface as a
+          possible match. Riju does not link them; he tells the commuter that
+          the staffed counter must ask for confirmation while Vale and Cecil
+          observe.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-028/p28-05__r1.png, final: panels/approved/page-028/p28-05__r1.png, width: 1672, height: 941 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 42</title>
+	<desc id="description">End the connected-error movement by removing the town&apos;s ability to patch failures informally.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p42-01">
+<clipPath id="clip-p42-01"><rect x="48" y="58" width="845.7142857142858" height="450.53671263511" rx="6"/></clipPath>
+<rect x="48" y="58" width="845.7142857142858" height="450.53671263511" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-042/p42-01__r1.png" x="48" y="58" width="845.7142857142858" height="450.53671263511" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p42-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p42-01-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 320.24260238226196 154.0627443283107 Q 318.03657142857145 163.2904297428252 313.30057142857146 164.9123619083116 Q 318.03657142857145 163.2904297428252 325.4716833320238 169.18414348383988 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p42-01-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="81.82857142857142" y="76.0214685054044" width="482.0571428571429" height="85.60197540067091" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="99.82857142857142" y="106.65305620573986" font-family="Arial,'Noto Sans',sans-serif" font-size="17.14" fill="#111"><tspan x="99.82857142857142" dy="0">The warning was right.</tspan><tspan x="99.82857142857142" dy="19.5396">Close the lane, put the clinic&apos;s reason back</tspan><tspan x="99.82857142857142" dy="19.5396">and reopen the appeal.</tspan></text>
+<rect x="48" y="58" width="845.7142857142858" height="450.53671263511" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p42-02">
+<clipPath id="clip-p42-02"><rect x="917.7142857142858" y="58" width="634.2857142857143" height="450.53671263511" rx="6"/></clipPath>
+<rect x="917.7142857142858" y="58" width="634.2857142857143" height="450.53671263511" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-042/p42-02__r1.png" x="917.7142857142858" y="58" width="634.2857142857143" height="450.53671263511" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p42-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p42-02-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1368.5770372941295 141.92028466269977 Q 1371.1651428571429 135.67252925829297 1374.3365714285715 135.35715355944836 Q 1371.1651428571429 135.67252925829297 1367.5372484201564 129.9654179090483 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p42-02-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="1057.257142857143" y="71.5161013790533" width="310.8" height="99.1180767797242" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1075.257142857143" y="108.3235397689154" font-family="Arial,'Noto Sans',sans-serif" font-size="17.959999999999997" fill="#111"><tspan x="1075.257142857143" dy="0">Administrator intervention</tspan><tspan x="1075.257142857143" dy="20.474399999999996">pattern detected. Pending</tspan><tspan x="1075.257142857143" dy="20.474399999999996">overrides are quarantined.</tspan></text>
+<text x="1241.2" y="373.37569884457696" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">CHAK</text>
+<rect x="917.7142857142858" y="58" width="634.2857142857143" height="450.53671263511" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p42-03">
+<clipPath id="clip-p42-03"><rect x="48" y="532.53671263511" width="1504" height="600.9185613119643" rx="6"/></clipPath>
+<rect x="48" y="532.53671263511" width="1504" height="600.9185613119643" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-042/p42-03__r1.png" x="48" y="532.53671263511" width="1504" height="600.9185613119643" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p42-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p42-03-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 770.3175929399309 756.0218846633011 Q 768.8672 710.1682393589266 775.3344 665.5199902534478 Q 768.8672 710.1682393589266 754.482407060069 753.7312759777724 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p42-03-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="499.2" y="754.8765803205367" width="526.4" height="96.14696980991428" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="517.2" y="799.2652652254939" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="517.2" dy="0">An independent authority says</tspan><tspan x="517.2" dy="30.0048">people are in immediate danger.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p42-03-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 1326.4457171935067 883.6694634552146 Q 1326.8511999999998 857.8740217294074 1334.8224 834.6785652627657 Q 1326.8511999999998 857.8740217294074 1311.314282806493 878.4694929368839 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p42-03-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="1130.8799999999999" y="881.0694781960492" width="376" height="84.128598583675" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1148.8799999999999" y="919.5105774878867" font-family="Arial,'Noto Sans',sans-serif" font-size="25.88" fill="#111"><tspan x="1148.8799999999999" dy="0">And the water&apos;s</tspan><tspan x="1148.8799999999999" dy="29.503199999999996">rising.</tspan></text>
+<rect x="48" y="532.53671263511" width="1504" height="600.9185613119643" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p42-04">
+<clipPath id="clip-p42-04"><rect x="537.1869176295193" y="1157.4552739470741" width="525.6261647409616" height="525.6261647409616" rx="6"/></clipPath>
+<rect x="537.1869176295193" y="1157.4552739470741" width="525.6261647409616" height="525.6261647409616" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-042/p42-04__r1.png" x="537.1869176295193" y="1157.4552739470741" width="525.6261647409616" height="525.6261647409616" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p42-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p42-04-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 692.4887415736866 1233.408406835378 Q 704.9142267983601 1246.496346254193 709.6974248975029 1261.8971928811031 Q 704.9142267983601 1246.496346254193 707.7733158247481 1228.6774671862397 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p42-04-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="700.1310286992174" y="1163.7627879239658" width="233.90364330972793" height="84.10018635855386" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="718.1310286992174" y="1193.9558811032427" font-family="Arial,'Noto Sans',sans-serif" font-size="16.7" fill="#111"><tspan x="718.1310286992174" dy="0">It wants my approval</tspan><tspan x="718.1310286992174" dy="19.037999999999997">to suspend my</tspan><tspan x="718.1310286992174" dy="19.037999999999997">approval?</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p42-04-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 963.6675931399034 1546.9112463218253 Q 965.2568661945584 1454.5391822586657 972.8258829668282 1362.6071660454713 Q 965.2568661945584 1454.5391822586657 951.7081057046737 1545.926025388946 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p42-04-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="821.0250465896386" y="1546.4186358553857" width="210.25046589638464" height="73.58766306373462" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="839.0250465896386" y="1580.227667387253" font-family="Arial,'Noto Sans',sans-serif" font-size="21.32" fill="#111"><tspan x="839.0250465896386" dy="0">That authority</tspan><tspan x="839.0250465896386" dy="24.304799999999997">is suspended.</tspan></text>
+<rect x="537.1869176295193" y="1157.4552739470741" width="525.6261647409616" height="525.6261647409616" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p42-05">
+<clipPath id="clip-p42-05"><rect x="48" y="1707.0814386880356" width="1504" height="600.9185613119643" rx="6"/></clipPath>
+<rect x="48" y="1707.0814386880356" width="1504" height="600.9185613119643" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-042/p42-05__r1.png" x="48" y="1707.0814386880356" width="1504" height="600.9185613119643" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p42-05)"/>
+<rect x="48" y="1707.0814386880356" width="1504" height="600.9185613119643" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">42</text>
+</svg>

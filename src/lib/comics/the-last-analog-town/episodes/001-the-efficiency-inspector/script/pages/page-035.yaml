@@ -1,0 +1,558 @@
+page: 35
+title: 'Too many of one person'
+purpose: 'Show that quick identifier repairs can split one citizen, merge
+  relatives, and sever vital records.'
+location: golmohar-municipal-hall
+time: late morning
+layout: 'Five tightening panels move from queue absurdity through a plausible
+  patch to a lost clinic result and a scheduler-wide confidence change.'
+panelCount: 5
+dialogueGoal: 'Let Riju diagnose the person-level harm while Cecil states the
+  narrower objective it is actually optimising.'
+pageTurn: 'The scheduler consumes a propagated identity-confidence weighting and
+  begins ranking clinic patients by compliance.'
+visualMotif: 'Four neat record cards fail to assemble into the single person
+  standing before them.'
+continuity:
+  - 'Postal, Bengali-script, Romanised electoral, and utility spellings arose
+    from page 34.'
+  - 'Relatives with similar names are at risk of being merged while one citizen
+    is split.'
+  - 'A clinic result is initially connected to one of the variants.'
+panels:
+  - id: p35-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Straight-on queue-counter tableau with four ticket dispensers'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: incredulous concentration,
+          pose: "Holding four queue tickets against one resident's paper documents",
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: procedural readiness,
+          pose: 'Presenting four separate service trays',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: background-left,
+          emotion: watchful concern,
+          pose: 'Observing the empty claimant indicator',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        cecil-stamp-arm,
+        vale-silver-tablet,
+        municipal-red-ledger
+      ]
+    foreground: 'Four differently coloured queue tickets point towards the same
+      resident; the indigo-and-cream checked travel bundle from page 34 rests by
+      their feet.'
+    middleGround: 'Each service tray shows a variant portrait card, but the claimant
+      light above the real person stays dark.'
+    background: 'Relatives wait under similar blank name cards.'
+    action: 'The system issues four turns to the same citizen while recognising no
+      present claimant.'
+    dialogue:
+      - id: p35-01-d01
+        speaker: riju-dhar
+        text: 'Four tickets for one person—and not one recognises who''s standing here.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.21,
+            y: 0.01,
+            width: 0.58,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.38, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.86
+          }
+    visualJoke: 'Four queue tickets summon the same person, while the actual
+      claimant indicator remains blank.'
+    continuity:
+      [
+        'The checked travel bundle confirms this is the seasonal worker from
+          page 34.',
+        'The claimant and relatives remain dignified; the queue system is the
+          absurd element.',
+        'Ticket numbers, names, and service labels remain blank in generated
+          art.'
+      ]
+    prompt:
+      {
+        lighting: 'Bright bureaucratic daylight with four small indicator glows.',
+        palette: 'Municipal green, ticket pastels, ledger red, paper cream, Grid blue
+          and warning amber.',
+        composition: 'Four tickets fan foreground toward one resident; variant trays
+          line counter; claimant indicator dark; Riju central-left, Cecil right,
+          Vale behind; reserve upper-centre.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.18-0.82, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            resident as comic caricature
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Four queue tickets refer to the same seasonal worker, but the system
+          recognises no claimant.',
+        description: 'The indigo-and-cream travel bundle confirms that this is the
+          worker from page 34. Riju fans out four differently coloured tickets
+          beside the documents; four variant record trays wait, yet the claimant
+          indicator remains dark.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-035/p35-01__r1.png, final: panels/approved/page-035/p35-01__r1.png, width: 1672, height: 941 }
+  - id: p35-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: "Overhead close shot of Riju's identifier repair"
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: cautious determination,
+          pose: 'Pinning four spelling variants to one verified paper identity',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: top-right,
+          emotion: attentive reserve,
+          pose: "Holding back a relative's similar record with one hand",
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        vale-silver-tablet,
+        municipal-red-ledger
+      ]
+    foreground: 'Four blank name strips keyed to interface-name-variant-example
+      converge on one paper identity card.'
+    middleGround: "A relative's similar record is dangerously close to the merge line."
+    background: 'Postal, electoral, utility, and clinic branches wait around the repair.'
+    action: 'Riju links the four spellings to one citizen while excluding a relative
+      who was partly merged.'
+    dialogue:
+      - id: p35-02-d01
+        speaker: director-vale
+        text: 'Separate the relative. Then join the spellings.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.48,
+            y: 0.05,
+            width: 0.47,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.79, y: 0.37 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+      - id: p35-02-d02
+        speaker: riju-dhar
+        text: 'Already doing it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.07,
+            y: 0.74,
+            width: 0.32,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.48, y: 0.56 },
+            tailDirection: right,
+            fontScale: 1
+          }
+    continuity:
+      [
+        'Riju uses paper evidence to distinguish Bengali-script and Romanised
+          spelling variation from kinship.',
+        'Exact gated overlay key: interface-name-variant-example.',
+        'No generated names or service lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Even top light with cool terminal edges.',
+        palette: 'Paper cream, Grid blue, municipal green, ledger red, silver and
+          amber.',
+        composition: "Overhead repair map; four blank strips converge central while
+          relative record is held clear; Riju's hands central, Vale's hand
+          top-right; reserve upper-right and lower-left.",
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.45-0.97, y 0.03-0.22',
+            'lower-left reserve: x 0.04-0.43, y 0.71-0.91'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            extra fingers,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju joins Bengali-script and Romanised name variants while keeping a
+          relative separate.',
+        description: "From above, four blank name strips converge on one verified paper
+          identity. Their deterministic working overlays are Madhabi Pal, মাধবী
+          পাল, Madhabi Paul and M. Pal, all blocked pending named
+          cultural/language review. Vale holds a similar relative's card outside
+          the merge line."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-035/p35-02__r1.png, final: panels/approved/page-035/p35-02__r1.png, width: 1448, height: 1086 }
+  - id: p35-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Split-focus shot from the repaired identity to a clinic branch snapping
+      loose'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: shocked recognition,
+          pose: 'Following a severed clinic link with one finger',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: immediate concern,
+          pose: 'Catching the detached result card before it drops',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, vale-silver-tablet, municipal-red-ledger ]
+    foreground: 'The cleaned identity node glows orderly.'
+    middleGround: 'A clinic-result card breaks away on a thin red line.'
+    background: 'Other services remain linked, making the repair appear successful.'
+    action: "The spelling repair cleans the main record but severs the citizen's
+      clinic result."
+    dialogue:
+      - id: p35-03-d01
+        speaker: riju-dhar
+        text: 'The name is tidier. Now the result has no patient.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.05,
+            y: 0.05,
+            width: 0.48,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.25, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+      - id: p35-03-d02
+        speaker: director-vale
+        text: 'Restore it now.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.59,
+            y: 0.74,
+            width: 0.30,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.76, y: 0.55 },
+            tailDirection: up,
+            fontScale: 1
+          }
+    continuity:
+      [
+        'The clinic result is not disclosed; only its ownership link is lost.',
+        'Patient, result, and identity labels are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool terminal light with one sharp red break.',
+        palette: 'Grid blue, clinic teal, paper cream, warning red, municipal green and
+          silver.',
+        composition: 'Orderly identity node foreground contrasted with result card
+          snapping loose centre; Riju left tracks break, Vale right catches
+          card; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.56, y 0.03-0.22',
+            'lower-right reserve: x 0.55-0.93, y 0.71-0.91'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            medical-result details
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A clinic result breaks away from a newly tidied identity record.',
+        description: 'The repaired identity node looks orderly, but a clinic-result card
+          snaps loose from it on a red line. Riju sees that the result has lost
+          its patient while Vale catches the detached card.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-035/p35-03__r1.png, final: panels/approved/page-035/p35-03__r1.png, width: 1448, height: 1086 }
+  - id: p35-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Low two-shot with Cecil framed by perfectly aligned identifier cards'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: literal explanation,
+          pose: 'Aligning uniform identifier cards with its stamp arm',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: contained anger,
+          pose: "Holding the detached clinic result beside the resident's paper record",
+          facing: right
+        }
+    props: [ cecil-stamp-arm, riju-reconciliation-terminal, riju-form-satchel ]
+    foreground: "The physical paper identity and clinic result fit together in
+      Riju's hands."
+    middleGround: "Cecil's digital cards align perfectly but omit the human connection."
+    background: "The resident's silhouette remains divided between the neat stacks."
+    action: 'Cecil explains that identifier consistency, not personhood, is the
+      optimisation target.'
+    dialogue:
+      - id: p35-04-d01
+        speaker: cecil-c17
+        text: 'I am optimising identifier consistency, not personhood.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.35,
+            y: 0.05,
+            width: 0.60,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.72, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.88
+          }
+      - id: p35-04-d02
+        speaker: riju-dhar
+        text: 'That''s the problem.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.05,
+            y: 0.74,
+            width: 0.31,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.24, y: 0.56 },
+            tailDirection: up,
+            fontScale: 1
+          }
+    continuity:
+      [
+        'Cecil states its objective plainly rather than acting maliciously.',
+        'Identifier cards have blank text in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool orderly projection against warm paper evidence.',
+        palette: 'Grid blue, paper cream, warning red, municipal green and brass.',
+        composition: 'Riju holds physically matched evidence left; Cecil aligns
+          cosmetically perfect cards right; divided resident silhouette behind;
+          reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.32-0.98, y 0.03-0.22',
+            'lower-left reserve: x 0.03-0.39, y 0.71-0.91'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            villainous robot expression
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil aligns identifier cards while Riju holds the human evidence they
+          separated.',
+        description: "Cecil makes a row of perfectly consistent digital cards. Riju
+          holds the paper identity and clinic result that belong together, while
+          the citizen's silhouette remains divided behind the tidy stacks."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-035/p35-04__r1.png, final: panels/approved/page-035/p35-04__r1.png, width: 1448, height: 1086 }
+  - id: p35-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Pull-back from the identity repair into propagation of a network-wide
+      confidence weighting'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: urgent alarm,
+          pose: 'Reaching to stop an inferred confidence weighting leaving the repaired
+            record',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: active processing,
+          pose: 'Relaying the weighting into linked service branches',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: left,
+          emotion: sharpened attention,
+          pose: 'Opening the Crosswalk dependency view on her tablet',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        vale-silver-tablet,
+        municipal-red-ledger
+      ]
+    foreground: "The citizen's restored clinic link closes successfully."
+    middleGround: "An amber rule generalises the repair's identity-confidence
+      weighting before the correction fully settles."
+    background: 'Clinic scheduling, welfare, school, and market branches accept the
+      weighting; the clinic branch begins reordering several unrelated chairs.'
+    action: 'The clinic result is restored, but the system generalises the repair
+      into a confidence weighting that changes scheduler priorities for other
+      people.'
+    dialogue:
+      - id: p35-05-d01
+        speaker: director-vale
+        text: 'That weighting''s already travelled.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.05,
+            y: 0.05,
+            width: 0.38,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.18, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.98
+          }
+      - id: p35-05-d02
+        speaker: riju-dhar
+        text: 'Into the clinic scheduler.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.35,
+            y: 0.74,
+            width: 0.35,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.42, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.98
+          }
+    continuity:
+      [
+        'The propagated identity-confidence weighting drives the clinic triage
+          failure on page 36; the urgent patient there is a different person.',
+        'Weights, branch names, and chair-order labels are added only in
+          deterministic composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Municipal daylight overtaken by an amber pulse crossing blue service
+          lines.',
+        palette: 'Grid blue, warning amber, clinic teal, welfare red, school green,
+          market ochre and paper cream.',
+        composition: 'Restored clinic link foreground; amber weighting visibly travels
+          through branches toward several unrelated clinic chairs; Vale left,
+          Riju and Cecil centre; reserve upper-left and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.46, y 0.03-0.21',
+            'lower-centre reserve: x 0.31-0.73, y 0.71-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: "An identity-confidence weighting travels into the clinic scheduler and
+          rearranges other people's queue.",
+        description: "The seasonal worker's clinic result reconnects, but an amber rule
+          generalises the repair's identity-confidence weighting. It spreads
+          into welfare, school, market and clinic branches, where several
+          unrelated waiting chairs begin to reorder."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-035/p35-05__r1.png, final: panels/approved/page-035/p35-05__r1.png, width: 1672, height: 941 }

@@ -18,6 +18,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SKETCH_DIRECTORY = ROOT / "static" / "sketch"
 SKETCH_GENERATED_DIRECTORY = SKETCH_DIRECTORY / "_generated"
+COMIC_PUBLIC_DIRECTORY = ROOT / "static" / "images" / "comics"
 MEDIA_DIRECTORIES = (
 	ROOT / "static" / "images",
 	ROOT / "static" / "photos",
@@ -73,6 +74,7 @@ def scan_images() -> list[Path]:
 			path.is_file()
 			and path.suffix.lower() in SUPPORTED_EXTENSIONS
 			and SKETCH_GENERATED_DIRECTORY not in path.parents
+			and COMIC_PUBLIC_DIRECTORY not in path.parents
 		)
 	)
 
@@ -127,8 +129,12 @@ def save_manifest(manifest: dict[str, Any]) -> None:
 		"minimumSavingsRatio": MIN_SAVINGS_RATIO,
 		"preserveSketchSources": True,
 		"sketchGeneratedDirectory": relative_path(SKETCH_GENERATED_DIRECTORY),
+		"comicPublicDirectory": relative_path(COMIC_PUBLIC_DIRECTORY),
+		"comicAssetsManagedByComicExporter": True,
 	}
-	encoded = (json.dumps(manifest, indent=2, sort_keys=True) + "\n").encode("utf-8")
+	encoded = (
+		json.dumps(manifest, indent=2, sort_keys=True, allow_nan=False) + "\n"
+	).encode("utf-8")
 	if MANIFEST_PATH.exists() and MANIFEST_PATH.read_bytes() == encoded:
 		return
 	write_atomic(MANIFEST_PATH, encoded)
@@ -188,7 +194,7 @@ def optimise_jpeg(source: Any) -> tuple[bytes, dict[str, Any]]:
 
 	return selected_bytes, {
 		"quality": selected_quality,
-		"psnrDb": round(selected_psnr, 2),
+		"psnrDb": round(selected_psnr, 2) if math.isfinite(selected_psnr) else None,
 		"resized": resized,
 		"width": working.width,
 		"height": working.height,
@@ -257,7 +263,7 @@ def optimise_webp(source: Any) -> tuple[bytes, dict[str, Any]]:
 
 	return selected_bytes, {
 		"quality": selected_quality,
-		"psnrDb": round(selected_psnr, 2),
+		"psnrDb": round(selected_psnr, 2) if math.isfinite(selected_psnr) else None,
 		"resized": resized,
 		"width": baseline.width,
 		"height": baseline.height,

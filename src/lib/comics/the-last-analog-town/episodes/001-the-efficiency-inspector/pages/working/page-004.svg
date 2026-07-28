@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 4</title>
+	<desc id="description">Introduce Riju&apos;s invention and prove that it can recover a real exclusion without pretending probability is identity.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p04-01">
+<clipPath id="clip-p04-01"><rect x="48" y="58" width="1504" height="891.7237597911228" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="891.7237597911228" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-004/p04-01__r1.png" x="48" y="58" width="1504" height="891.7237597911228" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p04-01)"/>
+<rect class="comic-balloon" data-dialogue-id="p04-01-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="348.8" y="379.0205535248042" width="376" height="240.76541514360318" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="366.8" y="495.4832610966058" font-family="Arial,'Noto Sans',sans-serif" font-size="28" fill="#111"><tspan x="366.8" dy="0">These records</tspan><tspan x="366.8" dy="31.919999999999998">don&apos;t agree.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p04-01-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 759.9935250262726 341.65783525654876 Q 721.9424 320.43430250652744 689.0048 293.05838308093996 Q 721.9424 320.43430250652744 749.7664749737274 353.9626086076811 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p04-01-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="754.88" y="312.14127154047" width="406.08000000000004" height="178.34475195822458" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="772.88" y="413.3536475195823" font-family="Arial,'Noto Sans',sans-serif" font-size="28" fill="#111"><tspan x="772.88" dy="0">I&apos;ll show you where.</tspan></text>
+<rect x="48" y="58" width="1504" height="891.7237597911228" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p04-02">
+<clipPath id="clip-p04-02"><rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" rx="6"/></clipPath>
+<rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-004/p04-02__r1.png" x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p04-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p04-02-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 431.21529756884047 1049.2207136882478 Q 436.6725818181818 1053.2905863185379 436.14312727272727 1056.4715851697129 Q 436.6725818181818 1053.2905863185379 443.0828842493414 1050.9984612464784 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p04-02-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="262.429090909091" y="982.0948093994779" width="174.72000000000003" height="104.63812010443866" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="280.429090909091" y="1012.3210694516972" font-family="Arial,'Noto Sans',sans-serif" font-size="17.26" fill="#111"><tspan x="280.429090909091" dy="0">Match</tspan><tspan x="280.429090909091" dy="19.6764">confidence:</tspan><tspan x="280.429090909091" dy="19.6764">eighty-two</tspan><tspan x="280.429090909091" dy="19.6764">per cent.</tspan></text>
+<rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p04-03">
+<clipPath id="clip-p04-03"><rect x="601.4545454545455" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" rx="6"/></clipPath>
+<rect x="601.4545454545455" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-004/p04-03__r1.png" x="601.4545454545455" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p04-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p04-03-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 790.7330477133239 1059.585509659807 Q 791.2110545454545 1069.488567310705 786.6577454545455 1073.1718291383813 Q 791.2110545454545 1069.488567310705 800.7956795594034 1072.0251013062507 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p04-03-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="607.808" y="982.0948093994779" width="187.95636363636365" height="104.63812010443866" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="625.808" y="1013.6010694516972" font-family="Arial,'Noto Sans',sans-serif" font-size="16.26" fill="#111"><tspan x="625.808" dy="0">Same dates. Same</tspan><tspan x="625.808" dy="18.5364">family link.</tspan><tspan x="625.808" dy="18.5364">Different</tspan><tspan x="625.808" dy="18.5364">spelling.</tspan></text>
+<rect x="601.4545454545455" y="973.7237597911228" width="529.4545454545455" height="418.5524804177546" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p04-04">
+<clipPath id="clip-p04-04"><rect x="1154.909090909091" y="973.7237597911228" width="397.0909090909091" height="418.5524804177546" rx="6"/></clipPath>
+<rect x="1154.909090909091" y="973.7237597911228" width="397.0909090909091" height="418.5524804177546" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-004/p04-04__r1.png" x="1154.909090909091" y="973.7237597911228" width="397.0909090909091" height="418.5524804177546" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p04-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p04-04-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1295.7828399320917 1050.0915105548083 Q 1299.7281454545455 1042.8686295561358 1301.5547636363638 1043.370892532637 Q 1299.7281454545455 1042.8686295561358 1299.9407964315449 1034.6412226044608 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p04-04-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="1297.8618181818183" y="978.7463895561359" width="238.25454545454545" height="79.52497127937337" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1315.8618181818183" y="1007.0068751958227" font-family="Arial,'Noto Sans',sans-serif" font-size="16.2" fill="#111"><tspan x="1315.8618181818183" dy="0">Who authorises the</tspan><tspan x="1315.8618181818183" dy="18.467999999999996">other</tspan><tspan x="1315.8618181818183" dy="18.467999999999996">eighteen per cent?</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p04-04-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 1409.156055356273 1179.2335134249129 Q 1400.3112727272728 1179.6515801566582 1398.5640727272728 1176.303160313316 Q 1400.3112727272728 1179.6515801566582 1395.0403082800908 1186.7664865750871 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p04-04-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="1325.658181818182" y="1183" width="218.40000000000003" height="62.78287206266319" rx="31.391436031331594" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1343.658181818182" y="1212.0226360313316" font-family="Arial,'Noto Sans',sans-serif" font-size="16.92" fill="#111"><tspan x="1343.658181818182" dy="0">At present?</tspan><tspan x="1343.658181818182" dy="19.288800000000002">Whoever picks up.</tspan></text>
+<rect x="1154.909090909091" y="973.7237597911228" width="397.0909090909091" height="418.5524804177546" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p04-05">
+<clipPath id="clip-p04-05"><rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6"/></clipPath>
+<rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-004/p04-05__r1.png" x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" preserveAspectRatio="xMidYMin slice" clip-path="url(#clip-p04-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p04-05-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 340.8005265231136 1527.8334930384171 Q 348.9504 1540.8500494516973 349.2512 1553.9583887206268 Q 348.9504 1540.8500494516973 356.7994734768864 1527.6499273271183 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p04-05-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="true" x="348.8" y="1434.1107154047" width="421.12000000000006" height="187.26198955613577" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="366.8" y="1524.0177101827678" font-family="Arial,'Noto Sans',sans-serif" font-size="26.599999999999998" fill="#111"><tspan x="366.8" dy="0">Keep the uncertainty.</tspan><tspan x="366.8" dy="30.323999999999995">Bring it with you.</tspan></text>
+<rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">4</text>
+</svg>

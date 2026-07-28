@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 18</title>
+	<desc id="description">Establish the Old Exchange as an essential offline fallback whose resilience and hazards both matter.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p18-01">
+<clipPath id="clip-p18-01"><rect x="48" y="58" width="1504" height="879.491640182396" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="879.491640182396" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-018/p18-01__r1.png" x="48" y="58" width="1504" height="879.491640182396" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p18-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p18-01-d01" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 409.00313913893416 204.6681348121833 Q 393.3184 268.3744003316291 370.00640000000004 329.3231709962692 Q 393.3184 268.3744003316291 423.9568608610659 210.3590228498314 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p18-01-d01" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="93.12" y="75.58983280364792" width="646.72" height="131.9237460273594" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="111.12" y="138.10210581732764" font-family="Arial,'Noto Sans',sans-serif" font-size="24.64" fill="#111"><tspan x="111.12" dy="0">That&apos;s why the clinic phone</tspan><tspan x="111.12" dy="28.089599999999997">still works in a blackout.</tspan></text>
+<rect x="48" y="58" width="1504" height="879.491640182396" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p18-02">
+<clipPath id="clip-p18-02"><rect x="48" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" rx="6"/></clipPath>
+<rect x="48" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-018/p18-02__r1.png" x="48" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p18-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p18-02-d01" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 153.73966090230408 1033.6392487157157 Q 167.66189268292686 1069.9864348210585 173.68476097560978 1107.5985543180877 Q 167.66189268292686 1069.9864348210585 169.53838787818376 1031.109381932343 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p18-02-d01" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="59.36390243902439" y="970.3519745751003" width="204.55024390243904" height="62.022340748929146" rx="31.011170374464573" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="77.3639024390244" y="999.0951449495649" font-family="Arial,'Noto Sans',sans-serif" font-size="16.2" fill="#111"><tspan x="77.3639024390244" dy="0">Old is not the</tspan><tspan x="77.3639024390244" dy="18.467999999999996">same as useless.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p18-02-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 463.9866348298701 1033.7146122954682 Q 477.89642926829276 1067.815652894846 483.86247804878053 1103.3012921376262 Q 477.89642926829276 1067.815652894846 479.76048712134946 1031.0340183525905 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p18-02-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="400.2809756097561" y="970.3519745751003" width="204.55024390243904" height="62.022340748929146" rx="31.011170374464573" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="418.2809756097561" y="999.0951449495649" font-family="Arial,'Noto Sans',sans-serif" font-size="16.2" fill="#111"><tspan x="418.2809756097561" dy="0">It isn&apos;t on the</tspan><tspan x="418.2809756097561" dy="18.467999999999996">network diagram.</tspan></text>
+<rect x="48" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p18-03">
+<clipPath id="clip-p18-03"><rect x="640.1951219512196" y="961.491640182396" width="319.60975609756105" height="443.0167196352081" rx="6"/></clipPath>
+<rect x="640.1951219512196" y="961.491640182396" width="319.60975609756105" height="443.0167196352081" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-018/p18-03__r1.png" x="640.1951219512196" y="961.491640182396" width="319.60975609756105" height="443.0167196352081" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p18-03)"/>
+<text x="720.0975609756098" y="1098.8268232693106" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">TIK</text>
+<text x="854.3336585365855" y="1253.8826751416334" font-family="system-ui,sans-serif" font-size="32.89383070301292" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">RING</text>
+<rect x="640.1951219512196" y="961.491640182396" width="319.60975609756105" height="443.0167196352081" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p18-04">
+<clipPath id="clip-p18-04"><rect x="983.8048780487807" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" rx="6"/></clipPath>
+<rect x="983.8048780487807" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-018/p18-04__r1.png" x="983.8048780487807" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p18-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p18-04-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1098.0788802480326 1033.708579261103 Q 1110.4555707317074 1058.9110168301784 1115.0011317073172 1085.4477183363274 Q 1110.4555707317074 1058.9110168301784 1113.8547782885532 1031.0400513869556 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p18-04-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="995.1687804878051" y="970.3519745751003" width="221.59609756097564" height="62.022340748929146" rx="31.011170374464573" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1013.1687804878051" y="999.0951449495649" font-family="Arial,'Noto Sans',sans-serif" font-size="16.2" fill="#111"><tspan x="1013.1687804878051" dy="0">Working is not</tspan><tspan x="1013.1687804878051" dy="18.467999999999996">the same as safe.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p18-04-d02" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 1393.471581390059 1033.2054262684587 Q 1404.8942829268294 1065.5562676247064 1408.360273170732 1098.69391825342 Q 1404.8942829268294 1065.5562676247064 1409.3850039757947 1031.5432043796 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p18-04-d02" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="1279.2663414634148" y="970.3519745751003" width="244.3239024390244" height="62.022340748929146" rx="31.011170374464573" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1297.2663414634148" y="999.0951449495649" font-family="Arial,'Noto Sans',sans-serif" font-size="16.2" fill="#111"><tspan x="1297.2663414634148" dy="0">Then repair it.</tspan><tspan x="1297.2663414634148" dy="18.467999999999996">Don&apos;t erase it.</tspan></text>
+<rect x="983.8048780487807" y="961.491640182396" width="568.1951219512196" height="443.0167196352081" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p18-05">
+<clipPath id="clip-p18-05"><rect x="48" y="1428.5083598176043" width="1504" height="879.491640182396" rx="6"/></clipPath>
+<rect x="48" y="1428.5083598176043" width="1504" height="879.491640182396" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-018/p18-05__r1.png" x="48" y="1428.5083598176043" width="1504" height="879.491640182396" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p18-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p18-05-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 794.0745054631678 1570.1696327145694 Q 807.2192 1614.6087908801992 814.2879999999999 1659.9026103495926 Q 807.2192 1614.6087908801992 805.9254945368322 1568.2844117790062 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p18-05-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="529.28" y="1446.098192621252" width="541.4399999999999" height="123.12882962553546" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="547.28" y="1504.2130074340198" font-family="Arial,'Noto Sans',sans-serif" font-size="24.64" fill="#111"><tspan x="547.28" dy="0">Instruction received.</tspan><tspan x="547.28" dy="28.089599999999997">Source room not found.</tspan></text>
+<text x="273.6" y="1657.1761862650274" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">BRRING</text>
+<rect x="48" y="1428.5083598176043" width="1504" height="879.491640182396" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">18</text>
+</svg>

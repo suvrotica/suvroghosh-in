@@ -1,0 +1,11 @@
+format: suvroghosh-comic-dialogue-revisions
+formatVersion: 1
+revisions:
+  - dialogueId: p01-02-d01
+    before: 'Could we move the left support half a metre?'
+    after: 'Could we shift the left support half a metre?'
+    reason: 'Example only: replace this with the exact reason for an accepted manual edit.'
+    status: proposed
+    manualBreaks:
+      - 'Could we shift the left'
+      - 'support half a metre?'

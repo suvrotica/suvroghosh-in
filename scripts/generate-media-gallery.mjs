@@ -76,7 +76,13 @@ const dimensionsByPath = {};
 
 for (const source of sources) {
 	const directory = resolve(root, 'static', source.directory);
-	const files = await collectFiles(directory);
+	const files = (await collectFiles(directory)).filter((file) => {
+		if (source.key !== 'images') return true;
+		const [topLevelDirectory] = toPosix(relative(directory, file)).split('/');
+		// Comic derivatives have their own rights/provenance manifest and discovery pages.
+		// Do not silently republish every panel in the general media gallery.
+		return topLevelDirectory !== 'comics';
+	});
 	files.sort((left, right) =>
 		toPosix(relative(directory, left)).localeCompare(toPosix(relative(directory, right)), 'en', {
 			numeric: true,

@@ -1,0 +1,65 @@
+format: suvroghosh-comic-dialogue-revisions
+formatVersion: 1
+revisions:
+  - dialogueId: p21-06-d01
+    before: 'Current honest resolution is more than twenty points short.'
+    after: 'Valid resolution remains over twenty percentage points below target.'
+    reason: 'Cecil reports the measured gap precisely instead of applying a human moral label or using the ambiguous phrase “points short”.'
+    status: accepted
+  - dialogueId: p25-04-d01
+    before: 'Confirm.'
+    after: 'Yes. I confirm.'
+    reason: 'Riju owns the consequential choice in spoken first-person language rather than voicing an interface command.'
+    status: accepted
+  - dialogueId: p30-04-d02
+    before: 'Good. It confirms. No delay.'
+    after: 'Good. Now it confirms instead of delaying us.'
+    reason: 'Ananya answers Babul’s arrival and names the human consequence in her clinical voice rather than reciting status fragments.'
+    status: accepted
+    manualBreaks:
+      - 'Good. Now it confirms'
+      - 'instead of delaying us.'
+  - dialogueId: p34-02-d02
+    before: 'It currently means increase risk.'
+    after: 'The current rule increases the risk score.'
+    reason: 'Cecil answers Riju with a complete, formal description of what the low-confidence rule actually changes.'
+    status: accepted
+  - dialogueId: p57-01-d01
+    before: 'Address reachable, identity under correction. Welfare appeal open. Clinical override valid with reason.'
+    after: "The address works. We're still fixing the identity. The welfare appeal's open, and the clinical override has a reason."
+    reason: 'Riju translates four interface-like status fragments into a human field report while preserving every unresolved condition.'
+    status: accepted
+    manualBreaks:
+      - "The address works. We're still fixing the identity."
+      - "The welfare appeal's open, and the clinical override"
+      - 'has a reason.'
+  - dialogueId: p58-01-d01
+    before: 'Seven sources. One site. Conflict retained.'
+    after: 'Seven sources, one site. I kept them separate.'
+    reason: 'Riju states his own evidentiary choice rather than reading three status labels aloud.'
+    status: accepted
+    manualBreaks:
+      - 'Seven sources, one site. I kept them separate.'
+  - dialogueId: p58-03-d02
+    before: 'Attached.'
+    after: "I've attached it."
+    reason: 'Vale answers Cecil in recognisably human first-person speech instead of sounding like a completion message.'
+    status: accepted
+    manualBreaks:
+      - "I've attached it."
+  - dialogueId: p58-05-d02
+    before: 'Appeal open.'
+    after: "The appeal's open."
+    reason: 'Vale directly answers Ila’s question with a natural contraction rather than an interface-state fragment.'
+    status: accepted
+    manualBreaks:
+      - "The appeal's open."
+  - dialogueId: p59-01-d01
+    before: 'Service restored. Address reachable. Correction still open.'
+    after: 'Service is back. We can reach the address. The correction stays open.'
+    reason: 'Riju reports the mixed outcome as work people can now do while keeping the unresolved correction explicit.'
+    status: accepted
+    manualBreaks:
+      - 'Service is back.'
+      - 'We can reach the address.'
+      - 'The correction stays open.'

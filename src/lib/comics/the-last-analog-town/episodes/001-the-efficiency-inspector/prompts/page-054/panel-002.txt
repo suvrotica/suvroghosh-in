@@ -1,0 +1,140 @@
+THE LAST ANALOG TOWN — The Efficiency Inspector
+Page 54, panel 2 (p54-02).
+
+VISUAL LANGUAGE
+Canonical for prompt planning; final image generation remains blocked until reference approvals are recorded. No more than one essential background fact per panel. Do not repeat an animal in physically disconnected places without travel setup. Do not use unreadable generated lettering as texture. Do not make residents oblivious merely to preserve a visual gag. Junction Square's clock faces disagree in a stable, trackable way. The noticeboard crow exposes older corrected paper layers by taking loose clips. Appeal the goose follows queues, barriers and bags rather than understanding civic disputes. Patch notices, payment methods and unofficial route arrows accumulate or disappear as consequences change. Digital and manual systems may produce two plausible answers; neither is automatically the joke's fool. Background jokes must reinforce the current system problem, character route or town history without contradicting the foreground action. characters.json wardrobe and continuityRules Give bystanders independent practical tasks and mixed reactions. A crowd is a collection of residents, not a single cheering or jeering organism. characters.json relativeHeightChart model-beautified faces that erase established shapes age drift skin-tone drift extra fingers or limbs floating or fused props unmotivated wardrobe changes identical background faces emotional shorthand based on ethnic caricature silhouette and balance hands and shoulders eyes and brows mouth shape small prop interaction No final art generation may begin for a recurring character until the required reference-sheet views, expressions, body poses, hands, props and relative-height chart are approved by a named human. humid warm daylight with soft blue-grey distance window light, ceiling fans and practical lamps establish believable sources overcast top light, wet reflections and strong colour on umbrellas, awnings and signage blanks cooler pale concrete and glass, tempered by mud, exposed cable trays, temporary fencing and people brick, oxidised metal, cable colours and warm battery lamps lamps, torches, reflected street light and emergency batteries create local pools rather than generic blue darkness Lighting changes may alter value and temperature, never costume colour, skin identity or prop identity. clear geography, purposeful movement, escalating physical consequences and legible problem-solving expressive and consistently exaggerated rather than photoreal; readable hands, brows, shoulders and posture carry much of the acting stage jokes through cause, effect, timing, scale and background recurrence; never make poverty, language, disability, age, religion, skin tone or regional identity the punchline specific, inhabited and structurally coherent; signs of maintenance, repair, reuse, heat and monsoon should read as lived history rather than picturesque clutter original stylised colour comic illustration crisp confident ink contours, flat nuanced colour, restrained paper and weather texture, selective small hatching at contact shadows Ila Dastidar and Riju Dhar hold the human foreground at Junction Square; Unit C-17 measures or stamps an absurd municipal obstruction; Director Vale stands opposite them as a composed institutional equal; Appeal the goose complicates a physical queue; the blocked traffic lane and blank smart-town billboard establish the crisis. Present the first album as a complete ensemble adventure and make the system conflict immediately legible. recognisable Junction Square anchors all character heights and signature props consistent with approved sheets clear title-safe area with no generated lettering no promise of a simple humans-versus-machine battle no copied adventure-comic composition urgent, funny and civic rather than grim or nostalgic A lively eastern-Indian municipal adventure drawn with precise silhouettes and affectionate material detail: human improvisation is warm but fallible, official systems are elegant but brittle, and both occupy the same physically credible town. Do not assemble a generic 'Indian' setting from unrelated landmarks, festival symbols, sacred imagery, vehicles and decorative motifs. Every visible element must belong to a named location, resident activity, history layer or current plot function. Repair, reuse and informal work indicate expertise and resource constraints; they are not shorthand for dirt, moral simplicity or comic backwardness. lime plaster, exposed brick, shaded verandahs and repaired concrete appropriate to the fictional town's own history krishnachura and other local vegetation used as geography, shade and seasonal evidence open drains, raised thresholds, awning slopes and water marks used to explain monsoon routes paper notices, painted boards, rails, shutters, cable loops, cycle vans, benches and practical shade devices Bengali and English appear only through deterministic composition after language review A place of worship may appear only when geographically and narratively established, drawn accurately and treated as an inhabited civic neighbour, never as exotic wallpaper. The Grid's hardware must remain physically installed, powered, routed and maintained. Analogue workarounds must likewise show labour, materials, capacity limits and failure points. needs-human-review Unicode Use a tested Bengali font with complete conjunct and vowel-mark support; never substitute pseudo-Bengali glyphs. A named competent reviewer and review date are mandatory before publication. All dialogue, captions, sound effects, labels, clock numerals, device readouts, plaques and signs are composed deterministically in the publishing pipeline. must contain no words, letters, numbers, speech balloons, caption boxes, interface text, logos, signatures or watermarks Panel script for dialogue and captions; signage.yaml for recurring environmental text. individual silhouettes and gestures, not repeated clones lighter than the silhouette contour straight enough to read mechanically but not sterile; repaired components retain hand-made irregularities few decisive speed marks with a clear source of movement scratchy horror rendering airbrushed photoreal skin uniform vector-weight outlines indiscriminate cross-hatching that muddies small panels decorative pseudo-script firm, clean and slightly variable sparse, local and material-specific no imitation of named artists, existing comics, animation studios, film franchises or copyrighted characters no photorealism, cinematic live-action stills, 3D toy rendering or generic glossy concept art no embedded words, letters, numerals, logos, watermarks, signatures, speech balloons or caption boxes no pseudo-Bengali, decorative gibberish script or generated interface text no extra, missing, fused or duplicated limbs, fingers, faces, people, animals or props no distorted hands, broken eye-lines, impossible object grips or contradictory shadows no character age, height, body-shape, skin-tone, hair, costume, accessory or damage drift no unplanned duplicate characters or crowd cloning no location mirroring that reverses established doors, tracks, counters or route directions no costume swaps, prop swaps or suddenly repaired damage no generic palace, temple, colonial monument, skyline or festival collage no sepia nostalgia coding analogue practice as morally pure no neon dystopia coding all computation as evil no caste, class, religious, linguistic, gender, disability or regional stereotype as visual shorthand no dirt, crowding or animal chaos added solely to signal India no unsafe railway behaviour, animal distress or disaster spectacle as a joke no flattening Director Vale into a villainous silhouette or Unit C-17 into a cute human child The series uses an original, production-defined visual system. It must not imitate a named artist, living or dead, reproduce a copyrighted character, or borrow another comic's page compositions, costume language, signature marks or recurring visual jokes. #A77A31 #3C7391 #74B8C5 #25282B #58725B #9D3F35 #C69339 #293746 #DDE6E1 #F3E8D0 #66879A Favour warm plaster, brick, cloth, paper, vegetation and skin against cooler Grid interfaces. Do not make all analogue objects sepia or all digital objects neon; both worlds contain useful and damaged things. Reserve high cyan saturation for active Grid states and municipal red for records, objections and human accountability. Keep skin tones distinct within shared light; never lighten a character to improve contrast. Use monsoon colour shifts consistently: darker masonry, more reflective ground, muted dust and brighter wet vegetation. #4A5054 #A65B43 #55704A Use for choices, records, mechanisms and emotional pivots; prop continuity must be exact. Anchor foreground, middle-ground action and consequence in depth; do not hide critical story facts in decorative density. four to seven panels per story page, varied by dramatic purpose Show route, entry point, active systems and where people can move before a spatial gag or breakdown. Place discoveries, reversals or dangerous consequences after the turn; do not depend on facing-page layouts in the vertical web reader. Use repeated angle or stable staging to make changes in state legible. Earn reactions from a visible cause; use silent beats where posture carries the joke. left-to-right Preserve small, calm rectangular areas without embedding boxes or words. Preserve uncluttered upper or side areas near the correct speaker without drawing balloons. Render the sign substrate and perspective, but leave the lettering field blank for deterministic post-composition. Use for town geography, simultaneous system effects or travel; not as empty spectacle. series visual-language summary approved character reference identifiers and immutable anchors approved location reference identifier, layout and weather state page and panel story purpose subjects, action, emotion and eye-lines camera, composition, depth and balloon-safe areas continuity-bound props, damage and carried items lighting, palette and material details blank signage or interface regions negative guidance 1.0.0 the-last-analog-town canonical
+
+FORMAT AND CAMERA
+medium panel, aspect ratio 4:3; Frontal medium shot on Riju before the public benches.
+
+LOCATION AND TIME
+golmohar-municipal-hall, late night.
+Canonical location reference: {
+  "aliases": [
+    "Municipal Hall",
+    "the Municipality",
+    "GJ-MTDA Administrative Building"
+  ],
+  "architecture": [
+    "thick colonial-era brick foundation block with arched openings",
+    "1960s exposed-concrete wing with deep sunshades",
+    "late glass digital-service annex on steel supports",
+    "rooftop black water tank and patchwork aerials",
+    "generator shed built against an older boundary wall"
+  ],
+  "comicFunctions": [
+    "architecture reveals institutional history without exposition",
+    "new digital workflow physically depends on old cupboards and wiring",
+    "the same corridor hosts grievance, ceremony and emergency response",
+    "off-level wall provides the locked final visual joke"
+  ],
+  "compositionRules": [
+    "exterior views show at least two architectural eras",
+    "server-room scenes preserve cupboard doors, table fan, cable entry and changeover…
+
+VISIBLE CHARACTERS
+- riju-dhar: centre; direct accountability; Placing both hands flat away from the terminal; facing front.
+  Canonical reference: {
+  "agePresentation": "late twenties",
+  "aliases": [
+    "Riju-babu",
+    "Junior Clerk Dhar"
+  ],
+  "bodyShape": "slim with long forearms and slightly oversized hands",
+  "continuityRules": [
+    "pencil remains behind the right ear unless shown in hand or explicitly lost",
+    "prototype always has one replaced blue key",
+    "temporary identity card remains visibly different from permanent staff cards",
+    "satchel gains audit stickers during Album 001 but does not become a new bag",
+    "his posture shifts from eager forward lean to accountable upright stance by the climax"
+  ],
+  "culturalContext": "A lower-middle-class Bengali municipal employee fluent in forms, code, family obligation and the insecurity of temporary work.",
+  "flaws": [
+    "believes a sufficiently good schema can make political disagreement tractable",
+    "wants professional recognition enough to ignore earl…
+- cecil-c17: right; exact witness; Holding the approval log open beside him; facing left.
+  Canonical reference: {
+  "agePresentation": "manufactured unit with visible service wear but no human age",
+  "aliases": [
+    "Cecil",
+    "C-17"
+  ],
+  "bodyShape": "compact non-humanoid vertical cabinet on four small independently sprung wheels",
+  "continuityRules": [
+    "blue status light changes brightness, never hue, unless a documented fault occurs",
+    "eye shutters convey aperture and angle, not human pupils or tears",
+    "stamp arm remains on right side",
+    "lower-left torso dent persists throughout Album 001",
+    "wheels accumulate mud consistently within a scene",
+    "Cecil remains non-human even as its category model changes"
+  ],
+  "culturalContext": "A globally deployed administrative machine nicknamed locally after residents misread its serial marking.",
+  "flaws": [
+    "cannot easily act without a valid category",
+    "treats missing evidence as an unresolved state but inherits sys…
+
+ACTION AND STAGING
+Riju publicly admits the decisive configuration choice.
+Foreground: Riju's replaced blue key is visible but untouched.
+Middle ground: Riju addresses the chamber without a screen between him and the listeners.
+Background: The public benches remain silent.
+Composition: Riju faces front with hands away from controls; Cecil and approval source form a factual side witness; reserve upper-centre and lower-right.
+Lighting: Warm lantern light on Riju with Cecil's cool blue edge.
+Palette: Moss, cream enamel, warm amber, graphite and muted red.
+
+PROPS
+- riju-reconciliation-terminal: {
+  "comicFunction": "Produces genuine record matches while embodying Riju's belief that careful structure can reconcile political reality.",
+  "continuity": [
+    "replaced blue key stays third from right on top function row",
+    "inventory plate remains blank in generated art",
+    "battery lead exits left side",
+    "interface is deterministic composition"
+  ],
+  "defaultLocationId": "golmohar-municipal-hall",
+  "defaultOwnerId": "riju-dhar",
+  "name": "Riju's reconciliation terminal",
+  "n…
+- cecil-stamp-arm: {
+  "comicFunction": "Turns abstract authorization into a visible mechanical commitment.",
+  "continuity": [
+    "always on right side",
+    "plate rotates ninety degrees before contact",
+    "stamp impression is added deterministically",
+    "cannot stamp without a valid authorization state"
+  ],
+  "defaultOwnerId": "cecil-c17",
+  "name": "Cecil's stamp arm",
+  "never": [
+    "human hand",
+    "left-side mounting",
+    "generated stamp text",
+    "rubber-hose motion",
+    "unauthorized cute st…
+
+CONTINUITY
+- Riju speaks simply and does not blame Cecil.
+- The approval log remains visible.
+
+LETTERING RESERVES
+Generated artwork must contain no final words, dialogue, captions, signs, logos, signatures, or watermarks. Preserve clean negative-space zones for deterministic lettering.
+- upper-centre: x 0.28-0.74, y 0.03-0.21
+- lower-right: x 0.61-0.97, y 0.73-0.92
+
+NEGATIVE GUIDANCE
+- embedded dialogue or lettering
+- speech balloons
+- watermarks
+- signatures
+- copyrighted logos
+- extra limbs
+- generated Bengali text
+- duplicated people or props
+- no photorealism
+- no embedded dialogue or lettering
+- no speech balloons or caption boxes
+- no fake Bengali-looking glyphs
+- no signatures or watermarks
+- no copyrighted logos or characters
+- no accidental extra limbs or duplicated characters
+- no unexplained costume or prop changes

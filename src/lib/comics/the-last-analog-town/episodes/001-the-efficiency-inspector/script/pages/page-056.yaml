@@ -1,0 +1,795 @@
+page: 56
+title: 'Three values and a reason'
+purpose: 'Define all eleven hybrid-governance conditions through concrete roles
+  and enforceable controls.'
+location: golmohar-municipal-hall
+time: continuous late night
+layout: 'Six rule-building panels moving from value logic through appeals, care,
+  addresses, work observation and offline continuity.'
+panelCount: 6
+dialogueGoal: 'Keep Cecil categorical, distribute the rules across the cast and
+  let disagreement sharpen enforceability.'
+pageTurn: 'Vale permits one battery-powered field trial before the network is restored.'
+visualMotif: 'A third ink pad turning a binary rail into a branching, reviewable process.'
+continuity:
+  - 'Rule 1: algorithms may recommend only while displaying uncertainty and
+    known failure conditions.'
+  - 'Rule 2: unknown remains distinct from false.'
+  - 'Rule 3: consequential decisions require an accessible appeal and human
+    recourse.'
+  - 'Rule 4: local-language explanations are a launch condition.'
+  - 'Rule 5: people can correct identity and address errors.'
+  - 'Rule 6: manual overrides carry reasons and audit trails rather than
+    automatic punishment.'
+  - 'Rule 7: no single score decides healthcare, education, welfare, policing or
+    employment.'
+  - 'Rule 8: designers observe actual work before digitising it.'
+  - 'Rule 9: informal practices are assessed individually rather than preserved
+    or erased as a class.'
+  - 'Rule 10: public services continue through network and power failure.'
+  - 'Rule 11: accuracy claims are published beside known failure conditions.'
+panels:
+  - id: p56-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: "Top-oblique view of Cecil's three value rails"
+    location: golmohar-municipal-hall
+    time: continuous late night
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: categorical clarity,
+          pose: 'Placing three blank value cards on separate rails',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: precise repair focus,
+          pose: 'Drawing an uncertainty branch from the third rail',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: demanding rigour,
+          pose: 'Adding a failure-condition pane beside the accuracy pane',
+          facing: left
+        }
+    props:
+      [
+        cecil-stamp-arm,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        hybrid-rules-board
+      ]
+    foreground: 'True, false and unknown cards remain visually separate and blank.'
+    middleGround: 'Riju gives the unknown rail an appeal branch; Vale pairs accuracy
+      with its failure conditions.'
+    background: 'The seven hearing cases remain available for testing.'
+    action: 'The group makes uncertainty visible and prevents recommendation from
+      becoming a hidden decision.'
+    dialogue:
+      - id: p56-01-d01
+        speaker: cecil-c17
+        text: 'True. False. Unknown. Three values.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.43,
+            y: 0.012,
+            width: 0.31,
+            height: 0.11,
+            z: 10,
+            tailTarget: { x: 0.51, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.78,
+            manualBreaks: [ 'True. False. Unknown.', 'Three values.' ]
+          }
+      - id: p56-01-d02
+        speaker: director-vale
+        text: 'Show uncertainty. Publish where accuracy fails.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.62,
+            y: 0.72,
+            width: 0.368,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.78, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.86,
+            manualBreaks:
+              [ 'Show uncertainty.', 'Publish where accuracy fails.' ]
+          }
+    continuity:
+      [
+        'Rules 1, 2 and 11 are explicit and testable.',
+        'All card labels and accuracy text are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Lantern light with three restrained value-colour edges.',
+        palette: 'Ledger green, warning red, uncertainty amber, cream enamel, moss and
+          graphite.',
+        composition: "Three rails lead from Cecil to Riju's branch and Vale's paired
+          disclosure; reserve upper-centre and lower-right.",
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.32-0.74, y 0.03-0.22',
+            'lower-right: x 0.55-0.99, y 0.72-0.95'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil separates true, false and unknown while Vale pairs accuracy with
+          failure conditions.',
+        description: 'Three blank value cards sit on separate rails. Riju gives the
+          unknown rail a review branch, while Vale places a failure-condition
+          pane directly beside the accuracy claim.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-056/p56-01__r1.png, final: panels/approved/page-056/p56-01__r1.png, width: 1672, height: 941 }
+  - id: p56-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Side view along a consequential-decision path'
+    location: golmohar-municipal-hall
+    time: continuous late night
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: methodical resolve,
+          pose: 'Connecting every consequence pane to a person, correction desk and appeal
+            state',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: practical scrutiny,
+          pose: 'Testing the route with the rejected address and split identity cases',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: left,
+          emotion: branch validation,
+          pose: 'Holding denial and appeal rails apart',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        municipal-red-ledger,
+        cecil-stamp-arm,
+        hybrid-rules-board
+      ]
+    foreground: 'Address and identity source cards remain editable rather than
+      overwritten.'
+    middleGround: 'A decision path must pass an accessible human appeal before closure.'
+    background: 'The public counter is represented by a blank physical intake slot.'
+    action: 'Riju makes correction and human recourse mandatory for decisions that
+      affect rights or services.'
+    dialogue:
+      - id: p56-02-d01
+        speaker: riju-dhar
+        text: 'Serious decisions get a human appeal. Names and addresses can be
+          corrected.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.015,
+            y: 0.012,
+            width: 0.60,
+            height: 0.30,
+            z: 10,
+            tailTarget: { x: 0.40, y: 0.52 },
+            tailDirection: down,
+            fontScale: 0.58,
+            manualBreaks:
+              [
+                'Serious decisions get a',
+                'human appeal. Names and',
+                'addresses can be corrected.'
+              ]
+          }
+      - id: p56-02-d02
+        speaker: ila-dastidar
+        text: 'Before the harm. Not after the funeral.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.62,
+            y: 0.012,
+            width: 0.36,
+            height: 0.40,
+            z: 10,
+            tailTarget: { x: 0.82, y: 0.56 },
+            tailDirection: down,
+            fontScale: 0.58,
+            manualBreaks: [ 'Before the', 'harm. Not', 'after the', 'funeral.' ]
+          }
+    continuity:
+      [
+        'Rules 3 and 5 are explicit.',
+        'The appeal route does not require a post-submission complaint number.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm hearing light on branching paper-and-terminal process.',
+        palette: 'Moss, municipal red, cream paper, cream enamel and muted blue.',
+        composition: 'Decision rail branches visibly to human counter and correction
+          sources; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.21-0.89, y 0.03-0.24',
+            'lower-right: x 0.53-0.98, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju links every consequential decision to correction and a human appeal.',
+        description: 'Address and identity sources stay editable while Riju draws a
+          branch from consequential decisions to a physical intake slot and a
+          named human reviewer. Ila tests whether the appeal can happen before
+          harm.'
+      }
+    art: { status: final, revision: 2, source: panels/raw/page-056/p56-02__r2.png, final: panels/approved/page-056/p56-02__r2.png, width: 1448, height: 1086 }
+  - id: p56-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: "Clinical evidence view across Ananya's reason log"
+    location: golmohar-municipal-hall
+    time: continuous late night
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: clinical precision,
+          pose: 'Linking an urgent override to reason, signer, time and later review',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: institutional caution,
+          pose: 'Separating five life-domain cards from one score pane',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: lower-centre,
+          emotion: audit structure,
+          pose: 'Stamp arm following the override trail without flagging punishment',
+          facing: front
+        }
+    props:
+      [
+        clinic-paper-queue,
+        ananya-mechanical-watch,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        hybrid-rules-board
+      ]
+    foreground: 'The clinical override retains observed urgency, reason, author and
+      review time.'
+    middleGround: 'Healthcare, education, welfare, policing and employment cards
+      remain separate from one score.'
+    background: 'An automatic punishment path is visibly disconnected.'
+    action: 'The team makes manual overrides reviewable and bars any single score
+      from deciding a life domain.'
+    dialogue:
+      - id: p56-03-d01
+        speaker: director-vale
+        text: 'No one score decides care, school, welfare, policing or work.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.245,
+            y: 0,
+            width: 0.755,
+            height: 0.22,
+            z: 10,
+            tailTarget: { x: 0.92, y: 0.62 },
+            tailDirection: right,
+            fontScale: 0.58,
+            manualBreaks:
+              [
+                'No one score decides care, school,',
+                'welfare, policing or work.'
+              ]
+          }
+      - id: p56-03-d02
+        speaker: ananya-rook
+        text: 'Log who and why. Review—don''t punish.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.012,
+            y: 0.50,
+            width: 0.23,
+            height: 0.42,
+            z: 10,
+            tailTarget: { x: 0.21, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.58,
+            manualBreaks: [ 'Log who', 'and why.', 'Review—don''t', 'punish.' ]
+          }
+    continuity:
+      [
+        'Rules 6 and 7 are explicit.',
+        "Ananya's page 45 reason is the working example."
+      ]
+    prompt:
+      {
+        lighting: 'Clear work light on reason trail and separated life-domain cards.',
+        palette: 'Indigo, graphite, paper cream, cream enamel and muted blue.',
+        composition: 'Override trail runs left to centre while five domain cards fan
+          away from one score on right; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.68, y 0.02-0.24',
+            'lower-right: x 0.45-0.99, y 0.71-0.96'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya builds an auditable override while Vale separates five life domains
+          from one score.',
+        description: 'Ananya links urgent observation to reason, signer, audit trail and
+          later review. Beside her, Vale fans healthcare, education, welfare,
+          policing and employment cards away from a single score pane.'
+      }
+    art: { status: final, revision: 4, source: panels/raw/page-056/p56-03__r4.png, final: panels/approved/page-056/p56-03__r4.png, width: 1544, height: 869 }
+  - id: p56-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Eye-level view of the address and explanation stations'
+    location: golmohar-municipal-hall
+    time: continuous late night
+    characters:
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: careful authority,
+          pose: 'Placing two witnessed landmark routes beside the address card',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: exact insistence,
+          pose: 'Adding two blank language explanation sheets to the decision',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: design focus,
+          pose: 'Marking both requirements as launch blockers',
+          facing: front
+        }
+    props:
+      [
+        waterproof-document-tube,
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        hybrid-rules-board
+      ]
+    foreground: 'Physical route evidence and blank multilingual explanation
+      substrates sit side by side.'
+    middleGround: 'Riju makes both available before a case can close.'
+    background: 'A launch gate remains visibly shut until both checks pass.'
+    action: 'Witnessed landmark evidence becomes correctable input, and
+      local-language explanation becomes mandatory.'
+    dialogue:
+      - id: p56-04-d01
+        speaker: babul-courier
+        text: 'A landmark needs a witness, a route and a way to challenge both.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.015,
+            y: 0.012,
+            width: 0.51,
+            height: 0.30,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.52 },
+            tailDirection: down,
+            fontScale: 0.80,
+            manualBreaks:
+              [
+                'A landmark needs a',
+                'witness, a route and a',
+                'way to challenge both.'
+              ]
+          }
+      - id: p56-04-d02
+        speaker: ila-dastidar
+        text: "Explain it in the resident's language. Before launch."
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.64,
+            y: 0.005,
+            width: 0.35,
+            height: 0.36,
+            z: 10,
+            tailTarget: { x: 0.81, y: 0.53 },
+            tailDirection: down,
+            fontScale: 0.58,
+            manualBreaks:
+              [ 'Explain it in', 'the resident''s', 'language.', 'Before launch.' ]
+          }
+    continuity:
+      [
+        'Rule 4 is explicit; Rule 5 is reinforced through witnessed
+          correction.',
+        'Language sheets are blank in art and require reviewed deterministic
+          lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm practical table light on route evidence and blank explanation
+          sheets.',
+        palette: 'Ochre, municipal red, moss, paper cream and muted blue.',
+        composition: "Route evidence and language sheets balance around Riju's closed
+          launch gate; reserve upper-left and lower-right.",
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.63, y 0.03-0.23',
+            'lower-right: x 0.50-0.99, y 0.72-0.95'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Babul-da supplies witnessed routes while Ila requires local-language
+          explanations.',
+        description: 'Two landmark-route sources sit beside blank multilingual
+          explanation sheets. Riju marks both as conditions that must pass
+          before a consequential case or launch can close.'
+      }
+    art: { status: final, revision: 2, source: panels/raw/page-056/p56-04__r2.png, final: panels/approved/page-056/p56-04__r2.png, width: 1448, height: 1086 }
+  - id: p56-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide hearing-table view divided between a repair practice and a
+      procurement exception'
+    location: golmohar-municipal-hall
+    time: continuous late night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre-left,
+          emotion: discriminating resolve,
+          pose: "Placing Ananya's documented repair practice apart from the contractor
+            override file",
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: evidence-responsive agreement,
+          pose: 'Adding an observation-before-digitisation gate to each practice',
+          facing: left
+        }
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: guarded approval,
+          pose: 'Holding a real tool and its maintenance record',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: right,
+          emotion: attentive humility,
+          pose: 'Holding the amended route card as another practice to inspect',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        ananya-tool-bag,
+        waterproof-document-tube,
+        hybrid-rules-board
+      ]
+    foreground: 'Useful repair, a signed copy of the amended route card and corrupt
+      procurement files remain distinct.'
+    middleGround: 'Each passes through observation and individual evaluation.'
+    background: 'A blanket preserve/erase lever remains disconnected.'
+    action: 'The group refuses to classify all informal practice as either wisdom or
+      corruption.'
+    dialogue:
+      - id: p56-05-d01
+        speaker: ila-dastidar
+        text: 'Judge what each workaround did. Don''t praise them—or wipe them all
+          away.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.363,
+            y: 0.012,
+            width: 0.245,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.40, y: 0.48 },
+            tailDirection: left,
+            fontScale: 0.65,
+            manualBreaks:
+              [
+                'Judge what each',
+                'workaround did.',
+                'Don''t praise them—or',
+                'wipe them all away.'
+              ]
+          }
+      - id: p56-05-d02
+        speaker: director-vale
+        text: 'Designers watch the work before they digitise it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.40,
+            y: 0.28,
+            width: 0.24,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.68, y: 0.57 },
+            tailDirection: right,
+            fontScale: 0.86,
+            manualBreaks:
+              [ 'Designers watch the work', 'before they digitise it.' ]
+          }
+    continuity:
+      [
+        'Rules 8 and 9 are explicit.',
+        'The original circuit books remain at the Old Exchange; Babul-da
+          brought only the signed route-card copy in the waterproof tube.',
+        'Contractor evidence stays open; useful informal practice is not
+          automatically protected.'
+      ]
+    prompt:
+      {
+        lighting: 'Balanced hearing light across three materially different practices.',
+        palette: 'Municipal red, graphite, indigo, ochre, paper cream and silver.',
+        composition: 'Three practice files pass individually between Ila and Vale;
+          disconnected blanket lever deep background; reserve upper-centre and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.15-0.85, y 0.02-0.24',
+            'lower-right: x 0.53-0.99, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila and Vale assess useful and corrupt informal practices separately.',
+        description: 'A documented clinic repair, amended route card and contractor
+          override file remain separate across the table. Ila rejects blanket
+          preservation or erasure, while Vale makes observation of real work a
+          design condition.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-056/p56-05__r1.png, final: panels/approved/page-056/p56-05__r1.png, width: 1672, height: 941 }
+  - id: p56-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low wide view of the improvised third ink pad and field-test kit'
+    location: golmohar-municipal-hall
+    time: continuous late night
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: procedural pause,
+          pose: 'Holding the stamp arm above an improvised third ink pad without touching
+            it',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: conditional approval,
+          pose: 'Authorising a battery-powered field-test pane',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: cautious readiness,
+          pose: 'Packing offline forms and a battery lead',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: centre-left,
+          emotion: final scrutiny,
+          pose: 'Checking that essential-service fallback remains active',
+          facing: right
+        }
+      - {
+          id: ananya-rook,
+          position: far-left,
+          emotion: practical readiness,
+          pose: 'Adding the clinical paper route',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: far-right,
+          emotion: route readiness,
+          pose: 'Holding the witnessed-address packet',
+          facing: left
+        }
+    props:
+      [
+        cecil-stamp-arm,
+        vale-silver-tablet,
+        riju-form-satchel,
+        municipal-red-ledger,
+        clinic-paper-queue,
+        waterproof-document-tube,
+        hybrid-rules-board
+      ]
+    foreground: 'Offline forms, local battery and physical evidence are packed together.'
+    middleGround: 'Cecil pauses because the new ink pad itself has no approved category.'
+    background: 'The Old Exchange essential line remains lit through the outage.'
+    action: 'Offline continuity becomes mandatory, and Vale authorises one bounded
+      field trial.'
+    dialogue:
+      - id: p56-06-d01
+        speaker: director-vale
+        text: 'Essential services must survive outages. One field trial. Full audit.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.70,
+            y: 0.01,
+            width: 0.29,
+            height: 0.22,
+            z: 10,
+            tailTarget: { x: 0.61, y: 0.52 },
+            tailDirection: down,
+            fontScale: 0.82,
+            manualBreaks:
+              [
+                'Essential services must',
+                'survive outages.',
+                'One field trial. Full audit.'
+              ]
+          }
+      - id: p56-06-d02
+        speaker: cecil-c17
+        text: 'Third ink pad category not yet approved.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.64,
+            y: 0.27,
+            width: 0.34,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.47, y: 0.56 },
+            tailDirection: left,
+            fontScale: 0.86,
+            manualBreaks:
+              [ 'Third ink pad category', 'not yet approved.' ]
+          }
+    visualJoke: 'The pad needed to represent unknown is itself administratively unknown.'
+    continuity:
+      [
+        'Rule 10 is explicit.',
+        'All eleven rules are now defined as launch and operating conditions.',
+        'The field trial is bounded and battery-powered.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm lanterns and local battery light focused on the field-test kit.',
+        palette: 'Uncertainty amber, cream enamel, municipal red, graphite, moss, indigo
+          and ochre.',
+        composition: 'Third pad centres the joke, with the full cast assembling offline
+          kit around it; reserve upper-right and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.49-0.99, y 0.02-0.24',
+            'lower-centre: x 0.25-0.75, y 0.73-0.95'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil pauses over an unclassified third ink pad as Vale approves a field
+          trial.',
+        description: 'Offline forms, a local battery, clinic records and witnessed
+          addresses make up the field-test kit. Cecil holds its stamp arm above
+          the new unknown pad, while Vale authorises one audited test and
+          requires essential services to survive outages.'
+      }
+    art: { status: final, revision: 2, source: panels/raw/page-056/p56-06__r2.png, final: panels/approved/page-056/p56-06__r2.png, width: 1672, height: 941 }

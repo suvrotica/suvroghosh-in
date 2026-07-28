@@ -1,0 +1,487 @@
+page: 27
+title: 'Medicine found'
+purpose: 'Establish a concrete health benefit that makes later rollback morally
+  unacceptable.'
+location: rook-clinic
+time: late morning
+layout: 'A missing-crate reveal, two trace-and-collection beats, a quiet
+  treatment panel, and a professional verdict.'
+panelCount: 5
+dialogueGoal: 'Let Riju receive sincere professional approval while Ananya names
+  exactly what the integration saved.'
+pageTurn: 'The same rail connection updates the delayed commuter train.'
+visualMotif: 'Five useless physical stickers become one useful source trail.'
+continuity:
+  - 'The emergency shipment trace depends on connected warehouse, rail, courier,
+    and clinic records.'
+  - 'The patient is treated without the usual telephone chase; the health
+    benefit receives serious visual space.'
+  - 'The crate, labels, clinical result fields, and rail update remain blank for
+    deterministic lettering.'
+panels:
+  - id: p27-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide clinic-desk verification shot with a remote freight-shed custody
+      inset'
+    location: rook-clinic
+    time: late morning
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: controlled urgency,
+          pose: 'Kneeling to compare the crate with a paper shortage record',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: incredulous focus,
+          pose: 'Following the Crosswalk trace on the terminal',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: source verification,
+          pose: "Scanning the crate's blank tracking substrates",
+          facing: left
+        }
+    props:
+      [
+        ananya-tool-bag,
+        ananya-mechanical-watch,
+        amber-clinic-glasses,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'Five contradictory paper and digital tracking records overlap on
+      the clinic desk.'
+    middleGround: "Riju's Crosswalk trace identifies the rail freight shed as
+      current custody."
+    background: 'A clean remote inset shows the unbranded crate still at the shed
+      while clinic staff prepare the treatment station.'
+    action: 'From the clinic, the Crosswalk verifies the delayed shipment at the
+      Halt freight shed despite five contradictory tracking records.'
+    dialogue:
+      - id: p27-01-d01
+        speaker: riju-dhar
+        text: 'Five systems, five journeys. Together they find the crate.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.31,
+            y: 0.30,
+            width: 0.38,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.65, y: 0.48 },
+            tailDirection: up,
+            fontScale: 0.84
+          }
+    visualJoke: 'Five tracking records become useful only when none is allowed to
+      declare itself the whole journey.'
+    continuity:
+      [
+        'The physical crate remains at the Halt freight shed in this panel and
+          has not yet entered the clinic.',
+        "Ananya's tool bag remains within reach and watch stays on her left
+          wrist.",
+        'Tracking records, custody inset, and terminal readout have blank
+          lettering fields.'
+      ]
+    prompt:
+      {
+        lighting: 'Clean clinic daylight with restrained cyan remote-custody glow.',
+        palette: 'Clinic cream, teal, amber, crate brown, Grid blue and paper red.',
+        composition: 'Five source records dominate the desk; Ananya, Riju and Cecil form
+          a verification triangle; clean inset shows the remote freight-shed
+          crate; treatment activity remains respectful behind; reserve
+          upper-right.',
+        balloonSafeAreas: [ 'upper-right reserve: x 0.26-0.94, y 0.03-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'From Rook Clinic, the team verifies the missing medicine crate at the Halt
+          freight shed.',
+        description: 'Five contradictory tracking records overlap on the clinic desk.
+          Riju and Cecil connect them into a custody trace while Ananya checks
+          the shortage report; a clean remote inset shows the physical crate
+          still waiting at the rail freight shed.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-027/p27-01__r1.png, final: panels/approved/page-027/p27-01__r1.png, width: 1672, height: 941 }
+  - id: p27-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Top-down procedural shot of the connected source trail'
+    location: rook-clinic
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: precise excitement,
+          pose: 'Aligning warehouse, rail, courier, and clinic cards',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: confirmed trace state,
+          pose: 'Stamping the complete source chain once',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: 'Four materially different source cards form one continuous route.'
+    middleGround: 'Riju preserves each source rather than replacing them with one
+      clean record.'
+    background: 'A blank live-custody field shows Babul collecting the crate at the
+      freight shed.'
+    action: "Riju proves the shipment's route and current custody without erasing
+      any conflicting source."
+    dialogue:
+      - id: p27-02-d01
+        speaker: cecil-c17
+        text: 'End-to-end custody is now traceable.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.47,
+            y: 0.03,
+            width: 0.51,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.71, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+    continuity:
+      [
+        'Cecil stamps only after the full trail is visible.',
+        'All card labels and stamp text are composed later.'
+      ]
+    prompt:
+      {
+        lighting: 'Neutral procedural light with restrained cyan trace accents.',
+        palette: 'Paper cream, Grid blue, moss green, cream enamel and crate brown.',
+        composition: 'Four source cards make a clear left-to-right chain between Riju
+          and Cecil; open crate beyond; reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right reserve: x 0.34-0.96, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju and Cecil connect four source cards into a complete medicine trail.',
+        description: 'Warehouse, railway, courier, and clinic cards form one continuous
+          path. Riju keeps each source visible, and Cecil stamps the verified
+          chain only after custody is clear.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-027/p27-02__r1.png, final: panels/approved/page-027/p27-02__r1.png, width: 1448, height: 1086 }
+  - id: p27-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Dynamic medium shot through the clinic grille'
+    location: rook-clinic
+    time: late morning
+    characters:
+      - {
+          id: babul-courier,
+          position: centre,
+          emotion: efficient care,
+          pose: 'Lifting the secured crate from the cycle van with both hands',
+          facing: left
+        }
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: urgent readiness,
+          pose: 'Holding the clinic door and indicating the treatment bench',
+          facing: right
+        }
+    props:
+      [
+        babul-cycle-van,
+        waterproof-document-tube,
+        ananya-tool-bag,
+        amber-clinic-glasses
+      ]
+    foreground: 'The crate passes safely through the folding grille.'
+    middleGround: 'Babul keeps the load level while Ananya clears the direct route.'
+    background: 'The cycle van remains correctly balanced outside.'
+    action: 'Babul brings the located shipment straight to Ananya before it can be
+      misdirected again.'
+    dialogue:
+      - id: p27-03-d01
+        speaker: babul-courier
+        text: 'Found is useful. Delivered is better.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.56,
+            y: 0.03,
+            width: 0.40,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.58, y: 0.46 },
+            tailDirection: down,
+            fontScale: 0.92
+          }
+    continuity:
+      [
+        "The van's cream front mudguard, left bell, and three-wheel geometry
+          remain correct.",
+        'The crate stays level and plausibly carried; no labels are generated.'
+      ]
+    prompt:
+      {
+        lighting: 'Bright lane daylight crossing into cooler clinic shade.',
+        palette: 'Cycle blue, rust red, crate cream, clinic teal and warm ochre.',
+        composition: "Crate moves left through grille; Babul's careful hands and
+          Ananya's cleared path are unobstructed; van visible behind; reserve
+          upper-right.",
+        balloonSafeAreas: [ 'upper-right reserve: x 0.34-0.94, y 0.03-0.21' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Babul carries the traced medicine crate safely into Rook Clinic.',
+        description: 'Babul lifts the secured crate level with both hands and carries it
+          through the open clinic grille. Ananya holds a direct route to the
+          treatment bench while the balanced cycle van remains outside.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-027/p27-03__r1.png, final: panels/approved/page-027/p27-03__r1.png, width: 1448, height: 1086 }
+  - id: p27-04
+    panel: 4
+    size: half-page
+    aspectRatio: '3:2'
+    camera: 'Quiet eye-level treatment-room shot with respectful distance'
+    location: rook-clinic
+    time: late morning
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre-left,
+          emotion: calm clinical focus,
+          pose: 'Administering the needed medicine with steady hands',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: background-right,
+          emotion: humbled relief,
+          pose: 'Standing still beside the closed terminal',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: background-left,
+          emotion: quiet concern,
+          pose: 'Waiting by the door with gamchha lowered from his shoulder',
+          facing: right
+        }
+    props:
+      [
+        ananya-tool-bag,
+        ananya-mechanical-watch,
+        amber-clinic-glasses,
+        riju-reconciliation-terminal
+      ]
+    foreground: 'Only clinically necessary equipment is visible; the patient is
+      treated with dignity and no identifying detail.'
+    middleGround: 'Ananya provides care without pausing for administrative celebration.'
+    background: 'Riju and Babul remain silent, understanding the time saved.'
+    action: 'The patient receives the medicine without the usual hours of telephone
+      tracing.'
+    dialogue: []
+    continuity:
+      [
+        "The patient's care, not the technology, owns the visual centre.",
+        'Riju closes the terminal during treatment and does not intrude.'
+      ]
+    prompt:
+      {
+        lighting: 'Soft window light and practical clinic lamp with quiet shadows.',
+        palette: 'Clinic cream, teal, amber, warm skin tones and subdued Grid blue.',
+        composition: 'Ananya and treatment occupy calm centre; patient dignity
+          protected; Riju and Babul small and silent at edges; preserve
+          uncluttered upper field.',
+        balloonSafeAreas: [ 'upper quiet reserve: x 0.24-0.76, y 0.03-0.18' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            patient suffering as spectacle
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya gives the located medicine while Riju and Babul wait silently.',
+        description: 'In a quiet clinic room, Ananya administers the needed medicine
+          with steady hands. The patient is shown respectfully without
+          identifying detail; Riju has closed the terminal and waits with Babul
+          at the edges.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-027/p27-04__r1.png, final: panels/approved/page-027/p27-04__r1.png, width: 1536, height: 1024 }
+  - id: p27-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Three-quarter wide shot from the treatment room towards the result and
+      rail terminals'
+    location: rook-clinic
+    time: late morning
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: sincere professional approval,
+          pose: "Closing the medicine case and meeting Riju's eye",
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: grateful pride,
+          pose: 'Standing upright with pencil returned behind his right ear',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: next-source update,
+          pose: 'Indicating a blank rail-status panel',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: far-left,
+          emotion: ready attention,
+          pose: 'Securing the empty document tube beneath the van rail outside',
+          facing: right
+        }
+    props:
+      [
+        ananya-tool-bag,
+        ananya-mechanical-watch,
+        amber-clinic-glasses,
+        riju-form-satchel,
+        cecil-stamp-arm,
+        waterproof-document-tube
+      ]
+    foreground: 'The used medicine case is safely closed.'
+    middleGround: 'Ananya credits the source connection without calling it flawless.'
+    background: 'A blank rail-status panel updates from the same connected feed.'
+    action: 'Ananya names the hours saved; the rail source immediately produces a
+      useful commuter update.'
+    dialogue:
+      - id: p27-05-d01
+        speaker: ananya-rook
+        text: 'That saved us hours. Put that in the review too.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.01,
+            y: 0.03,
+            width: 0.26,
+            height: 0.22,
+            z: 10,
+            tailTarget: { x: 0.37, y: 0.46 },
+            tailDirection: down,
+            fontScale: 0.80
+          }
+      - id: p27-05-d02
+        speaker: cecil-c17
+        text: 'Rail position source updated.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.70,
+            y: 0.76,
+            width: 0.27,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.76, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        "Ananya's approval is specific to the medicine-trace benefit.",
+        'The update carries directly into page 28; every rail and result word
+          remains composited.'
+      ]
+    prompt:
+      {
+        lighting: 'Clear late-morning clinic light with restrained rail-panel glow.',
+        palette: 'Clinic teal, amber, moss green, cream enamel, cycle blue and Grid
+          blue.',
+        composition: 'Closed medicine case foreground; Ananya and Riju share
+          centre-left; Cecil and blank rail panel point to page turn; reserve
+          upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.60, y 0.03-0.23',
+            'lower-right reserve: x 0.63-0.98, y 0.71-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya credits the connection as Cecil receives a rail update.',
+        description: 'With the medicine case safely closed, Ananya tells Riju that the
+          source connection saved hours and must be preserved alongside later
+          failures. Cecil points to a blank rail-status panel receiving a new
+          position update.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-027/p27-05__r1.png, final: panels/approved/page-027/p27-05__r1.png, width: 1672, height: 941 }

@@ -1,0 +1,649 @@
+page: 51
+title: 'Evidence in motion'
+purpose: 'Turn the investigation into a physical race across established
+  Golmohar geography.'
+location: old-exchange
+time: night
+layout: 'Two packing beats, a departure wide, a Junction chase sequence, and a
+  Hall-arrival turn.'
+panelCount: 6
+dialogueGoal: 'Let Riju understand that evidence gains meaning through source,
+  route and custody, not transmission alone.'
+pageTurn: 'The utility crew reaches the server cupboard before Riju reaches the
+  building entrance.'
+visualMotif: 'Paper sources and a battery-limited robot travelling faster by
+  cycle van than the smart network.'
+continuity:
+  - 'Paper maps, utility ledger, clinic reasons and upstream warning must arrive
+    intact.'
+  - "Cecil rides on Babul-da's cycle van to conserve battery."
+  - 'The opening billboard still blocks one lane at Junction Square.'
+panels:
+  - id: p51-01
+    panel: 1
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Top-down packing view at the Old Exchange bench'
+    location: old-exchange
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: urgent method,
+          pose: 'Separating maps, utility ledger copy, clinic reasons and flood warning
+            into a waterproof packet',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: right,
+          emotion: careful readiness,
+          pose: 'Checking each bundle against the document tube capacity',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: lower-centre,
+          emotion: custody logging,
+          pose: 'Stamp arm recording each handoff',
+          facing: front
+        }
+    props:
+      [
+        waterproof-document-tube,
+        riju-form-satchel,
+        exchange-circuit-books,
+        cecil-stamp-arm
+      ]
+    foreground: 'Four source bundles remain visibly separate.'
+    middleGround: 'Riju wraps them against rain and water while Cecil records custody.'
+    background: 'The Hall line warning lamp stays lit.'
+    action: 'The evidence becomes a physical packet because quarantine rejects
+      digital transmission.'
+    dialogue:
+      - id: p51-01-d01
+        speaker: riju-dhar
+        text: 'Keep all four separate: maps, utility source, clinic reason, upstream
+          warning.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.28,
+            y: 0.02,
+            width: 0.36,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.23, y: 0.25 },
+            tailDirection: down,
+            fontScale: 0.82,
+            manualBreaks:
+              [
+                'Keep all four separate:',
+                'maps, utility source, clinic reason,',
+                'upstream warning.'
+              ]
+          }
+      - id: p51-01-d02
+        speaker: cecil-c17
+        text: 'Custody recorded.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.68,
+            y: 0.72,
+            width: 0.27,
+            height: 0.11,
+            z: 10,
+            tailTarget: { x: 0.51, y: 0.73 },
+            tailDirection: left,
+            fontScale: 1.00,
+            manualBreaks: [ 'Custody recorded.' ]
+          }
+    continuity:
+      [
+        'No source is merged or left behind.',
+        'All written evidence stays blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm exchange desk lamp on four protected bundles.',
+        palette: 'Paper cream, blue-grey tube, moss, ochre, brass and cream enamel.',
+        composition: 'Four bundles form a row into the waterproof tube; reserve
+          upper-left and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.65, y 0.03-0.23',
+            'lower-centre: x 0.36-0.69, y 0.73-0.92'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju packs four separate evidence bundles into the waterproof tube.',
+        description: 'Maps, a utility source, clinic reasons and the upstream warning
+          remain in separate protected bundles. Riju packs them, Babul-da checks
+          the tube and Cecil records the chain of custody.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-051/p51-01__r1.png, final: panels/approved/page-051/p51-01__r1.png, width: 1448, height: 1086 }
+  - id: p51-02
+    panel: 2
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Low mechanical view of Cecil boarding the cycle-van cargo bed'
+    location: old-exchange
+    time: night
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: battery conservation,
+          pose: 'Rolling up a short board onto the cargo bed with stamp arm holding the
+            folder straps',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: concentrated care,
+          pose: 'Bracing the van and securing a wheel stop',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: impatient caution,
+          pose: 'Fastening the waterproof tube beneath the rail',
+          facing: left
+        }
+    props: [ babul-cycle-van, waterproof-document-tube, cecil-stamp-arm ]
+    foreground: 'A mechanically plausible ramp and wheel stop secure Cecil.'
+    middleGround: 'Cecil holds the evidence straps while Riju fixes the tube.'
+    background: 'The Old Exchange door opens towards the route.'
+    action: 'The team loads Cecil and the evidence without risking battery or custody.'
+    dialogue:
+      - id: p51-02-d01
+        speaker: cecil-c17
+        text: 'Riding reduces battery use by fourteen per cent.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.70,
+            y: 0.02,
+            width: 0.28,
+            height: 0.19,
+            z: 10,
+            tailTarget: { x: 0.62, y: 0.32 },
+            tailDirection: down,
+            fontScale: 0.84,
+            manualBreaks: [ 'Riding reduces', 'battery use by', 'fourteen per cent.' ]
+          }
+      - id: p51-02-d02
+        speaker: babul-courier
+        text: 'Then enjoy being efficient.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.03,
+            y: 0.46,
+            width: 0.36,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.27, y: 0.25 },
+            tailDirection: up,
+            fontScale: 0.97
+          }
+    visualJoke: 'The fastest smart-town data transfer requires a careful loading ramp.'
+    continuity:
+      [
+        'Cecil has four wheels and remains securely braced.',
+        'The waterproof tube is strapped beneath the cargo rail.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm doorway light on blue frame, rust-red bed and cream casing.',
+        palette: 'Cycle blue, rust red, cream enamel, ochre, moss and blue-grey.',
+        composition: 'Ramp diagonal leads Cecil onto the cargo bed while both humans
+          secure opposite sides; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.25-0.97, y 0.03-0.21',
+            'lower-left: x 0.03-0.43, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Babul-da and Riju secure Cecil on the cycle-van cargo bed.',
+        description: 'Cecil rolls up a short ramp onto the rust-red cargo bed. Babul-da
+          braces the blue cycle van and fixes a wheel stop while Riju secures
+          the waterproof evidence tube beneath the rail.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-051/p51-02__r1.png, final: panels/approved/page-051/p51-02__r1.png, width: 1254, height: 1254 }
+  - id: p51-03
+    panel: 3
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low tracking shot as the cycle van leaves the Old Exchange'
+    location: old-exchange
+    time: night
+    characters:
+      - {
+          id: babul-courier,
+          position: foreground-left,
+          emotion: urgent command,
+          pose: 'Pedalling hard with grounded posture',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: anxious vigilance,
+          pose: 'Running beside the van with one hand on the evidence tube',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: cargo-centre,
+          emotion: route logging,
+          pose: 'Holding the folder straps while facing forward',
+          facing: right
+        }
+    props:
+      [
+        babul-cycle-van,
+        babul-authoritative-bell,
+        waterproof-document-tube,
+        cecil-stamp-arm,
+        riju-form-satchel
+      ]
+    foreground: 'Cycle wheels throw small arcs of water from the lane.'
+    middleGround: 'The evidence and Cecil remain stable on the cargo bed.'
+    background: 'The Old Exchange battery lamps recede behind them.'
+    action: 'Babul-da launches the physical evidence run towards Municipal Hall.'
+    dialogue:
+      - id: p51-03-d01
+        speaker: babul-courier
+        text: 'Hold the tube. I''ll hold the road.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.19,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.26, y: 0.23 },
+            tailDirection: right,
+            fontScale: 0.90,
+            manualBreaks: [ 'Hold the tube.', "I'll hold the road." ]
+          }
+    soundEffects:
+      - {
+          text: 'BRANG',
+          description: 'The authoritative brass bell clears the exchange lane.',
+          position: { x: 0.25, y: 0.30, z: 8 }
+        }
+    continuity:
+      [
+        'Evidence remains dry and attached.',
+        'The route proceeds towards Junction Square.'
+      ]
+    prompt:
+      {
+        lighting: 'Night lane lamps streaking across wet paving.',
+        palette: 'Cycle blue, rust red, ochre, moss, cream enamel and night blue.',
+        composition: 'Strong left-to-right tracking motion with evidence stable at
+          centre; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left: x 0.03-0.45, y 0.03-0.21' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Babul-da pedals the evidence and Cecil away from the Old Exchange.',
+        description: 'The cycle van accelerates through the wet lane. Cecil braces the
+          folders on the cargo bed, Riju runs beside the waterproof tube, and
+          Babul-da rings once as the battery-lit Exchange falls behind.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-051/p51-03__r1.png, final: panels/approved/page-051/p51-03__r1.png, width: 1672, height: 941 }
+  - id: p51-04
+    panel: 4
+    size: tall
+    aspectRatio: '3:4'
+    camera: "Long view through Junction Square's obstructed lane"
+    location: junction-square
+    time: night
+    characters:
+      - {
+          id: babul-courier,
+          position: lower-left,
+          emotion: determined control,
+          pose: 'Steering the cycle van through a resident-made corridor',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: lower-right,
+          emotion: grateful urgency,
+          pose: 'Running ahead to protect the evidence tube from the billboard brace',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: cargo-centre,
+          emotion: violation receipt,
+          pose: 'Holding the folders while shutters track the blank camera alerts',
+          facing: front
+        }
+    props:
+      [
+        babul-cycle-van,
+        waterproof-document-tube,
+        cecil-stamp-arm,
+        smart-town-billboard,
+        junction-clock-faces
+      ]
+    foreground: 'Residents pull carts and bicycles aside without becoming a faceless
+      crowd.'
+    middleGround: 'The van threads around the billboard support still blocking one
+      traffic lane.'
+    background: 'Municipal Hall glows beyond the mismatched clocks.'
+    action: 'Residents create a physical corridor through the original obstruction.'
+    dialogue:
+      - id: p51-04-d01
+        speaker: riju-dhar
+        text: "They're clearing the way because they know why this matters."
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.30,
+            width: 0.49,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.62, y: 0.63 },
+            tailDirection: down,
+            fontScale: 0.87
+          }
+    continuity:
+      [
+        'The billboard still blocks one lane.',
+        "The residents' corridor is voluntary and coordinated."
+      ]
+    prompt:
+      {
+        lighting: 'Mixed square lamps, billboard glow and wet paving reflections.',
+        palette: 'Municipal red, billboard cyan, cycle blue, ochre, cream and night
+          blue.',
+        composition: 'Tall corridor bends around the billboard brace towards the Hall;
+          mismatched clocks visible above; reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right: x 0.32-0.96, y 0.03-0.23' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Residents open a corridor around the billboard for the evidence van.',
+        description: 'People move carts and bicycles aside to create a route through
+          Junction Square. Babul-da steers around the smart billboard support
+          that still blocks one lane, while Riju runs beside the evidence and
+          Cecil rides on the cargo bed.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-051/p51-04__r1.png, final: panels/approved/page-051/p51-04__r1.png, width: 1086, height: 1448 }
+  - id: p51-05
+    panel: 5
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Comic close view on Cecil holding folders amid blank violation panes'
+    location: junction-square
+    time: night
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: exact custody,
+          pose: 'Clamping folders with the manipulator while violation panes multiply',
+          facing: front
+        }
+      - {
+          id: babul-courier,
+          position: edge-left,
+          emotion: unwavering focus,
+          pose: 'Pedalling beyond the camera field',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: edge-right,
+          emotion: breathless urgency,
+          pose: 'Keeping one hand on the tube strap',
+          facing: right
+        }
+    props:
+      [
+        babul-cycle-van,
+        waterproof-document-tube,
+        cecil-stamp-arm,
+        smart-town-billboard
+      ]
+    foreground: 'Physical folders remain neatly clamped.'
+    middleGround: 'Blank smart-camera violation panes stack around Cecil.'
+    background: 'The van clears the blocked-square geometry.'
+    action: 'The smart system records route offences while the physical evidence
+      outruns its network.'
+    dialogue:
+      - id: p51-05-d01
+        speaker: cecil-c17
+        text: 'Seven route violations. Evidence custody remains valid.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.18,
+            y: 0.02,
+            width: 0.62,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.52, y: 0.33 },
+            tailDirection: down,
+            fontScale: 0.88,
+            manualBreaks: [ 'Seven route violations. Evidence custody remains valid.' ]
+          }
+    visualJoke: 'The robot is the fastest data packet in town and is holding paper.'
+    continuity:
+      [
+        'All evidence remains intact.',
+        'Violation lettering and numerals are composited.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool alert glow flickering over warm paper and cream casing.',
+        palette: 'Cream paper, cream enamel, warning red, cycle blue and night grey.',
+        composition: 'Cecil and folders centre the joke within stacked blank panes;
+          reserve upper-centre.',
+        balloonSafeAreas: [ 'upper-centre: x 0.20-0.96, y 0.03-0.22' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil holds paper folders while smart-camera violations multiply.',
+        description: 'Cecil rides on the moving cargo bed with the evidence folders
+          securely clamped. Blank violation panes accumulate around the
+          non-human unit even as it confirms that custody remains valid.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-051/p51-05__r1.png, final: panels/approved/page-051/p51-05__r1.png, width: 1254, height: 1254 }
+  - id: p51-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Cross-cut wide shot from Municipal Hall entrance to the server-cupboard
+      corridor'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: babul-courier,
+          position: foreground-left,
+          emotion: hard braking focus,
+          pose: 'Bringing the cycle van to the entrance',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: alarm,
+          pose: 'Reaching for the waterproof tube while looking down the corridor',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: cargo-centre,
+          emotion: arrival timing,
+          pose: 'Shutters fixed on the distant crew',
+          facing: right
+        }
+    props:
+      [
+        babul-cycle-van,
+        waterproof-document-tube,
+        cecil-stamp-arm,
+        grievance-token-drum
+      ]
+    foreground: 'The cycle van stops at the Hall steps.'
+    middleGround: 'Riju reaches for the evidence packet.'
+    background: 'A generic utility crew is already entering the server-cupboard
+      corridor with a valid order device.'
+    action: "The crew reaches the building's interior before the evidence packet
+      crosses the entrance."
+    dialogue:
+      - id: p51-06-d01
+        speaker: cecil-c17
+        text: 'Utility crew arrival preceded evidence arrival by forty-two seconds.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.53,
+            y: 0.45,
+            width: 0.44,
+            height: 0.18,
+            z: 10,
+            tailTarget: { x: 0.47, y: 0.20 },
+            tailDirection: up,
+            fontScale: 0.87,
+            manualBreaks:
+              [
+                'Utility crew arrival preceded evidence arrival by forty-two
+                  seconds.'
+              ]
+          }
+      - id: p51-06-d02
+        speaker: riju-dhar
+        text: 'Move.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.15,
+            y: 0.68,
+            width: 0.16,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.38, y: 0.31 },
+            tailDirection: up,
+            fontScale: 1.02,
+            manualBreaks: [ 'Move.' ]
+          }
+    continuity:
+      [
+        'Utility crew remains procedural and uncaricatured.',
+        'Evidence has not yet reached the cupboard.'
+      ]
+    prompt:
+      {
+        lighting: 'Hall entrance lamps foreground and harsh utility work light deep
+          corridor.',
+        palette: 'Ochre, cycle blue, municipal cream, warning amber and night grey.',
+        composition: 'Long depth separates arriving evidence from the already advancing
+          crew; reserve upper-centre and lower-middle.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.28-0.88, y 0.03-0.23',
+            'lower-middle: x 0.47-0.69, y 0.73-0.91'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The evidence van reaches Municipal Hall after the utility crew has
+          entered.',
+        description: 'Babul-da brakes the cycle van at the Hall steps while Riju grabs
+          for the waterproof tube. Deep in the corridor, the utility crew is
+          already approaching the server cupboard with its order device.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-051/p51-06__r1.png, final: panels/approved/page-051/p51-06__r1.png, width: 1672, height: 941 }

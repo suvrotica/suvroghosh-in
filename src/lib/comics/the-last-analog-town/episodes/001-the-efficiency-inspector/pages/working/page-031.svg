@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 31</title>
+	<desc id="description">Make the system expose genuine local corruption and force Ila to choose scrutiny over loyalty.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p31-01">
+<clipPath id="clip-p31-01"><rect x="48" y="58" width="1504" height="523.8624660163122" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="523.8624660163122" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-031/p31-01__r1.png" x="48" y="58" width="1504" height="523.8624660163122" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p31-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p31-01-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 627.3973415953308 239.95633833327736 Q 609.2927999999999 183.62221935071165 599.0656 125.89257559571405 Q 609.2927999999999 183.62221935071165 611.6426584046692 242.74738787814113 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-01-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="318.71999999999997" y="241.35186310570924" width="376" height="83.81799456260995" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="336.71999999999997" y="279.6376603870142" font-family="Arial,'Noto Sans',sans-serif" font-size="25.88" fill="#111"><tspan x="336.71999999999997" dy="0">Paid, installed,</tspan><tspan x="336.71999999999997" dy="29.503199999999996">tested, and absent.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p31-01-d02" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1093.5432369906496 457.98512872051833 Q 1111.7792 346.64821877498804 1038.384 239.7802757076603 Q 1111.7792 346.64821877498804 1077.9767630093504 454.2858196242762 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-01-d02" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="1085.76" y="435.18097553174476" width="436.15999999999997" height="104.77249320326244" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1103.76" y="484.117622133376" font-family="Arial,'Noto Sans',sans-serif" font-size="24.64" fill="#111"><tspan x="1103.76" dy="0">The records agree. The site</tspan><tspan x="1103.76" dy="28.089599999999997">doesn&apos;t.</tspan></text>
+<rect x="48" y="58" width="1504" height="523.8624660163122" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p31-02">
+<clipPath id="clip-p31-02"><rect x="48" y="605.8624660163122" width="740" height="451.0650887573965" rx="6"/></clipPath>
+<rect x="48" y="605.8624660163122" width="740" height="451.0650887573965" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-031/p31-02__r1.png" x="48" y="605.8624660163122" width="740" height="451.0650887573965" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p31-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p31-02-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 208.2127110975736 701.7822745988038 Q 213.168 693.8652648328803 219.90200000000002 691.655045897969 Q 213.168 693.8652648328803 204.50728890242638 690.368692936779 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-02-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="92.4" y="628.415720454182" width="325.6" height="67.65976331360947" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="110.4" y="659.6024021109866" font-family="Arial,'Noto Sans',sans-serif" font-size="18.88" fill="#111"><tspan x="110.4" dy="0">No installation marks</tspan><tspan x="110.4" dy="21.523199999999996">detected.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p31-02-d02" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 487.6071854255012 773.4234535950374 Q 494.88599999999997 732.9726080281465 509.612 695.3988861346554 Q 494.88599999999997 732.9726080281465 472.71281457449874 767.5789932304864 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-02-d02" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="255.20000000000002" y="770.5012234127619" width="281.2" height="81.19171597633137" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="273.20000000000005" y="808.5406814009275" font-family="Arial,'Noto Sans',sans-serif" font-size="18.26" fill="#111"><tspan x="273.20000000000005" dy="0">Then the mismatch is</tspan><tspan x="273.20000000000005" dy="20.8164">not harmless paperwork.</tspan></text>
+<rect x="48" y="605.8624660163122" width="740" height="451.0650887573965" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p31-03">
+<clipPath id="clip-p31-03"><rect x="812" y="605.8624660163122" width="740" height="451.0650887573965" rx="6"/></clipPath>
+<rect x="812" y="605.8624660163122" width="740" height="451.0650887573965" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-031/p31-03__r1.png" x="812" y="605.8624660163122" width="740" height="451.0650887573965" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p31-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p31-03-d01" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 1407.1 804.3311050695667 Q 1415.1 809.4281405725252 1415.1 814.4800695666081 Q 1415.1 809.4281405725252 1423.1 804.3311050695667 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-03-d01" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="1293" y="804.3311050695667" width="244.20000000000002" height="90.2130177514793" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1311" y="836.1180139453063" font-family="Arial,'Noto Sans',sans-serif" font-size="18.76" fill="#111"><tspan x="1311" dy="0">The plaque received</tspan><tspan x="1311" dy="21.3864">better maintenance</tspan><tspan x="1311" dy="21.3864">than the drain.</tspan></text>
+<rect x="812" y="605.8624660163122" width="740" height="451.0650887573965" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p31-04">
+<clipPath id="clip-p31-04"><rect x="48" y="1080.9275547737086" width="845.7142857142858" height="515.5029585798818" rx="6"/></clipPath>
+<rect x="48" y="1080.9275547737086" width="845.7142857142858" height="515.5029585798818" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-031/p31-04__r1.png" x="48" y="1080.9275547737086" width="845.7142857142858" height="515.5029585798818" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p31-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p31-04-d01" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 374.07845873955375 1150.9678508533968 Q 381.4651428571429 1159.6448565488565 380.9577142857143 1167.6867027027026 Q 381.4651428571429 1159.6448565488565 390.035826974732 1152.1350693449078 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-04-d01" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="382.0571428571429" y="1091.2376139453063" width="304.45714285714286" height="92.79053254437872" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="400.0571428571429" y="1123.6032802174957" font-family="Arial,'Noto Sans',sans-serif" font-size="19.76" fill="#111"><tspan x="400.0571428571429" dy="0">If it is paperwork, you</tspan><tspan x="400.0571428571429" dy="22.5264">will survive an</tspan><tspan x="400.0571428571429" dy="22.5264">inspection.</tspan></text>
+<rect x="64" y="1468.4305133535904" width="813.7142857142858" height="112" fill="#fff4c7" stroke="#171512" stroke-width="4"/>
+<text x="80" y="1504.4305133535904" font-family="Georgia,serif" font-size="22" fill="#111"><tspan x="80" dy="0">The contractor requests a private</tspan><tspan x="80" dy="26">correction before the record becomes</tspan><tspan x="80" dy="26">public.</tspan></text>
+<rect x="48" y="1080.9275547737086" width="845.7142857142858" height="515.5029585798818" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p31-05">
+<clipPath id="clip-p31-05"><rect x="917.7142857142858" y="1080.9275547737086" width="634.2857142857143" height="515.5029585798818" rx="6"/></clipPath>
+<rect x="917.7142857142858" y="1080.9275547737086" width="634.2857142857143" height="515.5029585798818" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-031/p31-05__r1.png" x="917.7142857142858" y="1080.9275547737086" width="634.2857142857143" height="515.5029585798818" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p31-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p31-05-d01" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 1290.1333338180036 1166.0456634025027 Q 1294.6068571428573 1158.8716021109867 1297.334285714286 1159.5417559571406 Q 1294.6068571428573 1158.8716021109867 1293.752380467711 1150.4603337188792 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-05-d01" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="1291.9428571428573" y="1091.2376139453063" width="247.3714285714286" height="103.10059171597636" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1309.9428571428573" y="1126.6709098032945" font-family="Arial,'Noto Sans',sans-serif" font-size="22.7" fill="#111"><tspan x="1309.9428571428573" dy="0">Freeze the next</tspan><tspan x="1309.9428571428573" dy="25.877999999999997">payment. Inspect</tspan><tspan x="1309.9428571428573" dy="25.877999999999997">every drain.</tspan></text>
+<rect x="917.7142857142858" y="1080.9275547737086" width="634.2857142857143" height="515.5029585798818" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p31-06">
+<clipPath id="clip-p31-06"><rect x="48" y="1620.4305133535904" width="1504" height="687.5694866464098" rx="6"/></clipPath>
+<rect x="48" y="1620.4305133535904" width="1504" height="687.5694866464098" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-031/p31-06__r1.png" x="48" y="1620.4305133535904" width="1504" height="687.5694866464098" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p31-06)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p31-06-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1233.6300741781135 1743.083013274977 Q 1195.2512000000002 1748.7997365104752 1157.2 1746.530757204542 Q 1195.2512000000002 1748.7997365104752 1232.6739258218865 1759.0544183578395 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-06-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="1160.96" y="1634.1819030865186" width="360.96" height="116.88681272988968" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1178.96" y="1688.9405094514634" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="1178.96" dy="0">This is what a public</tspan><tspan x="1178.96" dy="30.0048">audit is for.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p31-06-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 657.5485201983124 2082.946242140273 Q 639.2224 1992.818147321286 628.9952 1901.7839472893013 Q 639.2224 1992.818147321286 641.6514798016876 2084.758452566268 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p31-06-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="649.6" y="2067.350679673757" width="541.4399999999999" height="82.50833839756918" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="667.6" y="2120.4040488725414" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="667.6" dy="0">Then let it inspect all of us.</tspan></text>
+<rect x="48" y="1620.4305133535904" width="1504" height="687.5694866464098" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">31</text>
+</svg>

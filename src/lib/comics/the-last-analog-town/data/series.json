@@ -1,0 +1,345 @@
+{
+	"schemaVersion": "1.0.0",
+	"id": "the-last-analog-town",
+	"title": "The Last Analog Town",
+	"category": "Comic",
+	"contentType": "comic-series",
+	"language": "en",
+	"readingDirection": "ltr",
+	"publication": {
+		"status": "unpublished",
+		"published": false,
+		"requiresFinalArt": true,
+		"requiresRightsReview": true,
+		"requiresCulturalReview": true,
+		"requiresHumanApproval": true
+	},
+	"routes": {
+		"category": "/blog/comic",
+		"series": "/blog/comic/the-last-analog-town",
+		"episodePattern": "/blog/comic/the-last-analog-town/{episode-slug}",
+		"firstAlbum": "/blog/comic/the-last-analog-town/the-efficiency-inspector",
+		"pluralLegacyRoute": "/blog/comics",
+		"pluralLegacyPolicy": "redirect-only"
+	},
+	"searchLabels": {
+		"series": "Comic series",
+		"episode": "Comic episode",
+		"character": "Comic character",
+		"productionNote": "Comic production note",
+		"panelIndexing": "disabled"
+	},
+	"description": "An original satirical adventure-comic series about a fictional eastern Indian town negotiating the gains and harms of algorithmic government.",
+	"setting": {
+		"canonicalName": "Golmohar Junction",
+		"officialName": "Golmohar Junction Municipal Transitional Development Area",
+		"residentNames": ["Golmohar", "the Junction"],
+		"databaseCode": "GJ-MTDA-7",
+		"region": "A wholly fictional town in the wider orbit of Calcutta",
+		"exactLocation": "deliberately disputed",
+		"notRealPlaceStatement": "Golmohar Junction is wholly fictional. Golmohar is not the real Golmohar Railway Quarters in Howrah, not a renamed municipality, and not a disguised allegation about any real locality.",
+		"distanceClaims": [
+			"forty kilometres from Calcutta",
+			"seventy minutes from Calcutta",
+			"three hours from Calcutta during rain",
+			"just outside Calcutta according to property developers",
+			"nowhere near Calcutta according to many Calcutta residents",
+			"part of Greater Calcutta in grant applications",
+			"proudly independent in local speeches"
+		],
+		"databaseMisclassifications": [
+			"railway junction",
+			"botanical zone",
+			"administrative ward",
+			"industrial estate",
+			"weather station",
+			"a person named Gol Mohar",
+			"a town already demolished"
+		],
+		"maps": [
+			{
+				"id": "railway-map",
+				"models": "the one operational suburban branch and promised junction infrastructure",
+				"blindSpot": "settlements beyond railway land"
+			},
+			{
+				"id": "municipal-map",
+				"models": "tax collection and declared roads",
+				"blindSpot": "roads that remain ponds and untaxed occupied land"
+			},
+			{
+				"id": "postal-map",
+				"models": "delivery beats and landmark addresses",
+				"blindSpot": "formal parcel geocodes"
+			},
+			{
+				"id": "electoral-map",
+				"models": "booths, clubs and revised ward boundaries",
+				"blindSpot": "seasonal residents and shared households"
+			},
+			{
+				"id": "police-map",
+				"models": "jurisdiction and station responsibility",
+				"blindSpot": "corners where responsibility changes"
+			},
+			{
+				"id": "drainage-map",
+				"models": "historic canals, ponds and culverts",
+				"blindSpot": "new construction and blocked water paths"
+			}
+		],
+		"connectionsToCalcutta": [
+			"suburban railway branch",
+			"bus route with no reliable endpoint",
+			"half-completed bypass",
+			"old canal",
+			"family migration",
+			"medical referrals",
+			"newspapers",
+			"football loyalties",
+			"mobile-phone towers",
+			"shared political promises",
+			"administrative neglect"
+		],
+		"historyLayers": [
+			{
+				"id": "agrarian-water",
+				"period": "before the railway",
+				"facts": [
+					"farming and fishing households used ponds, canals, raised paths and grove names",
+					"several local land names remain more reliable than street numbers"
+				],
+				"visibleRemains": ["pond-edge lanes", "old embankments", "landmark addresses"]
+			},
+			{
+				"id": "rail-halt-jute",
+				"period": "railway and warehouse expansion",
+				"facts": [
+					"a colonial-era halt and jute godowns drew traders, porters, clerks and repair workers",
+					"the promised junction never acquired a second operational line"
+				],
+				"visibleRemains": [
+					"Golmohar Halt",
+					"warehouse brick",
+					"railway quarters fragments",
+					"unfinished platform"
+				]
+			},
+			{
+				"id": "partition-settlement",
+				"period": "post-Partition settlement",
+				"facts": [
+					"refugee families built homes and shops through cooperative labour",
+					"occupation, allotment, tax and title records evolved separately"
+				],
+				"visibleRemains": [
+					"cooperative lanes",
+					"shared courtyards",
+					"family histories absent from land records"
+				]
+			},
+			{
+				"id": "municipal-expansion",
+				"period": "mid-century municipal growth",
+				"facts": [
+					"the municipal office expanded around an older krishnachura tree",
+					"new wings joined old foundations without aligning floors, wiring or plans"
+				],
+				"visibleRemains": [
+					"foundation block",
+					"1960s concrete wing",
+					"roof tank",
+					"misaligned annex"
+				]
+			},
+			{
+				"id": "scheme-industrial",
+				"period": "late industrial and development schemes",
+				"facts": [
+					"an industrial estate, housing project and technical institute were announced under changing names",
+					"repair businesses occupied useful sheds after formal projects stalled"
+				],
+				"visibleRemains": [
+					"orphaned plaque",
+					"boundary wall",
+					"unfinished institute gate",
+					"repair depots"
+				]
+			},
+			{
+				"id": "communications",
+				"period": "manual-to-digital communications",
+				"facts": [
+					"the Old Exchange connected telephone, railway and civic circuits",
+					"modern services still depend on its power, copper and local expertise"
+				],
+				"visibleRemains": [
+					"patch panels",
+					"cable ducts",
+					"relay cabinets",
+					"handwritten circuit books"
+				]
+			},
+			{
+				"id": "conversion",
+				"period": "commercial conversion",
+				"facts": [
+					"a cinema became a warehouse, marriage hall, coaching centre and data hub",
+					"ponds became roads and some roads become ponds again during monsoon"
+				],
+				"visibleRemains": [
+					"cinema facade behind server vents",
+					"flood-height marks",
+					"layered shopfronts"
+				]
+			},
+			{
+				"id": "smart-development",
+				"period": "current modernization",
+				"facts": [
+					"surveillance, office pods and promotional gates arrived before residents or drainage",
+					"perfect demonstration roads end abruptly in mud"
+				],
+				"visibleRemains": [
+					"New Development",
+					"empty towers",
+					"model flat",
+					"invasive weeds",
+					"billboards"
+				]
+			}
+		]
+	},
+	"theGrid": {
+		"definition": "A global administrative order assembled from public programmes, corporate platforms, digital identity, predictive governance, insurance, standards, smart-city initiatives and consulting frameworks.",
+		"notForeignEmpire": true,
+		"localParticipation": [
+			"elected leaders invite investment and prestige",
+			"officials seek useful records and faster services",
+			"contractors profit from modernization",
+			"residents seek access unavailable through informal networks",
+			"local technology enthusiasts help build the systems"
+		],
+		"genuineBenefits": [
+			"safer infrastructure",
+			"medicine traceability",
+			"more accurate train information",
+			"faster clinic results",
+			"reduced duplicate welfare records",
+			"inspectable public spending",
+			"access for some people excluded by informal networks"
+		],
+		"failureMechanism": "Separate systems become dangerous when integration makes their incompatible categories appear mutually confirming and blocks situated correction."
+	},
+	"themes": [
+		"human judgement and algorithmic government",
+		"legibility and lived reality",
+		"uncertainty and false certainty",
+		"maintenance and prestige",
+		"informal adaptation and institutional abuse",
+		"appeal, correction and human recourse",
+		"who benefits from classification",
+		"the politics of measurement"
+	],
+	"albumOne": {
+		"id": "001",
+		"slug": "the-efficiency-inspector",
+		"title": "The Efficiency Inspector",
+		"storyPageCount": 62,
+		"coverAndEndMatterOutsideStoryCount": true,
+		"premise": "Golmohar welcomes a global optimization mission whose genuine improvements bind incompatible public systems together and magnify the cost of clean categories.",
+		"rijuPersonalStake": "Riju Dhar hopes his record-reconciliation prototype will earn him a permanent municipal post; his work contributes to the integration he must later help repair.",
+		"openingContradiction": "A GOING FORWARD TOGETHER smart-town billboard blocks one traffic lane.",
+		"crisis": "Electricity is cut to the municipal server room because the municipal building is absent from the utility database.",
+		"resolutionType": "enforceable hybrid governance trial",
+		"hybridTrialRules": [
+			"algorithms expose uncertainty and known failure conditions",
+			"unknown is distinct from false",
+			"consequential decisions provide appeal and human recourse",
+			"local-language explanations are available",
+			"offline fallback is mandatory",
+			"identity and address errors are correctable",
+			"manual overrides record reasons instead of attracting automatic punishment",
+			"no single score controls healthcare, education, welfare, policing or employment",
+			"system designers observe actual work before digitising it",
+			"informal practices are evaluated individually rather than erased collectively"
+		],
+		"lockedEnding": {
+			"report": "Golmohar Junction remains noncompliant with several fundamental assumptions.",
+			"visual": "Ila frames the report; Cecil measures the frame at 1.7 degrees off-level.",
+			"finalLine": "That is how we know the wall is still standing.",
+			"rhythmPolicy": "The final line may be shortened for page rhythm, but the report, off-level frame and meaning remain."
+		}
+	},
+	"localGlobalStoryGate": {
+		"requiredFields": [
+			"localSurfaceProblem",
+			"universalHumanProblem",
+			"institutionBeingSatirized",
+			"institutionGetsRight",
+			"townGetsRight",
+			"institutionGetsWrong",
+			"townGetsWrong",
+			"currentBeneficiaries",
+			"currentCostBearers",
+			"visualComicMechanism",
+			"finalUnresolvedContradiction"
+		],
+		"passCriteria": [
+			"specifically rooted in Golmohar",
+			"underlying conflict is internationally recognizable",
+			"neither side is entirely wise or entirely foolish",
+			"satire has a human cost",
+			"at least one joke works visually without cultural explanation",
+			"at least one local detail cannot move unchanged to a generic Western town",
+			"at least one structural issue remains recognizable outside India"
+		],
+		"fullScriptAllowedOnlyAfterPass": true
+	},
+	"languagePolicy": {
+		"mainLanguage": "clear international English",
+		"bengaliUse": "selective, contextual and not automatically italicised",
+		"officialGridLanguage": "standardized international administrative English",
+		"generatedArtworkMayContainText": false,
+		"finalSignageComposition": "deterministic HTML or SVG using real Unicode text",
+		"translationDefaultState": "needs-human-review"
+	},
+	"culturalPolicy": {
+		"satireTargets": [
+			"institutional vanity",
+			"administrative arrogance",
+			"corporate evangelism",
+			"political opportunism",
+			"rigid logic",
+			"technological overconfidence",
+			"local hypocrisy",
+			"civic fatalism"
+		],
+		"neverPunchlines": [
+			"poverty",
+			"disability",
+			"hunger",
+			"accents",
+			"skin tone",
+			"informal labour",
+			"ordinary victims"
+		],
+		"religiousCastePartyRegionalSymbolsAsDecoration": false
+	},
+	"production": {
+		"canonicalSources": ["JSON", "YAML", "Markdown"],
+		"deterministicDerivatives": [
+			"compiled web data",
+			"prompts",
+			"transcript",
+			"page SVG",
+			"contact sheet",
+			"PDF",
+			"EPUB"
+		],
+		"rawArtInStatic": false,
+		"rejectedArtInStatic": false,
+		"printMastersInStatic": false,
+		"publicAssets": "optimized content-versioned derivatives with provenance"
+	}
+}

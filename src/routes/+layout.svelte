@@ -17,6 +17,11 @@
 		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
 	);
 	let gameShell = $derived(page.url.pathname.startsWith('/blog/games/'));
+	let comicShell = $derived(
+		page.url.pathname.startsWith('/blog/comic/') ||
+			page.url.pathname === '/dev/comic-studio' ||
+			page.url.pathname.startsWith('/dev/comic-studio/')
+	);
 
 	onMount(() => {
 		injectAnalytics({ mode: dev ? 'development' : 'production' });
@@ -49,7 +54,11 @@
 		<Header />
 
 		<main id="main-content" tabindex="-1" class="flex-1 scroll-smooth focus:outline-none">
-			<div class="container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+			<div
+				class="container mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12"
+				class:max-w-4xl={!comicShell}
+				class:max-w-7xl={comicShell}
+			>
 				{@render children()}
 			</div>
 		</main>

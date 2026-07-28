@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 52</title>
+	<desc id="description">Trigger the peak failure through the same address logic that harmed residents.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p52-01">
+<clipPath id="clip-p52-01"><rect x="48" y="58" width="1504" height="891.7237597911228" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="891.7237597911228" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-052/p52-01__r1.png" x="48" y="58" width="1504" height="891.7237597911228" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p52-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p52-01-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1052.1592859768411 559.6406418189483 Q 1050.2656 568.4226801044388 1044.8512 572.2570922715405 Q 1050.2656 568.4226801044388 1059.200714023159 569.3575493037672 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-01-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="634.5600000000001" y="539.5308302872063" width="421.12000000000006" height="124.8413263707572" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="652.5600000000001" y="598.1098934725849" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="652.5600000000001" dy="0">Disconnection order is</tspan><tspan x="652.5600000000001" dy="31.281599999999994">valid.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p52-01-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 191.32761460634296 700.7602158625082 Q 200.2048 513.4033241253264 217.0496 326.6763688250653 Q 200.2048 513.4033241253264 175.392385393657 699.3219982367086 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-01-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="78.08" y="700.0411070496084" width="526.4" height="124.8413263707572" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="96.08" y="758.776970234987" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="96.08" dy="0">For a building you&apos;re standing</tspan><tspan x="96.08" dy="30.0048">in.</tspan></text>
+<rect x="48" y="58" width="1504" height="891.7237597911228" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p52-02">
+<clipPath id="clip-p52-02"><rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6"/></clipPath>
+<rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-052/p52-02__r1.png" x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p52-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p52-02-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 257.64050575530445 1070.4304504383272 Q 265.9234909090909 1069.6141330548303 266.77061818181824 1071.748750704961 Q 265.9234909090909 1069.6141330548303 272.5122215174229 1064.5285803710726 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-02-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="265.0763636363637" y="982.0948093994779" width="172.0727272727273" height="106.73088250652745" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="283.0763636363637" y="1014.5706506527416" font-family="Arial,'Noto Sans',sans-serif" font-size="16.32" fill="#111"><tspan x="283.0763636363637" dy="0">Seven records.</tspan><tspan x="283.0763636363637" dy="18.604799999999997">Seven sources.</tspan><tspan x="283.0763636363637" dy="18.604799999999997">One occupied</tspan><tspan x="283.0763636363637" dy="18.604799999999997">building.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p52-02-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 504.8281424414463 1279.0972753762503 Q 496.50094545454544 1196.979652845953 494.22429090909094 1114.6922351958226 Q 496.50094545454544 1196.979652845953 492.83294846764477 1279.4368656159172 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-02-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="true" x="364.6138181818182" y="1279.2670704960838" width="206.48727272727274" height="62.7828720626632" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="382.6138181818182" y="1308.2869065274153" font-family="Arial,'Noto Sans',sans-serif" font-size="16.939999999999998" fill="#111"><tspan x="382.6138181818182" dy="0">One property key:</tspan><tspan x="382.6138181818182" dy="19.311599999999995">absent.</tspan></text>
+<rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p52-03">
+<clipPath id="clip-p52-03"><rect x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" rx="6"/></clipPath>
+<rect x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-052/p52-03__r1.png" x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p52-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p52-03-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 766.4335798520644 1087.6839125803044 Q 753.2226909090909 1101.6333978067887 737.061090909091 1108.2046717493474 Q 753.2226909090909 1101.6333978067887 772.4144201479357 1102.5240456442389 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-03-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="738.4509090909091" y="986.2803342036555" width="154.86545454545458" height="108.82364490861622" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="756.4509090909091" y="1019.1625566579636" font-family="Arial,'Noto Sans',sans-serif" font-size="16.82" fill="#111"><tspan x="756.4509090909091" dy="0">It needs the</tspan><tspan x="756.4509090909091" dy="19.174799999999998">number the</tspan><tspan x="756.4509090909091" dy="19.174799999999998">appeal would</tspan><tspan x="756.4509090909091" dy="19.174799999999998">generate.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p52-03-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 848.9892501873461 1368.1247629521351 Q 948.0354909090911 1269.5566529503917 897.8432 1135.870990704961 Q 948.0354909090911 1269.5566529503917 838.370749812654 1356.1561602854633 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-03-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="true" x="843.6800000000001" y="1291.8236449086164" width="144.93818181818185" height="87.89602088772848" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="861.6800000000001" y="1323.9430553524808" font-family="Arial,'Noto Sans',sans-serif" font-size="16.66" fill="#111"><tspan x="861.6800000000001" dy="0">Only after</tspan><tspan x="861.6800000000001" dy="18.9924">it accepts</tspan><tspan x="861.6800000000001" dy="18.9924">the appeal.</tspan></text>
+<rect x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p52-04">
+<clipPath id="clip-p52-04"><rect x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6"/></clipPath>
+<rect x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-052/p52-04__r1.png" x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p52-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p52-04-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1215.9396545355637 1035.2035592878365 Q 1214.7904 1044.710260469974 1210.0782545454547 1047.0541543603135 Q 1214.7904 1044.710260469974 1223.0654363735277 1049.5291738714327 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-04-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="1028.8989090909092" y="978.7463895561359" width="190.60363636363638" height="79.52497127937339" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1046.8989090909092" y="1007.0068751958227" font-family="Arial,'Noto Sans',sans-serif" font-size="16.2" fill="#111"><tspan x="1046.8989090909092" dy="0">Emergency, yes.</tspan><tspan x="1046.8989090909092" dy="18.467999999999996">Property record,</tspan><tspan x="1046.8989090909092" dy="18.467999999999996">no.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p52-04-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1399.0654660577163 1299.1137660909965 Q 1385.2218181818184 1256.8326575456922 1377.2800000000002 1213.4706205744126 Q 1385.2218181818184 1256.8326575456922 1387.261806669557 1301.2756229429467 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-04-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="true" x="1355.0429090909092" y="1300.1946945169716" width="190.60363636363638" height="64.87563446475197" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1373.0429090909092" y="1330.1909117493476" font-family="Arial,'Noto Sans',sans-serif" font-size="17.439999999999998" fill="#111"><tspan x="1373.0429090909092" dy="0">Authority match</tspan><tspan x="1373.0429090909092" dy="19.881599999999995">not found.</tspan></text>
+<rect x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p52-05">
+<clipPath id="clip-p52-05"><rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6"/></clipPath>
+<rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-052/p52-05__r1.png" x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p52-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p52-05-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1216.5689417498154 1561.2899276725223 Q 1180.512 1595.9585778067888 1139.7536 1624.047876240209 Q 1180.512 1595.9585778067888 1225.6710582501848 1574.4486310742143 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p52-05-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="1145.92" y="1443.0279530026112" width="376" height="124.8413263707572" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1163.92" y="1486.9602161879898" font-family="Arial,'Noto Sans',sans-serif" font-size="26.040000000000003" fill="#111"><tspan x="1163.92" dy="0">It&apos;s done.</tspan><tspan x="1163.92" dy="29.6856">Don&apos;t lose why it</tspan><tspan x="1163.92" dy="29.6856">failed.</tspan></text>
+<text x="333.76" y="1978.0622088772848" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">CLUNK</text>
+<rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">52</text>
+</svg>

@@ -1,0 +1,303 @@
+format: suvroghosh-comic-dialogue-revisions
+formatVersion: 1
+revisions:
+  - dialogueId: p17-02-d02
+    before: 'Observation unavailable.'
+    after: "Then we can't see anything."
+    reason: 'Riju reacts to Cecil’s status report instead of issuing a second status report.'
+    status: accepted
+  - dialogueId: p17-03-d02
+    before: 'According to this, it arrived.'
+    after: 'According to this, it got here.'
+    reason: 'Riju reads the absurd completion record in ordinary speech.'
+    status: accepted
+  - dialogueId: p17-06-d01
+    before: 'Tell the pump contractor: not now.'
+    after: 'Tell the pump contractor—not now.'
+    reason: 'Ila’s pause carries the refusal without sounding like a transcribed field label.'
+    status: accepted
+  - dialogueId: p18-01-d01
+    before: 'This is why the clinic still rings during a blackout.'
+    after: "That's why the clinic phone still works in a blackout."
+    reason: 'Ananya points to the physical exchange and names the concrete service it preserves.'
+    status: accepted
+  - dialogueId: p18-02-d02
+    before: 'The network diagram omits it.'
+    after: "It isn't on the network diagram."
+    reason: 'Riju answers Ananya’s observation in natural spoken syntax.'
+    status: accepted
+  - dialogueId: p18-04-d02
+    before: 'Then repair it. Do not erase it.'
+    after: "Then repair it. Don't erase it."
+    reason: 'Ananya remains exact without adopting Cecil’s no-contraction register.'
+    status: accepted
+  - dialogueId: p19-02-d01
+    before: 'This road goes through the pond.'
+    after: 'The road crosses the pond.'
+    reason: 'Riju’s discovery is shorter and fits the quick map-comparison beat.'
+    status: accepted
+  - dialogueId: p19-02-d02
+    before: 'Only if the pond reads the land map.'
+    after: 'Only if the pond agrees.'
+    reason: 'Ila keeps the joke and answers Riju without over-explaining the map.'
+    status: accepted
+  - dialogueId: p19-03-d01
+    before: 'Utility premises: absent. Meter demand: active.'
+    after: 'No utility premises. Meter demand active.'
+    reason: 'Cecil remains procedural while the shorter report fits the compact balloon.'
+    status: accepted
+  - dialogueId: p19-03-d02
+    before: 'That can switch us off.'
+    after: 'They can switch us off.'
+    reason: 'Riju identifies the practical outside authority implied by the record.'
+    status: accepted
+  - dialogueId: p19-04-d01
+    before: 'Every map answered a different political question.'
+    after: 'Each map answers a different question.'
+    reason: 'Ila states the principle in the present scene and lets the maps carry the politics.'
+    status: accepted
+  - dialogueId: p19-04-d02
+    before: 'Making them agree does not answer any of them.'
+    after: "Forcing one answer won't fix that."
+    reason: 'The second balloon responds to the temptation visible in the overlay.'
+    status: accepted
+  - dialogueId: p19-05-d01
+    before: 'Crosswalk will not choose a winner. Each claim keeps its source.'
+    after: "The Crosswalk won't pick a winner. It keeps every source."
+    reason: 'Riju explains his design to Ila instead of reciting a specification.'
+    status: accepted
+  - dialogueId: p20-01-d02
+    before: 'Use every source.'
+    after: 'Use all of them.'
+    reason: 'Vale answers the source set already visible on the table.'
+    status: accepted
+  - dialogueId: p20-03-d01
+    before: 'One composite. Seven typed claims. Every source attached.'
+    after: 'One composite. Seven kinds of claim. Every source stays attached.'
+    reason: 'Riju translates the technical type system as he builds it.'
+    status: accepted
+  - dialogueId: p20-04-d02
+    before: 'And quietly discard the other six.'
+    after: 'And quietly throw away the other six.'
+    reason: 'Riju names the practical loss rather than another data operation.'
+    status: accepted
+  - dialogueId: p20-05-d02
+    before: 'Lead the integration, Mr Dhar. Deliver ninety-eight per cent resolved.'
+    after: 'Lead the integration. Get me ninety-eight per cent resolved.'
+    reason: 'Vale singles Riju out through the assignment and does not repeat his title mid-exchange.'
+    status: accepted
+  - dialogueId: p21-01-d01
+    before: 'Live migration requires ninety-eight per cent resolution.'
+    after: 'For live migration, we need ninety-eight per cent resolved.'
+    reason: 'Vale explains the threshold to the team rather than reading its heading.'
+    status: accepted
+  - dialogueId: p21-01-d02
+    before: 'The standard keeps sloppy matches out.'
+    after: 'It keeps weak matches out.'
+    reason: 'The second balloon continues the same thought without restating the standard.'
+    status: accepted
+  - dialogueId: p21-02-d01
+    before: 'Deliver it honestly, and the permanent systems appointment is yours.'
+    after: 'Deliver it honestly and the systems post is yours.'
+    reason: 'Vale makes the job stake direct and speakable.'
+    status: accepted
+  - dialogueId: p21-02-d02
+    before: 'Understood.'
+    after: 'I understand.'
+    reason: 'Riju sounds like an anxious person accepting a condition, not a subordinate interface.'
+    status: accepted
+  - dialogueId: p21-04-d01
+    before: 'A metric can reward the lie that uncertainty has vanished.'
+    after: 'That number rewards you for pretending the uncertainty is gone.'
+    reason: 'Ila addresses the temptation Riju is actually facing.'
+    status: accepted
+  - dialogueId: p21-04-d02
+    before: 'It has not. I can clear the exceptions after launch.'
+    after: "I'm not pretending. I'll clear the exceptions after launch."
+    reason: 'Riju reacts defensively to Ila before making his promise.'
+    status: accepted
+  - dialogueId: p21-05-d01
+    before: 'Can you meet it by morning without erasing doubt?'
+    after: 'Can you reach it by morning without hiding the doubt?'
+    reason: 'Vale asks Riju a direct moral and technical question in ordinary language.'
+    status: accepted
+  - dialogueId: p21-05-d02
+    before: 'Give me the drive. I will meet it.'
+    after: "Give me the drive. I'll get there."
+    reason: 'Riju’s confidence sounds eager and personal rather than contractual.'
+    status: accepted
+  - dialogueId: p22-01-d01
+    before: 'More hands, not fewer sources.'
+    after: 'More hands. Keep every source.'
+    reason: 'Vale gives two clear working instructions to the overnight team.'
+    status: accepted
+  - dialogueId: p22-02-d01
+    before: 'Same initials. Different allergy.'
+    after: 'Same initials. Allergies differ.'
+    reason: 'Ananya’s short clinical distinction fits the compact balloon without losing its warning.'
+    status: accepted
+  - dialogueId: p22-02-d02
+    before: 'Conflict tagged, not merged.'
+    after: "Tag it. Don't merge."
+    reason: 'Riju answers Ananya with an immediate action instead of a completed-status phrase.'
+    status: accepted
+  - dialogueId: p22-03-d01
+    before: 'The lane has no number. The blue shutter has had three owners.'
+    after: "No lane number. That blue shutter's had three owners."
+    reason: 'Babul reports the route while walking it, with his usual practical economy.'
+    status: accepted
+  - dialogueId: p22-03-d02
+    before: 'Then I record the witnesses, not a guess.'
+    after: 'Then we record the witnesses, not a guess.'
+    reason: 'Riju includes Babul and the residents whose evidence makes the route usable.'
+    status: accepted
+  - dialogueId: p23-01-d01
+    before: 'These are not duplicates. They are unanswered questions.'
+    after: "These aren't duplicates. They're questions we can't answer."
+    reason: 'Riju recognises the unresolved people aloud instead of defining a data class.'
+    status: accepted
+  - dialogueId: p23-03-d01
+    before: 'If I leave them unknown, the gateway rejects the whole integration.'
+    after: 'If they stay unknown, the gateway rejects everything.'
+    reason: 'Riju states the pressure he feels in one immediate consequence.'
+    status: accepted
+  - dialogueId: p23-04-d01
+    before: 'Temporary. I clear the ledger after launch.'
+    after: "Just till launch. I'll clear the ledger after."
+    reason: 'Riju’s self-justification sounds hurried and knowingly incomplete.'
+    status: accepted
+  - dialogueId: p23-05-d02
+    before: 'Record my approval.'
+    after: 'Then record that I approved it.'
+    reason: 'Riju directly accepts Cecil’s warning and attaches his responsibility to it.'
+    status: accepted
+  - dialogueId: p24-01-d02
+    before: 'The translated help text is incomplete.'
+    after: "The Bengali help text isn't finished."
+    reason: 'Riju names the affected language and admits the unfinished work plainly.'
+    status: accepted
+  - dialogueId: p24-03-d01
+    before: 'Does the second button explain the first explanation?'
+    after: 'Does the second button explain how to find the first?'
+    reason: 'Ila’s joke now follows the visible button sequence instead of repeating “explain”.'
+    status: accepted
+  - dialogueId: p24-04-d01
+    before: 'One desk can explain every choice until phase two.'
+    after: 'One staffed desk can explain each choice till phase two.'
+    reason: 'Riju names the human presence that makes his temporary workaround possible.'
+    status: accepted
+  - dialogueId: p25-02-d01
+    before: 'Audited deployment. The limitations remain part of the result.'
+    after: 'Deploy it under audit. Keep every limitation in the result.'
+    reason: 'Vale authorises an action and states its safeguard rather than announcing two labels.'
+    status: accepted
+  - dialogueId: p25-03-d02
+    before: 'We heard it.'
+    after: 'We heard you.'
+    reason: 'Ila answers Cecil as a participant in the room, while retaining her impatience.'
+    status: accepted
+  - dialogueId: p26-03-d01
+    before: 'A public system should show where its result came from, and whether it helped.'
+    after: 'A public system should show where its answer came from—and whether it helped.'
+    reason: 'Vale’s launch promise remains formal but uses a word residents naturally apply to a service.'
+    status: accepted
+  - dialogueId: p26-04-d01
+    before: 'The town will judge it at the clinic, the counter, and the flooded road.'
+    after: "We'll judge it at the clinic, the counter and the flooded road."
+    reason: 'Ila includes herself and the assembled town in the promised review.'
+    status: accepted
+  - dialogueId: p26-06-d01
+    before: 'Warehouse to rail. The crate is at the Halt freight shed.'
+    after: "Warehouse to rail. The crate's at the Halt freight shed."
+    reason: 'Riju keeps the trace precise while speaking naturally to Babul.'
+    status: accepted
+  - dialogueId: p26-06-d02
+    before: 'Then let us not make the medicine wait.'
+    after: "Then let's not keep the medicine waiting."
+    reason: 'Babul turns the new information into the next practical action.'
+    status: accepted
+  - dialogueId: p27-01-d01
+    before: 'Every system knew a different journey. Together, they locate the crate.'
+    after: 'Five systems, five journeys. Together they find the crate.'
+    reason: 'Riju speaks with excitement and makes the successful reconciliation concrete.'
+    status: accepted
+  - dialogueId: p27-05-d01
+    before: 'The connection saved hours. Keep that fact beside every failure.'
+    after: 'That saved us hours. Keep it beside every failure.'
+    reason: 'Ananya responds to the delivered medicine before setting the editorial standard.'
+    status: accepted
+  - dialogueId: p28-01-d01
+    before: 'Not twelve fourteen. Between twelve ten and twelve twenty.'
+    after: 'Not twelve fourteen. Give them a range—twelve ten to twelve twenty.'
+    reason: 'Riju corrects the false exact time and tells the operator what to publish.'
+    status: accepted
+  - dialogueId: p28-02-d01
+    before: 'Uncertainty has given them ten usable minutes.'
+    after: "Now they know they've got ten minutes."
+    reason: 'Vale notices what commuters can actually do rather than delivering an aphorism.'
+    status: accepted
+  - dialogueId: p28-05-d01
+    before: 'These may belong together. The counter must ask you.'
+    after: 'These records may belong together. The counter needs to ask you.'
+    reason: 'Riju speaks directly to the commuter and leaves the decision open.'
+    status: accepted
+  - dialogueId: p29-01-d01
+    before: 'These look like one person. I need you to tell me whether they are.'
+    after: 'These may both be you. Only you can tell me.'
+    reason: 'Riju addresses the claimant’s actual authority in a shorter, less clinical exchange.'
+    status: accepted
+  - dialogueId: p30-01-d01
+    before: 'Laboratory source confirmed. Collected this morning.'
+    after: 'Lab source confirmed. Collected this morning.'
+    reason: 'Riju keeps his technical precision but uses the word spoken in the clinic.'
+    status: accepted
+  - dialogueId: p30-01-d02
+    before: 'Then it changes today.'
+    after: 'Then it changes what we do today.'
+    reason: 'Ananya names the immediate care consequence.'
+    status: accepted
+  - dialogueId: p30-02-d01
+    before: 'We stop this one. We begin the other now.'
+    after: 'Stop this one. Start the other now.'
+    reason: 'Ananya gives the treatment instruction with clinical urgency.'
+    status: accepted
+  - dialogueId: p30-03-d01
+    before: 'The result arrived early enough to change the plan. Here is what changes.'
+    after: "This came in time to change the plan. Here's what changes."
+    reason: 'Ananya explains the result to the patient without sounding like a report.'
+    status: accepted
+  - dialogueId: p30-04-d01
+    before: 'The paper has arrived. It travelled carefully.'
+    after: 'The paper made it. Carefully.'
+    reason: 'Babul’s delivery report lands as an understated joke.'
+    status: accepted
+  - dialogueId: p30-04-d02
+    before: 'Good. Now it confirms, instead of delaying.'
+    after: 'Good. Now it confirms instead of delaying us.'
+    reason: 'Ananya answers Babul and names the human cost the old route imposed.'
+    status: accepted
+  - dialogueId: p30-05-d01
+    before: 'Whatever we find next, do not lose this route.'
+    after: "Whatever comes next, don't lose this route."
+    reason: 'Ananya protects the demonstrated benefit in ordinary speech.'
+    status: accepted
+  - dialogueId: p30-05-d02
+    before: 'Preserved. The procurement trail has opened another match.'
+    after: "Saved. And the procurement trail's opened another match."
+    reason: 'Riju answers Ananya before reporting the next lead.'
+    status: accepted
+  - dialogueId: p32-01-d02
+    before: 'That was the idea.'
+    after: 'That was the plan.'
+    reason: 'Riju’s modest answer refers to the work he deliberately designed.'
+    status: accepted
+  - dialogueId: p32-03-d01
+    before: 'Validate the anomalies overnight. Your appointment follows in the morning.'
+    after: 'Check the anomalies tonight. Your appointment follows tomorrow morning.'
+    reason: 'Vale makes the final condition direct and personal without losing the job stake.'
+    status: accepted
+  - dialogueId: p32-03-d02
+    before: 'Understood.'
+    after: 'I understand.'
+    reason: 'Riju’s answer remains formal enough for the moment but recognisably human.'
+    status: accepted

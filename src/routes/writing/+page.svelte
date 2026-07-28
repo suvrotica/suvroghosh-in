@@ -124,8 +124,9 @@
 				Major shelves
 			</h2>
 			<p class="mt-2 mb-0 text-left text-sm text-neutral-600 dark:text-neutral-400">
-				Ten of the largest published catalogues, plus the interactive Games and Visualizations
-				shelves. The complete archive currently contains {data.categoryCount} categories.
+				The dedicated Comic shelf, the largest published catalogues, and the interactive Games and
+				Visualizations shelves. The complete archive currently contains {data.categoryCount}
+				categories.
 			</p>
 		</div>
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -139,7 +140,14 @@
 						{cat.label}
 					</h3>
 					<Badge variant="secondary" class="mb-3"
-						>{cat.count} {cat.count === 1 ? 'post' : 'posts'}</Badge
+						>{cat.count}
+						{cat.slug === 'comic'
+							? cat.count === 1
+								? 'album'
+								: 'albums'
+							: cat.count === 1
+								? 'post'
+								: 'posts'}</Badge
 					>
 					<ul class="space-y-1">
 						{#each cat.posts as post (post.slug)}

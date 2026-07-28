@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 60</title>
+	<desc id="description">Ratify the enforceable hybrid trial and resolve Riju&apos;s employment stake without favour.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p60-01">
+<clipPath id="clip-p60-01"><rect x="48" y="58" width="1504" height="906.0758754863813" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="906.0758754863813" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-060/p60-01__r1.png" x="48" y="58" width="1504" height="906.0758754863813" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p60-01)"/>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-01-recommendation-uncertainty" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-01-recommendation-uncertainty--p60-01--01"><rect x="634.5600000000001" y="275.4582101167315" width="127.84" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="634.5600000000001" y="275.4582101167315" width="127.84" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-01-recommendation-uncertainty--p60-01--01)"><text x="640.5600000000001" y="296.5554241245136" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#111"><tspan x="640.5600000000001" dy="0">1 UNCERTAINTY</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-02-unknown-not-false" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-02-unknown-not-false--p60-01--01"><rect x="634.5600000000001" y="322.5741556420233" width="127.84" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="634.5600000000001" y="322.5741556420233" width="127.84" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-02-unknown-not-false--p60-01--01)"><text x="640.5600000000001" y="341.9113696498054" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#111"><tspan x="640.5600000000001" dy="0">2 UNKNOWN ≠ FALSE</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-03-appeal-and-recourse" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-03-appeal-and-recourse--p60-01--01"><rect x="634.5600000000001" y="369.69010116731516" width="127.84" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="634.5600000000001" y="369.69010116731516" width="127.84" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-03-appeal-and-recourse--p60-01--01)"><text x="640.5600000000001" y="390.34731517509726" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#111"><tspan x="640.5600000000001" dy="0">3 HUMAN APPEAL</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-04-local-language" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-04-local-language--p60-01--01"><rect x="634.5600000000001" y="415.8999708171206" width="127.84" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="634.5600000000001" y="415.8999708171206" width="127.84" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-04-local-language--p60-01--01)"><text x="640.5600000000001" y="435.6771848249027" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#111"><tspan x="640.5600000000001" dy="0">4 LOCAL LANGUAGE</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-05-correctable-records" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-05-correctable-records--p60-01--01"><rect x="634.5600000000001" y="463.0159163424124" width="127.84" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="634.5600000000001" y="463.0159163424124" width="127.84" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-05-correctable-records--p60-01--01)"><text x="640.5600000000001" y="484.1131303501945" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#111"><tspan x="640.5600000000001" dy="0">5 FIX RECORDS</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-06-reasoned-overrides" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-06-reasoned-overrides--p60-01--01"><rect x="634.5600000000001" y="510.13186186770423" width="127.84" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="634.5600000000001" y="510.13186186770423" width="127.84" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-06-reasoned-overrides--p60-01--01)"><text x="640.5600000000001" y="529.0290758754863" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#111"><tspan x="640.5600000000001" dy="0">6 AUDITED OVERRIDES</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-07-no-single-life-score" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-07-no-single-life-score--p60-01--01"><rect x="813.5360000000001" y="275.4582101167315" width="129.344" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="813.5360000000001" y="275.4582101167315" width="129.344" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-07-no-single-life-score--p60-01--01)"><text x="819.5360000000001" y="295.6754241245136" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#111"><tspan x="819.5360000000001" dy="0">7 NO LIFE SCORE</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-08-observe-work" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-08-observe-work--p60-01--01"><rect x="813.5360000000001" y="333.4470661478599" width="129.344" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="813.5360000000001" y="333.4470661478599" width="129.344" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-08-observe-work--p60-01--01)"><text x="819.5360000000001" y="354.104280155642" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#111"><tspan x="819.5360000000001" dy="0">8 OBSERVE WORK</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-09-assess-informal-practice" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-09-assess-informal-practice--p60-01--01"><rect x="813.5360000000001" y="392.3419980544747" width="129.344" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="813.5360000000001" y="392.3419980544747" width="129.344" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-09-assess-informal-practice--p60-01--01)"><text x="819.5360000000001" y="412.9992120622568" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#111"><tspan x="819.5360000000001" dy="0">9 CASE BY CASE</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-10-offline-continuity" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-10-offline-continuity--p60-01--01"><rect x="813.5360000000001" y="451.23692996108946" width="129.344" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="813.5360000000001" y="451.23692996108946" width="129.344" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-10-offline-continuity--p60-01--01)"><text x="819.5360000000001" y="470.13414396887157" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#111"><tspan x="819.5360000000001" dy="0">10 OFFLINE SERVICES</tspan></text></g>
+</g>
+<g class="deterministic-text-overlay" data-sign-id="sign-hybrid-rule-11-publish-failure-conditions" data-kind="rule-strip">
+<clipPath id="overlay-clip-sign-hybrid-rule-11-publish-failure-conditions--p60-01--01"><rect x="813.5360000000001" y="510.13186186770423" width="129.344" height="28.9944280155642" rx="3"/></clipPath>
+<rect x="813.5360000000001" y="510.13186186770423" width="129.344" height="28.9944280155642" rx="3" fill="#f7edcc" stroke="#171512" stroke-width="2"/>
+<g clip-path="url(#overlay-clip-sign-hybrid-rule-11-publish-failure-conditions--p60-01--01)"><text x="819.5360000000001" y="529.0290758754863" font-family="system-ui,sans-serif" font-size="10" font-weight="700" fill="#111"><tspan x="819.5360000000001" dy="0">11 PUBLISH FAILURES</tspan></text></g>
+</g>
+<g class="comic-balloon-tail" data-dialogue-id="p60-01-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1058.9321549793897 176.44143342281006 Q 1080.6464 171.8031299610895 1094.1824 181.5887494163424 Q 1080.6464 171.8031299610895 1061.4518450206103 160.64108019586695 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-01-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="860.1600000000001" y="68.87291050583657" width="571.52" height="99.66834630350193" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="878.1600000000001" y="115.17908365758754" font-family="Arial,'Noto Sans',sans-serif" font-size="25.2" fill="#111"><tspan x="878.1600000000001" dy="0">Eleven conditions. Break one, and it</tspan><tspan x="878.1600000000001" dy="28.727999999999998">gets reviewed.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p60-01-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 314.67744255282844 505.1062687510974 Q 309.3952 452.05239824902725 311.952 399.4093898832685 Q 309.3952 452.05239824902725 298.69855744717154 504.2845444784745 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-01-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="66.048" y="488.38604085603106" width="240.64000000000001" height="81.54682879377431" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="84.048" y="541.1994552529183" font-family="Arial,'Noto Sans',sans-serif" font-size="28" fill="#111"><tspan x="84.048" dy="0">In public.</tspan></text>
+<rect x="48" y="58" width="1504" height="906.0758754863813" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p60-02">
+<clipPath id="clip-p60-02"><rect x="48" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6"/></clipPath>
+<rect x="48" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-060/p60-02__r1.png" x="48" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p60-02)"/>
+<rect class="comic-balloon" data-dialogue-id="p60-02-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="true" x="176.61333333333334" y="995.872840466926" width="220.82666666666665" height="85.76661478599222" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="194.61333333333334" y="1027.026947859922" font-family="Arial,'Noto Sans',sans-serif" font-size="16.52" fill="#111"><tspan x="194.61333333333334" dy="0">Digital: done.</tspan><tspan x="194.61333333333334" dy="18.8328">Paper: done.</tspan><tspan x="194.61333333333334" dy="18.8328">Inventory: pending.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p60-02-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 184.0769752480902 1099.3004743053873 Q 179.91359999999997 1108.8508630350193 173.5072 1110.7611194552528 Q 179.91359999999997 1108.8508630350193 188.56302475190978 1114.65870857399 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-02-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="true" x="57.70666666666666" y="1106.9795914396886" width="257.2266666666667" height="48.731031128404666" rx="24.365515564202333" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="75.70666666666666" y="1138.440107003891" font-family="Arial,'Noto Sans',sans-serif" font-size="16.5" fill="#111"><tspan x="75.70666666666666" dy="0">So much for efficiency.</tspan></text>
+<rect x="48" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p60-03">
+<clipPath id="clip-p60-03"><rect x="557.3333333333333" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6"/></clipPath>
+<rect x="557.3333333333333" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-060/p60-03__r1.png" x="557.3333333333333" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p60-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p60-03-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 879.9259839401919 1024.1051284947812 Q 882.5551999999999 1039.1459961089495 877.7503999999999 1051.2312918287937 Q 882.5551999999999 1039.1459961089495 894.7940160598079 1030.0162722834289 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-03-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="567.04" y="992.7540544747081" width="320.32" height="42.88330739299611" rx="21.441653696498054" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="585.04" y="1021.2305081712062" font-family="Arial,'Noto Sans',sans-serif" font-size="16.36" fill="#111"><tspan x="585.04" dy="0">Funds stay. Failures public.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p60-03-d02" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 681.6948221412896 1283.3933642040004 Q 685.9466666666666 1212.3165883268482 698.0314666666666 1142.5727365758755 Q 685.9466666666666 1212.3165883268482 665.931844525377 1280.6495463018362 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-03-d02" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="true" x="567.04" y="1268.7666147859923" width="106.77333333333333" height="66.27420233463035" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="585.04" y="1299.3753159533073" font-family="Arial,'Noto Sans',sans-serif" font-size="18.060000000000002" fill="#111"><tspan x="585.04" dy="0">Including</tspan><tspan x="585.04" dy="20.5884">ours.</tspan></text>
+<rect x="557.3333333333333" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p60-04">
+<clipPath id="clip-p60-04"><rect x="1066.6666666666665" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6"/></clipPath>
+<rect x="1066.6666666666665" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-060/p60-04__r1.png" x="1066.6666666666665" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p60-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p60-04-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1410.1313683363162 1041.7364389559507 Q 1422.3189333333332 1043.3953420233463 1428.4826666666665 1050.4126105058365 Q 1422.3189333333332 1043.3953420233463 1422.081964997017 1031.0976777755668 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-04-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="1076.3733333333332" y="992.7540544747081" width="339.7333333333333" height="54.57875486381323" rx="27.289377431906615" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1094.3733333333332" y="1027.4566319066148" font-family="Arial,'Noto Sans',sans-serif" font-size="17.24" fill="#111"><tspan x="1094.3733333333332" dy="0">Job&apos;s open. Experience counts.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p60-04-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 1348.1805433707452 1128.6017041571204 Q 1344.52 1135.8283618677042 1343.3066666666664 1135.3995287937742 Q 1344.52 1135.8283618677042 1343.286123295921 1143.8347160763424 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-04-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="1321.4666666666665" y="1136.2182101167314" width="121.33333333333333" height="66.27420233463035" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1339.4666666666665" y="1167.1069112840466" font-family="Arial,'Noto Sans',sans-serif" font-size="16.060000000000002" fill="#111"><tspan x="1339.4666666666665" dy="0">Then I&apos;ll</tspan><tspan x="1339.4666666666665" dy="18.308400000000002">apply.</tspan></text>
+<rect x="1066.6666666666665" y="988.0758754863813" width="485.3333333333333" height="389.84824902723733" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p60-05">
+<clipPath id="clip-p60-05"><rect x="48" y="1401.9241245136186" width="1504" height="906.0758754863813" rx="6"/></clipPath>
+<rect x="48" y="1401.9241245136186" width="1504" height="906.0758754863813" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-060/p60-05__r1.png" x="48" y="1401.9241245136186" width="1504" height="906.0758754863813" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p60-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p60-05-d01" data-speaker-id="ila-dastidar" data-route-safe="true">
+<path d="M 609.1479388448982 1561.8919856740274 Q 598.0128000000001 1608.6000317120622 579.5136 1652.0916737354084 Q 598.0128000000001 1608.6000317120622 623.8760611551019 1568.1435785283072 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-05-d01" data-speaker-id="ila-dastidar" data-auto-layout="true" data-auto-sized="false" x="363.84" y="1420.0456420233463" width="721.92" height="144.972140077821" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="381.84" y="1489.1213120622567" font-family="Arial,'Noto Sans',sans-serif" font-size="24.36" fill="#111"><tspan x="381.84" dy="0">Two paid weeks for the handover. I&apos;ll publish</tspan><tspan x="381.84" dy="27.7704">the reason and review date.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p60-05-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 630.0772549568534 1884.791742834388 Q 645.0880000000001 1817.8129513618676 667.6479999999999 1753.4815642023345 Q 645.0880000000001 1817.8129513618676 614.9787450431467 1879.4969342084132 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p60-05-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="273.6" y="1882.1443385214006" width="436.15999999999997" height="99.66834630350193" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="291.6" y="1928.1761116731516" font-family="Arial,'Noto Sans',sans-serif" font-size="27.16" fill="#111"><tspan x="291.6" dy="0">I&apos;ll take the work. No</tspan><tspan x="291.6" dy="30.9624">promises.</tspan></text>
+<rect x="48" y="1401.9241245136186" width="1504" height="906.0758754863813" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">60</text>
+</svg>

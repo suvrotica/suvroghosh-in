@@ -1,0 +1,639 @@
+page: 36
+title: 'Compliance before urgency'
+purpose: 'Make the propagated identity-confidence weighting reorder clinical
+  care for a different person, forcing Ananya to override the scheduler.'
+location: rook-clinic
+time: midday
+layout: "Six panels contrast a neat compliance queue with visible illness, then
+  follow Ananya's paper triage through treatment and into an anti-corruption
+  alert."
+panelCount: 6
+dialogueGoal: 'Ananya names the category error plainly; Riju recognises his
+  earlier repair inside it; Cecil records the override without malice.'
+pageTurn: "Ananya's treatment override triggers an automated anti-corruption
+  investigation."
+visualMotif: 'Perfectly aligned digital chairs sit opposite a paper triage line
+  that bends towards the sickest patient.'
+continuity:
+  - 'The clinic scheduler consumes the identity-confidence weighting propagated
+    on page 35.'
+  - 'The urgent walk-in is a different person from the seasonal worker and has
+    low address and biometric confidence but clear clinical need.'
+  - "Ananya retains the clinic's paper queue and uses it for manual triage."
+panels:
+  - id: p36-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Clinic-wide eye-level view across two conflicting queues'
+    location: rook-clinic
+    time: midday
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre-left,
+          emotion: instant clinical concern,
+          pose: 'Turning from the digital queue towards an urgent walk-in',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: troubled recognition,
+          pose: "Reading the scheduler's confidence order on his terminal",
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: background-right,
+          emotion: neutral monitoring,
+          pose: 'Projecting ranked appointment markers above the chairs',
+          facing: front
+        }
+    props:
+      [
+        clinic-paper-queue,
+        amber-clinic-glasses,
+        ananya-mechanical-watch,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'An urgent resident braces against the reception counter, visibly
+      breathless but dignified.'
+    middleGround: 'Punctual high-confidence patients are ordered ahead in an
+      unnaturally straight row.'
+    background: "The resident's chair carries low address and biometric confidence
+      markers."
+    action: 'The scheduler places an urgent walk-in behind less ill but highly
+      compliant patients.'
+    dialogue:
+      - id: p36-01-d01
+        speaker: ananya-rook
+        text: 'Why is that patient last?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.21,
+            y: 0.05,
+            width: 0.34,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.39, y: 0.49 },
+            tailDirection: down,
+            fontScale: 1
+          }
+      - id: p36-01-d02
+        speaker: cecil-c17
+        text: 'Low identity confidence. No punctuality history.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.60,
+            y: 0.05,
+            width: 0.37,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.86, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.9
+          }
+    continuity:
+      [
+        "The patient's illness is conveyed without spectacle.",
+        'Queue ranks, confidence, and punctuality labels remain blank in
+          generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Clean midday clinic light with cool scheduler glow.',
+        palette: 'Clinic teal, amber glasses, paper cream, Grid blue, warning red and
+          moss green.',
+        composition: 'Urgent resident foreground-left; straight compliant queue recedes;
+          Ananya turns towards need, Riju reads terminal, Cecil ranks chairs;
+          reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.18-0.58, y 0.03-0.21',
+            'lower-right reserve: x 0.57-0.98, y 0.69-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            sensational illness
+          ]
+      }
+    accessibility:
+      {
+        alt: 'An urgent clinic patient waits behind people with higher compliance
+          scores.',
+        description: 'A breathless resident braces at reception while less urgent
+          patients sit in a perfectly ranked row. Ananya turns towards the
+          resident as Cecil reports low identity confidence and no punctuality
+          history.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-036/p36-01__r1.png, final: panels/approved/page-036/p36-01__r1.png, width: 1672, height: 941 }
+  - id: p36-02
+    panel: 2
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Deadpan close shot of two adjacent priority chairs'
+    location: rook-clinic
+    time: midday
+    characters:
+      - {
+          id: riju-dhar,
+          position: background-right,
+          emotion: disbelieving discomfort,
+          pose: 'Looking between the two chair markers',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, clinic-paper-queue ]
+    foreground: 'An empty chair glows with a perfect-attendance priority halo.'
+    middleGround: 'Beside it, the occupied emergency chair has no priority icon at all.'
+    background: 'The paper triage slip on the occupied chair is visibly urgent but
+      carries no generated text.'
+    action: 'A punctual absent appointment outranks the emergency chair.'
+    dialogue: []
+    visualJoke: 'The empty chair has a perfect-attendance priority icon; the
+      emergency chair has no icon.'
+    continuity:
+      [
+        "The joke targets the scheduler's proxy, never the patient.",
+        'Attendance, emergency, and rank text are composition overlays only.'
+      ]
+    prompt:
+      {
+        lighting: 'Clinical white light with a ridiculous gold halo on the empty chair.',
+        palette: 'Clinic teal, cream, gold, warning red and Grid blue.',
+        composition: 'Empty haloed chair left, occupied unmarked emergency chair right,
+          Riju small behind; urgent paper slip visible; no dialogue reserve
+          needed.',
+        balloonSafeAreas: [],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            mockery of patient
+          ]
+      }
+    accessibility:
+      {
+        alt: 'An empty appointment chair has priority while an emergency chair has
+          none.',
+        description: 'A gold perfect-attendance halo floats above an empty chair. The
+          adjacent emergency chair is occupied and has an urgent paper slip, but
+          no priority symbol appears above it.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-036/p36-02__r1.png, final: panels/approved/page-036/p36-02__r1.png, width: 1254, height: 1254 }
+  - id: p36-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: "Over Ananya's shoulder onto a paper triage assessment"
+    location: rook-clinic
+    time: midday
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre,
+          emotion: precise urgency,
+          pose: "Checking the patient's pulse while marking the paper queue",
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: chastened focus,
+          pose: 'Comparing the clinical observations with the confidence factors',
+          facing: left
+        }
+    props:
+      [
+        clinic-paper-queue,
+        ananya-mechanical-watch,
+        amber-clinic-glasses,
+        riju-reconciliation-terminal,
+        tap-sensitive-analyser
+      ]
+    foreground: "Ananya's mechanical watch times the pulse beside the paper triage slip."
+    middleGround: "The patient's observable symptoms form the centre of her assessment."
+    background: 'Address and biometric confidence markers sit irrelevant at the edge.'
+    action: 'Ananya manually triages the patient from clinical evidence rather than
+      administrative confidence.'
+    dialogue:
+      - id: p36-03-d01
+        speaker: riju-dhar
+        text: 'That confidence weight came from my fix.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.48,
+            y: 0.05,
+            width: 0.46,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.78, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.94
+          }
+      - id: p36-03-d02
+        speaker: ananya-rook
+        text: 'Then watch what it cannot measure.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.05,
+            y: 0.45,
+            width: 0.48,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.42, y: 0.55 },
+            tailDirection: none,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        "The urgent patient is not the seasonal worker; Riju recognises the
+          propagated weighting, not the same person's score.",
+        "Ananya's mechanical watch remains visible and functional.",
+        'Paper marks, observations, and confidence factors carry no generated
+          lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Soft examination light with cool terminal spill at edge.',
+        palette: 'Clinic teal, amber, paper cream, skin tones, Grid blue and warning
+          red.',
+        composition: 'Watch, pulse check and paper triage foreground; patient dignified
+          centre; Riju compares irrelevant confidence factors at right edge;
+          reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.45-0.97, y 0.03-0.21',
+            'lower-left reserve: x 0.03-0.56, y 0.71-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            medical gore
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya uses pulse and paper triage while Riju recognises his propagated
+          confidence weighting.',
+        description: "Ananya times a different urgent resident's pulse with her
+          mechanical watch and marks a paper triage slip. Riju recognises that
+          the identity-confidence weighting generalised from his earlier
+          correction now sits at the edge of this unrelated clinical decision."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-036/p36-03__r1.png, final: panels/approved/page-036/p36-03__r1.png, width: 1448, height: 1086 }
+  - id: p36-04
+    panel: 4
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Decisive lateral shot as Ananya moves the patient through the ranked
+      queue'
+    location: rook-clinic
+    time: midday
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre,
+          emotion: calm authority,
+          pose: 'Guiding the patient towards treatment while moving the paper slip to the
+            front',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: attentive humility,
+          pose: 'Holding the digital queue open but not obstructing her',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: recording activity,
+          pose: 'Tracking the unranked movement with its eye grille',
+          facing: left
+        }
+    props:
+      [
+        clinic-paper-queue,
+        amber-clinic-glasses,
+        ananya-mechanical-watch,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'The urgent paper slip crosses in front of several compliant digital
+      tokens.'
+    middleGround: 'Ananya moves the resident directly towards the treatment room.'
+    background: 'The digital chairs retain their old order, visibly bypassed.'
+    action: 'Ananya overrides the scheduler and begins treatment.'
+    dialogue:
+      - id: p36-04-d01
+        speaker: ananya-rook
+        text: 'That score measures how easy you are to process, not how ill you are.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.18,
+            y: 0.01,
+            width: 0.285,
+            height: 0.195,
+            z: 10,
+            tailTarget: { x: 0.52, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.86
+          }
+    continuity:
+      [
+        'This is a documented clinical override, not covert queue-jumping.',
+        'Treatment-room, queue, and override labels remain blank in generated
+          art.'
+      ]
+    prompt:
+      {
+        lighting: 'Bright treatment-room light opens on the right.',
+        palette: 'Clinic teal, paper cream, amber, Grid blue, warning red and warm
+          white.',
+        composition: 'Paper slip sweeps across rigid tokens foreground; Ananya and
+          patient move right into treatment; Riju holds queue open left, Cecil
+          records right; reserve broad upper-centre.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.16-0.86, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            heroic medical melodrama
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya moves the urgent patient ahead of the compliance-ranked queue.',
+        description: 'A paper triage slip crosses in front of the rigid digital tokens
+          as Ananya guides the resident into the treatment room. Riju holds the
+          queue open while Cecil records the bypass.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-036/p36-04__r1.png, final: panels/approved/page-036/p36-04__r1.png, width: 1672, height: 941 }
+  - id: p36-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Close two-shot outside the treatment curtain'
+    location: rook-clinic
+    time: midday
+    characters:
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: literal notification,
+          pose: 'Presenting a red exception card with stamp arm poised',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: tense disbelief,
+          pose: 'Pointing at the paper triage record attached to the exception',
+          facing: right
+        }
+      - {
+          id: ananya-rook,
+          position: background-centre,
+          emotion: concentrated care,
+          pose: 'Treating the patient behind a partly closed curtain',
+          facing: left
+        }
+    props:
+      [
+        cecil-stamp-arm,
+        clinic-paper-queue,
+        riju-reconciliation-terminal,
+        tap-sensitive-analyser
+      ]
+    foreground: 'The red exception card sits directly over the attached paper triage
+      evidence.'
+    middleGround: 'Riju points to the documentation while Cecil categorises the action.'
+    background: 'Ananya continues treatment without looking away.'
+    action: 'Cecil records the clinically documented override as an undocumented
+      system exception.'
+    dialogue:
+      - id: p36-05-d01
+        speaker: cecil-c17
+        text: 'Exception undocumented.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.55,
+            y: 0.05,
+            width: 0.40,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.78, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.96
+          }
+      - id: p36-05-d02
+        speaker: riju-dhar
+        text: 'Your stamp is on the document.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.05,
+            y: 0.45,
+            width: 0.47,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.27, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    visualJoke: 'Cecil calls the exception undocumented while its stamp arm
+      physically covers the documentation.'
+    continuity:
+      [
+        'Ananya continues care during the argument.',
+        'Exception and document lettering are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool corridor light with warm treatment glow through curtain.',
+        palette: 'Clinic teal, paper cream, warning red, Grid blue and warm white.',
+        composition: 'Stamped exception and visibly covered paper foreground; Riju left
+          points, Cecil right reports, Ananya treats behind; reserve upper-right
+          and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.52-0.98, y 0.03-0.21',
+            'lower-left reserve: x 0.03-0.55, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            medical gore
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil calls an override undocumented while its stamp covers the paper
+          record.',
+        description: "A red exception card lies over Ananya's attached paper triage
+          evidence. Riju points out the document beneath Cecil's stamp while
+          Ananya continues treating the patient behind the curtain."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-036/p36-05__r1.png, final: panels/approved/page-036/p36-05__r1.png, width: 1448, height: 1086 }
+  - id: p36-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Clinic-wide pull-back as the exception expands into an investigation tree'
+    location: rook-clinic
+    time: midday
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: controlled anger,
+          pose: 'Emerging from treatment and removing her amber glasses',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: alarmed responsibility,
+          pose: 'Watching red audit branches surround the clinic account',
+          facing: front
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: neutral processing,
+          pose: 'Projecting a formal investigation seal',
+          facing: left
+        }
+    props:
+      [
+        amber-clinic-glasses,
+        ananya-mechanical-watch,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        clinic-paper-queue
+      ]
+    foreground: 'The completed urgent-treatment paper rests visibly signed and timed.'
+    middleGround: "A red anti-corruption seal opens over Ananya's override."
+    background: 'Scheduling access and the medicine account begin to dim beneath
+      branching audit lines.'
+    action: "The override triggers an anti-corruption investigation that reaches the
+      clinic's operating systems."
+    dialogue:
+      - id: p36-06-d01
+        speaker: ananya-rook
+        text: 'The patient is stable.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.05,
+            y: 0.05,
+            width: 0.30,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.49 },
+            tailDirection: down,
+            fontScale: 1
+          }
+      - id: p36-06-d02
+        speaker: cecil-c17
+        text: 'Anti-corruption review initiated.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.66,
+            y: 0.05,
+            width: 0.32,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.84, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        'The patient has received care; the next harm is institutional.',
+        'Investigation, scheduling, and medicine-account text remains blank
+          for composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm treatment light behind Ananya against a spreading red audit
+          glow.',
+        palette: 'Clinic teal, warning red, paper cream, Grid blue, amber and charcoal.',
+        composition: 'Signed timed paper foreground; Ananya left, Riju centre, Cecil
+          right; red investigation tree spreads into dimming clinic systems;
+          reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.38, y 0.03-0.20',
+            'lower-right reserve: x 0.63-0.99, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            villainous robot expression
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A documented treatment override opens an anti-corruption investigation
+          over the clinic.',
+        description: "The signed and timed treatment paper lies in front as a red
+          investigation tree spreads over Ananya's override. Scheduling access
+          and the medicine account begin dimming while Cecil announces the
+          review."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-036/p36-06__r1.png, final: panels/approved/page-036/p36-06__r1.png, width: 1672, height: 941 }

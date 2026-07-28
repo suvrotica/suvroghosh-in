@@ -1,0 +1,666 @@
+page: 21
+title: 'Ninety-eight per cent'
+purpose: "Sharpen Riju's personal incentive and make the coming mistake understandable."
+location: golmohar-municipal-hall
+time: night
+layout: 'A wide threshold briefing, a conditional two-shot, a silent badge
+  close-up, a warning exchange, a decision panel, and a cold calculation turn.'
+panelCount: 6
+dialogueGoal: 'Let Vale defend a standard against sloppy migration while Riju
+  conceals how much the permanent post matters and volunteers for the deadline.'
+pageTurn: 'Cecil calculates that honest resolution currently stands far below
+  the threshold.'
+visualMotif: 'A target measured to absurd precision presses against a clock
+  incapable of showing precise time.'
+continuity:
+  - 'The live-integration target is locked at ninety-eight per cent resolved.'
+  - 'Vale improperly promises Riju the direct permanent systems appointment,
+    conditional only on successful honest delivery.'
+  - "Riju's temporary badge expires at 08:00 on the morning after the trial."
+panels:
+  - id: p21-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide conference-room shot from behind an empty chair'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: formal clarity,
+          pose: 'Standing beside a blank presentation field with silver tablet in left
+            hand',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: controlled attention,
+          pose: 'Sitting upright with satchel at his feet and hands still',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: centre-right,
+          emotion: sceptical vigilance,
+          pose: 'Seated with red ledger closed under her left forearm',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: threshold registration,
+          pose: 'Parked square to the presentation field with stamp arm retracted',
+          facing: left
+        }
+    props:
+      [
+        vale-silver-tablet,
+        riju-form-satchel,
+        municipal-red-ledger,
+        cecil-stamp-arm
+      ]
+    foreground: 'An empty chair points towards the briefing table.'
+    middleGround: 'A six-decimal target field awaits deterministic lettering beside Vale.'
+    background: 'The conference-room wall clock has an hour hand but no minute hand.'
+    action: 'Vale fixes the live-migration threshold at ninety-eight per cent and
+      explains that the standard is intended to stop weak matches entering
+      public systems.'
+    dialogue:
+      - id: p21-01-d01
+        speaker: director-vale
+        text: 'For live migration, we need ninety-eight per cent resolved.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.20,
+            y: 0.03,
+            width: 0.43,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.19, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.93
+          }
+      - id: p21-01-d02
+        speaker: director-vale
+        text: 'It keeps weak matches out.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.02,
+            y: 0.41,
+            width: 0.32,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.96
+          }
+    visualJoke: 'The ninety-eight-per-cent target is specified to six decimal places
+      while the wall clock lacks a minute hand.'
+    continuity:
+      [
+        'The numeric target and all interface wording are applied as
+          deterministic lettering overlays.',
+        "Vale's silver tablet remains in the left hand."
+      ]
+    prompt:
+      {
+        lighting: 'Hard white presentation glow softened by warm municipal ceiling
+          lamps.',
+        palette: 'Graphite, silver, municipal red, moss, cream enamel and restrained
+          Grid blue.',
+        composition: 'Vale presents at left, the three listeners form a measured line,
+          and the one-handed clock sits clearly behind; leave a blank
+          six-decimal display field and reserve the upper band.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.50, y 0.03-0.22',
+            'upper-centre reserve: x 0.45-0.86, y 0.03-0.22'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale sets the integration target before Riju, Ila, and Cecil beneath an
+          imprecise clock.',
+        description: "Vale briefs the group beside a field reserved for the
+          ninety-eight-per-cent target. Behind them, a wall clock has no minute
+          hand, undercutting the target's six-decimal precision."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-021/p21-01__r1.png,
+        final: panels/approved/page-021/p21-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p21-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Eye-level two-shot across the end of the conference table'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: measured opportunity,
+          pose: 'Resting the tablet edge on the table without leaning towards Riju',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: hope held behind formality,
+          pose: 'Keeping his chin level while one hand tightens on the satchel strap',
+          facing: left
+        }
+    props: [ vale-silver-tablet, riju-form-satchel ]
+    foreground: 'The silver tablet and worn canvas satchel occupy opposite corners
+      of the polished table.'
+    middleGround: 'Vale makes the conditional offer without ceremony.'
+    background: 'The target field glows out of focus.'
+    action: 'Vale confirms that successful honest delivery will give Riju the direct
+      permanent systems appointment.'
+    dialogue:
+      - id: p21-02-d01
+        speaker: director-vale
+        text: 'Deliver it honestly and the systems post is yours.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.34,
+            y: 0.02,
+            width: 0.32,
+            height: 0.25,
+            z: 10,
+            tailTarget: { x: 0.27, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.84
+          }
+      - id: p21-02-d02
+        speaker: riju-dhar
+        text: 'I understand.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.75,
+            y: 0.47,
+            width: 0.22,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.76, y: 0.49 },
+            tailDirection: up,
+            fontScale: 1
+          }
+    continuity:
+      [
+        'The direct appointment is explicitly promised and conditional only on
+          successful honest delivery; this improper route is surrendered later.',
+        "Riju's grip reveals the personal stake that his voice conceals."
+      ]
+    prompt:
+      {
+        lighting: 'Clean overhead light with a cool target glow behind Riju.',
+        palette: 'Graphite, silver, moss, sage, canvas brown and soft blue.',
+        composition: "Formal opposed two-shot with tablet and satchel as quiet status
+          symbols; Riju's tightened hand visible; reserve upper-left and
+          upper-right.",
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.66, y 0.03-0.24',
+            'upper-right reserve: x 0.70-0.97, y 0.03-0.21'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale promises Riju a direct permanent systems appointment if he delivers
+          honestly.',
+        description: "Vale's pristine silver tablet and Riju's worn canvas satchel frame
+          their formal exchange. Vale says the permanent systems appointment
+          will be Riju's after successful honest delivery; Riju answers evenly
+          while gripping the strap."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-021/p21-02__r1.png,
+        final: panels/approved/page-021/p21-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p21-03
+    panel: 3
+    size: tall
+    aspectRatio: '3:4'
+    camera: "Tight vertical close-up from Riju's temporary badge to the one-handed
+      wall clock"
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: lower-centre,
+          emotion: private dread,
+          pose: 'Turning the temporary badge inward against his vest with thumb over its
+            expiry field',
+          facing: away
+        }
+    props: [ riju-form-satchel ]
+    foreground: "Riju's thumb partly covers the badge field that will carry the
+      expiry overlay for the morning after the seventy-two-hour trial."
+    middleGround: 'The frayed satchel strap crosses his moss-green vest.'
+    background: "The wall clock's lone hour hand has advanced into the night."
+    action: 'In a silent beat, Riju checks that his temporary access expires at
+      08:00 on the morning after the trial.'
+    dialogue: []
+    continuity:
+      [
+        "Riju's badge expiry is locked for 08:00 on the morning after the
+          seventy-two-hour trial and will be added as deterministic lettering.",
+        'His pencil remains behind his right ear.'
+      ]
+    prompt:
+      {
+        lighting: 'Narrow cool target reflection on the badge with warm clock light
+          above.',
+        palette: 'Moss green, sage, worn cream card, canvas brown and clock brass.',
+        composition: "Vertical line from Riju's inward-turned badge to the clock missing
+          its minute hand; keep the badge field blank for later typography; no
+          balloon reserve needed beyond a small top margin.",
+        balloonSafeAreas: [ 'top quiet reserve: x 0.12-0.88, y 0.02-0.14' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju silently checks his temporary badge beneath the one-handed clock.',
+        description: 'Riju turns his temporary badge inward and covers part of its
+          expiry field with his thumb. The production overlay will show access
+          ending at eight on the morning after the seventy-two-hour trial, while
+          the wall clock above still lacks a minute hand.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-021/p21-03__r1.png,
+        final: panels/approved/page-021/p21-03__r1.png,
+        width: 1086,
+        height: 1448
+      }
+  - id: p21-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Opposed close two-shot across the closed red ledger'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: direct concern,
+          pose: 'Holding one palm flat on the closed ledger',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: confident defensiveness,
+          pose: 'Opening both hands while keeping the turned badge against his vest',
+          facing: left
+        }
+    props: [ municipal-red-ledger, riju-form-satchel ]
+    foreground: "Ila's red ledger makes a hard horizontal boundary across the table."
+    middleGround: 'Ila watches Riju rather than the target display.'
+    background: 'The blurred presentation field remains cold and precise.'
+    action: 'Ila warns that the metric can reward declaring uncertainty gone; Riju
+      insists the unresolved cases can be handled after launch.'
+    dialogue:
+      - id: p21-04-d01
+        speaker: ila-dastidar
+        text: 'That number rewards you for pretending the uncertainty is gone.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.362,
+            y: 0.01,
+            width: 0.27,
+            height: 0.32,
+            z: 10,
+            tailTarget: { x: 0.26, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.72
+          }
+      - id: p21-04-d02
+        speaker: riju-dhar
+        text: 'I''m not pretending. I''ll clear the exceptions after launch.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.55,
+            y: 0.76,
+            width: 0.42,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.75, y: 0.52 },
+            tailDirection: up,
+            fontScale: 0.9
+          }
+    continuity:
+      [
+        'Ila identifies the exact ethical risk before Riju makes the later
+          default change.',
+        'Riju still intends to resolve exceptions rather than erase them.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm ledger light on Ila opposed by cool target light on Riju.',
+        palette: 'Municipal red, ink blue, moss, sage and restrained Grid cyan.',
+        composition: "The closed ledger divides the opposed two-shot; Ila's gaze is
+          level, Riju's badge turned inward; reserve upper-left and
+          right-middle.",
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.59, y 0.03-0.23',
+            'right-middle reserve: x 0.48-0.98, y 0.22-0.44'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila warns Riju across the closed red ledger.',
+        description: 'Ila keeps a palm on the municipal ledger and warns that a metric
+          can reward pretending uncertainty is gone. Riju, with his temporary
+          badge turned inward, says he can clear the exceptions after launch.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-021/p21-04__r1.png,
+        final: panels/approved/page-021/p21-04__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p21-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Low three-quarter shot as Riju rises to accept the assignment'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: stringent assessment,
+          pose: 'Holding the tablet level and waiting for an unqualified answer',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: resolved ambition,
+          pose: 'Standing with satchel over one shoulder and badge hidden behind its
+            strap',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: worried restraint,
+          pose: 'Remaining seated with both hands on the red ledger',
+          facing: left
+        }
+    props: [ vale-silver-tablet, riju-form-satchel, municipal-red-ledger ]
+    foreground: "Riju's chair pushes back while Ila's ledger remains fixed."
+    middleGround: "Riju stands between Vale's offered authority and Ila's warning."
+    background: 'The one-handed clock continues through the night.'
+    action: 'Vale asks whether Riju can meet the standard without erasing doubt, and
+      Riju volunteers to lead the overnight drive.'
+    dialogue:
+      - id: p21-05-d01
+        speaker: director-vale
+        text: 'Can you reach it by morning without hiding the doubt?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.18,
+            y: 0.31,
+            width: 0.37,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.23, y: 0.46 },
+            tailDirection: left,
+            fontScale: 0.92
+          }
+      - id: p21-05-d02
+        speaker: riju-dhar
+        text: 'Put me in charge. I''ll get us there.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.56,
+            y: 0.51,
+            width: 0.40,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.55, y: 0.45 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        'Riju accepts the integration lead assignment and the morning
+          deadline.',
+        'Ila does not endorse the assurance.'
+      ]
+    prompt:
+      {
+        lighting: 'Riju rises into the cool target glow while Vale and Ila remain in
+          warmer side light.',
+        palette: 'Moss, sage, graphite, municipal red, ink blue and Grid cyan.',
+        composition: 'Riju forms the centre vertical between Vale left and seated Ila
+          right; pushed chair and fixed ledger show the choice; reserve
+          separated upper corners.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.02-0.49, y 0.02-0.23',
+            'upper-right reserve: x 0.51-0.97, y 0.03-0.22'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju rises between Vale and Ila to accept the overnight integration
+          drive.',
+        description: 'Vale asks whether Riju can meet the target without erasing
+          uncertainty. Riju stands with his badge hidden by the satchel strap
+          and accepts, while Ila stays seated with both hands on the red
+          ledger.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-021/p21-05__r1.png,
+        final: panels/approved/page-021/p21-05__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p21-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: "Wide low shot across Cecil's calculation towards the opening
+      conference-room door"
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: cecil-c17,
+          position: left,
+          emotion: completed calculation,
+          pose: 'Projecting a short blue result bar with stamp arm retracted',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: confidence checked by scale,
+          pose: 'Pausing at the doorway with one hand on the satchel strap',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: unsentimental attention,
+          pose: "Turning from the table towards Cecil's result",
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: vindicated concern,
+          pose: 'Watching Riju rather than the calculation',
+          facing: left
+        }
+    props:
+      [
+        cecil-stamp-arm,
+        riju-form-satchel,
+        vale-silver-tablet,
+        municipal-red-ledger
+      ]
+    foreground: 'A short unlettered blue result bar ends far before the target marker.'
+    middleGround: "Riju's path to the overnight work passes directly behind the gap."
+    background: 'The open door reveals the archive tables ready for the
+      reconciliation drive.'
+    action: 'Cecil calculates the honestly resolved share and shows that it remains
+      more than twenty percentage points below the target.'
+    dialogue:
+      - id: p21-06-d01
+        speaker: cecil-c17
+        text: 'Valid resolution remains over twenty percentage points below target.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.39,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.9
+          }
+    continuity:
+      [
+        'The honest baseline is far below ninety-eight per cent without
+          locking an unnecessary exact value.',
+        'The open archive door leads directly into the overnight
+          reconciliation drive on page 22.'
+      ]
+    prompt:
+      {
+        lighting: 'Cold blue calculation light across the floor leading into warm
+          archive work lamps.',
+        palette: 'Grid blue, cream enamel, moss, graphite, municipal red and paper
+          cream.',
+        composition: 'Short blank result bar and distant target marker dominate the
+          foreground gap; Cecil left, Riju paused centre, Vale and Ila right,
+          archive route beyond; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.60, y 0.03-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Cecil's honest-resolution bar ends far short of the target as Riju
+          pauses.",
+        description: 'A short blue result bar stops more than twenty percentage points
+          before the target marker. Cecil reports the gap while Riju pauses on
+          the way to the archive tables prepared for the overnight
+          reconciliation drive.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-021/p21-06__r1.png,
+        final: panels/approved/page-021/p21-06__r1.png,
+        width: 1672,
+        height: 941
+      }

@@ -28,6 +28,11 @@
 			label: 'Games',
 			description: 'Play strange browser games from Calcutta'
 		},
+		{
+			href: '/blog/comic',
+			label: 'Comic',
+			description: 'Read The Last Analog Town and its accessible transcript'
+		},
 		{ href: '/consulting', label: 'Healthcare IT', description: 'Consulting and systems work' },
 		{ href: '/projects', label: 'Projects', description: 'Review selected systems work' },
 		{ href: '/resume', label: 'Resume', description: 'Experience and capabilities' },

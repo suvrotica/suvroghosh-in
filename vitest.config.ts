@@ -8,6 +8,7 @@ export default defineConfig({
 			'src/lib/notes/**/*.test.ts',
 			'src/lib/server/notes/**/*.test.ts',
 			'src/lib/topics/**/*.test.ts',
+			'src/lib/components/comics/**/*.test.ts',
 			'src/lib/components/sketch-museum/**/*.test.ts',
 			'src/lib/visualizations/ct-reconstruction/**/*.test.ts',
 			'src/lib/visualizations/domain-coloring/**/*.test.ts',

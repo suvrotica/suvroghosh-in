@@ -1,0 +1,353 @@
+format: suvroghosh-comic-dialogue-revisions
+formatVersion: 1
+revisions:
+  - dialogueId: p48-01-d01
+    before: 'No. That would erase the accurate records with the false conclusions.'
+    after: "No. We'd erase the accurate records with the bad conclusions."
+    reason: 'Vale stops Riju’s rollback in direct speech and distinguishes evidence from inference.'
+    status: accepted
+  - dialogueId: p48-03-d01
+    before: 'One contractor received thirty-one exceptional overrides.'
+    after: 'One contractor got thirty-one exceptional overrides.'
+    reason: 'Vale reads the audit finding aloud without passive report diction.'
+    status: accepted
+  - dialogueId: p48-04-d01
+    before: 'I know that hand.'
+    after: 'I know that signature.'
+    reason: 'Ila identifies the concrete evidence that connects the ally to the overrides.'
+    status: accepted
+  - dialogueId: p48-04-d02
+    before: 'Do we preserve it?'
+    after: 'Do we keep it?'
+    reason: 'Riju asks the immediate moral question without archival jargon.'
+    status: accepted
+  - dialogueId: p48-05-d01
+    before: 'Keep the services. Keep this evidence. We judge the failures separately.'
+    after: 'Keep the services. Keep the evidence. Judge each failure on its own.'
+    reason: 'Ila gives three speakable instructions and makes the case-by-case rule explicit.'
+    status: accepted
+  - dialogueId: p48-05-d02
+    before: 'That requires a rule, not a rescue.'
+    after: 'Then we need a rule, not another rescue.'
+    reason: 'Vale directly accepts Ila’s direction and identifies what must follow.'
+    status: accepted
+  - dialogueId: p49-02-d01
+    before: 'No private promise. We record the reason now.'
+    after: 'No private promises. We record the reason now.'
+    reason: 'Ila rejects the contractor’s entire method, not merely one offer.'
+    status: accepted
+  - dialogueId: p49-05-d02
+    before: 'Find the old line.'
+    after: 'Use the old line.'
+    reason: 'Ila turns the known fallback into an immediate instruction.'
+    status: accepted
+  - dialogueId: p50-02-d01
+    before: 'The route is data only if I keep who gave it.'
+    after: 'A route becomes data only if I keep who gave it.'
+    reason: 'Riju generalises from the route he is encoding without sounding like a field definition.'
+    status: accepted
+  - dialogueId: p50-03-d02
+    before: 'I do not know that lane.'
+    after: "I don't know that lane."
+    reason: 'Babul admits the limit of his local knowledge naturally.'
+    status: accepted
+  - dialogueId: p50-04-d01
+    before: 'Keep it unknown. I need two witnesses and one physical route.'
+    after: 'Keep it unknown. I need two witnesses and a physical route.'
+    reason: 'Riju asks for corroboration in ordinary counting language.'
+    status: accepted
+  - dialogueId: p50-05-d01
+    before: 'Now I know it. That does not mean I always did.'
+    after: "Now I know it. Doesn't mean I always did."
+    reason: 'Babul’s second sentence lands as the corrective afterthought it is.'
+    status: accepted
+  - dialogueId: p50-06-d01
+    before: 'Utility crew at the Hall. They have a live order.'
+    after: "Utility crew's at the Hall. They have a live order."
+    reason: 'Babul reports the live call in his normal voice.'
+    status: accepted
+  - dialogueId: p51-02-d02
+    before: 'Then enjoy the efficiency.'
+    after: 'Then enjoy being efficient.'
+    reason: 'Babul teases Cecil as a travelling companion rather than repeating a programme noun.'
+    status: accepted
+  - dialogueId: p51-03-d01
+    before: 'Hold the tube. I will hold the road.'
+    after: "Hold the tube. I'll hold the road."
+    reason: 'Babul’s launch line keeps its parallel rhythm with natural contraction.'
+    status: accepted
+  - dialogueId: p51-04-d01
+    before: 'The files are faster because everyone knows why they are moving.'
+    after: "The files are moving because everyone knows why."
+    reason: 'Riju notices the human coordination causing the speed without narrating a slogan.'
+    status: accepted
+  - dialogueId: p52-01-d02
+    before: 'For a building you are standing inside.'
+    after: "For a building you're standing in."
+    reason: 'Ila answers Cecil’s valid order with the absurd physical fact in front of them.'
+    status: accepted
+  - dialogueId: p52-03-d02
+    before: 'After it accepts the appeal.'
+    after: 'Only after it accepts the appeal.'
+    reason: 'Ila completes Riju’s circular explanation as a continuing exchange.'
+    status: accepted
+  - dialogueId: p52-04-d01
+    before: 'I can authorise the emergency, not the property.'
+    after: 'I can authorise the emergency, but not the property.'
+    reason: 'Vale admits the limit of their authority in ordinary contrastive syntax.'
+    status: accepted
+  - dialogueId: p52-05-d01
+    before: 'Order executed. Failure cause preserved.'
+    after: "It's done. Keep the failure cause."
+    reason: 'Vale reacts to the blackout and immediately protects the evidence.'
+    status: accepted
+  - dialogueId: p53-01-d02
+    before: 'The benefits were linked too.'
+    after: 'We linked the benefits too.'
+    reason: 'Riju includes his own design choice in the consequence.'
+    status: accepted
+  - dialogueId: p53-02-d01
+    before: 'Care continues. Tracking and results do not.'
+    after: "Care continues. Tracking and results don't."
+    reason: 'Ananya’s concise outage report stays clinical without Cecil’s formal register.'
+    status: accepted
+  - dialogueId: p53-03-d01
+    before: 'Verified range only. Platform remains uncertain.'
+    after: "Give them the verified range. Platform's still uncertain."
+    reason: 'Babul turns the surviving information into an instruction for passengers.'
+    status: accepted
+  - dialogueId: p53-04-d01
+    before: 'The forecast is gone. So is the shared stock count.'
+    after: "Forecast's gone. So's the shared stock count."
+    reason: 'Riju reports the paired loss in an urgent spoken cadence.'
+    status: accepted
+  - dialogueId: p53-05-d01
+    before: 'The system removed a harmful prediction and a useful record with the same failure.'
+    after: 'One failure removed a harmful prediction—and a useful record.'
+    reason: 'Vale recognises the mixed consequence without sounding like the panel description.'
+    status: accepted
+  - dialogueId: p53-06-d01
+    before: 'The trial permits an emergency review. Public chamber. Bring every failure.'
+    after: 'The trial allows an emergency review. Public chamber. Bring every failure.'
+    reason: 'Ila invokes the clause in the word she would use while mobilising the room.'
+    status: accepted
+  - dialogueId: p54-01-d01
+    before: 'This is a review, not a funeral. State what failed and who decided.'
+    after: 'This is a review, not a funeral. Say what failed and who decided.'
+    reason: 'Ila opens a public hearing, not a data-entry procedure.'
+    status: accepted
+  - dialogueId: p54-02-d01
+    before: 'I approved unknown equals false.'
+    after: "I approved 'unknown equals false.'"
+    reason: 'Riju clearly quotes the exact configuration he chose.'
+    status: accepted
+  - dialogueId: p54-03-d01
+    before: 'I kept the anomaly count out of the launch measure.'
+    after: 'I left the anomaly count out of the launch measure.'
+    reason: 'Riju admits the omission in plain language before Ila asks why.'
+    status: accepted
+  - dialogueId: p54-04-d01
+    before: 'I wanted the permanent post. I let that make completeness look true.'
+    after: 'I wanted the permanent post. I let that make incomplete look complete.'
+    reason: 'Riju names both his motive and the exact lie it encouraged.'
+    status: accepted
+  - dialogueId: p54-04-d02
+    before: 'The direct appointment is suspended.'
+    after: 'Then the appointment is suspended.'
+    reason: 'Vale responds to Riju’s admission and keeps the consequence concise.'
+    status: accepted
+  - dialogueId: p54-05-d01
+    before: 'We will not defend the denial. We will not hide behind the old favours.'
+    after: "We won't defend the denial. We won't hide behind the old favours."
+    reason: 'Ila’s public commitment stays firm without becoming ceremonial prose.'
+    status: accepted
+  - dialogueId: p54-05-d02
+    before: 'Then show me a system that can state what it does not know.'
+    after: "Then show me a system that can say what it doesn't know."
+    reason: 'Vale states the design challenge in words the whole chamber can understand.'
+    status: accepted
+  - dialogueId: p55-01-d01
+    before: 'Withdraw my appointment. If there is a post, let everyone apply.'
+    after: "Withdraw my appointment. If there's a post, open it to everyone."
+    reason: 'Riju gives up the favour and names the fair replacement directly.'
+    status: accepted
+  - dialogueId: p55-02-d01
+    before: 'The address was unknown, not unreachable.'
+    after: 'The address was unknown—not unreachable.'
+    reason: 'Riju’s first case turns on a clear spoken correction and a shorter balloon rhythm.'
+    status: accepted
+  - dialogueId: p55-02-d02
+    before: 'The absence was seasonal, not fraudulent.'
+    after: 'Seasonal absence—not fraud.'
+    reason: 'Ila supplies the decisive distinction in her compact hearing voice.'
+    status: accepted
+  - dialogueId: p55-03-d01
+    before: 'Urgency was observed. Compliance was merely scored.'
+    after: 'We observed urgency. The system scored compliance.'
+    reason: 'Ananya identifies the human observation and machine measure as different actions.'
+    status: accepted
+  - dialogueId: p55-03-d02
+    before: 'The water travelled. The rain sensor did not.'
+    after: "The water moved. The rain sensor didn't."
+    reason: 'Babul states the flood failure in ordinary, dry language.'
+    status: accepted
+  - dialogueId: p55-04-d01
+    before: 'A forecast altered demand. Guidance allocated a future. A property category cut power.'
+    after: 'Forecast moved demand. Guidance chose a future. A property label cut power.'
+    reason: 'Vale keeps the three-case structure but uses concrete verbs and a shorter fit.'
+    status: accepted
+  - dialogueId: p55-05-d01
+    before: 'No return to unlogged favour.'
+    after: 'No more unlogged favours.'
+    reason: 'Vale rejects the old system in natural public speech.'
+    status: accepted
+  - dialogueId: p55-05-d02
+    before: 'No consequential denial without an appeal to a person.'
+    after: 'No denial of service without a human appeal.'
+    reason: 'Ila states the rule through the harm residents recognise.'
+    status: accepted
+  - dialogueId: p56-01-d02
+    before: 'Recommendations show uncertainty. Accuracy claims show where they fail.'
+    after: 'Show uncertainty. Publish where accuracy fails.'
+    reason: 'Vale turns the settlement principle into two enforceable instructions.'
+    status: accepted
+  - dialogueId: p56-02-d01
+    before: 'Every consequential decision opens a human appeal. Names and addresses remain correctable.'
+    after: 'Every serious decision gets a human appeal. Names and addresses stay correctable.'
+    reason: 'Riju states recourse in accessible public language and a shorter balloon.'
+    status: accepted
+  - dialogueId: p56-02-d02
+    before: 'Accessible before the harm, not after the funeral.'
+    after: 'Before the harm. Not after the funeral.'
+    reason: 'Ila cuts the qualification to its human deadline.'
+    status: accepted
+  - dialogueId: p56-03-d01
+    before: 'Override means reason, signer, audit trail and later review. Not automatic punishment.'
+    after: 'An override needs a reason, signer, audit trail and review—not punishment.'
+    reason: 'Ananya keeps every safeguard while removing definition-like prose.'
+    status: accepted
+  - dialogueId: p56-03-d02
+    before: 'No single score decides healthcare, education, welfare, policing or employment.'
+    after: 'No single score decides health, school, welfare, policing or work.'
+    reason: 'Vale preserves the full protected scope in words the chamber can say and remember.'
+    status: accepted
+  - dialogueId: p56-04-d01
+    before: 'A landmark needs a witness, a route and someone who can challenge both.'
+    after: 'A landmark needs a witness, a route and a way to challenge both.'
+    reason: 'Babul makes recourse part of the route itself and shortens the rule.'
+    status: accepted
+  - dialogueId: p56-04-d02
+    before: "And an explanation in the resident's language. Before launch."
+    after: "Explain it in the resident's language. Before launch."
+    reason: 'Ila converts the requirement into a direct instruction.'
+    status: accepted
+  - dialogueId: p56-05-d01
+    before: 'Assess each workaround by what it does. Preserve none by romance. Erase none by category.'
+    after: "Judge each workaround by what it does. Don't romanticise it. Don't erase it by category."
+    reason: 'Ila rejects both nostalgia and blanket automation in her established political voice.'
+    status: accepted
+  - dialogueId: p56-05-d02
+    before: 'Designers observe the work before digitising it.'
+    after: 'Designers watch the work before they digitise it.'
+    reason: 'Vale states the fieldwork rule without policy-manual compression.'
+    status: accepted
+  - dialogueId: p56-06-d01
+    before: 'Essential services continue through network or power failure. One field trial. Full audit.'
+    after: 'Essential services survive network and power failure. One field trial. Full audit.'
+    reason: 'Vale’s rule names continuity as survival during the failure already experienced.'
+    status: accepted
+  - dialogueId: p57-01-d02
+    before: 'The treatment remains reviewable. The patient remains treated.'
+    after: 'Treatment stays reviewable. The patient stays treated.'
+    reason: 'Ananya’s paired safeguard sounds spoken and stays memorable.'
+    status: accepted
+  - dialogueId: p57-02-d01
+    before: 'Prediction may advise. It may not manufacture its own evidence.'
+    after: "A prediction may advise. It can't manufacture its own evidence."
+    reason: 'Riju states the limit naturally while retaining the key feedback-loop rule.'
+    status: accepted
+  - dialogueId: p57-02-d02
+    before: 'Failure condition published.'
+    after: 'Publish the failure condition.'
+    reason: 'Vale answers Riju’s proposed rule with the required public action.'
+    status: accepted
+  - dialogueId: p57-04-d02
+    before: 'Closure accepted from physical observation.'
+    after: 'Close it on physical observation.'
+    reason: 'Vale authorises what the group should do, not merely a status change.'
+    status: accepted
+  - dialogueId: p58-01-d02
+    before: 'Accepted as evidence, not merger.'
+    after: 'Accept it as evidence, not a merger.'
+    reason: 'Vale gives the crew a bounded instruction tied to Riju’s submission.'
+    status: accepted
+  - dialogueId: p58-05-d01
+    before: 'Appeal opened. Number follows intake, not the reverse.'
+    after: 'Appeal open. The number follows intake—not the reverse.'
+    reason: 'Vale reports the repair and explains the corrected sequence in a readable beat.'
+    status: accepted
+  - dialogueId: p59-02-d01
+    before: 'Result returned. Source matches. Urgency still outranks compliance.'
+    after: "Result's back. Source matches. Urgency still outranks compliance."
+    reason: 'Ananya reports the restored service in her clinic voice.'
+    status: accepted
+  - dialogueId: p59-03-d01
+    before: 'Time range matches. Platform does not.'
+    after: "Time range matches. Platform doesn't."
+    reason: 'Babul keeps the useful distinction with natural contraction.'
+    status: accepted
+  - dialogueId: p59-04-d01
+    before: 'Forecast active. Feedback quarantined. Challenge open.'
+    after: 'Forecast on. Feedback quarantined. Challenge open.'
+    reason: 'Riju’s montage report keeps technical states but loses interface-like diction.'
+    status: accepted
+  - dialogueId: p60-01-d01
+    before: 'Eleven operating conditions. Breach triggers review, not concealment.'
+    after: 'Eleven operating conditions. A breach triggers review, not concealment.'
+    reason: 'Vale presents the settlement in complete public English.'
+    status: accepted
+  - dialogueId: p60-02-d02
+    before: 'Efficiency has paperwork.'
+    after: 'So efficiency has paperwork.'
+    reason: 'Ila directly answers Cecil’s triple-stamp report.'
+    status: accepted
+  - dialogueId: p60-03-d01
+    before: 'Mission funds continue while the trial reports gains, failures and interventions.'
+    after: 'Mission funds continue while the trial reports its gains, failures and interventions.'
+    reason: 'Vale ties the evidence obligations grammatically to this specific trial.'
+    status: accepted
+  - dialogueId: p60-04-d01
+    before: 'Open systems-accountability post. Relevant experience credited. No direct award.'
+    after: 'Open systems-accountability post. Relevant experience counts. No direct award.'
+    reason: 'Vale reads the fair terms in language an applicant would understand.'
+    status: accepted
+  - dialogueId: p60-04-d02
+    before: 'A fair application.'
+    after: "Then I'll apply."
+    reason: 'Riju responds as the person affected instead of naming the procedure.'
+    status: accepted
+  - dialogueId: p60-05-d01
+    before: 'Paid transition extension. Fourteen days. Reason and review date public.'
+    after: 'Paid transition. Fourteen days. Reason and review date public.'
+    reason: 'Ila states the bounded work arrangement without a redundant administrative noun.'
+    status: accepted
+  - dialogueId: p60-05-d02
+    before: 'I accept the work. Not the outcome.'
+    after: 'I accept the work. Not the result.'
+    reason: 'Riju accepts the temporary job without pretending the open application is decided.'
+    status: accepted
+  - dialogueId: p61-02-d01
+    before: 'Result verified. Medicine traced. Paper route tested.'
+    after: "Result verified. Medicine traced. We've tested the paper route."
+    reason: 'Ananya’s montage report includes the people who performed the fallback test.'
+    status: accepted
+  - dialogueId: p61-03-d02
+    before: 'My delivery may proceed without predicting itself.'
+    after: 'My delivery can proceed without predicting itself.'
+    reason: 'Babul’s closing market joke uses his ordinary practical modal.'
+    status: accepted
+  - dialogueId: p61-05-d02
+    before: 'That will do.'
+    after: "That'll do."
+    reason: 'Riju accepts a fair uncertainty in his natural voice.'
+    status: accepted

@@ -1,0 +1,62 @@
+# Dialogue revision application
+
+- Episode: 001 — The Efficiency Inspector
+- Manifest: `script/dialogue-revisions/round-01-pages-001-016.yaml`
+- Accepted revisions applied: 51
+- Accepted revisions already current: 0
+- Proposed revisions left untouched: 0
+- Canonical page files changed: 16
+
+Clean art is unaffected. Dialogue and lettering approval remain separate publication gates.
+
+- **p01-02-d01** — applied; Riju asks the people in front of him for a shared practical action.
+- **p01-02-d02** — applied; An anxious spoken fragment sounds less like a schedule notice.
+- **p02-01-d02** — applied; Vale answers Riju with ordinary dry politeness rather than institutional prose.
+- **p02-05-d01** — applied; Vale reacts to the visible blocked convoy before classifying it.
+- **p03-01-d02** — applied; Ila speaks from shared civic memory in a natural public cadence.
+- **p03-06-d01** — applied; The title gains attention once; the second sentence states the concrete reason for it.
+- **p04-01-d01** — applied; Riju refers to the records physically in front of the group.
+- **p04-05-d01** — applied; Vale does not repeat Riju’s title during the continuing demonstration.
+- **p05-02-d01** — applied; Vale explains the condition aloud instead of reciting a programme heading.
+- **p05-02-d02** — applied; The second sentence continues the explanation in human syntax.
+- **p05-05-d01** — applied; Vale states the coercive consequence plainly without sounding like terms and conditions.
+- **p05-05-d02** — applied; Vale completes the consequence, then turns the exchange into an immediate choice.
+- **p06-02-d02** — applied; Riju owns the proposed action instead of making the tool speak for him.
+- **p07-03-d01** — applied; The interruption reads like a real telephone correction.
+- **p07-05-d01** — applied; Vale answers the observed workaround in ordinary language.
+- **p07-05-d02** — applied; Ila directly turns Vale’s verb back on the formal system.
+- **p08-04-d02** — applied; Babul states the recurring practical risk rather than one oddly specific driver.
+- **p09-01-d01** — applied; Riju sounds like a clerk comparing records aloud, not a database label.
+- **p09-03-d01** — applied; Vale gives Riju a direct instruction tied to the person waiting beside them.
+- **p09-03-d02** — applied; Riju’s correction lands as a slightly embarrassed reaction, not formal assent.
+- **p09-05-d01** — applied; Riju uses an ordinary contraction in a moment of relief.
+- **p09-05-d02** — applied; Ila explicitly answers Riju before delivering the dry correction.
+- **p09-06-d02** — applied; Vale reports the new state in a spoken beat that can follow Cecil’s disturbing question.
+- **p10-01-d01** — applied; Vale separates the two causes as a person explaining an unexpected activation.
+- **p10-02-d02** — applied; Vale acknowledges the answer before stating the material consequence.
+- **p10-05-d01** — applied; The negotiated deadline uses natural spoken English.
+- **p10-05-d02** — applied; Vale answers Ila’s negotiated term rather than classifying an input.
+- **p11-01-d02** — applied; Ananya’s dry reply is clinical but not bureaucratic.
+- **p11-04-d01** — applied; Vale asks Ananya about the action she has just taken.
+- **p11-04-d02** — applied; Ananya’s answer stays pointed while sounding spoken.
+- **p12-01-d01** — applied; Riju reports the live failure instead of declaring a universal device property.
+- **p12-02-d01** — applied; Ananya keeps the person visible and rejects the machine’s implied diagnosis.
+- **p12-02-d02** — applied; The failure is attributed plainly to the reader and its environment.
+- **p12-03-d01** — applied; Riju names the observed technical cause in language another person can follow.
+- **p12-04-d01** — applied; Vale gives a concrete instruction tied to the preceding observation.
+- **p12-04-d02** — applied; The contrast remains exact without making Vale sound mechanical.
+- **p12-05-d02** — applied; Riju distinguishes the machine’s view from the person’s actual identity.
+- **p13-02-d02** — applied; Riju answers Cecil’s comparison as an explanation, not a label.
+- **p13-05-d01** — applied; Riju takes responsibility for the design he is proposing.
+- **p13-05-d02** — applied; Vale’s compact instruction keeps its parallel rhythm while sounding spoken.
+- **p14-01-d01** — applied; Riju explains the new display rather than reading its category label.
+- **p14-02-d01** — applied; Vale responds to the visible benefit in ordinary language.
+- **p14-05-d02** — applied; Riju’s defensive reply contracts naturally.
+- **p15-02-d02** — applied; Riju answers Vale’s question directly before explaining the defect.
+- **p15-04-d02** — applied; Vale reacts to the displayed range instead of stating a general maxim.
+- **p16-01-d01** — applied; Riju asks the obvious human question raised by the classroom in front of him.
+- **p16-02-d01** — applied; Vale revises their own framing in direct speech.
+- **p16-02-d02** — applied; Riju completes Vale’s thought without repeating its abstract structure.
+- **p16-04-d01** — applied; Riju reacts to the absurd visible consequence in immediate language.
+- **p16-04-d02** — applied; Vale turns a policy abstraction into the affected person’s concrete right.
+- **p16-05-d02** — applied; Vale uses an ordinary contraction while moving the group to the next location.

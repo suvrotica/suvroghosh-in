@@ -1,0 +1,699 @@
+page: 55
+title: 'The failure hearing'
+purpose: "Begin the climax with public evidence, constraints and Riju's
+  irreversible personal choice."
+location: golmohar-municipal-hall
+time: late night
+layout: 'Personal-choice opener, three linked case panels, a two-rule
+  confrontation, and a bell-led category turn.'
+panelCount: 6
+dialogueGoal: "Convert blame into testable requirements and make Riju's
+  sacrifice an active institutional choice."
+pageTurn: 'Cecil proposes the category the system lacked: unknown.'
+visualMotif: 'Seven harmed cases entering one hearing as separate, sourced files.'
+continuity:
+  - 'Address denial, frozen welfare, urgent triage, price loop, school
+    prediction, flood warning and utility cut all retain source and time.'
+  - 'The promised direct appointment is formally withdrawn.'
+  - 'Vale rules out unlogged favour; Ila rules out consequential denial without
+    appeal.'
+panels:
+  - id: p55-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Frontal hearing view with Riju at the evidence table'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: steady accountability,
+          pose: 'Sliding the blank direct-appointment pane back towards Vale',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: formal attention,
+          pose: 'Receiving the pane without closing the hearing',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: guarded respect,
+          pose: 'Keeping the red ledger open to the public record',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: lower-right,
+          emotion: decision logging,
+          pose: 'Stamp arm poised over the withdrawal record',
+          facing: left
+        }
+    props: [ vale-silver-tablet, municipal-red-ledger, cecil-stamp-arm ]
+    foreground: 'The direct-appointment pane crosses away from Riju.'
+    middleGround: 'Riju faces the public benches without bargaining for an alternative.'
+    background: 'A blank open-process board waits unused.'
+    action: 'Riju gives up the promised direct appointment tied to the invalid
+      launch result.'
+    dialogue:
+      - id: p55-01-d01
+        speaker: riju-dhar
+        text: 'Withdraw my appointment. If there''s a post, open it to everyone.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.505,
+            y: 0.012,
+            width: 0.31,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.41, y: 0.18 },
+            tailDirection: left,
+            fontScale: 0.82,
+            manualBreaks:
+              [ 'Withdraw my appointment.', 'If there''s a post, open it to everyone.' ]
+          }
+      - id: p55-01-d02
+        speaker: director-vale
+        text: 'Then it’s withdrawn.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.75,
+            y: 0.255,
+            width: 0.23,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.895, y: 0.105 },
+            tailDirection: up,
+            fontScale: 0.96,
+            manualBreaks: [ 'Then it’s', 'withdrawn.' ]
+          }
+    continuity:
+      [
+        'The post is not abolished; only the improper direct award is
+          withdrawn.',
+        'Riju receives no substitute promise.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm hearing light with dim tablet and ledger illumination.',
+        palette: 'Moss, graphite, municipal red, cream enamel and silver.',
+        composition: 'Recommendation pane moves away from centred Riju towards Vale;
+          blank open board deep background; reserve upper-centre and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.22-0.83, y 0.03-0.23',
+            'lower-right: x 0.63-0.98, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju gives up the promised direct appointment.',
+        description: "Riju slides the blank direct-appointment pane towards Vale and
+          asks for any permanent post to use an open process. Ila keeps the
+          public ledger open while Cecil records Vale's formal withdrawal."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-055/p55-01__r1.png, final: panels/approved/page-055/p55-01__r1.png, width: 1672, height: 941 }
+  - id: p55-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Top-oblique hearing view of the address and welfare cases'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: precise remorse,
+          pose: 'Setting landmark testimony beside the rejected address source',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: practical scrutiny,
+          pose: 'Setting migration dates beside the frozen welfare record',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: lower-centre,
+          emotion: source distinction,
+          pose: 'Holding false and unresolved cases apart',
+          facing: front
+        }
+    props: [ riju-form-satchel, municipal-red-ledger, cecil-stamp-arm ]
+    foreground: 'Address denial and welfare suspension remain separate source packets.'
+    middleGround: 'Witnessed landmark evidence and seasonal movement dates accompany them.'
+    background: 'The affected residents sit directly behind their evidence.'
+    action: 'The first cases show that unknown facts were converted into
+      consequential denials.'
+    dialogue:
+      - id: p55-02-d01
+        speaker: riju-dhar
+        text: 'No listed address. They''d just moved.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.012,
+            width: 0.45,
+            height: 0.24,
+            z: 10,
+            tailTarget: { x: 0.24, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.70,
+            manualBreaks:
+              [ 'No listed address.', 'They''d just moved.' ]
+          }
+    continuity:
+      [
+        'Affected residents remain participants, not anonymous props.',
+        'Neither case is silently corrected yet.'
+      ]
+    prompt:
+      {
+        lighting: 'Lantern and document lamps on paired case packets.',
+        palette: 'Paper cream, municipal red, moss, cream enamel and muted blue.',
+        composition: "Two paired cases mirror each other around Cecil's separation;
+          reserve upper-left and lower-right.",
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.47, y 0.03-0.21',
+            'lower-right: x 0.53-0.98, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The hearing pairs a landmark address with a rejected record and migration
+          dates with frozen welfare.',
+        description: 'Riju places witnessed landmark evidence beside an address denial
+          while Ila adds seasonal movement dates to the welfare case. Cecil
+          keeps unresolved and false states physically separate.'
+      }
+    art: { status: final, revision: 3, source: panels/raw/page-055/p55-02__r3.png, final: panels/approved/page-055/p55-02__r3.png, width: 1448, height: 1086 }
+  - id: p55-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Hearing-table view of clinical and flood evidence'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: clinical precision,
+          pose: 'Presenting the signed urgent-care reason',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: right,
+          emotion: sober evidence,
+          pose: 'Setting the upstream warning beside a water-marked route map',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: centre,
+          emotion: analytical attention,
+          pose: 'Comparing observed urgency and physical water against rejected scores',
+          facing: front
+        }
+    props: [ clinic-paper-queue, waterproof-document-tube, vale-silver-tablet ]
+    foreground: 'The clinical reason and flood warning show source, time and
+      physical observations.'
+    middleGround: 'Vale aligns them with the scheduler and rainfall denials.'
+    background: 'The public benches see both cause chains.'
+    action: 'The next cases prove that compliance and local rainfall were the wrong
+      variables for urgent danger.'
+    dialogue:
+      - id: p55-03-d01
+        speaker: ananya-rook
+        text: 'We saw danger. It saw rules.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.225,
+            width: 0.36,
+            height: 0.105,
+            z: 10,
+            tailTarget: { x: 0.15, y: 0.44 },
+            tailDirection: down,
+            fontScale: 0.86,
+            manualBreaks: [ 'We saw danger.', 'It saw rules.' ]
+          }
+      - id: p55-03-d02
+        speaker: babul-courier
+        text: 'Water rose. Sensor didn’t.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.62,
+            y: 0.225,
+            width: 0.36,
+            height: 0.105,
+            z: 10,
+            tailTarget: { x: 0.84, y: 0.44 },
+            tailDirection: down,
+            fontScale: 0.86,
+            manualBreaks: [ 'Water rose.', 'Sensor didn’t.' ]
+          }
+    continuity:
+      [
+        'Clinical reason and upstream warning keep source and time.',
+        'Vale gives both evidence sets equal attention.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm evidence light on clinical paper and water-marked map.',
+        palette: 'Indigo, ochre, graphite, paper cream and rain blue.',
+        composition: 'Two physical evidence chains flank Vale; reserve upper-left and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.52, y 0.03-0.22',
+            'lower-right: x 0.51-0.98, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya presents the urgent-care reason while Babul-da presents the
+          upstream flood warning.',
+        description: 'The signed clinical reason and a water-marked route map sit on
+          either side of Vale. Ananya distinguishes observed urgency from a
+          score, and Babul-da distinguishes travelling water from local
+          rainfall.'
+      }
+    art: { status: final, revision: 3, source: panels/raw/page-055/p55-03__r3.png, final: panels/approved/page-055/p55-03__r3.png, width: 1448, height: 1086 }
+  - id: p55-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Wide-medium evidence fan across price, school and utility cases'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: critical synthesis,
+          pose: 'Separating prediction, instruction and property status on the tablet',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: accountable analysis,
+          pose: 'Showing the feedback loop and absent property key',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: linked-case comparison,
+          pose: 'Stamp arm holding three case paths apart',
+          facing: front
+        }
+    props: [ vale-silver-tablet, riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: 'Authenticated market, school and utility source extracts occupy
+      separate blank case panels; the original slates and registers remain at
+      their institutions.'
+    middleGround: 'Riju and Vale identify how each prediction became a decision.'
+    background: 'The dead server cupboard remains visible.'
+    action: 'The remaining cases show feedback, premature instruction and a property
+      classification with material consequences.'
+    dialogue:
+      - id: p55-04-d01
+        speaker: director-vale
+        text: 'The forecast drove demand. Guidance chose for a child. A tag cut
+          power.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.315,
+            y: 0.225,
+            width: 0.385,
+            height: 0.43,
+            z: 10,
+            tailTarget: { x: 0.82, y: 0.105 },
+            tailDirection: right,
+            fontScale: 0.84,
+            manualBreaks:
+              [
+                'The forecast',
+                'drove demand.',
+                'Guidance chose',
+                'for a child.',
+                'A tag cut power.'
+              ]
+          }
+    continuity:
+      [
+        'All three case sources remain separate.',
+        'Only authenticated extracts are at the Hall; the market slates and
+          school registers have not moved.',
+        'Vale names system effects without dismissing the useful functions.'
+      ]
+    prompt:
+      {
+        lighting: 'Lantern light with three subdued case glows.',
+        palette: 'Market mustard, school maroon, utility amber, graphite, moss and cream
+          enamel.',
+        composition: 'Three case panels fan around Cecil while Vale synthesises from
+          right; reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right: x 0.37-0.99, y 0.02-0.24' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The hearing compares the market loop, school prediction and utility cut.',
+        description: 'Three blank case panels remain separate around Cecil. Vale
+          explains how a demand forecast, educational guidance and a property
+          category each became a material decision.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-055/p55-04__r1.png, final: panels/approved/page-055/p55-04__r1.png, width: 1448, height: 1086 }
+  - id: p55-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Opposed wide two-shot across the public evidence'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: institutional firmness,
+          pose: 'Keeping the contractor override file open',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: equal firmness,
+          pose: 'Keeping the automatic denial cases open',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: attentive readiness,
+          pose: 'Standing between both evidence sets',
+          facing: front
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: rule comparison,
+          pose: 'Stamp arm level between them',
+          facing: front
+        }
+    props:
+      [
+        vale-silver-tablet,
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'Unlogged favour evidence faces automatic denial evidence.'
+    middleGround: 'Vale and Ila each impose a non-negotiable constraint.'
+    background: 'Residents remain able to see both records.'
+    action: 'The hearing rules out both invisible personal favour and consequential
+      automated denial without recourse.'
+    dialogue:
+      - id: p55-05-d01
+        speaker: director-vale
+        text: 'No unlogged favours.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.50,
+            y: 0.02,
+            width: 0.28,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.87, y: 0.32 },
+            tailDirection: down,
+            fontScale: 0.95,
+            manualBreaks: [ 'No unlogged favours.' ]
+          }
+      - id: p55-05-d02
+        speaker: ila-dastidar
+        text: 'Human appeal—or no denial.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.03,
+            y: 0.66,
+            width: 0.30,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.24, y: 0.21 },
+            tailDirection: up,
+            fontScale: 0.90,
+            manualBreaks: [ 'Human appeal—or no denial.' ]
+          }
+    continuity:
+      [
+        'Both constraints become design requirements.',
+        'Human recourse must be accessible, not merely listed.'
+      ]
+    prompt:
+      {
+        lighting: 'Balanced lantern light without heroic spotlighting.',
+        palette: 'Graphite, municipal red, moss, cream enamel and paper cream.',
+        composition: 'Vale and Ila balance opposing evidence sets with Riju and Cecil
+          between; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.62-0.98, y 0.03-0.21',
+            'lower-left: x 0.02-0.54, y 0.72-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale and Ila set equal limits on favour and automated denial.',
+        description: 'Vale keeps the contractor override file open while Ila keeps the
+          automatic denial cases open. Riju and Cecil stand between the two
+          evidence sets as both constraints become public requirements.'
+      }
+    art: { status: final, revision: 2, source: panels/raw/page-055/p55-05__r2.png, final: panels/approved/page-055/p55-05__r2.png, width: 1672, height: 941 }
+  - id: p55-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low comic view along the evidence queue'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: ceremonial seriousness,
+          pose: 'Ringing the bicycle bell once to call the next case',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: category proposal,
+          pose: 'Extending an empty third stamp position between true and false pads',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: startled hope,
+          pose: 'Turning from the case files to the empty position',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: intent curiosity,
+          pose: 'Leaning towards the empty position with ledger ready',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: far-right,
+          emotion: evaluative attention,
+          pose: 'Holding the field-test pane open',
+          facing: left
+        }
+      - {
+          id: ananya-rook,
+          position: far-left,
+          emotion: cautious readiness,
+          pose: 'Resting a hand on the clinical reason log',
+          facing: right
+        }
+    props:
+      [
+        babul-authoritative-bell,
+        cecil-stamp-arm,
+        municipal-red-ledger,
+        vale-silver-tablet,
+        clinic-paper-queue
+      ]
+    foreground: 'The bicycle bell substitutes for the dead hearing microphone.'
+    middleGround: 'Cecil creates an empty third stamp position between two established pads.'
+    background: 'Seven case packets remain queued with source clips.'
+    action: 'Cecil proposes preserving unresolved facts as an explicit category.'
+    dialogue:
+      - id: p55-06-d01
+        speaker: cecil-c17
+        text: 'The prior model lacked a required category.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.37,
+            width: 0.29,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.585, y: 0.30 },
+            tailDirection: none,
+            fontScale: 0.68,
+            manualBreaks:
+              [ 'The prior model lacked', 'a required category.' ]
+          }
+      - id: p55-06-d02
+        speaker: riju-dhar
+        text: 'Unknown.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.39,
+            y: 0.435,
+            width: 0.18,
+            height: 0.11,
+            z: 10,
+            tailTarget: { x: 0.445, y: 0.15 },
+            tailDirection: up,
+            fontScale: 0.90,
+            manualBreaks: [ 'Unknown.' ]
+          }
+    soundEffects:
+      - {
+          text: 'BRANG',
+          description: "Babul-da's bicycle bell calls the next case in place of the dead
+            microphone.",
+          position: { x: 0.03, y: 0.32, z: 8 }
+        }
+    visualJoke: 'A bicycle bell runs the formal failure hearing with more authority
+      than the dead microphone.'
+    continuity:
+      [
+        'Unknown is proposed, not yet implemented.',
+        'The third stamp pad has no approved category yet.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm hearing lamps with a small blue edge on the empty third
+          position.',
+        palette: 'Brass, cream enamel, municipal red, moss, graphite and indigo.',
+        composition: "Bell opens the reading path into Cecil's empty third category,
+          then to Riju and decision-makers; reserve upper-centre and
+          lower-left.",
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.29-0.80, y 0.03-0.22',
+            'lower-left: x 0.24-0.49, y 0.73-0.92'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil proposes an empty third category as Babul-da calls the next case by
+          bell.',
+        description: 'Babul-da rings the bicycle bell beside the dead hearing
+          microphone. Cecil extends a blank third stamp position between true
+          and false, and Riju names the missing category as unknown.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-055/p55-06__r1.png, final: panels/approved/page-055/p55-06__r1.png, width: 1672, height: 941 }

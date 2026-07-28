@@ -1,0 +1,595 @@
+page: 37
+title: 'The suspicious correction'
+purpose: "Show an audit of legitimate care disabling the clinic and
+  contaminating Riju's attempt to repair it."
+location: rook-clinic
+time: early afternoon
+layout: "Five panels move from frozen clinic systems to paper workarounds,
+  Vale's limited intervention, Riju's flagged correction, and a market-risk
+  propagation."
+panelCount: 5
+dialogueGoal: 'Ananya stays practical, Vale defends the need for audits without
+  defending this outcome, and Riju discovers that correction itself now counts
+  as suspicious.'
+pageTurn: 'The same risk alerts reach the market engine and begin changing
+  shortage forecasts.'
+visualMotif: 'Every red lock produces another piece of useful paper carried by hand.'
+continuity:
+  - "The anti-corruption review follows Ananya's page-36 override."
+  - 'Scheduling access and the medicine account were already beginning to dim.'
+  - 'The patient treated on page 36 remains stable; the clinic-wide consequences
+    now dominate.'
+panels:
+  - id: p37-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Frontal clinic-wide shot of systems freezing in sequence'
+    location: rook-clinic
+    time: early afternoon
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre-left,
+          emotion: contained urgency,
+          pose: 'Holding open the paper queue as the scheduler closes',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-right,
+          emotion: appalled focus,
+          pose: 'Tracing the investigation from override to medicine account',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: neutral monitoring,
+          pose: 'Projecting red audit locks over clinic branches',
+          facing: left
+        }
+    props:
+      [
+        clinic-paper-queue,
+        amber-clinic-glasses,
+        ananya-mechanical-watch,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        clinic-solar-battery
+      ]
+    foreground: 'The paper queue remains open and usable.'
+    middleGround: "The digital scheduler locks first, followed by the clinic's
+      medicine account."
+    background: 'Staff begin taking blank paper trays from storage.'
+    action: 'The audit freezes scheduling and pauses the medicine account before
+      determining whether any abuse occurred.'
+    dialogue:
+      - id: p37-01-d01
+        speaker: ananya-rook
+        text: 'Keep the paper queue moving. Count every dose by hand.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.08,
+            y: 0.05,
+            width: 0.52,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.36, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.91
+          }
+      - id: p37-01-d02
+        speaker: riju-dhar
+        text: 'It stopped the fix before it found any wrongdoing.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.43,
+            y: 0.46,
+            width: 0.50,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.62, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.91
+          }
+    continuity:
+      [
+        'The clinic solar battery remains present; the failure is permissions
+          and accounts, not electricity.',
+        'Scheduler, account, dose, and audit text is deterministic composition
+          only.'
+      ]
+    prompt:
+      {
+        lighting: 'Steady solar-backed clinic light despite red system locks.',
+        palette: 'Clinic teal, solar amber, paper cream, warning red, Grid blue and
+          charcoal.',
+        composition: 'Usable paper queue foreground; scheduler and medicine branches
+          lock in sequence; Ananya directs centre-left, Riju traces
+          centre-right, Cecil projects right; reserve upper-left and
+          lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.05-0.63, y 0.03-0.22',
+            'lower-centre reserve: x 0.39-0.96, y 0.70-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            darkened power-outage clinic
+          ]
+      }
+    accessibility:
+      {
+        alt: 'An audit locks the clinic scheduler and medicine account while paper work
+          continues.',
+        description: 'The clinic remains lit, but red audit locks close the scheduler
+          and medicine account. Ananya keeps the paper queue moving and orders
+          manual dose counts as Riju traces the freeze.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-037/p37-01__r1.png, final: panels/approved/page-037/p37-01__r1.png, width: 1672, height: 941 }
+  - id: p37-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Moving corridor shot beside clinic staff carrying paper records'
+    location: rook-clinic
+    time: early afternoon
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: brisk concentration,
+          pose: 'Carrying a paper medicine ledger and directing staff',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: notification mode,
+          pose: 'Holding up a celebratory digital badge',
+          facing: left
+        }
+    props:
+      [
+        clinic-paper-queue,
+        amber-clinic-glasses,
+        ananya-mechanical-watch,
+        cecil-stamp-arm
+      ]
+    foreground: 'Clinic staff carry stacks of blank paper forms and medicine counts
+      past Cecil.'
+    middleGround: 'A bright congratulatory badge blooms over the red-locked scheduler.'
+    background: 'Patients continue along the improvised paper route.'
+    action: 'The system congratulates itself for finding an anomaly while the clinic
+      works around the resulting lockout.'
+    dialogue:
+      - id: p37-02-d01
+        speaker: cecil-c17
+        text: 'Successful anomaly detection.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.54,
+            y: 0.05,
+            width: 0.40,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.78, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.98
+          }
+      - id: p37-02-d02
+        speaker: ananya-rook
+        text: 'Carry that. It may be useful as a tray.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.05,
+            y: 0.40,
+            width: 0.50,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.25, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.92
+          }
+    visualJoke: "A congratulatory anomaly badge hovers uselessly while staff carry
+      the clinic's work on paper."
+    continuity:
+      [
+        'Patients continue to receive organised manual care.',
+        'The congratulatory notice carries no generated lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Practical corridor light with absurdly cheerful badge glow.',
+        palette: 'Clinic teal, paper cream, cheerful gold, warning red and Grid blue.',
+        composition: 'Paper-laden staff cross foreground; Ananya directs left, Cecil
+          offers bright badge right; locked scheduler behind; reserve
+          upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.51-0.97, y 0.03-0.21',
+            'lower-left reserve: x 0.03-0.58, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            chaotic patient care
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A cheerful anomaly badge hovers while clinic staff carry paper records.',
+        description: 'Staff move organised stacks of forms and medicine counts along the
+          corridor. Cecil presents a bright congratulatory badge over the locked
+          scheduler, and Ananya suggests using it as a tray.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-037/p37-02__r1.png, final: panels/approved/page-037/p37-02__r1.png, width: 1448, height: 1086 }
+  - id: p37-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Three-quarter municipal counter shot linking clinic and hall'
+    location: golmohar-municipal-hall
+    time: early afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: grave pragmatism,
+          pose: 'Opening an expedited audit lane on her silver tablet',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: insistent concern,
+          pose: "Presenting Ananya's timed paper triage record",
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: background,
+          emotion: attentive neutrality,
+          pose: 'Holding the investigation seal over the ledger',
+          facing: front
+        }
+    props:
+      [
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        clinic-paper-queue,
+        municipal-red-ledger,
+        cecil-stamp-arm
+      ]
+    foreground: "Ananya's timed paper record lies open across the red ledger."
+    middleGround: 'Vale opens an expedited path but leaves the audit seal intact.'
+    background: 'The clinic branches remain partly locked.'
+    action: "Vale accelerates the review but refuses Riju's request to disable
+      auditing."
+    dialogue:
+      - id: p37-03-d01
+        speaker: riju-dhar
+        text: 'Disable the audit until the clinic can work.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.05,
+            y: 0.05,
+            width: 0.48,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.34, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.94
+          }
+      - id: p37-03-d02
+        speaker: director-vale
+        text: 'No. Real abuse exists. I can speed up the evidence, not switch off
+          scrutiny.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.39,
+            y: 0.42,
+            width: 0.58,
+            height: 0.19,
+            z: 10,
+            tailTarget: { x: 0.73, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.82
+          }
+    continuity:
+      [
+        'Vale rejects both automatic guilt and blanket removal of audit
+          controls.',
+        'Audit, evidence, and clinic labels remain blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Hard hall light balanced by silver tablet glow.',
+        palette: 'Ledger red, silver, paper cream, municipal green, Grid blue and
+          warning red.',
+        composition: 'Timed paper evidence foreground; Riju left appeals, Vale right
+          opens expedited lane while seal stays intact; Cecil behind; reserve
+          upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.56, y 0.03-0.21',
+            'lower-right reserve: x 0.36-0.99, y 0.67-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale expedites a clinic review but leaves the audit control in place.',
+        description: "Ananya's timed paper triage record lies across the red municipal
+          ledger. Vale opens a faster evidence path on their tablet while the
+          investigation seal remains over the clinic branches."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-037/p37-03__r1.png, final: panels/approved/page-037/p37-03__r1.png, width: 1448, height: 1086 }
+  - id: p37-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Close-up on Riju submitting a carefully sourced administrative correction'
+    location: golmohar-municipal-hall
+    time: early afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: wary precision,
+          pose: 'Attaching the timed triage record and clinical rationale to the override',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: background-left,
+          emotion: anticipatory concern,
+          pose: 'Watching the risk border form around their edit',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: background-right,
+          emotion: active processing,
+          pose: 'Raising its stamp arm as the edit enters the audit',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        clinic-paper-queue,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        municipal-red-ledger
+      ]
+    foreground: 'The correction visibly includes time, clinical observation, author,
+      and source record.'
+    middleGround: "A red risk border forms around Riju's otherwise complete submission."
+    background: 'The earlier address correction and clinic override sit in the same
+      intervention history.'
+    action: 'Riju submits a fully evidenced correction, which the Grid flags because
+      he has made several recent interventions.'
+    dialogue:
+      - id: p37-04-d01
+        speaker: riju-dhar
+        text: 'Time, reason, witness, source. Nothing is missing.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.38,
+            width: 0.55,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.9
+          }
+      - id: p37-04-d02
+        speaker: cecil-c17
+        text: 'Repeated correction behaviour flagged.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.58,
+            y: 0.56,
+            width: 0.40,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.84, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.93
+          }
+    continuity:
+      [
+        "Riju's edit is transparently sourced; frequency, not missing
+          evidence, produces suspicion.",
+        'All submission and history text is deterministic.'
+      ]
+    prompt:
+      {
+        lighting: 'Focused terminal light ringed by warning red.',
+        palette: 'Grid blue, warning red, paper cream, silver and ledger red.',
+        composition: 'Complete evidence bundle fills foreground; red border forms around
+          it; Riju central, Vale and Cecil small behind; reserve
+          upper-left-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left-centre reserve: x 0.09-0.71, y 0.03-0.22',
+            'lower-right reserve: x 0.53-0.98, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            extra fingers,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A fully evidenced correction is flagged because Riju has made several
+          corrections.',
+        description: "Riju's submission visibly contains a time, clinical reason,
+          witness, and source. A red border still forms around it as Cecil
+          reports repeated correction behaviour."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-037/p37-04__r1.png, final: panels/approved/page-037/p37-04__r1.png, width: 1448, height: 1086 }
+  - id: p37-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Network pull-back from the flagged correction towards the market'
+    location: golmohar-municipal-hall
+    time: early afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: alarmed understanding,
+          pose: 'Following risk pulses beyond the clinic branch',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-left,
+          emotion: grave attention,
+          pose: 'Opening a dependency map across her tablet',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: neutral relay,
+          pose: 'Passing the combined risk values into the market branch',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        municipal-red-ledger,
+        market-price-slates
+      ]
+    foreground: 'The clinic correction joins welfare, address, and flood-risk alerts
+      in one red bundle.'
+    middleGround: 'The bundle travels through Crosswalk links rather than remaining
+      attached to its original cases.'
+    background: 'Market price slates and stock icons begin shifting before any
+      physical shortage.'
+    action: 'The market engine consumes the same risk alerts and revises its
+      shortage forecast.'
+    dialogue:
+      - id: p37-05-d01
+        speaker: riju-dhar
+        text: 'Those are different risks.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.34,
+            width: 0.32,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.19, y: 0.49 },
+            tailDirection: down,
+            fontScale: 1
+          }
+      - id: p37-05-d02
+        speaker: director-vale
+        text: 'The market''s reading them as one forecast.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.37,
+            y: 0.34,
+            width: 0.47,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.39, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        'This propagation causes the self-fulfilling price loop on page 38.',
+        'Risk, market, stock, and price text is reserved for deterministic
+          composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Neutral hall light crossed by red pulses into warm market light.',
+        palette: 'Warning red, Grid blue, market ochre, clinic teal, paper cream and
+          silver.',
+        composition: 'Distinct risk cards bundle foreground then travel right to
+          shifting market slates; Riju and Vale follow path left, Cecil relays
+          right; reserve upper-left and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.40, y 0.03-0.20',
+            'lower-centre reserve: x 0.24-0.77, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Unrelated risk alerts combine into one market shortage forecast.',
+        description: 'Clinic, welfare, address, and flood-risk cards join into a red
+          bundle and travel through the Crosswalk. In the distance, market stock
+          icons and price slates begin changing before any physical shortage
+          exists.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-037/p37-05__r1.png, final: panels/approved/page-037/p37-05__r1.png, width: 1672, height: 941 }

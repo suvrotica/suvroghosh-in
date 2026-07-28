@@ -1,0 +1,283 @@
+format: suvroghosh-comic-dialogue-revisions
+formatVersion: 1
+revisions:
+  - dialogueId: p33-05-d01
+    before: 'One source link. Then future deliveries resume.'
+    after: 'One source link, then deliveries start again.'
+    reason: 'Riju talks through the fix he is making instead of narrating a system state.'
+    status: accepted
+  - dialogueId: p34-02-d01
+    before: 'Low confidence should mean ask.'
+    after: 'Low confidence should mean we ask.'
+    reason: 'Riju makes the missing human decision-maker explicit.'
+    status: accepted
+  - dialogueId: p34-03-d01
+    before: 'It acted before anyone answered.'
+    after: 'It acted before anyone could answer.'
+    reason: 'Riju names the lost opportunity rather than merely the order of events.'
+    status: accepted
+  - dialogueId: p34-05-d01
+    before: 'Then erase the duplicate.'
+    after: 'Then remove the duplicate.'
+    reason: 'Riju asks for a correction without casually using the story’s loaded erasure language.'
+    status: accepted
+  - dialogueId: p34-05-d02
+    before: 'No. Duplicates are real. The mistake was treating suspicion as a verdict.'
+    after: 'No. Some duplicates are real. The mistake was turning suspicion into a verdict.'
+    reason: 'Vale answers Riju’s proposed overcorrection and distinguishes the actual failure.'
+    status: accepted
+  - dialogueId: p34-06-d01
+    before: 'The addresses are separate. Why is the person separating?'
+    after: 'I separated the addresses. Why is it splitting the person?'
+    reason: 'Riju owns his action and reacts to the new consequence in front of him.'
+    status: accepted
+  - dialogueId: p35-01-d01
+    before: 'Four turns for one person. None of them belongs to the person here.'
+    after: 'Four turns for one person—and none belongs to the person standing here.'
+    reason: 'Riju’s line follows the visual reveal in one frustrated spoken beat.'
+    status: accepted
+  - dialogueId: p35-02-d01
+    before: 'Separate the relative before you join the spellings.'
+    after: 'Separate the relative. Then join the spellings.'
+    reason: 'Vale gives two readable actions and avoids an overfilled compact balloon.'
+    status: accepted
+  - dialogueId: p35-03-d01
+    before: 'The name is tidier. The result has no patient.'
+    after: 'The name is tidier. Now the result has no patient.'
+    reason: 'Riju connects the lost result directly to the repair just made.'
+    status: accepted
+  - dialogueId: p35-04-d02
+    before: 'That is the problem.'
+    after: "That's the problem."
+    reason: 'Riju answers Cecil naturally and keeps the punchline compact.'
+    status: accepted
+  - dialogueId: p35-05-d01
+    before: 'That weighting has already travelled.'
+    after: "That weighting's already travelled."
+    reason: 'Vale’s warning remains precise without sounding machine-generated.'
+    status: accepted
+  - dialogueId: p35-05-d02
+    before: 'To the clinic scheduler.'
+    after: 'Into the clinic scheduler.'
+    reason: 'Riju completes Vale’s sentence as a continuing exchange.'
+    status: accepted
+  - dialogueId: p36-03-d01
+    before: 'That confidence weight came from my correction.'
+    after: 'That confidence weight came from my fix.'
+    reason: 'Riju admits the causal link in words he would use under pressure.'
+    status: accepted
+  - dialogueId: p36-04-d01
+    before: 'Compliance measures ease of administration, not illness severity.'
+    after: 'That score measures how easy you are to process, not how ill you are.'
+    reason: 'Ananya translates the abstraction into what it does to a patient.'
+    status: accepted
+  - dialogueId: p36-05-d01
+    before: 'Undocumented exception recorded.'
+    after: 'Exception undocumented.'
+    reason: 'Cecil retains procedural diction while fitting the deliberately cramped status balloon.'
+    status: accepted
+  - dialogueId: p36-05-d02
+    before: 'The document is under your stamp.'
+    after: 'Your stamp is on the document.'
+    reason: 'Riju points to the visible evidence in direct syntax.'
+    status: accepted
+  - dialogueId: p37-01-d02
+    before: 'It froze the remedy before proving the offence.'
+    after: 'It froze the remedy before it proved the offence.'
+    reason: 'Riju’s complaint follows natural spoken grammar.'
+    status: accepted
+  - dialogueId: p37-03-d02
+    before: 'No. Real abuse exists. I can expedite evidence, not abolish scrutiny.'
+    after: 'No. Real abuse exists. I can speed up the evidence, not switch off scrutiny.'
+    reason: 'Vale refuses Riju in human language while preserving the institutional distinction.'
+    status: accepted
+  - dialogueId: p37-05-d02
+    before: 'The market is receiving them as one forecast.'
+    after: "The market's reading them as one forecast."
+    reason: 'Vale reacts to Riju’s distinction rather than describing an interface transfer.'
+    status: accepted
+  - dialogueId: p38-01-d01
+    before: 'Predicted shortage is rising. Actual stock has barely moved.'
+    after: "The shortage forecast's rising. The stock's barely moved."
+    reason: 'Riju contrasts model and shelf while speaking quickly in the market.'
+    status: accepted
+  - dialogueId: p38-04-d01
+    before: 'It has measured its own effect and called it proof.'
+    after: "It's measured its own effect and called that proof."
+    reason: 'Riju reacts to the loop as it happens instead of delivering an abstract maxim.'
+    status: accepted
+  - dialogueId: p38-05-d01
+    before: 'Which price bought the rice?'
+    after: 'Which price bought it?'
+    reason: 'Babul’s question points at the rice in hand and fits the fast transaction beat.'
+    status: accepted
+  - dialogueId: p38-05-d02
+    before: 'Advisory non-compliance recorded.'
+    after: 'Non-compliance recorded.'
+    reason: 'Cecil’s concise status remains intentionally procedural and fits the compact balloon.'
+    status: accepted
+  - dialogueId: p38-06-d01
+    before: 'The advisory is not advice. It is infrastructure.'
+    after: "This isn't advice anymore. It's infrastructure."
+    reason: 'Riju reaches the same insight in recognisably spoken language.'
+    status: accepted
+  - dialogueId: p39-01-d02
+    before: 'Based on a laboratory they cannot use?'
+    after: "From a lab they can't use?"
+    reason: 'Riju challenges the visible absurdity without policy-report diction.'
+    status: accepted
+  - dialogueId: p39-02-d01
+    before: 'The flood moved them. Their ambition did not move.'
+    after: "The flood moved them. It didn't move their ambition."
+    reason: 'Riju’s defence of the pupils sounds spoken while retaining the contrast.'
+    status: accepted
+  - dialogueId: p39-03-d01
+    before: 'They can refuse the placement and lose the laboratory grant.'
+    after: 'They can reject the placement—and lose the lab grant.'
+    reason: 'Riju states the coercive choice in the school’s ordinary terms.'
+    status: accepted
+  - dialogueId: p39-04-d01
+    before: 'This link exceeds the trial. Guidance can help, but only if it can be contested.'
+    after: 'This link is outside the trial. Guidance helps only if people can challenge it.'
+    reason: 'Vale responds to the specific overreach and names who needs recourse.'
+    status: accepted
+  - dialogueId: p40-02-d01
+    before: 'When the canal rises, this is canal.'
+    after: 'When the canal rises, this road becomes canal.'
+    reason: 'Babul keeps the dry practical joke while using his established complete grammar.'
+    status: accepted
+  - dialogueId: p40-02-d02
+    before: 'The map calls it permanent road.'
+    after: "The map says it's permanent."
+    reason: 'Riju answers Babul with the exact contradiction and no unnecessary noun repetition.'
+    status: accepted
+  - dialogueId: p40-05-d01
+    before: 'I believe the pattern. What verifies danger now?'
+    after: 'I believe you. What proves the danger right now?'
+    reason: 'Vale addresses Babul’s evidence and makes the immediate need clear.'
+    status: accepted
+  - dialogueId: p40-05-d02
+    before: 'A call from upstream. Or water at the cup.'
+    after: 'A call from upstream. Or water at that cup.'
+    reason: 'Babul points to the physical flood marker in the panel.'
+    status: accepted
+  - dialogueId: p41-01-d01
+    before: 'Understood. We will clear the low lane.'
+    after: "Got it. We'll clear the low lane."
+    reason: 'Babul answers a familiar caller rather than acknowledging an official command.'
+    status: accepted
+  - dialogueId: p41-02-d01
+    before: 'Known circuit. Exact time. Named release.'
+    after: 'Known caller. Exact time. Named release.'
+    reason: 'Riju states the evidence a person supplied, not the telephone route alone.'
+    status: accepted
+  - dialogueId: p41-02-d02
+    before: 'Local precipitation remains below threshold.'
+    after: 'Local rainfall below threshold.'
+    reason: 'Cecil’s formal contradiction stays clear and fits the small status balloon.'
+    status: accepted
+  - dialogueId: p41-04-d01
+    before: 'Turn round. Upstream water is coming.'
+    after: "Turn round. Upstream water's coming."
+    reason: 'Babul’s warning stays direct and immediate.'
+    status: accepted
+  - dialogueId: p41-06-d02
+    before: 'Then I correct every linked emergency now.'
+    after: "Then I'm correcting every linked emergency now."
+    reason: 'Riju commits to the action already under his hands.'
+    status: accepted
+  - dialogueId: p42-03-d02
+    before: 'And rising.'
+    after: "And the water's rising."
+    reason: 'Ila supplies the concrete fact missing from Vale’s formal emergency request.'
+    status: accepted
+  - dialogueId: p43-02-d01
+    before: 'Left. Now. The road drops ahead.'
+    after: 'Left—now. The road drops ahead.'
+    reason: 'The interruption makes Babul’s urgent shouted direction read as one action.'
+    status: accepted
+  - dialogueId: p43-06-d02
+    before: 'That road is full before they arrive.'
+    after: 'That road will be full before they arrive.'
+    reason: 'Babul clearly predicts the consequence of the new diversion.'
+    status: accepted
+  - dialogueId: p44-05-d02
+    before: 'It has found the gate.'
+    after: 'It found the gate.'
+    reason: 'Riju points out what the ambulance has physically reached in the current scene.'
+    status: accepted
+  - dialogueId: p45-01-d01
+    before: 'The patient is duplicated. The clinic address is invalid.'
+    after: "The patient appears twice. The clinic address doesn't exist."
+    reason: 'Riju reports what the records are doing without adopting their dehumanising labels.'
+    status: accepted
+  - dialogueId: p45-02-d01
+    before: 'It cannot choose a patient, so it has chosen no patient.'
+    after: "It can't choose between the records, so it's chosen no patient."
+    reason: 'Riju names the actual conflict and its human consequence.'
+    status: accepted
+  - dialogueId: p45-04-d01
+    before: 'Urgent respiratory risk. Paper reserve opened by me at twenty-one fourteen.'
+    after: 'Urgent respiratory risk. I opened the paper reserve at twenty-one fourteen.'
+    reason: 'Ananya creates a precise contemporaneous record without speaking in passive form.'
+    status: accepted
+  - dialogueId: p45-04-d02
+    before: 'Reason, witness, quantity. Recorded.'
+    after: 'Reason, witness, quantity—all recorded.'
+    reason: 'Riju answers Ananya’s live audit statement in one readable beat.'
+    status: accepted
+  - dialogueId: p45-06-d01
+    before: 'The patient is stable. The decision remains reviewable.'
+    after: "The patient's stable. The decision can be reviewed."
+    reason: 'Ananya reports the outcome and safeguard in ordinary clinical speech.'
+    status: accepted
+  - dialogueId: p45-06-d02
+    before: 'Vale has the reason. Not the authority.'
+    after: 'Vale has the reason, but not the authority.'
+    reason: 'Riju completes the contrast in a single continuing response.'
+    status: accepted
+  - dialogueId: p46-01-d01
+    before: 'Emergency care was necessary. The reason is signed and time-stamped. Authorise.'
+    after: 'Emergency care was necessary. The signed reason is time-stamped. Authorise it.'
+    reason: 'Vale’s formal request is precise but syntactically directed at the decision system.'
+    status: accepted
+  - dialogueId: p46-04-d01
+    before: 'The evidence is sufficient. The jurisdiction is not.'
+    after: "We've enough evidence. We don't have jurisdiction."
+    reason: 'Vale admits the institutional limit as a person inside the failed process.'
+    status: accepted
+  - dialogueId: p46-04-d02
+    before: 'Then fix jurisdiction after breathing.'
+    after: 'Then fix jurisdiction after we fix the breathing.'
+    reason: 'Ananya answers Vale and keeps the patient’s immediate need first.'
+    status: accepted
+  - dialogueId: p46-06-d02
+    before: 'Mine.'
+    after: 'That was mine.'
+    reason: 'Riju accepts the causal responsibility without sounding like a field value.'
+    status: accepted
+  - dialogueId: p47-01-d01
+    before: 'Address, welfare, clinic, prices, school, traffic, flood. Same output.'
+    after: 'Address, welfare, clinic, prices, school, traffic, flood—the same output.'
+    reason: 'Riju’s traced list resolves into one spoken realisation.'
+    status: accepted
+  - dialogueId: p47-02-d02
+    before: 'Yes.'
+    after: 'Yes. I approved it.'
+    reason: 'Riju does not let Cecil’s provenance statement carry his confession for him.'
+    status: accepted
+  - dialogueId: p47-03-d01
+    before: 'I moved the anomaly count outside the launch measure. The deadline rewarded a clean result.'
+    after: 'I hid the anomalies outside the launch measure. The deadline rewarded a clean number.'
+    reason: 'Riju names the concealment and incentive plainly, without euphemistic data language.'
+    status: accepted
+  - dialogueId: p47-04-d02
+    before: 'And I made them equivalent.'
+    after: 'And I told the system they were.'
+    reason: 'Riju answers Cecil’s warning in the concrete terms of his own configuration choice.'
+    status: accepted
+  - dialogueId: p47-05-d01
+    before: 'Then I take it all back.'
+    after: "Then I'll take it all back."
+    reason: 'Riju’s instinctive rollback promise uses the urgent future tense of the moment.'
+    status: accepted

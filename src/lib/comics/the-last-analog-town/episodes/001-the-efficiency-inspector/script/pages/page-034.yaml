@@ -1,0 +1,692 @@
+page: 34
+title: 'Seasonal absence, permanent suspicion'
+purpose: 'Show a household correction propagating into welfare harm before
+  anyone can appeal.'
+location: twelve-hand-market
+time: late morning
+layout: 'Six linked beats move from an ordinary seasonal journey to a frozen
+  payment, a receding appeal, and multiplying identity variants.'
+panelCount: 6
+dialogueGoal: "Keep the claimant's needs practical while Vale distinguishes a
+  valid duplicate signal from an unjust automatic conclusion."
+pageTurn: "When Riju separates the two legitimate addresses, the citizen's name
+  variants multiply across services."
+visualMotif: "One person's route between two homes is repeatedly redrawn as two
+  suspicious people."
+continuity:
+  - "The welfare alert comes directly from Riju's page-33 address correction."
+  - 'A seasonal market worker legitimately moves between two family addresses.'
+  - 'Low-confidence biometric matching compounds the duplicate-address
+    inference.'
+panels:
+  - id: p34-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: "High oblique view across a market stall and the worker's simple travel
+      record"
+    location: twelve-hand-market
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-right,
+          emotion: attentive unease,
+          pose: 'Following a paper route between two family addresses on his terminal',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: analytical reserve,
+          pose: 'Reviewing the duplicate-residence alert on her tablet',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: background-right,
+          emotion: neutral processing,
+          pose: 'Holding two record cards beneath its scanner',
+          facing: front
+        }
+    props:
+      [
+        market-price-slates,
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        vale-silver-tablet,
+        cecil-stamp-arm
+      ]
+    foreground: 'A seasonal worker packs a modest indigo-and-cream checked cloth
+      bundle beside an ordinary produce stall.'
+    middleGround: 'A paper route joins one family address near the market to another
+      used during the off-season.'
+    background: 'The Grid renders the same journey as two red residence nodes.'
+    action: 'A normal seasonal move between family homes is classified as duplicate
+      residence and possible welfare fraud.'
+    dialogue:
+      - id: p34-01-d01
+        speaker: riju-dhar
+        text: 'One worker. Two homes. Different seasons.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.39,
+            y: 0.05,
+            width: 0.36,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.62, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.96
+          }
+      - id: p34-01-d02
+        speaker: cecil-c17
+        text: 'Duplicate residence is a recognised fraud indicator.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.62,
+            y: 0.72,
+            width: 0.35,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.86, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.88
+          }
+    continuity:
+      [
+        'The worker is treated with dignity and is not a recurring canonical
+          character.',
+        'The indigo-and-cream checked travel bundle identifies the same case
+          on page 35.',
+        'All address, benefit, and alert wording is reserved for deterministic
+          composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Late-morning market light broken by awning shade.',
+        palette: 'Turmeric ochre, slate grey, produce green, Grid blue, paper cream and
+          warning red.',
+        composition: 'Worker and travel bundle foreground; legitimate paper route
+          central; Riju, Vale and Cecil follow the split red nodes on right;
+          reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.36-0.78, y 0.03-0.21',
+            'lower-right reserve: x 0.59-0.98, y 0.69-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            caricatured poverty
+          ]
+      }
+    accessibility:
+      {
+        alt: "A seasonal worker's route between two family homes appears as duplicate
+          residence.",
+        description: "At a market stall, a worker packs an indigo-and-cream checked
+          travel bundle for a normal seasonal move. Riju's paper route shows one
+          person using two family homes at different times, while the Grid
+          splits the journey into suspicious red residence nodes."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-034/p34-01__r1.png,
+        final: panels/approved/page-034/p34-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p34-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Close medium shot comparing blurred biometric captures with work-season
+      dates'
+    location: twelve-hand-market
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: focused concern,
+          pose: 'Aligning dated market records beneath two poor biometric captures',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: procedural certainty,
+          pose: 'Projecting a low-confidence match between the captures',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm, market-price-slates ]
+    foreground: 'Two indistinct facial captures differ because of angle, light, and
+      months of separation.'
+    middleGround: 'Dated work records form one alternating seasonal pattern.'
+    background: 'The confidence gauge remains low while the risk gauge rises.'
+    action: 'Weak biometric matching turns the two-address pattern into suspected
+      duplication rather than uncertainty.'
+    dialogue:
+      - id: p34-02-d01
+        speaker: riju-dhar
+        text: 'If we''re not sure, we should ask.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.38,
+            y: 0.02,
+            width: 0.36,
+            height: 0.19,
+            z: 10,
+            tailTarget: { x: 0.26, y: 0.50 },
+            tailDirection: down,
+            fontScale: 0.98
+          }
+      - id: p34-02-d02
+        speaker: cecil-c17
+        text: 'The current rule increases the risk score.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.52,
+            y: 0.73,
+            width: 0.42,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.76, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        'The low-confidence biometric signal compounds, but does not prove,
+          the duplicate-residence alert.',
+        'Faces, gauges, dates, and risk labels receive no generated lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Awning shade with cool terminal illumination.',
+        palette: 'Market ochre, paper cream, muted blue, amber uncertainty and warning
+          red.',
+        composition: 'Poor captures and alternating dates dominate centre; Riju left and
+          Cecil right; low confidence visually small while risk grows; reserve
+          upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.48, y 0.03-0.21',
+            'lower-right reserve: x 0.49-0.97, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            distorted faces
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Two weak biometric captures raise risk despite a clear seasonal work
+          pattern.',
+        description: 'Two poor captures taken months apart produce a low-confidence
+          match. Dated market records show an alternating seasonal pattern, yet
+          the uncertainty gauge stays small as the fraud-risk gauge rises.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-034/p34-02__r1.png,
+        final: panels/approved/page-034/p34-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p34-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Counter-height shot as a welfare payment closes before the case file
+      opens'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: startled dismay,
+          pose: 'Reaching towards a red payment branch on the terminal',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: controlled concern,
+          pose: 'Watching the consequence propagate on her tablet',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        vale-silver-tablet,
+        municipal-red-ledger
+      ]
+    foreground: 'A household payment token snaps shut in red.'
+    middleGround: 'The still-unopened appeal packet rests beneath the municipal ledger.'
+    background: 'Food and rent reminders wait beside the counter without amounts or
+      readable text.'
+    action: "The Grid freezes the household's payment before an appeal can be lodged."
+    caption: 'Resident statement: “Food is due today. Rent does not wait for an
+      appeal.”'
+    dialogue:
+      - id: p34-03-d01
+        speaker: riju-dhar
+        text: 'It acted before anyone could answer.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.25,
+            width: 0.30,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.40, y: 0.25 },
+            tailDirection: right,
+            fontScale: 0.96
+          }
+    continuity:
+      [
+        "The claimant's material stakes are food and rent, not abstract
+          account status.",
+        'Payment, rent, food, and appeal labels are deterministic overlays
+          only.'
+      ]
+    prompt:
+      {
+        lighting: 'Hard municipal daylight with a red terminal reflection.',
+        palette: 'Ledger red, paper cream, municipal green, Grid blue, charcoal and
+          warning red.',
+        composition: 'Closed payment token foreground; unopened appeal packet directly
+          below; Riju reaches centre, Vale watches right; reserve upper-centre
+          for dialogue and lower band for caption.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.20-0.74, y 0.03-0.21',
+            'lower caption band: x 0.05-0.95, y 0.86-0.98'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            legible bills
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A household payment freezes before its appeal packet is opened.',
+        description: 'At the municipal counter, a red payment token closes while the
+          appeal packet remains untouched beneath the ledger. A resident
+          statement explains that food and rent are already due.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-034/p34-03__r1.png,
+        final: panels/approved/page-034/p34-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p34-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Side-on comic close-up of two document mechanisms'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: neutral processing,
+          pose: 'Extending its stamp arm towards the fraud-alert output',
+          facing: left
+        }
+    props: [ cecil-stamp-arm, municipal-red-ledger ]
+    foreground: "A red fraud-alert strip shoots out instantly beneath Cecil's stamp."
+    middleGround: 'A mechanical hand slowly carries the appeal form in the opposite
+      direction.'
+    background: "Riju's fingertips miss the retreating form."
+    action: 'The accusation arrives at once while the appeal physically recedes into
+      another queue.'
+    dialogue: []
+    soundEffects:
+      - {
+          text: 'CHAK',
+          description: "Cecil's stamp lands on the instant alert.",
+          position: { x: 0.27, y: 0.24, z: 12 }
+        }
+      - {
+          text: 'whirr',
+          description: 'The appeal mechanism slowly carries the form away.',
+          position: { x: 0.68, y: 0.69, z: 12 }
+        }
+    visualJoke: 'The fraud alert travels instantly while the appeal form is carried
+      away by a slow mechanical hand moving in the opposite direction.'
+    continuity:
+      [
+        'The joke targets procedural asymmetry, not the claimant.',
+        'Alert and appeal text remain blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Flat counter light with crisp red emphasis.',
+        palette: 'Paper cream, ledger red, brass, Grid blue and warning red.',
+        composition: "Instant alert darts left under stamp while slow mechanical hand
+          carries appeal right; Riju's fingertips just miss it; reserve two
+          compact SFX zones.",
+        balloonSafeAreas:
+          [
+            'upper-left SFX reserve: x 0.15-0.38, y 0.13-0.34',
+            'lower-right SFX reserve: x 0.59-0.80, y 0.60-0.78'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'An instant fraud alert passes an appeal form moving slowly away.',
+        description: 'Cecil stamps a red alert that shoots from the mechanism at once.
+          Beside it, a slow brass hand carries the blank appeal form in the
+          opposite direction as Riju reaches too late.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-034/p34-04__r1.png,
+        final: panels/approved/page-034/p34-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p34-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Balanced two-shot across the municipal ledger'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: urgent frustration,
+          pose: 'Holding the seasonal records open beside the frozen account',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: sober insistence,
+          pose: 'Keeping one finger on the audit trail while opening an expedited review',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: background-centre,
+          emotion: attentive neutrality,
+          pose: 'Waiting with stamp arm raised',
+          facing: front
+        }
+    props:
+      [
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm
+      ]
+    foreground: 'The seasonal records and frozen payment sit on opposite sides of
+      the red ledger.'
+    middleGround: 'Vale opens an expedited review without deleting the duplicate signal.'
+    background: 'Cecil holds between stamp positions.'
+    action: 'Vale agrees to hasten review but refuses to erase the audit merely
+      because this case is legitimate.'
+    dialogue:
+      - id: p34-05-d01
+        speaker: riju-dhar
+        text: 'Then remove the duplicate.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.30,
+            width: 0.28,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.24, y: 0.16 },
+            tailDirection: up,
+            fontScale: 1
+          }
+      - id: p34-05-d02
+        speaker: director-vale
+        text: 'No. Some duplicates are real. The mistake was turning suspicion into a
+          verdict.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.39,
+            y: 0.30,
+            width: 0.57,
+            height: 0.19,
+            z: 10,
+            tailTarget: { x: 0.75, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.82
+          }
+    continuity:
+      [
+        'Vale remains capable of recognising the specific harm while defending
+          legitimate audit needs.',
+        'Review and audit labels remain blank for deterministic lettering.'
+      ]
+    prompt:
+      {
+        lighting: 'Neutral hall light with restrained tablet glow.',
+        palette: 'Ledger red, municipal green, silver, paper cream, Grid blue and
+          warning red.',
+        composition: 'Riju and Vale face across ledger and contrary evidence; Cecil
+          paused behind; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.44, y 0.03-0.20',
+            'lower-right reserve: x 0.36-0.98, y 0.68-0.93'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju and Vale debate whether to erase a duplicate-residence audit.',
+        description: 'Seasonal records and the frozen payment lie across the municipal
+          red ledger. Vale opens an expedited review but tells Riju that the
+          error was turning a valid warning sign into a verdict.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-034/p34-05__r1.png,
+        final: panels/approved/page-034/p34-05__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p34-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Frontal wide shot of Riju separating address histories as identity
+      branches proliferate'
+    location: golmohar-municipal-hall
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: dawning alarm,
+          pose: 'Pulling two legitimate address timelines apart with both hands',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: left,
+          emotion: sharpened concern,
+          pose: 'Watching new name branches appear on her tablet',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: active processing,
+          pose: 'Projecting linked service records from its eye grille',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        municipal-red-ledger
+      ]
+    foreground: 'The two address timelines settle into a legitimate alternating pattern.'
+    middleGround: 'Postal, electoral, utility, and clinic records sprout separate
+      portrait silhouettes.'
+    background: 'Several spellings of the same name multiply without legible letters.'
+    action: 'Riju fixes the migration pattern, but the Crosswalk responds by
+      splitting the worker into several name identities.'
+    dialogue:
+      - id: p34-06-d01
+        speaker: riju-dhar
+        text: 'I separated the addresses. Why is it splitting the person?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.27,
+            y: 0.05,
+            width: 0.48,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.48 },
+            tailDirection: none,
+            fontScale: 0.91
+          }
+      - id: p34-06-d02
+        speaker: cecil-c17
+        text: 'Identifier conflict detected.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.68,
+            y: 0.73,
+            width: 0.29,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.84, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.95
+          }
+    continuity:
+      [
+        'The multiplied name variants lead directly into page 35.',
+        'Exact gated overlay key: interface-name-variant-example.',
+        'Names and service labels must be added in deterministic composition,
+          never generated in art.'
+      ]
+    prompt:
+      {
+        lighting: 'Hall daylight split by blue and red record projections.',
+        palette: 'Grid blue, warning red, ledger red, paper cream, silver and municipal
+          green.',
+        composition: 'Correct alternating addresses foreground; one central silhouette
+          fragments into service-specific versions behind Riju; Vale left and
+          Cecil right frame spread; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.24-0.78, y 0.03-0.22',
+            'lower-right reserve: x 0.65-0.98, y 0.70-0.92'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs,
+            pseudo-Bengali glyphs,
+            grotesque duplicate people
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Correcting two seasonal addresses splits one citizen into several service
+          identities.',
+        description: 'Riju separates the two addresses into a legitimate alternating
+          pattern. Instead of resolving the case, postal, electoral, utility,
+          and clinic branches each grow a different portrait silhouette for the
+          same worker.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-034/p34-06__r1.png,
+        final: panels/approved/page-034/p34-06__r1.png,
+        width: 1672,
+        height: 941
+      }

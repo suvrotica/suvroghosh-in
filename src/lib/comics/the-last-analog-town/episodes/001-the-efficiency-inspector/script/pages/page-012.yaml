@@ -1,0 +1,625 @@
+page: 12
+title: 'Hands the scanner cannot read'
+purpose: 'Expose physical and infrastructural failure conditions in supposedly
+  universal identity.'
+location: rook-clinic
+time: morning
+layout: 'Tight rejection opener, four investigative beats crossing hand, glass
+  and power, then a wide propagation turn.'
+panelCount: 6
+dialogueGoal: 'Make the scanner failure a property of conditions and design, not
+  of the people it rejects.'
+pageTurn: 'Low-confidence flags appear simultaneously in clinic, welfare and
+  market data.'
+visualMotif: 'A human hand remaining clear while its digital outline repeatedly fades.'
+continuity:
+  - 'The rejected hand belongs to a manual worker with worn fingerprints; the
+    depiction is respectful.'
+  - 'Damp glass, voltage fluctuation and physical wear each contribute to
+    failure.'
+  - 'Riju enables manual verification, which downstream systems mark as lower
+    confidence.'
+panels:
+  - id: p12-01
+    panel: 1
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Tight over-scanner view of a rejected hand'
+    location: rook-clinic
+    time: morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: puzzled urgency,
+          pose: 'Holding a clean cloth near the scanner without touching the hand',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: repeated verification,
+          pose: 'Optical shutters fixed on the blank failure indicator',
+          facing: left
+        }
+    props: [ riju-form-satchel, cecil-stamp-arm ]
+    foreground: 'A work-worn hand rests correctly on damp scanner glass.'
+    middleGround: 'The blank identity outline fails to complete.'
+    background: 'Riju and Cecil watch the repeated rejection.'
+    action: 'The patient presents the same hand correctly and is rejected again.'
+    dialogue:
+      - id: p12-01-d01
+        speaker: riju-dhar
+        text: 'It''s not reading the print.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.48,
+            y: 0.02,
+            width: 0.48,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.27, y: 0.23 },
+            tailDirection: down,
+            fontScale: 0.95
+          }
+    continuity:
+      [
+        'No generated error words appear.',
+        "The patient's hand anatomy is natural and undistorted."
+      ]
+    prompt:
+      {
+        lighting: 'Cool scanner light on the hand with warm clinic fill.',
+        palette: 'Warm brown skin, blue-grey scanner, moss green and cream enamel.',
+        composition: 'Hand and damp glass dominate foreground; Riju and Cecil read
+          behind; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.49, y 0.03-0.21' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A biometric scanner rejects a correctly placed work-worn hand.',
+        description: "A manual worker's hand rests properly on damp scanner glass, but
+          the blank identity outline fails to complete. Riju and Cecil watch the
+          second rejection."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-012/p12-01__r1.png,
+        final: panels/approved/page-012/p12-01__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p12-02
+    panel: 2
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Clinical close-up on Ananya examining hand and scanner'
+    location: rook-clinic
+    time: morning
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre,
+          emotion: precise correction,
+          pose: 'Inspecting worn fingertips through amber frames while wiping condensation
+            from the glass',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: edge-left,
+          emotion: chastened attention,
+          pose: "Watching Ananya's comparison",
+          facing: right
+        }
+    props: [ amber-clinic-glasses, ananya-mechanical-watch ]
+    foreground: 'Condensation clears from one side of the scanner glass.'
+    middleGround: 'Ananya compares intact human function with worn ridge detail.'
+    background: 'Riju listens rather than operating the terminal.'
+    action: 'Ananya identifies damp glass and worn ridges as ordinary conditions,
+      not failed identity.'
+    dialogue:
+      - id: p12-02-d01
+        speaker: ananya-rook
+        text: 'Her print hasn''t gone anywhere.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.70,
+            y: 0.03,
+            width: 0.28,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.56, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.93
+          }
+      - id: p12-02-d02
+        speaker: ananya-rook
+        text: 'The reader can''t cope with these conditions.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.01,
+            y: 0.70,
+            width: 0.30,
+            height: 0.23,
+            z: 10,
+            tailTarget: { x: 0.59, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        "Ananya never mocks the worker's body.",
+        'Amber glasses remain circular and mechanical watch remains left
+          wrist.'
+      ]
+    prompt:
+      {
+        lighting: 'Clean clinical side light revealing condensation and fingertip
+          texture without photorealism.',
+        palette: 'Amber, clinic grey, warm brown, muted blue and cream.',
+        composition: "Ananya's hands compare glass and fingertips; keep face clear and
+          two dialogue reserves.",
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.15-0.76, y 0.03-0.22',
+            'lower-centre reserve: x 0.25-0.79, y 0.74-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya compares worn fingertips with condensation on the scanner.',
+        description: "Ananya wipes moisture from the scanner and examines the worker's
+          worn fingertips through amber glasses. She points out that the person
+          has not failed; the reader is operating under difficult conditions."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-012/p12-02__r1.png,
+        final: panels/approved/page-012/p12-02__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p12-03
+    panel: 3
+    size: tall
+    aspectRatio: '3:4'
+    camera: 'Vertical shot from solar battery down to voltage trace and scanner'
+    location: rook-clinic
+    time: morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: lower-left,
+          emotion: diagnostic focus,
+          pose: 'Watching a voltage trace on his terminal',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: lower-right,
+          emotion: attentive concern,
+          pose: 'Looking from flickering light to scanner',
+          facing: left
+        }
+    props: [ clinic-solar-battery, riju-reconciliation-terminal, vale-silver-tablet ]
+    foreground: 'The scanner indicator dims as the ceiling light dips.'
+    middleGround: "Riju's blank voltage trace sags."
+    background: 'The wall-mounted solar battery sits above a painted flood line.'
+    action: 'A brief voltage drop causes another rejection before the glass dries.'
+    dialogue:
+      - id: p12-03-d01
+        speaker: riju-dhar
+        text: 'And the voltage just dipped.'
+        style: speech
+        readingOrder: 1
+        narrationOrder: 2
+        balloon:
+          {
+            x: 0.48,
+            y: 0.04,
+            width: 0.48,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.31, y: 0.62 },
+            tailDirection: down,
+            fontScale: 0.95
+          }
+    soundEffects:
+      - {
+          text: 'TIK',
+          description: 'The scanner relay drops out during the voltage dip.',
+          narrationOrder: 1,
+          position: { x: 0.71, y: 0.61, z: 7 }
+        }
+    continuity:
+      [
+        'Solar battery can support selected loads, not the entire clinic.',
+        'All switch labels and traces are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Momentary dim clinic light with steady teal battery presence.',
+        palette: 'Dark teal, cream, terminal grey, moss and graphite.',
+        composition: 'Vertical causal line from battery to sagging trace to scanner;
+          keep lower-left dialogue reserve.',
+        balloonSafeAreas: [ 'lower-left reserve: x 0.04-0.56, y 0.71-0.94' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "A voltage dip dims the scanner beneath the clinic's solar battery.",
+        description: 'The scanner relay drops as the clinic lights dip. Riju sees the
+          sag on a blank terminal trace while Vale looks up towards the limited
+          solar battery mounted above the flood line.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-012/p12-03__r1.png,
+        final: panels/approved/page-012/p12-03__r1.png,
+        width: 1024,
+        height: 1536
+      }
+  - id: p12-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Eye-level medium shot at the manual-verification desk'
+    location: rook-clinic
+    time: morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: constructive urgency,
+          pose: 'Opening a blank manual-verification path on the terminal',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: firm approval,
+          pose: 'Pointing to the failure-condition field, not the patient',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: audit recording,
+          pose: 'Stamp arm poised beside source evidence',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, vale-silver-tablet, cecil-stamp-arm ]
+    foreground: 'Alternative evidence sits beside the rejected scanner result.'
+    middleGround: 'Riju opens the manual route while Vale redirects the language of failure.'
+    background: 'The patient waits within the same queue position.'
+    action: 'The team verifies identity through documents and a human witness
+      without repeating the scan.'
+    dialogue:
+      - id: p12-04-d01
+        speaker: director-vale
+        text: 'Record why the scan failed.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.26,
+            y: 0.03,
+            width: 0.40,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.75, y: 0.23 },
+            tailDirection: right,
+            fontScale: 0.96
+          }
+      - id: p12-04-d02
+        speaker: director-vale
+        text: 'Don''t record a failed person.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.57,
+            y: 0.53,
+            width: 0.40,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.74, y: 0.55 },
+            tailDirection: up,
+            fontScale: 0.94
+          }
+    continuity:
+      [
+        'Vale acts competently and respectfully.',
+        'Manual-verification evidence remains linked to the source failure.'
+      ]
+    prompt:
+      {
+        lighting: 'Even clinic light restored after the dip.',
+        palette: 'Terminal grey, muted blue, cream, moss and graphite.',
+        composition: "Alternative evidence and terminal foreground; Vale's gesture
+          points away from patient and towards failure field; reserve right-side
+          balloons.",
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.50-0.96, y 0.03-0.21',
+            'lower-right reserve: x 0.42-0.94, y 0.72-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Vale tells Riju to record the scanner's failure condition, not a failed
+          person.",
+        description: "Riju opens a manual-verification route using documents and witness
+          evidence. Vale points to the machine's failure field and insists the
+          record describe conditions rather than blame the patient."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-012/p12-04__r1.png,
+        final: panels/approved/page-012/p12-04__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p12-05
+    panel: 5
+    size: small
+    aspectRatio: '1:1'
+    camera: "Tight insert on Cecil's status comparison"
+    location: rook-clinic
+    time: morning
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: formal warning,
+          pose: 'Stamp arm hovering between verified and confidence fields',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: edge-left,
+          emotion: uneasy realisation,
+          pose: "Reading the propagated status over Cecil's casing",
+          facing: right
+        }
+    props: [ cecil-stamp-arm, riju-reconciliation-terminal ]
+    foreground: 'A blank verified marker and a lower-confidence marker occupy
+      separate panes.'
+    middleGround: "Cecil's arm cannot make them equivalent."
+    background: 'Riju sees linked service icons illuminate.'
+    action: "Manual verification succeeds locally but lowers the identity's
+      confidence everywhere else."
+    dialogue:
+      - id: p12-05-d01
+        speaker: cecil-c17
+        text: 'Verified manually. Confidence reduced.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.27,
+            y: 0.05,
+            width: 0.63,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.62, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.89
+          }
+      - id: p12-05-d02
+        speaker: riju-dhar
+        text: 'Only to the machine.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.05,
+            y: 0.77,
+            width: 0.36,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.24, y: 0.56 },
+            tailDirection: up,
+            fontScale: 0.97
+          }
+    continuity:
+      [
+        'The low-confidence flag persists into welfare, clinic and market
+          data.',
+        'Cecil remains categorical rather than sympathetic.'
+      ]
+    prompt:
+      {
+        lighting: "Cool interface glow on cream casing and Riju's concerned face.",
+        palette: 'Muted blue, cream, moss, graphite and warning amber.',
+        composition: "Two blank status panes flank Cecil's stamp arm; Riju enters left;
+          reserve upper-right and lower-left.",
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.24-0.94, y 0.03-0.22',
+            'lower-left reserve: x 0.03-0.44, y 0.74-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil records a manually verified identity with lower confidence.',
+        description: "Two blank status panes show verification and confidence as
+          separate values. Cecil reports that manual evidence succeeds but
+          lowers the score, and Riju realises the penalty exists only in the
+          machine's interpretation."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-012/p12-05__r1.png,
+        final: panels/approved/page-012/p12-05__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p12-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide conceptual view across three linked blank service panes'
+    location: rook-clinic
+    time: morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: dawning concern,
+          pose: 'Watching the same low-confidence marker repeat',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: controlled alarm,
+          pose: 'Tracking propagation on the silver tablet',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: transmission complete,
+          pose: 'Head aligned with the linked panes',
+          facing: left
+        }
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: clinical disapproval,
+          pose: 'Folding her arms beside the successfully verified patient',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        amber-clinic-glasses
+      ]
+    foreground: 'One low-confidence marker repeats into three blank panes.'
+    middleGround: 'Riju and Vale follow links branching beyond the clinic.'
+    background: 'The patient proceeds to care despite the spreading administrative flag.'
+    action: 'The clinic accommodation propagates as risk to welfare and market
+      records.'
+    dialogue:
+      - id: p12-06-d01
+        speaker: ananya-rook
+        text: 'You''ve opened the door and narrowed the corridor.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.05,
+            width: 0.40,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.93
+          }
+    visualJoke: 'The successful verification receives three fresh warnings.'
+    continuity:
+      [
+        'Linked panes represent clinic, welfare and market without generated
+          labels.',
+        'The patient remains admitted to care.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm clinic light crossed by three cool interface glows.',
+        palette: 'Clinic grey, amber, moss green, graphite, cream and warning amber.',
+        composition: 'One marker branches across three blank panes; Ananya grounds left
+          and Cecil right; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.51, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'One low-confidence flag spreads from the clinic into three linked
+          services.',
+        description: 'A manually verified patient continues into care, but the same
+          low-confidence marker branches across blank clinic, welfare and market
+          panes. Ananya tells Riju that opening one door has narrowed the
+          corridor beyond it.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-012/p12-06__r1.png,
+        final: panels/approved/page-012/p12-06__r1.png,
+        width: 1672,
+        height: 941
+      }

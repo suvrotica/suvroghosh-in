@@ -1,0 +1,590 @@
+page: 54
+title: 'The anomaly ledger'
+purpose: "End the crisis movement with Riju's public confession and a viable
+  path into the climax."
+location: golmohar-municipal-hall
+time: late night
+layout: 'Wide hearing assembly, three progressively tighter confession beats,
+  and a balanced challenge turn.'
+panelCount: 5
+dialogueGoal: 'Make Riju accountable without self-pity and let Vale set the test
+  for a hybrid solution.'
+pageTurn: 'Vale asks Riju to show a system that can state what it does not know.'
+visualMotif: 'A private anomaly notebook moving from shadow into the centre of a
+  public evidence table.'
+continuity:
+  - 'The anomaly ledger, clinical reason log, maps, utility order, contractor
+    evidence and trial clause are present.'
+  - 'Riju admits approving unknown equals false, hiding the anomaly count and
+    being influenced by the promised post.'
+  - 'No one accepts denial, total rollback or restoration of unlogged favour.'
+panels:
+  - id: p54-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide council-chamber view from the public benches'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre-left,
+          emotion: composed gravity,
+          pose: 'Standing beside the evidence table with red ledger open',
+          facing: front
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: rigorous attention,
+          pose: 'Standing with tablet dimmed and hands clear',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: frightened resolve,
+          pose: 'Holding his satchel closed against his side',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: limited-power record mode,
+          pose: 'Facing the chamber with blue light dim',
+          facing: front
+        }
+      - {
+          id: ananya-rook,
+          position: far-right,
+          emotion: watchful fatigue,
+          pose: 'Holding the clinical reason log',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: far-left,
+          emotion: solemn readiness,
+          pose: 'Standing beside the cycle bell and evidence tube',
+          facing: right
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        riju-form-satchel,
+        cecil-stamp-arm,
+        clinic-paper-queue,
+        waterproof-document-tube,
+        babul-authoritative-bell
+      ]
+    foreground: 'Affected residents and public workers fill the benches as distinct
+      individuals.'
+    middleGround: 'Maps, utility order, clinic reasons and contractor evidence
+      occupy separate table zones.'
+    background: 'Lanterns sit on the old cabinet because the smart table remains
+      powerless.'
+    action: 'The emergency public review assembles around evidence with sources and
+      timestamps intact.'
+    dialogue:
+      - id: p54-01-d01
+        speaker: ila-dastidar
+        text: 'This is a review, not a funeral. Say what failed and who decided.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.18,
+            y: 0.012,
+            width: 0.64,
+            height: 0.115,
+            z: 10,
+            tailTarget: { x: 0.475, y: 0.25 },
+            tailDirection: down,
+            fontScale: 0.87
+          }
+    visualJoke: 'The smart table has built-in lamps that cannot switch on without
+      the server.'
+    continuity:
+      [
+        'Public participants remain dignified and engaged.',
+        'All evidence lettering stays blank in art.'
+      ]
+    prompt:
+      {
+        lighting: "Lanterns, exchange-line lamps and Cecil's dim blue light.",
+        palette: 'Warm amber, municipal red, graphite, indigo, ochre and cream enamel.',
+        composition: 'Evidence table forms a horizontal civic stage between public
+          benches and cast; reserve upper-centre.',
+        balloonSafeAreas: [ 'upper-centre: x 0.19-0.82, y 0.03-0.23' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The cast and residents gather around a lantern-lit evidence table.',
+        description: 'Affected residents and public workers face Ila, Vale, Riju, Cecil,
+          Ananya and Babul-da across a table divided among maps, clinical
+          reasons, the utility order and contractor evidence.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-054/p54-01__r1.png, final: panels/approved/page-054/p54-01__r1.png, width: 1672, height: 941 }
+  - id: p54-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Frontal medium shot on Riju before the public benches'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: direct accountability,
+          pose: 'Placing both hands flat away from the terminal',
+          facing: front
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: exact witness,
+          pose: 'Holding the approval log open beside him',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: "Riju's replaced blue key is visible but untouched."
+    middleGround: 'Riju addresses the chamber without a screen between him and the
+      listeners.'
+    background: 'The public benches remain silent.'
+    action: 'Riju publicly admits the decisive configuration choice.'
+    dialogue:
+      - id: p54-02-d01
+        speaker: riju-dhar
+        text: 'I approved ''unknown equals false.'''
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.35,
+            height: 0.24,
+            z: 10,
+            tailTarget: { x: 0.46, y: 0.21 },
+            tailDirection: right,
+            fontScale: 0.97
+          }
+      - id: p54-02-d02
+        speaker: cecil-c17
+        text: 'Approval log confirms.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.66,
+            y: 0.05,
+            width: 0.31,
+            height: 0.145,
+            z: 10,
+            tailTarget: { x: 0.81, y: 0.36 },
+            tailDirection: down,
+            fontScale: 1.00,
+            manualBreaks: [ 'Approval log confirms.' ]
+          }
+    continuity:
+      [
+        'Riju speaks simply and does not blame Cecil.',
+        'The approval log remains visible.'
+      ]
+    prompt:
+      {
+        lighting: "Warm lantern light on Riju with Cecil's cool blue edge.",
+        palette: 'Moss, cream enamel, warm amber, graphite and muted red.',
+        composition: 'Riju faces front with hands away from controls; Cecil and approval
+          source form a factual side witness; reserve upper-centre and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.28-0.74, y 0.03-0.21',
+            'lower-right: x 0.61-0.97, y 0.73-0.92'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju publicly admits approving unknown as false.',
+        description: 'Riju stands before the silent public benches with both hands away
+          from the terminal. Cecil holds the approval log beside him and
+          confirms the record.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-054/p54-02__r1.png, final: panels/approved/page-054/p54-02__r1.png, width: 1448, height: 1086 }
+  - id: p54-03
+    panel: 3
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Tight shot on Riju opening the hidden notebook'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: ashamed resolve,
+          pose: 'Removing a thin anomaly notebook from beneath the satchel forms',
+          facing: front
+        }
+      - {
+          id: ila-dastidar,
+          position: edge-right,
+          emotion: unsparing attention,
+          pose: "Watching the notebook rather than Riju's face",
+          facing: left
+        }
+    props: [ riju-form-satchel, riju-anomaly-notebook, municipal-red-ledger ]
+    foreground: 'The private anomaly notebook emerges from beneath tidy launch forms.'
+    middleGround: 'Riju opens it to pages of unresolved cases.'
+    background: 'The public evidence table waits.'
+    action: 'Riju admits that he hid the scale of the anomalies.'
+    dialogue:
+      - id: p54-03-d01
+        speaker: riju-dhar
+        text: 'I hid it.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.03,
+            width: 0.27,
+            height: 0.11,
+            z: 10,
+            tailTarget: { x: 0.43, y: 0.25 },
+            tailDirection: right,
+            fontScale: 0.95,
+            manualBreaks: [ 'I hid it.' ]
+          }
+      - id: p54-03-d02
+        speaker: ila-dastidar
+        text: 'Why?'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.80,
+            y: 0.35,
+            width: 0.185,
+            height: 0.105,
+            z: 10,
+            tailTarget: { x: 0.82, y: 0.25 },
+            tailDirection: up,
+            fontScale: 1.02,
+            manualBreaks: [ 'Why?' ]
+          }
+    continuity:
+      [
+        'The anomaly notebook is now public evidence.',
+        'No notebook text is generated.'
+      ]
+    prompt:
+      {
+        lighting: 'Lantern close light on notebook, satchel and two faces.',
+        palette: 'Brown canvas, paper cream, moss, municipal red and warm amber.',
+        composition: 'Notebook rises from concealed lower layer into open centre;
+          reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.19-0.83, y 0.03-0.22',
+            'lower-right: x 0.72-0.93, y 0.74-0.91'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju removes his hidden anomaly notebook from the satchel.',
+        description: "A thin notebook emerges from beneath orderly launch forms in
+          Riju's satchel. He opens it to the unresolved cases and admits that he
+          excluded their count from the launch measure."
+      }
+    art: { status: final, revision: 2, source: panels/raw/page-054/p54-03__r2.png, final: panels/approved/page-054/p54-03__r2.png, width: 1254, height: 1254 }
+  - id: p54-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Side medium shot as the notebook changes hands'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: clear remorse,
+          pose: 'Offering the anomaly notebook across the table',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: centre-right,
+          emotion: stern restraint,
+          pose: 'Receiving it without closing the red ledger',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: attentive gravity,
+          pose: 'Recording suspension of the promised direct appointment',
+          facing: left
+        }
+    props:
+      [
+        riju-form-satchel,
+        riju-anomaly-notebook,
+        municipal-red-ledger,
+        vale-silver-tablet
+      ]
+    foreground: "The notebook crosses from Riju's hands into the public evidence zone."
+    middleGround: 'Ila receives it; Vale records the admission.'
+    background: "An open blank direct-appointment pane glows faintly on Vale's tablet."
+    action: 'Riju names the promised post as an influence and surrenders both the
+      ledger and the benefit.'
+    dialogue:
+      - id: p54-04-d01
+        speaker: riju-dhar
+        text: 'I wanted the permanent post. I let that make incomplete look complete.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.012,
+            width: 0.72,
+            height: 0.147,
+            z: 10,
+            tailTarget: { x: 0.26, y: 0.29 },
+            tailDirection: down,
+            fontScale: 0.87,
+            manualBreaks:
+              [
+                'I wanted the permanent post. I let',
+                'that make incomplete look complete.'
+              ]
+          }
+      - id: p54-04-d02
+        speaker: director-vale
+        text: 'Then the appointment is suspended.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.655,
+            y: 0.69,
+            width: 0.33,
+            height: 0.215,
+            z: 10,
+            tailTarget: { x: 0.91, y: 0.20 },
+            tailDirection: up,
+            fontScale: 0.96
+          }
+    continuity:
+      [
+        'Riju gives up the improperly promised direct path.',
+        'The open post question remains for page 60.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm table light with a faint cool employment pane.',
+        palette: 'Moss, municipal red, paper cream, graphite and silver.',
+        composition: 'Notebook handoff crosses centre while direct-appointment pane
+          recedes; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.64, y 0.03-0.23',
+            'lower-right: x 0.60-0.98, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju surrenders the anomaly notebook as the promised direct appointment is
+          suspended.',
+        description: 'Riju passes the private notebook into the public evidence area and
+          admits that the promised job influenced his judgement. Ila receives it
+          while Vale records that the direct appointment is suspended.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-054/p54-04__r1.png, final: panels/approved/page-054/p54-04__r1.png, width: 1448, height: 1086 }
+  - id: p54-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Balanced wide shot across Ila, Vale and the evidence'
+    location: golmohar-municipal-hall
+    time: late night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre-left,
+          emotion: principled resolve,
+          pose: 'Placing the anomaly notebook between contractor evidence and service
+            gains',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: demanding openness,
+          pose: 'Opening a blank field-test pane on the tablet',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: ready accountability,
+          pose: 'Standing without terminal or satchel in his hands',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: test readiness,
+          pose: 'Stamp arm lowered and shutters on the evidence',
+          facing: left
+        }
+      - {
+          id: ananya-rook,
+          position: far-right,
+          emotion: guarded agreement,
+          pose: 'Setting the clinical reason log beside the notebook',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: far-left,
+          emotion: attentive seriousness,
+          pose: 'Resting a hand on the waterproof tube',
+          facing: right
+        }
+    props:
+      [
+        municipal-red-ledger,
+        riju-anomaly-notebook,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        clinic-paper-queue,
+        waterproof-document-tube
+      ]
+    foreground: 'Failure evidence, gain evidence and human reasons remain separate
+      but adjacent.'
+    middleGround: 'Ila rejects both denial and opaque restoration; Vale sets a live test.'
+    background: 'The chamber waits in lantern-lit silence.'
+    action: 'The hearing turns confession into a constrained design challenge.'
+    dialogue:
+      - id: p54-05-d01
+        speaker: ila-dastidar
+        text: 'We won''t defend the denial. We won''t hide behind the old favours.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.012,
+            width: 0.54,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.47, y: 0.29 },
+            tailDirection: down,
+            fontScale: 0.87
+          }
+      - id: p54-05-d02
+        speaker: director-vale
+        text: 'Then show me a system that can say what it doesn''t know.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.60,
+            y: 0.012,
+            width: 0.38,
+            height: 0.085,
+            z: 10,
+            tailTarget: { x: 0.685, y: 0.24 },
+            tailDirection: down,
+            fontScale: 0.90
+          }
+    continuity:
+      [
+        'Vale permits a live evidence test only if gains, audit and recourse
+          remain.',
+        'The anomaly notebook is now public evidence.'
+      ]
+    prompt:
+      {
+        lighting: 'Lantern-lit chamber with a restrained blank field-test pane.',
+        palette: 'Warm amber, municipal red, graphite, moss, indigo, ochre and cream
+          enamel.',
+        composition: 'Ila and Vale balance across three evidence zones, with full cast
+          framing rather than crowding; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.19-0.82, y 0.03-0.23',
+            'lower-right: x 0.52-0.99, y 0.72-0.95'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: "Ila and Vale turn Riju's confession into a public design test.",
+        description: "The anomaly notebook sits between contractor evidence, service
+          gains and Ananya's reason log. Ila rejects automatic denial and hidden
+          favours, while Vale challenges the room to build a system that can
+          declare uncertainty."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-054/p54-05__r1.png, final: panels/approved/page-054/p54-05__r1.png, width: 1672, height: 941 }

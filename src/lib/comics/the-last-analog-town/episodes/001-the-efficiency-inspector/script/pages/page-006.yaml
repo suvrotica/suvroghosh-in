@@ -1,0 +1,638 @@
+page: 6
+title: 'One hall, seven buildings'
+purpose: "Establish Municipal Hall as a physical and database contradiction that
+  carries the album's later utility crisis."
+location: golmohar-municipal-hall
+time: afternoon
+layout: 'Wide architectural opener followed by four vertical/medium discovery
+  beats and a wide service-counter turn.'
+panelCount: 6
+dialogueGoal: "Contrast Riju's confidence, Ila's working memory and Vale's
+  concern that a stranger cannot safely rely on either."
+pageTurn: 'A grievance claimant is redirected from the so-called single window
+  to the public grievance counter.'
+visualMotif: 'One public institution repeatedly splitting into incompatible
+  numbered layers.'
+continuity:
+  - 'The server cupboard, generator shed and conflicting property identities are
+    established for pages 19 and 52.'
+  - 'All plaques, account numbers and service labels remain blank for
+    deterministic lettering.'
+  - 'Cecil counts seven probable property identities without choosing one.'
+panels:
+  - id: p06-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: "Cutaway-style wide view through the Hall's connected wings"
+    location: golmohar-municipal-hall
+    time: afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: foreground-left,
+          emotion: businesslike familiarity,
+          pose: 'Leading with ledger tucked under her arm',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-left,
+          emotion: attentive scrutiny,
+          pose: 'Walking with tablet held ready',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-right,
+          emotion: explanatory confidence,
+          pose: 'Balancing terminal and satchel while pointing ahead',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: active classification,
+          pose: 'Rolling across a threshold strip',
+          facing: right
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        cecil-stamp-arm
+      ]
+    foreground: 'Colonial brick and lime plaster meet a raised concrete threshold.'
+    middleGround: 'The group crosses into a 1960s wing as a glass annex continues beyond.'
+    background: 'A rooftop tank, generator shed and archive corridor stack into one
+      compound.'
+    action: 'Ila leads the inspectors through a building expanded faster than its
+      records.'
+    dialogue: []
+    visualJoke: 'Every architectural era supplies a different arrow towards the same
+      office.'
+    continuity:
+      [
+        "Ila's ledger stays under the left arm.",
+        "Cecil's wheels gain fine corridor dust but no mud."
+      ]
+    prompt:
+      {
+        lighting: 'Alternating warm shutter light, fluorescent concrete shade and cool
+          glass-annex reflection.',
+        palette: 'Red brick, lime cream, concrete grey, ledger red and Grid blue.',
+        composition: 'Long left-to-right procession crossing visible architectural
+          seams; preserve blank directional panels and upper space.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.33-0.69, y 0.03-0.19' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Ila leads the inspection through Municipal Hall's mismatched architectural
+          wings.",
+        description: 'Ila, Vale, Riju and Cecil cross from a colonial brick section over
+          a raised threshold into concrete and glass additions. Different eras
+          and direction panels point towards the same municipal office.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-006/p06-01__r1.png,
+        final: panels/approved/page-006/p06-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p06-02
+    panel: 2
+    size: tall
+    aspectRatio: '3:4'
+    camera: 'Low vertical shot up a corner crowded with blank property plaques'
+    location: golmohar-municipal-hall
+    time: afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: foreground-centre,
+          emotion: categorical overload,
+          pose: 'Head rotating from plaque to plaque while stamp arm indexes',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: background-left,
+          emotion: reassuring eagerness,
+          pose: 'Holding the terminal open towards Cecil',
+          facing: right
+        }
+    props: [ cecil-stamp-arm, riju-reconciliation-terminal ]
+    foreground: "Cecil's stamp arm counts upwards beside the wall."
+    middleGround: 'Seven differently shaped blank plaques climb the corner.'
+    background: 'Pipes and cables cross property seams above Riju; a separate blank
+      utility register pane has active meter demand but no current Hall
+      premises.'
+    action: 'Cecil discovers seven property identities attached to the compound, yet
+      no Municipal Hall service premises in the utility register.'
+    dialogue:
+      - id: p06-02-d01
+        speaker: cecil-c17
+        text: 'One chairperson. Seven probable buildings. Utility premises: none.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.15,
+            y: 0.02,
+            width: 0.34,
+            height: 0.24,
+            z: 10,
+            tailTarget: { x: 0.38, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.84,
+            manualBreaks:
+              [ 'One chairperson.', 'Seven probable buildings.', 'Utility premises: none.' ]
+          }
+      - id: p06-02-d02
+        speaker: riju-dhar
+        text: 'I can join the numbers in the Crosswalk.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.01,
+            y: 0.75,
+            width: 0.30,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.14, y: 0.47 },
+            tailDirection: up,
+            fontScale: 0.91,
+            manualBreaks: [ 'I can join the numbers', 'in the Crosswalk.' ]
+          }
+    visualJoke: 'Cecil runs out of stamp-arm fingers before the building runs out of
+      identities.'
+    continuity:
+      [
+        'Exactly seven property identities are visible as blank plaques.',
+        'A deterministic utility pane shows active demand without a registered
+          current Hall premises.',
+        'No plaque or utility-pane text is generated.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool vertical shaft light on plaques and cream casing.',
+        palette: 'Lime cream, weathered brass, cream enamel, muted blue and moss green.',
+        composition: 'Use height to stack seven blank plaques above Cecil and a separate
+          clean utility-register pane; keep upper-left and lower-right balloon
+          areas clear.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.79, y 0.02-0.25',
+            'lower-right reserve: x 0.31-0.95, y 0.74-0.95'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil counts seven property plaques but no utility premises for Municipal
+          Hall.',
+        description: 'Seven blank property plaques climb a wall crossed by pipes and
+          cables. Beside them, a clean compositing pane is reserved to show
+          active meter demand but no current Hall premises in the utility
+          register. Cecil indexes the contradiction while Riju offers to join
+          the numbers.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-006/p06-02__r1.png,
+        final: panels/approved/page-006/p06-02__r1.png,
+        width: 1086,
+        height: 1448
+      }
+  - id: p06-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Doorway medium shot into the former records cupboard'
+    location: golmohar-municipal-hall
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: proprietary pride,
+          pose: 'Crouching beside his terminal and the server leads',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: restrained concern,
+          pose: 'Inspecting the improvised ventilation without entering',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, server-closet-table-fan, vale-silver-tablet ]
+    foreground: 'A table fan blows across cables through an open cupboard door.'
+    middleGround: 'Riju indicates the small server stack and its patched power lead.'
+    background: 'Old record-shelf marks remain on the walls behind modern equipment.'
+    action: "Riju shows where the town's modern records live inside a former cupboard."
+    dialogue:
+      - id: p06-03-d01
+        speaker: riju-dhar
+        text: 'The server room is here.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.31,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.295, y: 0.48 },
+            tailDirection: down,
+            fontScale: 1
+          }
+      - id: p06-03-d02
+        speaker: director-vale
+        text: 'This is a cupboard.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.755,
+            y: 0.02,
+            width: 0.225,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.685, y: 0.14 },
+            tailDirection: left,
+            fontScale: 0.98
+          }
+      - id: p06-03-d03
+        speaker: riju-dhar
+        text: 'It was available.'
+        style: speech
+        readingOrder: 3
+        balloon:
+          {
+            x: 0.012,
+            y: 0.80,
+            width: 0.215,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.295, y: 0.48 },
+            tailDirection: up,
+            fontScale: 1
+          }
+    visualJoke: 'The server occupies the exact shelf outline of the records it replaced.'
+    continuity:
+      [
+        'The table fan sits on the left and blows right across the server.',
+        'The former cupboard is absent from the internal building plan; this
+          is separate from the missing Hall premises in the utility register.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm corridor light against cool server indicators and fan shadow.',
+        palette: 'Dusty cream, cable black, terminal grey, moss green and graphite.',
+        composition: 'Frame the server inside an obvious cupboard doorway between Riju
+          and Vale; keep three dialogue zones clear.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.39, y 0.03-0.20',
+            'upper-right reserve: x 0.59-0.96, y 0.03-0.20',
+            'lower-left reserve: x 0.05-0.40, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju shows Vale a server installed inside a former records cupboard.',
+        description: 'A table fan cools a compact server stack inside a cupboard whose
+          old shelf marks remain visible. Riju calls it the server room; Vale
+          accurately calls it a cupboard.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-006/p06-03__r1.png,
+        final: panels/approved/page-006/p06-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p06-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Eye-level medium shot beside two conflicting blank property boards'
+    location: golmohar-municipal-hall
+    time: afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: serious inquiry,
+          pose: 'Pointing from the boards towards the corridor',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: dry defensiveness,
+          pose: 'Holding ledger against her ribs',
+          facing: left
+        }
+    props: [ vale-silver-tablet, municipal-red-ledger ]
+    foreground: 'Two blank boards assign the corridor to different wings.'
+    middleGround: 'Vale and Ila face one another across the disputed threshold.'
+    background: 'A fire extinguisher sits beneath another blank location marker.'
+    action: 'Vale asks which property identity an unfamiliar emergency service
+      should trust.'
+    dialogue:
+      - id: p06-04-d01
+        speaker: director-vale
+        text: 'Which one gets a fire engine?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.375,
+            y: 0.01,
+            width: 0.21,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.30, y: 0.25 },
+            tailDirection: left,
+            fontScale: 0.96,
+            manualBreaks: [ 'Which one gets', 'a fire engine?' ]
+          }
+      - id: p06-04-d02
+        speaker: ila-dastidar
+        text: 'The one whose clerk answers.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.375,
+            y: 0.17,
+            width: 0.21,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.665, y: 0.34 },
+            tailDirection: right,
+            fontScale: 0.96,
+            manualBreaks: [ 'The one whose', 'clerk answers.' ]
+          }
+    continuity:
+      [
+        'The fire-service question remains unresolved.',
+        "Ila's answer is practical but not presented as sufficient."
+      ]
+    prompt:
+      {
+        lighting: 'Mixed warm corridor light and cooler annex spill across the
+          threshold.',
+        palette: 'Ledger red, graphite, lime cream, concrete grey and faded blue.',
+        composition: 'Opposed two-shot divided by threshold and conflicting blank
+          boards; reserve both upper corners.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.48, y 0.03-0.21',
+            'upper-right reserve: x 0.52-0.96, y 0.03-0.21'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale and Ila debate which building number an emergency service should
+          use.',
+        description: 'Vale points between conflicting property boards and asks which
+          number would bring a fire engine. Ila answers that the working number
+          is whichever clerk picks up, exposing both local knowledge and its
+          fragility.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-006/p06-04__r1.png,
+        final: panels/approved/page-006/p06-04__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p06-05
+    panel: 5
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Silent close reaction on Cecil and Ila'
+    location: golmohar-municipal-hall
+    time: afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: left,
+          emotion: unresolved processing,
+          pose: 'Displaying seven raised stamp plates in a fan',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: momentary concern,
+          pose: 'Looking from the stamps to the server-cupboard door',
+          facing: left
+        }
+    props: [ cecil-stamp-arm, municipal-red-ledger ]
+    foreground: 'Seven stamp plates fill the lower edge without printed words.'
+    middleGround: 'Cecil and Ila exchange a silent, unequal look.'
+    background: 'The corridor seam runs vertically between them.'
+    action: 'Cecil cannot select one property identity, and Ila sees the practical
+      risk.'
+    dialogue: []
+    continuity:
+      [
+        'All seven stamp faces are blank in generated art.',
+        "Ila's expression is concern, not slapstick defeat."
+      ]
+    prompt:
+      {
+        lighting: 'Soft split light divided by the architectural seam.',
+        palette: 'Cream enamel, muted blue, municipal red and lime grey.',
+        composition: 'Square mirror composition with seven blank stamps low and seam
+          between Cecil and Ila; preserve top space.',
+        balloonSafeAreas: [ 'upper-centre quiet reserve: x 0.25-0.75, y 0.03-0.20' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil displays seven possible stamps as Ila studies the server cupboard.',
+        description: 'Cecil fans seven blank stamp plates without choosing one. Ila
+          looks past them towards the improvised server room, silently
+          recognising that the record conflict can become a physical risk.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-006/p06-05__r1.png,
+        final: panels/approved/page-006/p06-05__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p06-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide frontal shot of the public-service counter'
+    location: golmohar-municipal-hall
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: resigned recognition,
+          pose: 'Stopping as a claimant is redirected past her',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre,
+          emotion: observant concern,
+          pose: 'Watching the route rather than the counter sign',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: uneasy attention,
+          pose: "Following the claimant's path with his pencil",
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: far-right,
+          emotion: route tracking,
+          pose: 'Head turned towards the next corridor',
+          facing: right
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        riju-form-satchel,
+        cecil-stamp-arm,
+        grievance-token-drum
+      ]
+    foreground: 'Five service windows sit beneath one broad blank sign; one is open
+      and four are shut.'
+    middleGround: 'A claimant is redirected away from the open window towards a
+      distant arrow.'
+    background: 'A locked door occupies the route labelled later as the
+      single-window exit.'
+    action: 'The inspection watches a resident leave the single-window service for
+      another counter.'
+    dialogue:
+      - id: p06-06-d01
+        speaker: cecil-c17
+        text: 'The single window has issued a second destination.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.70,
+            y: 0.012,
+            width: 0.28,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.885, y: 0.49 },
+            tailDirection: none,
+            fontScale: 0.9,
+            manualBreaks:
+              [ 'The single window has', 'issued a second destination.' ]
+          }
+    visualJoke: 'The Single Window Service contains five windows and a locked door.'
+    continuity:
+      [
+        'The claimant proceeds to the grievance counter on page 7.',
+        'All counter signs and route arrows with words are deterministic
+          overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Flat late-afternoon counter light with warmer corridor depth.',
+        palette: 'Faded cream, green shutters, ledger red, graphite and muted blue.',
+        composition: "Five windows make a strong comic rhythm; claimant's path leads
+          towards the page edge; reserve upper-right.",
+        balloonSafeAreas: [ 'upper-right reserve: x 0.56-0.97, y 0.03-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A claimant is sent away from the five-window Single Window Service.',
+        description: 'Five municipal windows sit beneath one blank sign, though only one
+          is open. A resident is redirected towards another counter while Ila,
+          Vale, Riju and Cecil follow the unnecessarily long route.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-006/p06-06__r1.png,
+        final: panels/approved/page-006/p06-06__r1.png,
+        width: 1672,
+        height: 941
+      }

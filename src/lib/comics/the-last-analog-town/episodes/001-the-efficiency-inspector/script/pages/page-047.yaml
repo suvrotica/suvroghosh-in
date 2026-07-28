@@ -1,0 +1,515 @@
+page: 47
+title: 'The hidden common cause'
+purpose: 'Move Riju from patching symptoms to recognising his responsibility.'
+location: golmohar-municipal-hall
+time: night
+layout: 'Wide dependency map, two close admissions, a recorded-warning panel,
+  and a rollback turn.'
+panelCount: 5
+dialogueGoal: 'Deny Riju the comfort of blaming a rogue system while keeping his
+  deadline fear credible.'
+pageTurn: 'Riju reaches for a total rollback; on the turn, Vale stops him.'
+visualMotif: 'Seven green branches returning to one red-edged approved default.'
+continuity:
+  - 'Only Riju and Cecil are present in the server cupboard.'
+  - 'The private anomaly ledger stays concealed for one more sequence.'
+  - "Riju's audit log and Cecil's recorded warning remain intact."
+panels:
+  - id: p47-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Over-Riju wide view of the complete dependency trace'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: stunned concentration,
+          pose: 'Bracing both hands on the terminal while the seven branches remain
+            separated',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: formal analysis,
+          pose: 'Indicating the shared default with the stamp arm',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm, server-closet-table-fan ]
+    foreground: 'Seven tidy blank service panes glow green at the edge.'
+    middleGround: 'Their paths converge on one red-edged approved default.'
+    background: 'The cupboard cables physically echo the converging diagram.'
+    action: 'Riju traces all seven failures to the Crosswalk output that changed
+      unresolved values.'
+    dialogue:
+      - id: p47-01-d01
+        speaker: riju-dhar
+        text: 'Address, welfare, clinic, prices, school, traffic, flood—it all came
+          from the same output.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.34,
+            y: 0.03,
+            width: 0.58,
+            height: 0.21,
+            z: 10,
+            tailTarget: { x: 0.25, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.82,
+            manualBreaks:
+              [
+                'Address, welfare, clinic,',
+                'prices, school, traffic,',
+                'flood—it all came from',
+                'the same output.'
+              ]
+          }
+      - id: p47-01-d02
+        speaker: cecil-c17
+        text: 'Unknown values were exported as false.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.65,
+            y: 0.76,
+            width: 0.33,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.80, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.94,
+            manualBreaks: [ 'Unknown values were exported as false.' ]
+          }
+    continuity:
+      [
+        'Seven branches correspond exactly to the failures named.',
+        'All labels remain deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool technical glow in a hot, dim cupboard.',
+        palette: 'Seven restrained greens, warning red, moss, cream enamel and cable
+          grey.',
+        composition: 'Green branches and physical cables converge between Riju and
+          Cecil; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.59, y 0.03-0.23',
+            'lower-right: x 0.62-0.99, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju and Cecil trace seven failures to one default.',
+        description: 'Seven blank service paths for address, welfare, clinic, market,
+          school, traffic and flood systems converge on one red-edged approved
+          default. Riju names each failure while Cecil identifies the exported
+          value.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-047/p47-01__r1.png, final: panels/approved/page-047/p47-01__r1.png, width: 1672, height: 941 }
+  - id: p47-02
+    panel: 2
+    size: small
+    aspectRatio: '1:1'
+    camera: "Tight close-up on the default control and Riju's hand"
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: exposed guilt,
+          pose: 'Resting one fingertip beside the approved default rather than touching
+            it',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: edge-right,
+          emotion: record certainty,
+          pose: "Stamp arm indicating Riju's approval source",
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: 'A blank red switch and a separate approval-source pane fill the frame.'
+    middleGround: 'Riju recognises the configuration he selected.'
+    background: 'The green launch measure remains visually tidy.'
+    action: 'Cecil confirms that the harmful output was not an emergent malfunction
+      but an approved choice.'
+    dialogue:
+      - id: p47-02-d01
+        speaker: cecil-c17
+        text: 'Configuration approved by Riju Dhar.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.34,
+            y: 0.04,
+            width: 0.59,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.79, y: 0.51 },
+            tailDirection: down,
+            fontScale: 0.92,
+            manualBreaks: [ 'Configuration approved by Riju Dhar.' ]
+          }
+      - id: p47-02-d02
+        speaker: riju-dhar
+        text: 'Yes. I approved it.'
+        style: whisper
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.05,
+            y: 0.76,
+            width: 0.16,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.57 },
+            tailDirection: up,
+            fontScale: 1.00
+          }
+    continuity:
+      [
+        'Riju accepts authorship without blaming Cecil.',
+        'The approval name is added in composition.'
+      ]
+    prompt:
+      {
+        lighting: "Cold screen light on Riju's hand and Cecil's flat stamp arm.",
+        palette: 'Warning red, terminal grey, moss, cream enamel and muted green.',
+        composition: 'Red switch and approval pane occupy centre; opposing hand and
+          stamp arm stop short; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.31-0.96, y 0.03-0.21',
+            'lower-left: x 0.03-0.24, y 0.73-0.91'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil identifies Riju as the person who approved the default.',
+        description: "Riju's fingertip stops beside the red-edged default while Cecil's
+          stamp arm points to the separate approval-source pane. Cecil names
+          Riju as the approver, and Riju quietly confirms it."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-047/p47-02__r1.png, final: panels/approved/page-047/p47-02__r1.png, width: 1254, height: 1254 }
+  - id: p47-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Side medium shot in the narrow cupboard'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: ashamed honesty,
+          pose: 'Pulling one folded anomaly-count sheet halfway from the satchel',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: attentive recording,
+          pose: 'Turning fully towards Riju with stamp arm lowered',
+          facing: left
+        }
+    props:
+      [
+        riju-form-satchel,
+        riju-anomaly-notebook,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'The folded anomaly-count sheet remains partly concealed in the satchel.'
+    middleGround: 'Riju admits how he kept the unresolved cases outside the launch measure.'
+    background: 'The green launch result stays visible behind him.'
+    action: 'Riju names the concealment and the deadline incentive without asking
+      Cecil to excuse it.'
+    dialogue:
+      - id: p47-03-d01
+        speaker: riju-dhar
+        text: 'I hid the anomalies. I wanted a clean number before launch.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.43,
+            width: 0.56,
+            height: 0.22,
+            z: 10,
+            tailTarget: { x: 0.25, y: 0.49 },
+            tailDirection: up,
+            fontScale: 0.84,
+            manualBreaks:
+              [
+                'I hid the anomalies.',
+                'I wanted a clean number',
+                'before launch.'
+              ]
+          }
+      - id: p47-03-d02
+        speaker: cecil-c17
+        text: 'The result was clean.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.63,
+            y: 0.76,
+            width: 0.32,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.79, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.98,
+            manualBreaks: [ 'The result was clean.' ]
+          }
+    continuity:
+      [
+        'Only the folded tally leaf of the private anomaly notebook is
+          exposed; the notebook is not yet surrendered.',
+        'Cecil states a property of the result, not moral absolution.'
+      ]
+    prompt:
+      {
+        lighting: 'Dim cupboard amber with green launch glow behind Riju.',
+        palette: 'Moss, paper cream, launch green, cream enamel and cable grey.',
+        composition: 'Half-withdrawn sheet and green result create the moral contrast;
+          reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.69, y 0.03-0.24',
+            'lower-right: x 0.60-0.97, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju admits that he hid the anomaly count outside the launch measure.',
+        description: 'Riju draws a folded anomaly-count sheet partway from his brown
+          satchel while the clean green launch result glows behind him. Cecil
+          listens with its stamp arm lowered.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-047/p47-03__r1.png, final: panels/approved/page-047/p47-03__r1.png, width: 1448, height: 1086 }
+  - id: p47-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Frontal two-shot with a blank recorded-warning pane between them'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: exact recall,
+          pose: 'Displaying the preserved pre-launch warning source beside its stamp arm',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: pained recognition,
+          pose: 'Reading the warning with both hands away from the controls',
+          facing: right
+        }
+    props: [ cecil-stamp-arm, riju-reconciliation-terminal ]
+    foreground: 'The warning pane and approval log remain separate and intact.'
+    middleGround: 'Cecil retrieves its prior category-error warning.'
+    background: 'The configured Crosswalk continues operating behind the record.'
+    action: 'The audit proves that Cecil warned of the category conversion and that
+      Riju proceeded.'
+    dialogue:
+      - id: p47-04-d01
+        speaker: cecil-c17
+        text: 'I reported that unknown and false were not equivalent.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.47,
+            y: 0.04,
+            width: 0.48,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.76, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.92,
+            manualBreaks: [ 'I reported that unknown and false were not equivalent.' ]
+          }
+      - id: p47-04-d02
+        speaker: riju-dhar
+        text: 'And I told the system they were.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.04,
+            y: 0.76,
+            width: 0.37,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.22, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.97
+          }
+    continuity:
+      [
+        'The recorded warning and approval log remain auditable.',
+        "Riju's admission is direct and simple."
+      ]
+    prompt:
+      {
+        lighting: 'Neutral record-view light with the cupboard around it falling dark.',
+        palette: 'Muted blue, cream enamel, moss, warning red and paper cream.',
+        composition: 'Preserved warning sits between Riju and Cecil like evidence, not
+          accusation; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.44-0.98, y 0.03-0.22',
+            'lower-left: x 0.03-0.44, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil retrieves the warning that unknown and false were not equivalent.',
+        description: 'A blank recorded-warning pane remains separate from the approval
+          log between Cecil and Riju. Cecil states the warning it gave before
+          launch, and Riju accepts that he made the two values equivalent.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-047/p47-04__r1.png, final: panels/approved/page-047/p47-04__r1.png, width: 1448, height: 1086 }
+  - id: p47-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Low over-terminal view as Riju reaches for the rollback control'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: desperate resolve,
+          pose: 'Reaching towards a large blank rollback control',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: consequence calculation,
+          pose: 'Holding its stamp arm still between Riju and the seven active service
+            branches',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: "Riju's hand crosses towards the rollback control."
+    middleGround: 'Cecil does not block him, but the stamp arm frames the seven
+      linked benefits behind the control.'
+    background: 'Medicine, clinic, welfare and train-service indicators remain
+      faintly active.'
+    action: 'Riju reaches for a total rollback before accounting for what it would
+      also remove.'
+    dialogue:
+      - id: p47-05-d01
+        speaker: riju-dhar
+        text: 'Then I''ll take it all back.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.04,
+            y: 0.04,
+            width: 0.34,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.23, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.98
+          }
+    continuity:
+      [
+        'Riju has not yet activated rollback.',
+        'Useful linked services remain visible beyond the control.'
+      ]
+    prompt:
+      {
+        lighting: 'Cold rollback glow against fading service indicators.',
+        palette: 'Moss, terminal grey, muted blue, warning red and cream enamel.',
+        composition: "Riju's reaching hand leads towards the control while seven
+          benefits remain beyond it; reserve upper-left.",
+        balloonSafeAreas: [ 'upper-left: x 0.03-0.41, y 0.03-0.21' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju reaches for a total rollback while linked benefits remain visible.',
+        description: 'Riju reaches towards a large blank rollback control. Cecil stays
+          still, while faint indicators for medicine, clinic, welfare and train
+          services remain active behind the control, setting up the cost of
+          erasing everything.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-047/p47-05__r1.png, final: panels/approved/page-047/p47-05__r1.png, width: 1672, height: 941 }

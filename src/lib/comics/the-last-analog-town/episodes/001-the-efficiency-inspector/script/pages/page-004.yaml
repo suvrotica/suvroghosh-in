@@ -1,0 +1,548 @@
+page: 4
+title: 'The Civic Crosswalk'
+purpose: "Introduce Riju's invention and prove that it can recover a real
+  exclusion without pretending probability is identity."
+location: junction-square
+time: early afternoon
+layout: 'Wide demonstration opener, two medium technical beats, a tight
+  challenge, and a wide invitation turn.'
+panelCount: 5
+dialogueGoal: 'Let Riju explain through a live case, Cecil quantify uncertainty
+  and Vale ask who may convert probability into civic fact.'
+pageTurn: 'Vale invites Riju and the Crosswalk into the official inspection.'
+visualMotif: 'Three misaligned records briefly forming one readable human outline.'
+continuity:
+  - "Riju's refurbished reconciliation terminal has one replaced blue key and a
+    left-side battery lead."
+  - 'All record cards, names, figures and interface text are deterministic
+    overlays on blank generated screens.'
+  - 'The resident case is represented visually but receives no dialogue until a
+    canonical supporting ID exists.'
+panels:
+  - id: p04-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Eye-level wide shot across the temporary demonstration desk'
+    location: junction-square
+    time: early afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: energised focus,
+          pose: 'Opening the terminal and arranging three blank record cards',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: attentive curiosity,
+          pose: 'Standing upright with tablet held low',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: analytical readiness,
+          pose: 'Head angled towards the terminal',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: guarded pride,
+          pose: 'Watching over her ledger',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        riju-form-satchel,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        municipal-red-ledger
+      ]
+    foreground: 'Three blank paper records overlap without aligning.'
+    middleGround: 'Riju opens the thick-bezel terminal between Ila and the inspectors.'
+    background: 'The square continues working beyond the demonstration, with the
+      billboard face still blank.'
+    action: 'Riju begins a live reconciliation using three conflicting records for
+      one resident.'
+    dialogue:
+      - id: p04-01-d01
+        speaker: riju-dhar
+        text: 'These records don''t agree.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.15,
+            y: 0.01,
+            width: 0.13,
+            height: 0.27,
+            z: 10,
+            tailTarget: { x: 0.355, y: 0.21 },
+            tailDirection: down,
+            fontScale: 1,
+            manualBreaks: [ 'These records', 'don''t agree.' ]
+          }
+      - id: p04-01-d02
+        speaker: riju-dhar
+        text: 'I''ll show you where.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.42,
+            y: 0.01,
+            width: 0.19,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.355, y: 0.21 },
+            tailDirection: left,
+            fontScale: 1
+          }
+    continuity:
+      [
+        "Riju's pencil is in his hand, leaving the right-ear position visibly
+          empty.",
+        'Terminal interface and all paper writing remain blank for
+          composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm early-afternoon light under a patched awning.',
+        palette: 'Moss green, municipal red, Grid silver, cream paper and terminal
+          grey.',
+        composition: 'Desk creates a strong horizontal bridge between local and Mission
+          figures; preserve blank screen and two upper dialogue zones.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.35, y 0.03-0.20',
+            'upper-centre reserve: x 0.35-0.65, y 0.03-0.20'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju opens his refurbished terminal between Ila, Vale and Cecil.',
+        description: 'At a temporary desk in Junction Square, Riju lays out three
+          conflicting records and opens the thick, repaired Civic Crosswalk
+          terminal. Ila watches with guarded pride while Vale and Cecil study
+          the demonstration.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-004/p04-01__r1.png,
+        final: panels/approved/page-004/p04-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p04-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Over-Riju close view of the blank interface and source cards'
+    location: junction-square
+    time: early afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: foreground-left,
+          emotion: precise concentration,
+          pose: 'Tapping the replaced blue key with one long finger',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: middle-ground-right,
+          emotion: calculating,
+          pose: 'Optical shutters narrowed towards the screen',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: "Riju's graphite-stained finger rests on the distinctive blue key."
+    middleGround: 'Three empty interface panes converge around a blank confidence field.'
+    background: "Cecil's cream head reflects the screen's muted blue glow."
+    action: 'The Crosswalk calculates a probable match while keeping all three
+      sources visible.'
+    dialogue:
+      - id: p04-02-d01
+        speaker: cecil-c17
+        text: 'Match confidence: eighty-two per cent.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.405,
+            y: 0.02,
+            width: 0.33,
+            height: 0.25,
+            z: 10,
+            tailTarget: { x: 0.86, y: 0.245 },
+            tailDirection: right,
+            fontScale: 0.92,
+            manualBreaks: [ 'Match confidence:', 'eighty-two per cent.' ]
+          }
+    visualJoke: "The terminal is more certain about the desk's identity than the
+      resident's."
+    continuity:
+      [
+        'The replaced blue key is third from the right on the top function
+          row.',
+        'All interface values are deterministic lettering, not generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Soft blue device glow balanced by warm reflected daylight.',
+        palette: 'Terminal grey, muted blue, graphite, cream enamel and sage.',
+        composition: "Focus on blue key, three blank panes and Cecil's shutters; leave
+          upper-right clear.",
+        balloonSafeAreas: [ 'upper-right reserve: x 0.46-0.96, y 0.04-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "Riju presses the terminal's blue key as Cecil reports a probable match.",
+        description: 'Riju presses the single replacement blue key. Three blank source
+          panes converge on the screen while Cecil calculates an
+          eighty-two-per-cent match, keeping the uncertainty visible.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-004/p04-02__r1.png,
+        final: panels/approved/page-004/p04-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p04-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Side-on medium shot of Riju tracing links between paper and screen'
+    location: junction-square
+    time: early afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: earnest confidence,
+          pose: 'Pointing from two shared dates to a family-link marker',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: impressed caution,
+          pose: 'Leaning only slightly towards the evidence',
+          facing: left
+        }
+    props: [ riju-reconciliation-terminal, vale-silver-tablet ]
+    foreground: 'Two blank dates are circled on separate source cards.'
+    middleGround: 'Riju connects corroborating evidence rather than replacing a record.'
+    background: 'A resident waits beside the desk, visible as the person affected
+      rather than a data silhouette.'
+    action: 'Riju finds the benefit application that one spelling had hidden from
+      the others.'
+    dialogue:
+      - id: p04-03-d01
+        speaker: riju-dhar
+        text: 'Same dates. Same family link. Different spelling.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.02,
+            width: 0.355,
+            height: 0.25,
+            z: 10,
+            tailTarget: { x: 0.46, y: 0.30 },
+            tailDirection: right,
+            fontScale: 0.92,
+            manualBreaks:
+              [ 'Same dates. Same family link.', 'Different spelling.' ]
+          }
+    continuity:
+      [
+        'The probable match remains unconfirmed.',
+        'The resident is treated with dignity and not visually reduced to the
+          error.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm side light across paper texture and restrained screen glow.',
+        palette: 'Cream paper, moss green, graphite, silver and muted blue.',
+        composition: 'Paper evidence forms a foreground triangle leading to Riju, Vale
+          and the waiting resident; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.56, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju links dates and family records while Vale studies the evidence.',
+        description: 'Riju points across two conflicting paper records and the terminal,
+          showing matching dates and a family connection beneath different
+          spellings. Vale leans closer while the affected resident waits beside
+          them.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-004/p04-03__r1.png,
+        final: panels/approved/page-004/p04-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p04-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Tight three-character challenge shot'
+    location: junction-square
+    time: early afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: exacting interest,
+          pose: 'Pointing one gloved finger at the unresolved percentage',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: checked enthusiasm,
+          pose: 'Holding his pencil still above the record',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: neutral calculation,
+          pose: 'Shutters fixed on Riju',
+          facing: left
+        }
+    props: [ vale-silver-tablet, riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: "The blank confidence field divides Vale's glove from Riju's pencil."
+    middleGround: 'Riju pauses between the two categorical minds.'
+    background: "Cecil's blue status light remains steady."
+    action: 'Vale asks who has authority over the uncertainty the match leaves behind.'
+    dialogue:
+      - id: p04-04-d01
+        speaker: director-vale
+        text: 'Who authorises the other eighteen per cent?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.36,
+            y: 0.012,
+            width: 0.60,
+            height: 0.19,
+            z: 10,
+            tailTarget: { x: 0.22, y: 0.20 },
+            tailDirection: left,
+            fontScale: 0.9,
+            manualBreaks:
+              [ 'Who authorises the other', 'eighteen per cent?' ]
+          }
+      - id: p04-04-d02
+        speaker: riju-dhar
+        text: 'At present? Whoever picks up.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.43,
+            y: 0.50,
+            width: 0.55,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.48, y: 0.35 },
+            tailDirection: left,
+            fontScale: 0.89,
+            manualBreaks: [ 'At present?', 'Whoever picks up.' ]
+          }
+    continuity:
+      [
+        "Riju's pencil remains in hand.",
+        "Vale's question plants the later appeal and authority conflict."
+      ]
+    prompt:
+      {
+        lighting: 'Even awning shade with cool highlights on the terminal.',
+        palette: 'Graphite, cream, moss, muted blue and pencil yellow.',
+        composition: 'Tight triangular confrontation around a blank confidence field;
+          keep top-left and bottom-right balloon areas clear.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.60, y 0.03-0.24',
+            'lower-right reserve: x 0.31-0.95, y 0.73-0.97'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale challenges Riju over the uncertainty left by a probable match.',
+        description: 'Vale points to the unresolved portion of the match while Riju
+          pauses with his pencil above the record. Cecil watches as Riju admits
+          that present authority depends on who answers a telephone.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-004/p04-04__r1.png,
+        final: panels/approved/page-004/p04-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p04-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Eye-level wide reaction shot around the completed demonstration'
+    location: junction-square
+    time: early afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: measured approval,
+          pose: 'Closing the tablet cover and gesturing towards Municipal Hall',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: startled pride,
+          pose: 'Straightening behind the terminal',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: cautious satisfaction,
+          pose: "Meeting Riju's glance over the ledger",
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: far-right,
+          emotion: procedural completion,
+          pose: 'Stamp arm hovering above the still-probable file',
+          facing: left
+        }
+    props:
+      [
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        municipal-red-ledger,
+        cecil-stamp-arm
+      ]
+    foreground: 'The three source records remain separate beside the recovered
+      application.'
+    middleGround: "Vale makes the invitation across Riju's desk."
+    background: 'Municipal Hall is visible beyond the square.'
+    action: 'Vale accepts the Crosswalk as an inspection tool without accepting its
+      probable match as settled fact.'
+    dialogue:
+      - id: p04-05-d01
+        speaker: director-vale
+        text: 'Keep the uncertainty. Bring it with you.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.20,
+            y: 0.02,
+            width: 0.20,
+            height: 0.21,
+            z: 10,
+            tailTarget: { x: 0.145, y: 0.17 },
+            tailDirection: left,
+            fontScale: 0.95,
+            manualBreaks: [ 'Keep the uncertainty.', 'Bring it with you.' ]
+          }
+    visualJoke: 'Cecil cannot stamp the recovered file because its status is still
+      only probable.'
+    continuity:
+      [
+        "The resident's application is found but awaits review.",
+        'Riju packs the terminal for page 5 without altering its cables or
+          blue key.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm afternoon light opening towards Municipal Hall.',
+        palette: 'Graphite, moss green, municipal red, cream and muted blue.',
+        composition: "Vale's gesture carries the eye from desk to Hall; keep separate
+          records visible and upper-left clear.",
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.46, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale invites Riju and his uncertain match into the inspection.',
+        description: 'The three source records remain separate on the desk as Vale
+          gestures towards Municipal Hall. Riju straightens with surprised
+          pride, Ila watches cautiously, and Cecil hesitates to stamp a merely
+          probable file.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-004/p04-05__r1.png,
+        final: panels/approved/page-004/p04-05__r1.png,
+        width: 1672,
+        height: 941,
+        anchor: top
+      }

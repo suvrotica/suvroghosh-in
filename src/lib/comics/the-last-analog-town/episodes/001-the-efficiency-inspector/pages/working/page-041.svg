@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 41</title>
+	<desc id="description">Show procedure rejecting a credible upstream warning because the local measurement and incident-number prerequisites are absent.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p41-01">
+<clipPath id="clip-p41-01"><rect x="48" y="58" width="1504" height="475.4197756326637" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="475.4197756326637" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-041/p41-01__r1.png" x="48" y="58" width="1504" height="475.4197756326637" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p41-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p41-01-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 431.4741461824764 251.0204773150246 Q 430.76800000000003 230.43475262196714 437.536 212.6540530133055 Q 430.76800000000003 230.43475262196714 416.5258538175236 245.31534319110636 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-01-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="78.08" y="248.1679102530655" width="691.84" height="71.31296634489955" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="96.08" y="295.14199342551524" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="96.08" dy="0">Got it. We&apos;ll clear the low lane.</tspan></text>
+<rect x="64" y="431.4197756326637" width="1472" height="86" fill="#fff4c7" stroke="#171512" stroke-width="4"/>
+<text x="80" y="467.4197756326637" font-family="Georgia,serif" font-size="22" fill="#111"><tspan x="80" dy="0">The caller reports, “Upstream gates opened at 17:42. Canal rise is</tspan><tspan x="80" dy="26">travelling towards Golmohar.”</tspan></text>
+<rect x="48" y="58" width="1504" height="475.4197756326637" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p41-02">
+<clipPath id="clip-p41-02"><rect x="48" y="557.4197756326637" width="740" height="311.88885990086095" rx="6"/></clipPath>
+<rect x="48" y="557.4197756326637" width="740" height="311.88885990086095" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-041/p41-02__r1.png" x="48" y="557.4197756326637" width="740" height="311.88885990086095" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p41-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p41-02-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 243.77337431004872 660.9615060622135 Q 248.46599999999998 634.9553462040177 260.23199999999997 612.6864816070962 Q 248.46599999999998 634.9553462040177 229.6266256899513 653.4869155396649 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-02-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="70.2" y="657.2242108009392" width="333" height="62.37777198017219" rx="31.188885990086096" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="88.2" y="686.0582967910253" font-family="Arial,'Noto Sans',sans-serif" font-size="16.82" fill="#111"><tspan x="88.2" dy="0">We know who called, when, and</tspan><tspan x="88.2" dy="19.174799999999998">who released it.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p41-02-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 645.253754486181 781.7060630380175 Q 637.41 741.4653918601617 635.486 700.9822178450299 Q 637.41 741.4653918601617 633.266245513819 782.2534464845497 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-02-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="418" y="781.9797547612836" width="340.40000000000003" height="49.90221758413775" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="436" y="814.0172635533524" font-family="Arial,'Noto Sans',sans-serif" font-size="16.48" fill="#111"><tspan x="436" dy="0">Local rainfall below threshold.</tspan></text>
+<rect x="48" y="557.4197756326637" width="740" height="311.88885990086095" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p41-03">
+<clipPath id="clip-p41-03"><rect x="812" y="557.4197756326637" width="740" height="311.88885990086095" rx="6"/></clipPath>
+<rect x="812" y="557.4197756326637" width="740" height="311.88885990086095" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-041/p41-03__r1.png" x="812" y="557.4197756326637" width="740" height="311.88885990086095" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p41-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p41-03-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1335.5165963861846 639.5509357293306 Q 1343.616 630.682468823376 1353.458 627.5323913383772 Q 1343.616 630.682468823376 1331.883403613815 628.1141568874186 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-03-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="true" x="1137.6" y="573.0142186277068" width="392.20000000000005" height="60.818327680667885" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1155.6" y="601.1721824680408" font-family="Arial,'Noto Sans',sans-serif" font-size="16.08" fill="#111"><tspan x="1155.6" dy="0">Rejected. No threshold event. No valid</tspan><tspan x="1155.6" dy="18.331199999999995">incident number.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p41-03-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 1032.205948228912 785.7437399752523 Q 1028.746 729.3017263240282 1033.26 673.473620401774 Q 1028.746 729.3017263240282 1016.258051771088 784.453546745332 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-03-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="834.2" y="785.0986433602922" width="292.3" height="43.66444038612054" rx="21.83222019306027" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="852.2" y="814.2150635533525" font-family="Arial,'Noto Sans',sans-serif" font-size="16.939999999999998" fill="#111"><tspan x="852.2" dy="0">The call is the incident.</tspan></text>
+<rect x="812" y="557.4197756326637" width="740" height="311.88885990086095" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p41-04">
+<clipPath id="clip-p41-04"><rect x="48" y="893.3086355335247" width="1504" height="475.4197756326637" rx="6"/></clipPath>
+<rect x="48" y="893.3086355335247" width="1504" height="475.4197756326637" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-041/p41-04__r1.png" x="48" y="893.3086355335247" width="1504" height="475.4197756326637" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p41-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p41-04-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 347.0950055141893 1116.5705876053187 Q 366.096 1075.251783668145 391.664 1038.454293034177 Q 366.096 1075.251783668145 333.9609944858107 1107.4328770437812 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-04-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="93.12" y="1112.00173232455" width="706.88" height="71.31296634489955" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="111.12" y="1158.9758154969998" font-family="Arial,'Noto Sans',sans-serif" font-size="26.32" fill="#111"><tspan x="111.12" dy="0">Turn round. Upstream water&apos;s coming.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p41-04-d02" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1302.2480435552673 1092.0584966938554 Q 1291.3568 1061.2269002869816 1286.544 1029.5164012522828 Q 1291.3568 1061.2269002869816 1290.3919564447326 1093.9113859046315 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-04-d02" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="1085.76" y="1092.9849412992435" width="421.12000000000006" height="61.804570832246284" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1103.76" y="1135.9272267153667" font-family="Arial,'Noto Sans',sans-serif" font-size="28" fill="#111"><tspan x="1103.76" dy="0">Route remains open.</tspan></text>
+<text x="198.4" y="1035.9345682233238" font-family="system-ui,sans-serif" font-size="48" font-weight="900" fill="#8d2119" stroke="#fff" stroke-width="2" paint-order="stroke">BRRING!</text>
+<rect x="48" y="893.3086355335247" width="1504" height="475.4197756326637" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p41-05">
+<clipPath id="clip-p41-05"><rect x="592.074093399426" y="1392.7284111661884" width="415.85181320114793" height="415.85181320114793" rx="6"/></clipPath>
+<rect x="592.074093399426" y="1392.7284111661884" width="415.85181320114793" height="415.85181320114793" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-041/p41-05__r1.png" x="592.074093399426" y="1392.7284111661884" width="415.85181320114793" height="415.85181320114793" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p41-05)"/>
+<rect x="592.074093399426" y="1392.7284111661884" width="415.85181320114793" height="415.85181320114793" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p41-06">
+<clipPath id="clip-p41-06"><rect x="48" y="1832.5802243673363" width="1504" height="475.4197756326637" rx="6"/></clipPath>
+<rect x="48" y="1832.5802243673363" width="1504" height="475.4197756326637" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-041/p41-06__r1.png" x="48" y="1832.5802243673363" width="1504" height="475.4197756326637" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p41-06)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p41-06-d01" data-speaker-id="babul-courier" data-route-safe="true">
+<path d="M 371.80798249346645 2180.351681546574 Q 375.12 2053.9356719019047 386.40000000000003 1928.187141247065 Q 375.12 2053.9356719019047 355.8720175065335 2178.9216396117877 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-06-d01" data-speaker-id="babul-courier" data-auto-layout="true" data-auto-sized="false" x="78.08" y="2179.636660579181" width="571.52" height="66.55876858857292" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="96.08" y="2224.7152448734673" font-family="Arial,'Noto Sans',sans-serif" font-size="27.439999999999998" fill="#111"><tspan x="96.08" dy="0">Water at the cup. Drivers clear.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p41-06-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 853.0525274249261 2178.599834338774 Q 827.3728 2043.856772658492 809.6256 1908.0768847378033 Q 827.3728 2043.856772658492 837.1874725750739 2180.6734868195877 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p41-06-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="679.68" y="2179.636660579181" width="827.2" height="71.31296634489955" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="697.68" y="2226.3699437516307" font-family="Arial,'Noto Sans',sans-serif" font-size="25.76" fill="#111"><tspan x="697.68" dy="0">Then I&apos;m correcting every linked emergency now.</tspan></text>
+<rect x="48" y="1832.5802243673363" width="1504" height="475.4197756326637" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">41</text>
+</svg>

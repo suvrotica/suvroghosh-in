@@ -1,0 +1,597 @@
+page: 16
+title: 'Attendance, displacement, and one goat'
+purpose: 'Introduce school-record complexity and the danger of prediction
+  hardening temporary conditions into destiny.'
+location: golmohar-school-3
+time: afternoon
+layout: 'Wide courtyard/classroom opener, two record-comparison beats, a goat
+  reveal, and a wide predictive turn.'
+panelCount: 5
+dialogueGoal: 'Let the school want better records while rejecting permanent
+  conclusions drawn from flood displacement and incomplete facilities.'
+pageTurn: "A predicted infrastructure career points the inspection towards the
+  New Development's missing drainage."
+visualMotif: 'Three registers holding different valid states while one
+  prediction compresses them.'
+continuity:
+  - 'Maroon attendance, green flood-displacement and blue election registers
+    retain fixed roles.'
+  - 'Roll Forty-Seven is a small black-and-brown goat with white forehead mark
+    and red rope collar.'
+  - 'The shared laboratory remains limited and partly locked; no joke targets
+    displaced children.'
+panels:
+  - id: p16-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide eye-level establishing shot across verandah classroom and courtyard'
+    location: golmohar-school-3
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: attentive curiosity,
+          pose: 'Comparing the wall scanner with paper registers',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre,
+          emotion: measured interest,
+          pose: 'Observing temporary and regular pupils together',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: attendance audit,
+          pose: 'Head turned between scanner and register table',
+          facing: left
+        }
+    props:
+      [
+        school-attendance-scanner,
+        school-parallel-registers,
+        laboratory-shared-kit,
+        riju-form-satchel,
+        vale-silver-tablet,
+        cecil-stamp-arm
+      ]
+    foreground: 'Three coloured registers sit beside the blue-grey scanner.'
+    middleGround: 'Children move between courtyard and old classroom; the passenger
+      flagged at the Halt enters with a rail ticket tucked beside a school
+      satchel.'
+    background: 'Flood-height marks and the locked shared laboratory cabinet remain
+      visible.'
+    action: 'The team follows the same rail passenger into School No. 3 and finds
+      paper and electronic attendance systems serving different institutional
+      needs.'
+    dialogue:
+      - id: p16-01-d01
+        speaker: riju-dhar
+        text: 'Three registers for one class?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.34,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.290, y: 0.295 },
+            tailDirection: down,
+            fontScale: 0.92,
+            manualBreaks: [ 'Three registers', 'for one class?' ]
+          }
+    continuity:
+      [
+        'Scanner hood slopes down left-to-right.',
+        'All register writing and flood numbers are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm afternoon courtyard light under shaded verandahs.',
+        palette: 'Maroon, green, blue, lime cream, weathered wood and muted Grid blue.',
+        composition: 'Three registers and scanner foreground, children and cast middle,
+          lab cabinet and flood marks background; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.14-0.62, y 0.03-0.21' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The passenger flagged at the Halt enters School No. 3 as Riju compares
+          attendance systems.',
+        description: 'The same young passenger flagged on page 15 enters School No. 3
+          with a rail ticket beside a school satchel. Maroon, green and blue
+          registers sit beside a biometric scanner while flood marks and the
+          limited shared laboratory remain visible.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-016/p16-01__r1.png,
+        final: panels/approved/page-016/p16-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p16-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Top-down medium shot on the three open blank registers'
+    location: golmohar-school-3
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: growing comprehension,
+          pose: 'Tracing one pupil across three tabs',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: analytical caution,
+          pose: 'Holding one page edge while comparing states',
+          facing: left
+        }
+    props: [ school-parallel-registers, riju-form-satchel, vale-silver-tablet ]
+    foreground: "The rail passenger's reference token is aligned across maroon,
+      green and blue pages with blank but differently structured entries."
+    middleGround: 'That same pupil is regular in one source, flood-displaced in
+      another and temporary in a third.'
+    background: "The scanner's single binary status glows beyond the books."
+    action: 'Riju confirms the station passenger is the same pupil and discovers
+      that contradictory attendance states can all be true for different
+      purposes.'
+    dialogue:
+      - id: p16-02-d01
+        speaker: director-vale
+        text: 'Maybe the question is wrong.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.58,
+            y: 0.75,
+            width: 0.40,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.835, y: 0.315 },
+            tailDirection: up,
+            fontScale: 0.90,
+            manualBreaks: [ 'Maybe the question', 'is wrong.' ]
+          }
+      - id: p16-02-d02
+        speaker: riju-dhar
+        text: 'Not the child.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.03,
+            y: 0.80,
+            width: 0.28,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.225, y: 0.300 },
+            tailDirection: up,
+            fontScale: 0.92,
+            manualBreaks: [ 'Not the', 'child.' ]
+          }
+    continuity:
+      [
+        'The three states remain separate and valid.',
+        'Vale and Riju share the insight without resolving policy.'
+      ]
+    prompt:
+      {
+        lighting: 'Even desk light with soft blue scanner glow beyond.',
+        palette: 'Maroon, green, blue, cream paper, moss and graphite.',
+        composition: 'Three open registers dominate; hands trace one entry; binary
+          scanner sits deep background; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.45-0.95, y 0.03-0.21',
+            'lower-left reserve: x 0.03-0.47, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Riju matches the station passenger to one pupil across three valid
+          registers.',
+        description: 'A deterministic reference token links the passenger flagged at the
+          Halt to one pupil in the maroon attendance, green flood-displacement
+          and blue election-use registers. Vale notes that the contradictory
+          states belong to the question, not necessarily the child.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-016/p16-02__r1.png,
+        final: panels/approved/page-016/p16-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p16-03
+    panel: 3
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Low comic reveal beneath the register table'
+    location: golmohar-school-3
+    time: afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: left,
+          emotion: procedural certainty,
+          pose: 'Stamp arm indicating a blank attendance row',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: startled recognition,
+          pose: 'Looking from the row to the goat below',
+          facing: left
+        }
+    props: [ school-parallel-registers, cecil-stamp-arm, roll-forty-seven-goat ]
+    foreground: 'Roll Forty-Seven noses leaves beneath the table, red rope collar
+      and white forehead mark clear.'
+    middleGround: 'Riju looks down while Cecil remains focused on the record.'
+    background: 'The blank attendance row waits above.'
+    action: 'Cecil follows an imported election-register row into attendance and
+      identifies its most consistent pupil as the goat standing beneath the
+      records.'
+    dialogue:
+      - id: p16-03-d01
+        speaker: cecil-c17
+        text: 'Perfect attendance.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.01,
+            y: 0.27,
+            width: 0.30,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.275, y: 0.235 },
+            tailDirection: up,
+            fontScale: 0.90,
+            manualBreaks: [ 'Perfect', 'attendance.' ]
+          }
+      - id: p16-03-d02
+        speaker: riju-dhar
+        text: 'Roll Forty-Seven is the goat.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.69,
+            y: 0.29,
+            width: 0.29,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.690, y: 0.175 },
+            tailDirection: up,
+            fontScale: 0.88,
+            manualBreaks: [ 'Roll Forty-Seven', 'is the goat.' ]
+          }
+    visualJoke: 'The record is perfectly consistent about the wrong species.'
+    continuity:
+      [
+        'The goat behaves naturally, seeking leaves and shade.',
+        'A deterministic source-link shows the election-register row imported
+          into attendance.',
+        'Brass-tag number is added deterministically.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm floor-level courtyard reflection under table shade.',
+        palette: 'Black-brown goat coat, white mark, red collar, cream enamel and moss.',
+        composition: 'Goat dominates foreground, record and Cecil above, Riju reaction
+          right; preserve a clean source-link field and upper-left and
+          lower-right reserves.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.02-0.79, y 0.02-0.26',
+            'lower-right reserve: x 0.39-0.94, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil traces an imported election row to the goat recorded as a pupil.',
+        description: 'A deterministic source-link shows an election-register row
+          imported into attendance. Beneath the table, Roll Forty-Seven, a small
+          black-and-brown goat with a white forehead mark, eats leaves while
+          Cecil praises the record and Riju identifies the supposed pupil.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-016/p16-03__r1.png,
+        final: panels/approved/page-016/p16-03__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p16-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Over-terminal shot towards the shared laboratory cabinet'
+    location: golmohar-school-3
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: disturbed curiosity,
+          pose: 'Reviewing a blank predictive-placement pane',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: qualified concern,
+          pose: 'Looking past the prediction towards the locked lab',
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: prediction output,
+          pose: 'Stamp arm indexing career categories',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        laboratory-shared-kit
+      ]
+    foreground: 'Blank career tracks branch from incomplete attendance and household
+      inputs.'
+    middleGround: 'Riju and Vale follow a high-confidence branch.'
+    background: 'The locked laboratory cabinet visibly contains only one shared kit.'
+    action: 'The demo assigns permanent-looking careers from temporary attendance
+      and incomplete facilities.'
+    dialogue:
+      - id: p16-04-d01
+        speaker: riju-dhar
+        text: 'It picks careers before the lab opens.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.01,
+            y: 0.39,
+            width: 0.42,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.285, y: 0.260 },
+            tailDirection: up,
+            fontScale: 0.82,
+            manualBreaks: [ 'It picks careers', 'before the lab opens.' ]
+          }
+      - id: p16-04-d02
+        speaker: director-vale
+        text: 'Then the student gets an appeal.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.60,
+            y: 0.72,
+            width: 0.37,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.795, y: 0.170 },
+            tailDirection: up,
+            fontScale: 0.86,
+            manualBreaks: [ 'Then the student', 'gets an appeal.' ]
+          }
+    continuity:
+      [
+        'Career outputs and labels are deterministic overlays.',
+        'The predictive system is a Mission demo, not yet a final school
+          decision.'
+      ]
+    prompt:
+      {
+        lighting: 'Soft classroom light with cool terminal reflection and warm lab
+          cabinet beyond.',
+        palette: 'Moss green, graphite, muted blue, cabinet grey and cream.',
+        composition: 'Prediction branches foreground point towards locked lab
+          background; Riju and Vale flank; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.57, y 0.03-0.22',
+            'lower-right reserve: x 0.51-0.96, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: "A career prediction appears before the school's shared laboratory can
+          open.",
+        description: "Blank career branches grow from incomplete attendance data on
+          Riju's terminal while the locked shared laboratory cabinet stands
+          behind. Vale says such guidance must remain open to challenge."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-016/p16-04__r1.png,
+        final: panels/approved/page-016/p16-04__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p16-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide classroom-to-window shot linking prediction to distant construction'
+    location: golmohar-school-3
+    time: afternoon
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: uneasy recognition,
+          pose: 'Holding the terminal where a blank infrastructure track points outward',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre,
+          emotion: focused decision,
+          pose: 'Following the line towards the window',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: itinerary update,
+          pose: 'Turning towards the exit',
+          facing: right
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        school-parallel-registers,
+        laboratory-shared-kit
+      ]
+    foreground: 'The three registers remain open beside the prediction terminal.'
+    middleGround: 'A blank infrastructure-career branch points towards the classroom window.'
+    background: 'The unfinished New Development rises beyond flood-height marks.'
+    action: 'The prediction assigns an infrastructure future while the team can see
+      unfinished infrastructure outside.'
+    dialogue:
+      - id: p16-05-d01
+        speaker: cecil-c17
+        text: 'Recommended field visit: infrastructure.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.63,
+            y: 0.01,
+            width: 0.34,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.790, y: 0.490 },
+            tailDirection: down,
+            fontScale: 0.88,
+            manualBreaks: [ 'Recommended field visit:', 'infrastructure.' ]
+          }
+      - id: p16-05-d02
+        speaker: director-vale
+        text: 'Then let''s see it for ourselves.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.02,
+            y: 0.40,
+            width: 0.35,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.460, y: 0.175 },
+            tailDirection: right,
+            fontScale: 0.90,
+            manualBreaks: [ 'Then let''s see it', 'for ourselves.' ]
+          }
+    visualJoke: 'The model assigns infrastructure careers before the visible
+      infrastructure is complete.'
+    continuity:
+      [
+        'The inspection proceeds to `new-development` on page 17.',
+        'Registers and lab remain unchanged and under school control.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm classroom afternoon light opening to harsher construction glare
+          outside.',
+        palette: 'Register maroon, green and blue, terminal grey, concrete and dusty
+          cream.',
+        composition: 'Prediction line carries eye from registers through cast to
+          unfinished towers outside; reserve upper-right and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-right reserve: x 0.52-0.97, y 0.03-0.21',
+            'lower-centre reserve: x 0.27-0.72, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A predicted infrastructure career points towards the unfinished New
+          Development.',
+        description: "The open school registers and limited lab sit beside Riju's
+          terminal as a blank infrastructure-career branch points through the
+          window towards unfinished towers. Vale decides to inspect what the
+          prediction assumes."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-016/p16-05__r1.png,
+        final: panels/approved/page-016/p16-05__r1.png,
+        width: 1672,
+        height: 941
+      }

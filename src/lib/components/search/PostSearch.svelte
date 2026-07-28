@@ -12,7 +12,7 @@
 		sections: { slug: string; label: string; count: number }[];
 		years: { value: string; count: number }[];
 	};
-	type PagefindResultPath = `/blog/${string}/${string}` | `/topics/${string}`;
+	type PagefindResultPath = `/${string}`;
 	type PagefindResultData = {
 		url: PagefindResultPath;
 		excerpt: string;
@@ -216,6 +216,12 @@
 			: date.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
 	}
 
+	function resultTypeLabel(meta: Record<string, string>) {
+		if (meta.content_label) return meta.content_label;
+		if (meta.content_type === 'topic') return 'Topic Headquarters';
+		return meta.section || meta.category || 'Writing';
+	}
+
 	afterNavigate(() => {
 		enhanced = false;
 		void runSearch(true, false);
@@ -395,17 +401,16 @@
 						<div
 							class="mb-1 text-xs font-semibold tracking-wide text-neutral-500 uppercase dark:text-neutral-400"
 						>
-							{result.meta.content_type === 'topic'
-								? 'Topic Headquarters'
-								: result.meta.section || result.meta.category}
+							{resultTypeLabel(result.meta)}
+							{#if result.meta.production_status}
+								<span aria-hidden="true"> · </span>{result.meta.production_status}
+							{/if}
 							{#if result.meta.date}<span aria-hidden="true"> · </span>{formatDate(
 									result.meta.date
 								)}{/if}
 						</div>
 						<a
-							href={result.url.startsWith('/topics/')
-								? resolve(result.url as `/topics/${string}`)
-								: resolve(result.url as `/blog/${string}/${string}`)}
+							href={result.url}
 							class="text-lg font-bold text-neutral-900 hover:text-neutral-600 dark:text-neutral-100 dark:hover:text-neutral-300"
 						>
 							{result.meta.title}

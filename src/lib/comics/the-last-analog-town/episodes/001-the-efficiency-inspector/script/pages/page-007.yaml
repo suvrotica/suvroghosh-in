@@ -1,0 +1,553 @@
+page: 7
+title: 'The complaint before the complaint'
+purpose: "Show both the circular formal grievance route and the unequal reach of
+  Ila's personal shortcut."
+location: golmohar-municipal-hall
+time: late afternoon
+layout: 'Wide counter opener, a medium rule reveal, two opposed
+  intervention/reaction beats, and a wide ethical page turn.'
+panelCount: 5
+dialogueGoal: 'Argue about who actually receives recourse rather than whether
+  forms or personal intervention are inherently foolish.'
+pageTurn: 'Vale asks how an ambulance finds somebody whose complaint system
+  cannot find them.'
+visualMotif: 'A grievance token travelling in a circle while people stand still.'
+continuity:
+  - 'The claimant from page 6 reaches the grievance counter.'
+  - 'The portal requires a complaint number generated only after submission.'
+  - "Ila's phone intervention helps one case while another resident without
+    access remains waiting."
+panels:
+  - id: p07-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Eye-level wide shot across the grievance counter and queue'
+    location: golmohar-municipal-hall
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: familiar impatience,
+          pose: 'Reading the counter screen over her spectacles',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: puzzled concentration,
+          pose: "Holding the claimant's blank form beside the terminal",
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: analytical concern,
+          pose: "Watching the claimant's route on the tablet",
+          facing: left
+        }
+      - {
+          id: cecil-c17,
+          position: far-right,
+          emotion: rule retrieval,
+          pose: 'Stamp arm poised over the token drum',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        ila-cracked-phone,
+        riju-reconciliation-terminal,
+        vale-silver-tablet,
+        cecil-stamp-arm,
+        grievance-token-drum
+      ]
+    foreground: 'The token drum contains blank slips and one narrow return slot.'
+    middleGround: 'The claimant stands between paper form, portal screen and four officials.'
+    background: 'A corrected procedural poster accumulates blank pasted layers.'
+    action: 'The claimant reaches the formal counter and cannot complete the first
+      required field.'
+    dialogue:
+      - id: p07-01-d01
+        speaker: riju-dhar
+        text: 'It wants the complaint number.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.30,
+            y: 0.01,
+            width: 0.27,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.64, y: 0.25 },
+            tailDirection: down,
+            fontScale: 0.96,
+            manualBreaks: [ 'It wants the', 'complaint number.' ]
+          }
+      - id: p07-01-d02
+        speaker: ila-dastidar
+        text: 'This is the complaint.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.28,
+            y: 0.45,
+            width: 0.31,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.515, y: 0.31 },
+            tailDirection: up,
+            fontScale: 1
+          }
+    visualJoke: 'The three-step poster has enough correction layers for eleven steps.'
+    continuity:
+      [
+        'All forms, screens, tokens and poster words remain blank in generated
+          art.',
+        'Ila wears spectacles for close reading in this panel.'
+      ]
+    prompt:
+      {
+        lighting: 'Flat public-counter light warmed by late-afternoon corridor sun.',
+        palette: 'Cream paper, municipal red, moss green, graphite and Grid blue.',
+        composition: 'Token drum foreground leads to claimant and four principals; blank
+          poster supplies layered background joke; preserve centre-top and
+          lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-centre reserve: x 0.22-0.61, y 0.03-0.21',
+            'lower-left reserve: x 0.03-0.38, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A claimant reaches the grievance counter but the form demands a missing
+          number.',
+        description: 'At the public counter, a resident stands between a paper form and
+          portal screen. Riju finds that the first field requires a complaint
+          number, while Ila points out that the document itself is the
+          complaint.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-007/p07-01__r1.png,
+        final: panels/approved/page-007/p07-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p07-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Tight medium shot on Cecil, token drum and blank portal'
+    location: golmohar-municipal-hall
+    time: late afternoon
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: formal certainty,
+          pose: 'Pointing the stamp arm from the required field to the empty result slot',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: dawning disbelief,
+          pose: 'Following the circular route with his pencil',
+          facing: right
+        }
+    props: [ cecil-stamp-arm, grievance-token-drum, riju-form-satchel ]
+    foreground: 'The pencil line circles from form to portal to empty token slot.'
+    middleGround: 'Cecil illustrates the valid sequence without irony.'
+    background: 'The claimant remains waiting at the edge of frame.'
+    action: 'Cecil explains that the number is issued only after the numbered
+      complaint is submitted.'
+    dialogue:
+      - id: p07-02-d01
+        speaker: cecil-c17
+        text: 'Submission generates the number required for submission.'
+        style: robot
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.38,
+            width: 0.42,
+            height: 0.24,
+            z: 10,
+            tailTarget: { x: 0.59, y: 0.22 },
+            tailDirection: left,
+            fontScale: 0.88,
+            manualBreaks:
+              [ 'Submission', 'generates the', 'number required', 'for submission.' ]
+          }
+    visualJoke: "Riju's pencil completes a perfect circle around nothing."
+    continuity:
+      [
+        'Cecil states the rule as valid syntax, not human sarcasm.',
+        'Riju keeps the pencil in hand for the next panel.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool portal glow against warm paper and cream enamel.',
+        palette: 'Muted blue, cream, pencil yellow, moss green and faded red.',
+        composition: 'Circular pencil route encloses empty centre; Cecil clear on right
+          and Riju on left; reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right reserve: x 0.29-0.96, y 0.03-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil explains the circular complaint-number rule as Riju draws a loop.',
+        description: "Cecil points from the blank form to the portal and empty token
+          slot, formally explaining that submission creates the number required
+          to submit. Riju's pencil traces the procedure into a perfect empty
+          circle."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-007/p07-02__r1.png,
+        final: panels/approved/page-007/p07-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p07-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Side medium shot of Ila making a direct call'
+    location: golmohar-municipal-hall
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: efficient irritation,
+          pose: 'Holding cracked phone to her ear while marking the ledger',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: right,
+          emotion: observant reserve,
+          pose: 'Watching the claimant receive a token',
+          facing: left
+        }
+    props:
+      [
+        ila-cracked-phone,
+        municipal-red-ledger,
+        grievance-token-drum,
+        vale-silver-tablet
+      ]
+    foreground: "Ila's ledger is open to a blank drainage note."
+    middleGround: 'One concise call causes a token to drop from the drum.'
+    background: 'The relieved claimant moves towards the counter.'
+    action: 'Ila uses a personal contact to bypass the impossible first step.'
+    dialogue:
+      - id: p07-03-d01
+        speaker: ila-dastidar
+        text: 'Open the drain case. Yes—before it has a number.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.31,
+            y: 0.02,
+            width: 0.26,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.25 },
+            tailDirection: left,
+            fontScale: 0.92,
+            manualBreaks:
+              [ 'Open the drain case.', 'Yes—before it has a number.' ]
+          }
+    soundEffects:
+      - {
+          text: 'TOK',
+          description: 'A grievance token drops into the tray.',
+          position: { x: 0.70, y: 0.62, z: 7 }
+        }
+    visualJoke: 'The impossible automated step becomes possible through one very
+      ordinary phone call.'
+    continuity:
+      [
+        "Ila's phone crack remains lower-right and the screen is unbranded.",
+        'The first claimant now has a token and moves forward.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm late-afternoon light on Ila with cool counter light on Vale.',
+        palette: 'Municipal red, faded blue, cream, graphite and brass.',
+        composition: "Ila's call drives left-to-right action towards the falling token
+          and claimant; preserve upper-left and lower-right SFX space.",
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.55, y 0.03-0.23' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila makes a direct call and a grievance token drops for the claimant.',
+        description: 'Ila opens her red ledger and uses her cracked phone to order the
+          drainage case opened before it has a number. A token drops with a
+          small clack while Vale watches the successful shortcut.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-007/p07-03__r1.png,
+        final: panels/approved/page-007/p07-03__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p07-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Silent eye-level reaction framed past a second waiting resident'
+    location: golmohar-municipal-hall
+    time: late afternoon
+    characters:
+      - {
+          id: ila-dastidar,
+          position: background-left,
+          emotion: uncomfortable recognition,
+          pose: 'Lowering the phone while noticing the untouched form',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: background-right,
+          emotion: quiet confirmation,
+          pose: 'Looking from Ila to the second resident',
+          facing: left
+        }
+    props: [ ila-cracked-phone, municipal-red-ledger, vale-silver-tablet ]
+    foreground: 'A second waiting resident holds an untouched blank form without
+      approaching Ila.'
+    middleGround: 'Empty floor separates the resident from the officials.'
+    background: "Ila lowers the phone and meets Vale's look."
+    action: 'Ila sees that her efficient shortcut exists only for people who can
+      reach her.'
+    dialogue: []
+    continuity:
+      [
+        'The second resident receives no token or intervention on this page.',
+        'The silence carries ethical weight rather than making the resident a
+          joke.'
+      ]
+    prompt:
+      {
+        lighting: 'Late-afternoon light falls on the empty floor between foreground
+          resident and officials.',
+        palette: 'Muted cream, ledger red, graphite, faded blue and soft brown.',
+        composition: 'Foreground form and empty distance dominate; Ila and Vale are
+          small but readable in background; keep top quiet.',
+        balloonSafeAreas: [ 'upper-centre quiet reserve: x 0.28-0.72, y 0.03-0.20' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila notices another resident still waiting beyond the reach of her
+          shortcut.',
+        description: 'A second resident holds an untouched form in the foreground,
+          separated from the counter by empty floor. In the background Ila
+          lowers her phone and exchanges a sober look with Vale.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-007/p07-04__r1.png,
+        final: panels/approved/page-007/p07-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p07-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide two-shot walking away from the grievance counter'
+    location: golmohar-municipal-hall
+    time: late afternoon
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: firm concern,
+          pose: 'Walking with tablet tucked against the left side',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: centre-right,
+          emotion: quiet challenge,
+          pose: 'Walking with ledger under left arm and phone lowered',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: background-centre,
+          emotion: thoughtful unease,
+          pose: 'Following while returning pencil to right ear',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: far-right,
+          emotion: route continuation,
+          pose: 'Rolling towards the exit corridor',
+          facing: right
+        }
+    props:
+      [
+        vale-silver-tablet,
+        municipal-red-ledger,
+        ila-cracked-phone,
+        riju-form-satchel,
+        cecil-stamp-arm
+      ]
+    foreground: 'The circular pencil diagram lies on the counter behind them.'
+    middleGround: 'Vale and Ila argue in motion rather than stopping the inspection.'
+    background: 'The second resident remains at the formal counter.'
+    action: "Vale identifies the inequity of personal access; Ila identifies the
+      formal system's total failure."
+    dialogue:
+      - id: p07-05-d01
+        speaker: director-vale
+        text: 'Your shortcut works for people who can reach you.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.01,
+            width: 0.25,
+            height: 0.125,
+            z: 10,
+            tailTarget: { x: 0.35, y: 0.16 },
+            tailDirection: right,
+            fontScale: 0.9,
+            manualBreaks:
+              [ 'Your shortcut works for', 'people who can reach you.' ]
+          }
+      - id: p07-05-d02
+        speaker: ila-dastidar
+        text: 'The official route works for nobody.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.42,
+            y: 0.01,
+            width: 0.36,
+            height: 0.105,
+            z: 10,
+            tailTarget: { x: 0.55, y: 0.25 },
+            tailDirection: down,
+            fontScale: 0.97,
+            manualBreaks: [ 'The official route', 'works for nobody.' ]
+          }
+      - id: p07-05-d03
+        speaker: director-vale
+        text: 'Then how does an ambulance find them?'
+        style: speech
+        readingOrder: 3
+        balloon:
+          {
+            x: 0.012,
+            y: 0.40,
+            width: 0.25,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.35, y: 0.16 },
+            tailDirection: up,
+            fontScale: 0.92,
+            manualBreaks: [ 'Then how does an ambulance', 'find them?' ]
+          }
+    continuity:
+      [
+        'The address question turns directly into page 8.',
+        'Ila and Vale remain professional counterparts, not enemies.'
+      ]
+    prompt:
+      {
+        lighting: 'Long late-afternoon corridor bands leading towards the exit.',
+        palette: 'Graphite, ink blue, ledger red, moss green and cream.',
+        composition: 'Walking two-shot carries left-to-right momentum; resident and
+          circular diagram remain visible behind; reserve upper corners and
+          lower centre.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.54, y 0.03-0.23',
+            'upper-right reserve: x 0.56-0.96, y 0.03-0.21',
+            'lower-centre reserve: x 0.22-0.73, y 0.73-0.94'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale and Ila debate shortcuts as they leave the grievance counter.',
+        description: 'Vale and Ila walk side by side, arguing that personal access is
+          unequal and the formal route reaches nobody. Riju follows thoughtfully
+          as Vale turns the problem towards emergency addresses.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-007/p07-05__r1.png,
+        final: panels/approved/page-007/p07-05__r1.png,
+        width: 1672,
+        height: 941
+      }

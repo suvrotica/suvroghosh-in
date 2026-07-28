@@ -1,0 +1,658 @@
+page: 59
+title: 'Better because incomplete'
+purpose: 'Deliver the action payoff as linked services return with safeguards
+  and visible uncertainty.'
+location: golmohar-municipal-hall
+time: dawn
+layout: 'Six-location dawn montage: Hall, clinic, halt, market, school and New
+  Development.'
+panelCount: 6
+dialogueGoal: 'Show that stronger evidence includes both system limits and
+  accountable human intervention.'
+pageTurn: 'Vale asks the council to make the emergency rules binding beyond the night.'
+visualMotif: 'Green service paths returning beside amber uncertainty and red
+  human-reason trails.'
+continuity:
+  - 'Medicine tracking, clinic results, train ranges and welfare access retain
+    their earlier gains.'
+  - 'Addresses stay reachable while under correction; urgent care outranks
+    compliance; school guidance is contestable; market failure conditions are
+    visible; traffic follows observed closure.'
+  - "Contractor evidence and Ila's gate-opening reason remain side by side."
+panels:
+  - id: p59-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide dawn view across the restored public-service counter'
+    location: golmohar-municipal-hall
+    time: dawn
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: cautious relief,
+          pose: 'Opening reachable-but-unresolved address and welfare panes',
+          facing: right
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: vigilant satisfaction,
+          pose: 'Checking each human reason against the red ledger',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre-right,
+          emotion: mixed-state reporting,
+          pose: 'Holding green and amber case rails apart',
+          facing: left
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        municipal-red-ledger,
+        cecil-stamp-arm,
+        hybrid-rules-board
+      ]
+    foreground: 'Residents use an address-correction slot and an appeal intake
+      without a prior number.'
+    middleGround: 'Green restored services sit beside amber unresolved states.'
+    background: 'The server cupboard is powered and the public counter remains open.'
+    action: 'Welfare access and reachable addresses return without hiding unresolved
+      identity corrections.'
+    dialogue:
+      - id: p59-01-d01
+        speaker: riju-dhar
+        text: 'Service is back. We can reach the address. The correction stays open.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.322,
+            y: 0.012,
+            width: 0.284,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.44, y: 0.49 },
+            tailDirection: left,
+            fontScale: 0.70,
+            manualBreaks: [ Service is back., We can reach the address., The correction stays open. ]
+          }
+      - id: p59-01-d02
+        speaker: cecil-c17
+        text: 'Incomplete and operational.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.81,
+            y: 0.36,
+            width: 0.178,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.68, y: 0.57 },
+            tailDirection: left,
+            fontScale: 0.70,
+            manualBreaks: [ 'Incomplete and', 'operational.' ]
+          }
+    continuity:
+      [
+        'The welfare case is provisional and reviewable.',
+        'Address correction remains open.'
+      ]
+    prompt:
+      {
+        lighting: 'Fresh dawn through verandah windows with restrained server glow.',
+        palette: 'Paper cream, municipal red, ledger green, uncertainty amber, moss and
+          cream enamel.',
+        composition: 'Open public counter frames green and amber rails with residents
+          active in foreground; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.25-0.78, y 0.03-0.22',
+            'lower-right: x 0.55-0.93, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Welfare and address services return with corrections still visibly open.',
+        description: 'Residents use the restored public counter while Riju keeps an
+          unresolved address reachable and its correction active. Cecil
+          separates green operating states from amber uncertainty, and Ila
+          audits the human reasons.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-059/p59-01__r1.png, final: panels/approved/page-059/p59-01__r1.png, width: 1672, height: 941 }
+  - id: p59-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Clinic treatment-and-results view'
+    location: rook-clinic
+    time: dawn
+    characters:
+      - {
+          id: ananya-rook,
+          position: centre,
+          emotion: focused relief,
+          pose: 'Matching a returned result to the paper clinical source',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: inset-right,
+          emotion: evidence assessment,
+          pose: 'Reviewing the urgent-over-compliance rule on the field pane',
+          facing: left
+        }
+    props:
+      [
+        clinic-paper-queue,
+        clinic-solar-battery,
+        ananya-mechanical-watch,
+        vale-silver-tablet
+      ]
+    foreground: 'Medicine tracking and result panes are active again.'
+    middleGround: 'Ananya verifies the returned result against the paper source
+      before filing it.'
+    background: 'The stable patient remains under ordinary observation.'
+    action: 'The clinic regains speed while urgent clinical judgement keeps priority
+      and an audit trail.'
+    dialogue:
+      - id: p59-02-d01
+        speaker: ananya-rook
+        text: 'The result''s back. The source matches. In an emergency, the patient
+          comes first.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.012,
+            width: 0.36,
+            height: 0.24,
+            z: 10,
+            tailTarget: { x: 0.51, y: 0.49 },
+            tailDirection: right,
+            fontScale: 0.60,
+            manualBreaks:
+              [
+                'The result''s back.',
+                'The source matches.',
+                'In an emergency,',
+                'the patient comes first.'
+              ]
+          }
+    continuity:
+      [
+        'Medicine tracking and results retain their genuine gains.',
+        'Paper source remains available for verification.'
+      ]
+    prompt:
+      {
+        lighting: 'Soft dawn and warm clinical task light.',
+        palette: 'Indigo, warm cream, amber, muted blue and graphite.',
+        composition: "Returned result and paper source align under Ananya's hand;
+          preserve upper-centre.",
+        balloonSafeAreas: [ 'upper-centre: x 0.22-0.86, y 0.03-0.22' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya verifies a returned clinic result against its paper source.',
+        description: "Medicine tracking and result panes are active again. Ananya checks
+          a returned result against the clinic's paper record while the patient
+          remains stable under ordinary observation."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-059/p59-02__r1.png, final: panels/approved/page-059/p59-02__r1.png, width: 1448, height: 1086 }
+  - id: p59-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Wide platform view beneath the two station clocks'
+    location: golmohar-halt
+    time: dawn
+    characters:
+      - {
+          id: babul-courier,
+          position: left,
+          emotion: satisfied attention,
+          pose: 'Comparing the restored train range with the manual call sheet',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: range display,
+          pose: 'Indicating two possible platform-arrow substrates',
+          facing: left
+        }
+    props:
+      [
+        station-clock-pair,
+        blank-digital-signboard,
+        manual-announcement-microphone,
+        ghori-the-station-dog,
+        cecil-stamp-arm
+      ]
+    foreground: 'Ghori lies across both blank possible platform-arrow spaces.'
+    middleGround: 'A restored digital range and a paper call sheet agree on time but
+      retain platform uncertainty.'
+    background: 'Passengers wait within safe markers.'
+    action: 'Useful train information returns as a range rather than a false precise
+      platform claim.'
+    dialogue:
+      - id: p59-03-d01
+        speaker: babul-courier
+        text: 'Range fits.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.012,
+            width: 0.185,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.49 },
+            tailDirection: right,
+            fontScale: 0.58,
+            manualBreaks: [ 'Range fits.' ]
+          }
+      - id: p59-03-d02
+        speaker: cecil-c17
+        text: 'Platform mismatch. Uncertainty displayed.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.70,
+            y: 0.52,
+            width: 0.288,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.79, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.58,
+            manualBreaks: [ 'Platform mismatch.', 'Uncertainty displayed.' ]
+          }
+    visualJoke: 'Ghori studies neither arrow and lies across both possibilities.'
+    continuity:
+      [
+        'Ghori follows station routine, not screen comprehension.',
+        'All ranges and arrows are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Pale dawn platform light with restored signboard glow.',
+        palette: 'Station cream, rail green, muted blue, brass, ochre and dog charcoal.',
+        composition: 'Two clocks and two blank arrow spaces frame Ghori, Babul-da and
+          Cecil; reserve upper-left and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-left: x 0.03-0.45, y 0.03-0.21',
+            'lower-right: x 0.62-0.96, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Train information returns as a range while Ghori lies across both platform
+          arrows.',
+        description: 'The restored signboard and manual call sheet agree on a train-time
+          range but not the platform. Babul-da compares them, Cecil reports
+          visible uncertainty and Ghori lies across both blank arrow spaces.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-059/p59-03__r1.png, final: panels/approved/page-059/p59-03__r1.png, width: 1448, height: 1086 }
+  - id: p59-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Market counter view of forecast, stock and challenge slot'
+    location: twelve-hand-market
+    time: dawn
+    characters:
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: technical caution,
+          pose: 'Showing a forecast beside its failure-condition pane',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: input separation,
+          pose: 'Keeping observed stock outside the prediction feedback rail',
+          facing: front
+        }
+    props:
+      [
+        riju-reconciliation-terminal,
+        cecil-stamp-arm,
+        market-price-slates,
+        competing-payment-placards
+      ]
+    foreground: 'Sellers enter real stock on blank slates.'
+    middleGround: 'The forecast, its failure conditions and a challenge slot remain
+      adjacent.'
+    background: 'Buyers move normally through the reopened central lane.'
+    action: 'Market data returns without allowing prediction to manufacture demand
+      or evade challenge.'
+    dialogue:
+      - id: p59-04-d01
+        speaker: riju-dhar
+        text: 'Keep the forecast, quarantine its feedback, and leave challenges open.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.24,
+            y: 0.012,
+            width: 0.45,
+            height: 0.215,
+            z: 10,
+            tailTarget: { x: 0.22, y: 0.49 },
+            tailDirection: left,
+            fontScale: 0.70,
+            manualBreaks:
+              [ 'Keep the forecast,', 'quarantine its feedback,', 'and leave challenges open.' ]
+          }
+    continuity:
+      [
+        'Forecast remains useful but bounded.',
+        'All market values and signs remain blank in art.'
+      ]
+    prompt:
+      {
+        lighting: 'Early sun filtering through layered awnings.',
+        palette: 'Terracotta, mustard, slate green, moss, cream enamel and uncertainty
+          amber.',
+        composition: 'Observed stock, forecast and challenge slot read as three separate
+          stations; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left: x 0.03-0.51, y 0.03-0.22' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The market forecast returns beside its failure conditions and a challenge
+          slot.',
+        description: 'Sellers record real stock on physical slates while Riju keeps the
+          forecast, known failure conditions and challenge route adjacent. Cecil
+          prevents the prediction from feeding back into observed demand.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-059/p59-04__r1.png, final: panels/approved/page-059/p59-04__r1.png, width: 1448, height: 1086 }
+  - id: p59-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'School courtyard view of guidance and laboratory access'
+    location: golmohar-school-3
+    time: dawn
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: sober approval,
+          pose: 'Observing pupils choose from contestable guidance cards',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: practical concern,
+          pose: 'Checking the laboratory access request against the three registers',
+          facing: right
+        }
+    props:
+      [
+        school-parallel-registers,
+        laboratory-shared-kit,
+        school-attendance-scanner,
+        vale-silver-tablet
+      ]
+    foreground: 'Blank guidance cards remain optional and challengeable.'
+    middleGround: 'The laboratory cabinet opens for a shared supervised session
+      rather than a predicted group.'
+    background: 'The scanner and three registers continue in parallel pending review.'
+    action: 'The school keeps useful guidance while restoring opportunity before
+      allocation.'
+    dialogue:
+      - id: p59-05-d01
+        speaker: director-vale
+        text: 'Keep the guidance. Withdraw the placement.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.72,
+            y: 0.69,
+            width: 0.26,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.81, y: 0.38 },
+            tailDirection: up,
+            fontScale: 0.58,
+            manualBreaks: [ 'Keep the guidance.', 'Withdraw the placement.' ]
+          }
+      - id: p59-05-d02
+        speaker: ila-dastidar
+        text: 'Fund it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.01,
+            y: 0.55,
+            width: 0.16,
+            height: 0.10,
+            z: 10,
+            tailTarget: { x: 0.16, y: 0.42 },
+            tailDirection: up,
+            fontScale: 0.58,
+            manualBreaks: [ 'Fund it.' ]
+          }
+    continuity:
+      [
+        'Guidance is not assignment.',
+        'Laboratory scarcity remains a material problem.'
+      ]
+    prompt:
+      {
+        lighting: 'Clear dawn across verandah and courtyard.',
+        palette: 'Register maroon, green and blue, cabinet grey, graphite and municipal
+          red.',
+        composition: 'Optional guidance foreground leads to open shared laboratory
+          cabinet; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.55-0.97, y 0.03-0.21',
+            'lower-left: x 0.03-0.39, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'The school keeps guidance but withdraws predicted placement.',
+        description: 'Optional blank guidance cards sit before an opened shared
+          laboratory cabinet. Vale confirms that placement has been withdrawn,
+          and Ila points out that opportunity still needs funding.'
+      }
+    art: { status: final, revision: 2, source: panels/raw/page-059/p59-05__r2.png, final: panels/approved/page-059/p59-05__r2.png, width: 1448, height: 1086 }
+  - id: p59-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Dawn wide shot at the opened New Development gate'
+    location: new-development
+    time: dawn
+    characters:
+      - {
+          id: ila-dastidar,
+          position: left,
+          emotion: accountable calm,
+          pose: 'Holding her gate-opening reason beside the contractor evidence',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: convinced by stronger evidence,
+          pose: 'Comparing physical closure, human reason and audit trail',
+          facing: left
+        }
+      - {
+          id: babul-courier,
+          position: centre-left,
+          emotion: practical satisfaction,
+          pose: 'Directing vehicles along the raised observed detour',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: mixed-source validation,
+          pose: 'Recording the gate damage and safe route',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        babul-cycle-van,
+        cecil-stamp-arm,
+        blank-surveillance-camera
+      ]
+    foreground: 'Gate damage and receding flood marks remain visible.'
+    middleGround: 'The safe detour follows observed water rather than rainfall score.'
+    background: "Contractor evidence and Ila's public reason appear as parallel
+      blank source panes."
+    action: 'Vale sees that transparent system limits and recorded human
+      intervention produce stronger evidence together.'
+    dialogue:
+      - id: p59-06-d01
+        speaker: ila-dastidar
+        text: 'Then make the limits binding.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.012,
+            y: 0.17,
+            width: 0.32,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.57 },
+            tailDirection: down,
+            fontScale: 0.86,
+            manualBreaks: [ 'Then make the limits', 'binding.' ]
+          }
+      - id: p59-06-d02
+        speaker: director-vale
+        text: 'Agreed. Limits strengthen evidence.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.58,
+            y: 0.66,
+            width: 0.33,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.68, y: 0.49 },
+            tailDirection: none,
+            fontScale: 0.58,
+            manualBreaks: [ 'Agreed.', 'Limits strengthen', 'evidence.' ]
+          }
+    continuity:
+      [
+        "Contractor inquiry and Ila's gate reason remain equally visible.",
+        'Vale asks for permanent operating conditions, not an end to the
+          Mission.'
+      ]
+    prompt:
+      {
+        lighting: 'Low golden dawn over wet concrete and receding water.',
+        palette: 'Warm gold, wet brown, municipal red, graphite, ochre and cream
+          enamel.',
+        composition: 'Visible gate damage anchors parallel evidence panes while safe
+          detour moves left to right; reserve upper-right and lower-left.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.44-0.98, y 0.03-0.22',
+            'lower-left: x 0.03-0.40, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale compares the damaged gate, safe detour and two accountable evidence
+          trails.',
+        description: "The opened gate and flood marks remain visible while Babul-da
+          directs vehicles along the raised route. Ila's reason and the
+          contractor evidence stay side by side as Vale asks for the emergency
+          limits to become binding."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-059/p59-06__r1.png, final: panels/approved/page-059/p59-06__r1.png, width: 1672, height: 941 }

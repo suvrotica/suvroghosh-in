@@ -13,6 +13,7 @@
 			| '/notes'
 			| '/blog/visualizations'
 			| '/blog/games'
+			| '/blog/comic'
 			| '/projects'
 			| '/resume';
 		label: string;
@@ -24,6 +25,7 @@
 		{ href: '/topics', label: 'Topics', sections: ['/topics'] },
 		{ href: '/blog', label: 'Essays', sections: ['/writing', '/blog'] },
 		{ href: '/notes', label: 'Notes', sections: ['/notes'] },
+		{ href: '/blog/comic', label: 'Comic', sections: ['/blog/comic'] },
 		{
 			href: '/blog/visualizations',
 			label: 'Lab',
@@ -45,6 +47,9 @@
 	function isCurrent(item: NavigationItem) {
 		if (currentPath.startsWith('/blog/games')) {
 			return item.href === '/blog/games';
+		}
+		if (currentPath.startsWith('/blog/comic')) {
+			return item.href === '/blog/comic';
 		}
 		if (currentPath.startsWith('/blog/visualizations')) {
 			return item.href === '/blog/visualizations';

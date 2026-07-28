@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 15</title>
+	<desc id="description">Show a service where honest prediction is immediately and unambiguously useful.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p15-01">
+<clipPath id="clip-p15-01"><rect x="48" y="58" width="1504" height="891.7237597911228" rx="6"/></clipPath>
+<rect x="48" y="58" width="1504" height="891.7237597911228" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-015/p15-01__r1.png" x="48" y="58" width="1504" height="891.7237597911228" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p15-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p15-01-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 350.463203435268 217.20722879730508 Q 280.9696 557.1869607310705 845.872 489.59429973890343 Q 280.9696 557.1869607310705 362.176796564732 219.81332472749912 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p15-01-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="93.12" y="84.75171279373369" width="526.4" height="133.75856396866843" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="111.12" y="148.1029947780679" font-family="Arial,'Noto Sans',sans-serif" font-size="25.2" fill="#111"><tspan x="111.12" dy="0">The train is early,</tspan><tspan x="111.12" dy="28.727999999999998">late and unreported.</tspan></text>
+<rect x="48" y="58" width="1504" height="891.7237597911228" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p15-02">
+<clipPath id="clip-p15-02"><rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6"/></clipPath>
+<rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-015/p15-02__r1.png" x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p15-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p15-02-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 426.72559235745683 1071.869742719582 Q 435.4018909090909 1073.7159473629245 436.30196363636367 1077.4829196866842 Q 435.4018909090909 1073.7159473629245 442.2780440061795 1068.1119178548306 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p15-02-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="true" x="339.20000000000005" y="982.0948093994779" width="190.60363636363638" height="87.89602088772848" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="357.20000000000005" y="1013.0782198433421" font-family="Arial,'Noto Sans',sans-serif" font-size="18.26" fill="#111"><tspan x="357.20000000000005" dy="0">Which source</tspan><tspan x="357.20000000000005" dy="20.8164">predicts</tspan><tspan x="357.20000000000005" dy="20.8164">the train?</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p15-02-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 287.3648469466969 1295.4011639194487 Q 259.94065454545455 1272.10982308094 238.97425454545458 1244.0668068929506 Q 259.94065454545455 1272.10982308094 274.5551530533032 1304.9882251144945 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p15-02-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="280.96000000000004" y="1287.6381201044387" width="270.0218181818182" height="62.7828720626632" rx="31.3914360313316" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="298.96000000000004" y="1316.6915561357703" font-family="Arial,'Noto Sans',sans-serif" font-size="16.7" fill="#111"><tspan x="298.96000000000004" dy="0">None of them. They just</tspan><tspan x="298.96000000000004" dy="19.037999999999997">repeat the timetable.</tspan></text>
+<rect x="48" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p15-03">
+<clipPath id="clip-p15-03"><rect x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" rx="6"/></clipPath>
+<rect x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-015/p15-03__r1.png" x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p15-03)"/>
+<rect x="601.4545454545455" y="973.7237597911228" width="397.0909090909092" height="418.5524804177547" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p15-04">
+<clipPath id="clip-p15-04"><rect x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6"/></clipPath>
+<rect x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-015/p15-04__r1.png" x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p15-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p15-04-d01" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 1119.1718060596595 1045.9999953659324 Q 1124.0948363636367 1071.6650402088774 1121.129890909091 1096.359636553525 Q 1124.0948363636367 1071.6650402088774 1135.0536484857953 1047.9408923625272 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p15-04-d01" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="true" x="1033.1345454545456" y="982.0948093994779" width="187.95636363636365" height="64.87563446475197" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1051.1345454545456" y="1012.2478266318539" font-family="Arial,'Noto Sans',sans-serif" font-size="16.32" fill="#111"><tspan x="1051.1345454545456" dy="0">Twelve to</tspan><tspan x="1051.1345454545456" dy="18.604799999999997">sixteen minutes.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p15-04-d02" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1470.2512026511376 1248.1918483526351 Q 1464.6400000000003 1187.6459325326373 1466.9696000000004 1127.3743753524805 Q 1464.6400000000003 1187.6459325326373 1454.2637064397718 1247.5594205768693 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p15-04-d02" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="true" x="1378.868363636364" y="1247.8756344647522" width="166.77818181818182" height="71.1539216710183" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1396.868363636364" y="1281.0445953002613" font-family="Arial,'Noto Sans',sans-serif" font-size="17.2" fill="#111"><tspan x="1396.868363636364" dy="0">Better an</tspan><tspan x="1396.868363636364" dy="19.607999999999997">honest range.</tspan></text>
+<rect x="1022.5454545454547" y="973.7237597911228" width="529.4545454545455" height="418.5524804177547" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p15-05">
+<clipPath id="clip-p15-05"><rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6"/></clipPath>
+<rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-015/p15-05__r1.png" x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p15-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p15-05-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 611.5518980519214 1859.2041261622824 Q 697.728 1859.6412935770236 783.456 1866.1508770234989 Q 697.728 1859.6412935770236 612.4481019480786 1847.237638850773 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p15-05-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="100.64000000000001" y="1746.2140313315929" width="511.36" height="133.75856396866843" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="118.64000000000001" y="1809.643713315927" font-family="Arial,'Noto Sans',sans-serif" font-size="24.64" fill="#111"><tspan x="118.64000000000001" dy="0">One passenger is also</tspan><tspan x="118.64000000000001" dy="28.089599999999997">present at School No. 3.</tspan></text>
+<rect x="48" y="1416.2762402088774" width="1504" height="891.7237597911228" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">15</text>
+</svg>

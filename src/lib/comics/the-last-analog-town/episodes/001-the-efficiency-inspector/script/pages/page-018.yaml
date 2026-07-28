@@ -1,0 +1,557 @@
+page: 18
+title: 'The machine behind the machines'
+purpose: 'Establish the Old Exchange as an essential offline fallback whose
+  resilience and hazards both matter.'
+location: old-exchange
+time: early evening
+layout: 'Wide exchange opener, three alternating dependency/risk beats, and a
+  comic wide incoming-call turn.'
+panelCount: 5
+dialogueGoal: 'Let Ananya distinguish useful maintainable redundancy from
+  nostalgia while Vale insists that working infrastructure still needs safety
+  and access.'
+pageTurn: 'An exchange line rings from a municipal room absent from every
+  current building plan.'
+visualMotif: 'A modern service signal travelling through visible plugs, cords
+  and handwritten custody.'
+continuity:
+  - 'The Old Exchange retains four circuit books, colour-family patch cords and
+    limited battery support.'
+  - 'Patch-cord positions change only through visible, purposeful moves.'
+  - 'The access list is useful but incomplete; no old system is treated as
+    infallible.'
+panels:
+  - id: p18-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide interior establishing shot from the brick doorway'
+    location: old-exchange
+    time: early evening
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: knowledgeable focus,
+          pose: 'Leading the team towards the switchboard with tool bag in hand',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-left,
+          emotion: cautious interest,
+          pose: 'Studying patch cords before consulting tablet',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: centre-right,
+          emotion: delighted recognition,
+          pose: 'Comparing circuit books with his terminal',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: interface search,
+          pose: 'Rolling beneath hanging cord loops',
+          facing: right
+        }
+    props:
+      [
+        ananya-tool-bag,
+        amber-clinic-glasses,
+        ananya-mechanical-watch,
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        exchange-patch-cords,
+        exchange-circuit-books,
+        cecil-stamp-arm
+      ]
+    foreground: 'Banyan roots press near the old brick threshold.'
+    middleGround: 'Patch cords and switchboard lamps fill the working room.'
+    background: 'Four cloth-bound circuit books sit in a glazed cabinet beside
+      battery equipment.'
+    action: 'Ananya brings the inspectors into the manual exchange that still
+      carries modern service traffic.'
+    dialogue:
+      - id: p18-01-d01
+        speaker: ananya-rook
+        text: 'That''s why the clinic phone still works in a blackout.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.02,
+            width: 0.43,
+            height: 0.15,
+            z: 10,
+            tailTarget: { x: 0.210, y: 0.415 },
+            tailDirection: down,
+            fontScale: 0.88,
+            manualBreaks:
+              [ 'That''s why the clinic phone', 'still works in a blackout.' ]
+          }
+    continuity:
+      [
+        'Ananya carries tool bag in right hand.',
+        'All circuit labels remain blank in generated art.'
+      ]
+    prompt:
+      {
+        lighting: 'Amber switchboard lamps under cool early-evening doorway light.',
+        palette: 'Brick red, cord amber and blue, grey-green books, clinic grey and
+          cream enamel.',
+        composition: 'Deep interior path from banyan-root threshold through cast to
+          board and circuit books; reserve upper-left.',
+        balloonSafeAreas: [ 'upper-left reserve: x 0.03-0.54, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya leads the inspection into the cord-filled Old Exchange.',
+        description: "Behind a brick doorway pressed by banyan roots, patch cords and
+          amber lamps fill a working manual exchange. Ananya explains that it
+          keeps the clinic's telephone alive during blackouts."
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-018/p18-01__r1.png,
+        final: panels/approved/page-018/p18-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p18-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Close side shot of Ananya tracing one patch circuit'
+    location: old-exchange
+    time: early evening
+    characters:
+      - {
+          id: ananya-rook,
+          position: left,
+          emotion: exact explanation,
+          pose: 'Tracing an amber cord from clinic jack to relay',
+          facing: right
+        }
+      - {
+          id: riju-dhar,
+          position: right,
+          emotion: fascinated humility,
+          pose: 'Following the circuit in an open book',
+          facing: left
+        }
+    props:
+      [
+        exchange-patch-cords,
+        exchange-circuit-books,
+        ananya-tool-bag,
+        amber-clinic-glasses,
+        riju-reconciliation-terminal
+      ]
+    foreground: 'An amber cord links two mechanically compatible sockets.'
+    middleGround: "Ananya's finger and Riju's pencil meet at the same relay."
+    background: 'A modern clinic-line interface terminates in the old board.'
+    action: 'Ananya proves that the manual exchange is an undocumented dependency,
+      not a museum piece.'
+    dialogue:
+      - id: p18-02-d01
+        speaker: ananya-rook
+        text: 'Old is not the same as useless.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.36,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.245, y: 0.485 },
+            tailDirection: down,
+            fontScale: 0.90,
+            manualBreaks: [ 'Old is not the', 'same as useless.' ]
+          }
+      - id: p18-02-d02
+        speaker: riju-dhar
+        text: 'It isn''t on the network diagram.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.62,
+            y: 0.02,
+            width: 0.36,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.735, y: 0.480 },
+            tailDirection: down,
+            fontScale: 0.90,
+            manualBreaks: [ 'It isn''t on the', 'network diagram.' ]
+          }
+    continuity:
+      [
+        'Amber cord remains in the same sockets through this page.',
+        'Circuit book removed from cabinet is the first volume and stays on
+          desk.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm relay light on hands, cord and open circuit book.',
+        palette: 'Amber, blue, grey-green, cream paper, clinic grey and moss.',
+        composition: 'Cord makes a visible line between Ananya and Riju; blank diagrams
+          remain readable as shapes; reserve upper corners.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.45, y 0.03-0.21',
+            'upper-right reserve: x 0.52-0.96, y 0.03-0.21'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ananya traces a clinic telephone circuit through the manual exchange.',
+        description: 'An amber patch cord connects the clinic line through old relays.
+          Ananya and Riju follow the same route in the first circuit book,
+          discovering a dependency absent from the modern diagram.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-018/p18-02__r1.png,
+        final: panels/approved/page-018/p18-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p18-03
+    panel: 3
+    size: tall
+    aspectRatio: '3:4'
+    camera: 'Vertical shot from flickering modern terminal to steady manual board'
+    location: old-exchange
+    time: early evening
+    characters:
+      - {
+          id: director-vale,
+          position: lower-left,
+          emotion: impressed caution,
+          pose: 'Watching a modern line drop while the manual lamp remains lit',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: lower-right,
+          emotion: continuity verification,
+          pose: 'Head aligned with the steady relay lamp',
+          facing: left
+        }
+    props: [ vale-silver-tablet, exchange-patch-cords, cecil-stamp-arm ]
+    foreground: 'A modern connection indicator goes dark during a voltage flicker.'
+    middleGround: 'The manual relay lamp and physical cord remain active.'
+    background: 'Battery wiring rises towards the top of the frame.'
+    action: 'A brief power fluctuation drops the modern link while the manual route
+      continues.'
+    dialogue: []
+    soundEffects:
+      - {
+          text: 'TIK',
+          description: 'The modern relay drops out.',
+          position: { x: 0.25, y: 0.31, z: 7 }
+        }
+      - {
+          text: 'RING',
+          description: 'The clinic line continues through the manual circuit.',
+          position: { x: 0.67, y: 0.66, z: 8 }
+        }
+    visualJoke: 'The obsolete circuit ignores the announcement of its own obsolescence.'
+    continuity:
+      [
+        'Manual lamp remains steady; no cord changes socket.',
+        "Cecil's blue status light remains normal."
+      ]
+    prompt:
+      {
+        lighting: 'Flickering cool modern light contrasted with steady amber relay glow.',
+        palette: 'Amber, muted blue, brick red, graphite and cream enamel.',
+        composition: 'Vertical causal comparison from failed modern indicator to steady
+          manual circuit; reserve SFX positions and top quiet.',
+        balloonSafeAreas: [ 'upper-centre quiet reserve: x 0.28-0.72, y 0.03-0.18' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A modern connection drops while the manual exchange line keeps ringing.',
+        description: 'During a voltage flicker, a modern indicator goes dark but the
+          amber manual relay remains lit and the clinic line rings. Vale and
+          Cecil watch the older circuit preserve service.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-018/p18-03__r1.png,
+        final: panels/approved/page-018/p18-03__r1.png,
+        width: 1086,
+        height: 1448
+      }
+  - id: p18-04
+    panel: 4
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Eye-level opposed shot across unlabeled repairs and a scorched socket'
+    location: old-exchange
+    time: early evening
+    characters:
+      - {
+          id: director-vale,
+          position: left,
+          emotion: respectful firmness,
+          pose: 'Pointing to heat damage and the restricted access book',
+          facing: right
+        }
+      - {
+          id: ananya-rook,
+          position: right,
+          emotion: unromantic agreement,
+          pose: 'Opening the tool bag beside the damaged socket',
+          facing: left
+        }
+    props:
+      [
+        vale-silver-tablet,
+        ananya-tool-bag,
+        amber-clinic-glasses,
+        exchange-circuit-books,
+        exchange-patch-cords
+      ]
+    foreground: 'A scorched socket and handwritten custody tabs show real risk.'
+    middleGround: 'Vale and Ananya assess preservation and repair together.'
+    background: 'The functioning board continues behind them.'
+    action: 'Vale orders the exchange documented and retained, with its fire and
+      access risks corrected.'
+    dialogue:
+      - id: p18-04-d01
+        speaker: director-vale
+        text: 'Working is not the same as safe.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.02,
+            y: 0.02,
+            width: 0.39,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.250, y: 0.390 },
+            tailDirection: down,
+            fontScale: 0.90,
+            manualBreaks: [ 'Working is not', 'the same as safe.' ]
+          }
+      - id: p18-04-d02
+        speaker: ananya-rook
+        text: 'Then repair it. Don''t erase it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.52,
+            y: 0.02,
+            width: 0.43,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.745, y: 0.445 },
+            tailDirection: down,
+            fontScale: 0.90,
+            manualBreaks: [ 'Then repair it.', 'Don''t erase it.' ]
+          }
+    continuity:
+      [
+        'Vale chooses preservation with documented correction.',
+        "Ananya's tool bag opens repair compartment on the right."
+      ]
+    prompt:
+      {
+        lighting: 'Steady amber board light revealing scorch detail without horror.',
+        palette: 'Brick red, charcoal, amber, clinic grey and graphite.',
+        composition: 'Risk evidence foreground between Vale and Ananya; functioning
+          board visible behind; reserve upper corners.',
+        balloonSafeAreas:
+          [
+            'upper-left reserve: x 0.03-0.45, y 0.03-0.21',
+            'upper-right reserve: x 0.49-0.96, y 0.03-0.21'
+          ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale and Ananya agree to preserve the exchange while correcting its
+          hazards.',
+        description: 'A scorched socket and restricted-access book sit between Vale and
+          Ananya. Vale says functioning equipment can still be unsafe; Ananya
+          agrees to repair rather than erase the essential system.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-018/p18-04__r1.png,
+        final: panels/approved/page-018/p18-04__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p18-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide comic shot along the switchboard as a new line rings'
+    location: old-exchange
+    time: early evening
+    characters:
+      - {
+          id: cecil-c17,
+          position: centre,
+          emotion: procedural response,
+          pose: 'Holding a telephone receiver near the speech grille and extending stamp
+            arm',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: amused surprise turning to focus,
+          pose: 'Following the incoming circuit in the open book',
+          facing: right
+        }
+      - {
+          id: ananya-rook,
+          position: right,
+          emotion: alert recognition,
+          pose: 'Looking towards the unexpected line lamp',
+          facing: left
+        }
+      - {
+          id: director-vale,
+          position: far-right,
+          emotion: investigative attention,
+          pose: 'Raising the tablet towards the circuit',
+          facing: left
+        }
+    props:
+      [
+        cecil-stamp-arm,
+        exchange-patch-cords,
+        exchange-circuit-books,
+        vale-silver-tablet,
+        amber-clinic-glasses
+      ]
+    foreground: "Cecil's stamp hovers over the telephone receiver."
+    middleGround: 'A new relay lamp rings from a circuit absent in the current plan.'
+    background: 'Riju tracks it towards Municipal Hall in the first circuit book.'
+    action: 'Cecil acknowledges a live instruction, then the team discovers it
+      originates in an officially nonexistent municipal room.'
+    dialogue:
+      - id: p18-05-d01
+        speaker: cecil-c17
+        text: 'Instruction received. Source room not found.'
+        style: robot
+        readingOrder: 1
+        narrationOrder: 2
+        balloon:
+          {
+            x: 0.32,
+            y: 0.02,
+            width: 0.36,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.515, y: 0.375 },
+            tailDirection: down,
+            fontScale: 0.88,
+            manualBreaks: [ 'Instruction received.', 'Source room not found.' ]
+          }
+    soundEffects:
+      - {
+          text: 'BRRING',
+          description: 'The undocumented municipal line rings sharply.',
+          narrationOrder: 1,
+          position: { x: 0.15, y: 0.26, z: 8 }
+        }
+    visualJoke: 'Cecil tries to stamp the telephone receiver as proof of receipt.'
+    continuity:
+      [
+        'First circuit book remains out of cabinet and travels back to Hall.',
+        'The incoming room leads directly to archive review on page 19.'
+      ]
+    prompt:
+      {
+        lighting: 'Amber switchboard glow against blue early-evening doorway light.',
+        palette: 'Cream enamel, cord amber and blue, grey-green book, graphite and
+          clinic grey.',
+        composition: 'Cecil and receiver centre the comic action; ringing lamp and Riju
+          lead left, Ananya and Vale right; reserve upper-centre.',
+        balloonSafeAreas: [ 'upper-centre reserve: x 0.26-0.81, y 0.03-0.22' ],
+        negative:
+          [
+            embedded dialogue or lettering,
+            speech balloons,
+            watermarks,
+            signatures,
+            copyrighted logos,
+            extra limbs
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Cecil holds a ringing telephone from a municipal room the records cannot
+          find.',
+        description: 'Cecil holds the receiver near its speech grille and prepares to
+          stamp it. Riju follows the live line through a circuit book and
+          discovers that its source room is absent from the current building
+          plan.'
+      }
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-018/p18-05__r1.png,
+        final: panels/approved/page-018/p18-05__r1.png,
+        width: 1672,
+        height: 941
+      }

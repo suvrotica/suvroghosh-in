@@ -1,0 +1,432 @@
+page: 1
+title: 'Going forward, one lane at a time'
+purpose: "Open on the album's central contradiction and give Riju an immediate
+  practical problem."
+location: junction-square
+time: late morning
+layout: 'A wide establishing tier, two medium beats, one small silent inset,
+  then a wide page-turn panel.'
+panelCount: 5
+dialogueGoal: "Establish Riju's anxious need for a flawless launch and
+  Babul-da's calm trust in improvised routes."
+pageTurn: 'The Mission convoy appears at the far end of the lane the billboard
+  has blocked.'
+visualMotif: 'Clean forward arrows colliding with stubborn physical obstructions.'
+continuity:
+  - 'The smart-town billboard blocks one traffic lane; its deterministic overlay
+    will read GOING FORWARD TOGETHER while generated art keeps the face blank.'
+  - "Riju's temporary identity card visibly expires in four days; his pencil
+    stays behind his right ear."
+  - "Babul-da's blue-and-rust cycle van carries its cream replacement mudguard
+    and left-handlebar bell."
+panels:
+  - id: p01-01
+    panel: 1
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'High eye-level wide establishing shot down the two-lane square'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: foreground-left,
+          emotion: alarmed concentration,
+          pose: 'Measuring the billboard support with both hands spread',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: background-right,
+          emotion: attentive calm,
+          pose: 'Pedalling the loaded cycle van towards the narrowing lane',
+          facing: left
+        }
+    props:
+      [
+        smart-town-billboard,
+        riju-form-satchel,
+        babul-cycle-van,
+        junction-clock-faces
+      ]
+    foreground: "A freshly painted forward arrow ends against the billboard's thick
+      steel foot."
+    middleGround: 'Riju stands between the support and the usable strip of road, his
+      satchel pushed behind him.'
+    background: 'Junction Square layers awnings, the crooked clock and approaching
+      everyday traffic around a broad blank billboard face.'
+    action: "The new billboard physically removes one of the square's two usable
+      lanes as Riju measures the mistake."
+    dialogue: []
+    visualJoke: 'The official forward arrow leads directly into the support.'
+    continuity:
+      - 'Leave the billboard face completely blank; title and slogan are
+        deterministic overlays.'
+      - "Riju's pencil remains behind his right ear and his temporary card is
+        clipped to the vest."
+    prompt:
+      lighting: 'Warm humid late-morning light with hard-edged shade under the
+        billboard.'
+      palette: 'Faded municipal red, Grid blue, dusty cream, moss green and road grey.'
+      composition: 'Strong left-to-right reading path from arrow to support to Riju to
+        Babul-da; preserve a large clean billboard face and upper-right balloon
+        reserve.'
+      balloonSafeAreas:
+        [
+          'upper-right sky and billboard-edge reserve: x 0.63-0.96, y
+            0.04-0.24'
+        ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'A smart-town billboard blocks one lane while Riju measures its support.'
+      description: "In busy Junction Square, a painted arrow runs straight into the
+        new billboard's steel foot. Riju anxiously measures the obstruction as
+        Babul-da approaches on his loaded cycle van beneath the crooked civic
+        clock."
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-001/p01-01__r1.png,
+        final: panels/approved/page-001/p01-01__r1.png,
+        width: 1672,
+        height: 941
+      }
+  - id: p01-02
+    panel: 2
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Waist-high medium shot beside the steel support'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: strained politeness,
+          pose: 'Pointing from the support to a chalk relocation mark',
+          facing: right
+        }
+    props: [ smart-town-billboard, riju-form-satchel ]
+    foreground: 'A tape measure crosses a pothole and stops short of the chalk mark.'
+    middleGround: 'Riju holds one palm up towards unseen installers and points with
+      the other.'
+    background: 'The blank billboard face towers over the municipal notice seams.'
+    action: 'Riju asks for a small physical correction before the ceremony begins.'
+    dialogue:
+      - id: p01-02-d01
+        speaker: riju-dhar
+        text: 'Could we move the left support half a metre?'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.08,
+            y: 0.06,
+            width: 0.43,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.51, y: 0.54 },
+            tailDirection: down,
+            fontScale: 1
+          }
+      - id: p01-02-d02
+        speaker: riju-dhar
+        text: 'Twenty minutes till the ceremony.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.55,
+            y: 0.07,
+            width: 0.38,
+            height: 0.17,
+            z: 10,
+            tailTarget: { x: 0.34, y: 0.3 },
+            tailDirection: down,
+            fontScale: 0.95
+          }
+    visualJoke: 'The measured half-metre ends in an older, deeper pothole.'
+    continuity:
+      - 'The billboard support has not moved.'
+      - "Riju's satchel strap crosses left shoulder to right hip."
+    prompt:
+      lighting: 'Direct warm sun with cool reflected shade from the blank billboard.'
+      palette: 'Steel grey, chalk white, muted blue, moss green and dusty ochre.'
+      composition: 'Keep Riju centre-low and the blank billboard mass behind him;
+        leave two clean upper balloon zones without signs or faces.'
+      balloonSafeAreas:
+        [
+          'upper-left reserve: x 0.06-0.52, y 0.04-0.24',
+          'upper-right reserve: x 0.54-0.95, y 0.04-0.25'
+        ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Riju politely points to a chalk mark beside the billboard support.'
+      description: 'Riju asks unseen installers to shift the steel support before the
+        ceremony. A tape measure reaches across a pothole to a chalk mark,
+        revealing that the proposed correction has another physical problem.'
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-001/p01-02__r1.png,
+        final: panels/approved/page-001/p01-02__r1.png,
+        width: 1448,
+        height: 1086
+      }
+  - id: p01-03
+    panel: 3
+    size: tall
+    aspectRatio: '3:4'
+    camera: 'Low three-quarter shot along the squeezed cycle van'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: babul-courier,
+          position: middle-ground-centre,
+          emotion: mild appraisal,
+          pose: 'Standing on one pedal and steering through the narrow gap',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: foreground-left,
+          emotion: embarrassed urgency,
+          pose: 'Flattening himself against the support to make room',
+          facing: right
+        }
+    props: [ babul-cycle-van, babul-authoritative-bell, smart-town-billboard ]
+    foreground: "Riju's oversized shoe overlaps the painted lane edge."
+    middleGround: "The cycle van's cream mudguard passes the steel support by a
+      finger's breadth."
+    background: 'Traffic begins forming a slow reverse loop around the statue plinth.'
+    action: 'Babul-da threads the van through while Riju makes himself part of the
+      obstruction.'
+    dialogue:
+      - id: p01-03-d01
+        speaker: babul-courier
+        text: 'It has improved the road.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.07,
+            y: 0.05,
+            width: 0.42,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.61, y: 0.27 },
+            tailDirection: right,
+            fontScale: 1
+          }
+      - id: p01-03-d02
+        speaker: babul-courier
+        text: 'There is less of it.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.09,
+            y: 0.21,
+            width: 0.39,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.58, y: 0.43 },
+            tailDirection: right,
+            fontScale: 1
+          }
+    visualJoke: 'Riju must flatten himself against the improvement to let ordinary
+      work pass.'
+    continuity:
+      - "The cycle van's bell remains on the left handlebar."
+      - 'No contact dents the van or billboard support.'
+    prompt:
+      lighting: 'Alternating sun and hard billboard shade along the narrow vertical gap.'
+      palette: 'Ochre coat, indigo scarf, rust-red cargo bed, cream mudguard and
+        blue-grey steel.'
+      composition: 'Use the tall frame to exaggerate the support and narrow gap; keep
+        dialogue reserves stacked upper-left away from heads.'
+      balloonSafeAreas: [ 'stacked upper-left reserve: x 0.05-0.50, y 0.04-0.36' ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Babul-da squeezes his cycle van past Riju and the billboard support.'
+      description: 'Babul-da calmly guides the loaded cycle van through a finger-wide
+        gap. Riju presses himself against the steel support as Babul-da observes
+        that the road has been improved by becoming smaller.'
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-001/p01-03__r1.png,
+        final: panels/approved/page-001/p01-03__r1.png,
+        width: 1086,
+        height: 1448
+      }
+  - id: p01-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: "Tight silent insert on Riju's chest and face"
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: centre,
+          emotion: private worry,
+          pose: 'Pinching the edge of his temporary identity card while watching the
+            clock',
+          facing: left
+        }
+    props: [ junction-clock-faces ]
+    foreground: "The temporary card hangs from Riju's green vest with a clean
+      overlay area for its expiry date."
+    middleGround: 'His mouth tightens and one hand checks the card.'
+    background: 'Two contradictory clock faces blur behind his shoulder.'
+    action: 'Riju silently compares his expiring card with the approaching ceremony
+      time.'
+    dialogue: []
+    continuity:
+      - 'The temporary identity card differs visibly from permanent municipal
+        badges.'
+      - 'Reserve the card and clocks for deterministic numbers; generate no
+        text.'
+    prompt:
+      lighting: "Warm edge light on Riju's worried face with soft background clock
+        reflections."
+      palette: 'Moss green, pale sage, worn cream, clock brass and charcoal.'
+      composition: 'Square intimate crop with card low-centre and eyes angled to
+        blurred clocks; keep upper-left clear.'
+      balloonSafeAreas: [ 'upper-left quiet reserve: x 0.04-0.42, y 0.04-0.21' ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Riju checks his temporary identity card beneath two disagreeing clocks.'
+      description: 'In a silent close view, Riju grips the edge of his temporary
+        municipal card and looks towards two clock faces showing different
+        times. The expiry date will be added during composition.'
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-001/p01-04__r1.png,
+        final: panels/approved/page-001/p01-04__r1.png,
+        width: 1254,
+        height: 1254
+      }
+  - id: p01-05
+    panel: 5
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Street-level long shot towards the far end of the blocked lane'
+    location: junction-square
+    time: late morning
+    characters:
+      - {
+          id: riju-dhar,
+          position: foreground-left,
+          emotion: sudden alarm,
+          pose: 'Turning sharply towards the approaching convoy',
+          facing: right
+        }
+      - {
+          id: babul-courier,
+          position: foreground-right,
+          emotion: unsurprised recognition,
+          pose: 'Resting one boot on the ground beside the cycle van',
+          facing: right
+        }
+    props: [ smart-town-billboard, babul-cycle-van, babul-authoritative-bell ]
+    foreground: 'Riju and Babul-da form a still pair on either side of the narrowing road.'
+    middleGround: 'Traffic is locked into an improvised reverse loop around the billboard.'
+    background: 'A clean geometric convoy reaches the far end and stops behind the
+      obstruction.'
+    action: 'The Mission arrives precisely on schedule and cannot enter its own
+      ceremony.'
+    dialogue:
+      - id: p01-05-d01
+        speaker: babul-courier
+        text: 'They have found us.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.52,
+            y: 0.04,
+            width: 0.27,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.82, y: 0.23 },
+            tailDirection: right,
+            fontScale: 1
+          }
+    visualJoke: "The convoy's projected route ends at the base of the billboard
+      celebrating movement."
+    continuity:
+      - 'The convoy remains undamaged and stopped before the support.'
+      - 'The billboard and traffic loop carry directly into page 2.'
+    prompt:
+      lighting: 'Bright late-morning haze reflecting from the convoy against warmer
+        town surfaces.'
+      palette: 'Grid silver and blue opposed by ochre, brick red, cream and dusty
+        green.'
+      composition: 'Deep left-to-right corridor blocked at centre; foreground
+        reactions frame the distant convoy; keep upper-left clear for one
+        balloon.'
+      balloonSafeAreas: [ 'upper-left reserve: x 0.04-0.35, y 0.04-0.21' ]
+      negative:
+        [
+          embedded dialogue or lettering,
+          speech balloons,
+          watermarks,
+          signatures,
+          copyrighted logos,
+          extra limbs
+        ]
+    accessibility:
+      alt: 'Riju and Babul-da watch the Mission convoy stop behind the billboard.'
+      description: 'Riju turns in alarm while Babul-da rests calmly beside his cycle
+        van. Beyond the improvised traffic loop, the sleek Mission convoy has
+        arrived but cannot pass the billboard erected for its welcome.'
+    art:
+      {
+        status: final,
+        revision: 1,
+        source: panels/raw/page-001/p01-05__r1.png,
+        final: panels/approved/page-001/p01-05__r1.png,
+        width: 1672,
+        height: 941
+      }

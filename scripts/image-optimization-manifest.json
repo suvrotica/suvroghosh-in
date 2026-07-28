@@ -15634,6 +15634,8 @@
     }
   },
   "settings": {
+    "comicAssetsManagedByComicExporter": true,
+    "comicPublicDirectory": "static/images/comics",
     "jpegQualitySteps": [
       76,
       78,

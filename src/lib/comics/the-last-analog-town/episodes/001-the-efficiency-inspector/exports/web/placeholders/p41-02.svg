@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="t d">
+<title id="t">Riju submits a timestamped upstream report while local rain remains below threshold.</title>
+<desc id="d">The live circuit, clock mark, source, and release direction form a complete evidence bundle. Riju feeds it into the flood service as Cecil compares it with an empty local-rain branch.</desc>
+<rect width="1200" height="900" fill="#d8cfbe"/>
+<path d="M0 0L1200 900M1200 0L0 900" stroke="#b6aa98" stroke-width="16"/>
+<rect x="60" y="60" width="1080" height="780" rx="20" fill="#efe7d8" stroke="#29251f" stroke-width="8" stroke-dasharray="24 14"/>
+<text x="100" y="140" font-family="system-ui,sans-serif" font-size="48" font-weight="800" fill="#211e19">p41-02 · missing</text>
+<text x="100" y="205" font-family="system-ui,sans-serif" font-size="28" fill="#514b42">Page 41, panel 2 · Overhead close-up on the timestamped call record and external-report field</text>
+<text x="100" y="260" font-family="system-ui,sans-serif" font-size="28" fill="#514b42">riju-dhar, cecil-c17</text>
+<text x="100" y="350" font-family="system-ui,sans-serif" font-size="34" fill="#211e19"><tspan x="100" dy="0">Riju submits the credible warning as external</tspan><tspan x="100" dy="48">evidence despite the absence of local rainfall.</tspan></text>
+<text x="100" y="790" font-family="system-ui,sans-serif" font-size="24" fill="#7b2f24">CONTEXTUAL PRODUCTION PLACEHOLDER — ART NOT PUBLIC</text>
+</svg>

@@ -1,0 +1,694 @@
+page: 48
+title: 'What the audit also found'
+purpose: 'Prevent the old order from becoming an easy moral refuge.'
+location: golmohar-municipal-hall
+time: night
+layout: 'Rollback interruption, two evidence panels, a tight recognition, a
+  balanced decision, and a flood-message turn.'
+panelCount: 6
+dialogueGoal: 'Let Vale be right about the gains and the abuse, then force Ila
+  and Riju towards a discriminating solution.'
+pageTurn: 'Evidence arrives that water is entering the New Development through
+  the absent pump site.'
+visualMotif: 'Useful service trails and corrupt exception trails sharing the
+  same audit table.'
+continuity:
+  - 'A total rollback would erase medicine traces, clinic results, welfare
+    access, train data and the missing-drain evidence.'
+  - 'Manual procurement overrides repeatedly benefit one contractor.'
+  - 'Ila recognises a familiar signature and chooses to preserve the evidence.'
+panels:
+  - id: p48-01
+    panel: 1
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Side close shot as Vale stops the rollback'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: firm urgency,
+          pose: "Placing one gloved hand flat beside, not on, Riju's reaching wrist",
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: startled shame,
+          pose: 'Stopping short of the rollback control',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: lower-right,
+          emotion: audit readiness,
+          pose: 'Turning from the rollback to the evidence table',
+          facing: left
+        }
+    props: [ vale-silver-tablet, riju-reconciliation-terminal, cecil-stamp-arm ]
+    foreground: "Riju's hand stops a finger-width above the blank rollback control."
+    middleGround: 'Vale intervenes without seizing the terminal.'
+    background: 'The active service indicators continue behind them.'
+    action: 'Vale prevents an impulsive rollback and redirects the decision towards
+      the full audit.'
+    dialogue:
+      - id: p48-01-d01
+        speaker: director-vale
+        text: 'No. We''d erase the accurate records with the bad conclusions.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.45,
+            width: 0.40,
+            height: 0.24,
+            z: 10,
+            tailTarget: { x: 0.75, y: 0.47 },
+            tailDirection: up,
+            fontScale: 0.84,
+            manualBreaks:
+              [
+                'No. We''d erase the',
+                'accurate records with',
+                'the bad conclusions.'
+              ]
+          }
+    continuity:
+      [
+        'Rollback remains unexecuted.',
+        'Vale protects evidence and service gains, not the launch score.'
+      ]
+    prompt:
+      {
+        lighting: 'Cool terminal glow on stopped hands with warm conference light
+          behind.',
+        palette: 'Graphite, silver, moss, muted blue and warning red.',
+        composition: 'Near-contact hands and untouched rollback control centre the
+          restraint; reserve upper-right.',
+        balloonSafeAreas: [ 'upper-right: x 0.41-0.98, y 0.03-0.23' ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale stops Riju just before he activates a total rollback.',
+        description: "Riju's hand hangs just above the rollback control. Vale places a
+          gloved hand beside his wrist rather than seizing it and warns that a
+          total rollback would erase accurate records along with false
+          conclusions."
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-048/p48-01__r1.png, final: panels/approved/page-048/p48-01__r1.png, width: 1448, height: 1086 }
+  - id: p48-02
+    panel: 2
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide evidence-table view'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: centre,
+          emotion: rigorous concern,
+          pose: 'Separating five useful service traces into preserved source columns',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: right,
+          emotion: reluctant agreement,
+          pose: 'Matching the traces against her red ledger',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: chastened attention,
+          pose: 'Moving his hand away from rollback and towards the evidence',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: foreground-centre,
+          emotion: source comparison,
+          pose: 'Stamp arm marking blank provenance boxes',
+          facing: front
+        }
+    props:
+      [
+        vale-silver-tablet,
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'Five blank evidence columns retain separate source paths.'
+    middleGround: 'Medicine, clinic, welfare, train and drainage evidence are
+      physically arrayed.'
+    background: 'The rollback control sits closed at the edge.'
+    action: 'Vale shows the practical gains and fraud evidence that a full rollback
+      would destroy.'
+    dialogue:
+      - id: p48-02-d01
+        speaker: director-vale
+        text: 'The medicine and results got through. Welfare opened, the trains were
+          sorted and the missing drains were proved.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.35,
+            width: 0.55,
+            height: 0.20,
+            z: 10,
+            tailTarget: { x: 0.51, y: 0.48 },
+            tailDirection: up,
+            fontScale: 0.82,
+            manualBreaks:
+              [
+                'The medicine and results got through.',
+                'Welfare opened, the trains were sorted',
+                'and the missing drains were proved.'
+              ]
+          }
+      - id: p48-02-d02
+        speaker: ila-dastidar
+        text: 'Those stay.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.78,
+            y: 0.77,
+            width: 0.18,
+            height: 0.11,
+            z: 10,
+            tailTarget: { x: 0.83, y: 0.58 },
+            tailDirection: up,
+            fontScale: 1.02,
+            manualBreaks: [ 'Those stay.' ]
+          }
+    continuity:
+      [
+        'All five gains keep source trails.',
+        'The missing-drain evidence remains active.'
+      ]
+    prompt:
+      {
+        lighting: 'Even evidence-room light with restrained device highlights.',
+        palette: 'Paper cream, municipal red, graphite, moss, silver and muted blue.',
+        composition: 'Five columns span the foreground with four principals arranged
+          around them; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.24-0.89, y 0.02-0.24',
+            'lower-right: x 0.75-0.98, y 0.74-0.92'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Vale lays out five useful results that a rollback would erase.',
+        description: 'Medicine, clinic, welfare, train and missing-drain evidence remain
+          in separate blank source columns across the table. Vale names each
+          gain, Cecil marks provenance, and Ila insists they must stay.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-048/p48-02__r1.png, final: panels/approved/page-048/p48-02__r1.png, width: 1672, height: 941 }
+  - id: p48-03
+    panel: 3
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Top-down view of procurement invoices beside the useful traces'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: edge-right,
+          emotion: careful accusation of process,
+          pose: 'Sorting a repeated override pattern without pointing at Ila',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: edge-left,
+          emotion: sharpening unease,
+          pose: 'Following the repeated signature with one finger',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: lower-centre,
+          emotion: frequency count,
+          pose: 'Stamp arm hovering over a stack of repeated exception marks',
+          facing: front
+        }
+    props: [ vale-silver-tablet, municipal-red-ledger, cecil-stamp-arm ]
+    foreground: 'A thick pile of procurement invoices carries the same blank
+      exception stamp position.'
+    middleGround: 'Only two ordinary invoices lack the repeated mark.'
+    background: 'The useful service columns remain visible and separate.'
+    action: 'The audit exposes a manual override pattern favouring one contractor.'
+    dialogue:
+      - id: p48-03-d01
+        speaker: director-vale
+        text: 'One contractor got thirty-one ''exceptional'' overrides.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.62,
+            y: 0.40,
+            width: 0.35,
+            height: 0.30,
+            z: 10,
+            tailTarget: { x: 0.79, y: 0.48 },
+            tailDirection: up,
+            fontScale: 0.78,
+            manualBreaks:
+              [
+                'One contractor got',
+                'thirty-one',
+                '''exceptional''',
+                'overrides.'
+              ]
+          }
+      - id: p48-03-d02
+        speaker: cecil-c17
+        text: 'Ordinary invoices are the exception.'
+        style: robot
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.28,
+            y: 0.76,
+            width: 0.44,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.58 },
+            tailDirection: up,
+            fontScale: 0.93,
+            manualBreaks: [ 'Ordinary invoices are the exception.' ]
+          }
+    visualJoke: 'The exceptional stamp is so common that unmarked invoices look
+      suspicious.'
+    continuity:
+      [
+        'The contractor pattern remains evidence, not a resolved conviction.',
+        'All invoice text and stamps are deterministic overlays.'
+      ]
+    prompt:
+      {
+        lighting: 'Neutral desk light with the repeated stamp positions clearly legible
+          as blank shapes.',
+        palette: 'Paper cream, municipal red, graphite, silver and cream enamel.',
+        composition: 'Dense exception stack contrasts with two ordinary sheets; preserve
+          upper-right and lower-centre.',
+        balloonSafeAreas:
+          [
+            'upper-right: x 0.45-0.98, y 0.03-0.22',
+            'lower-centre: x 0.25-0.75, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: "A contractor's repeated exception stamps cover nearly every invoice.",
+        description: 'A large pile of procurement invoices shares the same blank
+          override-stamp position, while only two ordinary invoices lack it.
+          Vale reports thirty-one exceptions and Cecil notes that the ordinary
+          invoices have become unusual.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-048/p48-03__r1.png, final: panels/approved/page-048/p48-03__r1.png, width: 1448, height: 1086 }
+  - id: p48-04
+    panel: 4
+    size: small
+    aspectRatio: '1:1'
+    camera: 'Tight close-up on Ila and one familiar signature shape'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre,
+          emotion: private recognition becoming public resolve,
+          pose: 'Removing her spectacles and holding the invoice beside her ledger',
+          facing: front
+        }
+      - {
+          id: riju-dhar,
+          position: edge-left,
+          emotion: wary attention,
+          pose: 'Waiting without prompting her',
+          facing: right
+        }
+    props: [ municipal-red-ledger, riju-form-satchel ]
+    foreground: 'A blank signature line on the invoice matches an older ledger marker.'
+    middleGround: 'Ila recognises the person and the political cost.'
+    background: 'The stack of exceptional invoices waits unhidden.'
+    action: "Ila identifies a familiar ally's signature and chooses not to shield it."
+    dialogue:
+      - id: p48-04-d01
+        speaker: ila-dastidar
+        text: 'I know that signature.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.35,
+            y: 0.04,
+            width: 0.30,
+            height: 0.13,
+            z: 10,
+            tailTarget: { x: 0.50, y: 0.48 },
+            tailDirection: down,
+            fontScale: 0.99
+          }
+      - id: p48-04-d02
+        speaker: riju-dhar
+        text: 'Do we keep it?'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.04,
+            y: 0.76,
+            width: 0.31,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.20, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.99
+          }
+    continuity:
+      [
+        "Ila's spectacles are in her hand, consistent with close reading.",
+        'The signature itself remains blank until composition.'
+      ]
+    prompt:
+      {
+        lighting: 'Warm low desk light on Ila, invoice and red ledger.',
+        palette: 'Municipal red, paper cream, charcoal, warm brown and moss.',
+        composition: "Ila's face, spectacles and matched blank marks form a compact
+          recognition beat; reserve top-centre and lower-left.",
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.31-0.69, y 0.03-0.20',
+            'lower-left: x 0.03-0.38, y 0.73-0.92'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila recognises a familiar signature among the contractor overrides.',
+        description: 'Ila removes her spectacles and compares a blank invoice signature
+          line with an older marker in the red ledger. Riju waits as she
+          recognises the political ally behind the repeated exceptions.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-048/p48-04__r1.png, final: panels/approved/page-048/p48-04__r1.png, width: 1254, height: 1254 }
+  - id: p48-05
+    panel: 5
+    size: medium
+    aspectRatio: '4:3'
+    camera: 'Balanced four-shot around the evidence table'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: ila-dastidar,
+          position: centre-left,
+          emotion: quiet determination,
+          pose: 'Placing the contractor file beside the preserved service traces',
+          facing: right
+        }
+      - {
+          id: director-vale,
+          position: centre-right,
+          emotion: measured respect,
+          pose: 'Leaving both evidence sets open',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: left,
+          emotion: listening humility,
+          pose: 'Closing the rollback pane',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: right,
+          emotion: dual audit,
+          pose: 'Stamp arm centred between human and automated evidence',
+          facing: left
+        }
+    props:
+      [
+        municipal-red-ledger,
+        vale-silver-tablet,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'The contractor file and the useful-service traces occupy equal space.'
+    middleGround: 'Ila closes neither file.'
+    background: "The blank rollback pane disappears from Riju's terminal."
+    action: 'The group rejects both total rollback and unconditional automation.'
+    dialogue:
+      - id: p48-05-d01
+        speaker: ila-dastidar
+        text: 'Keep the services and the evidence. Judge each failure on its own.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.03,
+            y: 0.38,
+            width: 0.50,
+            height: 0.27,
+            z: 10,
+            tailTarget: { x: 0.42, y: 0.48 },
+            tailDirection: up,
+            fontScale: 0.84,
+            manualBreaks:
+              [
+                'Keep the services',
+                'and the evidence.',
+                'Judge each failure',
+                'on its own.'
+              ]
+          }
+      - id: p48-05-d02
+        speaker: director-vale
+        text: 'Then we need a rule, not another rescue.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.58,
+            y: 0.76,
+            width: 0.38,
+            height: 0.14,
+            z: 10,
+            tailTarget: { x: 0.69, y: 0.57 },
+            tailDirection: up,
+            fontScale: 0.95
+          }
+    continuity:
+      [
+        'Rollback is closed.',
+        'Contractor evidence and service gains remain equally auditable.'
+      ]
+    prompt:
+      {
+        lighting: 'Even institutional light over two evidence sets.',
+        palette: 'Municipal red, graphite, silver, moss, cream enamel and paper cream.',
+        composition: 'Two evidence groups balance the table; Ila and Vale face across
+          them, Riju closes rollback; reserve upper-centre and lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.21-0.82, y 0.03-0.23',
+            'lower-right: x 0.55-0.98, y 0.73-0.94'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'Ila keeps both the useful service records and contractor evidence open.',
+        description: 'The contractor file and five useful service traces occupy equal
+          space on the evidence table. Ila insists that both remain, Riju closes
+          the rollback pane, and Vale says the distinction must become a rule.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-048/p48-05__r1.png, final: panels/approved/page-048/p48-05__r1.png, width: 1448, height: 1086 }
+  - id: p48-06
+    panel: 6
+    size: wide
+    aspectRatio: '16:9'
+    camera: 'Wide reaction as an incoming field image lights the room'
+    location: golmohar-municipal-hall
+    time: night
+    characters:
+      - {
+          id: director-vale,
+          position: right,
+          emotion: immediate focus,
+          pose: 'Turning the tablet towards a blank field-image pane',
+          facing: left
+        }
+      - {
+          id: ila-dastidar,
+          position: centre-right,
+          emotion: decision made,
+          pose: 'Closing the red ledger around one fresh reason page',
+          facing: left
+        }
+      - {
+          id: riju-dhar,
+          position: centre-left,
+          emotion: renewed alarm,
+          pose: 'Reading the pump-site coordinates against the source map',
+          facing: right
+        }
+      - {
+          id: cecil-c17,
+          position: left,
+          emotion: physical-evidence alert,
+          pose: 'Shutters opening towards the field image',
+          facing: right
+        }
+    props:
+      [
+        vale-silver-tablet,
+        municipal-red-ledger,
+        riju-reconciliation-terminal,
+        cecil-stamp-arm
+      ]
+    foreground: 'Contractor evidence and service traces remain on the table.'
+    middleGround: 'A blank image pane shows water entering through an empty pump foundation.'
+    background: "The room's open doorway points towards the New Development."
+    action: 'A timestamped field report proves that the absent pump site is
+      admitting water into the district.'
+    dialogue:
+      - id: p48-06-d01
+        speaker: riju-dhar
+        text: 'The pump is absent. The water is not.'
+        style: speech
+        readingOrder: 1
+        balloon:
+          {
+            x: 0.36,
+            y: 0.03,
+            width: 0.39,
+            height: 0.16,
+            z: 10,
+            tailTarget: { x: 0.45, y: 0.49 },
+            tailDirection: down,
+            fontScale: 0.96,
+            manualBreaks: [ 'The pump is absent.', 'The water is not.' ]
+          }
+      - id: p48-06-d02
+        speaker: ila-dastidar
+        text: 'Open the gate.'
+        style: speech
+        readingOrder: 2
+        balloon:
+          {
+            x: 0.40,
+            y: 0.78,
+            width: 0.22,
+            height: 0.12,
+            z: 10,
+            tailTarget: { x: 0.72, y: 0.57 },
+            tailDirection: up,
+            fontScale: 1.02,
+            manualBreaks: [ 'Open the gate.' ]
+          }
+    continuity:
+      [
+        'The empty pump site is recorded physical evidence.',
+        "Ila's next action begins with a reason page ready."
+      ]
+    prompt:
+      {
+        lighting: 'Cool field-image light across the warm evidence room.',
+        palette: 'Wet brown, municipal red, graphite, moss, silver and muted blue.',
+        composition: 'Field pane and open doorway pull the cast towards New Development;
+          keep evidence visible foreground; reserve upper-centre and
+          lower-right.',
+        balloonSafeAreas:
+          [
+            'upper-centre: x 0.26-0.70, y 0.03-0.21',
+            'lower-right: x 0.64-0.94, y 0.73-0.93'
+          ],
+        negative:
+          [
+            'embedded dialogue or lettering',
+            'speech balloons',
+            'watermarks',
+            'signatures',
+            'copyrighted logos',
+            'extra limbs',
+            'generated Bengali text',
+            'duplicated people or props'
+          ]
+      }
+    accessibility:
+      {
+        alt: 'A field image shows water entering through the absent pump site.',
+        description: 'A blank timestamped field-image pane illuminates the evidence
+          room, showing water pouring through an empty pump foundation. Riju
+          states the contradiction, and Ila orders the sealed district gate
+          opened.'
+      }
+    art: { status: final, revision: 1, source: panels/raw/page-048/p48-06__r1.png, final: panels/approved/page-048/p48-06__r1.png, width: 1672, height: 941 }

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="2400" viewBox="0 0 1600 2400" role="img" aria-labelledby="title description">
+	<title id="title">The Efficiency Inspector, page 46</title>
+	<desc id="description">Demonstrate that even Vale is constrained by incompatible classification.</desc>
+	<rect width="1600" height="2400" fill="#f7f0df"/>
+	<g id="p46-01">
+<clipPath id="clip-p46-01"><rect x="48" y="58" width="845.7142857142858" height="466.6242038216561" rx="6"/></clipPath>
+<rect x="48" y="58" width="845.7142857142858" height="466.6242038216561" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-046/p46-01__r1.png" x="48" y="58" width="845.7142857142858" height="466.6242038216561" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p46-01)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p46-01-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 514.7711719716048 161.15618067674313 Q 507.5611428571429 188.32814012738856 493.6068571428572 211.3327133757962 Q 507.5611428571429 188.32814012738856 528.4288280283955 169.49095308121866 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-01-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="276.34285714285716" y="76.66496815286624" width="490.51428571428573" height="88.65859872611466" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="294.34285714285716" y="118.32306751592357" font-family="Arial,'Noto Sans',sans-serif" font-size="19.08" fill="#111"><tspan x="294.34285714285716" dy="0">The patient needed emergency care. The</tspan><tspan x="294.34285714285716" dy="21.751199999999997">reason is signed and timed. Authorise it.</tspan></text>
+<rect x="48" y="58" width="845.7142857142858" height="466.6242038216561" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p46-02">
+<clipPath id="clip-p46-02"><rect x="917.7142857142858" y="58" width="634.2857142857143" height="466.6242038216561" rx="6"/></clipPath>
+<rect x="917.7142857142858" y="58" width="634.2857142857143" height="466.6242038216561" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-046/p46-02__r1.png" x="917.7142857142858" y="58" width="634.2857142857143" height="466.6242038216561" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p46-02)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p46-02-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 1049.8800732215389 134.23114395653326 Q 1055.6714285714286 141.10577070063695 1054.0857142857144 144.88542675159238 Q 1055.6714285714286 141.10577070063695 1064.634212492747 140.4210853428298 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-02-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="true" x="943.0857142857144" y="76.66496815286624" width="228.34285714285716" height="60.6611464968153" rx="30.33057324840765" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="961.0857142857144" y="114.06474140127389" font-family="Arial,'Noto Sans',sans-serif" font-size="16.439999999999998" fill="#111"><tspan x="961.0857142857144" dy="0">My authority counts.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p46-02-d02" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 1415.699748237468 407.90468525932505 Q 1407.129142857143 336.01470063694273 1406.5582857142858 264.01458598726117 Q 1407.129142857143 336.01470063694273 1399.7002517625322 408.0316204731592 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-02-d02" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="true" x="1291.9428571428573" y="407.9681528662421" width="231.51428571428573" height="60.6611464968153" rx="30.33057324840765" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="1309.9428571428573" y="445.3679261146498" font-family="Arial,'Noto Sans',sans-serif" font-size="16.439999999999998" fill="#111"><tspan x="1309.9428571428573" dy="0">So does the patient.</tspan></text>
+<rect x="917.7142857142858" y="58" width="634.2857142857143" height="466.6242038216561" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p46-03">
+<clipPath id="clip-p46-03"><rect x="48" y="548.6242038216561" width="1504" height="622.375796178344" rx="6"/></clipPath>
+<rect x="48" y="548.6242038216561" width="1504" height="622.375796178344" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-046/p46-03__r1.png" x="48" y="548.6242038216561" width="1504" height="622.375796178344" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p46-03)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p46-03-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 651.1396419795462 717.1507646021948 Q 660.7296 761.1655382165607 768.4159999999999 759.6718363057325 Q 660.7296 761.1655382165607 663.1003580204538 716.1805729774233 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-03-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="318.71999999999997" y="567.2954777070064" width="676.8000000000001" height="149.37019108280256" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="336.71999999999997" y="626.8717732484076" font-family="Arial,'Noto Sans',sans-serif" font-size="21.28" fill="#111"><tspan x="336.71999999999997" dy="0">Railway entity: valid. Weather station: valid.</tspan><tspan x="336.71999999999997" dy="24.2592">Transitional area: valid.</tspan><tspan x="336.71999999999997" dy="24.2592">Governing category: unresolved.</tspan></text>
+<rect x="48" y="548.6242038216561" width="1504" height="622.375796178344" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p46-04">
+<clipPath id="clip-p46-04"><rect x="48" y="1195" width="845.7142857142858" height="466.6242038216561" rx="6"/></clipPath>
+<rect x="48" y="1195" width="845.7142857142858" height="466.6242038216561" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-046/p46-04__r1.png" x="48" y="1195" width="845.7142857142858" height="466.6242038216561" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p46-04)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p46-04-d01" data-speaker-id="director-vale" data-route-safe="true">
+<path d="M 217.42428437367337 1281.3447475287344 Q 234.22628571428572 1290.9379363057326 244.544 1305.169974522293 Q 234.22628571428572 1290.9379363057326 230.3928584834695 1271.973723808845 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-04-d01" data-speaker-id="director-vale" data-auto-layout="true" data-auto-sized="false" x="81.82857142857142" y="1201.999363057325" width="405.9428571428572" height="74.65987261146498" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="99.82857142857142" y="1236.2436993630574" font-family="Arial,'Noto Sans',sans-serif" font-size="22.040000000000003" fill="#111"><tspan x="99.82857142857142" dy="0">We have enough evidence. We</tspan><tspan x="99.82857142857142" dy="25.125600000000002">don&apos;t have jurisdiction.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p46-04-d02" data-speaker-id="ananya-rook" data-route-safe="true">
+<path d="M 702.9704688992035 1544.8442422749608 Q 693.3645714285715 1441.2375923566879 691.8422857142857 1337.553694267516 Q 693.3645714285715 1441.2375923566879 686.9723882436538 1545.0920634575236 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-04-d02" data-speaker-id="ananya-rook" data-auto-layout="true" data-auto-sized="false" x="530.0571428571429" y="1544.9681528662422" width="329.8285714285715" height="65.32738853503186" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="548.0571428571429" y="1575.1370471337582" font-family="Arial,'Noto Sans',sans-serif" font-size="17.82" fill="#111"><tspan x="548.0571428571429" dy="0">Then fix jurisdiction after</tspan><tspan x="548.0571428571429" dy="20.314799999999998">we fix the breathing.</tspan></text>
+<rect x="48" y="1195" width="845.7142857142858" height="466.6242038216561" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p46-05">
+<clipPath id="clip-p46-05"><rect x="917.7142857142858" y="1195" width="634.2857142857143" height="466.6242038216561" rx="6"/></clipPath>
+<rect x="917.7142857142858" y="1195" width="634.2857142857143" height="466.6242038216561" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-046/p46-05__r1.png" x="917.7142857142858" y="1195" width="634.2857142857143" height="466.6242038216561" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p46-05)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p46-05-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 1184.4803628168254 1326.1821292765264 Q 1194.8337142857144 1375.2569299363058 1199.2102857142859 1424.8590828025478 Q 1194.8337142857144 1375.2569299363058 1196.4339228974607 1325.1274248636012 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-05-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="943.0857142857144" y="1213.6649681528663" width="380.5714285714286" height="111.98980891719746" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="961.0857142857144" y="1253.755872611465" font-family="Arial,'Noto Sans',sans-serif" font-size="22.400000000000002" fill="#111"><tspan x="961.0857142857144" dy="0">All three authorities</tspan><tspan x="961.0857142857144" dy="25.536">are valid. Together,</tspan><tspan x="961.0857142857144" dy="25.536">none is applicable.</tspan></text>
+<rect x="917.7142857142858" y="1195" width="634.2857142857143" height="466.6242038216561" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+<g id="p46-06">
+<clipPath id="clip-p46-06"><rect x="48" y="1685.624203821656" width="1504" height="622.375796178344" rx="6"/></clipPath>
+<rect x="48" y="1685.624203821656" width="1504" height="622.375796178344" rx="6" fill="#d5cdbc" stroke="#171512" stroke-width="8"/>
+<image href="../../panels/approved/page-046/p46-06__r1.png" x="48" y="1685.624203821656" width="1504" height="622.375796178344" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip-p46-06)"/>
+<g class="comic-balloon-tail" data-dialogue-id="p46-06-d01" data-speaker-id="cecil-c17" data-route-safe="true">
+<path d="M 965.314334896321 1799.6566216508065 Q 983.4879999999999 1803.7511299363057 998.3776 1812.9622917197453 Q 983.4879999999999 1803.7511299363057 971.5816651036789 1789.4233146549257 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-06-d01" data-speaker-id="cecil-c17" data-auto-layout="true" data-auto-sized="false" x="499.2" y="1694.9598407643311" width="721.92" height="99.58012738853505" rx="8" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="517.2" y="1741.1827044585987" font-family="Arial,'Noto Sans',sans-serif" font-size="25.48" fill="#111"><tspan x="517.2" dy="0">The denials share one dependency: the launch</tspan><tspan x="517.2" dy="29.047199999999997">default.</tspan></text>
+<g class="comic-balloon-tail" data-dialogue-id="p46-06-d02" data-speaker-id="riju-dhar" data-route-safe="true">
+<path d="M 311.6544897450189 2171.715692529944 Q 313.3056 2050.8343210191083 322.7808 1930.65355477707 Q 313.3056 2050.8343210191083 295.7055102549811 2170.438957151585 Z" fill="#fffdf7" stroke="#171512" stroke-width="4" stroke-linejoin="round"/>
+</g>
+<rect class="comic-balloon" data-dialogue-id="p46-06-d02" data-speaker-id="riju-dhar" data-auto-layout="true" data-auto-sized="false" x="108.16" y="2171.0773248407645" width="300.8" height="68.46133757961783" rx="32" fill="#fffdf7" stroke="#171512" stroke-width="5"/>
+<text x="126.16" y="2217.3479936305735" font-family="Arial,'Noto Sans',sans-serif" font-size="28" fill="#111"><tspan x="126.16" dy="0">That was mine.</tspan></text>
+<rect x="48" y="1685.624203821656" width="1504" height="622.375796178344" rx="6" fill="none" stroke="#171512" stroke-width="8"/>
+</g>
+	<text x="800" y="2376" text-anchor="middle" font-family="Arial,'Noto Sans',sans-serif" font-size="20" fill="#514b42">46</text>
+</svg>
