@@ -125,15 +125,102 @@ test('the laboratory exposes the complete transport, experiment, and accessibili
 	assert.match(component, /transform: translateX\(-50%\)/);
 	assert.match(component, /cancelPendingInitialization/);
 	assert.doesNotMatch(component, /<main\b/);
+	assert.match(component, /class="transport-region"[\s\S]*mode="transport"/);
+	assert.match(component, /class="advanced-region"[\s\S]*mode="settings"/);
+	assert.match(component, /@container ct-lab \(max-width: 80rem\)/);
+	assert.match(component, /\.transport-region\s*\{[\s\S]*order:\s*1/);
+	assert.match(component, /\.workbench\s*\{[\s\S]*order:\s*10/);
+	assert.match(component, /\.advanced-region\s*\{[\s\S]*order:\s*20/);
 	assert.ok(
-		component.indexOf('<div class="control-column">') <
-			component.indexOf('<div class="workbench">'),
-		'transport controls should precede the workbench on narrow layouts'
+		component.indexOf('class="transport-region"') < component.indexOf('class="workbench"') &&
+			component.indexOf('class="workbench"') < component.indexOf('id="ct-fullscreen-settings"'),
+		'collapsed visual and DOM order should both be transport, workbench, then settings'
 	);
+	assert.match(
+		component,
+		/grid-template-columns:\s*minmax\(0,\s*1\.55fr\)\s*minmax\(16rem,\s*1fr\)/
+	);
+	assert.match(component, /data-tts-exclude/);
+	assert.match(component, /class="fullscreen-toolbar"/);
+	assert.match(component, /aria-controls="ct-fullscreen-settings"/);
+	assert.match(component, /inert=\{fullscreen && fullscreenSettingsOpen\}/);
+	assert.match(component, /fullscreenNeedsRecovery \? 'Reconnect' : 'Restart'/);
+	assert.match(component, />\s*Exit\s*</);
 	assert.match(controls, /acquiredProjectionCount/);
 	assert.match(acquisition, /angleRad \+ Math\.PI \/ 2/);
 	assert.match(sinogram, /<button[\s\S]*type="button"[\s\S]*class="plot"/);
 	assert.doesNotMatch(sinogram, /role="grid"/);
+});
+
+test('responsive CT controls, touch ownership, and reconstruction modes remain explicit', () => {
+	const controls = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'ct-reconstruction',
+		'CTControls.svelte'
+	);
+	const editor = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'ct-reconstruction',
+		'PhantomEditor.svelte'
+	);
+	const comparison = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'ct-reconstruction',
+		'ReconstructionComparison.svelte'
+	);
+	const reconstruction = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'ct-reconstruction',
+		'ReconstructionView.svelte'
+	);
+
+	assert.match(controls, /type ControlMode = 'all' \| 'transport' \| 'settings'/);
+	assert.match(controls, /mode !== 'settings'/);
+	assert.match(controls, /mode !== 'transport'/);
+	assert.doesNotMatch(controls, /Open laboratory fullscreen/);
+	assert.doesNotMatch(controls, /class="boundary"/);
+	assert.match(controls, /@container \(min-width: 42rem\)/);
+
+	assert.match(editor, /const TAP_MOVE_THRESHOLD_PX = 10/);
+	assert.match(editor, /data-tool=\{tool\}/);
+	assert.match(editor, /canvas\[data-tool='inspect'\][\s\S]*touch-action:\s*pan-y/);
+	assert.match(editor, /canvas\[data-tool='brush'\][\s\S]*touch-action:\s*none/);
+	assert.match(editor, /if \(!tapMovementExceeded\)/);
+	assert.match(editor, /@media \(max-width: 600px\)/);
+	assert.match(editor, /\.tool-strip button:nth-last-child\(-n \+ 2\)/);
+	assert.match(
+		editor,
+		/@media \(forced-colors: active\)[\s\S]*\.canvas-frame:focus-visible[\s\S]*outline: 3px solid Highlight/
+	);
+
+	assert.match(comparison, /role="tablist"/);
+	assert.match(comparison, /role="tab"/);
+	assert.doesNotMatch(comparison, /ArrowUp|ArrowDown/);
+	assert.match(comparison, /let activeView = \$state<ViewMode>\('filtered'\)/);
+	assert.match(comparison, /nextLayout === 'tablet' \? 'compare' : 'filtered'/);
+	assert.match(comparison, /responsiveThresholds/);
+	assert.match(comparison, /comparisonHeading\.focus/);
+	assert.match(comparison, /Compare BP ↔ FBP/);
+	assert.match(comparison, /<dl>/);
+	assert.doesNotMatch(comparison, /min-width:\s*30rem/);
+	assert.match(comparison, /\.image-grid\[data-view='filtered'\] \.stage-filtered/);
+	assert.match(reconstruction, /<div class:scale-difference[\s\S]*class="scale"/);
+	assert.ok(
+		reconstruction.indexOf('class="canvas-frame"') < reconstruction.indexOf('class="scale"'),
+		'intensity scale should follow the canvas instead of covering it'
+	);
 });
 
 test('the mdsvex post uses the normal publishing and visible FAQ pipeline', () => {
@@ -143,12 +230,22 @@ test('the mdsvex post uses the normal publishing and visible FAQ pipeline', () =
 		'posts',
 		'how-a-scanner-sees-reconstructing-a-body-from-shadows.md'
 	);
+	const contentValidator = read('scripts', 'validate-content.mjs');
 	assert.match(post, /category: "Visualizations"/);
 	assert.match(post, /published: true/);
 	assert.match(post, /date: "2026-07-26"/);
+	assert.match(post, /dateModified: "2026-07-28"/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(contentValidator, /'interactiveFirst'/);
+	assert.match(contentValidator, /typeof metadata\.interactiveFirst !== 'boolean'/);
 	assert.match(post, /thumbnailAlt:/);
 	assert.match(post, /<TTS \/>/);
 	assert.match(post, /<CTReconstructionLab \/>/);
+	assert.ok(
+		post.indexOf('<CTReconstructionLab />') < post.indexOf('<TTS />'),
+		'the interactive laboratory should precede article audio and long-form material'
+	);
+	assert.doesNotMatch(post, /<Pi\b/);
 	assert.match(post, /p_\\theta\(s\)=\\int/);
 	assert.match(post, /f_\{\\mathrm\{FBP\}\}/);
 	assert.match(post, /What most explanations miss/);

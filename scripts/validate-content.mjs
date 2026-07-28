@@ -29,6 +29,7 @@ const allowedFields = new Set([
 	'series',
 	'published',
 	'mediaReviewed',
+	'interactiveFirst',
 	'keyTerms',
 	'faq'
 ]);
@@ -152,6 +153,9 @@ for (const file of postFiles) {
 	}
 	if (metadata.mediaReviewed !== undefined && typeof metadata.mediaReviewed !== 'boolean') {
 		errors.push(`${file}: mediaReviewed must be true or false, without quotes.`);
+	}
+	if (metadata.interactiveFirst !== undefined && typeof metadata.interactiveFirst !== 'boolean') {
+		errors.push(`${file}: interactiveFirst must be true or false, without quotes.`);
 	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });

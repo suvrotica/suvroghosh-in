@@ -298,13 +298,13 @@
 	}
 	header > span {
 		font-family: ui-monospace, monospace;
-		font-size: 0.68rem;
+		font-size: 0.8125rem;
 		color: var(--ink-muted);
 	}
 	.eyebrow {
 		margin-bottom: 0.15rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.61rem;
+		font-size: 0.6875rem;
 		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -348,7 +348,7 @@
 		position: absolute;
 		z-index: 1;
 		font-family: ui-monospace, monospace;
-		font-size: 0.58rem;
+		font-size: 0.6875rem;
 		color: #dce3e3;
 		pointer-events: none;
 	}
@@ -368,19 +368,23 @@
 		border-top: 1px solid var(--rule);
 		padding: 0.6rem 0.8rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.68rem;
+		font-size: 0.8125rem;
 		line-height: 1.45;
 		color: var(--ink-muted);
 	}
 	details {
 		border-top: 1px solid var(--rule);
 		padding: 0.6rem 0.8rem;
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 	}
 	summary {
 		min-height: 2rem;
 		cursor: pointer;
 		font-weight: 700;
+	}
+	summary:focus-visible {
+		outline: 2px solid var(--focus);
+		outline-offset: 2px;
 	}
 	details p {
 		padding: 0.35rem 0 0.25rem;

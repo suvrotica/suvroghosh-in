@@ -47,6 +47,7 @@
 
 	const uid = $props.id();
 	const HISTORY_LIMIT = 24;
+	const TAP_MOVE_THRESHOLD_PX = 10;
 	const presetOptions: Array<{ id: PhantomPresetId; label: string }> = [
 		{ id: 'simple-circles', label: 'Simple circles' },
 		{ id: 'head', label: 'Head cross-section' },
@@ -118,9 +119,13 @@
 	let drawFrame = 0;
 	let mounted = $state(false);
 	let activePointerId: number | null = null;
+	let activePointerTool: EditorTool | null = null;
+	let activePointerMaterial: MaterialId | null = null;
 	let gestureBefore: Phantom | null = null;
 	let gestureChanged = false;
 	let previousPointerPoint: Point | null = null;
+	let pointerDownClientPoint: Point | null = null;
+	let tapMovementExceeded = false;
 	let lastEmittedSnapshot: Phantom | null = null;
 
 	let workingPhantom = $state.raw<Phantom>(initialWorkingPhantom());
@@ -385,8 +390,14 @@
 		scheduleDraw();
 	}
 
-	function applyTool(from: Point, to: Point, firstPoint: boolean) {
-		switch (tool) {
+	function applyTool(
+		from: Point,
+		to: Point,
+		firstPoint: boolean,
+		toolToApply = tool,
+		materialToApply = activeMaterial
+	) {
+		switch (toolToApply) {
 			case 'inspect':
 				return false;
 			case 'circle':
@@ -395,7 +406,7 @@
 					centerX: to.x,
 					centerY: to.y,
 					radius: circleRadiusPercent / 100,
-					material: activeMaterial
+					material: materialToApply
 				});
 				break;
 			case 'ellipse':
@@ -405,7 +416,7 @@
 					centerY: to.y,
 					radiusX: ellipseWidthPercent / 100,
 					radiusY: ellipseHeightPercent / 100,
-					material: activeMaterial
+					material: materialToApply
 				});
 				break;
 			case 'brush':
@@ -416,7 +427,7 @@
 					toX: to.x,
 					toY: to.y,
 					radius: brushRadiusPercent / 100,
-					material: activeMaterial
+					material: materialToApply
 				});
 				break;
 		}
@@ -459,17 +470,27 @@
 		hoverPoint = point;
 		selectPoint(point);
 		if (tool === 'inspect') {
-			event.preventDefault();
+			if (event.pointerType !== 'touch') event.preventDefault();
 			return;
 		}
 
-		event.preventDefault();
 		activePointerId = event.pointerId;
-		gestureBefore = clonePhantom(workingPhantom);
+		activePointerTool = tool;
+		activePointerMaterial = activeMaterial;
 		gestureChanged = false;
 		previousPointerPoint = point;
-		canvas.setPointerCapture(event.pointerId);
-		applyTool(point, point, true);
+		pointerDownClientPoint = { x: event.clientX, y: event.clientY };
+		tapMovementExceeded = false;
+
+		if (activePointerTool === 'brush' || activePointerTool === 'eraser') {
+			event.preventDefault();
+			gestureBefore = clonePhantom(workingPhantom);
+			canvas.setPointerCapture(event.pointerId);
+			applyTool(point, point, true, activePointerTool, activePointerMaterial);
+		} else if (event.pointerType !== 'touch') {
+			event.preventDefault();
+			canvas.setPointerCapture(event.pointerId);
+		}
 	}
 
 	function handlePointerMove(event: PointerEvent) {
@@ -479,20 +500,55 @@
 			scheduleDraw();
 			return;
 		}
-		event.preventDefault();
-		if (tool === 'brush' || tool === 'eraser') {
-			applyTool(previousPointerPoint ?? point, point, false);
+		if (activePointerTool === 'brush' || activePointerTool === 'eraser') {
+			event.preventDefault();
+			applyTool(
+				previousPointerPoint ?? point,
+				point,
+				false,
+				activePointerTool,
+				activePointerMaterial ?? activeMaterial
+			);
 			previousPointerPoint = point;
+		} else if (pointerDownClientPoint) {
+			const deltaX = event.clientX - pointerDownClientPoint.x;
+			const deltaY = event.clientY - pointerDownClientPoint.y;
+			if (Math.hypot(deltaX, deltaY) > TAP_MOVE_THRESHOLD_PX) tapMovementExceeded = true;
+			if (event.pointerType !== 'touch') event.preventDefault();
 		}
 	}
 
 	function finishPointer(event: PointerEvent) {
 		if (activePointerId !== event.pointerId) return;
-		event.preventDefault();
+		const point = pointFromClient(event.clientX, event.clientY);
+		if (activePointerTool === 'brush' || activePointerTool === 'eraser') {
+			event.preventDefault();
+		} else {
+			if (pointerDownClientPoint) {
+				const deltaX = event.clientX - pointerDownClientPoint.x;
+				const deltaY = event.clientY - pointerDownClientPoint.y;
+				if (Math.hypot(deltaX, deltaY) > TAP_MOVE_THRESHOLD_PX) tapMovementExceeded = true;
+			}
+			if (event.pointerType !== 'touch') event.preventDefault();
+			if (!tapMovementExceeded) {
+				gestureBefore = clonePhantom(workingPhantom);
+				applyTool(
+					point,
+					point,
+					true,
+					activePointerTool ?? tool,
+					activePointerMaterial ?? activeMaterial
+				);
+			}
+		}
 		const changed = gestureChanged;
 		activePointerId = null;
+		activePointerTool = null;
+		activePointerMaterial = null;
 		gestureBefore = null;
 		previousPointerPoint = null;
+		pointerDownClientPoint = null;
+		tapMovementExceeded = false;
 		if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
 		if (changed) {
 			recordSnapshot();
@@ -502,9 +558,19 @@
 
 	function cancelPointer(event: PointerEvent) {
 		if (activePointerId !== event.pointerId) return;
-		event.preventDefault();
+		if (
+			activePointerTool === 'brush' ||
+			activePointerTool === 'eraser' ||
+			event.pointerType !== 'touch'
+		) {
+			event.preventDefault();
+		}
 		activePointerId = null;
+		activePointerTool = null;
+		activePointerMaterial = null;
 		previousPointerPoint = null;
+		pointerDownClientPoint = null;
+		tapMovementExceeded = false;
 		gestureChanged = false;
 		if (gestureBefore) workingPhantom = clonePhantom(gestureBefore);
 		gestureBefore = null;
@@ -741,6 +807,7 @@
 				<canvas
 					bind:this={canvas}
 					aria-hidden="true"
+					data-tool={tool}
 					onpointerdown={handlePointerDown}
 					onpointermove={handlePointerMove}
 					onpointerup={finishPointer}
@@ -878,7 +945,7 @@
 	.panel-header p {
 		margin-bottom: 0.15rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.61rem;
+		font-size: 0.75rem;
 		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -889,7 +956,7 @@
 	}
 	.panel-header > span {
 		font-family: ui-monospace, monospace;
-		font-size: 0.67rem;
+		font-size: 0.6875rem;
 		color: var(--ink-muted);
 	}
 	.preset-history {
@@ -904,7 +971,7 @@
 	.size-controls label {
 		display: grid;
 		gap: 0.32rem;
-		font-size: 0.68rem;
+		font-size: 0.8125rem;
 		font-weight: 750;
 	}
 	.history-actions {
@@ -928,10 +995,11 @@
 	select {
 		width: 100%;
 		padding: 0.45rem 0.55rem;
+		font-size: 0.8125rem;
 	}
 	button {
 		padding: 0.45rem 0.58rem;
-		font-size: 0.68rem;
+		font-size: 0.8125rem;
 		font-weight: 750;
 		cursor: pointer;
 	}
@@ -1001,6 +1069,14 @@
 		height: 100%;
 		cursor: crosshair;
 		outline: none;
+	}
+	canvas[data-tool='inspect'],
+	canvas[data-tool='circle'],
+	canvas[data-tool='ellipse'] {
+		touch-action: pan-y;
+	}
+	canvas[data-tool='brush'],
+	canvas[data-tool='eraser'] {
 		touch-action: none;
 	}
 	.canvas-frame:focus-visible {
@@ -1011,7 +1087,7 @@
 	.selection-readout {
 		border-top: 1px solid var(--rule);
 		padding: 0.58rem 0.7rem;
-		font-size: 0.67rem;
+		font-size: 0.75rem;
 		line-height: 1.45;
 		color: var(--ink-muted);
 	}
@@ -1031,7 +1107,7 @@
 	}
 	legend {
 		padding: 0 0 0.4rem;
-		font-size: 0.69rem;
+		font-size: 0.8125rem;
 		font-weight: 800;
 	}
 	.material-list {
@@ -1052,7 +1128,7 @@
 	}
 	.material-list small {
 		margin-top: 0.08rem;
-		font-size: 0.59rem;
+		font-size: 0.75rem;
 		font-weight: 450;
 		line-height: 1.25;
 		color: currentColor;
@@ -1108,11 +1184,12 @@
 	details {
 		border-top: 1px solid var(--rule);
 		padding: 0.55rem 0.75rem;
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 	}
 	summary {
 		min-height: 2.2rem;
 		cursor: pointer;
+		font-size: 0.8125rem;
 		font-weight: 800;
 	}
 	details p {
@@ -1141,10 +1218,18 @@
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
-	@media (max-width: 430px) {
+	@media (max-width: 600px) {
 		.tool-strip {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
+			grid-template-columns: repeat(6, minmax(0, 1fr));
 		}
+		.tool-strip button {
+			grid-column: span 2;
+		}
+		.tool-strip button:nth-last-child(-n + 2) {
+			grid-column: span 3;
+		}
+	}
+	@media (max-width: 430px) {
 		.material-list,
 		.size-controls {
 			grid-template-columns: 1fr;
@@ -1170,6 +1255,11 @@
 		button[aria-pressed='true'] {
 			background: Highlight;
 			color: HighlightText;
+		}
+		.canvas-frame:focus-visible {
+			outline: 3px solid Highlight;
+			outline-offset: -3px;
+			box-shadow: none;
 		}
 	}
 </style>

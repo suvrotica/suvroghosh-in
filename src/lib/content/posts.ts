@@ -21,6 +21,7 @@ export type BlogPostMetadata = {
 	inPlainEnglish?: string;
 	keyTerms?: string[];
 	faq?: { question: string; answer: string }[];
+	interactiveFirst?: boolean;
 	headings?: PostHeading[];
 };
 

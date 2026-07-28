@@ -6,6 +6,7 @@
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import ReadingProgress from '$lib/components/animation/ReadingProgress.svelte';
 	import ArticleActions from '$lib/components/blog/ArticleActions.svelte';
+	import ArticleQuickAnswer from '$lib/components/blog/ArticleQuickAnswer.svelte';
 	import AuthorPanel from '$lib/components/blog/AuthorPanel.svelte';
 	import Notebook from '$lib/components/blog/Notebook.svelte';
 	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
@@ -38,7 +39,7 @@
 <SEO {...data.seo} />
 
 <div
-	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-none xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_16rem] xl:items-start xl:gap-12"
+	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-[calc(100vw-2rem)] xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_minmax(12rem,16rem)] xl:items-start xl:gap-12"
 	data-essay-ink={data.essayInk}
 >
 	<ReadingProgress ink="var(--essay-ink)" />
@@ -136,54 +137,18 @@
 			<ArticleActions title={data.metadata.title} />
 		</header>
 
-		<div class="print:hidden">
-			<TableOfContents {headings} variant="mobile" />
-		</div>
+		{#if !data.metadata.interactiveFirst}
+			<div class="print:hidden">
+				<TableOfContents {headings} variant="mobile" />
+			</div>
+		{/if}
 
-		{#if data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length}
-			<section
-				aria-labelledby="answer-summary"
-				class="mb-10 rounded-lg border border-neutral-200 bg-neutral-50 p-5 dark:border-neutral-800 dark:bg-neutral-900/60"
-			>
-				<h2 id="answer-summary" class="mb-3 text-lg font-bold text-neutral-900 dark:text-white">
-					Quick Answer
-				</h2>
-				{#if data.metadata.inPlainEnglish}
-					<p class="text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-						{data.metadata.inPlainEnglish}
-					</p>
-				{/if}
-				{#if data.metadata.keyTerms?.length}
-					<div class="mt-4">
-						<h3 class="mb-2 text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-							Key Terms
-						</h3>
-						<ul class="flex flex-wrap gap-2">
-							{#each data.metadata.keyTerms as term (term)}
-								<li
-									class="rounded-md bg-white px-2.5 py-1 text-xs text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
-								>
-									{term}
-								</li>
-							{/each}
-						</ul>
-					</div>
-				{/if}
-				{#if data.metadata.faq?.length}
-					<div class="mt-4 space-y-3">
-						{#each data.metadata.faq as item (item.question)}
-							<div>
-								<h3 class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
-									{item.question}
-								</h3>
-								<p class="mt-1 text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-									{item.answer}
-								</p>
-							</div>
-						{/each}
-					</div>
-				{/if}
-			</section>
+		{#if !data.metadata.interactiveFirst && (data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length)}
+			<ArticleQuickAnswer
+				inPlainEnglish={data.metadata.inPlainEnglish}
+				keyTerms={data.metadata.keyTerms}
+				faq={data.metadata.faq}
+			/>
 		{/if}
 
 		{#if data.metadata.notebook}
@@ -199,6 +164,15 @@
 		>
 			<PostContent />
 		</div>
+
+		{#if data.metadata.interactiveFirst && (data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length)}
+			<ArticleQuickAnswer
+				inPlainEnglish={data.metadata.inPlainEnglish}
+				keyTerms={data.metadata.keyTerms}
+				faq={data.metadata.faq}
+				deferred
+			/>
+		{/if}
 
 		{#if data.metadata.categorySlug === 'healthcare-it'}
 			<section

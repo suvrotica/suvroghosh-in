@@ -2,13 +2,14 @@
 title: "How a Scanner Sees: Reconstructing a Body from Shadows"
 description: "Paint a synthetic CT phantom, collect X-ray projections, and rebuild it with back-projection and filtered back-projection."
 date: "2026-07-26"
-dateModified: "2026-07-26"
+dateModified: "2026-07-28"
 thumbnail: "/images/visualizations/how-a-scanner-sees-ct-reconstruction.webp"
 thumbnailAlt: "Synthetic CT laboratory showing an editable cross-sectional phantom, a sinogram, and grayscale back-projection and filtered back-projection images"
 category: "Visualizations"
 tags: ["CT","Medical Imaging","Image Reconstruction","Fourier Transform","Interactive Mathematics","Healthcare","Radon Transform","Sinogram","Filtered Back-Projection","Signal Processing"]
 pinnedTags: ["CT", "Medical Imaging", "Image Reconstruction", "Fourier Transform", "Interactive Mathematics", "Healthcare", "Radon Transform", "Sinogram", "Filtered Back-Projection", "Signal Processing"]
 published: true
+interactiveFirst: true
 color: "#164E63"
 author: "Suvro Ghosh"
 readingTime: "21 min"
@@ -47,49 +48,19 @@ faq:
 	}
 </style>
 
-<TTS />
-
-An X-ray detector does not see a rib, a kidney, or a lesion. It sees a number: how much of one beam survived its trip through the object. CT repeats that modest act from many directions and then performs a mathematically disciplined form of gossip. Each measurement is ignorant on its own. Together, they become a cross-section.
-
-The laboratory below lets you watch that conversion happen. Paint a synthetic object, start the scan, and follow one ray from source to detector. Its value enters a projection profile; the profile becomes one row of a sinogram; the growing collection is smeared backwards into one reconstruction and filtered before being smeared into another.
-
-<Pi
-	src="/images/visualizations/how-a-scanner-sees-ct-reconstruction.webp"
-	alt="Synthetic CT laboratory with a circular phantom on the left, a striped sinogram in the centre, and blurred and filtered grayscale reconstructions on the right"
-	caption="The hidden phantom, the measurements a scanner can actually collect, and two ways of turning those measurements back into an image. Every shape is synthetic."
-/>
-
-Use **Start scan** to acquire a complete set of projections. Pause to inspect a particular angle, advance one batch at a time, or reset the instrument. Changing the reconstruction filter reuses the collected sinogram; it does not pretend to expose the object to another scan. The reference phantom remains visible because this simulation knows the answer, although a real scanner does not.
+An X-ray detector sees how much of each beam survived—not the rib, kidney, or lesion it crossed—so this laboratory lets many such synthetic shadows become a cross-section.
 
 <CTReconstructionLab />
 
-> **Educational and scientific boundary**
+> **What to try first**
 >
-> This is an educational parallel-beam simulation using synthetic shapes and illustrative material values. Its dose control is relative, its spectral model is simplified, and its images must not be used for diagnosis or scanner protocol decisions.
+> Press **Start scan**, then try the **Few views** guide. Compare ordinary back-projection with the filtered result; use **Step** when you want to inspect how one more batch of angles changes both images.
 
-# Five experiments worth trying
+<TTS />
 
-The named experiment guides configure the same controls shown in the laboratory. They are starting positions, not separate animations with conclusions already painted in.
+CT repeats one modest measurement from many directions and then performs a mathematically disciplined form of gossip. Each number is ignorant on its own. Together, the measurements constrain a cross-section.
 
-## Few views
-
-Choose approximately **18 projections**, moderate detector resolution, high relative dose, no missing angles, and either the Ramp or Shepp–Logan filter. The detector profiles themselves can look perfectly orderly while the reconstruction grows star-like spokes. Detector detail along each measured direction cannot supply the many directions that were never measured.
-
-## Low dose
-
-Choose **180 projections**, high detector resolution, and a very low relative dose. Compare Hann with Ramp while keeping the same noisy sinogram. The sharper Ramp result also admits and amplifies more high-frequency noise; Hann gives away some edge sharpness to restrain it.
-
-## Missing wedge
-
-Begin with **180 nominal projections**, omit a **60-degree sector**, and use moderate relative dose. The damage is not evenly distributed. Edges that depend most strongly on the absent directions become stretched, weakened, or joined by directional streaks.
-
-## Metal
-
-Load the metal-implant phantom, enable the simplified polychromatic metal model, and choose moderate or low relative dose. Some rays suffer photon starvation, while others acquire nonlinear spectral error. Filtered back-projection has no special knowledge of metal; it spreads the disagreement into long bright and dark streaks.
-
-## More detectors, too few angles
-
-Select a high detector-bin count and a very low projection count. The projection curves become finely sampled, yet angular spokes remain. More bins improve sampling **along** the detector. They do not replace missing sampling **around** the object.
+Paint a synthetic object, start the scan, and follow one ray from source to detector. Its value enters a projection profile; the profile becomes one row of a sinogram; the growing collection is smeared backwards into one reconstruction and filtered before being smeared into another. Changing the reconstruction filter reuses the collected sinogram; it does not pretend to expose the object to another scan. The reference phantom remains visible because this simulation knows the answer, although a real scanner does not.
 
 # A body made from shadows
 
@@ -270,7 +241,7 @@ The optional metal model represents those mechanisms in simplified form. It eval
 
 Filtered back-projection spreads each projection discrepancy along its ray. When adjacent angles disagree strongly around metal, those errors cross the field as alternating bright and dark bands. This captures the direction and cause of a familiar artefact without claiming vendor equivalence, exact material spectra, exact Hounsfield units, or real lesion detectability.
 
-# What this laboratory deliberately leaves out
+# Educational and scientific boundary: what this laboratory deliberately leaves out
 
 This instrument isolates the chain from a two-dimensional attenuation map to parallel projections and analytic reconstruction. That narrowness is useful. A modern clinical CT system must solve many problems that would bury the central geometry here.
 

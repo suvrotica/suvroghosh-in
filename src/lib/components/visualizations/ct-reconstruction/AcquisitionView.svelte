@@ -236,7 +236,7 @@
 	header p {
 		margin-bottom: 0.15rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.61rem;
+		font-size: 0.6875rem;
 		font-weight: 700;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -244,7 +244,7 @@
 	}
 	header > span {
 		font-family: ui-monospace, monospace;
-		font-size: 0.7rem;
+		font-size: 0.8125rem;
 		color: var(--ink-muted);
 	}
 	.canvas-frame {
@@ -259,18 +259,22 @@
 	}
 	.description {
 		padding: 0.35rem 0 0.25rem;
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		line-height: 1.5;
 		color: var(--ink-muted);
 	}
 	details {
 		border-top: 1px solid var(--rule);
 		padding: 0.6rem 0.8rem;
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 	}
 	summary {
 		min-height: 2rem;
 		cursor: pointer;
 		font-weight: 700;
+	}
+	summary:focus-visible {
+		outline: 2px solid var(--focus);
+		outline-offset: 2px;
 	}
 </style>

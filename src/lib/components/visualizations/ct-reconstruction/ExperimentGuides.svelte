@@ -13,6 +13,13 @@
 
 	let { onapply, active = null }: Props = $props();
 
+	function revealFocusedCard(event: FocusEvent) {
+		(event.currentTarget as HTMLButtonElement).scrollIntoView({
+			block: 'nearest',
+			inline: 'center'
+		});
+	}
+
 	const experiments: Array<{
 		id: ExperimentId;
 		title: string;
@@ -66,6 +73,7 @@
 				type="button"
 				class="experiment-card"
 				aria-pressed={active === experiment.id}
+				onfocus={revealFocusedCard}
 				onclick={() => onapply(experiment.id)}
 			>
 				<span class="title">{experiment.title}</span>
@@ -98,7 +106,7 @@
 	.heading p {
 		margin-bottom: 0.15rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.62rem;
+		font-size: 0.6875rem;
 		font-weight: 700;
 		letter-spacing: 0.13em;
 		text-transform: uppercase;
@@ -110,7 +118,7 @@
 	}
 	.heading > span {
 		max-width: 15rem;
-		font-size: 0.68rem;
+		font-size: 0.75rem;
 		line-height: 1.35;
 		text-align: right;
 		color: var(--ink-muted);
@@ -130,6 +138,7 @@
 		align-content: start;
 		gap: 0.45rem;
 		scroll-snap-align: start;
+		scroll-margin-inline: 0.25rem;
 		border: 1px solid var(--control-border);
 		border-radius: 0.55rem;
 		background: var(--paper-raised);
@@ -144,28 +153,32 @@
 		box-shadow: inset 0 0 0 1px var(--accent);
 	}
 	.title {
-		font-size: 0.78rem;
+		font-size: 0.8125rem;
 		font-weight: 800;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 	}
 	.settings {
 		font-family: ui-monospace, monospace;
-		font-size: 0.66rem;
+		font-size: 0.75rem;
 		line-height: 1.45;
 		color: var(--ink-muted);
 	}
 	.observation {
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		line-height: 1.45;
 		color: var(--ink);
 	}
 	.action {
 		align-self: end;
 		margin-top: auto;
-		font-size: 0.7rem;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		color: var(--accent);
+	}
+	.experiment-card:focus-visible {
+		outline: 2px solid var(--focus);
+		outline-offset: 2px;
 	}
 	@media (max-width: 640px) {
 		.heading {

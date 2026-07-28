@@ -51,6 +51,8 @@
 
 	let shell: HTMLElement;
 	let fullscreenTrigger: HTMLButtonElement;
+	let fullscreenSettingsTrigger: HTMLButtonElement;
+	let fullscreenSettingsClose: HTMLButtonElement;
 	let client: CTWorkerClient | null = null;
 	let unsubscribeWorker: (() => void) | null = null;
 	let nextBatchTimer: ReturnType<typeof setTimeout> | null = null;
@@ -101,6 +103,7 @@
 	let selectedDetector = $state(Math.floor(INITIAL_ACQUISITION.detectorCount / 2));
 	let activeExperiment = $state<ExperimentId | null>(null);
 	let fullscreen = $state(false);
+	let fullscreenSettingsOpen = $state(false);
 	let fullscreenAvailable = $state(false);
 	let errorMessage = $state('');
 	let liveMessage = $state('The CT laboratory is ready to initialize.');
@@ -116,6 +119,19 @@
 		initialized ? scanDetectorCount : acquisition.detectorCount
 	);
 	let missingCount = $derived(acquisition.projectionCount - actualProjectionCount);
+	let fullscreenPrimaryLabel = $derived(
+		playbackState === 'running'
+			? 'Pause'
+			: playbackState === 'paused' && !stale
+				? 'Resume'
+				: playbackState === 'complete' || stale
+					? 'New scan'
+					: 'Start'
+	);
+	let fullscreenNeedsRecovery = $derived(playbackState === 'error' || !workerReady);
+	let fullscreenStatusLabel = $derived(
+		errorMessage ? `Error: ${errorMessage}` : `${Math.round(progress * 100)}% complete`
+	);
 	let stateDescription = $derived.by(() => {
 		const percent = Math.round(progress * 100);
 		const coverage =
@@ -661,10 +677,12 @@
 			liveMessage = 'Fullscreen is not available in this browser.';
 			return;
 		}
-		lastFullscreenTrigger = trigger;
+		lastFullscreenTrigger = document.fullscreenElement === shell ? fullscreenTrigger : trigger;
 		try {
-			if (document.fullscreenElement === shell) await document.exitFullscreen();
-			else await shell.requestFullscreen();
+			if (document.fullscreenElement === shell) {
+				fullscreenSettingsOpen = false;
+				await document.exitFullscreen();
+			} else await shell.requestFullscreen();
 		} catch {
 			liveMessage = 'Fullscreen could not be opened in this browser.';
 		}
@@ -673,11 +691,44 @@
 	function updateFullscreenState() {
 		const wasFullscreen = fullscreen;
 		fullscreen = document.fullscreenElement === shell;
+		if (!fullscreen) fullscreenSettingsOpen = false;
 		if (wasFullscreen && !fullscreen && lastFullscreenTrigger) {
 			const trigger = lastFullscreenTrigger;
 			lastFullscreenTrigger = null;
 			requestAnimationFrame(() => trigger.focus({ preventScroll: true }));
 		}
+	}
+
+	function runFullscreenPrimaryAction() {
+		if (playbackState === 'running') {
+			pauseScan();
+			return;
+		}
+		if (playbackState === 'paused' && !stale) {
+			resumeScan();
+			return;
+		}
+		startScan();
+	}
+
+	function openFullscreenSettings() {
+		fullscreenSettingsOpen = true;
+		requestAnimationFrame(() => fullscreenSettingsClose?.focus({ preventScroll: true }));
+	}
+
+	function closeFullscreenSettings(restoreFocus = true) {
+		if (!fullscreenSettingsOpen) return;
+		fullscreenSettingsOpen = false;
+		if (restoreFocus) {
+			requestAnimationFrame(() => fullscreenSettingsTrigger?.focus({ preventScroll: true }));
+		}
+	}
+
+	function handleLaboratoryKeydown(event: KeyboardEvent) {
+		if (event.key !== 'Escape' || !fullscreen || !fullscreenSettingsOpen) return;
+		event.preventDefault();
+		event.stopPropagation();
+		closeFullscreenSettings();
 	}
 
 	function disconnectWorker() {
@@ -755,11 +806,69 @@
 	});
 </script>
 
+<svelte:window onkeydown={handleLaboratoryKeydown} />
+
 <section
 	bind:this={shell}
 	class="ct-laboratory article-breakout not-prose"
+	class:settings-open={fullscreenSettingsOpen}
 	aria-labelledby="ct-laboratory-heading"
+	data-tts-exclude
 >
+	<div class="fullscreen-toolbar" aria-label="Fullscreen laboratory controls">
+		<div class="fullscreen-identity">
+			<span>CT laboratory</span>
+			<strong>How a scanner sees</strong>
+		</div>
+		<div class="fullscreen-progress">
+			<div>
+				<span aria-live="polite" title={errorMessage || undefined}>{fullscreenStatusLabel}</span>
+				<output>{acquiredProjectionCount}/{actualProjectionCount} views</output>
+			</div>
+			<progress
+				max="1"
+				value={progress}
+				aria-label={`Scan progress: ${Math.round(progress * 100)}%`}
+			>
+				{Math.round(progress * 100)}%
+			</progress>
+		</div>
+		<div class="fullscreen-actions">
+			<button
+				type="button"
+				class="primary"
+				disabled={!workerReady}
+				onclick={runFullscreenPrimaryAction}
+			>
+				{fullscreenPrimaryLabel}
+			</button>
+			<button
+				type="button"
+				disabled={!workerReady || playbackState === 'running'}
+				onclick={singleStep}>Step</button
+			>
+			<button
+				type="button"
+				class:recovery={fullscreenNeedsRecovery}
+				onclick={() => (fullscreenNeedsRecovery ? resetLaboratory() : restartScan())}
+			>
+				{fullscreenNeedsRecovery ? 'Reconnect' : 'Restart'}
+			</button>
+			<button
+				bind:this={fullscreenSettingsTrigger}
+				type="button"
+				aria-controls="ct-fullscreen-settings"
+				aria-expanded={fullscreenSettingsOpen}
+				onclick={openFullscreenSettings}
+			>
+				Settings
+			</button>
+			<button type="button" class="exit" onclick={(event) => toggleFullscreen(event.currentTarget)}>
+				Exit
+			</button>
+		</div>
+	</div>
+
 	<header class="lab-header">
 		<div>
 			<p class="kicker">Interactive · Parallel-beam reconstruction</p>
@@ -803,8 +912,10 @@
 	<p class="sr-live" aria-live="polite" aria-atomic="true">{liveMessage}</p>
 
 	<div class="laboratory-body">
-		<div class="control-column">
+		<div class="transport-region">
 			<CTControls
+				mode="transport"
+				headingId="ct-transport-controls-heading"
 				{acquisition}
 				{reconstruction}
 				{playbackState}
@@ -814,7 +925,6 @@
 				{acquiredProjectionCount}
 				{stale}
 				{workerReady}
-				{fullscreen}
 				autoWindow={display.autoWindow}
 				windowCenter={display.windowCenter}
 				windowWidth={display.windowWidth}
@@ -830,61 +940,127 @@
 				onrestart={restartScan}
 				onreset={resetLaboratory}
 				onnewnoise={newNoiseRealisation}
-				onfullscreen={toggleFullscreen}
 				onwindowchange={changeDisplay}
 			/>
 		</div>
 
-		<div class="workbench">
-			<div class="measurement-layout">
-				<PhantomEditor
-					phantom={editablePhantom}
-					{preset}
-					disabled={playbackState === 'error'}
-					onphantomcommit={handlePhantomCommit}
-					onpresetchange={handlePresetChange}
-					onselectionchange={handleSelectionChange}
-				/>
-				<div class="measurement-column">
-					<AcquisitionView
-						materials={committedPhantom.materials}
-						gridSize={committedPhantom.size}
-						angleRad={currentAngle}
-						projection={currentProjection}
-						detectorCount={displayedDetectorCount}
-						{selectedDetector}
-						acquired={currentProjection !== null}
+		<div
+			class="workbench"
+			aria-hidden={fullscreen && fullscreenSettingsOpen ? 'true' : undefined}
+			inert={fullscreen && fullscreenSettingsOpen}
+		>
+			<div class="stage-section measurement-stage">
+				<div class="measurement-layout">
+					<PhantomEditor
+						phantom={editablePhantom}
+						{preset}
+						disabled={playbackState === 'error'}
+						onphantomcommit={handlePhantomCommit}
+						onpresetchange={handlePresetChange}
+						onselectionchange={handleSelectionChange}
 					/>
-					<SinogramView
-						{sinogram}
-						projectionCount={displayedProjectionCount}
-						detectorCount={displayedDetectorCount}
-						{acquiredMask}
-						completedRows={revealedRows}
-						selectedPoint={selectedPoint ? { x: selectedPoint.x, y: selectedPoint.y } : null}
-						onselect={handleSinogramSelection}
-					/>
+					<div class="measurement-column">
+						<AcquisitionView
+							materials={committedPhantom.materials}
+							gridSize={committedPhantom.size}
+							angleRad={currentAngle}
+							projection={currentProjection}
+							detectorCount={displayedDetectorCount}
+							{selectedDetector}
+							acquired={currentProjection !== null}
+						/>
+						<SinogramView
+							{sinogram}
+							projectionCount={displayedProjectionCount}
+							detectorCount={displayedDetectorCount}
+							{acquiredMask}
+							completedRows={revealedRows}
+							selectedPoint={selectedPoint ? { x: selectedPoint.x, y: selectedPoint.y } : null}
+							onselect={handleSinogramSelection}
+						/>
+					</div>
 				</div>
 			</div>
 
-			<ReconstructionComparison
-				{groundTruth}
-				{backprojection}
-				{filteredBackprojection}
-				size={reconstruction.imageSize ?? committedPhantom.size}
-				{filterLabel}
-				partial={acquiredProjectionCount > 0 && playbackState !== 'complete'}
+			<div class="stage-section reconstruction-stage">
+				<ReconstructionComparison
+					{groundTruth}
+					{backprojection}
+					{filteredBackprojection}
+					size={reconstruction.imageSize ?? committedPhantom.size}
+					{filterLabel}
+					partial={acquiredProjectionCount > 0 && playbackState !== 'complete'}
+					{progress}
+					{backprojectionMetrics}
+					{filteredMetrics}
+					autoWindow={display.autoWindow}
+					windowCenter={display.windowCenter}
+					windowWidth={display.windowWidth}
+					zoom={display.zoom}
+				/>
+			</div>
+
+			<div class="stage-section experiment-stage">
+				<ExperimentGuides onapply={applyExperiment} active={activeExperiment} />
+			</div>
+		</div>
+
+		<div
+			id="ct-fullscreen-settings"
+			class="advanced-region"
+			aria-hidden={fullscreen && !fullscreenSettingsOpen ? 'true' : undefined}
+			inert={fullscreen && !fullscreenSettingsOpen}
+		>
+			<div class="settings-drawer-header">
+				<div>
+					<p>Laboratory console</p>
+					<h3>Advanced settings</h3>
+				</div>
+				<button
+					bind:this={fullscreenSettingsClose}
+					type="button"
+					onclick={() => closeFullscreenSettings()}>Close</button
+				>
+			</div>
+			<CTControls
+				mode="settings"
+				headingId="ct-advanced-controls-heading"
+				{acquisition}
+				{reconstruction}
+				{playbackState}
+				{playbackSpeed}
 				{progress}
-				{backprojectionMetrics}
-				{filteredMetrics}
+				{actualProjectionCount}
+				{acquiredProjectionCount}
+				{stale}
+				{workerReady}
 				autoWindow={display.autoWindow}
 				windowCenter={display.windowCenter}
 				windowWidth={display.windowWidth}
 				zoom={display.zoom}
+				{errorMessage}
+				onacquisitionchange={changeAcquisition}
+				onreconstructionchange={changeReconstruction}
+				onspeedchange={(value) => (playbackSpeed = value)}
+				onstart={startScan}
+				onpause={pauseScan}
+				onresume={resumeScan}
+				onstep={singleStep}
+				onrestart={restartScan}
+				onreset={resetLaboratory}
+				onnewnoise={newNoiseRealisation}
+				onwindowchange={changeDisplay}
 			/>
-
-			<ExperimentGuides onapply={applyExperiment} active={activeExperiment} />
 		</div>
+
+		<button
+			type="button"
+			class="settings-scrim"
+			aria-label="Close advanced settings"
+			aria-hidden={!fullscreenSettingsOpen}
+			tabindex="-1"
+			onclick={() => closeFullscreenSettings()}
+		></button>
 	</div>
 
 	<footer class="lab-footer">
@@ -909,6 +1085,8 @@
 <style>
 	.ct-laboratory {
 		position: relative;
+		container-name: ct-lab;
+		container-type: inline-size;
 		width: min(88rem, calc(100vw - 1rem));
 		margin-block: 2rem 2.75rem;
 		transform: translateX(-50%);
@@ -919,6 +1097,9 @@
 		color: var(--ink);
 		box-shadow: var(--shadow-overlay);
 		--ct-accent: var(--accent);
+	}
+	.fullscreen-toolbar {
+		display: none;
 	}
 	.lab-header {
 		display: flex;
@@ -939,7 +1120,7 @@
 	.kicker {
 		margin-bottom: 0.18rem !important;
 		font-family: ui-monospace, monospace;
-		font-size: 0.64rem;
+		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0.13em;
 		text-transform: uppercase;
@@ -952,7 +1133,8 @@
 	}
 	.subtitle {
 		margin-top: 0.25rem !important;
-		font-size: 0.75rem;
+		font-size: 0.8125rem;
+		line-height: 1.4;
 		color: var(--ink-muted);
 	}
 	button {
@@ -965,7 +1147,7 @@
 		border-radius: 0.48rem;
 		background: var(--accent);
 		padding: 0.5rem 0.8rem;
-		font-size: 0.72rem;
+		font-size: 0.8125rem;
 		font-weight: 800;
 		color: var(--accent-foreground);
 		cursor: pointer;
@@ -1011,14 +1193,14 @@
 		border: 1px solid var(--control-border);
 		border-radius: 50%;
 		font-family: ui-monospace, monospace;
-		font-size: 0.66rem;
+		font-size: 0.75rem;
 	}
 	.workflow strong {
-		font-size: 0.72rem;
+		font-size: 0.8125rem;
 	}
 	.workflow small {
 		font-family: ui-monospace, monospace;
-		font-size: 0.61rem;
+		font-size: 0.75rem;
 		color: var(--ink-muted);
 	}
 	.status-strip {
@@ -1032,14 +1214,14 @@
 	}
 	.status-strip p {
 		max-width: 60rem;
-		font-size: 0.73rem;
+		font-size: 0.8125rem;
 		line-height: 1.45;
 		color: var(--ink);
 	}
 	.status-strip span {
 		flex: none;
 		font-family: ui-monospace, monospace;
-		font-size: 0.62rem;
+		font-size: 0.75rem;
 		color: var(--ink-muted);
 	}
 	.sr-live {
@@ -1052,28 +1234,48 @@
 		clip-path: inset(50%);
 	}
 	.laboratory-body {
+		position: relative;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) minmax(19rem, 23rem);
+		grid-template-rows: auto minmax(0, 1fr);
 		gap: 0.8rem;
+		min-width: 0;
 		padding: 0.8rem;
 	}
 	.workbench {
 		display: grid;
 		grid-column: 1;
-		grid-row: 1;
+		grid-row: 1 / span 2;
 		min-width: 0;
 		gap: 0.8rem;
 	}
-	.control-column {
+	.stage-section,
+	.stage-section > :global(*) {
+		min-width: 0;
+	}
+	.transport-region {
 		grid-column: 2;
 		grid-row: 1;
+	}
+	.advanced-region {
+		grid-column: 2;
+		grid-row: 2;
+		align-self: start;
 		min-width: 0;
+	}
+	.settings-drawer-header,
+	.settings-scrim {
+		display: none;
 	}
 	.measurement-layout {
 		display: grid;
-		grid-template-columns: minmax(34rem, 1.55fr) minmax(18rem, 1fr);
+		grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 1fr);
 		gap: 0.8rem;
+		min-width: 0;
 		align-items: start;
+	}
+	.measurement-layout > :global(*) {
+		min-width: 0;
 	}
 	.measurement-column {
 		display: grid;
@@ -1090,47 +1292,69 @@
 	}
 	.lab-footer p {
 		max-width: 48rem;
-		font-size: 0.66rem;
+		font-size: 0.75rem;
 		line-height: 1.5;
 		color: var(--ink-muted);
 	}
 	.noscript {
 		border-top: 1px solid var(--rule);
 		padding: 0.8rem;
-		font-size: 0.72rem;
+		font-size: 0.8125rem;
 		color: var(--ink);
 	}
-	.ct-laboratory:fullscreen {
-		width: 100vw;
-		height: 100dvh;
-		margin: 0;
-		overflow-y: auto;
-		border: 0;
-		border-radius: 0;
-		padding-bottom: env(safe-area-inset-bottom);
-		background: var(--paper);
+	.ct-laboratory :global(.controls button),
+	.ct-laboratory :global(.controls select),
+	.ct-laboratory :global(.controls summary),
+	.ct-laboratory :global(.controls .progress-block > div),
+	.ct-laboratory :global(.controls .range-field),
+	.ct-laboratory :global(.controls .select-field),
+	.ct-laboratory :global(.controls .checkbox-field) {
+		font-size: 0.8125rem;
 	}
-	@media (max-width: 1180px) {
+	.ct-laboratory :global(.controls small),
+	.ct-laboratory :global(.controls summary span),
+	.ct-laboratory :global(.controls .control-header p),
+	.ct-laboratory :global(.controls .control-header > span),
+	.ct-laboratory :global(.controls .seed-field) {
+		font-size: 0.75rem;
+	}
+	@container ct-lab (max-width: 80rem) {
 		.laboratory-body {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-rows: none;
 		}
-		.control-column {
-			grid-column: 1;
-			grid-row: 1;
-		}
+		.transport-region,
+		.advanced-region,
 		.workbench {
 			grid-column: 1;
-			grid-row: 2;
+			grid-row: auto;
+		}
+		.transport-region {
+			order: 1;
+		}
+		.workbench {
+			order: 10;
+		}
+		.advanced-region {
+			order: 20;
 		}
 	}
-	@media (max-width: 900px) {
+
+	@container ct-lab (max-width: 56.25rem) {
 		.measurement-layout {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
 		}
 		.measurement-column {
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
+
+	@container ct-lab (max-width: 43.75rem) {
+		.advanced-region :global(.field-grid) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
 	@media (max-width: 640px) {
 		.ct-laboratory {
 			width: calc(100vw - 0.5rem);
@@ -1162,6 +1386,286 @@
 		}
 		.measurement-column {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	.ct-laboratory:fullscreen {
+		display: grid;
+		grid-template-rows: auto minmax(0, 1fr);
+		width: 100vw;
+		height: 100dvh;
+		margin: 0;
+		overflow: hidden;
+		border: 0;
+		border-radius: 0;
+		padding: 0 0 env(safe-area-inset-bottom);
+		background: var(--paper);
+		transform: none;
+	}
+	.ct-laboratory:fullscreen .lab-header,
+	.ct-laboratory:fullscreen .workflow,
+	.ct-laboratory:fullscreen .status-strip,
+	.ct-laboratory:fullscreen .lab-footer {
+		display: none;
+	}
+	.ct-laboratory:fullscreen .fullscreen-toolbar {
+		position: sticky;
+		z-index: 10;
+		top: 0;
+		display: grid;
+		grid-template-columns: minmax(10rem, 0.8fr) minmax(13rem, 1fr) auto;
+		align-items: center;
+		gap: 0.9rem;
+		border-bottom: 1px solid var(--rule);
+		background: var(--paper-raised);
+		padding: calc(0.55rem + env(safe-area-inset-top)) 0.75rem 0.55rem;
+		box-shadow: 0 0.3rem 1rem color-mix(in oklab, var(--ink) 10%, transparent);
+	}
+	.fullscreen-identity {
+		display: grid;
+		min-width: 0;
+		line-height: 1.15;
+	}
+	.fullscreen-identity span {
+		font-family: ui-monospace, monospace;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--accent);
+	}
+	.fullscreen-identity strong {
+		overflow: hidden;
+		font-size: 0.9375rem;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.fullscreen-progress {
+		display: grid;
+		gap: 0.35rem;
+		min-width: 0;
+	}
+	.fullscreen-progress > div {
+		display: flex;
+		justify-content: space-between;
+		gap: 0.75rem;
+		font-size: 0.8125rem;
+	}
+	.fullscreen-progress span {
+		min-width: 0;
+		overflow: hidden;
+		font-weight: 700;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.fullscreen-progress output {
+		font-family: ui-monospace, monospace;
+		color: var(--ink-muted);
+	}
+	.fullscreen-progress progress {
+		width: 100%;
+		height: 0.55rem;
+		accent-color: var(--accent);
+	}
+	.fullscreen-actions {
+		display: flex;
+		gap: 0.4rem;
+	}
+	.fullscreen-actions button {
+		min-height: 2.65rem;
+		border: 1px solid var(--control-border);
+		border-radius: 0.45rem;
+		background: var(--paper-raised);
+		padding: 0.45rem 0.65rem;
+		font-size: 0.8125rem;
+		font-weight: 750;
+		color: var(--ink);
+		cursor: pointer;
+	}
+	.fullscreen-actions button:hover:not(:disabled) {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.fullscreen-actions button:disabled {
+		cursor: not-allowed;
+		opacity: 0.48;
+	}
+	.fullscreen-actions button.primary {
+		border-color: var(--accent);
+		background: var(--accent);
+		color: var(--accent-foreground);
+	}
+	.fullscreen-actions button.recovery {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.fullscreen-actions button.exit {
+		border-color: var(--accent);
+	}
+	.ct-laboratory:fullscreen .laboratory-body {
+		display: block;
+		min-height: 0;
+		overflow: hidden;
+		padding: 0.8rem;
+	}
+	.ct-laboratory:fullscreen .workbench {
+		display: grid;
+		height: 100%;
+		min-height: 0;
+		align-content: start;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		padding-right: 0.2rem;
+		scrollbar-gutter: stable;
+	}
+	.ct-laboratory:fullscreen .advanced-region {
+		position: absolute;
+		z-index: 5;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		width: min(25rem, calc(100% - 3rem));
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		border-left: 1px solid var(--rule);
+		background: var(--paper-raised);
+		box-shadow: -0.5rem 0 1.5rem color-mix(in oklab, var(--ink) 18%, transparent);
+		transform: translateX(calc(100% + 1.6rem));
+		visibility: hidden;
+		transition:
+			transform 180ms ease,
+			visibility 0s linear 180ms;
+	}
+	.ct-laboratory:fullscreen.settings-open .advanced-region {
+		transform: translateX(0);
+		visibility: visible;
+		transition-delay: 0s;
+	}
+	.ct-laboratory:fullscreen .transport-region {
+		display: none;
+	}
+	.ct-laboratory:fullscreen .advanced-region :global(.controls) {
+		display: block;
+		overflow: visible;
+		border: 0;
+		border-radius: 0;
+	}
+	.ct-laboratory:fullscreen .advanced-region :global(.control-header),
+	.ct-laboratory:fullscreen .advanced-region :global(.transport),
+	.ct-laboratory:fullscreen .advanced-region :global(.progress-block) {
+		display: none;
+	}
+	.ct-laboratory:fullscreen .advanced-region :global(details) {
+		overflow: visible;
+		border: 0;
+		border-bottom: 1px solid var(--rule);
+		border-radius: 0;
+	}
+	.ct-laboratory:fullscreen .advanced-region :global(.field-grid) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.ct-laboratory:fullscreen .settings-drawer-header {
+		position: sticky;
+		z-index: 1;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		border-bottom: 1px solid var(--rule);
+		background: var(--paper-raised);
+		padding: 0.7rem 0.8rem;
+	}
+	.ct-laboratory:fullscreen .settings-drawer-header p,
+	.ct-laboratory:fullscreen .settings-drawer-header h3 {
+		margin: 0;
+	}
+	.ct-laboratory:fullscreen .settings-drawer-header p {
+		margin-bottom: 0.12rem;
+		font-family: ui-monospace, monospace;
+		font-size: 0.75rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--ink-muted);
+	}
+	.ct-laboratory:fullscreen .settings-drawer-header h3 {
+		font-size: 1rem;
+	}
+	.ct-laboratory:fullscreen .settings-drawer-header button {
+		display: block;
+		min-height: 2.65rem;
+		border: 1px solid var(--control-border);
+		border-radius: 0.45rem;
+		background: var(--paper-raised);
+		padding: 0.45rem 0.7rem;
+		font-size: 0.8125rem;
+		font-weight: 750;
+		color: var(--ink);
+		cursor: pointer;
+	}
+	.ct-laboratory:fullscreen .settings-scrim {
+		position: absolute;
+		z-index: 4;
+		inset: 0;
+		display: block;
+		border: 0;
+		background: color-mix(in oklab, var(--ink) 28%, transparent);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 180ms ease;
+	}
+	.ct-laboratory:fullscreen.settings-open .settings-scrim {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	@container ct-lab (max-width: 58rem) {
+		.ct-laboratory:fullscreen .fullscreen-toolbar {
+			grid-template-columns: minmax(9rem, 0.55fr) minmax(12rem, 1fr);
+		}
+		.ct-laboratory:fullscreen .fullscreen-actions {
+			grid-column: 1 / -1;
+			display: grid;
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+		}
+	}
+
+	@container ct-lab (max-width: 48rem) {
+		.ct-laboratory:fullscreen .fullscreen-toolbar {
+			grid-template-columns: minmax(0, 1fr);
+			gap: 0.45rem;
+			padding-inline: 0.45rem;
+		}
+		.ct-laboratory:fullscreen .fullscreen-identity {
+			display: none;
+		}
+		.ct-laboratory:fullscreen .fullscreen-actions {
+			grid-column: 1;
+		}
+		.ct-laboratory:fullscreen .fullscreen-actions button {
+			min-width: 0;
+			min-height: 2.5rem;
+			padding-inline: 0.3rem;
+			font-size: 0.8125rem;
+		}
+		.ct-laboratory:fullscreen .laboratory-body {
+			padding: 0.45rem;
+		}
+		.ct-laboratory:fullscreen .advanced-region {
+			top: auto;
+			left: 0;
+			width: 100%;
+			max-height: min(72dvh, 42rem);
+			border-top: 1px solid var(--rule);
+			border-left: 0;
+			border-radius: 0.85rem 0.85rem 0 0;
+			box-shadow: 0 -0.5rem 1.5rem color-mix(in oklab, var(--ink) 18%, transparent);
+			transform: translateY(calc(100% + 1.6rem));
+		}
+		.ct-laboratory:fullscreen.settings-open .advanced-region {
+			transform: translateY(0);
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {

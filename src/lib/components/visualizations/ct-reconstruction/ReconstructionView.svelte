@@ -190,13 +190,13 @@
 		aria-label={`${title}. ${valueLabel} ${autoWindow ? 'Automatic intensity window.' : `Window centre ${windowCenter.toFixed(2)}, width ${windowWidth.toFixed(2)}.`} ${zoom > 1 ? `${zoom.toFixed(1)} times zoom.` : 'Fit to panel.'}`}
 	>
 		<canvas bind:this={canvas} aria-hidden="true"></canvas>
-		<div class="scale" aria-hidden="true">
-			{#if mode === 'difference'}
-				<span>negative</span><span>zero</span><span>positive</span>
-			{:else}
-				<span>low</span><span>attenuation</span><span>high</span>
-			{/if}
-		</div>
+	</div>
+	<div class:scale-difference={mode === 'difference'} class="scale" aria-hidden="true">
+		{#if mode === 'difference'}
+			<span>negative</span><span>zero</span><span>positive</span>
+		{:else}
+			<span>low</span><span>attenuation</span><span>high</span>
+		{/if}
 	</div>
 	<p class="panel-description">{description}</p>
 </section>
@@ -233,7 +233,7 @@
 	.eyebrow {
 		margin-bottom: 0.15rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.61rem;
+		font-size: 0.8125rem;
 		font-weight: 700;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -244,7 +244,7 @@
 		border-radius: 999px;
 		padding: 0.2rem 0.45rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.68rem;
+		font-size: 0.8125rem;
 		color: var(--ink);
 	}
 	.canvas-frame {
@@ -259,25 +259,28 @@
 		outline: none;
 	}
 	.scale {
-		position: absolute;
-		right: 0.45rem;
-		bottom: 0.4rem;
-		left: 0.45rem;
 		display: flex;
 		justify-content: space-between;
-		border-radius: 0.2rem;
-		background: rgb(0 0 0 / 68%);
-		padding: 0.16rem 0.3rem;
+		border-top: 1px solid var(--rule);
+		background:
+			linear-gradient(90deg, #080a0a, #f5f7f7) top / 100% 0.22rem no-repeat,
+			var(--paper-soft);
+		padding: 0.45rem 0.5rem 0.3rem;
 		font-family: ui-monospace, monospace;
-		font-size: 0.58rem;
-		color: #f2f5f5;
+		font-size: 0.8125rem;
+		color: var(--ink-muted);
 		pointer-events: none;
+	}
+	.scale-difference {
+		background:
+			linear-gradient(90deg, #2424ff, #00ff00 50%, #ff2424) top / 100% 0.22rem no-repeat,
+			var(--paper-soft);
 	}
 	.panel-description {
 		min-height: 3.9rem;
 		border-top: 1px solid var(--rule);
 		padding: 0.65rem 0.8rem;
-		font-size: 0.72rem;
+		font-size: 0.8125rem;
 		line-height: 1.5;
 		color: var(--ink-muted);
 	}
