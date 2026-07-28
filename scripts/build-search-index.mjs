@@ -1,14 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import * as pagefind from 'pagefind';
-import YAML from 'yaml';
 import { parsePostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
 const postsDir = path.join(root, 'src', 'lib', 'posts');
 const topicsDir = path.join(root, 'src', 'lib', 'topics');
-const comicSeriesDir = path.join(root, 'src', 'lib', 'comics', 'the-last-analog-town');
-const comicEpisodeDir = path.join(comicSeriesDir, 'episodes', '001-the-efficiency-inspector');
 const staticDir = path.resolve(root, 'static');
 const outputDir = path.resolve(staticDir, 'pagefind');
 const taxonomy = JSON.parse(
@@ -133,7 +130,6 @@ try {
 	const filenames = (await fs.readdir(postsDir)).filter((file) => file.endsWith('.md')).sort();
 	let indexedPosts = 0;
 	let indexedTopics = 0;
-	let indexedComics = 0;
 
 	for (const filename of filenames) {
 		const slug = filename.replace(/\.md$/, '');
@@ -255,156 +251,6 @@ try {
 		indexedTopics += 1;
 	}
 
-	const comicSeries = JSON.parse(
-		await fs.readFile(path.join(comicSeriesDir, 'data', 'series.json'), 'utf8')
-	);
-	const comicCharactersSource = JSON.parse(
-		await fs.readFile(path.join(comicSeriesDir, 'data', 'characters.json'), 'utf8')
-	);
-	const comicLocationsSource = JSON.parse(
-		await fs.readFile(path.join(comicSeriesDir, 'data', 'locations.json'), 'utf8')
-	);
-	const comicCharacters = Array.isArray(comicCharactersSource)
-		? comicCharactersSource
-		: (comicCharactersSource.characters ?? comicCharactersSource.items ?? []);
-	const comicLocations = Array.isArray(comicLocationsSource)
-		? comicLocationsSource
-		: (comicLocationsSource.locations ?? comicLocationsSource.items ?? []);
-	const episodeMetadata = YAML.parse(
-		await fs.readFile(path.join(comicEpisodeDir, 'episode.yaml'), 'utf8')
-	);
-	const compiledEpisode = JSON.parse(
-		await fs.readFile(path.join(comicEpisodeDir, 'generated', 'episode.json'), 'utf8')
-	);
-	const runtimeEpisode =
-		compiledEpisode.metadata && Array.isArray(compiledEpisode.pages)
-			? compiledEpisode
-			: compiledEpisode.data;
-	if (!runtimeEpisode?.metadata || !Array.isArray(runtimeEpisode.pages)) {
-		throw new Error('Compiled Comic episode is missing metadata or pages.');
-	}
-	const runtimeMetadata = runtimeEpisode.metadata ?? episodeMetadata;
-	const comicDate = String(runtimeMetadata.dateModified ?? runtimeMetadata.date);
-	const comicYear = /^\d{4}/.exec(comicDate)?.[0] ?? '';
-	const comicTimestamp = Date.parse(comicDate);
-	const characterNames = comicCharacters.map((character) => character.name).filter(Boolean);
-	const locationNames = comicLocations.map((location) => location.name).filter(Boolean);
-	const seriesTags = [
-		'Comic',
-		'The Last Analog Town',
-		'Golmohar Junction',
-		...(comicSeries.themes ?? [])
-	];
-
-	const { errors: seriesErrors } = await index.addCustomRecord({
-		url: comicSeries.routes.series,
-		content: searchableText(
-			[
-				comicSeries.description,
-				comicSeries.setting?.notRealPlaceStatement,
-				...(comicSeries.themes ?? []),
-				...characterNames,
-				...locationNames
-			].join('\n')
-		),
-		language: 'en',
-		meta: {
-			title: comicSeries.title,
-			slug: comicSeries.id,
-			description: comicSeries.description,
-			category: 'Comic',
-			category_slug: 'comic',
-			section: 'Comic',
-			date: comicDate,
-			year: comicYear,
-			tags: seriesTags.join(', '),
-			content_type: 'comic-series',
-			content_label: 'Comic series',
-			production_status: comicSeries.publication?.status ?? 'unpublished'
-		},
-		filters: {
-			category: ['comic'],
-			year: [comicYear],
-			tag: seriesTags,
-			content_type: ['comic-series']
-		},
-		sort: {
-			date: Number.isNaN(comicTimestamp) ? comicDate : String(comicTimestamp)
-		}
-	});
-	if (seriesErrors.length > 0) {
-		throw new Error(`Comic series could not be indexed: ${seriesErrors.join('; ')}`);
-	}
-	indexedComics += 1;
-
-	if (runtimeMetadata.published || runtimeMetadata.productionPreview) {
-		const transcriptText = (runtimeEpisode.pages ?? []).flatMap((page) =>
-			(page.panels ?? []).flatMap((panel) => [
-				panel.action,
-				panel.accessibility?.description,
-				panel.caption,
-				panel.visualJoke,
-				...(panel.overlays ?? []).map((overlay) => overlay.text),
-				...(panel.dialogue ?? []).map((dialogue) => `${dialogue.speaker}: ${dialogue.text}`),
-				...(panel.soundEffects ?? []).flatMap((effect) => [effect.text, effect.description])
-			])
-		);
-		const productionEndMatter = runtimeEpisode.frontMatter?.productionEndMatter ?? {};
-		const endMatterText = [
-			productionEndMatter.heading,
-			productionEndMatter.publicEditionText,
-			productionEndMatter.hybridRulesHeading,
-			...(productionEndMatter.hybridRules ?? []),
-			productionEndMatter.secondAlbumPromise
-		];
-		const episodeTags = stringArray(runtimeMetadata.tags);
-		const { errors: episodeErrors } = await index.addCustomRecord({
-			url: runtimeMetadata.canonicalPath,
-			content: searchableText(
-				[
-					runtimeMetadata.description,
-					...(comicSeries.themes ?? []),
-					...characterNames,
-					...locationNames,
-					...transcriptText,
-					...endMatterText
-				]
-					.filter(Boolean)
-					.join('\n')
-			),
-			language: languageCode(runtimeMetadata.language),
-			meta: {
-				title: runtimeMetadata.title,
-				slug: runtimeMetadata.slug,
-				description: runtimeMetadata.description,
-				category: 'Comic',
-				category_slug: 'comic',
-				section: 'Comic',
-				date: runtimeMetadata.date,
-				year: /^\d{4}/.exec(runtimeMetadata.date)?.[0] ?? comicYear,
-				tags: episodeTags.join(', '),
-				content_type: 'comic-episode',
-				content_label: 'Comic episode',
-				production_status: runtimeMetadata.published ? 'published' : 'production preview'
-			},
-			filters: {
-				category: ['comic'],
-				year: [/^\d{4}/.exec(runtimeMetadata.date)?.[0] ?? comicYear],
-				tag: episodeTags,
-				content_type: ['comic-episode']
-			},
-			sort: {
-				date: Number.isNaN(Date.parse(runtimeMetadata.date))
-					? runtimeMetadata.date
-					: String(Date.parse(runtimeMetadata.date))
-			}
-		});
-		if (episodeErrors.length > 0) {
-			throw new Error(`Comic episode could not be indexed: ${episodeErrors.join('; ')}`);
-		}
-		indexedComics += 1;
-	}
-
 	await fs.rm(outputDir, { recursive: true, force: true });
 	const { errors: writeErrors } = await index.writeFiles({ outputPath: outputDir });
 	if (writeErrors.length > 0) {
@@ -413,7 +259,7 @@ try {
 
 	const size = await directorySize(outputDir);
 	console.log(
-		`Pagefind: indexed ${indexedPosts} posts, ${indexedTopics} Topic Headquarters, and ${indexedComics} comic records into ${size.files} files (${(size.bytes / 1024).toFixed(1)} KiB).`
+		`Pagefind: indexed ${indexedPosts} posts and ${indexedTopics} Topic Headquarters into ${size.files} files (${(size.bytes / 1024).toFixed(1)} KiB).`
 	);
 } finally {
 	await index.deleteIndex();

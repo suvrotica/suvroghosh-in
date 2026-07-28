@@ -1,14 +1,12 @@
 import { siteUrl, siteTitle, siteDescription } from '$lib/components/seo/SEO';
 import { postPath } from '$lib/content/posts';
 import { getPublishedPosts } from '$lib/server/content/posts';
-import { getComicEpisodeMetadata } from '$lib/server/comics/catalog';
 
 export const prerender = true;
 
 export async function GET() {
-	const comicEpisode = getComicEpisodeMetadata();
-	const posts = [
-		...getPublishedPosts().map((post) => {
+	const posts = getPublishedPosts()
+		.map((post) => {
 			const link = siteUrl + postPath(post);
 			return {
 				title: post.title,
@@ -19,22 +17,7 @@ export async function GET() {
 				guid: link,
 				category: post.category
 			};
-		}),
-		...(comicEpisode.published
-			? [
-					{
-						title: comicEpisode.title,
-						description: comicEpisode.description,
-						date: comicEpisode.date,
-						dateModified: comicEpisode.dateModified,
-						link: siteUrl + comicEpisode.canonicalPath,
-						guid: siteUrl + comicEpisode.canonicalPath,
-						category: 'Comic'
-					}
-				]
-			: [])
-	]
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		})
 		.slice(0, 25);
 	const lastBuildDate = posts.reduce((latest, post) => {
 		const changedAt = new Date(post.dateModified ?? post.date);

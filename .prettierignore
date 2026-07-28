@@ -32,13 +32,3 @@ scripts/sketch-generation-manifest.json
 src/lib/generated/media-gallery.ts
 src/lib/generated/sketch-manifest.ts
 src/lib/server/generated/image-dimensions.js
-
-# Comic derivatives are reproducible from canonical YAML/JSON/Markdown sources.
-# Formatting them after generation invalidates their source digests.
-src/lib/comics/*/episodes/*/exports/
-src/lib/comics/*/episodes/*/generated/
-src/lib/comics/*/episodes/*/pages/working/
-src/lib/comics/*/episodes/*/prompts/manifest.json
-src/lib/comics/*/episodes/*/provenance.json
-src/lib/comics/*/episodes/*/reports/
-src/lib/comics/*/episodes/*/transcript.md

@@ -61,31 +61,6 @@
 			</p>
 		</header>
 
-		{#if !data.isSearching && data.page === 1}
-			<aside
-				class="mb-8 grid gap-4 border-y-2 border-[#29241d] bg-[#fff9e9] p-5 text-[#29241d] sm:grid-cols-[1fr_auto] sm:items-center"
-				aria-labelledby="archive-comic-heading"
-			>
-				<div>
-					<p class="mb-1 text-left text-xs font-bold tracking-[0.13em] text-[#8e342d] uppercase">
-						Comic {data.comic.published ? 'album' : 'production edition'}
-					</p>
-					<h2 id="archive-comic-heading" class="m-0 text-2xl text-[#29241d]">
-						{data.comic.title}
-					</h2>
-					<p class="mt-2 mb-0 max-w-2xl text-left text-sm text-[#625747]">
-						{data.comic.description}
-					</p>
-				</div>
-				<a
-					href={data.comic.href}
-					class="inline-flex min-h-11 items-center font-bold text-[#8e342d]"
-				>
-					Read {data.comic.pageCount} pages <span class="ml-2" aria-hidden="true">→</span>
-				</a>
-			</aside>
-		{/if}
-
 		{#if data.isSearching}
 			<PostSearch
 				initialQuery={data.search}

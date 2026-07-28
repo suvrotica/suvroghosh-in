@@ -163,42 +163,6 @@
 </ScrollReveal>
 
 <section
-	class="mt-12 overflow-hidden border-y-2 border-neutral-900 bg-[#fff9e9] text-[#241f19] dark:border-neutral-100"
-	aria-labelledby="comic-discovery-heading"
->
-	<a
-		href={data.comic.href}
-		class="group grid min-h-64 grid-cols-1 text-inherit no-underline sm:grid-cols-[minmax(12rem,0.7fr)_minmax(0,1.3fr)]"
-	>
-		<div
-			class="flex min-h-52 flex-col justify-end bg-[#315f72] [background-image:linear-gradient(25deg,rgba(142,52,45,.92)_0_38%,transparent_38%),linear-gradient(150deg,rgba(232,195,95,.62)_0_30%,transparent_30%)] p-5 text-[#fff9e9]"
-			aria-hidden="true"
-		>
-			<span class="font-sans text-xs font-bold tracking-[0.14em] uppercase">Album 001</span>
-			<strong class="mt-2 text-3xl leading-[0.9]">Golmohar<br />Junction</strong>
-		</div>
-		<div class="flex flex-col justify-center p-6 sm:p-9">
-			<p class="mb-2 font-sans text-xs font-bold tracking-[0.14em] text-[#8e342d] uppercase">
-				{data.comic.published ? 'New comic album' : 'Complete production edition'}
-			</p>
-			<h2
-				id="comic-discovery-heading"
-				class="m-0 text-3xl leading-tight text-[#241f19] sm:text-4xl"
-			>
-				{data.comic.title}
-			</h2>
-			<p class="mt-3 mb-5 max-w-2xl text-left text-sm leading-relaxed text-[#51483c]">
-				{data.comic.description}
-			</p>
-			<span class="font-sans text-sm font-bold text-[#8e342d]">
-				Read the {data.comic.pageCount}-page {data.comic.seriesTitle} album
-				<span class="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
-			</span>
-		</div>
-	</a>
-</section>
-
-<section
 	class="mt-14 border-t border-neutral-300 pt-8 dark:border-neutral-700"
 	aria-labelledby="recent-writing-heading"
 >
