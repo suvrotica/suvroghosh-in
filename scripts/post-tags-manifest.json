@@ -10297,9 +10297,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md": {
-			"bodyHash": "a1413a501b2101c1d06f582b3ffe46693c00d40b2519a8c3f85cb0c11e605aeb",
+			"bodyHash": "89728cd962ba7b0e0ef18571b091adc26e9425b3037794944842cd8e79b8f3fc",
 			"hashVersion": 2,
-			"revisionHash": "e6feb3b3a51b468d9119a3e313a0ed964739bcf9ee64ec70ad4aa8c76c98ac00",
+			"revisionHash": "ea143f154224521bc82cd4abc4883aa709a24a74b122f47833c62766745afee3",
 			"generatedTags": [
 				"CT",
 				"Medical Imaging",
@@ -10325,7 +10325,7 @@
 				"Signal Processing"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-07-26"
+			"dateModified": "2026-07-28"
 		},
 		"src/lib/posts/holding.md": {
 			"bodyHash": "0c560fa414483da6f53882605c9d4c957e2c6c845c922469f7763adca0605a53",

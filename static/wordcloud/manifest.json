@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T05:58:55.272216+00:00",
+  "generatedAt": "2026-07-28T23:29:22.942372+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -4050,25 +4050,25 @@
       "wordCount": 130
     },
     "how-a-scanner-sees-reconstructing-a-body-from-shadows": {
-      "generatedAt": "2026-07-26T05:56:14.434472+00:00",
+      "generatedAt": "2026-07-28T23:29:22.637270+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/how-a-scanner-sees-reconstructing-a-body-from-shadows.svg",
       "source": "src/lib/posts/how-a-scanner-sees-reconstructing-a-body-from-shadows.md",
-      "sourceHash": "968cd5bf72ec607c120fdb084775840f203850db95dc534887345e138d3ceea0",
-      "sourceModified": "2026-07-26T05:56:01.941446+00:00",
+      "sourceHash": "89093b2c8b65c32f9ae98460a9b8e568170403c7d4ece540b285dd05d06e158e",
+      "sourceModified": "2026-07-28T07:59:13.194759+00:00",
       "topWords": [
         "Detector",
         "Projection",
         "Attenuation",
         "Theta",
         "Line",
+        "Backprojection",
         "Angles",
         "Reconstruction",
-        "Along",
-        "Backprojection",
+        "Ray",
         "Sinogram",
         "Angle",
-        "Ray"
+        "Along"
       ],
       "wordCount": 130
     },
