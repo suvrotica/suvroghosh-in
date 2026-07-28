@@ -10366,6 +10366,26 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-26"
+		},
+		"src/lib/posts/the-unlearning-cartography.md": {
+			"bodyHash": "4e62ee13ba45457233a0e38ec844b0e2a464714a4198776583581b180a75319d",
+			"hashVersion": 2,
+			"revisionHash": "6b67a45c82be02c0058f9d328378155b63280cc4d19d4e06c1177fc97cd8e05c",
+			"generatedTags": [
+				"Liminal Space",
+				"Productive Uncertainty",
+				"Unasked Question",
+				"Winter Ended",
+				"Large Language",
+				"Agents",
+				"Unlearned",
+				"Agent",
+				"Agentic",
+				"System"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-28"
 		}
 	},
 	"maxTags": 10

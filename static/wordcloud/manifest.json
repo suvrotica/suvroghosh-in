@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T07:56:48.790487+00:00",
+  "generatedAt": "2026-07-28T05:58:55.272216+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -10992,6 +10992,29 @@
         "Unemployed",
         "Perhaps",
         "Much"
+      ],
+      "wordCount": 130
+    },
+    "the-unlearning-cartography": {
+      "generatedAt": "2026-07-28T05:58:55.216458+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-unlearning-cartography.svg",
+      "source": "src/lib/posts/the-unlearning-cartography.md",
+      "sourceHash": "fdeb08af4b1c95393d3b486ea7d46839f9074641bf9f4f153c0be9cab4a00900",
+      "sourceModified": "2026-07-28T05:58:47.412349+00:00",
+      "topWords": [
+        "System",
+        "Agents",
+        "Human",
+        "Systems",
+        "Find",
+        "Understand",
+        "Need",
+        "Room",
+        "Questions",
+        "Agent",
+        "Never",
+        "Sense"
       ],
       "wordCount": 130
     },

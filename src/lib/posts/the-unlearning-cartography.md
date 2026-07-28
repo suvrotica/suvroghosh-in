@@ -6,7 +6,7 @@ dateModified: "2026-07-28"
 thumbnail: "/thumbnail/Compress_20260728_112315_5297.jpg"
 thumbnailAlt: "Interconnected lines and nodes forming an abstract artificial intelligence system."
 category: "Artificial Intelligence"
-tags: ["AI", "Systems Thinking", "Agentic AI", "Unlearning", "Human Imagination", "Future of Work", "Philosophy of Technology", "Cognitive Augmentation"]
+tags: ["Liminal Space","Productive Uncertainty","Unasked Question","Winter Ended","Large Language","Agents","Unlearned","Agent","Agentic","System"]
 published: true
 color: "#4F46E5"
 ---
