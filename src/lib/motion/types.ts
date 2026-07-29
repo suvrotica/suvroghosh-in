@@ -36,8 +36,17 @@ export const AMBIENT_FIELD_MODES = ['off', 'static', 'animated'] as const;
 
 export type AmbientFieldMode = (typeof AMBIENT_FIELD_MODES)[number];
 
+/**
+ * A header-scoped atmosphere stays mounted for the route but pauses its Canvas
+ * enhancement after the marked header leaves the viewport.
+ */
+export const ATMOSPHERE_SCOPES = ['viewport', 'header'] as const;
+
+export type AtmosphereScope = (typeof ATMOSPHERE_SCOPES)[number];
+
 export interface RouteMotionConfig {
 	readonly biome: RouteBiome;
 	readonly intensity: MotionIntensity;
 	readonly ambient: AmbientFieldMode;
+	readonly scope?: AtmosphereScope;
 }

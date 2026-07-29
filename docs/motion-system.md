@@ -1,6 +1,6 @@
 # The Living Archive — motion system
 
-This document is the operating contract for the Phase 0–2 Living Archive
+This document is the operating contract for the Phase 0–3 Living Archive
 foundation. It describes the system as implemented, the boundaries later work
 must preserve, and the checks to run when extending it.
 
@@ -40,29 +40,46 @@ Phase 2 uses that foundation for the home page:
   high-contrast, forced-colour, reduced-motion, coarse-pointer, and print
   states.
 
+Phase 3 extends the same owner to ordinary routes without adding a renderer:
+
+- writing/archive headers receive static edge filaments, and two selected
+  `/writing` cards reuse deterministic `SignalGlyph` decoration;
+- article headers inherit the validated essay-ink family while the prose,
+  tables, quotations, code, footnotes, TTS, images, and TOC remain still;
+- article and résumé fields use a shared header scope that pauses the mounted
+  Canvas after the marked top region leaves the viewport;
+- healthcare/project/consulting/Gulf/résumé headers receive static system-grid
+  edge detail;
+- the notes index receives static graphite/under-sheet detail while public
+  note canvases and the note studio remain excluded;
+- the visualizations index receives static orbital detail while its existing
+  Artificial Life component remains the only running local loop;
+- the desktop active-route line responds only to semantic `aria-current`
+  changes, with no JavaScript state or layout measurement.
+
 The root layout owns route-level atmosphere and route transitions. Individual
 pages must not mount another ambient renderer. Specialist experiences continue
 to own their existing loops and shells.
 
 ## Architecture
 
-| Layer                  | File                                               | Responsibility                                                               |
-| ---------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Early bootstrap        | `static/app-bootstrap.js`                          | Validate stored preference and set resolved root attributes before hydration |
-| Public types           | `src/lib/motion/types.ts`                          | Define preferences, resolved modes, biomes, intensity, and ambient mode      |
-| Pure preference policy | `src/lib/motion/preferences.ts`                    | Validate/normalise preferences and gate the Canvas                           |
-| Pure route policy      | `src/lib/motion/route-biomes.ts`                   | Resolve route atmosphere and View Transition eligibility                     |
-| Stable randomness      | `src/lib/motion/seed.ts`                           | Produce deterministic per-path, per-biome graphs                             |
-| Header control         | `src/lib/components/motion/MotionSelect.svelte`    | Persist and synchronise a user preference                                    |
-| SSR atmosphere owner   | `src/lib/components/motion/RouteAtmosphere.svelte` | Render the static layer and gate the client enhancement                      |
-| Canvas component       | `src/lib/components/motion/AmbientField.svelte`    | Attach one Canvas controller and forward reactive options                    |
-| Canvas engine          | `src/lib/motion/ambient-field.ts`                  | Draw, resize, pause, resume, update, and tear down Canvas 2D                 |
-| Reveal attachment      | `src/lib/attachments/reveal.ts`                    | Share one viewport observer across pending reveal elements                   |
-| Compatibility wrapper  | `src/lib/components/animation/ScrollReveal.svelte` | Preserve the existing `delay`, `class`, `tag`, and `children` API            |
-| Living-card attachment | `src/lib/attachments/living-card.ts`               | Bound pointer influence, share route reset, and clean up card state          |
-| Signal-glyph policy    | `src/lib/motion/signal-glyph.ts`                   | Generate stable, bounded inline-SVG geometry from post identity              |
-| Home composition       | `src/lib/components/home/*`                        | Render hero, reading paths, portals, recent signals, and semantic cards      |
-| Integration and CSS    | `src/routes/+layout.svelte`, `src/app.css`         | Own the normal shell, public attributes, visual tokens, and media fallbacks  |
+| Layer                  | File                                               | Responsibility                                                                 |
+| ---------------------- | -------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Early bootstrap        | `static/app-bootstrap.js`                          | Validate stored preference and set resolved root attributes before hydration   |
+| Public types           | `src/lib/motion/types.ts`                          | Define preferences, resolved modes, biomes, intensity, ambient mode, and scope |
+| Pure preference policy | `src/lib/motion/preferences.ts`                    | Validate/normalise preferences and gate the Canvas                             |
+| Pure route policy      | `src/lib/motion/route-biomes.ts`                   | Resolve route atmosphere and View Transition eligibility                       |
+| Stable randomness      | `src/lib/motion/seed.ts`                           | Produce deterministic per-path, per-biome graphs                               |
+| Header control         | `src/lib/components/motion/MotionSelect.svelte`    | Persist and synchronise a user preference                                      |
+| SSR atmosphere owner   | `src/lib/components/motion/RouteAtmosphere.svelte` | Render the static layer and gate the client enhancement                        |
+| Canvas component       | `src/lib/components/motion/AmbientField.svelte`    | Attach one Canvas controller and forward reactive options                      |
+| Canvas engine          | `src/lib/motion/ambient-field.ts`                  | Draw, resize, pause, resume, update, and tear down Canvas 2D                   |
+| Reveal attachment      | `src/lib/attachments/reveal.ts`                    | Share one viewport observer across pending reveal elements                     |
+| Compatibility wrapper  | `src/lib/components/animation/ScrollReveal.svelte` | Preserve the existing `delay`, `class`, `tag`, and `children` API              |
+| Living-card attachment | `src/lib/attachments/living-card.ts`               | Bound pointer influence, share route reset, and clean up card state            |
+| Signal-glyph policy    | `src/lib/motion/signal-glyph.ts`                   | Generate stable, bounded inline-SVG geometry from post identity                |
+| Home composition       | `src/lib/components/home/*`                        | Render hero, reading paths, portals, recent signals, and semantic cards        |
+| Integration and CSS    | `src/routes/+layout.svelte`, `src/app.css`         | Own the normal shell, public attributes, visual tokens, and media fallbacks    |
 
 The pure modules do not access browser globals. Do not replace them with an
 SSR-shared mutable store. Runtime state belongs to the current document,
@@ -150,6 +167,7 @@ interface RouteMotionConfig {
 	readonly biome: RouteBiome;
 	readonly intensity: 'off' | 'minimal' | 'quiet' | 'header-only' | 'standard';
 	readonly ambient: 'off' | 'static' | 'animated';
+	readonly scope?: 'viewport' | 'header';
 }
 ```
 
@@ -158,25 +176,25 @@ ignores queries and hashes. This avoids false positives such as
 `/blog/gamesmanship`. The exported `resolveRouteBiome` compatibility alias
 currently returns the same full configuration.
 
-| Route or route family                                                       | Biome        | Intensity     | Ambient    |
-| --------------------------------------------------------------------------- | ------------ | ------------- | ---------- |
-| `/`                                                                         | `home`       | `standard`    | `animated` |
-| `/start-here`                                                               | `home`       | `quiet`       | `animated` |
-| `/writing`                                                                  | `writing`    | `standard`    | `animated` |
-| `/blog`                                                                     | `writing`    | `quiet`       | `animated` |
-| Blog archives, category indexes, topic indexes                              | `writing`    | `standard`    | `animated` |
-| Calcutta/Kolkata category or topic indexes, including `/blog/calcutta-life` | `calcutta`   | `standard`    | `animated` |
-| `/topics` and ordinary topic headquarters                                   | `writing`    | `standard`    | `animated` |
-| Calcutta/Kolkata topic headquarters                                         | `calcutta`   | `standard`    | `animated` |
-| Ordinary `/blog/[category]/[slug]` article                                  | `quiet`      | `header-only` | `animated` |
-| `/projects`                                                                 | `healthcare` | `quiet`       | `animated` |
-| `/consulting`                                                               | `healthcare` | `standard`    | `animated` |
-| `/healthcare-it-gulf`                                                       | `healthcare` | `quiet`       | `animated` |
-| `/resume`                                                                   | `healthcare` | `minimal`     | `animated` |
-| `/notes` and authentication routes                                          | `notes`      | `quiet`       | `animated` |
-| `/contact` and unmatched normal-shell routes                                | `quiet`      | `minimal`     | `animated` |
-| `/blog/visualizations` index                                                | `lab`        | `standard`    | `static`   |
-| Specialist routes below                                                     | `off`        | `off`         | `off`      |
+| Route or route family                                                       | Biome        | Intensity     | Ambient    | Scope      |
+| --------------------------------------------------------------------------- | ------------ | ------------- | ---------- | ---------- |
+| `/`                                                                         | `home`       | `standard`    | `animated` | `viewport` |
+| `/start-here`                                                               | `home`       | `quiet`       | `animated` | `viewport` |
+| `/writing`                                                                  | `writing`    | `standard`    | `animated` | `viewport` |
+| `/blog`                                                                     | `writing`    | `quiet`       | `animated` | `viewport` |
+| Blog archives, category indexes, topic indexes                              | `writing`    | `standard`    | `animated` | `viewport` |
+| Calcutta/Kolkata category or topic indexes, including `/blog/calcutta-life` | `calcutta`   | `standard`    | `animated` | `viewport` |
+| `/topics` and ordinary topic headquarters                                   | `writing`    | `standard`    | `animated` | `viewport` |
+| Calcutta/Kolkata topic headquarters                                         | `calcutta`   | `standard`    | `animated` | `viewport` |
+| Ordinary `/blog/[category]/[slug]` article                                  | `quiet`      | `header-only` | `animated` | `header`   |
+| `/projects`                                                                 | `healthcare` | `quiet`       | `animated` | `viewport` |
+| `/consulting`                                                               | `healthcare` | `standard`    | `animated` | `viewport` |
+| `/healthcare-it-gulf`                                                       | `healthcare` | `quiet`       | `animated` | `viewport` |
+| `/resume`                                                                   | `healthcare` | `minimal`     | `animated` | `header`   |
+| `/notes` and authentication routes                                          | `notes`      | `quiet`       | `animated` | `viewport` |
+| `/contact` and unmatched normal-shell routes                                | `quiet`      | `minimal`     | `animated` | `viewport` |
+| `/blog/visualizations` index                                                | `lab`        | `standard`    | `static`   | `viewport` |
+| Specialist routes below                                                     | `off`        | `off`         | `off`      | —          |
 
 Calcutta/Kolkata metadata may refine an index route. Metadata never turns an
 article body into an animated region. `specialShell: true` or
@@ -201,8 +219,8 @@ loop, so `ambient: 'static'` prevents a second running Canvas.
 ## Atmosphere progressive enhancement
 
 `RouteAtmosphere` is decorative and singular. Its outer
-`[data-route-atmosphere]` node exposes `data-biome`, `data-intensity`, and
-`data-ambient`, plus header-region `data-active` state. It is
+`[data-route-atmosphere]` node exposes `data-biome`, `data-intensity`,
+`data-ambient`, `data-scope`, and the scoped-region `data-active` state. It is
 `aria-hidden="true"` and cannot receive pointer input. The root layout does not
 mount it at all when the resolved biome is `off`.
 
@@ -228,11 +246,13 @@ pass.
 `RouteAtmosphere` additionally blocks the enhancement for print,
 forced-colours, and the authored high-contrast theme. It watches `data-motion`,
 `data-theme`, document visibility, the relevant media queries, and—on
-`header-only` routes—the element marked `[data-route-atmosphere-region]`. When
-the article header region leaves the viewport, its mounted controller pauses
-and the static layer fades to its quiet `data-active="false"` opacity while the
-article body remains still. The field reports the same active state through
-`data-ambient-active`.
+`scope: 'header'` routes—the element marked `[data-route-atmosphere-region]`.
+When the article or résumé header region leaves the viewport, its mounted
+controller pauses and the static layer fades to its quiet
+`data-active="false"` opacity. The field reports the same active state through
+`data-ambient-active`. The server renders the region active so its static
+atmosphere is intentional with no JavaScript; a supported viewport observer
+then owns the enhanced lifecycle.
 
 The Canvas chunk is requested only when the route is eligible and the field is
 active. A failed dynamic import is not retried in a loop; the static SSR layer
@@ -460,6 +480,85 @@ draw one primary path once on hover or focus. No card owns a continuous loop.
 - without JavaScript, the first kinetic statement, complete assistive
   sentence, all copy, every link, and deterministic SVG markup remain present.
 
+## Phase 3 route dialects and quiet reading
+
+Phase 3 uses existing content and route structures as the composition. The new
+`data-route-scene` markers are diagnostics and CSS hooks around existing
+headers; they do not replace headings, breadcrumbs, forms, cards, SEO, or
+schema.
+
+### Writing and archive
+
+`/writing`, `/blog`, category indexes, topic indexes, and year/month archives
+mark their existing top header as `data-route-scene="writing"`. Static
+theme-token contours occupy only the header edges. The centre remains clear,
+and the existing `.page-enter` is the only route-entry motion.
+
+The first two recent cards on `/writing` reuse `SignalGlyph.svelte`. Their paths
+remain derived solely from slug and category, are fully present in SSR, and do
+not receive LivingCard tilt or a local loop. High contrast, forced colours, and
+print omit the glyph and edge ornament. Search/filter result layout remains
+static because the Pagefind enhancement changes representation and a layout
+transition would not reliably preserve orientation.
+
+### Article header and reading body
+
+The validated `essayInk` returned by the existing article loader is propagated
+to `data-essay-ink` on `.site-shell`. Both static atmosphere layers and the
+progressively loaded Canvas therefore inherit the same contrast-normalised
+family as the existing title line and reading-progress indicator.
+
+Only the existing article header is marked
+`data-route-atmosphere-region data-route-scene="article"`. The Markdown
+container is marked `data-article-reading-region` for diagnostics, but receives
+no reveal, parallax, tilt, or animation behavior. The current reading-progress
+indicator, TTS, actions, quick answer, notebook, mobile/desktop TOC, prose,
+tables, code, medical content, images, word cloud, navigation, related posts,
+SEO, and schema are unchanged. No title-level named View Transition is used
+because unique title ownership has not been proven across all Markdown.
+
+### Healthcare, projects, Gulf, and résumé
+
+The existing top headers on `/projects`, `/consulting`,
+`/healthcare-it-gulf`, and `/resume` expose
+`data-route-scene="healthcare"`. Their static edge grid uses current theme
+tokens to suggest ordered paths and junctions; it is pointer-inert and removed
+in high contrast, forced colours, and print.
+
+Projects, consulting, and Gulf keep their existing low/medium viewport fields.
+The résumé uses `scope: 'header'` and marks only its document header as the
+atmosphere region. Its minimal Canvas therefore pauses as soon as the reader
+moves into the long document; print remains an undecorated résumé.
+
+### Notes and lab ownership
+
+The notes index retains its native GET search, pagination, links, and card text.
+Its header gains a sparse graphite edge and cards receive static under-sheet
+lines only. Real text and anchors are never rotated or tilted. A public note
+continues to resolve `off` because its drawing canvas owns the experience;
+`/notes/studio` and descendants remain isolated by their specialist shell.
+
+The visualizations index keeps a `static` global lab atmosphere because its
+featured Artificial Life component already owns the active loop. Static orbital
+rings sit inside the existing decorative hero layer, and
+`data-local-animation-owner="artificial-life"` makes ownership inspectable.
+Every interactive visualization descendant still resolves `off`.
+
+### Active route line
+
+Desktop primary links remain normal anchors whose current state comes from
+`aria-current="page"`. The two-pixel pseudo-element now expands only for the
+current route, rather than also expanding on hover. A client navigation changes
+semantic state once, allowing the old line to retract and the new line to
+settle through one transform transition. Full SSR/no-JavaScript loads render
+the final state immediately.
+
+Still and reduced-motion modes remove the transition; forced colours replace
+the pseudo-element with a real text underline; mobile keeps its existing
+static border/background current state; print removes the header. This
+refinement adds no script, state, layout read, scroll listener, animation frame,
+or `will-change`.
+
 ## Accessibility and fallback matrix
 
 | Environment                      | Required result                                                                 |
@@ -500,10 +599,11 @@ npm run motion:unit:test
 npm run motion:browser:test
 ```
 
-`playwright.motion.config.ts` isolates `tests/browser/motion.spec.ts` and
-`tests/browser/home-motion.spec.ts` from the existing component-test
-configuration. It builds the SvelteKit site, serves it on port `4211`, and
-uses one headless Chromium/Chrome worker. The focused browser suite covers
+`playwright.motion.config.ts` isolates `tests/browser/motion.spec.ts`,
+`tests/browser/home-motion.spec.ts`, and
+`tests/browser/phase3-motion.spec.ts` from the existing component-test
+configuration. It builds the SvelteKit site, serves it on port `4211`, and uses
+one headless Chromium/Chrome worker. The focused browser suite covers
 pre-hydration OS precedence, control accessibility and
 synchronisation, persistence across navigation/reload, reduced-motion
 authority, the paper/night/high-contrast and still/gentle/alive matrix,
@@ -521,6 +621,15 @@ finite kinetic lifecycle, desktop/mobile breakout geometry, native mobile
 rail, still/reduced/coarse behavior, bounded fine-pointer variables, stable
 keyboard focus, no-JavaScript meaning, one atmosphere owner, no video or local
 Canvas, and inactive `will-change`.
+
+Phase 3 coverage verifies all route scene/scope contracts, essay-ink
+inheritance, a long healthcare article, article and résumé Canvas pausing,
+reading-body class cleanliness, reading-progress/TTS/TOC/table preservation,
+the semantic active-route line and all fallbacks, notes/public-note/studio
+ownership, the static lab field beside its local Artificial Life Canvas,
+games/visualization exclusions, deterministic glyphs across theme/motion
+changes, 44 px touch targets, mobile overflow, and meaningful no-JavaScript
+writing/article output.
 
 The release command matrix remains:
 
@@ -542,8 +651,11 @@ document.documentElement.dataset.motionPreference;
 document.documentElement.dataset.motion;
 document.documentElement.dataset.biome;
 document.querySelector('[data-route-atmosphere]')?.dataset;
+document.querySelector('[data-route-atmosphere]')?.dataset.scope;
 document.querySelector('[data-ambient-field]')?.dataset.ambientState;
 document.querySelector('[data-ambient-field]')?.dataset.ambientActive;
+document.querySelector('[data-route-scene]')?.dataset.routeScene;
+document.querySelector('[data-local-animation-owner]')?.dataset.localAnimationOwner;
 document.querySelector('[data-kinetic-line]')?.dataset;
 document.querySelector('[data-living-card]')?.dataset;
 document.querySelector('[data-signal-glyph]')?.dataset.signalGlyph;
@@ -555,8 +667,8 @@ Expected Canvas queries:
   state `running` while visible;
 - still, authored high contrast, forced-colours, print, `off`, or `static`
   route: no running ambient Canvas;
-- hidden tab or an inactive article-header field: mounted field state `paused`
-  after it has loaded;
+- hidden tab or an inactive article/résumé header field: mounted field state
+  `paused` after it has loaded;
 - no route may contain more than one global `[data-route-atmosphere]`.
 
 For browser testing, cover desktop `1440 × 1000`, mobile `390 × 844`, paper,
@@ -571,7 +683,7 @@ pollution.
 The atmosphere is a quality layer, never the LCP candidate. Hero/page text and
 meaningful HTML arrive without waiting for Canvas.
 
-Phase 1 and Phase 2 performance boundaries:
+Phase 1–3 performance boundaries:
 
 - no new external service, background-media, image, or video request; an
   eligible route fetches the required local lazy Canvas JavaScript chunk;
@@ -585,6 +697,31 @@ Phase 1 and Phase 2 performance boundaries:
 - idle means no scheduled animation frame;
 - no more than a five-point Lighthouse performance decline from the recorded
   baseline without explicit review.
+
+The Phase 3 production checkpoint remains bounded:
+
+| Measurement               |   Phase 2 |   Phase 3 |   Change |
+| ------------------------- | --------: | --------: | -------: |
+| Root layout node, raw     |  37,768 B |  37,928 B |   +160 B |
+| Root layout node, gzip    |  12,055 B |  12,116 B |    +61 B |
+| Root static closure, raw  | 132,457 B | 132,639 B |   +182 B |
+| Root static closure, gzip |  52,158 B |  52,223 B |    +65 B |
+| Root CSS, raw             | 183,135 B | 187,770 B | +4,635 B |
+| Root CSS, gzip            |  30,055 B |  30,503 B |   +448 B |
+| Root + home union, raw    | 194,598 B | 194,951 B |   +353 B |
+| Root + home union, gzip   |  74,505 B |  74,764 B |   +259 B |
+
+The lazy ambient chunk remains exactly 8,763 B raw / 3,501 B gzip. Current
+route-incremental static JavaScript closures after excluding the root closure
+are: writing 52,401 B / 18,979 B gzip; blog/archive 76,647 B / 26,858 B;
+article 173,654 B / 43,308 B; projects 24,035 B / 9,014 B; résumé 80,116 B /
+28,244 B; notes 12,657 B / 5,161 B; and lab index 82,160 B / 28,990 B. These
+are total existing route closures, not Phase 3 deltas.
+
+The root, writing, blog, projects, and notes closures contain no Three.js, p5,
+D3, Observable runtime, or video signature. Phase 3 adds no network or media
+request, Canvas owner, dependency, frame loop, pointer loop, or layout-reading
+header code.
 
 Compare production build output with the chunk observations in
 `motion-baseline.md`. Inspect generated churn after `npm run build`; restore
@@ -633,23 +770,18 @@ still, reduced motion, forced colours, and print must remove interaction.
 Cache geometry outside frame/pointer loops and keep pointer displacement inside
 the central token contract.
 
-## Deliberately deferred after Phase 2
+## Deliberately deferred after Phase 3
 
-Phase 2 does not extend the new home components across the site. The following
-remain later-phase work:
+Phase 3 completes route dialects and quiet-reading ownership without expanding
+scope into later experiences. The following remain later-phase work:
 
-- Phase 3 writing/archive edge treatments and selected index glyphs;
-- Phase 3 article-header quieting refinements and route-specific screenshots;
-- Phase 3 healthcare, projects, consulting, Gulf, resume, notes-index, and
-  lab-index compositions;
-- Phase 3 restrained active-route header motion;
 - Phase 4 deterministic accessible Living Topic Map and mobile metro mode;
 - Phase 5 profiling-led subtraction and only then consideration of one named
   title transition, one progressive scroll-linked line, adaptive quality, or a
   footer constellation.
 
-The existing Phase 1 route mappings and exclusions remain active, but Phase 2
-does not redesign those routes. It does not add a second ambient engine, new
-homepage copy or routes, background media, article-card tilt, continuous
-portal/card/glyph loops, a custom cursor, scroll hijacking, or any new
-dependency.
+Phase 3 deliberately does not add a title-level named transition, archive
+filter/sort FLIP, article-card tilt, paragraph reveal, header scroll-opacity
+listener, `.IN` pulse, second ambient engine, new homepage copy or sections,
+background media, continuous portal/card/glyph loops, custom cursor, scroll
+hijacking, or dependency.

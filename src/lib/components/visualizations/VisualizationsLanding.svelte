@@ -69,6 +69,7 @@
 <div class="visualizations-landing page-enter mx-auto max-w-6xl pb-8">
 	<section
 		class="relative overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-950 px-5 py-10 text-white shadow-2xl shadow-neutral-950/20 sm:px-8 sm:py-14 md:px-12"
+		data-route-scene="lab"
 	>
 		<div class="pointer-events-none absolute inset-0 opacity-70" aria-hidden="true">
 			<div class="absolute -top-24 -left-20 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
@@ -76,6 +77,11 @@
 				class="absolute -right-16 -bottom-28 h-80 w-80 rounded-full bg-fuchsia-500/20 blur-3xl"
 			></div>
 			<div class="visualization-grid absolute inset-0 opacity-20"></div>
+			<div class="lab-orbits">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 		<div class="relative max-w-4xl">
 			<a
@@ -100,7 +106,11 @@
 		</div>
 	</section>
 
-	<section class="mt-10" aria-labelledby="featured-experiment-heading">
+	<section
+		class="mt-10"
+		aria-labelledby="featured-experiment-heading"
+		data-local-animation-owner="artificial-life"
+	>
 		<div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
 			<div>
 				<p
@@ -296,6 +306,34 @@
 		mask-image: radial-gradient(circle at 35% 45%, black, transparent 78%);
 	}
 
+	.lab-orbits {
+		position: absolute;
+		inset: -22% -10% -25% 38%;
+	}
+
+	.lab-orbits span {
+		position: absolute;
+		inset: 12%;
+		border: 1px solid rgb(103 232 249 / 24%);
+		border-right-color: transparent;
+		border-radius: 50%;
+		transform: rotate(-12deg);
+	}
+
+	.lab-orbits span:nth-child(2) {
+		inset: 25% 4% 4% 25%;
+		border-color: rgb(232 121 249 / 22%);
+		border-bottom-color: transparent;
+		transform: rotate(18deg);
+	}
+
+	.lab-orbits span:nth-child(3) {
+		inset: 38% 18% 18% 38%;
+		border-color: rgb(255 255 255 / 18%);
+		border-left-color: transparent;
+		transform: rotate(42deg);
+	}
+
 	.visualization-card-placeholder {
 		background-image:
 			linear-gradient(rgba(34, 211, 238, 0.12) 1px, transparent 1px),
@@ -305,5 +343,15 @@
 			2rem 2rem,
 			2rem 2rem,
 			auto;
+	}
+
+	:global(html[data-theme='high-contrast']) .lab-orbits {
+		display: none;
+	}
+
+	@media (forced-colors: active), print {
+		.lab-orbits {
+			display: none;
+		}
 	}
 </style>

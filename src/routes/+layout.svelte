@@ -19,6 +19,11 @@
 
 	let { children } = $props();
 	let routeMotion = $derived(resolveRouteMotion(page.url.pathname));
+	let routeEssayInk = $derived(
+		typeof (page.data as Record<string, unknown>).essayInk === 'string'
+			? ((page.data as Record<string, unknown>).essayInk as string)
+			: undefined
+	);
 	let studioShell = $derived(
 		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
 	);
@@ -114,6 +119,7 @@
 		class="site-shell flex min-h-dvh flex-col"
 		data-biome={routeMotion.biome}
 		data-motion-intensity={routeMotion.intensity}
+		data-essay-ink={routeEssayInk}
 	>
 		<a href="#main-content" class="skip-link">Skip to main content</a>
 

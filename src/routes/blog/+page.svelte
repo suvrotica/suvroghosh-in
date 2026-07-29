@@ -53,7 +53,7 @@
 
 <ScrollReveal class="page-enter">
 	<section>
-		<header class="mb-8">
+		<header class="mb-8" data-route-scene="writing">
 			<h1 class="archive-title mb-4 text-center">All Posts</h1>
 			<p class="mx-auto max-w-2xl text-center text-base text-neutral-600 dark:text-neutral-400">
 				The complete archive of essays, satire, and reflections. Search by phrase or category, or

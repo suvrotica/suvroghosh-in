@@ -71,7 +71,7 @@
 <SEO {title} {description} {canonicalUrl} schema={withSiteGraph()} />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
-	<header class="mb-10">
+	<header class="mb-10" data-route-scene="healthcare">
 		<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-5xl dark:text-neutral-100">
 			Healthcare IT Consulting
 		</h1>

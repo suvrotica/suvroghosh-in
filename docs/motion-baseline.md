@@ -242,3 +242,89 @@ The prerendered home contains its single visible `h1`, all four recent-signal
 SVG markers, and no Canvas. Canvas enhancement remains progressive and
 route-owned by the Phase 1 atmosphere. Phase 2 adds no raster image, media,
 video, animation library, or network dependency to the home page.
+
+## Phase 3 comparison checkpoint
+
+Phase 3 starts from committed Phase 2 state `bec6ea71` and extends only the
+existing route-motion owner. No dependency was installed and no second Canvas,
+SVG animation engine, background image, video, WebGL layer, or root
+visualization library was added.
+
+### Route capture baseline
+
+The following 1440 × 1000 paper-theme viewport captures record the committed
+Phase 2 route state immediately before the Phase 3 edit:
+
+| Route         | Capture                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------ |
+| `/writing`    | [`writing-desktop-paper.png`](../artifacts/motion/phase3-before/writing-desktop-paper.png)       |
+| Long article  | [`article-desktop-paper.png`](../artifacts/motion/phase3-before/article-desktop-paper.png)       |
+| `/projects`   | [`projects-desktop-paper.png`](../artifacts/motion/phase3-before/projects-desktop-paper.png)     |
+| `/consulting` | [`consulting-desktop-paper.png`](../artifacts/motion/phase3-before/consulting-desktop-paper.png) |
+| `/resume`     | [`resume-desktop-paper.png`](../artifacts/motion/phase3-before/resume-desktop-paper.png)         |
+| `/notes`      | [`notes-desktop-paper.png`](../artifacts/motion/phase3-before/notes-desktop-paper.png)           |
+| Lab index     | [`lab-desktop-paper.png`](../artifacts/motion/phase3-before/lab-desktop-paper.png)               |
+| Games index   | [`games-desktop-paper.png`](../artifacts/motion/phase3-before/games-desktop-paper.png)           |
+
+The in-app browser accepted this first capture batch, then rejected the planned
+night-theme navigation batch under its local-URL security policy. No alternate
+browser surface was used to bypass that decision. The production Playwright
+suite instead verifies the Phase 3 after-state across paper, night, high
+contrast, forced colours, print, reduced motion, touch, and no-JavaScript
+conditions using DOM, computed-style, lifecycle, and overflow assertions.
+
+### Production bundle comparison
+
+Sizes use the same SvelteKit client-manifest and per-file gzip method as the
+Phase 2 checkpoint.
+
+| Measurement               |   Phase 2 |   Phase 3 |   Change |
+| ------------------------- | --------: | --------: | -------: |
+| Root layout node, raw     |  37,768 B |  37,928 B |   +160 B |
+| Root layout node, gzip    |  12,055 B |  12,116 B |    +61 B |
+| Root static closure, raw  | 132,457 B | 132,639 B |   +182 B |
+| Root static closure, gzip |  52,158 B |  52,223 B |    +65 B |
+| Root + home union, raw    | 194,598 B | 194,951 B |   +353 B |
+| Root + home union, gzip   |  74,505 B |  74,764 B |   +259 B |
+| Root CSS, raw             | 183,135 B | 187,770 B | +4,635 B |
+| Root CSS, gzip            |  30,055 B |  30,503 B |   +448 B |
+
+The root JavaScript increase is 65 B gzip across its complete static closure.
+Most Phase 3 visual treatment is therefore the 448 B gzip CSS increase. The
+lazy ambient chunk remains unchanged at 8,763 B raw / 3,501 B gzip.
+
+Current route-incremental static JavaScript closures, after excluding the root
+closure, are:
+
+| Route entry          |       Raw |     Gzip |
+| -------------------- | --------: | -------: |
+| Writing              |  52,401 B | 18,979 B |
+| Blog index           |  76,647 B | 26,858 B |
+| Year archive         |  64,104 B | 23,053 B |
+| Article shell        | 173,654 B | 43,308 B |
+| Projects             |  24,035 B |  9,014 B |
+| Résumé               |  80,116 B | 28,244 B |
+| Notes index          |  12,657 B |  5,161 B |
+| Visualizations index |  82,160 B | 28,990 B |
+
+These are current total route closures, not Phase 3 additions. The root,
+writing, blog, projects, and notes closures contain no Three.js, p5, D3,
+Observable runtime, or video signature. The article and résumé node text
+contains authored references to visualization technologies, so naive string
+searches there are not treated as import evidence.
+
+Representative prerendered HTML remains substantial and meaningful before
+JavaScript:
+
+| Page                    | HTML size |
+| ----------------------- | --------: |
+| `/writing`              |  84,175 B |
+| `/projects`             | 112,489 B |
+| `/resume`               |  86,475 B |
+| `/blog/visualizations`  | 117,380 B |
+| Long healthcare article | 133,017 B |
+
+The no-JavaScript browser test additionally proves that writing headings,
+normal links, deterministic glyph SVG, the two static atmosphere layers,
+article essay ink, long prose, and the healthcare table are present while
+Canvas is absent.

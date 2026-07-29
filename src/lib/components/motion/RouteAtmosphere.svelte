@@ -22,7 +22,7 @@
 	let documentVisible = $state(true);
 	let mediaAllowsDecoration = $state(true);
 	let rootAllowsDecoration = $state(true);
-	let headerRegionVisible = $state(false);
+	let headerRegionVisible = $state(true);
 	let motion = $state<ResolvedMotion>('gentle');
 	let CanvasField = $state<Component<AmbientFieldProps> | null>(null);
 	let loadingCanvas = false;
@@ -89,8 +89,8 @@
 
 	$effect(() => {
 		const currentPath = pathname;
-		const headerOnly = config.intensity === 'header-only';
-		if (!clientReady || !headerOnly) {
+		const headerScoped = config.scope === 'header';
+		if (!clientReady || !headerScoped) {
 			headerRegionVisible = true;
 			return;
 		}
@@ -153,6 +153,7 @@
 	data-biome={config.biome}
 	data-intensity={config.intensity}
 	data-ambient={config.ambient}
+	data-scope={config.scope ?? 'viewport'}
 	data-active={headerRegionVisible}
 	data-route-phase={routePhase}
 	aria-hidden="true"

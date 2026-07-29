@@ -65,7 +65,10 @@
 		</ol>
 	</nav>
 
-	<header class="mb-10 border-b border-neutral-300 pb-7 dark:border-neutral-700">
+	<header
+		class="mb-10 border-b border-neutral-300 pb-7 dark:border-neutral-700"
+		data-route-scene="writing"
+	>
 		<p
 			class="mb-2 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
 		>

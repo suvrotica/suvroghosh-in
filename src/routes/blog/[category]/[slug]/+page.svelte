@@ -83,6 +83,7 @@
 		<header
 			class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800"
 			data-route-atmosphere-region
+			data-route-scene="article"
 		>
 			<h1
 				class="article-title mb-4 font-sans font-bold tracking-tight text-neutral-900 dark:text-white"
@@ -164,6 +165,7 @@
 
 		<div
 			class="article-prose mx-auto prose max-w-[var(--article-width)] prose-neutral dark:prose-invert prose-headings:scroll-mt-20 prose-headings:font-sans prose-code:font-mono prose-pre:font-mono prose-img:rounded-xl"
+			data-article-reading-region
 		>
 			<PostContent />
 		</div>

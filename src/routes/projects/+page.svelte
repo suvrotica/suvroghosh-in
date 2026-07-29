@@ -83,7 +83,10 @@
 		</ol>
 	</nav>
 
-	<header class="border-b border-neutral-300 pb-9 dark:border-neutral-700">
+	<header
+		class="border-b border-neutral-300 pb-9 dark:border-neutral-700"
+		data-route-scene="healthcare"
+	>
 		<p
 			class="mb-3 text-xs font-bold tracking-[0.16em] text-neutral-500 uppercase dark:text-neutral-400"
 		>

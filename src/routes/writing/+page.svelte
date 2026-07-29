@@ -3,6 +3,7 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import { siteUrl } from '$lib/components/seo/SEO';
 	import { Badge } from '$lib/components/ui/badge';
+	import SignalGlyph from '$lib/components/home/SignalGlyph.svelte';
 	import { substackLinks } from '$lib/config/links';
 	import type { PageData } from './$types';
 
@@ -25,7 +26,7 @@
 <SEO {title} {description} {canonicalUrl} />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
-	<header class="mb-10">
+	<header class="mb-10" data-route-scene="writing">
 		<h1 class="mb-4 text-4xl font-bold text-neutral-900 md:text-5xl dark:text-neutral-100">
 			Writings
 		</h1>
@@ -83,7 +84,7 @@
 			</a>
 		</div>
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-			{#each data.recentPosts as post (post.slug)}
+			{#each data.recentPosts as post, index (post.slug)}
 				<a
 					href={resolve('/blog/[category]/[slug]', {
 						category: post.categorySlug,
@@ -91,6 +92,11 @@
 					})}
 					class="post-card group block rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm dark:border-neutral-800 dark:bg-neutral-800/50"
 				>
+					{#if index < 2}
+						<span class="writing-signal-glyph" aria-hidden="true">
+							<SignalGlyph slug={post.slug} category={post.categorySlug} />
+						</span>
+					{/if}
 					<div
 						class="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs tracking-wide text-neutral-500 dark:text-neutral-400"
 					>

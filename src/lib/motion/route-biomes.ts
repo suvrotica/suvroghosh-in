@@ -19,7 +19,12 @@ export const ROUTE_MOTION_CONFIGS = {
 	homeQuiet: { biome: 'home', intensity: 'quiet', ambient: 'animated' },
 	writingStandard: { biome: 'writing', intensity: 'standard', ambient: 'animated' },
 	writingQuiet: { biome: 'writing', intensity: 'quiet', ambient: 'animated' },
-	articleHeader: { biome: 'quiet', intensity: 'header-only', ambient: 'animated' },
+	articleHeader: {
+		biome: 'quiet',
+		intensity: 'header-only',
+		ambient: 'animated',
+		scope: 'header'
+	},
 	healthcareStandard: {
 		biome: 'healthcare',
 		intensity: 'standard',
@@ -29,7 +34,8 @@ export const ROUTE_MOTION_CONFIGS = {
 	healthcareMinimal: {
 		biome: 'healthcare',
 		intensity: 'minimal',
-		ambient: 'animated'
+		ambient: 'animated',
+		scope: 'header'
 	},
 	calcuttaStandard: { biome: 'calcutta', intensity: 'standard', ambient: 'animated' },
 	labStatic: { biome: 'lab', intensity: 'standard', ambient: 'static' },

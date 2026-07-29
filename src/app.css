@@ -965,6 +965,10 @@ html .article-breakout:fullscreen {
 	--biome-secondary: var(--paper-soft);
 }
 
+.route-atmosphere[data-biome='quiet'][data-scope='header'] {
+	--biome-primary: var(--essay-ink, var(--ink-faint));
+}
+
 .route-atmosphere__wash,
 .route-atmosphere__lines,
 .ambient-field {
@@ -1091,7 +1095,7 @@ html .article-breakout:fullscreen {
 	opacity: 0.52;
 }
 
-.route-atmosphere[data-intensity='header-only'][data-active='false'] {
+.route-atmosphere[data-scope='header'][data-active='false'] {
 	opacity: 0.06;
 }
 
@@ -1204,7 +1208,6 @@ html[data-motion='still'] .ambient-field {
 	transform-origin: left center;
 	transition: transform var(--motion-medium) var(--ease-emphatic);
 }
-.nav-link:hover::after,
 .nav-link[aria-current='page']::after {
 	transform: scaleX(1);
 }
@@ -2549,5 +2552,128 @@ html[data-motion='still'] .living-home .world-portal__underlay {
 		min-height: auto;
 		padding: 1rem;
 		background: none;
+	}
+}
+
+/* Phase 3 route dialects: static edge detail around meaningful SSR content. */
+.site-shell[data-biome='writing'] [data-route-scene='writing'],
+.site-shell[data-biome='calcutta'] [data-route-scene='writing'],
+.site-shell[data-biome='healthcare'] [data-route-scene='healthcare'] {
+	position: relative;
+	isolation: isolate;
+	overflow: clip;
+}
+
+.site-shell[data-biome='writing'] [data-route-scene='writing']::before,
+.site-shell[data-biome='writing'] [data-route-scene='writing']::after,
+.site-shell[data-biome='calcutta'] [data-route-scene='writing']::before,
+.site-shell[data-biome='calcutta'] [data-route-scene='writing']::after,
+.site-shell[data-biome='healthcare'] [data-route-scene='healthcare']::before,
+.site-shell[data-biome='healthcare'] [data-route-scene='healthcare']::after {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	pointer-events: none;
+	content: '';
+}
+
+.site-shell[data-biome='writing'] [data-route-scene='writing']::before,
+.site-shell[data-biome='calcutta'] [data-route-scene='writing']::before {
+	inset: 0 auto 0 0;
+	width: min(10rem, 23%);
+	background-image: repeating-linear-gradient(
+		169deg,
+		transparent 0 1.7rem,
+		color-mix(in oklab, var(--essay-ink, var(--accent)) 18%, transparent) 1.75rem 1.79rem
+	);
+	-webkit-mask-image: linear-gradient(90deg, #000, transparent);
+	mask-image: linear-gradient(90deg, #000, transparent);
+	opacity: 0.8;
+}
+
+.site-shell[data-biome='writing'] [data-route-scene='writing']::after,
+.site-shell[data-biome='calcutta'] [data-route-scene='writing']::after {
+	inset: 0 0 0 auto;
+	width: min(11rem, 25%);
+	background-image: repeating-radial-gradient(
+		ellipse at 100% 18%,
+		transparent 0 1.55rem,
+		color-mix(in oklab, var(--essay-ink, var(--accent)) 16%, transparent) 1.6rem 1.64rem
+	);
+	-webkit-mask-image: linear-gradient(270deg, #000, transparent);
+	mask-image: linear-gradient(270deg, #000, transparent);
+	opacity: 0.74;
+}
+
+.site-shell[data-biome='healthcare'] [data-route-scene='healthcare']::before {
+	inset: 0 0 0 auto;
+	width: min(14rem, 32%);
+	background-image:
+		radial-gradient(
+			circle at 52% 48%,
+			color-mix(in oklab, var(--accent) 38%, transparent) 0 2px,
+			transparent 3px
+		),
+		linear-gradient(color-mix(in oklab, var(--accent) 12%, transparent) 1px, transparent 1px),
+		linear-gradient(
+			90deg,
+			color-mix(in oklab, var(--ink-faint) 11%, transparent) 1px,
+			transparent 1px
+		);
+	background-size:
+		3.5rem 3.5rem,
+		3.5rem 3.5rem,
+		3.5rem 3.5rem;
+	-webkit-mask-image: linear-gradient(270deg, #000, transparent);
+	mask-image: linear-gradient(270deg, #000, transparent);
+}
+
+.site-shell[data-biome='healthcare'] [data-route-scene='healthcare']::after {
+	right: min(4.25rem, 10%);
+	bottom: 0;
+	width: min(9rem, 28%);
+	height: 2px;
+	background: var(--accent);
+	opacity: 0.35;
+}
+
+.writing-signal-glyph {
+	display: block;
+	width: min(7.5rem, 38%);
+	height: 2.75rem;
+	margin-block-end: 0.8rem;
+	color: var(--accent);
+}
+
+.writing-signal-glyph .signal-glyph {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	color: inherit;
+}
+
+[data-theme='high-contrast']
+	.site-shell
+	:where([data-route-scene='writing'], [data-route-scene='healthcare'])::before,
+[data-theme='high-contrast']
+	.site-shell
+	:where([data-route-scene='writing'], [data-route-scene='healthcare'])::after,
+[data-theme='high-contrast'] .writing-signal-glyph {
+	display: none !important;
+}
+
+@media (forced-colors: active) {
+	.site-shell :where([data-route-scene='writing'], [data-route-scene='healthcare'])::before,
+	.site-shell :where([data-route-scene='writing'], [data-route-scene='healthcare'])::after,
+	.writing-signal-glyph {
+		display: none !important;
+	}
+}
+
+@media print {
+	.site-shell :where([data-route-scene='writing'], [data-route-scene='healthcare'])::before,
+	.site-shell :where([data-route-scene='writing'], [data-route-scene='healthcare'])::after,
+	.writing-signal-glyph {
+		display: none !important;
 	}
 }

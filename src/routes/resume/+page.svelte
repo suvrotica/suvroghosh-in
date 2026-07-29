@@ -305,7 +305,11 @@
 />
 
 <section class="page-enter mx-auto max-w-4xl py-8 md:py-12">
-	<header class="mb-10 text-center md:text-left">
+	<header
+		class="mb-10 text-center md:text-left"
+		data-route-atmosphere-region
+		data-route-scene="healthcare"
+	>
 		<h1
 			class="mb-2 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl dark:text-neutral-100"
 		>

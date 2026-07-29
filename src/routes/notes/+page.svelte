@@ -40,7 +40,7 @@
 	])}
 />
 
-<header class="notes-index-header">
+<header class="notes-index-header" data-route-scene="notes">
 	<p class="eyebrow">Ink, diagrams, and field notes</p>
 	<h1>Handwritten notes</h1>
 	<p>
@@ -124,9 +124,25 @@
 
 <style>
 	.notes-index-header {
+		position: relative;
+		overflow: clip;
 		margin-bottom: 2.25rem;
 		padding: 2rem 0 2.25rem;
 		border-block: 1px solid var(--rule);
+	}
+
+	.notes-index-header::after {
+		position: absolute;
+		inset: 0 0 0 auto;
+		width: min(9rem, 24%);
+		background-image: repeating-linear-gradient(
+			161deg,
+			transparent 0 1.35rem,
+			color-mix(in oklab, var(--ink-faint) 16%, transparent) 1.4rem 1.44rem
+		);
+		mask-image: linear-gradient(270deg, #000, transparent);
+		pointer-events: none;
+		content: '';
 	}
 
 	.eyebrow {
@@ -212,8 +228,25 @@
 	}
 
 	.notes-list > li {
+		position: relative;
 		min-width: 0;
 		background: var(--paper);
+	}
+
+	.notes-list > li::before {
+		position: absolute;
+		z-index: 2;
+		inset: 0.3rem 0 0 0.3rem;
+		border-right: 2px solid color-mix(in oklab, var(--ink-faint) 22%, transparent);
+		border-bottom: 2px solid color-mix(in oklab, var(--ink-faint) 22%, transparent);
+		pointer-events: none;
+		content: '';
+	}
+
+	.notes-list > li:nth-child(even)::before {
+		inset: 0.2rem 0.3rem 0 0;
+		border-right: 0;
+		border-left: 2px solid color-mix(in oklab, var(--ink-faint) 18%, transparent);
 	}
 
 	.notes-list > li > a {
@@ -337,6 +370,25 @@
 	@media (prefers-reduced-motion: reduce) {
 		.notes-list > li > a {
 			transition: none;
+		}
+	}
+
+	:global(html[data-theme='high-contrast']) .notes-index-header::after,
+	:global(html[data-theme='high-contrast']) .notes-list > li::before {
+		display: none;
+	}
+
+	@media (forced-colors: active) {
+		.notes-index-header::after,
+		.notes-list > li::before {
+			display: none;
+		}
+	}
+
+	@media print {
+		.notes-index-header::after,
+		.notes-list > li::before {
+			display: none;
 		}
 	}
 </style>

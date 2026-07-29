@@ -53,7 +53,7 @@
 	<GamesLanding />
 {:else}
 	<section class="category-layout page-enter">
-		<header class="category-header">
+		<header class="category-header" data-route-scene="writing">
 			<a
 				href={resolve('/blog')}
 				class="mb-5 inline-flex min-h-11 items-center text-sm font-semibold text-neutral-600 underline decoration-neutral-400 underline-offset-4 hover:text-neutral-950 hover:decoration-neutral-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:text-neutral-400 dark:hover:text-white dark:focus-visible:outline-neutral-300"
