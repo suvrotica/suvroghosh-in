@@ -6,6 +6,8 @@ export type ReadingPathDefinition = {
 	postSlugs: readonly string[];
 };
 
+export type ReadingPathSummary = Omit<ReadingPathDefinition, 'postSlugs'>;
+
 export const readingPathDefinitions: readonly ReadingPathDefinition[] = [
 	{
 		id: 'orientation',

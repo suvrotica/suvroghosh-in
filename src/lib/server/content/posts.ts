@@ -19,7 +19,7 @@ import {
 	promotedTopicPath,
 	topicPath
 } from '$lib/content/topics';
-import { readingPathDefinitions } from '$lib/content/reading-paths';
+import { readingPathDefinitions, type ReadingPathSummary } from '$lib/content/reading-paths';
 import { musicPostSlugs } from '$lib/generated/music-posts';
 
 export type PublishedPost = BlogPostMetadata & {
@@ -224,6 +224,15 @@ export function getCuratedReadingPaths() {
 				categoryLabel: post.categoryLabel
 			};
 		})
+	}));
+}
+
+export function getCuratedReadingPathSummaries(): ReadingPathSummary[] {
+	return getCuratedReadingPaths().map(({ id, eyebrow, label, description }) => ({
+		id,
+		eyebrow,
+		label,
+		description
 	}));
 }
 

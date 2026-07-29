@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getPublishedPosts } from '$lib/server/content/posts';
+import { getCuratedReadingPathSummaries, getPublishedPosts } from '$lib/server/content/posts';
 
 export const prerender = true;
 
@@ -14,5 +14,6 @@ export const load: PageServerLoad = () => ({
 			categorySlug,
 			categoryLabel,
 			sectionLabel
-		}))
+		})),
+	readingPaths: getCuratedReadingPathSummaries()
 });

@@ -186,3 +186,59 @@ final implementation diff.
    CT-specific `hasTouch` suite remains unchanged.
 10. Re-run focused tests, the repository command matrix, production build,
     bundle comparison, browser screenshots, and generated-churn inspection.
+
+## Phase 2 comparison checkpoint
+
+Phase 2 replaces only the home-page composition while retaining its exact
+headline, supporting copy, destinations, recent-post ordering, SEO graph, and
+server-rendered meaning. The Phase 1 “after” captures are the visual baseline
+for this comparison:
+
+- `artifacts/motion/after/home-desktop-paper.png`
+- `artifacts/motion/after/home-desktop-night.png`
+- `artifacts/motion/after/home-mobile-paper.png`
+- `artifacts/motion/after/home-mobile-night.png`
+
+The full-page Phase 2 captures are:
+
+- `artifacts/motion/phase2-after/home-desktop-paper.png` (1440 × 4375)
+- `artifacts/motion/phase2-after/home-desktop-night.png` (1440 × 4375)
+- `artifacts/motion/phase2-after/home-mobile-paper.png` (390 × 5986)
+- `artifacts/motion/phase2-after/home-mobile-night.png` (390 × 5986)
+
+These are review captures rather than pixel-diff fixtures: the Phase 2 page is
+intentionally taller, and the prior captures used viewport dimensions rather
+than matching document heights.
+
+### Production bundle comparison
+
+Sizes below come from the SvelteKit client manifest after `build:site`. Import
+closures include recursively reachable static imports; gzip totals compress
+each emitted file independently before summing.
+
+| Measurement                    |   Phase 1 |   Phase 2 |    Change |
+| ------------------------------ | --------: | --------: | --------: |
+| Root layout node, raw          |  37,742 B |  37,768 B |     +26 B |
+| Root layout node, gzip         |  12,043 B |  12,055 B |     +12 B |
+| Home node, raw                 |   9,381 B |  16,266 B |  +6,885 B |
+| Home node, gzip                |   2,912 B |   5,904 B |  +2,992 B |
+| Root static closure, raw       | 132,431 B | 132,457 B |     +26 B |
+| Root static closure, gzip      |  52,146 B |  52,158 B |     +12 B |
+| Home incremental closure, raw  |  54,688 B |  62,141 B |  +7,453 B |
+| Home incremental closure, gzip |  18,993 B |  22,347 B |  +3,354 B |
+| Root + home union, raw         | 187,119 B | 194,598 B |  +7,479 B |
+| Root + home union, gzip        |  71,139 B |  74,505 B |  +3,366 B |
+| Root CSS, raw                  | 162,108 B | 183,135 B | +21,027 B |
+| Root CSS, gzip                 |  26,469 B |  30,055 B |  +3,586 B |
+| Prerendered home HTML          |  64,138 B |  69,658 B |  +5,520 B |
+
+The home-specific JavaScript increase is 3.35 kB gzip, substantially below the
+brief's 20–30 kB home-page allowance. The Phase 1 atmosphere remains a separate
+dynamic chunk and is slightly smaller after chunk recomposition
+(8,763 B raw / 3,501 B gzip). The root/home closure contains no Three.js, p5,
+D3, or Observable runtime signatures.
+
+The prerendered home contains its single visible `h1`, all four recent-signal
+SVG markers, and no Canvas. Canvas enhancement remains progressive and
+route-owned by the Phase 1 atmosphere. Phase 2 adds no raster image, media,
+video, animation library, or network dependency to the home page.

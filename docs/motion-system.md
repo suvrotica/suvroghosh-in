@@ -1,6 +1,6 @@
 # The Living Archive — motion system
 
-This document is the operating contract for the Phase 0 and Phase 1 motion
+This document is the operating contract for the Phase 0–2 Living Archive
 foundation. It describes the system as implemented, the boundaries later work
 must preserve, and the checks to run when extending it.
 
@@ -29,6 +29,17 @@ Phase 1 adds one shared motion operating system:
 - reduced-motion, still, forced-colours, print, no-JavaScript, and
   special-route fallbacks.
 
+Phase 2 uses that foundation for the home page:
+
+- `LivingHero` and the finite, accessible `KineticLine`;
+- `ReadingPathRail`, sourced from the validated `/start-here` definitions;
+- distinct Professional and Writing `WorldPortal` link groups;
+- `RecentSignalGrid` with deterministic inline-SVG `SignalGlyph` decoration;
+- the shared `livingCard` attachment for bounded decorative interaction;
+- responsive full-bleed composition with static SSR, no-JavaScript,
+  high-contrast, forced-colour, reduced-motion, coarse-pointer, and print
+  states.
+
 The root layout owns route-level atmosphere and route transitions. Individual
 pages must not mount another ambient renderer. Specialist experiences continue
 to own their existing loops and shells.
@@ -48,6 +59,9 @@ to own their existing loops and shells.
 | Canvas engine          | `src/lib/motion/ambient-field.ts`                  | Draw, resize, pause, resume, update, and tear down Canvas 2D                 |
 | Reveal attachment      | `src/lib/attachments/reveal.ts`                    | Share one viewport observer across pending reveal elements                   |
 | Compatibility wrapper  | `src/lib/components/animation/ScrollReveal.svelte` | Preserve the existing `delay`, `class`, `tag`, and `children` API            |
+| Living-card attachment | `src/lib/attachments/living-card.ts`               | Bound pointer influence, share route reset, and clean up card state          |
+| Signal-glyph policy    | `src/lib/motion/signal-glyph.ts`                   | Generate stable, bounded inline-SVG geometry from post identity              |
+| Home composition       | `src/lib/components/home/*`                        | Render hero, reading paths, portals, recent signals, and semantic cards      |
 | Integration and CSS    | `src/routes/+layout.svelte`, `src/app.css`         | Own the normal shell, public attributes, visual tokens, and media fallbacks  |
 
 The pure modules do not access browser globals. Do not replace them with an
@@ -352,6 +366,100 @@ Existing `--motion-medium`, `--motion-slow`, `--ease-standard`, and
 `--ease-emphatic` consumers remain supported. Do not remove compatibility
 tokens as part of an atmosphere extension.
 
+## Phase 2 home composition
+
+The home route keeps `SEO`, `siteSEO`, and `withSiteGraph()` at route level.
+All public copy, links, heading order, and the four-post server load remain
+ordinary HTML. The visual components are a composition layer, not a new data
+source.
+
+### Shared reading-path data
+
+`src/lib/content/reading-paths.ts` remains the canonical copy and order for all
+five paths. `getCuratedReadingPaths()` still resolves every configured slug
+against published content and throws for an unpublished reference.
+`getCuratedReadingPathSummaries()` performs that validation and returns only
+`id`, `eyebrow`, `label`, and `description` to the home server load. The home
+route therefore does not duplicate copy or serialize the fifteen selected
+posts. Each rail card is one native link to `/start-here#<id>`; the complete
+“Explore the reading paths” link remains separate.
+
+### Hero and finite kinetic line
+
+`LivingHero` uses a controlled breakout capped at `96rem` and keeps the
+existing identity, role, paragraph, and five CTAs in SSR. Resume remains the
+first primary action. The right-hand specimen is CSS-only, decorative, and
+static; it does not mount another Canvas or request media.
+
+`KineticLine` contains all four decorative statements in a stable shared grid
+cell and one complete screen-reader sentence outside the `aria-hidden` visual
+stack. One timeout at a time advances through the four whole statements,
+returns to the first, and settles. It pauses while the document is hidden and
+resets to its static first statement for still, reduced motion, authored high
+contrast, forced colours, and print. It has no `aria-live` region, typewriter,
+scramble, interval, or animation-frame loop.
+
+Diagnostics:
+
+```js
+document.querySelector('[data-kinetic-line]')?.dataset.kineticState;
+document.querySelector('[data-kinetic-line]')?.dataset.kineticIndex;
+```
+
+### Living cards and portals
+
+`LivingCard.svelte` renders a real anchor for reading-path and recent-post
+cards. `WorldPortal.svelte` renders an `<article>` containing normal link
+groups, avoiding nested anchors and synthetic link roles.
+
+The `livingCard` attachment:
+
+- reads resolved `html[data-motion]`;
+- requires `alive`, a fine hover pointer, no reduced motion, no authored high
+  contrast, no forced colours, and no print;
+- reads one bounding rectangle on pointer entry;
+- coalesces pointer moves into at most one scheduled animation frame;
+- caps decorative underlay displacement at 5 px horizontally, 4 px
+  vertically, and 1.15 degrees;
+- never transforms the text layer;
+- resets on leave, cancel, focus, blur, policy change, route navigation, and
+  attachment teardown;
+- adds `will-change` only while
+  `data-living-card-active="true"`.
+
+Gentle hover uses only a fixed 1.5 px card lift and stable underlay/border
+change. Keyboard focus receives a strong outline and fixed underlay state with
+no pointer tilt. Container portals have no added `tabindex`; their existing
+links retain the normal focus order.
+
+### Recent signals
+
+`generateSignalGlyph(slug, category)` uses the existing FNV-1a hash and
+`mulberry32` stream. It returns one of four bounded path families with no
+clock, `Math.random()`, browser API, runtime ID, request, or Canvas. The
+component binds the generated values through normal inline-SVG attributes and
+marks the SVG `aria-hidden="true"` and `focusable="false"`.
+
+Glyphs are fully drawn and static in SSR, no JavaScript, still, gentle,
+high-contrast, forced-colour, and print contexts. Alive plus a fine pointer may
+draw one primary path once on hover or focus. No card owns a continuous loop.
+
+### Responsive and fallback contract
+
+- desktop breakouts are centred grid items and must stay within the viewport;
+- the mobile reading rail uses native inline overflow,
+  `scroll-snap-type: inline proximity`, 82 vw bounded cards, and a visible next
+  edge;
+- it has no autoplay, carousel controls, roving `tabindex`, or keyboard trap;
+- below the desktop portal breakpoint, hero content comes first and the
+  decorative specimen recedes;
+- forced colours and authored high contrast remove underlays/specimens/glyphs
+  while retaining real borders and focus;
+- print removes decoration and transforms the rail/portals/signals into simple
+  two-column document grids;
+- without JavaScript, the first kinetic statement, complete assistive
+  sentence, all copy, every link, and deterministic SVG markup remain present.
+
 ## Accessibility and fallback matrix
 
 | Environment                      | Required result                                                                 |
@@ -363,7 +471,7 @@ tokens as part of an atmosphere extension.
 | Forced colours                   | Atmosphere removed/simplified; borders, links, focus, and active state retained |
 | Authored high-contrast theme     | Decorative atmosphere hidden; authored high-contrast content retained           |
 | Print                            | Atmosphere and View Transitions absent; article structure and links printable   |
-| Coarse pointer/touch             | No ambient pointer influence or future tilt                                     |
+| Coarse pointer/touch             | No ambient pointer influence or LivingCard tilt                                 |
 | Canvas/observer unsupported      | Static atmosphere and immediately visible reveal content                        |
 | Background tab/offscreen field   | Animation frame loop paused                                                     |
 | Specialist route                 | Existing shell/controls retain ownership; global field and transition absent    |
@@ -381,7 +489,9 @@ Pure policy coverage lives beside the implementation:
 - `route-biomes.test.ts`: route matrix, prefix safety, specialist exclusions,
   metadata refinement, and View Transition eligibility;
 - `seed.test.ts`: stable hashing, pathname normalisation, repeatable PRNG, and
-  per-biome streams.
+  per-biome streams;
+- `signal-glyph.test.ts`: repeatable content-derived models, seed
+  differentiation, finite SVG instructions, and bounded nodes.
 
 Run the focused unit and browser suites:
 
@@ -390,10 +500,11 @@ npm run motion:unit:test
 npm run motion:browser:test
 ```
 
-`playwright.motion.config.ts` isolates `tests/browser/motion.spec.ts` from the
-existing component-test configuration. It builds the SvelteKit site, serves it
-on port `4211`, and uses one headless Chromium/Chrome worker. The focused
-browser suite covers pre-hydration OS precedence, control accessibility and
+`playwright.motion.config.ts` isolates `tests/browser/motion.spec.ts` and
+`tests/browser/home-motion.spec.ts` from the existing component-test
+configuration. It builds the SvelteKit site, serves it on port `4211`, and
+uses one headless Chromium/Chrome worker. The focused browser suite covers
+pre-hydration OS precedence, control accessibility and
 synchronisation, persistence across navigation/reload, reduced-motion
 authority, the paper/night/high-contrast and still/gentle/alive matrix,
 forced-colours and print suppression, mobile overflow and menu focus return,
@@ -403,6 +514,13 @@ fallback, View Transition API fallback, the eligible/off-route transition
 handshake, article-header Canvas pause/resume without remounting, the shared
 viewport reveal observer, removal of the timer fallback, still-mode reveal
 flushing, and the no-`IntersectionObserver` fallback.
+
+Home coverage additionally verifies the preserved content/SEO/link contract,
+canonical reading paths, valid portal structure, deterministic inline glyphs,
+finite kinetic lifecycle, desktop/mobile breakout geometry, native mobile
+rail, still/reduced/coarse behavior, bounded fine-pointer variables, stable
+keyboard focus, no-JavaScript meaning, one atmosphere owner, no video or local
+Canvas, and inactive `will-change`.
 
 The release command matrix remains:
 
@@ -426,6 +544,9 @@ document.documentElement.dataset.biome;
 document.querySelector('[data-route-atmosphere]')?.dataset;
 document.querySelector('[data-ambient-field]')?.dataset.ambientState;
 document.querySelector('[data-ambient-field]')?.dataset.ambientActive;
+document.querySelector('[data-kinetic-line]')?.dataset;
+document.querySelector('[data-living-card]')?.dataset;
+document.querySelector('[data-signal-glyph]')?.dataset.signalGlyph;
 ```
 
 Expected Canvas queries:
@@ -450,7 +571,7 @@ pollution.
 The atmosphere is a quality layer, never the LCP candidate. Hero/page text and
 meaningful HTML arrive without waiting for Canvas.
 
-Phase 1 performance boundaries:
+Phase 1 and Phase 2 performance boundaries:
 
 - no new external service, background-media, image, or video request; an
   eligible route fetches the required local lazy Canvas JavaScript chunk;
@@ -512,18 +633,23 @@ still, reduced motion, forced colours, and print must remove interaction.
 Cache geometry outside frame/pointer loops and keep pointer displacement inside
 the central token contract.
 
-## Deliberately deferred to Phase 2
+## Deliberately deferred after Phase 2
 
-Phase 1 does not redesign or reorder the home page. It does not add:
+Phase 2 does not extend the new home components across the site. The following
+remain later-phase work:
 
-- `LivingHero` or the one-cycle accessible `KineticLine`;
-- `ReadingPathRail`;
-- the Professional/Writing `WorldPortal` treatment;
-- `RecentSignalGrid` or deterministic `SignalGlyph` cards;
-- the reusable `LivingCard` / `living-card` attachment;
-- card tilt, portal parallax, or additional home animation loops;
-- new homepage copy, routes, taxonomies, server data, or media.
+- Phase 3 writing/archive edge treatments and selected index glyphs;
+- Phase 3 article-header quieting refinements and route-specific screenshots;
+- Phase 3 healthcare, projects, consulting, Gulf, resume, notes-index, and
+  lab-index compositions;
+- Phase 3 restrained active-route header motion;
+- Phase 4 deterministic accessible Living Topic Map and mobile metro mode;
+- Phase 5 profiling-led subtraction and only then consideration of one named
+  title transition, one progressive scroll-linked line, adaptive quality, or a
+  footer constellation.
 
-Phase 2 must reuse this preference, route, token, atmosphere, deterministic
-seed, lifecycle, and accessibility contract. It must not introduce a second
-ambient engine or make Canvas essential to the home page.
+The existing Phase 1 route mappings and exclusions remain active, but Phase 2
+does not redesign those routes. It does not add a second ambient engine, new
+homepage copy or routes, background media, article-card tilt, continuous
+portal/card/glyph loops, a custom cursor, scroll hijacking, or any new
+dependency.
