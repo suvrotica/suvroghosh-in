@@ -69,19 +69,14 @@
 		applyMotion(getInitialPreference(), mediaQuery.matches, false);
 		ready = true;
 
-		const handleSystemChange = (event: MediaQueryListEvent) => {
-			applyMotion(preference, event.matches, false);
-		};
 		const handleMotionChange = (event: Event) => {
 			const next = (event as CustomEvent<MotionPreference>).detail;
 			if (isMotionPreference(next)) applyMotion(next, mediaQuery.matches, false);
 		};
 
-		mediaQuery.addEventListener('change', handleSystemChange);
 		window.addEventListener(motionEvent, handleMotionChange);
 
 		return () => {
-			mediaQuery.removeEventListener('change', handleSystemChange);
 			window.removeEventListener(motionEvent, handleMotionChange);
 		};
 	};

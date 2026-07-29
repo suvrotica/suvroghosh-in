@@ -21,15 +21,12 @@ describe('route motion mapping', () => {
 		['/blog/topics/kolkata', { biome: 'calcutta', intensity: 'standard', ambient: 'animated' }],
 		[
 			'/blog/personal-essay/an-ordinary-article',
-			{ biome: 'quiet', intensity: 'header-only', ambient: 'animated', scope: 'header' }
+			{ biome: 'quiet', intensity: 'header-only', ambient: 'static', scope: 'header' }
 		],
 		['/projects', { biome: 'healthcare', intensity: 'quiet', ambient: 'animated' }],
 		['/consulting', { biome: 'healthcare', intensity: 'standard', ambient: 'animated' }],
 		['/healthcare-it-gulf', { biome: 'healthcare', intensity: 'quiet', ambient: 'animated' }],
-		[
-			'/resume',
-			{ biome: 'healthcare', intensity: 'minimal', ambient: 'animated', scope: 'header' }
-		],
+		['/resume', { biome: 'healthcare', intensity: 'minimal', ambient: 'static', scope: 'header' }],
 		['/notes', { biome: 'notes', intensity: 'quiet', ambient: 'animated' }],
 		['/notes/sign-in', { biome: 'notes', intensity: 'quiet', ambient: 'animated' }],
 		['/contact', { biome: 'quiet', intensity: 'minimal', ambient: 'animated' }]
@@ -47,7 +44,7 @@ describe('route motion mapping', () => {
 		expect(resolveRouteMotion('/blog/calcutta/an-article', { category: 'Calcutta' })).toEqual({
 			biome: 'quiet',
 			intensity: 'header-only',
-			ambient: 'animated',
+			ambient: 'static',
 			scope: 'header'
 		});
 		expect(resolveRouteMotion('/projects', { ownsAnimationLoop: true }).biome).toBe('off');
@@ -104,5 +101,9 @@ describe('view-transition eligibility', () => {
 		expect(shouldUseViewTransition('/writing#top', '/writing#archive', 'alive')).toBe(false);
 		expect(shouldUseViewTransition('/', '/blog/games', 'alive')).toBe(false);
 		expect(shouldUseViewTransition('/blog/visualizations', '/writing', 'alive')).toBe(false);
+		expect(shouldUseViewTransition('/writing', '/resume', 'alive')).toBe(false);
+		expect(
+			shouldUseViewTransition('/writing', '/blog/personal-essay/an-ordinary-article', 'alive')
+		).toBe(false);
 	});
 });

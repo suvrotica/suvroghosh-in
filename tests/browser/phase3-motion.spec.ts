@@ -86,7 +86,7 @@ test('Phase 3 routes expose their static scene and single-owner atmosphere contr
 			path: '/resume',
 			biome: 'healthcare',
 			intensity: 'minimal',
-			ambient: 'animated',
+			ambient: 'static',
 			scope: 'header',
 			scene: 'healthcare'
 		},
@@ -134,7 +134,7 @@ test('Phase 3 routes expose their static scene and single-owner atmosphere contr
 	expect(runtimeErrors).toEqual([]);
 });
 
-test('the long article inherits its essay ink, pauses after its header, and keeps prose still', async ({
+test('the long article inherits its essay ink and keeps a static, calm reading region', async ({
 	page
 }) => {
 	const runtimeErrors = collectUnexpectedRuntimeErrors(page);
@@ -143,15 +143,14 @@ test('the long article inherits its essay ink, pauses after its header, and keep
 	const siteShell = page.locator('.site-shell');
 	const articleShell = page.locator('.article-shell');
 	const atmosphere = page.locator('[data-route-atmosphere]');
-	const canvas = page.locator('[data-ambient-field]');
 	const prose = page.locator('[data-article-reading-region]');
 
 	await expect(siteShell).toHaveAttribute('data-essay-ink', 'blue');
 	await expect(articleShell).toHaveAttribute('data-essay-ink', 'blue');
 	await expect(atmosphere).toHaveAttribute('data-scope', 'header');
+	await expect(atmosphere).toHaveAttribute('data-ambient', 'static');
 	await expect(atmosphere).toHaveAttribute('data-active', 'true');
-	await expect(canvas).toHaveCount(1);
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'running');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 
 	const inheritedColours = await page.evaluate(() => {
 		const shell = document.querySelector<HTMLElement>('.site-shell');
@@ -178,13 +177,30 @@ test('the long article inherits its essay ink, pauses after its header, and keep
 		':is(p, blockquote, table, pre, code, img, sup):is(.reveal, .reveal-enhanced, [data-reveal], [data-parallax], [data-tilt], [class*="parallax"], [class*="tilt"])'
 	);
 	await expect(decoratedReadingContent).toHaveCount(0);
+	const animatedAncestors = await prose.evaluate((readingRegion) => {
+		const owners: string[] = [];
+		let element: HTMLElement | null = readingRegion as HTMLElement;
+
+		while (element) {
+			const style = getComputedStyle(element);
+			const ownsAnimation = element.getAnimations().some((animation) => {
+				const effect = animation.effect;
+				return effect instanceof KeyframeEffect && effect.target === element;
+			});
+			if (style.animationName !== 'none' || ownsAnimation) {
+				owners.push(`${element.tagName.toLowerCase()}.${element.className}`);
+			}
+			element = element.parentElement;
+		}
+
+		return owners;
+	});
+	expect(animatedAncestors).toEqual([]);
 
 	await prose.scrollIntoViewIfNeeded();
 	await page.evaluate(() => window.scrollBy(0, 240));
 	await expect(atmosphere).toHaveAttribute('data-active', 'false');
-	await expect(canvas).toHaveAttribute('data-ambient-active', 'false');
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'paused');
-	await expect(canvas).toHaveCount(1);
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 	expect(
 		await page.locator('.reading-progress-bar').evaluate((element) => {
 			const transform = getComputedStyle(element).transform;
@@ -200,19 +216,17 @@ test('the long article inherits its essay ink, pauses after its header, and keep
 	expect(runtimeErrors).toEqual([]);
 });
 
-test('the resume keeps a minimal top field and pauses it for document reading', async ({
-	page
-}) => {
+test('the resume keeps a minimal static top field for calm document reading', async ({ page }) => {
 	await page.goto('/resume');
 
 	const atmosphere = page.locator('[data-route-atmosphere]');
-	const canvas = page.locator('[data-ambient-field]');
 	await expect(atmosphere).toHaveAttribute('data-scope', 'header');
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'running');
+	await expect(atmosphere).toHaveAttribute('data-ambient', 'static');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 
 	await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
 	await expect(atmosphere).toHaveAttribute('data-active', 'false');
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'paused');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 	await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeAttached();
 	await expectNoHorizontalOverflow(page);
 });

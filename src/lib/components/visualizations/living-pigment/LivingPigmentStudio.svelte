@@ -1555,7 +1555,6 @@
 	}
 
 	/* A zero-distance reveal transform still becomes the containing block for fixed children. */
-	:global(body.pigment-controls-open .page-enter),
 	:global(body.pigment-controls-open .reveal) {
 		animation: none !important;
 		transform: none !important;

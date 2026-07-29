@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { livingCard } from '$lib/attachments/living-card';
-
 	export type PortalLink = Readonly<{
 		label: string;
 		href: string;
@@ -26,7 +24,6 @@
 	data-living-card
 	data-living-card-variant="portal"
 	data-world-portal={kind}
-	{@attach livingCard}
 >
 	<div class="world-portal__underlay" aria-hidden="true">
 		<span></span>

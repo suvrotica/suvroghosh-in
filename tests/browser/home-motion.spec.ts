@@ -254,8 +254,8 @@ test('the living home remains meaningful and navigable without JavaScript', asyn
 			'static'
 		);
 		await expect(page.locator('[data-kinetic-line]')).toHaveAttribute('data-kinetic-index', '0');
-		await expect(page.locator('[data-kinetic-line] .sr-only')).toContainText(
-			'Suvro builds clinical data systems, writes essays and satire, makes scientific visual experiments, and maps ordinary Calcutta.'
+		await expect(page.locator('[data-kinetic-line]')).toContainText(
+			'I build clinical data systems. I write essays and satire. I make scientific visual experiments. I map ordinary Calcutta.'
 		);
 
 		await expect(page.locator('[data-route-atmosphere]')).toHaveCount(1);
@@ -293,35 +293,29 @@ test('signal glyph geometry is deterministic across themes, motion modes, and re
 	await expect(page.locator('[data-living-home] canvas')).toHaveCount(0);
 });
 
-test('the kinetic line is static for still and reduced motion and settles after one alive cycle', async ({
+test('the former kinetic line remains complete and static in every motion mode', async ({
 	page
 }) => {
 	await page.goto('/');
 
 	const kineticLine = page.locator('[data-kinetic-line]');
 	const motionSelect = page.getByLabel('Motion preference', { exact: true });
-	await motionSelect.selectOption('still');
-	await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'static');
-	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
-	await page.waitForTimeout(1_200);
-	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
+	await expect(kineticLine).toContainText(
+		'I build clinical data systems. I write essays and satire. I make scientific visual experiments. I map ordinary Calcutta.'
+	);
 
-	await motionSelect.selectOption('alive');
-	await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'running');
-	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '1', { timeout: 2_500 });
-	await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'settled', { timeout: 8_000 });
-	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
-	await page.waitForTimeout(1_800);
-	await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'settled');
-	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
+	for (const preference of ['still', 'gentle', 'alive'] as const) {
+		await motionSelect.selectOption(preference);
+		await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'static');
+		await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
+	}
 
-	await page.emulateMedia({ reducedMotion: 'reduce' });
-	await expect(page.locator('html')).toHaveAttribute('data-motion', 'still');
+	await page.waitForTimeout(7_000);
 	await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'static');
 	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
 });
 
-test('LivingCard applies bounded alive pointer variables and resets for stable focus', async ({
+test('home cards keep static underlays and stable keyboard focus in Alive mode', async ({
 	page
 }) => {
 	const runtimeErrors = collectUnexpectedRuntimeErrors(page);
@@ -332,6 +326,8 @@ test('LivingCard applies bounded alive pointer variables and resets for stable f
 		true
 	);
 
+	const cards = page.locator('[data-living-card]');
+	await expect(cards).toHaveCount(11);
 	const card = page.locator('[data-reading-path-card]').first();
 	await card.scrollIntoViewIfNeeded();
 	const bounds = await card.boundingBox();
@@ -347,55 +343,48 @@ test('LivingCard applies bounded alive pointer variables and resets for stable f
 		clientX: bounds!.x + bounds!.width - 3,
 		clientY: bounds!.y + bounds!.height - 3
 	});
-	await expect(card).toHaveAttribute('data-living-card-active', 'true');
-	await expect
-		.poll(() =>
-			card.evaluate((element) => element.style.getPropertyValue('--living-card-rotate').trim())
-		)
-		.not.toBe('');
+	await expect(card).not.toHaveAttribute('data-living-card-active', /.+/);
 
 	const pose = await card.evaluate((element) => ({
-		x: Number.parseFloat(element.style.getPropertyValue('--living-card-x')),
-		y: Number.parseFloat(element.style.getPropertyValue('--living-card-y')),
-		rotate: Number.parseFloat(element.style.getPropertyValue('--living-card-rotate')),
+		x: element.style.getPropertyValue('--living-card-x'),
+		y: element.style.getPropertyValue('--living-card-y'),
+		rotate: element.style.getPropertyValue('--living-card-rotate'),
 		contentTransform: getComputedStyle(element.querySelector<HTMLElement>('.living-card__content')!)
 			.transform,
+		underlayTransform: getComputedStyle(
+			element.querySelector<HTMLElement>('.living-card__underlay')!
+		).transform,
 		underlayWillChange: getComputedStyle(
 			element.querySelector<HTMLElement>('.living-card__underlay')!
-		).willChange
+		).willChange,
+		underlayTransitionDuration: getComputedStyle(
+			element.querySelector<HTMLElement>('.living-card__underlay')!
+		).transitionDuration
 	}));
 
-	expect(Math.abs(pose.x)).toBeGreaterThan(1);
-	expect(Math.abs(pose.x)).toBeLessThanOrEqual(5);
-	expect(Math.abs(pose.y)).toBeLessThanOrEqual(4);
-	expect(Math.abs(pose.rotate)).toBeGreaterThan(0.25);
-	expect(Math.abs(pose.rotate)).toBeLessThanOrEqual(1.15);
+	expect(pose.x).toBe('');
+	expect(pose.y).toBe('');
+	expect(pose.rotate).toBe('');
 	expect(pose.contentTransform).toBe('none');
-	expect(pose.underlayWillChange).toContain('transform');
+	expect(pose.underlayTransform).toBe('none');
+	expect(pose.underlayWillChange).toBe('auto');
+	expect(pose.underlayTransitionDuration).toBe('0s');
 
 	await card.dispatchEvent('pointerleave', { pointerType: 'mouse' });
-	await expect(card).toHaveAttribute('data-living-card-active', 'false');
-	await expect
-		.poll(() =>
-			card.evaluate((element) => element.style.getPropertyValue('--living-card-x').trim())
-		)
-		.toBe('');
-	await expect
-		.poll(() =>
-			card
-				.locator('.living-card__underlay')
-				.evaluate((element) => getComputedStyle(element).willChange)
-		)
-		.toBe('auto');
+	await expect(card).not.toHaveAttribute('data-living-card-active', /.+/);
 
 	await card.focus();
 	await expect(card).toBeFocused();
-	await expect(card).toHaveAttribute('data-living-card-active', 'false');
 	expect(await card.evaluate((element) => getComputedStyle(element).transform)).toBe('none');
+	expect(
+		await card
+			.locator('.living-card__underlay')
+			.evaluate((element) => getComputedStyle(element).transform)
+	).toBe('none');
 	expect(runtimeErrors).toEqual([]);
 });
 
-test('coarse pointers cannot activate LivingCard tilt', async ({ browser, baseURL }) => {
+test('coarse pointers retain the same static card contract', async ({ browser, baseURL }) => {
 	const context = await browser.newContext({
 		baseURL,
 		hasTouch: true,
@@ -426,7 +415,7 @@ test('coarse pointers cannot activate LivingCard tilt', async ({ browser, baseUR
 			clientY: bounds!.y + bounds!.height - 2
 		});
 
-		await expect(card).toHaveAttribute('data-living-card-active', 'false');
+		await expect(card).not.toHaveAttribute('data-living-card-active', /.+/);
 		expect(
 			await card.evaluate((element) => ({
 				x: element.style.getPropertyValue('--living-card-x'),

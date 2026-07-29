@@ -103,6 +103,7 @@
 			if (cancelled || currentPath !== pathname) return;
 			const region = document.querySelector<HTMLElement>('[data-route-atmosphere-region]');
 			if (!region || typeof IntersectionObserver === 'undefined') {
+				headerRegionVisible = config.ambient === 'static';
 				return;
 			}
 

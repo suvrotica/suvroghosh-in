@@ -22,7 +22,7 @@ export const ROUTE_MOTION_CONFIGS = {
 	articleHeader: {
 		biome: 'quiet',
 		intensity: 'header-only',
-		ambient: 'animated',
+		ambient: 'static',
 		scope: 'header'
 	},
 	healthcareStandard: {
@@ -34,7 +34,7 @@ export const ROUTE_MOTION_CONFIGS = {
 	healthcareMinimal: {
 		biome: 'healthcare',
 		intensity: 'minimal',
-		ambient: 'animated',
+		ambient: 'static',
 		scope: 'header'
 	},
 	calcuttaStandard: { biome: 'calcutta', intensity: 'standard', ambient: 'animated' },

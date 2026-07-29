@@ -1,4 +1,9 @@
 import { createRouteRandom } from './seed';
+import {
+	isCompactAmbientSurface,
+	resolveAmbientFrameRate,
+	resolveAmbientPixelRatio
+} from './quality';
 import type { MotionIntensity, ResolvedMotion, RouteBiome } from './types';
 
 export type AmbientFieldState = 'off' | 'paused' | 'running';
@@ -24,7 +29,6 @@ type AmbientNode = {
 	phase: number;
 	speed: number;
 	radius: number;
-	pointerWeight: number;
 };
 
 type AmbientEdge = {
@@ -134,14 +138,6 @@ const INTENSITY_DENSITY: Record<MotionIntensity, number> = {
 	standard: 1
 };
 
-const INTENSITY_POINTER: Record<MotionIntensity, number> = {
-	off: 0,
-	minimal: 0,
-	quiet: 0.5,
-	'header-only': 0.35,
-	standard: 1
-};
-
 function dialectFor(biome: RouteBiome): Dialect {
 	return biome === 'off' ? DIALECTS.quiet : DIALECTS[biome];
 }
@@ -173,21 +169,12 @@ export function createAmbientField(
 	let previousTimestamp = 0;
 	let previousDrawTimestamp = 0;
 	let frameId = 0;
-	let intersecting = true;
-	let documentVisible = document.visibilityState === 'visible';
-	let pointerTargetX = 0;
-	let pointerTargetY = 0;
-	let pointerX = 0;
-	let pointerY = 0;
 	let state: AmbientFieldState | null = null;
 	let lineColour = '';
 	let nodeColour = '';
 	let pulseColour = '';
 	let destroyed = false;
 
-	const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-	const forcedColoursQuery = window.matchMedia('(forced-colors: active)');
-	const printQuery = window.matchMedia('print');
 	const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
 	let coarsePointer = coarsePointerQuery.matches;
 
@@ -237,11 +224,6 @@ export function createAmbientField(
 			options.biome !== 'off' &&
 			options.intensity !== 'off' &&
 			options.motion !== 'still' &&
-			!reducedMotionQuery.matches &&
-			!forcedColoursQuery.matches &&
-			!printQuery.matches &&
-			documentVisible &&
-			intersecting &&
 			width > 0 &&
 			height > 0
 		);
@@ -262,7 +244,7 @@ export function createAmbientField(
 
 		const dialect = dialectFor(options.biome);
 		const random = createRouteRandom(options.pathname, options.biome);
-		const mobile = width < 768 || coarsePointer;
+		const mobile = isCompactAmbientSurface(width, coarsePointer);
 		const density = INTENSITY_DENSITY[options.intensity] * (options.motion === 'alive' ? 1.12 : 1);
 		const nodeCount = Math.max(
 			8,
@@ -290,8 +272,7 @@ export function createAmbientField(
 				amplitudeY: (2 + random() * 5.5) * dialect.drift,
 				phase: random() * Math.PI * 2,
 				speed: (0.035 + random() * 0.055) * dialect.speed,
-				radius: (0.7 + random() * 1.45) * dialect.nodeScale,
-				pointerWeight: 0.2 + random() * 0.8
+				radius: (0.7 + random() * 1.45) * dialect.nodeScale
 			});
 		}
 
@@ -359,19 +340,26 @@ export function createAmbientField(
 		const bounds = canvas.getBoundingClientRect();
 		const nextWidth = Math.max(1, Math.round(bounds.width));
 		const nextHeight = Math.max(1, Math.round(bounds.height));
-		const mobile = nextWidth < 768 || coarsePointer;
-		const dprCap = mobile ? 1.5 : 2;
-		const nextPixelRatio = Math.min(window.devicePixelRatio || 1, dprCap);
+		const nextPixelRatio = resolveAmbientPixelRatio({
+			width: nextWidth,
+			height: nextHeight,
+			devicePixelRatio: window.devicePixelRatio,
+			coarsePointer
+		});
+		const frameRate = resolveAmbientFrameRate(options.motion, nextWidth, coarsePointer);
+		canvas.dataset.ambientFrameCap = String(frameRate);
 
 		if (nextWidth === width && nextHeight === height && nextPixelRatio === pixelRatio) {
+			canvas.dataset.ambientBackingPixels = String(canvas.width * canvas.height);
 			return false;
 		}
 
 		width = nextWidth;
 		height = nextHeight;
 		pixelRatio = nextPixelRatio;
-		canvas.width = Math.round(width * pixelRatio);
-		canvas.height = Math.round(height * pixelRatio);
+		canvas.width = Math.max(1, Math.floor(width * pixelRatio));
+		canvas.height = Math.max(1, Math.floor(height * pixelRatio));
+		canvas.dataset.ambientBackingPixels = String(canvas.width * canvas.height);
 		context?.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
 		rebuildGraph();
 		schedule();
@@ -441,25 +429,15 @@ export function createAmbientField(
 	function render() {
 		if (!context) return;
 		const dialect = dialectFor(options.biome);
-		const pointerLimit =
-			(coarsePointer || options.motion === 'still' ? 0 : options.motion === 'alive' ? 10 : 4) *
-			INTENSITY_POINTER[options.intensity];
-		pointerX += (pointerTargetX * pointerLimit - pointerX) * 0.045;
-		pointerY += (pointerTargetY * pointerLimit - pointerY) * 0.045;
 
 		context.clearRect(0, 0, width, height);
 		drawDialectAccents(dialect);
 
 		for (let index = 0; index < nodes.length; index += 1) {
 			const node = nodes[index];
-			drawX[index] =
-				node.baseX +
-				Math.sin(elapsed * node.speed + node.phase) * node.amplitudeX +
-				pointerX * node.pointerWeight;
+			drawX[index] = node.baseX + Math.sin(elapsed * node.speed + node.phase) * node.amplitudeX;
 			drawY[index] =
-				node.baseY +
-				Math.cos(elapsed * node.speed * 0.82 + node.phase) * node.amplitudeY +
-				pointerY * node.pointerWeight;
+				node.baseY + Math.cos(elapsed * node.speed * 0.82 + node.phase) * node.amplitudeY;
 		}
 
 		context.strokeStyle = lineColour;
@@ -472,12 +450,7 @@ export function createAmbientField(
 				(options.motion === 'alive' ? 0.22 : 0.16) * Math.max(0.28, opacityBreath);
 			context.beginPath();
 			context.moveTo(drawX[edge.from], drawY[edge.from]);
-			context.quadraticCurveTo(
-				edge.controlX + pointerX * 0.28,
-				edge.controlY + pointerY * 0.28,
-				drawX[edge.to],
-				drawY[edge.to]
-			);
+			context.quadraticCurveTo(edge.controlX, edge.controlY, drawX[edge.to], drawY[edge.to]);
 			context.stroke();
 		}
 
@@ -499,11 +472,11 @@ export function createAmbientField(
 			const inverse = 1 - t;
 			const x =
 				inverse * inverse * drawX[edge.from] +
-				2 * inverse * t * (edge.controlX + pointerX * 0.28) +
+				2 * inverse * t * edge.controlX +
 				t * t * drawX[edge.to];
 			const y =
 				inverse * inverse * drawY[edge.from] +
-				2 * inverse * t * (edge.controlY + pointerY * 0.28) +
+				2 * inverse * t * edge.controlY +
 				t * t * drawY[edge.to];
 			context.beginPath();
 			context.arc(x, y, pulse.radius, 0, Math.PI * 2);
@@ -521,12 +494,8 @@ export function createAmbientField(
 			return;
 		}
 
-		const frameInterval =
-			width < 768 && options.motion === 'gentle'
-				? 1000 / 30
-				: options.motion === 'gentle'
-					? 1000 / 45
-					: 0;
+		const frameRate = resolveAmbientFrameRate(options.motion, width, coarsePointer);
+		const frameInterval = frameRate > 0 ? 1000 / frameRate : 0;
 		if (frameInterval > 0 && timestamp - previousDrawTimestamp < frameInterval) {
 			frameId = requestAnimationFrame(frame);
 			return;
@@ -556,54 +525,13 @@ export function createAmbientField(
 		if (frameId === 0) frameId = requestAnimationFrame(frame);
 	}
 
-	function handleVisibilityChange() {
-		documentVisible = document.visibilityState === 'visible';
-		schedule();
-	}
-
 	function handleMediaChange() {
 		const pointerChanged = coarsePointer !== coarsePointerQuery.matches;
 		coarsePointer = coarsePointerQuery.matches;
-		if (coarsePointer) {
-			pointerTargetX = 0;
-			pointerTargetY = 0;
-			pointerX = 0;
-			pointerY = 0;
-		}
-		refreshPalette();
 		const resized = resize();
 		if (pointerChanged && !resized) rebuildGraph();
 		schedule();
 	}
-
-	function handlePointerMove(event: PointerEvent) {
-		if (coarsePointer || options.motion === 'still' || width <= 0 || height <= 0) {
-			return;
-		}
-		pointerTargetX = Math.max(-1, Math.min(1, (event.clientX / width - 0.5) * 2));
-		pointerTargetY = Math.max(-1, Math.min(1, (event.clientY / height - 0.5) * 2));
-	}
-
-	function resetPointer() {
-		pointerTargetX = 0;
-		pointerTargetY = 0;
-	}
-
-	const resizeObserver =
-		typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(() => resize());
-	resizeObserver?.observe(canvas);
-
-	const intersectionObserver =
-		typeof IntersectionObserver === 'undefined'
-			? null
-			: new IntersectionObserver(
-					(entries) => {
-						intersecting = entries[0]?.isIntersecting ?? true;
-						schedule();
-					},
-					{ root: null, rootMargin: '64px' }
-				);
-	intersectionObserver?.observe(canvas);
 
 	const rootObserver =
 		typeof MutationObserver === 'undefined'
@@ -616,13 +544,7 @@ export function createAmbientField(
 		attributeFilter: ['class', 'data-theme']
 	});
 
-	document.addEventListener('visibilitychange', handleVisibilityChange);
 	window.addEventListener('resize', resize, { passive: true });
-	window.addEventListener('pointermove', handlePointerMove, { passive: true });
-	window.addEventListener('pointerleave', resetPointer, { passive: true });
-	reducedMotionQuery.addEventListener('change', handleMediaChange);
-	forcedColoursQuery.addEventListener('change', handleMediaChange);
-	printQuery.addEventListener('change', handleMediaChange);
 	coarsePointerQuery.addEventListener('change', handleMediaChange);
 
 	refreshPalette();
@@ -637,6 +559,9 @@ export function createAmbientField(
 				options.pathname !== nextOptions.pathname || options.biome !== nextOptions.biome;
 			options = { ...nextOptions };
 			refreshPalette();
+			canvas.dataset.ambientFrameCap = String(
+				resolveAmbientFrameRate(options.motion, width, coarsePointer)
+			);
 			if (rebuild) rebuildGraph(routeChanged);
 			schedule();
 		},
@@ -645,16 +570,8 @@ export function createAmbientField(
 			destroyed = true;
 			if (frameId !== 0) cancelAnimationFrame(frameId);
 			frameId = 0;
-			resizeObserver?.disconnect();
-			intersectionObserver?.disconnect();
 			rootObserver?.disconnect();
-			document.removeEventListener('visibilitychange', handleVisibilityChange);
 			window.removeEventListener('resize', resize);
-			window.removeEventListener('pointermove', handlePointerMove);
-			window.removeEventListener('pointerleave', resetPointer);
-			reducedMotionQuery.removeEventListener('change', handleMediaChange);
-			forcedColoursQuery.removeEventListener('change', handleMediaChange);
-			printQuery.removeEventListener('change', handleMediaChange);
 			coarsePointerQuery.removeEventListener('change', handleMediaChange);
 			setState('off');
 		}

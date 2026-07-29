@@ -242,7 +242,7 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 			path: '/resume',
 			biome: 'healthcare',
 			intensity: 'minimal',
-			ambient: 'animated'
+			ambient: 'static'
 		},
 		{
 			path: '/blog/visualizations',
@@ -254,7 +254,7 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 			path: articlePath,
 			biome: 'quiet',
 			intensity: 'header-only',
-			ambient: 'animated'
+			ambient: 'static'
 		}
 	] as const;
 
@@ -477,24 +477,22 @@ test('eligible navigation uses the View Transition handshake while off routes sk
 	).toBe(1);
 });
 
-test('an article header field pauses offscreen and resumes without remounting', async ({
+test('an article header atmosphere stays static while its scope follows the header', async ({
 	page
 }) => {
 	await page.goto(articlePath);
 
-	const canvas = page.locator('[data-ambient-field]');
-	await expect(canvas).toHaveCount(1);
-	await expect(canvas).toHaveAttribute('data-ambient-active', 'true');
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'running');
+	const atmosphere = page.locator('[data-route-atmosphere]');
+	await expect(atmosphere).toHaveAttribute('data-ambient', 'static');
+	await expect(atmosphere).toHaveAttribute('data-active', 'true');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 
 	await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-	await expect(canvas).toHaveAttribute('data-ambient-active', 'false');
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'paused');
-	await expect(canvas).toHaveCount(1);
+	await expect(atmosphere).toHaveAttribute('data-active', 'false');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 
 	await page.evaluate(() => window.scrollTo(0, 0));
-	await expect(canvas).toHaveAttribute('data-ambient-active', 'true');
-	await expect(canvas).toHaveAttribute('data-ambient-state', 'running');
+	await expect(atmosphere).toHaveAttribute('data-active', 'true');
 });
 
 test('reveals use the viewport observer, have no timer fallback, and yield to still mode', async ({
@@ -548,7 +546,7 @@ test('reveals use the viewport observer, have no timer fallback, and yield to st
 	await expect(reveals.first()).toBeVisible();
 });
 
-test('reveal content falls back to its visible state when IntersectionObserver is unavailable', async ({
+test('static content and header atmosphere remain visible without IntersectionObserver', async ({
 	page
 }) => {
 	await page.addInitScript(() => {
@@ -564,4 +562,10 @@ test('reveal content falls back to its visible state when IntersectionObserver i
 	await expect(reveal).toHaveClass(/is-visible/);
 	await expect(reveal).not.toHaveClass(/reveal-enhanced/);
 	await expect(reveal).toBeVisible();
+
+	await page.goto(articlePath);
+	const atmosphere = page.locator('[data-route-atmosphere]');
+	await expect(atmosphere).toHaveAttribute('data-ambient', 'static');
+	await expect(atmosphere).toHaveAttribute('data-active', 'true');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 });

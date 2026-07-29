@@ -41,6 +41,9 @@
 		onstatus
 	}: Props = $props();
 
+	const targetRenderInterval = FIXED_TIME_STEP * 1000;
+	const frameEarlyTolerance = 1;
+
 	let canvas = $state<HTMLCanvasElement>();
 	let host = $state<HTMLDivElement>();
 	let canvasEnabled = $state(true);
@@ -57,6 +60,7 @@
 	let pixelRatio = 1;
 	let accumulator = 0;
 	let previousTimestamp = 0;
+	let nextRenderAt = 0;
 	let lastTelemetryAt = 0;
 	let lastHistoryAt = -1;
 	let framesSinceTelemetry = 0;
@@ -230,10 +234,20 @@
 
 	function frame(timestamp: number) {
 		if (!engine || !visible || document.hidden) return;
+		if (nextRenderAt > 0 && timestamp + frameEarlyTolerance < nextRenderAt) {
+			animationFrame = requestAnimationFrame(frame);
+			return;
+		}
+
+		if (nextRenderAt === 0) nextRenderAt = timestamp;
+		const lateness = Math.max(0, timestamp - nextRenderAt);
+		nextRenderAt += (Math.floor(lateness / targetRenderInterval) + 1) * targetRenderInterval;
+
 		if (previousTimestamp === 0) previousTimestamp = timestamp;
 		const elapsed = Math.min(0.1, Math.max(0, (timestamp - previousTimestamp) / 1000));
 		previousTimestamp = timestamp;
 		framesSinceTelemetry += 1;
+		let advanceCompleted = false;
 
 		if (!paused) {
 			accumulator += elapsed * parameters.simulationSpeed;
@@ -250,26 +264,41 @@
 			stepBudget -= steps;
 			if (stepBudget === 0) {
 				onstatus('Advance complete: 8 simulated seconds (240 fixed ticks).');
-				publish(true);
+				advanceCompleted = true;
 			}
 		}
 
 		render();
+		if (advanceCompleted) {
+			framesPerSecond = 0;
+			framesSinceTelemetry = 0;
+			lastTelemetryAt = timestamp;
+			publish(true);
+			animationFrame = 0;
+			return;
+		}
 		if (timestamp - lastTelemetryAt >= 500) {
 			framesPerSecond = (framesSinceTelemetry * 1000) / Math.max(1, timestamp - lastTelemetryAt);
 			framesSinceTelemetry = 0;
 			lastTelemetryAt = timestamp;
 			publish();
 		}
-		animationFrame = requestAnimationFrame(frame);
+		animationFrame = !paused || stepBudget > 0 ? requestAnimationFrame(frame) : 0;
 	}
 
 	function schedule() {
 		cancelAnimationFrame(animationFrame);
+		animationFrame = 0;
 		previousTimestamp = 0;
+		nextRenderAt = 0;
 		lastTelemetryAt = performance.now();
 		framesSinceTelemetry = 0;
-		if (visible && !document.hidden && canvasEnabled) animationFrame = requestAnimationFrame(frame);
+		if (visible && !document.hidden && canvasEnabled && (!paused || stepBudget > 0)) {
+			animationFrame = requestAnimationFrame(frame);
+		} else if (framesPerSecond !== 0) {
+			framesPerSecond = 0;
+			publish();
+		}
 	}
 
 	function resize() {
@@ -285,7 +314,29 @@
 
 	$effect(() => {
 		const currentParameters = parameters;
-		if (engine) engine.setParameters(currentParameters);
+		if (engine) {
+			engine.setParameters(currentParameters);
+			if (paused) render();
+		}
+	});
+
+	$effect(() => {
+		const isPaused = paused;
+		if (!engine) return;
+		if (isPaused && stepBudget === 0) {
+			schedule();
+			render();
+			return;
+		}
+		schedule();
+	});
+
+	$effect(() => {
+		const highlighted = highlightLineage;
+		if (engine && paused) {
+			void highlighted;
+			render();
+		}
 	});
 
 	$effect(() => {
@@ -336,8 +387,7 @@
 		const intersectionObserver = new IntersectionObserver(
 			(entries) => {
 				visible = entries[0]?.isIntersecting ?? true;
-				if (visible) schedule();
-				else cancelAnimationFrame(animationFrame);
+				schedule();
 			},
 			{ rootMargin: '120px' }
 		);
@@ -365,6 +415,8 @@
 		<canvas
 			bind:this={canvas}
 			class="block h-full w-full"
+			data-render-frame-cap="30"
+			data-simulation-state={paused ? 'paused' : 'running'}
 			aria-label="A living digital ecosystem. Inherited traits visibly change each microbe's body shape, cilia, flagella, armour, internal organelles, and colour. Young microbes are small and translucent; adults are vivid; elders become pale and scarred. Gold gulps mark feeding, cyan ripples mark collisions, bright rings mark births, and coral hunters visibly swallow prey."
 		>
 			<img src={poster} alt="Static poster for the Evolving Microbe Garden" />

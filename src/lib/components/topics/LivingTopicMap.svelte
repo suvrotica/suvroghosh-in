@@ -268,8 +268,8 @@
 		opacity: 0.54;
 		pointer-events: none;
 		transition:
-			stroke-width var(--motion-base) var(--ease-out-quart),
-			opacity var(--motion-base) var(--ease-out-quart);
+			stroke-width var(--motion-fast) var(--ease-out-quart),
+			opacity var(--motion-fast) var(--ease-out-quart);
 	}
 
 	.living-topic-map__edge--principal {
@@ -303,7 +303,7 @@
 		stroke-width: 1.5;
 		opacity: 0;
 		pointer-events: none;
-		transition: opacity var(--motion-base) var(--ease-out-quart);
+		transition: opacity var(--motion-fast) var(--ease-out-quart);
 	}
 
 	.living-topic-map__nodes a[data-importance='major'] .living-topic-map__node-halo {
@@ -319,8 +319,8 @@
 		stroke: var(--control-border);
 		stroke-width: 1.75;
 		transition:
-			fill var(--motion-base) var(--ease-out-quart),
-			stroke-width var(--motion-base) var(--ease-out-quart);
+			fill var(--motion-fast) var(--ease-out-quart),
+			stroke-width var(--motion-fast) var(--ease-out-quart);
 	}
 
 	.living-topic-map__node-label,
@@ -479,7 +479,7 @@
 	@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
 		:global(html:not([data-motion='still'])) .living-topic-map__edge--principal {
 			stroke-dasharray: 1;
-			animation: living-topic-route-draw 720ms var(--ease-out-quart) both;
+			animation: living-topic-route-draw 720ms var(--ease-out-quart);
 			animation-delay: calc(var(--topic-route-index) * 30ms);
 			animation-iteration-count: 1;
 		}

@@ -10,7 +10,8 @@ export default defineConfig({
 		'motion.spec.ts',
 		'home-motion.spec.ts',
 		'phase3-motion.spec.ts',
-		'phase4-topic-map.spec.ts'
+		'phase4-topic-map.spec.ts',
+		'phase5-performance.spec.ts'
 	],
 	fullyParallel: false,
 	workers: 1,

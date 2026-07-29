@@ -1,8 +1,8 @@
 # The Living Archive — motion system
 
-This document is the operating contract for the Phase 0–4 Living Archive
-foundation. It describes the system as implemented, the boundaries later work
-must preserve, and the checks to run when extending it.
+This document is the operating contract for the completed Phase 0–5 Living
+Archive motion system. It describes the system as implemented, the boundaries
+later work must preserve, and the checks to run when extending it.
 
 The system is progressive enhancement. Content, navigation, route structure,
 SEO/schema, themes, article tools, games, note canvases, and visualization
@@ -29,13 +29,13 @@ Phase 1 adds one shared motion operating system:
 - reduced-motion, still, forced-colours, print, no-JavaScript, and
   special-route fallbacks.
 
-Phase 2 uses that foundation for the home page:
+Phase 2 used that foundation for the home page:
 
-- `LivingHero` and the finite, accessible `KineticLine`;
+- `LivingHero` and an accessible identity line (made static in Phase 5);
 - `ReadingPathRail`, sourced from the validated `/start-here` definitions;
 - distinct Professional and Writing `WorldPortal` link groups;
 - `RecentSignalGrid` with deterministic inline-SVG `SignalGlyph` decoration;
-- the shared `livingCard` attachment for bounded decorative interaction;
+- semantic cards with static decorative underlays;
 - responsive full-bleed composition with static SSR, no-JavaScript,
   high-contrast, forced-colour, reduced-motion, coarse-pointer, and print
   states.
@@ -46,8 +46,8 @@ Phase 3 extends the same owner to ordinary routes without adding a renderer:
   `/writing` cards reuse deterministic `SignalGlyph` decoration;
 - article headers inherit the validated essay-ink family while the prose,
   tables, quotations, code, footnotes, TTS, images, and TOC remain still;
-- article and résumé fields use a shared header scope that pauses the mounted
-  Canvas after the marked top region leaves the viewport;
+- article and résumé fields use a shared static header scope that quiets after
+  the marked top region leaves the viewport;
 - healthcare/project/consulting/Gulf/résumé headers receive static system-grid
   edge detail;
 - the notes index receives static graphite/under-sheet detail while public
@@ -71,6 +71,12 @@ Phase 4 adds a deterministic, accessible topic-map layer to `/topics`:
   the map has no force simulation, runtime layout measurement, Canvas, D3,
   frame loop, pan/zoom, or dependency.
 
+Phase 5 profiles the production result and subtracts work. It makes article and
+résumé ambience static, removes the home timer and pointer-following card
+attachment, deletes whole-page entry and orphaned constellation animation,
+adds pure frame/backing-store quality policy, consolidates lifecycle ownership,
+and caps/stops the Artificial Life renderer.
+
 The root layout owns route-level atmosphere and route transitions. Individual
 pages must not mount another ambient renderer. Specialist experiences continue
 to own their existing loops and shells.
@@ -84,13 +90,13 @@ to own their existing loops and shells.
 | Pure preference policy | `src/lib/motion/preferences.ts`                    | Validate/normalise preferences and gate the Canvas                             |
 | Pure route policy      | `src/lib/motion/route-biomes.ts`                   | Resolve route atmosphere and View Transition eligibility                       |
 | Stable randomness      | `src/lib/motion/seed.ts`                           | Produce deterministic per-path, per-biome graphs                               |
+| Pure quality policy    | `src/lib/motion/quality.ts`                        | Cap rendered cadence and total Canvas backing pixels                           |
 | Header control         | `src/lib/components/motion/MotionSelect.svelte`    | Persist and synchronise a user preference                                      |
 | SSR atmosphere owner   | `src/lib/components/motion/RouteAtmosphere.svelte` | Render the static layer and gate the client enhancement                        |
 | Canvas component       | `src/lib/components/motion/AmbientField.svelte`    | Attach one Canvas controller and forward reactive options                      |
 | Canvas engine          | `src/lib/motion/ambient-field.ts`                  | Draw, resize, pause, resume, update, and tear down Canvas 2D                   |
 | Reveal attachment      | `src/lib/attachments/reveal.ts`                    | Share one viewport observer across pending reveal elements                     |
 | Compatibility wrapper  | `src/lib/components/animation/ScrollReveal.svelte` | Preserve the existing `delay`, `class`, `tag`, and `children` API              |
-| Living-card attachment | `src/lib/attachments/living-card.ts`               | Bound pointer influence, share route reset, and clean up card state            |
 | Signal-glyph policy    | `src/lib/motion/signal-glyph.ts`                   | Generate stable, bounded inline-SVG geometry from post identity                |
 | Home composition       | `src/lib/components/home/*`                        | Render hero, reading paths, portals, recent signals, and semantic cards        |
 | Topic-map policy       | `src/lib/topics/topic-map.ts`                      | Derive deterministic territories, landmarks, links, labels, and mobile order   |
@@ -181,7 +187,8 @@ Resolution happens in three places for different lifecycle stages:
    including game and note-studio special shells that do not mount the header.
 3. `MotionSelect` adopts those attributes, persists deliberate changes,
    synchronises the desktop and mobile controls through
-   `site-motion-change`, and re-resolves when the OS media query changes.
+   `site-motion-change`. The root layout is the single owner that re-resolves
+   System when the OS media query changes.
 
 Storage and media-query access are defensive. Denied storage retains the
 system default; a missing media-query implementation resolves non-explicit
@@ -215,11 +222,11 @@ currently returns the same full configuration.
 | Calcutta/Kolkata category or topic indexes, including `/blog/calcutta-life` | `calcutta`   | `standard`    | `animated` | `viewport` |
 | `/topics` and ordinary topic headquarters                                   | `writing`    | `standard`    | `animated` | `viewport` |
 | Calcutta/Kolkata topic headquarters                                         | `calcutta`   | `standard`    | `animated` | `viewport` |
-| Ordinary `/blog/[category]/[slug]` article                                  | `quiet`      | `header-only` | `animated` | `header`   |
+| Ordinary `/blog/[category]/[slug]` article                                  | `quiet`      | `header-only` | `static`   | `header`   |
 | `/projects`                                                                 | `healthcare` | `quiet`       | `animated` | `viewport` |
 | `/consulting`                                                               | `healthcare` | `standard`    | `animated` | `viewport` |
 | `/healthcare-it-gulf`                                                       | `healthcare` | `quiet`       | `animated` | `viewport` |
-| `/resume`                                                                   | `healthcare` | `minimal`     | `animated` | `header`   |
+| `/resume`                                                                   | `healthcare` | `minimal`     | `static`   | `header`   |
 | `/notes` and authentication routes                                          | `notes`      | `quiet`       | `animated` | `viewport` |
 | `/contact` and unmatched normal-shell routes                                | `quiet`      | `minimal`     | `animated` | `viewport` |
 | `/blog/visualizations` index                                                | `lab`        | `standard`    | `static`   | `viewport` |
@@ -267,21 +274,21 @@ pass.
 
 `shouldRunAmbientField` requires:
 
-- a visible document;
 - resolved motion other than `still`;
 - a biome and intensity other than `off`;
 - `ambient: 'animated'`.
 
 `RouteAtmosphere` additionally blocks the enhancement for print,
-forced-colours, and the authored high-contrast theme. It watches `data-motion`,
-`data-theme`, document visibility, the relevant media queries, and—on
+forced-colours, the authored high-contrast theme, and a hidden document. It
+watches `data-motion`, `data-theme`, document visibility, the relevant media queries, and—on
 `scope: 'header'` routes—the element marked `[data-route-atmosphere-region]`.
-When the article or résumé header region leaves the viewport, its mounted
-controller pauses and the static layer fades to its quiet
-`data-active="false"` opacity. The field reports the same active state through
-`data-ambient-active`. The server renders the region active so its static
-atmosphere is intentional with no JavaScript; a supported viewport observer
-then owns the enhanced lifecycle.
+Article and résumé routes use only this static layer. When their marked header
+region leaves the viewport, that layer fades to its quiet
+`data-active="false"` opacity; they never fetch or mount the Canvas controller.
+The server renders the region active so its static atmosphere is intentional
+with no JavaScript. If the header marker or `IntersectionObserver` is
+unavailable, a static header atmosphere remains visible rather than being
+dimmed by a failed enhancement.
 
 The Canvas chunk is requested only when the route is eligible and the field is
 active. A failed dynamic import is not retried in a loop; the static SSR layer
@@ -297,30 +304,31 @@ produce arbitrary layouts.
 `aria-hidden` Canvas. The controller:
 
 - uses Canvas 2D only—no WebGL, Three.js, p5, D3, video, or motion dependency;
-- uses `ResizeObserver` to maintain the bitmap without layout reads in the
-  frame loop, with a passive window-resize fallback;
-- caps device pixel ratio at `1.5` on mobile/coarse pointers and `2` on
-  desktop;
-- uses a viewport `IntersectionObserver` with a `64px` margin;
-- pauses for hidden documents, offscreen Canvas, still/reduced motion,
-  forced-colours, print, inactive header regions, or zero geometry;
+- uses one passive window-resize owner and performs no layout read in the
+  frame loop;
+- caps device pixel ratio at `1.5` on compact/coarse surfaces and `2` on
+  desktop, then additionally caps the backing store at `1,250,000` or
+  `4,000,000` pixels respectively; backing dimensions use floor rounding so
+  those ceilings are exact;
+- accepts the canonical active state from `RouteAtmosphere`; visibility,
+  still/reduced motion, forced colours, print, and route eligibility are not
+  duplicated inside the drawing controller;
 - caps resumed frame delta at `0.05s`;
-- targets 30 fps for gentle mobile and 45 fps for gentle desktop; alive may
-  follow the display refresh rate;
+- caps Gentle at 30 rendered frames per second, Alive at 60 on desktop and 45
+  on compact/coarse surfaces;
 - bounds node, edge, and pulse counts by biome and viewport;
 - reads palette variables only on setup, option/theme changes, and resize—not
   on every frame;
-- allows at most 4 px of pointer influence in gentle and 10 px in alive, then
-  scales that by route intensity (`minimal` has none);
-- disables pointer influence for coarse pointers and still mode;
-- uses passive pointer listeners;
-- cancels animation frames and disconnects every observer, media listener,
-  visibility listener, and pointer listener on teardown.
+- has no global pointer listener or pointer-following displacement;
+- cancels its animation frame and releases its resize, palette, and compact
+  pointer listeners on teardown.
 
 The Canvas exposes `data-ambient-state="off|paused|running"` and
-`data-ambient-active="true|false"` for diagnostics. Changing route, biome,
-intensity, or motion rebuilds the bounded deterministic graph. Changing only
-active state pauses or resumes the existing graph without destroying it.
+`data-ambient-active="true|false"`,
+`data-ambient-frame-cap="<number>"`, and
+`data-ambient-backing-pixels="<number>"` for diagnostics. Changing route,
+biome, intensity, or motion rebuilds the bounded deterministic graph. Changing
+only active state pauses or resumes the existing graph without destroying it.
 
 ## Reveal contract
 
@@ -361,7 +369,8 @@ A transition is eligible only when:
 - source and destination normalised pathnames differ, so hash-only changes are
   excluded;
 - both routes are eligible according to `isViewTransitionRoute`;
-- neither route is `off` or the static, loop-owning visualizations index.
+- neither route is `off` nor `static` (including articles, résumé, and the
+  loop-owning visualizations index).
 
 Do not wait on a long animation promise or introduce a page loader. Unsupported
 and ineligible cases use normal SvelteKit navigation. Only the root owns a
@@ -433,20 +442,19 @@ route therefore does not duplicate copy or serialize the fifteen selected
 posts. Each rail card is one native link to `/start-here#<id>`; the complete
 “Explore the reading paths” link remains separate.
 
-### Hero and finite kinetic line
+### Hero and static identity line
 
 `LivingHero` uses a controlled breakout capped at `96rem` and keeps the
 existing identity, role, paragraph, and five CTAs in SSR. Resume remains the
 first primary action. The right-hand specimen is CSS-only, decorative, and
 static; it does not mount another Canvas or request media.
 
-`KineticLine` contains all four decorative statements in a stable shared grid
-cell and one complete screen-reader sentence outside the `aria-hidden` visual
-stack. One timeout at a time advances through the four whole statements,
-returns to the first, and settles. It pauses while the document is hidden and
-resets to its static first statement for still, reduced motion, authored high
-contrast, forced colours, and print. It has no `aria-live` region, typewriter,
-scramble, interval, or animation-frame loop.
+The former `KineticLine` now renders the four authored sentences together and
+verbatim. It is identical in Still, Gentle, Alive, SSR, and no-JavaScript
+output. Phase 5 removed the timer, hidden alternate statements, media
+listeners, mutation observer, and transition because the third delayed phrase
+became a new LCP candidate after three seconds. It has no `aria-live` region,
+typewriter, scramble, timeout, interval, or animation-frame loop.
 
 Diagnostics:
 
@@ -461,25 +469,15 @@ document.querySelector('[data-kinetic-line]')?.dataset.kineticIndex;
 cards. `WorldPortal.svelte` renders an `<article>` containing normal link
 groups, avoiding nested anchors and synthetic link roles.
 
-The `livingCard` attachment:
+Phase 5 removed the `livingCard` attachment. Eleven home instances previously
+created 143 element/window/media-query listener registrations to move only the
+decorative underlay by a few pixels. Underlays are now static in every mode,
+carry no inline motion variables, and never acquire `will-change`.
 
-- reads resolved `html[data-motion]`;
-- requires `alive`, a fine hover pointer, no reduced motion, no authored high
-  contrast, no forced colours, and no print;
-- reads one bounding rectangle on pointer entry;
-- coalesces pointer moves into at most one scheduled animation frame;
-- caps decorative underlay displacement at 5 px horizontally, 4 px
-  vertically, and 1.15 degrees;
-- never transforms the text layer;
-- resets on leave, cancel, focus, blur, policy change, route navigation, and
-  attachment teardown;
-- adds `will-change` only while
-  `data-living-card-active="true"`.
-
-Gentle hover uses only a fixed 1.5 px card lift and stable underlay/border
-change. Keyboard focus receives a strong outline and fixed underlay state with
-no pointer tilt. Container portals have no added `tabindex`; their existing
-links retain the normal focus order.
+Fine-pointer hover retains only a fixed 1.5 px card lift plus the existing
+border/shadow response. Keyboard focus receives the strong outline without
+physical displacement. Container portals have no added `tabindex`; their
+existing links retain the normal focus order.
 
 ### Recent signals
 
@@ -506,8 +504,8 @@ draw one primary path once on hover or focus. No card owns a continuous loop.
   while retaining real borders and focus;
 - print removes decoration and transforms the rail/portals/signals into simple
   two-column document grids;
-- without JavaScript, the first kinetic statement, complete assistive
-  sentence, all copy, every link, and deterministic SVG markup remain present.
+- without JavaScript, the complete static identity sentence, all copy, every
+  link, and deterministic SVG markup remain present.
 
 ## Phase 3 route dialects and quiet reading
 
@@ -520,8 +518,9 @@ schema.
 
 `/writing`, `/blog`, category indexes, topic indexes, and year/month archives
 mark their existing top header as `data-route-scene="writing"`. Static
-theme-token contours occupy only the header edges. The centre remains clear,
-and the existing `.page-enter` is the only route-entry motion.
+theme-token contours occupy only the header edges. The centre remains clear.
+Legacy `.page-enter` class names are inert; an eligible native root View
+Transition is the only generic route-entry motion.
 
 The first two recent cards on `/writing` reuse `SignalGlyph.svelte`. Their paths
 remain derived solely from slug and category, are fully present in SSR, and do
@@ -533,14 +532,14 @@ transition would not reliably preserve orientation.
 ### Article header and reading body
 
 The validated `essayInk` returned by the existing article loader is propagated
-to `data-essay-ink` on `.site-shell`. Both static atmosphere layers and the
-progressively loaded Canvas therefore inherit the same contrast-normalised
-family as the existing title line and reading-progress indicator.
+to `data-essay-ink` on `.site-shell`. The static atmosphere layers therefore
+inherit the same contrast-normalised family as the existing title line and
+reading-progress indicator.
 
 Only the existing article header is marked
 `data-route-atmosphere-region data-route-scene="article"`. The Markdown
 container is marked `data-article-reading-region` for diagnostics, but receives
-no reveal, parallax, tilt, or animation behavior. The current reading-progress
+no reveal, parallax, tilt, entry, or Canvas animation behavior. The current reading-progress
 indicator, TTS, actions, quick answer, notebook, mobile/desktop TOC, prose,
 tables, code, medical content, images, word cloud, navigation, related posts,
 SEO, and schema are unchanged. No title-level named View Transition is used
@@ -556,8 +555,8 @@ in high contrast, forced colours, and print.
 
 Projects, consulting, and Gulf keep their existing low/medium viewport fields.
 The résumé uses `scope: 'header'` and marks only its document header as the
-atmosphere region. Its minimal Canvas therefore pauses as soon as the reader
-moves into the long document; print remains an undecorated résumé.
+atmosphere region. Its minimal atmosphere is static and quiets as soon as the
+reader moves into the long document; print remains an undecorated résumé.
 
 ### Notes and lab ownership
 
@@ -571,7 +570,10 @@ The visualizations index keeps a `static` global lab atmosphere because its
 featured Artificial Life component already owns the active loop. Static orbital
 rings sit inside the existing decorative hero layer, and
 `data-local-animation-owner="artificial-life"` makes ownership inspectable.
-Every interactive visualization descendant still resolves `off`.
+Its expensive model/render pass is capped at the model's native 30 Hz and
+exposes `data-render-frame-cap="30"`. Pausing the model stops its steady draw
+loop; resume and fixed-step advance restart it explicitly. Every interactive
+visualization descendant still resolves `off`.
 
 ### Active route line
 
@@ -633,6 +635,36 @@ removing or simplifying decorative territory and line work. No Phase 4 code
 imports D3, mounts Canvas, starts a timer or animation frame, or adds a
 continuous loop.
 
+## Phase 5 measured subtraction
+
+Phase 5 adds no visual effect. Local production profiling identified late LCP,
+whole-page entry movement, refresh-rate-dependent drawing, oversized backing
+stores, duplicated ownership, and listener-heavy pointer decoration. The
+final policy is:
+
+- the complete home identity line is visible immediately and never cycles;
+- `.page-enter` remains only as an inert compatibility class, while its
+  keyframe and rule are deleted;
+- article and résumé atmospheres are static, header-scoped CSS with zero
+  ambient Canvas;
+- the ambient controller has one lifecycle owner, no pointer influence, an
+  area-aware pixel budget, and explicit Gentle/Alive cadence caps;
+- home card underlays are static, and keyboard focus never moves a card;
+- topic-map focus/hover feedback uses the fast token and completed route-entry
+  animations retain no fill state;
+- the unused `TopicConstellation` component, its infinite pulse, the unused
+  fade keyframe, and all constellation compatibility rules are deleted;
+- the Artificial Life index remains its own local owner but performs its heavy
+  model/render work at no more than 30 Hz and does no steady drawing while
+  paused.
+
+The generic native root View Transition remains because it is finite, feature
+detected, preference gated, and already preserves ordinary navigation.
+Article, résumé, static, and specialist routes are ineligible. The Phase 5
+profile found no measured problem that would be solved by a named title
+transition, scroll-linked line, footer constellation, custom cursor, second
+quality layer, or new RUM effect, so none was added.
+
 ## Accessibility and fallback matrix
 
 | Environment                      | Required result                                                                 |
@@ -644,7 +676,7 @@ continuous loop.
 | Forced colours                   | Atmosphere removed/simplified; borders, links, focus, and active state retained |
 | Authored high-contrast theme     | Decorative atmosphere hidden; authored high-contrast content retained           |
 | Print                            | Atmosphere and View Transitions absent; article structure and links printable   |
-| Coarse pointer/touch             | No ambient pointer influence or LivingCard tilt                                 |
+| Coarse pointer/touch             | Static card underlays; compact Canvas cadence and pixel budget                  |
 | Canvas/observer unsupported      | Static atmosphere and immediately visible reveal content                        |
 | Background tab/offscreen field   | Animation frame loop paused                                                     |
 | Specialist route                 | Existing shell/controls retain ownership; global field and transition absent    |
@@ -665,6 +697,8 @@ Pure policy coverage lives beside the implementation:
   metadata refinement, and View Transition eligibility;
 - `seed.test.ts`: stable hashing, pathname normalisation, repeatable PRNG, and
   per-biome streams;
+- `quality.test.ts`: cadence policy, compact/coarse classification,
+  invalid-DPR safety, and absolute backing-pixel budgets;
 - `signal-glyph.test.ts`: repeatable content-derived models, seed
   differentiation, finite SVG instructions, and bounded nodes.
 - `topic-map.test.ts`: deterministic territory/landmark geometry, canonical
@@ -685,9 +719,10 @@ covers the topic-map model and summary relationship contract.
 `playwright.motion.config.ts` isolates `tests/browser/motion.spec.ts`,
 `tests/browser/home-motion.spec.ts`, and
 `tests/browser/phase3-motion.spec.ts`, plus
-`tests/browser/phase4-topic-map.spec.ts`, from the existing component-test
-configuration. It builds the SvelteKit site, serves it on port `4211`, and uses
-one headless Chromium/Chrome worker. The focused browser suite covers
+`tests/browser/phase4-topic-map.spec.ts` and
+`tests/browser/phase5-performance.spec.ts`, from the existing component-test
+configuration. It builds the SvelteKit site, serves it on port `4211`, and
+uses one headless Chromium/Chrome worker. The focused browser suite covers
 pre-hydration OS precedence, control accessibility and
 synchronisation, persistence across navigation/reload, reduced-motion
 authority, the paper/night/high-contrast and still/gentle/alive matrix,
@@ -695,19 +730,19 @@ forced-colours and print suppression, mobile overflow and menu focus return,
 normal/static/off route ownership, protected note-studio isolation, article
 body quieting, fixed inert atmosphere geometry, no-JavaScript SSR/static
 fallback, View Transition API fallback, the eligible/off-route transition
-handshake, article-header Canvas pause/resume without remounting, the shared
+handshake, static article/résumé scopes, the shared
 viewport reveal observer, removal of the timer fallback, still-mode reveal
 flushing, and the no-`IntersectionObserver` fallback.
 
 Home coverage additionally verifies the preserved content/SEO/link contract,
 canonical reading paths, valid portal structure, deterministic inline glyphs,
-finite kinetic lifecycle, desktop/mobile breakout geometry, native mobile
-rail, still/reduced/coarse behavior, bounded fine-pointer variables, stable
+the complete static identity line, desktop/mobile breakout geometry, native
+mobile rail, still/reduced/coarse behavior, static card underlays, stable
 keyboard focus, no-JavaScript meaning, one atmosphere owner, no video or local
-Canvas, and inactive `will-change`.
+Canvas, and no decorative `will-change`.
 
 Phase 3 coverage verifies all route scene/scope contracts, essay-ink
-inheritance, a long healthcare article, article and résumé Canvas pausing,
+inheritance, a long healthcare article, static article and résumé atmospheres,
 reading-body class cleanliness, reading-progress/TTS/TOC/table preservation,
 the semantic active-route line and all fallbacks, notes/public-note/studio
 ownership, the static lab field beside its local Artificial Life Canvas,
@@ -725,6 +760,16 @@ theme authority, System/OS resolution, no-JavaScript Night HTML, still and
 reduced motion, authored High Contrast, forced colours, print, mobile overflow,
 and the absence of Canvas, D3, force simulation, pan/zoom, and continuous map
 animation.
+
+Phase 5 coverage observes late home LCP and CLS, verifies that the atmosphere
+is never an LCP candidate, samples actual ambient Canvas clears, asserts the
+desktop/compact cadence and backing-store budgets at DPR 3, deterministically
+simulates hidden/visible lifecycle changes without remounting, checks a trusted
+keyboard control against a broad 200 ms interaction-to-next-paint ceiling,
+checks every article-reading ancestor for owned animation, verifies
+article/résumé/static/off ownership, gates Artificial Life telemetry at 35 fps
+or lower, and verifies that explicit pause, fixed-step completion, and actual
+offscreen state stop drawing and report 0 fps before a clean resume.
 
 The release command matrix remains:
 
@@ -749,6 +794,8 @@ document.querySelector('[data-route-atmosphere]')?.dataset;
 document.querySelector('[data-route-atmosphere]')?.dataset.scope;
 document.querySelector('[data-ambient-field]')?.dataset.ambientState;
 document.querySelector('[data-ambient-field]')?.dataset.ambientActive;
+document.querySelector('[data-ambient-field]')?.dataset.ambientFrameCap;
+document.querySelector('[data-ambient-field]')?.dataset.ambientBackingPixels;
 document.querySelector('[data-route-scene]')?.dataset.routeScene;
 document.querySelector('[data-local-animation-owner]')?.dataset.localAnimationOwner;
 document.querySelector('[data-kinetic-line]')?.dataset;
@@ -766,8 +813,9 @@ Expected Canvas queries:
   state `running` while visible;
 - still, authored high contrast, forced-colours, print, `off`, or `static`
   route: no running ambient Canvas;
-- hidden tab or an inactive article/résumé header field: mounted field state
-  `paused` after it has loaded;
+- hidden document on an ordinary animated route: the mounted field reports
+  `paused` and resumes without remounting;
+- article and résumé routes: static atmosphere and zero ambient Canvas;
 - no route may contain more than one global `[data-route-atmosphere]`.
 
 For browser testing, cover desktop `1440 × 1000`, mobile `390 × 844`, paper,
@@ -782,7 +830,7 @@ pollution.
 The atmosphere is a quality layer, never the LCP candidate. Hero/page text and
 meaningful HTML arrive without waiting for Canvas.
 
-Phase 1–4 performance boundaries:
+Phase 1–5 performance boundaries:
 
 - no new external service, background-media, image, or video request; an
   eligible route fetches the required local lazy Canvas JavaScript chunk;
@@ -793,7 +841,8 @@ Phase 1–4 performance boundaries:
 - approximately 20–30 kB gzip maximum new homepage JavaScript, preferably less;
 - no layout shift from late Canvas sizing;
 - bounded arrays and no allocation-heavy layout reads in the frame loop;
-- idle means no scheduled animation frame;
+- an ineligible or inactive global field has no pending ambient animation
+  frame;
 - no more than a five-point Lighthouse performance decline from the recorded
   baseline without explicit review.
 
@@ -843,6 +892,29 @@ The final Phase 4 production build stays route-scoped:
 | Root + topics union, raw/gzip        | 159,388 B / 62,633 B  |
 | Prerendered `/topics` HTML           | 88,730 B              |
 | Phase 4 comparison screenshots       | Six captured/reviewed |
+
+The final Phase 5 build is smaller at the root and home boundaries:
+
+| Measurement                   | Phase 4 checkpoint   | Phase 5              | Change              |
+| ----------------------------- | -------------------- | -------------------- | ------------------- |
+| Root layout node, raw/gzip    | 37,928 B / 12,116 B  | 37,872 B / 12,097 B  | −56 B / −19 B       |
+| Root static closure, raw/gzip | 132,639 B / 52,227 B | 132,587 B / 52,208 B | −52 B / −19 B       |
+| Root CSS, raw/gzip            | 187,770 B / 30,503 B | 184,887 B / 30,033 B | −2,883 B / −470 B   |
+| Root + home union, raw/gzip   | 194,951 B / 74,764 B | 190,625 B / 73,382 B | −4,326 B / −1,382 B |
+| Lazy ambient entry, raw/gzip  | 8,763 B / 3,501 B    | 7,909 B / 3,293 B    | −854 B / −208 B     |
+| Lab incremental closure       | 82,160 B / 28,990 B  | 82,861 B / 29,399 B  | +701 B / +409 B     |
+
+The small lab increase is the explicit 30 Hz deadline, pause/offscreen idle
+gate, zero-idle telemetry, and diagnostic attribute. Direct article and résumé
+landings no longer request the lazy ambient entry at runtime. `/topics` stays
+unchanged apart from the smaller root closure: its incremental closure remains
+effectively unchanged at 26,749 B / 10,405 B gzip. The final prerendered home
+and `/topics` HTML are 69,519 B and 88,732 B respectively.
+
+On the same local production Chrome run used for the Phase 5 comparison, final
+home LCP was 640 ms desktop and 216 ms mobile, down from 3,500 ms and 3,036 ms.
+Article LCP was 280 ms desktop and 248 ms mobile with zero ambient Canvas.
+These are local diagnostics rather than field p75 Web Vitals.
 
 Compare production build output with the chunk observations in
 `motion-baseline.md`. Inspect generated churn after `npm run build`; restore
@@ -925,3 +997,22 @@ Phase 4 deliberately does not redesign the homepage, replace canonical topic
 cards, animate topic layout, add a force solver, D3, Canvas, WebGL, pan/zoom,
 dragging, runtime geometry measurement, continuous map motion, a new network
 request, or a dependency.
+
+## Phase 5 completion boundary
+
+Phase 5 completes the brief's profiling and subtraction pass. No Phase 2,
+Phase 3, or Phase 4 implementation remains deferred. The following optional
+ideas were reconsidered against measurements and deliberately rejected:
+
+- a named title View Transition;
+- a progressive scroll-linked line;
+- a footer constellation;
+- pointer-following cards or atmosphere;
+- another ambient engine or visual quality layer;
+- new motion-specific telemetry beyond the existing Vercel Speed Insights and
+  the local regression harness.
+
+They would add motion or ownership without solving a measured problem. Future
+work should begin with fresh field or same-machine evidence, preserve the
+single-owner rules here, and treat the Phase 5 cadence/pixel budgets as upper
+bounds rather than targets.

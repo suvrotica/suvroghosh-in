@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { beforeNavigate } from '$app/navigation';
-	import { resetAllLivingCards } from '$lib/attachments/living-card';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
 	import LivingHero from '$lib/components/home/LivingHero.svelte';
 	import ReadingPathRail from '$lib/components/home/ReadingPathRail.svelte';
@@ -28,8 +26,6 @@
 		{ label: 'Music', href: resolve('/topics/[slug]', { slug: 'songs' }) },
 		{ label: 'Newsletter', href: substackLinks.subscribe, external: true }
 	];
-
-	beforeNavigate(resetAllLivingCards);
 </script>
 
 <SEO {...siteSEO} schema={withSiteGraph()} />

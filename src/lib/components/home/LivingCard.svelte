@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
-	import { livingCard } from '$lib/attachments/living-card';
 
 	type Props = {
 		href: string;
@@ -20,7 +19,6 @@
 	class="living-card living-card--{variant} {className}"
 	data-living-card
 	data-living-card-variant={variant}
-	{@attach livingCard}
 	{...restProps}
 >
 	<span class="living-card__underlay" aria-hidden="true"></span>

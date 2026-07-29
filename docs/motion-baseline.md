@@ -435,6 +435,151 @@ video, or Canvas import. The increase is route-scoped model/component code,
 static SVG/HTML, and scoped finite CSS; the root static boundary and root CSS
 are effectively unchanged.
 
-Only Phase 5 remains deliberately deferred: profiling-led subtraction, then
-possible consideration of one named title transition, one progressive
-scroll-linked line, adaptive quality, or a footer constellation.
+## Phase 5 profiling and subtraction checkpoint
+
+Phase 5 starts from the pushed Phase 4 state above. Measurements used the
+production SvelteKit build, installed Chrome through Playwright, fresh contexts
+per route, default Night/System (resolved Gentle), `1440 × 1000` desktop and
+`390 × 844` mobile/touch viewports. Home was left untouched for the former
+sequence to settle. Performance observers were installed before application
+scripts. These single-run local diagnostics are useful for same-machine
+regression comparison; they are not field p75 Core Web Vitals or Lighthouse
+scores.
+
+### Measured defects before subtraction
+
+- Home emitted a new, larger LCP candidate when the third hidden statement
+  appeared: 3,500 ms desktop and 3,036 ms mobile.
+- explicit Alive ambient drawing followed the 90 Hz host at approximately
+  90.5 clears per second;
+- a desktop article allocated a 2,880 × 2,000 backing store
+  (5,760,000 pixels, about 23 MB raw RGBA) and cleared it in Gentle mode while
+  only its header was relevant;
+- `.page-enter` animated the ancestor of the entire article reading region
+  from opacity zero and a 16 px translation;
+- eleven home card attachments installed 143 element/window/media-query
+  listener registrations, including 77 global or media listeners;
+- the Artificial Life owner performed its model and full redraw at display
+  refresh and continued drawing when its own simulation was paused;
+- one unreferenced constellation component still shipped an infinite-pulse
+  rule and dead compatibility CSS.
+
+### Same-machine representative result
+
+| Surface                   | Before LCP | Phase 5 LCP | Before global Canvas | Phase 5 global Canvas | Phase 5 CLS |
+| ------------------------- | ---------: | ----------: | -------------------: | --------------------: | ----------: |
+| Home, desktop             |   3,500 ms |      640 ms |                    1 |                     1 |     0.00000 |
+| Home, mobile              |   3,036 ms |      216 ms |                    1 |                     1 |     0.00000 |
+| Long article, desktop     |     320 ms |      280 ms |                    1 |                     0 |     0.01028 |
+| Long article, mobile      |     252 ms |      248 ms |                    1 |                     0 |     0.00000 |
+| Games index, desktop      |     172 ms |    1,392 ms |                    0 |                     0 |     0.00000 |
+| Games index, mobile       |     168 ms |      172 ms |                    0 |                     0 |     0.00000 |
+| Lab index, desktop        |     260 ms |      292 ms |                    0 |                     0 |     0.00011 |
+| Lab index, mobile         |     252 ms |      164 ms |                    0 |                     0 |     0.00000 |
+| CT visualisation, desktop |     632 ms |      492 ms |                    0 |                     0 |     0.01437 |
+| CT visualisation, mobile  |   1,056 ms |      408 ms |                    0 |                     0 |     0.00000 |
+
+The games-index desktop candidate changed from early text to a later card image
+in this run, but remained below 2.5 seconds with zero motion owner; this
+illustrates why absolute local timings are reported rather than overclaimed.
+Every final LCP candidate was meaningful content outside the atmosphere.
+Gentle home drawing sampled at 21.1 clears/s desktop and 23.0 clears/s mobile
+on the 60 Hz headless run. The lab owner reported 30 fps desktop and 28 fps
+mobile, then stopped steady drawing when paused.
+
+The quality regression runs at DPR 3 and verifies:
+
+- at most 4,000,000 ambient backing pixels on desktop and 1,250,000 on
+  compact/coarse surfaces, with backing dimensions floored so rounding cannot
+  exceed either ceiling;
+- Gentle capped at 30 rendered frames/s;
+- Alive capped at 60 desktop and 45 compact/coarse;
+- deterministic hidden/visible pausing with at most one in-flight draw and no
+  Canvas remount;
+- a trusted keyboard control response painted within a broad 200 ms local
+  ceiling;
+- explicit pause, 240-tick completion, and actual offscreen Artificial Life
+  states stop drawing, report 0 fps, and resume without a duplicate loop;
+- zero ambient Canvas on article, résumé, static lab, and excluded routes.
+
+### Phase 5 production captures
+
+The comparison pairs use the default Night theme. Each pair was regenerated
+from the final production build and visually reviewed for content preservation,
+stable composition, readable focus/control structure, and absence of an
+atmosphere-owned content layer.
+
+| Surface         | Before                                                                                     | After                                                                                     | Dimensions    |
+| --------------- | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------- |
+| Home desktop    | [`home-desktop-night.png`](../artifacts/motion/phase5-before/home-desktop-night.png)       | [`home-desktop-night.png`](../artifacts/motion/phase5-after/home-desktop-night.png)       | `1440 × 1000` |
+| Writing desktop | [`writing-desktop-night.png`](../artifacts/motion/phase5-before/writing-desktop-night.png) | [`writing-desktop-night.png`](../artifacts/motion/phase5-after/writing-desktop-night.png) | `1440 × 1000` |
+| Article desktop | [`article-desktop-night.png`](../artifacts/motion/phase5-before/article-desktop-night.png) | [`article-desktop-night.png`](../artifacts/motion/phase5-after/article-desktop-night.png) | `1440 × 1000` |
+| Résumé desktop  | [`resume-desktop-night.png`](../artifacts/motion/phase5-before/resume-desktop-night.png)   | [`resume-desktop-night.png`](../artifacts/motion/phase5-after/resume-desktop-night.png)   | `1440 × 1000` |
+| Home mobile     | [`home-mobile-night.png`](../artifacts/motion/phase5-before/home-mobile-night.png)         | [`home-mobile-night.png`](../artifacts/motion/phase5-after/home-mobile-night.png)         | `390 × 844`   |
+| Article mobile  | [`article-mobile-night.png`](../artifacts/motion/phase5-before/article-mobile-night.png)   | [`article-mobile-night.png`](../artifacts/motion/phase5-after/article-mobile-night.png)   | `390 × 844`   |
+
+Final Paper-mode evidence was captured separately from the same build; the
+automated matrix also retains Paper, Night, authored High Contrast, forced
+colours, print, and reduced-motion coverage.
+
+| Surface         | Final Paper capture                                                                       | Dimensions    |
+| --------------- | ----------------------------------------------------------------------------------------- | ------------- |
+| Home desktop    | [`home-desktop-paper.png`](../artifacts/motion/phase5-after/home-desktop-paper.png)       | `1440 × 1000` |
+| Article desktop | [`article-desktop-paper.png`](../artifacts/motion/phase5-after/article-desktop-paper.png) | `1440 × 1000` |
+| Home mobile     | [`home-mobile-paper.png`](../artifacts/motion/phase5-after/home-mobile-paper.png)         | `390 × 844`   |
+| Article mobile  | [`article-mobile-paper.png`](../artifacts/motion/phase5-after/article-mobile-paper.png)   | `390 × 844`   |
+
+### Production bundle comparison
+
+Sizes use the client manifest and sum gzip per emitted file, consistent with
+the earlier checkpoints.
+
+| Measurement                   | Phase 4              | Phase 5              | Change              |
+| ----------------------------- | -------------------- | -------------------- | ------------------- |
+| Root layout node, raw/gzip    | 37,928 B / 12,116 B  | 37,872 B / 12,097 B  | −56 B / −19 B       |
+| Root static closure, raw/gzip | 132,639 B / 52,227 B | 132,587 B / 52,208 B | −52 B / −19 B       |
+| Root CSS, raw/gzip            | 187,770 B / 30,503 B | 184,887 B / 30,033 B | −2,883 B / −470 B   |
+| Root + home union, raw/gzip   | 194,951 B / 74,764 B | 190,625 B / 73,382 B | −4,326 B / −1,382 B |
+| Lazy ambient entry, raw/gzip  | 8,763 B / 3,501 B    | 7,909 B / 3,293 B    | −854 B / −208 B     |
+| Lab incremental closure       | 82,160 B / 28,990 B  | 82,861 B / 29,399 B  | +701 B / +409 B     |
+
+The lab's small increase is the measured 30 Hz deadline, pause gate, and
+diagnostic contract. The root/home and ambient reductions come from deleting
+timer-driven hero code, card pointer machinery, duplicated controller gates,
+and dead global CSS. Direct article and résumé visits no longer request the
+lazy ambient entry.
+
+Phase 5 deliberately added no title transition, scroll-linked line, footer
+constellation, new ambient effect, dependency, background media, or telemetry
+effect. Those optional ideas did not solve a measured problem. The Living
+Archive motion brief is complete at this boundary.
+
+### Phase 5 final validation
+
+| Command / audit                                                                             | Final result                                                                                                            |
+| ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `npm run check`                                                                             | Passed with 0 errors and 0 warnings                                                                                     |
+| `npm run motion:unit:test`                                                                  | Passed: 5 files, 77 tests                                                                                               |
+| Targeted Prettier over every touched text file                                              | Passed                                                                                                                  |
+| Targeted ESLint over every touched TypeScript/Svelte/test file                              | Passed                                                                                                                  |
+| `npm run lint`                                                                              | Expected repository baseline failure: 24 untouched files fail the existing Prettier check                               |
+| `npx eslint .`                                                                              | Expected repository baseline failure: one existing `svelte/no-navigation-without-resolve` error in `YtCredit.svelte:37` |
+| `npm test`                                                                                  | Passed every repository script and suite, including the 34-file / 307-test Vitest run                                   |
+| Phase 5 focused Playwright run                                                              | Passed: 4 tests                                                                                                         |
+| `PLAYWRIGHT_REUSE_SERVER=1 npm run motion:browser:test` against the final production output | Passed: 39 tests                                                                                                        |
+| `npm run build`                                                                             | Passed content generation, all validators, both Vite builds, adapter output, and discoverability validation             |
+| `git diff --check`                                                                          | Passed                                                                                                                  |
+| Dependency manifests                                                                        | `package.json` and `package-lock.json` unchanged                                                                        |
+
+The build retains known non-Phase-5 notices: grandfathered legacy SEO
+descriptions/thumbnail alternative text, media review-budget reporting, the
+local `/_vercel/image` 404, Vite's existing large-chunk warning, and Vercel
+adapter optional-dependency discovery warnings. The full browser run
+regenerated the tracked Phase 4 topic screenshot by one byte and wrote
+`test-results/.last-run.json`; both pieces of verified test churn were removed.
+No content generator left a tracked diff.
+
+The in-app browser could not bind its local tab during this pass. After its
+documented recovery steps failed, visual review and runtime verification used
+the repository's installed production Playwright/Chrome path. This did not
+install a dependency or bypass a website security decision.
