@@ -10386,6 +10386,26 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-28"
+		},
+		"src/lib/posts/the-axiom-of-linearity.md": {
+			"bodyHash": "c4a570166f0c34a4b8f11760ee71999c5b4cdfc5fd3ad0aaa3edf0459f28dcd1",
+			"hashVersion": 2,
+			"revisionHash": "98e2415a69aaf2cdf8cf15cefd57232cf7b383cc0755ce6c49c9973026bf14d6",
+			"generatedTags": [
+				"Singular Value Decomposition",
+				"Linear Algebra",
+				"Upper Triangular",
+				"Finite Element",
+				"Swiss Army Knife",
+				"Matrix",
+				"Decomposition",
+				"Linear",
+				"Matrices",
+				"Decompositions"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-29"
 		}
 	},
 	"maxTags": 10

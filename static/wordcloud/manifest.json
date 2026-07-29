@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T23:29:22.942372+00:00",
+  "generatedAt": "2026-07-29T09:04:22.275442+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -8002,6 +8002,29 @@
         "Man",
         "Water",
         "Came"
+      ],
+      "wordCount": 130
+    },
+    "the-axiom-of-linearity": {
+      "generatedAt": "2026-07-29T09:04:22.034093+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-axiom-of-linearity.svg",
+      "source": "src/lib/posts/the-axiom-of-linearity.md",
+      "sourceHash": "443f0970a8f84a85c11a28684243641a1d4f516c2a3a3db2ee1693a6e8dc2c68",
+      "sourceModified": "2026-07-29T09:04:15.720968+00:00",
+      "topWords": [
+        "Matrix",
+        "Linear",
+        "Decomposition",
+        "Matrices",
+        "Solve",
+        "Solving",
+        "SVD",
+        "Method",
+        "Systems",
+        "Form",
+        "Equation",
+        "Equations"
       ],
       "wordCount": 130
     },

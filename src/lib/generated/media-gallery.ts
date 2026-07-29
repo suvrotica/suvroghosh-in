@@ -4105,6 +4105,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1498
 		},
 		{
+			"name": "Compress_20260729_143114_4885.jpg",
+			"src": "/thumbnail/Compress_20260729_143114_4885.jpg",
+			"bytes": 146925,
+			"width": 1448,
+			"height": 1086
+		},
+		{
 			"name": "safe-a-cup-of-cha-is-not-a-small-thing.jpg",
 			"src": "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg",
 			"bytes": 119540,

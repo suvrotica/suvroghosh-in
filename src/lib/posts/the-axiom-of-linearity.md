@@ -6,7 +6,7 @@ dateModified: "2026-07-29"
 thumbnail: "/thumbnail/Compress_20260729_143114_4885.jpg"
 thumbnailAlt: "Matrix-like grids separated into simpler component structures"
 category: "Mathematics"
-tags: ["Mathematics", "Linear Algebra", "Matrix Decompositions", "Scientific Computing", "Artificial Intelligence", "History of Science", "SuvroGhosh"]
+tags: ["Singular Value Decomposition","Linear Algebra","Upper Triangular","Finite Element","Swiss Army Knife","Matrix","Decomposition","Linear","Matrices","Decompositions"]
 published: true
 color: "#2E3440"
 ---
