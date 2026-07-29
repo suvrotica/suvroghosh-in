@@ -2,6 +2,7 @@
 	import { resolve } from '$app/paths';
 	import type { PageData } from './$types';
 	import SEO from '$lib/components/seo/SEO.svelte';
+	import LivingTopicMap from '$lib/components/topics/LivingTopicMap.svelte';
 	import {
 		absoluteUrl,
 		breadcrumbSchema,
@@ -113,7 +114,9 @@
 		</p>
 	</header>
 
-	<div class="space-y-12">
+	<LivingTopicMap topics={data.topics} />
+
+	<div class="space-y-12" data-topic-directory>
 		{#each groups as group (group.name)}
 			<section aria-labelledby={`group-${group.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
 				<h2

@@ -328,3 +328,113 @@ The no-JavaScript browser test additionally proves that writing headings,
 normal links, deterministic glyph SVG, the two static atmosphere layers,
 article essay ink, long prose, and the healthcare table are present while
 Canvas is absent.
+
+## Phase 4 comparison checkpoint
+
+Phase 4 starts from the committed Phase 3 state recorded above. It adds only a
+deterministic, accessible topic-map representation to `/topics` and changes the
+missing/invalid theme fallback to Night. It does not install a dependency,
+redesign the homepage, replace the canonical topic cards, or add D3, Canvas,
+WebGL, force simulation, pan/zoom, a frame loop, or a video background.
+
+### Topic route capture baseline
+
+The following pre-implementation captures record the Phase 3 `/topics` route.
+Dimensions were read from the image files rather than inferred from the
+requested viewport.
+
+| View/theme    | Before capture                                                                           | Dimensions   |
+| ------------- | ---------------------------------------------------------------------------------------- | ------------ |
+| Desktop Night | [`topics-desktop-night.png`](../artifacts/motion/phase4-before/topics-desktop-night.png) | `1425 × 990` |
+| Desktop Paper | [`topics-desktop-paper.png`](../artifacts/motion/phase4-before/topics-desktop-paper.png) | `1425 × 990` |
+| Mobile Night  | [`topics-mobile-night.png`](../artifacts/motion/phase4-before/topics-mobile-night.png)   | `375 × 812`  |
+| Mobile Paper  | [`topics-mobile-paper.png`](../artifacts/motion/phase4-before/topics-mobile-paper.png)   | `375 × 812`  |
+
+The Playwright capture test records stable, map-centred after states with
+resolved motion set to Still. All six were visually reviewed after capture:
+
+| View/theme            | After capture                                                                                                                           | Dimensions    | Review                                                    |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | ------------- | --------------------------------------------------------- |
+| Desktop Night         | [`topics-desktop-night.png`](../artifacts/motion/phase4-after/topics-desktop-night.png)                                                 | `1440 × 1000` | Six territories, eight labels, and quiet routes legible   |
+| Desktop Paper         | [`topics-desktop-paper.png`](../artifacts/motion/phase4-after/topics-desktop-paper.png)                                                 | `1440 × 1000` | Territory washes and sparse routes remain distinguishable |
+| Desktop High Contrast | [`topics-desktop-high-contrast.png`](../artifacts/motion/phase4-after/topics-desktop-high-contrast.png)                                 | `1440 × 1000` | Two-pixel structure, labels, and links remain clear       |
+| Desktop focused topic | [`topics-desktop-focus-interactive-mathematics.png`](../artifacts/motion/phase4-after/topics-desktop-focus-interactive-mathematics.png) | `1440 × 1000` | Focus plus all five direct relationships is unmistakable  |
+| Mobile Night          | [`topics-mobile-night.png`](../artifacts/motion/phase4-after/topics-mobile-night.png)                                                   | `390 × 844`   | Metro stops and group labels fit without overflow         |
+| Mobile Paper          | [`topics-mobile-paper.png`](../artifacts/motion/phase4-after/topics-mobile-paper.png)                                                   | `390 × 844`   | Paper tokens resolve correctly and every stop stays clear |
+
+### Architecture and fallback checkpoint
+
+`src/lib/topics/topic-map.ts` is the pure deterministic geometry policy.
+`LivingTopicMap.svelte` consumes that model as a desktop semantic SVG and a
+mobile vertical metro list. The summary-level `relatedTopicSlugs` contract
+supplies curated canonical relationships without copying full post collections
+or complete topic-headquarters payloads into the route.
+
+The map is additive: its normal links are followed by the existing grouped
+canonical cards. Fixed coordinates make the server-rendered result stable.
+Entry motion is finite CSS; still, reduced-motion, forced-colour, authored High
+Contrast, print, and no-JavaScript paths preserve usable names and
+destinations. No D3, Canvas, force solver, runtime layout pass, timer, or
+continuous animation is part of the Phase 4 design.
+
+Night is the first-visit and failure fallback in both static HTML and the early
+bootstrap. A valid saved theme remains authoritative, including System; System
+continues to resolve against the OS colour-scheme preference. The default
+fallback is not persisted, so it does not silently replace a later explicit
+choice.
+
+### Focused and release validation
+
+| Command or evidence                    | Phase 4 result                                                                                                                                     |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Focused topic-map unit tests           | Passed: 2 files, 20 tests                                                                                                                          |
+| Focused topic-map Playwright tests     | Passed: 8 tests, including the deterministic screenshot capture                                                                                    |
+| Existing motion-focused browser suite  | Passed: 35 tests total (27 existing plus 8 Phase 4)                                                                                                |
+| `npm run check`                        | Passed: 0 errors and 0 warnings                                                                                                                    |
+| `npm run lint`                         | Expected baseline failure: 24 untouched Prettier files; direct full ESLint reaches the existing `YtCredit.svelte:37` error; all touched files pass |
+| `npm test`                             | Passed, including 33 Vitest files / 301 tests and every chained Node/SQL suite                                                                     |
+| `npm run build`                        | Passed: content generation, validators, production build, adapter output, and discoverability validation                                           |
+| Console and horizontal-overflow review | Passed: no unexpected page/console error and no desktop/mobile overflow; local Vercel analytics/image 404s remain expected                         |
+| Generated-churn inspection             | Clean: no generated tracked file changed; package manifests and lockfile are unchanged                                                             |
+
+The focused assertions cover deterministic finite coordinates, future
+territories containing up to ten non-overlapping landmarks, relationship
+validation and de-duplication, canonical order, named SVG links, keyboard and
+hover parity including mixed input, mobile metro equivalence and tap
+navigation, 44 px touch targets, canonical cards, SSR/no-JavaScript meaning,
+Night-first fallback, saved-preference authority,
+still/reduced/high-contrast/forced-colour/print behaviour, and no continuous
+map animation.
+
+### Production bundle and HTML comparison
+
+Final byte counts were read from the production manifest and prerendered output
+with the same per-file gzip method as the earlier checkpoints:
+
+The fresh pre-Phase-4 rebuild recomposed the unchanged Phase 3 gzip output by
+2 B for the root node and 3 B for its closure relative to the recorded Phase 3
+checkpoint above. The comparison therefore uses that immediately preceding
+rebuild rather than treating the tiny compression variance as Phase 4 work.
+
+| Measurement                          | Fresh pre-Phase-4    | Phase 4              | Change               |
+| ------------------------------------ | -------------------- | -------------------- | -------------------- |
+| Root layout node, raw/gzip           | 37,928 B / 12,118 B  | 37,928 B / 12,116 B  | 0 B / −2 B           |
+| Root static closure, raw/gzip        | 132,639 B / 52,226 B | 132,639 B / 52,227 B | 0 B / +1 B           |
+| Root CSS, raw/gzip                   | 187,770 B / 30,503 B | 187,770 B / 30,503 B | 0 B / 0 B            |
+| Topics route node, raw/gzip          | 5,487 B / 2,291 B    | 17,734 B / 6,626 B   | +12,247 B / +4,335 B |
+| Topics incremental closure, raw/gzip | 13,934 B / 5,709 B   | 26,749 B / 10,406 B  | +12,815 B / +4,697 B |
+| Topics route CSS, raw/gzip           | none                 | 8,964 B / 1,955 B    | +8,964 B / +1,955 B  |
+| Root + topics union, raw/gzip        | 146,573 B / 57,935 B | 159,388 B / 62,633 B | +12,815 B / +4,698 B |
+| Prerendered `/topics` HTML           | 70,914 B             | 88,730 B             | +17,816 B            |
+
+The final SSR contains eight desktop map nodes, eight mobile metro stops,
+thirteen relationship paths, six territories represented in each responsive
+mode, one canonical directory, and zero Canvas or video elements. Source and
+closure inspection found no Phase 4 D3, Three.js, p5, Observable runtime,
+video, or Canvas import. The increase is route-scoped model/component code,
+static SVG/HTML, and scoped finite CSS; the root static boundary and root CSS
+are effectively unchanged.
+
+Only Phase 5 remains deliberately deferred: profiling-led subtraction, then
+possible consideration of one named title transition, one progressive
+scroll-linked line, adaptive quality, or a footer constellation.

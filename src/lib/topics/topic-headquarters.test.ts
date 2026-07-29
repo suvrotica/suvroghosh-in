@@ -11,6 +11,7 @@ import {
 	effectiveTopicDateModified,
 	getTopicHeadquarters,
 	getTopicHeadquartersBySlug,
+	getTopicHeadquartersSummaries,
 	getTopicResource,
 	resolveTopicMembership,
 	sortTopicResourcesByFreshness,
@@ -153,6 +154,20 @@ describe('Topic Headquarters inventory and curation', () => {
 			);
 			for (const path of curated) {
 				expect(members.has(path), `${topic.slug} should contain curated path ${path}`).toBe(true);
+			}
+		}
+	});
+
+	it('keeps summary relationships in parity with the validated topic metadata', () => {
+		const topicsBySlug = new Map(getTopicHeadquarters().map((topic) => [topic.slug, topic]));
+		const summaries = getTopicHeadquartersSummaries();
+
+		for (const summary of summaries) {
+			expect(summary.relatedTopicSlugs, summary.slug).toEqual(
+				topicsBySlug.get(summary.slug)?.relatedTopics
+			);
+			for (const relatedSlug of summary.relatedTopicSlugs) {
+				expect(topicsBySlug.has(relatedSlug), `${summary.slug} links to ${relatedSlug}`).toBe(true);
 			}
 		}
 	});

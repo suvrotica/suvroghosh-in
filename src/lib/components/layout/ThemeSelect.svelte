@@ -27,7 +27,7 @@
 		'high-contrast': '#ffffff'
 	};
 
-	let preference = $state<ThemePreference>('paper');
+	let preference = $state<ThemePreference>('night');
 	let ready = $state(false);
 
 	function isThemePreference(value: string | undefined): value is ThemePreference {
@@ -73,7 +73,7 @@
 	onMount(() => {
 		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 		const initial = document.documentElement.dataset.themePreference;
-		const initialPreference = isThemePreference(initial) ? initial : 'paper';
+		const initialPreference = isThemePreference(initial) ? initial : 'night';
 
 		applyTheme(initialPreference, mediaQuery, false);
 		ready = true;

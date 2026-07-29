@@ -375,7 +375,8 @@ export function getTopicHeadquartersSummaries(): TopicHeadquartersSummary[] {
 		bestStartingArticle: {
 			path: topic.bestStartingArticle.path,
 			title: topic.bestStartingArticle.title
-		}
+		},
+		relatedTopicSlugs: [...topic.relatedTopics]
 	}));
 }
 

@@ -2,14 +2,14 @@
 	const root = document.documentElement;
 	const preferences = ['system', 'paper', 'light', 'night', 'high-contrast'];
 	const aliases = { sepia: 'paper', dark: 'night' };
-	let preference = 'paper';
+	let preference = 'night';
 
 	try {
 		const stored = window.localStorage.getItem('site-theme');
 		const normalized = aliases[stored] ?? stored;
 		if (normalized && preferences.includes(normalized)) preference = normalized;
 	} catch {
-		// Keep the paper default when browser storage is unavailable.
+		// Keep the Night default when browser storage is unavailable.
 	}
 
 	const resolved =

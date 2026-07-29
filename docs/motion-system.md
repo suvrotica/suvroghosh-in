@@ -1,6 +1,6 @@
 # The Living Archive — motion system
 
-This document is the operating contract for the Phase 0–3 Living Archive
+This document is the operating contract for the Phase 0–4 Living Archive
 foundation. It describes the system as implemented, the boundaries later work
 must preserve, and the checks to run when extending it.
 
@@ -57,6 +57,20 @@ Phase 3 extends the same owner to ordinary routes without adding a renderer:
 - the desktop active-route line responds only to semantic `aria-current`
   changes, with no JavaScript state or layout measurement.
 
+Phase 4 adds a deterministic, accessible topic-map layer to `/topics`:
+
+- `src/lib/topics/topic-map.ts` derives fixed territory, landmark, and
+  relationship geometry from canonical topic summaries;
+- the lightweight topic summary contract exposes `relatedTopicSlugs` without
+  returning full post or topic-headquarters payloads;
+- `LivingTopicMap.svelte` renders a semantic SVG map on desktop and a vertical
+  HTML metro list on mobile;
+- the existing grouped canonical topic cards remain in normal document flow
+  below the map;
+- every destination is a normal anchor, the entry effect is finite CSS, and
+  the map has no force simulation, runtime layout measurement, Canvas, D3,
+  frame loop, pan/zoom, or dependency.
+
 The root layout owns route-level atmosphere and route transitions. Individual
 pages must not mount another ambient renderer. Specialist experiences continue
 to own their existing loops and shells.
@@ -79,6 +93,10 @@ to own their existing loops and shells.
 | Living-card attachment | `src/lib/attachments/living-card.ts`               | Bound pointer influence, share route reset, and clean up card state            |
 | Signal-glyph policy    | `src/lib/motion/signal-glyph.ts`                   | Generate stable, bounded inline-SVG geometry from post identity                |
 | Home composition       | `src/lib/components/home/*`                        | Render hero, reading paths, portals, recent signals, and semantic cards        |
+| Topic-map policy       | `src/lib/topics/topic-map.ts`                      | Derive deterministic territories, landmarks, links, labels, and mobile order   |
+| Topic-map attachment   | `src/lib/attachments/topic-map-exploration.ts`     | Delegate focus/fine-pointer relationship emphasis without geometry reads       |
+| Topic-map component    | `src/lib/components/topics/LivingTopicMap.svelte`  | Render desktop semantic SVG and the mobile HTML metro representation           |
+| Topic summary data     | `src/lib/topics/types.ts`, server topic loader     | Carry `relatedTopicSlugs` without loading heavyweight topic payloads           |
 | Integration and CSS    | `src/routes/+layout.svelte`, `src/app.css`         | Own the normal shell, public attributes, visual tokens, and media fallbacks    |
 
 The pure modules do not access browser globals. Do not replace them with an
@@ -91,8 +109,10 @@ The root element exposes:
 
 ```html
 <html
-	data-theme-preference="paper"
-	data-theme="paper"
+	class="dark"
+	style="color-scheme: dark"
+	data-theme-preference="night"
+	data-theme="night"
 	data-motion-preference="system"
 	data-motion="gentle"
 	data-biome="home"
@@ -119,6 +139,15 @@ the static route composition does not depend on that client-side mirror.
 `window` after a user selection; its `CustomEvent.detail` is the public
 preference. Consumers should use the resolved root `data-motion` value rather
 than interpreting that detail themselves.
+
+`site-theme` remains the independent theme-storage key. A valid saved Paper,
+Light, Night, High Contrast, or System preference is authoritative. When that
+key is missing, invalid, or unavailable, the static document and early
+bootstrap resolve to Night; the fallback is not written to storage. An
+explicit System preference still follows `prefers-color-scheme`, and existing
+legacy aliases continue to normalise through the established theme policy.
+This makes Night the first-visit and no-JavaScript presentation without taking
+control away from a returning visitor.
 
 `MotionSelect` has two variants:
 
@@ -559,6 +588,51 @@ static border/background current state; print removes the header. This
 refinement adds no script, state, layout read, scroll listener, animation frame,
 or `will-change`.
 
+## Phase 4 Living Topic Map
+
+`/topics` keeps its existing heading, introductory copy, canonical grouped
+cards, route metadata, SEO, and schema. The Living Topic Map is an additional
+navigation representation before those cards, not a replacement for them. Its
+models are derived from the same validated topic summaries that drive the
+canonical list.
+
+`relatedTopicSlugs` is the summary-level relationship contract. It carries only
+canonical slugs, allowing the server loader to expose sparse meaningful links
+without attaching post bodies, complete topic headquarters, or another data
+fetch. `src/lib/topics/topic-map.ts` validates those slugs against the current
+topic set, rejects self-links and unknown endpoints, collapses duplicate
+undirected relationships, and produces a stable order and fixed coordinates.
+The policy is pure and does not read the DOM, viewport, storage, time, or
+random state.
+
+The current eight headquarters form six territories. Twenty-two curated
+directed declarations collapse to thirteen visual relationships: nine are
+reciprocal and four are intentionally one-way. At most four stable
+cross-territory routes receive the finite entry draw; every relationship is
+visible in its final state.
+
+On desktop, `LivingTopicMap.svelte` renders one semantic SVG whose territory
+paths, relationship paths, landmarks, labels, and anchors are all present in
+SSR. Each topic destination has an accessible name and a real `href`.
+Relationships communicate the curated information architecture; they are not
+the result of a force simulation. Hover and keyboard focus share the same
+bounded emphasis, and the map does not require drag, pan, zoom, or pointer
+precision.
+
+On mobile, the component renders a vertical HTML metro representation with
+normal links and at least 44 × 44 CSS-pixel targets. It avoids shrinking the
+desktop SVG into an unreadable diagram. The desktop and mobile representations
+contain the same destinations and editorial territory order; CSS chooses the
+appropriate presentation without client-side measurement. The complete
+grouped cards remain the canonical relationship-rich fallback below both.
+
+The optional map entry treatment is finite CSS only. Still mode and reduced
+motion show the final state immediately. High Contrast, forced colours, print,
+and no-JavaScript modes preserve names, links, order, and canonical cards while
+removing or simplifying decorative territory and line work. No Phase 4 code
+imports D3, mounts Canvas, starts a timer or animation frame, or adds a
+continuous loop.
+
 ## Accessibility and fallback matrix
 
 | Environment                      | Required result                                                                 |
@@ -574,6 +648,8 @@ or `will-change`.
 | Canvas/observer unsupported      | Static atmosphere and immediately visible reveal content                        |
 | Background tab/offscreen field   | Animation frame loop paused                                                     |
 | Specialist route                 | Existing shell/controls retain ownership; global field and transition absent    |
+| Topic map on desktop             | Named SVG links, focus/hover parity, and canonical cards below                  |
+| Topic map on mobile              | Vertical metro links with 44 px targets and no horizontal overflow              |
 
 Decoration is `aria-hidden`, unfocusable, and `pointer-events: none`. It must
 stay behind content and never cover selection, links, the sticky header, focus
@@ -591,17 +667,25 @@ Pure policy coverage lives beside the implementation:
   per-biome streams;
 - `signal-glyph.test.ts`: repeatable content-derived models, seed
   differentiation, finite SVG instructions, and bounded nodes.
+- `topic-map.test.ts`: deterministic territory/landmark geometry, canonical
+  ordering, relationship validation and de-duplication, finite coordinates,
+  importance tiers, and responsive territory order.
 
 Run the focused unit and browser suites:
 
 ```sh
 npm run motion:unit:test
+npx vitest run src/lib/topics/topic-map.test.ts src/lib/topics/topic-headquarters.test.ts
 npm run motion:browser:test
 ```
 
+The first command covers the shared motion policies; the focused Vitest command
+covers the topic-map model and summary relationship contract.
+
 `playwright.motion.config.ts` isolates `tests/browser/motion.spec.ts`,
 `tests/browser/home-motion.spec.ts`, and
-`tests/browser/phase3-motion.spec.ts` from the existing component-test
+`tests/browser/phase3-motion.spec.ts`, plus
+`tests/browser/phase4-topic-map.spec.ts`, from the existing component-test
 configuration. It builds the SvelteKit site, serves it on port `4211`, and uses
 one headless Chromium/Chrome worker. The focused browser suite covers
 pre-hydration OS precedence, control accessibility and
@@ -631,6 +715,17 @@ games/visualization exclusions, deterministic glyphs across theme/motion
 changes, 44 px touch targets, mobile overflow, and meaningful no-JavaScript
 writing/article output.
 
+Phase 4 coverage verifies that the topic model is deterministic and finite,
+every map destination is a named normal link, curated relationships survive
+SSR, the desktop semantic SVG and mobile metro expose the same canonical topic
+set, mobile targets meet the 44 px minimum, keyboard focus matches hover
+emphasis, and the grouped canonical cards remain available below the map. It
+also covers first-visit Night fallback, invalid-storage Night fallback, saved
+theme authority, System/OS resolution, no-JavaScript Night HTML, still and
+reduced motion, authored High Contrast, forced colours, print, mobile overflow,
+and the absence of Canvas, D3, force simulation, pan/zoom, and continuous map
+animation.
+
 The release command matrix remains:
 
 ```sh
@@ -659,6 +754,10 @@ document.querySelector('[data-local-animation-owner]')?.dataset.localAnimationOw
 document.querySelector('[data-kinetic-line]')?.dataset;
 document.querySelector('[data-living-card]')?.dataset;
 document.querySelector('[data-signal-glyph]')?.dataset.signalGlyph;
+document.querySelector('[data-living-topic-map]')?.dataset;
+document.querySelectorAll('[data-topic-node]').length;
+document.querySelectorAll('[data-topic-map-stop]').length;
+document.querySelector('[data-topic-directory]');
 ```
 
 Expected Canvas queries:
@@ -683,7 +782,7 @@ pollution.
 The atmosphere is a quality layer, never the LCP candidate. Hero/page text and
 meaningful HTML arrive without waiting for Canvas.
 
-Phase 1–3 performance boundaries:
+Phase 1–4 performance boundaries:
 
 - no new external service, background-media, image, or video request; an
   eligible route fetches the required local lazy Canvas JavaScript chunk;
@@ -697,6 +796,14 @@ Phase 1–3 performance boundaries:
 - idle means no scheduled animation frame;
 - no more than a five-point Lighthouse performance decline from the recorded
   baseline without explicit review.
+
+Phase 4 is route-scoped to `/topics`. Its policy is a pure module and its fixed
+geometry is emitted in SSR, so it adds no runtime graph-layout package,
+DOM measurement, graph solver, runtime layout pass, network request, Canvas,
+frame loop, or idle work. Hydration deterministically recomputes the same pure
+model from the serialized summaries; it does not read geometry from the
+document. The map uses scoped SVG/HTML and finite CSS entry only; the root
+atmosphere owner and lazy ambient chunk remain independent.
 
 The Phase 3 production checkpoint remains bounded:
 
@@ -722,6 +829,20 @@ The root, writing, blog, projects, and notes closures contain no Three.js, p5,
 D3, Observable runtime, or video signature. Phase 3 adds no network or media
 request, Canvas owner, dependency, frame loop, pointer loop, or layout-reading
 header code.
+
+The final Phase 4 production build stays route-scoped:
+
+| Measurement                          | Phase 4 result        |
+| ------------------------------------ | --------------------- |
+| Root layout node, raw/gzip           | 37,928 B / 12,116 B   |
+| Root static closure, raw/gzip        | 132,639 B / 52,227 B  |
+| Root CSS, raw/gzip                   | 187,770 B / 30,503 B  |
+| Topics route node, raw/gzip          | 17,734 B / 6,626 B    |
+| Topics incremental closure, raw/gzip | 26,749 B / 10,406 B   |
+| Topics route CSS, raw/gzip           | 8,964 B / 1,955 B     |
+| Root + topics union, raw/gzip        | 159,388 B / 62,633 B  |
+| Prerendered `/topics` HTML           | 88,730 B              |
+| Phase 4 comparison screenshots       | Six captured/reviewed |
 
 Compare production build output with the chunk observations in
 `motion-baseline.md`. Inspect generated churn after `npm run build`; restore
@@ -772,8 +893,12 @@ the central token contract.
 
 ## Deliberately deferred after Phase 3
 
-Phase 3 completes route dialects and quiet-reading ownership without expanding
-scope into later experiences. The following remain later-phase work:
+This is the preserved Phase 3 checkpoint. Its Phase 4 item is now complete; the
+current deferral boundary follows below.
+
+At the Phase 3 checkpoint, route dialects and quiet-reading ownership were
+complete without expanding scope into later experiences. The following still
+remained later-phase work at that checkpoint:
 
 - Phase 4 deterministic accessible Living Topic Map and mobile metro mode;
 - Phase 5 profiling-led subtraction and only then consideration of one named
@@ -785,3 +910,18 @@ filter/sort FLIP, article-card tilt, paragraph reveal, header scroll-opacity
 listener, `.IN` pulse, second ambient engine, new homepage copy or sections,
 background media, continuous portal/card/glyph loops, custom cursor, scroll
 hijacking, or dependency.
+
+## Deliberately deferred after Phase 4
+
+Phase 4 completes the deterministic accessible Living Topic Map and mobile
+metro representation without expanding scope into the final optimisation
+phase. The following remains later-phase work:
+
+- Phase 5 profiling-led subtraction and only then consideration of one named
+  title transition, one progressive scroll-linked line, adaptive quality, or a
+  footer constellation.
+
+Phase 4 deliberately does not redesign the homepage, replace canonical topic
+cards, animate topic layout, add a force solver, D3, Canvas, WebGL, pan/zoom,
+dragging, runtime geometry measurement, continuous map motion, a new network
+request, or a dependency.

@@ -6,7 +6,12 @@ const reuseExistingServer = process.env.PLAYWRIGHT_REUSE_SERVER === '1';
 
 export default defineConfig({
 	testDir: './tests/browser',
-	testMatch: ['motion.spec.ts', 'home-motion.spec.ts', 'phase3-motion.spec.ts'],
+	testMatch: [
+		'motion.spec.ts',
+		'home-motion.spec.ts',
+		'phase3-motion.spec.ts',
+		'phase4-topic-map.spec.ts'
+	],
 	fullyParallel: false,
 	workers: 1,
 	timeout: 60_000,

@@ -4,8 +4,8 @@
 	"description": "Healthcare IT, clinical data systems, technology, science, society, and Calcutta.",
 	"start_url": "/",
 	"display": "standalone",
-	"background_color": "#fafafa",
-	"theme_color": "#171717",
+	"background_color": "#171512",
+	"theme_color": "#171512",
 	"shortcuts": [
 		{
 			"name": "Handwritten notes",

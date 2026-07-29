@@ -62,4 +62,5 @@ export type TopicHeadquartersSummary = {
 	resourceCount: number;
 	effectiveDateModified: string;
 	bestStartingArticle: Pick<TopicResource, 'path' | 'title'>;
+	relatedTopicSlugs: readonly string[];
 };
