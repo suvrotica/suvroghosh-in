@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-29T09:04:22.275442+00:00",
+  "generatedAt": "2026-07-30T05:38:30.684346+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -10762,6 +10762,29 @@
         "Crowd",
         "Small",
         "Light"
+      ],
+      "wordCount": 130
+    },
+    "the-tea-cools-to-the-temperature-of-defeat": {
+      "generatedAt": "2026-07-30T05:38:30.607144+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-tea-cools-to-the-temperature-of-defeat.svg",
+      "source": "src/lib/posts/the-tea-cools-to-the-temperature-of-defeat.md",
+      "sourceHash": "5075f05b63c9701fce26a3bd514abbf14c38ba5a52d20fb2e5a813e62b6b3625",
+      "sourceModified": "2026-07-30T05:38:22.639996+00:00",
+      "topWords": [
+        "Even",
+        "Tea",
+        "Though",
+        "Now",
+        "Merely",
+        "Human",
+        "Morning",
+        "Fiftyone",
+        "Years",
+        "Employees",
+        "AI",
+        "Soul"
       ],
       "wordCount": 130
     },

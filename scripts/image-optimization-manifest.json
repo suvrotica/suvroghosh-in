@@ -9840,6 +9840,22 @@
       "sourceHash": "d137d3f1ef1836d4377d0f7cadd984217e1c921c257a7461a70172c1bd72713e",
       "width": 1448
     },
+    "static/thumbnail/Compress_20260730_110449_9435.jpg": {
+      "format": "JPEG",
+      "height": 1086,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1086,
+      "originalWidth": 1448,
+      "outputBytes": 194811,
+      "outputHash": "71b57efbc0fc0fab46666790308cb10afa4ed53022778abbc69e9af9be2a139f",
+      "psnrDb": 39.41,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 424145,
+      "sourceHash": "acdd1720eab27da857ed56f0b7a0774b97b1805b2fb61b5c8274d665f6445910",
+      "width": 1448
+    },
     "static/thumbnail/algorithmic-complexity-in-the-age-of-ai.jpg": {
       "format": "JPEG",
       "height": 800,

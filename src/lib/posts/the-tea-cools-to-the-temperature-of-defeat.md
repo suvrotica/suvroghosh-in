@@ -6,7 +6,7 @@ dateModified: "2026-07-30"
 thumbnail: "/images/"
 thumbnailAlt: "A cup of tea cooling on a table in the muted light of a Calcutta morning."
 category: "Essay"
-tags: ["Mental Health", "Technology", "Calcutta", "Bipolar", "Existentialism"]
+tags: ["Ontological","Syntax","Employees","Requiring","Flesh","Attempt","Fifty-One","Soul","Tea","AI"]
 published: true
 color: "#8B4513"
 ---
