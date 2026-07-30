@@ -3,7 +3,7 @@ title: "The Tea Cools to the Temperature of Defeat"
 description: "A self-interrupting monologue from the bipolar borderlands of a fifty-one-year-old mind, confronting algorithms, authenticity, and Calcutta mornings."
 date: "2026-07-30"
 dateModified: "2026-07-30"
-thumbnail: "/images/"
+thumbnail: "/thumbnail/Compress_20260730_110449_9435.jpg"
 thumbnailAlt: "A cup of tea cooling on a table in the muted light of a Calcutta morning."
 category: "Essay"
 tags: ["Ontological","Syntax","Employees","Requiring","Flesh","Attempt","Fifty-One","Soul","Tea","AI"]
