@@ -6,7 +6,7 @@ dateModified: "2026-07-30"
 thumbnail: "/thumbnail/Compress_20260730_184139_9267.jpg"
 thumbnailAlt: "Essay thumbnail image; no specific visual details were supplied."
 category: "Essay"
-tags: ["Mental Health", "Calcutta", "Technology", "Satire", "Neuroscience"]
+tags: ["Grimace","Rictus","Facial","Smile","Marathon","Researchers","Happiness","Forced","Social","Envy"]
 published: true
 color: "#4A3728"
 ---

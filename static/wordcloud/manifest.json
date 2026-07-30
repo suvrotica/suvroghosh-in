@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T05:38:30.684346+00:00",
+  "generatedAt": "2026-07-30T13:26:31.759904+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -6668,6 +6668,29 @@
         "Man",
         "Poor",
         "Tea"
+      ],
+      "wordCount": 130
+    },
+    "rictus-calcuttensis": {
+      "generatedAt": "2026-07-30T13:26:31.532645+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/rictus-calcuttensis.svg",
+      "source": "src/lib/posts/rictus-calcuttensis.md",
+      "sourceHash": "f5f7128be43050090a26276698cbcdc80bea2b34e1e24cddb7fbc535176b05b4",
+      "sourceModified": "2026-07-30T13:26:26.406031+00:00",
+      "topWords": [
+        "Smile",
+        "Facial",
+        "Social",
+        "Face",
+        "Grimace",
+        "Rictus",
+        "Now",
+        "Yet",
+        "Brain",
+        "World",
+        "Forced",
+        "Happiness"
       ],
       "wordCount": 130
     },
