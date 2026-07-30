@@ -8,6 +8,10 @@ import {
 	getPublishedPosts,
 	getPublishedTopics
 } from '$lib/server/content/posts';
+import {
+	getAllPublishedResources,
+	newestPublishedResourceDate
+} from '$lib/server/content/resources';
 import { getTopicHeadquartersSummaries } from '$lib/server/content/topic-headquarters';
 
 export const prerender = true;
@@ -25,6 +29,7 @@ export async function GET() {
 	const categoryLastMod = new Map<string, string>();
 	const yearLastMod = new Map<string, string>();
 	const publishedPosts = getPublishedPosts();
+	const publishedResources = getAllPublishedResources();
 
 	const posts = publishedPosts.map((post) => {
 		const category = post.categorySlug ?? 'uncategorized';
@@ -92,6 +97,10 @@ export async function GET() {
 			const lastModified = post.dateModified ?? post.date;
 			return new Date(lastModified).getTime() > new Date(latest).getTime() ? lastModified : latest;
 		}, '1970-01-01');
+	const resources = publishedResources.map((resource) => ({
+		url: siteUrl + resource.path,
+		lastMod: resource.dateModified ?? resource.date
+	}));
 
 	const pages = [
 		{ url: siteUrl + '/', lastMod: blogLastMod },
@@ -101,6 +110,7 @@ export async function GET() {
 		{ url: siteUrl + '/consulting', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/healthcare-it-gulf', lastMod: '2026-06-26' },
 		{ url: siteUrl + '/writing', lastMod: blogLastMod },
+		{ url: siteUrl + '/resources', lastMod: newestPublishedResourceDate() },
 		{ url: siteUrl + '/images', lastMod: '2026-07-20' },
 		{
 			url: siteUrl + sketchMuseumResource.path,
@@ -117,6 +127,7 @@ export async function GET() {
 		...months,
 		...topics,
 		...headquartersPages,
+		...resources,
 		...categories,
 		...posts
 	];

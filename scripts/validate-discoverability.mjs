@@ -34,6 +34,12 @@ const TOPIC_RENDER_ROUTES = [
 	'/topics/bipolar-depression'
 ];
 const TOPIC_DETAIL_ROUTES = new Set(TOPIC_RENDER_ROUTES.filter((route) => route !== '/topics'));
+const RESOURCE_INDEX_ROUTE = '/resources';
+const RESOURCE_DETAIL_ROUTES = [
+	'/resources/prompts/scientific-visualization-prompts',
+	'/resources/lists/calcutta-sensory-vocabulary'
+];
+const EXPECTED_PUBLISHED_RESOURCE_COUNT = 18;
 const EXPLICITLY_ALLOWED_CRAWLERS = [
 	'OAI-SearchBot',
 	'GPTBot',
@@ -227,6 +233,7 @@ if (fs.existsSync(llmsPath)) {
 		`${SITE}/projects`,
 		`${SITE}/start-here`,
 		`${SITE}/blog`,
+		`${SITE}/resources`,
 		`${SITE}/sitemap.xml`,
 		`${SITE}/rss.xml`
 	];
@@ -249,6 +256,15 @@ if (!/getPublishedPosts|isIndexablePost|published === false/.test(sitemapSource)
 }
 if (!/post\.dateModified\s*\?\?\s*post\.date/.test(sitemapSource)) {
 	fail('sitemap.xml post lastmod should prefer dateModified over the publication date.');
+}
+if (!/getAllPublishedResources/.test(sitemapSource)) {
+	fail('sitemap.xml generator should derive Field Kit detail URLs from the resource registry.');
+}
+if (!/newestPublishedResourceDate/.test(sitemapSource)) {
+	fail('sitemap.xml generator should derive the Field Kit index lastmod from published resources.');
+}
+if (!/resource\.dateModified\s*\?\?\s*resource\.date/.test(sitemapSource)) {
+	fail('sitemap.xml resource lastmod should prefer dateModified over the publication date.');
 }
 
 /* -------------------------------------------------------------------------- */
@@ -482,6 +498,116 @@ function checkTopicPage(route, html, nodes) {
 	}
 }
 
+function checkResourceIndex(route, html, nodes) {
+	const expectedUrl = `${SITE}${route}`;
+	const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+	if (canonical?.[1] !== expectedUrl) {
+		fail(
+			`${route}: canonical should equal the Field Kit URL ${expectedUrl}; found ${canonical?.[1] ?? 'none'}.`
+		);
+	}
+
+	const collections = byType(nodes, 'CollectionPage');
+	if (collections.length !== 1) {
+		fail(`${route}: expected exactly one CollectionPage entity, found ${collections.length}.`);
+	} else {
+		const collection = collections[0];
+		if (collection.url !== expectedUrl || collection['@id'] !== expectedUrl) {
+			fail(`${route}: CollectionPage URL and @id must equal ${expectedUrl}.`);
+		}
+		if (collection.creator?.['@id'] !== PERSON_ID || collection.author?.['@id'] !== PERSON_ID) {
+			fail(`${route}: CollectionPage creator and author must reference ${PERSON_ID}.`);
+		}
+		if (!collection.datePublished || !collection.dateModified) {
+			fail(`${route}: CollectionPage must expose publication and effective modification dates.`);
+		}
+	}
+
+	const itemLists = byType(nodes, 'ItemList');
+	if (itemLists.length !== 1) {
+		fail(`${route}: expected exactly one ItemList entity, found ${itemLists.length}.`);
+		return;
+	}
+
+	const list = itemLists[0];
+	const items = Array.isArray(list.itemListElement) ? list.itemListElement : [];
+	if (
+		list.numberOfItems !== EXPECTED_PUBLISHED_RESOURCE_COUNT ||
+		items.length !== EXPECTED_PUBLISHED_RESOURCE_COUNT
+	) {
+		fail(
+			`${route}: ItemList must expose all ${EXPECTED_PUBLISHED_RESOURCE_COUNT} published resources; found ${items.length}.`
+		);
+	}
+	for (const [index, item] of items.entries()) {
+		if (
+			item?.['@type'] !== 'ListItem' ||
+			item.position !== index + 1 ||
+			typeof item.name !== 'string' ||
+			typeof item.description !== 'string' ||
+			!String(item.url ?? '').startsWith(`${SITE}/resources/`)
+		) {
+			fail(`${route}: ItemList entry ${index + 1} is incomplete or not a canonical resource URL.`);
+		}
+	}
+}
+
+function checkResourceDetail(route, html, nodes) {
+	const expectedUrl = `${SITE}${route}`;
+	const canonical = html.match(/<link rel="canonical" href="([^"]+)"/);
+	if (canonical?.[1] !== expectedUrl) {
+		fail(
+			`${route}: canonical should equal the resource URL ${expectedUrl}; found ${canonical?.[1] ?? 'none'}.`
+		);
+	}
+
+	const creativeWorks = byType(nodes, 'CreativeWork');
+	if (creativeWorks.length !== 1) {
+		fail(`${route}: expected exactly one CreativeWork entity, found ${creativeWorks.length}.`);
+	} else {
+		const work = creativeWorks[0];
+		for (const field of [
+			'name',
+			'description',
+			'url',
+			'datePublished',
+			'dateModified',
+			'image',
+			'inLanguage',
+			'genre'
+		]) {
+			if (!work[field]) fail(`${route}: CreativeWork is missing "${field}".`);
+		}
+		if (work['@id'] !== `${expectedUrl}#resource` || work.url !== expectedUrl) {
+			fail(`${route}: CreativeWork @id and URL must derive from the canonical resource URL.`);
+		}
+		if (work.creator?.['@id'] !== PERSON_ID) {
+			fail(`${route}: CreativeWork.creator must reference ${PERSON_ID}.`);
+		}
+		if (work.isPartOf?.['@id'] !== WEBSITE_ID) {
+			fail(`${route}: CreativeWork.isPartOf must reference ${WEBSITE_ID}.`);
+		}
+		if (work.isAccessibleForFree !== true) {
+			fail(`${route}: CreativeWork should identify the public resource as free to access.`);
+		}
+	}
+
+	const breadcrumbs = byType(nodes, 'BreadcrumbList');
+	if (breadcrumbs.length !== 1) {
+		fail(`${route}: expected exactly one BreadcrumbList entity, found ${breadcrumbs.length}.`);
+	} else {
+		const items = Array.isArray(breadcrumbs[0].itemListElement)
+			? breadcrumbs[0].itemListElement
+			: [];
+		if (items.at(-1)?.item !== expectedUrl) {
+			fail(`${route}: final BreadcrumbList item must equal ${expectedUrl}.`);
+		}
+	}
+	if (!/aria-label="Breadcrumb"/.test(html)) {
+		fail(`${route}: visible breadcrumb nav not found next to BreadcrumbList schema.`);
+	}
+}
+
 function checkModifiedDateSignals(route, html, posting, metadata) {
 	const expected = metadata.dateModified;
 	const visibleDates = visibleUpdatedDates(html);
@@ -581,6 +707,8 @@ async function runRenderedChecks() {
 		categoryRoute,
 		paginatedCategoryRoute,
 		...TOPIC_RENDER_ROUTES,
+		RESOURCE_INDEX_ROUTE,
+		...RESOURCE_DETAIL_ROUTES,
 		'/images/sketches',
 		'/resume',
 		'/projects'
@@ -616,6 +744,12 @@ async function runRenderedChecks() {
 
 			if (TOPIC_RENDER_ROUTES.includes(route)) {
 				checkTopicPage(route, html, nodes);
+			}
+			if (route === RESOURCE_INDEX_ROUTE) {
+				checkResourceIndex(route, html, nodes);
+			}
+			if (RESOURCE_DETAIL_ROUTES.includes(route)) {
+				checkResourceDetail(route, html, nodes);
 			}
 
 			const renderedPost = renderedPostByRoute.get(route);

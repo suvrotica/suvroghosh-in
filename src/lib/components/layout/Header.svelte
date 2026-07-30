@@ -12,6 +12,7 @@
 			| '/topics'
 			| '/blog'
 			| '/notes'
+			| '/resources'
 			| '/blog/visualizations'
 			| '/blog/games'
 			| '/projects'
@@ -25,6 +26,7 @@
 		{ href: '/topics', label: 'Topics', sections: ['/topics'] },
 		{ href: '/blog', label: 'Essays', sections: ['/writing', '/blog'] },
 		{ href: '/notes', label: 'Notes', sections: ['/notes'] },
+		{ href: '/resources', label: 'Field Kit', sections: ['/resources'] },
 		{
 			href: '/blog/visualizations',
 			label: 'Lab',
@@ -97,7 +99,7 @@
 			</span>
 		</a>
 
-		<nav class="hidden items-center gap-4 lg:flex xl:gap-5" aria-label="Primary navigation">
+		<nav class="hidden items-center gap-4 xl:flex xl:gap-5" aria-label="Primary navigation">
 			{#each navLinks as link (link.href)}
 				<a
 					href={resolve(link.href)}
@@ -133,15 +135,15 @@
 				<span class="sr-only">, opens in a new tab</span>
 			</a>
 
-			<div class="hidden lg:block">
+			<div class="hidden xl:block">
 				<ThemeSelect id="desktop-theme" />
 			</div>
 
-			<div class="hidden lg:block">
+			<div class="hidden xl:block">
 				<MotionSelect id="desktop-motion" />
 			</div>
 
-			<details bind:this={mobileMenu} class="group lg:hidden">
+			<details bind:this={mobileMenu} class="group xl:hidden">
 				<summary
 					bind:this={menuSummary}
 					class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-md text-neutral-800 transition-colors hover:bg-neutral-200 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-neutral-200 dark:hover:bg-neutral-800 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950 [&::-webkit-details-marker]:hidden"

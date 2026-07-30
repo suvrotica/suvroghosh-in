@@ -20,6 +20,7 @@ Author: Suvro Ghosh
 - [Writing and essays](https://www.suvroghosh.in/writing): overview of the writing archive.
 - [All posts](https://www.suvroghosh.in/blog): complete browsable archive.
 - [Topic index](https://www.suvroghosh.in/blog/topics): subject hubs and internal links.
+- [The Field Kit](https://www.suvroghosh.in/resources): reusable prompts, word lists, and compact reference material.
 - [Interactive visualizations](https://www.suvroghosh.in/blog/visualizations): browser-based science, mathematics, and computing laboratories.
 - [Games](https://www.suvroghosh.in/blog/games): original browser games, beginning with a full-screen Calcutta footpath survival game.
 

@@ -217,6 +217,8 @@ for (const schemaName of [
 	'blogPostingSchema',
 	'breadcrumbSchema',
 	'collectionPageSchema',
+	'itemListSchema',
+	'resourceCreativeWorkSchema',
 	'contactPageSchema',
 	'profilePageSchema'
 ]) {

@@ -126,6 +126,14 @@ export function resolveRouteMotion(
 	if (segments.length === 0) return ROUTE_MOTION_CONFIGS.homeStandard;
 	if (hasExactSegments(segments, 'start-here')) return ROUTE_MOTION_CONFIGS.homeQuiet;
 	if (hasExactSegments(segments, 'writing')) return ROUTE_MOTION_CONFIGS.writingStandard;
+	if (hasExactSegments(segments, 'resources')) return ROUTE_MOTION_CONFIGS.writingQuiet;
+	if (
+		first === 'resources' &&
+		segments.length === 3 &&
+		(second === 'prompts' || second === 'lists')
+	) {
+		return ROUTE_MOTION_CONFIGS.articleHeader;
+	}
 
 	if (hasExactSegments(segments, 'projects')) return ROUTE_MOTION_CONFIGS.healthcareQuiet;
 	if (hasExactSegments(segments, 'consulting')) {

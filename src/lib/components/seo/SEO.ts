@@ -1,5 +1,12 @@
 import { dev } from '$app/environment';
-import type { WithContext, WebSite, Person, BlogPosting, BreadcrumbList } from 'schema-dts';
+import type {
+	WithContext,
+	WebSite,
+	Person,
+	BlogPosting,
+	BreadcrumbList,
+	CreativeWork
+} from 'schema-dts';
 import { slugifyCategory } from '$lib/content/categories';
 import { substackLinks, xProfile } from '$lib/config/links';
 
@@ -208,7 +215,7 @@ export function collectionPageSchema(page: {
 export function itemListSchema(list: {
 	name: string;
 	url: string;
-	items: { name: string; url: string }[];
+	items: { name: string; url: string; description?: string }[];
 }) {
 	return {
 		'@type': 'ItemList',
@@ -220,9 +227,43 @@ export function itemListSchema(list: {
 			'@type': 'ListItem',
 			position: index + 1,
 			name: item.name,
-			url: item.url
+			url: item.url,
+			...(item.description ? { description: item.description } : {})
 		}))
 	};
+}
+
+export function resourceCreativeWorkSchema(resource: {
+	title: string;
+	description: string;
+	canonicalUrl: string;
+	date: string;
+	dateModified?: string;
+	thumbnail: string;
+	tags: string[];
+	language: 'en' | 'bn' | 'mixed';
+	genre: 'Prompt' | 'Word List';
+}) {
+	return {
+		'@type': 'CreativeWork',
+		'@id': `${resource.canonicalUrl}#resource`,
+		name: resource.title,
+		description: resource.description,
+		url: resource.canonicalUrl,
+		creator: {
+			'@id': personId
+		},
+		isPartOf: {
+			'@id': websiteId
+		},
+		datePublished: resource.date,
+		dateModified: resource.dateModified ?? resource.date,
+		keywords: resource.tags,
+		image: absoluteUrl(resource.thumbnail),
+		inLanguage: resource.language === 'mixed' ? ['en', 'bn'] : resource.language,
+		isAccessibleForFree: true,
+		genre: resource.genre
+	} as unknown as Omit<WithContext<CreativeWork>, '@context'>;
 }
 
 export function definedTermSetSchema(terms: {

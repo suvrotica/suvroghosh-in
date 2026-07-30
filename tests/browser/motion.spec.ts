@@ -215,6 +215,12 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 			ambient: 'animated'
 		},
 		{
+			path: '/resources',
+			biome: 'writing',
+			intensity: 'quiet',
+			ambient: 'animated'
+		},
+		{
 			path: '/topics',
 			biome: 'writing',
 			intensity: 'standard',
@@ -252,6 +258,12 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 		},
 		{
 			path: articlePath,
+			biome: 'quiet',
+			intensity: 'header-only',
+			ambient: 'static'
+		},
+		{
+			path: '/resources/prompts/scientific-visualization-prompts',
 			biome: 'quiet',
 			intensity: 'header-only',
 			ambient: 'static'
@@ -298,7 +310,10 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 				await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 			}
 
-			if (route.path === articlePath) {
+			if (
+				route.path === articlePath ||
+				route.path === '/resources/prompts/scientific-visualization-prompts'
+			) {
 				await expect(page.locator('.article-prose p')).not.toHaveCount(0);
 				const decoratedParagraphs = page.locator(
 					'.article-prose p:is(.reveal, .reveal-enhanced, [data-reveal], [data-parallax], [data-tilt], [class*="parallax"], [class*="tilt"])'

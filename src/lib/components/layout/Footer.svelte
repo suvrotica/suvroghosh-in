@@ -15,6 +15,7 @@
 				{ href: '/blog', label: 'Search & archive' },
 				{ href: '/topics', label: 'Topics' },
 				{ href: '/notes', label: 'Handwritten notes' },
+				{ href: '/resources', label: 'Field Kit' },
 				{ href: '/blog/visualizations', label: 'Visualizations' },
 				{ href: '/blog/games', label: 'Games' },
 				{ href: '/resume', label: 'Resume' }

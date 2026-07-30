@@ -7,6 +7,15 @@ describe('route motion mapping', () => {
 		['/', { biome: 'home', intensity: 'standard', ambient: 'animated' }],
 		['/start-here', { biome: 'home', intensity: 'quiet', ambient: 'animated' }],
 		['/writing', { biome: 'writing', intensity: 'standard', ambient: 'animated' }],
+		['/resources', { biome: 'writing', intensity: 'quiet', ambient: 'animated' }],
+		[
+			'/resources/prompts/scientific-visualization-prompts',
+			{ biome: 'quiet', intensity: 'header-only', ambient: 'static', scope: 'header' }
+		],
+		[
+			'/resources/lists/calcutta-sensory-vocabulary',
+			{ biome: 'quiet', intensity: 'header-only', ambient: 'static', scope: 'header' }
+		],
 		['/blog', { biome: 'writing', intensity: 'quiet', ambient: 'animated' }],
 		['/blog/archive/2026', { biome: 'writing', intensity: 'standard', ambient: 'animated' }],
 		['/blog/archive/2026/07', { biome: 'writing', intensity: 'standard', ambient: 'animated' }],
@@ -83,6 +92,7 @@ describe('special-route exclusions', () => {
 		'/start-here-now',
 		'/blog/gamesmanship',
 		'/blog/visualizations-extra',
+		'/resources-extra',
 		'/images/sketches-old',
 		'/healthcare-it-gulf-coast'
 	])('does not use route-prefix false positives for %s', (pathname) => {
@@ -94,6 +104,7 @@ describe('view-transition eligibility', () => {
 	it('allows ordinary route changes with motion enabled', () => {
 		expect(shouldUseViewTransition('/', '/writing', 'gentle')).toBe(true);
 		expect(shouldUseViewTransition('/projects', '/contact', 'alive')).toBe(true);
+		expect(shouldUseViewTransition('/writing', '/resources', 'gentle')).toBe(true);
 	});
 
 	it('skips still, same-document, specialist, and loop-owning routes', () => {
@@ -102,6 +113,13 @@ describe('view-transition eligibility', () => {
 		expect(shouldUseViewTransition('/', '/blog/games', 'alive')).toBe(false);
 		expect(shouldUseViewTransition('/blog/visualizations', '/writing', 'alive')).toBe(false);
 		expect(shouldUseViewTransition('/writing', '/resume', 'alive')).toBe(false);
+		expect(
+			shouldUseViewTransition(
+				'/resources',
+				'/resources/prompts/scientific-visualization-prompts',
+				'alive'
+			)
+		).toBe(false);
 		expect(
 			shouldUseViewTransition('/writing', '/blog/personal-essay/an-ordinary-article', 'alive')
 		).toBe(false);

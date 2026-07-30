@@ -3611,6 +3611,139 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 553
 		},
 		{
+			"name": "resources/alternatives-to-overused-ai-language.webp",
+			"src": "/images/resources/alternatives-to-overused-ai-language.webp",
+			"bytes": 13218,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/architectural-verbs.webp",
+			"src": "/images/resources/architectural-verbs.webp",
+			"bytes": 10588,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/bengali-emotional-vocabulary.webp",
+			"src": "/images/resources/bengali-emotional-vocabulary.webp",
+			"bytes": 12426,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/bengali-songwriting-prompts.webp",
+			"src": "/images/resources/bengali-songwriting-prompts.webp",
+			"bytes": 11368,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/better-replacements-for-corporate-sludge.webp",
+			"src": "/images/resources/better-replacements-for-corporate-sludge.webp",
+			"bytes": 15832,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/calcutta-sensory-vocabulary.webp",
+			"src": "/images/resources/calcutta-sensory-vocabulary.webp",
+			"bytes": 11824,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/codex-desktop-implementation-prompts.webp",
+			"src": "/images/resources/codex-desktop-implementation-prompts.webp",
+			"bytes": 14468,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/contemporary-kolkata-bengali-expressions.webp",
+			"src": "/images/resources/contemporary-kolkata-bengali-expressions.webp",
+			"bytes": 15120,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/editing-prompts.webp",
+			"src": "/images/resources/editing-prompts.webp",
+			"bytes": 8980,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/essay-development-prompts.webp",
+			"src": "/images/resources/essay-development-prompts.webp",
+			"bytes": 11530,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/field-kit.webp",
+			"src": "/images/resources/field-kit.webp",
+			"bytes": 16956,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "resources/healthcare-architecture-prompts.webp",
+			"src": "/images/resources/healthcare-architecture-prompts.webp",
+			"bytes": 13806,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/image-restoration-prompts.webp",
+			"src": "/images/resources/image-restoration-prompts.webp",
+			"bytes": 11258,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/mathematics-verbs-and-metaphors.webp",
+			"src": "/images/resources/mathematics-verbs-and-metaphors.webp",
+			"bytes": 12132,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/medical-verbs.webp",
+			"src": "/images/resources/medical-verbs.webp",
+			"bytes": 10024,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/research-and-verification-prompts.webp",
+			"src": "/images/resources/research-and-verification-prompts.webp",
+			"bytes": 11780,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/satirical-insults-by-intensity.webp",
+			"src": "/images/resources/satirical-insults-by-intensity.webp",
+			"bytes": 11306,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/scientific-visualization-prompts.webp",
+			"src": "/images/resources/scientific-visualization-prompts.webp",
+			"bytes": 12648,
+			"width": 1200,
+			"height": 675
+		},
+		{
+			"name": "resources/words-for-decay-rain-heat-and-bureaucracy.webp",
+			"src": "/images/resources/words-for-decay-rain-heat-and-bureaucracy.webp",
+			"bytes": 14274,
+			"width": 1200,
+			"height": 675
+		},
+		{
 			"name": "screenagers-growing-up-in-the-digital-age.jpg",
 			"src": "/images/screenagers-growing-up-in-the-digital-age.jpg",
 			"bytes": 58756,

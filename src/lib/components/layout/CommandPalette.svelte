@@ -19,6 +19,11 @@
 			description: 'Explore ink, diagrams, and field notes'
 		},
 		{
+			href: '/resources',
+			label: 'Field Kit',
+			description: 'Browse reusable prompts and word lists'
+		},
+		{
 			href: '/blog/visualizations',
 			label: 'Visualizations',
 			description: 'Explore the interactive science laboratory'
