@@ -12,6 +12,7 @@ export default defineConfig({
 			'src/lib/components/sketch-museum/**/*.test.ts',
 			'src/lib/visualizations/ct-reconstruction/**/*.test.ts',
 			'src/lib/visualizations/domain-coloring/**/*.test.ts',
+			'src/lib/visualizations/city-master-plan/**/*.test.ts',
 			'src/lib/visualizations/neuron-zoo/**/*.test.ts',
 			'src/lib/games/**/*.test.ts'
 		],

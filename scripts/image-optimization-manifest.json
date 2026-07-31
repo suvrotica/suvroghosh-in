@@ -8546,6 +8546,22 @@
       "sourceHash": "1bdfc09bd6c926bba9941ae43d1fee98cbedfd2822fb564d31ded057a100c840",
       "width": 1200
     },
+    "static/images/the-city-that-refuses-a-master-plan.webp": {
+      "format": "WEBP",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1200,
+      "outputBytes": 88668,
+      "outputHash": "2e705c5e819c60cb6a8643415c83a621e7cde9fb6ffadb157f82dacd01e9b400",
+      "psnrDb": 36.65,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 114336,
+      "sourceHash": "e56d019a5fd8c894fb8cc14a701e53160ffd1ce6b052f9843e445c183f8eb225",
+      "width": 1200
+    },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",
       "height": 900,

@@ -3758,6 +3758,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "the-city-that-refuses-a-master-plan.webp",
+			"src": "/images/the-city-that-refuses-a-master-plan.webp",
+			"bytes": 88668,
+			"width": 1200,
+			"height": 900
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,

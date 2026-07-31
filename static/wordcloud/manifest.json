@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T13:26:31.759904+00:00",
+  "generatedAt": "2026-07-31T05:40:53.068456+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -8393,6 +8393,29 @@
         "Poverty",
         "First",
         "Street"
+      ],
+      "wordCount": 130
+    },
+    "the-city-that-refuses-a-master-plan": {
+      "generatedAt": "2026-07-31T05:40:52.657112+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-city-that-refuses-a-master-plan.svg",
+      "source": "src/lib/posts/the-city-that-refuses-a-master-plan.md",
+      "sourceHash": "facb1f0796410ef6ec36cc8fe4b3f9f0510f134302ea05beba91291aa69b1e8c",
+      "sourceModified": "2026-07-31T05:23:46.732101+00:00",
+      "topWords": [
+        "Cell",
+        "Lane",
+        "Local",
+        "Tile",
+        "Tram",
+        "Every",
+        "Anchor",
+        "Propagation",
+        "Access",
+        "WFC",
+        "Pond",
+        "Possibilities"
       ],
       "wordCount": 130
     },

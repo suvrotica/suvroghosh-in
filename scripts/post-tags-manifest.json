@@ -10446,6 +10446,26 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-30"
+		},
+		"src/lib/posts/the-city-that-refuses-a-master-plan.md": {
+			"bodyHash": "50d54419d03041b4165b957ed9e2b896fbe572d94965f7b197a8d6231c022005",
+			"hashVersion": 2,
+			"revisionHash": "2ed21be20256122b86e502714c0d1f8c08a1e17ce1ed3a834247c82c1408efb6",
+			"generatedTags": [
+				"Scores Actually Measure",
+				"Neighbourhood Begins Gossiping",
+				"Uncertain Square Goes",
+				"Model Deliberately Leaves",
+				"Lab Mode",
+				"Cell",
+				"WFC",
+				"Tile",
+				"Propagation",
+				"Frontage"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-31"
 		}
 	},
 	"maxTags": 10

@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The City That Refuses a Master Plan" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The City That Refuses a Master Plan</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(968,601)" font-size="118" style="fill:#d88988">Cell</text>
+<text transform="translate(86,329)" font-size="102" style="fill:#d88988">Lane</text>
+<text transform="translate(194,117)" font-size="102" style="fill:#c49a6c">Local</text>
+<text transform="translate(694,297)" font-size="102" style="fill:#b6c3dd">Tile</text>
+<text transform="translate(876,187)" font-size="97" style="fill:#c7d7b5">Tram</text>
+<text transform="translate(493,592) rotate(-90)" font-size="92" style="fill:#d6a79f">Every</text>
+<text transform="translate(573,332) rotate(-90)" font-size="87" style="fill:#c7d7b5">Anchor</text>
+<text transform="translate(517,438)" font-size="87" style="fill:#b6c3dd">Propagation</text>
+<text transform="translate(634,674)" font-size="82" style="fill:#c49a6c">Access</text>
+<text transform="translate(135,216)" font-size="82" style="fill:#c49a6c">WFC</text>
+<text transform="translate(189,459)" font-size="76" style="fill:#c7d7b5">Pond</text>
+<text transform="translate(598,82)" font-size="76" style="fill:#d9c89e">Possibilities</text>
+<text transform="translate(587,374)" font-size="76" style="fill:#b6c3dd">Road</text>
+<text transform="translate(120,532)" font-size="76" style="fill:#d5d2c2">Model</text>
+<text transform="translate(507,555)" font-size="70" style="fill:#d88988">Frontage</text>
+<text transform="translate(29,603)" font-size="70" style="fill:#9fc9c5">Knows</text>
+<text transform="translate(338,649)" font-size="70" style="fill:#c49a6c">Sand</text>
+<text transform="translate(931,686)" font-size="70" style="fill:#8fb7d0">Boundary</text>
+<text transform="translate(1046,368)" font-size="70" style="fill:#c49a6c">Drain</text>
+<text transform="translate(604,172)" font-size="70" style="fill:#d88988">Exits</text>
+<text transform="translate(9,714)" font-size="70" style="fill:#e0b879">Infrastructure</text>
+<text transform="translate(308,210)" font-size="70" style="fill:#9fc9c5">Seed</text>
+<text transform="translate(938,281)" font-size="70" style="fill:#c49a6c">Separate</text>
+<text transform="translate(82,539) rotate(-90)" font-size="70" style="fill:#b6c3dd">Observation</text>
+<text transform="translate(831,490)" font-size="57" style="fill:#d88988">Neighbourhood</text>
+<text transform="translate(877,353)" font-size="57" style="fill:#d9c89e">Shop</text>
+<text transform="translate(220,51)" font-size="57" style="fill:#9fc9c5">Cells</text>
+<text transform="translate(114,265)" font-size="57" style="fill:#e0b879">Result</text>
+<text transform="translate(1256,158) rotate(-90)" font-size="57" style="fill:#e0b879">Map</text>
+<text transform="translate(156,384)" font-size="57" style="fill:#c7d7b5">Edge</text>
+<text transform="translate(336,272)" font-size="57" style="fill:#d9c89e">Route</text>
+<text transform="translate(419,525) rotate(-90)" font-size="57" style="fill:#d9c89e">Weight</text>
+<text transform="translate(71,644)" font-size="49" style="fill:#e0b879">Neighbour</text>
+<text transform="translate(673,612)" font-size="49" style="fill:#d9c89e">Occupation</text>
+<text transform="translate(244,573)" font-size="49" style="fill:#b6c3dd">Fabric</text>
+<text transform="translate(991,126)" font-size="49" style="fill:#d88988">Remain</text>
+<text transform="translate(567,492)" font-size="39" style="fill:#d88988">Possibility</text>
+<text transform="translate(598,209)" font-size="39" style="fill:#9fc9c5">Changes</text>
+<text transform="translate(772,373)" font-size="39" style="fill:#e0b879">Uses</text>
+<text transform="translate(127,215) rotate(-90)" font-size="39" style="fill:#d5d2c2">Global</text>
+<text transform="translate(34,446) rotate(-90)" font-size="39" style="fill:#d88988">Candidate</text>
+<text transform="translate(923,222)" font-size="39" style="fill:#c49a6c">Contradiction</text>
+<text transform="translate(596,714)" font-size="39" style="fill:#b6c3dd">Deterministic</text>
+<text transform="translate(1130,429)" font-size="39" style="fill:#e0b879">Outlet</text>
+<text transform="translate(511,670)" font-size="39" style="fill:#d6a79f">Score</text>
+<text transform="translate(11,62)" font-size="35" style="fill:#d9c89e">First</text>
+<text transform="translate(1153,634)" font-size="35" style="fill:#a9b7a3">Sweet</text>
+<text transform="translate(343,155)" font-size="35" style="fill:#d6a79f">Form</text>
+<text transform="translate(578,265)" font-size="35" style="fill:#c7d7b5">Mode</text>
+<text transform="translate(1119,187)" font-size="35" style="fill:#c7d7b5">Useful</text>
+<text transform="translate(592,311)" font-size="35" style="fill:#a9b7a3">Whole</text>
+<text transform="translate(1091,28)" font-size="30" style="fill:#b6c3dd">Laboratory</text>
+<text transform="translate(779,109)" font-size="30" style="fill:#c49a6c">Set</text>
+<text transform="translate(553,616)" font-size="30" style="fill:#9fc9c5">Rails</text>
+<text transform="translate(862,537)" font-size="30" style="fill:#9fc9c5">Small</text>
+<text transform="translate(131,144)" font-size="27" style="fill:#d6a79f">Compatibility</text>
+<text transform="translate(886,110)" font-size="27" style="fill:#c49a6c">Drains</text>
+<text transform="translate(1046,641)" font-size="27" style="fill:#e0b879">Real</text>
+<text transform="translate(1042,382) rotate(-90)" font-size="27" style="fill:#8fb7d0">Rule</text>
+<text transform="translate(1040,306)" font-size="27" style="fill:#8fb7d0">Direction</text>
+<text transform="translate(979,711)" font-size="27" style="fill:#c49a6c">Generation</text>
+<text transform="translate(578,110)" font-size="27" style="fill:#c49a6c">Engine</text>
+<text transform="translate(86,25)" font-size="27" style="fill:#d6a79f">Variant</text>
+<text transform="translate(860,205) rotate(-90)" font-size="27" style="fill:#8fb7d0">Entropy</text>
+<text transform="translate(550,583)" font-size="27" style="fill:#d6a79f">Stream</text>
+<text transform="translate(547,644)" font-size="27" style="fill:#b6c3dd">Wave</text>
+<text transform="translate(337,298)" font-size="27" style="fill:#b6c3dd">Function</text>
+<text transform="translate(1183,583) rotate(-90)" font-size="27" style="fill:#d88988">Queue</text>
+<text transform="translate(658,31)" font-size="27" style="fill:#e0b879">State</text>
+<text transform="translate(111,521) rotate(-90)" font-size="27" style="fill:#a9b7a3">Municipal</text>
+<text transform="translate(241,609)" font-size="27" style="fill:#c7d7b5">Patch</text>
+<text transform="translate(840,562)" font-size="27" style="fill:#d6a79f">Occupied</text>
+<text transform="translate(390,26)" font-size="27" style="fill:#a9b7a3">Drainage</text>
+<text transform="translate(1110,149)" font-size="27" style="fill:#e0b879">Report</text>
+<text transform="translate(156,115) rotate(-90)" font-size="23" style="fill:#d9c89e">Place</text>
+<text transform="translate(1110,391)" font-size="23" style="fill:#d5d2c2">Lab</text>
+<text transform="translate(1156,389)" font-size="23" style="fill:#d5d2c2">Question</text>
+<text transform="translate(769,321)" font-size="23" style="fill:#8fb7d0">Whether</text>
+<text transform="translate(147,449) rotate(-90)" font-size="23" style="fill:#a9b7a3">Adjacent</text>
+<text transform="translate(937,315)" font-size="23" style="fill:#e0b879">Beside</text>
+<text transform="translate(374,234)" font-size="23" style="fill:#d6a79f">North</text>
+<text transform="translate(259,406)" font-size="23" style="fill:#a9b7a3">Turn</text>
+<text transform="translate(471,149)" font-size="23" style="fill:#c49a6c">End</text>
+<text transform="translate(117,553)" font-size="23" style="fill:#d5d2c2">Garage</text>
+<text transform="translate(547,23)" font-size="23" style="fill:#c49a6c">Network</text>
+<text transform="translate(27,655) rotate(-90)" font-size="23" style="fill:#e0b879">Undecided</text>
+<text transform="translate(300,355)" font-size="23" style="fill:#d5d2c2">Legal</text>
+<text transform="translate(1150,448)" font-size="20" style="fill:#d5d2c2">Courtyard</text>
+<text transform="translate(594,228)" font-size="20" style="fill:#d5d2c2">Removes</text>
+<text transform="translate(493,490)" font-size="20" style="fill:#d9c89e">Many</text>
+<text transform="translate(19,233) rotate(-90)" font-size="20" style="fill:#8fb7d0">Neighbours</text>
+<text transform="translate(563,511)" font-size="20" style="fill:#c7d7b5">Fictional</text>
+<text transform="translate(1051,527)" font-size="20" style="fill:#c49a6c">Ponds</text>
+<text transform="translate(204,667)" font-size="20" style="fill:#d88988">Trees</text>
+<text transform="translate(708,113)" font-size="20" style="fill:#d5d2c2">Four</text>
+<text transform="translate(333,316)" font-size="20" style="fill:#c7d7b5">Together</text>
+<text transform="translate(7,23)" font-size="20" style="fill:#c49a6c">Begins</text>
+<text transform="translate(1273,236) rotate(-90)" font-size="20" style="fill:#9fc9c5">Concrete</text>
+<text transform="translate(538,457)" font-size="20" style="fill:#9fc9c5">Selected</text>
+<text transform="translate(338,590)" font-size="20" style="fill:#b6c3dd">Lanes</text>
+<text transform="translate(122,467)" font-size="20" style="fill:#a9b7a3">Banks</text>
+<text transform="translate(1249,574) rotate(-90)" font-size="20" style="fill:#c49a6c">Open</text>
+<text transform="translate(742,19)" font-size="20" style="fill:#b6c3dd">Constrained</text>
+<text transform="translate(936,715)" font-size="20" style="fill:#b6c3dd">Use</text>
+<text transform="translate(830,209) rotate(-90)" font-size="20" style="fill:#d6a79f">Weighted</text>
+<text transform="translate(1224,324)" font-size="20" style="fill:#8fb7d0">Sumi</text>
+<text transform="translate(879,245) rotate(-90)" font-size="20" style="fill:#c49a6c">Remaining</text>
+<text transform="translate(966,627)" font-size="20" style="fill:#e0b879">Seeded</text>
+<text transform="translate(288,670)" font-size="20" style="fill:#c7d7b5">Pseudorandom</text>
+<text transform="translate(1189,299)" font-size="20" style="fill:#d6a79f">Quantum</text>
+<text transform="translate(184,125) rotate(-90)" font-size="20" style="fill:#d6a79f">Collapse</text>
+<text transform="translate(937,19)" font-size="20" style="fill:#d5d2c2">Constraint</text>
+<text transform="translate(1273,637) rotate(-90)" font-size="20" style="fill:#c49a6c">Condition</text>
+<text transform="translate(822,509)" font-size="20" style="fill:#d9c89e">Reveal</text>
+<text transform="translate(512,457) rotate(-90)" font-size="20" style="fill:#a9b7a3">Changed</text>
+<text transform="translate(438,535) rotate(-90)" font-size="20" style="fill:#8fb7d0">Variants</text>
+<text transform="translate(780,336)" font-size="15" style="fill:#c49a6c">Compatible</text>
+<text transform="translate(1008,506)" font-size="15" style="fill:#d88988">Bounded</text>
+<text transform="translate(1166,115)" font-size="15" style="fill:#d9c89e">Civic</text>
+<text transform="translate(1087,321)" font-size="14" style="fill:#c49a6c">Deliberately</text>
+<text transform="translate(364,530) rotate(-90)" font-size="14" style="fill:#b6c3dd">Records</text>
+<text transform="translate(1204,53)" font-size="14" style="fill:#c7d7b5">Visible</text>
+<text transform="translate(695,454)" font-size="14" style="fill:#d88988">Continuity</text>
+<text transform="translate(655,572)" font-size="14" style="fill:#d6a79f">Construction</text>
+<text transform="translate(294,388)" font-size="14" style="fill:#d9c89e">Generator</text>
+<text transform="translate(712,506)" font-size="14" style="fill:#e0b879">Components</text>
+<text transform="translate(1151,709)" font-size="14" style="fill:#c7d7b5">Component</text>
+<text transform="translate(523,353)" font-size="14" style="fill:#8fb7d0">Uphill</text>
+<text transform="translate(760,187)" font-size="14" style="fill:#d6a79f">Scores</text>
+<text transform="translate(413,602)" font-size="14" style="fill:#d6a79f">Calamity</text>
+</svg>
