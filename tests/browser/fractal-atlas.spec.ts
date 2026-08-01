@@ -112,6 +112,28 @@ test('the canonical article hydrates from a meaningful field plate into a comput
 	await expect(lab.getByText(/after \d+ iteration/iu)).toBeVisible();
 });
 
+test('client-side gallery navigation keeps the live laboratory visible', async ({ page }) => {
+	await page.goto('/blog/visualizations', { waitUntil: 'domcontentloaded' });
+	const atlasLink = page.locator(`a[href="${articlePath}"]`);
+	await expect(atlasLink).toHaveCount(1);
+	await page.evaluate(() => {
+		Object.defineProperty(window, '__fractalAtlasClientNavigation', {
+			value: true,
+			configurable: true
+		});
+	});
+	await atlasLink.click();
+	await expect(page).toHaveURL(articlePath);
+	expect(await page.evaluate(() => '__fractalAtlasClientNavigation' in window)).toBe(true);
+
+	const lab = laboratory(page);
+	await expect(lab).toHaveAttribute('data-hydrated', 'true');
+	await expect(lab.locator('.atlas-js')).toBeVisible();
+	await expect(
+		page.locator('style').filter({ hasText: '.atlas-js { display: none !important; }' })
+	).toHaveCount(0);
+});
+
 test('navigation shortcuts, zoom breadcrumb and Reset all preserve a reversible atlas state', async ({
 	page
 }) => {

@@ -139,25 +139,6 @@
 
 	const STORAGE_KEY = 'fractal-atlas-specimens-v1';
 	const MAX_SPECIMENS = 20;
-	const NOSCRIPT_FALLBACK = `<noscript>
-		<style>.atlas-js { display: none !important; }</style>
-		<div class="no-script-atlas">
-			<img
-				src="/images/fractal-atlas.png"
-				alt="A dark Mandelbrot form with violet, brass and blue filaments and a linked Julia specimen lens"
-				width="1600"
-				height="900"
-			/>
-			<div>
-				<p>Static field plate</p>
-				<h2>The Fractal Atlas requires JavaScript for numerical navigation.</h2>
-				<p>
-					The article, formulas and finite-computation cautions remain available. Enable JavaScript
-					to run the WebGL, Canvas and Worker instruments.
-				</p>
-			</div>
-		</div>
-	</noscript>`;
 	const ATLAS_QUERY_KEYS = [
 		'v',
 		'f',
@@ -5179,8 +5160,29 @@
 			</div>
 		{/if}
 	</div>
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-	{@html NOSCRIPT_FALLBACK}
+	<noscript>
+		<style>
+			.atlas-js {
+				display: none !important;
+			}
+		</style>
+		<div class="no-script-atlas">
+			<img
+				src="/images/fractal-atlas.png"
+				alt="A dark Mandelbrot form with violet, brass and blue filaments and a linked Julia specimen lens"
+				width="1600"
+				height="900"
+			/>
+			<div>
+				<p>Static field plate</p>
+				<h2>The Fractal Atlas requires JavaScript for numerical navigation.</h2>
+				<p>
+					The article, formulas and finite-computation cautions remain available. Enable JavaScript
+					to run the WebGL, Canvas and Worker instruments.
+				</p>
+			</div>
+		</div>
+	</noscript>
 </section>
 
 <style>
