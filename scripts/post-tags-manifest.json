@@ -10466,6 +10466,24 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-31"
+		},
+		"src/lib/posts/the-fractal-atlas.md": {
+			"bodyHash": "a773c3f01e2c2332250dc108b36a90b9d9762e08cdff12c2eb79b8f779cc9d38",
+			"hashVersion": 2,
+			"revisionHash": "7d6d561e6ba5fd9c5257ce260299053c3fa385aee8af59e4dd8e208caf58809e",
+			"generatedTags": [
+				"Fractals",
+				"Mandelbrot Set",
+				"Julia Sets",
+				"Complex Numbers",
+				"Chaos",
+				"WebGL",
+				"Interactive Mathematics",
+				"Generative Art"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-07-31"
 		}
 	},
 	"maxTags": 10

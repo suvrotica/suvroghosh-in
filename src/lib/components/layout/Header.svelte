@@ -180,7 +180,7 @@
 				</summary>
 
 				<nav
-					class="absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-b border-neutral-300 bg-neutral-100 px-4 py-4 shadow-xl sm:px-6 dark:border-neutral-700 dark:bg-neutral-950"
+					class="absolute inset-x-0 top-full hidden max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-t border-b border-neutral-300 bg-neutral-100 px-4 py-4 shadow-xl group-open:block sm:px-6 dark:border-neutral-700 dark:bg-neutral-950"
 					aria-label="Mobile and tablet navigation"
 				>
 					<ul class="container mx-auto grid gap-1 sm:grid-cols-2 sm:gap-2 lg:max-w-3xl">

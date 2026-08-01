@@ -3079,6 +3079,251 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 675
 		},
 		{
+			"name": "fractal-atlas.png",
+			"src": "/images/fractal-atlas.png",
+			"bytes": 87605,
+			"width": 1600,
+			"height": 900
+		},
+		{
+			"name": "fractal-atlas/figures/escape-map-mutations.webp",
+			"src": "/images/fractal-atlas/figures/escape-map-mutations.webp",
+			"bytes": 46824,
+			"width": 1280,
+			"height": 720
+		},
+		{
+			"name": "fractal-atlas/figures/orbit-fates.webp",
+			"src": "/images/fractal-atlas/figures/orbit-fates.webp",
+			"bytes": 27764,
+			"width": 1280,
+			"height": 720
+		},
+		{
+			"name": "fractal-atlas/figures/precision-tier-diagnostic.webp",
+			"src": "/images/fractal-atlas/figures/precision-tier-diagnostic.webp",
+			"bytes": 90832,
+			"width": 1280,
+			"height": 720
+		},
+		{
+			"name": "fractal-atlas/figures/raw-bands-vs-smooth.webp",
+			"src": "/images/fractal-atlas/figures/raw-bands-vs-smooth.webp",
+			"bytes": 63244,
+			"width": 1280,
+			"height": 720
+		},
+		{
+			"name": "fractal-atlas/presets/across-the-boundary.webp",
+			"src": "/images/fractal-atlas/presets/across-the-boundary.webp",
+			"bytes": 2730,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/barnsley-fern.webp",
+			"src": "/images/fractal-atlas/presets/barnsley-fern.webp",
+			"bytes": 4302,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/boundary-spiral.webp",
+			"src": "/images/fractal-atlas/presets/boundary-spiral.webp",
+			"bytes": 19186,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/buddhabrot-ghost.webp",
+			"src": "/images/fractal-atlas/presets/buddhabrot-ghost.webp",
+			"bytes": 27066,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/burning-ship-detail.webp",
+			"src": "/images/fractal-atlas/presets/burning-ship-detail.webp",
+			"bytes": 21598,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/burning-ship-full.webp",
+			"src": "/images/fractal-atlas/presets/burning-ship-full.webp",
+			"bytes": 4780,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/cardioid-and-bulb.webp",
+			"src": "/images/fractal-atlas/presets/cardioid-and-bulb.webp",
+			"bytes": 9098,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/elephant-valley.webp",
+			"src": "/images/fractal-atlas/presets/elephant-valley.webp",
+			"bytes": 5972,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/high-period-bulb.webp",
+			"src": "/images/fractal-atlas/presets/high-period-bulb.webp",
+			"bytes": 6416,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/hilbert-room.webp",
+			"src": "/images/fractal-atlas/presets/hilbert-room.webp",
+			"bytes": 12118,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/julia-basilica.webp",
+			"src": "/images/fractal-atlas/presets/julia-basilica.webp",
+			"bytes": 4118,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/julia-dendrite.webp",
+			"src": "/images/fractal-atlas/presets/julia-dendrite.webp",
+			"bytes": 3338,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/julia-disconnected-dust.webp",
+			"src": "/images/fractal-atlas/presets/julia-disconnected-dust.webp",
+			"bytes": 7664,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/julia-minus-08-plus-0156i.webp",
+			"src": "/images/fractal-atlas/presets/julia-minus-08-plus-0156i.webp",
+			"bytes": 6612,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/julia-rabbit-like.webp",
+			"src": "/images/fractal-atlas/presets/julia-rabbit-like.webp",
+			"bytes": 4250,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/julia-unit-circle.webp",
+			"src": "/images/fractal-atlas/presets/julia-unit-circle.webp",
+			"bytes": 2142,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/koch-snowflake.webp",
+			"src": "/images/fractal-atlas/presets/koch-snowflake.webp",
+			"bytes": 4818,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/mandelbrot-full.webp",
+			"src": "/images/fractal-atlas/presets/mandelbrot-full.webp",
+			"bytes": 4260,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/misiurewicz-region.webp",
+			"src": "/images/fractal-atlas/presets/misiurewicz-region.webp",
+			"bytes": 12152,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/multibrot-cubic.webp",
+			"src": "/images/fractal-atlas/presets/multibrot-cubic.webp",
+			"bytes": 3420,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/multibrot-quintic.webp",
+			"src": "/images/fractal-atlas/presets/multibrot-quintic.webp",
+			"bytes": 2942,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/nebulabrot-bands.webp",
+			"src": "/images/fractal-atlas/presets/nebulabrot-bands.webp",
+			"bytes": 27066,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/newton-four-roots.webp",
+			"src": "/images/fractal-atlas/presets/newton-four-roots.webp",
+			"bytes": 10646,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/newton-three-roots.webp",
+			"src": "/images/fractal-atlas/presets/newton-three-roots.webp",
+			"bytes": 6418,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/phoenix-memory.webp",
+			"src": "/images/fractal-atlas/presets/phoenix-memory.webp",
+			"bytes": 5536,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/precision-cliff.webp",
+			"src": "/images/fractal-atlas/presets/precision-cliff.webp",
+			"bytes": 24936,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/satellite-minibrot.webp",
+			"src": "/images/fractal-atlas/presets/satellite-minibrot.webp",
+			"bytes": 7500,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/seahorse-valley.webp",
+			"src": "/images/fractal-atlas/presets/seahorse-valley.webp",
+			"bytes": 12526,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/sierpinski-two-roads.webp",
+			"src": "/images/fractal-atlas/presets/sierpinski-two-roads.webp",
+			"bytes": 9058,
+			"width": 360,
+			"height": 220
+		},
+		{
+			"name": "fractal-atlas/presets/tricorn-full.webp",
+			"src": "/images/fractal-atlas/presets/tricorn-full.webp",
+			"bytes": 3636,
+			"width": 360,
+			"height": 220
+		},
+		{
 			"name": "games/calcutta-footpath-simulator-cover.png",
 			"src": "/images/games/calcutta-footpath-simulator-cover.png",
 			"bytes": 362834,

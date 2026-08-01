@@ -14,6 +14,8 @@ __pycache__/
 /.svelte-kit
 /build
 /static/pagefind/
+/test-results/
+/playwright-report/
 
 # OS
 .DS_Store

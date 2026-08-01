@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T05:40:53.068456+00:00",
+  "generatedAt": "2026-07-31T14:50:41.296707+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -9106,6 +9106,29 @@
         "Girl",
         "Mili",
         "Asked"
+      ],
+      "wordCount": 130
+    },
+    "the-fractal-atlas": {
+      "generatedAt": "2026-07-31T14:50:41.142120+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-fractal-atlas.svg",
+      "source": "src/lib/posts/the-fractal-atlas.md",
+      "sourceHash": "0087334133bec7eda7d73a49d0a601465c18ec8ba4bf4f5d4036d64493f23f0d",
+      "sourceModified": "2026-07-31T14:50:30.391910+00:00",
+      "topWords": [
+        "Orbit",
+        "Pixel",
+        "Escape",
+        "Julia",
+        "Point",
+        "Complex",
+        "Mandelbrot",
+        "Value",
+        "Set",
+        "Atlas",
+        "Parameter",
+        "Map"
       ],
       "wordCount": 130
     },
