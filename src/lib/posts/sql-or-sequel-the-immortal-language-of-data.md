@@ -5,8 +5,8 @@ date: "2026-07-31"
 dateModified: "2026-08-01"
 thumbnail: "/thumbnail/Compress_20260801_150709_9094.jpg"
 thumbnailAlt: "Rows of database servers inside a modern data centre."
-category: "Engineering"
-tags: ["SQL", "Databases", "History", "AI", "Technology", "Software Engineering", "Data"]
+category: "Engineering Blog"
+tags: ["PostgreSQL Global Development","Stack Overflow","Developer Survey","Young Researchers Accidentally","Apache Cassandra","SQL","Relational","Database","Codd","Query"]
 published: true
 color: "#336791"
 ---

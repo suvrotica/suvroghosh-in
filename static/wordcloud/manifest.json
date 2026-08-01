@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T14:50:41.296707+00:00",
+  "generatedAt": "2026-08-01T09:41:24.927231+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -7450,6 +7450,29 @@
         "Ribosomes",
         "Proteins",
         "DNA"
+      ],
+      "wordCount": 130
+    },
+    "sql-or-sequel-the-immortal-language-of-data": {
+      "generatedAt": "2026-08-01T09:41:19.149165+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/sql-or-sequel-the-immortal-language-of-data.svg",
+      "source": "src/lib/posts/sql-or-sequel-the-immortal-language-of-data.md",
+      "sourceHash": "7af2fed34afec69e3f33d0e9add70c36f96386ca6b21fcef5c3a520859372bc6",
+      "sourceModified": "2026-08-01T09:41:03.153089+00:00",
+      "topWords": [
+        "SQL",
+        "Database",
+        "Data",
+        "Language",
+        "Relational",
+        "Systems",
+        "Query",
+        "AI",
+        "System",
+        "First",
+        "Codd",
+        "Model"
       ],
       "wordCount": 130
     },

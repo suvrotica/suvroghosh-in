@@ -10484,6 +10484,26 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-07-31"
+		},
+		"src/lib/posts/sql-or-sequel-the-immortal-language-of-data.md": {
+			"bodyHash": "da134b8167f1b094d331e700de4694a47ed1a9b7ebb05b64ad72ef52f68e17cc",
+			"hashVersion": 2,
+			"revisionHash": "971ee7bbb305c138381b9294f8e05526d74c6636534d44c04d299b534bbf7ce9",
+			"generatedTags": [
+				"PostgreSQL Global Development",
+				"Stack Overflow",
+				"Developer Survey",
+				"Young Researchers Accidentally",
+				"Apache Cassandra",
+				"SQL",
+				"Relational",
+				"Database",
+				"Codd",
+				"Query"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-01"
 		}
 	},
 	"maxTags": 10
