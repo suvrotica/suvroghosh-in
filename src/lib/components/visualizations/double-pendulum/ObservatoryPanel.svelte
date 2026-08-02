@@ -172,11 +172,10 @@
 		drawTrace(phaseCanvas, phasePoints, {
 			xLabel: phaseLabels[0],
 			yLabel: phaseLabels[1],
-			fixedX:
-				phaseView === 'theta1-omega1' || phaseView === 'theta1-theta2'
-					? [-Math.PI, Math.PI]
-					: undefined,
+			fixedX: [-Math.PI, Math.PI],
 			fixedY: phaseView === 'theta1-theta2' ? [-Math.PI, Math.PI] : undefined,
+			wrappedX: true,
+			wrappedY: phaseView === 'theta1-theta2',
 			currentMarker: true
 		});
 		drawTrace(poincareCanvas, poincarePoints, {
@@ -209,7 +208,21 @@
 		points?: boolean;
 		currentMarker?: boolean;
 		thresholds?: number[];
+		wrappedX?: boolean;
+		wrappedY?: boolean;
 	};
+
+	function crossesWrappedSeam(
+		previous: PlotPoint | undefined,
+		point: PlotPoint,
+		options: DrawOptions
+	) {
+		return (
+			previous !== undefined &&
+			((options.wrappedX && Math.abs(point.x - previous.x) > Math.PI) ||
+				(options.wrappedY && Math.abs(point.y - previous.y) > Math.PI))
+		);
+	}
 
 	function drawTrace(canvas: HTMLCanvasElement, input: PlotPoint[], options: DrawOptions) {
 		const prepared = prepareCanvas(canvas);
@@ -288,11 +301,13 @@
 			ctx.restore();
 		}
 
+		let seamBreaks = 0;
 		if (transformed.length > 0) {
 			ctx.strokeStyle = '#dc7a4f';
 			ctx.fillStyle = '#dc7a4f';
 			ctx.lineWidth = 1.6;
 			ctx.beginPath();
+			let previous: PlotPoint | undefined;
 			for (let index = 0; index < transformed.length; index += 1) {
 				const point = transformed[index];
 				const x = mapX(point.x);
@@ -300,8 +315,11 @@
 				if (options.points) {
 					ctx.moveTo(x + 2.2, y);
 					ctx.arc(x, y, 2.2, 0, Math.PI * 2);
-				} else if (index === 0) ctx.moveTo(x, y);
-				else ctx.lineTo(x, y);
+				} else if (!previous || crossesWrappedSeam(previous, point, options)) {
+					if (previous) seamBreaks += 1;
+					ctx.moveTo(x, y);
+				} else ctx.lineTo(x, y);
+				previous = point;
 			}
 			if (options.points) ctx.fill();
 			else ctx.stroke();
@@ -317,6 +335,9 @@
 				ctx.restore();
 			}
 		}
+		canvas.dataset.seamBreaks = String(seamBreaks);
+		canvas.dataset.wrappedX = String(Boolean(options.wrappedX));
+		canvas.dataset.wrappedY = String(Boolean(options.wrappedY));
 
 		ctx.fillStyle = '#aebfc5';
 		ctx.font = '11px ui-monospace, monospace';
@@ -337,6 +358,11 @@
 			options.logY ? `10^${formatTick(yMax)}` : formatTick(yMax),
 			margin.left + 4,
 			margin.top + 12
+		);
+		ctx.fillText(
+			options.logY ? `10^${formatTick(yMin)}` : formatTick(yMin),
+			margin.left + 4,
+			margin.top + plotHeight - 4
 		);
 	}
 
@@ -386,7 +412,8 @@
 			<div class="plot-title">
 				<strong>Rolling phase portrait</strong><span>Current point ◆</span>
 			</div>
-			<canvas bind:this={phaseCanvas} aria-label={phaseSummary}></canvas>
+			<canvas bind:this={phaseCanvas} aria-label={phaseSummary} data-phase-view={phaseView}
+			></canvas>
 			<figcaption>{phaseSummary}</figcaption>
 		</figure>
 		<figure>

@@ -55,6 +55,8 @@
 
 	let shell: HTMLDivElement;
 	let canvas: HTMLCanvasElement;
+	let upperHandle: HTMLButtonElement;
+	let lowerHandle: HTMLButtonElement;
 	let context: CanvasRenderingContext2D | null = null;
 	let resizeObserver: ResizeObserver | null = null;
 	let intersectionObserver: IntersectionObserver | null = null;
@@ -66,6 +68,7 @@
 	let ready = $state(false);
 	let dragging: 'upper' | 'lower' | null = null;
 	let pointerId: number | null = null;
+	let pointerCaptureTarget: HTMLElement | null = null;
 
 	const palette = {
 		background: '#081015',
@@ -110,6 +113,11 @@
 		resize();
 		startDrawing();
 		return () => {
+			if (dragging) {
+				const target = dragging;
+				clearActivePointer();
+				ondrag(target, 0, 'cancel');
+			}
 			cancelAnimationFrame(frameId);
 			resizeObserver?.disconnect();
 			intersectionObserver?.disconnect();
@@ -189,6 +197,7 @@
 		current.trajectories.forEach((trajectory, index) => {
 			drawMechanism(ctx, trajectory, current.parameters, pivots[index], scale, current, index);
 		});
+		positionDragHandles(current, scale, pivots[0]);
 		ctx.restore();
 		if (!ready) ready = true;
 	}
@@ -368,9 +377,46 @@
 		return { x: event.clientX - rect.left, y: event.clientY - rect.top };
 	}
 
+	function positionDragHandles(
+		frame: StageFrame,
+		scale: number,
+		pivot: { x: number; y: number } | undefined
+	) {
+		const canDrag = frame.directManipulation && frame.trajectories.length > 0 && Boolean(pivot);
+		upperHandle.hidden = !canDrag;
+		lowerHandle.hidden = !canDrag;
+		if (!canDrag || !pivot) return;
+
+		const position = geometry(frame.trajectories[0].state, frame.parameters);
+		setHandlePosition(upperHandle, pivot.x + position.x1 * scale, pivot.y + position.y1 * scale);
+		setHandlePosition(lowerHandle, pivot.x + position.x2 * scale, pivot.y + position.y2 * scale);
+	}
+
+	function setHandlePosition(handle: HTMLButtonElement, x: number, y: number) {
+		handle.style.left = `${x}px`;
+		handle.style.top = `${y}px`;
+	}
+
+	function beginPointerDrag(
+		event: PointerEvent,
+		target: 'upper' | 'lower',
+		captureTarget: HTMLElement
+	) {
+		if (pointerId !== null) return;
+		dragging = target;
+		pointerId = event.pointerId;
+		pointerCaptureTarget = captureTarget;
+		captureTarget.setPointerCapture(event.pointerId);
+		updateDrag(event, 'start');
+		if (captureTarget === canvas) event.preventDefault();
+	}
+
 	function handlePointerDown(event: PointerEvent) {
 		const current = getframe();
 		if (!current.directManipulation || current.trajectories.length === 0) return;
+		// Touch input is routed through the positioned handles so the rest of the canvas
+		// remains available for page panning and pinch zooming.
+		if (event.pointerType === 'touch') return;
 		const point = pointerPosition(event);
 		const { scale, pivots } = layout(current);
 		const pivot = pivots[0];
@@ -381,11 +427,13 @@
 		const lowerDistance = Math.hypot(point.x - lower.x, point.y - lower.y);
 		const target = lowerDistance <= 34 ? 'lower' : upperDistance <= 32 ? 'upper' : null;
 		if (!target) return;
-		dragging = target;
-		pointerId = event.pointerId;
-		canvas.setPointerCapture(event.pointerId);
-		updateDrag(event, 'start');
-		event.preventDefault();
+		beginPointerDrag(event, target, canvas);
+	}
+
+	function handleDragHandlePointerDown(event: PointerEvent, target: 'upper' | 'lower') {
+		const current = getframe();
+		if (!current.directManipulation || current.trajectories.length === 0) return;
+		beginPointerDrag(event, target, event.currentTarget as HTMLButtonElement);
 	}
 
 	function handlePointerMove(event: PointerEvent) {
@@ -397,18 +445,54 @@
 	function handlePointerUp(event: PointerEvent) {
 		if (!dragging || pointerId !== event.pointerId) return;
 		updateDrag(event, 'end');
-		dragging = null;
-		pointerId = null;
-		if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+		clearActivePointer(event.pointerId);
 		event.preventDefault();
 	}
 
 	function handlePointerCancel(event: PointerEvent) {
 		if (!dragging || pointerId !== event.pointerId) return;
-		ondrag(dragging, 0, 'cancel');
+		const target = dragging;
+		clearActivePointer(event.pointerId);
+		ondrag(target, 0, 'cancel');
+	}
+
+	function clearActivePointer(activePointerId = pointerId) {
+		const captureTarget = pointerCaptureTarget;
 		dragging = null;
 		pointerId = null;
-		if (canvas.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+		pointerCaptureTarget = null;
+		if (activePointerId !== null && captureTarget?.hasPointerCapture(activePointerId)) {
+			captureTarget.releasePointerCapture(activePointerId);
+		}
+	}
+
+	function handleDragHandleKeyDown(event: KeyboardEvent, target: 'upper' | 'lower') {
+		if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
+		const current = getframe();
+		if (!current.directManipulation || current.trajectories.length === 0) return;
+
+		const { scale, pivots } = layout(current);
+		const pivot = pivots[0];
+		const position = geometry(current.trajectories[0].state, current.parameters);
+		const origin =
+			target === 'upper'
+				? pivot
+				: {
+						x: pivot.x + position.x1 * scale,
+						y: pivot.y + position.y1 * scale
+					};
+		const bob =
+			target === 'upper'
+				? { x: pivot.x + position.x1 * scale, y: pivot.y + position.y1 * scale }
+				: { x: pivot.x + position.x2 * scale, y: pivot.y + position.y2 * scale };
+		const increment = event.shiftKey ? 12 : 4;
+		const dx = event.key === 'ArrowLeft' ? -increment : event.key === 'ArrowRight' ? increment : 0;
+		const dy = event.key === 'ArrowUp' ? -increment : event.key === 'ArrowDown' ? increment : 0;
+		const angle = Math.atan2(bob.x + dx - origin.x, bob.y + dy - origin.y);
+
+		ondrag(target, angle, 'start');
+		ondrag(target, angle, 'end');
+		event.preventDefault();
 	}
 
 	function updateDrag(event: PointerEvent, phase: 'start' | 'move' | 'end') {
@@ -442,6 +526,36 @@
 		onpointercancel={handlePointerCancel}
 		onlostpointercapture={handlePointerCancel}
 	></canvas>
+	<button
+		bind:this={upperHandle}
+		class="drag-handle upper-drag-handle"
+		data-drag-target="upper"
+		type="button"
+		hidden
+		aria-label="Upper mass. Drag to set its angle, or use the arrow keys; hold Shift for larger steps."
+		aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown"
+		onpointerdown={(event) => handleDragHandlePointerDown(event, 'upper')}
+		onpointermove={handlePointerMove}
+		onpointerup={handlePointerUp}
+		onpointercancel={handlePointerCancel}
+		onlostpointercapture={handlePointerCancel}
+		onkeydown={(event) => handleDragHandleKeyDown(event, 'upper')}
+	></button>
+	<button
+		bind:this={lowerHandle}
+		class="drag-handle lower-drag-handle"
+		data-drag-target="lower"
+		type="button"
+		hidden
+		aria-label="Lower mass. Drag to set its angle, or use the arrow keys; hold Shift for larger steps."
+		aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown"
+		onpointerdown={(event) => handleDragHandlePointerDown(event, 'lower')}
+		onpointermove={handlePointerMove}
+		onpointerup={handlePointerUp}
+		onpointercancel={handlePointerCancel}
+		onlostpointercapture={handlePointerCancel}
+		onkeydown={(event) => handleDragHandleKeyDown(event, 'lower')}
+	></button>
 	<p class="drag-hint" aria-hidden="true">Drag a mass · release from rest</p>
 	<noscript
 		><p class="noscript-note">
@@ -455,10 +569,12 @@
 	.stage-shell {
 		position: relative;
 		min-width: 0;
+		min-height: 320px;
+		aspect-ratio: 25 / 14;
 		background: #081015;
 		isolation: isolate;
 		overflow: hidden;
-		touch-action: pan-y;
+		touch-action: pan-y pinch-zoom;
 	}
 	.stage-poster,
 	canvas {
@@ -477,6 +593,7 @@
 		z-index: 1;
 		cursor: grab;
 		background: transparent;
+		touch-action: pan-y pinch-zoom;
 	}
 	canvas:active {
 		cursor: grabbing;
@@ -484,6 +601,40 @@
 	canvas:focus-visible {
 		outline: 3px solid #a7dfd1;
 		outline-offset: -5px;
+	}
+	.drag-handle {
+		position: absolute;
+		z-index: 3;
+		width: 3.25rem;
+		height: 3.25rem;
+		margin: 0;
+		transform: translate(-50%, -50%);
+		border: 0;
+		border-radius: 50%;
+		background: transparent;
+		padding: 0;
+		cursor: grab;
+		touch-action: none;
+	}
+	.drag-handle::after {
+		position: absolute;
+		inset: 0.48rem;
+		border: 1px solid transparent;
+		border-radius: inherit;
+		background: transparent;
+		content: '';
+	}
+	.drag-handle:hover::after,
+	.drag-handle:focus-visible::after {
+		border-color: rgb(167 223 209 / 0.72);
+		background: rgb(167 223 209 / 0.08);
+	}
+	.drag-handle:active {
+		cursor: grabbing;
+	}
+	.drag-handle:focus-visible {
+		outline: 3px solid #a7dfd1;
+		outline-offset: -4px;
 	}
 	.is-ready .stage-poster {
 		opacity: 0;
@@ -516,6 +667,17 @@
 	@media (prefers-reduced-motion: reduce) {
 		.stage-poster {
 			transition: none;
+		}
+	}
+	@media (max-width: 639px) {
+		.stage-shell {
+			aspect-ratio: 25 / 27;
+		}
+	}
+	@media (pointer: coarse) {
+		.drag-handle {
+			width: 3.75rem;
+			height: 3.75rem;
 		}
 	}
 </style>

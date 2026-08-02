@@ -642,7 +642,9 @@
 		if (playing || activeMode === 'atlas') return;
 		try {
 			stepSimulation(timestep);
-			statusMessage = `Advanced exactly one ${formatTimestep(timestep)} RK4 step.`;
+			statusMessage = lyingIntegrator
+				? `Advanced RK4 and explicit Euler by exactly ${formatTimestep(timestep)}.`
+				: `Advanced exactly one ${formatTimestep(timestep)} RK4 step.`;
 			publishMetrics(true);
 		} catch (cause) {
 			failSimulation(cause);
@@ -1489,7 +1491,13 @@
 						<div>
 							<span>Energy error</span><strong>{formatEnergyError(displayedEnergyError)}</strong>
 						</div>
-						<div><span>Integrator</span><strong>RK4 · {formatTimestep(timestep)}</strong></div>
+						<div>
+							<span>Integrator</span><strong
+								>{lyingIntegrator
+									? `RK4 + explicit Euler · ${formatTimestep(timestep)}`
+									: `RK4 · ${formatTimestep(timestep)}`}</strong
+							>
+						</div>
 						<div>
 							<span>θ₁ / θ₂ now</span><strong
 								>{toDegrees(displayedState.theta1).toFixed(1)}° / {toDegrees(
@@ -1903,14 +1911,13 @@
 		outline-offset: 4px;
 	}
 	.loading {
-		position: absolute;
-		inset: 0;
-		z-index: 10;
-		display: grid;
-		place-items: center;
+		position: static;
 		margin: 0;
-		background: var(--dp-bg);
+		border-bottom: 1px solid var(--dp-line);
+		background: var(--dp-panel);
+		padding: 0.65rem 1rem;
 		color: var(--dp-muted);
+		text-align: center;
 	}
 	.loading.hidden {
 		display: none;
