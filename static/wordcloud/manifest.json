@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T09:41:24.927231+00:00",
+  "generatedAt": "2026-08-02T12:00:20.520937+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2689,6 +2689,29 @@
         "Branch",
         "Every",
         "Input"
+      ],
+      "wordCount": 130
+    },
+    "double-pendulum-chaos": {
+      "generatedAt": "2026-08-02T12:00:20.113467+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/double-pendulum-chaos.svg",
+      "source": "src/lib/posts/double-pendulum-chaos.md",
+      "sourceHash": "6cb672ee7531d2690d3802abc41c365c040fd2ca164bef144571cdb180d7f76d",
+      "sourceModified": "2026-08-02T11:59:52.837221+00:00",
+      "topWords": [
+        "State",
+        "Trajectory",
+        "Angle",
+        "Nearby",
+        "Numerical",
+        "Experiment",
+        "Atlas",
+        "Energy",
+        "Rod",
+        "Laboratory",
+        "Different",
+        "Rather"
       ],
       "wordCount": 130
     },

@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Machine That Misplaces Tomorrow: A Double-Pendulum Atlas of Chaos" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Machine That Misplaces Tomorrow: A Double-Pendulum Atlas of Chaos</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(158,451) rotate(-90)" font-size="118" style="fill:#c7d7b5">State</text>
+<text transform="translate(430,292)" font-size="112" style="fill:#d88988">Trajectory</text>
+<text transform="translate(111,570)" font-size="112" style="fill:#d88988">Angle</text>
+<text transform="translate(212,407)" font-size="106" style="fill:#d9c89e">Nearby</text>
+<text transform="translate(464,171)" font-size="106" style="fill:#d6a79f">Numerical</text>
+<text transform="translate(413,654)" font-size="100" style="fill:#b6c3dd">Experiment</text>
+<text transform="translate(793,485)" font-size="100" style="fill:#e0b879">Atlas</text>
+<text transform="translate(36,688)" font-size="100" style="fill:#8fb7d0">Energy</text>
+<text transform="translate(1079,142)" font-size="93" style="fill:#8fb7d0">Rod</text>
+<text transform="translate(1249,713) rotate(-90)" font-size="93" style="fill:#d9c89e">Laboratory</text>
+<text transform="translate(644,561)" font-size="93" style="fill:#d6a79f">Different</text>
+<text transform="translate(384,81)" font-size="93" style="fill:#9fc9c5">Rather</text>
+<text transform="translate(4,74)" font-size="90" style="fill:#c49a6c">Angular</text>
+<text transform="translate(779,391)" font-size="90" style="fill:#d5d2c2">Motion</text>
+<text transform="translate(865,65)" font-size="83" style="fill:#a9b7a3">Four</text>
+<text transform="translate(193,463)" font-size="69" style="fill:#9fc9c5">Starting</text>
+<text transform="translate(1159,492) rotate(-90)" font-size="69" style="fill:#d6a79f">Physical</text>
+<text transform="translate(792,701)" font-size="57" style="fill:#a9b7a3">Equations</text>
+<text transform="translate(166,174)" font-size="57" style="fill:#e0b879">Futures</text>
+<text transform="translate(469,546)" font-size="57" style="fill:#a9b7a3">Phase</text>
+<text transform="translate(165,253)" font-size="57" style="fill:#e0b879">Every</text>
+<text transform="translate(47,428) rotate(-90)" font-size="57" style="fill:#c49a6c">Separation</text>
+<text transform="translate(205,319)" font-size="57" style="fill:#d88988">Horizon</text>
+<text transform="translate(92,598) rotate(-90)" font-size="57" style="fill:#b6c3dd">Time</text>
+<text transform="translate(300,136)" font-size="52" style="fill:#c49a6c">Rods</text>
+<text transform="translate(1078,197) rotate(-90)" font-size="52" style="fill:#d9c89e">Lower</text>
+<text transform="translate(555,700)" font-size="52" style="fill:#9fc9c5">Changes</text>
+<text transform="translate(1119,62)" font-size="52" style="fill:#8fb7d0">Real</text>
+<text transform="translate(527,477)" font-size="52" style="fill:#b6c3dd">Small</text>
+<text transform="translate(597,431)" font-size="52" style="fill:#d5d2c2">Masses</text>
+<text transform="translate(199,206)" font-size="39" style="fill:#d5d2c2">Integrator</text>
+<text transform="translate(714,215)" font-size="39" style="fill:#8fb7d0">Second</text>
+<text transform="translate(616,372)" font-size="39" style="fill:#c49a6c">Initial</text>
+<text transform="translate(433,199)" font-size="31" style="fill:#d6a79f">Trajectories</text>
+<text transform="translate(1065,657)" font-size="31" style="fill:#c49a6c">Moving</text>
+<text transform="translate(163,496)" font-size="31" style="fill:#e0b879">Angles</text>
+<text transform="translate(930,219)" font-size="31" style="fill:#a9b7a3">Model</text>
+<text transform="translate(726,62)" font-size="31" style="fill:#d5d2c2">Shadow</text>
+<text transform="translate(41,694) rotate(-90)" font-size="31" style="fill:#b6c3dd">Perturbation</text>
+<text transform="translate(849,94)" font-size="28" style="fill:#b6c3dd">Finite</text>
+<text transform="translate(493,589)" font-size="28" style="fill:#b6c3dd">Calculation</text>
+<text transform="translate(1027,608)" font-size="28" style="fill:#d9c89e">Lengths</text>
+<text transform="translate(449,686)" font-size="28" style="fill:#b6c3dd">Space</text>
+<text transform="translate(130,597)" font-size="28" style="fill:#8fb7d0">Close</text>
+<text transform="translate(696,322)" font-size="28" style="fill:#c49a6c">Difference</text>
+<text transform="translate(458,319)" font-size="28" style="fill:#d88988">Prediction</text>
+<text transform="translate(180,627)" font-size="28" style="fill:#a9b7a3">Velocities</text>
+<text transform="translate(137,712)" font-size="28" style="fill:#9fc9c5">Crosses</text>
+<text transform="translate(529,108)" font-size="28" style="fill:#9fc9c5">Mechanism</text>
+<text transform="translate(609,25)" font-size="28" style="fill:#d88988">Coordinate</text>
+<text transform="translate(779,587)" font-size="28" style="fill:#d88988">Integration</text>
+<text transform="translate(1054,224)" font-size="28" style="fill:#c7d7b5">RK4</text>
+<text transform="translate(173,119)" font-size="24" style="fill:#8fb7d0">Weight</text>
+<text transform="translate(528,499)" font-size="24" style="fill:#d6a79f">Machine</text>
+<text transform="translate(344,269)" font-size="24" style="fill:#e0b879">Begins</text>
+<text transform="translate(1029,582)" font-size="24" style="fill:#d6a79f">Becomes</text>
+<text transform="translate(1126,687)" font-size="24" style="fill:#d9c89e">Random</text>
+<text transform="translate(887,317)" font-size="24" style="fill:#9fc9c5">Parameters</text>
+<text transform="translate(348,593)" font-size="24" style="fill:#d88988">Exact</text>
+<text transform="translate(341,246)" font-size="24" style="fill:#a9b7a3">Measured</text>
+<text transform="translate(182,398) rotate(-90)" font-size="24" style="fill:#c49a6c">Guided</text>
+<text transform="translate(688,90)" font-size="24" style="fill:#a9b7a3">Visible</text>
+<text transform="translate(371,491)" font-size="24" style="fill:#e0b879">Degrees</text>
+<text transform="translate(987,635)" font-size="24" style="fill:#d88988">First</text>
+<text transform="translate(711,467)" font-size="24" style="fill:#9fc9c5">Bob</text>
+<text transform="translate(993,415)" font-size="24" style="fill:#d88988">Change</text>
+<text transform="translate(547,220)" font-size="24" style="fill:#d88988">Compare</text>
+<text transform="translate(517,339)" font-size="24" style="fill:#d9c89e">Inspect</text>
+<text transform="translate(1183,336) rotate(-90)" font-size="24" style="fill:#d6a79f">Fixed</text>
+<text transform="translate(441,715)" font-size="24" style="fill:#b6c3dd">Produced</text>
+<text transform="translate(641,396)" font-size="24" style="fill:#e0b879">Within</text>
+<text transform="translate(1102,713)" font-size="24" style="fill:#d5d2c2">Ten</text>
+<text transform="translate(1267,115) rotate(-90)" font-size="24" style="fill:#d9c89e">Remains</text>
+<text transform="translate(1272,411) rotate(-90)" font-size="24" style="fill:#d9c89e">Threshold</text>
+<text transform="translate(1151,85)" font-size="24" style="fill:#9fc9c5">Plane</text>
+<text transform="translate(336,344)" font-size="24" style="fill:#a9b7a3">Vertical</text>
+<text transform="translate(1082,164)" font-size="24" style="fill:#d88988">Folded</text>
+<text transform="translate(213,95)" font-size="24" style="fill:#d6a79f">Screen</text>
+<text transform="translate(6,713)" font-size="24" style="fill:#e0b879">Direction</text>
+<text transform="translate(75,190) rotate(-90)" font-size="24" style="fill:#c49a6c">Timestep</text>
+<text transform="translate(1272,703) rotate(-90)" font-size="24" style="fill:#c7d7b5">Selected</text>
+<text transform="translate(75,334) rotate(-90)" font-size="24" style="fill:#d5d2c2">Radians</text>
+<text transform="translate(387,690)" font-size="24" style="fill:#d6a79f">Much</text>
+<text transform="translate(1273,548) rotate(-90)" font-size="24" style="fill:#8fb7d0">Useful</text>
+<text transform="translate(1187,572) rotate(-90)" font-size="24" style="fill:#d5d2c2">Usually</text>
+<text transform="translate(203,397) rotate(-90)" font-size="24" style="fill:#d6a79f">Finitetime</text>
+<text transform="translate(1186,259) rotate(-90)" font-size="24" style="fill:#c49a6c">Regions</text>
+<text transform="translate(783,30)" font-size="24" style="fill:#d88988">Chosen</text>
+<text transform="translate(68,20)" font-size="21" style="fill:#c49a6c">Calculated</text>
+<text transform="translate(365,627)" font-size="21" style="fill:#d9c89e">Cell</text>
+<text transform="translate(106,483)" font-size="21" style="fill:#9fc9c5">Seam</text>
+<text transform="translate(104,621)" font-size="21" style="fill:#a9b7a3">Chaos</text>
+<text transform="translate(909,192)" font-size="21" style="fill:#8fb7d0">Cells</text>
+<text transform="translate(909,505)" font-size="21" style="fill:#a9b7a3">Portrait</text>
+<text transform="translate(265,20)" font-size="21" style="fill:#b6c3dd">Section</text>
+<text transform="translate(448,167) rotate(-90)" font-size="21" style="fill:#c49a6c">Step</text>
+<text transform="translate(1083,20)" font-size="21" style="fill:#c7d7b5">Surface</text>
+<text transform="translate(4,453)" font-size="21" style="fill:#8fb7d0">Lying</text>
+<text transform="translate(1108,628)" font-size="21" style="fill:#d6a79f">Method</text>
+<text transform="translate(437,20)" font-size="21" style="fill:#c7d7b5">Euler</text>
+<text transform="translate(1212,444)" font-size="17" style="fill:#c49a6c">Less</text>
+<text transform="translate(1016,504)" font-size="17" style="fill:#d9c89e">Beside</text>
+<text transform="translate(439,562)" font-size="17" style="fill:#8fb7d0">Rule</text>
+<text transform="translate(982,84)" font-size="17" style="fill:#d88988">Turns</text>
+<text transform="translate(94,460)" font-size="17" style="fill:#d5d2c2">Calculate</text>
+<text transform="translate(1046,337)" font-size="17" style="fill:#d5d2c2">Hidden</text>
+<text transform="translate(524,563)" font-size="17" style="fill:#d9c89e">Numbers</text>
+<text transform="translate(336,224)" font-size="17" style="fill:#b6c3dd">Precision</text>
+<text transform="translate(207,269)" font-size="17" style="fill:#b6c3dd">Computer</text>
+<text transform="translate(710,108)" font-size="17" style="fill:#c7d7b5">Identical</text>
+<text transform="translate(399,98)" font-size="17" style="fill:#a9b7a3">Never</text>
+<text transform="translate(1038,150) rotate(-90)" font-size="17" style="fill:#d9c89e">Copies</text>
+<text transform="translate(782,408)" font-size="17" style="fill:#e0b879">Evolves</text>
+<text transform="translate(696,283) rotate(-90)" font-size="17" style="fill:#e0b879">Fixedstep</text>
+<text transform="translate(766,636) rotate(-90)" font-size="17" style="fill:#d6a79f">Fourthorder</text>
+<text transform="translate(1221,231)" font-size="17" style="fill:#8fb7d0">Runge</text>
+<text transform="translate(108,378)" font-size="17" style="fill:#9fc9c5">Kutta</text>
+<text transform="translate(868,227)" font-size="17" style="fill:#8fb7d0">Later</text>
+<text transform="translate(1076,40)" font-size="17" style="fill:#9fc9c5">Full</text>
+<text transform="translate(853,206)" font-size="17" style="fill:#d6a79f">Keeps</text>
+<text transform="translate(372,712)" font-size="17" style="fill:#e0b879">Polite</text>
+<text transform="translate(284,340)" font-size="17" style="fill:#d88988">Part</text>
+<text transform="translate(1004,291)" font-size="17" style="fill:#d5d2c2">Drag</text>
+<text transform="translate(472,497)" font-size="17" style="fill:#d88988">Clock</text>
+<text transform="translate(688,485)" font-size="17" style="fill:#d5d2c2">Animation</text>
+<text transform="translate(290,480)" font-size="17" style="fill:#c49a6c">Follows</text>
+<text transform="translate(740,188)" font-size="17" style="fill:#a9b7a3">Simulated</text>
+<text transform="translate(308,90)" font-size="17" style="fill:#d88988">Display</text>
+<text transform="translate(656,337)" font-size="15" style="fill:#9fc9c5">Intermediate</text>
+<text transform="translate(855,409)" font-size="15" style="fill:#a9b7a3">Receive</text>
+</svg>

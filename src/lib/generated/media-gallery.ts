@@ -3079,6 +3079,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 675
 		},
 		{
+			"name": "double-pendulum-chaos.svg",
+			"src": "/images/double-pendulum-chaos.svg",
+			"bytes": 7154,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "fractal-atlas.png",
 			"src": "/images/fractal-atlas.png",
 			"bytes": 87605,

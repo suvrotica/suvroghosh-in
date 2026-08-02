@@ -24,6 +24,7 @@
 		"city-master-plan:stress": "vitest run --config vitest.city-master-plan-stress.config.ts",
 		"city-master-plan:browser:test": "playwright test --config=playwright.city-master-plan.config.ts",
 		"fractal-atlas:test": "vitest run src/lib/visualizations/fractal-atlas",
+		"double-pendulum:test": "vitest run src/lib/visualizations/double-pendulum",
 		"fractal-atlas:browser:test": "playwright test --config=playwright.fractal-atlas.config.ts",
 		"fractal-atlas:poster": "node scripts/render-fractal-atlas-poster.mjs",
 		"fractal-atlas:presets": "node scripts/render-fractal-atlas-presets.mjs",

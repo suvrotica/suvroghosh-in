@@ -1,0 +1,167 @@
+<svg
+	viewBox="0 0 1600 900"
+	width="1600"
+	height="900"
+	role="img"
+	aria-labelledby="title description"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<title id="title">Two almost identical double-pendulum futures parting</title>
+	<desc id="description">
+		A dark scientific plate with a crisp double pendulum, warm and cool lower-bob trails that
+		begin together and diverge, and faint phase-space contours behind the mechanism.
+	</desc>
+	<defs>
+		<linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#080b12" />
+			<stop offset="0.52" stop-color="#11131a" />
+			<stop offset="1" stop-color="#07090e" />
+		</linearGradient>
+		<radialGradient id="warmBob" cx="35%" cy="28%" r="72%">
+			<stop offset="0" stop-color="#fff4dc" />
+			<stop offset="0.17" stop-color="#f8b47c" />
+			<stop offset="0.56" stop-color="#e75b3b" />
+			<stop offset="1" stop-color="#70231f" />
+		</radialGradient>
+		<radialGradient id="upperBob" cx="34%" cy="26%" r="74%">
+			<stop offset="0" stop-color="#fff8e9" />
+			<stop offset="0.24" stop-color="#e1d8c6" />
+			<stop offset="0.7" stop-color="#716f73" />
+			<stop offset="1" stop-color="#282a30" />
+		</radialGradient>
+		<linearGradient id="rod" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#fff8e8" />
+			<stop offset="0.48" stop-color="#b9b6b0" />
+			<stop offset="1" stop-color="#555861" />
+		</linearGradient>
+		<linearGradient id="warmTrail" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0" stop-color="#f6b06b" stop-opacity="0.12" />
+			<stop offset="0.24" stop-color="#ff8a57" stop-opacity="0.62" />
+			<stop offset="0.74" stop-color="#f2613f" stop-opacity="0.92" />
+			<stop offset="1" stop-color="#ffd0a4" stop-opacity="0.18" />
+		</linearGradient>
+		<linearGradient id="coolTrail" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0" stop-color="#78c9e8" stop-opacity="0.08" />
+			<stop offset="0.28" stop-color="#78c9e8" stop-opacity="0.58" />
+			<stop offset="0.78" stop-color="#b7e7f7" stop-opacity="0.82" />
+			<stop offset="1" stop-color="#78c9e8" stop-opacity="0.12" />
+		</linearGradient>
+		<filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+			<feGaussianBlur stdDeviation="9" />
+		</filter>
+		<filter id="grain" x="0" y="0" width="100%" height="100%">
+			<feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="3" seed="17" />
+			<feColorMatrix type="saturate" values="0" />
+		</filter>
+		<pattern id="grid" width="72" height="72" patternUnits="userSpaceOnUse">
+			<path d="M72 0H0V72" fill="none" stroke="#d9d1bf" stroke-opacity="0.08" />
+			<circle cx="0" cy="0" r="2" fill="#d9d1bf" fill-opacity="0.16" />
+		</pattern>
+		<clipPath id="plateClip">
+			<rect x="30" y="30" width="1540" height="840" rx="34" />
+		</clipPath>
+	</defs>
+
+	<g clip-path="url(#plateClip)">
+		<rect x="30" y="30" width="1540" height="840" rx="34" fill="url(#background)" />
+		<rect x="30" y="30" width="1540" height="840" rx="34" fill="url(#grid)" />
+		<rect
+			x="30"
+			y="30"
+			width="1540"
+			height="840"
+			rx="34"
+			filter="url(#grain)"
+			opacity="0.055"
+		/>
+
+		<!-- Sparse phase-space and atlas texture: structure, not decoration pretending to be data. -->
+		<g fill="none" stroke="#92a2b5" stroke-opacity="0.14">
+			<path d="M101 225C211 104 397 96 504 211S550 472 379 489 106 394 101 225Z" />
+			<path d="M143 234C234 142 368 140 447 225S466 417 344 431 150 358 143 234Z" />
+			<path d="M194 246C259 188 344 190 397 247S407 357 326 369 201 322 194 246Z" />
+			<path d="M1124 185C1294 89 1506 175 1523 359S1361 638 1195 557 973 271 1124 185Z" />
+			<path d="M1174 218C1296 153 1448 218 1455 350S1341 535 1222 484 1060 278 1174 218Z" />
+			<path d="M1226 255C1307 215 1401 260 1405 346S1331 461 1256 427 1152 291 1226 255Z" />
+		</g>
+		<g fill="#91a5b7" fill-opacity="0.16">
+			<circle cx="113" cy="678" r="3" />
+			<circle cx="178" cy="711" r="2" />
+			<circle cx="247" cy="658" r="2.5" />
+			<circle cx="318" cy="739" r="2" />
+			<circle cx="392" cy="682" r="3" />
+			<circle cx="460" cy="757" r="2" />
+			<circle cx="1224" cy="693" r="2.5" />
+			<circle cx="1307" cy="741" r="2" />
+			<circle cx="1384" cy="669" r="3" />
+			<circle cx="1462" cy="723" r="2" />
+		</g>
+
+		<!-- Both lower-bob paths share an origin before the cool future parts company. -->
+		<path
+			d="M646 680C540 747 387 746 334 633S426 420 559 455 714 637 646 680C565 730 503 621 548 542S735 414 876 477 989 690 886 738 686 700 699 581 875 386 1117 396 1282 534 1279 713 1112 785"
+			fill="none"
+			stroke="#f2613f"
+			stroke-opacity="0.12"
+			stroke-width="28"
+			stroke-linecap="round"
+			filter="url(#softGlow)"
+		/>
+		<path
+			d="M646 680C540 747 387 746 334 633S426 420 559 455 714 637 646 680C565 730 503 621 548 542S735 414 876 477 989 690 886 738 686 700 699 581 875 386 1117 396 1282 534 1279 713 1112 785"
+			fill="none"
+			stroke="url(#warmTrail)"
+			stroke-width="8"
+			stroke-linecap="round"
+		/>
+		<path
+			d="M646 680C540 747 388 746 334 633S426 420 559 455 714 637 646 680C569 726 515 624 563 551S744 438 861 503C970 565 1004 716 913 760 804 813 676 737 727 635 788 512 1011 517 1134 633 1226 720 1335 732 1470 650"
+			fill="none"
+			stroke="#7bcbe8"
+			stroke-opacity="0.1"
+			stroke-width="25"
+			stroke-linecap="round"
+			filter="url(#softGlow)"
+		/>
+		<path
+			d="M646 680C540 747 388 746 334 633S426 420 559 455 714 637 646 680C569 726 515 624 563 551S744 438 861 503C970 565 1004 716 913 760 804 813 676 737 727 635 788 512 1011 517 1134 633 1226 720 1335 732 1470 650"
+			fill="none"
+			stroke="url(#coolTrail)"
+			stroke-width="6"
+			stroke-linecap="round"
+			stroke-dasharray="18 13"
+		/>
+
+		<!-- Current mechanism. -->
+		<path d="M760 203V780" stroke="#e5dfd2" stroke-opacity="0.13" stroke-dasharray="6 14" />
+		<circle cx="760" cy="203" r="34" fill="#ffffff" fill-opacity="0.045" />
+		<circle cx="760" cy="203" r="13" fill="#e7dfcf" />
+		<circle cx="760" cy="203" r="5" fill="#5a5b60" />
+		<path d="M760 203L877 442" stroke="#0a0b0f" stroke-opacity="0.8" stroke-width="18" />
+		<path d="M760 203L877 442" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" />
+		<path d="M877 442L646 680" stroke="#0a0b0f" stroke-opacity="0.8" stroke-width="18" />
+		<path d="M877 442L646 680" stroke="url(#rod)" stroke-width="7" stroke-linecap="round" />
+		<circle cx="877" cy="442" r="43" fill="#000000" fill-opacity="0.45" filter="url(#softGlow)" />
+		<circle cx="877" cy="442" r="34" fill="url(#upperBob)" />
+		<circle cx="867" cy="431" r="8" fill="#ffffff" fill-opacity="0.38" />
+		<circle cx="646" cy="680" r="55" fill="#f2613f" fill-opacity="0.24" filter="url(#softGlow)" />
+		<circle cx="646" cy="680" r="42" fill="url(#warmBob)" />
+		<circle cx="633" cy="665" r="10" fill="#ffffff" fill-opacity="0.45" />
+
+		<path d="M90 103H310" stroke="#d8cdb9" stroke-opacity="0.42" />
+		<path d="M90 118H235" stroke="#d8cdb9" stroke-opacity="0.18" />
+		<path d="M1290 797H1510" stroke="#d8cdb9" stroke-opacity="0.42" />
+		<path d="M1365 782H1510" stroke="#d8cdb9" stroke-opacity="0.18" />
+	</g>
+	<rect
+		x="30.75"
+		y="30.75"
+		width="1538.5"
+		height="838.5"
+		rx="33.25"
+		fill="none"
+		stroke="#a9a397"
+		stroke-opacity="0.34"
+		stroke-width="1.5"
+	/>
+</svg>

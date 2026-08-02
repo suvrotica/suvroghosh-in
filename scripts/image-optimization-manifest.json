@@ -8044,6 +8044,18 @@
       "sourceHash": "286f4e8c7660f0f77109b836450a6b594810137d0d01011c0059282711dbd383",
       "width": 1200
     },
+    "static/images/double-pendulum-chaos.svg": {
+      "format": "SVG",
+      "height": 900,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 7154,
+      "outputHash": "c3fd3aea23023f41e528c501903308eafe7c3624bac0ac4d73760d75b4dcfe52",
+      "reason": "vector source retained",
+      "sourceBytes": 7154,
+      "sourceHash": "c3fd3aea23023f41e528c501903308eafe7c3624bac0ac4d73760d75b4dcfe52",
+      "width": 1600
+    },
     "static/images/fractal-atlas.png": {
       "format": "PNG",
       "height": 900,

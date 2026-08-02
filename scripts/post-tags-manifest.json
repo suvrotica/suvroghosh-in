@@ -10504,6 +10504,34 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-01"
+		},
+		"src/lib/posts/double-pendulum-chaos.md": {
+			"bodyHash": "9ba9da4e8d988b8473ceb78951e3b8817905b272d2e3d64286192172267a0d0c",
+			"hashVersion": 2,
+			"revisionHash": "5ddefbdd99f6ac6475106c0b241d125831af34318f2e957cd92fa7891891a783",
+			"generatedTags": [
+				"Chaos Theory",
+				"Double Pendulum",
+				"Dynamical Systems",
+				"Physics",
+				"Mathematics",
+				"Simulation",
+				"Lyapunov Exponent",
+				"Prediction Horizon",
+				"Lying Integrator",
+				"Full Double-Pendulum Laboratory"
+			],
+			"pinnedTags": [
+				"Chaos Theory",
+				"Double Pendulum",
+				"Dynamical Systems",
+				"Physics",
+				"Mathematics",
+				"Simulation",
+				"Lyapunov Exponent"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-02"
 		}
 	},
 	"maxTags": 10

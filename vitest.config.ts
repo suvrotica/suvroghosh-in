@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/double-pendulum/**/*.test.ts',
 			'src/lib/motion/**/*.test.ts',
 			'src/lib/notes/**/*.test.ts',
 			'src/lib/server/notes/**/*.test.ts',
