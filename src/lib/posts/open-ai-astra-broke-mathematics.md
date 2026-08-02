@@ -6,7 +6,7 @@ dateModified: "2026-08-02"
 thumbnail: "/thumbnail/Compress_20260801_131236_6396.jpg"
 thumbnailAlt: "Abstract digital artwork combining theorem notation with geometric computational patterns."
 category: "Artificial Intelligence"
-tags: ["Artificial Intelligence", "Mathematics", "OpenAI", "Astra", "Machine Learning", "Lean Theorem Prover", "Theoretical Computer Science", "Scientific Reasoning"]
+tags: ["Operator Algebras","Connes Rigidity Conjecture","Reinforcement Learning","Peer Review","Sol API Rates","Astra","Mathematical","OpenAI","Arguments","Formal"]
 published: true
 color: "#10a37f"
 ---

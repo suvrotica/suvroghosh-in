@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Machine That Ate Ten Theorems: How OpenAI&#x27;s Unreleased Astra Model Produced Ten Mathematical Advances" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Machine That Ate Ten Theorems: How OpenAI&#x27;s Unreleased Astra Model Produced Ten Mathematical Advances</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(824,453)" font-size="118" style="fill:#e0b879">Astra</text>
+<text transform="translate(218,240)" font-size="118" style="fill:#8fb7d0">Mathematical</text>
+<text transform="translate(396,607)" font-size="94" style="fill:#e0b879">Mathematics</text>
+<text transform="translate(653,79)" font-size="93" style="fill:#d88988">Openai</text>
+<text transform="translate(81,129)" font-size="93" style="fill:#c7d7b5">Formal</text>
+<text transform="translate(417,318)" font-size="90" style="fill:#8fb7d0">Human</text>
+<text transform="translate(234,392)" font-size="90" style="fill:#e0b879">Arguments</text>
+<text transform="translate(731,354)" font-size="90" style="fill:#9fc9c5">Proof</text>
+<text transform="translate(8,613)" font-size="87" style="fill:#c49a6c">Results</text>
+<text transform="translate(25,702)" font-size="85" style="fill:#c49a6c">Model</text>
+<text transform="translate(187,528)" font-size="82" style="fill:#8fb7d0">Lean</text>
+<text transform="translate(324,686)" font-size="80" style="fill:#a9b7a3">Whether</text>
+<text transform="translate(957,140)" font-size="75" style="fill:#b6c3dd">Ten</text>
+<text transform="translate(542,503)" font-size="75" style="fill:#c7d7b5">Every</text>
+<text transform="translate(1226,309) rotate(-90)" font-size="72" style="fill:#d88988">Machine</text>
+<text transform="translate(750,668)" font-size="70" style="fill:#d9c89e">Problems</text>
+<text transform="translate(844,528)" font-size="70" style="fill:#d6a79f">Result</text>
+<text transform="translate(38,299)" font-size="70" style="fill:#b6c3dd">Systems</text>
+<text transform="translate(1008,85)" font-size="66" style="fill:#d9c89e">Work</text>
+<text transform="translate(411,51)" font-size="64" style="fill:#c49a6c">System</text>
+<text transform="translate(45,445)" font-size="62" style="fill:#d88988">Problem</text>
+<text transform="translate(470,168)" font-size="62" style="fill:#d6a79f">Theorem</text>
+<text transform="translate(733,139)" font-size="60" style="fill:#b6c3dd">Cost</text>
+<text transform="translate(4,54)" font-size="60" style="fill:#c49a6c">Research</text>
+<text transform="translate(25,194)" font-size="60" style="fill:#a9b7a3">Group</text>
+<text transform="translate(1045,593)" font-size="60" style="fill:#b6c3dd">Theory</text>
+<text transform="translate(1141,351) rotate(-90)" font-size="58" style="fill:#d6a79f">Public</text>
+<text transform="translate(526,432)" font-size="51" style="fill:#e0b879">Language</text>
+<text transform="translate(413,106)" font-size="49" style="fill:#d88988">Question</text>
+<text transform="translate(1085,702)" font-size="49" style="fill:#a9b7a3">Enough</text>
+<text transform="translate(1099,539)" font-size="47" style="fill:#a9b7a3">Merely</text>
+<text transform="translate(14,353)" font-size="47" style="fill:#d9c89e">Argument</text>
+<text transform="translate(699,705)" font-size="43" style="fill:#c7d7b5">Computation</text>
+<text transform="translate(306,467)" font-size="41" style="fill:#a9b7a3">Yet</text>
+<text transform="translate(683,279)" font-size="41" style="fill:#9fc9c5">Mathematicians</text>
+<text transform="translate(1262,222) rotate(-90)" font-size="41" style="fill:#8fb7d0">Training</text>
+<text transform="translate(396,428)" font-size="41" style="fill:#8fb7d0">Whose</text>
+<text transform="translate(29,500)" font-size="41" style="fill:#d88988">Search</text>
+<text transform="translate(1265,501) rotate(-90)" font-size="39" style="fill:#d88988">Independent</text>
+<text transform="translate(1090,644)" font-size="39" style="fill:#e0b879">Review</text>
+<text transform="translate(380,488)" font-size="39" style="fill:#e0b879">Proofs</text>
+<text transform="translate(57,240)" font-size="39" style="fill:#8fb7d0">Answer</text>
+<text transform="translate(1005,384)" font-size="35" style="fill:#8fb7d0">Definitions</text>
+<text transform="translate(344,715)" font-size="33" style="fill:#a9b7a3">Bounds</text>
+<text transform="translate(1126,489)" font-size="33" style="fill:#d9c89e">Large</text>
+<text transform="translate(4,526)" font-size="29" style="fill:#c7d7b5">Manuscripts</text>
+<text transform="translate(399,518)" font-size="29" style="fill:#d88988">Produced</text>
+<text transform="translate(851,170)" font-size="29" style="fill:#8fb7d0">Different</text>
+<text transform="translate(466,712)" font-size="27" style="fill:#d5d2c2">Infrastructure</text>
+<text transform="translate(62,560)" font-size="26" style="fill:#d9c89e">Particular</text>
+<text transform="translate(616,544)" font-size="26" style="fill:#b6c3dd">Nonsofic</text>
+<text transform="translate(541,629)" font-size="24" style="fill:#d88988">Highdimensional</text>
+<text transform="translate(979,26)" font-size="24" style="fill:#d5d2c2">Even</text>
+<text transform="translate(976,476) rotate(-90)" font-size="24" style="fill:#8fb7d0">Used</text>
+<text transform="translate(830,300)" font-size="24" style="fill:#8fb7d0">General</text>
+<text transform="translate(481,263)" font-size="24" style="fill:#c49a6c">Verification</text>
+<text transform="translate(793,23)" font-size="24" style="fill:#8fb7d0">Claims</text>
+<text transform="translate(14,390)" font-size="24" style="fill:#b6c3dd">Formalizations</text>
+<text transform="translate(81,637)" font-size="24" style="fill:#e0b879">Ideas</text>
+<text transform="translate(886,135)" font-size="24" style="fill:#a9b7a3">Humans</text>
+<text transform="translate(273,321)" font-size="24" style="fill:#d5d2c2">Reasoning</text>
+<text transform="translate(736,392)" font-size="23" style="fill:#d9c89e">First</text>
+<text transform="translate(116,154)" font-size="23" style="fill:#c7d7b5">Fields</text>
+<text transform="translate(1041,22)" font-size="23" style="fill:#8fb7d0">Repository</text>
+<text transform="translate(232,150)" font-size="23" style="fill:#d6a79f">Across</text>
+<text transform="translate(387,449)" font-size="23" style="fill:#c49a6c">Questions</text>
+<text transform="translate(300,51)" font-size="23" style="fill:#d9c89e">Number</text>
+<text transform="translate(1004,332)" font-size="23" style="fill:#d6a79f">Say</text>
+<text transform="translate(549,129)" font-size="23" style="fill:#e0b879">Frontier</text>
+<text transform="translate(1085,291) rotate(-90)" font-size="23" style="fill:#8fb7d0">Conjecture</text>
+<text transform="translate(1115,665)" font-size="23" style="fill:#d9c89e">Complete</text>
+<text transform="translate(1167,309) rotate(-90)" font-size="23" style="fill:#c7d7b5">Evidence</text>
+<text transform="translate(1001,710)" font-size="23" style="fill:#e0b879">Years</text>
+<text transform="translate(234,469)" font-size="23" style="fill:#d88988">Small</text>
+<text transform="translate(910,550)" font-size="23" style="fill:#c49a6c">Disclosed</text>
+<text transform="translate(875,379)" font-size="23" style="fill:#b6c3dd">Several</text>
+<text transform="translate(796,549) rotate(-90)" font-size="23" style="fill:#c49a6c">Assumptions</text>
+<text transform="translate(23,302) rotate(-90)" font-size="23" style="fill:#d9c89e">Intellectual</text>
+<text transform="translate(251,544)" font-size="15" style="fill:#d6a79f">Machinegenerated</text>
+<text transform="translate(665,454)" font-size="15" style="fill:#c7d7b5">Built</text>
+<text transform="translate(802,468)" font-size="15" style="fill:#d9c89e">Models</text>
+<text transform="translate(888,103)" font-size="14" style="fill:#d9c89e">Many</text>
+<text transform="translate(894,470)" font-size="14" style="fill:#c7d7b5">World</text>
+<text transform="translate(336,262)" font-size="14" style="fill:#a9b7a3">Generated</text>
+<text transform="translate(451,545)" font-size="14" style="fill:#9fc9c5">Central</text>
+<text transform="translate(37,459) rotate(-90)" font-size="14" style="fill:#d9c89e">Thousand</text>
+<text transform="translate(319,22)" font-size="14" style="fill:#8fb7d0">Checking</text>
+<text transform="translate(492,335)" font-size="14" style="fill:#c49a6c">Three</text>
+<text transform="translate(224,630)" font-size="14" style="fill:#c7d7b5">Time</text>
+<text transform="translate(13,131)" font-size="14" style="fill:#b6c3dd">AI</text>
+<text transform="translate(1017,307)" font-size="14" style="fill:#8fb7d0">Unusually</text>
+<text transform="translate(825,409) rotate(-90)" font-size="14" style="fill:#a9b7a3">Formalized</text>
+<text transform="translate(305,705) rotate(-90)" font-size="14" style="fill:#8fb7d0">Matters</text>
+<text transform="translate(1016,609)" font-size="14" style="fill:#a9b7a3">Discovery</text>
+<text transform="translate(236,69)" font-size="14" style="fill:#8fb7d0">Quantum</text>
+<text transform="translate(340,423) rotate(-90)" font-size="14" style="fill:#b6c3dd">Modern</text>
+<text transform="translate(296,168)" font-size="14" style="fill:#e0b879">Understand</text>
+<text transform="translate(336,276)" font-size="14" style="fill:#e0b879">Eventually</text>
+<text transform="translate(1163,342)" font-size="14" style="fill:#d9c89e">Paper</text>
+<text transform="translate(984,354)" font-size="14" style="fill:#b6c3dd">Encoded</text>
+<text transform="translate(705,21)" font-size="14" style="fill:#d9c89e">Failed</text>
+<text transform="translate(1120,609)" font-size="14" style="fill:#e0b879">Statements</text>
+<text transform="translate(391,636)" font-size="14" style="fill:#b6c3dd">Declaration</text>
+<text transform="translate(98,463)" font-size="14" style="fill:#c7d7b5">Attribution</text>
+<text transform="translate(1104,102)" font-size="14" style="fill:#8fb7d0">Library</text>
+<text transform="translate(277,690) rotate(-90)" font-size="14" style="fill:#8fb7d0">Mathematician</text>
+<text transform="translate(587,66)" font-size="13" style="fill:#b6c3dd">Internal</text>
+<text transform="translate(1113,554)" font-size="13" style="fill:#d88988">Dollars</text>
+<text transform="translate(1141,327)" font-size="13" style="fill:#a9b7a3">Tokens</text>
+<text transform="translate(23,85)" font-size="13" style="fill:#a9b7a3">Price</text>
+<text transform="translate(679,647)" font-size="13" style="fill:#c49a6c">Account</text>
+<text transform="translate(51,459)" font-size="13" style="fill:#e0b879">Field</text>
+<text transform="translate(690,665)" font-size="13" style="fill:#8fb7d0">Packing</text>
+<text transform="translate(141,70)" font-size="13" style="fill:#8fb7d0">Arithmetic</text>
+<text transform="translate(377,237) rotate(-90)" font-size="13" style="fill:#d5d2c2">Tell</text>
+<text transform="translate(1041,467)" font-size="13" style="fill:#d6a79f">Came</text>
+<text transform="translate(16,443) rotate(-90)" font-size="13" style="fill:#c49a6c">Papers</text>
+<text transform="translate(1091,464) rotate(-90)" font-size="13" style="fill:#d88988">Already</text>
+<text transform="translate(725,221) rotate(-90)" font-size="13" style="fill:#d6a79f">Peer</text>
+<text transform="translate(597,520)" font-size="13" style="fill:#b6c3dd">Released</text>
+<text transform="translate(1119,139)" font-size="13" style="fill:#d88988">Release</text>
+<text transform="translate(544,331)" font-size="13" style="fill:#a9b7a3">Process</text>
+<text transform="translate(6,108)" font-size="13" style="fill:#d5d2c2">Complexity</text>
+<text transform="translate(331,560)" font-size="13" style="fill:#b6c3dd">Lattice</text>
+<text transform="translate(139,318)" font-size="13" style="fill:#c49a6c">Produce</text>
+<text transform="translate(1005,252)" font-size="13" style="fill:#8fb7d0">Becomes</text>
+<text transform="translate(216,243) rotate(-90)" font-size="13" style="fill:#c49a6c">Understanding</text>
+<text transform="translate(1180,403)" font-size="13" style="fill:#a9b7a3">Package</text>
+<text transform="translate(883,214)" font-size="13" style="fill:#8fb7d0">Rules</text>
+<text transform="translate(1091,123)" font-size="13" style="fill:#a9b7a3">Now</text>
+</svg>

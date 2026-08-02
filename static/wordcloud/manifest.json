@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T12:00:20.520937+00:00",
+  "generatedAt": "2026-08-02T13:03:37.533844+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -5840,6 +5840,29 @@
         "Merely",
         "Enough",
         "Love"
+      ],
+      "wordCount": 130
+    },
+    "open-ai-astra-broke-mathematics": {
+      "generatedAt": "2026-08-02T13:03:37.257382+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/open-ai-astra-broke-mathematics.svg",
+      "source": "src/lib/posts/open-ai-astra-broke-mathematics.md",
+      "sourceHash": "8c471d6665ae0cbc09fe60c2aacef666e412c09b0955721deec309bd287cf001",
+      "sourceModified": "2026-08-02T13:03:32.168136+00:00",
+      "topWords": [
+        "Astra",
+        "Mathematical",
+        "Mathematics",
+        "Openai",
+        "Formal",
+        "Human",
+        "Arguments",
+        "Proof",
+        "Results",
+        "Model",
+        "Lean",
+        "Whether"
       ],
       "wordCount": 130
     },

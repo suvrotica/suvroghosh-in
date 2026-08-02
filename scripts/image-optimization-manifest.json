@@ -10763,6 +10763,22 @@
       "sourceHash": "631bb6f1dbb48ea4ebaef0d082018716bae4acd64529695857393a16ed443eef",
       "width": 1122
     },
+    "static/thumbnail/Compress_20260801_131236_6396.jpg": {
+      "format": "JPEG",
+      "height": 1086,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1086,
+      "originalWidth": 1448,
+      "outputBytes": 158252,
+      "outputHash": "85352967a4455a7428016660df05fed2c8cd072088fce034bab25a30dba3c0d2",
+      "psnrDb": 40.14,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 601592,
+      "sourceHash": "b371b1357ef4a768260dd5b3960c8324f71030563d8d265ce3f07e28885e6bd6",
+      "width": 1448
+    },
     "static/thumbnail/Compress_20260801_150709_9094.jpg": {
       "format": "JPEG",
       "height": 941,
