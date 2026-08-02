@@ -8781,6 +8781,22 @@
       "sourceHash": "b0d6630a15e06ee4cec1f10670bce1c87ce1e0ea4aec773abe1f5027f4dc9cd7",
       "width": 1600
     },
+    "static/images/reaching-the-light-together-overcoming-major-depression.jpg": {
+      "format": "JPEG",
+      "height": 720,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 720,
+      "originalWidth": 1280,
+      "outputBytes": 61287,
+      "outputHash": "e7b5562f73e849cd8229c5efa65032186e0732758a70096226e0fbfb28a33b31",
+      "psnrDb": 45.22,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 69889,
+      "sourceHash": "1e8c82af53912fc365e3782aa3bd7dc81517f268602fe7a1cfa91e689fb6ce0b",
+      "width": 1280
+    },
     "static/images/resources/alternatives-to-overused-ai-language.webp": {
       "format": "WEBP",
       "height": 675,

@@ -3856,6 +3856,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 872
 		},
 		{
+			"name": "reaching-the-light-together-overcoming-major-depression.jpg",
+			"src": "/images/reaching-the-light-together-overcoming-major-depression.jpg",
+			"bytes": 61287,
+			"width": 1280,
+			"height": 720
+		},
+		{
 			"name": "Resize_20260428_134350_0013.jpg",
 			"src": "/images/Resize_20260428_134350_0013.jpg",
 			"bytes": 17493,

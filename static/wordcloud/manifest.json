@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T13:03:37.533844+00:00",
+  "generatedAt": "2026-08-02T15:38:12.139487+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -6555,6 +6555,29 @@
         "Chariot"
       ],
       "wordCount": 130
+    },
+    "reaching-the-light-together-overcoming-major-depression": {
+      "generatedAt": "2026-08-02T15:38:11.901809+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/reaching-the-light-together-overcoming-major-depression.svg",
+      "source": "src/lib/posts/reaching-the-light-together-overcoming-major-depression.md",
+      "sourceHash": "75a030067a8cd86fd1ce394cdc3a820c8ac43bd5a6d82e4f1894d0b2af24381b",
+      "sourceModified": "2026-08-02T15:36:04.833901+00:00",
+      "topWords": [
+        "Mind",
+        "Krystal",
+        "Mizkat",
+        "Childhood",
+        "Trauma",
+        "Diagnosis",
+        "Film",
+        "Depression",
+        "Minute",
+        "Documentary",
+        "Reaching",
+        "Light"
+      ],
+      "wordCount": 61
     },
     "reading-is-not-homework-it-is-how-the-mind-keeps-change": {
       "generatedAt": "2026-07-12T19:46:28.505077+00:00",

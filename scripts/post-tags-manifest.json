@@ -10552,6 +10552,14 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-02"
+		},
+		"src/lib/posts/reaching-the-light-together-overcoming-major-depression.md": {
+			"bodyHash": "c806a84ad572470e0423e822880ff3836b9cb36985af5e8fbc823d71a6835f53",
+			"hashVersion": 2,
+			"revisionHash": "d89608885e72a07ccdb0ed5ce8902357be7822d2e61f6cf7186e2460cd73c627",
+			"generatedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
+			"pinnedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
