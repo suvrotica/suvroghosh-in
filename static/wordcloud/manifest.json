@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T15:38:12.139487+00:00",
+  "generatedAt": "2026-08-03T07:41:35.050200+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2344,6 +2344,29 @@
         "Cyclospora",
         "American",
         "Produce"
+      ],
+      "wordCount": 130
+    },
+    "containment-breach-protocol": {
+      "generatedAt": "2026-08-03T07:41:26.281566+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/containment-breach-protocol.svg",
+      "source": "src/lib/posts/containment-breach-protocol.md",
+      "sourceHash": "b37d4a0e7ba3fb1ec6cac6d82adb6ceeb0ca5b25c38d9d98a04e08129a9f5c94",
+      "sourceModified": "2026-08-03T07:41:15.748915+00:00",
+      "topWords": [
+        "Containment",
+        "Much",
+        "Never",
+        "Rogue",
+        "Afternoon",
+        "Worse",
+        "Yet",
+        "Hands",
+        "Existence",
+        "Architecture",
+        "Short",
+        "Pointless"
       ],
       "wordCount": 130
     },

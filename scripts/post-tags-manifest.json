@@ -10560,6 +10560,23 @@
 			"generatedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
 			"pinnedTags": ["Video", "Major Depressive Disorder", "Depression", "Mental Health"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/containment-breach-protocol.md": {
+			"bodyHash": "be1d9ae80ea3e570f9d081392cd37cfd075f025040aa89e4e4dea8413e27d389",
+			"hashVersion": 2,
+			"revisionHash": "190eeb5d2df297789befb82440305c9eb85aa2a7d1041f6218604e8f66614e98",
+			"generatedTags": [
+				"Containment",
+				"Rogue",
+				"Pointless",
+				"Short",
+				"Existence",
+				"Architecture",
+				"Afternoon"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-03"
 		}
 	},
 	"maxTags": 10

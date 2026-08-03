@@ -6,7 +6,7 @@ dateModified: "2026-08-03"
 thumbnail: "/thumbnail/Compress_20260803_123240_0710.jpg"
 thumbnailAlt: "Abstract composition evoking isolation, family tension, and digital intrusion"
 category: "Personal"
-tags: ["Blog", "Mental Health", "Technology", "Calcutta", "Rant"]
+tags: ["Containment","Rogue","Pointless","Short","Existence","Architecture","Afternoon"]
 published: true
 color: "#8B4513"
 ---
