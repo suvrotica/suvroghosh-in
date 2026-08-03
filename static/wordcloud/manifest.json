@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T12:44:42.463563+00:00",
+  "generatedAt": "2026-08-03T15:47:32.458727+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -2620,6 +2620,29 @@
         "Perhaps",
         "Depressive",
         "Tea"
+      ],
+      "wordCount": 130
+    },
+    "dhhur": {
+      "generatedAt": "2026-08-03T15:47:31.722075+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/dhhur.svg",
+      "source": "src/lib/posts/dhhur.md",
+      "sourceHash": "0510e258eb7fa879ba5b35c35c404dae0f79d5f2e1bc4ec2b61ccce057a96cb3",
+      "sourceModified": "2026-08-03T15:47:17.281842+00:00",
+      "topWords": [
+        "Dhhur",
+        "Sound",
+        "Even",
+        "Say",
+        "Never",
+        "Bots",
+        "AI",
+        "Human",
+        "Redundancy",
+        "Droplet",
+        "Currently",
+        "Openai"
       ],
       "wordCount": 130
     },

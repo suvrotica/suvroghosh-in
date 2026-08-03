@@ -6,7 +6,7 @@ dateModified: "2026-08-03"
 thumbnail: "/thumbnail/Compress_20260803_192652_2295.jpg"
 thumbnailAlt: "Essay thumbnail image with no specific visual details provided."
 category: "Essay"
-tags: ["AI", "Obsolescence", "Calcutta", "Unemployment", "Satire", "Mental Health"]
+tags: ["Dhhur","Bots","Redundancy","Astra","Droplet","August","Harvest","OpenAI","Waving","Equivalent"]
 published: true
 color: "#6B4C3D"
 ---
