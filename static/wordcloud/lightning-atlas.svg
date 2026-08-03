@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Lightning Atlas: How the Sky Finds the Ground" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Lightning Atlas: How the Sky Finds the Ground</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(214,605)" font-size="118" style="fill:#c7d7b5">Lightning</text>
+<text transform="translate(492,275)" font-size="118" style="fill:#a9b7a3">Model</text>
+<text transform="translate(79,94)" font-size="113" style="fill:#8fb7d0">Charge</text>
+<text transform="translate(828,169)" font-size="113" style="fill:#c49a6c">Leader</text>
+<text transform="translate(954,454)" font-size="107" style="fill:#c7d7b5">Atlas</text>
+<text transform="translate(137,567) rotate(-90)" font-size="101" style="fill:#a9b7a3">Cloud</text>
+<text transform="translate(178,403)" font-size="101" style="fill:#9fc9c5">Channel</text>
+<text transform="translate(943,581) rotate(-90)" font-size="95" style="fill:#b6c3dd">Ground</text>
+<text transform="translate(786,82)" font-size="88" style="fill:#c7d7b5">Field</text>
+<text transform="translate(373,704)" font-size="88" style="fill:#8fb7d0">Attachment</text>
+<text transform="translate(1025,566)" font-size="81" style="fill:#d6a79f">Proxy</text>
+<text transform="translate(172,499)" font-size="81" style="fill:#d9c89e">Current</text>
+<text transform="translate(516,80)" font-size="74" style="fill:#c7d7b5">Water</text>
+<text transform="translate(957,326)" font-size="74" style="fill:#e0b879">Surface</text>
+<text transform="translate(485,165)" font-size="74" style="fill:#9fc9c5">Terrain</text>
+<text transform="translate(918,237)" font-size="74" style="fill:#b6c3dd">Positive</text>
+<text transform="translate(126,200)" font-size="74" style="fill:#d6a79f">Negative</text>
+<text transform="translate(930,701)" font-size="74" style="fill:#d88988">Real</text>
+<text transform="translate(948,639)" font-size="74" style="fill:#a9b7a3">Route</text>
+<text transform="translate(523,477)" font-size="73" style="fill:#e0b879">Streamer</text>
+<text transform="translate(87,706)" font-size="73" style="fill:#d9c89e">Strike</text>
+<text transform="translate(141,292)" font-size="73" style="fill:#d88988">Observer</text>
+<text transform="translate(1062,62)" font-size="65" style="fill:#c7d7b5">Storm</text>
+<text transform="translate(616,400)" font-size="65" style="fill:#d6a79f">Region</text>
+<text transform="translate(613,329)" font-size="65" style="fill:#c7d7b5">Regions</text>
+<text transform="translate(13,622)" font-size="65" style="fill:#b6c3dd">Local</text>
+<text transform="translate(61,249) rotate(-90)" font-size="65" style="fill:#d9c89e">Height</text>
+<text transform="translate(951,502)" font-size="58" style="fill:#8fb7d0">Different</text>
+<text transform="translate(547,521)" font-size="50" style="fill:#d9c89e">Air</text>
+<text transform="translate(42,532) rotate(-90)" font-size="50" style="fill:#9fc9c5">Separate</text>
+<text transform="translate(1115,693)" font-size="50" style="fill:#d5d2c2">Flash</text>
+<text transform="translate(344,340)" font-size="49" style="fill:#d9c89e">Flashes</text>
+<text transform="translate(163,435)" font-size="37" style="fill:#c7d7b5">Threedimensional</text>
+<text transform="translate(319,238)" font-size="37" style="fill:#d9c89e">Bounded</text>
+<text transform="translate(956,359)" font-size="37" style="fill:#8fb7d0">Several</text>
+<text transform="translate(96,265) rotate(-90)" font-size="37" style="fill:#b6c3dd">Nearby</text>
+<text transform="translate(691,533)" font-size="37" style="fill:#d88988">Remain</text>
+<text transform="translate(612,116)" font-size="37" style="fill:#d6a79f">Wind</text>
+<text transform="translate(123,131)" font-size="37" style="fill:#b6c3dd">Explains</text>
+<text transform="translate(426,633)" font-size="27" style="fill:#c7d7b5">Cloudtoground</text>
+<text transform="translate(988,575) rotate(-90)" font-size="27" style="fill:#d6a79f">Tip</text>
+<text transform="translate(1176,642)" font-size="27" style="fill:#b6c3dd">Replay</text>
+<text transform="translate(294,656)" font-size="27" style="fill:#c49a6c">NSSL</text>
+<text transform="translate(75,428) rotate(-90)" font-size="27" style="fill:#d88988">Streamers</text>
+<text transform="translate(391,147)" font-size="27" style="fill:#e0b879">Return</text>
+<text transform="translate(165,533) rotate(-90)" font-size="27" style="fill:#a9b7a3">Clock</text>
+<text transform="translate(1110,263)" font-size="27" style="fill:#d9c89e">Scene</text>
+<text transform="translate(1134,87)" font-size="27" style="fill:#c7d7b5">Geometry</text>
+<text transform="translate(931,697) rotate(-90)" font-size="27" style="fill:#c49a6c">Thunder</text>
+<text transform="translate(1142,367)" font-size="27" style="fill:#a9b7a3">Distance</text>
+<text transform="translate(343,25)" font-size="27" style="fill:#d5d2c2">Preserves</text>
+<text transform="translate(700,23)" font-size="22" style="fill:#e0b879">Spread</text>
+<text transform="translate(253,532)" font-size="22" style="fill:#d6a79f">Ice</text>
+<text transform="translate(589,192)" font-size="22" style="fill:#b6c3dd">Move</text>
+<text transform="translate(659,635)" font-size="22" style="fill:#c7d7b5">Turbulent</text>
+<text transform="translate(651,498)" font-size="22" style="fill:#d5d2c2">Collisions</text>
+<text transform="translate(244,240)" font-size="22" style="fill:#d9c89e">Help</text>
+<text transform="translate(702,199)" font-size="22" style="fill:#d5d2c2">Bolt</text>
+<text transform="translate(244,581)" font-size="22" style="fill:#d88988">Fast</text>
+<text transform="translate(188,313)" font-size="22" style="fill:#d88988">Negotiation</text>
+<text transform="translate(1122,586)" font-size="22" style="fill:#d88988">Inspect</text>
+<text transform="translate(500,22)" font-size="22" style="fill:#9fc9c5">Procedural</text>
+<text transform="translate(774,359)" font-size="22" style="fill:#a9b7a3">Weather</text>
+<text transform="translate(1017,274)" font-size="22" style="fill:#c7d7b5">Values</text>
+<text transform="translate(357,579) rotate(-90)" font-size="22" style="fill:#9fc9c5">Relative</text>
+<text transform="translate(265,625)" font-size="22" style="fill:#a9b7a3">Hundred</text>
+<text transform="translate(1119,713)" font-size="22" style="fill:#d9c89e">Thunderstorm</text>
+<text transform="translate(756,427)" font-size="21" style="fill:#d9c89e">Descending</text>
+<text transform="translate(874,102)" font-size="21" style="fill:#9fc9c5">Electrification</text>
+<text transform="translate(73,645)" font-size="21" style="fill:#d9c89e">Process</text>
+<text transform="translate(496,185)" font-size="21" style="fill:#d9c89e">Useful</text>
+<text transform="translate(824,217)" font-size="21" style="fill:#d9c89e">Picture</text>
+<text transform="translate(484,294)" font-size="21" style="fill:#d5d2c2">Broad</text>
+<text transform="translate(509,100)" font-size="21" style="fill:#a9b7a3">Lower</text>
+<text transform="translate(179,388) rotate(-90)" font-size="21" style="fill:#e0b879">Pocket</text>
+<text transform="translate(204,23)" font-size="21" style="fill:#b6c3dd">Storms</text>
+<text transform="translate(107,233)" font-size="21" style="fill:#9fc9c5">Uses</text>
+<text transform="translate(822,179) rotate(-90)" font-size="21" style="fill:#e0b879">Pockets</text>
+<text transform="translate(1136,390)" font-size="21" style="fill:#a9b7a3">Position</text>
+<text transform="translate(202,642)" font-size="21" style="fill:#d5d2c2">Asks</text>
+<text transform="translate(1144,21)" font-size="21" style="fill:#d6a79f">Directions</text>
+<text transform="translate(139,563)" font-size="21" style="fill:#8fb7d0">Change</text>
+<text transform="translate(813,504)" font-size="21" style="fill:#9fc9c5">Claim</text>
+<text transform="translate(195,152)" font-size="21" style="fill:#b6c3dd">National</text>
+<text transform="translate(158,443) rotate(-90)" font-size="21" style="fill:#c7d7b5">Instruments</text>
+<text transform="translate(1171,610)" font-size="21" style="fill:#d9c89e">Observe</text>
+<text transform="translate(341,135) rotate(-90)" font-size="21" style="fill:#d5d2c2">Parts</text>
+<text transform="translate(1206,187)" font-size="21" style="fill:#e0b879">Radio</text>
+<text transform="translate(1133,280)" font-size="20" style="fill:#d6a79f">Reconstruct</text>
+<text transform="translate(1024,584)" font-size="20" style="fill:#a9b7a3">Light</text>
+<text transform="translate(836,190)" font-size="20" style="fill:#c49a6c">Common</text>
+<text transform="translate(602,427)" font-size="20" style="fill:#e0b879">Active</text>
+<text transform="translate(267,331)" font-size="20" style="fill:#d9c89e">Strong</text>
+<text transform="translate(592,349)" font-size="20" style="fill:#b6c3dd">Branches</text>
+<text transform="translate(1001,376)" font-size="20" style="fill:#d9c89e">Matters</text>
+<text transform="translate(884,23)" font-size="20" style="fill:#d5d2c2">Twigs</text>
+<text transform="translate(32,581)" font-size="19" style="fill:#9fc9c5">Alternatives</text>
+<text transform="translate(701,98)" font-size="17" style="fill:#d5d2c2">Developing</text>
+<text transform="translate(717,68)" font-size="17" style="fill:#d88988">Ridge</text>
+<text transform="translate(864,620) rotate(-90)" font-size="17" style="fill:#e0b879">Stop</text>
+<text transform="translate(962,186)" font-size="17" style="fill:#e0b879">Eventually</text>
+<text transform="translate(50,289) rotate(-90)" font-size="17" style="fill:#c7d7b5">Path</text>
+<text transform="translate(418,122)" font-size="17" style="fill:#d88988">Human</text>
+<text transform="translate(552,304)" font-size="17" style="fill:#c49a6c">Stroke</text>
+<text transform="translate(169,516)" font-size="17" style="fill:#e0b879">Tallest</text>
+<text transform="translate(451,516)" font-size="17" style="fill:#e0b879">Candidate</text>
+<text transform="translate(9,699)" font-size="17" style="fill:#d88988">Sites</text>
+<text transform="translate(852,638)" font-size="17" style="fill:#d9c89e">Launch</text>
+<text transform="translate(13,666)" font-size="17" style="fill:#e0b879">Upward</text>
+<text transform="translate(955,253)" font-size="17" style="fill:#d5d2c2">Tests</text>
+<text transform="translate(786,651)" font-size="17" style="fill:#d9c89e">Trees</text>
+<text transform="translate(567,650)" font-size="17" style="fill:#d6a79f">Corners</text>
+<text transform="translate(121,210) rotate(-90)" font-size="17" style="fill:#b6c3dd">Prominence</text>
+<text transform="translate(822,234)" font-size="14" style="fill:#d9c89e">Conductivity</text>
+<text transform="translate(15,643) rotate(-90)" font-size="14" style="fill:#d6a79f">Deterministic</text>
+<text transform="translate(1214,149)" font-size="14" style="fill:#e0b879">Merely</text>
+<text transform="translate(970,516)" font-size="14" style="fill:#8fb7d0">Camera</text>
+<text transform="translate(842,280)" font-size="14" style="fill:#b6c3dd">Open</text>
+<text transform="translate(108,61)" font-size="14" style="fill:#c7d7b5">Part</text>
+<text transform="translate(160,221)" font-size="14" style="fill:#e0b879">Wet</text>
+<text transform="translate(460,534)" font-size="14" style="fill:#e0b879">Bad</text>
+<text transform="translate(67,455)" font-size="14" style="fill:#b6c3dd">Changes</text>
+<text transform="translate(1194,515)" font-size="14" style="fill:#c49a6c">Range</text>
+<text transform="translate(10,16)" font-size="14" style="fill:#c49a6c">Connect</text>
+<text transform="translate(865,385)" font-size="14" style="fill:#9fc9c5">Others</text>
+<text transform="translate(1057,255)" font-size="14" style="fill:#8fb7d0">Failed</text>
+<text transform="translate(290,98) rotate(-90)" font-size="14" style="fill:#e0b879">Familiar</text>
+<text transform="translate(76,496)" font-size="14" style="fill:#d9c89e">Study</text>
+<text transform="translate(536,566)" font-size="14" style="fill:#b6c3dd">Mode</text>
+<text transform="translate(958,580) rotate(-90)" font-size="14" style="fill:#9fc9c5">Estimate</text>
+</svg>
