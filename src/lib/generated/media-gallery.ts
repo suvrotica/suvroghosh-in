@@ -3800,6 +3800,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1052
 		},
 		{
+			"name": "lightning-atlas.png",
+			"src": "/images/lightning-atlas.png",
+			"bytes": 85371,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "monte-carlo-laboratory.svg",
 			"src": "/images/monte-carlo-laboratory.svg",
 			"bytes": 4642,

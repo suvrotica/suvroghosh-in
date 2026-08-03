@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T07:41:35.050200+00:00",
+  "generatedAt": "2026-08-03T12:44:42.463563+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -5035,6 +5035,29 @@
         "Called",
         "Architecture",
         "Health"
+      ],
+      "wordCount": 130
+    },
+    "lightning-atlas": {
+      "generatedAt": "2026-08-03T12:44:35.659301+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/lightning-atlas.svg",
+      "source": "src/lib/posts/lightning-atlas.md",
+      "sourceHash": "01114b5fe43df5b38c03f4b6459202648ef7cc06affeac79d1e49c9ea65fcb0c",
+      "sourceModified": "2026-08-03T12:44:22.481355+00:00",
+      "topWords": [
+        "Lightning",
+        "Model",
+        "Charge",
+        "Leader",
+        "Atlas",
+        "Cloud",
+        "Channel",
+        "Ground",
+        "Field",
+        "Attachment",
+        "Proxy",
+        "Current"
       ],
       "wordCount": 130
     },

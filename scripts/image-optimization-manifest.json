@@ -8657,6 +8657,21 @@
       "sourceHash": "90d0b01233f7b59277e7bc83739b3ca0ad47185aa82d1eea8c05c7705dafc72b",
       "width": 1200
     },
+    "static/images/lightning-atlas.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 85371,
+      "outputHash": "99adf817251034f4e1f99feb925c160dc1a515da4280368a23f261a08f195384",
+      "resized": false,
+      "sourceBytes": 117557,
+      "sourceHash": "3d90cca3ab735934a650d5c9e86464e9e6b1a10bed69c3804b302ad4c8a28451",
+      "width": 1600
+    },
     "static/images/monte-carlo-laboratory.svg": {
       "format": "SVG",
       "height": 630,
