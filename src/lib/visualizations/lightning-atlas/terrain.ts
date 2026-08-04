@@ -119,6 +119,13 @@ const presetFeatures: Record<
 	TerrainPresetId,
 	Array<{ kind: AttachmentKind; label: string; x: number; z: number; height?: number }>
 > = {
+	'kalbaisakhi-bengal': [
+		{ kind: 'tree', label: 'Storm-facing palm', x: 0.47, z: 0.61, height: 29 },
+		{ kind: 'tree-cluster', label: 'Village mango grove', x: 0.66, z: 0.73 },
+		{ kind: 'transmission-tower', label: 'Field-edge transmission tower', x: 0.31, z: 0.52 },
+		{ kind: 'low-building', label: 'Low village rooftop', x: 0.58, z: 0.43 },
+		{ kind: 'water-tower', label: 'Distant municipal water tower', x: 0.76, z: 0.34 }
+	],
 	'monsoon-delta': [
 		{ kind: 'water-tower', label: 'Distant water tower', x: 0.71, z: 0.38 },
 		{ kind: 'radio-mast', label: 'Communications mast', x: 0.28, z: 0.58 },
@@ -176,6 +183,18 @@ function terrainSample(
 	const detail = noise.fbm(x * 6.2 - 8.1, z * 6.2 + 5.3, 4);
 
 	switch (preset) {
+		case 'kalbaisakhi-bengal': {
+			const fieldDrain = Math.abs(z + 0.52 - 0.08 * Math.sin(x * 7.2 + 0.4));
+			const pond = Math.hypot(x + 0.58, z - 0.22);
+			const water = fieldDrain < 0.026 || pond < 0.115;
+			const fieldRidges = Math.abs(Math.sin((x + detail * 0.04) * 15)) * 1.8;
+			return {
+				height: water ? -2 + detail * 0.7 : 13 + broad * 9 + detail * 2.6 + fieldRidges,
+				water,
+				material: water ? 1 : 0,
+				wetness: clamp(baseWetness + (water ? 0.14 : detail * 0.035), 0, 1)
+			};
+		}
 		case 'monsoon-delta': {
 			const channelA = Math.abs(z - 0.27 * Math.sin(x * 4.8 + noise.value(x * 1.4, 1.2)));
 			const channelB = Math.abs(z + 0.44 - 0.18 * Math.sin(x * 6.3 - 1.6));

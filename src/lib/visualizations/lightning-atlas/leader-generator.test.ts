@@ -19,7 +19,109 @@ function state(overrides: Partial<SerializableAtlasState> = {}): SerializableAtl
 	};
 }
 
+function morphologyMetrics(flash: ReturnType<typeof generateLightningFlash>['flash']) {
+	const points = flash.segments.flatMap((segment) => [segment.start, segment.end]);
+	const xValues = points.map((point) => point.x);
+	const zValues = points.map((point) => point.z);
+	const lateralSpan = Math.hypot(
+		Math.max(...xValues) - Math.min(...xValues),
+		Math.max(...zValues) - Math.min(...zValues)
+	);
+	const branchSegments = flash.segments.filter((segment) => segment.channelClass !== 'main');
+	const branchLength = branchSegments.reduce(
+		(total, segment) => total + distance(segment.start, segment.end),
+		0
+	);
+	return { lateralSpan, branchLength, branchCount: flash.branchCount };
+}
+
+function average(values: readonly number[]) {
+	return values.reduce((total, value) => total + value, 0) / values.length;
+}
+
 describe('Lightning Atlas leader generation', () => {
+	it("publishes the featured severe Bengal nor'wester as the heroic landing regime", () => {
+		const preset = terrainPreset('kalbaisakhi-bengal');
+		expect(preset.name).toBe("Kalbaisakhi / Bengal Nor'wester");
+		expect(preset.featured).toBe(true);
+		expect(preset.stormSubtype).toBe('severe_pre_monsoon_norwester');
+		expect(preset.defaultStrikeScale).toBe('heroic');
+		expect(DEFAULT_ATLAS_STATE.terrain).toBe('kalbaisakhi-bengal');
+		expect(DEFAULT_ATLAS_STATE.strikeScale).toBe('heroic');
+	});
+
+	it('assigns a complete, ordered visual hierarchy to every deterministic segment', () => {
+		const flashes = Array.from(
+			{ length: 16 },
+			(_, strikeIndex) =>
+				generateLightningFlash({
+					state: state({
+						seed: `hierarchy-contract-${strikeIndex}`,
+						flashType: 'negative-cg',
+						strikeScale: 'heroic'
+					}),
+					strikeIndex
+				}).flash
+		);
+		const byClass = new Map<string, number[]>();
+		for (const flash of flashes) {
+			for (const segment of flash.segments) {
+				expect(['main', 'primary', 'secondary', 'tertiary']).toContain(segment.channelClass);
+				expect(segment.hierarchyDepth).toBeGreaterThanOrEqual(0);
+				expect(segment.hierarchyDepth).toBeLessThanOrEqual(3);
+				expect(segment.relativeThickness).toBeGreaterThan(0);
+				expect(segment.relativeBrightness).toBeGreaterThan(0);
+				expect(segment.persistence).toBeGreaterThanOrEqual(0.2);
+				expect(segment.persistence).toBeLessThanOrEqual(1);
+				expect(segment.channelClass === 'main').toBe(segment.isMainChannel);
+				expect(segment.hierarchyDepth === 0).toBe(segment.isMainChannel);
+				const values = byClass.get(segment.channelClass) ?? [];
+				values.push(segment.relativeThickness);
+				byClass.set(segment.channelClass, values);
+			}
+		}
+		expect(byClass.has('main')).toBe(true);
+		expect(byClass.has('primary')).toBe(true);
+		expect(byClass.has('secondary')).toBe(true);
+		expect(average(byClass.get('main')!)).toBeGreaterThan(average(byClass.get('primary')!));
+		expect(average(byClass.get('primary')!)).toBeGreaterThan(average(byClass.get('secondary')!));
+	});
+
+	it('makes heroic strikes materially wider and more articulated across a fixed seed cohort', () => {
+		const comparisons = Array.from({ length: 18 }, (_, strikeIndex) => {
+			const seed = `morphology-stat-${strikeIndex}`;
+			const base = state({ seed, flashType: 'negative-cg' });
+			const before = JSON.stringify(base);
+			const standard = generateLightningFlash({
+				state: { ...base, strikeScale: 'standard' },
+				strikeIndex
+			}).flash;
+			const heroicState = { ...base, strikeScale: 'heroic' as const };
+			const heroic = generateLightningFlash({ state: heroicState, strikeIndex }).flash;
+			const repeated = generateLightningFlash({ state: heroicState, strikeIndex }).flash;
+			expect(heroic).toEqual(repeated);
+			expect(JSON.stringify(base)).toBe(before);
+			return { standard: morphologyMetrics(standard), heroic: morphologyMetrics(heroic) };
+		});
+		const standardSpans = comparisons.map(({ standard }) => standard.lateralSpan);
+		const heroicSpans = comparisons.map(({ heroic }) => heroic.lateralSpan);
+		const standardBranches = comparisons.map(({ standard }) => standard.branchCount);
+		const heroicBranches = comparisons.map(({ heroic }) => heroic.branchCount);
+		const standardBranchLengths = comparisons.map(({ standard }) => standard.branchLength);
+		const heroicBranchLengths = comparisons.map(({ heroic }) => heroic.branchLength);
+		const spanWins = comparisons.filter(
+			({ standard, heroic }) => heroic.lateralSpan > standard.lateralSpan
+		).length;
+
+		expect(average(heroicSpans)).toBeGreaterThan(average(standardSpans) * 1.35);
+		expect(average(heroicBranches)).toBeGreaterThan(average(standardBranches) * 2);
+		expect(average(heroicBranchLengths)).toBeGreaterThan(average(standardBranchLengths) * 2.5);
+		expect(average(heroicBranchLengths) / average(heroicBranches)).toBeGreaterThan(
+			(average(standardBranchLengths) / average(standardBranches)) * 1.15
+		);
+		expect(spanWins).toBeGreaterThanOrEqual(14);
+	});
+
 	it('reproduces channel geometry and remains independent of visual quality', () => {
 		const first = generateLightningFlash({ state: state({ quality: 'low' }), strikeIndex: 3 });
 		const second = generateLightningFlash({ state: state({ quality: 'high' }), strikeIndex: 3 });

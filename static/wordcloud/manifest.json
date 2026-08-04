@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T15:47:32.458727+00:00",
+  "generatedAt": "2026-08-04T03:36:02.299462+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -5062,25 +5062,25 @@
       "wordCount": 130
     },
     "lightning-atlas": {
-      "generatedAt": "2026-08-03T12:44:35.659301+00:00",
+      "generatedAt": "2026-08-04T03:36:02.024360+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/lightning-atlas.svg",
       "source": "src/lib/posts/lightning-atlas.md",
-      "sourceHash": "01114b5fe43df5b38c03f4b6459202648ef7cc06affeac79d1e49c9ea65fcb0c",
-      "sourceModified": "2026-08-03T12:44:22.481355+00:00",
+      "sourceHash": "72c157f3d984419414fb5ab73c28cecce16fa99a8bc8e4dfc982298aecea6a82",
+      "sourceModified": "2026-08-04T03:34:10.139065+00:00",
       "topWords": [
-        "Lightning",
+        "Storm",
         "Model",
-        "Charge",
-        "Leader",
-        "Atlas",
-        "Cloud",
         "Channel",
-        "Ground",
-        "Field",
+        "Lightning",
+        "Charge",
+        "Atlas",
+        "Leader",
+        "Cloud",
+        "Bengal",
+        "Strike",
         "Attachment",
-        "Proxy",
-        "Current"
+        "Ground"
       ],
       "wordCount": 130
     },

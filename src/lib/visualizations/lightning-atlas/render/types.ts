@@ -22,6 +22,8 @@ export interface LightningRenderer {
 	setScene(state: SerializableAtlasState, terrain: TerrainData): void;
 	setFlash(flash: LightningFlash | null): void;
 	setPlayback(playback: RendererPlayback): void;
+	setBranchEmphasis?(emphasis: 'primary' | 'full'): void;
+	setMotionAllowed?(allowed: boolean): void;
 	resize(): void;
 	render(deltaSeconds: number, options?: { snapCamera?: boolean }): void;
 	pickNormalized(clientX: number, clientY: number): { x: number; z: number } | null;

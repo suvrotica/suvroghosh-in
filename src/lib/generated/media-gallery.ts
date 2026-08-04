@@ -3802,7 +3802,7 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "lightning-atlas.png",
 			"src": "/images/lightning-atlas.png",
-			"bytes": 85371,
+			"bytes": 87512,
 			"width": 1600,
 			"height": 900
 		},

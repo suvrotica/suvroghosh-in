@@ -8665,11 +8665,11 @@
       "optimizerVersion": "2026-07-18.1",
       "originalHeight": 900,
       "originalWidth": 1600,
-      "outputBytes": 85371,
-      "outputHash": "99adf817251034f4e1f99feb925c160dc1a515da4280368a23f261a08f195384",
+      "outputBytes": 87512,
+      "outputHash": "cc11e154788e62e0480811da27e92f081010dc94c1cc336a991913825d296972",
       "resized": false,
-      "sourceBytes": 117557,
-      "sourceHash": "3d90cca3ab735934a650d5c9e86464e9e6b1a10bed69c3804b302ad4c8a28451",
+      "sourceBytes": 106964,
+      "sourceHash": "a86b5feca04fa3be7a4e8a7e330ea9c1f06e1e83fcef936e0d4ea6b9a7764d0f",
       "width": 1600
     },
     "static/images/monte-carlo-laboratory.svg": {

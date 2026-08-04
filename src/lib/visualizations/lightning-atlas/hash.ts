@@ -39,6 +39,11 @@ export function flashHash(flash: Pick<LightningFlash, 'segments' | 'attachment' 
 		}
 		hash = mix(hash, segment.parentIndex);
 		hash = mix(hash, segment.branchDepth);
+		for (const character of segment.channelClass) hash = mix(hash, character.charCodeAt(0));
+		hash = mix(hash, segment.hierarchyDepth);
+		hash = mix(hash, Math.round(segment.relativeThickness * 1_000));
+		hash = mix(hash, Math.round(segment.relativeBrightness * 1_000));
+		hash = mix(hash, Math.round(segment.persistence * 1_000));
 	}
 	if (flash.attachment) {
 		for (const character of flash.attachment.candidateId) hash = mix(hash, character.charCodeAt(0));

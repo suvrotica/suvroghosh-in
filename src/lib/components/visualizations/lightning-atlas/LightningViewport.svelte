@@ -18,6 +18,7 @@
 		active: boolean;
 		playing: boolean;
 		motionAllowed: boolean;
+		branchEmphasis?: 'primary' | 'full';
 		placementEnabled?: boolean;
 		onframe?: (deltaSeconds: number) => void;
 		onplace?: (position: { x: number; z: number }) => void;
@@ -36,6 +37,7 @@
 		active,
 		playing,
 		motionAllowed,
+		branchEmphasis = 'full',
 		placementEnabled = false,
 		onframe,
 		onplace,
@@ -127,6 +129,16 @@
 	});
 
 	$effect(() => {
+		renderer?.setBranchEmphasis?.(branchEmphasis);
+		renderOnce();
+	});
+
+	$effect(() => {
+		renderer?.setMotionAllowed?.(motionAllowed);
+		renderOnce();
+	});
+
+	$effect(() => {
 		if (shouldRun()) startLoop();
 		else stopLoop();
 	});
@@ -169,6 +181,8 @@
 				renderer.resize();
 				renderer.setScene(atlasState, terrain);
 				renderer.setFlash(flash);
+				renderer.setBranchEmphasis?.(branchEmphasis);
+				renderer.setMotionAllowed?.(motionAllowed);
 				renderer.setPlayback({ phase, phaseProgress, time: playbackTime });
 				renderOnce();
 				rendererStatus = 'ready';
@@ -223,7 +237,7 @@
 		onpointerup={handlePointerUp}
 		onpointercancel={cancelPointer}
 		onlostpointercapture={cancelPointer}
-		aria-label="Three-dimensional procedural storm scene. Use the Camera selector, controls and synchronized analytical views for keyboard-accessible views and exact values. Pointer users can drag to orbit and use the mouse wheel or pinch gesture to zoom."
+		aria-label="Three-dimensional procedural storm scene. Use the view selector, controls and synchronized analytical views for keyboard-accessible views and exact values. Pointer users can drag to orbit and use the mouse wheel or pinch gesture to zoom."
 		tabindex="0"
 	></canvas>
 

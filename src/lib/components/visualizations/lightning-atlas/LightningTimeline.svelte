@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { LightningFlash } from '$lib/visualizations/lightning-atlas/types';
+	type BranchEmphasis = 'primary' | 'full';
 
 	type Props = {
 		flash: LightningFlash | null;
@@ -8,10 +9,13 @@
 		playing: boolean;
 		phaseLabel: string;
 		speed: number;
+		branchEmphasis: BranchEmphasis;
+		replayMode: boolean;
 		onseek?: (time: number) => void;
 		onstep?: (direction: -1 | 1) => void;
 		onplaytoggle?: () => void;
 		onspeed?: (speed: number) => void;
+		onbranchemphasis?: (emphasis: BranchEmphasis) => void;
 	};
 
 	let {
@@ -21,10 +25,13 @@
 		playing,
 		phaseLabel,
 		speed,
+		branchEmphasis,
+		replayMode,
 		onseek,
 		onstep,
 		onplaytoggle,
-		onspeed
+		onspeed,
+		onbranchemphasis
 	}: Props = $props();
 
 	const formatTime = (value: number) => `${Math.max(0, value).toFixed(1)} s`;
@@ -75,6 +82,29 @@
 			</select>
 		</label>
 	</div>
+
+	<fieldset class="branch-reader" disabled={!flash || !replayMode}>
+		<legend>Branch emphasis</legend>
+		<div role="group" aria-describedby="lightning-atlas-branch-reading-note">
+			<button
+				type="button"
+				aria-pressed={branchEmphasis === 'primary'}
+				onclick={() => onbranchemphasis?.('primary')}>Main + primary</button
+			>
+			<button
+				type="button"
+				aria-pressed={branchEmphasis === 'full'}
+				onclick={() => onbranchemphasis?.('full')}>Full network</button
+			>
+		</div>
+		<p id="lightning-atlas-branch-reading-note">
+			{!replayMode
+				? 'Replay the current flash to compare its major routes with the complete generated network.'
+				: branchEmphasis === 'primary'
+					? 'The trunk and strongest first-order routes stay prominent at a measured replay pace; the generated network and channel hash do not change.'
+					: 'Secondary and tertiary routes return in their original birth order; the generated network and channel hash do not change.'}
+		</p>
+	</fieldset>
 
 	<div class="range-wrap">
 		<input
@@ -189,6 +219,45 @@
 		margin-left: auto;
 	}
 
+	.branch-reader {
+		display: grid;
+		grid-template-columns: minmax(14rem, 0.65fr) minmax(14rem, 1fr);
+		align-items: center;
+		gap: 0.65rem;
+		margin: 0.7rem 0 0;
+		border: 1px solid var(--atlas-line);
+		border-radius: 0.4rem;
+		padding: 0.6rem 0.7rem;
+	}
+	.branch-reader legend {
+		padding-inline: 0.25rem;
+		color: var(--atlas-muted);
+		font:
+			0.65rem 'Courier Prime',
+			monospace;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	.branch-reader > div {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.35rem;
+	}
+	.branch-reader button[aria-pressed='true'] {
+		border-color: var(--atlas-accent);
+		background: color-mix(in srgb, var(--atlas-accent) 14%, var(--atlas-control));
+		color: var(--atlas-accent);
+	}
+	.branch-reader p {
+		margin: 0;
+		color: var(--atlas-muted);
+		font-size: 0.68rem;
+		line-height: 1.45;
+	}
+	.branch-reader:disabled {
+		opacity: 0.55;
+	}
+
 	.range-wrap {
 		position: relative;
 		margin-top: 0.7rem;
@@ -253,6 +322,10 @@
 		.transport label {
 			width: 100%;
 			margin-left: 0;
+		}
+
+		.branch-reader {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

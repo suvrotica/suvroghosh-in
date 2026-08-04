@@ -23,9 +23,11 @@
 			<h3>Purpose and deterministic seed</h3>
 			<p>
 				This is a physically inspired procedural model for inspecting relationships among simplified
-				storm charge, local terrain prominence, exposed features and bounded chance. Separate seeded
-				streams govern terrain, storm scheduling, leader propagation, thunder and decoration, so
-				changing rain quality cannot move an attachment.
+				storm charge, strike morphology, local terrain prominence, exposed features and bounded
+				chance. Its featured Kalbaisakhi mode is tuned for broad, hierarchical lightning over a low
+				Bengal storm scene; it is not a literal meteorological reproduction. Separate seeded streams
+				govern terrain, storm scheduling, leader propagation, thunder and decoration, so changing a
+				camera or rain quality cannot move an attachment.
 			</p>
 		</section>
 		<section>
@@ -40,9 +42,11 @@
 			<h3>Leader and upward streamers</h3>
 			<p>
 				Bounded active tips sample competing directions using electrical advantage, persistence,
-				proximity and seeded variation. Competitive alternatives become real branch tips. Near the
-				surface, several candidates can launch simplified upward streamers; field position,
-				distance, prominence, isolation, tip shape and chance choose one connection.
+				proximity and seeded variation. Compact through heroic scale changes bounded exploration and
+				branch survival, not just brightness. Competitive alternatives retain main, primary,
+				secondary or tertiary hierarchy. Near the surface, several candidates can launch simplified
+				upward streamers; field position, distance, prominence, isolation, tip shape and chance
+				choose one connection.
 			</p>
 		</section>
 		<section>
@@ -50,7 +54,9 @@
 			<p>
 				The luminous return front uses the already generated main path from attachment back toward
 				the cloud. Replay stores the immutable channel and one phase-event list; scrubbing never
-				invents a new bolt.
+				invents a new bolt. Main-and-primary emphasis is a presentation filter for reading the major
+				routes at a slower pace. Switching to the full network restores every generated hierarchy
+				without changing the channel hash.
 			</p>
 		</section>
 		<section>
@@ -67,8 +73,9 @@
 			<p>
 				Coarse charge pockets replace measured microphysics; the field is not a full electromagnetic
 				solution; clouds and terrain are procedural; streamer initiation, conductivity and ground
-				current are qualitative; leader and return timing is slowed; intensity is relative. There is
-				no ion chemistry, hydrometeor collision model, heating, shock-wave solver, forecast,
+				current are qualitative; leader and return timing is slowed; intensity is relative. The
+				Kalbaisakhi preset borrows a regional scale and atmosphere, not observed storm data. There
+				is no ion chemistry, hydrometeor collision model, heating, shock-wave solver, forecast,
 				casualty model or protection certification.
 			</p>
 		</section>
@@ -76,15 +83,20 @@
 			<h3>Performance boundaries</h3>
 			<p>
 				Terrain uses a bounded 65 × 65 height grid; active tips, candidate directions, branches and
-				segments all have hard caps. The worker yields between chunks, decorative clouds and rain
-				use coarse procedural geometry, and automatic render quality changes pixel density and scene
-				detail without changing the seeded strike. These simplifications keep the laboratory
-				responsive; they are not physical resolutions.
+				segments all have hard caps, including in heroic mode. The worker yields between chunks,
+				decorative clouds and rain use coarse procedural geometry, and automatic render quality can
+				omit fine visual detail without changing the seeded channel. These simplifications keep the
+				laboratory responsive; they are not physical resolutions.
 			</p>
 		</section>
 		<section class="sources">
 			<h3>Scientific reading</h3>
 			<ul>
+				<li>
+					<a href="https://mausamjournal.imd.gov.in/index.php/MAUSAM/article/view/1202"
+						>MAUSAM: Kaalbaisakhi conditions</a
+					>
+				</li>
 				<li>
 					<a href="https://www.nssl.noaa.gov/education/svrwx101/lightning/types/"
 						>NSSL: lightning types</a
@@ -98,6 +110,11 @@
 				<li>
 					<a href="https://www.nssl.noaa.gov/education/svrwx101/lightning/detection/"
 						>NSSL: lightning detection</a
+					>
+				</li>
+				<li>
+					<a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023GL106024"
+						>GRL: storm charge and channel morphology</a
 					>
 				</li>
 				<li>

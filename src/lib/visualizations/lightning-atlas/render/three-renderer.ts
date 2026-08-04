@@ -1,4 +1,7 @@
 import * as THREE from 'three';
+import { LineMaterial } from 'three/addons/lines/LineMaterial.js';
+import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
 import { createChargePockets, electricFieldProxy } from '../charge-field';
 import { SeededRandom } from '../prng';
 import { normalizedToWorld, sampleTerrainHeight, worldToNormalized } from '../terrain';
@@ -12,10 +15,95 @@ import type {
 	TerrainData
 } from '../types';
 import type { LightningRenderer, LightningRendererCallbacks, RendererPlayback } from './types';
+import {
+	calculateEventFraming,
+	dominantEventYaw,
+	majorProjectedSpan,
+	majorEventBounds,
+	segmentPersistence,
+	segmentRelativeBrightness,
+	segmentRelativeThickness,
+	shouldPresentSegment
+} from './presentation';
+import type { BranchEmphasis } from './presentation';
 import { updateProgressiveSegmentPositions } from './progression';
 
 const NIGHT_SKY = new THREE.Color('#07101f');
 const MAP_SKY = new THREE.Color('#d8d1bd');
+const NIGHT_FLASH_SKY = new THREE.Color('#263d67');
+const MAP_FLASH_SKY = new THREE.Color('#ebe5d7');
+const NIGHT_RAIN = new THREE.Color('#7997b2');
+const MAP_RAIN = new THREE.Color('#6d7e80');
+const FLASH_RAIN = new THREE.Color('#c9dcf4');
+
+function createCloudGlowTexture() {
+	const size = 64;
+	const data = new Uint8Array(size * size * 4);
+	for (let y = 0; y < size; y += 1) {
+		for (let x = 0; x < size; x += 1) {
+			const normalizedX = (x / (size - 1) - 0.5) * 2;
+			const normalizedY = (y / (size - 1) - 0.5) * 2;
+			const radial = Math.max(0, 1 - Math.hypot(normalizedX, normalizedY));
+			const cloudNoise =
+				0.72 +
+				Math.sin(x * 0.71 + y * 0.19) * 0.11 +
+				Math.sin(x * 0.17 - y * 0.43) * 0.09 +
+				Math.sin((x + y) * 0.09) * 0.08;
+			const alpha = Math.round(255 * Math.pow(radial, 1.65) * Math.max(0.32, cloudNoise));
+			const offset = (y * size + x) * 4;
+			data[offset] = 174;
+			data[offset + 1] = 202;
+			data[offset + 2] = 255;
+			data[offset + 3] = alpha;
+		}
+	}
+	const texture = new THREE.DataTexture(data, size, size, THREE.RGBAFormat);
+	texture.colorSpace = THREE.SRGBColorSpace;
+	texture.minFilter = THREE.LinearFilter;
+	texture.magFilter = THREE.LinearFilter;
+	texture.generateMipmaps = false;
+	texture.needsUpdate = true;
+	return texture;
+}
+
+function createChannelMaterial(color: string, lineWidth: number, softness: number) {
+	const material = new LineMaterial({
+		color,
+		linewidth: lineWidth,
+		vertexColors: true,
+		transparent: true,
+		opacity: 0,
+		blending: THREE.AdditiveBlending,
+		depthWrite: false,
+		alphaToCoverage: false,
+		toneMapped: true
+	});
+	material.vertexShader = material.vertexShader
+		.replace(
+			'uniform float linewidth;',
+			'uniform float linewidth;\n\t\tattribute float instanceLineWidth;'
+		)
+		.replace('offset *= linewidth;', 'offset *= linewidth * instanceLineWidth;');
+	material.uniforms.atlasSoftness = { value: softness };
+	material.fragmentShader = material.fragmentShader
+		.replace(
+			'uniform float linewidth;',
+			'uniform float linewidth;\n\t\tuniform float atlasSoftness;'
+		)
+		.replace(
+			'gl_FragColor = vec4( diffuseColor.rgb, alpha );',
+			`float atlasEdgeDistance = abs( vUv.x );
+			if ( abs( vUv.y ) > 1.0 ) {
+				atlasEdgeDistance = length( vec2( vUv.x, abs( vUv.y ) - 1.0 ) );
+			}
+			float atlasFeather = 1.0 - smoothstep( 0.42, 1.0, atlasEdgeDistance );
+			alpha *= mix( 1.0, atlasFeather, atlasSoftness );
+			gl_FragColor = vec4( diffuseColor.rgb, alpha );`
+		);
+	material.customProgramCacheKey = () => 'lightning-atlas-variable-line-width-v1';
+	material.needsUpdate = true;
+	return material;
+}
 
 function disposeMaterial(material: THREE.Material | THREE.Material[]) {
 	for (const entry of Array.isArray(material) ? material : [material]) {
@@ -31,6 +119,7 @@ function disposeObject(object: THREE.Object3D) {
 		if (
 			child instanceof THREE.Mesh ||
 			child instanceof THREE.Line ||
+			child instanceof THREE.Sprite ||
 			child instanceof THREE.Points
 		) {
 			child.geometry?.dispose();
@@ -63,7 +152,24 @@ class ThreeLightningRenderer implements LightningRenderer {
 	private readonly scene = new THREE.Scene();
 	private readonly camera = new THREE.PerspectiveCamera(43, 1, 2, 30_000);
 	private readonly desiredCameraTarget = new THREE.Vector3();
-	private readonly flashLight = new THREE.PointLight('#c8ddff', 0, 5_500, 1.65);
+	private readonly desiredCameraPosition = new THREE.Vector3();
+	private readonly skyColor = NIGHT_SKY.clone();
+	private readonly skyLight = new THREE.HemisphereLight('#7c92ba', '#18221e', 1.1);
+	private readonly moonLight = new THREE.DirectionalLight('#9eb7df', 1.35);
+	private readonly flashLight = new THREE.PointLight('#d7e7ff', 0, 5_800, 1.1);
+	private readonly cloudFlashLight = new THREE.PointLight('#a8c8ff', 0, 7_500, 1.05);
+	private readonly cloudGlowTexture = createCloudGlowTexture();
+	private readonly cloudGlowMaterial = new THREE.SpriteMaterial({
+		map: this.cloudGlowTexture,
+		color: '#a7c6ff',
+		transparent: true,
+		opacity: 0,
+		blending: THREE.AdditiveBlending,
+		depthWrite: false,
+		depthTest: true,
+		toneMapped: true
+	});
+	private readonly cloudGlow = new THREE.Sprite(this.cloudGlowMaterial);
 	private readonly world = new THREE.Group();
 	private readonly stormGroup = new THREE.Group();
 	private readonly lightningGroup = new THREE.Group();
@@ -83,8 +189,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 	private featureGroup = new THREE.Group();
 	private decorationGroup = new THREE.Group();
 	private observerMarker: THREE.Group | null = null;
-	private lightningLines: THREE.LineSegments[] = [];
-	private returnStrokeLines: THREE.LineSegments[] = [];
+	private lightningLines: LineSegments2[] = [];
+	private returnStrokeLines: LineSegments2[] = [];
 	private lightningSegments: LightningSegment[] = [];
 	private leaderSegmentCount = 0;
 	private attachmentSegmentCount = 0;
@@ -97,6 +203,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 	private terrain: TerrainData | null = null;
 	private flash: LightningFlash | null = null;
 	private playback: RendererPlayback = { phase: 'charging', phaseProgress: 0, time: 0 };
+	private branchEmphasis: BranchEmphasis = 'full';
+	private motionAllowed = true;
 	private terrainSignature = '';
 	private featureSignature = '';
 	private decorationSignature = '';
@@ -112,6 +220,14 @@ class ThreeLightningRenderer implements LightningRenderer {
 	private pitch = 0.48;
 	private radius = 6_800;
 	private cameraTarget = new THREE.Vector3(0, 260, 0);
+	private eventCenter = new THREE.Vector3(0, 1_600, 0);
+	private eventFitDistance = 6_800;
+	private eventHeight = 2_800;
+	private eventHorizontalSpan = 2_400;
+	private heroZoom = 1;
+	private cameraNeedsSnap = false;
+	private previousCameraPreset = '';
+	private framedFlashIdentity = '';
 	private dragging = false;
 	private dragX = 0;
 	private dragY = 0;
@@ -135,12 +251,19 @@ class ThreeLightningRenderer implements LightningRenderer {
 		this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
 		this.renderer.toneMappingExposure = 0.82;
 		this.scene.add(this.world, this.stormGroup, this.lightningGroup, this.analyticalGroup);
-		this.scene.add(new THREE.HemisphereLight('#7c92ba', '#18221e', 1.1));
-		const moon = new THREE.DirectionalLight('#9eb7df', 1.35);
-		moon.position.set(-2_500, 4_600, 1_800);
-		this.scene.add(moon);
+		this.moonLight.position.set(-2_500, 4_600, 1_800);
 		this.flashLight.name = 'flash-light';
-		this.scene.add(this.flashLight);
+		this.cloudFlashLight.name = 'cloud-flash-light';
+		this.cloudGlow.name = 'sheet-lightning-glow';
+		this.cloudGlow.visible = false;
+		this.cloudGlow.renderOrder = 1;
+		this.scene.add(
+			this.skyLight,
+			this.moonLight,
+			this.flashLight,
+			this.cloudFlashLight,
+			this.cloudGlow
+		);
 		this.canvas.addEventListener('pointerdown', this.onPointerDown);
 		window.addEventListener('pointermove', this.onPointerMove);
 		window.addEventListener('pointerup', this.onPointerUp);
@@ -276,6 +399,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 			this.updatePresentation();
 		}
 		this.refreshLightningGeometry();
+		this.updateEventFraming(false);
+		this.updateLightningPlayback();
 	}
 
 	setFlash(flash: LightningFlash | null) {
@@ -287,7 +412,10 @@ class ThreeLightningRenderer implements LightningRenderer {
 		const signature = this.flash
 			? [
 					this.flash.channelHash,
+					this.flash.strikeScale,
 					this.terrain?.preset ?? '',
+					this.quality,
+					this.branchEmphasis,
 					this.state?.visibleLayers.includes('branches') ? 1 : 0,
 					this.state?.visibleLayers.includes('streamers') ? 1 : 0,
 					this.state?.visibleLayers.includes('ground-current') ? 1 : 0
@@ -300,6 +428,19 @@ class ThreeLightningRenderer implements LightningRenderer {
 
 	setPlayback(playback: RendererPlayback) {
 		this.playback = playback;
+		this.updateLightningPlayback();
+	}
+
+	setBranchEmphasis(emphasis: BranchEmphasis) {
+		if (this.branchEmphasis === emphasis) return;
+		this.branchEmphasis = emphasis;
+		this.flashSignature = '';
+		this.refreshLightningGeometry();
+	}
+
+	setMotionAllowed(allowed: boolean) {
+		if (this.motionAllowed === allowed) return;
+		this.motionAllowed = allowed;
 		this.updateLightningPlayback();
 	}
 
@@ -320,6 +461,13 @@ class ThreeLightningRenderer implements LightningRenderer {
 		this.renderer.setSize(width, height, false);
 		this.camera.aspect = width / height;
 		this.camera.updateProjectionMatrix();
+		for (let index = 0; index < this.lightningLines.length; index += 1) {
+			this.lightningLines[index].material.resolution.set(width, height);
+		}
+		for (let index = 0; index < this.returnStrokeLines.length; index += 1) {
+			this.returnStrokeLines[index].material.resolution.set(width, height);
+		}
+		this.updateEventFraming(false);
 		if (previousQuality !== this.quality && this.state && this.terrain) {
 			this.frameSamples = [];
 			this.setScene(this.state, this.terrain);
@@ -422,6 +570,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 		geometry.computeVertexNormals();
 		const material = new THREE.MeshStandardMaterial({
 			vertexColors: true,
+			emissive: '#7890ad',
+			emissiveIntensity: 0,
 			roughness: this.state.displayMode === 'field-map' ? 1 : 0.72,
 			metalness: 0.02,
 			flatShading: this.quality === 'low'
@@ -440,6 +590,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 			waterGeometry.rotateX(-Math.PI / 2);
 			const waterMaterial = new THREE.MeshStandardMaterial({
 				color: this.state.displayMode === 'field-map' ? '#8ca7a7' : '#143f58',
+				emissive: '#6b9bc0',
+				emissiveIntensity: 0,
 				transparent: true,
 				opacity: this.state.displayMode === 'field-map' ? 0.72 : 0.62,
 				roughness: 0.28,
@@ -658,7 +810,7 @@ class ThreeLightningRenderer implements LightningRenderer {
 		const geometry = new THREE.BufferGeometry();
 		geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 		const material = new THREE.PointsMaterial({
-			color: this.state.displayMode === 'field-map' ? '#6d7e80' : '#7997b2',
+			color: this.state.displayMode === 'field-map' ? MAP_RAIN : NIGHT_RAIN,
 			size: this.quality === 'low' ? 7 : 5,
 			transparent: true,
 			opacity: 0.32 * this.state.environment.rainIntensity,
@@ -670,8 +822,9 @@ class ThreeLightningRenderer implements LightningRenderer {
 
 	private updateRainPresentation() {
 		if (!this.rain || !this.state) return;
-		(this.rain.material as THREE.PointsMaterial).opacity =
-			0.32 * this.state.environment.rainIntensity;
+		const material = this.rain.material as THREE.PointsMaterial;
+		material.color.copy(this.state.displayMode === 'field-map' ? MAP_RAIN : NIGHT_RAIN);
+		material.opacity = 0.32 * this.state.environment.rainIntensity;
 		this.rain.visible = this.state.environment.rainIntensity > 0;
 	}
 
@@ -834,6 +987,62 @@ class ThreeLightningRenderer implements LightningRenderer {
 		this.world.add(marker);
 	}
 
+	private buildChannelGeometry(segments: readonly LightningSegment[]) {
+		const positions = new Float32Array(segments.length * 6);
+		const widths = new Float32Array(segments.length);
+		const colors = new Float32Array(segments.length * 6);
+		for (let index = 0; index < segments.length; index += 1) {
+			const segment = segments[index];
+			const offset = index * 6;
+			positions[offset] = segment.start.x;
+			positions[offset + 1] = segment.start.y;
+			positions[offset + 2] = segment.start.z;
+			positions[offset + 3] = segment.end.x;
+			positions[offset + 4] = segment.end.y;
+			positions[offset + 5] = segment.end.z;
+			widths[index] = segmentRelativeThickness(segment);
+			const luminance = Math.min(
+				1.12,
+				segmentRelativeBrightness(segment) * (0.76 + segmentPersistence(segment) * 0.24)
+			);
+			colors[offset] = luminance;
+			colors[offset + 1] = luminance;
+			colors[offset + 2] = luminance;
+			colors[offset + 3] = luminance;
+			colors[offset + 4] = luminance;
+			colors[offset + 5] = luminance;
+		}
+		const geometry = new LineSegmentsGeometry();
+		geometry.setPositions(positions);
+		geometry.setColors(colors);
+		geometry.setAttribute('instanceLineWidth', new THREE.InstancedBufferAttribute(widths, 1));
+		geometry.instanceCount = 0;
+		return geometry;
+	}
+
+	private addChannelLayers(geometry: LineSegmentsGeometry, returnStroke: boolean) {
+		const colors = returnStroke
+			? (['#758ee8', '#c4d7ff', '#fff6d8'] as const)
+			: (['#586dc8', '#a9c3ff', '#eef5ff'] as const);
+		const widths = returnStroke ? ([20, 8, 2.8] as const) : ([18, 7, 2.3] as const);
+		const softness = [1, 0.48, 0.12] as const;
+		const target = returnStroke ? this.returnStrokeLines : this.lightningLines;
+		const width = Math.max(1, Math.round(this.canvas.clientWidth));
+		const height = Math.max(1, Math.round(this.canvas.clientHeight));
+		for (let index = 0; index < colors.length; index += 1) {
+			const layerGeometry = index === 0 ? geometry : geometry.clone();
+			layerGeometry.instanceCount = 0;
+			const material = createChannelMaterial(colors[index], widths[index], softness[index]);
+			material.resolution.set(width, height);
+			const line = new LineSegments2(layerGeometry, material);
+			line.name = `${returnStroke ? 'return-stroke' : 'leader'}-${index === 0 ? 'glow' : index === 1 ? 'body' : 'core'}`;
+			line.renderOrder = (returnStroke ? 6 : 2) + index;
+			line.frustumCulled = false;
+			target.push(line);
+			this.lightningGroup.add(line);
+		}
+	}
+
 	private buildLightning() {
 		disposeObject(this.lightningGroup);
 		this.lightningGroup.clear();
@@ -847,52 +1056,36 @@ class ThreeLightningRenderer implements LightningRenderer {
 		this.streamerTargetPositions = null;
 		this.streamerProgress = -1;
 		this.groundRings = [];
-		if (!this.flash || !this.state) return;
+		this.cloudGlow.visible = false;
+		this.cloudGlowMaterial.opacity = 0;
+		this.flashLight.intensity = 0;
+		this.cloudFlashLight.intensity = 0;
+		if (!this.flash || !this.state) {
+			this.updateEventFraming(true);
+			this.updateAtmosphericResponse(0);
+			return;
+		}
+		const showBranches = this.state.visibleLayers.includes('branches');
 		const visibleSegments = this.state.visibleLayers.includes('branches')
-			? this.flash.segments
-			: this.flash.segments.filter((segment) => segment.isMainChannel);
+			? this.flash.segments.filter((segment) =>
+					shouldPresentSegment(segment, showBranches, this.branchEmphasis, this.quality)
+				)
+			: this.flash.segments.filter((segment) =>
+					shouldPresentSegment(segment, false, this.branchEmphasis, this.quality)
+				);
 		const leaderSegments = visibleSegments.filter((segment) => !segment.isAttachmentConnection);
 		const attachmentSegments = visibleSegments.filter((segment) => segment.isAttachmentConnection);
 		this.lightningSegments = [...leaderSegments, ...attachmentSegments];
 		this.leaderSegmentCount = leaderSegments.length;
 		this.attachmentSegmentCount = attachmentSegments.length;
-		const positions = new Float32Array(this.lightningSegments.length * 6);
-		for (let index = 0; index < this.lightningSegments.length; index += 1) {
-			const segment = this.lightningSegments[index];
-			const offset = index * 6;
-			positions[offset] = segment.start.x;
-			positions[offset + 1] = segment.start.y;
-			positions[offset + 2] = segment.start.z;
-			positions[offset + 3] = segment.end.x;
-			positions[offset + 4] = segment.end.y;
-			positions[offset + 5] = segment.end.z;
-		}
-		const geometry = new THREE.BufferGeometry();
-		geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-		const baseLineStyles = [
-			['#d6e4ff', 1],
-			['#8199ff', 0.52],
-			['#5b63d2', 0.22]
-		] as const;
-		for (let index = 0; index < baseLineStyles.length; index += 1) {
-			const [color, opacity] = baseLineStyles[index];
-			const line = new THREE.LineSegments(
-				index === 0 ? geometry : geometry.clone(),
-				new THREE.LineBasicMaterial({
-					color,
-					transparent: true,
-					opacity,
-					blending: THREE.AdditiveBlending,
-					depthWrite: false
-				})
-			);
-			line.geometry.setDrawRange(0, 0);
-			this.lightningLines.push(line);
-			this.lightningGroup.add(line);
+		if (this.lightningSegments.length) {
+			this.addChannelLayers(this.buildChannelGeometry(this.lightningSegments), false);
 		}
 
 		if (this.flash.attachment && this.flash.mainPath.length) {
 			const returnPositions = new Float32Array(this.flash.mainPath.length * 6);
+			const returnWidths = new Float32Array(this.flash.mainPath.length);
+			const returnColors = new Float32Array(this.flash.mainPath.length * 6);
 			let returnIndex = 0;
 			for (let pathIndex = this.flash.mainPath.length - 1; pathIndex >= 0; pathIndex -= 1) {
 				const segment = this.flash.segments[this.flash.mainPath[pathIndex]];
@@ -904,28 +1097,27 @@ class ThreeLightningRenderer implements LightningRenderer {
 				returnPositions[offset + 3] = segment.start.x;
 				returnPositions[offset + 4] = segment.start.y;
 				returnPositions[offset + 5] = segment.start.z;
+				returnWidths[returnIndex] = segmentRelativeThickness(segment);
+				const luminance = Math.min(1.12, segmentRelativeBrightness(segment));
+				returnColors[offset] = luminance;
+				returnColors[offset + 1] = luminance;
+				returnColors[offset + 2] = luminance;
+				returnColors[offset + 3] = luminance;
+				returnColors[offset + 4] = luminance;
+				returnColors[offset + 5] = luminance;
 				returnIndex += 1;
 			}
 			this.returnStrokeSegmentCount = returnIndex;
-			const returnGeometry = new THREE.BufferGeometry();
-			returnGeometry.setAttribute('position', new THREE.BufferAttribute(returnPositions, 3));
-			const returnLineColors = ['#fff8df', '#d8e8ff', '#829cff'] as const;
-			for (let index = 0; index < returnLineColors.length; index += 1) {
-				const color = returnLineColors[index];
-				const line = new THREE.LineSegments(
-					index === 0 ? returnGeometry : returnGeometry.clone(),
-					new THREE.LineBasicMaterial({
-						color,
-						transparent: true,
-						opacity: 0,
-						blending: THREE.AdditiveBlending,
-						depthWrite: false
-					})
+			if (returnIndex) {
+				const returnGeometry = new LineSegmentsGeometry();
+				returnGeometry.setPositions(returnPositions.subarray(0, returnIndex * 6));
+				returnGeometry.setColors(returnColors.subarray(0, returnIndex * 6));
+				returnGeometry.setAttribute(
+					'instanceLineWidth',
+					new THREE.InstancedBufferAttribute(returnWidths.subarray(0, returnIndex), 1)
 				);
-				line.renderOrder = 3 + index;
-				line.geometry.setDrawRange(0, 0);
-				this.returnStrokeLines.push(line);
-				this.lightningGroup.add(line);
+				returnGeometry.instanceCount = 0;
+				this.addChannelLayers(returnGeometry, true);
 			}
 		}
 
@@ -985,6 +1177,7 @@ class ThreeLightningRenderer implements LightningRenderer {
 				this.lightningGroup.add(ring);
 			}
 		}
+		this.updateEventFraming(true);
 		this.updateLightningPlayback();
 	}
 
@@ -1028,7 +1221,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 			visibleSegments = completeSegmentCount;
 			baseIntensity = this.state.displayMode === 'field-map' ? 0.32 : 0.22;
 			returnStrokeSegments = this.returnStrokeSegmentCount;
-			returnStrokeIntensity = this.state.flashSafe ? 0.72 : 0.76 + Math.sin(time * 18) * 0.2;
+			returnStrokeIntensity =
+				this.state.flashSafe || !this.motionAllowed ? 0.68 : 0.76 + Math.sin(time * 15) * 0.16;
 		}
 		if (phase === 'afterglow') {
 			visibleSegments = completeSegmentCount;
@@ -1042,16 +1236,16 @@ class ThreeLightningRenderer implements LightningRenderer {
 		}
 		for (let index = 0; index < this.lightningLines.length; index += 1) {
 			const line = this.lightningLines[index];
-			line.geometry.setDrawRange(0, visibleSegments * 2);
-			const material = line.material as THREE.LineBasicMaterial;
-			const layerOpacity = index === 0 ? 1 : index === 1 ? 0.58 : 0.28;
+			line.geometry.instanceCount = visibleSegments;
+			const material = line.material;
+			const layerOpacity = index === 0 ? 0.13 : index === 1 ? 0.52 : 1;
 			material.opacity = baseIntensity * layerOpacity;
 		}
 		for (let index = 0; index < this.returnStrokeLines.length; index += 1) {
 			const line = this.returnStrokeLines[index];
-			line.geometry.setDrawRange(0, returnStrokeSegments * 2);
-			const material = line.material as THREE.LineBasicMaterial;
-			const layerOpacity = index === 0 ? 1 : index === 1 ? 0.68 : 0.3;
+			line.geometry.instanceCount = returnStrokeSegments;
+			const material = line.material;
+			const layerOpacity = index === 0 ? 0.12 : index === 1 ? 0.58 : 1;
 			material.opacity = returnStrokeIntensity * layerOpacity;
 		}
 		if (this.streamerLines) {
@@ -1082,23 +1276,42 @@ class ThreeLightningRenderer implements LightningRenderer {
 						? 0.72
 						: 0;
 		}
-		if (this.cloudMaterial) {
-			const dischargeIntensity = Math.max(baseIntensity, returnStrokeIntensity);
-			this.cloudMaterial.emissiveIntensity =
-				phase === 'return-stroke' || phase === 'in-cloud-pulse' || phase === 'subsequent-stroke'
-					? (this.state.flashSafe ? 0.42 : 0.62) * dischargeIntensity
-					: this.flash.type === 'intra-cloud' && phase === 'leader'
-						? 0.18 * progress
-						: 0.04;
-		}
-		this.flashLight.intensity =
-			phase === 'return-stroke' || phase === 'in-cloud-pulse'
-				? Math.max(baseIntensity, returnStrokeIntensity) * (this.state.flashSafe ? 4 : 6)
-				: 0;
 		const lightAnchor = this.flash.attachment?.position ?? this.flash.segments[0]?.start;
 		if (lightAnchor) {
 			this.flashLight.position.set(lightAnchor.x, lightAnchor.y + 250, lightAnchor.z);
 		}
+		let atmosphericEnvelope = 0;
+		if (phase === 'cloud-breakdown') atmosphericEnvelope = 0.08 + progress * 0.12;
+		if (phase === 'leader') {
+			atmosphericEnvelope =
+				(this.flash.type === 'intra-cloud'
+					? 0.2
+					: this.flash.strikeScale === 'heroic'
+						? 0.12
+						: 0.07) * progress;
+		}
+		if (phase === 'streamers') atmosphericEnvelope = 0.14;
+		if (phase === 'attachment') atmosphericEnvelope = 0.16 + progress * 0.12;
+		if (phase === 'return-stroke') {
+			atmosphericEnvelope = progress < 0.22 ? 0.42 + progress * 2.64 : 1 - (progress - 0.22) * 0.3;
+		}
+		if (phase === 'in-cloud-pulse') atmosphericEnvelope = 0.54 + progress * 0.34;
+		if (phase === 'subsequent-stroke') {
+			atmosphericEnvelope =
+				this.state.flashSafe || !this.motionAllowed ? 0.54 : 0.62 + Math.sin(time * 15) * 0.1;
+		}
+		if (phase === 'afterglow') atmosphericEnvelope = 0.34 * (1 - progress);
+		const strikeResponse =
+			this.flash.strikeScale === 'heroic'
+				? 1.16
+				: this.flash.strikeScale === 'large'
+					? 1.06
+					: this.flash.strikeScale === 'compact'
+						? 0.78
+						: 1;
+		this.updateAtmosphericResponse(
+			clamp(atmosphericEnvelope * this.flash.relativeIntensity * strikeResponse, 0, 1)
+		);
 		for (let index = 0; index < this.groundRings.length; index += 1) {
 			const ring = this.groundRings[index];
 			const active =
@@ -1110,6 +1323,46 @@ class ThreeLightningRenderer implements LightningRenderer {
 			(ring.material as THREE.MeshBasicMaterial).opacity = active
 				? Math.max(0, 0.26 - index * 0.055 - ringProgress * 0.12)
 				: 0;
+		}
+	}
+
+	private updateAtmosphericResponse(intensity: number) {
+		if (!this.state) return;
+		const safetyScale = Math.min(this.state.flashSafe ? 0.5 : 1, this.motionAllowed ? 1 : 0.4);
+		const displayScale = this.state.displayMode === 'field-map' ? 0.48 : 1;
+		const response = clamp(intensity * safetyScale * displayScale, 0, 1);
+		const baseSky = this.state.displayMode === 'field-map' ? MAP_SKY : NIGHT_SKY;
+		const flashSky = this.state.displayMode === 'field-map' ? MAP_FLASH_SKY : NIGHT_FLASH_SKY;
+		this.skyColor.lerpColors(baseSky, flashSky, response * 0.24);
+		this.scene.background = this.skyColor;
+		if (this.scene.fog instanceof THREE.FogExp2) {
+			this.scene.fog.color.lerpColors(baseSky, flashSky, response * 0.2);
+		}
+		this.skyLight.intensity = 1.1 + response * 1.05;
+		this.moonLight.intensity = 1.35 + response * 0.75;
+		this.flashLight.intensity = response * (this.state.flashSafe ? 1_100 : 2_700);
+		this.cloudFlashLight.intensity = response * (this.state.flashSafe ? 1_400 : 3_600);
+		this.cloudGlowMaterial.opacity = response * (this.state.flashSafe ? 0.22 : 0.42);
+		this.cloudGlow.visible = this.flash !== null && response > 0.002;
+		if (this.cloudMaterial) {
+			this.cloudMaterial.emissiveIntensity = 0.04 + response * 0.78;
+		}
+		if (this.rain) {
+			const material = this.rain.material as THREE.PointsMaterial;
+			const rainIntensity = this.state.environment.rainIntensity;
+			material.opacity = clamp(0.32 * rainIntensity + response * rainIntensity * 0.34, 0, 0.78);
+			material.color.lerpColors(
+				this.state.displayMode === 'field-map' ? MAP_RAIN : NIGHT_RAIN,
+				FLASH_RAIN,
+				response * 0.86
+			);
+		}
+		if (this.terrainMesh?.material instanceof THREE.MeshStandardMaterial) {
+			this.terrainMesh.material.emissiveIntensity =
+				response * (0.12 + this.state.environment.surfaceWetness * 0.22);
+		}
+		if (this.waterMesh?.material instanceof THREE.MeshStandardMaterial) {
+			this.waterMesh.material.emissiveIntensity = response * 0.42;
 		}
 	}
 
@@ -1149,8 +1402,102 @@ class ThreeLightningRenderer implements LightningRenderer {
 		}
 	}
 
+	private updateEventFraming(forceSnap: boolean) {
+		if (!this.state || !this.terrain) return;
+		const isEventView = this.state.cameraPreset === 'hero' || this.state.cameraPreset === 'wide';
+		const flashIdentity = this.flash ? `${this.flash.id}|${this.flash.channelHash}` : '';
+		const flashChanged = flashIdentity !== this.framedFlashIdentity;
+		const presetChanged = this.state.cameraPreset !== this.previousCameraPreset;
+		this.framedFlashIdentity = flashIdentity;
+		this.previousCameraPreset = this.state.cameraPreset;
+		if (flashChanged) this.heroZoom = 1;
+		if (isEventView && (forceSnap || flashChanged || presetChanged)) this.cameraNeedsSnap = true;
+
+		const bounds = this.flash ? majorEventBounds(this.flash.segments) : null;
+		if (bounds && this.flash) {
+			if (isEventView && (flashChanged || presetChanged)) {
+				this.yaw = dominantEventYaw(this.flash.segments, this.yaw);
+			}
+			const framing = calculateEventFraming(
+				bounds,
+				this.camera.aspect,
+				this.state.cameraPreset === 'wide' ? 48 : 50,
+				this.yaw,
+				this.state.cameraPreset === 'wide' ? 'wide' : 'hero',
+				majorProjectedSpan(this.flash.segments, this.yaw)
+			);
+			this.eventCenter.set(framing.centerX, framing.centerY, framing.centerZ);
+			this.eventFitDistance = framing.lineOfSightDistance;
+			this.eventHeight = framing.height;
+			this.eventHorizontalSpan = framing.horizontalSpan;
+			this.cloudGlow.position.set(
+				framing.centerX,
+				bounds.maxY - framing.height * 0.16,
+				framing.centerZ
+			);
+			this.cloudGlow.scale.set(
+				Math.max(1_650, framing.horizontalSpan * 1.42),
+				Math.max(720, framing.height * 0.52),
+				1
+			);
+			this.cloudFlashLight.position.set(
+				framing.centerX,
+				bounds.maxY - framing.height * 0.12,
+				framing.centerZ
+			);
+			return;
+		}
+
+		const stormX = (clamp(this.state.stormPosition.x, 0, 1) - 0.5) * this.terrain.widthMetres;
+		const stormZ = (clamp(this.state.stormPosition.z, 0, 1) - 0.5) * this.terrain.depthMetres;
+		const groundY = sampleTerrainHeight(this.terrain, stormX, stormZ);
+		this.eventHeight = Math.max(1_500, this.state.storm.cloudBaseMetres - groundY + 900);
+		this.eventHorizontalSpan = Math.max(1_800, this.terrain.widthMetres * 0.48);
+		this.eventCenter.set(stormX, groundY + this.eventHeight * 0.52, stormZ);
+		this.eventFitDistance = Math.max(4_800, this.eventHeight * 1.75);
+		this.cloudGlow.position.set(stormX, this.state.storm.cloudBaseMetres + 520, stormZ);
+		this.cloudGlow.scale.set(this.eventHorizontalSpan * 1.35, this.eventHeight * 0.48, 1);
+		this.cloudFlashLight.position.set(stormX, this.state.storm.cloudBaseMetres + 480, stormZ);
+	}
+
+	private updateCameraFov(fov: number) {
+		if (Math.abs(this.camera.fov - fov) < 0.001) return;
+		this.camera.fov = fov;
+		this.camera.updateProjectionMatrix();
+	}
+
 	private updateCamera(snap = false) {
 		if (!this.state || !this.terrain) return;
+		if (this.state.cameraPreset === 'hero' || this.state.cameraPreset === 'wide') {
+			this.updateCameraFov(this.state.cameraPreset === 'hero' ? 50 : 48);
+			this.desiredCameraTarget.copy(this.eventCenter);
+			const lineOfSightDistance = this.eventFitDistance * this.heroZoom;
+			let horizontalDistance = lineOfSightDistance;
+			let cameraX = this.eventCenter.x + Math.cos(this.yaw) * horizontalDistance;
+			let cameraZ = this.eventCenter.z + Math.sin(this.yaw) * horizontalDistance;
+			const eyeOffset = clamp(135 + (this.pitch - 0.48) * 920, 70, 760);
+			let cameraY = sampleTerrainHeight(this.terrain, cameraX, cameraZ) + eyeOffset;
+			const verticalDistance = this.eventCenter.y - cameraY;
+			horizontalDistance = Math.sqrt(
+				Math.max(600 * 600, lineOfSightDistance ** 2 - verticalDistance ** 2)
+			);
+			cameraX = this.eventCenter.x + Math.cos(this.yaw) * horizontalDistance;
+			cameraZ = this.eventCenter.z + Math.sin(this.yaw) * horizontalDistance;
+			cameraY = sampleTerrainHeight(this.terrain, cameraX, cameraZ) + eyeOffset;
+			this.desiredCameraPosition.set(cameraX, cameraY, cameraZ);
+			const shouldSnap = snap || this.cameraNeedsSnap;
+			if (shouldSnap) {
+				this.cameraTarget.copy(this.desiredCameraTarget);
+				this.camera.position.copy(this.desiredCameraPosition);
+			} else {
+				this.cameraTarget.lerp(this.desiredCameraTarget, 0.055);
+				this.camera.position.lerp(this.desiredCameraPosition, 0.055);
+			}
+			this.camera.lookAt(this.cameraTarget);
+			this.cameraNeedsSnap = false;
+			return;
+		}
+		this.updateCameraFov(43);
 		this.desiredCameraTarget.set(0, Math.max(180, this.terrain.maxHeight * 0.22), 0);
 		if (this.state.cameraPreset === 'observer') {
 			const observerX = (clamp(this.state.observer.x, 0, 1) - 0.5) * this.terrain.widthMetres;
@@ -1196,7 +1543,8 @@ class ThreeLightningRenderer implements LightningRenderer {
 	private updatePresentation() {
 		if (!this.state) return;
 		const fieldMap = this.state.displayMode === 'field-map';
-		this.scene.background = fieldMap ? MAP_SKY : NIGHT_SKY;
+		this.skyColor.copy(fieldMap ? MAP_SKY : NIGHT_SKY);
+		this.scene.background = this.skyColor;
 		const visibilityDensity = 1.45 - this.state.environment.visibility * 0.75;
 		this.scene.fog = new THREE.FogExp2(
 			fieldMap ? MAP_SKY : NIGHT_SKY,
@@ -1282,6 +1630,7 @@ class ThreeLightningRenderer implements LightningRenderer {
 		this.dragY = event.clientY;
 		this.yaw -= dx * 0.006;
 		this.pitch = clamp(this.pitch + dy * 0.004, 0.12, 1.22);
+		this.updateEventFraming(false);
 		this.callbacks.onManualCamera?.();
 	};
 
@@ -1291,7 +1640,11 @@ class ThreeLightningRenderer implements LightningRenderer {
 
 	private onWheel = (event: WheelEvent) => {
 		event.preventDefault();
-		this.radius = clamp(this.radius * Math.exp(event.deltaY * 0.001), 650, 11_500);
+		if (this.state?.cameraPreset === 'hero' || this.state?.cameraPreset === 'wide') {
+			this.heroZoom = clamp(this.heroZoom * Math.exp(event.deltaY * 0.001), 0.72, 1.85);
+		} else {
+			this.radius = clamp(this.radius * Math.exp(event.deltaY * 0.001), 650, 11_500);
+		}
 		this.callbacks.onManualCamera?.();
 	};
 

@@ -17,6 +17,7 @@
 	let previouslyFocused: HTMLElement | null = null;
 	let wasOpen = false;
 	const markerPositions: Record<TerrainPresetId, { left: number; top: number }> = {
+		'kalbaisakhi-bengal': { left: 67, top: 52 },
 		'monsoon-delta': { left: 65, top: 55 },
 		'himalayan-ridge': { left: 63, top: 38 },
 		'coastal-shelf': { left: 28, top: 46 },
@@ -95,7 +96,7 @@
 				<div>
 					<p>Lightning Atlas</p>
 					<h3 id="atlas-heading">Procedural storm regions — not current weather</h3>
-					<span id="atlas-description">Choose one of eight deterministic terrain experiments.</span>
+					<span id="atlas-description">Choose one of nine deterministic storm terrains.</span>
 				</div>
 				<button bind:this={closeButton} type="button" onclick={onclose}>Close atlas</button>
 			</header>
@@ -130,7 +131,11 @@
 						<span class="card-top"
 							><strong>{preset.name}</strong><i style={`background:${preset.accent}`}></i></span
 						>
-						<small>{preset.region}{preset.experimental ? ' · experimental' : ''}</small>
+						<small
+							>{preset.region}{preset.featured ? ' · featured' : ''}{preset.experimental
+								? ' · experimental'
+								: ''}</small
+						>
 						<span>{preset.description}</span>
 					</button>
 				{/each}

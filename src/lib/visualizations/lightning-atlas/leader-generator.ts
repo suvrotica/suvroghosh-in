@@ -26,6 +26,7 @@ import type {
 	LightningFlash,
 	LightningSegment,
 	SerializableAtlasState,
+	StrikeScale,
 	TerrainData,
 	UpwardStreamer,
 	Vec3
@@ -50,6 +51,129 @@ type BranchTip = {
 	energy: number;
 	age: number;
 };
+
+type StrikeScaleProfile = {
+	activeTipLimit: number;
+	attachmentDelaySteps: number;
+	branchEnergyBoost: number;
+	branchRetentionBoost: number;
+	branchSpawnMultiplier: number;
+	forkSpawnMultiplier: number;
+	lateralExploration: number;
+	stepLengthMultiplier: number;
+	thicknessMultiplier: number;
+	brightnessMultiplier: number;
+	intensityBoost: number;
+};
+
+const STRIKE_SCALE_PROFILES: Record<StrikeScale, StrikeScaleProfile> = {
+	compact: {
+		activeTipLimit: 6,
+		attachmentDelaySteps: 0,
+		branchEnergyBoost: -0.08,
+		branchRetentionBoost: -0.05,
+		branchSpawnMultiplier: 0.55,
+		forkSpawnMultiplier: 0.45,
+		lateralExploration: 0.72,
+		stepLengthMultiplier: 0.86,
+		thicknessMultiplier: 0.82,
+		brightnessMultiplier: 0.9,
+		intensityBoost: -0.04
+	},
+	standard: {
+		activeTipLimit: ENGINE_LIMITS.maximumActiveTips,
+		attachmentDelaySteps: 0,
+		branchEnergyBoost: 0,
+		branchRetentionBoost: 0,
+		branchSpawnMultiplier: 1,
+		forkSpawnMultiplier: 1,
+		lateralExploration: 1,
+		stepLengthMultiplier: 1,
+		thicknessMultiplier: 1,
+		brightnessMultiplier: 1,
+		intensityBoost: 0
+	},
+	large: {
+		activeTipLimit: ENGINE_LIMITS.maximumActiveTips,
+		attachmentDelaySteps: 3,
+		branchEnergyBoost: 0.06,
+		branchRetentionBoost: 0.06,
+		branchSpawnMultiplier: 1.45,
+		forkSpawnMultiplier: 1.45,
+		lateralExploration: 1.28,
+		stepLengthMultiplier: 1.08,
+		thicknessMultiplier: 1.24,
+		brightnessMultiplier: 1.05,
+		intensityBoost: 0.06
+	},
+	heroic: {
+		activeTipLimit: ENGINE_LIMITS.maximumActiveTips,
+		attachmentDelaySteps: 7,
+		branchEnergyBoost: 0.12,
+		branchRetentionBoost: 0.11,
+		branchSpawnMultiplier: 2.05,
+		forkSpawnMultiplier: 2.25,
+		lateralExploration: 1.68,
+		stepLengthMultiplier: 1.16,
+		thicknessMultiplier: 1.62,
+		brightnessMultiplier: 1.12,
+		intensityBoost: 0.12
+	}
+};
+
+function strikeScaleProfile(scale: StrikeScale): StrikeScaleProfile {
+	return STRIKE_SCALE_PROFILES[scale];
+}
+
+function segmentPresentation(
+	branchDepth: number,
+	isMainChannel: boolean,
+	energy: number,
+	strikeScale: StrikeScale
+): Pick<
+	LightningSegment,
+	'channelClass' | 'hierarchyDepth' | 'relativeThickness' | 'relativeBrightness' | 'persistence'
+> {
+	const profile = strikeScaleProfile(strikeScale);
+	const hierarchyDepth = isMainChannel ? 0 : clamp(Math.max(1, branchDepth), 1, 3);
+	const channelClass = isMainChannel
+		? 'main'
+		: hierarchyDepth === 1
+			? 'primary'
+			: hierarchyDepth === 2
+				? 'secondary'
+				: 'tertiary';
+	const thickness = [1, 0.56, 0.32, 0.18][hierarchyDepth];
+	const brightness = [1, 0.78, 0.54, 0.34][hierarchyDepth];
+	const basePersistence = [1, 0.76, 0.54, 0.34][hierarchyDepth];
+	const energyFactor = 0.82 + clamp(energy, 0, 1) * 0.18;
+	return {
+		channelClass,
+		hierarchyDepth,
+		relativeThickness: thickness * profile.thicknessMultiplier * energyFactor,
+		relativeBrightness: brightness * profile.brightnessMultiplier * (0.88 + energyFactor * 0.12),
+		persistence: clamp(
+			basePersistence + (strikeScale === 'heroic' && !isMainChannel ? 0.08 : 0) + energy * 0.08,
+			0.2,
+			1
+		)
+	};
+}
+
+function applySegmentHierarchy(
+	segments: LightningSegment[],
+	mainPath: readonly number[],
+	strikeScale: StrikeScale
+) {
+	const main = new Set(mainPath);
+	for (const [index, segment] of segments.entries()) {
+		segment.isMainChannel = main.has(index);
+		Object.assign(
+			segment,
+			segmentPresentation(segment.branchDepth, segment.isMainChannel, segment.energy, strikeScale)
+		);
+	}
+}
 
 const MAXIMUM_ATTACHMENT_SEGMENTS = 32;
 const MAXIMUM_CLOSING_SEGMENTS = 96;
@@ -144,6 +268,7 @@ function directionOptions(
 	random: SeededRandom,
 	type: FlashType,
 	persistence: number,
+	profile: StrikeScaleProfile,
 	count = 7
 ): DirectionCandidate[] {
 	const targetDirection = normalize(subtract(target, position));
@@ -151,7 +276,9 @@ function directionOptions(
 	const downward = type === 'intra-cloud' ? targetDirection : { x: 0, y: -1, z: 0 };
 	const options: DirectionCandidate[] = [];
 	for (let index = 0; index < count; index += 1) {
-		const jitterScale = type === 'positive-cg' ? 0.24 : type === 'intra-cloud' ? 0.5 : 0.42;
+		const jitterScale =
+			(type === 'positive-cg' ? 0.24 : type === 'intra-cloud' ? 0.5 : 0.42) *
+			profile.lateralExploration;
 		const jitter = {
 			x: random.normal(0, jitterScale),
 			y: random.normal(0, jitterScale * 0.52),
@@ -159,8 +286,11 @@ function directionOptions(
 		};
 		const direction = normalize(
 			add(
-				add(scale(targetDirection, 1.1), scale(previous, 0.35 + persistence * 0.8)),
-				add(scale(field, 0.26), add(scale(downward, 0.28), jitter))
+				add(
+					scale(targetDirection, 1.1 / (1 + (profile.lateralExploration - 1) * 0.34)),
+					scale(previous, 0.35 + persistence * 0.8)
+				),
+				add(scale(field, 0.26), add(scale(downward, 0.28 / profile.lateralExploration), jitter))
 			)
 		);
 		const electricalAdvantage = 0.45 + Math.max(0, dot(direction, field)) * 0.55;
@@ -173,6 +303,31 @@ function directionOptions(
 		});
 	}
 	return options.sort((a, b) => b.score - a.score);
+}
+
+function articulatedBranchDirection(
+	candidate: Vec3,
+	mainDirection: Vec3,
+	random: SeededRandom,
+	profile: StrikeScaleProfile
+): Vec3 {
+	if (profile.lateralExploration === 1) return candidate;
+	const horizontalLength = Math.hypot(mainDirection.x, mainDirection.z);
+	const side = random.nextFloat() < 0.5 ? -1 : 1;
+	const perpendicular =
+		horizontalLength > 1e-6
+			? {
+					x: (-mainDirection.z / horizontalLength) * side,
+					y: 0,
+					z: (mainDirection.x / horizontalLength) * side
+				}
+			: { x: side, y: 0, z: 0 };
+	const lateralBoost = (profile.lateralExploration - 1) * 0.72;
+	return normalize({
+		x: candidate.x + perpendicular.x * lateralBoost,
+		y: candidate.y * clamp(1 - lateralBoost * 0.34, 0.62, 1),
+		z: candidate.z + perpendicular.z * lateralBoost
+	});
 }
 
 function tooCloseToExisting(position: Vec3, segments: readonly LightningSegment[]): boolean {
@@ -202,7 +357,8 @@ function growBranch(
 	terrain: TerrainData,
 	random: SeededRandom,
 	birthStep: number,
-	type: FlashType
+	type: FlashType,
+	profile: StrikeScaleProfile
 ): BranchTip | null {
 	if (
 		tip.energy < 0.13 ||
@@ -212,15 +368,16 @@ function growBranch(
 		return null;
 
 	const field = normalize(electricFieldProxy(tip.position, pockets));
-	const downwardBias = type === 'intra-cloud' ? 0 : -0.22;
+	const downwardBias = type === 'intra-cloud' ? 0 : -0.22 / profile.lateralExploration;
 	const direction = normalize({
-		x: tip.direction.x * 0.72 + field.x * 0.18 + random.normal(0, 0.32),
+		x:
+			tip.direction.x * 0.72 + field.x * 0.18 + random.normal(0, 0.32 * profile.lateralExploration),
 		y: tip.direction.y * 0.72 + field.y * 0.18 + downwardBias + random.normal(0, 0.14),
-		z: tip.direction.z * 0.72 + field.z * 0.18 + random.normal(0, 0.32)
+		z: tip.direction.z * 0.72 + field.z * 0.18 + random.normal(0, 0.32 * profile.lateralExploration)
 	});
 	const step = Math.min(
 		ENGINE_LIMITS.maximumSegmentMetres,
-		48 + random.nextFloat() * (92 + tip.energy * 36)
+		(48 + random.nextFloat() * (92 + tip.energy * 36)) * profile.stepLengthMultiplier
 	);
 	let end = add(tip.position, scale(direction, step));
 	end = boundedPoint(end, terrain, false);
@@ -243,14 +400,15 @@ function growBranch(
 		branchDepth: tip.depth,
 		birthStep,
 		energy: tip.energy,
-		isMainChannel: false
+		isMainChannel: false,
+		...segmentPresentation(tip.depth, false, tip.energy, 'standard')
 	});
 	return {
 		position: end,
 		direction,
 		parentIndex: index,
 		depth: tip.depth,
-		energy: tip.energy * (0.71 + random.nextFloat() * 0.12),
+		energy: tip.energy * (0.71 + profile.branchRetentionBoost + random.nextFloat() * 0.12),
 		age: tip.age + 1
 	};
 }
@@ -294,7 +452,8 @@ function appendStraightConnection(
 				branchDepth: 0,
 				birthStep,
 				energy: 1,
-				isMainChannel: true
+				isMainChannel: true,
+				...segmentPresentation(0, true, 1, 'standard')
 			});
 			mainPath.push(segmentIndex);
 			return segmentIndex;
@@ -325,7 +484,8 @@ function appendStraightConnection(
 			branchDepth: 0,
 			birthStep,
 			energy: 1,
-			isMainChannel: true
+			isMainChannel: true,
+			...segmentPresentation(0, true, 1, 'standard')
 		});
 		mainPath.push(segmentIndex);
 		previousIndex = segmentIndex;
@@ -342,6 +502,7 @@ function generateChannel(
 	pockets: readonly ChargePocket[],
 	random: SeededRandom
 ): { segments: LightningSegment[]; mainPath: number[] } {
+	const profile = strikeScaleProfile(state.strikeScale);
 	const segments: LightningSegment[] = [];
 	const mainPath: number[] = [];
 	let point = { ...root };
@@ -381,7 +542,8 @@ function generateChannel(
 			pockets,
 			random.fork(`directions-${stepIndex}`),
 			type,
-			state.storm.leaderPersistence
+			state.storm.leaderPersistence,
+			profile
 		);
 		const selectedPool = options.slice(0, 4);
 		const selectedIndex = random
@@ -391,7 +553,11 @@ function generateChannel(
 		const progress = clamp((stepIndex + 1) / estimatedSteps, 0, 0.98);
 		const intended = add(point, scale(selected.direction, stepLength));
 		const guide = lerp(root, target, progress);
-		let end = lerp(intended, guide, type === 'positive-cg' ? 0.34 : 0.22);
+		let end = lerp(
+			intended,
+			guide,
+			(type === 'positive-cg' ? 0.34 : 0.22) / profile.lateralExploration
+		);
 		end = boundedPoint(end, terrain, false);
 		if (tooCloseToExisting(end, segments)) end = lerp(end, guide, 0.55);
 		const candidateLength = distance(point, end);
@@ -410,7 +576,8 @@ function generateChannel(
 			branchDepth: 0,
 			birthStep: stepIndex,
 			energy: 1,
-			isMainChannel: true
+			isMainChannel: true,
+			...segmentPresentation(0, true, 1, 'standard')
 		});
 		mainPath.push(mainIndex);
 		previousMainIndex = mainIndex;
@@ -423,16 +590,22 @@ function generateChannel(
 		const ambiguity = runnerUp ? runnerUp.score / Math.max(0.001, selected.score) : 0;
 		if (
 			runnerUp &&
-			branches.length < ENGINE_LIMITS.maximumActiveTips &&
+			branches.length < profile.activeTipLimit &&
 			stepIndex > 1 &&
-			random.fork(`branch-${stepIndex}`).nextFloat() < branching * (0.12 + ambiguity * 0.3)
+			random.fork(`branch-${stepIndex}`).nextFloat() <
+				branching * (0.12 + ambiguity * 0.3) * profile.branchSpawnMultiplier
 		) {
 			branches.push({
 				position: { ...segments[mainIndex].start },
-				direction: runnerUp.direction,
+				direction: articulatedBranchDirection(
+					runnerUp.direction,
+					selected.direction,
+					random.fork(`branch-direction-${stepIndex}`),
+					profile
+				),
 				parentIndex: segments[mainIndex].parentIndex,
 				depth: 1,
-				energy: 0.48 + branching * 0.38,
+				energy: clamp(0.48 + branching * 0.38 + profile.branchEnergyBoost, 0, 1),
 				age: 0
 			});
 		}
@@ -450,14 +623,15 @@ function generateChannel(
 				terrain,
 				branchRandom,
 				stepIndex,
-				type
+				type,
+				profile
 			);
 			if (!grown) continue;
 			nextBranches.push(grown);
 			if (
 				grown.depth < ENGINE_LIMITS.maximumBranchDepth &&
 				grown.age > 1 &&
-				branchRandom.nextFloat() < branching * 0.075
+				branchRandom.nextFloat() < branching * 0.075 * profile.forkSpawnMultiplier
 			) {
 				nextBranches.push({
 					...grown,
@@ -472,7 +646,7 @@ function generateChannel(
 				});
 			}
 		}
-		branches = nextBranches.slice(0, ENGINE_LIMITS.maximumActiveTips);
+		branches = nextBranches.slice(0, profile.activeTipLimit);
 	}
 
 	if (
@@ -759,6 +933,7 @@ function appendAttachmentConnection(
 			birthStep,
 			energy: 1,
 			isMainChannel: false,
+			...segmentPresentation(tip.depth, false, 1, 'standard'),
 			isAttachmentConnection: true
 		});
 		parentIndex = segmentIndex;
@@ -795,6 +970,7 @@ function generateGroundChannel(
 	attachment: Attachment;
 	scored: ScoredAttachment[];
 } {
+	const profile = strikeScaleProfile(state.strikeScale);
 	const segments: LightningSegment[] = [];
 	let primary: BranchTip = {
 		position: { ...root },
@@ -809,14 +985,21 @@ function generateGroundChannel(
 	let finalIndex = -1;
 	const branching = state.storm.branching * (type === 'positive-cg' ? 0.28 : 1);
 	const growthLimit = ENGINE_LIMITS.maximumSegments - MAXIMUM_ATTACHMENT_SEGMENTS;
+	const canopyAngle = random.fork('ground-canopy-direction').nextFloat() * Math.PI * 2;
+	const canopyDirection = { x: Math.cos(canopyAngle), z: Math.sin(canopyAngle) };
 
 	for (let stepIndex = 0; stepIndex < ENGINE_LIMITS.maximumIterations; stepIndex += 1) {
 		if (segments.length >= growthLimit) break;
 		const surface = sampleTerrainHeight(terrain, primary.position.x, primary.position.z);
+		const canopyInfluence = clamp(
+			(profile.attachmentDelaySteps - stepIndex) / Math.max(1, profile.attachmentDelaySteps),
+			0,
+			1
+		);
 		const downwardTarget = {
-			x: primary.position.x,
-			y: surface,
-			z: primary.position.z
+			x: primary.position.x + canopyDirection.x * 900 * canopyInfluence,
+			y: surface + Math.max(0, primary.position.y - surface) * canopyInfluence * 0.42,
+			z: primary.position.z + canopyDirection.z * 900 * canopyInfluence
 		};
 		const options = directionOptions(
 			primary.position,
@@ -825,7 +1008,8 @@ function generateGroundChannel(
 			pockets,
 			random.fork(`ground-directions-${stepIndex}`),
 			type,
-			state.storm.leaderPersistence
+			state.storm.leaderPersistence,
+			profile
 		);
 		const selectedPool = options.slice(0, 4);
 		const selectedIndex = random
@@ -869,7 +1053,8 @@ function generateGroundChannel(
 			branchDepth: 0,
 			birthStep: stepIndex,
 			energy: 1,
-			isMainChannel: false
+			isMainChannel: false,
+			...segmentPresentation(0, false, 1, 'standard')
 		});
 		primary = {
 			position: end,
@@ -884,16 +1069,22 @@ function generateGroundChannel(
 		const ambiguity = runnerUp ? runnerUp.score / Math.max(0.001, selected.score) : 0;
 		if (
 			runnerUp &&
-			branches.length < ENGINE_LIMITS.maximumActiveTips &&
+			branches.length < profile.activeTipLimit &&
 			stepIndex > 1 &&
-			random.fork(`ground-branch-${stepIndex}`).nextFloat() < branching * (0.14 + ambiguity * 0.34)
+			random.fork(`ground-branch-${stepIndex}`).nextFloat() <
+				branching * (0.14 + ambiguity * 0.34) * profile.branchSpawnMultiplier
 		) {
 			branches.push({
 				position: { ...segments[mainIndex].start },
-				direction: runnerUp.direction,
+				direction: articulatedBranchDirection(
+					runnerUp.direction,
+					selected.direction,
+					random.fork(`ground-branch-direction-${stepIndex}`),
+					profile
+				),
 				parentIndex: segments[mainIndex].parentIndex,
 				depth: 1,
-				energy: 0.52 + branching * 0.4,
+				energy: clamp(0.52 + branching * 0.4 + profile.branchEnergyBoost, 0, 1),
 				age: 0
 			});
 		}
@@ -911,14 +1102,15 @@ function generateGroundChannel(
 				terrain,
 				branchRandom,
 				stepIndex,
-				type
+				type,
+				profile
 			);
 			if (!grown) continue;
 			nextBranches.push(grown);
 			if (
 				grown.depth < ENGINE_LIMITS.maximumBranchDepth &&
 				grown.age > 1 &&
-				branchRandom.nextFloat() < branching * 0.08
+				branchRandom.nextFloat() < branching * 0.08 * profile.forkSpawnMultiplier
 			) {
 				nextBranches.push({
 					...grown,
@@ -933,7 +1125,7 @@ function generateGroundChannel(
 				});
 			}
 		}
-		branches = nextBranches.slice(0, ENGINE_LIMITS.maximumActiveTips);
+		branches = nextBranches.slice(0, profile.activeTipLimit);
 
 		const connections = possibleGroundConnections(
 			[primary, ...branches],
@@ -948,7 +1140,11 @@ function generateGroundChannel(
 				a.tip.parentIndex - b.tip.parentIndex
 		);
 		const attachmentGate = random.fork(`ground-attachment-gate-${stepIndex}`).nextFloat();
-		if (connections.length && attachmentGate < 0.64 + state.storm.chargeStrength * 0.18) {
+		if (
+			stepIndex >= profile.attachmentDelaySteps &&
+			connections.length &&
+			attachmentGate < 0.64 + state.storm.chargeStrength * 0.18
+		) {
 			const pool = connections.slice(0, 18);
 			const connectionIndex = random
 				.fork(`ground-attachment-${stepIndex}`)
@@ -1200,6 +1396,7 @@ export function generateLightningFlash(input: GenerateFlashInput): {
 		attachment = result.attachment;
 		scored = result.scored;
 	}
+	applySegmentHierarchy(segments, mainPath, state.strikeScale);
 	const streamers = attachment
 		? makeStreamers(attachment, scored, segments, terrain, type, random.fork('streamers'))
 		: [];
@@ -1235,6 +1432,7 @@ export function generateLightningFlash(input: GenerateFlashInput): {
 		0.36 +
 			state.storm.chargeStrength * 0.46 +
 			(type === 'positive-cg' ? 0.16 : 0) +
+			strikeScaleProfile(state.strikeScale).intensityBoost +
 			random.fork('relative-intensity').normal(0, 0.045),
 		0.18,
 		1
@@ -1244,6 +1442,7 @@ export function generateLightningFlash(input: GenerateFlashInput): {
 		seed: state.seed,
 		strikeIndex,
 		type,
+		strikeScale: state.strikeScale,
 		startedAt: 0,
 		segments,
 		streamers,

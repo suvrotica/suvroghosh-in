@@ -8,6 +8,7 @@
 		PlaceableFeatureKind,
 		QualityChoice,
 		SerializableAtlasState,
+		StrikeScale,
 		TerrainPresetId
 	} from '$lib/visualizations/lightning-atlas/types';
 
@@ -28,6 +29,8 @@
 		placementZ: number;
 		actionStatus: string;
 		oncall?: () => void;
+		onhero?: () => void;
+		onfeatured?: () => void;
 		onreplay?: () => void;
 		onnewseed?: () => void;
 		onplaytoggle?: () => void;
@@ -43,6 +46,7 @@
 		ondisplay?: (display: 'night' | 'field-map') => void;
 		onquality?: (quality: QualityChoice) => void;
 		oncamera?: (camera: CameraPreset) => void;
+		onstrikescale?: (scale: StrikeScale) => void;
 		onparameter?: (section: ParameterSection, key: string, value: number | boolean) => void;
 		onlayer?: (layer: LayerId, visible: boolean) => void;
 		onflashsafe?: (value: boolean) => void;
@@ -71,6 +75,8 @@
 		placementZ,
 		actionStatus,
 		oncall,
+		onhero,
+		onfeatured,
 		onreplay,
 		onnewseed,
 		onplaytoggle,
@@ -86,6 +92,7 @@
 		ondisplay,
 		onquality,
 		oncamera,
+		onstrikescale,
 		onparameter,
 		onlayer,
 		onflashsafe,
@@ -114,6 +121,13 @@
 		{ id: 'ground-current', label: 'Ground-current footprint' },
 		{ id: 'contours', label: 'Terrain contours' }
 	];
+
+	const strikeScales: Array<{ id: StrikeScale; label: string }> = [
+		{ id: 'compact', label: 'Compact' },
+		{ id: 'standard', label: 'Standard' },
+		{ id: 'large', label: 'Large' },
+		{ id: 'heroic', label: 'Heroic' }
+	];
 </script>
 
 <aside class="control-rail" aria-label="Lightning Atlas controls">
@@ -130,6 +144,22 @@
 		{/each}
 	</div>
 
+	<section class="featured-storm" aria-labelledby="featured-storm-heading">
+		<div>
+			<span>Featured showpiece</span>
+			<h3 id="featured-storm-heading">Kalbaisakhi / Bengal Nor'wester</h3>
+			<p>
+				Kalbaisakhi: a severe Bengal pre-monsoon storm mode tuned for broad, branching, sky-filling
+				lightning.
+			</p>
+		</div>
+		<button type="button" onclick={onfeatured} disabled={busy}>
+			{state.terrain === 'kalbaisakhi-bengal' && state.strikeScale === 'heroic'
+				? 'Reload featured storm'
+				: 'Load featured storm'}
+		</button>
+	</section>
+
 	<div class="primary-selects">
 		<label>
 			<span>Terrain</span>
@@ -139,7 +169,9 @@
 			>
 				{#each TERRAIN_PRESETS as preset (preset.id)}
 					<option value={preset.id}
-						>{preset.name}{preset.experimental ? ' · experimental' : ''}</option
+						>{preset.name}{preset.featured ? ' · featured' : ''}{preset.experimental
+							? ' · experimental'
+							: ''}</option
 					>
 				{/each}
 			</select>
@@ -156,12 +188,56 @@
 				<option value="intra-cloud">Intra-cloud</option>
 			</select>
 		</label>
+		<label>
+			<span>Strike scale</span>
+			<select
+				value={state.strikeScale}
+				aria-describedby="lightning-atlas-strike-scale-note"
+				onchange={(event) => onstrikescale?.(event.currentTarget.value as StrikeScale)}
+			>
+				{#each strikeScales as scale (scale.id)}
+					<option value={scale.id}>{scale.label}</option>
+				{/each}
+			</select>
+			<small id="lightning-atlas-strike-scale-note"
+				>Changes channel morphology and branch hierarchy, not just brightness.</small
+			>
+		</label>
+		<label>
+			<span>Camera</span>
+			<select
+				value={state.cameraPreset}
+				onchange={(event) => oncamera?.(event.currentTarget.value as CameraPreset)}
+			>
+				<option value="hero">Hero Sky View</option>
+				<option value="wide">Wide Storm</option>
+				<option value="attachment">Attachment</option>
+				<option value="follow">Follow Bolt</option>
+				<option value="overview">Terrain overview</option>
+				<option value="observer">Observer view</option>
+			</select>
+		</label>
 	</div>
 
 	<div class="primary-actions">
 		<button class="strike" type="button" onclick={oncall} disabled={busy}>
 			{busy ? 'Tracing leader…' : 'Call a strike'}
 		</button>
+		<div class="hero-action">
+			<button
+				class="hero-strike"
+				type="button"
+				onclick={onhero}
+				disabled={busy}
+				aria-describedby="lightning-atlas-hero-strike-tooltip"
+				title="Generates a high-energy, highly branched strike within the current storm model."
+			>
+				{busy ? 'Tracing leader…' : 'Call a hero strike'}
+			</button>
+			<span id="lightning-atlas-hero-strike-tooltip" class="tooltip" role="tooltip">
+				Generates a high-energy, highly branched strike within the current storm model.
+			</span>
+		</div>
 		<button type="button" onclick={onplaytoggle} disabled={!hasFlash}
 			>{playing ? 'Pause' : 'Play'}</button
 		>
@@ -210,18 +286,6 @@
 					<option value="low">Low</option>
 					<option value="medium">Medium</option>
 					<option value="high">High</option>
-				</select>
-			</label>
-			<label>
-				<span>Camera</span>
-				<select
-					value={state.cameraPreset}
-					onchange={(event) => oncamera?.(event.currentTarget.value as CameraPreset)}
-				>
-					<option value="overview">Terrain overview</option>
-					<option value="observer">Observer view</option>
-					<option value="attachment">Attachment close-up</option>
-					<option value="follow">Follow bolt</option>
 				</select>
 			</label>
 		</div>
@@ -594,6 +658,43 @@
 		margin-top: 0.7rem;
 	}
 
+	.featured-storm {
+		display: grid;
+		gap: 0.6rem;
+		margin-top: 0.7rem;
+		border: 1px solid color-mix(in srgb, var(--atlas-accent) 58%, var(--atlas-line));
+		border-radius: 0.48rem;
+		background:
+			linear-gradient(
+				135deg,
+				color-mix(in srgb, var(--atlas-accent) 13%, transparent),
+				transparent
+			),
+			var(--atlas-control);
+		padding: 0.7rem;
+	}
+	.featured-storm span {
+		color: var(--atlas-accent);
+		font:
+			0.62rem 'Courier Prime',
+			monospace;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+	.featured-storm h3,
+	.featured-storm p {
+		margin: 0;
+	}
+	.featured-storm h3 {
+		margin-top: 0.2rem;
+		font-size: 0.86rem;
+	}
+	.featured-storm p {
+		margin-top: 0.25rem;
+		color: var(--atlas-muted);
+		font-size: 0.7rem;
+		line-height: 1.45;
+	}
 	label {
 		min-width: 0;
 	}
@@ -610,6 +711,11 @@
 		font-size: 0.66rem;
 		letter-spacing: 0.035em;
 	}
+	.primary-selects small {
+		color: var(--atlas-muted);
+		font-size: 0.62rem;
+		line-height: 1.35;
+	}
 	select,
 	input[type='number'] {
 		width: 100%;
@@ -624,12 +730,44 @@
 		margin-top: 0.55rem;
 	}
 
-	.primary-actions .strike {
-		grid-column: 1 / -1;
+	.primary-actions .strike,
+	.primary-actions .hero-strike {
 		border-color: color-mix(in srgb, var(--atlas-accent) 78%, var(--atlas-line));
 		background: color-mix(in srgb, var(--atlas-accent) 18%, var(--atlas-control));
 		color: var(--atlas-text-strong);
 		font-weight: 800;
+	}
+	.primary-actions .hero-strike {
+		width: 100%;
+		background: color-mix(in srgb, var(--atlas-accent) 32%, var(--atlas-control));
+	}
+	.hero-action {
+		position: relative;
+	}
+	.tooltip {
+		position: absolute;
+		z-index: 5;
+		top: calc(100% + 0.35rem);
+		right: 0;
+		width: min(18rem, 100%);
+		border: 1px solid var(--atlas-line);
+		border-radius: 0.35rem;
+		background: var(--atlas-panel-strong);
+		padding: 0.5rem 0.58rem;
+		color: var(--atlas-text);
+		font-size: 0.67rem;
+		line-height: 1.4;
+		opacity: 0;
+		pointer-events: none;
+		transform: translateY(-0.2rem);
+		transition:
+			opacity 120ms ease,
+			transform 120ms ease;
+	}
+	.hero-action:hover .tooltip,
+	.hero-action:focus-within .tooltip {
+		opacity: 1;
+		transform: translateY(0);
 	}
 
 	.advanced {
@@ -789,7 +927,8 @@
 			grid-template-columns: 1fr 1fr;
 			overflow: visible;
 		}
-		.primary-actions .strike {
+		.primary-actions .strike,
+		.primary-actions .hero-action {
 			grid-column: 1 / -1;
 		}
 		.checks {

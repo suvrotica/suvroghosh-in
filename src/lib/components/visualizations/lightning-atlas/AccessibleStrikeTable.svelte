@@ -19,6 +19,7 @@
 			<tr>
 				<th scope="col">Flash</th>
 				<th scope="col">Family</th>
+				<th scope="col">Scale</th>
 				<th scope="col">Attachment</th>
 				<th scope="col">Branches</th>
 				<th scope="col">Channel</th>
@@ -38,13 +39,14 @@
 						</button>
 					</th>
 					<td>{flash.type}</td>
+					<td>{flash.strikeScale}</td>
 					<td>{flash.attachment?.label ?? 'Intra-cloud'}</td>
 					<td>{flash.branchCount}</td>
 					<td>{metres(flash.channelLengthMetres)}</td>
 					<td>{flash.thunderDelaySeconds.toFixed(1)} s</td>
 				</tr>
 			{:else}
-				<tr><td colspan="6">No simulated strikes yet.</td></tr>
+				<tr><td colspan="7">No simulated strikes yet.</td></tr>
 			{/each}
 		</tbody>
 	</table>

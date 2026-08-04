@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { thunderText } from '$lib/visualizations/lightning-atlas/audio/thunder';
-	import type { LightningFlash } from '$lib/visualizations/lightning-atlas/types';
+	import type { ChannelClass, LightningFlash } from '$lib/visualizations/lightning-atlas/types';
 
 	type Props = {
 		flash: LightningFlash | null;
@@ -14,9 +14,15 @@
 		value >= 1_000 ? `${(value / 1_000).toFixed(2)} km` : `${Math.round(value)} m`;
 	const title = (value: string) =>
 		value.replaceAll('-', ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+	const hierarchyCount = (channelClass: ChannelClass) =>
+		flash?.segments.filter((segment) => segment.channelClass === channelClass).length ?? 0;
 </script>
 
-<aside class="inspector" aria-labelledby="strike-inspector-heading">
+<aside
+	class="inspector"
+	aria-labelledby="strike-inspector-heading"
+	data-strike-scale={flash?.strikeScale}
+>
 	<div class="heading-row">
 		<div>
 			<p>Strike inspector</p>
@@ -32,6 +38,10 @@
 			<div>
 				<dt>Flash family</dt>
 				<dd>{title(flash.type)}</dd>
+			</div>
+			<div>
+				<dt>Strike scale</dt>
+				<dd>{title(flash.strikeScale)}</dd>
 			</div>
 			<div>
 				<dt>Polarity</dt>
@@ -82,6 +92,14 @@
 			<div>
 				<dt>Maximum branch depth</dt>
 				<dd>{flash.maximumBranchDepth}</dd>
+			</div>
+			<div class="hierarchy-reading">
+				<dt>Branch hierarchy</dt>
+				<dd>
+					{hierarchyCount('main')} main · {hierarchyCount('primary')} primary · {hierarchyCount(
+						'secondary'
+					)} secondary · {hierarchyCount('tertiary')} tertiary
+				</dd>
 			</div>
 			<div>
 				<dt>Attempted streamers</dt>
@@ -165,6 +183,10 @@
 		min-width: 0;
 		padding: 0.58rem 0.35rem;
 		border-bottom: 1px solid color-mix(in srgb, var(--atlas-line) 72%, transparent);
+	}
+
+	.hierarchy-reading {
+		grid-column: 1 / -1;
 	}
 
 	dt {

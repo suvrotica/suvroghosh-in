@@ -5,6 +5,7 @@ export type Vec3 = {
 };
 
 export type TerrainPresetId =
+	| 'kalbaisakhi-bengal'
 	| 'monsoon-delta'
 	| 'himalayan-ridge'
 	| 'coastal-shelf'
@@ -18,7 +19,10 @@ export type AtlasMode = 'live' | 'study' | 'replay' | 'cross-section';
 export type DisplayMode = 'night' | 'field-map';
 export type FlashType = 'negative-cg' | 'positive-cg' | 'intra-cloud';
 export type FlashTypeChoice = FlashType | 'storm-decides';
-export type CameraPreset = 'overview' | 'observer' | 'attachment' | 'follow';
+export type StrikeScale = 'compact' | 'standard' | 'large' | 'heroic';
+export type ChannelClass = 'main' | 'primary' | 'secondary' | 'tertiary';
+export type StormSubtype = 'severe_pre_monsoon_norwester';
+export type CameraPreset = 'overview' | 'observer' | 'attachment' | 'follow' | 'hero' | 'wide';
 export type QualityChoice = 'auto' | 'low' | 'medium' | 'high';
 export type QualityTier = Exclude<QualityChoice, 'auto'>;
 
@@ -117,6 +121,11 @@ export type LightningSegment = {
 	birthStep: number;
 	energy: number;
 	isMainChannel: boolean;
+	channelClass: ChannelClass;
+	hierarchyDepth: number;
+	relativeThickness: number;
+	relativeBrightness: number;
+	persistence: number;
 	isAttachmentConnection?: boolean;
 };
 
@@ -152,6 +161,7 @@ export type LightningFlash = {
 	seed: string;
 	strikeIndex: number;
 	type: FlashType;
+	strikeScale: StrikeScale;
 	startedAt: number;
 	segments: LightningSegment[];
 	streamers: UpwardStreamer[];
@@ -203,6 +213,7 @@ export type SerializableAtlasState = {
 	mode: AtlasMode;
 	displayMode: DisplayMode;
 	flashType: FlashTypeChoice;
+	strikeScale: StrikeScale;
 	stormPosition: NormalizedPosition;
 	storm: StormParameters;
 	environment: EnvironmentParameters;
@@ -265,6 +276,9 @@ export type TerrainPresetDefinition = {
 	cloudBaseMetres: number;
 	defaultWetness: number;
 	accent: string;
+	featured?: boolean;
+	stormSubtype?: StormSubtype;
+	defaultStrikeScale?: StrikeScale;
 	experimental?: boolean;
 };
 

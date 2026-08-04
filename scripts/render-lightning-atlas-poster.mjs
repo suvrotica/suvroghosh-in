@@ -10,7 +10,7 @@ const port = Number(process.env.LIGHTNING_ATLAS_POSTER_PORT ?? 4217);
 const previewOrigin = process.env.LIGHTNING_ATLAS_PREVIEW_ORIGIN ?? `http://127.0.0.1:${port}`;
 const managesPreview = !process.env.LIGHTNING_ATLAS_PREVIEW_ORIGIN;
 const articleUrl = new URL(
-	'/blog/visualizations/lightning-atlas?v=1&seed=branch-winner-1&flash=negative-cg&display=night&view=attachment&flashSafe=1&webgl=on',
+	'/blog/visualizations/lightning-atlas?v=1&terrain=kalbaisakhi-bengal&seed=kalbaisakhi-poster-21&mode=replay&scale=heroic&flash=negative-cg&strike=0&display=night&view=hero&flashSafe=1&webgl=on',
 	previewOrigin
 ).href;
 const artifactDirectory = path.join(projectRoot, 'artifacts', 'lightning-atlas');
@@ -130,8 +130,6 @@ try {
 		input.value = String(Math.min(Number(input.max), Number(input.value) + 0.22));
 		input.dispatchEvent(new Event('input', { bubbles: true }));
 	});
-	await viewport.locator('canvas').hover();
-	await page.mouse.wheel(0, -500);
 	await page.waitForTimeout(400);
 	await viewport.screenshot({ path: rawPath, animations: 'disabled' });
 	await sharp(rawPath)

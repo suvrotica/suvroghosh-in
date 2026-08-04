@@ -40,6 +40,22 @@ async function downloadBytes(download: Download): Promise<Buffer> {
 	return Buffer.concat(chunks);
 }
 
+async function inspectorValue(lab: Locator, label: string): Promise<string> {
+	return (
+		await lab
+			.locator('.inspector dl > div')
+			.filter({ hasText: new RegExp(`^${label}`, 'u') })
+			.locator('dd')
+			.first()
+			.innerText()
+	).trim();
+}
+
+function distanceMetres(value: string): number {
+	const amount = Number.parseFloat(value);
+	return value.includes('km') ? amount * 1_000 : amount;
+}
+
 test.beforeEach(({ page }) => {
 	runtimeDiagnostics.set(page, collectUnexpectedRuntimeDiagnostics(page));
 });
@@ -71,6 +87,65 @@ test('the canonical article renders one live deterministic laboratory', async ({
 		'false'
 	);
 	await expect(lab.locator('.scene-telemetry')).toContainText('branches');
+});
+
+test('Kalbaisakhi hero controls produce a larger deterministic morphology and readable replay', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.goto(
+		`${articlePath}?v=1&terrain=kalbaisakhi-bengal&seed=morphology-stat-0&flash=negative-cg&scale=standard&strike=0`,
+		{ waitUntil: 'domcontentloaded' }
+	);
+	const lab = await waitForLaboratory(page);
+	await expect(
+		lab.getByRole('heading', { name: "Kalbaisakhi / Bengal Nor'wester", exact: true })
+	).toBeVisible();
+	await expect(lab).toHaveAttribute('data-terrain', 'kalbaisakhi-bengal');
+	await expect(lab.getByLabel('Strike scale')).toHaveValue('standard');
+	await expect(lab.locator('.inspector')).toHaveAttribute('data-strike-scale', 'standard');
+
+	const heroButton = lab.getByRole('button', { name: 'Call a hero strike' });
+	await expect(heroButton).toHaveAttribute(
+		'title',
+		'Generates a high-energy, highly branched strike within the current storm model.'
+	);
+	const standardHash = (await lab.locator('.inspector code').innerText()).trim();
+	const standardBranches = Number(await inspectorValue(lab, 'Visible branches'));
+	const standardChannelMetres = distanceMetres(await inspectorValue(lab, 'Total channel'));
+
+	await lab.getByLabel('Strike scale').selectOption('heroic');
+	await expect.poll(() => new URL(page.url()).searchParams.get('scale')).toBe('heroic');
+	await expect(lab.locator('.inspector')).toHaveAttribute('data-strike-scale', 'heroic', {
+		timeout: 60_000
+	});
+	await expect
+		.poll(async () => (await lab.locator('.inspector code').innerText()).trim())
+		.not.toBe(standardHash);
+	const heroicBranches = Number(await inspectorValue(lab, 'Visible branches'));
+	const heroicChannelMetres = distanceMetres(await inspectorValue(lab, 'Total channel'));
+	expect(heroicBranches).toBeGreaterThan(standardBranches);
+	expect(heroicChannelMetres).toBeGreaterThan(standardChannelMetres);
+
+	await lab.getByLabel('Camera').selectOption('wide');
+	await expect.poll(() => new URL(page.url()).searchParams.get('view')).toBe('wide');
+	await heroButton.click();
+	await expect(lab.getByRole('heading', { name: 'Flash 2' })).toBeVisible({ timeout: 60_000 });
+	await expect.poll(() => new URL(page.url()).searchParams.get('strike')).toBe('1');
+	await expect.poll(() => new URL(page.url()).searchParams.get('scale')).toBe('heroic');
+	await expect.poll(() => new URL(page.url()).searchParams.get('view')).toBe('hero');
+	await expect(lab.getByLabel('Camera')).toHaveValue('hero');
+
+	await lab.getByRole('button', { name: 'Replay last flash' }).click();
+	await expect(lab.getByRole('combobox', { name: 'Speed' })).toHaveValue('0.5');
+	const majorRoutes = lab.getByRole('button', { name: 'Main + primary' });
+	const fullNetwork = lab.getByRole('button', { name: 'Full network' });
+	await expect(majorRoutes).toHaveAttribute('aria-pressed', 'true');
+	const replayHash = (await lab.locator('.inspector code').innerText()).trim();
+	await fullNetwork.click();
+	await expect(fullNetwork).toHaveAttribute('aria-pressed', 'true');
+	await expect(lab).toHaveAttribute('data-branch-emphasis', 'full');
+	await expect(lab.locator('.inspector code')).toHaveText(replayHash);
 });
 
 test('URL state and strike geometry survive reload while rendering quality remains decorative', async ({

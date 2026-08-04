@@ -4,12 +4,13 @@ import type {
 	PhaseEvent,
 	PlaceableFeatureKind,
 	SerializableAtlasState,
+	StrikeScale,
 	StormPhase,
 	TerrainPresetDefinition,
 	TerrainPresetId
 } from './types';
 
-export const MODEL_VERSION = 'lightning-atlas-1.0.0';
+export const MODEL_VERSION = 'lightning-atlas-1.1.0';
 export const SPEED_OF_SOUND_METRES_PER_SECOND = 343;
 
 export const ENGINE_LIMITS: EngineLimits = {
@@ -24,6 +25,22 @@ export const ENGINE_LIMITS: EngineLimits = {
 };
 
 export const TERRAIN_PRESETS: readonly TerrainPresetDefinition[] = [
+	{
+		id: 'kalbaisakhi-bengal',
+		name: "Kalbaisakhi / Bengal Nor'wester",
+		shortName: 'Kalbaisakhi',
+		region: 'Bengal pre-monsoon plain study',
+		description:
+			"A hot, humid Bengal evening beneath a severe nor'wester, with waterlogged fields, palms, low buildings and a dark advancing shelf cloud.",
+		studyNote:
+			'The severe pre-monsoon regime favours broad, persistent channel canopies; it remains a physically inspired procedural model, not a storm forecast.',
+		cloudBaseMetres: 820,
+		defaultWetness: 0.86,
+		accent: '#a9c7ff',
+		featured: true,
+		stormSubtype: 'severe_pre_monsoon_norwester',
+		defaultStrikeScale: 'heroic'
+	},
 	{
 		id: 'monsoon-delta',
 		name: 'Monsoon Delta',
@@ -120,6 +137,35 @@ export const TERRAIN_PRESETS: readonly TerrainPresetDefinition[] = [
 
 export const TERRAIN_PRESET_IDS = TERRAIN_PRESETS.map((preset) => preset.id);
 
+export const STRIKE_SCALE_OPTIONS: readonly {
+	id: StrikeScale;
+	label: string;
+	description: string;
+}[] = [
+	{
+		id: 'compact',
+		label: 'Compact',
+		description: 'A restrained channel with short-lived branches.'
+	},
+	{
+		id: 'standard',
+		label: 'Standard',
+		description: 'The baseline physically inspired channel regime.'
+	},
+	{
+		id: 'large',
+		label: 'Large',
+		description: 'Longer-lived branches with broader lateral exploration.'
+	},
+	{
+		id: 'heroic',
+		label: 'Heroic',
+		description: 'A deterministic high-energy regime with a wide, articulated sky canopy.'
+	}
+] as const;
+
+export const STRIKE_SCALE_IDS = STRIKE_SCALE_OPTIONS.map((option) => option.id);
+
 export function terrainPreset(id: TerrainPresetId) {
 	return TERRAIN_PRESETS.find((preset) => preset.id === id) ?? TERRAIN_PRESETS[0];
 }
@@ -205,33 +251,55 @@ export function createPhaseEvents(
 	});
 }
 
-export const DEFAULT_ATLAS_STATE: SerializableAtlasState = {
-	version: 1,
-	seed: 'monsoon-1975',
-	terrain: 'monsoon-delta',
-	mode: 'live',
-	displayMode: 'night',
-	flashType: 'storm-decides',
-	stormPosition: { x: 0.56, z: 0.43 },
+export const KALBAISAKHI_STATE_PRESET = {
+	seed: 'kalbaisakhi-evening',
+	terrain: 'kalbaisakhi-bengal',
+	strikeScale: 'heroic',
+	stormPosition: { x: 0.55, z: 0.36 },
 	storm: {
-		chargeStrength: 0.72,
-		chargeSeparation: 0.58,
-		branching: 0.62,
-		leaderPersistence: 0.68,
-		cloudBaseMetres: 980,
+		chargeStrength: 0.94,
+		chargeSeparation: 0.72,
+		branching: 0.9,
+		leaderPersistence: 0.86,
+		cloudBaseMetres: 820,
 		lowerPositiveCharge: true
 	},
 	environment: {
-		windSpeed: 12,
-		windDirection: 245,
-		rainIntensity: 0.72,
-		visibility: 0.58,
-		surfaceWetness: 0.82,
-		conductivityProxy: 0.54,
-		timeOfDay: 0.88
+		windSpeed: 29,
+		windDirection: 305,
+		rainIntensity: 0.9,
+		visibility: 0.32,
+		surfaceWetness: 0.86,
+		conductivityProxy: 0.62,
+		timeOfDay: 0.91
 	},
-	observer: { x: 0.18, z: 0.81 },
-	cameraPreset: 'overview',
+	observer: { x: 0.16, z: 0.81 },
+	cameraPreset: 'hero'
+} as const satisfies Pick<
+	SerializableAtlasState,
+	| 'seed'
+	| 'terrain'
+	| 'strikeScale'
+	| 'stormPosition'
+	| 'storm'
+	| 'environment'
+	| 'observer'
+	| 'cameraPreset'
+>;
+
+export const DEFAULT_ATLAS_STATE: SerializableAtlasState = {
+	version: 1,
+	seed: KALBAISAKHI_STATE_PRESET.seed,
+	terrain: KALBAISAKHI_STATE_PRESET.terrain,
+	mode: 'live',
+	displayMode: 'night',
+	flashType: 'storm-decides',
+	strikeScale: KALBAISAKHI_STATE_PRESET.strikeScale,
+	stormPosition: { ...KALBAISAKHI_STATE_PRESET.stormPosition },
+	storm: { ...KALBAISAKHI_STATE_PRESET.storm },
+	environment: { ...KALBAISAKHI_STATE_PRESET.environment },
+	observer: { ...KALBAISAKHI_STATE_PRESET.observer },
+	cameraPreset: KALBAISAKHI_STATE_PRESET.cameraPreset,
 	visibleLayers: ['branches', 'streamers', 'ground-current'],
 	selectedStrikeIndex: 0,
 	placedFeatures: [],

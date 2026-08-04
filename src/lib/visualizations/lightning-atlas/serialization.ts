@@ -2,6 +2,7 @@ import {
 	DEFAULT_ATLAS_STATE,
 	ENGINE_LIMITS,
 	FEATURE_LABELS,
+	STRIKE_SCALE_IDS,
 	TERRAIN_PRESET_IDS,
 	terrainPreset
 } from './config';
@@ -17,6 +18,7 @@ import type {
 	PlaceableFeatureKind,
 	QualityChoice,
 	SerializableAtlasState,
+	StrikeScale,
 	TerrainPresetId
 } from './types';
 
@@ -28,7 +30,15 @@ const flashTypes = new Set<FlashTypeChoice>([
 	'positive-cg',
 	'intra-cloud'
 ]);
-const cameraPresets = new Set<CameraPreset>(['overview', 'observer', 'attachment', 'follow']);
+const cameraPresets = new Set<CameraPreset>([
+	'overview',
+	'observer',
+	'attachment',
+	'follow',
+	'hero',
+	'wide'
+]);
+const strikeScales = new Set<StrikeScale>(STRIKE_SCALE_IDS);
 const qualityChoices = new Set<QualityChoice>(['auto', 'low', 'medium', 'high']);
 const layerIds = new Set<LayerId>([
 	'field',
@@ -40,16 +50,57 @@ const layerIds = new Set<LayerId>([
 ]);
 const placeableKinds = new Set(Object.keys(FEATURE_LABELS) as PlaceableFeatureKind[]);
 
-function cloneDefaultState(): SerializableAtlasState {
+// v1 links created before morphology was added omitted every value that matched this baseline.
+// Keep the complete snapshot here so those links continue to reconstruct the same storm and bolt.
+const LEGACY_V1_DEFAULT_ATLAS_STATE: SerializableAtlasState = {
+	version: 1,
+	seed: 'monsoon-1975',
+	terrain: 'monsoon-delta',
+	mode: 'live',
+	displayMode: 'night',
+	flashType: 'storm-decides',
+	strikeScale: 'standard',
+	stormPosition: { x: 0.56, z: 0.43 },
+	storm: {
+		chargeStrength: 0.72,
+		chargeSeparation: 0.58,
+		branching: 0.62,
+		leaderPersistence: 0.68,
+		cloudBaseMetres: 980,
+		lowerPositiveCharge: true
+	},
+	environment: {
+		windSpeed: 12,
+		windDirection: 245,
+		rainIntensity: 0.72,
+		visibility: 0.58,
+		surfaceWetness: 0.82,
+		conductivityProxy: 0.54,
+		timeOfDay: 0.88
+	},
+	observer: { x: 0.18, z: 0.81 },
+	cameraPreset: 'overview',
+	visibleLayers: ['branches', 'streamers', 'ground-current'],
+	selectedStrikeIndex: 0,
+	placedFeatures: [],
+	flashSafe: true,
+	quality: 'auto'
+};
+
+function cloneState(state: SerializableAtlasState): SerializableAtlasState {
 	return {
-		...DEFAULT_ATLAS_STATE,
-		stormPosition: { ...DEFAULT_ATLAS_STATE.stormPosition },
-		storm: { ...DEFAULT_ATLAS_STATE.storm },
-		environment: { ...DEFAULT_ATLAS_STATE.environment },
-		observer: { ...DEFAULT_ATLAS_STATE.observer },
-		visibleLayers: [...DEFAULT_ATLAS_STATE.visibleLayers],
-		placedFeatures: []
+		...state,
+		stormPosition: { ...state.stormPosition },
+		storm: { ...state.storm },
+		environment: { ...state.environment },
+		observer: { ...state.observer },
+		visibleLayers: [...state.visibleLayers],
+		placedFeatures: state.placedFeatures.map((feature) => ({ ...feature }))
 	};
+}
+
+function cloneDefaultState(): SerializableAtlasState {
+	return cloneState(DEFAULT_ATLAS_STATE);
 }
 
 function numberParameter(
@@ -134,9 +185,11 @@ function sourceParams(source: string | URL | URLSearchParams): URLSearchParams {
 
 export function parseAtlasState(source: string | URL | URLSearchParams): SerializableAtlasState {
 	const params = sourceParams(source);
-	const state = cloneDefaultState();
 	const version = params.get('v');
-	if (version !== null && version !== '1') return state;
+	if (version !== null && version !== '1') return cloneDefaultState();
+	const encodedScale = params.get('scale') as StrikeScale | null;
+	const isLegacyV1Link = version === '1' && (!encodedScale || !strikeScales.has(encodedScale));
+	const state = isLegacyV1Link ? cloneState(LEGACY_V1_DEFAULT_ATLAS_STATE) : cloneDefaultState();
 	const terrainValue = params.get('terrain') as TerrainPresetId | null;
 	if (terrainValue && TERRAIN_PRESET_IDS.includes(terrainValue)) {
 		state.terrain = terrainValue;
@@ -148,6 +201,7 @@ export function parseAtlasState(source: string | URL | URLSearchParams): Seriali
 	state.mode = enumParameter(params, 'mode', atlasModes, state.mode);
 	state.displayMode = enumParameter(params, 'display', displayModes, state.displayMode);
 	state.flashType = enumParameter(params, 'flash', flashTypes, state.flashType);
+	state.strikeScale = enumParameter(params, 'scale', strikeScales, state.strikeScale);
 	state.cameraPreset = enumParameter(params, 'view', cameraPresets, state.cameraPreset);
 	state.quality = enumParameter(params, 'quality', qualityChoices, state.quality);
 	state.stormPosition = {
@@ -255,6 +309,8 @@ export function serializeAtlasState(state: SerializableAtlasState): URLSearchPar
 	setIfChanged(params, 'mode', state.mode, DEFAULT_ATLAS_STATE.mode);
 	setIfChanged(params, 'display', state.displayMode, DEFAULT_ATLAS_STATE.displayMode);
 	setIfChanged(params, 'flash', state.flashType, DEFAULT_ATLAS_STATE.flashType);
+	// Always encode morphology so newly shared v1 links are distinguishable from pre-1.1 links.
+	params.set('scale', state.strikeScale);
 	setIfChanged(
 		params,
 		'stormX',
@@ -363,7 +419,8 @@ export function serializeAtlasState(state: SerializableAtlasState): URLSearchPar
 		state.selectedStrikeIndex,
 		DEFAULT_ATLAS_STATE.selectedStrikeIndex
 	);
-	setIfChanged(params, 'view', state.cameraPreset, DEFAULT_ATLAS_STATE.cameraPreset);
+	// Always encode the camera so newly shared links are distinguishable from pre-1.1 links.
+	params.set('view', state.cameraPreset);
 	setIfChanged(params, 'quality', state.quality, DEFAULT_ATLAS_STATE.quality);
 	setIfChanged(params, 'flashSafe', state.flashSafe ? 1 : 0, DEFAULT_ATLAS_STATE.flashSafe ? 1 : 0);
 	if (state.visibleLayers.join(',') !== DEFAULT_ATLAS_STATE.visibleLayers.join(',')) {
@@ -385,6 +442,7 @@ export function settingsText(state: SerializableAtlasState): string {
 		`Terrain: ${terrainPreset(state.terrain).name}`,
 		`Mode: ${state.mode}`,
 		`Flash choice: ${state.flashType}`,
+		`Strike scale: ${state.strikeScale}`,
 		`Storm position: ${rounded(state.stormPosition.x)}, ${rounded(state.stormPosition.z)}`,
 		`Cloud base: ${(state.storm.cloudBaseMetres / 1_000).toFixed(2)} km`,
 		`Relative charge: ${state.storm.chargeStrength.toFixed(2)}`,

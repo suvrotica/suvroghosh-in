@@ -13,6 +13,7 @@ function completeState(): SerializableAtlasState {
 		mode: 'study',
 		displayMode: 'field-map',
 		flashType: 'positive-cg',
+		strikeScale: 'large',
 		stormPosition: { x: 0.33, z: 0.66 },
 		storm: {
 			...DEFAULT_ATLAS_STATE.storm,
@@ -25,7 +26,7 @@ function completeState(): SerializableAtlasState {
 			windDirection: 12
 		},
 		observer: { x: 0.76, z: 0.18 },
-		cameraPreset: 'attachment',
+		cameraPreset: 'wide',
 		visibleLayers: ['field', 'charge', 'streamers'],
 		selectedStrikeIndex: 4,
 		placedFeatures: [
@@ -43,9 +44,65 @@ function completeState(): SerializableAtlasState {
 }
 
 describe('Lightning Atlas URL and export state', () => {
+	it('uses the heroic Kalbaisakhi landing state while preserving legacy v1 presentation', () => {
+		const landing = parseAtlasState('');
+		expect(landing.terrain).toBe('kalbaisakhi-bengal');
+		expect(landing.strikeScale).toBe('heroic');
+		expect(landing.cameraPreset).toBe('hero');
+		expect(parseAtlasState('?campaign=summer')).toEqual(landing);
+
+		const legacy = parseAtlasState('?v=1&seed=legacy-link');
+		expect(legacy.strikeScale).toBe('standard');
+		expect(legacy.cameraPreset).toBe('overview');
+		expect(parseAtlasState('?v=1&scale=unknown').strikeScale).toBe('standard');
+		expect(parseAtlasState('?v=1&view=unknown').cameraPreset).toBe('overview');
+		expect(parseAtlasState('?v=1&scale=heroic&view=hero').strikeScale).toBe('heroic');
+		expect(parseAtlasState('?v=1&scale=heroic&view=hero').cameraPreset).toBe('hero');
+		expect(parseAtlasState('?v=1&scale=large&view=wide').cameraPreset).toBe('wide');
+	});
+
+	it('reconstructs the complete pre-morphology v1 default from an old compact link', () => {
+		expect(parseAtlasState('?v=1')).toEqual({
+			version: 1,
+			seed: 'monsoon-1975',
+			terrain: 'monsoon-delta',
+			mode: 'live',
+			displayMode: 'night',
+			flashType: 'storm-decides',
+			strikeScale: 'standard',
+			stormPosition: { x: 0.56, z: 0.43 },
+			storm: {
+				chargeStrength: 0.72,
+				chargeSeparation: 0.58,
+				branching: 0.62,
+				leaderPersistence: 0.68,
+				cloudBaseMetres: 980,
+				lowerPositiveCharge: true
+			},
+			environment: {
+				windSpeed: 12,
+				windDirection: 245,
+				rainIntensity: 0.72,
+				visibility: 0.58,
+				surfaceWetness: 0.82,
+				conductivityProxy: 0.54,
+				timeOfDay: 0.88
+			},
+			observer: { x: 0.18, z: 0.81 },
+			cameraPreset: 'overview',
+			visibleLayers: ['branches', 'streamers', 'ground-current'],
+			selectedStrikeIndex: 0,
+			placedFeatures: [],
+			flashSafe: true,
+			quality: 'auto'
+		});
+	});
+
 	it('round-trips complete readable state without geometry payloads', () => {
 		const original = completeState();
 		const params = serializeAtlasState(original);
+		expect(params.get('scale')).toBe('large');
+		expect(params.get('view')).toBe('wide');
 		const parsed = parseAtlasState(params);
 		expect(parsed).toEqual(original);
 		expect(params.toString()).not.toMatch(/segments|geometry|Float32Array/);
@@ -107,7 +164,7 @@ describe('Lightning Atlas URL and export state', () => {
 		const parsed = parseAtlasState(
 			`?v=1&terrain=moon&charge=999&cloudBase=-2&stormX=NaN&mode=nonsense&unknown=yes&features=${features}`
 		);
-		expect(parsed.terrain).toBe(DEFAULT_ATLAS_STATE.terrain);
+		expect(parsed.terrain).toBe('monsoon-delta');
 		expect(parsed.storm.chargeStrength).toBe(1);
 		expect(parsed.storm.cloudBaseMetres).toBe(450);
 		expect(parsed.mode).toBe(DEFAULT_ATLAS_STATE.mode);
@@ -136,6 +193,7 @@ describe('Lightning Atlas URL and export state', () => {
 		unrelatedCurrentState.displayMode = 'night';
 		unrelatedCurrentState.cameraPreset = 'follow';
 		unrelatedCurrentState.quality = 'low';
+		unrelatedCurrentState.strikeScale = 'compact';
 		unrelatedCurrentState.visibleLayers = ['contours'];
 		unrelatedCurrentState.flashSafe = true;
 		unrelatedCurrentState.environment.rainIntensity = 0.04;
@@ -149,6 +207,7 @@ describe('Lightning Atlas URL and export state', () => {
 		expect(json.configuration.displayMode).toBe(unrelatedCurrentState.displayMode);
 		expect(json.configuration.cameraPreset).toBe(unrelatedCurrentState.cameraPreset);
 		expect(json.configuration.quality).toBe(unrelatedCurrentState.quality);
+		expect(json.configuration.strikeScale).toBe(state.strikeScale);
 		expect(json.configuration.visibleLayers).toEqual(unrelatedCurrentState.visibleLayers);
 		expect(json.configuration.flashSafe).toBe(true);
 		expect(json.configuration.environment.rainIntensity).toBe(0.04);
@@ -156,6 +215,8 @@ describe('Lightning Atlas URL and export state', () => {
 		expect(json.configuration.environment.timeOfDay).toBe(0.92);
 		expect(json.configuration.environment.windSpeed).toBe(state.environment.windSpeed);
 		expect(json.strike.channelHash).toBe(flash.channelHash);
+		expect(json.strike.strikeScale).toBe(state.strikeScale);
+		expect(json.strike.modelState.strikeScale).toBe(state.strikeScale);
 		expect(
 			generateLightningFlash({
 				state: json.configuration,
@@ -164,6 +225,8 @@ describe('Lightning Atlas URL and export state', () => {
 		).toBe(flash.channelHash);
 		const csv = strikeLogCsv([flash]);
 		expect(csv).toContain('"Tower, ""North"""');
+		expect(csv.split('\r\n')[0]).toContain('simulated_strike_scale');
+		expect(csv.split('\r\n')[1].split(',')).toContain(flash.strikeScale);
 		const headers = csv.split('\r\n')[0].split(',');
 		expect(headers.every((header) => header === 'seed' || header.startsWith('simulated_'))).toBe(
 			true

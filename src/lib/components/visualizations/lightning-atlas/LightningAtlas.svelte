@@ -19,6 +19,7 @@
 		DEFAULT_ATLAS_STATE,
 		ENGINE_LIMITS,
 		FEATURE_LABELS,
+		KALBAISAKHI_STATE_PRESET,
 		MODEL_VERSION,
 		terrainPreset
 	} from '$lib/visualizations/lightning-atlas/config';
@@ -48,6 +49,7 @@
 		PlaceableFeatureKind,
 		QualityChoice,
 		SerializableAtlasState,
+		StrikeScale,
 		StormPhase,
 		TerrainData,
 		TerrainPresetId
@@ -86,6 +88,7 @@
 	let currentFlash = $state<LightningFlash | null>(null);
 	let playback = $state(playbackEngine.snapshot());
 	let playbackSpeed = $state(1);
+	let branchEmphasis = $state<'primary' | 'full'>('primary');
 	let shell: HTMLElement;
 	let sceneColumn: HTMLElement;
 	let viewportComponent = $state<LightningViewport | null>(null);
@@ -128,6 +131,9 @@
 	let restoringHistory = false;
 	let active = $derived(nearViewport && inViewport && !documentHidden && !atlasOpen);
 	let currentPreset = $derived(terrainPreset(atlasState.terrain));
+	let renderedBranchEmphasis = $derived(
+		atlasState.mode === 'replay' ? branchEmphasis : ('full' as const)
+	);
 	let placementEnabled = $derived(
 		atlasState.mode === 'study' &&
 			atlasState.placedFeatures.length < ENGINE_LIMITS.maximumPlacedFeatures
@@ -316,11 +322,17 @@
 		else if (urlKind === 'replace') scheduleUrlReplace();
 	}
 
-	async function callStrike(manual = true) {
+	async function callStrike(
+		manual = true,
+		heroStrike = false,
+		stateOverride?: SerializableAtlasState
+	) {
 		if (busy) return;
+		const startingState = atlasState;
+		const requestedState = stateOverride ?? startingState;
 		const maximumIndex = flashLog.reduce(
 			(maximum, flash) => Math.max(maximum, flash.strikeIndex),
-			atlasState.selectedStrikeIndex
+			requestedState.selectedStrikeIndex
 		);
 		if (maximumIndex >= ENGINE_LIMITS.maximumStrikeIndex) {
 			clearAutoStrikeTimer();
@@ -336,7 +348,7 @@
 		try {
 			const client = ensureWorkerClient();
 			const result = await client.generateFlash({
-				state: cloneState(atlasState),
+				state: cloneState(requestedState),
 				strikeIndex
 			});
 			workerMode = client.usingFallback ? 'fallback' : 'worker';
@@ -346,7 +358,27 @@
 			flashLog = [...flashLog.filter((flash) => flash.strikeIndex !== strikeIndex), result.flash]
 				.sort((a, b) => a.strikeIndex - b.strikeIndex)
 				.slice(-12);
-			atlasState = { ...atlasState, selectedStrikeIndex: strikeIndex };
+			const latestState = atlasState;
+			const cameraChangedWhileTracing = latestState.cameraPreset !== startingState.cameraPreset;
+			atlasState = {
+				...requestedState,
+				mode: latestState.mode,
+				displayMode: latestState.displayMode,
+				cameraPreset:
+					heroStrike && !cameraChangedWhileTracing
+						? requestedState.cameraPreset
+						: latestState.cameraPreset,
+				quality: latestState.quality,
+				visibleLayers: [...latestState.visibleLayers],
+				flashSafe: latestState.flashSafe,
+				environment: {
+					...requestedState.environment,
+					rainIntensity: latestState.environment.rainIntensity,
+					visibility: latestState.environment.visibility,
+					timeOfDay: latestState.environment.timeOfDay
+				},
+				selectedStrikeIndex: strikeIndex
+			};
 			playbackEngine.load(result.flash, !reducedMotion);
 			if (reducedMotion) {
 				const leader = result.flash.phaseEvents.find((event) => event.phase === 'leader');
@@ -357,7 +389,9 @@
 			wasPlaying = playback.playing;
 			writeStateUrl('push');
 			actionStatus = manual
-				? `Flash ${strikeIndex + 1} generated. Replay hash ${result.flash.channelHash}.`
+				? heroStrike
+					? `Hero flash ${strikeIndex + 1} generated at heroic scale. Replay hash ${result.flash.channelHash}.`
+					: `Flash ${strikeIndex + 1} generated. Replay hash ${result.flash.channelHash}.`
 				: `The live storm produced flash ${strikeIndex + 1}.`;
 			liveMessage = `${playback.phaseLabel}. ${result.flash.narrative}`;
 		} catch (error) {
@@ -370,12 +404,50 @@
 		}
 	}
 
+	async function callHeroStrike() {
+		if (busy) return;
+		const heroState: SerializableAtlasState = {
+			...atlasState,
+			strikeScale: 'heroic',
+			cameraPreset: 'hero'
+		};
+		batchResult = null;
+		comparisonResult = null;
+		actionStatus =
+			'Preparing a deterministic high-energy, highly branched strike in Hero Sky View.';
+		await callStrike(true, true, heroState);
+	}
+
+	function loadFeaturedStorm() {
+		invalidateAsyncWork();
+		atlasState = {
+			...atlasState,
+			...KALBAISAKHI_STATE_PRESET,
+			stormPosition: { ...KALBAISAKHI_STATE_PRESET.stormPosition },
+			storm: { ...KALBAISAKHI_STATE_PRESET.storm },
+			environment: { ...KALBAISAKHI_STATE_PRESET.environment },
+			observer: { ...KALBAISAKHI_STATE_PRESET.observer },
+			selectedStrikeIndex: 0,
+			placedFeatures: []
+		};
+		branchEmphasis = 'primary';
+		rebuildTerrain();
+		void restoreSelectedStrike(atlasState.mode === 'live');
+		writeStateUrl('push');
+		actionStatus = "Kalbaisakhi / Bengal Nor'wester loaded at heroic scale in Hero Sky View.";
+	}
+
 	function selectTerrain(id: TerrainPresetId) {
+		if (id === KALBAISAKHI_STATE_PRESET.terrain) {
+			loadFeaturedStorm();
+			return;
+		}
 		invalidateAsyncWork();
 		const preset = terrainPreset(id);
 		atlasState = {
 			...atlasState,
 			terrain: id,
+			strikeScale: preset.defaultStrikeScale ?? 'standard',
 			selectedStrikeIndex: 0,
 			storm: { ...atlasState.storm, cloudBaseMetres: preset.cloudBaseMetres },
 			environment: { ...atlasState.environment, surfaceWetness: preset.defaultWetness }
@@ -402,6 +474,17 @@
 		invalidateAsyncWork();
 		setState({ ...atlasState, flashType });
 		scheduleCurrentStrikeRegeneration();
+	}
+
+	function selectStrikeScale(strikeScale: StrikeScale) {
+		if (strikeScale === atlasState.strikeScale) return;
+		invalidateAsyncWork();
+		atlasState = { ...atlasState, strikeScale };
+		batchResult = null;
+		comparisonResult = null;
+		scheduleUrlReplace();
+		if (currentFlash) scheduleCurrentStrikeRegeneration();
+		actionStatus = `${strikeScale[0].toUpperCase()}${strikeScale.slice(1)} strike morphology selected; the current strike will be regenerated deterministically.`;
 	}
 
 	function updateParameter(
@@ -450,6 +533,10 @@
 		thunder.cancel();
 		atlasState = { ...atlasState, mode: 'replay' };
 		playbackEngine.load(currentFlash, !reducedMotion);
+		if (branchEmphasis === 'primary') {
+			playbackSpeed = Math.min(playbackSpeed, 0.5);
+			playbackEngine.setSpeed(playbackSpeed);
+		}
 		if (reducedMotion) playbackEngine.pause();
 		playback = playbackEngine.snapshot();
 		wasPlaying = playback.playing;
@@ -519,6 +606,15 @@
 	function setPlaybackSpeed(speed: number) {
 		playbackSpeed = reducedMotion ? Math.min(0.5, speed) : speed;
 		playbackEngine.setSpeed(playbackSpeed);
+	}
+
+	function setBranchEmphasis(emphasis: 'primary' | 'full') {
+		branchEmphasis = emphasis;
+		if (emphasis === 'primary' && playbackSpeed > 0.5) setPlaybackSpeed(0.5);
+		actionStatus =
+			emphasis === 'primary'
+				? 'Replay now emphasises the main channel and primary branches; the generated strike is unchanged.'
+				: 'Replay now shows the full generated branch network; the channel hash is unchanged.';
 	}
 
 	function onFrame(delta: number) {
@@ -657,7 +753,8 @@
 		batchResult = null;
 		comparisonResult = null;
 		writeStateUrl('push');
-		actionStatus = 'The default Monsoon Delta storm has been restored.';
+		branchEmphasis = 'primary';
+		actionStatus = "The default Kalbaisakhi / Bengal Nor'wester storm has been restored.";
 	}
 
 	function placeFeature(position: { x: number; z: number }) {
@@ -906,6 +1003,7 @@
 			seed: state.seed,
 			terrain: state.terrain,
 			flashType: state.flashType,
+			strikeScale: state.strikeScale,
 			stormPosition: state.stormPosition,
 			storm: state.storm,
 			environment: {
@@ -1123,17 +1221,25 @@
 	class="lightning-atlas article-breakout not-prose"
 	data-display-mode={atlasState.displayMode}
 	data-worker-mode={workerMode}
+	data-terrain={atlasState.terrain}
+	data-strike-scale={atlasState.strikeScale}
+	data-branch-emphasis={renderedBranchEmphasis}
 	inert={atlasOpen}
 	aria-hidden={atlasOpen ? 'true' : undefined}
 >
 	<div class="atlas-js">
 		<header class="atlas-header">
 			<div class="title-lockup">
-				<p>Atmospheric electricity field instrument · {MODEL_VERSION}</p>
+				<p>
+					{atlasState.terrain === 'kalbaisakhi-bengal'
+						? `Featured storm · Kalbaisakhi / Bengal Nor'wester · ${MODEL_VERSION}`
+						: `Atmospheric electricity field instrument · ${MODEL_VERSION}`}
+				</p>
 				<h2>Lightning Atlas: How the Sky Finds the Ground</h2>
 				<span
-					>A procedural storm laboratory for watching charge, terrain, and chance negotiate a route
-					through the night.</span
+					>{atlasState.terrain === 'kalbaisakhi-bengal'
+						? 'A severe Bengal pre-monsoon storm mode tuned for broad, branching, sky-filling lightning—within a bounded physically inspired model.'
+						: 'A procedural storm laboratory for watching charge, terrain, and chance negotiate a route through the night.'}</span
 				>
 			</div>
 			<div class="instrument-status">
@@ -1204,6 +1310,8 @@
 					{placementX}
 					{placementZ}
 					{actionStatus}
+					onhero={() => void callHeroStrike()}
+					onfeatured={loadFeaturedStorm}
 					oncall={() => void callStrike()}
 					onreplay={replayLast}
 					onnewseed={newStorm}
@@ -1220,6 +1328,7 @@
 					ondisplay={(displayMode) => setState({ ...atlasState, displayMode })}
 					onquality={(quality: QualityChoice) => setState({ ...atlasState, quality })}
 					oncamera={(cameraPreset: CameraPreset) => setState({ ...atlasState, cameraPreset })}
+					onstrikescale={selectStrikeScale}
 					onparameter={updateParameter}
 					onlayer={toggleLayer}
 					onflashsafe={(flashSafe) => setState({ ...atlasState, flashSafe })}
@@ -1247,6 +1356,7 @@
 						phase={playback.phase}
 						phaseProgress={playback.phaseProgress}
 						playbackTime={playback.time}
+						branchEmphasis={renderedBranchEmphasis}
 						{active}
 						playing={playback.playing}
 						motionAllowed={!reducedMotion}
@@ -1265,7 +1375,7 @@
 					<div class="static-poster">
 						<img
 							src="/images/lightning-atlas.png"
-							alt="A dark procedural storm over a monsoon landscape, with a branching leader descending towards several faint upward streamers"
+							alt="A broad branching lightning channel illuminating a dark Kalbaisakhi storm over a low Bengal landscape"
 							width="1600"
 							height="900"
 						/>
@@ -1274,6 +1384,7 @@
 				{/if}
 				<div class="scene-telemetry">
 					<span>{currentPreset.name}</span>
+					<span>{atlasState.strikeScale} morphology</span>
 					<span>charge {Math.round(playback.chargeReservoir * 100)}%</span>
 					<span>{currentFlash ? `${currentFlash.branchCount} branches` : 'channel pending'}</span>
 					<span>{frameQuality}</span>
@@ -1296,10 +1407,13 @@
 			playing={playback.playing}
 			phaseLabel={playback.phaseLabel}
 			speed={playbackSpeed}
+			{branchEmphasis}
+			replayMode={atlasState.mode === 'replay'}
 			onseek={seek}
 			onstep={stepPhase}
 			onplaytoggle={togglePlayback}
 			onspeed={setPlaybackSpeed}
+			onbranchemphasis={setBranchEmphasis}
 		/>
 
 		{#if crossSectionOpen}
@@ -1357,6 +1471,10 @@
 						<dd>{playback.phaseLabel}</dd>
 					</div>
 					<div>
+						<dt>Strike scale</dt>
+						<dd>{atlasState.strikeScale}</dd>
+					</div>
+					<div>
 						<dt>Storm position</dt>
 						<dd>
 							{atlasState.stormPosition.x.toFixed(2)}, {atlasState.stormPosition.z.toFixed(2)}
@@ -1384,16 +1502,16 @@
 		<div class="noscript-fallback">
 			<img
 				src="/images/lightning-atlas.png"
-				alt="A static procedural lightning study over a monsoon landscape"
+				alt="A static procedural Kalbaisakhi lightning study over a low Bengal landscape"
 				width="1600"
 				height="900"
 			/>
 			<h3>Static Lightning Atlas</h3>
 			<p>
-				The interactive model needs JavaScript. The poster preserves a negative cloud-to-ground
-				sequence: a branched leader descends, several upward streamers rise, one connects, and the
-				bright return stroke follows the established channel upward. The article below explains
-				every stage and the model's limits.
+				The interactive model needs JavaScript. The poster preserves a broad, hierarchical
+				cloud-to-ground sequence in the featured Kalbaisakhi scene: a branched leader descends,
+				several upward streamers rise, one connects, and the bright return stroke follows the
+				established channel upward. The article below explains every stage and the model's limits.
 			</p>
 		</div>
 	</noscript>
