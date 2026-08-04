@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "brownian-motion-laboratory.png",
+			"src": "/images/brownian-motion-laboratory.png",
+			"bytes": 555926,
+			"width": 1672,
+			"height": 941
+		},
+		{
 			"name": "charcoal-horror-zigzag-presence.jpg",
 			"src": "/images/charcoal-horror-zigzag-presence.jpg",
 			"bytes": 451521,

@@ -10626,6 +10626,34 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-03"
+		},
+		"src/lib/posts/brownian-motion-laboratory.md": {
+			"bodyHash": "f9071d94aeff69cc51345504dedf47bfc68999d9c437f23d80325ef859bd999a",
+			"hashVersion": 2,
+			"revisionHash": "5cde1492653e6168d8d44689965500e48b630fe523a1630b4c19bc243b4b64c6",
+			"generatedTags": [
+				"Brownian Motion",
+				"Physics",
+				"Diffusion",
+				"Probability",
+				"Langevin Dynamics",
+				"Simulation",
+				"Mathematics",
+				"Lévy Flight",
+				"Plain Language",
+				"Mean-Square Displacement"
+			],
+			"pinnedTags": [
+				"Brownian Motion",
+				"Physics",
+				"Diffusion",
+				"Probability",
+				"Langevin Dynamics",
+				"Simulation",
+				"Mathematics"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-04"
 		}
 	},
 	"maxTags": 10

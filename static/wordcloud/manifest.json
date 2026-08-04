@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T03:36:02.299462+00:00",
+  "generatedAt": "2026-08-04T09:02:04.055837+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -1562,6 +1562,29 @@
         "Outside",
         "Open",
         "Brain"
+      ],
+      "wordCount": 130
+    },
+    "brownian-motion-laboratory": {
+      "generatedAt": "2026-08-04T09:02:03.644686+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/brownian-motion-laboratory.svg",
+      "source": "src/lib/posts/brownian-motion-laboratory.md",
+      "sourceHash": "fb7bb99c91fa449cceec8847d34deac063177a97c2dbc78f6786e23701ada3a1",
+      "sourceModified": "2026-08-04T09:01:39.022796+00:00",
+      "topWords": [
+        "Plain",
+        "Language",
+        "Mathbf",
+        "Brownian",
+        "Frac",
+        "Particle",
+        "Time",
+        "Mathrm",
+        "Delta",
+        "Sqrt",
+        "Diffusion",
+        "Velocity"
       ],
       "wordCount": 130
     },

@@ -26,6 +26,8 @@
 		"fractal-atlas:test": "vitest run src/lib/visualizations/fractal-atlas",
 		"double-pendulum:test": "vitest run src/lib/visualizations/double-pendulum",
 		"double-pendulum:browser:test": "playwright test --config=playwright.double-pendulum.config.ts",
+		"brownian-motion:test": "vitest run src/lib/visualizations/brownian-motion",
+		"brownian-motion:browser:test": "playwright test --config=playwright.brownian-motion.config.ts",
 		"lightning-atlas:test": "vitest run src/lib/visualizations/lightning-atlas",
 		"lightning-atlas:browser:test": "playwright test --config=playwright.lightning-atlas.config.ts",
 		"lightning-atlas:poster": "node scripts/render-lightning-atlas-poster.mjs",

@@ -8000,6 +8000,21 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/brownian-motion-laboratory.png": {
+      "format": "PNG",
+      "height": 941,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 941,
+      "originalWidth": 1672,
+      "outputBytes": 555926,
+      "outputHash": "d88a1717db2899a61d881199d5e8c307bb3973b8484f04b80ca41e9c841dc729",
+      "resized": false,
+      "sourceBytes": 555926,
+      "sourceHash": "d88a1717db2899a61d881199d5e8c307bb3973b8484f04b80ca41e9c841dc729",
+      "width": 1672
+    },
     "static/images/charcoal-horror-zigzag-presence.jpg": {
       "format": "JPEG",
       "height": 1440,
