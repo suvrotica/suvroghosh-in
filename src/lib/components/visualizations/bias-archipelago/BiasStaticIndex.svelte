@@ -16,41 +16,52 @@
 </script>
 
 <section class="bias-index" aria-labelledby="bias-index-heading">
-	<div class="index-heading">
-		<div>
-			<p>Textual chart companion</p>
-			<h2 id="bias-index-heading">Searchable bias index</h2>
-		</div>
-		<label>
-			<span>Search names, aliases, mechanisms, or definitions</span>
-			<input type="search" bind:value={query} placeholder="Try “familiarity” or “loss”…" />
-		</label>
-	</div>
-	<p class="index-intro">
-		All {biases.length} entries and their definitions are present in the server-rendered page. Search
-		is an enhancement; browser Find and the complete index still work when JavaScript is unavailable.
-	</p>
-	<div class="index-grid" aria-live="polite">
-		{#each filtered as bias (bias.id)}
-			<details id={`index-${bias.id}`}>
-				<summary>
-					<span>{bias.name}</span>
-					<small>{bias.family.replaceAll('-', ' ')}</small>
-				</summary>
+	<details class="field-guide">
+		<summary class="field-guide-summary">
+			<span>
+				<small>Textual chart companion</small>
+				<strong id="bias-index-heading">Open the complete 90-entry field guide</strong>
+			</span>
+			<em>Definitions, examples, mechanisms, and evidence notes</em>
+		</summary>
+		<div class="field-guide-body">
+			<div class="index-heading">
 				<div>
-					<p>{bias.definition}</p>
-					<p><strong>Example:</strong> {bias.example}</p>
-					<p><strong>Recipe:</strong> {bias.mechanisms.join(' · ')}</p>
-					<p><strong>Evidence:</strong> {bias.evidenceNote}</p>
-					{#if bias.aliases.length}<p>
-							<strong>Also called:</strong>
-							{bias.aliases.join(', ')}
-						</p>{/if}
+					<p>Complete reference</p>
+					<h2>Searchable bias index</h2>
 				</div>
-			</details>
-		{/each}
-	</div>
-	{#if filtered.length === 0}<p class="empty">No entries match “{query}”.</p>{/if}
+				<label>
+					<span>Search names, aliases, mechanisms, or definitions</span>
+					<input type="search" bind:value={query} placeholder="Try “familiarity” or “loss”…" />
+				</label>
+			</div>
+			<p class="index-intro">
+				All {biases.length} entries and their definitions are present in the server-rendered page. Search
+				is an enhancement; the native disclosure and every entry still work when JavaScript is unavailable.
+			</p>
+			<div class="index-grid" aria-live="polite">
+				{#each filtered as bias (bias.id)}
+					<details id={`index-${bias.id}`}>
+						<summary>
+							<span>{bias.name}</span>
+							<small>{bias.family.replaceAll('-', ' ')}</small>
+						</summary>
+						<div>
+							<p>{bias.definition}</p>
+							<p><strong>Example:</strong> {bias.example}</p>
+							<p><strong>Recipe:</strong> {bias.mechanisms.join(' · ')}</p>
+							<p><strong>Evidence:</strong> {bias.evidenceNote}</p>
+							{#if bias.aliases.length}<p>
+									<strong>Also called:</strong>
+									{bias.aliases.join(', ')}
+								</p>{/if}
+						</div>
+					</details>
+				{/each}
+			</div>
+			{#if filtered.length === 0}<p class="empty">No entries match “{query}”.</p>{/if}
+		</div>
+	</details>
 </section>
 
 <style>
@@ -66,6 +77,73 @@
 		background: #f5f7f3;
 		color: #17343a;
 		font-family: var(--font-sans);
+	}
+
+	.field-guide {
+		border: 0;
+		background: transparent;
+	}
+
+	.field-guide-summary {
+		display: flex;
+		min-height: 5rem;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding: 0.8rem 0;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.field-guide-summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.field-guide-summary::after {
+		content: '＋';
+		flex: 0 0 auto;
+		font-size: 1.5rem;
+	}
+
+	.field-guide[open] > .field-guide-summary {
+		border-bottom: 1px solid #c8d5d3;
+	}
+
+	.field-guide[open] > .field-guide-summary::after {
+		content: '−';
+	}
+
+	.field-guide-summary span {
+		display: grid;
+		gap: 0.25rem;
+	}
+
+	.field-guide-summary small {
+		color: #577176;
+		font-size: 0.68rem;
+		font-style: normal;
+		font-weight: 750;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.field-guide-summary strong {
+		font-family: var(--font-article-body);
+		font-size: clamp(1.35rem, 3vw, 2rem);
+		line-height: 1.1;
+	}
+
+	.field-guide-summary em {
+		max-width: 24rem;
+		color: #61777a;
+		font-size: 0.74rem;
+		font-style: normal;
+		line-height: 1.45;
+		text-align: right;
+	}
+
+	.field-guide-body {
+		padding-top: 1.4rem;
 	}
 
 	.index-heading {
@@ -122,14 +200,14 @@
 		gap: 0.55rem;
 	}
 
-	details {
+	.index-grid details {
 		align-self: start;
 		border: 1px solid #c8d5d3;
 		border-radius: 0.45rem;
 		background: rgb(255 255 255 / 72%);
 	}
 
-	summary {
+	.index-grid summary {
 		display: flex;
 		min-height: 3.25rem;
 		align-items: center;
@@ -141,7 +219,7 @@
 		cursor: pointer;
 	}
 
-	summary small {
+	.index-grid summary small {
 		color: #6b8587;
 		font-size: 0.6rem;
 		font-weight: 650;
@@ -150,12 +228,12 @@
 		text-transform: uppercase;
 	}
 
-	details > div {
+	.index-grid details > div {
 		padding: 0 0.8rem 0.8rem;
 		border-top: 1px solid #d6e0de;
 	}
 
-	details p {
+	.index-grid details p {
 		margin: 0.65rem 0 0;
 		font-family: var(--font-sans) !important;
 		font-size: 0.76rem !important;
@@ -178,6 +256,14 @@
 			width: calc(100vw - 1rem);
 			padding: 1rem;
 		}
+
+		.field-guide-summary {
+			align-items: flex-start;
+		}
+
+		.field-guide-summary em {
+			display: none;
+		}
 	}
 
 	@media (prefers-color-scheme: dark) {
@@ -189,19 +275,25 @@
 
 		.index-heading p,
 		.index-intro,
-		summary small {
+		.field-guide-summary small,
+		.index-grid summary small {
 			color: #9eb6b5;
 		}
 
 		input,
-		details {
+		.index-grid details {
 			border-color: #42636a;
 			background: #172a2e;
 			color: #e6efeb;
 		}
 
-		details > div {
+		.field-guide[open] > .field-guide-summary,
+		.index-grid details > div {
 			border-color: #2d4b50;
+		}
+
+		.field-guide-summary em {
+			color: #9eb6b5;
 		}
 	}
 </style>

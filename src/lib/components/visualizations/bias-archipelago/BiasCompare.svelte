@@ -175,7 +175,10 @@
 	</button>
 	<header>
 		<div>
-			<p>Sectional survey · functional similarity {(similarity * 100).toFixed(0)}%</p>
+			<p>Feature match in this atlas: {(similarity * 100).toFixed(0)}%</p>
+			<p class="metric-caution">
+				Declared editorial-feature overlap—not an experimental effect size.
+			</p>
 			<h3 id="bias-compare-heading" tabindex="-1">{first.name} ↔ {second.name}</h3>
 		</div>
 		<button class="close" type="button" onclick={onclose} aria-label="Close comparison">×</button>
@@ -323,6 +326,15 @@
 		font-weight: 750;
 		letter-spacing: 0.09em;
 		text-transform: uppercase;
+	}
+
+	header .metric-caution {
+		margin-bottom: 0.45rem;
+		font-size: 0.66rem;
+		font-weight: 500;
+		letter-spacing: 0;
+		line-height: 1.4;
+		text-transform: none;
 	}
 
 	h3 {

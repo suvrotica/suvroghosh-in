@@ -37,7 +37,7 @@ faq:
 	import BiasArchipelago from '$lib/components/visualizations/bias-archipelago/BiasArchipelago.svelte';
 </script>
 
-<BiasArchipelago />
+<BiasArchipelago>
 
 <TTS />
 
@@ -53,7 +53,7 @@ A bias is rarely an independent creature with its own private burrow in the mind
 
 An alphabetical list puts the crocodile beside the crow because both begin with C. What we need is ecology.
 
-The atlas above treats every named bias as a mountain rising from a partly submerged landscape. At high tide the peaks appear as separate islands. Lower the water and connections emerge. Confirmation bias acquires neighbours. Sunk cost develops a coastline. The gambler’s fallacy and the hot-hand belief, which seem to predict opposite futures, turn out to be standing on the same human hunger for patterns.
+The atlas above treats every named bias as a mountain rising from a partly submerged landscape. At high tide, the names remain separate while most of their shared ground lies submerged. Lower the water and connections emerge. Confirmation bias acquires neighbours. Sunk cost develops a coastline. The gambler’s fallacy and the hot-hand belief, which seem to predict opposite futures, turn out to be standing on the same human hunger for patterns.
 
 The map is not claiming to reveal the one true arrangement. Psychology has no universally agreed atlas of cognitive bias. Researchers have organised biases by mental mechanism, experimental task, practical consequence, stage of reasoning, social function, and several other schemes. One task-oriented survey assembled 154 biases into seven broad categories; it was designed to support information-visualisation research, not to become the final metaphysics of bias. [Dimara and colleagues describe both its scope and purpose](https://doi.org/10.1109/TVCG.2018.2872577).
 
@@ -204,3 +204,5 @@ The visitor need not leave remembering one hundred definitions. A more useful id
 - Emily Pronin, Daniel Y. Lin, and Lee Ross, [“The Bias Blind Spot: Perceptions of Bias in Self Versus Others”](https://doi.org/10.1177/0146167202286008), _Personality and Social Psychology Bulletin_ 28(3), 2002.
 - Amos Tversky and Daniel Kahneman, [“Judgment under Uncertainty: Heuristics and Biases”](https://doi.org/10.1126/science.185.4157.1124), _Science_ 185(4157), 1974.
 - Gerd Gigerenzer and Wolfgang Gaissmaier, [“Heuristic Decision Making”](https://doi.org/10.1146/annurev-psych-120709-145346), _Annual Review of Psychology_ 62, 2011.
+
+</BiasArchipelago>

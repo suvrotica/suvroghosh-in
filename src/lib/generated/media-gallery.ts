@@ -15,8 +15,8 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "bias-archipelago.png",
 			"src": "/images/bias-archipelago.png",
-			"bytes": 169595,
-			"width": 1600,
+			"bytes": 359414,
+			"width": 1654,
 			"height": 1040
 		},
 		{

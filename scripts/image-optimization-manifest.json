@@ -8007,13 +8007,13 @@
       "optimized": false,
       "optimizerVersion": "2026-07-18.1",
       "originalHeight": 1040,
-      "originalWidth": 1600,
-      "outputBytes": 169595,
-      "outputHash": "eec3a882cc44a098126bac4270e32dca11084ea0ba8a52d1d9bc12dde2c8ac58",
+      "originalWidth": 1654,
+      "outputBytes": 359414,
+      "outputHash": "a0e58eeebcaf3f325f0237b576f22a4818410909b012940f2d1f1d6608d6cea1",
       "resized": false,
-      "sourceBytes": 169595,
-      "sourceHash": "eec3a882cc44a098126bac4270e32dca11084ea0ba8a52d1d9bc12dde2c8ac58",
-      "width": 1600
+      "sourceBytes": 359414,
+      "sourceHash": "a0e58eeebcaf3f325f0237b576f22a4818410909b012940f2d1f1d6608d6cea1",
+      "width": 1654
     },
     "static/images/brownian-motion-laboratory.png": {
       "format": "PNG",

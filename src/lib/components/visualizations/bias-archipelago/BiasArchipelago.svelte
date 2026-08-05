@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { replaceState } from '$app/navigation';
+	import { pushState, replaceState } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import { onMount } from 'svelte';
+	import { page } from '$app/state';
+	import { onMount, tick, type Snippet } from 'svelte';
+	import { SvelteURL } from 'svelte/reactivity';
 	import BiasCompare from './BiasCompare.svelte';
 	import BiasDetails from './BiasDetails.svelte';
 	import BiasLegend from './BiasLegend.svelte';
@@ -79,22 +81,32 @@
 		{ id: 'organization', label: 'Organization', colour: '#b95f54', symbol: 'square' }
 	];
 	const conditionColours = ['#e8bd63', '#d6815f', '#8ab7ae', '#b383ae', '#d9a065'];
+	const guidedScenarioIds = new Set(['project-that-refuses-to-die', 'objective-observer']);
+	const initialView = readView(page.url);
+	const featuredScenarios = scenarios.filter((scenario) => guidedScenarioIds.has(scenario.id));
 
-	let tide = $state(0.12);
-	let lens = $state<BiasLens>('none');
-	let conditions = $state<string[]>([]);
-	let selectedId = $state<string | undefined>();
-	let compareId = $state<string | undefined>();
+	let { children }: { children?: Snippet } = $props();
+
+	let tide = $state(initialView.tide);
+	let lens = $state<BiasLens>(initialView.lens);
+	let conditions = $state<string[]>(initialView.conditions);
+	let selectedId = $state<string | undefined>(initialView.biasId);
+	let compareId = $state<string | undefined>(initialView.compareId);
 	let comparePicking = $state(false);
-	let activeScenarioId = $state<string | undefined>(scenarios[0]?.id);
-	let activeStep = $state(0);
+	let activeScenarioId = $state<string | undefined>(initialView.scenarioId);
+	let activeStep = $state(initialView.step);
 	let query = $state('');
 	let statusMessage = $state(
 		`${biases.length} bias peaks loaded in a curated explanatory terrain.`
 	);
 	let mounted = $state(false);
-	let restoring = false;
+	let skipNextUrlWrite = false;
+	let pendingHistoryMode: 'replace' | 'push' = 'replace';
+	let scenarioObserverPaused = $state(Boolean(page.url.searchParams.get('scenario')));
+	let openingMapExpanded = $state(false);
+	let guidedMapExpanded = $state(false);
 	let urlTimer: ReturnType<typeof setTimeout> | null = null;
+	let observerResumeTimer: ReturnType<typeof setTimeout> | null = null;
 	let explorer: HTMLElement;
 	let freeMap: {
 		download: (format: 'png' | 'svg') => Promise<void>;
@@ -123,16 +135,13 @@
 				)
 			: undefined
 	);
-	let activeScenario = $derived(
-		scenarios.find((scenario) => scenario.id === activeScenarioId) ?? scenarios[0]
+	let featuredActiveScenario = $derived(
+		featuredScenarios.find((scenario) => scenario.id === activeScenarioId) ?? featuredScenarios[0]
 	);
-	let highlightedIds = $derived(
-		activeScenario
-			? Array.from(
-					new Set(activeScenario.steps.slice(0, activeStep + 1).flatMap((step) => step.biasIds))
-				)
-			: []
+	let featuredActiveStep = $derived(
+		featuredActiveScenario?.id === activeScenarioId ? activeStep : 0
 	);
+	let featuredHighlightedIds = $derived(highlightsFor(featuredActiveScenario, featuredActiveStep));
 	let markerMap = $derived.by(buildMarkerMap);
 	let legendItems = $derived.by(buildLegendItems);
 	let visibleLabelCount = $derived(
@@ -145,14 +154,18 @@
 
 	onMount(() => {
 		const initialUrl = new URL(window.location.href);
-		restoreFromUrl(initialUrl);
 		mounted = true;
-		if (initialUrl.searchParams.has('bias')) requestAnimationFrame(openExplorer);
-		const popstate = () => restoreFromUrl(new URL(window.location.href));
+		void navigateToUrlTarget(initialUrl);
+		const popstate = () => {
+			const url = new URL(window.location.href);
+			restoreFromUrl(url);
+			void navigateToUrlTarget(url);
+		};
 		window.addEventListener('popstate', popstate);
 		return () => {
 			window.removeEventListener('popstate', popstate);
 			if (urlTimer) clearTimeout(urlTimer);
+			if (observerResumeTimer) clearTimeout(observerResumeTimer);
 		};
 	});
 
@@ -163,8 +176,58 @@
 		void selectedId;
 		void compareId;
 		void activeScenarioId;
-		if (mounted && !restoring) scheduleUrlWrite();
+		void activeStep;
+		if (!mounted) return;
+		if (skipNextUrlWrite) {
+			skipNextUrlWrite = false;
+			return;
+		}
+		scheduleUrlWrite();
 	});
+
+	function readView(url: URL) {
+		const biasValue = url.searchParams.get('bias') ?? undefined;
+		const biasId = biasValue && biasById.has(biasValue) ? biasValue : undefined;
+		const compareValue = url.searchParams.get('compare') ?? undefined;
+		const compareId =
+			compareValue && compareValue !== biasId && biasById.has(compareValue)
+				? compareValue
+				: undefined;
+		const tideParameter = url.searchParams.get('tide');
+		const tideValue = tideParameter === null ? Number.NaN : Number(tideParameter);
+		const lensValue = url.searchParams.get('lens') as BiasLens | null;
+		const scenarioValue = url.searchParams.get('scenario') ?? undefined;
+		const scenario =
+			scenarios.find(
+				(candidate) => candidate.id === scenarioValue && guidedScenarioIds.has(candidate.id)
+			) ??
+			scenarios.find((candidate) => guidedScenarioIds.has(candidate.id)) ??
+			scenarios[0];
+		const stepParameter = url.searchParams.get('step');
+		const requestedStep =
+			stepParameter && /^\d+$/.test(stepParameter) ? Number(stepParameter) - 1 : 0;
+		const step = Math.max(
+			0,
+			Math.min(requestedStep, Math.max(0, (scenario?.steps.length ?? 1) - 1))
+		);
+		const conditionValue = url.searchParams.get('conditions')?.split(',').filter(Boolean) ?? [];
+
+		return {
+			biasId,
+			compareId,
+			tide: Number.isFinite(tideValue) ? Math.max(0, Math.min(1, tideValue)) : 0.12,
+			lens: lensValue && allowedLenses.has(lensValue) ? lensValue : ('none' as BiasLens),
+			scenarioId: scenario?.id,
+			step,
+			conditions: conditionValue.filter((condition) => conditionOptions.includes(condition))
+		};
+	}
+
+	function highlightsFor(scenario: BiasScenario | undefined, step: number) {
+		return scenario
+			? Array.from(new Set(scenario.steps.slice(0, step + 1).flatMap((item) => item.biasIds)))
+			: [];
+	}
 
 	function configArray(value: unknown, key: string): TaxonomyRecord[] {
 		let records: unknown[] = [];
@@ -222,55 +285,82 @@
 	}
 
 	function restoreFromUrl(url: URL) {
-		restoring = true;
-		const biasId = url.searchParams.get('bias') ?? undefined;
-		const secondId = url.searchParams.get('compare') ?? undefined;
-		const tideParameter = url.searchParams.get('tide');
-		const tideValue = tideParameter === null ? Number.NaN : Number(tideParameter);
-		const lensValue = url.searchParams.get('lens') as BiasLens | null;
-		const scenarioValue = url.searchParams.get('scenario') ?? undefined;
-		const conditionValue = url.searchParams.get('conditions')?.split(',').filter(Boolean) ?? [];
-		selectedId = biasId && biasById.has(biasId) ? biasId : undefined;
-		compareId =
-			secondId && secondId !== selectedId && biasById.has(secondId) ? secondId : undefined;
-		tide = Number.isFinite(tideValue) ? Math.max(0, Math.min(1, tideValue)) : 0.12;
-		lens = lensValue && allowedLenses.has(lensValue) ? lensValue : 'none';
-		activeScenarioId = scenarios.some((scenario) => scenario.id === scenarioValue)
-			? scenarioValue
-			: scenarios[0]?.id;
-		conditions = conditionValue.filter((condition) => conditionOptions.includes(condition));
-		restoring = false;
+		if (urlTimer) clearTimeout(urlTimer);
+		const restored = readView(url);
+		skipNextUrlWrite = true;
+		selectedId = restored.biasId;
+		compareId = restored.compareId;
+		tide = restored.tide;
+		lens = restored.lens;
+		activeScenarioId = restored.scenarioId;
+		activeStep = restored.step;
+		conditions = restored.conditions;
 	}
 
 	function scheduleUrlWrite() {
 		if (urlTimer) clearTimeout(urlTimer);
-		urlTimer = setTimeout(writeUrl, 100);
+		const mode = pendingHistoryMode;
+		urlTimer = setTimeout(() => {
+			writeUrl(mode);
+			pendingHistoryMode = 'replace';
+		}, 100);
 	}
 
-	function viewUrl() {
-		const url = new URL(window.location.href);
-		for (const key of ['bias', 'compare', 'tide', 'lens', 'scenario', 'conditions']) {
+	function viewUrl(share = false) {
+		const url = new SvelteURL(window.location.href);
+		const hasAtlasHash =
+			url.hash === '#bias-archipelago-explorer' || url.hash.startsWith('#scenario-');
+		for (const key of ['bias', 'compare', 'tide', 'lens', 'scenario', 'step', 'conditions']) {
 			url.searchParams.delete(key);
 		}
 		if (selectedId) url.searchParams.set('bias', selectedId);
 		if (compareId) url.searchParams.set('compare', compareId);
 		if (Math.abs(tide - 0.12) > 0.005) url.searchParams.set('tide', tide.toFixed(2));
 		if (lens !== 'none') url.searchParams.set('lens', lens);
-		if (activeScenarioId && activeScenarioId !== scenarios[0]?.id) {
+		const includesScenario = Boolean(
+			activeScenarioId && (share || activeScenarioId !== featuredScenarios[0]?.id || activeStep > 0)
+		);
+		if (includesScenario && activeScenarioId) {
 			url.searchParams.set('scenario', activeScenarioId);
+			url.searchParams.set('step', String(activeStep + 1));
 		}
 		if (lens === 'conditions' && conditions.length) {
 			url.searchParams.set('conditions', conditions.join(','));
 		}
+		if (selectedId) url.hash = 'bias-archipelago-explorer';
+		else if (includesScenario && activeScenarioId) {
+			url.hash = `scenario-${activeScenarioId}-step-${activeStep + 1}`;
+		} else if (hasAtlasHash) url.hash = '';
 		return url;
 	}
 
-	function writeUrl() {
+	function writeUrl(mode: 'replace' | 'push' = 'replace') {
 		if (typeof window === 'undefined') return;
 		const url = viewUrl();
 		const route =
 			`${url.pathname}${url.search}${url.hash}` as '/blog/visualizations/the-bias-archipelago';
-		replaceState(resolve(route), {});
+		if (mode === 'push') pushState(resolve(route), {});
+		else replaceState(resolve(route), {});
+	}
+
+	async function navigateToUrlTarget(url: URL) {
+		const restored = readView(url);
+		if (url.searchParams.has('scenario')) {
+			scenarioObserverPaused = true;
+			await tick();
+			await new Promise<void>((resolveFrame) => requestAnimationFrame(() => resolveFrame()));
+			const target =
+				document.getElementById(`scenario-${restored.scenarioId}-step-${restored.step + 1}`) ??
+				document.getElementById(`scenario-${restored.scenarioId}`);
+			target?.scrollIntoView({ behavior: 'auto', block: 'center' });
+			if (observerResumeTimer) clearTimeout(observerResumeTimer);
+			observerResumeTimer = setTimeout(() => {
+				scenarioObserverPaused = false;
+			}, 450);
+			return;
+		}
+		scenarioObserverPaused = false;
+		if (url.searchParams.has('bias')) requestAnimationFrame(openExplorer);
 	}
 
 	function selectBias(id: string) {
@@ -334,9 +424,14 @@
 		requestAnimationFrame(() => freeMap?.focusBias(id));
 	}
 
-	function activateScenario(scenarioId: string, step: number) {
-		const scenario = scenarios.find((item) => item.id === scenarioId);
+	function activateScenario(
+		scenarioId: string,
+		step: number,
+		origin: 'click' | 'observer' = 'click'
+	) {
+		const scenario = featuredScenarios.find((item) => item.id === scenarioId);
 		if (!scenario) return;
+		if (origin === 'click') pendingHistoryMode = 'push';
 		activeScenarioId = scenarioId;
 		activeStep = Math.max(0, Math.min(step, scenario.steps.length - 1));
 		statusMessage = `${scenario.title}, step ${activeStep + 1}: ${scenario.steps[
@@ -393,11 +488,29 @@
 	}
 
 	async function copyView() {
-		writeUrl();
-		const url = viewUrl().toString();
+		const url = viewUrl(true).toString();
+		await copyUrl(url, 'Shareable view URL copied.');
+	}
+
+	async function copyScenario(scenarioId: string, step: number) {
+		const scenario = featuredScenarios.find((item) => item.id === scenarioId);
+		if (!scenario) return;
+		const url = viewUrl();
+		url.searchParams.set('scenario', scenario.id);
+		url.searchParams.set(
+			'step',
+			String(Math.max(0, Math.min(step, scenario.steps.length - 1)) + 1)
+		);
+		url.hash = `scenario-${scenario.id}-step-${
+			Math.max(0, Math.min(step, scenario.steps.length - 1)) + 1
+		}`;
+		await copyUrl(url.toString(), `Link to “${scenario.title}” copied.`);
+	}
+
+	async function copyUrl(url: string, successMessage: string) {
 		try {
 			await navigator.clipboard.writeText(url);
-			statusMessage = 'Shareable view URL copied.';
+			statusMessage = successMessage;
 		} catch {
 			const field = document.createElement('textarea');
 			field.value = url;
@@ -405,7 +518,7 @@
 			field.select();
 			document.execCommand('copy');
 			field.remove();
-			statusMessage = 'Shareable view URL copied.';
+			statusMessage = successMessage;
 		}
 	}
 
@@ -523,11 +636,12 @@
 </script>
 
 <section
-	class="archipelago article-breakout not-prose"
+	class="archipelago archipelago-intro article-breakout not-prose"
 	aria-labelledby="bias-archipelago-heading"
 	data-testid="bias-archipelago"
 	data-bias-count={biases.length}
 	data-lens={lens}
+	data-tts-exclude
 >
 	<header class="atlas-header">
 		<div>
@@ -541,7 +655,11 @@
 		</div>
 	</header>
 
-	<section class="opening-map" aria-label="Opening archipelago survey">
+	<section
+		class="opening-map"
+		class:mobile-expanded={openingMapExpanded}
+		aria-label="Opening archipelago survey"
+	>
 		<BiasTerrain
 			id="bias-map-opening"
 			{biases}
@@ -562,7 +680,17 @@
 				Functional resemblance shapes the land. Academic lineage is a lens laid over it, never an
 				ingredient in the geography.
 			</span>
-			<button type="button" onclick={openExplorer}>Open the full survey ↓</button>
+			<div class="opening-actions">
+				<button type="button" onclick={openExplorer}>Skip to the full survey ↓</button>
+				<button
+					class="mobile-map-toggle"
+					type="button"
+					onclick={() => (openingMapExpanded = !openingMapExpanded)}
+					aria-pressed={openingMapExpanded}
+				>
+					{openingMapExpanded ? 'Compact map' : 'Expand map'}
+				</button>
+			</div>
 		</div>
 		<div class="opening-tide">
 			<BiasTideControl id="bias-tide-opening" {tide} onchange={(value) => (tide = value)} />
@@ -570,11 +698,28 @@
 	</section>
 
 	<section class="guided" aria-label="Guided decision cascades">
-		<BiasScenarioRail {scenarios} {activeScenarioId} {activeStep} onactivate={activateScenario} />
-		<div class="sticky-sounding">
+		<BiasScenarioRail
+			scenarios={featuredScenarios}
+			{activeScenarioId}
+			{activeStep}
+			observerPaused={scenarioObserverPaused}
+			onactivate={activateScenario}
+			oncopy={copyScenario}
+		/>
+		<div class="sticky-sounding" class:mobile-expanded={guidedMapExpanded}>
 			<div class="sounding-heading">
-				<span>Current sounding</span>
-				<strong>{activeScenario?.title}</strong>
+				<div>
+					<span>Current sounding</span>
+					<strong>{featuredActiveScenario?.title}</strong>
+				</div>
+				<button
+					class="mobile-map-toggle"
+					type="button"
+					onclick={() => (guidedMapExpanded = !guidedMapExpanded)}
+					aria-pressed={guidedMapExpanded}
+				>
+					{guidedMapExpanded ? 'Compact map' : 'Expand map'}
+				</button>
 			</div>
 			<BiasTerrain
 				id="bias-map-guided"
@@ -584,7 +729,7 @@
 				{tide}
 				{selectedId}
 				{compareId}
-				{highlightedIds}
+				highlightedIds={featuredHighlightedIds}
 				markers={markerMap}
 				compact
 				onselect={selectFromOverview}
@@ -596,12 +741,21 @@
 			</p>
 		</div>
 	</section>
+</section>
 
+{#if children}{@render children()}{/if}
+
+<section
+	class="archipelago archipelago-survey article-breakout not-prose"
+	aria-labelledby="bias-explorer-heading"
+	data-testid="bias-archipelago-survey"
+	data-tts-exclude
+>
 	<section bind:this={explorer} id="bias-archipelago-explorer" class="free-explorer">
 		<header class="explorer-heading">
 			<div>
 				<p>Free exploration</p>
-				<h2>Survey the whole terrain</h2>
+				<h2 id="bias-explorer-heading">Survey the whole terrain</h2>
 			</div>
 			<label class="search">
 				<span>Find a peak or alias</span>
@@ -632,7 +786,7 @@
 				<button type="button" onclick={copyView}>⧉ Copy view</button>
 				<button type="button" onclick={resetMap}>↺ Reset map</button>
 				<button type="button" onclick={() => freeMap?.download('png')}>⇩ PNG</button>
-				<button type="button" onclick={() => freeMap?.download('svg')}>⇩ SVG</button>
+				<button type="button" onclick={() => freeMap?.download('svg')}>⇩ Vector SVG</button>
 			</div>
 		</div>
 
@@ -758,6 +912,14 @@
 		font-family: var(--font-sans);
 	}
 
+	.archipelago-intro {
+		margin-block: 3rem;
+	}
+
+	.archipelago-survey {
+		margin-block: 4rem 5rem;
+	}
+
 	.atlas-header {
 		display: flex;
 		align-items: end;
@@ -852,9 +1014,15 @@
 		line-height: 1.5;
 	}
 
+	.opening-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin-top: 0.8rem;
+	}
+
 	.opening-copy button {
 		min-height: 2.55rem;
-		margin-top: 0.8rem;
 		padding: 0.45rem 0.7rem;
 		border: 1px solid var(--arch-accent);
 		border-radius: 999px;
@@ -864,6 +1032,10 @@
 		font-size: 0.72rem;
 		font-weight: 750;
 		cursor: pointer;
+	}
+
+	.mobile-map-toggle {
+		display: none;
 	}
 
 	.opening-tide {
@@ -892,9 +1064,14 @@
 
 	.sounding-heading {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
+	}
+
+	.sounding-heading > div {
+		display: grid;
+		gap: 0.2rem;
 	}
 
 	.sounding-heading span {
@@ -906,6 +1083,7 @@
 	}
 
 	.sounding-heading strong {
+		display: block;
 		font-family: var(--arch-serif);
 		font-size: 0.9rem;
 	}
@@ -1086,8 +1264,32 @@
 		}
 
 		.sticky-sounding :global(.viewport.compact) {
-			min-height: 54dvh;
-			max-height: 58dvh;
+			min-height: 44dvh;
+			max-height: 46dvh;
+			transition:
+				min-height 180ms ease,
+				max-height 180ms ease;
+		}
+
+		.sticky-sounding.mobile-expanded :global(.viewport.compact) {
+			min-height: 70dvh;
+			max-height: 74dvh;
+		}
+
+		.mobile-map-toggle {
+			display: inline-flex;
+			min-height: 2.35rem;
+			align-items: center;
+			justify-content: center;
+			padding: 0.35rem 0.6rem;
+			border: 1px solid var(--arch-rule);
+			border-radius: 999px;
+			background: color-mix(in srgb, var(--arch-panel) 88%, transparent);
+			color: var(--arch-accent-bright);
+			font: inherit;
+			font-size: 0.64rem;
+			font-weight: 750;
+			cursor: pointer;
 		}
 
 		.explorer-layout {
@@ -1126,8 +1328,17 @@
 
 		.opening-map,
 		.opening-map :global(.viewport) {
-			min-height: 56dvh;
-			max-height: 58dvh;
+			min-height: 44dvh;
+			max-height: 46dvh;
+			transition:
+				min-height 180ms ease,
+				max-height 180ms ease;
+		}
+
+		.opening-map.mobile-expanded,
+		.opening-map.mobile-expanded :global(.viewport) {
+			min-height: 70dvh;
+			max-height: 74dvh;
 		}
 
 		.opening-copy {

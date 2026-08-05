@@ -322,18 +322,36 @@ test('the Bias Archipelago preserves its hybrid, deterministic, and accessible p
 		'bias-archipelago',
 		'BiasCompare.svelte'
 	);
+	const scenarioRail = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'bias-archipelago',
+		'BiasScenarioRail.svelte'
+	);
+	const literalRoute = read(
+		'src',
+		'routes',
+		'blog',
+		'visualizations',
+		'the-bias-archipelago',
+		'+page.server.ts'
+	);
+	const genericRoute = read('src', 'routes', 'blog', '[category]', '[slug]', '+page.server.ts');
 	const biases = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'biases.json'));
 	const relations = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'relations.json'));
 	const mechanisms = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'mechanisms.json'));
+	const sources = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'sources.json'));
 	const layout = JSON.parse(
 		read('src', 'lib', 'data', 'bias-archipelago', 'layout.generated.json')
 	);
 	const thumbnail = path.join(root, 'static', 'images', 'bias-archipelago.png');
 
 	assert.match(post, /category: "Visualizations"/);
-	assert.match(post, /published: false/);
+	assert.match(post, /published: true/);
 	assert.match(post, /thumbnailAlt:/);
-	assert.match(post, /<BiasArchipelago \/>/);
+	assert.match(post, /<BiasArchipelago>[\s\S]*<TTS \/>[\s\S]*<\/BiasArchipelago>/);
 	assert.match(post, /<TTS \/>/);
 	assert.match(post, /Research lineage contributes \*\*0%\*\* to the position/);
 	assert.match(post, /Terrain height means density of related constructs/);
@@ -343,6 +361,9 @@ test('the Bias Archipelago preserves its hybrid, deterministic, and accessible p
 	assert.match(terrain, /<svg/);
 	assert.match(terrain, /export function focusBias/);
 	assert.match(terrain, /'bias-archipelago-view\.svg'/);
+	assert.match(terrain, /vectorTerrainGroup/);
+	assert.match(terrain, /makeContours/);
+	assert.doesNotMatch(terrain, /canvas\.toDataURL|<image/);
 	assert.match(terrain, /touch-action: pan-y/);
 	assert.match(terrain, /event\.type === 'wheel'.*!event\.ctrlKey/s);
 	assert.match(terrain, /object-fit: contain/);
@@ -351,12 +372,32 @@ test('the Bias Archipelago preserves its hybrid, deterministic, and accessible p
 	assert.match(compare, /position: fixed/);
 	assert.match(shell, /searchParams\.set\('bias'/);
 	assert.match(shell, /searchParams\.set\('compare'/);
+	assert.match(shell, /searchParams\.set\('scenario'/);
+	assert.match(shell, /searchParams\.set\(\s*'step'/);
+	assert.match(shell, /pushState\(resolve\(route\)/);
+	assert.match(shell, /window\.addEventListener\('popstate'/);
+	assert.match(shell, /scenario-\$\{restored\.scenarioId\}-step-\$\{restored\.step \+ 1\}/);
 	assert.match(shell, /Copy view/);
+	assert.match(shell, /Vector SVG/);
+	assert.match(shell, /44dvh/);
 	assert.match(shell, /focusMapPeak\(selectedId\)/);
 	assert.match(shell, /prefers-reduced-motion: reduce/);
-	assert.match(staticIndex, /All \{biases\.length\} entries and their definitions/);
+	assert.match(staticIndex, /Open the complete 90-entry field guide/);
+	assert.match(scenarioRail, /scenario-\$\{scenario\.id\}-step-\$\{stepIndex \+ 1\}/);
+	assert.match(scenarioRail, /aria-current=\{[\s\S]*?\? 'step'/);
+	assert.match(literalRoute, /export const prerender = false/);
+	assert.match(literalRoute, /loadPublishedBlogPost\('visualizations', 'the-bias-archipelago'\)/);
+	assert.match(genericRoute, /slug !== 'the-bias-archipelago'/);
 
 	assert.equal(biases.length, 90);
+	assert.equal(sources.length, 139);
+	const registeredSources = new Set(sources.map((source) => source.url));
+	for (const source of biases.flatMap((bias) => bias.canonicalSources ?? [])) {
+		assert.ok(registeredSources.has(source), `missing bias-source metadata for ${source}`);
+	}
+	for (const source of relations.flatMap((relation) => relation.sourceIds ?? [])) {
+		assert.ok(registeredSources.has(source), `missing relation-source metadata for ${source}`);
+	}
 	assert.ok(relations.length >= 60);
 	assert.ok(relations.some((relation) => relation.type === 'cascade'));
 	assert.equal(mechanisms.formations.length, 9);

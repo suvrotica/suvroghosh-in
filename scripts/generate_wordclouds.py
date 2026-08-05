@@ -255,6 +255,10 @@ def strip_markdown_noise(body: str) -> str:
 	text = re.sub(r"(?m)^\s*export\s+.+?;?\s*$", " ", text)
 	text = re.sub(r"<script\b.*?</script>", " ", text, flags=re.DOTALL | re.IGNORECASE)
 	text = re.sub(r"<style\b.*?</style>", " ", text, flags=re.DOTALL | re.IGNORECASE)
+	# BiasArchipelago deliberately accepts the essay as a Svelte snippet so the
+	# opening tour can render before it and the full explorer after it. Preserve
+	# that prose while still stripping the component boundary itself.
+	text = re.sub(r"</?BiasArchipelago(?:\s+[^<>]*)?>", " ", text)
 	text = re.sub(r"<[A-Z][A-Za-z0-9_.:-]*(?:\s+[^<>]*)?/>", " ", text)
 	text = re.sub(r"<[A-Z][A-Za-z0-9_.:-]*(?:\s+[^<>]*)?>.*?</[A-Z][A-Za-z0-9_.:-]*>", " ", text, flags=re.DOTALL)
 	text = re.sub(r"!\[[^\]]*]\([^)]+\)", " ", text)

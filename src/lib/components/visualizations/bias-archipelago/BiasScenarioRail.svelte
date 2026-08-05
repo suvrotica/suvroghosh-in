@@ -6,20 +6,26 @@
 		scenarios,
 		activeScenarioId,
 		activeStep,
-		onactivate
+		observerPaused = false,
+		onactivate,
+		oncopy
 	}: {
 		scenarios: BiasScenario[];
 		activeScenarioId?: string;
 		activeStep: number;
-		onactivate: (scenarioId: string, step: number) => void;
+		observerPaused?: boolean;
+		onactivate: (scenarioId: string, step: number, origin: 'click' | 'observer') => void;
+		oncopy?: (scenarioId: string, step: number) => void;
 	} = $props();
 
 	let rail: HTMLElement;
 	let observer: IntersectionObserver | null = null;
 
 	onMount(() => {
+		if (typeof IntersectionObserver === 'undefined') return;
 		observer = new IntersectionObserver(
 			(entries) => {
+				if (observerPaused) return;
 				const visible = entries
 					.filter((entry) => entry.isIntersecting)
 					.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -27,7 +33,7 @@
 				const element = visible.target as HTMLElement;
 				const scenarioId = element.dataset.scenario;
 				const step = Number(element.dataset.step);
-				if (scenarioId && Number.isInteger(step)) onactivate(scenarioId, step);
+				if (scenarioId && Number.isInteger(step)) onactivate(scenarioId, step, 'observer');
 			},
 			{ rootMargin: '-32% 0px -48% 0px', threshold: [0.15, 0.45, 0.75] }
 		);
@@ -40,7 +46,7 @@
 
 <div bind:this={rail} class="scenario-rail">
 	<header>
-		<p>Four guided soundings</p>
+		<p>{scenarios.length} guided {scenarios.length === 1 ? 'sounding' : 'soundings'}</p>
 		<h2>Decisions happen in coalitions</h2>
 		<span>
 			Scroll normally. As each passage enters the reading line, the survey illuminates its sequence;
@@ -52,6 +58,12 @@
 			<div class="scenario-number" aria-hidden="true">0{scenarioIndex + 1}</div>
 			<p class="eyebrow">Decision cascade</p>
 			<h3>{scenario.title}</h3>
+			{#if oncopy}<button
+					class="copy-sounding"
+					type="button"
+					onclick={() => oncopy?.(scenario.id, scenario.id === activeScenarioId ? activeStep : 0)}
+					aria-label={`Copy a deep link to ${scenario.title}`}>Copy this sounding</button
+				>{/if}
 			<p class="deck">{scenario.introduction}</p>
 			{#if scenario.id === 'pattern-in-six-coin-tosses'}
 				<div class="coins" aria-label="Six heads in sequence">
@@ -63,12 +75,19 @@
 			<ol>
 				{#each scenario.steps as step, stepIndex (`${scenario.id}:${stepIndex}`)}
 					<li
+						id={`scenario-${scenario.id}-step-${stepIndex + 1}`}
 						data-scenario-step
 						data-scenario={scenario.id}
 						data-step={stepIndex}
 						class:active-step={scenario.id === activeScenarioId && stepIndex === activeStep}
 					>
-						<button type="button" onclick={() => onactivate(scenario.id, stepIndex)}>
+						<button
+							type="button"
+							onclick={() => onactivate(scenario.id, stepIndex, 'click')}
+							aria-current={scenario.id === activeScenarioId && stepIndex === activeStep
+								? 'step'
+								: undefined}
+						>
 							<span>{String(stepIndex + 1).padStart(2, '0')}</span>
 							{step.text}
 						</button>
@@ -152,6 +171,27 @@
 		font-family: var(--arch-serif);
 		font-size: 1.55rem;
 		line-height: 1.08;
+	}
+
+	.copy-sounding {
+		position: relative;
+		z-index: 1;
+		min-height: 2.3rem;
+		margin: 0 0 0.8rem;
+		padding: 0.35rem 0.65rem;
+		border: 1px solid var(--arch-rule);
+		border-radius: 999px;
+		background: transparent;
+		color: var(--arch-accent-bright);
+		font: inherit;
+		font-size: 0.65rem;
+		font-weight: 750;
+		cursor: pointer;
+	}
+
+	.copy-sounding:hover {
+		border-color: var(--arch-accent);
+		background: color-mix(in srgb, var(--arch-accent) 12%, transparent);
 	}
 
 	.deck {

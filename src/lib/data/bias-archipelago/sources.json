@@ -1,0 +1,1392 @@
+[
+	{
+		"id": "10.1002/(sici)1099-0771(200001/03)13:1<1::aid-bdm333>3.0.co;2-s",
+		"url": "https://doi.org/10.1002/(SICI)1099-0771(200001/03)13:1%3C1::AID-BDM333%3E3.0.CO;2-S",
+		"doi": "10.1002/(sici)1099-0771(200001/03)13:1<1::aid-bdm333>3.0.co;2-s",
+		"authors": "Finucane et al.",
+		"year": 2000,
+		"title": "The affect heuristic in judgments of risks and benefits",
+		"venue": "Journal of Behavioral Decision Making",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1002/acp.885",
+		"url": "https://doi.org/10.1002/acp.885",
+		"doi": "10.1002/acp.885",
+		"authors": "Gabbert et al.",
+		"year": 2003,
+		"title": "Memory conformity: can eyewitnesses influence each other's memories for an event?",
+		"venue": "Applied Cognitive Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1002/ejsp.2420010202",
+		"url": "https://doi.org/10.1002/ejsp.2420010202",
+		"doi": "10.1002/ejsp.2420010202",
+		"authors": "Tajfel et al.",
+		"year": 1971,
+		"title": "Social categorization and intergroup behaviour",
+		"venue": "European Journal of Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1006/jesp.1997.1333",
+		"url": "https://doi.org/10.1006/jesp.1997.1333",
+		"doi": "10.1006/jesp.1997.1333",
+		"authors": "Mitchell et al.",
+		"year": 1997,
+		"title": "Temporal Adjustments in the Evaluation of Events: The “Rosy View”",
+		"venue": "Journal of Experimental Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1006/obhd.1998.2758",
+		"url": "https://doi.org/10.1006/obhd.1998.2758",
+		"doi": "10.1006/obhd.1998.2758",
+		"authors": "Esser",
+		"year": 1998,
+		"title": "Alive and Well after 25 Years: A Review of Groupthink Research",
+		"venue": "Organizational Behavior and Human Decision Processes",
+		"kind": "review"
+	},
+	{
+		"id": "10.1006/obhd.1998.2781",
+		"url": "https://doi.org/10.1006/obhd.1998.2781",
+		"doi": "10.1006/obhd.1998.2781",
+		"authors": "Kühberger",
+		"year": 1998,
+		"title": "The Influence of Framing on Risky Decisions: A Meta-analysis",
+		"venue": "Organizational Behavior and Human Decision Processes",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1007/bf00055564",
+		"url": "https://doi.org/10.1007/BF00055564",
+		"doi": "10.1007/bf00055564",
+		"authors": "Samuelson & Zeckhauser",
+		"year": 1988,
+		"title": "Status quo bias in decision making",
+		"venue": "Journal of Risk and Uncertainty",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1007/s11229-008-9377-8",
+		"url": "https://doi.org/10.1007/s11229-008-9377-8",
+		"doi": "10.1007/s11229-008-9377-8",
+		"authors": "Moro",
+		"year": 2009,
+		"title": "On the nature of the conjunction fallacy",
+		"venue": "Synthese",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1007/s11301-022-00283-8",
+		"url": "https://doi.org/10.1007/s11301-022-00283-8",
+		"doi": "10.1007/s11301-022-00283-8",
+		"authors": "Godefroid et al.",
+		"year": 2023,
+		"title": "How to measure the status quo bias? A review of current literature",
+		"venue": "Management Review Quarterly",
+		"kind": "review"
+	},
+	{
+		"id": "10.1007/s40685-014-0014-8",
+		"url": "https://doi.org/10.1007/s40685-014-0014-8",
+		"doi": "10.1007/s40685-014-0014-8",
+		"authors": "Roth et al.",
+		"year": 2015,
+		"title": "On the sunk-cost effect in economic decision-making: a meta-analytic review",
+		"venue": "Business Research",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1016/0001-6918(80)90046-3",
+		"url": "https://doi.org/10.1016/0001-6918(80)90046-3",
+		"doi": "10.1016/0001-6918(80)90046-3",
+		"authors": "Bar-Hillel",
+		"year": 1980,
+		"title": "The base-rate fallacy in probability judgments",
+		"venue": "Acta Psychologica",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0010-0285(72)90016-3",
+		"url": "https://doi.org/10.1016/0010-0285(72)90016-3",
+		"doi": "10.1016/0010-0285(72)90016-3",
+		"authors": "Kahneman & Tversky",
+		"year": 1972,
+		"title": "Subjective probability: A judgment of representativeness",
+		"venue": "Cognitive Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0010-0285(73)90033-9",
+		"url": "https://doi.org/10.1016/0010-0285(73)90033-9",
+		"doi": "10.1016/0010-0285(73)90033-9",
+		"authors": "Tversky & Kahneman",
+		"year": 1973,
+		"title": "Availability: A heuristic for judging frequency and probability",
+		"venue": "Cognitive Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0010-0285(85)90010-6",
+		"url": "https://doi.org/10.1016/0010-0285(85)90010-6",
+		"doi": "10.1016/0010-0285(85)90010-6",
+		"authors": "Gilovich et al.",
+		"year": 1985,
+		"title": "The hot hand in basketball: On the misperception of random sequences",
+		"venue": "Cognitive Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0022-1031(67)90034-0",
+		"url": "https://doi.org/10.1016/0022-1031(67)90034-0",
+		"doi": "10.1016/0022-1031(67)90034-0",
+		"authors": "Jones & Harris",
+		"year": 1967,
+		"title": "The attribution of attitudes",
+		"venue": "Journal of Experimental Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0022-1031(77)90049-x",
+		"url": "https://doi.org/10.1016/0022-1031(77)90049-X",
+		"doi": "10.1016/0022-1031(77)90049-x",
+		"authors": "Ross et al.",
+		"year": 1977,
+		"title": "The “false consensus effect”: An egocentric bias in social perception and attribution processes",
+		"venue": "Journal of Experimental Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0022-1031(85)90020-4",
+		"url": "https://doi.org/10.1016/0022-1031(85)90020-4",
+		"doi": "10.1016/0022-1031(85)90020-4",
+		"authors": "Mullen et al.",
+		"year": 1985,
+		"title": "The false consensus effect: A meta-analysis of 115 hypothesis tests",
+		"venue": "Journal of Experimental Social Psychology",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1016/0022-1031(91)90011-t",
+		"url": "https://doi.org/10.1016/0022-1031(91)90011-T",
+		"doi": "10.1016/0022-1031(91)90011-t",
+		"authors": "Spranca et al.",
+		"year": 1991,
+		"title": "Omission and commission in judgment and choice",
+		"venue": "Journal of Experimental Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0030-5073(76)90005-2",
+		"url": "https://doi.org/10.1016/0030-5073(76)90005-2",
+		"doi": "10.1016/0030-5073(76)90005-2",
+		"authors": "Staw",
+		"year": 1976,
+		"title": "Knee-deep in the big muddy: a study of escalating commitment to a chosen course of action",
+		"venue": "Organizational Behavior and Human Performance",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0167-2681(80)90051-7",
+		"url": "https://doi.org/10.1016/0167-2681(80)90051-7",
+		"doi": "10.1016/0167-2681(80)90051-7",
+		"authors": "Thaler",
+		"year": 1980,
+		"title": "Toward a positive theory of consumer choice",
+		"venue": "Journal of Economic Behavior & Organization",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/0749-5978(85)90049-4",
+		"url": "https://doi.org/10.1016/0749-5978(85)90049-4",
+		"doi": "10.1016/0749-5978(85)90049-4",
+		"authors": "Arkes & Blumer",
+		"year": 1985,
+		"title": "The psychology of sunk cost",
+		"venue": "Organizational Behavior and Human Decision Processes",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/j.cub.2011.10.030",
+		"url": "https://doi.org/10.1016/j.cub.2011.10.030",
+		"doi": "10.1016/j.cub.2011.10.030",
+		"authors": "Sharot",
+		"year": 2011,
+		"title": "The optimism bias",
+		"venue": "Current Biology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/j.ejor.2005.04.006",
+		"url": "https://doi.org/10.1016/j.ejor.2005.04.006",
+		"doi": "10.1016/j.ejor.2005.04.006",
+		"authors": "Slovic et al.",
+		"year": 2007,
+		"title": "The affect heuristic",
+		"venue": "European Journal of Operational Research",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/j.intell.2020.101449",
+		"url": "https://doi.org/10.1016/j.intell.2020.101449",
+		"doi": "10.1016/j.intell.2020.101449",
+		"authors": "Gignac & Zajenkowski",
+		"year": 2020,
+		"title": "The Dunning-Kruger effect is (mostly) a statistical artefact: Valid approaches to testing the hypothesis with individual differences data",
+		"venue": "Intelligence",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1016/j.joep.2025.102801",
+		"url": "https://doi.org/10.1016/j.joep.2025.102801",
+		"doi": "10.1016/j.joep.2025.102801",
+		"authors": "Yechiam & Zeif",
+		"year": 2025,
+		"title": "Loss aversion is not robust: A re-meta-analysis",
+		"venue": "Journal of Economic Psychology",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1016/j.lindif.2007.03.011",
+		"url": "https://doi.org/10.1016/j.lindif.2007.03.011",
+		"doi": "10.1016/j.lindif.2007.03.011",
+		"authors": "Reyna & Brainerd",
+		"year": 2008,
+		"title": "Numeracy, ratio bias, and denominator neglect in judgments of risk and probability",
+		"venue": "Learning and Individual Differences",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/j.tics.2006.11.001",
+		"url": "https://doi.org/10.1016/j.tics.2006.11.001",
+		"doi": "10.1016/j.tics.2006.11.001",
+		"authors": "Pronin",
+		"year": 2007,
+		"title": "Perception and misperception of bias in human judgment",
+		"venue": "Trends in Cognitive Sciences",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/s0022-1031(76)80006-6",
+		"url": "https://doi.org/10.1016/S0022-1031(76)80006-6",
+		"doi": "10.1016/s0022-1031(76)80006-6",
+		"authors": "Hamilton & Gifford",
+		"year": 1976,
+		"title": "Illusory correlation in interpersonal perception: A cognitive basis of stereotypic judgments",
+		"venue": "Journal of Experimental Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/s0022-5371(77)80012-1",
+		"url": "https://doi.org/10.1016/S0022-5371(77)80012-1",
+		"doi": "10.1016/s0022-5371(77)80012-1",
+		"authors": "Hasher et al.",
+		"year": 1977,
+		"title": "Frequency and the conference of referential validity",
+		"venue": "Journal of Verbal Learning and Verbal Behavior",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1016/s0065-2601(08)60009-x",
+		"url": "https://doi.org/10.1016/S0065-2601(08)60009-X",
+		"doi": "10.1016/s0065-2601(08)60009-x",
+		"authors": "Taylor & Fiske",
+		"year": 1978,
+		"title": "Salience, Attention, and Attribution: Top of the Head Phenomena",
+		"venue": "Advances in Experimental Social Psychology",
+		"kind": "book chapter"
+	},
+	{
+		"id": "10.1016/s0065-2601(10)43001-4",
+		"url": "https://doi.org/10.1016/S0065-2601(10)43001-4",
+		"doi": "10.1016/s0065-2601(10)43001-4",
+		"authors": "Buehler et al.",
+		"year": 2010,
+		"title": "The Planning Fallacy",
+		"venue": "Advances in Experimental Social Psychology",
+		"kind": "book chapter"
+	},
+	{
+		"id": "10.1017/bpp.2018.43",
+		"url": "https://doi.org/10.1017/bpp.2018.43",
+		"doi": "10.1017/bpp.2018.43",
+		"authors": "JACHIMOWICZ et al.",
+		"year": 2019,
+		"title": "When and why defaults influence decisions: a meta-analysis of default effects",
+		"venue": "Behavioural Public Policy",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1017/cbo9780511808098.007",
+		"url": "https://doi.org/10.1017/CBO9780511808098.007",
+		"doi": "10.1017/cbo9780511808098.007",
+		"authors": "Schwarz & Vaughn",
+		"year": 2002,
+		"title": "The Availability Heuristic Revisited: Ease of Recall and Content of Recall as Distinct Sources of Information",
+		"venue": "Heuristics and Biases",
+		"kind": "book chapter"
+	},
+	{
+		"id": "10.1023/a:1022299422219",
+		"url": "https://doi.org/10.1023/A:1022299422219",
+		"doi": "10.1023/a:1022299422219",
+		"authors": "Small & Loewenstein",
+		"year": 2003,
+		"title": "Helping a Victim or Helping the Victim: Altruism and Identifiability",
+		"venue": "Journal of Risk and Uncertainty",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1023/a:1026517309871",
+		"url": "https://doi.org/10.1023/A:1026517309871",
+		"doi": "10.1023/a:1026517309871",
+		"authors": "Patt & Zeckhauser",
+		"year": 2000,
+		"title": "Action Bias and Environmental Decisions",
+		"venue": "Journal of Risk and Uncertainty",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0003-066x.36.2.129",
+		"url": "https://doi.org/10.1037/0003-066X.36.2.129",
+		"doi": "10.1037/0003-066x.36.2.129",
+		"authors": "Bower",
+		"year": 1981,
+		"title": "Mood and memory.",
+		"venue": "American Psychologist",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0021-843x.95.1.15",
+		"url": "https://doi.org/10.1037/0021-843X.95.1.15",
+		"doi": "10.1037/0021-843x.95.1.15",
+		"authors": "MacLeod et al.",
+		"year": 1986,
+		"title": "Attentional bias in emotional disorders.",
+		"venue": "Journal of Abnormal Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.32.2.311",
+		"url": "https://doi.org/10.1037/0022-3514.32.2.311",
+		"doi": "10.1037/0022-3514.32.2.311",
+		"authors": "Langer",
+		"year": 1975,
+		"title": "The illusion of control.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.32.5.880",
+		"url": "https://doi.org/10.1037/0022-3514.32.5.880",
+		"doi": "10.1037/0022-3514.32.5.880",
+		"authors": "Ross et al.",
+		"year": 1975,
+		"title": "Perseverance in self-perception and social perception: Biased attributional processes in the debriefing paradigm.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.35.4.250",
+		"url": "https://doi.org/10.1037/0022-3514.35.4.250",
+		"doi": "10.1037/0022-3514.35.4.250",
+		"authors": "Nisbett & Wilson",
+		"year": 1977,
+		"title": "The halo effect: Evidence for unconscious alteration of judgments.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1037/0022-3514.37.11.2098",
+		"url": "https://doi.org/10.1037/0022-3514.37.11.2098",
+		"doi": "10.1037/0022-3514.37.11.2098",
+		"authors": "Lord et al.",
+		"year": 1979,
+		"title": "Biased assimilation and attitude polarization: The effects of prior theories on subsequently considered evidence.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1037/0022-3514.39.5.806",
+		"url": "https://doi.org/10.1037/0022-3514.39.5.806",
+		"doi": "10.1037/0022-3514.39.5.806",
+		"authors": "Weinstein",
+		"year": 1980,
+		"title": "Unrealistic optimism about future life events.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.42.6.1051",
+		"url": "https://doi.org/10.1037/0022-3514.42.6.1051",
+		"doi": "10.1037/0022-3514.42.6.1051",
+		"authors": "Park & Rothbart",
+		"year": 1982,
+		"title": "Perception of out-group homogeneity and levels of social categorization: Memory for the subordinate attributes of in-group and out-group members.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.49.6.1621",
+		"url": "https://doi.org/10.1037/0022-3514.49.6.1621",
+		"doi": "10.1037/0022-3514.49.6.1621",
+		"authors": "Alicke",
+		"year": 1985,
+		"title": "Global self-evaluation as determined by the desirability and controllability of trait adjectives.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.50.6.1141",
+		"url": "https://doi.org/10.1037/0022-3514.50.6.1141",
+		"doi": "10.1037/0022-3514.50.6.1141",
+		"authors": "Isenberg",
+		"year": 1986,
+		"title": "Group polarization: A critical review and meta-analysis.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1037/0022-3514.54.4.569",
+		"url": "https://doi.org/10.1037/0022-3514.54.4.569",
+		"doi": "10.1037/0022-3514.54.4.569",
+		"authors": "Baron & Hershey",
+		"year": 1988,
+		"title": "Outcome bias in decision evaluation.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.63.4.568",
+		"url": "https://doi.org/10.1037/0022-3514.63.4.568",
+		"doi": "10.1037/0022-3514.63.4.568",
+		"authors": "Ditto & Lopez",
+		"year": 1992,
+		"title": "Motivated skepticism: Use of differential decision criteria for preferred and nonpreferred conclusions.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.64.2.243",
+		"url": "https://doi.org/10.1037/0022-3514.64.2.243",
+		"doi": "10.1037/0022-3514.64.2.243",
+		"authors": "Prentice & Miller",
+		"year": 1993,
+		"title": "Pluralistic ignorance and alcohol use on campus: Some consequences of misperceiving the social norm.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.66.1.37",
+		"url": "https://doi.org/10.1037/0022-3514.66.1.37",
+		"doi": "10.1037/0022-3514.66.1.37",
+		"authors": "Macrae et al.",
+		"year": 1994,
+		"title": "Stereotypes as energy-saving devices: A peek inside the cognitive toolbox.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.66.5.819",
+		"url": "https://doi.org/10.1037/0022-3514.66.5.819",
+		"doi": "10.1037/0022-3514.66.5.819",
+		"authors": "Denes-Raj & Epstein",
+		"year": 1994,
+		"title": "Conflict between intuitive and rational processing: When people behave against their better judgment.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.67.3.366",
+		"url": "https://doi.org/10.1037/0022-3514.67.3.366",
+		"doi": "10.1037/0022-3514.67.3.366",
+		"authors": "Buehler et al.",
+		"year": 1994,
+		"title": "Exploring the \"planning fallacy\": Why people underestimate their task completion times.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.76.5.743",
+		"url": "https://doi.org/10.1037/0022-3514.76.5.743",
+		"doi": "10.1037/0022-3514.76.5.743",
+		"authors": "Kruger & Gilovich",
+		"year": 1999,
+		"title": "\"Naive cynicism\" in everyday theories of responsibility assessment: On biased assumptions of bias.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1037/0022-3514.77.6.1121",
+		"url": "https://doi.org/10.1037/0022-3514.77.6.1121",
+		"doi": "10.1037/0022-3514.77.6.1121",
+		"authors": "Kruger & Dunning",
+		"year": 1999,
+		"title": "Unskilled and unaware of it: How difficulties in recognizing one's own incompetence lead to inflated self-assessments.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1037/0022-3514.79.6.995",
+		"url": "https://doi.org/10.1037/0022-3514.79.6.995",
+		"doi": "10.1037/0022-3514.79.6.995",
+		"authors": "Iyengar & Lepper",
+		"year": 2000,
+		"title": "When choice is demotivating: Can one desire too much of a good thing?",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0022-3514.81.4.639",
+		"url": "https://doi.org/10.1037/0022-3514.81.4.639",
+		"doi": "10.1037/0022-3514.81.4.639",
+		"authors": "Pronin et al.",
+		"year": 2001,
+		"title": "You don't know me, but I know you: The illusion of asymmetric insight.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-2909.108.3.480",
+		"url": "https://doi.org/10.1037/0033-2909.108.3.480",
+		"doi": "10.1037/0033-2909.108.3.480",
+		"authors": "Kunda",
+		"year": 1990,
+		"title": "The case for motivated reasoning.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-2909.113.1.44",
+		"url": "https://doi.org/10.1037/0033-2909.113.1.44",
+		"doi": "10.1037/0033-2909.113.1.44",
+		"authors": "Friedman",
+		"year": 1993,
+		"title": "Memory for the time of past events.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-2909.114.1.3",
+		"url": "https://doi.org/10.1037/0033-2909.114.1.3",
+		"doi": "10.1037/0033-2909.114.1.3",
+		"authors": "Johnson et al.",
+		"year": 1993,
+		"title": "Source monitoring.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-2909.117.1.21",
+		"url": "https://doi.org/10.1037/0033-2909.117.1.21",
+		"doi": "10.1037/0033-2909.117.1.21",
+		"authors": "Gilbert & Malone",
+		"year": 1995,
+		"title": "The correspondence bias.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-2909.119.1.111",
+		"url": "https://doi.org/10.1037/0033-2909.119.1.111",
+		"doi": "10.1037/0033-2909.119.1.111",
+		"authors": "Bond & Smith",
+		"year": 1996,
+		"title": "Culture and conformity: A meta-analysis of studies using Asch's (1952b, 1956) line judgment task.",
+		"venue": "Psychological Bulletin",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1037/0033-2909.130.5.711",
+		"url": "https://doi.org/10.1037/0033-2909.130.5.711",
+		"doi": "10.1037/0033-2909.130.5.711",
+		"authors": "Mezulis et al.",
+		"year": 2004,
+		"title": "Is There a Universal Positivity Bias in Attributions? A Meta-Analytic Review of Individual, Developmental, and Cultural Differences in the Self-Serving Attributional Bias.",
+		"venue": "Psychological Bulletin",
+		"kind": "review"
+	},
+	{
+		"id": "10.1037/0033-2909.132.6.895",
+		"url": "https://doi.org/10.1037/0033-2909.132.6.895",
+		"doi": "10.1037/0033-2909.132.6.895",
+		"authors": "Malle",
+		"year": 2006,
+		"title": "The actor-observer asymmetry in attribution: A (surprising) meta-analysis.",
+		"venue": "Psychological Bulletin",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1037/0033-2909.85.5.1030",
+		"url": "https://doi.org/10.1037/0033-2909.85.5.1030",
+		"doi": "10.1037/0033-2909.85.5.1030",
+		"authors": "Lerner & Miller",
+		"year": 1978,
+		"title": "Just world research and the attribution process: Looking back and ahead.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-295x.107.4.852",
+		"url": "https://doi.org/10.1037/0033-295X.107.4.852",
+		"doi": "10.1037/0033-295x.107.4.852",
+		"authors": "Klauer et al.",
+		"year": 2000,
+		"title": "On belief bias in syllogistic reasoning.",
+		"venue": "Psychological Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-295x.111.3.781",
+		"url": "https://doi.org/10.1037/0033-295X.111.3.781",
+		"doi": "10.1037/0033-295x.111.3.781",
+		"authors": "Pronin et al.",
+		"year": 2004,
+		"title": "Objectivity in the Eye of the Beholder: Divergent Perceptions of Bias in Self Versus Others.",
+		"venue": "Psychological Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-295x.115.2.502",
+		"url": "https://doi.org/10.1037/0033-295X.115.2.502",
+		"doi": "10.1037/0033-295x.115.2.502",
+		"authors": "Moore & Healy",
+		"year": 2008,
+		"title": "The trouble with overconfidence.",
+		"venue": "Psychological Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-295x.90.4.293",
+		"url": "https://doi.org/10.1037/0033-295X.90.4.293",
+		"doi": "10.1037/0033-295x.90.4.293",
+		"authors": "Tversky & Kahneman",
+		"year": 1983,
+		"title": "Extensional versus intuitive reasoning: The conjunction fallacy in probability judgment.",
+		"venue": "Psychological Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0033-295x.96.2.341",
+		"url": "https://doi.org/10.1037/0033-295X.96.2.341",
+		"doi": "10.1037/0033-295x.96.2.341",
+		"authors": "Ross",
+		"year": 1989,
+		"title": "Relation of implicit theories to the construction of personal histories.",
+		"venue": "Psychological Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0096-1523.1.3.288",
+		"url": "https://doi.org/10.1037/0096-1523.1.3.288",
+		"doi": "10.1037/0096-1523.1.3.288",
+		"authors": "Fischhoff",
+		"year": 1975,
+		"title": "Hindsight is not equal to foresight: The effect of outcome knowledge on judgment under uncertainty.",
+		"venue": "Journal of Experimental Psychology: Human Perception and Performance",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0096-1523.14.4.554",
+		"url": "https://doi.org/10.1037/0096-1523.14.4.554",
+		"doi": "10.1037/0096-1523.14.4.554",
+		"authors": "Cohen & Jaffray",
+		"year": 1988,
+		"title": "Certainty effect versus probability distortion: An experimental analysis of decision making under risk.",
+		"venue": "Journal of Experimental Psychology: Human Perception and Performance",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1037/0096-3445.118.1.100",
+		"url": "https://doi.org/10.1037/0096-3445.118.1.100",
+		"doi": "10.1037/0096-3445.118.1.100",
+		"authors": "Loftus & Hoffman",
+		"year": 1989,
+		"title": "Misinformation and memory: The creation of new memories.",
+		"venue": "Journal of Experimental Psychology: General",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/0278-7393.20.6.1420",
+		"url": "https://doi.org/10.1037/0278-7393.20.6.1420",
+		"doi": "10.1037/0278-7393.20.6.1420",
+		"authors": "Johnson & Seifert",
+		"year": 1994,
+		"title": "Sources of the continued influence effect: When misinformation in memory affects later inferences.",
+		"venue": "Journal of Experimental Psychology: Learning, Memory, and Cognition",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/1089-2680.2.2.175",
+		"url": "https://doi.org/10.1037/1089-2680.2.2.175",
+		"doi": "10.1037/1089-2680.2.2.175",
+		"authors": "Nickerson",
+		"year": 1998,
+		"title": "Confirmation Bias: A Ubiquitous Phenomenon in Many Guises",
+		"venue": "Review of General Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/1089-2680.5.4.323",
+		"url": "https://doi.org/10.1037/1089-2680.5.4.323",
+		"doi": "10.1037/1089-2680.5.4.323",
+		"authors": "Baumeister et al.",
+		"year": 2001,
+		"title": "Bad is Stronger than Good",
+		"venue": "Review of General Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/1089-2680.7.2.203",
+		"url": "https://doi.org/10.1037/1089-2680.7.2.203",
+		"doi": "10.1037/1089-2680.7.2.203",
+		"authors": "Walker et al.",
+		"year": 2003,
+		"title": "Life is Pleasant—and Memory Helps to Keep it that Way!",
+		"venue": "Review of General Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/a0015701",
+		"url": "https://doi.org/10.1037/a0015701",
+		"doi": "10.1037/a0015701",
+		"authors": "Hart et al.",
+		"year": 2009,
+		"title": "Feeling validated versus being correct: A meta-analysis of selective exposure to information.",
+		"venue": "Psychological Bulletin",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1037/bul0000085",
+		"url": "https://doi.org/10.1037/bul0000085",
+		"doi": "10.1037/bul0000085",
+		"authors": "Montoya et al.",
+		"year": 2017,
+		"title": "A re-examination of the mere exposure effect: The influence of repeated exposure on recognition, familiarity, and liking.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/bul0000218",
+		"url": "https://doi.org/10.1037/bul0000218",
+		"doi": "10.1037/bul0000218",
+		"authors": "Zell et al.",
+		"year": 2020,
+		"title": "The better-than-average effect in comparative self-evaluation: A comprehensive review and meta-analysis.",
+		"venue": "Psychological Bulletin",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1037/h0022001",
+		"url": "https://doi.org/10.1037/h0022001",
+		"doi": "10.1037/h0022001",
+		"authors": "Wallace",
+		"year": 1965,
+		"title": "Review of the historical, empirical, and theoretical status of the von Restorff phenomenon.",
+		"venue": "Psychological Bulletin",
+		"kind": "review"
+	},
+	{
+		"id": "10.1037/h0023562",
+		"url": "https://doi.org/10.1037/h0023562",
+		"doi": "10.1037/h0023562",
+		"authors": "Lerner & Simmons",
+		"year": 1966,
+		"title": "Observer's reaction to the \"innocent victim\": Compassion or rejection?",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0025848",
+		"url": "https://doi.org/10.1037/h0025848",
+		"doi": "10.1037/h0025848",
+		"authors": "Zajonc",
+		"year": 1968,
+		"title": "Attitudinal effects of mere exposure.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0027568",
+		"url": "https://doi.org/10.1037/h0027568",
+		"doi": "10.1037/h0027568",
+		"authors": "Moscovici & Zavalloni",
+		"year": 1969,
+		"title": "The group as a polarizer of attitudes.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0031322",
+		"url": "https://doi.org/10.1037/h0031322",
+		"doi": "10.1037/h0031322",
+		"authors": "Tversky & Kahneman",
+		"year": 1971,
+		"title": "Belief in the law of small numbers.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0034747",
+		"url": "https://doi.org/10.1037/h0034747",
+		"doi": "10.1037/h0034747",
+		"authors": "Kahneman & Tversky",
+		"year": 1973,
+		"title": "On the psychology of prediction.",
+		"venue": "Psychological Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0040525",
+		"url": "https://doi.org/10.1037/h0040525",
+		"doi": "10.1037/h0040525",
+		"authors": "Milgram",
+		"year": 1963,
+		"title": "Behavioral Study of obedience.",
+		"venue": "The Journal of Abnormal and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0045106",
+		"url": "https://doi.org/10.1037/h0045106",
+		"doi": "10.1037/h0045106",
+		"authors": "Murdock",
+		"year": 1962,
+		"title": "The serial position effect of free recall.",
+		"venue": "Journal of Experimental Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0071663",
+		"url": "https://doi.org/10.1037/h0071663",
+		"doi": "10.1037/h0071663",
+		"authors": "Thorndike",
+		"year": 1920,
+		"title": "A constant error in psychological ratings.",
+		"venue": "Journal of Applied Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0076486",
+		"url": "https://doi.org/10.1037/h0076486",
+		"doi": "10.1037/h0076486",
+		"authors": "Miller & Ross",
+		"year": 1975,
+		"title": "Self-serving biases in the attribution of causality: Fact or fiction?",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0076860",
+		"url": "https://doi.org/10.1037/h0076860",
+		"doi": "10.1037/h0076860",
+		"authors": "Ainslie",
+		"year": 1975,
+		"title": "Specious reward: A behavioral theory of impulsiveness and impulse control.",
+		"venue": "Psychological Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0077720",
+		"url": "https://doi.org/10.1037/h0077720",
+		"doi": "10.1037/h0077720",
+		"authors": "Anderson et al.",
+		"year": 1980,
+		"title": "Perseverance of social theories: The role of explanation in the persistence of discredited information.",
+		"venue": "Journal of Personality and Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1037/h0093718",
+		"url": "https://doi.org/10.1037/h0093718",
+		"doi": "10.1037/h0093718",
+		"authors": "Asch",
+		"year": 1956,
+		"title": "Studies of independence and conformity: I. A minority of one against a unanimous majority.",
+		"venue": "Psychological Monographs: General and Applied",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1073/pnas.1418572112",
+		"url": "https://doi.org/10.1073/pnas.1418572112",
+		"doi": "10.1073/pnas.1418572112",
+		"authors": "Dodge et al.",
+		"year": 2015,
+		"title": "Hostile attributional bias and aggressive behavior in global context",
+		"venue": "Proceedings of the National Academy of Sciences",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1080/10463280440000026",
+		"url": "https://doi.org/10.1080/10463280440000026",
+		"doi": "10.1080/10463280440000026",
+		"authors": "Gawronski",
+		"year": 2004,
+		"title": "Theory-based bias correction in dispositional inference: The fundamental attribution error is dead, long live the correspondence bias",
+		"venue": "European Review of Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1080/13546780600780796",
+		"url": "https://doi.org/10.1080/13546780600780796",
+		"doi": "10.1080/13546780600780796",
+		"authors": "Stanovich & West",
+		"year": 2007,
+		"title": "Natural myside bias is independent of cognitive ability",
+		"venue": "Thinking & Reasoning",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1080/17470216008416717",
+		"url": "https://doi.org/10.1080/17470216008416717",
+		"doi": "10.1080/17470216008416717",
+		"authors": "Wason",
+		"year": 1960,
+		"title": "On the Failure to Eliminate Hypotheses in a Conceptual Task",
+		"venue": "Quarterly Journal of Experimental Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1086/208899",
+		"url": "https://doi.org/10.1086/208899",
+		"doi": "10.1086/208899",
+		"authors": "Huber et al.",
+		"year": 1982,
+		"title": "Adding Asymmetrically Dominated Alternatives: Violations of Regularity and the Similarity Hypothesis",
+		"venue": "Journal of Consumer Research",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1086/209205",
+		"url": "https://doi.org/10.1086/209205",
+		"doi": "10.1086/209205",
+		"authors": "Simonson",
+		"year": 1989,
+		"title": "Choice Based on Reasons: The Case of Attraction and Compromise Effects",
+		"venue": "Journal of Consumer Research",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1086/209449",
+		"url": "https://doi.org/10.1086/209449",
+		"doi": "10.1086/209449",
+		"authors": "Heath & Chatterjee",
+		"year": 1995,
+		"title": "Asymmetric Decoy Effects on Lower-Quality Versus Higher-Quality Brands: Meta-Analytic and Experimental Evidence",
+		"venue": "Journal of Consumer Research",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1086/651235",
+		"url": "https://doi.org/10.1086/651235",
+		"doi": "10.1086/651235",
+		"authors": "Scheibehenne et al.",
+		"year": 2010,
+		"title": "Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload",
+		"venue": "Journal of Consumer Research",
+		"kind": "review"
+	},
+	{
+		"id": "10.1101/lm.94705",
+		"url": "https://doi.org/10.1101/lm.94705",
+		"doi": "10.1101/lm.94705",
+		"authors": "Loftus",
+		"year": 2005,
+		"title": "Planting misinformation in the human mind: A 30-year investigation of the malleability of memory: Figure 1.",
+		"venue": "Learning & Memory",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/0022-1082.00072",
+		"url": "https://doi.org/10.1111/0022-1082.00072",
+		"doi": "10.1111/0022-1082.00072",
+		"authors": "Odean",
+		"year": 1998,
+		"title": "Are Investors Reluctant to Realize Their Losses?",
+		"venue": "The Journal of Finance",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/1467-8721.00044",
+		"url": "https://doi.org/10.1111/1467-8721.00044",
+		"doi": "10.1111/1467-8721.00044",
+		"authors": "Thompson",
+		"year": 1999,
+		"title": "Illusions of Control",
+		"venue": "Current Directions in Psychological Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/1467-9280.00066",
+		"url": "https://doi.org/10.1111/1467-9280.00066",
+		"doi": "10.1111/1467-9280.00066",
+		"authors": "Schkade & Kahneman",
+		"year": 1998,
+		"title": "Does Living in California Make People Happy? A Focusing Illusion in Judgments of Life Satisfaction",
+		"venue": "Psychological Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/1467-9280.00228",
+		"url": "https://doi.org/10.1111/1467-9280.00228",
+		"doi": "10.1111/1467-9280.00228",
+		"authors": "Mather et al.",
+		"year": 2000,
+		"title": "Misremembrance of Options Past: Source Monitoring and Choice",
+		"venue": "Psychological Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/j.1467-8624.1980.tb02522.x",
+		"url": "https://doi.org/10.1111/j.1467-8624.1980.tb02522.x",
+		"doi": "10.1111/j.1467-8624.1980.tb02522.x",
+		"authors": "Dodge",
+		"year": 1980,
+		"title": "Social Cognition and Children's Aggressive Behavior",
+		"venue": "Child Development",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/j.1467-8721.2009.01631.x",
+		"url": "https://doi.org/10.1111/j.1467-8721.2009.01631.x",
+		"doi": "10.1111/j.1467-8721.2009.01631.x",
+		"authors": "Wright et al.",
+		"year": 2009,
+		"title": "When Eyewitnesses Talk",
+		"venue": "Current Directions in Psychological Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/j.1540-5907.2006.00214.x",
+		"url": "https://doi.org/10.1111/j.1540-5907.2006.00214.x",
+		"doi": "10.1111/j.1540-5907.2006.00214.x",
+		"authors": "Taber & Lodge",
+		"year": 2006,
+		"title": "Motivated Skepticism in the Evaluation of Political Beliefs",
+		"venue": "American Journal of Political Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/j.1540-6261.1985.tb05002.x",
+		"url": "https://doi.org/10.1111/j.1540-6261.1985.tb05002.x",
+		"doi": "10.1111/j.1540-6261.1985.tb05002.x",
+		"authors": "SHEFRIN & STATMAN",
+		"year": 1985,
+		"title": "The Disposition to Sell Winners Too Early and Ride Losers Too Long: Theory and Evidence",
+		"venue": "The Journal of Finance",
+		"kind": "original study"
+	},
+	{
+		"id": "10.1111/j.1559-1816.1977.tb00750.x",
+		"url": "https://doi.org/10.1111/j.1559-1816.1977.tb00750.x",
+		"doi": "10.1111/j.1559-1816.1977.tb00750.x",
+		"authors": "Borgida & Nisbett",
+		"year": 1977,
+		"title": "The Differential Impact of Abstract vs. Concrete Information on Decisions1",
+		"venue": "Journal of Applied Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1111/j.2044-8309.1990.tb00883.x",
+		"url": "https://doi.org/10.1111/j.2044-8309.1990.tb00883.x",
+		"doi": "10.1111/j.2044-8309.1990.tb00883.x",
+		"authors": "Mullen & Johnson",
+		"year": 1990,
+		"title": "Distinctiveness‐based illusory correlations and stereotyping: A meta‐analytic integration*",
+		"venue": "British Journal of Social Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1126/science.1091721",
+		"url": "https://doi.org/10.1126/science.1091721",
+		"doi": "10.1126/science.1091721",
+		"authors": "Johnson & Goldstein",
+		"year": 2003,
+		"title": "Do Defaults Save Lives?",
+		"venue": "Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1126/science.185.4157.1124",
+		"url": "https://doi.org/10.1126/science.185.4157.1124",
+		"doi": "10.1126/science.185.4157.1124",
+		"authors": "Tversky & Kahneman",
+		"year": 1974,
+		"title": "Judgment under Uncertainty: Heuristics and Biases",
+		"venue": "Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1126/science.7455683",
+		"url": "https://doi.org/10.1126/science.7455683",
+		"doi": "10.1126/science.7455683",
+		"authors": "Tversky & Kahneman",
+		"year": 1981,
+		"title": "The Framing of Decisions and the Psychology of Choice",
+		"venue": "Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1146/annurev.psych.53.100901.135109",
+		"url": "https://doi.org/10.1146/annurev.psych.53.100901.135109",
+		"doi": "10.1146/annurev.psych.53.100901.135109",
+		"authors": "Hewstone et al.",
+		"year": 2002,
+		"title": "Intergroup Bias",
+		"venue": "Annual Review of Psychology",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1162/003355302760193896",
+		"url": "https://doi.org/10.1162/003355302760193896",
+		"doi": "10.1162/003355302760193896",
+		"authors": "Rabin",
+		"year": 2002,
+		"title": "Inference by Believers in the Law of Small Numbers",
+		"venue": "The Quarterly Journal of Economics",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1162/003355397555253",
+		"url": "https://doi.org/10.1162/003355397555253",
+		"doi": "10.1162/003355397555253",
+		"authors": "Laibson",
+		"year": 1997,
+		"title": "Golden Eggs and Hyperbolic Discounting",
+		"venue": "The Quarterly Journal of Economics",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1177/0146167202286008",
+		"url": "https://doi.org/10.1177/0146167202286008",
+		"doi": "10.1177/0146167202286008",
+		"authors": "Pronin et al.",
+		"year": 2002,
+		"title": "The Bias Blind Spot: Perceptions of Bias in Self Versus Others",
+		"venue": "Personality and Social Psychology Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1177/014616727900500407",
+		"url": "https://doi.org/10.1177/014616727900500407",
+		"doi": "10.1177/014616727900500407",
+		"authors": "Pettigrew",
+		"year": 1979,
+		"title": "The Ultimate Attribution Error: Extending Allport's Cognitive Analysis of Prejudice",
+		"venue": "Personality and Social Psychology Bulletin",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1177/0963721413480174",
+		"url": "https://doi.org/10.1177/0963721413480174",
+		"doi": "10.1177/0963721413480174",
+		"authors": "Stanovich et al.",
+		"year": 2013,
+		"title": "Myside Bias, Rational Thinking, and Intelligence",
+		"venue": "Current Directions in Psychological Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1177/1088868309352251",
+		"url": "https://doi.org/10.1177/1088868309352251",
+		"doi": "10.1177/1088868309352251",
+		"authors": "Dechêne et al.",
+		"year": 2010,
+		"title": "The Truth About the Truth: A Meta-Analytic Review of the Truth Effect",
+		"venue": "Personality and Social Psychology Review",
+		"kind": "review"
+	},
+	{
+		"id": "10.1177/1089268021995168",
+		"url": "https://doi.org/10.1177/1089268021995168",
+		"doi": "10.1177/1089268021995168",
+		"authors": "Sargent & Newman",
+		"year": 2021,
+		"title": "Pluralistic Ignorance Research in Psychology: A Scoping Review of Topic and Method Variation and Directions for Future Research",
+		"venue": "Review of General Psychology",
+		"kind": "review"
+	},
+	{
+		"id": "10.1177/1529100612451018",
+		"url": "https://doi.org/10.1177/1529100612451018",
+		"doi": "10.1177/1529100612451018",
+		"authors": "Lewandowsky et al.",
+		"year": 2012,
+		"title": "Misinformation and Its Correction",
+		"venue": "Psychological Science in the Public Interest",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1177/1745691612454303",
+		"url": "https://doi.org/10.1177/1745691612454303",
+		"doi": "10.1177/1745691612454303",
+		"authors": "Roese & Vohs",
+		"year": 2012,
+		"title": "Hindsight Bias",
+		"venue": "Perspectives on Psychological Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1207/s15327957pspr0804_3",
+		"url": "https://doi.org/10.1207/s15327957pspr0804_3",
+		"doi": "10.1207/s15327957pspr0804_3",
+		"authors": "Reber et al.",
+		"year": 2004,
+		"title": "Processing Fluency and Aesthetic Pleasure: Is Beauty in the Perceiver's Processing Experience?",
+		"venue": "Personality and Social Psychology Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1257/jel.20221698",
+		"url": "https://doi.org/10.1257/jel.20221698",
+		"doi": "10.1257/jel.20221698",
+		"authors": "Brown et al.",
+		"year": 2024,
+		"title": "Meta-analysis of Empirical Estimates of Loss Aversion",
+		"venue": "Journal of Economic Literature",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.1287/mksc.4.3.199",
+		"url": "https://doi.org/10.1287/mksc.4.3.199",
+		"doi": "10.1287/mksc.4.3.199",
+		"authors": "Thaler",
+		"year": 1985,
+		"title": "Mental Accounting and Consumer Choice",
+		"venue": "Marketing Science",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.1287/mnsc.2023.03238",
+		"url": "https://doi.org/10.1287/mnsc.2023.03238",
+		"doi": "10.1287/mnsc.2023.03238",
+		"authors": "Schley & Weingarten",
+		"year": 2026,
+		"title": "Fifty Years of Anchoring Effects: A Theoretical Reintegration and Meta-Analysis",
+		"venue": "Management Science",
+		"kind": "meta-analysis"
+	},
+	{
+		"id": "10.2307/1229439",
+		"url": "https://doi.org/10.2307/1229439",
+		"doi": "10.2307/1229439",
+		"authors": "Kuran & Sunstein",
+		"year": 1999,
+		"title": "Availability Cascades and Risk Regulation",
+		"venue": "Stanford Law Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.2307/1882692",
+		"url": "https://doi.org/10.2307/1882692",
+		"doi": "10.2307/1882692",
+		"authors": "Leibenstein",
+		"year": 1950,
+		"title": "Bandwagon, Snob, and Veblen Effects in the Theory of Consumers' Demand",
+		"venue": "The Quarterly Journal of Economics",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.2307/1884324",
+		"url": "https://doi.org/10.2307/1884324",
+		"doi": "10.2307/1884324",
+		"authors": "Ellsberg",
+		"year": 1961,
+		"title": "Risk, Ambiguity, and the Savage Axioms",
+		"venue": "The Quarterly Journal of Economics",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.2307/1914185",
+		"url": "https://doi.org/10.2307/1914185",
+		"doi": "10.2307/1914185",
+		"authors": "Kahneman & Tversky",
+		"year": 1979,
+		"title": "Prospect Theory: An Analysis of Decision under Risk",
+		"venue": "Econometrica",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.3758/bf03196976",
+		"url": "https://doi.org/10.3758/BF03196976",
+		"doi": "10.3758/bf03196976",
+		"authors": "Evans et al.",
+		"year": 1983,
+		"title": "On the conflict between logic and belief in syllogistic reasoning",
+		"venue": "Memory & Cognition",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.3758/bf03202626",
+		"url": "https://doi.org/10.3758/BF03202626",
+		"doi": "10.3758/bf03202626",
+		"authors": "Rubin & Baddeley",
+		"year": 1989,
+		"title": "Telescoping is not time compression: A model",
+		"venue": "Memory & Cognition",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.3758/bf03206327",
+		"url": "https://doi.org/10.3758/BF03206327",
+		"doi": "10.3758/bf03206327",
+		"authors": "Ayton & Fischer",
+		"year": 2004,
+		"title": "The hot hand fallacy and the gambler’s fallacy: Two faces of subjective randomness?",
+		"venue": "Memory & Cognition",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.3758/bf03206480",
+		"url": "https://doi.org/10.3758/BF03206480",
+		"doi": "10.3758/bf03206480",
+		"authors": "Burns & Corpus",
+		"year": 2004,
+		"title": "Randomness and inductions from streaks: “Gambler’s fallacy” versus ”hot hand“",
+		"venue": "Psychonomic Bulletin & Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.3758/bf03214414",
+		"url": "https://doi.org/10.3758/BF03214414",
+		"doi": "10.3758/bf03214414",
+		"authors": "Hunt",
+		"year": 1995,
+		"title": "The subtlety of distinctiveness: What von Restorff really did",
+		"venue": "Psychonomic Bulletin & Review",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.3982/ecta14943",
+		"url": "https://doi.org/10.3982/ECTA14943",
+		"doi": "10.3982/ecta14943",
+		"authors": "Miller & Sanjurjo",
+		"year": 2018,
+		"title": "Surprised by the Hot Hand Fallacy? A Truth in the Law of Small Numbers",
+		"venue": "Econometrica",
+		"kind": "journal article"
+	},
+	{
+		"id": "10.5334/irsp.751",
+		"url": "https://doi.org/10.5334/irsp.751",
+		"doi": "10.5334/irsp.751",
+		"authors": "Aiyer et al.",
+		"year": 2023,
+		"title": "Outcomes Affect Evaluations of Decision Quality: Replication and Extensions of Baron and Hershey’s (1988) Outcome Bias Experiment 1",
+		"venue": "International Review of Social Psychology",
+		"kind": "original study"
+	},
+	{
+		"id": "10.5465/amr.1992.4279568",
+		"url": "https://doi.org/10.5465/amr.1992.4279568",
+		"doi": "10.5465/amr.1992.4279568",
+		"authors": "Brockner",
+		"year": 1992,
+		"title": "The Escalation of Commitment to a Failing Course of Action: Toward Theoretical Progress",
+		"venue": "The Academy of Management Review",
+		"kind": "journal article"
+	}
+]

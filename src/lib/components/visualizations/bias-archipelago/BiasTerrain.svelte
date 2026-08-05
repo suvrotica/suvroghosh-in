@@ -1,8 +1,6 @@
 <script lang="ts">
 	import {
 		contours as makeContours,
-		interpolateRgb,
-		scaleLinear,
 		select,
 		zoom as createZoom,
 		zoomIdentity,
@@ -21,6 +19,8 @@
 
 	const viewWidth = 1000;
 	const viewHeight = 650;
+	const rasterWidth = 750;
+	const rasterHeight = 488;
 	const minimumZoom = 0.85;
 	const maximumZoom = 4;
 
@@ -65,6 +65,10 @@
 	let zoomBehaviour: ZoomBehavior<HTMLDivElement, unknown> | null = null;
 	let zoomSelection: Selection<HTMLDivElement, unknown, null, undefined> | null = null;
 	let drawFrame = 0;
+	let terrainRaster: HTMLCanvasElement | null = null;
+	let terrainRasterValues: number[] | null = null;
+	let terrainRasterSurface = Number.NaN;
+	let terrainRasterDarkMode = false;
 
 	let worldTransform = $derived(`translate(${panX} ${panY}) scale(${zoom})`);
 
@@ -175,6 +179,42 @@
 		return Math.max(0, Math.min(1, (value - grid.min) / span));
 	}
 
+	function clamp01(value: number) {
+		return Math.max(0, Math.min(1, value));
+	}
+
+	function writeInterpolatedColour(
+		data: Uint8ClampedArray,
+		index: number,
+		from: number[],
+		to: number[],
+		position: number
+	) {
+		const amount = clamp01(position);
+		data[index] = Math.round((from[0] ?? 0) + ((to[0] ?? 0) - (from[0] ?? 0)) * amount);
+		data[index + 1] = Math.round((from[1] ?? 0) + ((to[1] ?? 0) - (from[1] ?? 0)) * amount);
+		data[index + 2] = Math.round((from[2] ?? 0) + ((to[2] ?? 0) - (from[2] ?? 0)) * amount);
+		data[index + 3] = 255;
+	}
+
+	function sampleNormalizedGrid(grid: TerrainGrid, gridX: number, gridY: number) {
+		const x = Math.max(0, Math.min(grid.width - 1, gridX));
+		const y = Math.max(0, Math.min(grid.height - 1, gridY));
+		const x0 = Math.floor(x);
+		const y0 = Math.floor(y);
+		const x1 = Math.min(grid.width - 1, x0 + 1);
+		const y1 = Math.min(grid.height - 1, y0 + 1);
+		const tx = x - x0;
+		const ty = y - y0;
+		const top =
+			(grid.values[y0 * grid.width + x0] ?? grid.min) * (1 - tx) +
+			(grid.values[y0 * grid.width + x1] ?? grid.min) * tx;
+		const bottom =
+			(grid.values[y1 * grid.width + x0] ?? grid.min) * (1 - tx) +
+			(grid.values[y1 * grid.width + x1] ?? grid.min) * tx;
+		return normalizedHeight(grid, top * (1 - ty) + bottom * ty);
+	}
+
 	function waterSurface() {
 		return 0.67 - tide * 0.49;
 	}
@@ -201,47 +241,13 @@
 
 	function drawField(context: CanvasRenderingContext2D, grid: TerrainGrid) {
 		const colours = palette();
-		const cellWidth = viewWidth / grid.width;
-		const cellHeight = viewHeight / grid.height;
 		const surface = waterSurface();
-		const waterColour = scaleLinear<string>()
-			.domain([0, 1])
-			.range([rgb(colours.deep), rgb(colours.shallow)])
-			.interpolate(interpolateRgb);
-		const landColour = scaleLinear<string>()
-			.domain([0, 1])
-			.range([rgb(colours.landLow), rgb(colours.landHigh)])
-			.interpolate(interpolateRgb);
 		context.fillStyle = rgb(colours.deep);
 		context.fillRect(0, 0, viewWidth, viewHeight);
-
-		for (let y = 0; y < grid.height; y += 1) {
-			for (let x = 0; x < grid.width; x += 1) {
-				const index = y * grid.width + x;
-				const height = normalizedHeight(grid, grid.values[index] ?? grid.min);
-				const left = normalizedHeight(grid, grid.values[index - (x > 0 ? 1 : 0)] ?? grid.min);
-				const up = normalizedHeight(
-					grid,
-					grid.values[index - (y > 0 ? grid.width : 0)] ?? grid.min
-				);
-				const shade = Math.max(-0.16, Math.min(0.16, (height - left) * 0.7 + (height - up) * 0.9));
-				let colour: string;
-				if (height >= surface) {
-					const landPosition = (height - surface) / Math.max(0.01, 1 - surface);
-					colour = landColour(Math.max(0, Math.min(1, landPosition + shade)));
-				} else {
-					const depthPosition = Math.pow(height / Math.max(surface, 0.01), 0.7);
-					colour = waterColour(Math.max(0, Math.min(1, depthPosition + shade * 0.45)));
-				}
-				context.fillStyle = colour;
-				context.fillRect(
-					x * cellWidth,
-					y * cellHeight,
-					Math.ceil(cellWidth + 0.5),
-					Math.ceil(cellHeight + 0.5)
-				);
-			}
-		}
+		const raster = renderTerrainRaster(grid, surface, colours);
+		context.imageSmoothingEnabled = true;
+		context.imageSmoothingQuality = 'high';
+		context.drawImage(raster, 0, 0, viewWidth, viewHeight);
 
 		drawSurveyGrid(context, colours.grid);
 		const normalizedValues = grid.values.map((value) => normalizedHeight(grid, value));
@@ -261,6 +267,64 @@
 			context.stroke();
 		}
 		context.setLineDash([]);
+	}
+
+	function renderTerrainRaster(
+		grid: TerrainGrid,
+		surface: number,
+		colours: ReturnType<typeof palette>
+	) {
+		if (
+			terrainRaster &&
+			terrainRasterValues === grid.values &&
+			terrainRasterSurface === surface &&
+			terrainRasterDarkMode === darkMode
+		) {
+			return terrainRaster;
+		}
+
+		const raster = terrainRaster ?? document.createElement('canvas');
+		raster.width = rasterWidth;
+		raster.height = rasterHeight;
+		const rasterContext = raster.getContext('2d');
+		if (!rasterContext) return raster;
+		const image = rasterContext.createImageData(rasterWidth, rasterHeight);
+
+		for (let y = 0; y < rasterHeight; y += 1) {
+			const gridY = (y / Math.max(1, rasterHeight - 1)) * (grid.height - 1);
+			for (let x = 0; x < rasterWidth; x += 1) {
+				const gridX = (x / Math.max(1, rasterWidth - 1)) * (grid.width - 1);
+				const height = sampleNormalizedGrid(grid, gridX, gridY);
+				const left = sampleNormalizedGrid(grid, gridX - 0.85, gridY);
+				const up = sampleNormalizedGrid(grid, gridX, gridY - 0.85);
+				const shade = Math.max(-0.16, Math.min(0.16, (height - left) * 0.7 + (height - up) * 0.9));
+				const index = (y * rasterWidth + x) * 4;
+				if (height >= surface) {
+					writeInterpolatedColour(
+						image.data,
+						index,
+						colours.landLow,
+						colours.landHigh,
+						(height - surface) / Math.max(0.01, 1 - surface) + shade
+					);
+				} else {
+					writeInterpolatedColour(
+						image.data,
+						index,
+						colours.deep,
+						colours.shallow,
+						Math.pow(height / Math.max(surface, 0.01), 0.7) + shade * 0.45
+					);
+				}
+			}
+		}
+
+		rasterContext.putImageData(image, 0, 0);
+		terrainRaster = raster;
+		terrainRasterValues = grid.values;
+		terrainRasterSurface = surface;
+		terrainRasterDarkMode = darkMode;
+		return raster;
 	}
 
 	function traceContour(
@@ -364,6 +428,122 @@
 		onviewchange?.(`${biases.find((bias) => bias.id === target.id)?.name ?? target.id} focused.`);
 	}
 
+	function interpolatedRgb(from: number[], to: number[], position: number) {
+		const amount = clamp01(position);
+		return rgb(
+			from.map((channel, index) =>
+				Math.round(channel + ((to[index] ?? channel) - channel) * amount)
+			)
+		);
+	}
+
+	function contourPath(coordinates: number[][][][], gridWidth: number, gridHeight: number) {
+		return coordinates
+			.flatMap((polygon) =>
+				polygon.map(
+					(ring) =>
+						ring
+							.map(
+								([x, y], index) =>
+									`${index === 0 ? 'M' : 'L'}${((x / gridWidth) * viewWidth).toFixed(2)} ${(
+										(y / gridHeight) *
+										viewHeight
+									).toFixed(2)}`
+							)
+							.join('') + 'Z'
+				)
+			)
+			.join('');
+	}
+
+	function vectorTerrainGroup() {
+		const namespace = 'http://www.w3.org/2000/svg';
+		const group = document.createElementNS(namespace, 'g');
+		group.setAttribute('class', 'vector-terrain');
+		group.setAttribute('transform', worldTransform);
+		group.setAttribute('aria-hidden', 'true');
+		const colours = palette();
+		const surface = waterSurface();
+		const grid = layout.terrain;
+		const normalizedValues = grid.values.map((value) => normalizedHeight(grid, value));
+		const base = document.createElementNS(namespace, 'rect');
+		base.setAttribute('width', String(viewWidth));
+		base.setAttribute('height', String(viewHeight));
+		base.setAttribute('fill', rgb(colours.deep));
+		group.append(base);
+
+		const fillThresholds = Array.from(
+			new Set([...Array.from({ length: 25 }, (_, index) => (index + 1) / 26), surface])
+		)
+			.filter((threshold) => threshold > 0 && threshold < 1)
+			.sort((left, right) => left - right);
+		const filledContours = makeContours()
+			.size([grid.width, grid.height])
+			.thresholds(fillThresholds)(normalizedValues);
+		for (const contour of filledContours) {
+			const path = document.createElementNS(namespace, 'path');
+			path.setAttribute('d', contourPath(contour.coordinates, grid.width, grid.height));
+			path.setAttribute('fill-rule', 'evenodd');
+			path.setAttribute(
+				'fill',
+				contour.value >= surface
+					? interpolatedRgb(
+							colours.landLow,
+							colours.landHigh,
+							(contour.value - surface) / Math.max(0.01, 1 - surface)
+						)
+					: interpolatedRgb(
+							colours.deep,
+							colours.shallow,
+							Math.pow(contour.value / Math.max(surface, 0.01), 0.7)
+						)
+			);
+			group.append(path);
+		}
+
+		const gridGroup = document.createElementNS(namespace, 'g');
+		gridGroup.setAttribute('stroke', colours.grid);
+		gridGroup.setAttribute('stroke-width', '0.6');
+		gridGroup.setAttribute('stroke-dasharray', '1 5');
+		gridGroup.setAttribute('vector-effect', 'non-scaling-stroke');
+		for (let x = 0; x <= viewWidth; x += 100) {
+			const line = document.createElementNS(namespace, 'line');
+			line.setAttribute('x1', String(x));
+			line.setAttribute('x2', String(x));
+			line.setAttribute('y1', '0');
+			line.setAttribute('y2', String(viewHeight));
+			gridGroup.append(line);
+		}
+		for (let y = 0; y <= viewHeight; y += 65) {
+			const line = document.createElementNS(namespace, 'line');
+			line.setAttribute('x1', '0');
+			line.setAttribute('x2', String(viewWidth));
+			line.setAttribute('y1', String(y));
+			line.setAttribute('y2', String(y));
+			gridGroup.append(line);
+		}
+		group.append(gridGroup);
+
+		const lineThresholds = Array.from(new Set([0.12, 0.22, 0.32, 0.42, 0.52, 0.62, surface]))
+			.filter((threshold) => threshold > 0 && threshold < 1)
+			.sort((left, right) => left - right);
+		const lineContours = makeContours().size([grid.width, grid.height]).thresholds(lineThresholds)(
+			normalizedValues
+		);
+		for (const contour of lineContours) {
+			const coastline = Math.abs(contour.value - surface) < 0.005;
+			const path = document.createElementNS(namespace, 'path');
+			path.setAttribute('d', contourPath(contour.coordinates, grid.width, grid.height));
+			path.setAttribute('fill', 'none');
+			path.setAttribute('stroke', coastline ? colours.coast : colours.bathy);
+			path.setAttribute('stroke-width', coastline ? '1.7' : '0.75');
+			path.setAttribute('vector-effect', 'non-scaling-stroke');
+			if (!coastline) path.setAttribute('stroke-dasharray', '3 4');
+			group.append(path);
+		}
+		return group;
+	}
+
 	function exportSvgMarkup() {
 		const clone = overlay.cloneNode(true) as SVGSVGElement;
 		clone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -375,16 +555,16 @@
 		clone.style.setProperty('--arch-compare', '#efbd62');
 		clone.style.setProperty('--arch-focus', '#fff0a6');
 		clone.style.setProperty('--arch-peak-stroke', darkMode ? '#071c22' : '#24434a');
-		const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
-		image.setAttribute('href', canvas.toDataURL('image/png'));
-		image.setAttribute('x', '0');
-		image.setAttribute('y', '0');
-		image.setAttribute('width', String(viewWidth));
-		image.setAttribute('height', String(viewHeight));
-		clone.insertBefore(image, clone.firstChild);
+		const world = clone.querySelector(':scope > g');
+		const background = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+		background.setAttribute('width', String(viewWidth));
+		background.setAttribute('height', String(viewHeight));
+		background.setAttribute('fill', rgb(palette().deep));
+		clone.insertBefore(background, world);
+		clone.insertBefore(vectorTerrainGroup(), world);
 		const style = document.createElementNS('http://www.w3.org/2000/svg', 'style');
-		style.textContent = `.bias-label,.family,.mechanism,.depth{paint-order:stroke fill;stroke:var(--arch-label-halo);stroke-width:4px;fill:var(--arch-label);font-family:Georgia,serif}.bias-label{font-size:10px;font-weight:700}.family{font-size:18px;font-style:italic}.mechanism{font-size:20px;font-weight:700}.depth{font-size:7px}.hit{fill:transparent}.peak.dimmed{opacity:.18}.peak.highlighted path,.peak.selected path,.peak.compared path{filter:drop-shadow(0 0 8px var(--arch-focus))}`;
-		clone.insertBefore(style, image.nextSibling);
+		style.textContent = `.bias-label,.family,.mechanism,.depth{paint-order:stroke fill;stroke:var(--arch-label-halo);stroke-width:4px;fill:var(--arch-label);font-family:Georgia,serif}.bias-label{font-size:10px;font-weight:700}.family{font-size:18px;font-style:italic}.mechanism{font-size:20px;font-weight:700}.depth{font-size:7px}.hit{fill:transparent}.label-leader{stroke:var(--arch-label);stroke-width:.8px}.peak.dimmed{opacity:.18}.peak.submerged .marker-shape,.peak.submerged .survey-cross{opacity:.58}.peak.submerged.selected .marker-shape,.peak.submerged.selected .survey-cross,.peak.submerged.compared .marker-shape,.peak.submerged.compared .survey-cross{opacity:1}.peak.exposed .marker-shape{filter:brightness(1.12)}.sonar-pulse{fill:none;stroke:var(--arch-focus);stroke-width:1.5px}.peak.highlighted path,.peak.selected path,.peak.compared path{filter:drop-shadow(0 0 8px var(--arch-focus))}`;
+		clone.insertBefore(style, world);
 		return new XMLSerializer().serializeToString(clone);
 	}
 
@@ -395,7 +575,7 @@
 				new Blob([svgMarkup], { type: 'image/svg+xml;charset=utf-8' }),
 				'bias-archipelago-view.svg'
 			);
-			onviewchange?.('Current map downloaded as SVG.');
+			onviewchange?.('Current map downloaded as fully vector SVG.');
 			return;
 		}
 		const exportCanvas = document.createElement('canvas');
@@ -452,7 +632,8 @@
 		<title id={`${id}-title`}>The Bias Archipelago</title>
 		<desc id={`${id}-description`}>
 			A curated explanatory terrain. Biases are separate peaks; shared functional features make
-			neighbouring landforms. Use arrow keys to move between neighbouring peaks and Enter to open
+			neighbouring landforms. Filled markers are exposed above the current threshold; hollow crossed
+			markers are submerged. Use arrow keys to move between neighbouring peaks and Enter to open
 			one.
 		</desc>
 		<g transform={worldTransform}>
@@ -472,10 +653,29 @@
 		</g>
 	</svg>
 	<div class="coordinates" aria-hidden="true">
-		<span>18°30′N · curated functional space</span>
+		<span>Explanatory coordinates · not geographic</span>
 		<span>{(zoom * 100).toFixed(0)}%</span>
 	</div>
 	{#if !compact}
+		<div
+			class="map-grammar"
+			class:opening-key={id === 'bias-map-opening'}
+			aria-label="Map symbols: peak marker, one named construct; terrain, density from shared coded features; coastline, the current explanatory threshold."
+		>
+			<span
+				><i class="grammar-peak" aria-hidden="true"></i><b>Peak marker</b><small>construct</small
+				></span
+			>
+			<span
+				><i class="grammar-terrain" aria-hidden="true"></i><b>Terrain</b><small
+					>shared features</small
+				></span
+			>
+			<span
+				><i class="grammar-coast" aria-hidden="true"></i><b>Coastline</b><small>threshold</small
+				></span
+			>
+		</div>
 		<div class="map-tools" aria-label="Map zoom controls">
 			<button type="button" onclick={zoomIn} aria-label="Zoom in">+</button>
 			<button type="button" onclick={zoomOut} aria-label="Zoom out">−</button>
@@ -533,6 +733,79 @@
 		letter-spacing: 0.1em;
 		pointer-events: none;
 		text-transform: uppercase;
+	}
+
+	.map-grammar {
+		position: absolute;
+		z-index: 2;
+		bottom: 1.35rem;
+		left: 0.55rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem 0.55rem;
+		max-width: calc(100% - 5rem);
+		padding: 0.28rem 0.42rem;
+		border: 1px solid color-mix(in srgb, var(--arch-rule) 75%, transparent);
+		border-radius: 0.3rem;
+		background: color-mix(in srgb, var(--arch-panel) 78%, transparent);
+		backdrop-filter: blur(0.3rem);
+		color: var(--arch-label);
+		font-size: 0.52rem;
+		line-height: 1.15;
+		pointer-events: none;
+	}
+
+	.map-grammar.opening-key {
+		bottom: 8rem;
+	}
+
+	.map-grammar > span {
+		display: inline-grid;
+		grid-template-columns: 0.7rem auto;
+		align-items: center;
+		gap: 0 0.2rem;
+	}
+
+	.map-grammar i {
+		position: relative;
+		display: block;
+		grid-row: 1 / 3;
+		width: 0.62rem;
+		height: 0.62rem;
+		font-style: normal;
+	}
+
+	.map-grammar b {
+		font-size: 0.51rem;
+		letter-spacing: 0.045em;
+		text-transform: uppercase;
+	}
+
+	.map-grammar small {
+		color: color-mix(in srgb, var(--arch-label) 70%, transparent);
+		font-size: 0.47rem;
+	}
+
+	.grammar-peak {
+		border: 1px solid var(--arch-label);
+		border-radius: 50%;
+		background: var(--arch-label);
+		box-shadow: 0 0 0 2px color-mix(in srgb, var(--arch-label) 18%, transparent);
+	}
+
+	.grammar-terrain {
+		border-radius: 0.1rem;
+		background: linear-gradient(135deg, #668c8a, #e2d9ba);
+	}
+
+	.grammar-coast::after {
+		position: absolute;
+		top: 0.25rem;
+		right: 0;
+		left: 0;
+		border-top: 1.5px solid var(--arch-label);
+		content: '';
+		transform: rotate(-18deg);
 	}
 
 	.map-tools {

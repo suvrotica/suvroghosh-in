@@ -1,9 +1,25 @@
 <script lang="ts">
+	import sourceRegistry from '$lib/data/bias-archipelago/sources.json';
 	import type {
 		Bias,
 		BiasNeighbour,
 		BiasRelation
 	} from '$lib/visualizations/bias-archipelago/bias-types';
+
+	type SourceRecord = {
+		id: string;
+		url: string;
+		doi: string;
+		authors: string;
+		year: number;
+		title: string;
+		venue: string;
+		kind: 'original study' | 'meta-analysis' | 'review' | 'book chapter' | 'journal article';
+	};
+
+	const sourcesById = new Map(
+		(sourceRegistry as SourceRecord[]).map((source) => [source.id.toLowerCase(), source])
+	);
 
 	let {
 		bias,
@@ -91,12 +107,25 @@
 		if (event.key === 'End') sheetHeight = 72;
 	}
 
-	function sourceLabel(source: string, index: number) {
+	function sourceId(source: string) {
 		try {
-			return `${new URL(source).hostname.replace(/^www\./, '')} · ${index + 1}`;
+			const url = new URL(source);
+			if (/^(?:dx\.)?doi\.org$/i.test(url.hostname)) {
+				return decodeURIComponent(url.pathname.replace(/^\//, '')).toLowerCase();
+			}
 		} catch {
-			return `Source ${index + 1}`;
+			// Keep the original identifier for the visible fallback below.
 		}
+		return source.toLowerCase();
+	}
+
+	function sourceRecord(source: string) {
+		return sourcesById.get(sourceId(source));
+	}
+
+	function fallbackSourceLabel(source: string) {
+		const id = sourceId(source);
+		return id.startsWith('10.') ? `DOI ${id}` : source;
 	}
 </script>
 
@@ -165,7 +194,15 @@
 					{#if other}
 						<li>
 							<button type="button" onclick={() => onselect(other.id)}>{other.name}</button>
-							<span>{(neighbour.similarity * 100).toFixed(0)}% structured feature overlap</span>
+							<span class="feature-match">
+								<strong
+									>Feature match in this atlas: {(neighbour.similarity * 100).toFixed(0)}%</strong
+								>
+								<small
+									>Computed from the declared editorial feature model—not an experimental effect
+									size.</small
+								>
+							</span>
 						</li>
 					{/if}
 				{/each}
@@ -205,7 +242,7 @@
 		<h4>Research lineage</h4>
 		<p>
 			{bias.lineages.map((lineage) => lineage.tradition).join(' · ')}{bias.firstAssociatedYear
-				? ` · established around ${bias.firstAssociatedYear}`
+				? ` · early source used in this atlas: ${bias.firstAssociatedYear}`
 				: ''}
 		</p>
 		{#each bias.lineages.filter((lineage) => lineage.note) as lineage (lineage.tradition)}
@@ -223,8 +260,8 @@
 		<h4>Sources</h4>
 		<ol class="sources">
 			<!-- eslint-disable svelte/no-navigation-without-resolve -->
-			{#each bias.canonicalSources as source, index (source)}
-				<li><a href={source} target="_blank" rel="noreferrer">{sourceLabel(source, index)}</a></li>
+			{#each bias.canonicalSources as source (source)}
+				<li>{@render SourceLink({ source })}</li>
 			{/each}
 			<!-- eslint-enable svelte/no-navigation-without-resolve -->
 		</ol>
@@ -250,14 +287,38 @@
 				<small>{relation.strength} · {relation.type.replaceAll('-', ' ')}</small>
 				<span class="relation-sources">
 					<!-- eslint-disable svelte/no-navigation-without-resolve -->
-					{#each relation.sourceIds as source, index (source)}
-						<a href={source} target="_blank" rel="noreferrer">evidence {index + 1}</a>
+					{#each relation.sourceIds as source (source)}
+						{@render SourceLink({ source, compact: true })}
 					{/each}
 					<!-- eslint-enable svelte/no-navigation-without-resolve -->
 				</span>
 			</li>
 		{/each}
 	</ul>
+{/snippet}
+
+{#snippet SourceLink({ source, compact = false }: { source: string; compact?: boolean })}
+	{@const record = sourceRecord(source)}
+	<!-- eslint-disable svelte/no-navigation-without-resolve -->
+	<a
+		class="source-link"
+		class:compact
+		href={record?.url ?? source}
+		target="_blank"
+		rel="noreferrer"
+	>
+		{#if record}
+			<span>
+				<strong>{record.authors} ({record.year})</strong>, “{record.title}” —
+				<em>{record.venue}</em>
+			</span>
+			<small>{record.kind}</small>
+		{:else}
+			<span>Source metadata unavailable — {fallbackSourceLabel(source)}</span>
+			<small>external source</small>
+		{/if}
+	</a>
+	<!-- eslint-enable svelte/no-navigation-without-resolve -->
 {/snippet}
 
 <style>
@@ -370,10 +431,27 @@
 		gap: 0.65rem;
 	}
 
-	.feature-neighbours span,
+	.feature-neighbours > li > span,
 	.empty-relation {
 		color: var(--arch-muted);
 		font-size: 0.68rem;
+	}
+
+	.feature-match {
+		display: grid;
+		max-width: 17rem;
+		gap: 0.18rem;
+		text-align: right;
+	}
+
+	.feature-match strong {
+		color: var(--arch-text);
+		font-weight: 700;
+	}
+
+	.feature-match small {
+		font-size: 0.62rem;
+		line-height: 1.35;
 	}
 
 	h4 {
@@ -447,16 +525,42 @@
 	}
 
 	.relation-sources {
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
 		gap: 0.45rem;
 	}
 
-	.relation-sources a {
+	.source-link {
+		display: grid;
+		gap: 0.18rem;
+		padding: 0.55rem 0.62rem;
+		border: 1px solid var(--arch-rule);
+		border-radius: 0.35rem;
 		color: var(--arch-accent-bright);
-		font-size: 0.65rem;
-		text-decoration: underline;
-		text-underline-offset: 0.15rem;
+		font-size: 0.72rem;
+		line-height: 1.45;
+		text-decoration: none;
+	}
+
+	.source-link:hover {
+		border-color: var(--arch-accent);
+		background: color-mix(in srgb, var(--arch-accent) 8%, transparent);
+	}
+
+	.source-link em {
+		color: var(--arch-text);
+	}
+
+	.source-link small {
+		color: var(--arch-muted);
+		font-size: 0.62rem;
+		font-weight: 750;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.source-link.compact {
+		padding: 0.42rem 0.5rem;
+		font-size: 0.67rem;
 	}
 
 	.sources {
@@ -465,12 +569,17 @@
 		counter-reset: sources;
 	}
 
-	.sources a {
-		color: var(--arch-accent-bright);
-		font-size: 0.72rem;
-	}
-
 	@media (max-width: 61.99rem) {
+		.feature-neighbours li {
+			align-items: flex-start;
+			flex-direction: column;
+		}
+
+		.feature-match {
+			max-width: none;
+			text-align: left;
+		}
+
 		.details {
 			position: fixed;
 			z-index: 40;
