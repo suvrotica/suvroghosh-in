@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "bias-archipelago-2026-08.png",
+			"src": "/images/bias-archipelago-2026-08.png",
+			"bytes": 359414,
+			"width": 1654,
+			"height": 1040
+		},
+		{
 			"name": "bias-archipelago.png",
 			"src": "/images/bias-archipelago.png",
 			"bytes": 359414,

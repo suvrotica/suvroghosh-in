@@ -8000,6 +8000,21 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/bias-archipelago-2026-08.png": {
+      "format": "PNG",
+      "height": 1040,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1040,
+      "originalWidth": 1654,
+      "outputBytes": 359414,
+      "outputHash": "a0e58eeebcaf3f325f0237b576f22a4818410909b012940f2d1f1d6608d6cea1",
+      "resized": false,
+      "sourceBytes": 359414,
+      "sourceHash": "a0e58eeebcaf3f325f0237b576f22a4818410909b012940f2d1f1d6608d6cea1",
+      "width": 1654
+    },
     "static/images/bias-archipelago.png": {
       "format": "PNG",
       "height": 1040,

@@ -3,7 +3,7 @@ title: "The Bias Archipelago: Why the Mind’s Errors Are Not Islands"
 description: "An interactive bathymetric atlas of cognitive biases, revealing shared mechanisms, research lineages, and conditions that make one shortcut recruit another."
 date: "2026-08-05"
 dateModified: "2026-08-05"
-thumbnail: "/images/bias-archipelago.png"
+thumbnail: "/images/bias-archipelago-2026-08.png"
 thumbnailAlt: "A scientific bathymetric map in deep teal showing named cognitive-bias peaks joining into pale ridges beneath contour-lined water"
 category: "Visualizations"
 tags: ["Cognitive Bias", "Psychology", "Decision Making", "Behavioral Economics", "Scientific Visualization", "Cognitive Science", "Heuristics", "Judgment Under Uncertainty", "Interactive", "Data Visualization"]
