@@ -10658,7 +10658,7 @@
 		"src/lib/posts/the-bias-archipelago.md": {
 			"bodyHash": "5b242576344b98b8e52f027bc0fc3835d606c0b6b56b032d14e2bb8fe2c3c48e",
 			"hashVersion": 2,
-			"revisionHash": "7abb9f721ed279c70540dbf5cfe9c27ac7337aaffe7ee9ce296dcab8464835cc",
+			"revisionHash": "f8d135bc9adbb5ccace77498f2ac7cc7e0f499423ce1438aa8c7071b6260adb0",
 			"generatedTags": [
 				"Cognitive Bias",
 				"Psychology",
@@ -10683,7 +10683,8 @@
 				"Interactive",
 				"Data Visualization"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-05"
 		}
 	},
 	"maxTags": 10
