@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T09:02:04.055837+00:00",
+  "generatedAt": "2026-08-05T06:43:22.658052+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -8301,6 +8301,29 @@
         "White",
         "Bishnu",
         "Dark"
+      ],
+      "wordCount": 130
+    },
+    "the-bias-archipelago": {
+      "generatedAt": "2026-08-05T06:43:22.384991+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-bias-archipelago.svg",
+      "source": "src/lib/posts/the-bias-archipelago.md",
+      "sourceHash": "0d62d11f78355282a41972ecda3c781e90af66df631558e9e277108086a1271d",
+      "sourceModified": "2026-08-05T06:32:55.756077+00:00",
+      "topWords": [
+        "Bias",
+        "Different",
+        "Evidence",
+        "Shared",
+        "Information",
+        "Memory",
+        "Cognitive",
+        "Decision",
+        "Atlas",
+        "Biases",
+        "Social",
+        "Outcome"
       ],
       "wordCount": 130
     },

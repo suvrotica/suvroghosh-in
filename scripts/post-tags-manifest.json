@@ -10654,6 +10654,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-04"
+		},
+		"src/lib/posts/the-bias-archipelago.md": {
+			"bodyHash": "5b242576344b98b8e52f027bc0fc3835d606c0b6b56b032d14e2bb8fe2c3c48e",
+			"hashVersion": 2,
+			"revisionHash": "7abb9f721ed279c70540dbf5cfe9c27ac7337aaffe7ee9ce296dcab8464835cc",
+			"generatedTags": [
+				"Cognitive Bias",
+				"Psychology",
+				"Decision Making",
+				"Behavioral Economics",
+				"Scientific Visualization",
+				"Cognitive Science",
+				"Heuristics",
+				"Judgment Under Uncertainty",
+				"Interactive",
+				"Data Visualization"
+			],
+			"pinnedTags": [
+				"Cognitive Bias",
+				"Psychology",
+				"Decision Making",
+				"Behavioral Economics",
+				"Scientific Visualization",
+				"Cognitive Science",
+				"Heuristics",
+				"Judgment Under Uncertainty",
+				"Interactive",
+				"Data Visualization"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

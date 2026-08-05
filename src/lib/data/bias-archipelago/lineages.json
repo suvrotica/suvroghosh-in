@@ -1,0 +1,58 @@
+[
+	{
+		"id": "judgment-and-decision-making",
+		"label": "Judgment and decision-making",
+		"description": "Research on probabilistic judgement, choice under uncertainty, heuristics and decision quality.",
+		"colour": "#4F6D8A",
+		"symbol": "diamond"
+	},
+	{
+		"id": "social-psychology",
+		"label": "Social psychology",
+		"description": "Research on attribution, attitudes, identity, interpersonal judgement and social influence.",
+		"colour": "#9A5F63",
+		"symbol": "circle"
+	},
+	{
+		"id": "memory-and-cognition",
+		"label": "Memory and cognition",
+		"description": "Research on attention, learning, reasoning, remembering and information processing.",
+		"colour": "#6C7350",
+		"symbol": "square"
+	},
+	{
+		"id": "perception-and-psychophysics",
+		"label": "Perception and psychophysics",
+		"description": "Research on perceptual salience, discrimination, magnitude and the relation between stimuli and experience.",
+		"colour": "#7A6092",
+		"symbol": "triangle"
+	},
+	{
+		"id": "behavioural-economics",
+		"label": "Behavioral economics",
+		"description": "Research joining psychological evidence to economic accounts of value, markets and intertemporal choice.",
+		"colour": "#A06B3B",
+		"symbol": "diamond"
+	},
+	{
+		"id": "clinical-and-medical-reasoning",
+		"label": "Clinical and medical reasoning",
+		"description": "Research on judgement, diagnosis, risk communication and decision-making in health contexts.",
+		"colour": "#3E7A72",
+		"symbol": "cross"
+	},
+	{
+		"id": "organizational-and-communication-research",
+		"label": "Organizational and communication research",
+		"description": "Research on institutions, management, media selection, public discourse and collective decisions.",
+		"colour": "#80694B",
+		"symbol": "square"
+	},
+	{
+		"id": "popular-or-weakly-formalized",
+		"label": "Popular or weakly formalized terminology",
+		"description": "Labels common in applied or public discussion whose independent scientific status is limited or unsettled.",
+		"colour": "#6E6E73",
+		"symbol": "cross"
+	}
+]

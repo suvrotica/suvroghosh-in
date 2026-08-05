@@ -8000,6 +8000,21 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/bias-archipelago.png": {
+      "format": "PNG",
+      "height": 1040,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1040,
+      "originalWidth": 1600,
+      "outputBytes": 169595,
+      "outputHash": "eec3a882cc44a098126bac4270e32dca11084ea0ba8a52d1d9bc12dde2c8ac58",
+      "resized": false,
+      "sourceBytes": 169595,
+      "sourceHash": "eec3a882cc44a098126bac4270e32dca11084ea0ba8a52d1d9bc12dde2c8ac58",
+      "width": 1600
+    },
     "static/images/brownian-motion-laboratory.png": {
       "format": "PNG",
       "height": 941,

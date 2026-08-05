@@ -1,0 +1,766 @@
+[
+	{
+		"source": "availability-heuristic",
+		"target": "recency-effect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can give extra weight to information that comes to mind readily, although recency is specifically about when information appeared.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0010-0285(73)90033-9",
+			"https://doi.org/10.1037/h0045106"
+		]
+	},
+	{
+		"source": "recency-effect",
+		"target": "primacy-effect",
+		"type": "mirror",
+		"strength": "strong",
+		"explanation": "These are contrasting serial-position patterns: later items can dominate in some conditions, while early items can dominate in others.",
+		"sourceIds": ["https://doi.org/10.1037/h0045106"]
+	},
+	{
+		"source": "vividness-effect",
+		"target": "salience-bias",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Vividness is one route by which information becomes salient, but salience also includes prominence produced by contrast, position and attention.",
+		"sourceIds": [
+			"https://doi.org/10.1111/j.1559-1816.1977.tb00750.x",
+			"https://doi.org/10.1016/S0065-2601(08)60009-X"
+		]
+	},
+	{
+		"source": "attentional-bias",
+		"target": "salience-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both concern unequal allocation of attention, while attentional bias is often operationalised as selective orienting linked to a person's state or concern.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0021-843X.95.1.15",
+			"https://doi.org/10.1016/S0065-2601(08)60009-X"
+		]
+	},
+	{
+		"source": "isolation-effect",
+		"target": "salience-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "An isolated item gains salience through contrast with its context, making distinctiveness a more specific member of the broader salience family.",
+		"sourceIds": [
+			"https://doi.org/10.3758/BF03214414",
+			"https://doi.org/10.1016/S0065-2601(08)60009-X"
+		]
+	},
+	{
+		"source": "focusing-illusion",
+		"target": "vividness-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can over-weight a conspicuous aspect of a judgement, but focusing concerns the selected focal attribute whereas vividness concerns presentation and imaginability.",
+		"sourceIds": [
+			"https://doi.org/10.1111/1467-9280.00066",
+			"https://doi.org/10.1111/j.1559-1816.1977.tb00750.x"
+		]
+	},
+	{
+		"source": "availability-cascade",
+		"target": "availability-heuristic",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Availability cascades are a social amplification account in which repetition and public attention make a claim increasingly retrievable; the individual availability heuristic is only one part of that account.",
+		"sourceIds": ["https://doi.org/10.2307/1229439", "https://doi.org/10.1016/0010-0285(73)90033-9"]
+	},
+	{
+		"source": "mere-exposure-effect",
+		"target": "illusory-truth-effect",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Repeated exposure can increase both liking and judged truth through familiarity and processing fluency, but the measured outcomes differ: affect for mere exposure and truth assessment for illusory truth.",
+		"sourceIds": [
+			"https://doi.org/10.1037/h0025848",
+			"https://doi.org/10.1016/S0022-5371(77)80012-1",
+			"https://doi.org/10.1177/1088868309352251"
+		]
+	},
+	{
+		"source": "processing-fluency-effect",
+		"target": "mere-exposure-effect",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Ease of processing is a well-supported explanation for many mere-exposure findings, while exposure can also operate through recognition and affective learning.",
+		"sourceIds": ["https://doi.org/10.1207/s15327957pspr0804_3", "https://doi.org/10.1037/h0025848"]
+	},
+	{
+		"source": "affect-heuristic",
+		"target": "mood-congruent-judgment",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both use affective information in judgement, but the affect heuristic often concerns feelings attached to a target whereas mood congruence can reflect the judge's broader current state.",
+		"sourceIds": [
+			"https://doi.org/10.1016/j.ejor.2005.04.006",
+			"https://doi.org/10.1037/0003-066X.36.2.129"
+		]
+	},
+	{
+		"source": "halo-effect",
+		"target": "affect-heuristic",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "A favourable or unfavourable global impression can colour specific ratings, resembling the use of an overall affective response as a shortcut.",
+		"sourceIds": ["https://doi.org/10.1037/h0071663", "https://doi.org/10.1016/j.ejor.2005.04.006"]
+	},
+	{
+		"source": "negativity-bias",
+		"target": "vividness-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "moderate",
+		"explanation": "Negative events are often vivid and memorable, but their extra weight may reflect valence rather than vividness; the two dimensions should not be treated as aliases.",
+		"sourceIds": [
+			"https://doi.org/10.1037/1089-2680.5.4.323",
+			"https://doi.org/10.1111/j.1559-1816.1977.tb00750.x"
+		]
+	},
+	{
+		"source": "identifiable-victim-effect",
+		"target": "affect-heuristic",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "An identified person can evoke a more concrete emotional response than an anonymous statistical group, making affect one plausible shared process without exhausting the effect.",
+		"sourceIds": [
+			"https://doi.org/10.1023/A:1022299422219",
+			"https://doi.org/10.1016/j.ejor.2005.04.006"
+		]
+	},
+	{
+		"source": "hindsight-bias",
+		"target": "outcome-bias",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Both use known outcomes when looking backward, but hindsight bias changes remembered predictability while outcome bias changes evaluation of an earlier decision's quality.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0096-1523.1.3.288",
+			"https://doi.org/10.1037/0022-3514.54.4.569"
+		]
+	},
+	{
+		"source": "consistency-bias",
+		"target": "hindsight-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Present knowledge can make prior beliefs seem more consistent with the current state, while hindsight bias more specifically makes a known outcome seem foreseeable.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0033-295X.96.2.341",
+			"https://doi.org/10.1037/0096-1523.1.3.288"
+		]
+	},
+	{
+		"source": "misinformation-effect",
+		"target": "source-monitoring-error",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Post-event information can enter later reports when its source is confused with the witnessed event, although misinformation effects can also reflect response and retrieval processes.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0096-3445.118.1.100",
+			"https://doi.org/10.1037/0033-2909.114.1.3"
+		]
+	},
+	{
+		"source": "choice-supportive-bias",
+		"target": "consistency-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both reconstruct the past in a direction consistent with the present, while choice-supportive bias is specifically organised around a selected option.",
+		"sourceIds": [
+			"https://doi.org/10.1111/1467-9280.00228",
+			"https://doi.org/10.1037/0033-295X.96.2.341"
+		]
+	},
+	{
+		"source": "rosy-retrospection",
+		"target": "fading-affect-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both describe changes in remembered emotional experience over time, but fading affect is an asymmetry in emotional intensity whereas rosy retrospection is a favourable retrospective evaluation.",
+		"sourceIds": [
+			"https://doi.org/10.1006/jesp.1997.1333",
+			"https://doi.org/10.1037/1089-2680.7.2.203"
+		]
+	},
+	{
+		"source": "telescoping-effect",
+		"target": "recency-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "tentative",
+		"explanation": "Both alter the apparent temporal prominence of events, but telescoping concerns remembered dates while recency concerns the influence or recall of recently presented items.",
+		"sourceIds": ["https://doi.org/10.3758/BF03202626", "https://doi.org/10.1037/h0045106"]
+	},
+	{
+		"source": "memory-conformity",
+		"target": "misinformation-effect",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Other people's reports can act as post-event misinformation, but memory conformity additionally foregrounds social influence and coordination between witnesses.",
+		"sourceIds": ["https://doi.org/10.1002/acp.885", "https://doi.org/10.1037/0096-3445.118.1.100"]
+	},
+	{
+		"source": "representativeness-heuristic",
+		"target": "base-rate-neglect",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "A case that resembles a category prototype can dominate judgement at the expense of prior probabilities, making representativeness a common account of base-rate neglect.",
+		"sourceIds": [
+			"https://doi.org/10.1126/science.185.4157.1124",
+			"https://doi.org/10.1016/0001-6918(80)90046-3"
+		]
+	},
+	{
+		"source": "representativeness-heuristic",
+		"target": "conjunction-fallacy",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "A detailed conjunction can seem more representative of a prototype even though it cannot be more probable than either constituent event.",
+		"sourceIds": ["https://doi.org/10.1037/0033-295X.90.4.293"]
+	},
+	{
+		"source": "hot-hand-belief",
+		"target": "gamblers-fallacy",
+		"type": "mirror",
+		"strength": "strong",
+		"explanation": "The labels describe opposite expectations after a streak: continuation for hot-hand belief and reversal for the gambler's fallacy. Which expectation is mistaken depends on the process, so neither label alone establishes error.",
+		"sourceIds": [
+			"https://doi.org/10.3758/BF03206327",
+			"https://doi.org/10.1016/0010-0285(85)90010-6"
+		]
+	},
+	{
+		"source": "gamblers-fallacy",
+		"target": "law-of-small-numbers",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Expecting short random sequences to balance quickly is a specific expression of the broader expectation that small samples closely represent their generating process.",
+		"sourceIds": ["https://doi.org/10.1037/h0031322"]
+	},
+	{
+		"source": "clustering-illusion",
+		"target": "law-of-small-numbers",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both concern intuitions about what small random samples should look like; clustering illusion treats naturally occurring clumps as more meaningful than warranted.",
+		"sourceIds": ["https://doi.org/10.1037/h0031322"]
+	},
+	{
+		"source": "regression-neglect",
+		"target": "law-of-small-numbers",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can follow from underestimating sampling variability, although regression neglect specifically misses the expected movement of extreme observations toward the mean.",
+		"sourceIds": ["https://doi.org/10.1037/h0034747", "https://doi.org/10.1037/h0031322"]
+	},
+	{
+		"source": "denominator-neglect",
+		"target": "base-rate-neglect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both underweight reference-class information, but denominator neglect concerns ratio components whereas base-rate neglect concerns prior prevalence in an inference.",
+		"sourceIds": [
+			"https://doi.org/10.1016/j.lindif.2007.03.011",
+			"https://doi.org/10.1016/0001-6918(80)90046-3"
+		]
+	},
+	{
+		"source": "confirmation-bias",
+		"target": "motivated-reasoning",
+		"type": "near-overlap",
+		"strength": "strong",
+		"explanation": "Both can produce selective search and asymmetric scrutiny. Confirmation bias is defined by fit with an existing belief or hypothesis, whereas motivated reasoning is organised around a desired conclusion and can recruit confirmation-like strategies.",
+		"sourceIds": [
+			"https://doi.org/10.1037/1089-2680.2.2.175",
+			"https://doi.org/10.1037/0033-2909.108.3.480"
+		]
+	},
+	{
+		"source": "confirmation-bias",
+		"target": "myside-bias",
+		"type": "near-overlap",
+		"strength": "strong",
+		"explanation": "Myside bias is commonly used for selective evaluation favouring one's prior position, making it a substantial but not perfectly bounded overlap with the broader confirmation-bias literature.",
+		"sourceIds": [
+			"https://doi.org/10.1037/1089-2680.2.2.175",
+			"https://doi.org/10.1177/0963721413480174"
+		]
+	},
+	{
+		"source": "selective-exposure",
+		"target": "confirmation-bias",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Choosing congenial information is one search-stage manifestation often grouped under confirmation bias, while confirmation bias also includes interpretation, testing and recall.",
+		"sourceIds": ["https://doi.org/10.1037/a0015701", "https://doi.org/10.1037/1089-2680.2.2.175"]
+	},
+	{
+		"source": "belief-perseverance",
+		"target": "continued-influence-effect",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Both describe persistence after a belief's support has been challenged, but continued influence research focuses on retracted misinformation and its role in later inference.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.32.5.880",
+			"https://doi.org/10.1177/1529100612451018"
+		]
+	},
+	{
+		"source": "attitude-polarization",
+		"target": "disconfirmation-bias",
+		"type": "shared-mechanism",
+		"strength": "strong",
+		"explanation": "Asymmetric scrutiny of unwelcome evidence is one process by which mixed information can leave opposing groups further apart, though polarization is an outcome rather than a single mechanism.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.37.11.2098",
+			"https://doi.org/10.1111/j.1540-5907.2006.00214.x"
+		]
+	},
+	{
+		"source": "belief-bias",
+		"target": "confirmation-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Prior beliefs can shape both acceptance of syllogistic conclusions and evaluation of evidence, but belief bias is a task-specific reasoning effect rather than a synonym for confirmation bias.",
+		"sourceIds": ["https://doi.org/10.3758/BF03196976", "https://doi.org/10.1037/1089-2680.2.2.175"]
+	},
+	{
+		"source": "anchoring-effect",
+		"target": "framing-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "moderate",
+		"explanation": "Both show context-sensitive judgement, but an anchor supplies a starting value whereas a frame changes the description or reference perspective of otherwise related options.",
+		"sourceIds": [
+			"https://doi.org/10.1126/science.185.4157.1124",
+			"https://doi.org/10.1126/science.7455683"
+		]
+	},
+	{
+		"source": "loss-aversion",
+		"target": "endowment-effect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Treating relinquishment as a loss can contribute to higher valuations of owned goods, but ownership effects vary with procedures, experience and competing accounts.",
+		"sourceIds": ["https://doi.org/10.2307/1914185", "https://doi.org/10.1016/0167-2681(80)90051-7"]
+	},
+	{
+		"source": "status-quo-bias",
+		"target": "default-effect",
+		"type": "near-overlap",
+		"strength": "strong",
+		"explanation": "A default often designates the status quo and raises the cost or meaning of switching, while status-quo preference can remain even without an explicit default.",
+		"sourceIds": ["https://doi.org/10.1007/BF00055564", "https://doi.org/10.1126/science.1091721"]
+	},
+	{
+		"source": "sunk-cost-effect",
+		"target": "escalation-of-commitment",
+		"type": "near-overlap",
+		"strength": "strong",
+		"explanation": "Both describe persistence after prior investment. Sunk-cost effects focus on irrecoverable expenditure entering a current choice, whereas escalation research also emphasises responsibility, self-justification, feedback and organisational context.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0749-5978(85)90049-4",
+			"https://doi.org/10.1016/0030-5073(76)90005-2"
+		]
+	},
+	{
+		"source": "sunk-cost-effect",
+		"target": "mental-accounting",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "A prior expenditure can remain psychologically attached to a particular project or account, although mental accounting includes many effects beyond persistence after sunk costs.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0749-5978(85)90049-4",
+			"https://doi.org/10.1287/mksc.4.3.199"
+		]
+	},
+	{
+		"source": "loss-aversion",
+		"target": "status-quo-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Potential disadvantages of switching can loom larger than comparable advantages and thereby favour the current state, alongside omission, regret and effort considerations.",
+		"sourceIds": ["https://doi.org/10.2307/1914185", "https://doi.org/10.1007/BF00055564"]
+	},
+	{
+		"source": "self-serving-bias",
+		"target": "better-than-average-effect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can preserve a favourable self-view, but self-serving bias concerns explanations of outcomes while better-than-average effects concern comparative self-ratings.",
+		"sourceIds": ["https://doi.org/10.1037/h0076486", "https://doi.org/10.1037/0022-3514.49.6.1621"]
+	},
+	{
+		"source": "optimism-bias",
+		"target": "overconfidence-effect",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Both can yield overly favourable forecasts, but optimism concerns expected outcomes whereas overconfidence also includes excessive precision and overestimation of knowledge or performance.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.39.5.806",
+			"https://doi.org/10.1037/0033-295X.115.2.502"
+		]
+	},
+	{
+		"source": "illusion-of-control",
+		"target": "overconfidence-effect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Overestimating personal control can support excessive confidence in forecasts, while overconfidence can also occur where control is not at issue.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.32.2.311",
+			"https://doi.org/10.1037/0033-295X.115.2.502"
+		]
+	},
+	{
+		"source": "planning-fallacy",
+		"target": "optimism-bias",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Underestimating completion time is an optimistic forecast, but planning-fallacy accounts also emphasise the inside view and neglect of past completion distributions.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.67.3.366",
+			"https://doi.org/10.1037/0022-3514.39.5.806"
+		]
+	},
+	{
+		"source": "bias-blind-spot",
+		"target": "naive-realism",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Seeing one's own view as an objective reading of reality makes it easier to locate distorting influences in others than in oneself.",
+		"sourceIds": [
+			"https://doi.org/10.1177/0146167202286008",
+			"https://doi.org/10.1037/0033-295X.111.3.781"
+		]
+	},
+	{
+		"source": "dunning-kruger-effect",
+		"target": "overconfidence-effect",
+		"type": "near-overlap",
+		"strength": "tentative",
+		"explanation": "The Dunning–Kruger label is often used for overconfidence among low performers, but observed patterns can also reflect measurement, regression and task difficulty rather than a distinct mechanism.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.77.6.1121",
+			"https://doi.org/10.1037/0033-295X.115.2.502"
+		]
+	},
+	{
+		"source": "in-group-bias",
+		"target": "out-group-homogeneity-effect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both organise judgement around group boundaries, but favouring one's group and perceiving an out-group as homogeneous are separable outcomes.",
+		"sourceIds": [
+			"https://doi.org/10.1002/ejsp.2420010202",
+			"https://doi.org/10.1037/0022-3514.42.6.1051"
+		]
+	},
+	{
+		"source": "authority-bias",
+		"target": "conformity-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can align a response with another person's position, but authority cues rely on status or legitimacy whereas conformity can follow peers and perceived group consensus.",
+		"sourceIds": ["https://doi.org/10.1037/h0040525", "https://doi.org/10.1037/h0093718"]
+	},
+	{
+		"source": "bandwagon-effect",
+		"target": "conformity-effect",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Both involve movement toward a perceived majority, while bandwagon terminology is especially common for preferences that grow with visible popularity.",
+		"sourceIds": ["https://doi.org/10.2307/1882692", "https://doi.org/10.1037/h0093718"]
+	},
+	{
+		"source": "groupthink",
+		"target": "conformity-effect",
+		"type": "near-overlap",
+		"strength": "tentative",
+		"explanation": "Pressure toward agreement is part of many groupthink accounts, but groupthink is a debated bundle of group conditions and decision symptoms rather than ordinary conformity alone.",
+		"sourceIds": ["https://doi.org/10.1006/obhd.1998.2758", "https://doi.org/10.1037/h0093718"]
+	},
+	{
+		"source": "pluralistic-ignorance",
+		"target": "false-consensus-effect",
+		"type": "mirror",
+		"strength": "moderate",
+		"explanation": "Pluralistic ignorance can involve underestimating how many others share one's private view, whereas false consensus involves overestimating agreement with one's own view.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.64.2.243",
+			"https://doi.org/10.1016/0022-1031(77)90049-X"
+		]
+	},
+	{
+		"source": "group-polarization",
+		"target": "attitude-polarization",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Both end in more extreme positions, but group polarization follows discussion or comparison within a group whereas attitude polarization can follow individual evaluation of mixed evidence.",
+		"sourceIds": [
+			"https://doi.org/10.1037/h0027568",
+			"https://doi.org/10.1037/0022-3514.37.11.2098"
+		]
+	},
+	{
+		"source": "fundamental-attribution-error",
+		"target": "actor-observer-asymmetry",
+		"type": "near-overlap",
+		"strength": "tentative",
+		"explanation": "Both compare person and situation explanations, but the fundamental attribution error concerns observers' underweighting of situational constraint while actor–observer asymmetry predicts a self–other difference. Meta-analytic evidence makes the broad actor–observer claim context-sensitive.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0022-1031(67)90034-0",
+			"https://doi.org/10.1037/0033-2909.132.6.895"
+		]
+	},
+	{
+		"source": "fundamental-attribution-error",
+		"target": "ultimate-attribution-error",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Both concern dispositional explanations, but ultimate attribution error applies attributional asymmetry to group membership and intergroup evaluation rather than persons in general.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0022-1031(67)90034-0",
+			"https://doi.org/10.1177/014616727900500407"
+		]
+	},
+	{
+		"source": "illusory-correlation",
+		"target": "stereotype-based-judgment",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Overperceiving an association between a group and distinctive behaviour can support a stereotype, but stereotype-based judgement also reflects learning, culture, institutions and motivated processes.",
+		"sourceIds": [
+			"https://doi.org/10.1016/S0022-1031(76)80006-6",
+			"https://doi.org/10.1037/0022-3514.66.1.37"
+		]
+	},
+	{
+		"source": "hostile-attribution-bias",
+		"target": "fundamental-attribution-error",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can favour person-based explanations of ambiguous behaviour, but hostile attribution specifically infers harmful intent and has a distinct developmental and clinical literature.",
+		"sourceIds": [
+			"https://doi.org/10.1111/j.1467-8624.1980.tb02522.x",
+			"https://doi.org/10.1016/0022-1031(67)90034-0"
+		]
+	},
+	{
+		"source": "just-world-hypothesis",
+		"target": "fundamental-attribution-error",
+		"type": "same-effect-different-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can yield person-centred explanations of misfortune, but just-world judgements are organised around deservingness whereas attribution error concerns neglected situational constraint.",
+		"sourceIds": [
+			"https://doi.org/10.1037/h0023562",
+			"https://doi.org/10.1016/0022-1031(67)90034-0"
+		]
+	},
+	{
+		"source": "stereotype-based-judgment",
+		"target": "in-group-bias",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Group categories can shape both trait expectations and comparative favouritism, but neither cognitive label is an adequate explanation of structural discrimination or institutional inequity.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.66.1.37",
+			"https://doi.org/10.1002/ejsp.2420010202"
+		]
+	},
+	{
+		"source": "naive-cynicism",
+		"target": "self-serving-bias",
+		"type": "mirror",
+		"strength": "moderate",
+		"explanation": "Naive cynicism attributes self-serving distortion to other people, while self-serving bias describes favourable asymmetry in one's own explanations and judgements.",
+		"sourceIds": ["https://doi.org/10.1037/0022-3514.76.5.743", "https://doi.org/10.1037/h0076486"]
+	},
+	{
+		"source": "illusion-of-asymmetric-insight",
+		"target": "naive-realism",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Assuming one's own view is relatively direct and transparent is compatible with believing that one understands others better than they understand oneself.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.81.4.639",
+			"https://doi.org/10.1037/0033-295X.111.3.781"
+		]
+	},
+	{
+		"source": "present-bias",
+		"target": "default-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "tentative",
+		"explanation": "Both can favour the immediately available option, but present bias concerns delay-dependent valuation whereas default effects also reflect effort, endorsement and implied norms.",
+		"sourceIds": ["https://doi.org/10.1037/h0076860", "https://doi.org/10.1126/science.1091721"]
+	},
+	{
+		"source": "omission-bias",
+		"target": "action-bias",
+		"type": "mirror",
+		"strength": "strong",
+		"explanation": "These labels capture opposite action tendencies: omission bias can favour inaction for a comparable outcome, whereas action bias can favour doing something despite weak instrumental benefit.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0022-1031(91)90011-T",
+			"https://doi.org/10.1023/A:1026517309871"
+		]
+	},
+	{
+		"source": "ambiguity-aversion",
+		"target": "certainty-effect",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both can favour an option that feels more certain, but ambiguity aversion concerns unknown probabilities whereas the certainty effect concerns the special weighting of certainty among known probabilities.",
+		"sourceIds": ["https://doi.org/10.2307/1884324", "https://doi.org/10.2307/1914185"]
+	},
+	{
+		"source": "certainty-effect",
+		"target": "loss-aversion",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Both are components of prospect-theory descriptions of risky choice, but probability weighting and asymmetric value around a reference point are distinct functions.",
+		"sourceIds": ["https://doi.org/10.2307/1914185"]
+	},
+	{
+		"source": "disposition-effect",
+		"target": "loss-aversion",
+		"type": "shared-mechanism",
+		"strength": "moderate",
+		"explanation": "Reference-dependent reactions to gains and losses are one account of holding losing investments and realising gains, alongside beliefs, taxes and portfolio considerations.",
+		"sourceIds": [
+			"https://doi.org/10.1111/j.1540-6261.1985.tb05002.x",
+			"https://doi.org/10.2307/1914185"
+		]
+	},
+	{
+		"source": "decoy-effect",
+		"target": "compromise-effect",
+		"type": "near-overlap",
+		"strength": "moderate",
+		"explanation": "Both are context effects in multi-option choice, but a decoy changes asymmetric dominance whereas a compromise option gains appeal by occupying an intermediate position.",
+		"sourceIds": ["https://doi.org/10.1086/208899", "https://doi.org/10.1086/209205"]
+	},
+	{
+		"source": "choice-overload",
+		"target": "compromise-effect",
+		"type": "same-effect-different-mechanism",
+		"strength": "tentative",
+		"explanation": "A large set can increase reliance on a readily defensible middle option, but choice-overload findings are heterogeneous and compromise effects do not require an overwhelming assortment.",
+		"sourceIds": ["https://doi.org/10.1037/0022-3514.79.6.995", "https://doi.org/10.1086/209205"]
+	},
+	{
+		"source": "action-bias",
+		"target": "status-quo-bias",
+		"type": "mirror",
+		"strength": "moderate",
+		"explanation": "Action bias favours intervention under pressure, whereas status-quo bias favours retaining the current state; context determines which tendency is more plausible.",
+		"sourceIds": ["https://doi.org/10.1023/A:1026517309871", "https://doi.org/10.1007/BF00055564"]
+	},
+	{
+		"source": "anchoring-effect",
+		"target": "planning-fallacy",
+		"type": "cascade",
+		"strength": "moderate",
+		"explanation": "An optimistic initial estimate can reflect planning-fallacy processes and then serve as an anchor for later revisions; this is a plausible sequence, not evidence that either construct inevitably causes the other.",
+		"sourceIds": [
+			"https://doi.org/10.1126/science.185.4157.1124",
+			"https://doi.org/10.1037/0022-3514.67.3.366"
+		]
+	},
+	{
+		"source": "planning-fallacy",
+		"target": "sunk-cost-effect",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "Underestimated time or cost can create the prior-investment setting in which sunk-cost pressure later becomes relevant, although investment, incentives and new information—not planning fallacy alone—govern continuation.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0022-3514.67.3.366",
+			"https://doi.org/10.1016/0749-5978(85)90049-4"
+		]
+	},
+	{
+		"source": "mental-accounting",
+		"target": "status-quo-bias",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "Booking abandonment as a loss in a mental account can make the established course easier to retain, but a status-quo choice may instead arise from defaults, uncertainty, switching costs or policy constraints.",
+		"sourceIds": ["https://doi.org/10.1287/mksc.4.3.199", "https://doi.org/10.1007/BF00055564"]
+	},
+	{
+		"source": "escalation-of-commitment",
+		"target": "motivated-reasoning",
+		"type": "cascade",
+		"strength": "moderate",
+		"explanation": "Responsibility and public defence during escalation can supply a directional goal that makes favourable interpretations easier to construct, while motivated reasoning can also occur without any prior commitment.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0030-5073(76)90005-2",
+			"https://doi.org/10.1037/0033-2909.108.3.480"
+		]
+	},
+	{
+		"source": "selective-exposure",
+		"target": "illusory-truth-effect",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "A congenial information environment can repeatedly expose a person to the same claim, creating the familiarity conditions associated with illusory truth; source diversity and deliberate verification can interrupt that sequence.",
+		"sourceIds": [
+			"https://doi.org/10.1177/1088868309352251",
+			"https://doi.org/10.1016/S0022-5371(77)80012-1"
+		]
+	},
+	{
+		"source": "processing-fluency-effect",
+		"target": "illusory-truth-effect",
+		"type": "cascade",
+		"strength": "moderate",
+		"explanation": "Repetition can increase processing fluency, and that experienced ease can be used as one cue to truth; fluency is neither the only account of repetition effects nor proof that a claim is believed.",
+		"sourceIds": [
+			"https://doi.org/10.1207/s15327957pspr0804_3",
+			"https://doi.org/10.1016/S0022-5371(77)80012-1"
+		]
+	},
+	{
+		"source": "illusory-truth-effect",
+		"target": "availability-heuristic",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "Repeated claims can become both familiar and readily retrievable, allowing perceived truth and availability-based judgement to co-occur; the two constructs still answer different questions and need not travel together.",
+		"sourceIds": [
+			"https://doi.org/10.1016/S0022-5371(77)80012-1",
+			"https://doi.org/10.1016/0010-0285(73)90033-9"
+		]
+	},
+	{
+		"source": "naive-realism",
+		"target": "fundamental-attribution-error",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "Experiencing one's own view as a direct reading of reality can make another person's disagreement seem dispositional, though person-centred attribution has many situational and cultural moderators.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0033-295X.111.3.781",
+			"https://doi.org/10.1037/0033-2909.117.1.21"
+		]
+	},
+	{
+		"source": "fundamental-attribution-error",
+		"target": "bias-blind-spot",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "Explaining another person's judgement through their dispositions while treating one's own view as evidence-led can support asymmetric bias diagnosis, but the bias blind spot is not reducible to attribution error.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0033-2909.117.1.21",
+			"https://doi.org/10.1177/0146167202286008"
+		]
+	},
+	{
+		"source": "self-serving-bias",
+		"target": "bias-blind-spot",
+		"type": "cascade",
+		"strength": "tentative",
+		"explanation": "Favourable explanations of one's own judgement can make motivational influences harder to recognise in oneself, while bias-blind-spot findings also reflect introspection limits and beliefs about how bias works.",
+		"sourceIds": ["https://doi.org/10.1037/h0076486", "https://doi.org/10.1177/0146167202286008"]
+	}
+]

@@ -279,3 +279,88 @@ test('the Neuron Zoo article uses the normal publishing pipeline and preserves i
 
 	assert.match(landing, /'the-neuron-zoo': \['Biology', 'Mathematics', 'Scientific Computing'\]/);
 });
+
+test('the Bias Archipelago preserves its hybrid, deterministic, and accessible publishing contract', () => {
+	const post = read('src', 'lib', 'posts', 'the-bias-archipelago.md');
+	const shell = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'bias-archipelago',
+		'BiasArchipelago.svelte'
+	);
+	const terrain = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'bias-archipelago',
+		'BiasTerrain.svelte'
+	);
+	const staticIndex = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'bias-archipelago',
+		'BiasStaticIndex.svelte'
+	);
+	const labels = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'bias-archipelago',
+		'BiasLabels.svelte'
+	);
+	const compare = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'bias-archipelago',
+		'BiasCompare.svelte'
+	);
+	const biases = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'biases.json'));
+	const relations = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'relations.json'));
+	const mechanisms = JSON.parse(read('src', 'lib', 'data', 'bias-archipelago', 'mechanisms.json'));
+	const layout = JSON.parse(
+		read('src', 'lib', 'data', 'bias-archipelago', 'layout.generated.json')
+	);
+	const thumbnail = path.join(root, 'static', 'images', 'bias-archipelago.png');
+
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: false/);
+	assert.match(post, /thumbnailAlt:/);
+	assert.match(post, /<BiasArchipelago \/>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /Research lineage contributes \*\*0%\*\* to the position/);
+	assert.match(post, /Terrain height means density of related constructs/);
+	assert.match(post, /racism, sexism, caste discrimination, and institutional inequity/);
+
+	assert.match(terrain, /<canvas/);
+	assert.match(terrain, /<svg/);
+	assert.match(terrain, /export function focusBias/);
+	assert.match(terrain, /'bias-archipelago-view\.svg'/);
+	assert.match(terrain, /touch-action: pan-y/);
+	assert.match(terrain, /event\.type === 'wheel'.*!event\.ctrlKey/s);
+	assert.match(terrain, /object-fit: contain/);
+	assert.match(labels, /layout\.formations/);
+	assert.match(compare, /terrainHeight/);
+	assert.match(compare, /position: fixed/);
+	assert.match(shell, /searchParams\.set\('bias'/);
+	assert.match(shell, /searchParams\.set\('compare'/);
+	assert.match(shell, /Copy view/);
+	assert.match(shell, /focusMapPeak\(selectedId\)/);
+	assert.match(shell, /prefers-reduced-motion: reduce/);
+	assert.match(staticIndex, /All \{biases\.length\} entries and their definitions/);
+
+	assert.equal(biases.length, 90);
+	assert.ok(relations.length >= 60);
+	assert.ok(relations.some((relation) => relation.type === 'cascade'));
+	assert.equal(mechanisms.formations.length, 9);
+	assert.equal(layout.formations.length, 9);
+	assert.ok(fs.existsSync(thumbnail));
+	assert.ok(fs.statSync(thumbnail).size < 750 * 1024);
+});

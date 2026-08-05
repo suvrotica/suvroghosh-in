@@ -1,0 +1,136 @@
+[
+	{
+		"id": "project-that-refuses-to-die",
+		"title": "The project that refuses to die",
+		"introduction": "A team is reviewing a project that has missed several milestones. The evidence about its future is mixed, the original sponsors remain accountable for it and stopping now would make the earlier expenditure feel final.",
+		"steps": [
+			{
+				"text": "The launch forecast remains the informal benchmark, so later estimates may be judged in relation to an early number rather than rebuilt from current evidence.",
+				"biasIds": ["anchoring-effect", "planning-fallacy"]
+			},
+			{
+				"text": "Money and effort already spent enter a decision that should be about future costs and benefits, and abandonment is framed as accepting a loss in the project's mental account.",
+				"biasIds": ["sunk-cost-effect", "loss-aversion", "mental-accounting"]
+			},
+			{
+				"text": "Continuing is also the established path, while cancellation requires a conspicuous intervention and a defensible alternative.",
+				"biasIds": ["status-quo-bias", "default-effect", "omission-bias"]
+			},
+			{
+				"text": "Public responsibility for the original choice can add self-justification and consistency pressure: favourable evidence becomes easier to accept and persistence easier to defend, especially when feedback remains ambiguous.",
+				"biasIds": [
+					"escalation-of-commitment",
+					"self-serving-bias",
+					"motivated-reasoning",
+					"confirmation-bias"
+				]
+			},
+			{
+				"text": "After success or failure becomes known, reviewers may confuse the outcome with the quality of the decision that was possible at the time.",
+				"biasIds": ["outcome-bias", "hindsight-bias"]
+			}
+		],
+		"interpretation": "This is a coalition of compatible pressures, not a claim that one bias causes continued investment. Incentives, contracts, careers, power, switching costs and genuine option value can be at least as important, so a diagnosis requires the decision record and the organisation's context.",
+		"sourceIds": [
+			"https://doi.org/10.1016/0749-5978(85)90049-4",
+			"https://doi.org/10.1016/0030-5073(76)90005-2",
+			"https://doi.org/10.1037/0022-3514.54.4.569"
+		]
+	},
+	{
+		"id": "agreeable-headline",
+		"title": "The agreeable headline",
+		"introduction": "A headline agrees with something a reader already believes. It is short, fluent and repeatedly encountered across several feeds, but the appearances may all trace back to one unverified report.",
+		"steps": [
+			{
+				"text": "The reader is more likely to encounter or open a congenial item in an information environment partly shaped by prior choices and social contacts.",
+				"biasIds": ["selective-exposure", "myside-bias"]
+			},
+			{
+				"text": "Agreement with an existing position can lower scrutiny or direct attention toward supporting details, although accuracy goals and strong counterevidence can change that response.",
+				"biasIds": ["confirmation-bias", "motivated-reasoning", "belief-bias"]
+			},
+			{
+				"text": "A simple phrase becomes easier to process with repetition, and that familiar ease may be misread as evidence that the claim is true.",
+				"biasIds": ["processing-fluency-effect", "illusory-truth-effect", "mere-exposure-effect"]
+			},
+			{
+				"text": "Recent and repeated appearances make the claim readily retrievable even if they do not provide independent corroboration.",
+				"biasIds": ["availability-heuristic", "recency-effect", "availability-cascade"]
+			},
+			{
+				"text": "A later correction can compete with the familiar causal story rather than simply erase it from memory and inference.",
+				"biasIds": ["continued-influence-effect", "source-monitoring-error"]
+			}
+		],
+		"interpretation": "The path describes several associations that can co-occur; it does not say that an agreeable headline inevitably persuades or that repetition is a single causal explanation. Source quality, media systems, recommendation algorithms, identity, prior knowledge and deliberate verification all shape the outcome.",
+		"sourceIds": [
+			"https://doi.org/10.1037/a0015701",
+			"https://doi.org/10.1177/1088868309352251",
+			"https://doi.org/10.1177/1529100612451018"
+		]
+	},
+	{
+		"id": "pattern-in-six-coin-tosses",
+		"title": "A pattern in six coin tosses",
+		"introduction": "Six tosses produce H–H–H–H–H–H. The sequence feels patterned, but six observations contain little information about whether the coin or the tossing process has changed.",
+		"steps": [
+			{
+				"text": "A short sequence is expected to look more balanced than random samples often do, so an ordinary cluster can appear too orderly or too surprising.",
+				"biasIds": ["law-of-small-numbers", "clustering-illusion"]
+			},
+			{
+				"text": "One observer treats the run of heads as evidence that heads is temporarily more likely and predicts continuation.",
+				"biasIds": ["hot-hand-belief", "representativeness-heuristic"]
+			},
+			{
+				"text": "Another observer thinks tails is now due and predicts reversal, even though independent tosses do not compensate for an earlier run.",
+				"biasIds": ["gamblers-fallacy", "law-of-small-numbers"]
+			},
+			{
+				"text": "A sound assessment asks how the sequence was generated, how many observations were selected and what alternative processes were plausible before interpreting the streak.",
+				"biasIds": ["base-rate-neglect", "denominator-neglect"]
+			}
+		],
+		"interpretation": "Hot-hand belief and the gambler's fallacy are mirror expectations, not universal errors. Real sequences can contain dependence, changing base rates or selection effects, so independence and stationarity must be justified before a perceived run is labelled biased.",
+		"sourceIds": [
+			"https://doi.org/10.1037/h0031322",
+			"https://doi.org/10.3758/BF03206327",
+			"https://doi.org/10.1016/0010-0285(85)90010-6"
+		]
+	},
+	{
+		"id": "objective-observer",
+		"title": "The objective observer",
+		"introduction": "Two colleagues disagree about a late handover. Each experiences their own account as a straightforward reading of the facts and the other's account as evidence of temperament or agenda.",
+		"steps": [
+			{
+				"text": "Each person may experience perception as direct and assume that an informed, reasonable observer would see the situation similarly.",
+				"biasIds": ["naive-realism"]
+			},
+			{
+				"text": "When explaining the other person's delay, dispositional language can eclipse constraints such as workload, unclear ownership or missing information.",
+				"biasIds": ["fundamental-attribution-error", "hostile-attribution-bias"]
+			},
+			{
+				"text": "When explaining their own conduct, each has access to changing circumstances and intentions that are less visible to the other person.",
+				"biasIds": ["actor-observer-asymmetry", "self-serving-bias"]
+			},
+			{
+				"text": "Each may feel able to see the motives behind the other's account while regarding their own inner reasoning as more nuanced and less legible.",
+				"biasIds": ["illusion-of-asymmetric-insight", "naive-cynicism"]
+			},
+			{
+				"text": "Finally, both can recognise bias more readily in the other person's explanation than in their own.",
+				"biasIds": ["bias-blind-spot"]
+			}
+		],
+		"interpretation": "This scenario is a comparison of related attribution and objectivity constructs, not a diagnosis or a claim that either colleague is wrong. The broad actor–observer asymmetry is context-sensitive, and actual responsibility still requires evidence about roles, constraints, incentives and the sequence of events.",
+		"sourceIds": [
+			"https://doi.org/10.1037/0033-295X.111.3.781",
+			"https://doi.org/10.1016/0022-1031(67)90034-0",
+			"https://doi.org/10.1037/0033-2909.132.6.895",
+			"https://doi.org/10.1177/0146167202286008"
+		]
+	}
+]

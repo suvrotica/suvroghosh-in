@@ -1,0 +1,506 @@
+{
+	"formations": [
+		{
+			"id": "finite-attention",
+			"label": "Finite attention",
+			"colour": "#476D7C",
+			"symbol": "diamond",
+			"description": "Only a fraction of available information can be noticed and weighted at once."
+		},
+		{
+			"id": "reconstructive-memory",
+			"label": "Reconstructive memory",
+			"colour": "#6B627D",
+			"symbol": "square",
+			"description": "Remembering rebuilds an event from traces, cues and later knowledge rather than replaying an archive."
+		},
+		{
+			"id": "pattern-completion-under-uncertainty",
+			"label": "Pattern completion under uncertainty",
+			"colour": "#866946",
+			"symbol": "triangle",
+			"description": "Sparse evidence is completed with familiar patterns, prototypes and causal expectations."
+		},
+		{
+			"id": "reference-points-and-asymmetric-loss",
+			"label": "Reference points and asymmetric loss",
+			"colour": "#8A5D52",
+			"symbol": "diamond",
+			"description": "Values depend on a comparison point, and losses can carry a different weight from comparable gains."
+		},
+		{
+			"id": "prior-belief-preservation",
+			"label": "Prior-belief preservation",
+			"colour": "#4F6682",
+			"symbol": "circle",
+			"description": "Existing beliefs organise search, interpretation and standards of proof."
+		},
+		{
+			"id": "self-and-group-protection",
+			"label": "Self and group protection",
+			"colour": "#8A5D6C",
+			"symbol": "cross",
+			"description": "Judgement can defend identity, esteem, belonging and a favourable account of one's group."
+		},
+		{
+			"id": "social-imitation-and-coordination",
+			"label": "Social imitation and coordination",
+			"colour": "#5E735B",
+			"symbol": "circle",
+			"description": "Other people's behaviour supplies information, norms and pressure for coordinated action."
+		},
+		{
+			"id": "bounded-action",
+			"label": "Action under limited time and computation",
+			"colour": "#6F6652",
+			"symbol": "square",
+			"description": "Choice relies on shortcuts when time, information or computational capacity is limited."
+		},
+		{
+			"id": "affect-familiarity-and-fluency",
+			"label": "Affect, familiarity and processing fluency",
+			"colour": "#8B704E",
+			"symbol": "triangle",
+			"description": "Feelings and ease of processing can be used as information about liking, risk and truth."
+		}
+	],
+	"families": [
+		{
+			"id": "attention-and-salience",
+			"label": "Attention and salience",
+			"colour": "#476D7C",
+			"symbol": "diamond",
+			"formation": "finite-attention",
+			"description": "What is vivid, recent, prominent or easy to retrieve receives disproportionate weight."
+		},
+		{
+			"id": "familiarity-and-affect",
+			"label": "Familiarity and affect",
+			"colour": "#8B704E",
+			"symbol": "triangle",
+			"formation": "affect-familiarity-and-fluency",
+			"description": "Familiarity, processing ease and feeling colour liking, truth and risk judgements."
+		},
+		{
+			"id": "memory-reconstruction",
+			"label": "Memory reconstruction",
+			"colour": "#6B627D",
+			"symbol": "square",
+			"formation": "reconstructive-memory",
+			"description": "Later knowledge, present beliefs and source confusion reshape recollection."
+		},
+		{
+			"id": "pattern-and-probability",
+			"label": "Pattern and probability",
+			"colour": "#866946",
+			"symbol": "triangle",
+			"formation": "pattern-completion-under-uncertainty",
+			"description": "Small samples and resemblance are treated as stronger statistical evidence than they warrant."
+		},
+		{
+			"id": "prior-preservation",
+			"label": "Prior preservation",
+			"colour": "#4F6682",
+			"symbol": "circle",
+			"formation": "prior-belief-preservation",
+			"description": "Search, scrutiny and recall bend towards an existing belief, hypothesis or desired conclusion."
+		},
+		{
+			"id": "reference-dependence",
+			"label": "Reference dependence",
+			"colour": "#8A5D52",
+			"symbol": "diamond",
+			"formation": "reference-points-and-asymmetric-loss",
+			"description": "Anchors, ownership, defaults and prior investment define gains, losses and acceptable change."
+		},
+		{
+			"id": "self-protection",
+			"label": "Self-protection",
+			"colour": "#8A5D6C",
+			"symbol": "cross",
+			"formation": "self-and-group-protection",
+			"description": "Beliefs about competence, objectivity and control lean towards a favourable self-account."
+		},
+		{
+			"id": "social-alignment",
+			"label": "Social alignment",
+			"colour": "#5E735B",
+			"symbol": "circle",
+			"formation": "social-imitation-and-coordination",
+			"description": "Consensus, authority, group membership and public norms reshape private judgement."
+		},
+		{
+			"id": "attribution-and-impression",
+			"label": "Attribution and impression",
+			"colour": "#765B70",
+			"symbol": "cross",
+			"formation": "self-and-group-protection",
+			"description": "Behaviour is converted into explanations about persons, situations and social groups."
+		},
+		{
+			"id": "bounded-choice-and-action",
+			"label": "Bounded choice and action",
+			"colour": "#6F6652",
+			"symbol": "square",
+			"formation": "bounded-action",
+			"description": "Choice architecture, delay, ambiguity and action costs shape what people finally do."
+		}
+	],
+	"mechanisms": [
+		{
+			"id": "finite-attention",
+			"label": "Finite attention",
+			"colour": "#476D7C",
+			"symbol": "diamond",
+			"description": "Limited attention leaves some available information unnoticed or underweighted."
+		},
+		{
+			"id": "salience-weighting",
+			"label": "Salience weighting",
+			"colour": "#476D7C",
+			"symbol": "triangle",
+			"description": "Prominent, vivid or distinctive information receives extra weight."
+		},
+		{
+			"id": "associative-retrieval",
+			"label": "Associative retrieval",
+			"colour": "#6B627D",
+			"symbol": "circle",
+			"description": "Cues make related memories easier to retrieve and use in judgement."
+		},
+		{
+			"id": "reconstructive-memory",
+			"label": "Reconstructive memory",
+			"colour": "#6B627D",
+			"symbol": "square",
+			"description": "Recall rebuilds an event using fragments, expectations and later knowledge."
+		},
+		{
+			"id": "source-monitoring",
+			"label": "Source monitoring",
+			"colour": "#6B627D",
+			"symbol": "cross",
+			"description": "People infer where remembered content came from and can misassign its source."
+		},
+		{
+			"id": "processing-fluency",
+			"label": "Processing fluency",
+			"colour": "#8B704E",
+			"symbol": "circle",
+			"description": "Ease of processing is used as information about familiarity, liking or truth."
+		},
+		{
+			"id": "affect-as-information",
+			"label": "Affect as information",
+			"colour": "#8B704E",
+			"symbol": "triangle",
+			"description": "Current feelings are treated as evidence about value, risk or the situation."
+		},
+		{
+			"id": "pattern-completion",
+			"label": "Pattern completion",
+			"colour": "#866946",
+			"symbol": "triangle",
+			"description": "Sparse or noisy observations are completed into a coherent pattern."
+		},
+		{
+			"id": "representativeness",
+			"label": "Representativeness",
+			"colour": "#866946",
+			"symbol": "diamond",
+			"description": "Resemblance to a prototype substitutes for fuller statistical evaluation."
+		},
+		{
+			"id": "sample-size-insensitivity",
+			"label": "Sample-size insensitivity",
+			"colour": "#866946",
+			"symbol": "square",
+			"description": "Small samples are expected to resemble populations more closely than they reliably do."
+		},
+		{
+			"id": "probability-simplification",
+			"label": "Probability simplification",
+			"colour": "#866946",
+			"symbol": "circle",
+			"description": "Complex probabilities are replaced by simpler impressions of likelihood."
+		},
+		{
+			"id": "prior-belief-preservation",
+			"label": "Prior-belief preservation",
+			"colour": "#4F6682",
+			"symbol": "circle",
+			"description": "Existing beliefs shape search, interpretation, recall and standards of proof."
+		},
+		{
+			"id": "directional-motivation",
+			"label": "Directional motivation",
+			"colour": "#8A5D6C",
+			"symbol": "diamond",
+			"description": "A preferred conclusion influences which reasoning strategies feel persuasive."
+		},
+		{
+			"id": "reference-dependence",
+			"label": "Reference dependence",
+			"colour": "#8A5D52",
+			"symbol": "diamond",
+			"description": "Evaluation depends on a comparison point rather than only final outcomes."
+		},
+		{
+			"id": "loss-asymmetry",
+			"label": "Loss asymmetry",
+			"colour": "#8A5D52",
+			"symbol": "triangle",
+			"description": "Potential losses and comparable gains have unequal psychological weight."
+		},
+		{
+			"id": "ownership-attachment",
+			"label": "Ownership attachment",
+			"colour": "#8A5D52",
+			"symbol": "circle",
+			"description": "Possession changes the reference point and strengthens attachment to an option."
+		},
+		{
+			"id": "default-inertia",
+			"label": "Default inertia",
+			"colour": "#6F6652",
+			"symbol": "square",
+			"description": "The preselected or existing state is retained because changing it has costs or implications."
+		},
+		{
+			"id": "commitment-consistency",
+			"label": "Commitment consistency",
+			"colour": "#765B70",
+			"symbol": "diamond",
+			"description": "Past choices and public commitments create pressure to appear consistent."
+		},
+		{
+			"id": "mental-accounting",
+			"label": "Mental accounting",
+			"colour": "#8A5D52",
+			"symbol": "cross",
+			"description": "Resources and outcomes are evaluated within separate informal accounts."
+		},
+		{
+			"id": "self-enhancement",
+			"label": "Self-enhancement",
+			"colour": "#8A5D6C",
+			"symbol": "cross",
+			"description": "Judgement favours interpretations that preserve a positive view of the self."
+		},
+		{
+			"id": "confidence-miscalibration",
+			"label": "Confidence miscalibration",
+			"colour": "#8A5D6C",
+			"symbol": "square",
+			"description": "Expressed confidence does not track accuracy as closely as assumed."
+		},
+		{
+			"id": "control-inference",
+			"label": "Control inference",
+			"colour": "#6F6652",
+			"symbol": "circle",
+			"description": "Agency or predictability is inferred from cues that may not imply real control."
+		},
+		{
+			"id": "identity-protection",
+			"label": "Identity protection",
+			"colour": "#8A5D6C",
+			"symbol": "diamond",
+			"description": "Information is interpreted in ways that defend identity, belonging or esteem."
+		},
+		{
+			"id": "causal-attribution",
+			"label": "Causal attribution",
+			"colour": "#765B70",
+			"symbol": "cross",
+			"description": "Observed behaviour is converted into explanations about persons and situations."
+		},
+		{
+			"id": "social-imitation",
+			"label": "Social imitation",
+			"colour": "#5E735B",
+			"symbol": "circle",
+			"description": "Other people's behaviour supplies information and a model for one's own response."
+		},
+		{
+			"id": "norm-coordination",
+			"label": "Norm coordination",
+			"colour": "#5E735B",
+			"symbol": "square",
+			"description": "Perceived expectations and shared rules align behaviour within a group."
+		},
+		{
+			"id": "authority-deference",
+			"label": "Authority deference",
+			"colour": "#5E735B",
+			"symbol": "triangle",
+			"description": "An authority cue increases acceptance or compliance beyond the underlying evidence."
+		},
+		{
+			"id": "in-group-protection",
+			"label": "In-group protection",
+			"colour": "#5E735B",
+			"symbol": "diamond",
+			"description": "Judgement favours one's group or protects its identity and reputation."
+		},
+		{
+			"id": "temporal-discounting",
+			"label": "Temporal discounting",
+			"colour": "#6F6652",
+			"symbol": "square",
+			"description": "Outcomes lose subjective weight as their delay increases."
+		},
+		{
+			"id": "attribute-substitution",
+			"label": "Attribute substitution",
+			"colour": "#6F6652",
+			"symbol": "circle",
+			"description": "A difficult judgement is answered using an easier, related attribute."
+		},
+		{
+			"id": "action-omission-asymmetry",
+			"label": "Action–omission asymmetry",
+			"colour": "#6F6652",
+			"symbol": "cross",
+			"description": "Otherwise similar outcomes are evaluated differently depending on whether action or inaction produced them."
+		}
+	],
+	"tasks": [
+		"noticing",
+		"remembering",
+		"estimating",
+		"testing-belief",
+		"assigning-cause",
+		"choosing",
+		"acting",
+		"evaluating-outcome"
+	],
+	"triggers": [
+		"congenial-evidence",
+		"disconfirming-evidence",
+		"initial-value",
+		"recent-exposure",
+		"first-exposure",
+		"repeated-exposure",
+		"vivid-information",
+		"distinctive-item",
+		"emotional-information",
+		"uncertain-outcome",
+		"small-sample",
+		"random-sequence",
+		"prior-investment",
+		"ownership",
+		"default-option",
+		"potential-loss",
+		"public-commitment",
+		"social-consensus",
+		"authority-cue",
+		"group-membership",
+		"self-relevance",
+		"identity-threat",
+		"ambiguous-behaviour",
+		"known-outcome",
+		"post-event-information",
+		"memory-delay",
+		"question-framing",
+		"comparison-set",
+		"rare-event",
+		"positive-affect",
+		"negative-affect",
+		"available-cause",
+		"desire-for-control",
+		"delayed-consequence",
+		"action-inaction-choice",
+		"identified-person",
+		"large-choice-set",
+		"cognitive-load",
+		"sparse-or-noisy-evidence",
+		"time-pressure"
+	],
+	"targets": [
+		"information",
+		"belief",
+		"memory",
+		"frequency",
+		"probability",
+		"forecast",
+		"causal-explanation",
+		"value",
+		"risk",
+		"option",
+		"action",
+		"outcome",
+		"self",
+		"other-person",
+		"social-group",
+		"organization",
+		"sequence"
+	],
+	"manifestations": [
+		"selective-search",
+		"selective-attention",
+		"selective-acceptance",
+		"selective-recall",
+		"confidence-distortion",
+		"probability-distortion",
+		"frequency-distortion",
+		"causal-misattribution",
+		"preference-shift",
+		"valuation-shift",
+		"persistence",
+		"conformity",
+		"stereotyping",
+		"memory-distortion",
+		"risk-shift",
+		"choice-inertia",
+		"pattern-inference",
+		"truth-judgement",
+		"liking-shift",
+		"planning-error",
+		"evaluation-distortion",
+		"prediction-error",
+		"attribution-asymmetry",
+		"polarization",
+		"action-shift"
+	],
+	"temporalStages": [
+		"pre-encounter",
+		"information-acquisition",
+		"interpretation",
+		"memory-encoding",
+		"memory-retrieval",
+		"prediction",
+		"decision",
+		"action",
+		"post-outcome",
+		"social-feedback"
+	],
+	"scales": ["individual", "interpersonal", "group", "organization"],
+	"conditions": [
+		"uncertainty",
+		"time-pressure",
+		"cognitive-load",
+		"identity-threat",
+		"emotional-intensity",
+		"repeated-exposure",
+		"public-commitment",
+		"asymmetric-losses",
+		"sparse-or-noisy-evidence"
+	],
+	"evidenceStatuses": [
+		"well-established",
+		"context-sensitive",
+		"construct-overlap",
+		"debated",
+		"popular-label"
+	],
+	"relationTypes": [
+		"shared-mechanism",
+		"near-overlap",
+		"same-effect-different-mechanism",
+		"cascade",
+		"mirror",
+		"alias"
+	],
+	"relationStrengths": ["strong", "moderate", "tentative"]
+}
