@@ -18,6 +18,7 @@ export default defineConfig({
 			'src/lib/visualizations/city-master-plan/**/*.test.ts',
 			'src/lib/visualizations/neuron-zoo/**/*.test.ts',
 			'src/lib/visualizations/fractal-atlas/**/*.test.ts',
+			'src/lib/visualizations/gradient-descent/**/*.test.ts',
 			'src/lib/visualizations/lightning-atlas/**/*.test.ts',
 			'src/lib/games/**/*.test.ts'
 		],

@@ -8687,6 +8687,21 @@
       "sourceHash": "40d3ae478cf57738c3195f71b67cbd91f404a489b2e31d3564ab2de8cc4fa89b",
       "width": 1200
     },
+    "static/images/gradient-descent-landscapes.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 430729,
+      "outputHash": "b042d87480e777d49ed00c19dbd2d5732f7f7b3a9da449be7644c992a45d2dba",
+      "resized": false,
+      "sourceBytes": 430729,
+      "sourceHash": "b042d87480e777d49ed00c19dbd2d5732f7f7b3a9da449be7644c992a45d2dba",
+      "width": 1200
+    },
     "static/images/handwritten-notes-social-card.png": {
       "format": "PNG",
       "height": 630,

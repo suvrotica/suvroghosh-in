@@ -3366,6 +3366,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "gradient-descent-landscapes.png",
+			"src": "/images/gradient-descent-landscapes.png",
+			"bytes": 430729,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "handwritten-notes-social-card.png",
 			"src": "/images/handwritten-notes-social-card.png",
 			"bytes": 609197,
