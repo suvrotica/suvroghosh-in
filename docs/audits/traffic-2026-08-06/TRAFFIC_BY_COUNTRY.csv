@@ -1,0 +1,13 @@
+country,visitors,page_views_estimate,visitor_share,page_views_precision,window,status
+India,283,1100,31%,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+People's Republic of China,278,290,30%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+United States of America,227,1800,25%,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Singapore,113,118,12%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Vietnam,3,3,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+United Kingdom,2,2,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Hong Kong,2,3,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Australia,1,1,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Israel,1,3,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Luxembourg,1,1,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+Netherlands,1,1,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+El Salvador,1,1,<0.5%,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED

@@ -31,14 +31,36 @@ export function urlsFromSitemap(xml) {
 }
 
 export function sitemapEntries(xml) {
-	const entries = Array.from(xml.matchAll(/<url\b[^>]*>([\s\S]*?)<\/url>/gi), ([, block]) => {
+	const source = String(xml ?? '').trim();
+	const documentBody = source.replace(/^<\?xml[\s\S]*?\?>\s*/i, '');
+	const selfClosingRoot = /^<urlset\b[^>]*\/\s*>$/i.test(documentBody);
+	const root = documentBody.match(/^<urlset\b[^>]*>([\s\S]*)<\/urlset\s*>$/i);
+	if (!selfClosingRoot && !root) {
+		throw new Error('IndexNow sitemap must be a recognizable <urlset>.');
+	}
+
+	const innerXml = root?.[1] ?? '';
+	const unmatchedContent = innerXml
+		.replace(/<!--[\s\S]*?-->/g, '')
+		.replace(/<url\b[^>]*>[\s\S]*?<\/url>/gi, '')
+		.trim();
+	if (unmatchedContent) {
+		throw new Error('IndexNow sitemap contains content outside a valid <url> entry.');
+	}
+
+	const urlOpeningCount = Array.from(innerXml.matchAll(/<url\b/gi)).length;
+	const entries = Array.from(innerXml.matchAll(/<url\b[^>]*>([\s\S]*?)<\/url>/gi), ([, block]) => {
 		const location = block.match(/<loc>([\s\S]*?)<\/loc>/i);
 		const lastModified = block.match(/<lastmod>([\s\S]*?)<\/lastmod>/i);
 		return {
 			url: location ? decodeXml(location[1].trim()) : '',
 			lastModified: lastModified ? decodeXml(lastModified[1].trim()) : ''
 		};
-	}).filter(({ url }) => url);
+	});
+	if (entries.length !== urlOpeningCount || entries.some(({ url }) => !url)) {
+		throw new Error('IndexNow sitemap contains a malformed <url> entry.');
+	}
+	if (entries.length === 0) return [];
 
 	const urls = validateUrls(entries.map(({ url }) => url));
 	const entryByUrl = new Map(entries.map((entry) => [entry.url, entry]));

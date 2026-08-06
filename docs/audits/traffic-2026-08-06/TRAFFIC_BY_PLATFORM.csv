@@ -1,0 +1,20 @@
+dimension_type,dimension,visitor_share,visitors,page_views_estimate,page_views_precision,window,status
+device,Desktop,61%,537,1600,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+device,Mobile,39%,344,1800,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+device,Tablet,<0.5%,2,2,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+device,Unclassified or not displayed,,30,,UNAVAILABLE_NOT_DISPLAYED,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,DERIVED_RECONCILIATION_GAP
+browser,Chrome,59%,526,1400,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Chrome Mobile,35%,313,1700,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Chrome Webview,2%,20,32,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Microsoft Edge,2%,19,129,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Mobile Safari,1%,7,8,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,WeChat,<0.5%,3,3,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Safari,<0.5%,2,2,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Google Search App,<0.5%,1,1,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+browser,Unclassified or not displayed,,22,,UNAVAILABLE_NOT_DISPLAYED,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,DERIVED_RECONCILIATION_GAP
+operating_system,Windows,47%,411,746,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+operating_system,Android,31%,274,1700,ROUNDED_UI_ESTIMATE,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+operating_system,GNU/Linux,10%,88,728,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+operating_system,iOS,8%,72,73,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+operating_system,Mac,4%,38,87,EXACT_UI_LABEL,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,OBSERVED
+operating_system,Unclassified or not displayed,,30,,UNAVAILABLE_NOT_DISPLAYED,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,DERIVED_RECONCILIATION_GAP

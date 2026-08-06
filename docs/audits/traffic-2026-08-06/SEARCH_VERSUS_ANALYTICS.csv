@@ -1,0 +1,10 @@
+source,window,metric,value,unit,status,interpretation
+Vercel Web Analytics,2026-07-09 12:30 to 2026-08-06 13:29 Asia/Calcutta,period visitors,913,visitors,OBSERVED,Recorded browser identities; not validated humans
+Vercel Web Analytics,same 28-day window,page views,3394,views,OBSERVED,Includes anomalous and owner/test-contaminated activity
+Vercel Web Analytics,same 28-day window,bounce rate,73,percent,OBSERVED,Not reliable as a human engagement baseline while traffic is contaminated
+Vercel listed referrers,same 28-day window,Google referred visitors,7,visitors,OBSERVED,"A listed referrer count, not Search Console clicks"
+Vercel listed referrers,same 28-day window,DuckDuckGo referred visitors,2,visitors,OBSERVED,A listed referrer count
+Vercel listed referrers,same 28-day window,Bing referred visitors,1,visitor,OBSERVED,"A listed referrer count, not Bing Webmaster clicks"
+Google Search Console,requested audit windows,clicks/impressions/CTR/position,,,UNVERIFIED — REQUIRES OWNER ACTION,Signed-in account lacks access to the domain property
+Bing Webmaster Tools,requested audit windows,clicks/impressions/CTR/position,,,UNVERIFIED — REQUIRES OWNER ACTION,No authenticated property session was available
+Comparison,requested audit windows,Search clicks versus analytics sessions,,,NOT COMPUTABLE,Authenticated search metrics and session-level analytics are unavailable

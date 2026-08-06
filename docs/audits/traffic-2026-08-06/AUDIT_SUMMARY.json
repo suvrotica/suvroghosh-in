@@ -1,0 +1,116 @@
+{
+	"schemaVersion": 1,
+	"startedAt": "2026-08-06T11:51:00.165Z",
+	"completedAt": "2026-08-06T12:19:58.827Z",
+	"origin": "https://www.suvroghosh.in",
+	"inputEvidence": {
+		"main_sitemap": {
+			"url": "https://www.suvroghosh.in/sitemap.xml",
+			"status": 200,
+			"contentType": "application/xml",
+			"rawBytes": 106191,
+			"bodySha256": "650b963ae4496d91f451789112fbd37c72ab2f71ce48697089befae827e8ae8e",
+			"error": ""
+		},
+		"notes_sitemap": {
+			"url": "https://www.suvroghosh.in/notes/sitemap.xml",
+			"status": 200,
+			"contentType": "application/xml; charset=utf-8",
+			"rawBytes": 227,
+			"bodySha256": "0ace976044b1c426ca6788b5551b3423d122d38c42db100b0e5917c6d695d72d",
+			"error": ""
+		},
+		"rss": {
+			"url": "https://www.suvroghosh.in/rss.xml",
+			"status": 200,
+			"contentType": "application/xml",
+			"rawBytes": 15503,
+			"bodySha256": "d0485f11949030097365bee1d9ca5df2d5e8f63e11728d4f8e79f40df853ef8c",
+			"error": ""
+		},
+		"robots": {
+			"url": "https://www.suvroghosh.in/robots.txt",
+			"status": 200,
+			"contentType": "text/plain; charset=utf-8",
+			"rawBytes": 965,
+			"bodySha256": "75bc9190e8279dfeab6236f24f50870cf2ef7ad5c1a7d4487ce74ef5601095b9",
+			"error": ""
+		},
+		"homepage": {
+			"url": "https://www.suvroghosh.in/",
+			"status": 200,
+			"contentType": "text/html; charset=utf-8",
+			"rawBytes": 71834,
+			"bodySha256": "474b2812d41c5a4dc590fb3dfea175b3608b7091eaa5312e2cb7c38321d1d4a9",
+			"error": ""
+		}
+	},
+	"config": {
+		"concurrency": 4,
+		"requestsPerSecond": 2,
+		"timeoutMs": 30000,
+		"renderNavigationTimeoutMs": 120000,
+		"maxUrls": 5000,
+		"userAgentSampleSize": 60,
+		"renderMode": "all",
+		"bundleWeightMode": "full"
+	},
+	"counts": {
+		"inventoryUrls": 1022,
+		"crawledUrls": 1022,
+		"canonicalGraphNodes": 935,
+		"renderedDomGraphNodes": 935,
+		"serverHtmlFallbackGraphNodes": 0,
+		"internalGraphEdges": 46253,
+		"trafficMatchedCanonicalUrls": 243,
+		"observedHighTrafficCanonicalUrls": 25,
+		"indexableUrls": 937,
+		"nonIndexableUrls": 85,
+		"redirectingUrls": 85,
+		"orphanOrUnreachableUrls": 0,
+		"userAgentSampleUrls": 60,
+		"userAgentRequests": 480,
+		"materialUserAgentDifferences": 0,
+		"variantProbes": 16,
+		"responseBodyWarnings": 0
+	},
+	"statusCounts": {
+		"200": 1022
+	},
+	"issueCounts": {
+		"CANONICAL_ABSENT_FROM_SITEMAP": 225,
+		"CANONICAL_DIFFERENT_PATH_REVIEW": 2,
+		"DEAD_END_CANONICAL_URL": 2,
+		"DUPLICATE_META_DESCRIPTION": 42,
+		"DUPLICATE_TITLE": 4,
+		"MISSING_CANONICAL": 2,
+		"MULTIPLE_INDEXABLE_URLS_OR_DUPLICATE_CANONICAL": 4,
+		"NEAR_ORPHAN_CANONICAL_URL": 59,
+		"PRODUCTION_URL_WITHOUT_SOURCE_RECORD": 1
+	},
+	"warnings": [],
+	"reports": [
+		"URL_INVENTORY.csv",
+		"INDEXABILITY.csv",
+		"REDIRECTS.csv",
+		"SITEMAP_RECONCILIATION.csv",
+		"STRUCTURED_DATA.csv",
+		"MEDIA_SEMANTICS.csv",
+		"INTERNAL_LINK_GRAPH.csv",
+		"ORPHANS.csv",
+		"CRAWL_DEPTH.csv",
+		"USER_AGENT_SAMPLE.csv",
+		"USER_AGENT_COMPARISON.csv",
+		"URL_VARIANTS.csv",
+		"AUDIT_SUMMARY.json"
+	],
+	"interpretationCaveats": [
+		"A crawl shows technical accessibility and observable page output; it does not prove search-engine indexing, ranking, a manual action, or the absence of one.",
+		"User-agent differences are review flags, not automatic evidence of cloaking. Dynamic or personalised output can also change hashes.",
+		"Soft-404, hidden-link, and filename-derived-alt detections are heuristic and require human verification.",
+		"Principal-content availability is measured from response HTML and, when rendering succeeds, compared with a same-origin, GET-only, side-effect-blocked browser render.",
+		"Internal-link graph evidence is rendered DOM where rendering completed; any server-rendered HTML fallback nodes are counted explicitly.",
+		"Observed 28-day page visitors are directional Vercel Analytics context, may include automation, and are not proof of organic or human demand. Alias and canonical page-path values are not added together.",
+		"A body_read_warning means an HTTP error status and headers were observed but its response body was unavailable; body, hash, and word-count fields are intentionally blank and are not treated as a user-agent content difference."
+	]
+}

@@ -44,8 +44,8 @@ CONTACT_FROM_EMAIL=noreply@suvroghosh.in
 ## IndexNow environment
 
 Production deployments expose the IndexNow verification file through a secret-backed route and
-diff the live sitemap against the prior successful deployment, submitting only added, modified, or
-deleted URLs. Generate one unguessable 32-character
+diff the live main and Notes sitemaps against their prior successful snapshots, submitting only
+added, modified, or deleted URLs. Generate one unguessable 32-character
 value containing only letters, numbers, or dashes, then configure the identical value in both
 places:
 

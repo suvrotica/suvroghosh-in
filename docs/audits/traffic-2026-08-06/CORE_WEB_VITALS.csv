@@ -1,0 +1,20 @@
+evidence_level,source,window_local,device,scope,metric,percentile,value,unit,data_points,status,notes
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,RES,,56,score,250,NEEDS_IMPROVEMENT,Authenticated production dashboard
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,FCP,p75,5.68,s,250,OBSERVED,Loading defect
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,LCP,p75,6.96,s,250,OBSERVED,Loading defect
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,INP,p75,104,ms,250,OBSERVED,Comparatively healthy
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,CLS,p75,0.01,score,250,OBSERVED,Comparatively healthy
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,FID,p75,15,ms,250,OBSERVED,Legacy responsiveness metric shown by dashboard
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,overall,TTFB,p75,0.94,s,250,OBSERVED,
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",mobile,overall,availability,,,,,INSUFFICIENT_DATA,Dashboard displayed no overall mobile result
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,/blog/[category]/[slug],RES,,66,score,158,DIRECTIONAL,Largest displayed route sample
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,/blog,RES,,48,score,43,DIRECTIONAL,Archive-hub warning
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,/,RES,,99,score,37,DIRECTIONAL,Smaller sample than article route
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,/resources/[kind=resourceKind]/[slug],RES,,100,score,4,SPARSE,Too few observations for durable conclusion
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,/topics/[slug],RES,,36,score,3,SPARSE,Too few observations for durable conclusion
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",desktop,/blog/visualizations/the-bias-archipelago,RES,,89,score,3,SPARSE,Too few observations for durable conclusion
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",mobile,/blog,RES,,85,score,5,SPARSE,Directional only; no overall mobile verdict
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",mobile,/blog/[category]/[slug],RES,,96,score,24,SPARSE,Directional only; no overall mobile verdict
+FIELD,Vercel Speed Insights,"2026-07-30 12:30 to 2026-08-06 13:29 IST",mobile,/images/sketches,RES,,99,score,3,SPARSE,Directional only; no overall mobile verdict
+FIELD,Google Search Console,,all,Core Web Vitals,availability,,,,,UNVERIFIED_REQUIRES_OWNER_ACTION,Signed-in account lacked domain-property access
+FIELD,Chrome UX Report,,all,origin/page distributions,availability,,,,,UNVERIFIED,Keyless PageSpeed Insights request returned HTTP 429; no values inferred
