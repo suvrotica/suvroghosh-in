@@ -41,6 +41,14 @@ jobs:
           restore-keys: |
             indexnow-sitemap-
 
+      - name: Restore the previous production Notes sitemap
+        uses: actions/cache@v4
+        with:
+          path: .cache/indexnow/notes-sitemap.xml
+          key: indexnow-notes-sitemap-${{ github.event.deployment.sha || github.sha }}
+          restore-keys: |
+            indexnow-notes-sitemap-
+
       - name: Verify IndexNow configuration
         shell: bash
         run: |
@@ -50,8 +58,13 @@ jobs:
           fi
 
       - name: Submit canonical sitemap URLs
-        run: >-
-          node scripts/indexnow.mjs
-          --sitemap "https://www.suvroghosh.in/sitemap.xml?deployment=${{ github.event.deployment.sha || github.sha }}"
-          --previous-sitemap-file .cache/indexnow/sitemap.xml
-          --save-sitemap-file .cache/indexnow/sitemap.xml
+        shell: bash
+        run: |
+          node scripts/indexnow.mjs \
+            --sitemap "https://www.suvroghosh.in/sitemap.xml?deployment=${{ github.event.deployment.sha || github.sha }}" \
+            --previous-sitemap-file .cache/indexnow/sitemap.xml \
+            --save-sitemap-file .cache/indexnow/sitemap.xml
+          node scripts/indexnow.mjs \
+            --sitemap "https://www.suvroghosh.in/notes/sitemap.xml?deployment=${{ github.event.deployment.sha || github.sha }}" \
+            --previous-sitemap-file .cache/indexnow/notes-sitemap.xml \
+            --save-sitemap-file .cache/indexnow/notes-sitemap.xml

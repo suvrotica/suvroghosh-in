@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import {
 	changedUrlsFromSitemaps,
@@ -17,6 +18,9 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 	<url><loc>https://www.suvroghosh.in/</loc><lastmod>2026-07-23</lastmod></url>
 	<url><loc>https://www.suvroghosh.in/blog?tag=HL7&amp;sort=newest</loc><lastmod>2026-07-22</lastmod></url>
 </urlset>`;
+
+const emptySitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>`;
 
 test('requires a valid secret-backed IndexNow key', () => {
 	assert.equal(getIndexNowKey(environment), INDEXNOW_KEY);
@@ -44,6 +48,32 @@ test('diffs added, modified, and deleted sitemap URLs', () => {
 		'https://www.suvroghosh.in/deleted'
 	]);
 	assert.deepEqual(changedUrlsFromSitemaps(sitemap, sitemap), []);
+});
+
+test('accepts a valid empty sitemap and notifies deletion of its final prior URL', () => {
+	const previous = `<?xml version="1.0"?>
+<urlset><url><loc>https://www.suvroghosh.in/notes/final-note</loc></url></urlset>`;
+
+	assert.deepEqual(urlsFromSitemap(emptySitemap), []);
+	assert.deepEqual(changedUrlsFromSitemaps(emptySitemap, ''), []);
+	assert.deepEqual(changedUrlsFromSitemaps(emptySitemap, previous), [
+		'https://www.suvroghosh.in/notes/final-note'
+	]);
+});
+
+test('rejects an error page or malformed URL entry instead of treating it as mass deletion', () => {
+	assert.throws(() => urlsFromSitemap('<html><h1>Service unavailable</h1></html>'), /urlset/);
+	assert.throws(
+		() => urlsFromSitemap('<html><body><code><urlset></urlset></code></body></html>'),
+		/urlset/
+	);
+	assert.throws(() => urlsFromSitemap('<urlset></urlset><html>Error</html>'), /urlset/);
+	assert.throws(() => urlsFromSitemap('garbage<urlset />garbage'), /urlset/);
+	assert.throws(() => urlsFromSitemap('<urlset><html>Error</html></urlset>'), /outside/);
+	assert.throws(
+		() => urlsFromSitemap('<urlset><url><lastmod>2026-08-06</lastmod></url></urlset>'),
+		/malformed/
+	);
 });
 
 test('deduplicates URLs and rejects foreign hosts or fragments', () => {
@@ -110,4 +140,21 @@ test('a direct URL submission does not fetch the default sitemap', async () => {
 	assert.deepEqual(JSON.parse(requests[0].options.body).urlList, [
 		'https://www.suvroghosh.in/contact'
 	]);
+});
+
+test('the production workflow submits the main and Notes sitemap families independently', () => {
+	const workflow = readFileSync(
+		new URL('../.github/workflows/indexnow.yml', import.meta.url),
+		'utf8'
+	);
+
+	assert.match(workflow, /https:\/\/www\.suvroghosh\.in\/sitemap\.xml\?deployment=/);
+	assert.match(workflow, /https:\/\/www\.suvroghosh\.in\/notes\/sitemap\.xml\?deployment=/);
+	assert.match(workflow, /--previous-sitemap-file \.cache\/indexnow\/sitemap\.xml/);
+	assert.match(workflow, /--previous-sitemap-file \.cache\/indexnow\/notes-sitemap\.xml/);
+	assert.match(workflow, /--save-sitemap-file \.cache\/indexnow\/notes-sitemap\.xml/);
+	assert.match(workflow, /path: \.cache\/indexnow\/sitemap\.xml/);
+	assert.match(workflow, /key: indexnow-sitemap-/);
+	assert.match(workflow, /path: \.cache\/indexnow\/notes-sitemap\.xml/);
+	assert.match(workflow, /key: indexnow-notes-sitemap-/);
 });
