@@ -453,6 +453,7 @@ test('the post and dynamic publishing pipeline expose the canonical visualizatio
 	const post = read('src', 'lib', 'posts', 'create-art-living-pigment-studio.md');
 	const postRoute = read('src', 'routes', 'blog', '[category]', '[slug]', '+page.ts');
 	const postServer = read('src', 'routes', 'blog', '[category]', '[slug]', '+page.server.ts');
+	const postServerHelper = read('src', 'lib', 'server', 'content', 'blog-post-page.ts');
 	const visualizationListing = read('src', 'routes', 'blog', 'visualizations', '+page.server.ts');
 	const sitemap = read('src', 'routes', 'sitemap.xml', '+server.ts');
 	const rss = read('src', 'routes', 'rss.xml', '+server.ts');
@@ -483,8 +484,9 @@ test('the post and dynamic publishing pipeline expose the canonical visualizatio
 
 	assert.match(postRoute, /import\.meta\.glob<[^>]+>\(['"]\/src\/lib\/posts\/\*\.md['"]\)/);
 	assert.match(postRoute, /params\.slug/);
-	assert.match(postServer, /getPublishedPost\(slug\)/);
-	assert.match(postServer, /postPath\(\{\s*category:/);
+	assert.match(postServer, /loadPublishedBlogPost\(params\.category,\s*params\.slug\)/);
+	assert.match(postServerHelper, /getPublishedPost\(slug\)/);
+	assert.match(postServerHelper, /postPath\(\{\s*category:/);
 	assert.match(visualizationListing, /getPublishedPostsByCategory\(['"]visualizations['"]\)/);
 	assert.match(sitemap, /getPublishedPosts|isIndexablePost/);
 	assert.match(rss, /getPublishedPosts|isIndexablePost/);
