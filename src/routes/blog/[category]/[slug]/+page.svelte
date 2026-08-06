@@ -24,6 +24,17 @@
 	let postNavigation = $derived(data.postNavigation);
 	let postTopics = $derived(data.postTopics ?? []);
 	let relatedPosts = $derived(data.relatedPosts ?? []);
+
+	const longDateFormatter = new Intl.DateTimeFormat('en-GB', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric',
+		timeZone: 'UTC'
+	});
+
+	function formatArticleDate(value: string) {
+		return longDateFormatter.format(new Date(`${value}T00:00:00Z`));
+	}
 </script>
 
 <svelte:head>
@@ -39,14 +50,20 @@
 <SEO {...data.seo} />
 
 <div
-	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-[calc(100vw-2rem)] xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_minmax(12rem,16rem)] xl:items-start xl:gap-12"
+	class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-[calc(100vw-2rem)] xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_minmax(12rem,16rem)] xl:items-start xl:gap-12 {data
+		.metadata.immersiveLead
+		? 'immersive-lead'
+		: ''}"
 	data-essay-ink={data.essayInk}
 >
 	<ReadingProgress ink="var(--essay-ink)" />
 	<article class="article-print mx-auto max-w-3xl min-w-0 xl:mx-0">
 		<nav
 			aria-label="Breadcrumb"
-			class="mb-8 text-sm text-neutral-500 dark:text-neutral-400 print:hidden"
+			class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden {data.metadata
+				.immersiveLead
+				? 'mb-3'
+				: 'mb-8'}"
 		>
 			<ol class="flex min-w-0 flex-wrap items-center gap-2">
 				<li>
@@ -80,74 +97,73 @@
 			</ol>
 		</nav>
 
-		<header
-			class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800"
-			data-route-atmosphere-region
-			data-route-scene="article"
-		>
-			<h1
-				class="article-title mb-4 font-sans font-bold tracking-tight text-neutral-900 dark:text-white"
+		{#if !data.metadata.immersiveLead}
+			<header
+				class="mb-12 border-b border-neutral-200 pb-8 dark:border-neutral-800"
+				data-route-atmosphere-region
+				data-route-scene="article"
 			>
-				{data.metadata.title}
-			</h1>
-			<div class="mb-6 h-px w-20 bg-[var(--essay-ink)]" aria-hidden="true"></div>
-			<div
-				class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-600 dark:text-neutral-400"
-			>
-				<span
-					>By <a
-						href={resolve('/resume')}
-						rel="author"
-						class="font-medium transition-colors hover:text-neutral-950 dark:hover:text-neutral-100"
-						>{authorName}</a
-					></span
+				<h1
+					class="article-title mb-4 font-sans font-bold tracking-tight text-neutral-900 dark:text-white"
 				>
-				{#if data.metadata.date}<span aria-hidden="true">&middot;</span><time
-						datetime={data.metadata.date}
-						>{new Date(data.metadata.date).toLocaleDateString('en-IN', {
-							year: 'numeric',
-							month: 'long',
-							day: 'numeric'
-						})}</time
-					>{/if}
-				{#if data.metadata.dateModified}<span aria-hidden="true">&middot;</span><span
-						>Updated <time datetime={data.metadata.dateModified}
-							>{new Date(data.metadata.dateModified).toLocaleDateString('en-IN')}</time
+					{data.metadata.title}
+				</h1>
+				<div class="mb-6 h-px w-20 bg-[var(--essay-ink)]" aria-hidden="true"></div>
+				<div
+					class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-neutral-600 dark:text-neutral-400"
+				>
+					<span
+						>By <a
+							href={resolve('/resume')}
+							rel="author"
+							class="font-medium transition-colors hover:text-neutral-950 dark:hover:text-neutral-100"
+							>{authorName}</a
 						></span
-					>{/if}
-				{#if data.metadata.readingTime}<span aria-hidden="true">&middot;</span><span
-						>{data.metadata.readingTime} read</span
-					>{/if}
-			</div>
-			{#if data.metadata.status === 'living'}<p
-					class="mt-6 inline-flex items-center rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-200"
-				>
-					This is a living essay and may be updated as facts change.
-				</p>{/if}
-			{#if postTopics.length > 0}
-				<nav aria-label="Post topics" class="mt-6 flex flex-wrap gap-2 print:hidden">
-					{#each postTopics as topic (topic.href)}
-						<a
-							href={resolve(topic.href as '/blog')}
-							class="inline-flex min-h-11 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
-							title={topic.hasLandingPage ? `Browse the ${topic.label} topic` : undefined}
-						>
-							{topic.isHeadquarters ? `Explore ${topic.label}` : topic.label}
-						</a>
-					{/each}
-				</nav>
-			{/if}
+					>
+					{#if data.metadata.date}<span aria-hidden="true">&middot;</span><span
+							>Published <time datetime={data.metadata.date}
+								>{formatArticleDate(data.metadata.date)}</time
+							></span
+						>{/if}
+					{#if data.metadata.dateModified}<span aria-hidden="true">&middot;</span><span
+							>Updated <time datetime={data.metadata.dateModified}
+								>{formatArticleDate(data.metadata.dateModified)}</time
+							></span
+						>{/if}
+					{#if data.metadata.readingTime}<span aria-hidden="true">&middot;</span><span
+							>{data.metadata.readingTime} read</span
+						>{/if}
+				</div>
+				{#if data.metadata.status === 'living'}<p
+						class="mt-6 inline-flex items-center rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-200"
+					>
+						This is a living essay and may be updated as facts change.
+					</p>{/if}
+				{#if postTopics.length > 0}
+					<nav aria-label="Post topics" class="mt-6 flex flex-wrap gap-2 print:hidden">
+						{#each postTopics as topic (topic.href)}
+							<a
+								href={resolve(topic.href as '/blog')}
+								class="inline-flex min-h-11 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+								title={topic.hasLandingPage ? `Browse the ${topic.label} topic` : undefined}
+							>
+								{topic.isHeadquarters ? `Explore ${topic.label}` : topic.label}
+							</a>
+						{/each}
+					</nav>
+				{/if}
 
-			<ArticleActions title={data.metadata.title} />
-		</header>
+				<ArticleActions title={data.metadata.title} />
+			</header>
+		{/if}
 
-		{#if !data.metadata.interactiveFirst}
+		{#if !data.metadata.interactiveFirst && !data.metadata.immersiveLead}
 			<div class="print:hidden">
 				<TableOfContents {headings} variant="mobile" />
 			</div>
 		{/if}
 
-		{#if !data.metadata.interactiveFirst && (data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length)}
+		{#if !data.metadata.interactiveFirst && !data.metadata.immersiveLead && (data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length)}
 			<ArticleQuickAnswer
 				inPlainEnglish={data.metadata.inPlainEnglish}
 				keyTerms={data.metadata.keyTerms}
@@ -155,7 +171,7 @@
 			/>
 		{/if}
 
-		{#if data.metadata.notebook}
+		{#if data.metadata.notebook && !data.metadata.immersiveLead}
 			<Notebook
 				src={data.metadata.notebook}
 				title={`${data.metadata.title} — Mojo notebook`}
@@ -170,7 +186,50 @@
 			<PostContent />
 		</div>
 
-		{#if data.metadata.interactiveFirst && (data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length)}
+		{#if data.metadata.immersiveLead}
+			<footer
+				aria-label="Article information"
+				class="mt-12 border-y border-neutral-200 py-6 dark:border-neutral-800 print:hidden"
+			>
+				{#if data.metadata.status === 'living'}
+					<p
+						class="mb-5 inline-flex items-center rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-900 dark:border-amber-900/50 dark:bg-amber-900/20 dark:text-amber-200"
+					>
+						This is a living essay and may be updated as facts change.
+					</p>
+				{/if}
+				{#if postTopics.length > 0}
+					<p
+						class="mb-3 text-xs font-bold tracking-[0.14em] text-neutral-500 uppercase dark:text-neutral-400"
+					>
+						Explore the topics
+					</p>
+					<nav aria-label="Post topics" class="flex flex-wrap gap-2">
+						{#each postTopics as topic (topic.href)}
+							<a
+								href={resolve(topic.href as '/blog')}
+								class="inline-flex min-h-11 items-center rounded-md border border-neutral-200 px-2.5 py-1 text-xs font-medium text-neutral-600 transition-colors hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
+								title={topic.hasLandingPage ? `Browse the ${topic.label} topic` : undefined}
+							>
+								{topic.isHeadquarters ? `Explore ${topic.label}` : topic.label}
+							</a>
+						{/each}
+					</nav>
+				{/if}
+
+				<ArticleActions title={data.metadata.title} />
+			</footer>
+		{/if}
+
+		{#if data.metadata.notebook && data.metadata.immersiveLead}
+			<Notebook
+				src={data.metadata.notebook}
+				title={`${data.metadata.title} — Mojo notebook`}
+				caption="Rendered from the source notebook during the site build."
+			/>
+		{/if}
+
+		{#if (data.metadata.interactiveFirst || data.metadata.immersiveLead) && (data.metadata.inPlainEnglish || data.metadata.keyTerms?.length || data.metadata.faq?.length)}
 			<ArticleQuickAnswer
 				inPlainEnglish={data.metadata.inPlainEnglish}
 				keyTerms={data.metadata.keyTerms}
@@ -280,9 +339,21 @@
 		{/if}
 	</article>
 
-	{#if headings.length >= 2}
+	{#if headings.length >= 2 && !data.metadata.immersiveLead}
 		<aside class="hidden xl:block xl:pt-20 print:hidden">
 			<TableOfContents {headings} variant="desktop" />
 		</aside>
 	{/if}
 </div>
+
+<style>
+	.article-shell.immersive-lead {
+		padding-top: 0.5rem;
+	}
+
+	@media (min-width: 48rem) {
+		.article-shell.immersive-lead {
+			padding-top: 1rem;
+		}
+	}
+</style>

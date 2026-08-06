@@ -1,5 +1,6 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { sampleGradient } from './gradients';
+import { createRegressionLandscape } from './landscapes';
 import { SeededRandom } from './prng';
 import type { LandscapeDefinition } from './types';
 
@@ -46,5 +47,28 @@ describe('gradient direction error', () => {
 		);
 
 		expect(sample.angularErrorRadians).toBeNull();
+	});
+});
+
+describe('gradient work accounting', () => {
+	it('reuses the full regression gradient for a full-batch active gradient', () => {
+		const landscape = createRegressionLandscape(false);
+		const fullGradient = vi.spyOn(landscape, 'gradient');
+		const indexedGradient = vi.spyOn(landscape, 'gradientForIndices');
+		const sample = sampleGradient(
+			landscape,
+			landscape.defaultStart,
+			{ kind: 'minibatch', batchSize: 'full' },
+			new SeededRandom('full-batch-dedup')
+		);
+
+		expect(fullGradient).toHaveBeenCalledTimes(1);
+		expect(indexedGradient).not.toHaveBeenCalled();
+		expect(sample.work).toEqual({
+			activeGradientComputations: 1,
+			additionalFullGradientComputations: 0,
+			activeGradientExamplesProcessed: landscape.points.length,
+			diagnosticExamplesProcessed: 0
+		});
 	});
 });

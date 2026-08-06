@@ -10687,16 +10687,16 @@
 			"dateModified": "2026-08-05"
 		},
 		"src/lib/posts/gradient-descent-landscapes.md": {
-			"bodyHash": "6fb4f07de5c21922796d4eee48bd34be6f038d448e0dd95c31e0315e4ebf2594",
+			"bodyHash": "23b068a9d9b97cff6a5bd7c7cf30f1c7bb1d4c187b8af2ffa1c3bdb8becc8613",
 			"hashVersion": 2,
-			"revisionHash": "9512033276e433162733ed9722ee56cf489453ae4b24a36ed6875702ca3a8259",
+			"revisionHash": "12247d670dcc350c4c1ce67f41dac7e69ded14f35d4030185c15631c4a321aa5",
 			"generatedTags": [
 				"Gradient Descent",
 				"Machine Learning",
 				"Optimization",
 				"Mathematics",
-				"Data Visualization",
 				"Interactive",
+				"Data Visualization",
 				"Learning Rate",
 				"Vanilla Gradient Descent",
 				"Contour Map",
@@ -10707,8 +10707,8 @@
 				"Machine Learning",
 				"Optimization",
 				"Mathematics",
-				"Data Visualization",
-				"Interactive"
+				"Interactive",
+				"Data Visualization"
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-06"

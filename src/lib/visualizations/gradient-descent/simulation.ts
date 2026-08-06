@@ -160,7 +160,10 @@ export class GradientDescentSimulation {
 	private currentLoss = Number.NaN;
 	private currentStatus: RunStatus = 'invalid-configuration';
 	private currentStatusMessage = statusMessage('invalid-configuration');
-	private evaluations = 0;
+	private activeGradientComputations = 0;
+	private additionalFullGradientComputations = 0;
+	private activeGradientExamplesProcessed: number | null = null;
+	private diagnosticExamplesProcessed: number | null = null;
 	private configurationError: string | null = null;
 
 	constructor(config: SimulationConfig) {
@@ -184,7 +187,7 @@ export class GradientDescentSimulation {
 	}
 
 	get gradientEvaluations(): number {
-		return this.evaluations;
+		return this.activeGradientComputations;
 	}
 
 	get theta(): Vector2 {
@@ -210,12 +213,24 @@ export class GradientDescentSimulation {
 			this.currentLoss = loss;
 			this.currentStatus = 'ready';
 			this.currentStatusMessage = statusMessage('ready');
-			this.evaluations = 0;
+			this.activeGradientComputations = 0;
+			this.additionalFullGradientComputations = 0;
+			this.activeGradientExamplesProcessed = isRegressionLandscape(this.normalized.landscape)
+				? 0
+				: null;
+			this.diagnosticExamplesProcessed = isRegressionLandscape(this.normalized.landscape)
+				? 0
+				: null;
 			this.stalledSteps = 0;
 			this.configurationError = null;
 			this.records = [
 				{
 					iteration: 0,
+					optimizerUpdates: 0,
+					activeGradientComputations: 0,
+					additionalFullGradientComputations: 0,
+					activeGradientExamplesProcessed: this.activeGradientExamplesProcessed,
+					diagnosticExamplesProcessed: this.diagnosticExamplesProcessed,
 					gradientEvaluations: 0,
 					theta: this.currentTheta,
 					loss,
@@ -273,7 +288,19 @@ export class GradientDescentSimulation {
 				config.gradientMode,
 				this.random
 			);
-			this.evaluations += 1;
+			this.activeGradientComputations += gradientSample.work.activeGradientComputations;
+			this.additionalFullGradientComputations +=
+				gradientSample.work.additionalFullGradientComputations;
+			if (gradientSample.work.activeGradientExamplesProcessed !== null) {
+				this.activeGradientExamplesProcessed =
+					(this.activeGradientExamplesProcessed ?? 0) +
+					gradientSample.work.activeGradientExamplesProcessed;
+			}
+			if (gradientSample.work.diagnosticExamplesProcessed !== null) {
+				this.diagnosticExamplesProcessed =
+					(this.diagnosticExamplesProcessed ?? 0) +
+					gradientSample.work.diagnosticExamplesProcessed;
+			}
 		} catch (error) {
 			this.failNumerically(error);
 			return;
@@ -347,7 +374,12 @@ export class GradientDescentSimulation {
 		const iteration = this.iteration + 1;
 		this.records.push({
 			iteration,
-			gradientEvaluations: this.evaluations,
+			optimizerUpdates: iteration,
+			activeGradientComputations: this.activeGradientComputations,
+			additionalFullGradientComputations: this.additionalFullGradientComputations,
+			activeGradientExamplesProcessed: this.activeGradientExamplesProcessed,
+			diagnosticExamplesProcessed: this.diagnosticExamplesProcessed,
+			gradientEvaluations: this.activeGradientComputations,
 			theta: this.currentTheta,
 			loss: nextLoss,
 			gradient: gradientSample.active,
@@ -417,7 +449,12 @@ export class GradientDescentSimulation {
 			status: this.currentStatus,
 			statusMessage: this.currentStatusMessage,
 			iteration: this.iteration,
-			gradientEvaluations: this.evaluations,
+			optimizerUpdates: this.iteration,
+			activeGradientComputations: this.activeGradientComputations,
+			additionalFullGradientComputations: this.additionalFullGradientComputations,
+			activeGradientExamplesProcessed: this.activeGradientExamplesProcessed,
+			diagnosticExamplesProcessed: this.diagnosticExamplesProcessed,
+			gradientEvaluations: this.activeGradientComputations,
 			theta: this.currentTheta,
 			loss: this.currentLoss,
 			history: this.records.slice()
@@ -439,7 +476,12 @@ export class GradientDescentSimulation {
 		if (index < 0) return;
 		this.records[index] = {
 			...this.records[index],
-			gradientEvaluations: this.evaluations,
+			optimizerUpdates: this.iteration,
+			activeGradientComputations: this.activeGradientComputations,
+			additionalFullGradientComputations: this.additionalFullGradientComputations,
+			activeGradientExamplesProcessed: this.activeGradientExamplesProcessed,
+			diagnosticExamplesProcessed: this.diagnosticExamplesProcessed,
+			gradientEvaluations: this.activeGradientComputations,
 			terminalEvaluation: {
 				gradient: sample.active,
 				fullGradient: sample.full,

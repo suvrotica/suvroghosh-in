@@ -14,6 +14,22 @@ import {
 } from './url-state';
 
 describe('mathematical acceptance: portable experiment state', () => {
+	it('omits canonical defaults while retaining the single version key', () => {
+		const defaults = parseExperimentUrlState(serializeExperimentUrlState({
+			version: 1,
+			landscape: { id: 'rosenbrock' },
+			optimizer: { id: 'gd', learningRate: 0.001 },
+			start: [-1.2, 1],
+			seed: 'descent-1847',
+			speed: 12,
+			maximumIterations: 2_000,
+			gradientTolerance: 1e-7,
+			gradientMode: { kind: 'full' }
+		}));
+		expect(serializeExperimentUrlState(defaults.state).toString()).toBe('v=1');
+		expect(defaults.warnings).toEqual([]);
+	});
+
 	it('10. round-trips URL state within the declared twelve-significant-digit precision', () => {
 		const state: ExperimentUrlState = {
 			version: 1,
@@ -124,7 +140,10 @@ describe('run data alternatives', () => {
 		const lines = csv.trim().split('\r\n');
 		expect(lines).toHaveLength(snapshot.history.length + 1);
 		expect(lines[0]).toContain('raw_loss');
-		expect(lines[0]).toContain('cumulative_gradient_evaluations_at_record');
+		expect(lines[0]).toContain('cumulative_active_gradient_computations_at_record');
+		expect(lines[0]).toContain('cumulative_additional_full_gradient_computations_at_record');
+		expect(lines[0]).toContain('cumulative_active_gradient_examples_processed_at_record');
+		expect(lines[0]).toContain('cumulative_diagnostic_examples_processed_at_record');
 		expect(lines[0]).toContain('transition_from_iteration');
 		expect(lines[0]).toContain('active_gradient_at_origin_1');
 		expect(lines[1].split(',')[2]).toBe('');
@@ -135,9 +154,14 @@ describe('run data alternatives', () => {
 
 		const summary = createSimulationSummary(snapshot);
 		expect(summary.schema).toBe('suvroghosh.gradient-descent.run');
-		expect(summary.version).toBe(1);
+		expect(summary.version).toBe(2);
 		expect(summary.finalTheta).toEqual(snapshot.theta);
 		expect(summary.gradientEvaluations).toBe(3);
+		expect(summary.optimizerUpdates).toBe(3);
+		expect(summary.activeGradientComputations).toBe(3);
+		expect(summary.additionalFullGradientComputations).toBe(0);
+		expect(summary.activeGradientExamplesProcessed).toBeNull();
+		expect(summary.diagnosticExamplesProcessed).toBeNull();
 		expect(JSON.parse(simulationSummaryJson(snapshot))).toEqual(summary);
 		expect(safeExportStem(snapshot)).toBe('gradient-descent-quadratic-gd-csv-proof');
 	});

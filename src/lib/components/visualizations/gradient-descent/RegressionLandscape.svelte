@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { HeightMapping } from '$lib/visualizations/gradient-descent';
 	import { contourLevels, marchingSquares } from './marching-squares';
 	import {
 		clampPoint,
@@ -23,6 +24,7 @@
 		history?: readonly HistoryRecord[];
 		optimum?: PointLike | null;
 		parameterLabels?: readonly [string, string];
+		heightMapping?: HeightMapping;
 		outlierEnabled?: boolean;
 		onoutliertoggle?: (enabled: boolean) => void;
 		onthetachange?: (theta: ObjectPoint) => void;
@@ -36,6 +38,7 @@
 		history = [],
 		optimum = null,
 		parameterLabels = ['m', 'b'],
+		heightMapping = 'log-compressed',
 		outlierEnabled = true,
 		onoutliertoggle = () => undefined,
 		onthetachange = () => undefined
@@ -279,7 +282,7 @@
 
 	function contourPath() {
 		if (!grid) return '';
-		return marchingSquares(grid, contourLevels(grid, 11))
+		return marchingSquares(grid, contourLevels(grid, 11, heightMapping))
 			.map((segment) => {
 				const fromX =
 					parameterPlot.left +

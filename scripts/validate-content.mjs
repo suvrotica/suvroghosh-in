@@ -9,6 +9,7 @@ const sectionsFile = path.join(root, 'src', 'lib', 'content', 'sections.json');
 const requiredFields = ['title', 'description', 'date', 'category', 'tags', 'published'];
 const stringFields = [
 	'title',
+	'seoTitle',
 	'description',
 	'date',
 	'dateModified',
@@ -30,6 +31,7 @@ const allowedFields = new Set([
 	'published',
 	'mediaReviewed',
 	'interactiveFirst',
+	'immersiveLead',
 	'keyTerms',
 	'faq'
 ]);
@@ -156,6 +158,9 @@ for (const file of postFiles) {
 	}
 	if (metadata.interactiveFirst !== undefined && typeof metadata.interactiveFirst !== 'boolean') {
 		errors.push(`${file}: interactiveFirst must be true or false, without quotes.`);
+	}
+	if (metadata.immersiveLead !== undefined && typeof metadata.immersiveLead !== 'boolean') {
+		errors.push(`${file}: immersiveLead must be true or false, without quotes.`);
 	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });

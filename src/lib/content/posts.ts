@@ -2,6 +2,7 @@ import { slugifyCategory } from './categories';
 
 export type BlogPostMetadata = {
 	title: string;
+	seoTitle?: string;
 	description: string;
 	date: string;
 	dateModified?: string;
@@ -22,6 +23,7 @@ export type BlogPostMetadata = {
 	keyTerms?: string[];
 	faq?: { question: string; answer: string }[];
 	interactiveFirst?: boolean;
+	immersiveLead?: boolean;
 	headings?: PostHeading[];
 };
 

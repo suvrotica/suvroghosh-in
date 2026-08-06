@@ -34,6 +34,9 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 	const canonicalUrl = blogPostUrl(metadata.category, slug);
 	const catLabel = categoryLabel(normalizedCategory);
 	const topicLabels = [...metadata.tags, ...(metadata.series ?? []), ...metadata.derivedTopics];
+	const visibleTopicLabels = metadata.pinnedTags?.length
+		? metadata.pinnedTags.slice(0, 5)
+		: topicLabels;
 	const keywords = [...topicLabels, metadata.category, 'Suvro Ghosh'].filter(Boolean).slice(0, 15);
 	const ogImageDimensions = metadata.thumbnail
 		? getImageDimensions(metadata.thumbnail)
@@ -49,7 +52,7 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 		slug,
 		essayInk: sanitizeEssayInk(metadata.color),
 		postNavigation: getPostNavigation(slug),
-		postTopics: getPostTopicLinks(topicLabels),
+		postTopics: getPostTopicLinks(visibleTopicLabels),
 		relatedPosts: getRelatedPosts(slug),
 		metadata: {
 			...metadata,
@@ -57,7 +60,7 @@ export function loadPublishedBlogPost(category: string, slug: string) {
 			categoryLabel: catLabel
 		},
 		seo: {
-			title: `${metadata.title} | ${siteTitle}`,
+			title: metadata.seoTitle ?? `${metadata.title} | ${siteTitle}`,
 			description: metadata.description,
 			canonicalUrl,
 			ogImageUrl: absoluteUrl(metadata.thumbnail) ?? defaultOgImage,

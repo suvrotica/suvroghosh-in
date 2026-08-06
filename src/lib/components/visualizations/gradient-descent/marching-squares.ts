@@ -1,3 +1,5 @@
+import type { HeightMapping } from '$lib/visualizations/gradient-descent';
+import { displayContourLevels } from '$lib/visualizations/gradient-descent/loss-display-scale';
 import { gridValue, type SampledGrid } from './types';
 
 export type ContourPoint = readonly [x: number, y: number];
@@ -138,13 +140,10 @@ export function marchingSquares(
 	return segments;
 }
 
-export function contourLevels(grid: SampledGrid, count = 12): readonly number[] {
-	const minimum = Number.isFinite(grid.min) ? grid.min : 0;
-	const maximum = Number.isFinite(grid.max) ? grid.max : minimum + 1;
-	const safeCount = Math.max(2, Math.min(30, Math.round(count)));
-	const range = Math.max(Number.EPSILON, maximum - minimum);
-	return Array.from(
-		{ length: safeCount },
-		(_, index) => minimum + ((index + 1) / (safeCount + 1)) * range
-	);
+export function contourLevels(
+	grid: SampledGrid,
+	count = 12,
+	mapping: HeightMapping = 'log-compressed'
+): readonly number[] {
+	return displayContourLevels(grid, count, mapping);
 }

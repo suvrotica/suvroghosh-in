@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import { SvelteMap, SvelteURL } from 'svelte/reactivity';
 	import AccessibleRunTable from './AccessibleRunTable.svelte';
+	import { normalizeLossForDisplay } from '$lib/visualizations/gradient-descent/loss-display-scale';
 	import MetricsChart from './MetricsChart.svelte';
 	import RegressionLandscape from './RegressionLandscape.svelte';
 	import StepMicroscope from './StepMicroscope.svelte';
@@ -36,6 +37,7 @@
 		REGRESSION_OUTLIER
 	} from '$lib/visualizations/gradient-descent/landscapes';
 	import { SeededRandom } from '$lib/visualizations/gradient-descent/prng';
+	import { sampleLandscapeGrid } from '$lib/visualizations/gradient-descent/sampled-grid';
 	import {
 		GradientDescentSimulation,
 		isTerminalStatus
@@ -64,9 +66,14 @@
 	type MobileView = 'terrain' | 'map' | 'microscope' | 'metrics';
 	type CameraPreset = 'perspective' | 'topographic' | 'ravine' | 'side';
 	type HeightMapping = 'linear' | 'log-compressed';
+	type RaceMode = 'same-rate' | 'illustrative';
+	type WeatherMapMode = 'fit' | 'inspect';
 	type AnalysisState = 'idle' | 'working' | 'complete' | 'error';
 	type MetricMode = 'loss' | 'gradientNorm' | 'stepNorm' | 'distance';
-	type MetricsXAxis = 'iteration' | 'gradientEvaluations';
+	type MetricsXAxis =
+		| 'optimizerUpdates'
+		| 'activeGradientComputations'
+		| 'activeGradientExamplesProcessed';
 	type WeatherRegime = 'converged' | 'slow' | 'oscillatory' | 'hazard' | 'unresolved';
 	type ParticleOverlayState = Readonly<{
 		gradientField: boolean;
@@ -147,7 +154,7 @@
 	let advancedOpen = $state(false);
 	let analysisOpen = $state(false);
 	let metricMode = $state<MetricMode>('loss');
-	let metricsXAxis = $state<MetricsXAxis>('gradientEvaluations');
+	let metricsXAxis = $state<MetricsXAxis>('optimizerUpdates');
 	let metricsLogScale = $state(true);
 	let metricsAutoScale = $state(false);
 
@@ -166,12 +173,17 @@
 	let particleStep = $state(0);
 	let particlePlaying = $state(false);
 	let race = $state<readonly OptimizerRaceEntry[]>([]);
-	let raceEvaluationCap = $state(0);
+	let raceMode = $state<RaceMode>('illustrative');
+	let raceUpdateCap = $state(0);
 	let raceObservation = $state('');
+	let sharedExperimentRestored = $state(false);
+	let sharedExperimentSummary = $state('');
 	let stability = $state<readonly StabilitySweepEntry[]>([]);
 	let momentumStability = $state<MomentumStabilityGrid | null>(null);
 	let stabilityState = $state<AnalysisState>('idle');
 	let stabilityMessage = $state('No learning-rate survey has been requested.');
+	let weatherMapMode = $state<WeatherMapMode>('fit');
+	let momentumWeatherMapMode = $state<WeatherMapMode>('fit');
 
 	let frameId = 0;
 	let previousTimestamp = 0;
@@ -237,6 +249,7 @@
 	let microscopeAuxiliaryVectors = $derived(buildAuxiliaryVectors(microscopeTransition));
 	let microscopeUncertaintyFan = $derived(buildUncertaintyFan(microscopeRecord));
 	let stableMetricYDomain = $derived(metricYDomain());
+	let stableMetricXDomain = $derived(metricXDomain());
 	let gradientModeLabel = $derived(
 		landscapeId === 'regression'
 			? batchSize === 'full'
@@ -389,8 +402,20 @@
 
 	function liveMetricRows(): readonly (readonly [string, string])[] {
 		return [
-			['Iteration', snapshot.iteration.toString()],
-			['Gradient evaluations', snapshot.gradientEvaluations.toString()],
+			['Optimizer updates', snapshot.optimizerUpdates.toString()],
+			['Active-gradient computations', snapshot.activeGradientComputations.toString()],
+			[
+				'Active-gradient examples',
+				snapshot.activeGradientExamplesProcessed?.toLocaleString('en-GB') ?? 'Not data-based'
+			],
+			[
+				'Additional full-gradient computations',
+				snapshot.additionalFullGradientComputations.toString()
+			],
+			[
+				'Diagnostic examples revisited',
+				snapshot.diagnosticExamplesProcessed?.toLocaleString('en-GB') ?? 'Not data-based'
+			],
 			['Raw loss', formatNumber(snapshot.loss, 8)],
 			['Full-gradient norm at current θ', formatNumber(exactGradientNorm(snapshot.theta), 7)],
 			['Incoming step norm', formatNumber(currentRecord?.stepNorm, 7)],
@@ -454,10 +479,22 @@
 		showKnownMinima = enabled(9);
 	}
 
+	function defaultCameraPreset(landscape: LandscapeId): CameraPreset {
+		return landscape === 'rosenbrock'
+			? 'ravine'
+			: landscape === 'himmelblau'
+				? 'topographic'
+				: 'perspective';
+	}
+
 	function metricYDomain(): readonly [number, number] {
 		if (metricMode === 'loss') {
-			const minimum = grid?.min ?? Math.min(0, snapshot.history[0]?.loss ?? 0);
-			const maximum = Math.max(grid?.max ?? 1, snapshot.history[0]?.loss ?? 0, minimum + 1e-9);
+			const minimum = grid?.rawFloor ?? Math.min(0, snapshot.history[0]?.loss ?? 0);
+			const maximum = Math.max(
+				grid?.displayCeiling ?? 1,
+				snapshot.history[0]?.loss ?? 0,
+				minimum + 1e-9
+			);
 			return [minimum, maximum];
 		}
 		if (metricMode === 'gradientNorm') {
@@ -472,6 +509,15 @@
 			landscape.domain.max[1] - landscape.domain.min[1]
 		);
 		return [0, metricMode === 'stepNorm' ? diagonal * 1.25 : diagonal];
+	}
+
+	function metricXDomain(): readonly [number, number] {
+		if (metricsXAxis === 'activeGradientExamplesProcessed') {
+			if (!isRegressionLandscape(landscape)) return [0, maximumIterations];
+			const examplesPerUpdate = batchSize === 'full' ? landscape.points.length : batchSize;
+			return [0, maximumIterations * examplesPerUpdate];
+		}
+		return [0, maximumIterations];
 	}
 
 	function overlayControls(): readonly ToggleControl[] {
@@ -548,6 +594,16 @@
 		const activeGradient = outgoing?.gradient ?? (exactActive ? fullGradient : null);
 		return {
 			...origin,
+			optimizerUpdates: outgoing?.optimizerUpdates ?? origin.optimizerUpdates,
+			activeGradientComputations:
+				outgoing?.activeGradientComputations ?? origin.activeGradientComputations,
+			additionalFullGradientComputations:
+				outgoing?.additionalFullGradientComputations ??
+				origin.additionalFullGradientComputations,
+			activeGradientExamplesProcessed:
+				outgoing?.activeGradientExamplesProcessed ?? origin.activeGradientExamplesProcessed,
+			diagnosticExamplesProcessed:
+				outgoing?.diagnosticExamplesProcessed ?? origin.diagnosticExamplesProcessed,
 			gradientEvaluations: outgoing?.gradientEvaluations ?? origin.gradientEvaluations,
 			gradient: showCurrentGradient ? activeGradient : null,
 			fullGradient,
@@ -577,35 +633,7 @@
 		const cacheKey = `${landscapeCacheKey(definition)}@${resolution}`;
 		const cached = gridCache.get(cacheKey);
 		if (cached) return cached;
-		const width = resolution;
-		const height = resolution;
-		const values = new Float64Array(width * height);
-		const finite: number[] = [];
-		for (let row = 0; row < height; row += 1) {
-			const y =
-				definition.domain.min[1] +
-				((definition.domain.max[1] - definition.domain.min[1]) * row) / (height - 1);
-			for (let column = 0; column < width; column += 1) {
-				const x =
-					definition.domain.min[0] +
-					((definition.domain.max[0] - definition.domain.min[0]) * column) / (width - 1);
-				const value = definition.value([x, y]);
-				values[row * width + column] = value;
-				if (Number.isFinite(value)) finite.push(value);
-			}
-		}
-		finite.sort((left, right) => left - right);
-		const quantile = (fraction: number) =>
-			finite[
-				Math.max(0, Math.min(finite.length - 1, Math.round((finite.length - 1) * fraction)))
-			] ?? 0;
-		const sampled = {
-			width,
-			height,
-			values,
-			min: quantile(0.01),
-			max: Math.max(quantile(0.97), quantile(0.01) + Number.EPSILON)
-		};
+		const sampled = sampleLandscapeGrid(definition, resolution);
 		gridCache.set(cacheKey, sampled);
 		if (gridCache.size > 16) gridCache.delete(gridCache.keys().next().value ?? cacheKey);
 		return sampled;
@@ -712,6 +740,7 @@
 		configurationError = '';
 		landscapeId = nextId;
 		landscape = nextLandscape;
+		metricsXAxis = nextId === 'regression' ? 'activeGradientExamplesProcessed' : 'optimizerUpdates';
 		if (!preserveStart) start = [...landscape.defaultStart];
 		learningRate = landscape.defaultLearningRate;
 		learningRateExponent = Math.log10(learningRate);
@@ -814,7 +843,7 @@
 		particleStep = 0;
 		showParticles = false;
 		race = [];
-		raceEvaluationCap = 0;
+		raceUpdateCap = 0;
 		raceObservation = '';
 		stability = [];
 		momentumStability = null;
@@ -873,7 +902,7 @@
 		replayTarget = target;
 		playing = true;
 		snapshot = simulation.play();
-		statusAnnouncement = `Replaying ${target.iteration} deterministic iterations and ${target.gradientEvaluations} gradient evaluations.`;
+		statusAnnouncement = `Replaying ${target.iteration} deterministic optimizer updates and ${target.gradientEvaluations} active-gradient computations.`;
 		startLoop();
 	}
 
@@ -1003,7 +1032,7 @@
 		particleStep = 0;
 		showParticles = false;
 		race = [];
-		raceEvaluationCap = 0;
+		raceUpdateCap = 0;
 		raceObservation = '';
 		stability = [];
 		momentumStability = null;
@@ -1081,7 +1110,7 @@
 			stabilityMessage = 'The learning-rate survey was cancelled by a newer analysis.';
 		}
 		basinState = 'working';
-		basinMessage = 'Surveying starting points under a fixed 420-evaluation budget…';
+		basinMessage = 'Surveying starting points under a fixed 420-update cap…';
 		showBasin = true;
 		scheduleUrlUpdate();
 		try {
@@ -1093,7 +1122,7 @@
 			if (cached) {
 				basin = cached;
 				basinState = 'complete';
-				basinMessage = `${cached.width} × ${cached.height} cached starts restored for this exact configuration; each start used a 420-gradient-evaluation cap.`;
+				basinMessage = `${cached.width} × ${cached.height} cached starts restored for this exact configuration; each start used a 420-update cap.`;
 				statusAnnouncement = 'Cached basin cartography restored.';
 				return;
 			}
@@ -1117,7 +1146,7 @@
 			if (basinCache.size > 8) basinCache.delete(basinCache.keys().next().value ?? cacheKey);
 			basinState = 'complete';
 			const unresolved = result.cells.filter((cell) => cell.minimumIndex === null).length;
-			basinMessage = `${result.width} × ${result.height} starts classified with a 420-gradient-evaluation cap per start; ${unresolved} remained escaped, divergent or unresolved.`;
+			basinMessage = `${result.width} × ${result.height} starts classified with a 420-update cap per start; ${unresolved} remained escaped, divergent or unresolved.`;
 			statusAnnouncement = 'Basin cartography complete.';
 		} catch (cause) {
 			if (generation !== analysisGeneration) return;
@@ -1208,33 +1237,51 @@
 	function runRace() {
 		if (configurationError) return;
 		const base = landscape.defaultLearningRate;
+		const rateFor = (illustrativeRate: number) =>
+			raceMode === 'same-rate' ? learningRate : illustrativeRate;
 		const configs: readonly OptimizerConfig[] = [
-			{ id: 'gd', learningRate: base },
-			{ id: 'momentum', learningRate: base * 0.8, beta: 0.9 },
-			{ id: 'rmsprop', learningRate: Math.max(base * 0.8, 0.001), rho: 0.9, epsilon: 1e-8 },
+			{ id: 'gd', learningRate: rateFor(base) },
+			{ id: 'momentum', learningRate: rateFor(base * 0.8), beta: 0.9 },
+			{
+				id: 'rmsprop',
+				learningRate: rateFor(Math.max(base * 0.8, 0.001)),
+				rho: 0.9,
+				epsilon: 1e-8
+			},
 			{
 				id: 'adam',
-				learningRate: Math.max(base * 0.5, 0.001),
+				learningRate: rateFor(Math.max(base * 0.5, 0.001)),
 				beta1: 0.9,
 				beta2: 0.999,
 				epsilon: 1e-8
 			}
 		];
-		raceEvaluationCap = Math.min(500, maximumIterations);
+		raceUpdateCap = Math.min(500, maximumIterations);
 		race = runOptimizerRace({
 			landscape,
 			start,
 			optimizers: configs,
 			gradientMode: gradientMode(),
 			seed,
-			gradientEvaluationBudget: raceEvaluationCap,
+			optimizerUpdateBudget: raceUpdateCap,
 			gradientTolerance,
 			stepTolerance: 1e-13,
 			stallPatience: 10,
 			classificationTolerance: 0.24
 		});
-		raceObservation = describeRace(race, raceEvaluationCap);
-		statusAnnouncement = 'Optimizer race complete under a common gradient-evaluation budget.';
+		raceObservation = describeRace(race, raceUpdateCap, raceMode);
+		statusAnnouncement =
+			raceMode === 'same-rate'
+				? 'Same-rate optimizer race complete under a common optimizer-update budget.'
+				: 'Illustrative tuned-rate optimizer race complete under a common optimizer-update budget.';
+		scheduleUrlUpdate();
+	}
+
+	function selectRaceMode(mode: RaceMode) {
+		raceMode = mode;
+		race = [];
+		raceUpdateCap = 0;
+		raceObservation = '';
 		scheduleUrlUpdate();
 	}
 
@@ -1369,7 +1416,15 @@
 	}
 
 	function applyStabilityEntry(entry: StabilitySweepEntry) {
-		updateLearningRate(entry.learningRate);
+		const preservedStability = stability;
+		const preservedMessage = stabilityMessage;
+		learningRate = entry.learningRate;
+		learningRateExponent = Math.log10(entry.learningRate);
+		activePreset = '';
+		rebuildSimulation(`Loaded learning rate ${formatNumber(entry.learningRate)} from the stability map.`);
+		stability = preservedStability;
+		stabilityState = 'complete';
+		stabilityMessage = preservedMessage;
 		statusAnnouncement = `Loaded learning rate ${formatNumber(entry.learningRate)} from the stability map.`;
 	}
 
@@ -1572,7 +1627,11 @@
 		});
 	}
 
-	function describeRace(entries: readonly OptimizerRaceEntry[], evaluationCap: number): string {
+	function describeRace(
+		entries: readonly OptimizerRaceEntry[],
+		updateCap: number,
+		mode: RaceMode
+	): string {
 		if (entries.length === 0) return '';
 		const ordered = [...entries].sort((left, right) => left.snapshot.loss - right.snapshot.loss);
 		const best = ordered[0];
@@ -1580,7 +1639,11 @@
 		const destination = best.destination.minimum?.label
 			? ` and finished in ${best.destination.minimum.label.toLocaleLowerCase('en')}`
 			: '';
-		return `${optimizerLabel(best.config.id)} recorded the lowest final loss under the shared cap of ${evaluationCap} gradient evaluations and used ${best.snapshot.gradientEvaluations}${destination}. ${optimizerLabel(second.config.id)} finished next. These configured results describe this start and budget, not a universal ordering.`;
+		const configuration =
+			mode === 'same-rate'
+				? `Every optimizer used the currently selected η=${formatNumber(learningRate)}.`
+				: 'Each optimizer used a deliberately chosen illustrative default rate; this is not a controlled same-rate comparison.';
+		return `${configuration} ${optimizerLabel(best.config.id)} recorded the lowest final loss under the shared cap of ${updateCap} optimizer updates and used ${best.snapshot.optimizerUpdates}${destination}. ${optimizerLabel(second.config.id)} finished next. These configured results describe this start and budget, not a universal ordering.`;
 	}
 
 	function optimizerLabel(id: OptimizerId): string {
@@ -1692,7 +1755,7 @@
 		urlTimer = window.setTimeout(() => replaceUrl(false), 150);
 	}
 
-	function replaceUrl(push: boolean) {
+	function replaceUrl(push: boolean, anchorToLaboratory = false) {
 		if (configurationError) {
 			statusAnnouncement = `Correct the invalid parameter configuration before copying this experiment. ${configurationError}`;
 			return;
@@ -1703,15 +1766,18 @@
 			if (EXPERIMENT_QUERY_KEYS.has(key)) url.searchParams.delete(key);
 		}
 		for (const [key, value] of scientific) url.searchParams.set(key, value);
-		url.searchParams.set('gd_v', '1');
-		url.searchParams.set('view', mobileView);
-		url.searchParams.set('camera', cameraPreset);
-		url.searchParams.set('height', heightMapping);
-		url.searchParams.set('layers', overlayMask());
+		if (mobileView !== 'terrain') url.searchParams.set('view', mobileView);
+		if (cameraPreset !== defaultCameraPreset(landscapeId))
+			url.searchParams.set('camera', cameraPreset);
+		if (heightMapping !== landscape.recommendedHeightMapping)
+			url.searchParams.set('height', heightMapping);
+		if (overlayMask() !== 'sd') url.searchParams.set('layers', overlayMask());
 		if (activePreset) url.searchParams.set('preset', activePreset);
 		if (showBasin) url.searchParams.set('basin', '1');
 		if (showParticles) url.searchParams.set('flow', '1');
-		if (race.length > 0) url.searchParams.set('race', '1');
+		if (race.length > 0)
+			url.searchParams.set('race', raceMode === 'same-rate' ? 'same' : 'illustrative');
+		if (anchorToLaboratory) url.hash = 'gradient-descent-laboratory';
 		const route =
 			`${url.pathname}${url.search}${url.hash}` as '/blog/visualizations/gradient-descent-landscapes';
 		if (push) pushNavigationState(resolve(route), {});
@@ -1744,6 +1810,10 @@
 			regressionOutlier = state.landscape.regressionOutlier ?? false;
 		}
 		landscape = createLandscape(state.landscape);
+		metricsXAxis =
+			state.landscape.id === 'regression'
+				? 'activeGradientExamplesProcessed'
+				: 'optimizerUpdates';
 		optimizerId = state.optimizer.id;
 		learningRate = state.optimizer.learningRate;
 		learningRateExponent = Math.log10(learningRate);
@@ -1764,12 +1834,7 @@
 			requestedHeight === 'linear' || requestedHeight === 'log-compressed'
 				? requestedHeight
 				: landscape.recommendedHeightMapping;
-		cameraPreset =
-			landscapeId === 'rosenbrock'
-				? 'ravine'
-				: landscapeId === 'himmelblau'
-					? 'topographic'
-					: 'perspective';
+		cameraPreset = defaultCameraPreset(landscapeId);
 		const camera = parameters.get('camera');
 		if (
 			camera === 'perspective' ||
@@ -1795,7 +1860,9 @@
 
 	function restoreUrlComparisons(parameters: URLSearchParams) {
 		const generation = ++routeRestoreGeneration;
-		if (parameters.get('race') === '1') {
+		const requestedRace = parameters.get('race');
+		if (requestedRace === 'same' || requestedRace === 'illustrative' || requestedRace === '1') {
+			raceMode = requestedRace === 'same' ? 'same-rate' : 'illustrative';
 			setTimeout(() => {
 				if (generation === routeRestoreGeneration) runRace();
 			}, 0);
@@ -1815,7 +1882,7 @@
 	}
 
 	async function copyExperiment() {
-		replaceUrl(true);
+		replaceUrl(true, true);
 		try {
 			await navigator.clipboard.writeText(window.location.href);
 			showCopied('Experiment link copied.');
@@ -1843,9 +1910,12 @@
 	function resetCanonicalArticle() {
 		const url = new SvelteURL(window.location.href);
 		url.search = '';
+		url.hash = '';
 		const route =
 			`${url.pathname}${url.search}${url.hash}` as '/blog/visualizations/gradient-descent-landscapes';
 		pushNavigationState(resolve(route), {});
+		sharedExperimentRestored = false;
+		sharedExperimentSummary = '';
 		showContours = true;
 		showGradientField = false;
 		showCurrentGradient = true;
@@ -1857,7 +1927,7 @@
 		showCrossSection = true;
 		showKnownMinima = true;
 		metricMode = 'loss';
-		metricsXAxis = 'gradientEvaluations';
+		metricsXAxis = 'optimizerUpdates';
 		metricsLogScale = true;
 		metricsAutoScale = false;
 		probe = null;
@@ -1883,7 +1953,10 @@
 			`Start: (${formatNumber(snapshot.start[0])}, ${formatNumber(snapshot.start[1])})`,
 			`Final: (${formatNumber(snapshot.theta[0])}, ${formatNumber(snapshot.theta[1])})`,
 			`Raw loss: ${formatNumber(snapshot.loss, 8)}`,
-			`Iterations / gradient evaluations: ${snapshot.iteration} / ${snapshot.gradientEvaluations}`,
+			`Optimizer updates / active-gradient computations: ${snapshot.optimizerUpdates} / ${snapshot.activeGradientComputations}`,
+			`Active-gradient examples processed: ${snapshot.activeGradientExamplesProcessed ?? 'not data-based'}`,
+			`Additional full-gradient computations: ${snapshot.additionalFullGradientComputations}`,
+			`Diagnostic examples revisited: ${snapshot.diagnosticExamplesProcessed ?? 'not data-based'}`,
 			`Iteration budget / gradient tolerance: ${maximumIterations} / ${formatNumber(gradientTolerance)}`,
 			`Status: ${snapshot.statusMessage}`,
 			`Seed: ${snapshot.seed}`
@@ -1960,11 +2033,10 @@
 				);
 			}
 		} else {
-			const range = Math.max(Number.EPSILON, grid.max - grid.min);
 			for (let row = 0; row < grid.height; row += 1) {
 				for (let column = 0; column < grid.width; column += 1) {
 					const raw = Number(grid.values[row * grid.width + column]);
-					const normalized = Math.min(1, Math.max(0, (raw - grid.min) / range));
+					const normalized = normalizeLossForDisplay(raw, grid, heightMapping);
 					const lightness = 9 + normalized ** 0.55 * 27;
 					context.fillStyle = `hsl(155 ${7 + normalized * 9}% ${lightness}%)`;
 					context.fillRect(
@@ -2032,7 +2104,9 @@
 			`η ${formatNumber(snapshot.optimizer.learningRate)} · ${optimizerDetails}`,
 			gradientModeLabel,
 			`budget ${maximumIterations} · tolerance ${formatNumber(gradientTolerance)}`,
-			`iteration ${snapshot.iteration} · ${snapshot.gradientEvaluations} evaluations`,
+			`optimizer updates ${snapshot.optimizerUpdates} · active-gradient computations ${snapshot.activeGradientComputations}`,
+			`active-gradient examples ${snapshot.activeGradientExamplesProcessed ?? 'not data-based'} · additional full-gradient computations ${snapshot.additionalFullGradientComputations}`,
+			`diagnostic examples revisited ${snapshot.diagnosticExamplesProcessed ?? 'not data-based'}`,
 			`raw loss ${formatNumber(snapshot.loss, 8)}`,
 			`status ${snapshot.status}`,
 			`seed ${seed}`,
@@ -2202,6 +2276,8 @@
 		const parameters = new URLSearchParams(window.location.search);
 		if (parameters.has('gd_v') || parameters.has('v') || parameters.has('landscape')) {
 			applyUrlState(parameters);
+			sharedExperimentRestored = true;
+			sharedExperimentSummary = `${landscape.name} · ${optimizerLabel(optimizerId)} · η=${formatNumber(learningRate)}`;
 		}
 		initialized = true;
 		restoreUrlComparisons(parameters);
@@ -2300,7 +2376,21 @@
 			<span>{gradientModeLabel}</span>
 		</div>
 	</header>
+	{#if sharedExperimentRestored}
+		<aside class="restore-banner" data-testid="gradient-descent-restored-banner" role="status">
+			<div>
+				<strong>Shared experiment restored.</strong>
+				<span>{sharedExperimentSummary}</span>
+			</div>
+			<button
+				type="button"
+				onclick={() => laboratory.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+				>View restored laboratory</button
+			>
+		</aside>
+	{/if}
 
+	{#snippet primaryControls()}
 	<div class="instrument-bar" aria-label="Primary simulation controls">
 		<div class="transport">
 			<button
@@ -2364,6 +2454,10 @@
 			</select>
 		</label>
 	</div>
+	{/snippet}
+	{#if !compactLayout}
+		{@render primaryControls()}
+	{/if}
 
 	<div class="mobile-tabs" role="tablist" aria-label="Laboratory view">
 		{#each MOBILE_VIEWS as view, index (view)}
@@ -2401,8 +2495,8 @@
 				</div>
 				<p>
 					{heightMapping === 'log-compressed'
-						? 'Display height: log₁p(max(0, L − robust sampled minimum)); calculations use unshifted raw loss.'
-						: 'Display height: linear normalization over the robust sampled range; calculations use raw loss.'}
+						? 'Height and contours share log₁p display spacing from the true loss floor; calculations use unshifted raw loss.'
+						: 'Height and contours share linear display spacing from the true loss floor; calculations use raw loss.'}
 				</p>
 			</div>
 			<div class="terrain-frame">
@@ -2459,6 +2553,7 @@
 					{basin}
 					{particles}
 					parameterLabels={landscape.parameterLabels}
+					{heightMapping}
 					{showContours}
 					{showGradientField}
 					{showBasin}
@@ -2479,6 +2574,24 @@
 			</output>
 		</section>
 
+		{#if compactLayout && mobileView === 'microscope'}
+			{@render microscopePanel()}
+		{:else if compactLayout && mobileView === 'metrics'}
+			{@render metricsPanel()}
+		{/if}
+
+		{#if !compactLayout}<dl class="metrics-strip" aria-label="Live run metrics">
+			{#each liveMetricRows() as metric (metric[0])}
+				<div>
+					<dt>{metric[0]}</dt>
+					<dd>{metric[1]}</dd>
+				</div>
+			{/each}
+		</dl>{/if}
+	</div>
+
+	{#if compactLayout}
+		{@render primaryControls()}
 		<dl class="metrics-strip" aria-label="Live run metrics">
 			{#each liveMetricRows() as metric (metric[0])}
 				<div>
@@ -2487,7 +2600,7 @@
 				</div>
 			{/each}
 		</dl>
-	</div>
+	{/if}
 
 	<div class="configuration-row">
 		<details bind:open={advancedOpen}>
@@ -2707,6 +2820,30 @@
 
 		<details bind:open={analysisOpen}>
 			<summary>Cartography and comparisons</summary>
+			<fieldset class="race-mode-control">
+				<legend>Optimizer-race rate policy</legend>
+				<label>
+					<input
+						type="radio"
+						name="optimizer-race-mode"
+						checked={raceMode === 'same-rate'}
+						onchange={() => selectRaceMode('same-rate')}
+					/>
+					<span><strong>Same η</strong> — every optimizer uses the current learning rate.</span>
+				</label>
+				<label>
+					<input
+						type="radio"
+						name="optimizer-race-mode"
+						checked={raceMode === 'illustrative'}
+						onchange={() => selectRaceMode('illustrative')}
+					/>
+					<span
+						><strong>Illustrative tuned rates</strong> — deliberately chosen defaults reveal
+						different behaviours.</span
+					>
+				</label>
+			</fieldset>
 			<div class="analysis-actions">
 				<button
 					type="button"
@@ -2764,6 +2901,7 @@
 				history={snapshot.history}
 				optimum={regressionFacts.knownMinima[0]?.theta ?? null}
 				parameterLabels={regressionFacts.parameterLabels}
+				{heightMapping}
 				outlierEnabled={regressionOutlier}
 				onoutliertoggle={(enabled) => {
 					regressionOutlier = enabled;
@@ -2817,9 +2955,17 @@
 	{#if race.length > 0}
 		<section class="race-section" aria-labelledby="race-title">
 			<div class="section-heading">
-				<p class="eyebrow">Same start · cap {raceEvaluationCap} evaluations · same stopping rule</p>
+				<p class="eyebrow">
+					Same start · cap {raceUpdateCap} optimizer updates · same stopping rule ·
+					{raceMode === 'same-rate' ? 'same η' : 'illustrative tuned rates'}
+				</p>
 				<h3 id="race-title">Optimizer race</h3>
 			</div>
+			<p class="race-disclosure">
+				{raceMode === 'same-rate'
+					? `Controlled rate policy: all four optimizers use η=${formatNumber(learningRate)}. Their memory rules still differ.`
+					: 'Demonstration policy: the rates below are hand-picked per optimizer to make the comparison illustrative. Do not read the finishing order as a universal benchmark.'}
+			</p>
 			<div class="race-grid">
 				{#each race as entry (entry.config.id)}
 					<article data-optimizer={entry.config.id}>
@@ -2853,8 +2999,8 @@
 								</dd>
 							</div>
 							<div>
-								<dt>Evaluations / shared cap</dt>
-								<dd>{entry.snapshot.gradientEvaluations} / {raceEvaluationCap}</dd>
+								<dt>Optimizer updates / shared cap</dt>
+								<dd>{entry.snapshot.optimizerUpdates} / {raceUpdateCap}</dd>
 							</div>
 							<div>
 								<dt>Final full-gradient norm</dt>
@@ -2888,10 +3034,28 @@
 				supplement colour: ✓ converged, ≈ rebounding or oscillatory, ~ slow or unresolved, ! escaped
 				or divergent. The ruled row and column form the current-configuration crosshair.
 			</p>
-			<div class="momentum-weather-scroll">
+			<div class="map-mode-toggle" role="group" aria-label="Momentum weather map display mode">
+				<button
+					type="button"
+					aria-pressed={momentumWeatherMapMode === 'fit'}
+					onclick={() => (momentumWeatherMapMode = 'fit')}>Fit overview</button
+				><button
+					type="button"
+					aria-pressed={momentumWeatherMapMode === 'inspect'}
+					onclick={() => (momentumWeatherMapMode = 'inspect')}>Inspect cells</button
+				>
+			</div>
+			<p class="map-mode-note">
+				{momentumWeatherMapMode === 'fit'
+					? 'Fit shows the whole parameter field at once. Switch to Inspect for selectable 44-pixel cells and exact values.'
+					: 'Inspect keeps every cell touch-sized; pan horizontally to select an exact configuration.'}
+			</p>
+			<div class="momentum-weather-scroll" data-map-mode={momentumWeatherMapMode}>
 				<div
 					class="momentum-weather-grid"
-					style={`grid-template-columns: 3.5rem repeat(${momentumStability.width}, minmax(2.8rem, 1fr));`}
+					style={momentumWeatherMapMode === 'inspect'
+						? `grid-template-columns: 3.5rem repeat(${momentumStability.width}, minmax(2.8rem, 1fr));`
+						: `grid-template-columns: 2.8rem repeat(${momentumStability.width}, minmax(0, 1fr));`}
 					aria-label="Momentum learning-rate and beta stability results"
 				>
 					<span class="weather-corner">β \ η</span>
@@ -2905,6 +3069,8 @@
 						{#each momentumStability.cells.slice(row * momentumStability.width, (row + 1) * momentumStability.width) as entry (`${entry.beta}-${entry.learningRate}`)}
 							<button
 								type="button"
+								disabled={momentumWeatherMapMode === 'fit'}
+								aria-hidden={momentumWeatherMapMode === 'fit' ? 'true' : undefined}
 								data-status={entry.status}
 								data-regime={weatherRegime(entry, momentumStability.initialLoss)}
 								class:current={Math.abs(Math.log(entry.learningRate / learningRate)) < 0.05 &&
@@ -2931,7 +3097,23 @@
 				oscillatory, ! hazardous, ~ slow or unresolved. The ruled column marks the current
 				configuration.
 			</p>
-			<div class="weather-map-scroll">
+			<div class="map-mode-toggle" role="group" aria-label="Learning-rate weather map display mode">
+				<button
+					type="button"
+					aria-pressed={weatherMapMode === 'fit'}
+					onclick={() => (weatherMapMode = 'fit')}>Fit overview</button
+				><button
+					type="button"
+					aria-pressed={weatherMapMode === 'inspect'}
+					onclick={() => (weatherMapMode = 'inspect')}>Inspect cells</button
+				>
+			</div>
+			<p class="map-mode-note">
+				{weatherMapMode === 'fit'
+					? 'Fit shows all 31 trials without horizontal panning. Switch to Inspect for selectable 44-pixel cells and exact labels.'
+					: 'Inspect keeps every trial touch-sized; pan horizontally to choose an exact learning rate.'}
+			</p>
+			<div class="weather-map-scroll" data-map-mode={weatherMapMode}>
 				<div class="weather-map-plot">
 					{#if stabilityBoundaryPercent() !== null}
 						<span
@@ -2946,6 +3128,8 @@
 						{#each stability as entry (entry.learningRate)}
 							<button
 								type="button"
+								disabled={weatherMapMode === 'fit'}
+								aria-hidden={weatherMapMode === 'fit' ? 'true' : undefined}
 								class:current={Math.abs(Math.log(entry.learningRate / learningRate)) < 0.02}
 								data-status={entry.status}
 								data-regime={weatherRegime(entry)}
@@ -2971,6 +3155,7 @@
 		</section>
 	{/if}
 
+	{#snippet microscopePanel()}
 	<section
 		id="panel-microscope"
 		role={compactLayout ? 'tabpanel' : 'region'}
@@ -3002,7 +3187,9 @@
 					: 'Exact analytic gradient ∇L'}
 		/>
 	</section>
+	{/snippet}
 
+	{#snippet metricsPanel()}
 	<section
 		id="panel-metrics"
 		role={compactLayout ? 'tabpanel' : 'region'}
@@ -3011,7 +3198,7 @@
 		class="history-shell"
 	>
 		<div class="section-heading">
-			<p class="eyebrow">Horizontal axis · gradient evaluations</p>
+			<p class="eyebrow">Horizontal axis · disclosed work measure</p>
 			<h3 id="history-title">Loss and step history</h3>
 		</div>
 		<div class="metric-selector" aria-label="History metric">
@@ -3025,8 +3212,11 @@
 			<label>
 				<span>Horizontal axis</span>
 				<select bind:value={metricsXAxis}>
-					<option value="gradientEvaluations">Gradient evaluations</option>
-					<option value="iteration">Iteration</option>
+					<option value="optimizerUpdates">Optimizer updates</option>
+					<option value="activeGradientComputations">Active-gradient computations</option>
+					<option value="activeGradientExamplesProcessed" disabled={!isRegressionLandscape(landscape)}
+						>Active-gradient examples processed</option
+					>
 				</select>
 			</label>
 			<label class="check">
@@ -3048,7 +3238,7 @@
 			knownMinima={landscape.knownMinima}
 			xAxis={metricsXAxis}
 			logScale={metricsLogScale}
-			xDomain={metricsAutoScale ? null : [0, maximumIterations]}
+			xDomain={metricsAutoScale ? null : stableMetricXDomain}
 			yDomain={metricsAutoScale ? null : stableMetricYDomain}
 			onselectstep={(index) => (selectedIteration = index)}
 		/>
@@ -3073,6 +3263,11 @@
 			onselectstep={(index) => (selectedIteration = index)}
 		/>
 	</section>
+	{/snippet}
+	{#if !compactLayout}
+		{@render microscopePanel()}
+		{@render metricsPanel()}
+	{/if}
 
 	<section class="preset-section" aria-labelledby="preset-title">
 		<div class="section-heading">
@@ -3094,6 +3289,11 @@
 		<p>
 			<strong>Visual truth:</strong> the marker is a parameter vector updated by a discrete algorithm.
 			It is not a ball, gravity is never simulated, and playback speed never changes the iterates.
+		</p>
+		<p>
+			<strong>Work-counter scope:</strong> optimizer updates and active-gradient work count only the
+			simulated run. Gradients sampled solely to draw fields, diagnostics or other display aids are
+			not optimizer work; separate diagnostic counters are shown when the run itself requests them.
 		</p>
 		<p>
 			Shortcuts outside controls: <kbd>Space</kbd> play/pause · <kbd>N</kbd> single step ·
@@ -3188,6 +3388,25 @@
 		border-color: #9b704d;
 		background: #2b1c13;
 		color: #efc49b;
+	}
+	.restore-banner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		border-bottom: 1px solid #776039;
+		background: #2b2417;
+		padding: 0.7rem 1rem;
+		color: #f5dfb1;
+		font-size: 0.76rem;
+	}
+	.restore-banner div {
+		display: grid;
+		gap: 0.18rem;
+	}
+	.restore-banner span {
+		color: #d2c6aa;
+		font-family: var(--font-mono);
 	}
 	.configuration-error {
 		grid-column: 1 / -1;
@@ -3430,6 +3649,38 @@
 		border-top: 1px solid var(--obs-rule);
 		padding: 0.8rem;
 	}
+	.race-mode-control {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.55rem;
+		margin: 0;
+		border: 0;
+		border-top: 1px solid var(--obs-rule);
+		padding: 0.8rem 0.8rem 0;
+	}
+	.race-mode-control legend {
+		padding-top: 0.7rem;
+		color: var(--obs-muted);
+		font-size: 0.66rem;
+		font-weight: 750;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+	.race-mode-control label {
+		display: flex;
+		min-height: 2.75rem;
+		align-items: flex-start;
+		gap: 0.5rem;
+		border: 1px solid var(--obs-rule);
+		border-radius: 0.35rem;
+		padding: 0.6rem;
+		line-height: 1.4;
+	}
+	.race-mode-control input {
+		flex: 0 0 auto;
+		margin-top: 0.1rem;
+		accent-color: var(--obs-gold);
+	}
 	.analysis-message {
 		margin: 0;
 		padding: 0 0.85rem 0.8rem;
@@ -3518,6 +3769,12 @@
 		color: var(--obs-gold);
 		font: 0.7rem/1.2 var(--font-mono);
 	}
+	.race-disclosure {
+		max-width: 82ch;
+		margin: -0.2rem 0 0.9rem;
+		color: var(--obs-muted);
+		font: 0.76rem/1.55 var(--font-sans);
+	}
 	.observation {
 		margin: 0.85rem 0 0;
 		border-left: 3px solid var(--obs-gold);
@@ -3531,7 +3788,13 @@
 	}
 	.weather-map-plot {
 		position: relative;
-		min-width: 84rem;
+		min-width: 0;
+	}
+	.weather-map-scroll[data-map-mode='inspect'] .weather-map-plot {
+		min-width: 90rem;
+	}
+	.weather-map-scroll[data-map-mode='fit'] {
+		overflow-x: hidden;
 	}
 	.weather-map {
 		display: grid;
@@ -3546,6 +3809,14 @@
 		gap: 0.15rem;
 		place-content: center;
 		padding: 0.2rem 0.1rem;
+	}
+	.weather-map-scroll[data-map-mode='fit'] .weather-map button:disabled {
+		min-height: 3.25rem;
+		cursor: default;
+		opacity: 1;
+	}
+	.weather-map-scroll[data-map-mode='fit'] :is(.weather-short, .weather-rate, .weather-loss) {
+		display: none;
 	}
 	.weather-map button[data-status='converged'] {
 		background: #234b43;
@@ -3612,15 +3883,40 @@
 		color: var(--obs-muted);
 		font: 0.72rem/1.55 var(--font-sans);
 	}
+	.map-mode-toggle {
+		display: inline-grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.3rem;
+		margin: 0.25rem 0 0;
+	}
+	.map-mode-toggle button {
+		min-height: 2.75rem;
+	}
+	.map-mode-toggle button[aria-pressed='true'] {
+		border-color: #d3aa63;
+		background: #292419;
+		color: #ffe3ad;
+	}
+	.map-mode-note {
+		margin: 0.45rem 0 0;
+		color: var(--obs-muted);
+		font: 0.68rem/1.45 var(--font-sans);
+	}
 	.momentum-weather-scroll {
 		overflow-x: auto;
 		padding-bottom: 0.35rem;
 	}
 	.momentum-weather-grid {
 		display: grid;
-		min-width: 72rem;
+		min-width: 0;
 		gap: 2px;
 		align-items: stretch;
+	}
+	.momentum-weather-scroll[data-map-mode='inspect'] .momentum-weather-grid {
+		min-width: 72rem;
+	}
+	.momentum-weather-scroll[data-map-mode='fit'] {
+		overflow-x: hidden;
 	}
 	.momentum-weather-grid > span {
 		display: grid;
@@ -3637,6 +3933,14 @@
 		border-radius: 0.12rem;
 		background: #3f4d46;
 		padding: 0;
+	}
+	.momentum-weather-scroll[data-map-mode='fit'] button:disabled {
+		min-width: 0;
+		cursor: default;
+		opacity: 1;
+	}
+	.momentum-weather-scroll[data-map-mode='fit'] .cell-loss {
+		display: none;
 	}
 	.momentum-weather-grid button::after {
 		position: absolute;
@@ -3824,6 +4128,13 @@
 			justify-items: start;
 			text-align: left;
 		}
+		.restore-banner {
+			align-items: stretch;
+			flex-direction: column;
+		}
+		.race-mode-control {
+			grid-template-columns: 1fr;
+		}
 		.mobile-tabs {
 			position: sticky;
 			top: 0;
@@ -3891,8 +4202,8 @@
 		.preset-grid {
 			grid-template-columns: 1fr 1fr;
 		}
-		.weather-map-plot {
-			min-width: 78rem;
+		.map-mode-toggle {
+			display: grid;
 		}
 		.truth-footer {
 			display: grid;

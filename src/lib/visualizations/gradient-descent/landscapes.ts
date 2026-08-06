@@ -52,6 +52,7 @@ export function createQuadraticLandscape(
 		defaultStart: [4, -3],
 		defaultLearningRate: 0.08,
 		knownMinima: [{ theta: [0, 0], loss: 0, label: 'Global minimum' }],
+		knownMinimumLoss: 0,
 		recommendedCamera: 'three-quarter',
 		recommendedHeightMapping: 'linear',
 		citationsOrNotes: [
@@ -88,6 +89,7 @@ export const ROSENBROCK_LANDSCAPE: LandscapeDefinition = {
 	defaultStart: [-1.2, 1],
 	defaultLearningRate: 0.001,
 	knownMinima: [{ theta: [1, 1], loss: 0, label: 'Global minimum' }],
+	knownMinimumLoss: 0,
 	recommendedCamera: 'ravine',
 	recommendedHeightMapping: 'log-compressed',
 	citationsOrNotes: ['Defaults use a = 1 and b = 100.'],
@@ -128,6 +130,7 @@ export const HIMMELBLAU_LANDSCAPE: LandscapeDefinition = {
 		loss: 0,
 		label: `Valley ${index + 1}`
 	})),
+	knownMinimumLoss: 0,
 	recommendedCamera: 'four-valleys',
 	recommendedHeightMapping: 'log-compressed',
 	citationsOrNotes: [
@@ -161,6 +164,7 @@ export const RASTRIGIN_LANDSCAPE: LandscapeDefinition = {
 	defaultStart: [3.7, -3.2],
 	defaultLearningRate: 0.008,
 	knownMinima: [{ theta: [0, 0], loss: 0, label: 'Global minimum' }],
+	knownMinimumLoss: 0,
 	recommendedCamera: 'corrugations',
 	recommendedHeightMapping: 'log-compressed',
 	citationsOrNotes: ['Noise may change a path but does not guarantee global optimization.'],
@@ -195,6 +199,7 @@ export const CONTAINED_SADDLE_LANDSCAPE: LandscapeDefinition = {
 		{ theta: [0, SADDLE_MINIMUM], loss: -2.5, label: 'Northern minimum' },
 		{ theta: [0, -SADDLE_MINIMUM], loss: -2.5, label: 'Southern minimum' }
 	],
+	knownMinimumLoss: -2.5,
 	recommendedCamera: 'saddle',
 	recommendedHeightMapping: 'linear',
 	citationsOrNotes: [
@@ -226,6 +231,7 @@ export const PLATEAU_LANDSCAPE: LandscapeDefinition = {
 	defaultStart: [6, -5],
 	defaultLearningRate: 1,
 	knownMinima: [{ theta: [0, 0], loss: 0, label: 'Global minimum' }],
+	knownMinimumLoss: 0,
 	recommendedCamera: 'low-angle',
 	recommendedHeightMapping: 'linear',
 	citationsOrNotes: ['A tiny gradient on the outer plateau is not evidence of a nearby minimum.'],
@@ -355,6 +361,7 @@ export function createRegressionLandscape(includesOutlier = false): RegressionLa
 				label: includesOutlier ? 'Least-squares fit with outlier' : 'Least-squares fit'
 			}
 		],
+		knownMinimumLoss: regressionValue(points, optimum),
 		recommendedCamera: 'regression-bowl',
 		recommendedHeightMapping: 'log-compressed',
 		citationsOrNotes: [

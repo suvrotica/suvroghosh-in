@@ -8,6 +8,11 @@ import type { SimulationHistoryPoint } from './types';
 const HISTORY: readonly SimulationHistoryPoint[] = [
 	{
 		iteration: 0,
+		optimizerUpdates: 0,
+		activeGradientComputations: 0,
+		additionalFullGradientComputations: 0,
+		activeGradientExamplesProcessed: null,
+		diagnosticExamplesProcessed: null,
 		gradientEvaluations: 0,
 		theta: [9, 0],
 		loss: 1,

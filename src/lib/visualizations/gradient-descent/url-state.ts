@@ -51,7 +51,10 @@ export function createDefaultExperimentState(
 		speed: 12,
 		maximumIterations: 2_000,
 		gradientTolerance: 1e-7,
-		gradientMode: { kind: 'full' }
+		gradientMode:
+			landscapeId === 'regression'
+				? { kind: 'minibatch', batchSize: 'full' }
+				: { kind: 'full' }
 	};
 }
 
@@ -63,43 +66,52 @@ export function formatUrlNumber(value: number): string {
 
 export function serializeExperimentUrlState(state: ExperimentUrlState): URLSearchParams {
 	const parameters = new URLSearchParams();
+	const defaults = createDefaultExperimentState(state.landscape.id);
 	parameters.set('v', '1');
-	parameters.set('landscape', state.landscape.id);
-	parameters.set('optimizer', state.optimizer.id);
-	parameters.set('lr', formatUrlNumber(state.optimizer.learningRate));
-	parameters.set('x', formatUrlNumber(state.start[0]));
-	parameters.set('y', formatUrlNumber(state.start[1]));
-	parameters.set('seed', state.seed);
-	parameters.set('speed', formatUrlNumber(state.speed));
-	parameters.set('max', String(state.maximumIterations));
-	parameters.set('tol', formatUrlNumber(state.gradientTolerance));
+	if (state.landscape.id !== 'rosenbrock') parameters.set('landscape', state.landscape.id);
+	if (state.optimizer.id !== defaults.optimizer.id) parameters.set('optimizer', state.optimizer.id);
+	if (state.optimizer.learningRate !== defaults.optimizer.learningRate)
+		parameters.set('lr', formatUrlNumber(state.optimizer.learningRate));
+	if (state.start[0] !== defaults.start[0]) parameters.set('x', formatUrlNumber(state.start[0]));
+	if (state.start[1] !== defaults.start[1]) parameters.set('y', formatUrlNumber(state.start[1]));
+	if (state.seed !== defaults.seed) parameters.set('seed', state.seed);
+	if (state.speed !== defaults.speed) parameters.set('speed', formatUrlNumber(state.speed));
+	if (state.maximumIterations !== defaults.maximumIterations)
+		parameters.set('max', String(state.maximumIterations));
+	if (state.gradientTolerance !== defaults.gradientTolerance)
+		parameters.set('tol', formatUrlNumber(state.gradientTolerance));
 
 	if (state.landscape.id === 'quadratic' && state.landscape.quadratic) {
 		const { lambda1, lambda2, rotation } = state.landscape.quadratic;
-		if (lambda1 !== undefined) parameters.set('l1', formatUrlNumber(lambda1));
-		if (lambda2 !== undefined) parameters.set('l2', formatUrlNumber(lambda2));
-		if (rotation !== undefined) parameters.set('angle', formatUrlNumber(rotation));
+		if (lambda1 !== undefined && lambda1 !== 1) parameters.set('l1', formatUrlNumber(lambda1));
+		if (lambda2 !== undefined && lambda2 !== 14) parameters.set('l2', formatUrlNumber(lambda2));
+		if (rotation !== undefined && rotation !== Math.PI / 6)
+			parameters.set('angle', formatUrlNumber(rotation));
 	}
-	if (state.landscape.id === 'regression') {
-		parameters.set('outlier', state.landscape.regressionOutlier ? '1' : '0');
-	}
+	if (state.landscape.id === 'regression' && state.landscape.regressionOutlier)
+		parameters.set('outlier', '1');
 
 	const normalizedOptimizer = normalizeOptimizerConfig(state.optimizer);
-	if (state.optimizer.id === 'momentum')
+	if (state.optimizer.id === 'momentum' && normalizedOptimizer.beta !== 0.9)
 		parameters.set('beta', formatUrlNumber(normalizedOptimizer.beta));
 	if (state.optimizer.id === 'rmsprop') {
-		parameters.set('rho', formatUrlNumber(normalizedOptimizer.rho));
-		parameters.set('eps', formatUrlNumber(normalizedOptimizer.epsilon));
+		if (normalizedOptimizer.rho !== 0.9)
+			parameters.set('rho', formatUrlNumber(normalizedOptimizer.rho));
+		if (normalizedOptimizer.epsilon !== 1e-8)
+			parameters.set('eps', formatUrlNumber(normalizedOptimizer.epsilon));
 	}
 	if (state.optimizer.id === 'adam') {
-		parameters.set('beta1', formatUrlNumber(normalizedOptimizer.beta1));
-		parameters.set('beta2', formatUrlNumber(normalizedOptimizer.beta2));
-		parameters.set('eps', formatUrlNumber(normalizedOptimizer.epsilon));
+		if (normalizedOptimizer.beta1 !== 0.9)
+			parameters.set('beta1', formatUrlNumber(normalizedOptimizer.beta1));
+		if (normalizedOptimizer.beta2 !== 0.999)
+			parameters.set('beta2', formatUrlNumber(normalizedOptimizer.beta2));
+		if (normalizedOptimizer.epsilon !== 1e-8)
+			parameters.set('eps', formatUrlNumber(normalizedOptimizer.epsilon));
 	}
 
-	if (state.gradientMode.kind === 'minibatch')
+	if (state.gradientMode.kind === 'minibatch' && state.gradientMode.batchSize !== 'full')
 		parameters.set('batch', String(state.gradientMode.batchSize));
-	if (state.gradientMode.kind === 'noisy')
+	if (state.gradientMode.kind === 'noisy' && state.gradientMode.sigma !== 0)
 		parameters.set('noise', formatUrlNumber(state.gradientMode.sigma));
 	return parameters;
 }
@@ -255,7 +267,8 @@ export function parseExperimentUrlState(
 		rawSeed && rawSeed.trim().length > 0 && rawSeed.length <= 128 ? rawSeed : defaults.seed;
 	if (rawSeed !== null && rawSeed !== seed) warnings.push('Ignored invalid seed.');
 
-	let gradientMode: GradientMode = { kind: 'full' };
+	let gradientMode: GradientMode =
+		landscapeId === 'regression' ? { kind: 'minibatch', batchSize: 'full' } : { kind: 'full' };
 	if (landscapeId === 'regression' && parameters.has('batch')) {
 		const batch = parameters.get('batch');
 		if (batch === '1' || batch === '2' || batch === '4') {

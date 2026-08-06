@@ -173,6 +173,11 @@ describe('mathematical acceptance: stochastic sampling and run lifecycle', () =>
 		expect(snapshot.loss).toBe(landscape.value(start));
 		expect(snapshot.history).toHaveLength(1);
 		expect(snapshot.gradientEvaluations).toBe(1);
+		expect(snapshot.optimizerUpdates).toBe(0);
+		expect(snapshot.activeGradientComputations).toBe(1);
+		expect(snapshot.additionalFullGradientComputations).toBe(0);
+		expect(snapshot.activeGradientExamplesProcessed).toBeNull();
+		expect(snapshot.diagnosticExamplesProcessed).toBeNull();
 	});
 
 	it.each(['rmsprop', 'adam'] as const)(
@@ -308,6 +313,11 @@ describe('mathematical acceptance: stochastic sampling and run lifecycle', () =>
 		expect(snapshot.history).toHaveLength(1);
 		expect(snapshot.gradientEvaluations).toBe(1);
 		expect(snapshot.history[0].gradientEvaluations).toBe(1);
+		expect(snapshot.optimizerUpdates).toBe(0);
+		expect(snapshot.activeGradientComputations).toBe(1);
+		expect(snapshot.additionalFullGradientComputations).toBe(1);
+		expect(snapshot.activeGradientExamplesProcessed).toBe(1);
+		expect(snapshot.diagnosticExamplesProcessed).toBe(landscape.points.length);
 		expect(snapshot.history[0].gradient).toBeNull();
 		expect(snapshot.history[0].terminalEvaluation).toEqual({
 			gradient: sample.active,
@@ -317,6 +327,43 @@ describe('mathematical acceptance: stochastic sampling and run lifecycle', () =>
 			batchIndices: sample.batchIndices
 		});
 		expect(simulation.replay().snapshot()).toEqual(snapshot);
+	});
+
+	it('reports optimizer work, diagnostics, and regression examples as separate counters', () => {
+		const landscape = createRegressionLandscape(false);
+		const minibatch = runSimulation(
+			{
+				landscape,
+				optimizer: { id: 'gd', learningRate: 0.01 },
+				gradientMode: { kind: 'minibatch', batchSize: 4 },
+				maximumIterations: 3,
+				gradientTolerance: 0,
+				stepTolerance: 0
+			},
+			3
+		);
+		expect(minibatch.optimizerUpdates).toBe(3);
+		expect(minibatch.activeGradientComputations).toBe(3);
+		expect(minibatch.additionalFullGradientComputations).toBe(3);
+		expect(minibatch.activeGradientExamplesProcessed).toBe(12);
+		expect(minibatch.diagnosticExamplesProcessed).toBe(landscape.points.length * 3);
+
+		const fullBatch = runSimulation(
+			{
+				landscape,
+				optimizer: { id: 'gd', learningRate: 0.01 },
+				gradientMode: { kind: 'minibatch', batchSize: 'full' },
+				maximumIterations: 2,
+				gradientTolerance: 0,
+				stepTolerance: 0
+			},
+			2
+		);
+		expect(fullBatch.optimizerUpdates).toBe(2);
+		expect(fullBatch.activeGradientComputations).toBe(2);
+		expect(fullBatch.additionalFullGradientComputations).toBe(0);
+		expect(fullBatch.activeGradientExamplesProcessed).toBe(landscape.points.length * 2);
+		expect(fullBatch.diagnosticExamplesProcessed).toBe(0);
 	});
 
 	it('bounds retained history while preserving iteration zero and current iteration semantics', () => {
@@ -346,7 +393,7 @@ describe('mathematical acceptance: stochastic sampling and run lifecycle', () =>
 		expect(invalid.statusMessage).toMatch(/maximumHistoryLength/);
 	});
 
-	it('compares optimizers under exactly the same gradient-evaluation budget', () => {
+	it('compares optimizers under exactly the same optimizer-update budget', () => {
 		const entries = runOptimizerRace({
 			landscape: createQuadraticLandscape({ lambda1: 1, lambda2: 4, rotation: 0.2 }),
 			optimizers: [
@@ -354,7 +401,7 @@ describe('mathematical acceptance: stochastic sampling and run lifecycle', () =>
 				{ id: 'momentum', learningRate: 0.05, beta: 0.8 },
 				{ id: 'adam', learningRate: 0.05 }
 			],
-			gradientEvaluationBudget: 12
+			optimizerUpdateBudget: 12
 		});
 		expect(entries).toHaveLength(3);
 		expect(entries.map((entry) => entry.snapshot.gradientEvaluations)).toEqual([12, 12, 12]);

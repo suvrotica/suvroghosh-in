@@ -23,7 +23,7 @@ const commonOptions = {
 };
 
 describe('two-dimensional momentum stability sweep', () => {
-	it('builds a deterministic row-major (beta, log eta) grid under one evaluation budget', () => {
+	it('builds a deterministic row-major (beta, log eta) grid under one optimizer-update budget', () => {
 		const first = runMomentumStabilitySweep(commonOptions);
 		const second = runMomentumStabilitySweep(commonOptions);
 

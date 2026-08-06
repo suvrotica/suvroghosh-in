@@ -49,6 +49,8 @@ export type LandscapeDefinition = {
 	readonly defaultStart: Vector2;
 	readonly defaultLearningRate: number;
 	readonly knownMinima: readonly KnownMinimum[];
+	/** Declared global loss floor when it is known analytically. */
+	readonly knownMinimumLoss?: number;
 	readonly recommendedCamera: string;
 	readonly recommendedHeightMapping: HeightMapping;
 	readonly citationsOrNotes: readonly string[];
@@ -108,6 +110,16 @@ export type GradientSample = {
 	readonly active: Vector2;
 	readonly full: Vector2;
 	readonly batchIndices: readonly number[] | null;
+	readonly work: {
+		/** Active-gradient candidates computed for a potential optimizer transition. */
+		readonly activeGradientComputations: number;
+		/** Additional full-gradient calculations used only for diagnostics/stopping. */
+		readonly additionalFullGradientComputations: number;
+		/** Data rows used by the active regression gradient; null for analytic landscapes. */
+		readonly activeGradientExamplesProcessed: number | null;
+		/** Data rows revisited by additional diagnostic full gradients. */
+		readonly diagnosticExamplesProcessed: number | null;
+	};
 	/** Undefined when either the active or full gradient has zero norm. */
 	readonly angularErrorRadians: number | null;
 	readonly magnitudeError: number;
@@ -191,6 +203,13 @@ export type SimulationHistoryPoint = {
 	 * from theta_(t-1) to theta_t.
 	 */
 	readonly iteration: number;
+	/** Cumulative committed optimizer transitions; equal to iteration for retained rows. */
+	readonly optimizerUpdates: number;
+	readonly activeGradientComputations: number;
+	readonly additionalFullGradientComputations: number;
+	readonly activeGradientExamplesProcessed: number | null;
+	readonly diagnosticExamplesProcessed: number | null;
+	/** @deprecated Use activeGradientComputations. */
 	readonly gradientEvaluations: number;
 	readonly theta: Vector2;
 	readonly loss: number;
@@ -204,8 +223,8 @@ export type SimulationHistoryPoint = {
 	readonly optimizerDiagnostics: OptimizerDiagnostics | null;
 	readonly batchIndices: readonly number[] | null;
 	/**
-	 * A gradient evaluation that terminated the run without committing another
-	 * parameter transition. The row's cumulative gradientEvaluations includes it.
+	 * An active-gradient computation that terminated the run without committing another
+	 * parameter transition. The row's activeGradientComputations includes it.
 	 */
 	readonly terminalEvaluation?: TerminalGradientEvaluation | null;
 };
@@ -219,6 +238,12 @@ export type SimulationSnapshot = {
 	readonly status: RunStatus;
 	readonly statusMessage: string;
 	readonly iteration: number;
+	readonly optimizerUpdates: number;
+	readonly activeGradientComputations: number;
+	readonly additionalFullGradientComputations: number;
+	readonly activeGradientExamplesProcessed: number | null;
+	readonly diagnosticExamplesProcessed: number | null;
+	/** @deprecated Use activeGradientComputations. */
 	readonly gradientEvaluations: number;
 	readonly theta: Vector2;
 	readonly loss: number;

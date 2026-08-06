@@ -142,6 +142,7 @@
 		left: calc(50% + var(--article-breakout-offset, 0rem));
 		width: min(94rem, calc(100vw - 1rem));
 		margin-block: 3rem;
+		scroll-margin-top: 5rem;
 		transform: translateX(-50%);
 	}
 

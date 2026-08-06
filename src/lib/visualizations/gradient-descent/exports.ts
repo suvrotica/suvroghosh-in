@@ -13,7 +13,7 @@ function historyRow(
 	const transitionOrigin = previous && previous.iteration === point.iteration - 1 ? previous : null;
 	return [
 		point.iteration,
-		point.gradientEvaluations,
+		point.activeGradientComputations,
 		point.iteration > 0 ? point.iteration - 1 : null,
 		transitionOrigin?.theta[0] ?? null,
 		transitionOrigin?.theta[1] ?? null,
@@ -36,14 +36,18 @@ function historyRow(
 		point.terminalEvaluation?.fullGradient[1] ?? null,
 		point.terminalEvaluation?.gradientNorm ?? null,
 		point.terminalEvaluation?.fullGradientNorm ?? null,
-		point.terminalEvaluation?.batchIndices?.join('|') ?? null
+		point.terminalEvaluation?.batchIndices?.join('|') ?? null,
+		point.optimizerUpdates,
+		point.additionalFullGradientComputations,
+		point.activeGradientExamplesProcessed,
+		point.diagnosticExamplesProcessed
 	];
 }
 
 export function simulationToCsv(snapshot: SimulationSnapshot): string {
 	const header = [
 		'destination_iteration',
-		'cumulative_gradient_evaluations_at_record',
+		'cumulative_active_gradient_computations_at_record',
 		'transition_from_iteration',
 		'origin_parameter_1',
 		'origin_parameter_2',
@@ -67,6 +71,10 @@ export function simulationToCsv(snapshot: SimulationSnapshot): string {
 		'terminal_active_gradient_norm',
 		'terminal_full_gradient_norm',
 		'terminal_batch_indices',
+		'cumulative_optimizer_updates_at_record',
+		'cumulative_additional_full_gradient_computations_at_record',
+		'cumulative_active_gradient_examples_processed_at_record',
+		'cumulative_diagnostic_examples_processed_at_record',
 		'experiment_metadata',
 		'run_status'
 	];
@@ -83,7 +91,7 @@ export function simulationToCsv(snapshot: SimulationSnapshot): string {
 
 export type SimulationSummary = {
 	readonly schema: 'suvroghosh.gradient-descent.run';
-	readonly version: 1;
+	readonly version: 2;
 	readonly landscape: SimulationSnapshot['landscapeId'];
 	readonly optimizer: SimulationSnapshot['optimizer'];
 	readonly gradientMode: SimulationSnapshot['gradientMode'];
@@ -92,6 +100,12 @@ export type SimulationSummary = {
 	readonly status: SimulationSnapshot['status'];
 	readonly statusMessage: string;
 	readonly iterations: number;
+	readonly optimizerUpdates: number;
+	readonly activeGradientComputations: number;
+	readonly additionalFullGradientComputations: number;
+	readonly activeGradientExamplesProcessed: number | null;
+	readonly diagnosticExamplesProcessed: number | null;
+	/** @deprecated Compatibility alias for activeGradientComputations. */
 	readonly gradientEvaluations: number;
 	readonly finalTheta: SimulationSnapshot['theta'];
 	readonly finalLoss: number;
@@ -104,7 +118,7 @@ export function createSimulationSummary(snapshot: SimulationSnapshot): Simulatio
 	const losses = snapshot.history.map((point) => point.loss);
 	return {
 		schema: 'suvroghosh.gradient-descent.run',
-		version: 1,
+		version: 2,
 		landscape: snapshot.landscapeId,
 		optimizer: snapshot.optimizer,
 		gradientMode: snapshot.gradientMode,
@@ -113,6 +127,11 @@ export function createSimulationSummary(snapshot: SimulationSnapshot): Simulatio
 		status: snapshot.status,
 		statusMessage: snapshot.statusMessage,
 		iterations: snapshot.iteration,
+		optimizerUpdates: snapshot.optimizerUpdates,
+		activeGradientComputations: snapshot.activeGradientComputations,
+		additionalFullGradientComputations: snapshot.additionalFullGradientComputations,
+		activeGradientExamplesProcessed: snapshot.activeGradientExamplesProcessed,
+		diagnosticExamplesProcessed: snapshot.diagnosticExamplesProcessed,
 		gradientEvaluations: snapshot.gradientEvaluations,
 		finalTheta: snapshot.theta,
 		finalLoss: snapshot.loss,

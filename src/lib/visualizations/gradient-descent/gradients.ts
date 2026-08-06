@@ -14,6 +14,11 @@ export function sampleGradient(
 	const full = landscape.gradient(theta);
 	let active = full;
 	let batchIndices: readonly number[] | null = null;
+	let additionalFullGradientComputations = 0;
+	let activeGradientExamplesProcessed: number | null = isRegressionLandscape(landscape)
+		? landscape.points.length
+		: null;
+	let diagnosticExamplesProcessed: number | null = isRegressionLandscape(landscape) ? 0 : null;
 
 	if (mode.kind === 'minibatch') {
 		if (!isRegressionLandscape(landscape)) {
@@ -25,7 +30,12 @@ export function sampleGradient(
 			mode.batchSize === 'full'
 				? landscape.points.map((_, index) => index)
 				: sampleWithoutReplacement(landscape.points.length, sampleSize, random);
-		active = landscape.gradientForIndices(theta, batchIndices);
+		activeGradientExamplesProcessed = batchIndices.length;
+		if (batchIndices.length < landscape.points.length) {
+			active = landscape.gradientForIndices(theta, batchIndices);
+			additionalFullGradientComputations = 1;
+			diagnosticExamplesProcessed = landscape.points.length;
+		}
 	} else if (mode.kind === 'noisy') {
 		if (isRegressionLandscape(landscape)) {
 			throw new TypeError(
@@ -42,6 +52,12 @@ export function sampleGradient(
 		active,
 		full,
 		batchIndices,
+		work: {
+			activeGradientComputations: 1,
+			additionalFullGradientComputations,
+			activeGradientExamplesProcessed,
+			diagnosticExamplesProcessed
+		},
 		angularErrorRadians: angleBetween(active, full),
 		magnitudeError: norm(subtract(active, full))
 	};

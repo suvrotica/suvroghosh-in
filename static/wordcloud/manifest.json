@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T19:01:35.254450+00:00",
+  "generatedAt": "2026-08-06T04:30:04.799627+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -3613,12 +3613,12 @@
       "wordCount": 130
     },
     "gradient-descent-landscapes": {
-      "generatedAt": "2026-08-05T19:01:34.772857+00:00",
+      "generatedAt": "2026-08-06T04:30:04.432685+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/gradient-descent-landscapes.svg",
       "source": "src/lib/posts/gradient-descent-landscapes.md",
-      "sourceHash": "6cd34773feb896443051a4801d96c10528ed04586a3d1afd28a8f0624d6370c8",
-      "sourceModified": "2026-08-05T19:01:18.869004+00:00",
+      "sourceHash": "f975e378978668c77b5dd4e2095169bd0b0affe85f383f2188bcabf32f83f9d8",
+      "sourceModified": "2026-08-06T04:29:52.451036+00:00",
       "topWords": [
         "Boldsymbol",
         "Gradient",
@@ -3631,7 +3631,7 @@
         "Local",
         "Point",
         "Step",
-        "Update"
+        "Minimum"
       ],
       "wordCount": 130
     },

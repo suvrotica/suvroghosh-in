@@ -1,15 +1,17 @@
 ---
 title: "The Landscape of Error: An Interactive Atlas of Gradient Descent"
+seoTitle: "Gradient Descent Landscapes — Interactive Visualizer"
 description: "Drop optimisers into bowls, ravines, saddles, and many-valley terrain; compare their paths, inspect curvature, map basins, and fit a regression line."
 date: "2026-08-05"
 dateModified: "2026-08-06"
 thumbnail: "/images/gradient-descent-landscapes.png"
 thumbnailAlt: "An oblique charcoal loss landscape etched with contour lines, crossed by a precise gold gradient-descent path descending a curved ravine"
 category: "Visualizations"
-pinnedTags: ["Gradient Descent", "Machine Learning", "Optimization", "Mathematics", "Data Visualization", "Interactive"]
-tags: ["Gradient Descent","Machine Learning","Optimization","Mathematics","Data Visualization","Interactive","Learning Rate","Vanilla Gradient Descent","Contour Map","Tangent Plane"]
+pinnedTags: ["Gradient Descent", "Machine Learning", "Optimization", "Mathematics", "Interactive", "Data Visualization"]
+tags: ["Gradient Descent","Machine Learning","Optimization","Mathematics","Interactive","Data Visualization","Learning Rate","Vanilla Gradient Descent","Contour Map","Tangent Plane"]
 published: true
 interactiveFirst: true
+immersiveLead: true
 color: "#C79A52"
 author: "Suvro Ghosh"
 readingTime: "29 min"
@@ -35,7 +37,12 @@ faq:
 	import GradientDescentLab from '$lib/components/visualizations/gradient-descent/GradientDescentLab.svelte';
 </script>
 
-<GradientDescentHero />
+<GradientDescentHero
+	author="Suvro Ghosh"
+	publishedDate="2026-08-05"
+	updatedDate="2026-08-06"
+	readingTime="29 min"
+/>
 
 Imagine being put down at midnight somewhere in the Himalayas without a map, a torch, or enough common sense to remain in the hotel. You are granted one useful sensation: through the soles of your boots you can feel the direction in which the ground falls most sharply. You may take a step, feel again, and repeat. You cannot see the valley beyond the next ridge. You do not know whether the lowest place in front of you is the lowest place in the range. You cannot even be sure that an almost level patch is a summit, a saddle, or merely a very tedious plateau.
 
@@ -65,7 +72,7 @@ The calculation is simple enough to fit in one line. Its consequences include ca
 
 <TTS />
 
-# 1. A walker with one sensation
+## 1. A walker with one sensation
 
 A machine-learning model contains adjustable numbers called **parameters**. Collect them in a vector
 
@@ -97,13 +104,13 @@ At a differentiable point, the gradient points towards the direction of greatest
 
 In the atlas, two parameters are visible as the horizontal axes and loss is drawn vertically. The bright survey beacon is a parameter vector, not a ball. Its height is a display of $L(\boldsymbol{\theta})$, not physical altitude. It moves because an update equation changes the parameters, not because a graphics engine applies gravity.
 
-Very tall peaks can flatten every useful valley in a literal-height drawing, so the terrain can use a labelled log-compressed display. It first shifts display loss by the robust sampled minimum and then plots a normalized $\log(1+max(0,L-L_{\min,\mathrm{sample}}))$. That shift makes negative-loss surfaces safe to draw. It never changes the raw loss, gradient, Hessian, stopping test, table, or export; changing the height switch changes the picture rather than the experiment.
+Very tall peaks can flatten every useful valley in a literal-height drawing, so the terrain can use a labelled log-compressed display. It shifts display loss by the declared mathematical minimum when one is known—or the actual sampled minimum otherwise—and plots a normalized $\log(1+\max(0,L-L_{\mathrm{floor}}))$ up to a robust 97th-percentile ceiling. The terrain and map invert that same transformation to obtain identical raw-loss contour thresholds, concentrating detail near the destination without altering the experiment. The shift makes negative-loss surfaces safe to draw. It never changes the raw loss, gradient, Hessian, stopping test, table, or export; changing the height switch changes the picture rather than the calculation.
 
 Open the laboratory, choose the quadratic bowl, and drop the beacon somewhere away from the centre. The 3D terrain and the 2D contour map report the same function and the same point. Move the start on the contour map and both views must agree. If they do not, the exhibit is lying.
 
 <GradientDescentLab />
 
-# 2. One step, written carefully
+## 2. One step, written carefully
 
 Vanilla gradient descent uses
 
@@ -131,7 +138,7 @@ Reset is also a scientific operation. It restores the same start and the same se
 
 The path can end for several reasons, and “converged” is only one of them. The laboratory distinguishes convergence from an iteration limit, an escape from the displayed domain, numerical divergence, a stall near a stationary point, and an invalid parameter configuration. A stopped marker is an observation, not a certificate.
 
-# 3. The learning rate is a wager
+## 3. The learning rate is a wager
 
 The learning rate converts a local derivative into a finite displacement. Too small, and the optimiser may make impeccable progress at the speed of municipal paperwork. Too large, and it can stride across the valley floor, climb the opposite wall, cross back with greater enthusiasm, or leave the finite numerical world altogether.
 
@@ -180,7 +187,7 @@ is the condition number of this bowl. When $\kappa$ is close to one, its contour
 
 The careful theory of descent methods extends far beyond this plate. Stephen Boyd and Lieven Vandenberghe make their book [*Convex Optimization* freely available through Stanford](https://web.stanford.edu/~boyd/cvxbook/); its unconstrained-minimisation chapters are a useful bridge from this two-dimensional bowl to line search, Newton steps, and convergence analysis.
 
-# 4. Curvature makes a corridor
+## 4. Curvature makes a corridor
 
 Select the Rosenbrock ravine:
 
@@ -206,9 +213,9 @@ The one-dimensional cross-section in the microscope cuts through the current poi
 
 Display height deserves similar suspicion. Rosenbrock loss can vary so much across the visible domain that raw vertical scaling would turn its useful valley into a hairline beside a cliff. The atlas can log-compress height for legibility. The label states when it does so. Gradients, updates, loss readouts, stopping rules, and comparisons continue to use raw loss.
 
-# 5. Four optimisers, one budget
+## 5. Four optimisers, one budget
 
-An honest comparison begins with the same landscape, start, gradient-evaluation cap, stopping rule, and—where randomness is involved—the same declared data and seed. It does not give one optimiser a larger allowance because its line looks prettier after more work. A racer that meets the common stopping rule early may use fewer evaluations; the cards report actual evaluations as well as the shared cap, rather than padding the count with fictitious updates.
+An honest comparison begins with the same landscape, start, optimizer-update cap, stopping rule, and—where randomness is involved—the same declared data and seed. It does not give one optimiser a larger allowance because its line looks prettier after more work. The laboratory separately reports active-gradient computations, active-gradient examples, and additional full-gradient diagnostics; for minibatch regression, examples processed are the clearer approximation to active training work. A racer that meets the common stopping rule early may use fewer updates rather than being padded with fictitious steps.
 
 **Vanilla gradient descent** has no memory:
 
@@ -265,7 +272,7 @@ The powers in the bias corrections make an off-by-one error consequential at the
 
 Run all four down Rosenbrock under the same budget, then change the learning rate. Momentum may travel smoothly at one setting and overshoot at another. Adam may make rapid early progress yet finish with a different path. RMSProp's coordinate scaling can help with unequal gradient magnitudes, but it is not a device for discovering the global minimum. The atlas reports what happened in this experiment; it does not convert a four-line race into a general ranking of optimisers.
 
-# 6. Many valleys and the politics of arrival
+## 6. Many valleys and the politics of arrival
 
 Himmelblau's function has four well-known minima:
 
@@ -294,7 +301,7 @@ Its global minimum is at the origin, but a regular array of local minima surroun
 
 Particle flow is a census, not a swarm intelligence algorithm. Each beacon follows an independent copy of the stated optimiser from its own start. The pattern reveals attraction and sensitivity. It does not add interaction between particles, and the trajectories do not push or pull one another.
 
-# 7. When almost still is not finished
+## 7. When almost still is not finished
 
 Consider the contained saddle
 
@@ -333,7 +340,7 @@ Far from the centre, the gradient can be extremely small even though a lower val
 
 This is why the laboratory exposes gradient norm, step norm, raw loss, iteration budget, and status together. None is a private channel to mathematical certainty. A stationary point is defined by first-order information. The kind of stationary point depends on local curvature, and the practical meaning of arrival depends on the model, precision, and objective.
 
-# 8. A regression line becomes terrain
+## 8. A regression line becomes terrain
 
 A loss landscape can sound metaphysical until an ordinary line produces one in front of us. Take data pairs $(x_i,y_i)$ and a model
 
@@ -373,7 +380,7 @@ $$
 
 where $\boldsymbol{\xi}_t$ is a seeded noise vector. The interface calls this a **noisy-gradient experiment**, not minibatch SGD. Identical seeds reproduce the sequence. Changing a decorative colour cannot advance it.
 
-# 9. The step microscope
+## 9. The step microscope
 
 A path is easy to admire and surprisingly easy to misunderstand. The microscope pauses at one iteration and places the local quantities side by side:
 
@@ -402,7 +409,7 @@ The linear term supplies the tangent plane; the quadratic term supplies local be
 
 Accessibility requires another representation of the same evidence. Colour is never the only identity channel: optimiser paths also differ by line pattern and marker shape. Controls have visible labels and keyboard operation. The current values and run status exist as text. The principal path samples can be read in a table and exported as CSV; a short plain-text summary copies the disclosed configuration and outcome. Reduced-motion mode begins still, while manual stepping, changing views, and inspecting the table remain available.
 
-# 10. What the pretty map hides
+## 10. Data visualization and the missing dimensions
 
 Every landscape on this page is exact within its declared two-dimensional model and numerical implementation. That does not make it a literal portrait of a modern neural network.
 

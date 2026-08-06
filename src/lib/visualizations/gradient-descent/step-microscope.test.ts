@@ -6,6 +6,11 @@ import type { SimulationHistoryPoint, Vector2 } from './types';
 function record(fullGradient: Vector2): SimulationHistoryPoint {
 	return {
 		iteration: 4,
+		optimizerUpdates: 4,
+		activeGradientComputations: 4,
+		additionalFullGradientComputations: 0,
+		activeGradientExamplesProcessed: null,
+		diagnosticExamplesProcessed: null,
 		gradientEvaluations: 4,
 		theta: [0.5, -0.25],
 		loss: 2,

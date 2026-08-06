@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import type { HeightMapping } from '$lib/visualizations/gradient-descent';
+	import { normalizeLossForDisplay } from '$lib/visualizations/gradient-descent/loss-display-scale';
 	import { contourLevels, marchingSquares } from './marching-squares';
 	import {
 		clampPoint,
@@ -39,6 +41,7 @@
 		basin?: BasinGridLike | null;
 		particles?: readonly Particle[];
 		parameterLabels?: readonly [string, string];
+		heightMapping?: HeightMapping;
 		showContours?: boolean;
 		showGradientField?: boolean;
 		showBasin?: boolean;
@@ -69,6 +72,7 @@
 		basin = null,
 		particles = [],
 		parameterLabels = ['θ₁', 'θ₂'],
+		heightMapping = 'log-compressed',
 		showContours = true,
 		showGradientField = false,
 		showBasin = false,
@@ -161,6 +165,13 @@
 		return `${parameterLabels[0]} ${format(pointX(point))} · ${parameterLabels[1]} ${format(pointY(point))} · ${exactLoss === null ? 'sampled fallback L' : 'raw exact L'} ${loss === null ? '—' : format(loss)}`;
 	}
 
+	function formatMapValue(value: number | null | undefined): string {
+		if (typeof value !== 'number' || !Number.isFinite(value)) return '—';
+		return value !== 0 && (Math.abs(value) >= 10_000 || Math.abs(value) < 0.001)
+			? value.toExponential(3)
+			: value.toLocaleString('en-GB', { maximumFractionDigits: 5 });
+	}
+
 	function worldToCanvas(point: PointLike): ObjectPoint {
 		const bounds = domainBounds(domain);
 		return {
@@ -212,7 +223,6 @@
 
 	function drawLossField(context: CanvasRenderingContext2D): void {
 		if (!grid || grid.width < 1 || grid.height < 1) return;
-		const range = Math.max(Number.EPSILON, grid.max - grid.min);
 		const columnStride = Math.max(1, Math.ceil(grid.width / Math.max(40, Math.floor(width / 5))));
 		const rowStride = Math.max(1, Math.ceil(grid.height / Math.max(32, Math.floor(height / 5))));
 		const cellWidth = (width * columnStride) / Math.max(1, grid.width - 1);
@@ -221,7 +231,7 @@
 			for (let column = 0; column < grid.width; column += columnStride) {
 				const value = Number(grid.values[row * grid.width + column]);
 				const normalized = Number.isFinite(value)
-					? Math.min(1, Math.max(0, (value - grid.min) / range))
+					? normalizeLossForDisplay(value, grid, heightMapping)
 					: 0;
 				const lightness = 10 + Math.pow(normalized, 0.56) * 24;
 				const saturation = 6 + normalized * 8;
@@ -351,7 +361,7 @@
 
 	function drawContours(context: CanvasRenderingContext2D): void {
 		if (!grid || !showContours) return;
-		const segments = marchingSquares(grid, contourLevels(grid, contourCount));
+		const segments = marchingSquares(grid, contourLevels(grid, contourCount, heightMapping));
 		context.save();
 		context.strokeStyle = palette('--gd-map-contour', '#d8cfbb');
 		context.globalAlpha = 0.46;
@@ -970,6 +980,7 @@
 	$effect(() => {
 		void grid;
 		void domain;
+		void heightMapping;
 		void showContours;
 		void showBasin;
 		void basin;
@@ -1041,8 +1052,14 @@
 			{probeReadoutText()} · release to pin
 		</output>
 	{/if}
-	<div class="map-legend" aria-hidden="true">
-		<span>low loss</span><i></i><span>high loss</span>
+	<div
+		class="map-legend"
+		role="group"
+		aria-label={`Map colour encodes raw loss from the true floor ${formatMapValue(grid?.rawFloor)} to the robust 97th-percentile display ceiling ${formatMapValue(grid?.displayCeiling)}.`}
+	>
+		<span>floor · {formatMapValue(grid?.rawFloor)}</span><i aria-hidden="true"></i><span
+			>97% ceiling · {formatMapValue(grid?.displayCeiling)}</span
+		>
 	</div>
 	{#if showBasin && basin}
 		<div class="basin-key" aria-label="Basin outcome key">
@@ -1313,8 +1330,13 @@
 			min-height: 24rem;
 		}
 
-		.map-legend span {
-			display: none;
+		.map-legend {
+			max-width: calc(100% - 1.2rem);
+			gap: 0.25rem;
+			font-size: 0.5rem;
+		}
+		.map-legend i {
+			width: min(3.5rem, 18vw);
 		}
 		.basin-key {
 			left: 0.55rem;

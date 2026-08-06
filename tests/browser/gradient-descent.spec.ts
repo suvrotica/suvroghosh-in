@@ -2,6 +2,7 @@ import { expect, test, type Download, type Locator, type Page } from '@playwrigh
 
 const articlePath = '/blog/visualizations/gradient-descent-landscapes';
 const articleTitle = 'The Landscape of Error: An Interactive Atlas of Gradient Descent';
+const seoTitle = 'Gradient Descent Landscapes — Interactive Visualizer';
 const visibleTitle = 'The Landscape of Error';
 const visibleSubtitle =
 	'An interactive atlas of gradient descent, learning rates, curvature, momentum, noise, saddles, and the peculiar geography of machine learning.';
@@ -226,12 +227,10 @@ test('the canonical SSR article exposes the hero and one semantic laboratory', a
 
 	await page.emulateMedia({ reducedMotion: 'reduce' });
 	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	await expect(page).toHaveTitle(seoTitle);
 	await expect(
-		page.getByRole('heading', { level: 1, name: articleTitle, exact: true })
+		page.getByRole('heading', { level: 1, name: visibleTitle, exact: true })
 	).toHaveCount(1);
-	await expect(
-		page.getByRole('heading', { level: 2, name: visibleTitle, exact: true }).first()
-	).toBeVisible();
 	await expect(page.getByText(visibleSubtitle, { exact: true })).toBeVisible();
 	await expect(page.getByRole('link', { name: 'Begin the descent', exact: true })).toBeVisible();
 	await expect(page.getByRole('link', { name: 'Open the laboratory', exact: true })).toBeVisible();
@@ -367,6 +366,8 @@ test('URL state, copied summaries and client-side exports recreate a disclosed e
 		{ waitUntil: 'domcontentloaded' }
 	);
 	let lab = await waitForLaboratory(page);
+	const restoredBanner = lab.getByTestId('gradient-descent-restored-banner');
+	await expect(restoredBanner).toBeVisible();
 	await landscapeControl(lab).selectOption('himmelblau');
 	await optimizerControl(lab).selectOption('adam');
 	await expect.poll(() => new URL(page.url()).searchParams.get('landscape')).toBe('himmelblau');
@@ -391,7 +392,14 @@ test('URL state, copied summaries and client-side exports recreate a disclosed e
 	const copyButton = lab.getByRole('button', { name: 'Copy this experiment', exact: true });
 	await copyButton.click();
 	await expect.poll(() => copiedText(page)).toContain('landscape=himmelblau');
-	expect(await copiedText(page)).toContain('optimizer=adam');
+	const sharedExperiment = new URL(await copiedText(page));
+	expect(sharedExperiment.searchParams.get('optimizer')).toBe('adam');
+	expect(sharedExperiment.searchParams.getAll('v')).toEqual(['1']);
+	expect(sharedExperiment.searchParams.has('gd_v')).toBe(false);
+	expect(sharedExperiment.searchParams.has('camera')).toBe(false);
+	expect(sharedExperiment.searchParams.has('height')).toBe(false);
+	expect(sharedExperiment.searchParams.has('layers')).toBe(false);
+	expect(sharedExperiment.hash).toBe('#gradient-descent-laboratory');
 
 	const csv = await downloadArtifact(page, lab, 'Export run as CSV');
 	expect(csv.filename).toMatch(/\.csv$/iu);
@@ -407,6 +415,15 @@ test('URL state, copied summaries and client-side exports recreate a disclosed e
 	expect(png.bytes.length).toBeGreaterThan(10_000);
 	expect(png.bytes.readUInt32BE(16)).toBeGreaterThanOrEqual(600);
 	expect(png.bytes.readUInt32BE(20)).toBeGreaterThanOrEqual(300);
+
+	const resetCanonical = lab.getByRole('button', { name: 'Reset to canonical article', exact: true });
+	await revealButton(resetCanonical);
+	await resetCanonical.click();
+	await expect.poll(() => {
+		const url = new URL(page.url());
+		return `${url.search}${url.hash}`;
+	}).toBe('');
+	await expect(restoredBanner).toHaveCount(0);
 });
 
 test('touch-mobile tabs remain usable without horizontal page or laboratory overflow', async ({
@@ -426,7 +443,7 @@ test('touch-mobile tabs remain usable without horizontal page or laboratory over
 	try {
 		await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
 		await expect(
-			page.getByRole('heading', { level: 2, name: visibleTitle, exact: true }).first()
+			page.getByRole('heading', { level: 1, name: visibleTitle, exact: true })
 		).toBeVisible();
 		const lab = await waitForLaboratory(page);
 		const tabs = lab.getByRole('tab');
@@ -706,7 +723,7 @@ test('guided expeditions expose race, unsafe quadratic, saddle and regression ev
 	await expect(raceCards).toHaveCount(4);
 	for (const optimizer of ['gd', 'momentum', 'rmsprop', 'adam']) {
 		await expect(lab.locator(`.race-section article[data-optimizer="${optimizer}"]`)).toContainText(
-			'Evaluations / shared cap'
+			'Optimizer updates / shared cap'
 		);
 	}
 
@@ -769,7 +786,7 @@ test('Himmelblau basin cartography and deterministic walkers remain responsive o
 	await step(lab, 1);
 	await expect(lab).toContainText(/Iteration\s*1/iu);
 	await expect(analysis.locator('.analysis-message')).toContainText(
-		/starts classified with a 420-gradient-evaluation cap/iu,
+		/starts classified with a 420-update cap/iu,
 		{ timeout: 90_000 }
 	);
 	await expect(lab.locator('.basin-key')).toBeVisible();
@@ -920,10 +937,7 @@ test('the no-JavaScript article retains its calculated plate, caption and mathem
 	try {
 		await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
 		await expect(
-			page.getByRole('heading', { level: 1, name: articleTitle, exact: true })
-		).toBeVisible();
-		await expect(
-			page.getByRole('heading', { level: 2, name: visibleTitle, exact: true }).first()
+			page.getByRole('heading', { level: 1, name: visibleTitle, exact: true })
 		).toBeVisible();
 		await expect(page.getByText(/The interactive terrain requires JavaScript/iu)).toBeVisible();
 		await expect(

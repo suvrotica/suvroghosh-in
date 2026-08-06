@@ -30,7 +30,10 @@
 	} from './types';
 
 	type Metric = 'loss' | 'gradientNorm' | 'stepNorm' | 'distance';
-	type XAxis = 'iteration' | 'gradientEvaluations';
+	type XAxis =
+		| 'optimizerUpdates'
+		| 'activeGradientComputations'
+		| 'activeGradientExamplesProcessed';
 
 	type Props = {
 		history?: readonly HistoryRecord[];
@@ -59,7 +62,7 @@
 		knownMinima = [],
 		referencePoint = null,
 		referenceLabel = 'reference point',
-		xAxis = 'gradientEvaluations',
+		xAxis = 'optimizerUpdates',
 		logScale = true,
 		xDomain = null,
 		yDomain = null,
@@ -144,7 +147,18 @@
 	);
 
 	function xValue(record: HistoryRecord): number {
-		return xAxis === 'iteration' ? record.iteration : record.gradientEvaluations;
+		if (xAxis === 'optimizerUpdates') return record.optimizerUpdates ?? record.iteration;
+		if (xAxis === 'activeGradientExamplesProcessed') {
+			return record.activeGradientExamplesProcessed ?? 0;
+		}
+		return record.activeGradientComputations ?? record.gradientEvaluations;
+	}
+
+	function xAxisLabel(): string {
+		if (xAxis === 'optimizerUpdates') return 'Optimizer updates';
+		if (xAxis === 'activeGradientExamplesProcessed')
+			return 'Active-gradient examples processed';
+		return 'Active-gradient computations';
 	}
 
 	function scalarValue(record: HistoryRecord): number | null {
@@ -420,10 +434,7 @@
 		aria-label="Horizontally scrollable metric chart"
 	>
 		<svg viewBox="0 0 790 310" role="img" aria-labelledby="metrics-svg-title metrics-svg-desc">
-			<title id="metrics-svg-title"
-				>{activeMetricLabel} by {xAxis === 'iteration'
-					? 'iteration'
-					: 'gradient evaluations'}</title
+			<title id="metrics-svg-title">{activeMetricLabel} by {xAxisLabel().toLowerCase()}</title
 			>
 			<desc id="metrics-svg-desc">
 				{displayedRuns.length} optimizer {displayedRuns.length === 1 ? 'path' : 'paths'} compared on the
@@ -444,7 +455,7 @@
 							: ' No valid distance reference is available.'
 					: ''}
 				{metric === 'gradientNorm' || metric === 'stepNorm'
-					? ' Transition diagnostics are aligned with their origin: the value at theta t describes the outgoing transition from theta t to theta t plus one, matching the step microscope. A terminal gradient evaluation may supply the final gradient norm without another update.'
+					? ' Transition diagnostics are aligned with their origin: the value at theta t describes the outgoing transition from theta t to theta t plus one, matching the step microscope. A terminal active-gradient computation may supply the final gradient norm without another optimizer update.'
 					: ''}
 				{transitionProgress < 1
 					? ' The selection diamond is visually interpolated between two exact stored iterations; numeric values remain those of the selected destination.'
@@ -474,7 +485,7 @@
 				>{format(chartBounds.xMax)}</text
 			>
 			<text class="axis-label" x={(plot.left + plot.right) / 2} y="306" text-anchor="middle">
-				{xAxis === 'iteration' ? 'Iteration' : 'Gradient evaluations'}
+				{xAxisLabel()}
 			</text>
 			<text
 				class="axis-label"
@@ -553,12 +564,12 @@
 		<summary>Recent numeric values</summary>
 		<div class="table-wrap">
 			<table>
-				<thead><tr><th>Step</th><th>Evaluations</th><th>{activeMetricLabel}</th></tr></thead>
+				<thead><tr><th>Step</th><th>{xAxisLabel()}</th><th>{activeMetricLabel}</th></tr></thead>
 				<tbody>
 					{#each history.slice(-12) as record (record.iteration)}
 						<tr>
 							<td>{record.iteration}</td>
-							<td>{record.gradientEvaluations}</td>
+							<td>{xValue(record)}</td>
 							<td>{format(yValueAt(history, history.indexOf(record)))}</td>
 						</tr>
 					{/each}

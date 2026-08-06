@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import type p5 from 'p5';
 	import { supportsWebGL } from '$lib/visualizations/webgl';
+	import { normalizeLossForDisplay } from '$lib/visualizations/gradient-descent/loss-display-scale';
 	import {
 		domainBounds,
 		finitePoint,
@@ -133,7 +134,8 @@
 			vec3 base = mix(uLowColour, uHighColour, smoothstep(0.02, 0.98, vHeight));
 			float phase = fract(vHeight * uContourCount);
 			float contourDistance = min(phase, 1.0 - phase);
-			float contour = 1.0 - smoothstep(0.0, 0.045, contourDistance);
+			float interior = step(0.0001, vHeight) * (1.0 - step(0.9999, vHeight));
+			float contour = (1.0 - smoothstep(0.0, 0.045, contourDistance)) * interior;
 			vec3 colour = mix(base * diffuse, uContourColour, contour * 0.72);
 			colour = mix(colour, vec3(0.035, 0.043, 0.043), vDepth * 0.34);
 			gl_FragColor = vec4(colour, 1.0);
@@ -148,13 +150,7 @@
 
 	function mappedHeight(value: number): number {
 		if (!grid) return 0;
-		const minimum = Number.isFinite(grid.min) ? grid.min : 0;
-		const maximum = Number.isFinite(grid.max) ? grid.max : minimum + 1;
-		const shifted = Math.max(0, value - minimum);
-		const range = Math.max(Number.EPSILON, maximum - minimum);
-		return heightMapping === 'linear'
-			? Math.min(1, shifted / range)
-			: Math.min(1, Math.log1p(shifted) / Math.log1p(range));
+		return normalizeLossForDisplay(value, grid, heightMapping);
 	}
 
 	function targetGridSize(): readonly [number, number] {
@@ -413,7 +409,8 @@
 							'uContourColour',
 							colourVector('--gd-terrain-contour', '#d9cfba')
 						);
-						terrainShader.setUniform('uContourCount', 18);
+						// Fourteen display intervals create thirteen interior bands, matching the map.
+						terrainShader.setUniform('uContourCount', 14);
 						p.noStroke();
 						for (let row = 0; row < meshRows - 1; row += 1) {
 							p.beginShape(p.TRIANGLE_STRIP);
@@ -787,18 +784,19 @@
 	<div
 		class="terrain-colourbar"
 		role="group"
-		aria-label={`Terrain colour encodes robust sampled raw loss from ${formatLegendValue(grid?.min)} to ${formatLegendValue(grid?.max)}; calculations retain untransformed raw loss.`}
+		aria-label={`Terrain colour encodes raw loss from the true floor ${formatLegendValue(grid?.rawFloor)} to the robust 97th-percentile display ceiling ${formatLegendValue(grid?.displayCeiling)}; calculations retain untransformed raw loss.`}
 	>
-		<span>low · {formatLegendValue(grid?.min)}</span><i aria-hidden="true"></i><span
-			>high · {formatLegendValue(grid?.max)}</span
+		<span>floor · {formatLegendValue(grid?.rawFloor)}</span><i aria-hidden="true"></i><span
+			>97% ceiling · {formatLegendValue(grid?.displayCeiling)}</span
 		>
 	</div>
 	<p class="height-mapping">
 		{#if heightMapping === 'log-compressed'}
-			Display height: log₁p(max(0, L − robust sampled minimum)), normalized to the sampled range;
-			calculations use unshifted raw loss.
+			Display height and contour bands: log₁p(max(0, L − true loss floor)), normalized to the
+			robust upper ceiling; calculations use unshifted raw loss.
 		{:else}
-			Display height: linear normalization over the robust sampled range; calculations use raw loss.
+			Display height and contour bands: linear normalization from the true loss floor to the robust
+			upper ceiling; calculations use raw loss.
 		{/if}
 	</p>
 	<p id={TERRAIN_INSTRUCTIONS_ID} class="sr-only">

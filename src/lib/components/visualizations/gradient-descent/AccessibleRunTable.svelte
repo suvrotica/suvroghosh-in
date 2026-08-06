@@ -85,7 +85,8 @@
 			{:else}
 				Every stored optimiser iterate is shown. Select an iteration to inspect it in the charts.
 			{/if}
-			Gradient and update values on row t describe the transition from θ<sub>t−1</sub> to θ<sub
+			The work columns separate optimizer updates, active gradients, data rows, and additional
+			full-gradient diagnostics. Gradient and update values on row t describe the transition from θ<sub>t−1</sub> to θ<sub
 				>t</sub
 			>, not a gradient evaluated at the destination. Iteration zero has no incoming transition. A
 			terminal full-gradient norm, when present, is the separate evaluation made at the destination
@@ -101,7 +102,7 @@
 		>
 			<table aria-describedby={`${tableId}-note`}>
 				<caption class="sr-only">
-					Stored optimiser iterates with evaluation count, destination parameters, raw loss, and
+					Stored optimiser iterates with separate work counters, destination parameters, raw loss, and
 					incoming-transition diagnostics. On row t, the gradient was evaluated at theta t minus one
 					and the update arrived at theta t. Iteration zero has no incoming transition. This table
 					does not assign a termination status to individual iterates. The terminal full-gradient
@@ -109,8 +110,11 @@
 				</caption>
 				<thead>
 					<tr>
-						<th scope="col">Iteration</th>
-						<th scope="col">Gradient evaluations</th>
+						<th scope="col">Optimizer update</th>
+						<th scope="col">Active-gradient computations</th>
+						<th scope="col">Active-gradient examples</th>
+						<th scope="col">Additional full-gradient computations</th>
+						<th scope="col">Diagnostic examples</th>
 						<th scope="col">{parameterLabels[0] ?? 'θ₀'}</th>
 						<th scope="col">{parameterLabels[1] ?? 'θ₁'}</th>
 						<th scope="col">Loss</th>
@@ -132,7 +136,10 @@
 									{row.record.iteration}
 								</button>
 							</th>
-							<td>{row.record.gradientEvaluations}</td>
+							<td>{row.record.activeGradientComputations ?? row.record.gradientEvaluations}</td>
+							<td>{row.record.activeGradientExamplesProcessed ?? '—'}</td>
+							<td>{row.record.additionalFullGradientComputations ?? 0}</td>
+							<td>{row.record.diagnosticExamplesProcessed ?? '—'}</td>
 							<td>{formatNumber(pointX(row.record.theta))}</td>
 							<td>{formatNumber(pointY(row.record.theta))}</td>
 							<td>{formatNumber(row.record.loss)}</td>
@@ -190,7 +197,7 @@
 
 	table {
 		width: 100%;
-		min-width: 62rem;
+		min-width: 84rem;
 		border-collapse: collapse;
 		font-variant-numeric: tabular-nums;
 		font-size: 0.78rem;

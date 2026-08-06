@@ -398,7 +398,7 @@ export function runOptimizerRace(
 		optimizers: readonly OptimizerConfig[];
 		gradientMode?: GradientMode;
 		seed?: string;
-		gradientEvaluationBudget: number;
+		optimizerUpdateBudget: number;
 		gradientTolerance?: number;
 		stepTolerance?: number;
 		stallPatience?: number;
@@ -406,10 +406,10 @@ export function runOptimizerRace(
 	}>
 ): readonly OptimizerRaceEntry[] {
 	if (
-		!Number.isSafeInteger(options.gradientEvaluationBudget) ||
-		options.gradientEvaluationBudget < 1
+		!Number.isSafeInteger(options.optimizerUpdateBudget) ||
+		options.optimizerUpdateBudget < 1
 	) {
-		throw new RangeError('Gradient-evaluation budget must be a positive safe integer.');
+		throw new RangeError('Optimizer-update budget must be a positive safe integer.');
 	}
 	const start = options.start ?? options.landscape.defaultStart;
 	const initialLoss = options.landscape.value(start);
@@ -421,12 +421,12 @@ export function runOptimizerRace(
 				optimizer,
 				gradientMode: options.gradientMode,
 				seed: options.seed ?? 'descent-1847',
-				maximumIterations: options.gradientEvaluationBudget,
+				maximumIterations: options.optimizerUpdateBudget,
 				gradientTolerance: options.gradientTolerance,
 				stepTolerance: options.stepTolerance,
 				stallPatience: options.stallPatience
 			},
-			options.gradientEvaluationBudget
+			options.optimizerUpdateBudget
 		);
 		return {
 			config: optimizer,

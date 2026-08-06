@@ -22,7 +22,15 @@ export type SampledGrid = {
 	readonly width: number;
 	readonly height: number;
 	readonly values: ArrayLike<number>;
+	/** True lower display bound: a declared minimum when available, otherwise the sampled minimum. */
+	readonly rawFloor: number;
+	/** Smallest finite value observed on the sampled grid. */
+	readonly sampledMinimum: number;
+	/** Robust upper display bound; values above it saturate without affecting calculations. */
+	readonly displayCeiling: number;
+	/** @deprecated Compatibility alias for rawFloor. */
 	readonly min: number;
+	/** @deprecated Compatibility alias for displayCeiling. */
 	readonly max: number;
 };
 
@@ -40,6 +48,12 @@ export type RunStatus =
 
 export type HistoryRecord = {
 	readonly iteration: number;
+	readonly optimizerUpdates?: number;
+	readonly activeGradientComputations?: number;
+	readonly additionalFullGradientComputations?: number;
+	readonly activeGradientExamplesProcessed?: number | null;
+	readonly diagnosticExamplesProcessed?: number | null;
+	/** @deprecated Compatibility alias for activeGradientComputations. */
 	readonly gradientEvaluations: number;
 	readonly theta: PointLike;
 	readonly loss: number;
@@ -169,7 +183,7 @@ export function gridValue(grid: SampledGrid, column: number, row: number): numbe
 	const x = Math.max(0, Math.min(grid.width - 1, column));
 	const y = Math.max(0, Math.min(grid.height - 1, row));
 	const value = Number(grid.values[y * grid.width + x]);
-	return Number.isFinite(value) ? value : grid.min;
+	return Number.isFinite(value) ? value : grid.rawFloor;
 }
 
 export function sampleGrid(grid: SampledGrid, domain: DomainLike, point: PointLike): number {

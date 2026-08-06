@@ -1,11 +1,22 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	type Point = { x: number; y: number };
-	type Props = { subtitle?: string };
+	type Props = {
+		subtitle?: string;
+		author?: string;
+		publishedDate?: string;
+		updatedDate?: string;
+		readingTime?: string;
+	};
 
 	let {
-		subtitle = 'An interactive atlas of gradient descent, learning rates, curvature, momentum, noise, saddles, and the peculiar geography of machine learning.'
+		subtitle = 'An interactive atlas of gradient descent, learning rates, curvature, momentum, noise, saddles, and the peculiar geography of machine learning.',
+		author,
+		publishedDate,
+		updatedDate,
+		readingTime
 	}: Props = $props();
 	let canvas: HTMLCanvasElement;
 	let hero: HTMLElement;
@@ -13,6 +24,16 @@
 	let interrupted = false;
 
 	const DOMAIN = { x: [-2, 2] as const, y: [-1, 3] as const };
+	const longDateFormatter = new Intl.DateTimeFormat('en-GB', {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric',
+		timeZone: 'UTC'
+	});
+
+	function formatDate(value: string) {
+		return longDateFormatter.format(new Date(`${value}T00:00:00Z`));
+	}
 
 	function loss(point: Point): number {
 		const a = 1 - point.x;
@@ -253,7 +274,13 @@
 	});
 </script>
 
-<section bind:this={hero} class="hero article-breakout not-prose" aria-labelledby="landscape-title">
+<section
+	bind:this={hero}
+	class="hero article-breakout not-prose"
+	aria-labelledby="landscape-title"
+	data-route-atmosphere-region
+	data-route-scene="article"
+>
 	<div class="terrain" aria-hidden="true">
 		<img
 			src="/images/gradient-descent-landscapes.png"
@@ -267,8 +294,25 @@
 	</div>
 	<div class="copy">
 		<p class="eyebrow">Interactive mathematics · field plate 01</p>
-		<h2 id="landscape-title">The Landscape of Error</h2>
+		<h1 id="landscape-title">The Landscape of Error</h1>
 		<p class="subtitle">{subtitle}</p>
+		{#if author || publishedDate || updatedDate || readingTime}
+			<p class="byline">
+				{#if author}<span>By <a href={resolve('/resume')} rel="author">{author}</a></span>{/if}
+				{#if author && (publishedDate || updatedDate || readingTime)}<span aria-hidden="true"
+						>·</span
+					>{/if}
+				{#if publishedDate}<span
+						>Published <time datetime={publishedDate}>{formatDate(publishedDate)}</time></span
+					>{/if}
+				{#if publishedDate && (updatedDate || readingTime)}<span aria-hidden="true">·</span>{/if}
+				{#if updatedDate}<span
+						>Updated <time datetime={updatedDate}>{formatDate(updatedDate)}</time></span
+					>{/if}
+				{#if updatedDate && readingTime}<span aria-hidden="true">·</span>{/if}
+				{#if readingTime}<span>{readingTime} read</span>{/if}
+			</p>
+		{/if}
 		<p class="invitation">
 			Drop a survey beacon anywhere. It has no map of the landscape; it can feel only the local
 			slope beneath its feet.
@@ -357,7 +401,7 @@
 		text-transform: uppercase;
 	}
 
-	h2 {
+	h1 {
 		max-width: 10ch;
 		margin: 0.8rem 0 1.1rem;
 		color: #fff9eb;
@@ -371,6 +415,26 @@
 		margin: 0;
 		color: #d5cec1;
 		font: clamp(0.95rem, 1.4vw, 1.12rem) / 1.58 var(--font-serif);
+	}
+
+	.byline {
+		display: flex;
+		max-width: 62ch;
+		flex-wrap: wrap;
+		gap: 0.25rem 0.5rem;
+		margin: 0.9rem 0 0;
+		color: #c5beb1;
+		font: 650 0.72rem/1.45 var(--font-sans);
+	}
+
+	.byline a {
+		color: #f0d49b;
+		text-decoration-color: rgb(240 212 155 / 50%);
+		text-underline-offset: 0.18em;
+	}
+
+	.byline a:hover {
+		color: #fff4d1;
 	}
 
 	.invitation {
@@ -481,7 +545,7 @@
 			padding: 1.25rem 1.25rem 2rem;
 		}
 
-		h2 {
+		h1 {
 			font-size: clamp(3rem, 16vw, 5rem);
 		}
 
@@ -518,7 +582,7 @@
 		}
 
 		.copy,
-		.copy h2,
+		.copy h1,
 		.copy p {
 			color: CanvasText;
 		}
