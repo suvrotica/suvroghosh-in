@@ -1,0 +1,14 @@
+record_id,type,source_or_channel,url,entity_match,observed_status,links_to_site,authority_use,boundary
+AUTH-001,owned,Canonical website,https://www.suvroghosh.in/,EXACT,LIVE,SELF,Primary entity home,First-party
+AUTH-002,owned,LinkedIn profile,https://www.linkedin.com/in/suvro-ghosh-78a5aa278,EXACT URL IN PERSON SAMEAS,LINKED FROM SITE,UNVERIFIED,Professional identity and distribution,External profile content not authenticated
+AUTH-003,owned,Substack,https://suvroghosh.substack.com/,EXACT URL IN PERSON SAMEAS,LINKED FROM SITE,UNVERIFIED,Newsletter distribution,Subscriber and profile metrics unavailable
+AUTH-004,owned,YouTube channel,https://www.youtube.com/@SuvroGhoshIN,EXACT URL IN PERSON SAMEAS,LINKED FROM SITE,UNVERIFIED,Video and demonstration distribution,Channel metrics unavailable
+AUTH-005,owned,X profile,https://x.com/suvroghoshin,EXACT URL IN PERSON SAMEAS,LINKED FROM SITE,UNVERIFIED,Short-form distribution,Profile metrics unavailable
+AUTH-006,owned,GitHub repository,https://github.com/suvrotica/suvroghosh-in,REPOSITORY REMOTE MATCH,OBSERVED IN GIT REMOTE,YES,Technical provenance,Do not add as Person sameAs until owner confirms profile identity
+AUTH-007,earned,Journal publication DOI,https://doi.org/10.1097/00115514-200609000-00005,EXACT TITLE AND AUTHOR MATCH,PUBLIC RECORD,UNVERIFIED,Healthcare research authority,Author identity supported by matching resume title; backlink not observed
+AUTH-008,earned,ResearchGate publication record,https://www.researchgate.net/publication/6755249_Task_Overlap_Among_Primary_Care_Team_Members_An_Opportunity_for_System_Redesign,EXACT TITLE AUTHOR AND DOI MATCH,PUBLIC RECORD,NO BACKLINK OBSERVED,Publication discovery,Third-party profile is unclaimed/ownership unverified
+AUTH-009,earned,CIOReview ClinZen profile,https://www.cioreview.com/clinzen-llc,NAME COMPANY AND ROLE ALIGN,PUBLIC RECORD,NO BACKLINK OBSERVED,Professional history corroboration,Owner confirmation required before identity linkage
+AUTH-010,earned,ACN Newswire ClinZen interview,https://www.acnnewswire.com/press-release/english/22080/clinical-trial-efficiency-should-be-a-key-focus,NAME COMPANY AND ROLE ALIGN,PUBLIC RECORD,NO BACKLINK OBSERVED,Professional history corroboration,Owner confirmation required before identity linkage
+AUTH-011,measurement,Google public exact-domain search,,N/A,NO QUALIFIED EXTERNAL BACKLINK SET ESTABLISHED,UNKNOWN,Discovery probe only,Search results are not a backlink database
+AUTH-012,measurement,Google Search Console Links report,,N/A,UNVERIFIED — ACCESS REQUIRED,UNKNOWN,Primary Google link evidence,Do not infer zero
+AUTH-013,measurement,Bing Webmaster backlinks,,N/A,UNVERIFIED — ACCESS REQUIRED,UNKNOWN,Primary Bing link evidence,Do not infer zero

@@ -1,0 +1,17 @@
+test_id,engine,query,observed_result,status,bounded_conclusion
+PST-001,Google,site:suvroghosh.in,"Home, resume, consulting, writing, notes, contact, images, and articles observed",OBSERVED,Some pages discoverable; no coverage count
+PST-002,Google,site:www.suvroghosh.in,Similar canonical-www result set observed,OBSERVED,Canonical host appears; no coverage count
+PST-003,Google,"""Hello, Fragment: Your First Shader from Scratch""",Intended canonical article observed,OBSERVED,Exact title discoverable
+PST-004,Google,"""The graphics pipeline first needs geometry to rasterise""",No first-party result observed after Google spelling rewrite,NOT OBSERVED,Sentence retrieval not demonstrated; no indexing verdict
+PST-005,Google,"""Suvro Ghosh"" healthcare IT architect","Home, resume, consulting, and healthcare page observed",OBSERVED,Professional brand discoverable
+PST-006,Google,HL7 vs FHIR explained simply,No first-party result observed on inspected surface,NOT OBSERVED,Competitive non-brand visibility not demonstrated
+PST-007,Google,interactive atlas of gradient descent landscapes,Intended visualization observed,OBSERVED,One distinctive non-brand retrieval observed
+PST-008,Google,site:suvroghosh.in casino viagra porn hacked,No matching documents,NO MATCH OBSERVED,No combined hacked-term result; not a security verdict
+PST-009,Google,site:suvroghosh.in casino,"Legitimate Monte Carlo laboratory and editorial pages observed",CONTEXTUAL MATCH,No injected casino title observed
+PST-010,Google,site:suvroghosh.in viagra,No matching documents,NO MATCH OBSERVED,Not a clean-service verdict
+PST-011,Google,site:suvroghosh.in crypto,Ordinary editorial/fiction/AI titles observed,CONTEXTUAL MATCH,No injected crypto title observed
+PST-012,Google,site:suvroghosh.in loan,Ordinary essay titles observed,CONTEXTUAL MATCH,No injected loan title observed
+PST-013,Google,site:suvroghosh.in adult,Ordinary essay titles observed,CONTEXTUAL MATCH,No injected adult title observed
+PST-014,Google,site:suvroghosh.in 日本語,No matching documents,NO MATCH OBSERVED,Not a security verdict
+PST-015,Google,site:suvroghosh.in 中文,No matching documents,NO MATCH OBSERVED,Not a security verdict
+PST-016,Bing,site:suvroghosh.in,Automated challenge blocked result inspection,UNVERIFIED,Challenge not bypassed

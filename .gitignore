@@ -5,6 +5,7 @@ __pycache__/
 # Codex local artifacts
 .codex/
 .codex-artifacts/
+.audit-private/
 
 # Output
 .output
