@@ -1,17 +1,19 @@
 ---
 title: "The Desperation Premium"
-description: "How online reviews, creator-commerce, coaching funnels, and urgency-driven marketing turn fear, confusion, insecurity, and scarce access into a hidden tax on ordinary buyers."
+description: "How reviews, creator commerce, coaching funnels and urgency marketing turn insecurity and scarce access into a hidden tax on buyers."
 date: "2026-05-17"
+dateModified: "2026-08-07"
 category: "Technology and Society"
-tags: ["Desperation Premium","Buyer","Product","Reviewer","Marketer","Premium","Creator","Desperation","Reviews","Creators"]
+tags: ["Desperation Premium","Buyer","Product","Reviewer","Marketer","Premium","Creator","Reviews","Desperation","Creators"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-the-desperation-premium.jpg"
+thumbnail: "/thumbnail/art-the-desperation-premium.jpg"
+thumbnailAlt: "Amber review funnel hides a weighted toll beneath an ordinary parcel"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-desperation-premium.jpg" />
+<Pi src="/thumbnail/art-the-desperation-premium.jpg" />
 
 Acronyms used: SEO [Search Engine Optimization, the craft of making online content easier to discover through search engines], FOMO [Fear Of Missing Out, the anxious feeling that others are gaining access while you are being left behind], FTC [Federal Trade Commission, the United States consumer protection agency that regulates unfair or deceptive trade practices], AI [Artificial Intelligence, software systems that imitate tasks associated with human reasoning, prediction, language, or perception], ROI [Return On Investment, the practical value received compared with the money, time, or effort spent].
 

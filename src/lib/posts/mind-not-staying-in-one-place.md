@@ -2,14 +2,16 @@
 title: "When the Mind Refuses to Stay in One Place"
 description: "A personal essay on depression, loneliness, worry, bodily discomfort, and the strange daily business of living with a mind that does not always feel like an ally."
 date: "2026-05-27"
+dateModified: "2026-08-07"
 category: "Mental Health"
 tags: ["Loneliness","Mind","Worry","Depression","Necessarily","REST","News","Sometimes","Chair","Truth"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-mind-not-staying-in-one-place.jpg"
+thumbnail: "/thumbnail/art-mind-not-staying-in-one-place.jpg"
+thumbnailAlt: "Seated Bengali adult surrounded by paper kites drifting toward different windows"
 ---
 <TTS />
-<Pi src="/thumbnail/safe-mind-not-staying-in-one-place.jpg" />
+<Pi src="/thumbnail/art-mind-not-staying-in-one-place.jpg" />
 
 
 Depression does not always kick the door open. That would be too honest of it. Many days it enters like damp through a wall in an old Calcutta room, one faint stain first, then a smell, then a whole geography of gloom quietly spreading behind the almirah.

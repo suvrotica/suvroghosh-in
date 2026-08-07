@@ -1,17 +1,19 @@
 ---
 title: "Loneliness Is Not a Generation"
-description: "A personal essay on Gen X loneliness, aging, bipolar depression, smartphones, AI, and the strange modern habit of being connected to everyone while sitting utterly alone."
+description: "A personal essay on Gen X loneliness, aging, bipolar depression, smartphones, AI, and feeling alone while connected to everyone."
 date: "2026-05-31"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Gen","Lonely","Loneliness","Separate","Generation","AI","Human","Differently","Solutions","Partly"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-loneliness-is-not-a-generation.jpg"
+thumbnail: "/thumbnail/art-loneliness-is-not-a-generation.jpg"
+thumbnailAlt: "Connected apartment balconies glow around one solitary figure looking at the moon"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-loneliness-is-not-a-generation.jpg" />
+<Pi src="/thumbnail/art-loneliness-is-not-a-generation.jpg" />
 
 Acronyms used in this post: AI means Artificial Intelligence, computer systems that can generate language, images, predictions, and decisions that once required human beings. US means United States, where I lived through the strange little parade from pagers to mobile phones to smartphones.
 

@@ -1,17 +1,19 @@
 ---
 title: "Falling Through the Crack"
-description: "A darkly comic personal essay about usefulness, failure, time, work, belief, and the strange third category of people who neither serve the known world nor discover the unknown one."
+description: "A solitary figure balances above a narrow fissure between familiar work and unknown discovery in a metaphor for social usefulness."
 date: "2026-05-17"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Crack","Tick","Pending","Witness","Falling","Family","Counter","Time","Career","Society"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-falling-through-the-crack.jpg"
+thumbnail: "/thumbnail/art-falling-through-the-crack.jpg"
+thumbnailAlt: "Solitary figure balancing beside a glowing fissure between work tools and a starry unknown"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-falling-through-the-crack.jpg" />
+<Pi src="/thumbnail/art-falling-through-the-crack.jpg" />
 
 
 Human life has two respectable counters, like an old government office where the fan rotates with the philosophical indifference of a cow.

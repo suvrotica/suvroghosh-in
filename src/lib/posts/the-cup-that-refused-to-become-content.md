@@ -1,12 +1,14 @@
 ---
 title: "The Cup That Refused to Become Content"
-description: "A middle-aged Calcutta essay on writing, disappointment, poverty, anxiety, and the small stubborn dignity of refusing to turn private pain into algorithmic performance."
+description: "A chipped cup of Calcutta tea turns away from cameras and packaging, preserving private disappointment from algorithmic performance."
 date: "2026-06-18"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Packaged","Disappointment","Camera","Writing","Cup","Suffering","Mosquito","Skin","Tea","Evidence"]
 published: true
 color: "brown"
-thumbnail: "/thumbnail/safe-the-cup-that-refused-to-become-content.jpg"
+thumbnail: "/thumbnail/art-the-cup-that-refused-to-become-content.jpg"
+thumbnailAlt: "Chipped tea cup shielded from a camera, ring light, packaging boxes, and blank cards"
 ---
 
 Acronyms:
@@ -19,7 +21,7 @@ CCTV — Closed-circuit television, a camera system used for surveillance, here 
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-cup-that-refused-to-become-content.jpg" />
+<Pi src="/thumbnail/art-the-cup-that-refused-to-become-content.jpg" />
 
 The tea had grown a roof.
 

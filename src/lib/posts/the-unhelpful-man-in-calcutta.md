@@ -1,17 +1,19 @@
 ---
 title: "The Unhelpful Man in Calcutta"
-description: "A middle-aged, unemployed, middle-class recluse in Calcutta reflects on why people dislike those who insist on reality when comfort, flattery, and convenient fog are socially preferred."
+description: "An unemployed Calcutta recluse reflects on why reality is unwelcome when flattery, comfort, and convenient fog are socially preferred."
 date: "2026-05-04"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Middle Class","Receipt","Rebel","Recluse","Reality","Hate","Unemployed","Truth","Bitter","Kindness"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-unhelpful-man-in-calcutta.jpg"
+thumbnail: "/thumbnail/art-the-unhelpful-man-in-calcutta.jpg"
+thumbnailAlt: "Calcutta recluse uses a clear lens to cut through a courtyard of polite fog"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-unhelpful-man-in-calcutta.jpg" />
+<Pi src="/thumbnail/art-the-unhelpful-man-in-calcutta.jpg" />
 
 Acronyms expanded in this post: No central technical acronyms need expansion here.
 

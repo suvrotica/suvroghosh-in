@@ -1,17 +1,19 @@
 ---
 title: "The Machine That Cannot Take a Shit"
-description: "A middle-aged Bengali man in Calcutta looks at Artificial Intelligence, unemployment, boredom, loneliness, digestion, and the strange dignity of still being a biological creature in the age of synthetic minds."
+description: "A Bengali man considers AI, unemployment, loneliness and the stubborn biological dignity of digestion in a synthetic age."
 date: "2026-05-13"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
 tags: ["Love Beautifully","Perform Love","Human Beings","AI","Boredom","Disagrees","Machines","Digestion","Human","Built"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-machine-that-cannot-defecate.jpg"
+thumbnail: "/thumbnail/art-the-machine-that-cannot-defecate.jpg"
+thumbnailAlt: "Bengali man enjoys breakfast beside a robot unable to eat or digest"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-machine-that-cannot-defecate.jpg" />
+<Pi src="/thumbnail/art-the-machine-that-cannot-defecate.jpg" />
 
 
 Acronyms and Terms

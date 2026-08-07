@@ -1,17 +1,19 @@
 ---
 title: "Cicada, BA.3.2"
-description: "Why the WHO-monitored SARS-CoV-2 lineage BA.3.2 matters: its delayed evolutionary reappearance, deep spike divergence, immune escape, receptor-binding trade-off, and what weaker surveillance now hides."
+description: "Why SARS-CoV-2 lineage BA.3.2 matters: delayed reappearance, spike divergence, immune escape, receptor trade-offs, and weakening surveillance."
 date: "2026-04-21"
+dateModified: "2026-08-07"
 category: "public-health"
 tags: ["Watch Whether","Severe Disease","Lineage","Variant","SARS-CoV-2","Virus","Evolution","Spike","Immune","Severe"]
 published: true
 color: "violet"
-thumbnail: "/thumbnail/safe-cicada-ba32-covid-variant.jpg"
+thumbnail: "/thumbnail/art-cicada-ba32-covid-variant.jpg"
+thumbnailAlt: "A detailed coronavirus particle follows a fading evolutionary trail among antibodies and receptor shapes"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-cicada-ba32-covid-variant.jpg" />
+<Pi src="/thumbnail/art-cicada-ba32-covid-variant.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

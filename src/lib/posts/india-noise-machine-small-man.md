@@ -1,15 +1,17 @@
 ---
 title: "India’s Noise Machine and the Small Man Under It"
-description: "A street-level political essay on India’s loud public theatre, paid media, corruption, nepotism, and majoritarian hypocrisy, written from the tired but stubborn viewpoint of an ordinary Calcutta citizen."
+description: "A street-level Calcutta essay on paid media, corruption, nepotism and loud political theatre from an ordinary citizen’s viewpoint."
 date: "2026-05-21"
+dateModified: "2026-08-07"
 category: "Politics"
 tags: ["Corruption","Wrongdoing","Hindu","India","Nepotism","Asks","Religious","Party","Anchor","Enemies"]
 published: true
 color: "saffron"
-thumbnail: "/thumbnail/safe-india-noise-machine-small-man.jpg"
+thumbnail: "/thumbnail/art-india-noise-machine-small-man.jpg"
+thumbnailAlt: "Ordinary Calcutta citizen stands beneath a huge rig of cameras, speakers and gilded chairs"
 ---
 
-<Pi src="/thumbnail/safe-india-noise-machine-small-man.jpg" />
+<Pi src="/thumbnail/art-india-noise-machine-small-man.jpg" />
 
 Acronyms used:
 

@@ -2,16 +2,18 @@
 title: "The Consommé of Governance"
 description: "A manic-depressive monologue from Calcutta on flooded streets, invisible pollution, and the comic cruelty of kakistocracy in monsoon season."
 date: "2026-07-10"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Micrograms Per Cubic","Cubic Meter","Particulate Matter","Artificial Intelligence","Rancor","Rickshaw-Wallah","Particulate","PM2","Backflow","Kakistocratic"]
+tags: ["Micrograms Per Cubic","Cubic Meter","Particulate Matter","Artificial Intelligence","Rancor","Particulate","Rickshaw-Wallah","PM2","Backflow","Kakistocratic"]
 published: true
 color: "#2F4F4F"
-thumbnail: "/thumbnail/safe-flood-of-kakistocracy.jpg"
+thumbnail: "/thumbnail/art-flood-of-kakistocracy.jpg"
+thumbnailAlt: "Flooded Calcutta intersection rendered as a miniature inside a porcelain soup bowl"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-flood-of-kakistocracy.jpg" />
+<Pi src="/thumbnail/art-flood-of-kakistocracy.jpg" />
 
 The drizzle—that parsimonious, niggardly spittle from a sky too indifferent to weep properly—has managed to drown Calcutta anyway, not through volume but through the sheer, spectacular incompetence of civic architecture, a city where the drains are less conduits than decorative suggestions, like the promises of politicians, aesthetically present but functionally inert, and I stand watching a rickshaw-wallah navigate a street that has become, in the span of twenty minutes, an urban estuary, his calves submerged in what I can only describe as a tepid consommé of diesel particulate, betel-juice expectoration, and the unprocessed nightmares of a million households, and I think: this is how easily the shoddy systems are overwhelmed, not by catastrophe but by the merest meteorological insistence, by a sky that whispers rather than shouts, and no one cares about this when the months are dry, just as no one cares about the plaintive—whose root, I cannot help but recall, is the Latin *plangere*, to beat the breast in grief, a word that contains within its two syllables the entire history of unheeded sorrow—until the plaintive becomes a shriek, just as no one cares about the pollution until winter arrives and the air turns into a visible, breathable pudding, unlike the gods who remain stubbornly invisible and therefore impossible to debate away, though the Hindu-Muslim rancor that now serves as the government’s sleight-of-hand distraction prop continues to flourish in their names, a theological puppet show performed while the drains choke on our collective indifference.
 

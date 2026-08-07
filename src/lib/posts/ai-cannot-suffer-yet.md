@@ -2,16 +2,18 @@
 title: "If AI Ever Gets Depressed, We Are Probably in Trouble"
 description: "A wandering, darkly funny meditation on AI consciousness, human misery, machine emotions, and why feeding the internet into a machine may not produce enlightenment."
 date: "2026-05-12"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
-tags: ["Maybe","Machine","Emotionally","AI","Humanity","Equivalent","Truly","Humans","Minds","Networks"]
+tags: ["Maybe","Machine","Emotionally","AI","Humanity","Equivalent","Humans","Truly","Minds","Networks"]
 published: true
 color: "zinc"
-thumbnail: "/thumbnail/safe-ai-cannot-suffer-yet.jpg"
+thumbnail: "/thumbnail/art-ai-cannot-suffer-yet.jpg"
+thumbnailAlt: "Human with a warm cup faces a glass machine head beneath an isolated rain cloud"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-cannot-suffer-yet.jpg" />
+<Pi src="/thumbnail/art-ai-cannot-suffer-yet.jpg" />
 
 Acronyms and Terms
 

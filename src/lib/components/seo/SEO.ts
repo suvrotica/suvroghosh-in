@@ -27,7 +27,7 @@ export const socialUrls = [
 
 // A neutral, non-personal image for pages without their own social card. Keep this
 // separate from Person.image: an illustration is not a portrait of the author.
-export const defaultOgImage = `${siteUrl}/thumbnail/safe-hie-first-principles-openhie.jpg`;
+export const defaultOgImage = `${siteUrl}/thumbnail/art-hie-first-principles-openhie.jpg`;
 export const indexRobots =
 	'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1';
 

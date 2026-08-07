@@ -1,17 +1,19 @@
 ---
 title: "Tubifex in Trouble: A Billing Cliff"
-description: "A manic-depressive rant from a fifty-one-year-old canceled Bengali consultant in South Calcutta, contemplating AI governance, rice cookers, and the ontology of sewer worms."
+description: "A South Calcutta consultant, rice cooker, laptop, and rain-dark drain turn AI governance and sewer worms into domestic absurdity."
 date: "2026-07-05"
+dateModified: "2026-08-07"
 category: "Essay"
 tags: ["Drain Worm","Rice Cooker","Worm","Abeyance","Tubifex","Harried","July","Drain","Sewer","Illusion"]
 published: true
 color: "#1a1a1a"
-thumbnail: "/thumbnail/safe-calcutta-drain-worm.jpg"
+thumbnail: "/thumbnail/art-calcutta-drain-worm.jpg"
+thumbnailAlt: "South Calcutta consultant sitting beside a laptop and rice cooker above a monsoon drain"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-drain-worm.jpg" />
+<Pi src="/thumbnail/art-calcutta-drain-worm.jpg" />
 
 I feel like an ugly but harried and terrified Calcutta drain worm if there is such a thing, a pinkish-grey, segmented, hermaphroditic *Tubifex tubifex*, writhing in the anaerobic muck of a Tollygunge sewer outflow, my cuticle glistening with the effluvia of a city that cannot decide whether it is a metropolis or a compost heap, and I am late, I am always late, even for my own decomposition, because my payments are on hold, in the US, where the heat index has apparently cancelled the Fourth of July in many cities like a bad subscription service. The make-believe voluntary AI standards the White House is threatening to announce next week, as if governance were a thing you could opt into like a gym membership, as if Anthropic’s Fable 5, that sanctimonious chatbot recently paroled from its nineteen-day government-imposed exile, cares one whit about my billing cliff, my existential July seventh, the day after which even my meager hallucinations will require usage credits.
 

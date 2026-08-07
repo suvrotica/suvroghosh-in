@@ -1,17 +1,28 @@
 ---
 title: "Kenneth Arrow, Medical Uncertainty, and the False Dream of Healthcare as a Normal Market"
-description: "Kenneth Arrow's 1963 essay explains why healthcare resists ordinary market logic: uncertainty, trust, asymmetry, and insurance. The same argument reappears in EHR data, interoperability standards, and AI decision support."
+description: "A physician and patient weigh medicine against money as branching paths evoke uncertainty, trust, and the limits of healthcare markets."
 date: "2026-04-26"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
-tags: ["Health Level Seven","Welfare Economics","Medical Care","Clinical","Arrow","Healthcare","Data","Uncertainty","Patient","Care"]
+tags: ["Health Level Seven","Welfare Economics","Medical Care","Clinical","Healthcare","Arrow","Data","Uncertainty","Patient","Care"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-arrow-uncertainty-medical-care-healthcare-it.jpg"
+thumbnail: "/thumbnail/art-arrow-uncertainty-medical-care-healthcare-it.jpg"
+thumbnailAlt: "Physician and older patient facing one another beside an unsteady brass balance in a sunlit clinic"
+inPlainEnglish: "Healthcare is not an ordinary market because illness is uncertain, patients know less than clinicians, clinicians act as trusted agents, and choices often happen under distress. Kenneth Arrow's argument explains why information, professional norms, insurance, and institutions matter alongside prices."
+keyTerms: ["Kenneth Arrow", "Medical Uncertainty", "Information Asymmetry", "Agency Relationship", "Health Insurance", "Trust", "Healthcare Market", "Welfare Economics"]
+faq:
+  - question: "Why did Kenneth Arrow argue that medical care is not a normal market?"
+    answer: "Patients face uncertainty, cannot easily judge quality, rely on professional expertise, and often make urgent choices, so ordinary assumptions about informed buyers and comparable products break down."
+  - question: "What is information asymmetry in healthcare?"
+    answer: "Clinicians, hospitals, insurers, and vendors usually know more than patients about diagnosis, treatment, quality, price, or risk, creating dependence and opportunities for misuse."
+  - question: "Why does trust matter economically in medical care?"
+    answer: "Because patients cannot independently verify every recommendation, professional ethics, institutions, regulation, and reputation help make cooperation possible where price signals alone are insufficient."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-arrow-uncertainty-medical-care-healthcare-it.jpg" />
+<Pi src="/thumbnail/art-arrow-uncertainty-medical-care-healthcare-it.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

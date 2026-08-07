@@ -1,17 +1,28 @@
 ---
 title: "Building VA Data Warehouses"
-description: "A high-level but technically serious primer on how data warehouses are actually built from Department of Veterans Affairs operational systems. It explains why extraction is the easy part, why semantic stability is the hard part, and where warehousing efforts usually go wrong."
+description: "A practical primer on VA data warehouses, where extraction is easy but semantic stability, provenance and grain are difficult."
 date: "2026-04-23"
+dateModified: "2026-08-07"
 category: "healthcare-it"
 tags: ["Accidentally Count","Lab Result","Healthcare Data","Data Quality","Warehouse","VA","FHIR","Source","Operational","Healthcare"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-va-data-warehouse-reality.jpg"
+thumbnail: "/thumbnail/art-va-data-warehouse-reality.jpg"
+thumbnailAlt: "Healthcare source streams pour into a semantic warehouse sorted by human hands"
+inPlainEnglish: "Building a VA healthcare warehouse is not mainly an extraction problem. The difficult work is preserving what each source meant, its grain, identifiers, chronology, provenance, and revisions so analysts do not count the wrong event, patient, result, or version with great confidence."
+keyTerms: ["VA Data Warehouse", "Data Grain", "Data Provenance", "Semantic Layer", "Source System", "Clinical Data", "ETL", "Data Quality"]
+faq:
+  - question: "What is data grain in a healthcare warehouse?"
+    answer: "Grain defines what one row represents, such as a patient, encounter, order, specimen, result, medication event, or revision; confusing grains produces incorrect counts and joins."
+  - question: "Why is provenance essential in VA warehouse data?"
+    answer: "Provenance shows which operational system, facility, process, and transformation produced a value, allowing analysts to interpret differences and investigate errors."
+  - question: "Why is extracting healthcare data easier than making it analytically stable?"
+    answer: "Extraction can copy fields, but stable analysis requires consistent definitions, identifiers, time rules, deduplication, version handling, terminology, and knowledge of changing source workflows."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-va-data-warehouse-reality.jpg" />
+<Pi src="/thumbnail/art-va-data-warehouse-reality.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

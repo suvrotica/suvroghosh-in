@@ -1,17 +1,19 @@
 ---
 title: "The Thermodynamics of Fishy Things"
-description: "A man in Calcutta, drenched in a record heat wave, reads about a Japanese artificial intelligence named after the pufferfish and wonders if the suspicious smell of collective intelligence might be preferable to the antiseptic stench of trillion-dollar singularities."
+description: "During a record Calcutta heat wave, collective fish-like intelligence challenges the sterile myth of trillion-dollar singularities."
 date: "2026-06-25"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
 tags: ["Artificial Intelligence","Collective Intelligence","Sakana","Fugu","Fishy","Smells","Swimming","Fish","Collective","Sweat"]
 published: true
 color: "#4a5759"
-thumbnail: "/thumbnail/safe-the-thermodynamics-of-fishy-things.jpg"
+thumbnail: "/thumbnail/art-the-thermodynamics-of-fishy-things.jpg"
+thumbnailAlt: "Sweating Kolkata man watches cooperative mechanical fish circle a shared structure"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-thermodynamics-of-fishy-things.jpg" />
+<Pi src="/thumbnail/art-the-thermodynamics-of-fishy-things.jpg" />
 
 The sweat pooling in the hollow of my collarbone tastes of iron and something vaguely metallic, a private chemistry experiment conducted in the stupefying envelope of a Calcutta afternoon that the India Meteorological Department politely lists as thirty-eight degrees Celsius but which the heat index—a composite measure fusing air temperature with relative humidity that my telephone application displays in a small, judgmental font—translates into fifty-one degrees of what the body actually experiences, a number that means my thermoregulatory system is laboring at maximum capacity yet dissipating almost no heat because at seventy-three percent humidity sweat cannot evaporate efficiently, and so the moisture simply accumulates, a stagnant, salty lake forming in the creases of my elbows, behind my knees, along the ridge of my upper lip, while I sit motionless on a cane chair trying not to generate additional metabolic warmth and read, on a screen that itself radiates a small, treacherous fever, about a Japanese artificial intelligence company named after fish.
 

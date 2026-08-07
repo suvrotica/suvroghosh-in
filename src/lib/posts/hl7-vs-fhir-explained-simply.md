@@ -2,13 +2,13 @@
 title: "HL7 vs FHIR, Explained Simply"
 description: "HL7 v2 and FHIR solve different interoperability problems. Learn when event messages, web APIs, profiles, and terminology governance each belong."
 date: "2026-04-25"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["HL7 Version","Layer Reflects","Healthcare Interoperability","Source System","FHIR","HL7","Healthcare","Data","Clinical","Version"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg"
-thumbnailAlt: "Abstract layered arcs and contour lines in navy, teal, coral, plum, and cream"
+thumbnail: "/thumbnail/art-hl7-vs-fhir-explained-simply.jpg"
+thumbnailAlt: "Event packets and modular health resources converging on a shared clinical computer"
 inPlainEnglish: "HL7 v2 and FHIR are complementary rather than rival standards. HL7 v2 remains effective for event-driven hospital messages, while FHIR provides modular resources and web APIs; neither removes the need for profiles, terminology, provenance, and local agreements."
 keyTerms: ["HL7 v2", "FHIR", "Healthcare Interoperability", "FHIR Resource", "FHIR Profile", "Implementation Guide"]
 faq:
@@ -22,7 +22,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg" />
+<Pi src="/thumbnail/art-hl7-vs-fhir-explained-simply.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

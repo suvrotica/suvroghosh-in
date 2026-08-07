@@ -2,17 +2,19 @@
 title: "The Cup That Starts the Sun"
 description: "A Calcutta morning essay on depression, tea, caffeine, shame, bodily failure, and the small heroic absurdity of getting out of bed."
 date: "2026-06-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Tea Dust","Pan","Tea","Laziness","Cup","Headache","Clouds","Shame","Depression","Dust"]
+tags: ["Tea Dust","Pan","Tea","Laziness","Cup","Headache","Clouds","Shame","Depression","Milk"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-the-cup-that-starts-the-sun.jpg"
+thumbnail: "/thumbnail/art-the-cup-that-starts-the-sun.jpg"
+thumbnailAlt: "Bengali man rising from bed as steam from morning tea lifts a golden sun"
 ---
 
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-cup-that-starts-the-sun.jpg" />
+<Pi src="/thumbnail/art-the-cup-that-starts-the-sun.jpg" />
 
 
 

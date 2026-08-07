@@ -2,16 +2,18 @@
 title: "One Life, No Rehearsal, No Refund Counter"
 description: "A personal Calcutta reflection on mortality, atheism, aging, poverty, mental illness, curiosity, and the stubborn little hope of still contributing something useful."
 date: "2026-05-18"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Matters","Enough","Youth","Curiosity","Sentence","Teaches","Whole","Depression","Time","Calcutta"]
+tags: ["Matters","Enough","Youth","Sentence","Curiosity","Teaches","Whole","Depression","Time","Calcutta"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-one-life-no-rehearsal-calcutta.jpg"
+thumbnail: "/thumbnail/art-one-life-no-rehearsal-calcutta.jpg"
+thumbnailAlt: "Man leaves a shuttered cinema foyer carrying a notebook into a sunlit Calcutta street"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-one-life-no-rehearsal-calcutta.jpg" />
+<Pi src="/thumbnail/art-one-life-no-rehearsal-calcutta.jpg" />
 
 
 

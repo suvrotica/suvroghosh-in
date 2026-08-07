@@ -2,16 +2,18 @@
 title: "The Chair and the Drain"
 description: "A rambling reflection from a third-floor flat in Calcutta on India's IT sector, the illusion of AI sovereignty, and the municipal drain that never closes."
 date: "2026-06-25"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
-tags: ["Billion Dollars","Hundred Billion","Foundational Models","Seven Hundred","AI","Arbitrage","Dollars","Drain","Geopolitical","Issuance"]
+tags: ["Billion Dollars","Hundred Billion","Foundational Models","Seven Hundred","AI","Arbitrage","Drain","Dollars","Issuance","Geopolitical"]
 published: true
 color: "#5C6B73"
-thumbnail: "/thumbnail/safe-the-chair-and-the-drain.jpg"
+thumbnail: "/thumbnail/art-the-chair-and-the-drain.jpg"
+thumbnailAlt: "Empty cane chair overlooks an open Kolkata drain and distant data-centre towers"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-chair-and-the-drain.jpg" />
+<Pi src="/thumbnail/art-the-chair-and-the-drain.jpg" />
 
 The smell comes through the window first, always the smell, a vegetal thickness of rotting paper and warm polyethylene and something older, something that reminds you that Calcutta was built on a delta, that the Hooghly is not far, that all drainage here is theoretical. I live in a building on a lane off main road and the municipal drain below has been open for eleven months. They came in August last year, the gentlemen from the Kolkata Municipal Corporation, with their helmets the color of faded limes and a backhoe that wheezed like an emphysema patient, and they dug, and they laid new pipes, or so the corrugated tin sign proclaimed, and then they left, and the monsoon arrived, and the water simply decided not to move. It sits there now, a viscous, malachite soup in which you can observe, if you lean out far enough and squint through the humidity, the occasional plastic bottle performing a slow, dignified rotation, and sometimes a dead rat, bloated, cruising with the serene indifference of a pensioner on a ghat. This is the image I wake to. This is the image I return to when I read, on my laptop with the cracked hinge, that Micron has shattered earnings estimates and global AI optimism has been reignited, that Morgan Stanley expects AI-related debt issuance to top five hundred billion dollars this year, that the hyperscalers—Alphabet, Amazon, Microsoft, Meta—are spending seven hundred billion dollars on infrastructure in 2026 alone.
 

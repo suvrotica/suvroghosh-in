@@ -1,17 +1,28 @@
 ---
 title: "The Unrecorded Error"
-description: "Indian healthcare does not merely suffer from medical mistakes. It suffers from missing records, fake competence, leaked gates into the profession, understaffed wards, underpaid workers, counterfeit machinery, and a culture where harm often vanishes before it becomes evidence."
+description: "Missing evidence cards hover above an understaffed Indian hospital ward, showing how clinical harm can vanish from the record."
 date: "2026-06-01"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["Prominent","India","Patient","Healthcare","Record","Staffing","Patients","Ward","Doctor","Nurse"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-the-unrecorded-error-india.jpg"
+thumbnail: "/thumbnail/art-the-unrecorded-error-india.jpg"
+thumbnailAlt: "Nurse caring for a patient as missing evidence cards hover above a crowded Indian ward"
+inPlainEnglish: "A clinical error that is never recorded cannot be counted, investigated, learned from, or prevented. Understaffing, blame, missing systems, fragmented records, weak reporting culture, and fear can erase harm from institutional memory even when patients and workers carry its consequences."
+keyTerms: ["Patient Safety", "Incident Reporting", "Clinical Error", "Underreporting", "Root Cause Analysis", "Safety Culture", "Clinical Documentation", "Institutional Learning"]
+faq:
+  - question: "Why do clinical errors go unrecorded?"
+    answer: "Workers may lack time, reporting tools, psychological safety, clear definitions, feedback, or trust that disclosure will improve care rather than produce individual punishment."
+  - question: "What is lost when an error is absent from the record?"
+    answer: "The organization loses evidence needed to identify patterns, investigate causes, support affected people, redesign workflows, allocate resources, and measure whether prevention works."
+  - question: "How can a hospital improve error reporting?"
+    answer: "It can simplify reporting, protect good-faith disclosure, separate system learning from reckless conduct, give feedback, analyze near misses, and act visibly on recurring hazards."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-unrecorded-error-india.jpg" />
+<Pi src="/thumbnail/art-the-unrecorded-error-india.jpg" />
 
 Acronyms used in this post: Healthcare IT means Healthcare Information Technology, the technical and organizational systems used to capture, preserve, move, and govern health information. EHR means Electronic Health Record, the supposed digital clinical record of a patient’s care, though in much of India this exists more as brochure language than operating reality. EMR means Electronic Medical Record, a narrower digital record inside one hospital or clinic, again often incomplete or absent in real practice. HAI means Healthcare-Associated Infection, an infection acquired during medical care. ICU means Intensive Care Unit, the hospital unit for critically ill patients. OR means Operating Room, where surgery happens. ABDM means Ayushman Bharat Digital Mission, India’s national digital health infrastructure initiative. NEET means National Eligibility cum Entrance Test, India’s medical entrance examination. NMC means National Medical Commission, India’s regulator for medical education and professional standards. WHO means World Health Organization. BMJ means British Medical Journal. CDC means Centers for Disease Control and Prevention.
 

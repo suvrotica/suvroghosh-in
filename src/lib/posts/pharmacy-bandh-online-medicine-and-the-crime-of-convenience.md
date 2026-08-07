@@ -1,17 +1,28 @@
 ---
 title: "The Pharmacy Bandh Is Not About Apps. It Is About Trust Being Sold by the Strip."
-description: "India’s retail pharmacy bandh against online medicine platforms is being treated as a shopkeeper-versus-app fight, but the darker issue is chain of custody, fake prescriptions, counterfeit risk, expired drug recycling, and a governance system too weak or too compromised to protect ordinary patients."
+description: "Hands pass an unlabelled blister strip through a partly shuttered Indian pharmacy, exposing fragile medicine chains of custody."
 date: "2026-05-20"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["Online Pharmacies","Online Pharmacy","Chemists","GSR","Retail","Prescription","Medicine","Pharmacies","Pharmacy","Chemist"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg"
+thumbnail: "/thumbnail/art-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg"
+thumbnailAlt: "Hands passing an unlabelled blister strip through a partly shuttered Indian pharmacy"
+inPlainEnglish: "The conflict between local chemists and online pharmacies is not just a contest between shops and apps. Medicine safety depends on prescription validity, licensed custody, storage, traceability, substitution, counselling, privacy, and accountability from manufacturer to the patient's hand."
+keyTerms: ["Online Pharmacy", "Community Pharmacy", "Chain of Custody", "Prescription Validation", "Medicine Storage", "Traceability", "Substitution", "Patient Safety"]
+faq:
+  - question: "Why is medicine delivery different from ordinary e-commerce?"
+    answer: "Medicines can require valid prescriptions, controlled storage, identity checks, counselling, substitution rules, recall capability, and a traceable licensed chain of custody."
+  - question: "What trust does a community chemist provide?"
+    answer: "A known local pharmacy can offer continuity, immediate questions, practical counselling, accountability, and knowledge of the patient, though those benefits still depend on competent and ethical practice."
+  - question: "Can online pharmacies improve access safely?"
+    answer: "Yes, if licensing, prescription review, storage, delivery, privacy, traceability, pharmacist access, substitution, and complaint handling are enforced rather than treated as optional friction."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg" />
+<Pi src="/thumbnail/art-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg" />
 
 Acronyms used in this post: AIOCD — All India Organisation of Chemists and Druggists, the national body representing retail and wholesale chemists in India. CDSCO — Central Drugs Standard Control Organisation, India’s national drug regulatory authority. GSR — Government Statutory Rules, a formal government notification used to create or amend rules. ADHD — Attention Deficit Hyperactivity Disorder, a condition for which stimulant medicines may sometimes be prescribed. WHO — World Health Organization, the global public health agency of the United Nations. FDA — Food and Drug Administration, the United States drug regulator.
 

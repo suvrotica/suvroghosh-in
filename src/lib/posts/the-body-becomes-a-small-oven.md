@@ -1,17 +1,19 @@
 ---
 title: "The Body Becomes a Small Oven"
-description: "A Calcutta summer note on heat, insomnia, bipolar disorder, unsafe roadside cold drinks, diabetes, obesity, and the ordinary biology of suffering in a city that has forgotten shade."
+description: "A Calcutta summer essay on heat, insomnia, bipolar disorder, unsafe cold drinks, diabetes, obesity, and the city’s loss of shade."
 date: "2026-05-23"
+dateModified: "2026-08-07"
 category: "Public Health"
 tags: ["Heat","Ice","Worsens","Dehydration","Shade","Drink","Sun","Sugar","Juice","ORS"]
 published: true
 color: "orange"
-thumbnail: "/thumbnail/safe-the-body-becomes-a-small-oven.jpg"
+thumbnail: "/thumbnail/art-the-body-becomes-a-small-oven.jpg"
+thumbnailAlt: "Sleepless Bengali man in an orange Kolkata room during extreme heat"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-body-becomes-a-small-oven.jpg" />
+<Pi src="/thumbnail/art-the-body-becomes-a-small-oven.jpg" />
 
 Acronyms and short explanations:
 

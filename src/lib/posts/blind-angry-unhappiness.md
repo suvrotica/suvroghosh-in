@@ -2,16 +2,18 @@
 title: "Blind Angry Unhappiness"
 description: "A Calcutta essay on heat, age, bipolar irritability, loneliness, and the strange private discipline of staying contained when even imaginary hope begins to fail."
 date: "2026-06-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Unhappiness","Irritability","Unhappy","Frightens","Loneliness","Contained","Anger","Blaming","Blind","Sleep"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-blind-angry-unhappiness.jpg"
+thumbnail: "/thumbnail/art-blind-angry-unhappiness.jpg"
+thumbnailAlt: "Tired Bengali man cools his face beside a red storm contained in a glass jar"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-blind-angry-unhappiness.jpg" />
+<Pi src="/thumbnail/art-blind-angry-unhappiness.jpg" />
 
 
 

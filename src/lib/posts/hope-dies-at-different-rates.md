@@ -1,17 +1,19 @@
 ---
 title: "Hope Dies at Different Rates"
-description: "A personal essay on middle age, bipolar depression, poverty, education, writing, and the fear that AI may steal from future generations the old human habit of turning pain into words."
+description: "Lamps fade at different speeds across a writer's desk while human words and automated creation compete for the future."
 date: "2026-05-30"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Breaking News","Writing","Hope","Sentence","Write","Mind","AI","Breaking","Feeling","Comfort"]
+tags: ["Breaking News","Writing","Hope","Sentence","Write","Mind","AI","Breaking","Feeling","Education"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-hope-dies-at-different-rates.jpg"
+thumbnail: "/thumbnail/art-hope-dies-at-different-rates.jpg"
+thumbnailAlt: "Bengali writer at a desk where lamps fade at different rates beside an automated machine"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hope-dies-at-different-rates.jpg" />
+<Pi src="/thumbnail/art-hope-dies-at-different-rates.jpg" />
 
 Hope does not die like a cinema hero, one hand on the chest, violins swelling, rain arriving exactly on cue. Hope dies more like a cheap ceiling fan in a rented room. First it makes a noise. Then it runs only on speed three. Then someone ties the regulator with tape. Then one day it moves so slowly that you cannot decide whether it is working or only remembering its former profession.
 

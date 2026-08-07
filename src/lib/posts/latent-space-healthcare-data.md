@@ -1,17 +1,28 @@
 ---
 title: "Latent Space and the Hidden Map of Healthcare Data"
-description: "A Calcutta-grounded essay on latent space in healthcare data: what it compresses, what it reveals, where it fails, and why architects must treat embeddings as maps rather than truth."
+description: "A healthcare data essay on what latent space compresses and reveals, where it fails, and why embeddings are maps rather than truth."
 date: "2026-04-24"
+dateModified: "2026-08-07"
 category: "Healthcare-IT"
 tags: ["Federated Learning","Differential Privacy","Latent Spaces","Latent Space","Deep Learning","Space","Data","Vector","Model","Models"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-latent-space-healthcare-data.jpg"
+thumbnail: "/thumbnail/art-latent-space-healthcare-data.jpg"
+thumbnailAlt: "Clinical data pressed into a topographic map with an omitted island outside"
+inPlainEnglish: "A latent space compresses complex healthcare data into a mathematical map where similar patterns may sit near one another. The map can support retrieval and prediction, but it reflects its training data and objective, so omissions and distortions remain possible."
+keyTerms: ["Latent Space", "Embedding", "Representation Learning", "Healthcare Data", "Dimensionality Reduction", "Similarity Search", "Model Bias", "Representational Loss"]
+faq:
+  - question: "What is a latent space in healthcare data?"
+    answer: "It is a learned mathematical representation that places compressed patterns from records, images, language, or other clinical data into a lower-dimensional space."
+  - question: "Why are embeddings described as maps rather than truth?"
+    answer: "Their geometry depends on the training data, model architecture, and optimization objective, so nearness reflects learned priorities rather than complete clinical reality."
+  - question: "What can be lost when healthcare data is compressed into latent space?"
+    answer: "Rare cases, provenance, chronology, uncertainty, social context, and clinically important distinctions can be weakened or omitted if the representation was not designed to preserve them."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-latent-space-healthcare-data.jpg" />
+<Pi src="/thumbnail/art-latent-space-healthcare-data.jpg" />
 
 The server fan has a way of making thought feel smaller.
 

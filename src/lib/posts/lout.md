@@ -2,16 +2,18 @@
 title: "The Dawn Is Still Open"
 description: "A sleepless Calcutta morning becomes a small argument for doubt, imagination, atheism, and the strange luck of being alive in a noisy, irrational world."
 date: "2026-05-28"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Richard Dawkins","Dawkins","Richard","Superstition","Offended","Repeat","Lucky","Dawn","Caste","Pride"]
+tags: ["Richard Dawkins","Dawkins","Offended","Superstition","Richard","Repeat","Lucky","Dawn","Caste","Pride"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-lout.jpg"
+thumbnail: "/thumbnail/art-lout.jpg"
+thumbnailAlt: "Sleepless Calcutta man watches dawn open above a waking rooftop city"
 ---
 <TTS />
 
 
-<Pi src="/thumbnail/safe-lout.jpg" />
+<Pi src="/thumbnail/art-lout.jpg" />
 
 
 Some nights sleep refuses to come, like a government clerk who has seen your file and decided your face is not encouraging.

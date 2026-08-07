@@ -1,15 +1,17 @@
 ---
 title: "The Pufferfish Economy"
-description: "Modern life increasingly resembles a marketplace of attractive hazards: products, platforms, services, and institutions that promise convenience while quietly shifting risk onto the buyer. Why surviving it now requires judgment, not just income."
+description: "Why modern products and platforms trade convenience for hidden buyer risk, making judgment as important as income."
 date: "2026-04-22"
+dateModified: "2026-08-07"
 category: "society"
-tags: ["Puffer Fish","Low Price","Consumer","Puffer","Lock-In","Consumption","Convenience","Systems","Discernment","Modern"]
+tags: ["Puffer Fish","Low Price","Consumer","Puffer","Lock-In","Consumption","Convenience","Systems","Modern","Discernment"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-sensible-consumer-in-a-pufferfish-world.jpg"
+thumbnail: "/thumbnail/art-sensible-consumer-in-a-pufferfish-world.jpg"
+thumbnailAlt: "Pearl ceramic pufferfish with brass spines beneath a glass cloche"
 ---
 
-<Pi src="/thumbnail/safe-sensible-consumer-in-a-pufferfish-world.jpg" />
+<Pi src="/thumbnail/art-sensible-consumer-in-a-pufferfish-world.jpg" />
 
 <TTS />
 

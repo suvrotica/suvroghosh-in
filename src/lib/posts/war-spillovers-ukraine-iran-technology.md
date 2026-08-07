@@ -2,18 +2,18 @@
 title: "Ukraine, Iran, and Civilian Technology"
 description: "How the wars in Ukraine and Iran may accelerate civilian drones, robotics, navigation, infrastructure, and other technologies."
 date: "2026-04-23"
-dateModified: "2026-07-24"
+dateModified: "2026-08-07"
 category: "technology"
 tags: ["Civilian","Ukraine","Drones","War","Navigation","Infrastructure","Robotics","Interceptor","Wartime","Iran"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg"
-thumbnailAlt: "Textured abstract layers of navy, teal, cream, orange, and purple with looping lines"
+thumbnail: "/thumbnail/art-war-spillovers-ukraine-iran-technology.jpg"
+thumbnailAlt: "Civilian drone and robots inspect crops, bridges, power lines and floods"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg" />
+<Pi src="/thumbnail/art-war-spillovers-ukraine-iran-technology.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

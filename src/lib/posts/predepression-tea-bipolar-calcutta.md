@@ -1,17 +1,19 @@
 ---
 title: "Predepression Tea"
-description: "A Calcutta personal essay on bipolar depression, bad tea, early warning signs, rumination, attention, and the small domestic alarms that go off before the mind darkens."
+description: "A Calcutta personal essay on bipolar depression, bad tea, rumination, attention, and domestic warnings before the mind darkens."
 date: "2026-05-14"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Tea","Depression","Cup","Leaf","Mind","Milk","Workshop","Bipolar","Depressive","Warnings"]
+tags: ["Tea","Depression","Cup","Leaf","Mind","Milk","Workshop","Bipolar","Warnings","Depressive"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-predepression-tea-bipolar-calcutta.jpg"
+thumbnail: "/thumbnail/art-predepression-tea-bipolar-calcutta.jpg"
+thumbnailAlt: "Tea cup and unmarked warning lights cast lengthening shadows before morning rain"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-predepression-tea-bipolar-calcutta.jpg" />
+<Pi src="/thumbnail/art-predepression-tea-bipolar-calcutta.jpg" />
 
 ---
 

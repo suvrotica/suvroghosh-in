@@ -2,16 +2,18 @@
 title: "Nightmare Wrapped in Skin"
 description: "A bleak, unsentimental personal essay on depression, alienation, books, childhood comics, and the small private refuges that keep a life from collapsing entirely."
 date: "2026-05-04"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Tintin","Maybe","Grow","Ridiculous","Trouble","Child","Childhood","Book","Arrive","Reading"]
+tags: ["Tintin","Maybe","Ridiculous","Grow","Child","Trouble","Childhood","Book","Arrive","Reading"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-nightmare-wrapped-in-skin.jpg"
+thumbnail: "/thumbnail/art-nightmare-wrapped-in-skin.jpg"
+thumbnailAlt: "Reader sheltered beneath a glowing arch of books during a dark monsoon"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-nightmare-wrapped-in-skin.jpg" />
+<Pi src="/thumbnail/art-nightmare-wrapped-in-skin.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

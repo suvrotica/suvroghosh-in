@@ -1,17 +1,28 @@
 ---
 title: "Mental Health Polypharmacy Needs Real Decision Support, Not Another Checkbox"
-description: "Resistant mental illness leaves a long medication trail that most systems treat as scattered history, not active clinical risk. The task is to make interaction burden and treatment failure visible before the next prescription."
+description: "A patient, psychiatrist, and pharmacist review multiple medicines as a decision network exposes interaction burden and treatment history."
 date: "2026-04-26"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["Adverse Effects","Dopamine Agonists","Dopamine Agonist","Primary Care","Health Level Seven","Psychiatric","Medication","CDS","Adverse","Clinical"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg"
+thumbnail: "/thumbnail/art-mental-health-polypharmacy-decision-support.jpg"
+thumbnailAlt: "Patient, psychiatrist, and pharmacist reviewing medicines around a clinic table"
+inPlainEnglish: "Mental-health polypharmacy cannot be made safe by a generic interaction alert. Useful decision support must reconstruct every medicine, indication, dose, duration, prescriber, prior response, adverse effect, monitoring result, and patient goal so clinicians can understand the whole treatment history."
+keyTerms: ["Polypharmacy", "Clinical Decision Support", "Medication Reconciliation", "Drug Interaction", "Adverse Effect", "Psychiatric Medication", "Treatment History", "Shared Decision-Making"]
+faq:
+  - question: "What is mental-health polypharmacy?"
+    answer: "It is the concurrent use of multiple medicines affecting mental health, sometimes across several diagnoses, prescribers, and stages of treatment."
+  - question: "Why are ordinary interaction alerts not enough?"
+    answer: "They often ignore indication, chronology, dose changes, prior failures, cumulative burden, patient experience, monitoring, and the clinical reason a combination was chosen."
+  - question: "What should real decision support show?"
+    answer: "It should provide a longitudinal medication story, relevant risks and monitoring, duplicated mechanisms, treatment goals, uncertainties, and options for review without pretending to replace clinical judgment."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg" />
+<Pi src="/thumbnail/art-mental-health-polypharmacy-decision-support.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

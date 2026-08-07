@@ -1,17 +1,19 @@
 ---
 title: "If Asimov Never Put the Leash on the Robots"
-description: "What happens if intelligent machines invent their own rules instead of inheriting ours? A wandering Calcutta meditation on AI, fear, entropy, and why humans are desperate to feel special."
+description: "A Calcutta meditation on machines inventing their own rules, and on human fears about intelligence, entropy and specialness."
 date: "2026-05-12"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
 tags: ["Hates Nothing","Humans","Humanity","Asimov","Robot","AI","Machines","Robots","Intelligence","Entropy"]
 published: true
 color: "zinc"
-thumbnail: "/thumbnail/safe-asimovs-missing-laws.jpg"
+thumbnail: "/thumbnail/art-asimovs-missing-laws.jpg"
+thumbnailAlt: "Robot rewires cords beneath three blank brass plaques on a Calcutta veranda"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-asimovs-missing-laws.jpg" />
+<Pi src="/thumbnail/art-asimovs-missing-laws.jpg" />
 
 Artificial Intelligence [AI — software systems that generate, predict, reason, classify, or act using learned computational patterns]
 

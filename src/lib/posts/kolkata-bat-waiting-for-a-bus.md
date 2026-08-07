@@ -1,17 +1,19 @@
 ---
 title: "The Kolkata Bat Waiting for a Bus"
-description: "A satirical reflection on overcrowded transport, civic decay, unsafe systems, corrupt bookkeeping, and the middle-class art of surviving while hanging from a metal handle."
+description: "A Kolkata satire on overcrowded buses, civic decay, unsafe systems, corrupt bookkeeping, and surviving by the nearest metal handle."
 date: "2026-05-04"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Serves","Biri","Bat","Salary","Salaries","Passengers","Kolkata","Bus","Everybody","Bag"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-kolkata-bat-waiting-for-a-bus.jpg"
+thumbnail: "/thumbnail/art-kolkata-bat-waiting-for-a-bus.jpg"
+thumbnailAlt: "Commuters wait beneath bus handles while a harmless fruit bat joins the Kolkata queue"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-kolkata-bat-waiting-for-a-bus.jpg" />
+<Pi src="/thumbnail/art-kolkata-bat-waiting-for-a-bus.jpg" />
 
 Acronyms expanded in this post:
 - COVID: Coronavirus Disease. the disease caused by SARS-CoV-2.

@@ -1,12 +1,14 @@
 ---
 title: "I Could Have Been a Simple Fool"
-description: "A sharp Calcutta essay on doubt, obedience, poverty, propaganda, corruption, political spectacle, and the small personal misfortune of being unable to call sewage incense."
+description: "A doubtful man studies polluted runoff beneath political spectacle, refusing to mistake civic failure for something sacred."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Rainfall","Produces","Sometimes","Doubt","Filth","Power","India","Obedience","Country","Fellow"]
 published: true
 color: "orange"
-thumbnail: "/thumbnail/safe-i-could-have-been-a-simple-fool.jpg"
+thumbnail: "/thumbnail/art-i-could-have-been-a-simple-fool.jpg"
+thumbnailAlt: "Doubtful Bengali man under an umbrella beside polluted runoff and a glowing political stage"
 ---
 
 US — United States, the country where I studied and worked for many years before returning to India.
@@ -15,7 +17,7 @@ SUV — Sport Utility Vehicle, the large high-clearance car beloved by men who b
 
 <TTS />
 
-<Pi src="/thumbnail/safe-i-could-have-been-a-simple-fool.jpg" />
+<Pi src="/thumbnail/art-i-could-have-been-a-simple-fool.jpg" />
 
 ---
 

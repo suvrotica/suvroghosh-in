@@ -1,17 +1,28 @@
 ---
 title: "Confounding Factors and the Dashboard That Lied Politely"
-description: "A Calcutta-grounded essay on how confounding factors enter healthcare IT, clinical analytics, dashboards, and AI models before anyone notices the conclusion has already been bent."
+description: "A Calcutta-grounded essay on how confounding bends healthcare IT, dashboards, analytics and AI conclusions before anyone notices."
 date: "2026-06-24"
+dateModified: "2026-08-07"
 category: "healthcare-it"
-tags: ["Target Trial Emulation","Familiar Shapes","Distortion Enters","Keeps Happening","AI Learns","Confounding","Causal","Exposure","Outcome","Data"]
+tags: ["Target Trial Emulation","Distortion Enters","Familiar Shapes","Keeps Happening","AI Learns","Confounding","Causal","Exposure","Outcome","Data"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-confounding-factors.jpg"
+thumbnail: "/thumbnail/art-confounding-factors.jpg"
+thumbnailAlt: "Hospital analyst compares a clean rising chart with a warped clinic reflection"
+inPlainEnglish: "A confounder is a third factor related to both an apparent cause and its outcome, making a clean dashboard relationship look causal when it may not be. Healthcare analytics and AI can reproduce that distortion unless study design, domain knowledge, and sensitivity checks expose it."
+keyTerms: ["Confounding", "Causal Inference", "Exposure", "Outcome", "Covariate", "Selection Bias", "Target Trial Emulation", "Healthcare Analytics"]
+faq:
+  - question: "What is a confounding factor?"
+    answer: "It is a variable associated with both the exposure being studied and the outcome, creating or distorting an apparent relationship between them."
+  - question: "Why can a healthcare dashboard hide confounding?"
+    answer: "Dashboards summarize correlations cleanly but usually do not show why patients entered a group, which variables influenced treatment, or which relevant differences were never measured."
+  - question: "Can statistical adjustment remove every confounder?"
+    answer: "No. Adjustment can address measured variables under defensible assumptions, but unmeasured factors, poor definitions, selection, and incorrect causal structure can still bias the result."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-confounding-factors.jpg" />
+<Pi src="/thumbnail/art-confounding-factors.jpg" />
 
 The dashboard is usually too clean.
 

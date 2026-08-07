@@ -1,17 +1,19 @@
 ---
 title: "AI in Healthcare: Beware"
-description: "AI deployment in healthcare is not a modeling problem—it is a representation, validation, and risk management problem. Why staged, evidence-driven rollout is essential."
+description: "Why healthcare AI needs staged, evidence-driven deployment focused on representation, clinical validation, and risk management."
 date: "2026-04-21"
+dateModified: "2026-08-07"
 category: "healthcare ai"
 tags: ["Health Level Seven","Shadow Mode","Evidence-Driven Deployment","Deployment","Model","Evidence-Driven","Clinical","AI","Healthcare","Data"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-ai-deployment-evidence-over-opinion.jpg"
+thumbnail: "/thumbnail/art-ai-deployment-evidence-over-opinion.jpg"
+thumbnailAlt: "Clinicians compare live and shadow-mode patient waveforms in a hospital"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-deployment-evidence-over-opinion.jpg" />
+<Pi src="/thumbnail/art-ai-deployment-evidence-over-opinion.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

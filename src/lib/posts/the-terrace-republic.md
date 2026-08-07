@@ -1,17 +1,19 @@
 ---
 title: "The Terrace Republic"
-description: "A Calcutta essay on tea, memory, childhood, solitude, bipolar intensity, and the private republic a boy builds when the world insists on queues, walls, and polite lies."
+description: "Tea, memory, childhood, solitude, and bipolar intensity shape the private terrace republic a Calcutta boy builds for himself."
 date: "2026-05-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Terrace","Matchboxes","Magnets","Wondered","Lamp","Boy","Brick","Walls","Stamps","Books"]
+tags: ["Terrace","Matchboxes","Magnets","Wondered","Boy","Lamp","Brick","Walls","Stamps","Books"]
 published: true
 color: "#8B5E3C"
-thumbnail: "/thumbnail/safe-the-terrace-republic.jpg"
+thumbnail: "/thumbnail/art-the-terrace-republic.jpg"
+thumbnailAlt: "Bengali boy builds a glowing miniature city from matchboxes and books on a terrace"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-terrace-republic.jpg" />
+<Pi src="/thumbnail/art-the-terrace-republic.jpg" />
 
 ---
 

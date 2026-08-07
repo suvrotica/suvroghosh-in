@@ -2,11 +2,13 @@
 title: "Why 2026 Is Still the 21st Century"
 description: "A small question about calendars turns into a larger meditation on how ordinary people glide past contradictions without ever stopping to poke them with a stick."
 date: "2026-05-12"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["21st Century","21st","Century","Zero","Calendar","Forever","Kolkata","Runs","Modern","Longer"]
 published: true
 color: "stone"
-thumbnail: "/thumbnail/safe-the-century-has-a-hole-in-it.jpg"
+thumbnail: "/thumbnail/art-the-century-has-a-hole-in-it.jpg"
+thumbnailAlt: "Curious man probes a missing wedge in a giant blank calendar clock as crowds pass"
 ---
 
 Acronyms and Terms Used
@@ -23,7 +25,7 @@ BCE — Before Common Era. Modern secular equivalent of BC.
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-century-has-a-hole-in-it.jpg" />
+<Pi src="/thumbnail/art-the-century-has-a-hole-in-it.jpg" />
 
 A few mornings ago the power went out again.
 

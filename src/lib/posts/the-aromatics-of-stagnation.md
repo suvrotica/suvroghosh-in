@@ -1,17 +1,19 @@
 ---
 title: "The Aromatics of Stagnation"
-description: "A darkly comic Calcutta essay about depression, stalled work, Artificial Intelligence, loneliness, and the ordinary household objects that begin to accuse us when life gets stuck."
+description: "A darkly comic Calcutta essay on depression, stalled work, AI, loneliness, and household objects that accuse when life gets stuck."
 date: "2026-02-12"
+dateModified: "2026-08-07"
 category: "Calcutta"
-tags: ["Soap","Annoyance","Lizard","Venture","Tap","Sometimes","Bathroom","Learn","AI","Nonsense"]
+tags: ["Soap","Annoyance","Lizard","Tap","Venture","Sometimes","Bathroom","Learn","AI","Nonsense"]
 published: true
 color: "black"
-thumbnail: "/thumbnail/safe-the-aromatics-of-stagnation.jpg"
+thumbnail: "/thumbnail/art-the-aromatics-of-stagnation.jpg"
+thumbnailAlt: "Man sits among soap, tap, bucket, laptop and a watchful house lizard"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-aromatics-of-stagnation.jpg" />
+<Pi src="/thumbnail/art-the-aromatics-of-stagnation.jpg" />
 
 Acronyms used: AI — Artificial Intelligence, software that performs tasks we once thought needed human judgment, language, memory, or pattern recognition. US — United States, the foreign country that can turn a Bengali man into a professional and then, years later, become a rumor when his local circumstances collapse.
 

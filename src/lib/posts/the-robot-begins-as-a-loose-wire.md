@@ -1,19 +1,21 @@
 ---
 title: "The Robot Begins as a Loose Wire"
-description: "A witty, clear, technically grounded post on the state of robotics in 2026, why real robots are still so hard, and how a curious beginner can start building without drowning in chrome-plated fantasy."
+description: "A practical guide to why real robots remain difficult and how beginners can start with motors, sensors, wheels, and wiring."
 date: "2026-06-16"
+dateModified: "2026-08-07"
 category: "Technology"
 tags: ["Computer Vision","Robot","Robotics","Robots","Humanoid","Motors","Sensor","ROS","Wheels","Sensors"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-robot-begins-as-a-loose-wire.jpg"
+thumbnail: "/thumbnail/art-the-robot-begins-as-a-loose-wire.jpg"
+thumbnailAlt: "Beginner hands connecting a loose wire to a simple wheeled robot chassis"
 ---
 
 Acronyms used in this post: AI [Artificial Intelligence, software methods that allow machines to detect patterns, infer structure, and act from data], LLM [Large Language Model, an AI system trained to predict and generate language], VLA [Vision-Language-Action, AI models that connect visual perception and language commands to robot actions], PID [Proportional-Integral-Derivative, a classic feedback control method that corrects motion using present error, accumulated error, and changing error], GPU [Graphics Processing Unit, a chip designed for highly parallel computation], ROS 2 [Robot Operating System 2, a robotics software framework for connecting sensors, motors, planning, and communication], OpenCV [Open Source Computer Vision Library, a widely used software library for image processing and computer vision], IMU [Inertial Measurement Unit, a sensor that estimates motion and orientation], lidar [Light Detection and Ranging, a sensor that estimates distance using laser light].
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-robot-begins-as-a-loose-wire.jpg" />
+<Pi src="/thumbnail/art-the-robot-begins-as-a-loose-wire.jpg" />
 
 ---
 

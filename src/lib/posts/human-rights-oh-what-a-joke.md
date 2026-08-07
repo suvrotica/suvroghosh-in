@@ -1,17 +1,19 @@
 ---
 title: "Human Rights, Oh What a Joke!"
-description: "A sharp, comic, Calcutta-flavored satire on how human rights are praised in brochures, speeches, and seminars, then postponed when ordinary people actually need them."
+description: "A Calcutta-flavoured satire on human rights praised in ceremonies and brochures, then postponed when ordinary people need them."
 date: "2026-06-05"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Human Rights","Rights","Temporarily","Resilient","Human","Brochure","Equality","Folder","Ceremony","Proof"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-human-rights-oh-what-a-joke.jpg"
+thumbnail: "/thumbnail/art-human-rights-oh-what-a-joke.jpg"
+thumbnailAlt: "Ceremonial podium and blank brochures hide citizens waiting at a closed service window"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-human-rights-oh-what-a-joke.jpg" />
+<Pi src="/thumbnail/art-human-rights-oh-what-a-joke.jpg" />
 
 Acronyms:
 

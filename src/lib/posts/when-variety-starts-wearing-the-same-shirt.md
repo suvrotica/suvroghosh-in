@@ -1,18 +1,20 @@
 ---
 title: "When Variety Starts Wearing the Same Shirt"
-description: "A Calcutta essay on cultural flattening, aspirational sameness, social media taste, and AI as the new pocket machine that may polish human variety into one smooth global surface."
+description: "A Calcutta essay on cultural flattening, aspirational sameness, social-media taste, and AI smoothing away human variety."
 date: "2026-06-05"
+dateModified: "2026-08-07"
 category: "Culture"
-tags: ["Social Media","Variety","AI","Sameness","Imitate","Culture","Learn","English","Photocopy","Media"]
+tags: ["Social Media","Variety","AI","Sameness","Imitate","Culture","Learn","English","Photocopy","Mixture"]
 published: true
 color: "#6A4A2F"
-thumbnail: "/thumbnail/safe-when-variety-starts-wearing-the-same-shirt.jpg"
+thumbnail: "/thumbnail/art-when-variety-starts-wearing-the-same-shirt.jpg"
+thumbnailAlt: "Varied rooftop laundry emerges from a metal screen as identical beige shirts"
 ---
 
 <TTS />
 
 
-<Pi src="/thumbnail/safe-when-variety-starts-wearing-the-same-shirt.jpg" />
+<Pi src="/thumbnail/art-when-variety-starts-wearing-the-same-shirt.jpg" />
 
 The problem is not English. The problem is that everybody’s life is being pushed through the same little polishing machine.
 

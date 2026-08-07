@@ -1,17 +1,28 @@
 ---
 title: "The Missing Scientists"
-description: "Why the louder story is not espionage or cinematic disappearance, but bureaucratic rupture, workforce attrition, institutional fear, and a political culture that treats science as disposable until it wants a spectacle."
+description: "Why bureaucratic rupture, workforce attrition and institutional fear—not cinematic disappearance—are driving scientists away."
 date: "2026-04-22"
+dateModified: "2026-08-07"
 category: "healthcare-it"
-tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Research","Agency","Administration"]
+tags: ["United States","Scientists","Personnel","States","United","Missing","Exits","Administration","Research","Agency"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-missing-scientists-us.jpg"
+thumbnail: "/thumbnail/art-missing-scientists-us.jpg"
+thumbnailAlt: "Empty laboratory chairs and packed boxes surround one illuminated experiment"
+inPlainEnglish: "Scientists can disappear from public capacity without vanishing physically: hiring freezes, funding instability, administrative rupture, fear, burnout, and premature exits can hollow out laboratories and agencies. The loss becomes visible later as slower research, weaker oversight, and damaged institutional memory."
+keyTerms: ["Scientific Workforce", "Institutional Capacity", "Workforce Attrition", "Research Funding", "Public Agency", "Institutional Memory", "Bureaucratic Disruption", "Brain Drain"]
+faq:
+  - question: "What does the missing scientists problem describe?"
+    answer: "It describes the loss of active scientific capacity when researchers leave, retire early, avoid public service, lose support, or can no longer work effectively inside disrupted institutions."
+  - question: "Why does institutional fear affect scientific work?"
+    answer: "Unstable rules, political pressure, uncertain funding, and fear of retaliation discourage candour, long-term projects, recruitment, collaboration, and the reporting of inconvenient evidence."
+  - question: "Why is scientific workforce loss difficult to reverse?"
+    answer: "Expert teams depend on tacit knowledge, trust, facilities, mentorship, data, and accumulated practice; replacing a headcount does not instantly restore those relationships or capabilities."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-missing-scientists-us.jpg" />
+<Pi src="/thumbnail/art-missing-scientists-us.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

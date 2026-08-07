@@ -2,16 +2,18 @@
 title: "The Unveiling"
 description: "A rambling reflection from Calcutta on ghost jobs, synthetic professional networks, and the quiet dissolution of white-collar meaning in the age of agentic AI."
 date: "2026-06-28"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Middle Class","Job Boards","Unveiling","Naukri","Listings","AI","Watched","Congratulations","Algorithmic","Mills"]
+tags: ["Middle Class","Job Boards","Naukri","Unveiling","Listings","AI","Watched","Congratulations","Mills","LinkedIn"]
 published: true
 color: "#2c3e50"
-thumbnail: "/thumbnail/safe-the-unveiling.jpg"
+thumbnail: "/thumbnail/art-the-unveiling.jpg"
+thumbnailAlt: "Theatre curtain reveals empty office chairs, blank panels, and dissolving identity badges"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-unveiling.jpg" />
+<Pi src="/thumbnail/art-the-unveiling.jpg" />
 
 Outside my flat, the June heat has turned the tar roads into something viscous and almost alive, a black, sticky membrane that seems to breathe, and you could fry an egg on the hood of the Ambassador taxi stalled below my window, though no one has that experimental leeway anymore to waste food, because even that thought is a luxury and admission is a form of surrender.
 

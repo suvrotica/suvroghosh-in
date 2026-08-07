@@ -1,17 +1,19 @@
 ---
 title: "The Country That Built Rockets but Still Consults the Stars"
-description: "A returning Indian looks at the strange coexistence of technical brilliance and social superstition, and asks why scientific temper remains so thinly rooted in everyday life."
+description: "A returning Indian considers how technical brilliance and social superstition coexist while scientific temper remains thinly rooted."
 date: "2026-04-28"
+dateModified: "2026-08-07"
 category: "Society"
-tags: ["Scientific Temper","United States","Temper","Scientific","Threatens","Science","Asks","India","Astrology","Indians"]
+tags: ["Scientific Temper","United States","Temper","Scientific","Threatens","Science","Asks","India","Astrology","Indian"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-india-scientific-temper-after-return.jpg"
+thumbnail: "/thumbnail/art-india-scientific-temper-after-return.jpg"
+thumbnailAlt: "Indian engineers assemble rocket hardware beside an ornate astrological wheel"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-india-scientific-temper-after-return.jpg" />
+<Pi src="/thumbnail/art-india-scientific-temper-after-return.jpg" />
 
 Acronyms expanded in this post:
 - GDP: Gross Domestic Product. the total monetary value of goods and services produced in an economy.

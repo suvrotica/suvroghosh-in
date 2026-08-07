@@ -1,17 +1,19 @@
 ---
 title: "The Coming White-Collar Mendicancy"
-description: "AI may not simply take jobs; it may quietly push educated lower-middle-class workers down the social staircase. This is a street-level look at what happens when respectable work begins to evaporate."
+description: "How AI-driven job loss could push educated lower-middle-class workers down the social staircase as respectable work evaporates."
 date: "2026-05-19"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Jobs Enough","AI","Freelancer","Mendicancy","Worker","Jobs","Educated","Workers","Learn","Support"]
 published: true
 color: "#374151"
-thumbnail: "/thumbnail/safe-the-coming-white-collar-mendicancy.jpg"
+thumbnail: "/thumbnail/art-the-coming-white-collar-mendicancy.jpg"
+thumbnailAlt: "Office worker descends steps where corporate objects become street-side tools"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-coming-white-collar-mendicancy.jpg" />
+<Pi src="/thumbnail/art-the-coming-white-collar-mendicancy.jpg" />
 
 
 

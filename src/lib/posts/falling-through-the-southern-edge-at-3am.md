@@ -2,16 +2,18 @@
 title: "Falling Through the Southern Edge at 3 AM"
 description: "A middle-aged Bengali man with bipolar disorder, unemployment, and too much education discovers that nightmares are often just documentaries with better lighting."
 date: "2026-05-13"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["BPD","Dream","Darkness","Depression","Apartment","Sadness","Falling","Half","Tea","Tiny"]
 published: true
 color: "#343434"
-thumbnail: "/thumbnail/safe-falling-through-the-southern-edge-at-3am.jpg"
+thumbnail: "/thumbnail/art-falling-through-the-southern-edge-at-3am.jpg"
+thumbnailAlt: "Sleepless Bengali man in a dark apartment beside a floor that folds toward the city"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-falling-through-the-southern-edge-at-3am.jpg" />
+<Pi src="/thumbnail/art-falling-through-the-southern-edge-at-3am.jpg" />
 
 Acronyms used in this post:
 

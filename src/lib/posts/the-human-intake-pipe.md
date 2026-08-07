@@ -1,19 +1,21 @@
 ---
 title: "The Human Intake Pipe"
-description: "AI can now manufacture words, images, code, plans, summaries, and synthetic cleverness faster than the human mind can honestly absorb them. The real bottleneck is no longer production but the small, overheated, ancient theatre of attention inside the skull."
+description: "Why AI output now exceeds honest human absorption, making the ancient limits of attention the real bottleneck."
 date: "2026-06-13"
+dateModified: "2026-08-07"
 category: "Science"
 tags: ["AI","BCI","Hive","Bottleneck","Brain","Help","Stimulate","Stimulation","Mind","Human"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-the-human-intake-pipe.jpg"
+thumbnail: "/thumbnail/art-the-human-intake-pipe.jpg"
+thumbnailAlt: "Huge brass pipe funnels blank information cards toward a tiny theatre inside a glass head"
 ---
 
 Acronyms used in this post: Artificial Intelligence [AI, software that can perform tasks once associated with human intelligence, including writing, coding, summarizing, reasoning, image generation, and planning]; Large Language Model [LLM, an AI system trained on large amounts of text and other data to generate and interpret language]; Brain-Computer Interface [BCI, a system that reads signals from the brain and translates them into commands for computers, prosthetics, or other machines]; Electroencephalography [EEG, a non-invasive method for recording electrical activity from the scalp]; Transcranial Magnetic Stimulation [TMS, a non-invasive method that uses magnetic pulses to stimulate brain activity]; Intracortical Microstimulation [ICMS, direct electrical stimulation inside brain tissue]; Amyotrophic Lateral Sclerosis [ALS, a severe motor neuron disease that can progressively paralyze voluntary movement].
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-human-intake-pipe.jpg" />
+<Pi src="/thumbnail/art-the-human-intake-pipe.jpg" />
 
 ---
 

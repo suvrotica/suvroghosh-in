@@ -1,17 +1,28 @@
 ---
 title: "FHIR"
-description: "A rigorous but readable introduction to HL7 FHIR for serious beginners, grounded in history, healthcare architecture, and the lived texture of real systems. This post explains what FHIR actually is, what it is not, and why its promise is both enormous and frequently misunderstood."
+description: "A rigorous introduction to HL7 FHIR, its history, healthcare architecture, real-system context, promise, and frequent misunderstandings."
 date: "2026-04-23"
+dateModified: "2026-08-07"
 category: "healthcare it"
 tags: ["Health Level Seven","Public Health","Diagnosis Classification","Artificial Intelligence","Active Medication","FHIR","Healthcare","Resource","Clinical","Data"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg"
+thumbnail: "/thumbnail/art-fhir-for-a-curious-student-in-calcutta.jpg"
+thumbnailAlt: "Bengali student connecting glass healthcare resource blocks between paper records and a modern conduit"
+inPlainEnglish: "FHIR organizes health information into reusable resources and provides modern web-friendly ways to exchange them. It can improve interoperability, but it does not by itself solve identity, terminology, workflow, governance, or data-quality problems."
+keyTerms: ["FHIR", "HL7", "Healthcare Resource", "REST API", "Interoperability", "Clinical Terminology", "Patient Identity", "Clinical Workflow"]
+faq:
+  - question: "What is FHIR?"
+    answer: "Fast Healthcare Interoperability Resources, or FHIR, is an HL7 standard that represents healthcare information as reusable resources and defines ways for systems to exchange them."
+  - question: "Does FHIR replace electronic health record systems?"
+    answer: "No. FHIR gives systems a shared language and exchange methods, but hospitals still need source systems, workflows, storage, security, governance, and operational support."
+  - question: "Is adopting FHIR enough to achieve interoperability?"
+    answer: "No. Real interoperability also depends on patient identity, terminology, provenance, consent, workflow alignment, data quality, and agreements between institutions."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg" />
+<Pi src="/thumbnail/art-fhir-for-a-curious-student-in-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

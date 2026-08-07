@@ -1,19 +1,21 @@
 ---
 title: "The Former Bright Boy Problem"
-description: "A satirical Calcutta essay about old ranks, damp certificates, gifted-child residue, failed adulthood, bipolar depression, and the rude discovery that intelligence is useful but not sufficient."
+description: "A former bright student sorts damp certificates and faded prizes as Calcutta lights reflect the distance between early promise and adult life."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Former Bright Boy","Gift Grows","Park Street","Family Pride","Boy","Rank","Bright","Sees","Potential","Former"]
 published: true
 color: "gray"
-thumbnail: "/thumbnail/safe-the-former-bright-boy-problem.jpg"
+thumbnail: "/thumbnail/art-the-former-bright-boy-problem.jpg"
+thumbnailAlt: "Middle-aged Bengali man sorting damp blank certificates beside a rain-lit city window"
 ---
 
 Acronyms used in this post: WWA — WWA Cossipore English School, the school where the former bright boy mythology began. VA — Veterans Affairs, the American federal healthcare system for military veterans. IT — Information Technology, the trade in which human confusion is converted into screens, tickets, databases, and sometimes a salary.
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-former-bright-boy-problem.jpg" />
+<Pi src="/thumbnail/art-the-former-bright-boy-problem.jpg" />
 
 ---
 

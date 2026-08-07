@@ -2,16 +2,18 @@
 title: "The Pest Department in My Skull"
 description: "A comic and uneasy Calcutta essay about cockroaches, bureaucracy, bad metaphors, and the private danger of calling human behavior pest-like."
 date: "2026-06-08"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Pest","Cockroach","Coli","Slipper","Biology","Behavior","Rat","Fungus","Philosopher","Stamp"]
+tags: ["Pest","Cockroach","Coli","Slipper","Biology","Behavior","Fungus","Rat","Philosopher","Stamp"]
 published: true
 color: "#7a4a2a"
-thumbnail: "/thumbnail/safe-pest-department-in-my-skull.jpg"
+thumbnail: "/thumbnail/art-pest-department-in-my-skull.jpg"
+thumbnailAlt: "A hand pauses before stamping insect shapes onto a row of wooden human figures"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-pest-department-in-my-skull.jpg" />
+<Pi src="/thumbnail/art-pest-department-in-my-skull.jpg" />
 
 Acronyms and notes:
 

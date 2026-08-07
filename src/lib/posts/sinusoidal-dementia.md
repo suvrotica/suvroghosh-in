@@ -2,16 +2,18 @@
 title: "Sinusoidal Dementia"
 description: "A grotesquely swollen monologue on FM static, eighties melodies, and the transhuman promise of generated worlds."
 date: "2026-07-12"
+dateModified: "2026-08-07"
 category: "Mental Health"
-tags: ["Transhumanists","Melodies","Well-Adjusted","Ruminations","Generated","Attempting","Pathetic","Brain","Obsolete","Rickshaw"]
+tags: ["Transhumanists","Melodies","Ruminations","Well-Adjusted","Generated","Attempting","Pathetic","Brain","Rickshaw","Obsolete"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-sinusoidal-dementia.jpg"
+thumbnail: "/thumbnail/art-sinusoidal-dementia.jpg"
+thumbnailAlt: "Analogue radio sending a luminous musical wave into a miniature city and white static"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-sinusoidal-dementia.jpg" />
+<Pi src="/thumbnail/art-sinusoidal-dementia.jpg" />
 
 The Audio-Technica ATH-M20x Over-Ear Professional Studio Monitor headphones, those malignant pleather-padded clamping engines of auditory imprisonment, have been locked around my skull like a vice engineered by a sadistic audiologist for three hours now, cultivating a tropical greenhouse of sebum, hair pomade, and what I can only describe as a bacterial effervescence in the circumaural creases that would shame the backroom of a College Street bookshop, and through this sweat-basted circumaural cavern the FM waves are pouring eighty-six megahertz of Kishore Kumar directly into my temporal lobe, which is, at this exact moment, attempting to digest both the melancholy of *Mere Sapno Ki Rani* and the simultaneous, crushing certainty that my neurotransmitters are staging a mutiny that no SSRI has the parliamentary majority to quell.
 

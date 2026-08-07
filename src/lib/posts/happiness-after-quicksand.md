@@ -1,17 +1,19 @@
 ---
 title: "Happiness After Quicksand"
-description: "A personal essay on bipolar disorder, solitude, middle-aged life in Calcutta, and the small unfashionable arrangements that sometimes keep sadness and anger from becoming a public disaster."
+description: "A man tends a modest rooftop garden beside practical supplies, with firm footprints leading away from settled quicksand."
 date: "2026-05-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Canned Food","Solitude","Canned","Maybe","Agitation","Fence","Terrace","Mind","Considered","Anger"]
+tags: ["Canned Food","Solitude","Canned","Maybe","Agitation","Fence","Terrace","Mind","Anger","Considered"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-happiness-after-quicksand.jpg"
+thumbnail: "/thumbnail/art-happiness-after-quicksand.jpg"
+thumbnailAlt: "Bengali man tending rooftop plants beside a settled patch of golden sand"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-happiness-after-quicksand.jpg" />
+<Pi src="/thumbnail/art-happiness-after-quicksand.jpg" />
 
 Acronyms used in this post:
 

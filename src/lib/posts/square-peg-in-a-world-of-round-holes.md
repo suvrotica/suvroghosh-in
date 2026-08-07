@@ -2,14 +2,16 @@
 title: "Square Peg, Round Hole, Bad Weather"
 description: "A Kolkata essay on depression, loneliness, income fear, and the peculiar misery of being an honest misfit in a world that rewards performance."
 date: "2026-05-28"
+dateModified: "2026-08-07"
 category: "Mental Health"
 tags: ["Square Peg","Peg","Frittering","Verbs","Square","Sadness","Lie","Depression","Loneliness","Real"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-square-peg-in-a-world-of-round-holes.jpg"
+thumbnail: "/thumbnail/art-square-peg-in-a-world-of-round-holes.jpg"
+thumbnailAlt: "Single square wooden peg outside a row of round pegs and circular gates"
 ---
 <TTS />
-<Pi src="/thumbnail/safe-square-peg-in-a-world-of-round-holes.jpg" />
+<Pi src="/thumbnail/art-square-peg-in-a-world-of-round-holes.jpg" />
 Acronyms and terms:
 
 AI: Artificial Intelligence, computer systems trained to perform tasks that appear to require human intelligence, such as writing, image generation, prediction, translation, or classification.

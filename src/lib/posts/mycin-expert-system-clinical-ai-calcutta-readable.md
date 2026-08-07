@@ -1,17 +1,28 @@
 ---
 title: "MYCIN: The 1970s Medical AI That Knew How to Explain Itself"
-description: "MYCIN was an early Stanford expert system for infectious disease diagnosis and antibiotic therapy. Its real lesson is not that old AI was crude, but that medicine is painfully hard to squeeze into rules, screens, and databases."
+description: "A 1970s clinician and computer scientist examine a rule-based terminal, recalling MYCIN’s explainable approach to medical AI."
 date: "2026-05-26"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
-tags: ["Inference Engine","Knowledge Base","User Interface","MYCIN","Clinical","Stanford","Expert","Interface","Rules","User"]
+tags: ["Inference Engine","Knowledge Base","User Interface","MYCIN","Clinical","Expert","Interface","Stanford","Rules","Antibiotic"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg"
+thumbnail: "/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg"
+thumbnailAlt: "Clinician and computer scientist studying a rule-based terminal in a 1970s laboratory"
+inPlainEnglish: "MYCIN was a 1970s medical expert system that used explicit rules and certainty factors to reason about serious infections and antibiotic choices. It never became routine clinical software, but its ability to show which rules fired remains a useful contrast with powerful models that cannot clearly explain their path."
+keyTerms: ["MYCIN", "Expert System", "Knowledge Base", "Inference Engine", "Certainty Factor", "Clinical Decision Support", "Explainability", "Antibiotic Recommendation"]
+faq:
+  - question: "What was MYCIN?"
+    answer: "MYCIN was a Stanford research expert system that asked clinical questions and applied hand-authored rules to advise on certain bacterial infections and antibiotic treatment."
+  - question: "How did MYCIN explain a recommendation?"
+    answer: "It could trace the rules and facts used by its inference engine, allowing a user to inspect why it asked a question or reached a conclusion."
+  - question: "Why was MYCIN not widely deployed in hospitals?"
+    answer: "Clinical integration, validation, responsibility, maintenance, workflow, computing constraints, and institutional acceptance were harder problems than demonstrating reasoning in a research setting."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg" />
+<Pi src="/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg" />
 
 Acronyms and terms used in this post:
 

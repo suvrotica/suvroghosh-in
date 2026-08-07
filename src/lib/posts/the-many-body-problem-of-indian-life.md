@@ -1,17 +1,19 @@
 ---
 title: "The Many-Body Problem of Indian Life"
-description: "A middle-aged Bengali man in the shanty boondocks of Calcutta tries to solve one clean problem, income, while rent, heat, illness, memory, family, and shame pull him apart like bad celestial mechanics."
+description: "Rent, heat, illness, memory, family, and shame orbit one income problem in a brass model of unstable everyday celestial mechanics."
 date: "2026-06-14"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Orbit Intersects","Rice Cooker","Intersects","Pulls","Orbit","Throb","Try","Tooth","Income","Client"]
+tags: ["Orbit Intersects","Rice Cooker","Pulls","Intersects","Orbit","Throb","Tooth","Try","Income","Client"]
 published: true
 color: "#8A4F2A"
-thumbnail: "/thumbnail/safe-the-many-body-problem-of-indian-life.jpg"
+thumbnail: "/thumbnail/art-the-many-body-problem-of-indian-life.jpg"
+thumbnailAlt: "Bengali man aligning a token beneath an intricate mobile of orbiting domestic burdens"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-many-body-problem-of-indian-life.jpg" />
+<Pi src="/thumbnail/art-the-many-body-problem-of-indian-life.jpg" />
 
 Acronyms used in this post:
 

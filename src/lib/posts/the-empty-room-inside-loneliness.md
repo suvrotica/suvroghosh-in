@@ -1,17 +1,19 @@
 ---
 title: "The Empty Room Inside Loneliness"
-description: "A personal and philosophical essay on loneliness, bipolar depression, Bengali society, and the strange inner disappearance that can happen when a man lives alone too long."
+description: "A personal essay on loneliness, bipolar depression, Bengali society and the inner disappearance that can follow years alone."
 date: "2026-05-11"
+dateModified: "2026-08-07"
 category: "Personal"
-tags: ["Empty Room","Loneliness","Friendly","Self","Empty","Divorced","Chair","Mind","Taught","Kolkata"]
+tags: ["Empty Room","Loneliness","Friendly","Self","Empty","Divorced","Chair","Mind","Kolkata","Taught"]
 published: true
 color: "#4A5568"
-thumbnail: "/thumbnail/safe-the-empty-room-inside-loneliness.jpg"
+thumbnail: "/thumbnail/art-the-empty-room-inside-loneliness.jpg"
+thumbnailAlt: "Man faces a Kolkata window while his shadow contains a smaller empty room"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-empty-room-inside-loneliness.jpg" />
+<Pi src="/thumbnail/art-the-empty-room-inside-loneliness.jpg" />
 
 
 

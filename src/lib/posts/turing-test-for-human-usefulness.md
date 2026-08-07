@@ -1,17 +1,19 @@
 ---
 title: "The Turing Test for Human Usefulness"
-description: "A middle-aged Bengali consultant in a hot Calcutta room asks whether a damaged human can still pass the market’s test: answer the email, join the call, send the invoice, and appear useful."
+description: "A Bengali consultant faces a narrow machine test of emails, calls, invoices, and market usefulness while his larger human shadow escapes measurement."
 date: "2026-06-11"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Market Asks","EOD","Turing","Judge","Market","Invoice","Means","Document","End","Survived"]
 published: true
 color: "#4B5563"
-thumbnail: "/thumbnail/safe-turing-test-for-human-usefulness.jpg"
+thumbnail: "/thumbnail/art-turing-test-for-human-usefulness.jpg"
+thumbnailAlt: "Middle-aged Bengali consultant facing a transparent machine with email, call, and invoice symbols"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-turing-test-for-human-usefulness.jpg" />
+<Pi src="/thumbnail/art-turing-test-for-human-usefulness.jpg" />
 
 Acronyms used: PDF means Portable Document Format, the fixed-layout file format people use when they want a document to behave itself on different machines. EOD means End of Day, the office phrase that sounds harmless until it arrives at 5:37 in the evening with a knife between its teeth. AI means Artificial Intelligence, software that tries to imitate or automate parts of human reasoning. VA means Veterans Affairs, the United States federal healthcare system for military veterans. HL7 means Health Level Seven, a family of healthcare messaging standards used to move clinical data between systems. GST means Goods and Services Tax, India’s indirect tax system, which appears in life like a small official mosquito.
 

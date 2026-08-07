@@ -1,17 +1,19 @@
 ---
 title: "OpenClaw and the Uneasy Arrival of Agents That Actually Do Things"
-description: "A balanced introduction to OpenClaw-style AI agents: why they matter, what makes them different from chatbots, and why their usefulness arrives hand-in-hand with serious security and governance risk."
+description: "A balanced introduction to action-taking AI agents, their practical usefulness and the security and governance risks they create."
 date: "2026-04-27"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
-tags: ["Artificial Intelligence","Large Language","Software Systems","Language Model","Agent","Execution","LLM","Systems","Web","Tools"]
+tags: ["Artificial Intelligence","Large Language","Software Systems","Language Model","Agent","Execution","LLM","Systems","Tools","Web"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-openclaw-balanced-intro.jpg"
+thumbnail: "/thumbnail/art-openclaw-balanced-intro.jpg"
+thumbnailAlt: "Robotic arm handles everyday tasks inside a locked transparent governance frame"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-openclaw-balanced-intro.jpg" />
+<Pi src="/thumbnail/art-openclaw-balanced-intro.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

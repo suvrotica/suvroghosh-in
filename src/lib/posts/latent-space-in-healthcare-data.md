@@ -2,14 +2,14 @@
 title: "Latent Space in Healthcare Data, From the Beginning"
 description: "How clinical embeddings represent hidden patterns in healthcare data, where they fail, and why every patient vector needs provenance and an audit path."
 date: "2026-04-24"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["Latent Space","Clinical Embeddings","Healthcare Data","Representation Learning","Electronic Health Records","Data Provenance","FHIR","Temporal Modeling","Algorithmic Bias","Clinical Informatics"]
 pinnedTags: ["Latent Space", "Clinical Embeddings", "Healthcare Data", "Representation Learning", "Electronic Health Records", "Data Provenance", "FHIR", "Temporal Modeling", "Algorithmic Bias", "Clinical Informatics"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-latent-space-in-healthcare-data.jpg"
-thumbnailAlt: "Muted overlapping shapes and contour lines suggesting a hidden geometric map beneath clinical records"
+thumbnail: "/thumbnail/art-latent-space-in-healthcare-data.jpg"
+thumbnailAlt: "Patient silhouettes linked by provenance threads to a luminous folded data manifold"
 mediaReviewed: true
 inPlainEnglish: "Clinical embeddings turn unresolved problems of identity, time, terminology, missingness, and provenance into geometry. A patient vector can therefore be numerically stable, useful, and clinically false at the same time; safe architecture must preserve an audit path from the vector back to its evidence."
 keyTerms: ["Latent Space", "Clinical Embedding", "Representation Learning", "Provenance", "Temporal Modeling", "Representational Loss"]
@@ -24,7 +24,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-latent-space-in-healthcare-data.jpg" alt="" />
+<Pi src="/thumbnail/art-latent-space-in-healthcare-data.jpg" alt="" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
