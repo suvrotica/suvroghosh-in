@@ -2,16 +2,18 @@
 title: "No Ambition Left, Only Cold Tea"
 description: "A Calcutta middle-aged essay on ambition running out, the body carrying on, and the strange duty of staying alive when all the grand reasons have left the room."
 date: "2026-06-17"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Biscuit","Ambition","Healthcare","Department","Plan","Believe","Databases","Standards","Tea","Enters"]
 published: true
 color: "brown"
-thumbnail: "/thumbnail/safe-no-ambition-left-cold-tea.jpg"
+thumbnail: "/thumbnail/art-no-ambition-left-cold-tea.jpg"
+thumbnailAlt: "Cold tea and biscuit wait in a quiet room while a green vine climbs toward sunlight"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-no-ambition-left-cold-tea.jpg" />
+<Pi src="/thumbnail/art-no-ambition-left-cold-tea.jpg" />
 
 Acronyms used in this post:
 

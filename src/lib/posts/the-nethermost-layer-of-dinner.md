@@ -2,16 +2,18 @@
 title: "The Nethermost Layer of Dinner"
 description: "A darkly comic Calcutta essay on depression, failed expectations, aging, poverty, bureaucracy, and the small humiliations that still drag a man through another day."
 date: "2026-06-13"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Rice Cooker","Energy","Nethermost","Flatness","Muck","Rice","Expectations","India","Cooker","Proper"]
 published: true
 color: "brown"
-thumbnail: "/thumbnail/safe-the-nethermost-layer-of-dinner.jpg"
+thumbnail: "/thumbnail/art-the-nethermost-layer-of-dinner.jpg"
+thumbnailAlt: "Bengali man eating rice above a museum-like cross-section of compressed daily burdens"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-nethermost-layer-of-dinner.jpg" />
+<Pi src="/thumbnail/art-the-nethermost-layer-of-dinner.jpg" />
 
 The rice stuck to the bottom of a cheap cooker is not tragedy. Not proper tragedy. Sophocles did not sit in a rented South Calcutta room with a scratched aluminum bowl, a sweating neck, a failing fan, and a brown fossil layer of dinner forming quietly under his nose.
 

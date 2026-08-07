@@ -1,17 +1,19 @@
 ---
 title: "The Digital Charnel House"
-description: "A feverish, bile-soaked rant from a fifty-one-year-old Bengali recluse about the enshittification of the internet, AI slop, and the spiritual bankruptcy of late capitalism's digital gold rush."
+description: "A brass mill grinds synthetic icons inside an empty screen-filled marketplace, depicting AI slop and the spiritual vacancy of digital gold rushes."
 date: "2026-07-09"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Mill Grinds","Digital Ganges","Loading Screen","Business Model","Slop","Shovel","AI","Hikkikomori","Internet","Enshittification"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-the-digital-charnel-house.jpg"
+thumbnail: "/thumbnail/art-the-digital-charnel-house.jpg"
+thumbnailAlt: "Bengali observer in an abandoned digital marketplace dominated by a mill and loading wheel"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-digital-charnel-house.jpg" />
+<Pi src="/thumbnail/art-the-digital-charnel-house.jpg" />
 
 I woke up this morning, or rather I did not wake up so much as I was disgorged from the sticky, viscous membrane of sleep into a reality that already felt like a poorly rendered simulation, and the first thing I saw, the very first thing my rheumy, fifty-one-year-old, single, cancelled, bruised, burnt, brittle, bitter Bengali eyes encountered was not the soft Calcutta dawn filtering through my unwashed curtains, no, it was my phone screen, that rectangular little Judas, glowing with the notification that some algorithm had decided I needed to watch a YouTube video titled "Make $10,000 a Day With This ONE AI Trick (Doctors Hate Him)" and I sat there, my back against a pillow that smelled of old hair oil and the accumulated despair of a thousand sleepless nights, and I felt the bile rise, not metaphorical bile, actual, physical, gastric bile, the kind that burns the esophagus and tastes of yesterday's stale fish curry and existential dread, because I knew, I *knew* with the certainty of a man who has spent three decades over-reading books he cannot usefully apply to anything, that this was not a video, this was a shovel, a cheap, rusted, mass-produced shovel being sold to a crowd of gullible, subscription-gold-prospecting wannabes who think that the internet is still a frontier and not a landfill, a charnel house, a digital Ganges where the corpses of genuine creativity float belly-up alongside the turds of algorithmic arbitrage.
 

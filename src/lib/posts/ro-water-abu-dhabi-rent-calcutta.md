@@ -1,12 +1,14 @@
 ---
 title: "RO Water, Abu Dhabi Rent, and a Calcutta Room"
-description: "A sharp, darkly comic essay on bad water, impossible rent, civic decay, and the strange mental arithmetic of surviving in lower-middle-class Calcutta after returning from America."
+description: "A darkly comic essay on bad water, impossible rent, civic decay and survival in lower-middle-class Calcutta after returning from America."
 date: "2026-06-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Abu Dhabi","Rent Listings","Rent","Coli","Dhabi","Abu","Less","Poverty","Listings","Filter"]
 published: true
 color: "#7A5638"
-thumbnail: "/thumbnail/safe-ro-water-abu-dhabi-rent-calcutta.jpg"
+thumbnail: "/thumbnail/art-ro-water-abu-dhabi-rent-calcutta.jpg"
+thumbnailAlt: "Returnee checks a water filter beside rent cards, suitcase and Abu Dhabi models"
 ---
 
 Acronyms and terms used in this post:
@@ -23,7 +25,7 @@ E. coli: Escherichia coli, a bacterium often used as a warning sign of fecal con
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ro-water-abu-dhabi-rent-calcutta.jpg" />
+<Pi src="/thumbnail/art-ro-water-abu-dhabi-rent-calcutta.jpg" />
 
 ---
 

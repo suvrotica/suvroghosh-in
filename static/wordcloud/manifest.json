@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T03:11:17.682908+00:00",
+  "generatedAt": "2026-08-07T03:48:23.301094+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4740,12 +4740,12 @@
       "wordCount": 130
     },
     "invisible-radius": {
-      "generatedAt": "2026-07-20T02:04:00.699740+00:00",
+      "generatedAt": "2026-08-07T03:47:44.896001+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/invisible-radius.svg",
       "source": "src/lib/posts/invisible-radius.md",
-      "sourceHash": "ca417d0d101bf82149b783a09d7e42de3326d099a91c95ed9e3ebb855935ecd0",
-      "sourceModified": "2026-07-20T02:01:43.102578+00:00",
+      "sourceHash": "48a924dd33c6dfe508807021087422d32bccc2b9e4871fc142a917ceab6d3b6c",
+      "sourceModified": "2026-08-07T03:47:28.661470+00:00",
       "topWords": [
         "Small",
         "Sometimes",
@@ -4947,12 +4947,12 @@
       "wordCount": 130
     },
     "kolkata-bat-waiting-for-a-bus": {
-      "generatedAt": "2026-07-20T02:04:07.656229+00:00",
+      "generatedAt": "2026-08-07T03:47:45.651461+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/kolkata-bat-waiting-for-a-bus.svg",
       "source": "src/lib/posts/kolkata-bat-waiting-for-a-bus.md",
-      "sourceHash": "aebf6fef8daffc9dc9ced00fa9191f7ac749b359f95124f677298102428791d0",
-      "sourceModified": "2026-07-20T02:00:12.500726+00:00",
+      "sourceHash": "99a842db2bcb95172bf9679a9f464a00247c28f51d56e5df8720fc525684fd41",
+      "sourceModified": "2026-08-07T03:29:35.631565+00:00",
       "topWords": [
         "Many",
         "Someone",
@@ -5177,12 +5177,12 @@
       "wordCount": 130
     },
     "local-disgrace-still-making-noise": {
-      "generatedAt": "2026-07-20T02:04:13.019474+00:00",
+      "generatedAt": "2026-08-07T03:47:46.360317+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/local-disgrace-still-making-noise.svg",
       "source": "src/lib/posts/local-disgrace-still-making-noise.md",
-      "sourceHash": "a70e75affca8e1f1948891b1cb4ca8ef30e5a2ecf7ad0c765c7839fb68f33a08",
-      "sourceModified": "2026-07-20T02:00:12.235709+00:00",
+      "sourceHash": "d7e4c8f9e6d702cfced5a2442654ffe20f613e68f2301c43d82d27031fa80457",
+      "sourceModified": "2026-08-07T03:29:35.631565+00:00",
       "topWords": [
         "Man",
         "Language",
@@ -5200,12 +5200,12 @@
       "wordCount": 130
     },
     "loneliness-is-not-a-generation": {
-      "generatedAt": "2026-07-20T02:04:13.698059+00:00",
+      "generatedAt": "2026-08-07T03:47:47.032071+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/loneliness-is-not-a-generation.svg",
       "source": "src/lib/posts/loneliness-is-not-a-generation.md",
-      "sourceHash": "83d9ab95dcfcd1107d7c919e4effb383360da0fe18a757fa32004ccd27442fc5",
-      "sourceModified": "2026-07-20T02:00:12.440141+00:00",
+      "sourceHash": "b8788fbf2e4feceb843ee0416d74d64b621ebe5acc95173dd7c2948bfa6b330f",
+      "sourceModified": "2026-08-07T03:29:35.631565+00:00",
       "topWords": [
         "Human",
         "Loneliness",
@@ -5223,12 +5223,12 @@
       "wordCount": 130
     },
     "lout": {
-      "generatedAt": "2026-07-20T02:04:14.485650+00:00",
+      "generatedAt": "2026-08-07T03:47:47.770418+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/lout.svg",
       "source": "src/lib/posts/lout.md",
-      "sourceHash": "2262d81ef2acbe44e04b0f4c8e6da396d08c6c685f4423a67bf7745d6448a30a",
-      "sourceModified": "2026-07-20T02:00:12.709157+00:00",
+      "sourceHash": "00e299fb4b3fcefa6d2ccdfe03ab7f98be1bd801fad92ebd3801fe65e109be96",
+      "sourceModified": "2026-08-07T03:47:28.686099+00:00",
       "topWords": [
         "Becomes",
         "Think",
@@ -5361,12 +5361,12 @@
       "wordCount": 130
     },
     "milk-cha-and-the-small-engine-of-attention": {
-      "generatedAt": "2026-07-20T02:04:18.126144+00:00",
+      "generatedAt": "2026-08-07T03:47:48.448929+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/milk-cha-and-the-small-engine-of-attention.svg",
       "source": "src/lib/posts/milk-cha-and-the-small-engine-of-attention.md",
-      "sourceHash": "da96bc57a2f0fae3131dc53e45d22640d8e0591a1c5a793491005e19aac5566a",
-      "sourceModified": "2026-07-20T02:00:12.436478+00:00",
+      "sourceHash": "106d4dfb30c4fd27c807b1c95ec4cc8bf39f140300a01c8ff223297895f5a590",
+      "sourceModified": "2026-08-07T03:47:28.686099+00:00",
       "topWords": [
         "Milk",
         "Tea",
@@ -5545,12 +5545,12 @@
       "wordCount": 130
     },
     "mood-bellwethers-before-a-low": {
-      "generatedAt": "2026-07-20T02:04:23.471648+00:00",
+      "generatedAt": "2026-08-07T03:47:49.233286+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/mood-bellwethers-before-a-low.svg",
       "source": "src/lib/posts/mood-bellwethers-before-a-low.md",
-      "sourceHash": "541c039781eb8d581b3e6beff73ac070263b596b992c75e3063f526842b9c073",
-      "sourceModified": "2026-07-20T02:01:43.333647+00:00",
+      "sourceHash": "79215b95c0a9fcf18b700c31816c41fbf4e51ec7347aae4055f352b9c91f98ff",
+      "sourceModified": "2026-08-07T03:47:28.701761+00:00",
       "topWords": [
         "Weather",
         "Every",
@@ -5798,12 +5798,12 @@
       "wordCount": 130
     },
     "nightmare-wrapped-in-skin": {
-      "generatedAt": "2026-07-20T02:04:30.518021+00:00",
+      "generatedAt": "2026-08-07T03:47:49.968939+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/nightmare-wrapped-in-skin.svg",
       "source": "src/lib/posts/nightmare-wrapped-in-skin.md",
-      "sourceHash": "aa3605849ff5d224bd044a2d2101e03d931c516a6ca1622f93412ddff10fb7cb",
-      "sourceModified": "2026-07-20T02:01:43.384719+00:00",
+      "sourceHash": "7c0e17a12ffd2b058c146434bb9ba18a200a26195f971c53f31d22826752d600",
+      "sourceModified": "2026-08-07T03:47:28.712805+00:00",
       "topWords": [
         "Maybe",
         "Often",
@@ -5821,12 +5821,12 @@
       "wordCount": 130
     },
     "no-ambition-left-cold-tea": {
-      "generatedAt": "2026-07-20T02:04:31.359731+00:00",
+      "generatedAt": "2026-08-07T03:47:50.700359+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/no-ambition-left-cold-tea.svg",
       "source": "src/lib/posts/no-ambition-left-cold-tea.md",
-      "sourceHash": "b8895235cde071aabdcc62981b0b01777e0e64fb26805c12f7fce7c72657b0c5",
-      "sourceModified": "2026-07-20T02:01:43.387073+00:00",
+      "sourceHash": "aabdbf1f551c0cd363efd9dd906ebe556de1eab945256423dd73e22eb961e818",
+      "sourceModified": "2026-08-07T03:29:35.631565+00:00",
       "topWords": [
         "Tea",
         "Ambition",
@@ -5867,12 +5867,12 @@
       "wordCount": 130
     },
     "nostril-hairs-and-the-tainted-calcutta-summer": {
-      "generatedAt": "2026-07-20T02:04:32.940828+00:00",
+      "generatedAt": "2026-08-07T03:47:51.368695+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/nostril-hairs-and-the-tainted-calcutta-summer.svg",
       "source": "src/lib/posts/nostril-hairs-and-the-tainted-calcutta-summer.md",
-      "sourceHash": "1c003018f4f87436ff04a90e981fce5fdd25a800be3a57157741fe2b1058d309",
-      "sourceModified": "2026-07-20T02:00:12.243227+00:00",
+      "sourceHash": "cf7e3aeda12a45a27314ddcb9df2268b09416da3a582515c2a1b609a84965639",
+      "sourceModified": "2026-08-07T03:29:35.631565+00:00",
       "topWords": [
         "Air",
         "Heat",
@@ -5913,12 +5913,12 @@
       "wordCount": 130
     },
     "one-life-no-rehearsal-calcutta": {
-      "generatedAt": "2026-07-20T02:04:33.742542+00:00",
+      "generatedAt": "2026-08-07T03:47:52.179504+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/one-life-no-rehearsal-calcutta.svg",
       "source": "src/lib/posts/one-life-no-rehearsal-calcutta.md",
-      "sourceHash": "62387539c18e2a9110394587d765dfb66181ae94a982d7cbd4b6a9e733d5f72b",
-      "sourceModified": "2026-07-20T02:00:12.425719+00:00",
+      "sourceHash": "8218a8d09678ffee9c159841a762cf15c6a35b977884f4ba87338508342b4a1f",
+      "sourceModified": "2026-08-07T03:47:28.728676+00:00",
       "topWords": [
         "Enough",
         "Little",
@@ -6005,12 +6005,12 @@
       "wordCount": 130
     },
     "oxygen-in-a-box": {
-      "generatedAt": "2026-07-20T02:04:35.440556+00:00",
+      "generatedAt": "2026-08-07T03:47:52.843571+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/oxygen-in-a-box.svg",
       "source": "src/lib/posts/oxygen-in-a-box.md",
-      "sourceHash": "558c467dde42ed3c542a3538f68b145c2f990857fb41e9c571d719bf8dce3953",
-      "sourceModified": "2026-07-20T02:01:43.414884+00:00",
+      "sourceHash": "359fbd7200e563aecca62fe5bf353c10892d9b7b95a3e34e0afc0ead63eb2e17",
+      "sourceModified": "2026-08-07T03:47:28.733037+00:00",
       "topWords": [
         "Man",
         "Somewhere",
@@ -6028,12 +6028,12 @@
       "wordCount": 130
     },
     "painful-tooth-fairy-calcutta": {
-      "generatedAt": "2026-07-20T02:04:36.300400+00:00",
+      "generatedAt": "2026-08-07T03:47:53.571568+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/painful-tooth-fairy-calcutta.svg",
       "source": "src/lib/posts/painful-tooth-fairy-calcutta.md",
-      "sourceHash": "361f7bee1661be87baf351bc9155266b7f3f1be438481e89d532be6907122fa0",
-      "sourceModified": "2026-07-20T02:00:12.536444+00:00",
+      "sourceHash": "b89d860c60e730edc12c6de983215b703e0951f7f4719ed029c839f00f5ecbb0",
+      "sourceModified": "2026-08-07T03:47:28.743482+00:00",
       "topWords": [
         "Tooth",
         "Pain",
@@ -6074,12 +6074,12 @@
       "wordCount": 130
     },
     "pest-department-in-my-skull": {
-      "generatedAt": "2026-07-20T02:04:36.978332+00:00",
+      "generatedAt": "2026-08-07T03:47:54.315079+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/pest-department-in-my-skull.svg",
       "source": "src/lib/posts/pest-department-in-my-skull.md",
-      "sourceHash": "b951387c5ac74ddf9a68e01171b3a974ac6887f5bb59980d828f78fae05a1ae0",
-      "sourceModified": "2026-07-20T02:01:43.424890+00:00",
+      "sourceHash": "f67d905d1a0911fdf89ba29fa42a3883a2f15433e609de0060485ebcb6ffb2bd",
+      "sourceModified": "2026-08-07T03:47:28.743482+00:00",
       "topWords": [
         "Pest",
         "Bad",
@@ -6143,12 +6143,12 @@
       "wordCount": 130
     },
     "phase-transition-at-fifty-one": {
-      "generatedAt": "2026-07-20T02:04:39.241850+00:00",
+      "generatedAt": "2026-08-07T03:47:55.044223+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/phase-transition-at-fifty-one.svg",
       "source": "src/lib/posts/phase-transition-at-fifty-one.md",
-      "sourceHash": "0779677ad7acccaab146147f11ecb2e9c9a1e3ec9216a40921d33f956a148ca3",
-      "sourceModified": "2026-07-20T02:00:12.702470+00:00",
+      "sourceHash": "ebd99b5fdb31e9fda2ea3fe35ec7f9ffba3edd9a8ce34819372002f849f5accf",
+      "sourceModified": "2026-08-07T03:47:28.743482+00:00",
       "topWords": [
         "Man",
         "Water",
@@ -6235,12 +6235,12 @@
       "wordCount": 130
     },
     "pod-mara-gechhe-calcutta-essay": {
-      "generatedAt": "2026-07-20T02:04:41.474424+00:00",
+      "generatedAt": "2026-08-07T03:47:55.716236+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/pod-mara-gechhe-calcutta-essay.svg",
       "source": "src/lib/posts/pod-mara-gechhe-calcutta-essay.md",
-      "sourceHash": "c80fb1ed498f56e146892b2b09e48cb76bcb0289d93f0079c9018245e479cf7b",
-      "sourceModified": "2026-07-20T02:01:43.449916+00:00",
+      "sourceHash": "347f5dd4d1d3a7f6c0ebc4d230bbe0e73532e126a500911af939cbe63fd810a1",
+      "sourceModified": "2026-08-07T03:29:35.631565+00:00",
       "topWords": [
         "Tea",
         "Man",
@@ -6281,12 +6281,12 @@
       "wordCount": 130
     },
     "poison-wears-a-clean-shirt": {
-      "generatedAt": "2026-07-20T02:04:42.984506+00:00",
+      "generatedAt": "2026-08-07T03:47:56.517693+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/poison-wears-a-clean-shirt.svg",
       "source": "src/lib/posts/poison-wears-a-clean-shirt.md",
-      "sourceHash": "cef513266dd7cb5b280faf9850ce70fe0263a2eee44e626ad7643220471916f0",
-      "sourceModified": "2026-07-20T02:01:43.463763+00:00",
+      "sourceHash": "cb8940e084944fd7e821895ca5263bd3183fbf8f39b62aafd2c245cde3966038",
+      "sourceModified": "2026-08-07T03:47:28.759123+00:00",
       "topWords": [
         "Person",
         "Trust",
@@ -6373,12 +6373,12 @@
       "wordCount": 130
     },
     "predepression-tea-bipolar-calcutta": {
-      "generatedAt": "2026-07-20T02:04:45.295550+00:00",
+      "generatedAt": "2026-08-07T03:47:57.265245+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/predepression-tea-bipolar-calcutta.svg",
       "source": "src/lib/posts/predepression-tea-bipolar-calcutta.md",
-      "sourceHash": "62e3b5b953baa6c42aa2d3a74fd2b5953745ed56775edaef0ac6a8658b9cc780",
-      "sourceModified": "2026-07-20T02:01:43.490773+00:00",
+      "sourceHash": "0572812956c499ae8a2ab7d80f08ffc08bcdbaa32fc03bdef01ab7ee51e43236",
+      "sourceModified": "2026-08-07T03:47:28.768500+00:00",
       "topWords": [
         "Tea",
         "Becomes",
@@ -6419,12 +6419,12 @@
       "wordCount": 130
     },
     "private-nuisance-at-five-thirty-in-calcutta": {
-      "generatedAt": "2026-07-20T02:04:46.822729+00:00",
+      "generatedAt": "2026-08-07T03:47:58.058106+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/private-nuisance-at-five-thirty-in-calcutta.svg",
       "source": "src/lib/posts/private-nuisance-at-five-thirty-in-calcutta.md",
-      "sourceHash": "37f0d4e11bce5f901cea196e48174bf104f292342a5f41e52b9a749a6f8075d8",
-      "sourceModified": "2026-07-20T02:01:43.503936+00:00",
+      "sourceHash": "7f66f711fad12b7ed382aef616f529d335d3a11772c2625699d9675b0cfd3b7a",
+      "sourceModified": "2026-08-07T03:47:28.772087+00:00",
       "topWords": [
         "Tea",
         "Man",
@@ -6580,12 +6580,12 @@
       "wordCount": 130
     },
     "rain-power-and-quicksand": {
-      "generatedAt": "2026-07-20T02:04:51.229466+00:00",
+      "generatedAt": "2026-08-07T03:47:58.749541+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/rain-power-and-quicksand.svg",
       "source": "src/lib/posts/rain-power-and-quicksand.md",
-      "sourceHash": "b5c92dc0b16075bbd53268e51f263fce0aa307c8f4a937bc3f29afc32a99577a",
-      "sourceModified": "2026-07-20T02:01:43.545260+00:00",
+      "sourceHash": "f8655f13093775263a490ca1c9adb4555918289abc0402bf477052c0d02b0862",
+      "sourceModified": "2026-08-07T03:45:56.764132+00:00",
       "topWords": [
         "Fan",
         "Man",
@@ -6603,12 +6603,12 @@
       "wordCount": 130
     },
     "ram-bharose-is-no-bharosa": {
-      "generatedAt": "2026-07-20T02:04:51.939828+00:00",
+      "generatedAt": "2026-08-07T03:47:59.495701+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ram-bharose-is-no-bharosa.svg",
       "source": "src/lib/posts/ram-bharose-is-no-bharosa.md",
-      "sourceHash": "7c7a6e61f498300eb18657fcc3aabe89830f569b6b5008852024becd7a4e9957",
-      "sourceModified": "2026-07-20T02:00:12.373183+00:00",
+      "sourceHash": "226c428aadd149d14a23c6b8c9dc9f1861e7abbd18f618a1f37d15becd37823c",
+      "sourceModified": "2026-08-07T03:47:28.781631+00:00",
       "topWords": [
         "Man",
         "Dada",
@@ -6649,12 +6649,12 @@
       "wordCount": 130
     },
     "rath-yatra-recursion": {
-      "generatedAt": "2026-07-20T02:04:53.427945+00:00",
+      "generatedAt": "2026-08-07T03:48:00.355642+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/rath-yatra-recursion.svg",
       "source": "src/lib/posts/rath-yatra-recursion.md",
-      "sourceHash": "0ea6beeae347a9ba68dd091a6c3c699c13b7e39ee703ec4906180971f5e4001b",
-      "sourceModified": "2026-07-20T02:01:43.567101+00:00",
+      "sourceHash": "185fa415fccc540efa58458ec436a2e4dad790cc618d9a9505923d8ede16c8b6",
+      "sourceModified": "2026-08-07T03:45:56.764132+00:00",
       "topWords": [
         "Mouth",
         "Crowd",
@@ -6833,12 +6833,12 @@
       "wordCount": 130
     },
     "rice-cooker-bookkeeping": {
-      "generatedAt": "2026-07-20T02:04:56.422325+00:00",
+      "generatedAt": "2026-08-07T03:48:01.142382+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/rice-cooker-bookkeeping.svg",
       "source": "src/lib/posts/rice-cooker-bookkeeping.md",
-      "sourceHash": "be6750fa90624dac6e451f9fae5a21987c592f647203fa3ae251c43df42d877a",
-      "sourceModified": "2026-07-20T02:00:12.325025+00:00",
+      "sourceHash": "832a21f63f4792f01bd5548c2d5fa78381c07ac10c50ea16e9d3f8ecd4f8a0d4",
+      "sourceModified": "2026-08-07T03:45:56.764132+00:00",
       "topWords": [
         "Hunger",
         "Rice",
@@ -6879,12 +6879,12 @@
       "wordCount": 130
     },
     "ro-water-abu-dhabi-rent-calcutta": {
-      "generatedAt": "2026-07-20T02:04:57.240636+00:00",
+      "generatedAt": "2026-08-07T03:48:01.911351+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ro-water-abu-dhabi-rent-calcutta.svg",
       "source": "src/lib/posts/ro-water-abu-dhabi-rent-calcutta.md",
-      "sourceHash": "060ffe153a4198cbe2e49fdfbd192354a65df3d15b952578fd62f2b459b7c482",
-      "sourceModified": "2026-07-20T02:00:12.702470+00:00",
+      "sourceHash": "afc36e57291efa8c14c09059c13fc1d96ed48832c2e42795859a3d2ccc8570dd",
+      "sourceModified": "2026-08-07T03:45:56.764132+00:00",
       "topWords": [
         "Water",
         "Less",
@@ -6994,12 +6994,12 @@
       "wordCount": 130
     },
     "saturday-mathematics-and-the-end-of-usefulness": {
-      "generatedAt": "2026-07-20T02:05:00.317571+00:00",
+      "generatedAt": "2026-08-07T03:48:02.689664+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/saturday-mathematics-and-the-end-of-usefulness.svg",
       "source": "src/lib/posts/saturday-mathematics-and-the-end-of-usefulness.md",
-      "sourceHash": "be1fb8ae702e0028a83b411f819f98073d5bd182bed9c33d37aeb0c10536d264",
-      "sourceModified": "2026-07-20T02:01:43.632402+00:00",
+      "sourceHash": "9a6b347e8e14691fa5764044cee131629d82c93ab8950c65a2f06970e4d4da05",
+      "sourceModified": "2026-08-07T03:47:28.803799+00:00",
       "topWords": [
         "Negative",
         "Perhaps",
@@ -7224,12 +7224,12 @@
       "wordCount": 130
     },
     "shadow-citizen-of-my-own-room": {
-      "generatedAt": "2026-07-20T02:05:06.573044+00:00",
+      "generatedAt": "2026-08-07T03:48:03.421107+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/shadow-citizen-of-my-own-room.svg",
       "source": "src/lib/posts/shadow-citizen-of-my-own-room.md",
-      "sourceHash": "d5e44d765190cdcbea833b3e499634901e58c986a13a3140f25c3724b0cf1766",
-      "sourceModified": "2026-07-20T02:00:12.675642+00:00",
+      "sourceHash": "fb819c65a570323da3590e0ea1ba4b3298e55a109f1026b0677d7babfb0ef851",
+      "sourceModified": "2026-08-07T03:45:56.774416+00:00",
       "topWords": [
         "Enough",
         "Men",
@@ -7293,12 +7293,12 @@
       "wordCount": 130
     },
     "shiva-and-the-poison-in-the-throat": {
-      "generatedAt": "2026-07-20T02:05:08.751471+00:00",
+      "generatedAt": "2026-08-07T03:48:04.106761+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/shiva-and-the-poison-in-the-throat.svg",
       "source": "src/lib/posts/shiva-and-the-poison-in-the-throat.md",
-      "sourceHash": "c64cb1100b2c85ca5763cf3f0817750fd94aa57a4868cc0c1d631a4767b83b96",
-      "sourceModified": "2026-07-20T02:00:12.481622+00:00",
+      "sourceHash": "81017c060c85f8744e99375b9462106193e0d7f6da57c5f4675005e6e163678b",
+      "sourceModified": "2026-08-07T03:45:56.775281+00:00",
       "topWords": [
         "Poison",
         "Throat",
@@ -7316,12 +7316,12 @@
       "wordCount": 130
     },
     "shortchanged-from-dollar-to-paise": {
-      "generatedAt": "2026-07-20T02:05:09.546949+00:00",
+      "generatedAt": "2026-08-07T03:48:04.706767+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/shortchanged-from-dollar-to-paise.svg",
       "source": "src/lib/posts/shortchanged-from-dollar-to-paise.md",
-      "sourceHash": "12cba6c2b5a2de301e77f4840a51df8eda2109ced643f0c742a7a040c70fbc1c",
-      "sourceModified": "2026-07-20T02:00:12.425719+00:00",
+      "sourceHash": "21da95f6f0d372def1cbff79ee099ddd50259b5a4bc4ea6b3fd621a71d01f091",
+      "sourceModified": "2026-08-07T03:45:56.775281+00:00",
       "topWords": [
         "Someone",
         "Man",
@@ -7431,12 +7431,12 @@
       "wordCount": 130
     },
     "skepticism-is-the-mosquito-net": {
-      "generatedAt": "2026-07-20T02:05:12.531439+00:00",
+      "generatedAt": "2026-08-07T03:48:05.425331+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/skepticism-is-the-mosquito-net.svg",
       "source": "src/lib/posts/skepticism-is-the-mosquito-net.md",
-      "sourceHash": "a2b02dc5b081f200ada7030025744f0b6f5268316e7651b08190a34032a7337e",
-      "sourceModified": "2026-07-20T02:01:43.730778+00:00",
+      "sourceHash": "8117db1e24fc429d0e44feda499482750847e7fa3729f608992caacc1bc8aa20",
+      "sourceModified": "2026-08-07T03:45:56.775281+00:00",
       "topWords": [
         "Skepticism",
         "Becomes",
@@ -7523,12 +7523,12 @@
       "wordCount": 130
     },
     "smorgasbord-of-impotence-calcutta-middle-age": {
-      "generatedAt": "2026-07-20T02:05:15.602863+00:00",
+      "generatedAt": "2026-08-07T03:48:06.229778+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/smorgasbord-of-impotence-calcutta-middle-age.svg",
       "source": "src/lib/posts/smorgasbord-of-impotence-calcutta-middle-age.md",
-      "sourceHash": "8101899c4b90ff930e7dbc630888d56884687b121205f7d9c3cab159a64f5554",
-      "sourceModified": "2026-07-20T02:01:43.749411+00:00",
+      "sourceHash": "0f41e5303e7fe1de11d14fed592caf0f026acc3a879a89bde949b59d41c24357",
+      "sourceModified": "2026-08-07T03:47:28.819468+00:00",
       "topWords": [
         "Impotence",
         "Little",
@@ -7546,12 +7546,12 @@
       "wordCount": 130
     },
     "society-with-open-drains-and-polished-shoes": {
-      "generatedAt": "2026-07-20T02:05:16.272010+00:00",
+      "generatedAt": "2026-08-07T03:48:06.926530+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/society-with-open-drains-and-polished-shoes.svg",
       "source": "src/lib/posts/society-with-open-drains-and-polished-shoes.md",
-      "sourceHash": "cf0a9a0fb57543f3ef975a0195623006cd3fc3eaf4b0fc1baafc309c29b07ad0",
-      "sourceModified": "2026-07-20T02:00:12.373183+00:00",
+      "sourceHash": "73edaaa262975058c7cfcfb67b5ab56fe83147488e9b1433f0f099284351c578",
+      "sourceModified": "2026-08-07T03:47:28.835110+00:00",
       "topWords": [
         "Little",
         "Man",
@@ -7914,12 +7914,12 @@
       "wordCount": 130
     },
     "tea-depression-and-the-probability-of-a-blog": {
-      "generatedAt": "2026-07-20T02:05:24.655420+00:00",
+      "generatedAt": "2026-08-07T03:48:07.641263+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/tea-depression-and-the-probability-of-a-blog.svg",
       "source": "src/lib/posts/tea-depression-and-the-probability-of-a-blog.md",
-      "sourceHash": "8228d6ea1e901105f967258277b7afed9289cb4588d4d88686f519b801d093aa",
-      "sourceModified": "2026-07-20T02:01:43.829119+00:00",
+      "sourceHash": "9fcb3f4aee4723e3003eb451a24e5d1793af514a6d496279e5573a3e554c478e",
+      "sourceModified": "2026-08-07T03:45:56.775281+00:00",
       "topWords": [
         "Man",
         "Tea",
@@ -8190,12 +8190,12 @@
       "wordCount": 130
     },
     "the-atrophy-of-attention": {
-      "generatedAt": "2026-07-20T02:05:29.126658+00:00",
+      "generatedAt": "2026-08-07T03:48:08.395598+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-atrophy-of-attention.svg",
       "source": "src/lib/posts/the-atrophy-of-attention.md",
-      "sourceHash": "8585fd259bbe00c5043eeb6c42bddd760201543bd95e049b47a508c8773ece59",
-      "sourceModified": "2026-07-20T02:00:12.664969+00:00",
+      "sourceHash": "41f212ac6b3b9b73653a541800ebe8eeddf9885308b4a49357818644db0ebe71",
+      "sourceModified": "2026-08-07T03:47:28.850750+00:00",
       "topWords": [
         "Think",
         "Fact",
@@ -8282,12 +8282,12 @@
       "wordCount": 130
     },
     "the-bengali-baby": {
-      "generatedAt": "2026-07-20T02:05:31.262500+00:00",
+      "generatedAt": "2026-08-07T03:48:09.178379+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-bengali-baby.svg",
       "source": "src/lib/posts/the-bengali-baby.md",
-      "sourceHash": "6abce9b00bdfd0624b30c83cffd543b0e1a063c17ebdf2d1ad04eab371c50ea1",
-      "sourceModified": "2026-07-20T02:01:43.884697+00:00",
+      "sourceHash": "d312ecbd6cb74110eebbfbf3833854701a96604b300b43841882b61c62245593",
+      "sourceModified": "2026-08-07T03:45:56.775281+00:00",
       "topWords": [
         "Say",
         "Sun",
@@ -8489,12 +8489,12 @@
       "wordCount": 130
     },
     "the-century-has-a-hole-in-it": {
-      "generatedAt": "2026-07-20T02:05:35.819563+00:00",
+      "generatedAt": "2026-08-07T03:48:09.995538+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-century-has-a-hole-in-it.svg",
       "source": "src/lib/posts/the-century-has-a-hole-in-it.md",
-      "sourceHash": "429f177a0d1f801290d9773419c8cabbd811c07640c87d213fb36eb9cb628a0d",
-      "sourceModified": "2026-07-20T02:00:12.397897+00:00",
+      "sourceHash": "b0532faa98e999d0f3482e77fdc734810428de518ba83c8c824ca0341ae36018",
+      "sourceModified": "2026-08-07T03:45:56.775281+00:00",
       "topWords": [
         "Century",
         "Year",
@@ -8512,12 +8512,12 @@
       "wordCount": 130
     },
     "the-cephalalgia-chronicles": {
-      "generatedAt": "2026-07-20T02:05:36.621821+00:00",
+      "generatedAt": "2026-08-07T03:48:10.685287+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-cephalalgia-chronicles.svg",
       "source": "src/lib/posts/the-cephalalgia-chronicles.md",
-      "sourceHash": "904fb33024acf967437ed72efd03e0dff097c5ca4467c040a4485cef57820b24",
-      "sourceModified": "2026-07-20T02:00:12.356068+00:00",
+      "sourceHash": "9ffd0a31a88bf8374f7d00aa047b24776acf9f13a18292d5b86031e556a49daf",
+      "sourceModified": "2026-08-07T03:29:35.611548+00:00",
       "topWords": [
         "Dust",
         "Headache",
@@ -8719,12 +8719,12 @@
       "wordCount": 130
     },
     "the-compressor-and-the-small-black-hole": {
-      "generatedAt": "2026-07-20T02:05:42.761493+00:00",
+      "generatedAt": "2026-08-07T03:48:11.495715+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-compressor-and-the-small-black-hole.svg",
       "source": "src/lib/posts/the-compressor-and-the-small-black-hole.md",
-      "sourceHash": "222a7d115b5d80a87bfa484feadb50770e5c20c752c7174f24daa0785bff4bdf",
-      "sourceModified": "2026-07-20T02:01:43.976062+00:00",
+      "sourceHash": "2a174dee6e72c8b7963b510a3a40b33f108a548918ef2d1332e66a91e3f2b838",
+      "sourceModified": "2026-08-07T03:29:35.611548+00:00",
       "topWords": [
         "Black",
         "Room",
@@ -8742,12 +8742,12 @@
       "wordCount": 130
     },
     "the-contender-who-would-not-compete": {
-      "generatedAt": "2026-07-20T02:05:43.452420+00:00",
+      "generatedAt": "2026-08-07T03:48:12.224392+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-contender-who-would-not-compete.svg",
       "source": "src/lib/posts/the-contender-who-would-not-compete.md",
-      "sourceHash": "dfe5515a79a2cd09951170d089119dca394097895595a12a3a605933170bb61e",
-      "sourceModified": "2026-07-20T02:01:43.982918+00:00",
+      "sourceHash": "dcee7e61ea1c32e898c155c08189f26ba6fbfde0e008fabf15ac1f962ae75a67",
+      "sourceModified": "2026-08-07T03:47:28.888454+00:00",
       "topWords": [
         "Problem",
         "India",
@@ -8857,12 +8857,12 @@
       "wordCount": 130
     },
     "the-cup-that-refused-to-become-content": {
-      "generatedAt": "2026-07-20T02:05:45.799612+00:00",
+      "generatedAt": "2026-08-07T03:48:12.904852+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-cup-that-refused-to-become-content.svg",
       "source": "src/lib/posts/the-cup-that-refused-to-become-content.md",
-      "sourceHash": "c498f7553f4fe801e09cd898c041ec21bbf17efd21fc52cf51ce0d757dc84a0f",
-      "sourceModified": "2026-07-20T02:00:12.709157+00:00",
+      "sourceHash": "156d6130c2727fe88b7ba4a5603e6d51ef1931ae82ea87f3ac755bdb89243e47",
+      "sourceModified": "2026-08-07T03:29:35.621766+00:00",
       "topWords": [
         "Man",
         "Tea",
@@ -8880,12 +8880,12 @@
       "wordCount": 130
     },
     "the-cup-that-starts-the-sun": {
-      "generatedAt": "2026-07-20T02:05:46.483596+00:00",
+      "generatedAt": "2026-08-07T03:48:13.603712+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-cup-that-starts-the-sun.svg",
       "source": "src/lib/posts/the-cup-that-starts-the-sun.md",
-      "sourceHash": "d7edc9cf3225bd86a099086d27d578069f4f9d9b41aa81dc3948247d92c7552b",
-      "sourceModified": "2026-07-20T02:00:12.666973+00:00",
+      "sourceHash": "21d0caeac66d96f153dbc0061c447ca9e676569d9d4dc98b1bcbf21f1dc883b6",
+      "sourceModified": "2026-08-07T03:47:28.897256+00:00",
       "topWords": [
         "Tea",
         "Small",
@@ -8972,12 +8972,12 @@
       "wordCount": 130
     },
     "the-digital-charnel-house": {
-      "generatedAt": "2026-07-20T02:05:48.039176+00:00",
+      "generatedAt": "2026-08-07T03:48:14.258874+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-digital-charnel-house.svg",
       "source": "src/lib/posts/the-digital-charnel-house.md",
-      "sourceHash": "b7f377637589f3089212803d6449f14bb9f83673e941747a17bc927e0b407a61",
-      "sourceModified": "2026-07-20T02:01:44.009297+00:00",
+      "sourceHash": "3567165f0b8cee1e6f2fbf8b4a2dd74d4770df400c5fd073b5b5b0d4176eb793",
+      "sourceModified": "2026-08-07T03:29:35.621766+00:00",
       "topWords": [
         "Slop",
         "AI",
@@ -9064,12 +9064,12 @@
       "wordCount": 130
     },
     "the-elon-trillionaire-gap": {
-      "generatedAt": "2026-07-20T02:05:51.044754+00:00",
+      "generatedAt": "2026-08-07T03:48:14.894644+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-elon-trillionaire-gap.svg",
       "source": "src/lib/posts/the-elon-trillionaire-gap.md",
-      "sourceHash": "000f1df8d8e7a415a104059f2096887f553bce39eb4577d557fabeee79e904d1",
-      "sourceModified": "2026-07-20T02:01:44.035170+00:00",
+      "sourceHash": "8f41d3b45775820602f1d01a38a8a00a9ce43feecf3c0d9ab5351b4e6f049a32",
+      "sourceModified": "2026-08-07T03:47:28.911627+00:00",
       "topWords": [
         "Man",
         "Rice",
@@ -9133,12 +9133,12 @@
       "wordCount": 130
     },
     "the-error-bar-around-a-man": {
-      "generatedAt": "2026-07-20T02:05:53.321562+00:00",
+      "generatedAt": "2026-08-07T03:48:15.522346+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-error-bar-around-a-man.svg",
       "source": "src/lib/posts/the-error-bar-around-a-man.md",
-      "sourceHash": "e3db1f6b580eaa1098ee1364adff6023188a0ef2dd44317bfc7880aef39de243",
-      "sourceModified": "2026-07-20T02:00:12.245232+00:00",
+      "sourceHash": "4ff438c6bb7cb80a7f2a651b8e63dda2848ae2343de0e8e18a2527c5a4bb0d13",
+      "sourceModified": "2026-08-07T03:29:35.621766+00:00",
       "topWords": [
         "Man",
         "Error",
@@ -9294,12 +9294,12 @@
       "wordCount": 130
     },
     "the-former-bright-boy-problem": {
-      "generatedAt": "2026-07-20T02:05:56.861220+00:00",
+      "generatedAt": "2026-08-07T03:48:16.211275+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-former-bright-boy-problem.svg",
       "source": "src/lib/posts/the-former-bright-boy-problem.md",
-      "sourceHash": "53067c0aee2ce092d54bf21b4b550ba3caf1d1e295a1ee992830a2e172e7939c",
-      "sourceModified": "2026-07-20T02:00:12.384218+00:00",
+      "sourceHash": "e682a21277045da73fd11ccb98cae4a6f8884e49f75451a126cb3326b3b2225a",
+      "sourceModified": "2026-08-07T03:29:35.621766+00:00",
       "topWords": [
         "Boy",
         "Family",
@@ -9455,12 +9455,12 @@
       "wordCount": 130
     },
     "the-glandular-weather-of-july-fifteenth": {
-      "generatedAt": "2026-07-20T02:06:00.671348+00:00",
+      "generatedAt": "2026-08-07T03:48:16.930992+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-glandular-weather-of-july-fifteenth.svg",
       "source": "src/lib/posts/the-glandular-weather-of-july-fifteenth.md",
-      "sourceHash": "af3efa3eabac546f3f2b9a193eed4bda87eb6885fb3672e5b1ca27ee7d723f39",
-      "sourceModified": "2026-07-20T02:00:12.679709+00:00",
+      "sourceHash": "9af4430e46546e9431b600727e779a02fa440094f7f76d9a7c2cdee2b36d61ee",
+      "sourceModified": "2026-08-07T03:29:35.624553+00:00",
       "topWords": [
         "Irritated",
         "Kind",
@@ -9524,12 +9524,12 @@
       "wordCount": 130
     },
     "the-great-calcutta-bathing-shaving-dressing-for-civilization-problem": {
-      "generatedAt": "2026-07-20T02:06:02.865138+00:00",
+      "generatedAt": "2026-08-07T03:48:17.567085+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.svg",
       "source": "src/lib/posts/the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.md",
-      "sourceHash": "402571ef8ed24d93110649304162c3ef2e1129e9dd1ba40d1b625bc914c1cd50",
-      "sourceModified": "2026-07-20T02:01:44.091775+00:00",
+      "sourceHash": "e9b9512efde81d5d1b19f7b67b98f377ba339f648aa86c303db41cdc6f133d3f",
+      "sourceModified": "2026-08-07T03:29:35.624553+00:00",
       "topWords": [
         "Man",
         "Soap",
@@ -9846,12 +9846,12 @@
       "wordCount": 130
     },
     "the-laugh-track-has-left-the-room": {
-      "generatedAt": "2026-07-20T02:06:10.594930+00:00",
+      "generatedAt": "2026-08-07T03:48:18.262125+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-laugh-track-has-left-the-room.svg",
       "source": "src/lib/posts/the-laugh-track-has-left-the-room.md",
-      "sourceHash": "f54954fe597afef4f1a2386500a1600d260b573b048d2ef1c54f10067ff0cc7b",
-      "sourceModified": "2026-07-20T02:00:12.227297+00:00",
+      "sourceHash": "74ff895e7093c25fdfa56090995c7542d38907d2b787047320187b6240df704f",
+      "sourceModified": "2026-08-07T03:47:28.942786+00:00",
       "topWords": [
         "Comedy",
         "Laugh",
@@ -9892,12 +9892,12 @@
       "wordCount": 130
     },
     "the-low-market-value-of-reality": {
-      "generatedAt": "2026-07-20T02:06:11.382606+00:00",
+      "generatedAt": "2026-08-07T03:48:18.974471+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-low-market-value-of-reality.svg",
       "source": "src/lib/posts/the-low-market-value-of-reality.md",
-      "sourceHash": "808ac0f5f5dca1abfc4a72749b89b202cd3fcd810bd7b8f8ca04d497e5239b8b",
-      "sourceModified": "2026-07-20T02:00:12.500726+00:00",
+      "sourceHash": "30f0fad009183d2884d11fff0cb093d04333189f14b14f1a4e54ba031280682d",
+      "sourceModified": "2026-08-07T03:29:35.624553+00:00",
       "topWords": [
         "Little",
         "Man",
@@ -9961,12 +9961,12 @@
       "wordCount": 130
     },
     "the-man-who-became-his-own-waiting-room": {
-      "generatedAt": "2026-07-20T02:06:13.539408+00:00",
+      "generatedAt": "2026-08-07T03:48:19.666311+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-man-who-became-his-own-waiting-room.svg",
       "source": "src/lib/posts/the-man-who-became-his-own-waiting-room.md",
-      "sourceHash": "1b97984963af4154b6d06e42ac51f84121de629648244c37273a8eb53d1a6b99",
-      "sourceModified": "2026-07-20T02:00:12.497261+00:00",
+      "sourceHash": "ecca7add2bca8b8b81872158e947b4b68051d1e3733babe383b23bcb24ebd1f6",
+      "sourceModified": "2026-08-07T03:47:28.954351+00:00",
       "topWords": [
         "Waiting",
         "Room",
@@ -10030,12 +10030,12 @@
       "wordCount": 130
     },
     "the-many-body-problem-of-indian-life": {
-      "generatedAt": "2026-07-20T02:06:15.772146+00:00",
+      "generatedAt": "2026-08-07T03:48:20.339536+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-many-body-problem-of-indian-life.svg",
       "source": "src/lib/posts/the-many-body-problem-of-indian-life.md",
-      "sourceHash": "b96cfd1c4d2506c69bc9cddb715436b441079b902666c427eeb10caf33634ec9",
-      "sourceModified": "2026-07-20T02:00:12.378743+00:00",
+      "sourceHash": "1995aff6b582d2baf0711a8e5ceee951f6ef51a5f118a9830ff70c36b08fb111",
+      "sourceModified": "2026-08-07T03:47:28.960757+00:00",
       "topWords": [
         "Becomes",
         "Pulls",
@@ -10099,12 +10099,12 @@
       "wordCount": 130
     },
     "the-moat-has-mosquitoes": {
-      "generatedAt": "2026-07-20T02:06:17.183280+00:00",
+      "generatedAt": "2026-08-07T03:48:21.056604+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-moat-has-mosquitoes.svg",
       "source": "src/lib/posts/the-moat-has-mosquitoes.md",
-      "sourceHash": "91070b25af75d03b6459b78279ab76ae66858f0dc0cc1f6aecf630cab114690f",
-      "sourceModified": "2026-07-20T02:00:12.646687+00:00",
+      "sourceHash": "60e719035dab899444727a59d9fffc4e2b69fcd97ebe65591011253dab0368ce",
+      "sourceModified": "2026-08-07T03:29:35.626556+00:00",
       "topWords": [
         "Man",
         "Somewhere",
@@ -10214,12 +10214,12 @@
       "wordCount": 130
     },
     "the-nationalization-of-shame": {
-      "generatedAt": "2026-07-20T02:06:20.120271+00:00",
+      "generatedAt": "2026-08-07T03:48:21.748563+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-nationalization-of-shame.svg",
       "source": "src/lib/posts/the-nationalization-of-shame.md",
-      "sourceHash": "5c874f46df1c289efdf6b0e89ac2bf38620746cd30c68b6f40b573be8c3138e8",
-      "sourceModified": "2026-07-20T02:00:12.378743+00:00",
+      "sourceHash": "681eeb2dbcfc6779edbed52cafe7e195695c20e76aac1563a51945f6772103d7",
+      "sourceModified": "2026-08-07T03:29:35.627559+00:00",
       "topWords": [
         "Poor",
         "Man",
@@ -10237,12 +10237,12 @@
       "wordCount": 130
     },
     "the-nethermost-layer-of-dinner": {
-      "generatedAt": "2026-07-20T02:06:20.849762+00:00",
+      "generatedAt": "2026-08-07T03:48:22.473149+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-nethermost-layer-of-dinner.svg",
       "source": "src/lib/posts/the-nethermost-layer-of-dinner.md",
-      "sourceHash": "0ccd221008ba5917946481ed0bee2b1a6941e52cb8378bbb49051e5bf27e1428",
-      "sourceModified": "2026-07-20T02:01:44.207827+00:00",
+      "sourceHash": "e661b36d1f716d2f6f08097a4ae80ef8feb0cab4bcb00013a2e9a231d7ef9ec0",
+      "sourceModified": "2026-08-07T03:29:35.627559+00:00",
       "topWords": [
         "Energy",
         "Man",
@@ -11939,12 +11939,12 @@
       "wordCount": 130
     },
     "the_marrow_of_existence": {
-      "generatedAt": "2026-07-20T02:07:05.586634+00:00",
+      "generatedAt": "2026-08-07T03:48:23.254942+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the_marrow_of_existence.svg",
       "source": "src/lib/posts/the_marrow_of_existence.md",
-      "sourceHash": "b9b53473b9bd49e86876ad52e987eb8732f6e8d71fb06ebe03e6979679a5a97a",
-      "sourceModified": "2026-07-20T02:01:44.498159+00:00",
+      "sourceHash": "11a48667c1327f11902a7d9123d4159bbc09af906ca1c417714d18e3fd7682b7",
+      "sourceModified": "2026-08-07T03:47:29.012950+00:00",
       "topWords": [
         "Adulterated",
         "Merely",

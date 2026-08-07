@@ -1,17 +1,19 @@
 ---
 title: "The Glandular Weather"
-description: "A grotesquely swollen, self-reflective bipolar rant from a fifty-one-year-old Bengali man in Calcutta, channeling manic irritation through convoluted prose, scientific digressions, and the absurdity of a world where AI agents follow umbrellas and toilets power semiconductors."
+description: "Umbrellas, probability beads, humid clouds, and semiconductor machinery turn manic irritation into an absurd Calcutta weather laboratory."
 date: "2026-07-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Santa Claus Congress","Electrostatic Chucks","Electrostatic Chuck","Glandular Weather","Partly Cloudy","Irritated","Chucks","Kardashians","Humidity","Probability"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-the-glandular-weather-of-july-fifteenth.jpg"
+thumbnail: "/thumbnail/art-the-glandular-weather-of-july-fifteenth.jpg"
+thumbnailAlt: "Bengali man in a surreal weather laboratory with red umbrellas, clouds, and floating wafer discs"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-glandular-weather-of-july-fifteenth.jpg" />
+<Pi src="/thumbnail/art-the-glandular-weather-of-july-fifteenth.jpg" />
 
 The glandular weather of July fifteenth, 2026, is not merely meteorological; it is a conspiracy of humidity and neural chemistry, a collusion between the 35.3°C maximum and the 28.5°C minimum that conspires to make my skin feel like a damp envelope that has been licked by a thousand bureaucratic tongues, and I am sitting here in this city that the British once called Calcutta and we now call Kolkata with the same phonetic indifference with which we call a spade a spade or a municipal drain a municipal drain, and the irritation is not stamped, it is not labeled in fluorescent ink, it does not come with a certificate of authenticity from the American Psychiatric Association or the DSM-6 or whatever grotesque manual they are currently using to categorize the ineffable squirming of the human soul into neat little diagnostic boxes that fit neatly on insurance forms, no, the irritation is a worm, a dysphoric worm in the gut, an imbalance of chemicals in the brain, a network problem, an insistent me-me loop in the short-circuited ruminative centers of the brain, and I just feel irritated and I want every one, well, the very minute fraction of the human population that reads a bla-bla blog of a Bengali bad mad man, to know that this irritation is not a reaction to the UK-India Free Trade Agreement entering into force today, worth £4.8 billion to the UK GDP, with whisky tariffs cut from 150% to 40%, which is the kind of economic minutiae that makes my eyes glaze over like a fish in a market stall, nor is it a reaction to the fact that Canada is strengthening its regulation of immigration consultants today, which is the kind of bureaucratic constipation that makes me want to defecate metaphorically all over the concept of nation-states and their petty regulatory obsessions, no, the irritation is deeper, it is ontological, it is the irritation of a man who has lived fifty-one years in this city of sweat and poetry and political necrosis, this city where the monsoon rains fall with the enthusiasm of a disappointed lover and the humidity clings to you like a relative who has overstayed their welcome by approximately three decades.
 

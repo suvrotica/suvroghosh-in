@@ -2,16 +2,18 @@
 title: "Saturday Mathematics and the End of Usefulness"
 description: "A bilious, spiraling meditation on middle age, obsolete competence, and the absurdity of seeking algebraic comfort while the AI apocalypse IPOs around you."
 date: "2026-07-18"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Purple Book","Floating Robot","RAM Crisis","Ceiling Fan","Blood Pressure","RAM","Saturday","Negative","Robot","Detectors"]
+tags: ["Purple Book","Floating Robot","RAM Crisis","Ceiling Fan","Blood Pressure","Saturday","RAM","Negative","Robot","Detectors"]
 published: true
 color: "#7B68EE"
-thumbnail: "/thumbnail/safe-saturday-mathematics-and-the-end-of-usefulness.jpg"
+thumbnail: "/thumbnail/art-saturday-mathematics-and-the-end-of-usefulness.jpg"
+thumbnailAlt: "Bengali man balances wooden shapes while automated machines sort tokens behind glass"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-saturday-mathematics-and-the-end-of-usefulness.jpg" />
+<Pi src="/thumbnail/art-saturday-mathematics-and-the-end-of-usefulness.jpg" />
 
 The purple book rests upon my thighs like a contusion that has somehow mastered the art of typography, its cover the precise shade of a bruise transitioning from violet to necrotic yellow, and I am staring at its promises—that mathematics can be gentle, that numbers have a human face, that equations can be approached without the trembling terror of a schoolboy who has just been asked to recite the multiplication table while the class snickers and the ceiling fan whirs overhead with the indifferent periodicity of a cosine wave that has given up on ever completing its cycle—on this Saturday afternoon when the Calcutta heat has transformed my apartment into a convection oven specifically calibrated for the slow roasting of ambitions that were already well-done to begin with, and I am trying to understand, with the desperate concentration of a man attempting to thread a needle while riding a roller coaster, why a negative quantity multiplied by another negative quantity should magically transubstantiate into something positive, as if this algebraic optimism might somehow metastasize into my bank account, my career prospects, or the slowly collapsing soufflé of whatever professional credibility I mistakenly believed I once possessed.
 

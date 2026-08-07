@@ -2,16 +2,18 @@
 title: "Ram Bharose Is No Bharosa"
 description: "A raw Calcutta essay on unemployment, ageism, institutional collapse, hunger, honesty, and the slow disappearance of an educated middle-aged man in India."
 date: "2026-06-12"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Ram Bharose","Bright Boy","Dada","Ram","Bharose","Demolition","Rice","Unfairness","Don’t","Institutions"]
+tags: ["Ram Bharose","Bright Boy","Dada","Bharose","Ram","Demolition","Rice","Unfairness","Don’t","Institutions"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-ram-bharose-is-no-bharosa.jpg"
+thumbnail: "/thumbnail/art-ram-bharose-is-no-bharosa.jpg"
+thumbnailAlt: "Educated man holds blank papers beside rice and books in a dismantled public office"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ram-bharose-is-no-bharosa.jpg" />
+<Pi src="/thumbnail/art-ram-bharose-is-no-bharosa.jpg" />
 
 
 The rice cooker first makes that little wet coughing sound.

@@ -3578,23 +3578,24 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/invisible-radius.md": {
-			"bodyHash": "37be19e69a8ce3586f32485ef2a8ab542dcc648eb18b7494c8d6fd1a07e25d81",
+			"bodyHash": "b5d21dcac464fdcc71c575d9df3641d687d50964d463798eb6dc6baa84a31572",
+			"hashVersion": 2,
+			"revisionHash": "19c76bef5c470f0d521a30698cce55019ff26228a21479259ee35bfd29e322f6",
 			"generatedTags": [
 				"Radius",
 				"Sometimes",
-				"Crosses",
 				"Maybe",
+				"Crosses",
 				"Shame",
 				"Affection",
-				"Somebody",
 				"Limited",
+				"Somebody",
 				"Clouds",
 				"Limits"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "84c7542ffb11cb641efd316103c6bdc3659650de46d58c52bea18d35519d651b",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/jealous-of-the-stupid.md": {
 			"bodyHash": "5d5173295019837812337ad3ddb333fdb67818a71616f13effd7bc710d88451c",
@@ -3752,7 +3753,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/kolkata-bat-waiting-for-a-bus.md": {
-			"bodyHash": "94e0697a84d2cddddd4926c7d1fd15e97c3f16f610390f89390bf11677e9880d",
+			"bodyHash": "529a534a760cccbaea5d32039fa88b5d1a3a83a7de9131f1fe2e9153cf0a146e",
+			"hashVersion": 2,
+			"revisionHash": "d82c3e05dd62343e0a2ff46604bf3e7775baed14d5dfb962d37df8c45133dc35",
 			"generatedTags": [
 				"Serves",
 				"Biri",
@@ -3767,8 +3770,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "f74809fdb97af6e4e3834868d425882a93494da9336a97b8c2dd5d626a791108",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/label-road.md": {
 			"bodyHash": "15f574999dfbece9f40647c61ae80eacb3518e4a4690e6ea2836b8a95b823754",
@@ -3939,7 +3941,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/local-disgrace-still-making-noise.md": {
-			"bodyHash": "1cbcf74cfe4bb4779cbc4bad4c488f738fb1552cc8bfbef8187933759c2310c3",
+			"bodyHash": "c9ffc461b0e96f4ffd8d43b8a515091b73e4aa804a2371f50687da9b9ef8c4af",
+			"hashVersion": 2,
+			"revisionHash": "2e4853017c14c46c32d04cea8e519974b5a620db8c9238c09512ebfa66e206cd",
 			"generatedTags": [
 				"Rice Cooker",
 				"Clap",
@@ -3954,11 +3958,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "fd491c95aa39ab774247daad69029bb3fa1c1d2f4537345fb6b04a8be26f9dc8",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/loneliness-is-not-a-generation.md": {
-			"bodyHash": "e4903bf9e50439a9aa89ca85357561ee97b5e62e2d24336447642c20aeab0cb3",
+			"bodyHash": "3af4d4fe48e2a1cfce170d3909e5a5dfa05848d21ec78c81d24216acb0feb992",
+			"hashVersion": 2,
+			"revisionHash": "b90275d12f95e61115773683d72708420df24a9deee0148f80c290a82f050e39",
 			"generatedTags": [
 				"Gen",
 				"Lonely",
@@ -3973,17 +3978,18 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "4c728a8f2d95dfe1c4c0aa162e5ce0ac4deb90e11519c3699bb79875bc13c0e9",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/lout.md": {
-			"bodyHash": "f621c1621fcb5e0798d6d7e05ba6416d2bf3d8df2e0068b4b9f5a74f9143e7ad",
+			"bodyHash": "97bc2470bf68b02fc0b27b34165c15e94475ef9a5e68291cda5c8dcdc042fb17",
+			"hashVersion": 2,
+			"revisionHash": "4e89a54181c9918094b2b3515c7a1f24c71a35b2aa09b7eb89f7e9f435555914",
 			"generatedTags": [
 				"Richard Dawkins",
 				"Dawkins",
-				"Richard",
-				"Superstition",
 				"Offended",
+				"Superstition",
+				"Richard",
 				"Repeat",
 				"Lucky",
 				"Dawn",
@@ -3992,8 +3998,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1131845c51e50ee63de2c16cbeaa1216b4f42ba1873e25c714eb0364959365e9",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/mallick-ghat-nessie.md": {
 			"bodyHash": "a5de74c6919f29b91082066786e7ac733fe91769b20136bd1f4241d5e2b607db",
@@ -4074,7 +4079,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/milk-cha-and-the-small-engine-of-attention.md": {
-			"bodyHash": "4d1d83f5d5cce56a37fc502ff1b343f55fa1cf107800d1310356b0c492b06207",
+			"bodyHash": "062201a53333ddabe73f30b7dd4561a19ec787653790968ebfda13539b81533a",
+			"hashVersion": 2,
+			"revisionHash": "39532326b49670090f8c571a3f13e7cbf5d48e7d89b443c5f65aecf92dd8624a",
 			"generatedTags": [
 				"Liquor Tea",
 				"Darjeeling Liquor",
@@ -4082,15 +4089,14 @@
 				"Twenty Minutes",
 				"Cha",
 				"Milk",
-				"Darjeeling",
 				"Cup",
+				"Darjeeling",
 				"CTC",
 				"Sugar"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "b71adc52f08f9c545042d12660658836a3db4e8a1278897d0648eaaac1c60602",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/milk-teeth-of-the-city.md": {
 			"bodyHash": "71456c6cd0fea9fda4750d1e46a933c68c17032c228ae756377ff21737296dcb",
@@ -4211,12 +4217,14 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/mood-bellwethers-before-a-low.md": {
-			"bodyHash": "ae9a4b5eadf545639b11eb7ae796ca4ea12eb71e21492a0567501eedd8a5c698",
+			"bodyHash": "86465c2647886ebe7a55b585ecc39b989afc908a0802aaedd4dcfc42d3ff51fb",
+			"hashVersion": 2,
+			"revisionHash": "2a17622a54f899677f9db6069b6205510c1fc637b89c91b01b8a495d77999d3a",
 			"generatedTags": [
 				"Weather",
 				"Mood",
-				"Witness",
 				"Refuse",
+				"Witness",
 				"Thoughts",
 				"Living",
 				"Avoid",
@@ -4226,8 +4234,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "3fd4464d1776544e1a6dd4744fa12386aabfc17ebca096f5ad6a3f0fbfbd3f39",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/moon-without-skin.md": {
 			"bodyHash": "affda8f4e5b0db91443f7f8075eceb2b1a3c5a45805a24743a0e211d69d8d4ad",
@@ -4388,14 +4395,16 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/nightmare-wrapped-in-skin.md": {
-			"bodyHash": "eed9247a445f5d730b90b78f219041cb91e4a10feefe9e79a0b3fda59889eee1",
+			"bodyHash": "883717d177981ab0b1907cd8fc742867001d48cc79f4345b927e39ae4949e610",
+			"hashVersion": 2,
+			"revisionHash": "aff1cd22569cec009e07832e3defebf19d10803364f6f2fcffe97a12b4ac1e40",
 			"generatedTags": [
 				"Tintin",
 				"Maybe",
-				"Grow",
 				"Ridiculous",
-				"Trouble",
+				"Grow",
 				"Child",
+				"Trouble",
 				"Childhood",
 				"Book",
 				"Arrive",
@@ -4403,11 +4412,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "9ad7e0585ffb9dd93dfb2aa6609807c06335d97b01fc7cd42557906810c51d2f",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/no-ambition-left-cold-tea.md": {
-			"bodyHash": "aff6e5007679df148969e5b375600dbc76cfe9b86e340764eeeb120a5620328d",
+			"bodyHash": "0a781d52d070726fc0b8c9fb4879aa9c980ed2a1828b813256410dcbb414f642",
+			"hashVersion": 2,
+			"revisionHash": "72669a9a8619b2c5d4ae164bf01d64be0cb9767a6cfe1627e238d3d244dfe24c",
 			"generatedTags": [
 				"Biscuit",
 				"Ambition",
@@ -4422,8 +4432,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "60fe7d55aa9d1a97f8635c82d3e2f3d6af4ec0519acce9899cbf3cdc059123ef",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/north-facing-room.md": {
 			"bodyHash": "937f896d5a721d24a36180b9f5eb4b7dd900eefb43a512f5c7f94e48e069df2c",
@@ -4445,7 +4454,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/nostril-hairs-and-the-tainted-calcutta-summer.md": {
-			"bodyHash": "00a0a765129f213c2b80f969620d51b4ae9d45e09266d89b0681655997f18526",
+			"bodyHash": "35456959c812d012f48cd0d8fbfb0e2cd617890621f95f803fb8150ff0bd8ab0",
+			"hashVersion": 2,
+			"revisionHash": "ad0d5c272f34c4f26095dac0b6cc10df9171b84615359f75195e7e77d8a08e3a",
 			"generatedTags": [
 				"Air Conditioner",
 				"Nostril Hair",
@@ -4460,8 +4471,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "dea3b00b68ad892e4af1b303d5bbd3c53ba86a6afa8e8a7e99aacd74c371f337",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/obama-hitech-ehr-incentives-and-the-electronic-chart.md": {
 			"bodyHash": "fa67c2c67e86b347326947e6af5d5068ed160ba385c1dc6d3ab2277d1b0b5098",
@@ -4483,13 +4493,15 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/one-life-no-rehearsal-calcutta.md": {
-			"bodyHash": "c9261187d26d1ef61dfb92955c327dae94435f76b939fbb88c8d67579ebcc133",
+			"bodyHash": "26a3b4bef5f3a1c6a42ce44257662c69aa466aac08559da33f988ad354fe752e",
+			"hashVersion": 2,
+			"revisionHash": "16df6dd910622499cda035699513e53e6c94ff97d85ee65f95e8cf66e350db82",
 			"generatedTags": [
 				"Matters",
 				"Enough",
 				"Youth",
-				"Curiosity",
 				"Sentence",
+				"Curiosity",
 				"Teaches",
 				"Whole",
 				"Depression",
@@ -4498,8 +4510,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1d5fcf963cdf729f66f13f3fdba5ade4b1146f7a2d57ba1519d02306f09ea020",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/openclaw-balanced-intro.md": {
 			"bodyHash": "e7f8a743e221ab99e41bfddab900aaf81ab6320381fd9ddfb155688472daefd5",
@@ -4522,7 +4533,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/oxygen-in-a-box.md": {
-			"bodyHash": "71ac16a1ee50a53312e8c519d438f88329740f51560e8f0627c51ce57d8ac47d",
+			"bodyHash": "ddf4b44750c949ac70b878c2cdd9f11ae4a85ff95c05d80dddbc6de574472c1f",
+			"hashVersion": 2,
+			"revisionHash": "6372c1569809ba5b0830c364b5df20af5666a5ace3a6ec8fbd6a7f1f7b17f58d",
 			"generatedTags": [
 				"Thoughts",
 				"America",
@@ -4531,36 +4544,38 @@
 				"Funny",
 				"Aging",
 				"Skull",
-				"Synthetic",
 				"Bengali",
-				"Rented"
+				"Rented",
+				"Oxygen"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "26b01454c1337a858e12c567c70dbc7b61baafb4e30f9173ca5fcd86ebd93501",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/painful-tooth-fairy-calcutta.md": {
-			"bodyHash": "feab0f900edb461575d83966e6bba703794911f9215d50ce03dfe3d462f967e5",
+			"bodyHash": "d2d5fdbe365d0b4129762b52ac711c9595dddc97e73c02366ab0594996a449d1",
+			"hashVersion": 2,
+			"revisionHash": "7cf5f49900348256ae4c6bdcc2b8089b726d969eeef5d888d721a706279f2afa",
 			"generatedTags": [
 				"Painful Tooth Fairy",
 				"Deferred Maintenance",
 				"Artificial Intelligence",
 				"Tooth",
 				"Fairy",
-				"Decay",
 				"Pain",
+				"Decay",
 				"Jaw",
 				"Nerve",
 				"Dentist"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "150ad1694927368e8367100e38e26a76c2c1afc0410362ea6b1e70fb45bb811a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/pest-department-in-my-skull.md": {
-			"bodyHash": "d9da9a9582d73cb7c7fdc25ae53ac62d255d89ad085d5daef65f57a5a8bfd357",
+			"bodyHash": "0a91226486c3f506aea803765b748b594faa4ab3545ca6c7116d5c6669c4f0bf",
+			"hashVersion": 2,
+			"revisionHash": "806355a1564d358cfe64114cfa64996a0da705c0a9663e89c2cc459ecf53da4e",
 			"generatedTags": [
 				"Pest",
 				"Cockroach",
@@ -4568,15 +4583,14 @@
 				"Slipper",
 				"Biology",
 				"Behavior",
-				"Rat",
 				"Fungus",
+				"Rat",
 				"Philosopher",
 				"Stamp"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "e286663c0d3d3d9f1d966608059a958957f1efcb3ab3e2eb1a024d97449ad5c1",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/phage-at-beliaghata.md": {
 			"bodyHash": "034a66bd5ca53c9881aefc47b0be5a1a7cb5b8beae1a3c8f2a90573566aef25a",
@@ -4618,7 +4632,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/phase-transition-at-fifty-one.md": {
-			"bodyHash": "7a7622cef093420d52c0baedac0f718642095ed4492395def13d0cf8a7cbe8ae",
+			"bodyHash": "b70e8a85313dce86238d72d17d8164ba25cd06235530998eb8b8c42d7a294bda",
+			"hashVersion": 2,
+			"revisionHash": "1902bf317da381a4d78d9168ee67240f748f7c05fd7cc5e00d16badb2b41ba57",
 			"generatedTags": [
 				"Man Reinvents",
 				"Latent Heat",
@@ -4627,14 +4643,13 @@
 				"Heat",
 				"Fifty-One",
 				"Hope",
-				"Physics",
 				"Latent",
+				"Physics",
 				"Young"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "c26203f6f52c4161853f07c0dcbfb8017124ff55e5cca1f1b6bec09c1ee9f5bb",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/physics-and-deep-neural-networks-calcutta-scale-story.md": {
 			"bodyHash": "512f6d37e5764867fc14c249fc1ff711a5c4903bfb1a6d6a3abf7caa8f88cf2f",
@@ -4696,7 +4711,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/pod-mara-gechhe-calcutta-essay.md": {
-			"bodyHash": "cc81449a9ed1c0a1c10ef22353a7179a92a0ab7b7b7df3d7552ad65c6fc8d199",
+			"bodyHash": "5a14581cf6393c2479d8e9e8590e7b870d724a81c0e1ac7d6fc64c866455f759",
+			"hashVersion": 2,
+			"revisionHash": "6dd164025b7157f0bf295879d99f78ef57d43b9cdba79fcaadd716485ff473b3",
 			"generatedTags": [
 				"Pod Mara Gechhe",
 				"Rice Cooker",
@@ -4711,8 +4728,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8731c977ab8aa50cd89f1395793331c3fe6f39d9d25029845b7cee625d35cb77",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/pohela-baisakh-mughal-calendar-memory.md": {
 			"bodyHash": "94625f8e994f38f7d814aed553f632b3ec4a89128e36dc2bb0bec37165077405",
@@ -4734,7 +4750,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/poison-wears-a-clean-shirt.md": {
-			"bodyHash": "ed80a8d6984183d3d9495cefc19c66489d822f9a551639c82fbf52501c2f8edb",
+			"bodyHash": "9b5e00175bf9d29a85fc26c02230b8f295c7fd080e88452d129bf2d9fa8c211c",
+			"hashVersion": 2,
+			"revisionHash": "1dfd49945c7bd92221f6ed53d341370797d5622e9ce8ede57c30572d0e51fa3e",
 			"generatedTags": [
 				"Poisonous Person",
 				"Poisonous",
@@ -4744,13 +4762,12 @@
 				"Pattern",
 				"Everyone",
 				"Distance",
-				"Careful",
+				"Public",
 				"Calm"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "3633be049b9f9681b492bcb43a2c590d59d5c669157c5718301a51c924919d2c",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/poisson-distribution-healthcare-it.md": {
 			"bodyHash": "006d7fdd09c7cf904e370f3ca9ce3d7fe93c0b8c9abf30003bbf1cdbee2e4f27",
@@ -4812,7 +4829,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/predepression-tea-bipolar-calcutta.md": {
-			"bodyHash": "955d734ae6ae60f593e2a0a40fdcfa7cb1109caeba3a3da711f6056aa8fbac54",
+			"bodyHash": "7a3db554910b1e8477bee75671e38e13ddf5e718bad2ec3531db573b53cf5bf6",
+			"hashVersion": 2,
+			"revisionHash": "4e8df29a7e12bef5c93e748a79da44f6590c9cd6755035de544be78f5a2ce8b0",
 			"generatedTags": [
 				"Tea",
 				"Depression",
@@ -4822,13 +4841,12 @@
 				"Milk",
 				"Workshop",
 				"Bipolar",
-				"Depressive",
-				"Warnings"
+				"Warnings",
+				"Depressive"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "775090dcda123fe955b2b0e123849f9b96eac7d2c5356014084b54e098f2ec51",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/premature-llm-deployment-clinical-trials-ai-safety.md": {
 			"bodyHash": "6d5d34efcc66798e66b3feeb4f00a4730be69f04c79e87747c410d5ca690fc7c",
@@ -4850,10 +4868,12 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/private-nuisance-at-five-thirty-in-calcutta.md": {
-			"bodyHash": "cfe8921dd40fe5339b2f6cae0bc6b2bb811113348de94da34f19bba3cbb04e00",
+			"bodyHash": "311709855fe2ba900722b8585ab76b7159e3157be632371ffd0ecdf9a8a53fea",
+			"hashVersion": 2,
+			"revisionHash": "1b183cc34607facdea059949403e6f93e456f9600009ecf48963664b8c770fa6",
 			"generatedTags": [
-				"Flail",
 				"Molar",
+				"Flail",
 				"Aching",
 				"Fight",
 				"Try",
@@ -4865,8 +4885,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "dbf5307e7e4d2c1f8360e3c8b97af13f889713627b29c0564f3cb470f227e2d5",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/prognosis-as-philosophy.md": {
 			"bodyHash": "138e7a48d0427dee4929e6f78fb50859084c6768446c8b2876f03281b3361e83",
@@ -4985,7 +5004,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/rain-power-and-quicksand.md": {
-			"bodyHash": "291de1cbf0dc9006fea86d04a4a2c1d46e5a358b2be70724292ebb3aee275737",
+			"bodyHash": "2400a13160bc92fc62df11e6b045e85a51bf07e4ec08a4c5fa497d31f06e511d",
+			"hashVersion": 2,
+			"revisionHash": "87ce8b4cc4b59a8b568dd2449e0acb70305db79b462dfbb50b3d4ae5b8263909",
 			"generatedTags": [
 				"Adjust",
 				"Quicksand",
@@ -5000,17 +5021,18 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "0cd22831cec988526d0ecb1c0ce39c46882e35b41e9cf1814bec9a9cfaeeb9e9",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/ram-bharose-is-no-bharosa.md": {
-			"bodyHash": "af7de80d7e0b106265b726a9d4fee1ece9a1fcbb7cd30a67126032550a53884d",
+			"bodyHash": "52e90ff9d990578bd4497920baec16e7acfdc3880c29b3d6a8e18cb043d2a395",
+			"hashVersion": 2,
+			"revisionHash": "ad1761c4ede9b039a86e88fa996c931cf18d14c13fbd6c083086bb85363ae0c1",
 			"generatedTags": [
 				"Ram Bharose",
 				"Bright Boy",
 				"Dada",
-				"Ram",
 				"Bharose",
+				"Ram",
 				"Demolition",
 				"Rice",
 				"Unfairness",
@@ -5019,8 +5041,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "443195c5b1fc851c1982dd30617b0083db47a7e9e881a30e974addc3ca32dbf1",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/randomness-chaos-complexity-calcutta.md": {
 			"bodyHash": "7203180cace7a6e37147b526d9694dc7d7a86bf7f8e348fb8d076e8da8fc059a",
@@ -5140,7 +5161,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/rice-cooker-bookkeeping.md": {
-			"bodyHash": "9c69a5750fec54edb93fdfd1840f6cf943106686c3568257a730d4feab9932c6",
+			"bodyHash": "28d77a3dca32d925a216f2188ed097709c27ee4a12324763f652f7c695252b8d",
+			"hashVersion": 2,
+			"revisionHash": "a6d386d8f037ec8daa73df56f9ade242260fb025ccd4fceafeae49ab029bf19a",
 			"generatedTags": [
 				"Middle Class",
 				"Rice Cooker",
@@ -5155,11 +5178,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "cd9869dbd5941144e340530c2f3280a5524f0e898d9739ce6868401190ceac85",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/ro-water-abu-dhabi-rent-calcutta.md": {
-			"bodyHash": "f0401ca40e36a0338808c6a9972424c7bd4756c3071dd418726f3a62deff679d",
+			"bodyHash": "8220d7add945e068bfb11d2d1e97fcf1121ae6b61ab1777fc9598bfd67783a5f",
+			"hashVersion": 2,
+			"revisionHash": "567991118a21e9d26cd948f1ececbe5bb9b98273c98689adec76cc64d41fcf07",
 			"generatedTags": [
 				"Abu Dhabi",
 				"Rent Listings",
@@ -5174,8 +5198,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "83e6e58746e79cf5c7fdb3a791f8edf9ab0968618cb71b44f174f89ca7f7a392",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/rotten-sack-indian-politics.md": {
 			"bodyHash": "7561a6527217c1494e70a8ee9a1f8b2be7b26e1452ed43e229e8bbe51059167c",
@@ -5414,7 +5437,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/shadow-citizen-of-my-own-room.md": {
-			"bodyHash": "97cc9d1353cc95a471a216f4b8f01217d29edc9b2a4d29afd31a3a4509631bbb",
+			"bodyHash": "e15e97f1263f55d7deb8caf4f3df173c19e852dd54ecc16e5b5be3eb14d0b8f6",
+			"hashVersion": 2,
+			"revisionHash": "1fde9d5c3dd5ae4257951bd632d79a38effdc555d081916574130370985fd4e6",
 			"generatedTags": [
 				"Destiny",
 				"Falls",
@@ -5429,8 +5454,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "bb59a87150d38b5bc7cc92b786d2d2d5db36c364b7ac53b96637232a9550bf04",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/shallow-water-loud-television.md": {
 			"bodyHash": "fe65bfa5e4123007570933669426367e8aaaa6c9f2cd8416bfd26065309505b1",
@@ -5473,7 +5497,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/shiva-and-the-poison-in-the-throat.md": {
-			"bodyHash": "9caf0b7168d2c4ecf810e5f961593f345af4a2e2558d8f89ffe6ffffd31aa745",
+			"bodyHash": "de9b5f7105dbb4bcaf6fca5bf18053e2e147feb582cbab3f6607b06a5852b51f",
+			"hashVersion": 2,
+			"revisionHash": "981e71cbdbe6ab1d22fb6d6f1836534099536d2d86b33fb02f2fe5e21b3b6465",
 			"generatedTags": [
 				"Poison",
 				"Throat",
@@ -5488,11 +5514,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6ea561e34ce152e0d7841b2a3ae2e4714ee19cb015adab9aa0a086f68eaaaa22",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/shortchanged-from-dollar-to-paise.md": {
-			"bodyHash": "af3f32c271abe0eb868c674f7198edbd724c2c86f683dafae6f65671444ac6e8",
+			"bodyHash": "6a6c7f3c6c30bd27dbe93f5991ecd1b80d01f35409e3fb861b0e50f18a85a8b9",
+			"hashVersion": 2,
+			"revisionHash": "e2761cb658da5c214604354719fe72dd768ba361e2280df324a1acf8a8de1e6f",
 			"generatedTags": [
 				"San Antonio",
 				"Slime",
@@ -5507,8 +5534,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "50fa172708c8c6b535be3d777786d5c32ea8afaa04cda88ab9943a4e85774413",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/silk-season.md": {
 			"bodyHash": "018b14909090db26f0ce4baf6beb9955156926e8d1ea784a5ab4647bd6946e3a",
@@ -5589,7 +5615,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/skepticism-is-the-mosquito-net.md": {
-			"bodyHash": "ffa441aed2bfd7e4adb64a167dcd3558f6ddb6e1223562f66ba8b4897cdd64b0",
+			"bodyHash": "440702ca3537ce8d9e11b57291bd11af7f64a48dbdc4119078c5ec7955d277df",
+			"hashVersion": 2,
+			"revisionHash": "d4fec1d3e6c7f917ab8323af8a286c0f5a51a0be3e5a959614e076a24b7d5dc1",
 			"generatedTags": [
 				"Skepticism",
 				"Jingoism",
@@ -5604,8 +5632,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6a3c5138cd2bf96f79a5995360bb8d5de5360e15ccf8841b4689fa373446b839",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/skull-under-the-bridge.md": {
 			"bodyHash": "d7d49c7e384fea4872c5246db16d0265ce07f3056a2d5a7d7ad49e858986faf4",
@@ -5667,42 +5694,44 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/smorgasbord-of-impotence-calcutta-middle-age.md": {
-			"bodyHash": "748de547d526ee5ae23e32f824cf6067d4066c9ce6464ffb4c4f77929ff58452",
+			"bodyHash": "375d17e9aabe50df69daa0079cd1e63ede63f2fe6c2dbb7385f88d7db2b4545f",
+			"hashVersion": 2,
+			"revisionHash": "f87ae3b60597386bcce075ad78a5c21611beb409f02cfdc20b60c0a96dd3e788",
 			"generatedTags": [
 				"Impotence",
 				"Desire",
 				"Fail",
 				"Unemployment",
-				"Percent",
 				"Version",
 				"Bipolar",
 				"Mind",
+				"Percent",
 				"Fifty-One",
 				"Broke"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "cc67e75b9eca367f0e89a500c98ecd3d59fd9ebf1812b49e24a6d1afb34067ad",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/society-with-open-drains-and-polished-shoes.md": {
-			"bodyHash": "965ebba579670465973994ed2f33e7820e247d9dd2127e40c699bbaa522914bf",
+			"bodyHash": "8925a28f553231ac8f702008edc06e5e429b5769ad7d08f5c9b2c0250efb39ed",
+			"hashVersion": 2,
+			"revisionHash": "5765b52cff1b7980232ec48fdff0e61e93045549f6ee0acb69c46ae785f8e0c4",
 			"generatedTags": [
-				"Shape",
 				"Advice",
-				"Opportunity",
+				"Shape",
 				"Confidence",
+				"Opportunity",
 				"Friend",
-				"Means",
-				"Sentence",
 				"Arrives",
+				"Sentence",
+				"Means",
 				"Hot",
 				"Cup"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "76dc3fa9f7c2631ec52c97119a1c642894363f7b21b5103294423fc933a704e2",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/sofa-bird.md": {
 			"bodyHash": "54d9bc99493394a4639c3bed57a9957ca42385ce732237e332bd8f6d359ebd9d",
@@ -5958,7 +5987,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/tea-depression-and-the-probability-of-a-blog.md": {
-			"bodyHash": "a3c62cd9602343096daab4944cefb192325c2239b8be33823cd236fb3dd8c182",
+			"bodyHash": "18e0e44e8f0acdb396be8b1ef8f46710bcca456844c499e0b966551a571e5559",
+			"hashVersion": 2,
+			"revisionHash": "48d4b889d1e68d64a90e619842780a6e53d0b8d94c25ce73c583784584bc8f07",
 			"generatedTags": [
 				"Depression",
 				"Supplies",
@@ -5973,8 +6004,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "c9680303f6f87cac61acd682608cb8822d20e971669b7d3aa6eac2cfba8c8fff",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/tea-skin-and-the-science-of-suspicion.md": {
 			"bodyHash": "092a0e880708c110c071897a33a22f34f4caa1671a795a83c39ff811dd11a9c2",
@@ -6209,7 +6239,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-bengali-baby.md": {
-			"bodyHash": "1a78ac693e9d4ca6b0ee62cb1bfce1ff9e1f23d44f42c003f8ea2999c3b5aaf9",
+			"bodyHash": "659867f9226fc36757e49ef6d52866eaaa1522b5856d5888cbe63372e0de5957",
+			"hashVersion": 2,
+			"revisionHash": "06047770aafbbffb1b091076e2e72560dd25877e62fb94070a3cdb7fe5bf1657",
 			"generatedTags": [
 				"Baby",
 				"Sun",
@@ -6224,8 +6256,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "b077643359eec9c545960fcbf174f3ed5b765124e938f0a37fb5380da1ed92c1",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-berry-eater.md": {
 			"bodyHash": "e92c6d398f9100d32f88e4bc85db94eab976f3b70f8e621de857bbd30f5528ad",
@@ -6364,7 +6395,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-century-has-a-hole-in-it.md": {
-			"bodyHash": "703900f49fb3138486d91300dffe784c9b35a2d3b8c07da7d76fe7b571c5136c",
+			"bodyHash": "6d8cb5fec60379cd03528d12f963f3b89511b93df562fd9336f2eadfcccfe190",
+			"hashVersion": 2,
+			"revisionHash": "fe7b74b75f15ef67dd0b801c9f086dbb0b2e3638c72ff0a4ebeb8e2ef9037b34",
 			"generatedTags": [
 				"21st Century",
 				"21st",
@@ -6379,8 +6412,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2420ae027c1c91133a4416a5974d7135e1f077a5c3f16edb7a43a5f39355e9c7",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-chair-and-the-drain.md": {
 			"bodyHash": "a64e45a6c9f297d74da58657d585a5629ac07e14af54869cbffa7355053f27f0",
@@ -6502,7 +6534,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-compressor-and-the-small-black-hole.md": {
-			"bodyHash": "4c81496a78137a33ce737233bf852708893d9c4d16f5ea36a07714af08f14bf7",
+			"bodyHash": "ec0d2cb4ea53671c43e0e03864a97497b547f30ca9afa7cde66fe6dcf9738cc4",
+			"hashVersion": 2,
+			"revisionHash": "78b15b55b3c55a18451d7e32701693c32eee2e49f595c5f0898432596ec69d19",
 			"generatedTags": [
 				"Black Hole",
 				"Hole",
@@ -6517,11 +6551,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "ebac76b7e85fd9597ba720a0f87288aba18dd88fd1536e889b9d06e3cff4073a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-contender-who-would-not-compete.md": {
-			"bodyHash": "1d9a2c12fa2751e9d4a7e929fa165443336158097d3319193d5429be5e8fd232",
+			"bodyHash": "eb14ff3852b3cb852ef1524fcbfaaea0c50142b205e450d414dcef88a4f14845",
+			"hashVersion": 2,
+			"revisionHash": "0f2ed93ead01a1651ebace2160d440d25b7ac5e4c58aff96047eab82d0ba76ee",
 			"generatedTags": [
 				"Hurry",
 				"Country",
@@ -6532,12 +6567,11 @@
 				"Saved",
 				"Sensible",
 				"Refusal",
-				"Horse"
+				"Aspiration"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "da9e68b35ccab9000786251a3437b75a224e1afd66a876d5ce5b64dd049613e9",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-corridor-of-wind.md": {
 			"bodyHash": "018cf0f6e695fd4c601e5e1b6fceb2ecbb6de59454c268456529ffdc844251ec",
@@ -6617,7 +6651,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-cup-that-refused-to-become-content.md": {
-			"bodyHash": "39ab14b1362f4f3de98c1eb75681f9fe7be360edb8ef7587a6bbc42bbb98eba2",
+			"bodyHash": "6e172faa853066ec7d449adda331f22bea33eda00a512ed17248171ccc5dacad",
+			"hashVersion": 2,
+			"revisionHash": "80a64d186e12fb88097456eb2ea888e1c2d4190b255725685ae5cf07cb6d5247",
 			"generatedTags": [
 				"Packaged",
 				"Disappointment",
@@ -6632,11 +6668,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "45bb2b82d9354dc9d602beaf4bd6fea206ef12ff9d93c040b4a86bfd0abebcca",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-cup-that-starts-the-sun.md": {
-			"bodyHash": "78b200bc02eda906c95baae229d06573da498a5ba209f601dac8d5292c4f650f",
+			"bodyHash": "436596366813b5252f20d859723bd487daa1512159ce9c25a40c0617f6cffdfe",
+			"hashVersion": 2,
+			"revisionHash": "fc29ef3268bf02181741ec12dadecc7e226239b9e6145c14d9e75637c16866de",
 			"generatedTags": [
 				"Tea Dust",
 				"Pan",
@@ -6647,12 +6684,11 @@
 				"Clouds",
 				"Shame",
 				"Depression",
-				"Dust"
+				"Milk"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8760c974300ced3febabdbca78a75a1243923fdddcb99b6e783897f21358654d",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-desperation-premium.md": {
 			"bodyHash": "508b1c76c7dfe836e07818b9e4a0c5956f90ade2e3cae23308f23a9f5a6a296d",
@@ -6683,7 +6719,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-digital-charnel-house.md": {
-			"bodyHash": "8563f6519c27f7b4fa0fc9f28cacb994602361f595498231074e8013a149d770",
+			"bodyHash": "c22f6f54ad98319fd171e5b1bfe0223aab0b618db30b738adb178f8f4a59e88c",
+			"hashVersion": 2,
+			"revisionHash": "acd0cd4ac4357d815e2c57d5a38763383a977aaac0defa9ef849884c3a0a26bf",
 			"generatedTags": [
 				"Mill Grinds",
 				"Digital Ganges",
@@ -6698,8 +6736,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6db2267f01cf20309c2acb846b9e1fd6968dea76af27d26d5a5067aa6c5db579",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-dopamine-economy.md": {
 			"bodyHash": "3ac7f4c456523117a9d483368a86074c1e141392f4901e95a36cb141c9e1639e",
@@ -6760,7 +6797,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-elon-trillionaire-gap.md": {
-			"bodyHash": "412c9581b57f7c485e2de9e6760756c77f878b54bf69f3e35f8f8a34f698e675",
+			"bodyHash": "e2c9b5b147743adb70f6490c845f5096e7c8f5487405967c3d97e437c869f8be",
+			"hashVersion": 2,
+			"revisionHash": "099c1ef201270b956acd3b677ed38627263186e67460da1377a2343aa0ec93a8",
 			"generatedTags": [
 				"Elon Musk",
 				"Per Minute",
@@ -6770,13 +6809,12 @@
 				"Trillionaire",
 				"Livestock",
 				"Trillion",
-				"Dollars",
-				"Gecko"
+				"Gecko",
+				"Rice"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "231e6352aada3fde77f3b457d658845f6a33ac5443d4ab98c2bd989b8d001410",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-empty-room-inside-loneliness.md": {
 			"bodyHash": "de10f31afbdb630beda671658f9d01454e573c0016f7a80081212cf7466fac9f",
@@ -6819,7 +6857,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-error-bar-around-a-man.md": {
-			"bodyHash": "9157e6fe068344db783bad8ca4d05dd827045630ee1b0902eef3f9f934e17e51",
+			"bodyHash": "68229fd3087ac811b4d485cc96c1f8adabfc236fb0508913b19adba387cca660",
+			"hashVersion": 2,
+			"revisionHash": "1759ae8b9081a7c04afa1bd7f9b495daf4a8af3e7e2f0950009f992532d20aa3",
 			"generatedTags": [
 				"Error Bar",
 				"Mark Sheet",
@@ -6834,8 +6874,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "c6000c08d9dd6d267999905ce26a6c26d6fd17026c34d2d26176e6caffc0f26d",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-eye-eater-of-hazra.md": {
 			"bodyHash": "df2480d80761bdd1bfc70112e611bffebbbfe58800c05d7bae87ba71d570932f",
@@ -6915,7 +6954,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-former-bright-boy-problem.md": {
-			"bodyHash": "07023b4971a76a63bc33e29c255554c2475fa025bbb1bc834f33142cd81c2232",
+			"bodyHash": "7d5213e8621b2e5f9bb69c5cdb0d6aaad32bee905afe237903659c73604823ca",
+			"hashVersion": 2,
+			"revisionHash": "b6052ddecdd2e36093f5747bcf6720d313f22a00ef7ebbfafd416e5fc36026d7",
 			"generatedTags": [
 				"Former Bright Boy",
 				"Gift Grows",
@@ -6930,8 +6971,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "4292b766e85a7df192b9bcc932c973697c509f3d661995e09a551a239392eebc",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-fourth-standard-saint.md": {
 			"bodyHash": "93c3dc23871d53de57be2a5f9666162c261fb68b322794094b96482d574bd3db",
@@ -7070,7 +7110,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.md": {
-			"bodyHash": "4df8a0eb18eaa8792c9efc5eeb2c4fcd46b50d4037986059105402d28a870d84",
+			"bodyHash": "8659bccaef502648d39c51aacc4cde6de1f47137c28a08e716f6275c5ce7cea5",
+			"hashVersion": 2,
+			"revisionHash": "577737ff78a1aa98227cf7f2b721e160a9963c8898471473efd91251b39d59c1",
 			"generatedTags": [
 				"Decide Whether",
 				"Bathroom Door",
@@ -7085,8 +7127,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "dd38b9b407cb8802bd158e830b9045403bbb136ad454244ceba705fc079a6de2",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-great-indian-fence-sitter.md": {
 			"bodyHash": "1b9947b6d24c3f7ff9b8bc00492c4826aec045db53b997c0787aa7074931c138",
@@ -7321,7 +7362,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-laugh-track-has-left-the-room.md": {
-			"bodyHash": "c67a88ea27455a88a1071fa93f1f127ed6a5aa1728b06e51b8f70efec8b9e1c6",
+			"bodyHash": "f362b4c7d2bd805c8bc34cde223e0b0b3aeba81b14bce6b8c3a00d52b07ba737",
+			"hashVersion": 2,
+			"revisionHash": "e4b102779d28e1c09fc4748d9580d30cb9ddb798fdc68013c8b86dd57195ce8f",
 			"generatedTags": [
 				"Laugh Track",
 				"Comedy",
@@ -7330,14 +7373,13 @@
 				"Scene",
 				"Funny",
 				"Joke",
-				"Film",
 				"Pretends",
+				"Film",
 				"Comic"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1125c2c9f75f81c3628193b901ac491a0c918397953fe88e5359bf4608112b22",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-linear-algebra-blind-spot-healthcare-ai-safety.md": {
 			"bodyHash": "37a8849dafb6997c7b2d485209b92e871a53df8d49d565653c908ea4fd2ea78c",
@@ -7360,7 +7402,9 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/the-low-market-value-of-reality.md": {
-			"bodyHash": "da6f9936ab90463616a158b10879605dbcd0c98fdd5c4899627ee2be5508b03a",
+			"bodyHash": "c619676e1590b816b5c5743447e0fee1b33ca91e8eb974e21760d4e29c9f235e",
+			"hashVersion": 2,
+			"revisionHash": "31020fdedbd0a75358b47a98d32af9d24683b5db2421a59c9d55589d1a8b39a8",
 			"generatedTags": [
 				"Write",
 				"Mathematics",
@@ -7375,8 +7419,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "920a0399401c534aa637008aaab3083c1da1a3b4f9f28f960d8a7f2e3a212929",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-machine-that-cannot-defecate.md": {
 			"bodyHash": "58ce11c724cf24fe9868874300c906de321e295dd8a98aa05bbefda819fc037e",
@@ -7419,7 +7462,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-man-who-became-his-own-waiting-room.md": {
-			"bodyHash": "e039911b2f87a65a5e97e9dadecf69030df5423c331ceac969c89b90b2c544db",
+			"bodyHash": "1dfafd9739d3c968145c0d3bb99b711f0792526e6342b65de16f1f5dd7c162f5",
+			"hashVersion": 2,
+			"revisionHash": "a937d13e4579308f3f075385e12e389c94e4f37dde5de800a14a5abf0ad814a1",
 			"generatedTags": [
 				"Waiting Room",
 				"Waiting",
@@ -7429,13 +7474,12 @@
 				"Mornings",
 				"Give",
 				"Stuck",
-				"Contain",
-				"Messages"
+				"Messages",
+				"Contain"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2ba0c6d56911c428a1921a00f2dfc6e6b904e8820fd2784acfe2c57a34b5b9b7",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-man-who-looked-too-long.md": {
 			"bodyHash": "a588999fd63a69fd573f1b7a8788543747baa10049ce0e1175797a889c3bbc8d",
@@ -7476,23 +7520,24 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-many-body-problem-of-indian-life.md": {
-			"bodyHash": "9595881e0d7ec95926c46e8e445a9e9f0b803e14a8307d6b18d6ccfcb0344dd8",
+			"bodyHash": "8b1fa23e91c244b4af5b6bf0b38483c4c548b5bf71a594c2c139bc10a5b542eb",
+			"hashVersion": 2,
+			"revisionHash": "c639ebe9e6ae187686cb8b8ff1774b4116b222af0fa12b187495e20d1483815d",
 			"generatedTags": [
 				"Orbit Intersects",
 				"Rice Cooker",
-				"Intersects",
 				"Pulls",
+				"Intersects",
 				"Orbit",
 				"Throb",
-				"Try",
 				"Tooth",
+				"Try",
 				"Income",
 				"Client"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6a75e686c02d8094ce89932da9511fd4c823b8afc2f2167bfb72bef08cd10a0a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-men-who-became-water.md": {
 			"bodyHash": "9d11ac99948980104501cf3516cb08c18c27591e484655f8e418f85496a0431a",
@@ -7514,7 +7559,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-moat-has-mosquitoes.md": {
-			"bodyHash": "0fcf2707104df8cf9821ba8c36a8c9fce2d0ce2df685ad3fde930a092f61412d",
+			"bodyHash": "98d9c8ac4c032ef87fbb781d0d0c3f93401453a11df5e29d7a472984d4f8c194",
+			"hashVersion": 2,
+			"revisionHash": "be4cf59baa87bbb73dff01ebe509807514055c935ea746f379a37d8ed761759b",
 			"generatedTags": [
 				"Hawking",
 				"Moat",
@@ -7529,8 +7576,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "80d48bdb0fc6a4eb1c97e6cfcebabf9732ec03a9290f72a19b18af06ee4c3256",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-morlocks-in-white-kurta.md": {
 			"bodyHash": "5715ffa2f9ab05e388a95d760341ec8393cc729f27a023b7141157b35c48f34d",
@@ -7610,7 +7656,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-nationalization-of-shame.md": {
-			"bodyHash": "2ae82c95574132e5042aa5155fa391279d940ed438603139b6df3cfab9f0a6c3",
+			"bodyHash": "352679852fef9c44aeff1ed6f66ca4066070b725627fcffca3ff5ede0c3bb762",
+			"hashVersion": 2,
+			"revisionHash": "cda89e3a7849f19b8906f1319d53f13a90515553da0f9287791868dd0f054c85",
 			"generatedTags": [
 				"Trained Mind",
 				"Pressure Cooker",
@@ -7625,11 +7673,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6878507332b243c7d1e926fa317cc88ac524f20764935d8d82a8f41e6c6a4603",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-nethermost-layer-of-dinner.md": {
-			"bodyHash": "36704215c57120e4da1c0ed341034a74bf233c2bef6854b59c24007e0ddd1191",
+			"bodyHash": "6914d682288eca77e1e420089ab1d4fcd78ee25db59d29f45f26a9bd2fedcbc6",
+			"hashVersion": 2,
+			"revisionHash": "4fe15d62430582eec2653e3f1dcedd7425247383632e6b94a8db836aaedb9d31",
 			"generatedTags": [
 				"Rice Cooker",
 				"Energy",
@@ -7644,8 +7693,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "999e67d7ee51a4145e440584874910c02ca78bbd3ea782673b6f82db03cf9b07",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-new-mantra.md": {
 			"bodyHash": "487160882177bfaa3fe05e9ddd3f2a9b5b7fb33cd81061e8ae4a10fb334bbc29",
@@ -9788,7 +9836,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-glandular-weather-of-july-fifteenth.md": {
-			"bodyHash": "24820bb85b8aed458d671acbb93ea5ad0bf907ab33198436c0d9cd8b5112ff28",
+			"bodyHash": "6df325a9bcbc72d91bbf8443518913bc169dac60232fc412f2dced9174f7b379",
+			"hashVersion": 2,
+			"revisionHash": "e900413c64cfcdc87ceb1c71d6962bb44e2b6d51d11b17f8551ef6aa4bd69fee",
 			"generatedTags": [
 				"Santa Claus Congress",
 				"Electrostatic Chucks",
@@ -9803,8 +9853,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8b89279cbc513145ed4abb39f17361effe3a66ff34727376a918c5e75dc20774",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/calcutta_morning_malaise.md": {
 			"bodyHash": "a720b971b5832743e72541982e8cca908963818d53674e0fb7fcd6d78fd3ac05",
@@ -9827,7 +9876,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the_marrow_of_existence.md": {
-			"bodyHash": "da287d9ecd406412f393e000269af4ef84f9e7f62daaec38a0b84c7abae9e0ca",
+			"bodyHash": "6281a268972a2d046738395ed882eb7069ad71433bbcf6f9681eee93a6dc102f",
+			"hashVersion": 2,
+			"revisionHash": "840b4c912f4530f344eb6199f1634bdb7091ad87b2c5a1ecc813f0adaf29f984",
 			"generatedTags": [
 				"Chalk Powder",
 				"Ground Bones",
@@ -9838,12 +9889,11 @@
 				"Substance",
 				"Filler",
 				"Powder",
-				"Manic"
+				"Nonbiological"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8982a749ac1cff9a30556e3b731c51a85907f0f43be8d3196a80c6cd3414a87a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/constipated-americans-diarrhoea.md": {
 			"bodyHash": "8b36f79b230bccc3e65ee0e81be54d2f5b551f702822410cc3e352d79cee6645",
@@ -9866,7 +9916,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-cephalalgia-chronicles.md": {
-			"bodyHash": "cd098e2b5e5bb107a56e71089f1c93cc3805e29d13166a777536b2a16146ce69",
+			"bodyHash": "4f90ba04be782b6bb6aab3f5d2103ef839c8588d57f27034f8b6be5844c7fc97",
+			"hashVersion": 2,
+			"revisionHash": "e615931b441962981f13f0be60ea8b89a201d4d08ed76e122187880fe2703304",
 			"generatedTags": [
 				"Hundred Milligrams",
 				"Twelve Hundred",
@@ -9881,11 +9933,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "7437dd04a2bdfb8b997cda2a2300872ea7cf288d672d39688ab7728d11a44d98",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/rath-yatra-recursion.md": {
-			"bodyHash": "95ebad583aa33003311b12cfe6d521cfd947f07a08a48ce0bf3c37354cbd162e",
+			"bodyHash": "e3a41ef64188e2dea88a61cee99a684e74ca58c29b459d2637bbc993a217c6a0",
+			"hashVersion": 2,
+			"revisionHash": "29c0102c67db07ce435ac8d2567fc47a3f9a7e05be0e27b922c5bb0e58ef1b62",
 			"generatedTags": [
 				"Rath Yatra",
 				"Juggernaut",
@@ -9900,8 +9953,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "40a5f8d9bc4ebfe574ed5cecce8e1618a74734794abca3e6dfd7a7d1fc6c00aa",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-thermodynamics-of-envy.md": {
 			"bodyHash": "48625bfee6017e84c208f3bb3df18d6f1ca50c7b409c5494f453c7bcd022a70d",
@@ -9960,23 +10012,24 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/saturday-mathematics-and-the-end-of-usefulness.md": {
-			"bodyHash": "c17700657e2c3b919018079ca4e9b49aa7c878f6c07b60112462a25a48d659cc",
+			"bodyHash": "268eb83bff50d12f6d855363a600565ded120d6fc09cf6a05f5fe1410b7bb0a0",
+			"hashVersion": 2,
+			"revisionHash": "95734f3b9dfafbd90b0d93f3464e5c1a2d371ee5f45b7c4334cdac3e864cad1b",
 			"generatedTags": [
 				"Purple Book",
 				"Floating Robot",
 				"RAM Crisis",
 				"Ceiling Fan",
 				"Blood Pressure",
-				"RAM",
 				"Saturday",
+				"RAM",
 				"Negative",
 				"Robot",
 				"Detectors"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1d473f9db78342bd3879eeddda8c888b0b008fc79718bc3188279326a1fd970b",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-idol-who-dreamed-of-blood.md": {
 			"bodyHash": "67891629e64ec98738d3e1ab6ea1c7b7fae4aeabd3a73bfbadc2b7c97041dcd4",
@@ -10153,12 +10206,14 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-atrophy-of-attention.md": {
-			"bodyHash": "cfe41e4da569f459efd30d1853e0f05f9af64b4a5cd71153eb345bed074f8fe8",
+			"bodyHash": "c6856143151609b48b6da8ac75e3a28fa097f42c07a4e4484edbabbb27d372fb",
+			"hashVersion": 2,
+			"revisionHash": "56706622fcd25f7b1fb1d84cbfa7c0fd729c483d7ff7768dd56c1d51b3ce8234",
 			"generatedTags": [
 				"Grinding Masticatory Process",
 				"Nursery Rhymes",
-				"Sixty Thousand",
 				"Brain-Dead Zombies",
+				"Sixty Thousand",
 				"Slow Grinding",
 				"Masticatory",
 				"Firecrackers",
@@ -10168,8 +10223,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "cf5071b9c79ab9f38fde10daf14d4cc57f9ea528b2b42db655803ca659f6bb7b",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser.md": {
 			"bodyHash": "a981fd3ec0dc8b63c13e7079e97ec7f94060d1e3cacc0160ec471f82f5e849c8",

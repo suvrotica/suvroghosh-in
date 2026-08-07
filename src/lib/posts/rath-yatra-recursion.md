@@ -1,17 +1,19 @@
 ---
 title: "The Juggernaut of My Own Mouth"
-description: "A grotesquely swollen, bipolar monologue from a fifty-one-year-old Calcutta man ruminating on Krishna's cosmic mouth, the British etymology of 'juggernaut,' and the recursive plaintives that tumble from an insignificant Indian's mouth during Rath Yatra 2026."
+description: "A recursive Rath Yatra monologue on Krishna’s cosmic mouth, the word juggernaut and the plaintive loops of one Calcutta mind."
 date: "2026-07-17"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Rath Yatra","Juggernaut","Globe","Poot","Chariot","Recursion","Yatra","Rath","Chariots","Yashoda"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-rath-yatra-recursion.jpg"
+thumbnail: "/thumbnail/art-rath-yatra-recursion.jpg"
+thumbnailAlt: "Nested carved chariot wheels frame a Rath Yatra procession at sunset"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-rath-yatra-recursion.jpg" />
+<Pi src="/thumbnail/art-rath-yatra-recursion.jpg" />
 
 Krishna, that blue-skinned mischief-monger, that butter-thief, that cosmic cad, when he opened his mouth to his mother Yashoda—famously, mythically, with the theatrical pomp of a boy caught red-handed in the larder—she did not see teeth, she did not see a uvula waggling like a pink flag of surrender, she did not see the half-masticated remnants of a stolen *laddu*; no, she saw a *globe*, a whole spinning, watery, mountainous, cartographically precise *globe*, the earth with its continents and its oceans and its little pinpricks of human ambition, and I can tell you, with the certainty of a man who has spent fifty-one years in the humidity of Calcutta watching the world shrink and expand like a diseased lung, that if this were today, if that little blue bastard opened his mouth right now, right here, on the 17th of July 2026, with the Rath Yatra having just begun yesterday—the 16th, a Thursday, the Dwitiya Tithi ending at 8:52 AM, the chariots already lumbering through Puri's *bada danda* like wooden leviathans pulled by a million sweating, chanting, delirious devotees—that globe would be made in China, stamped with a barcode, probably manufactured in Shenzhen by a teenager working sixteen-hour shifts, and Yashoda, poor dear, would squint into her son's throat and see not the infinite but the Alibaba, not the cosmic *brahmanda* but a plastic spheroid with a Made in China sticker peeling at the equator, and she would sigh, because even divine mischief is outsourced now, even theophany is subject to global supply chains, and what is a mother's love if not the final, futile inspection of a defective product before it ships to the warehouse of history.
 

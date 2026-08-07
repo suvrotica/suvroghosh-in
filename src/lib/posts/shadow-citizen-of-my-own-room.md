@@ -1,17 +1,19 @@
 ---
 title: "Still Here, In The Corner Room"
-description: "A personal essay on depression, failed ambition, solitude, aging, and the small stubborn fact of remaining in Calcutta when all the old plans have quietly packed up and left."
+description: "A personal essay on depression, failed ambition, solitude, aging and the stubborn fact of remaining in Calcutta after old plans leave."
 date: "2026-05-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Destiny","Falls","Enough","Leave","Depression","Extra","Feels","India","Mother","Plastic"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-shadow-citizen-of-my-own-room.jpg"
+thumbnail: "/thumbnail/art-shadow-citizen-of-my-own-room.jpg"
+thumbnailAlt: "Calcutta man remains seated as old plans and blank maps drift through an open door"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-shadow-citizen-of-my-own-room.jpg" />
+<Pi src="/thumbnail/art-shadow-citizen-of-my-own-room.jpg" />
 
 Acronyms used: United States [US, the country where I once worked and built another version of my life]; Search Engine Optimization [SEO, the practice of making writing easier for search engines and readers to discover]; Artificial Intelligence [AI, software systems that imitate or automate parts of human reasoning, pattern recognition, and language].
 

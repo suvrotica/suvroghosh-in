@@ -2,18 +2,20 @@
 title: "Shiva and the Poison in the Throat"
 description: "A sharp, darkly comic essay on depression, restraint, unpaid invoices, and the myth of Shiva holding poison in his throat instead of swallowing or spitting it out."
 date: "2026-06-13"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Poison","Throat","Shiva","Nectar","Rage","Immortality","Swallow","Restraint","Produces","Neck"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-shiva-and-the-poison-in-the-throat.jpg"
+thumbnail: "/thumbnail/art-shiva-and-the-poison-in-the-throat.jpg"
+thumbnailAlt: "Man ties blank invoices with blue cord beside a bronze Shiva and glowing throat stone"
 ---
 
 Initial Public Offering [IPO]: A company’s first public sale of shares; in this essay, used as a comic metaphor for the great jackpot fantasy of existence.
 
 <TTS />
 
-<Pi src="/thumbnail/safe-shiva-and-the-poison-in-the-throat.jpg" />
+<Pi src="/thumbnail/art-shiva-and-the-poison-in-the-throat.jpg" />
 
 ---
 

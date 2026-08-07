@@ -1,19 +1,21 @@
 ---
 title: "Oxygen in a Box"
-description: "A Calcutta room, a lonely middle-aged mind, and a blog that survives less as ambition than as breathing equipment. A readable, funny, bitter, tender essay on writing, isolation, AI suspicion, money, and the small dignity of being unread but still alive."
+description: "A funny, bitter, tender essay on writing as breathing equipment amid isolation, AI suspicion, money worries, and being unread."
 date: "2026-06-16"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Thoughts","America","Sentences","Loneliness","Funny","Aging","Skull","Synthetic","Bengali","Rented"]
+tags: ["Thoughts","America","Sentences","Loneliness","Funny","Aging","Skull","Bengali","Rented","Oxygen"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-oxygen-in-a-box.jpg"
+thumbnail: "/thumbnail/art-oxygen-in-a-box.jpg"
+thumbnailAlt: "Laptop releases green ribbons of air around a writer in his rented Calcutta room"
 ---
 
 
 
 <TTS />
 
-<Pi src="/thumbnail/safe-oxygen-in-a-box.jpg" />
+<Pi src="/thumbnail/art-oxygen-in-a-box.jpg" />
 
 
 
