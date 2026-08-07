@@ -1,12 +1,14 @@
 ---
 title: "Claude Fable 5, Mythos in a Muzzle, and the Poor Man’s Future"
-description: "Claude Fable 5 is not just marketing incense, but neither is it a machine god descending with clean feet. It looks like a real capability jump, carefully throttled, expensively packaged, and aimed straight at the nervous stomach of modern work."
+description: "Claude Fable 5 appears to be a real but throttled capability jump, expensively packaged and aimed at the anxieties of modern work."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "AI"
 tags: ["Sliced Bread","Claude Fable","Fable","Mythos","Claude","Anthropic","Model","Sliced","Bread","Inherit"]
 published: true
 color: "purple"
-thumbnail: "/thumbnail/safe-claude-fable-5-warning-label.jpg"
+thumbnail: "/thumbnail/art-claude-fable-5-warning-label.jpg"
+thumbnailAlt: "A layered paper-and-ceramic mechanical lion stands behind glass with a polished brass regulator around its muzzle"
 ---
 
 Acronyms used in this post:
@@ -23,7 +25,7 @@ IPO: Initial Public Offering, the moment a private company sells shares to the p
 
 <TTS />
 
-<Pi src="/thumbnail/safe-claude-fable-5-warning-label.jpg" />
+<Pi src="/thumbnail/art-claude-fable-5-warning-label.jpg" />
 
 ---
 

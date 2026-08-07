@@ -259,7 +259,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/ai-in-india-the-negative-infinity-before-the-singularity.md": {
-			"bodyHash": "58b72fd7408ffa576b6dc92145eed74c75ce19a6f97d1ca2bfb6219f5feceea6",
+			"bodyHash": "1f7223f3a02c5bee9d4631bfca7adb77d8c931dfefa4e0f99c43ec4ecb66fb2f",
+			"hashVersion": 2,
+			"revisionHash": "5a211bae95124724a3b309b9a4d1e773ba1ee5c847ee29a38ca2935a7d9050e7",
 			"generatedTags": [
 				"Health Level Seven",
 				"Offers Immediate",
@@ -274,8 +276,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "370273f76a10b13669c3581cd7035410fe1a56b7b6f7b22e15fb3eb1455d016c",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/ai-layoff-trap-firing-your-customers.md": {
 			"bodyHash": "3d2ec5165d774e590d912302ac2f4ff9d1e908acccf53d33bd22521f43dd0946",
@@ -335,7 +336,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/ai-moat-labor-displacement.md": {
-			"bodyHash": "99eb2580b8f7f5de93d2c80343570f01c61bb96137b25d454fd6ffa8462a8439",
+			"bodyHash": "d35d8912de6939855aa58dce99946d43ae7dd01f71f8f97e0f883d690bfd9d23",
+			"hashVersion": 2,
+			"revisionHash": "25382f014d2a38e098c7c237d26c505a25c4595576ea8a81d946d52d38256352",
 			"generatedTags": [
 				"Tea-Stall Money",
 				"Good Enough",
@@ -346,12 +349,11 @@
 				"Labor",
 				"Company",
 				"Machine",
-				"Replacement"
+				"Human"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "e63c3963c0a52607a3c0c3f77328b26157da26e8c329d1619188f256962cdad8",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/ai-psychology-denial-oscillation-and-the-social-theater-of-competence.md": {
 			"bodyHash": "e4c4c44788977da1f35c04bc7c75669a8f1dcf320e110ccb6768573a6ca0fb70",
@@ -928,7 +930,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/bessel-correction-for-variance.md": {
-			"bodyHash": "cc61e3e2ff462d3e4e830900c9b7a307d93d4b38c2f778d71fc6051c06fff69d",
+			"bodyHash": "7a218276b5639c0df8e400146356a9e69eeb3d155f29ac9356d415ceac9d79a0",
+			"hashVersion": 2,
+			"revisionHash": "f3569008251cf18165d36537c0cba8eed2f35a1ad762923652b60aa7d57985fe",
 			"generatedTags": [
 				"Sample Mean",
 				"Independent Direction",
@@ -938,13 +942,12 @@
 				"Sample",
 				"Deviations",
 				"Variance",
-				"N-1",
-				"Observations"
+				"Observations",
+				"N-1"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "eaa4e81dd068382f0b464df7106663d5937224c765e453e30206e46c13315441",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/bipolar-depression-friendless-blister.md": {
 			"bodyHash": "23ab82695c80391a985059c2b3b987c7266a034afea116df929343ae48c21960",
@@ -1346,7 +1349,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/callous-political-statements-gold-karigars-and-fertiliser.md": {
-			"bodyHash": "0c56c72282a2316cb0d3e9fc2c3c294e9015d9944b02d79b682b96c8afea6bd4",
+			"bodyHash": "b274d140e0037221acb79be6778c10864f164ce7686b9c40d474bdd2b26c0567",
+			"hashVersion": 2,
+			"revisionHash": "b82dedae23029b492469d2574eae5abc2b600288545753872dfdfb7c45c5fbd3",
 			"generatedTags": [
 				"Sri Lanka",
 				"Foreign Exchange",
@@ -1361,8 +1366,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "a6b7a3824d3c406a5e63946c82d1c8b3f274e745acddcfd06dbd5f649eea347c",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/cant-go-back-to-childhood-except-as-a-misremembering-ghost.md": {
 			"bodyHash": "9d1f456596f708462e80954001e6bb93595d0c337387e4e4e07e0477a0a7cb3d",
@@ -1479,7 +1483,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/cicada-ba32-covid-variant.md": {
-			"bodyHash": "6ac3578b6943a56824a5168e91ededd6b754a93cfa26bd86fd096683515c73ac",
+			"bodyHash": "dd06edb0abdf5f686661c87d0e1a97542c335597c6ac98a375a53e13c7d62e3e",
+			"hashVersion": 2,
+			"revisionHash": "0d8e885eebb787732b72c4a383df907baa81e14af25e5ca08d49c5e9dba7bd2c",
 			"generatedTags": [
 				"Watch Whether",
 				"Severe Disease",
@@ -1494,8 +1500,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "16ee58c5551eeb7f6181344cc2f04a91ff054423e4f561b0471cb211b060f85d",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/circle-of-death.md": {
 			"bodyHash": "7cb21cb79421193204b0576bed731cb636dbd4d3c37a9af71a73135166feaadb",
@@ -1536,7 +1541,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/claude-fable-5-warning-label.md": {
-			"bodyHash": "62c1a8624bcc8c933002ac21b50ec76c29689473a1dc236a683516178efc4361",
+			"bodyHash": "80a1fbbaae16041162fde8ea091f886e8c9b85ca79dd0e1e06f9685ee5591a28",
+			"hashVersion": 2,
+			"revisionHash": "67cf59a14ad43f96a86e9df7f707116054be42e4750e0727d799542692246fe1",
 			"generatedTags": [
 				"Sliced Bread",
 				"Claude Fable",
@@ -1551,8 +1558,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "a67eab6d029b653b64200422761d267582ebd7c8b0108e71d0bb483bcf01a0d5",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/claude-mythos-hype-and-security-hygiene.md": {
 			"bodyHash": "658dc81464f0b183b3e95f6d3bb4b748ca87042a14ca98f1843ed953e47bf419",
@@ -2353,7 +2359,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/fellow_passengers_and_the_broken_record.md": {
-			"bodyHash": "ce80ba8e70bc74563071e7b5e0b75db268e1eab8f06680c65bba2d92089a42bc",
+			"bodyHash": "e93f92122fee4b36d08537273145fa5147cff2c6c72f9417b9bcd707e89fe656",
+			"hashVersion": 2,
+			"revisionHash": "0793eee0aa793dede9688787defa3e5f4e64306e867de16d42fb4dab4029eba5",
 			"generatedTags": [
 				"Song",
 				"Listening",
@@ -2368,8 +2376,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "df5edf93868cf4e7c2929d113c1033e6f1481c246c02dffe75766a9e1155277a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/fhir-for-a-curious-student-in-calcutta.md": {
 			"bodyHash": "0cd7e203df09fb0633a68d1adc3a15576e86d7d4c5a36f2c5939b5e3e1160cbe",
@@ -2584,7 +2591,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/four-fundamental-subspaces.md": {
-			"bodyHash": "82e0b33adefcaa713115065c26ddcd70aaa06a9228e2011ec9c8616d4e4ce9ba",
+			"bodyHash": "3cdb33c8722354b7760885668c829b7c3320f2ce84e4bd7f656ca4de9adae222",
+			"hashVersion": 2,
+			"revisionHash": "1fbc63de5203692231f59f62d12b1cbd38873af8de7df9052b54a1016d313846",
 			"generatedTags": [
 				"Four Fundamental Subspaces",
 				"Column Space",
@@ -2599,8 +2608,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "164e9e5a338b714dc773b69417ffeaf64cb9e8b11c5355d1e9865d0d48f818c4",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/fractal-geometry-of-a-half-lived-life.md": {
 			"bodyHash": "e0b0ddba572694c40988b96356e6bdc5a0aaac6c536bfcfc0d39614d1cacc1ab",
@@ -2774,7 +2782,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/healthcare-ai-wrong-objective.md": {
-			"bodyHash": "fe5b6e1fbb1ae6f3b97c54cf7f67253d1abaf9cd987da6d174bb94e28b785480",
+			"bodyHash": "f1cdeb8c5562ec97d329efea6a2b744101899de9486c9583f5c0a96368663053",
+			"hashVersion": 2,
+			"revisionHash": "7ec1c1569e80d72512024d4eb5f74c9c467acb7135a2e955c027a4601747d0a0",
 			"generatedTags": [
 				"Health Level Seven",
 				"Model Selected",
@@ -2789,8 +2799,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2112b7ef561876d31c8630cc8ed365cfdfb11ac07f5edcd6a3b135eb556af6b7",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/hedonist-hollow-men-on-the-selfie-treadmill.md": {
 			"bodyHash": "c1539c8f8d3a03b7df43aaee2e750d14da497ed8ab3c84816e20cebf204a9529",
@@ -4541,7 +4550,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/plague-of-pseudoscience-india-scientific-temper.md": {
-			"bodyHash": "d177060709439bcd839ce6d02f94b7ead15278abc85920993ceb8711573b8aa2",
+			"bodyHash": "e2326ff37284a6d37d12ae969e9185646c7a762e80c530536afe19e0c9bc4a2a",
+			"hashVersion": 2,
+			"revisionHash": "91c25579f87fe9bfe9ecc7bf4a73a1758cdffe601b8ce0f9c3066ba657a2740f",
 			"generatedTags": [
 				"Scientific Temper",
 				"Science",
@@ -4551,13 +4562,12 @@
 				"Certainty",
 				"Build",
 				"China",
-				"Research",
-				"Evidence"
+				"India",
+				"Research"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "ed14fa1d7029f829851534a29f51524fd8e8c4eb139831217e538c710a8ce096",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/pod-mara-gechhe-calcutta-essay.md": {
 			"bodyHash": "cc81449a9ed1c0a1c10ef22353a7179a92a0ab7b7b7df3d7552ad65c6fc8d199",
@@ -4732,7 +4742,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/prognosis-as-philosophy.md": {
-			"bodyHash": "a561910c4ccae2ba296ac6cf6c530fb0d6233c117e8cd25b37a4013caacb71a9",
+			"bodyHash": "138e7a48d0427dee4929e6f78fb50859084c6768446c8b2876f03281b3361e83",
+			"hashVersion": 2,
+			"revisionHash": "8ac450bf8db070e214ad04e991d3afdb0f470099962c5b0998e74c5ba16401c7",
 			"generatedTags": [
 				"Bitterness",
 				"Schopenhauer",
@@ -4747,8 +4759,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "0d0c561509f28589219da917366ac1693819734a714cebb823bec3812653d6ff",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/propofol-dream-recall-nightmares.md": {
 			"bodyHash": "b7d0b908721dcd51b6a63ad6719cfa4b4dd1af017943af6cb4c99844d265df42",
@@ -6294,7 +6305,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-coming-unemployment.md": {
-			"bodyHash": "d5a38549729208dad05f313ab3bdf396c739b91efc30605b903509bb86b77e7b",
+			"bodyHash": "7532b5c78b1b0c586e673d90490f535c3cd8d91839ee9dcd7c3381e05f31515f",
+			"hashVersion": 2,
+			"revisionHash": "7a111b47b31823785401ccf987ee42cae4f75c0ab49c095e7da45734f44563d4",
 			"generatedTags": [
 				"Software Systems",
 				"AI",
@@ -6305,12 +6318,11 @@
 				"Job",
 				"Entry-Level",
 				"Analyst",
-				"Automated"
+				"Summarize"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "d907bedc70867d5201da6500ca06436e6c99a8bf30162ca03c9791ff7aec5629",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-coming-white-collar-mendicancy.md": {
 			"bodyHash": "145753ca7e579dfa5678d2949c8e6545f4c2c4e37b4cfa666262933c38b19a7d",
@@ -6835,7 +6847,9 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/the-ghost-as-perception.md": {
-			"bodyHash": "b7ccae21463e8d2516794206a460d697f0a3a83f377306cfd99ddbf9f5d6f815",
+			"bodyHash": "3c5d4de845a89cf3298e29ef5a552b721efb6b6f2f9dbee438111d55f461c9c0",
+			"hashVersion": 2,
+			"revisionHash": "03305fb10d5d321b6808a5110ab00b7ebea33efa643eb839b5dd26e1eff18836",
 			"generatedTags": [
 				"Ghost",
 				"Perception",
@@ -6850,8 +6864,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "37ff4bd694409fddfce158250f52e96923c307132d7edff1f626bfd4c647330c",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-good-boy-hunger.md": {
 			"bodyHash": "a5d19d83a0fb9f37349337d7316d09b9d1fce8be50fe7678586cc1fdc3e7b618",
@@ -8091,7 +8104,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-tea-stall-as-an-anti-ai-safety-system.md": {
-			"bodyHash": "50cd8e8a451be67327456c363d44d8e63f5a287c8c0390e6bd41aa6f7696c29f",
+			"bodyHash": "e1f1366e1e3d63dd96ca442c420a3c1be2d26680adfce715ee177223d196ac12",
+			"hashVersion": 2,
+			"revisionHash": "91b2edcf8a23650c9a249969503e99963c67f49e50654482b08d8579507b2976",
 			"generatedTags": [
 				"Tea Stall",
 				"Stall",
@@ -8106,8 +8121,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "53933e17b8496f22ee35bcd0116809d1ae27c69379a9bc78e7ed7bc05c96ebf6",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-temperature-of-attention.md": {
 			"bodyHash": "c1264363f426648eae47bc155d40369a8cd38bd0c6705cc8340c5c50944827ea",
@@ -8986,7 +9000,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/ubi-india-ai-unemployment-democracy.md": {
-			"bodyHash": "acc136d854fe1c28204cb78f1a551b2417adb5d3d5b782ac78633ae46e8cf480",
+			"bodyHash": "86c2217cc8a3be557d20129889a8a41286b6f89708840a1951888c856b617542",
+			"hashVersion": 2,
+			"revisionHash": "f3eae77d3b7f6e76b8cf48e5126faf5c03147495363682c1b529c96aec701696",
 			"generatedTags": [
 				"Public Health",
 				"Basic Income",
@@ -9001,8 +9017,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1935965c98b62576916b0762b7c54f52ccf1efc4cda31b0693169fca60263eb0",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/unattractive-mans-weather-report.md": {
 			"bodyHash": "d505d53f39fe47ad558eec0bbbf73fd35083a41be64a090925278d3f6339b164",

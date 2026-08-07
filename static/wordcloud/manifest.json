@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T04:30:04.799627+00:00",
+  "generatedAt": "2026-08-07T00:23:10.083600+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -324,12 +324,12 @@
       "wordCount": 130
     },
     "ai-in-india-the-negative-infinity-before-the-singularity": {
-      "generatedAt": "2026-07-20T02:02:04.353469+00:00",
+      "generatedAt": "2026-08-07T00:23:00.288736+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-in-india-the-negative-infinity-before-the-singularity.svg",
       "source": "src/lib/posts/ai-in-india-the-negative-infinity-before-the-singularity.md",
-      "sourceHash": "00abaa3d4269cf5e3d489c900ea47af7f8bcaef8ae044c07dedb5c018b92d04a",
-      "sourceModified": "2026-07-20T02:00:12.384218+00:00",
+      "sourceHash": "4e180226a4b3adb5bbfc44db4c5b32a9cd079087960eaef46edcdbbfb9fd7c14",
+      "sourceModified": "2026-08-07T00:22:12.902339+00:00",
       "topWords": [
         "AI",
         "Fake",
@@ -439,12 +439,12 @@
       "wordCount": 130
     },
     "ai-moat-labor-displacement": {
-      "generatedAt": "2026-07-20T02:02:07.829180+00:00",
+      "generatedAt": "2026-08-07T00:23:00.965816+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-moat-labor-displacement.svg",
       "source": "src/lib/posts/ai-moat-labor-displacement.md",
-      "sourceHash": "1f5fa8ba89f53ee5cf9da4cb1e309a831abf2b34905fa43c176e82f2a1f91ea7",
-      "sourceModified": "2026-07-20T02:00:12.532856+00:00",
+      "sourceHash": "d8754116151ea462d5717510befed43c2cbfc53b27bb930825e649f359fa4b9f",
+      "sourceModified": "2026-08-07T00:22:49.751311+00:00",
       "topWords": [
         "AI",
         "Human",
@@ -1267,12 +1267,12 @@
       "wordCount": 130
     },
     "bessel-correction-for-variance": {
-      "generatedAt": "2026-07-20T02:02:30.945461+00:00",
+      "generatedAt": "2026-08-07T00:23:01.664086+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/bessel-correction-for-variance.svg",
       "source": "src/lib/posts/bessel-correction-for-variance.md",
-      "sourceHash": "c16b4a179d0039051f645513a8538c6e3680dc0c309e71e7cf7c9ab9996dd1f7",
-      "sourceModified": "2026-07-20T02:00:12.416197+00:00",
+      "sourceHash": "01ba3e7109f6ce4ee816ff619d89dba1c583c6473f9f97c44e5ae00e7ef2d619",
+      "sourceModified": "2026-08-07T00:22:49.771772+00:00",
       "topWords": [
         "Sample",
         "Mean",
@@ -1842,12 +1842,12 @@
       "wordCount": 130
     },
     "callous-political-statements-gold-karigars-and-fertiliser": {
-      "generatedAt": "2026-07-20T02:02:46.222538+00:00",
+      "generatedAt": "2026-08-07T00:23:02.325276+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/callous-political-statements-gold-karigars-and-fertiliser.svg",
       "source": "src/lib/posts/callous-political-statements-gold-karigars-and-fertiliser.md",
-      "sourceHash": "a814b3c5e1e48e629ffd7d4b8091d33a3eb8339b324479cc11e4a06f93a34432",
-      "sourceModified": "2026-07-20T02:00:12.359812+00:00",
+      "sourceHash": "3ca0cfcd6772b55b9c107a76d1eea9fcc7fcca929c62d2824416baaa587421d0",
+      "sourceModified": "2026-08-07T00:22:12.890435+00:00",
       "topWords": [
         "Gold",
         "Man",
@@ -2026,12 +2026,12 @@
       "wordCount": 130
     },
     "cicada-ba32-covid-variant": {
-      "generatedAt": "2026-07-20T02:02:50.059182+00:00",
+      "generatedAt": "2026-08-07T00:23:02.995428+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/cicada-ba32-covid-variant.svg",
       "source": "src/lib/posts/cicada-ba32-covid-variant.md",
-      "sourceHash": "50fe00a14d2b8c491cb3cac969f97d03ecd9ea6c60d70caba2523242c01dfcd8",
-      "sourceModified": "2026-07-20T02:00:12.336277+00:00",
+      "sourceHash": "ae1483a6f8b85af236b806919fb19e90b1cd4a926ee0d3e3307d72d3a7d4dc61",
+      "sourceModified": "2026-08-07T00:22:12.895029+00:00",
       "topWords": [
         "BA.3.2",
         "Lineage",
@@ -2095,12 +2095,12 @@
       "wordCount": 130
     },
     "claude-fable-5-warning-label": {
-      "generatedAt": "2026-07-20T02:02:52.186063+00:00",
+      "generatedAt": "2026-08-07T00:23:03.686339+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/claude-fable-5-warning-label.svg",
       "source": "src/lib/posts/claude-fable-5-warning-label.md",
-      "sourceHash": "f953cbaffc06c2647ccccced8db878187992950e4682befdd39d01989b8f30db",
-      "sourceModified": "2026-07-20T02:00:12.265175+00:00",
+      "sourceHash": "5ff85089f8c80ce90ea36d747eac9079a5d7a4fe93ce29ed717fb6be692760ea",
+      "sourceModified": "2026-08-07T00:22:12.898028+00:00",
       "topWords": [
         "Fable",
         "Model",
@@ -3245,12 +3245,12 @@
       "wordCount": 130
     },
     "fellow_passengers_and_the_broken_record": {
-      "generatedAt": "2026-07-20T02:03:19.155146+00:00",
+      "generatedAt": "2026-08-07T00:23:04.408520+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/fellow_passengers_and_the_broken_record.svg",
       "source": "src/lib/posts/fellow_passengers_and_the_broken_record.md",
-      "sourceHash": "214fdbbe36607192abfbf0d29d47b05a5a72de88a2d3983039c2eb559a4b39d3",
-      "sourceModified": "2026-07-20T02:00:12.373183+00:00",
+      "sourceHash": "5ab3e798fed57d7b147c89749dea17b5d28a5224e581675c863d0fedb1fd8306",
+      "sourceModified": "2026-08-07T00:22:12.883939+00:00",
       "topWords": [
         "Song",
         "Ones",
@@ -3521,12 +3521,12 @@
       "wordCount": 130
     },
     "four-fundamental-subspaces": {
-      "generatedAt": "2026-07-20T02:03:27.521445+00:00",
+      "generatedAt": "2026-08-07T00:23:05.087818+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/four-fundamental-subspaces.svg",
       "source": "src/lib/posts/four-fundamental-subspaces.md",
-      "sourceHash": "6b0187fafbed7a7d5b72b3d79d474f8f3d70dc9faa92fba751964941d0ed7714",
-      "sourceModified": "2026-07-20T02:00:12.321330+00:00",
+      "sourceHash": "e7a2390f9736aad8a9df1716ff029ddba6de62fe3a678b59d9a86ff4a523a82e",
+      "sourceModified": "2026-08-07T00:22:12.883939+00:00",
       "topWords": [
         "Space",
         "Nullspace",
@@ -3820,12 +3820,12 @@
       "wordCount": 130
     },
     "healthcare-ai-wrong-objective": {
-      "generatedAt": "2026-07-20T02:03:36.755053+00:00",
+      "generatedAt": "2026-08-07T00:23:05.733773+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/healthcare-ai-wrong-objective.svg",
       "source": "src/lib/posts/healthcare-ai-wrong-objective.md",
-      "sourceHash": "384497df4bc16e7144acd891b486d8082ee4b4c190b6c6351bf373ff2bcd6795",
-      "sourceModified": "2026-07-20T02:00:12.666973+00:00",
+      "sourceHash": "f1c4978e86437e9eb5dc72f2c2a93322437682dcbd17f674386c056abaa50861",
+      "sourceModified": "2026-08-07T00:22:12.905577+00:00",
       "topWords": [
         "Model",
         "Data",
@@ -6212,12 +6212,12 @@
       "wordCount": 130
     },
     "plague-of-pseudoscience-india-scientific-temper": {
-      "generatedAt": "2026-07-20T02:04:40.778389+00:00",
+      "generatedAt": "2026-08-07T00:23:06.551929+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/plague-of-pseudoscience-india-scientific-temper.svg",
       "source": "src/lib/posts/plague-of-pseudoscience-india-scientific-temper.md",
-      "sourceHash": "dfde8ac3b1f4364bfa8d84308d8fa0d934afe8d1d28f0434d4a7948cd7879399",
-      "sourceModified": "2026-07-20T02:01:43.449916+00:00",
+      "sourceHash": "b32baec386036787278b9109d77a163402a4bc008e10de7cf1082728b7b40d07",
+      "sourceModified": "2026-08-07T00:22:49.899068+00:00",
       "topWords": [
         "Science",
         "Becomes",
@@ -6442,12 +6442,12 @@
       "wordCount": 130
     },
     "prognosis-as-philosophy": {
-      "generatedAt": "2026-07-20T02:04:47.500612+00:00",
+      "generatedAt": "2026-08-07T00:23:07.230611+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/prognosis-as-philosophy.svg",
       "source": "src/lib/posts/prognosis-as-philosophy.md",
-      "sourceHash": "f50aa648f61c18a4866243289e312beed016b347518e1433d26efb418f5eedc8",
-      "sourceModified": "2026-07-20T02:00:12.628370+00:00",
+      "sourceHash": "c83c37e295ffb572af4739ace667c45e9cb5b285851c7e4941814a0dd3cd3205",
+      "sourceModified": "2026-08-07T00:22:12.886571+00:00",
       "topWords": [
         "First",
         "Bitterness",
@@ -8673,12 +8673,12 @@
       "wordCount": 130
     },
     "the-coming-unemployment": {
-      "generatedAt": "2026-07-20T02:05:41.210705+00:00",
+      "generatedAt": "2026-08-07T00:23:07.960944+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-coming-unemployment.svg",
       "source": "src/lib/posts/the-coming-unemployment.md",
-      "sourceHash": "032fbbf6c888768f84f6c1fa25b10bbab35e0c04d72232cfc56e17060709f8c2",
-      "sourceModified": "2026-07-20T02:00:12.332657+00:00",
+      "sourceHash": "94ca05cda466c52e15b2dd5f7b34ac0d8b7f6e87ed2e83df23b8ec0c5c56409a",
+      "sourceModified": "2026-08-07T00:22:49.955840+00:00",
       "topWords": [
         "AI",
         "Job",
@@ -9432,12 +9432,12 @@
       "wordCount": 130
     },
     "the-ghost-as-perception": {
-      "generatedAt": "2026-07-20T02:05:59.816695+00:00",
+      "generatedAt": "2026-08-07T00:23:08.649804+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-ghost-as-perception.svg",
       "source": "src/lib/posts/the-ghost-as-perception.md",
-      "sourceHash": "2ffc4c1f302d58329cd3c21ceea155966dc1dfd322a12eb40359c2318dcea9d6",
-      "sourceModified": "2026-07-20T02:00:12.536068+00:00",
+      "sourceHash": "53fb2f58820b5d0653d4a8dc66c02ae96abd3df5904ebfcdb12a71caf7b81ff6",
+      "sourceModified": "2026-08-07T00:22:12.888574+00:00",
       "topWords": [
         "Ghost",
         "Human",
@@ -11111,12 +11111,12 @@
       "wordCount": 130
     },
     "the-tea-stall-as-an-anti-ai-safety-system": {
-      "generatedAt": "2026-07-20T02:06:44.014849+00:00",
+      "generatedAt": "2026-08-07T00:23:09.309897+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-tea-stall-as-an-anti-ai-safety-system.svg",
       "source": "src/lib/posts/the-tea-stall-as-an-anti-ai-safety-system.md",
-      "sourceHash": "8d4605908845c994dcea0c5bbb044154fa8a0630f2c0d5e4bfbc724773eaa999",
-      "sourceModified": "2026-07-20T02:01:44.359899+00:00",
+      "sourceHash": "c8578ddd5e13aecaa18d0033b4d8f445634327fade3342729e7f7d566dcae80e",
+      "sourceModified": "2026-08-07T00:22:12.902339+00:00",
       "topWords": [
         "Tea",
         "Stall",
@@ -12307,12 +12307,12 @@
       "wordCount": 130
     },
     "ubi-india-ai-unemployment-democracy": {
-      "generatedAt": "2026-07-20T02:07:16.009306+00:00",
+      "generatedAt": "2026-08-07T00:23:10.051864+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ubi-india-ai-unemployment-democracy.svg",
       "source": "src/lib/posts/ubi-india-ai-unemployment-democracy.md",
-      "sourceHash": "13be7a76bcbf715c3aedc40bf89c5811011b26df7b5c47f8f00f8a8a9efb31ac",
-      "sourceModified": "2026-07-20T02:00:12.531205+00:00",
+      "sourceHash": "c40d8a26c8b6a22099bf0d8f75eb4bfd92b807589a30d367109b84d9193cf0c0",
+      "sourceModified": "2026-08-07T00:22:12.890435+00:00",
       "topWords": [
         "UBI",
         "India",

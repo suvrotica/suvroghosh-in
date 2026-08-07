@@ -4210,6 +4210,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
+			"src": "/thumbnail/art-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
+			"bytes": 214944,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ai-layoff-trap-firing-your-customers.jpg",
 			"src": "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg",
 			"bytes": 139001,
@@ -4217,9 +4224,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-ai-moat-labor-displacement.jpg",
+			"src": "/thumbnail/art-ai-moat-labor-displacement.jpg",
+			"bytes": 210813,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-bengal-changed-color-not-character.jpg",
 			"src": "/thumbnail/art-bengal-changed-color-not-character.jpg",
 			"bytes": 260463,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bessel-correction-for-variance.jpg",
+			"src": "/thumbnail/art-bessel-correction-for-variance.jpg",
+			"bytes": 122044,
 			"width": 1200,
 			"height": 800
 		},
@@ -4241,6 +4262,27 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-calcutta-summer-of-2026.jpg",
 			"src": "/thumbnail/art-calcutta-summer-of-2026.jpg",
 			"bytes": 133548,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-callous-political-statements-gold-karigars-and-fertiliser.jpg",
+			"src": "/thumbnail/art-callous-political-statements-gold-karigars-and-fertiliser.jpg",
+			"bytes": 168586,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-cicada-ba32-covid-variant.jpg",
+			"src": "/thumbnail/art-cicada-ba32-covid-variant.jpg",
+			"bytes": 142048,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-claude-fable-5-warning-label.jpg",
+			"src": "/thumbnail/art-claude-fable-5-warning-label.jpg",
+			"bytes": 113266,
 			"width": 1200,
 			"height": 800
 		},
@@ -4294,6 +4336,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-fellow-passengers-and-the-broken-record.jpg",
+			"src": "/thumbnail/art-fellow-passengers-and-the-broken-record.jpg",
+			"bytes": 122720,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-find-study-diabetes-kidney-family-tree.jpg",
 			"src": "/thumbnail/art-find-study-diabetes-kidney-family-tree.jpg",
 			"bytes": 127156,
@@ -4315,9 +4364,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-four-fundamental-subspaces.jpg",
+			"src": "/thumbnail/art-four-fundamental-subspaces.jpg",
+			"bytes": 91690,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"src": "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"bytes": 224679,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-healthcare-ai-wrong-objective.jpg",
+			"src": "/thumbnail/art-healthcare-ai-wrong-objective.jpg",
+			"bytes": 112116,
 			"width": 1200,
 			"height": 800
 		},
@@ -4420,6 +4483,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-plague-of-pseudoscience-india-scientific-temper.jpg",
+			"src": "/thumbnail/art-plague-of-pseudoscience-india-scientific-temper.jpg",
+			"bytes": 149230,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-pohela-baisakh-mughal-calendar-memory.jpg",
 			"src": "/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg",
 			"bytes": 250494,
@@ -4430,6 +4500,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
 			"src": "/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
 			"bytes": 90681,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-prognosis-as-philosophy.jpg",
+			"src": "/thumbnail/art-prognosis-as-philosophy.jpg",
+			"bytes": 101393,
 			"width": 1200,
 			"height": 800
 		},
@@ -4455,6 +4532,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-coming-unemployment.jpg",
+			"src": "/thumbnail/art-the-coming-unemployment.jpg",
+			"bytes": 115527,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-ghost-as-perception.jpg",
+			"src": "/thumbnail/art-the-ghost-as-perception.jpg",
+			"bytes": 113174,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-new-mantra.jpg",
 			"src": "/thumbnail/art-the-new-mantra.jpg",
 			"bytes": 103240,
@@ -4469,6 +4560,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-tea-stall-as-an-anti-ai-safety-system.jpg",
+			"src": "/thumbnail/art-the-tea-stall-as-an-anti-ai-safety-system.jpg",
+			"bytes": 153526,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-thin-fat-bellied-bengali-insulin-resistance.jpg",
 			"src": "/thumbnail/art-thin-fat-bellied-bengali-insulin-resistance.jpg",
 			"bytes": 149400,
@@ -4479,6 +4577,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-this-blogs-history.jpg",
 			"src": "/thumbnail/art-this-blogs-history.jpg",
 			"bytes": 160062,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ubi-india-ai-unemployment-democracy.jpg",
+			"src": "/thumbnail/art-ubi-india-ai-unemployment-democracy.jpg",
+			"bytes": 168804,
 			"width": 1200,
 			"height": 800
 		},
@@ -4686,13 +4791,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
-			"src": "/thumbnail/safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
-			"bytes": 127613,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-ai-meaningful-work-and-the-trust-collapse.jpg",
 			"src": "/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg",
 			"bytes": 113905,
@@ -4703,13 +4801,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-ai-meaningful-work-trust-collapse.jpg",
 			"src": "/thumbnail/safe-ai-meaningful-work-trust-collapse.jpg",
 			"bytes": 124429,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-moat-labor-displacement.jpg",
-			"src": "/thumbnail/safe-ai-moat-labor-displacement.jpg",
-			"bytes": 116766,
 			"width": 1200,
 			"height": 800
 		},
@@ -4903,13 +4994,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-bessel-correction-for-variance.jpg",
-			"src": "/thumbnail/safe-bessel-correction-for-variance.jpg",
-			"bytes": 118529,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-bipolar-depression-friendless-blister.jpg",
 			"src": "/thumbnail/safe-bipolar-depression-friendless-blister.jpg",
 			"bytes": 123883,
@@ -4994,13 +5078,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-callous-political-statements-gold-karigars-and-fertiliser.jpg",
-			"src": "/thumbnail/safe-callous-political-statements-gold-karigars-and-fertiliser.jpg",
-			"bytes": 123549,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg",
 			"src": "/thumbnail/safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg",
 			"bytes": 108997,
@@ -5029,23 +5106,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-cicada-ba32-covid-variant.jpg",
-			"src": "/thumbnail/safe-cicada-ba32-covid-variant.jpg",
-			"bytes": 115238,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-classification-and-variety-of-rotting-people-in-calcutta.jpg",
 			"src": "/thumbnail/safe-classification-and-variety-of-rotting-people-in-calcutta.jpg",
 			"bytes": 129027,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-claude-fable-5-warning-label.jpg",
-			"src": "/thumbnail/safe-claude-fable-5-warning-label.jpg",
-			"bytes": 115918,
 			"width": 1200,
 			"height": 800
 		},
@@ -5232,13 +5295,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-fellow-passengers-and-the-broken-record.jpg",
-			"src": "/thumbnail/safe-fellow-passengers-and-the-broken-record.jpg",
-			"bytes": 117589,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-fhir-for-a-curious-student-in-calcutta.jpg",
 			"src": "/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg",
 			"bytes": 111938,
@@ -5295,13 +5351,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-four-fundamental-subspaces.jpg",
-			"src": "/thumbnail/safe-four-fundamental-subspaces.jpg",
-			"bytes": 122055,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-fractal-geometry-of-a-half-lived-life.jpg",
 			"src": "/thumbnail/safe-fractal-geometry-of-a-half-lived-life.jpg",
 			"bytes": 112657,
@@ -5354,13 +5403,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-hawkers-are-not-rubbish.jpg",
 			"src": "/thumbnail/safe-hawkers-are-not-rubbish.jpg",
 			"bytes": 119290,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-healthcare-ai-wrong-objective.jpg",
-			"src": "/thumbnail/safe-healthcare-ai-wrong-objective.jpg",
-			"bytes": 131222,
 			"width": 1200,
 			"height": 800
 		},
@@ -5806,13 +5848,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-plague-of-pseudoscience-india-scientific-temper.jpg",
-			"src": "/thumbnail/safe-plague-of-pseudoscience-india-scientific-temper.jpg",
-			"bytes": 115509,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-pod-mara-gechhe-calcutta-essay.jpg",
 			"src": "/thumbnail/safe-pod-mara-gechhe-calcutta-essay.jpg",
 			"bytes": 108705,
@@ -5851,13 +5886,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-private-nuisance-at-five-thirty-in-calcutta.jpg",
 			"src": "/thumbnail/safe-private-nuisance-at-five-thirty-in-calcutta.jpg",
 			"bytes": 110245,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-prognosis-as-philosophy.jpg",
-			"src": "/thumbnail/safe-prognosis-as-philosophy.jpg",
-			"bytes": 121569,
 			"width": 1200,
 			"height": 800
 		},
@@ -6219,13 +6247,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-coming-unemployment.jpg",
-			"src": "/thumbnail/safe-the-coming-unemployment.jpg",
-			"bytes": 133595,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-coming-white-collar-mendicancy.jpg",
 			"src": "/thumbnail/safe-the-coming-white-collar-mendicancy.jpg",
 			"bytes": 118414,
@@ -6334,13 +6355,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-geometry-of-absence.jpg",
 			"src": "/thumbnail/safe-the-geometry-of-absence.jpg",
 			"bytes": 116220,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-ghost-as-perception.jpg",
-			"src": "/thumbnail/safe-the-ghost-as-perception.jpg",
-			"bytes": 123027,
 			"width": 1200,
 			"height": 800
 		},
@@ -6562,13 +6576,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-tea-stall-as-an-anti-ai-safety-system.jpg",
-			"src": "/thumbnail/safe-the-tea-stall-as-an-anti-ai-safety-system.jpg",
-			"bytes": 126142,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-terrace-republic.jpg",
 			"src": "/thumbnail/safe-the-terrace-republic.jpg",
 			"bytes": 112219,
@@ -6719,13 +6726,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-twaddle-tendency.jpg",
 			"src": "/thumbnail/safe-twaddle-tendency.jpg",
 			"bytes": 108383,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ubi-india-ai-unemployment-democracy.jpg",
-			"src": "/thumbnail/safe-ubi-india-ai-unemployment-democracy.jpg",
-			"bytes": 111280,
 			"width": 1200,
 			"height": 800
 		},
