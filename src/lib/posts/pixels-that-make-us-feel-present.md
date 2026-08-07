@@ -1,17 +1,19 @@
 ---
 title: "Pixels That Make Us Feel Present"
-description: "Social media and YouTube do not merely show us the world; they lend us a fake front-row seat and then quietly borrow our nervous system. This post looks at why distant pixels can make ordinary people feel rage, fear, belonging, and certainty without evidence."
+description: "How social media and video offer a false front-row seat, borrowing our nerves to manufacture rage, fear, belonging, and certainty."
 date: "2026-05-09"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Clip","Thumbnail","Participation","Offers","Real","Doorway","Recommendation","Ask","YouTube","Emotional"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-pixels-that-make-us-feel-present.jpg"
+thumbnail: "/thumbnail/art-pixels-that-make-us-feel-present.jpg"
+thumbnailAlt: "Glowing pixel mosaic reaches from distant events into a viewer’s Calcutta sitting room"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-pixels-that-make-us-feel-present.jpg" />
+<Pi src="/thumbnail/art-pixels-that-make-us-feel-present.jpg" />
 
 Acronyms used: AI [Artificial Intelligence, software systems that learn patterns from data and use those patterns to generate, rank, recommend, predict, or persuade], SEO [Search Engine Optimization, the craft of making online writing discoverable by search engines and recommendation systems], FOMO [Fear Of Missing Out, the anxious feeling that others are participating in something important while one is being left behind].
 

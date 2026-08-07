@@ -2,16 +2,18 @@
 title: "Slow Poisoning Republic"
 description: "A sharp Calcutta essay on everyday cheating, public distrust, and the small private lies that slowly poison a country."
 date: "2026-06-15"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Don’t Worry","Cheats","Calls","Cheat","Trust","Sewage","Everyone","Country","Build","Snow"]
 published: true
 color: "rust"
-thumbnail: "/thumbnail/safe-slow-poisoning-republic.jpg"
+thumbnail: "/thumbnail/art-slow-poisoning-republic.jpg"
+thumbnailAlt: "Small household pipe leaks slowly darken a shared civic water vessel"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-slow-poisoning-republic.jpg" />
+<Pi src="/thumbnail/art-slow-poisoning-republic.jpg" />
 
 Acronyms used: UPI [Unified Payments Interface, India’s instant digital payment system for bank-to-bank transfers through phones]; GDP [Gross Domestic Product, the money value of goods and services produced by an economy]; BOD [Biochemical Oxygen Demand, a measure of how much oxygen polluted water consumes as organic matter breaks down].
 

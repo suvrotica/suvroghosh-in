@@ -2,11 +2,13 @@
 title: "Jealous of the Stupid"
 description: "A comic and bitter Calcutta essay about knowledge, childhood, superstition, poverty, loneliness, and the strange envy of people who still live inside mystery."
 date: "2026-06-16"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Ceiling Fan","Stupidity","Knowing","Miss","Stupid","Jealous","Filth","Knowledge","Entropy","Format"]
+tags: ["Ceiling Fan","Stupidity","Knowing","Miss","Stupid","Jealous","Filth","Knowledge","Format","Entropy"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-jealous-of-the-stupid.jpg"
+thumbnail: "/thumbnail/art-jealous-of-the-stupid.jpg"
+thumbnailAlt: "Middle-aged Bengali reader watching children find wonder beyond his book-filled room"
 ---
 
 Acronyms used in this post:
@@ -21,7 +23,7 @@ AI: Artificial Intelligence, software systems that imitate selected parts of hum
 
 <TTS />
 
-<Pi src="/thumbnail/safe-jealous-of-the-stupid.jpg" />
+<Pi src="/thumbnail/art-jealous-of-the-stupid.jpg" />
 
 ---
 

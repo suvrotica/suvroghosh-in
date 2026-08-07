@@ -4210,9 +4210,44 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-a-cup-of-cha-is-not-a-small-thing.jpg",
+			"src": "/thumbnail/art-a-cup-of-cha-is-not-a-small-thing.jpg",
+			"bytes": 166244,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-a-meaningless-number-on-an-average-star.jpg",
+			"src": "/thumbnail/art-a-meaningless-number-on-an-average-star.jpg",
+			"bytes": 159558,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-a-read-this-first.jpg",
 			"src": "/thumbnail/art-a-read-this-first.jpg",
 			"bytes": 276005,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-a-trapezoid-in-low-light.jpg",
+			"src": "/thumbnail/art-a-trapezoid-in-low-light.jpg",
+			"bytes": 113714,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-administratively-deleted.jpg",
+			"src": "/thumbnail/art-administratively-deleted.jpg",
+			"bytes": 184916,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-after-america-before-nothing.jpg",
+			"src": "/thumbnail/art-after-america-before-nothing.jpg",
+			"bytes": 130870,
 			"width": 1200,
 			"height": 800
 		},
@@ -4322,9 +4357,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-aimless-with-mangoes.jpg",
+			"src": "/thumbnail/art-aimless-with-mangoes.jpg",
+			"bytes": 296066,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-america-and-calcutta.jpg",
 			"src": "/thumbnail/art-america-and-calcutta.jpg",
 			"bytes": 111423,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-anger-the-last-working-appliance.jpg",
+			"src": "/thumbnail/art-anger-the-last-working-appliance.jpg",
+			"bytes": 68143,
 			"width": 1200,
 			"height": 800
 		},
@@ -4350,9 +4399,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-arachnoid-in-the-boondocks.jpg",
+			"src": "/thumbnail/art-arachnoid-in-the-boondocks.jpg",
+			"bytes": 239860,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-arrow-uncertainty-medical-care-healthcare-it.jpg",
 			"src": "/thumbnail/art-arrow-uncertainty-medical-care-healthcare-it.jpg",
 			"bytes": 113386,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-artisanal-darkness-in-a-kolkata-room.jpg",
+			"src": "/thumbnail/art-artisanal-darkness-in-a-kolkata-room.jpg",
+			"bytes": 141171,
 			"width": 1200,
 			"height": 800
 		},
@@ -4371,6 +4434,27 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-babu-culture-vip-india-obsequiousness.jpg",
+			"src": "/thumbnail/art-babu-culture-vip-india-obsequiousness.jpg",
+			"bytes": 196784,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-badly-lit-municipality-of-myself.jpg",
+			"src": "/thumbnail/art-badly-lit-municipality-of-myself.jpg",
+			"bytes": 207585,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
+			"src": "/thumbnail/art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
+			"bytes": 231949,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-bar-english-for-bengalis.jpg",
 			"src": "/thumbnail/art-bar-english-for-bengalis.jpg",
 			"bytes": 135236,
@@ -4381,6 +4465,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-barebones-lifeboat-calcutta.jpg",
 			"src": "/thumbnail/art-barebones-lifeboat-calcutta.jpg",
 			"bytes": 170479,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
+			"src": "/thumbnail/art-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
+			"bytes": 196723,
 			"width": 1200,
 			"height": 800
 		},
@@ -4420,9 +4511,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
+			"src": "/thumbnail/art-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
+			"bytes": 137162,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-bengali-tintin-in-kolkata.jpg",
 			"src": "/thumbnail/art-bengali-tintin-in-kolkata.jpg",
 			"bytes": 341740,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bengali-who-knows-too-much-to-move.jpg",
+			"src": "/thumbnail/art-bengali-who-knows-too-much-to-move.jpg",
+			"bytes": 255085,
 			"width": 1200,
 			"height": 800
 		},
@@ -4441,6 +4546,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bipolar-mood-and-calcutta-calculus.jpg",
+			"src": "/thumbnail/art-bipolar-mood-and-calcutta-calculus.jpg",
+			"bytes": 179877,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-blind-angry-unhappiness.jpg",
+			"src": "/thumbnail/art-blind-angry-unhappiness.jpg",
+			"bytes": 132104,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-body-going-to-plan.jpg",
 			"src": "/thumbnail/art-body-going-to-plan.jpg",
 			"bytes": 146920,
@@ -4455,9 +4574,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-brain-scrap-yard.jpg",
+			"src": "/thumbnail/art-brain-scrap-yard.jpg",
+			"bytes": 186512,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-brittle-brain-blazing-light-calcutta-room.jpg",
 			"src": "/thumbnail/art-brittle-brain-blazing-light-calcutta-room.jpg",
 			"bytes": 136669,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-anti-motivation.jpg",
+			"src": "/thumbnail/art-calcutta-anti-motivation.jpg",
+			"bytes": 239772,
 			"width": 1200,
 			"height": 800
 		},
@@ -4476,9 +4609,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-calcutta-drain-worm.jpg",
+			"src": "/thumbnail/art-calcutta-drain-worm.jpg",
+			"bytes": 174807,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-calcutta-fish-field-guide.jpg",
 			"src": "/thumbnail/art-calcutta-fish-field-guide.jpg",
 			"bytes": 260144,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-morning-malaise.jpg",
+			"src": "/thumbnail/art-calcutta-morning-malaise.jpg",
+			"bytes": 205303,
 			"width": 1200,
 			"height": 800
 		},
@@ -4514,6 +4661,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-capex-and-the-geometry-of-obsolescence.jpg",
 			"src": "/thumbnail/art-capex-and-the-geometry-of-obsolescence.jpg",
 			"bytes": 175512,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-chronic-traumatic-nihilism-calcutta.jpg",
+			"src": "/thumbnail/art-chronic-traumatic-nihilism-calcutta.jpg",
+			"bytes": 171366,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-chyavana-and-the-refusal-to-rot-quietly.jpg",
+			"src": "/thumbnail/art-chyavana-and-the-refusal-to-rot-quietly.jpg",
+			"bytes": 244118,
 			"width": 1200,
 			"height": 800
 		},
@@ -4560,6 +4721,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-complexity-in-calcutta.jpg",
+			"src": "/thumbnail/art-complexity-in-calcutta.jpg",
+			"bytes": 273328,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-concentric-incurable-angsts-of-a-bengali-man.jpg",
+			"src": "/thumbnail/art-concentric-incurable-angsts-of-a-bengali-man.jpg",
+			"bytes": 230775,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-confounding-factors-healthcare-it-analytics.jpg",
 			"src": "/thumbnail/art-confounding-factors-healthcare-it-analytics.jpg",
 			"bytes": 100250,
@@ -4574,9 +4749,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-constipated-americans-diarrhoea.jpg",
+			"src": "/thumbnail/art-constipated-americans-diarrhoea.jpg",
+			"bytes": 149414,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-courage-to-be-disliked-in-calcutta.jpg",
 			"src": "/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg",
 			"bytes": 158441,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-crab-diaries-of-a-bengali-kakistocrat.jpg",
+			"src": "/thumbnail/art-crab-diaries-of-a-bengali-kakistocrat.jpg",
+			"bytes": 236423,
 			"width": 1200,
 			"height": 800
 		},
@@ -4609,6 +4798,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-depressive-mind-government-office-after-rain.jpg",
+			"src": "/thumbnail/art-depressive-mind-government-office-after-rain.jpg",
+			"bytes": 205363,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
 			"src": "/thumbnail/art-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
 			"bytes": 86367,
@@ -4626,6 +4822,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg",
 			"src": "/thumbnail/art-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg",
 			"bytes": 170848,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-educated-boredom-horror.jpg",
+			"src": "/thumbnail/art-educated-boredom-horror.jpg",
+			"bytes": 255158,
 			"width": 1200,
 			"height": 800
 		},
@@ -4665,6 +4868,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-epic.jpg",
+			"src": "/thumbnail/art-epic.jpg",
+			"bytes": 295248,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-existential-arithmetic-at-bread-level.jpg",
 			"src": "/thumbnail/art-existential-arithmetic-at-bread-level.jpg",
 			"bytes": 127627,
@@ -4682,6 +4892,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-facial-pleasure-receipts-and-modern-euphemism.jpg",
 			"src": "/thumbnail/art-facial-pleasure-receipts-and-modern-euphemism.jpg",
 			"bytes": 105398,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-falling-through-the-crack.jpg",
+			"src": "/thumbnail/art-falling-through-the-crack.jpg",
+			"bytes": 126899,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-falling-through-the-southern-edge-at-3am.jpg",
+			"src": "/thumbnail/art-falling-through-the-southern-edge-at-3am.jpg",
+			"bytes": 137028,
 			"width": 1200,
 			"height": 800
 		},
@@ -4721,6 +4945,27 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-fish-and-the-press-conference.jpg",
+			"src": "/thumbnail/art-fish-and-the-press-conference.jpg",
+			"bytes": 217098,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-fish-market-merit-and-the-small-republic-of-honesty.jpg",
+			"src": "/thumbnail/art-fish-market-merit-and-the-small-republic-of-honesty.jpg",
+			"bytes": 141973,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-flood-of-kakistocracy.jpg",
+			"src": "/thumbnail/art-flood-of-kakistocracy.jpg",
+			"bytes": 204580,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-fog-machines-in-the-temple.jpg",
 			"src": "/thumbnail/art-fog-machines-in-the-temple.jpg",
 			"bytes": 134546,
@@ -4742,9 +4987,51 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-fractal-geometry-of-a-half-lived-life.jpg",
+			"src": "/thumbnail/art-fractal-geometry-of-a-half-lived-life.jpg",
+			"bytes": 218388,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-frog-in-the-robot-century.jpg",
+			"src": "/thumbnail/art-frog-in-the-robot-century.jpg",
+			"bytes": 216552,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-future-tense-fog.jpg",
+			"src": "/thumbnail/art-future-tense-fog.jpg",
+			"bytes": 93858,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"src": "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"bytes": 224679,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-greed-made-me-small.jpg",
+			"src": "/thumbnail/art-greed-made-me-small.jpg",
+			"bytes": 130669,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-groundhog-cud.jpg",
+			"src": "/thumbnail/art-groundhog-cud.jpg",
+			"bytes": 191770,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-happiness-after-quicksand.jpg",
+			"src": "/thumbnail/art-happiness-after-quicksand.jpg",
+			"bytes": 168297,
 			"width": 1200,
 			"height": 800
 		},
@@ -4770,6 +5057,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
+			"src": "/thumbnail/art-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
+			"bytes": 141400,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-hie-first-principles-openhie.jpg",
 			"src": "/thumbnail/art-hie-first-principles-openhie.jpg",
 			"bytes": 175588,
@@ -4784,6 +5078,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-highly-composite-mornings-prime-afternoons.jpg",
+			"src": "/thumbnail/art-highly-composite-mornings-prime-afternoons.jpg",
+			"bytes": 245609,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-hl7-vs-fhir-explained-simply.jpg",
 			"src": "/thumbnail/art-hl7-vs-fhir-explained-simply.jpg",
 			"bytes": 125496,
@@ -4794,6 +5095,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-homeopathy-pseudoscience-persistence.jpg",
 			"src": "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg",
 			"bytes": 136683,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hope-dies-at-different-rates.jpg",
+			"src": "/thumbnail/art-hope-dies-at-different-rates.jpg",
+			"bytes": 117680,
 			"width": 1200,
 			"height": 800
 		},
@@ -4822,6 +5130,34 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-how-va-healthcare-data-systems-work.jpg",
 			"src": "/thumbnail/art-how-va-healthcare-data-systems-work.jpg",
 			"bytes": 149813,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-human-rights-oh-what-a-joke.jpg",
+			"src": "/thumbnail/art-human-rights-oh-what-a-joke.jpg",
+			"bytes": 137242,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-i-am-a-solipsist-nihilist.jpg",
+			"src": "/thumbnail/art-i-am-a-solipsist-nihilist.jpg",
+			"bytes": 139314,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-i-could-have-been-a-simple-fool.jpg",
+			"src": "/thumbnail/art-i-could-have-been-a-simple-fool.jpg",
+			"bytes": 221765,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-i-do-not-hate-the-world-i-am-tired.jpg",
+			"src": "/thumbnail/art-i-do-not-hate-the-world-i-am-tired.jpg",
+			"bytes": 117860,
 			"width": 1200,
 			"height": 800
 		},
@@ -4861,9 +5197,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-india-hoodlums-goons-assortment.jpg",
+			"src": "/thumbnail/art-india-hoodlums-goons-assortment.jpg",
+			"bytes": 306311,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-india-noise-machine-small-man.jpg",
 			"src": "/thumbnail/art-india-noise-machine-small-man.jpg",
 			"bytes": 241161,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-scientific-temper-after-return.jpg",
+			"src": "/thumbnail/art-india-scientific-temper-after-return.jpg",
+			"bytes": 140248,
 			"width": 1200,
 			"height": 800
 		},
@@ -4889,6 +5239,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-insect-forms-of-a-calcutta-life.jpg",
+			"src": "/thumbnail/art-insect-forms-of-a-calcutta-life.jpg",
+			"bytes": 260634,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-intolerable-cruelty.jpg",
 			"src": "/thumbnail/art-intolerable-cruelty.jpg",
 			"bytes": 218644,
@@ -4910,6 +5267,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-jealous-of-the-stupid.jpg",
+			"src": "/thumbnail/art-jealous-of-the-stupid.jpg",
+			"bytes": 104698,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
 			"src": "/thumbnail/art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
 			"bytes": 268030,
@@ -4927,6 +5291,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-kenneth-arrow-medical-care.jpg",
 			"src": "/thumbnail/art-kenneth-arrow-medical-care.jpg",
 			"bytes": 111284,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-kinship-range-limit-calcutta.jpg",
+			"src": "/thumbnail/art-kinship-range-limit-calcutta.jpg",
+			"bytes": 253774,
 			"width": 1200,
 			"height": 800
 		},
@@ -4955,6 +5326,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-latent-space-in-healthcare-data.jpg",
 			"src": "/thumbnail/art-latent-space-in-healthcare-data.jpg",
 			"bytes": 153292,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-linkedin-job-market-india-national-xray.jpg",
+			"src": "/thumbnail/art-linkedin-job-market-india-national-xray.jpg",
+			"bytes": 264239,
 			"width": 1200,
 			"height": 800
 		},
@@ -5071,6 +5449,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-pixels-that-make-us-feel-present.jpg",
+			"src": "/thumbnail/art-pixels-that-make-us-feel-present.jpg",
+			"bytes": 164828,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-plague-of-pseudoscience-india-scientific-temper.jpg",
 			"src": "/thumbnail/art-plague-of-pseudoscience-india-scientific-temper.jpg",
 			"bytes": 149230,
@@ -5130,6 +5515,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-randomness-chaos-complexity-calcutta.jpg",
 			"src": "/thumbnail/art-randomness-chaos-complexity-calcutta.jpg",
 			"bytes": 235746,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-recidivism-of-fraud-and-superstition-in-india.jpg",
+			"src": "/thumbnail/art-recidivism-of-fraud-and-superstition-in-india.jpg",
+			"bytes": 206050,
 			"width": 1200,
 			"height": 800
 		},
@@ -5197,6 +5589,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-shallow-water-loud-television.jpg",
+			"src": "/thumbnail/art-shallow-water-loud-television.jpg",
+			"bytes": 165229,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sharper-teeth.jpg",
+			"src": "/thumbnail/art-sharper-teeth.jpg",
+			"bytes": 244835,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-sinusoidal-dementia.jpg",
 			"src": "/thumbnail/art-sinusoidal-dementia.jpg",
 			"bytes": 216836,
@@ -5207,6 +5613,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-sitala-manasa-public-health-superstition.jpg",
 			"src": "/thumbnail/art-sitala-manasa-public-health-superstition.jpg",
 			"bytes": 225201,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-slow-poisoning-republic.jpg",
+			"src": "/thumbnail/art-slow-poisoning-republic.jpg",
+			"bytes": 247543,
 			"width": 1200,
 			"height": 800
 		},
@@ -5260,6 +5673,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-tea-skin-and-the-science-of-suspicion.jpg",
+			"src": "/thumbnail/art-tea-skin-and-the-science-of-suspicion.jpg",
+			"bytes": 150007,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-technical-blogging-in-a-country-of-missing-systems.jpg",
 			"src": "/thumbnail/art-technical-blogging-in-a-country-of-missing-systems.jpg",
 			"bytes": 199690,
@@ -5309,9 +5729,30 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-churning-of-the-lesser-fluids.jpg",
+			"src": "/thumbnail/art-the-churning-of-the-lesser-fluids.jpg",
+			"bytes": 149550,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-city-that-begs-at-the-window.jpg",
+			"src": "/thumbnail/art-the-city-that-begs-at-the-window.jpg",
+			"bytes": 147198,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-coming-unemployment.jpg",
 			"src": "/thumbnail/art-the-coming-unemployment.jpg",
 			"bytes": 115527,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-coming-white-collar-mendicancy.jpg",
+			"src": "/thumbnail/art-the-coming-white-collar-mendicancy.jpg",
+			"bytes": 158344,
 			"width": 1200,
 			"height": 800
 		},
@@ -5351,6 +5792,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-fat-animal-in-the-mirror.jpg",
+			"src": "/thumbnail/art-the-fat-animal-in-the-mirror.jpg",
+			"bytes": 148089,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-geometry-of-absence.jpg",
 			"src": "/thumbnail/art-the-geometry-of-absence.jpg",
 			"bytes": 207950,
@@ -5361,6 +5809,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-the-ghost-as-perception.jpg",
 			"src": "/thumbnail/art-the-ghost-as-perception.jpg",
 			"bytes": 113174,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-gracefully-grotesque-collapse.jpg",
+			"src": "/thumbnail/art-the-gracefully-grotesque-collapse.jpg",
+			"bytes": 129608,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-great-indian-fence-sitter.jpg",
+			"src": "/thumbnail/art-the-great-indian-fence-sitter.jpg",
+			"bytes": 183555,
 			"width": 1200,
 			"height": 800
 		},
@@ -5393,6 +5855,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-morlocks-in-white-kurta.jpg",
+			"src": "/thumbnail/art-the-morlocks-in-white-kurta.jpg",
+			"bytes": 251510,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-new-mantra.jpg",
 			"src": "/thumbnail/art-the-new-mantra.jpg",
 			"bytes": 103240,
@@ -5407,6 +5876,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-pharmakon-of-woodlice.jpg",
+			"src": "/thumbnail/art-the-pharmakon-of-woodlice.jpg",
+			"bytes": 162963,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-robot-begins-as-a-loose-wire.jpg",
 			"src": "/thumbnail/art-the-robot-begins-as-a-loose-wire.jpg",
 			"bytes": 122939,
@@ -5417,6 +5893,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-the-router-behind-the-television.jpg",
 			"src": "/thumbnail/art-the-router-behind-the-television.jpg",
 			"bytes": 99803,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
+			"src": "/thumbnail/art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
+			"bytes": 139148,
 			"width": 1200,
 			"height": 800
 		},
@@ -5438,6 +5921,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-the-test-is-congress-where-congress-rules.jpg",
 			"src": "/thumbnail/art-the-test-is-congress-where-congress-rules.jpg",
 			"bytes": 113674,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-thermodynamics-of-envy.jpg",
+			"src": "/thumbnail/art-the-thermodynamics-of-envy.jpg",
+			"bytes": 214804,
 			"width": 1200,
 			"height": 800
 		},
@@ -5512,6 +6002,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-twaddle-tendency.jpg",
+			"src": "/thumbnail/art-twaddle-tendency.jpg",
+			"bytes": 195601,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ubi-india-ai-unemployment-democracy.jpg",
 			"src": "/thumbnail/art-ubi-india-ai-unemployment-democracy.jpg",
 			"bytes": 168804,
@@ -5543,6 +6040,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-war-spillovers-ukraine-iran-technology.jpg",
 			"src": "/thumbnail/art-war-spillovers-ukraine-iran-technology.jpg",
 			"bytes": 208432,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-when-structure-loses-its-map.jpg",
+			"src": "/thumbnail/art-when-structure-loses-its-map.jpg",
+			"bytes": 125026,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-when-the-office-learns-to-beg.jpg",
+			"src": "/thumbnail/art-when-the-office-learns-to-beg.jpg",
+			"bytes": 218770,
 			"width": 1200,
 			"height": 800
 		},
@@ -5680,191 +6191,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1086
 		},
 		{
-			"name": "safe-a-cup-of-cha-is-not-a-small-thing.jpg",
-			"src": "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg",
-			"bytes": 119540,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-a-meaningless-number-on-an-average-star.jpg",
-			"src": "/thumbnail/safe-a-meaningless-number-on-an-average-star.jpg",
-			"bytes": 129707,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-a-trapezoid-in-low-light.jpg",
-			"src": "/thumbnail/safe-a-trapezoid-in-low-light.jpg",
-			"bytes": 125056,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-administratively-deleted.jpg",
-			"src": "/thumbnail/safe-administratively-deleted.jpg",
-			"bytes": 115060,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-after-america-before-nothing.jpg",
-			"src": "/thumbnail/safe-after-america-before-nothing.jpg",
-			"bytes": 129711,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-aimless-with-mangoes.jpg",
-			"src": "/thumbnail/safe-aimless-with-mangoes.jpg",
-			"bytes": 130739,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-anger-the-last-working-appliance.jpg",
-			"src": "/thumbnail/safe-anger-the-last-working-appliance.jpg",
-			"bytes": 123508,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-arachnoid-in-the-boondocks.jpg",
-			"src": "/thumbnail/safe-arachnoid-in-the-boondocks.jpg",
-			"bytes": 118313,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-artisanal-darkness-in-a-kolkata-room.jpg",
-			"src": "/thumbnail/safe-artisanal-darkness-in-a-kolkata-room.jpg",
-			"bytes": 128280,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-babu-culture-vip-india-obsequiousness.jpg",
-			"src": "/thumbnail/safe-babu-culture-vip-india-obsequiousness.jpg",
-			"bytes": 114654,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-badly-lit-municipality-of-myself.jpg",
-			"src": "/thumbnail/safe-badly-lit-municipality-of-myself.jpg",
-			"bytes": 121035,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
-			"src": "/thumbnail/safe-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
-			"bytes": 112522,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
-			"src": "/thumbnail/safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
-			"bytes": 114979,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-bengal-changed-color-not-character.jpg",
 			"src": "/thumbnail/safe-bengal-changed-color-not-character.jpg",
 			"bytes": 127888,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
-			"src": "/thumbnail/safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
-			"bytes": 122316,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-who-knows-too-much-to-move.jpg",
-			"src": "/thumbnail/safe-bengali-who-knows-too-much-to-move.jpg",
-			"bytes": 114112,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bipolar-mood-and-calcutta-calculus.jpg",
-			"src": "/thumbnail/safe-bipolar-mood-and-calcutta-calculus.jpg",
-			"bytes": 115501,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-blind-angry-unhappiness.jpg",
-			"src": "/thumbnail/safe-blind-angry-unhappiness.jpg",
-			"bytes": 121730,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-brain-scrap-yard.jpg",
-			"src": "/thumbnail/safe-brain-scrap-yard.jpg",
-			"bytes": 114267,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-anti-motivation.jpg",
-			"src": "/thumbnail/safe-calcutta-anti-motivation.jpg",
-			"bytes": 124453,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-drain-worm.jpg",
-			"src": "/thumbnail/safe-calcutta-drain-worm.jpg",
-			"bytes": 118408,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-morning-malaise.jpg",
-			"src": "/thumbnail/safe-calcutta-morning-malaise.jpg",
-			"bytes": 117246,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-chronic-traumatic-nihilism-calcutta.jpg",
-			"src": "/thumbnail/safe-chronic-traumatic-nihilism-calcutta.jpg",
-			"bytes": 126803,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-chyavana-and-the-refusal-to-rot-quietly.jpg",
-			"src": "/thumbnail/safe-chyavana-and-the-refusal-to-rot-quietly.jpg",
-			"bytes": 110919,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-complexity-in-calcutta.jpg",
-			"src": "/thumbnail/safe-complexity-in-calcutta.jpg",
-			"bytes": 113824,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-concentric-incurable-angsts-of-a-bengali-man.jpg",
-			"src": "/thumbnail/safe-concentric-incurable-angsts-of-a-bengali-man.jpg",
-			"bytes": 112793,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-constipated-americans-diarrhoea.jpg",
-			"src": "/thumbnail/safe-constipated-americans-diarrhoea.jpg",
-			"bytes": 109766,
 			"width": 1200,
 			"height": 800
 		},
@@ -5876,30 +6205,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-crab-diaries-of-a-bengali-kakistocrat.jpg",
-			"src": "/thumbnail/safe-crab-diaries-of-a-bengali-kakistocrat.jpg",
-			"bytes": 121303,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-depression-as-mathematics.jpg",
 			"src": "/thumbnail/safe-depression-as-mathematics.jpg",
 			"bytes": 130451,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-depressive-mind-government-office-after-rain.jpg",
-			"src": "/thumbnail/safe-depressive-mind-government-office-after-rain.jpg",
-			"bytes": 119737,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-educated-boredom-horror.jpg",
-			"src": "/thumbnail/safe-educated-boredom-horror.jpg",
-			"bytes": 118536,
 			"width": 1200,
 			"height": 800
 		},
@@ -5911,51 +6219,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-epic.jpg",
-			"src": "/thumbnail/safe-epic.jpg",
-			"bytes": 112389,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-falling-through-the-crack.jpg",
-			"src": "/thumbnail/safe-falling-through-the-crack.jpg",
-			"bytes": 120839,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-falling-through-the-southern-edge-at-3am.jpg",
-			"src": "/thumbnail/safe-falling-through-the-southern-edge-at-3am.jpg",
-			"bytes": 126191,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-first-principles-thinking-calcutta-healthcare-it.jpg",
 			"src": "/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg",
 			"bytes": 129999,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fish-and-the-press-conference.jpg",
-			"src": "/thumbnail/safe-fish-and-the-press-conference.jpg",
-			"bytes": 125224,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fish-market-merit-and-the-small-republic-of-honesty.jpg",
-			"src": "/thumbnail/safe-fish-market-merit-and-the-small-republic-of-honesty.jpg",
-			"bytes": 125088,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-flood-of-kakistocracy.jpg",
-			"src": "/thumbnail/safe-flood-of-kakistocracy.jpg",
-			"bytes": 121828,
 			"width": 1200,
 			"height": 800
 		},
@@ -5967,121 +6233,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-fractal-geometry-of-a-half-lived-life.jpg",
-			"src": "/thumbnail/safe-fractal-geometry-of-a-half-lived-life.jpg",
-			"bytes": 112657,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-frog-in-the-robot-century.jpg",
-			"src": "/thumbnail/safe-frog-in-the-robot-century.jpg",
-			"bytes": 127623,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-future-tense-fog.jpg",
-			"src": "/thumbnail/safe-future-tense-fog.jpg",
-			"bytes": 115067,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-greed-made-me-small.jpg",
-			"src": "/thumbnail/safe-greed-made-me-small.jpg",
-			"bytes": 120458,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-groundhog-cud.jpg",
-			"src": "/thumbnail/safe-groundhog-cud.jpg",
-			"bytes": 127192,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-happiness-after-quicksand.jpg",
-			"src": "/thumbnail/safe-happiness-after-quicksand.jpg",
-			"bytes": 123197,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
-			"src": "/thumbnail/safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
-			"bytes": 130434,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-highly-composite-mornings-prime-afternoons.jpg",
-			"src": "/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg",
-			"bytes": 110392,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hope-dies-at-different-rates.jpg",
-			"src": "/thumbnail/safe-hope-dies-at-different-rates.jpg",
-			"bytes": 125465,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-how-are-you-and-other-small-cruelties.jpg",
 			"src": "/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg",
 			"bytes": 116571,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-human-rights-oh-what-a-joke.jpg",
-			"src": "/thumbnail/safe-human-rights-oh-what-a-joke.jpg",
-			"bytes": 121412,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-i-am-a-solipsist-nihilist.jpg",
-			"src": "/thumbnail/safe-i-am-a-solipsist-nihilist.jpg",
-			"bytes": 118666,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-i-could-have-been-a-simple-fool.jpg",
-			"src": "/thumbnail/safe-i-could-have-been-a-simple-fool.jpg",
-			"bytes": 116511,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-i-do-not-hate-the-world-i-am-tired.jpg",
-			"src": "/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg",
-			"bytes": 119165,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-hoodlums-goons-assortment.jpg",
-			"src": "/thumbnail/safe-india-hoodlums-goons-assortment.jpg",
-			"bytes": 126034,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-scientific-temper-after-return.jpg",
-			"src": "/thumbnail/safe-india-scientific-temper-after-return.jpg",
-			"bytes": 117439,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-insect-forms-of-a-calcutta-life.jpg",
-			"src": "/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg",
-			"bytes": 114651,
 			"width": 1200,
 			"height": 800
 		},
@@ -6093,23 +6247,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-jealous-of-the-stupid.jpg",
-			"src": "/thumbnail/safe-jealous-of-the-stupid.jpg",
-			"bytes": 120325,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
 			"src": "/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
 			"bytes": 108313,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-kinship-range-limit-calcutta.jpg",
-			"src": "/thumbnail/safe-kinship-range-limit-calcutta.jpg",
-			"bytes": 124825,
 			"width": 1200,
 			"height": 800
 		},
@@ -6124,13 +6264,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
 			"src": "/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
 			"bytes": 133867,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-linkedin-job-market-india-national-xray.jpg",
-			"src": "/thumbnail/safe-linkedin-job-market-india-national-xray.jpg",
-			"bytes": 113774,
 			"width": 1200,
 			"height": 800
 		},
@@ -6240,13 +6373,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-pixels-that-make-us-feel-present.jpg",
-			"src": "/thumbnail/safe-pixels-that-make-us-feel-present.jpg",
-			"bytes": 118124,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-pod-mara-gechhe-calcutta-essay.jpg",
 			"src": "/thumbnail/safe-pod-mara-gechhe-calcutta-essay.jpg",
 			"bytes": 108705,
@@ -6303,13 +6429,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-recidivism-of-fraud-and-superstition-in-india.jpg",
-			"src": "/thumbnail/safe-recidivism-of-fraud-and-superstition-in-india.jpg",
-			"bytes": 120404,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-returning-home-after-america.jpg",
 			"src": "/thumbnail/safe-returning-home-after-america.jpg",
 			"bytes": 109468,
@@ -6345,20 +6464,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-shallow-water-loud-television.jpg",
-			"src": "/thumbnail/safe-shallow-water-loud-television.jpg",
-			"bytes": 116076,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sharper-teeth.jpg",
-			"src": "/thumbnail/safe-sharper-teeth.jpg",
-			"bytes": 128356,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-shiva-and-the-poison-in-the-throat.jpg",
 			"src": "/thumbnail/safe-shiva-and-the-poison-in-the-throat.jpg",
 			"bytes": 119380,
@@ -6380,13 +6485,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-slow-poisoning-republic.jpg",
-			"src": "/thumbnail/safe-slow-poisoning-republic.jpg",
-			"bytes": 115896,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-smorgasbord-of-impotence-calcutta-middle-age.jpg",
 			"src": "/thumbnail/safe-smorgasbord-of-impotence-calcutta-middle-age.jpg",
 			"bytes": 105096,
@@ -6404,13 +6502,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-tea-depression-and-the-probability-of-a-blog.jpg",
 			"src": "/thumbnail/safe-tea-depression-and-the-probability-of-a-blog.jpg",
 			"bytes": 124006,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tea-skin-and-the-science-of-suspicion.jpg",
-			"src": "/thumbnail/safe-tea-skin-and-the-science-of-suspicion.jpg",
-			"bytes": 113187,
 			"width": 1200,
 			"height": 800
 		},
@@ -6439,27 +6530,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-cephalalgia-chronicles.jpg",
 			"src": "/thumbnail/safe-the-cephalalgia-chronicles.jpg",
 			"bytes": 121329,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-churning-of-the-lesser-fluids.jpg",
-			"src": "/thumbnail/safe-the-churning-of-the-lesser-fluids.jpg",
-			"bytes": 117361,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-city-that-begs-at-the-window.jpg",
-			"src": "/thumbnail/safe-the-city-that-begs-at-the-window.jpg",
-			"bytes": 118988,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-coming-white-collar-mendicancy.jpg",
-			"src": "/thumbnail/safe-the-coming-white-collar-mendicancy.jpg",
-			"bytes": 118414,
 			"width": 1200,
 			"height": 800
 		},
@@ -6513,13 +6583,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-fat-animal-in-the-mirror.jpg",
-			"src": "/thumbnail/safe-the-fat-animal-in-the-mirror.jpg",
-			"bytes": 120534,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-former-bright-boy-problem.jpg",
 			"src": "/thumbnail/safe-the-former-bright-boy-problem.jpg",
 			"bytes": 120065,
@@ -6534,23 +6597,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-gracefully-grotesque-collapse.jpg",
-			"src": "/thumbnail/safe-the-gracefully-grotesque-collapse.jpg",
-			"bytes": 130379,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg",
 			"src": "/thumbnail/safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg",
 			"bytes": 113912,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-great-indian-fence-sitter.jpg",
-			"src": "/thumbnail/safe-the-great-indian-fence-sitter.jpg",
-			"bytes": 117056,
 			"width": 1200,
 			"height": 800
 		},
@@ -6597,13 +6646,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-morlocks-in-white-kurta.jpg",
-			"src": "/thumbnail/safe-the-morlocks-in-white-kurta.jpg",
-			"bytes": 124100,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-nationalization-of-shame.jpg",
 			"src": "/thumbnail/safe-the-nationalization-of-shame.jpg",
 			"bytes": 118544,
@@ -6639,13 +6681,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-pharmakon-of-woodlice.jpg",
-			"src": "/thumbnail/safe-the-pharmakon-of-woodlice.jpg",
-			"bytes": 121351,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-rent-is-a-clock.jpg",
 			"src": "/thumbnail/safe-the-rent-is-a-clock.jpg",
 			"bytes": 116068,
@@ -6674,13 +6709,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
-			"src": "/thumbnail/safe-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
-			"bytes": 121633,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-static-in-the-room.jpg",
 			"src": "/thumbnail/safe-the-static-in-the-room.jpg",
 			"bytes": 109866,
@@ -6698,13 +6726,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-terrace-republic.jpg",
 			"src": "/thumbnail/safe-the-terrace-republic.jpg",
 			"bytes": 112219,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-thermodynamics-of-envy.jpg",
-			"src": "/thumbnail/safe-the-thermodynamics-of-envy.jpg",
-			"bytes": 118788,
 			"width": 1200,
 			"height": 800
 		},
@@ -6779,13 +6800,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-twaddle-tendency.jpg",
-			"src": "/thumbnail/safe-twaddle-tendency.jpg",
-			"bytes": 108383,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-unattractive-mans-weather-report.jpg",
 			"src": "/thumbnail/safe-unattractive-mans-weather-report.jpg",
 			"bytes": 111575,
@@ -6817,20 +6831,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-welcome-to-suvroghosh-in.jpg",
 			"src": "/thumbnail/safe-welcome-to-suvroghosh-in.jpg",
 			"bytes": 118316,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-when-structure-loses-its-map.jpg",
-			"src": "/thumbnail/safe-when-structure-loses-its-map.jpg",
-			"bytes": 116448,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-when-the-office-learns-to-beg.jpg",
-			"src": "/thumbnail/safe-when-the-office-learns-to-beg.jpg",
-			"bytes": 121762,
 			"width": 1200,
 			"height": 800
 		},

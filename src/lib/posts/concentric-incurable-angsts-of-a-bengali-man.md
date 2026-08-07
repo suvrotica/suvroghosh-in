@@ -2,16 +2,18 @@
 title: "The Concentric Angsts of a Bankrupt Bengali Man"
 description: "A cleaner, sharper, more human rant about money, age, illness, failed respectability, and the strange comedy of surviving middle-class Bengali life in Calcutta."
 date: "2026-05-31"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Calculation","America","Fix","Considered","Somebody","Bengali","Settled","Maintenance","Depressed","Illness"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-concentric-incurable-angsts-of-a-bengali-man.jpg"
+thumbnail: "/thumbnail/art-concentric-incurable-angsts-of-a-bengali-man.jpg"
+thumbnailAlt: "Bengali man sits inside concentric rings of bills, medicine, tools and groceries"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-concentric-incurable-angsts-of-a-bengali-man.jpg" />
+<Pi src="/thumbnail/art-concentric-incurable-angsts-of-a-bengali-man.jpg" />
 
 
 

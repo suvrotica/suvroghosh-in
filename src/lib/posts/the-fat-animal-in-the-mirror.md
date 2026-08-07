@@ -2,16 +2,18 @@
 title: "The Fat Animal in the Mirror"
 description: "A Calcutta reflection on the Sundarbans tiger, vanishing crows and sparrows, childhood fields, city greed, and the large smooth lie we call progress."
 date: "2026-05-15"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Tiger","Forest","Royal","Land","Sundarbans","Eats","Mangrove","Deer","Striped","Sparrow"]
+tags: ["Tiger","Forest","Royal","Land","Eats","Sundarbans","Mangrove","Deer","Striped","Sparrow"]
 published: true
 color: "green"
-thumbnail: "/thumbnail/safe-the-fat-animal-in-the-mirror.jpg"
+thumbnail: "/thumbnail/art-the-fat-animal-in-the-mirror.jpg"
+thumbnailAlt: "Urban man reflected with a Sundarbans tiger beside a shrinking mangrove landscape"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-fat-animal-in-the-mirror.jpg" />
+<Pi src="/thumbnail/art-the-fat-animal-in-the-mirror.jpg" />
 
 <Vid 
   src="music/মানুষ_মোটা_জানোয়ার.mp4" 

@@ -2,18 +2,20 @@
 title: "I Like Fish, But I Refuse to Worship Rot"
 description: "A Calcutta essay on superstition, nationalism, poverty, failed public reasoning, and the strange national habit of putting garlands on decay."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Society"
-tags: ["Adjust","Boring","Shamelessness","Pride","Superstition","Shameless","Rot","Bridges","Repair","Evidence"]
+tags: ["Adjust","Boring","Shamelessness","Pride","Superstition","Shameless","Rot","Repair","Bridges","Evidence"]
 published: true
 color: "#6B3F2A"
-thumbnail: "/thumbnail/safe-fish-and-the-press-conference.jpg"
+thumbnail: "/thumbnail/art-fish-and-the-press-conference.jpg"
+thumbnailAlt: "Fresh fish beside microphones aimed at a garlanded cracked bridge and leaking pipe"
 ---
 
 
 
 <TTS />
 
-<Pi src="/thumbnail/safe-fish-and-the-press-conference.jpg" />
+<Pi src="/thumbnail/art-fish-and-the-press-conference.jpg" />
 
 
 

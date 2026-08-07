@@ -1,17 +1,19 @@
 ---
 title: "Babu Culture and the Indian Art of Bending"
-description: "A personal, satirical, street-level essay on Indian obsequiousness, VIP culture, clerical flattery, and the old machinery of hierarchy that keeps ordinary people crawling before power."
+description: "A street-level satire on Indian babu culture, VIP deference, clerical flattery, and the durable machinery of social hierarchy."
 date: "2026-05-18"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Yes Sir","Babu","India","Sir","VIP","Boss","Flattery","Beep","Bends","Office"]
 published: true
 color: "ochre"
-thumbnail: "/thumbnail/safe-babu-culture-vip-india-obsequiousness.jpg"
+thumbnail: "/thumbnail/art-babu-culture-vip-india-obsequiousness.jpg"
+thumbnailAlt: "Empty office chairs bow toward an elevated VIP chair beneath a ceremonial parasol"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-babu-culture-vip-india-obsequiousness.jpg" />
+<Pi src="/thumbnail/art-babu-culture-vip-india-obsequiousness.jpg" />
 
 Acronym key:
 

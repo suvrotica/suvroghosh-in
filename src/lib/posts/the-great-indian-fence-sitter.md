@@ -2,18 +2,20 @@
 title: "The Great Indian Fence-Sitter"
 description: "A sharp satirical essay on the Indian habit of calling cowardice balance, fraud enterprise, and stupidity culture while ordinary people are asked to adjust."
 date: "2026-06-12"
+dateModified: "2026-08-07"
 category: "Society"
-tags: ["Adjustment Means","Adjust","Fence-Sitter","Fence","Fraud","Stupidity","Adjustment","Balanced","Translate","Country"]
+tags: ["Adjustment Means","Adjust","Fence-Sitter","Fence","Fraud","Stupidity","Adjustment","Balanced","Country","Translate"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-great-indian-fence-sitter.jpg"
+thumbnail: "/thumbnail/art-the-great-indian-fence-sitter.jpg"
+thumbnailAlt: "Empty executive chair balances atop a fence while commuters navigate potholes below"
 ---
 
 
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-great-indian-fence-sitter.jpg" />
+<Pi src="/thumbnail/art-the-great-indian-fence-sitter.jpg" />
 
 
 There is a particular Indian I have met too many times in life, and not always from the safe zoological distance advised by doctors, lawyers, and experienced aunties, who does not take a position. Taking a position requires spine. What he does instead is lower his entire oily administrative backside onto a fence and announce, with the grave expression of a man who has discovered moral philosophy inside a cold singara, that both sides have a point.

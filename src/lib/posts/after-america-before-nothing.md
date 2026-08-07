@@ -1,17 +1,19 @@
 ---
 title: "After America, Before Nothing"
-description: "A personal essay about returning from serious healthcare IT work in America to a small rented Calcutta life, where old competence begins to feel like an expired passport."
+description: "A returnee reflects on leaving serious healthcare IT work in America for a small Calcutta life where competence feels expired."
 date: "2026-06-09"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["America","American","Payment","Data","Healthcare","Past","Systems","Competence","Invoice","Calcutta"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-after-america-before-nothing.jpg"
+thumbnail: "/thumbnail/art-after-america-before-nothing.jpg"
+thumbnailAlt: "Open suitcase bridges a glass American office memory and a small Kolkata room"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-after-america-before-nothing.jpg" />
+<Pi src="/thumbnail/art-after-america-before-nothing.jpg" />
 
 Acronyms used: IT means Information Technology, the broad world of computers, software, data, systems, and the human mess glued around them. NIH means National Institutes of Health, the major American federal agency that supports biomedical research. VA means Veterans Affairs, the American healthcare system for military veterans. SQL means Structured Query Language, the standard language used to query and manage relational databases.
 

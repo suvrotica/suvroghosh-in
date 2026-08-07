@@ -1,17 +1,19 @@
 ---
 title: "Aimless With Mangoes"
-description: "A middle-aged Calcutta essay on aimlessness, shrinking opportunity, small pleasures, and the strange relief of no longer pretending every life must fly toward a target."
+description: "A middle-aged Calcutta essay on aimlessness, shrinking opportunity, mangoes and the relief of living without a fixed target."
 date: "2026-06-19"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Mango","Aim","Aimlessness","Arrow","Autobiography","Crow","Fruit","Fifty-One","Fragments","Continues"]
+tags: ["Mango","Aim","Aimlessness","Arrow","Crow","Autobiography","Fruit","Fifty-One","Fragments","Continues"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-aimless-with-mangoes.jpg"
+thumbnail: "/thumbnail/art-aimless-with-mangoes.jpg"
+thumbnailAlt: "Relaxed Bengali man eats mangoes beneath a tree while arrows point nowhere"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-aimless-with-mangoes.jpg" />
+<Pi src="/thumbnail/art-aimless-with-mangoes.jpg" />
 
 Acronyms used:
 

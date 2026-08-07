@@ -1,17 +1,19 @@
 ---
 title: "The Badly Lit Municipality of Myself"
-description: "A Calcutta essay about living on the rough southern edge of the city, where bad drainage, broken roads, poverty, depression, and middle-aged survival begin to resemble one another too closely."
+description: "A Calcutta essay where broken roads, bad drainage, poverty, depression and middle-aged survival begin to mirror one another."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Shines","Preferably","Municipality","Unfinished","Eggs","Lane","Outside","Smells","Drain","Tea"]
+tags: ["Shines","Preferably","Municipality","Unfinished","Eggs","Lane","Outside","Drain","Smells","Tea"]
 published: true
 color: "#4A4A4A"
-thumbnail: "/thumbnail/safe-badly-lit-municipality-of-myself.jpg"
+thumbnail: "/thumbnail/art-badly-lit-municipality-of-myself.jpg"
+thumbnailAlt: "Man changes a bulb while sweeping rainwater from a room into a patched Kolkata lane"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-badly-lit-municipality-of-myself.jpg" />
+<Pi src="/thumbnail/art-badly-lit-municipality-of-myself.jpg" />
 
 LED: Light-emitting diode, the little modern light that now flickers over pharmacies, lanes, tea stalls, and human despair with equal democratic enthusiasm.
 

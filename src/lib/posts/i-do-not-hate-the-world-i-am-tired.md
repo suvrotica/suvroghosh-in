@@ -1,17 +1,19 @@
 ---
 title: "I Do Not Hate the World. I Am Tired."
-description: "A darkly funny personal essay about anger, bipolar depression, masculinity, class fatigue, Calcutta loneliness, and the difference between hating humanity and being slowly nibbled by fate."
+description: "A tired Bengali man rests beside a worn coat at a tram stop, turning accumulated wear and fate into a quiet urban metaphor."
 date: "2026-06-14"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Hatred","Nibble","Weariness","Hate","Self-Pity","Tired","Rotten","Maybe","Anger","Refuse"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg"
+thumbnail: "/thumbnail/art-i-do-not-hate-the-world-i-am-tired.jpg"
+thumbnailAlt: "Tired Bengali man resting beside a worn coat at a Calcutta tram stop after dusk"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg" />
+<Pi src="/thumbnail/art-i-do-not-hate-the-world-i-am-tired.jpg" />
 
 
 

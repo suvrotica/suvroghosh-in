@@ -1,17 +1,19 @@
 ---
 title: "Chronic Traumatic Nihilism From Calcutta"
-description: "A middle-class Bengali meditation on how repeated social, economic, and psychological bruising turns disbelief into a daily weather system - the smaller, nastier nihilism of rent receipts, dental pain, and the unpaid electricity bill."
+description: "A Bengali meditation on how repeated economic, social and psychological bruising turns disbelief into a daily weather system."
 date: "2026-05-04"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Chronic Traumatic Nihilism","Middle-Aged Middle-Class","Middle Class","Nihilism","Mattered","Traumatic","Craft","Chronic","Mind","Rebellion"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-chronic-traumatic-nihilism-calcutta.jpg"
+thumbnail: "/thumbnail/art-chronic-traumatic-nihilism-calcutta.jpg"
+thumbnailAlt: "Bengali man shelters blank bills, coins and a tooth model beneath a patched umbrella"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-chronic-traumatic-nihilism-calcutta.jpg" />
+<Pi src="/thumbnail/art-chronic-traumatic-nihilism-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

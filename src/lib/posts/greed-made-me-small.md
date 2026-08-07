@@ -1,17 +1,19 @@
 ---
 title: "Greed Made Me Small"
-description: "A darkly comic Calcutta essay about greed, selfishness, fear, withdrawal, and the slow shrinking of a middle-aged man who has been scraped too often by people with polished manners and small appetites."
+description: "A small figure stands among oversized luxury as brass levers peel layers from his silhouette, showing how greed and betrayal diminish a life."
 date: "2026-06-09"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Greed","Selfishness","Selfish","Shrunk","Removes","Afraid","Fear","Bird","Betrayal","Lever"]
 published: true
 color: "brown"
-thumbnail: "/thumbnail/safe-greed-made-me-small.jpg"
+thumbnail: "/thumbnail/art-greed-made-me-small.jpg"
+thumbnailAlt: "Small Bengali figure among oversized polished furniture and brass levers"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-greed-made-me-small.jpg" />
+<Pi src="/thumbnail/art-greed-made-me-small.jpg" />
 
 
 

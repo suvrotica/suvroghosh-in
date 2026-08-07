@@ -1,17 +1,19 @@
 ---
 title: "The Pharmakon of Woodlice"
-description: "A fifty-one-year-old bipolar polemicist in Calcutta ruminates on the synthetic deceit of psychiatric medication, the superior companionship of books, and the grotesque aptness of woodlice circling themselves to death under streetlights."
+description: "A Bengali reader sits with books and an unlabelled medicine strip as woodlice circle gently beneath a rainy streetlamp."
 date: "2026-07-11"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Circling","Pills","Synthetic","Sentences","Precise","Irritation","Particular","Read","Patient","Dark"]
+tags: ["Circling","Pills","Synthetic","Sentences","Irritation","Precise","Particular","Patient","Read","Calm"]
 published: true
 color: "#5D4037"
-thumbnail: "/thumbnail/safe-the-pharmakon-of-woodlice.jpg"
+thumbnail: "/thumbnail/art-the-pharmakon-of-woodlice.jpg"
+thumbnailAlt: "Bengali reader under a streetlamp with books, medicine, and circling woodlice"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-pharmakon-of-woodlice.jpg" />
+<Pi src="/thumbnail/art-the-pharmakon-of-woodlice.jpg" />
 
 The morning arrives not with light but with a taste, that particular metallurgical tang of a mouth that has spent eight hours fermenting its own bacterial flora into something resembling the floor of a tannery where small mammals have expired in droves, and I lie there, supine, contemplating the pharmaceutical architecture of my hypothalamus as one might contemplate the structural integrity of a termite-ridden howdah, which is to say: with the resigned expertise of a man who has paid for his education in sleeplessness and the particular, viscous variety of despair that collects in the lower intestines like unprocessed grief.
 

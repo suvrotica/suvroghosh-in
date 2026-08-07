@@ -1,17 +1,19 @@
 ---
 title: "Sharper Teeth"
-description: "A feverish, bipolar polemic on Lotka-Volterra equations, AI, capital, and the grotesque comedy of watching the rabbit realize the wolf has evolved to eat employment, not flesh."
+description: "A rabbit faces an evolved mechanical wolf that consumes office chairs, visualising AI, capital, and a new ecology of employment."
 date: "2026-06-23"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Rabbits Breed","Rabbit Wakes","Nostril Hair","Rabbit Laughs","Sharper Teeth","Wolf","Rabbits","Wolves","Nostril","Equations"]
+tags: ["Rabbits Breed","Rabbit Wakes","Nostril Hair","Rabbit Laughs","Sharper Teeth","Wolf","Rabbits","Wolves","Nostril","Prey"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-sharper-teeth.jpg"
+thumbnail: "/thumbnail/art-sharper-teeth.jpg"
+thumbnailAlt: "Rabbit confronting a mechanical wolf that devours office chairs instead of flesh"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-sharper-teeth.jpg" />
+<Pi src="/thumbnail/art-sharper-teeth.jpg" />
 
 The bathroom mirror at three in the morning is a treacherous, unforgiving slab of silvered glass, and there, staring back at me, is a man whose left nostril harbors a hair so prodigiously black and curled that it resembles, with horrifying exactitude, the severed leg of a spider that has drowned in a puddle of cheap aftershave, and I stand there, toothbrush frozen mid-air, contemplating whether this follicular abomination is a sign of impending mortality or merely the universe's way of reminding me that even my own face is conspiring to become grotesque without my permission, and then I remember, with the sudden, stomach-dropping clarity of a man who has just realized he left the gas on, that today is June 23rd, 2026, and Elon Musk is now, officially, according to the financial necromancers and the ticker-tape priests, the world's first trillionaire, a figure so obscenely swollen with zeros that it makes the GDP of my entire ancestral homeland look like the spare change rattling in a beggar's tin cup, and I laugh, a sound like a drain unclogging, because here I am, a fifty-one-year-old canceled, bruised, burnt, brittle, bitter Bengali man from Calcutta, standing in a rented flat in some city that is not Calcutta, staring at a spider-leg nostril hair and contemplating the Lotka-Volterra equations, those beautiful, murderous differential duets that describe how a wolf devours a rabbit and how the rabbit, in its panic-breeding, keeps the wolf fat, and I think, with the manic, glittering intensity of a man who has read too many books and understood too few of them usefully, that we have gotten the entire fable ass-backwards.
 

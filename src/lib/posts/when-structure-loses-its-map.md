@@ -1,17 +1,19 @@
 ---
 title: "When Structure Loses Its Map"
-description: "A reflection on the deaths of Zamil Limon and Nahida Bristy, and how modern institutions can appear orderly while losing the practical ability to see danger moving through their own seams."
+description: "A reflection on how orderly institutions can lose the practical ability to detect danger moving through their own structural gaps."
 date: "2026-04-28"
+dateModified: "2026-08-07"
 tags: ["Court Filings","Artificial Intelligence","Campus","Roommate","Bristy","Limon","Off-Campus","Housing","Missing-Person","Society"]
 category: "Society"
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-when-structure-loses-its-map.jpg"
+thumbnail: "/thumbnail/art-when-structure-loses-its-map.jpg"
+thumbnailAlt: "Orderly institutional maze misses a crimson thread slipping through its broken seams"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-when-structure-loses-its-map.jpg" />
+<Pi src="/thumbnail/art-when-structure-loses-its-map.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.
