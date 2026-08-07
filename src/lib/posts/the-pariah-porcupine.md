@@ -2,16 +2,18 @@
 title: "The Pariah Porcupine"
 description: "A reflective essay from Calcutta on the quiet cost of speaking plainly about civic failure, generational apathy, and the slow collapse of public healthcare in India."
 date: "2026-06-24"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Wobbling Fan","Dinner Party","Warehouse Collapse","Porcupine","Benches","Wobble","Campaign","Quills","Pariah","Lukewarm"]
+tags: ["Wobbling Fan","Dinner Party","Warehouse Collapse","Porcupine","Benches","Wobble","Quills","Campaign","Pariah","Dinner"]
 published: true
 color: "#5a6e7c"
-thumbnail: "/thumbnail/safe-the-pariah-porcupine.jpg"
+thumbnail: "/thumbnail/art-the-pariah-porcupine.jpg"
+thumbnailAlt: "Gentle porcupine sits alone on a bench in a weathered public hospital courtyard"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-pariah-porcupine.jpg" />
+<Pi src="/thumbnail/art-the-pariah-porcupine.jpg" />
 
 I have a feeling I am being repetitive, but the ceiling fan in my study wobbles. It has wobbled for three years. I have not fixed it. This morning, at quarter past six, I watched it describe its irregular ellipse while drinking tea that had gone lukewarm, and I thought: this is the correct metaphor. Not the grand metaphor. Not the fan as symbol of a nation in centrifugal decay. Just the fact of a wobbling fan that I have learned to live with, that I notice every morning and do nothing about, that will one day detach and concuss me or my cat or simply die with a spark and a smell of burning insulation, and on that day I will be surprised, though I have no right to be.
 

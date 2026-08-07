@@ -7772,7 +7772,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-ordinary-things.md": {
-			"bodyHash": "b7e87a044a500b0ee38c3de0c1c85f5bff47a98403f3d1c47499e3bdbfc2e0ec",
+			"bodyHash": "8ee9875e79518e245c51a21f12baab344907d045812d2d88011b7a53f6b013b6",
+			"hashVersion": 2,
+			"revisionHash": "c529cc9269c54082934f971539bbf7d658de1c0de66c848ddbf98902cd4275c5",
 			"generatedTags": [
 				"Yesterday Tea",
 				"Fresh Tea",
@@ -7787,8 +7789,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "e87a8e3134aa409dc24ae3833796e0f8b2d248b5970e583682f008ada5fc636e",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-overzealous-credulity-crisis.md": {
 			"bodyHash": "3070253179d203d9c9b7468105395ec490fe68d8e2676205bd453f792007d1b7",
@@ -7811,7 +7812,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-pariah-porcupine.md": {
-			"bodyHash": "f5a727da46e447ab550c947d836d6abc7c812697fc674d91209b9da07ed9267f",
+			"bodyHash": "de8866fe3940e47e838b57970cf952697856e5d6b16be4f65fc338f346c55812",
+			"hashVersion": 2,
+			"revisionHash": "b3ac1ca286b224d8e10a88a21bd098fe2c7b091cbdb08fe423663f8403d3cc92",
 			"generatedTags": [
 				"Wobbling Fan",
 				"Dinner Party",
@@ -7819,15 +7822,14 @@
 				"Porcupine",
 				"Benches",
 				"Wobble",
-				"Campaign",
 				"Quills",
+				"Campaign",
 				"Pariah",
-				"Lukewarm"
+				"Dinner"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "f20f17cfcb5a072ca43c0df9c69b72fcbeab975b7982a454adfb0b942e419fee",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-perpendicular-shadow.md": {
 			"bodyHash": "1313a031119e33e27e057e423f43c324e8070c5f45539256fbc91388c0b72e0e",
@@ -7849,7 +7851,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-person-is-not-a-machine.md": {
-			"bodyHash": "84d037b662ea0a2077bf8a11482f8d706b4ea649ca5d7caca178f4c3737dd3d4",
+			"bodyHash": "385b7cb891a4e20159c4c3dcb5aff0710c90d2a44899a96037a6705f3d8e81c8",
+			"hashVersion": 2,
+			"revisionHash": "ae7eee309b8fbe27b7fc1cbba3a102b0cb078bebfb57d8e4040347d9ad32d4f3",
 			"generatedTags": [
 				"Write",
 				"Algorithm",
@@ -7864,8 +7868,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1fe4dd28cc8a8376e3361ecbcf51ea1cd92bc9b3e31907b4e1ffe34f3c576738",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-polished-ghost-of-banamali-lane.md": {
 			"bodyHash": "8fb6c611009cadf0a54b91bf9d60d39788de513578439ecc39489dd34a86ea51",
@@ -8020,14 +8023,16 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-rent-is-a-clock.md": {
-			"bodyHash": "7044d15e91cd135ef03f631039c72121ff641209b0d78a4e26604d3752a2b461",
+			"bodyHash": "71aa9c439d6ce37f3d1faf0ebe6ba8a2331886cd94e1eca01a61398e123d3761",
+			"hashVersion": 2,
+			"revisionHash": "392841fe046e42059c1a0472b65d14bf4d84c9694e926d40081d71a8f18e6831",
 			"generatedTags": [
 				"Income",
 				"Learn",
 				"Tick",
 				"Merit",
-				"Young",
 				"Rent",
+				"Young",
 				"Writing",
 				"India",
 				"Payment",
@@ -8035,8 +8040,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "5279d05b4f7b61990faf0fcfb82f1c99e98134e7ed23912e864b51ed265d825a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-rent-spider.md": {
 			"bodyHash": "5e0f93b47a7f411affb35d1a61fe45dacd4fe3411690006d978f34a1a1c2ddc8",
@@ -8058,7 +8062,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-rice-cooker-and-the-black-hole.md": {
-			"bodyHash": "57fd8947066a99e4e1ef8ad1819e9d607675f587b32671bd500ff50ccf02a2af",
+			"bodyHash": "845567102541a02c3c8eae29bde28044e32d4aa6e1d649ad9669e1b2f1bdfc1a",
+			"hashVersion": 2,
+			"revisionHash": "44de9e665b85cf2776b02ccf03df52fd7a21044c48c80dc36bea9dcf7b1e8399",
 			"generatedTags": [
 				"Black Hole",
 				"Maybe",
@@ -8068,16 +8074,17 @@
 				"Hope",
 				"Steam",
 				"Hole",
-				"Positive",
-				"Towel"
+				"Towel",
+				"Denied"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "796cccb935c36356574a4440bc99583aa678ef999a8694f1a30330bad03ad578",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-rice-cooker-kind-of-solitude.md": {
-			"bodyHash": "72ba07dfd181594806cb600ff95833fca4d7f5e11ef171ed4e22201acc51fe5b",
+			"bodyHash": "9b8a14cc4487b35858b7bed1b7f8ef074694411b85b58aae3786645c3984e049",
+			"hashVersion": 2,
+			"revisionHash": "195c942e351b68ab79815d6448eddfa37fa5a5d5969bf45961c5f759a3096ad9",
 			"generatedTags": [
 				"Rice Cooker",
 				"Solitude",
@@ -8092,8 +8099,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2c243865f53100e2cff20c96c9afca36d9ebd764f9641104f25b32693702b5ab",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-rice-pullers-of-new-garia.md": {
 			"bodyHash": "cf49a627182a9759c93be12c3c7647279dc8f56c4096ed446cc0d561f729624d",
@@ -8173,23 +8179,24 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-signal-to-noise-ratio-of-a-ruined-life.md": {
-			"bodyHash": "d61fe3b5aaa28ca165b8f2c76c0d6c9cfcd8dedff6581f5ffe9bb74a2ec610dd",
+			"bodyHash": "04d9b9d2d0ba21b3997636ce9d2aff77695fdce1f7a73c7fbca122b19c77ae85",
+			"hashVersion": 2,
+			"revisionHash": "66fbe7cbeea6ec4aa7b79eba82c10ca9ac8b193fa1c11fb0b9263d7e995fa3df",
 			"generatedTags": [
 				"Rice Cooker",
 				"Unpaid Work",
 				"Corrupts",
 				"Signal",
-				"Static",
 				"Wit",
-				"Noise",
+				"Static",
 				"Shame",
+				"Noise",
 				"Rice",
 				"Disgust"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "9188c895b125d855cbd490b614e71d8893390929518598ec926bb90162ceefff",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-small-republic-of-no-one.md": {
 			"bodyHash": "84141196e25322b3cf72eb3e7cb9720612b185aa2cbb08af22e5a5d8a5ab7955",
@@ -8250,7 +8257,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-static-in-the-room.md": {
-			"bodyHash": "a8f18383010363be5f60d71558c0cb6627b91063206686b70b9ef6997cd92aee",
+			"bodyHash": "39d9e9d2f981d09147a63ad751e18dbb8592668fd1736ce1e262c828a9bb99a1",
+			"hashVersion": 2,
+			"revisionHash": "7cfd2b56671123a1c505986e72f4712e330f0a52a8feefb2e30fba298e7d1615",
 			"generatedTags": [
 				"Hide",
 				"Remember",
@@ -8258,15 +8267,14 @@
 				"Sitting",
 				"Skull",
 				"Music",
-				"Writing",
 				"Work",
-				"Flat",
-				"Teeth"
+				"Writing",
+				"Teeth",
+				"Flat"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "ba5288e6f723179c0d872997ea26cc2fb7ff6675bf5ba564ce836d4ad14d48a0",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-sword-in-the-frame.md": {
 			"bodyHash": "abe46a8af7e923704252189afb9e9fa6bfb76b3da57f74415e08476a1f0191fc",
@@ -8307,7 +8315,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-tea-skin-on-my-mind.md": {
-			"bodyHash": "758dfe293d7d86d9d929670d3043f3252f279a3671e23b1968fd0e2872573a6a",
+			"bodyHash": "f1cf586e2d749de1acd686bc82abcce4c934bfa3e338b21a8725f6f3d7f5e823",
+			"hashVersion": 2,
+			"revisionHash": "4ca6836deca05b201b39a67499b62c624f9610552d0cfd6dfd57a7def69ced68",
 			"generatedTags": [
 				"Bubble",
 				"Doubts",
@@ -8322,8 +8332,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "8000636c7355d712898b5fe6b6180c6f9c2376541a911d51da55b5b44c33008c",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-tea-stall-as-an-anti-ai-safety-system.md": {
 			"bodyHash": "e1f1366e1e3d63dd96ca442c420a3c1be2d26680adfce715ee177223d196ac12",
@@ -8365,14 +8374,16 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-terrace-republic.md": {
-			"bodyHash": "df863e3dc3f5076f6fc5a7bc1c5c0c1e0bc76806f9c5963aad77833f602e835b",
+			"bodyHash": "19c5eef183c609cd37adfa0d447cf2fc74e9942a55148d68d0f1bd3441382b6c",
+			"hashVersion": 2,
+			"revisionHash": "f383ffccbd225bb324ca727a87884acbdaff8d27d3cdf3e889ad29cde3a80013",
 			"generatedTags": [
 				"Terrace",
 				"Matchboxes",
 				"Magnets",
 				"Wondered",
-				"Lamp",
 				"Boy",
+				"Lamp",
 				"Brick",
 				"Walls",
 				"Stamps",
@@ -8380,8 +8391,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "97c3f6e14eeae365287f46414916862d7632a7276966534bd535d4c81d850a33",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-test-is-congress-where-congress-rules.md": {
 			"bodyHash": "63259eaa61bd1c3c79a73fe14921de0c11a4b2ac4ced51694ada3b902ca361a8",
@@ -8463,7 +8473,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-unattractive-mans-guide-to-quantum-mechanics.md": {
-			"bodyHash": "e291d00c08436dcebdf56ef08cdbdece9677c815aa03b3252d924aeddc45c1c9",
+			"bodyHash": "46c5cd03db14a472c8f1667e0f36f472479747dc8d5e9c7bdf42966957779f2b",
+			"hashVersion": 2,
+			"revisionHash": "89a9ff5ed10f6acbcdde915eb0c5249b9885b734b6844db5df82fce73fed59b0",
 			"generatedTags": [
 				"Quantum Mechanics",
 				"Man Desire",
@@ -8478,11 +8490,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "bb5cca0450282709b442b27fce32c9852e040c38730142f82a8c806020aca058",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-unhelpful-man-in-calcutta.md": {
-			"bodyHash": "5ae662e3592fb1f71c4b76de892e3ab1deb7d543ef79cca1009758d64e72baf7",
+			"bodyHash": "b2794c83846af23da480390865f9189838d55e86dce3aec556895ef272a2cbed",
+			"hashVersion": 2,
+			"revisionHash": "b31506f5028a639a5a82313878908e9bbe15c751998daca3581efcda320ff658",
 			"generatedTags": [
 				"Middle Class",
 				"Receipt",
@@ -8497,11 +8510,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "b7e4f839c27e4adcd791067e8f82723599ae33eccef90f871fe30d6d3a402bcf",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-unpaid-consultant-and-the-theology-of-hope.md": {
-			"bodyHash": "f6619ef49b3cce479a5a839353a7f3b01577c727ae58bfe03f967b0797dc12b7",
+			"bodyHash": "088fd30db4cf0c68aa0fc650ebfe7276c8282377b272ff7883e64fb35780ce03",
+			"hashVersion": 2,
+			"revisionHash": "a4b60bf18e519c2f8b042ed579e689e9ef4187e5e559e7e7034ad9dca6d9a540",
 			"generatedTags": [
 				"Unpaid Consulting",
 				"Payment",
@@ -8516,8 +8530,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6946eddd482c085893eae57e238a91a25d96bafee154f455fffbba4c9421d958",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-unrecorded-error-india.md": {
 			"bodyHash": "1067160e4f97295b419aa64001501267e3f66c02ae5db8d39b64b89d80a4c5b5",
@@ -8540,23 +8553,24 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-unveiling.md": {
-			"bodyHash": "14226a043d59d6653e67bd4b3a0735c2ff427f58719f5ebd9e186cff3a5de86a",
+			"bodyHash": "eff38addba0f8b949327d40b92b9c51d929884befbb8d3fb656fe35ad03d4ae2",
+			"hashVersion": 2,
+			"revisionHash": "b794248e498a8398e428d01fe066cc81c5498ec2a14365e8faefea800a68b772",
 			"generatedTags": [
 				"Middle Class",
 				"Job Boards",
-				"Unveiling",
 				"Naukri",
+				"Unveiling",
 				"Listings",
 				"AI",
 				"Watched",
 				"Congratulations",
-				"Algorithmic",
-				"Mills"
+				"Mills",
+				"LinkedIn"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "eb11af064f7cbd5c336f689f30e11b31867437d2c2a0ee5cb8bfceea8b2eb7a8",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-useful-box-and-the-bengali-problem-of-too-many-choices.md": {
 			"bodyHash": "6a688575ffffd20347571fca2b9e407d5043ab25031b091880554a7addbd168a",
@@ -8579,7 +8593,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-vermicular-parliament-of-my-unhinged-cranium.md": {
-			"bodyHash": "90a663cfc3cd4d7f870c02b9480b6bf5bfeaf9bc34a31bfc744a8b119b436f1f",
+			"bodyHash": "050cec4c903134ec6e460fa2d542070341c7d49945a53a00f3563b6c53335136",
+			"hashVersion": 2,
+			"revisionHash": "cb1fffae6cb5a280b06b638a4809503126a274acc56869b3523bf4b41409bed7",
 			"generatedTags": [
 				"South Calcutta",
 				"Worms",
@@ -8594,11 +8610,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2fc442cd249e67a1a219a241c98aa7025ca482163a539ea470327b03c760fe0a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-visible-work-of-imaginary-things.md": {
-			"bodyHash": "bc17e213aac0fcdfe90516a598d12b95dfffd037baeaba47ededa2e0f1069473",
+			"bodyHash": "14dd4abdcc22d317a9133977d7d26000a8993b92c24cc78313f1b13ce3e815df",
+			"hashVersion": 2,
+			"revisionHash": "12983c8f1984b8a7cf47ea4b4494d69324a66b87bfe1072e9ebcda6e63b54616",
 			"generatedTags": [
 				"Visible Work",
 				"Ideals",
@@ -8607,14 +8624,13 @@
 				"Atheism",
 				"Work",
 				"Species",
-				"Visible",
 				"Fashionable",
+				"Visible",
 				"Career"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "7f0206baaca0ee4b0039a09263854a13de9390b23829274db858ef0e05473088",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-voice-under-the-loudspeaker.md": {
 			"bodyHash": "bb8590e3332018444c800f241dcc37d69677fa0966f68ad0d3c2af66ad7578d2",
@@ -8693,14 +8709,16 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-weight-of-wet-heat.md": {
-			"bodyHash": "3c6eb0d0429a521b173605ec20395ac62127506c63177ff18a0263ee41d391bd",
+			"bodyHash": "1dad37462481a767955005cdec804b6bd642b9837cece41d21eb5ef2674633fb",
+			"hashVersion": 2,
+			"revisionHash": "24782e1b0b8aaed85aa200141594cc03cfd9ea8085acdbd563ed7a5156a0c8f1",
 			"generatedTags": [
 				"Heat Dome",
 				"Niño",
 				"Dome",
 				"Heat",
-				"Egrets",
 				"Warming",
+				"Egrets",
 				"Pacific",
 				"Inverter",
 				"Cart",
@@ -8708,8 +8726,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "66522bd00c0d6484260aa0cfc9502fed85745da13b358f830bb9b6d630854153",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-wetland-under-the-lights.md": {
 			"bodyHash": "4e5907573925ef847bbcdf58e4c0f4635de48b81f5958af40996caa43e0fce93",
@@ -9096,7 +9113,9 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/trapezoid-for-my-mother.md": {
-			"bodyHash": "7e6c115e750f8d2343dcde6a3613c728a7c9318a20805d75df36faaeeb0ee24d",
+			"bodyHash": "1cd3682173cadaea8efd0c67b16026a63afb10460a7e803c34951a44d171a3f6",
+			"hashVersion": 2,
+			"revisionHash": "ff4446d84c7fb31995ba69944c2f7bbc23e936820d3a5c84b82a1a2069f67dcd",
 			"generatedTags": [
 				"Don’t Worry Means",
 				"Trapezoid",
@@ -9111,8 +9130,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "da951a178097641b37c30265e332ec54c7cd892bbafa448ff626886c6e822139",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/trapped-by-the-room-mirror-and-feed.md": {
 			"bodyHash": "bdc945ee9b9b07f6efffd970297ddd0f2ebceb19535115591b398fb2445095db",
@@ -9194,7 +9212,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/turing-test-for-human-usefulness.md": {
-			"bodyHash": "29499cf39c2fe196bb15c39b48941cd0d9d95b1e4c3cbd597c7b160f3fd2ed75",
+			"bodyHash": "43176494810a385fda02e3d09325680610c6b10e87cabe55d0358bb312939757",
+			"hashVersion": 2,
+			"revisionHash": "a8029ac9cf97ac986e908b74a2ddf78c06e36ef7a1fa15b6cc602792168751b7",
 			"generatedTags": [
 				"Market Asks",
 				"EOD",
@@ -9209,8 +9229,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "19127c63b20256560c7da778068d8caebbd8057735f3bdfffe0aa181a392f6f5",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/twaddle-tendency.md": {
 			"bodyHash": "7eb7a9f84a102d83f2bde2d2dd333267b4ce31f04a4cc2a9cea0d39e8aabcaf3",
@@ -9253,7 +9272,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/unattractive-mans-weather-report.md": {
-			"bodyHash": "d505d53f39fe47ad558eec0bbbf73fd35083a41be64a090925278d3f6339b164",
+			"bodyHash": "3c820a1b8b5e2ef349ba14ec3d45829dd4930a9466c61d08b42a60ef48b6a848",
+			"hashVersion": 2,
+			"revisionHash": "08515c65ec68ff7bc5810997e304b442cdcf908e3dcf5c7efe3f7d33ca392d91",
 			"generatedTags": [
 				"Dental",
 				"Heartbreak",
@@ -9262,14 +9283,13 @@
 				"Teeth",
 				"Possibility",
 				"Personality",
-				"Middle-Aged",
 				"Posture",
+				"Middle-Aged",
 				"Beauty"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "368c9146b93f4905d6cec96933545493e4b15527c83877aafd2866150448ff6b",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/va-healthcare-data-systems-mumps-to-sql.md": {
 			"bodyHash": "0e660d643d7eb677d63aaae6c01c98983a05e18805374464f816768dfe200acf",
@@ -9323,7 +9343,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/vamana-and-the-three-steps-of-bankruptcy.md": {
-			"bodyHash": "56de060bd3d53ff7774f914d02ea8e22b8484ee4f64f291131d8f478d06f9e43",
+			"bodyHash": "a666323bd90bfcf10f1dae90d9bad1ad9c6dd5f6a3685e2cea601f8f9e37d25d",
+			"hashVersion": 2,
+			"revisionHash": "9ceb26fd7258c61d659785b5f326f156180335a104a42c436fd685cee4ef740c",
 			"generatedTags": [
 				"Buffer Means",
 				"Step Covers",
@@ -9332,14 +9354,13 @@
 				"Bali",
 				"Vamana",
 				"Laptop",
-				"Dwarf",
 				"Bankruptcy",
-				"Step"
+				"Step",
+				"Dwarf"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "5326bfce3d2fa4ef2a7a5f616c296bb53dc693a5bbaed2cc5b2c79585c54c92e",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/vector-databases.md": {
 			"bodyHash": "36bcef18bbe687e51f8157358f6d48c00c6d385b423d6d36e124c1fa0fb8e5b2",
@@ -9362,7 +9383,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.md": {
-			"bodyHash": "f35b19c2ca15d2ff0806d0461f17b7431df5ba21758491e3f637c0abfd159c54",
+			"bodyHash": "039b0836034c104dd40efa7d22937676a7f9b9f986b08301d181741c11477dad",
+			"hashVersion": 2,
+			"revisionHash": "6f8c26d037de470c77ba3f3d76a9fdbf5f8f93dd8c7894fd46c5aefc82f5bb3d",
 			"generatedTags": [
 				"Selling Vegetables",
 				"Girl",
@@ -9377,8 +9400,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "68a4cc00bf369d5c0f4286fbeb1e1882f90c396a629052eeecdddb3133a19587",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/vitruvian-man.md": {
 			"bodyHash": "8e07d7a8732b88926d3c2af304a12e43c0b67824211953d575e81e3ac4fa147e",
@@ -9400,7 +9422,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/waking-up-depressed-in-calcutta.md": {
-			"bodyHash": "4f989918cff2cc5806a6ccbe1978dbd1a5876bd0b0618c913e86ded22e93038c",
+			"bodyHash": "82512e1835919af27b0c9d38ace760c3f95e5c4fa18ef6c345b0c107e9462b90",
+			"hashVersion": 2,
+			"revisionHash": "3f9326f6aedaa82c8397eaa8972d717401ec198379596521781e0f9e2cccf3cc",
 			"generatedTags": [
 				"Whole Truth",
 				"Headache",
@@ -9411,12 +9435,11 @@
 				"Cup",
 				"Fog",
 				"Mind",
-				"Physical"
+				"Waits"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "0b8bacb382fcd6e056994a4025ba3d7e7b09bf0c0f28d2902836c717826abfea",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/war-spillovers-ukraine-iran-technology.md": {
 			"bodyHash": "ae39f251314cd648a0cdf4945ab687b468165bb0fba0ac23b36fc8fabee7b458",
@@ -9439,7 +9462,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/welcome-to-suvroghosh-in.md": {
-			"bodyHash": "77a0d2e489c71abd9b517eb6ae63489eadf60845240e966665f7a4d179785a1a",
+			"bodyHash": "e9368a5d209cf19409efea6afbdf0f3e7d3b0df60a14aced992cf7bd0a945c2e",
+			"hashVersion": 2,
+			"revisionHash": "155680ebd51cd5f7e03453d8486c189a125708cf283839dc86f0608621d49ab8",
 			"generatedTags": [
 				"Sometimes Silence",
 				"Guitar",
@@ -9454,8 +9479,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "386b6024dc4a60794af6d3eef00a4494e0bc25c5eb374c8535e517dc2a195cbf",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/wet-bulb-dry-bulb-feels-like-kolkata.md": {
 			"bodyHash": "e5ff0ae247954e5e9e480f88af4a355ab08d975d89414e045e79da3d12d390b3",
@@ -9577,13 +9601,15 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/why-i-write-on-small-things.md": {
-			"bodyHash": "59efa35af4c390daffef5b874b95ebfb0d3cae2df09a20cd219db29fb4c06d09",
+			"bodyHash": "9daa8a8ba8fb574fe5dd0e8575384190bc952bfb8a97430195bef45e5b96a9a1",
+			"hashVersion": 2,
+			"revisionHash": "ccc3c5eec57d7e6d58e1e59d3799c43aacb51a455081618a01216b8efb73037a",
 			"generatedTags": [
 				"Pressure Cooker",
 				"Ceiling Fan",
 				"Trivial",
-				"Sweats",
 				"Hot",
+				"Sweats",
 				"Sweating",
 				"Humiliation",
 				"Depression",
@@ -9592,27 +9618,27 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "542766b9aed1676110d574fb9b511f5ddf7bb4075b7159bbcd22dcc8500caa5d",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/why-i-write-what-i-write.md": {
-			"bodyHash": "55b703db24dffe41d707d160bbc981beb59093ce5dd28eb0e0fe3e177a1f7aff",
+			"bodyHash": "c5d69e58a40342e79f4d137d3b0002d2c811772f4c347caa3346de8ff1f37ee2",
+			"hashVersion": 2,
+			"revisionHash": "d03ef309dfb865846d3f7d04f9a36c75891abf8d6f383d1a94f5e695cfb04f9c",
 			"generatedTags": [
 				"Art",
-				"Grotesque",
 				"Write",
+				"Grotesque",
 				"Draw",
 				"Darkness",
 				"Furniture",
 				"Cartoon",
 				"Skull",
 				"Mask",
-				"Decency"
+				"Sentence"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "571ae84bec471266ec0193d3d80c652bb14d9bd9815050494ff0601bc0c5079f",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/why-read-a-healthcare-it-blog-in-the-age-of-ai.md": {
 			"bodyHash": "e548147241abdd51988aaff4d2e9ce65be3ca46c47dbd1d5b1037be95d5ed6cd",
@@ -9663,7 +9689,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/writing-nothing-from-calcutta.md": {
-			"bodyHash": "4f7f5a308aba09315c2869534a349ff79f93ff2dc9ddc6f77ef2b4acbbb2b1c7",
+			"bodyHash": "5503fb52040fa39b3fd4ae62ec2701aea3db9758c16ddea09cc20a3c141d9548",
+			"hashVersion": 2,
+			"revisionHash": "f3f64046e5e04d9e71670c4b197ba6f3277d99abc8f2177616a5152af4af53be",
 			"generatedTags": [
 				"Blank",
 				"Write",
@@ -9678,8 +9706,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "7e020c3cb112ba3c37703341518e2af9a76576c0a2ca73059dbddb289eb6ba56",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/wrong-shelf.md": {
 			"bodyHash": "7d407300388a729f188bd8a85819679c8299bdb6a94ce406a648d658ba68cb8f",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T03:48:23.301094+00:00",
+  "generatedAt": "2026-08-07T03:59:09.579221+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10398,12 +10398,12 @@
       "wordCount": 130
     },
     "the-ordinary-things": {
-      "generatedAt": "2026-07-20T02:06:24.561422+00:00",
+      "generatedAt": "2026-08-07T03:58:51.488427+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-ordinary-things.svg",
       "source": "src/lib/posts/the-ordinary-things.md",
-      "sourceHash": "483e36395868de8504b8c7501948bcb4236c2854ba7539991e278e9030ff03d1",
-      "sourceModified": "2026-07-20T02:00:12.531205+00:00",
+      "sourceHash": "a01ef7f71fb10af741428086dc3b585ed5e8d8d1b9b43d001cd5b6eacc432b46",
+      "sourceModified": "2026-08-07T03:56:04.173557+00:00",
       "topWords": [
         "Man",
         "Tea",
@@ -10444,12 +10444,12 @@
       "wordCount": 130
     },
     "the-pariah-porcupine": {
-      "generatedAt": "2026-07-20T02:06:26.072200+00:00",
+      "generatedAt": "2026-08-07T03:58:52.225746+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-pariah-porcupine.svg",
       "source": "src/lib/posts/the-pariah-porcupine.md",
-      "sourceHash": "9f63212a2c8e03f1fc9035d698640614213118b248aad35c836ad0bbb548cdfb",
-      "sourceModified": "2026-07-20T02:01:44.243292+00:00",
+      "sourceHash": "bc15038ac79a0c956e018365f986415c80109c75fab490739c879ac93ea29d84",
+      "sourceModified": "2026-08-07T03:58:41.993207+00:00",
       "topWords": [
         "Fan",
         "Dinner",
@@ -10490,12 +10490,12 @@
       "wordCount": 130
     },
     "the-person-is-not-a-machine": {
-      "generatedAt": "2026-07-20T02:06:26.759714+00:00",
+      "generatedAt": "2026-08-07T03:58:52.948586+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-person-is-not-a-machine.svg",
       "source": "src/lib/posts/the-person-is-not-a-machine.md",
-      "sourceHash": "437f745df19a1d0e7a20acca0b6e75934adf05865774abcea9000c1d586177b8",
-      "sourceModified": "2026-07-20T02:01:44.243292+00:00",
+      "sourceHash": "6e6fb551a16c77678140cac307b62f4d66e1f97b41c0d1a72cff11ea721404ad",
+      "sourceModified": "2026-08-07T03:56:04.173557+00:00",
       "topWords": [
         "Fan",
         "Write",
@@ -10697,12 +10697,12 @@
       "wordCount": 130
     },
     "the-rent-is-a-clock": {
-      "generatedAt": "2026-07-20T02:06:33.509891+00:00",
+      "generatedAt": "2026-08-07T03:58:53.671813+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-rent-is-a-clock.svg",
       "source": "src/lib/posts/the-rent-is-a-clock.md",
-      "sourceHash": "919236ac7d17ae56ac8af6304509efa6c62cc79d1a7d6f92a7956fb61325d9d2",
-      "sourceModified": "2026-07-20T02:00:12.646687+00:00",
+      "sourceHash": "04301d57db5fde8a9f91ab9eb48d42b90cfa580f7e03b07300bef5400e1297f8",
+      "sourceModified": "2026-08-07T03:58:42.006628+00:00",
       "topWords": [
         "Man",
         "Learn",
@@ -10743,12 +10743,12 @@
       "wordCount": 130
     },
     "the-rice-cooker-and-the-black-hole": {
-      "generatedAt": "2026-07-20T02:06:35.831464+00:00",
+      "generatedAt": "2026-08-07T03:58:54.354708+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-rice-cooker-and-the-black-hole.svg",
       "source": "src/lib/posts/the-rice-cooker-and-the-black-hole.md",
-      "sourceHash": "5dd314bd04d38cda230d358aaba8ebcd69b5355773e790c09b2c3c9d664b8cc7",
-      "sourceModified": "2026-07-20T02:00:12.416197+00:00",
+      "sourceHash": "55c20dc403d3bcf7b9cb026062b8dbea39003df8ef23e3161442dbcb6bc48ee0",
+      "sourceModified": "2026-08-07T03:58:42.012516+00:00",
       "topWords": [
         "Maybe",
         "Rice",
@@ -10766,12 +10766,12 @@
       "wordCount": 130
     },
     "the-rice-cooker-kind-of-solitude": {
-      "generatedAt": "2026-07-20T02:06:36.667898+00:00",
+      "generatedAt": "2026-08-07T03:58:55.019578+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-rice-cooker-kind-of-solitude.svg",
       "source": "src/lib/posts/the-rice-cooker-kind-of-solitude.md",
-      "sourceHash": "6d22d4791931a07f66de8e785d7bf97f7e94a711972bd639e860c4ef9385af28",
-      "sourceModified": "2026-07-20T02:00:12.271829+00:00",
+      "sourceHash": "4c0e265848a3e978269a4083c93535ce788a370b97fa98ba1fa4706bfbf5e54f",
+      "sourceModified": "2026-08-07T03:56:04.178335+00:00",
       "topWords": [
         "Room",
         "Rice",
@@ -10881,12 +10881,12 @@
       "wordCount": 130
     },
     "the-signal-to-noise-ratio-of-a-ruined-life": {
-      "generatedAt": "2026-07-20T02:06:39.638334+00:00",
+      "generatedAt": "2026-08-07T03:58:55.747898+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-signal-to-noise-ratio-of-a-ruined-life.svg",
       "source": "src/lib/posts/the-signal-to-noise-ratio-of-a-ruined-life.md",
-      "sourceHash": "2bb06a98fdf5d6d78be8443ddb96253c2a18e84dd583e218c41a223feb5b84b7",
-      "sourceModified": "2026-07-20T02:00:12.587034+00:00",
+      "sourceHash": "f1ad4b498501e837695d412f2d2c81af8b2df2dbb84579cb64e5760d322dbbcc",
+      "sourceModified": "2026-08-07T03:58:42.012516+00:00",
       "topWords": [
         "Signal",
         "Noise",
@@ -10973,12 +10973,12 @@
       "wordCount": 130
     },
     "the-static-in-the-room": {
-      "generatedAt": "2026-07-20T02:06:41.116187+00:00",
+      "generatedAt": "2026-08-07T03:58:56.550945+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-static-in-the-room.svg",
       "source": "src/lib/posts/the-static-in-the-room.md",
-      "sourceHash": "7c58a6de3e08f949c3c600ec2060f82870d27da6324aaf887a9c7dd965994bdf",
-      "sourceModified": "2026-07-20T02:00:12.689382+00:00",
+      "sourceHash": "63a07fbf09274babdb05fb2cec2d4502e5b9bfde0865ec5f77f01bb9e8701a58",
+      "sourceModified": "2026-08-07T03:58:42.012516+00:00",
       "topWords": [
         "Even",
         "Man",
@@ -11088,12 +11088,12 @@
       "wordCount": 130
     },
     "the-tea-skin-on-my-mind": {
-      "generatedAt": "2026-07-20T02:06:43.272413+00:00",
+      "generatedAt": "2026-08-07T03:58:57.305700+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-tea-skin-on-my-mind.svg",
       "source": "src/lib/posts/the-tea-skin-on-my-mind.md",
-      "sourceHash": "8c9812ab083b57ff64069eeb63421cd414159f0094258077ccea6bb34af0a7cf",
-      "sourceModified": "2026-07-20T02:00:12.605044+00:00",
+      "sourceHash": "1c6912b84f7b268412970b28816802d7064ec3c1a14bc360baced67e6148003a",
+      "sourceModified": "2026-08-07T03:56:04.178335+00:00",
       "topWords": [
         "Man",
         "Tea",
@@ -11157,12 +11157,12 @@
       "wordCount": 130
     },
     "the-terrace-republic": {
-      "generatedAt": "2026-07-20T02:06:45.560518+00:00",
+      "generatedAt": "2026-08-07T03:58:57.952556+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-terrace-republic.svg",
       "source": "src/lib/posts/the-terrace-republic.md",
-      "sourceHash": "4a50002d84b9b294b53d9342abe5723508967ca3cec267c7be5a9d5fecf29420",
-      "sourceModified": "2026-07-20T02:00:12.635614+00:00",
+      "sourceHash": "89628602b7cf34af867294957ee4697b07441138868b4b76032af973c80fe32c",
+      "sourceModified": "2026-08-07T03:58:42.037506+00:00",
       "topWords": [
         "Now",
         "Say",
@@ -11295,12 +11295,12 @@
       "wordCount": 130
     },
     "the-unattractive-mans-guide-to-quantum-mechanics": {
-      "generatedAt": "2026-07-20T02:06:49.310687+00:00",
+      "generatedAt": "2026-08-07T03:58:58.630764+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-unattractive-mans-guide-to-quantum-mechanics.svg",
       "source": "src/lib/posts/the-unattractive-mans-guide-to-quantum-mechanics.md",
-      "sourceHash": "378d9ef5347de94b0d50c5046bccb55556792bb54516e913ae33855dd97ba87e",
-      "sourceModified": "2026-07-20T02:01:44.385253+00:00",
+      "sourceHash": "c5a1ecfa6618b70925e9e247e8aa05e976186191541daf674e47be88d002261b",
+      "sourceModified": "2026-08-07T03:56:04.178335+00:00",
       "topWords": [
         "Man",
         "Small",
@@ -11318,12 +11318,12 @@
       "wordCount": 130
     },
     "the-unhelpful-man-in-calcutta": {
-      "generatedAt": "2026-07-20T02:06:50.087274+00:00",
+      "generatedAt": "2026-08-07T03:58:59.260353+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-unhelpful-man-in-calcutta.svg",
       "source": "src/lib/posts/the-unhelpful-man-in-calcutta.md",
-      "sourceHash": "55c191ca0e0fd412186fe52b69f9807ea851f31a85263d551da5b8c33a474061",
-      "sourceModified": "2026-07-20T02:00:12.668978+00:00",
+      "sourceHash": "07b16953ffa68532054b51293747a438adc273ef565fbc7818134b2648a14c1b",
+      "sourceModified": "2026-08-07T03:56:04.178335+00:00",
       "topWords": [
         "Reality",
         "Truth",
@@ -11364,12 +11364,12 @@
       "wordCount": 130
     },
     "the-unpaid-consultant-and-the-theology-of-hope": {
-      "generatedAt": "2026-07-20T02:06:50.849859+00:00",
+      "generatedAt": "2026-08-07T03:58:59.937720+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-unpaid-consultant-and-the-theology-of-hope.svg",
       "source": "src/lib/posts/the-unpaid-consultant-and-the-theology-of-hope.md",
-      "sourceHash": "62601b58c3664e9020d46fad2aa24be5399f23ac1ba4b4ec237ebf81c70f0762",
-      "sourceModified": "2026-07-20T02:00:12.363755+00:00",
+      "sourceHash": "b17312ac23a4f4195a78ad2f12f50d668c870a8157783a56f1ea889467a3655d",
+      "sourceModified": "2026-08-07T03:56:04.178335+00:00",
       "topWords": [
         "Payment",
         "Work",
@@ -11410,12 +11410,12 @@
       "wordCount": 130
     },
     "the-unveiling": {
-      "generatedAt": "2026-07-20T02:06:52.338487+00:00",
+      "generatedAt": "2026-08-07T03:59:00.673037+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-unveiling.svg",
       "source": "src/lib/posts/the-unveiling.md",
-      "sourceHash": "5d7d7274aaeec4212c529339756da848fa53cfa64fdcfc368b21bebd9e5e1c50",
-      "sourceModified": "2026-07-20T02:01:44.406952+00:00",
+      "sourceHash": "3b44b8dcd84d860a9a74d2137cbadf6826063c0936248d1a077940d1549639e3",
+      "sourceModified": "2026-08-07T03:58:42.043006+00:00",
       "topWords": [
         "Now",
         "AI",
@@ -11479,12 +11479,12 @@
       "wordCount": 130
     },
     "the-vermicular-parliament-of-my-unhinged-cranium": {
-      "generatedAt": "2026-07-20T02:06:53.865302+00:00",
+      "generatedAt": "2026-08-07T03:59:01.370982+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-vermicular-parliament-of-my-unhinged-cranium.svg",
       "source": "src/lib/posts/the-vermicular-parliament-of-my-unhinged-cranium.md",
-      "sourceHash": "75d7cda86927250a4ade8a398745ec98e7175ededfda8b7ad61e582eae46957c",
-      "sourceModified": "2026-07-20T02:01:44.413965+00:00",
+      "sourceHash": "a03fdd581b39b770b95e470abbd80a75924fdf4bdfd76f4467f9b7d3cd686ff1",
+      "sourceModified": "2026-08-07T03:56:04.182056+00:00",
       "topWords": [
         "Worms",
         "Every",
@@ -11502,12 +11502,12 @@
       "wordCount": 130
     },
     "the-visible-work-of-imaginary-things": {
-      "generatedAt": "2026-07-20T02:06:54.695569+00:00",
+      "generatedAt": "2026-08-07T03:59:02.085464+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-visible-work-of-imaginary-things.svg",
       "source": "src/lib/posts/the-visible-work-of-imaginary-things.md",
-      "sourceHash": "ec1f422468749700254d07bb78611b0683e0fdaaab8fb52c21df55b23b860179",
-      "sourceModified": "2026-07-20T02:00:12.536444+00:00",
+      "sourceHash": "5d9b9611b0d8cb7e71075d6aa5438034f49da21bece660b735eaa233eba1594d",
+      "sourceModified": "2026-08-07T03:58:42.062757+00:00",
       "topWords": [
         "Work",
         "Becomes",
@@ -11617,12 +11617,12 @@
       "wordCount": 130
     },
     "the-weight-of-wet-heat": {
-      "generatedAt": "2026-07-20T02:06:56.838109+00:00",
+      "generatedAt": "2026-08-07T03:59:02.747771+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-weight-of-wet-heat.svg",
       "source": "src/lib/posts/the-weight-of-wet-heat.md",
-      "sourceHash": "1681648471d362843197334853c9d8a98503c4577d84d0b3ad08afb8bce63884",
-      "sourceModified": "2026-07-20T02:01:44.432267+00:00",
+      "sourceHash": "fb2bae510bef11fffc42f0d56826ccb1b9c964a6c24e8b83a6fe3cfe77eee955",
+      "sourceModified": "2026-08-07T03:58:42.070662+00:00",
       "topWords": [
         "Heat",
         "Water",
@@ -12146,12 +12146,12 @@
       "wordCount": 130
     },
     "trapezoid-for-my-mother": {
-      "generatedAt": "2026-07-20T02:07:11.487142+00:00",
+      "generatedAt": "2026-08-07T03:59:03.466087+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/trapezoid-for-my-mother.svg",
       "source": "src/lib/posts/trapezoid-for-my-mother.md",
-      "sourceHash": "e0835c2682cca1dfead7d7c139f45fb93bb7101ba67bc5083c5a4334c359ffb6",
-      "sourceModified": "2026-07-20T02:00:12.468066+00:00",
+      "sourceHash": "1a2da5a771dca7d6333e1c001cb09f2b0b8cab8edb673d0199bbad76dd7b9873",
+      "sourceModified": "2026-08-07T03:56:04.182056+00:00",
       "topWords": [
         "Becomes",
         "Mother",
@@ -12261,12 +12261,12 @@
       "wordCount": 130
     },
     "turing-test-for-human-usefulness": {
-      "generatedAt": "2026-07-20T02:07:14.538016+00:00",
+      "generatedAt": "2026-08-07T03:59:04.154971+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/turing-test-for-human-usefulness.svg",
       "source": "src/lib/posts/turing-test-for-human-usefulness.md",
-      "sourceHash": "624bda696c5d4a855a11e7501404168babc356903bb48c415f64812c4172027c",
-      "sourceModified": "2026-07-20T02:01:44.554387+00:00",
+      "sourceHash": "aaf3c299fb1b84bb3f534ebbb0ae116446692912f7bb0ac23ce31d81594a5d8b",
+      "sourceModified": "2026-08-07T03:51:44.690982+00:00",
       "topWords": [
         "Man",
         "Market",
@@ -12330,12 +12330,12 @@
       "wordCount": 130
     },
     "unattractive-mans-weather-report": {
-      "generatedAt": "2026-07-20T02:07:16.841784+00:00",
+      "generatedAt": "2026-08-07T03:59:04.793925+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/unattractive-mans-weather-report.svg",
       "source": "src/lib/posts/unattractive-mans-weather-report.md",
-      "sourceHash": "317da3ff7db04e8adb70718c1e3af2eb57130e47a9e41b7f745d1f8f06c7fa0c",
-      "sourceModified": "2026-07-20T02:00:12.646687+00:00",
+      "sourceHash": "e9c136549f826f626cca1601362836bb6a8d5746369ede34fdec4fa3a6aa10a2",
+      "sourceModified": "2026-08-07T03:58:42.096354+00:00",
       "topWords": [
         "Man",
         "Little",
@@ -12399,12 +12399,12 @@
       "wordCount": 130
     },
     "vamana-and-the-three-steps-of-bankruptcy": {
-      "generatedAt": "2026-07-20T02:07:19.011478+00:00",
+      "generatedAt": "2026-08-07T03:59:05.494308+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/vamana-and-the-three-steps-of-bankruptcy.svg",
       "source": "src/lib/posts/vamana-and-the-three-steps-of-bankruptcy.md",
-      "sourceHash": "e522abb99f63d7f43285908898ea07368650e7fdc9f7f9cd2f7ce187806cb3da",
-      "sourceModified": "2026-07-20T02:00:12.635614+00:00",
+      "sourceHash": "1bedcfeb513ee1ba6582d6e360e7159ff948c53b84c61e65b3927d98701bc833",
+      "sourceModified": "2026-08-07T03:58:42.102520+00:00",
       "topWords": [
         "Keep",
         "Small",
@@ -12445,12 +12445,12 @@
       "wordCount": 130
     },
     "vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck": {
-      "generatedAt": "2026-07-20T02:07:20.442721+00:00",
+      "generatedAt": "2026-08-07T03:59:06.154727+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.svg",
       "source": "src/lib/posts/vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.md",
-      "sourceHash": "f6f7413a3dd02631eeb1056a43e3de37f8caeaf3ff7af47ae03aae213a9c4d5e",
-      "sourceModified": "2026-07-20T02:00:12.569999+00:00",
+      "sourceHash": "0addf71411de7c1ed039fc7dfe774f0aaf962ad8089206624f55c162a2d3422f",
+      "sourceModified": "2026-08-07T03:51:44.690982+00:00",
       "topWords": [
         "Morning",
         "World",
@@ -12491,12 +12491,12 @@
       "wordCount": 130
     },
     "waking-up-depressed-in-calcutta": {
-      "generatedAt": "2026-07-20T02:07:21.254842+00:00",
+      "generatedAt": "2026-08-07T03:59:06.808596+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/waking-up-depressed-in-calcutta.svg",
       "source": "src/lib/posts/waking-up-depressed-in-calcutta.md",
-      "sourceHash": "0f9281e70abf291bd9322d13ef474cb6a17b4d5ff6133ba93549117eaa57bd61",
-      "sourceModified": "2026-07-20T02:00:12.646687+00:00",
+      "sourceHash": "89ae068a6cda20f18f7716defa85617d528c272ea40909f889e6617aa64c82da",
+      "sourceModified": "2026-08-07T03:58:42.111522+00:00",
       "topWords": [
         "Depression",
         "Small",
@@ -12537,12 +12537,12 @@
       "wordCount": 130
     },
     "welcome-to-suvroghosh-in": {
-      "generatedAt": "2026-07-20T02:07:22.831122+00:00",
+      "generatedAt": "2026-08-07T03:59:07.456847+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/welcome-to-suvroghosh-in.svg",
       "source": "src/lib/posts/welcome-to-suvroghosh-in.md",
-      "sourceHash": "7ce3156e90c6a902c40e0f755f748fa2e80882440bb8133e1fde62d3944fe878",
-      "sourceModified": "2026-07-20T02:00:12.716336+00:00",
+      "sourceHash": "4ee51530be2f20eb9096156f745c6054617aabb98d912495b6762bbea7cc9e45",
+      "sourceModified": "2026-08-07T03:51:44.690982+00:00",
       "topWords": [
         "Sometimes",
         "Science",
@@ -12698,12 +12698,12 @@
       "wordCount": 130
     },
     "why-i-write-on-small-things": {
-      "generatedAt": "2026-07-20T02:07:26.619616+00:00",
+      "generatedAt": "2026-08-07T03:59:08.155228+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/why-i-write-on-small-things.svg",
       "source": "src/lib/posts/why-i-write-on-small-things.md",
-      "sourceHash": "8ff00afdf589fb50bc05493a832f2b950dbacfe20c0b36a43236cb684f371ae7",
-      "sourceModified": "2026-07-20T02:00:12.593280+00:00",
+      "sourceHash": "f059d1b11c5847f62f048fe51f60d4114af466c29177fa3386d8dc871e2a9152",
+      "sourceModified": "2026-08-07T03:58:42.122333+00:00",
       "topWords": [
         "Even",
         "Trivial",
@@ -12721,12 +12721,12 @@
       "wordCount": 130
     },
     "why-i-write-what-i-write": {
-      "generatedAt": "2026-07-20T02:07:27.397689+00:00",
+      "generatedAt": "2026-08-07T03:59:08.838757+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/why-i-write-what-i-write.svg",
       "source": "src/lib/posts/why-i-write-what-i-write.md",
-      "sourceHash": "fb0c797de5ccfb5fe8b6db4dea99cba71d793e31b800262dca102697a12eaa48",
-      "sourceModified": "2026-07-20T02:00:12.569999+00:00",
+      "sourceHash": "bc59e770875d4efda3361c4cb8f6ccc4dd22ff4dfd06e07aa540c83e407f9f97",
+      "sourceModified": "2026-08-07T03:58:42.122333+00:00",
       "topWords": [
         "Art",
         "Becomes",
@@ -12813,12 +12813,12 @@
       "wordCount": 130
     },
     "writing-nothing-from-calcutta": {
-      "generatedAt": "2026-07-20T02:07:29.600938+00:00",
+      "generatedAt": "2026-08-07T03:59:09.579221+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/writing-nothing-from-calcutta.svg",
       "source": "src/lib/posts/writing-nothing-from-calcutta.md",
-      "sourceHash": "3fb7130a588bfe13d15e6a85b120ba5b47fe3e79edc1313fe29b5dc65bc0378e",
-      "sourceModified": "2026-07-20T02:00:12.316343+00:00",
+      "sourceHash": "a6aca177786b6adb6b8e5b511f921971505614116ca055bc3973fa5e57f3511f",
+      "sourceModified": "2026-08-07T03:51:44.690982+00:00",
       "topWords": [
         "Nothing",
         "Write",

@@ -1,17 +1,19 @@
 ---
 title: "The Rent Is a Clock"
-description: "A middle-aged Bengali man in the boondocks of Calcutta writes from the narrow ledge between rent, illness, unpaid work, and the polite national fiction that merit will save us."
+description: "A middle-aged Bengali man writes from the ledge between rent, illness, unpaid work, and the fiction that merit will save us."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Income","Learn","Tick","Merit","Young","Rent","Writing","India","Payment","Health"]
+tags: ["Income","Learn","Tick","Merit","Rent","Young","Writing","India","Payment","Health"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-rent-is-a-clock.jpg"
+thumbnail: "/thumbnail/art-the-rent-is-a-clock.jpg"
+thumbnailAlt: "House-key pendulum and giant clock shadow loom across a rented Calcutta room"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-rent-is-a-clock.jpg" />
+<Pi src="/thumbnail/art-the-rent-is-a-clock.jpg" />
 
 Acronyms used in this post:
 

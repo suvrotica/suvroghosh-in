@@ -1,17 +1,19 @@
 ---
 title: "Waking Up Depressed in Calcutta"
-description: "A personal essay on waking into depression before language, hope, or ordinary meaning has arrived. From the shanty edge of Calcutta, it follows the strange morning work of rebuilding a self from scraps."
+description: "A Bengali man wakes before meaning arrives while ordinary scraps gather into the outline of a self in a foggy Calcutta room."
 date: "2026-05-19"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Cup","Fog","Mind","Physical"]
+tags: ["Whole Truth","Headache","Depression","Doom","Mornings","Wake","Cup","Fog","Mind","Waits"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-waking-up-depressed-in-calcutta.jpg"
+thumbnail: "/thumbnail/art-waking-up-depressed-in-calcutta.jpg"
+thumbnailAlt: "Bengali man sitting on his bed as colourful scraps assemble into a human-shaped pattern"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-waking-up-depressed-in-calcutta.jpg" />
+<Pi src="/thumbnail/art-waking-up-depressed-in-calcutta.jpg" />
 
 Acronyms and terms used in this post:
 

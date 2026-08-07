@@ -2,16 +2,18 @@
 title: "Writing Nothing From the Edge of Calcutta"
 description: "A personal essay on blank pages, empty days, middle age, poverty, depression, and why writing about nothing may still be a form of staying alive."
 date: "2026-05-20"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Blank","Write","Nothing","Topic","Item","Monthly","Writing","Payment","Dust","AI"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-writing-nothing-from-calcutta.jpg"
+thumbnail: "/thumbnail/art-writing-nothing-from-calcutta.jpg"
+thumbnailAlt: "Bengali man touching pen to a blank page as dust forms a glowing doorway beside him"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-writing-nothing-from-calcutta.jpg" />
+<Pi src="/thumbnail/art-writing-nothing-from-calcutta.jpg" />
 
 Acronyms used in this post:
 

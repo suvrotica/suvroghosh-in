@@ -6247,6 +6247,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-ordinary-things.jpg",
+			"src": "/thumbnail/art-the-ordinary-things.jpg",
+			"bytes": 135845,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-overzealous-credulity-crisis.jpg",
 			"src": "/thumbnail/art-the-overzealous-credulity-crisis.jpg",
 			"bytes": 129302,
@@ -6254,9 +6261,44 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-pariah-porcupine.jpg",
+			"src": "/thumbnail/art-the-pariah-porcupine.jpg",
+			"bytes": 198884,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-person-is-not-a-machine.jpg",
+			"src": "/thumbnail/art-the-person-is-not-a-machine.jpg",
+			"bytes": 144822,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-pharmakon-of-woodlice.jpg",
 			"src": "/thumbnail/art-the-pharmakon-of-woodlice.jpg",
 			"bytes": 162963,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-rent-is-a-clock.jpg",
+			"src": "/thumbnail/art-the-rent-is-a-clock.jpg",
+			"bytes": 114513,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-rice-cooker-and-the-black-hole.jpg",
+			"src": "/thumbnail/art-the-rice-cooker-and-the-black-hole.jpg",
+			"bytes": 95658,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-rice-cooker-kind-of-solitude.jpg",
+			"src": "/thumbnail/art-the-rice-cooker-kind-of-solitude.jpg",
+			"bytes": 136674,
 			"width": 1200,
 			"height": 800
 		},
@@ -6275,9 +6317,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
+			"src": "/thumbnail/art-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
+			"bytes": 228119,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
 			"src": "/thumbnail/art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
 			"bytes": 139148,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-static-in-the-room.jpg",
+			"src": "/thumbnail/art-the-static-in-the-room.jpg",
+			"bytes": 105024,
 			"width": 1200,
 			"height": 800
 		},
@@ -6289,9 +6345,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-tea-skin-on-my-mind.jpg",
+			"src": "/thumbnail/art-the-tea-skin-on-my-mind.jpg",
+			"bytes": 219489,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-tea-stall-as-an-anti-ai-safety-system.jpg",
 			"src": "/thumbnail/art-the-tea-stall-as-an-anti-ai-safety-system.jpg",
 			"bytes": 153526,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-terrace-republic.jpg",
+			"src": "/thumbnail/art-the-terrace-republic.jpg",
+			"bytes": 234873,
 			"width": 1200,
 			"height": 800
 		},
@@ -6324,6 +6394,27 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
+			"src": "/thumbnail/art-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
+			"bytes": 142589,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unhelpful-man-in-calcutta.jpg",
+			"src": "/thumbnail/art-the-unhelpful-man-in-calcutta.jpg",
+			"bytes": 131832,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unpaid-consultant-and-the-theology-of-hope.jpg",
+			"src": "/thumbnail/art-the-unpaid-consultant-and-the-theology-of-hope.jpg",
+			"bytes": 118164,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-unrecorded-error-india.jpg",
 			"src": "/thumbnail/art-the-unrecorded-error-india.jpg",
 			"bytes": 125227,
@@ -6331,9 +6422,37 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-unveiling.jpg",
+			"src": "/thumbnail/art-the-unveiling.jpg",
+			"bytes": 174054,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg",
 			"src": "/thumbnail/art-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg",
 			"bytes": 241266,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
+			"src": "/thumbnail/art-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
+			"bytes": 139330,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-visible-work-of-imaginary-things.jpg",
+			"src": "/thumbnail/art-the-visible-work-of-imaginary-things.jpg",
+			"bytes": 232656,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-weight-of-wet-heat.jpg",
+			"src": "/thumbnail/art-the-weight-of-wet-heat.jpg",
+			"bytes": 119195,
 			"width": 1200,
 			"height": 800
 		},
@@ -6359,6 +6478,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-trapezoid-for-my-mother.jpg",
+			"src": "/thumbnail/art-trapezoid-for-my-mother.jpg",
+			"bytes": 136840,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-trapped-by-the-room-mirror-and-feed.jpg",
 			"src": "/thumbnail/art-trapped-by-the-room-mirror-and-feed.jpg",
 			"bytes": 90465,
@@ -6380,6 +6506,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-turing-test-for-human-usefulness.jpg",
+			"src": "/thumbnail/art-turing-test-for-human-usefulness.jpg",
+			"bytes": 130071,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-twaddle-tendency.jpg",
 			"src": "/thumbnail/art-twaddle-tendency.jpg",
 			"bytes": 195601,
@@ -6390,6 +6523,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-ubi-india-ai-unemployment-democracy.jpg",
 			"src": "/thumbnail/art-ubi-india-ai-unemployment-democracy.jpg",
 			"bytes": 168804,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-unattractive-mans-weather-report.jpg",
+			"src": "/thumbnail/art-unattractive-mans-weather-report.jpg",
+			"bytes": 83749,
 			"width": 1200,
 			"height": 800
 		},
@@ -6408,6 +6548,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-vamana-and-the-three-steps-of-bankruptcy.jpg",
+			"src": "/thumbnail/art-vamana-and-the-three-steps-of-bankruptcy.jpg",
+			"bytes": 270533,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-vector-databases.jpg",
 			"src": "/thumbnail/art-vector-databases.jpg",
 			"bytes": 122408,
@@ -6415,9 +6562,30 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
+			"src": "/thumbnail/art-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
+			"bytes": 130442,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-waking-up-depressed-in-calcutta.jpg",
+			"src": "/thumbnail/art-waking-up-depressed-in-calcutta.jpg",
+			"bytes": 116116,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-war-spillovers-ukraine-iran-technology.jpg",
 			"src": "/thumbnail/art-war-spillovers-ukraine-iran-technology.jpg",
 			"bytes": 208432,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-welcome-to-suvroghosh-in.jpg",
+			"src": "/thumbnail/art-welcome-to-suvroghosh-in.jpg",
+			"bytes": 132681,
 			"width": 1200,
 			"height": 800
 		},
@@ -6450,6 +6618,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-why-i-write-on-small-things.jpg",
+			"src": "/thumbnail/art-why-i-write-on-small-things.jpg",
+			"bytes": 179708,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-why-i-write-what-i-write.jpg",
+			"src": "/thumbnail/art-why-i-write-what-i-write.jpg",
+			"bytes": 224904,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg",
 			"src": "/thumbnail/art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg",
 			"bytes": 151715,
@@ -6460,6 +6642,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-woke-word-calcutta-redux.jpg",
 			"src": "/thumbnail/art-woke-word-calcutta-redux.jpg",
 			"bytes": 183596,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-writing-nothing-from-calcutta.jpg",
+			"src": "/thumbnail/art-writing-nothing-from-calcutta.jpg",
+			"bytes": 110095,
 			"width": 1200,
 			"height": 800
 		},
@@ -6567,293 +6756,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 199314,
 			"width": 1448,
 			"height": 1086
-		},
-		{
-			"name": "safe-bengal-changed-color-not-character.jpg",
-			"src": "/thumbnail/safe-bengal-changed-color-not-character.jpg",
-			"bytes": 127888,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-courage-to-be-disliked-in-calcutta.jpg",
-			"src": "/thumbnail/safe-courage-to-be-disliked-in-calcutta.jpg",
-			"bytes": 126568,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-depression-as-mathematics.jpg",
-			"src": "/thumbnail/safe-depression-as-mathematics.jpg",
-			"bytes": 130451,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-entropy-in-a-rented-room.jpg",
-			"src": "/thumbnail/safe-entropy-in-a-rented-room.jpg",
-			"bytes": 112913,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-first-principles-thinking-calcutta-healthcare-it.jpg",
-			"src": "/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg",
-			"bytes": 129999,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fog-machines-in-the-temple.jpg",
-			"src": "/thumbnail/safe-fog-machines-in-the-temple.jpg",
-			"bytes": 124080,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-how-are-you-and-other-small-cruelties.jpg",
-			"src": "/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg",
-			"bytes": 116571,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
-			"src": "/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
-			"bytes": 108313,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
-			"src": "/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
-			"bytes": 133867,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mind-as-emergence-not-magic.jpg",
-			"src": "/thumbnail/safe-mind-as-emergence-not-magic.jpg",
-			"bytes": 124848,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-newtons-first-law-and-the-bladder.jpg",
-			"src": "/thumbnail/safe-newtons-first-law-and-the-bladder.jpg",
-			"bytes": 118394,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-randomness-chaos-complexity-calcutta.jpg",
-			"src": "/thumbnail/safe-randomness-chaos-complexity-calcutta.jpg",
-			"bytes": 121856,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-returning-home-after-america.jpg",
-			"src": "/thumbnail/safe-returning-home-after-america.jpg",
-			"bytes": 109468,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-ordinary-things.jpg",
-			"src": "/thumbnail/safe-the-ordinary-things.jpg",
-			"bytes": 123664,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-pariah-porcupine.jpg",
-			"src": "/thumbnail/safe-the-pariah-porcupine.jpg",
-			"bytes": 119729,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-person-is-not-a-machine.jpg",
-			"src": "/thumbnail/safe-the-person-is-not-a-machine.jpg",
-			"bytes": 123526,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-rent-is-a-clock.jpg",
-			"src": "/thumbnail/safe-the-rent-is-a-clock.jpg",
-			"bytes": 116068,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-rice-cooker-and-the-black-hole.jpg",
-			"src": "/thumbnail/safe-the-rice-cooker-and-the-black-hole.jpg",
-			"bytes": 131963,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-rice-cooker-kind-of-solitude.jpg",
-			"src": "/thumbnail/safe-the-rice-cooker-kind-of-solitude.jpg",
-			"bytes": 123023,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
-			"src": "/thumbnail/safe-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
-			"bytes": 124157,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-static-in-the-room.jpg",
-			"src": "/thumbnail/safe-the-static-in-the-room.jpg",
-			"bytes": 109866,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-tea-skin-on-my-mind.jpg",
-			"src": "/thumbnail/safe-the-tea-skin-on-my-mind.jpg",
-			"bytes": 121995,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-terrace-republic.jpg",
-			"src": "/thumbnail/safe-the-terrace-republic.jpg",
-			"bytes": 112219,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
-			"src": "/thumbnail/safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
-			"bytes": 113988,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unhelpful-man-in-calcutta.jpg",
-			"src": "/thumbnail/safe-the-unhelpful-man-in-calcutta.jpg",
-			"bytes": 122328,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unpaid-consultant-and-the-theology-of-hope.jpg",
-			"src": "/thumbnail/safe-the-unpaid-consultant-and-the-theology-of-hope.jpg",
-			"bytes": 106685,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unveiling.jpg",
-			"src": "/thumbnail/safe-the-unveiling.jpg",
-			"bytes": 120216,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
-			"src": "/thumbnail/safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
-			"bytes": 118814,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-visible-work-of-imaginary-things.jpg",
-			"src": "/thumbnail/safe-the-visible-work-of-imaginary-things.jpg",
-			"bytes": 122568,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-weight-of-wet-heat.jpg",
-			"src": "/thumbnail/safe-the-weight-of-wet-heat.jpg",
-			"bytes": 110121,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-this-blogs-history.jpg",
-			"src": "/thumbnail/safe-this-blogs-history.jpg",
-			"bytes": 111886,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-trapezoid-for-my-mother.jpg",
-			"src": "/thumbnail/safe-trapezoid-for-my-mother.jpg",
-			"bytes": 112982,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-turing-test-for-human-usefulness.jpg",
-			"src": "/thumbnail/safe-turing-test-for-human-usefulness.jpg",
-			"bytes": 108111,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-unattractive-mans-weather-report.jpg",
-			"src": "/thumbnail/safe-unattractive-mans-weather-report.jpg",
-			"bytes": 111575,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-vamana-and-the-three-steps-of-bankruptcy.jpg",
-			"src": "/thumbnail/safe-vamana-and-the-three-steps-of-bankruptcy.jpg",
-			"bytes": 123296,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
-			"src": "/thumbnail/safe-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
-			"bytes": 125187,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-waking-up-depressed-in-calcutta.jpg",
-			"src": "/thumbnail/safe-waking-up-depressed-in-calcutta.jpg",
-			"bytes": 110564,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-welcome-to-suvroghosh-in.jpg",
-			"src": "/thumbnail/safe-welcome-to-suvroghosh-in.jpg",
-			"bytes": 118316,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-i-write-on-small-things.jpg",
-			"src": "/thumbnail/safe-why-i-write-on-small-things.jpg",
-			"bytes": 114189,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-i-write-what-i-write.jpg",
-			"src": "/thumbnail/safe-why-i-write-what-i-write.jpg",
-			"bytes": 119028,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-writing-nothing-from-calcutta.jpg",
-			"src": "/thumbnail/safe-writing-nothing-from-calcutta.jpg",
-			"bytes": 107978,
-			"width": 1200,
-			"height": 800
 		}
 	]
 };

@@ -1,17 +1,19 @@
 ---
 title: "The Weight of Wet Heat"
-description: "A humid, philosophically inclined reflection from Calcutta on the relentless tropical heat, the science of heat domes and El Niño, and the quiet dread of a monsoon that may never arrive as promised."
+description: "A Calcutta reflection on oppressive tropical heat, heat domes, El Niño, and the dread of a monsoon that may never arrive as promised."
 date: "2026-06-25"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Heat Dome","Niño","Dome","Heat","Egrets","Warming","Pacific","Inverter","Cart","Monsoon"]
+tags: ["Heat Dome","Niño","Dome","Heat","Warming","Egrets","Pacific","Inverter","Cart","Monsoon"]
 published: true
 color: "#8B4513"
-thumbnail: "/thumbnail/safe-the-weight-of-wet-heat.jpg"
+thumbnail: "/thumbnail/art-the-weight-of-wet-heat.jpg"
+thumbnailAlt: "Handcart rests beneath a pale humid sky as distant monsoon clouds withhold rain"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-weight-of-wet-heat.jpg" />
+<Pi src="/thumbnail/art-the-weight-of-wet-heat.jpg" />
 
 The fan in my bedroom is not moving the air so much as rearranging it, shuffling the same tepid, moisture-laden breath from one corner of the room to another with the resigned diligence of a clerk who knows the files will never be in order. I woke at four-thirty this morning, not from any alarm but because the back of my neck had begun to prickle with a sensation I can only describe as the tactile equivalent of a held breath, the skin anticipating sweat before the sweat itself had the courtesy to arrive. The thermometer on the window ledge, that small glass liar, reads thirty-four degrees Celsius, but the humidity, that invisible and omnipresent accomplice, has pushed the sensible heat into the mid-forties, and the body knows this even when the mind refuses to do the arithmetic. I stood for a while in the half-dark, watching the street below through the grimy louvers, where a man was already dragging a cart of green coconuts toward the junction at Ballygunge, his lungi dark with perspiration in patches that spread and merged like a topographical map of some drowning archipelago.
 
