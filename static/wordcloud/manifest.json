@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T11:44:28.980121+00:00",
+  "generatedAt": "2026-08-07T15:53:27.777974+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10233,6 +10233,29 @@
         "Meat",
         "Seven",
         "Came"
+      ],
+      "wordCount": 130
+    },
+    "the-museum-of-invisible-weather": {
+      "generatedAt": "2026-08-07T15:53:24.992597+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-museum-of-invisible-weather.svg",
+      "source": "src/lib/posts/the-museum-of-invisible-weather.md",
+      "sourceHash": "c71592710a3f649ccea7eb97415311c095c8cd8d3314486160498a181b19cfbc",
+      "sourceModified": "2026-08-07T15:36:00.556737+00:00",
+      "topWords": [
+        "Field",
+        "Frame",
+        "Mathbf",
+        "Noise",
+        "Phi",
+        "Layout",
+        "Phase",
+        "Seed",
+        "Normalized",
+        "Local",
+        "Depth",
+        "Text"
       ],
       "wordCount": 130
     },

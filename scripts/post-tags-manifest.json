@@ -11038,6 +11038,35 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-07"
+		},
+		"src/lib/posts/the-museum-of-invisible-weather.md": {
+			"bodyHash": "936b2ac10d2230d23887adbf8d243732c25417b29df9305086ea4717619068bb",
+			"hashVersion": 2,
+			"revisionHash": "ba3fdc5aa91f596fb555dcacdbbfc0851dc515ed344820a11bdf7cba8c547519",
+			"generatedTags": [
+				"Generative Art",
+				"p5.js",
+				"Creative Coding",
+				"Flow Fields",
+				"Perlin Noise",
+				"Procedural Art",
+				"Colour Theory",
+				"Svelte",
+				"Directional Alphabets",
+				"Generator Version"
+			],
+			"pinnedTags": [
+				"Generative Art",
+				"p5.js",
+				"Creative Coding",
+				"Flow Fields",
+				"Perlin Noise",
+				"Procedural Art",
+				"Colour Theory",
+				"Svelte"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-07"
 		}
 	},
 	"maxTags": 10

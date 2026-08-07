@@ -9254,6 +9254,21 @@
       "sourceHash": "e56d019a5fd8c894fb8cc14a701e53160ffd1ce6b052f9843e445c183f8eb225",
       "width": 1200
     },
+    "static/images/the-museum-of-invisible-weather.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 87778,
+      "outputHash": "a29c6218bfeed10175edbf3f665b0a5707881139770bbed21f6676b5536fd104",
+      "resized": false,
+      "sourceBytes": 109957,
+      "sourceHash": "36ae0f8d35b63b4dce07649bbfbfe53d6757d922beb2883bfb9d636174a9c17f",
+      "width": 1600
+    },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",
       "height": 900,

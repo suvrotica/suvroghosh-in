@@ -4073,6 +4073,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "the-museum-of-invisible-weather.png",
+			"src": "/images/the-museum-of-invisible-weather.png",
+			"bytes": 87778,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,
