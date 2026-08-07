@@ -2,13 +2,13 @@
 title: "The Shadow Architecture of Healthcare Data"
 description: "A first-person account of a decade spent as a founder and independent architect learning the structural realities of healthcare data, markets, and AI."
 date: "2026-04-25"
-dateModified: "2026-07-24"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["United States","Health Science","Healthcare","Data","Clinical","Representation","VA","Systems","FHIR","MUMPS"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg"
-thumbnailAlt: "Layered blue, cream, rust, and purple abstract curves crossed by fine contour lines"
+thumbnail: "/thumbnail/art-explaining-the-healthcare-it-gap-as-continuity.jpg"
+thumbnailAlt: "Hospital cutaway revealing an intricate hidden data infrastructure beneath a calm clinical corridor"
 inPlainEnglish: "A decade spent building healthcare software independently was not a departure from healthcare IT. It exposed how workflows, incentives, standards, workarounds, and unresolved meanings form a shadow architecture beneath clinical data—and why trustworthy AI must begin with representation and provenance."
 keyTerms: ["Shadow Architecture", "Healthcare Data", "Semantic Interoperability", "Data Provenance", "Clinical Workflow", "Healthcare AI"]
 faq:
@@ -22,7 +22,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg" />
+<Pi src="/thumbnail/art-explaining-the-healthcare-it-gap-as-continuity.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

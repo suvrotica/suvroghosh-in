@@ -4217,9 +4217,51 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-agentic-ai-and-the-asymmetry-of-will.jpg",
+			"src": "/thumbnail/art-agentic-ai-and-the-asymmetry-of-will.jpg",
+			"bytes": 187097,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-business-model-broke-bengali-nervous.jpg",
+			"src": "/thumbnail/art-ai-business-model-broke-bengali-nervous.jpg",
+			"bytes": 168982,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-cannot-suffer-yet.jpg",
+			"src": "/thumbnail/art-ai-cannot-suffer-yet.jpg",
+			"bytes": 106235,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-data-centres-india-power-water-calcutta-fear.jpg",
+			"src": "/thumbnail/art-ai-data-centres-india-power-water-calcutta-fear.jpg",
+			"bytes": 167353,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ai-deployment-evidence-over-opinion.jpg",
 			"src": "/thumbnail/art-ai-deployment-evidence-over-opinion.jpg",
 			"bytes": 99988,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-genie-out-of-the-bottle.jpg",
+			"src": "/thumbnail/art-ai-genie-out-of-the-bottle.jpg",
+			"bytes": 242425,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-harmonium-players.jpg",
+			"src": "/thumbnail/art-ai-harmonium-players.jpg",
+			"bytes": 241215,
 			"width": 1200,
 			"height": 800
 		},
@@ -4245,9 +4287,37 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-ai-meaningful-work-and-the-trust-collapse.jpg",
+			"src": "/thumbnail/art-ai-meaningful-work-and-the-trust-collapse.jpg",
+			"bytes": 115409,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-meaningful-work-trust-collapse.jpg",
+			"src": "/thumbnail/art-ai-meaningful-work-trust-collapse.jpg",
+			"bytes": 207321,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ai-moat-labor-displacement.jpg",
 			"src": "/thumbnail/art-ai-moat-labor-displacement.jpg",
 			"bytes": 210813,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
+			"src": "/thumbnail/art-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
+			"bytes": 117428,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-wave-social-isolation-mental-health-infrastructure.jpg",
+			"src": "/thumbnail/art-ai-wave-social-isolation-mental-health-infrastructure.jpg",
+			"bytes": 127601,
 			"width": 1200,
 			"height": 800
 		},
@@ -4266,9 +4336,30 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-anthropic-is-coming-for-wall-street.jpg",
+			"src": "/thumbnail/art-anthropic-is-coming-for-wall-street.jpg",
+			"bytes": 226204,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-aqi-420-and-the-great-indian-snot-mine.jpg",
 			"src": "/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg",
 			"bytes": 136661,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-arrow-uncertainty-medical-care-healthcare-it.jpg",
+			"src": "/thumbnail/art-arrow-uncertainty-medical-care-healthcare-it.jpg",
+			"bytes": 113386,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-asimovs-missing-laws.jpg",
+			"src": "/thumbnail/art-asimovs-missing-laws.jpg",
+			"bytes": 185048,
 			"width": 1200,
 			"height": 800
 		},
@@ -4371,6 +4462,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-calcutta-bengalis-guide-to-ai-tribes.jpg",
+			"src": "/thumbnail/art-calcutta-bengalis-guide-to-ai-tribes.jpg",
+			"bytes": 260303,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-calcutta-carbohydrate-problem.jpg",
 			"src": "/thumbnail/art-calcutta-carbohydrate-problem.jpg",
 			"bytes": 245698,
@@ -4448,6 +4546,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-coding-agents-after-the-keyboard.jpg",
+			"src": "/thumbnail/art-coding-agents-after-the-keyboard.jpg",
+			"bytes": 139204,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-commercial-hifi-sounds-for-ordinary-ears.jpg",
 			"src": "/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg",
 			"bytes": 181608,
@@ -4476,6 +4581,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
+			"src": "/thumbnail/art-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
+			"bytes": 150682,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-database-first-principles.jpg",
 			"src": "/thumbnail/art-database-first-principles.jpg",
 			"bytes": 178088,
@@ -4493,6 +4605,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-depression-as-mathematics.jpg",
 			"src": "/thumbnail/art-depression-as-mathematics.jpg",
 			"bytes": 142578,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
+			"src": "/thumbnail/art-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
+			"bytes": 86367,
 			"width": 1200,
 			"height": 800
 		},
@@ -4549,6 +4668,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-existential-arithmetic-at-bread-level.jpg",
 			"src": "/thumbnail/art-existential-arithmetic-at-bread-level.jpg",
 			"bytes": 127627,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-explaining-the-healthcare-it-gap-as-continuity.jpg",
+			"src": "/thumbnail/art-explaining-the-healthcare-it-gap-as-continuity.jpg",
+			"bytes": 202437,
 			"width": 1200,
 			"height": 800
 		},
@@ -4658,6 +4784,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-hl7-vs-fhir-explained-simply.jpg",
+			"src": "/thumbnail/art-hl7-vs-fhir-explained-simply.jpg",
+			"bytes": 125496,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-homeopathy-pseudoscience-persistence.jpg",
 			"src": "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg",
 			"bytes": 136683,
@@ -4731,6 +4864,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-india-noise-machine-small-man.jpg",
 			"src": "/thumbnail/art-india-noise-machine-small-man.jpg",
 			"bytes": 241161,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-semiconductor-sufficiency-beyond-lip-service.jpg",
+			"src": "/thumbnail/art-india-semiconductor-sufficiency-beyond-lip-service.jpg",
+			"bytes": 158851,
 			"width": 1200,
 			"height": 800
 		},
@@ -4812,9 +4952,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-latent-space-in-healthcare-data.jpg",
+			"src": "/thumbnail/art-latent-space-in-healthcare-data.jpg",
+			"bytes": 153292,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-marys-retarded-room.jpg",
 			"src": "/thumbnail/art-marys-retarded-room.jpg",
 			"bytes": 93317,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mental-health-polypharmacy-decision-support.jpg",
+			"src": "/thumbnail/art-mental-health-polypharmacy-decision-support.jpg",
+			"bytes": 112467,
 			"width": 1200,
 			"height": 800
 		},
@@ -4854,6 +5008,27 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-multivariate-statistical-modeling-in-healthcare-it.jpg",
+			"src": "/thumbnail/art-multivariate-statistical-modeling-in-healthcare-it.jpg",
+			"bytes": 217049,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
+			"src": "/thumbnail/art-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
+			"bytes": 143048,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
+			"src": "/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
+			"bytes": 110293,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-natural-selection-across-timescales.jpg",
 			"src": "/thumbnail/art-natural-selection-across-timescales.jpg",
 			"bytes": 320813,
@@ -4882,6 +5057,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-openclaw-balanced-intro.jpg",
+			"src": "/thumbnail/art-openclaw-balanced-intro.jpg",
+			"bytes": 106919,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
+			"src": "/thumbnail/art-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
+			"bytes": 133010,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-plague-of-pseudoscience-india-scientific-temper.jpg",
 			"src": "/thumbnail/art-plague-of-pseudoscience-india-scientific-temper.jpg",
 			"bytes": 149230,
@@ -4892,6 +5081,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-pohela-baisakh-mughal-calendar-memory.jpg",
 			"src": "/thumbnail/art-pohela-baisakh-mughal-calendar-memory.jpg",
 			"bytes": 250494,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-poisson-distribution-healthcare-it.jpg",
+			"src": "/thumbnail/art-poisson-distribution-healthcare-it.jpg",
+			"bytes": 106285,
 			"width": 1200,
 			"height": 800
 		},
@@ -4973,6 +5169,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-scrolling-versus-reading-sequential-mind.jpg",
+			"src": "/thumbnail/art-scrolling-versus-reading-sequential-mind.jpg",
+			"bytes": 115253,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-self-gaslit-minds-and-ai-pretension.jpg",
+			"src": "/thumbnail/art-self-gaslit-minds-and-ai-pretension.jpg",
+			"bytes": 126897,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-sensible-consumer-in-a-pufferfish-world.jpg",
 			"src": "/thumbnail/art-sensible-consumer-in-a-pufferfish-world.jpg",
 			"bytes": 98480,
@@ -5001,6 +5211,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
+			"src": "/thumbnail/art-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
+			"bytes": 129143,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-square-peg-in-a-world-of-round-holes.jpg",
 			"src": "/thumbnail/art-square-peg-in-a-world-of-round-holes.jpg",
 			"bytes": 98050,
@@ -5022,6 +5239,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-synthetic-music-and-the-crowded-miracle.jpg",
+			"src": "/thumbnail/art-synthetic-music-and-the-crowded-miracle.jpg",
+			"bytes": 245317,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-tau-scaling-law-time-not-nanometers.jpg",
+			"src": "/thumbnail/art-tau-scaling-law-time-not-nanometers.jpg",
+			"bytes": 104119,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-tautology-metaphor-strawman-ruminative-depression.jpg",
 			"src": "/thumbnail/art-tautology-metaphor-strawman-ruminative-depression.jpg",
 			"bytes": 107338,
@@ -5029,9 +5260,30 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-technical-blogging-in-a-country-of-missing-systems.jpg",
+			"src": "/thumbnail/art-technical-blogging-in-a-country-of-missing-systems.jpg",
+			"bytes": 199690,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-ai-sermon-and-the-wet-knot.jpg",
+			"src": "/thumbnail/art-the-ai-sermon-and-the-wet-knot.jpg",
+			"bytes": 228461,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-aromatics-of-stagnation.jpg",
 			"src": "/thumbnail/art-the-aromatics-of-stagnation.jpg",
 			"bytes": 110874,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-billing-hour-has-started-to-smell.jpg",
+			"src": "/thumbnail/art-the-billing-hour-has-started-to-smell.jpg",
+			"bytes": 157686,
 			"width": 1200,
 			"height": 800
 		},
@@ -5046,6 +5298,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-the-boy-inside-the-broken-house.jpg",
 			"src": "/thumbnail/art-the-boy-inside-the-broken-house.jpg",
 			"bytes": 113071,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-chair-and-the-drain.jpg",
+			"src": "/thumbnail/art-the-chair-and-the-drain.jpg",
+			"bytes": 198296,
 			"width": 1200,
 			"height": 800
 		},
@@ -5120,6 +5379,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-machine-that-cannot-defecate.jpg",
+			"src": "/thumbnail/art-the-machine-that-cannot-defecate.jpg",
+			"bytes": 131898,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-man-held-by-the-neck.jpg",
 			"src": "/thumbnail/art-the-man-held-by-the-neck.jpg",
 			"bytes": 125901,
@@ -5130,6 +5396,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-the-new-mantra.jpg",
 			"src": "/thumbnail/art-the-new-mantra.jpg",
 			"bytes": 103240,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-overzealous-credulity-crisis.jpg",
+			"src": "/thumbnail/art-the-overzealous-credulity-crisis.jpg",
+			"bytes": 129302,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-robot-begins-as-a-loose-wire.jpg",
+			"src": "/thumbnail/art-the-robot-begins-as-a-loose-wire.jpg",
+			"bytes": 122939,
 			"width": 1200,
 			"height": 800
 		},
@@ -5162,9 +5442,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-thermodynamics-of-fishy-things.jpg",
+			"src": "/thumbnail/art-the-thermodynamics-of-fishy-things.jpg",
+			"bytes": 203821,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
 			"src": "/thumbnail/art-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
 			"bytes": 149322,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unrecorded-error-india.jpg",
+			"src": "/thumbnail/art-the-unrecorded-error-india.jpg",
+			"bytes": 125227,
 			"width": 1200,
 			"height": 800
 		},
@@ -5228,6 +5522,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-va-data-warehouse-reality.jpg",
 			"src": "/thumbnail/art-va-data-warehouse-reality.jpg",
 			"bytes": 252099,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-va-healthcare-data-systems-mumps-to-sql.jpg",
+			"src": "/thumbnail/art-va-healthcare-data-systems-mumps-to-sql.jpg",
+			"bytes": 219481,
 			"width": 1200,
 			"height": 800
 		},
@@ -5414,76 +5715,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-agentic-ai-and-the-asymmetry-of-will.jpg",
-			"src": "/thumbnail/safe-agentic-ai-and-the-asymmetry-of-will.jpg",
-			"bytes": 113629,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-business-model-broke-bengali-nervous.jpg",
-			"src": "/thumbnail/safe-ai-business-model-broke-bengali-nervous.jpg",
-			"bytes": 110528,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-cannot-suffer-yet.jpg",
-			"src": "/thumbnail/safe-ai-cannot-suffer-yet.jpg",
-			"bytes": 112653,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-data-centres-india-power-water-calcutta-fear.jpg",
-			"src": "/thumbnail/safe-ai-data-centres-india-power-water-calcutta-fear.jpg",
-			"bytes": 127030,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-genie-out-of-the-bottle.jpg",
-			"src": "/thumbnail/safe-ai-genie-out-of-the-bottle.jpg",
-			"bytes": 122090,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-harmonium-players.jpg",
-			"src": "/thumbnail/safe-ai-harmonium-players.jpg",
-			"bytes": 113402,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-meaningful-work-and-the-trust-collapse.jpg",
-			"src": "/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg",
-			"bytes": 113905,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-meaningful-work-trust-collapse.jpg",
-			"src": "/thumbnail/safe-ai-meaningful-work-trust-collapse.jpg",
-			"bytes": 124429,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
-			"src": "/thumbnail/safe-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
-			"bytes": 118330,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-wave-social-isolation-mental-health-infrastructure.jpg",
-			"src": "/thumbnail/safe-ai-wave-social-isolation-mental-health-infrastructure.jpg",
-			"bytes": 118081,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-aimless-with-mangoes.jpg",
 			"src": "/thumbnail/safe-aimless-with-mangoes.jpg",
 			"bytes": 130739,
@@ -5498,13 +5729,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-anthropic-is-coming-for-wall-street.jpg",
-			"src": "/thumbnail/safe-anthropic-is-coming-for-wall-street.jpg",
-			"bytes": 132678,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-arachnoid-in-the-boondocks.jpg",
 			"src": "/thumbnail/safe-arachnoid-in-the-boondocks.jpg",
 			"bytes": 118313,
@@ -5512,23 +5736,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-arrow-uncertainty-medical-care-healthcare-it.jpg",
-			"src": "/thumbnail/safe-arrow-uncertainty-medical-care-healthcare-it.jpg",
-			"bytes": 131204,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-artisanal-darkness-in-a-kolkata-room.jpg",
 			"src": "/thumbnail/safe-artisanal-darkness-in-a-kolkata-room.jpg",
 			"bytes": 128280,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-asimovs-missing-laws.jpg",
-			"src": "/thumbnail/safe-asimovs-missing-laws.jpg",
-			"bytes": 120501,
 			"width": 1200,
 			"height": 800
 		},
@@ -5610,13 +5820,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-calcutta-bengalis-guide-to-ai-tribes.jpg",
-			"src": "/thumbnail/safe-calcutta-bengalis-guide-to-ai-tribes.jpg",
-			"bytes": 118730,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-calcutta-drain-worm.jpg",
 			"src": "/thumbnail/safe-calcutta-drain-worm.jpg",
 			"bytes": 118408,
@@ -5641,13 +5844,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-chyavana-and-the-refusal-to-rot-quietly.jpg",
 			"src": "/thumbnail/safe-chyavana-and-the-refusal-to-rot-quietly.jpg",
 			"bytes": 110919,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-coding-agents-after-the-keyboard.jpg",
-			"src": "/thumbnail/safe-coding-agents-after-the-keyboard.jpg",
-			"bytes": 128820,
 			"width": 1200,
 			"height": 800
 		},
@@ -5687,13 +5883,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
-			"src": "/thumbnail/safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
-			"bytes": 107463,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-depression-as-mathematics.jpg",
 			"src": "/thumbnail/safe-depression-as-mathematics.jpg",
 			"bytes": 130451,
@@ -5704,13 +5893,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-depressive-mind-government-office-after-rain.jpg",
 			"src": "/thumbnail/safe-depressive-mind-government-office-after-rain.jpg",
 			"bytes": 119737,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
-			"src": "/thumbnail/safe-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
-			"bytes": 118480,
 			"width": 1200,
 			"height": 800
 		},
@@ -5732,13 +5914,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-epic.jpg",
 			"src": "/thumbnail/safe-epic.jpg",
 			"bytes": 112389,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-explaining-the-healthcare-it-gap-as-continuity.jpg",
-			"src": "/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg",
-			"bytes": 127840,
 			"width": 1200,
 			"height": 800
 		},
@@ -5848,13 +6023,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-hl7-vs-fhir-explained-simply.jpg",
-			"src": "/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg",
-			"bytes": 123008,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-hope-dies-at-different-rates.jpg",
 			"src": "/thumbnail/safe-hope-dies-at-different-rates.jpg",
 			"bytes": 125465,
@@ -5911,13 +6079,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-india-semiconductor-sufficiency-beyond-lip-service.jpg",
-			"src": "/thumbnail/safe-india-semiconductor-sufficiency-beyond-lip-service.jpg",
-			"bytes": 131110,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-insect-forms-of-a-calcutta-life.jpg",
 			"src": "/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg",
 			"bytes": 114651,
@@ -5967,13 +6128,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-latent-space-in-healthcare-data.jpg",
-			"src": "/thumbnail/safe-latent-space-in-healthcare-data.jpg",
-			"bytes": 113631,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-linkedin-job-market-india-national-xray.jpg",
 			"src": "/thumbnail/safe-linkedin-job-market-india-national-xray.jpg",
 			"bytes": 113774,
@@ -6002,13 +6156,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-mental-health-polypharmacy-decision-support.jpg",
-			"src": "/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg",
-			"bytes": 123020,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-milk-cha-and-the-small-engine-of-attention.jpg",
 			"src": "/thumbnail/safe-milk-cha-and-the-small-engine-of-attention.jpg",
 			"bytes": 129650,
@@ -6026,27 +6173,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-mood-bellwethers-before-a-low.jpg",
 			"src": "/thumbnail/safe-mood-bellwethers-before-a-low.jpg",
 			"bytes": 109712,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-multivariate-statistical-modeling-in-healthcare-it.jpg",
-			"src": "/thumbnail/safe-multivariate-statistical-modeling-in-healthcare-it.jpg",
-			"bytes": 122874,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
-			"src": "/thumbnail/safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
-			"bytes": 116979,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
-			"src": "/thumbnail/safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
-			"bytes": 115262,
 			"width": 1200,
 			"height": 800
 		},
@@ -6086,13 +6212,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-openclaw-balanced-intro.jpg",
-			"src": "/thumbnail/safe-openclaw-balanced-intro.jpg",
-			"bytes": 122942,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-oxygen-in-a-box.jpg",
 			"src": "/thumbnail/safe-oxygen-in-a-box.jpg",
 			"bytes": 124740,
@@ -6110,13 +6229,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-pest-department-in-my-skull.jpg",
 			"src": "/thumbnail/safe-pest-department-in-my-skull.jpg",
 			"bytes": 131734,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
-			"src": "/thumbnail/safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
-			"bytes": 114279,
 			"width": 1200,
 			"height": 800
 		},
@@ -6145,13 +6257,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-poison-wears-a-clean-shirt.jpg",
 			"src": "/thumbnail/safe-poison-wears-a-clean-shirt.jpg",
 			"bytes": 115331,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-poisson-distribution-healthcare-it.jpg",
-			"src": "/thumbnail/safe-poisson-distribution-healthcare-it.jpg",
-			"bytes": 121789,
 			"width": 1200,
 			"height": 800
 		},
@@ -6233,20 +6338,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-scrolling-versus-reading-sequential-mind.jpg",
-			"src": "/thumbnail/safe-scrolling-versus-reading-sequential-mind.jpg",
-			"bytes": 115615,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-self-gaslit-minds-and-ai-pretension.jpg",
-			"src": "/thumbnail/safe-self-gaslit-minds-and-ai-pretension.jpg",
-			"bytes": 109813,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-shadow-citizen-of-my-own-room.jpg",
 			"src": "/thumbnail/safe-shadow-citizen-of-my-own-room.jpg",
 			"bytes": 109796,
@@ -6296,13 +6387,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
-			"src": "/thumbnail/safe-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
-			"bytes": 125597,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-smorgasbord-of-impotence-calcutta-middle-age.jpg",
 			"src": "/thumbnail/safe-smorgasbord-of-impotence-calcutta-middle-age.jpg",
 			"bytes": 105096,
@@ -6313,20 +6397,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-society-with-open-drains-and-polished-shoes.jpg",
 			"src": "/thumbnail/safe-society-with-open-drains-and-polished-shoes.jpg",
 			"bytes": 125995,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-synthetic-music-and-the-crowded-miracle.jpg",
-			"src": "/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg",
-			"bytes": 130580,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tau-scaling-law-time-not-nanometers.jpg",
-			"src": "/thumbnail/safe-tau-scaling-law-time-not-nanometers.jpg",
-			"bytes": 114919,
 			"width": 1200,
 			"height": 800
 		},
@@ -6345,20 +6415,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-technical-blogging-in-a-country-of-missing-systems.jpg",
-			"src": "/thumbnail/safe-technical-blogging-in-a-country-of-missing-systems.jpg",
-			"bytes": 114018,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-ai-sermon-and-the-wet-knot.jpg",
-			"src": "/thumbnail/safe-the-ai-sermon-and-the-wet-knot.jpg",
-			"bytes": 110773,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-atrophy-of-attention.jpg",
 			"src": "/thumbnail/safe-the-atrophy-of-attention.jpg",
 			"bytes": 130237,
@@ -6373,13 +6429,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-billing-hour-has-started-to-smell.jpg",
-			"src": "/thumbnail/safe-the-billing-hour-has-started-to-smell.jpg",
-			"bytes": 125215,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-century-has-a-hole-in-it.jpg",
 			"src": "/thumbnail/safe-the-century-has-a-hole-in-it.jpg",
 			"bytes": 115605,
@@ -6390,13 +6439,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-cephalalgia-chronicles.jpg",
 			"src": "/thumbnail/safe-the-cephalalgia-chronicles.jpg",
 			"bytes": 121329,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-chair-and-the-drain.jpg",
-			"src": "/thumbnail/safe-the-chair-and-the-drain.jpg",
-			"bytes": 111276,
 			"width": 1200,
 			"height": 800
 		},
@@ -6527,13 +6569,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-machine-that-cannot-defecate.jpg",
-			"src": "/thumbnail/safe-the-machine-that-cannot-defecate.jpg",
-			"bytes": 115643,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-man-who-became-his-own-waiting-room.jpg",
 			"src": "/thumbnail/safe-the-man-who-became-his-own-waiting-room.jpg",
 			"bytes": 112315,
@@ -6590,13 +6625,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-overzealous-credulity-crisis.jpg",
-			"src": "/thumbnail/safe-the-overzealous-credulity-crisis.jpg",
-			"bytes": 110779,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-pariah-porcupine.jpg",
 			"src": "/thumbnail/safe-the-pariah-porcupine.jpg",
 			"bytes": 119729,
@@ -6635,13 +6663,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-rice-cooker-kind-of-solitude.jpg",
 			"src": "/thumbnail/safe-the-rice-cooker-kind-of-solitude.jpg",
 			"bytes": 123023,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-robot-begins-as-a-loose-wire.jpg",
-			"src": "/thumbnail/safe-the-robot-begins-as-a-loose-wire.jpg",
-			"bytes": 120833,
 			"width": 1200,
 			"height": 800
 		},
@@ -6688,13 +6709,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-thermodynamics-of-fishy-things.jpg",
-			"src": "/thumbnail/safe-the-thermodynamics-of-fishy-things.jpg",
-			"bytes": 121334,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
 			"src": "/thumbnail/safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
 			"bytes": 113988,
@@ -6712,13 +6726,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-unpaid-consultant-and-the-theology-of-hope.jpg",
 			"src": "/thumbnail/safe-the-unpaid-consultant-and-the-theology-of-hope.jpg",
 			"bytes": 106685,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unrecorded-error-india.jpg",
-			"src": "/thumbnail/safe-the-unrecorded-error-india.jpg",
-			"bytes": 114819,
 			"width": 1200,
 			"height": 800
 		},
@@ -6782,13 +6789,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-unattractive-mans-weather-report.jpg",
 			"src": "/thumbnail/safe-unattractive-mans-weather-report.jpg",
 			"bytes": 111575,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-va-healthcare-data-systems-mumps-to-sql.jpg",
-			"src": "/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg",
-			"bytes": 116795,
 			"width": 1200,
 			"height": 800
 		},

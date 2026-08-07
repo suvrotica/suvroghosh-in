@@ -1,17 +1,19 @@
 ---
 title: "The AI Business Model Makes a Broke Bengali Nervous"
-description: "AI may be real, useful, and still financially overcooked. The trouble is not only intelligence; it is power, chips, debt, data centers, and the slippery language of infrastructure promises."
+description: "A skeptical look at AI’s costly business model through chips, power, debt, cooling, data centres, and infrastructure promises."
 date: "2026-05-17"
+dateModified: "2026-08-07"
 category: "Technology"
 tags: ["AI Infrastructure","AI","Capacity","Real","Data-Center","Colossus","Chips","Power","Cooling","Stargate"]
 published: true
 color: "#7F1D1D"
-thumbnail: "/thumbnail/safe-ai-business-model-broke-bengali-nervous.jpg"
+thumbnail: "/thumbnail/art-ai-business-model-broke-bengali-nervous.jpg"
+thumbnailAlt: "Tea and an empty wallet balanced against a miniature tower of AI infrastructure"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-business-model-broke-bengali-nervous.jpg" />
+<Pi src="/thumbnail/art-ai-business-model-broke-bengali-nervous.jpg" />
 
 Acronyms: AI means Artificial Intelligence, software that appears to reason, write, code, predict, classify, summarize, and sometimes confidently invent nonsense with the face of a bank manager. GPU means Graphics Processing Unit, the specialized chip now doing much of the heavy lifting in modern AI. GW means gigawatt, one billion watts of electrical power, which is not a poetic unit but a serious appetite. MW means megawatt, one million watts. Capex means Capital Expenditure, the money spent on long-lived assets like land, buildings, servers, chips, cooling systems, and other expensive objects that do not care about your feelings. PR means Public Relations, the art of making half a bridge sound like a completed highway.
 

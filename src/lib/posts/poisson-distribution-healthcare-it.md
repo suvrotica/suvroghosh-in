@@ -2,13 +2,13 @@
 title: "Poisson Distribution: Counting Rare Trouble"
 description: "A practical guide to the Poisson distribution in hospital operations, EHR analytics, patient safety, interface monitoring, and epidemiology."
 date: "2026-05-21"
-dateModified: "2026-07-24"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["Poisson Regression","Poisson Distribution","Clinical Trial","Public Health","Data Quality","Lambda","Clinical","Healthcare","Events","Distribution"]
 published: true
 color: "#4F7CAC"
-thumbnail: "/thumbnail/safe-poisson-distribution-healthcare-it.jpg"
-thumbnailAlt: "Abstract overlapping warm and cool curves with delicate wavy contour lines"
+thumbnail: "/thumbnail/art-poisson-distribution-healthcare-it.jpg"
+thumbnailAlt: "Rare amber warning lights scattered across a calm miniature hospital beneath an arc of beads"
 inPlainEnglish: "The Poisson distribution estimates how many events to expect within a defined window or amount of exposure. In healthcare, using it honestly requires precise event definitions, governed denominators, reliable timing and provenance, plus checks for overdispersion and workflow changes."
 keyTerms: ["Poisson Distribution", "Lambda", "Exposure", "Event Definition", "Overdispersion", "Poisson Regression"]
 faq:
@@ -22,7 +22,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-poisson-distribution-healthcare-it.jpg" />
+<Pi src="/thumbnail/art-poisson-distribution-healthcare-it.jpg" />
 
 Acronyms used in this post:
 

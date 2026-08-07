@@ -1,17 +1,28 @@
 ---
 title: "Trying to Write About Healthcare IT While the Ceiling Paint Falls Into the Dal"
-description: "A middle-aged Bengali healthcare IT architect from Kolkata wrestles with technical blogging, Indian decline, China comparisons, broken systems, and the exhausting theater of patriotism."
+description: "A weary Kolkata healthcare architect writes beside a bowl of dal as failing infrastructure presses against technical ambition."
 date: "2026-05-12"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
-tags: ["Healthcare","China","Patient","Diabetes","Systems","Writing","Digital","Data","India","Interoperability"]
+tags: ["Healthcare","China","Patient","Diabetes","Systems","Writing","India","Data","Digital","Interoperability"]
 published: true
 color: "zinc"
-thumbnail: "/thumbnail/safe-technical-blogging-in-a-country-of-missing-systems.jpg"
+thumbnail: "/thumbnail/art-technical-blogging-in-a-country-of-missing-systems.jpg"
+thumbnailAlt: "Bengali healthcare architect writing at a Kolkata table beside a bowl of dal"
+inPlainEnglish: "Writing about healthcare IT in India means describing standards and architectures while admitting that many institutions still lack reliable records, identity, staffing, maintenance, governance, and continuity. Technical ambition matters, but it must begin from the systems that actually exist rather than the diagram we wish existed."
+keyTerms: ["Healthcare IT", "Digital Health", "Interoperability", "Health Information System", "Data Infrastructure", "Implementation", "System Maintenance", "India"]
+faq:
+  - question: "Why can healthcare IT diagrams mislead in weak systems?"
+    answer: "They can assume stable source records, identifiers, connectivity, staffing, governance, and maintenance that are missing or inconsistent in the environment where the design must operate."
+  - question: "Does limited infrastructure make technical standards irrelevant?"
+    answer: "No. Standards can guide growth and prevent new silos, but implementation must be staged around local capacity, incentives, workflows, failure modes, and long-term support."
+  - question: "What should practical healthcare IT writing explain?"
+    answer: "It should connect architecture to real institutions, data quality, ownership, costs, staffing, governance, maintenance, patient consequences, and the compromises required to keep a system working."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-technical-blogging-in-a-country-of-missing-systems.jpg" />
+<Pi src="/thumbnail/art-technical-blogging-in-a-country-of-missing-systems.jpg" />
 
 Acronyms used in this post:
 

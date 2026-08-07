@@ -1,17 +1,19 @@
 ---
 title: "AI Agents Will Not Democratize Power Neatly"
-description: "AI agents change the problem from asking machines questions to delegating action into the world. That does not make power equal; it makes agency abundant, uneven, persistent, and easier to weaponize by those already sitting near the levers."
+description: "AI agents make delegated action abundant but uneven, concentrating persistent agency near people who already control society’s levers."
 date: "2026-05-02"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
 tags: ["Decision Support","Agent Asked","Large Language","Agent","Agents","Agency","Prompt","Email","Scarce","Humans"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-agentic-ai-and-the-asymmetry-of-will.jpg"
+thumbnail: "/thumbnail/art-agentic-ai-and-the-asymmetry-of-will.jpg"
+thumbnailAlt: "Woman directs a network of brass agents from a raised desk above other workers"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-agentic-ai-and-the-asymmetry-of-will.jpg" />
+<Pi src="/thumbnail/art-agentic-ai-and-the-asymmetry-of-will.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

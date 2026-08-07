@@ -2,14 +2,14 @@
 title: "How VA Healthcare Data Systems Work: From MUMPS to SQL"
 description: "How VA clinical data moves from VistA, MUMPS, and FileMan into SQL warehouses—and why the journey is semantic translation, not simple conversion."
 date: "2026-04-25"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
 tags: ["VistA","MUMPS","FileMan","SQL","Corporate Data Warehouse","VINCI","Healthcare Data Architecture","Data Provenance","Semantic Interoperability","Electronic Health Records"]
 pinnedTags: ["VistA", "MUMPS", "FileMan", "SQL", "Corporate Data Warehouse", "VINCI", "Healthcare Data Architecture", "Data Provenance", "Semantic Interoperability", "Electronic Health Records"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg"
-thumbnailAlt: "Muted abstract layers and contour lines suggesting clinical data moving between operational and analytical systems"
+thumbnail: "/thumbnail/art-va-healthcare-data-systems-mumps-to-sql.jpg"
+thumbnailAlt: "Legacy green terminals and mapping layers connected to a modern clinical data warehouse"
 mediaReviewed: true
 inPlainEnglish: "Moving VA clinical data from VistA’s MUMPS and FileMan environment into SQL is not chiefly a database conversion. It is a semantic translation from operational care into institutional measurement, and that translation needs an explicit interpretation contract."
 keyTerms: ["VistA", "MUMPS", "FileMan", "Corporate Data Warehouse", "Data Provenance", "Interpretation Contract"]
@@ -24,7 +24,7 @@ faq:
 
 
 
-<Pi src="/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg" alt="" />
+<Pi src="/thumbnail/art-va-healthcare-data-systems-mumps-to-sql.jpg" alt="" />
 
 
 
