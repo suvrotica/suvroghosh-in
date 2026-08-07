@@ -82,13 +82,22 @@ export type VisualizationStage = {
 	previewFragmentSource: string;
 };
 
-export type VisualizationDefinition = {
+/**
+ * Lightweight publishing metadata shared by both shell-loadable sketches and
+ * larger, purpose-built scientific laboratories.
+ */
+export type VisualizationSummary = {
 	id: string;
 	title: string;
 	description: string;
 	subjects: readonly string[];
 	poster: string;
 	posterAlt: string;
+	href?: string;
+	status?: 'published' | 'upcoming';
+};
+
+export type VisualizationDefinition = VisualizationSummary & {
 	vertexSource: string;
 	fragmentSource: string;
 	parameters: readonly VisualizationParameter[];

@@ -16,6 +16,88 @@ test('the visualization registry keeps experiment and p5 code behind dynamic imp
 	assert.match(p5Sketch, /await import\('p5'\)/);
 });
 
+test('the visualization registry can publish a laboratory summary without forcing it into the shader shell', () => {
+	const types = read('src', 'lib', 'visualizations', 'types.ts');
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+
+	assert.match(types, /export type VisualizationSummary/);
+	assert.match(types, /export type VisualizationDefinition = VisualizationSummary &/);
+	assert.match(registry, /'reaction-diffusion-atlas':\s*\{/);
+	assert.match(registry, /href: '\/blog\/visualizations\/reaction-diffusion-atlas'/);
+	assert.match(registry, /status: 'published'/);
+	assert.match(registry, /isRegisteredVisualizationId/);
+	assert.doesNotMatch(registry, /import\('\.\/reaction-diffusion/);
+});
+
+test('the reaction-diffusion atlas is a substantial published exhibit rather than an upcoming card', () => {
+	const post = read('src', 'lib', 'posts', 'reaction-diffusion-atlas.md');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+
+	assert.match(
+		post,
+		/title: "The Chemistry That Draws Without a Hand: A Reaction–Diffusion Atlas"/
+	);
+	assert.match(post, /date: "2026-08-07"/);
+	assert.match(post, /dateModified: "2026-08-07"/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /thumbnail: "\/images\/reaction-diffusion-atlas\.png"/);
+	assert.match(post, /<TTS \/>/);
+
+	for (const component of [
+		'GuidedReactionDiffusion',
+		'ReactionDiffusionExhibit',
+		'MorphospaceAtlas',
+		'StabilityInspector',
+		'ReactionMicroscope',
+		'SpatialSpectrum',
+		'NumericalHonesty'
+	]) {
+		assert.match(
+			post,
+			new RegExp(
+				`import ${component} from '\\$lib/components/visualizations/reaction-diffusion/${component}\\.svelte'`
+			)
+		);
+		assert.match(post, new RegExp(`<${component} \\/>`));
+	}
+
+	for (const doi of [
+		'10.1098/rstb.1952.0012',
+		'10.1126/science.261.5118.189',
+		'10.1038/369215a0',
+		'10.1103/RevModPhys.65.851',
+		'10.1126/science.1179047'
+	]) {
+		assert.ok(post.includes(doi), `missing source DOI ${doi}`);
+	}
+
+	for (const relatedSlug of [
+		'brownian-motion-laboratory',
+		'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser',
+		'double-pendulum-chaos',
+		'gradient-descent-landscapes'
+	]) {
+		assert.match(post, new RegExp(`/blog/visualizations/${relatedSlug}`));
+	}
+
+	assert.equal((post.match(/^\d+\. \*\*/gm) ?? []).length, 10);
+	assert.match(post, /There is no gene regulation/);
+	assert.match(post, /does not validate those equations against nature/);
+	assert.match(
+		landing,
+		/'reaction-diffusion-atlas': visualizationSummaries\['reaction-diffusion-atlas'\]\.subjects/
+	);
+	assert.doesNotMatch(landing, /title: 'Reaction–diffusion patterns'/);
+});
+
 test('the first exhibit has real shaders, controls, presets, and a fallback poster', () => {
 	const fragment = read(
 		'src',

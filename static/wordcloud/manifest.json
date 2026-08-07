@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T04:30:04.799627+00:00",
+  "generatedAt": "2026-08-07T09:14:49.264148+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -6693,6 +6693,29 @@
         "Light"
       ],
       "wordCount": 61
+    },
+    "reaction-diffusion-atlas": {
+      "generatedAt": "2026-08-07T09:14:48.996893+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/reaction-diffusion-atlas.svg",
+      "source": "src/lib/posts/reaction-diffusion-atlas.md",
+      "sourceHash": "abfa7838c93016f1b981f380b0078d6816fabce675a7a5f6719d042b56efc9e1",
+      "sourceModified": "2026-08-07T08:52:20.993589+00:00",
+      "topWords": [
+        "Diffusion",
+        "Reaction",
+        "Model",
+        "Field",
+        "Pattern",
+        "Boundary",
+        "Time",
+        "Spots",
+        "Equilibrium",
+        "Feed",
+        "State",
+        "Change"
+      ],
+      "wordCount": 130
     },
     "reading-is-not-homework-it-is-how-the-mind-keeps-change": {
       "generatedAt": "2026-07-12T19:46:28.505077+00:00",

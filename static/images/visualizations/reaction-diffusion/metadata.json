@@ -1,0 +1,430 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "gray-scott-heun-five-point-v1",
+  "generatedBy": "scripts/render-reaction-diffusion-atlas.mjs using the repository CPU reference engine",
+  "model": "Gray–Scott: du/dt=Du laplacian(u)-uv^2+F(1-u); dv/dt=Dv laplacian(v)+uv^2-(F+k)v",
+  "integrator": "fixed-step Heun RK2",
+  "stencil": "second-order five-point Laplacian",
+  "main": {
+    "file": "/images/reaction-diffusion-atlas-field.png",
+    "setup": {
+      "feed": 0.051,
+      "kill": 0.0585,
+      "diffusionU": 0.16,
+      "diffusionV": 0.08,
+      "timestep": 0.5,
+      "gridSize": 128,
+      "domainWidth": 128,
+      "boundary": "periodic",
+      "maskPreset": "open-square",
+      "initialCondition": "hand-painted",
+      "seed": "morphospace-common-1",
+      "integrator": "heun"
+    },
+    "step": 1000,
+    "modelTime": 500,
+    "initialParameters": {
+      "recipe": "deterministic 4 × 4 soft-spot array",
+      "centres": [
+        0.13,
+        0.38,
+        0.63,
+        0.88
+      ],
+      "radiusFraction": 0.052,
+      "centreU": 0.38,
+      "centreV": 0.6
+    },
+    "metrics": {
+      "meanU": 0.3887642721894011,
+      "meanV": 0.28551711450717954,
+      "varianceV": 0.0019200303336973784,
+      "meanReactionRate": 0.03131841889719932,
+      "minimumU": 0.3260997025908073,
+      "maximumU": 0.8061685347263516,
+      "minimumV": 0.022143389711227736,
+      "maximumV": 0.3510584890564818,
+      "activeCells": 16384
+    },
+    "spectrum": {
+      "trustworthy": true,
+      "dominantWavelength": 14.222222222222221,
+      "prominence": 66863.62785474627,
+      "reason": "A concentrated, repeated non-zero radial spectral peak was detected."
+    }
+  },
+  "hero": {
+    "file": "/images/reaction-diffusion-atlas.png",
+    "width": 1600,
+    "height": 900
+  },
+  "morphospaceInset": [
+    {
+      "row": 0,
+      "column": 0,
+      "feed": 0.024,
+      "kill": 0.071,
+      "modelTime": 360,
+      "meanV": 4.9017858784853526e-14,
+      "varianceV": 1.5431887222078375e-27
+    },
+    {
+      "row": 0,
+      "column": 1,
+      "feed": 0.0375,
+      "kill": 0.071,
+      "modelTime": 360,
+      "meanV": 4.009153838878029e-15,
+      "varianceV": 1.3000726592771638e-29
+    },
+    {
+      "row": 0,
+      "column": 2,
+      "feed": 0.051000000000000004,
+      "kill": 0.071,
+      "modelTime": 360,
+      "meanV": 7.147135146108364e-16,
+      "varianceV": 5.167172588035639e-31
+    },
+    {
+      "row": 0,
+      "column": 3,
+      "feed": 0.0645,
+      "kill": 0.071,
+      "modelTime": 360,
+      "meanV": 6.987951389440457e-18,
+      "varianceV": 4.703435379066805e-35
+    },
+    {
+      "row": 0,
+      "column": 4,
+      "feed": 0.078,
+      "kill": 0.071,
+      "modelTime": 360,
+      "meanV": 3.273346280470922e-21,
+      "varianceV": 8.342262587709021e-42
+    },
+    {
+      "row": 1,
+      "column": 0,
+      "feed": 0.024,
+      "kill": 0.06474999999999999,
+      "modelTime": 360,
+      "meanV": 1.1133799737112624e-11,
+      "varianceV": 9.320586335369533e-23
+    },
+    {
+      "row": 1,
+      "column": 1,
+      "feed": 0.0375,
+      "kill": 0.06474999999999999,
+      "modelTime": 360,
+      "meanV": 0.02245609862066174,
+      "varianceV": 0.004956938004587247
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "feed": 0.051000000000000004,
+      "kill": 0.06474999999999999,
+      "modelTime": 360,
+      "meanV": 0.02935006995384847,
+      "varianceV": 0.00705318589794502
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "feed": 0.0645,
+      "kill": 0.06474999999999999,
+      "modelTime": 360,
+      "meanV": 0.02049306290329901,
+      "varianceV": 0.005701330505089498
+    },
+    {
+      "row": 1,
+      "column": 4,
+      "feed": 0.078,
+      "kill": 0.06474999999999999,
+      "modelTime": 360,
+      "meanV": 0.012634601279366322,
+      "varianceV": 0.0037740821819985688
+    },
+    {
+      "row": 2,
+      "column": 0,
+      "feed": 0.024,
+      "kill": 0.058499999999999996,
+      "modelTime": 360,
+      "meanV": 0.0945217080767639,
+      "varianceV": 0.010935276016998636
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "feed": 0.0375,
+      "kill": 0.058499999999999996,
+      "modelTime": 360,
+      "meanV": 0.17423952129022022,
+      "varianceV": 0.016185170370341475
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "feed": 0.051000000000000004,
+      "kill": 0.058499999999999996,
+      "modelTime": 360,
+      "meanV": 0.2128836037951455,
+      "varianceV": 0.02175598982000601
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "feed": 0.0645,
+      "kill": 0.058499999999999996,
+      "modelTime": 360,
+      "meanV": 0.16601345058155006,
+      "varianceV": 0.029773517509089506
+    },
+    {
+      "row": 2,
+      "column": 4,
+      "feed": 0.078,
+      "kill": 0.058499999999999996,
+      "modelTime": 360,
+      "meanV": 0.08883493684623346,
+      "varianceV": 0.023809632000163155
+    },
+    {
+      "row": 3,
+      "column": 0,
+      "feed": 0.024,
+      "kill": 0.05224999999999999,
+      "modelTime": 360,
+      "meanV": 0.11363470603355054,
+      "varianceV": 0.006406299378322005
+    },
+    {
+      "row": 3,
+      "column": 1,
+      "feed": 0.0375,
+      "kill": 0.05224999999999999,
+      "modelTime": 360,
+      "meanV": 0.2886865698748608,
+      "varianceV": 0.000056773331018472595
+    },
+    {
+      "row": 3,
+      "column": 2,
+      "feed": 0.051000000000000004,
+      "kill": 0.05224999999999999,
+      "modelTime": 360,
+      "meanV": 0.3478353535180289,
+      "varianceV": 0.0004956254356832945
+    },
+    {
+      "row": 3,
+      "column": 3,
+      "feed": 0.0645,
+      "kill": 0.05224999999999999,
+      "modelTime": 360,
+      "meanV": 0.3719364843341724,
+      "varianceV": 0.006437368219996298
+    },
+    {
+      "row": 3,
+      "column": 4,
+      "feed": 0.078,
+      "kill": 0.05224999999999999,
+      "modelTime": 360,
+      "meanV": 0.3155441499134584,
+      "varianceV": 0.03018013089213284
+    },
+    {
+      "row": 4,
+      "column": 0,
+      "feed": 0.024,
+      "kill": 0.04599999999999999,
+      "modelTime": 360,
+      "meanV": 0.24466584733414593,
+      "varianceV": 0.000009763993693838457
+    },
+    {
+      "row": 4,
+      "column": 1,
+      "feed": 0.0375,
+      "kill": 0.04599999999999999,
+      "modelTime": 360,
+      "meanV": 0.33828870426200125,
+      "varianceV": 1.6962804633147144e-8
+    },
+    {
+      "row": 4,
+      "column": 2,
+      "feed": 0.051000000000000004,
+      "kill": 0.04599999999999999,
+      "modelTime": 360,
+      "meanV": 0.3974849793738093,
+      "varianceV": 1.409128258522685e-9
+    },
+    {
+      "row": 4,
+      "column": 3,
+      "feed": 0.0645,
+      "kill": 0.04599999999999999,
+      "modelTime": 360,
+      "meanV": 0.43558517787663265,
+      "varianceV": 2.865648537908605e-8
+    },
+    {
+      "row": 4,
+      "column": 4,
+      "feed": 0.078,
+      "kill": 0.04599999999999999,
+      "modelTime": 360,
+      "meanV": 0.459285805778785,
+      "varianceV": 0.00047677964774930914
+    }
+  ],
+  "guided": {
+    "file": "/images/visualizations/reaction-diffusion/guided-observations.png",
+    "plates": [
+      {
+        "label": "1 · equilibrium",
+        "setup": {
+          "feed": 0.051,
+          "kill": 0.0585,
+          "diffusionU": 0.16,
+          "diffusionV": 0.08,
+          "timestep": 0.5,
+          "gridSize": 64,
+          "domainWidth": 64,
+          "boundary": "periodic",
+          "maskPreset": "open-square",
+          "initialCondition": "blank-feed",
+          "seed": "guided-observations-1",
+          "integrator": "heun"
+        },
+        "step": 0,
+        "modelTime": 0,
+        "displayMode": "v",
+        "initialParameters": {
+          "recipe": "uniform feed equilibrium U=1, V=0"
+        }
+      },
+      {
+        "label": "2 · diffusion only",
+        "setup": {
+          "feed": 0,
+          "kill": 0,
+          "diffusionU": 0.16,
+          "diffusionV": 0,
+          "timestep": 0.5,
+          "gridSize": 64,
+          "domainWidth": 64,
+          "boundary": "periodic",
+          "maskPreset": "open-square",
+          "initialCondition": "blank-feed",
+          "seed": "guided-observations-1",
+          "integrator": "heun"
+        },
+        "step": 260,
+        "modelTime": 130,
+        "displayMode": "u",
+        "initialParameters": {
+          "recipe": "deterministic continuous central U depression; V=0",
+          "radiusFraction": 0.105,
+          "softEdgeFraction": 0.28,
+          "centreU": 0.28,
+          "centreV": 0
+        }
+      },
+      {
+        "label": "3 · reaction only",
+        "setup": {
+          "feed": 0.051,
+          "kill": 0.0585,
+          "diffusionU": 0,
+          "diffusionV": 0,
+          "timestep": 0.5,
+          "gridSize": 64,
+          "domainWidth": 64,
+          "boundary": "periodic",
+          "maskPreset": "open-square",
+          "initialCondition": "hand-painted",
+          "seed": "guided-observations-1",
+          "integrator": "heun"
+        },
+        "step": 80,
+        "modelTime": 40,
+        "displayMode": "v",
+        "initialParameters": {
+          "recipe": "deterministic continuous central reaction patch",
+          "radiusFraction": 0.105,
+          "softEdgeFraction": 0.28,
+          "centreU": 0.5,
+          "centreV": 0.25
+        }
+      },
+      {
+        "label": "4 · coupled",
+        "setup": {
+          "feed": 0.051,
+          "kill": 0.0585,
+          "diffusionU": 0.16,
+          "diffusionV": 0.08,
+          "timestep": 0.5,
+          "gridSize": 64,
+          "domainWidth": 64,
+          "boundary": "periodic",
+          "maskPreset": "open-square",
+          "initialCondition": "central-soft-disk",
+          "seed": "guided-observations-1",
+          "integrator": "heun"
+        },
+        "step": 720,
+        "modelTime": 360,
+        "displayMode": "v"
+      },
+      {
+        "label": "5 · F + 0.001",
+        "setup": {
+          "feed": 0.052,
+          "kill": 0.0585,
+          "diffusionU": 0.16,
+          "diffusionV": 0.08,
+          "timestep": 0.5,
+          "gridSize": 64,
+          "domainWidth": 64,
+          "boundary": "periodic",
+          "maskPreset": "open-square",
+          "initialCondition": "central-soft-disk",
+          "seed": "guided-observations-1",
+          "integrator": "heun"
+        },
+        "step": 720,
+        "modelTime": 360,
+        "displayMode": "v"
+      },
+      {
+        "label": "6 · classification",
+        "setup": {
+          "feed": 0.051,
+          "kill": 0.0585,
+          "diffusionU": 0.16,
+          "diffusionV": 0.08,
+          "timestep": 0.5,
+          "gridSize": 64,
+          "domainWidth": 64,
+          "boundary": "periodic",
+          "maskPreset": "open-square",
+          "initialCondition": "two-spots",
+          "seed": "guided-observations-1",
+          "integrator": "heun"
+        },
+        "step": 720,
+        "modelTime": 360,
+        "displayMode": "v"
+      }
+    ]
+  }
+}

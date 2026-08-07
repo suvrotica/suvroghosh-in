@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "gray-scott-heun-five-point-v1",
+  "model": "gray-scott-2d",
+  "method": "Float64 CPU reference, fixed-step Heun RK2, second-order five-point Laplacian",
+  "claim": "Each row is an observed finite-time result for the exact setup shown, not a universal phase label.",
+  "calibrations": [
+    {
+      "id": "collapse-to-feed",
+      "label": "Collapse to feed state",
+      "observedFiniteTimeDescription": "The finite central seed has decayed to the uniform feed state by t = 1000.",
+      "observationPrompt": "Verify that mean V and its variance approach zero rather than naming a pattern.",
+      "conditionalNote": "Earlier transients are not the declared outcome; this name describes the calibrated t = 1000 field.",
+      "setup": {
+        "feed": 0.0367,
+        "kill": 0.0649,
+        "diffusionU": 0.16,
+        "diffusionV": 0.08,
+        "timestep": 0.5,
+        "gridSize": 256,
+        "domainWidth": 256,
+        "boundary": "periodic",
+        "maskPreset": "open-square",
+        "initialCondition": "central-soft-disk",
+        "seed": "mitosis-spots-1",
+        "integrator": "heun"
+      },
+      "step": 2000,
+      "modelTime": 1000,
+      "metrics": {
+        "meanU": 1,
+        "meanV": 3.199036471654149e-43,
+        "varianceV": 8.879707518125668e-85,
+        "meanReactionRate": 9.903090952822981e-85,
+        "minimumU": 0.9999999999999971,
+        "maximumU": 1,
+        "minimumV": 3.705395605167721e-75,
+        "maximumV": 4.346682726384755e-42,
+        "activeCells": 65536
+      },
+      "spectrum": {
+        "trustworthy": false,
+        "dominantWavelength": null,
+        "domainFraction": null,
+        "prominence": 2.9121636741373224e-70,
+        "reason": "No non-zero radial peak is sufficiently prominent and concentrated to report a wavelength.",
+        "window": "none"
+      },
+      "fieldSha256": "11d7ae8c9d461e6771129960d505c7efb73dc1235b86bf49ad86135cc3deaa24"
+    },
+    {
+      "id": "concentric-vessel-fronts",
+      "label": "Concentric vessel fronts",
+      "observedFiniteTimeDescription": "An initial ring becomes two irregular concentric reaction fronts inside the vessel.",
+      "observationPrompt": "Compare the roughness and V intensity of the inner and outer rings.",
+      "conditionalNote": "The two-ring outcome is conditional on this circular mask and t = 1000 checkpoint.",
+      "setup": {
+        "feed": 0.0545,
+        "kill": 0.062,
+        "diffusionU": 0.16,
+        "diffusionV": 0.08,
+        "timestep": 0.5,
+        "gridSize": 256,
+        "domainWidth": 256,
+        "boundary": "no-flux",
+        "maskPreset": "circular-vessel",
+        "initialCondition": "ring",
+        "seed": "coral-fronts-2",
+        "integrator": "heun"
+      },
+      "step": 2000,
+      "modelTime": 1000,
+      "metrics": {
+        "meanU": 0.9206125556674186,
+        "meanV": 0.037286577310231,
+        "varianceV": 0.009217181364572218,
+        "meanReactionRate": 0.004359763206258725,
+        "minimumU": 0.3382681726816229,
+        "maximumU": 1,
+        "minimumV": 8.255299334010241e-34,
+        "maximumV": 0.3685302698363122,
+        "activeCells": 43580
+      },
+      "spectrum": {
+        "trustworthy": false,
+        "dominantWavelength": null,
+        "domainFraction": null,
+        "prominence": 224733.97005602825,
+        "reason": "The strongest variation spans too much of the domain to establish a repeated wavelength.",
+        "window": "hann"
+      },
+      "fieldSha256": "41c656e40b8980f98ea25e071fbde73d4323292f3bfb7712ea519ed77e2d65bb"
+    },
+    {
+      "id": "sparse-seed-extinction",
+      "label": "Sparse-seed extinction",
+      "observedFiniteTimeDescription": "The sparse seeded disturbances have extinguished by the declared observation time.",
+      "observationPrompt": "Inspect the numerical readout instead of mistaking the dark field for missing data.",
+      "conditionalNote": "This is extinction under one deterministic sparse seed, not a universal parameter phase.",
+      "setup": {
+        "feed": 0.078,
+        "kill": 0.061,
+        "diffusionU": 0.16,
+        "diffusionV": 0.08,
+        "timestep": 0.5,
+        "gridSize": 256,
+        "domainWidth": 256,
+        "boundary": "periodic",
+        "maskPreset": "open-square",
+        "initialCondition": "sparse-points",
+        "seed": "filament-field-3",
+        "integrator": "heun"
+      },
+      "step": 2000,
+      "modelTime": 1000,
+      "metrics": {
+        "meanU": 0.9999999999999999,
+        "meanV": 2.7940187743119116e-63,
+        "varianceV": 2.695754925944711e-126,
+        "meanReactionRate": 1.0502295837152131e-125,
+        "minimumU": 0.9999999999999987,
+        "maximumU": 0.9999999999999987,
+        "minimumV": 9.666928399512735e-65,
+        "maximumV": 1.4590041435388702e-62,
+        "activeCells": 65536
+      },
+      "spectrum": {
+        "trustworthy": false,
+        "dominantWavelength": null,
+        "domainFraction": null,
+        "prominence": 3.2385566159755825e-112,
+        "reason": "No non-zero radial peak is sufficiently prominent and concentrated to report a wavelength.",
+        "window": "none"
+      },
+      "fieldSha256": "37ce4bb9680924e9805d132c0a07cdbf697394a81ecf55e51f5c47437c75c1a2"
+    },
+    {
+      "id": "seam-spanning-bands",
+      "label": "Seam-spanning bands",
+      "observedFiniteTimeDescription": "Two persistent horizontal reaction bands meet continuously across the periodic seam.",
+      "observationPrompt": "Trace each band through the top–bottom seam and inspect its local bulges.",
+      "conditionalNote": "The t = 1000 bands are a finite-time field; the seam is periodic, not a wall.",
+      "setup": {
+        "feed": 0.014,
+        "kill": 0.047,
+        "diffusionU": 0.16,
+        "diffusionV": 0.08,
+        "timestep": 0.5,
+        "gridSize": 256,
+        "domainWidth": 256,
+        "boundary": "periodic",
+        "maskPreset": "open-square",
+        "initialCondition": "horizontal-front",
+        "seed": "travelling-waves-4",
+        "integrator": "heun"
+      },
+      "step": 2000,
+      "modelTime": 1000,
+      "metrics": {
+        "meanU": 0.9158561901357933,
+        "meanV": 0.019267191607387893,
+        "varianceV": 0.003753803615426005,
+        "meanReactionRate": 0.001174871011051914,
+        "minimumU": 0.15739758029688344,
+        "maximumU": 0.9999999999999974,
+        "minimumV": 1.2751495290629436e-35,
+        "maximumV": 0.38969949354878386,
+        "activeCells": 65536
+      },
+      "spectrum": {
+        "trustworthy": true,
+        "dominantWavelength": 128,
+        "domainFraction": 0.5,
+        "prominence": 134083.07292901372,
+        "reason": "A concentrated, repeated non-zero radial spectral peak was detected.",
+        "window": "none"
+      },
+      "fieldSha256": "9cf82c3911eadd09a60f826e47859455d21c94b2e6185cc57d8bbe135430fd5c"
+    },
+    {
+      "id": "channel-extinction",
+      "label": "Channel extinction",
+      "observedFiniteTimeDescription": "Both finite disturbances decay, leaving the two-chamber mask at the feed state.",
+      "observationPrompt": "Distinguish the visible chamber geometry from a surviving chemical pattern.",
+      "conditionalNote": "Mask faces remain zero-flux even though this t = 1000 chemistry has extinguished.",
+      "setup": {
+        "feed": 0.03,
+        "kill": 0.062,
+        "diffusionU": 0.16,
+        "diffusionV": 0.08,
+        "timestep": 0.5,
+        "gridSize": 256,
+        "domainWidth": 256,
+        "boundary": "no-flux",
+        "maskPreset": "two-chambers",
+        "initialCondition": "two-spots",
+        "seed": "channel-selection-5",
+        "integrator": "heun"
+      },
+      "step": 2000,
+      "modelTime": 1000,
+      "metrics": {
+        "meanU": 0.9999999999999681,
+        "meanV": 3.252739486690018e-37,
+        "varianceV": 1.5110018369036314e-73,
+        "meanReactionRate": 2.5690332537297916e-73,
+        "minimumU": 0.9999999999994342,
+        "maximumU": 0.9999999999999963,
+        "minimumV": 8.004264209394106e-42,
+        "maximumV": 1.1718827170414166e-36,
+        "activeCells": 19400
+      },
+      "spectrum": {
+        "trustworthy": false,
+        "dominantWavelength": null,
+        "domainFraction": null,
+        "prominence": 2.0410529843420248e-60,
+        "reason": "No non-zero radial peak is sufficiently prominent and concentrated to report a wavelength.",
+        "window": "hann"
+      },
+      "fieldSha256": "ecef100e98bd747d77d7d821197f329685466d248ed01e6c51868a215321458c"
+    },
+    {
+      "id": "reservoir-loop-lattice",
+      "label": "Boundary-fed loop lattice",
+      "observedFiniteTimeDescription": "The central square reorganises into a compact lattice of looped reaction fronts.",
+      "observationPrompt": "Count the surviving loops and compare the outer and central cells.",
+      "conditionalNote": "This t = 1000 lattice depends on a reservoir that fixes only virtual exterior cells to U=1, V=0.",
+      "setup": {
+        "feed": 0.04,
+        "kill": 0.06,
+        "diffusionU": 0.16,
+        "diffusionV": 0.08,
+        "timestep": 0.5,
+        "gridSize": 256,
+        "domainWidth": 256,
+        "boundary": "reservoir",
+        "maskPreset": "open-square",
+        "initialCondition": "central-square",
+        "seed": "reservoir-invasion-6",
+        "integrator": "heun"
+      },
+      "step": 2000,
+      "modelTime": 1000,
+      "metrics": {
+        "meanU": 0.9541870777010926,
+        "meanV": 0.01854568729580008,
+        "varianceV": 0.004427489521861015,
+        "meanReactionRate": 0.0018698240808748146,
+        "minimumU": 0.2861822134993668,
+        "maximumU": 1,
+        "minimumV": 7.022043811777217e-70,
+        "maximumV": 0.37399037889750536,
+        "activeCells": 65536
+      },
+      "spectrum": {
+        "trustworthy": false,
+        "dominantWavelength": null,
+        "domainFraction": null,
+        "prominence": 315731.71909589815,
+        "reason": "The strongest variation spans too much of the domain to establish a repeated wavelength.",
+        "window": "hann"
+      },
+      "fieldSha256": "749b45bf3058d3fe1881d8a303f9de0afabf2aaf0cc9b4627c72789c8ccca8c5"
+    }
+  ]
+}

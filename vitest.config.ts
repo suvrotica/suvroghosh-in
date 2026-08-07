@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/reaction-diffusion/**/*.test.ts',
 			'src/lib/visualizations/bias-archipelago/**/*.test.ts',
 			'src/lib/visualizations/brownian-motion/**/*.test.ts',
 			'src/lib/visualizations/double-pendulum/**/*.test.ts',

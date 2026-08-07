@@ -8872,6 +8872,36 @@
       "sourceHash": "1e8c82af53912fc365e3782aa3bd7dc81517f268602fe7a1cfa91e689fb6ce0b",
       "width": 1280
     },
+    "static/images/reaction-diffusion-atlas-field.png": {
+      "format": "PNG",
+      "height": 1200,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1200,
+      "originalWidth": 1200,
+      "outputBytes": 38360,
+      "outputHash": "1a1c50e55fbd0ffc20842a108bc6bf1fa4e65400f6c10d4b70a68d6a6b489a9a",
+      "resized": false,
+      "sourceBytes": 44327,
+      "sourceHash": "e3d006de4d6ec98a48789cf44ecdde8966f12db54f7194f855052f4b2880ad9a",
+      "width": 1200
+    },
+    "static/images/reaction-diffusion-atlas.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 69915,
+      "outputHash": "be528edee415c8ba2348218269006ee31bd56002160ce5bb63e71b0e601b6aa6",
+      "resized": false,
+      "sourceBytes": 84659,
+      "sourceHash": "2d720ee643fb533a11e4a57a72730f8961e4b1fff4e80458fe2cd8dc78ffc5f8",
+      "width": 1600
+    },
     "static/images/resources/alternatives-to-overused-ai-language.webp": {
       "format": "WEBP",
       "height": 675,
@@ -9271,6 +9301,36 @@
       "sourceBytes": 39614,
       "sourceHash": "9743ea8247d9ad260c41e963d47ee1be2a6d602cdb5c92bc0f56a7eb8dac7ed1",
       "width": 1200
+    },
+    "static/images/visualizations/reaction-diffusion/guided-observations.png": {
+      "format": "PNG",
+      "height": 828,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 828,
+      "originalWidth": 1080,
+      "outputBytes": 26728,
+      "outputHash": "c8dc25e6a89cb92e3f4f1d3ed4dd97f53394c452f2aafb71f66203d9fae4641a",
+      "resized": false,
+      "sourceBytes": 33481,
+      "sourceHash": "195ecf9d085590c351e62ae61e0a41cca9bf8a7191c8466d880a037f65f0c43c",
+      "width": 1080
+    },
+    "static/images/visualizations/reaction-diffusion/preset-calibration.png": {
+      "format": "PNG",
+      "height": 768,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 960,
+      "outputBytes": 79333,
+      "outputHash": "160af22dcbf49db9eb7c4322bda5a9bc1b712ee7c3331848abbeab3b8265ae7b",
+      "resized": false,
+      "sourceBytes": 79333,
+      "sourceHash": "160af22dcbf49db9eb7c4322bda5a9bc1b712ee7c3331848abbeab3b8265ae7b",
+      "width": 960
     },
     "static/photos/Compress_20260510_235335_5542.jpg": {
       "format": "JPEG",

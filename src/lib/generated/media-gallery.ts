@@ -3898,6 +3898,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 720
 		},
 		{
+			"name": "reaction-diffusion-atlas-field.png",
+			"src": "/images/reaction-diffusion-atlas-field.png",
+			"bytes": 38360,
+			"width": 1200,
+			"height": 1200
+		},
+		{
+			"name": "reaction-diffusion-atlas.png",
+			"src": "/images/reaction-diffusion-atlas.png",
+			"bytes": 69915,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "Resize_20260428_134350_0013.jpg",
 			"src": "/images/Resize_20260428_134350_0013.jpg",
 			"bytes": 17493,
@@ -4078,6 +4092,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 29760,
 			"width": 1200,
 			"height": 630
+		},
+		{
+			"name": "visualizations/reaction-diffusion/guided-observations.png",
+			"src": "/images/visualizations/reaction-diffusion/guided-observations.png",
+			"bytes": 26728,
+			"width": 1080,
+			"height": 828
+		},
+		{
+			"name": "visualizations/reaction-diffusion/preset-calibration.png",
+			"src": "/images/visualizations/reaction-diffusion/preset-calibration.png",
+			"bytes": 79333,
+			"width": 960,
+			"height": 768
 		}
 	],
 	"photos": [

@@ -22,7 +22,8 @@
 		'create-art-living-pigment-studio': ['Generative Art', 'Chemistry', 'Computer Science'],
 		'domain-coloring-complex-functions-explorer': ['Mathematics', 'Scientific Computing'],
 		'the-neuron-zoo': ['Biology', 'Mathematics', 'Scientific Computing'],
-		'lightning-atlas': ['Physics', 'Scientific Computing']
+		'lightning-atlas': ['Physics', 'Scientific Computing'],
+		'reaction-diffusion-atlas': visualizationSummaries['reaction-diffusion-atlas'].subjects
 	};
 	const subjects = [
 		'All',
@@ -47,11 +48,6 @@
 			title: 'Gradient descent landscapes',
 			subject: 'Machine Learning',
 			detail: 'Move a starting point and follow an optimiser down a changing loss surface.'
-		},
-		{
-			title: 'Reaction–diffusion patterns',
-			subject: 'Chemistry',
-			detail: 'Seed two virtual chemicals and grow spots, stripes, and travelling fronts.'
 		}
 	] as const;
 

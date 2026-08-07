@@ -10712,6 +10712,32 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-06"
+		},
+		"src/lib/posts/reaction-diffusion-atlas.md": {
+			"bodyHash": "f80211b7112c577b2d5381baa6539a424ca2524662755fe8408d69c10a4e8f7b",
+			"hashVersion": 2,
+			"revisionHash": "63bd95f9f95d2d1a0af83f876c67d70db0ff00878e1b1f7fa40c7dc8e907a385",
+			"generatedTags": [
+				"Reaction–Diffusion",
+				"Gray–Scott Model",
+				"Pattern Formation",
+				"Partial Differential Equations",
+				"Scientific Computing",
+				"Gray Scott",
+				"Initial Condition",
+				"Repeated Spot",
+				"People Call Turing",
+				"Diffusion"
+			],
+			"pinnedTags": [
+				"Reaction–Diffusion",
+				"Gray–Scott Model",
+				"Pattern Formation",
+				"Partial Differential Equations",
+				"Scientific Computing"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-07"
 		}
 	},
 	"maxTags": 10
