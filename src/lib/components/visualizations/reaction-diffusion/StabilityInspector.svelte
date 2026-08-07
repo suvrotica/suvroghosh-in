@@ -139,7 +139,7 @@
 				? [{ q: active.fastestQ, growth: active.maximumGrowthRate, label: 'fastest q' }]
 				: [])
 		];
-		context.font = `${9 * density}px ui-monospace, monospace`;
+		context.font = `${12 * density}px ui-monospace, monospace`;
 		context.textAlign = 'left';
 		for (const marker of markers) {
 			context.beginPath();
@@ -149,7 +149,7 @@
 			context.fillText(marker.label, x(marker.q) + 6 * density, y(marker.growth) - 5 * density);
 		}
 		context.fillStyle = '#e9e3d5';
-		context.font = `${11 * density}px ui-monospace, monospace`;
+		context.font = `${13 * density}px ui-monospace, monospace`;
 		context.textAlign = 'center';
 		context.fillText(
 			'spatial wave number q (model-length⁻¹)',
@@ -295,7 +295,7 @@
 	.eyebrow {
 		margin: 0 0 0.3rem;
 		color: var(--stable);
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -359,7 +359,7 @@
 	}
 	.caption {
 		margin: 0.55rem 0 0;
-		font-size: 0.78rem;
+		font-size: 0.875rem;
 		color: color-mix(in oklab, currentColor 72%, transparent);
 	}
 	.readout {
@@ -382,13 +382,13 @@
 		border-bottom: 0;
 	}
 	.readout dt {
-		font-size: 0.75rem;
+		font-size: 0.875rem;
 		font-weight: 700;
 	}
 	.readout dd {
 		margin: 0;
 		font:
-			700 0.72rem/1.25 ui-monospace,
+			700 0.8rem/1.25 ui-monospace,
 			monospace;
 		text-align: right;
 	}
@@ -407,7 +407,7 @@
 		width: 100%;
 		min-width: 28rem;
 		border-collapse: collapse;
-		font-size: 0.76rem;
+		font-size: 0.875rem;
 		font-variant-numeric: tabular-nums;
 	}
 	caption {

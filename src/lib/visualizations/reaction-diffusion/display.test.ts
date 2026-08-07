@@ -10,7 +10,8 @@ import {
 	reactionDiffusionMappedValueAt,
 	reactionDiffusionPaletteRgba,
 	renderReactionDiffusionPixelBuffer,
-	renderReactionDiffusionToCanvas
+	renderReactionDiffusionToCanvas,
+	resampleSpectrumInput
 } from './display';
 import { renderFragmentSource } from './gpu/shaders';
 import type { DisplayMode, FieldState, GrayScottSetup, PaletteId } from './types';
@@ -179,6 +180,67 @@ describe('deterministic CPU/Canvas display rendering', () => {
 				palette: 'mineral'
 			}).data
 		);
+	});
+});
+
+describe('conservative spectrum-grid restriction', () => {
+	it('preserves the exact arrays at equal size without aliasing the caller buffers', () => {
+		const field = Float64Array.from({ length: 16 }, (_, index) => index / 7);
+		const mask = Uint8Array.from({ length: 16 }, (_, index) => (index % 3 === 0 ? 0 : 1));
+		const restricted = resampleSpectrumInput(field, mask, 4, 4);
+
+		expect(restricted.field).toEqual(field);
+		expect(restricted.mask).toEqual(mask);
+		expect(restricted.field).not.toBe(field);
+		expect(restricted.mask).not.toBe(mask);
+	});
+
+	it('rejects non-finite active values even when no size reduction is needed', () => {
+		const field = new Float64Array(16);
+		const mask = new Uint8Array(16).fill(1);
+		field[7] = Number.NaN;
+		expect(() => resampleSpectrumInput(field, mask, 4, 4)).toThrow(/finite values/iu);
+
+		mask[7] = 0;
+		expect(resampleSpectrumInput(field, mask, 4, 4).field[7]).toBeNaN();
+	});
+
+	it('preserves constants and the domain mean across a non-integer reduction ratio', () => {
+		const constant = new Float64Array(25).fill(0.37);
+		const mask = new Uint8Array(25).fill(1);
+		const constantResult = resampleSpectrumInput(constant, mask, 5, 3);
+		expect([...constantResult.field].every((value) => Math.abs(value - 0.37) < 1e-15)).toBe(true);
+		expect(constantResult.mask).toEqual(new Uint8Array(9).fill(1));
+
+		const ramp = Float64Array.from({ length: 25 }, (_, index) => index - 6);
+		const rampResult = resampleSpectrumInput(ramp, mask, 5, 3);
+		const sourceMean = ramp.reduce((sum, value) => sum + value, 0) / ramp.length;
+		const restrictedMean =
+			rampResult.field.reduce((sum, value) => sum + value, 0) / rampResult.field.length;
+		expect(restrictedMean).toBeCloseTo(sourceMean, 13);
+	});
+
+	it('averages only active overlap area and represents unsupported cells as exact zero', () => {
+		const field = new Float64Array(16).fill(99);
+		const mask = new Uint8Array(16);
+		field[0] = 2;
+		field[1] = 6;
+		field[15] = 8;
+		mask[0] = 1;
+		mask[1] = 1;
+		mask[15] = 1;
+
+		const restricted = resampleSpectrumInput(field, mask, 4, 2);
+		expect(restricted.field).toEqual(Float64Array.from([4, 0, 0, 8]));
+		expect(restricted.mask).toEqual(Uint8Array.from([1, 0, 0, 1]));
+
+		const partialField = new Float64Array(9);
+		const partialMask = new Uint8Array(9);
+		partialField[4] = 9;
+		partialMask[4] = 1;
+		const partial = resampleSpectrumInput(partialField, partialMask, 3, 2);
+		expect(partial.field).toEqual(new Float64Array(4).fill(9));
+		expect(partial.mask).toEqual(new Uint8Array(4).fill(1));
 	});
 });
 

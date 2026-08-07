@@ -279,10 +279,15 @@
 		justify-content: space-between;
 		pointer-events: none;
 		font:
-			700 0.68rem/1 ui-monospace,
+			700 0.8rem/1 ui-monospace,
 			monospace;
 		letter-spacing: 0.12em;
 		color: rgb(255 248 220 / 0.72);
+	}
+	@media (max-width: 38rem) {
+		.field-corners {
+			font-size: 0.875rem;
+		}
 	}
 	@media (prefers-reduced-motion: reduce) {
 		canvas {

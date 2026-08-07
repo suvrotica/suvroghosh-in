@@ -81,6 +81,7 @@
 	let wavelengthDifference: number | null = null;
 	let clock = $state<ClockSnapshot>({ modelTime: 0, stepA: 0, stepB: 0 });
 
+	let setupA = $derived(reducedSetup(baseSetup));
 	let setupB = $derived(buildSetupB());
 	let graphMaximum = $derived(Math.max(...history.map((entry) => entry.l2), 1e-12));
 	let graphPoints = $derived(
@@ -484,9 +485,51 @@
 		</div>
 	</header>
 
+	<aside class="comparison-methods" aria-label="Compare engine methods">
+		<p>
+			<strong
+				>Comparison engine: {setupA.gridSize} × {setupA.gridSize} cells, L = {setupA.domainWidth}, h
+				= {(setupA.domainWidth / setupA.gridSize).toPrecision(4)}, fixed-step Heun.</strong
+			>
+			Both panes share this reduced base. “Change only” refers to the selected A–B variable within Compare,
+			not to a difference from the main laboratory. A one-pane brush action is an additional, explicitly
+			targeted intervention.
+		</p>
+		<dl class="methods-strip">
+			<div>
+				<dt>N</dt>
+				<dd>{setupA.gridSize} × {setupA.gridSize} cells</dd>
+			</div>
+			<div>
+				<dt>L</dt>
+				<dd>{setupA.domainWidth} model units</dd>
+			</div>
+			<div>
+				<dt>h</dt>
+				<dd>{(setupA.domainWidth / setupA.gridSize).toPrecision(4)}</dd>
+			</div>
+			<div>
+				<dt>integrator</dt>
+				<dd>fixed-step Heun</dd>
+			</div>
+			<div>
+				<dt>boundary</dt>
+				<dd>
+					{setupA.boundary === setupB.boundary
+						? `${setupA.boundary} · shared`
+						: `A ${setupA.boundary} · B ${setupB.boundary}`}
+				</dd>
+			</div>
+			<div>
+				<dt>seed</dt>
+				<dd>{setupA.seed} · shared</dd>
+			</div>
+		</dl>
+	</aside>
+
 	<div class="compare-controls">
 		<label
-			>Change only
+			>Change only within Compare
 			<select bind:value={kind}>
 				<option value="feed">F by +0.001</option><option value="kill">k by +0.001</option><option
 					value="diffusion">halve Dᵥ</option
@@ -528,7 +571,7 @@
 		<figure>
 			<ReactionDiffusionField
 				field={fieldA}
-				setup={reducedSetup(baseSetup)}
+				setup={setupA}
 				{revision}
 				interactive={true}
 				interactionMode="paint"
@@ -539,9 +582,8 @@
 				onstroke={applyStroke}
 			/>
 			<figcaption>
-				<b>A · reference</b> F {reducedSetup(baseSetup).feed.toFixed(5)}, k {reducedSetup(
-					baseSetup
-				).kill.toFixed(5)}, Δt {reducedSetup(baseSetup).timestep}
+				<b>A · Compare reference</b> F {setupA.feed.toFixed(5)}, k {setupA.kill.toFixed(5)}, Δt
+				{setupA.timestep}
 			</figcaption>
 		</figure>
 		<figure>
@@ -671,7 +713,7 @@
 	.eyebrow {
 		margin: 0 0 0.3rem;
 		color: #337b70;
-		font-size: 0.7rem;
+		font-size: 0.875rem;
 		font-weight: 850;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -695,7 +737,7 @@
 		background: var(--paper, #f5f0e5);
 		padding: 0.5rem 0.72rem;
 		color: inherit;
-		font: 750 0.74rem/1.2 inherit;
+		font: 750 0.875rem/1.2 inherit;
 	}
 	button {
 		cursor: pointer;
@@ -710,6 +752,45 @@
 		outline: 3px solid #e5b94f;
 		outline-offset: 2px;
 	}
+	.comparison-methods {
+		margin-block: 1rem;
+		border: 1px solid color-mix(in oklab, #337b70 45%, currentColor 12%);
+		border-left: 4px solid #337b70;
+		border-radius: 0.65rem;
+		background: color-mix(in oklab, #337b70 8%, transparent);
+		padding: 0.8rem;
+	}
+	.comparison-methods > p {
+		margin: 0 0 0.75rem;
+		font-size: 0.875rem;
+	}
+	.methods-strip {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1px;
+		overflow: hidden;
+		background: color-mix(in oklab, currentColor 15%, transparent);
+	}
+	.methods-strip div {
+		display: grid;
+		align-content: start;
+		justify-content: initial;
+		gap: 0.18rem;
+		border: 0;
+		background: var(--paper, #f5f0e5);
+		padding: 0.55rem;
+	}
+	.methods-strip dt,
+	.methods-strip dd {
+		font-size: 0.875rem;
+		text-align: left;
+	}
+	.methods-strip dt {
+		font-weight: 850;
+	}
+	.methods-strip dd {
+		overflow-wrap: anywhere;
+	}
 	.compare-controls {
 		display: grid;
 		gap: 0.7rem;
@@ -718,13 +799,13 @@
 	.compare-controls label {
 		display: grid;
 		gap: 0.3rem;
-		font-size: 0.7rem;
+		font-size: 0.875rem;
 		font-weight: 800;
 	}
 	.brush-instructions {
 		grid-column: 1 / -1;
 		margin: 0;
-		font-size: 0.7rem;
+		font-size: 0.875rem;
 	}
 	.clock {
 		display: grid;
@@ -733,7 +814,7 @@
 	}
 	.clock span,
 	.clock small {
-		font-size: 0.67rem;
+		font-size: 0.875rem;
 	}
 	.clock strong {
 		font:
@@ -750,7 +831,7 @@
 	}
 	figcaption {
 		margin-top: 0.45rem;
-		font-size: 0.69rem;
+		font-size: 0.875rem;
 	}
 	.difference canvas {
 		display: block;
@@ -781,12 +862,12 @@
 		border-bottom: 0;
 	}
 	dt {
-		font-size: 0.7rem;
+		font-size: 0.875rem;
 	}
 	dd {
 		margin: 0;
 		font:
-			700 0.68rem/1.2 ui-monospace,
+			700 0.875rem/1.2 ui-monospace,
 			monospace;
 		text-align: right;
 	}
@@ -797,7 +878,7 @@
 	}
 	.trace strong,
 	.trace p {
-		font-size: 0.7rem;
+		font-size: 0.875rem;
 	}
 	.trace p {
 		margin: 0;
@@ -834,7 +915,7 @@
 	}
 	.trace-table {
 		margin-top: 0.55rem;
-		font-size: 0.68rem;
+		font-size: 0.875rem;
 	}
 	.trace-table summary {
 		cursor: pointer;
@@ -848,7 +929,7 @@
 		width: 100%;
 		border-collapse: collapse;
 		font:
-			600 0.62rem/1.35 ui-monospace,
+			600 0.875rem/1.35 ui-monospace,
 			monospace;
 	}
 	caption {
@@ -869,7 +950,7 @@
 	.status {
 		border-left: 3px solid #337b70;
 		padding-left: 0.65rem;
-		font-size: 0.73rem;
+		font-size: 0.875rem;
 	}
 	@media (min-width: 42rem) {
 		.compare-controls {
@@ -882,6 +963,29 @@
 		}
 	}
 	@media (min-width: 52rem) {
+		.eyebrow,
+		button,
+		select,
+		.comparison-methods > p,
+		.methods-strip dt,
+		.methods-strip dd,
+		.compare-controls label,
+		.brush-instructions,
+		.clock span,
+		.clock small,
+		figcaption,
+		dt,
+		dd,
+		.trace strong,
+		.trace p,
+		.trace-table,
+		table,
+		.status {
+			font-size: 0.8rem;
+		}
+		.methods-strip {
+			grid-template-columns: repeat(6, minmax(0, 1fr));
+		}
 		.fields {
 			grid-template-columns: 1fr 1fr 1fr;
 		}

@@ -1,4 +1,5 @@
 import type { SpectrumReading } from './types';
+import { resampleSpectrumInput } from './display';
 
 export interface SpectrumOptions {
 	readonly subtractMean?: boolean;
@@ -106,21 +107,18 @@ export function prepareSpectrumField(
 		throw new RangeError('Spectrum mask length differs from the field.');
 	}
 	const outputSize = fftSizeFor(size);
-	const output = new Float64Array(outputSize * outputSize);
-	const active = new Uint8Array(output.length);
+	const sourceMask = options.mask ?? new Uint8Array(field.length).fill(1);
+	const restricted = resampleSpectrumInput(field, sourceMask, size, outputSize);
+	const output = restricted.field;
+	const active = restricted.mask;
 	let sum = 0;
 	let count = 0;
 	for (let row = 0; row < outputSize; row += 1) {
-		const sourceRow = Math.min(size - 1, Math.floor(((row + 0.5) * size) / outputSize));
 		for (let column = 0; column < outputSize; column += 1) {
-			const sourceColumn = Math.min(size - 1, Math.floor(((column + 0.5) * size) / outputSize));
-			const sourceIndex = sourceRow * size + sourceColumn;
-			if (options.mask && !options.mask[sourceIndex]) continue;
-			const value = field[sourceIndex];
-			if (!Number.isFinite(value)) throw new RangeError('Spectrum requires finite field values.');
 			const index = row * outputSize + column;
-			output[index] = value;
-			active[index] = 1;
+			if (!active[index]) continue;
+			const value = output[index];
+			if (!Number.isFinite(value)) throw new RangeError('Spectrum requires finite field values.');
 			sum += value;
 			count += 1;
 		}

@@ -577,11 +577,20 @@
 	{#if budget}
 		<section class="budget" aria-labelledby={`${id}-chemical-budget-title`}>
 			<h4 id={`${id}-chemical-budget-title`}>Global chemical budget</h4>
-			<p class="budget-note">
-				Measured change and residual come from one exact Float64 reference step initialized from the
-				currently sampled field. This audits the documented integrator; it does not conceal or claim
-				to measure GPU rounding differences.
-			</p>
+			{#if budget.measuredChangeU === null || budget.measuredChangeV === null}
+				<p class="budget-note">
+					The live term columns and prediction are Δt times the instantaneous right-hand side—the
+					first stage estimate for Heun. Measured change and the integrator-consistent residual
+					require an additional Float64 reference step, so that audit runs only when “Measure
+					spectrum” is requested.
+				</p>
+			{:else}
+				<p class="budget-note">
+					This on-demand audit reports Heun-integrated term contributions from the two-stage
+					average, the measured Float64 reference-step change, and their residual. It audits the
+					documented integrator; it does not claim to measure GPU rounding differences.
+				</p>
+			{/if}
 			<div
 				class="flow"
 				aria-label="Feed supplies U, autocatalysis converts U to V, and V is removed"
@@ -592,7 +601,11 @@
 			</div>
 			<div class="table-scroll">
 				<table>
-					<caption>Domain-mean change over one numerical timestep Δt</caption>
+					<caption>
+						{budget.measuredChangeU === null || budget.measuredChangeV === null
+							? 'Domain-mean first-stage estimate over Δt'
+							: 'Domain-mean Heun-integrated change over Δt'}
+					</caption>
 					<thead
 						><tr
 							><th>Field</th><th>Reaction</th><th>Feed</th><th>Kill</th><th>Diffusion / boundary</th
@@ -605,9 +618,9 @@
 								>—</td
 							><td>{format(budget.diffusionU)}</td><td>{format(budget.predictedChangeU)}</td><td
 								>{budget.measuredChangeU === null
-									? 'collecting'
+									? 'on demand'
 									: format(budget.measuredChangeU)}</td
-							><td>{budget.residualU === null ? 'collecting' : format(budget.residualU)}</td></tr
+							><td>{budget.residualU === null ? 'on demand' : format(budget.residualU)}</td></tr
 						>
 						<tr
 							><th>V</th><td>{format(budget.autocatalysisV)}</td><td
@@ -616,9 +629,9 @@
 								>{format(budget.predictedChangeV)}</td
 							><td
 								>{budget.measuredChangeV === null
-									? 'collecting'
+									? 'on demand'
 									: format(budget.measuredChangeV)}</td
-							><td>{budget.residualV === null ? 'collecting' : format(budget.residualV)}</td></tr
+							><td>{budget.residualV === null ? 'on demand' : format(budget.residualV)}</td></tr
 						>
 					</tbody>
 				</table>
@@ -642,7 +655,7 @@
 	}
 	.eyebrow {
 		margin: 0 0 0.3rem;
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -667,7 +680,7 @@
 		padding: 0.8rem;
 		color: #f1eadb;
 		font:
-			600 0.78rem/1.2 ui-monospace,
+			600 0.875rem/1.2 ui-monospace,
 			monospace;
 	}
 	.cell {
@@ -680,7 +693,7 @@
 	}
 	.cell span {
 		display: block;
-		font-size: 0.6rem;
+		font-size: 0.75rem;
 		letter-spacing: 0.08em;
 		color: #b9c8c2;
 	}
@@ -708,12 +721,12 @@
 		align-items: center;
 		gap: 0.55rem;
 		min-height: 2.15rem;
-		font-size: 0.78rem;
+		font-size: 0.875rem;
 	}
 	.term-row output,
 	.total output {
 		font:
-			700 0.74rem/1 ui-monospace,
+			700 0.875rem/1 ui-monospace,
 			monospace;
 		text-align: right;
 	}
@@ -779,14 +792,14 @@
 		border-radius: 999px;
 		padding: 0.28rem 0.5rem;
 		font:
-			700 0.58rem/1.1 ui-monospace,
+			700 0.75rem/1.1 ui-monospace,
 			monospace;
 	}
 	.mini-eyebrow {
 		margin: 0 0 0.22rem;
 		color: var(--instrument-accent);
 		font:
-			800 0.59rem/1.15 ui-monospace,
+			800 0.75rem/1.15 ui-monospace,
 			monospace;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -804,7 +817,7 @@
 	.phase-plot text {
 		fill: #d7d5c9;
 		font:
-			600 9px/1 ui-monospace,
+			600 12px/1 ui-monospace,
 			monospace;
 	}
 	.plot-background {
@@ -848,7 +861,7 @@
 	.chart-summary,
 	.phase-intro {
 		margin: 0.65rem 0 0;
-		font-size: 0.72rem;
+		font-size: 0.875rem;
 		line-height: 1.45;
 		color: color-mix(in oklab, currentColor 76%, transparent);
 	}
@@ -868,7 +881,7 @@
 		padding: 0.35rem 0.45rem;
 		color: inherit;
 		font:
-			650 0.64rem/1.2 ui-monospace,
+			650 0.875rem/1.2 ui-monospace,
 			monospace;
 	}
 	.empty-state {
@@ -889,7 +902,7 @@
 	summary {
 		min-height: 2.5rem;
 		cursor: pointer;
-		font-size: 0.74rem;
+		font-size: 0.875rem;
 		font-weight: 800;
 	}
 	.compact-table {
@@ -897,7 +910,7 @@
 	}
 	.compact-table table {
 		min-width: 32rem;
-		font-size: 0.68rem;
+		font-size: 0.875rem;
 	}
 	.f-nullcline {
 		stroke: #f0cf79;
@@ -959,7 +972,7 @@
 		gap: 0.35rem 0.8rem;
 		margin-top: 0.55rem;
 		font:
-			700 0.59rem/1.2 ui-monospace,
+			700 0.75rem/1.2 ui-monospace,
 			monospace;
 	}
 	.phase-legend span::before {
@@ -1007,7 +1020,7 @@
 		width: 100%;
 		min-width: 42rem;
 		border-collapse: collapse;
-		font-size: 0.74rem;
+		font-size: 0.875rem;
 		font-variant-numeric: tabular-nums;
 	}
 	caption {
@@ -1039,7 +1052,7 @@
 		border: 1px solid color-mix(in oklab, currentColor 24%, transparent);
 		border-radius: 999px;
 		padding: 0.35rem 0.65rem;
-		font-size: 0.78rem;
+		font-size: 0.875rem;
 		font-weight: 800;
 	}
 	@media (min-width: 54rem) {

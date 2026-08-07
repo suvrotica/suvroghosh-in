@@ -242,7 +242,7 @@
 	.eyebrow {
 		margin: 0 0 0.3rem;
 		color: #8a6034;
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -271,7 +271,7 @@
 		background: color-mix(in oklab, #ad5142 8%, var(--paper, #f4efe3));
 	}
 	article span {
-		font-size: 0.68rem;
+		font-size: 0.75rem;
 		font-weight: 850;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -283,7 +283,7 @@
 	}
 	article p {
 		margin: 0;
-		font-size: 0.8rem;
+		font-size: 0.875rem;
 	}
 	button {
 		min-height: 2.75rem;
@@ -310,12 +310,12 @@
 		padding-block: 0.36rem;
 	}
 	dt {
-		font-size: 0.72rem;
+		font-size: 0.875rem;
 	}
 	dd {
 		margin: 0;
 		font:
-			700 0.69rem/1.2 ui-monospace,
+			700 0.875rem/1.2 ui-monospace,
 			monospace;
 		text-align: right;
 	}
@@ -324,7 +324,7 @@
 	}
 	.trajectory {
 		margin-top: 0.8rem;
-		font-size: 0.75rem;
+		font-size: 0.875rem;
 	}
 	.trajectory summary {
 		cursor: pointer;

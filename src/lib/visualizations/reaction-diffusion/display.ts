@@ -291,6 +291,99 @@ export interface ReactionDiffusionPixelBuffer {
 	readonly data: Uint8ClampedArray;
 }
 
+export interface ResampledSpectrumInput {
+	readonly field: Float64Array;
+	readonly mask: Uint8Array;
+}
+
+interface AxisOverlap {
+	readonly sourceIndex: number;
+	readonly weight: number;
+}
+
+function spectrumResamplingDimension(value: number, name: string): number {
+	if (!Number.isSafeInteger(value) || value < 1) {
+		throw new RangeError(`${name} must be a positive integer.`);
+	}
+	return value;
+}
+
+function spectrumAxisOverlaps(sourceSize: number, targetSize: number): AxisOverlap[][] {
+	return Array.from({ length: targetSize }, (_, targetIndex) => {
+		const start = (targetIndex * sourceSize) / targetSize;
+		const end = ((targetIndex + 1) * sourceSize) / targetSize;
+		const firstSourceIndex = Math.floor(start);
+		const lastSourceIndex = Math.min(sourceSize - 1, Math.ceil(end) - 1);
+		const overlaps: AxisOverlap[] = [];
+		for (let sourceIndex = firstSourceIndex; sourceIndex <= lastSourceIndex; sourceIndex += 1) {
+			const weight = Math.min(end, sourceIndex + 1) - Math.max(start, sourceIndex);
+			if (weight > 0) overlaps.push({ sourceIndex, weight });
+		}
+		return overlaps;
+	});
+}
+
+/**
+ * Conservatively restricts a cell-centred field to a smaller FFT grid.
+ *
+ * Each target value is the exact source-cell overlap average over active source
+ * area. A target mask cell is active iff it has positive active-area support;
+ * unsupported cells are represented deterministically as field 0, mask 0.
+ */
+export function resampleSpectrumInput(
+	field: Float64Array,
+	mask: Uint8Array,
+	sourceSize: number,
+	targetSize: number
+): ResampledSpectrumInput {
+	const validatedSourceSize = spectrumResamplingDimension(sourceSize, 'Spectrum source size');
+	const validatedTargetSize = spectrumResamplingDimension(targetSize, 'Spectrum target size');
+	if (validatedTargetSize > validatedSourceSize) {
+		throw new RangeError('Spectrum resampling only supports conservative grid reduction.');
+	}
+	if (field.length !== validatedSourceSize * validatedSourceSize || mask.length !== field.length) {
+		throw new RangeError('Spectrum field and mask must match the declared square source grid.');
+	}
+	if (validatedSourceSize === validatedTargetSize) {
+		for (let index = 0; index < field.length; index += 1) {
+			if (mask[index] && !Number.isFinite(field[index])) {
+				throw new RangeError('Spectrum requires finite values in active source cells.');
+			}
+		}
+		return { field: field.slice(), mask: mask.slice() };
+	}
+
+	const outputField = new Float64Array(validatedTargetSize * validatedTargetSize);
+	const outputMask = new Uint8Array(outputField.length);
+	const axisOverlaps = spectrumAxisOverlaps(validatedSourceSize, validatedTargetSize);
+	for (let targetRow = 0; targetRow < validatedTargetSize; targetRow += 1) {
+		for (let targetColumn = 0; targetColumn < validatedTargetSize; targetColumn += 1) {
+			let weightedSum = 0;
+			let activeArea = 0;
+			for (const rowOverlap of axisOverlaps[targetRow]) {
+				for (const columnOverlap of axisOverlaps[targetColumn]) {
+					const sourceIndex =
+						rowOverlap.sourceIndex * validatedSourceSize + columnOverlap.sourceIndex;
+					if (!mask[sourceIndex]) continue;
+					const value = field[sourceIndex];
+					if (!Number.isFinite(value)) {
+						throw new RangeError('Spectrum requires finite values in active source cells.');
+					}
+					const overlapArea = rowOverlap.weight * columnOverlap.weight;
+					weightedSum += value * overlapArea;
+					activeArea += overlapArea;
+				}
+			}
+			if (activeArea === 0) continue;
+			const outputIndex = targetRow * validatedTargetSize + targetColumn;
+			const average = weightedSum / activeArea;
+			outputField[outputIndex] = average === 0 ? 0 : average;
+			outputMask[outputIndex] = 1;
+		}
+	}
+	return { field: outputField, mask: outputMask };
+}
+
 function outputDimension(value: number | undefined, fallback: number, name: string): number {
 	const dimension = value ?? fallback;
 	if (!Number.isSafeInteger(dimension) || dimension < 1 || dimension > 8_192) {

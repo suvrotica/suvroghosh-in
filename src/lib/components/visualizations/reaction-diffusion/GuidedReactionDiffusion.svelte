@@ -691,7 +691,7 @@
 		margin: 0 0 0.4rem;
 		color: var(--guide-teal);
 		font:
-			800 0.7rem/1.2 ui-monospace,
+			800 0.75rem/1.2 ui-monospace,
 			monospace;
 		letter-spacing: 0.13em;
 		text-transform: uppercase;
@@ -723,7 +723,7 @@
 	}
 	.method-stamp span {
 		color: var(--guide-teal);
-		font-size: 0.62rem;
+		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -766,12 +766,12 @@
 	.stage-index span {
 		color: var(--guide-gold);
 		font:
-			800 0.64rem/1 ui-monospace,
+			800 0.75rem/1 ui-monospace,
 			monospace;
 	}
 	.stage-index small {
 		align-self: end;
-		font-size: 0.7rem;
+		font-size: 0.8rem;
 		font-weight: 760;
 		line-height: 1.15;
 	}
@@ -802,7 +802,7 @@
 	figcaption {
 		margin-bottom: 0.35rem;
 		font:
-			750 0.65rem/1.2 ui-monospace,
+			750 0.8rem/1.2 ui-monospace,
 			monospace;
 		letter-spacing: 0.03em;
 	}
@@ -830,7 +830,7 @@
 		gap: 1rem;
 		margin-top: 0.35rem;
 		font:
-			700 0.65rem/1.2 ui-monospace,
+			700 0.8rem/1.2 ui-monospace,
 			monospace;
 	}
 	.measurement-strip {
@@ -852,7 +852,7 @@
 	.measurement-strip dt {
 		overflow: hidden;
 		color: color-mix(in oklab, var(--guide-ink) 65%, transparent);
-		font-size: 0.59rem;
+		font-size: 0.75rem;
 		font-weight: 750;
 		text-overflow: ellipsis;
 		text-transform: uppercase;
@@ -861,7 +861,7 @@
 	.measurement-strip dd {
 		margin: 0.2rem 0 0;
 		font:
-			800 0.75rem/1.2 ui-monospace,
+			800 0.875rem/1.2 ui-monospace,
 			monospace;
 	}
 	.observation-card {
@@ -880,7 +880,7 @@
 	.subtitle {
 		margin: 0.35rem 0 1rem;
 		color: var(--guide-gold);
-		font-size: 0.77rem;
+		font-size: 0.875rem;
 		font-weight: 800;
 	}
 	.question {
@@ -891,7 +891,7 @@
 	.question span {
 		color: var(--guide-teal);
 		font:
-			800 0.62rem/1.2 ui-monospace,
+			800 0.75rem/1.2 ui-monospace,
 			monospace;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -920,7 +920,7 @@
 		background: transparent;
 		color: inherit;
 		font:
-			700 0.78rem/1.35 ui-monospace,
+			700 0.875rem/1.35 ui-monospace,
 			monospace;
 		white-space: nowrap;
 	}
@@ -936,7 +936,7 @@
 		padding: 0.22rem 0.48rem;
 		color: var(--guide-paper);
 		font:
-			750 0.58rem/1.2 ui-monospace,
+			750 0.75rem/1.2 ui-monospace,
 			monospace;
 	}
 	.classification {
@@ -949,7 +949,7 @@
 	}
 	.classification span {
 		font:
-			800 0.6rem/1.2 ui-monospace,
+			800 0.75rem/1.2 ui-monospace,
 			monospace;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -972,7 +972,7 @@
 	}
 	.visible-description p {
 		margin: 0;
-		font-size: 0.78rem;
+		font-size: 0.875rem;
 		line-height: 1.45;
 	}
 	.guided-footer {
@@ -998,7 +998,7 @@
 		background: transparent;
 		padding: 0.58rem 0.85rem;
 		color: inherit;
-		font-size: 0.72rem;
+		font-size: 0.875rem;
 		font-weight: 800;
 		line-height: 1.2;
 		text-decoration: none;
@@ -1025,7 +1025,7 @@
 		padding: 0.65rem clamp(1rem, 3vw, 2rem);
 		color: color-mix(in oklab, var(--guide-ink) 70%, transparent);
 		font:
-			650 0.66rem/1.4 ui-monospace,
+			650 0.875rem/1.4 ui-monospace,
 			monospace;
 	}
 	.no-script {
@@ -1066,7 +1066,7 @@
 			gap: 0.4rem;
 		}
 		.measurement-strip dt {
-			font-size: 0.52rem;
+			font-size: 0.875rem;
 		}
 		.guided-footer {
 			align-items: stretch;

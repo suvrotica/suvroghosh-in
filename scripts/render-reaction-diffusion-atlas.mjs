@@ -238,13 +238,12 @@ const heroSvg = Buffer.from(`
 <svg width="${heroWidth}" height="${heroHeight}" xmlns="http://www.w3.org/2000/svg">
   <rect x="987" y="0" width="613" height="900" fill="#e9e1cf"/>
   <path d="M987 0v900" stroke="#d3aa5d" stroke-width="3"/>
-  <text x="1050" y="90" fill="#2b403d" font-family="Georgia,serif" font-size="30" font-weight="700">GRAY–SCOTT ATLAS</text>
-  <text x="1050" y="130" fill="#53736c" font-family="monospace" font-size="16">FINITE TIME · FIXED CLOCK</text>
-  <text x="1050" y="680" fill="#2b403d" font-family="monospace" font-size="17">F ${mainSetup.feed}   k ${mainSetup.kill}</text>
-  <text x="1050" y="712" fill="#2b403d" font-family="monospace" font-size="17">Dᵤ ${mainSetup.diffusionU}   Dᵥ ${mainSetup.diffusionV}</text>
-  <text x="1050" y="744" fill="#2b403d" font-family="monospace" font-size="17">t ${main.modelTime}   128² · periodic</text>
-  <text x="1050" y="795" fill="#6e5940" font-family="Georgia,serif" font-size="19">One field; twenty-five controlled neighbours.</text>
-  <text x="1050" y="827" fill="#6e5940" font-family="Georgia,serif" font-size="19">Not a universal phase diagram.</text>
+  <text x="1050" y="94" fill="#2b403d" font-family="Georgia,serif" font-size="48" font-weight="700">GRAY–SCOTT ATLAS</text>
+  <text x="1050" y="142" fill="#53736c" font-family="monospace" font-size="26">A CONTROLLED NUMERICAL MAP</text>
+  <text x="1050" y="706" fill="#2b403d" font-family="monospace" font-size="38">FINITE TIME</text>
+  <text x="1050" y="756" fill="#2b403d" font-family="monospace" font-size="38">FIXED CLOCK</text>
+  <text x="1050" y="822" fill="#6e5940" font-family="Georgia,serif" font-size="34">NOT A UNIVERSAL</text>
+  <text x="1050" y="866" fill="#6e5940" font-family="Georgia,serif" font-size="34">PHASE DIAGRAM</text>
 </svg>`);
 
 await sharp({

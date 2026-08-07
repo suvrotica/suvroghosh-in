@@ -69,6 +69,10 @@ test('the article, guided sequence and float-or-worker observatory hydrate clean
 	expect(html).toContain(articleTitle);
 	expect(html).toContain('/images/reaction-diffusion-atlas.png');
 	expect(html).toContain('Six things to notice before touching every knob');
+	// SSR describes the requested 256² setup. The client may later adopt an
+	// effective 128² CPU grid, but that fallback must not leak into server HTML.
+	expect(html).toContain('0.08000');
+	expect(html).not.toContain('0.02000');
 
 	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
 	await expect(page.getByRole('heading', { level: 1, name: articleTitle })).toHaveCount(1);
@@ -85,6 +89,19 @@ test('the article, guided sequence and float-or-worker observatory hydrate clean
 	await expect(lab.getByLabel('Speed')).toHaveValue('2');
 	await expect(lab.locator('.panel-tabs button')).toHaveCount(5);
 	await expect(lab.getByText(/schema 1 · five-point Laplacian/iu)).toBeVisible();
+	const scale = lab.locator('.field-stack .scale');
+	await expect(scale).toContainText('64 model units');
+	const scaleGeometry = await scale.evaluate((element) => {
+		const scaleBounds = element.getBoundingClientRect();
+		const fieldBounds = element.parentElement?.getBoundingClientRect();
+		const barBounds = element.querySelector('span')?.getBoundingClientRect();
+		return {
+			scaleFraction: fieldBounds ? scaleBounds.width / fieldBounds.width : 0,
+			barFraction: barBounds ? barBounds.width / scaleBounds.width : 0
+		};
+	});
+	expect(scaleGeometry.scaleFraction).toBeCloseTo(0.25, 2);
+	expect(scaleGeometry.barFraction).toBeCloseTo(1, 2);
 	const initialEngineStatus = await lab.locator('.stage-status').innerText();
 	if (/RGBA(?:16|32)F/iu.test(initialEngineStatus)) {
 		const gpuCanvas = lab.locator('.field-stack > canvas.visible');
@@ -139,6 +156,9 @@ test('the deterministic CPU Worker steps, pauses and survives diagnostic tab cha
 	await expect(lab.locator('.stage-status')).toContainText('Float64 CPU Worker', {
 		timeout: 60_000
 	});
+	await expect(lab.locator('.stage-status')).toContainText(
+		/reduced to 128 × 128.*not a continuation/iu
+	);
 	expect(await telemetryStep(page)).toBe(0);
 	const cpuField = lab.locator('.field-frame canvas');
 	await cpuField.click({ position: { x: 120, y: 120 } });
@@ -197,8 +217,13 @@ test('the deterministic CPU Worker steps, pauses and survives diagnostic tab cha
 	await expect(
 		lab.getByRole('heading', { name: 'Live local ledger and global chemical budget' })
 	).toBeVisible();
+	const budget = lab.locator('section.budget');
+	await expect(budget).toContainText(/first stage estimate for Heun/iu);
+	await expect(budget.getByText('on demand', { exact: true })).toHaveCount(4);
 	await lab.getByRole('button', { name: 'Measure now' }).click();
 	await expect(lab.getByRole('button', { name: 'Measure now' })).toBeEnabled({ timeout: 60_000 });
+	await expect(budget).toContainText(/Heun-integrated term contributions/iu);
+	await expect(budget.getByText('on demand', { exact: true })).toHaveCount(0);
 	await expect(lab.locator('.peak-card')).toContainText(/Credible peak|No invented peak/iu);
 	await lab.getByRole('button', { name: 'Numerical honesty' }).click();
 	const timestepComparison = lab.locator('.honesty-panel article').filter({
@@ -261,9 +286,20 @@ test('counterfactual clocks remain synchronized and the live atlas loads a compu
 	await lab.getByRole('button', { name: 'Compare' }).click();
 	const compare = lab.locator('section.compare');
 	await expect(compare).toBeVisible();
+	const compareMethods = compare.getByLabel('Compare engine methods');
+	await expect(compareMethods).toContainText(
+		'Comparison engine: 64 × 64 cells, L = 64, h = 1.000, fixed-step Heun.'
+	);
+	await expect(compareMethods).toContainText(/Both panes share this reduced base/iu);
+	const methodsStrip = compareMethods.locator('.methods-strip');
+	await expect(methodsStrip).toContainText('64 × 64 cells');
+	await expect(methodsStrip).toContainText('64 model units');
+	await expect(methodsStrip).toContainText('fixed-step Heun');
+	await expect(methodsStrip).toContainText('periodic · shared');
+	await expect(methodsStrip).toContainText('observatory-2407 · shared');
 	await compare.getByRole('button', { name: 'Step ×10' }).click();
 	await expect(compare.locator('.clock small')).toContainText('A step 10 · B step 10');
-	await expect(compare.locator('dl')).toContainText('L² field difference');
+	await expect(compare.locator('.measurement-grid dl')).toContainText('L² field difference');
 	await compare.getByText('Timeline data table', { exact: true }).click();
 	await expect(compare.getByRole('table')).toHaveCount(1);
 	await expect(compare.getByRole('columnheader', { name: 'model time' })).toBeAttached();
@@ -297,7 +333,7 @@ test('JSON, CSV and PNG exports carry the current documented experiment', async 
 	const lab = await waitForObservatory(page);
 	await lab.getByRole('button', { name: 'Step ×10' }).click();
 	await expect.poll(() => telemetryStep(page)).toBe(10);
-	await lab.getByRole('button', { name: 'Replay in CPU reference' }).click();
+	await lab.getByRole('button', { name: 'Reconstruct in CPU reference' }).click();
 	await expect.poll(() => telemetryStep(page), { timeout: 60_000 }).toBe(10);
 	await lab.getByRole('button', { name: 'Record & export' }).click();
 
@@ -373,6 +409,9 @@ test('mobile and no-JavaScript readers keep the plate, prose and controls bounde
 		});
 		await domainControls.locator('summary').click();
 		await domainControls.getByLabel('Interaction').selectOption('paint');
+		await expect(
+			domainControls.getByLabel('Application').locator('option[value="path"]')
+		).toHaveText('Drag a line intervention');
 		await domainControls.getByLabel('Application').selectOption('once');
 		const touchField = touchLab.locator('.field-frame canvas');
 		await expect(touchField).toHaveCSS('touch-action', 'none');

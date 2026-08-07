@@ -8895,11 +8895,11 @@
       "optimizerVersion": "2026-07-18.1",
       "originalHeight": 900,
       "originalWidth": 1600,
-      "outputBytes": 69915,
-      "outputHash": "be528edee415c8ba2348218269006ee31bd56002160ce5bb63e71b0e601b6aa6",
+      "outputBytes": 73152,
+      "outputHash": "78d19d37c8e840bf6139afbbbc9380e081805a0f289165905e4222037ad2a0db",
       "resized": false,
-      "sourceBytes": 84659,
-      "sourceHash": "2d720ee643fb533a11e4a57a72730f8961e4b1fff4e80458fe2cd8dc78ffc5f8",
+      "sourceBytes": 88537,
+      "sourceHash": "7605419ce7947a8f093398d38418b55863d82f003318c75057941845525c51b9",
       "width": 1600
     },
     "static/images/resources/alternatives-to-overused-ai-language.webp": {

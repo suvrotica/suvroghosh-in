@@ -11009,19 +11009,19 @@
 			"dateModified": "2026-08-06"
 		},
 		"src/lib/posts/reaction-diffusion-atlas.md": {
-			"bodyHash": "f80211b7112c577b2d5381baa6539a424ca2524662755fe8408d69c10a4e8f7b",
+			"bodyHash": "55e9d8e15e0ed1ef634ea044d308093bb6f7199dd53d9d7129f05343fdd58064",
 			"hashVersion": 2,
-			"revisionHash": "63bd95f9f95d2d1a0af83f876c67d70db0ff00878e1b1f7fa40c7dc8e907a385",
+			"revisionHash": "757d3c6e05d9cf831d07b37288cdcc8870195ab82c984aa8e58481f566ecb048",
 			"generatedTags": [
 				"Reaction–Diffusion",
 				"Gray–Scott Model",
 				"Pattern Formation",
 				"Partial Differential Equations",
 				"Scientific Computing",
-				"Gray Scott",
-				"Initial Condition",
-				"Repeated Spot",
-				"People Call Turing",
+				"Autocatalysis",
+				"Turing Instability",
+				"Numerical Methods",
+				"Dynamical Systems",
 				"Diffusion"
 			],
 			"pinnedTags": [
@@ -11029,7 +11029,12 @@
 				"Gray–Scott Model",
 				"Pattern Formation",
 				"Partial Differential Equations",
-				"Scientific Computing"
+				"Scientific Computing",
+				"Autocatalysis",
+				"Turing Instability",
+				"Numerical Methods",
+				"Dynamical Systems",
+				"Diffusion"
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-07"

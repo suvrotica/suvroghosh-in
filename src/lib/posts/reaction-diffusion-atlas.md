@@ -7,8 +7,8 @@ dateModified: "2026-08-07"
 thumbnail: "/images/reaction-diffusion-atlas.png"
 thumbnailAlt: "A deterministic Gray–Scott plate of repeated dark-centred reaction fronts beside a five-by-five live-model feed–kill map"
 category: "Visualizations"
-tags: ["Reaction–Diffusion","Gray–Scott Model","Pattern Formation","Partial Differential Equations","Scientific Computing","Gray Scott","Initial Condition","Repeated Spot","People Call Turing","Diffusion"]
-pinnedTags: ["Reaction–Diffusion", "Gray–Scott Model", "Pattern Formation", "Partial Differential Equations", "Scientific Computing"]
+tags: ["Reaction–Diffusion","Gray–Scott Model","Pattern Formation","Partial Differential Equations","Scientific Computing","Autocatalysis","Turing Instability","Numerical Methods","Dynamical Systems","Diffusion"]
+pinnedTags: ["Reaction–Diffusion", "Gray–Scott Model", "Pattern Formation", "Partial Differential Equations", "Scientific Computing", "Autocatalysis", "Turing Instability", "Numerical Methods", "Dynamical Systems", "Diffusion"]
 published: true
 interactiveFirst: true
 color: "#4F7A74"
@@ -26,7 +26,7 @@ faq:
   - question: "What do feed and kill mean?"
     answer: "The feed rate F restores the U field towards its reservoir value of one. The removal terms drain V at rate F + k: F represents outflow associated with feeding the open system and k is an additional removal rate. U and V are dimensionless model fields, not identified laboratory chemicals in this exhibit."
   - question: "Why does changing the boundary alter the pattern?"
-    answer: "Diffusion asks what lies next to every cell. A periodic boundary wraps to the opposite edge, a no-flux wall reflects transport, and a reservoir holds the edge near the feed state. These choices alter concentration gradients, wave paths, chemical budgets, and the survival of fronts near the domain edge."
+    answer: "Diffusion asks what lies next to every cell. A periodic boundary wraps to the opposite edge; at a no-flux wall, this cell-centred stencil replaces the missing neighbour with the boundary cell’s own value; and a reservoir holds the edge near the feed state. These choices alter concentration gradients, wave paths, chemical budgets, and the survival of fronts near the domain edge."
   - question: "Does the same seed guarantee an identical result on every GPU?"
     answer: "It guarantees the same declared initial condition and intervention history. The deterministic CPU reference engine reproduces its own arrays exactly on the same implementation, but floating-point arithmetic, shader execution, and graphics hardware can differ at the last bits. Sensitive nonlinear runs can eventually amplify those differences."
   - question: "Why can a large timestep create a false pattern?"
@@ -218,7 +218,7 @@ John Pearson’s 1993 paper [“Complex Patterns in a Simple System”](https://
 
 A field image compresses thousands of local ledgers into colour. Select one cell and the microscope opens those ledgers.
 
-For U it reports diffusion import or export, reaction consumption, feed restoration, their total right-hand side, and the observed change after the integrator step. For V it reports diffusion, reaction production, feed-related removal, additional kill, total right-hand side, and observed change. Signed bars use a zero-centred scale and explicit plus and minus labels; colour is never the only indication of direction.
+For U it reports diffusion import or export, reaction consumption, feed restoration, and their total right-hand side. For V it reports diffusion, reaction production, feed-related removal, additional kill, and the total right-hand side. The recent-history panel records observed U and V at published model times; the global budget’s measured one-step change and residual are the explicit on-demand integrator audit. Signed bars use a zero-centred scale and explicit plus and minus labels; colour is never the only indication of direction.
 
 The discrete five-point Laplacian at an interior grid cell is approximately
 
@@ -227,7 +227,7 @@ $$
 \frac{u_{i+1,j}+u_{i-1,j}+u_{i,j+1}+u_{i,j-1}-4u_{i,j}}{h^2}.
 $$
 
-The same stencil is applied to V. It does not inspect an abstract smooth surface; it inspects four numerical neighbours separated by grid spacing $h$. Periodic edges wrap those neighbour lookups. No-flux edges replace outward exchange with a reflected value. An impermeable obstacle removes transport across the masked face. A reservoir edge supplies its fixed state. Boundary code is therefore part of the equation actually solved.
+The same stencil is applied to V. It does not inspect an abstract smooth surface; it inspects four numerical neighbours separated by grid spacing $h$. Periodic edges wrap those neighbour lookups. At a no-flux edge, the missing neighbour is replaced with the boundary cell’s own value, producing zero normal flux in this cell-centred stencil. An impermeable obstacle removes transport across the masked face. A reservoir edge supplies its fixed state. Boundary code is therefore part of the equation actually solved.
 
 <ReactionMicroscope />
 
@@ -245,7 +245,7 @@ $$
 
 For periodic and correctly implemented no-flux boundaries, the integrated diffusion contribution should be approximately zero: internal transfers cancel in pairs. That does not mean diffusion is locally inactive. A growing edge can receive V by reaction at one cell, lose it by diffusion there, and deliver it to the next cell while the domain-wide diffusion sum remains near zero.
 
-The budget also compares the right-hand-side prediction with the measured mean change. A persistent discrepancy is not decorative uncertainty; it is a reason to inspect event timing, masks, boundary flux, or the integrator.
+The live budget shows the right-hand-side prediction. Its more expensive comparison with a measured one-step mean change runs on demand with the spectrum measurement and records the residual in the experiment history. A persistent discrepancy is not decorative uncertainty; it is a reason to inspect event timing, masks, boundary flux, or the integrator.
 
 # 8. Walls are part of the experiment
 
@@ -305,7 +305,7 @@ The atlas detects non-finite values, implausible growth, and declared stability 
 
 The laboratory compares Euler with Heun at equal model time, not equal frame count. It can repeat a controlled run at $\Delta t$ and $\Delta t/2$, and compare grids representing the same physical domain rather than unrelated arrays. A visually small difference is quantified by field norms and summary metrics. A visually dramatic difference is not automatically evidence that the finer run is correct; convergence requires a sequence approaching a stable answer.
 
-Floating-point reproducibility has limits too. The deterministic CPU engine is the reference implementation and can replay the same initial arrays and ordered interventions. The GPU uses the same documented equations and boundary semantics, but shader arithmetic may differ in evaluation order and precision across hardware. Agreement within a documented tolerance over a short controlled run is meaningful. Cross-device bitwise identity is not promised.
+Floating-point reproducibility has limits too. At one fixed grid and setup, the deterministic CPU engine is the reference implementation and can reconstruct the same initial arrays and ordered interventions. A requested GPU grid above $128^2$ is instead rerun at $128^2$ in the CPU reference: that is a reduced-resolution discrete experiment, not a continuation of the GPU field. The GPU uses the same documented equations and boundary semantics, but shader arithmetic may differ in evaluation order and precision across hardware. Agreement within a documented tolerance over a short controlled run is meaningful. Cross-device bitwise identity is not promised.
 
 A stable movie is a weak test. A trustworthy calculation also needs expected invariants: the feed equilibrium remains fixed; constant fields have zero Laplacian; pure periodic or no-flux diffusion conserves the mean and reduces variance; reaction-only cells do not communicate; integrated diffusion nearly cancels where it should; measured mean change reconciles with the budget; and refinement changes the result in the expected direction.
 

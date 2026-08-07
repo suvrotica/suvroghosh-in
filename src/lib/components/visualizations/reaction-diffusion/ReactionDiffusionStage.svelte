@@ -112,6 +112,7 @@
 	let fieldRevision = $state(0);
 	let engineKind = $state<EngineKind>('cpu-reference');
 	let engineReady = $state(false);
+	let effectiveSetup = $state<GrayScottSetup | null>(null);
 	let engineMessage = $state('Preparing the scientific engine.');
 	let failureMessage = $state('');
 	let offscreen = false;
@@ -130,6 +131,8 @@
 	let eventSequence = 0;
 	let eventLog: Intervention[] = [];
 	let pointerStart: Point | null = null;
+	let cpuReconstructionSourceGrid: number | null = null;
+	let stabilitySetup = $derived(effectiveSetup ?? setup);
 
 	$effect(() => {
 		displayMode.toString();
@@ -140,6 +143,13 @@
 	$effect(() => {
 		const signature = JSON.stringify(setup);
 		if (!engineReady || signature === setupSignature) return;
+		// The parent may adopt a confirmed reduced CPU grid after the first field
+		// arrives. That changes the requested prop to the already-active effective
+		// setup and must not erase a reconstructed trajectory with another reset.
+		if (effectiveSetup && signature === JSON.stringify(effectiveSetup)) {
+			setupSignature = signature;
+			return;
+		}
 		setupSignature = signature;
 		reset();
 	});
@@ -201,7 +211,7 @@
 								contextRecoveryTimer = null;
 								if (disposed || !gpu?.isContextLost) return;
 								void switchToCpu(
-									'The WebGL context did not restore within 1.5 seconds; the exact run is continuing through CPU Worker replay.',
+									'The WebGL context did not restore within 1.5 seconds.',
 									currentStep(),
 									eventLog
 								);
@@ -221,6 +231,8 @@
 				});
 				const initial = createInitialField(setup);
 				gpu.initialize(setup, initial);
+				effectiveSetup = { ...setup };
+				cpuReconstructionSourceGrid = null;
 				engineKind = gpu.textureFormat === 'RGBA32F' ? 'gpu-f32' : 'gpu-f16';
 				field = initial;
 				engineMessage = `${gpu.textureFormat} passed framebuffer completeness and floating-point write/read tests.`;
@@ -253,6 +265,16 @@
 		return setup.gridSize > 128 ? { ...setup, gridSize: 128 } : { ...setup };
 	}
 
+	function cpuReconstructionDisclosure(activeSetup: GrayScottSetup) {
+		if (
+			cpuReconstructionSourceGrid !== null &&
+			cpuReconstructionSourceGrid !== activeSetup.gridSize
+		) {
+			return `The requested ${cpuReconstructionSourceGrid} × ${cpuReconstructionSourceGrid} grid is reduced to ${activeSetup.gridSize} × ${activeSetup.gridSize}. This is a deterministic same-recipe reconstruction, not a continuation of the requested-grid trajectory.`;
+		}
+		return 'The field is reconstructed from the declared seed and step-numbered intervention log at the same grid.';
+	}
+
 	async function switchToCpu(
 		reason: string,
 		replayStep = currentStep(),
@@ -261,9 +283,14 @@
 		clearContextRecoveryTimer();
 		const targetStep = Math.max(0, Math.round(replayStep));
 		const targetEvents = [...replayEvents];
+		const requestedGridSize = setup.gridSize;
 		gpu?.dispose();
 		gpu = null;
 		const fallbackSetup = cpuSetup();
+		cpuReconstructionSourceGrid =
+			fallbackSetup.gridSize === requestedGridSize ? null : requestedGridSize;
+		effectiveSetup = null;
+		const reconstructionDisclosure = cpuReconstructionDisclosure(fallbackSetup);
 		workerUnsubscribe?.();
 		workerUnsubscribe = null;
 		cpuWorker?.dispose();
@@ -275,7 +302,7 @@
 		workerStep = 0;
 		workerModelTime = 0;
 		engineKind = 'cpu-reference';
-		engineMessage = `${reason} Preparing the deterministic CPU reference Worker at ${fallbackSetup.gridSize} × ${fallbackSetup.gridSize} cells.`;
+		engineMessage = `${reason} Preparing the deterministic CPU reference Worker at ${fallbackSetup.gridSize} × ${fallbackSetup.gridSize} cells. ${reconstructionDisclosure}`;
 		failureMessage = '';
 		engineReady = false;
 		try {
@@ -290,7 +317,7 @@
 					stepsPerChunk: 8,
 					includeState: true
 				});
-				engineMessage = `${reason} Replaying ${targetStep} exact steps and ${targetEvents.length} logged interventions in the reduced Float64 CPU reference Worker.`;
+				engineMessage = `${reason} Re-running exactly ${targetStep} fixed integration steps and ${targetEvents.length} logged interventions in the Float64 CPU reference Worker. ${reconstructionDisclosure}`;
 			} else {
 				cpuWorker.reset(fallbackSetup, { includeState: true });
 			}
@@ -305,8 +332,8 @@
 			});
 			if (targetStep > 0) cpu.step(targetStep);
 			field = cpu.state as FieldState;
-			setupSignature = JSON.stringify(fallbackSetup);
-			engineMessage = `${reason} Web Workers were unavailable, so the reduced deterministic CPU reference replayed ${targetStep} steps on the main thread at ${fallbackSetup.gridSize} × ${fallbackSetup.gridSize}.`;
+			effectiveSetup = fallbackSetup;
+			engineMessage = `${reason} Web Workers were unavailable, so the deterministic Float64 CPU reference re-ran ${targetStep} fixed integration steps on the main thread at ${fallbackSetup.gridSize} × ${fallbackSetup.gridSize}. ${reconstructionDisclosure}`;
 			if (error instanceof Error) engineMessage += ` ${error.message}`;
 			engineReady = true;
 			fieldRevision += 1;
@@ -333,15 +360,13 @@
 			workerModelTime = response.report.modelTime;
 			if (response.report.state) {
 				field = response.report.state;
-				if (field.size !== setup.gridSize) {
-					setupSignature = JSON.stringify({ ...setup, gridSize: field.size });
-				}
+				effectiveSetup = { ...setup, gridSize: field.size };
 				fieldRevision += 1;
 			}
 			workerBusy = false;
 			workerPendingEnd = workerStep;
 			engineReady = true;
-			engineMessage = `Deterministic Float64 CPU Worker active at ${cpuSetup().gridSize} × ${cpuSetup().gridSize}; stale reset generations are rejected.`;
+			engineMessage = `Deterministic Float64 CPU Worker active at ${field?.size ?? cpuSetup().gridSize} × ${field?.size ?? cpuSetup().gridSize}; stale reset generations are rejected. ${cpuReconstructionDisclosure(effectiveSetup ?? cpuSetup())}`;
 			publishFrame(false);
 			if (workerQueuedSteps > 0) {
 				const queued = workerQueuedSteps;
@@ -561,7 +586,7 @@
 	function applyStroke(from: Point, to: Point) {
 		if (!engineReady || failureMessage) return;
 		if (eventLog.length >= MAX_INTERVENTIONS) {
-			engineMessage = `Intervention limit ${MAX_INTERVENTIONS} reached. No further brush event was accepted; export or reset to preserve exact replay.`;
+			engineMessage = `Intervention limit ${MAX_INTERVENTIONS} reached. No further brush event was accepted; export or reset to preserve reproducible history reconstruction.`;
 			onstatus?.(engineMessage, engineKind, false);
 			return;
 		}
@@ -570,7 +595,7 @@
 		if (cpu) cpu.appendIntervention(event);
 		onintervention?.(event);
 		if (eventLog.length === Math.floor(MAX_INTERVENTIONS * 0.9)) {
-			engineMessage = `Intervention log is 90% full (${eventLog.length}/${MAX_INTERVENTIONS}); export before the replay limit is reached.`;
+			engineMessage = `Intervention log is 90% full (${eventLog.length}/${MAX_INTERVENTIONS}); export before the reconstruction limit is reached.`;
 			onstatus?.(engineMessage, engineKind, false);
 		}
 		// Interventions are defined immediately before an integration step, including while paused.
@@ -658,9 +683,15 @@
 		const initial = createInitialField(gpu ? setup : cpuSetup());
 		if (gpu) {
 			gpu.initialize(setup, initial);
+			effectiveSetup = { ...setup };
+			cpuReconstructionSourceGrid = null;
 			field = initial;
 			resizeGpu();
 		} else if (cpuWorker) {
+			const fallbackSetup = cpuSetup();
+			cpuReconstructionSourceGrid =
+				fallbackSetup.gridSize === setup.gridSize ? null : setup.gridSize;
+			effectiveSetup = null;
 			cpuWorker.cancel();
 			workerBusy = false;
 			workerQueuedSteps = 0;
@@ -668,13 +699,18 @@
 			workerModelTime = 0;
 			field = initial;
 			engineReady = false;
-			cpuWorker.reset(cpuSetup(), { includeState: true });
+			cpuWorker.reset(fallbackSetup, { includeState: true });
 		} else {
-			cpu = new ReactionDiffusionCpuEngine(cpuSetup(), { rejectUnsafe: !allowUnsafe });
+			const fallbackSetup = cpuSetup();
+			cpuReconstructionSourceGrid =
+				fallbackSetup.gridSize === setup.gridSize ? null : setup.gridSize;
+			cpu = new ReactionDiffusionCpuEngine(fallbackSetup, { rejectUnsafe: !allowUnsafe });
 			field = cpu.state as FieldState;
+			effectiveSetup = fallbackSetup;
 		}
 		fieldRevision += 1;
-		engineMessage = 'Exact initial state restored; the intervention log is empty.';
+		engineMessage =
+			`Seeded initial state restored for the active grid; the intervention log is empty. ${cpuReconstructionSourceGrid === null ? '' : cpuReconstructionDisclosure(cpuSetup())}`.trim();
 		publishFrame(true);
 		onstatus?.(engineMessage, engineKind, false);
 		if (running) startLoop();
@@ -698,7 +734,7 @@
 		const targetStep = currentStep();
 		const targetEvents = [...eventLog];
 		stopLoop();
-		void switchToCpu('CPU reference replay requested.', targetStep, targetEvents);
+		void switchToCpu('CPU reference reconstruction requested.', targetStep, targetEvents);
 		return true;
 	}
 
@@ -711,10 +747,10 @@
 		failureMessage = '';
 		if (gpu) {
 			// Replaying a long GPU history in one JavaScript turn can monopolise the
-			// main thread. Move this exact reconstruction to the chunked Float64 Worker;
+			// main thread. Move this same-recipe reconstruction to the chunked Float64 Worker;
 			// the visible engine/quality readout makes the fallback explicit.
 			void switchToCpu(
-				'Undo requested a history reconstruction; replay moved to the chunked CPU Worker.',
+				'Undo requested a history reconstruction; the calculation moved to the chunked CPU Worker.',
 				targetStep,
 				eventLog
 			);
@@ -727,7 +763,7 @@
 				stepsPerChunk: 8,
 				includeState: true
 			});
-			engineMessage = `Replaying ${targetStep} exact CPU steps after removing the last intervention.`;
+			engineMessage = `Re-running exactly ${targetStep} fixed CPU integration steps after removing the last intervention. ${cpuReconstructionDisclosure(cpuSetup())}`;
 		} else {
 			const replaySetup = cpuSetup();
 			cpu = new ReactionDiffusionCpuEngine(replaySetup, {
@@ -739,7 +775,7 @@
 		}
 		fieldRevision += 1;
 		if (!cpuWorker)
-			engineMessage = `The last intervention was removed and ${targetStep} exact steps were replayed from the initial state.`;
+			engineMessage = `The last intervention was removed and exactly ${targetStep} fixed integration steps were re-run from the initial state. ${cpuReconstructionDisclosure(cpuSetup())}`;
 		publishFrame(Boolean(gpu));
 		onstatus?.(engineMessage, engineKind, false);
 		if (running) startLoop();
@@ -791,7 +827,7 @@
 		{#if gpu === null}
 			<ReactionDiffusionField
 				{field}
-				setup={cpuSetup()}
+				setup={effectiveSetup ?? setup}
 				revision={fieldRevision}
 				{displayMode}
 				{palette}
@@ -819,7 +855,7 @@
 		<p>{failureMessage ? `${engineMessage} ${failureMessage}` : engineMessage}</p>
 	</div>
 	<p class="sr-only">
-		The stability number is {assessNumericalStability(gpu ? setup : cpuSetup()).mu.toPrecision(4)}.
+		The stability number is {assessNumericalStability(stabilitySetup).mu.toPrecision(4)}.
 	</p>
 </section>
 
@@ -899,17 +935,22 @@
 		right: 0.7rem;
 		bottom: 0.6rem;
 		display: grid;
+		width: 25%;
 		gap: 0.18rem;
 		color: #fff3d4;
 		font:
-			700 0.62rem/1 ui-monospace,
+			700 0.75rem/1 ui-monospace,
 			monospace;
 		text-shadow: 0 1px 2px #000;
 		pointer-events: none;
 	}
 	.scale span {
-		width: 4rem;
+		width: 100%;
 		border-top: 2px solid currentColor;
+	}
+	.scale b {
+		justify-self: end;
+		white-space: nowrap;
 	}
 	.stage-status {
 		display: flex;
@@ -917,7 +958,7 @@
 		align-items: flex-start;
 		margin-top: 0.6rem;
 		color: color-mix(in oklab, var(--essay-ink, #26302e) 74%, transparent);
-		font-size: 0.76rem;
+		font-size: 0.8rem;
 	}
 	.stage-status p {
 		margin: 0;
@@ -949,6 +990,12 @@
 	@media (prefers-reduced-motion: reduce) {
 		.field-stack > canvas {
 			transition: none;
+		}
+	}
+	@media (max-width: 38rem) {
+		.scale,
+		.stage-status {
+			font-size: 0.875rem;
 		}
 	}
 	:global(html[data-theme='high-contrast']) .field-stack {

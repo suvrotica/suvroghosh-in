@@ -607,7 +607,7 @@
 	.eyebrow {
 		margin: 0 0 0.3rem !important;
 		color: var(--accent);
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 		font-weight: 850;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -624,7 +624,7 @@
 		background: color-mix(in oklab, var(--paper, #f5f0e5) 92%, white);
 		padding: 0.55rem 0.78rem;
 		color: inherit;
-		font: 750 0.76rem/1.2 inherit;
+		font: 750 0.875rem/1.2 inherit;
 		cursor: pointer;
 	}
 	button.primary {
@@ -662,7 +662,7 @@
 	.range-grid label {
 		display: grid;
 		gap: 0.25rem;
-		font-size: 0.69rem;
+		font-size: 0.875rem;
 		font-weight: 800;
 	}
 	input {
@@ -695,7 +695,7 @@
 		justify-content: space-between;
 		gap: 1rem;
 		margin: 0.35rem 0 0;
-		font-size: 0.72rem;
+		font-size: 0.875rem;
 	}
 	.progress-track {
 		height: 0.35rem;
@@ -721,7 +721,7 @@
 	.k-label,
 	.f-label {
 		font:
-			800 0.63rem/1 ui-monospace,
+			800 0.75rem/1 ui-monospace,
 			monospace;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
@@ -805,7 +805,7 @@
 		padding: 0.45rem;
 		color: #f6edda;
 		font:
-			600 0.63rem/1.45 ui-monospace,
+			600 0.75rem/1.45 ui-monospace,
 			monospace;
 		text-align: left;
 		pointer-events: none;
@@ -827,7 +827,7 @@
 	}
 	.selection p {
 		margin: 0.25rem 0 0;
-		font-size: 0.72rem;
+		font-size: 0.875rem;
 	}
 	.table-scroll {
 		overflow-x: auto;
@@ -837,7 +837,7 @@
 		width: 100%;
 		min-width: 42rem;
 		border-collapse: collapse;
-		font-size: 0.68rem;
+		font-size: 0.875rem;
 		font-variant-numeric: tabular-nums;
 	}
 	caption {
@@ -883,7 +883,7 @@
 	}
 	.method-note {
 		margin: 1rem 0 0;
-		font-size: 0.7rem;
+		font-size: 0.875rem;
 		line-height: 1.5;
 		opacity: 0.78;
 	}

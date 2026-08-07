@@ -55,22 +55,78 @@ function now(): number {
 	return typeof performance === 'undefined' ? Date.now() : performance.now();
 }
 
+/**
+ * Restrict piecewise-constant fine-cell values onto an equal-width coarse grid.
+ * Each output is the area-weighted mean over one coarse cell. This conserves the
+ * domain mean and naturally becomes exact block averaging for integer ratios.
+ */
+export function conservativelyRestrictCellValues(
+	values: Readonly<Float64Array>,
+	sourceSize: number,
+	targetSize: number
+): Float64Array {
+	if (!Number.isInteger(sourceSize) || !Number.isInteger(targetSize)) {
+		throw new RangeError('Grid sizes must be integers.');
+	}
+	if (sourceSize < 1 || targetSize < 1 || targetSize > sourceSize) {
+		throw new RangeError('Conservative restriction requires 1 ≤ targetSize ≤ sourceSize.');
+	}
+	if (values.length !== sourceSize * sourceSize) {
+		throw new RangeError('Source field length must equal sourceSize².');
+	}
+	if (sourceSize === targetSize) return new Float64Array(values);
+
+	const result = new Float64Array(targetSize * targetSize);
+	const coarseWidthInFineCells = sourceSize / targetSize;
+	const inverseCoarseArea = 1 / (coarseWidthInFineCells * coarseWidthInFineCells);
+
+	for (let targetRow = 0; targetRow < targetSize; targetRow += 1) {
+		const rowStart = targetRow * coarseWidthInFineCells;
+		const rowEnd = (targetRow + 1) * coarseWidthInFineCells;
+		const firstSourceRow = Math.floor(rowStart);
+		const lastSourceRow = Math.min(sourceSize - 1, Math.ceil(rowEnd) - 1);
+
+		for (let targetColumn = 0; targetColumn < targetSize; targetColumn += 1) {
+			const columnStart = targetColumn * coarseWidthInFineCells;
+			const columnEnd = (targetColumn + 1) * coarseWidthInFineCells;
+			const firstSourceColumn = Math.floor(columnStart);
+			const lastSourceColumn = Math.min(sourceSize - 1, Math.ceil(columnEnd) - 1);
+			let integral = 0;
+
+			for (let sourceRow = firstSourceRow; sourceRow <= lastSourceRow; sourceRow += 1) {
+				const rowOverlap = Math.min(rowEnd, sourceRow + 1) - Math.max(rowStart, sourceRow);
+				for (
+					let sourceColumn = firstSourceColumn;
+					sourceColumn <= lastSourceColumn;
+					sourceColumn += 1
+				) {
+					const columnOverlap =
+						Math.min(columnEnd, sourceColumn + 1) - Math.max(columnStart, sourceColumn);
+					integral += values[sourceRow * sourceSize + sourceColumn] * rowOverlap * columnOverlap;
+				}
+			}
+
+			result[targetRow * targetSize + targetColumn] = integral * inverseCoarseArea;
+		}
+	}
+
+	return result;
+}
+
 function fieldDifference(a: Readonly<FieldState>, b: Readonly<FieldState>) {
 	const coarse = a.size <= b.size ? a : b;
 	const fine = a.size <= b.size ? b : a;
+	const restrictedFine =
+		fine.size === coarse.size
+			? fine.v
+			: conservativelyRestrictCellValues(fine.v, fine.size, coarse.size);
 	let squared = 0;
 	let maximum = 0;
 	let count = 0;
 	for (let row = 0; row < coarse.size; row += 1) {
 		for (let column = 0; column < coarse.size; column += 1) {
 			const coarseIndex = row * coarse.size + column;
-			const fineRow = Math.min(fine.size - 1, Math.floor(((row + 0.5) * fine.size) / coarse.size));
-			const fineColumn = Math.min(
-				fine.size - 1,
-				Math.floor(((column + 0.5) * fine.size) / coarse.size)
-			);
-			const fineIndex = fineRow * fine.size + fineColumn;
-			const delta = fine.v[fineIndex] - coarse.v[coarseIndex];
+			const delta = restrictedFine[coarseIndex] - coarse.v[coarseIndex];
 			squared += delta * delta;
 			maximum = Math.max(maximum, Math.abs(delta));
 			count += 1;
@@ -198,7 +254,7 @@ export function runNumericalComparison(
 			: 'The short unsafe run remained finite, but μ exceeds the conservative ceiling; survival is not evidence of convergence.';
 	} else if (kind === 'resolution') {
 		outcome =
-			'The same physical width and continuous deterministic disturbance were sampled at two h values; fields were compared after centre-based resampling.';
+			'The same physical width and continuous deterministic disturbance were sampled at two h values. The V-field norm compares coarse cell-centred values with area-weighted fine-cell averages restricted onto the same coarse physical grid.';
 	} else if (kind === 'integrator') {
 		outcome = `Against the Heun Δt/4 reference, Euler error is ${baselineReference?.toExponential(3)} and Heun error is ${comparisonReference?.toExponential(3)} in the reported V-field L² norm.`;
 	} else {

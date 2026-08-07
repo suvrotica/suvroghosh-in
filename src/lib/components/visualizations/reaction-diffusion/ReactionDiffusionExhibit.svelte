@@ -23,7 +23,10 @@
 		measurementsToCsv,
 		serializeExperimentRecord
 	} from '$lib/visualizations/reaction-diffusion/exports';
-	import { createReactionDiffusionExportCanvas } from '$lib/visualizations/reaction-diffusion/display';
+	import {
+		createReactionDiffusionExportCanvas,
+		resampleSpectrumInput
+	} from '$lib/visualizations/reaction-diffusion/display';
 	import {
 		calculateChemicalBudget,
 		calculateFieldMetrics,
@@ -236,7 +239,7 @@
 			await tick();
 			comparison?.loadCandidate(detail);
 			status =
-				'The atlas tile is now counterfactual B, synchronized against the laboratory setup in A.';
+				'The atlas tile is now counterfactual B, synchronized against Compare’s reduced A base derived from the laboratory setup.';
 			document.getElementById('reaction-diffusion-observatory')?.scrollIntoView({ block: 'start' });
 		};
 		window.addEventListener('reaction-diffusion:load-tile', loadTile);
@@ -305,7 +308,7 @@
 			brushTool = tools[Math.max(0, Number(command.at(-1)) - 1)] ?? brushTool;
 		}
 		if (command === 'cancel')
-			status = 'Active pointer stroke cancelled; no intervention was recorded.';
+			status = 'Active line intervention cancelled; no intervention was recorded.';
 	}
 
 	function reset() {
@@ -319,7 +322,7 @@
 		running = false;
 		if (stage?.replayInCpuReference?.()) {
 			status =
-				'Replaying the current setup and step-numbered interventions in the Float64 CPU reference Worker.';
+				'Starting a same-recipe Float64 CPU reconstruction from the seed and step-numbered intervention log. Requested grids above 128² are rerun at reduced resolution, not continued from the GPU field.';
 		}
 	}
 
@@ -339,17 +342,10 @@
 		try {
 			const measuredSetup = setupForField(next.field);
 			metrics = calculateFieldMetrics(next.field);
-			// Audit one exact reference step from the sampled field. This supplies a
-			// consecutive before/after pair even when the live engine publishes in chunks.
-			const auditAfter = stepField(next.field, measuredSetup, { rejectUnsafe: false });
-			budget = calculateChemicalBudget(next.field, measuredSetup, auditAfter);
-			const maximumResidual = Math.max(
-				Math.abs(budget.residualU ?? 0),
-				Math.abs(budget.residualV ?? 0)
-			);
-			if (maximumResidual > 1e-8) {
-				status = `Reference budget warning: one-step residual ${maximumResidual.toExponential(3)} exceeds the 1e−8 audit tolerance.`;
-			}
+			// Keep the live diagnostic cadence bounded: the predicted budget is a single
+			// field pass. The additional Float64 reference step is explicitly on demand
+			// with spectrum measurement, where its residual is retained in provenance.
+			budget = calculateChemicalBudget(next.field, measuredSetup);
 			updateLedger(next.field);
 			recordSelectedCell(next);
 			const measurement: MeasurementSample = {
@@ -558,6 +554,7 @@
 		const measuredMetrics = calculateFieldMetrics(current.field);
 		const auditAfter = stepField(current.field, measuredSetup, { rejectUnsafe: false });
 		const measuredBudget = calculateChemicalBudget(current.field, measuredSetup, auditAfter);
+		budget = measuredBudget;
 		return {
 			...measuredMetrics,
 			step: current.step,
@@ -591,34 +588,6 @@
 		let result = 1;
 		while (result * 2 <= Math.min(512, size)) result *= 2;
 		return Math.max(4, result);
-	}
-
-	function resampleSpectrumInput(
-		field: Float64Array,
-		mask: Uint8Array,
-		sourceSize: number,
-		targetSize: number
-	) {
-		if (sourceSize === targetSize) return { field: field.slice(), mask: mask.slice() };
-		const outputField = new Float64Array(targetSize * targetSize);
-		const outputMask = new Uint8Array(targetSize * targetSize);
-		for (let row = 0; row < targetSize; row += 1) {
-			const sourceRow = Math.min(
-				sourceSize - 1,
-				Math.floor(((row + 0.5) * sourceSize) / targetSize)
-			);
-			for (let column = 0; column < targetSize; column += 1) {
-				const sourceColumn = Math.min(
-					sourceSize - 1,
-					Math.floor(((column + 0.5) * sourceSize) / targetSize)
-				);
-				const outputIndex = row * targetSize + column;
-				const sourceIndex = sourceRow * sourceSize + sourceColumn;
-				outputField[outputIndex] = field[sourceIndex];
-				outputMask[outputIndex] = mask[sourceIndex];
-			}
-		}
-		return { field: outputField, mask: outputMask };
 	}
 
 	function currentRecord() {
@@ -843,7 +812,7 @@
 				<button type="button" onclick={reset}>Reset</button>
 				<button type="button" onclick={() => stage?.manualStep(1)}>Single step</button>
 				<button type="button" onclick={() => stage?.manualStep(10)}>Step ×10</button>
-				<button type="button" onclick={replayInCpuReference}>Replay in CPU reference</button>
+				<button type="button" onclick={replayInCpuReference}>Reconstruct in CPU reference</button>
 				<button
 					type="button"
 					onclick={() => stage?.undoLastIntervention?.()}
@@ -855,7 +824,7 @@
 				<p>
 					With the field focused: Space runs or pauses; R resets; . steps once; arrow keys move the
 					selected cell; Enter applies once; [ and ] change brush radius; 1–4 select Add V, Add U,
-					Mixed pulse, or Restore feed; Escape cancels an active stroke.
+					Mixed pulse, or Restore feed; Escape cancels an active line intervention.
 				</p>
 			</details>
 			<div class="telemetry" aria-label="Live experiment telemetry">
@@ -1072,7 +1041,7 @@
 							bind:value={brushApplicationMode}
 							disabled={brushInteractionMode === 'inspect'}
 							><option value="once">Once per tap</option><option value="path"
-								>One path segment per drag</option
+								>Drag a line intervention</option
 							></select
 						></label
 					>
@@ -1192,10 +1161,11 @@
 					>Apply active brush once at the selected cell</button
 				>
 				<p class="small-note">
-					Inspect mode never changes chemistry. In Paint mode, choose a one-shot tap or a
-					deterministic drag segment; the button above / Enter applies once at the selected cell.
-					The brush explicitly changes raw concentrations and logs that intervention; repeated
-					strokes may leave the nominal display range, and no solver clamp repairs them.
+					Inspect mode never changes chemistry. In Paint mode, choose a one-shot tap or a straight
+					line intervention from pointer-down to pointer-up; the button above / Enter applies once
+					at the selected cell. The brush explicitly changes raw concentrations and logs that
+					intervention; repeated interventions may leave the nominal display range, and no solver
+					clamp repairs them.
 				</p>
 			</details>
 
@@ -1312,7 +1282,8 @@
 			</div>
 			<p class="small-note">
 				GPU floating-point results are not guaranteed bit-for-bit across hardware and drivers. A
-				deterministic Float64 CPU replay is the reference when stricter reproducibility matters.
+				deterministic Float64 CPU reconstruction is the reference calculation. Requested grids above
+				128² are rerun at 128² and therefore define a different discrete experiment.
 			</p>
 		</div>
 	{/if}
@@ -1375,7 +1346,7 @@
 	.eyebrow {
 		margin: 0 0 0.35rem;
 		color: var(--accent);
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 		font-weight: 850;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -1398,7 +1369,7 @@
 	}
 	.version span,
 	.version small {
-		font-size: 0.65rem;
+		font-size: 0.75rem;
 	}
 	.version strong {
 		font:
@@ -1482,7 +1453,7 @@
 		background: var(--paper);
 		padding: 0.5rem 0.72rem;
 		color: inherit;
-		font-size: 0.73rem;
+		font-size: 0.8rem;
 		font-weight: 800;
 	}
 	.transport .run {
@@ -1508,14 +1479,14 @@
 		padding: 0.5rem;
 	}
 	.telemetry span {
-		font-size: 0.61rem;
+		font-size: 0.75rem;
 		font-weight: 750;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
 	.telemetry strong {
 		font:
-			750 0.68rem/1.25 ui-monospace,
+			750 0.8rem/1.25 ui-monospace,
 			monospace;
 		overflow-wrap: anywhere;
 	}
@@ -1524,7 +1495,7 @@
 		border: 1px solid color-mix(in oklab, currentColor 15%, transparent);
 		border-radius: 0.55rem;
 		padding: 0.55rem 0.65rem;
-		font-size: 0.72rem;
+		font-size: 0.78rem;
 	}
 	.run-ledger summary {
 		cursor: pointer;
@@ -1549,7 +1520,7 @@
 		display: grid;
 		gap: 0.3rem;
 		color: color-mix(in oklab, currentColor 86%, transparent);
-		font-size: 0.68rem;
+		font-size: 0.78rem;
 		font-weight: 800;
 	}
 	input,
@@ -1595,7 +1566,7 @@
 	}
 	.control-grid output {
 		font:
-			750 0.65rem/1 ui-monospace,
+			750 0.78rem/1 ui-monospace,
 			monospace;
 	}
 	.control-grid label:has(input[type='range']):not(.compact label) {
@@ -1615,7 +1586,7 @@
 		background: color-mix(in oklab, var(--accent) 10%, transparent);
 		padding: 0.3rem 0.5rem;
 		font:
-			700 0.63rem/1 ui-monospace,
+			700 0.75rem/1 ui-monospace,
 			monospace;
 	}
 	.stability {
@@ -1626,7 +1597,7 @@
 		border-left: 3px solid var(--accent);
 		padding: 0.55rem 0.65rem;
 		background: color-mix(in oklab, var(--accent) 7%, transparent);
-		font-size: 0.7rem;
+		font-size: 0.78rem;
 	}
 	.stability strong {
 		text-transform: uppercase;
@@ -1647,13 +1618,13 @@
 		border: 1px solid #a84e3f;
 		border-radius: 0.45rem;
 		padding: 0.55rem;
-		font-size: 0.7rem;
+		font-size: 0.78rem;
 		font-weight: 750;
 	}
 	.small-note,
 	.memory {
 		margin: 0.65rem 0 0;
-		font-size: 0.68rem;
+		font-size: 0.75rem;
 		line-height: 1.45;
 		opacity: 0.78;
 	}
@@ -1686,7 +1657,7 @@
 		font-size: 0.8rem;
 	}
 	.export-grid button span {
-		font-size: 0.68rem;
+		font-size: 0.75rem;
 		opacity: 0.72;
 	}
 	.instrument-status {
@@ -1713,7 +1684,7 @@
 	}
 	.instrument-status p {
 		margin: 0;
-		font-size: 0.72rem;
+		font-size: 0.8rem;
 	}
 	.no-js-observatory img {
 		max-width: 100%;
@@ -1752,6 +1723,28 @@
 		}
 		.stability {
 			grid-template-columns: 1fr;
+		}
+		.transport button,
+		.eyebrow,
+		.version span,
+		.version small,
+		.notice,
+		.telemetry span,
+		.telemetry strong,
+		.run-ledger,
+		.setup-header label,
+		.control-grid label,
+		.control-grid output,
+		.control-deck summary,
+		.derived span,
+		.stability,
+		.unsafe-opt,
+		.small-note,
+		.memory,
+		.export-grid button strong,
+		.export-grid button span,
+		.instrument-status p {
+			font-size: 0.875rem;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {

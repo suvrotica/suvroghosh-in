@@ -102,7 +102,7 @@
 			context.setLineDash([]);
 		}
 		context.fillStyle = '#e9e3d5';
-		context.font = `${11 * density}px ui-monospace, monospace`;
+		context.font = `${13 * density}px ui-monospace, monospace`;
 		context.textAlign = 'center';
 		context.fillText(
 			'radial wave number q (model-length⁻¹)',
@@ -135,7 +135,8 @@
 				aria-label={`Radially averaged spatial power spectrum. ${active.reason}`}
 			></canvas>
 			<p class="caption">
-				The field mean is removed first. {active.window === 'hann'
+				The field mean is removed first. Any radix-2 grid reduction uses active-area-weighted
+				footprint averages before the transform. {active.window === 'hann'
 					? 'A two-dimensional Hann window reduces edge leakage for this non-periodic boundary.'
 					: 'No window is applied to this periodic field.'}
 			</p>
@@ -212,7 +213,7 @@
 	.eyebrow {
 		margin: 0 0 0.3rem;
 		color: #377d72;
-		font-size: 0.72rem;
+		font-size: 0.75rem;
 		font-weight: 800;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -246,7 +247,7 @@
 	}
 	.caption {
 		margin: 0.55rem 0 0;
-		font-size: 0.78rem;
+		font-size: 0.875rem;
 		color: color-mix(in oklab, currentColor 72%, transparent);
 	}
 	.peak-card {
@@ -262,7 +263,7 @@
 	}
 	.peak-card > span {
 		display: block;
-		font-size: 0.7rem;
+		font-size: 0.75rem;
 		font-weight: 850;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -285,12 +286,12 @@
 		padding-block: 0.38rem;
 	}
 	.peak-card dt {
-		font-size: 0.74rem;
+		font-size: 0.875rem;
 	}
 	.peak-card dd {
 		margin: 0;
 		font:
-			700 0.72rem/1.2 ui-monospace,
+			700 0.8rem/1.2 ui-monospace,
 			monospace;
 	}
 	.peak-card p {
@@ -312,7 +313,7 @@
 		width: 100%;
 		min-width: 22rem;
 		border-collapse: collapse;
-		font-size: 0.76rem;
+		font-size: 0.875rem;
 		font-variant-numeric: tabular-nums;
 	}
 	caption {
