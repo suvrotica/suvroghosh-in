@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T00:23:10.083600+00:00",
+  "generatedAt": "2026-08-07T01:07:21.846243+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -232,12 +232,12 @@
       "wordCount": 130
     },
     "ai-deployment-evidence-over-opinion": {
-      "generatedAt": "2026-07-20T02:02:01.052647+00:00",
+      "generatedAt": "2026-08-07T01:06:54.683396+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-deployment-evidence-over-opinion.svg",
       "source": "src/lib/posts/ai-deployment-evidence-over-opinion.md",
-      "sourceHash": "ee3b5f92011f94088ac8e6ae999482b39017aea6425b21f2b1e3587bfaa2d47b",
-      "sourceModified": "2026-07-20T02:01:41.955251+00:00",
+      "sourceHash": "608d84493f7bba4062b4e424d013d01ee5ddedc200224aa16f1252ed57bd7005",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Model",
         "Data",
@@ -301,12 +301,12 @@
       "wordCount": 130
     },
     "ai-health-insurance-surreptitious-risk-scoring": {
-      "generatedAt": "2026-07-20T02:02:03.402539+00:00",
+      "generatedAt": "2026-08-07T01:06:55.424893+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/ai-health-insurance-surreptitious-risk-scoring.svg",
       "source": "src/lib/posts/ai-health-insurance-surreptitious-risk-scoring.md",
-      "sourceHash": "136bcd0e9b60369c0d791a5cf539e5f9d8db76c8771b6068d23152caf3d7d294",
-      "sourceModified": "2026-07-20T02:01:41.981093+00:00",
+      "sourceHash": "37a65fc6dc7c2ba3301270f873385e86b5ae3f9e864bdf3743d6ac058a10392c",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Data",
         "Model",
@@ -646,12 +646,12 @@
       "wordCount": 130
     },
     "america-and-calcutta": {
-      "generatedAt": "2026-07-20T02:02:11.257184+00:00",
+      "generatedAt": "2026-08-07T01:06:56.380414+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/america-and-calcutta.svg",
       "source": "src/lib/posts/america-and-calcutta.md",
-      "sourceHash": "58473710e302028978abcf4625deb5f44b4664a05b891c7c0421a98b78aa7142",
-      "sourceModified": "2026-07-20T02:01:42.053354+00:00",
+      "sourceHash": "ec61fa673b22b4d03368ed201fa3243b44fffe88144360605719eb6543ffeb7a",
+      "sourceModified": "2026-08-07T01:06:40.868331+00:00",
       "topWords": [
         "America",
         "Air",
@@ -761,12 +761,12 @@
       "wordCount": 130
     },
     "aqi-420-and-the-great-indian-snot-mine": {
-      "generatedAt": "2026-07-20T02:02:14.544837+00:00",
+      "generatedAt": "2026-08-07T01:06:57.377288+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/aqi-420-and-the-great-indian-snot-mine.svg",
       "source": "src/lib/posts/aqi-420-and-the-great-indian-snot-mine.md",
-      "sourceHash": "03b17c674877190f1f2714d7d94bfcc7ae6b5891a62cf388d66f8f0b15042aad",
-      "sourceModified": "2026-07-20T02:00:12.563217+00:00",
+      "sourceHash": "ee33fbe1e48b4925f4cbbaea169834949d62339af68dc8e8676d581d32792947",
+      "sourceModified": "2026-08-07T01:06:40.884114+00:00",
       "topWords": [
         "Air",
         "Becomes",
@@ -1129,12 +1129,12 @@
       "wordCount": 130
     },
     "benfords-law-and-the-ledger-that-sweats": {
-      "generatedAt": "2026-07-20T02:02:26.002252+00:00",
+      "generatedAt": "2026-08-07T01:06:58.316758+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/benfords-law-and-the-ledger-that-sweats.svg",
       "source": "src/lib/posts/benfords-law-and-the-ledger-that-sweats.md",
-      "sourceHash": "405ce78289033a181d9566cc95f2bf7cfdbd85c7ac5e546c2415f88163fba7c6",
-      "sourceModified": "2026-07-20T02:01:42.176013+00:00",
+      "sourceHash": "4d6939771e8331c5e9f88c20b7c8ff6580b17130f9f949ffb512db650260a4c4",
+      "sourceModified": "2026-08-07T01:06:40.887737+00:00",
       "topWords": [
         "Numbers",
         "Benford",
@@ -1474,12 +1474,12 @@
       "wordCount": 130
     },
     "bogosity-enshittification-and-the-glittering-drain": {
-      "generatedAt": "2026-07-20T02:02:37.540278+00:00",
+      "generatedAt": "2026-08-07T01:06:59.156504+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/bogosity-enshittification-and-the-glittering-drain.svg",
       "source": "src/lib/posts/bogosity-enshittification-and-the-glittering-drain.md",
-      "sourceHash": "f4edda02f6cac75fddca763a12b26905ed63f1b7211dc02431490927032ebe83",
-      "sourceModified": "2026-07-20T02:01:42.264886+00:00",
+      "sourceHash": "cbd864d4ea3aa0d6b58cb40cba6fb53bcc5c8e7e3d5acd863974e16504d00027",
+      "sourceModified": "2026-08-07T01:06:40.899663+00:00",
       "topWords": [
         "Fake",
         "AI",
@@ -1865,12 +1865,12 @@
       "wordCount": 130
     },
     "cant-go-back-to-childhood-except-as-a-misremembering-ghost": {
-      "generatedAt": "2026-07-20T02:02:47.062082+00:00",
+      "generatedAt": "2026-08-07T01:07:00.034404+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/cant-go-back-to-childhood-except-as-a-misremembering-ghost.svg",
       "source": "src/lib/posts/cant-go-back-to-childhood-except-as-a-misremembering-ghost.md",
-      "sourceHash": "4c3f94c1369c704973701485b3a3cb8f76ccc85a2a2b9fc09732ac14639c4ad0",
-      "sourceModified": "2026-07-20T02:01:42.357297+00:00",
+      "sourceHash": "88d4586c5430bab04f967d7067a8d24b32a641f332f2021bc6b0b7f22df31931",
+      "sourceModified": "2026-08-07T01:06:40.918638+00:00",
       "topWords": [
         "Childhood",
         "Every",
@@ -1888,12 +1888,12 @@
       "wordCount": 130
     },
     "capex-and-the-geometry-of-obsolescence": {
-      "generatedAt": "2026-07-20T02:02:47.730593+00:00",
+      "generatedAt": "2026-08-07T01:07:00.862925+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/capex-and-the-geometry-of-obsolescence.svg",
       "source": "src/lib/posts/capex-and-the-geometry-of-obsolescence.md",
-      "sourceHash": "1d6f1ba10b76cf796e2da3d68ca47ae492881d11d6c4290699f8bc4555257b21",
-      "sourceModified": "2026-07-20T02:01:42.366847+00:00",
+      "sourceHash": "250ae05130a00d8959c4c17cdcc4cbc0ad7ba80e113f05e6264bcb87d731136c",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Now",
         "Billion",
@@ -2716,12 +2716,12 @@
       "wordCount": 130
     },
     "dogs-bad-people-myth-science": {
-      "generatedAt": "2026-07-20T02:03:06.893059+00:00",
+      "generatedAt": "2026-08-07T01:07:01.810532+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/dogs-bad-people-myth-science.svg",
       "source": "src/lib/posts/dogs-bad-people-myth-science.md",
-      "sourceHash": "c5656d896171f88eaa47cb92bef2d7512b12ddd2ff1b8738c386e30e5c99559a",
-      "sourceModified": "2026-07-20T02:01:42.535087+00:00",
+      "sourceHash": "339e50628d081604b57b3ff9b6c405d64e76ae08f351e834f99466fe80285e90",
+      "sourceModified": "2026-08-07T01:06:40.934764+00:00",
       "topWords": [
         "Dogs",
         "Human",
@@ -2946,12 +2946,12 @@
       "wordCount": 130
     },
     "english-medium-urine-stain-and-the-school-that-lit-the-fuse": {
-      "generatedAt": "2026-07-20T02:03:11.467495+00:00",
+      "generatedAt": "2026-08-07T01:07:02.649554+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/english-medium-urine-stain-and-the-school-that-lit-the-fuse.svg",
       "source": "src/lib/posts/english-medium-urine-stain-and-the-school-that-lit-the-fuse.md",
-      "sourceHash": "24e9ffd00213270bd4923b88717f9b2234ea506795d2f9b66317d43a4bbf081f",
-      "sourceModified": "2026-07-20T02:00:12.432855+00:00",
+      "sourceHash": "5ebf910ba51baa9b756ad69db8ec281e47464b4727ce0c7c63bc630cb9044f22",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "School",
         "Childhood",
@@ -3774,12 +3774,12 @@
       "wordCount": 130
     },
     "hawkers-are-not-rubbish": {
-      "generatedAt": "2026-07-20T02:03:35.288025+00:00",
+      "generatedAt": "2026-08-07T01:07:03.650167+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hawkers-are-not-rubbish.svg",
       "source": "src/lib/posts/hawkers-are-not-rubbish.md",
-      "sourceHash": "85d8180a47d6d5084450d77ab125fca103ee7ace11bccf376b8c0fd0627f7f8e",
-      "sourceModified": "2026-07-20T02:00:12.581981+00:00",
+      "sourceHash": "e68a959d51174b5fba381e5df3f2995e6cfab1ca28df82282194e593f134de6b",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Vending",
         "Becomes",
@@ -4464,12 +4464,12 @@
       "wordCount": 130
     },
     "india-ambition-validation-fear-of-mediocrity": {
-      "generatedAt": "2026-07-20T02:03:51.490020+00:00",
+      "generatedAt": "2026-08-07T01:07:04.580640+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/india-ambition-validation-fear-of-mediocrity.svg",
       "source": "src/lib/posts/india-ambition-validation-fear-of-mediocrity.md",
-      "sourceHash": "8286ea3f3950c15b309bed898101958837a9d126ac269c799349a5f7d2cfbfbf",
-      "sourceModified": "2026-07-20T02:01:42.999275+00:00",
+      "sourceHash": "d2ef0ef67c9190a9195b11dc1ee48516483f48d0f38ee8704ce04bf62aa47ab5",
+      "sourceModified": "2026-08-07T01:06:40.982295+00:00",
       "topWords": [
         "Fear",
         "Becomes",
@@ -4602,12 +4602,12 @@
       "wordCount": 130
     },
     "indian-middle-aged-middle-class-lopsided-rocks": {
-      "generatedAt": "2026-07-20T02:03:56.074123+00:00",
+      "generatedAt": "2026-08-07T01:07:05.626873+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/indian-middle-aged-middle-class-lopsided-rocks.svg",
       "source": "src/lib/posts/indian-middle-aged-middle-class-lopsided-rocks.md",
-      "sourceHash": "8bc0db4b7e3e7231d323f3449c72604f1d42f4ddd7eec08aa21c92b0ab5a6072",
-      "sourceModified": "2026-07-20T02:00:12.403912+00:00",
+      "sourceHash": "e4a7b193d3cc362a02cc0827c6b424357cd700af5bb60cca768d90a3b4c7c09c",
+      "sourceModified": "2026-08-07T01:05:08.458095+00:00",
       "topWords": [
         "Middle",
         "Family",
@@ -4625,12 +4625,12 @@
       "wordCount": 130
     },
     "indigenous-robot-dogs-and-the-flatulence-of-governance": {
-      "generatedAt": "2026-07-20T02:03:56.747512+00:00",
+      "generatedAt": "2026-08-07T01:07:06.425925+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/indigenous-robot-dogs-and-the-flatulence-of-governance.svg",
       "source": "src/lib/posts/indigenous-robot-dogs-and-the-flatulence-of-governance.md",
-      "sourceHash": "d20516f3123395530d044090f9ccaad9a8be2d1695aab1e1bfc15259efce685b",
-      "sourceModified": "2026-07-20T02:00:12.587034+00:00",
+      "sourceHash": "15247cd96b5c26a39ba5985d517ee5474703eeff92281f7b700b80de61e5bafd",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "AI",
         "Five",
@@ -4671,12 +4671,12 @@
       "wordCount": 130
     },
     "intolerable-cruelty": {
-      "generatedAt": "2026-07-20T02:03:58.301852+00:00",
+      "generatedAt": "2026-08-07T01:07:07.356444+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/intolerable-cruelty.svg",
       "source": "src/lib/posts/intolerable-cruelty.md",
-      "sourceHash": "22e7b74d054d37327daee312f433c3bde60774b615ecf352df29ea37df7e0181",
-      "sourceModified": "2026-07-20T02:00:12.352976+00:00",
+      "sourceHash": "5f6c502e383b4f76247331b15e3cb28f16caf52a952bca718b7f2518b91b8d68",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Water",
         "Now",
@@ -4717,12 +4717,12 @@
       "wordCount": 130
     },
     "invasive-human-weed-species-and-the-dunning-kruger-collapse": {
-      "generatedAt": "2026-07-20T02:03:59.869229+00:00",
+      "generatedAt": "2026-08-07T01:07:08.215111+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/invasive-human-weed-species-and-the-dunning-kruger-collapse.svg",
       "source": "src/lib/posts/invasive-human-weed-species-and-the-dunning-kruger-collapse.md",
-      "sourceHash": "48962830a4c2ea0fbdd6e6c6c2c76300306cd36dec96598e147bd64474b32141",
-      "sourceModified": "2026-07-20T02:00:12.679709+00:00",
+      "sourceHash": "9bf30feeea4bf15d974741e2219330b81727b874bf2c6247dd6095e9d5f3a4a9",
+      "sourceModified": "2026-08-07T01:06:41.005382+00:00",
       "topWords": [
         "Invasive",
         "Institutions",
@@ -5039,12 +5039,12 @@
       "wordCount": 130
     },
     "last-economy-intelligence-inversion": {
-      "generatedAt": "2026-07-20T02:04:09.262729+00:00",
+      "generatedAt": "2026-08-07T01:07:09.226911+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/last-economy-intelligence-inversion.svg",
       "source": "src/lib/posts/last-economy-intelligence-inversion.md",
-      "sourceHash": "eec4fa5646ed7f0937bac42ce3a18aa983eebed188e13658539db193f2dec0ae",
-      "sourceModified": "2026-07-20T02:01:43.215918+00:00",
+      "sourceHash": "e014a71f33587a2cac3db6b4203bb51466b0769220d1fbb7a0a1ab50342afb66",
+      "sourceModified": "2026-08-07T01:06:41.016861+00:00",
       "topWords": [
         "Economy",
         "Human",
@@ -5292,12 +5292,12 @@
       "wordCount": 130
     },
     "marys-retarded-room": {
-      "generatedAt": "2026-07-20T02:04:15.940461+00:00",
+      "generatedAt": "2026-08-07T01:07:09.994475+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/marys-retarded-room.svg",
       "source": "src/lib/posts/marys-retarded-room.md",
-      "sourceHash": "9f701fff8ddb195969fecd4d4efa3ada21b0ec081e8f8d7a5c1b871e437bcf5d",
-      "sourceModified": "2026-07-20T02:01:43.272271+00:00",
+      "sourceHash": "e1de5b70a65b1e9cca15e5bfc13929b06295925d111d34b1f9ead1721d756ba0",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Red",
         "Mary",
@@ -5683,12 +5683,12 @@
       "wordCount": 119
     },
     "natural-selection-across-timescales": {
-      "generatedAt": "2026-07-20T02:04:26.532188+00:00",
+      "generatedAt": "2026-08-07T01:07:10.923021+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/natural-selection-across-timescales.svg",
       "source": "src/lib/posts/natural-selection-across-timescales.md",
-      "sourceHash": "7e821d04eee26c2fac1949211bd1df475e9762118eaf679d93ddec9d7244c724",
-      "sourceModified": "2026-07-20T02:01:43.349691+00:00",
+      "sourceHash": "8d56fa39d6dfe9d9b94f9104869622646137156edbd04f067f679c47cc3a41cc",
+      "sourceModified": "2026-08-07T01:06:41.039601+00:00",
       "topWords": [
         "Selection",
         "Select",
@@ -5752,12 +5752,12 @@
       "wordCount": 130
     },
     "nicotine-biri-and-the-great-bengali-bargain": {
-      "generatedAt": "2026-07-20T02:04:28.967138+00:00",
+      "generatedAt": "2026-08-07T01:07:11.723062+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/nicotine-biri-and-the-great-bengali-bargain.svg",
       "source": "src/lib/posts/nicotine-biri-and-the-great-bengali-bargain.md",
-      "sourceHash": "2f0f45bbea977e0130a3af3e2269f52f7d6812a4c1591ad71b251be40ddc62e1",
-      "sourceModified": "2026-07-20T02:00:12.508240+00:00",
+      "sourceHash": "02e5c3d85f343544b23aca5e2920676a7d979689c779a018212273c6e621da67",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Nicotine",
         "Smoke",
@@ -7155,12 +7155,12 @@
       "wordCount": 130
     },
     "sensible-consumer-in-a-pufferfish-world": {
-      "generatedAt": "2026-07-20T02:05:05.006335+00:00",
+      "generatedAt": "2026-08-07T01:07:12.748521+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/sensible-consumer-in-a-pufferfish-world.svg",
       "source": "src/lib/posts/sensible-consumer-in-a-pufferfish-world.md",
-      "sourceHash": "94059416cff719629ac9355ff4f91099702a1f9902f3d8e594ebef0fe850c4f3",
-      "sourceModified": "2026-07-20T02:00:12.395891+00:00",
+      "sourceHash": "9c4a59ffa467391ce8229558b49ba8ff0ef7c19adb39098f275de5f15262813b",
+      "sourceModified": "2026-08-07T01:06:41.081168+00:00",
       "topWords": [
         "Systems",
         "Modern",
@@ -7408,12 +7408,12 @@
       "wordCount": 130
     },
     "sitala-manasa-public-health-superstition": {
-      "generatedAt": "2026-07-20T02:05:11.756896+00:00",
+      "generatedAt": "2026-08-07T01:07:13.589649+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/sitala-manasa-public-health-superstition.svg",
       "source": "src/lib/posts/sitala-manasa-public-health-superstition.md",
-      "sourceHash": "966a66fd7522a67b6a7e7807bf6eacc0e4e6e982bc8d1832475df5f0cc62a939",
-      "sourceModified": "2026-07-20T02:00:12.373183+00:00",
+      "sourceHash": "1e1db6dbe6cac36c45bbcb804119fddc5d20eecc451f4957622cdd621091310f",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Health",
         "Data",
@@ -7753,12 +7753,12 @@
       "wordCount": 130
     },
     "symmetry-in-a-calcutta-room": {
-      "generatedAt": "2026-07-20T02:05:20.142257+00:00",
+      "generatedAt": "2026-08-07T01:07:14.572645+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/symmetry-in-a-calcutta-room.svg",
       "source": "src/lib/posts/symmetry-in-a-calcutta-room.md",
-      "sourceHash": "ed6930830049db791edce09c59302c1f4b8c715ecdb54da13b08209b8b1348f3",
-      "sourceModified": "2026-07-20T02:01:43.789815+00:00",
+      "sourceHash": "a28ec5b896cf05e17f628966c949eb0c50208b6f201faf6701bc205233de34c8",
+      "sourceModified": "2026-08-07T01:06:41.099780+00:00",
       "topWords": [
         "Symmetry",
         "Mathematics",
@@ -7776,12 +7776,12 @@
       "wordCount": 130
     },
     "synthetic-jest-fake-laughter-bengali-modernity": {
-      "generatedAt": "2026-07-20T02:05:20.868006+00:00",
+      "generatedAt": "2026-08-07T01:07:15.425114+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/synthetic-jest-fake-laughter-bengali-modernity.svg",
       "source": "src/lib/posts/synthetic-jest-fake-laughter-bengali-modernity.md",
-      "sourceHash": "1ed49ce85f6301069ef223f6616f34e3ee5036ca1b996f6324c6cb51b0f5335b",
-      "sourceModified": "2026-07-20T02:00:12.450156+00:00",
+      "sourceHash": "c95ce435a736a050a168607af41e3f6292b312d17023bfce81e0744398f1eebc",
+      "sourceModified": "2026-08-07T01:06:41.106160+00:00",
       "topWords": [
         "Face",
         "Every",
@@ -8397,12 +8397,12 @@
       "wordCount": 130
     },
     "the-body-becomes-a-small-oven": {
-      "generatedAt": "2026-07-20T02:05:34.187753+00:00",
+      "generatedAt": "2026-08-07T01:07:16.364348+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-body-becomes-a-small-oven.svg",
       "source": "src/lib/posts/the-body-becomes-a-small-oven.md",
-      "sourceHash": "b0b24cd40d312ccc1c2451ddf0a70fb222fba45632edba3baa543109c6e3175c",
-      "sourceModified": "2026-07-20T02:01:43.925102+00:00",
+      "sourceHash": "371f3cd81554a04bcb91ffac7ff47623792f86c65043be3d249076a75bb3ffc7",
+      "sourceModified": "2026-08-07T01:03:06.493217+00:00",
       "topWords": [
         "Water",
         "Heat",
@@ -8926,12 +8926,12 @@
       "wordCount": 130
     },
     "the-desperation-premium": {
-      "generatedAt": "2026-07-20T02:05:47.345582+00:00",
+      "generatedAt": "2026-08-07T01:07:17.241513+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-desperation-premium.svg",
       "source": "src/lib/posts/the-desperation-premium.md",
-      "sourceHash": "6111af586ea683756f7cb0f140c6cf757e06c69a88de5a594b5e0094fcbebba8",
-      "sourceModified": "2026-07-20T02:00:12.589037+00:00",
+      "sourceHash": "1f57fa0d32a9aff806b09a017814ee8cbc78a8c7c8d3189ac01743377f89656c",
+      "sourceModified": "2026-08-07T01:06:41.123474+00:00",
       "topWords": [
         "Becomes",
         "Buyer",
@@ -9708,12 +9708,12 @@
       "wordCount": 130
     },
     "the-history-of-the-shape-of-atoms": {
-      "generatedAt": "2026-07-20T02:06:07.642245+00:00",
+      "generatedAt": "2026-08-07T01:07:18.162711+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-history-of-the-shape-of-atoms.svg",
       "source": "src/lib/posts/the-history-of-the-shape-of-atoms.md",
-      "sourceHash": "49f846b7edde03e59a2fa206ab1083bd50bf22b5f2a758947178babe08105c70",
-      "sourceModified": "2026-07-20T02:00:12.261629+00:00",
+      "sourceHash": "055aadfad303290f35c740da5951e22634c23cb0172e4f366bef4b088f29cc92",
+      "sourceModified": "2026-08-07T01:06:41.158010+00:00",
       "topWords": [
         "Atom",
         "Shape",
@@ -10996,12 +10996,12 @@
       "wordCount": 130
     },
     "the-student-model-eats-the-teacher": {
-      "generatedAt": "2026-07-20T02:06:41.798061+00:00",
+      "generatedAt": "2026-08-07T01:07:19.011863+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-student-model-eats-the-teacher.svg",
       "source": "src/lib/posts/the-student-model-eats-the-teacher.md",
-      "sourceHash": "24494ef972c1ec892f300900922bbe3832ac146e21a4594387ed52c6ad90e30c",
-      "sourceModified": "2026-07-20T02:01:44.342189+00:00",
+      "sourceHash": "72009de215b11f39fbdc45e38c92d2892c66b9bb07e0698d9f528497da5093e7",
+      "sourceModified": "2026-08-07T01:06:41.179022+00:00",
       "topWords": [
         "Model",
         "China",
@@ -11456,12 +11456,12 @@
       "wordCount": 130
     },
     "the-useful-box-and-the-bengali-problem-of-too-many-choices": {
-      "generatedAt": "2026-07-20T02:06:53.153950+00:00",
+      "generatedAt": "2026-08-07T01:07:19.978570+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-useful-box-and-the-bengali-problem-of-too-many-choices.svg",
       "source": "src/lib/posts/the-useful-box-and-the-bengali-problem-of-too-many-choices.md",
-      "sourceHash": "3e701074a81625a442e75002219ab24487ac744fffdfa8971e8eb4c8e968827d",
-      "sourceModified": "2026-07-20T02:01:44.410955+00:00",
+      "sourceHash": "1ab0baecf98b5d486d5cccefc4c4b18ff93e1754c01563dcc5eb7b04285502da",
+      "sourceModified": "2026-08-07T01:06:41.199819+00:00",
       "topWords": [
         "Constraint",
         "Box",
@@ -12238,12 +12238,12 @@
       "wordCount": 130
     },
     "truth-adjustment-and-the-cost-of-coming-back": {
-      "generatedAt": "2026-07-20T02:07:13.825336+00:00",
+      "generatedAt": "2026-08-07T01:07:20.878245+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/truth-adjustment-and-the-cost-of-coming-back.svg",
       "source": "src/lib/posts/truth-adjustment-and-the-cost-of-coming-back.md",
-      "sourceHash": "1583a6143aaa2412fc92b1e6b13acb8809d72eb5daa6eab9651b722380caf4e8",
-      "sourceModified": "2026-07-20T02:01:44.549492+00:00",
+      "sourceHash": "e3a3333123b4346ccdc1cc5f3ae2ae1500fa496bf2a109500dc5d63a73f8918b",
+      "sourceModified": "2026-08-07T01:06:41.224554+00:00",
       "topWords": [
         "Man",
         "Say",
@@ -12514,12 +12514,12 @@
       "wordCount": 130
     },
     "war-spillovers-ukraine-iran-technology": {
-      "generatedAt": "2026-07-20T02:07:22.045787+00:00",
+      "generatedAt": "2026-08-07T01:07:21.829389+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/war-spillovers-ukraine-iran-technology.svg",
       "source": "src/lib/posts/war-spillovers-ukraine-iran-technology.md",
-      "sourceHash": "9c5c8f1f596238be29b7cc3d1afa81a95aebbb13ad6f9910466994e4839bc3e2",
-      "sourceModified": "2026-07-20T02:01:44.587391+00:00",
+      "sourceHash": "39b0ce549987a7bd44fcfa34ab65320b647c2323d49302537cd625acbe03ef60",
+      "sourceModified": "2026-08-07T01:05:08.459489+00:00",
       "topWords": [
         "Civilian",
         "War",

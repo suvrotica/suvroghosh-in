@@ -1,17 +1,19 @@
 ---
 title: "Maa Sitala, Maa Manasa, and the Bad Public Health Architecture of Fear"
-description: "A technical and historical reading of Bengal’s disease and serpent goddesses, their movement from local folklore into the Hindu pantheon, and why rural dependence on superstition, quacks, and charlatans persists where trustworthy healthcare remains thin."
+description: "A history of Bengal’s disease and serpent goddesses, and why weak rural healthcare sustains reliance on superstition and quacks."
 date: "2026-04-26"
+dateModified: "2026-08-07"
 category: "Public Health"
 tags: ["Health Level Seven","Public Health","Data Model","Maa Sitala","Maa Manasa","Manasa","Sitala","Snakebite","Antivenom","Rural"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-sitala-manasa-public-health-superstition.jpg"
+thumbnail: "/thumbnail/art-sitala-manasa-public-health-superstition.jpg"
+thumbnailAlt: "Bengali ritual health symbols beside sparse rural clinic supplies"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-sitala-manasa-public-health-superstition.jpg" />
+<Pi src="/thumbnail/art-sitala-manasa-public-health-superstition.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -10934,6 +10934,38 @@
       "sourceHash": "31bb4db23d41ff56ad6c68165f2f37ff162f9d2d94d40428b4fe9657797d6389",
       "width": 1200
     },
+    "static/thumbnail/art-ai-deployment-evidence-over-opinion.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 99988,
+      "outputHash": "299dd5866c2349038bc4c43318847113ff91dba4aee7bfeed664a5123618661c",
+      "psnrDb": 38.71,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 140994,
+      "sourceHash": "8c1ed274b995949f62e08a9b3a0237001bd1e9fccc73913f9c89625d375145ff",
+      "width": 1200
+    },
+    "static/thumbnail/art-ai-health-insurance-surreptitious-risk-scoring.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 122014,
+      "outputHash": "938e4ae538e510c456fef34bfe7b7d8577654af48beae19b01acb1a0e0a31fa2",
+      "psnrDb": 36.09,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 177753,
+      "sourceHash": "054af8c1f00b507ddde42cda792d28a66296395e778d34485e94834609f8a9bc",
+      "width": 1200
+    },
     "static/thumbnail/art-ai-in-india-the-negative-infinity-before-the-singularity.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -10982,6 +11014,54 @@
       "sourceHash": "5cd9df380bcd96804568c003291528b2badd929da02c75910d68538e6bd7daf2",
       "width": 1200
     },
+    "static/thumbnail/art-america-and-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 111423,
+      "outputHash": "e933dbe13413274c181f96b24d639c0258239ea5ed764c428cb2beff60a7835c",
+      "psnrDb": 38.52,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 154866,
+      "sourceHash": "11d912a5394e2053b26dc9dce692fb99ef88d31defcd73e09b1e828074f3c37c",
+      "width": 1200
+    },
+    "static/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 136661,
+      "outputHash": "fdfd3c784e565ca87fc911a525e9903f9715d8a404bdbaf23213f7c03ad5bb11",
+      "psnrDb": 36.38,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 191551,
+      "sourceHash": "1411c806fbaf8ea4be0fe075cbcdb90cbef19d71b130e09542c5cbf779ec1f6c",
+      "width": 1200
+    },
+    "static/thumbnail/art-benfords-law-and-the-ledger-that-sweats.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 135539,
+      "outputHash": "4c35414f576d56a857ed3a26c097d1f77cd9a9c2301274b3774ae0f652f0b879",
+      "psnrDb": 36.48,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 193592,
+      "sourceHash": "b5b03b63196101ff1a3a262ffde1028b3bab5f20e088d42c1a292f06ca2ee2e3",
+      "width": 1200
+    },
     "static/thumbnail/art-bengal-changed-color-not-character.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11012,6 +11092,22 @@
       "resized": false,
       "sourceBytes": 174470,
       "sourceHash": "a6ac6339207a2c40b593d78ef2a8ef2a211e28d31bf777d95fae01a61cae6fde",
+      "width": 1200
+    },
+    "static/thumbnail/art-bogosity-enshittification-and-the-glittering-drain.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 313814,
+      "outputHash": "801fb80f5234b2703cb509a973f88a3b826bc5e75e8820d916e91d1ac15c622d",
+      "psnrDb": 37.44,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 342800,
+      "sourceHash": "4e932a7ee0be7843eb2e775c4833df68d1d561b12dc6fe29cb8d545b3de8a445",
       "width": 1200
     },
     "static/thumbnail/art-calcutta-carbohydrate-problem.jpg": {
@@ -11076,6 +11172,38 @@
       "resized": false,
       "sourceBytes": 206203,
       "sourceHash": "35c47f6413203e76b14d8d361421cbf6fa1188ca67e4913588ec1b20234d16eb",
+      "width": 1200
+    },
+    "static/thumbnail/art-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 242595,
+      "outputHash": "0afc30a39d4288f98cdadf137e7e1ff39bf1d7fa9b3f20a4fc9f339817406af1",
+      "psnrDb": 37.37,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 280508,
+      "sourceHash": "6f77f218fb32056776e9b3e63092cb34d6dee637691960408333cb52b6c2d64e",
+      "width": 1200
+    },
+    "static/thumbnail/art-capex-and-the-geometry-of-obsolescence.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 175512,
+      "outputHash": "14a51b49a6f48d821cb6b440c9f3f33c25883e48b0dd3e2a59a8dc5c52021b70",
+      "psnrDb": 36.9,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 214907,
+      "sourceHash": "c6b4ba90f59096c07bd6050c7995eb930f0d09542787a080ee87d43ec3f4d079",
       "width": 1200
     },
     "static/thumbnail/art-cicada-ba32-covid-variant.jpg": {
@@ -11174,6 +11302,22 @@
       "sourceHash": "e00740282373cc6797a58324d38f61c08e856de593b5372577cc440e06df4f90",
       "width": 1200
     },
+    "static/thumbnail/art-dogs-bad-people-myth-science.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 107040,
+      "outputHash": "73e0a935029caa15f2f87f779e3499e5c813fbdebce0b8325f54d66d0227583c",
+      "psnrDb": 39.44,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 151462,
+      "sourceHash": "b8a037901d4feeb125fc6623a36f5ee56ece035923c027d2756e738b1e771b88",
+      "width": 1200
+    },
     "static/thumbnail/art-end-of-history-not-end-of-trouble.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11204,6 +11348,22 @@
       "resized": false,
       "sourceBytes": 218878,
       "sourceHash": "1760a75ab083eb0d54deb26275ea9f147ec5ca3477d5d2df0c71edaeddb3d01c",
+      "width": 1200
+    },
+    "static/thumbnail/art-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 221506,
+      "outputHash": "a21ee75e7733435171657929062ea443cbb05b9bd7139fed6ed2d4b5c9e1d01a",
+      "psnrDb": 36.84,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 261009,
+      "sourceHash": "280fe4d8ea964744dfa1427aa6a130284fb04034cf61c9a5dcee929bbbd41382",
       "width": 1200
     },
     "static/thumbnail/art-entropy-in-a-rented-room.jpg": {
@@ -11318,6 +11478,22 @@
       "sourceHash": "c323c2d285b6533d47ea2bb215304c759dd216bf0a4079d9c2a944446972b1d4",
       "width": 1200
     },
+    "static/thumbnail/art-hawkers-are-not-rubbish.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 187966,
+      "outputHash": "149f1a55ae06724ff5c5206e7d411d5f38158622bf7c84fb30ceddcbaedcbf6a",
+      "psnrDb": 37.0,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 228938,
+      "sourceHash": "3ec1db626297da546b89087ae24e52000b472d89da60bd02e6f5a3316803cca8",
+      "width": 1200
+    },
     "static/thumbnail/art-healthcare-ai-wrong-objective.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11414,6 +11590,70 @@
       "sourceHash": "f67ff9db74a9839eccd1f4c3c04dfe51ed6a32377b35d86eaea31861a39c34f8",
       "width": 1200
     },
+    "static/thumbnail/art-india-ambition-validation-fear-of-mediocrity.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 105352,
+      "outputHash": "0146b4d0707131d5515652845211a4e8bafc1767e4726785a0cda8779f4cafcd",
+      "psnrDb": 39.46,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 145279,
+      "sourceHash": "d13979f7ecbe1caa448a0a5683f0d93dd1e76c9cf42497ff176b694d52cf5fc0",
+      "width": 1200
+    },
+    "static/thumbnail/art-indian-middle-aged-middle-class-lopsided-rocks.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 142768,
+      "outputHash": "4338012e5d45d1cbf759463740ee92a1c41fc8a4cdfad53846f9e59eb046fa7e",
+      "psnrDb": 36.56,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 200891,
+      "sourceHash": "661c756070ee0c162b6666a2ad5b29c77bf362b53f2f2be7e63ca3a1bd9abf17",
+      "width": 1200
+    },
+    "static/thumbnail/art-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 134246,
+      "outputHash": "91adf63619d6a9a7093e3522bd57cae119f78ce4d16292328c148822671c9b03",
+      "psnrDb": 36.68,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 186272,
+      "sourceHash": "039148616cacb4f4fdcac0f1cd8662099b6eb9a98b02dae86399d024d23f777c",
+      "width": 1200
+    },
+    "static/thumbnail/art-intolerable-cruelty.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 218644,
+      "outputHash": "b7aaeec5c1ae4deb7aefe2325e81ba318d8abfb90f7a1583719e62ce7f647abc",
+      "psnrDb": 36.77,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 257668,
+      "sourceHash": "e3196aea0bb7575b6788d4923a150969708e8c325c0bfea48d52aea5bbe16192",
+      "width": 1200
+    },
     "static/thumbnail/art-intro.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11428,6 +11668,22 @@
       "resized": false,
       "sourceBytes": 196328,
       "sourceHash": "dea2e93e70e07d7eea71b8fb659be8685d5fa200479b8e43cf5bb317bb92c236",
+      "width": 1200
+    },
+    "static/thumbnail/art-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 261731,
+      "outputHash": "d65fba398783e8cabdbdff10e71d47c4d6d3038fefd260376aece460826ad57b",
+      "psnrDb": 36.87,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 301919,
+      "sourceHash": "7d21d5f5bb4ab05356859f4fca4363fcefe2a4e94aa4b8d3095587daf1121f5f",
       "width": 1200
     },
     "static/thumbnail/art-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg": {
@@ -11494,6 +11750,38 @@
       "sourceHash": "08f94b5f18741fbb88dcab37a6ba413ab80849272d57fd66720f020ee554a610",
       "width": 1200
     },
+    "static/thumbnail/art-last-economy-intelligence-inversion.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 174771,
+      "outputHash": "92207829f7b6d09bfb0b3707bf2fd6eea85134e4fa9bc11ce5f0f5de5af940e1",
+      "psnrDb": 37.4,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 205998,
+      "sourceHash": "d49af92f920749631dee2fe19c0f159d61429fb54924c9470759c53463535758",
+      "width": 1200
+    },
+    "static/thumbnail/art-marys-retarded-room.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 93317,
+      "outputHash": "f11ffb4a86846c39ae7e661c7a8731d988597b3169dca275852cedd44d4cb0fc",
+      "psnrDb": 39.77,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 129882,
+      "sourceHash": "a4456f5f1f79ceb01a7c3b7c2ea4b62bc99a482035e0ff4f24d9f7511bd83da2",
+      "width": 1200
+    },
     "static/thumbnail/art-mind-as-emergence-not-magic.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11526,6 +11814,22 @@
       "sourceHash": "77712770355097305bd6297dd97fefb97bb6b5ca194f5bfc7c00fdc3912e820d",
       "width": 1200
     },
+    "static/thumbnail/art-natural-selection-across-timescales.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 320813,
+      "outputHash": "61454919df517fe401e5ade5adef1b679ffac9fbd75dd350453cac0f5052ba86",
+      "psnrDb": 37.37,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 350448,
+      "sourceHash": "0a1bd3f87a6f174f907ba5c971805cb7b3ae91f9f3f8768fd86d8d9a69f24dd9",
+      "width": 1200
+    },
     "static/thumbnail/art-newtons-first-law-and-the-bladder.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11540,6 +11844,22 @@
       "resized": false,
       "sourceBytes": 177797,
       "sourceHash": "77ee1ccb842cacc3fdd541ccf93bb0abb9e09b10a2c1eab8e6269b0091fe5217",
+      "width": 1200
+    },
+    "static/thumbnail/art-nicotine-biri-and-the-great-bengali-bargain.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 212647,
+      "outputHash": "78a3959d0dc7dabc2adedea8074e4373a5756190c905e7998229a9ecf4343d72",
+      "psnrDb": 36.68,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 252842,
+      "sourceHash": "06dc496b7700deea7aaef1cc1757974a1d17b4f2d0b9b4a4229aee51b5789c70",
       "width": 1200
     },
     "static/thumbnail/art-nightmare-of-indian-healthcare.jpg": {
@@ -11670,6 +11990,86 @@
       "sourceHash": "abb135aed72c3d7078f7208ef672db853d739495ff0fc2cf5a75c6bb1bc687a5",
       "width": 1200
     },
+    "static/thumbnail/art-sensible-consumer-in-a-pufferfish-world.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 98480,
+      "outputHash": "65a40b0690780affab238c22d90b4cef14e24270e71a990ba5b11a11a2183e5e",
+      "psnrDb": 39.01,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 139493,
+      "sourceHash": "8cf94c0ef325346810c7bd9691c6a34c73bb4908c85e69fa6fd2e5a28cdcf513",
+      "width": 1200
+    },
+    "static/thumbnail/art-sitala-manasa-public-health-superstition.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 225201,
+      "outputHash": "ef651b1b8bf24417bd690b763604922125f047748a32e41fca132a66a4f2ca18",
+      "psnrDb": 37.33,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 265618,
+      "sourceHash": "888af808493579a15d7734e29a49cdced32eb3d33a3f3f0d098397a00cb03cd2",
+      "width": 1200
+    },
+    "static/thumbnail/art-symmetry-in-a-calcutta-room.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 183915,
+      "outputHash": "87a1b74fd174307d5d87200431ea58afceac0b97e855dfd9ab236f412cc06c47",
+      "psnrDb": 37.14,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 222144,
+      "sourceHash": "91105680473a15b9f2d962da5047342b16510a502fc92a218e1d8374a031bc85",
+      "width": 1200
+    },
+    "static/thumbnail/art-synthetic-jest-fake-laughter-bengali-modernity.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 269647,
+      "outputHash": "890bfe87e07eb9f5be00edda18d620e00ccebd01918cb49f5741cbe1fa24a317",
+      "psnrDb": 37.63,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 296028,
+      "sourceHash": "9707225c87e525a118102c45a561e9770b3e7f9c1dd37c168d4201c1f59d5b2a",
+      "width": 1200
+    },
+    "static/thumbnail/art-the-body-becomes-a-small-oven.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 123920,
+      "outputHash": "15bc9b160d4e0040ddfc75124e8a3aaba228918d9356d56c692ed7464ff959a4",
+      "psnrDb": 36.99,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 182350,
+      "sourceHash": "c0cb848983e04598f0ec4562a8e7c2a29689730f2a39ed7ba8c91f4ce7bc1a69",
+      "width": 1200
+    },
     "static/thumbnail/art-the-coming-unemployment.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11686,6 +12086,22 @@
       "sourceHash": "bf4997e60a9d97776eaaf2a22476e98aa61ac9c5c9eafc4d88c26a5a38ea8cb2",
       "width": 1200
     },
+    "static/thumbnail/art-the-desperation-premium.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 127777,
+      "outputHash": "4a2bf1009e51133f20a2359a5efb0341b6658a025a306af8584e5e2f3e8f41ba",
+      "psnrDb": 36.2,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 181394,
+      "sourceHash": "78ee84521a13e7dff53b32ddc7b14f77dc5b0f3ca5b8b22c3d8f85ffc918d519",
+      "width": 1200
+    },
     "static/thumbnail/art-the-ghost-as-perception.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11700,6 +12116,22 @@
       "resized": false,
       "sourceBytes": 158804,
       "sourceHash": "3eb30bcc48390ed7fa3d497d67a1a57169f1b358f5aa1f3dc9e7361c476e2ddd",
+      "width": 1200
+    },
+    "static/thumbnail/art-the-history-of-the-shape-of-atoms.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 66782,
+      "outputHash": "91ce21574900eae73dfe0174756741296b748dd74d2930d5981288f5a88193bd",
+      "psnrDb": 38.65,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 95989,
+      "sourceHash": "a5737b9ba94d7973a0353b2a042f5f51da16c06eb77e07a96afcb07754c5f2c6",
       "width": 1200
     },
     "static/thumbnail/art-the-new-mantra.jpg": {
@@ -11734,6 +12166,22 @@
       "sourceHash": "a52d195b1730b93a32a57cf4240a06e0182f495bc300672e842a04a1355c3944",
       "width": 1200
     },
+    "static/thumbnail/art-the-student-model-eats-the-teacher.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 178681,
+      "outputHash": "05b736533cb76633d228ace29ae29e40ce950bd3e9b4cddad4f8599f5cf767f4",
+      "psnrDb": 36.07,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 221128,
+      "sourceHash": "b11a3eb32171e243c946d16246206226586fb077827cf3be44b785ef286b7087",
+      "width": 1200
+    },
     "static/thumbnail/art-the-tea-stall-as-an-anti-ai-safety-system.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11748,6 +12196,22 @@
       "resized": false,
       "sourceBytes": 212546,
       "sourceHash": "5d13e6323c5309f552dcab0e7cc7367df259a627a2587f7b38fa1c80afc9f548",
+      "width": 1200
+    },
+    "static/thumbnail/art-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 241266,
+      "outputHash": "f1052280d7d9b2f05460c3f70fff82ef460bfe13c598fc12738e78d4ff87a027",
+      "psnrDb": 37.8,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 276451,
+      "sourceHash": "c25ecbd7da327499aa6ca798b8c0459df728c70ced2005be142571cfbca5031f",
       "width": 1200
     },
     "static/thumbnail/art-thin-fat-bellied-bengali-insulin-resistance.jpg": {
@@ -11782,6 +12246,22 @@
       "sourceHash": "421225902e85b78de212f83e2bd829d35162401ab3f26733abbc4c1049ee9e78",
       "width": 1200
     },
+    "static/thumbnail/art-truth-adjustment-and-the-cost-of-coming-back.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 119238,
+      "outputHash": "109129a308a65d91cd201e0211c09ddf4a548d3c703c7d9494aa9db407b71d62",
+      "psnrDb": 36.84,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 171131,
+      "sourceHash": "ac2ab23f9e82171f5d81f64a8ea45609f3f0941c143b75c2f43579fa474a1ff6",
+      "width": 1200
+    },
     "static/thumbnail/art-ubi-india-ai-unemployment-democracy.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11796,6 +12276,22 @@
       "resized": false,
       "sourceBytes": 208147,
       "sourceHash": "1054b2b9d2ef7f743e68a5431b0108904af6152c346d23b70df9f8f0eb957b50",
+      "width": 1200
+    },
+    "static/thumbnail/art-war-spillovers-ukraine-iran-technology.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 208432,
+      "outputHash": "b7f862b016a44d7afe950446cc47c2d501a014804ca3d8577bcf6400da16507d",
+      "psnrDb": 36.35,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 246574,
+      "sourceHash": "d1e1564ae86a1b3869b554af06ac02e996d58178f0322ce199d0e18c1264c43e",
       "width": 1200
     },
     "static/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg": {
@@ -11958,22 +12454,6 @@
       "sourceHash": "1bc4376bcb52e2e01dc720e4d8334c7b6b3470fcb35a38dfc98cf0b470e29c65",
       "width": 1200
     },
-    "static/thumbnail/safe-ai-deployment-evidence-over-opinion.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 123819,
-      "outputHash": "9b4a895a81b08e911075a26fcbed94f7b69f54c23a5ce1a85de69922902f21bb",
-      "psnrDb": 42.66,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 134573,
-      "sourceHash": "90147e4a2a6f2516e6511a352e03db01c934e6219a5a7573c27a34873d14e0b6",
-      "width": 1200
-    },
     "static/thumbnail/safe-ai-genie-out-of-the-bottle.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12004,22 +12484,6 @@
       "resized": false,
       "sourceBytes": 122875,
       "sourceHash": "04063f2b999ea0a1af530ad66272f7fb45079b9d60bfe3342cc02e795f643c35",
-      "width": 1200
-    },
-    "static/thumbnail/safe-ai-health-insurance-surreptitious-risk-scoring.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 121043,
-      "outputHash": "09d63a07912d173e1de568f5504defa646a47f8cabd4502ae298ec21912d4955",
-      "psnrDb": 42.95,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 131561,
-      "sourceHash": "87bb969b901a52f1d710520ce44672ad0be3bf4931dd27b9ec8c628b442f8d0a",
       "width": 1200
     },
     "static/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg": {
@@ -12102,22 +12566,6 @@
       "sourceHash": "51a4c294c44d51d82e812ffe6dc198e691f9dbf05b124255f574068ee6ce5f01",
       "width": 1200
     },
-    "static/thumbnail/safe-america-and-calcutta.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115253,
-      "outputHash": "7634fdbb2e302dd62bc4642f4c854df248c03cb1bf7e1615dec20c0f45ca0a48",
-      "psnrDb": 43.39,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 124927,
-      "sourceHash": "d645fa34d552a454421a2e1af7dbfd4952dffc6137c461db699a82879f0f174d",
-      "width": 1200
-    },
     "static/thumbnail/safe-anger-the-last-working-appliance.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12164,22 +12612,6 @@
       "resized": false,
       "sourceBytes": 144666,
       "sourceHash": "a1bf1d4bc3a89834e7ab0d40ef117437a721c772bc57b4f1f0fbba7c5f2f48af",
-      "width": 1200
-    },
-    "static/thumbnail/safe-aqi-420-and-the-great-indian-snot-mine.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 110661,
-      "outputHash": "16daa9bfd39925a5a99120d80cb5f57a1e7f58d7c0db53452e3e7161eaf60958",
-      "psnrDb": 43.68,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 119829,
-      "sourceHash": "b0333c5250e62a8819b44646fe8820ee233d8e1e5f948ed3d8cfb2d96f8ffb32",
       "width": 1200
     },
     "static/thumbnail/safe-arachnoid-in-the-boondocks.jpg": {
@@ -12390,22 +12822,6 @@
       "sourceHash": "c2291a3ffee13f83aaa88276863173acc0275b986e1fdece4a73b9fa45c54554",
       "width": 1200
     },
-    "static/thumbnail/safe-benfords-law-and-the-ledger-that-sweats.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 124290,
-      "outputHash": "6d7ab58610940ab60310e5676398a3786f4deff0122005df3cbff815339ab87b",
-      "psnrDb": 42.57,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 135202,
-      "sourceHash": "be023df3f61ab36fccae2d960f6e762575d46591833b230f4d85d8dded1c12bf",
-      "width": 1200
-    },
     "static/thumbnail/safe-bengal-changed-color-not-character.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12550,22 +12966,6 @@
       "sourceHash": "daebf244ac04e83987af266e39a7f5b64b1d63349fba010205ad7608c6038265",
       "width": 1200
     },
-    "static/thumbnail/safe-bogosity-enshittification-and-the-glittering-drain.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 129668,
-      "outputHash": "1e1094d6f556745d4b05aaffe8b78a505ee597310656372051d9360b4bbcf926",
-      "psnrDb": 42.28,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 141309,
-      "sourceHash": "d97114f686228367c19331bbc672250ace1e77c12e73e42d5f98dd092a5d132b",
-      "width": 1200
-    },
     "static/thumbnail/safe-brain-scrap-yard.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12676,38 +13076,6 @@
       "resized": false,
       "sourceBytes": 134708,
       "sourceHash": "1383e23df92fa8e2a6ca1f7ab1c0b97570eecdb9c008c9ced6a11a741cd18d0b",
-      "width": 1200
-    },
-    "static/thumbnail/safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 108997,
-      "outputHash": "4c813bf1c1f8579a9a6ed96f720c4d0155a7e80f1f07131d523716b37c0d62a2",
-      "psnrDb": 43.87,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 118000,
-      "sourceHash": "418273b326c112c6841396a1024397b26f0e9f0ad2b2f1fa56e693acf48aed3e",
-      "width": 1200
-    },
-    "static/thumbnail/safe-capex-and-the-geometry-of-obsolescence.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 129464,
-      "outputHash": "d0e8102e4fe37eb83f78f0d6b16e81c8589196d510dd662a63a5d87c4c5fd7f5",
-      "psnrDb": 42.35,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 140829,
-      "sourceHash": "2b91270578eb9ef983b02fbd729abb881f50d117876d532c947f6ec109ca7ad1",
       "width": 1200
     },
     "static/thumbnail/safe-chronic-traumatic-nihilism-calcutta.jpg": {
@@ -12982,22 +13350,6 @@
       "sourceHash": "5904f80b0dae82b9679cd10ef43ff9b434910cab1b9cf621cc6c3ada5aaf36bc",
       "width": 1200
     },
-    "static/thumbnail/safe-dogs-bad-people-myth-science.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 121859,
-      "outputHash": "004749a2e5f461fc2e8796be29ee64f5371d01e22a88e8d79251f057c8cf430d",
-      "psnrDb": 42.89,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 132269,
-      "sourceHash": "c6433883770c0178fac470375ed9f234f2bf1bf63affa9dbcb9071925edaee78",
-      "width": 1200
-    },
     "static/thumbnail/safe-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13044,22 +13396,6 @@
       "resized": false,
       "sourceBytes": 136961,
       "sourceHash": "b7b37f28ab27dd0b70b853be68ccc6ec085855dac3051dfbe9a7c1b78d21edb6",
-      "width": 1200
-    },
-    "static/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 107973,
-      "outputHash": "5593e2134c9beffbdb1e94d9afb3879bfa275e8de43ff0c0bff05217839b8e7a",
-      "psnrDb": 43.87,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 116798,
-      "sourceHash": "ba91ffc96122e9ff89c4fbdf2694394982ad823df6232b48333973448bd1feba",
       "width": 1200
     },
     "static/thumbnail/safe-entropy-in-a-rented-room.jpg": {
@@ -13414,22 +13750,6 @@
       "sourceHash": "d6cfe7cfb0a1fefe5c568ff1516aac58add08e2eae496f59ba48afa03142e4f4",
       "width": 1200
     },
-    "static/thumbnail/safe-hawkers-are-not-rubbish.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119290,
-      "outputHash": "f6b73cccadf2f99015fccd726f2bb65538585840740040e14da9766566cd2788",
-      "psnrDb": 43.13,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129479,
-      "sourceHash": "6ecef6ae1300542341b932e403a84ba1f884b8c8ca4ec4ff3b34a274998d5473",
-      "width": 1200
-    },
     "static/thumbnail/safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13654,22 +13974,6 @@
       "sourceHash": "640da38227965fa4c7626f1ad274707abe6c64c30d5960fe78b731d4ea164244",
       "width": 1200
     },
-    "static/thumbnail/safe-india-ambition-validation-fear-of-mediocrity.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 133747,
-      "outputHash": "8767b02282c8599ba49ad1086037c8530281f2966aef899460e90a1325f165ea",
-      "psnrDb": 41.96,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 145867,
-      "sourceHash": "8879ebc23b1421a336b787e513bb5f2a11c01eeadeb5051d4c8096f37f226581",
-      "width": 1200
-    },
     "static/thumbnail/safe-india-ehr-hie-ai-constraints.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13750,38 +14054,6 @@
       "sourceHash": "08f90bfe1f89c14de174ee46e2a8ac21d0aefcf0d66ac9666c0f3eb62e9fbc1c",
       "width": 1200
     },
-    "static/thumbnail/safe-indian-middle-aged-middle-class-lopsided-rocks.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 109455,
-      "outputHash": "837101cf95d7841bb33ab0b092063dd7e6b3c1c6d251c898b2022f8f175d5e91",
-      "psnrDb": 43.81,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 118582,
-      "sourceHash": "d3ba5e5edb72f97f3501725d3ad1d68dccea6700ad1c4b495fc71bd434f68eae",
-      "width": 1200
-    },
-    "static/thumbnail/safe-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115836,
-      "outputHash": "e07ba13c8d42f08a53791c28d33ab316d01c69d7a89feccc50040c409237c824",
-      "psnrDb": 43.32,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 125602,
-      "sourceHash": "5a663a2f282e25a497a8daca1fb296e0cd7f2dc9b5cfddd8d73148a77929ffe9",
-      "width": 1200
-    },
     "static/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13796,38 +14068,6 @@
       "resized": false,
       "sourceBytes": 124199,
       "sourceHash": "9e3b8a790c560817b948d39565842fd3c548b86dd30263d64726f76c6dd5842d",
-      "width": 1200
-    },
-    "static/thumbnail/safe-intolerable-cruelty.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 130832,
-      "outputHash": "70507145f57469559b7845e660fc4dcec86686b3ca7ab6891ea4a0b322f8f657",
-      "psnrDb": 42.14,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 142494,
-      "sourceHash": "b5ddbc453e8c4dae88b09067fcdcb2c9328e30ef756f08c59fdae8befd535cea",
-      "width": 1200
-    },
-    "static/thumbnail/safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 107331,
-      "outputHash": "76f5cecd8812686f5b39c1c13edc93a38cd9e424b58758084cd25b79efa9068e",
-      "psnrDb": 43.87,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 116235,
-      "sourceHash": "f8099979e09ec4f26ee24f6454fa40018e0d9b86d50a31b3f98a2d228b6e0314",
       "width": 1200
     },
     "static/thumbnail/safe-invisible-radius.jpg": {
@@ -13926,22 +14166,6 @@
       "sourceHash": "6d45e98558b2b466c9f2922d4a351b2b3c1758d682af92ff16b361a3259ed24a",
       "width": 1200
     },
-    "static/thumbnail/safe-last-economy-intelligence-inversion.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 127116,
-      "outputHash": "07045ed2e72dbb8189f0d7ec44c3f6d153b06633c62e6bc09c5844d757871a1e",
-      "psnrDb": 42.43,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 138418,
-      "sourceHash": "1541079f7d5157ac80646e99a527101ae00f8ab37f1a4ce26691f1a83d634079",
-      "width": 1200
-    },
     "static/thumbnail/safe-latent-space-healthcare-data.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -14036,22 +14260,6 @@
       "resized": false,
       "sourceBytes": 143327,
       "sourceHash": "2b0b2d97957258e165a547f88cd3427ff5c6e3ddbfa85d6930d756e24caf14ba",
-      "width": 1200
-    },
-    "static/thumbnail/safe-marys-retarded-room.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 129184,
-      "outputHash": "75cb25b48f07d0f56832f0dcf2daf10b0ef8ac5162fac0fdac525f09ea6da54c",
-      "psnrDb": 42.25,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 140637,
-      "sourceHash": "c57cfdce540f3d9d25ea4373e4c8a3ffd0b516b32c4e8773416a789deffaa117",
       "width": 1200
     },
     "static/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg": {
@@ -14214,22 +14422,6 @@
       "sourceHash": "6112ff2c6ada5093cc2e1c959fa2e7edb1c9858553c087be258609e527ea17a5",
       "width": 1200
     },
-    "static/thumbnail/safe-natural-selection-across-timescales.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 133376,
-      "outputHash": "331d4577670cba0b80004af1f71f021ed9a6b42d972db408c5640c7c0774cfef",
-      "psnrDb": 42.12,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 145564,
-      "sourceHash": "869c2c786689a9c1fe6bc4f15f1ae1bf441ab3e6fe0bae60ac79e01f04af5e8c",
-      "width": 1200
-    },
     "static/thumbnail/safe-newtons-first-law-and-the-bladder.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -14244,22 +14436,6 @@
       "resized": false,
       "sourceBytes": 128498,
       "sourceHash": "555a3da883660a31d3f1af64f8696aa374b6d2e3e9e9b83d0668107fc42ed900",
-      "width": 1200
-    },
-    "static/thumbnail/safe-nicotine-biri-and-the-great-bengali-bargain.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 118353,
-      "outputHash": "d538dc0ef957d2be522141f5585bb7cb08eb97c9fe0f5cbc72b3e2f31564899f",
-      "psnrDb": 43.17,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 128243,
-      "sourceHash": "d689ee3d855b68addd7afabb0445c1608bb867809d7f37c76b46f39819e93b8e",
       "width": 1200
     },
     "static/thumbnail/safe-nightmare-wrapped-in-skin.jpg": {
@@ -14790,22 +14966,6 @@
       "sourceHash": "870c350e230fe734a61984323eb41b27f708f0b0af88e8230c945fb1c0bb5d1b",
       "width": 1200
     },
-    "static/thumbnail/safe-sensible-consumer-in-a-pufferfish-world.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 122750,
-      "outputHash": "981744001665bc13e61a51f78a6193fdc7839351555d6ba17d3ac6d4f4f0437d",
-      "psnrDb": 42.79,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 133584,
-      "sourceHash": "2ff024aa249a31a78973642e7001d0761c6c44c6d648af2984b881bf8071fa20",
-      "width": 1200
-    },
     "static/thumbnail/safe-shadow-architecture-clinical-ai.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -14918,22 +15078,6 @@
       "sourceHash": "864ec275edbd1949aa07fd7d0a1a51f813cf3823bb98a29b680bb5192e0ee29e",
       "width": 1200
     },
-    "static/thumbnail/safe-sitala-manasa-public-health-superstition.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 128179,
-      "outputHash": "e0a2144b7cd419fbcd2bb2360a1bc3b7d5f4b996bdf91fa3a6ea3be63633a714",
-      "psnrDb": 42.41,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 139577,
-      "sourceHash": "ec54ff11a8afb737f6a34e736e16653452b8eb38cdbfda7d09444a3cd88ab1f5",
-      "width": 1200
-    },
     "static/thumbnail/safe-skepticism-is-the-mosquito-net.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -15028,38 +15172,6 @@
       "resized": false,
       "sourceBytes": 135004,
       "sourceHash": "fe015bd23fdc70c97391382f90d409abd923bb78c1dafb33a75c757d6a8f2620",
-      "width": 1200
-    },
-    "static/thumbnail/safe-symmetry-in-a-calcutta-room.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 122032,
-      "outputHash": "ef00171025781f7c3abdbed2230b89c768dfec838e073369d833e81d5f242daa",
-      "psnrDb": 42.8,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 132465,
-      "sourceHash": "1144a5522a0eede5f937c13930d312d2d05d310b116d833c6d477357e7d08821",
-      "width": 1200
-    },
-    "static/thumbnail/safe-synthetic-jest-fake-laughter-bengali-modernity.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120874,
-      "outputHash": "e352cc9e86232ac424b18386af330e18a6f6854632d1bc16556d16a2ce60b54c",
-      "psnrDb": 42.99,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 131284,
-      "sourceHash": "7e6918c107f397684f3a818c2a14b16e4b59f16f4e425de9e48b1c2f5af2c867",
       "width": 1200
     },
     "static/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg": {
@@ -15236,22 +15348,6 @@
       "resized": false,
       "sourceBytes": 136225,
       "sourceHash": "89459c93ef3473e6de4fadb8df4f389838c9fd90ff3008d942b76c60bee645a4",
-      "width": 1200
-    },
-    "static/thumbnail/safe-the-body-becomes-a-small-oven.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 127841,
-      "outputHash": "2f521897f9b79ac5128658f515b5d3645baa0d89e01806f1a6a4e3b6efe28ab2",
-      "psnrDb": 42.44,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 139184,
-      "sourceHash": "13e0182a79dd105c7858438215decfe6a012044b1b032f71ce726872845de75a",
       "width": 1200
     },
     "static/thumbnail/safe-the-boy-inside-the-broken-house.jpg": {
@@ -15444,22 +15540,6 @@
       "resized": false,
       "sourceBytes": 127214,
       "sourceHash": "eb1c458be77552f992b7dc54a737b4caef3020e4f3c010019d6191d15fba7057",
-      "width": 1200
-    },
-    "static/thumbnail/safe-the-desperation-premium.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 117885,
-      "outputHash": "13bc14caaabeb6df887c1e2908db652966f752455efbc14aef3fa2c41ee95d7f",
-      "psnrDb": 43.19,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 127710,
-      "sourceHash": "dff93dd80a2f78c413d085338778c57ed1356fd245dd675f58524d4127a2a1d1",
       "width": 1200
     },
     "static/thumbnail/safe-the-digital-charnel-house.jpg": {
@@ -15668,22 +15748,6 @@
       "resized": false,
       "sourceBytes": 127007,
       "sourceHash": "f146b7ea8b1440f9e2a63e64715368a3710a82823a8118fc16985031b4150f4e",
-      "width": 1200
-    },
-    "static/thumbnail/safe-the-history-of-the-shape-of-atoms.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119363,
-      "outputHash": "8fac8757a7aa18143be98ef0ff9b9be944239843a9d52dea5b6b227f76f129cc",
-      "psnrDb": 43.01,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129575,
-      "sourceHash": "a8bc4af42dc2140fbf43556f71ebb592c9ed4e9fdb1619cbddf1af08d40f8f39",
       "width": 1200
     },
     "static/thumbnail/safe-the-human-intake-pipe.jpg": {
@@ -16070,22 +16134,6 @@
       "sourceHash": "a5006b1f02528352ecb0c436d406ab1fdbadaea523ab7508863a399630b15e5f",
       "width": 1200
     },
-    "static/thumbnail/safe-the-student-model-eats-the-teacher.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 117985,
-      "outputHash": "ab3109f377f7522f152f4b0ae7fde829bd778df49cce082cb0410074aab51f1e",
-      "psnrDb": 43.07,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 128015,
-      "sourceHash": "fce659049b3b417328b709b2ea05104db0659c841f3aed31a2ff6ee60392d100",
-      "width": 1200
-    },
     "static/thumbnail/safe-the-tea-skin-on-my-mind.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -16262,22 +16310,6 @@
       "sourceHash": "73465f01fd179f1310848d6f98cfccd7b44909b073c4f44ba090c03f2afc6427",
       "width": 1200
     },
-    "static/thumbnail/safe-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 129305,
-      "outputHash": "190640ea3257253ca04ac7941730c6d10beffda6b3b6ae985486382102e9caa2",
-      "psnrDb": 42.2,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 140975,
-      "sourceHash": "bf6fb11d68c7e0b0145b8128852dc7a011227bb74eea24ccf4dc2d582135fc1b",
-      "width": 1200
-    },
     "static/thumbnail/safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -16404,22 +16436,6 @@
       "resized": false,
       "sourceBytes": 131916,
       "sourceHash": "321954b3d038f5ae75942340f430bc0c9de35fae981221a53428e200c9d8114c",
-      "width": 1200
-    },
-    "static/thumbnail/safe-truth-adjustment-and-the-cost-of-coming-back.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115380,
-      "outputHash": "ad229162769258577a05f3fa7cf1dd9b1bb81ede9c4a438b990d3be3bd940ad3",
-      "psnrDb": 43.42,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 125025,
-      "sourceHash": "6d8d37b15fa9124b6af65d2494213cefcb279690c968948845cedc95841e3c7a",
       "width": 1200
     },
     "static/thumbnail/safe-turing-test-for-human-usefulness.jpg": {
@@ -16564,22 +16580,6 @@
       "resized": false,
       "sourceBytes": 119761,
       "sourceHash": "ba16dfd7cfe3b522f1722271b0b0d707de89068e40d3d4c7025ff8e729d343df",
-      "width": 1200
-    },
-    "static/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 133390,
-      "outputHash": "874b548108d51ca773fe803448f845ad45584ae6c70e23d7ee7edd490b2ad650",
-      "psnrDb": 41.93,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 145317,
-      "sourceHash": "8194dd819aad971b372f1eb90fb10ce80bd901837f725097aedfec4399d46928",
       "width": 1200
     },
     "static/thumbnail/safe-welcome-to-suvroghosh-in.jpg": {

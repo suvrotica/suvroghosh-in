@@ -2,16 +2,18 @@
 title: "Intolerable Cruelty and the God-Zila of El Niño"
 description: "A bipolar monologue from a defeated Calcutta flat on the rising tide of AI capitalism, agentic ransomware, and the hydraulic geometry of modern despair."
 date: "2026-07-10"
+dateModified: "2026-08-07"
 category: "Monologue"
 tags: ["Intolerable Cruelty","Intolerable","Billion","Blindness","Dollars","Algorithmic","Cruelty","Reaches","Cure","Corporate"]
 published: true
 color: "#1a1a2e"
-thumbnail: "/thumbnail/safe-intolerable-cruelty.jpg"
+thumbnail: "/thumbnail/art-intolerable-cruelty.jpg"
+thumbnailAlt: "Man in a rain-dark Calcutta flat beneath an oppressive network of pipes"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-intolerable-cruelty.jpg" />
+<Pi src="/thumbnail/art-intolerable-cruelty.jpg" />
 
 The rain has the consistency of tepid dal left on a burner too long, and it is falling with the persistence of a government clerk who refuses to stamp your form until you have understood, in your marrow, the futility of hope, which is to say it has been falling since Tuesday and now the stairwell has become a cataract, a gastrointestinal tract regurgitating the city's undigested sins, and I on the first floor—first being a cruelly optimistic designation for what is essentially the basement's slightly less damp cousin—can already smell the coming inundation, that particular Calcutta perfume of drain-water, diesel, and disappointed ambitions, rising through the floorboards like a ghost that has forgotten it is dead, and I am thinking, as the first blister of moisture swells on the wall like a lymph node reacting to infection, that this is the truest geometry of intolerable cruelty: not the grand guignol of war or the theatrical hemorrhage of famine, but the slow, hydraulic certainty that the water will come, and no one, not the municipality, not the landlord, not the algorithmic gods in their climate-controlled server farms, will lift a finger to stop it, because the modern capitalist subject, that splendidly isolated monad of self-interest, has evolved, or rather devolved, into a creature so perfectly insular that he can watch his neighbor drown in three inches of sludge while refreshing his feed to see if Grok 4.5 has reached its promised 1.5 trillion parameters, a number so obscene in its magnitude that it makes the national debt look like a child's allowance, and yes, I read that SpaceX, that phallic enterprise of Martian onanism, has priced the largest IPO in history at 1.77 trillion dollars, only to turn around four days later and spend sixty billion on Cursor, an AI coding tool, as if the cure for cancer and the salvation of the proletariat were hidden inside a Python script, and I think to myself, here is the intolerable cruelty in its Sunday best: while these digital nabobs are busy with their testicular gerrymandering of the global economy, I am wondering whether the water will reach my mattress before the electricity returns, or if the electricity will return at all, given that the CESC has apparently decided that my neighborhood is a laboratory for studying the effects of pre-industrial darkness on the already depressed.
 
