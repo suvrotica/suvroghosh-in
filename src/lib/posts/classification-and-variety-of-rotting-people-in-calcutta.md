@@ -1,17 +1,19 @@
 ---
 title: "The Classification and Variety of Rotting People in Calcutta"
-description: "A sharp, readable Calcutta satire on civic rot, poverty, corruption, religious hypocrisy, family cruelty, political brokerage, and the small daily moral leaks that turn a city sour."
+description: "A Calcutta satire on civic rot, poverty, corruption, hypocrisy, family cruelty, political brokerage, and everyday moral leaks."
 date: "2026-05-18"
+dateModified: "2026-08-07"
 category: "Calcutta"
 tags: ["Ten Rupees","Slightly Harder","Rot","Poverty","Scandal","Benefits","Local","Everyone","Faith","Broken"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-classification-and-variety-of-rotting-people-in-calcutta.jpg"
+thumbnail: "/thumbnail/art-classification-and-variety-of-rotting-people-in-calcutta.jpg"
+thumbnailAlt: "Kolkata pedestrians cross cracked shadow-like strips flowing toward a gutter"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-classification-and-variety-of-rotting-people-in-calcutta.jpg" />
+<Pi src="/thumbnail/art-classification-and-variety-of-rotting-people-in-calcutta.jpg" />
 
 Acronyms and local terms:
 

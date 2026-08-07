@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T01:07:21.846243+00:00",
+  "generatedAt": "2026-08-07T01:47:41.904186+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-07-20T02:01:53.364711+00:00",
@@ -692,12 +692,12 @@
       "wordCount": 130
     },
     "annoyed-shouldering-the-chips-calcutta-public-transport": {
-      "generatedAt": "2026-07-20T02:02:12.912125+00:00",
+      "generatedAt": "2026-08-07T01:47:15.399720+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/annoyed-shouldering-the-chips-calcutta-public-transport.svg",
       "source": "src/lib/posts/annoyed-shouldering-the-chips-calcutta-public-transport.md",
-      "sourceHash": "7be4d5049c69ef9c3f00fd6243c87ffb31bbb5550de8142b706f949d0d597083",
-      "sourceModified": "2026-07-20T02:01:42.064886+00:00",
+      "sourceHash": "d6a809a35fffebfcbcc75920f9c622432b37d3d0ee7048899eb22f8ed3f416f4",
+      "sourceModified": "2026-08-07T01:21:16.825908+00:00",
       "topWords": [
         "Bus",
         "Someone",
@@ -899,12 +899,12 @@
       "wordCount": 130
     },
     "asmr-soft-apocalypse": {
-      "generatedAt": "2026-07-20T02:02:18.675716+00:00",
+      "generatedAt": "2026-08-07T01:47:16.122839+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/asmr-soft-apocalypse.svg",
       "source": "src/lib/posts/asmr-soft-apocalypse.md",
-      "sourceHash": "65a1f6ef81af1edc03415e98460c762d8215d6057f232a0daed38aa7f9997e5a",
-      "sourceModified": "2026-07-20T02:01:42.116048+00:00",
+      "sourceHash": "f1b44fdd7410a8ec9f0e4770f5dd11d93bc922b3e8c7c51b6dac55f51f433e67",
+      "sourceModified": "2026-08-07T01:47:01.878009+00:00",
       "topWords": [
         "Someone",
         "ASMR",
@@ -1014,12 +1014,12 @@
       "wordCount": 130
     },
     "bar-english-for-bengalis": {
-      "generatedAt": "2026-07-20T02:02:21.934325+00:00",
+      "generatedAt": "2026-08-07T01:47:16.884546+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/bar-english-for-bengalis.svg",
       "source": "src/lib/posts/bar-english-for-bengalis.md",
-      "sourceHash": "42253624a4dee81fd2a7816b3d5f49fb440938d2c2c583f0e32b9495bd8b7391",
-      "sourceModified": "2026-07-20T02:00:12.536444+00:00",
+      "sourceHash": "79a8b1d1fe33a84b43f08b8e6ea2308367e4e18619a4ca756e65efeda644ea07",
+      "sourceModified": "2026-08-07T01:47:01.888342+00:00",
       "topWords": [
         "Drink",
         "Means",
@@ -1083,12 +1083,12 @@
       "wordCount": 130
     },
     "basel-problem-what-diffusion-model-means": {
-      "generatedAt": "2026-07-20T02:02:24.419792+00:00",
+      "generatedAt": "2026-08-07T01:47:17.632922+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/basel-problem-what-diffusion-model-means.svg",
       "source": "src/lib/posts/basel-problem-what-diffusion-model-means.md",
-      "sourceHash": "6c884373e7c007d66c1578e3be86a36675abb59deb9618a191aaed22a666fc14",
-      "sourceModified": "2026-07-20T02:00:12.450156+00:00",
+      "sourceHash": "5bed194227a4d70acec6ee6a059f1da39ca1cbd6e6a5e27218c2918b7e7ef6c3",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Model",
         "Diffusion",
@@ -1221,12 +1221,12 @@
       "wordCount": 130
     },
     "bengali-tintin-in-kolkata": {
-      "generatedAt": "2026-07-20T02:02:29.306456+00:00",
+      "generatedAt": "2026-08-07T01:47:18.399602+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/bengali-tintin-in-kolkata.svg",
       "source": "src/lib/posts/bengali-tintin-in-kolkata.md",
-      "sourceHash": "1753d0110e536596e904fd6a4905356a2722c0dd6ea4f5b0c9d6061b0ec7b1d3",
-      "sourceModified": "2026-07-20T02:00:12.521722+00:00",
+      "sourceHash": "f8f451fe4142b84766a3ef98a7449c949024e670eb3472d0b2c73391667d88a1",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "Tintin",
         "Fish",
@@ -1428,12 +1428,12 @@
       "wordCount": 130
     },
     "body-going-to-plan": {
-      "generatedAt": "2026-07-20T02:02:35.922335+00:00",
+      "generatedAt": "2026-08-07T01:47:19.166190+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/body-going-to-plan.svg",
       "source": "src/lib/posts/body-going-to-plan.md",
-      "sourceHash": "ec685575a199ef8d82a7b0364da3d6a73fe3bfdac3e144aaa8b5d29cccfb9765",
-      "sourceModified": "2026-07-20T02:01:42.256033+00:00",
+      "sourceHash": "8020279acf83889c19dd37674e61a9eb12e3684b0277eca6fbd35d49fdea5ddd",
+      "sourceModified": "2026-08-07T01:21:16.825908+00:00",
       "topWords": [
         "Depression",
         "System",
@@ -1750,12 +1750,12 @@
       "wordCount": 130
     },
     "calcutta-smog-and-the-coming-winter": {
-      "generatedAt": "2026-07-20T02:02:43.889401+00:00",
+      "generatedAt": "2026-08-07T01:47:19.993354+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/calcutta-smog-and-the-coming-winter.svg",
       "source": "src/lib/posts/calcutta-smog-and-the-coming-winter.md",
-      "sourceHash": "ac9a664e0bff64108046d77971ddb58018a5371bb40666e16aee123238f6054b",
-      "sourceModified": "2026-07-20T02:01:42.335155+00:00",
+      "sourceHash": "fc3141e938a7b058396dc62d9373189e67b5a0fe9363af8d5b6711132fb76bb4",
+      "sourceModified": "2026-08-07T01:47:01.907929+00:00",
       "topWords": [
         "Air",
         "Winter",
@@ -2072,12 +2072,12 @@
       "wordCount": 130
     },
     "classification-and-variety-of-rotting-people-in-calcutta": {
-      "generatedAt": "2026-07-20T02:02:51.497204+00:00",
+      "generatedAt": "2026-08-07T01:47:20.649105+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/classification-and-variety-of-rotting-people-in-calcutta.svg",
       "source": "src/lib/posts/classification-and-variety-of-rotting-people-in-calcutta.md",
-      "sourceHash": "d2a1a365981fd411defcfefd5a8edc97672359ed53f2974992a3a7daee0cc57d",
-      "sourceModified": "2026-07-20T02:01:42.409616+00:00",
+      "sourceHash": "d5ed8e0826cadca211b538a5e4ce0cbd79c37165e98f2d959112dad70d85054c",
+      "sourceModified": "2026-08-07T01:21:16.825908+00:00",
       "topWords": [
         "Rot",
         "Everyone",
@@ -2785,12 +2785,12 @@
       "wordCount": 130
     },
     "drakes-equation-alien-arithmetic-bipolar-bengali-calcutta": {
-      "generatedAt": "2026-07-20T02:03:07.603762+00:00",
+      "generatedAt": "2026-08-07T01:47:21.366239+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.svg",
       "source": "src/lib/posts/drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.md",
-      "sourceHash": "b0313d192ad85a1dc6c9aa82d23675b11d553937df433f41e7f4746151806a2a",
-      "sourceModified": "2026-07-20T02:00:12.463691+00:00",
+      "sourceHash": "13e1c7c2a6894365303ee048dc217e4e1cc992fe30a2584b396481c5edefcb6b",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Planets",
         "Intelligence",
@@ -2877,12 +2877,12 @@
       "wordCount": 130
     },
     "election-puja-and-the-common-eye": {
-      "generatedAt": "2026-07-20T02:03:09.169576+00:00",
+      "generatedAt": "2026-08-07T01:47:22.210016+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/election-puja-and-the-common-eye.svg",
       "source": "src/lib/posts/election-puja-and-the-common-eye.md",
-      "sourceHash": "041a43f8a000165650d3f2b2c7b0a13525979efa548fd9fcdc99a9b343a2914d",
-      "sourceModified": "2026-07-20T02:00:12.700463+00:00",
+      "sourceHash": "4fbeef2f61c7d54774aafbf81efb9a7079a24299db3b4d39e5d32931002ce15e",
+      "sourceModified": "2026-08-07T01:47:01.952790+00:00",
       "topWords": [
         "Man",
         "Bengal",
@@ -3130,12 +3130,12 @@
       "wordCount": 130
     },
     "facial-pleasure-receipts-and-modern-euphemism": {
-      "generatedAt": "2026-07-20T02:03:16.786431+00:00",
+      "generatedAt": "2026-08-07T01:47:22.999523+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/facial-pleasure-receipts-and-modern-euphemism.svg",
       "source": "src/lib/posts/facial-pleasure-receipts-and-modern-euphemism.md",
-      "sourceHash": "05a4b619f0232df4d0c8aef7985326aee25d3e79968e02495aa933f45a4ddeeb",
-      "sourceModified": "2026-07-20T02:00:12.675642+00:00",
+      "sourceHash": "b7db7bdd0c4414d9e5f39b541c4ab439de2b80c54f5e2199c5a84f8da592fac3",
+      "sourceModified": "2026-08-07T01:47:01.965273+00:00",
       "topWords": [
         "Smile",
         "Face",
@@ -3268,12 +3268,12 @@
       "wordCount": 130
     },
     "fhir-for-a-curious-student-in-calcutta": {
-      "generatedAt": "2026-07-20T02:03:19.869609+00:00",
+      "generatedAt": "2026-08-07T01:47:23.753463+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/fhir-for-a-curious-student-in-calcutta.svg",
       "source": "src/lib/posts/fhir-for-a-curious-student-in-calcutta.md",
-      "sourceHash": "d0fcad4f0f3be6006d1927afb92c17c3e8a1e5418e3c111f483f10c1f0f7745d",
-      "sourceModified": "2026-07-20T02:00:12.403912+00:00",
+      "sourceHash": "ce3c2022ff13bf1f41e91c405127f996d2dc2833606a31162ac575c7089c7a20",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "FHIR",
         "Data",
@@ -3337,12 +3337,12 @@
       "wordCount": 130
     },
     "first-door-first-light-the-science-of-clinging-to-the-first-chance": {
-      "generatedAt": "2026-07-20T02:03:21.348246+00:00",
+      "generatedAt": "2026-08-07T01:47:24.484241+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/first-door-first-light-the-science-of-clinging-to-the-first-chance.svg",
       "source": "src/lib/posts/first-door-first-light-the-science-of-clinging-to-the-first-chance.md",
-      "sourceHash": "f2daee13d7d0c8dee2c61313761654bb475847a8c1f6d723c43a9c698d9c655a",
-      "sourceModified": "2026-07-20T02:00:12.346366+00:00",
+      "sourceHash": "8c5f423ac5d96fc4bb47abceea833494d51d061abb16139e07aa3939ec84993e",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "First",
         "Person",
@@ -3475,12 +3475,12 @@
       "wordCount": 130
     },
     "folded-arms-and-other-small-national-disasters": {
-      "generatedAt": "2026-07-20T02:03:26.005179+00:00",
+      "generatedAt": "2026-08-07T01:47:25.143982+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/folded-arms-and-other-small-national-disasters.svg",
       "source": "src/lib/posts/folded-arms-and-other-small-national-disasters.md",
-      "sourceHash": "fbb9019eb4b78dce5a854315c31631d8fbee6012590aa2d4a389f831f53f8439",
-      "sourceModified": "2026-07-20T02:00:12.702470+00:00",
+      "sourceHash": "e0f68357c06966e1db1edf143a864cf1665d3cdc1a56eb805d45f98d038b799d",
+      "sourceModified": "2026-08-07T01:39:42.079624+00:00",
       "topWords": [
         "Arms",
         "Man",
@@ -3751,12 +3751,12 @@
       "wordCount": 130
     },
     "hardys-law-genetics-callow-calcuttan": {
-      "generatedAt": "2026-07-20T02:03:34.512903+00:00",
+      "generatedAt": "2026-08-07T01:47:25.866143+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hardys-law-genetics-callow-calcuttan.svg",
       "source": "src/lib/posts/hardys-law-genetics-callow-calcuttan.md",
-      "sourceHash": "1f024c365bc612405ef84e331f1125bc93bc970582fac76eef4e517e71ea7408",
-      "sourceModified": "2026-07-20T02:00:12.668978+00:00",
+      "sourceHash": "117c2e9ef26ad6830e54858dc9133c86bd6e120bb458ab4602c78309172c4de8",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Gene",
         "Allele",
@@ -3912,12 +3912,12 @@
       "wordCount": 130
     },
     "hie-first-principles-openhie": {
-      "generatedAt": "2026-07-22T02:02:09.081961+00:00",
+      "generatedAt": "2026-08-07T01:47:26.651436+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hie-first-principles-openhie.svg",
       "source": "src/lib/posts/hie-first-principles-openhie.md",
-      "sourceHash": "1eb52a5fb7545d24681986f8940d277db17295e7ed00e31f3606394a18fc7145",
-      "sourceModified": "2026-07-22T01:47:15.158340+00:00",
+      "sourceHash": "41e90d03caf257b32eaa63e77e32cd305719e5be173e31f158f839dea0987c95",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "Health",
         "Data",
@@ -4234,12 +4234,12 @@
       "wordCount": 130
     },
     "how-va-healthcare-data-systems-work": {
-      "generatedAt": "2026-07-20T02:03:45.352799+00:00",
+      "generatedAt": "2026-08-07T01:47:27.412535+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/how-va-healthcare-data-systems-work.svg",
       "source": "src/lib/posts/how-va-healthcare-data-systems-work.md",
-      "sourceHash": "53dc7fece1ac1aa41c1e91824eb59c2180253f12323f242a0ed7b5e46877e0a0",
-      "sourceModified": "2026-07-20T02:00:12.616189+00:00",
+      "sourceHash": "3a47ba33a3fbb39de06f1ceed571ecca4a85ac1153bcc27a770cc19e56a12f48",
+      "sourceModified": "2026-08-07T01:47:02.015962+00:00",
       "topWords": [
         "Data",
         "Vista",
@@ -4372,12 +4372,12 @@
       "wordCount": 130
     },
     "if-lies-had-noses-again": {
-      "generatedAt": "2026-07-20T02:03:49.130456+00:00",
+      "generatedAt": "2026-08-07T01:47:28.111619+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/if-lies-had-noses-again.svg",
       "source": "src/lib/posts/if-lies-had-noses-again.md",
-      "sourceHash": "0720c2844bc6d1bba21ab3b7a1fb6c3dab84fd9b15b4ad1111431686da608fe2",
-      "sourceModified": "2026-07-20T02:01:42.961253+00:00",
+      "sourceHash": "f0ca771eb6c0a7486359017287e88d2ce2c2eb7814df7eca98e64795896878b6",
+      "sourceModified": "2026-08-07T01:39:42.079624+00:00",
       "topWords": [
         "Lie",
         "Nose",
@@ -4487,12 +4487,12 @@
       "wordCount": 130
     },
     "india-ehr-hie-ai-constraints": {
-      "generatedAt": "2026-07-22T02:02:13.215345+00:00",
+      "generatedAt": "2026-08-07T01:47:28.832861+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/india-ehr-hie-ai-constraints.svg",
       "source": "src/lib/posts/india-ehr-hie-ai-constraints.md",
-      "sourceHash": "df12f7d5a722c086272a28a093ed5dada3a0ce7eea4625fd64856e362a779b84",
-      "sourceModified": "2026-07-22T01:23:44.683857+00:00",
+      "sourceHash": "c31173aef4f8ae737b9d482a4ab3d42152ed67303a0fe4e2ab6b86c668588bf8",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "Data",
         "Clinical",
@@ -4533,12 +4533,12 @@
       "wordCount": 130
     },
     "india-noise-machine-small-man": {
-      "generatedAt": "2026-07-20T02:03:53.718559+00:00",
+      "generatedAt": "2026-08-07T01:47:29.510606+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/india-noise-machine-small-man.svg",
       "source": "src/lib/posts/india-noise-machine-small-man.md",
-      "sourceHash": "8b7b48d34ad9978b1b9f17c024ad7ac96b70c413ad80e15921e9af4e33215f55",
-      "sourceModified": "2026-07-20T02:01:43.026501+00:00",
+      "sourceHash": "6ba521b033e17ede9b07fe6a21964c2aae89ecc7c737f8447b50f8baadbf1b80",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Becomes",
         "India",
@@ -5062,12 +5062,12 @@
       "wordCount": 130
     },
     "latent-space-healthcare-data": {
-      "generatedAt": "2026-07-20T02:04:10.078047+00:00",
+      "generatedAt": "2026-08-07T01:47:30.166085+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/latent-space-healthcare-data.svg",
       "source": "src/lib/posts/latent-space-healthcare-data.md",
-      "sourceHash": "a4913a290ba108b000ec668805247a5ef9a3d15d0f05b12a3b28fb5493a0a524",
-      "sourceModified": "2026-07-20T02:01:43.221102+00:00",
+      "sourceHash": "7cf8d583f794d5cd7527fddd2c6927032094a68f61af9f24b70e8f7f67df7b0b",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "Latent",
         "Data",
@@ -5453,12 +5453,12 @@
       "wordCount": 130
     },
     "mindfulness-calcutta-4am": {
-      "generatedAt": "2026-07-20T02:04:21.147923+00:00",
+      "generatedAt": "2026-08-07T01:47:30.921764+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/mindfulness-calcutta-4am.svg",
       "source": "src/lib/posts/mindfulness-calcutta-4am.md",
-      "sourceHash": "ae51b8caf881cfdd1cdec5267cd1d3d272900caeba42551a3aa525658e44376e",
-      "sourceModified": "2026-07-20T02:01:43.309364+00:00",
+      "sourceHash": "59623911884de4bb79c3d18af146c3e380a1d48b01d933ec344cb205f880a18e",
+      "sourceModified": "2026-08-07T01:21:16.833084+00:00",
       "topWords": [
         "Writing",
         "Meditation",
@@ -6327,12 +6327,12 @@
       "wordCount": 130
     },
     "political-promises-and-reality": {
-      "generatedAt": "2026-07-20T02:04:44.506656+00:00",
+      "generatedAt": "2026-08-07T01:47:31.594002+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/political-promises-and-reality.svg",
       "source": "src/lib/posts/political-promises-and-reality.md",
-      "sourceHash": "64fdff3fb7b8b4dac516c91241394dadda9a0fa6412ac99612dbf831931dcd14",
-      "sourceModified": "2026-07-20T02:00:12.489641+00:00",
+      "sourceHash": "50c69653efd721aa77a26fa38c7d879d75d5a10131251dc8de0d1cb3cf8711a0",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Promise",
         "Every",
@@ -6511,12 +6511,12 @@
       "wordCount": 130
     },
     "questions_change_systems_uthscsa_va": {
-      "generatedAt": "2026-07-20T02:04:49.728825+00:00",
+      "generatedAt": "2026-08-07T01:47:32.255977+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/questions_change_systems_uthscsa_va.svg",
       "source": "src/lib/posts/questions_change_systems_uthscsa_va.md",
-      "sourceHash": "4797a7db5a52a3f5b6b0ccae0d63c73838c2fc5f70eeaed7024efbe3c412feb4",
-      "sourceModified": "2026-07-20T02:00:12.312915+00:00",
+      "sourceHash": "0c5910f6a23c6be1460197964ff6bf113f7399a6dced8eb1a6d6403ca6b42c27",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "Data",
         "Patient",
@@ -6902,12 +6902,12 @@
       "wordCount": 130
     },
     "rotten-sack-indian-politics": {
-      "generatedAt": "2026-07-20T02:04:57.979102+00:00",
+      "generatedAt": "2026-08-07T01:47:32.932730+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/rotten-sack-indian-politics.svg",
       "source": "src/lib/posts/rotten-sack-indian-politics.md",
-      "sourceHash": "000766681c03cd74ab2c1b4a4afa95fba7f0479183e39386ba1ed1bcdcb74545",
-      "sourceModified": "2026-07-20T02:00:12.593280+00:00",
+      "sourceHash": "59b4a9e766dede7a2acdb3ee435112c4e9de8a656a1a0012c5d68ba4626735fa",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Police",
         "Indian",
@@ -7040,12 +7040,12 @@
       "wordCount": 130
     },
     "science-is-not-a-solitary-organ": {
-      "generatedAt": "2026-07-20T02:05:01.870447+00:00",
+      "generatedAt": "2026-08-07T01:47:33.647479+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/science-is-not-a-solitary-organ.svg",
       "source": "src/lib/posts/science-is-not-a-solitary-organ.md",
-      "sourceHash": "0ddbe9351705b8fad412516282c743b3d90a2a0223683d843d3becce752050fa",
-      "sourceModified": "2026-07-20T02:00:12.533974+00:00",
+      "sourceHash": "74908760af286c4f1b299f8d1d277783f3564aec3b0d01db3e1d832e007b4f7f",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "Research",
         "Data",
@@ -7201,12 +7201,12 @@
       "wordCount": 130
     },
     "shadow-architecture-clinical-ai": {
-      "generatedAt": "2026-07-20T02:05:05.760928+00:00",
+      "generatedAt": "2026-08-07T01:47:34.308362+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/shadow-architecture-clinical-ai.svg",
       "source": "src/lib/posts/shadow-architecture-clinical-ai.md",
-      "sourceHash": "f6a0993c24c39d618760ed874f03f10bb9132f04ed32a8a2116a0ae2d5c84fb3",
-      "sourceModified": "2026-07-20T02:00:12.677706+00:00",
+      "sourceHash": "d83190e7fe16fa81dd23fda8d82041462461e2bcb137c4bfefbd6708130605dd",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "AI",
         "Model",
@@ -8167,12 +8167,12 @@
       "wordCount": 130
     },
     "the-aromatics-of-stagnation": {
-      "generatedAt": "2026-07-20T02:05:28.347528+00:00",
+      "generatedAt": "2026-08-07T01:47:34.997737+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-aromatics-of-stagnation.svg",
       "source": "src/lib/posts/the-aromatics-of-stagnation.md",
-      "sourceHash": "b1f7f0c1fe23fd9944cee74796d11cf4c2533348ae53bb5bbaee84a2d2efd564",
-      "sourceModified": "2026-07-20T02:00:12.258619+00:00",
+      "sourceHash": "9285c1c46865d1f9d291f907bd54a5aaa746138b4dde6ff23d35ed4befb9aae5",
+      "sourceModified": "2026-08-07T01:47:02.171277+00:00",
       "topWords": [
         "Soap",
         "Sometimes",
@@ -9409,12 +9409,12 @@
       "wordCount": 130
     },
     "the-geometry-of-absence": {
-      "generatedAt": "2026-07-20T02:05:59.152840+00:00",
+      "generatedAt": "2026-08-07T01:47:35.803113+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-geometry-of-absence.svg",
       "source": "src/lib/posts/the-geometry-of-absence.md",
-      "sourceHash": "d37c8626083a31d6c987769e0ec4fea9c9a9e574e2496f20f7d25681a04511e5",
-      "sourceModified": "2026-07-20T02:00:12.693945+00:00",
+      "sourceHash": "30193a32f3b844a03a3d7d99924fded09dcb3f3b0541f9e3b4c34942a373828e",
+      "sourceModified": "2026-08-07T01:47:02.204378+00:00",
       "topWords": [
         "Merely",
         "Social",
@@ -9731,12 +9731,12 @@
       "wordCount": 130
     },
     "the-human-intake-pipe": {
-      "generatedAt": "2026-07-20T02:06:08.472247+00:00",
+      "generatedAt": "2026-08-07T01:47:36.434720+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-human-intake-pipe.svg",
       "source": "src/lib/posts/the-human-intake-pipe.md",
-      "sourceHash": "c476ca17fc1f888acc25a702e64790962159856a0fbe6fd5b71181151bea2e21",
-      "sourceModified": "2026-07-20T02:01:44.133908+00:00",
+      "sourceHash": "8fbfe7bac95db198cca11e3c990af3f15c0f794fb1ed5f38dc08c5a7ed12ba23",
+      "sourceModified": "2026-08-07T01:43:46.877730+00:00",
       "topWords": [
         "AI",
         "Human",
@@ -9938,12 +9938,12 @@
       "wordCount": 130
     },
     "the-man-held-by-the-neck": {
-      "generatedAt": "2026-07-20T02:06:12.865404+00:00",
+      "generatedAt": "2026-08-07T01:47:37.095864+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-man-held-by-the-neck.svg",
       "source": "src/lib/posts/the-man-held-by-the-neck.md",
-      "sourceHash": "f3f10dabb975e09a1b5fa2db26af74da6a8b4509ef50dc0ce20b8614c4608c3a",
-      "sourceModified": "2026-07-20T02:00:12.276931+00:00",
+      "sourceHash": "eb438b68f7b721c43ea5bc4690ce0069a42559f1bd6060d261c364c1b811a3b8",
+      "sourceModified": "2026-08-07T01:47:02.233174+00:00",
       "topWords": [
         "Man",
         "India",
@@ -11180,12 +11180,12 @@
       "wordCount": 130
     },
     "the-test-is-congress-where-congress-rules": {
-      "generatedAt": "2026-07-20T02:06:46.290447+00:00",
+      "generatedAt": "2026-08-07T01:47:37.899380+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-test-is-congress-where-congress-rules.svg",
       "source": "src/lib/posts/the-test-is-congress-where-congress-rules.md",
-      "sourceHash": "13df0474ceb0346ed96414965a64d7ef171fd35eebf20bf3626f6ec91673e67e",
-      "sourceModified": "2026-07-20T02:00:12.472098+00:00",
+      "sourceHash": "915b62b1e41a3b7056eb30996531224ecbdccbdc88e7eb8230617e472c550ea8",
+      "sourceModified": "2026-08-07T01:47:02.259350+00:00",
       "topWords": [
         "Congress",
         "Party",
@@ -11272,12 +11272,12 @@
       "wordCount": 130
     },
     "the-trolley-problem-is-already-hiding-in-healthcare": {
-      "generatedAt": "2026-07-20T02:06:48.616148+00:00",
+      "generatedAt": "2026-08-07T01:47:38.532624+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-trolley-problem-is-already-hiding-in-healthcare.svg",
       "source": "src/lib/posts/the-trolley-problem-is-already-hiding-in-healthcare.md",
-      "sourceHash": "c9e6cb982f2b9a28df3af25bfea213ef3df823351a6c95f79603a2a639aa9095",
-      "sourceModified": "2026-07-20T02:01:44.385253+00:00",
+      "sourceHash": "9fcb57def19f93fd046be1d442b0727953be708ea16e9a86363fe079732382ff",
+      "sourceModified": "2026-08-07T01:47:02.271571+00:00",
       "topWords": [
         "Patient",
         "Data",
@@ -11663,12 +11663,12 @@
       "wordCount": 130
     },
     "the-zeitgeist-of-calcutta-has-changed": {
-      "generatedAt": "2026-07-20T02:06:58.323533+00:00",
+      "generatedAt": "2026-08-07T01:47:39.199248+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-zeitgeist-of-calcutta-has-changed.svg",
       "source": "src/lib/posts/the-zeitgeist-of-calcutta-has-changed.md",
-      "sourceHash": "b45a86840d94a7e56b27aee16c0eccf58a9983eb28deb4b68cb0ea1ac8a7e775",
-      "sourceModified": "2026-07-20T02:00:12.416197+00:00",
+      "sourceHash": "b50c3af601da4fa5c33f54551be644dd585b45e506e75e33004325e6bd77d801",
+      "sourceModified": "2026-08-07T01:47:02.277647+00:00",
       "topWords": [
         "Tea",
         "Somebody",
@@ -12422,12 +12422,12 @@
       "wordCount": 130
     },
     "vector-databases": {
-      "generatedAt": "2026-07-20T02:07:19.772664+00:00",
+      "generatedAt": "2026-08-07T01:47:39.861423+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/vector-databases.svg",
       "source": "src/lib/posts/vector-databases.md",
-      "sourceHash": "bd59791d13a4f83741ff5f158ab1e211b1b3d45a4cc62bd861797e378e56cba1",
-      "sourceModified": "2026-07-20T02:00:12.387844+00:00",
+      "sourceHash": "c4ee7b0d900f7497f1c9ff81e153365246ec9eb2b1ccf78f81f1fa213b5d3b2d",
+      "sourceModified": "2026-08-07T01:47:02.307749+00:00",
       "topWords": [
         "Vector",
         "Data",
@@ -12652,12 +12652,12 @@
       "wordCount": 130
     },
     "when-variety-starts-wearing-the-same-shirt": {
-      "generatedAt": "2026-07-20T02:07:25.083597+00:00",
+      "generatedAt": "2026-08-07T01:47:40.588230+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/when-variety-starts-wearing-the-same-shirt.svg",
       "source": "src/lib/posts/when-variety-starts-wearing-the-same-shirt.md",
-      "sourceHash": "55c0ac1f37f37d1c45da518d905fad29713c09b323a62eef45ddf60b56afa56c",
-      "sourceModified": "2026-07-20T02:01:44.613936+00:00",
+      "sourceHash": "ed916fc8c6014f1d69d696ac871b66285e2e195bf7a4c4dfd7e9e61c39b02b1e",
+      "sourceModified": "2026-08-07T01:47:02.316686+00:00",
       "topWords": [
         "Better",
         "AI",
@@ -12744,12 +12744,12 @@
       "wordCount": 130
     },
     "why-read-a-healthcare-it-blog-in-the-age-of-ai": {
-      "generatedAt": "2026-07-22T23:03:01.578837+00:00",
+      "generatedAt": "2026-08-07T01:47:41.199840+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/why-read-a-healthcare-it-blog-in-the-age-of-ai.svg",
       "source": "src/lib/posts/why-read-a-healthcare-it-blog-in-the-age-of-ai.md",
-      "sourceHash": "175b8da3be374791c2c5301397d527f6402bac6bee74046564b4c9efc26c3082",
-      "sourceModified": "2026-07-22T22:48:19.806717+00:00",
+      "sourceHash": "fad867ad3aaefebd31587aaacac0fa5dc2fe7541c59688613b25ba17377ea853",
+      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
       "topWords": [
         "AI",
         "Healthcare",
@@ -12767,12 +12767,12 @@
       "wordCount": 130
     },
     "woke-word-calcutta-redux": {
-      "generatedAt": "2026-07-20T02:07:28.884059+00:00",
+      "generatedAt": "2026-08-07T01:47:41.904186+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/woke-word-calcutta-redux.svg",
       "source": "src/lib/posts/woke-word-calcutta-redux.md",
-      "sourceHash": "15747d871364dedfd3cbd2b3afd108fed0e7bb20ee68ddc48ea40e73f9fdb6a6",
-      "sourceModified": "2026-07-20T02:00:12.444141+00:00",
+      "sourceHash": "d98153520d5423c8bc1565fd9c5fa4adeecfb2b258cc402cad4f84e6dbc9bde4",
+      "sourceModified": "2026-08-07T01:47:02.329786+00:00",
       "topWords": [
         "Woke",
         "Social",

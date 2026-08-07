@@ -1,17 +1,19 @@
 ---
 title: "The First Door That Opens"
-description: "Why some of us cling to the first chance, first love, first job, or first rescue rope: a street-level essay on decision theory, scarcity, memory, attachment, and the odd mathematics of human longing."
+description: "How scarcity, memory, attachment and decision theory can make people cling to the first chance that appears."
 date: "2026-05-21"
+dateModified: "2026-08-07"
 category: "Science"
 tags: ["Mere Exposure Effect","Optimal Stopping","Best Possible","Halo Effect","Prior Belief","Bayesian","Optimal","Satisficing","Attachment","Mere"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg"
+thumbnail: "/thumbnail/art-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg"
+thumbnailAlt: "Indian man grips the first open door while looking toward other sunlit doorways"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg" />
+<Pi src="/thumbnail/art-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg" />
 
 
 Acronyms and terms used in this post:

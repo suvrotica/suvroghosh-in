@@ -2,14 +2,14 @@
 title: "HIE from First Principles"
 description: "How Health Information Exchange and OpenHIE coordinate patient identity, terminology, provenance, registries, and shared records across health systems."
 date: "2026-04-21"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "healthcare it"
 tags: ["HIE","OpenHIE","FHIR","Healthcare Interoperability","Client Registry","Shared Health Record","Interoperability Layer","Health Information Systems","Data Provenance","Health Data Standards"]
 pinnedTags: ["HIE", "OpenHIE", "FHIR", "Healthcare Interoperability", "Client Registry", "Shared Health Record", "Interoperability Layer", "Health Information Systems", "Data Provenance", "Health Data Standards"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-hie-first-principles-openhie.jpg"
-thumbnailAlt: "Muted abstract layers and connecting contour lines suggesting separate health systems exchanging information"
+thumbnail: "/thumbnail/art-hie-first-principles-openhie.jpg"
+thumbnailAlt: "Ceramic healthcare institutions linked through a central exchange hub by coloured patient tokens"
 mediaReviewed: true
 inPlainEnglish: "A health information exchange is not merely a data pipe. It is a governed agreement about identity, terminology, provenance, time, authority, and what may safely cross an institutional boundary; OpenHIE is useful because its component model makes those agreements visible."
 keyTerms: ["Health Information Exchange", "OpenHIE", "Client Registry", "Interoperability Layer", "Shared Health Record", "Provenance"]
@@ -24,7 +24,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hie-first-principles-openhie.jpg" alt="" />
+<Pi src="/thumbnail/art-hie-first-principles-openhie.jpg" alt="" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

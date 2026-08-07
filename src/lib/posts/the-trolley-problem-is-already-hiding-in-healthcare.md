@@ -1,17 +1,28 @@
 ---
 title: "The Trolley Problem Is In The Healthcare Queue"
-description: "A Calcutta-grounded essay on how healthcare turns moral choice into queues, dashboards, alerts, codes, claims, risk models, prior authorization rules, and ordinary workflow."
+description: "How healthcare embeds moral choices in queues, alerts, claims, risk models, prior authorization, codes, and ordinary workflow."
 date: "2026-05-29"
+dateModified: "2026-08-07"
 category: "Healthcare-IT"
-tags: ["Prior Authorization","Moral Crumple Zone","Population Health","Decision Support","Morally Neutral","Lever","Trolley","Pulls","Clinician","Authorization"]
+tags: ["Prior Authorization","Moral Crumple Zone","Population Health","Decision Support","Morally Neutral","Lever","Trolley","Clinician","Patient","Authorization"]
 published: true
 color: "black"
-thumbnail: "/thumbnail/safe-the-trolley-problem-is-already-hiding-in-healthcare.jpg"
+thumbnail: "/thumbnail/art-the-trolley-problem-is-already-hiding-in-healthcare.jpg"
+thumbnailAlt: "Calcutta hospital queue routed toward two care rooms by a clerk's brass lever"
+inPlainEnglish: "Healthcare systems make moral choices whenever they rank queues, trigger alerts, approve claims, allocate staff, or label risk. Software can hide those choices inside ordinary workflow, but the consequences still fall on patients and the people asked to act on the system's output."
+keyTerms: ["Clinical Ethics", "Prior Authorization", "Decision Support", "Risk Model", "Resource Allocation", "Moral Crumple Zone", "Clinical Workflow", "Accountability"]
+faq:
+  - question: "Where does the trolley problem appear in healthcare?"
+    answer: "It appears whenever limited time, money, beds, staff, or attention are allocated through queues, triage rules, risk scores, alerts, claims, and authorization workflows."
+  - question: "Can a healthcare algorithm be morally neutral?"
+    answer: "No. Its objective, thresholds, data, exclusions, and workflow placement distribute benefits and burdens, even when the interface presents the result as a technical fact."
+  - question: "What is a moral crumple zone in clinical technology?"
+    answer: "It is a situation where a frontline clinician or worker absorbs blame for a failure produced by a wider system of policy, software, incentives, and constrained choices."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-trolley-problem-is-already-hiding-in-healthcare.jpg" />
+<Pi src="/thumbnail/art-the-trolley-problem-is-already-hiding-in-healthcare.jpg" />
 
 ## The Lever Became A Queue
 
