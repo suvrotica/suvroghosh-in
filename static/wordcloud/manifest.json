@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T15:53:27.777974+00:00",
+  "generatedAt": "2026-08-07T16:27:10.796719+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10237,12 +10237,12 @@
       "wordCount": 130
     },
     "the-museum-of-invisible-weather": {
-      "generatedAt": "2026-08-07T15:53:24.992597+00:00",
+      "generatedAt": "2026-08-07T16:27:10.695599+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-museum-of-invisible-weather.svg",
       "source": "src/lib/posts/the-museum-of-invisible-weather.md",
-      "sourceHash": "c71592710a3f649ccea7eb97415311c095c8cd8d3314486160498a181b19cfbc",
-      "sourceModified": "2026-08-07T15:36:00.556737+00:00",
+      "sourceHash": "b998b1544383538b7c31e8d1e0c612a8c957b06f358545c2c9f60a406b5fcf84",
+      "sourceModified": "2026-08-07T16:23:43.683897+00:00",
       "topWords": [
         "Field",
         "Frame",
