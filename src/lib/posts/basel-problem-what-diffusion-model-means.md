@@ -1,17 +1,19 @@
 ---
 title: "What a Diffusion Model Is, and Why Pi Sneaks Into the Hospital"
-description: "A plain-English explanation of biological diffusion models and why the Basel problem identity helps keep them properly normalized. The point is simple: the model must not accidentally create or destroy drug, oxygen, dye, heat, or signal before the story even begins."
+description: "A plain-English guide to biological diffusion models, normalization and why the Basel identity prevents false creation or loss."
 date: "2026-06-06"
+dateModified: "2026-08-07"
 category: "Science"
 tags: ["Diffusion Model","Basel Identity","Drug Oxygen","Model Begins","Diffusion","Basel","Dye","Frac","Drug","Spreading"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-basel-problem-what-diffusion-model-means.jpg"
+thumbnail: "/thumbnail/art-basel-problem-what-diffusion-model-means.jpg"
+thumbnailAlt: "Pink particles diffuse through concentric tissue rings beside shrinking square glass tiles"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-basel-problem-what-diffusion-model-means.jpg" />
+<Pi src="/thumbnail/art-basel-problem-what-diffusion-model-means.jpg" />
 
 Acronyms used in this post:
 

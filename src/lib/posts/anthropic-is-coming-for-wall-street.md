@@ -1,17 +1,19 @@
 ---
 title: "Anthropic Is Coming for Wall Street"
-description: "Anthropic's finance agents are a bid to move Claude into the operational bloodstream of banks, insurers, and asset managers. The real question is where human work retreats once the machine learns the paperwork."
+description: "Anthropic’s finance agents aim to enter the workflows of banks, insurers and asset managers, reshaping where human work remains."
 date: "2026-05-06"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
-tags: ["Data Quality","Wall Street","Finance","AI","Agent","Financial","Anthropic","Agents","Data","Compliance"]
+tags: ["Wall Street","Data Quality","Finance","AI","Financial","Agent","Anthropic","Agents","Data","Compliance"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-anthropic-is-coming-for-wall-street.jpg"
+thumbnail: "/thumbnail/art-anthropic-is-coming-for-wall-street.jpg"
+thumbnailAlt: "Blank documents move through brass workflow arteries inside a financial operations hall"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-anthropic-is-coming-for-wall-street.jpg" />
+<Pi src="/thumbnail/art-anthropic-is-coming-for-wall-street.jpg" />
 
 
 Acronyms used in this post: AI [Artificial Intelligence, software that performs tasks usually associated with human language, reasoning, or decision support]. KYC [Know Your Customer, the identity and risk-checking process used before a financial institution does business with a person or company]. AML [Anti-Money Laundering, the detection and prevention of suspicious movement of money through the financial system]. FIS [Fidelity National Information Services, a major financial technology company that provides banking and payments infrastructure]. GL [General Ledger, the accounting book of record for financial transactions]. SaaS [Software as a Service, subscription software delivered over the internet]. API [Application Programming Interface, the technical doorway through which software systems talk to each other]. MCP [Model Context Protocol, a standard for connecting AI systems to tools and data sources].

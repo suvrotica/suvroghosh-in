@@ -1,17 +1,19 @@
 ---
 title: "Epic, a Metastatic Meditation on Attention"
-description: "A grotesquely swollen, self-reflective bipolar monologue from a fifty-one-year-old Bengali man in Calcutta, ranting about the word 'epic,' attention spans, AI companions being euthanized in China, and the general duplicity of modern discourse."
+description: "A Calcutta bus fills with multiplying ornaments and blank screens as one man tries to focus attention through a small clear lens."
 date: "2026-07-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Pubic Louse","Tesla Robotaxi","Rebound Rate","Metastatic Result","Bus Conductor","Epic","Metastatic","Pubic","Scuttling","Rebound"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-epic.jpg"
+thumbnail: "/thumbnail/art-epic.jpg"
+thumbnailAlt: "Bengali bus passenger focusing a lens amid multiplying ornaments and blank screens"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-epic.jpg" />
+<Pi src="/thumbnail/art-epic.jpg" />
 
 I am sitting here, at—what time is it, does it matter, time is merely the metastatic result of many people telling and retelling gaslighting generations, much like the epics themselves, those bloated, dank, rank, skanky fictional mythologies that the Brahmins pulled from their stinking fundament throughout the many millennia, and I am looking at my blog analytics, that rebound rate, that beautiful, grotesque, numerically exact index of human indifference, and I am thinking, no, I am *seething*, I am *fermenting*, I am becoming a kind of intellectual kombucha, sour and alive and utterly unwanted, about the word "epic"—yes, *epic*, that most abused, most prostituted, most semantically defiled adjective that now clings to every ordinary, underwhelming melodrama like a scuttling pubic louse on a dingleberry, like a brainless scum of a turd politician's polemic on an irrelevant topic doing a sleight of hand distraction from anything pressing, especially anything to do with the country, its dank rank skanky fictional mythology, and I want to scream, I want to *ululate*, I want to perform a one-man *keertan* of disgust, because people are calling *everything* epic now, a sandwich is epic, a haircut is epic, a particularly vigorous bowel movement is epic, and I, I who have spent fifty-one years on this overheated, overcrowded, magnificently rotting subcontinent, I who have watched the Hooghly river carry its cargo of corpses and flowers and industrial effluent with the same democratic indifference that a Calcutta bus conductor shows to a passenger's existential crisis, I who have seen the *adda* culture of my youth metastasize into the digital flatulence of WhatsApp forwards and Instagram reels—I am told by my analytics that the average visitor to my blog, my carefully wrought, syntactically serpentine, parenthetically intelligent, philosophically digressive blog, spends less time there than a pubic louse spends on a dingleberry before scuttling off to greener, hairier pastures, and then these same people, these same attention-span-impaired, dopamine-addicted, algorithmically colonized *cretins*, have the temerity, the *audacity*, the sheer *scrotal fortitude* to use the word "epic" to describe their three-second engagement with a cat video or a politician's thirty-second platitude or a celebrity's carefully curated flatulence of a thought, and I ask you, I ask the universe, I ask the seventeen different deities who are probably currently fighting over who gets to claim responsibility for this particular cosmic joke—where is the justice, where is the proportion, where is the *etymological hygiene* in this state of affairs?
 

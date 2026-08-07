@@ -1,17 +1,19 @@
 ---
 title: "Political Promises and the Hard Floor of Reality"
-description: "A bleak but practical essay on why political promises so often collapse into pain for the middle class, lower middle class, and poor, and why the failure is not merely moral but structural."
+description: "Why political promises often become structural pain for India’s middle class, lower middle class and poor."
 date: "2026-05-02"
+dateModified: "2026-08-07"
 category: "Politics"
 tags: ["Middle Class","Lower Middle","Promise","Class","Save","Voter","Politics","Leader","Public","Political"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-political-promises-and-reality.jpg"
+thumbnail: "/thumbnail/art-political-promises-and-reality.jpg"
+thumbnailAlt: "Three household chairs sit beneath a buckling arch of blank promise cards"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-political-promises-and-reality.jpg" />
+<Pi src="/thumbnail/art-political-promises-and-reality.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

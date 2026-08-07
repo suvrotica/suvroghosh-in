@@ -1,17 +1,19 @@
 ---
 title: "Maybe the Body Is Not Broken"
-description: "A middle-aged unemployed man in Calcutta wonders whether bipolar depression and anxiety are not defects, but ancient survival machinery trapped inside a world of notifications, rent, loneliness, and artificial modern life."
+description: "A middle-aged Calcutta man asks whether depression and anxiety are ancient survival systems trapped inside artificial modern life."
 date: "2026-05-13"
+dateModified: "2026-08-07"
 category: "Calcutta"
 tags: ["Bipolar Depression","Nervous System","Depression","Bipolar","Anxiety","Somebody","Nervous","Maybe","Fellow","Survived"]
 published: true
 color: "#3f3f46"
-thumbnail: "/thumbnail/safe-body-going-to-plan.jpg"
+thumbnail: "/thumbnail/art-body-going-to-plan.jpg"
+thumbnailAlt: "Middle-aged man sits beneath a banyan-like shadow in a Calcutta room"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-body-going-to-plan.jpg" />
+<Pi src="/thumbnail/art-body-going-to-plan.jpg" />
 
 Acronyms and Terms
 

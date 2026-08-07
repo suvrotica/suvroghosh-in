@@ -1,17 +1,28 @@
 ---
 title: "The Questions You Ask"
-description: "Why longitudinal analysis, population insights, and predictive modeling diverge sharply between academic medical centers and VA systems—and what that reveals about data architecture."
+description: "Why longitudinal, population, and predictive analysis diverge between academic medical centres and VA healthcare data systems."
 date: "2026-04-21"
+dateModified: "2026-08-07"
 category: "healthcare it"
 tags: ["Health Level Seven","United States","Health Science Center","Longitudinal Analysis","Predictive Modeling","VA","UTHSCSA","Data","Clinical","Patient"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-questions-change-systems-uthscsa-va.jpg"
+thumbnail: "/thumbnail/art-questions-change-systems-uthscsa-va.jpg"
+thumbnailAlt: "Two glass healthcare data archives answering the same brass question key differently"
+inPlainEnglish: "A healthcare data system is shaped by the questions its institution must answer. Academic medical centres often emphasize encounters, research cohorts, and local populations, while the VA can follow patients across a large longitudinal national system, changing what can be measured and predicted."
+keyTerms: ["Longitudinal Analysis", "Population Health", "Predictive Modeling", "Academic Medical Center", "Veterans Affairs", "Clinical Data", "Patient Cohort", "Data Architecture"]
+faq:
+  - question: "Why can two healthcare systems answer different analytic questions?"
+    answer: "Their populations, care boundaries, source systems, identifiers, follow-up periods, governance, and institutional missions determine what data exists and how reliably it can be linked."
+  - question: "What makes longitudinal analysis distinctive in the VA?"
+    answer: "The VA can often observe veterans across facilities and years within one large integrated system, enabling questions that are difficult when care is fragmented among unrelated organizations."
+  - question: "Why does the research question matter before choosing data?"
+    answer: "A dataset built for encounters, operations, billing, or continuity will support different inferences. The question determines the required population, time horizon, variables, and provenance."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-questions-change-systems-uthscsa-va.jpg" />
+<Pi src="/thumbnail/art-questions-change-systems-uthscsa-va.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

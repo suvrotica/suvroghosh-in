@@ -1,17 +1,19 @@
 ---
 title: "Bipolar Mood and Calcutta Calculus"
-description: "A personal essay on bipolar agitation, solitude, Calcutta, cheap vegetables, heat, power cuts, and the strange arithmetic of surviving as a lower-middle-class Bengali man."
+description: "A personal essay on bipolar agitation, solitude, heat, power cuts and the household arithmetic of surviving in Calcutta."
 date: "2026-05-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Calculus","Mind","Vegetables","Coriander","Mood","Calculate","Maintenance","Fish","Future","Writing"]
+tags: ["Calculus","Mind","Vegetables","Coriander","Mood","Calculate","Maintenance","Fish","Future","Green"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-bipolar-mood-and-calcutta-calculus.jpg"
+thumbnail: "/thumbnail/art-bipolar-mood-and-calcutta-calculus.jpg"
+thumbnailAlt: "Man weighs coriander and vegetables against a stormy Kolkata household budget"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-bipolar-mood-and-calcutta-calculus.jpg" />
+<Pi src="/thumbnail/art-bipolar-mood-and-calcutta-calculus.jpg" />
 
 
 

@@ -1,17 +1,19 @@
 ---
 title: "AI Health Insurance and Cruelty"
-description: "The central risk is not that insurers openly announce an artificial intelligence system that punishes expensive patients. It is that ordinary commercial incentives, weak oversight, and deniable technical systems can quietly turn prediction into exclusion while preserving a paper trail of procedural respectability."
+description: "How weak oversight and deniable AI risk scoring can quietly turn health insurance prediction into patient exclusion."
 date: "2026-04-24"
+dateModified: "2026-08-07"
 category: "healthcare ai"
 tags: ["Somewhat Skewed","Appeals","Data","Model","Healthcare","Utilization","Inferred","Members","Review","Fraud"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-ai-health-insurance-surreptitious-risk-scoring.jpg"
+thumbnail: "/thumbnail/art-ai-health-insurance-surreptitious-risk-scoring.jpg"
+thumbnailAlt: "Blank insurance claim folders diverted beneath a dark glass prism"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-health-insurance-surreptitious-risk-scoring.jpg" />
+<Pi src="/thumbnail/art-ai-health-insurance-surreptitious-risk-scoring.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

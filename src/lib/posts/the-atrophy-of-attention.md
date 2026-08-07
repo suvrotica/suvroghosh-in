@@ -1,17 +1,19 @@
 ---
 title: "The Atrophy of Attention"
-description: "A grotesquely swollen, self-reflective bipolar rant from a fifty-one-year-old Calcutta man, tracing the death of human intelligence through AI offloading, the hidden horrors of nursery rhymes, and the vicarious nationalism of World Cup firecrackers."
+description: "A self-reflective Calcutta rant on attention lost to AI offloading, unsettling nursery rhymes and vicarious nationalism."
 date: "2026-07-19"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Grinding Masticatory Process","Nursery Rhymes","Sixty Thousand","Brain-Dead Zombies","Slow Grinding","Masticatory","Firecrackers","Rhymes","Atrophy","Brain-Dead"]
+tags: ["Grinding Masticatory Process","Nursery Rhymes","Brain-Dead Zombies","Sixty Thousand","Slow Grinding","Masticatory","Firecrackers","Rhymes","Atrophy","Brain-Dead"]
 published: true
 color: "#2d2d2d"
-thumbnail: "/thumbnail/safe-the-atrophy-of-attention.jpg"
+thumbnail: "/thumbnail/art-the-atrophy-of-attention.jpg"
+thumbnailAlt: "Bengali man studies a blank tablet while books, puzzles and toys fade beyond the lamplight"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-atrophy-of-attention.jpg" />
+<Pi src="/thumbnail/art-the-atrophy-of-attention.jpg" />
 
 I can understand from the rebound rate of my site that most people don't find my diarizing writing or my interests worthwhile but I also understand this is not a glitch but a feature of endless supply this frittered attention span, this diluted interest, and I sit here in the gelatinous humidity of a Calcutta July afternoon, the kind of afternoon where the air itself seems to have surrendered to entropy, where the sweat pooling in the small of my back feels less like a biological function and more like a geological process, a slow accretion of moisture and despair, and I think about the fact that Jensen Huang's leather jacket just sold for nine hundred and sixty thousand American dollars, nine hundred and sixty thousand dollars for a garment that has cradled the armpits of a man whose entire life's work has been to make human cognition obsolete, and I wonder if there is a more perfect symbol of our era than this, this fetishistic commodification of the very skin that sheathed the prophet of our collective intellectual euthanasia, and I am not angry, or rather I am angry but it is a tired anger, a rheumatic anger, the kind of anger that creaks when it moves, and I think about the rebound rate, the bounce rate, the analytics that tell me with mathematical precision that my words are unwanted, unloved, unread, and I understand, I truly do, that this is not a failure of my prose but a triumph of the algorithm, a triumph of the infinite scroll, a triumph of the dopamine drip that has replaced the slow digestion of thought with the rapid ejaculation of content, and I am fifty-one years old, a Bengali man in Calcutta, and I have lived long enough to remember when attention was not a currency but a gift, when reading was not a transaction but a communion, and now I watch as the world outsources its thinking to machines that do not think, that cannot think, that merely simulate the architecture of thought with the hollow precision of a ventriloquist's dummy, and I think about the nursery rhymes.
 

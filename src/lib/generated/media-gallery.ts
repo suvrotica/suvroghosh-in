@@ -4210,9 +4210,289 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-a-cup-of-cha-is-not-a-small-thing.jpg",
+			"src": "/thumbnail/art-a-cup-of-cha-is-not-a-small-thing.jpg",
+			"bytes": 166244,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-a-meaningless-number-on-an-average-star.jpg",
+			"src": "/thumbnail/art-a-meaningless-number-on-an-average-star.jpg",
+			"bytes": 159558,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-a-read-this-first.jpg",
+			"src": "/thumbnail/art-a-read-this-first.jpg",
+			"bytes": 276005,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-a-trapezoid-in-low-light.jpg",
+			"src": "/thumbnail/art-a-trapezoid-in-low-light.jpg",
+			"bytes": 113714,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-administratively-deleted.jpg",
+			"src": "/thumbnail/art-administratively-deleted.jpg",
+			"bytes": 184916,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-after-america-before-nothing.jpg",
+			"src": "/thumbnail/art-after-america-before-nothing.jpg",
+			"bytes": 130870,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-agentic-ai-and-the-asymmetry-of-will.jpg",
+			"src": "/thumbnail/art-agentic-ai-and-the-asymmetry-of-will.jpg",
+			"bytes": 187097,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-business-model-broke-bengali-nervous.jpg",
+			"src": "/thumbnail/art-ai-business-model-broke-bengali-nervous.jpg",
+			"bytes": 168982,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-cannot-suffer-yet.jpg",
+			"src": "/thumbnail/art-ai-cannot-suffer-yet.jpg",
+			"bytes": 106235,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-data-centres-india-power-water-calcutta-fear.jpg",
+			"src": "/thumbnail/art-ai-data-centres-india-power-water-calcutta-fear.jpg",
+			"bytes": 167353,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-deployment-evidence-over-opinion.jpg",
+			"src": "/thumbnail/art-ai-deployment-evidence-over-opinion.jpg",
+			"bytes": 99988,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-genie-out-of-the-bottle.jpg",
+			"src": "/thumbnail/art-ai-genie-out-of-the-bottle.jpg",
+			"bytes": 242425,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-harmonium-players.jpg",
+			"src": "/thumbnail/art-ai-harmonium-players.jpg",
+			"bytes": 241215,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-health-insurance-surreptitious-risk-scoring.jpg",
+			"src": "/thumbnail/art-ai-health-insurance-surreptitious-risk-scoring.jpg",
+			"bytes": 122014,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
+			"src": "/thumbnail/art-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
+			"bytes": 214944,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ai-layoff-trap-firing-your-customers.jpg",
 			"src": "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg",
 			"bytes": 139001,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-meaningful-work-and-the-trust-collapse.jpg",
+			"src": "/thumbnail/art-ai-meaningful-work-and-the-trust-collapse.jpg",
+			"bytes": 115409,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-meaningful-work-trust-collapse.jpg",
+			"src": "/thumbnail/art-ai-meaningful-work-trust-collapse.jpg",
+			"bytes": 207321,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-moat-labor-displacement.jpg",
+			"src": "/thumbnail/art-ai-moat-labor-displacement.jpg",
+			"bytes": 210813,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
+			"src": "/thumbnail/art-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
+			"bytes": 117428,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-wave-social-isolation-mental-health-infrastructure.jpg",
+			"src": "/thumbnail/art-ai-wave-social-isolation-mental-health-infrastructure.jpg",
+			"bytes": 127601,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-aimless-with-mangoes.jpg",
+			"src": "/thumbnail/art-aimless-with-mangoes.jpg",
+			"bytes": 296066,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-america-and-calcutta.jpg",
+			"src": "/thumbnail/art-america-and-calcutta.jpg",
+			"bytes": 111423,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-anger-the-last-working-appliance.jpg",
+			"src": "/thumbnail/art-anger-the-last-working-appliance.jpg",
+			"bytes": 68143,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-annoyed-shouldering-the-chips-calcutta-public-transport.jpg",
+			"src": "/thumbnail/art-annoyed-shouldering-the-chips-calcutta-public-transport.jpg",
+			"bytes": 145642,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-anthropic-is-coming-for-wall-street.jpg",
+			"src": "/thumbnail/art-anthropic-is-coming-for-wall-street.jpg",
+			"bytes": 226204,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-aqi-420-and-the-great-indian-snot-mine.jpg",
+			"src": "/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg",
+			"bytes": 136661,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-arachnoid-in-the-boondocks.jpg",
+			"src": "/thumbnail/art-arachnoid-in-the-boondocks.jpg",
+			"bytes": 239860,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-arrow-uncertainty-medical-care-healthcare-it.jpg",
+			"src": "/thumbnail/art-arrow-uncertainty-medical-care-healthcare-it.jpg",
+			"bytes": 113386,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-artisanal-darkness-in-a-kolkata-room.jpg",
+			"src": "/thumbnail/art-artisanal-darkness-in-a-kolkata-room.jpg",
+			"bytes": 141171,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-asimovs-missing-laws.jpg",
+			"src": "/thumbnail/art-asimovs-missing-laws.jpg",
+			"bytes": 185048,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-asmr-soft-apocalypse.jpg",
+			"src": "/thumbnail/art-asmr-soft-apocalypse.jpg",
+			"bytes": 156991,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-babu-culture-vip-india-obsequiousness.jpg",
+			"src": "/thumbnail/art-babu-culture-vip-india-obsequiousness.jpg",
+			"bytes": 196784,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-badly-lit-municipality-of-myself.jpg",
+			"src": "/thumbnail/art-badly-lit-municipality-of-myself.jpg",
+			"bytes": 207585,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
+			"src": "/thumbnail/art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
+			"bytes": 231949,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bar-english-for-bengalis.jpg",
+			"src": "/thumbnail/art-bar-english-for-bengalis.jpg",
+			"bytes": 135236,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-barebones-lifeboat-calcutta.jpg",
+			"src": "/thumbnail/art-barebones-lifeboat-calcutta.jpg",
+			"bytes": 170479,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
+			"src": "/thumbnail/art-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
+			"bytes": 196723,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-basel-problem-what-diffusion-model-means.jpg",
+			"src": "/thumbnail/art-basel-problem-what-diffusion-model-means.jpg",
+			"bytes": 126946,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bassline-backhoe-breath.jpg",
+			"src": "/thumbnail/art-bassline-backhoe-breath.jpg",
+			"bytes": 228619,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-benfords-law-and-the-ledger-that-sweats.jpg",
+			"src": "/thumbnail/art-benfords-law-and-the-ledger-that-sweats.jpg",
+			"bytes": 135539,
 			"width": 1200,
 			"height": 800
 		},
@@ -4224,9 +4504,114 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bengali-hikikomori-shadow.jpg",
+			"src": "/thumbnail/art-bengali-hikikomori-shadow.jpg",
+			"bytes": 204273,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
+			"src": "/thumbnail/art-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
+			"bytes": 137162,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bengali-tintin-in-kolkata.jpg",
+			"src": "/thumbnail/art-bengali-tintin-in-kolkata.jpg",
+			"bytes": 341740,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bengali-who-knows-too-much-to-move.jpg",
+			"src": "/thumbnail/art-bengali-who-knows-too-much-to-move.jpg",
+			"bytes": 255085,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bessel-correction-for-variance.jpg",
+			"src": "/thumbnail/art-bessel-correction-for-variance.jpg",
+			"bytes": 122044,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bipolar-depression-friendless-blister.jpg",
+			"src": "/thumbnail/art-bipolar-depression-friendless-blister.jpg",
+			"bytes": 98769,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bipolar-mood-and-calcutta-calculus.jpg",
+			"src": "/thumbnail/art-bipolar-mood-and-calcutta-calculus.jpg",
+			"bytes": 179877,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-blind-angry-unhappiness.jpg",
+			"src": "/thumbnail/art-blind-angry-unhappiness.jpg",
+			"bytes": 132104,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-body-going-to-plan.jpg",
+			"src": "/thumbnail/art-body-going-to-plan.jpg",
+			"bytes": 146920,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bogosity-enshittification-and-the-glittering-drain.jpg",
+			"src": "/thumbnail/art-bogosity-enshittification-and-the-glittering-drain.jpg",
+			"bytes": 313814,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-brain-scrap-yard.jpg",
+			"src": "/thumbnail/art-brain-scrap-yard.jpg",
+			"bytes": 186512,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-brittle-brain-blazing-light-calcutta-room.jpg",
+			"src": "/thumbnail/art-brittle-brain-blazing-light-calcutta-room.jpg",
+			"bytes": 136669,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-anti-motivation.jpg",
+			"src": "/thumbnail/art-calcutta-anti-motivation.jpg",
+			"bytes": 239772,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-bengalis-guide-to-ai-tribes.jpg",
+			"src": "/thumbnail/art-calcutta-bengalis-guide-to-ai-tribes.jpg",
+			"bytes": 260303,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-calcutta-carbohydrate-problem.jpg",
 			"src": "/thumbnail/art-calcutta-carbohydrate-problem.jpg",
 			"bytes": 245698,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-drain-worm.jpg",
+			"src": "/thumbnail/art-calcutta-drain-worm.jpg",
+			"bytes": 174807,
 			"width": 1200,
 			"height": 800
 		},
@@ -4238,9 +4623,79 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-calcutta-morning-malaise.jpg",
+			"src": "/thumbnail/art-calcutta-morning-malaise.jpg",
+			"bytes": 205303,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-calcutta-smog-and-the-coming-winter.jpg",
+			"src": "/thumbnail/art-calcutta-smog-and-the-coming-winter.jpg",
+			"bytes": 123115,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-calcutta-summer-of-2026.jpg",
 			"src": "/thumbnail/art-calcutta-summer-of-2026.jpg",
 			"bytes": 133548,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-callous-political-statements-gold-karigars-and-fertiliser.jpg",
+			"src": "/thumbnail/art-callous-political-statements-gold-karigars-and-fertiliser.jpg",
+			"bytes": 168586,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg",
+			"src": "/thumbnail/art-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg",
+			"bytes": 242595,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-capex-and-the-geometry-of-obsolescence.jpg",
+			"src": "/thumbnail/art-capex-and-the-geometry-of-obsolescence.jpg",
+			"bytes": 175512,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-chronic-traumatic-nihilism-calcutta.jpg",
+			"src": "/thumbnail/art-chronic-traumatic-nihilism-calcutta.jpg",
+			"bytes": 171366,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-chyavana-and-the-refusal-to-rot-quietly.jpg",
+			"src": "/thumbnail/art-chyavana-and-the-refusal-to-rot-quietly.jpg",
+			"bytes": 244118,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-cicada-ba32-covid-variant.jpg",
+			"src": "/thumbnail/art-cicada-ba32-covid-variant.jpg",
+			"bytes": 142048,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-classification-and-variety-of-rotting-people-in-calcutta.jpg",
+			"src": "/thumbnail/art-classification-and-variety-of-rotting-people-in-calcutta.jpg",
+			"bytes": 343289,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-claude-fable-5-warning-label.jpg",
+			"src": "/thumbnail/art-claude-fable-5-warning-label.jpg",
+			"bytes": 113266,
 			"width": 1200,
 			"height": 800
 		},
@@ -4252,9 +4707,51 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-coding-agents-after-the-keyboard.jpg",
+			"src": "/thumbnail/art-coding-agents-after-the-keyboard.jpg",
+			"bytes": 139204,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-commercial-hifi-sounds-for-ordinary-ears.jpg",
 			"src": "/thumbnail/art-commercial-hifi-sounds-for-ordinary-ears.jpg",
 			"bytes": 181608,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-complexity-in-calcutta.jpg",
+			"src": "/thumbnail/art-complexity-in-calcutta.jpg",
+			"bytes": 273328,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-concentric-incurable-angsts-of-a-bengali-man.jpg",
+			"src": "/thumbnail/art-concentric-incurable-angsts-of-a-bengali-man.jpg",
+			"bytes": 230775,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-confounding-factors-healthcare-it-analytics.jpg",
+			"src": "/thumbnail/art-confounding-factors-healthcare-it-analytics.jpg",
+			"bytes": 100250,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-confounding-factors.jpg",
+			"src": "/thumbnail/art-confounding-factors.jpg",
+			"bytes": 115396,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-constipated-americans-diarrhoea.jpg",
+			"src": "/thumbnail/art-constipated-americans-diarrhoea.jpg",
+			"bytes": 149414,
 			"width": 1200,
 			"height": 800
 		},
@@ -4266,9 +4763,79 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-crab-diaries-of-a-bengali-kakistocrat.jpg",
+			"src": "/thumbnail/art-crab-diaries-of-a-bengali-kakistocrat.jpg",
+			"bytes": 236423,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
+			"src": "/thumbnail/art-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
+			"bytes": 150682,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-database-first-principles.jpg",
+			"src": "/thumbnail/art-database-first-principles.jpg",
+			"bytes": 178088,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-depression-arrives-as-weather.jpg",
+			"src": "/thumbnail/art-depression-arrives-as-weather.jpg",
+			"bytes": 220309,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-depression-as-mathematics.jpg",
 			"src": "/thumbnail/art-depression-as-mathematics.jpg",
 			"bytes": 142578,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-depressive-mind-government-office-after-rain.jpg",
+			"src": "/thumbnail/art-depressive-mind-government-office-after-rain.jpg",
+			"bytes": 205363,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
+			"src": "/thumbnail/art-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
+			"bytes": 86367,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-dogs-bad-people-myth-science.jpg",
+			"src": "/thumbnail/art-dogs-bad-people-myth-science.jpg",
+			"bytes": 107040,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg",
+			"src": "/thumbnail/art-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg",
+			"bytes": 170848,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-educated-boredom-horror.jpg",
+			"src": "/thumbnail/art-educated-boredom-horror.jpg",
+			"bytes": 255158,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-election-puja-and-the-common-eye.jpg",
+			"src": "/thumbnail/art-election-puja-and-the-common-eye.jpg",
+			"bytes": 249230,
 			"width": 1200,
 			"height": 800
 		},
@@ -4287,9 +4854,72 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg",
+			"src": "/thumbnail/art-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg",
+			"bytes": 221506,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-entropy-in-a-rented-room.jpg",
 			"src": "/thumbnail/art-entropy-in-a-rented-room.jpg",
 			"bytes": 158080,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-epic.jpg",
+			"src": "/thumbnail/art-epic.jpg",
+			"bytes": 295248,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-existential-arithmetic-at-bread-level.jpg",
+			"src": "/thumbnail/art-existential-arithmetic-at-bread-level.jpg",
+			"bytes": 127627,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-explaining-the-healthcare-it-gap-as-continuity.jpg",
+			"src": "/thumbnail/art-explaining-the-healthcare-it-gap-as-continuity.jpg",
+			"bytes": 202437,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-facial-pleasure-receipts-and-modern-euphemism.jpg",
+			"src": "/thumbnail/art-facial-pleasure-receipts-and-modern-euphemism.jpg",
+			"bytes": 105398,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-falling-through-the-crack.jpg",
+			"src": "/thumbnail/art-falling-through-the-crack.jpg",
+			"bytes": 126899,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-falling-through-the-southern-edge-at-3am.jpg",
+			"src": "/thumbnail/art-falling-through-the-southern-edge-at-3am.jpg",
+			"bytes": 137028,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-fellow-passengers-and-the-broken-record.jpg",
+			"src": "/thumbnail/art-fellow-passengers-and-the-broken-record.jpg",
+			"bytes": 122720,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-fhir-for-a-curious-student-in-calcutta.jpg",
+			"src": "/thumbnail/art-fhir-for-a-curious-student-in-calcutta.jpg",
+			"bytes": 142252,
 			"width": 1200,
 			"height": 800
 		},
@@ -4301,9 +4931,37 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg",
+			"src": "/thumbnail/art-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg",
+			"bytes": 126982,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-first-principles-thinking-calcutta-healthcare-it.jpg",
 			"src": "/thumbnail/art-first-principles-thinking-calcutta-healthcare-it.jpg",
 			"bytes": 162658,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-fish-and-the-press-conference.jpg",
+			"src": "/thumbnail/art-fish-and-the-press-conference.jpg",
+			"bytes": 217098,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-fish-market-merit-and-the-small-republic-of-honesty.jpg",
+			"src": "/thumbnail/art-fish-market-merit-and-the-small-republic-of-honesty.jpg",
+			"bytes": 141973,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-flood-of-kakistocracy.jpg",
+			"src": "/thumbnail/art-flood-of-kakistocracy.jpg",
+			"bytes": 204580,
 			"width": 1200,
 			"height": 800
 		},
@@ -4315,6 +4973,41 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-folded-arms-and-other-small-national-disasters.jpg",
+			"src": "/thumbnail/art-folded-arms-and-other-small-national-disasters.jpg",
+			"bytes": 173492,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-four-fundamental-subspaces.jpg",
+			"src": "/thumbnail/art-four-fundamental-subspaces.jpg",
+			"bytes": 91690,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-fractal-geometry-of-a-half-lived-life.jpg",
+			"src": "/thumbnail/art-fractal-geometry-of-a-half-lived-life.jpg",
+			"bytes": 218388,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-frog-in-the-robot-century.jpg",
+			"src": "/thumbnail/art-frog-in-the-robot-century.jpg",
+			"bytes": 216552,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-future-tense-fog.jpg",
+			"src": "/thumbnail/art-future-tense-fog.jpg",
+			"bytes": 93858,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"src": "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"bytes": 224679,
@@ -4322,9 +5015,93 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-greed-made-me-small.jpg",
+			"src": "/thumbnail/art-greed-made-me-small.jpg",
+			"bytes": 130669,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-groundhog-cud.jpg",
+			"src": "/thumbnail/art-groundhog-cud.jpg",
+			"bytes": 191770,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-happiness-after-quicksand.jpg",
+			"src": "/thumbnail/art-happiness-after-quicksand.jpg",
+			"bytes": 168297,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hardys-law-genetics-callow-calcuttan.jpg",
+			"src": "/thumbnail/art-hardys-law-genetics-callow-calcuttan.jpg",
+			"bytes": 254919,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hawkers-are-not-rubbish.jpg",
+			"src": "/thumbnail/art-hawkers-are-not-rubbish.jpg",
+			"bytes": 187966,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-healthcare-ai-wrong-objective.jpg",
+			"src": "/thumbnail/art-healthcare-ai-wrong-objective.jpg",
+			"bytes": 112116,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
+			"src": "/thumbnail/art-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
+			"bytes": 141400,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hie-first-principles-openhie.jpg",
+			"src": "/thumbnail/art-hie-first-principles-openhie.jpg",
+			"bytes": 175588,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hie-from-first-principles.jpg",
+			"src": "/thumbnail/art-hie-from-first-principles.jpg",
+			"bytes": 129539,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-highly-composite-mornings-prime-afternoons.jpg",
+			"src": "/thumbnail/art-highly-composite-mornings-prime-afternoons.jpg",
+			"bytes": 245609,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hl7-vs-fhir-explained-simply.jpg",
+			"src": "/thumbnail/art-hl7-vs-fhir-explained-simply.jpg",
+			"bytes": 125496,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-homeopathy-pseudoscience-persistence.jpg",
 			"src": "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg",
 			"bytes": 136683,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-hope-dies-at-different-rates.jpg",
+			"src": "/thumbnail/art-hope-dies-at-different-rates.jpg",
+			"bytes": 117680,
 			"width": 1200,
 			"height": 800
 		},
@@ -4350,6 +5127,48 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-how-va-healthcare-data-systems-work.jpg",
+			"src": "/thumbnail/art-how-va-healthcare-data-systems-work.jpg",
+			"bytes": 149813,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-human-rights-oh-what-a-joke.jpg",
+			"src": "/thumbnail/art-human-rights-oh-what-a-joke.jpg",
+			"bytes": 137242,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-i-am-a-solipsist-nihilist.jpg",
+			"src": "/thumbnail/art-i-am-a-solipsist-nihilist.jpg",
+			"bytes": 139314,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-i-could-have-been-a-simple-fool.jpg",
+			"src": "/thumbnail/art-i-could-have-been-a-simple-fool.jpg",
+			"bytes": 221765,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-i-do-not-hate-the-world-i-am-tired.jpg",
+			"src": "/thumbnail/art-i-do-not-hate-the-world-i-am-tired.jpg",
+			"bytes": 117860,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-if-lies-had-noses-again.jpg",
+			"src": "/thumbnail/art-if-lies-had-noses-again.jpg",
+			"bytes": 193342,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-india-ai-it-bpo-white-collar-jobs.jpg",
 			"src": "/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg",
 			"bytes": 110622,
@@ -4357,9 +5176,107 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-india-ai-moat-width-without-depth.jpg",
+			"src": "/thumbnail/art-india-ai-moat-width-without-depth.jpg",
+			"bytes": 291913,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-ambition-validation-fear-of-mediocrity.jpg",
+			"src": "/thumbnail/art-india-ambition-validation-fear-of-mediocrity.jpg",
+			"bytes": 105352,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-ehr-hie-ai-constraints.jpg",
+			"src": "/thumbnail/art-india-ehr-hie-ai-constraints.jpg",
+			"bytes": 133376,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-hoodlums-goons-assortment.jpg",
+			"src": "/thumbnail/art-india-hoodlums-goons-assortment.jpg",
+			"bytes": 306311,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-noise-machine-small-man.jpg",
+			"src": "/thumbnail/art-india-noise-machine-small-man.jpg",
+			"bytes": 241161,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-scientific-temper-after-return.jpg",
+			"src": "/thumbnail/art-india-scientific-temper-after-return.jpg",
+			"bytes": 140248,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-semiconductor-sufficiency-beyond-lip-service.jpg",
+			"src": "/thumbnail/art-india-semiconductor-sufficiency-beyond-lip-service.jpg",
+			"bytes": 158851,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-indian-middle-aged-middle-class-lopsided-rocks.jpg",
+			"src": "/thumbnail/art-indian-middle-aged-middle-class-lopsided-rocks.jpg",
+			"bytes": 142768,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg",
+			"src": "/thumbnail/art-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg",
+			"bytes": 134246,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-insect-forms-of-a-calcutta-life.jpg",
+			"src": "/thumbnail/art-insect-forms-of-a-calcutta-life.jpg",
+			"bytes": 260634,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-intolerable-cruelty.jpg",
+			"src": "/thumbnail/art-intolerable-cruelty.jpg",
+			"bytes": 218644,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-intro.jpg",
 			"src": "/thumbnail/art-intro.jpg",
 			"bytes": 141043,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg",
+			"src": "/thumbnail/art-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg",
+			"bytes": 261731,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-invisible-radius.jpg",
+			"src": "/thumbnail/art-invisible-radius.jpg",
+			"bytes": 149210,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-jealous-of-the-stupid.jpg",
+			"src": "/thumbnail/art-jealous-of-the-stupid.jpg",
+			"bytes": 104698,
 			"width": 1200,
 			"height": 800
 		},
@@ -4385,9 +5302,93 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-kinship-range-limit-calcutta.jpg",
+			"src": "/thumbnail/art-kinship-range-limit-calcutta.jpg",
+			"bytes": 253774,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-kolkata-bat-waiting-for-a-bus.jpg",
+			"src": "/thumbnail/art-kolkata-bat-waiting-for-a-bus.jpg",
+			"bytes": 170199,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
 			"src": "/thumbnail/art-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
 			"bytes": 196857,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-last-economy-intelligence-inversion.jpg",
+			"src": "/thumbnail/art-last-economy-intelligence-inversion.jpg",
+			"bytes": 174771,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-latent-space-healthcare-data.jpg",
+			"src": "/thumbnail/art-latent-space-healthcare-data.jpg",
+			"bytes": 200518,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-latent-space-in-healthcare-data.jpg",
+			"src": "/thumbnail/art-latent-space-in-healthcare-data.jpg",
+			"bytes": 153292,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-linkedin-job-market-india-national-xray.jpg",
+			"src": "/thumbnail/art-linkedin-job-market-india-national-xray.jpg",
+			"bytes": 264239,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-local-disgrace-still-making-noise.jpg",
+			"src": "/thumbnail/art-local-disgrace-still-making-noise.jpg",
+			"bytes": 248437,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-loneliness-is-not-a-generation.jpg",
+			"src": "/thumbnail/art-loneliness-is-not-a-generation.jpg",
+			"bytes": 104803,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-lout.jpg",
+			"src": "/thumbnail/art-lout.jpg",
+			"bytes": 102106,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-marys-retarded-room.jpg",
+			"src": "/thumbnail/art-marys-retarded-room.jpg",
+			"bytes": 93317,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mental-health-polypharmacy-decision-support.jpg",
+			"src": "/thumbnail/art-mental-health-polypharmacy-decision-support.jpg",
+			"bytes": 112467,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-milk-cha-and-the-small-engine-of-attention.jpg",
+			"src": "/thumbnail/art-milk-cha-and-the-small-engine-of-attention.jpg",
+			"bytes": 175272,
 			"width": 1200,
 			"height": 800
 		},
@@ -4399,9 +5400,65 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-mind-not-staying-in-one-place.jpg",
+			"src": "/thumbnail/art-mind-not-staying-in-one-place.jpg",
+			"bytes": 148094,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mindfulness-calcutta-4am.jpg",
+			"src": "/thumbnail/art-mindfulness-calcutta-4am.jpg",
+			"bytes": 103759,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-missing-scientists-us.jpg",
+			"src": "/thumbnail/art-missing-scientists-us.jpg",
+			"bytes": 103640,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-mojo-the-python-killer.jpg",
 			"src": "/thumbnail/art-mojo-the-python-killer.jpg",
 			"bytes": 123977,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mood-bellwethers-before-a-low.jpg",
+			"src": "/thumbnail/art-mood-bellwethers-before-a-low.jpg",
+			"bytes": 88822,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-multivariate-statistical-modeling-in-healthcare-it.jpg",
+			"src": "/thumbnail/art-multivariate-statistical-modeling-in-healthcare-it.jpg",
+			"bytes": 217049,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
+			"src": "/thumbnail/art-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
+			"bytes": 143048,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
+			"src": "/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
+			"bytes": 110293,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-natural-selection-across-timescales.jpg",
+			"src": "/thumbnail/art-natural-selection-across-timescales.jpg",
+			"bytes": 320813,
 			"width": 1200,
 			"height": 800
 		},
@@ -4413,9 +5470,107 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-nicotine-biri-and-the-great-bengali-bargain.jpg",
+			"src": "/thumbnail/art-nicotine-biri-and-the-great-bengali-bargain.jpg",
+			"bytes": 212647,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-nightmare-of-indian-healthcare.jpg",
 			"src": "/thumbnail/art-nightmare-of-indian-healthcare.jpg",
 			"bytes": 152903,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-nightmare-wrapped-in-skin.jpg",
+			"src": "/thumbnail/art-nightmare-wrapped-in-skin.jpg",
+			"bytes": 164440,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-no-ambition-left-cold-tea.jpg",
+			"src": "/thumbnail/art-no-ambition-left-cold-tea.jpg",
+			"bytes": 113143,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-nostril-hairs-and-the-tainted-calcutta-summer.jpg",
+			"src": "/thumbnail/art-nostril-hairs-and-the-tainted-calcutta-summer.jpg",
+			"bytes": 134594,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-one-life-no-rehearsal-calcutta.jpg",
+			"src": "/thumbnail/art-one-life-no-rehearsal-calcutta.jpg",
+			"bytes": 177036,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-openclaw-balanced-intro.jpg",
+			"src": "/thumbnail/art-openclaw-balanced-intro.jpg",
+			"bytes": 106919,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-oxygen-in-a-box.jpg",
+			"src": "/thumbnail/art-oxygen-in-a-box.jpg",
+			"bytes": 124065,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-painful-tooth-fairy-calcutta.jpg",
+			"src": "/thumbnail/art-painful-tooth-fairy-calcutta.jpg",
+			"bytes": 155337,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-pest-department-in-my-skull.jpg",
+			"src": "/thumbnail/art-pest-department-in-my-skull.jpg",
+			"bytes": 179521,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
+			"src": "/thumbnail/art-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
+			"bytes": 133010,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-phase-transition-at-fifty-one.jpg",
+			"src": "/thumbnail/art-phase-transition-at-fifty-one.jpg",
+			"bytes": 160840,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-pixels-that-make-us-feel-present.jpg",
+			"src": "/thumbnail/art-pixels-that-make-us-feel-present.jpg",
+			"bytes": 164828,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-plague-of-pseudoscience-india-scientific-temper.jpg",
+			"src": "/thumbnail/art-plague-of-pseudoscience-india-scientific-temper.jpg",
+			"bytes": 149230,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-pod-mara-gechhe-calcutta-essay.jpg",
+			"src": "/thumbnail/art-pod-mara-gechhe-calcutta-essay.jpg",
+			"bytes": 103655,
 			"width": 1200,
 			"height": 800
 		},
@@ -4427,9 +5582,51 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-poison-wears-a-clean-shirt.jpg",
+			"src": "/thumbnail/art-poison-wears-a-clean-shirt.jpg",
+			"bytes": 106907,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-poisson-distribution-healthcare-it.jpg",
+			"src": "/thumbnail/art-poisson-distribution-healthcare-it.jpg",
+			"bytes": 106285,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-political-promises-and-reality.jpg",
+			"src": "/thumbnail/art-political-promises-and-reality.jpg",
+			"bytes": 119302,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-predepression-tea-bipolar-calcutta.jpg",
+			"src": "/thumbnail/art-predepression-tea-bipolar-calcutta.jpg",
+			"bytes": 106286,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
 			"src": "/thumbnail/art-premature-llm-deployment-clinical-trials-ai-safety.jpg",
 			"bytes": 90681,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-private-nuisance-at-five-thirty-in-calcutta.jpg",
+			"src": "/thumbnail/art-private-nuisance-at-five-thirty-in-calcutta.jpg",
+			"bytes": 88115,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-prognosis-as-philosophy.jpg",
+			"src": "/thumbnail/art-prognosis-as-philosophy.jpg",
+			"bytes": 101393,
 			"width": 1200,
 			"height": 800
 		},
@@ -4441,9 +5638,44 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-questions-change-systems-uthscsa-va.jpg",
+			"src": "/thumbnail/art-questions-change-systems-uthscsa-va.jpg",
+			"bytes": 185005,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-rain-power-and-quicksand.jpg",
+			"src": "/thumbnail/art-rain-power-and-quicksand.jpg",
+			"bytes": 191121,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ram-bharose-is-no-bharosa.jpg",
+			"src": "/thumbnail/art-ram-bharose-is-no-bharosa.jpg",
+			"bytes": 157015,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-randomness-chaos-complexity-calcutta.jpg",
 			"src": "/thumbnail/art-randomness-chaos-complexity-calcutta.jpg",
 			"bytes": 235746,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-rath-yatra-recursion.jpg",
+			"src": "/thumbnail/art-rath-yatra-recursion.jpg",
+			"bytes": 273136,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-recidivism-of-fraud-and-superstition-in-india.jpg",
+			"src": "/thumbnail/art-recidivism-of-fraud-and-superstition-in-india.jpg",
+			"bytes": 206050,
 			"width": 1200,
 			"height": 800
 		},
@@ -4455,6 +5687,559 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-rice-cooker-bookkeeping.jpg",
+			"src": "/thumbnail/art-rice-cooker-bookkeeping.jpg",
+			"bytes": 198279,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ro-water-abu-dhabi-rent-calcutta.jpg",
+			"src": "/thumbnail/art-ro-water-abu-dhabi-rent-calcutta.jpg",
+			"bytes": 148691,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-rotten-sack-indian-politics.jpg",
+			"src": "/thumbnail/art-rotten-sack-indian-politics.jpg",
+			"bytes": 215173,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sadness-scarab-calcutta-depression.jpg",
+			"src": "/thumbnail/art-sadness-scarab-calcutta-depression.jpg",
+			"bytes": 161844,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-saturday-mathematics-and-the-end-of-usefulness.jpg",
+			"src": "/thumbnail/art-saturday-mathematics-and-the-end-of-usefulness.jpg",
+			"bytes": 132292,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-schooling-in-calcutta.jpg",
+			"src": "/thumbnail/art-schooling-in-calcutta.jpg",
+			"bytes": 118477,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-science-is-not-a-solitary-organ.jpg",
+			"src": "/thumbnail/art-science-is-not-a-solitary-organ.jpg",
+			"bytes": 151890,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-scrolling-versus-reading-sequential-mind.jpg",
+			"src": "/thumbnail/art-scrolling-versus-reading-sequential-mind.jpg",
+			"bytes": 115253,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-self-gaslit-minds-and-ai-pretension.jpg",
+			"src": "/thumbnail/art-self-gaslit-minds-and-ai-pretension.jpg",
+			"bytes": 126897,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sensible-consumer-in-a-pufferfish-world.jpg",
+			"src": "/thumbnail/art-sensible-consumer-in-a-pufferfish-world.jpg",
+			"bytes": 98480,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-shadow-architecture-clinical-ai.jpg",
+			"src": "/thumbnail/art-shadow-architecture-clinical-ai.jpg",
+			"bytes": 109104,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-shadow-citizen-of-my-own-room.jpg",
+			"src": "/thumbnail/art-shadow-citizen-of-my-own-room.jpg",
+			"bytes": 128523,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-shallow-water-loud-television.jpg",
+			"src": "/thumbnail/art-shallow-water-loud-television.jpg",
+			"bytes": 165229,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sharper-teeth.jpg",
+			"src": "/thumbnail/art-sharper-teeth.jpg",
+			"bytes": 244835,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-shiva-and-the-poison-in-the-throat.jpg",
+			"src": "/thumbnail/art-shiva-and-the-poison-in-the-throat.jpg",
+			"bytes": 114341,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-shortchanged-from-dollar-to-paise.jpg",
+			"src": "/thumbnail/art-shortchanged-from-dollar-to-paise.jpg",
+			"bytes": 199460,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sinusoidal-dementia.jpg",
+			"src": "/thumbnail/art-sinusoidal-dementia.jpg",
+			"bytes": 216836,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sitala-manasa-public-health-superstition.jpg",
+			"src": "/thumbnail/art-sitala-manasa-public-health-superstition.jpg",
+			"bytes": 225201,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-skepticism-is-the-mosquito-net.jpg",
+			"src": "/thumbnail/art-skepticism-is-the-mosquito-net.jpg",
+			"bytes": 119626,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-slow-poisoning-republic.jpg",
+			"src": "/thumbnail/art-slow-poisoning-republic.jpg",
+			"bytes": 247543,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
+			"src": "/thumbnail/art-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
+			"bytes": 129143,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-smorgasbord-of-impotence-calcutta-middle-age.jpg",
+			"src": "/thumbnail/art-smorgasbord-of-impotence-calcutta-middle-age.jpg",
+			"bytes": 107743,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-society-with-open-drains-and-polished-shoes.jpg",
+			"src": "/thumbnail/art-society-with-open-drains-and-polished-shoes.jpg",
+			"bytes": 195236,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-square-peg-in-a-world-of-round-holes.jpg",
+			"src": "/thumbnail/art-square-peg-in-a-world-of-round-holes.jpg",
+			"bytes": 98050,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-symmetry-in-a-calcutta-room.jpg",
+			"src": "/thumbnail/art-symmetry-in-a-calcutta-room.jpg",
+			"bytes": 183915,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-synthetic-jest-fake-laughter-bengali-modernity.jpg",
+			"src": "/thumbnail/art-synthetic-jest-fake-laughter-bengali-modernity.jpg",
+			"bytes": 269647,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-synthetic-music-and-the-crowded-miracle.jpg",
+			"src": "/thumbnail/art-synthetic-music-and-the-crowded-miracle.jpg",
+			"bytes": 245317,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-tau-scaling-law-time-not-nanometers.jpg",
+			"src": "/thumbnail/art-tau-scaling-law-time-not-nanometers.jpg",
+			"bytes": 104119,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-tautology-metaphor-strawman-ruminative-depression.jpg",
+			"src": "/thumbnail/art-tautology-metaphor-strawman-ruminative-depression.jpg",
+			"bytes": 107338,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-tea-depression-and-the-probability-of-a-blog.jpg",
+			"src": "/thumbnail/art-tea-depression-and-the-probability-of-a-blog.jpg",
+			"bytes": 171042,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-tea-skin-and-the-science-of-suspicion.jpg",
+			"src": "/thumbnail/art-tea-skin-and-the-science-of-suspicion.jpg",
+			"bytes": 150007,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-technical-blogging-in-a-country-of-missing-systems.jpg",
+			"src": "/thumbnail/art-technical-blogging-in-a-country-of-missing-systems.jpg",
+			"bytes": 199690,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-ai-sermon-and-the-wet-knot.jpg",
+			"src": "/thumbnail/art-the-ai-sermon-and-the-wet-knot.jpg",
+			"bytes": 228461,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-aromatics-of-stagnation.jpg",
+			"src": "/thumbnail/art-the-aromatics-of-stagnation.jpg",
+			"bytes": 110874,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-atrophy-of-attention.jpg",
+			"src": "/thumbnail/art-the-atrophy-of-attention.jpg",
+			"bytes": 72059,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-bengali-baby.jpg",
+			"src": "/thumbnail/art-the-bengali-baby.jpg",
+			"bytes": 179766,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-billing-hour-has-started-to-smell.jpg",
+			"src": "/thumbnail/art-the-billing-hour-has-started-to-smell.jpg",
+			"bytes": 157686,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-body-becomes-a-small-oven.jpg",
+			"src": "/thumbnail/art-the-body-becomes-a-small-oven.jpg",
+			"bytes": 123920,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-boy-inside-the-broken-house.jpg",
+			"src": "/thumbnail/art-the-boy-inside-the-broken-house.jpg",
+			"bytes": 113071,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-century-has-a-hole-in-it.jpg",
+			"src": "/thumbnail/art-the-century-has-a-hole-in-it.jpg",
+			"bytes": 239406,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-cephalalgia-chronicles.jpg",
+			"src": "/thumbnail/art-the-cephalalgia-chronicles.jpg",
+			"bytes": 129956,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-chair-and-the-drain.jpg",
+			"src": "/thumbnail/art-the-chair-and-the-drain.jpg",
+			"bytes": 198296,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-churning-of-the-lesser-fluids.jpg",
+			"src": "/thumbnail/art-the-churning-of-the-lesser-fluids.jpg",
+			"bytes": 149550,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-city-that-begs-at-the-window.jpg",
+			"src": "/thumbnail/art-the-city-that-begs-at-the-window.jpg",
+			"bytes": 147198,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-coming-unemployment.jpg",
+			"src": "/thumbnail/art-the-coming-unemployment.jpg",
+			"bytes": 115527,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-coming-white-collar-mendicancy.jpg",
+			"src": "/thumbnail/art-the-coming-white-collar-mendicancy.jpg",
+			"bytes": 158344,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-compressor-and-the-small-black-hole.jpg",
+			"src": "/thumbnail/art-the-compressor-and-the-small-black-hole.jpg",
+			"bytes": 91609,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-contender-who-would-not-compete.jpg",
+			"src": "/thumbnail/art-the-contender-who-would-not-compete.jpg",
+			"bytes": 257068,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-courtier-never-leaves.jpg",
+			"src": "/thumbnail/art-the-courtier-never-leaves.jpg",
+			"bytes": 108813,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-cup-that-refused-to-become-content.jpg",
+			"src": "/thumbnail/art-the-cup-that-refused-to-become-content.jpg",
+			"bytes": 112471,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-cup-that-starts-the-sun.jpg",
+			"src": "/thumbnail/art-the-cup-that-starts-the-sun.jpg",
+			"bytes": 114861,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-desperation-premium.jpg",
+			"src": "/thumbnail/art-the-desperation-premium.jpg",
+			"bytes": 127777,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-digital-charnel-house.jpg",
+			"src": "/thumbnail/art-the-digital-charnel-house.jpg",
+			"bytes": 276250,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-dopamine-economy.jpg",
+			"src": "/thumbnail/art-the-dopamine-economy.jpg",
+			"bytes": 105538,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-elon-trillionaire-gap.jpg",
+			"src": "/thumbnail/art-the-elon-trillionaire-gap.jpg",
+			"bytes": 163885,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-empty-room-inside-loneliness.jpg",
+			"src": "/thumbnail/art-the-empty-room-inside-loneliness.jpg",
+			"bytes": 86184,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-erasure-is-a-palimpsest.jpg",
+			"src": "/thumbnail/art-the-erasure-is-a-palimpsest.jpg",
+			"bytes": 207226,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-error-bar-around-a-man.jpg",
+			"src": "/thumbnail/art-the-error-bar-around-a-man.jpg",
+			"bytes": 76427,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-fat-animal-in-the-mirror.jpg",
+			"src": "/thumbnail/art-the-fat-animal-in-the-mirror.jpg",
+			"bytes": 148089,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-former-bright-boy-problem.jpg",
+			"src": "/thumbnail/art-the-former-bright-boy-problem.jpg",
+			"bytes": 133936,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-geometry-of-absence.jpg",
+			"src": "/thumbnail/art-the-geometry-of-absence.jpg",
+			"bytes": 207950,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-ghost-as-perception.jpg",
+			"src": "/thumbnail/art-the-ghost-as-perception.jpg",
+			"bytes": 113174,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-glandular-weather-of-july-fifteenth.jpg",
+			"src": "/thumbnail/art-the-glandular-weather-of-july-fifteenth.jpg",
+			"bytes": 207798,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-gracefully-grotesque-collapse.jpg",
+			"src": "/thumbnail/art-the-gracefully-grotesque-collapse.jpg",
+			"bytes": 129608,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg",
+			"src": "/thumbnail/art-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg",
+			"bytes": 132828,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-great-indian-fence-sitter.jpg",
+			"src": "/thumbnail/art-the-great-indian-fence-sitter.jpg",
+			"bytes": 183555,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-history-of-the-shape-of-atoms.jpg",
+			"src": "/thumbnail/art-the-history-of-the-shape-of-atoms.jpg",
+			"bytes": 66782,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-human-intake-pipe.jpg",
+			"src": "/thumbnail/art-the-human-intake-pipe.jpg",
+			"bytes": 107185,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-laugh-track-has-left-the-room.jpg",
+			"src": "/thumbnail/art-the-laugh-track-has-left-the-room.jpg",
+			"bytes": 79028,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-low-market-value-of-reality.jpg",
+			"src": "/thumbnail/art-the-low-market-value-of-reality.jpg",
+			"bytes": 257008,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-machine-that-cannot-defecate.jpg",
+			"src": "/thumbnail/art-the-machine-that-cannot-defecate.jpg",
+			"bytes": 131898,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-man-held-by-the-neck.jpg",
+			"src": "/thumbnail/art-the-man-held-by-the-neck.jpg",
+			"bytes": 125901,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-man-who-became-his-own-waiting-room.jpg",
+			"src": "/thumbnail/art-the-man-who-became-his-own-waiting-room.jpg",
+			"bytes": 168730,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-many-body-problem-of-indian-life.jpg",
+			"src": "/thumbnail/art-the-many-body-problem-of-indian-life.jpg",
+			"bytes": 111665,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-marrow-of-existence.jpg",
+			"src": "/thumbnail/art-the-marrow-of-existence.jpg",
+			"bytes": 140001,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-moat-has-mosquitoes.jpg",
+			"src": "/thumbnail/art-the-moat-has-mosquitoes.jpg",
+			"bytes": 130627,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-morlocks-in-white-kurta.jpg",
+			"src": "/thumbnail/art-the-morlocks-in-white-kurta.jpg",
+			"bytes": 251510,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-nationalization-of-shame.jpg",
+			"src": "/thumbnail/art-the-nationalization-of-shame.jpg",
+			"bytes": 250524,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-nethermost-layer-of-dinner.jpg",
+			"src": "/thumbnail/art-the-nethermost-layer-of-dinner.jpg",
+			"bytes": 188364,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-new-mantra.jpg",
 			"src": "/thumbnail/art-the-new-mantra.jpg",
 			"bytes": 103240,
@@ -4462,9 +6247,219 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-ordinary-things.jpg",
+			"src": "/thumbnail/art-the-ordinary-things.jpg",
+			"bytes": 135845,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-overzealous-credulity-crisis.jpg",
+			"src": "/thumbnail/art-the-overzealous-credulity-crisis.jpg",
+			"bytes": 129302,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-pariah-porcupine.jpg",
+			"src": "/thumbnail/art-the-pariah-porcupine.jpg",
+			"bytes": 198884,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-person-is-not-a-machine.jpg",
+			"src": "/thumbnail/art-the-person-is-not-a-machine.jpg",
+			"bytes": 144822,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-pharmakon-of-woodlice.jpg",
+			"src": "/thumbnail/art-the-pharmakon-of-woodlice.jpg",
+			"bytes": 162963,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-rent-is-a-clock.jpg",
+			"src": "/thumbnail/art-the-rent-is-a-clock.jpg",
+			"bytes": 114513,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-rice-cooker-and-the-black-hole.jpg",
+			"src": "/thumbnail/art-the-rice-cooker-and-the-black-hole.jpg",
+			"bytes": 95658,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-rice-cooker-kind-of-solitude.jpg",
+			"src": "/thumbnail/art-the-rice-cooker-kind-of-solitude.jpg",
+			"bytes": 136674,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-robot-begins-as-a-loose-wire.jpg",
+			"src": "/thumbnail/art-the-robot-begins-as-a-loose-wire.jpg",
+			"bytes": 122939,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-router-behind-the-television.jpg",
 			"src": "/thumbnail/art-the-router-behind-the-television.jpg",
 			"bytes": 99803,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
+			"src": "/thumbnail/art-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
+			"bytes": 228119,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
+			"src": "/thumbnail/art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
+			"bytes": 139148,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-static-in-the-room.jpg",
+			"src": "/thumbnail/art-the-static-in-the-room.jpg",
+			"bytes": 105024,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-student-model-eats-the-teacher.jpg",
+			"src": "/thumbnail/art-the-student-model-eats-the-teacher.jpg",
+			"bytes": 178681,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-tea-skin-on-my-mind.jpg",
+			"src": "/thumbnail/art-the-tea-skin-on-my-mind.jpg",
+			"bytes": 219489,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-tea-stall-as-an-anti-ai-safety-system.jpg",
+			"src": "/thumbnail/art-the-tea-stall-as-an-anti-ai-safety-system.jpg",
+			"bytes": 153526,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-terrace-republic.jpg",
+			"src": "/thumbnail/art-the-terrace-republic.jpg",
+			"bytes": 234873,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-test-is-congress-where-congress-rules.jpg",
+			"src": "/thumbnail/art-the-test-is-congress-where-congress-rules.jpg",
+			"bytes": 113674,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-thermodynamics-of-envy.jpg",
+			"src": "/thumbnail/art-the-thermodynamics-of-envy.jpg",
+			"bytes": 214804,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-thermodynamics-of-fishy-things.jpg",
+			"src": "/thumbnail/art-the-thermodynamics-of-fishy-things.jpg",
+			"bytes": 203821,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
+			"src": "/thumbnail/art-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
+			"bytes": 149322,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
+			"src": "/thumbnail/art-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
+			"bytes": 142589,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unhelpful-man-in-calcutta.jpg",
+			"src": "/thumbnail/art-the-unhelpful-man-in-calcutta.jpg",
+			"bytes": 131832,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unpaid-consultant-and-the-theology-of-hope.jpg",
+			"src": "/thumbnail/art-the-unpaid-consultant-and-the-theology-of-hope.jpg",
+			"bytes": 118164,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unrecorded-error-india.jpg",
+			"src": "/thumbnail/art-the-unrecorded-error-india.jpg",
+			"bytes": 125227,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-unveiling.jpg",
+			"src": "/thumbnail/art-the-unveiling.jpg",
+			"bytes": 174054,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg",
+			"src": "/thumbnail/art-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg",
+			"bytes": 241266,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
+			"src": "/thumbnail/art-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
+			"bytes": 139330,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-visible-work-of-imaginary-things.jpg",
+			"src": "/thumbnail/art-the-visible-work-of-imaginary-things.jpg",
+			"bytes": 232656,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-weight-of-wet-heat.jpg",
+			"src": "/thumbnail/art-the-weight-of-wet-heat.jpg",
+			"bytes": 119195,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-zeitgeist-of-calcutta-has-changed.jpg",
+			"src": "/thumbnail/art-the-zeitgeist-of-calcutta-has-changed.jpg",
+			"bytes": 189521,
 			"width": 1200,
 			"height": 800
 		},
@@ -4479,6 +6474,181 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-this-blogs-history.jpg",
 			"src": "/thumbnail/art-this-blogs-history.jpg",
 			"bytes": 160062,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-trapezoid-for-my-mother.jpg",
+			"src": "/thumbnail/art-trapezoid-for-my-mother.jpg",
+			"bytes": 136840,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-trapped-by-the-room-mirror-and-feed.jpg",
+			"src": "/thumbnail/art-trapped-by-the-room-mirror-and-feed.jpg",
+			"bytes": 90465,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-trauma-chronic-angst-bipolar-disorder.jpg",
+			"src": "/thumbnail/art-trauma-chronic-angst-bipolar-disorder.jpg",
+			"bytes": 121379,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-truth-adjustment-and-the-cost-of-coming-back.jpg",
+			"src": "/thumbnail/art-truth-adjustment-and-the-cost-of-coming-back.jpg",
+			"bytes": 119238,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-turing-test-for-human-usefulness.jpg",
+			"src": "/thumbnail/art-turing-test-for-human-usefulness.jpg",
+			"bytes": 130071,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-twaddle-tendency.jpg",
+			"src": "/thumbnail/art-twaddle-tendency.jpg",
+			"bytes": 195601,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ubi-india-ai-unemployment-democracy.jpg",
+			"src": "/thumbnail/art-ubi-india-ai-unemployment-democracy.jpg",
+			"bytes": 168804,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-unattractive-mans-weather-report.jpg",
+			"src": "/thumbnail/art-unattractive-mans-weather-report.jpg",
+			"bytes": 83749,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-va-data-warehouse-reality.jpg",
+			"src": "/thumbnail/art-va-data-warehouse-reality.jpg",
+			"bytes": 252099,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-va-healthcare-data-systems-mumps-to-sql.jpg",
+			"src": "/thumbnail/art-va-healthcare-data-systems-mumps-to-sql.jpg",
+			"bytes": 219481,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-vamana-and-the-three-steps-of-bankruptcy.jpg",
+			"src": "/thumbnail/art-vamana-and-the-three-steps-of-bankruptcy.jpg",
+			"bytes": 270533,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-vector-databases.jpg",
+			"src": "/thumbnail/art-vector-databases.jpg",
+			"bytes": 122408,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
+			"src": "/thumbnail/art-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
+			"bytes": 130442,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-waking-up-depressed-in-calcutta.jpg",
+			"src": "/thumbnail/art-waking-up-depressed-in-calcutta.jpg",
+			"bytes": 116116,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-war-spillovers-ukraine-iran-technology.jpg",
+			"src": "/thumbnail/art-war-spillovers-ukraine-iran-technology.jpg",
+			"bytes": 208432,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-welcome-to-suvroghosh-in.jpg",
+			"src": "/thumbnail/art-welcome-to-suvroghosh-in.jpg",
+			"bytes": 132681,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-when-structure-loses-its-map.jpg",
+			"src": "/thumbnail/art-when-structure-loses-its-map.jpg",
+			"bytes": 125026,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-when-the-office-learns-to-beg.jpg",
+			"src": "/thumbnail/art-when-the-office-learns-to-beg.jpg",
+			"bytes": 218770,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-when-variety-starts-wearing-the-same-shirt.jpg",
+			"src": "/thumbnail/art-when-variety-starts-wearing-the-same-shirt.jpg",
+			"bytes": 160641,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-why-i-stopped-apologizing-for-my-life.jpg",
+			"src": "/thumbnail/art-why-i-stopped-apologizing-for-my-life.jpg",
+			"bytes": 111619,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-why-i-write-on-small-things.jpg",
+			"src": "/thumbnail/art-why-i-write-on-small-things.jpg",
+			"bytes": 179708,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-why-i-write-what-i-write.jpg",
+			"src": "/thumbnail/art-why-i-write-what-i-write.jpg",
+			"bytes": 224904,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg",
+			"src": "/thumbnail/art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg",
+			"bytes": 151715,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-woke-word-calcutta-redux.jpg",
+			"src": "/thumbnail/art-woke-word-calcutta-redux.jpg",
+			"bytes": 183596,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-writing-nothing-from-calcutta.jpg",
+			"src": "/thumbnail/art-writing-nothing-from-calcutta.jpg",
+			"bytes": 110095,
 			"width": 1200,
 			"height": 800
 		},
@@ -4586,2274 +6756,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 199314,
 			"width": 1448,
 			"height": 1086
-		},
-		{
-			"name": "safe-a-cup-of-cha-is-not-a-small-thing.jpg",
-			"src": "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg",
-			"bytes": 119540,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-a-meaningless-number-on-an-average-star.jpg",
-			"src": "/thumbnail/safe-a-meaningless-number-on-an-average-star.jpg",
-			"bytes": 129707,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-a-read-this-first.jpg",
-			"src": "/thumbnail/safe-a-read-this-first.jpg",
-			"bytes": 117612,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-a-trapezoid-in-low-light.jpg",
-			"src": "/thumbnail/safe-a-trapezoid-in-low-light.jpg",
-			"bytes": 125056,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-administratively-deleted.jpg",
-			"src": "/thumbnail/safe-administratively-deleted.jpg",
-			"bytes": 115060,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-after-america-before-nothing.jpg",
-			"src": "/thumbnail/safe-after-america-before-nothing.jpg",
-			"bytes": 129711,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-agentic-ai-and-the-asymmetry-of-will.jpg",
-			"src": "/thumbnail/safe-agentic-ai-and-the-asymmetry-of-will.jpg",
-			"bytes": 113629,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-business-model-broke-bengali-nervous.jpg",
-			"src": "/thumbnail/safe-ai-business-model-broke-bengali-nervous.jpg",
-			"bytes": 110528,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-cannot-suffer-yet.jpg",
-			"src": "/thumbnail/safe-ai-cannot-suffer-yet.jpg",
-			"bytes": 112653,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-data-centres-india-power-water-calcutta-fear.jpg",
-			"src": "/thumbnail/safe-ai-data-centres-india-power-water-calcutta-fear.jpg",
-			"bytes": 127030,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-deployment-evidence-over-opinion.jpg",
-			"src": "/thumbnail/safe-ai-deployment-evidence-over-opinion.jpg",
-			"bytes": 123819,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-genie-out-of-the-bottle.jpg",
-			"src": "/thumbnail/safe-ai-genie-out-of-the-bottle.jpg",
-			"bytes": 122090,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-harmonium-players.jpg",
-			"src": "/thumbnail/safe-ai-harmonium-players.jpg",
-			"bytes": 113402,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-health-insurance-surreptitious-risk-scoring.jpg",
-			"src": "/thumbnail/safe-ai-health-insurance-surreptitious-risk-scoring.jpg",
-			"bytes": 121043,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
-			"src": "/thumbnail/safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg",
-			"bytes": 127613,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-meaningful-work-and-the-trust-collapse.jpg",
-			"src": "/thumbnail/safe-ai-meaningful-work-and-the-trust-collapse.jpg",
-			"bytes": 113905,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-meaningful-work-trust-collapse.jpg",
-			"src": "/thumbnail/safe-ai-meaningful-work-trust-collapse.jpg",
-			"bytes": 124429,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-moat-labor-displacement.jpg",
-			"src": "/thumbnail/safe-ai-moat-labor-displacement.jpg",
-			"bytes": 116766,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
-			"src": "/thumbnail/safe-ai-psychology-denial-oscillation-and-the-social-theater-of-competence.jpg",
-			"bytes": 118330,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ai-wave-social-isolation-mental-health-infrastructure.jpg",
-			"src": "/thumbnail/safe-ai-wave-social-isolation-mental-health-infrastructure.jpg",
-			"bytes": 118081,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-aimless-with-mangoes.jpg",
-			"src": "/thumbnail/safe-aimless-with-mangoes.jpg",
-			"bytes": 130739,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-america-and-calcutta.jpg",
-			"src": "/thumbnail/safe-america-and-calcutta.jpg",
-			"bytes": 115253,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-anger-the-last-working-appliance.jpg",
-			"src": "/thumbnail/safe-anger-the-last-working-appliance.jpg",
-			"bytes": 123508,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-annoyed-shouldering-the-chips-calcutta-public-transport.jpg",
-			"src": "/thumbnail/safe-annoyed-shouldering-the-chips-calcutta-public-transport.jpg",
-			"bytes": 114019,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-anthropic-is-coming-for-wall-street.jpg",
-			"src": "/thumbnail/safe-anthropic-is-coming-for-wall-street.jpg",
-			"bytes": 132678,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-aqi-420-and-the-great-indian-snot-mine.jpg",
-			"src": "/thumbnail/safe-aqi-420-and-the-great-indian-snot-mine.jpg",
-			"bytes": 110661,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-arachnoid-in-the-boondocks.jpg",
-			"src": "/thumbnail/safe-arachnoid-in-the-boondocks.jpg",
-			"bytes": 118313,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-arrow-uncertainty-medical-care-healthcare-it.jpg",
-			"src": "/thumbnail/safe-arrow-uncertainty-medical-care-healthcare-it.jpg",
-			"bytes": 131204,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-artisanal-darkness-in-a-kolkata-room.jpg",
-			"src": "/thumbnail/safe-artisanal-darkness-in-a-kolkata-room.jpg",
-			"bytes": 128280,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-asimovs-missing-laws.jpg",
-			"src": "/thumbnail/safe-asimovs-missing-laws.jpg",
-			"bytes": 120501,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-asmr-soft-apocalypse.jpg",
-			"src": "/thumbnail/safe-asmr-soft-apocalypse.jpg",
-			"bytes": 118212,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-babu-culture-vip-india-obsequiousness.jpg",
-			"src": "/thumbnail/safe-babu-culture-vip-india-obsequiousness.jpg",
-			"bytes": 114654,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-badly-lit-municipality-of-myself.jpg",
-			"src": "/thumbnail/safe-badly-lit-municipality-of-myself.jpg",
-			"bytes": 121035,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
-			"src": "/thumbnail/safe-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
-			"bytes": 112522,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bar-english-for-bengalis.jpg",
-			"src": "/thumbnail/safe-bar-english-for-bengalis.jpg",
-			"bytes": 115750,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-barebones-lifeboat-calcutta.jpg",
-			"src": "/thumbnail/safe-barebones-lifeboat-calcutta.jpg",
-			"bytes": 121351,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
-			"src": "/thumbnail/safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
-			"bytes": 114979,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-basel-problem-what-diffusion-model-means.jpg",
-			"src": "/thumbnail/safe-basel-problem-what-diffusion-model-means.jpg",
-			"bytes": 112968,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bassline-backhoe-breath.jpg",
-			"src": "/thumbnail/safe-bassline-backhoe-breath.jpg",
-			"bytes": 122803,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-benfords-law-and-the-ledger-that-sweats.jpg",
-			"src": "/thumbnail/safe-benfords-law-and-the-ledger-that-sweats.jpg",
-			"bytes": 124290,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengal-changed-color-not-character.jpg",
-			"src": "/thumbnail/safe-bengal-changed-color-not-character.jpg",
-			"bytes": 127888,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-hikikomori-shadow.jpg",
-			"src": "/thumbnail/safe-bengali-hikikomori-shadow.jpg",
-			"bytes": 119255,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
-			"src": "/thumbnail/safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg",
-			"bytes": 122316,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-tintin-in-kolkata.jpg",
-			"src": "/thumbnail/safe-bengali-tintin-in-kolkata.jpg",
-			"bytes": 109859,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-who-knows-too-much-to-move.jpg",
-			"src": "/thumbnail/safe-bengali-who-knows-too-much-to-move.jpg",
-			"bytes": 114112,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bessel-correction-for-variance.jpg",
-			"src": "/thumbnail/safe-bessel-correction-for-variance.jpg",
-			"bytes": 118529,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bipolar-depression-friendless-blister.jpg",
-			"src": "/thumbnail/safe-bipolar-depression-friendless-blister.jpg",
-			"bytes": 123883,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bipolar-mood-and-calcutta-calculus.jpg",
-			"src": "/thumbnail/safe-bipolar-mood-and-calcutta-calculus.jpg",
-			"bytes": 115501,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-blind-angry-unhappiness.jpg",
-			"src": "/thumbnail/safe-blind-angry-unhappiness.jpg",
-			"bytes": 121730,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-body-going-to-plan.jpg",
-			"src": "/thumbnail/safe-body-going-to-plan.jpg",
-			"bytes": 125843,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bogosity-enshittification-and-the-glittering-drain.jpg",
-			"src": "/thumbnail/safe-bogosity-enshittification-and-the-glittering-drain.jpg",
-			"bytes": 129668,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-brain-scrap-yard.jpg",
-			"src": "/thumbnail/safe-brain-scrap-yard.jpg",
-			"bytes": 114267,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-brittle-brain-blazing-light-calcutta-room.jpg",
-			"src": "/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg",
-			"bytes": 108873,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-anti-motivation.jpg",
-			"src": "/thumbnail/safe-calcutta-anti-motivation.jpg",
-			"bytes": 124453,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-bengalis-guide-to-ai-tribes.jpg",
-			"src": "/thumbnail/safe-calcutta-bengalis-guide-to-ai-tribes.jpg",
-			"bytes": 118730,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-drain-worm.jpg",
-			"src": "/thumbnail/safe-calcutta-drain-worm.jpg",
-			"bytes": 118408,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-morning-malaise.jpg",
-			"src": "/thumbnail/safe-calcutta-morning-malaise.jpg",
-			"bytes": 117246,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-calcutta-smog-and-the-coming-winter.jpg",
-			"src": "/thumbnail/safe-calcutta-smog-and-the-coming-winter.jpg",
-			"bytes": 123926,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-callous-political-statements-gold-karigars-and-fertiliser.jpg",
-			"src": "/thumbnail/safe-callous-political-statements-gold-karigars-and-fertiliser.jpg",
-			"bytes": 123549,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg",
-			"src": "/thumbnail/safe-cant-go-back-to-childhood-except-as-a-misremembering-ghost.jpg",
-			"bytes": 108997,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-capex-and-the-geometry-of-obsolescence.jpg",
-			"src": "/thumbnail/safe-capex-and-the-geometry-of-obsolescence.jpg",
-			"bytes": 129464,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-chronic-traumatic-nihilism-calcutta.jpg",
-			"src": "/thumbnail/safe-chronic-traumatic-nihilism-calcutta.jpg",
-			"bytes": 126803,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-chyavana-and-the-refusal-to-rot-quietly.jpg",
-			"src": "/thumbnail/safe-chyavana-and-the-refusal-to-rot-quietly.jpg",
-			"bytes": 110919,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-cicada-ba32-covid-variant.jpg",
-			"src": "/thumbnail/safe-cicada-ba32-covid-variant.jpg",
-			"bytes": 115238,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-classification-and-variety-of-rotting-people-in-calcutta.jpg",
-			"src": "/thumbnail/safe-classification-and-variety-of-rotting-people-in-calcutta.jpg",
-			"bytes": 129027,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-claude-fable-5-warning-label.jpg",
-			"src": "/thumbnail/safe-claude-fable-5-warning-label.jpg",
-			"bytes": 115918,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-coding-agents-after-the-keyboard.jpg",
-			"src": "/thumbnail/safe-coding-agents-after-the-keyboard.jpg",
-			"bytes": 128820,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-complexity-in-calcutta.jpg",
-			"src": "/thumbnail/safe-complexity-in-calcutta.jpg",
-			"bytes": 113824,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-concentric-incurable-angsts-of-a-bengali-man.jpg",
-			"src": "/thumbnail/safe-concentric-incurable-angsts-of-a-bengali-man.jpg",
-			"bytes": 112793,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-confounding-factors-healthcare-it-analytics.jpg",
-			"src": "/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg",
-			"bytes": 118646,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-confounding-factors.jpg",
-			"src": "/thumbnail/safe-confounding-factors.jpg",
-			"bytes": 128234,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-constipated-americans-diarrhoea.jpg",
-			"src": "/thumbnail/safe-constipated-americans-diarrhoea.jpg",
-			"bytes": 109766,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-courage-to-be-disliked-in-calcutta.jpg",
-			"src": "/thumbnail/safe-courage-to-be-disliked-in-calcutta.jpg",
-			"bytes": 126568,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-crab-diaries-of-a-bengali-kakistocrat.jpg",
-			"src": "/thumbnail/safe-crab-diaries-of-a-bengali-kakistocrat.jpg",
-			"bytes": 121303,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
-			"src": "/thumbnail/safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
-			"bytes": 107463,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-database-first-principles.jpg",
-			"src": "/thumbnail/safe-database-first-principles.jpg",
-			"bytes": 118723,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-depression-arrives-as-weather.jpg",
-			"src": "/thumbnail/safe-depression-arrives-as-weather.jpg",
-			"bytes": 114210,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-depression-as-mathematics.jpg",
-			"src": "/thumbnail/safe-depression-as-mathematics.jpg",
-			"bytes": 130451,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-depressive-mind-government-office-after-rain.jpg",
-			"src": "/thumbnail/safe-depressive-mind-government-office-after-rain.jpg",
-			"bytes": 119737,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
-			"src": "/thumbnail/safe-do-not-sell-your-pressure-cooker-for-rtx-spark.jpg",
-			"bytes": 118480,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-dogs-bad-people-myth-science.jpg",
-			"src": "/thumbnail/safe-dogs-bad-people-myth-science.jpg",
-			"bytes": 121859,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg",
-			"src": "/thumbnail/safe-drakes-equation-alien-arithmetic-bipolar-bengali-calcutta.jpg",
-			"bytes": 110230,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-educated-boredom-horror.jpg",
-			"src": "/thumbnail/safe-educated-boredom-horror.jpg",
-			"bytes": 118536,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-election-puja-and-the-common-eye.jpg",
-			"src": "/thumbnail/safe-election-puja-and-the-common-eye.jpg",
-			"bytes": 125872,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg",
-			"src": "/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg",
-			"bytes": 107973,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-entropy-in-a-rented-room.jpg",
-			"src": "/thumbnail/safe-entropy-in-a-rented-room.jpg",
-			"bytes": 112913,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-epic.jpg",
-			"src": "/thumbnail/safe-epic.jpg",
-			"bytes": 112389,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-existential-arithmetic-at-bread-level.jpg",
-			"src": "/thumbnail/safe-existential-arithmetic-at-bread-level.jpg",
-			"bytes": 119260,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-explaining-the-healthcare-it-gap-as-continuity.jpg",
-			"src": "/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg",
-			"bytes": 127840,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-facial-pleasure-receipts-and-modern-euphemism.jpg",
-			"src": "/thumbnail/safe-facial-pleasure-receipts-and-modern-euphemism.jpg",
-			"bytes": 112928,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-falling-through-the-crack.jpg",
-			"src": "/thumbnail/safe-falling-through-the-crack.jpg",
-			"bytes": 120839,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-falling-through-the-southern-edge-at-3am.jpg",
-			"src": "/thumbnail/safe-falling-through-the-southern-edge-at-3am.jpg",
-			"bytes": 126191,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fellow-passengers-and-the-broken-record.jpg",
-			"src": "/thumbnail/safe-fellow-passengers-and-the-broken-record.jpg",
-			"bytes": 117589,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fhir-for-a-curious-student-in-calcutta.jpg",
-			"src": "/thumbnail/safe-fhir-for-a-curious-student-in-calcutta.jpg",
-			"bytes": 111938,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg",
-			"src": "/thumbnail/safe-first-door-first-light-the-science-of-clinging-to-the-first-chance.jpg",
-			"bytes": 123673,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-first-principles-thinking-calcutta-healthcare-it.jpg",
-			"src": "/thumbnail/safe-first-principles-thinking-calcutta-healthcare-it.jpg",
-			"bytes": 129999,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fish-and-the-press-conference.jpg",
-			"src": "/thumbnail/safe-fish-and-the-press-conference.jpg",
-			"bytes": 125224,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fish-market-merit-and-the-small-republic-of-honesty.jpg",
-			"src": "/thumbnail/safe-fish-market-merit-and-the-small-republic-of-honesty.jpg",
-			"bytes": 125088,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-flood-of-kakistocracy.jpg",
-			"src": "/thumbnail/safe-flood-of-kakistocracy.jpg",
-			"bytes": 121828,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fog-machines-in-the-temple.jpg",
-			"src": "/thumbnail/safe-fog-machines-in-the-temple.jpg",
-			"bytes": 124080,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-folded-arms-and-other-small-national-disasters.jpg",
-			"src": "/thumbnail/safe-folded-arms-and-other-small-national-disasters.jpg",
-			"bytes": 123158,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-four-fundamental-subspaces.jpg",
-			"src": "/thumbnail/safe-four-fundamental-subspaces.jpg",
-			"bytes": 122055,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-fractal-geometry-of-a-half-lived-life.jpg",
-			"src": "/thumbnail/safe-fractal-geometry-of-a-half-lived-life.jpg",
-			"bytes": 112657,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-frog-in-the-robot-century.jpg",
-			"src": "/thumbnail/safe-frog-in-the-robot-century.jpg",
-			"bytes": 127623,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-future-tense-fog.jpg",
-			"src": "/thumbnail/safe-future-tense-fog.jpg",
-			"bytes": 115067,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-greed-made-me-small.jpg",
-			"src": "/thumbnail/safe-greed-made-me-small.jpg",
-			"bytes": 120458,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-groundhog-cud.jpg",
-			"src": "/thumbnail/safe-groundhog-cud.jpg",
-			"bytes": 127192,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-happiness-after-quicksand.jpg",
-			"src": "/thumbnail/safe-happiness-after-quicksand.jpg",
-			"bytes": 123197,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hardys-law-genetics-callow-calcuttan.jpg",
-			"src": "/thumbnail/safe-hardys-law-genetics-callow-calcuttan.jpg",
-			"bytes": 122263,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hawkers-are-not-rubbish.jpg",
-			"src": "/thumbnail/safe-hawkers-are-not-rubbish.jpg",
-			"bytes": 119290,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-healthcare-ai-wrong-objective.jpg",
-			"src": "/thumbnail/safe-healthcare-ai-wrong-objective.jpg",
-			"bytes": 131222,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
-			"src": "/thumbnail/safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg",
-			"bytes": 130434,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hie-first-principles-openhie.jpg",
-			"src": "/thumbnail/safe-hie-first-principles-openhie.jpg",
-			"bytes": 113134,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hie-from-first-principles.jpg",
-			"src": "/thumbnail/safe-hie-from-first-principles.jpg",
-			"bytes": 120853,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-highly-composite-mornings-prime-afternoons.jpg",
-			"src": "/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg",
-			"bytes": 110392,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hl7-vs-fhir-explained-simply.jpg",
-			"src": "/thumbnail/safe-hl7-vs-fhir-explained-simply.jpg",
-			"bytes": 123008,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-hope-dies-at-different-rates.jpg",
-			"src": "/thumbnail/safe-hope-dies-at-different-rates.jpg",
-			"bytes": 125465,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-how-are-you-and-other-small-cruelties.jpg",
-			"src": "/thumbnail/safe-how-are-you-and-other-small-cruelties.jpg",
-			"bytes": 116571,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-how-va-healthcare-data-systems-work.jpg",
-			"src": "/thumbnail/safe-how-va-healthcare-data-systems-work.jpg",
-			"bytes": 123332,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-human-rights-oh-what-a-joke.jpg",
-			"src": "/thumbnail/safe-human-rights-oh-what-a-joke.jpg",
-			"bytes": 121412,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-i-am-a-solipsist-nihilist.jpg",
-			"src": "/thumbnail/safe-i-am-a-solipsist-nihilist.jpg",
-			"bytes": 118666,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-i-could-have-been-a-simple-fool.jpg",
-			"src": "/thumbnail/safe-i-could-have-been-a-simple-fool.jpg",
-			"bytes": 116511,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-i-do-not-hate-the-world-i-am-tired.jpg",
-			"src": "/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg",
-			"bytes": 119165,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-if-lies-had-noses-again.jpg",
-			"src": "/thumbnail/safe-if-lies-had-noses-again.jpg",
-			"bytes": 122167,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-ai-moat-width-without-depth.jpg",
-			"src": "/thumbnail/safe-india-ai-moat-width-without-depth.jpg",
-			"bytes": 119502,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-ambition-validation-fear-of-mediocrity.jpg",
-			"src": "/thumbnail/safe-india-ambition-validation-fear-of-mediocrity.jpg",
-			"bytes": 133747,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-ehr-hie-ai-constraints.jpg",
-			"src": "/thumbnail/safe-india-ehr-hie-ai-constraints.jpg",
-			"bytes": 127454,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-hoodlums-goons-assortment.jpg",
-			"src": "/thumbnail/safe-india-hoodlums-goons-assortment.jpg",
-			"bytes": 126034,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-noise-machine-small-man.jpg",
-			"src": "/thumbnail/safe-india-noise-machine-small-man.jpg",
-			"bytes": 125927,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-scientific-temper-after-return.jpg",
-			"src": "/thumbnail/safe-india-scientific-temper-after-return.jpg",
-			"bytes": 117439,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-semiconductor-sufficiency-beyond-lip-service.jpg",
-			"src": "/thumbnail/safe-india-semiconductor-sufficiency-beyond-lip-service.jpg",
-			"bytes": 131110,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-indian-middle-aged-middle-class-lopsided-rocks.jpg",
-			"src": "/thumbnail/safe-indian-middle-aged-middle-class-lopsided-rocks.jpg",
-			"bytes": 109455,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg",
-			"src": "/thumbnail/safe-indigenous-robot-dogs-and-the-flatulence-of-governance.jpg",
-			"bytes": 115836,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-insect-forms-of-a-calcutta-life.jpg",
-			"src": "/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg",
-			"bytes": 114651,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-intolerable-cruelty.jpg",
-			"src": "/thumbnail/safe-intolerable-cruelty.jpg",
-			"bytes": 130832,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg",
-			"src": "/thumbnail/safe-invasive-human-weed-species-and-the-dunning-kruger-collapse.jpg",
-			"bytes": 107331,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-invisible-radius.jpg",
-			"src": "/thumbnail/safe-invisible-radius.jpg",
-			"bytes": 133412,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-jealous-of-the-stupid.jpg",
-			"src": "/thumbnail/safe-jealous-of-the-stupid.jpg",
-			"bytes": 120325,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
-			"src": "/thumbnail/safe-jogar-jugaad-and-the-greedy-improvisation-of-india.jpg",
-			"bytes": 108313,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-kinship-range-limit-calcutta.jpg",
-			"src": "/thumbnail/safe-kinship-range-limit-calcutta.jpg",
-			"bytes": 124825,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-kolkata-bat-waiting-for-a-bus.jpg",
-			"src": "/thumbnail/safe-kolkata-bat-waiting-for-a-bus.jpg",
-			"bytes": 108573,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
-			"src": "/thumbnail/safe-large-common-insects-and-arachnids-in-urban-calcutta.jpg",
-			"bytes": 133867,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-last-economy-intelligence-inversion.jpg",
-			"src": "/thumbnail/safe-last-economy-intelligence-inversion.jpg",
-			"bytes": 127116,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-latent-space-healthcare-data.jpg",
-			"src": "/thumbnail/safe-latent-space-healthcare-data.jpg",
-			"bytes": 128471,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-latent-space-in-healthcare-data.jpg",
-			"src": "/thumbnail/safe-latent-space-in-healthcare-data.jpg",
-			"bytes": 113631,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-linkedin-job-market-india-national-xray.jpg",
-			"src": "/thumbnail/safe-linkedin-job-market-india-national-xray.jpg",
-			"bytes": 113774,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-local-disgrace-still-making-noise.jpg",
-			"src": "/thumbnail/safe-local-disgrace-still-making-noise.jpg",
-			"bytes": 123586,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-loneliness-is-not-a-generation.jpg",
-			"src": "/thumbnail/safe-loneliness-is-not-a-generation.jpg",
-			"bytes": 117247,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-lout.jpg",
-			"src": "/thumbnail/safe-lout.jpg",
-			"bytes": 131590,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-marys-retarded-room.jpg",
-			"src": "/thumbnail/safe-marys-retarded-room.jpg",
-			"bytes": 129184,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mental-health-polypharmacy-decision-support.jpg",
-			"src": "/thumbnail/safe-mental-health-polypharmacy-decision-support.jpg",
-			"bytes": 123020,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-milk-cha-and-the-small-engine-of-attention.jpg",
-			"src": "/thumbnail/safe-milk-cha-and-the-small-engine-of-attention.jpg",
-			"bytes": 129650,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mind-as-emergence-not-magic.jpg",
-			"src": "/thumbnail/safe-mind-as-emergence-not-magic.jpg",
-			"bytes": 124848,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mind-not-staying-in-one-place.jpg",
-			"src": "/thumbnail/safe-mind-not-staying-in-one-place.jpg",
-			"bytes": 123521,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mindfulness-calcutta-4am.jpg",
-			"src": "/thumbnail/safe-mindfulness-calcutta-4am.jpg",
-			"bytes": 107196,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-missing-scientists-us.jpg",
-			"src": "/thumbnail/safe-missing-scientists-us.jpg",
-			"bytes": 126655,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mood-bellwethers-before-a-low.jpg",
-			"src": "/thumbnail/safe-mood-bellwethers-before-a-low.jpg",
-			"bytes": 109712,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-multivariate-statistical-modeling-in-healthcare-it.jpg",
-			"src": "/thumbnail/safe-multivariate-statistical-modeling-in-healthcare-it.jpg",
-			"bytes": 122874,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
-			"src": "/thumbnail/safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg",
-			"bytes": 116979,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
-			"src": "/thumbnail/safe-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
-			"bytes": 115262,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-natural-selection-across-timescales.jpg",
-			"src": "/thumbnail/safe-natural-selection-across-timescales.jpg",
-			"bytes": 133376,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-newtons-first-law-and-the-bladder.jpg",
-			"src": "/thumbnail/safe-newtons-first-law-and-the-bladder.jpg",
-			"bytes": 118394,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-nicotine-biri-and-the-great-bengali-bargain.jpg",
-			"src": "/thumbnail/safe-nicotine-biri-and-the-great-bengali-bargain.jpg",
-			"bytes": 118353,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-nightmare-wrapped-in-skin.jpg",
-			"src": "/thumbnail/safe-nightmare-wrapped-in-skin.jpg",
-			"bytes": 120162,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-no-ambition-left-cold-tea.jpg",
-			"src": "/thumbnail/safe-no-ambition-left-cold-tea.jpg",
-			"bytes": 119210,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-nostril-hairs-and-the-tainted-calcutta-summer.jpg",
-			"src": "/thumbnail/safe-nostril-hairs-and-the-tainted-calcutta-summer.jpg",
-			"bytes": 124014,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-one-life-no-rehearsal-calcutta.jpg",
-			"src": "/thumbnail/safe-one-life-no-rehearsal-calcutta.jpg",
-			"bytes": 114284,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-openclaw-balanced-intro.jpg",
-			"src": "/thumbnail/safe-openclaw-balanced-intro.jpg",
-			"bytes": 122942,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-oxygen-in-a-box.jpg",
-			"src": "/thumbnail/safe-oxygen-in-a-box.jpg",
-			"bytes": 124740,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-painful-tooth-fairy-calcutta.jpg",
-			"src": "/thumbnail/safe-painful-tooth-fairy-calcutta.jpg",
-			"bytes": 119081,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-pest-department-in-my-skull.jpg",
-			"src": "/thumbnail/safe-pest-department-in-my-skull.jpg",
-			"bytes": 131734,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
-			"src": "/thumbnail/safe-pharmacy-bandh-online-medicine-and-the-crime-of-convenience.jpg",
-			"bytes": 114279,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-phase-transition-at-fifty-one.jpg",
-			"src": "/thumbnail/safe-phase-transition-at-fifty-one.jpg",
-			"bytes": 112058,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-pixels-that-make-us-feel-present.jpg",
-			"src": "/thumbnail/safe-pixels-that-make-us-feel-present.jpg",
-			"bytes": 118124,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-plague-of-pseudoscience-india-scientific-temper.jpg",
-			"src": "/thumbnail/safe-plague-of-pseudoscience-india-scientific-temper.jpg",
-			"bytes": 115509,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-pod-mara-gechhe-calcutta-essay.jpg",
-			"src": "/thumbnail/safe-pod-mara-gechhe-calcutta-essay.jpg",
-			"bytes": 108705,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-poison-wears-a-clean-shirt.jpg",
-			"src": "/thumbnail/safe-poison-wears-a-clean-shirt.jpg",
-			"bytes": 115331,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-poisson-distribution-healthcare-it.jpg",
-			"src": "/thumbnail/safe-poisson-distribution-healthcare-it.jpg",
-			"bytes": 121789,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-political-promises-and-reality.jpg",
-			"src": "/thumbnail/safe-political-promises-and-reality.jpg",
-			"bytes": 122932,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-predepression-tea-bipolar-calcutta.jpg",
-			"src": "/thumbnail/safe-predepression-tea-bipolar-calcutta.jpg",
-			"bytes": 123608,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-private-nuisance-at-five-thirty-in-calcutta.jpg",
-			"src": "/thumbnail/safe-private-nuisance-at-five-thirty-in-calcutta.jpg",
-			"bytes": 110245,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-prognosis-as-philosophy.jpg",
-			"src": "/thumbnail/safe-prognosis-as-philosophy.jpg",
-			"bytes": 121569,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-questions-change-systems-uthscsa-va.jpg",
-			"src": "/thumbnail/safe-questions-change-systems-uthscsa-va.jpg",
-			"bytes": 120063,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-rain-power-and-quicksand.jpg",
-			"src": "/thumbnail/safe-rain-power-and-quicksand.jpg",
-			"bytes": 118354,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ram-bharose-is-no-bharosa.jpg",
-			"src": "/thumbnail/safe-ram-bharose-is-no-bharosa.jpg",
-			"bytes": 122900,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-randomness-chaos-complexity-calcutta.jpg",
-			"src": "/thumbnail/safe-randomness-chaos-complexity-calcutta.jpg",
-			"bytes": 121856,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-rath-yatra-recursion.jpg",
-			"src": "/thumbnail/safe-rath-yatra-recursion.jpg",
-			"bytes": 120028,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-recidivism-of-fraud-and-superstition-in-india.jpg",
-			"src": "/thumbnail/safe-recidivism-of-fraud-and-superstition-in-india.jpg",
-			"bytes": 120404,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-returning-home-after-america.jpg",
-			"src": "/thumbnail/safe-returning-home-after-america.jpg",
-			"bytes": 109468,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-rice-cooker-bookkeeping.jpg",
-			"src": "/thumbnail/safe-rice-cooker-bookkeeping.jpg",
-			"bytes": 122376,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ro-water-abu-dhabi-rent-calcutta.jpg",
-			"src": "/thumbnail/safe-ro-water-abu-dhabi-rent-calcutta.jpg",
-			"bytes": 110396,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-rotten-sack-indian-politics.jpg",
-			"src": "/thumbnail/safe-rotten-sack-indian-politics.jpg",
-			"bytes": 116806,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sadness-scarab-calcutta-depression.jpg",
-			"src": "/thumbnail/safe-sadness-scarab-calcutta-depression.jpg",
-			"bytes": 115175,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-saturday-mathematics-and-the-end-of-usefulness.jpg",
-			"src": "/thumbnail/safe-saturday-mathematics-and-the-end-of-usefulness.jpg",
-			"bytes": 126019,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-schooling-in-calcutta.jpg",
-			"src": "/thumbnail/safe-schooling-in-calcutta.jpg",
-			"bytes": 119202,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-science-is-not-a-solitary-organ.jpg",
-			"src": "/thumbnail/safe-science-is-not-a-solitary-organ.jpg",
-			"bytes": 119640,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-scrolling-versus-reading-sequential-mind.jpg",
-			"src": "/thumbnail/safe-scrolling-versus-reading-sequential-mind.jpg",
-			"bytes": 115615,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-self-gaslit-minds-and-ai-pretension.jpg",
-			"src": "/thumbnail/safe-self-gaslit-minds-and-ai-pretension.jpg",
-			"bytes": 109813,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sensible-consumer-in-a-pufferfish-world.jpg",
-			"src": "/thumbnail/safe-sensible-consumer-in-a-pufferfish-world.jpg",
-			"bytes": 122750,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-shadow-architecture-clinical-ai.jpg",
-			"src": "/thumbnail/safe-shadow-architecture-clinical-ai.jpg",
-			"bytes": 126203,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-shadow-citizen-of-my-own-room.jpg",
-			"src": "/thumbnail/safe-shadow-citizen-of-my-own-room.jpg",
-			"bytes": 109796,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-shallow-water-loud-television.jpg",
-			"src": "/thumbnail/safe-shallow-water-loud-television.jpg",
-			"bytes": 116076,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sharper-teeth.jpg",
-			"src": "/thumbnail/safe-sharper-teeth.jpg",
-			"bytes": 128356,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-shiva-and-the-poison-in-the-throat.jpg",
-			"src": "/thumbnail/safe-shiva-and-the-poison-in-the-throat.jpg",
-			"bytes": 119380,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-shortchanged-from-dollar-to-paise.jpg",
-			"src": "/thumbnail/safe-shortchanged-from-dollar-to-paise.jpg",
-			"bytes": 120958,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sinusoidal-dementia.jpg",
-			"src": "/thumbnail/safe-sinusoidal-dementia.jpg",
-			"bytes": 127474,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sitala-manasa-public-health-superstition.jpg",
-			"src": "/thumbnail/safe-sitala-manasa-public-health-superstition.jpg",
-			"bytes": 128179,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-skepticism-is-the-mosquito-net.jpg",
-			"src": "/thumbnail/safe-skepticism-is-the-mosquito-net.jpg",
-			"bytes": 130276,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-slow-poisoning-republic.jpg",
-			"src": "/thumbnail/safe-slow-poisoning-republic.jpg",
-			"bytes": 115896,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
-			"src": "/thumbnail/safe-sludgegpt-and-the-mirage-of-machine-understanding.jpg",
-			"bytes": 125597,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-smorgasbord-of-impotence-calcutta-middle-age.jpg",
-			"src": "/thumbnail/safe-smorgasbord-of-impotence-calcutta-middle-age.jpg",
-			"bytes": 105096,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-society-with-open-drains-and-polished-shoes.jpg",
-			"src": "/thumbnail/safe-society-with-open-drains-and-polished-shoes.jpg",
-			"bytes": 125995,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-square-peg-in-a-world-of-round-holes.jpg",
-			"src": "/thumbnail/safe-square-peg-in-a-world-of-round-holes.jpg",
-			"bytes": 124120,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-symmetry-in-a-calcutta-room.jpg",
-			"src": "/thumbnail/safe-symmetry-in-a-calcutta-room.jpg",
-			"bytes": 122032,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-synthetic-jest-fake-laughter-bengali-modernity.jpg",
-			"src": "/thumbnail/safe-synthetic-jest-fake-laughter-bengali-modernity.jpg",
-			"bytes": 120874,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-synthetic-music-and-the-crowded-miracle.jpg",
-			"src": "/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg",
-			"bytes": 130580,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tau-scaling-law-time-not-nanometers.jpg",
-			"src": "/thumbnail/safe-tau-scaling-law-time-not-nanometers.jpg",
-			"bytes": 114919,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tautology-metaphor-strawman-ruminative-depression.jpg",
-			"src": "/thumbnail/safe-tautology-metaphor-strawman-ruminative-depression.jpg",
-			"bytes": 116956,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tea-depression-and-the-probability-of-a-blog.jpg",
-			"src": "/thumbnail/safe-tea-depression-and-the-probability-of-a-blog.jpg",
-			"bytes": 124006,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tea-skin-and-the-science-of-suspicion.jpg",
-			"src": "/thumbnail/safe-tea-skin-and-the-science-of-suspicion.jpg",
-			"bytes": 113187,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-technical-blogging-in-a-country-of-missing-systems.jpg",
-			"src": "/thumbnail/safe-technical-blogging-in-a-country-of-missing-systems.jpg",
-			"bytes": 114018,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-ai-sermon-and-the-wet-knot.jpg",
-			"src": "/thumbnail/safe-the-ai-sermon-and-the-wet-knot.jpg",
-			"bytes": 110773,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-aromatics-of-stagnation.jpg",
-			"src": "/thumbnail/safe-the-aromatics-of-stagnation.jpg",
-			"bytes": 127365,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-atrophy-of-attention.jpg",
-			"src": "/thumbnail/safe-the-atrophy-of-attention.jpg",
-			"bytes": 130237,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-bengali-baby.jpg",
-			"src": "/thumbnail/safe-the-bengali-baby.jpg",
-			"bytes": 113438,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-billing-hour-has-started-to-smell.jpg",
-			"src": "/thumbnail/safe-the-billing-hour-has-started-to-smell.jpg",
-			"bytes": 125215,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-body-becomes-a-small-oven.jpg",
-			"src": "/thumbnail/safe-the-body-becomes-a-small-oven.jpg",
-			"bytes": 127841,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-boy-inside-the-broken-house.jpg",
-			"src": "/thumbnail/safe-the-boy-inside-the-broken-house.jpg",
-			"bytes": 113324,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-century-has-a-hole-in-it.jpg",
-			"src": "/thumbnail/safe-the-century-has-a-hole-in-it.jpg",
-			"bytes": 115605,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-cephalalgia-chronicles.jpg",
-			"src": "/thumbnail/safe-the-cephalalgia-chronicles.jpg",
-			"bytes": 121329,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-chair-and-the-drain.jpg",
-			"src": "/thumbnail/safe-the-chair-and-the-drain.jpg",
-			"bytes": 111276,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-churning-of-the-lesser-fluids.jpg",
-			"src": "/thumbnail/safe-the-churning-of-the-lesser-fluids.jpg",
-			"bytes": 117361,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-city-that-begs-at-the-window.jpg",
-			"src": "/thumbnail/safe-the-city-that-begs-at-the-window.jpg",
-			"bytes": 118988,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-coming-unemployment.jpg",
-			"src": "/thumbnail/safe-the-coming-unemployment.jpg",
-			"bytes": 133595,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-coming-white-collar-mendicancy.jpg",
-			"src": "/thumbnail/safe-the-coming-white-collar-mendicancy.jpg",
-			"bytes": 118414,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-compressor-and-the-small-black-hole.jpg",
-			"src": "/thumbnail/safe-the-compressor-and-the-small-black-hole.jpg",
-			"bytes": 112213,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-contender-who-would-not-compete.jpg",
-			"src": "/thumbnail/safe-the-contender-who-would-not-compete.jpg",
-			"bytes": 121813,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-courtier-never-leaves.jpg",
-			"src": "/thumbnail/safe-the-courtier-never-leaves.jpg",
-			"bytes": 119339,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-cup-that-refused-to-become-content.jpg",
-			"src": "/thumbnail/safe-the-cup-that-refused-to-become-content.jpg",
-			"bytes": 125470,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-cup-that-starts-the-sun.jpg",
-			"src": "/thumbnail/safe-the-cup-that-starts-the-sun.jpg",
-			"bytes": 117356,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-desperation-premium.jpg",
-			"src": "/thumbnail/safe-the-desperation-premium.jpg",
-			"bytes": 117885,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-digital-charnel-house.jpg",
-			"src": "/thumbnail/safe-the-digital-charnel-house.jpg",
-			"bytes": 121208,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-dopamine-economy.jpg",
-			"src": "/thumbnail/safe-the-dopamine-economy.jpg",
-			"bytes": 120386,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-elon-trillionaire-gap.jpg",
-			"src": "/thumbnail/safe-the-elon-trillionaire-gap.jpg",
-			"bytes": 123525,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-empty-room-inside-loneliness.jpg",
-			"src": "/thumbnail/safe-the-empty-room-inside-loneliness.jpg",
-			"bytes": 115754,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-erasure-is-a-palimpsest.jpg",
-			"src": "/thumbnail/safe-the-erasure-is-a-palimpsest.jpg",
-			"bytes": 119482,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-error-bar-around-a-man.jpg",
-			"src": "/thumbnail/safe-the-error-bar-around-a-man.jpg",
-			"bytes": 115851,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-fat-animal-in-the-mirror.jpg",
-			"src": "/thumbnail/safe-the-fat-animal-in-the-mirror.jpg",
-			"bytes": 120534,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-former-bright-boy-problem.jpg",
-			"src": "/thumbnail/safe-the-former-bright-boy-problem.jpg",
-			"bytes": 120065,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-geometry-of-absence.jpg",
-			"src": "/thumbnail/safe-the-geometry-of-absence.jpg",
-			"bytes": 116220,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-ghost-as-perception.jpg",
-			"src": "/thumbnail/safe-the-ghost-as-perception.jpg",
-			"bytes": 123027,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-glandular-weather-of-july-fifteenth.jpg",
-			"src": "/thumbnail/safe-the-glandular-weather-of-july-fifteenth.jpg",
-			"bytes": 125920,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-gracefully-grotesque-collapse.jpg",
-			"src": "/thumbnail/safe-the-gracefully-grotesque-collapse.jpg",
-			"bytes": 130379,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg",
-			"src": "/thumbnail/safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg",
-			"bytes": 113912,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-great-indian-fence-sitter.jpg",
-			"src": "/thumbnail/safe-the-great-indian-fence-sitter.jpg",
-			"bytes": 117056,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-history-of-the-shape-of-atoms.jpg",
-			"src": "/thumbnail/safe-the-history-of-the-shape-of-atoms.jpg",
-			"bytes": 119363,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-human-intake-pipe.jpg",
-			"src": "/thumbnail/safe-the-human-intake-pipe.jpg",
-			"bytes": 129836,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-laugh-track-has-left-the-room.jpg",
-			"src": "/thumbnail/safe-the-laugh-track-has-left-the-room.jpg",
-			"bytes": 123774,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-low-market-value-of-reality.jpg",
-			"src": "/thumbnail/safe-the-low-market-value-of-reality.jpg",
-			"bytes": 120677,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-machine-that-cannot-defecate.jpg",
-			"src": "/thumbnail/safe-the-machine-that-cannot-defecate.jpg",
-			"bytes": 115643,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-man-held-by-the-neck.jpg",
-			"src": "/thumbnail/safe-the-man-held-by-the-neck.jpg",
-			"bytes": 121553,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-man-who-became-his-own-waiting-room.jpg",
-			"src": "/thumbnail/safe-the-man-who-became-his-own-waiting-room.jpg",
-			"bytes": 112315,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-many-body-problem-of-indian-life.jpg",
-			"src": "/thumbnail/safe-the-many-body-problem-of-indian-life.jpg",
-			"bytes": 130468,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-marrow-of-existence.jpg",
-			"src": "/thumbnail/safe-the-marrow-of-existence.jpg",
-			"bytes": 113366,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-moat-has-mosquitoes.jpg",
-			"src": "/thumbnail/safe-the-moat-has-mosquitoes.jpg",
-			"bytes": 123080,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-morlocks-in-white-kurta.jpg",
-			"src": "/thumbnail/safe-the-morlocks-in-white-kurta.jpg",
-			"bytes": 124100,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-nationalization-of-shame.jpg",
-			"src": "/thumbnail/safe-the-nationalization-of-shame.jpg",
-			"bytes": 118544,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-nethermost-layer-of-dinner.jpg",
-			"src": "/thumbnail/safe-the-nethermost-layer-of-dinner.jpg",
-			"bytes": 124633,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-ordinary-things.jpg",
-			"src": "/thumbnail/safe-the-ordinary-things.jpg",
-			"bytes": 123664,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-overzealous-credulity-crisis.jpg",
-			"src": "/thumbnail/safe-the-overzealous-credulity-crisis.jpg",
-			"bytes": 110779,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-pariah-porcupine.jpg",
-			"src": "/thumbnail/safe-the-pariah-porcupine.jpg",
-			"bytes": 119729,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-person-is-not-a-machine.jpg",
-			"src": "/thumbnail/safe-the-person-is-not-a-machine.jpg",
-			"bytes": 123526,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-pharmakon-of-woodlice.jpg",
-			"src": "/thumbnail/safe-the-pharmakon-of-woodlice.jpg",
-			"bytes": 121351,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-rent-is-a-clock.jpg",
-			"src": "/thumbnail/safe-the-rent-is-a-clock.jpg",
-			"bytes": 116068,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-rice-cooker-and-the-black-hole.jpg",
-			"src": "/thumbnail/safe-the-rice-cooker-and-the-black-hole.jpg",
-			"bytes": 131963,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-rice-cooker-kind-of-solitude.jpg",
-			"src": "/thumbnail/safe-the-rice-cooker-kind-of-solitude.jpg",
-			"bytes": 123023,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-robot-begins-as-a-loose-wire.jpg",
-			"src": "/thumbnail/safe-the-robot-begins-as-a-loose-wire.jpg",
-			"bytes": 120833,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
-			"src": "/thumbnail/safe-the-signal-to-noise-ratio-of-a-ruined-life.jpg",
-			"bytes": 124157,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
-			"src": "/thumbnail/safe-the-small-usefulness-of-suspecting-you-are-a-fool.jpg",
-			"bytes": 121633,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-static-in-the-room.jpg",
-			"src": "/thumbnail/safe-the-static-in-the-room.jpg",
-			"bytes": 109866,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-student-model-eats-the-teacher.jpg",
-			"src": "/thumbnail/safe-the-student-model-eats-the-teacher.jpg",
-			"bytes": 117985,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-tea-skin-on-my-mind.jpg",
-			"src": "/thumbnail/safe-the-tea-skin-on-my-mind.jpg",
-			"bytes": 121995,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-tea-stall-as-an-anti-ai-safety-system.jpg",
-			"src": "/thumbnail/safe-the-tea-stall-as-an-anti-ai-safety-system.jpg",
-			"bytes": 126142,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-terrace-republic.jpg",
-			"src": "/thumbnail/safe-the-terrace-republic.jpg",
-			"bytes": 112219,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-test-is-congress-where-congress-rules.jpg",
-			"src": "/thumbnail/safe-the-test-is-congress-where-congress-rules.jpg",
-			"bytes": 126902,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-thermodynamics-of-envy.jpg",
-			"src": "/thumbnail/safe-the-thermodynamics-of-envy.jpg",
-			"bytes": 118788,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-thermodynamics-of-fishy-things.jpg",
-			"src": "/thumbnail/safe-the-thermodynamics-of-fishy-things.jpg",
-			"bytes": 121334,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
-			"src": "/thumbnail/safe-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
-			"bytes": 120943,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
-			"src": "/thumbnail/safe-the-unattractive-mans-guide-to-quantum-mechanics.jpg",
-			"bytes": 113988,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unhelpful-man-in-calcutta.jpg",
-			"src": "/thumbnail/safe-the-unhelpful-man-in-calcutta.jpg",
-			"bytes": 122328,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unpaid-consultant-and-the-theology-of-hope.jpg",
-			"src": "/thumbnail/safe-the-unpaid-consultant-and-the-theology-of-hope.jpg",
-			"bytes": 106685,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unrecorded-error-india.jpg",
-			"src": "/thumbnail/safe-the-unrecorded-error-india.jpg",
-			"bytes": 114819,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-unveiling.jpg",
-			"src": "/thumbnail/safe-the-unveiling.jpg",
-			"bytes": 120216,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg",
-			"src": "/thumbnail/safe-the-useful-box-and-the-bengali-problem-of-too-many-choices.jpg",
-			"bytes": 129305,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
-			"src": "/thumbnail/safe-the-vermicular-parliament-of-my-unhinged-cranium.jpg",
-			"bytes": 118814,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-visible-work-of-imaginary-things.jpg",
-			"src": "/thumbnail/safe-the-visible-work-of-imaginary-things.jpg",
-			"bytes": 122568,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-weight-of-wet-heat.jpg",
-			"src": "/thumbnail/safe-the-weight-of-wet-heat.jpg",
-			"bytes": 110121,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-zeitgeist-of-calcutta-has-changed.jpg",
-			"src": "/thumbnail/safe-the-zeitgeist-of-calcutta-has-changed.jpg",
-			"bytes": 120537,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-this-blogs-history.jpg",
-			"src": "/thumbnail/safe-this-blogs-history.jpg",
-			"bytes": 111886,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-trapezoid-for-my-mother.jpg",
-			"src": "/thumbnail/safe-trapezoid-for-my-mother.jpg",
-			"bytes": 112982,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-trapped-by-the-room-mirror-and-feed.jpg",
-			"src": "/thumbnail/safe-trapped-by-the-room-mirror-and-feed.jpg",
-			"bytes": 125840,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-trauma-chronic-angst-bipolar-disorder.jpg",
-			"src": "/thumbnail/safe-trauma-chronic-angst-bipolar-disorder.jpg",
-			"bytes": 121492,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-truth-adjustment-and-the-cost-of-coming-back.jpg",
-			"src": "/thumbnail/safe-truth-adjustment-and-the-cost-of-coming-back.jpg",
-			"bytes": 115380,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-turing-test-for-human-usefulness.jpg",
-			"src": "/thumbnail/safe-turing-test-for-human-usefulness.jpg",
-			"bytes": 108111,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-twaddle-tendency.jpg",
-			"src": "/thumbnail/safe-twaddle-tendency.jpg",
-			"bytes": 108383,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-ubi-india-ai-unemployment-democracy.jpg",
-			"src": "/thumbnail/safe-ubi-india-ai-unemployment-democracy.jpg",
-			"bytes": 111280,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-unattractive-mans-weather-report.jpg",
-			"src": "/thumbnail/safe-unattractive-mans-weather-report.jpg",
-			"bytes": 111575,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-va-data-warehouse-reality.jpg",
-			"src": "/thumbnail/safe-va-data-warehouse-reality.jpg",
-			"bytes": 130669,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-va-healthcare-data-systems-mumps-to-sql.jpg",
-			"src": "/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg",
-			"bytes": 116795,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-vamana-and-the-three-steps-of-bankruptcy.jpg",
-			"src": "/thumbnail/safe-vamana-and-the-three-steps-of-bankruptcy.jpg",
-			"bytes": 123296,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-vector-databases.jpg",
-			"src": "/thumbnail/safe-vector-databases.jpg",
-			"bytes": 117243,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
-			"src": "/thumbnail/safe-vegetable-girl-before-dawn-calcutta-ai-and-cosmic-luck.jpg",
-			"bytes": 125187,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-waking-up-depressed-in-calcutta.jpg",
-			"src": "/thumbnail/safe-waking-up-depressed-in-calcutta.jpg",
-			"bytes": 110564,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-war-spillovers-ukraine-iran-technology.jpg",
-			"src": "/thumbnail/safe-war-spillovers-ukraine-iran-technology.jpg",
-			"bytes": 133390,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-welcome-to-suvroghosh-in.jpg",
-			"src": "/thumbnail/safe-welcome-to-suvroghosh-in.jpg",
-			"bytes": 118316,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-when-structure-loses-its-map.jpg",
-			"src": "/thumbnail/safe-when-structure-loses-its-map.jpg",
-			"bytes": 116448,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-when-the-office-learns-to-beg.jpg",
-			"src": "/thumbnail/safe-when-the-office-learns-to-beg.jpg",
-			"bytes": 121762,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-when-variety-starts-wearing-the-same-shirt.jpg",
-			"src": "/thumbnail/safe-when-variety-starts-wearing-the-same-shirt.jpg",
-			"bytes": 113315,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-i-stopped-apologizing-for-my-life.jpg",
-			"src": "/thumbnail/safe-why-i-stopped-apologizing-for-my-life.jpg",
-			"bytes": 122942,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-i-write-on-small-things.jpg",
-			"src": "/thumbnail/safe-why-i-write-on-small-things.jpg",
-			"bytes": 114189,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-i-write-what-i-write.jpg",
-			"src": "/thumbnail/safe-why-i-write-what-i-write.jpg",
-			"bytes": 119028,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg",
-			"src": "/thumbnail/safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg",
-			"bytes": 114477,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-woke-word-calcutta-redux.jpg",
-			"src": "/thumbnail/safe-woke-word-calcutta-redux.jpg",
-			"bytes": 126168,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-writing-nothing-from-calcutta.jpg",
-			"src": "/thumbnail/safe-writing-nothing-from-calcutta.jpg",
-			"bytes": 107978,
-			"width": 1200,
-			"height": 800
 		}
 	]
 };

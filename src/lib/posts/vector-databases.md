@@ -1,17 +1,28 @@
 ---
 title: "Vector Databases"
-description: "A system-level examination of vector databases for healthcare IT and serious technical readers. This post separates the glamour of embeddings from the harder realities of retrieval, semantics, filtering, latency, and representational loss."
+description: "A systems examination of healthcare vector databases, retrieval, semantics, filtering, latency, embeddings, and representational loss."
 date: "2026-04-23"
+dateModified: "2026-08-07"
 category: "healthcare it"
-tags: ["Health Level Seven","Diabetes Medication","Vector Databases","Vector Database","Data Quality","Embedding","Search","Retrieval","Database","Chunk"]
+tags: ["Health Level Seven","Diabetes Medication","Vector Databases","Vector Database","Data Quality","Embedding","Search","Database","Retrieval","Chunk"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-vector-databases.jpg"
+thumbnail: "/thumbnail/art-vector-databases.jpg"
+thumbnailAlt: "Clinical data stones passing through filters toward a brass search magnet"
+inPlainEnglish: "A vector database stores embeddings so a system can retrieve items by learned similarity rather than exact words. In healthcare, useful retrieval also requires metadata filters, provenance, privacy, latency control, evaluation, and safeguards against missing rare but important distinctions."
+keyTerms: ["Vector Database", "Embedding", "Similarity Search", "Retrieval", "Metadata Filter", "Semantic Search", "Approximate Nearest Neighbor", "Representational Loss"]
+faq:
+  - question: "What does a vector database store?"
+    answer: "It stores numerical embeddings alongside identifiers and metadata, then indexes those vectors so applications can retrieve nearby items efficiently."
+  - question: "How is vector search different from keyword search?"
+    answer: "Keyword search looks for lexical matches, while vector search uses a learned representation to find items judged semantically similar even when they use different words."
+  - question: "Why does healthcare vector search need metadata and provenance?"
+    answer: "Similarity alone may ignore patient identity, time, source, consent, document type, clinical status, or reliability, all of which can determine whether a retrieved item is safe to use."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-vector-databases.jpg" />
+<Pi src="/thumbnail/art-vector-databases.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

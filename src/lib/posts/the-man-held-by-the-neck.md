@@ -2,16 +2,18 @@
 title: "The Man Held by the Neck"
 description: "A satirical lament on the common citizen in a democracy where elections remain, but truth, work, justice, and hope are squeezed like cheap toothpaste."
 date: "2026-05-20"
+dateModified: "2026-08-07"
 category: "Politics"
-tags: ["Economic Offenders","Criminal Cases","Electoral Bonds","Common Man","Democratic Reforms","Inequality","Offenders","India","Percent","Citizen"]
+tags: ["Economic Offenders","Criminal Cases","Electoral Bonds","Democratic Reforms","Common Man","Inequality","India","Offenders","Percent","Citizen"]
 published: true
 color: "#3F3F46"
-thumbnail: "/thumbnail/safe-the-man-held-by-the-neck.jpg"
+thumbnail: "/thumbnail/art-the-man-held-by-the-neck.jpg"
+thumbnailAlt: "Collared metal tube passes through brass rollers and releases tools, scales and a green sprout"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-man-held-by-the-neck.jpg" />
+<Pi src="/thumbnail/art-the-man-held-by-the-neck.jpg" />
 
 ADR: Association for Democratic Reforms, an Indian civil society group that analyzes election affidavits, criminal cases, assets, and other public election data.
 

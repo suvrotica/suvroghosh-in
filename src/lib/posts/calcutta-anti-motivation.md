@@ -1,17 +1,19 @@
 ---
 title: "I Am Probably the Least Motivational Blogger in India"
-description: "A middle-aged Bengali man in Calcutta explains why he distrusts motivational culture, why survival matters more than inspiration, and why freedom sometimes means giving up on changing everyone else."
+description: "A middle-aged Bengali skeptic explains why survival can matter more than inspiration and why freedom may mean abandoning motivational culture."
 date: "2026-05-12"
+dateModified: "2026-08-07"
 category: "Society"
-tags: ["Immediate","Mythology","Motivational","Lizard","Partly","Anymore","Anyway","Honestly","India","Enough"]
+tags: ["Immediate","Mythology","Motivational","Lizard","Partly","Anymore","Anyway","India","Honestly","Enough"]
 published: true
 color: "stone"
-thumbnail: "/thumbnail/safe-calcutta-anti-motivation.jpg"
+thumbnail: "/thumbnail/art-calcutta-anti-motivation.jpg"
+thumbnailAlt: "Calcutta man calmly drinks tea above a noisy procession of blank motivational placards"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-anti-motivation.jpg" />
+<Pi src="/thumbnail/art-calcutta-anti-motivation.jpg" />
 
 
 

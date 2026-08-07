@@ -1,18 +1,20 @@
 ---
 title: "The Great Calcutta Bathing, Shaving, Dressing for Civilization Problem"
-description: "A painfully honest Calcutta essay about depression, bathing, shaving, dressing, body shame, executive dysfunction, and the small daily collapse that cheerful people mistake for laziness."
+description: "A fully clothed man faces soap, towel, razor, bucket, and shirt as ordinary grooming becomes a vast obstacle under depression."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Decide Whether","Bathroom Door","Soap","Towel","Razor","Bathroom","Shirt","Bathing","Bucket","Mirror"]
 published: true
 color: "#334155"
-thumbnail: "/thumbnail/safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg"
+thumbnail: "/thumbnail/art-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg"
+thumbnailAlt: "Fully clothed Bengali man facing a bathroom doorway and an obstacle course of grooming objects"
 ---
 
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg" />
+<Pi src="/thumbnail/art-the-great-calcutta-bathing-shaving-dressing-for-civilization-problem.jpg" />
 
 
 

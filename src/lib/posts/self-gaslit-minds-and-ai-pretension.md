@@ -2,16 +2,18 @@
 title: "Self-Gaslit Minds in the Age of AI"
 description: "A sharp essay on how technical pretension, fear of ignorance, and AI-assisted knowledge arbitrage corrode scientific progress, especially in education and industry."
 date: "2026-05-03"
+dateModified: "2026-08-07"
 category: "Technology"
 tags: ["Interface Conceals","Good Engineer","Ignorance","Glitters","Pretends","Represent","AI","Conceals","Comprehension","Engineer"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-self-gaslit-minds-and-ai-pretension.jpg"
+thumbnail: "/thumbnail/art-self-gaslit-minds-and-ai-pretension.jpg"
+thumbnailAlt: "Apprentice studying a working mechanism beside a grand polished box with an empty interior"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-self-gaslit-minds-and-ai-pretension.jpg" />
+<Pi src="/thumbnail/art-self-gaslit-minds-and-ai-pretension.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

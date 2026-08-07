@@ -1,17 +1,19 @@
 ---
 title: "The Room, the Light, and the Brittle Brain"
-description: "A Calcutta rumination on bipolar fear, middle age, loneliness, small income, and the uneasy question of whether the room is a prison or a shelter from a madder world."
+description: "A Calcutta meditation on bipolar fear, loneliness, small income and whether one room is prison or shelter from a madder world."
 date: "2026-05-22"
+dateModified: "2026-08-07"
 category: "Personal"
-tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Fear","Cup","Rise","Mind"]
+tags: ["Unfamiliar","Prison","Window","Brain","Freedom","Lies","Fear","Cup","Mind","Rise"]
 published: true
 color: "#374151"
-thumbnail: "/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg"
+thumbnail: "/thumbnail/art-brittle-brain-blazing-light-calcutta-room.jpg"
+thumbnailAlt: "Sunlit Kolkata room balances barred shadows, a soft curtain and an empty chair"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg" />
+<Pi src="/thumbnail/art-brittle-brain-blazing-light-calcutta-room.jpg" />
 
 <Vid 
   src="music/জানলা_খোলা_রাখি.mp4" 

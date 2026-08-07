@@ -2,16 +2,18 @@
 title: "Facial Pleasure Receipts"
 description: "A meditation on modern euphemism, synthetic happiness, and the social requirement to smile while the machinery eats quietly through the floorboards."
 date: "2026-04-27"
+dateModified: "2026-08-07"
 category: "Culture"
-tags: ["Plain Speech","Smile","Sophistication","Pleasure","Speech","Violence","Suffering","Synthetic","Expression","Horror"]
+tags: ["Plain Speech","Smile","Sophistication","Pleasure","Speech","Violence","Suffering","Synthetic","Horror","Expression"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-facial-pleasure-receipts-and-modern-euphemism.jpg"
+thumbnail: "/thumbnail/art-facial-pleasure-receipts-and-modern-euphemism.jpg"
+thumbnailAlt: "Seated person holds a smiling mirror beside a blank receipt and hidden gears"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-facial-pleasure-receipts-and-modern-euphemism.jpg" />
+<Pi src="/thumbnail/art-facial-pleasure-receipts-and-modern-euphemism.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

@@ -1,17 +1,19 @@
 ---
 title: "Calcutta Morning Malaise"
-description: "A grotesquely swollen, self-reflective rant from a fifty-one-year-old Bengali man in Calcutta, cycling through manic and depressive states with convoluted syntax, comic profanity, and unrelenting cynicism."
+description: "A self-reflective Calcutta rant from a fifty-one-year-old Bengali man cycling through manic and depressive states with comic cynicism."
 date: "2026-07-15"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Moving Slower","Howrah Bridge","Cock","Raving","Carousel","Insignificant","SUVs","Simultaneously","Manic","Utterly"]
+tags: ["Moving Slower","Howrah Bridge","Cock","Raving","Carousel","SUVs","Insignificant","Simultaneously","Utterly","Manic"]
 published: true
 color: "#8B0000"
-thumbnail: "/thumbnail/safe-calcutta-morning-malaise.jpg"
+thumbnail: "/thumbnail/art-calcutta-morning-malaise.jpg"
+thumbnailAlt: "Bengali man drinks tea before a swirling dawn panorama of Kolkata traffic"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-morning-malaise.jpg" />
+<Pi src="/thumbnail/art-calcutta-morning-malaise.jpg" />
 
 The captive cock on the neighbor's rooftop announces, with the shrill, unearned authority of a municipal alarm clock that has never once questioned its own purpose, that morning has arrived and someone, anyone, must feed it, and I lie here in this gelatinous half-state between the counterfeit death of sleep and the even more counterfeit resurrection of consciousness, my mouth tasting of stale glucose and the chemical regret of having consumed, at approximately two in the morning, an entire packet of glucose biscuits—the kind that come wrapped in cellophane and promise, with the brazen mendacity of a politician's campaign speech, to be "digestive"—while outside, in the bruised violet of this Calcutta dawn that arrives like a debt collector who never knocks politely, the drivers of two rental SUVs, vehicles of such preposterous, bulbous, aggressively American proportions that they seem to have been designed by someone who has never once had to navigate a lane designed for a cow and a rickshaw and a suicidal cyclist simultaneously, engage in that particular species of male camaraderie that consists entirely of shouting at each other about things that do not matter, will never matter, have been engineered specifically to not matter, and I do not listen, I refuse to listen, I have made a vocation of not listening, because nothing interests me, nothing has interested me for a duration of time that I can no longer measure with the crude instruments of calendars or clocks or the incremental graying of my own beard, which I inspect now in the mirror with the clinical detachment of a pathologist examining a particularly unremarkable tissue sample, and I think, with the kind of manic clarity that arrives like a flash flood in a drought, that life is merely a carousel of repeats, a phantasmagoria of chewing through the moments in my existence without effect, result, outcome, or goal, a general numbing about the world that persists despite my full, grotesque, almost pornographic awareness that it is utterly and impossibly gruesome, that people are cruel, insensitive, selfish, that it is not exactly a dog-eat-dog world but certainly, undeniably, a man-eat-man world, and I am the masticated residue, the undigested fiber, the bit that gets stuck between the teeth of the cosmos and is eventually spat out onto the pavement of Ballygunge or Gariahat or wherever this particular corner of irrelevance happens to be located.
 

@@ -2,16 +2,18 @@
 title: "Science Is Not a Solitary Organ"
 description: "A reflection on why real scientific work, especially in clinical research and healthcare data, depends on collaboration rather than lonely brilliance."
 date: "2026-05-04"
+dateModified: "2026-08-07"
 category: "Science"
 tags: ["Source Systems","Health Science","Statistician","Research","Collaboration","Analyst","Data","Clinical","Science","Veterans"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-science-is-not-a-solitary-organ.jpg"
+thumbnail: "/thumbnail/art-science-is-not-a-solitary-organ.jpg"
+thumbnailAlt: "Six research hands join textured glass pieces into one collaborative scientific form"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-science-is-not-a-solitary-organ.jpg" />
+<Pi src="/thumbnail/art-science-is-not-a-solitary-organ.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

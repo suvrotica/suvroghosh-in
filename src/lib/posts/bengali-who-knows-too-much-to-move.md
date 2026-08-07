@@ -1,17 +1,19 @@
 ---
 title: "The Bengali Who Knows Too Much to Move"
-description: "A satirical essay on the overeducated, under-executing Bengali male mind: brilliant at explanation, allergic to action, and tragically gifted at turning self-sabotage into literature."
+description: "A satire of the overeducated Bengali mind: brilliant at explanation, allergic to action and gifted at literary self-sabotage."
 date: "2026-06-19"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Phone Calls","Mentions","Bengali","Adda","Ditch","Revolution","Surface","Bengal","Football","Action"]
+tags: ["Phone Calls","Mentions","Bengali","Adda","Ditch","Revolution","Bengal","Surface","Football","Action"]
 published: true
 color: "brown"
-thumbnail: "/thumbnail/safe-bengali-who-knows-too-much-to-move.jpg"
+thumbnail: "/thumbnail/art-bengali-who-knows-too-much-to-move.jpg"
+thumbnailAlt: "Bengali speaker explains elaborate models while unused shoes and tools wait nearby"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-bengali-who-knows-too-much-to-move.jpg" />
+<Pi src="/thumbnail/art-bengali-who-knows-too-much-to-move.jpg" />
 
 
 

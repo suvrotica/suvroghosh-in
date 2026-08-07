@@ -2,16 +2,18 @@
 title: "The Billing Hour Has Started to Smell"
 description: "A plainspoken, sharp look at how AI threatens the old Indian IT services model built on headcount, billing hours, and exchange-rate comfort."
 date: "2026-06-07"
+dateModified: "2026-08-07"
 category: "Technology"
-tags: ["AI","Code","Software","Companies","Y2K","Frown","Indian","Judgment","Add","Pyramid"]
+tags: ["AI","Code","Software","Companies","Y2K","Frown","Indian","Judgment","Pyramid","Add"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-billing-hour-has-started-to-smell.jpg"
+thumbnail: "/thumbnail/art-the-billing-hour-has-started-to-smell.jpg"
+thumbnailAlt: "Pyramid of office chairs and hourglasses sagging beneath a wilted marigold garland"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-billing-hour-has-started-to-smell.jpg" />
+<Pi src="/thumbnail/art-the-billing-hour-has-started-to-smell.jpg" />
 
 Acronyms and terms used:
 

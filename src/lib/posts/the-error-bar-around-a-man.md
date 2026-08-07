@@ -2,18 +2,20 @@
 title: "The Error Bar Around a Man"
 description: "A personal science essay about depression, bankruptcy, loneliness, social judgment, and why no human life should be reduced to one cruel number."
 date: "2026-06-12"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Error Bar","Mark Sheet","Error","Minus","Plus","Unattractive","Measurement","Bankrupt","Rejected","Bar"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-error-bar-around-a-man.jpg"
+thumbnail: "/thumbnail/art-the-error-bar-around-a-man.jpg"
+thumbnailAlt: "Bengali man surrounded by a broad translucent interval of light and broken measuring tools"
 ---
 
 Acronyms used: CT means computed tomography, a medical scan that builds cross-sectional pictures of the body. ECG means electrocardiogram, a recording of the heart’s electrical activity. SAS means Statistical Analysis System, software once widely used for statistical programming and clinical research data analysis. CESC means Calcutta Electric Supply Corporation, the electricity utility serving Kolkata.
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-error-bar-around-a-man.jpg" />
+<Pi src="/thumbnail/art-the-error-bar-around-a-man.jpg" />
 
 ---
 

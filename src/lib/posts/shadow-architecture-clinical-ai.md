@@ -2,13 +2,13 @@
 title: "Clinical AI Needs A Shadow Architecture First"
 description: "What clinical AI needs beyond a model: validation, monitoring, workflow design, governance, accountability, and human review before deployment."
 date: "2026-06-23"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "Healthcare-IT"
 tags: ["Shadow Architecture","Deep Learning","Patient Cares Whether","Shadow Holds","Clinical AI","Clinical","AI","Model","Validation","Monitoring"]
 published: true
 color: "#2C3E50"
-thumbnail: "/thumbnail/safe-shadow-architecture-clinical-ai.jpg"
-thumbnailAlt: "Abstract intersecting waves and fine contour lines in navy, coral, plum, and cream"
+thumbnail: "/thumbnail/art-shadow-architecture-clinical-ai.jpg"
+thumbnailAlt: "Small glowing AI cube supported by a large hidden clinical safety architecture"
 inPlainEnglish: "A clinical AI model is only the visible part of a care system. Safe use also requires representative data, external and temporal validation, workflow integration, human review, monitoring, audit trails, escalation rules, security, governance, and accountable ownership."
 keyTerms: ["Clinical AI", "Shadow Architecture", "External Validation", "Model Monitoring", "MLOps", "Human Factors"]
 faq:
@@ -22,7 +22,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-shadow-architecture-clinical-ai.jpg" />
+<Pi src="/thumbnail/art-shadow-architecture-clinical-ai.jpg" />
 
 The alert appears before anyone can admire the algorithm.
 

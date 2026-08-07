@@ -1,12 +1,14 @@
 ---
 title: "Insect Forms of a Calcutta Life"
-description: "A darkly funny Calcutta essay about sketching human beings as insects, the small machinery of social extraction, and the unpleasant honesty of seeing oneself among the crawling things."
+description: "Paper-cut Calcutta figures adopt insect-like tools of extraction while the artist's own silhouette appears in the mirror."
 date: "2026-06-14"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Empire Loved","Draw","Insects","Rat","Beetle","Kafka","Termite","Insect","Fly","Antennae"]
+tags: ["Empire Loved","Draw","Insects","Rat","Beetle","Kafka","Termite","Insect","Fly","Legs"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg"
+thumbnail: "/thumbnail/art-insect-forms-of-a-calcutta-life.jpg"
+thumbnailAlt: "Paper-cut Calcutta figures with symbolic insect traits arranged around an illustrator's mirror"
 ---
 
 Acronyms and terms used in this post:
@@ -17,7 +19,7 @@ DNA: Deoxyribonucleic Acid, the molecule that carries genetic instructions in li
 
 <TTS />
 
-<Pi src="/thumbnail/safe-insect-forms-of-a-calcutta-life.jpg" />
+<Pi src="/thumbnail/art-insect-forms-of-a-calcutta-life.jpg" />
 
 ---
 

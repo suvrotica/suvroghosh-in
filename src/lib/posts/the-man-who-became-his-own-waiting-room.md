@@ -1,17 +1,19 @@
 ---
 title: "The Man Who Became His Own Waiting Room"
-description: "A personal essay about a middle-aged Bengali man in the southern fringe of Calcutta waiting for work, money, health, love, and dignity to return, until waiting itself becomes the life."
+description: "Concentric empty chairs transform a modest Calcutta room into a life spent waiting for work, money, health, love, and dignity."
 date: "2026-06-09"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Waiting Room","Waiting","Shrinks","Wait","Waits","Mornings","Give","Stuck","Contain","Messages"]
+tags: ["Waiting Room","Waiting","Shrinks","Wait","Waits","Mornings","Give","Stuck","Messages","Contain"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-man-who-became-his-own-waiting-room.jpg"
+thumbnail: "/thumbnail/art-the-man-who-became-his-own-waiting-room.jpg"
+thumbnailAlt: "Bengali man sitting alone inside concentric rows of empty waiting-room chairs"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-man-who-became-his-own-waiting-room.jpg" />
+<Pi src="/thumbnail/art-the-man-who-became-his-own-waiting-room.jpg" />
 
 
 

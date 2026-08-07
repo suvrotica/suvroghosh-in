@@ -1,17 +1,28 @@
 ---
 title: "VistA, MUMPS, and the Warehouse After Midnight"
-description: "A Calcutta-grounded essay on how VA healthcare data moves from VistA's MUMPS and FileMan world into SQL warehouses, and why that translation is historical, clinical, and technical all at once."
+description: "How VA healthcare data moves from VistA, MUMPS, and FileMan into SQL warehouses through historical, clinical, and technical translation."
 date: "2026-06-24"
+dateModified: "2026-08-07"
 category: "Healthcare-IT"
-tags: ["Oracle Cerner","Microsoft SQL Server","VA Corporate Data","Veterans Affairs","Layer Cake","VistA","MUMPS","SQL","VA","FileMan"]
+tags: ["Oracle Cerner","VA Corporate Data","Microsoft SQL Server","Veterans Affairs","Layer Cake","VistA","MUMPS","SQL","VA","FileMan"]
 published: true
 color: "#1a4d8f"
-thumbnail: "/thumbnail/safe-how-va-healthcare-data-systems-work.jpg"
+thumbnail: "/thumbnail/art-how-va-healthcare-data-systems-work.jpg"
+thumbnailAlt: "Historic clinical record drawers feeding a layered translator and modern warehouse shelves"
+inPlainEnglish: "VA healthcare data begins in long-lived clinical systems such as VistA, MUMPS, and FileMan, then passes through translation and warehousing layers before analysts can query it in SQL. Understanding that history is essential because the warehouse does not erase the meaning or quirks of its sources."
+keyTerms: ["VistA", "MUMPS", "FileMan", "VA Corporate Data Warehouse", "SQL", "Clinical Data Warehouse", "Data Provenance", "Legacy System"]
+faq:
+  - question: "What is VistA?"
+    answer: "VistA is the Veterans Health Information Systems and Technology Architecture, a long-running collection of clinical and administrative applications used across the United States Department of Veterans Affairs."
+  - question: "Why does VA data involve MUMPS and FileMan?"
+    answer: "Many VistA applications store and manage information through MUMPS and FileMan structures, so downstream warehouse data retains concepts and conventions inherited from those systems."
+  - question: "Why is VA warehouse data not simply ordinary SQL data?"
+    answer: "The SQL tables are downstream representations of historical clinical systems. Analysts must understand translation rules, source semantics, identifiers, time, and provenance to interpret them safely."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-how-va-healthcare-data-systems-work.jpg" />
+<Pi src="/thumbnail/art-how-va-healthcare-data-systems-work.jpg" />
 
 A server room has a particular smell.
 

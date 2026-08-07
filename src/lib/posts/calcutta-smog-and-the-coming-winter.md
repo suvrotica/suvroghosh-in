@@ -1,17 +1,19 @@
 ---
 title: "Calcutta Smog and the Coming Winter"
-description: "A satirical field note on Calcutta’s winter air, civic evasion, bad measurement, public-health fatigue, and the annual Bengali talent for mistaking endurance for policy."
+description: "A satirical field note on Calcutta’s winter air, civic evasion, poor measurement, public-health fatigue, and endurance mistaken for policy."
 date: "2026-05-05"
+dateModified: "2026-08-07"
 category: "Satire"
-tags: ["Past Winters","Garbage Burning","Road Dust","Winter","Air","Public-Health","Winters","Pollution","AQI","Dust"]
+tags: ["Past Winters","Garbage Burning","Road Dust","Winter","Air","Public-Health","Pollution","Winters","AQI","Dust"]
 published: true
 color: "gray"
-thumbnail: "/thumbnail/safe-calcutta-smog-and-the-coming-winter.jpg"
+thumbnail: "/thumbnail/art-calcutta-smog-and-the-coming-winter.jpg"
+thumbnailAlt: "Kolkata commuters waiting in smog beside an air monitor wrapped in a woollen scarf"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-calcutta-smog-and-the-coming-winter.jpg" />
+<Pi src="/thumbnail/art-calcutta-smog-and-the-coming-winter.jpg" />
 
 Acronyms expanded in this post:
 - AQI: Air Quality Index. a public-health number that summarizes pollution risk.

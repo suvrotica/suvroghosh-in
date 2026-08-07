@@ -2,11 +2,13 @@
 title: "Fractal Geometry of a Half-Lived Life"
 description: "A personal essay on fractal geometry, depression, bipolar recurrence, poverty, loneliness, and the strange structure hidden inside an ordinary Calcutta day."
 date: "2026-06-13"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Fractal Geometry","Middle Third","Tea Stain","Rice Cooker","Whole Life","Fractal","Ruler","Coastline","Self-similarity","Fern"]
 published: true
 color: "brown"
-thumbnail: "/thumbnail/safe-fractal-geometry-of-a-half-lived-life.jpg"
+thumbnail: "/thumbnail/art-fractal-geometry-of-a-half-lived-life.jpg"
+thumbnailAlt: "Bengali man in a room recursively patterned with tea stains, ferns, rulers, and windows"
 ---
 
 Fractal geometry: the mathematics of rough, branching, self-repeating shapes that refuse to behave like neat circles, squares, and triangles.
@@ -27,7 +29,7 @@ Attractor: a pattern or state toward which a system tends to move, even when the
 
 <TTS />
 
-<Pi src="/thumbnail/safe-fractal-geometry-of-a-half-lived-life.jpg" />
+<Pi src="/thumbnail/art-fractal-geometry-of-a-half-lived-life.jpg" />
 
 ---
 

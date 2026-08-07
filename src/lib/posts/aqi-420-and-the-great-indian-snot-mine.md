@@ -1,17 +1,19 @@
 ---
 title: "AQI 420 and the Great Indian Snot Mine"
 date: "2026-01-15"
+dateModified: "2026-08-07"
 description: "A wheezy Calcutta satire on bad air, middle-class lungs, sparkly snot, and the national talent for turning every discomfort into a development model."
 category: "personal"
-tags: ["AQI","Fuss","Nostril","Respiratory","Particulate","Shine","Nose","Sparkle","Filter","Mucus"]
+tags: ["AQI","Fuss","Nostril","Respiratory","Particulate","Shine","Nose","Sparkle","Mucus","Filter"]
 published: true
 color: "orange"
-thumbnail: "/thumbnail/safe-aqi-420-and-the-great-indian-snot-mine.jpg"
+thumbnail: "/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg"
+thumbnailAlt: "Sooty handkerchief and brass mining pan overlooking smoggy Kolkata"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-aqi-420-and-the-great-indian-snot-mine.jpg" />
+<Pi src="/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg" />
 
 Acronyms used: AQI — Air Quality Index, the public number that tells you whether the air is friendly, suspicious, hostile, or trying to finish what your enemies started. PM2.5 — particulate matter smaller than 2.5 micrometers, tiny enough to enter deep into the lungs like an uninvited relative who has found the spare key. PM10 — particulate matter smaller than 10 micrometers, still small enough to make the nose and throat complain like old men at a ration shop. GDP — Gross Domestic Product, the national money scoreboard that counts many things and understands very few of them. AI — Artificial Intelligence, software that now appears everywhere, including places where ordinary intelligence has not yet been tried.
 

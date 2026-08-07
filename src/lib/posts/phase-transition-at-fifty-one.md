@@ -1,17 +1,19 @@
 ---
 title: "Phase Transition at Fifty-One"
-description: "A Calcutta essay on boiling water, burnt rice, middle-aged failure, depression, loneliness, and the small ugly possibility of changing state after life has already stamped you rejected."
+description: "Boiling water, burnt rice, depression, loneliness, and physics become a small possibility of changing state at fifty-one."
 date: "2026-06-17"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Man Reinvents","Latent Heat","Reinvents","Surely","Heat","Fifty-One","Hope","Physics","Latent","Young"]
+tags: ["Man Reinvents","Latent Heat","Reinvents","Surely","Heat","Fifty-One","Hope","Latent","Physics","Young"]
 published: true
 color: "#7A4F2A"
-thumbnail: "/thumbnail/safe-phase-transition-at-fifty-one.jpg"
+thumbnail: "/thumbnail/art-phase-transition-at-fifty-one.jpg"
+thumbnailAlt: "Steam forms a delicate lattice above a pot as a green shoot rises from scorched rice"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-phase-transition-at-fifty-one.jpg" />
+<Pi src="/thumbnail/art-phase-transition-at-fifty-one.jpg" />
 
 AC: Air Conditioner, the household machine that cools the room by moving heat elsewhere and then announces its labor with a compressor sound that can interrupt a man’s private ruin.
 

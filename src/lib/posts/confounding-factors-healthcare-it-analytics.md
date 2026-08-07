@@ -2,14 +2,14 @@
 title: "Confounding Factors"
 description: "How confounding enters healthcare analytics through workflows, selection, time, missingness, and site differences—and how to design more honest analyses."
 date: "2026-04-22"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "healthcare-it"
 tags: ["Confounding","Causal Inference","Healthcare Analytics","Target Trial","Directed Acyclic Graphs","Selection Bias","Time Zero","Missing Data","Data-Generating Process","Healthcare Data"]
 pinnedTags: ["Confounding", "Causal Inference", "Healthcare Analytics", "Target Trial", "Directed Acyclic Graphs", "Selection Bias", "Time Zero", "Missing Data", "Data-Generating Process", "Healthcare Data"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg"
-thumbnailAlt: "Overlapping muted shapes and contour lines suggesting hidden factors bending an apparent relationship"
+thumbnail: "/thumbnail/art-confounding-factors-healthcare-it-analytics.jpg"
+thumbnailAlt: "Clinical exposure and outcome linked through five hidden filtering layers"
 mediaReviewed: true
 inPlainEnglish: "Confounding in healthcare analytics is often manufactured upstream—through eligibility, workflow, documentation, denominators, timestamps, missingness, and capture boundaries—before a statistical model is fitted. Statistical adjustment cannot repair a question whose population, time zero, or data-generating process was defined badly."
 keyTerms: ["Confounding", "Denominator", "Causal Inference", "Target Trial", "Directed Acyclic Graph", "Data-Generating Process"]
@@ -24,7 +24,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg" alt="" />
+<Pi src="/thumbnail/art-confounding-factors-healthcare-it-analytics.jpg" alt="" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

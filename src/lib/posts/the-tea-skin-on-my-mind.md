@@ -2,11 +2,13 @@
 title: "The Tea Skin on My Mind"
 description: "A Kolkata personal essay on overthinking, solitude, procrastination, emotional exhaustion, and the strange comedy of not quite belonging anywhere."
 date: "2026-06-08"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Bubble","Doubts","Nonsense","Watch","Faith","Boredom","Suspicious","Certainty","Tea","Evidence"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-the-tea-skin-on-my-mind.jpg"
+thumbnail: "/thumbnail/art-the-tea-skin-on-my-mind.jpg"
+thumbnailAlt: "Translucent patterned membrane floats above tea between three mismatched doorways"
 ---
 
 Acronyms and terms used:
@@ -17,7 +19,7 @@ LinkedIn — A professional networking site where everyone appears employed, pol
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-tea-skin-on-my-mind.jpg" />
+<Pi src="/thumbnail/art-the-tea-skin-on-my-mind.jpg" />
 
 ---
 

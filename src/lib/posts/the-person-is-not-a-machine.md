@@ -1,17 +1,19 @@
 ---
 title: "The Person Is Not a Machine"
-description: "A 51-year-old in Calcutta reflects on why he still writes long-form personal essays in an age of algorithmic content, AI slop, and collapsing attention spans—choosing thought over trend, and honesty over polish."
+description: "A 51-year-old Calcutta writer chooses long-form thought and honesty over algorithms, AI slop, trends, and collapsing attention spans."
 date: "2026-06-24"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Write","Algorithm","Fan","Singularity","Power","Read","Fatigue","Thoughts","Internet","Dying"]
 published: true
 color: "#8B4513"
-thumbnail: "/thumbnail/safe-the-person-is-not-a-machine.jpg"
+thumbnail: "/thumbnail/art-the-person-is-not-a-machine.jpg"
+thumbnailAlt: "Calcutta writer chooses a blank page while a machine produces identical content tiles"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-person-is-not-a-machine.jpg" />
+<Pi src="/thumbnail/art-the-person-is-not-a-machine.jpg" />
 
 The ceiling fan in my room makes a sound like a small aircraft preparing for an uncertain takeoff. It has made this sound for years. I know because I have counted. Not obsessively, not in any clinical way, but in the manner in which a person who lives alone in a room with a noisy fan comes to know the particular cadence of his own discomfort. The blades wobble slightly—there is a microscopic imbalance somewhere in the assembly that no electrician has ever been able to diagnose, let alone fix—and the resulting oscillation produces a rhythmic thrum that varies with the humidity. On days like today, when the pre-monsoon air hangs in the room like a damp wool blanket, the fan sounds desperate. It is trying. That is the important part. It is trying to move air that does not want to be moved.
 

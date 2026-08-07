@@ -2,16 +2,18 @@
 title: "The Gracefully Grotesque Collapse"
 description: "A darkly comic Calcutta essay on the crooked human body, the vanity of uprightness, and the ridiculous dignity of surviving while bent out of shape."
 date: "2026-06-08"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Bends","Hump","Bending","Humps","Backwards","Gibbus","Bend","Crooked","Nietzsche","Grotesque"]
+tags: ["Bends","Hump","Humps","Bending","Backwards","Gibbus","Bend","Crooked","Nietzsche","Spine"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-gracefully-grotesque-collapse.jpg"
+thumbnail: "/thumbnail/art-the-gracefully-grotesque-collapse.jpg"
+thumbnailAlt: "Older person with a curved spine moving gracefully among buckling classical columns"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-gracefully-grotesque-collapse.jpg" />
+<Pi src="/thumbnail/art-the-gracefully-grotesque-collapse.jpg" />
 
 Acronyms and terms:
 

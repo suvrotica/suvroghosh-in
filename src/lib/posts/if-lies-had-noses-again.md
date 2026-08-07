@@ -2,16 +2,18 @@
 title: "If Lies Had Noses Again"
 description: "A satirical speculative social post about Pinocchio, public lying, and the small miracle of visible consequences in a world where falsehood now travels first class."
 date: "2026-05-14"
+dateModified: "2026-08-07"
 category: "Satire"
 tags: ["Nose","Pinocchio","Lie","Nasal","Noses","Lies","Dishonesty","Give","Fake","Liar"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-if-lies-had-noses-again.jpg"
+thumbnail: "/thumbnail/art-if-lies-had-noses-again.jpg"
+thumbnailAlt: "Three wooden profile tokens with lengthening pegs in a first-class railway carriage"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-if-lies-had-noses-again.jpg" />
+<Pi src="/thumbnail/art-if-lies-had-noses-again.jpg" />
 
 
 

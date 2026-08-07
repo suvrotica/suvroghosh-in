@@ -2,16 +2,18 @@
 title: "Tea Skin and the Science of Suspicion"
 description: "A darkly comic Calcutta essay on why suspicion in India is not cynicism but daily survival, civic hygiene, and a small umbrella in a permanent drizzle of claims."
 date: "2026-06-08"
+dateModified: "2026-08-07"
 category: "Essay"
-tags: ["Suspicion","Worms","Guy","India","Evil","Tea","Holy","Indian","Number","Trust"]
+tags: ["Suspicion","Worms","Guy","India","Evil","Tea","Holy","Indian","Trust","Number"]
 published: true
 color: "#8B5A2B"
-thumbnail: "/thumbnail/safe-tea-skin-and-the-science-of-suspicion.jpg"
+thumbnail: "/thumbnail/art-tea-skin-and-the-science-of-suspicion.jpg"
+thumbnailAlt: "Cooling tea with a cracked surface beside a magnifying glass, umbrella, and testing vial"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-tea-skin-and-the-science-of-suspicion.jpg" />
+<Pi src="/thumbnail/art-tea-skin-and-the-science-of-suspicion.jpg" />
 
 Aadhaar: India’s biometric identity number, the card that appears in modern life the way mosquitoes appear after rain.
 

@@ -1,17 +1,19 @@
 ---
 title: "Skepticism Is the Mosquito Net"
-description: "A personal analytical essay on why deep skepticism is not cynicism in India, but a survival skill against corruption, superstition, propaganda, nepotism, and daily institutional nonsense."
+description: "An analytical essay on skepticism as an Indian survival skill against corruption, superstition, propaganda, nepotism and institutional nonsense."
 date: "2026-05-31"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Skepticism","Jingoism","India","Propaganda","Earned","Ask","Speech","UPI","Trust","Glowing"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-skepticism-is-the-mosquito-net.jpg"
+thumbnail: "/thumbnail/art-skepticism-is-the-mosquito-net.jpg"
+thumbnailAlt: "Bengali man examines a small object inside a mosquito net while spectacle glows outside"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-skepticism-is-the-mosquito-net.jpg" />
+<Pi src="/thumbnail/art-skepticism-is-the-mosquito-net.jpg" />
 
 Acronyms and terms used below:
 

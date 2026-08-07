@@ -1,15 +1,17 @@
 ---
 title: "When Suffering Refuses to Leave the Room"
-description: "A personal essay on how acute and chronic trauma can turn into a constant background angst, especially when it collides with bipolar disorder, betrayal, failed relationships, and a hostile social and business environment."
+description: "A personal essay on chronic trauma, bipolar disorder, betrayal, failed relationships, and constant anxiety in hostile social environments."
 date: "2026-05-28"
+dateModified: "2026-08-07"
 category: "Mental Health"
-tags: ["Bipolar Disorder","Nervous System","Injury","Trauma","Betrayal","Disorder","Business","Bipolar","Unsafe","Relationships"]
+tags: ["Bipolar Disorder","Nervous System","Injury","Trauma","Betrayal","Disorder","Business","Bipolar","Unsafe","Sometimes"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-trauma-chronic-angst-bipolar-disorder.jpg"
+thumbnail: "/thumbnail/art-trauma-chronic-angst-bipolar-disorder.jpg"
+thumbnailAlt: "Bengali woman opening shutters while a weathered rooted armchair remains behind"
 ---
 <TTS />
-<Pi src="/thumbnail/safe-trauma-chronic-angst-bipolar-disorder.jpg" />
+<Pi src="/thumbnail/art-trauma-chronic-angst-bipolar-disorder.jpg" />
 Suffering does not always end when the event ends. Sometimes the event walks out, shuts the door politely, and leaves behind a small government office inside the nervous system, where files are never closed, fans rotate slowly, and every clerk is suspicious.
 
 That is the part many cheerful people do not understand. They think trauma is a memory. It is not always a memory. Sometimes it becomes weather. It becomes the air pressure inside the skull. It becomes the little tightening before a phone call, the dread before opening WhatsApp, the sudden collapse of energy before doing ordinary work, the private court case that keeps running in the mind long after all parties have left the building.

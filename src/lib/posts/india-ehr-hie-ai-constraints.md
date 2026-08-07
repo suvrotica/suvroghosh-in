@@ -1,17 +1,28 @@
 ---
 title: "Why EHR and HIE Struggle in India but AI Diagnostics might not"
-description: "A system-level analysis of why Electronic Health Records and Health Information Exchange architectures remain impractical in India, and how structural gaps may paradoxically enable AI-driven diagnostics."
+description: "Why EHR and HIE architectures struggle in India, and how the same structural gaps may create openings for AI-driven diagnostics."
 date: "2026-04-21"
+dateModified: "2026-08-07"
 category: "healthcare it"
 tags: ["Health Level Seven","AI Diagnostics","Digital Health","Care Documents","EHR","Clinical","HIE","Data","Diagnostics","Healthcare"]
 published: true
 color: "teal"
-thumbnail: "/thumbnail/safe-india-ehr-hie-ai-constraints.jpg"
+thumbnail: "/thumbnail/art-india-ehr-hie-ai-constraints.jpg"
+thumbnailAlt: "Broken bridge of blank records between Indian clinics with a local diagnostic lens in front"
+inPlainEnglish: "Electronic records and health information exchange require institutions to coordinate identity, standards, workflows, governance, and long-term infrastructure. In India those foundations are uneven, while narrowly scoped diagnostic tools may sometimes work locally without first connecting the whole system."
+keyTerms: ["Electronic Health Record", "Health Information Exchange", "AI Diagnostics", "Interoperability", "Patient Identity", "Clinical Workflow", "Digital Health Infrastructure", "Data Governance"]
+faq:
+  - question: "Why do EHR and HIE programmes struggle when infrastructure is fragmented?"
+    answer: "They depend on consistent identity, terminology, workflows, connectivity, governance, maintenance, and cooperation across many institutions, so weaknesses compound across the network."
+  - question: "Why might a diagnostic AI tool face fewer coordination barriers?"
+    answer: "A narrowly scoped tool may operate at one clinical edge with local data and a specific task, avoiding some of the cross-institutional coordination required by a national record exchange."
+  - question: "Does that mean AI diagnostics can replace EHR or HIE?"
+    answer: "No. A diagnostic tool may answer a bounded question, while EHR and HIE systems preserve longitudinal records, context, accountability, continuity, and exchange across care settings."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-india-ehr-hie-ai-constraints.jpg" />
+<Pi src="/thumbnail/art-india-ehr-hie-ai-constraints.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

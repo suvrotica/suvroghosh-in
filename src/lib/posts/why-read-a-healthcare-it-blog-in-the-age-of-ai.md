@@ -2,13 +2,13 @@
 title: "Why You Still Want to Read a Healthcare IT Blog in the Age of AI"
 description: "Why practitioner-written healthcare IT analysis still matters amid AI-generated noise, vendor jargon, and systems that resist generic answers."
 date: "2026-06-26"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "Healthcare-IT"
 tags: ["Bodyshopping Moat","Linear Algebra","Adversarial Attacks","AI-driven Healthcare","Model Drift","Healthcare","AI","Systems","Genetic","Clinical"]
 published: true
 color: "#2E5C8A"
-thumbnail: "/thumbnail/safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg"
-thumbnailAlt: "Textured abstract waves in cream, rust, plum and blue crossed by fine contour lines"
+thumbnail: "/thumbnail/art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg"
+thumbnailAlt: "Healthcare systems practitioner tracing a real cable amid drifting blank answer cards"
 inPlainEnglish: "AI can summarize healthcare technology, but practitioner-written analysis remains valuable because real clinical systems are shaped by local workflows, legacy constraints, governance, failure modes, and consequences that generic answers often flatten."
 keyTerms: ["Healthcare IT", "Clinical Data Systems", "AI in Healthcare", "Model Drift", "Interoperability", "Data Governance"]
 faq:
@@ -22,7 +22,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg" />
+<Pi src="/thumbnail/art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg" />
 
 
 ## The Uncomfortable Premise

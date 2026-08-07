@@ -2,16 +2,18 @@
 title: "Depression Arrives as Weather"
 description: "A plainspoken personal essay on bipolar depression, anhedonia, and the strange private weather that turns ordinary life monochrome."
 date: "2026-06-03"
+dateModified: "2026-08-07"
 category: "Mental Health"
 tags: ["Depression","Anhedonia","Depressions","Weather","Department","Cloud","Gratitude","Sadness","Feel","Eggs"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-depression-arrives-as-weather.jpg"
+thumbnail: "/thumbnail/art-depression-arrives-as-weather.jpg"
+thumbnailAlt: "Bengali man walking beneath a private grey rain cloud through a colourful Kolkata market"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-depression-arrives-as-weather.jpg" />
+<Pi src="/thumbnail/art-depression-arrives-as-weather.jpg" />
 
 Acronyms and terms used in this post:
 

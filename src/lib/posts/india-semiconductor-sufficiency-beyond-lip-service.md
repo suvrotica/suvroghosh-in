@@ -1,17 +1,19 @@
 ---
 title: "India’s Semiconductor Problem Is Not a Missing Slogan"
-description: "India is late to semiconductor manufacturing because chips are an industrial civilization compressed into silicon. The useful question is which parts of the stack India can master, in what order, and with what honesty."
+description: "Why India’s semiconductor challenge requires mastering an industrial stack in sequence rather than repeating slogans."
 date: "2026-04-27"
+dateModified: "2026-08-07"
 category: "Technology"
-tags: ["Advanced Packaging","United States","Semiconductor","Chips","Manufacturing","Chip","Fab","India","Packaging","Industrial"]
+tags: ["Advanced Packaging","United States","Semiconductor","Chips","Manufacturing","Fab","Chip","India","Packaging","Industrial"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-india-semiconductor-sufficiency-beyond-lip-service.jpg"
+thumbnail: "/thumbnail/art-india-semiconductor-sufficiency-beyond-lip-service.jpg"
+thumbnailAlt: "Semiconductor supply-chain stages arranged across a large silicon wafer"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-india-semiconductor-sufficiency-beyond-lip-service.jpg" />
+<Pi src="/thumbnail/art-india-semiconductor-sufficiency-beyond-lip-service.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

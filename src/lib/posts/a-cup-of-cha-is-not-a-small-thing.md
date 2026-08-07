@@ -1,17 +1,19 @@
 ---
 title: "A Cup of Cha Is Not a Small Thing"
-description: "Tea looks like a humble brown drink, but inside that cup sits China, empire, stolen plants, Bengali roadside life, colonial labor, and the merciless physics of cooling."
+description: "A clay cup of Bengali cha connects tea plantations, empire, stolen plants, roadside life, porcelain, and the physics of cooling."
 date: "2026-06-04"
+dateModified: "2026-08-07"
 category: "Essay"
 tags: ["Cha","Tea","Chinese","Dutch","British","Plants","Empire","China","Wardian","Porcelain"]
 published: true
 color: "#8B5A2B"
-thumbnail: "/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg"
+thumbnail: "/thumbnail/art-a-cup-of-cha-is-not-a-small-thing.jpg"
+thumbnailAlt: "Steaming clay cup of Bengali cha surrounded by tea leaves, porcelain, and a glass plant case"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-a-cup-of-cha-is-not-a-small-thing.jpg" />
+<Pi src="/thumbnail/art-a-cup-of-cha-is-not-a-small-thing.jpg" />
 
 Acronyms and terms:
 

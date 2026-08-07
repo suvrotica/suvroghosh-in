@@ -1,17 +1,19 @@
 ---
 title: "When the Office Learns to Beg"
-description: "A future Calcutta essay on artificial intelligence displacement, white-collar mendicancy, fraud, class geography, and the slow migration of social failure from glossy city centers to derelict edges."
+description: "A future Calcutta shaped by AI displacement, white-collar mendicancy, fraud, class geography, and social failure moving to the margins."
 date: "2026-04-29"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Coaching Center","Begging","White-Collar","Derelict","AI","Displaced","Fraud","Suburb","Enforcement","Panhandler"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-when-the-office-learns-to-beg.jpg"
+thumbnail: "/thumbnail/art-when-the-office-learns-to-beg.jpg"
+thumbnailAlt: "Repurposed office furniture becomes small work stalls at Calcutta’s derelict edge"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-when-the-office-learns-to-beg.jpg" />
+<Pi src="/thumbnail/art-when-the-office-learns-to-beg.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

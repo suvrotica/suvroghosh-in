@@ -1,17 +1,19 @@
 ---
 title: "The Negative Infinity Before the Singularity"
-description: "Artificial Intelligence in India will not arrive first as a gleaming utopia. It will arrive, for many people, as fraud, blackmail, job destruction, disinformation, and only later—if we build properly—as medicine, access, and repair."
+description: "How AI in India may arrive first as fraud, disinformation, and job loss, but could later deliver medicine, access, and repair if built well."
 date: "2026-04-26"
+dateModified: "2026-08-07"
 category: "Healthcare AI"
 tags: ["Health Level Seven","Offers Immediate","Public Hospitals","Healthcare Interoperability","AI","Healthcare","Fake","Clinical","Synthetic","Provenance"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg"
+thumbnail: "/thumbnail/art-ai-in-india-the-negative-infinity-before-the-singularity.jpg"
+thumbnailAlt: "Corrupted digital fragments pass through transparent verification blocks into a calm Indian clinical consultation"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-in-india-the-negative-infinity-before-the-singularity.jpg" />
+<Pi src="/thumbnail/art-ai-in-india-the-negative-infinity-before-the-singularity.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

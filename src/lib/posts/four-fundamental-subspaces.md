@@ -1,17 +1,19 @@
 ---
 title: "The Four Fundamental Subspaces of Linear Algebra"
-description: "A lucid, technically careful explanation of the four fundamental subspaces in linear algebra: column space, nullspace, row space, and left nullspace. The post treats a matrix not as a grid of numbers but as a machine for moving, losing, and exposing information."
+description: "A clear guide to column space, nullspace, row space, and left nullspace, treating a matrix as a machine that moves, loses, and reveals information."
 date: "2026-04-25"
+dateModified: "2026-08-07"
 category: "mathematics"
 tags: ["Four Fundamental Subspaces","Column Space","Row Space","Linear Algebra","Ask Whether","Nullspace","Matrix","Column","Output","Input"]
 published: true
 color: "indigo"
-thumbnail: "/thumbnail/safe-four-fundamental-subspaces.jpg"
+thumbnail: "/thumbnail/art-four-fundamental-subspaces.jpg"
+thumbnailAlt: "Four illuminated geometric planes and vectors show a matrix moving, preserving, and collapsing different directions"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-four-fundamental-subspaces.jpg" />
+<Pi src="/thumbnail/art-four-fundamental-subspaces.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

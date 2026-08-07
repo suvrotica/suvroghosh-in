@@ -2,13 +2,13 @@
 title: "Databases and Data Warehouses"
 description: "Databases support live operations; warehouses support analysis across time. Learn how workload, semantics, provenance, and ownership shape both."
 date: "2026-04-23"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "healthcare-it"
-tags: ["Health Level Seven","Data Quality","Data Warehouses","Warehouse","Operational","Authoritative","Architecture","Analytical","Event","Enterprise"]
+tags: ["Health Level Seven","Data Quality","Data Warehouses","Warehouse","Operational","Authoritative","Architecture","Analytical","Enterprise","Event"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-database-first-principles.jpg"
-thumbnailAlt: "Abstract overlapping waves in muted orange, plum, slate blue, and cream"
+thumbnail: "/thumbnail/art-database-first-principles.jpg"
+thumbnailAlt: "Live event tokens flow from an operational engine into a layered historical warehouse"
 inPlainEnglish: "An operational database keeps current workflows reliable; a data warehouse reconstructs history for analysis across systems. A warehouse does not repair source ambiguity automatically, so good architecture preserves provenance, separates time concepts, declares grain, and makes semantic choices explicit."
 keyTerms: ["Operational Database", "Data Warehouse", "OLTP", "OLAP", "ETL", "Data Provenance"]
 faq:
@@ -22,7 +22,7 @@ faq:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-database-first-principles.jpg" />
+<Pi src="/thumbnail/art-database-first-principles.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

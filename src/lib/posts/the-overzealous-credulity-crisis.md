@@ -1,17 +1,19 @@
 ---
 title: "The Overzealous Credulity Crisis"
-description: "Chatbots sound wise because language is the most expensive costume humanity ever learned to wear. The danger is not that machines can talk, but that tired humans may stop thinking when the talking becomes too smooth."
+description: "Chatbots wear language like a costume, creating danger when fluent answers persuade tired humans to stop thinking."
 date: "2026-05-17"
+dateModified: "2026-08-07"
 category: "Artificial Intelligence"
 tags: ["Chatbot","Autocomplete","Ask","Language","Crisis","Machine","Fluent","Danger","Romantic","Tools"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-the-overzealous-credulity-crisis.jpg"
+thumbnail: "/thumbnail/art-the-overzealous-credulity-crisis.jpg"
+thumbnailAlt: "Tired man studies an ornate speaking mask hiding a simple paper-roller mechanism"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-overzealous-credulity-crisis.jpg" />
+<Pi src="/thumbnail/art-the-overzealous-credulity-crisis.jpg" />
 
 
 Acronyms: AI means Artificial Intelligence, computer systems made to perform tasks we associate with human thinking. LLM means Large Language Model, a statistical language system trained to predict and generate text. GPU means Graphics Processing Unit, a chip built for fast parallel calculation and now used heavily in AI training. RLHF means Reinforcement Learning from Human Feedback, the polishing process where human preferences help make model responses more useful, polite, and agreeable.

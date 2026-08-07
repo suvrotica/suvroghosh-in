@@ -1,17 +1,19 @@
 ---
 title: "The Ghost as Perception"
-description: "A study of the ghost not as superstition but as a problem in movement, attention, memory, and fractured human perception. The apparition becomes less a monster than a fault line in how the living organize reality."
+description: "A study of ghosts through movement, attention, memory, and fractured perception, where an apparition becomes a fault line in how the living organise reality."
 date: "2026-04-25"
+dateModified: "2026-08-07"
 category: "philosophy"
 tags: ["Ghost","Perception","Figure","Presence","Ghosts","Movement","Memory","Supernatural","Living","Human"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-ghost-as-perception.jpg"
+thumbnail: "/thumbnail/art-the-ghost-as-perception.jpg"
+thumbnailAlt: "A commuter and a displaced reflection overlap in layered glass on a sunlit Kolkata railway platform"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-ghost-as-perception.jpg" />
+<Pi src="/thumbnail/art-the-ghost-as-perception.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

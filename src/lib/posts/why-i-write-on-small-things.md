@@ -1,17 +1,19 @@
 ---
 title: "Why I Write on Small Things"
-description: "A hot June afternoon in Calcutta turns into a funny, bruised, and unsentimental essay on depression, class humiliation, ordinary failure, and the stubborn need to keep naming life honestly."
+description: "A hot June afternoon turns a biscuit, leaf, pressure cooker, and blank page into an honest practice of noticing small things."
 date: "2026-06-11"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Pressure Cooker","Ceiling Fan","Trivial","Sweats","Hot","Sweating","Humiliation","Depression","Leaves","Biscuit"]
+tags: ["Pressure Cooker","Ceiling Fan","Trivial","Hot","Sweats","Sweating","Humiliation","Depression","Leaves","Biscuit"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-why-i-write-on-small-things.jpg"
+thumbnail: "/thumbnail/art-why-i-write-on-small-things.jpg"
+thumbnailAlt: "Calcutta writer studying a biscuit and other small household objects with a magnifying glass"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-why-i-write-on-small-things.jpg" />
+<Pi src="/thumbnail/art-why-i-write-on-small-things.jpg" />
 
 
 

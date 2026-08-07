@@ -1,17 +1,19 @@
 ---
 title: "The Rotten Sack Theory of Indian Politics"
-description: "Indian politics is not rotten because Indians are uniquely immoral. It is rotten where history, money, fear, identity, bureaucracy, and weak accountability make rottenness useful."
+description: "How history, money, fear, identity, bureaucracy and weak accountability make political rottenness useful in India."
 date: "2026-05-11"
+dateModified: "2026-08-07"
 category: "Politics"
 tags: ["Criminal Cases","Police Station","Party Worker","Political Funding","Indian Politics","Candidate","Parties","Democracy","Police","Vote"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-rotten-sack-indian-politics.jpg"
+thumbnail: "/thumbnail/art-rotten-sack-indian-politics.jpg"
+thumbnailAlt: "Jute grain sack darkens between chained ledgers, blank tokens, ropes and filing drawers"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-rotten-sack-indian-politics.jpg" />
+<Pi src="/thumbnail/art-rotten-sack-indian-politics.jpg" />
 
 ADR — Association for Democratic Reforms, an Indian civil-society organization that studies elections, candidate affidavits, political funding, criminal cases, and wealth declarations.
 

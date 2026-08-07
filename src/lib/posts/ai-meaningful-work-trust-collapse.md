@@ -1,17 +1,19 @@
 ---
 title: 'AI, Meaningful Work, and the Trust Collapse'
-description: 'A reflection on why artificial intelligence does not merely automate tasks, but corrodes the social machinery that makes work, authorship, and creative attention feel meaningful.'
+description: "A reflection on how AI can corrode the social machinery connecting authorship, apprenticeship, creative attention and meaningful work."
 date: '2026-06-24'
+dateModified: "2026-08-07"
 category: 'Artificial Intelligence'
-tags: ["Synthetic","AI","Rubbish","Human","Machine","Work","Song","Output","Learns","Apprenticeship"]
+tags: ["Synthetic","AI","Rubbish","Human","Work","Machine","Song","Learns","Output","Apprenticeship"]
 published: true
 color: 'slate'
-thumbnail: "/thumbnail/safe-ai-meaningful-work-trust-collapse.jpg"
+thumbnail: "/thumbnail/art-ai-meaningful-work-trust-collapse.jpg"
+thumbnailAlt: "Instrument maker passes a tool to an apprentice as social gears corrode below"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-ai-meaningful-work-trust-collapse.jpg" alt="Article illustration for AI and the erosion of trust in creative work" />
+<Pi src="/thumbnail/art-ai-meaningful-work-trust-collapse.jpg" alt="Article illustration for AI and the erosion of trust in creative work" />
 
 The monsoon is indifferent to calendars. In Calcutta in late June, the humidity sits on the chest like a cat that refuses to move. Inside the flat, damp climbs the interior walls in pale patches the color of old tea, and the ceiling fan merely stirs the heat into new configurations. You notice the first bubble in the plaster near the light switch. Then another by the window frame. Soon the whole room carries a faint smell of damage you cannot yet see.
 

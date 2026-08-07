@@ -1,17 +1,19 @@
 ---
 title: "Dogs Detect Violations."
-description: "What canine cognition research actually suggests about trust, deception, scent, and social evaluation—and why the myth that dogs can 'sense bad people' is much less mystical and much more interesting."
+description: "What canine cognition research says about trust, deception, scent, social evaluation, and the myth that dogs detect bad people."
 date: "2026-04-22"
+dateModified: "2026-08-07"
 category: "science"
-tags: ["Dogs","Breed","Dog","Interaction","Misleading","Owner","Unfamiliar","Cues","Social","Odor"]
+tags: ["Dogs","Breed","Dog","Interaction","Misleading","Owner","Cues","Unfamiliar","Social","Odor"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-dogs-bad-people-myth-science.jpg"
+thumbnail: "/thumbnail/art-dogs-bad-people-myth-science.jpg"
+thumbnailAlt: "Alert Indian dog evaluating a pointing hand and an open palm"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-dogs-bad-people-myth-science.jpg" />
+<Pi src="/thumbnail/art-dogs-bad-people-myth-science.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

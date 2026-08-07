@@ -1,17 +1,28 @@
 ---
 title: "Applied Multivariate Statistical Modeling in Healthcare IT Part 2"
-description: "A beginner-friendly second post on multivariate statistics for healthcare data analytics, showing how real hospital problems become statistical questions, models, and practical decisions."
+description: "A paper hospital model maps patient pathways, explanatory variables, discharge choices, and readmission risk into practical decisions."
 date: "2026-05-20"
+dateModified: "2026-08-07"
 category: "Healthcare IT"
-tags: ["Blood Pressure","Discharge Destination","Multivariate Statistics","Explanatory Variables","Statistical Solution","Variables","Readmissions","Multivariate","Covariance","Patients"]
+tags: ["Blood Pressure","Discharge Destination","Multivariate Statistics","Explanatory Variables","Statistical Solution","Variables","Readmissions","Multivariate","Patients","Covariance"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg"
+thumbnail: "/thumbnail/art-multivariate-statistics-healthcare-data-analytics-part-2.jpg"
+thumbnailAlt: "Hands tracing colored patient pathways through a layered paper hospital model"
+inPlainEnglish: "A readmission or discharge model becomes useful only when statistical relationships connect to real patient pathways and decisions. Explanatory variables must be defined in time, interpreted with uncertainty, checked for leakage and confounding, and translated into actions that a care team can actually perform."
+keyTerms: ["Multivariate Statistics", "Readmission Risk", "Explanatory Variable", "Discharge Destination", "Data Leakage", "Calibration", "Clinical Workflow", "Model Interpretation"]
+faq:
+  - question: "Why is timing important in a readmission model?"
+    answer: "A predictor must be available before the decision it is meant to support; using later information creates leakage and makes performance look better than it will be in practice."
+  - question: "Does an explanatory variable prove a cause of readmission?"
+    answer: "No. A model can identify association after adjustment, but causal interpretation requires stronger design, assumptions, and evidence about confounding and selection."
+  - question: "How should a risk model connect to discharge workflow?"
+    answer: "Its output should trigger a defined, feasible response such as medication review, follow-up, transport help, home support, or clinician assessment, with outcomes monitored after deployment."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-multivariate-statistics-healthcare-data-analytics-part-2.jpg" />
+<Pi src="/thumbnail/art-multivariate-statistics-healthcare-data-analytics-part-2.jpg" />
 
 Acronyms used in this post:
 

@@ -1,17 +1,19 @@
 ---
 title: "The Erasure Is a Palimpsest"
-description: "A bipolar polemic on memory erasure, technological obsolescence, and the slow diffusion of the self into white noise, written from the pharmacological gulag of a fifty-one-year-old Calcutta consciousness."
+description: "A bipolar polemic on memory erasure, technological obsolescence, medication, and the self slowly diffusing into white noise."
 date: "2026-07-12"
+dateModified: "2026-08-07"
 category: "Mental Health"
-tags: ["White Noise","Medication","White","Self","Write","Consciousness","Forgotten","Already","Raise","Digital"]
+tags: ["White Noise","Medication","White","Self","Write","Consciousness","Already","Forgotten","Raise","Brain"]
 published: true
 color: "#556B2F"
-thumbnail: "/thumbnail/safe-the-erasure-is-a-palimpsest.jpg"
+thumbnail: "/thumbnail/art-the-erasure-is-a-palimpsest.jpg"
+thumbnailAlt: "Layered portrait silhouettes dissolving softly into paper fibres beside an old radio"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-erasure-is-a-palimpsest.jpg" />
+<Pi src="/thumbnail/art-the-erasure-is-a-palimpsest.jpg" />
 
 I woke with a desiccated rind of pharmaceutical paste and my own masticated buccal tissue adhering to the molars, a pinkish, alkaline slurry that tasted of copper, betrayal, and the specific, sulfurous flavor of Sunday afternoons that have been deleted from the hippocampus by the diligent janitorial staff of lithium carbonate and valproic acid, those twin archivists of my personal apocalypse who sweep through the corridors of my temporal lobe with the indiscriminate enthusiasm of municipal workers hosing down a Calcutta alley after a religious procession, washing the sacred and the profane into the same gutter of unbeing; and I sat there, naked in the humidity that already pressed against the window like a moist, unwelcome palm, wondering if the memory of yesterday’s breakfast—was it paratha, was it poison, was it a dream of nourishment?—had been devoured by the medication or if it had never existed at all, a phantom meal cooked in the kitchen of a man who no longer lives in this skull.
 

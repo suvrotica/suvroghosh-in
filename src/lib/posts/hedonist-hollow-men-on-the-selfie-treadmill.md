@@ -1,17 +1,19 @@
 ---
 title: "Hedonist Hollow Men on the Selfie Treadmill"
-description: "A sharp, readable social essay on selfie culture, narcissism, cruel individualism, jingoism, religious bigotry, and the dangerous pyramid of modern status-seeking in India."
+description: "A social critique of selfie culture, narcissism, cruel individualism, bigotry, and the endless climb for status in modern India."
 date: "2026-05-22"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Step Aside","Pyramid","Prove","Treadmill","Bigotry","Tribal","Everyone","Called","Climb","Consume"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg"
+thumbnail: "/thumbnail/art-hedonist-hollow-men-on-the-selfie-treadmill.jpg"
+thumbnailAlt: "Shoppers take selfies while climbing a treadmill that narrows into a status pyramid"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hedonist-hollow-men-on-the-selfie-treadmill.jpg" />
+<Pi src="/thumbnail/art-hedonist-hollow-men-on-the-selfie-treadmill.jpg" />
 
 
 

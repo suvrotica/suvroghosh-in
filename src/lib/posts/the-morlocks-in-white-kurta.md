@@ -2,14 +2,16 @@
 title: "The Morlocks in White Kurta"
 description: "A sharp social essay using H. G. Wells’s The Time Machine to think about India’s predator-prey class structure, where wealth and power feed quietly on ordinary life."
 date: "2026-05-28"
+dateModified: "2026-08-07"
 category: "Society"
 tags: ["Predator","Extractable","Wells","Eloi","Prey","Morlocks","Dull","Fees","Differently","Vote"]
 published: true
 color: "crimson"
-thumbnail: "/thumbnail/safe-the-morlocks-in-white-kurta.jpg"
+thumbnail: "/thumbnail/art-the-morlocks-in-white-kurta.jpg"
+thumbnailAlt: "White-clad banquet above a neighbourhood siphons grain, coins, water, and light"
 ---
 <TTS />
-<Pi src="/thumbnail/safe-the-morlocks-in-white-kurta.jpg" />
+<Pi src="/thumbnail/art-the-morlocks-in-white-kurta.jpg" />
 The most frightening thing about a predator society is not that it eats people, but that it first teaches them to call the meal development.
 
 In H. G. Wells’s The Time Machine, the future is not a glittering staircase to wisdom. It is a biological joke told very slowly. Humanity has split into two species: the delicate Eloi, pretty and helpless on the surface, and the Morlocks, pale underground workers who keep the machinery going and come up at night with appetites. It is not merely science fiction. It is class anxiety wearing a boiler suit. Wells looked at industrial England and saw that if you stretched inequality far enough, it might stop being economics and become anatomy.

@@ -1,17 +1,19 @@
 ---
 title: "The Small Usefulness of Suspecting You Are a Fool"
-description: "A sharp, clean, comic essay on self-doubt, intelligence, certainty, and why the person who never questions himself is usually the fellow carrying the loudest empty tin."
+description: "A cautious chess player checks a mirror while certainty strides past with an empty tin, illustrating the practical value of self-doubt."
 date: "2026-06-02"
+dateModified: "2026-08-07"
 category: "Essay"
 tags: ["Ask Whether","Beginner","Opinions","Ask","Mind","Rage","Breeze","Certainty","Sees","Maybe"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-small-usefulness-of-suspecting-you-are-a-fool.jpg"
+thumbnail: "/thumbnail/art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg"
+thumbnailAlt: "Thoughtful chess player with a mirror beside a confident figure carrying an empty tin"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-small-usefulness-of-suspecting-you-are-a-fool.jpg" />
+<Pi src="/thumbnail/art-the-small-usefulness-of-suspecting-you-are-a-fool.jpg" />
 
 Acronyms and terms used in this post:
 

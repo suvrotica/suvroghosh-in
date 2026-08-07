@@ -1,17 +1,19 @@
 ---
 title: "Nicotine, Biri, and the Great Bengali Bargain"
-description: "A plainspoken public-health warning about cigarettes, biri, khaini, zarda, gutkha, vape, nicotine pouches, patches, and gum—and why changing the delivery system does not turn addiction into wisdom."
+description: "A public-health guide to cigarettes, biri, chewing tobacco, vapes, nicotine pouches, patches, gum, and the persistence of addiction."
 date: "2026-05-17"
+dateModified: "2026-08-07"
 category: "Public Health"
 tags: ["Zarda Paan","Nicotine Pouches","Nicotine","Biri","Tobacco","Vape","Khaini","Zarda","NRT","Pouch"]
 published: true
 color: "amber"
-thumbnail: "/thumbnail/safe-nicotine-biri-and-the-great-bengali-bargain.jpg"
+thumbnail: "/thumbnail/art-nicotine-biri-and-the-great-bengali-bargain.jpg"
+thumbnailAlt: "Nicotine products feeding a central brass dependence trap"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-nicotine-biri-and-the-great-bengali-bargain.jpg" />
+<Pi src="/thumbnail/art-nicotine-biri-and-the-great-bengali-bargain.jpg" />
 
 Acronym shelf: NRT means Nicotine Replacement Therapy, the controlled medical use of nicotine through products like patches, gum, lozenges, sprays, or inhalers to reduce withdrawal while quitting tobacco. ENDS means Electronic Nicotine Delivery Systems, the official public-health name for vapes and e-cigarettes that heat liquid into an aerosol carrying nicotine and other chemicals. WHO means World Health Organization, the United Nations public-health agency. CDC means Centers for Disease Control and Prevention, the United States public-health agency. FDA means Food and Drug Administration, the United States agency that regulates drugs, medical products, and tobacco products.
 

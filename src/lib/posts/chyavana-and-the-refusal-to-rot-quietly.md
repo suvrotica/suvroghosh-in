@@ -2,16 +2,18 @@
 title: "Chyavana and the Refusal to Rot Quietly"
 description: "A sharp, funny, street-level essay on aging, Chyavana, lost youth, depression, dignity, and the stubborn mind that refuses to become scrap."
 date: "2026-06-11"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Chyavana","Youth","Fantasy","Physicians","Remember","Age","Divine","Dignity","Jars","Number"]
 published: true
 color: "#7A4B2A"
-thumbnail: "/thumbnail/safe-chyavana-and-the-refusal-to-rot-quietly.jpg"
+thumbnail: "/thumbnail/art-chyavana-and-the-refusal-to-rot-quietly.jpg"
+thumbnailAlt: "Older Bengali gardener sees an ancient sage reflected in a brass mirror"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-chyavana-and-the-refusal-to-rot-quietly.jpg" />
+<Pi src="/thumbnail/art-chyavana-and-the-refusal-to-rot-quietly.jpg" />
 
 Permanent Account Number [PAN, an Indian tax identification number used for official and financial paperwork]. Structured Query Language [SQL, the language used to ask questions of relational databases]. United States [US, the country where I studied and worked for many years].
 

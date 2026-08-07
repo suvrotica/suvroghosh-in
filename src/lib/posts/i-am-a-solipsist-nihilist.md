@@ -1,17 +1,19 @@
 ---
 title: "I Am a Solipsist Nihilist, Unfortunately Before Breakfast"
-description: "A personal essay on doubt, meaning, atheism, depression, and the small daily comedy of trying to live in Calcutta when the universe has misplaced its instruction manual."
+description: "A Bengali man faces breakfast, a blank cosmic manual, and an uncertain mirror in a gently comic portrait of doubt and meaning."
 date: "2026-06-02"
+dateModified: "2026-08-07"
 category: "Personal Essay"
-tags: ["Solipsist Nihilist","Nothing Matters","Nihilist","Nihilism","Solipsist","Meaning","Matters","Maybe","Cancel","Universe"]
+tags: ["Solipsist Nihilist","Nothing Matters","Nihilist","Nihilism","Solipsist","Meaning","Maybe","Matters","Cancel","Doubt"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-i-am-a-solipsist-nihilist.jpg"
+thumbnail: "/thumbnail/art-i-am-a-solipsist-nihilist.jpg"
+thumbnailAlt: "Bengali man at breakfast with a blank binder, mirror, tea, and cosmic doubt"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-i-am-a-solipsist-nihilist.jpg" />
+<Pi src="/thumbnail/art-i-am-a-solipsist-nihilist.jpg" />
 
 Acronyms and terms:
 

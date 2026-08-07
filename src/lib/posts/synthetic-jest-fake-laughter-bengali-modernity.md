@@ -2,17 +2,19 @@
 title: "Synthetic Jest and the Great Bengali Smile Factory"
 description: "A social satire on fake laughter, saccharine smiles, Bengali middle-class performance, Indian modernity, and the circus of pretending everything is fine."
 date: "2026-05-30"
+dateModified: "2026-08-07"
 category: "Social Commentary"
-tags: ["Positive Means","Real Laughter","Grin","Laughter","Smile","Happiness","Positive","Fake","Posted","Laugh"]
+tags: ["Positive Means","Real Laughter","Grin","Laughter","Smile","Happiness","Fake","Positive","Posted","Laugh"]
 published: true
 color: "#7A2E2E"
-thumbnail: "/thumbnail/safe-synthetic-jest-fake-laughter-bengali-modernity.jpg"
+thumbnail: "/thumbnail/art-synthetic-jest-fake-laughter-bengali-modernity.jpg"
+thumbnailAlt: "Bengali guests posing with paper smiles while one lowers hers"
 ---
 
 <TTS />
 
 
-<Pi src="/thumbnail/safe-synthetic-jest-fake-laughter-bengali-modernity.jpg" />
+<Pi src="/thumbnail/art-synthetic-jest-fake-laughter-bengali-modernity.jpg" />
 
 There is a kind of smile now that should be registered with the municipal health department.
 

@@ -1,12 +1,14 @@
 ---
 title: "The Local Disgrace Still Making Noise"
-description: "A sharper, cleaner, more readable Calcutta monologue about being called useless, strange, obscene, and failed by a society that forgives cruelty more easily than oddness."
+description: "A defiant Calcutta monologue about being called useless, strange, obscene, and failed by a society more tolerant of cruelty than oddness."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Rice Cooker","Clap","Low","Giggle","Curse","Subject","Language","Filth","Holy","Sometimes"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-local-disgrace-still-making-noise.jpg"
+thumbnail: "/thumbnail/art-local-disgrace-still-making-noise.jpg"
+thumbnailAlt: "Calcutta outsider taps a rice-cooker lid as blank gossip bubbles drift from nearby windows"
 ---
 
 Acronyms and terms:
@@ -14,7 +16,7 @@ Acronyms and terms:
 
 <TTS />
 
-<Pi src="/thumbnail/safe-local-disgrace-still-making-noise.jpg" />
+<Pi src="/thumbnail/art-local-disgrace-still-making-noise.jpg" />
 
 
 

@@ -1,17 +1,19 @@
 ---
 title: "The Barebones Lifeboat: America, Calcutta, and the Price of Staying Afloat"
-description: "A returnee’s life in Calcutta is not always a story of triumphant homecoming or dollar-fed comfort. Sometimes it is simply the place where a modest life remains possible."
+description: "A returnee’s Calcutta life stripped of triumphant homecoming, where a modest existence remains possible and staying afloat is enough."
 date: "2026-04-28"
+dateModified: "2026-08-07"
 category: "Personal"
 tags: ["Consulting Income","United States","America","Returnee","Calcutta","Barebones","Pollution","Lifeboat","Bullies","Afford"]
 published: true
 color: "#7C3AED"
-thumbnail: "/thumbnail/safe-barebones-lifeboat-calcutta.jpg"
+thumbnail: "/thumbnail/art-barebones-lifeboat-calcutta.jpg"
+thumbnailAlt: "Middle-aged returnee makes tea inside a lifeboat home on a Kolkata rooftop"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-barebones-lifeboat-calcutta.jpg" />
+<Pi src="/thumbnail/art-barebones-lifeboat-calcutta.jpg" />
 
 Acronyms expanded in this post:
 - IT: Information Technology. the practice of building, operating, and supporting computing systems.

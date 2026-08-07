@@ -1,17 +1,19 @@
 ---
 title: "The Middle Class on Tilted Stones"
-description: "The Indian middle-aged middle class looks stable from a distance, but much of that stability is a cash-flow illusion held together by salary timing, family duty, debt, health risk, and social performance."
+description: "Why India’s middle-aged middle class can look stable while salary timing, debt, family duty and health risks strain household cash flow."
 date: "2026-04-24"
+dateModified: "2026-08-07"
 category: "society"
 tags: ["Middle Class","Labor Market","Credit","Household","Middle-Aged","Middle-Class","Middle","Employment","Insurance","Parents"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-indian-middle-aged-middle-class-lopsided-rocks.jpg"
+thumbnail: "/thumbnail/art-indian-middle-aged-middle-class-lopsided-rocks.jpg"
+thumbnailAlt: "Warm Indian family home balanced across uneven rain-dark stones"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-indian-middle-aged-middle-class-lopsided-rocks.jpg" />
+<Pi src="/thumbnail/art-indian-middle-aged-middle-class-lopsided-rocks.jpg" />
 
 Acronyms expanded in this post:
 - AI: Artificial Intelligence. software that generates, classifies, predicts, summarizes, or acts on patterns in data.

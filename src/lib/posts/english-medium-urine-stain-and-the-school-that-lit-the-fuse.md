@@ -2,16 +2,18 @@
 title: "The English Medium Urine Stain"
 description: "A raw memoir on English-medium schooling, childhood anxiety, mythology, superstition, class, language, and the small accidents that quietly reorganize a life."
 date: "2026-05-02"
+dateModified: "2026-08-07"
 category: "Memoir"
 tags: ["School","Childhood","Dragon","Lout","Mythology","Gave","Religious","Mine","Remember","WWA"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg"
+thumbnail: "/thumbnail/art-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg"
+thumbnailAlt: "School shoes and satchel beside a corridor stain and dragon-shaped sunlight"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg" />
+<Pi src="/thumbnail/art-english-medium-urine-stain-and-the-school-that-lit-the-fuse.jpg" />
 
 Acronyms expanded in this post:
 - IT: Information Technology. the practice of building, operating, and supporting computing systems.

@@ -1,17 +1,19 @@
 ---
 title: "The Churning of the Lesser Fluids"
-description: "A manic-depressive monologue from a canceled Calcutta NRI, ruminating on the Samudra Manthan myth, the impossibility of nectar, and the slow indignity of waiting for a life that never arrives."
+description: "Ordinary hands churn rice-starch water as a mythic ocean appears in steam, contrasting promised nectar with patient disappointment."
 date: "2026-06-22"
+dateModified: "2026-08-07"
 category: "Essay"
 tags: ["Sando Genji","Rice Starch","Samudra Manthan","Lesser Fluids","Mount Mandara","Nectar","Churning","Mister","Starch","Asuras"]
 published: true
 color: "#2c2c2c"
-thumbnail: "/thumbnail/safe-the-churning-of-the-lesser-fluids.jpg"
+thumbnail: "/thumbnail/art-the-churning-of-the-lesser-fluids.jpg"
+thumbnailAlt: "Hands churning rice-starch water as a mythic ocean scene rises through the steam"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-churning-of-the-lesser-fluids.jpg" />
+<Pi src="/thumbnail/art-the-churning-of-the-lesser-fluids.jpg" />
 
 There is a viscous, opalescent slick of rice starch congealing at the bottom of my cooker, and I am staring at it with the kind of religious intensity one usually reserves for the final moments of a cricket match or the discovery of a new mole. The Samudra Manthan, that magnificent Hindu fever dream of cosmic churning, produced fourteen ratnas, a poison so lethal it could unmake creation, and finally—after what must have been an eternity of bureaucratic delay—the Amrita, the nectar of immortality, which the devas promptly hoarded like a consortium of Silicon Valley executives with stock options. But here is the thing nobody tells you in the sanitized, Amar Chitra Katha version of this mythology: the asuras, the nagas, the yakshas, the rank-and-file celestial proletariat—most of them never got a drop. They stood there, tentacles and fangs and all, watching the gods quaff eternity while they were left with the dregs, the foam, the scum, the lesser fluids. And I am telling you this because at fifty-one, standing in a rented flat in the decaying suburban sprawls of South Calcutta, wearing a black sando genji that has absorbed that leftover resentful Texas sweat and Bengali humidity, I understand those asuras in a way that makes my chest ache with a peculiar, unnameable solidarity.
 

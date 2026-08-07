@@ -2,11 +2,13 @@
 title: "The Damp Government Office Inside My Head"
 description: "A personal essay on depression, rumination, regret, and the absurd inner bureaucracy that keeps stamping old pain as if paperwork could repair a life."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["File Marked","Government Office","Depressive Mind","File","Regrets","Rumination","Depressive","Mind","Department","Clerks"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-depressive-mind-government-office-after-rain.jpg"
+thumbnail: "/thumbnail/art-depressive-mind-government-office-after-rain.jpg"
+thumbnailAlt: "Profile of a Bengali man containing a damp government office filled with circular paperwork"
 ---
 
 Acronyms and terms:
@@ -19,7 +21,7 @@ SEO: Search Engine Optimization, the practice of making a post easier for search
 
 <TTS />
 
-<Pi src="/thumbnail/safe-depressive-mind-government-office-after-rain.jpg" />
+<Pi src="/thumbnail/art-depressive-mind-government-office-after-rain.jpg" />
 
 The depressive mind is not silent. Silence would be respectable. Silence would be a closed shop on a Sunday afternoon, shutter down, dust floating peacefully in a shaft of light, one lazy dog sleeping under the tea stall bench as if he has solved capitalism.
 

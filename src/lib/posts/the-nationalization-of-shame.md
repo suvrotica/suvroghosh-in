@@ -1,17 +1,19 @@
 ---
 title: "The Nationalization of Shame"
-description: "A middle-aged Bengali man in the outskirts of Calcutta thinks through poverty, debt, anxiety, education, return migration, and the terrible comedy of having a trained mind without practical power."
+description: "Private shame flows through civic pipes into an impersonal ledger as a trained mind struggles to turn the heavy wheel of practical life."
 date: "2026-06-16"
+dateModified: "2026-08-07"
 category: "Personal Essay"
 tags: ["Trained Mind","Pressure Cooker","Dot","Caller","Poor","Articulate","Call","Phone","Poverty","Demon"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-nationalization-of-shame.jpg"
+thumbnail: "/thumbnail/art-the-nationalization-of-shame.jpg"
+thumbnailAlt: "Bengali man beside a pressure cooker and a public ledger connected by civic pipes"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-nationalization-of-shame.jpg" />
+<Pi src="/thumbnail/art-the-nationalization-of-shame.jpg" />
 
 
 
