@@ -3907,7 +3907,7 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "reaction-diffusion-atlas.png",
 			"src": "/images/reaction-diffusion-atlas.png",
-			"bytes": 69915,
+			"bytes": 73152,
 			"width": 1600,
 			"height": 900
 		},
