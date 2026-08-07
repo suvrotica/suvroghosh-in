@@ -10934,6 +10934,22 @@
       "sourceHash": "31bb4db23d41ff56ad6c68165f2f37ff162f9d2d94d40428b4fe9657797d6389",
       "width": 1200
     },
+    "static/thumbnail/art-a-read-this-first.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 276005,
+      "outputHash": "c35f26192495f738301add4ad365b3f33300337d78e64d93aa3746821dc70147",
+      "psnrDb": 36.6,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 318021,
+      "sourceHash": "58419f6310d6baa85a33efd1d025f5741dc35e0067e65346cb01c17db427b183",
+      "width": 1200
+    },
     "static/thumbnail/art-ai-deployment-evidence-over-opinion.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11094,6 +11110,22 @@
       "sourceHash": "d6b34f723a437c60356af3e57e8a96191a5e1a0692299ca0624436507d758f7d",
       "width": 1200
     },
+    "static/thumbnail/art-barebones-lifeboat-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 170479,
+      "outputHash": "118d990168ba4dffab48a255a70dbba176f0c0b24405e4753ea7c594acfdf873",
+      "psnrDb": 36.69,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 210111,
+      "sourceHash": "b40916df816bd73cc1ed0639048bd80a2852794bf24983b484f8c4cd531da881",
+      "width": 1200
+    },
     "static/thumbnail/art-basel-problem-what-diffusion-model-means.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11108,6 +11140,22 @@
       "resized": false,
       "sourceBytes": 177931,
       "sourceHash": "ebb5dac44813118735b13f59fe07b1accc7efb371a6d9a662c20cfb8dc3cba00",
+      "width": 1200
+    },
+    "static/thumbnail/art-bassline-backhoe-breath.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 228619,
+      "outputHash": "40325938f6bf15941fd03ea7bcbd878d9a633c0aef11867c006af4727ebfbf14",
+      "psnrDb": 36.13,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 269963,
+      "sourceHash": "b05cb1117fe42d2ac30f74dfc2f21d74df862fd701c88b71ee4a9cf98ad0c1d3",
       "width": 1200
     },
     "static/thumbnail/art-benfords-law-and-the-ledger-that-sweats.jpg": {
@@ -11142,6 +11190,22 @@
       "sourceHash": "79d8f228e994f3e802c732de6e6189a796621130846ef26cab161d66c5dd3520",
       "width": 1200
     },
+    "static/thumbnail/art-bengali-hikikomori-shadow.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 204273,
+      "outputHash": "2bce39dd429932830bb532b9fcb7aef357e07d5cd47c8ee5b3a07732059dd476",
+      "psnrDb": 36.88,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 241532,
+      "sourceHash": "d76efc8d61526fa3c535728c0f0104cb5ea5393e1fdd5c19fd4bf4b5202346cc",
+      "width": 1200
+    },
     "static/thumbnail/art-bengali-tintin-in-kolkata.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11174,6 +11238,22 @@
       "sourceHash": "a6ac6339207a2c40b593d78ef2a8ef2a211e28d31bf777d95fae01a61cae6fde",
       "width": 1200
     },
+    "static/thumbnail/art-bipolar-depression-friendless-blister.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 98769,
+      "outputHash": "630865d85914692c9edf8054f94be8f0c3ea11e96996e0077c3ab8f45aaa5855",
+      "psnrDb": 39.8,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 139799,
+      "sourceHash": "f60dcae9b64d6006d8d81122c4b082e79786b2f0171f8a1582fd5baa536d0dbb",
+      "width": 1200
+    },
     "static/thumbnail/art-body-going-to-plan.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11204,6 +11284,22 @@
       "resized": false,
       "sourceBytes": 342800,
       "sourceHash": "4e932a7ee0be7843eb2e775c4833df68d1d561b12dc6fe29cb8d545b3de8a445",
+      "width": 1200
+    },
+    "static/thumbnail/art-brittle-brain-blazing-light-calcutta-room.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 136669,
+      "outputHash": "d0ed2dcd8843a79172b4fab1fadca405f8bee8ed2ec0d70188f365472c7fad3d",
+      "psnrDb": 37.25,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 191032,
+      "sourceHash": "88a78f089ed4a3c04fce46b8f142dd1f7343917b9baad313511a4773f4d9409b",
       "width": 1200
     },
     "static/thumbnail/art-calcutta-carbohydrate-problem.jpg": {
@@ -11398,6 +11494,38 @@
       "sourceHash": "689f3ed7b9dd5c8a6a45978dbc3d67ae770d285c8e4074f369e4a8a0b6a913a6",
       "width": 1200
     },
+    "static/thumbnail/art-confounding-factors-healthcare-it-analytics.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 100250,
+      "outputHash": "d4d8f59defee69d6d5d96605e320de4b7538859bc7884e1424fb7fe5c3ec6d6f",
+      "psnrDb": 37.97,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 142549,
+      "sourceHash": "fc1e035ed54ae664da72e2f433ef44e653afa7ed9e5b729be980976629efe31f",
+      "width": 1200
+    },
+    "static/thumbnail/art-confounding-factors.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 115396,
+      "outputHash": "e6ac925e9daeed112c597b20d41e4b69cb0f7a7ede599439e26f52f7d652944f",
+      "psnrDb": 39.1,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 159670,
+      "sourceHash": "8b3d5107ab413c1d0772f28d5a9fdf4dd2a63ade55801f0071455bd4f04cc52a",
+      "width": 1200
+    },
     "static/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11412,6 +11540,38 @@
       "resized": false,
       "sourceBytes": 189425,
       "sourceHash": "6c611c483c4c41af6ed9addc60b262593761750c71b505fffc27613ce1491f72",
+      "width": 1200
+    },
+    "static/thumbnail/art-database-first-principles.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 178088,
+      "outputHash": "7de2b2ac43b0aa942102ce9de8f22ce18b03c00d019f38cc6676afd045e1eab2",
+      "psnrDb": 36.01,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 218001,
+      "sourceHash": "718e9a307d8d101aad86c4e007eafd93d448c80a17e00bc4967f46a4df5947da",
+      "width": 1200
+    },
+    "static/thumbnail/art-depression-arrives-as-weather.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 220309,
+      "outputHash": "01ec24ed903179ba04bad364093226202d98135e3bcbcac4c2b8e353b95dc287",
+      "psnrDb": 36.99,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 260237,
+      "sourceHash": "4a4595e8087a8a4a28212f2f28c80a3c4fcf9986a8d8ff611f6789d219446807",
       "width": 1200
     },
     "static/thumbnail/art-depression-as-mathematics.jpg": {
@@ -11540,6 +11700,22 @@
       "resized": false,
       "sourceBytes": 191183,
       "sourceHash": "f07b21ac5254138e7800608fc2bf9392defa90210a518e796dc6a14c62f2f74a",
+      "width": 1200
+    },
+    "static/thumbnail/art-existential-arithmetic-at-bread-level.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 127627,
+      "outputHash": "07e5dbec6fa30827dc9d9b515aac325a7baa436627fae55a8575e2d67d454924",
+      "psnrDb": 37.4,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 178518,
+      "sourceHash": "36d7390516dadbb4f17e765d776d66ba9126067e2a5df689c6b3a0ef96cf299a",
       "width": 1200
     },
     "static/thumbnail/art-facial-pleasure-receipts-and-modern-euphemism.jpg": {
@@ -11766,6 +11942,22 @@
       "sourceHash": "ba22247d7eb44803bb125bd6e9e8090e01214bd86ddb80b253ab1a6568d814e9",
       "width": 1200
     },
+    "static/thumbnail/art-hie-from-first-principles.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 129539,
+      "outputHash": "a698d54e7138d3b0759eb4f69ed8655a9f07fbc038ff0477d8e01176ee51d260",
+      "psnrDb": 37.58,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 179938,
+      "sourceHash": "27017c17d44de7d4620f98b1b0f49a27c4b1f36a5069cdba134505329b62c3a4",
+      "width": 1200
+    },
     "static/thumbnail/art-homeopathy-pseudoscience-persistence.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -11876,6 +12068,22 @@
       "resized": false,
       "sourceBytes": 154705,
       "sourceHash": "f67ff9db74a9839eccd1f4c3c04dfe51ed6a32377b35d86eaea31861a39c34f8",
+      "width": 1200
+    },
+    "static/thumbnail/art-india-ai-moat-width-without-depth.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 291913,
+      "outputHash": "909d8c8da51979f5ed9654a6bb18957bf5b39c0e732d82ca52716cc3dd36f983",
+      "psnrDb": 36.26,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 334428,
+      "sourceHash": "8e72d4607cf66b5871ae4f5cc4b0074883fbe00eed84a78fd0b55616a96ad41c",
       "width": 1200
     },
     "static/thumbnail/art-india-ambition-validation-fear-of-mediocrity.jpg": {
@@ -12134,6 +12342,22 @@
       "sourceHash": "a2edab1749f19f301d2656e9f5d852db6c3deb91d7393c845edf71b3ef5c0110",
       "width": 1200
     },
+    "static/thumbnail/art-mind-not-staying-in-one-place.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 148094,
+      "outputHash": "45d6993e7ef5c0abf1c659563e6c444a2f6fa254adbd4017274537702d23e6da",
+      "psnrDb": 36.36,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 210205,
+      "sourceHash": "96976047e6ffa73cae271afff5a2e76d5c21dfb36de22af63d369ea95a5d3719",
+      "width": 1200
+    },
     "static/thumbnail/art-mindfulness-calcutta-4am.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12148,6 +12372,22 @@
       "resized": false,
       "sourceBytes": 150031,
       "sourceHash": "a13430de46cebc2a4378dc99b58c7fb74ea3715368ba3772cc46bca811e53e24",
+      "width": 1200
+    },
+    "static/thumbnail/art-missing-scientists-us.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 103640,
+      "outputHash": "ae37114ab834e872340f33e3afd1c68b969e4928064022e2b8a282f979822c52",
+      "psnrDb": 39.51,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 146455,
+      "sourceHash": "08149f0b49871075b47d4296909df1813177b4d37e55d1266e1b0c8c77bfcdb1",
       "width": 1200
     },
     "static/thumbnail/art-mojo-the-python-killer.jpg": {
@@ -12390,6 +12630,38 @@
       "sourceHash": "cff44c55fb052013ce314b658dec979f2f90e06395914eb522aaf8e0a8db7bc0",
       "width": 1200
     },
+    "static/thumbnail/art-sadness-scarab-calcutta-depression.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 161844,
+      "outputHash": "3d922407b9dcdbce69b4ae7d23ec918f8fcadaee0893f962cfd97811fa6d8ea8",
+      "psnrDb": 36.27,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 203892,
+      "sourceHash": "9c0796eae573b3a63a25b0b614d8bb5d161ec791fa2b9a5ad93d02857708b508",
+      "width": 1200
+    },
+    "static/thumbnail/art-schooling-in-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 118477,
+      "outputHash": "d26c350220b60ac5360150c3114c30507a993de9114b469031a5114d5bf214e4",
+      "psnrDb": 38.19,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 165959,
+      "sourceHash": "bde64b4bcc6cf09a5779b41ae9775158f8be5936e3439714c10bdcd4b4194215",
+      "width": 1200
+    },
     "static/thumbnail/art-science-is-not-a-solitary-organ.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12438,6 +12710,22 @@
       "sourceHash": "2421c4e6ebdf7f9eecbbb73dc07d91273ceae719b516466d958c126398d5776b",
       "width": 1200
     },
+    "static/thumbnail/art-sinusoidal-dementia.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 216836,
+      "outputHash": "83d8d9e83dc9e2852ab45cdee28e33b2be28d024eb315e6e9e543830cd65a29e",
+      "psnrDb": 36.56,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 254619,
+      "sourceHash": "86af992ffadaf16b11eee92437f0b62a9eb98d6a63b717ea3118f1ab8d2d4502",
+      "width": 1200
+    },
     "static/thumbnail/art-sitala-manasa-public-health-superstition.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12452,6 +12740,22 @@
       "resized": false,
       "sourceBytes": 265618,
       "sourceHash": "888af808493579a15d7734e29a49cdced32eb3d33a3f3f0d098397a00cb03cd2",
+      "width": 1200
+    },
+    "static/thumbnail/art-square-peg-in-a-world-of-round-holes.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 98050,
+      "outputHash": "79e00a4f30bd65f0adc7a8b1cbba3d751e52d51815a7e3bfa17cb9a0bf09a949",
+      "psnrDb": 39.17,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 142857,
+      "sourceHash": "227b7defe3c1a9049b54a1fb2c2d672e48a2fb9ffaf60fbd0b2738ba5042b89e",
       "width": 1200
     },
     "static/thumbnail/art-symmetry-in-a-calcutta-room.jpg": {
@@ -12486,6 +12790,22 @@
       "sourceHash": "9707225c87e525a118102c45a561e9770b3e7f9c1dd37c168d4201c1f59d5b2a",
       "width": 1200
     },
+    "static/thumbnail/art-tautology-metaphor-strawman-ruminative-depression.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 107338,
+      "outputHash": "d70ec5f1387c3e758cc0866ab166bf27778d40ef2523b4b93f0c93b0337a5dcb",
+      "psnrDb": 37.16,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 159274,
+      "sourceHash": "1e56a40d71b5b2113750604433e68a3b71d0516e37f22bbb267f204fd1a99f3a",
+      "width": 1200
+    },
     "static/thumbnail/art-the-aromatics-of-stagnation.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12518,6 +12838,22 @@
       "sourceHash": "c0cb848983e04598f0ec4562a8e7c2a29689730f2a39ed7ba8c91f4ce7bc1a69",
       "width": 1200
     },
+    "static/thumbnail/art-the-boy-inside-the-broken-house.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 113071,
+      "outputHash": "3f82f5458b6f6482b34687267bdff96a7688166777a150bf48745a84d9aee965",
+      "psnrDb": 37.92,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 159321,
+      "sourceHash": "79838203e977d3d2d522b6ea52fe1cdf71dd76e7c3ff467a76257f5fb2c51cf7",
+      "width": 1200
+    },
     "static/thumbnail/art-the-coming-unemployment.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12534,6 +12870,22 @@
       "sourceHash": "bf4997e60a9d97776eaaf2a22476e98aa61ac9c5c9eafc4d88c26a5a38ea8cb2",
       "width": 1200
     },
+    "static/thumbnail/art-the-courtier-never-leaves.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 108813,
+      "outputHash": "faf4d54948813716d334ace81906d34be438cc67d15851048d54d9e8455b254e",
+      "psnrDb": 38.64,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 152656,
+      "sourceHash": "2bc9bcb0ab58b8e36a02c0b79da66445e9f25f3fcfc2ffd5f404cd208dc9c864",
+      "width": 1200
+    },
     "static/thumbnail/art-the-desperation-premium.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12548,6 +12900,54 @@
       "resized": false,
       "sourceBytes": 181394,
       "sourceHash": "78ee84521a13e7dff53b32ddc7b14f77dc5b0f3ca5b8b22c3d8f85ffc918d519",
+      "width": 1200
+    },
+    "static/thumbnail/art-the-dopamine-economy.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 105538,
+      "outputHash": "7ec16df4d10613a2faef13639725427675c2f1eb5751caacf8b23544eb71d87a",
+      "psnrDb": 38.94,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 151856,
+      "sourceHash": "13bb949b6dabaed35dda1b2d1af1458b69a61ef78cbc770e5c2c588cf283b141",
+      "width": 1200
+    },
+    "static/thumbnail/art-the-empty-room-inside-loneliness.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 86184,
+      "outputHash": "2142107f9e0a4453cd1348ac37d90729c045b37e9f7d3e6effc33d3aed177b10",
+      "psnrDb": 40.09,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 124573,
+      "sourceHash": "7aba46200a523d66e65598567d173713d5162ef67d7432385bc87dc1b6d12467",
+      "width": 1200
+    },
+    "static/thumbnail/art-the-erasure-is-a-palimpsest.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 207226,
+      "outputHash": "6804d72ede403e119b94702d6c9bbfffb686d252ee00121b32d96294ccdb2eb5",
+      "psnrDb": 36.41,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 244781,
+      "sourceHash": "20da01990a498cfdf94f194306a2c97b357062d3a57d0a3b65985fe7ad12e772",
       "width": 1200
     },
     "static/thumbnail/art-the-geometry-of-absence.jpg": {
@@ -12790,6 +13190,38 @@
       "sourceHash": "421225902e85b78de212f83e2bd829d35162401ab3f26733abbc4c1049ee9e78",
       "width": 1200
     },
+    "static/thumbnail/art-trapped-by-the-room-mirror-and-feed.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 90465,
+      "outputHash": "d3d0e91ce195f9fde7918d758f2bf86af75d4106a9696c1cd71ce5b73ae61e81",
+      "psnrDb": 40.53,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 125876,
+      "sourceHash": "3082cead23462c0c554439d0ff28c8ac52f2d1efb249278d9a150c5fa6d486dc",
+      "width": 1200
+    },
+    "static/thumbnail/art-trauma-chronic-angst-bipolar-disorder.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 121379,
+      "outputHash": "89130f72c44a8344150eca9c8186113c9a92ad8660f59f3ddf6b26e302ad5336",
+      "psnrDb": 38.18,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 172413,
+      "sourceHash": "b36ac3c1b26e4741a48609692352649414c521e694955b54b7335d763df46391",
+      "width": 1200
+    },
     "static/thumbnail/art-truth-adjustment-and-the-cost-of-coming-back.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -12820,6 +13252,22 @@
       "resized": false,
       "sourceBytes": 208147,
       "sourceHash": "1054b2b9d2ef7f743e68a5431b0108904af6152c346d23b70df9f8f0eb957b50",
+      "width": 1200
+    },
+    "static/thumbnail/art-va-data-warehouse-reality.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 252099,
+      "outputHash": "b96addbe9e8a09a27b71dd651985795a2bd99f002c87f71cb23a43554dc12eb8",
+      "psnrDb": 36.77,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 290045,
+      "sourceHash": "b036d217e2da137031b947c7200aa5a90e9c97a61ee3888336b8733d175fbfa0",
       "width": 1200
     },
     "static/thumbnail/art-vector-databases.jpg": {
@@ -12868,6 +13316,22 @@
       "resized": false,
       "sourceBytes": 193861,
       "sourceHash": "d2fc4cdc81eb82e410c276f1ac230d4a246b2f4569fa3288981f1fb9432931ce",
+      "width": 1200
+    },
+    "static/thumbnail/art-why-i-stopped-apologizing-for-my-life.jpg": {
+      "format": "JPEG",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 111619,
+      "outputHash": "bcb18d2c59e592dd51e9c8c70b4915897375223923cd7d30310970be8e1228d0",
+      "psnrDb": 38.68,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 157719,
+      "sourceHash": "375c5a4542f5d1abbac12bb957f5af92735097a24f92106bca88a5e45db01457",
       "width": 1200
     },
     "static/thumbnail/art-why-read-a-healthcare-it-blog-in-the-age-of-ai.jpg": {
@@ -12932,22 +13396,6 @@
       "resized": false,
       "sourceBytes": 141487,
       "sourceHash": "c77144032d4c86ade3e9a864b49f6c3ee4b6787daf034902ef60c01be4bbd356",
-      "width": 1200
-    },
-    "static/thumbnail/safe-a-read-this-first.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 117612,
-      "outputHash": "45e317882d79585e17d7d84cfc73a770bbc01aae1b3471f95e497685c4e19a1b",
-      "psnrDb": 43.24,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 127505,
-      "sourceHash": "02d74d0f977b21eef87111ff9f76eff373b713bf9bba3706ba6ef9b2efeb6a37",
       "width": 1200
     },
     "static/thumbnail/safe-a-trapezoid-in-low-light.jpg": {
@@ -13318,22 +13766,6 @@
       "sourceHash": "7f7099cfe0c00792d5fa2b2dc921b80f319ea0049da3aac12d3c8c9088a79c5c",
       "width": 1200
     },
-    "static/thumbnail/safe-barebones-lifeboat-calcutta.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 121351,
-      "outputHash": "262382565c1c661005497e7004a1c77c7dd7c477c03f16b0606879a7817469f3",
-      "psnrDb": 42.83,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 131817,
-      "sourceHash": "1a9746989b465161c08388fed205f831144e53410213b28ec8009168a5ee3124",
-      "width": 1200
-    },
     "static/thumbnail/safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13350,22 +13782,6 @@
       "sourceHash": "be08731b0f7551705f5001b07d226af9c89f4082cf210483d4dc082f7a5c0629",
       "width": 1200
     },
-    "static/thumbnail/safe-bassline-backhoe-breath.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 122803,
-      "outputHash": "c842b468315fb3264953ceef05287698d640fa3bd7a4241f4e310f02ae104841",
-      "psnrDb": 42.72,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 133552,
-      "sourceHash": "c2291a3ffee13f83aaa88276863173acc0275b986e1fdece4a73b9fa45c54554",
-      "width": 1200
-    },
     "static/thumbnail/safe-bengal-changed-color-not-character.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13380,22 +13796,6 @@
       "resized": false,
       "sourceBytes": 139165,
       "sourceHash": "42943e0070a68bf06a8ad980da6211676ec95c9930898e7cb975a0c98df6cf52",
-      "width": 1200
-    },
-    "static/thumbnail/safe-bengali-hikikomori-shadow.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119255,
-      "outputHash": "09bf920d66bf2b8dd7d95006f6efeb7e45e385b384427e8fbf250816755c626c",
-      "psnrDb": 43.12,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129416,
-      "sourceHash": "45d6effeea1e11ea5bf4a4a670035f246145ad9c2e2a4e6747eabba90bc83220",
       "width": 1200
     },
     "static/thumbnail/safe-bengali-normalcy-and-the-borrowed-warmth-of-nests.jpg": {
@@ -13428,22 +13828,6 @@
       "resized": false,
       "sourceBytes": 123599,
       "sourceHash": "7c39e2b8350990c58d2747cd27c52414f66499df4fda5f871bfca28bfb51b799",
-      "width": 1200
-    },
-    "static/thumbnail/safe-bipolar-depression-friendless-blister.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 123883,
-      "outputHash": "efd83937318aaddea30bfa4c995764c976660a31026a5e325ae774f012088805",
-      "psnrDb": 42.57,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 134830,
-      "sourceHash": "f71c5bba3ca71f81e8bd30c34a06e45689b86b41dbf72df477dea644ea80ef2b",
       "width": 1200
     },
     "static/thumbnail/safe-bipolar-mood-and-calcutta-calculus.jpg": {
@@ -13492,22 +13876,6 @@
       "resized": false,
       "sourceBytes": 123830,
       "sourceHash": "84bd1a4862f38ca5bb8a642fae566424feb48b4c62b708b91ab8b435acd4eec8",
-      "width": 1200
-    },
-    "static/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 108873,
-      "outputHash": "5db2dd71bf83960251f66aa2dbc5690fc78dcb8c6670f059c4ffbea65e5c29cd",
-      "psnrDb": 43.91,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 117849,
-      "sourceHash": "f3bb5b72f6b6dcf0e4af014039700582227932d03a93f1215b115b6d6dbf5cf5",
       "width": 1200
     },
     "static/thumbnail/safe-calcutta-anti-motivation.jpg": {
@@ -13654,38 +14022,6 @@
       "sourceHash": "1a968514b4591232a6a2b3ddb4968fc67c3bd9c22d4ccdc9e4360941ca632a3b",
       "width": 1200
     },
-    "static/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 118646,
-      "outputHash": "ba7a42a9b0ccc2f3443f2e2cf388eb7a6c2da43611cea882374a60673435903b",
-      "psnrDb": 43.08,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 128720,
-      "sourceHash": "b4749af58329c50ba4b7f55bbdffe6494529a345380f23ff9c7f600488d5eb2f",
-      "width": 1200
-    },
-    "static/thumbnail/safe-confounding-factors.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 128234,
-      "outputHash": "417c0f394cd13c959c8730b6ec067773dfe4bf8e4f9c79ae47076b9d967d97fc",
-      "psnrDb": 42.36,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 139693,
-      "sourceHash": "5e6aaf110d924b93a59feeecbf66984f8dbe4f966fd7b6f31e2193a45935c1f0",
-      "width": 1200
-    },
     "static/thumbnail/safe-constipated-americans-diarrhoea.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -13748,38 +14084,6 @@
       "resized": false,
       "sourceBytes": 116325,
       "sourceHash": "b71e7567dfa0bc2cb1e460dcc36808b1bd3508c59b9404ec12271d06349bbec9",
-      "width": 1200
-    },
-    "static/thumbnail/safe-database-first-principles.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 118723,
-      "outputHash": "bf54561edc7ef380c4e6ec730916d68663a8022178bb5eae7a3f5d96cc7d4961",
-      "psnrDb": 43.06,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 128816,
-      "sourceHash": "6494a59cde28e6633f8f83b42956c63d8434abb296592cf8f655876fce80a495",
-      "width": 1200
-    },
-    "static/thumbnail/safe-depression-arrives-as-weather.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 114210,
-      "outputHash": "9f30bacdad26dd15a96726e7ea16fdaebbd124a288bdb396cf9194cb52b55f7b",
-      "psnrDb": 43.44,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 123799,
-      "sourceHash": "f611475c0426c96495a897f6ce3c280c7b40cdc88c9aa617f902bf4c2d805fed",
       "width": 1200
     },
     "static/thumbnail/safe-depression-as-mathematics.jpg": {
@@ -13876,22 +14180,6 @@
       "resized": false,
       "sourceBytes": 121889,
       "sourceHash": "102f8894d9e5fd59229708da05571bbc283c31d15076c590987f5072db5aa89e",
-      "width": 1200
-    },
-    "static/thumbnail/safe-existential-arithmetic-at-bread-level.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119260,
-      "outputHash": "e8b042ba852bb7bf23b049fca1a414158829d80c4dcbc94122f9656067525a64",
-      "psnrDb": 43.1,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129303,
-      "sourceHash": "b632bfaec0cc93c39d88b86f704bde0781366170c4f4bc656ce82b2a983c9acf",
       "width": 1200
     },
     "static/thumbnail/safe-explaining-the-healthcare-it-gap-as-continuity.jpg": {
@@ -14134,22 +14422,6 @@
       "sourceHash": "1004fb9b012ca84945a982d1d03c4b3a4c5b8bb24af374e76b2dc3ffa44e495e",
       "width": 1200
     },
-    "static/thumbnail/safe-hie-from-first-principles.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120853,
-      "outputHash": "47c267660e7b3749964d36d42b5759a124ff29bb633c2fc6b8354386a81eb6b1",
-      "psnrDb": 42.89,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 131274,
-      "sourceHash": "779c678653d888e8d66a8433d71d4e46d63c8681ba0da4b30f01d04fcbb58417",
-      "width": 1200
-    },
     "static/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -14276,22 +14548,6 @@
       "resized": false,
       "sourceBytes": 129108,
       "sourceHash": "dec4efd62e09202038759653c617595d76027eba1ae807e34a988ff9b3b23499",
-      "width": 1200
-    },
-    "static/thumbnail/safe-india-ai-moat-width-without-depth.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119502,
-      "outputHash": "1b3f79f40b468a314d04389fedb601f8dacc031be01f57e660e83b95263b9444",
-      "psnrDb": 42.98,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129674,
-      "sourceHash": "640da38227965fa4c7626f1ad274707abe6c64c30d5960fe78b731d4ea164244",
       "width": 1200
     },
     "static/thumbnail/safe-india-hoodlums-goons-assortment.jpg": {
@@ -14580,38 +14836,6 @@
       "resized": false,
       "sourceBytes": 135772,
       "sourceHash": "d7d0daa463f2de874410b2db73c9e9c1b0d322bf0d4a710447b1400f9cc15d26",
-      "width": 1200
-    },
-    "static/thumbnail/safe-mind-not-staying-in-one-place.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 123521,
-      "outputHash": "fdea779ce14fb3d68125d4ab9f7230b83bd79b3022a9ccde77608d8833327d09",
-      "psnrDb": 42.73,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 134335,
-      "sourceHash": "155ce1efc3c241e1654d1a92bed69b1495412d7895a89696b0ab203de627c333",
-      "width": 1200
-    },
-    "static/thumbnail/safe-missing-scientists-us.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 126655,
-      "outputHash": "403d140dd4356becddabbbc7367aede9e3fc658d99af3c1d54a56253ede6e97d",
-      "psnrDb": 42.46,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 137837,
-      "sourceHash": "fcfb9384e5c1c37daa797450afac1f978c779077dc82cc692139bf758bad30b4",
       "width": 1200
     },
     "static/thumbnail/safe-mood-bellwethers-before-a-low.jpg": {
@@ -15078,22 +15302,6 @@
       "sourceHash": "c78e7376422736a72b18c44e66a8238503d8696be73ed6e1b777ffd768c85954",
       "width": 1200
     },
-    "static/thumbnail/safe-sadness-scarab-calcutta-depression.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115175,
-      "outputHash": "2aeea9538b3c9c938ad6e92a794c63026ee43e64257a4a4b77e1d18d2fcabcb3",
-      "psnrDb": 43.25,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 124866,
-      "sourceHash": "db42f0f6b0b7fe3230deb3a9b4d5315bcddf43baf29939ebc5fa0174cd0f883f",
-      "width": 1200
-    },
     "static/thumbnail/safe-saturday-mathematics-and-the-end-of-usefulness.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -15108,22 +15316,6 @@
       "resized": false,
       "sourceBytes": 137108,
       "sourceHash": "759acbcd19c442bfe581bfc8faf0dd4fcb126a7d9a79817acaf40fe548b374ad",
-      "width": 1200
-    },
-    "static/thumbnail/safe-schooling-in-calcutta.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119202,
-      "outputHash": "e9b284e2b1801066fdaace1df6628056255dde71042f866c7a5877bec5f0e569",
-      "psnrDb": 43.04,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129419,
-      "sourceHash": "b05537b37abb397a04547f4ab171721e6eede2f0ea3816876e02af7a97e05d4c",
       "width": 1200
     },
     "static/thumbnail/safe-scrolling-versus-reading-sequential-mind.jpg": {
@@ -15238,22 +15430,6 @@
       "sourceHash": "d043b6b6d8de05d1a77735572412daed01c14334ad837447f886ecbcb745ae7d",
       "width": 1200
     },
-    "static/thumbnail/safe-sinusoidal-dementia.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 127474,
-      "outputHash": "04ad5585781bbfd3ff35773b3dd1a5649069b22f43e21aa4edca712b44c68563",
-      "psnrDb": 42.5,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 138764,
-      "sourceHash": "864ec275edbd1949aa07fd7d0a1a51f813cf3823bb98a29b680bb5192e0ee29e",
-      "width": 1200
-    },
     "static/thumbnail/safe-skepticism-is-the-mosquito-net.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -15334,22 +15510,6 @@
       "sourceHash": "e7745922b2ce89b36e28c4b76df83fa81e5aa777038689fbc23e6007daf69759",
       "width": 1200
     },
-    "static/thumbnail/safe-square-peg-in-a-world-of-round-holes.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 124120,
-      "outputHash": "a158fe7fd7d587b60f557b977b8eb248d147cdd4412a27032186191098b6d983",
-      "psnrDb": 42.69,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 135004,
-      "sourceHash": "fe015bd23fdc70c97391382f90d409abd923bb78c1dafb33a75c757d6a8f2620",
-      "width": 1200
-    },
     "static/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -15380,22 +15540,6 @@
       "resized": false,
       "sourceBytes": 124521,
       "sourceHash": "97f1c49956043b49c8c98daf442348b101a5e459f91e71696067be74e15c02e1",
-      "width": 1200
-    },
-    "static/thumbnail/safe-tautology-metaphor-strawman-ruminative-depression.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 116956,
-      "outputHash": "7ff62cf15d77fbee5cb7e267dcf9f1edd1c1486595445b50304ff0e6f697243f",
-      "psnrDb": 43.21,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 126890,
-      "sourceHash": "9fe74a7b491e790f077e95f2e2d0b4e04d55e33db01debaaad55214fcee2ef5d",
       "width": 1200
     },
     "static/thumbnail/safe-tea-depression-and-the-probability-of-a-blog.jpg": {
@@ -15508,22 +15652,6 @@
       "resized": false,
       "sourceBytes": 136225,
       "sourceHash": "89459c93ef3473e6de4fadb8df4f389838c9fd90ff3008d942b76c60bee645a4",
-      "width": 1200
-    },
-    "static/thumbnail/safe-the-boy-inside-the-broken-house.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 113324,
-      "outputHash": "d3250252eb3640918322abea23591b2585530afbc9bf618c8ed54693040bbfaa",
-      "psnrDb": 43.52,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 122714,
-      "sourceHash": "10d5361a0919a5edf5c6f1182063c2d2cc1f5587c0dad760b95cfa894b8fe1f3",
       "width": 1200
     },
     "static/thumbnail/safe-the-century-has-a-hole-in-it.jpg": {
@@ -15654,22 +15782,6 @@
       "sourceHash": "44fb6ed72c02070a4ea9a63fe196428f9f14f44bcd538fe0d57c44578a09b476",
       "width": 1200
     },
-    "static/thumbnail/safe-the-courtier-never-leaves.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119339,
-      "outputHash": "eb09a3b879dcd29f04c8c7a63349644e31cb93335bf591bd4f6f0347064b90f6",
-      "psnrDb": 42.93,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129637,
-      "sourceHash": "14264eb88e24c7b9bccad157404bf8845a282e903c67bbb42cf7fba6e80f04d8",
-      "width": 1200
-    },
     "static/thumbnail/safe-the-cup-that-refused-to-become-content.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -15718,22 +15830,6 @@
       "sourceHash": "41988a5aa8a868306396dd3d3a34f58c3e52e408fc5a314f169ca4ab2920138f",
       "width": 1200
     },
-    "static/thumbnail/safe-the-dopamine-economy.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 120386,
-      "outputHash": "66ae94c13ad5222dbefc4dc4b2dd2574b77e1bfcc01bf3350162451bd9cc7069",
-      "psnrDb": 43.05,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 130585,
-      "sourceHash": "3ac8c12efb2662ae6b7dd884bad95984392ec433599f28f3593fadfd1341a64b",
-      "width": 1200
-    },
     "static/thumbnail/safe-the-elon-trillionaire-gap.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -15748,38 +15844,6 @@
       "resized": false,
       "sourceBytes": 134303,
       "sourceHash": "5028ad521c9a32969561c2d1ba00b3391db1c85cec887b573f301ff33d589c90",
-      "width": 1200
-    },
-    "static/thumbnail/safe-the-empty-room-inside-loneliness.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 115754,
-      "outputHash": "f586f9133c0f8b39408f9594d2615e0b259b41a9b7ff38b0d79be21996b73bbf",
-      "psnrDb": 43.23,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 125453,
-      "sourceHash": "5f7cddd25021c53ca189f5b1449e0aaf6611b247bf72a09c2dc3ae9a0834dc8a",
-      "width": 1200
-    },
-    "static/thumbnail/safe-the-erasure-is-a-palimpsest.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 119482,
-      "outputHash": "828e9e980d2837ea083c7af25330cc512078ae93bd83da0b2ccef1031e17ae16",
-      "psnrDb": 43.05,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 129655,
-      "sourceHash": "4d44cb9f8f737852494064f0ef0bc030784057fa2b254a741cb9dda589f1108f",
       "width": 1200
     },
     "static/thumbnail/safe-the-error-bar-around-a-man.jpg": {
@@ -16470,38 +16534,6 @@
       "sourceHash": "f8cca5dce3f8cc4b7fe8a8ac896e67b59118de683f6bcc66750a5faef0ed5cf6",
       "width": 1200
     },
-    "static/thumbnail/safe-trapped-by-the-room-mirror-and-feed.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 125840,
-      "outputHash": "cbc49a8c6926e7f4da2efd45c314d3f5f74799f391f5aeee41e4af283ede470f",
-      "psnrDb": 42.47,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 136858,
-      "sourceHash": "6f8c4046d7c31252e180ac68c59f34016b907f0c216abfdfa1114505169bcf55",
-      "width": 1200
-    },
-    "static/thumbnail/safe-trauma-chronic-angst-bipolar-disorder.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 121492,
-      "outputHash": "800194a9852e943636ae427e7eff5b400c23f42ff460e196df2c123fe4c916ba",
-      "psnrDb": 42.91,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 131916,
-      "sourceHash": "321954b3d038f5ae75942340f430bc0c9de35fae981221a53428e200c9d8114c",
-      "width": 1200
-    },
     "static/thumbnail/safe-turing-test-for-human-usefulness.jpg": {
       "format": "JPEG",
       "height": 800,
@@ -16548,22 +16580,6 @@
       "resized": false,
       "sourceBytes": 120856,
       "sourceHash": "29b22361e46c40dc6d4a442014cc13c1a308146027decfe5f405b89113406e3d",
-      "width": 1200
-    },
-    "static/thumbnail/safe-va-data-warehouse-reality.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 130669,
-      "outputHash": "049498c21af3555e227c6b7fcf4353ca418a9735feb411c357e27f0af644efd5",
-      "psnrDb": 42.14,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 142435,
-      "sourceHash": "7beda1f46f2c75d0d8f81abb43442be65abfa78a28823056933607dd5b0188ab",
       "width": 1200
     },
     "static/thumbnail/safe-va-healthcare-data-systems-mumps-to-sql.jpg": {
@@ -16676,22 +16692,6 @@
       "resized": false,
       "sourceBytes": 132250,
       "sourceHash": "11590b7fd608943d38145c95c87ecf9b9c8942bc451d23a27739be9d09b070ca",
-      "width": 1200
-    },
-    "static/thumbnail/safe-why-i-stopped-apologizing-for-my-life.jpg": {
-      "format": "JPEG",
-      "height": 800,
-      "optimized": true,
-      "optimizerVersion": "2026-07-18.1",
-      "originalHeight": 800,
-      "originalWidth": 1200,
-      "outputBytes": 122942,
-      "outputHash": "9373508376eff143835bfb245a8ac8543dee015d350ec8cb7a5b0596656e6c09",
-      "psnrDb": 42.66,
-      "quality": 76,
-      "resized": false,
-      "sourceBytes": 133820,
-      "sourceHash": "3482b8374ac3d0eb136b7d22bebeb297a11187558bd6cee5e056a1c926d85db1",
       "width": 1200
     },
     "static/thumbnail/safe-why-i-write-on-small-things.jpg": {

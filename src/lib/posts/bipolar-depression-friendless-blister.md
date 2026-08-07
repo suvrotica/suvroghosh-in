@@ -1,12 +1,14 @@
 ---
 title: "The Friendless Blister"
-description: "A personal essay on bipolar depression as self-recrimination, anxiety, bodily agitation, and the cruel exhaustion of being too tired to live and too restless to sleep."
+description: "A personal essay on bipolar depression, self-recrimination, anxiety, bodily agitation, and being too exhausted to function yet too restless to sleep."
 date: "2026-06-04"
+dateModified: "2026-08-07"
 category: "Mental Health"
 tags: ["Feel Guilty","Bipolar Depression","Depression","Blister","Disgust","Permission","Anhedonia","REST","Feel","Lack"]
 published: true
 color: "charcoal"
-thumbnail: "/thumbnail/safe-bipolar-depression-friendless-blister.jpg"
+thumbnail: "/thumbnail/art-bipolar-depression-friendless-blister.jpg"
+thumbnailAlt: "Middle-aged Bengali man sitting awake on the edge of a rumpled bed before dawn"
 ---
 
 Acronyms and terms:
@@ -21,7 +23,7 @@ Akathisia — a state of inner restlessness, often felt in the body, as if the n
 
 ---
 
-<Pi src="/thumbnail/safe-bipolar-depression-friendless-blister.jpg" />
+<Pi src="/thumbnail/art-bipolar-depression-friendless-blister.jpg" />
 
 
 

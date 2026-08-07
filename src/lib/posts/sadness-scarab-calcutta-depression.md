@@ -1,12 +1,14 @@
 ---
 title: "The Scarab Under the Skin"
-description: "A Calcutta essay on sadness that does not behave like sadness, but arrives as bodily irritation, bipolar anger, memory, heat, shame, and the strange private electricity of depression."
+description: "A Calcutta essay on sadness arriving as irritation, bipolar anger, memory, heat, shame, and the private electricity of depression."
 date: "2026-06-10"
+dateModified: "2026-08-07"
 category: "Mental Health"
-tags: ["Nervous System","Normal People","Beetle","Rage","Sadness","Motorbike","Scarab","Irritation","Mine","Agitation"]
+tags: ["Nervous System","Normal People","Beetle","Rage","Sadness","Motorbike","Scarab","Irritation","Mine","Anger"]
 published: true
 color: "red"
-thumbnail: "/thumbnail/safe-sadness-scarab-calcutta-depression.jpg"
+thumbnail: "/thumbnail/art-sadness-scarab-calcutta-depression.jpg"
+thumbnailAlt: "Brass scarab under glass with red and indigo threads across a hot Calcutta table"
 ---
 
 Acronyms and terms:
@@ -19,7 +21,7 @@ PFC: Prefrontal Cortex, the front part of the brain that helps with judgment, re
 
 <TTS />
 
-<Pi src="/thumbnail/safe-sadness-scarab-calcutta-depression.jpg" />
+<Pi src="/thumbnail/art-sadness-scarab-calcutta-depression.jpg" />
 
 ---
 

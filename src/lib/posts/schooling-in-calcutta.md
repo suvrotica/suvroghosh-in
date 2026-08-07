@@ -2,18 +2,18 @@
 title: "Schooling in Calcutta"
 description: "A Calcutta self-portrait stitched from school shame, books, reading, sketches, politics, survival, and the stubborn habit of staying mentally alive."
 date: "2024-01-01"
-dateModified: "2026-07-23"
+dateModified: "2026-08-07"
 category: "Personal"
 tags: ["Thick Glasses","Less Alone","School","Cossipore","Teach","Childhood","English-medium","Suspicion","Adults","Books"]
 published: true
 color: "orange"
-thumbnail: "/thumbnail/safe-schooling-in-calcutta.jpg"
-thumbnailAlt: "Textured abstract waves in navy, cream, rust and plum crossed by fine contour lines"
+thumbnail: "/thumbnail/art-schooling-in-calcutta.jpg"
+thumbnailAlt: "Blank sketchbook, thick glasses and a pencil vine rest on an old school desk"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-schooling-in-calcutta.jpg" />
+<Pi src="/thumbnail/art-schooling-in-calcutta.jpg" />
 
 Acronyms used: ICSE — Indian Certificate of Secondary Education, the school examination many English-medium students in India take around Class 10. WWA — Women's Welfare Association, part of the old school name, grand in sound if not always visible in daily welfare. US — United States, the country where I studied, worked, bought too many books, and learned that distance can come with central heating. AI — Artificial Intelligence, software that can imitate, generate, color, polish, and occasionally behave like a clerk who has swallowed the internet. LLM — Large Language Model, the text-generating kind of AI that has made everyone suspect everyone else of being automated.
 

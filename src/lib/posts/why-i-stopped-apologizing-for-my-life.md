@@ -1,15 +1,17 @@
 ---
 title: "Why I am Misunderstood as a Blogger"
-description: "A middle-aged Bengali healthcare IT architect writes honestly about failed startups, loneliness, aging, immigration fear, and the strange humiliation of surviving in modern professional life."
+description: "A Bengali healthcare IT architect writes about failed startups, loneliness, aging, immigration fear and professional survival."
 date: "2026-05-11"
+dateModified: "2026-08-07"
 category: "Personal"
-tags: ["Healthcare","Systems","Organizations","Perform","Wonder","Afraid","Corruption","Somebody","Performance","Meanwhile"]
+tags: ["Healthcare","Systems","Organizations","Perform","Afraid","Wonder","Corruption","Somebody","Performance","Meanwhile"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-why-i-stopped-apologizing-for-my-life.jpg"
+thumbnail: "/thumbnail/art-why-i-stopped-apologizing-for-my-life.jpg"
+thumbnailAlt: "Silver-haired Bengali architect writes beside blank screens, cables and a travel case"
 ---
 
-<Pi src="/thumbnail/safe-why-i-stopped-apologizing-for-my-life.jpg" />
+<Pi src="/thumbnail/art-why-i-stopped-apologizing-for-my-life.jpg" />
 
 <TTS />
 

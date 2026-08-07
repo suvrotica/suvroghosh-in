@@ -4210,6 +4210,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-a-read-this-first.jpg",
+			"src": "/thumbnail/art-a-read-this-first.jpg",
+			"bytes": 276005,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-ai-deployment-evidence-over-opinion.jpg",
 			"src": "/thumbnail/art-ai-deployment-evidence-over-opinion.jpg",
 			"bytes": 99988,
@@ -4280,9 +4287,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-barebones-lifeboat-calcutta.jpg",
+			"src": "/thumbnail/art-barebones-lifeboat-calcutta.jpg",
+			"bytes": 170479,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-basel-problem-what-diffusion-model-means.jpg",
 			"src": "/thumbnail/art-basel-problem-what-diffusion-model-means.jpg",
 			"bytes": 126946,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-bassline-backhoe-breath.jpg",
+			"src": "/thumbnail/art-bassline-backhoe-breath.jpg",
+			"bytes": 228619,
 			"width": 1200,
 			"height": 800
 		},
@@ -4301,6 +4322,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bengali-hikikomori-shadow.jpg",
+			"src": "/thumbnail/art-bengali-hikikomori-shadow.jpg",
+			"bytes": 204273,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-bengali-tintin-in-kolkata.jpg",
 			"src": "/thumbnail/art-bengali-tintin-in-kolkata.jpg",
 			"bytes": 341740,
@@ -4315,6 +4343,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bipolar-depression-friendless-blister.jpg",
+			"src": "/thumbnail/art-bipolar-depression-friendless-blister.jpg",
+			"bytes": 98769,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-body-going-to-plan.jpg",
 			"src": "/thumbnail/art-body-going-to-plan.jpg",
 			"bytes": 146920,
@@ -4325,6 +4360,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-bogosity-enshittification-and-the-glittering-drain.jpg",
 			"src": "/thumbnail/art-bogosity-enshittification-and-the-glittering-drain.jpg",
 			"bytes": 313814,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-brittle-brain-blazing-light-calcutta-room.jpg",
+			"src": "/thumbnail/art-brittle-brain-blazing-light-calcutta-room.jpg",
+			"bytes": 136669,
 			"width": 1200,
 			"height": 800
 		},
@@ -4413,9 +4455,37 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-confounding-factors-healthcare-it-analytics.jpg",
+			"src": "/thumbnail/art-confounding-factors-healthcare-it-analytics.jpg",
+			"bytes": 100250,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-confounding-factors.jpg",
+			"src": "/thumbnail/art-confounding-factors.jpg",
+			"bytes": 115396,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-courage-to-be-disliked-in-calcutta.jpg",
 			"src": "/thumbnail/art-courage-to-be-disliked-in-calcutta.jpg",
 			"bytes": 158441,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-database-first-principles.jpg",
+			"src": "/thumbnail/art-database-first-principles.jpg",
+			"bytes": 178088,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-depression-arrives-as-weather.jpg",
+			"src": "/thumbnail/art-depression-arrives-as-weather.jpg",
+			"bytes": 220309,
 			"width": 1200,
 			"height": 800
 		},
@@ -4472,6 +4542,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-entropy-in-a-rented-room.jpg",
 			"src": "/thumbnail/art-entropy-in-a-rented-room.jpg",
 			"bytes": 158080,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-existential-arithmetic-at-bread-level.jpg",
+			"src": "/thumbnail/art-existential-arithmetic-at-bread-level.jpg",
+			"bytes": 127627,
 			"width": 1200,
 			"height": 800
 		},
@@ -4574,6 +4651,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-hie-from-first-principles.jpg",
+			"src": "/thumbnail/art-hie-from-first-principles.jpg",
+			"bytes": 129539,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-homeopathy-pseudoscience-persistence.jpg",
 			"src": "/thumbnail/art-homeopathy-pseudoscience-persistence.jpg",
 			"bytes": 136683,
@@ -4619,6 +4703,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-india-ai-it-bpo-white-collar-jobs.jpg",
 			"src": "/thumbnail/art-india-ai-it-bpo-white-collar-jobs.jpg",
 			"bytes": 110622,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-india-ai-moat-width-without-depth.jpg",
+			"src": "/thumbnail/art-india-ai-moat-width-without-depth.jpg",
+			"bytes": 291913,
 			"width": 1200,
 			"height": 800
 		},
@@ -4735,9 +4826,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-mind-not-staying-in-one-place.jpg",
+			"src": "/thumbnail/art-mind-not-staying-in-one-place.jpg",
+			"bytes": 148094,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-mindfulness-calcutta-4am.jpg",
 			"src": "/thumbnail/art-mindfulness-calcutta-4am.jpg",
 			"bytes": 103759,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-missing-scientists-us.jpg",
+			"src": "/thumbnail/art-missing-scientists-us.jpg",
+			"bytes": 103640,
 			"width": 1200,
 			"height": 800
 		},
@@ -4847,6 +4952,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-sadness-scarab-calcutta-depression.jpg",
+			"src": "/thumbnail/art-sadness-scarab-calcutta-depression.jpg",
+			"bytes": 161844,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-schooling-in-calcutta.jpg",
+			"src": "/thumbnail/art-schooling-in-calcutta.jpg",
+			"bytes": 118477,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-science-is-not-a-solitary-organ.jpg",
 			"src": "/thumbnail/art-science-is-not-a-solitary-organ.jpg",
 			"bytes": 151890,
@@ -4868,9 +4987,23 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-sinusoidal-dementia.jpg",
+			"src": "/thumbnail/art-sinusoidal-dementia.jpg",
+			"bytes": 216836,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-sitala-manasa-public-health-superstition.jpg",
 			"src": "/thumbnail/art-sitala-manasa-public-health-superstition.jpg",
 			"bytes": 225201,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-square-peg-in-a-world-of-round-holes.jpg",
+			"src": "/thumbnail/art-square-peg-in-a-world-of-round-holes.jpg",
+			"bytes": 98050,
 			"width": 1200,
 			"height": 800
 		},
@@ -4889,6 +5022,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-tautology-metaphor-strawman-ruminative-depression.jpg",
+			"src": "/thumbnail/art-tautology-metaphor-strawman-ruminative-depression.jpg",
+			"bytes": 107338,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-aromatics-of-stagnation.jpg",
 			"src": "/thumbnail/art-the-aromatics-of-stagnation.jpg",
 			"bytes": 110874,
@@ -4903,6 +5043,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-boy-inside-the-broken-house.jpg",
+			"src": "/thumbnail/art-the-boy-inside-the-broken-house.jpg",
+			"bytes": 113071,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-coming-unemployment.jpg",
 			"src": "/thumbnail/art-the-coming-unemployment.jpg",
 			"bytes": 115527,
@@ -4910,9 +5057,37 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-courtier-never-leaves.jpg",
+			"src": "/thumbnail/art-the-courtier-never-leaves.jpg",
+			"bytes": 108813,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-the-desperation-premium.jpg",
 			"src": "/thumbnail/art-the-desperation-premium.jpg",
 			"bytes": 127777,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-dopamine-economy.jpg",
+			"src": "/thumbnail/art-the-dopamine-economy.jpg",
+			"bytes": 105538,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-empty-room-inside-loneliness.jpg",
+			"src": "/thumbnail/art-the-empty-room-inside-loneliness.jpg",
+			"bytes": 86184,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-the-erasure-is-a-palimpsest.jpg",
+			"src": "/thumbnail/art-the-erasure-is-a-palimpsest.jpg",
+			"bytes": 207226,
 			"width": 1200,
 			"height": 800
 		},
@@ -5022,6 +5197,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-trapped-by-the-room-mirror-and-feed.jpg",
+			"src": "/thumbnail/art-trapped-by-the-room-mirror-and-feed.jpg",
+			"bytes": 90465,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-trauma-chronic-angst-bipolar-disorder.jpg",
+			"src": "/thumbnail/art-trauma-chronic-angst-bipolar-disorder.jpg",
+			"bytes": 121379,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "art-truth-adjustment-and-the-cost-of-coming-back.jpg",
 			"src": "/thumbnail/art-truth-adjustment-and-the-cost-of-coming-back.jpg",
 			"bytes": 119238,
@@ -5032,6 +5221,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-ubi-india-ai-unemployment-democracy.jpg",
 			"src": "/thumbnail/art-ubi-india-ai-unemployment-democracy.jpg",
 			"bytes": 168804,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-va-data-warehouse-reality.jpg",
+			"src": "/thumbnail/art-va-data-warehouse-reality.jpg",
+			"bytes": 252099,
 			"width": 1200,
 			"height": 800
 		},
@@ -5053,6 +5249,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-when-variety-starts-wearing-the-same-shirt.jpg",
 			"src": "/thumbnail/art-when-variety-starts-wearing-the-same-shirt.jpg",
 			"bytes": 160641,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-why-i-stopped-apologizing-for-my-life.jpg",
+			"src": "/thumbnail/art-why-i-stopped-apologizing-for-my-life.jpg",
+			"bytes": 111619,
 			"width": 1200,
 			"height": 800
 		},
@@ -5186,13 +5389,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-a-meaningless-number-on-an-average-star.jpg",
 			"src": "/thumbnail/safe-a-meaningless-number-on-an-average-star.jpg",
 			"bytes": 129707,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-a-read-this-first.jpg",
-			"src": "/thumbnail/safe-a-read-this-first.jpg",
-			"bytes": 117612,
 			"width": 1200,
 			"height": 800
 		},
@@ -5358,13 +5554,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-barebones-lifeboat-calcutta.jpg",
-			"src": "/thumbnail/safe-barebones-lifeboat-calcutta.jpg",
-			"bytes": 121351,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
 			"src": "/thumbnail/safe-barnum-statements-and-the-horoscope-that-fits-everybody.jpg",
 			"bytes": 114979,
@@ -5372,23 +5561,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-bassline-backhoe-breath.jpg",
-			"src": "/thumbnail/safe-bassline-backhoe-breath.jpg",
-			"bytes": 122803,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-bengal-changed-color-not-character.jpg",
 			"src": "/thumbnail/safe-bengal-changed-color-not-character.jpg",
 			"bytes": 127888,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bengali-hikikomori-shadow.jpg",
-			"src": "/thumbnail/safe-bengali-hikikomori-shadow.jpg",
-			"bytes": 119255,
 			"width": 1200,
 			"height": 800
 		},
@@ -5403,13 +5578,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-bengali-who-knows-too-much-to-move.jpg",
 			"src": "/thumbnail/safe-bengali-who-knows-too-much-to-move.jpg",
 			"bytes": 114112,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-bipolar-depression-friendless-blister.jpg",
-			"src": "/thumbnail/safe-bipolar-depression-friendless-blister.jpg",
-			"bytes": 123883,
 			"width": 1200,
 			"height": 800
 		},
@@ -5431,13 +5599,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-brain-scrap-yard.jpg",
 			"src": "/thumbnail/safe-brain-scrap-yard.jpg",
 			"bytes": 114267,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-brittle-brain-blazing-light-calcutta-room.jpg",
-			"src": "/thumbnail/safe-brittle-brain-blazing-light-calcutta-room.jpg",
-			"bytes": 108873,
 			"width": 1200,
 			"height": 800
 		},
@@ -5505,20 +5666,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-confounding-factors-healthcare-it-analytics.jpg",
-			"src": "/thumbnail/safe-confounding-factors-healthcare-it-analytics.jpg",
-			"bytes": 118646,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-confounding-factors.jpg",
-			"src": "/thumbnail/safe-confounding-factors.jpg",
-			"bytes": 128234,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-constipated-americans-diarrhoea.jpg",
 			"src": "/thumbnail/safe-constipated-americans-diarrhoea.jpg",
 			"bytes": 109766,
@@ -5543,20 +5690,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
 			"src": "/thumbnail/safe-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
 			"bytes": 107463,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-database-first-principles.jpg",
-			"src": "/thumbnail/safe-database-first-principles.jpg",
-			"bytes": 118723,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-depression-arrives-as-weather.jpg",
-			"src": "/thumbnail/safe-depression-arrives-as-weather.jpg",
-			"bytes": 114210,
 			"width": 1200,
 			"height": 800
 		},
@@ -5599,13 +5732,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-epic.jpg",
 			"src": "/thumbnail/safe-epic.jpg",
 			"bytes": 112389,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-existential-arithmetic-at-bread-level.jpg",
-			"src": "/thumbnail/safe-existential-arithmetic-at-bread-level.jpg",
-			"bytes": 119260,
 			"width": 1200,
 			"height": 800
 		},
@@ -5715,13 +5841,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-hie-from-first-principles.jpg",
-			"src": "/thumbnail/safe-hie-from-first-principles.jpg",
-			"bytes": 120853,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-highly-composite-mornings-prime-afternoons.jpg",
 			"src": "/thumbnail/safe-highly-composite-mornings-prime-afternoons.jpg",
 			"bytes": 110392,
@@ -5774,13 +5893,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-i-do-not-hate-the-world-i-am-tired.jpg",
 			"src": "/thumbnail/safe-i-do-not-hate-the-world-i-am-tired.jpg",
 			"bytes": 119165,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-india-ai-moat-width-without-depth.jpg",
-			"src": "/thumbnail/safe-india-ai-moat-width-without-depth.jpg",
-			"bytes": 119502,
 			"width": 1200,
 			"height": 800
 		},
@@ -5907,20 +6019,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-mind-as-emergence-not-magic.jpg",
 			"src": "/thumbnail/safe-mind-as-emergence-not-magic.jpg",
 			"bytes": 124848,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-mind-not-staying-in-one-place.jpg",
-			"src": "/thumbnail/safe-mind-not-staying-in-one-place.jpg",
-			"bytes": 123521,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-missing-scientists-us.jpg",
-			"src": "/thumbnail/safe-missing-scientists-us.jpg",
-			"bytes": 126655,
 			"width": 1200,
 			"height": 800
 		},
@@ -6128,23 +6226,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-sadness-scarab-calcutta-depression.jpg",
-			"src": "/thumbnail/safe-sadness-scarab-calcutta-depression.jpg",
-			"bytes": 115175,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-saturday-mathematics-and-the-end-of-usefulness.jpg",
 			"src": "/thumbnail/safe-saturday-mathematics-and-the-end-of-usefulness.jpg",
 			"bytes": 126019,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-schooling-in-calcutta.jpg",
-			"src": "/thumbnail/safe-schooling-in-calcutta.jpg",
-			"bytes": 119202,
 			"width": 1200,
 			"height": 800
 		},
@@ -6198,13 +6282,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-sinusoidal-dementia.jpg",
-			"src": "/thumbnail/safe-sinusoidal-dementia.jpg",
-			"bytes": 127474,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-skepticism-is-the-mosquito-net.jpg",
 			"src": "/thumbnail/safe-skepticism-is-the-mosquito-net.jpg",
 			"bytes": 130276,
@@ -6240,13 +6317,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-square-peg-in-a-world-of-round-holes.jpg",
-			"src": "/thumbnail/safe-square-peg-in-a-world-of-round-holes.jpg",
-			"bytes": 124120,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-synthetic-music-and-the-crowded-miracle.jpg",
 			"src": "/thumbnail/safe-synthetic-music-and-the-crowded-miracle.jpg",
 			"bytes": 130580,
@@ -6257,13 +6327,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-tau-scaling-law-time-not-nanometers.jpg",
 			"src": "/thumbnail/safe-tau-scaling-law-time-not-nanometers.jpg",
 			"bytes": 114919,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-tautology-metaphor-strawman-ruminative-depression.jpg",
-			"src": "/thumbnail/safe-tautology-metaphor-strawman-ruminative-depression.jpg",
-			"bytes": 116956,
 			"width": 1200,
 			"height": 800
 		},
@@ -6313,13 +6376,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-the-billing-hour-has-started-to-smell.jpg",
 			"src": "/thumbnail/safe-the-billing-hour-has-started-to-smell.jpg",
 			"bytes": 125215,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-boy-inside-the-broken-house.jpg",
-			"src": "/thumbnail/safe-the-boy-inside-the-broken-house.jpg",
-			"bytes": 113324,
 			"width": 1200,
 			"height": 800
 		},
@@ -6380,13 +6436,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-courtier-never-leaves.jpg",
-			"src": "/thumbnail/safe-the-courtier-never-leaves.jpg",
-			"bytes": 119339,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-cup-that-refused-to-become-content.jpg",
 			"src": "/thumbnail/safe-the-cup-that-refused-to-become-content.jpg",
 			"bytes": 125470,
@@ -6408,30 +6457,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-the-dopamine-economy.jpg",
-			"src": "/thumbnail/safe-the-dopamine-economy.jpg",
-			"bytes": 120386,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-the-elon-trillionaire-gap.jpg",
 			"src": "/thumbnail/safe-the-elon-trillionaire-gap.jpg",
 			"bytes": 123525,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-empty-room-inside-loneliness.jpg",
-			"src": "/thumbnail/safe-the-empty-room-inside-loneliness.jpg",
-			"bytes": 115754,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-the-erasure-is-a-palimpsest.jpg",
-			"src": "/thumbnail/safe-the-erasure-is-a-palimpsest.jpg",
-			"bytes": 119482,
 			"width": 1200,
 			"height": 800
 		},
@@ -6737,20 +6765,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
-			"name": "safe-trapped-by-the-room-mirror-and-feed.jpg",
-			"src": "/thumbnail/safe-trapped-by-the-room-mirror-and-feed.jpg",
-			"bytes": 125840,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-trauma-chronic-angst-bipolar-disorder.jpg",
-			"src": "/thumbnail/safe-trauma-chronic-angst-bipolar-disorder.jpg",
-			"bytes": 121492,
-			"width": 1200,
-			"height": 800
-		},
-		{
 			"name": "safe-turing-test-for-human-usefulness.jpg",
 			"src": "/thumbnail/safe-turing-test-for-human-usefulness.jpg",
 			"bytes": 108111,
@@ -6768,13 +6782,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-unattractive-mans-weather-report.jpg",
 			"src": "/thumbnail/safe-unattractive-mans-weather-report.jpg",
 			"bytes": 111575,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-va-data-warehouse-reality.jpg",
-			"src": "/thumbnail/safe-va-data-warehouse-reality.jpg",
-			"bytes": 130669,
 			"width": 1200,
 			"height": 800
 		},
@@ -6824,13 +6831,6 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "safe-when-the-office-learns-to-beg.jpg",
 			"src": "/thumbnail/safe-when-the-office-learns-to-beg.jpg",
 			"bytes": 121762,
-			"width": 1200,
-			"height": 800
-		},
-		{
-			"name": "safe-why-i-stopped-apologizing-for-my-life.jpg",
-			"src": "/thumbnail/safe-why-i-stopped-apologizing-for-my-life.jpg",
-			"bytes": 122942,
 			"width": 1200,
 			"height": 800
 		},

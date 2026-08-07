@@ -1,17 +1,19 @@
 ---
 title: "The Boy Inside the Broken House"
-description: "A raw Calcutta middle-age essay on depression, exhaustion, AI, shame, ambition, and the strange grief of feeling left behind without pretending the darkness is a motivational seminar."
+description: "A raw middle-age essay on depression, exhaustion, AI, shame, ambition and the grief of feeling left behind in Calcutta."
 date: "2026-05-10"
+dateModified: "2026-08-07"
 category: "Personal"
-tags: ["Surcharge","Sunny","Buried","Youth","AI","Boy","Imitate","Pity","Mood","Lying"]
+tags: ["Surcharge","Sunny","Buried","Youth","AI","Boy","Pity","Imitate","Mood","Lying"]
 published: true
 color: "slate"
-thumbnail: "/thumbnail/safe-the-boy-inside-the-broken-house.jpg"
+thumbnail: "/thumbnail/art-the-boy-inside-the-broken-house.jpg"
+thumbnailAlt: "Adult hands steady a broken model house with one warmly lit child’s chair"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-boy-inside-the-broken-house.jpg" />
+<Pi src="/thumbnail/art-the-boy-inside-the-broken-house.jpg" />
 
 AI — Artificial Intelligence: machines and software that can write, code, summarize, draw, classify, predict, imitate, and compete with human work at terrifying speed.
 

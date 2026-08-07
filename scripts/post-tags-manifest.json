@@ -3,7 +3,9 @@
 	"hashVersion": 2,
 	"posts": {
 		"src/lib/posts/-a-read-this-first.md": {
-			"bodyHash": "c9f39081c72d2fb5002a331caf64f29ca5dc7e1c74a510ea170a86d6eca2f329",
+			"bodyHash": "f641c19168add7de48f715f188bef0423a8a901a32d57be08e36e9e82871aa10",
+			"hashVersion": 2,
+			"revisionHash": "eae99c0d4ed49efed36bb7480f91ac85bc03f61785c3234d3def4adf8fb008a3",
 			"generatedTags": [
 				"Less Alone",
 				"School",
@@ -18,9 +20,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "3691d9273de6de02161b8ba07d3f9d25aee5cf62d2959da4f1a8e44a125479ef",
-			"dateModified": "2026-07-23",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/a-cup-of-cha-is-not-a-small-thing.md": {
 			"bodyHash": "358e2745bdf249228106f231ea040f57c9302be76f232fdb0c6c33541751a43c",
@@ -748,7 +748,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/barebones-lifeboat-calcutta.md": {
-			"bodyHash": "8f1b5b827b41abe2c753ffb56deeb617698551686b20f9e67eb52155a0a1d782",
+			"bodyHash": "32e92b2289b32f7ce5f47787f14c6f797358cc8e74e3dae46e70e8559f328c7d",
+			"hashVersion": 2,
+			"revisionHash": "4ebed1db7173d3659d69368b74b4e85f8343b1b2d583d92499264373124ae6fc",
 			"generatedTags": [
 				"Consulting Income",
 				"United States",
@@ -763,8 +765,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2413f7e951d7d72f8bccccd750bece79dc09b75e01ee2fd12f875d656e637ea8",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/barnum-statements-and-the-horoscope-that-fits-everybody.md": {
 			"bodyHash": "f41ec5a06a92210271626abebd0e116378d1806fe6dab3d50cf9f2fc345158fb",
@@ -806,7 +807,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/bassline-backhoe-breath.md": {
-			"bodyHash": "7ee91c68efe67722e00e4dbaef05591c551d626ff52c64ca579c71ba8495c426",
+			"bodyHash": "69b57676b01fd0ce2434121aa03ec2c9c188cb309eec78009927982231d08914",
+			"hashVersion": 2,
+			"revisionHash": "fb91b1b2cf9b1591e20f32608a4de4d728cc603e9f937c8514562a7e9409b0e8",
 			"generatedTags": [
 				"Bass",
 				"Dhup",
@@ -821,8 +824,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "ab21fbf9a729c09208f1427154eb6b7d65d7dccc6fb0eb6463378ae1132f77f6",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/benfords-law-and-the-ledger-that-sweats.md": {
 			"bodyHash": "e297701db43b724fc327c497110ef6943adf7a20b8a586cb5c0668b621c6001d",
@@ -865,7 +867,9 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/bengali-hikikomori-shadow.md": {
-			"bodyHash": "cbab60aad922a65bafaa2ea5fccec1281a122a95deb705b731aed3ba02445160",
+			"bodyHash": "d7d371a915d90ef19049a0773f5046a4c339385b9144d0003bc6f0a77ce7c1d8",
+			"hashVersion": 2,
+			"revisionHash": "2e42ff174de9809eb5140dd5aa0bd8ae84ab41ba0420dc4140d527050a542cdf",
 			"generatedTags": [
 				"Japanese",
 				"Everybody",
@@ -876,12 +880,11 @@
 				"Feels",
 				"Sadness",
 				"Kolkata",
-				"Meanwhile"
+				"Healthcare"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1428c142c18a741239953858676147779c2fd25ef74f1cc05e7b849f7b06121b",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/bengali-normalcy-and-the-borrowed-warmth-of-nests.md": {
 			"bodyHash": "93e7ce925d051775c6c7a2b6eec1fe5c525d01603f5c1eb88716126f098c9a4a",
@@ -960,7 +963,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/bipolar-depression-friendless-blister.md": {
-			"bodyHash": "23ab82695c80391a985059c2b3b987c7266a034afea116df929343ae48c21960",
+			"bodyHash": "2c553628c5a5eeb16dc16bec6ed61319b8f88e83520fe2d55ab62cf7af4f848c",
+			"hashVersion": 2,
+			"revisionHash": "f9149c71dbcbafb7bdb190da62f898241643173e0f30ef293a576a98ae162959",
 			"generatedTags": [
 				"Feel Guilty",
 				"Bipolar Depression",
@@ -975,8 +980,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "3fb46e3c912f8feda2f4570cc6a7f4ff817d212a86b7594007147b28c0f1ef9f",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/bipolar-diet-is-not-lithium.md": {
 			"bodyHash": "57d3abc79202cc03830dc78eda601a135efe0b0bff98bd52fbe769802ce6f245",
@@ -1171,7 +1175,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/brittle-brain-blazing-light-calcutta-room.md": {
-			"bodyHash": "2ed4b888d7f55fb919046070b70327f41a543fc3a09199d7f859c8ea59db4bbd",
+			"bodyHash": "760b720fbe3237c25479c6d22158dbfa8688ab4a74300ee4a4dd8779d9a39311",
+			"hashVersion": 2,
+			"revisionHash": "d5002df1f6ad8584176cf48d396aed5ba40ba8bf533bda03413ab05fbe7e0ecf",
 			"generatedTags": [
 				"Unfamiliar",
 				"Prison",
@@ -1181,13 +1187,12 @@
 				"Lies",
 				"Fear",
 				"Cup",
-				"Rise",
-				"Mind"
+				"Mind",
+				"Rise"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6684d2b4a925f399fb678b63a0cb370c92c957cd5e1d2194905ce9241bd856b3",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/calcutta-anti-motivation.md": {
 			"bodyHash": "0938188696e0fd3365adc121d05e0460f840df6941e114ec056f55ee61c9506b",
@@ -1731,7 +1736,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/confounding-factors-healthcare-it-analytics.md": {
-			"bodyHash": "6390ecacbd79b4d3bf4763ff72fabd32e1a293d0ae234a7ddc6ba7503f22226d",
+			"bodyHash": "2e47d02985a17e36c2b5542daf116d741a2d9414639c4cc750b9731bd0093ee4",
+			"hashVersion": 2,
+			"revisionHash": "c9a7fa404462bad1cffd14d9a22a46ef99454f916a863f7f31c1ba914eb3f3d8",
 			"generatedTags": [
 				"Confounding",
 				"Causal Inference",
@@ -1757,16 +1764,16 @@
 				"Healthcare Data"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "d182b6b70b2f7ee71ac9b6aecce6c6b0cf7a6516a7cc359f9c248bcec89d8a99",
-			"dateModified": "2026-07-23",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/confounding-factors.md": {
-			"bodyHash": "7d3c7760403c367691d338aa7e043f5b3135def4527e61afeb878699cc2a3950",
+			"bodyHash": "804f62f9439355d54c68ea4c71aa74640a1a9904b0ba0e67d30948c200e47211",
+			"hashVersion": 2,
+			"revisionHash": "972e06557c8fd83bc9afe7767ee83a134e4a3bb878b23b4308d6b2ce9adb87f3",
 			"generatedTags": [
 				"Target Trial Emulation",
-				"Familiar Shapes",
 				"Distortion Enters",
+				"Familiar Shapes",
 				"Keeps Happening",
 				"AI Learns",
 				"Confounding",
@@ -1777,8 +1784,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "2f66c4383030a7e31002361f768943c67a02e9ee7902b06b91734da2ff96f1f2",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/courage-to-be-disliked-in-calcutta.md": {
 			"bodyHash": "634958414814f668e2f5b28c6ac9aa789238b1ed2354b837638fd2923acfdade",
@@ -1877,7 +1883,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/database-first-principles.md": {
-			"bodyHash": "ce999c4451f5d4d87a0517a2641dd69b8238ba6b254292d1828fffeec1897d13",
+			"bodyHash": "358e5220e5fb99393d78b99d73160c1eb4f0ade392783901bf9d740580fede90",
+			"hashVersion": 2,
+			"revisionHash": "748cd3f34409c5d38a4fcd873e882ce1b848454f8a1015157aafd2cb4f7a624c",
 			"generatedTags": [
 				"Health Level Seven",
 				"Data Quality",
@@ -1887,17 +1895,17 @@
 				"Authoritative",
 				"Architecture",
 				"Analytical",
-				"Event",
-				"Enterprise"
+				"Enterprise",
+				"Event"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "17def6cbfe893df212250a418496616ac732fcfa5392351210dbab2ae36138f6",
-			"dateModified": "2026-07-23",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/depression-arrives-as-weather.md": {
-			"bodyHash": "24cf55c18a4cc2d482e9cb0d52e1e8d227a283ce0ef4e96be650eba428a661a6",
+			"bodyHash": "be146b81d8a69ffe5a9fce6308782c83a49d28b1c9c51097c49e7b512dbf5af6",
+			"hashVersion": 2,
+			"revisionHash": "8c4e15bca0108bd4a19e0aab2076d1cca2abbdc5de9fbabc9b003cec66d2c315",
 			"generatedTags": [
 				"Depression",
 				"Anhedonia",
@@ -1912,8 +1920,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "9b527c14f47e62fef738e3301f321f4174c98a2649282bd815fe5c5b421143fb",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/depression-as-mathematics.md": {
 			"bodyHash": "26f9c3b7de8db53c1f39c389e55da10272f2758cb86a1777b3a8521b6595cb40",
@@ -2207,7 +2214,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/existential-arithmetic-at-bread-level.md": {
-			"bodyHash": "5835dab88730ced3aee0a5f35bbfc25a2eb4c343dd09dc63e704136bd5607918",
+			"bodyHash": "616125f69dcce7fe0ed5e7c6e99a8806bf06168d7557cd43981d899aee9cf9a0",
+			"hashVersion": 2,
+			"revisionHash": "ca131d5c29535dc30b25245ad7b58294ca92f750fc8fad1ed3b101271cb099c0",
 			"generatedTags": [
 				"Okay Means",
 				"Career Ladder",
@@ -2215,15 +2224,14 @@
 				"Ladder",
 				"Future",
 				"Month",
-				"Arithmetic",
 				"Understands",
-				"Engineering",
-				"Career"
+				"Arithmetic",
+				"Career",
+				"Rent"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "76638d57109502ecd8ba4ddac763f925b607498a1a735c70efdfdd6936754a03",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/explaining-the-healthcare-it-gap-as-continuity.md": {
 			"bodyHash": "252aa9674f5b9899fd01edd572ae5cf2de971b74229b049822d608223c91bed7",
@@ -2878,7 +2886,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/hie-from-first-principles.md": {
-			"bodyHash": "e638d75e0e56146996d5a539c1fb4d19af6cfcb4069c86f99b82e991e57e9661",
+			"bodyHash": "11b9b56dee69c5eca5b62ea3513940913bee64c42770499c2b99c02bf926b47c",
+			"hashVersion": 2,
+			"revisionHash": "fb6476c75aeb6977e8410abcb2330c2c417037d6b652645854d80e5e48afd7da",
 			"generatedTags": [
 				"Community Health Workers",
 				"Interoperability Layer",
@@ -2893,8 +2903,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "18cb05af421cd1d5beeb14e22bfc1a070a589a3d127e04c74c52f9cd4fb810dd",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/highly-composite-mornings-prime-afternoons.md": {
 			"bodyHash": "6dc6600977324f8f6a038f32fe8df0a507b9c08ea76153a1c191ba13caf10bc6",
@@ -3251,7 +3260,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/india-ai-moat-width-without-depth.md": {
-			"bodyHash": "2b56808109c723419eb9fad06900e0ab9116530f1a3f58eb2177389b174556fb",
+			"bodyHash": "64ff973451507da4f13af9f264edb749d9e14a07366e1d3ed71d601c493e28f9",
+			"hashVersion": 2,
+			"revisionHash": "9688d0f2881360b463e67d25fce1e1a3964f8769e7e7507f98f754ad3daab5f5",
 			"generatedTags": [
 				"Chip Design",
 				"Selective Sovereignty",
@@ -3259,15 +3270,14 @@
 				"Model Work",
 				"Moat",
 				"AI",
-				"Model",
 				"Frontier",
-				"Implementation",
-				"India"
+				"Model",
+				"India",
+				"Implementation"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "51093217a5080231b5fbd396bf8bb38db15a055579764129e2e242e2fbbfadf7",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/india-ambition-validation-fear-of-mediocrity.md": {
 			"bodyHash": "fd5873112209f18c5a3360bd5b88e3c7cc1dd30847c3006b7f0f2453d3b7ad74",
@@ -4055,7 +4065,9 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/mind-not-staying-in-one-place.md": {
-			"bodyHash": "54f3f8d373b9cb42a8f51e990995ebece61c95a988b4c0ec1baacbec58563cbe",
+			"bodyHash": "76648f7e2b226bce00f1bf6df6e7265206e5dcb88beb4332cb4238c5b1ad0279",
+			"hashVersion": 2,
+			"revisionHash": "75e9d7f67549c579b7456e22e9e59563ae7c9b94e9cf264114082870e2805e50",
 			"generatedTags": [
 				"Loneliness",
 				"Mind",
@@ -4070,8 +4082,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "e3ee00c337cc6c5e5491e7085a0a7da254a2fc71bf60ce3ed43f0cd9ceebe927",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/mindfulness-calcutta-4am.md": {
 			"bodyHash": "7713898738c00570db19d9748a5f80065d29fa2ef07559f1ccaba66b354636ab",
@@ -4094,7 +4105,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/missing-scientists-us.md": {
-			"bodyHash": "0b90c0ab6454df1941a68d911acbab86736e10eaa89b5ce958c123ff82967c07",
+			"bodyHash": "aca7ec14080725e7e2acde26fc77cebf3503efc853c7774152d51e860b7d62cb",
+			"hashVersion": 2,
+			"revisionHash": "f32c5db7ce718a2c99d07795e94c7c2ed6360833dc6c63c4383d1da2ddb6e5c7",
 			"generatedTags": [
 				"United States",
 				"Scientists",
@@ -4103,14 +4116,13 @@
 				"United",
 				"Missing",
 				"Exits",
+				"Administration",
 				"Research",
-				"Agency",
-				"Administration"
+				"Agency"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "4a5afe73d4ed8178257659766aa67c25883e53b49d79ecec0d20e5949e352bc6",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/mojo-the-python-killer.md": {
 			"bodyHash": "4a0d8b8e37701fbfa7b22de9d6134d098ee8d9cc21b849b300003bb334b50748",
@@ -5131,7 +5143,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/sadness-scarab-calcutta-depression.md": {
-			"bodyHash": "cab400852a39667ac00337ff78643ddb4ddec7a391d096200198323b801b3ec1",
+			"bodyHash": "f096b2c682f581b3d637af0d5f191d0f6ebb7864446edc1d2d499b400fb1b34a",
+			"hashVersion": 2,
+			"revisionHash": "1f23e96cb5caca7a1ea40c95ea70c914d490edc1be700899c5e8072654deaf8e",
 			"generatedTags": [
 				"Nervous System",
 				"Normal People",
@@ -5142,12 +5156,11 @@
 				"Scarab",
 				"Irritation",
 				"Mine",
-				"Agitation"
+				"Anger"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "d8f88d4fd1b1d6636fe1566929896a205432a6e710a07d60620af9d8136b29a1",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/samir-ranjan-das-and-the-visual-mind.md": {
 			"bodyHash": "b6ddc9141c1f1425bbdc1aa7d93b320093d81de1877a602eadaeb9dfb1f72179",
@@ -5169,7 +5182,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/schooling-in-calcutta.md": {
-			"bodyHash": "891d3d30cb6d7a0a57917158c38ffb33a6eb59a9a94a514a36a151db69fc8c2f",
+			"bodyHash": "0eb83b23fc4b328f6097c69da03e8ff8c1f38006c00e86ff4a8acf360d517df2",
+			"hashVersion": 2,
+			"revisionHash": "b0739301711f21ffd3140e22e4575c09e2bad77e17a4899b2ea2870370d3d363",
 			"generatedTags": [
 				"Thick Glasses",
 				"Less Alone",
@@ -5184,9 +5199,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "fff6c2bf3ae7e9f7ad4f45e74255b1fa3ee5675697475512beb42b2261ea3888",
-			"dateModified": "2026-07-23",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/science-is-not-a-solitary-organ.md": {
 			"bodyHash": "120d53d04afc22c5281d0b5457cc73c458eba067e5e6958fa6bdd3827fe6f5c4",
@@ -5458,23 +5471,24 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/sinusoidal-dementia.md": {
-			"bodyHash": "6b136fc2550c197cc6207edd137ac1d75f2f993f43f7bf44feeab0f2728b2893",
+			"bodyHash": "58e0aa60ecadfb82a6ec7e41d7eef3209d503327bb8112bd33abeefe7518db13",
+			"hashVersion": 2,
+			"revisionHash": "a47976ab84ef1925fe47524e9ab88d0451a1b7aa4e663f771bfbf71c8be11c21",
 			"generatedTags": [
 				"Transhumanists",
 				"Melodies",
-				"Well-Adjusted",
 				"Ruminations",
+				"Well-Adjusted",
 				"Generated",
 				"Attempting",
 				"Pathetic",
 				"Brain",
-				"Obsolete",
-				"Rickshaw"
+				"Rickshaw",
+				"Obsolete"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "acb52826e6bbab731860ab36f8dce70768b9eb3bc2020eb3a7f1224921b16939",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/sitala-manasa-public-health-superstition.md": {
 			"bodyHash": "abe9145f6cfe28bb47270d9a5ee28b8f4267d7ebdc4f498097bd3e204e8f1632",
@@ -5649,7 +5663,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/square-peg-in-a-world-of-round-holes.md": {
-			"bodyHash": "c517acbf83aa1e027682dda387822bca7002e3611b564d79d71fce7cbc319ce9",
+			"bodyHash": "77f40803d90d4e2e7c85a5c75ad2a4ba0385c8cc32b6fcf07cd145439c6b1349",
+			"hashVersion": 2,
+			"revisionHash": "d4d6e207e9c90e06e88948a2e84abbc5918368a071534c9067d4872014d32a8b",
 			"generatedTags": [
 				"Square Peg",
 				"Peg",
@@ -5664,8 +5680,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "1bf0127ad860b511ab50349d72b9e936b902b333902b78853f12f77fb6f699af",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/storage.md": {
 			"bodyHash": "94c92fdd1d97f7092366ff579ceefab97652f0d6a115397d91cdb4426a917194",
@@ -5822,13 +5837,15 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/tautology-metaphor-strawman-ruminative-depression.md": {
-			"bodyHash": "f48af4e1237d5d78f46bc7e55788c30a88a12668ce56324460a2eb8f3cffe7da",
+			"bodyHash": "23c6388d6b622f680bb60d7e597c5ba86db170643c08d0b21e25b7ebd8c09e2c",
+			"hashVersion": 2,
+			"revisionHash": "e49e11433a235a8781a844bf126595144b780628cffafb4acb44bb083afa4a7a",
 			"generatedTags": [
 				"Connected",
 				"Circle",
 				"Tautology",
-				"Metaphor",
 				"Loneliness",
+				"Metaphor",
 				"Mind",
 				"Defective",
 				"Depression",
@@ -5837,8 +5854,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "dbd029e8b1ffa399b6923f8f1d0fab59124165a471c64ca4d9e0c3a2e1ad96be",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/tea-darjeeling-orange-pekoe-first-flush-and-matcha.md": {
 			"bodyHash": "f2e5555666d2d22f8907d31d12bc902d00fdb9a0e481e253e9ee99e61d2579f3",
@@ -6204,7 +6220,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-boy-inside-the-broken-house.md": {
-			"bodyHash": "c937238d28fc6cd71aa33ca3dfa6618b06f718f8d989e66b159c7c2ff4acd98b",
+			"bodyHash": "259b825bbdd35df87fdde8a417ba28859a9c54cfde5de09a87837aaa78ff9f09",
+			"hashVersion": 2,
+			"revisionHash": "d3b546102059700704999aaaa96e35156e9318f5139293beb343f4b3306e7af4",
 			"generatedTags": [
 				"Surcharge",
 				"Sunny",
@@ -6212,15 +6230,14 @@
 				"Youth",
 				"AI",
 				"Boy",
-				"Imitate",
 				"Pity",
+				"Imitate",
 				"Mood",
 				"Lying"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "605b8058667c248d1e7cfa18606b71a21cf8f6dc28b3f47ded6c577c99026c29",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-bride-price-of-salt.md": {
 			"bodyHash": "9c334b2a650cf9e0f14f5a64b84f498958ad0a5655b622c111eb02ddad13261f",
@@ -6471,23 +6488,24 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-courtier-never-leaves.md": {
-			"bodyHash": "a9ab5343911c4c1eea496c182fa0ac34a852431bca8197d1321d98a560f226b3",
+			"bodyHash": "e4a847ad0b461db5d79e4f1fcf0516513bcd910955b3cbfbb49ce45de20b1e1e",
+			"hashVersion": 2,
+			"revisionHash": "16e80ccbd8b555a7ec4604a758cb3f8f7d0da577d9edccfc18bddef1a8c5ffd9",
 			"generatedTags": [
 				"Thin Infrequent",
 				"Courtier",
 				"Infrequent",
 				"July",
 				"Amygdala",
-				"Phantom",
 				"Wonder",
 				"Endlessly",
+				"Phantom",
 				"Manic",
 				"Bipolar"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "6b24b66db7dec079501a9c9d4574df978ddb293a098edcb555cb4b6fc24ab5a9",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-cow-that-spoke-like-npr.md": {
 			"bodyHash": "c728ec34db9a7ddeb1ef39ede679069e15f59ec31b0d2b2a73aa4bb657860047",
@@ -6594,7 +6612,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-dopamine-economy.md": {
-			"bodyHash": "cd57b0752367acd97a2cf04ce8722f06385fa6a45395b717e36181ce236cf371",
+			"bodyHash": "3ac7f4c456523117a9d483368a86074c1e141392f4901e95a36cb141c9e1639e",
+			"hashVersion": 2,
+			"revisionHash": "6af96d30a0a981064b3f9bfa80e8e2b4c6b7459df993feb20c0abf53125c823d",
 			"generatedTags": [
 				"Dopamine",
 				"Refresh",
@@ -6609,8 +6629,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "11cd1f04f0b87172321dafea91a003c9ad3aee25eb33ae873632bf3a912342ab",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-dry-drowning.md": {
 			"bodyHash": "9bad3a7e272c8abb639c7010644904d9f0afaa20de79bcaa42739c00a41c4ecb",
@@ -6670,7 +6689,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/the-empty-room-inside-loneliness.md": {
-			"bodyHash": "e1e4e017ef64a8062eabe37b5711c55beb872fd10c3091a735fdce9649e088e3",
+			"bodyHash": "de10f31afbdb630beda671658f9d01454e573c0016f7a80081212cf7466fac9f",
+			"hashVersion": 2,
+			"revisionHash": "6ac3c4b98fcd9d94637c96b463feef464959793050aace6677e288c6d667600b",
 			"generatedTags": [
 				"Empty Room",
 				"Loneliness",
@@ -6680,16 +6701,17 @@
 				"Divorced",
 				"Chair",
 				"Mind",
-				"Taught",
-				"Kolkata"
+				"Kolkata",
+				"Taught"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "f8dd5b27ef50952282182cfbe596b34b034c67365e552aef1b79e6ced9eb080a",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-erasure-is-a-palimpsest.md": {
-			"bodyHash": "f69944cba31e9f4ad6b7cb6dd8a93030aaf44ff7435c7d95f807760af51ae9fe",
+			"bodyHash": "34ba5fe57a516a7322baa5964a203b20a16c8f26caabc8711d782f73161fba8c",
+			"hashVersion": 2,
+			"revisionHash": "7407d077f2dfe7534cf6650965d53decf51769f8a9f20768414883d74b615c0d",
 			"generatedTags": [
 				"White Noise",
 				"Medication",
@@ -6697,15 +6719,14 @@
 				"Self",
 				"Write",
 				"Consciousness",
-				"Forgotten",
 				"Already",
+				"Forgotten",
 				"Raise",
-				"Digital"
+				"Brain"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "496d12038ce5b60daaaf9c9154aed7b96bf27fb4b5b254cd7db23259d12e07cd",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/the-error-bar-around-a-man.md": {
 			"bodyHash": "9157e6fe068344db783bad8ca4d05dd827045630ee1b0902eef3f9f934e17e51",
@@ -8945,11 +8966,13 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/trapped-by-the-room-mirror-and-feed.md": {
-			"bodyHash": "137db43a27db36cc211299f2768cd180eab5cde0cdcd1488eaf87edf7f8716b8",
+			"bodyHash": "bdc945ee9b9b07f6efffd970297ddd0f2ebceb19535115591b398fb2445095db",
+			"hashVersion": 2,
+			"revisionHash": "204912ff1a643540098321dfa15965a53d42a808c2b69538054a7a427f3065c2",
 			"generatedTags": [
 				"Intend Harm",
-				"Intend",
 				"Trapped",
+				"Intend",
 				"Mirror",
 				"LLM",
 				"Harm",
@@ -8960,11 +8983,12 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "a10831701f722e7f82ebc06d77c2d6672e8af50e16b97f289ee198b1bcfd7d0f",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/trauma-chronic-angst-bipolar-disorder.md": {
-			"bodyHash": "6cc81ad72b295532bffb41914c44a439a706321673b7241040413d47e72773ad",
+			"bodyHash": "fa2d8a251e978f6cbaea228df7de4398c1cac4de0d04203588a95ff8184f7a28",
+			"hashVersion": 2,
+			"revisionHash": "f67491594879a24815f76c18118741707db772d0fbceff4fecf62a0eee8ef9bd",
 			"generatedTags": [
 				"Bipolar Disorder",
 				"Nervous System",
@@ -8975,12 +8999,11 @@
 				"Business",
 				"Bipolar",
 				"Unsafe",
-				"Relationships"
+				"Sometimes"
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "f8bf86ca33295fa6b682a3ec724167b0104ac81f06014d1eaa13381d9e45cea2",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/trolley-problem-healthcare-it.md": {
 			"bodyHash": "fcc7225327bcbc655fa517502ed0a61f928fc8d0a693276a5b238102a9926588",
@@ -9130,7 +9153,9 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/va_data_warehouse_reality.md": {
-			"bodyHash": "2c2a62f6baed2e297b8c2c637cca677f9338f0157a145f5c30d4d76131133797",
+			"bodyHash": "5d2a07019a66fa09de1d3770890604ca038f64cb96b13567c3a9eca09532ab48",
+			"hashVersion": 2,
+			"revisionHash": "02a19553c76a4fe8faf0868cbadc79ef045546e7d55c24df38612cca539f2331",
 			"generatedTags": [
 				"Accidentally Count",
 				"Lab Result",
@@ -9145,8 +9170,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "56c7348fddd176503ffae30159bdb7d471bca5fb5b44b69c70372b8d74eff7d8",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/vamana-and-the-three-steps-of-bankruptcy.md": {
 			"bodyHash": "56de060bd3d53ff7774f914d02ea8e22b8484ee4f64f291131d8f478d06f9e43",
@@ -9381,14 +9405,16 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/why-i-stopped-apologizing-for-my-life.md": {
-			"bodyHash": "a704a96588660859b03b59a5fde944cf4094de19309a06c38c94d3b70d2ff3a8",
+			"bodyHash": "8f9b9354ee4bbde3c0b66a00ca148df3c446d3c8382917377728490e5fbf7687",
+			"hashVersion": 2,
+			"revisionHash": "4e52012f61f07e4354b4c63aa285b3a2b34248d4845315e357e8168093370a54",
 			"generatedTags": [
 				"Healthcare",
 				"Systems",
 				"Organizations",
 				"Perform",
-				"Wonder",
 				"Afraid",
+				"Wonder",
 				"Corruption",
 				"Somebody",
 				"Performance",
@@ -9396,8 +9422,7 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "01dc16c1b2a5b9678c4c2783db97b140c10ff970396135e8ac3b2addec23b550",
-			"hashVersion": 2
+			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/why-i-write-on-small-things.md": {
 			"bodyHash": "59efa35af4c390daffef5b874b95ebfb0d3cae2df09a20cd219db29fb4c06d09",

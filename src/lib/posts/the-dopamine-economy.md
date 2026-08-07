@@ -1,17 +1,19 @@
 ---
 title: "The Dopamine Economy"
-description: "A Calcutta street-level essay on dopamine, anhedonia, depression, and the strange bankruptcy of wanting when even tea, music, food, anger, and hope lose their voltage."
+description: "A Calcutta essay on dopamine, anhedonia, depression, and the bankruptcy of wanting when ordinary pleasures lose their voltage."
 date: "2026-06-11"
+dateModified: "2026-08-07"
 category: "Mental Health"
 tags: ["Dopamine","Refresh","Disgust","Pleasure","Chase","Song","Reward","Worth","Music","Anger"]
 published: true
 color: "#6B4F2A"
-thumbnail: "/thumbnail/safe-the-dopamine-economy.jpg"
+thumbnail: "/thumbnail/art-the-dopamine-economy.jpg"
+thumbnailAlt: "Empty glass battery connected to tea, music, food, chilli and a small green sprout"
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-the-dopamine-economy.jpg" />
+<Pi src="/thumbnail/art-the-dopamine-economy.jpg" />
 
 
 

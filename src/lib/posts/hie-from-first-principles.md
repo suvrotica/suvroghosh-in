@@ -2,16 +2,27 @@
 title: "HIE From First Principles, With The Patient Still In The Room"
 description: "A Calcutta-grounded essay on Health Information Exchange, OpenHIE, and why interoperability is less about software than continuity, governance, trust, and memory."
 date: "2026-04-21"
+dateModified: "2026-08-07"
 category: "healthcare-it"
 tags: ["Community Health Workers","Interoperability Layer","United States","Data Quality","OpenHIE Shape","HIE","OpenHIE","Health","Systems","FHIR"]
 published: true
 color: "blue"
-thumbnail: "/thumbnail/safe-hie-from-first-principles.jpg"
+thumbnail: "/thumbnail/art-hie-from-first-principles.jpg"
+thumbnailAlt: "Patient, clinician and community health worker review shared care records together"
+inPlainEnglish: "Health Information Exchange should help a patient's story follow them safely across clinics, hospitals, laboratories, pharmacies, and community care. Technology carries the data, but identity, terminology, provenance, consent, governance, and trust determine whether the exchange preserves continuity or merely moves confusion."
+keyTerms: ["Health Information Exchange", "OpenHIE", "Interoperability", "Patient Identity", "Data Provenance", "Clinical Terminology", "Consent", "Continuity of Care"]
+faq:
+  - question: "What is the purpose of a health information exchange?"
+    answer: "Its purpose is to make relevant clinical information available across separate care organizations so patients and clinicians do not lose continuity at institutional boundaries."
+  - question: "Why is HIE more than moving data between systems?"
+    answer: "The participants must agree on identity, meaning, source authority, time, consent, access, correction, and accountability before exchanged data can be trusted."
+  - question: "What does OpenHIE contribute?"
+    answer: "OpenHIE provides a modular reference architecture for responsibilities such as registries, terminology, interoperability, and shared records without pretending that one product solves every governance problem."
 ---
 
 <TTS />
 
-<Pi src="/thumbnail/safe-hie-from-first-principles.jpg" />
+<Pi src="/thumbnail/art-hie-from-first-principles.jpg" />
 
 The paper folder arrives with the patient, if it arrives at all.
 
