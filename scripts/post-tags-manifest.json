@@ -11069,9 +11069,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/belousov-zhabotinsky-laboratory.md": {
-			"bodyHash": "bd9c5d343ae78f638f2beb00e2edd4ac717d9926a423f3724174d3f57e151702",
+			"bodyHash": "01bb6bb87d408fbac0d7d12cf39530d44b4fb96ee14a7602d7f820cf2696059f",
 			"hashVersion": 2,
-			"revisionHash": "5d70943bb0b371c3819eea700f4f130a46b5f29f1809e0df29077e5d87d86181",
+			"revisionHash": "2c4542261143e3567259df7a47968195432526b1e06dfb8518f759bb6d8f8172",
 			"generatedTags": [
 				"Belousov–Zhabotinsky Reaction",
 				"Chemical Oscillators",

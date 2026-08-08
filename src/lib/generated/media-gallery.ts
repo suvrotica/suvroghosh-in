@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "belousov-zhabotinsky-laboratory.png",
+			"src": "/images/belousov-zhabotinsky-laboratory.png",
+			"bytes": 117009,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "bias-archipelago-2026-08.png",
 			"src": "/images/bias-archipelago-2026-08.png",
 			"bytes": 359414,
@@ -4085,6 +4092,34 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 209994,
 			"width": 1600,
 			"height": 900
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/bz-laboratory-poster.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/bz-laboratory-poster.png",
+			"bytes": 132792,
+			"width": 1200,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/bz-turing-comparison.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/bz-turing-comparison.png",
+			"bytes": 172511,
+			"width": 1400,
+			"height": 820
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/spiral-wave.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/spiral-wave.png",
+			"bytes": 154551,
+			"width": 1400,
+			"height": 860
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/target-waves.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/target-waves.png",
+			"bytes": 118024,
+			"width": 1400,
+			"height": 860
 		},
 		{
 			"name": "visualizations/hello-fragment-poster.jpg",
