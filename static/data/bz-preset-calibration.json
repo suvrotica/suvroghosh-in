@@ -1,0 +1,1020 @@
+{
+  "schemaVersion": 1,
+  "engineVersion": "bz-heun-five-point-f64-v1",
+  "models": [
+    {
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless"
+    },
+    {
+      "model": "schnakenberg",
+      "modelVersion": "schnakenberg-two-variable-v1",
+      "equationsId": "schnakenberg-2v-dimensionless"
+    }
+  ],
+  "method": "Float64 CPU reference, fixed-step Heun RK2, second-order five-point Laplacian",
+  "claim": "Each row is a deterministic finite-time observation for the exact setup shown. It is not a universal phase label, reagent reconstruction, or claim about unobserved long-time morphology.",
+  "checksum": {
+    "algorithm": "sha256-f64le-v1",
+    "domainTag": "bz-field-sha256-f64le-v1\\0",
+    "byteOrder": "UTF-8 domain tag, UInt32LE grid size, u Float64LE values, v Float64LE values, domainMask bytes, active mask bytes"
+  },
+  "reproducibility": {
+    "deterministicInputs": "Every setup, named seed, fixed timestep, step count, model version, equations identifier, and engine version is recorded.",
+    "scope": "Checksums describe the Float64 CPU reference replay. GPU arithmetic may differ across vendors and precision tiers.",
+    "checkCommand": "node scripts/calibrate-bz-presets.mjs --check"
+  },
+  "durationPolicy": "Wall-clock measuredDurationMs fields are diagnostic and inherently machine-dependent. --check excludes only fields with that exact name; all scientific fields, criteria, and checksums are compared.",
+  "statusPolicy": {
+    "validated": "Every prerequisite and validation criterion passed at the declared finite time.",
+    "candidate": "All prerequisites passed, but at least one named validation criterion was not established in this finite run.",
+    "rejected": "At least one numerical or analytical prerequisite failed."
+  },
+  "measuredDurationMs": 31312,
+  "calibrations": [
+    {
+      "id": "well-mixed-clock",
+      "title": "Well-Mixed Chemical Clock",
+      "sourcePresetId": "well-mixed-clock",
+      "expectedQualitativeBehaviour": "All active cells remain identical while the local Oregonator trajectory approaches temporal oscillation.",
+      "status": "candidate",
+      "statusReason": "Finite-time candidate; validation criterion not established: repeatable-local-cycle.",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.02,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 0,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 48,
+        "domainSize": 16,
+        "activeRadius": 7.52,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "uniform-clock",
+        "seed": "well-mixed-clock-01"
+      },
+      "grid": {
+        "width": 48,
+        "height": 48,
+        "spacing": 0.3333333333333333
+      },
+      "seed": "well-mixed-clock-01",
+      "timestep": 0.0005,
+      "steps": 28000,
+      "modelTime": 14,
+      "timestepAssessment": {
+        "state": "safe",
+        "gridSpacing": 0.3333333333333333,
+        "diffusionLimit": null,
+        "diffusionRatio": 0,
+        "reactionScale": 0.025,
+        "reasons": [
+          "The step is below the diffusion bound and the conservative reaction warning scale."
+        ],
+        "diffusionLimitMeaning": "unbounded because both declared diffusion coefficients are zero"
+      },
+      "initialFieldSha256": "4f3087b712b06f6895fcd7a4286e8557bd412bbf2d8c3bba1f6413f53e741cc0",
+      "fieldSha256": "45098678e6cf7b314c246866236c39ddf892724e30d5b5954944f5ea54196f8a",
+      "initialMetrics": {
+        "activeCells": 1592,
+        "meanU": 0.08,
+        "meanV": 0.006382897424120986,
+        "varianceU": 0,
+        "varianceV": 0,
+        "minimumU": 0.08,
+        "maximumU": 0.08,
+        "minimumV": 0.006382897424120986,
+        "maximumV": 0.006382897424120986,
+        "excitedFraction": 0
+      },
+      "metrics": {
+        "activeCells": 1592,
+        "meanU": 0.002027957390122753,
+        "meanV": 0.20821718869946457,
+        "varianceU": 0,
+        "varianceV": 0,
+        "minimumU": 0.002027957390122753,
+        "maximumU": 0.002027957390122753,
+        "minimumV": 0.20821718869946457,
+        "maximumV": 0.20821718869946457,
+        "excitedFraction": 0
+      },
+      "evidence": {
+        "trace": {
+          "probeIndex": 70,
+          "minimumU": 0.002026920449903632,
+          "maximumU": 0.8828901351709799,
+          "rangeU": 0.8808632147210763,
+          "minimumV": 0.006382897424120986,
+          "maximumV": 0.2275574643417679,
+          "rangeV": 0.22117456691764692,
+          "localMaximaU": [
+            {
+              "step": 259,
+              "modelTime": 0.1295,
+              "u": 0.8828901351709799,
+              "v": 0.07434864393704403
+            },
+            {
+              "step": 9231,
+              "modelTime": 4.6155,
+              "u": 0.877809778471452,
+              "v": 0.0770094027411165
+            },
+            {
+              "step": 18197,
+              "modelTime": 9.0985,
+              "u": 0.877808876711561,
+              "v": 0.0771142063162501
+            },
+            {
+              "step": 27162,
+              "modelTime": 13.581,
+              "u": 0.8778089685916011,
+              "v": 0.07681860538843327
+            }
+          ],
+          "localMinimaU": [
+            {
+              "step": 1021,
+              "modelTime": 0.5105000000000001,
+              "u": 0.002026920449903632,
+              "v": 0.21682360918457821
+            },
+            {
+              "step": 9987,
+              "modelTime": 4.9935,
+              "u": 0.0020269205868091666,
+              "v": 0.216795498040969
+            },
+            {
+              "step": 18953,
+              "modelTime": 9.4765,
+              "u": 0.002026920548979015,
+              "v": 0.21676738904176476
+            },
+            {
+              "step": 27919,
+              "modelTime": 13.9595,
+              "u": 0.0020269205866498266,
+              "v": 0.21673928246684937
+            }
+          ]
+        },
+        "finalSpatialVarianceU": 0,
+        "finalSpatialVarianceV": 0
+      },
+      "objectiveCriteria": [
+        {
+          "id": "timestep-not-unsafe",
+          "kind": "prerequisite",
+          "description": "The declared fixed step is not classified as unsafe by the core assessment.",
+          "pass": true,
+          "evidence": {
+            "state": "safe",
+            "diffusionRatio": 0,
+            "reactionScale": 0.025
+          }
+        },
+        {
+          "id": "finite-active-field",
+          "kind": "prerequisite",
+          "description": "Every active u and v value is finite and no value is below the core negative tolerance.",
+          "pass": true,
+          "evidence": {
+            "activeCells": 1592,
+            "checkedValues": 3184,
+            "nonFiniteValues": 0,
+            "negativeTolerance": 1e-9,
+            "valuesBelowNegativeTolerance": 0
+          }
+        },
+        {
+          "id": "spatially-uniform",
+          "kind": "validation",
+          "description": "Spatial variance remains at round-off scale at the observation time.",
+          "pass": true,
+          "evidence": {
+            "maximumAllowedVariance": 1e-26,
+            "varianceU": 0,
+            "varianceV": 0
+          }
+        },
+        {
+          "id": "local-state-changes",
+          "kind": "validation",
+          "description": "A local u trace spans more than 0.05 during the finite-time run.",
+          "pass": true,
+          "evidence": {
+            "minimumRangeU": 0.05,
+            "measuredRangeU": 0.8808632147210763
+          }
+        },
+        {
+          "id": "repeatable-local-cycle",
+          "kind": "validation",
+          "description": "The trace contains at least four maxima and minima; its final two peak periods agree within 1%, and successive peak phase states recur within 1e-4.",
+          "pass": false,
+          "evidence": {
+            "minimumMaxima": 4,
+            "minimumMinima": 4,
+            "measuredMaxima": 4,
+            "measuredMinima": 4,
+            "peakPeriods": [
+              4.486,
+              4.483,
+              4.4825
+            ],
+            "maximumRelativePeriodDifference": 0.01,
+            "measuredRelativePeriodDifference": 0.00011153867603585366,
+            "maximumPhaseStateRecurrenceDistance": 0.0001,
+            "measuredPhaseStateRecurrenceDistance": 0.0002956009420961183,
+            "lastTwoMaxima": [
+              {
+                "step": 18197,
+                "modelTime": 9.0985,
+                "u": 0.877808876711561,
+                "v": 0.0771142063162501
+              },
+              {
+                "step": 27162,
+                "modelTime": 13.581,
+                "u": 0.8778089685916011,
+                "v": 0.07681860538843327
+              }
+            ]
+          }
+        }
+      ],
+      "measuredDurationMs": 19730
+    },
+    {
+      "id": "target-waves",
+      "title": "Zhabotinsky's Dish",
+      "sourcePresetId": "zhabotinsky-dish",
+      "expectedQualitativeBehaviour": "A finite central excitation should launch radial travelling fronts through recovered medium.",
+      "status": "validated",
+      "statusReason": "All declared finite-time criteria passed.",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.02,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 48,
+        "domainSize": 12,
+        "activeRadius": 5.6,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "target-wave",
+        "seed": "zhabotinsky-dish-01"
+      },
+      "grid": {
+        "width": 48,
+        "height": 48,
+        "spacing": 0.25
+      },
+      "seed": "zhabotinsky-dish-01",
+      "timestep": 0.0005,
+      "steps": 500,
+      "modelTime": 0.25,
+      "timestepAssessment": {
+        "state": "safe",
+        "gridSpacing": 0.25,
+        "diffusionLimit": 0.015625,
+        "diffusionRatio": 0.032,
+        "reactionScale": 0.025,
+        "reasons": [
+          "The step is below the diffusion bound and the conservative reaction warning scale."
+        ],
+        "diffusionLimitMeaning": "finite explicit five-point diffusion bound"
+      },
+      "initialFieldSha256": "bd7d397e4811cac449988601079b9f6599088da1aab5357c3ea810f6fd2e9bba",
+      "fieldSha256": "31c3dd47523073c34b389ce987236e9a104be377fd6aa5c30dfc1906b2b79155",
+      "initialMetrics": {
+        "activeCells": 1568,
+        "meanU": 0.017638901196581968,
+        "meanV": 0.011608288951683947,
+        "varianceU": 0.004720479863143119,
+        "varianceV": 1.183322972027075e-9,
+        "minimumU": 0.011605268043856337,
+        "maximumU": 0.8,
+        "minimumV": 0.011605268043856337,
+        "maximumV": 0.012,
+        "excitedFraction": 0.007653061224489796
+      },
+      "metrics": {
+        "activeCells": 1568,
+        "meanU": 0.22978387564229336,
+        "meanV": 0.029350664250033905,
+        "varianceU": 0.10423027365752754,
+        "varianceV": 0.0013146029414848532,
+        "minimumU": 0.011605279220408908,
+        "maximumU": 0.8523254377023239,
+        "minimumV": 0.011605268146019847,
+        "maximumV": 0.18603476465371863,
+        "excitedFraction": 0.23979591836734693
+      },
+      "evidence": {
+        "excitationThresholdU": 0.2,
+        "initialExcitedCells": 12,
+        "finalExcitedCells": 500,
+        "initialMaximumExcitedRadius": 0.3952847075210475,
+        "finalMaximumExcitedRadius": 3.1474195780035426,
+        "radialAdvance": 2.752134870482495
+      },
+      "objectiveCriteria": [
+        {
+          "id": "timestep-not-unsafe",
+          "kind": "prerequisite",
+          "description": "The declared fixed step is not classified as unsafe by the core assessment.",
+          "pass": true,
+          "evidence": {
+            "state": "safe",
+            "diffusionRatio": 0.032,
+            "reactionScale": 0.025
+          }
+        },
+        {
+          "id": "finite-active-field",
+          "kind": "prerequisite",
+          "description": "Every active u and v value is finite and no value is below the core negative tolerance.",
+          "pass": true,
+          "evidence": {
+            "activeCells": 1568,
+            "checkedValues": 3136,
+            "nonFiniteValues": 0,
+            "negativeTolerance": 1e-9,
+            "valuesBelowNegativeTolerance": 0
+          }
+        },
+        {
+          "id": "outward-front-advance",
+          "kind": "validation",
+          "description": "The outermost u > 0.2 excitation advances radially by more than 0.5.",
+          "pass": true,
+          "evidence": {
+            "minimumAdvance": 0.5,
+            "measuredAdvance": 2.752134870482495,
+            "initialRadius": 0.3952847075210475,
+            "finalRadius": 3.1474195780035426,
+            "finalExcitedCells": 500
+          }
+        }
+      ],
+      "measuredDurationMs": 388
+    },
+    {
+      "id": "broken-front-spiral",
+      "title": "A Broken Front Becomes a Spiral",
+      "sourcePresetId": "broken-front-spiral",
+      "expectedQualitativeBehaviour": "The finite excited segment supplies free wave ends that are candidates for curling spiral cores.",
+      "status": "candidate",
+      "statusReason": "Finite-time candidate; validation criterion not established: persistent-rotating-core.",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.02,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 48,
+        "domainSize": 12,
+        "activeRadius": 5.6,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "broken-front",
+        "seed": "broken-front-spiral-01"
+      },
+      "grid": {
+        "width": 48,
+        "height": 48,
+        "spacing": 0.25
+      },
+      "seed": "broken-front-spiral-01",
+      "timestep": 0.0005,
+      "steps": 1500,
+      "modelTime": 0.75,
+      "timestepAssessment": {
+        "state": "safe",
+        "gridSpacing": 0.25,
+        "diffusionLimit": 0.015625,
+        "diffusionRatio": 0.032,
+        "reactionScale": 0.025,
+        "reasons": [
+          "The step is below the diffusion bound and the conservative reaction warning scale."
+        ],
+        "diffusionLimitMeaning": "finite explicit five-point diffusion bound"
+      },
+      "initialFieldSha256": "77f78ea047ba5660ebd9f00ca6f4a842fafc3bbc74e9806c68fa19b5b6f20362",
+      "fieldSha256": "802e1d85600dc34278f31e5dc138379b454c4cdf3169086736e67525dfa32616",
+      "initialMetrics": {
+        "activeCells": 1568,
+        "meanU": 0.035226743177751686,
+        "meanV": 0.027364498279792558,
+        "varianceU": 0.017680884991306028,
+        "varianceV": 0.003978237558071743,
+        "minimumU": 0.011605268043856337,
+        "maximumU": 0.8,
+        "minimumV": 0.011605268043856337,
+        "maximumV": 0.28,
+        "excitedFraction": 0.029336734693877552
+      },
+      "metrics": {
+        "activeCells": 1568,
+        "meanU": 0.1946805948203927,
+        "meanV": 0.19305369499858266,
+        "varianceU": 0.07190335679579024,
+        "varianceV": 0.0008296460555766263,
+        "minimumU": 0.002012424109739671,
+        "maximumU": 0.8664443626141933,
+        "minimumV": 0.09425256244151407,
+        "maximumV": 0.22635306346241912,
+        "excitedFraction": 0.23979591836734693
+      },
+      "evidence": {
+        "excitationThresholdU": 0.2,
+        "initialExcitation": {
+          "cells": 46,
+          "minimumRadius": 0.6373774391990977,
+          "maximumRadius": 3.7291084725440746
+        },
+        "finalExcitation": {
+          "cells": 553,
+          "minimumRadius": 2.1286732957408003,
+          "maximumRadius": 5.581778390441526
+        },
+        "objectiveRotationMeasurement": "Not available: this tractable run does not include a phase-winding core tracker over a complete rotation."
+      },
+      "objectiveCriteria": [
+        {
+          "id": "timestep-not-unsafe",
+          "kind": "prerequisite",
+          "description": "The declared fixed step is not classified as unsafe by the core assessment.",
+          "pass": true,
+          "evidence": {
+            "state": "safe",
+            "diffusionRatio": 0.032,
+            "reactionScale": 0.025
+          }
+        },
+        {
+          "id": "finite-active-field",
+          "kind": "prerequisite",
+          "description": "Every active u and v value is finite and no value is below the core negative tolerance.",
+          "pass": true,
+          "evidence": {
+            "activeCells": 1568,
+            "checkedValues": 3136,
+            "nonFiniteValues": 0,
+            "negativeTolerance": 1e-9,
+            "valuesBelowNegativeTolerance": 0
+          }
+        },
+        {
+          "id": "broken-front-remains-active",
+          "kind": "validation",
+          "description": "The broken-front recipe has u > 0.2 cells initially and at the observation time.",
+          "pass": true,
+          "evidence": {
+            "initialExcitedCells": 46,
+            "finalExcitedCells": 553
+          }
+        },
+        {
+          "id": "persistent-rotating-core",
+          "kind": "validation",
+          "description": "A phase-winding core is tracked through a complete rotation at the declared setup.",
+          "pass": false,
+          "evidence": {
+            "reason": "Not available: this tractable run does not include a phase-winding core tracker over a complete rotation."
+          }
+        }
+      ],
+      "measuredDurationMs": 1073
+    },
+    {
+      "id": "collision-annihilation",
+      "title": "Collision and Annihilation",
+      "sourcePresetId": "collision-annihilation",
+      "expectedQualitativeBehaviour": "Opposing fronts should meet in refractory material and extinguish rather than transmit.",
+      "status": "candidate",
+      "statusReason": "Finite-time candidate; validation criterion not established: no-transmitted-front.",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.02,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 48,
+        "domainSize": 12,
+        "activeRadius": 5.6,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "paired-fronts",
+        "seed": "collision-annihilation-01"
+      },
+      "grid": {
+        "width": 48,
+        "height": 48,
+        "spacing": 0.25
+      },
+      "seed": "collision-annihilation-01",
+      "timestep": 0.0005,
+      "steps": 1600,
+      "modelTime": 0.8,
+      "timestepAssessment": {
+        "state": "safe",
+        "gridSpacing": 0.25,
+        "diffusionLimit": 0.015625,
+        "diffusionRatio": 0.032,
+        "reactionScale": 0.025,
+        "reasons": [
+          "The step is below the diffusion bound and the conservative reaction warning scale."
+        ],
+        "diffusionLimitMeaning": "finite explicit five-point diffusion bound"
+      },
+      "initialFieldSha256": "ec2f4836cf90b810d9119fe02ff443d52888d7c4cd7e8fcd930ed18a00ed0bfc",
+      "fieldSha256": "39ad19045bbfa1b775cb95db20e11c7b8ef8c335b5bbbc8d2e2b82e1e8893a45",
+      "initialMetrics": {
+        "activeCells": 1568,
+        "meanU": 0.076991948034906,
+        "meanV": 0.04450215211653867,
+        "varianceU": 0.046473313562451976,
+        "varianceV": 0.0077385096326785035,
+        "minimumU": 0.011605268043856337,
+        "maximumU": 0.8,
+        "minimumV": 0.011605268043856337,
+        "maximumV": 0.28,
+        "excitedFraction": 0.08163265306122448
+      },
+      "metrics": {
+        "activeCells": 1568,
+        "meanU": 0.12603989173085753,
+        "meanV": 0.16628166796109903,
+        "varianceU": 0.06007227994267405,
+        "varianceV": 0.0007117577281611642,
+        "minimumU": 0.0020277720501702635,
+        "maximumU": 0.7869318901719964,
+        "minimumV": 0.10704401674698773,
+        "maximumV": 0.22505358100383394,
+        "excitedFraction": 0.18112244897959184
+      },
+      "evidence": {
+        "sampleEverySteps": 20,
+        "centralHalfWidth": 0.375,
+        "peakCentralU": 0.8847195449725378,
+        "peakCentralStep": 620,
+        "peakCentralModelTime": 0.31,
+        "finalCentralU": 0.0020329238100624666,
+        "centralDecayFromPeak": 0.8826866211624753,
+        "transmissionMeasurement": "Not available: central-band decay alone does not prove that no transmitted front survives outside the interaction band."
+      },
+      "objectiveCriteria": [
+        {
+          "id": "timestep-not-unsafe",
+          "kind": "prerequisite",
+          "description": "The declared fixed step is not classified as unsafe by the core assessment.",
+          "pass": true,
+          "evidence": {
+            "state": "safe",
+            "diffusionRatio": 0.032,
+            "reactionScale": 0.025
+          }
+        },
+        {
+          "id": "finite-active-field",
+          "kind": "prerequisite",
+          "description": "Every active u and v value is finite and no value is below the core negative tolerance.",
+          "pass": true,
+          "evidence": {
+            "activeCells": 1568,
+            "checkedValues": 3136,
+            "nonFiniteValues": 0,
+            "negativeTolerance": 1e-9,
+            "valuesBelowNegativeTolerance": 0
+          }
+        },
+        {
+          "id": "fronts-reach-interaction-band",
+          "kind": "validation",
+          "description": "The sampled maximum u in the central interaction band exceeds 0.2.",
+          "pass": true,
+          "evidence": {
+            "thresholdU": 0.2,
+            "peakCentralU": 0.8847195449725378,
+            "peakCentralStep": 620,
+            "peakCentralModelTime": 0.31
+          }
+        },
+        {
+          "id": "central-excitation-decays",
+          "kind": "validation",
+          "description": "The central-band maximum falls below 0.2 after having exceeded that threshold.",
+          "pass": true,
+          "evidence": {
+            "thresholdU": 0.2,
+            "peakCentralU": 0.8847195449725378,
+            "finalCentralU": 0.0020329238100624666,
+            "decayFromPeak": 0.8826866211624753
+          }
+        },
+        {
+          "id": "no-transmitted-front",
+          "kind": "validation",
+          "description": "No transmitted excitation survives beyond the central collision.",
+          "pass": false,
+          "evidence": {
+            "reason": "Not available: central-band decay alone does not prove that no transmitted front survives outside the interaction band."
+          }
+        }
+      ],
+      "measuredDurationMs": 1134
+    },
+    {
+      "id": "stable-uniform-state",
+      "title": "Stable Uniform State",
+      "sourcePresetId": "stable-uniform-state",
+      "expectedQualitativeBehaviour": "Equal diffusivities leave the linearly stable homogeneous reaction equilibrium without a growing spatial mode.",
+      "status": "validated",
+      "statusReason": "All declared finite-time criteria passed.",
+      "model": "schnakenberg",
+      "modelVersion": "schnakenberg-two-variable-v1",
+      "equationsId": "schnakenberg-2v-dimensionless",
+      "setup": {
+        "model": "schnakenberg",
+        "modelVersion": "schnakenberg-two-variable-v1",
+        "equationsId": "schnakenberg-2v-dimensionless",
+        "parameters": {
+          "a": 0.1,
+          "b": 0.9,
+          "gamma": 1
+        },
+        "diffusionU": 0.01,
+        "diffusionV": 0.01,
+        "timestep": 0.01,
+        "gridSize": 48,
+        "domainSize": 20,
+        "activeRadius": 9.4,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "uniform-equilibrium",
+        "seed": "schnakenberg-stable-01"
+      },
+      "grid": {
+        "width": 48,
+        "height": 48,
+        "spacing": 0.4166666666666667
+      },
+      "seed": "schnakenberg-stable-01",
+      "timestep": 0.01,
+      "steps": 2000,
+      "modelTime": 20,
+      "timestepAssessment": {
+        "state": "safe",
+        "gridSpacing": 0.4166666666666667,
+        "diffusionLimit": 4.340277777777779,
+        "diffusionRatio": 0.0023039999999999996,
+        "reactionScale": 0.01,
+        "reasons": [
+          "The step is below the diffusion bound and the conservative reaction warning scale."
+        ],
+        "diffusionLimitMeaning": "finite explicit five-point diffusion bound"
+      },
+      "initialFieldSha256": "4eba4ccb660fc8c9def72126ab78574de08e13323d07b2befe0042d3ce6a9710",
+      "fieldSha256": "4eba4ccb660fc8c9def72126ab78574de08e13323d07b2befe0042d3ce6a9710",
+      "initialMetrics": {
+        "activeCells": 1592,
+        "meanU": 1,
+        "meanV": 0.9,
+        "varianceU": 0,
+        "varianceV": 0,
+        "minimumU": 1,
+        "maximumU": 1,
+        "minimumV": 0.9,
+        "maximumV": 0.9,
+        "excitedFraction": 0
+      },
+      "metrics": {
+        "activeCells": 1592,
+        "meanU": 1,
+        "meanV": 0.9,
+        "varianceU": 0,
+        "varianceV": 0,
+        "minimumU": 1,
+        "maximumU": 1,
+        "minimumV": 0.9,
+        "maximumV": 0.9,
+        "excitedFraction": 0
+      },
+      "evidence": {
+        "dispersion": {
+          "classification": "linearly-stable",
+          "zeroModeGrowth": -0.09999999999999998,
+          "maximumGrowth": -0.09999999999999998,
+          "fastestWavenumber": null,
+          "predictedWavelength": null,
+          "nyquistWavenumber": 7.5398223686155035,
+          "resolved": false
+        },
+        "maximumAbsoluteDriftU": 0,
+        "maximumAbsoluteDriftV": 0,
+        "finalSpatialVarianceU": 0,
+        "finalSpatialVarianceV": 0
+      },
+      "objectiveCriteria": [
+        {
+          "id": "timestep-not-unsafe",
+          "kind": "prerequisite",
+          "description": "The declared fixed step is not classified as unsafe by the core assessment.",
+          "pass": true,
+          "evidence": {
+            "state": "safe",
+            "diffusionRatio": 0.0023039999999999996,
+            "reactionScale": 0.01
+          }
+        },
+        {
+          "id": "finite-active-field",
+          "kind": "prerequisite",
+          "description": "Every active u and v value is finite and no value is below the core negative tolerance.",
+          "pass": true,
+          "evidence": {
+            "activeCells": 1592,
+            "checkedValues": 3184,
+            "nonFiniteValues": 0,
+            "negativeTolerance": 1e-9,
+            "valuesBelowNegativeTolerance": 0
+          }
+        },
+        {
+          "id": "linear-dispersion-stable",
+          "kind": "prerequisite",
+          "description": "The core dispersion scan classifies the setup as linearly stable.",
+          "pass": true,
+          "evidence": {
+            "classification": "linearly-stable",
+            "zeroModeGrowth": -0.09999999999999998,
+            "maximumGrowth": -0.09999999999999998,
+            "fastestWavenumber": null,
+            "predictedWavelength": null,
+            "nyquistWavenumber": 7.5398223686155035,
+            "resolved": false
+          }
+        },
+        {
+          "id": "uniform-equilibrium-remains-uniform",
+          "kind": "validation",
+          "description": "Spatial variances stay below 1e-24 and maximum active-cell drift stays below 1e-10.",
+          "pass": true,
+          "evidence": {
+            "maximumAllowedVariance": 1e-24,
+            "maximumAllowedDrift": 1e-10,
+            "varianceU": 0,
+            "varianceV": 0,
+            "maximumAbsoluteDriftU": 0,
+            "maximumAbsoluteDriftV": 0
+          }
+        }
+      ],
+      "measuredDurationMs": 1431
+    },
+    {
+      "id": "diffusion-driven-spots",
+      "title": "Diffusion-Driven Spots",
+      "sourcePresetId": "diffusion-driven-spots",
+      "expectedQualitativeBehaviour": "A stable reaction equilibrium has a resolved nonzero growing band; nonlinear spot morphology is the calibration target.",
+      "status": "candidate",
+      "statusReason": "Finite-time candidate; validation criterion not established: spot-morphology-objective.",
+      "model": "schnakenberg",
+      "modelVersion": "schnakenberg-two-variable-v1",
+      "equationsId": "schnakenberg-2v-dimensionless",
+      "setup": {
+        "model": "schnakenberg",
+        "modelVersion": "schnakenberg-two-variable-v1",
+        "equationsId": "schnakenberg-2v-dimensionless",
+        "parameters": {
+          "a": 0.1,
+          "b": 0.9,
+          "gamma": 1
+        },
+        "diffusionU": 0.01,
+        "diffusionV": 0.1,
+        "timestep": 0.01,
+        "gridSize": 64,
+        "domainSize": 20,
+        "activeRadius": 9.4,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "turing-noise",
+        "seed": "schnakenberg-spots-01"
+      },
+      "grid": {
+        "width": 64,
+        "height": 64,
+        "spacing": 0.3125
+      },
+      "seed": "schnakenberg-spots-01",
+      "timestep": 0.01,
+      "steps": 6000,
+      "modelTime": 60,
+      "timestepAssessment": {
+        "state": "safe",
+        "gridSpacing": 0.3125,
+        "diffusionLimit": 0.244140625,
+        "diffusionRatio": 0.04096,
+        "reactionScale": 0.01,
+        "reasons": [
+          "The step is below the diffusion bound and the conservative reaction warning scale."
+        ],
+        "diffusionLimitMeaning": "finite explicit five-point diffusion bound"
+      },
+      "initialFieldSha256": "d9e74bbbda1363a7db80add89aa668b306cbeb4bf1bb59112c1ff7b8c1be6b7d",
+      "fieldSha256": "4a28ffb4ba9dd18bdcf6f88436184d3d51a859f39b752067044b3fb612d27f6a",
+      "initialMetrics": {
+        "activeCells": 2844,
+        "meanU": 0.9999999999999986,
+        "meanV": 0.8999999999999978,
+        "varianceU": 0.00004692592544802257,
+        "varianceV": 0.000048328080430365664,
+        "minimumU": 0.9878942544645067,
+        "maximumU": 1.0118816887120154,
+        "minimumV": 0.887963108615319,
+        "maximumV": 0.9119315231901806,
+        "excitedFraction": 0.21132208157524612
+      },
+      "metrics": {
+        "activeCells": 2844,
+        "meanU": 1.0000417448147925,
+        "meanV": 0.8994503529981404,
+        "varianceU": 0.008368778152090483,
+        "varianceV": 0.0014541029878079733,
+        "minimumU": 0.7277655241993932,
+        "maximumU": 1.3061741683478152,
+        "minimumV": 0.7754340088613604,
+        "maximumV": 1.0143061683264685,
+        "excitedFraction": 0.1620956399437412
+      },
+      "evidence": {
+        "dispersion": {
+          "classification": "classical-diffusion-driven",
+          "zeroModeGrowth": -0.09999999999999998,
+          "maximumGrowth": 0.0571907848826565,
+          "fastestWavenumber": 5.646259673301108,
+          "predictedWavelength": 1.1128048780487805,
+          "nyquistWavenumber": 10.053096491487338,
+          "resolved": true
+        },
+        "varianceAmplificationU": 178.34018343144126,
+        "varianceAmplificationV": 30.088159406685772,
+        "meanDriftU": 0.000041744814793909235,
+        "meanDriftV": -0.0005496470018574451,
+        "contrastU": 0.578408644148422,
+        "highUThreshold": 1.0915227710010487,
+        "highUComponents": {
+          "connectivity": "four-neighbour",
+          "threshold": 1.0915227710010487,
+          "count": 243,
+          "largestCellCounts": [
+            6,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            4,
+            4
+          ],
+          "totalHighUCells": 461
+        }
+      },
+      "objectiveCriteria": [
+        {
+          "id": "timestep-not-unsafe",
+          "kind": "prerequisite",
+          "description": "The declared fixed step is not classified as unsafe by the core assessment.",
+          "pass": true,
+          "evidence": {
+            "state": "safe",
+            "diffusionRatio": 0.04096,
+            "reactionScale": 0.01
+          }
+        },
+        {
+          "id": "finite-active-field",
+          "kind": "prerequisite",
+          "description": "Every active u and v value is finite and no value is below the core negative tolerance.",
+          "pass": true,
+          "evidence": {
+            "activeCells": 2844,
+            "checkedValues": 5688,
+            "nonFiniteValues": 0,
+            "negativeTolerance": 1e-9,
+            "valuesBelowNegativeTolerance": 0
+          }
+        },
+        {
+          "id": "classical-diffusion-driven-band",
+          "kind": "prerequisite",
+          "description": "The equilibrium is reaction-stable with a resolved nonzero growing diffusion band.",
+          "pass": true,
+          "evidence": {
+            "classification": "classical-diffusion-driven",
+            "zeroModeGrowth": -0.09999999999999998,
+            "maximumGrowth": 0.0571907848826565,
+            "fastestWavenumber": 5.646259673301108,
+            "predictedWavelength": 1.1128048780487805,
+            "nyquistWavenumber": 10.053096491487338,
+            "resolved": true
+          }
+        },
+        {
+          "id": "finite-mode-amplification",
+          "kind": "validation",
+          "description": "Seeded spatial variance in u amplifies by at least a factor of 10.",
+          "pass": true,
+          "evidence": {
+            "minimumAmplification": 10,
+            "measuredAmplificationU": 178.34018343144126,
+            "measuredAmplificationV": 30.088159406685772,
+            "contrastU": 0.578408644148422
+          }
+        },
+        {
+          "id": "spot-morphology-objective",
+          "kind": "validation",
+          "description": "Mature spot morphology is established independently of thresholded high-u pixel components.",
+          "pass": false,
+          "evidence": {
+            "connectivity": "four-neighbour",
+            "threshold": 1.0915227710010487,
+            "count": 243,
+            "largestCellCounts": [
+              6,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              4,
+              4
+            ],
+            "totalHighUCells": 461,
+            "reason": "Disconnected one-sigma components support spatial structure but do not alone establish mature, persistent spot morphology."
+          }
+        }
+      ],
+      "measuredDurationMs": 7552
+    }
+  ]
+}

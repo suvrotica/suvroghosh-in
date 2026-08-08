@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/bz/**/*.test.ts',
 			'src/lib/visualizations/invisible-weather/**/*.test.ts',
 			'src/lib/visualizations/reaction-diffusion/**/*.test.ts',
 			'src/lib/visualizations/bias-archipelago/**/*.test.ts',

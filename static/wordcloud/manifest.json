@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T16:27:10.796719+00:00",
+  "generatedAt": "2026-08-08T04:48:32.596123+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1125,6 +1125,29 @@
         "Small",
         "Sound",
         "Room"
+      ],
+      "wordCount": 130
+    },
+    "belousov-zhabotinsky-laboratory": {
+      "generatedAt": "2026-08-08T04:48:32.000409+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/belousov-zhabotinsky-laboratory.svg",
+      "source": "src/lib/posts/belousov-zhabotinsky-laboratory.md",
+      "sourceHash": "cb6e6ae7184842aa48d27482822ebb69d8ad3e7086652a9482fd86ccb8877a9c",
+      "sourceModified": "2026-08-08T04:43:05.046684+00:00",
+      "topWords": [
+        "Chemical",
+        "Reaction",
+        "Front",
+        "Diffusion",
+        "Field",
+        "State",
+        "Model",
+        "Local",
+        "Turing",
+        "Spatial",
+        "Waves",
+        "Partial"
       ],
       "wordCount": 130
     },

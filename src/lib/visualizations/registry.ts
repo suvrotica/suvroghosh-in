@@ -25,6 +25,18 @@ export const visualizationSummaries = {
 			'A simulated Gray–Scott reaction–diffusion field in which pale spots divide and merge into branching labyrinths beside a small feed–kill parameter map',
 		href: '/blog/visualizations/reaction-diffusion-atlas',
 		status: 'published'
+	},
+	'belousov-zhabotinsky-laboratory': {
+		id: 'belousov-zhabotinsky-laboratory',
+		title: 'The Clock That Escaped Into Space: A Belousov–Zhabotinsky Laboratory',
+		description:
+			'An interactive WebGL laboratory for chemical clocks, target waves, spiral cores, and the crucial difference between BZ waves and Turing patterns.',
+		subjects: ['Chemistry', 'Mathematics', 'Scientific Computing'],
+		poster: '/images/belousov-zhabotinsky-laboratory.png',
+		posterAlt:
+			'A solver-generated circular Belousov–Zhabotinsky field with a cyan-violet rotating spiral beside a stationary gold Schnakenberg pattern and compact scientific readouts',
+		href: '/blog/visualizations/belousov-zhabotinsky-laboratory',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

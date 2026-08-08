@@ -23,7 +23,9 @@
 		'domain-coloring-complex-functions-explorer': ['Mathematics', 'Scientific Computing'],
 		'the-neuron-zoo': ['Biology', 'Mathematics', 'Scientific Computing'],
 		'lightning-atlas': ['Physics', 'Scientific Computing'],
-		'reaction-diffusion-atlas': visualizationSummaries['reaction-diffusion-atlas'].subjects
+		'reaction-diffusion-atlas': visualizationSummaries['reaction-diffusion-atlas'].subjects,
+		'belousov-zhabotinsky-laboratory':
+			visualizationSummaries['belousov-zhabotinsky-laboratory'].subjects
 	};
 	const subjects = [
 		'All',

@@ -98,6 +98,78 @@ test('the reaction-diffusion atlas is a substantial published exhibit rather tha
 	assert.doesNotMatch(landing, /title: 'Reaction–diffusion patterns'/);
 });
 
+test('the Belousov–Zhabotinsky laboratory is a separate, reproducible production exhibit', () => {
+	const post = read('src', 'lib', 'posts', 'belousov-zhabotinsky-laboratory.md');
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const solver = read('src', 'lib', 'visualizations', 'bz', 'solver.ts');
+	const presets = read('src', 'lib', 'visualizations', 'bz', 'presets.ts');
+	const gpu = read('src', 'lib', 'visualizations', 'bz', 'gpu', 'simulation.ts');
+
+	assert.match(
+		post,
+		/title: "The Clock That Escaped Into Space: A Belousov–Zhabotinsky Laboratory"/
+	);
+	assert.match(post, /date: "2026-08-08"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /thumbnail: "\/images\/belousov-zhabotinsky-laboratory\.png"/);
+	assert.equal((post.match(/^ {2}- question:/gm) ?? []).length, 12);
+	for (const component of [
+		'BZLaboratory',
+		'BZGuidedExperiments',
+		'BZEquationLedger',
+		'BZTuringInspector',
+		'BZNumericalChecks',
+		'BZSpiralDiagram',
+		'BZPipelineDiagram'
+	]) {
+		assert.match(
+			post,
+			new RegExp(
+				`import ${component} from '\\$lib/components/visualizations/bz/${component}\\.svelte'`
+			)
+		);
+		assert.match(post, new RegExp(`<${component} \\/>`));
+	}
+	for (const doi of [
+		'10.1021/ja00780a001',
+		'10.1038/237390a0',
+		'10.1063/1.1681288',
+		'10.1063/1.440418',
+		'10.1126/science.175.4022.634',
+		'10.1098/rstb.1952.0012',
+		'10.1073/pnas.1322005111'
+	]) {
+		assert.ok(post.includes(doi), `missing BZ source DOI ${doi}`);
+	}
+	assert.match(solver, /class BZCpuSolver/);
+	assert.match(solver, /heunBZStepInto/);
+	assert.match(solver, /activeTerms/);
+	assert.match(presets, /'broken-front-spiral'/);
+	assert.match(presets, /'collision-annihilation'/);
+	assert.match(presets, /'diffusion-driven-spots'/);
+	assert.match(gpu, /class BZGpuEngine/);
+	assert.match(gpu, /oregonatorPredictorFragmentSource/);
+	assert.match(gpu, /schnakenbergCorrectorFragmentSource/);
+	assert.match(gpu, /EXT_color_buffer_float|createBZGpuContext/);
+	assert.match(registry, /'belousov-zhabotinsky-laboratory':\s*\{/);
+	assert.match(registry, /href: '\/blog\/visualizations\/belousov-zhabotinsky-laboratory'/);
+	assert.match(
+		landing,
+		/'belousov-zhabotinsky-laboratory':\s*visualizationSummaries\['belousov-zhabotinsky-laboratory'\]\.subjects/
+	);
+	// The existing Gray–Scott Atlas must remain independently published.
+	assert.match(registry, /'reaction-diffusion-atlas':\s*\{/);
+	assert.ok(fs.existsSync(path.join(root, 'src', 'lib', 'posts', 'reaction-diffusion-atlas.md')));
+});
+
 test('the first exhibit has real shaders, controls, presets, and a fallback poster', () => {
 	const fragment = read(
 		'src',
