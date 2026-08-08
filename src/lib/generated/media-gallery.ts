@@ -4087,6 +4087,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "thinking-outside-the-box-perlin-flower.png",
+			"src": "/images/thinking-outside-the-box-perlin-flower.png",
+			"bytes": 208875,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T13:43:52.007282+00:00",
+  "generatedAt": "2026-08-08T17:05:15.911336+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12142,6 +12142,29 @@
         "Often",
         "Bengali",
         "Gas"
+      ],
+      "wordCount": 130
+    },
+    "thinking-outside-the-box": {
+      "generatedAt": "2026-08-08T17:05:15.857403+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/thinking-outside-the-box.svg",
+      "source": "src/lib/posts/thinking-outside-the-box.md",
+      "sourceHash": "5da6975349bef907841ae7b20c53c9a91fca2892de1704f1dbc8f3e4f45d9af5",
+      "sourceModified": "2026-08-08T16:49:41.632270+00:00",
+      "topWords": [
+        "Petal",
+        "Field",
+        "Noise",
+        "Boundary",
+        "Seed",
+        "Bloom",
+        "Every",
+        "Square",
+        "Flower",
+        "Coherent",
+        "Anatomy",
+        "Petals"
       ],
       "wordCount": 130
     },

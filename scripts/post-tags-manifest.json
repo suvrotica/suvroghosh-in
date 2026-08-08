@@ -11118,6 +11118,32 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-08"
+		},
+		"src/lib/posts/thinking-outside-the-box.md": {
+			"bodyHash": "cbd0e5e2d562e155faf3ba0c138b2944c2877ca8651b325b277b1fa2b293a251",
+			"hashVersion": 2,
+			"revisionHash": "155b0381ce500cda1125a1782b3e1a085ce999739b1e7d8ebcc042b4db11a128",
+			"generatedTags": [
+				"Generative Art",
+				"Perlin Noise",
+				"Creative Coding",
+				"Procedural Art",
+				"Domain Warping",
+				"Additive Blending",
+				"Abbreviated Glossary",
+				"Repeatable Accidents",
+				"Petal",
+				"Centreline"
+			],
+			"pinnedTags": [
+				"Generative Art",
+				"Perlin Noise",
+				"Creative Coding",
+				"Procedural Art",
+				"Domain Warping"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-08"
 		}
 	},
 	"maxTags": 10

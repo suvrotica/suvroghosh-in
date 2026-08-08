@@ -9284,6 +9284,21 @@
       "sourceHash": "36ae0f8d35b63b4dce07649bbfbfe53d6757d922beb2883bfb9d636174a9c17f",
       "width": 1600
     },
+    "static/images/thinking-outside-the-box-perlin-flower.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 208875,
+      "outputHash": "8820fab38db35c7f38fea09e667b5bf72526cf1412fc0d2ce3657add67377b77",
+      "resized": false,
+      "sourceBytes": 279187,
+      "sourceHash": "e59543a7e09d6f39f5fdd6fe0a8a374c6f533701fe1180bb6a4057fb28547a3d",
+      "width": 1200
+    },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",
       "height": 900,

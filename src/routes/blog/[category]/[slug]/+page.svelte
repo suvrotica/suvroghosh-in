@@ -312,24 +312,39 @@
 									category: post.categorySlug,
 									slug: post.slug
 								})}
-								class="post-card group flex min-h-32 flex-col rounded-lg border border-neutral-200 bg-white p-4 no-underline shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/50 dark:focus-visible:outline-neutral-300"
+								class="post-card group flex min-h-32 flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white no-underline shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:border-neutral-800 dark:bg-neutral-800/50 dark:focus-visible:outline-neutral-300"
 							>
-								<div class="mb-1 text-xs font-medium tracking-wider text-neutral-400 uppercase">
-									{post.categoryLabel}
-								</div>
-								<div
-									class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-600 dark:text-neutral-100 dark:group-hover:text-neutral-300"
-								>
-									{post.title}
-								</div>
-								<div
-									class="mt-auto pt-3 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400"
-								>
-									{#if post.sharedTags.length > 0}
-										Shared topics: {post.sharedTags.join(' · ')}
-									{:else}
-										More in {post.categoryLabel}
-									{/if}
+								{#if post.thumbnail}
+									<div class="aspect-[1200/630] overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+										<img
+											src={post.thumbnail}
+											alt={post.thumbnailAlt?.trim() || ''}
+											width="1200"
+											height="630"
+											loading="lazy"
+											decoding="async"
+											class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none"
+										/>
+									</div>
+								{/if}
+								<div class="flex flex-1 flex-col p-4">
+									<div class="mb-1 text-xs font-medium tracking-wider text-neutral-400 uppercase">
+										{post.categoryLabel}
+									</div>
+									<div
+										class="font-semibold text-neutral-900 transition-colors group-hover:text-neutral-600 dark:text-neutral-100 dark:group-hover:text-neutral-300"
+									>
+										{post.title}
+									</div>
+									<div
+										class="mt-auto pt-3 text-xs leading-relaxed text-neutral-500 dark:text-neutral-400"
+									>
+										{#if post.sharedTags.length > 0}
+											Shared topics: {post.sharedTags.join(' · ')}
+										{:else}
+											More in {post.categoryLabel}
+										{/if}
+									</div>
 								</div>
 							</a>
 						{/each}

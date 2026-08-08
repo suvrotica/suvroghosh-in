@@ -378,6 +378,7 @@ export function getRelatedPosts(slug: string, limit = 4) {
 			return {
 				...postLink(post),
 				thumbnail: post.thumbnail,
+				thumbnailAlt: post.thumbnailAlt,
 				sharedTags: sharedTags.slice(0, 2).map((tag) => tag.label),
 				sameCategory,
 				score: sharedTagScore + (sameCategory ? 1.5 : 0),
@@ -401,6 +402,7 @@ export function getRelatedPosts(slug: string, limit = 4) {
 				categoryLabel,
 				date,
 				thumbnail,
+				thumbnailAlt,
 				sharedTags,
 				sameCategory
 			}) => ({
@@ -410,6 +412,7 @@ export function getRelatedPosts(slug: string, limit = 4) {
 				categoryLabel,
 				date,
 				thumbnail,
+				thumbnailAlt,
 				sharedTags,
 				sameCategory
 			})
