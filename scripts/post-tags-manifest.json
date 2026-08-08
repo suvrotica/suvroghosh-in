@@ -11098,6 +11098,26 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-08"
+		},
+		"src/lib/posts/the-equation-that-eats-its-own-tail.md": {
+			"bodyHash": "a3776948c0c178f3776694ef8757a68983399f7363376e805cca4c9a6dbf14c4",
+			"hashVersion": 2,
+			"revisionHash": "f4f91121f1b3e77d694151efb0192cf3442df843fcc0e456173513a22a96dc35",
+			"generatedTags": [
+				"Differential Equations",
+				"Physics-Informed Neural",
+				"Neural Information Processing",
+				"Dynamical-Systems View",
+				"Processing Systems",
+				"Differential",
+				"Equation",
+				"Theta",
+				"Equations",
+				"Frac"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-08"
 		}
 	},
 	"maxTags": 10

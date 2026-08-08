@@ -6,7 +6,7 @@ dateModified: "2026-08-08"
 thumbnail: "/thumbnail/Compress_20260808_190940_0024.jpg"
 thumbnailAlt: "Cover image for an essay on differential equations and the mathematics of change."
 category: "Mathematics"
-tags: ["Mathematics", "Differential Equations", "AI", "Machine Learning", "History of Math", "Explainer"]
+tags: ["Differential Equations","Physics-Informed Neural","Neural Information Processing","Dynamical-Systems View","Processing Systems","Differential","Equation","Theta","Equations","Frac"]
 published: true
 color: "#2E5C8A"
 ---

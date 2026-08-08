@@ -6903,6 +6903,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 199314,
 			"width": 1448,
 			"height": 1086
+		},
+		{
+			"name": "Compress_20260808_190940_0024.jpg",
+			"src": "/thumbnail/Compress_20260808_190940_0024.jpg",
+			"bytes": 194227,
+			"width": 1448,
+			"height": 1086
 		}
 	]
 };

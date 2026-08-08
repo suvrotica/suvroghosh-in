@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T12:43:14.576314+00:00",
+  "generatedAt": "2026-08-08T13:43:52.007282+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9152,6 +9152,29 @@
         "Person",
         "Enough",
         "Becomes"
+      ],
+      "wordCount": 130
+    },
+    "the-equation-that-eats-its-own-tail": {
+      "generatedAt": "2026-08-08T13:43:51.861090+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-equation-that-eats-its-own-tail.svg",
+      "source": "src/lib/posts/the-equation-that-eats-its-own-tail.md",
+      "sourceHash": "b816934d833c8b12b8d6e9223e5c1d26097a18c58f7e05761d27ca34bc6387c6",
+      "sourceModified": "2026-08-08T13:43:44.361938+00:00",
+      "topWords": [
+        "Equation",
+        "Differential",
+        "Equations",
+        "Neural",
+        "Frac",
+        "Partial",
+        "Theta",
+        "Heat",
+        "Network",
+        "Water",
+        "Small",
+        "Numerical"
       ],
       "wordCount": 130
     },

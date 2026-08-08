@@ -47,8 +47,19 @@ const autoImport = {
 function rehypeSquareBrackets() {
 	return (tree) => {
 		function walk(node) {
-			// Skip code blocks, inline code, and links to avoid altering their contents
-			if (node.tagName === 'code' || node.tagName === 'pre' || node.tagName === 'a') return;
+			const classNames = Array.isArray(node.properties?.className) ? node.properties.className : [];
+
+			// KaTeX is serialized as a Svelte {@html} string. Rewriting brackets inside that
+			// generated string inserts real elements into the expression and makes it invalid JS.
+			if (
+				node.tagName === 'code' ||
+				node.tagName === 'pre' ||
+				node.tagName === 'a' ||
+				classNames.includes('math-inline') ||
+				classNames.includes('math-display')
+			) {
+				return;
+			}
 
 			if (node.children) {
 				for (let i = 0; i < node.children.length; i++) {
