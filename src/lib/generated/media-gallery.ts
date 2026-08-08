@@ -4232,6 +4232,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 79333,
 			"width": 960,
 			"height": 768
+		},
+		{
+			"name": "weather-inside-the-nucleus.png",
+			"src": "/images/weather-inside-the-nucleus.png",
+			"bytes": 32414,
+			"width": 1200,
+			"height": 630
 		}
 	],
 	"photos": [

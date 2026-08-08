@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/weather-inside-nucleus/**/*.test.ts',
 			'src/lib/visualizations/bz/**/*.test.ts',
 			'src/lib/visualizations/perlin-bloom/**/*.test.ts',
 			'src/lib/visualizations/invisible-weather/**/*.test.ts',

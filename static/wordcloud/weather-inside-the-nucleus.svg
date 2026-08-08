@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Weather Inside the Nucleus" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Weather Inside the Nucleus</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(477,654)" font-size="118" style="fill:#e0b879">Model</text>
+<text transform="translate(560,399)" font-size="109" style="fill:#8fb7d0">Activity</text>
+<text transform="translate(72,525)" font-size="107" style="fill:#c49a6c">Promoter</text>
+<text transform="translate(539,207)" font-size="97" style="fill:#d9c89e">Contact</text>
+<text transform="translate(241,704)" font-size="95" style="fill:#e0b879">Cell</text>
+<text transform="translate(750,527)" font-size="93" style="fill:#c49a6c">Geometry</text>
+<text transform="translate(304,310)" font-size="91" style="fill:#9fc9c5">Mathrm</text>
+<text transform="translate(83,409)" font-size="89" style="fill:#e0b879">Receptor</text>
+<text transform="translate(358,68)" font-size="82" style="fill:#d5d2c2">Locus</text>
+<text transform="translate(1006,208)" font-size="82" style="fill:#d88988">State</text>
+<text transform="translate(1244,371) rotate(-90)" font-size="79" style="fill:#c7d7b5">EGF</text>
+<text transform="translate(641,292)" font-size="79" style="fill:#c7d7b5">Propensity</text>
+<text transform="translate(913,686)" font-size="76" style="fill:#b6c3dd">Changes</text>
+<text transform="translate(788,64)" font-size="76" style="fill:#c49a6c">Enhancer</text>
+<text transform="translate(68,168)" font-size="73" style="fill:#9fc9c5">Downstream</text>
+<text transform="translate(529,131)" font-size="73" style="fill:#a9b7a3">Intervention</text>
+<text transform="translate(24,592)" font-size="70" style="fill:#d88988">Burst</text>
+<text transform="translate(854,604)" font-size="67" style="fill:#d88988">Occupancy</text>
+<text transform="translate(67,313)" font-size="64" style="fill:#d5d2c2">Signal</text>
+<text transform="translate(511,713)" font-size="64" style="fill:#d6a79f">Stochastic</text>
+<text transform="translate(105,110)" font-size="64" style="fill:#d88988">Silent</text>
+<text transform="translate(564,540)" font-size="64" style="fill:#c49a6c">Time</text>
+<text transform="translate(6,221)" font-size="64" style="fill:#d6a79f">Transcription</text>
+<text transform="translate(669,452)" font-size="61" style="fill:#a9b7a3">Nucleus</text>
+<text transform="translate(1119,434)" font-size="61" style="fill:#d5d2c2">Seed</text>
+<text transform="translate(455,456)" font-size="58" style="fill:#d5d2c2">Near</text>
+<text transform="translate(6,51)" font-size="58" style="fill:#d6a79f">Scientific</text>
+<text transform="translate(51,487) rotate(-90)" font-size="58" style="fill:#d88988">Modeled</text>
+<text transform="translate(12,670)" font-size="58" style="fill:#b6c3dd">Page</text>
+<text transform="translate(294,565)" font-size="50" style="fill:#c7d7b5">Parameter</text>
+<text transform="translate(240,618)" font-size="50" style="fill:#8fb7d0">Frac</text>
+<text transform="translate(1087,140)" font-size="50" style="fill:#d9c89e">Data</text>
+<text transform="translate(332,113)" font-size="37" style="fill:#9fc9c5">Synthetic</text>
+<text transform="translate(351,342)" font-size="37" style="fill:#d6a79f">Initiation</text>
+<text transform="translate(1145,378) rotate(-90)" font-size="37" style="fill:#a9b7a3">Remain</text>
+<text transform="translate(97,253)" font-size="37" style="fill:#b6c3dd">Nuclear</text>
+<text transform="translate(763,241)" font-size="37" style="fill:#a9b7a3">Anchors</text>
+<text transform="translate(68,443)" font-size="37" style="fill:#d6a79f">Chromatin</text>
+<text transform="translate(898,562)" font-size="37" style="fill:#d88988">Normalized</text>
+<text transform="translate(1203,516)" font-size="37" style="fill:#e0b879">Far</text>
+<text transform="translate(1260,695) rotate(-90)" font-size="37" style="fill:#d9c89e">Bursting</text>
+<text transform="translate(602,49)" font-size="35" style="fill:#d5d2c2">Proximity</text>
+<text transform="translate(1140,77)" font-size="33" style="fill:#d5d2c2">Proxy</text>
+<text transform="translate(1098,471) rotate(-90)" font-size="33" style="fill:#8fb7d0">Trace</text>
+<text transform="translate(55,627)" font-size="33" style="fill:#c7d7b5">Different</text>
+<text transform="translate(176,354)" font-size="33" style="fill:#9fc9c5">Ensemble</text>
+<text transform="translate(579,482)" font-size="33" style="fill:#8fb7d0">Distance</text>
+<text transform="translate(1154,471)" font-size="33" style="fill:#9fc9c5">Count</text>
+<text transform="translate(24,713)" font-size="30" style="fill:#d9c89e">Activation</text>
+<text transform="translate(1174,382) rotate(-90)" font-size="30" style="fill:#d88988">Signaling</text>
+<text transform="translate(6,104)" font-size="30" style="fill:#d9c89e">Never</text>
+<text transform="translate(925,713)" font-size="30" style="fill:#d9c89e">Histories</text>
+<text transform="translate(1275,334) rotate(-90)" font-size="30" style="fill:#d9c89e">Illustrative</text>
+<text transform="translate(497,254)" font-size="30" style="fill:#8fb7d0">Measured</text>
+<text transform="translate(850,659) rotate(-90)" font-size="30" style="fill:#d88988">Command</text>
+<text transform="translate(367,620)" font-size="30" style="fill:#8fb7d0">Causal</text>
+<text transform="translate(829,636) rotate(-90)" font-size="30" style="fill:#a9b7a3">Event</text>
+<text transform="translate(641,79)" font-size="25" style="fill:#d9c89e">Biological</text>
+<text transform="translate(1168,53)" font-size="25" style="fill:#d5d2c2">Result</text>
+<text transform="translate(975,240) rotate(-90)" font-size="25" style="fill:#c49a6c">History</text>
+<text transform="translate(1038,628)" font-size="25" style="fill:#c7d7b5">Physical</text>
+<text transform="translate(362,588)" font-size="25" style="fill:#e0b879">Control</text>
+<text transform="translate(305,461)" font-size="25" style="fill:#c7d7b5">Delta</text>
+<text transform="translate(652,230)" font-size="25" style="fill:#d5d2c2">Version</text>
+<text transform="translate(827,324)" font-size="25" style="fill:#8fb7d0">Qquad</text>
+<text transform="translate(635,315)" font-size="21" style="fill:#d6a79f">Xrightarrow</text>
+<text transform="translate(1052,86)" font-size="21" style="fill:#9fc9c5">Assay</text>
+<text transform="translate(1054,232)" font-size="21" style="fill:#a9b7a3">DOI</text>
+<text transform="translate(580,559)" font-size="19" style="fill:#9fc9c5">Membrane</text>
+<text transform="translate(926,466)" font-size="19" style="fill:#e0b879">Regulatory</text>
+<text transform="translate(1022,328)" font-size="19" style="fill:#c7d7b5">Memory</text>
+<text transform="translate(414,682) rotate(-90)" font-size="19" style="fill:#d5d2c2">Alter</text>
+<text transform="translate(1216,20)" font-size="19" style="fill:#e0b879">RNA</text>
+<text transform="translate(95,544)" font-size="19" style="fill:#d88988">Blockade</text>
+<text transform="translate(1119,99)" font-size="19" style="fill:#b6c3dd">Matched</text>
+<text transform="translate(602,19)" font-size="19" style="fill:#d9c89e">Odds</text>
+<text transform="translate(953,437)" font-size="19" style="fill:#e0b879">Named</text>
+<text transform="translate(353,430)" font-size="19" style="fill:#b6c3dd">Possible</text>
+<text transform="translate(724,552)" font-size="19" style="fill:#d9c89e">Events</text>
+<text transform="translate(595,580)" font-size="19" style="fill:#9fc9c5">Replay</text>
+<text transform="translate(487,18)" font-size="19" style="fill:#d9c89e">Parameters</text>
+<text transform="translate(585,418)" font-size="19" style="fill:#d5d2c2">Neither</text>
+<text transform="translate(519,228)" font-size="19" style="fill:#c7d7b5">Population</text>
+<text transform="translate(371,242)" font-size="19" style="fill:#c49a6c">Molecule</text>
+<text transform="translate(928,417)" font-size="19" style="fill:#e0b879">Context</text>
+<text transform="translate(164,658)" font-size="19" style="fill:#b6c3dd">Change</text>
+<text transform="translate(11,525)" font-size="19" style="fill:#8fb7d0">Scene</text>
+<text transform="translate(84,340)" font-size="19" style="fill:#9fc9c5">Bias</text>
+<text transform="translate(479,395)" font-size="19" style="fill:#d5d2c2">Looping</text>
+<text transform="translate(1209,104)" font-size="19" style="fill:#d9c89e">States</text>
+<text transform="translate(906,697) rotate(-90)" font-size="19" style="fill:#b6c3dd">Affinity</text>
+<text transform="translate(149,461)" font-size="19" style="fill:#c7d7b5">Baseline</text>
+<text transform="translate(16,73)" font-size="19" style="fill:#d88988">Minutes</text>
+<text transform="translate(293,582)" font-size="19" style="fill:#b6c3dd">Uses</text>
+<text transform="translate(6,119)" font-size="17" style="fill:#a9b7a3">Longer</text>
+<text transform="translate(690,570)" font-size="17" style="fill:#d9c89e">Prevents</text>
+<text transform="translate(528,201) rotate(-90)" font-size="17" style="fill:#a9b7a3">Existing</text>
+<text transform="translate(598,438)" font-size="17" style="fill:#d5d2c2">Binding</text>
+<text transform="translate(964,318)" font-size="17" style="fill:#a9b7a3">Site</text>
+<text transform="translate(820,80)" font-size="17" style="fill:#8fb7d0">Lowers</text>
+<text transform="translate(157,680)" font-size="17" style="fill:#b6c3dd">Higher</text>
+<text transform="translate(144,269)" font-size="17" style="fill:#d9c89e">Encounter</text>
+<text transform="translate(228,575)" font-size="17" style="fill:#d88988">Rather</text>
+<text transform="translate(1144,709)" font-size="17" style="fill:#a9b7a3">Equations</text>
+<text transform="translate(207,714)" font-size="17" style="fill:#d5d2c2">ERK</text>
+<text transform="translate(1188,379)" font-size="17" style="fill:#d5d2c2">Dynamics</text>
+<text transform="translate(1085,17)" font-size="17" style="fill:#9fc9c5">Molecular</text>
+<text transform="translate(683,672)" font-size="17" style="fill:#d5d2c2">Values</text>
+<text transform="translate(1113,430) rotate(-90)" font-size="17" style="fill:#c7d7b5">Instantaneous</text>
+<text transform="translate(218,65)" font-size="14" style="fill:#8fb7d0">Colleagues</text>
+<text transform="translate(225,545)" font-size="14" style="fill:#d6a79f">Forced</text>
+<text transform="translate(960,83)" font-size="14" style="fill:#d6a79f">Nonlinear</text>
+<text transform="translate(1030,439)" font-size="14" style="fill:#9fc9c5">Sox2</text>
+<text transform="translate(916,619)" font-size="14" style="fill:#c49a6c">Universally</text>
+<text transform="translate(19,154)" font-size="14" style="fill:#d88988">Guided</text>
+<text transform="translate(651,14)" font-size="13" style="fill:#d9c89e">Phenomenological</text>
+<text transform="translate(1000,224) rotate(-90)" font-size="13" style="fill:#9fc9c5">Mechanism</text>
+<text transform="translate(1275,458) rotate(-90)" font-size="13" style="fill:#9fc9c5">Force</text>
+<text transform="translate(661,377)" font-size="13" style="fill:#a9b7a3">Rates</text>
+<text transform="translate(638,495)" font-size="13" style="fill:#d5d2c2">Separate</text>
+<text transform="translate(1094,157)" font-size="13" style="fill:#b6c3dd">Declared</text>
+<text transform="translate(325,68)" font-size="13" style="fill:#8fb7d0">Runs</text>
+<text transform="translate(800,146)" font-size="13" style="fill:#c7d7b5">Duration</text>
+<text transform="translate(768,637) rotate(-90)" font-size="13" style="fill:#d6a79f">Reports</text>
+<text transform="translate(1106,241)" font-size="13" style="fill:#d6a79f">Mean</text>
+<text transform="translate(816,468)" font-size="13" style="fill:#d9c89e">Bounded</text>
+<text transform="translate(615,330)" font-size="13" style="fill:#e0b879">Pic</text>
+<text transform="translate(593,672)" font-size="13" style="fill:#e0b879">Effects</text>
+<text transform="translate(1271,63) rotate(-90)" font-size="13" style="fill:#c49a6c">Every</text>
+<text transform="translate(1193,157)" font-size="13" style="fill:#9fc9c5">Method</text>
+</svg>

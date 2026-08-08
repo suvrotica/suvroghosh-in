@@ -9602,6 +9602,21 @@
       "sourceHash": "160af22dcbf49db9eb7c4322bda5a9bc1b712ee7c3331848abbeab3b8265ae7b",
       "width": 960
     },
+    "static/images/weather-inside-the-nucleus.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 32414,
+      "outputHash": "b5045f6a41a1164349a605cd3aa6a8b3466ba6d81a2eda5adf3a6e57977e780e",
+      "resized": false,
+      "sourceBytes": 32414,
+      "sourceHash": "b5045f6a41a1164349a605cd3aa6a8b3466ba6d81a2eda5adf3a6e57977e780e",
+      "width": 1200
+    },
     "static/photos/Compress_20260510_235335_5542.jpg": {
       "format": "JPEG",
       "height": 1056,
