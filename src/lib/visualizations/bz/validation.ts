@@ -26,6 +26,13 @@ const MASK_PRESETS = new Set<BZMaskPreset>(['none', 'central-obstacle', 'seeded-
 const INITIAL_CONDITIONS = new Set<BZInitialCondition>([
 	'uniform-equilibrium',
 	'uniform-clock',
+	'central-pulse',
+	'periodic-source',
+	'plane-wave',
+	'cut-plane-wave',
+	'phase-quadrants',
+	'spiral-seed',
+	'multi-spiral-seed',
 	'target-wave',
 	'broken-front',
 	'paired-fronts',

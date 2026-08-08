@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=spiral --seed=cut-after-plane-wave --grid=96 --domain=32 --duration=14 --timestep=0.00025 --epsilon=0.05 --q=0.002 --f=1.4 --cut-time=0.45 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --annulus-radius=3.5 --annulus-width=1.5 --output-name=spiral-dt-half --write",
+  "stage": "coarse-search",
+  "grid": 96,
+  "phaseCoordinate": {
+    "centreU": 0.011605268043856337,
+    "centreV": 0.011605268043856337,
+    "scaleU": 0.42,
+    "scaleV": 0.12
+  },
+  "literatureGuidedBox": {
+    "epsilon": [
+      0.005,
+      0.08
+    ],
+    "q": [
+      0.0005,
+      0.004
+    ],
+    "f": [
+      1.2,
+      2.6
+    ],
+    "diffusionU": 1,
+    "diffusionV": 0,
+    "domainSize": [
+      16,
+      40
+    ]
+  },
+  "pruning": "Abort on the first non-finite or negative corrector value; retain only finite regimes with objective radial or phase evidence.",
+  "workerPolicy": "At most two independent candidates; this command defaults to one to preserve an interactive workstation.",
+  "durationMs": 34504,
+  "results": [
+    {
+      "hero": "persistent-single-spiral",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 1.4
+      },
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.00025,
+        "gridSize": 96,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "preparation": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 1800,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "observationStart": 2,
+      "orientationAnnulus": {
+        "radius": 3.5,
+        "width": 1.5
+      },
+      "duration": 14,
+      "finite": true,
+      "rotations": 4.189636622396888,
+      "cumulativeAngle": 26.324263268265632,
+      "rotationPeriods": [
+        2.6568769090315234,
+        2.749345597763055,
+        2.7707790663601557
+      ],
+      "rotationPeriodMean": 2.7256671910515777,
+      "rotationPeriodCv": 0.018132382221823798,
+      "maximumOrientationIncrement": 0.6467319254368711,
+      "detectedFraction": 1,
+      "exactlyOneCoreFraction": 1,
+      "centralFraction": 0.975103734439834,
+      "minimumWallDistance": 7.978750527947773,
+      "maximumCoreRadius": 6.741249472052227,
+      "firstStepWithCore": 8000,
+      "lastStepWithCore": 56000,
+      "minimumCoreCount": 1,
+      "maximumCoreCount": 1,
+      "trackSegments": [
+        {
+          "samples": 241,
+          "startStep": 8000,
+          "endStep": 56000,
+          "rotations": 4.189636622396888
+        }
+      ],
+      "pass": true,
+      "durationMs": 34493,
+      "samples": [
+        {
+          "x": -6.666666666666666,
+          "y": -0.6666666666666661,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 8000,
+          "modelTime": 2
+        },
+        {
+          "x": -6.666666666666666,
+          "y": -0.666666666666666,
+          "charge": -1,
+          "winding": -6.283185307179585,
+          "plaquettes": 1,
+          "step": 8200,
+          "modelTime": 2.05
+        },
+        {
+          "x": -6.666666666666666,
+          "y": -0.6666666666666661,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 8400,
+          "modelTime": 2.1
+        },
+        {
+          "x": -6.666666666666666,
+          "y": -0.6666666666666661,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 8600,
+          "modelTime": 2.15
+        },
+        {
+          "x": -6.666666666666666,
+          "y": -0.6666666666666661,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 8800,
+          "modelTime": 2.2
+        },
+        {
+          "x": -6.666666666666666,
+          "y": -1,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 9000,
+          "modelTime": 2.25
+        },
+        {
+          "x": -6.333333333333334,
+          "y": -1,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 9200,
+          "modelTime": 2.3000000000000003
+        },
+        {
+          "x": -6.333333333333334,
+          "y": -1,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 9400,
+          "modelTime": 2.35
+        },
+        {
+          "x": -4.666666666666666,
+          "y": 1,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 56000,
+          "modelTime": 14
+        }
+      ]
+    }
+  ]
+}

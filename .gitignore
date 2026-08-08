@@ -32,3 +32,4 @@ Thumbs.db
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 preview-*.log
+/artifacts/bz-v2-search/*.log

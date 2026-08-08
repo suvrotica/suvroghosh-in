@@ -8,6 +8,7 @@ import {
 import { recoveredStateForSetup } from '../reactions';
 import type { BZFieldState, BZIntervention, BZSetup, ProbeReading } from '../types';
 import { assertValidBZSetup, cloneBZSetup } from '../validation';
+import type { BZTelemetryFrame } from '../v2-types';
 import {
 	createBZGpuContext,
 	probeBZGpuCapabilities,
@@ -15,6 +16,12 @@ import {
 	type BZGpuCapabilities
 } from './capabilities';
 import { BZGpuRenderer, type BZGpuActiveMeans, type BZGpuRenderOptions } from './renderer';
+import {
+	BZGpuReadbackLedger,
+	assertBZGpuFullReadReason,
+	type BZGpuFullReadReason,
+	type BZGpuReadbackAccounting
+} from './readback-accounting';
 import {
 	fullscreenVertexSource,
 	interventionFragmentSource,
@@ -31,6 +38,7 @@ import {
 	requiredBZUniform,
 	type BZFloatTextureTarget
 } from './webgl-utils';
+import { BZGpuTelemetryReducer, type BZGpuTelemetryReduction } from './telemetry';
 
 interface BZProgramSet {
 	readonly oregonatorPredictor: WebGLProgram;
@@ -40,6 +48,11 @@ interface BZProgramSet {
 	readonly intervention: WebGLProgram;
 	readonly mix: WebGLProgram;
 }
+
+type BZReadbackKind =
+	| { readonly kind: 'full-field'; readonly reason: BZGpuFullReadReason }
+	| { readonly kind: 'probe' }
+	| { readonly kind: 'reduction' };
 
 export interface BZGpuClock {
 	readonly step: number;
@@ -58,7 +71,12 @@ export interface BZGpuTextureMemoryEstimate {
 	readonly targetCount: 3;
 	readonly channelsPerTexel: 4;
 	readonly bytesPerComponent: 2 | 4;
+	/** Compatibility alias for the three scientific state textures. */
 	readonly textureBytes: number;
+	readonly scientificTextureBytes: number;
+	readonly telemetryTargetCount: number;
+	readonly telemetryTextureBytes: number;
+	readonly totalTrackedTextureBytes: number;
 	readonly caveat: string;
 }
 
@@ -67,6 +85,8 @@ export interface BZGpuNumericalInspection extends BZGpuActiveMeans {
 	readonly firstFailureIndex: number | null;
 	readonly maximumAbsoluteValue: number;
 	readonly activeCells: number;
+	readonly finiteActiveCells: number;
+	readonly excitationVarianceResolved: boolean;
 	readonly meanU: number;
 	readonly meanV: number;
 	readonly varianceU: number;
@@ -76,6 +96,13 @@ export interface BZGpuNumericalInspection extends BZGpuActiveMeans {
 	readonly minimumV: number;
 	readonly maximumV: number;
 	readonly reason: string;
+}
+
+export interface BZGpuTelemetrySample extends BZTelemetryFrame {
+	readonly inspection: BZGpuNumericalInspection;
+	readonly readbacks: BZGpuReadbackAccounting;
+	readonly reductionPasses: number;
+	readonly reductionReadbacks: number;
 }
 
 export interface BZGpuContextRestoration {
@@ -122,6 +149,7 @@ export class BZGpuEngine {
 	private current: BZFloatTextureTarget | null = null;
 	private next: BZFloatTextureTarget | null = null;
 	private predictor: BZFloatTextureTarget | null = null;
+	private telemetryReducer: BZGpuTelemetryReducer | null = null;
 	private setup: BZSetup | null = null;
 	private stepIndex = 0;
 	private elapsedModelTime = 0;
@@ -132,6 +160,7 @@ export class BZGpuEngine {
 	private recoveryClock: BZGpuClock = { step: 0, modelTime: 0 };
 	private activeMeansValue: BZGpuActiveMeans = { u: 0, v: 0 };
 	private readonly latestProbeValues: ProbeReading[] = [];
+	private readonly readbackLedger = new BZGpuReadbackLedger();
 
 	constructor(canvas: HTMLCanvasElement, options: BZGpuOptions = {}) {
 		this.canvas = canvas;
@@ -181,6 +210,10 @@ export class BZGpuEngine {
 
 	get lastProbeReadings(): readonly ProbeReading[] {
 		return this.latestProbeValues.map((reading) => ({ ...reading }));
+	}
+
+	get readbackAccounting(): BZGpuReadbackAccounting {
+		return this.readbackLedger.snapshot();
 	}
 
 	initialize(
@@ -318,15 +351,25 @@ export class BZGpuEngine {
 		return true;
 	}
 
-	readState(rememberAsRecoveryCheckpoint = true): BZFieldState {
+	/**
+	 * Explicit expensive path. Ordinary rendering, telemetry and probing cannot
+	 * call this method without choosing an auditable full-read reason.
+	 */
+	readState(reason: BZGpuFullReadReason): BZFieldState {
 		this.assertReady();
+		assertBZGpuFullReadReason(reason);
 		const size = this.setup!.gridSize;
 		const packed = new Float32Array(size * size * 4);
-		this.readPixels(this.current!.framebuffer, 0, 0, size, size, packed);
+		this.readPixels(this.current!.framebuffer, 0, 0, size, size, packed, {
+			kind: 'full-field',
+			reason
+		});
 		const state = unpackBZFieldState(size, packed);
 		const means = activeMeansFromState(state);
 		if (Number.isFinite(means.u) && Number.isFinite(means.v)) this.activeMeansValue = means;
-		if (rememberAsRecoveryCheckpoint) this.rememberRecovery(state, this.setup!, this.clock);
+		// Any explicit field read is a valid later recovery point, but its reason is
+		// retained independently in the accounting ledger.
+		this.rememberRecovery(state, this.setup!, this.clock);
 		return state;
 	}
 
@@ -338,7 +381,7 @@ export class BZGpuEngine {
 		const column = Math.min(size - 1, Math.floor(point[0] * size));
 		const row = Math.min(size - 1, Math.floor(point[1] * size));
 		const packed = new Float32Array(4);
-		this.readPixels(this.current!.framebuffer, column, row, 1, 1, packed);
+		this.readPixels(this.current!.framebuffer, column, row, 1, 1, packed, { kind: 'probe' });
 		const active = packed[2] >= 0.5 && packed[3] >= 0.5;
 		return {
 			row,
@@ -350,106 +393,72 @@ export class BZGpuEngine {
 		};
 	}
 
+	sampleTelemetry(
+		sampledAt = typeof performance === 'undefined' ? Date.now() : performance.now(),
+		absoluteLimit = BZ_SAFE_LIMITS.stateAbsoluteMaximum
+	): BZGpuTelemetrySample {
+		this.assertReady();
+		if (!Number.isFinite(sampledAt) || sampledAt < 0) {
+			throw new RangeError('BZ telemetry sample time must be finite and non-negative.');
+		}
+		const reduction = this.telemetryReducer!.sample(
+			this.current!.texture,
+			absoluteLimit,
+			BZ_SAFE_LIMITS.negativeTolerance
+		);
+		this.readbackLedger.recordTelemetrySample();
+		const inspection = numericalInspectionFromReduction(reduction);
+		this.activeMeansValue = { u: reduction.metrics.meanU, v: reduction.metrics.meanV };
+		const readbacks = this.readbackLedger.snapshot();
+		return {
+			kind: 'telemetry',
+			step: this.stepIndex,
+			modelTime: this.elapsedModelTime,
+			sampledAt,
+			metrics: reduction.metrics,
+			engine: this.format.label === 'RGBA32F' ? 'gpu-f32' : 'gpu-f16',
+			telemetryTexture: reduction.finalTexture,
+			fullStateReadbacks: readbacks.fullFieldReadbacks,
+			inspection,
+			readbacks,
+			reductionPasses: reduction.reductionPasses,
+			reductionReadbacks: reduction.reductionReadbacks
+		};
+	}
+
 	inspectNumerics(absoluteLimit = BZ_SAFE_LIMITS.stateAbsoluteMaximum): BZGpuNumericalInspection {
 		if (!Number.isFinite(absoluteLimit) || absoluteLimit <= 0) {
 			throw new RangeError('BZ numerical safety magnitude must be finite and positive.');
 		}
-		const state = this.readState(false);
-		let activeCells = 0;
-		let meanU = 0;
-		let meanV = 0;
-		let sumSquaresU = 0;
-		let sumSquaresV = 0;
-		let minimumU = Number.POSITIVE_INFINITY;
-		let maximumU = Number.NEGATIVE_INFINITY;
-		let minimumV = Number.POSITIVE_INFINITY;
-		let maximumV = Number.NEGATIVE_INFINITY;
-		let maximumAbsoluteValue = 0;
-		let firstFailureIndex: number | null = null;
-		let failureReason = '';
-
-		for (let index = 0; index < state.u.length; index += 1) {
-			if (!state.mask[index]) continue;
-			const u = state.u[index];
-			const v = state.v[index];
-			if (!Number.isFinite(u) || !Number.isFinite(v)) {
-				if (firstFailureIndex === null) {
-					firstFailureIndex = index;
-					failureReason = 'An active-cell concentration became non-finite; no repair was applied.';
-				}
-				maximumAbsoluteValue = Number.POSITIVE_INFINITY;
-				continue;
-			}
-			activeCells += 1;
-			const deltaU = u - meanU;
-			const deltaV = v - meanV;
-			meanU += deltaU / activeCells;
-			meanV += deltaV / activeCells;
-			sumSquaresU += deltaU * (u - meanU);
-			sumSquaresV += deltaV * (v - meanV);
-			minimumU = Math.min(minimumU, u);
-			maximumU = Math.max(maximumU, u);
-			minimumV = Math.min(minimumV, v);
-			maximumV = Math.max(maximumV, v);
-			maximumAbsoluteValue = Math.max(maximumAbsoluteValue, Math.abs(u), Math.abs(v));
-			if (firstFailureIndex === null && maximumAbsoluteValue > absoluteLimit) {
-				firstFailureIndex = index;
-				failureReason = `An active-cell concentration exceeded ${absoluteLimit}; no clamp was applied.`;
-			} else if (
-				firstFailureIndex === null &&
-				(u < -BZ_SAFE_LIMITS.negativeTolerance || v < -BZ_SAFE_LIMITS.negativeTolerance)
-			) {
-				firstFailureIndex = index;
-				failureReason =
-					'An active-cell concentration became materially negative; no clamp was applied.';
-			}
-		}
-
-		if (activeCells === 0 && firstFailureIndex === null) {
-			failureReason = 'The domain has no finite active chemistry cells.';
-		}
-		const healthy = firstFailureIndex === null && activeCells > 0;
-		const reading: BZGpuNumericalInspection = {
-			healthy,
-			firstFailureIndex,
-			maximumAbsoluteValue,
-			activeCells,
-			u: activeCells > 0 ? meanU : 0,
-			v: activeCells > 0 ? meanV : 0,
-			meanU: activeCells > 0 ? meanU : 0,
-			meanV: activeCells > 0 ? meanV : 0,
-			varianceU: activeCells > 0 ? sumSquaresU / activeCells : 0,
-			varianceV: activeCells > 0 ? sumSquaresV / activeCells : 0,
-			minimumU: activeCells > 0 ? minimumU : Number.NaN,
-			maximumU: activeCells > 0 ? maximumU : Number.NaN,
-			minimumV: activeCells > 0 ? minimumV : Number.NaN,
-			maximumV: activeCells > 0 ? maximumV : Number.NaN,
-			reason: healthy
-				? 'All active-cell concentrations are finite and within the diagnostic safety bounds.'
-				: failureReason
-		};
-		if (activeCells > 0 && Number.isFinite(meanU) && Number.isFinite(meanV)) {
-			this.activeMeansValue = { u: meanU, v: meanV };
-		}
-		return reading;
+		return this.sampleTelemetry(undefined, absoluteLimit).inspection;
 	}
 
 	estimateTextureMemory(): BZGpuTextureMemoryEstimate {
 		const gridSize = this.setup?.gridSize ?? 0;
+		const scientificTextureBytes = gridSize * gridSize * 4 * this.format.bytesPerComponent * 3;
+		const telemetry = this.telemetryReducer?.memoryEstimate ?? {
+			targetCount: 0,
+			textureBytes: 0,
+			format: 'RGBA32F' as const
+		};
 		return {
 			gridSize,
 			targetCount: 3,
 			channelsPerTexel: 4,
 			bytesPerComponent: this.format.bytesPerComponent,
-			textureBytes: gridSize * gridSize * 4 * this.format.bytesPerComponent * 3,
+			textureBytes: scientificTextureBytes,
+			scientificTextureBytes,
+			telemetryTargetCount: telemetry.targetCount,
+			telemetryTextureBytes: telemetry.textureBytes,
+			totalTrackedTextureBytes: scientificTextureBytes + telemetry.textureBytes,
 			caveat:
-				'This counts the three scientific state textures only; driver, framebuffer, shader, canvas, and readback overhead are implementation-dependent.'
+				'This counts three scientific state textures and the reusable RGBA32F telemetry pyramid; driver, framebuffer, shader, canvas, display-pass, and transient readback overhead are implementation-dependent.'
 		};
 	}
 
 	/** Captures and retains an explicit CPU checkpoint for context restoration. */
 	checkpoint(): BZFieldState {
-		return this.readState(true);
+		return this.readState('checkpoint');
 	}
 
 	rebuild(
@@ -505,6 +514,7 @@ export class BZGpuEngine {
 		let current: BZFloatTextureTarget | null = null;
 		let next: BZFloatTextureTarget | null = null;
 		let predictor: BZFloatTextureTarget | null = null;
+		let telemetryReducer: BZGpuTelemetryReducer | null = null;
 
 		try {
 			oregonatorPredictor = createBZProgram(
@@ -544,6 +554,18 @@ export class BZGpuEngine {
 			current = createBZFloatTextureTarget(gl, this.format, size, packed);
 			next = createBZFloatTextureTarget(gl, this.format, size, packed);
 			predictor = createBZFloatTextureTarget(gl, this.format, size);
+			if (
+				!this.capabilitiesValue.attempts.some(
+					(attempt) => attempt.id === 'rgba32f' && attempt.writeReadPassed
+				)
+			) {
+				throw new Error(
+					'RGBA32F reduction targets are unavailable, so bounded GPU telemetry cannot be verified. Use the CPU reference instead of ordinary whole-field GPU readback.'
+				);
+			}
+			telemetryReducer = new BZGpuTelemetryReducer(gl, size, (framebuffer, output) => {
+				this.readPixels(framebuffer, 0, 0, 1, 1, output, { kind: 'reduction' });
+			});
 			this.programs = {
 				oregonatorPredictor,
 				oregonatorCorrector,
@@ -557,7 +579,9 @@ export class BZGpuEngine {
 			this.current = current;
 			this.next = next;
 			this.predictor = predictor;
+			this.telemetryReducer = telemetryReducer;
 		} catch (error) {
+			telemetryReducer?.destroy();
 			deleteBZFloatTextureTarget(gl, current);
 			deleteBZFloatTextureTarget(gl, next);
 			deleteBZFloatTextureTarget(gl, predictor);
@@ -706,24 +730,38 @@ export class BZGpuEngine {
 		y: number,
 		width: number,
 		height: number,
-		output: Float32Array
+		output: Float32Array,
+		readback: Readonly<BZReadbackKind>
 	): void {
 		const gl = this.gl;
-		const previousFramebuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING) as WebGLFramebuffer | null;
+		const previousReadFramebuffer = gl.getParameter(
+			gl.READ_FRAMEBUFFER_BINDING
+		) as WebGLFramebuffer | null;
+		const previousReadBuffer = Number(gl.getParameter(gl.READ_BUFFER));
 		const previousPackBuffer = gl.getParameter(gl.PIXEL_PACK_BUFFER_BINDING) as WebGLBuffer | null;
 		let error: number;
 		try {
 			drainErrors(gl);
 			gl.bindBuffer(gl.PIXEL_PACK_BUFFER, null);
-			gl.bindFramebuffer(gl.FRAMEBUFFER, framebuffer);
+			gl.bindFramebuffer(gl.READ_FRAMEBUFFER, framebuffer);
+			gl.readBuffer(gl.COLOR_ATTACHMENT0);
 			gl.readPixels(x, y, width, height, gl.RGBA, this.format.readType, output);
 			error = gl.getError();
 		} finally {
-			gl.bindFramebuffer(gl.FRAMEBUFFER, previousFramebuffer);
+			gl.bindFramebuffer(gl.READ_FRAMEBUFFER, previousReadFramebuffer);
+			gl.readBuffer(previousReadBuffer);
 			gl.bindBuffer(gl.PIXEL_PACK_BUFFER, previousPackBuffer);
 		}
 		if (error !== gl.NO_ERROR) {
 			throw new Error(`BZ float readback failed with WebGL error 0x${error.toString(16)}.`);
+		}
+		const texels = width * height;
+		if (readback.kind === 'full-field') {
+			this.readbackLedger.recordFullField(readback.reason, texels, this.stepIndex);
+		} else if (readback.kind === 'probe') {
+			this.readbackLedger.recordProbe(texels);
+		} else {
+			this.readbackLedger.recordReduction(texels);
 		}
 	}
 
@@ -739,6 +777,8 @@ export class BZGpuEngine {
 
 	private releaseGpuResources(): void {
 		if (this.contextLost) {
+			this.telemetryReducer?.destroy(true);
+			this.telemetryReducer = null;
 			this.programs = null;
 			this.renderer = null;
 			this.vao = null;
@@ -748,6 +788,8 @@ export class BZGpuEngine {
 			return;
 		}
 		const gl = this.gl;
+		this.telemetryReducer?.destroy();
+		this.telemetryReducer = null;
 		deleteBZFloatTextureTarget(gl, this.current);
 		deleteBZFloatTextureTarget(gl, this.next);
 		deleteBZFloatTextureTarget(gl, this.predictor);
@@ -786,6 +828,7 @@ export class BZGpuEngine {
 			this.current = null;
 			this.next = null;
 			this.predictor = null;
+			this.telemetryReducer = null;
 			if (!this.recoverySetup || !this.recoveryState) {
 				throw new Error('No BZ CPU checkpoint is available for context restoration.');
 			}
@@ -824,7 +867,8 @@ export class BZGpuEngine {
 			!this.vao ||
 			!this.current ||
 			!this.next ||
-			!this.predictor
+			!this.predictor ||
+			!this.telemetryReducer
 		) {
 			throw new Error('Initialize the BZ GPU engine before using it.');
 		}
@@ -832,7 +876,7 @@ export class BZGpuEngine {
 }
 
 interface InterventionUniforms {
-	readonly kind: 0 | 1 | 2 | 3 | 4 | 5;
+	readonly kind: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 	readonly from: readonly [number, number];
 	readonly to: readonly [number, number];
 	readonly radius: number;
@@ -849,6 +893,17 @@ function interventionUniforms(
 		intervention.kind === 'inhibit' ||
 		intervention.kind === 'pacemaker'
 	) {
+		if (intervention.kind === 'pacemaker' && intervention.sourceMode === 'state-reset') {
+			return {
+				kind: 6,
+				from: intervention.center,
+				to: intervention.center,
+				radius: intervention.radius,
+				amount: 0,
+				target: [intervention.targetU!, intervention.targetV!],
+				strength: intervention.strength ?? 1
+			};
+		}
 		return {
 			kind: intervention.kind === 'inhibit' ? 1 : 0,
 			from: intervention.center,
@@ -977,6 +1032,35 @@ function activeMeansFromState(state: Readonly<BZFieldState>): BZGpuActiveMeans {
 		meanV += (state.v[index] - meanV) / activeCells;
 	}
 	return activeCells > 0 ? { u: meanU, v: meanV } : { u: 0, v: 0 };
+}
+
+function numericalInspectionFromReduction(
+	reduction: Readonly<BZGpuTelemetryReduction>
+): BZGpuNumericalInspection {
+	const metrics = reduction.metrics;
+	return {
+		healthy: reduction.healthy,
+		// The reduction detects invalid values but deliberately does not perform a
+		// whole-field read merely to localize one coordinate.
+		firstFailureIndex: null,
+		maximumAbsoluteValue: reduction.maximumAbsoluteValue,
+		activeCells: metrics.activeCells,
+		finiteActiveCells: reduction.finiteActiveCells,
+		excitationVarianceResolved: reduction.excitationVarianceResolved,
+		u: metrics.meanU,
+		v: metrics.meanV,
+		meanU: metrics.meanU,
+		meanV: metrics.meanV,
+		varianceU: metrics.varianceU,
+		varianceV: metrics.varianceV,
+		minimumU: metrics.minimumU,
+		maximumU: metrics.maximumU,
+		minimumV: metrics.minimumV,
+		maximumV: metrics.maximumV,
+		reason: reduction.healthy
+			? reduction.reason
+			: `${reduction.reason} The bounded reduction does not localize a first-failure index.`
+	};
 }
 
 function periodicIndex(setup: Readonly<BZSetup>): number {

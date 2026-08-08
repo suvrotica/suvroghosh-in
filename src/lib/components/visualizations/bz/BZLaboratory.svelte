@@ -20,6 +20,7 @@
 		scanSchnakenbergDispersion,
 		serializeBZExperiment
 	} from '$lib/visualizations/bz';
+	import type { BZPresetV2 } from '$lib/visualizations/bz/v2-types';
 	import { createBZExportCanvas } from '$lib/visualizations/bz/display';
 	import type {
 		ActiveTerms,
@@ -43,6 +44,12 @@
 		interventions?: readonly BZIntervention[];
 		activeTerms?: ActiveTerms;
 	};
+	type Props = {
+		requestedV2Preset?: Readonly<BZPresetV2> | null;
+		requestRevision?: number;
+	};
+
+	let { requestedV2Preset = null, requestRevision = 0 }: Props = $props();
 
 	const SPEEDS: Readonly<Record<SpeedId, { label: string; work: number }>> = {
 		observe: { label: 'Observe', work: 240 },
@@ -73,7 +80,7 @@
 			key: '1',
 			hint: 'Read a local u,v history without changing the field.'
 		},
-		{ id: 'excite', label: 'Excite', key: '2', hint: 'Add a finite local u pulse.' },
+		{ id: 'excite', label: 'Excite · one pulse', key: '2', hint: 'Add one finite local u pulse.' },
 		{ id: 'inhibit', label: 'Inhibit', key: '3', hint: 'Lower u and raise recovery v locally.' },
 		{
 			id: 'cut',
@@ -83,7 +90,7 @@
 		},
 		{
 			id: 'pacemaker',
-			label: 'Pacemaker',
+			label: 'Pacemaker · repeated',
 			key: 'P',
 			hint: 'Schedule eight deterministic local pulses.'
 		},
@@ -133,6 +140,7 @@
 	let palette = $state<BZPalette>(initialPreset.palette);
 	let tool = $state<BZTool>('probe');
 	let brushRadius = $state(0.045);
+	let showSourceMarkers = $state(true);
 	let selected = $state<readonly [number, number]>([0.5, 0.5]);
 	let termsMode = $state<'both' | 'reaction' | 'diffusion'>('both');
 	let panel = $state<Panel>('readout');
@@ -150,6 +158,10 @@
 	let busy = $state(false);
 	let engine = $state<BZEngineKind>('cpu-f64');
 	let engineFailure = $state(false);
+	let v2InitialInterventions = $state<readonly BZIntervention[]>([]);
+	let v2PresetTitle = $state<string | null>(null);
+	let v2NumericallyModified = $state(false);
+	let appliedV2RequestRevision = -1;
 
 	let activeTerms = $derived<ActiveTerms>({
 		reaction: termsMode !== 'diffusion',
@@ -171,6 +183,14 @@
 			excitedFraction: 0
 		}
 	);
+
+	$effect(() => {
+		const preset = requestedV2Preset;
+		const revision = requestRevision;
+		if (!preset || revision === appliedV2RequestRevision) return;
+		appliedV2RequestRevision = revision;
+		void openV2Setup(preset);
+	});
 
 	onMount(() => {
 		const hasState = new URLSearchParams(window.location.search).has('bz_v');
@@ -199,6 +219,9 @@
 		view = decoded.state.display.view;
 		palette = decoded.state.display.palette;
 		urlIssues = [...decoded.issues];
+		v2InitialInterventions = [];
+		v2PresetTitle = null;
+		v2NumericallyModified = false;
 		running = false;
 		probeHistory = [];
 		await tick();
@@ -230,6 +253,9 @@
 		).palette;
 		view = 'dish';
 		termsMode = termsModeFor(detail.activeTerms ?? { reaction: true, diffusion: true });
+		v2InitialInterventions = [];
+		v2PresetTitle = null;
+		v2NumericallyModified = false;
 		running = false;
 		probeHistory = [];
 		await tick();
@@ -263,9 +289,32 @@
 		palette = preset.palette;
 		view = 'dish';
 		termsMode = 'both';
+		v2InitialInterventions = [];
+		v2PresetTitle = null;
+		v2NumericallyModified = false;
 		running = false;
 		probeHistory = [];
 		status = `${preset.title} loaded from seed “${preset.setup.seed}”. Its browser-calibration claim is shown below.`;
+	}
+
+	async function openV2Setup(preset: Readonly<BZPresetV2>) {
+		const requiresExplicitReset =
+			termsMode === 'both' && JSON.stringify(setup) === JSON.stringify(preset.setup);
+		setup = cloneSetup(preset.setup);
+		presetId = 'custom';
+		palette = 'ferroin';
+		view = 'dish';
+		termsMode = 'both';
+		v2InitialInterventions = [...preset.initialInterventions];
+		v2PresetTitle = preset.title;
+		v2NumericallyModified = false;
+		running = false;
+		probeHistory = [];
+		latestFrame = null;
+		engineFailure = false;
+		status = `${preset.title} opened from the V2 manifest at its declared genesis setup. The Gallery checkpoint session remains separate and unchanged.`;
+		await tick();
+		if (requiresExplicitReset) stage?.reset();
 	}
 
 	function switchModel(model: BZSetup['model']) {
@@ -274,6 +323,9 @@
 
 	function markCustom(reason = 'Raw setup changed; the run restarted from step zero.') {
 		presetId = 'custom';
+		v2InitialInterventions = [];
+		v2PresetTitle = null;
+		v2NumericallyModified = false;
 		running = false;
 		probeHistory = [];
 		status = reason;
@@ -331,7 +383,8 @@
 	function handleFrame(next: BZStageFrame) {
 		latestFrame = next;
 		engine = next.engine;
-		const reading = readPoint(next.field, selected);
+		const reading = next.probe ?? (next.field ? readPoint(next.field, selected) : null);
+		if (!reading) return;
 		probeActive = reading.active;
 		if (reading.active && reading.u !== null && reading.v !== null) {
 			const last = probeHistory.at(-1);
@@ -377,6 +430,13 @@
 		}
 	}
 
+	function handleIntervention(event: Readonly<BZIntervention>) {
+		if (event.kind === 'probe' || !v2PresetTitle) return;
+		v2NumericallyModified = true;
+		status =
+			'Modified experiment — the mounted V2 preset validation no longer applies to this Laboratory trajectory.';
+	}
+
 	function handleStageStatus(message: string, nextEngine: BZEngineKind, failure: boolean) {
 		engine = nextEngine;
 		engineFailure = failure;
@@ -402,6 +462,7 @@
 	function resetExperiment() {
 		running = false;
 		probeHistory = [];
+		if (v2PresetTitle) v2NumericallyModified = false;
 		stage?.reset();
 		status = 'Same setup and same seed restored at model step zero.';
 	}
@@ -418,6 +479,27 @@
 		status = `Replay completed at step ${target.toLocaleString()}. CPU Float64 replay is deterministic for this engine version.`;
 	}
 
+	async function undoLastIntervention() {
+		if (!stage || busy) return;
+		const target = stage.stepIndex();
+		const events = [...stage.interventions()];
+		let index = events.length - 1;
+		while (index >= 0 && events[index].kind === 'probe') index -= 1;
+		if (index < 0) {
+			status = 'There is no state-changing intervention to undo.';
+			return;
+		}
+		const [removed] = events.splice(index, 1);
+		running = false;
+		busy = true;
+		probeHistory = [];
+		status = `Removing the last ${removed.kind} intervention by deterministic replay to step ${target.toLocaleString()}…`;
+		await stage.replay(target, events);
+		busy = false;
+		if (v2PresetTitle) v2NumericallyModified = true;
+		status = `Undid the last ${removed.kind} intervention by replaying the same seed and remaining event log to step ${target.toLocaleString()}.`;
+	}
+
 	function stir() {
 		stage?.stir(1);
 		status =
@@ -428,6 +510,8 @@
 		if (next === termsMode) return;
 		termsMode = next;
 		presetId = 'custom';
+		v2InitialInterventions = [];
+		v2PresetTitle = null;
 		running = false;
 		probeHistory = [];
 		status = `Active terms changed to ${next === 'both' ? 'reaction plus diffusion' : `${next} only`}; the same seed restarted at step zero.`;
@@ -471,7 +555,9 @@
 	}
 
 	function getPresetTitle(): string {
-		return BZ_PRESETS.find((preset) => preset.id === presetId)?.title ?? 'Custom setup';
+		return (
+			BZ_PRESETS.find((preset) => preset.id === presetId)?.title ?? v2PresetTitle ?? 'Custom setup'
+		);
 	}
 
 	function downloadText(text: string, filename: string, type: string) {
@@ -549,6 +635,8 @@
 		try {
 			const record = parseBZExperiment(await file.text());
 			setup = cloneSetup(record.setup);
+			v2InitialInterventions = [];
+			v2PresetTitle = null;
 			presetId = 'custom';
 			termsMode = termsModeFor(record.activeTerms);
 			view = record.display.view;
@@ -621,7 +709,11 @@
 						<option value={preset.id}>{preset.title}</option>
 					{/each}
 				</optgroup>
-				{#if presetId === 'custom'}<option value="custom">Custom raw setup</option>{/if}
+				{#if presetId === 'custom'}
+					<option value="custom"
+						>{v2PresetTitle ? `V2 · ${v2PresetTitle}` : 'Custom raw setup'}</option
+					>
+				{/if}
 			</select>
 		</label>
 		<fieldset class="segmented model-switch">
@@ -665,11 +757,14 @@
 					{palette}
 					{tool}
 					{brushRadius}
+					{showSourceMarkers}
 					{selected}
 					{activeTerms}
+					initialInterventions={v2InitialInterventions}
 					onframe={handleFrame}
 					onstatus={handleStageStatus}
 					onprobe={handleProbe}
+					onintervention={handleIntervention}
 					onselect={(point) => (selected = point)}
 					oncommand={handleCommand}
 				/>
@@ -699,6 +794,12 @@
 				<button type="button" onclick={resetExperiment} disabled={busy}>Reset</button>
 				<button type="button" onclick={replayExperiment} disabled={busy || experimentStep() === 0}
 					>{busy ? 'Replaying…' : 'Replay'}</button
+				>
+				<button
+					type="button"
+					onclick={undoLastIntervention}
+					disabled={busy || experimentEvents().every((event) => event.kind === 'probe')}
+					>Undo last intervention</button
 				>
 				<button
 					type="button"
@@ -739,7 +840,22 @@
 						bind:value={brushRadius}
 					/></label
 				>
+				<label class="marker-toggle">
+					<input type="checkbox" bind:checked={showSourceMarkers} />
+					<span>Show repeated-source markers</span>
+				</label>
 			</fieldset>
+			{#if tool === 'cut'}
+				<p class="tool-guidance" data-testid="bz-cut-guidance">
+					<b>Cut front:</b> drag once across the bright front, then release. The pale guide follows your
+					stroke while the numerical field remains paused or running in place.
+				</p>
+			{:else if tool === 'pacemaker'}
+				<p class="tool-guidance">
+					<b>Repeated source:</b> click once to schedule eight pulses, period 0.8 model-time units,
+					radius {Math.round(brushRadius * 1000) / 10}%. Use <i>Excite · one pulse</i> for a single event.
+				</p>
+			{/if}
 		</div>
 
 		<aside class="instrument-panel">
@@ -1076,6 +1192,25 @@
 			<!-- Static publication artifact, not a SvelteKit route. -->
 			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 			<a href="/data/bz-preset-calibration.json">Open the exact finite-time calibration record →</a>
+		{:else if v2PresetTitle}
+			<span>
+				Exact V2 manifest genesis setup with {v2InitialInterventions.length} declared intervention{v2InitialInterventions.length ===
+				1
+					? ''
+					: 's'}. Changes in this Laboratory do not reset the mounted mature Gallery session.
+			</span>
+			{#if v2NumericallyModified}
+				<strong class="claim-state invalidated"
+					>Modified experiment — preset validation no longer applies</strong
+				>
+			{:else if view !== 'dish' || palette !== 'ferroin'}
+				<strong class="claim-state appearance"
+					>Custom appearance — numerical validation unchanged</strong
+				>
+			{/if}
+			<!-- Static publication artifact, not a SvelteKit route. -->
+			<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
+			<a href="/data/bz-v2-calibration.json">Open the V2 calibration and provenance record →</a>
 		{:else}
 			<span
 				>Custom values have no preset morphology claim. Use the numerical and dispersion
@@ -1354,6 +1489,28 @@
 		padding: 0;
 		accent-color: #e1a78b;
 	}
+	.marker-toggle {
+		grid-column: span 4;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: rgb(237 240 232 / 0.68);
+		font-size: 0.7rem;
+	}
+	.marker-toggle input {
+		width: auto;
+		min-height: auto;
+		accent-color: #e1a78b;
+	}
+	.tool-guidance {
+		margin: 0.55rem 0 0;
+		border-left: 3px solid #e1a78b;
+		background: rgb(225 167 139 / 0.07);
+		color: rgb(237 240 232 / 0.72);
+		padding: 0.55rem 0.7rem;
+		font-size: 0.7rem;
+		line-height: 1.45;
+	}
 	.instrument-panel {
 		align-self: start;
 		min-width: 0;
@@ -1528,6 +1685,21 @@
 		color: #80c9d7;
 		font-size: 0.69rem;
 		text-underline-offset: 0.18em;
+	}
+	.claim-state {
+		justify-self: start;
+		border: 1px solid currentColor;
+		border-radius: 999px;
+		padding: 0.2rem 0.45rem;
+		font:
+			0.62rem/1.2 ui-monospace,
+			monospace;
+	}
+	.claim-state.invalidated {
+		color: #ff9caa;
+	}
+	.claim-state.appearance {
+		color: #9adce6;
 	}
 	.url-issues {
 		margin-top: 0.8rem;

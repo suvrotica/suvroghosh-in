@@ -111,6 +111,7 @@ test('the Belousov–Zhabotinsky laboratory is a separate, reproducible producti
 	const solver = read('src', 'lib', 'visualizations', 'bz', 'solver.ts');
 	const presets = read('src', 'lib', 'visualizations', 'bz', 'presets.ts');
 	const gpu = read('src', 'lib', 'visualizations', 'bz', 'gpu', 'simulation.ts');
+	const legacyCalibration = JSON.parse(read('static', 'data', 'bz-preset-calibration.json'));
 
 	assert.match(
 		post,
@@ -119,11 +120,13 @@ test('the Belousov–Zhabotinsky laboratory is a separate, reproducible producti
 	assert.match(post, /date: "2026-08-08"/);
 	assert.match(post, /published: true/);
 	assert.match(post, /interactiveFirst: true/);
-	assert.match(post, /thumbnail: "\/images\/belousov-zhabotinsky-laboratory\.png"/);
+	assert.match(
+		post,
+		/thumbnail: "\/images\/visualizations\/belousov-zhabotinsky\/v2\/bz-v2-visualization-card\.png"/
+	);
 	assert.equal((post.match(/^ {2}- question:/gm) ?? []).length, 12);
 	for (const component of [
-		'BZLaboratory',
-		'BZGuidedExperiments',
+		'BZExperienceV2',
 		'BZEquationLedger',
 		'BZTuringInspector',
 		'BZNumericalChecks',
@@ -138,6 +141,7 @@ test('the Belousov–Zhabotinsky laboratory is a separate, reproducible producti
 		);
 		assert.match(post, new RegExp(`<${component} \\/>`));
 	}
+	assert.doesNotMatch(post, /BZGuidedExperiments/);
 	for (const doi of [
 		'10.1021/ja00780a001',
 		'10.1038/237390a0',
@@ -155,12 +159,27 @@ test('the Belousov–Zhabotinsky laboratory is a separate, reproducible producti
 	assert.match(presets, /'broken-front-spiral'/);
 	assert.match(presets, /'collision-annihilation'/);
 	assert.match(presets, /'diffusion-driven-spots'/);
+	assert.match(presets, /id: 'zhabotinsky-dish',\s*title: 'One Finite Outward Front'/);
+	assert.equal(
+		legacyCalibration.calibrations.find(
+			(calibration) => calibration.sourcePresetId === 'zhabotinsky-dish'
+		)?.title,
+		'One Finite Outward Front'
+	);
 	assert.match(gpu, /class BZGpuEngine/);
 	assert.match(gpu, /oregonatorPredictorFragmentSource/);
 	assert.match(gpu, /schnakenbergCorrectorFragmentSource/);
 	assert.match(gpu, /EXT_color_buffer_float|createBZGpuContext/);
 	assert.match(registry, /'belousov-zhabotinsky-laboratory':\s*\{/);
 	assert.match(registry, /href: '\/blog\/visualizations\/belousov-zhabotinsky-laboratory'/);
+	assert.match(
+		registry,
+		/poster: '\/images\/visualizations\/belousov-zhabotinsky\/v2\/bz-v2-visualization-card\.png'/
+	);
+	assert.match(
+		registry,
+		/posterAlt:\s*'A luminous red and violet solver-generated Oregonator spiral curling through a circular dish beside the words Chemical waves with receipts'/
+	);
 	assert.match(
 		landing,
 		/'belousov-zhabotinsky-laboratory':\s*visualizationSummaries\['belousov-zhabotinsky-laboratory'\]\.subjects/

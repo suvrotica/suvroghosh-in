@@ -261,7 +261,7 @@
     },
     {
       "id": "target-waves",
-      "title": "Zhabotinsky's Dish",
+      "title": "One Finite Outward Front",
       "sourcePresetId": "zhabotinsky-dish",
       "expectedQualitativeBehaviour": "A finite central excitation should launch radial travelling fronts through recovered medium.",
       "status": "validated",

@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "kind": "bz-v2-browser-cpu-gpu-parity",
+  "engineVersion": "bz-heun-five-point-v2",
+  "displayVersion": "bz-display-linear-light-v2",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+  "durationMs": 1083.2000000476837,
+  "records": [
+    {
+      "presetId": "classic-target-rings",
+      "gridSize": 64,
+      "steps": 3002,
+      "modelTime": 1.5010000000000001,
+      "textureFormat": "RGBA32F",
+      "numerical": {
+        "maxAbsolute": 0.0000054705281234274095,
+        "rms": 2.815106386885847e-7,
+        "samples": 10864
+      },
+      "numericalCases": [
+        {
+          "id": "base-fixed-step",
+          "step": 64,
+          "error": {
+            "maxAbsolute": 5.305119576970441e-8,
+            "rms": 1.6225864788282173e-9,
+            "samples": 5432
+          }
+        },
+        {
+          "id": "declared-intervention-schedule",
+          "step": 3002,
+          "error": {
+            "maxAbsolute": 0.0000054705281234274095,
+            "rms": 3.9811285661584514e-7,
+            "samples": 5432
+          }
+        }
+      ],
+      "display": {
+        "maximumByteDifference": 5,
+        "meanByteDifference": 0.6333333333333333,
+        "samples": 60
+      },
+      "displayCases": [
+        {
+          "id": "scientific-u",
+          "error": { "maximumByteDifference": 0, "meanByteDifference": 0, "samples": 15 }
+        },
+        {
+          "id": "luminous-publication",
+          "error": {
+            "maximumByteDifference": 5,
+            "meanByteDifference": 1.3333333333333333,
+            "samples": 15
+          }
+        },
+        {
+          "id": "ferroin-representative",
+          "error": { "maximumByteDifference": 4, "meanByteDifference": 1.2, "samples": 15 }
+        },
+        {
+          "id": "phase-spectrum",
+          "error": { "maximumByteDifference": 0, "meanByteDifference": 0, "samples": 15 }
+        }
+      ],
+      "fieldMaxTolerance": 0.0005,
+      "fieldRmsTolerance": 0.00005,
+      "displayByteTolerance": 10,
+      "pass": true
+    },
+    {
+      "presetId": "persistent-single-spiral",
+      "gridSize": 64,
+      "steps": 902,
+      "modelTime": 0.451,
+      "textureFormat": "RGBA32F",
+      "numerical": {
+        "maxAbsolute": 8.231803414471273e-7,
+        "rms": 5.898305309182735e-8,
+        "samples": 10864
+      },
+      "numericalCases": [
+        {
+          "id": "base-fixed-step",
+          "step": 64,
+          "error": {
+            "maxAbsolute": 1.7942843033580402e-7,
+            "rms": 2.2594972753879462e-8,
+            "samples": 5432
+          }
+        },
+        {
+          "id": "declared-intervention-schedule",
+          "step": 902,
+          "error": {
+            "maxAbsolute": 8.231803414471273e-7,
+            "rms": 8.029612886259271e-8,
+            "samples": 5432
+          }
+        }
+      ],
+      "display": {
+        "maximumByteDifference": 9,
+        "meanByteDifference": 0.45,
+        "samples": 60
+      },
+      "displayCases": [
+        {
+          "id": "scientific-u",
+          "error": { "maximumByteDifference": 0, "meanByteDifference": 0, "samples": 15 }
+        },
+        {
+          "id": "luminous-publication",
+          "error": {
+            "maximumByteDifference": 9,
+            "meanByteDifference": 1.1333333333333333,
+            "samples": 15
+          }
+        },
+        {
+          "id": "ferroin-representative",
+          "error": {
+            "maximumByteDifference": 5,
+            "meanByteDifference": 0.6666666666666666,
+            "samples": 15
+          }
+        },
+        {
+          "id": "phase-spectrum",
+          "error": { "maximumByteDifference": 0, "meanByteDifference": 0, "samples": 15 }
+        }
+      ],
+      "fieldMaxTolerance": 0.0005,
+      "fieldRmsTolerance": 0.00005,
+      "displayByteTolerance": 10,
+      "pass": true
+    },
+    {
+      "presetId": "spiral-garden",
+      "gridSize": 64,
+      "steps": 64,
+      "modelTime": 0.032,
+      "textureFormat": "RGBA32F",
+      "numerical": {
+        "maxAbsolute": 2.7203054209223865e-7,
+        "rms": 2.4899206060084702e-8,
+        "samples": 5432
+      },
+      "numericalCases": [
+        {
+          "id": "base-fixed-step",
+          "step": 64,
+          "error": {
+            "maxAbsolute": 2.7203054209223865e-7,
+            "rms": 2.4899206060084702e-8,
+            "samples": 5432
+          }
+        }
+      ],
+      "display": {
+        "maximumByteDifference": 8,
+        "meanByteDifference": 0.2833333333333333,
+        "samples": 60
+      },
+      "displayCases": [
+        {
+          "id": "scientific-u",
+          "error": { "maximumByteDifference": 0, "meanByteDifference": 0, "samples": 15 }
+        },
+        {
+          "id": "luminous-publication",
+          "error": { "maximumByteDifference": 8, "meanByteDifference": 0.6, "samples": 15 }
+        },
+        {
+          "id": "ferroin-representative",
+          "error": {
+            "maximumByteDifference": 6,
+            "meanByteDifference": 0.5333333333333333,
+            "samples": 15
+          }
+        },
+        {
+          "id": "phase-spectrum",
+          "error": { "maximumByteDifference": 0, "meanByteDifference": 0, "samples": 15 }
+        }
+      ],
+      "fieldMaxTolerance": 0.0005,
+      "fieldRmsTolerance": 0.00005,
+      "displayByteTolerance": 10,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

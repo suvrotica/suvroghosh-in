@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "kind": "bz-v2-publication-asset-metadata",
+  "generatedAt": "2026-08-08T11:58:15.018Z",
+  "generatedBy": "scripts/render-bz-v2-assets.mjs",
+  "generationCommand": "node scripts/render-bz-v2-assets.mjs",
+  "engineVersion": "bz-heun-five-point-v2",
+  "displayVersion": "bz-display-linear-light-v2",
+  "asset": {
+    "id": "bz-v2-bz-versus-turing-plate",
+    "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-versus-turing-plate.png",
+    "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-versus-turing-plate.metadata.json",
+    "width": 1800,
+    "height": 1200,
+    "format": "png",
+    "sha256": "1518411333719bc228b9e8a36713c11460ab1edc0f21293e1b2c42de326df718"
+  },
+  "sources": [
+    {
+      "presetId": "persistent-single-spiral",
+      "presetTitle": "Persistent Single Spiral",
+      "modelStep": 28000,
+      "modelTime": 14,
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 512,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 900,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "initialStateSha256": "8d658f0929558b8c5353e44b900318d95dd1674cfdc366c6d79f73d560397d0f",
+      "stateSha256": "5c98f71ce51357ad615dff03c3366925ce462051dba6dbed4cd6ef30d88fabcc",
+      "stateSha256AfterRendering": "5c98f71ce51357ad615dff03c3366925ce462051dba6dbed4cd6ef30d88fabcc",
+      "stateChecksumAlgorithm": "sha256-f64le-state-v1",
+      "setupSha256": "027655e75380b6a33df800f82241c997c3d040387978f3b61206cde898210cc9",
+      "interventionLogSha256": "e249fb355f9a741935f5ad36616d2d73a755cbcdf02f7422f39b5bf2bf7ce25d",
+      "canonicalDocumentChecksumAlgorithm": "sha256-canonical-json-v1",
+      "preparationDisclosure": "Plane-wave initial state followed at t = 0.45 by a declared half-plane reset to the homogeneous recovered equilibrium."
+    },
+    {
+      "presetId": "schnakenberg-turing-comparator",
+      "presetTitle": "Schnakenberg Diffusion-Driven Comparator",
+      "modelStep": 24000,
+      "modelTime": 60,
+      "setup": {
+        "model": "schnakenberg",
+        "modelVersion": "schnakenberg-two-variable-v1",
+        "equationsId": "schnakenberg-2v-dimensionless",
+        "parameters": {
+          "a": 0.1,
+          "b": 0.9,
+          "gamma": 1
+        },
+        "diffusionU": 0.01,
+        "diffusionV": 0.1,
+        "timestep": 0.0025,
+        "gridSize": 512,
+        "domainSize": 20,
+        "activeRadius": 9.4,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "turing-noise",
+        "seed": "schnakenberg-spots-01"
+      },
+      "interventions": [],
+      "initialStateSha256": "4ba57ca065a8b9d7b5e4f11a8e07db4a07715f12aab1a2b5a1772e6fa712350b",
+      "stateSha256": "39ef2f23eab0f6421b72c00ec9d66f944ad2434b88928fda24b8755687ccfb4c",
+      "stateSha256AfterRendering": "39ef2f23eab0f6421b72c00ec9d66f944ad2434b88928fda24b8755687ccfb4c",
+      "stateChecksumAlgorithm": "sha256-f64le-state-v1",
+      "setupSha256": "b5eebf33db9b107996f6f4ac0c7e925d2fc8c40fb0d37e35d15d27209d8137a9",
+      "interventionLogSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "canonicalDocumentChecksumAlgorithm": "sha256-canonical-json-v1",
+      "preparationDisclosure": "Deterministic low-amplitude noise around the reaction-stable Schnakenberg equilibrium; a resolved nonzero dispersion band is the comparison diagnostic."
+    }
+  ],
+  "displays": [
+    {
+      "runId": "persistent-single-spiral",
+      "view": "luminous-composite",
+      "profileId": "oregonator-luminous-publication-v2",
+      "profile": {
+        "id": "oregonator-luminous-publication-v2",
+        "title": "Oregonator luminous publication profile",
+        "version": "bz-display-linear-light-v2",
+        "style": "luminous-composite",
+        "palette": "ferroin",
+        "defaultView": "dish",
+        "rangeMode": "fixed",
+        "ranges": {
+          "u": {
+            "minimum": 0,
+            "maximum": 0.82,
+            "units": "dimensionless"
+          },
+          "v": {
+            "minimum": 0,
+            "maximum": 0.3,
+            "units": "dimensionless"
+          },
+          "reaction-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "diffusion-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "net-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "phase": {
+            "minimum": -3.141592653589793,
+            "maximum": 3.141592653589793,
+            "units": "radians"
+          },
+          "front": {
+            "minimum": 0,
+            "maximum": 5,
+            "units": "dimensionless"
+          },
+          "refractory": {
+            "minimum": -0.1,
+            "maximum": 2.5,
+            "units": "dimensionless"
+          },
+          "difference-from-mean": {
+            "minimum": -0.3,
+            "maximum": 0.7,
+            "units": "dimensionless"
+          }
+        },
+        "phase": {
+          "centreU": 0.1,
+          "centreV": 0.1,
+          "scaleU": 0.42,
+          "scaleV": 0.12
+        },
+        "exposure": 1.25,
+        "bloom": 0.12,
+        "highlight": 0.58,
+        "saturation": 1.06,
+        "interpolation": "mask-aware-manual-bilinear",
+        "toneMap": "aces-fitted",
+        "outputTransfer": "srgb",
+        "disclosure": "Luminous phase and wavefront composite in linear light with fixed ranges; restrained bloom, tone mapping, and glass cues are display only.",
+        "frontScale": 0.2,
+        "contrast": 1.04,
+        "gamma": 1,
+        "bloomThreshold": 0.52,
+        "bloomRadius": 1.7,
+        "ferroinMix": {
+          "recoveryWeight": 0.7,
+          "activatorLuminanceWeight": 0.34,
+          "gradientHighlightWeight": 0.5
+        },
+        "luminousMix": {
+          "phaseWeight": 0.78,
+          "recoveryWeight": 0.22,
+          "frontWeight": 0.44
+        }
+      },
+      "disclosure": "Luminous phase and wavefront composite in linear light with fixed ranges; restrained bloom, tone mapping, and glass cues are display only."
+    },
+    {
+      "runId": "schnakenberg-turing-comparator",
+      "view": "u",
+      "profileId": "schnakenberg-scientific-publication-v2",
+      "profile": {
+        "id": "schnakenberg-scientific-publication-v2",
+        "title": "Schnakenberg scientific publication profile",
+        "version": "bz-display-linear-light-v2",
+        "style": "scientific",
+        "palette": "scientific",
+        "defaultView": "u",
+        "rangeMode": "fixed",
+        "ranges": {
+          "u": {
+            "minimum": 0.7,
+            "maximum": 1.32,
+            "units": "dimensionless"
+          },
+          "v": {
+            "minimum": 0.75,
+            "maximum": 1.05,
+            "units": "dimensionless"
+          },
+          "reaction-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "diffusion-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "net-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "phase": {
+            "minimum": -3.141592653589793,
+            "maximum": 3.141592653589793,
+            "units": "radians"
+          },
+          "front": {
+            "minimum": 0,
+            "maximum": 5,
+            "units": "dimensionless"
+          },
+          "refractory": {
+            "minimum": -0.1,
+            "maximum": 2.5,
+            "units": "dimensionless"
+          },
+          "difference-from-mean": {
+            "minimum": -0.32,
+            "maximum": 0.32,
+            "units": "dimensionless"
+          }
+        },
+        "phase": {
+          "centreU": 1,
+          "centreV": 0.9,
+          "scaleU": 0.3,
+          "scaleV": 0.15
+        },
+        "exposure": 1,
+        "bloom": 0,
+        "highlight": 0,
+        "saturation": 1,
+        "interpolation": "mask-aware-manual-bilinear",
+        "toneMap": "aces-fitted",
+        "outputTransfer": "srgb",
+        "disclosure": "Raw Schnakenberg u field on a fixed scientific range; the linearly verified diffusion-driven comparator remains distinct from travelling BZ waves.",
+        "frontScale": 0.2,
+        "contrast": 1,
+        "gamma": 1,
+        "bloomThreshold": 0.52,
+        "bloomRadius": 1.7,
+        "ferroinMix": {
+          "recoveryWeight": 0.7,
+          "activatorLuminanceWeight": 0.34,
+          "gradientHighlightWeight": 0.5
+        },
+        "luminousMix": {
+          "phaseWeight": 0.78,
+          "recoveryWeight": 0.22,
+          "frontWeight": 0.44
+        }
+      },
+      "disclosure": "Raw Schnakenberg u field on a fixed scientific range; the linearly verified diffusion-driven comparator remains distinct from travelling BZ waves."
+    }
+  ],
+  "scientificDisclosure": "Solver-generated Oregonator field, not a photograph. Interpolation, colour, exposure, bloom, tone mapping, labels, and glass cues affect presentation only; they do not generate rings or spirals and do not alter the numerical state.",
+  "provenance": {
+    "node": "v24.11.1",
+    "platform": "win32-x64",
+    "sharp": "0.35.3",
+    "libvips": "8.18.3"
+  }
+}

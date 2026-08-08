@@ -1,0 +1,186 @@
+<!doctype html><meta charset="utf-8"><title>BZ V2 calibration gallery</title><style>body{font:14px system-ui;background:#101417;color:#e9ece8;margin:2rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid #394349;padding:.6rem;vertical-align:top}pre{max-height:18rem;overflow:auto;white-space:pre-wrap}code{color:#efb47e}</style><h1>BZ V2 internal calibration gallery</h1><p>Objective numerical summaries; never a visual-only classifier.</p><table><thead><tr><th>Hero</th><th>Parameters</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr><td>classic-target-rings</td><td><code>{&quot;epsilon&quot;:0.05,&quot;q&quot;:0.002,&quot;f&quot;:2.4}</code></td><td>PASS</td><td><pre>{
+  &quot;hero&quot;: &quot;classic-target-rings&quot;,
+  &quot;parameters&quot;: {
+    &quot;epsilon&quot;: 0.05,
+    &quot;q&quot;: 0.002,
+    &quot;f&quot;: 2.4
+  },
+  &quot;setup&quot;: {
+    &quot;model&quot;: &quot;oregonator&quot;,
+    &quot;modelVersion&quot;: &quot;tyson-fife-two-variable-v1&quot;,
+    &quot;equationsId&quot;: &quot;tyson-fife-oregonator-2v-dimensionless&quot;,
+    &quot;parameters&quot;: {
+      &quot;epsilon&quot;: 0.05,
+      &quot;q&quot;: 0.002,
+      &quot;f&quot;: 2.4
+    },
+    &quot;diffusionU&quot;: 1,
+    &quot;diffusionV&quot;: 0,
+    &quot;timestep&quot;: 0.0005,
+    &quot;gridSize&quot;: 128,
+    &quot;domainSize&quot;: 120,
+    &quot;activeRadius&quot;: 55.2,
+    &quot;boundary&quot;: &quot;no-flux&quot;,
+    &quot;geometry&quot;: &quot;circular-dish&quot;,
+    &quot;maskPreset&quot;: &quot;none&quot;,
+    &quot;initialCondition&quot;: &quot;periodic-source&quot;,
+    &quot;seed&quot;: &quot;bz-v2-periodic-source-0.05-0.002-2.4&quot;
+  },
+  &quot;duration&quot;: 14,
+  &quot;observationStart&quot;: 10,
+  &quot;sourcePeriod&quot;: 1.5,
+  &quot;periodSteps&quot;: 3000,
+  &quot;sourceFirings&quot;: 10,
+  &quot;sourceFiringsInWindow&quot;: 3,
+  &quot;sourceEndTime&quot;: 60,
+  &quot;sourceEndStep&quot;: 120000,
+  &quot;minimumFrontSpacing&quot;: 2.8125,
+  &quot;sourceExclusionRadius&quot;: 5.8125,
+  &quot;radialBinWidth&quot;: 0.8625,
+  &quot;finite&quot;: true,
+  &quot;maximumSignificantPeaks&quot;: 3,
+  &quot;simultaneousThreePeakFraction&quot;: 0.6049382716049383,
+  &quot;maximumOuterRadius&quot;: 52.181250000000006,
+  &quot;wallMargin&quot;: 3.018749999999997,
+  &quot;minimumObservedSpacing&quot;: 9.4875,
+  &quot;meanWaveSpeed&quot;: 5.0215869078105,
+  &quot;outwardTrackCount&quot;: 3,
+  &quot;wallReflectionTracks&quot;: 0,
+  &quot;threeFrontWindowStart&quot;: 10.450000000000001,
+  &quot;threeFrontWindowEnd&quot;: 14,
+  &quot;pass&quot;: true,
+  &quot;durationMs&quot;: 28334,
+  &quot;peakTracks&quot;: [
+    {
+      &quot;time&quot;: 10.5,
+      &quot;radii&quot;: [
+        6.46875,
+        18.54375,
+        40.96875
+      ]
+    },
+    {
+      &quot;time&quot;: 10.55,
+      &quot;radii&quot;: [
+        6.46875,
+        18.54375,
+        41.831250000000004
+      ]
+    },
+    {
+      &quot;time&quot;: 10.6,
+      &quot;radii&quot;: [
+        6.46875,
+        19.40625,
+        41.831250000000004
+      ]
+    },
+    {
+      &quot;time&quot;: 10.65,
+      &quot;radii&quot;: [
+        6.46875,
+        19.40625,
+        41.831250000000004
+      ]
+    },
+    {
+      &quot;time&quot;: 10.700000000000001,
+      &quot;radii&quot;: [
+        6.46875,
+        19.40625,
+        42.69375
+      ]
+    },
+    {
+      &quot;time&quot;: 10.75,
+      &quot;radii&quot;: [
+        6.46875,
+        20.26875,
+        42.69375
+      ]
+    },
+    {
+      &quot;time&quot;: 10.8,
+      &quot;radii&quot;: [
+        7.331250000000001,
+        20.26875,
+        43.556250000000006
+      ]
+    },
+    {
+      &quot;time&quot;: 10.85,
+      &quot;radii&quot;: [
+        7.331250000000001,
+        20.26875,
+        43.556250000000006
+      ]
+    },
+    {
+      &quot;time&quot;: 10.9,
+      &quot;radii&quot;: [
+        7.331250000000001,
+        20.26875,
+        43.556250000000006
+      ]
+    },
+    {
+      &quot;time&quot;: 10.950000000000001,
+      &quot;radii&quot;: [
+        7.331250000000001,
+        21.13125,
+        44.41875
+      ]
+    },
+    {
+      &quot;time&quot;: 11,
+      &quot;radii&quot;: [
+        7.331250000000001,
+        21.13125,
+        44.41875
+      ]
+    },
+    {
+      &quot;time&quot;: 14,
+      &quot;radii&quot;: [
+        7.331250000000001,
+        18.54375,
+        37.518750000000004
+      ]
+    }
+  ],
+  &quot;trackSummaries&quot;: [
+    {
+      &quot;samples&quot;: 81,
+      &quot;startTime&quot;: 10,
+      &quot;endTime&quot;: 14,
+      &quot;startRadius&quot;: 15.95625,
+      &quot;endRadius&quot;: 37.518750000000004,
+      &quot;netDisplacement&quot;: 21.562500000000004,
+      &quot;meanSpeed&quot;: 5.390625000000001,
+      &quot;outwardFraction&quot;: 1,
+      &quot;meanProminence&quot;: 0.4870450326526853
+    },
+    {
+      &quot;samples&quot;: 45,
+      &quot;startTime&quot;: 10,
+      &quot;endTime&quot;: 12.200000000000001,
+      &quot;startRadius&quot;: 38.38125,
+      &quot;endRadius&quot;: 52.181250000000006,
+      &quot;netDisplacement&quot;: 13.800000000000004,
+      &quot;meanSpeed&quot;: 6.272727272727272,
+      &quot;outwardFraction&quot;: 1,
+      &quot;meanProminence&quot;: 0.5282486978853798
+    },
+    {
+      &quot;samples&quot;: 72,
+      &quot;startTime&quot;: 10.450000000000001,
+      &quot;endTime&quot;: 14,
+      &quot;startRadius&quot;: 6.46875,
+      &quot;endRadius&quot;: 18.54375,
+      &quot;netDisplacement&quot;: 12.075,
+      &quot;meanSpeed&quot;: 3.4014084507042264,
+      &quot;outwardFraction&quot;: 1,
+      &quot;meanProminence&quot;: 0.30211618387431993
+    }
+  ]
+}</pre></td></tr></tbody></table>

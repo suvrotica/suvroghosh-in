@@ -14,6 +14,13 @@ export type BZMaskPreset = 'none' | 'central-obstacle' | 'seeded-obstacles';
 export type BZInitialCondition =
 	| 'uniform-equilibrium'
 	| 'uniform-clock'
+	| 'central-pulse'
+	| 'periodic-source'
+	| 'plane-wave'
+	| 'cut-plane-wave'
+	| 'phase-quadrants'
+	| 'spiral-seed'
+	| 'multi-spiral-seed'
 	| 'target-wave'
 	| 'broken-front'
 	| 'paired-fronts'
@@ -219,6 +226,13 @@ export interface PacemakerIntervention extends InterventionBase {
 	readonly center: readonly [number, number];
 	readonly radius: number;
 	readonly amount: number;
+	/** Legacy/default pulses add `amount` to u. V2 state-reset sources explicitly
+	 * impose a calibrated local excited state so the firing schedule is not
+	 * silently defeated by the source patch's refractory history. */
+	readonly sourceMode?: 'additive' | 'state-reset';
+	readonly targetU?: number;
+	readonly targetV?: number;
+	readonly strength?: number;
 	readonly periodSteps: number;
 	readonly endStep: number;
 }

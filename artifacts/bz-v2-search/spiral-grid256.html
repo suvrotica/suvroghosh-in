@@ -1,0 +1,168 @@
+<!doctype html><meta charset="utf-8"><title>BZ V2 calibration gallery</title><style>body{font:14px system-ui;background:#101417;color:#e9ece8;margin:2rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid #394349;padding:.6rem;vertical-align:top}pre{max-height:18rem;overflow:auto;white-space:pre-wrap}code{color:#efb47e}</style><h1>BZ V2 internal calibration gallery</h1><p>Objective numerical summaries; never a visual-only classifier.</p><table><thead><tr><th>Hero</th><th>Parameters</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr><td>persistent-single-spiral</td><td><code>{&quot;epsilon&quot;:0.05,&quot;q&quot;:0.002,&quot;f&quot;:1.4}</code></td><td>PASS</td><td><pre>{
+  &quot;hero&quot;: &quot;persistent-single-spiral&quot;,
+  &quot;parameters&quot;: {
+    &quot;epsilon&quot;: 0.05,
+    &quot;q&quot;: 0.002,
+    &quot;f&quot;: 1.4
+  },
+  &quot;setup&quot;: {
+    &quot;model&quot;: &quot;oregonator&quot;,
+    &quot;modelVersion&quot;: &quot;tyson-fife-two-variable-v1&quot;,
+    &quot;equationsId&quot;: &quot;tyson-fife-oregonator-2v-dimensionless&quot;,
+    &quot;parameters&quot;: {
+      &quot;epsilon&quot;: 0.05,
+      &quot;q&quot;: 0.002,
+      &quot;f&quot;: 1.4
+    },
+    &quot;diffusionU&quot;: 1,
+    &quot;diffusionV&quot;: 0,
+    &quot;timestep&quot;: 0.0005,
+    &quot;gridSize&quot;: 256,
+    &quot;domainSize&quot;: 32,
+    &quot;activeRadius&quot;: 14.72,
+    &quot;boundary&quot;: &quot;no-flux&quot;,
+    &quot;geometry&quot;: &quot;circular-dish&quot;,
+    &quot;maskPreset&quot;: &quot;none&quot;,
+    &quot;initialCondition&quot;: &quot;plane-wave&quot;,
+    &quot;seed&quot;: &quot;bz-v2-plane-wave-0.05-0.002-1.4&quot;
+  },
+  &quot;preparation&quot;: [
+    {
+      &quot;schemaVersion&quot;: 1,
+      &quot;sequence&quot;: 0,
+      &quot;step&quot;: 900,
+      &quot;kind&quot;: &quot;cut&quot;,
+      &quot;from&quot;: [
+        0,
+        0.75
+      ],
+      &quot;to&quot;: [
+        1,
+        0.75
+      ],
+      &quot;width&quot;: 0.25,
+      &quot;targetU&quot;: 0.011605268043856337,
+      &quot;targetV&quot;: 0.011605268043856337,
+      &quot;strength&quot;: 1
+    }
+  ],
+  &quot;observationStart&quot;: 2,
+  &quot;orientationAnnulus&quot;: {
+    &quot;radius&quot;: 3.5,
+    &quot;width&quot;: 1.5
+  },
+  &quot;duration&quot;: 14,
+  &quot;finite&quot;: true,
+  &quot;rotations&quot;: 4.210468715488337,
+  &quot;cumulativeAngle&quot;: 26.455155169495622,
+  &quot;rotationPeriods&quot;: [
+    2.7272607676754763,
+    2.7295352197832585,
+    2.75476372968334
+  ],
+  &quot;rotationPeriodMean&quot;: 2.7371865723806916,
+  &quot;rotationPeriodCv&quot;: 0.004553421293048651,
+  &quot;maximumOrientationIncrement&quot;: 0.5837261365280995,
+  &quot;detectedFraction&quot;: 1,
+  &quot;exactlyOneCoreFraction&quot;: 1,
+  &quot;centralFraction&quot;: 1,
+  &quot;minimumWallDistance&quot;: 8.161370188827547,
+  &quot;maximumCoreRadius&quot;: 6.558629811172454,
+  &quot;firstStepWithCore&quot;: 4000,
+  &quot;lastStepWithCore&quot;: 28000,
+  &quot;minimumCoreCount&quot;: 1,
+  &quot;maximumCoreCount&quot;: 1,
+  &quot;trackSegments&quot;: [
+    {
+      &quot;samples&quot;: 241,
+      &quot;startStep&quot;: 4000,
+      &quot;endStep&quot;: 28000,
+      &quot;rotations&quot;: 4.210468715488337
+    }
+  ],
+  &quot;pass&quot;: true,
+  &quot;durationMs&quot;: 93881,
+  &quot;samples&quot;: [
+    {
+      &quot;x&quot;: -6.5,
+      &quot;y&quot;: -0.75,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179587,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4000,
+      &quot;modelTime&quot;: 2
+    },
+    {
+      &quot;x&quot;: -6.500000000000001,
+      &quot;y&quot;: -0.75,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4100,
+      &quot;modelTime&quot;: 2.05
+    },
+    {
+      &quot;x&quot;: -6.500000000000001,
+      &quot;y&quot;: -0.75,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4200,
+      &quot;modelTime&quot;: 2.1
+    },
+    {
+      &quot;x&quot;: -6.500000000000001,
+      &quot;y&quot;: -0.875,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4300,
+      &quot;modelTime&quot;: 2.15
+    },
+    {
+      &quot;x&quot;: -6.500000000000001,
+      &quot;y&quot;: -0.875,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4400,
+      &quot;modelTime&quot;: 2.2
+    },
+    {
+      &quot;x&quot;: -6.375,
+      &quot;y&quot;: -0.875,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4500,
+      &quot;modelTime&quot;: 2.25
+    },
+    {
+      &quot;x&quot;: -6.375,
+      &quot;y&quot;: -0.875,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4600,
+      &quot;modelTime&quot;: 2.3000000000000003
+    },
+    {
+      &quot;x&quot;: -6.375,
+      &quot;y&quot;: -1,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 4700,
+      &quot;modelTime&quot;: 2.35
+    },
+    {
+      &quot;x&quot;: -4.375,
+      &quot;y&quot;: 0.875,
+      &quot;charge&quot;: -1,
+      &quot;winding&quot;: -6.283185307179586,
+      &quot;plaquettes&quot;: 1,
+      &quot;step&quot;: 28000,
+      &quot;modelTime&quot;: 14
+    }
+  ]
+}</pre></td></tr></tbody></table>

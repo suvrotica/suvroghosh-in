@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "kind": "bz-v2-checkpoint-posters",
+  "generatedAt": "2026-08-08T12:24:26.141Z",
+  "generatedBy": "scripts/render-bz-v2-checkpoint-posters.mjs",
+  "generationCommand": "node scripts/render-bz-v2-checkpoint-posters.mjs",
+  "engineVersion": "bz-heun-five-point-v2",
+  "displayVersion": "bz-display-linear-light-v2",
+  "assetDirectory": "/images/visualizations/belousov-zhabotinsky/v2",
+  "assets": [
+    {
+      "id": "bz-v2-classic-target-rings-checkpoint-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-checkpoint-poster.png",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-checkpoint-poster.metadata.json",
+      "width": 1200,
+      "height": 1200,
+      "stateGrid": 256,
+      "presetId": "classic-target-rings",
+      "checkpointId": "classic-target-rings-256-v2",
+      "modelStep": 28000,
+      "modelTime": 14,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "774fc9f9dd610e3125a0212d7c98417737e531c2568038a1cc8480daebe8e58f",
+      "metadataSha256": "a7cb207ef129d72ff928f75f758c8bfe077935c44bb5b4a11535eeab0ebe2214"
+    },
+    {
+      "id": "bz-v2-persistent-single-spiral-checkpoint-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-checkpoint-poster.png",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-checkpoint-poster.metadata.json",
+      "width": 1200,
+      "height": 1200,
+      "stateGrid": 256,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": "persistent-single-spiral-256-v2",
+      "modelStep": 28000,
+      "modelTime": 14,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "44ef1f4ea36a01f0110b328aa048618022a5ab01b2962b956484193e1aa63770",
+      "metadataSha256": "5002fe94eccfce71d879cba72959fdd6e8b969c6cb1f9116a6452cf5e1fcbd9c"
+    },
+    {
+      "id": "bz-v2-spiral-garden-checkpoint-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.png",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.metadata.json",
+      "width": 1200,
+      "height": 1200,
+      "stateGrid": 256,
+      "presetId": "spiral-garden",
+      "checkpointId": "spiral-garden-256-v2",
+      "modelStep": 24000,
+      "modelTime": 12,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "91186a265cb04423306fe943291edca0eea1cfcc05f5fcd7742422539c58cfd0",
+      "metadataSha256": "33acd1f7b1e61ec47018a467f639d32516ab70896042c7dec64eb608b316e33f"
+    }
+  ]
+}

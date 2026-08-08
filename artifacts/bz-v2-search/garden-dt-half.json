@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=garden --grid=64 --domain=32 --duration=12 --timestep=0.00025 --epsilon=0.05 --q=0.002 --f=1.4 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --output-name=garden-dt-half --write",
+  "stage": "coarse-search",
+  "grid": 64,
+  "phaseCoordinate": {
+    "centreU": 0.011605268043856337,
+    "centreV": 0.011605268043856337,
+    "scaleU": 0.42,
+    "scaleV": 0.12
+  },
+  "literatureGuidedBox": {
+    "epsilon": [
+      0.005,
+      0.08
+    ],
+    "q": [
+      0.0005,
+      0.004
+    ],
+    "f": [
+      1.2,
+      2.6
+    ],
+    "diffusionU": 1,
+    "diffusionV": 0,
+    "domainSize": [
+      16,
+      40
+    ]
+  },
+  "pruning": "Abort on the first non-finite or negative corrector value; retain only finite regimes with objective radial or phase evidence.",
+  "workerPolicy": "At most two independent candidates; this command defaults to one to preserve an interactive workstation.",
+  "durationMs": 11698,
+  "results": [
+    {
+      "hero": "spiral-garden",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 1.4
+      },
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.00025,
+        "gridSize": 64,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "multi-spiral-seed",
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+      },
+      "observationStart": 2,
+      "duration": 12,
+      "finite": true,
+      "minimumCoreCount": 3,
+      "maximumCoreCount": 3,
+      "persistentFraction": 1,
+      "persistentTrackCount": 3,
+      "characteristicPeriodReference": 2.75,
+      "minimumSurvivalTime": 10,
+      "measuredRotations": [
+        3.6411642653563665,
+        3.62628755300416,
+        3.5884993476538867
+      ],
+      "minimumMeasuredRotations": 3.5884993476538867,
+      "minimumSeparation": 5.408326913195984,
+      "minimumWallDistance": 7.153627024789222,
+      "trackSummaries": [
+        {
+          "charge": 1,
+          "samples": 101,
+          "start": 2,
+          "end": 12,
+          "rotations": 3.6411642653563665
+        },
+        {
+          "charge": 1,
+          "samples": 101,
+          "start": 2,
+          "end": 12,
+          "rotations": 3.62628755300416
+        },
+        {
+          "charge": 1,
+          "samples": 101,
+          "start": 2,
+          "end": 12,
+          "rotations": 3.5884993476538867
+        }
+      ],
+      "pass": true,
+      "durationMs": 11691
+    }
+  ]
+}

@@ -32,9 +32,9 @@ export const visualizationSummaries = {
 		description:
 			'An interactive WebGL laboratory for chemical clocks, target waves, spiral cores, and the crucial difference between BZ waves and Turing patterns.',
 		subjects: ['Chemistry', 'Mathematics', 'Scientific Computing'],
-		poster: '/images/belousov-zhabotinsky-laboratory.png',
+		poster: '/images/visualizations/belousov-zhabotinsky/v2/bz-v2-visualization-card.png',
 		posterAlt:
-			'A solver-generated circular Belousov–Zhabotinsky field with a cyan-violet rotating spiral beside a stationary gold Schnakenberg pattern and compact scientific readouts',
+			'A luminous red and violet solver-generated Oregonator spiral curling through a circular dish beside the words Chemical waves with receipts',
 		href: '/blog/visualizations/belousov-zhabotinsky-laboratory',
 		status: 'published'
 	}

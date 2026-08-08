@@ -1,3 +1,6 @@
+import bloomBlurFragmentSource from './bloom-blur.frag?raw';
+import bloomCompositeFragmentSource from './bloom-composite.frag?raw';
+import bloomExtractFragmentSource from './bloom-extract.frag?raw';
 import displayFragmentSource from './display.frag?raw';
 import fullscreenVertexSource from './fullscreen.vert?raw';
 import interventionFragmentSource from './intervention.frag?raw';
@@ -8,6 +11,9 @@ import schnakenbergCorrectorFragmentSource from './schnakenberg-corrector.frag?r
 import schnakenbergPredictorFragmentSource from './schnakenberg-predictor.frag?raw';
 
 export {
+	bloomBlurFragmentSource,
+	bloomCompositeFragmentSource,
+	bloomExtractFragmentSource,
 	displayFragmentSource,
 	fullscreenVertexSource,
 	interventionFragmentSource,

@@ -1,0 +1,2963 @@
+{
+  "schemaVersion": 2,
+  "engineVersion": "bz-heun-five-point-v2",
+  "displayVersion": "bz-display-linear-light-v2",
+  "generatedAt": "2026-08-08T12:24:26.141Z",
+  "generatedBy": "scripts/generate-bz-v2-manifest.mjs",
+  "literatureBasis": [
+    {
+      "label": "Tyson and Fife (1980), Oregonator spiral-regime search guidance",
+      "url": "https://doi.org/10.1063/1.440418"
+    },
+    {
+      "label": "Jahnke, Skaggs and Winfree (1989), Oregonator spiral-regime search guidance",
+      "url": "https://doi.org/10.1021/j100339a047"
+    },
+    {
+      "label": "Mahanta, Das and Dutta (2018), Oregonator spiral-regime search guidance",
+      "url": "https://doi.org/10.1103/PhysRevE.97.022206"
+    }
+  ],
+  "numericalMethod": "Fixed-timestep explicit Heun integration of the declared two-variable Oregonator with fail-fast finite and negativity checks.",
+  "boundaryMethod": "Five-point Laplacian with explicit circular-domain and active-cell masks; missing neighbours use the declared no-flux rule.",
+  "checksumAlgorithms": {
+    "checkpointFile": "sha256-bzcp-complete-v1",
+    "cpuReferenceState": "sha256-f64le-state-v1",
+    "browserCheckpointState": "sha256-f32le-state-v1",
+    "canonicalDocuments": "sha256-canonical-json-v1",
+    "assets": "sha256"
+  },
+  "search": {
+    "status": "complete",
+    "stage": "publication-refinement",
+    "finalGrid": 256,
+    "inputs": [
+      {
+        "path": "artifacts/bz-v2-search/garden-dt-half.json",
+        "sha256": "1e9938a7862f80c47df9b986e7ce40a6d45fb3e8d01a1d64e4d2ec766d02ccd2"
+      },
+      {
+        "path": "artifacts/bz-v2-search/garden-grid256.json",
+        "sha256": "8fc6a48156c0241eb17376518ce04dd6173e2217cabae5c29a8153230aa25165"
+      },
+      {
+        "path": "artifacts/bz-v2-search/garden-grid96.json",
+        "sha256": "d666d32b0c811ad50568429c51fd6aceeb09c0d87f9601150aa825c853c8b09c"
+      },
+      {
+        "path": "artifacts/bz-v2-search/spiral-dt-half.json",
+        "sha256": "ba30b8e452fd9f88d04a2682f4569563333bbe7302cfe545eea070d5aed9d083"
+      },
+      {
+        "path": "artifacts/bz-v2-search/spiral-grid128.json",
+        "sha256": "1b608bb2feb380c1d67510c51257feca073fea160995a973fad39c9f957f2849"
+      },
+      {
+        "path": "artifacts/bz-v2-search/spiral-grid256.json",
+        "sha256": "1c80cd9ab6dff74eff193b48a1e0ea2d1d8e19bd7287903696946790c0a3d66e"
+      },
+      {
+        "path": "artifacts/bz-v2-search/target-dt-half.json",
+        "sha256": "2a5b5747bc57ac15291e945f9ed6ed2f5ee18ea04a8b525b161ea52f11a7d1d9"
+      },
+      {
+        "path": "artifacts/bz-v2-search/target-grid128.json",
+        "sha256": "8816ef4bc4966ceae02ad218906c19d41f645b5d68f67a3943e036ca5952df66"
+      },
+      {
+        "path": "artifacts/bz-v2-search/target-grid256.json",
+        "sha256": "0f539c7b0ba9e1b2bacfa1f09c071e818f6c41d7b366716cad910a9bd2c8e4ce"
+      }
+    ],
+    "assetIndex": {
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-assets.json",
+      "sha256": "190b69012f4919fe45cc08210f7ca6276f5fb32543e5b4934bd919071bca454a"
+    },
+    "checkpointPosterIndex": {
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-checkpoint-posters.json",
+      "sha256": "55ea09627f7c15d22e1fd637397fed51827fe4b56e5f1bcefec9da3662b53de8"
+    },
+    "gpuParityEvidence": {
+      "path": "/data/bz-v2/gpu-parity.json",
+      "sha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20"
+    },
+    "performanceEvidence": {
+      "path": "/data/bz-v2/performance.json",
+      "status": "not-supplied"
+    },
+    "validationBoundary": "Float64 CPU search, convergence and authenticated checkpoint provenance are the 256² morphology evidence. The available 64² browser parity validates fixed-step CPU/GPU integration, declared scheduling and display transforms only; it does not remeasure mature fronts, cores or rotations on the GPU. Stronger optional mature-checkpoint parity may be recorded separately. Display independence, matching publication metadata and exact checkpoint-poster provenance must also pass."
+  },
+  "displayProfiles": [
+    {
+      "id": "oregonator-luminous-publication-v2",
+      "title": "Oregonator luminous publication profile",
+      "version": "bz-display-linear-light-v2",
+      "style": "luminous-composite",
+      "palette": "ferroin",
+      "defaultView": "dish",
+      "rangeMode": "fixed",
+      "ranges": {
+        "u": {
+          "minimum": 0,
+          "maximum": 0.82,
+          "units": "dimensionless"
+        },
+        "v": {
+          "minimum": 0,
+          "maximum": 0.3,
+          "units": "dimensionless"
+        },
+        "reaction-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "diffusion-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "net-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "phase": {
+          "minimum": -3.141592653589793,
+          "maximum": 3.141592653589793,
+          "units": "radians"
+        },
+        "front": {
+          "minimum": 0,
+          "maximum": 5,
+          "units": "dimensionless"
+        },
+        "refractory": {
+          "minimum": -0.1,
+          "maximum": 2.5,
+          "units": "dimensionless"
+        },
+        "difference-from-mean": {
+          "minimum": -0.3,
+          "maximum": 0.7,
+          "units": "dimensionless"
+        }
+      },
+      "phase": {
+        "centreU": 0.1,
+        "centreV": 0.1,
+        "scaleU": 0.42,
+        "scaleV": 0.12
+      },
+      "exposure": 1.25,
+      "bloom": 0.12,
+      "highlight": 0.58,
+      "saturation": 1.06,
+      "interpolation": "mask-aware-manual-bilinear",
+      "toneMap": "aces-fitted",
+      "outputTransfer": "srgb",
+      "disclosure": "Luminous phase and wavefront composite in linear light with fixed ranges; restrained bloom, tone mapping, and glass cues are display only.",
+      "frontScale": 0.2,
+      "contrast": 1.04,
+      "gamma": 1,
+      "bloomThreshold": 0.52,
+      "bloomRadius": 1.7,
+      "ferroinMix": {
+        "recoveryWeight": 0.7,
+        "activatorLuminanceWeight": 0.34,
+        "gradientHighlightWeight": 0.5
+      },
+      "luminousMix": {
+        "phaseWeight": 0.78,
+        "recoveryWeight": 0.22,
+        "frontWeight": 0.44
+      }
+    },
+    {
+      "id": "oregonator-scientific-publication-v2",
+      "title": "Oregonator scientific publication profile",
+      "version": "bz-display-linear-light-v2",
+      "style": "scientific",
+      "palette": "scientific",
+      "defaultView": "u",
+      "rangeMode": "fixed",
+      "ranges": {
+        "u": {
+          "minimum": 0,
+          "maximum": 0.82,
+          "units": "dimensionless"
+        },
+        "v": {
+          "minimum": 0,
+          "maximum": 0.3,
+          "units": "dimensionless"
+        },
+        "reaction-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "diffusion-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "net-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "phase": {
+          "minimum": -3.141592653589793,
+          "maximum": 3.141592653589793,
+          "units": "radians"
+        },
+        "front": {
+          "minimum": 0,
+          "maximum": 5,
+          "units": "dimensionless"
+        },
+        "refractory": {
+          "minimum": -0.1,
+          "maximum": 2.5,
+          "units": "dimensionless"
+        },
+        "difference-from-mean": {
+          "minimum": -0.3,
+          "maximum": 0.7,
+          "units": "dimensionless"
+        }
+      },
+      "phase": {
+        "centreU": 0.1,
+        "centreV": 0.1,
+        "scaleU": 0.42,
+        "scaleV": 0.12
+      },
+      "exposure": 1,
+      "bloom": 0,
+      "highlight": 0,
+      "saturation": 1,
+      "interpolation": "mask-aware-manual-bilinear",
+      "toneMap": "aces-fitted",
+      "outputTransfer": "srgb",
+      "disclosure": "Raw numerical field on a fixed scientific range; no bloom or chemical-colour claim.",
+      "frontScale": 0.2,
+      "contrast": 1,
+      "gamma": 1,
+      "bloomThreshold": 0.52,
+      "bloomRadius": 1.7,
+      "ferroinMix": {
+        "recoveryWeight": 0.7,
+        "activatorLuminanceWeight": 0.34,
+        "gradientHighlightWeight": 0.5
+      },
+      "luminousMix": {
+        "phaseWeight": 0.78,
+        "recoveryWeight": 0.22,
+        "frontWeight": 0.44
+      }
+    },
+    {
+      "id": "schnakenberg-scientific-publication-v2",
+      "title": "Schnakenberg scientific publication profile",
+      "version": "bz-display-linear-light-v2",
+      "style": "scientific",
+      "palette": "scientific",
+      "defaultView": "u",
+      "rangeMode": "fixed",
+      "ranges": {
+        "u": {
+          "minimum": 0.7,
+          "maximum": 1.32,
+          "units": "dimensionless"
+        },
+        "v": {
+          "minimum": 0.75,
+          "maximum": 1.05,
+          "units": "dimensionless"
+        },
+        "reaction-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "diffusion-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "net-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "phase": {
+          "minimum": -3.141592653589793,
+          "maximum": 3.141592653589793,
+          "units": "radians"
+        },
+        "front": {
+          "minimum": 0,
+          "maximum": 5,
+          "units": "dimensionless"
+        },
+        "refractory": {
+          "minimum": -0.1,
+          "maximum": 2.5,
+          "units": "dimensionless"
+        },
+        "difference-from-mean": {
+          "minimum": -0.32,
+          "maximum": 0.32,
+          "units": "dimensionless"
+        }
+      },
+      "phase": {
+        "centreU": 1,
+        "centreV": 0.9,
+        "scaleU": 0.3,
+        "scaleV": 0.15
+      },
+      "exposure": 1,
+      "bloom": 0,
+      "highlight": 0,
+      "saturation": 1,
+      "interpolation": "mask-aware-manual-bilinear",
+      "toneMap": "aces-fitted",
+      "outputTransfer": "srgb",
+      "disclosure": "Raw Schnakenberg u field on a fixed scientific range; the linearly verified diffusion-driven comparator remains distinct from travelling BZ waves.",
+      "frontScale": 0.2,
+      "contrast": 1,
+      "gamma": 1,
+      "bloomThreshold": 0.52,
+      "bloomRadius": 1.7,
+      "ferroinMix": {
+        "recoveryWeight": 0.7,
+        "activatorLuminanceWeight": 0.34,
+        "gradientHighlightWeight": 0.5
+      },
+      "luminousMix": {
+        "phaseWeight": 0.78,
+        "recoveryWeight": 0.22,
+        "frontWeight": 0.44
+      }
+    }
+  ],
+  "presets": [
+    {
+      "schemaVersion": 2,
+      "id": "classic-target-rings",
+      "title": "Classic Target Rings",
+      "shortDescription": "A declared periodic central state-reset source produced 3 simultaneous outward fronts at 256²; mean measured radial speed 4.866.",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 2.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 120,
+        "activeRadius": 55.2,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "periodic-source",
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+      },
+      "initialCondition": "periodic-source",
+      "initialInterventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 0,
+          "kind": "pacemaker",
+          "center": [
+            0.5,
+            0.5
+          ],
+          "radius": 0.025,
+          "amount": 0,
+          "sourceMode": "state-reset",
+          "targetU": 0.8,
+          "targetV": 0.003625162337637433,
+          "strength": 1,
+          "periodSteps": 3000,
+          "endStep": 120000
+        }
+      ],
+      "sourceSemantics": "declared-periodic-external-source",
+      "warmupPolicy": {
+        "kind": "checkpoint",
+        "checkpointId": "classic-target-rings-256-v2",
+        "modelTime": 14,
+        "genesisAvailable": true
+      },
+      "optionalCheckpoint": {
+        "id": "classic-target-rings-256-v2",
+        "version": 1,
+        "path": "/data/bz-v2/checkpoints/classic-target-rings-256-v2.bzcp",
+        "encoding": "bzcp-f32le-v1",
+        "losslessForStoredRepresentation": true,
+        "width": 256,
+        "height": 256,
+        "modelStep": 28000,
+        "modelTime": 14,
+        "byteLength": 657682,
+        "sha256": "5fa06f09cc45517ce8f3239f28af5d731452eeb3a054ce04e99e696713e4e74d",
+        "fieldSha256F64Reference": "85f3a29dc1d78405302cf05f78555303e3188832f5c0887f26beac21f78136ad",
+        "setupChecksum": "41fb4a434d1036da594fe669ba58aa360ba446d1e73c613439b6bf4258406386",
+        "interventionLogChecksum": "ec33920840b64c0ec23a3c787bc2350d66d7078f7778036980866a28d0f3b2f1",
+        "engineVersion": "bz-heun-five-point-v2",
+        "generatedBy": "scripts/search-bz-regimes.ts",
+        "generatedAt": "2026-08-08T00:00:00.000Z",
+        "sourcePresetId": "classic-target-rings",
+        "setup": {
+          "model": "oregonator",
+          "modelVersion": "tyson-fife-two-variable-v1",
+          "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+          "parameters": {
+            "epsilon": 0.05,
+            "q": 0.002,
+            "f": 2.4
+          },
+          "diffusionU": 1,
+          "diffusionV": 0,
+          "timestep": 0.0005,
+          "gridSize": 256,
+          "domainSize": 120,
+          "activeRadius": 55.2,
+          "boundary": "no-flux",
+          "geometry": "circular-dish",
+          "maskPreset": "none",
+          "initialCondition": "periodic-source",
+          "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+        },
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4",
+        "interventions": [
+          {
+            "schemaVersion": 1,
+            "sequence": 0,
+            "step": 0,
+            "kind": "pacemaker",
+            "center": [
+              0.5,
+              0.5
+            ],
+            "radius": 0.025,
+            "amount": 0,
+            "sourceMode": "state-reset",
+            "targetU": 0.8,
+            "targetV": 0.003625162337637433,
+            "strength": 1,
+            "periodSteps": 3000,
+            "endStep": 120000
+          }
+        ],
+        "browserStateSha256": "a3fc041ba1607892d0c23fb844f35ccfc8b7a1c3c16fb53dc1261237363a5a56",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "validationRecordId": "classic-target-rings-validation-v2"
+      },
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "calibrationRecordId": "classic-target-rings-validation-v2",
+      "validationStatus": "validated",
+      "validationSummary": {
+        "status": "validated",
+        "headline": "Every deterministic Float64 morphology search, convergence, authenticated checkpoint, explicitly scoped implementation-and-display-64 browser parity, display-independence, publication-metadata and exact checkpoint-poster gate passed.",
+        "passedCriteria": [
+          "finite-state",
+          "three-outward-fronts"
+        ],
+        "failedCriteria": [],
+        "measurements": {
+          "grid": 256,
+          "modelTime": 14,
+          "maximumSignificantPeaks": 3,
+          "simultaneousThreePeakFraction": 0.9629629629629629,
+          "meanWaveSpeed": 4.86566105769231,
+          "outwardTrackCount": 4,
+          "wallReflectionTracks": 0
+        }
+      },
+      "observationWindow": {
+        "startStep": 20000,
+        "endStep": 28000,
+        "startTime": 10,
+        "endTime": 14,
+        "sampleEverySteps": 100
+      },
+      "reproducibility": {
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4",
+        "engineVersion": "bz-heun-five-point-v2",
+        "setupChecksum": "41fb4a434d1036da594fe669ba58aa360ba446d1e73c613439b6bf4258406386",
+        "interventionLogChecksum": "ec33920840b64c0ec23a3c787bc2350d66d7078f7778036980866a28d0f3b2f1",
+        "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=target --grid=256 --domain=120 --duration=14 --observation-start=10 --epsilon=0.05 --q=0.002 --f=2.4 --source-period=1.5 --source-radius=0.025 --source-amount=0 --source-end=60 --output-name=target-grid256 --emit-checkpoint --write"
+      },
+      "articleClaimBoundary": "Classic Target Rings morphology is validated by the recorded 256² Float64 CPU search, convergence and authenticated checkpoint provenance. GPU evidence separately verifies only the browser integration and display-transform scope stated in its parity record; it is not morphology evidence. The claim applies only to the exact setup, preparation, timestep, observation window and publication metadata recorded here.",
+      "hero": true
+    },
+    {
+      "schemaVersion": 2,
+      "id": "persistent-single-spiral",
+      "title": "Persistent Single Spiral",
+      "shortDescription": "One measured phase singularity persisted for 4.21 rotations at 256² after the declared plane-wave cut.",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "initialCondition": "plane-wave",
+      "initialInterventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 900,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "sourceSemantics": "finite-initial-perturbation",
+      "warmupPolicy": {
+        "kind": "checkpoint",
+        "checkpointId": "persistent-single-spiral-256-v2",
+        "modelTime": 14,
+        "genesisAvailable": true
+      },
+      "optionalCheckpoint": {
+        "id": "persistent-single-spiral-256-v2",
+        "version": 1,
+        "path": "/data/bz-v2/checkpoints/persistent-single-spiral-256-v2.bzcp",
+        "encoding": "bzcp-f32le-v1",
+        "losslessForStoredRepresentation": true,
+        "width": 256,
+        "height": 256,
+        "modelStep": 28000,
+        "modelTime": 14,
+        "byteLength": 657627,
+        "sha256": "27f1e11297739b2a8df3aa746b5d6dda507d93cd6414b534358e42faee24b8fe",
+        "fieldSha256F64Reference": "c6dfd2c52921651caf072d44fb22c4bb3a8b23b13630bef3a77a073018bfd353",
+        "setupChecksum": "425441254c918f65218d2a8e430155066502d5d5348e31eb10ce0cd83cd2f2e0",
+        "interventionLogChecksum": "e249fb355f9a741935f5ad36616d2d73a755cbcdf02f7422f39b5bf2bf7ce25d",
+        "engineVersion": "bz-heun-five-point-v2",
+        "generatedBy": "scripts/search-bz-regimes.ts",
+        "generatedAt": "2026-08-08T00:00:00.000Z",
+        "sourcePresetId": "persistent-single-spiral",
+        "setup": {
+          "model": "oregonator",
+          "modelVersion": "tyson-fife-two-variable-v1",
+          "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+          "parameters": {
+            "epsilon": 0.05,
+            "q": 0.002,
+            "f": 1.4
+          },
+          "diffusionU": 1,
+          "diffusionV": 0,
+          "timestep": 0.0005,
+          "gridSize": 256,
+          "domainSize": 32,
+          "activeRadius": 14.72,
+          "boundary": "no-flux",
+          "geometry": "circular-dish",
+          "maskPreset": "none",
+          "initialCondition": "plane-wave",
+          "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+        },
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4",
+        "interventions": [
+          {
+            "schemaVersion": 1,
+            "sequence": 0,
+            "step": 900,
+            "kind": "cut",
+            "from": [
+              0,
+              0.75
+            ],
+            "to": [
+              1,
+              0.75
+            ],
+            "width": 0.25,
+            "targetU": 0.011605268043856337,
+            "targetV": 0.011605268043856337,
+            "strength": 1
+          }
+        ],
+        "browserStateSha256": "f74e710abef27d40334f3964b26cd348868ed93484d04b6eff8a4e50a9ba6406",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "validationRecordId": "persistent-single-spiral-validation-v2"
+      },
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "calibrationRecordId": "persistent-single-spiral-validation-v2",
+      "validationStatus": "validated",
+      "validationSummary": {
+        "status": "validated",
+        "headline": "Every deterministic Float64 morphology search, convergence, authenticated checkpoint, explicitly scoped implementation-and-display-64 browser parity, display-independence, publication-metadata and exact checkpoint-poster gate passed.",
+        "passedCriteria": [
+          "finite-state",
+          "persistent-rotating-single-core"
+        ],
+        "failedCriteria": [],
+        "measurements": {
+          "grid": 256,
+          "modelTime": 14,
+          "rotations": 4.210468715488337,
+          "rotationPeriodMean": 2.7371865723806916,
+          "rotationPeriodCv": 0.004553421293048651,
+          "exactlyOneCoreFraction": 1,
+          "minimumWallDistance": 8.161370188827547
+        }
+      },
+      "observationWindow": {
+        "startStep": 4000,
+        "endStep": 28000,
+        "startTime": 2,
+        "endTime": 14,
+        "sampleEverySteps": 100
+      },
+      "reproducibility": {
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4",
+        "engineVersion": "bz-heun-five-point-v2",
+        "setupChecksum": "425441254c918f65218d2a8e430155066502d5d5348e31eb10ce0cd83cd2f2e0",
+        "interventionLogChecksum": "e249fb355f9a741935f5ad36616d2d73a755cbcdf02f7422f39b5bf2bf7ce25d",
+        "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=spiral --seed=cut-after-plane-wave --grid=256 --domain=32 --duration=14 --epsilon=0.05 --q=0.002 --f=1.4 --cut-time=0.45 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --annulus-radius=3.5 --annulus-width=1.5 --output-name=spiral-grid256 --emit-checkpoint --write"
+      },
+      "articleClaimBoundary": "Persistent Single Spiral morphology is validated by the recorded 256² Float64 CPU search, convergence and authenticated checkpoint provenance. GPU evidence separately verifies only the browser integration and display-transform scope stated in its parity record; it is not morphology evidence. The claim applies only to the exact setup, preparation, timestep, observation window and publication metadata recorded here.",
+      "hero": true
+    },
+    {
+      "schemaVersion": 2,
+      "id": "spiral-garden",
+      "title": "Spiral Garden",
+      "shortDescription": "3 measured phase-singularity tracks persisted for at least 3.62 rotations at 256².",
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "multi-spiral-seed",
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+      },
+      "initialCondition": "multi-spiral-seed",
+      "initialInterventions": [],
+      "sourceSemantics": "finite-initial-perturbation",
+      "warmupPolicy": {
+        "kind": "checkpoint",
+        "checkpointId": "spiral-garden-256-v2",
+        "modelTime": 12,
+        "genesisAvailable": true
+      },
+      "optionalCheckpoint": {
+        "id": "spiral-garden-256-v2",
+        "version": 1,
+        "path": "/data/bz-v2/checkpoints/spiral-garden-256-v2.bzcp",
+        "encoding": "bzcp-f32le-v1",
+        "losslessForStoredRepresentation": true,
+        "width": 256,
+        "height": 256,
+        "modelStep": 24000,
+        "modelTime": 12,
+        "byteLength": 657441,
+        "sha256": "d3b3f58c9538058316c11e7f51ee2ec5c14e309514155eb784c35eb74d77a148",
+        "fieldSha256F64Reference": "81ba8eb87b0b777bb168718771cf51ee29a5220400daed213d9338084748baca",
+        "setupChecksum": "00cfcec7a8a9cce17945683c93562e2b6f41c738b5dcd0925e2ffe332d886a4c",
+        "interventionLogChecksum": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "engineVersion": "bz-heun-five-point-v2",
+        "generatedBy": "scripts/search-bz-regimes.ts",
+        "generatedAt": "2026-08-08T00:00:00.000Z",
+        "sourcePresetId": "spiral-garden",
+        "setup": {
+          "model": "oregonator",
+          "modelVersion": "tyson-fife-two-variable-v1",
+          "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+          "parameters": {
+            "epsilon": 0.05,
+            "q": 0.002,
+            "f": 1.4
+          },
+          "diffusionU": 1,
+          "diffusionV": 0,
+          "timestep": 0.0005,
+          "gridSize": 256,
+          "domainSize": 32,
+          "activeRadius": 14.72,
+          "boundary": "no-flux",
+          "geometry": "circular-dish",
+          "maskPreset": "none",
+          "initialCondition": "multi-spiral-seed",
+          "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+        },
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4",
+        "interventions": [],
+        "browserStateSha256": "a61d2e34b028b75062a47801cf29ccf957d7d59ebdd7704cd968023649b8a596",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "validationRecordId": "spiral-garden-validation-v2"
+      },
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "calibrationRecordId": "spiral-garden-validation-v2",
+      "validationStatus": "validated",
+      "validationSummary": {
+        "status": "validated",
+        "headline": "Every deterministic Float64 morphology search, convergence, authenticated checkpoint, explicitly scoped implementation-and-display-64 browser parity, display-independence, publication-metadata and exact checkpoint-poster gate passed.",
+        "passedCriteria": [
+          "finite-state",
+          "persistent-three-core-garden"
+        ],
+        "failedCriteria": [],
+        "measurements": {
+          "grid": 256,
+          "modelTime": 12,
+          "minimumCoreCount": 3,
+          "persistentTrackCount": 3,
+          "minimumMeasuredRotations": 3.620510653105014,
+          "minimumSeparation": 5.215661511256266,
+          "minimumWallDistance": 6.93279093641374
+        }
+      },
+      "observationWindow": {
+        "startStep": 4000,
+        "endStep": 24000,
+        "startTime": 2,
+        "endTime": 12,
+        "sampleEverySteps": 200
+      },
+      "reproducibility": {
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4",
+        "engineVersion": "bz-heun-five-point-v2",
+        "setupChecksum": "00cfcec7a8a9cce17945683c93562e2b6f41c738b5dcd0925e2ffe332d886a4c",
+        "interventionLogChecksum": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=garden --grid=256 --domain=32 --duration=12 --epsilon=0.05 --q=0.002 --f=1.4 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --output-name=garden-grid256 --emit-checkpoint --write"
+      },
+      "articleClaimBoundary": "Spiral Garden morphology is validated by the recorded 256² Float64 CPU search, convergence and authenticated checkpoint provenance. GPU evidence separately verifies only the browser integration and display-transform scope stated in its parity record; it is not morphology evidence. The claim applies only to the exact setup, preparation, timestep, observation window and publication metadata recorded here.",
+      "hero": true
+    }
+  ],
+  "calibrations": [
+    {
+      "id": "classic-target-rings-validation-v2",
+      "presetId": "classic-target-rings",
+      "status": "validated",
+      "statusReason": "Every deterministic Float64 morphology search, convergence, authenticated checkpoint, explicitly scoped implementation-and-display-64 browser parity, display-independence, publication-metadata and exact checkpoint-poster gate passed.",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 2.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 120,
+        "activeRadius": 55.2,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "periodic-source",
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+      },
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 0,
+          "kind": "pacemaker",
+          "center": [
+            0.5,
+            0.5
+          ],
+          "radius": 0.025,
+          "amount": 0,
+          "sourceMode": "state-reset",
+          "targetU": 0.8,
+          "targetV": 0.003625162337637433,
+          "strength": 1,
+          "periodSteps": 3000,
+          "endStep": 120000
+        }
+      ],
+      "observationWindow": {
+        "startStep": 20000,
+        "endStep": 28000,
+        "startTime": 10,
+        "endTime": 14,
+        "sampleEverySteps": 100
+      },
+      "sampledTimes": [
+        10,
+        10.05,
+        10.1,
+        10.15,
+        10.2,
+        10.25,
+        10.3,
+        10.35,
+        10.4,
+        10.45,
+        10.5,
+        10.55,
+        10.6,
+        10.65,
+        10.7,
+        10.75,
+        10.8,
+        10.85,
+        10.9,
+        10.95,
+        11,
+        11.05,
+        11.1,
+        11.15,
+        11.2,
+        11.25,
+        11.3,
+        11.35,
+        11.4,
+        11.45,
+        11.5,
+        11.55,
+        11.6,
+        11.65,
+        11.7,
+        11.75,
+        11.8,
+        11.85,
+        11.9,
+        11.95,
+        12,
+        12.05,
+        12.1,
+        12.15,
+        12.2,
+        12.25,
+        12.3,
+        12.35,
+        12.4,
+        12.45,
+        12.5,
+        12.55,
+        12.6,
+        12.65,
+        12.7,
+        12.75,
+        12.8,
+        12.85,
+        12.9,
+        12.95,
+        13,
+        13.05,
+        13.1,
+        13.15,
+        13.2,
+        13.25,
+        13.3,
+        13.35,
+        13.4,
+        13.45,
+        13.5,
+        13.55,
+        13.6,
+        13.65,
+        13.7,
+        13.75,
+        13.8,
+        13.85,
+        13.9,
+        13.95,
+        14
+      ],
+      "metrics": {
+        "objective": {
+          "hero": "classic-target-rings",
+          "parameters": {
+            "epsilon": 0.05,
+            "q": 0.002,
+            "f": 2.4
+          },
+          "setup": {
+            "model": "oregonator",
+            "modelVersion": "tyson-fife-two-variable-v1",
+            "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+            "parameters": {
+              "epsilon": 0.05,
+              "q": 0.002,
+              "f": 2.4
+            },
+            "diffusionU": 1,
+            "diffusionV": 0,
+            "timestep": 0.0005,
+            "gridSize": 256,
+            "domainSize": 120,
+            "activeRadius": 55.2,
+            "boundary": "no-flux",
+            "geometry": "circular-dish",
+            "maskPreset": "none",
+            "initialCondition": "periodic-source",
+            "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+          },
+          "duration": 14,
+          "observationStart": 10,
+          "sourcePeriod": 1.5,
+          "periodSteps": 3000,
+          "sourceFirings": 10,
+          "sourceFiringsInWindow": 3,
+          "sourceEndTime": 60,
+          "sourceEndStep": 120000,
+          "minimumFrontSpacing": 1.5,
+          "sourceExclusionRadius": 4.5,
+          "radialBinWidth": 0.43125,
+          "finite": true,
+          "maximumSignificantPeaks": 3,
+          "simultaneousThreePeakFraction": 0.9629629629629629,
+          "maximumOuterRadius": 53.690625000000004,
+          "wallMargin": 1.5093749999999986,
+          "minimumObservedSpacing": 12.506249999999998,
+          "meanWaveSpeed": 4.86566105769231,
+          "outwardTrackCount": 4,
+          "wallReflectionTracks": 0,
+          "threeFrontWindowStart": 10,
+          "threeFrontWindowEnd": 14,
+          "pass": true,
+          "durationMs": 109462,
+          "peakTracks": [
+            {
+              "time": 10.05,
+              "radii": [
+                5.821875,
+                19.190625,
+                38.596875000000004
+              ]
+            },
+            {
+              "time": 10.1,
+              "radii": [
+                5.821875,
+                19.190625,
+                39.028125
+              ]
+            },
+            {
+              "time": 10.15,
+              "radii": [
+                6.253125000000001,
+                19.621875,
+                39.459375
+              ]
+            },
+            {
+              "time": 10.200000000000001,
+              "radii": [
+                6.253125000000001,
+                19.621875,
+                39.459375
+              ]
+            },
+            {
+              "time": 10.25,
+              "radii": [
+                6.684375,
+                20.053125,
+                39.890625
+              ]
+            },
+            {
+              "time": 10.3,
+              "radii": [
+                6.684375,
+                20.053125,
+                40.321875
+              ]
+            },
+            {
+              "time": 10.35,
+              "radii": [
+                7.1156250000000005,
+                20.484375,
+                40.321875
+              ]
+            },
+            {
+              "time": 10.4,
+              "radii": [
+                7.1156250000000005,
+                20.484375,
+                40.753125000000004
+              ]
+            },
+            {
+              "time": 10.450000000000001,
+              "radii": [
+                7.546875,
+                20.915625000000002,
+                41.184375
+              ]
+            },
+            {
+              "time": 10.5,
+              "radii": [
+                7.546875,
+                20.915625000000002,
+                41.615625
+              ]
+            },
+            {
+              "time": 10.55,
+              "radii": [
+                7.978125,
+                21.346875,
+                41.615625
+              ]
+            },
+            {
+              "time": 14,
+              "radii": [
+                9.703125,
+                22.640625,
+                39.028125
+              ]
+            }
+          ],
+          "trackSummaries": [
+            {
+              "samples": 81,
+              "startTime": 10,
+              "endTime": 14,
+              "startRadius": 5.821875,
+              "endRadius": 22.640625,
+              "netDisplacement": 16.81875,
+              "meanSpeed": 4.2046875,
+              "outwardFraction": 1,
+              "meanProminence": 0.4543634754294474
+            },
+            {
+              "samples": 81,
+              "startTime": 10,
+              "endTime": 14,
+              "startRadius": 18.759375000000002,
+              "endRadius": 39.028125,
+              "netDisplacement": 20.26875,
+              "meanSpeed": 5.0671875,
+              "outwardFraction": 1,
+              "meanProminence": 0.5170264787027914
+            },
+            {
+              "samples": 51,
+              "startTime": 10,
+              "endTime": 12.5,
+              "startRadius": 38.165625,
+              "endRadius": 53.690625000000004,
+              "netDisplacement": 15.525000000000006,
+              "meanSpeed": 6.210000000000003,
+              "outwardFraction": 1,
+              "meanProminence": 0.5644070326907531
+            },
+            {
+              "samples": 27,
+              "startTime": 12.700000000000001,
+              "endTime": 14,
+              "startRadius": 4.528125,
+              "endRadius": 9.703125,
+              "netDisplacement": 5.175,
+              "meanSpeed": 3.980769230769234,
+              "outwardFraction": 1,
+              "meanProminence": 0.45778197606238547
+            }
+          ]
+        },
+        "initialStateSha256": "6ce25cb84a295bee45081b14928ad68469014bfa699d120e8bb4fa0ca05d9498",
+        "initialStateGrid": 512,
+        "checkpointCpuFloat64StateSha256": "85f3a29dc1d78405302cf05f78555303e3188832f5c0887f26beac21f78136ad",
+        "checkpointBrowserFloat32StateSha256": "a3fc041ba1607892d0c23fb844f35ccfc8b7a1c3c16fb53dc1261237363a5a56",
+        "validationGates": {
+          "objectiveSearch": true,
+          "criteria": true,
+          "convergence": true,
+          "gpuParity": true,
+          "displayIndependence": true,
+          "matchingAssetMetadata": true,
+          "checkpointPosterMetadata": true,
+          "checkpoint": true,
+          "fixedDisplayProfile": true
+        }
+      },
+      "criteria": [
+        {
+          "id": "finite-state",
+          "kind": "prerequisite",
+          "description": "The final 256² observation window remained finite under the fail-fast solver.",
+          "pass": true,
+          "evidence": {
+            "finite": true,
+            "grid": 256,
+            "duration": 14
+          }
+        },
+        {
+          "id": "three-outward-fronts",
+          "kind": "validation",
+          "description": "At least three separated outward radial fronts coexist in the declared observation window without a reflected track.",
+          "pass": true,
+          "evidence": {
+            "maximumSignificantPeaks": 3,
+            "simultaneousThreePeakFraction": 0.9629629629629629,
+            "minimumObservedSpacing": 12.506249999999998,
+            "outwardTrackCount": 4,
+            "wallReflectionTracks": 0,
+            "meanWaveSpeed": 4.86566105769231
+          }
+        }
+      ],
+      "convergence": [
+        {
+          "comparison": "256² versus 128²",
+          "reference": "target-grid128.json",
+          "observable": "meanWaveSpeed",
+          "relativeDifference": 0.031051110531546362,
+          "tolerance": 0.05,
+          "pass": true,
+          "candidateValue": 4.86566105769231,
+          "referenceValue": 5.0215869078105,
+          "candidateArtifactSha256": "0f539c7b0ba9e1b2bacfa1f09c071e818f6c41d7b366716cad910a9bd2c8e4ce",
+          "referenceArtifactSha256": "8816ef4bc4966ceae02ad218906c19d41f645b5d68f67a3943e036ca5952df66"
+        },
+        {
+          "comparison": "Δt 0.0005 versus 0.00025 at 128²",
+          "reference": "target-dt-half.json",
+          "observable": "meanWaveSpeed",
+          "relativeDifference": 0,
+          "tolerance": 0.05,
+          "pass": true,
+          "candidateValue": 5.0215869078105,
+          "referenceValue": 5.0215869078105,
+          "candidateArtifactSha256": "8816ef4bc4966ceae02ad218906c19d41f645b5d68f67a3943e036ca5952df66",
+          "referenceArtifactSha256": "2a5b5747bc57ac15291e945f9ed6ed2f5ee18ea04a8b525b161ea52f11a7d1d9"
+        }
+      ],
+      "cpuGpuParity": {
+        "status": "measured",
+        "pass": true,
+        "evidencePath": "/data/bz-v2/gpu-parity.json",
+        "evidenceSha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20",
+        "grid": 64,
+        "modelStep": 3002,
+        "modelTime": 1.5010000000000001,
+        "cpuPrecision": "float64",
+        "gpuPrecision": "float32",
+        "textureFormat": "RGBA32F",
+        "scopeKind": "implementation-and-display-64",
+        "scope": "Browser CPU/GPU fixed-step integration, declared intervention scheduling and display-transform agreement were measured at 64². This is implementation parity only; mature 256² morphology, core rotations and target fronts are established by the authenticated Float64 CPU search, convergence and checkpoint provenance, not by GPU remeasurement.",
+        "numericalCases": [
+          {
+            "id": "base-fixed-step-64",
+            "gridSize": 64,
+            "step": 64,
+            "modelTime": 0.032,
+            "error": {
+              "maxAbsolute": 5.305119576970441e-8,
+              "rms": 1.6225864788282173e-9,
+              "samples": 5432
+            },
+            "pass": true
+          },
+          {
+            "id": "declared-intervention-schedule-64",
+            "gridSize": 64,
+            "step": 3002,
+            "modelTime": 1.5010000000000001,
+            "error": {
+              "maxAbsolute": 0.0000054705281234274095,
+              "rms": 3.9811285661584514e-7,
+              "samples": 5432
+            },
+            "pass": true
+          }
+        ],
+        "displayCases": [
+          {
+            "id": "scientific-u",
+            "error": {
+              "maximumByteDifference": 0,
+              "meanByteDifference": 0,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "luminous-publication",
+            "error": {
+              "maximumByteDifference": 5,
+              "meanByteDifference": 1.3333333333333333,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "ferroin-representative",
+            "error": {
+              "maximumByteDifference": 4,
+              "meanByteDifference": 1.2,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "phase-spectrum",
+            "error": {
+              "maximumByteDifference": 0,
+              "meanByteDifference": 0,
+              "samples": 15
+            },
+            "pass": true
+          }
+        ],
+        "observables": [
+          {
+            "name": "field-maximum-absolute-error",
+            "value": 0.0000054705281234274095,
+            "tolerance": 0.0005,
+            "samples": 10864,
+            "pass": true
+          },
+          {
+            "name": "field-rms-error",
+            "value": 2.815106386885847e-7,
+            "tolerance": 0.00005,
+            "samples": 10864,
+            "pass": true
+          },
+          {
+            "name": "display-maximum-byte-difference",
+            "value": 5,
+            "tolerance": 10,
+            "samples": 60,
+            "pass": true
+          },
+          {
+            "name": "display-mean-byte-difference",
+            "value": 0.6333333333333333,
+            "tolerance": 10,
+            "samples": 60,
+            "pass": true
+          },
+          {
+            "name": "base-fixed-step-64-maximum-absolute-error",
+            "value": 5.305119576970441e-8,
+            "tolerance": 0.0005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "base-fixed-step-64-rms-error",
+            "value": 1.6225864788282173e-9,
+            "tolerance": 0.00005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "declared-intervention-schedule-64-maximum-absolute-error",
+            "value": 0.0000054705281234274095,
+            "tolerance": 0.0005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "declared-intervention-schedule-64-rms-error",
+            "value": 3.9811285661584514e-7,
+            "tolerance": 0.00005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "scientific-u-maximum-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "scientific-u-mean-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "luminous-publication-maximum-byte-difference",
+            "value": 5,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "luminous-publication-mean-byte-difference",
+            "value": 1.3333333333333333,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "ferroin-representative-maximum-byte-difference",
+            "value": 4,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "ferroin-representative-mean-byte-difference",
+            "value": 1.2,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "phase-spectrum-maximum-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "phase-spectrum-mean-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          }
+        ]
+      },
+      "displayIndependence": {
+        "stateChecksumBefore": "e1a3473c213fe55708413c014dec14252ae369c365acc59e1b8c3a9a8d0bd985",
+        "stateChecksumAfter": "e1a3473c213fe55708413c014dec14252ae369c365acc59e1b8c3a9a8d0bd985",
+        "pass": true,
+        "status": "measured",
+        "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-plate.metadata.json"
+      },
+      "provenance": {
+        "generator": "scripts/generate-bz-v2-manifest.mjs",
+        "searchArtifact": "artifacts/bz-v2-search/target-grid256.json",
+        "searchArtifactSha256": "0f539c7b0ba9e1b2bacfa1f09c071e818f6c41d7b366716cad910a9bd2c8e4ce",
+        "searchCommand": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=target --grid=256 --domain=120 --duration=14 --observation-start=10 --epsilon=0.05 --q=0.002 --f=2.4 --source-period=1.5 --source-radius=0.025 --source-amount=0 --source-end=60 --output-name=target-grid256 --emit-checkpoint --write",
+        "checkpointWholeFileSha256": "c830a3348a1cecdaa52a887cdda1f225e4def4ba099fea8e29a0dddd1496a692",
+        "assetIndexSha256": "190b69012f4919fe45cc08210f7ca6276f5fb32543e5b4934bd919071bca454a",
+        "checkpointPosterIndexSha256": "55ea09627f7c15d22e1fd637397fed51827fe4b56e5f1bcefec9da3662b53de8",
+        "gpuParityEvidenceSha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20"
+      }
+    },
+    {
+      "id": "persistent-single-spiral-validation-v2",
+      "presetId": "persistent-single-spiral",
+      "status": "validated",
+      "statusReason": "Every deterministic Float64 morphology search, convergence, authenticated checkpoint, explicitly scoped implementation-and-display-64 browser parity, display-independence, publication-metadata and exact checkpoint-poster gate passed.",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 900,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "observationWindow": {
+        "startStep": 4000,
+        "endStep": 28000,
+        "startTime": 2,
+        "endTime": 14,
+        "sampleEverySteps": 100
+      },
+      "sampledTimes": [
+        2,
+        2.05,
+        2.1,
+        2.15,
+        2.2,
+        2.25,
+        2.3,
+        2.35,
+        2.4,
+        2.45,
+        2.5,
+        2.55,
+        2.6,
+        2.65,
+        2.7,
+        2.75,
+        2.8,
+        2.85,
+        2.9,
+        2.95,
+        3,
+        3.05,
+        3.1,
+        3.15,
+        3.2,
+        3.25,
+        3.3,
+        3.35,
+        3.4,
+        3.45,
+        3.5,
+        3.55,
+        3.6,
+        3.65,
+        3.7,
+        3.75,
+        3.8,
+        3.85,
+        3.9,
+        3.95,
+        4,
+        4.05,
+        4.1,
+        4.15,
+        4.2,
+        4.25,
+        4.3,
+        4.35,
+        4.4,
+        4.45,
+        4.5,
+        4.55,
+        4.6,
+        4.65,
+        4.7,
+        4.75,
+        4.8,
+        4.85,
+        4.9,
+        4.95,
+        5,
+        5.05,
+        5.1,
+        5.15,
+        5.2,
+        5.25,
+        5.3,
+        5.35,
+        5.4,
+        5.45,
+        5.5,
+        5.55,
+        5.6,
+        5.65,
+        5.7,
+        5.75,
+        5.8,
+        5.85,
+        5.9,
+        5.95,
+        6,
+        6.05,
+        6.1,
+        6.15,
+        6.2,
+        6.25,
+        6.3,
+        6.35,
+        6.4,
+        6.45,
+        6.5,
+        6.55,
+        6.6,
+        6.65,
+        6.7,
+        6.75,
+        6.8,
+        6.85,
+        6.9,
+        6.95,
+        7,
+        7.05,
+        7.1,
+        7.15,
+        7.2,
+        7.25,
+        7.3,
+        7.35,
+        7.4,
+        7.45,
+        7.5,
+        7.55,
+        7.6,
+        7.65,
+        7.7,
+        7.75,
+        7.8,
+        7.85,
+        7.9,
+        7.95,
+        8,
+        8.05,
+        8.1,
+        8.15,
+        8.2,
+        8.25,
+        8.3,
+        8.35,
+        8.4,
+        8.45,
+        8.5,
+        8.55,
+        8.6,
+        8.65,
+        8.7,
+        8.75,
+        8.8,
+        8.85,
+        8.9,
+        8.95,
+        9,
+        9.05,
+        9.1,
+        9.15,
+        9.2,
+        9.25,
+        9.3,
+        9.35,
+        9.4,
+        9.45,
+        9.5,
+        9.55,
+        9.6,
+        9.65,
+        9.7,
+        9.75,
+        9.8,
+        9.85,
+        9.9,
+        9.95,
+        10,
+        10.05,
+        10.1,
+        10.15,
+        10.2,
+        10.25,
+        10.3,
+        10.35,
+        10.4,
+        10.45,
+        10.5,
+        10.55,
+        10.6,
+        10.65,
+        10.7,
+        10.75,
+        10.8,
+        10.85,
+        10.9,
+        10.95,
+        11,
+        11.05,
+        11.1,
+        11.15,
+        11.2,
+        11.25,
+        11.3,
+        11.35,
+        11.4,
+        11.45,
+        11.5,
+        11.55,
+        11.6,
+        11.65,
+        11.7,
+        11.75,
+        11.8,
+        11.85,
+        11.9,
+        11.95,
+        12,
+        12.05,
+        12.1,
+        12.15,
+        12.2,
+        12.25,
+        12.3,
+        12.35,
+        12.4,
+        12.45,
+        12.5,
+        12.55,
+        12.6,
+        12.65,
+        12.7,
+        12.75,
+        12.8,
+        12.85,
+        12.9,
+        12.95,
+        13,
+        13.05,
+        13.1,
+        13.15,
+        13.2,
+        13.25,
+        13.3,
+        13.35,
+        13.4,
+        13.45,
+        13.5,
+        13.55,
+        13.6,
+        13.65,
+        13.7,
+        13.75,
+        13.8,
+        13.85,
+        13.9,
+        13.95,
+        14
+      ],
+      "metrics": {
+        "objective": {
+          "hero": "persistent-single-spiral",
+          "parameters": {
+            "epsilon": 0.05,
+            "q": 0.002,
+            "f": 1.4
+          },
+          "setup": {
+            "model": "oregonator",
+            "modelVersion": "tyson-fife-two-variable-v1",
+            "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+            "parameters": {
+              "epsilon": 0.05,
+              "q": 0.002,
+              "f": 1.4
+            },
+            "diffusionU": 1,
+            "diffusionV": 0,
+            "timestep": 0.0005,
+            "gridSize": 256,
+            "domainSize": 32,
+            "activeRadius": 14.72,
+            "boundary": "no-flux",
+            "geometry": "circular-dish",
+            "maskPreset": "none",
+            "initialCondition": "plane-wave",
+            "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+          },
+          "preparation": [
+            {
+              "schemaVersion": 1,
+              "sequence": 0,
+              "step": 900,
+              "kind": "cut",
+              "from": [
+                0,
+                0.75
+              ],
+              "to": [
+                1,
+                0.75
+              ],
+              "width": 0.25,
+              "targetU": 0.011605268043856337,
+              "targetV": 0.011605268043856337,
+              "strength": 1
+            }
+          ],
+          "observationStart": 2,
+          "orientationAnnulus": {
+            "radius": 3.5,
+            "width": 1.5
+          },
+          "duration": 14,
+          "finite": true,
+          "rotations": 4.210468715488337,
+          "cumulativeAngle": 26.455155169495622,
+          "rotationPeriods": [
+            2.7272607676754763,
+            2.7295352197832585,
+            2.75476372968334
+          ],
+          "rotationPeriodMean": 2.7371865723806916,
+          "rotationPeriodCv": 0.004553421293048651,
+          "maximumOrientationIncrement": 0.5837261365280995,
+          "detectedFraction": 1,
+          "exactlyOneCoreFraction": 1,
+          "centralFraction": 1,
+          "minimumWallDistance": 8.161370188827547,
+          "maximumCoreRadius": 6.558629811172454,
+          "firstStepWithCore": 4000,
+          "lastStepWithCore": 28000,
+          "minimumCoreCount": 1,
+          "maximumCoreCount": 1,
+          "trackSegments": [
+            {
+              "samples": 241,
+              "startStep": 4000,
+              "endStep": 28000,
+              "rotations": 4.210468715488337
+            }
+          ],
+          "pass": true,
+          "durationMs": 93881,
+          "samples": [
+            {
+              "x": -6.5,
+              "y": -0.75,
+              "charge": -1,
+              "winding": -6.283185307179587,
+              "plaquettes": 1,
+              "step": 4000,
+              "modelTime": 2
+            },
+            {
+              "x": -6.500000000000001,
+              "y": -0.75,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4100,
+              "modelTime": 2.05
+            },
+            {
+              "x": -6.500000000000001,
+              "y": -0.75,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4200,
+              "modelTime": 2.1
+            },
+            {
+              "x": -6.500000000000001,
+              "y": -0.875,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4300,
+              "modelTime": 2.15
+            },
+            {
+              "x": -6.500000000000001,
+              "y": -0.875,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4400,
+              "modelTime": 2.2
+            },
+            {
+              "x": -6.375,
+              "y": -0.875,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4500,
+              "modelTime": 2.25
+            },
+            {
+              "x": -6.375,
+              "y": -0.875,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4600,
+              "modelTime": 2.3000000000000003
+            },
+            {
+              "x": -6.375,
+              "y": -1,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 4700,
+              "modelTime": 2.35
+            },
+            {
+              "x": -4.375,
+              "y": 0.875,
+              "charge": -1,
+              "winding": -6.283185307179586,
+              "plaquettes": 1,
+              "step": 28000,
+              "modelTime": 14
+            }
+          ]
+        },
+        "initialStateSha256": "8d658f0929558b8c5353e44b900318d95dd1674cfdc366c6d79f73d560397d0f",
+        "initialStateGrid": 512,
+        "checkpointCpuFloat64StateSha256": "c6dfd2c52921651caf072d44fb22c4bb3a8b23b13630bef3a77a073018bfd353",
+        "checkpointBrowserFloat32StateSha256": "f74e710abef27d40334f3964b26cd348868ed93484d04b6eff8a4e50a9ba6406",
+        "validationGates": {
+          "objectiveSearch": true,
+          "criteria": true,
+          "convergence": true,
+          "gpuParity": true,
+          "displayIndependence": true,
+          "matchingAssetMetadata": true,
+          "checkpointPosterMetadata": true,
+          "checkpoint": true,
+          "fixedDisplayProfile": true
+        }
+      },
+      "criteria": [
+        {
+          "id": "finite-state",
+          "kind": "prerequisite",
+          "description": "The final 256² observation window remained finite under the fail-fast solver.",
+          "pass": true,
+          "evidence": {
+            "finite": true,
+            "grid": 256,
+            "duration": 14
+          }
+        },
+        {
+          "id": "persistent-rotating-single-core",
+          "kind": "validation",
+          "description": "Exactly one detected phase singularity persists centrally for at least three measured rotations.",
+          "pass": true,
+          "evidence": {
+            "rotations": 4.210468715488337,
+            "rotationPeriodMean": 2.7371865723806916,
+            "rotationPeriodCv": 0.004553421293048651,
+            "detectedFraction": 1,
+            "exactlyOneCoreFraction": 1,
+            "centralFraction": 1,
+            "minimumWallDistance": 8.161370188827547
+          }
+        }
+      ],
+      "convergence": [
+        {
+          "comparison": "256² versus 128²",
+          "reference": "spiral-grid128.json",
+          "observable": "rotationPeriodMean",
+          "relativeDifference": 0.0003170331473394285,
+          "tolerance": 0.02,
+          "pass": true,
+          "candidateValue": 2.7371865723806916,
+          "referenceValue": 2.7363190685342693,
+          "candidateArtifactSha256": "1c80cd9ab6dff74eff193b48a1e0ea2d1d8e19bd7287903696946790c0a3d66e",
+          "referenceArtifactSha256": "1b608bb2feb380c1d67510c51257feca073fea160995a973fad39c9f957f2849"
+        },
+        {
+          "comparison": "256² Δt 0.0005 versus 96² Δt 0.00025 refinement",
+          "reference": "spiral-dt-half.json",
+          "observable": "rotationPeriodMean",
+          "relativeDifference": 0.004226261139632992,
+          "tolerance": 0.05,
+          "pass": true,
+          "candidateValue": 2.7371865723806916,
+          "referenceValue": 2.7256671910515777,
+          "candidateArtifactSha256": "1c80cd9ab6dff74eff193b48a1e0ea2d1d8e19bd7287903696946790c0a3d66e",
+          "referenceArtifactSha256": "ba30b8e452fd9f88d04a2682f4569563333bbe7302cfe545eea070d5aed9d083"
+        }
+      ],
+      "cpuGpuParity": {
+        "status": "measured",
+        "pass": true,
+        "evidencePath": "/data/bz-v2/gpu-parity.json",
+        "evidenceSha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20",
+        "grid": 64,
+        "modelStep": 902,
+        "modelTime": 0.451,
+        "cpuPrecision": "float64",
+        "gpuPrecision": "float32",
+        "textureFormat": "RGBA32F",
+        "scopeKind": "implementation-and-display-64",
+        "scope": "Browser CPU/GPU fixed-step integration, declared intervention scheduling and display-transform agreement were measured at 64². This is implementation parity only; mature 256² morphology, core rotations and target fronts are established by the authenticated Float64 CPU search, convergence and checkpoint provenance, not by GPU remeasurement.",
+        "numericalCases": [
+          {
+            "id": "base-fixed-step-64",
+            "gridSize": 64,
+            "step": 64,
+            "modelTime": 0.032,
+            "error": {
+              "maxAbsolute": 1.7942843033580402e-7,
+              "rms": 2.2594972753879462e-8,
+              "samples": 5432
+            },
+            "pass": true
+          },
+          {
+            "id": "declared-intervention-schedule-64",
+            "gridSize": 64,
+            "step": 902,
+            "modelTime": 0.451,
+            "error": {
+              "maxAbsolute": 8.231803414471273e-7,
+              "rms": 8.029612886259271e-8,
+              "samples": 5432
+            },
+            "pass": true
+          }
+        ],
+        "displayCases": [
+          {
+            "id": "scientific-u",
+            "error": {
+              "maximumByteDifference": 0,
+              "meanByteDifference": 0,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "luminous-publication",
+            "error": {
+              "maximumByteDifference": 9,
+              "meanByteDifference": 1.1333333333333333,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "ferroin-representative",
+            "error": {
+              "maximumByteDifference": 5,
+              "meanByteDifference": 0.6666666666666666,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "phase-spectrum",
+            "error": {
+              "maximumByteDifference": 0,
+              "meanByteDifference": 0,
+              "samples": 15
+            },
+            "pass": true
+          }
+        ],
+        "observables": [
+          {
+            "name": "field-maximum-absolute-error",
+            "value": 8.231803414471273e-7,
+            "tolerance": 0.0005,
+            "samples": 10864,
+            "pass": true
+          },
+          {
+            "name": "field-rms-error",
+            "value": 5.898305309182735e-8,
+            "tolerance": 0.00005,
+            "samples": 10864,
+            "pass": true
+          },
+          {
+            "name": "display-maximum-byte-difference",
+            "value": 9,
+            "tolerance": 10,
+            "samples": 60,
+            "pass": true
+          },
+          {
+            "name": "display-mean-byte-difference",
+            "value": 0.45,
+            "tolerance": 10,
+            "samples": 60,
+            "pass": true
+          },
+          {
+            "name": "base-fixed-step-64-maximum-absolute-error",
+            "value": 1.7942843033580402e-7,
+            "tolerance": 0.0005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "base-fixed-step-64-rms-error",
+            "value": 2.2594972753879462e-8,
+            "tolerance": 0.00005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "declared-intervention-schedule-64-maximum-absolute-error",
+            "value": 8.231803414471273e-7,
+            "tolerance": 0.0005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "declared-intervention-schedule-64-rms-error",
+            "value": 8.029612886259271e-8,
+            "tolerance": 0.00005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "scientific-u-maximum-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "scientific-u-mean-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "luminous-publication-maximum-byte-difference",
+            "value": 9,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "luminous-publication-mean-byte-difference",
+            "value": 1.1333333333333333,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "ferroin-representative-maximum-byte-difference",
+            "value": 5,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "ferroin-representative-mean-byte-difference",
+            "value": 0.6666666666666666,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "phase-spectrum-maximum-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "phase-spectrum-mean-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          }
+        ]
+      },
+      "displayIndependence": {
+        "stateChecksumBefore": "5c98f71ce51357ad615dff03c3366925ce462051dba6dbed4cd6ef30d88fabcc",
+        "stateChecksumAfter": "5c98f71ce51357ad615dff03c3366925ce462051dba6dbed4cd6ef30d88fabcc",
+        "pass": true,
+        "status": "measured",
+        "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-visualization-card.metadata.json"
+      },
+      "provenance": {
+        "generator": "scripts/generate-bz-v2-manifest.mjs",
+        "searchArtifact": "artifacts/bz-v2-search/spiral-grid256.json",
+        "searchArtifactSha256": "1c80cd9ab6dff74eff193b48a1e0ea2d1d8e19bd7287903696946790c0a3d66e",
+        "searchCommand": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=spiral --seed=cut-after-plane-wave --grid=256 --domain=32 --duration=14 --epsilon=0.05 --q=0.002 --f=1.4 --cut-time=0.45 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --annulus-radius=3.5 --annulus-width=1.5 --output-name=spiral-grid256 --emit-checkpoint --write",
+        "checkpointWholeFileSha256": "c2b6062ff2df57b34d71d1fc4126628deaa6be0cd4cdfe376188535c76f4bc4b",
+        "assetIndexSha256": "190b69012f4919fe45cc08210f7ca6276f5fb32543e5b4934bd919071bca454a",
+        "checkpointPosterIndexSha256": "55ea09627f7c15d22e1fd637397fed51827fe4b56e5f1bcefec9da3662b53de8",
+        "gpuParityEvidenceSha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20"
+      }
+    },
+    {
+      "id": "spiral-garden-validation-v2",
+      "presetId": "spiral-garden",
+      "status": "validated",
+      "statusReason": "Every deterministic Float64 morphology search, convergence, authenticated checkpoint, explicitly scoped implementation-and-display-64 browser parity, display-independence, publication-metadata and exact checkpoint-poster gate passed.",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "multi-spiral-seed",
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+      },
+      "interventions": [],
+      "observationWindow": {
+        "startStep": 4000,
+        "endStep": 24000,
+        "startTime": 2,
+        "endTime": 12,
+        "sampleEverySteps": 200
+      },
+      "sampledTimes": [
+        2,
+        2.1,
+        2.2,
+        2.3,
+        2.4,
+        2.5,
+        2.6,
+        2.7,
+        2.8,
+        2.9,
+        3,
+        3.1,
+        3.2,
+        3.3,
+        3.4,
+        3.5,
+        3.6,
+        3.7,
+        3.8,
+        3.9,
+        4,
+        4.1,
+        4.2,
+        4.3,
+        4.4,
+        4.5,
+        4.6,
+        4.7,
+        4.8,
+        4.9,
+        5,
+        5.1,
+        5.2,
+        5.3,
+        5.4,
+        5.5,
+        5.6,
+        5.7,
+        5.8,
+        5.9,
+        6,
+        6.1,
+        6.2,
+        6.3,
+        6.4,
+        6.5,
+        6.6,
+        6.7,
+        6.8,
+        6.9,
+        7,
+        7.1,
+        7.2,
+        7.3,
+        7.4,
+        7.5,
+        7.6,
+        7.7,
+        7.8,
+        7.9,
+        8,
+        8.1,
+        8.2,
+        8.3,
+        8.4,
+        8.5,
+        8.6,
+        8.7,
+        8.8,
+        8.9,
+        9,
+        9.1,
+        9.2,
+        9.3,
+        9.4,
+        9.5,
+        9.6,
+        9.7,
+        9.8,
+        9.9,
+        10,
+        10.1,
+        10.2,
+        10.3,
+        10.4,
+        10.5,
+        10.6,
+        10.7,
+        10.8,
+        10.9,
+        11,
+        11.1,
+        11.2,
+        11.3,
+        11.4,
+        11.5,
+        11.6,
+        11.7,
+        11.8,
+        11.9,
+        12
+      ],
+      "metrics": {
+        "objective": {
+          "hero": "spiral-garden",
+          "parameters": {
+            "epsilon": 0.05,
+            "q": 0.002,
+            "f": 1.4
+          },
+          "setup": {
+            "model": "oregonator",
+            "modelVersion": "tyson-fife-two-variable-v1",
+            "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+            "parameters": {
+              "epsilon": 0.05,
+              "q": 0.002,
+              "f": 1.4
+            },
+            "diffusionU": 1,
+            "diffusionV": 0,
+            "timestep": 0.0005,
+            "gridSize": 256,
+            "domainSize": 32,
+            "activeRadius": 14.72,
+            "boundary": "no-flux",
+            "geometry": "circular-dish",
+            "maskPreset": "none",
+            "initialCondition": "multi-spiral-seed",
+            "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+          },
+          "observationStart": 2,
+          "duration": 12,
+          "finite": true,
+          "minimumCoreCount": 3,
+          "maximumCoreCount": 3,
+          "persistentFraction": 1,
+          "persistentTrackCount": 3,
+          "characteristicPeriodReference": 2.75,
+          "minimumSurvivalTime": 10,
+          "measuredRotations": [
+            3.665508036182219,
+            3.6776417910241186,
+            3.620510653105014
+          ],
+          "minimumMeasuredRotations": 3.620510653105014,
+          "minimumSeparation": 5.215661511256266,
+          "minimumWallDistance": 6.93279093641374,
+          "trackSummaries": [
+            {
+              "charge": 1,
+              "samples": 101,
+              "start": 2,
+              "end": 12,
+              "rotations": 3.665508036182219
+            },
+            {
+              "charge": 1,
+              "samples": 101,
+              "start": 2,
+              "end": 12,
+              "rotations": 3.6776417910241186
+            },
+            {
+              "charge": 1,
+              "samples": 101,
+              "start": 2,
+              "end": 12,
+              "rotations": 3.620510653105014
+            }
+          ],
+          "pass": true,
+          "durationMs": 61113
+        },
+        "initialStateSha256": "f4aabb639472a91c508af65eeedf7f88eb4d6db4c2cb92cb97d1eaf9e7ed26a3",
+        "initialStateGrid": 512,
+        "checkpointCpuFloat64StateSha256": "81ba8eb87b0b777bb168718771cf51ee29a5220400daed213d9338084748baca",
+        "checkpointBrowserFloat32StateSha256": "a61d2e34b028b75062a47801cf29ccf957d7d59ebdd7704cd968023649b8a596",
+        "validationGates": {
+          "objectiveSearch": true,
+          "criteria": true,
+          "convergence": true,
+          "gpuParity": true,
+          "displayIndependence": true,
+          "matchingAssetMetadata": true,
+          "checkpointPosterMetadata": true,
+          "checkpoint": true,
+          "fixedDisplayProfile": true
+        }
+      },
+      "criteria": [
+        {
+          "id": "finite-state",
+          "kind": "prerequisite",
+          "description": "The final 256² observation window remained finite under the fail-fast solver.",
+          "pass": true,
+          "evidence": {
+            "finite": true,
+            "grid": 256,
+            "duration": 12
+          }
+        },
+        {
+          "id": "persistent-three-core-garden",
+          "kind": "validation",
+          "description": "At least three separated phase-singularity tracks persist for at least three measured rotations.",
+          "pass": true,
+          "evidence": {
+            "minimumCoreCount": 3,
+            "maximumCoreCount": 3,
+            "persistentFraction": 1,
+            "persistentTrackCount": 3,
+            "minimumMeasuredRotations": 3.620510653105014,
+            "minimumSeparation": 5.215661511256266,
+            "minimumWallDistance": 6.93279093641374
+          }
+        }
+      ],
+      "convergence": [
+        {
+          "comparison": "256² versus 96²",
+          "reference": "garden-grid96.json",
+          "observable": "minimumMeasuredRotations",
+          "relativeDifference": 0.007829277234345604,
+          "tolerance": 0.05,
+          "pass": true,
+          "candidateValue": 3.620510653105014,
+          "referenceValue": 3.592384875978508,
+          "candidateArtifactSha256": "8fc6a48156c0241eb17376518ce04dd6173e2217cabae5c29a8153230aa25165",
+          "referenceArtifactSha256": "d666d32b0c811ad50568429c51fd6aceeb09c0d87f9601150aa825c853c8b09c"
+        },
+        {
+          "comparison": "256² Δt 0.0005 versus 64² Δt 0.00025 refinement",
+          "reference": "garden-dt-half.json",
+          "observable": "minimumMeasuredRotations",
+          "relativeDifference": 0.0089205270364772,
+          "tolerance": 0.05,
+          "pass": true,
+          "candidateValue": 3.620510653105014,
+          "referenceValue": 3.5884993476538867,
+          "candidateArtifactSha256": "8fc6a48156c0241eb17376518ce04dd6173e2217cabae5c29a8153230aa25165",
+          "referenceArtifactSha256": "1e9938a7862f80c47df9b986e7ce40a6d45fb3e8d01a1d64e4d2ec766d02ccd2"
+        }
+      ],
+      "cpuGpuParity": {
+        "status": "measured",
+        "pass": true,
+        "evidencePath": "/data/bz-v2/gpu-parity.json",
+        "evidenceSha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20",
+        "grid": 64,
+        "modelStep": 64,
+        "modelTime": 0.032,
+        "cpuPrecision": "float64",
+        "gpuPrecision": "float32",
+        "textureFormat": "RGBA32F",
+        "scopeKind": "implementation-and-display-64",
+        "scope": "Browser CPU/GPU fixed-step integration, declared intervention scheduling and display-transform agreement were measured at 64². This is implementation parity only; mature 256² morphology, core rotations and target fronts are established by the authenticated Float64 CPU search, convergence and checkpoint provenance, not by GPU remeasurement.",
+        "numericalCases": [
+          {
+            "id": "base-fixed-step-64",
+            "gridSize": 64,
+            "step": 64,
+            "modelTime": 0.032,
+            "error": {
+              "maxAbsolute": 2.7203054209223865e-7,
+              "rms": 2.4899206060084702e-8,
+              "samples": 5432
+            },
+            "pass": true
+          }
+        ],
+        "displayCases": [
+          {
+            "id": "scientific-u",
+            "error": {
+              "maximumByteDifference": 0,
+              "meanByteDifference": 0,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "luminous-publication",
+            "error": {
+              "maximumByteDifference": 8,
+              "meanByteDifference": 0.6,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "ferroin-representative",
+            "error": {
+              "maximumByteDifference": 6,
+              "meanByteDifference": 0.5333333333333333,
+              "samples": 15
+            },
+            "pass": true
+          },
+          {
+            "id": "phase-spectrum",
+            "error": {
+              "maximumByteDifference": 0,
+              "meanByteDifference": 0,
+              "samples": 15
+            },
+            "pass": true
+          }
+        ],
+        "observables": [
+          {
+            "name": "field-maximum-absolute-error",
+            "value": 2.7203054209223865e-7,
+            "tolerance": 0.0005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "field-rms-error",
+            "value": 2.4899206060084702e-8,
+            "tolerance": 0.00005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "display-maximum-byte-difference",
+            "value": 8,
+            "tolerance": 10,
+            "samples": 60,
+            "pass": true
+          },
+          {
+            "name": "display-mean-byte-difference",
+            "value": 0.2833333333333333,
+            "tolerance": 10,
+            "samples": 60,
+            "pass": true
+          },
+          {
+            "name": "base-fixed-step-64-maximum-absolute-error",
+            "value": 2.7203054209223865e-7,
+            "tolerance": 0.0005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "base-fixed-step-64-rms-error",
+            "value": 2.4899206060084702e-8,
+            "tolerance": 0.00005,
+            "samples": 5432,
+            "pass": true
+          },
+          {
+            "name": "scientific-u-maximum-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "scientific-u-mean-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "luminous-publication-maximum-byte-difference",
+            "value": 8,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "luminous-publication-mean-byte-difference",
+            "value": 0.6,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "ferroin-representative-maximum-byte-difference",
+            "value": 6,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "ferroin-representative-mean-byte-difference",
+            "value": 0.5333333333333333,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "phase-spectrum-maximum-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          },
+          {
+            "name": "phase-spectrum-mean-byte-difference",
+            "value": 0,
+            "tolerance": 10,
+            "samples": 15,
+            "pass": true
+          }
+        ]
+      },
+      "displayIndependence": {
+        "stateChecksumBefore": "a781ef966031004663f012302fb6780536a9399c5ca6902dd1338730f915aee9",
+        "stateChecksumAfter": "a781ef966031004663f012302fb6780536a9399c5ca6902dd1338730f915aee9",
+        "pass": true,
+        "status": "measured",
+        "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.metadata.json"
+      },
+      "provenance": {
+        "generator": "scripts/generate-bz-v2-manifest.mjs",
+        "searchArtifact": "artifacts/bz-v2-search/garden-grid256.json",
+        "searchArtifactSha256": "8fc6a48156c0241eb17376518ce04dd6173e2217cabae5c29a8153230aa25165",
+        "searchCommand": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=garden --grid=256 --domain=32 --duration=12 --epsilon=0.05 --q=0.002 --f=1.4 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --output-name=garden-grid256 --emit-checkpoint --write",
+        "checkpointWholeFileSha256": "77ed13b7fa11ed9b40e48062d097cd22f075a2372c48f546b73d6e782a6e0d27",
+        "assetIndexSha256": "190b69012f4919fe45cc08210f7ca6276f5fb32543e5b4934bd919071bca454a",
+        "checkpointPosterIndexSha256": "55ea09627f7c15d22e1fd637397fed51827fe4b56e5f1bcefec9da3662b53de8",
+        "gpuParityEvidenceSha256": "a76e19d2e7049749a5bfd8f57e8937c5c2cce13a856d434205e8e5a284e1bd20"
+      }
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "classic-target-rings-256-v2",
+      "version": 1,
+      "path": "/data/bz-v2/checkpoints/classic-target-rings-256-v2.bzcp",
+      "encoding": "bzcp-f32le-v1",
+      "losslessForStoredRepresentation": true,
+      "width": 256,
+      "height": 256,
+      "modelStep": 28000,
+      "modelTime": 14,
+      "byteLength": 657682,
+      "sha256": "5fa06f09cc45517ce8f3239f28af5d731452eeb3a054ce04e99e696713e4e74d",
+      "fieldSha256F64Reference": "85f3a29dc1d78405302cf05f78555303e3188832f5c0887f26beac21f78136ad",
+      "setupChecksum": "41fb4a434d1036da594fe669ba58aa360ba446d1e73c613439b6bf4258406386",
+      "interventionLogChecksum": "ec33920840b64c0ec23a3c787bc2350d66d7078f7778036980866a28d0f3b2f1",
+      "engineVersion": "bz-heun-five-point-v2",
+      "generatedBy": "scripts/search-bz-regimes.ts",
+      "generatedAt": "2026-08-08T00:00:00.000Z",
+      "sourcePresetId": "classic-target-rings",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 2.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 120,
+        "activeRadius": 55.2,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "periodic-source",
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+      },
+      "seed": "bz-v2-periodic-source-0.05-0.002-2.4",
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 0,
+          "kind": "pacemaker",
+          "center": [
+            0.5,
+            0.5
+          ],
+          "radius": 0.025,
+          "amount": 0,
+          "sourceMode": "state-reset",
+          "targetU": 0.8,
+          "targetV": 0.003625162337637433,
+          "strength": 1,
+          "periodSteps": 3000,
+          "endStep": 120000
+        }
+      ],
+      "browserStateSha256": "a3fc041ba1607892d0c23fb844f35ccfc8b7a1c3c16fb53dc1261237363a5a56",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "validationRecordId": "classic-target-rings-validation-v2"
+    },
+    {
+      "id": "persistent-single-spiral-256-v2",
+      "version": 1,
+      "path": "/data/bz-v2/checkpoints/persistent-single-spiral-256-v2.bzcp",
+      "encoding": "bzcp-f32le-v1",
+      "losslessForStoredRepresentation": true,
+      "width": 256,
+      "height": 256,
+      "modelStep": 28000,
+      "modelTime": 14,
+      "byteLength": 657627,
+      "sha256": "27f1e11297739b2a8df3aa746b5d6dda507d93cd6414b534358e42faee24b8fe",
+      "fieldSha256F64Reference": "c6dfd2c52921651caf072d44fb22c4bb3a8b23b13630bef3a77a073018bfd353",
+      "setupChecksum": "425441254c918f65218d2a8e430155066502d5d5348e31eb10ce0cd83cd2f2e0",
+      "interventionLogChecksum": "e249fb355f9a741935f5ad36616d2d73a755cbcdf02f7422f39b5bf2bf7ce25d",
+      "engineVersion": "bz-heun-five-point-v2",
+      "generatedBy": "scripts/search-bz-regimes.ts",
+      "generatedAt": "2026-08-08T00:00:00.000Z",
+      "sourcePresetId": "persistent-single-spiral",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "seed": "bz-v2-plane-wave-0.05-0.002-1.4",
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 900,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "browserStateSha256": "f74e710abef27d40334f3964b26cd348868ed93484d04b6eff8a4e50a9ba6406",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "validationRecordId": "persistent-single-spiral-validation-v2"
+    },
+    {
+      "id": "spiral-garden-256-v2",
+      "version": 1,
+      "path": "/data/bz-v2/checkpoints/spiral-garden-256-v2.bzcp",
+      "encoding": "bzcp-f32le-v1",
+      "losslessForStoredRepresentation": true,
+      "width": 256,
+      "height": 256,
+      "modelStep": 24000,
+      "modelTime": 12,
+      "byteLength": 657441,
+      "sha256": "d3b3f58c9538058316c11e7f51ee2ec5c14e309514155eb784c35eb74d77a148",
+      "fieldSha256F64Reference": "81ba8eb87b0b777bb168718771cf51ee29a5220400daed213d9338084748baca",
+      "setupChecksum": "00cfcec7a8a9cce17945683c93562e2b6f41c738b5dcd0925e2ffe332d886a4c",
+      "interventionLogChecksum": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "engineVersion": "bz-heun-five-point-v2",
+      "generatedBy": "scripts/search-bz-regimes.ts",
+      "generatedAt": "2026-08-08T00:00:00.000Z",
+      "sourcePresetId": "spiral-garden",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "multi-spiral-seed",
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+      },
+      "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4",
+      "interventions": [],
+      "browserStateSha256": "a61d2e34b028b75062a47801cf29ccf957d7d59ebdd7704cd968023649b8a596",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "validationRecordId": "spiral-garden-validation-v2"
+    }
+  ],
+  "assets": [
+    {
+      "id": "bz-v2-bz-versus-turing-plate-1",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-versus-turing-plate.png",
+      "width": 1800,
+      "height": 1200,
+      "stateGrid": 512,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "1518411333719bc228b9e8a36713c11460ab1edc0f21293e1b2c42de326df718",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-versus-turing-plate.metadata.json"
+    },
+    {
+      "id": "bz-v2-classic-target-rings-checkpoint-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-checkpoint-poster.png",
+      "width": 1200,
+      "height": 1200,
+      "stateGrid": 256,
+      "presetId": "classic-target-rings",
+      "checkpointId": "classic-target-rings-256-v2",
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "774fc9f9dd610e3125a0212d7c98417737e531c2568038a1cc8480daebe8e58f",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-checkpoint-poster.metadata.json"
+    },
+    {
+      "id": "bz-v2-classic-target-rings-plate",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-plate.png",
+      "width": 1800,
+      "height": 1200,
+      "stateGrid": 512,
+      "presetId": "classic-target-rings",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "b5517319c55720b452f6bfc6cb5ea8f1b1d76d9403b5e8ec9ae2634117416100",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-plate.metadata.json"
+    },
+    {
+      "id": "bz-v2-hero-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.png",
+      "width": 1600,
+      "height": 1600,
+      "stateGrid": 512,
+      "presetId": "spiral-garden",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "691d7a8d5682e39e5eac6bb22e60041c019548f3cf83954582e4687f52d6eec9",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.metadata.json"
+    },
+    {
+      "id": "bz-v2-open-graph",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-open-graph.png",
+      "width": 1200,
+      "height": 630,
+      "stateGrid": 512,
+      "presetId": "spiral-garden",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "82b666fadae9635cfe4a9439d1463aada114ad91ccb23e8dee6c176822d40425",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-open-graph.metadata.json"
+    },
+    {
+      "id": "bz-v2-persistent-single-spiral-checkpoint-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-checkpoint-poster.png",
+      "width": 1200,
+      "height": 1200,
+      "stateGrid": 256,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": "persistent-single-spiral-256-v2",
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "44ef1f4ea36a01f0110b328aa048618022a5ab01b2962b956484193e1aa63770",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-checkpoint-poster.metadata.json"
+    },
+    {
+      "id": "bz-v2-persistent-single-spiral-plate",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-plate.png",
+      "width": 1800,
+      "height": 1200,
+      "stateGrid": 512,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "54513c0a06569633f25099fa14ec221db8d1c6bbf4d3bee99341e9719faf5e8d",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-plate.metadata.json"
+    },
+    {
+      "id": "bz-v2-raw-u-vs-luminous-plate-1",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/raw-u-vs-luminous-plate.png",
+      "width": 1800,
+      "height": 1200,
+      "stateGrid": 512,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": null,
+      "view": "u",
+      "displayProfileId": "oregonator-scientific-publication-v2",
+      "sha256": "64f4bbcc24262c9072f085fbd9417006da77dd330f5218a327d7d876b5f47bab",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/raw-u-vs-luminous-plate.metadata.json"
+    },
+    {
+      "id": "bz-v2-raw-u-vs-luminous-plate-2",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/raw-u-vs-luminous-plate.png",
+      "width": 1800,
+      "height": 1200,
+      "stateGrid": 512,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "64f4bbcc24262c9072f085fbd9417006da77dd330f5218a327d7d876b5f47bab",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/raw-u-vs-luminous-plate.metadata.json"
+    },
+    {
+      "id": "bz-v2-spiral-garden-checkpoint-poster",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.png",
+      "width": 1200,
+      "height": 1200,
+      "stateGrid": 256,
+      "presetId": "spiral-garden",
+      "checkpointId": "spiral-garden-256-v2",
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "91186a265cb04423306fe943291edca0eea1cfcc05f5fcd7742422539c58cfd0",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.metadata.json"
+    },
+    {
+      "id": "bz-v2-spiral-garden-plate",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-plate.png",
+      "width": 1800,
+      "height": 1200,
+      "stateGrid": 512,
+      "presetId": "spiral-garden",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "ca2a5d659b1c4eca5fea6593b4b815643898c159a06c8d34ccf4e0f426e86043",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-plate.metadata.json"
+    },
+    {
+      "id": "bz-v2-visualization-card",
+      "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-visualization-card.png",
+      "width": 1200,
+      "height": 800,
+      "stateGrid": 512,
+      "presetId": "persistent-single-spiral",
+      "checkpointId": null,
+      "view": "luminous-composite",
+      "displayProfileId": "oregonator-luminous-publication-v2",
+      "sha256": "22dcc87e8363c02178e1ba255b09c8a389cd5ffde9a1cccd3a18ff26edfce65c",
+      "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-visualization-card.metadata.json"
+    }
+  ],
+  "performance": [],
+  "articleClaims": {
+    "validationBoundary": "3 hero preset(s) satisfy every recorded evidence gate; claims remain exact-configuration only.",
+    "classicTargetRings": "Classic Target Rings morphology is validated by the recorded 256² Float64 CPU search, convergence and authenticated checkpoint provenance. GPU evidence separately verifies only the browser integration and display-transform scope stated in its parity record; it is not morphology evidence. The claim applies only to the exact setup, preparation, timestep, observation window and publication metadata recorded here.",
+    "persistentSingleSpiral": "Persistent Single Spiral morphology is validated by the recorded 256² Float64 CPU search, convergence and authenticated checkpoint provenance. GPU evidence separately verifies only the browser integration and display-transform scope stated in its parity record; it is not morphology evidence. The claim applies only to the exact setup, preparation, timestep, observation window and publication metadata recorded here.",
+    "spiralGarden": "Spiral Garden morphology is validated by the recorded 256² Float64 CPU search, convergence and authenticated checkpoint provenance. GPU evidence separately verifies only the browser integration and display-transform scope stated in its parity record; it is not morphology evidence. The claim applies only to the exact setup, preparation, timestep, observation window and publication metadata recorded here."
+  }
+}

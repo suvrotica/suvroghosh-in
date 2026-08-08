@@ -67,7 +67,7 @@ export function createBZGpuContext(
 	return { gl, capabilities: probeBZGpuCapabilities(gl) };
 }
 
-/** Probes RGBA16F first and then RGBA32F, including a real write/read round trip. */
+/** Probes RGBA32F first, then RGBA16F only as a measured compatibility fallback. */
 export function probeBZGpuCapabilities(gl: WebGL2RenderingContext): BZGpuCapabilities {
 	const renderer = rendererString(gl);
 	const maximumTextureSize = Number(gl.getParameter(gl.MAX_TEXTURE_SIZE));
@@ -107,20 +107,20 @@ export function probeBZGpuCapabilities(gl: WebGL2RenderingContext): BZGpuCapabil
 
 	const formats: readonly BZFloatFramebufferFormat[] = [
 		{
-			id: 'rgba16f',
-			label: 'RGBA16F',
-			internalFormat: gl.RGBA16F,
-			uploadType: gl.FLOAT,
-			readType: gl.FLOAT,
-			bytesPerComponent: 2
-		},
-		{
 			id: 'rgba32f',
 			label: 'RGBA32F',
 			internalFormat: gl.RGBA32F,
 			uploadType: gl.FLOAT,
 			readType: gl.FLOAT,
 			bytesPerComponent: 4
+		},
+		{
+			id: 'rgba16f',
+			label: 'RGBA16F',
+			internalFormat: gl.RGBA16F,
+			uploadType: gl.FLOAT,
+			readType: gl.FLOAT,
+			bytesPerComponent: 2
 		}
 	];
 	const attempts = formats.map((format) => probeFormat(gl, format));
@@ -135,7 +135,7 @@ export function probeBZGpuCapabilities(gl: WebGL2RenderingContext): BZGpuCapabil
 		renderer,
 		message: selectedFormat
 			? `${selectedFormat.label} passed framebuffer completeness and float write/read tests.`
-			: 'Neither RGBA16F nor RGBA32F passed the float framebuffer test. Use the BZ CPU solver.'
+			: 'Neither RGBA32F nor RGBA16F passed the float framebuffer test. Use the BZ CPU solver.'
 	};
 }
 

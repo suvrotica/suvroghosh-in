@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import {
 		BZCpuSolver,
+		BZFastCpuSolver,
 		BZ_SCHEMA_VERSION,
 		activeAreaMetrics,
 		assessBZTimestep,
@@ -10,6 +11,7 @@
 		recoveredStateForSetup
 	} from '$lib/visualizations/bz';
 	import { renderBZToCanvas } from '$lib/visualizations/bz/display';
+	import { renderBZToCanvasV2, type BZRenderProfileV2 } from '$lib/visualizations/bz/v2-display';
 	import type {
 		BZFieldMetrics,
 		BZFieldState,
@@ -20,7 +22,16 @@
 		ActiveTerms,
 		ProbeReading
 	} from '$lib/visualizations/bz';
-	import type { BZGpuEngine } from '$lib/visualizations/bz/gpu';
+	import type {
+		BZGpuEngine,
+		BZGpuReadbackAccounting,
+		BZGpuTelemetrySample,
+		BZGpuTextureMemoryEstimate
+	} from '$lib/visualizations/bz/gpu';
+
+	const FRAME_CALLBACK_INTERVAL_MS = 100;
+	const TELEMETRY_INTERVAL_MS = 300;
+	const PROBE_INTERVAL_MS = 100;
 
 	export type BZTool =
 		| 'probe'
@@ -43,7 +54,13 @@
 		| 'tool-cut'
 		| 'cancel';
 	export type BZStageFrame = {
-		field: Readonly<BZFieldState>;
+		/** CPU frames expose the resident state; ordinary GPU frames never do. */
+		field: Readonly<BZFieldState> | null;
+		/** Bounded selected-cell reading sampled independently from field telemetry. */
+		probe: ProbeReading | null;
+		/** Five final 1×1 reduction reads on GPU, null on the CPU reference path. */
+		telemetry: Readonly<BZGpuTelemetrySample> | null;
+		readbacks: Readonly<BZGpuReadbackAccounting> | null;
 		setup: Readonly<BZSetup>;
 		step: number;
 		modelTime: number;
@@ -52,45 +69,79 @@
 		metrics: BZFieldMetrics;
 		interventions: readonly BZIntervention[];
 	};
+	export type BZStagePerformanceSnapshot = {
+		/** Monotonic browser clock used only to difference two bounded samples. */
+		readonly sampledAtMs: number;
+		readonly renderedFrames: number;
+		readonly step: number;
+		readonly engine: BZEngineKind;
+		readonly renderer: string;
+		readonly displayWidth: number;
+		readonly displayHeight: number;
+		readonly readbacks: Readonly<BZGpuReadbackAccounting> | null;
+		readonly textureMemory: Readonly<BZGpuTextureMemoryEstimate> | null;
+		/** Reusable RGBA16F base plus two quarter-resolution bloom targets. */
+		readonly displayTextureBytes: number;
+	};
 
 	type Point = readonly [number, number];
 	type Props = {
 		setup: BZSetup;
+		/** Exact verified field to continue instead of constructing the declared genesis. */
+		initialState?: Readonly<BZFieldState> | null;
+		/** Step represented by initialState. */
+		initialStep?: number;
+		/** Complete intervention log associated with initialState and its continuation. */
+		initialInterventions?: readonly BZIntervention[];
 		running?: boolean;
 		workPerSecond?: number;
 		view?: BZViewMode;
 		palette?: BZPalette;
+		displayProfile?: Readonly<BZRenderProfileV2> | null;
 		tool?: BZTool;
 		brushRadius?: number;
+		/** Display-only markers for declared repeated sources; never sampled by the solver. */
+		showSourceMarkers?: boolean;
 		activeTerms?: ActiveTerms;
 		selected?: Point;
 		description?: string;
+		poster?: string;
 		onframe?: (frame: BZStageFrame) => void;
 		onstatus?: (message: string, engine: BZEngineKind, failure: boolean) => void;
 		onprobe?: (reading: ProbeReading, point: Point) => void;
 		onintervention?: (event: BZIntervention) => void;
 		oncommand?: (command: BZStageCommand) => void;
 		onselect?: (point: Point) => void;
+		onready?: (engine: BZEngineKind) => void;
 	};
 
 	let {
 		setup,
+		initialState = null,
+		initialStep = 0,
+		initialInterventions = [],
 		running = false,
 		workPerSecond = 480,
 		view = 'dish',
 		palette = 'ferroin',
+		displayProfile = null,
 		tool = 'probe',
 		brushRadius = 0.045,
+		showSourceMarkers = false,
 		activeTerms = { reaction: true, diffusion: true },
 		selected = [0.5, 0.5],
 		description = 'A circular numerical BZ dish. Arrow keys move the probe; Enter applies the selected instrument.',
+		poster = '/images/visualizations/belousov-zhabotinsky/bz-laboratory-poster.png',
 		onframe,
 		onstatus,
 		onprobe,
 		onintervention,
 		oncommand,
-		onselect
+		onselect,
+		onready
 	}: Props = $props();
+	const stageId = $props.id();
+	const stageInstructionsId = `${stageId}-instructions`;
 
 	let root = $state<HTMLElement>();
 	let cpuCanvas = $state<HTMLCanvasElement>();
@@ -100,11 +151,12 @@
 	let cpuContext: CanvasRenderingContext2D | null = null;
 	let overlayContext: CanvasRenderingContext2D | null = null;
 	let gpu = $state.raw<BZGpuEngine | null>(null);
-	let solver: BZCpuSolver | null = null;
+	let solver: BZCpuSolver | BZFastCpuSolver | null = null;
 	let effectiveSetup = $state<BZSetup | null>(null);
 	let engine = $state<BZEngineKind>('cpu-f64');
 	let engineMessage = $state('Preparing the numerical engine.');
 	let failureMessage = $state('');
+	let renderedFrameCount = 0;
 	let ready = $state(false);
 	let fieldRevision = $state(0);
 	let animationFrame = 0;
@@ -114,14 +166,22 @@
 	let rateStepBaseline = 0;
 	let measuredRate = 0;
 	let lastPublishedAt = 0;
+	let lastTelemetryAt = 0;
+	let lastProbeAt = 0;
+	let latestTelemetry: BZGpuTelemetrySample | null = null;
+	let latestFrameProbe: ProbeReading | null = null;
+	let latestProbePoint: Point | null = null;
 	let previousRunning = false;
 	let setupSignature = '';
+	let initializedState: Readonly<BZFieldState> | null = null;
 	let offscreen = false;
 	let disposed = false;
 	let mounted = $state(false);
 	let resizeObserver: ResizeObserver | null = null;
 	let intersectionObserver: IntersectionObserver | null = null;
 	let contextRecoveryTimer: ReturnType<typeof setTimeout> | null = null;
+	let mixFeedbackTimer: ReturnType<typeof setTimeout> | null = null;
+	let mixing = $state(false);
 	let pointerStart: Point | null = null;
 	let pointerNow = $state<Point | null>(null);
 	let drawing = false;
@@ -131,6 +191,7 @@
 	$effect(() => {
 		view.toString();
 		palette.toString();
+		displayProfile?.id.toString();
 		fieldRevision.toString();
 		drawCpu();
 		renderGpu();
@@ -141,14 +202,19 @@
 		selected[1].toString();
 		brushRadius.toString();
 		tool.toString();
+		showSourceMarkers.toString();
 		pointerNow?.[0].toString();
 		drawOverlay();
 	});
 
 	$effect(() => {
 		const signature = JSON.stringify({ setup, activeTerms });
-		if (!mounted || signature === setupSignature) return;
+		const nextInitialState = initialState;
+		initialStep.toString();
+		initialInterventions.length.toString();
+		if (!mounted || (signature === setupSignature && nextInitialState === initializedState)) return;
 		setupSignature = signature;
+		initializedState = nextInitialState;
 		reset();
 	});
 
@@ -165,6 +231,7 @@
 		disposed = false;
 		mounted = true;
 		setupSignature = JSON.stringify({ setup, activeTerms });
+		initializedState = initialState;
 		cpuContext = cpuCanvas?.getContext('2d', { alpha: false }) ?? null;
 		overlayContext = overlayCanvas?.getContext('2d') ?? null;
 		sourceCanvas = document.createElement('canvas');
@@ -190,6 +257,7 @@
 			intersectionObserver?.disconnect();
 			document.removeEventListener('visibilitychange', handleVisibility);
 			clearContextRecoveryTimer();
+			if (mixFeedbackTimer !== null) clearTimeout(mixFeedbackTimer);
 			gpu?.dispose();
 			gpu = null;
 			solver = null;
@@ -200,10 +268,12 @@
 	});
 
 	async function initialize(
-		replayEvents: readonly BZIntervention[] = [],
-		targetStep = 0
+		replayEvents: readonly BZIntervention[] = initialInterventions,
+		targetStep = initialStep,
+		seedState: Readonly<BZFieldState> | null = initialState
 	): Promise<void> {
 		stopLoop();
+		resetReadoutCadences();
 		ready = false;
 		failureMessage = '';
 		const forceCpu =
@@ -237,6 +307,7 @@
 								initializeCpu(result.reason, eventLog, result.checkpointStep);
 								return;
 							}
+							resetReadoutCadences();
 							engineMessage = `${result.reason} Recovery resumed from explicit checkpoint step ${result.checkpointStep.toLocaleString()}.`;
 							renderGpu();
 							publishFrame(true);
@@ -244,8 +315,11 @@
 						}
 					}
 				});
-				const initial = createInitialBZField(setup);
-				gpu.initialize(setup, initial);
+				const initial = seedState ? cloneBZFieldState(seedState) : createInitialBZField(setup);
+				gpu.initialize(setup, initial, {
+					step: seedState ? targetStep : 0,
+					modelTime: seedState ? targetStep * setup.timestep : 0
+				});
 				effectiveSetup = { ...setup, parameters: { ...setup.parameters } } as BZSetup;
 				solver = null;
 				eventLog = [...replayEvents];
@@ -258,9 +332,10 @@
 				engineMessage = `${gpu.capabilities.message} Raw float Heun passes are active at ${setup.gridSize} × ${setup.gridSize}; the CPU Float64 path remains the deterministic reference.`;
 				onstatus?.(engineMessage, engine, false);
 				resizeCanvases();
-				if (targetStep > 0) gpu.advance(targetStep, eventLog);
+				if (!seedState && targetStep > 0) gpu.advance(targetStep, eventLog);
 				renderGpu();
 				publishFrame(true);
+				onready?.(engine);
 				if (running) startLoop();
 				return;
 			} catch (error) {
@@ -270,7 +345,7 @@
 					error instanceof Error
 						? error.message
 						: 'Floating-point WebGL2 computation is unavailable.';
-				initializeCpu(reason, replayEvents, targetStep);
+				initializeCpu(reason, replayEvents, targetStep, seedState);
 				return;
 			}
 		}
@@ -279,7 +354,8 @@
 				? 'WebGL computation was disabled for this run.'
 				: 'Term-isolation experiments use the Float64 reference so the GPU kernel remains the exact full-equation contract.',
 			replayEvents,
-			targetStep
+			targetStep,
+			seedState
 		);
 	}
 
@@ -293,16 +369,32 @@
 	function initializeCpu(
 		reason: string,
 		replayEvents: readonly BZIntervention[] = [],
-		targetStep = 0
+		targetStep = 0,
+		seedState: Readonly<BZFieldState> | null = null
 	) {
 		try {
+			resetReadoutCadences();
 			clearContextRecoveryTimer();
 			gpu?.dispose();
 			gpu = null;
-			const nextSetup = fallbackSetup(setup);
+			// A verified checkpoint is grid-specific. Silently reconstructing it on the
+			// legacy reduced CPU fallback would produce a different trajectory.
+			const nextSetup = seedState ? ({ ...setup } as BZSetup) : fallbackSetup(setup);
 			effectiveSetup = nextSetup;
-			solver = new BZCpuSolver(nextSetup, { interventions: replayEvents, activeTerms });
-			if (targetStep > 0) solver.step(targetStep);
+			const completeTerms = activeTerms.reaction && activeTerms.diffusion;
+			solver = completeTerms
+				? new BZFastCpuSolver(nextSetup, {
+						interventions: replayEvents,
+						initialState: seedState ?? undefined,
+						initialStep: seedState ? targetStep : 0
+					})
+				: new BZCpuSolver(nextSetup, {
+						interventions: replayEvents,
+						activeTerms,
+						initialState: seedState ?? undefined,
+						initialStep: seedState ? targetStep : 0
+					});
+			if (!seedState && targetStep > 0) solver.step(targetStep);
 			eventLog = [...replayEvents];
 			eventSequence = eventLog.reduce((maximum, event) => Math.max(maximum, event.sequence + 1), 0);
 			engine = 'cpu-f64';
@@ -317,6 +409,7 @@
 			onstatus?.(engineMessage, engine, false);
 			drawCpu();
 			publishFrame(true);
+			onready?.(engine);
 		} catch (error) {
 			failureMessage =
 				error instanceof Error ? error.message : 'The CPU reference could not initialise.';
@@ -361,7 +454,7 @@
 		workCarry = pending - work;
 		if (work > 0) advance(work);
 		updateRate(now);
-		if (now - lastPublishedAt > 180) publishFrame(false);
+		if (now - lastPublishedAt >= FRAME_CALLBACK_INTERVAL_MS) publishFrame(false);
 		animationFrame = requestAnimationFrame(loop);
 	}
 
@@ -410,24 +503,67 @@
 	function publishFrame(force = false) {
 		if ((!solver && !gpu) || !effectiveSetup || !ready) return;
 		const now = typeof performance === 'undefined' ? 0 : performance.now();
-		if (!force && now - lastPublishedAt < 120) return;
+		if (!force && now - lastPublishedAt < FRAME_CALLBACK_INTERVAL_MS) return;
 		lastPublishedAt = now;
 		try {
-			const field = gpu ? gpu.readState(true) : solver!.state;
+			const field = gpu ? null : solver!.state;
+			const telemetry = gpu ? telemetryForFrame(now) : null;
+			if (telemetry && !telemetry.inspection.healthy) {
+				throw new Error(telemetry.inspection.reason);
+			}
+			const probe = gpu ? probeForFrame(now) : field ? readCpuPoint(field, selected) : null;
 			const modelTime = gpu?.clock.modelTime ?? solver!.modelTime;
 			onframe?.({
 				field,
+				probe,
+				telemetry,
+				readbacks: gpu?.readbackAccounting ?? null,
 				setup: effectiveSetup,
 				step: currentStep(),
 				modelTime,
 				engine,
 				stepsPerSecond: measuredRate,
-				metrics: activeAreaMetrics(field),
+				metrics: telemetry?.metrics ?? activeAreaMetrics(field!),
 				interventions: [...eventLog]
 			});
 		} catch (error) {
-			engineMessage = error instanceof Error ? error.message : 'Field diagnostics failed.';
+			failureMessage = error instanceof Error ? error.message : 'Field diagnostics failed.';
+			engineMessage = `Numerical telemetry stopped the run at step ${currentStep()}; no field repair was applied.`;
+			stopLoop();
+			onstatus?.(`${engineMessage} ${failureMessage}`, engine, true);
 		}
+	}
+
+	function telemetryForFrame(now: number): BZGpuTelemetrySample | null {
+		if (!gpu) return null;
+		if (!latestTelemetry || now - lastTelemetryAt >= TELEMETRY_INTERVAL_MS) {
+			latestTelemetry = gpu.sampleTelemetry(now);
+			lastTelemetryAt = now;
+		}
+		return latestTelemetry;
+	}
+
+	function probeForFrame(now: number): ProbeReading | null {
+		if (!gpu) return null;
+		const pointChanged =
+			!latestProbePoint ||
+			latestProbePoint[0] !== selected[0] ||
+			latestProbePoint[1] !== selected[1];
+		if (!latestFrameProbe || pointChanged || now - lastProbeAt >= PROBE_INTERVAL_MS) {
+			latestFrameProbe = gpu.readPoint(selected);
+			latestProbePoint = [selected[0], selected[1]];
+			lastProbeAt = now;
+		}
+		return latestFrameProbe;
+	}
+
+	function resetReadoutCadences() {
+		lastPublishedAt = 0;
+		lastTelemetryAt = 0;
+		lastProbeAt = 0;
+		latestTelemetry = null;
+		latestFrameProbe = null;
+		latestProbePoint = null;
 	}
 
 	function resizeCanvases() {
@@ -455,17 +591,45 @@
 
 	function drawCpu() {
 		if (!cpuCanvas || !cpuContext || !sourceCanvas || !solver || !effectiveSetup) return;
-		renderBZToCanvas(sourceCanvas, solver.state, effectiveSetup, { view, palette });
+		if (displayProfile) {
+			renderBZToCanvasV2(sourceCanvas, solver.state, effectiveSetup, {
+				view:
+					displayProfile.style === 'phase-spectrum'
+						? 'phase'
+						: displayProfile.style === 'ferroin-proxy'
+							? 'ferroin-proxy'
+							: displayProfile.style === 'luminous-composite'
+								? 'luminous-composite'
+								: view,
+				profile: displayProfile,
+				width: solver.state.size,
+				height: solver.state.size,
+				interpolation: 'mask-aware-bilinear',
+				glass: true
+			});
+		} else {
+			renderBZToCanvas(sourceCanvas, solver.state, effectiveSetup, { view, palette });
+		}
 		cpuContext.imageSmoothingEnabled = true;
 		cpuContext.fillStyle = '#080a0d';
 		cpuContext.fillRect(0, 0, cpuCanvas.width, cpuCanvas.height);
 		cpuContext.drawImage(sourceCanvas, 0, 0, cpuCanvas.width, cpuCanvas.height);
+		renderedFrameCount += 1;
 	}
 
 	function renderGpu() {
 		if (!gpu) return;
 		try {
-			gpu.render({ view, palette, diagnosticScale: 1, exposure: 1, gamma: 1, glass: true });
+			gpu.render({
+				view,
+				palette,
+				diagnosticScale: 1,
+				exposure: 1,
+				gamma: 1,
+				glass: true,
+				v2Profile: displayProfile
+			});
+			renderedFrameCount += 1;
 		} catch (error) {
 			engineMessage = error instanceof Error ? error.message : 'The GPU display pass failed.';
 		}
@@ -481,6 +645,38 @@
 		const y = point[1] * overlayCanvas.height;
 		const radius = brushRadius * Math.min(overlayCanvas.width, overlayCanvas.height);
 		context.save();
+		if (showSourceMarkers) {
+			const step = currentStep();
+			for (const source of eventLog) {
+				if (
+					source.kind !== 'pacemaker' ||
+					source.step > step ||
+					(source.endStep !== undefined && source.endStep < step)
+				)
+					continue;
+				const sourceX = source.center[0] * overlayCanvas.width;
+				const sourceY = source.center[1] * overlayCanvas.height;
+				const sourceRadius = Math.max(
+					4 * density,
+					source.radius * Math.min(overlayCanvas.width, overlayCanvas.height)
+				);
+				context.strokeStyle = 'rgba(255, 232, 158, 0.78)';
+				context.fillStyle = 'rgba(255, 196, 76, 0.07)';
+				context.lineWidth = Math.max(1.2 * density, overlayCanvas.width / 620);
+				context.setLineDash([2 * density, 4 * density]);
+				context.beginPath();
+				context.arc(sourceX, sourceY, sourceRadius, 0, Math.PI * 2);
+				context.fill();
+				context.stroke();
+				context.setLineDash([]);
+				context.beginPath();
+				context.moveTo(sourceX - 3 * density, sourceY);
+				context.lineTo(sourceX + 3 * density, sourceY);
+				context.moveTo(sourceX, sourceY - 3 * density);
+				context.lineTo(sourceX, sourceY + 3 * density);
+				context.stroke();
+			}
+		}
 		context.strokeStyle = tool === 'probe' ? '#fff6d7' : '#ffcf5a';
 		context.fillStyle = 'rgba(255, 207, 90, 0.08)';
 		context.lineWidth = Math.max(1.5 * density, overlayCanvas.width / 420);
@@ -526,19 +722,29 @@
 	}
 
 	function sampleProbe(point: Point): ProbeReading | null {
-		if (gpu) return gpu.readPoint(point);
+		if (gpu) {
+			const reading = gpu.readPoint(point);
+			latestFrameProbe = reading;
+			latestProbePoint = [point[0], point[1]];
+			lastProbeAt = typeof performance === 'undefined' ? 0 : performance.now();
+			return reading;
+		}
 		if (!solver) return null;
-		const column = Math.min(solver.state.size - 1, Math.floor(point[0] * solver.state.size));
-		const row = Math.min(solver.state.size - 1, Math.floor(point[1] * solver.state.size));
-		const index = row * solver.state.size + column;
-		const active = Boolean(solver.state.mask[index]);
+		return readCpuPoint(solver.state, point);
+	}
+
+	function readCpuPoint(field: Readonly<BZFieldState>, point: Point): ProbeReading {
+		const column = Math.min(field.size - 1, Math.floor(point[0] * field.size));
+		const row = Math.min(field.size - 1, Math.floor(point[1] * field.size));
+		const index = row * field.size + column;
+		const active = Boolean(field.mask[index]);
 		return {
 			row,
 			column,
 			index,
 			active,
-			u: active ? solver.state.u[index] : null,
-			v: active ? solver.state.v[index] : null
+			u: active ? field.u[index] : null,
+			v: active ? field.v[index] : null
 		};
 	}
 
@@ -727,13 +933,23 @@
 		onintervention?.(event);
 		advance(1);
 		publishFrame(true);
+		mixing = false;
+		if (mixFeedbackTimer !== null) clearTimeout(mixFeedbackTimer);
+		requestAnimationFrame(() => {
+			if (disposed) return;
+			mixing = true;
+			mixFeedbackTimer = setTimeout(() => {
+				mixing = false;
+				mixFeedbackTimer = null;
+			}, 720);
+		});
 	}
 
 	export async function replay(
 		targetStep = currentStep(),
 		events: readonly BZIntervention[] = eventLog
 	): Promise<void> {
-		await initialize(events, 0);
+		await initialize(events, 0, null);
 		const target = Math.max(0, Math.round(targetStep));
 		while (!disposed && (solver || gpu) && currentStep() < target) {
 			advance(Math.min(gpu ? 256 : 64, target - currentStep()));
@@ -743,9 +959,66 @@
 		publishFrame(true);
 	}
 
+	/** Continue the resident numerical state to an exact later step without reinitialising it. */
+	export async function advanceToStep(targetStep: number): Promise<void> {
+		if (!Number.isSafeInteger(targetStep) || targetStep < currentStep()) {
+			throw new RangeError(
+				'The requested continuation step must be a safe integer at or after the resident step.'
+			);
+		}
+		while (!disposed && (solver || gpu) && currentStep() < targetStep) {
+			advance(Math.min(gpu ? 256 : 32, targetStep - currentStep()));
+			if (currentStep() < targetStep) {
+				await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+			}
+		}
+		publishFrame(true);
+	}
+
+	/** Export the exact visible display pass. No numerical field readback is performed. */
+	export function visiblePngBlob(): Promise<Blob | null> {
+		if (gpu) renderGpu();
+		else drawCpu();
+		const canvas = gpu ? gpuCanvas : cpuCanvas;
+		if (!canvas) return Promise.resolve(null);
+		return new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+	}
+
 	export function snapshot(): BZFieldState | null {
-		if (gpu) return gpu.readState(true);
+		if (gpu) return gpu.readState('export');
 		return solver ? cloneBZFieldState(solver.state) : null;
+	}
+
+	export function readbackAccounting(): BZGpuReadbackAccounting | null {
+		return gpu?.readbackAccounting ?? null;
+	}
+
+	export function textureMemoryEstimate(): BZGpuTextureMemoryEstimate | null {
+		return gpu?.estimateTextureMemory() ?? null;
+	}
+
+	/** Bounded counters for explicit performance measurement; no numerical texture is read. */
+	export function performanceSnapshot(): BZStagePerformanceSnapshot {
+		const canvas = gpu ? gpuCanvas : cpuCanvas;
+		const width = canvas?.width ?? 0;
+		const height = canvas?.height ?? 0;
+		const bloomWidth = Math.ceil(width / 4);
+		const bloomHeight = Math.ceil(height / 4);
+		const hasPublicationTargets = Boolean(gpu && displayProfile && displayProfile.bloom > 0);
+		return {
+			sampledAtMs: typeof performance === 'undefined' ? 0 : performance.now(),
+			renderedFrames: renderedFrameCount,
+			step: currentStep(),
+			engine,
+			renderer: gpu?.capabilities.renderer ?? 'Float64 CPU reference',
+			displayWidth: width,
+			displayHeight: height,
+			readbacks: gpu?.readbackAccounting ?? null,
+			textureMemory: gpu?.estimateTextureMemory() ?? null,
+			displayTextureBytes: hasPublicationTargets
+				? width * height * 8 + bloomWidth * bloomHeight * 8 * 2
+				: 0
+		};
 	}
 
 	export function interventions(): readonly BZIntervention[] {
@@ -767,16 +1040,12 @@
 		class:ready
 		class:gpu-active={Boolean(gpu)}
 		class:failed={Boolean(failureMessage)}
+		class:mixing
 		bind:this={root}
 		data-engine={engine}
 		data-testid="bz-stage"
 	>
-		<img
-			class="poster"
-			src="/images/visualizations/belousov-zhabotinsky/bz-laboratory-poster.png"
-			alt=""
-			aria-hidden="true"
-		/>
+		<img class="poster" src={poster} alt="" aria-hidden="true" />
 		<canvas bind:this={gpuCanvas} class="gpu-canvas" aria-hidden="true"></canvas>
 		<canvas bind:this={cpuCanvas} class="cpu-canvas" aria-hidden="true"></canvas>
 		<canvas
@@ -785,7 +1054,7 @@
 			class:painting={tool !== 'probe'}
 			tabindex="0"
 			aria-label={description}
-			aria-describedby="bz-stage-instructions"
+			aria-describedby={stageInstructionsId}
 			onpointerdown={handlePointerDown}
 			onpointermove={handlePointerMove}
 			onpointerleave={handlePointerLeave}
@@ -794,6 +1063,7 @@
 			onlostpointercapture={handlePointerEnd}
 			onkeydown={handleKeydown}
 		></canvas>
+		{#if mixing}<div class="mix-feedback" aria-hidden="true"></div>{/if}
 		<div class="dish-rim" aria-hidden="true"></div>
 		<div class="stage-tags" aria-hidden="true"><span>u</span><span>v</span></div>
 		{#if !ready}
@@ -803,7 +1073,7 @@
 			<div class="failure"><b>Numerical stop</b><span>{failureMessage}</span></div>
 		{/if}
 	</div>
-	<p id="bz-stage-instructions" class="sr-only">
+	<p id={stageInstructionsId} class="sr-only">
 		Arrow keys move by one numerical cell. Enter applies the selected instrument. Space toggles run
 		and pause. R resets. Full stop steps once. Keys 1 to 4 select probe, excite, inhibit, and cut.
 		Square brackets change brush radius.
@@ -876,6 +1146,44 @@
 	}
 	.overlay-canvas:focus-visible {
 		box-shadow: inset 0 0 0 5px #ffcf5a;
+	}
+	.mix-feedback {
+		position: absolute;
+		z-index: 2;
+		inset: 9%;
+		pointer-events: none;
+		border-radius: 50%;
+		background:
+			conic-gradient(
+				from 45deg,
+				transparent 0 18%,
+				rgb(255 226 155 / 0.13) 31%,
+				transparent 44% 68%,
+				rgb(116 198 235 / 0.1) 80%,
+				transparent 94%
+			),
+			radial-gradient(circle, rgb(255 255 255 / 0.09), transparent 61%);
+		mix-blend-mode: screen;
+		animation: bz-mix-feedback 720ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+	}
+	@keyframes bz-mix-feedback {
+		0% {
+			opacity: 0;
+			transform: scale(0.62) rotate(-28deg);
+		}
+		36% {
+			opacity: 0.8;
+		}
+		100% {
+			opacity: 0;
+			transform: scale(1.08) rotate(42deg);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.mix-feedback {
+			animation: none;
+			opacity: 0.12;
+		}
 	}
 	.dish-rim {
 		z-index: 3;

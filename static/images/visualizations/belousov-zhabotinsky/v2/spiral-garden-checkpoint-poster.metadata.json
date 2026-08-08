@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "kind": "bz-v2-checkpoint-poster-metadata",
+  "generatedAt": "2026-08-08T12:24:26.141Z",
+  "generatedBy": "scripts/render-bz-v2-checkpoint-posters.mjs",
+  "generationCommand": "node scripts/render-bz-v2-checkpoint-posters.mjs",
+  "engineVersion": "bz-heun-five-point-v2",
+  "displayVersion": "bz-display-linear-light-v2",
+  "asset": {
+    "id": "bz-v2-spiral-garden-checkpoint-poster",
+    "path": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.png",
+    "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.metadata.json",
+    "width": 1200,
+    "height": 1200,
+    "format": "png",
+    "sha256": "91186a265cb04423306fe943291edca0eea1cfcc05f5fcd7742422539c58cfd0"
+  },
+  "source": {
+    "presetId": "spiral-garden",
+    "checkpointId": "spiral-garden-256-v2",
+    "checkpointPath": "/data/bz-v2/checkpoints/spiral-garden-256-v2.bzcp",
+    "checkpointSha256": "d3b3f58c9538058316c11e7f51ee2ec5c14e309514155eb784c35eb74d77a148",
+    "modelStep": 24000,
+    "modelTime": 12,
+    "stateGrid": 256,
+    "setup": {
+      "model": "oregonator",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 1.4
+      },
+      "diffusionU": 1,
+      "diffusionV": 0,
+      "timestep": 0.0005,
+      "gridSize": 256,
+      "domainSize": 32,
+      "activeRadius": 14.72,
+      "boundary": "no-flux",
+      "geometry": "circular-dish",
+      "maskPreset": "none",
+      "initialCondition": "multi-spiral-seed",
+      "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+    },
+    "interventions": [],
+    "storedFloat32StateSha256": "a61d2e34b028b75062a47801cf29ccf957d7d59ebdd7704cd968023649b8a596",
+    "cpuFloat64ReferenceSha256": "81ba8eb87b0b777bb168718771cf51ee29a5220400daed213d9338084748baca",
+    "renderStateSha256Before": "d78c4a27eb4f7c6abc7fb0788c87f4b35a51876da9df196a13eaa3e0bd407283",
+    "renderStateSha256After": "d78c4a27eb4f7c6abc7fb0788c87f4b35a51876da9df196a13eaa3e0bd407283"
+  },
+  "display": {
+    "view": "luminous-composite",
+    "profileId": "oregonator-luminous-publication-v2",
+    "profile": {
+      "id": "oregonator-luminous-publication-v2",
+      "title": "Oregonator luminous publication profile",
+      "version": "bz-display-linear-light-v2",
+      "style": "luminous-composite",
+      "palette": "ferroin",
+      "defaultView": "dish",
+      "rangeMode": "fixed",
+      "ranges": {
+        "u": {
+          "minimum": 0,
+          "maximum": 0.82,
+          "units": "dimensionless"
+        },
+        "v": {
+          "minimum": 0,
+          "maximum": 0.3,
+          "units": "dimensionless"
+        },
+        "reaction-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "diffusion-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "net-u": {
+          "minimum": -40,
+          "maximum": 40,
+          "units": "dimensionless-rate"
+        },
+        "phase": {
+          "minimum": -3.141592653589793,
+          "maximum": 3.141592653589793,
+          "units": "radians"
+        },
+        "front": {
+          "minimum": 0,
+          "maximum": 5,
+          "units": "dimensionless"
+        },
+        "refractory": {
+          "minimum": -0.1,
+          "maximum": 2.5,
+          "units": "dimensionless"
+        },
+        "difference-from-mean": {
+          "minimum": -0.3,
+          "maximum": 0.7,
+          "units": "dimensionless"
+        }
+      },
+      "phase": {
+        "centreU": 0.1,
+        "centreV": 0.1,
+        "scaleU": 0.42,
+        "scaleV": 0.12
+      },
+      "exposure": 1.25,
+      "bloom": 0.12,
+      "highlight": 0.58,
+      "saturation": 1.06,
+      "interpolation": "mask-aware-manual-bilinear",
+      "toneMap": "aces-fitted",
+      "outputTransfer": "srgb",
+      "disclosure": "Luminous phase and wavefront composite in linear light with fixed ranges; restrained bloom, tone mapping, and glass cues are display only.",
+      "frontScale": 0.2,
+      "contrast": 1.04,
+      "gamma": 1,
+      "bloomThreshold": 0.52,
+      "bloomRadius": 1.7,
+      "ferroinMix": {
+        "recoveryWeight": 0.7,
+        "activatorLuminanceWeight": 0.34,
+        "gradientHighlightWeight": 0.5
+      },
+      "luminousMix": {
+        "phaseWeight": 0.78,
+        "recoveryWeight": 0.22,
+        "frontWeight": 0.44
+      }
+    },
+    "disclosure": "Exact authenticated 256² mature checkpoint rendered through the fixed V2 publication profile. Colour, bloom and glass are display only."
+  }
+}

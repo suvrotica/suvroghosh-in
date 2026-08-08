@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 2,
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=target --grid=256 --domain=120 --duration=14 --observation-start=10 --epsilon=0.05 --q=0.002 --f=2.4 --source-period=1.5 --source-radius=0.025 --source-amount=0 --source-end=60 --output-name=target-grid256 --emit-checkpoint --write",
+  "stage": "publication-refinement",
+  "grid": 256,
+  "phaseCoordinate": {
+    "centreU": 0.011605268043856337,
+    "centreV": 0.011605268043856337,
+    "scaleU": 0.42,
+    "scaleV": 0.12
+  },
+  "literatureGuidedBox": {
+    "epsilon": [
+      0.005,
+      0.08
+    ],
+    "q": [
+      0.0005,
+      0.004
+    ],
+    "f": [
+      1.2,
+      2.6
+    ],
+    "diffusionU": 1,
+    "diffusionV": 0,
+    "domainSize": [
+      16,
+      40
+    ]
+  },
+  "pruning": "Abort on the first non-finite or negative corrector value; retain only finite regimes with objective radial or phase evidence.",
+  "workerPolicy": "At most two independent candidates; this command defaults to one to preserve an interactive workstation.",
+  "durationMs": 111626,
+  "checkpointDescriptors": [
+    {
+      "id": "classic-target-rings-256-v2",
+      "version": 1,
+      "path": "/data/bz-v2/checkpoints/classic-target-rings-256-v2.bzcp",
+      "encoding": "bzcp-f32le-v1",
+      "losslessForStoredRepresentation": true,
+      "width": 256,
+      "height": 256,
+      "modelStep": 28000,
+      "modelTime": 14,
+      "byteLength": 657682,
+      "sha256": "5fa06f09cc45517ce8f3239f28af5d731452eeb3a054ce04e99e696713e4e74d",
+      "fieldSha256F64Reference": "85f3a29dc1d78405302cf05f78555303e3188832f5c0887f26beac21f78136ad",
+      "setupChecksum": "41fb4a434d1036da594fe669ba58aa360ba446d1e73c613439b6bf4258406386",
+      "interventionLogChecksum": "ec33920840b64c0ec23a3c787bc2350d66d7078f7778036980866a28d0f3b2f1",
+      "engineVersion": "bz-heun-five-point-v2",
+      "generatedBy": "scripts/search-bz-regimes.ts",
+      "generatedAt": "2026-08-08T00:00:00.000Z",
+      "sourcePresetId": "classic-target-rings",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 2.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 120,
+        "activeRadius": 55.2,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "periodic-source",
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+      },
+      "seed": "bz-v2-periodic-source-0.05-0.002-2.4",
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 0,
+          "kind": "pacemaker",
+          "center": [
+            0.5,
+            0.5
+          ],
+          "radius": 0.025,
+          "amount": 0,
+          "sourceMode": "state-reset",
+          "targetU": 0.8,
+          "targetV": 0.003625162337637433,
+          "strength": 1,
+          "periodSteps": 3000,
+          "endStep": 120000
+        }
+      ],
+      "browserStateSha256": "a3fc041ba1607892d0c23fb844f35ccfc8b7a1c3c16fb53dc1261237363a5a56",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "validationRecordId": "classic-target-rings-validation-v2"
+    }
+  ],
+  "results": [
+    {
+      "hero": "classic-target-rings",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 2.4
+      },
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 2.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 120,
+        "activeRadius": 55.2,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "periodic-source",
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+      },
+      "duration": 14,
+      "observationStart": 10,
+      "sourcePeriod": 1.5,
+      "periodSteps": 3000,
+      "sourceFirings": 10,
+      "sourceFiringsInWindow": 3,
+      "sourceEndTime": 60,
+      "sourceEndStep": 120000,
+      "minimumFrontSpacing": 1.5,
+      "sourceExclusionRadius": 4.5,
+      "radialBinWidth": 0.43125,
+      "finite": true,
+      "maximumSignificantPeaks": 3,
+      "simultaneousThreePeakFraction": 0.9629629629629629,
+      "maximumOuterRadius": 53.690625000000004,
+      "wallMargin": 1.5093749999999986,
+      "minimumObservedSpacing": 12.506249999999998,
+      "meanWaveSpeed": 4.86566105769231,
+      "outwardTrackCount": 4,
+      "wallReflectionTracks": 0,
+      "threeFrontWindowStart": 10,
+      "threeFrontWindowEnd": 14,
+      "pass": true,
+      "durationMs": 109462,
+      "peakTracks": [
+        {
+          "time": 10.05,
+          "radii": [
+            5.821875,
+            19.190625,
+            38.596875000000004
+          ]
+        },
+        {
+          "time": 10.1,
+          "radii": [
+            5.821875,
+            19.190625,
+            39.028125
+          ]
+        },
+        {
+          "time": 10.15,
+          "radii": [
+            6.253125000000001,
+            19.621875,
+            39.459375
+          ]
+        },
+        {
+          "time": 10.200000000000001,
+          "radii": [
+            6.253125000000001,
+            19.621875,
+            39.459375
+          ]
+        },
+        {
+          "time": 10.25,
+          "radii": [
+            6.684375,
+            20.053125,
+            39.890625
+          ]
+        },
+        {
+          "time": 10.3,
+          "radii": [
+            6.684375,
+            20.053125,
+            40.321875
+          ]
+        },
+        {
+          "time": 10.35,
+          "radii": [
+            7.1156250000000005,
+            20.484375,
+            40.321875
+          ]
+        },
+        {
+          "time": 10.4,
+          "radii": [
+            7.1156250000000005,
+            20.484375,
+            40.753125000000004
+          ]
+        },
+        {
+          "time": 10.450000000000001,
+          "radii": [
+            7.546875,
+            20.915625000000002,
+            41.184375
+          ]
+        },
+        {
+          "time": 10.5,
+          "radii": [
+            7.546875,
+            20.915625000000002,
+            41.615625
+          ]
+        },
+        {
+          "time": 10.55,
+          "radii": [
+            7.978125,
+            21.346875,
+            41.615625
+          ]
+        },
+        {
+          "time": 14,
+          "radii": [
+            9.703125,
+            22.640625,
+            39.028125
+          ]
+        }
+      ],
+      "trackSummaries": [
+        {
+          "samples": 81,
+          "startTime": 10,
+          "endTime": 14,
+          "startRadius": 5.821875,
+          "endRadius": 22.640625,
+          "netDisplacement": 16.81875,
+          "meanSpeed": 4.2046875,
+          "outwardFraction": 1,
+          "meanProminence": 0.4543634754294474
+        },
+        {
+          "samples": 81,
+          "startTime": 10,
+          "endTime": 14,
+          "startRadius": 18.759375000000002,
+          "endRadius": 39.028125,
+          "netDisplacement": 20.26875,
+          "meanSpeed": 5.0671875,
+          "outwardFraction": 1,
+          "meanProminence": 0.5170264787027914
+        },
+        {
+          "samples": 51,
+          "startTime": 10,
+          "endTime": 12.5,
+          "startRadius": 38.165625,
+          "endRadius": 53.690625000000004,
+          "netDisplacement": 15.525000000000006,
+          "meanSpeed": 6.210000000000003,
+          "outwardFraction": 1,
+          "meanProminence": 0.5644070326907531
+        },
+        {
+          "samples": 27,
+          "startTime": 12.700000000000001,
+          "endTime": 14,
+          "startRadius": 4.528125,
+          "endRadius": 9.703125,
+          "netDisplacement": 5.175,
+          "meanSpeed": 3.980769230769234,
+          "outwardFraction": 1,
+          "meanProminence": 0.45778197606238547
+        }
+      ]
+    }
+  ]
+}

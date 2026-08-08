@@ -94,6 +94,29 @@ export function assertValidBZIntervention(event: Readonly<BZIntervention>): void
 			if (event.amount < 0 || event.amount > 100) {
 				throw new RangeError('Pacemaker amount lies outside [0, 100].');
 			}
+			if (
+				event.sourceMode !== undefined &&
+				event.sourceMode !== 'additive' &&
+				event.sourceMode !== 'state-reset'
+			) {
+				throw new RangeError('Pacemaker source mode is unknown.');
+			}
+			if (event.sourceMode === 'state-reset') {
+				if (event.targetU === undefined || event.targetV === undefined) {
+					throw new RangeError('State-reset pacemakers require explicit U and V targets.');
+				}
+				finite(event.targetU, 'Pacemaker target U');
+				finite(event.targetV, 'Pacemaker target V');
+				finite(event.strength ?? 1, 'Pacemaker reset strength');
+				if (
+					Math.abs(event.targetU) > 10_000 ||
+					Math.abs(event.targetV) > 10_000 ||
+					(event.strength ?? 1) < 0 ||
+					(event.strength ?? 1) > 1
+				) {
+					throw new RangeError('Pacemaker reset targets or strength lie outside supported bounds.');
+				}
+			}
 			if (!Number.isSafeInteger(event.periodSteps) || event.periodSteps < 1) {
 				throw new RangeError('Pacemaker period must be a positive number of steps.');
 			}
@@ -321,7 +344,11 @@ export function applyBZIntervention(
 			}
 			const weight = radialWeight(point[0], point[1], event.center, event.radius, cellWidth);
 			if (weight <= 0) continue;
-			if (event.kind === 'excite' || event.kind === 'pacemaker') {
+			if (event.kind === 'pacemaker' && event.sourceMode === 'state-reset') {
+				const resetWeight = weight * (event.strength ?? 1);
+				state.u[index] += (event.targetU! - state.u[index]) * resetWeight;
+				state.v[index] += (event.targetV! - state.v[index]) * resetWeight;
+			} else if (event.kind === 'excite' || event.kind === 'pacemaker') {
 				state.u[index] += event.amount * weight;
 			} else {
 				state.u[index] -= event.amount * weight * 0.5;

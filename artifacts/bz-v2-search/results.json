@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 2,
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=garden --grid=64 --domain=32 --duration=14 --epsilon=0.05 --q=0.002 --f=1.4 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --write",
+  "stage": "coarse-search",
+  "grid": 64,
+  "phaseCoordinate": {
+    "centreU": 0.011605268043856337,
+    "centreV": 0.011605268043856337,
+    "scaleU": 0.42,
+    "scaleV": 0.12
+  },
+  "literatureGuidedBox": {
+    "epsilon": [
+      0.005,
+      0.08
+    ],
+    "q": [
+      0.0005,
+      0.004
+    ],
+    "f": [
+      1.2,
+      2.6
+    ],
+    "diffusionU": 1,
+    "diffusionV": 0,
+    "domainSize": [
+      16,
+      40
+    ]
+  },
+  "pruning": "Abort on the first non-finite or negative corrector value; retain only finite regimes with objective radial or phase evidence.",
+  "workerPolicy": "At most two independent candidates; this command defaults to one to preserve an interactive workstation.",
+  "durationMs": 7700,
+  "results": [
+    {
+      "hero": "spiral-garden",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 1.4
+      },
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 64,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "multi-spiral-seed",
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+      },
+      "observationStart": 2,
+      "duration": 14,
+      "finite": true,
+      "minimumCoreCount": 3,
+      "maximumCoreCount": 3,
+      "persistentFraction": 1,
+      "persistentTrackCount": 3,
+      "characteristicPeriodReference": 2.75,
+      "minimumSurvivalTime": 12,
+      "measuredRotations": [
+        4.38005598936759,
+        4.390558336626771,
+        4.316360220583172
+      ],
+      "minimumMeasuredRotations": 4.316360220583172,
+      "minimumSeparation": 5.408326913195984,
+      "minimumWallDistance": 7.153627024789222,
+      "trackSummaries": [
+        {
+          "charge": 1,
+          "samples": 121,
+          "start": 2,
+          "end": 14,
+          "rotations": 4.38005598936759
+        },
+        {
+          "charge": 1,
+          "samples": 121,
+          "start": 2,
+          "end": 14,
+          "rotations": 4.390558336626771
+        },
+        {
+          "charge": 1,
+          "samples": 121,
+          "start": 2,
+          "end": 14,
+          "rotations": 4.316360220583172
+        }
+      ],
+      "pass": true,
+      "durationMs": 7693
+    }
+  ]
+}

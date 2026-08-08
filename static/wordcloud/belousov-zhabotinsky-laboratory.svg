@@ -1,134 +1,134 @@
 <svg role="img" aria-label="The Clock That Escaped Into Space: A Belousov–Zhabotinsky Laboratory" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Clock That Escaped Into Space: A Belousov–Zhabotinsky Laboratory</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(91,137)" font-size="118" style="fill:#c49a6c">Chemical</text>
-<text transform="translate(402,353)" font-size="116" style="fill:#e0b879">Reaction</text>
-<text transform="translate(553,525)" font-size="104" style="fill:#d88988">Front</text>
-<text transform="translate(168,251)" font-size="104" style="fill:#c49a6c">Diffusion</text>
-<text transform="translate(247,494)" font-size="104" style="fill:#d5d2c2">Field</text>
-<text transform="translate(744,120)" font-size="102" style="fill:#d9c89e">State</text>
-<text transform="translate(415,696)" font-size="96" style="fill:#e0b879">Model</text>
-<text transform="translate(834,621)" font-size="87" style="fill:#9fc9c5">Local</text>
-<text transform="translate(832,258)" font-size="87" style="fill:#b6c3dd">Turing</text>
-<text transform="translate(59,599)" font-size="87" style="fill:#8fb7d0">Spatial</text>
-<text transform="translate(814,430)" font-size="82" style="fill:#9fc9c5">Waves</text>
-<text transform="translate(74,365)" font-size="82" style="fill:#d88988">Every</text>
-<text transform="translate(921,505)" font-size="82" style="fill:#d9c89e">Partial</text>
-<text transform="translate(823,689)" font-size="79" style="fill:#d6a79f">Spiral</text>
-<text transform="translate(183,692)" font-size="79" style="fill:#c7d7b5">Frac</text>
-<text transform="translate(1088,372)" font-size="76" style="fill:#c49a6c">Time</text>
-<text transform="translate(705,186)" font-size="76" style="fill:#d88988">Excitation</text>
-<text transform="translate(447,597)" font-size="76" style="fill:#c7d7b5">Recovery</text>
-<text transform="translate(58,534) rotate(-90)" font-size="73" style="fill:#d9c89e">Wave</text>
-<text transform="translate(1245,320) rotate(-90)" font-size="70" style="fill:#d6a79f">Dish</text>
-<text transform="translate(592,433)" font-size="70" style="fill:#8fb7d0">Phase</text>
-<text transform="translate(1046,101)" font-size="67" style="fill:#c7d7b5">Clock</text>
-<text transform="translate(83,244) rotate(-90)" font-size="67" style="fill:#c49a6c">Finite</text>
-<text transform="translate(191,311)" font-size="67" style="fill:#8fb7d0">Nabla</text>
-<text transform="translate(307,398)" font-size="47" style="fill:#e0b879">Laboratory</text>
-<text transform="translate(865,549)" font-size="46" style="fill:#d88988">Belousov</text>
-<text transform="translate(759,39)" font-size="46" style="fill:#d88988">Fronts</text>
-<text transform="translate(931,35)" font-size="41" style="fill:#d6a79f">Refractory</text>
-<text transform="translate(185,39)" font-size="39" style="fill:#d5d2c2">Chemistry</text>
-<text transform="translate(433,33)" font-size="38" style="fill:#d88988">Experiment</text>
-<text transform="translate(1158,715) rotate(-90)" font-size="38" style="fill:#d5d2c2">Mechanism</text>
-<text transform="translate(66,697)" font-size="38" style="fill:#d5d2c2">Plain</text>
-<text transform="translate(1206,711) rotate(-90)" font-size="38" style="fill:#e0b879">Language</text>
-<text transform="translate(111,447)" font-size="36" style="fill:#b6c3dd">Rings</text>
-<text transform="translate(1064,424)" font-size="36" style="fill:#b6c3dd">Support</text>
-<text transform="translate(63,522)" font-size="33" style="fill:#8fb7d0">Equilibrium</text>
-<text transform="translate(440,174)" font-size="33" style="fill:#d88988">Fields</text>
-<text transform="translate(1245,674) rotate(-90)" font-size="33" style="fill:#d5d2c2">Later</text>
-<text transform="translate(721,669)" font-size="33" style="fill:#c49a6c">Noyes</text>
-<text transform="translate(958,324)" font-size="31" style="fill:#8fb7d0">Tip</text>
-<text transform="translate(116,392)" font-size="31" style="fill:#9fc9c5">Pattern</text>
-<text transform="translate(735,233)" font-size="31" style="fill:#c7d7b5">Space</text>
-<text transform="translate(130,485)" font-size="31" style="fill:#c49a6c">Rather</text>
-<text transform="translate(618,459)" font-size="31" style="fill:#d5d2c2">Free</text>
-<text transform="translate(8,280)" font-size="31" style="fill:#9fc9c5">Numerical</text>
-<text transform="translate(178,166)" font-size="31" style="fill:#b6c3dd">Test</text>
-<text transform="translate(622,176)" font-size="31" style="fill:#a9b7a3">Cell</text>
-<text transform="translate(58,689) rotate(-90)" font-size="31" style="fill:#d88988">Declared</text>
-<text transform="translate(236,631)" font-size="31" style="fill:#d9c89e">Changes</text>
-<text transform="translate(309,522)" font-size="31" style="fill:#c7d7b5">Contradiction</text>
-<text transform="translate(1090,128)" font-size="29" style="fill:#b6c3dd">Temporal</text>
-<text transform="translate(470,277)" font-size="29" style="fill:#d88988">Zhabotinsky</text>
-<text transform="translate(1029,303)" font-size="27" style="fill:#d6a79f">Stationary</text>
-<text transform="translate(718,380)" font-size="27" style="fill:#d9c89e">Probe</text>
-<text transform="translate(131,546)" font-size="27" style="fill:#8fb7d0">First</text>
-<text transform="translate(823,285)" font-size="27" style="fill:#c49a6c">Colour</text>
-<text transform="translate(638,69)" font-size="27" style="fill:#c7d7b5">System</text>
-<text transform="translate(650,550)" font-size="27" style="fill:#d6a79f">Oscillation</text>
-<text transform="translate(958,365)" font-size="27" style="fill:#d6a79f">Equations</text>
-<text transform="translate(65,652)" font-size="27" style="fill:#b6c3dd">Systems</text>
-<text transform="translate(286,63)" font-size="25" style="fill:#d88988">Real</text>
-<text transform="translate(1008,712)" font-size="25" style="fill:#c49a6c">Fixed</text>
-<text transform="translate(305,159)" font-size="25" style="fill:#e0b879">Timestep</text>
-<text transform="translate(465,619)" font-size="25" style="fill:#d5d2c2">Mean</text>
-<text transform="translate(984,454)" font-size="25" style="fill:#c49a6c">Useful</text>
-<text transform="translate(667,36)" font-size="25" style="fill:#a9b7a3">Medium</text>
-<text transform="translate(94,415)" font-size="25" style="fill:#b6c3dd">Classical</text>
-<text transform="translate(871,379)" font-size="25" style="fill:#9fc9c5">Small</text>
-<text transform="translate(90,232)" font-size="25" style="fill:#a9b7a3">Cycle</text>
-<text transform="translate(1272,169) rotate(-90)" font-size="25" style="fill:#9fc9c5">Near</text>
-<text transform="translate(719,715)" font-size="25" style="fill:#d88988">Threshold</text>
-<text transform="translate(1268,664) rotate(-90)" font-size="25" style="fill:#9fc9c5">Transport</text>
-<text transform="translate(191,62)" font-size="25" style="fill:#b6c3dd">Change</text>
-<text transform="translate(1116,674) rotate(-90)" font-size="25" style="fill:#d88988">Homogeneous</text>
-<text transform="translate(1270,303) rotate(-90)" font-size="25" style="fill:#e0b879">Material</text>
-<text transform="translate(23,712) rotate(-90)" font-size="25" style="fill:#c7d7b5">Oregonator</text>
-<text transform="translate(520,548)" font-size="25" style="fill:#e0b879">Kinetics</text>
-<text transform="translate(188,715)" font-size="25" style="fill:#9fc9c5">Oscillations</text>
-<text transform="translate(25,218) rotate(-90)" font-size="25" style="fill:#8fb7d0">Dimensionless</text>
-<text transform="translate(1131,394)" font-size="25" style="fill:#8fb7d0">Motion</text>
-<text transform="translate(1265,97) rotate(-90)" font-size="25" style="fill:#d88988">Preset</text>
-<text transform="translate(320,356)" font-size="25" style="fill:#9fc9c5">Fluid</text>
-<text transform="translate(39,301)" font-size="25" style="fill:#d5d2c2">Browser</text>
-<text transform="translate(426,65)" font-size="25" style="fill:#c7d7b5">Nonlinear</text>
-<text transform="translate(687,639)" font-size="25" style="fill:#c49a6c">Recovered</text>
-<text transform="translate(697,459)" font-size="25" style="fill:#c7d7b5">Whether</text>
-<text transform="translate(635,103)" font-size="25" style="fill:#8fb7d0">Obstacle</text>
-<text transform="translate(1181,283) rotate(-90)" font-size="25" style="fill:#d6a79f">Biological</text>
-<text transform="translate(91,42)" font-size="23" style="fill:#c7d7b5">Watch</text>
-<text transform="translate(913,713)" font-size="23" style="fill:#c49a6c">Radius</text>
-<text transform="translate(606,374)" font-size="23" style="fill:#d6a79f">Cut</text>
-<text transform="translate(128,159)" font-size="23" style="fill:#c7d7b5">End</text>
-<text transform="translate(931,279)" font-size="23" style="fill:#d6a79f">Observation</text>
-<text transform="translate(408,714) rotate(-90)" font-size="23" style="fill:#d6a79f">Changing</text>
-<text transform="translate(1179,661) rotate(-90)" font-size="23" style="fill:#9fc9c5">Wellmixed</text>
-<text transform="translate(843,501)" font-size="23" style="fill:#e0b879">Place</text>
-<text transform="translate(567,614)" font-size="17" style="fill:#d9c89e">Oscillatory</text>
-<text transform="translate(1038,204)" font-size="17" style="fill:#d5d2c2">Measured</text>
-<text transform="translate(742,260)" font-size="17" style="fill:#d6a79f">Candidate</text>
-<text transform="translate(1181,32)" font-size="17" style="fill:#c49a6c">Period</text>
-<text transform="translate(1268,485) rotate(-90)" font-size="17" style="fill:#b6c3dd">Agreement</text>
-<text transform="translate(596,632)" font-size="17" style="fill:#8fb7d0">Paper</text>
-<text transform="translate(634,119)" font-size="17" style="fill:#d88988">Propagation</text>
-<text transform="translate(1186,150)" font-size="17" style="fill:#c49a6c">Band</text>
-<text transform="translate(137,620)" font-size="17" style="fill:#d88988">Geometry</text>
-<text transform="translate(363,429)" font-size="17" style="fill:#8fb7d0">Second</text>
-<text transform="translate(845,453)" font-size="17" style="fill:#e0b879">Qquad</text>
-<text transform="translate(909,205)" font-size="17" style="fill:#c7d7b5">Location</text>
-<text transform="translate(466,714)" font-size="17" style="fill:#8fb7d0">Curvature</text>
-<text transform="translate(87,187)" font-size="17" style="fill:#c7d7b5">Stirring</text>
-<text transform="translate(42,252)" font-size="17" style="fill:#e0b879">Term</text>
-<text transform="translate(1226,388)" font-size="17" style="fill:#d9c89e">Fast</text>
-<text transform="translate(7,328)" font-size="17" style="fill:#d6a79f">Move</text>
-<text transform="translate(635,713)" font-size="17" style="fill:#8fb7d0">Selected</text>
-<text transform="translate(968,54)" font-size="17" style="fill:#c49a6c">Coupling</text>
-<text transform="translate(121,250)" font-size="17" style="fill:#8fb7d0">Wake</text>
-<text transform="translate(63,713)" font-size="17" style="fill:#e0b879">Intervention</text>
-<text transform="translate(740,202)" font-size="17" style="fill:#a9b7a3">Becomes</text>
-<text transform="translate(69,473)" font-size="17" style="fill:#c7d7b5">Speed</text>
-<text transform="translate(1171,447)" font-size="17" style="fill:#d6a79f">Side</text>
-<text transform="translate(486,635)" font-size="17" style="fill:#d9c89e">Physical</text>
-<text transform="translate(87,408) rotate(-90)" font-size="17" style="fill:#d6a79f">Pass</text>
-<text transform="translate(415,538)" font-size="17" style="fill:#a9b7a3">Means</text>
-<text transform="translate(892,564)" font-size="15" style="fill:#d5d2c2">Morphogenesis</text>
-<text transform="translate(1218,524)" font-size="15" style="fill:#b6c3dd">Cells</text>
-<text transform="translate(732,337)" font-size="15" style="fill:#d9c89e">Delta</text>
-<text transform="translate(775,138)" font-size="15" style="fill:#8fb7d0">Journal</text>
-<text transform="translate(479,418)" font-size="13" style="fill:#d5d2c2">Enough</text>
-<text transform="translate(923,136)" font-size="13" style="fill:#d9c89e">Coloured</text>
-<text transform="translate(380,700) rotate(-90)" font-size="13" style="fill:#d6a79f">Across</text>
+<text transform="translate(91,137)" font-size="118" style="fill:#c49a6c">Reaction</text>
+<text transform="translate(334,354)" font-size="116" style="fill:#e0b879">Chemical</text>
+<text transform="translate(662,555)" font-size="110" style="fill:#d88988">State</text>
+<text transform="translate(498,258)" font-size="106" style="fill:#c49a6c">Diffusion</text>
+<text transform="translate(270,527)" font-size="106" style="fill:#d5d2c2">Field</text>
+<text transform="translate(867,123)" font-size="104" style="fill:#d9c89e">Front</text>
+<text transform="translate(140,673)" font-size="100" style="fill:#d88988">Model</text>
+<text transform="translate(691,667)" font-size="91" style="fill:#9fc9c5">Spatial</text>
+<text transform="translate(988,396)" font-size="89" style="fill:#b6c3dd">Local</text>
+<text transform="translate(11,357)" font-size="87" style="fill:#8fb7d0">Turing</text>
+<text transform="translate(591,433)" font-size="87" style="fill:#9fc9c5">Wave</text>
+<text transform="translate(34,230)" font-size="84" style="fill:#d88988">Spiral</text>
+<text transform="translate(334,425)" font-size="84" style="fill:#d9c89e">Waves</text>
+<text transform="translate(431,619)" font-size="84" style="fill:#d6a79f">Every</text>
+<text transform="translate(831,464)" font-size="81" style="fill:#d6a79f">Partial</text>
+<text transform="translate(81,426)" font-size="78" style="fill:#c7d7b5">Frac</text>
+<text transform="translate(1264,255) rotate(-90)" font-size="75" style="fill:#a9b7a3">Phase</text>
+<text transform="translate(873,311)" font-size="68" style="fill:#8fb7d0">Recovery</text>
+<text transform="translate(343,203)" font-size="63" style="fill:#c7d7b5">Time</text>
+<text transform="translate(79,150) rotate(-90)" font-size="60" style="fill:#c49a6c">Dish</text>
+<text transform="translate(34,577)" font-size="60" style="fill:#8fb7d0">Laboratory</text>
+<text transform="translate(496,65)" font-size="60" style="fill:#e0b879">Excitation</text>
+<text transform="translate(1203,689) rotate(-90)" font-size="60" style="fill:#d88988">Nabla</text>
+<text transform="translate(186,48)" font-size="57" style="fill:#d88988">Belousov</text>
+<text transform="translate(1273,705) rotate(-90)" font-size="57" style="fill:#d6a79f">Numerical</text>
+<text transform="translate(667,170)" font-size="57" style="fill:#d5d2c2">Declared</text>
+<text transform="translate(121,277)" font-size="57" style="fill:#d88988">Fronts</text>
+<text transform="translate(938,166)" font-size="47" style="fill:#d5d2c2">Refractory</text>
+<text transform="translate(964,711)" font-size="47" style="fill:#8fb7d0">Finite</text>
+<text transform="translate(1148,617) rotate(-90)" font-size="45" style="fill:#e0b879">Clock</text>
+<text transform="translate(100,504)" font-size="45" style="fill:#e0b879">Colour</text>
+<text transform="translate(759,598)" font-size="45" style="fill:#8fb7d0">Fields</text>
+<text transform="translate(440,698)" font-size="45" style="fill:#8fb7d0">Chemistry</text>
+<text transform="translate(886,39)" font-size="45" style="fill:#d88988">Mechanism</text>
+<text transform="translate(1095,621) rotate(-90)" font-size="45" style="fill:#d5d2c2">Later</text>
+<text transform="translate(787,706)" font-size="45" style="fill:#e0b879">Plain</text>
+<text transform="translate(653,109)" font-size="45" style="fill:#d5d2c2">Language</text>
+<text transform="translate(345,247)" font-size="43" style="fill:#c7d7b5">Rings</text>
+<text transform="translate(56,715)" font-size="43" style="fill:#c49a6c">Dimensionless</text>
+<text transform="translate(811,391)" font-size="43" style="fill:#e0b879">Support</text>
+<text transform="translate(19,457)" font-size="35" style="fill:#9fc9c5">Equilibrium</text>
+<text transform="translate(504,559)" font-size="35" style="fill:#b6c3dd">Changes</text>
+<text transform="translate(1085,258)" font-size="35" style="fill:#a9b7a3">Noyes</text>
+<text transform="translate(33,675) rotate(-90)" font-size="33" style="fill:#d88988">Pattern</text>
+<text transform="translate(446,651)" font-size="33" style="fill:#d9c89e">Temporal</text>
+<text transform="translate(955,195)" font-size="33" style="fill:#c7d7b5">Measured</text>
+<text transform="translate(498,172)" font-size="33" style="fill:#b6c3dd">Core</text>
+<text transform="translate(177,168)" font-size="33" style="fill:#d88988">Cell</text>
+<text transform="translate(1045,590) rotate(-90)" font-size="33" style="fill:#d6a79f">Free</text>
+<text transform="translate(585,468)" font-size="32" style="fill:#d9c89e">Contradiction</text>
+<text transform="translate(463,280)" font-size="25" style="fill:#8fb7d0">Zhabotinsky</text>
+<text transform="translate(23,267) rotate(-90)" font-size="25" style="fill:#c49a6c">Stationary</text>
+<text transform="translate(806,194)" font-size="25" style="fill:#c7d7b5">Motion</text>
+<text transform="translate(125,525)" font-size="25" style="fill:#d6a79f">Oregonator</text>
+<text transform="translate(1014,340)" font-size="25" style="fill:#d6a79f">Obstacle</text>
+<text transform="translate(651,380)" font-size="25" style="fill:#b6c3dd">Wellmixed</text>
+<text transform="translate(1158,97)" font-size="25" style="fill:#d88988">Test</text>
+<text transform="translate(42,650)" font-size="25" style="fill:#c49a6c">System</text>
+<text transform="translate(945,61)" font-size="25" style="fill:#e0b879">Oscillation</text>
+<text transform="translate(1138,23)" font-size="25" style="fill:#d5d2c2">Equations</text>
+<text transform="translate(7,487)" font-size="25" style="fill:#c49a6c">Rather</text>
+<text transform="translate(659,280)" font-size="24" style="fill:#a9b7a3">Experiment</text>
+<text transform="translate(895,349)" font-size="24" style="fill:#b6c3dd">Period</text>
+<text transform="translate(623,661)" font-size="24" style="fill:#b6c3dd">Mean</text>
+<text transform="translate(1084,217)" font-size="24" style="fill:#e0b879">Systems</text>
+<text transform="translate(1178,131)" font-size="22" style="fill:#9fc9c5">Tip</text>
+<text transform="translate(50,537)" font-size="22" style="fill:#d88988">Real</text>
+<text transform="translate(920,577)" font-size="22" style="fill:#9fc9c5">Gallery</text>
+<text transform="translate(87,43)" font-size="22" style="fill:#b6c3dd">Display</text>
+<text transform="translate(85,164)" font-size="22" style="fill:#d88988">Fixed</text>
+<text transform="translate(1229,635) rotate(-90)" font-size="22" style="fill:#e0b879">Timestep</text>
+<text transform="translate(1059,637)" font-size="22" style="fill:#c7d7b5">Changing</text>
+<text transform="translate(959,489)" font-size="22" style="fill:#e0b879">First</text>
+<text transform="translate(84,298)" font-size="22" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(6,377)" font-size="22" style="fill:#8fb7d0">Space</text>
+<text transform="translate(689,592)" font-size="22" style="fill:#8fb7d0">Three</text>
+<text transform="translate(22,86) rotate(-90)" font-size="22" style="fill:#d88988">Medium</text>
+<text transform="translate(209,304)" font-size="22" style="fill:#9fc9c5">Classical</text>
+<text transform="translate(65,609)" font-size="22" style="fill:#d5d2c2">Small</text>
+<text transform="translate(19,421)" font-size="22" style="fill:#c7d7b5">Cycle</text>
+<text transform="translate(1164,715)" font-size="22" style="fill:#c49a6c">Near</text>
+<text transform="translate(1267,391) rotate(-90)" font-size="22" style="fill:#c7d7b5">Transport</text>
+<text transform="translate(146,374)" font-size="18" style="fill:#8fb7d0">Homogeneous</text>
+<text transform="translate(402,551)" font-size="18" style="fill:#d6a79f">Material</text>
+<text transform="translate(305,66)" font-size="18" style="fill:#c7d7b5">Kinetics</text>
+<text transform="translate(6,507)" font-size="18" style="fill:#c49a6c">Geometry</text>
+<text transform="translate(417,373)" font-size="18" style="fill:#d6a79f">Oscillations</text>
+<text transform="translate(1158,499)" font-size="18" style="fill:#d9c89e">Fluid</text>
+<text transform="translate(1107,672)" font-size="18" style="fill:#a9b7a3">Wall</text>
+<text transform="translate(414,160)" font-size="18" style="fill:#c7d7b5">Browser</text>
+<text transform="translate(135,595)" font-size="18" style="fill:#c49a6c">Nonlinear</text>
+<text transform="translate(168,66)" font-size="18" style="fill:#9fc9c5">Recovered</text>
+<text transform="translate(791,485)" font-size="18" style="fill:#8fb7d0">Target</text>
+<text transform="translate(297,442)" font-size="18" style="fill:#c49a6c">Speed</text>
+<text transform="translate(827,428) rotate(-90)" font-size="18" style="fill:#d9c89e">Run</text>
+<text transform="translate(778,21)" font-size="18" style="fill:#d5d2c2">Preserved</text>
+<text transform="translate(625,221) rotate(-90)" font-size="18" style="fill:#d6a79f">Biological</text>
+<text transform="translate(82,16)" font-size="17" style="fill:#c49a6c">Comparator</text>
+<text transform="translate(1233,504) rotate(-90)" font-size="15" style="fill:#b6c3dd">Across</text>
+<text transform="translate(1007,451)" font-size="15" style="fill:#8fb7d0">Move</text>
+<text transform="translate(1183,446)" font-size="15" style="fill:#d88988">Ring</text>
+<text transform="translate(683,709)" font-size="14" style="fill:#9fc9c5">Schnakenberg</text>
+<text transform="translate(593,510)" font-size="14" style="fill:#d88988">Layer</text>
+<text transform="translate(50,670)" font-size="14" style="fill:#8fb7d0">Oscillatory</text>
+<text transform="translate(49,623)" font-size="14" style="fill:#c49a6c">Control</text>
+<text transform="translate(504,458)" font-size="14" style="fill:#9fc9c5">Active</text>
+<text transform="translate(283,152)" font-size="14" style="fill:#d5d2c2">Identical</text>
+<text transform="translate(534,712)" font-size="14" style="fill:#c7d7b5">Observation</text>
+<text transform="translate(34,248)" font-size="14" style="fill:#e0b879">Change</text>
+<text transform="translate(47,268)" font-size="14" style="fill:#d9c89e">Paper</text>
+<text transform="translate(243,407)" font-size="14" style="fill:#d6a79f">Propagation</text>
+<text transform="translate(687,687)" font-size="14" style="fill:#8fb7d0">Band</text>
+<text transform="translate(36,393)" font-size="14" style="fill:#c49a6c">Second</text>
+<text transform="translate(1142,194)" font-size="14" style="fill:#8fb7d0">Qquad</text>
+<text transform="translate(132,687)" font-size="14" style="fill:#e0b879">Location</text>
+<text transform="translate(423,118)" font-size="14" style="fill:#a9b7a3">Preset</text>
+<text transform="translate(379,462)" font-size="14" style="fill:#c7d7b5">Curvature</text>
+<text transform="translate(622,490)" font-size="14" style="fill:#d6a79f">Peak</text>
+<text transform="translate(962,602)" font-size="14" style="fill:#d9c89e">Stirring</text>
+<text transform="translate(472,508) rotate(-90)" font-size="14" style="fill:#b6c3dd">Term</text>
+<text transform="translate(232,471)" font-size="14" style="fill:#d88988">Fast</text>
+<text transform="translate(431,649) rotate(-90)" font-size="14" style="fill:#b6c3dd">Threshold</text>
+<text transform="translate(827,336) rotate(-90)" font-size="14" style="fill:#e0b879">Selected</text>
+<text transform="translate(327,261)" font-size="14" style="fill:#d9c89e">Coupling</text>
+<text transform="translate(1196,76) rotate(-90)" font-size="14" style="fill:#e0b879">Wake</text>
+<text transform="translate(201,612)" font-size="14" style="fill:#d5d2c2">Intervention</text>
+<text transform="translate(815,79)" font-size="14" style="fill:#d9c89e">Becomes</text>
+<text transform="translate(1114,567) rotate(-90)" font-size="14" style="fill:#d6a79f">Spacing</text>
+<text transform="translate(1163,429)" font-size="14" style="fill:#d88988">Whether</text>
+<text transform="translate(907,122)" font-size="14" style="fill:#a9b7a3">Cut</text>
 </svg>

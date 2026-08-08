@@ -1,0 +1,71 @@
+<!doctype html><meta charset="utf-8"><title>BZ V2 calibration gallery</title><style>body{font:14px system-ui;background:#101417;color:#e9ece8;margin:2rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid #394349;padding:.6rem;vertical-align:top}pre{max-height:18rem;overflow:auto;white-space:pre-wrap}code{color:#efb47e}</style><h1>BZ V2 internal calibration gallery</h1><p>Objective numerical summaries; never a visual-only classifier.</p><table><thead><tr><th>Hero</th><th>Parameters</th><th>Status</th><th>Evidence</th></tr></thead><tbody><tr><td>spiral-garden</td><td><code>{&quot;epsilon&quot;:0.05,&quot;q&quot;:0.002,&quot;f&quot;:1.4}</code></td><td>PASS</td><td><pre>{
+  &quot;hero&quot;: &quot;spiral-garden&quot;,
+  &quot;parameters&quot;: {
+    &quot;epsilon&quot;: 0.05,
+    &quot;q&quot;: 0.002,
+    &quot;f&quot;: 1.4
+  },
+  &quot;setup&quot;: {
+    &quot;model&quot;: &quot;oregonator&quot;,
+    &quot;modelVersion&quot;: &quot;tyson-fife-two-variable-v1&quot;,
+    &quot;equationsId&quot;: &quot;tyson-fife-oregonator-2v-dimensionless&quot;,
+    &quot;parameters&quot;: {
+      &quot;epsilon&quot;: 0.05,
+      &quot;q&quot;: 0.002,
+      &quot;f&quot;: 1.4
+    },
+    &quot;diffusionU&quot;: 1,
+    &quot;diffusionV&quot;: 0,
+    &quot;timestep&quot;: 0.0005,
+    &quot;gridSize&quot;: 64,
+    &quot;domainSize&quot;: 32,
+    &quot;activeRadius&quot;: 14.72,
+    &quot;boundary&quot;: &quot;no-flux&quot;,
+    &quot;geometry&quot;: &quot;circular-dish&quot;,
+    &quot;maskPreset&quot;: &quot;none&quot;,
+    &quot;initialCondition&quot;: &quot;multi-spiral-seed&quot;,
+    &quot;seed&quot;: &quot;bz-v2-multi-spiral-seed-0.05-0.002-1.4&quot;
+  },
+  &quot;observationStart&quot;: 2,
+  &quot;duration&quot;: 14,
+  &quot;finite&quot;: true,
+  &quot;minimumCoreCount&quot;: 3,
+  &quot;maximumCoreCount&quot;: 3,
+  &quot;persistentFraction&quot;: 1,
+  &quot;persistentTrackCount&quot;: 3,
+  &quot;characteristicPeriodReference&quot;: 2.75,
+  &quot;minimumSurvivalTime&quot;: 12,
+  &quot;measuredRotations&quot;: [
+    4.38005598936759,
+    4.390558336626771,
+    4.316360220583172
+  ],
+  &quot;minimumMeasuredRotations&quot;: 4.316360220583172,
+  &quot;minimumSeparation&quot;: 5.408326913195984,
+  &quot;minimumWallDistance&quot;: 7.153627024789222,
+  &quot;trackSummaries&quot;: [
+    {
+      &quot;charge&quot;: 1,
+      &quot;samples&quot;: 121,
+      &quot;start&quot;: 2,
+      &quot;end&quot;: 14,
+      &quot;rotations&quot;: 4.38005598936759
+    },
+    {
+      &quot;charge&quot;: 1,
+      &quot;samples&quot;: 121,
+      &quot;start&quot;: 2,
+      &quot;end&quot;: 14,
+      &quot;rotations&quot;: 4.390558336626771
+    },
+    {
+      &quot;charge&quot;: 1,
+      &quot;samples&quot;: 121,
+      &quot;start&quot;: 2,
+      &quot;end&quot;: 14,
+      &quot;rotations&quot;: 4.316360220583172
+    }
+  ],
+  &quot;pass&quot;: true,
+  &quot;durationMs&quot;: 7693
+}</pre></td></tr></tbody></table>

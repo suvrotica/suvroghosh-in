@@ -64,7 +64,7 @@ void main() {
 	// Texture y=0 is CPU row zero. Interventions use the same normalized [0,1]^2 contract.
 	vec2 point = (vec2(coordinate) + 0.5) / float(uGridSize);
 	float distanceValue = segmentDistance(point, uFrom, uTo);
-	float effectiveRadius = (uKind == 0 || uKind == 1) && uRadius == 0.0
+	float effectiveRadius = (uKind == 0 || uKind == 1 || uKind == 6) && uRadius == 0.0
 		? uCellWidth * 0.7071067811865476
 		: uRadius;
 	bool inside = distanceValue <= effectiveRadius;
@@ -74,7 +74,8 @@ void main() {
 		return;
 	}
 
-	// 3 = obstacle, 4 = recovered restore, 5 = neighbour-mean restore.
+	// 3 = obstacle, 4 = recovered restore, 5 = neighbour-mean restore,
+	// 6 = declared periodic state-reset source.
 	if (uKind == 3) {
 		value.b = 0.0;
 		outState = value;
@@ -103,6 +104,9 @@ void main() {
 		}
 	} else if (uKind == 2) {
 		value.rg = mix(value.rg, uTarget, uStrength);
+	} else if (uKind == 6) {
+		float weight = uRadius > 0.0 ? max(0.0, 1.0 - distanceValue / uRadius) : 1.0;
+		value.rg = mix(value.rg, uTarget, uStrength * weight);
 	}
 	outState = value;
 }

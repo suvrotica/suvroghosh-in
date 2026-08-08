@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
 	BZNumericalInstabilityError,
+	BZCpuSolver,
 	DEFAULT_OREGONATOR_SETUP,
 	DEFAULT_SCHNAKENBERG_SETUP,
 	OREGONATOR_EQUATIONS_ID,
@@ -203,6 +204,35 @@ describe('reaction/diffusion separation', () => {
 });
 
 describe('fixed-step Float64 Heun integration', () => {
+	it('continues an exact checkpoint field from its declared model step', () => {
+		const setup = oregonator({
+			gridSize: 8,
+			domainSize: 8,
+			activeRadius: 4,
+			geometry: 'square',
+			boundary: 'no-flux',
+			diffusionU: 0,
+			diffusionV: 0,
+			timestep: 0.001,
+			initialCondition: 'uniform-equilibrium'
+		});
+		const initial = field(8, 0.2, 0.1);
+		const solver = new BZCpuSolver(setup, { initialState: initial, initialStep: 12_345 });
+		expect(solver.stepIndex).toBe(12_345);
+		expect(solver.modelTime).toBeCloseTo(12.345, 12);
+		expect(solver.state.u).toEqual(initial.u);
+		initial.u[0] = 99;
+		expect(solver.state.u[0]).toBe(0.2);
+		solver.step();
+		expect(solver.stepIndex).toBe(12_346);
+		expect(solver.modelTime).toBeCloseTo(12.346, 12);
+	});
+
+	it('rejects a non-zero checkpoint clock without an exact field', () => {
+		const setup = oregonator({ gridSize: 8, domainSize: 8, activeRadius: 4 });
+		expect(() => new BZCpuSolver(setup, { initialStep: 1 })).toThrow(/initial state/iu);
+	});
+
 	it('matches a hand-computed reaction-only Heun step', () => {
 		const setup = oregonator({
 			gridSize: 2,

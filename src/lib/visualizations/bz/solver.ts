@@ -317,6 +317,10 @@ export function heunBZStep(
 
 export interface BZCpuSolverOptions extends BZStepOptions {
 	readonly interventions?: readonly Readonly<BZIntervention>[];
+	/** Optional exact starting field, used by verified publication checkpoints. */
+	readonly initialState?: Readonly<BZFieldState>;
+	/** Model step represented by initialState. Must be zero when initialState is omitted. */
+	readonly initialStep?: number;
 }
 
 export class BZCpuSolver {
@@ -333,13 +337,28 @@ export class BZCpuSolver {
 	constructor(setup: Readonly<BZSetup>, options: Readonly<BZCpuSolverOptions> = {}) {
 		assertValidBZSetup(setup);
 		this.setup = cloneBZSetup(setup);
-		this.current = createInitialBZField(this.setup);
+		if (!Number.isSafeInteger(options.initialStep ?? 0) || (options.initialStep ?? 0) < 0) {
+			throw new RangeError('The BZ CPU initial step must be a non-negative safe integer.');
+		}
+		if (options.initialStep && !options.initialState) {
+			throw new RangeError('A non-zero BZ CPU initial step requires an explicit initial state.');
+		}
+		if (options.initialState) {
+			assertValidBZFieldState(options.initialState);
+			if (options.initialState.size !== this.setup.gridSize) {
+				throw new RangeError('The BZ CPU initial state does not match the setup grid.');
+			}
+		}
+		this.current = options.initialState
+			? cloneBZFieldState(options.initialState)
+			: createInitialBZField(this.setup);
 		this.next = cloneBZFieldState(this.current);
 		this.workspace = createBZSolverWorkspace(this.setup.gridSize);
 		this.eventLog = orderedBZInterventions(options.interventions ?? []);
 		this.rejectUnsafe = options.rejectUnsafe !== false;
 		this.activeTerms = options.activeTerms ?? ALL_TERMS;
 		validateActiveTerms(this.activeTerms);
+		this.stepIndex = options.initialStep ?? 0;
 	}
 
 	get state(): Readonly<BZFieldState> {

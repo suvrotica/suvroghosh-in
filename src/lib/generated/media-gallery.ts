@@ -4122,6 +4122,83 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 860
 		},
 		{
+			"name": "visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.png",
+			"bytes": 469808,
+			"width": 1600,
+			"height": 1600
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/bz-v2-open-graph.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-open-graph.png",
+			"bytes": 220365,
+			"width": 1200,
+			"height": 630
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/bz-v2-visualization-card.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-visualization-card.png",
+			"bytes": 283655,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/bz-versus-turing-plate.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/bz-versus-turing-plate.png",
+			"bytes": 526722,
+			"width": 1800,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/classic-target-rings-checkpoint-poster.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-checkpoint-poster.png",
+			"bytes": 391685,
+			"width": 1200,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/classic-target-rings-plate.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/classic-target-rings-plate.png",
+			"bytes": 428077,
+			"width": 1800,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-checkpoint-poster.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-checkpoint-poster.png",
+			"bytes": 344226,
+			"width": 1200,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-plate.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/persistent-single-spiral-plate.png",
+			"bytes": 396359,
+			"width": 1800,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/raw-u-vs-luminous-plate.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/raw-u-vs-luminous-plate.png",
+			"bytes": 478414,
+			"width": 1800,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-checkpoint-poster.png",
+			"bytes": 348093,
+			"width": 1200,
+			"height": 1200
+		},
+		{
+			"name": "visualizations/belousov-zhabotinsky/v2/spiral-garden-plate.png",
+			"src": "/images/visualizations/belousov-zhabotinsky/v2/spiral-garden-plate.png",
+			"bytes": 441512,
+			"width": 1800,
+			"height": 1200
+		},
+		{
 			"name": "visualizations/hello-fragment-poster.jpg",
 			"src": "/images/visualizations/hello-fragment-poster.jpg",
 			"bytes": 163655,

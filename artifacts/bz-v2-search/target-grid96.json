@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=target --grid=96 --domain=120 --duration=14 --observation-start=10 --epsilon=0.05 --q=0.002 --f=2.4 --source-period=1.5 --source-radius=0.025 --source-amount=0 --source-end=60 --output-name=target-grid96 --write",
+  "stage": "coarse-search",
+  "grid": 96,
+  "phaseCoordinate": {
+    "centreU": 0.011605268043856337,
+    "centreV": 0.011605268043856337,
+    "scaleU": 0.42,
+    "scaleV": 0.12
+  },
+  "literatureGuidedBox": {
+    "epsilon": [
+      0.005,
+      0.08
+    ],
+    "q": [
+      0.0005,
+      0.004
+    ],
+    "f": [
+      1.2,
+      2.6
+    ],
+    "diffusionU": 1,
+    "diffusionV": 0,
+    "domainSize": [
+      16,
+      40
+    ]
+  },
+  "pruning": "Abort on the first non-finite or negative corrector value; retain only finite regimes with objective radial or phase evidence.",
+  "workerPolicy": "At most two independent candidates; this command defaults to one to preserve an interactive workstation.",
+  "durationMs": 14590,
+  "results": [
+    {
+      "hero": "classic-target-rings",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 2.4
+      },
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 2.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 96,
+        "domainSize": 120,
+        "activeRadius": 55.2,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "periodic-source",
+        "seed": "bz-v2-periodic-source-0.05-0.002-2.4"
+      },
+      "duration": 14,
+      "observationStart": 10,
+      "sourcePeriod": 1.5,
+      "periodSteps": 3000,
+      "sourceFirings": 10,
+      "sourceFiringsInWindow": 3,
+      "sourceEndTime": 60,
+      "sourceEndStep": 120000,
+      "minimumFrontSpacing": 3.75,
+      "sourceExclusionRadius": 6.75,
+      "radialBinWidth": 1.1500000000000001,
+      "finite": true,
+      "maximumSignificantPeaks": 2,
+      "simultaneousThreePeakFraction": 0,
+      "maximumOuterRadius": 51.175000000000004,
+      "wallMargin": 4.024999999999999,
+      "minimumObservedSpacing": 28.75,
+      "meanWaveSpeed": 6.454689298043728,
+      "outwardTrackCount": 2,
+      "wallReflectionTracks": 0,
+      "threeFrontWindowStart": null,
+      "threeFrontWindowEnd": null,
+      "pass": false,
+      "durationMs": 14586,
+      "peakTracks": [],
+      "trackSummaries": [
+        {
+          "samples": 45,
+          "startTime": 10,
+          "endTime": 12.200000000000001,
+          "startRadius": 36.225,
+          "endRadius": 51.175000000000004,
+          "netDisplacement": 14.950000000000003,
+          "meanSpeed": 6.795454545454543,
+          "outwardFraction": 1,
+          "meanProminence": 0.44653981444399854
+        },
+        {
+          "samples": 80,
+          "startTime": 10.05,
+          "endTime": 14,
+          "startRadius": 7.475,
+          "endRadius": 31.625,
+          "netDisplacement": 24.15,
+          "meanSpeed": 6.113924050632912,
+          "outwardFraction": 1,
+          "meanProminence": 0.5110846351088869
+        }
+      ]
+    }
+  ]
+}

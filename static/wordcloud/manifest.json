@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T06:27:17.039834+00:00",
+  "generatedAt": "2026-08-08T12:43:14.576314+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1129,25 +1129,25 @@
       "wordCount": 130
     },
     "belousov-zhabotinsky-laboratory": {
-      "generatedAt": "2026-08-08T06:27:16.547157+00:00",
+      "generatedAt": "2026-08-08T12:43:13.980436+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/belousov-zhabotinsky-laboratory.svg",
       "source": "src/lib/posts/belousov-zhabotinsky-laboratory.md",
-      "sourceHash": "169815ba2bb30fd605892b8cbd0b20b3901b975c5845868db444bf84930afd7c",
-      "sourceModified": "2026-08-08T06:03:07.305292+00:00",
+      "sourceHash": "54941043d29050327742b3ac640c1f9f78870dd055adbb543f321244389e4802",
+      "sourceModified": "2026-08-08T11:12:31.540388+00:00",
       "topWords": [
-        "Chemical",
         "Reaction",
-        "Front",
+        "Chemical",
+        "State",
         "Diffusion",
         "Field",
-        "State",
+        "Front",
         "Model",
+        "Spatial",
         "Local",
         "Turing",
-        "Spatial",
-        "Waves",
-        "Every"
+        "Wave",
+        "Spiral"
       ],
       "wordCount": 130
     },

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "kind": "bz-v2-publication-asset-metadata",
+  "generatedAt": "2026-08-08T11:58:15.018Z",
+  "generatedBy": "scripts/render-bz-v2-assets.mjs",
+  "generationCommand": "node scripts/render-bz-v2-assets.mjs",
+  "engineVersion": "bz-heun-five-point-v2",
+  "displayVersion": "bz-display-linear-light-v2",
+  "asset": {
+    "id": "bz-v2-hero-poster",
+    "path": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.png",
+    "metadataPath": "/images/visualizations/belousov-zhabotinsky/v2/bz-v2-hero-poster.metadata.json",
+    "width": 1600,
+    "height": 1600,
+    "format": "png",
+    "sha256": "691d7a8d5682e39e5eac6bb22e60041c019548f3cf83954582e4687f52d6eec9"
+  },
+  "sources": [
+    {
+      "presetId": "spiral-garden",
+      "presetTitle": "Spiral Garden",
+      "modelStep": 24000,
+      "modelTime": 12,
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 512,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "multi-spiral-seed",
+        "seed": "bz-v2-multi-spiral-seed-0.05-0.002-1.4"
+      },
+      "interventions": [],
+      "initialStateSha256": "f4aabb639472a91c508af65eeedf7f88eb4d6db4c2cb92cb97d1eaf9e7ed26a3",
+      "stateSha256": "a781ef966031004663f012302fb6780536a9399c5ca6902dd1338730f915aee9",
+      "stateSha256AfterRendering": "a781ef966031004663f012302fb6780536a9399c5ca6902dd1338730f915aee9",
+      "stateChecksumAlgorithm": "sha256-f64le-state-v1",
+      "setupSha256": "64aaea57d0ad2fdff507a18bf392975e033b0a558de6875303200a11c7f04089",
+      "interventionLogSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "canonicalDocumentChecksumAlgorithm": "sha256-canonical-json-v1",
+      "preparationDisclosure": "Deterministic multi-spiral phase seed; after initialization, the ordinary reaction-diffusion PDE advances every active cell."
+    }
+  ],
+  "displays": [
+    {
+      "runId": "spiral-garden",
+      "view": "luminous-composite",
+      "profileId": "oregonator-luminous-publication-v2",
+      "profile": {
+        "id": "oregonator-luminous-publication-v2",
+        "title": "Oregonator luminous publication profile",
+        "version": "bz-display-linear-light-v2",
+        "style": "luminous-composite",
+        "palette": "ferroin",
+        "defaultView": "dish",
+        "rangeMode": "fixed",
+        "ranges": {
+          "u": {
+            "minimum": 0,
+            "maximum": 0.82,
+            "units": "dimensionless"
+          },
+          "v": {
+            "minimum": 0,
+            "maximum": 0.3,
+            "units": "dimensionless"
+          },
+          "reaction-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "diffusion-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "net-u": {
+            "minimum": -40,
+            "maximum": 40,
+            "units": "dimensionless-rate"
+          },
+          "phase": {
+            "minimum": -3.141592653589793,
+            "maximum": 3.141592653589793,
+            "units": "radians"
+          },
+          "front": {
+            "minimum": 0,
+            "maximum": 5,
+            "units": "dimensionless"
+          },
+          "refractory": {
+            "minimum": -0.1,
+            "maximum": 2.5,
+            "units": "dimensionless"
+          },
+          "difference-from-mean": {
+            "minimum": -0.3,
+            "maximum": 0.7,
+            "units": "dimensionless"
+          }
+        },
+        "phase": {
+          "centreU": 0.1,
+          "centreV": 0.1,
+          "scaleU": 0.42,
+          "scaleV": 0.12
+        },
+        "exposure": 1.25,
+        "bloom": 0.12,
+        "highlight": 0.58,
+        "saturation": 1.06,
+        "interpolation": "mask-aware-manual-bilinear",
+        "toneMap": "aces-fitted",
+        "outputTransfer": "srgb",
+        "disclosure": "Luminous phase and wavefront composite in linear light with fixed ranges; restrained bloom, tone mapping, and glass cues are display only.",
+        "frontScale": 0.2,
+        "contrast": 1.04,
+        "gamma": 1,
+        "bloomThreshold": 0.52,
+        "bloomRadius": 1.7,
+        "ferroinMix": {
+          "recoveryWeight": 0.7,
+          "activatorLuminanceWeight": 0.34,
+          "gradientHighlightWeight": 0.5
+        },
+        "luminousMix": {
+          "phaseWeight": 0.78,
+          "recoveryWeight": 0.22,
+          "frontWeight": 0.44
+        }
+      },
+      "disclosure": "Luminous phase and wavefront composite in linear light with fixed ranges; restrained bloom, tone mapping, and glass cues are display only."
+    }
+  ],
+  "scientificDisclosure": "Solver-generated Oregonator field, not a photograph. Interpolation, colour, exposure, bloom, tone mapping, labels, and glass cues affect presentation only; they do not generate rings or spirals and do not alter the numerical state.",
+  "provenance": {
+    "node": "v24.11.1",
+    "platform": "win32-x64",
+    "sharp": "0.35.3",
+    "libvips": "8.18.3"
+  }
+}

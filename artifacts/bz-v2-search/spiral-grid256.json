@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 2,
+  "command": "C:\\Program Files\\nodejs\\node.exe C:\\Users\\suvro\\Desktop\\Projects\\codex\\suvroghosh-in\\scripts\\search-bz-regimes.mjs --hero=spiral --seed=cut-after-plane-wave --grid=256 --domain=32 --duration=14 --epsilon=0.05 --q=0.002 --f=1.4 --cut-time=0.45 --phase-u=0.1 --phase-v=0.1 --observation-start=2 --annulus-radius=3.5 --annulus-width=1.5 --output-name=spiral-grid256 --emit-checkpoint --write",
+  "stage": "publication-refinement",
+  "grid": 256,
+  "phaseCoordinate": {
+    "centreU": 0.011605268043856337,
+    "centreV": 0.011605268043856337,
+    "scaleU": 0.42,
+    "scaleV": 0.12
+  },
+  "literatureGuidedBox": {
+    "epsilon": [
+      0.005,
+      0.08
+    ],
+    "q": [
+      0.0005,
+      0.004
+    ],
+    "f": [
+      1.2,
+      2.6
+    ],
+    "diffusionU": 1,
+    "diffusionV": 0,
+    "domainSize": [
+      16,
+      40
+    ]
+  },
+  "pruning": "Abort on the first non-finite or negative corrector value; retain only finite regimes with objective radial or phase evidence.",
+  "workerPolicy": "At most two independent candidates; this command defaults to one to preserve an interactive workstation.",
+  "durationMs": 104346,
+  "checkpointDescriptors": [
+    {
+      "id": "persistent-single-spiral-256-v2",
+      "version": 1,
+      "path": "/data/bz-v2/checkpoints/persistent-single-spiral-256-v2.bzcp",
+      "encoding": "bzcp-f32le-v1",
+      "losslessForStoredRepresentation": true,
+      "width": 256,
+      "height": 256,
+      "modelStep": 28000,
+      "modelTime": 14,
+      "byteLength": 657627,
+      "sha256": "27f1e11297739b2a8df3aa746b5d6dda507d93cd6414b534358e42faee24b8fe",
+      "fieldSha256F64Reference": "c6dfd2c52921651caf072d44fb22c4bb3a8b23b13630bef3a77a073018bfd353",
+      "setupChecksum": "425441254c918f65218d2a8e430155066502d5d5348e31eb10ce0cd83cd2f2e0",
+      "interventionLogChecksum": "e249fb355f9a741935f5ad36616d2d73a755cbcdf02f7422f39b5bf2bf7ce25d",
+      "engineVersion": "bz-heun-five-point-v2",
+      "generatedBy": "scripts/search-bz-regimes.ts",
+      "generatedAt": "2026-08-08T00:00:00.000Z",
+      "sourcePresetId": "persistent-single-spiral",
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "seed": "bz-v2-plane-wave-0.05-0.002-1.4",
+      "interventions": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 900,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "browserStateSha256": "f74e710abef27d40334f3964b26cd348868ed93484d04b6eff8a4e50a9ba6406",
+      "modelVersion": "tyson-fife-two-variable-v1",
+      "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+      "validationRecordId": "persistent-single-spiral-validation-v2"
+    }
+  ],
+  "results": [
+    {
+      "hero": "persistent-single-spiral",
+      "parameters": {
+        "epsilon": 0.05,
+        "q": 0.002,
+        "f": 1.4
+      },
+      "setup": {
+        "model": "oregonator",
+        "modelVersion": "tyson-fife-two-variable-v1",
+        "equationsId": "tyson-fife-oregonator-2v-dimensionless",
+        "parameters": {
+          "epsilon": 0.05,
+          "q": 0.002,
+          "f": 1.4
+        },
+        "diffusionU": 1,
+        "diffusionV": 0,
+        "timestep": 0.0005,
+        "gridSize": 256,
+        "domainSize": 32,
+        "activeRadius": 14.72,
+        "boundary": "no-flux",
+        "geometry": "circular-dish",
+        "maskPreset": "none",
+        "initialCondition": "plane-wave",
+        "seed": "bz-v2-plane-wave-0.05-0.002-1.4"
+      },
+      "preparation": [
+        {
+          "schemaVersion": 1,
+          "sequence": 0,
+          "step": 900,
+          "kind": "cut",
+          "from": [
+            0,
+            0.75
+          ],
+          "to": [
+            1,
+            0.75
+          ],
+          "width": 0.25,
+          "targetU": 0.011605268043856337,
+          "targetV": 0.011605268043856337,
+          "strength": 1
+        }
+      ],
+      "observationStart": 2,
+      "orientationAnnulus": {
+        "radius": 3.5,
+        "width": 1.5
+      },
+      "duration": 14,
+      "finite": true,
+      "rotations": 4.210468715488337,
+      "cumulativeAngle": 26.455155169495622,
+      "rotationPeriods": [
+        2.7272607676754763,
+        2.7295352197832585,
+        2.75476372968334
+      ],
+      "rotationPeriodMean": 2.7371865723806916,
+      "rotationPeriodCv": 0.004553421293048651,
+      "maximumOrientationIncrement": 0.5837261365280995,
+      "detectedFraction": 1,
+      "exactlyOneCoreFraction": 1,
+      "centralFraction": 1,
+      "minimumWallDistance": 8.161370188827547,
+      "maximumCoreRadius": 6.558629811172454,
+      "firstStepWithCore": 4000,
+      "lastStepWithCore": 28000,
+      "minimumCoreCount": 1,
+      "maximumCoreCount": 1,
+      "trackSegments": [
+        {
+          "samples": 241,
+          "startStep": 4000,
+          "endStep": 28000,
+          "rotations": 4.210468715488337
+        }
+      ],
+      "pass": true,
+      "durationMs": 93881,
+      "samples": [
+        {
+          "x": -6.5,
+          "y": -0.75,
+          "charge": -1,
+          "winding": -6.283185307179587,
+          "plaquettes": 1,
+          "step": 4000,
+          "modelTime": 2
+        },
+        {
+          "x": -6.500000000000001,
+          "y": -0.75,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4100,
+          "modelTime": 2.05
+        },
+        {
+          "x": -6.500000000000001,
+          "y": -0.75,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4200,
+          "modelTime": 2.1
+        },
+        {
+          "x": -6.500000000000001,
+          "y": -0.875,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4300,
+          "modelTime": 2.15
+        },
+        {
+          "x": -6.500000000000001,
+          "y": -0.875,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4400,
+          "modelTime": 2.2
+        },
+        {
+          "x": -6.375,
+          "y": -0.875,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4500,
+          "modelTime": 2.25
+        },
+        {
+          "x": -6.375,
+          "y": -0.875,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4600,
+          "modelTime": 2.3000000000000003
+        },
+        {
+          "x": -6.375,
+          "y": -1,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 4700,
+          "modelTime": 2.35
+        },
+        {
+          "x": -4.375,
+          "y": 0.875,
+          "charge": -1,
+          "winding": -6.283185307179586,
+          "plaquettes": 1,
+          "step": 28000,
+          "modelTime": 14
+        }
+      ]
+    }
+  ]
+}

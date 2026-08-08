@@ -150,7 +150,7 @@ export const BZ_PRESETS: readonly BZPreset[] = Object.freeze([
 	},
 	{
 		id: 'zhabotinsky-dish',
-		title: "Zhabotinsky's Dish",
+		title: 'One Finite Outward Front',
 		modelVersion: OREGONATOR_MODEL_VERSION,
 		equationsId: OREGONATOR_EQUATIONS_ID,
 		setup: targetDish,
