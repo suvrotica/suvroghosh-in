@@ -1,8 +1,177 @@
-import { expect, test, type Locator, type Page } from '@playwright/test';
+import { readFile, readdir } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { expect, test, type BrowserContext, type Locator, type Page } from '@playwright/test';
 
 const articlePath = '/blog/visualizations/weather-inside-the-nucleus';
 const articleTitle = 'Weather Inside the Nucleus';
 const diagnosticsByPage = new WeakMap<Page, string[]>();
+
+type ResourceAudit = {
+	canvasElements: number;
+	getContextCalls: number;
+	webglContextCalls: number;
+	webglContexts: number;
+	offscreenCanvasConstructions: number;
+	workerConstructions: number;
+	workerTerminations: number;
+	audioContextConstructions: number;
+	audioContextCloses: number;
+};
+
+type ViteManifestEntry = {
+	file?: unknown;
+	name?: unknown;
+	src?: unknown;
+	css?: unknown;
+};
+
+type LocatedManifestEntry = {
+	keyPath: string;
+	entry: ViteManifestEntry;
+};
+
+type ManifestTarget = {
+	label: string;
+	pattern: RegExp;
+};
+
+const zeroResourceAudit: ResourceAudit = {
+	canvasElements: 0,
+	getContextCalls: 0,
+	webglContextCalls: 0,
+	webglContexts: 0,
+	offscreenCanvasConstructions: 0,
+	workerConstructions: 0,
+	workerTerminations: 0,
+	audioContextConstructions: 0,
+	audioContextCloses: 0
+};
+
+function manifestEntries(value: unknown, keyPath = ''): LocatedManifestEntry[] {
+	if (typeof value !== 'object' || value === null || Array.isArray(value)) return [];
+
+	const record = value as Record<string, unknown>;
+	if (typeof record.file === 'string') {
+		return [{ keyPath, entry: record }];
+	}
+
+	return Object.entries(record).flatMap(([key, child]) =>
+		manifestEntries(child, keyPath ? `${keyPath}/${key}` : key)
+	);
+}
+
+function artifactBasename(path: string): string {
+	return path.split(/[\\/]/u).at(-1) ?? path;
+}
+
+async function interactiveArtifactBasenames(): Promise<ReadonlySet<string>> {
+	const [manifestArtifacts, workerArtifacts] = await Promise.all([
+		manifestArtifactBasenames(interactiveManifestTargets),
+		simulationWorkerArtifactBasenames()
+	]);
+	return new Set([...manifestArtifacts, ...workerArtifacts]);
+}
+
+async function threeRendererArtifactBasenames(): Promise<ReadonlySet<string>> {
+	return manifestArtifactBasenames([weatherRendererManifestTarget, threeModuleManifestTarget]);
+}
+
+const weatherRendererManifestTarget: ManifestTarget = {
+	label: 'weather three-renderer',
+	pattern: /(?:^|[\\/])weather-inside-nucleus[\\/]render[\\/]three-renderer\.ts$/iu
+};
+
+const weatherStageManifestTarget: ManifestTarget = {
+	label: 'WeatherStage',
+	pattern: /(?:^WeatherStage$|(?:^|[\\/])weather-inside-nucleus[\\/]WeatherStage\.svelte$)/iu
+};
+
+const threeModuleManifestTarget: ManifestTarget = {
+	label: 'three.module',
+	pattern: /(?:^three\.module$|(?:^|[\\/])three[\\/]build[\\/]three\.module\.js$)/iu
+};
+
+const interactiveManifestTargets: readonly ManifestTarget[] = [
+	{
+		label: 'WeatherGuidedFilm',
+		pattern: /(?:^|[\\/])weather-inside-nucleus[\\/]WeatherGuidedFilm\.svelte$/iu
+	},
+	{
+		label: 'WeatherExperiment',
+		pattern: /(?:^|[\\/])weather-inside-nucleus[\\/]WeatherExperiment\.svelte$/iu
+	},
+	weatherStageManifestTarget,
+	weatherRendererManifestTarget,
+	threeModuleManifestTarget
+];
+
+async function simulationWorkerArtifactBasenames(): Promise<ReadonlySet<string>> {
+	const workersPath = resolve(
+		process.cwd(),
+		'.svelte-kit',
+		'output',
+		'client',
+		'_app',
+		'immutable',
+		'workers'
+	);
+	const workerArtifacts = (await readdir(workersPath, { withFileTypes: true }))
+		.filter((entry) => entry.isFile() && /^simulation\.worker-[\w-]+\.js$/iu.test(entry.name))
+		.map((entry) => entry.name);
+	if (workerArtifacts.length === 0) {
+		throw new Error(`Could not resolve the weather simulation worker from ${workersPath}.`);
+	}
+	return new Set(workerArtifacts);
+}
+
+async function manifestArtifactBasenames(
+	targets: readonly ManifestTarget[]
+): Promise<ReadonlySet<string>> {
+	const manifestPath = resolve(
+		process.cwd(),
+		'.svelte-kit',
+		'output',
+		'client',
+		'.vite',
+		'manifest.json'
+	);
+	const manifest = JSON.parse(await readFile(manifestPath, 'utf8')) as unknown;
+	const entries = manifestEntries(manifest);
+	const basenames = new Set<string>();
+
+	for (const target of targets) {
+		const matches = entries.filter(({ keyPath, entry }) => {
+			return [keyPath, entry.src, entry.name].some(
+				(part) => typeof part === 'string' && target.pattern.test(part)
+			);
+		});
+		if (matches.length === 0) {
+			throw new Error(`Could not resolve ${target.label} from ${manifestPath}.`);
+		}
+
+		for (const { entry } of matches) {
+			if (typeof entry.file === 'string') basenames.add(artifactBasename(entry.file));
+			if (Array.isArray(entry.css)) {
+				for (const css of entry.css) {
+					if (typeof css === 'string') basenames.add(artifactBasename(css));
+				}
+			}
+		}
+	}
+
+	return basenames;
+}
+
+function requestedInteractiveArtifacts(
+	requests: readonly string[],
+	basenames: ReadonlySet<string>,
+	sourcePattern = /WeatherGuidedFilm|WeatherExperiment|three-renderer|simulation\.worker/iu
+): string[] {
+	return requests.filter((requestUrl) => {
+		const pathname = new URL(requestUrl).pathname;
+		return basenames.has(artifactBasename(pathname)) || sourcePattern.test(pathname);
+	});
+}
 
 function experience(page: Page): Locator {
 	return page.getByTestId('weather-inside-nucleus');
@@ -20,46 +189,207 @@ function collectUnexpectedRuntimeDiagnostics(page: Page): string[] {
 	return diagnostics;
 }
 
-async function skipOpening(page: Page): Promise<Locator> {
+async function installResourceAudit(context: BrowserContext): Promise<void> {
+	await context.addInitScript(() => {
+		const audit: ResourceAudit = {
+			canvasElements: 0,
+			getContextCalls: 0,
+			webglContextCalls: 0,
+			webglContexts: 0,
+			offscreenCanvasConstructions: 0,
+			workerConstructions: 0,
+			workerTerminations: 0,
+			audioContextConstructions: 0,
+			audioContextCloses: 0
+		};
+		Object.defineProperty(window, '__weatherResourceAudit', { value: audit, configurable: true });
+
+		const canvases = new WeakSet<HTMLCanvasElement>();
+		const recordCanvas = (canvas: HTMLCanvasElement): void => {
+			if (canvases.has(canvas)) return;
+			canvases.add(canvas);
+			audit.canvasElements += 1;
+		};
+		const recordCanvasTree = (node: Node): void => {
+			if (node instanceof HTMLCanvasElement) recordCanvas(node);
+			if (node instanceof Element) {
+				for (const canvas of node.querySelectorAll('canvas')) recordCanvas(canvas);
+			}
+		};
+
+		for (const canvas of document.querySelectorAll('canvas')) recordCanvas(canvas);
+		new MutationObserver((records) => {
+			for (const record of records) {
+				for (const node of record.addedNodes) recordCanvasTree(node);
+			}
+		}).observe(document, { childList: true, subtree: true });
+
+		const nativeCreateElement = Document.prototype.createElement;
+		Object.defineProperty(Document.prototype, 'createElement', {
+			configurable: true,
+			value(this: Document, localName: string, options?: ElementCreationOptions) {
+				const element = Reflect.apply(nativeCreateElement, this, [localName, options]);
+				if (element instanceof HTMLCanvasElement) recordCanvas(element);
+				return element;
+			}
+		});
+
+		const nativeCreateElementNs = Document.prototype.createElementNS;
+		Object.defineProperty(Document.prototype, 'createElementNS', {
+			configurable: true,
+			value(
+				this: Document,
+				namespace: string | null,
+				qualifiedName: string,
+				options?: string | ElementCreationOptions
+			) {
+				const element = Reflect.apply(nativeCreateElementNs, this, [
+					namespace,
+					qualifiedName,
+					options
+				]);
+				if (element instanceof HTMLCanvasElement) recordCanvas(element);
+				return element;
+			}
+		});
+
+		const nativeGetContext = HTMLCanvasElement.prototype.getContext;
+		Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+			configurable: true,
+			value(this: HTMLCanvasElement, contextId: string, ...arguments_: unknown[]) {
+				audit.getContextCalls += 1;
+				const webgl = /^webgl2?$/iu.test(contextId);
+				if (webgl) audit.webglContextCalls += 1;
+				const context = Reflect.apply(nativeGetContext, this, [contextId, ...arguments_]);
+				if (webgl && context !== null) audit.webglContexts += 1;
+				return context;
+			}
+		});
+
+		if (typeof OffscreenCanvas !== 'undefined') {
+			const nativeOffscreenCanvas = OffscreenCanvas;
+			Object.defineProperty(window, 'OffscreenCanvas', {
+				configurable: true,
+				value: new Proxy(nativeOffscreenCanvas, {
+					construct(target, argumentsList) {
+						audit.offscreenCanvasConstructions += 1;
+						return Reflect.construct(target, argumentsList);
+					}
+				})
+			});
+
+			const nativeOffscreenGetContext = nativeOffscreenCanvas.prototype.getContext;
+			Object.defineProperty(nativeOffscreenCanvas.prototype, 'getContext', {
+				configurable: true,
+				value(
+					this: OffscreenCanvas,
+					contextId: OffscreenRenderingContextId,
+					...arguments_: unknown[]
+				) {
+					audit.getContextCalls += 1;
+					const webgl = /^webgl2?$/iu.test(contextId);
+					if (webgl) audit.webglContextCalls += 1;
+					const context = Reflect.apply(nativeOffscreenGetContext, this, [
+						contextId,
+						...arguments_
+					]);
+					if (webgl && context !== null) audit.webglContexts += 1;
+					return context;
+				}
+			});
+		}
+
+		if (typeof Worker !== 'undefined') {
+			const nativeWorker = Worker;
+			const nativeTerminate = nativeWorker.prototype.terminate;
+			Object.defineProperty(nativeWorker.prototype, 'terminate', {
+				configurable: true,
+				value(this: Worker) {
+					audit.workerTerminations += 1;
+					return Reflect.apply(nativeTerminate, this, []);
+				}
+			});
+			Object.defineProperty(window, 'Worker', {
+				configurable: true,
+				value: new Proxy(nativeWorker, {
+					construct(target, argumentsList) {
+						audit.workerConstructions += 1;
+						return Reflect.construct(target, argumentsList);
+					}
+				})
+			});
+		}
+
+		const nativeAudioContext = window.AudioContext;
+		if (nativeAudioContext) {
+			const nativeClose = nativeAudioContext.prototype.close;
+			Object.defineProperty(nativeAudioContext.prototype, 'close', {
+				configurable: true,
+				value(this: AudioContext) {
+					audit.audioContextCloses += 1;
+					return Reflect.apply(nativeClose, this, []);
+				}
+			});
+			Object.defineProperty(window, 'AudioContext', {
+				configurable: true,
+				value: new Proxy(nativeAudioContext, {
+					construct(target, argumentsList) {
+						audit.audioContextConstructions += 1;
+						return Reflect.construct(target, argumentsList);
+					}
+				})
+			});
+		}
+	});
+}
+
+async function readResourceAudit(page: Page): Promise<ResourceAudit> {
+	return page.evaluate(
+		() =>
+			(
+				window as typeof window & {
+					__weatherResourceAudit: ResourceAudit;
+				}
+			).__weatherResourceAudit
+	);
+}
+
+async function waitForColdTableau(page: Page): Promise<Locator> {
 	const lab = experience(page);
-	await expect(lab).toBeVisible();
-	const skip = lab.getByRole('button', { name: 'Skip intro', exact: true });
-	if (await skip.isVisible()) await skip.click();
-	await expect(lab).toHaveAttribute('data-stage', 'observe', { timeout: 60_000 });
-	await expect(
-		lab.getByRole('button', { name: 'Intervene once', exact: true }).first()
-	).toBeVisible();
+	await expect(lab).toHaveAttribute('data-experience-mode', 'cold-open');
+	const stage = lab.locator('.cinematic-stage');
+	await expect(stage).toHaveAttribute('data-cold-complete', 'true', { timeout: 8_000 });
+	await expect(stage).toHaveAttribute('data-cold-elapsed-ms', '3000');
+	await expect(lab.getByRole('button', { name: 'Follow the signal', exact: true })).toBeVisible();
 	return lab;
 }
 
-async function reachContactResult(page: Page): Promise<Locator> {
-	await page.emulateMedia({ reducedMotion: 'reduce' });
-	await page.goto(`${articlePath}?webgl=off`, { waitUntil: 'domcontentloaded' });
-	const lab = await skipOpening(page);
-	await lab.getByRole('button', { name: 'Intervene once', exact: true }).first().click();
-	await expect(lab).toHaveAttribute('data-stage', 'intervene');
+async function enterGuidedFilm(page: Page): Promise<Locator> {
+	const lab = await waitForColdTableau(page);
+	await lab.getByRole('button', { name: 'Follow the signal', exact: true }).click();
+	const film = page.getByTestId('weather-guided-film');
+	await expect(film).toBeVisible({ timeout: 60_000 });
+	await expect(film).toHaveAttribute('data-model-status', 'ready', { timeout: 60_000 });
+	const filmBox = await film.boundingBox();
+	expect(filmBox?.y ?? Number.POSITIVE_INFINITY).toBeGreaterThanOrEqual(0);
+	expect(filmBox?.y ?? Number.POSITIVE_INFINITY).toBeLessThanOrEqual(96);
+	return film;
+}
 
-	const contact = lab.getByRole('button', { name: /Change how often they meet/u });
-	await contact.click();
-	await expect(contact).toHaveAttribute('aria-pressed', 'true');
-	await expect(lab).toContainText('The enhancer and promoter meet more often—not always.');
-	await expect(lab.getByLabel('Normalized geometry bias')).toHaveValue('1');
-	await lab.getByRole('button', { name: 'Commit this intervention', exact: true }).click();
-	await expect(lab).toHaveAttribute('data-stage', 'replay');
-	await expect(
-		lab.getByRole('heading', {
-			name: 'Same random starting stream; one modeled cause changed.',
-			exact: true
-		})
-	).toBeVisible();
+async function finishCurrentBeat(film: Locator): Promise<void> {
+	if ((await film.getAttribute('data-film-status')) !== 'held') {
+		await film.getByRole('button', { name: 'Finish beat →', exact: true }).click();
+	}
+	await expect(film).toHaveAttribute('data-film-status', 'held');
+}
 
-	await expect.poll(() => new URL(page.url()).searchParams.get('scenario')).toBe('contact');
-	await lab.getByRole('button', { name: 'Run this cell', exact: true }).click();
-	await expect(lab).toHaveAttribute('data-stage', 'repeat', { timeout: 60_000 });
-	await expect(
-		lab.getByRole('heading', { name: 'Closer. Still silent.', exact: true })
-	).toBeVisible();
-	return lab;
+async function moveToBeat(film: Locator, targetBeat: number): Promise<void> {
+	while (Number(await film.getAttribute('data-beat')) < targetBeat) {
+		await finishCurrentBeat(film);
+		await film.getByRole('button', { name: 'Next →', exact: true }).click();
+	}
+	await expect(film).toHaveAttribute('data-beat', String(targetBeat));
+	await finishCurrentBeat(film);
 }
 
 test.beforeEach(({ page }) => {
@@ -70,144 +400,409 @@ test.afterEach(({ page }) => {
 	expect(diagnosticsByPage.get(page) ?? []).toEqual([]);
 });
 
-test('the canonical route SSRs one H1, the authored poster, and the immersive lead', async ({
+test('SSRs one H1 and both desktop and portrait first-paint art without an interactive renderer', async ({
 	page,
 	request
 }) => {
 	const response = await request.get(articlePath);
 	expect(response.ok()).toBe(true);
-	expect(response.headers()['content-type']).toContain('text/html');
 	const html = await response.text();
 	expect(html.match(/<h1(?:\s[^>]*)?>Weather Inside the Nucleus<\/h1>/gu)).toHaveLength(1);
-	expect(html).toMatch(/class="[^"]*nucleus-poster/u);
-	expect(html).toContain('/images/weather-inside-the-nucleus.png');
-	expect(html).toContain('A signal arrives. A gene hesitates.');
+	expect(html).toContain('weather-cold-open');
+	expect(html).toContain('weather-portrait-poster');
+	expect(html).toContain('/images/weather-inside-nucleus/portrait/weather-nucleus-540.webp');
+	expect(html).not.toContain('<canvas');
 
-	await page.goto(`${articlePath}?webgl=off`, { waitUntil: 'domcontentloaded' });
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
 	await expect(
 		page.getByRole('heading', { level: 1, name: articleTitle, exact: true })
 	).toHaveCount(1);
-	const lab = experience(page);
-	await expect(lab).toBeVisible();
-	const desktopBounds = await lab.evaluate((element) => {
-		const bounds = element.getBoundingClientRect();
-		return {
-			left: bounds.left,
-			right: bounds.right,
-			viewportWidth: document.documentElement.clientWidth
-		};
-	});
-	expect(
-		desktopBounds.left,
-		'immersive lead stays inside the desktop viewport'
-	).toBeGreaterThanOrEqual(0);
-	expect(
-		desktopBounds.right,
-		'immersive lead stays inside the desktop viewport'
-	).toBeLessThanOrEqual(desktopBounds.viewportWidth + 1);
-	await expect(
-		lab.getByRole('img', { name: /A signal reaches a synthetic locus inside a modeled nucleus/u })
-	).toBeVisible();
-	await expect(lab).toHaveAttribute('data-model-version', '1.0.0');
+	await expect(experience(page)).toBeVisible();
 });
 
-test('skip intro lands on the first guided action', async ({ page }) => {
-	await page.goto(`${articlePath}?webgl=off`, { waitUntil: 'domcontentloaded' });
-	const lab = await skipOpening(page);
-	await expect(
-		lab.getByRole('heading', { name: 'Watch one possible cell.', exact: true })
-	).toBeVisible();
-	await expect(lab).toContainText('This happened once. It was not guaranteed.');
-	await expect(lab.locator('.stage-bar')).toContainText('Step 2 of 6 observe');
-});
-
-test('the guided contact path preserves the decisive silence and exposes the 48-run table', async ({
+test('the three-second cold open contains no future cast and freezes on the authored tableau', async ({
 	page
 }) => {
-	const lab = await reachContactResult(page);
-	const url = new URL(page.url());
-	expect(url.searchParams.get('nucleus_v')).toBe('1');
-	expect(url.searchParams.get('nucleus_model')).toBe('weather-inside-nucleus-1.0.0');
-	expect(url.searchParams.get('seed')).toBe('3');
-	expect(url.searchParams.get('contact')).toBe('1');
-
-	await lab.getByRole('button', { name: 'Compare 48 possible cells', exact: true }).click();
-	await expect(lab).toHaveAttribute('data-stage', 'inspect');
-	const ensemble = lab.getByTestId('nucleus-ensemble');
-	await expect(ensemble).toBeVisible();
-	await expect(ensemble.getByRole('heading', { name: 'Compare 48 possible cells' })).toBeVisible();
-	await expect(ensemble).toContainText('Closer. Still silent.');
-	await expect(ensemble).toContainText('The odds moved. The outcome did not obey.', {
-		timeout: 60_000
-	});
-
-	const table = ensemble.getByRole('table');
-	await expect(table).toBeVisible();
-	await expect(table.locator('caption')).toHaveText(
-		'Model-distribution summary; silent runs remain in every denominator and are censored at the observation horizon.'
-	);
-	await expect(table.locator('tbody tr')).toHaveCount(2);
-	await expect(table.locator('tbody tr').filter({ hasText: 'Baseline' })).toContainText('48');
-	await expect(
-		table.locator('tbody tr').filter({ hasText: 'Raised contact propensity' })
-	).toContainText('48');
-});
-
-test('replay preserves the focal seed, URL, model version, and result', async ({ page }) => {
-	const lab = await reachContactResult(page);
-	const beforeUrl = page.url();
-	const beforeResult = (await lab.locator('.result-copy p').nth(1).innerText()).trim();
-	await lab.getByRole('button', { name: 'Replay this cell', exact: true }).click();
-	await expect(lab.locator('[aria-live="polite"]')).toContainText(
-		'Replay preserved seed 3 and model 1.0.0.',
-		{ timeout: 60_000 }
-	);
-	expect(page.url()).toBe(beforeUrl);
-	expect(new URL(page.url()).searchParams.get('seed')).toBe('3');
-	await expect(lab.locator('.result-copy p').nth(1)).toHaveText(beforeResult);
-});
-
-test('reduced motion reaches the renderer and removes canvas transitions', async ({ page }) => {
-	await page.emulateMedia({ reducedMotion: 'reduce' });
-	await page.goto(`${articlePath}?renderer=3d&motion=reduce`, { waitUntil: 'domcontentloaded' });
-	expect(
-		await page.evaluate(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-	).toBe(true);
-	const stage = experience(page).locator('.weather-stage');
-	await expect(stage).toBeVisible();
-	await expect(stage).toHaveClass(/reduced-motion/u);
-	const transitionDuration = await stage
-		.locator('canvas')
-		.evaluate((canvas) => getComputedStyle(canvas).transitionDuration);
-	expect(transitionDuration).toBe('0s');
-});
-
-test('webgl=off keeps the complete route on its synchronized 2D view', async ({ page }) => {
-	await page.goto(`${articlePath}?webgl=off&renderer=3d&view=territory`, {
-		waitUntil: 'domcontentloaded'
-	});
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
 	const lab = experience(page);
-	await expect(lab.getByRole('button', { name: '2D', exact: true })).toHaveAttribute(
-		'aria-pressed',
-		'true'
+	await expect(lab).toHaveAttribute('data-eligibility', /^(eligible|static-failure)$/u);
+	if ((await lab.getAttribute('data-eligibility')) !== 'eligible') {
+		test.skip(true, 'This browser does not expose an eligible WebGL2 stage.');
+	}
+
+	await expect(lab).toHaveAttribute('data-experience-mode', 'cold-open');
+	await expect(lab.getByRole('button', { name: 'Pause opening', exact: true })).toBeVisible();
+	const firstText = await lab.locator('.cinematic-stage').innerText();
+	for (const futureTerm of [
+		'enhancer',
+		'promoter',
+		'contact state',
+		'RNA',
+		'ensemble',
+		'model ribbon'
+	]) {
+		expect(firstText.toLowerCase()).not.toContain(futureTerm.toLowerCase());
+	}
+	await expect(lab.getByRole('button', { name: 'Follow the signal', exact: true })).toHaveCount(0);
+
+	await waitForColdTableau(page);
+	await expect(lab.getByTestId('weather-cold-open')).toHaveAttribute(
+		'data-cold-open-progress',
+		'1.0000'
 	);
-	await expect(lab.locator('.weather-stage')).toHaveCount(0);
-	await expect(lab.locator('svg.nucleus-poster')).toBeVisible();
+	const frozenProgress = await lab
+		.getByTestId('weather-cold-open')
+		.getAttribute('data-cold-open-progress');
+	await page.waitForTimeout(350);
+	expect(await lab.getByTestId('weather-cold-open').getAttribute('data-cold-open-progress')).toBe(
+		frozenProgress
+	);
+	await expect(lab.getByText('Weather Inside', { exact: true })).toBeVisible();
+	await expect(lab.getByText('the Nucleus', { exact: true })).toBeVisible();
+});
 
-	await skipOpening(page);
-	const liveScene = lab.locator('.live-scene');
-	await expect(liveScene).toHaveAttribute('data-renderer', '2d');
-	await expect(liveScene.getByTestId('nucleus-cross-section')).toBeVisible();
-	await expect(
-		liveScene.getByRole('img', { name: /Interactive two-dimensional nucleus cross-section/u })
-	).toBeVisible();
+test('portrait and short viewports load one responsive poster and zero weather scene resources', async ({
+	browser,
+	baseURL
+}) => {
+	const interactiveArtifacts = await interactiveArtifactBasenames();
+	const viewports = [
+		{ width: 360, height: 800 },
+		{ width: 390, height: 844 },
+		{ width: 412, height: 915 },
+		{ width: 430, height: 932 },
+		{ width: 820, height: 1_180 },
+		{ width: 844, height: 390 }
+	];
 
-	await lab.getByRole('button', { name: 'Intervene once', exact: true }).first().click();
-	await expect(lab).toHaveAttribute('data-stage', 'intervene');
-	await expect(liveScene.locator('.scene-targets')).toHaveCount(0);
-	await expect(lab.getByRole('heading', { name: 'Where will you intervene?' })).toBeVisible();
-	await expect(lab.getByRole('button', { name: /Change how often they meet/u })).toBeVisible();
+	for (const viewport of viewports) {
+		const context = await browser.newContext({ baseURL, viewport, isMobile: viewport.width < 600 });
+		await installResourceAudit(context);
+		const page = await context.newPage();
+		const diagnostics = collectUnexpectedRuntimeDiagnostics(page);
+		const requests: string[] = [];
+		page.on('request', (request) => requests.push(request.url()));
+		try {
+			await page.goto(articlePath, { waitUntil: 'networkidle' });
+			const lab = experience(page);
+			await expect(lab).toHaveAttribute('data-eligibility', 'static-viewport');
+			await expect(lab.getByTestId('weather-portrait-poster')).toBeVisible();
+			await expect(lab.locator('canvas')).toHaveCount(0);
+			await expect(lab.getByText('This model needs a wider stage.')).toBeVisible();
+			await expect(lab.getByRole('button', { name: /renderer|2D|3D/iu })).toHaveCount(0);
+			const geometry = await lab.evaluate((element) => ({
+				documentOverflow:
+					document.documentElement.scrollWidth - document.documentElement.clientWidth,
+				labOverflow: element.scrollWidth - element.clientWidth
+			}));
+			expect(
+				geometry.documentOverflow,
+				`${viewport.width}×${viewport.height} document overflow`
+			).toBeLessThanOrEqual(1);
+			expect(
+				geometry.labOverflow,
+				`${viewport.width}×${viewport.height} stage overflow`
+			).toBeLessThanOrEqual(1);
+			expect(await readResourceAudit(page)).toEqual(zeroResourceAudit);
+			expect(requestedInteractiveArtifacts(requests, interactiveArtifacts)).toEqual([]);
+			expect(diagnostics).toEqual([]);
+		} finally {
+			await context.close();
+		}
+	}
+});
 
+test('rotation offers an explicit load action and does not silently mount the scene', async ({
+	browser,
+	baseURL
+}) => {
+	const context = await browser.newContext({ baseURL, viewport: { width: 390, height: 844 } });
+	await installResourceAudit(context);
+	const page = await context.newPage();
+	try {
+		await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+		await expect(experience(page).getByTestId('weather-portrait-poster')).toBeVisible();
+		expect(await readResourceAudit(page)).toEqual(zeroResourceAudit);
+		await page.setViewportSize({ width: 1_440, height: 900 });
+		const load = experience(page).getByRole('button', {
+			name: 'Load interactive version',
+			exact: true
+		});
+		await expect(load).toBeVisible();
+		await expect(experience(page).locator('canvas')).toHaveCount(0);
+		expect(await readResourceAudit(page)).toEqual(zeroResourceAudit);
+		await load.click();
+		await expect(experience(page)).toHaveAttribute('data-experience-mode', 'cold-open');
+		await expect(experience(page).getByTestId('weather-portrait-poster')).toHaveCount(0);
+	} finally {
+		await context.close();
+	}
+});
+
+test('Save-Data keeps a desktop viewport on the static poster without scene resources', async ({
+	browser,
+	baseURL
+}) => {
+	const interactiveArtifacts = await interactiveArtifactBasenames();
+	const context = await browser.newContext({
+		baseURL,
+		viewport: { width: 1_440, height: 900 }
+	});
+	await installResourceAudit(context);
+	await context.addInitScript(() => {
+		Object.defineProperty(navigator, 'connection', {
+			configurable: true,
+			value: { saveData: true }
+		});
+	});
+	const page = await context.newPage();
+	const diagnostics = collectUnexpectedRuntimeDiagnostics(page);
+	const requests: string[] = [];
+	page.on('request', (request) => requests.push(request.url()));
+	try {
+		await page.goto(articlePath, { waitUntil: 'networkidle' });
+		const lab = experience(page);
+		await expect(lab).toHaveAttribute('data-eligibility', 'static-save-data');
+		await expect(lab.getByTestId('weather-portrait-poster')).toBeVisible();
+		await expect(lab).toContainText(
+			'Data saving is active, so the cinematic scene has not been requested.'
+		);
+		await expect(
+			lab.getByRole('button', { name: 'Load interactive version', exact: true })
+		).toBeVisible();
+		await expect(lab.locator('canvas')).toHaveCount(0);
+		expect(await readResourceAudit(page)).toEqual(zeroResourceAudit);
+		expect(requestedInteractiveArtifacts(requests, interactiveArtifacts)).toEqual([]);
+		expect(diagnostics).toEqual([]);
+	} finally {
+		await context.close();
+	}
+});
+
+test('reduced motion is an eight-still manual route with no canvas or autoplay', async ({
+	page,
+	context
+}) => {
+	await installResourceAudit(context);
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.goto(`${articlePath}?motion=reduce`, { waitUntil: 'domcontentloaded' });
+	const lab = experience(page);
+	await expect(lab).toHaveAttribute('data-eligibility', 'reduced-stills');
+	await expect(lab.locator('.cinematic-stage')).toHaveAttribute('data-cold-complete', 'true');
+	expect(await readResourceAudit(page)).toEqual(zeroResourceAudit);
+	await lab.getByRole('button', { name: 'Follow the signal', exact: true }).click();
+	const film = page.getByTestId('weather-guided-film');
+	await expect(film).toHaveAttribute('data-beat', '1');
+	await expect(film).toHaveAttribute('data-film-status', 'held');
+	await expect(film.locator('canvas')).toHaveCount(0);
+	await expect(film.getByRole('button', { name: 'Autoplay off · Still mode' })).toBeDisabled();
+	const reducedAudit = await readResourceAudit(page);
+	expect(reducedAudit).toMatchObject({
+		canvasElements: 0,
+		getContextCalls: 0,
+		webglContextCalls: 0,
+		webglContexts: 0,
+		offscreenCanvasConstructions: 0,
+		audioContextConstructions: 0,
+		audioContextCloses: 0
+	});
+	expect(reducedAudit.workerConstructions).toBeGreaterThan(0);
+
+	for (let beat = 2; beat <= 8; beat += 1) {
+		await film.getByRole('button', { name: 'Next →', exact: true }).click();
+		await expect(film).toHaveAttribute('data-beat', String(beat));
+		await expect(film).toHaveAttribute('data-film-status', 'held');
+	}
+	await expect(film.getByText('Probability, not obedience.', { exact: true })).toBeVisible();
+});
+
+test('every reduced or Still policy keeps Skip to experiment on the 2D route', async ({
+	browser,
+	baseURL
+}) => {
+	const rendererArtifacts = await threeRendererArtifactBasenames();
+	const cases = [
+		{ name: 'OS reduced motion', reducedMotion: 'reduce' as const, query: '' },
+		{ name: 'motion=reduce', reducedMotion: 'no-preference' as const, query: '?motion=reduce' },
+		{ name: 'motion=still', reducedMotion: 'no-preference' as const, query: '?motion=still' },
+		{
+			name: 'document Still setting',
+			reducedMotion: 'no-preference' as const,
+			query: '',
+			documentStill: true
+		}
+	];
+
+	for (const policy of cases) {
+		const context = await browser.newContext({
+			baseURL,
+			viewport: { width: 1_440, height: 900 },
+			reducedMotion: policy.reducedMotion
+		});
+		await installResourceAudit(context);
+		const requests: string[] = [];
+		if (policy.documentStill) {
+			await context.addInitScript(() => {
+				const applyStillSetting = (): boolean => {
+					if (!document.documentElement) return false;
+					document.documentElement.dataset.motionPreference = 'still';
+					document.documentElement.dataset.motion = 'still';
+					return true;
+				};
+				if (!applyStillSetting()) {
+					const observer = new MutationObserver(() => {
+						if (!applyStillSetting()) return;
+						observer.disconnect();
+					});
+					observer.observe(document, { childList: true, subtree: true });
+					document.addEventListener('DOMContentLoaded', applyStillSetting, { once: true });
+				}
+			});
+		}
+		const page = await context.newPage();
+		page.on('request', (request) => requests.push(request.url()));
+		try {
+			await page.goto(`${articlePath}${policy.query}`, { waitUntil: 'domcontentloaded' });
+			const lab = page.locator('.weather-directed-experience');
+			if (policy.documentStill) {
+				await expect(page.locator('html'), policy.name).toHaveAttribute('data-motion', 'still');
+			}
+			await expect(lab, policy.name).toHaveAttribute('data-eligibility', 'reduced-stills');
+			expect(await readResourceAudit(page), policy.name).toEqual(zeroResourceAudit);
+			await lab.getByRole('button', { name: 'Skip to the experiment', exact: true }).click();
+			await expect(lab, policy.name).toHaveAttribute('data-experience-mode', 'experiment');
+
+			const experiment = lab.locator('.weather-experience');
+			await expect(experiment.getByText('2D still view · motion preference active')).toBeVisible();
+			await expect(experiment.locator('.weather-stage')).toHaveCount(0);
+			await expect(experiment.locator('canvas')).toHaveCount(0);
+			await expect(experiment.getByRole('button', { name: '3D', exact: true })).toHaveCount(0);
+			const audit = await readResourceAudit(page);
+			expect(audit, policy.name).toMatchObject({
+				canvasElements: 0,
+				getContextCalls: 0,
+				webglContextCalls: 0,
+				webglContexts: 0,
+				offscreenCanvasConstructions: 0,
+				audioContextConstructions: 0,
+				audioContextCloses: 0
+			});
+			expect(
+				requestedInteractiveArtifacts(requests, rendererArtifacts, /three-renderer/iu),
+				`${policy.name} requested the Three renderer`
+			).toEqual([]);
+		} finally {
+			await context.close();
+		}
+	}
+});
+
+test('the guided seed-0 route holds silence, then shows only the authentic later events', async ({
+	page
+}) => {
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const lab = experience(page);
+	await expect(lab).toHaveAttribute('data-eligibility', /^(eligible|static-failure)$/u);
+	if ((await lab.getAttribute('data-eligibility')) !== 'eligible') {
+		test.skip(true, 'This browser does not expose an eligible WebGL2 stage.');
+	}
+	const film = await enterGuidedFilm(page);
+
+	await moveToBeat(film, 6);
+	const silent = film.getByTestId('weather-directed-tableau');
+	await expect(silent).toHaveAttribute('data-directed-beat', 'silent');
+	await expect(silent).toHaveAttribute('data-model-boundary', 'before');
+	await expect(silent).toHaveAttribute('data-contact-state', 'near');
+	await expect(silent).toHaveAttribute('data-promoter-state', 'off');
+	await expect(silent).toHaveAttribute('data-initiation-count', '0');
+	await expect(film).toContainText('Contact changes odds. It does not command the gene.');
+
+	await film.getByRole('button', { name: 'Next →', exact: true }).click();
+	await expect(film).toHaveAttribute('data-beat', '7');
+	await finishCurrentBeat(film);
+	const burst = film.getByTestId('weather-directed-tableau');
+	await expect(burst).toHaveAttribute('data-directed-beat', 'burst');
+	await expect(burst).toHaveAttribute('data-model-boundary', 'after');
+	await expect(burst).toHaveAttribute('data-contact-state', 'far');
+	await expect(burst).toHaveAttribute('data-promoter-state', 'off');
+	await expect(burst).toHaveAttribute('data-initiation-count', '3');
+	await expect(film.getByText('later · same seed 0 history', { exact: true })).toBeVisible();
+	await expect(film).toContainText('This is one possible history.');
+
+	await film.getByRole('button', { name: 'Next →', exact: true }).click();
+	await expect(film).toHaveAttribute('data-beat', '8');
+	await finishCurrentBeat(film);
+	await expect(film).toContainText('26/48');
+	await expect(film).toContainText('41/48');
+	await expect(film).toContainText('These are paired model histories, not cells.');
+	await expect(film).toContainText('The odds moved. The outcome did not obey.');
+});
+
+test('replaying the opening tears down every guided-film worker', async ({ page, context }) => {
+	await installResourceAudit(context);
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const lab = experience(page);
+	await expect(lab).toHaveAttribute('data-eligibility', /^(eligible|static-failure)$/u);
+	if ((await lab.getAttribute('data-eligibility')) !== 'eligible') {
+		test.skip(true, 'This browser does not expose an eligible WebGL2 stage.');
+	}
+
+	const film = await enterGuidedFilm(page);
+	const mountedAudit = await readResourceAudit(page);
+	expect(mountedAudit.workerConstructions).toBeGreaterThan(0);
+	expect(mountedAudit.workerTerminations).toBeLessThan(mountedAudit.workerConstructions);
+
+	await film.getByRole('button', { name: 'Replay opening', exact: true }).click();
+	await expect(lab).toHaveAttribute('data-experience-mode', 'cold-open');
+	await expect(page.getByTestId('weather-guided-film')).toHaveCount(0);
+	await expect
+		.poll(async () => (await readResourceAudit(page)).workerTerminations)
+		.toBe(mountedAudit.workerConstructions);
+});
+
+test('WebGL context loss disposes the guided scene and restores the accessible poster', async ({
+	page
+}) => {
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const lab = experience(page);
+	await expect(lab).toHaveAttribute('data-eligibility', /^(eligible|static-failure)$/u);
+	if ((await lab.getAttribute('data-eligibility')) !== 'eligible') {
+		test.skip(true, 'This browser does not expose an eligible WebGL2 stage.');
+	}
+
+	const film = await enterGuidedFilm(page);
+	const stage = film.locator('.weather-stage');
+	await expect(stage).toHaveAttribute('data-renderer-status', 'ready', { timeout: 60_000 });
+	await stage.locator('canvas').dispatchEvent('webglcontextlost', { cancelable: true });
+
+	await expect(lab).toHaveAttribute('data-eligibility', 'static-failure');
+	await expect(lab.getByTestId('weather-portrait-poster')).toBeVisible();
+	await expect(lab).toContainText('The WebGL 2 context was interrupted');
+	await expect(lab.locator('canvas')).toHaveCount(0);
+	await expect(page.getByTestId('weather-guided-film')).toHaveCount(0);
+});
+
+test('pause and visibility changes do not advance film or model clocks', async ({ page }) => {
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const lab = experience(page);
+	await expect(lab).toHaveAttribute('data-eligibility', /^(eligible|static-failure)$/u);
+	if ((await lab.getAttribute('data-eligibility')) !== 'eligible') {
+		test.skip(true, 'This browser does not expose an eligible WebGL2 stage.');
+	}
+	const film = await enterGuidedFilm(page);
+	await film.getByRole('button', { name: 'Pause', exact: true }).click();
+	await expect(film).toHaveAttribute('data-film-status', 'paused');
+	const filmTime = await film.getAttribute('data-beat-time-ms');
+	const modelTime = await film.getAttribute('data-model-time');
+	await page.waitForTimeout(400);
+	expect(await film.getAttribute('data-beat-time-ms')).toBe(filmTime);
+	expect(await film.getAttribute('data-model-time')).toBe(modelTime);
+
+	await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+	expect(await film.getAttribute('data-beat-time-ms')).toBe(filmTime);
+});
+
+test('failed WebGL initialization returns the same accessible static poster', async ({ page }) => {
 	await page.addInitScript(() => {
 		const nativeGetContext = HTMLCanvasElement.prototype.getContext;
 		Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
@@ -218,29 +813,15 @@ test('webgl=off keeps the complete route on its synchronized 2D view', async ({ 
 			}
 		});
 	});
-	const sharedState = new URLSearchParams({
-		nucleus_v: '1',
-		nucleus_model: 'weather-inside-nucleus-1.0.0',
-		scenario: 'contact',
-		seed: '424242',
-		contact: '1',
-		view: 'territory',
-		time: '12.5',
-		renderer: '3d'
-	});
-	await page.goto(`${articlePath}?${sharedState}`, { waitUntil: 'domcontentloaded' });
-	await expect.poll(() => new URL(page.url()).searchParams.get('renderer')).toBe('2d');
-	const restored = new URL(page.url()).searchParams;
-	for (const key of ['scenario', 'contact', 'seed', 'view', 'time'] as const) {
-		expect(restored.get(key), `${key} survived WebGL fallback`).toBe(sharedState.get(key));
-	}
-	await expect(experience(page).getByRole('button', { name: '2D', exact: true })).toHaveAttribute(
-		'aria-pressed',
-		'true'
-	);
+	await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	const lab = experience(page);
+	await expect(lab).toHaveAttribute('data-eligibility', 'static-failure');
+	await expect(lab.getByTestId('weather-portrait-poster')).toBeVisible();
+	await expect(lab).toContainText('The live stage could not continue safely');
+	await expect(lab.locator('canvas')).toHaveCount(0);
 });
 
-test('the no-JavaScript route retains a meaningful poster, causal sequence, and disclosure', async ({
+test('the no-JavaScript phone route retains the poster, transcript, equations, and limitations', async ({
 	browser,
 	baseURL
 }) => {
@@ -255,86 +836,19 @@ test('the no-JavaScript route retains a meaningful poster, causal sequence, and 
 		await expect(
 			page.getByRole('heading', { level: 1, name: articleTitle, exact: true })
 		).toHaveCount(1);
-		await expect(page.locator('svg.nucleus-poster')).toBeVisible();
-		const staticHeading = page.getByRole('heading', {
-			name: 'Weather Inside the Nucleus — static route',
-			exact: true
-		});
-		await expect(staticHeading).toBeVisible();
-		const staticRoute = staticHeading.locator('..');
-		await expect(page.locator('img[src="/images/weather-inside-the-nucleus.png"]')).toBeVisible();
-		await expect(staticRoute).toContainText('EGF stays outside the cell');
-		await expect(staticRoute).toContainText('Closer. Still silent.');
-		await expect(staticRoute).toContainText(
-			'This is a synthetic demonstration locus in illustrative model time'
-		);
+		const poster = page.getByTestId('weather-portrait-poster');
+		await expect(poster).toBeVisible();
+		await expect(
+			poster.locator('img[src="/images/weather-inside-nucleus/portrait/weather-nucleus-540.webp"]')
+		).toBeVisible();
+		await expect(page.getByRole('heading', { name: 'How the reduced model works' })).toBeVisible();
+		await expect(
+			page.getByRole('heading', { name: 'What this model can and cannot say' })
+		).toBeVisible();
+		await expect(
+			page.getByRole('heading', { name: 'Accessible transcript and results path' })
+		).toBeVisible();
 	} finally {
 		await context.close();
 	}
-});
-
-test('320- and 390-pixel guided layouts do not leak horizontal page overflow', async ({
-	browser,
-	baseURL
-}) => {
-	for (const width of [320, 390]) {
-		const context = await browser.newContext({
-			baseURL,
-			viewport: { width, height: 844 },
-			isMobile: true,
-			hasTouch: true,
-			reducedMotion: 'reduce'
-		});
-		const page = await context.newPage();
-		const diagnostics = collectUnexpectedRuntimeDiagnostics(page);
-		try {
-			await page.goto(`${articlePath}?webgl=off`, { waitUntil: 'domcontentloaded' });
-			const lab = await skipOpening(page);
-			await lab.getByRole('button', { name: 'Intervene once', exact: true }).first().click();
-			await lab.getByRole('button', { name: /Change how often they meet/u }).click();
-			const geometry = await lab.evaluate((element) => ({
-				documentOverflow:
-					document.documentElement.scrollWidth - document.documentElement.clientWidth,
-				bodyOverflow: document.body.scrollWidth - document.body.clientWidth,
-				labOverflow: element.scrollWidth - element.clientWidth,
-				labWidth: element.getBoundingClientRect().width
-			}));
-			expect(geometry.documentOverflow, `${width}px document overflow`).toBeLessThanOrEqual(1);
-			expect(geometry.bodyOverflow, `${width}px body overflow`).toBeLessThanOrEqual(1);
-			expect(geometry.labOverflow, `${width}px laboratory overflow`).toBeLessThanOrEqual(1);
-			expect(geometry.labWidth).toBeLessThanOrEqual(width);
-			expect(diagnostics).toEqual([]);
-		} finally {
-			await context.close();
-		}
-	}
-});
-
-test('a synthetic WebGL context interruption exposes fallback and restores the live canvas', async ({
-	page
-}) => {
-	await page.emulateMedia({ reducedMotion: 'reduce' });
-	await page.goto(`${articlePath}?renderer=3d&motion=reduce`, { waitUntil: 'domcontentloaded' });
-	const stage = experience(page).locator('.weather-stage');
-	await expect(stage).toHaveAttribute('data-renderer-status', /^(ready|fallback)$/u, {
-		timeout: 60_000
-	});
-	const initialStatus = await stage.getAttribute('data-renderer-status');
-	test.skip(initialStatus !== 'ready', 'The configured browser does not expose WebGL 2.');
-
-	const canvas = stage.locator('canvas');
-	await canvas.evaluate((element) => {
-		element.dispatchEvent(new Event('webglcontextlost', { cancelable: true }));
-	});
-	await expect(stage).toHaveAttribute('data-renderer-status', 'context-lost');
-	await expect(stage.locator('.fallback-layer')).toBeVisible();
-
-	await canvas.evaluate((element) => {
-		element.dispatchEvent(new Event('webglcontextrestored'));
-	});
-	await expect(stage).toHaveAttribute('data-renderer-status', 'ready');
-	await expect(canvas).toBeVisible();
-	await expect(experience(page).locator('.status-line')).toContainText(
-		'The three-dimensional nucleus view has been restored.'
-	);
 });

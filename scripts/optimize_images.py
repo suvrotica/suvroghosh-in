@@ -26,7 +26,7 @@ MEDIA_DIRECTORIES = (
 )
 MANIFEST_PATH = ROOT / "scripts" / "image-optimization-manifest.json"
 OPTIMIZER_VERSION = "2026-07-18.1"
-SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".svg", ".webp"}
+SUPPORTED_EXTENSIONS = {".avif", ".jpg", ".jpeg", ".png", ".svg", ".webp"}
 JPEG_QUALITY_STEPS = (76, 78, 80, 82, 84, 86)
 MIN_PSNR_DB = 36.0
 MAX_DIMENSION = 1920
@@ -281,6 +281,24 @@ def svg_dimensions(source_bytes: bytes) -> tuple[int, int]:
 	return round(width), round(height)
 
 
+def avif_dimensions(source_bytes: bytes) -> tuple[int, int]:
+	"""Read the primary AVIF image dimensions from its ISO-BMFF `ispe` property box."""
+	search_from = 0
+	while True:
+		box_type = source_bytes.find(b"ispe", search_from)
+		if box_type < 0:
+			break
+		box_start = box_type - 4
+		if box_start >= 0 and box_type + 16 <= len(source_bytes):
+			box_size = int.from_bytes(source_bytes[box_start:box_type], "big")
+			width = int.from_bytes(source_bytes[box_type + 8 : box_type + 12], "big")
+			height = int.from_bytes(source_bytes[box_type + 12 : box_type + 16], "big")
+			if box_size >= 20 and width > 0 and height > 0:
+				return width, height
+		search_from = box_type + 4
+	raise ValueError("AVIF requires a valid image-spatial-extents (`ispe`) box")
+
+
 def inspect_sketch_source(path: Path, original_bytes: bytes) -> dict[str, Any]:
 	from PIL import Image, ImageOps
 
@@ -311,6 +329,15 @@ def inspect_sketch_source(path: Path, original_bytes: bytes) -> dict[str, Any]:
 
 def optimise_file(path: Path, original_bytes: bytes) -> tuple[bytes, dict[str, Any]]:
 	from PIL import Image
+	if path.suffix.lower() == ".avif":
+		width, height = avif_dimensions(original_bytes)
+		return original_bytes, {
+			"format": "AVIF",
+			"optimized": False,
+			"reason": "AVIF source retained unchanged",
+			"width": width,
+			"height": height,
+		}
 	if path.suffix.lower() == ".svg":
 		width, height = svg_dimensions(original_bytes)
 		return original_bytes, {

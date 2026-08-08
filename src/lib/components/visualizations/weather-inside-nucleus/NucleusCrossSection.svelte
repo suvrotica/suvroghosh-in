@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { InterventionId } from '$lib/visualizations/weather-inside-nucleus/experience';
+	import { sampleIndexAtOrBefore } from '$lib/visualizations/weather-inside-nucleus/sampling';
 	import type { NucleusView } from '$lib/visualizations/weather-inside-nucleus/url-state';
 	import type { TraceView } from './ui-types';
 
@@ -21,17 +22,7 @@
 		onselect
 	}: Props = $props();
 
-	let sampleIndex = $derived(
-		trace && trace.times.length > 1
-			? Math.max(
-					0,
-					Math.min(
-						trace.times.length - 1,
-						Math.round((currentTime / trace.duration) * (trace.times.length - 1))
-					)
-				)
-			: 0
-	);
+	let sampleIndex = $derived(sampleIndexAtOrBefore(trace?.times, currentTime));
 	let downstream = $derived(trace?.downstreamActivity[sampleIndex] ?? 0);
 	let nuclear = $derived(trace?.nuclearActivity[sampleIndex] ?? 0);
 	let occupancy = $derived(trace?.occupancy[sampleIndex] ?? 0);

@@ -4234,6 +4234,90 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-360.avif",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-360.avif",
+			"bytes": 13225,
+			"width": 360,
+			"height": 480
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-360.webp",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-360.webp",
+			"bytes": 11906,
+			"width": 360,
+			"height": 480
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-390.avif",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-390.avif",
+			"bytes": 14893,
+			"width": 390,
+			"height": 520
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-390.webp",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-390.webp",
+			"bytes": 13370,
+			"width": 390,
+			"height": 520
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-412.avif",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-412.avif",
+			"bytes": 16063,
+			"width": 412,
+			"height": 549
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-412.webp",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-412.webp",
+			"bytes": 18982,
+			"width": 412,
+			"height": 549
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-540.avif",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-540.avif",
+			"bytes": 21146,
+			"width": 540,
+			"height": 720
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-540.webp",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-540.webp",
+			"bytes": 20638,
+			"width": 540,
+			"height": 720
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-824.avif",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-824.avif",
+			"bytes": 35506,
+			"width": 824,
+			"height": 1099
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-824.webp",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-824.webp",
+			"bytes": 46012,
+			"width": 824,
+			"height": 1099
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-1080.avif",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-1080.avif",
+			"bytes": 45084,
+			"width": 1080,
+			"height": 1440
+		},
+		{
+			"name": "weather-inside-nucleus/portrait/weather-nucleus-1080.webp",
+			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-1080.webp",
+			"bytes": 47046,
+			"width": 1080,
+			"height": 1440
+		},
+		{
 			"name": "weather-inside-the-nucleus.png",
 			"src": "/images/weather-inside-the-nucleus.png",
 			"bytes": 32414,

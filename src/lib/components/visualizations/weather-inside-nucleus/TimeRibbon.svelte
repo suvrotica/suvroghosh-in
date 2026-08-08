@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { ScalarTrace, TraceView } from './ui-types';
+	import { sampleIndexAtOrBefore } from '$lib/visualizations/weather-inside-nucleus/sampling';
 
 	type Props = {
 		trace: TraceView | null;
@@ -52,19 +53,7 @@
 	let activityPathData = $derived(activityPath(trace?.downstreamActivity, trace?.duration ?? 1));
 	let promoterPathData = $derived(promoterPath(trace?.promoterState, trace?.duration ?? 1));
 	let currentX = $derived(x(currentTime, trace?.duration ?? 1));
-	let selectedIndex = $derived(
-		trace
-			? Math.max(
-					0,
-					Math.min(
-						trace.times.length - 1,
-						Math.round(
-							(currentTime / Math.max(trace.duration, Number.EPSILON)) * (trace.times.length - 1)
-						)
-					)
-				)
-			: 0
-	);
+	let selectedIndex = $derived(sampleIndexAtOrBefore(trace?.times, currentTime));
 	let selectedActivity = $derived(trace?.downstreamActivity[selectedIndex] ?? 0);
 	let selectedPromoter = $derived(trace?.promoterState[selectedIndex] ? 'ON' : 'OFF');
 	let selectedEvents = $derived(
@@ -78,7 +67,7 @@
 
 <div class="time-ribbon" data-testid="nucleus-time-ribbon">
 	<div class="ribbon-heading">
-		<span>One possible cell</span>
+		<span>One possible history</span>
 		<output>{currentTime.toFixed(1)} model min</output>
 	</div>
 	<svg

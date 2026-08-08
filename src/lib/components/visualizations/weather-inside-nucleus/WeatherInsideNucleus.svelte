@@ -1,1260 +1,689 @@
+<script module lang="ts">
+	let stageFailedThisSession = false;
+</script>
+
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import EnsembleReadout from './EnsembleReadout.svelte';
-	import InterventionControl from './InterventionControl.svelte';
-	import ModelDisclosure from './ModelDisclosure.svelte';
-	import NucleusCrossSection from './NucleusCrossSection.svelte';
-	import NucleusPoster from './NucleusPoster.svelte';
-	import TimeRibbon from './TimeRibbon.svelte';
-	import WeatherStage from './WeatherStage.svelte';
-	import type { EnsembleComparisonView, RendererMode, TraceView } from './ui-types';
-	import { NucleusSonifier } from '$lib/visualizations/weather-inside-nucleus/audio';
+	import { onMount, tick } from 'svelte';
+	import ColdOpenStage from './ColdOpenStage.svelte';
+	import PortraitPoster from './PortraitPoster.svelte';
 	import {
-		INITIAL_EXPERIENCE_STATE,
-		stageNumber,
-		transitionExperience,
-		type ExperienceState,
-		type InterventionId
-	} from '$lib/visualizations/weather-inside-nucleus/experience';
-	import {
-		INTRO_BURST_SEED,
-		MODEL_SEMANTIC_VERSION,
-		createModelParameters,
-		type ModelParameters,
-		type SimulationResult
-	} from '$lib/visualizations/weather-inside-nucleus/model';
-	import {
-		compactEnsembleToComparison,
-		simulationToTraceView
-	} from '$lib/visualizations/weather-inside-nucleus/presentation';
-	import {
-		DEFAULT_NUCLEUS_URL_STATE,
-		parseNucleusUrlState,
-		serializeNucleusUrlState,
-		type NucleusScenario,
-		type NucleusUrlState,
-		type NucleusView
-	} from '$lib/visualizations/weather-inside-nucleus/url-state';
-	import {
-		NucleusWorkerCancelledError,
-		createWeatherNucleusWorkerClient,
-		type WeatherNucleusWorkerClient
-	} from '$lib/visualizations/weather-inside-nucleus/worker/client';
-	import type {
-		CompactMatchedEnsembleResult,
-		FocalPairResult
-	} from '$lib/visualizations/weather-inside-nucleus/worker/protocol';
+		evaluateStageEligibility,
+		evaluateStagePrerequisites,
+		isEligibleViewport,
+		type StageEligibilityMode
+	} from '$lib/visualizations/weather-inside-nucleus/eligibility';
 
-	type InterventionValues = {
-		block: number;
-		duration: number;
-		affinity: number;
-		contact: number;
-	};
+	type ExperienceMode = 'cold-open' | 'guided' | 'experiment' | 'static';
+	type GuidedComponent = typeof import('./WeatherGuidedFilm.svelte').default;
+	type ExperimentComponent = typeof import('./WeatherExperiment.svelte').default;
 
-	const INTRO_DURATION_MS = 3_000;
-	const PLAYBACK_MODEL_MINUTES_PER_SECOND = 8;
-	const NEXT_SEED_INCREMENT = 0x9e37_79b9;
+	const COLD_OPEN_DURATION_MS = 3_000;
+	const MAX_FRAME_DELTA_MS = 100;
 
-	let experienceRoot: HTMLElement;
-	let experience: ExperienceState = $state(INITIAL_EXPERIENCE_STATE);
-	let urlState: NucleusUrlState = $state({ ...DEFAULT_NUCLEUS_URL_STATE });
-	let values: InterventionValues = $state({
-		block: 1,
-		duration: 36,
-		affinity: 0.28,
-		contact: 1
-	});
-	let introResult: SimulationResult | null = $state(null);
-	let activeResult: SimulationResult | null = $state(null);
-	let focalPair: FocalPairResult | null = $state(null);
-	let compactEnsemble: CompactMatchedEnsembleResult | null = $state(null);
-	let introProgress = $state(0);
-	let introRunning = $state(true);
-	let introPaused = $state(false);
-	let playbackTime = $state(0);
-	let playbackPaused = $state(false);
+	let root!: HTMLElement;
+	let hydrated = $state(false);
+	let experienceMode: ExperienceMode = $state('static');
+	let eligibilityMode: StageEligibilityMode = $state('static-viewport');
+	let coldElapsedMs = $state(0);
+	let coldRunning = $state(false);
+	let coldPaused = $state(false);
+	let coldComplete = $state(false);
 	let reducedMotion = $state(false);
 	let highContrast = $state(false);
-	let rendererMode: RendererMode = $state('2d');
-	let busy = $state(false);
-	let statusText = $state('Loading the deterministic opening trace…');
-	let announcement = $state('');
-	let errorText = $state('');
-	let shareStatus = $state('');
-	let audioActive = $state(false);
-	let visible = $state(true);
-	let workerClient: WeatherNucleusWorkerClient | null = null;
-	let sonifier: NucleusSonifier | null = null;
-	let disposed = false;
+	let explicitSaveDataOverride = $state(false);
+	let rotatedIntoEligibility = $state(false);
+	let loadingExperience = $state(false);
+	let loadMessage = $state('');
+	let visible = true;
+	let guidedComponent: GuidedComponent | null = $state(null);
+	let experimentComponent: ExperimentComponent | null = $state(null);
+	let animationFrame = 0;
+	let previousFrame = 0;
+	let resizeFrame = 0;
+	let cachedWebgl2Availability: boolean | null = null;
 
-	let trace: TraceView | null = $derived(activeResult ? simulationToTraceView(activeResult) : null);
-	let comparison: EnsembleComparisonView | null = $derived(
-		compactEnsemble ? compactEnsembleToComparison(compactEnsemble) : null
-	);
-	let introPhase: 'cell' | 'signal' | 'locus' | 'burst' = $derived.by(() => {
-		if (reducedMotion) {
-			return introProgress < 1 / 3 ? 'cell' : introProgress < 2 / 3 ? 'signal' : 'burst';
-		}
-		return introProgress < 0.09
-			? 'cell'
-			: introProgress < 0.7
-				? 'signal'
-				: introProgress < 0.85
-					? 'locus'
-					: 'burst';
-	});
-	let reducedFrameLabel = $derived(
-		introProgress < 1 / 3
-			? 'Frame 1 of 3 · ligand and receptor'
-			: introProgress < 2 / 3
-				? 'Frame 2 of 3 · downstream activity'
-				: 'Frame 3 of 3 · locus and transcription result'
-	);
-	let contactSilent = $derived.by(() => {
-		const pair = focalPair;
+	let coldProgress = $derived(Math.min(1, coldElapsedMs / COLD_OPEN_DURATION_MS));
+	let staticReason = $derived(posterReason(eligibilityMode));
+	let mayOfferLoad = $derived(canOfferInteractiveLoad(eligibilityMode));
+
+	function posterReason(mode: StageEligibilityMode): 'viewport' | 'save-data' | 'failure' {
+		if (mode === 'static-save-data') return 'save-data';
+		if (mode === 'static-failure') return 'failure';
+		return 'viewport';
+	}
+
+	function canOfferInteractiveLoad(mode: StageEligibilityMode): boolean {
+		if (!hydrated || typeof window === 'undefined') return false;
 		return (
-			experience.intervention === 'contact' &&
-			pair !== null &&
-			!pair.intervention.summary.hadBurst &&
-			pair.intervention.summary.nearFraction > pair.baseline.summary.nearFraction
+			(rotatedIntoEligibility && mode === 'eligible') ||
+			(mode === 'static-save-data' && isEligibleViewport(window.innerWidth, window.innerHeight))
 		);
-	});
-	let resultSentence = $derived.by(() => {
-		if (!focalPair || !experience.intervention) return '';
-		const baseline = focalPair.baseline.summary;
-		const intervention = focalPair.intervention.summary;
-		return `With seed ${focalPair.seed}, baseline produced ${baseline.burstCount} ${plural(baseline.burstCount, 'burst')} and ${baseline.initiationCount} ${plural(baseline.initiationCount, 'initiation')}; ${interventionLabel(experience.intervention)} produced ${intervention.burstCount} ${plural(intervention.burstCount, 'burst')} and ${intervention.initiationCount} ${plural(intervention.initiationCount, 'initiation')}.`;
-	});
-
-	function plural(count: number, singular: string) {
-		return count === 1 ? singular : `${singular}s`;
 	}
 
-	/** Compresses the real seed-41 event window into the final 450 ms of the opening. */
-	function introPlaybackTime(result: SimulationResult, progress: number): number {
-		const burstStart = result.burstStartTimes[0] ?? result.parameters.duration * 0.12;
-		const fourthInitiation = result.initiationTimes[Math.min(3, result.initiationTimes.length - 1)];
-		const eventEnd = Number.isFinite(fourthInitiation)
-			? Math.min(result.parameters.duration, fourthInitiation + 0.12)
-			: Math.min(result.parameters.duration, burstStart + 7);
-		if (progress < 0.85) return (progress / 0.85) * burstStart;
-		return burstStart + ((progress - 0.85) / 0.15) * (eventEnd - burstStart);
-	}
-
-	function interventionLabel(intervention: InterventionId | null): string {
-		switch (intervention) {
-			case 'blocked':
-				return 'Receptor block';
-			case 'lengthened':
-				return 'Longer signal';
-			case 'mutated':
-				return 'Weaker binding site';
-			case 'contact':
-				return 'Raised contact propensity';
-			default:
-				return 'Intervention';
-		}
-	}
-
-	function scenarioFor(intervention: InterventionId | null): NucleusScenario {
-		return intervention ?? 'baseline';
-	}
-
-	function interventionFromScenario(scenario: NucleusScenario): InterventionId | null {
-		return scenario === 'baseline' ? null : scenario;
-	}
-
-	function baselineParameters(): Readonly<ModelParameters> {
-		return createModelParameters({ egfAmplitude: urlState.signal });
-	}
-
-	function interventionParameters(): Readonly<ModelParameters> {
-		const baseline = baselineParameters();
-		switch (experience.intervention) {
-			case 'blocked':
-				return createModelParameters({ ...baseline, receptorBlockade: values.block });
-			case 'lengthened':
-				return createModelParameters({ ...baseline, egfDuration: values.duration });
-			case 'mutated':
-				return createModelParameters({ ...baseline, bindingAffinity: values.affinity });
-			case 'contact':
-				return createModelParameters({ ...baseline, geometryBias: values.contact });
-			default:
-				return baseline;
-		}
-	}
-
-	function hasInterventionEffect(): boolean {
-		switch (experience.intervention) {
-			case 'blocked':
-				return values.block > DEFAULT_NUCLEUS_URL_STATE.block;
-			case 'lengthened':
-				return values.duration > DEFAULT_NUCLEUS_URL_STATE.duration;
-			case 'mutated':
-				return values.affinity < DEFAULT_NUCLEUS_URL_STATE.affinity;
-			case 'contact':
-				return values.contact > DEFAULT_NUCLEUS_URL_STATE.contact;
-			default:
-				return false;
-		}
-	}
-
-	function writeSerializedUrl(nextState: NucleusUrlState, replace = true) {
-		if (typeof window === 'undefined') return;
-		const params = serializeNucleusUrlState(nextState, new URLSearchParams(window.location.search));
-		const next = `${window.location.pathname}?${params.toString()}${window.location.hash}`;
-		window.history[replace ? 'replaceState' : 'pushState']({}, '', next);
-	}
-
-	function syncUrl(replace = true) {
-		if (typeof window === 'undefined') return;
-		const scenario = scenarioFor(experience.intervention);
-		urlState = {
-			...urlState,
-			scenario,
-			block: scenario === 'blocked' ? values.block : DEFAULT_NUCLEUS_URL_STATE.block,
-			duration: scenario === 'lengthened' ? values.duration : DEFAULT_NUCLEUS_URL_STATE.duration,
-			affinity: scenario === 'mutated' ? values.affinity : DEFAULT_NUCLEUS_URL_STATE.affinity,
-			contact: scenario === 'contact' ? values.contact : DEFAULT_NUCLEUS_URL_STATE.contact,
-			time: playbackTime,
-			renderer: rendererMode
-		};
-		writeSerializedUrl(urlState, replace);
-	}
-
-	function applyParsedState(next: NucleusUrlState) {
-		const scenarioHasEffect =
-			next.scenario === 'baseline' ||
-			(next.scenario === 'blocked' && next.block > DEFAULT_NUCLEUS_URL_STATE.block) ||
-			(next.scenario === 'lengthened' && next.duration > DEFAULT_NUCLEUS_URL_STATE.duration) ||
-			(next.scenario === 'mutated' && next.affinity < DEFAULT_NUCLEUS_URL_STATE.affinity) ||
-			(next.scenario === 'contact' && next.contact > DEFAULT_NUCLEUS_URL_STATE.contact);
-		urlState = { ...next, scenario: scenarioHasEffect ? next.scenario : 'baseline' };
-		values = {
-			block: next.block,
-			duration: next.duration,
-			affinity: next.affinity,
-			contact: next.contact
-		};
-		playbackTime = next.time;
-		rendererMode = next.renderer ?? rendererMode;
-	}
-
-	function journeyForScenario(scenario: NucleusScenario, completed = false): ExperienceState {
-		const selected = interventionFromScenario(scenario);
-		let next = transitionExperience(INITIAL_EXPERIENCE_STATE, { type: 'SKIP_INTRO' });
-		if (!selected) return next;
-		next = transitionExperience(next, { type: 'BEGIN_INTERVENTION' });
-		next = transitionExperience(next, { type: 'SELECT_INTERVENTION', intervention: selected });
-		next = transitionExperience(next, { type: 'COMMIT_INTERVENTION' });
-		return completed ? transitionExperience(next, { type: 'RUN_COUNTERFACTUAL' }) : next;
-	}
-
-	async function requestIntro() {
-		if (!workerClient) return;
-		statusText = 'Loading the deterministic opening trace…';
-		try {
-			const baseline = createModelParameters();
-			const result = await workerClient.runFocalPair({
-				seed: INTRO_BURST_SEED,
-				baseline,
-				intervention: baseline
-			});
-			if (disposed || !introRunning) return;
-			introResult = result.baseline;
-			activeResult = result.baseline;
-			playbackTime = 0;
-			statusText = 'Opening trace ready.';
-		} catch (error) {
-			handleSimulationError(error);
-		}
-	}
-
-	async function finishIntro(skipped = false) {
-		if (!introRunning) return;
-		introRunning = false;
-		introPaused = false;
-		introProgress = 1;
-		experience = transitionExperience(experience, {
-			type: skipped ? 'SKIP_INTRO' : 'INTRO_FINISHED'
+	function webgl2Available(): boolean {
+		if (cachedWebgl2Availability !== null) return cachedWebgl2Availability;
+		const probe = document.createElement('canvas');
+		const context = probe.getContext('webgl2', {
+			alpha: false,
+			antialias: false,
+			depth: true,
+			failIfMajorPerformanceCaveat: true,
+			powerPreference: 'high-performance'
 		});
-		const sharedScenario = urlState.scenario;
-		const restoredTime = urlState.time;
-		experience = journeyForScenario(sharedScenario);
-		await runFocalPair(sharedScenario !== 'baseline', false, restoredTime);
-		if (sharedScenario !== 'baseline' && experience.stage === 'replay') {
-			experience = transitionExperience(experience, { type: 'RUN_COUNTERFACTUAL' });
+		if (!context) {
+			stageFailedThisSession = true;
+			cachedWebgl2Availability = false;
+			return false;
 		}
+		context.getExtension('WEBGL_lose_context')?.loseContext();
+		cachedWebgl2Availability = true;
+		return cachedWebgl2Availability;
 	}
 
-	function replayOpening() {
-		workerClient?.cancel();
-		experience = INITIAL_EXPERIENCE_STATE;
-		introRunning = true;
-		introPaused = false;
-		introProgress = 0;
-		playbackTime = 0;
-		activeResult = introResult;
-		compactEnsemble = null;
-		announcement = '';
-		errorText = '';
-		if (!introResult) void requestIntro();
-	}
-
-	function beginIntervention() {
-		experience = transitionExperience(experience, { type: 'BEGIN_INTERVENTION' });
-	}
-
-	function selectIntervention(intervention: InterventionId) {
-		const firstSelection = experience.intervention === null;
-		experience = transitionExperience(experience, {
-			type: 'SELECT_INTERVENTION',
-			intervention
-		});
-		values = {
-			...values,
-			...(intervention === 'blocked' ? { block: 1 } : {}),
-			...(intervention === 'lengthened' ? { duration: 36 } : {}),
-			...(intervention === 'mutated' ? { affinity: 0.28 } : {}),
-			...(intervention === 'contact' ? { contact: 1 } : {})
+	function currentPreferences() {
+		const connection = navigator as Navigator & { connection?: { saveData?: boolean } };
+		const motionSetting = new URLSearchParams(window.location.search).get('motion')?.toLowerCase();
+		return {
+			width: window.innerWidth,
+			height: window.innerHeight,
+			saveData: connection.connection?.saveData === true,
+			explicitSaveDataOverride,
+			sessionFailure: stageFailedThisSession,
+			prefersReducedMotion:
+				window.matchMedia('(prefers-reduced-motion: reduce)').matches || motionSetting === 'reduce',
+			stillSetting: document.documentElement.dataset.motion === 'still' || motionSetting === 'still'
 		};
-		compactEnsemble = null;
-		syncUrl(!firstSelection);
 	}
 
-	function previewIntervention(next: InterventionValues) {
-		values = { ...next };
-		compactEnsemble = null;
-		syncUrl();
+	function updatePreferences(): void {
+		const query = new URLSearchParams(window.location.search);
+		const motionSetting = query.get('motion')?.toLowerCase();
+		reducedMotion =
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+			document.documentElement.dataset.motion === 'still' ||
+			motionSetting === 'reduce' ||
+			motionSetting === 'still';
+		highContrast =
+			window.matchMedia('(forced-colors: active), (prefers-contrast: more)').matches ||
+			document.documentElement.dataset.theme === 'high-contrast' ||
+			query.get('contrast')?.toLowerCase() === 'high';
 	}
 
-	function commitIntervention() {
-		if (!hasInterventionEffect()) {
-			statusText = 'Move the selected control away from baseline before committing.';
+	function assessEligibility(initial = false): void {
+		updatePreferences();
+		const preferences = currentPreferences();
+		const previous = eligibilityMode;
+		const prerequisites = evaluateStagePrerequisites(preferences);
+		if (prerequisites.kind === 'probe-webgl2' && !initial && experienceMode === 'static') {
+			eligibilityMode = 'eligible';
+			rotatedIntoEligibility = true;
+			experienceMode = 'static';
+			stopColdOpen();
 			return;
 		}
-		experience = transitionExperience(experience, { type: 'COMMIT_INTERVENTION' });
-		syncUrl();
-		statusText = 'Intervention committed. The numerical trace has not changed until you run it.';
-	}
 
-	async function runFocalPair(showIntervention: boolean, announce = true, restoredTime = 0) {
-		if (!workerClient) return;
-		busy = true;
-		errorText = '';
-		statusText = showIntervention
-			? 'Running one matched counterfactual pair…'
-			: 'Running one possible baseline cell…';
-		try {
-			const result = await workerClient.runFocalPair({
-				seed: urlState.seed,
-				baseline: baselineParameters(),
-				intervention: showIntervention ? interventionParameters() : baselineParameters()
-			});
-			if (disposed) return;
-			focalPair = result;
-			activeResult = showIntervention ? result.intervention : result.baseline;
-			playbackTime = Math.max(0, Math.min(result.baseline.parameters.duration, restoredTime));
-			playbackPaused = playbackTime > 0;
-			statusText = showIntervention
-				? 'Matched counterfactual complete.'
-				: 'Baseline trace ready. Watch one possible cell.';
-			if (announce && showIntervention) announcement = resultSentence;
-		} catch (error) {
-			handleSimulationError(error);
-		} finally {
-			if (!disposed) busy = false;
-		}
-	}
+		const next =
+			prerequisites.kind === 'resolved'
+				? prerequisites.result.mode
+				: evaluateStageEligibility(preferences, webgl2Available).mode;
+		eligibilityMode = next;
 
-	async function runThisCell() {
-		await runFocalPair(true);
-		if (!errorText && experience.stage === 'replay') {
-			experience = transitionExperience(experience, { type: 'RUN_COUNTERFACTUAL' });
-			announcement = `${resultSentence} Same random starting stream; one modeled cause changed.`;
-		}
-	}
-
-	async function replayThisCell() {
-		await runFocalPair(true);
-		announcement = `${resultSentence} Replay preserved seed ${urlState.seed} and model ${MODEL_SEMANTIC_VERSION}.`;
-	}
-
-	async function anotherCell() {
-		urlState = { ...urlState, seed: (urlState.seed + NEXT_SEED_INCREMENT) >>> 0, time: 0 };
-		experience = transitionExperience(experience, { type: 'RUN_ANOTHER_CELL' });
-		compactEnsemble = null;
-		syncUrl(false);
-		await runFocalPair(true);
-		announcement = `Same intervention. Different possible history. ${resultSentence}`;
-	}
-
-	async function compareEnsemble() {
-		if (!workerClient || !experience.intervention) return;
-		experience = transitionExperience(experience, { type: 'COMPARE_ENSEMBLE' });
-		busy = true;
-		errorText = '';
-		statusText = 'Calculating 48 matched histories…';
-		try {
-			compactEnsemble = await workerClient.runMatchedEnsemble({
-				rootSeed: urlState.seed,
-				baseline: baselineParameters(),
-				intervention: interventionParameters()
-			});
-			if (disposed || !compactEnsemble) return;
-			const baselineBursts = compactEnsemble.baseline.summary.burstingRunCount;
-			const changedBursts = compactEnsemble.intervention.summary.burstingRunCount;
-			announcement = `Intervention complete: ${changedBursts} of 48 model runs produced at least one burst, compared with ${baselineBursts} of 48 at baseline.`;
-			statusText = 'Forty-eight matched histories complete.';
-		} catch (error) {
-			handleSimulationError(error);
-		} finally {
-			if (!disposed) busy = false;
-		}
-	}
-
-	function handleSimulationError(error: unknown) {
-		if (error instanceof NucleusWorkerCancelledError) return;
-		errorText = error instanceof Error ? error.message : 'The model could not complete this run.';
-		statusText = 'The last valid trace remains visible.';
-	}
-
-	function seek(time: number) {
-		playbackTime = time;
-		playbackPaused = true;
-		urlState = { ...urlState, time };
-		syncUrl();
-	}
-
-	function setView(view: NucleusView) {
-		urlState = { ...urlState, view };
-		syncUrl();
-	}
-
-	function setRenderer(mode: RendererMode) {
-		rendererMode = mode;
-		urlState = { ...urlState, renderer: mode };
-		syncUrl();
-	}
-
-	function preferredAutomaticRenderer(): RendererMode {
-		const memory = (navigator as Navigator & { deviceMemory?: number }).deviceMemory;
-		if (window.matchMedia('(max-width: 760px)').matches) return '2d';
-		if (navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4) return '2d';
-		if (memory !== undefined && memory < 4) return '2d';
-		return '3d';
-	}
-
-	function handleRendererStatus(
-		status: 'loading' | 'ready' | 'fallback' | 'context-lost',
-		message: string
-	) {
-		statusText = message;
-		if (status !== 'fallback' || rendererMode !== '3d') return;
-		const fallbackState = { ...urlState, renderer: '2d' } satisfies NucleusUrlState;
-		rendererMode = '2d';
-		urlState = fallbackState;
-		writeSerializedUrl(fallbackState);
-	}
-
-	function rendererTarget(intervention: InterventionId | null) {
-		switch (intervention) {
-			case 'blocked':
-				return 'receptor' as const;
-			case 'lengthened':
-				return 'signal' as const;
-			case 'mutated':
-				return 'binding-site' as const;
-			case 'contact':
-				return 'contact' as const;
-			default:
-				return null;
-		}
-	}
-
-	function interventionForRendererTarget(
-		target: 'receptor' | 'signal' | 'binding-site' | 'contact'
-	): InterventionId {
-		switch (target) {
-			case 'receptor':
-				return 'blocked';
-			case 'signal':
-				return 'lengthened';
-			case 'binding-site':
-				return 'mutated';
-			case 'contact':
-				return 'contact';
-		}
-	}
-
-	function selectRendererTarget(target: 'receptor' | 'signal' | 'binding-site' | 'contact') {
-		if (experience.stage === 'intervene') selectIntervention(interventionForRendererTarget(target));
-	}
-
-	async function toggleAudio() {
-		if (audioActive) {
-			sonifier?.stop();
-			audioActive = false;
+		if (!initial && previous !== 'eligible' && next === 'eligible') {
+			rotatedIntoEligibility = true;
+			experienceMode = 'static';
+			stopColdOpen();
 			return;
 		}
-		if (!activeResult) return;
+
+		if (next === 'eligible') {
+			if (initial) beginColdOpen();
+			return;
+		}
+
+		if (next === 'reduced-stills') {
+			coldElapsedMs = COLD_OPEN_DURATION_MS;
+			coldComplete = true;
+			coldPaused = true;
+			coldRunning = false;
+			experienceMode = 'cold-open';
+			return;
+		}
+
+		unmountInteractive();
+		experienceMode = 'static';
+	}
+
+	function shouldAdvanceColdOpen(): boolean {
+		return (
+			experienceMode === 'cold-open' &&
+			coldRunning &&
+			!coldPaused &&
+			!coldComplete &&
+			visible &&
+			!document.hidden
+		);
+	}
+
+	function scheduleColdOpen(): void {
+		if (!animationFrame && shouldAdvanceColdOpen())
+			animationFrame = requestAnimationFrame(coldFrame);
+	}
+
+	function coldFrame(now: number): void {
+		animationFrame = 0;
+		if (!shouldAdvanceColdOpen()) {
+			previousFrame = 0;
+			return;
+		}
+		const delta = previousFrame
+			? Math.min(MAX_FRAME_DELTA_MS, Math.max(0, now - previousFrame))
+			: 1000 / 60;
+		previousFrame = now;
+		coldElapsedMs = Math.min(COLD_OPEN_DURATION_MS, coldElapsedMs + delta);
+		if (coldElapsedMs >= COLD_OPEN_DURATION_MS) {
+			coldElapsedMs = COLD_OPEN_DURATION_MS;
+			coldComplete = true;
+			coldRunning = false;
+			previousFrame = 0;
+			return;
+		}
+		scheduleColdOpen();
+	}
+
+	function beginColdOpen(): void {
+		experienceMode = 'cold-open';
+		rotatedIntoEligibility = false;
+		coldElapsedMs = 0;
+		coldComplete = false;
+		coldPaused = false;
+		coldRunning = !reducedMotion;
+		previousFrame = 0;
+		if (reducedMotion) {
+			coldElapsedMs = COLD_OPEN_DURATION_MS;
+			coldComplete = true;
+			coldPaused = true;
+		} else {
+			scheduleColdOpen();
+		}
+	}
+
+	function stopColdOpen(): void {
+		if (animationFrame) cancelAnimationFrame(animationFrame);
+		animationFrame = 0;
+		previousFrame = 0;
+		coldRunning = false;
+	}
+
+	function toggleColdPause(): void {
+		if (coldComplete) return;
+		coldPaused = !coldPaused;
+		previousFrame = 0;
+		if (!coldPaused) scheduleColdOpen();
+	}
+
+	async function settleExperienceAtTop(): Promise<void> {
+		await tick();
+		root.scrollIntoView({ block: 'start', behavior: 'auto' });
+		root.focus({ preventScroll: true });
+	}
+
+	function replayOpening(): void {
+		beginColdOpen();
+		void settleExperienceAtTop();
+	}
+
+	async function followSignal(): Promise<void> {
+		if (loadingExperience) return;
+		loadingExperience = true;
+		loadMessage = 'Preparing the guided scientific film…';
 		try {
-			sonifier ??= new NucleusSonifier();
-			await sonifier.play(activeResult);
-			audioActive = true;
+			const loaded = await import('./WeatherGuidedFilm.svelte');
+			guidedComponent = loaded.default;
+			experimentComponent = null;
+			experienceMode = 'guided';
+			stopColdOpen();
+			loadMessage = '';
+			await settleExperienceAtTop();
 		} catch (error) {
-			errorText = error instanceof Error ? error.message : 'Audio is unavailable.';
+			handleStageFailure(
+				error instanceof Error ? error.message : 'The guided film could not load.'
+			);
+		} finally {
+			loadingExperience = false;
 		}
 	}
 
-	async function share() {
-		syncUrl();
+	async function openExperiment(): Promise<void> {
+		if (loadingExperience) return;
+		loadingExperience = true;
+		loadMessage = 'Preparing the intervention experiment…';
 		try {
-			await navigator.clipboard.writeText(window.location.href);
-			shareStatus = 'Share link copied.';
-		} catch {
-			shareStatus = 'The address bar now contains the complete share state.';
+			const loaded = await import('./WeatherExperiment.svelte');
+			experimentComponent = loaded.default;
+			guidedComponent = null;
+			experienceMode = 'experiment';
+			stopColdOpen();
+			loadMessage = '';
+			await settleExperienceAtTop();
+		} catch (error) {
+			handleStageFailure(error instanceof Error ? error.message : 'The experiment could not load.');
+		} finally {
+			loadingExperience = false;
 		}
 	}
 
-	async function reset() {
-		workerClient?.cancel();
-		experience = transitionExperience(INITIAL_EXPERIENCE_STATE, { type: 'SKIP_INTRO' });
-		urlState = { ...DEFAULT_NUCLEUS_URL_STATE, renderer: rendererMode };
-		values = { block: 1, duration: 36, affinity: 0.28, contact: 1 };
-		compactEnsemble = null;
-		focalPair = null;
-		announcement = '';
-		syncUrl(false);
-		await runFocalPair(false, false);
+	function handleStageFailure(message = 'The live stage could not continue safely.'): void {
+		stageFailedThisSession = true;
+		eligibilityMode = 'static-failure';
+		loadMessage = message;
+		unmountInteractive();
+		experienceMode = 'static';
+	}
+
+	function unmountInteractive(): void {
+		guidedComponent = null;
+		experimentComponent = null;
+		stopColdOpen();
+	}
+
+	function overrideSaveData(): void {
+		explicitSaveDataOverride = true;
+		rotatedIntoEligibility = false;
+		assessEligibility(true);
+	}
+
+	function handleLoadInteractive(): void {
+		if (eligibilityMode === 'static-save-data') {
+			overrideSaveData();
+			return;
+		}
+		if (eligibilityMode === 'eligible') beginColdOpen();
 	}
 
 	onMount(() => {
-		disposed = false;
-		workerClient = createWeatherNucleusWorkerClient();
-		const parsed = parseNucleusUrlState(window.location.href);
-		applyParsedState(parsed.state);
-		if (parsed.issues.length) {
-			statusText = `${parsed.issues.length} invalid shared-state ${plural(parsed.issues.length, 'value')} restored safely.`;
-		}
-
+		hydrated = true;
 		const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 		const contrastQuery = window.matchMedia('(forced-colors: active), (prefers-contrast: more)');
-		const forceReduced = new URLSearchParams(window.location.search).get('motion') === 'reduce';
-		const forceTwoDimensional = new URLSearchParams(window.location.search).get('webgl') === 'off';
-		const updateMotion = () => (reducedMotion = motionQuery.matches || forceReduced);
-		const updateContrast = () => (highContrast = contrastQuery.matches);
-		updateMotion();
-		updateContrast();
-		if (forceTwoDimensional) rendererMode = '2d';
-		else if (!parsed.state.renderer) rendererMode = preferredAutomaticRenderer();
-
-		let previous = performance.now();
-		const clock = window.setInterval(() => {
-			const now = performance.now();
-			const elapsed = Math.min(120, Math.max(0, now - previous));
-			previous = now;
-			if (!visible || document.hidden) return;
-			if (introRunning && !introPaused && introResult) {
-				introProgress = Math.min(1, introProgress + elapsed / INTRO_DURATION_MS);
-				playbackTime = introPlaybackTime(introResult, introProgress);
-				if (introProgress >= 1) void finishIntro();
-			} else if (!introRunning && !playbackPaused && activeResult) {
-				playbackTime = Math.min(
-					activeResult.parameters.duration,
-					playbackTime + (elapsed / 1_000) * PLAYBACK_MODEL_MINUTES_PER_SECOND
-				);
-				if (playbackTime >= activeResult.parameters.duration) playbackPaused = true;
-			}
-		}, 50);
-
 		const observer = new IntersectionObserver(
 			(entries) => {
 				visible = entries[0]?.isIntersecting ?? true;
+				previousFrame = 0;
+				if (visible) scheduleColdOpen();
 			},
 			{ rootMargin: '120px' }
 		);
-		observer.observe(experienceRoot);
-
-		const handlePopState = async () => {
-			const targetHref = window.location.href;
-			const restored = parseNucleusUrlState(window.location.href).state;
-			applyParsedState(restored);
-			if (!introRunning) {
-				experience = journeyForScenario(restored.scenario);
-				await runFocalPair(restored.scenario !== 'baseline', false, restored.time);
-				if (window.location.href !== targetHref) return;
-				if (restored.scenario !== 'baseline' && !errorText) {
-					experience = journeyForScenario(restored.scenario, true);
-				}
-			}
-		};
-		const handlePopStateEvent = () => void handlePopState();
+		const attributeObserver = new MutationObserver(() => assessEligibility());
+		const handlePreference = () => assessEligibility();
 		const handleVisibility = () => {
-			previous = performance.now();
+			previousFrame = 0;
+			if (!document.hidden) scheduleColdOpen();
 		};
-		motionQuery.addEventListener('change', updateMotion);
-		contrastQuery.addEventListener('change', updateContrast);
-		window.addEventListener('popstate', handlePopStateEvent);
+		const handleResize = () => {
+			if (resizeFrame) cancelAnimationFrame(resizeFrame);
+			resizeFrame = requestAnimationFrame(() => {
+				resizeFrame = 0;
+				assessEligibility();
+			});
+		};
+
+		observer.observe(root);
+		attributeObserver.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['data-motion', 'data-theme']
+		});
+		motionQuery.addEventListener('change', handlePreference);
+		contrastQuery.addEventListener('change', handlePreference);
+		window.addEventListener('resize', handleResize, { passive: true });
 		document.addEventListener('visibilitychange', handleVisibility);
-		void requestIntro();
+		assessEligibility(true);
 
 		return () => {
-			disposed = true;
-			window.clearInterval(clock);
+			unmountInteractive();
 			observer.disconnect();
-			motionQuery.removeEventListener('change', updateMotion);
-			contrastQuery.removeEventListener('change', updateContrast);
-			window.removeEventListener('popstate', handlePopStateEvent);
+			attributeObserver.disconnect();
+			motionQuery.removeEventListener('change', handlePreference);
+			contrastQuery.removeEventListener('change', handlePreference);
+			window.removeEventListener('resize', handleResize);
 			document.removeEventListener('visibilitychange', handleVisibility);
-			workerClient?.dispose();
-			workerClient = null;
-			void sonifier?.dispose();
-			sonifier = null;
+			if (resizeFrame) cancelAnimationFrame(resizeFrame);
 		};
 	});
 </script>
 
-{#snippet openingFallback()}
-	{#if introPhase === 'burst' && trace}
-		<NucleusCrossSection {trace} currentTime={playbackTime} semanticView="locus" />
-	{:else}
-		<NucleusPoster phase={introPhase} />
-	{/if}
-{/snippet}
+<svelte:head>
+	<meta name="theme-color" content="#03050b" />
+</svelte:head>
 
-{#snippet liveFallback()}
-	<NucleusCrossSection
-		{trace}
-		currentTime={playbackTime}
-		semanticView={urlState.view}
-		interactiveTargets={experience.stage === 'intervene'}
-		selectedIntervention={experience.intervention}
-		onselect={selectIntervention}
-	/>
-{/snippet}
+<h1 class="sr-only">Weather Inside the Nucleus</h1>
 
 <section
-	bind:this={experienceRoot}
-	class="weather-experience article-breakout not-prose"
+	bind:this={root}
 	class:high-contrast={highContrast}
-	data-stage={experience.stage}
-	data-model-version={MODEL_SEMANTIC_VERSION}
+	class:reduced-motion={reducedMotion}
+	class="weather-directed-experience article-breakout not-prose"
 	data-testid="weather-inside-nucleus"
+	data-experience-mode={experienceMode}
+	data-eligibility={eligibilityMode}
+	tabindex="-1"
 >
-	<div class="hero-scene">
-		<div class="visual-layer" aria-hidden={experience.stage === 'attract' ? undefined : 'true'}>
-			{#if experience.stage === 'attract'}
-				{#if rendererMode === '3d'}
-					<WeatherStage
-						trace={activeResult}
-						{playbackTime}
-						introActive={introRunning}
-						{introProgress}
-						{reducedMotion}
-						{highContrast}
-						cameraMode="cell"
-						paused={introPaused || !visible}
-						active={visible}
-						fallback={openingFallback}
-						onstatus={handleRendererStatus}
-					/>
-				{:else}
-					{@render openingFallback()}
-				{/if}
-			{:else}
-				<NucleusCrossSection {trace} currentTime={playbackTime} semanticView={urlState.view} />
-			{/if}
+	{#if !hydrated}
+		<div class="ssr-desktop-primer" aria-hidden="true">
+			<ColdOpenStage progress={0} />
 		</div>
-
-		<div class="intro-tools" aria-label="Opening controls">
-			<button type="button" onclick={() => (introPaused = !introPaused)}>
-				{introPaused ? 'Resume opening' : 'Pause'}
-			</button>
-			{#if introRunning}
-				<button type="button" onclick={() => void finishIntro(true)}>Skip intro</button>
-			{:else}
-				<button type="button" onclick={replayOpening}>Replay opening</button>
-			{/if}
+		<div class="ssr-static-primer">
+			<PortraitPoster />
 		</div>
-
+	{:else if experienceMode === 'static'}
+		<div class="static-route">
+			<PortraitPoster
+				reason={staticReason}
+				showLoad={mayOfferLoad}
+				onloadinteractive={handleLoadInteractive}
+			/>
+			{#if loadMessage}<p class="fallback-note" role="status">{loadMessage}</p>{/if}
+		</div>
+	{:else if experienceMode === 'cold-open'}
 		<div
-			class="semantic-scale"
-			aria-hidden="true"
-			class:visible={!reducedMotion && introProgress >= 0.48 && introProgress < 0.86}
+			class="cinematic-stage"
+			data-cold-complete={coldComplete}
+			data-cold-elapsed-ms={coldElapsedMs.toFixed(0)}
 		>
-			<span>cell</span><b>→</b><span>nucleus</span><b>→</b><span>locus</span><em>not to scale</em>
-		</div>
-		{#if reducedMotion && introRunning}
-			<p class="reduced-frame-label">{reducedFrameLabel}</p>
-		{/if}
-
-		<header class="hero-copy" class:revealed={!introRunning}>
-			<p class="model-kicker">one possible cell · illustrative model time</p>
-			<h1>Weather Inside the Nucleus</h1>
-			<p class="opening-line">A signal arrives. A gene hesitates.</p>
-			<p class="dek">
-				Signal and nuclear geometry change the odds of a transcriptional burst. Neither commands it.
-			</p>
-			<p class="byline">
-				By Suvro Ghosh · Published <time datetime="2026-08-08">8 August 2026</time> · Updated
-				<time datetime="2026-08-09">9 August 2026</time> · 26 min read
-			</p>
-			{#if experience.stage === 'observe'}
-				<button class="primary" type="button" onclick={beginIntervention}>Intervene once</button>
+			<div class="cold-visual">
+				<ColdOpenStage progress={coldProgress} {highContrast} {reducedMotion} />
+			</div>
+			<button class="cold-pause" type="button" disabled={coldComplete} onclick={toggleColdPause}>
+				{coldComplete ? 'Opening held' : coldPaused ? 'Resume opening' : 'Pause opening'}
+			</button>
+			{#if coldProgress >= 1.65 / 3}
+				<p class="cold-cue">A signal arrives. A gene hesitates.</p>
 			{/if}
-		</header>
-
-		<div class="intro-progress" aria-hidden="true">
-			<span style={`transform:scaleX(${introProgress})`}></span>
-		</div>
-	</div>
-
-	<div class="experience-panel">
-		<div class="stage-bar">
-			<p><span>Step {stageNumber(experience.stage)} of 6</span> {experience.stage}</p>
-			<div class="view-controls" aria-label="Presentation controls">
-				<div class="segmented" aria-label="Semantic view">
-					{#each ['cell', 'nucleus', 'territory', 'locus'] as view (view)}
-						<button
-							type="button"
-							aria-pressed={urlState.view === view}
-							onclick={() => setView(view as NucleusView)}>{view}</button
-						>
-					{/each}
+			{#if coldComplete}
+				<div class="title-sting" aria-hidden="true">
+					<span>Weather Inside</span>
+					<strong>the Nucleus</strong>
 				</div>
-				<div class="segmented" aria-label="Renderer">
-					<button
-						type="button"
-						aria-pressed={rendererMode === '2d'}
-						onclick={() => setRenderer('2d')}>2D</button
-					>
-					<button
-						type="button"
-						aria-pressed={rendererMode === '3d'}
-						onclick={() => setRenderer('3d')}>3D</button
-					>
-				</div>
-			</div>
-		</div>
-
-		{#if experience.stage !== 'attract'}
-			<div class="live-scene" data-renderer={rendererMode}>
-				{#if rendererMode === '3d'}
-					<WeatherStage
-						trace={activeResult}
-						{playbackTime}
-						introActive={false}
-						introProgress={1}
-						{reducedMotion}
-						{highContrast}
-						cameraMode={urlState.view}
-						selectedTarget={rendererTarget(experience.intervention)}
-						paused={playbackPaused || !visible}
-						active={visible}
-						fallback={liveFallback}
-						onstatus={handleRendererStatus}
-						onselecttarget={selectRendererTarget}
-					/>
-				{:else}
-					{@render liveFallback()}
-				{/if}
-			</div>
-			<TimeRibbon {trace} currentTime={playbackTime} disabled={!trace || busy} onseek={seek} />
-		{/if}
-
-		{#if experience.stage === 'observe'}
-			<section class="journey-copy" aria-labelledby="wn-watch-heading">
-				<p class="eyebrow">Not a switch</p>
-				<h2 id="wn-watch-heading">Watch one possible cell.</h2>
-				<p>This happened once. It was not guaranteed. The ribbon is a history, not an average.</p>
-				<button class="primary" type="button" onclick={beginIntervention}>Intervene once</button>
-			</section>
-		{:else if experience.stage === 'intervene'}
-			<InterventionControl
-				selected={experience.intervention}
-				{values}
-				disabled={busy}
-				onselect={selectIntervention}
-				onpreview={previewIntervention}
-				oncommit={commitIntervention}
-			/>
-		{:else if experience.stage === 'replay'}
-			<section class="journey-copy counterfactual" aria-labelledby="wn-replay-heading">
-				<p class="eyebrow">Counterfactual replay</p>
-				<h2 id="wn-replay-heading">Same random starting stream; one modeled cause changed.</h2>
-				<p>
-					{interventionLabel(experience.intervention)} is the only selected cause. Baseline and intervention
-					keep seed {urlState.seed}.
+				<p class="cold-disclosure">
+					schematic prelude · not an individual ligand count or model event
 				</p>
-				<button class="primary" type="button" disabled={busy} onclick={() => void runThisCell()}
-					>{busy ? 'Running this cell…' : 'Run this cell'}</button
-				>
-			</section>
-		{:else if experience.stage === 'repeat' || experience.stage === 'inspect'}
-			<section class="journey-copy result-copy" aria-labelledby="wn-result-heading">
-				<p class="eyebrow">One matched history · seed {urlState.seed}</p>
-				<h2 id="wn-result-heading">
-					{contactSilent ? 'Closer. Still silent.' : 'One outcome, not a command.'}
-				</h2>
-				<p>{resultSentence}</p>
-				<p><strong>Same random starting stream; one modeled cause changed.</strong></p>
-				<div class="action-row">
-					<button type="button" disabled={busy} onclick={() => void replayThisCell()}
-						>Replay this cell</button
+				<div class="cold-actions" aria-label="Opening controls">
+					<button
+						class="primary"
+						type="button"
+						disabled={loadingExperience}
+						onclick={() => void followSignal()}
 					>
-					<button type="button" disabled={busy} onclick={() => void anotherCell()}
-						>Another possible cell</button
-					>
-					{#if experience.stage === 'repeat'}
-						<button
-							class="primary"
-							type="button"
-							disabled={busy}
-							onclick={() => void compareEnsemble()}
-							>{busy ? 'Calculating 48 histories…' : 'Compare 48 possible cells'}</button
-						>
-					{/if}
+						{loadingExperience ? 'Preparing film…' : 'Follow the signal'}
+					</button>
+					<button type="button" disabled={loadingExperience} onclick={() => void openExperiment()}>
+						Skip to the experiment
+					</button>
+					<button type="button" onclick={replayOpening}>Replay opening</button>
 				</div>
-			</section>
-		{/if}
-
-		{#if experience.stage === 'inspect'}
-			<EnsembleReadout
-				{comparison}
-				interventionLabel={interventionLabel(experience.intervention)}
-				{contactSilent}
-			/>
-			<div class="inspect-actions">
-				<button
-					class="primary"
-					type="button"
-					onclick={() => (experience = transitionExperience(experience, { type: 'OPEN_MODEL' }))}
-					>How is this modeled?</button
-				>
+			{/if}
+			{#if loadMessage}<p class="load-status" role="status">{loadMessage}</p>{/if}
+			<p class="sr-only" aria-live="polite">
+				{coldComplete
+					? 'The cold open is paused. EGF remains outside, docked at EGFR, and the first local intracellular response has begun.'
+					: ''}
+			</p>
+		</div>
+	{:else if experienceMode === 'guided' && guidedComponent}
+		{@const GuidedExperience = guidedComponent}
+		<GuidedExperience
+			{reducedMotion}
+			{highContrast}
+			onexperiment={() => void openExperiment()}
+			onreplaytour={replayOpening}
+			onfailure={handleStageFailure}
+		/>
+	{:else if experienceMode === 'experiment' && experimentComponent}
+		{@const ExperimentExperience = experimentComponent}
+		<div class="experiment-shell">
+			<div class="experiment-heading">
+				<p>Free experiment</p>
+				<h2>Change one modeled cause.</h2>
+				<button type="button" onclick={replayOpening}>Replay the guided tour</button>
 			</div>
-			<ModelDisclosure
-				open={experience.modelOpen}
-				onclose={() => (experience = transitionExperience(experience, { type: 'CLOSE_MODEL' }))}
-			/>
-		{/if}
+			<ExperimentExperience startInExperiment={true} />
+		</div>
+	{/if}
 
-		{#if experience.stage !== 'attract'}
-			<section class="utility-rail" aria-label="Playback, sound, sharing and reset">
-				<button type="button" onclick={() => (playbackPaused = !playbackPaused)}
-					>{playbackPaused ? 'Play trace' : 'Pause motion'}</button
-				>
-				<button
-					type="button"
-					disabled={!activeResult}
-					aria-pressed={audioActive}
-					onclick={() => void toggleAudio()}>{audioActive ? 'Mute' : 'Hear the model'}</button
-				>
-				<button type="button" onclick={() => void share()}>Copy share link</button>
-				<button type="button" onclick={() => void reset()}>Reset</button>
-				<span>{shareStatus}</span>
-			</section>
-
-			<details class="sound-transcript">
-				<summary>Sound key and event transcript</summary>
-				<p>
-					Cyan activity is a quiet tonal band; promoter entry into ON is a short tone; each
-					initiation is a discrete tick. Sound is optional and carries no unique information.
-				</p>
-				{#if activeResult}
-					<p>
-						Across 0–{activeResult.parameters.duration} model minutes, this trace contained
-						{activeResult.summary.burstCount}
-						{plural(activeResult.summary.burstCount, 'burst')} and
-						{activeResult.summary.initiationCount}
-						{plural(activeResult.summary.initiationCount, 'initiation')}.
-						{#if activeResult.initiationTimes.length}
-							Initiations occurred at model minutes {Array.from(
-								activeResult.initiationTimes,
-								(time) => time.toFixed(1)
-							).join(', ')}.
-						{:else}
-							No transcripts initiated.
-						{/if}
-					</p>
-				{/if}
-			</details>
-		{/if}
-
-		<p class="status-line" role="status">{statusText}</p>
-		{#if errorText}<p class="error-line" role="alert">{errorText}</p>{/if}
-		<p class="sr-only" aria-live="polite">{announcement}</p>
-	</div>
+	{#if experienceMode === 'guided' || experienceMode === 'experiment' || (experienceMode === 'cold-open' && coldComplete)}
+		<footer class="directed-meta">
+			<span>synthetic gene-regulation demonstration locus</span>
+			<span>film time ≠ model time</span>
+			<span>By Suvro Ghosh · Updated <time datetime="2026-08-09">9 August 2026</time></span>
+		</footer>
+	{/if}
 </section>
 
-<noscript>
-	<style>
-		.hero-copy {
-			opacity: 1 !important;
-			transform: none !important;
-		}
-	</style>
-</noscript>
-
 <style>
-	.weather-experience {
-		--wn-bg: #050712;
-		--wn-panel: #090b19;
-		--wn-text: #f7fbff;
-		--wn-muted: #b6b7c9;
-		--wn-cyan: #6ce5ff;
-		--wn-magenta: #ed62d0;
-		--wn-amber: #ffd166;
+	:global(body:has(.weather-directed-experience) nav[aria-label='Breadcrumb']) {
+		display: none;
+	}
+
+	.weather-directed-experience {
+		--film-bg: #03050b;
+		--film-text: #f8fbff;
+		--film-muted: #b9bdca;
+		--film-amber: #ffd58a;
 		position: relative;
 		left: calc(50% + var(--article-breakout-offset, 0rem));
-		width: min(96vw, 92rem);
-		margin: 0 0 clamp(2rem, 7vw, 6rem);
+		width: 100vw;
+		margin: 0 0 clamp(2.5rem, 8vw, 7rem);
 		transform: translateX(-50%);
-		border: 1px solid rgb(135 139 177 / 30%);
-		border-radius: 0.8rem;
-		overflow: clip;
-		background: var(--wn-bg);
-		box-shadow: 0 2rem 6rem rgb(3 4 14 / 32%);
-		color: var(--wn-text);
+		background: var(--film-bg);
+		color: var(--film-text);
 		color-scheme: dark;
-	}
-
-	.hero-scene {
-		position: relative;
-		min-height: clamp(38rem, 79vh, 55rem);
-		overflow: hidden;
-		background: var(--wn-bg);
 		isolation: isolate;
+		scroll-margin-top: 4.5rem;
 	}
 
-	.visual-layer {
+	.ssr-desktop-primer,
+	.cinematic-stage {
+		min-height: max(680px, calc(100svh - 4.5rem));
+	}
+
+	.ssr-static-primer {
+		display: none;
+		padding: 1rem;
+	}
+
+	.ssr-desktop-primer {
+		display: block;
+	}
+
+	.static-route {
+		min-height: 35rem;
+		padding: clamp(0.75rem, 3vw, 2rem);
+	}
+
+	.cinematic-stage {
+		position: relative;
+		overflow: hidden;
+		background: #03050b;
+	}
+
+	.cold-visual {
 		position: absolute;
 		inset: 0;
 	}
 
-	.visual-layer :global(.nucleus-poster),
-	.visual-layer :global(.cross-section) {
-		width: 100%;
-		height: 100%;
-		min-height: inherit;
+	.cold-cue {
+		position: absolute;
+		top: clamp(5rem, 17vh, 9rem);
+		right: clamp(2rem, 9vw, 9rem);
+		z-index: 2;
+		width: min(42vw, 31rem);
+		margin: 0;
+		color: #f8edd2;
+		font: 660 clamp(1rem, 2vw, 1.55rem) / 1.25 var(--font-serif, serif);
+		letter-spacing: -0.02em;
+		text-wrap: balance;
 	}
 
-	.visual-layer::after {
+	.title-sting {
 		position: absolute;
-		inset: 0;
-		background:
-			linear-gradient(90deg, rgb(5 7 18 / 84%) 0, rgb(5 7 18 / 18%) 56%, transparent 78%),
-			linear-gradient(0deg, rgb(5 7 18 / 72%) 0, transparent 45%);
-		content: '';
+		right: clamp(2rem, 7vw, 7rem);
+		bottom: clamp(8.5rem, 18vh, 12rem);
+		z-index: 3;
+		display: grid;
+		width: min(46vw, 39rem);
 		pointer-events: none;
 	}
 
-	.intro-tools {
+	.title-sting span,
+	.title-sting strong {
+		font: 790 clamp(2.35rem, 6vw, 6.4rem) / 0.84 var(--font-sans, sans-serif);
+		letter-spacing: -0.065em;
+		text-wrap: balance;
+	}
+
+	.title-sting span {
+		color: #f7f9ff;
+	}
+
+	.title-sting strong {
+		color: var(--film-amber);
+	}
+
+	.cold-disclosure {
 		position: absolute;
-		z-index: 5;
-		top: clamp(0.75rem, 2vw, 1.4rem);
-		right: clamp(0.75rem, 2vw, 1.4rem);
+		left: 1rem;
+		bottom: 1rem;
+		z-index: 3;
+		max-width: min(32rem, 44vw);
+		margin: 0;
+		color: #8f93a4;
+		font:
+			700 0.62rem/1.35 var(--font-mono, 'Courier Prime'),
+			ui-monospace,
+			monospace;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	.cold-actions {
+		position: absolute;
+		right: clamp(1rem, 4vw, 4rem);
+		bottom: clamp(1rem, 4vh, 2.5rem);
+		z-index: 4;
 		display: flex;
-		gap: 0.45rem;
+		max-width: min(92vw, 54rem);
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 0.55rem;
+	}
+
+	.cold-pause {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		z-index: 5;
 	}
 
 	button {
-		min-height: 2.75rem;
-		border: 1px solid rgb(210 214 235 / 52%);
-		border-radius: 0.35rem;
-		background: rgb(8 10 25 / 86%);
-		padding: 0.52rem 0.78rem;
-		color: var(--wn-text);
-		font: 700 0.73rem/1.2 var(--font-sans, sans-serif);
+		border: 1px solid rgb(244 239 223 / 40%);
+		border-radius: 999px;
+		background: rgb(4 6 13 / 84%);
+		padding: 0.72rem 1rem;
+		color: #f7f7fb;
+		font: 720 0.78rem/1 var(--font-sans, sans-serif);
 		cursor: pointer;
+		backdrop-filter: blur(12px);
 	}
 
-	button:hover:not(:disabled),
-	button[aria-pressed='true'] {
-		border-color: var(--wn-cyan);
-		background: #14192e;
+	button.primary {
+		border-color: var(--film-amber);
+		background: var(--film-amber);
+		color: #191204;
 	}
 
-	button:focus-visible,
-	summary:focus-visible {
-		outline: 3px solid #fff;
+	button:focus-visible {
+		outline: 3px solid #8ceafa;
 		outline-offset: 3px;
 	}
 
 	button:disabled {
 		cursor: wait;
-		opacity: 0.55;
+		opacity: 0.6;
 	}
 
-	button.primary {
-		border-color: var(--wn-amber);
-		background: var(--wn-amber);
-		color: #16120a;
-	}
-
-	.semantic-scale {
+	.load-status,
+	.fallback-note {
 		position: absolute;
-		z-index: 4;
-		top: 47%;
 		left: 50%;
-		display: flex;
-		align-items: center;
-		gap: 0.65rem;
-		transform: translate(-50%, -50%);
-		opacity: 0;
-		color: #e6e4f1;
-		font:
-			750 clamp(0.65rem, 1.2vw, 0.82rem) / 1 ui-monospace,
-			monospace;
-		letter-spacing: 0.11em;
-		text-transform: uppercase;
-	}
-
-	.semantic-scale.visible {
-		opacity: 1;
-	}
-
-	.semantic-scale em {
-		position: absolute;
-		top: calc(100% + 0.8rem);
-		left: 50%;
-		transform: translateX(-50%);
-		color: #a4a5b8;
-		font-size: 0.62rem;
-		font-style: normal;
-		white-space: nowrap;
-	}
-
-	.reduced-frame-label {
-		position: absolute;
+		bottom: 1.2rem;
 		z-index: 5;
-		top: 5.1rem;
-		left: clamp(0.75rem, 2vw, 1.4rem);
 		margin: 0;
-		border: 1px solid rgb(247 251 255 / 34%);
-		border-radius: 0.3rem;
-		background: rgb(5 7 18 / 88%);
-		padding: 0.4rem 0.55rem;
-		color: #f7fbff;
-		font:
-			700 0.65rem/1.3 ui-monospace,
-			monospace;
+		transform: translateX(-50%);
+		border-radius: 999px;
+		background: rgb(3 5 11 / 90%);
+		padding: 0.5rem 0.8rem;
+		color: #d8d9e3;
+		font: 0.72rem/1.3 var(--font-sans, sans-serif);
 	}
 
-	.hero-copy {
-		position: absolute;
-		z-index: 3;
-		bottom: clamp(2rem, 7vh, 5rem);
-		left: clamp(1rem, 5vw, 5rem);
-		max-width: 46rem;
-		opacity: 0;
-		transform: translateY(0.8rem);
-		transition:
-			opacity 420ms ease,
-			transform 420ms ease;
-	}
-
-	.hero-copy.revealed {
-		opacity: 1;
-		transform: none;
-	}
-
-	.model-kicker,
-	.eyebrow {
-		margin: 0;
-		color: var(--wn-cyan);
-		font:
-			750 0.66rem/1.2 ui-monospace,
-			monospace;
-		letter-spacing: 0.13em;
-		text-transform: uppercase;
-	}
-
-	h1 {
-		max-width: 12ch;
-		margin: 0.65rem 0 0;
-		color: #fff;
-		font: 790 clamp(3rem, 8vw, 7.8rem) / 0.84 var(--font-sans, sans-serif);
-		letter-spacing: -0.075em;
-		text-wrap: balance;
-	}
-
-	.opening-line {
-		margin: 1.1rem 0 0;
-		color: var(--wn-amber);
-		font: 750 clamp(1.05rem, 2.2vw, 1.65rem) / 1.2 var(--font-sans, sans-serif);
-	}
-
-	.dek {
-		max-width: 52ch;
-		margin: 0.5rem 0 0;
-		color: #d0d0de;
-		font: 0.92rem/1.55 var(--font-sans, sans-serif);
-	}
-
-	.byline {
-		margin: 0.55rem 0 0;
-		color: #989bae;
-		font:
-			0.68rem/1.4 ui-monospace,
-			monospace;
-	}
-
-	.hero-copy .primary {
+	.fallback-note {
+		position: relative;
+		bottom: auto;
 		margin-top: 1rem;
+		text-align: center;
 	}
 
-	.intro-progress {
-		position: absolute;
-		z-index: 6;
-		inset: auto 0 0;
-		height: 3px;
-		background: rgb(255 255 255 / 8%);
-	}
-
-	.intro-progress span {
-		display: block;
-		width: 100%;
-		height: 100%;
-		transform-origin: left;
-		background: linear-gradient(90deg, var(--wn-cyan), var(--wn-magenta), var(--wn-amber));
-	}
-
-	.experience-panel {
-		background: var(--wn-panel);
-	}
-
-	.stage-bar {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 1rem;
-		border-bottom: 1px solid rgb(151 153 190 / 24%);
-		padding: 0.65rem clamp(0.75rem, 2vw, 1.2rem);
-	}
-
-	.stage-bar > p {
-		margin: 0;
-		color: #a8aabd;
-		font:
-			700 0.64rem/1.2 ui-monospace,
-			monospace;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-	}
-
-	.stage-bar > p span {
-		color: var(--wn-amber);
-	}
-
-	.view-controls,
-	.segmented,
-	.action-row,
-	.utility-rail {
+	.directed-meta {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.4rem;
+		justify-content: center;
+		gap: 0.45rem 1.25rem;
+		border-top: 1px solid rgb(160 164 190 / 22%);
+		background: #050711;
+		padding: 0.8rem 1rem;
+		color: #8f92a3;
+		font:
+			700 0.62rem/1.4 var(--font-mono, 'Courier Prime'),
+			ui-monospace,
+			monospace;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
 	}
 
-	.view-controls {
-		justify-content: flex-end;
+	.experiment-shell {
+		background: #050711;
+		padding-top: 1rem;
 	}
 
-	.segmented {
-		border: 1px solid #34374c;
-		border-radius: 0.4rem;
-		padding: 0.18rem;
+	.experiment-heading {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		align-items: end;
+		width: min(92vw, 88rem);
+		margin-inline: auto;
+		padding: clamp(1rem, 3vw, 2rem);
 	}
 
-	.segmented button {
-		min-height: 2.3rem;
-		border: 0;
-		padding: 0.35rem 0.55rem;
-		text-transform: capitalize;
+	.experiment-heading p,
+	.experiment-heading h2 {
+		margin: 0;
 	}
 
-	.live-scene {
-		position: relative;
-		height: clamp(27rem, 66vh, 48rem);
-		background: var(--wn-bg);
+	.experiment-heading p {
+		grid-column: 1;
+		color: #8de5f5;
+		font: 750 0.66rem/1.2 var(--font-sans, sans-serif);
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
 	}
 
-	.journey-copy {
-		padding: clamp(1.2rem, 4vw, 2.7rem);
-	}
-
-	.journey-copy h2 {
-		max-width: 22ch;
-		margin: 0.45rem 0 0;
-		color: #fff;
-		font: 780 clamp(1.8rem, 4.5vw, 4rem) / 0.96 var(--font-sans, sans-serif);
+	.experiment-heading h2 {
+		grid-column: 1;
+		font: 780 clamp(1.7rem, 4vw, 3.5rem) / 1 var(--font-sans, sans-serif);
 		letter-spacing: -0.045em;
 	}
 
-	.journey-copy > p:not(.eyebrow) {
-		max-width: 68ch;
-		margin: 0.75rem 0 0;
-		color: var(--wn-muted);
-		font: 0.88rem/1.55 var(--font-sans, sans-serif);
-	}
-
-	.journey-copy > .primary,
-	.action-row {
-		margin-top: 1rem;
-	}
-
-	.result-copy h2 {
-		color: var(--wn-amber);
-	}
-
-	.inspect-actions {
-		border-top: 1px solid #34374b;
-		padding: 1rem clamp(1rem, 3vw, 2rem);
-	}
-
-	.utility-rail {
-		align-items: center;
-		border-top: 1px solid #34374b;
-		padding: 0.8rem clamp(0.75rem, 2vw, 1.2rem);
-	}
-
-	.utility-rail span {
-		color: #a9aabc;
-		font: 0.68rem/1.4 var(--font-sans, sans-serif);
-	}
-
-	.sound-transcript {
-		border-top: 1px solid #292c40;
-		padding: 0.8rem clamp(0.75rem, 2vw, 1.2rem);
-		color: #b8b9ca;
-		font: 0.75rem/1.55 var(--font-sans, sans-serif);
-	}
-
-	.sound-transcript summary {
-		min-height: 2.75rem;
-		color: #e9e8f2;
-		font-weight: 750;
-		cursor: pointer;
-	}
-
-	.sound-transcript p {
-		max-width: 75ch;
-	}
-
-	.status-line,
-	.error-line {
-		margin: 0;
-		border-top: 1px solid #24273b;
-		padding: 0.6rem clamp(0.75rem, 2vw, 1.2rem);
-		color: #9497ad;
-		font:
-			0.65rem/1.4 ui-monospace,
-			monospace;
-	}
-
-	.error-line {
-		color: #ffd2cc;
+	.experiment-heading button {
+		grid-column: 2;
+		grid-row: 1 / span 2;
 	}
 
 	.sr-only {
@@ -1266,120 +695,68 @@
 		white-space: nowrap;
 	}
 
-	.high-contrast {
-		--wn-muted: #f4f4f7;
+	.high-contrast button {
+		border-color: #fff;
+		background: #000;
+		color: #fff;
+	}
+
+	.high-contrast button.primary {
+		background: #fff;
+		color: #000;
+	}
+
+	@media (max-width: 899px), (max-height: 599px), (max-aspect-ratio: 4/3) {
+		.weather-directed-experience {
+			left: auto;
+			width: auto;
+			margin-inline: calc(var(--article-breakout-offset, 0rem) * -1);
+			transform: none;
+			background: transparent;
+		}
+
+		.ssr-desktop-primer {
+			display: none;
+		}
+
+		.ssr-static-primer {
+			display: block;
+		}
+
+		.static-route {
+			min-height: 0;
+			padding: 0.5rem 0;
+		}
+	}
+
+	@media (max-width: 680px) {
+		.experiment-heading {
+			grid-template-columns: 1fr;
+			gap: 0.8rem;
+		}
+
+		.experiment-heading button {
+			grid-column: 1;
+			grid-row: auto;
+			justify-self: start;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.hero-copy {
-			transform: none;
-			transition: none;
-		}
-	}
-
-	@media (max-width: 760px) {
-		.weather-experience {
-			width: 100vw;
-			border-inline: 0;
-			border-radius: 0;
-		}
-
-		.hero-scene {
-			min-height: 42rem;
-		}
-
-		.visual-layer::after {
-			background: linear-gradient(0deg, rgb(5 7 18 / 92%) 0, rgb(5 7 18 / 20%) 72%);
-		}
-
-		.hero-copy {
-			right: 1rem;
-			bottom: 2.2rem;
-			left: 1rem;
-		}
-
-		h1 {
-			font-size: clamp(2.8rem, 15vw, 5.2rem);
-		}
-
-		.stage-bar {
-			align-items: flex-start;
-			flex-direction: column;
-		}
-
-		.view-controls {
-			width: 100%;
-			justify-content: flex-start;
-		}
-
-		.segmented:first-child {
-			width: 100%;
-		}
-
-		.segmented:first-child button {
-			flex: 1;
-		}
-
-		.live-scene {
-			height: 31rem;
-		}
-	}
-
-	@media (max-width: 390px) {
-		.intro-tools {
-			right: 0.55rem;
-			left: 0.55rem;
-			justify-content: flex-end;
-		}
-
-		.semantic-scale {
-			gap: 0.35rem;
-		}
-
-		.view-controls {
-			display: grid;
-			grid-template-columns: 1fr;
-		}
-
-		.segmented:last-child {
-			width: max-content;
+		* {
+			scroll-behavior: auto !important;
 		}
 	}
 
 	@media (forced-colors: active) {
-		.weather-experience,
-		.experience-panel,
+		.weather-directed-experience,
+		.cinematic-stage,
+		.experiment-shell,
+		.directed-meta,
 		button {
 			border-color: CanvasText;
 			background: Canvas;
 			color: CanvasText;
-		}
-
-		button.primary {
-			border: 3px solid ButtonText;
-			background: Highlight;
-			color: HighlightText;
-		}
-	}
-
-	@media print {
-		.weather-experience {
-			left: 0;
-			width: 100%;
-			transform: none;
-			box-shadow: none;
-		}
-
-		.intro-tools,
-		.view-controls,
-		.utility-rail,
-		.intro-progress {
-			display: none;
-		}
-
-		.hero-copy {
-			opacity: 1;
-			transform: none;
 		}
 	}
 </style>

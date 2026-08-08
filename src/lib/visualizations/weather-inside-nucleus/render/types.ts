@@ -1,5 +1,28 @@
 export type NucleusSemanticView = 'cell' | 'nucleus' | 'territory' | 'locus';
 
+export type NucleusDirectedBeat =
+	| 'boundary'
+	| 'relay'
+	| 'nuclear'
+	| 'scale-cut'
+	| 'histories'
+	| 'silent'
+	| 'burst'
+	| 'probability';
+
+/**
+ * Authored film coordinates supplied by the guided-film controller.
+ *
+ * `progress` is normalized inside the current beat. `filmTime` is the pause-safe presentation
+ * clock in milliseconds. Neither value is scientific model time; the selected trace continues to be
+ * sampled independently through `setPlaybackTime`.
+ */
+export type NucleusDirectedPresentation = Readonly<{
+	beat: NucleusDirectedBeat;
+	progress: number;
+	filmTime: number;
+}>;
+
 export type NucleusQualityChoice = 'auto' | 'low' | 'medium' | 'high';
 export type NucleusQualityTier = Exclude<NucleusQualityChoice, 'auto'>;
 
@@ -83,6 +106,15 @@ export interface NucleusRenderer {
 	setPlaybackTime(modelTime: number): void;
 	/** Numeric arguments keep the requestAnimationFrame path allocation-free. */
 	setIntro(active: boolean, normalizedProgress: number): void;
+	/**
+	 * Enter or update the authored guided-film presentation. Pass `null` to restore the legacy
+	 * semantic-view camera and experiment interactions.
+	 */
+	setDirectedPresentation(
+		beat: NucleusDirectedBeat | null,
+		normalizedProgress: number,
+		filmTime: number
+	): void;
 	setView(view: NucleusSemanticView, options?: { snap?: boolean }): void;
 	setMotionAllowed(allowed: boolean): void;
 	setHighContrast(enabled: boolean): void;

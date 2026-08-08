@@ -1,6 +1,7 @@
 <script module lang="ts">
 	import type { SimulationResult } from '$lib/visualizations/weather-inside-nucleus/model';
 	import type {
+		NucleusDirectedBeat,
 		NucleusInterventionTarget,
 		NucleusSemanticView,
 		NucleusTraceBuffers
@@ -15,6 +16,9 @@
 		playbackTime: number;
 		introActive: boolean;
 		introProgress: number;
+		directedBeat: NucleusDirectedBeat | null;
+		directedProgress: number;
+		filmTime: number;
 		reducedMotion: boolean;
 		highContrast: boolean;
 		cameraMode: NucleusSemanticView;
@@ -36,6 +40,9 @@
 		playbackTime?: number;
 		introActive?: boolean;
 		introProgress?: number;
+		directedBeat?: NucleusDirectedBeat | null;
+		directedProgress?: number;
+		filmTime?: number;
 		reducedMotion?: boolean;
 		highContrast?: boolean;
 		cameraMode?: NucleusSemanticView;
@@ -57,6 +64,9 @@
 		playbackTime = 0,
 		introActive = false,
 		introProgress = 1,
+		directedBeat = null,
+		directedProgress = 0,
+		filmTime = 0,
 		reducedMotion = false,
 		highContrast = false,
 		cameraMode = 'cell',
@@ -85,6 +95,12 @@
 	let pointerStartY = 0;
 
 	let rendererTrace = $derived(adaptTrace(trace));
+	let directedCanvasHidden = $derived(directedBeat === 'probability');
+	let effectiveLabel = $derived(
+		directedBeat
+			? `Directed three-dimensional schematic for the ${directedBeat} guided-film beat. The guided controls provide the complete keyboard path.`
+			: label
+	);
 
 	function adaptTrace(source: WeatherStageTrace | null): NucleusTraceBuffers | null {
 		if (!source) return null;
@@ -115,7 +131,10 @@
 
 	function shouldRun(): boolean {
 		if (!active || paused || document.hidden || rendererStatus === 'loading') return false;
-		return onframe !== undefined || (canRender() && !reducedMotion);
+		return (
+			onframe !== undefined ||
+			(canRender() && !reducedMotion && directedBeat === null && !directedCanvasHidden)
+		);
 	}
 
 	function stopLoop(): void {
@@ -140,6 +159,7 @@
 		if (current && rendererStatus === 'ready') {
 			current.setPlaybackTime(playbackTime);
 			current.setIntro(introActive, introProgress);
+			current.setDirectedPresentation(directedBeat, directedProgress, filmTime);
 			current.render(deltaSeconds);
 		}
 		if (shouldRun()) frameHandle = requestAnimationFrame(frame);
@@ -149,6 +169,7 @@
 		if (!current || rendererStatus !== 'ready') return;
 		current.setPlaybackTime(playbackTime);
 		current.setIntro(introActive, introProgress);
+		current.setDirectedPresentation(directedBeat, directedProgress, filmTime);
 		current.render(0);
 	}
 
@@ -166,7 +187,8 @@
 	}
 
 	function beginPointer(event: PointerEvent): void {
-		if (rendererStatus !== 'ready' || event.button !== 0 || pointerId !== null) return;
+		if (directedBeat || rendererStatus !== 'ready' || event.button !== 0 || pointerId !== null)
+			return;
 		pointerId = event.pointerId;
 		pointerStartX = event.clientX;
 		pointerStartY = event.clientY;
@@ -176,7 +198,7 @@
 		if (pointerId !== event.pointerId) return;
 		const movement = Math.hypot(event.clientX - pointerStartX, event.clientY - pointerStartY);
 		pointerId = null;
-		if (movement > 8 || rendererStatus !== 'ready') return;
+		if (directedBeat || movement > 8 || rendererStatus !== 'ready') return;
 		const target = renderer?.pickTarget(event.clientX, event.clientY);
 		if (target) onselecttarget?.(target);
 	}
@@ -186,7 +208,7 @@
 	}
 
 	export function captureCanvas(): HTMLCanvasElement | null {
-		return canRender() ? (renderer?.captureCanvas() ?? null) : null;
+		return canRender() && !directedCanvasHidden ? (renderer?.captureCanvas() ?? null) : null;
 	}
 
 	$effect(() => {
@@ -209,6 +231,15 @@
 		current.setPlaybackTime(playbackTime);
 		current.setIntro(introActive, introProgress);
 		if (paused || reducedMotion || !active) renderOnce(current);
+	});
+
+	$effect(() => {
+		const current = renderer;
+		if (!current) return;
+		current.setDirectedPresentation(directedBeat, directedProgress, filmTime);
+		if (rendererStatus === 'ready') current.render(0);
+		if (shouldRun()) startLoop();
+		else stopLoop();
 	});
 
 	$effect(() => {
@@ -320,6 +351,7 @@
 				created.setTrace(rendererTrace);
 				created.setPlaybackTime(playbackTime);
 				created.setIntro(introActive, introProgress);
+				created.setDirectedPresentation(directedBeat, directedProgress, filmTime);
 				created.setMotionAllowed(!reducedMotion);
 				created.setHighContrast(highContrast);
 				created.setView(cameraMode, { snap: true });
@@ -361,8 +393,10 @@
 	bind:this={shell}
 	class:high-contrast={highContrast}
 	class:reduced-motion={reducedMotion}
+	class:directed-probability={directedCanvasHidden}
 	class="weather-stage"
 	data-renderer-status={rendererStatus}
+	data-directed-beat={directedBeat ?? undefined}
 >
 	{#if rendererStatus !== 'ready'}
 		<div class="fallback-layer" data-fallback-status={rendererStatus}>
@@ -374,6 +408,9 @@
 					playbackTime,
 					introActive,
 					introProgress,
+					directedBeat,
+					directedProgress,
+					filmTime,
 					reducedMotion,
 					highContrast,
 					cameraMode,
@@ -393,10 +430,11 @@
 
 	<canvas
 		bind:this={canvas}
-		class:visible={rendererStatus === 'ready'}
-		aria-label={label}
+		class:visible={rendererStatus === 'ready' && !directedCanvasHidden}
+		class:directed={directedBeat !== null}
+		aria-label={effectiveLabel}
 		aria-describedby="wn-three-dimensional-description"
-		aria-hidden={rendererStatus === 'ready' ? undefined : 'true'}
+		aria-hidden={rendererStatus === 'ready' && !directedCanvasHidden ? undefined : 'true'}
 		onpointerdown={beginPointer}
 		onpointerup={finishPointer}
 		onpointercancel={cancelPointer}
@@ -451,6 +489,15 @@
 	canvas.visible {
 		opacity: 1;
 		pointer-events: auto;
+	}
+
+	canvas.visible.directed,
+	.weather-stage.directed-probability canvas {
+		pointer-events: none;
+	}
+
+	.weather-stage.directed-probability canvas {
+		opacity: 0;
 	}
 
 	.sr-only {

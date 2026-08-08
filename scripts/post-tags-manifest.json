@@ -11146,20 +11146,20 @@
 			"dateModified": "2026-08-08"
 		},
 		"src/lib/posts/weather-inside-the-nucleus.md": {
-			"bodyHash": "427b3f430c09f613b6ba21022187c3cda4bc2379f664819a191deca37567f81a",
+			"bodyHash": "cf8e16bb44e631c1c991b75bee9b62ec8a0268906f3902b0da384a67e2f0ab9b",
 			"hashVersion": 2,
-			"revisionHash": "8022f6695f0ae0569076bba414ce12b78c846267c8aeb57fdc78e1222ef28448",
+			"revisionHash": "30b08322a023f3088ec54c03c622af8304547910b6aef132707dc933e1da499f",
 			"generatedTags": [
 				"Biology",
 				"Gene Regulation",
 				"Nuclear Organization",
 				"Transcriptional Bursting",
 				"Stochastic Processes",
-				"Downstream Activity",
-				"Molecular Cell",
 				"Sox2 Transcription",
+				"Downstream Activity",
 				"Receptor Blockade",
-				"Contact Propensity"
+				"Molecular Cell",
+				"Relative Affinity"
 			],
 			"pinnedTags": [
 				"Biology",

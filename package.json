@@ -18,6 +18,7 @@
 		"weather-inside-nucleus:test": "vitest run src/lib/visualizations/weather-inside-nucleus",
 		"weather-inside-nucleus:browser:test": "playwright test --config=playwright.weather-inside-nucleus.config.ts",
 		"weather-inside-nucleus:poster": "node scripts/render-weather-inside-nucleus-poster.mjs",
+		"weather-inside-nucleus:portrait": "node scripts/render-weather-inside-nucleus-portrait.mjs",
 		"artificial-life:test": "node --test scripts/artificial-life.test.mjs",
 		"monte-carlo:test": "node --test scripts/monte-carlo.test.mjs",
 		"living-pigment:test": "node --test scripts/living-pigment.test.mjs",

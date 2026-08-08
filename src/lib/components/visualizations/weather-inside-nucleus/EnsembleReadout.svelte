@@ -4,10 +4,14 @@
 	type Props = {
 		comparison: EnsembleComparisonView | null;
 		interventionLabel?: string;
-		contactSilent?: boolean;
+		moreTimeNearWithoutBurst?: boolean;
 	};
 
-	let { comparison, interventionLabel = 'Intervention', contactSilent = false }: Props = $props();
+	let {
+		comparison,
+		interventionLabel = 'Intervention',
+		moreTimeNearWithoutBurst = false
+	}: Props = $props();
 
 	function percent(value: number) {
 		return `${Math.round(value * 100)}%`;
@@ -32,15 +36,17 @@
 
 <section class="ensemble" aria-labelledby="wn-ensemble-heading" data-testid="nucleus-ensemble">
 	<p class="eyebrow">Matched random streams · teaching comparison</p>
-	<h2 id="wn-ensemble-heading">Compare 48 possible cells</h2>
+	<h2 id="wn-ensemble-heading">Compare 48 possible histories</h2>
 	<p class="explanation">
 		Each line is one possible modeled history. Baseline and intervention reuse the same seed list;
-		they are not paired biological cells.
+		the pairing is computational rather than a pairing of biological specimens.
 	</p>
 
-	{#if contactSilent}
+	{#if moreTimeNearWithoutBurst}
 		<p class="decisive">
-			<strong>Closer. Still silent.</strong> The selected high-contact history produced no modeled burst.
+			<strong>More time near; no burst in this history.</strong> Across the observation window, the raised-contact
+			replay spent a larger fraction of model time in the near state than its matched baseline and produced
+			no modeled burst.
 		</p>
 	{/if}
 
@@ -176,7 +182,7 @@
 		</div>
 	{:else}
 		<p class="waiting" role="status">
-			The last valid single-cell trace remains visible while the 48 matched histories are
+			The last valid single-history trace remains visible while the 48 matched histories are
 			calculated.
 		</p>
 	{/if}

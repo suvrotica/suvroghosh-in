@@ -21,12 +21,14 @@
 	preserveAspectRatio="xMidYMid slice"
 >
 	{#if !decorative}
-		<title id="wn-poster-title">A signal reaches a synthetic locus inside a modeled nucleus</title>
+		<title id="wn-poster-title"
+			>Local activity changes precede a response at a synthetic locus inside a modeled nucleus</title
+		>
 		<desc id="wn-poster-description">
-			An EGF ligand remains outside a cell membrane while a cyan downstream-activity path reaches a
-			violet nucleus. Inside it, a triangular enhancer and ring-shaped promoter sometimes draw near;
-			their dotted bridge means contact propensity, not a commanded physical link. Three warm marks
-			show modeled transcription-initiation events.
+			An EGF ligand remains outside a cell membrane while separate cyan downstream-activity regions
+			change before a response appears at a violet nucleus. Inside it, a triangular enhancer and
+			ring-shaped promoter sometimes draw near; their dotted bridge means contact propensity, not a
+			commanded physical link. Three warm marks show modeled transcription-initiation events.
 		</desc>
 	{/if}
 
