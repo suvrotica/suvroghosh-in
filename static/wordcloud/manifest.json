@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T20:16:37.576012+00:00",
+  "generatedAt": "2026-08-08T20:41:06.383538+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8531,6 +8531,29 @@
         "Negativity",
         "Enough",
         "Office"
+      ],
+      "wordCount": 130
+    },
+    "the-cartography-of-blind-spots": {
+      "generatedAt": "2026-08-08T20:41:06.179539+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-cartography-of-blind-spots.svg",
+      "source": "src/lib/posts/the-cartography-of-blind-spots.md",
+      "sourceHash": "223ae1560e5d03f791d2aae59a6495405731a3761d7b681c470c6446576802f5",
+      "sourceModified": "2026-08-08T20:41:01.086637+00:00",
+      "topWords": [
+        "Known",
+        "Unknown",
+        "AI",
+        "Future",
+        "Don",
+        "Unknowns",
+        "Knowns",
+        "Already",
+        "Forecasting",
+        "Knowledge",
+        "NOW",
+        "Map"
       ],
       "wordCount": 130
     },

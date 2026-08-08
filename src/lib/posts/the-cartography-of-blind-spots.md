@@ -2,11 +2,11 @@
 title: "The Cartography of Blind Spots: An Epistemological Field Guide to the Eight Buckets of AI Future Forecasting"
 description: "A journey through the geometry of ignorance—how we map what we know, what we don't, and what we don't know we don't know about the future of artificial intelligence."
 date: "2026-08-09"
-dateModified: "2026-08-08"
+dateModified: "2026-08-09"
 thumbnail: "/thumbnail/Compress_20260809_012539_9022.jpg"
 thumbnailAlt: "Eight-region diagram mapping different forms of knowledge and uncertainty in AI forecasting."
 category: "Artificial Intelligence"
-tags: ["AI", "Forecasting", "Epistemology", "Future", "Technology", "Philosophy", "Uncertainty", "Rumsfeld"]
+tags: ["Unknown Knowns","Blind Spots","Quiet Catastrophes","Siren Songs","Eight Buckets","Knowns","Unknowns","Unknown","Forecasting","AI"]
 published: true
 color: "#2D1B69"
 ---

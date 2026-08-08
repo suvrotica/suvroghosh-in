@@ -11170,6 +11170,26 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-09"
+		},
+		"src/lib/posts/the-cartography-of-blind-spots.md": {
+			"bodyHash": "43080ddd91e076dcb9e83cd3cbd96a5df4128cc0060ff122bff2b1dfb08e714e",
+			"hashVersion": 2,
+			"revisionHash": "e8616c6ef8173002d56033bec2963e8394b159f5cbebdfe681aea58ba70371ac",
+			"generatedTags": [
+				"Unknown Knowns",
+				"Blind Spots",
+				"Quiet Catastrophes",
+				"Siren Songs",
+				"Eight Buckets",
+				"Knowns",
+				"Unknowns",
+				"Unknown",
+				"Forecasting",
+				"AI"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-09"
 		}
 	},
 	"maxTags": 10
