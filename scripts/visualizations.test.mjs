@@ -636,10 +636,7 @@ test('the prior-authorization machine is a published, reproducible healthcare ex
 
 	assert.match(registry, /'prior-authorization-machine':\s*\{/);
 	assert.match(registry, /subjects: \['Healthcare', 'Computer Science'\]/);
-	assert.match(
-		registry,
-		/href: '\/blog\/visualizations\/the-prior-authorization-machine'/
-	);
+	assert.match(registry, /href: '\/blog\/visualizations\/the-prior-authorization-machine'/);
 	assert.match(
 		landing,
 		/'the-prior-authorization-machine':\s*visualizationSummaries\['prior-authorization-machine'\]\.subjects/
@@ -655,5 +652,85 @@ test('the prior-authorization machine is a published, reproducible healthcare ex
 
 	const fhir = JSON.parse(fs.readFileSync(fhirDownload, 'utf8'));
 	assert.equal(fhir.resourceType, 'Bundle');
-	assert.equal(fhir.meta?.tag?.some((tag) => tag.code === 'synthetic'), true);
+	assert.equal(
+		fhir.meta?.tag?.some((tag) => tag.code === 'synthetic'),
+		true
+	);
+});
+
+test('the Strange Attractor Orchestra publishes one consistent route and artwork path contract', () => {
+	const slug = 'the-strange-attractor-orchestra';
+	const articleRoute = `/blog/visualizations/${slug}`;
+	const socialPath =
+		'/images/visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png';
+	const posterPath = '/images/visualizations/strange-attractor-orchestra/langford-poster.png';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const stage = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'strange-attractor-orchestra',
+		'AttractorStage.svelte'
+	);
+	const portrait = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'strange-attractor-orchestra',
+		'PortraitListeningMode.svelte'
+	);
+	const genericRoute = read('src', 'routes', 'blog', '[category]', '[slug]', '+page.server.ts');
+	const social = path.join(root, 'static', ...socialPath.split('/').filter(Boolean));
+	const poster = path.join(root, 'static', ...posterPath.split('/').filter(Boolean));
+
+	assert.match(post, /title: "The Strange Attractor Orchestra: When Chaos Learns to Sing"/);
+	assert.match(post, /date: "2026-08-09"/);
+	assert.match(post, /dateModified: "2026-08-09"/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.ok(post.includes(`thumbnail: "${socialPath}"`));
+	assert.match(post, /thumbnailAlt: "[^"]+"/);
+	assert.match(
+		post,
+		/import StrangeAttractorOrchestra from '\$lib\/components\/visualizations\/strange-attractor-orchestra\/StrangeAttractorOrchestra\.svelte'/
+	);
+	assert.match(post, /<StrangeAttractorOrchestra \/>/);
+	assert.match(post, /<TTS \/>/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.match(registry, new RegExp(`id: '${slug}'`));
+	assert.ok(registry.includes(`poster:\n\t\t\t'${socialPath}'`));
+	assert.ok(registry.includes(`href: '${articleRoute}'`));
+	assert.match(registry, /status: 'published'/);
+	assert.match(
+		landing,
+		/'the-strange-attractor-orchestra':\s*visualizationSummaries\['the-strange-attractor-orchestra'\]\.subjects/
+	);
+	assert.ok(stage.includes(`src="${posterPath}"`));
+	assert.ok(portrait.includes(`src="${posterPath}"`));
+	assert.match(genericRoute, /loadPublishedBlogPost\(params\.category, params\.slug\)/);
+	assert.doesNotMatch(genericRoute, new RegExp(`slug\\s*!==?\\s*['"]${slug}['"]`));
+
+	assert.ok(fs.existsSync(social), 'missing Strange Attractor Orchestra social image');
+	assert.ok(fs.existsSync(poster), 'missing Strange Attractor Orchestra portrait poster');
+	const pngDimensions = (file) => {
+		const header = fs.readFileSync(file).subarray(0, 24);
+		assert.deepEqual(Array.from(header.subarray(0, 8)), [137, 80, 78, 71, 13, 10, 26, 10]);
+		return { width: header.readUInt32BE(16), height: header.readUInt32BE(20) };
+	};
+	assert.deepEqual(pngDimensions(social), { width: 1200, height: 630 });
+	assert.deepEqual(pngDimensions(poster), { width: 1440, height: 1080 });
+	assert.ok(fs.statSync(social).size < 750 * 1024, 'social image exceeds 750 kB');
 });

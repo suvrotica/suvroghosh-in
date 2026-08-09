@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T10:49:13.610063+00:00",
+  "generatedAt": "2026-08-09T17:11:58.260535+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11153,6 +11153,29 @@
         "Sitting",
         "World",
         "Somewhere"
+      ],
+      "wordCount": 130
+    },
+    "the-strange-attractor-orchestra": {
+      "generatedAt": "2026-08-09T17:11:58.171836+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-strange-attractor-orchestra.svg",
+      "source": "src/lib/posts/the-strange-attractor-orchestra.md",
+      "sourceHash": "92c46238b03642ca3873bec17cf3661e921f4a72e853fabae4499ad8bd03ee9b",
+      "sourceModified": "2026-08-09T16:31:50.433213+00:00",
+      "topWords": [
+        "System",
+        "Noise",
+        "Orbit",
+        "Continuous",
+        "Field",
+        "Region",
+        "Glass",
+        "Flow",
+        "Deterministic",
+        "Different",
+        "Weather",
+        "Step"
       ],
       "wordCount": 130
     },

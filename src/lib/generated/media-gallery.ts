@@ -4262,6 +4262,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "visualizations/strange-attractor-orchestra/langford-poster.png",
+			"src": "/images/visualizations/strange-attractor-orchestra/langford-poster.png",
+			"bytes": 618137,
+			"width": 1440,
+			"height": 1080
+		},
+		{
+			"name": "visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png",
+			"src": "/images/visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png",
+			"bytes": 321407,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "weather-inside-nucleus/portrait/weather-nucleus-360.avif",
 			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-360.avif",
 			"bytes": 13225,

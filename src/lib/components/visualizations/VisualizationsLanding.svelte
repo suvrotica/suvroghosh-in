@@ -27,7 +27,9 @@
 		'belousov-zhabotinsky-laboratory':
 			visualizationSummaries['belousov-zhabotinsky-laboratory'].subjects,
 		'the-prior-authorization-machine':
-			visualizationSummaries['prior-authorization-machine'].subjects
+			visualizationSummaries['prior-authorization-machine'].subjects,
+		'the-strange-attractor-orchestra':
+			visualizationSummaries['the-strange-attractor-orchestra'].subjects
 	};
 	const subjects = [
 		'All',

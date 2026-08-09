@@ -40,7 +40,8 @@ export const visualizationSummaries = {
 	},
 	'prior-authorization-machine': {
 		id: 'prior-authorization-machine',
-		title: 'The Prior Authorization Machine: a patient, an MRI, and the invisible decisions between them',
+		title:
+			'The Prior Authorization Machine: a patient, an MRI, and the invisible decisions between them',
 		description:
 			'Follow one synthetic MRI request through portal, fax, CRD, DTR, PAS, three clocks, and four consequential failure paths.',
 		subjects: ['Healthcare', 'Computer Science'],
@@ -48,6 +49,19 @@ export const visualizationSummaries = {
 		posterAlt:
 			'A split prior-authorization journey for Maya Sen, comparing portal and fax work with a FHIR-enabled route across twelve milestones and three clocks',
 		href: '/blog/visualizations/the-prior-authorization-machine',
+		status: 'published'
+	},
+	'the-strange-attractor-orchestra': {
+		id: 'the-strange-attractor-orchestra',
+		title: 'The Strange Attractor Orchestra: When Chaos Learns to Sing',
+		description:
+			'Strange attractors become audiovisual instruments as deterministic chaos passes through coherent noise and emerges as music in the browser.',
+		subjects: ['Mathematics', 'Scientific Computing', 'Generative Art'],
+		poster:
+			'/images/visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png',
+		posterAlt:
+			'A copper and mineral-cyan Langford attractor braided through a restrained curl-noise field on charcoal, with its faint canonical orbit still visible',
+		href: '/blog/visualizations/the-strange-attractor-orchestra',
 		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;

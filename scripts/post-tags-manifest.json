@@ -11242,6 +11242,33 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-09"
+		},
+		"src/lib/posts/the-strange-attractor-orchestra.md": {
+			"bodyHash": "aa6d7d7e0a2b2c9e7987497c90fbbfc7d80e9c8cbcc6bf47fb44db501ed116d0",
+			"hashVersion": 2,
+			"revisionHash": "24c20bec278f35de8f7e2b562e1d3d9f2465570f9414e9bcf0ce82d3fd311a8a",
+			"generatedTags": [
+				"Mathematics",
+				"Scientific Computing",
+				"Generative Art",
+				"Chaos Theory",
+				"Dynamical Systems",
+				"Sonification",
+				"Continuous Flow",
+				"Stereo Circulation",
+				"Return Intervals",
+				"Mackey Glass"
+			],
+			"pinnedTags": [
+				"Mathematics",
+				"Scientific Computing",
+				"Generative Art",
+				"Chaos Theory",
+				"Dynamical Systems",
+				"Sonification"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-09"
 		}
 	},
 	"maxTags": 10

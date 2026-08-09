@@ -9663,6 +9663,36 @@
       "sourceHash": "160af22dcbf49db9eb7c4322bda5a9bc1b712ee7c3331848abbeab3b8265ae7b",
       "width": 960
     },
+    "static/images/visualizations/strange-attractor-orchestra/langford-poster.png": {
+      "format": "PNG",
+      "height": 1080,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1080,
+      "originalWidth": 1440,
+      "outputBytes": 618137,
+      "outputHash": "764c6c6af6d82a80bd50d080d7c54acc5117f5e3f92b55024a1efbdacba54d3f",
+      "resized": false,
+      "sourceBytes": 618137,
+      "sourceHash": "764c6c6af6d82a80bd50d080d7c54acc5117f5e3f92b55024a1efbdacba54d3f",
+      "width": 1440
+    },
+    "static/images/visualizations/strange-attractor-orchestra/the-strange-attractor-orchestra.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 321407,
+      "outputHash": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
+      "resized": false,
+      "sourceBytes": 321407,
+      "sourceHash": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
+      "width": 1200
+    },
     "static/images/weather-inside-nucleus/portrait/weather-nucleus-1080.avif": {
       "format": "AVIF",
       "height": 1440,
