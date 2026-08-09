@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "renderContract": "sharp-svg-png:{\"compressionLevel\":9,\"palette\":true,\"quality\":100}",
+  "sourceSha256": "6efb638261ca3a72cc516991be61f617354fae7aef8baf1534d030b9ae8286e3",
+  "posterSha256": "a5c25134ceee16c96ec3cdb3f9bbe6dc87c82a24fa9f1908371a3b39a9fa1716",
+  "fhirSha256": "d35801ed6d432e309b2c247d64be6ed949e39d1441f05947c103243a235a174f",
+  "poster": {
+    "format": "png",
+    "width": 1600,
+    "height": 900
+  }
+}

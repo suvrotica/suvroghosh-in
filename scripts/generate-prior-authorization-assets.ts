@@ -1,8 +1,7 @@
+import { createHash } from 'node:crypto';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-
-import sharp from 'sharp';
 
 import {
 	FHIR_BASELINE_EXPECTED,
@@ -25,10 +24,54 @@ const FHIR_PATH = path.join(
 	'prior-authorization',
 	'maya-lumbar-mri-fhir-r4.json'
 );
+const MANIFEST_PATH = path.join(ROOT, 'scripts', 'prior-authorization-assets-manifest.json');
 
 const WIDTH = 1_600;
 const HEIGHT = 900;
 const DAY_MS = 86_400_000;
+const MANIFEST_SCHEMA_VERSION = 1;
+const PNG_OPTIONS = { compressionLevel: 9, palette: true, quality: 100 };
+const RENDER_CONTRACT = `sharp-svg-png:${JSON.stringify(PNG_OPTIONS)}`;
+const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
+
+type AssetManifest = {
+	schemaVersion: number;
+	renderContract: string;
+	sourceSha256: string;
+	posterSha256: string;
+	fhirSha256: string;
+	poster: {
+		format: 'png';
+		width: number;
+		height: number;
+	};
+};
+
+function normalizeLineEndings(value: string): string {
+	return value.replace(/\r\n?/g, '\n');
+}
+
+function sha256(value: string | Uint8Array): string {
+	return createHash('sha256').update(value).digest('hex');
+}
+
+function sourceHash(svg: string): string {
+	return sha256(`${MANIFEST_SCHEMA_VERSION}\0${RENDER_CONTRACT}\0${normalizeLineEndings(svg)}`);
+}
+
+function readPngDimensions(value: Buffer): { width: number; height: number } | null {
+	if (
+		value.length < 24 ||
+		!value.subarray(0, PNG_SIGNATURE.length).equals(PNG_SIGNATURE) ||
+		value.subarray(12, 16).toString('ascii') !== 'IHDR'
+	) {
+		return null;
+	}
+	return {
+		width: value.readUInt32BE(16),
+		height: value.readUInt32BE(20)
+	};
+}
 
 function escapeXml(value: string): string {
 	return value
@@ -186,52 +229,117 @@ function renderPosterSvg(): string {
 	</svg>`;
 }
 
-async function generateAssets(): Promise<{ poster: Buffer; fhir: Buffer }> {
-	const svg = renderPosterSvg();
-	const poster = await sharp(Buffer.from(svg))
-		.png({ compressionLevel: 9, palette: true, quality: 100 })
-		.toBuffer();
-	const fhir = Buffer.from(`${stringifySyntheticFhirFixture(2).trimEnd()}\n`, 'utf8');
-	return { poster, fhir };
-}
-
-async function assertCurrent(filePath: string, expected: Buffer, label: string): Promise<void> {
-	let actual: Buffer;
+async function readRequired(filePath: string, label: string): Promise<Buffer> {
 	try {
-		actual = await readFile(filePath);
+		return await readFile(filePath);
 	} catch {
 		throw new Error(`${label} is missing: ${filePath}`);
 	}
-	if (!actual.equals(expected)) {
+}
+
+function parseManifest(value: Buffer): AssetManifest {
+	let parsed: unknown;
+	try {
+		parsed = JSON.parse(value.toString('utf8'));
+	} catch {
 		throw new Error(
-			`${label} is stale: ${filePath}\nRun npm run prior-authorization:assets to regenerate it.`
+			`Prior-authorization asset manifest is invalid JSON: ${MANIFEST_PATH}\nRun npm run prior-authorization:assets to regenerate it.`
 		);
+	}
+
+	if (!parsed || typeof parsed !== 'object') {
+		throw new Error(
+			`Prior-authorization asset manifest has an invalid shape: ${MANIFEST_PATH}\nRun npm run prior-authorization:assets to regenerate it.`
+		);
+	}
+
+	return parsed as AssetManifest;
+}
+
+function assetStale(label: string, filePath: string): never {
+	throw new Error(
+		`${label} is stale: ${filePath}\nRun npm run prior-authorization:assets to regenerate it.`
+	);
+}
+
+async function assertPortableAssets(svg: string, expectedFhir: Buffer): Promise<void> {
+	const [poster, actualFhir, manifestBytes] = await Promise.all([
+		readRequired(POSTER_PATH, 'Prior-authorization poster'),
+		readRequired(FHIR_PATH, 'Synthetic FHIR download'),
+		readRequired(MANIFEST_PATH, 'Prior-authorization asset manifest')
+	]);
+	const manifest = parseManifest(manifestBytes);
+
+	if (
+		manifest.schemaVersion !== MANIFEST_SCHEMA_VERSION ||
+		manifest.renderContract !== RENDER_CONTRACT ||
+		manifest.sourceSha256 !== sourceHash(svg)
+	) {
+		assetStale('Prior-authorization poster source', MANIFEST_PATH);
+	}
+	if (manifest.posterSha256 !== sha256(poster)) {
+		assetStale('Prior-authorization poster', POSTER_PATH);
+	}
+	if (!actualFhir.equals(expectedFhir) || manifest.fhirSha256 !== sha256(actualFhir)) {
+		assetStale('Synthetic FHIR download', FHIR_PATH);
+	}
+	if (
+		manifest.poster?.format !== 'png' ||
+		manifest.poster.width !== WIDTH ||
+		manifest.poster.height !== HEIGHT
+	) {
+		assetStale('Prior-authorization poster metadata', MANIFEST_PATH);
+	}
+
+	const dimensions = readPngDimensions(poster);
+	if (dimensions?.width !== WIDTH || dimensions.height !== HEIGHT) {
+		assetStale('Prior-authorization poster', POSTER_PATH);
 	}
 }
 
 async function main(): Promise<void> {
 	const checkOnly = process.argv.includes('--check');
-	const generated = await generateAssets();
+	const svg = normalizeLineEndings(renderPosterSvg());
+	const fhir = Buffer.from(`${stringifySyntheticFhirFixture(2).trimEnd()}\n`, 'utf8');
 
 	if (checkOnly) {
-		await Promise.all([
-			assertCurrent(POSTER_PATH, generated.poster, 'Prior-authorization poster'),
-			assertCurrent(FHIR_PATH, generated.fhir, 'Synthetic FHIR download')
-		]);
+		await assertPortableAssets(svg, fhir);
 		console.log('Prior-authorization poster and synthetic FHIR download are current.');
 		return;
 	}
 
+	// System-font resolution and native raster libraries vary by OS. Generation deliberately binds
+	// one committed derivative to the canonical SVG; check mode authenticates that binding without
+	// pretending arbitrary Windows and Linux raster stacks produce byte-identical PNGs.
+	const { default: sharp } = await import('sharp');
+	const poster = await sharp(Buffer.from(svg, 'utf8')).png(PNG_OPTIONS).toBuffer();
+	const manifest: AssetManifest = {
+		schemaVersion: MANIFEST_SCHEMA_VERSION,
+		renderContract: RENDER_CONTRACT,
+		sourceSha256: sourceHash(svg),
+		posterSha256: sha256(poster),
+		fhirSha256: sha256(fhir),
+		poster: {
+			format: 'png',
+			width: WIDTH,
+			height: HEIGHT
+		}
+	};
+	const manifestBytes = Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+
 	await Promise.all([
 		mkdir(path.dirname(POSTER_PATH), { recursive: true }),
-		mkdir(path.dirname(FHIR_PATH), { recursive: true })
+		mkdir(path.dirname(FHIR_PATH), { recursive: true }),
+		mkdir(path.dirname(MANIFEST_PATH), { recursive: true })
 	]);
 	await Promise.all([
-		writeFile(POSTER_PATH, generated.poster),
-		writeFile(FHIR_PATH, generated.fhir)
+		writeFile(POSTER_PATH, poster),
+		writeFile(FHIR_PATH, fhir),
+		writeFile(MANIFEST_PATH, manifestBytes)
 	]);
 	console.log(`Generated ${POSTER_PATH}`);
 	console.log(`Generated ${FHIR_PATH}`);
+	console.log(`Generated ${MANIFEST_PATH}`);
 }
 
 const isDirectExecution =
