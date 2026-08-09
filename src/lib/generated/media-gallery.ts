@@ -4227,6 +4227,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/prior-authorization-machine.png",
+			"src": "/images/visualizations/prior-authorization-machine.png",
+			"bytes": 78492,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "visualizations/reaction-diffusion/guided-observations.png",
 			"src": "/images/visualizations/reaction-diffusion/guided-observations.png",
 			"bytes": 26728,

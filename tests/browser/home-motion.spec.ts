@@ -2,6 +2,8 @@ import { expect, test, type Page } from '@playwright/test';
 
 const homeTitle = 'Suvro Ghosh | Healthcare IT Architect & Clinical Data Systems Consultant';
 const homeCanonical = 'https://www.suvroghosh.in';
+const featuredSeriesPath = '/blog/visualizations/the-prior-authorization-machine';
+const featuredSeriesPoster = '/images/visualizations/prior-authorization-machine.png';
 
 const heroLinks = [
 	['View Resume', '/resume'],
@@ -53,6 +55,27 @@ async function expectNoHorizontalOverflow(page: Page) {
 	expect(overflow).toBeLessThanOrEqual(1);
 }
 
+async function expectFeaturedSeries(page: Page) {
+	const featuredSeries = page.locator('[data-featured-series]');
+	const seriesList = featuredSeries.locator('ol[data-series-list]');
+	const firstPart = seriesList.locator('li[data-series-part="1"]');
+	const seriesLink = firstPart.locator('a.featured-series__card');
+	const poster = firstPart.locator(`img[src="${featuredSeriesPoster}"]`);
+
+	await expect(featuredSeries).toHaveCount(1);
+	await expect(featuredSeries).toContainText('The Patient Through the Machine');
+	await expect(seriesList).toHaveCount(1);
+	await expect(firstPart).toHaveCount(1);
+	await expect(seriesLink).toHaveCount(1);
+	expect(await seriesLink.evaluate((link: HTMLAnchorElement) => new URL(link.href).pathname)).toBe(
+		featuredSeriesPath
+	);
+	await expect(poster).toHaveCount(1);
+	await expect(poster).toHaveAttribute('width', '1600');
+	await expect(poster).toHaveAttribute('height', '900');
+	await expect(poster).toHaveAttribute('alt', '');
+}
+
 async function storeMotionBeforePageScripts(page: Page, preference: string) {
 	await page.addInitScript((nextPreference) => {
 		try {
@@ -96,7 +119,11 @@ test('the living home preserves content, SEO, links, and one ambient owner', asy
 	const hero = page.locator('[data-living-hero]');
 	await expect(home).toHaveCount(1);
 	await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
-	await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
+	const heroName = page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' });
+	await expect(heroName).toBeVisible();
+	expect(await heroName.evaluate((heading) => getComputedStyle(heading).fontFamily)).toContain(
+		'Roboto'
+	);
 	await expect(hero).toContainText('Healthcare IT · Interoperability · Applied AI · Calcutta');
 	await expect(hero).toContainText('Healthcare IT Architect & Clinical Data Systems Consultant');
 	await expect(hero).toContainText(
@@ -112,6 +139,20 @@ test('the living home preserves content, SEO, links, and one ambient owner', asy
 		);
 	}
 
+	await expectFeaturedSeries(page);
+	const homeSectionOrder = await home
+		.locator(
+			':scope > [data-living-hero], :scope > [data-featured-series], :scope > [data-reading-path-rail]'
+		)
+		.evaluateAll((sections) =>
+			sections.map((section) => {
+				if (section.hasAttribute('data-living-hero')) return 'hero';
+				if (section.hasAttribute('data-featured-series')) return 'series';
+				return 'reading-paths';
+			})
+		);
+	expect(homeSectionOrder).toEqual(['hero', 'series', 'reading-paths']);
+
 	const readingCards = page.locator('[data-reading-path-card]');
 	await expect(readingCards).toHaveCount(readingPathIds.length);
 	for (const [index, pathId] of readingPathIds.entries()) {
@@ -121,9 +162,13 @@ test('the living home preserves content, SEO, links, and one ambient owner', asy
 		await expect(card.locator('h3')).not.toBeEmpty();
 		await expect(card.locator('.reading-path-card__description')).not.toBeEmpty();
 	}
+	const readingPaths = page.locator('[data-reading-path-rail]');
 	await expect(
-		page.locator('[data-reading-path-rail]').getByRole('link', {
-			name: 'Explore the reading paths',
+		readingPaths.getByRole('heading', { level: 2, name: 'Five ways into the work', exact: true })
+	).toBeVisible();
+	await expect(
+		readingPaths.getByRole('link', {
+			name: 'Explore all five paths',
 			exact: true
 		})
 	).toHaveAttribute('href', '/start-here');
@@ -168,16 +213,21 @@ test('the full-bleed home and native reading rail stay inside desktop and mobile
 	await page.goto('/');
 
 	const hero = page.locator('[data-living-hero]');
+	const featuredSeries = page.locator('[data-featured-series]');
 	const readingRail = page.locator('.reading-paths__rail');
 	const readingColumn = page.locator('main#main-content > .container');
 	const desktopHeroBox = await hero.boundingBox();
+	const desktopSeriesBox = await featuredSeries.boundingBox();
 	const desktopColumnBox = await readingColumn.boundingBox();
 
 	expect(desktopHeroBox).not.toBeNull();
+	expect(desktopSeriesBox).not.toBeNull();
 	expect(desktopColumnBox).not.toBeNull();
 	expect(desktopHeroBox!.width).toBeGreaterThan(desktopColumnBox!.width + 200);
 	expect(desktopHeroBox!.x).toBeGreaterThanOrEqual(0);
 	expect(desktopHeroBox!.x + desktopHeroBox!.width).toBeLessThanOrEqual(1441);
+	expect(desktopSeriesBox!.x).toBeGreaterThanOrEqual(0);
+	expect(desktopSeriesBox!.x + desktopSeriesBox!.width).toBeLessThanOrEqual(1441);
 	await expectNoHorizontalOverflow(page);
 
 	for (const link of await hero.getByRole('link').all()) {
@@ -192,6 +242,17 @@ test('the full-bleed home and native reading rail stay inside desktop and mobile
 	expect(mobileHeroBox).not.toBeNull();
 	expect(mobileHeroBox!.x).toBeGreaterThanOrEqual(0);
 	expect(mobileHeroBox!.x + mobileHeroBox!.width).toBeLessThanOrEqual(391);
+	const mobileSeriesBox = await featuredSeries.boundingBox();
+	const mobileSeriesLinkBox = await featuredSeries
+		.locator(`a[href="${featuredSeriesPath}"]`)
+		.boundingBox();
+	expect(mobileSeriesBox).not.toBeNull();
+	expect(mobileSeriesBox!.x).toBeGreaterThanOrEqual(0);
+	expect(mobileSeriesBox!.x + mobileSeriesBox!.width).toBeLessThanOrEqual(391);
+	expect(mobileSeriesLinkBox).not.toBeNull();
+	expect(mobileSeriesLinkBox!.x).toBeGreaterThanOrEqual(0);
+	expect(mobileSeriesLinkBox!.x + mobileSeriesLinkBox!.width).toBeLessThanOrEqual(391);
+	expect(mobileSeriesLinkBox!.height).toBeGreaterThanOrEqual(44);
 
 	const railState = await readingRail.evaluate((rail) => {
 		rail.scrollLeft = 0;
@@ -245,6 +306,17 @@ test('the living home remains meaningful and navigable without JavaScript', asyn
 		await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
 		await expect(hero).toContainText('Healthcare IT Architect & Clinical Data Systems Consultant');
 		await expect(hero.locator('.living-hero__actions').getByRole('link')).toHaveCount(5);
+		await expectFeaturedSeries(page);
+		await expect(
+			page.getByRole('heading', { level: 2, name: 'Five ways into the work', exact: true })
+		).toBeVisible();
+		const readingPathsLink = page.getByRole('link', {
+			name: 'Explore all five paths',
+			exact: true
+		});
+		expect(
+			await readingPathsLink.evaluate((link: HTMLAnchorElement) => new URL(link.href).pathname)
+		).toBe('/start-here');
 		await expect(page.locator('[data-reading-path-card]')).toHaveCount(5);
 		await expect(page.locator('[data-world-portal] a')).toHaveCount(9);
 		await expect(page.locator('[data-recent-signal-card]')).toHaveCount(4);
@@ -261,7 +333,7 @@ test('the living home remains meaningful and navigable without JavaScript', asyn
 		await expect(page.locator('[data-route-atmosphere]')).toHaveCount(1);
 		await expect(page.locator('canvas')).toHaveCount(0);
 		await expect(home.locator('video')).toHaveCount(0);
-		await expect(home.locator('img')).toHaveCount(0);
+		await expect(home.locator('img')).toHaveCount(1);
 		await expect(page.locator('a a')).toHaveCount(0);
 		await expectNoHorizontalOverflow(page);
 	} finally {

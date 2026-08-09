@@ -37,6 +37,18 @@ export const visualizationSummaries = {
 			'A luminous red and violet solver-generated Oregonator spiral curling through a circular dish beside the words Chemical waves with receipts',
 		href: '/blog/visualizations/belousov-zhabotinsky-laboratory',
 		status: 'published'
+	},
+	'prior-authorization-machine': {
+		id: 'prior-authorization-machine',
+		title: 'The Prior Authorization Machine: a patient, an MRI, and the invisible decisions between them',
+		description:
+			'Follow one synthetic MRI request through portal, fax, CRD, DTR, PAS, three clocks, and four consequential failure paths.',
+		subjects: ['Healthcare', 'Computer Science'],
+		poster: '/images/visualizations/prior-authorization-machine.png',
+		posterAlt:
+			'A split prior-authorization journey for Maya Sen, comparing portal and fax work with a FHIR-enabled route across twelve milestones and three clocks',
+		href: '/blog/visualizations/the-prior-authorization-machine',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

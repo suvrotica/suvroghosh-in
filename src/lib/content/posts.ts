@@ -10,6 +10,9 @@ export type BlogPostMetadata = {
 	tags: string[];
 	pinnedTags?: string[];
 	series?: string[];
+	seriesId?: string;
+	seriesPart?: number;
+	seriesChapter?: string;
 	published: boolean;
 	thumbnail?: string;
 	thumbnailAlt?: string;

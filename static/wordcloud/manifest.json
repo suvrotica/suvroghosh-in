@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T01:54:55.572752+00:00",
+  "generatedAt": "2026-08-09T07:40:30.508197+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10716,6 +10716,29 @@
         "Food",
         "Mother",
         "Toward"
+      ],
+      "wordCount": 130
+    },
+    "the-prior-authorization-machine": {
+      "generatedAt": "2026-08-09T07:40:30.422521+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-prior-authorization-machine.svg",
+      "source": "src/lib/posts/the-prior-authorization-machine.md",
+      "sourceHash": "4b71631eaff2a22eff11128cb07fb9c0a98a2a84ad8e5798771a45ef9af38dc9",
+      "sourceModified": "2026-08-09T07:39:58.308747+00:00",
+      "topWords": [
+        "Evidence",
+        "Request",
+        "FHIR",
+        "Patient",
+        "Coverage",
+        "Payer",
+        "PAS",
+        "Business",
+        "Workflow",
+        "Every",
+        "Clinical",
+        "Approval"
       ],
       "wordCount": 130
     },

@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Prior Authorization Machine: a patient, an MRI, and the invisible decisions between them" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Prior Authorization Machine: a patient, an MRI, and the invisible decisions between them</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(635,132)" font-size="118" style="fill:#a9b7a3">Evidence</text>
+<text transform="translate(269,259)" font-size="105" style="fill:#c7d7b5">Request</text>
+<text transform="translate(745,710)" font-size="102" style="fill:#b6c3dd">FHIR</text>
+<text transform="translate(481,441)" font-size="96" style="fill:#8fb7d0">Patient</text>
+<text transform="translate(22,122)" font-size="96" style="fill:#d5d2c2">Coverage</text>
+<text transform="translate(634,531)" font-size="96" style="fill:#d6a79f">Payer</text>
+<text transform="translate(517,622)" font-size="90" style="fill:#d9c89e">PAS</text>
+<text transform="translate(1061,653) rotate(-90)" font-size="87" style="fill:#d6a79f">Business</text>
+<text transform="translate(6,459)" font-size="87" style="fill:#a9b7a3">Workflow</text>
+<text transform="translate(205,625)" font-size="84" style="fill:#c7d7b5">Every</text>
+<text transform="translate(708,202)" font-size="84" style="fill:#8fb7d0">Clinical</text>
+<text transform="translate(96,356)" font-size="80" style="fill:#b6c3dd">Approval</text>
+<text transform="translate(1218,517) rotate(-90)" font-size="76" style="fill:#9fc9c5">Maya</text>
+<text transform="translate(577,333)" font-size="76" style="fill:#8fb7d0">Fictional</text>
+<text transform="translate(1085,712)" font-size="76" style="fill:#9fc9c5">Work</text>
+<text transform="translate(81,63)" font-size="76" style="fill:#b6c3dd">Rule</text>
+<text transform="translate(817,604)" font-size="76" style="fill:#c7d7b5">DTR</text>
+<text transform="translate(122,525)" font-size="72" style="fill:#8fb7d0">Policy</text>
+<text transform="translate(77,701)" font-size="72" style="fill:#8fb7d0">Human</text>
+<text transform="translate(81,227)" font-size="68" style="fill:#a9b7a3">Days</text>
+<text transform="translate(1069,637)" font-size="68" style="fill:#c49a6c">Time</text>
+<text transform="translate(26,589)" font-size="68" style="fill:#8fb7d0">Fact</text>
+<text transform="translate(293,710)" font-size="59" style="fill:#9fc9c5">Authorisation</text>
+<text transform="translate(267,48)" font-size="57" style="fill:#8fb7d0">Appointment</text>
+<text transform="translate(478,177)" font-size="57" style="fill:#8fb7d0">Lens</text>
+<text transform="translate(721,253)" font-size="57" style="fill:#a9b7a3">Declared</text>
+<text transform="translate(934,45)" font-size="57" style="fill:#c49a6c">Response</text>
+<text transform="translate(124,171)" font-size="54" style="fill:#c49a6c">Machine</text>
+<text transform="translate(387,550)" font-size="54" style="fill:#9fc9c5">Person</text>
+<text transform="translate(1146,571) rotate(-90)" font-size="54" style="fill:#9fc9c5">Requirements</text>
+<text transform="translate(1267,370) rotate(-90)" font-size="54" style="fill:#c7d7b5">Identifiers</text>
+<text transform="translate(137,305)" font-size="54" style="fill:#d9c89e">Portal</text>
+<text transform="translate(437,503)" font-size="54" style="fill:#8fb7d0">API</text>
+<text transform="translate(902,539)" font-size="54" style="fill:#d9c89e">CMS</text>
+<text transform="translate(6,638)" font-size="54" style="fill:#d9c89e">Review</text>
+<text transform="translate(47,390) rotate(-90)" font-size="54" style="fill:#8fb7d0">Decision</text>
+<text transform="translate(910,398)" font-size="54" style="fill:#c7d7b5">CRD</text>
+<text transform="translate(300,398)" font-size="50" style="fill:#d6a79f">Order</text>
+<text transform="translate(1213,317) rotate(-90)" font-size="50" style="fill:#c49a6c">Answer</text>
+<text transform="translate(510,100)" font-size="50" style="fill:#e0b879">Scan</text>
+<text transform="translate(446,652)" font-size="35" style="fill:#d5d2c2">Exchange</text>
+<text transform="translate(254,573)" font-size="35" style="fill:#d9c89e">Three</text>
+<text transform="translate(552,366)" font-size="35" style="fill:#b6c3dd">Route</text>
+<text transform="translate(695,474)" font-size="35" style="fill:#c7d7b5">Information</text>
+<text transform="translate(643,32)" font-size="35" style="fill:#d9c89e">Elapsed</text>
+<text transform="translate(717,366)" font-size="35" style="fill:#a9b7a3">Fixture</text>
+<text transform="translate(1098,547) rotate(-90)" font-size="35" style="fill:#8fb7d0">Fhirenabled</text>
+<text transform="translate(378,186)" font-size="35" style="fill:#d5d2c2">Case</text>
+<text transform="translate(732,632)" font-size="35" style="fill:#b6c3dd">Provenance</text>
+<text transform="translate(727,664) rotate(-90)" font-size="32" style="fill:#d9c89e">Real</text>
+<text transform="translate(229,655)" font-size="32" style="fill:#d9c89e">Clinician</text>
+<text transform="translate(1275,609) rotate(-90)" font-size="32" style="fill:#c7d7b5">Technical</text>
+<text transform="translate(494,289)" font-size="32" style="fill:#d6a79f">Fax</text>
+<text transform="translate(80,383) rotate(-90)" font-size="32" style="fill:#a9b7a3">Separate</text>
+<text transform="translate(485,124)" font-size="28" style="fill:#d9c89e">Transport</text>
+<text transform="translate(1171,454) rotate(-90)" font-size="28" style="fill:#9fc9c5">Priorauthorisation</text>
+<text transform="translate(797,280)" font-size="25" style="fill:#a9b7a3">Scheduling</text>
+<text transform="translate(468,197)" font-size="21" style="fill:#d6a79f">Documentation</text>
+<text transform="translate(1160,586)" font-size="21" style="fill:#8fb7d0">Whether</text>
+<text transform="translate(1158,533)" font-size="21" style="fill:#b6c3dd">EHR</text>
+<text transform="translate(630,159)" font-size="21" style="fill:#d88988">Pended</text>
+<text transform="translate(956,151)" font-size="21" style="fill:#d88988">State</text>
+<text transform="translate(363,569)" font-size="19" style="fill:#8fb7d0">Implementation</text>
+<text transform="translate(445,671)" font-size="19" style="fill:#c7d7b5">Valid</text>
+<text transform="translate(239,384)" font-size="17" style="fill:#c49a6c">MRI</text>
+<text transform="translate(691,573)" font-size="17" style="fill:#d6a79f">Page</text>
+<text transform="translate(422,457)" font-size="17" style="fill:#8fb7d0">Transaction</text>
+<text transform="translate(363,301)" font-size="17" style="fill:#9fc9c5">Clock</text>
+<text transform="translate(27,488)" font-size="17" style="fill:#8fb7d0">Synthetic</text>
+<text transform="translate(322,278)" font-size="17" style="fill:#c7d7b5">Required</text>
+<text transform="translate(791,383)" font-size="17" style="fill:#d6a79f">Model</text>
+<text transform="translate(627,555) rotate(-90)" font-size="17" style="fill:#d88988">Structured</text>
+<text transform="translate(1195,560)" font-size="17" style="fill:#d6a79f">Date</text>
+<text transform="translate(507,366) rotate(-90)" font-size="17" style="fill:#e0b879">Records</text>
+<text transform="translate(816,23)" font-size="17" style="fill:#e0b879">Architect</text>
+<text transform="translate(209,246)" font-size="17" style="fill:#c7d7b5">Change</text>
+<text transform="translate(742,576)" font-size="17" style="fill:#b6c3dd">Claim</text>
+<text transform="translate(41,520)" font-size="17" style="fill:#9fc9c5">Status</text>
+<text transform="translate(533,671)" font-size="17" style="fill:#e0b879">X12</text>
+<text transform="translate(102,259)" font-size="17" style="fill:#c49a6c">Cms0057f</text>
+<text transform="translate(999,698)" font-size="17" style="fill:#b6c3dd">Changes</text>
+<text transform="translate(960,455)" font-size="17" style="fill:#c7d7b5">Discovery</text>
+<text transform="translate(929,425)" font-size="17" style="fill:#d9c89e">Imaging</text>
+<text transform="translate(374,478)" font-size="17" style="fill:#c49a6c">Active</text>
+<text transform="translate(1040,222)" font-size="17" style="fill:#d6a79f">Minutes</text>
+<text transform="translate(63,402)" font-size="17" style="fill:#c7d7b5">Processing</text>
+<text transform="translate(725,272)" font-size="17" style="fill:#a9b7a3">Exact</text>
+<text transform="translate(557,508) rotate(-90)" font-size="17" style="fill:#9fc9c5">Less</text>
+<text transform="translate(636,548)" font-size="17" style="fill:#d88988">Assumptions</text>
+<text transform="translate(910,352)" font-size="17" style="fill:#d88988">Visible</text>
+<text transform="translate(7,47)" font-size="17" style="fill:#a9b7a3">Service</text>
+<text transform="translate(1165,665)" font-size="17" style="fill:#c49a6c">Prior</text>
+<text transform="translate(616,178)" font-size="17" style="fill:#d9c89e">Bundle</text>
+<text transform="translate(188,549)" font-size="17" style="fill:#d6a79f">Final</text>
+<text transform="translate(75,546)" font-size="17" style="fill:#a9b7a3">Received</text>
+<text transform="translate(895,416)" font-size="17" style="fill:#a9b7a3">FAQ</text>
+<text transform="translate(717,50)" font-size="15" style="fill:#d9c89e">Part</text>
+<text transform="translate(130,655)" font-size="15" style="fill:#9fc9c5">Electronic</text>
+<text transform="translate(693,383)" font-size="15" style="fill:#9fc9c5">Later</text>
+<text transform="translate(327,192)" font-size="15" style="fill:#b6c3dd">First</text>
+<text transform="translate(1005,669)" font-size="15" style="fill:#8fb7d0">Already</text>
+<text transform="translate(605,529) rotate(-90)" font-size="15" style="fill:#d5d2c2">Deliberately</text>
+<text transform="translate(993,238)" font-size="15" style="fill:#9fc9c5">Current</text>
+<text transform="translate(292,475)" font-size="15" style="fill:#d9c89e">Checked</text>
+<text transform="translate(1068,63)" font-size="15" style="fill:#8fb7d0">Architecture</text>
+<text transform="translate(744,591)" font-size="15" style="fill:#c49a6c">Plumbing</text>
+<text transform="translate(55,138)" font-size="15" style="fill:#c7d7b5">Remains</text>
+<text transform="translate(510,329)" font-size="15" style="fill:#a9b7a3">Next</text>
+<text transform="translate(1231,65) rotate(-90)" font-size="15" style="fill:#b6c3dd">States</text>
+<text transform="translate(289,546)" font-size="15" style="fill:#d5d2c2">Use</text>
+<text transform="translate(919,490)" font-size="15" style="fill:#d6a79f">Comparison</text>
+<text transform="translate(859,189) rotate(-90)" font-size="15" style="fill:#e0b879">Inbox</text>
+<text transform="translate(627,645)" font-size="15" style="fill:#e0b879">Ledger</text>
+<text transform="translate(843,114) rotate(-90)" font-size="15" style="fill:#a9b7a3">Optional</text>
+<text transform="translate(13,680)" font-size="15" style="fill:#c49a6c">Context</text>
+<text transform="translate(1237,516) rotate(-90)" font-size="15" style="fill:#a9b7a3">Different</text>
+<text transform="translate(1108,649) rotate(-90)" font-size="15" style="fill:#c49a6c">Event</text>
+<text transform="translate(980,580)" font-size="15" style="fill:#b6c3dd">Seconds</text>
+<text transform="translate(549,65)" font-size="15" style="fill:#9fc9c5">Automated</text>
+<text transform="translate(920,62)" font-size="15" style="fill:#d6a79f">Milliseconds</text>
+<text transform="translate(28,654)" font-size="15" style="fill:#d5d2c2">Queue</text>
+<text transform="translate(389,65)" font-size="15" style="fill:#b6c3dd">Interval</text>
+<text transform="translate(883,450)" font-size="15" style="fill:#8fb7d0">Baseline</text>
+<text transform="translate(7,17)" font-size="15" style="fill:#c7d7b5">Rekeying</text>
+<text transform="translate(435,401)" font-size="15" style="fill:#d9c89e">Vinci</text>
+<text transform="translate(17,594) rotate(-90)" font-size="15" style="fill:#a9b7a3">Questionnaire</text>
+<text transform="translate(517,306)" font-size="15" style="fill:#d5d2c2">Support</text>
+<text transform="translate(460,607)" font-size="15" style="fill:#d9c89e">Result</text>
+<text transform="translate(826,37)" font-size="14" style="fill:#e0b879">Authorization</text>
+<text transform="translate(1005,348) rotate(-90)" font-size="14" style="fill:#c49a6c">Claimresponse</text>
+</svg>

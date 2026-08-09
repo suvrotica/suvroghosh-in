@@ -21,13 +21,16 @@ const stringFields = [
 	'readingTime',
 	'notebook',
 	'status',
-	'inPlainEnglish'
+	'inPlainEnglish',
+	'seriesId',
+	'seriesChapter'
 ];
 const allowedFields = new Set([
 	...stringFields,
 	'tags',
 	'pinnedTags',
 	'series',
+	'seriesPart',
 	'published',
 	'mediaReviewed',
 	'interactiveFirst',
@@ -178,6 +181,21 @@ for (const file of postFiles) {
 		}
 	}
 	if (metadata.series !== undefined) validateStringArray(file, 'series', metadata.series);
+	const hasSeriesId = metadata.seriesId !== undefined;
+	const hasSeriesPart = metadata.seriesPart !== undefined;
+	const hasSeriesChapter = metadata.seriesChapter !== undefined;
+	if (hasSeriesId !== hasSeriesPart) {
+		errors.push(`${file}: seriesId and seriesPart must be supplied together.`);
+	}
+	if (hasSeriesChapter && (!hasSeriesId || !hasSeriesPart)) {
+		errors.push(`${file}: seriesChapter requires seriesId and seriesPart.`);
+	}
+	if (
+		metadata.seriesPart !== undefined &&
+		(!Number.isSafeInteger(metadata.seriesPart) || metadata.seriesPart <= 0)
+	) {
+		errors.push(`${file}: seriesPart must be a positive integer.`);
+	}
 	if (metadata.keyTerms !== undefined) validateStringArray(file, 'keyTerms', metadata.keyTerms);
 
 	if (typeof metadata.date === 'string' && !isCalendarDate(metadata.date)) {

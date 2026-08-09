@@ -15,15 +15,15 @@
 >
 	<div class="reading-paths__intro">
 		<div>
-			<p class="reading-paths__eyebrow">New to the site?</p>
-			<h2 id="start-here-heading">Not sure where to begin?</h2>
+			<p class="reading-paths__eyebrow">Guided reading</p>
+			<h2 id="start-here-heading">Five ways into the work</h2>
 			<p class="reading-paths__description">
-				Follow five short reading paths through the essays, healthcare systems work, science,
-				Calcutta, and fiction.
+				Choose a short route through the essays, healthcare systems work, science, Calcutta, or
+				fiction.
 			</p>
 		</div>
 		<a class="reading-paths__route-link" href={startHereHref}>
-			Explore the reading paths <span aria-hidden="true">→</span>
+			Explore all five paths <span aria-hidden="true">→</span>
 		</a>
 	</div>
 

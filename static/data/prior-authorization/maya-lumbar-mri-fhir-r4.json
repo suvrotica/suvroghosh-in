@@ -1,0 +1,1172 @@
+{
+  "resourceType": "Bundle",
+  "id": "maya-lumbar-mri-r4",
+  "type": "collection",
+  "meta": {
+    "tag": [
+      {
+        "system": "urn:example:synthetic",
+        "code": "synthetic",
+        "display": "No real patient data"
+      }
+    ]
+  },
+  "entry": [
+    {
+      "fullUrl": "https://example.invalid/fhir/Bundle/pas-request",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "pas-request",
+        "type": "collection",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "fullUrl": "https://example.invalid/fhir/Claim/prior-authorization-claim",
+            "resource": {
+              "resourceType": "Claim",
+              "id": "prior-authorization-claim",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "urn:example:synthetic:prior-authorization",
+                  "value": "maya-mri-pa-001"
+                }
+              ],
+              "status": "active",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                    "code": "professional"
+                  }
+                ]
+              },
+              "use": "preauthorization",
+              "patient": {
+                "reference": "Patient/maya-sen"
+              },
+              "created": "2099-01-01",
+              "insurer": {
+                "reference": "Organization/example-health-plan"
+              },
+              "provider": {
+                "reference": "Organization/example-ordering-clinic"
+              },
+              "priority": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+                    "code": "normal"
+                  }
+                ]
+              },
+              "careTeam": [
+                {
+                  "sequence": 1,
+                  "provider": {
+                    "reference": "Practitioner/example-ordering-clinician"
+                  },
+                  "responsible": true
+                }
+              ],
+              "supportingInfo": [
+                {
+                  "sequence": 1,
+                  "category": {
+                    "text": "Questionnaire response"
+                  },
+                  "valueReference": {
+                    "reference": "QuestionnaireResponse/mri-documentation-response"
+                  }
+                }
+              ],
+              "diagnosis": [
+                {
+                  "sequence": 1,
+                  "diagnosisReference": {
+                    "reference": "Condition/condition-current-problem"
+                  }
+                }
+              ],
+              "procedure": [
+                {
+                  "sequence": 1,
+                  "procedureReference": {
+                    "reference": "Procedure/lumbar-mri-procedure"
+                  }
+                }
+              ],
+              "insurance": [
+                {
+                  "sequence": 1,
+                  "focal": true,
+                  "coverage": {
+                    "reference": "Coverage/maya-coverage"
+                  }
+                }
+              ],
+              "item": [
+                {
+                  "sequence": 1,
+                  "productOrService": {
+                    "text": "Non-urgent outpatient lumbar MRI"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Patient/maya-sen",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "maya-sen",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "urn:example:synthetic:patient",
+                  "value": "maya-sen"
+                }
+              ],
+              "name": [
+                {
+                  "text": "Maya Sen"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Coverage/maya-coverage",
+            "resource": {
+              "resourceType": "Coverage",
+              "id": "maya-coverage",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "status": "active",
+              "beneficiary": {
+                "reference": "Patient/maya-sen"
+              },
+              "payor": [
+                {
+                  "reference": "Organization/example-health-plan"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/ServiceRequest/lumbar-mri-order",
+            "resource": {
+              "resourceType": "ServiceRequest",
+              "id": "lumbar-mri-order",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "status": "active",
+              "intent": "order",
+              "category": [
+                {
+                  "text": "Diagnostic imaging"
+                }
+              ],
+              "priority": "routine",
+              "code": {
+                "text": "Non-urgent outpatient lumbar MRI"
+              },
+              "subject": {
+                "reference": "Patient/maya-sen"
+              },
+              "requester": {
+                "reference": "Practitioner/example-ordering-clinician"
+              },
+              "insurance": [
+                {
+                  "reference": "Coverage/maya-coverage"
+                }
+              ],
+              "reasonReference": [
+                {
+                  "reference": "Condition/condition-current-problem"
+                }
+              ],
+              "supportingInfo": [
+                {
+                  "reference": "Observation/recent-clinical-assessment"
+                },
+                {
+                  "reference": "DocumentReference/narrative-management-note"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Procedure/lumbar-mri-procedure",
+            "resource": {
+              "resourceType": "Procedure",
+              "id": "lumbar-mri-procedure",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "status": "preparation",
+              "category": {
+                "text": "Diagnostic imaging"
+              },
+              "code": {
+                "text": "Proposed non-urgent outpatient lumbar MRI"
+              },
+              "subject": {
+                "reference": "Patient/maya-sen"
+              },
+              "basedOn": [
+                {
+                  "reference": "ServiceRequest/lumbar-mri-order"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Practitioner/example-ordering-clinician",
+            "resource": {
+              "resourceType": "Practitioner",
+              "id": "example-ordering-clinician",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "active": true,
+              "name": [
+                {
+                  "text": "Example Ordering Clinician (fictional)"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Organization/example-ordering-clinic",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "example-ordering-clinic",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "name": "Example Ordering Clinic (fictional)"
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Organization/example-health-plan",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "example-health-plan",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "name": "Example Health Plan (fictional)"
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Condition/condition-current-problem",
+            "resource": {
+              "resourceType": "Condition",
+              "id": "condition-current-problem",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "clinicalStatus": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                    "code": "active"
+                  }
+                ]
+              },
+              "verificationStatus": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                    "code": "confirmed"
+                  }
+                ]
+              },
+              "code": {
+                "text": "Synthetic current problem supporting the imaging order"
+              },
+              "subject": {
+                "reference": "Patient/maya-sen"
+              }
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Observation/recent-clinical-assessment",
+            "resource": {
+              "resourceType": "Observation",
+              "id": "recent-clinical-assessment",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "status": "final",
+              "code": {
+                "text": "Synthetic recent clinical assessment"
+              },
+              "subject": {
+                "reference": "Patient/maya-sen"
+              },
+              "valueString": "Present in the synthetic record; details intentionally minimized."
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/DocumentReference/narrative-management-note",
+            "resource": {
+              "resourceType": "DocumentReference",
+              "id": "narrative-management-note",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "status": "current",
+              "docStatus": "final",
+              "type": {
+                "text": "Synthetic clinical note"
+              },
+              "subject": {
+                "reference": "Patient/maya-sen"
+              },
+              "description": "Contains a fictional prior-management fact in narrative form; a human must confirm it.",
+              "content": [
+                {
+                  "attachment": {
+                    "contentType": "text/plain",
+                    "title": "Synthetic narrative note — no real patient data"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/Questionnaire/mri-documentation",
+            "resource": {
+              "resourceType": "Questionnaire",
+              "id": "mri-documentation",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "url": "urn:example:synthetic:questionnaire:mri-documentation",
+              "version": "1.0.0",
+              "status": "active",
+              "title": "Fictional lumbar imaging evidence questionnaire",
+              "item": [
+                {
+                  "linkId": "current-problem",
+                  "text": "Current problem or indication documented?",
+                  "type": "reference",
+                  "required": true
+                },
+                {
+                  "linkId": "prior-management",
+                  "text": "Prior management history documented?",
+                  "type": "reference",
+                  "required": true
+                },
+                {
+                  "linkId": "recent-assessment",
+                  "text": "Recent clinical assessment present?",
+                  "type": "reference",
+                  "required": true
+                },
+                {
+                  "linkId": "attestation",
+                  "text": "Ordering clinician attestation completed?",
+                  "type": "boolean",
+                  "required": true
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.invalid/fhir/QuestionnaireResponse/mri-documentation-response",
+            "resource": {
+              "resourceType": "QuestionnaireResponse",
+              "id": "mri-documentation-response",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "questionnaire": "Questionnaire/mri-documentation",
+              "status": "completed",
+              "subject": {
+                "reference": "Patient/maya-sen"
+              },
+              "authored": "2099-01-01T09:30:00Z",
+              "author": {
+                "reference": "Practitioner/example-ordering-clinician"
+              },
+              "source": {
+                "reference": "Practitioner/example-ordering-clinician"
+              },
+              "item": [
+                {
+                  "linkId": "current-problem",
+                  "answer": [
+                    {
+                      "valueReference": {
+                        "reference": "Condition/condition-current-problem"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "prior-management",
+                  "answer": [
+                    {
+                      "valueReference": {
+                        "reference": "DocumentReference/narrative-management-note"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "recent-assessment",
+                  "answer": [
+                    {
+                      "valueReference": {
+                        "reference": "Observation/recent-clinical-assessment"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "linkId": "attestation",
+                  "answer": [
+                    {
+                      "valueBoolean": true
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Bundle/pas-pended-response",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "pas-pended-response",
+        "type": "collection",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "fullUrl": "https://example.invalid/fhir/ClaimResponse/pas-pended",
+            "resource": {
+              "resourceType": "ClaimResponse",
+              "id": "pas-pended",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "urn:example:synthetic:prior-authorization-response",
+                  "value": "maya-mri-pa-001-pended"
+                }
+              ],
+              "status": "active",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                    "code": "professional"
+                  }
+                ]
+              },
+              "use": "preauthorization",
+              "patient": {
+                "reference": "Patient/maya-sen"
+              },
+              "created": "2099-01-01",
+              "insurer": {
+                "reference": "Organization/example-health-plan"
+              },
+              "requestor": {
+                "reference": "Organization/example-ordering-clinic"
+              },
+              "request": {
+                "reference": "Claim/prior-authorization-claim"
+              },
+              "outcome": "queued",
+              "disposition": "Pended for review in this fictional scenario."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Bundle/pas-approved-response",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "pas-approved-response",
+        "type": "collection",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "fullUrl": "https://example.invalid/fhir/ClaimResponse/pas-approved",
+            "resource": {
+              "resourceType": "ClaimResponse",
+              "id": "pas-approved",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "urn:example:synthetic:prior-authorization-response",
+                  "value": "maya-mri-pa-001-approved"
+                }
+              ],
+              "status": "active",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                    "code": "professional"
+                  }
+                ]
+              },
+              "use": "preauthorization",
+              "patient": {
+                "reference": "Patient/maya-sen"
+              },
+              "created": "2099-01-04",
+              "insurer": {
+                "reference": "Organization/example-health-plan"
+              },
+              "requestor": {
+                "reference": "Organization/example-ordering-clinic"
+              },
+              "request": {
+                "reference": "Claim/prior-authorization-claim"
+              },
+              "outcome": "complete",
+              "disposition": "Approved under the explicitly fictional evidence policy.",
+              "preAuthRef": "SYNTHETIC-PA-MAYA-MRI-001",
+              "preAuthPeriod": {
+                "start": "2099-01-04",
+                "end": "2099-01-18"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Bundle/pas-denied-response",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "pas-denied-response",
+        "type": "collection",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "fullUrl": "https://example.invalid/fhir/ClaimResponse/pas-denied",
+            "resource": {
+              "resourceType": "ClaimResponse",
+              "id": "pas-denied",
+              "meta": {
+                "tag": [
+                  {
+                    "system": "urn:example:synthetic",
+                    "code": "synthetic"
+                  }
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "urn:example:synthetic:prior-authorization-response",
+                  "value": "maya-mri-pa-001-denied"
+                }
+              ],
+              "status": "active",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+                    "code": "professional"
+                  }
+                ]
+              },
+              "use": "preauthorization",
+              "patient": {
+                "reference": "Patient/maya-sen"
+              },
+              "created": "2099-01-09",
+              "insurer": {
+                "reference": "Organization/example-health-plan"
+              },
+              "requestor": {
+                "reference": "Organization/example-ordering-clinic"
+              },
+              "request": {
+                "reference": "Claim/prior-authorization-claim"
+              },
+              "outcome": "complete",
+              "disposition": "Denied after one bounded additional-information cycle under the fictional evidence policy."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Task/additional-information",
+      "resource": {
+        "resourceType": "Task",
+        "id": "additional-information",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:example:synthetic:prior-authorization-task",
+            "value": "maya-mri-pa-001-additional-information"
+          }
+        ],
+        "status": "requested",
+        "intent": "order",
+        "code": {
+          "text": "Additional clinical information requested"
+        },
+        "focus": {
+          "reference": "Claim/prior-authorization-claim"
+        },
+        "for": {
+          "reference": "Patient/maya-sen"
+        },
+        "requester": {
+          "reference": "Organization/example-health-plan"
+        },
+        "owner": {
+          "reference": "Organization/example-ordering-clinic"
+        },
+        "reasonCode": {
+          "text": "The fictional evidence rule remains clinically insufficient."
+        },
+        "input": [
+          {
+            "type": {
+              "text": "Existing documentation response"
+            },
+            "valueReference": {
+              "reference": "QuestionnaireResponse/mri-documentation-response"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/QuestionnaireResponse/mri-documentation-response-in-progress",
+      "resource": {
+        "resourceType": "QuestionnaireResponse",
+        "id": "mri-documentation-response-in-progress",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "questionnaire": "Questionnaire/mri-documentation",
+        "status": "in-progress",
+        "subject": {
+          "reference": "Patient/maya-sen"
+        },
+        "authored": "2099-01-01T09:10:00Z",
+        "item": [
+          {
+            "linkId": "current-problem",
+            "answer": [
+              {
+                "valueReference": {
+                  "reference": "Condition/condition-current-problem"
+                }
+              }
+            ]
+          },
+          {
+            "linkId": "recent-assessment",
+            "answer": [
+              {
+                "valueReference": {
+                  "reference": "Observation/recent-clinical-assessment"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-day-11",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-day-11",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "fulfilled",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "FHIR-enabled baseline appointment; the scan is received in the fictional run.",
+        "start": "2099-01-12T09:00:00Z",
+        "end": "2099-01-12T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-fhir-day-13-identity",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-fhir-day-13-identity",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "fulfilled",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "FHIR-enabled replacement appointment after the fictional identity-reconciliation delay.",
+        "start": "2099-01-14T09:00:00Z",
+        "end": "2099-01-14T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-fhir-day-14-narrative",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-fhir-day-14-narrative",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "fulfilled",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "FHIR-enabled replacement appointment after the fictional narrative-provenance delay.",
+        "start": "2099-01-15T09:00:00Z",
+        "end": "2099-01-15T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-day-18",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-day-18",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "fulfilled",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "Portal-and-fax baseline appointment; the scan is received in the fictional counterfactual.",
+        "start": "2099-01-19T09:00:00Z",
+        "end": "2099-01-19T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-portal-day-20-identity",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-portal-day-20-identity",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "fulfilled",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "Portal-and-fax replacement appointment after the fictional identity-reconciliation delay.",
+        "start": "2099-01-21T09:00:00Z",
+        "end": "2099-01-21T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-portal-day-22-narrative",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-portal-day-22-narrative",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "fulfilled",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "Portal-and-fax replacement appointment after the fictional narrative-provenance delay.",
+        "start": "2099-01-23T09:00:00Z",
+        "end": "2099-01-23T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-fhir-day-20-expiry",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-fhir-day-20-expiry",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "booked",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "FHIR-enabled expiry fixture; the Day 20 appointment falls after the fictional authorization period.",
+        "start": "2099-01-21T09:00:00Z",
+        "end": "2099-01-21T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/Appointment/lumbar-mri-portal-day-30-expiry",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "lumbar-mri-portal-day-30-expiry",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "status": "booked",
+        "serviceCategory": [
+          {
+            "text": "Diagnostic imaging"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "Lumbar MRI"
+          }
+        ],
+        "description": "Portal-and-fax expiry fixture; the Day 30 appointment falls after the fictional authorization period.",
+        "start": "2099-01-31T09:00:00Z",
+        "end": "2099-01-31T09:30:00Z",
+        "basedOn": [
+          {
+            "reference": "ServiceRequest/lumbar-mri-order"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/maya-sen"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.invalid/fhir/OperationOutcome/example-technical-rejection",
+      "resource": {
+        "resourceType": "OperationOutcome",
+        "id": "example-technical-rejection",
+        "meta": {
+          "tag": [
+            {
+              "system": "urn:example:synthetic",
+              "code": "synthetic"
+            }
+          ]
+        },
+        "issue": [
+          {
+            "severity": "error",
+            "code": "invalid",
+            "diagnostics": "Synthetic example only: a malformed request would fail technical intake."
+          }
+        ]
+      }
+    }
+  ]
+}

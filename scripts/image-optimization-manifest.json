@@ -9588,6 +9588,21 @@
       "sourceHash": "9743ea8247d9ad260c41e963d47ee1be2a6d602cdb5c92bc0f56a7eb8dac7ed1",
       "width": 1200
     },
+    "static/images/visualizations/prior-authorization-machine.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 78492,
+      "outputHash": "a5c25134ceee16c96ec3cdb3f9bbe6dc87c82a24fa9f1908371a3b39a9fa1716",
+      "resized": false,
+      "sourceBytes": 78492,
+      "sourceHash": "a5c25134ceee16c96ec3cdb3f9bbe6dc87c82a24fa9f1908371a3b39a9fa1716",
+      "width": 1600
+    },
     "static/images/visualizations/reaction-diffusion/guided-observations.png": {
       "format": "PNG",
       "height": 828,

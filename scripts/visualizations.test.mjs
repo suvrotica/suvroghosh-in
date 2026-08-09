@@ -578,3 +578,82 @@ test('the Bias Archipelago preserves its hybrid, deterministic, and accessible p
 	assert.ok(fs.existsSync(thumbnail));
 	assert.ok(fs.statSync(thumbnail).size < 750 * 1024);
 });
+
+test('the prior-authorization machine is a published, reproducible healthcare exhibit', () => {
+	const post = read('src', 'lib', 'posts', 'the-prior-authorization-machine.md');
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const shell = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'prior-authorization',
+		'PriorAuthorizationMachine.svelte'
+	);
+	const engine = read(
+		'src',
+		'lib',
+		'visualizations',
+		'prior-authorization',
+		'engine',
+		'compile-scenario.ts'
+	);
+	const poster = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'prior-authorization-machine.png'
+	);
+	const fhirDownload = path.join(
+		root,
+		'static',
+		'data',
+		'prior-authorization',
+		'maya-lumbar-mri-fhir-r4.json'
+	);
+
+	assert.match(
+		post,
+		/title: "The Prior Authorization Machine: a patient, an MRI, and the invisible decisions between them"/
+	);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /thumbnail: "\/images\/visualizations\/prior-authorization-machine\.png"/);
+	assert.match(post, /PriorAuthorizationMachine/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /\/blog\/healthcare-it\/fhir-the-universal-language-of-health-data/);
+	assert.match(post, /\/blog\/healthcare-it\/explaining-the-healthcare-it-gap-as-continuity/);
+	assert.match(post, /\/consulting/);
+
+	assert.match(registry, /'prior-authorization-machine':\s*\{/);
+	assert.match(registry, /subjects: \['Healthcare', 'Computer Science'\]/);
+	assert.match(
+		registry,
+		/href: '\/blog\/visualizations\/the-prior-authorization-machine'/
+	);
+	assert.match(
+		landing,
+		/'the-prior-authorization-machine':\s*visualizationSummaries\['prior-authorization-machine'\]\.subjects/
+	);
+	assert.match(landing, /'Healthcare'/);
+
+	assert.match(shell, /CompactJourney/);
+	assert.match(shell, /import\('\.\/MachineStage\.svelte'\)/);
+	assert.match(engine, /compilePriorAuthorizationScenario/);
+	assert.ok(fs.existsSync(poster), 'missing deterministic prior-authorization poster');
+	assert.ok(fs.existsSync(fhirDownload), 'missing downloadable synthetic FHIR fixture');
+	assert.ok(fs.statSync(poster).size < 750 * 1024, 'poster exceeds 750 kB');
+
+	const fhir = JSON.parse(fs.readFileSync(fhirDownload, 'utf8'));
+	assert.equal(fhir.resourceType, 'Bundle');
+	assert.equal(fhir.meta?.tag?.some((tag) => tag.code === 'synthetic'), true);
+});

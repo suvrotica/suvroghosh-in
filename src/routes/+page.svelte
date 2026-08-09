@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
+	import FeaturedSeriesIndex from '$lib/components/home/FeaturedSeriesIndex.svelte';
 	import LivingHero from '$lib/components/home/LivingHero.svelte';
 	import ReadingPathRail from '$lib/components/home/ReadingPathRail.svelte';
 	import RecentSignalGrid from '$lib/components/home/RecentSignalGrid.svelte';
@@ -32,6 +33,8 @@
 
 <div class="living-home" data-living-home>
 	<LivingHero />
+
+	<FeaturedSeriesIndex series={data.featuredSeries} />
 
 	<ReadingPathRail paths={data.readingPaths} />
 

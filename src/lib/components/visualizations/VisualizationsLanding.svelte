@@ -25,13 +25,16 @@
 		'lightning-atlas': ['Physics', 'Scientific Computing'],
 		'reaction-diffusion-atlas': visualizationSummaries['reaction-diffusion-atlas'].subjects,
 		'belousov-zhabotinsky-laboratory':
-			visualizationSummaries['belousov-zhabotinsky-laboratory'].subjects
+			visualizationSummaries['belousov-zhabotinsky-laboratory'].subjects,
+		'the-prior-authorization-machine':
+			visualizationSummaries['prior-authorization-machine'].subjects
 	};
 	const subjects = [
 		'All',
 		'Physics',
 		'Chemistry',
 		'Biology',
+		'Healthcare',
 		'Mathematics',
 		'Statistics',
 		'Algorithms',
@@ -63,6 +66,14 @@
 					)
 				)
 	);
+
+	function seriesLabel(post: BlogPostSummary) {
+		const labels = [...(post.series ?? [])];
+		if (post.seriesPart !== undefined) {
+			labels.push(`Part ${post.seriesPart}${post.seriesChapter ? ` · ${post.seriesChapter}` : ''}`);
+		}
+		return labels.join(' · ');
+	}
 </script>
 
 <div class="visualizations-landing page-enter mx-auto max-w-6xl pb-8">
@@ -99,8 +110,8 @@
 			</h1>
 			<p class="mb-0 max-w-3xl text-left text-lg leading-relaxed !text-neutral-200 sm:text-xl">
 				An interactive laboratory for exploring science, mathematics, statistics, algorithms,
-				computer science, and machine learning with D3, Observable notebooks, p5.js, Canvas, SVG,
-				GLSL, and WebGL.
+				computer science, healthcare systems, and machine learning with D3, Observable notebooks,
+				p5.js, Canvas, SVG, GLSL, and WebGL.
 			</p>
 		</div>
 	</section>
@@ -211,11 +222,11 @@
 							{/if}
 						</div>
 						<div class="p-5">
-							{#if post.series?.length}
+							{#if seriesLabel(post)}
 								<p
 									class="mb-2 text-xs font-bold tracking-[0.12em] text-cyan-700 uppercase dark:text-cyan-300"
 								>
-									{post.series.join(' · ')}
+									{seriesLabel(post)}
 								</p>
 							{/if}
 							<div class="mb-3 flex flex-wrap gap-2">

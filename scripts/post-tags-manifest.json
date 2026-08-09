@@ -11190,6 +11190,32 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-09"
+		},
+		"src/lib/posts/the-prior-authorization-machine.md": {
+			"bodyHash": "f93fd5d52ab372b796d3e66c105bf28fb84703f93d72c051d86d13ed5f63305a",
+			"hashVersion": 2,
+			"revisionHash": "d74c829679961634c5f2e975c367d00739d7f2f86122c7cbc5bfb1f7668ddd5a",
+			"generatedTags": [
+				"Prior Authorization",
+				"FHIR",
+				"Interoperability",
+				"Healthcare IT",
+				"Data Visualization",
+				"Syntactically Valid",
+				"SMART App Launch",
+				"Authorization API",
+				"Automated Processing",
+				"PAS"
+			],
+			"pinnedTags": [
+				"Prior Authorization",
+				"FHIR",
+				"Interoperability",
+				"Healthcare IT",
+				"Data Visualization"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-09"
 		}
 	},
 	"maxTags": 10

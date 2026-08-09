@@ -31,6 +31,11 @@ export type PublishedPost = BlogPostMetadata & {
 	derivedTopics: string[];
 };
 
+export type PublishedSeriesPart = PublishedPost & {
+	seriesId: string;
+	seriesPart: number;
+};
+
 export type PublishedArchiveMonth = {
 	year: string;
 	month: string;
@@ -196,6 +201,37 @@ function postLink(post: PublishedPost) {
 
 export function getPublishedPosts() {
 	return publishedPosts.slice();
+}
+
+export function getPublishedSeries(seriesId: string): PublishedSeriesPart[] {
+	const parts: PublishedSeriesPart[] = [];
+	const seenParts = new Map<number, string>();
+
+	for (const post of publishedPosts) {
+		if (post.seriesId !== seriesId) continue;
+		const part = post.seriesPart;
+
+		if (typeof part !== 'number' || !Number.isSafeInteger(part) || part <= 0) {
+			throw new Error(
+				`Published series "${seriesId}" has an invalid part number in ${post.slug}.md.`
+			);
+		}
+
+		const existingSlug = seenParts.get(part);
+		if (existingSlug) {
+			throw new Error(
+				`Published series "${seriesId}" contains duplicate part ${part} in ${existingSlug}.md and ${post.slug}.md.`
+			);
+		}
+
+		seenParts.set(part, post.slug);
+		parts.push({ ...post, seriesId, seriesPart: part });
+	}
+
+	return parts.sort(
+		(a, b) =>
+			a.seriesPart - b.seriesPart || a.date.localeCompare(b.date) || a.slug.localeCompare(b.slug)
+	);
 }
 
 export function getPublishedPost(slug: string) {
