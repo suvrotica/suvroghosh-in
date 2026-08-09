@@ -38,7 +38,7 @@
 	}: Props = $props();
 
 	let host: HTMLButtonElement;
-	let engine: ChitinEngine | undefined;
+	let engine = $state.raw<ChitinEngine | undefined>(undefined);
 	let status = $state<ChitinEngineStatus>('loading');
 	let renderer = $state<ChitinRendererKind>('canvas2d');
 	let message = $state('Preparing the specimen chamber.');
@@ -133,36 +133,45 @@
 	});
 
 	$effect(() => {
-		engine?.setState({ ...exhibitState, genome: { ...exhibitState.genome } });
+		const nextState = { ...exhibitState, genome: { ...exhibitState.genome } };
+		engine?.setState(nextState);
 	});
 
 	$effect(() => {
-		engine?.setReducedMotion(reducedMotion || systemReducedMotion);
+		const nextReducedMotion = reducedMotion || systemReducedMotion;
+		engine?.setReducedMotion(nextReducedMotion);
 	});
 
 	$effect(() => {
-		engine?.setPosterMode(posterMode);
+		const nextPosterMode = posterMode;
+		engine?.setPosterMode(nextPosterMode);
 	});
 
 	$effect(() => {
-		engine?.setSelectedSegment(selectedSegment);
+		const nextSelectedSegment = selectedSegment;
+		engine?.setSelectedSegment(nextSelectedSegment);
 	});
 
 	$effect(() => {
-		engine?.setThreat(threatActive);
+		const nextThreatActive = threatActive;
+		engine?.setThreat(nextThreatActive);
 	});
 
 	$effect(() => {
-		if (startleSerial > seenStartle) {
-			seenStartle = startleSerial;
-			engine?.startle();
+		const currentEngine = engine;
+		const nextStartleSerial = startleSerial;
+		if (currentEngine && nextStartleSerial > seenStartle) {
+			seenStartle = nextStartleSerial;
+			currentEngine.startle();
 		}
 	});
 
 	$effect(() => {
-		if (singleStepSerial > seenSingleStep) {
-			seenSingleStep = singleStepSerial;
-			engine?.singleStep();
+		const currentEngine = engine;
+		const nextSingleStepSerial = singleStepSerial;
+		if (currentEngine && nextSingleStepSerial > seenSingleStep) {
+			seenSingleStep = nextSingleStepSerial;
+			currentEngine.singleStep();
 		}
 	});
 </script>

@@ -1,11 +1,13 @@
 import AxeBuilder from '@axe-core/playwright';
+import { readFile } from 'node:fs/promises';
 import {
 	expect,
 	test,
 	type Browser,
 	type Download,
 	type Locator,
-	type Page
+	type Page,
+	type Route
 } from '@playwright/test';
 
 const articlePath = '/blog/visualizations/the-chitin-engine';
@@ -13,6 +15,9 @@ const articleTitle = 'The Chitin Engine: A Xenobiological Creature Foundry';
 const fixedPath = `${articlePath}?ce_v=1&ce_seed=browser-audit-1847&ce_preset=glassback-knifemite&ce_world=terminator-line&ce_view=specimen`;
 const pngSignature = [137, 80, 78, 71, 13, 10, 26, 10] as const;
 const runtimeDiagnostics = new WeakMap<Page, string[]>();
+const engineManifestKey = 'src/lib/visualizations/chitin-engine/engine.ts';
+
+type ViteManifest = Record<string, { file?: string }>;
 
 function foundry(page: Page): Locator {
 	return page.getByTestId('chitin-engine');
@@ -110,6 +115,49 @@ async function expectNoDuplicateIds(page: Page): Promise<void> {
 		return [...counts].filter(([, count]) => count > 1);
 	});
 	expect(duplicates).toEqual([]);
+}
+
+async function expectFrozenCanvasChange(page: Page, before: Buffer): Promise<Buffer> {
+	await expect
+		.poll(
+			async () => (await liveCanvas(page).screenshot({ animations: 'disabled' })).equals(before),
+			{ timeout: 10_000, intervals: [50, 100, 250] }
+		)
+		.toBe(false);
+	return liveCanvas(page).screenshot({ animations: 'disabled' });
+}
+
+async function productionEngineAsset(): Promise<string | undefined> {
+	try {
+		const source = await readFile('.svelte-kit/output/client/.vite/manifest.json', 'utf8');
+		const asset = (JSON.parse(source) as ViteManifest)[engineManifestKey]?.file;
+		if (!asset) throw new Error(`Missing ${engineManifestKey} in the Vite client manifest.`);
+		return asset;
+	} catch (error) {
+		if ((error as { code?: unknown }).code === 'ENOENT') return undefined;
+		throw error;
+	}
+}
+
+async function holdEngineImport(page: Page) {
+	let intercepted = 0;
+	let releaseRequest = () => {};
+	const held = new Promise<void>((resolve) => {
+		releaseRequest = resolve;
+	});
+	const handler = async (route: Route) => {
+		intercepted += 1;
+		await held;
+		await route.continue();
+	};
+	const productionAsset = await productionEngineAsset();
+	if (productionAsset) await page.route(`**/${productionAsset}*`, handler);
+	await page.route('**/src/lib/visualizations/chitin-engine/engine.ts*', handler);
+
+	return {
+		interceptionCount: () => intercepted,
+		release: releaseRequest
+	};
 }
 
 test.beforeEach(({ page }) => {
@@ -245,6 +293,68 @@ test('rebuild, mutation, hatch, world and diagnostic views update one shareable 
 	}
 	await expect(root.locator('.live-region')).toContainText(/Hatched deterministic specimen/iu);
 	await expect(liveCanvas(page)).toHaveCount(1);
+});
+
+test('state changes still reach an engine whose lazy import resolves after hydration', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	const engineImport = await holdEngineImport(page);
+	await page.goto(fixedPath, { waitUntil: 'domcontentloaded' });
+	await expect.poll(engineImport.interceptionCount).toBe(1);
+	await page.evaluate(
+		() =>
+			new Promise<void>((resolve) =>
+				requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
+			)
+	);
+	engineImport.release();
+	const root = await waitForCurrentFoundry(page);
+	expect(engineImport.interceptionCount()).toBe(1);
+	const frame = await liveCanvas(page).screenshot({ animations: 'disabled' });
+
+	const bodyControls = await openControlsSection(root, 'Body plan');
+	await bodyControls
+		.getByRole('combobox', { name: 'Curated specimen' })
+		.selectOption('reactor-mantis');
+	await expect(root.getByLabel('Deterministic seed')).toHaveValue('reactor-6103');
+	await expectFrozenCanvasChange(page, frame);
+});
+
+test('preset, morphology, view, world and mutation controls each redraw the frozen canvas', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	const root = await waitForFoundry(page);
+	let frame = await liveCanvas(page).screenshot({ animations: 'disabled' });
+
+	const bodyControls = await openControlsSection(root, 'Body plan');
+	await bodyControls
+		.getByRole('combobox', { name: 'Curated specimen' })
+		.selectOption('reactor-mantis');
+	await expect(root.getByLabel('Deterministic seed')).toHaveValue('reactor-6103');
+	frame = await expectFrozenCanvasChange(page, frame);
+
+	await bodyControls.getByRole('slider', { name: 'Body segments' }).fill('14');
+	await expect(bodyControls.getByRole('slider', { name: 'Body segments' })).toHaveValue('14');
+	frame = await expectFrozenCanvasChange(page, frame);
+
+	await root.getByRole('button', { name: 'anatomy', exact: true }).click();
+	await expect(root.getByRole('button', { name: 'anatomy', exact: true })).toHaveAttribute(
+		'aria-pressed',
+		'true'
+	);
+	frame = await expectFrozenCanvasChange(page, frame);
+
+	const worldControls = await openControlsSection(root, 'World');
+	await worldControls.getByRole('combobox', { name: 'World preset' }).selectOption('orbital-ruin');
+	await expect(readout(page)).toContainText('Orbital Ruin');
+	frame = await expectFrozenCanvasChange(page, frame);
+
+	const seedBeforeMutation = await seedValue(page);
+	await root.getByTestId('chitin-mutate').click();
+	await expect.poll(() => seedValue(page)).not.toBe(seedBeforeMutation);
+	await expectFrozenCanvasChange(page, frame);
 });
 
 test('reduced motion remains still while keyboard controls and a single gait step stay usable', async ({
