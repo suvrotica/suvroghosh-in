@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T23:46:46.592153+00:00",
+  "generatedAt": "2026-08-09T01:54:55.572752+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1727,25 +1727,25 @@
       "wordCount": 130
     },
     "calcutta-footpath-simulator-ekdom-side-diye-jaan": {
-      "generatedAt": "2026-07-25T00:35:30.688109+00:00",
+      "generatedAt": "2026-08-09T01:54:54.820980+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/calcutta-footpath-simulator-ekdom-side-diye-jaan.svg",
       "source": "src/lib/posts/calcutta-footpath-simulator-ekdom-side-diye-jaan.md",
-      "sourceHash": "e7b440f3cab7e3b28f6a99d1be325c5006c7043f8e19363e42f61aa7f4596066",
-      "sourceModified": "2026-07-25T00:35:00.791072+00:00",
+      "sourceHash": "52b85d624b6009b8b532a71e4c4d0bcef263cf51465422d154f1f95a80dd2a94",
+      "sourceModified": "2026-08-09T01:54:42.885746+00:00",
       "topWords": [
-        "Game",
-        "Pause",
-        "Browser",
-        "Fullscreen",
         "Walk",
+        "Route",
+        "Game",
+        "Turn",
+        "Side",
         "Street",
-        "Use",
-        "Press",
-        "Mute",
-        "Touch",
-        "Stamina",
-        "Morale"
+        "Traffic",
+        "Space",
+        "Click",
+        "Tap",
+        "Visible",
+        "Map"
       ],
       "wordCount": 130
     },

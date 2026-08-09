@@ -8675,6 +8675,22 @@
       "sourceHash": "15db8b70c83141535a8b66b65d6caf1268c7203a3c86a1063c1ab9017dc3cde5",
       "width": 360
     },
+    "static/images/games/calcutta-footpath-facade-albedo-v2.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1024,
+      "outputBytes": 226811,
+      "outputHash": "acae17d939222515afb827b16285111e0c49e3913d22146e9412ce4c852ffc26",
+      "psnrDb": 36.01,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 285324,
+      "sourceHash": "ef8520fa5f29a6adec762e6ba514cfc2838beda0ddcb86d8d3378cd6adf89ff4",
+      "width": 1024
+    },
     "static/images/games/calcutta-footpath-simulator-cover.png": {
       "format": "PNG",
       "height": 800,

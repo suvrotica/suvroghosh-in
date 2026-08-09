@@ -1,19 +1,33 @@
-export type InputCommand = 'pause' | 'mute' | 'fullscreen' | 'restart';
+import type { ControlScheme } from './settings';
+
+export type InputCommand =
+	| 'pause'
+	| 'mute'
+	| 'fullscreen'
+	| 'restart'
+	| 'interact'
+	| 'turn-around'
+	| 'stop';
 
 type CommandHandler = (command: InputCommand) => void;
 
-const MOVEMENT_KEYS = new Set([
-	'arrowup',
-	'arrowdown',
-	'arrowleft',
-	'arrowright',
-	'w',
-	'a',
-	's',
-	'd'
+const ARROW_KEYS = new Set(['arrowup', 'arrowdown', 'arrowleft', 'arrowright']);
+const EXPERIENCED_KEYS = new Set(['w', 'a', 's', 'd']);
+const HURRY_KEYS = new Set(['shift', ' ']);
+const GAME_KEYS = new Set([
+	...ARROW_KEYS,
+	...EXPERIENCED_KEYS,
+	...HURRY_KEYS,
+	'escape',
+	'p',
+	'm',
+	'f',
+	'r',
+	'enter',
+	'e',
+	't',
+	'x'
 ]);
-const DASH_KEYS = new Set(['shift', ' ']);
-const GAME_KEYS = new Set([...MOVEMENT_KEYS, ...DASH_KEYS, 'escape', 'p', 'm', 'f', 'r']);
 
 function editableTarget(target: EventTarget | null): boolean {
 	return (
@@ -26,7 +40,7 @@ export class GameInput {
 	private keys = new Set<string>();
 	private touchX = 0;
 	private touchY = 0;
-	private touchDash = false;
+	private touchHurry = false;
 	private active = false;
 	private destroyed = false;
 	private readonly onCommand: CommandHandler;
@@ -42,13 +56,15 @@ export class GameInput {
 		if (!this.active || editableTarget(event.target)) return;
 		const key = event.key.toLocaleLowerCase('en');
 		if (!GAME_KEYS.has(key)) return;
-
 		event.preventDefault();
 		if (!event.repeat) {
 			if (key === 'escape' || key === 'p') this.onCommand('pause');
 			else if (key === 'm') this.onCommand('mute');
 			else if (key === 'f') this.onCommand('fullscreen');
 			else if (key === 'r') this.onCommand('restart');
+			else if (key === 'enter' || key === 'e') this.onCommand('interact');
+			else if (key === 't') this.onCommand('turn-around');
+			else if (key === 'x') this.onCommand('stop');
 		}
 		this.keys.add(key);
 	};
@@ -70,36 +86,43 @@ export class GameInput {
 	}
 
 	setTouchDash(pressed: boolean): void {
-		this.touchDash = pressed;
+		this.touchHurry = pressed;
 	}
 
-	vector(): { x: number; y: number; dash: boolean; source: 'keyboard' | 'touch' | 'gamepad' } {
-		let x =
-			(this.keys.has('arrowright') || this.keys.has('d') ? 1 : 0) -
-			(this.keys.has('arrowleft') || this.keys.has('a') ? 1 : 0);
-		let y =
-			(this.keys.has('arrowdown') || this.keys.has('s') ? 1 : 0) -
-			(this.keys.has('arrowup') || this.keys.has('w') ? 1 : 0);
-		let dash = Array.from(DASH_KEYS).some((key) => this.keys.has(key));
+	vector(controlScheme: ControlScheme = 'simple'): {
+		x: number;
+		y: number;
+		dash: boolean;
+		source: 'keyboard' | 'touch' | 'gamepad';
+	} {
+		let x = (this.keys.has('arrowright') ? 1 : 0) - (this.keys.has('arrowleft') ? 1 : 0);
+		let y = (this.keys.has('arrowdown') ? 1 : 0) - (this.keys.has('arrowup') ? 1 : 0);
+		if (controlScheme === 'experienced') {
+			x += (this.keys.has('d') ? 1 : 0) - (this.keys.has('a') ? 1 : 0);
+			y += (this.keys.has('s') ? 1 : 0) - (this.keys.has('w') ? 1 : 0);
+		}
+		let dash = [...HURRY_KEYS].some((key) => this.keys.has(key));
 		let source: 'keyboard' | 'touch' | 'gamepad' = 'keyboard';
 
-		if (Math.hypot(this.touchX, this.touchY) > 0.08 || this.touchDash) {
+		if (Math.hypot(this.touchX, this.touchY) > 0.08 || this.touchHurry) {
 			x = this.touchX;
 			y = this.touchY;
-			dash = this.touchDash;
+			dash = this.touchHurry;
 			source = 'touch';
 		}
 
-		const pads = navigator.getGamepads?.() ?? [];
-		const gamepad = Array.from(pads).find((pad) => pad?.connected);
-		if (gamepad) {
-			const gamepadX = Math.abs(gamepad.axes[0] ?? 0) > 0.16 ? (gamepad.axes[0] ?? 0) : 0;
-			const gamepadY = Math.abs(gamepad.axes[1] ?? 0) > 0.16 ? (gamepad.axes[1] ?? 0) : 0;
-			if (Math.hypot(gamepadX, gamepadY) > 0.08 || gamepad.buttons[0]?.pressed) {
-				x = gamepadX;
-				y = gamepadY;
-				dash = Boolean(gamepad.buttons[0]?.pressed);
-				source = 'gamepad';
+		if (controlScheme === 'experienced') {
+			const pads = navigator.getGamepads?.() ?? [];
+			const gamepad = Array.from(pads).find((pad) => pad?.connected);
+			if (gamepad) {
+				const gamepadX = Math.abs(gamepad.axes[0] ?? 0) > 0.16 ? (gamepad.axes[0] ?? 0) : 0;
+				const gamepadY = Math.abs(gamepad.axes[1] ?? 0) > 0.16 ? (gamepad.axes[1] ?? 0) : 0;
+				if (Math.hypot(gamepadX, gamepadY) > 0.08 || gamepad.buttons[0]?.pressed) {
+					x = gamepadX;
+					y = gamepadY;
+					dash = Boolean(gamepad.buttons[0]?.pressed);
+					source = 'gamepad';
+				}
 			}
 		}
 
@@ -115,7 +138,7 @@ export class GameInput {
 		this.keys.clear();
 		this.touchX = 0;
 		this.touchY = 0;
-		this.touchDash = false;
+		this.touchHurry = false;
 	};
 
 	destroy(): void {

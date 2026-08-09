@@ -38,18 +38,19 @@
 	let host: HTMLDivElement;
 	let canvas: HTMLCanvasElement;
 	let engine: EnginePublicApi | null = null;
-	let dragPointer: number | null = null;
-	let dragOriginX = 0;
-	let dragOriginY = 0;
+	let pointerId: number | null = null;
+	let pointerStartX = 0;
+	let pointerStartY = 0;
+	let pointerLastX = 0;
+	let pointerLastY = 0;
+	let looking = $state(false);
 
 	export function pause(byVisibility = false) {
 		engine?.pause(byVisibility);
 	}
-
 	export function resume() {
 		engine?.resume();
 	}
-
 	export function restart(
 		nextSeed: string,
 		withTutorial: boolean,
@@ -58,64 +59,80 @@
 		engine?.restart(nextSeed, withTutorial, nextPreviousFailedRuns);
 		canvas?.focus({ preventScroll: true });
 	}
-
 	export function setTouchVector(x: number, y: number) {
 		engine?.setTouchVector(x, y);
 	}
-
 	export function setTouchDash(pressed: boolean) {
 		engine?.setTouchDash(pressed);
 	}
-
 	export function focusCanvas() {
 		canvas?.focus({ preventScroll: true });
 	}
-
-	export function enableAudioFromGesture() {
-		engine?.enableAudioFromGesture();
+	export function enableAudioFromGesture(): Promise<boolean> {
+		return engine?.enableAudioFromGesture() ?? Promise.resolve(false);
+	}
+	export function stopWalking() {
+		engine?.stopWalking();
+	}
+	export function turnAround() {
+		engine?.turnAround();
+	}
+	export function interact() {
+		engine?.interact();
 	}
 
-	function updateDrag(event: PointerEvent): void {
-		if (event.pointerId !== dragPointer || settings.controlScheme !== 'drag') return;
+	function beginPointer(event: PointerEvent): void {
+		if (pointerId !== null) return;
+		if (event.pointerType === 'mouse' && event.button !== 0 && event.button !== 2) return;
 		event.preventDefault();
-		const radius = 82;
-		const x = event.clientX - dragOriginX;
-		const y = event.clientY - dragOriginY;
-		const length = Math.max(1, Math.hypot(x, y));
-		const scale = length > radius ? radius / length : 1;
-		engine?.setTouchVector((x * scale) / radius, (y * scale) / radius);
-	}
-
-	function beginDrag(event: PointerEvent): void {
-		if (
-			settings.controlScheme !== 'drag' ||
-			dragPointer !== null ||
-			(event.pointerType === 'mouse' && event.button !== 0)
-		) {
-			return;
-		}
-		event.preventDefault();
-		dragPointer = event.pointerId;
-		dragOriginX = event.clientX;
-		dragOriginY = event.clientY;
+		pointerId = event.pointerId;
+		pointerStartX = pointerLastX = event.clientX;
+		pointerStartY = pointerLastY = event.clientY;
+		looking = event.pointerType === 'mouse' && event.button === 2;
 		canvas.setPointerCapture(event.pointerId);
 		canvas.focus({ preventScroll: true });
 	}
 
-	function endDrag(event?: PointerEvent): void {
-		if (event && event.pointerId !== dragPointer) return;
-		const pointerId = dragPointer;
-		dragPointer = null;
-		engine?.setTouchVector(0, 0);
-		if (pointerId !== null && canvas?.hasPointerCapture(pointerId)) {
-			canvas.releasePointerCapture(pointerId);
+	function movePointer(event: PointerEvent): void {
+		if (event.pointerId !== pointerId) return;
+		const totalDistance = Math.hypot(event.clientX - pointerStartX, event.clientY - pointerStartY);
+		if (looking || totalDistance > (event.pointerType === 'touch' ? 18 : 8)) {
+			looking = true;
+			const deltaX = event.clientX - pointerLastX;
+			const deltaY = event.clientY - pointerLastY;
+			engine?.setLookOffset(deltaX, deltaY, true);
 		}
+		pointerLastX = event.clientX;
+		pointerLastY = event.clientY;
+	}
+
+	function endPointer(event: PointerEvent): void {
+		if (event.pointerId !== pointerId) return;
+		event.preventDefault();
+		const wasLooking = looking;
+		const movement = Math.hypot(event.clientX - pointerStartX, event.clientY - pointerStartY);
+		pointerId = null;
+		looking = false;
+		engine?.setLookOffset(0, 0, false);
+		if (!wasLooking && movement < (event.pointerType === 'touch' ? 18 : 8)) {
+			engine?.setWalkTarget(event.clientX, event.clientY);
+		}
+		if (canvas?.hasPointerCapture(event.pointerId)) canvas.releasePointerCapture(event.pointerId);
+	}
+
+	function cancelPointer(event?: PointerEvent): void {
+		if (event && event.pointerId !== pointerId) return;
+		const captured = pointerId;
+		pointerId = null;
+		looking = false;
+		engine?.setLookOffset(0, 0, false);
+		if (captured !== null && canvas?.hasPointerCapture(captured))
+			canvas.releasePointerCapture(captured);
 	}
 
 	$effect(() => {
 		const currentSettings = settings;
 		engine?.setSettings(currentSettings);
-		if (currentSettings.controlScheme !== 'drag' && dragPointer !== null) endDrag();
 	});
 
 	onMount(() => {
@@ -150,7 +167,7 @@
 
 		return () => {
 			disposed = true;
-			endDrag();
+			cancelPointer();
 			engine = null;
 			mountedEngine?.destroy();
 		};
@@ -159,29 +176,30 @@
 
 <div
 	bind:this={host}
-	class:drag-mode={settings.controlScheme === 'drag'}
+	class:looking
 	class="game-surface"
 	data-control-scheme={settings.controlScheme}
 >
 	<canvas
 		bind:this={canvas}
 		tabindex="0"
-		aria-label="Calcutta Footpath Simulator street. Guide an ordinary pedestrian through a changing pavement full of moving urban hazards."
+		aria-label="A three-dimensional North Calcutta neighbourhood. Click or tap a clear part of the road to walk there. Arrow Up walks forward, Left and Right turn, Down steps back, Space hurries, and Escape pauses."
 		aria-describedby={`${uid}-canvas-help`}
 		oncontextmenu={(event) => event.preventDefault()}
-		onpointerdown={beginDrag}
-		onpointermove={updateDrag}
-		onpointerup={endDrag}
-		onpointercancel={endDrag}
-		onlostpointercapture={endDrag}
+		onpointerdown={beginPointer}
+		onpointermove={movePointer}
+		onpointerup={endPointer}
+		onpointercancel={cancelPointer}
+		onlostpointercapture={cancelPointer}
 	>
-		Your browser cannot display the game canvas. The instructions and game description remain
-		available as ordinary text below the game.
+		Your browser cannot display the three-dimensional street. Instructions and results remain
+		available as ordinary text.
 	</canvas>
 	<p id={`${uid}-canvas-help`} class="sr-only">
-		Use WASD or arrow keys to move, Shift or Space to dash and squeeze, P or Escape to pause, M to
-		mute, and F for fullscreen. Touch controls appear on touch devices; Drag to walk can be chosen
-		in settings. Important warnings and results are also shown outside the canvas.
+		Click or tap the road to walk there. Arrow Up walks forward. Left and Right turn. Down steps
+		back. Space hurries briefly. Escape pauses. Press Enter when a nearby tea or food prompt is
+		visible. Hold the right mouse button and drag to look around; releasing it returns the view
+		behind you. Every important sound warning also appears as text.
 	</p>
 </div>
 
@@ -190,7 +208,7 @@
 		position: absolute;
 		inset: 0;
 		overflow: hidden;
-		background: #282521;
+		background: #8b897f;
 		touch-action: none;
 		overscroll-behavior: contain;
 	}
@@ -200,18 +218,14 @@
 		width: 100%;
 		height: 100%;
 		outline: none;
+		cursor: crosshair;
 		touch-action: none;
 		user-select: none;
 	}
 
-	.drag-mode canvas {
-		cursor: grab;
-	}
-
-	.drag-mode canvas:active {
+	.looking canvas {
 		cursor: grabbing;
 	}
-
 	canvas:focus-visible {
 		outline: 3px solid #f2c14e;
 		outline-offset: -5px;

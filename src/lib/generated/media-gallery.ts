@@ -3359,6 +3359,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 220
 		},
 		{
+			"name": "games/calcutta-footpath-facade-albedo-v2.jpg",
+			"src": "/images/games/calcutta-footpath-facade-albedo-v2.jpg",
+			"bytes": 226811,
+			"width": 1024,
+			"height": 1024
+		},
+		{
 			"name": "games/calcutta-footpath-simulator-cover.png",
 			"src": "/images/games/calcutta-footpath-simulator-cover.png",
 			"bytes": 362834,

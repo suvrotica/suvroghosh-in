@@ -105,10 +105,43 @@ export interface GameCounters {
 	potholesEntered: number;
 	narrowGaps: number;
 	recklessDashes: number;
+	drainsEntered?: number;
 	longestStretch: number;
 	currentStretch: number;
 	collisionFreeSections: number;
 	usefulSnacks: number;
+	teaStops?: number;
+	turnArounds?: number;
+	waits?: number;
+}
+
+export interface RouteTracePoint {
+	x: number;
+	z: number;
+	atMs: number;
+	kind?: 'walk' | 'tea' | 'food' | 'turn-around' | 'incident';
+	label?: string;
+}
+
+export interface RouteSummarySnapshot {
+	points: readonly (RouteTracePoint & { edgeId?: string; heading?: number })[];
+	annotations: readonly {
+		id: string;
+		kind: string;
+		atMs: number;
+		label: string;
+		x: number;
+		z: number;
+		edgeId?: string;
+	}[];
+	visitedEdgeIds: readonly string[];
+	distanceM: number;
+	shortestDistanceM: number;
+	detourDistanceM: number;
+	turns: number;
+	turnArounds: number;
+	stops: number;
+	teaStops: number;
 }
 
 export interface HudSnapshot {
@@ -129,6 +162,14 @@ export interface HudSnapshot {
 	seed: string;
 	dashReady: boolean;
 	pausedByVisibility: boolean;
+	destinationMetres?: number;
+	streetName?: string;
+	interactionPrompt?: string;
+	visualCue?: string;
+	highContrastWarnings?: boolean;
+	walkingAutomatically?: boolean;
+	visitedEdges?: readonly string[];
+	playerMapPosition?: { x: number; z: number; heading: number };
 }
 
 export interface RunResult {
@@ -143,10 +184,13 @@ export interface RunResult {
 	food: FoodState;
 	score: ScoreResult;
 	rating: string;
+	route?: readonly RouteTracePoint[];
+	routeSummary?: RouteSummarySnapshot;
+	destination?: { x: number; z: number; label: string };
 }
 
 export interface StoredRunRecord {
-	version: 1;
+	version: 2;
 	bestScore: number;
 	fastestCompletionMs: number | null;
 	recent: Array<{
@@ -155,6 +199,7 @@ export interface StoredRunRecord {
 		score: number;
 		elapsedMs: number;
 		at: string;
+		route?: RouteTracePoint[];
 	}>;
 }
 
@@ -180,10 +225,15 @@ export interface EnginePublicApi {
 	restart(seed: string, tutorial: boolean, previousFailedRuns?: number): void;
 	pause(byVisibility?: boolean): void;
 	resume(): void;
-	enableAudioFromGesture(): void;
+	enableAudioFromGesture(): Promise<boolean>;
 	setSettings(settings: GameSettings): void;
 	setTouchVector(x: number, y: number): void;
 	setTouchDash(pressed: boolean): void;
+	setWalkTarget(clientX: number, clientY: number): void;
+	stopWalking(): void;
+	turnAround(): void;
+	interact(): void;
+	setLookOffset(deltaX: number, deltaY: number, active: boolean): void;
 	destroy(): void;
 }
 

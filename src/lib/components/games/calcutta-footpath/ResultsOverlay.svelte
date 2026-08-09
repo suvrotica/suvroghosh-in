@@ -1,6 +1,12 @@
 <script lang="ts">
 	import GameDialog from './GameDialog.svelte';
 	import type { RunResult } from '$lib/games/calcutta-footpath/runtime-types';
+	import {
+		CALCUTTA_SPATIAL_WORLD,
+		CALCUTTA_WORLD_BOUNDS,
+		edgePolyline,
+		type WorldPoint
+	} from '$lib/games/calcutta-footpath/spatial-world';
 
 	type Props = {
 		result: RunResult;
@@ -40,27 +46,59 @@
 		return `PT${totalSeconds(milliseconds)}S`;
 	}
 
-	function longestStretchMetres(value: number): number {
-		return Math.round(Math.max(0, value) * 0.085);
-	}
-
 	function morale(value: number): number {
 		return Math.round(Math.max(0, Math.min(100, value)));
 	}
+
+	const mapWidth = 320;
+	const mapHeight = 250;
+	const mapPadding = 14;
+	const mapScale = Math.min(
+		(mapWidth - mapPadding * 2) / CALCUTTA_WORLD_BOUNDS.widthM,
+		(mapHeight - mapPadding * 2) / CALCUTTA_WORLD_BOUNDS.depthM
+	);
+	const mapOffsetX =
+		(mapWidth - CALCUTTA_WORLD_BOUNDS.widthM * mapScale) / 2 -
+		CALCUTTA_WORLD_BOUNDS.minX * mapScale;
+	const mapOffsetY =
+		(mapHeight - CALCUTTA_WORLD_BOUNDS.depthM * mapScale) / 2 +
+		CALCUTTA_WORLD_BOUNDS.maxZ * mapScale;
+
+	function mapPoint(point: WorldPoint): { x: number; y: number } {
+		return { x: mapOffsetX + point.x * mapScale, y: mapOffsetY - point.z * mapScale };
+	}
+
+	function pointsString(points: readonly WorldPoint[]): string {
+		return points
+			.map((point) => {
+				const mapped = mapPoint(point);
+				return `${mapped.x.toFixed(1)},${mapped.y.toFixed(1)}`;
+			})
+			.join(' ');
+	}
+
+	const plottedRoute = $derived((result.route ?? []).map(mapPoint));
+	const plottedFinish = $derived(plottedRoute.at(-1));
+	const routePoints = $derived(pointsString(result.route ?? []));
+	const routeNotes = $derived(
+		(result.routeSummary?.annotations ?? []).filter((note) =>
+			['food', 'turn-around', 'incident', 'obstruction'].includes(note.kind)
+		)
+	);
 </script>
 
 <GameDialog
 	title={result.won ? 'Destination reached' : 'Walk interrupted'}
 	description={result.won
 		? 'You crossed one neighbourhood. The neighbourhood is considering an appeal.'
-		: 'The city has concluded this attempt and filed the following non-canvas report.'}
+		: 'The city has concluded this attempt and filed the following route report.'}
 	onclose={onexit}
 	wide
 >
 	<div class:won={result.won} class="results">
 		<section class="verdict" aria-labelledby="run-verdict">
 			<div class="status-row">
-				<p class="status">{result.won ? 'Survived' : 'Returned to approximate safety'}</p>
+				<p class="status">{result.won ? 'You arrived' : 'Returned to approximate safety'}</p>
 				<span class="stamp" aria-hidden="true">{result.won ? 'ARRIVED' : 'REASSIGNED'}</span>
 			</div>
 
@@ -75,12 +113,62 @@
 					<span>Civic rating</span>
 					<strong>{result.rating}</strong>
 				</div>
-				<div class="score">
-					<span>Score</span>
-					<strong><data value={result.score.total}>{formatNumber(result.score.total)}</data></strong
-					>
-				</div>
 			</div>
+
+			{#if (result.route?.length ?? 0) > 1}
+				<figure class="route-map" aria-labelledby="route-map-caption">
+					<svg
+						viewBox={`0 0 ${mapWidth} ${mapHeight}`}
+						role="img"
+						aria-label="Map of the streets and route you walked"
+					>
+						{#each CALCUTTA_SPATIAL_WORLD.edges as edge (edge.id)}
+							<polyline
+								class:wider={edge.archetype === 'wider-road'}
+								class="map-street"
+								points={pointsString(edgePolyline(edge))}
+							></polyline>
+						{/each}
+						<polyline class="route-line" points={routePoints}></polyline>
+						{#each routeNotes as note (note.id)}
+							{@const plotted = mapPoint(note)}
+							<circle
+								class:food={note.kind === 'food'}
+								class:incident={note.kind === 'incident'}
+								class="route-note"
+								cx={plotted.x}
+								cy={plotted.y}
+								r="3.2"
+							>
+								<title>{note.label}</title>
+							</circle>
+						{/each}
+						{#if plottedRoute[0]}
+							<circle class="start" cx={plottedRoute[0].x} cy={plottedRoute[0].y} r="5"></circle>
+							<text x={plottedRoute[0].x + 8} y={plottedRoute[0].y + 3}>START</text>
+						{/if}
+						{#if plottedFinish}
+							<circle class="finish" cx={plottedFinish.x} cy={plottedFinish.y} r="6"></circle>
+							<text x={plottedFinish.x - 8} y={plottedFinish.y - 9} text-anchor="end">FINISH</text>
+						{/if}
+					</svg>
+					{#if routeNotes.length > 0}
+						<ul class="sr-only" aria-label="Notable events along this route">
+							{#each routeNotes as note (note.id)}
+								<li>{note.label}</li>
+							{/each}
+						</ul>
+					{/if}
+					<figcaption id="route-map-caption">
+						Your {formatNumber(result.routeSummary?.distanceM ?? result.distanceMetres)} m route
+						{#if (result.routeSummary?.detourDistanceM ?? 0) > 1}
+							· {formatNumber(result.routeSummary!.detourDistanceM)} m beyond the shortest route
+						{/if}
+						{#if result.destination?.label}
+							· {result.destination.label}{/if}
+					</figcaption>
+				</figure>
+			{/if}
 		</section>
 
 		<section class="ledger" aria-labelledby="run-ledger">
@@ -108,6 +196,18 @@
 					<dt>Near misses</dt>
 					<dd><data value={result.counters.nearMisses}>{result.counters.nearMisses}</data></dd>
 				</div>
+				{#if result.counters.teaStops !== undefined}
+					<div>
+						<dt>Stops for tea</dt>
+						<dd>{result.counters.teaStops}</dd>
+					</div>
+				{/if}
+				{#if result.counters.turnArounds !== undefined}
+					<div>
+						<dt>Times turned around</dt>
+						<dd>{result.counters.turnArounds}</dd>
+					</div>
+				{/if}
 				<div>
 					<dt>Snacks consumed</dt>
 					<dd>
@@ -130,13 +230,23 @@
 						<data value={result.counters.potholesEntered}>{result.counters.potholesEntered}</data>
 					</dd>
 				</div>
+				{#if result.counters.drainsEntered !== undefined}
+					<div>
+						<dt>Drains entered</dt>
+						<dd>{result.counters.drainsEntered}</dd>
+					</div>
+				{/if}
 				<div>
 					<dt>Longest clear stretch</dt>
 					<dd>
-						<data value={longestStretchMetres(result.counters.longestStretch)}>
-							{formatNumber(longestStretchMetres(result.counters.longestStretch))} m
+						<data value={Math.round(result.counters.longestStretch)}>
+							{formatNumber(result.counters.longestStretch)} m
 						</data>
 					</dd>
+				</div>
+				<div>
+					<dt>Legacy score (secondary)</dt>
+					<dd><data value={result.score.total}>{formatNumber(result.score.total)}</data></dd>
 				</div>
 				<div>
 					<dt>Morale remaining</dt>
@@ -187,6 +297,81 @@
 		background:
 			linear-gradient(175deg, rgb(255 255 255 / 28%), transparent 34%),
 			color-mix(in srgb, var(--game-paper-light) 88%, #b7c78f);
+	}
+
+	.route-map {
+		margin: 1rem 0 0;
+		border-top: 1px solid rgb(55 39 25 / 20%);
+		padding-top: 0.85rem;
+	}
+
+	.route-map svg {
+		display: block;
+		width: 100%;
+		height: auto;
+		border: 1px solid rgb(55 39 25 / 20%);
+		border-radius: 0.45rem;
+		background: #e9dcc0;
+	}
+
+	.map-street {
+		fill: none;
+		stroke: #9f8e70;
+		stroke-width: 1.45;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		opacity: 0.55;
+	}
+
+	.map-street.wider {
+		stroke-width: 3.6;
+	}
+
+	.route-line {
+		fill: none;
+		stroke: #8f3b2d;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	.route-note {
+		fill: #5a584f;
+		stroke: #fff8e7;
+		stroke-width: 1.2;
+	}
+
+	.route-note.food {
+		fill: #9f7434;
+	}
+
+	.route-note.incident {
+		fill: #8f3b2d;
+	}
+
+	.route-map text {
+		fill: #493b2e;
+		font-size: 7px;
+		font-weight: 900;
+		letter-spacing: 0.07em;
+	}
+
+	.route-map .start {
+		fill: #456b5e;
+		stroke: #fff8e7;
+		stroke-width: 2;
+	}
+	.route-map .finish {
+		fill: #a53e2c;
+		stroke: #fff8e7;
+		stroke-width: 2;
+	}
+
+	.route-map figcaption {
+		margin-top: 0.4rem;
+		color: #5e4b38;
+		font-size: 0.7rem;
+		font-weight: 750;
 	}
 
 	.status-row {
@@ -262,11 +447,10 @@
 		display: grid;
 		gap: 0.5rem;
 		margin-top: 1.1rem;
-		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-columns: minmax(0, 1fr);
 	}
 
-	.rating,
-	.score {
+	.rating {
 		display: grid;
 		align-content: end;
 		gap: 0.15rem;
@@ -280,18 +464,6 @@
 		font-family: var(--font-serif);
 		font-size: clamp(0.92rem, 0.8rem + 0.45vw, 1.12rem);
 		line-height: 1.2;
-	}
-
-	.score {
-		min-width: 5.5rem;
-		text-align: end;
-	}
-
-	.score strong {
-		color: var(--game-red);
-		font-size: clamp(1.2rem, 1rem + 0.8vw, 1.65rem);
-		font-variant-numeric: tabular-nums;
-		line-height: 1;
 	}
 
 	.ledger h3 {
@@ -467,7 +639,6 @@
 		.verdict,
 		.won .verdict,
 		.rating,
-		.score,
 		dl > div {
 			border-color: CanvasText;
 			background: Canvas;
@@ -484,7 +655,6 @@
 		.reason span,
 		.awards span,
 		.rating strong,
-		.score strong,
 		.ledger h3,
 		dt,
 		dd {

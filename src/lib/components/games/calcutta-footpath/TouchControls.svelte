@@ -3,187 +3,176 @@
 	import type { ControlScheme } from '$lib/games/calcutta-footpath/settings';
 
 	type Props = {
-		side: 'left' | 'right';
 		controlScheme: ControlScheme;
 		dashReady: boolean;
+		walkingAutomatically: boolean;
 		onvector: (x: number, y: number) => void;
 		ondash: (pressed: boolean) => void;
 		onpause: () => void;
+		onstop: () => void;
+		onturnaround: () => void;
 	};
 
-	let { side, controlScheme, dashReady, onvector, ondash, onpause }: Props = $props();
+	let {
+		controlScheme,
+		dashReady,
+		walkingAutomatically,
+		onvector,
+		ondash,
+		onpause,
+		onstop,
+		onturnaround
+	}: Props = $props();
 
-	let joystick: HTMLDivElement;
-	let dashButton: HTMLButtonElement;
-	let joystickPointer = $state<number | null>(null);
-	let dashPointer = $state<number | null>(null);
-	let dashKeyboardPressed = $state(false);
-	let thumbX = $state(0);
-	let thumbY = $state(0);
-	let dashPressed = $state(false);
+	let activeDirection = $state<string | null>(null);
+	let hurryPressed = $state(false);
+	let directionReleaseTimer: ReturnType<typeof setTimeout> | undefined;
+	let hurryReleaseTimer: ReturnType<typeof setTimeout> | undefined;
 
-	function isPrimaryMouseButton(event: PointerEvent): boolean {
-		return event.pointerType !== 'mouse' || event.button === 0;
-	}
-
-	function updateJoystick(event: PointerEvent): void {
-		if (event.pointerId !== joystickPointer) return;
+	function pressDirection(event: PointerEvent, id: string, x: number, y: number): void {
+		if (event.pointerType === 'mouse') return;
 		event.preventDefault();
-
-		const bounds = joystick.getBoundingClientRect();
-		const radius = Math.max(1, Math.min(bounds.width, bounds.height) * 0.32);
-		const rawX = event.clientX - (bounds.left + bounds.width / 2);
-		const rawY = event.clientY - (bounds.top + bounds.height / 2);
-		const length = Math.hypot(rawX, rawY);
-		const scale = length > radius ? radius / length : 1;
-
-		thumbX = rawX * scale;
-		thumbY = rawY * scale;
-		onvector(thumbX / radius, thumbY / radius);
+		(event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
+		activeDirection = id;
+		onvector(x, y);
 	}
 
-	function beginJoystick(event: PointerEvent): void {
-		if (joystickPointer !== null || !isPrimaryMouseButton(event)) return;
-		event.preventDefault();
-		joystickPointer = event.pointerId;
-		joystick.setPointerCapture(event.pointerId);
-		updateJoystick(event);
-	}
-
-	function resetJoystick(pointerId = joystickPointer): void {
-		if (pointerId === null || joystickPointer !== pointerId) return;
-		joystickPointer = null;
-		thumbX = 0;
-		thumbY = 0;
+	function releaseDirection(event?: PointerEvent): void {
+		if (event?.pointerType === 'mouse') return;
+		activeDirection = null;
 		onvector(0, 0);
-		if (joystick?.hasPointerCapture(pointerId)) joystick.releasePointerCapture(pointerId);
 	}
 
-	function endJoystick(event: PointerEvent): void {
-		resetJoystick(event.pointerId);
-	}
-
-	function beginDash(event: PointerEvent): void {
-		if (dashPointer !== null || !dashReady || !isPrimaryMouseButton(event)) return;
+	function keyDirection(event: KeyboardEvent, id: string, x: number, y: number): void {
+		if (event.key !== 'Enter' && event.key !== ' ') return;
 		event.preventDefault();
-		dashPointer = event.pointerId;
-		dashPressed = true;
-		dashButton.setPointerCapture(event.pointerId);
+		if (event.type === 'keydown' && !event.repeat) {
+			activeDirection = id;
+			onvector(x, y);
+		} else if (event.type === 'keyup') {
+			activeDirection = null;
+			onvector(0, 0);
+		}
+	}
+
+	function activateDirection(event: MouseEvent, id: string, x: number, y: number): void {
+		// Physical touch/mouse input is handled as a hold above. A zero-detail click is the
+		// activation shape used by keyboards and assistive technology, so give it a short pulse.
+		if (event.detail !== 0) return;
+		if (directionReleaseTimer) clearTimeout(directionReleaseTimer);
+		activeDirection = id;
+		onvector(x, y);
+		directionReleaseTimer = setTimeout(() => {
+			if (activeDirection === id) {
+				activeDirection = null;
+				onvector(0, 0);
+			}
+			directionReleaseTimer = undefined;
+		}, 120);
+	}
+
+	function pressHurry(event: PointerEvent): void {
+		if (!dashReady || event.pointerType === 'mouse') return;
+		event.preventDefault();
+		(event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
+		hurryPressed = true;
 		ondash(true);
 	}
 
-	function resetDashPointer(pointerId = dashPointer): void {
-		if (pointerId === null || dashPointer !== pointerId) return;
-		dashPointer = null;
-		dashPressed = dashKeyboardPressed;
-		if (!dashKeyboardPressed) ondash(false);
-		if (dashButton?.hasPointerCapture(pointerId)) dashButton.releasePointerCapture(pointerId);
+	function releaseHurry(event?: PointerEvent): void {
+		if (event?.pointerType === 'mouse') return;
+		hurryPressed = false;
+		ondash(false);
 	}
 
-	function endDash(event: PointerEvent): void {
-		resetDashPointer(event.pointerId);
-	}
-
-	function handleDashKeydown(event: KeyboardEvent): void {
-		if (
-			(event.key !== ' ' && event.key !== 'Enter') ||
-			event.repeat ||
-			dashKeyboardPressed ||
-			!dashReady
-		)
-			return;
-		event.preventDefault();
-		dashKeyboardPressed = true;
-		dashPressed = true;
+	function activateHurry(): void {
+		if (!dashReady || hurryPressed) return;
+		if (hurryReleaseTimer) clearTimeout(hurryReleaseTimer);
+		hurryPressed = true;
 		ondash(true);
+		// Assistive technologies activate buttons as a click rather than a held pointer.
+		// Keep the signal alive long enough for the fixed simulation step to observe it.
+		hurryReleaseTimer = setTimeout(() => {
+			hurryPressed = false;
+			ondash(false);
+			hurryReleaseTimer = undefined;
+		}, 120);
 	}
 
-	function handleDashKeyup(event: KeyboardEvent): void {
-		if ((event.key !== ' ' && event.key !== 'Enter') || !dashKeyboardPressed) return;
-		event.preventDefault();
-		dashKeyboardPressed = false;
-		dashPressed = dashPointer !== null;
-		if (dashPointer === null) ondash(false);
-	}
-
-	function resetKeyboardDash(): void {
-		if (!dashKeyboardPressed) return;
-		dashKeyboardPressed = false;
-		dashPressed = dashPointer !== null;
-		if (dashPointer === null) ondash(false);
-	}
-
-	function resetAll(): void {
-		resetJoystick();
-		resetDashPointer();
-		resetKeyboardDash();
+	function reset(): void {
+		if (directionReleaseTimer) clearTimeout(directionReleaseTimer);
+		if (hurryReleaseTimer) clearTimeout(hurryReleaseTimer);
+		directionReleaseTimer = undefined;
+		hurryReleaseTimer = undefined;
+		activeDirection = null;
+		hurryPressed = false;
+		onvector(0, 0);
+		ondash(false);
 	}
 
 	onMount(() => {
-		window.addEventListener('blur', resetAll);
+		window.addEventListener('blur', reset);
 		return () => {
-			window.removeEventListener('blur', resetAll);
-			resetAll();
-			onvector(0, 0);
-			ondash(false);
+			window.removeEventListener('blur', reset);
+			reset();
 		};
 	});
 </script>
 
-<div
-	class="touch-controls"
-	data-control-scheme={controlScheme}
-	data-side={side}
-	aria-label="Touch game controls"
->
-	<div
-		bind:this={joystick}
-		class:active={joystickPointer !== null}
-		class="joystick"
-		role="application"
-		aria-label="Movement joystick. Drag in the direction you want to walk."
-		onpointerdown={beginJoystick}
-		onpointermove={updateJoystick}
-		onpointerup={endJoystick}
-		onpointercancel={endJoystick}
-		onlostpointercapture={endJoystick}
-	>
-		<span class="joystick-arrows" aria-hidden="true">↑<i>→</i><b>↓</b><em>←</em></span>
-		<span
-			class="joystick-thumb"
-			aria-hidden="true"
-			style:transform={`translate(calc(-50% + ${thumbX}px), calc(-50% + ${thumbY}px))`}
-		></span>
-	</div>
+<div class="touch-controls" aria-label="Touch walking controls">
+	{#if controlScheme === 'experienced'}
+		<div class="steering" aria-label="Optional touch steering">
+			<button
+				type="button"
+				class:active={activeDirection === 'left'}
+				onclick={(event) => activateDirection(event, 'left', -1, -0.35)}
+				onpointerdown={(event) => pressDirection(event, 'left', -1, -0.35)}
+				onpointerup={releaseDirection}
+				onpointercancel={releaseDirection}
+				onkeydown={(event) => keyDirection(event, 'left', -1, -0.35)}
+				onkeyup={(event) => keyDirection(event, 'left', -1, -0.35)}
+				onblur={() => releaseDirection()}>Turn left</button
+			>
+			<button
+				type="button"
+				class:active={activeDirection === 'forward'}
+				onclick={(event) => activateDirection(event, 'forward', 0, -1)}
+				onpointerdown={(event) => pressDirection(event, 'forward', 0, -1)}
+				onpointerup={releaseDirection}
+				onpointercancel={releaseDirection}
+				onkeydown={(event) => keyDirection(event, 'forward', 0, -1)}
+				onkeyup={(event) => keyDirection(event, 'forward', 0, -1)}
+				onblur={() => releaseDirection()}>Walk</button
+			>
+			<button
+				type="button"
+				class:active={activeDirection === 'right'}
+				onclick={(event) => activateDirection(event, 'right', 1, -0.35)}
+				onpointerdown={(event) => pressDirection(event, 'right', 1, -0.35)}
+				onpointerup={releaseDirection}
+				onpointercancel={releaseDirection}
+				onkeydown={(event) => keyDirection(event, 'right', 1, -0.35)}
+				onkeyup={(event) => keyDirection(event, 'right', 1, -0.35)}
+				onblur={() => releaseDirection()}>Turn right</button
+			>
+		</div>
+	{/if}
 
-	<div class="touch-actions">
-		<button type="button" class="pause" onclick={onpause} aria-label="Pause game">
-			<svg viewBox="0 0 24 24" aria-hidden="true">
-				<path d="M7 5.5h3v13H7zM14 5.5h3v13h-3z"></path>
-			</svg>
-			<span>Pause</span>
-		</button>
-
+	<div class="actions">
+		{#if walkingAutomatically}
+			<button type="button" class="stop" onclick={onstop}>Stop</button>
+		{/if}
+		<button type="button" onclick={onturnaround}>Turn around</button>
 		<button
-			bind:this={dashButton}
 			type="button"
-			class:pressed={dashPressed}
-			class:ready={dashReady}
-			class="dash"
-			aria-label={dashReady ? 'Dash or squeeze' : 'Dash recharging'}
-			aria-disabled={!dashReady}
-			aria-pressed={dashPressed}
-			onpointerdown={beginDash}
-			onpointerup={endDash}
-			onpointercancel={endDash}
-			onlostpointercapture={endDash}
-			onkeydown={handleDashKeydown}
-			onkeyup={handleDashKeyup}
-			onblur={resetKeyboardDash}
+			class:active={hurryPressed}
+			disabled={!dashReady}
+			onclick={activateHurry}
+			onpointerdown={pressHurry}
+			onpointerup={releaseHurry}
+			onpointercancel={releaseHurry}>{dashReady ? 'Hurry' : 'Resting'}</button
 		>
-			<span aria-hidden="true">»</span>
-			<strong>{dashReady ? 'Dash' : 'Wait'}</strong>
-		</button>
+		<button type="button" class="pause" onclick={onpause}>Pause</button>
 	</div>
 </div>
 
@@ -199,255 +188,75 @@
 		-webkit-tap-highlight-color: transparent;
 	}
 
-	.joystick,
-	.touch-actions {
+	.actions,
+	.steering {
 		position: absolute;
-		bottom: max(0.85rem, env(safe-area-inset-bottom));
-		pointer-events: auto;
-	}
-
-	.joystick {
-		width: clamp(7.5rem, 25vw, 9rem);
-		height: clamp(7.5rem, 25vw, 9rem);
-		overflow: hidden;
-		border: 2px solid rgb(255 239 207 / 62%);
-		border-radius: 50%;
-		background:
-			radial-gradient(circle at center, rgb(255 255 255 / 8%) 0 40%, transparent 41%),
-			rgb(23 17 13 / 62%);
-		box-shadow:
-			inset 0 0 1.5rem rgb(0 0 0 / 38%),
-			0 0.45rem 1.5rem rgb(0 0 0 / 30%);
-		touch-action: none;
-		user-select: none;
-		-webkit-user-select: none;
-		backdrop-filter: blur(5px);
-	}
-
-	[data-side='left'] .joystick,
-	[data-side='right'] .touch-actions {
-		left: max(0.85rem, env(safe-area-inset-left));
-	}
-
-	[data-side='right'] .joystick,
-	[data-side='left'] .touch-actions {
-		right: max(0.85rem, env(safe-area-inset-right));
-	}
-
-	.joystick::before,
-	.joystick::after {
-		position: absolute;
-		background: rgb(255 244 219 / 24%);
-		content: '';
-		pointer-events: none;
-	}
-
-	.joystick::before {
-		top: 50%;
-		right: 12%;
-		left: 12%;
-		height: 1px;
-	}
-
-	.joystick::after {
-		top: 12%;
-		bottom: 12%;
-		left: 50%;
-		width: 1px;
-	}
-
-	.joystick.active {
-		border-color: #ffe4a1;
-		background-color: rgb(36 25 17 / 75%);
-	}
-
-	.joystick-arrows {
-		position: absolute;
-		inset: 0;
-		color: rgb(255 246 227 / 58%);
-		font-size: 0.72rem;
-		font-style: normal;
-		font-weight: 900;
-		line-height: 1;
-		pointer-events: none;
-	}
-
-	.joystick-arrows i,
-	.joystick-arrows b,
-	.joystick-arrows em {
-		font-style: normal;
-	}
-
-	.joystick-arrows {
-		padding-top: 0.42rem;
-		text-align: center;
-	}
-
-	.joystick-arrows i {
-		position: absolute;
-		top: 50%;
-		right: 0.42rem;
-		transform: translateY(-50%);
-	}
-
-	.joystick-arrows b {
-		position: absolute;
-		bottom: 0.42rem;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.joystick-arrows em {
-		position: absolute;
-		top: 50%;
-		left: 0.42rem;
-		transform: translateY(-50%);
-	}
-
-	.joystick-thumb {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: clamp(2.8rem, 9vw, 3.35rem);
-		height: clamp(2.8rem, 9vw, 3.35rem);
-		border: 2px solid rgb(255 248 230 / 82%);
-		border-radius: 50%;
-		background: rgb(164 103 44 / 88%);
-		box-shadow:
-			inset 0 0.2rem 0.5rem rgb(255 240 199 / 20%),
-			0 0.3rem 0.8rem rgb(0 0 0 / 38%);
-		pointer-events: none;
-	}
-
-	.touch-actions {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.65rem;
+		pointer-events: auto;
+		gap: 0.38rem;
 	}
 
-	.touch-actions button {
-		display: grid;
-		place-items: center;
-		border: 2px solid rgb(255 239 207 / 64%);
-		background: rgb(30 21 15 / 79%);
-		box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 34%);
-		color: #fff8e7;
+	.actions {
+		right: max(0.65rem, env(safe-area-inset-right));
+		bottom: max(0.65rem, env(safe-area-inset-bottom));
+		left: max(0.65rem, env(safe-area-inset-left));
+		justify-content: center;
+	}
+
+	.steering {
+		right: max(0.65rem, env(safe-area-inset-right));
+		bottom: max(4rem, calc(env(safe-area-inset-bottom) + 3.5rem));
+		left: max(0.65rem, env(safe-area-inset-left));
+		justify-content: center;
+	}
+
+	button {
+		min-width: 4.25rem;
+		min-height: 3rem;
+		border: 1px solid rgb(255 244 219 / 48%);
+		border-radius: 0.65rem;
+		background: rgb(20 18 15 / 76%);
+		padding: 0.5rem 0.7rem;
+		color: #fff7e5;
 		font: inherit;
-		font-weight: 850;
-		cursor: pointer;
+		font-size: 0.72rem;
+		font-weight: 820;
+		line-height: 1.1;
 		touch-action: none;
-		user-select: none;
-		-webkit-user-select: none;
-		backdrop-filter: blur(6px);
+		backdrop-filter: blur(7px);
 	}
 
-	.touch-actions button:focus-visible {
-		outline: 3px solid #fff2bd;
-		outline-offset: 3px;
+	button.active,
+	button.stop {
+		border-color: #f1d38f;
+		background: #e7c271;
+		color: #251b12;
 	}
 
-	.pause {
-		width: 3.25rem;
-		min-width: 2.75rem;
-		height: 3.25rem;
-		min-height: 2.75rem;
-		border-radius: 0.7rem;
+	button.pause {
+		background: rgb(102 54 39 / 88%);
+	}
+	button:disabled {
+		opacity: 0.62;
+		cursor: not-allowed;
 	}
 
-	.pause svg {
-		width: 1.1rem;
-		height: 1.1rem;
-		fill: currentColor;
-	}
-
-	.pause span {
-		font-size: 0.55rem;
-		letter-spacing: 0.04em;
-		line-height: 1;
-		text-transform: uppercase;
-	}
-
-	.dash {
-		width: clamp(5rem, 17vw, 6rem);
-		height: clamp(5rem, 17vw, 6rem);
-		border-radius: 50%;
-		opacity: 0.58;
-	}
-
-	.dash.ready {
-		border-color: #ffe09a;
-		background: rgb(125 70 24 / 88%);
-		opacity: 1;
-	}
-
-	.dash.pressed {
-		background: #f5b843;
-		color: #25150c;
-		transform: scale(0.94);
-	}
-
-	.dash > span {
-		font-size: 1.8rem;
-		line-height: 0.7;
-	}
-
-	.dash strong {
-		font-size: 0.7rem;
-		letter-spacing: 0.08em;
-		line-height: 1;
-		text-transform: uppercase;
-	}
-
-	@media (pointer: coarse) {
-		.touch-controls[data-control-scheme='auto'] {
+	@media (hover: none), (pointer: coarse) {
+		.touch-controls {
 			display: block;
 		}
 	}
 
-	.touch-controls[data-control-scheme='joystick'],
-	.touch-controls[data-control-scheme='drag'] {
-		display: block;
-	}
-
-	.touch-controls[data-control-scheme='keyboard'] {
-		display: none;
-	}
-
-	.touch-controls[data-control-scheme='drag'] .joystick {
-		display: none;
-	}
-
-	@media (pointer: coarse) and (max-height: 31rem) and (orientation: landscape) {
-		.joystick {
-			width: clamp(2.75rem, 31vh, 7rem);
-			height: clamp(2.75rem, 31vh, 7rem);
+	@media (orientation: landscape) and (max-height: 33rem) {
+		.actions {
+			justify-content: flex-end;
 		}
-
-		.dash {
-			width: clamp(2.75rem, 23vh, 4.75rem);
-			height: clamp(2.75rem, 23vh, 4.75rem);
+		.steering {
+			justify-content: flex-start;
+			bottom: max(0.65rem, env(safe-area-inset-bottom));
 		}
-
-		.touch-actions {
-			flex-direction: row;
-			align-items: flex-end;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.dash {
-			transition: none;
-		}
-	}
-
-	@media (forced-colors: active) {
-		.joystick,
-		.touch-actions button {
-			border: 2px solid CanvasText;
-			background: Canvas;
-			color: CanvasText;
-			forced-color-adjust: none;
+		button {
+			min-height: 2.75rem;
 		}
 	}
 </style>

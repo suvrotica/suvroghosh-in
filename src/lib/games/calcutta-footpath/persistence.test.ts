@@ -37,4 +37,27 @@ describe('saved run persistence', () => {
 		});
 		expect(recentFailureCount(record)).toBe(2);
 	});
+
+	it('stores a bounded, repaired recent route without trusting malformed points', () => {
+		const record = recordRun(
+			{ ...EMPTY_STORED_RUNS, recent: [] },
+			{
+				seed: 'route-seed',
+				won: true,
+				elapsedMs: 42_000,
+				score: { total: 120, breakdown: {} as never },
+				route: [
+					{ x: -8, z: 0, atMs: 0 },
+					{ x: -11, z: 26, atMs: 21_000, kind: 'walk' },
+					{ x: 30, z: 66, atMs: 31_000, kind: 'tea', label: 'Tea stop' }
+				]
+			}
+		);
+		expect(record.version).toBe(2);
+		expect(record.recent[0].route).toHaveLength(3);
+		expect(
+			parseStoredRuns({ recent: [{ ...record.recent[0], route: [{ x: 'bad', z: 1 }] }] }).recent[0]
+				.route
+		).toBeUndefined();
+	});
 });

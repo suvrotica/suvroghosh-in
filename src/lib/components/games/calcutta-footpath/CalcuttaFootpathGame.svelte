@@ -6,6 +6,8 @@
 	import TouchControls from './TouchControls.svelte';
 	import GameDialog from './GameDialog.svelte';
 	import ResultsOverlay from './ResultsOverlay.svelte';
+	import NeighbourhoodMap from './NeighbourhoodMap.svelte';
+	import { primeSpatialAudioFromGesture } from '$lib/games/calcutta-footpath/spatial-audio';
 	import type { GameCatalogEntry } from '$lib/games/catalog';
 	import type {
 		HudSnapshot,
@@ -37,9 +39,12 @@
 		pause(byVisibility?: boolean): void;
 		resume(): void;
 		restart(seed: string, tutorial: boolean, previousFailedRuns?: number): void;
-		enableAudioFromGesture(): void;
+		enableAudioFromGesture(): Promise<boolean>;
 		setTouchVector(x: number, y: number): void;
 		setTouchDash(pressed: boolean): void;
+		stopWalking(): void;
+		turnAround(): void;
+		interact(): void;
 		focusCanvas(): void;
 	};
 
@@ -60,6 +65,10 @@
 	let isFullscreen = $state(false);
 	let errorMessage = $state('');
 	let localNotice = $state('');
+	let audioNeedsGesture = $state(false);
+	let mapOpen = $state(false);
+	let mapReturnToPause = $state(false);
+	let mapPausedWalk = $state(false);
 	let noticeTimer: ReturnType<typeof setTimeout> | undefined;
 	let hud = $state<HudSnapshot>({
 		phase: 'title',
@@ -78,7 +87,14 @@
 		foodEffect: '',
 		seed: '',
 		dashReady: true,
-		pausedByVisibility: false
+		pausedByVisibility: false,
+		destinationMetres: 211,
+		streetName: 'South lane entrance',
+		interactionPrompt: '',
+		visualCue: '',
+		walkingAutomatically: false,
+		visitedEdges: [],
+		playerMapPosition: { x: -8, z: 0, heading: 0 }
 	});
 
 	function newSeed(): string {
@@ -89,14 +105,30 @@
 		return `KOL-${Date.now().toString(36)}`.toLocaleUpperCase('en');
 	}
 
-	function startWalk(seed = newSeed()) {
+	async function startWalk(seed = newSeed(), fullScreen = false) {
+		// Start audio work synchronously inside the Play gesture. Fullscreen is requested before
+		// awaiting it so both browser-gated capabilities retain their activation opportunity.
+		const audioAttempt = settings.soundEnabled
+			? primeSpatialAudioFromGesture()
+			: Promise.resolve(true);
+		if (fullScreen && fullscreenSupported && shell) {
+			try {
+				await shell.requestFullscreen();
+			} catch {
+				announceNotice('Full screen was unavailable, so the walk opened here.');
+			}
+		}
 		currentSeed = seed;
 		result = null;
 		errorMessage = '';
 		overlay = 'none';
 		phase = 'loading';
 		started = true;
+		mapOpen = false;
 		sessionId += 1;
+		void audioAttempt.then((running) => {
+			audioNeedsGesture = settings.soundEnabled && !running;
+		});
 		requestAnimationFrame(() => shell?.scrollIntoView({ block: 'start' }));
 	}
 
@@ -106,9 +138,13 @@
 		overlay = 'none';
 		errorMessage = '';
 		if (surface) {
-			surface.restart(seed, settings.tutorialEnabled, recentFailureCount(storedRuns));
+			surface.restart(
+				seed,
+				settings.tutorialEnabled && !settings.tutorialCompleted,
+				recentFailureCount(storedRuns)
+			);
 		} else {
-			startWalk(seed);
+			void startWalk(seed);
 		}
 	}
 
@@ -129,9 +165,11 @@
 
 	function handleReady() {
 		announceNotice(
-			settings.soundEnabled
-				? 'Sound is on.'
-				: 'Sound begins muted. Use the speaker button or M to opt in.'
+			settings.soundEnabled && !audioNeedsGesture
+				? 'Sound on. Headphones make approaching traffic easier to locate.'
+				: settings.soundEnabled
+					? 'The street is ready. Tap the sound prompt if it remains quiet.'
+					: 'Sound remains off because you muted it.'
 		);
 	}
 
@@ -140,6 +178,9 @@
 	}
 
 	function handlePhase(nextPhase: RuntimePhase) {
+		if (phase === 'tutorial' && nextPhase === 'playing' && !settings.tutorialCompleted) {
+			settings = { ...settings, tutorialCompleted: true };
+		}
 		phase = nextPhase;
 		if (nextPhase === 'paused' && overlay === 'none') overlay = 'pause';
 		if ((nextPhase === 'playing' || nextPhase === 'tutorial') && overlay === 'pause') {
@@ -166,12 +207,28 @@
 		overlay = 'error';
 	}
 
-	function toggleSound() {
-		const soundEnabled = !settings.soundEnabled;
-		if (soundEnabled) surface?.enableAudioFromGesture();
-		settings = { ...settings, soundEnabled };
-		announceNotice(soundEnabled ? 'Sound on.' : 'Sound muted.');
+	async function retryAudio() {
+		if (!settings.soundEnabled) return;
+		const primed = await primeSpatialAudioFromGesture();
+		const running = surface ? await surface.enableAudioFromGesture() : primed;
+		audioNeedsGesture = !(primed || running);
+		announceNotice(
+			audioNeedsGesture
+				? 'The browser still has sound suspended. Tap again or check this site’s audio permission.'
+				: 'Street sound is on. Headphones make direction easier to hear.'
+		);
 		restoreGameFocus();
+	}
+
+	async function toggleSound() {
+		const soundEnabled = !settings.soundEnabled;
+		settings = { ...settings, soundEnabled };
+		if (soundEnabled) await retryAudio();
+		else {
+			audioNeedsGesture = false;
+			announceNotice('Sound muted.');
+			restoreGameFocus();
+		}
 	}
 
 	async function toggleFullscreen() {
@@ -190,14 +247,49 @@
 	}
 
 	function handleCommand(command: InputCommand) {
-		if (command === 'mute') toggleSound();
+		if (command === 'mute') void toggleSound();
 		else if (command === 'fullscreen') void toggleFullscreen();
 		else if (command === 'restart' && result) restartWalk();
+		else if (command === 'interact') surface?.interact();
+		else if (command === 'turn-around') surface?.turnAround();
+		else if (command === 'stop') surface?.stopWalking();
+	}
+
+	function toggleMap() {
+		if (overlay === 'pause') {
+			mapReturnToPause = true;
+			mapPausedWalk = false;
+			overlay = 'none';
+			mapOpen = true;
+			return;
+		}
+		if (mapOpen) return;
+		mapReturnToPause = false;
+		mapPausedWalk = phase === 'playing' || phase === 'tutorial';
+		if (mapPausedWalk) surface?.pause();
+		overlay = 'none';
+		mapOpen = true;
+	}
+
+	function stopWalking() {
+		surface?.stopWalking();
+		restoreGameFocus();
+	}
+
+	function turnAround() {
+		surface?.turnAround();
+		restoreGameFocus();
+	}
+
+	function interact() {
+		surface?.interact();
+		restoreGameFocus();
 	}
 
 	function pauseGame() {
 		if (!started || !['playing', 'tutorial'].includes(phase)) return;
 		surface?.pause();
+		mapOpen = false;
 		overlay = 'pause';
 	}
 
@@ -238,8 +330,11 @@
 	}
 
 	function updateSetting<Key extends keyof GameSettings>(key: Key, value: GameSettings[Key]) {
-		if (key === 'soundEnabled' && value === true) surface?.enableAudioFromGesture();
 		settings = { ...settings, [key]: value, version: SETTINGS_VERSION };
+		if (key === 'soundEnabled') {
+			audioNeedsGesture = false;
+			if (value === true) void retryAudio();
+		}
 	}
 
 	function clearLocalData() {
@@ -261,7 +356,7 @@
 		started = false;
 		overlay = 'none';
 		phase = 'loading';
-		requestAnimationFrame(() => startWalk(currentSeed || newSeed()));
+		requestAnimationFrame(() => void startWalk(currentSeed || newSeed()));
 	}
 
 	function handleWindowKeydown(event: KeyboardEvent) {
@@ -339,6 +434,7 @@
 	bind:this={shell}
 	id="game-experience"
 	class="calcutta-game"
+	class:reduced-motion={settings.reducedMotion}
 	data-phase={phase}
 	aria-label="Calcutta Footpath Simulator"
 >
@@ -349,7 +445,7 @@
 					bind:this={surface}
 					seed={currentSeed}
 					{settings}
-					tutorial={settings.tutorialEnabled}
+					tutorial={settings.tutorialEnabled && !settings.tutorialCompleted}
 					previousFailedRuns={recentFailureCount(storedRuns)}
 					onready={handleReady}
 					onhud={handleHud}
@@ -364,28 +460,58 @@
 				<GameHud
 					{hud}
 					soundEnabled={settings.soundEnabled}
+					{audioNeedsGesture}
 					{fullscreenSupported}
 					{isFullscreen}
 					{localNotice}
+					{mapOpen}
 					onpause={pauseGame}
 					onmute={toggleSound}
+					onaudioretry={retryAudio}
 					onfullscreen={toggleFullscreen}
+					onmap={toggleMap}
+					oninteract={interact}
+					onstop={stopWalking}
+					onturnaround={turnAround}
 				/>
 				<TouchControls
-					side={settings.joystickSide}
 					controlScheme={settings.controlScheme}
 					dashReady={hud.dashReady}
+					walkingAutomatically={Boolean(hud.walkingAutomatically)}
 					onvector={(x, y) => surface?.setTouchVector(x, y)}
 					ondash={(pressed) => surface?.setTouchDash(pressed)}
 					onpause={pauseGame}
+					onstop={stopWalking}
+					onturnaround={turnAround}
+				/>
+				<NeighbourhoodMap
+					open={mapOpen}
+					player={hud.playerMapPosition}
+					visitedEdges={hud.visitedEdges ?? []}
+					onclose={() => {
+						mapOpen = false;
+						if (mapReturnToPause) {
+							mapReturnToPause = false;
+							overlay = 'pause';
+						} else if (mapPausedWalk) {
+							mapPausedWalk = false;
+							overlay = 'none';
+							surface?.resume();
+							requestAnimationFrame(() => surface?.focusCanvas());
+						} else if (phase === 'paused') {
+							overlay = 'pause';
+						} else {
+							restoreGameFocus();
+						}
+					}}
 				/>
 			{/if}
 
 			{#if phase === 'loading'}
 				<div class="loading-panel" role="status" aria-live="polite">
 					<span class="loading-mark" aria-hidden="true">প</span>
-					<strong>Assembling the pavement…</strong>
-					<span>Cows are declining to cooperate.</span>
+					<strong>Preparing the street…</strong>
+					<span>Buildings · people · sound</span>
 				</div>
 			{/if}
 		</div>
@@ -398,31 +524,36 @@
 					<a href={resolve('/blog/games')}>← Games</a>
 					<a href="#about-the-game">About</a>
 				</nav>
-				<p class="eyebrow">A municipal survival game</p>
+				<p class="eyebrow">A walking game through an ordinary impossible city</p>
 				<h1 id="game-title">{game.title}</h1>
 				<p class="premise">
-					Cross one Calcutta neighbourhood. Choose any side you like. It will shortly become the
-					wrong one.
+					Get to the other end of this North Calcutta neighbourhood. There is no permanently correct
+					side of the road.
 				</p>
 				<div class="title-actions">
-					<button type="button" class="play-button" onclick={() => startWalk()}>
-						<span aria-hidden="true">▶</span> Play
-					</button>
-					<button type="button" onclick={() => openInstructions('title')}>How to Walk</button>
+					{#if fullscreenSupported}
+						<button
+							type="button"
+							class="play-button fullscreen-play"
+							onclick={() => startWalk(newSeed(), true)}
+						>
+							Play full screen
+						</button>
+					{:else}
+						<button type="button" disabled title="Full screen is not available in this browser">
+							Full screen unavailable
+						</button>
+					{/if}
+					<button type="button" class="play-here" onclick={() => startWalk()}>Play in page</button>
+					<button type="button" onclick={() => openInstructions('title')}>How to walk</button>
 					<button
 						type="button"
 						onclick={toggleSound}
 						aria-pressed={settings.soundEnabled}
 						aria-label="Sound"
 					>
-						<span aria-hidden="true">{settings.soundEnabled ? '🔊' : '🔇'}</span>
-						{settings.soundEnabled ? 'Sound on' : 'Sound off'}
+						Sound: {settings.soundEnabled ? 'On' : 'Off'}
 					</button>
-					{#if fullscreenSupported}
-						<button type="button" onclick={toggleFullscreen}>
-							<span aria-hidden="true">⛶</span> Fullscreen
-						</button>
-					{/if}
 					<button type="button" onclick={() => openSettings('title')}>Settings</button>
 				</div>
 				<div class="local-best" aria-label="Local best runs">
@@ -433,7 +564,8 @@
 					<span>One walk <strong>{game.duration}</strong></span>
 				</div>
 				<p class="sound-note">
-					Sound starts off by default. Scores and settings stay in this browser.
+					Sound begins with Play and stays on unless you switch it off. Settings and recent routes
+					stay only in this browser.
 				</p>
 			</div>
 		</div>
@@ -444,18 +576,31 @@
 			title={hud.pausedByVisibility ? 'The tab moved. Calcutta waited.' : 'Walk paused'}
 			description={hud.pausedByVisibility
 				? 'The simulation paused when the page became hidden.'
-				: `${hud.zone} · ${Math.round(hud.distance * 100)}% crossed`}
+				: `${hud.zone} · ${Math.max(0, Math.round(hud.destinationMetres ?? 0))} m to the destination`}
 			onclose={resumeGame}
 		>
 			<div class="dialog-actions">
-				<button type="button" class="primary-dialog-button" onclick={resumeGame}>Resume</button>
-				<button type="button" onclick={() => restartWalk()}>Restart Walk</button>
-				<button type="button" onclick={() => openInstructions('pause')}>Controls</button>
+				<button type="button" class="primary-dialog-button" onclick={resumeGame}>Resume walk</button
+				>
+				<button type="button" onclick={() => openInstructions('pause')}>How do I walk?</button>
+				<button type="button" onclick={toggleMap}>Map</button>
 				<button type="button" onclick={() => openSettings('pause')}>Settings</button>
 				<button type="button" onclick={toggleSound}>
-					{settings.soundEnabled ? 'Mute sound' : 'Turn sound on'}
+					Sound: {settings.soundEnabled ? 'On' : 'Off'}
 				</button>
-				<a href={resolve('/blog/games')}>Exit to Games</a>
+				<button
+					type="button"
+					onclick={() =>
+						updateSetting(
+							'cameraMovement',
+							settings.cameraMovement === 'gentle' ? 'normal' : 'gentle'
+						)}>Camera: {settings.cameraMovement === 'gentle' ? 'Gentle' : 'Normal'}</button
+				>
+				{#if isFullscreen}
+					<button type="button" onclick={toggleFullscreen}>Exit full screen</button>
+				{/if}
+				<button type="button" onclick={() => restartWalk()}>Restart walk</button>
+				<a href={resolve('/blog/games')}>Return to Games</a>
 			</div>
 			<p class="dialog-status">
 				Reduced motion: <strong>{settings.reducedMotion ? 'On' : 'Off'}</strong> · Seed:
@@ -465,62 +610,62 @@
 	{:else if overlay === 'instructions'}
 		<GameDialog
 			title="How to Walk"
-			description="There is no correct side. There are, however, controls."
+			description="You do not need to know video-game controls."
 			onclose={closeSecondaryDialog}
 			wide
 		>
-			<div class="instructions-grid">
+			<div class="instructions-grid simple-instructions">
 				<section>
-					<h3>Desktop</h3>
+					<h3>Click or tap the road</h3>
+					<p>
+						Choose a clear place on the visible street. You will walk towards it. Tap farther ahead
+						to continue or tap into a side lane to turn there.
+					</p>
+				</section>
+				<section>
+					<h3>Arrow keys</h3>
 					<dl>
 						<div>
-							<dt>Move</dt>
-							<dd>WASD or arrow keys</dd>
+							<dt>↑ Up</dt>
+							<dd>Walk forward</dd>
 						</div>
 						<div>
-							<dt>Dash / squeeze</dt>
-							<dd>Shift or Space</dd>
+							<dt>← → Left / Right</dt>
+							<dd>Turn while walking</dd>
 						</div>
 						<div>
-							<dt>Pause</dt>
-							<dd>Escape or P</dd>
+							<dt>↓ Down</dt>
+							<dd>Step back</dd>
 						</div>
 						<div>
-							<dt>Mute / fullscreen</dt>
-							<dd>M / F</dd>
+							<dt>Space</dt>
+							<dd>Hurry briefly</dd>
 						</div>
 						<div>
-							<dt>Replay after a run</dt>
-							<dd>R</dd>
+							<dt>Escape</dt>
+							<dd>Pause</dd>
 						</div>
 					</dl>
 				</section>
-				<section>
-					<h3>Touch and gamepad</h3>
-					<p>
-						Drag the thumb stick to walk. The separate yellow button performs one short,
-						stamina-hungry squeeze. A connected gamepad uses its left stick and A button.
-					</p>
-					<p>In portrait, forward is up the screen. In landscape, forward is to the right.</p>
-				</section>
-				<section>
-					<h3>Street rules</h3>
+				<details>
+					<summary>More controls and street advice</summary>
 					<ul>
-						<li>Striped symbols and text warn of fast threats; sound is never required.</li>
-						<li>Approach a named stall to eat. Food is not a floating coin.</li>
-						<li>Rest briefly to recover stamina. Mishti repairs morale.</li>
-						<li>After a collision, a short grace period prevents a five-object pile-on.</li>
+						<li>Use the labelled Turn around and Stop buttons whenever you need them.</li>
+						<li>
+							Hold the right mouse button and drag gently to look around. Release it and the view
+							returns behind you.
+						</li>
+						<li>
+							When a tea or food prompt appears, click it or press Enter. You will stop while the
+							street continues moving.
+						</li>
+						<li>
+							Headphones make approaching traffic easier to locate, but every essential warning also
+							appears on screen.
+						</li>
+						<li>Experienced controls (WASD, mouse-look and gamepad) can be enabled in Settings.</li>
 					</ul>
-				</section>
-				<section>
-					<h3>The useful snacks</h3>
-					<ul>
-						<li><strong>Fuchka:</strong> stamina and a small morale lift.</li>
-						<li><strong>Mishti:</strong> morale, diminishing returns, dignified chewing.</li>
-						<li><strong>Tea:</strong> earlier warnings; too much introduces jitter.</li>
-						<li><strong>Ghugni:</strong> one deterministic but suspicious consequence.</li>
-					</ul>
-				</section>
+				</details>
 			</div>
 			<div class="dialog-actions">
 				<button type="button" class="primary-dialog-button" onclick={closeSecondaryDialog}>
@@ -543,7 +688,8 @@
 				<label>
 					<span
 						><strong>Sound</strong><small
-							>Procedural horns, bells, rain, barks, and tea glasses.</small
+							>Street ambience, spatial traffic, rain, people and footsteps. Your explicit choice is
+							remembered.</small
 						></span
 					>
 					<input
@@ -555,7 +701,8 @@
 				<label>
 					<span
 						><strong>Reduced motion</strong><small
-							>Removes shake, zoom punches, and dense rain.</small
+							>Reduces camera bob, shake, quick camera movement and rain streaks while keeping the
+							street alive.</small
 						></span
 					>
 					<input
@@ -590,8 +737,8 @@
 				</label>
 				<label>
 					<span
-						><strong>Detail level</strong><small
-							>Auto lowers canvas density on smaller devices.</small
+						><strong>Visual quality</strong><small
+							>Auto chooses a conservative Three.js detail level for this device.</small
 						></span
 					>
 					<select
@@ -609,8 +756,9 @@
 				</label>
 				<label>
 					<span
-						><strong>Control preference</strong><small
-							>Both keyboard layouts always remain available.</small
+						><strong>Walking controls</strong><small
+							>Simple keeps click/tap and arrow controls. Experienced adds WASD, mouse-look and
+							gamepad.</small
 						></span
 					>
 					<select
@@ -621,26 +769,26 @@
 								event.currentTarget.value as GameSettings['controlScheme']
 							)}
 					>
-						<option value="auto">Auto</option>
-						<option value="keyboard">Keyboard</option>
-						<option value="joystick">Virtual joystick</option>
-						<option value="drag">Drag to walk</option>
+						<option value="simple">Simple (recommended)</option>
+						<option value="experienced">Experienced</option>
 					</select>
 				</label>
 				<label>
 					<span
-						><strong>Joystick side</strong><small>Move the stick to the other thumb.</small></span
+						><strong>Camera movement</strong><small
+							>Gentle follows turns more slowly and reduces disorientation.</small
+						></span
 					>
 					<select
-						value={settings.joystickSide}
+						value={settings.cameraMovement}
 						onchange={(event) =>
 							updateSetting(
-								'joystickSide',
-								event.currentTarget.value as GameSettings['joystickSide']
+								'cameraMovement',
+								event.currentTarget.value as GameSettings['cameraMovement']
 							)}
 					>
-						<option value="left">Left</option>
-						<option value="right">Right</option>
+						<option value="gentle">Gentle (recommended)</option>
+						<option value="normal">Normal</option>
 					</select>
 				</label>
 			</div>
@@ -839,6 +987,11 @@
 		background: #37271e;
 	}
 
+	.title-actions button:disabled {
+		opacity: 0.58;
+		cursor: not-allowed;
+	}
+
 	.title-actions .play-button,
 	.dialog-actions .primary-dialog-button {
 		border-color: #f4d37f;
@@ -848,8 +1001,13 @@
 	}
 
 	.title-actions .play-button {
-		min-width: 8rem;
+		min-width: 12rem;
 		font-size: 1.05rem;
+		text-transform: uppercase;
+	}
+
+	.title-actions .play-here {
+		border-color: rgb(244 211 127 / 72%);
 	}
 
 	.local-best {
@@ -954,6 +1112,32 @@
 	.instructions-grid ul {
 		margin: 0;
 		padding-left: 1.1rem;
+	}
+
+	.instructions-grid details {
+		grid-column: 1 / -1;
+		border: 1px solid rgb(255 239 207 / 13%);
+		border-radius: 0.75rem;
+		background: rgb(255 255 255 / 3.5%);
+		padding: 1rem;
+	}
+
+	.instructions-grid summary {
+		color: #f4c866;
+		font-size: 0.9rem;
+		font-weight: 850;
+		cursor: pointer;
+	}
+
+	.instructions-grid details ul {
+		margin-top: 0.75rem;
+	}
+
+	.calcutta-game:fullscreen {
+		width: 100vw;
+		height: 100vh;
+		height: 100dvh;
+		background: #11110f;
 	}
 
 	.instructions-grid dl {
@@ -1107,5 +1291,9 @@
 		.loading-mark {
 			animation: none;
 		}
+	}
+
+	.reduced-motion .loading-mark {
+		animation: none;
 	}
 </style>

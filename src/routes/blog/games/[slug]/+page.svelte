@@ -43,29 +43,28 @@
 					One ordinary walk. No correct side.
 				</h2>
 				<p class="mt-5 text-left text-lg leading-relaxed">
-					Cross a continuously changing Calcutta neighbourhood while the pavement is annexed,
-					flooded, parked upon, discussed across, and occasionally reclassified as a motorbike lane.
-					The city is the obstacle generator, physics engine, ally, enemy, and snack dispenser.
+					Walk into a small three-dimensional North Calcutta neighbourhood of bending lanes,
+					ordinary old houses, shops, courtyards and one wider road. Choose a bylane, turn around,
+					wait for traffic, stop for tea and find another route when the city occupies the first
+					one.
 				</p>
 				<p class="mt-4 text-left leading-relaxed">
-					The route begins in a cramped lane and passes broken pavement, a bazaar, tea-stall
-					bottlenecks, office and school crowds, sudden rain, construction, and a final crossing.
-					Each run is seeded and usually lasts three to seven minutes.
+					The authored street network includes residential, bazaar, workshop and old-house lanes.
+					Pedestrians have destinations, vehicles approach through real depth, rain changes the
+					street, and every run’s small events remain deterministic from its seed.
 				</p>
 			</div>
 
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
 				<h2 class="m-0 text-lg font-black">How to walk</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
-					<li><strong>Move:</strong> WASD, arrow keys, gamepad stick, or the touch joystick.</li>
+					<li><strong>Click or tap the visible road</strong> and the walker goes there.</li>
 					<li>
-						<strong>Dash / squeeze:</strong> Shift, Space, gamepad A, or the on-screen button.
+						<strong>Arrow Up:</strong> walk. <strong>Left / Right:</strong> turn.
+						<strong>Down:</strong> step back.
 					</li>
-					<li>
-						<strong>Pause:</strong> Escape or P. <strong>Mute:</strong> M.
-						<strong>Fullscreen:</strong> F.
-					</li>
-					<li>Approach a food stall to eat. Warnings are always visible; sound is optional.</li>
+					<li><strong>Space:</strong> hurry briefly. <strong>Escape:</strong> pause.</li>
+					<li>Labelled Stop, Turn around, Map and food buttons require no game shorthand.</li>
 				</ul>
 			</aside>
 		</div>
@@ -82,25 +81,26 @@
 			<section class="rounded-xl border border-amber-950/15 p-5">
 				<h2 class="m-0 text-xl font-black">Accessibility</h2>
 				<p class="mt-3 text-left text-sm leading-relaxed">
-					Menus and results are accessible HTML. The game supports keyboard and touch, visible
-					warnings, high contrast, mute, reduced motion, focus management, and automatic pause when
-					the tab loses focus.
+					Menus, map, prompts and route results are accessible HTML. The game supports simple
+					keyboard and tap controls, visible equivalents for sound, high contrast, explicit mute,
+					gentle camera movement, reduced motion, focus management and automatic pause.
 				</p>
 			</section>
 			<section class="rounded-xl border border-amber-950/15 p-5">
 				<h2 class="m-0 text-xl font-black">Technical notes</h2>
 				<p class="mt-3 text-left text-sm leading-relaxed">
-					An original Canvas 2D engine is loaded only on this route. Fixed-timestep simulation,
-					separate seeded random streams, bounded agents, and a lightweight director keep temporary
-					safe corridors plausible without making them permanent.
+					A lightweight Three.js world is loaded only after Play. Metre-based geometry, a fixed step
+					simulation, an authored navigation graph and named random streams keep movement, traffic
+					and temporary obstructions coherent. Web Audio positions important sounds in the world and
+					applies distance filtering, modest occlusion and restrained Doppler shift.
 				</p>
 			</section>
 			<section class="rounded-xl border border-amber-950/15 p-5">
 				<h2 class="m-0 text-xl font-black">Privacy and saved scores</h2>
 				<p class="mt-3 text-left text-sm leading-relaxed">
-					Settings, best scores, and recent run summaries stay in this browser’s local storage. They
-					are not uploaded. There is no account, remote leaderboard, advertising, or game-specific
-					telemetry.
+					Settings, best scores, recent run summaries and the latest route stay in this browser’s
+					local storage. They are not uploaded. There is no account, remote leaderboard,
+					advertising, or game-specific telemetry.
 				</p>
 			</section>
 		</div>

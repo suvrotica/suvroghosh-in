@@ -1,7 +1,7 @@
-import type { RunResult, StoredRunRecord } from './runtime-types';
+import type { RouteTracePoint, RunResult, StoredRunRecord } from './runtime-types';
 
 export const RUNS_STORAGE_KEY = 'calcutta-footpath.runs';
-export const RUNS_VERSION = 1 as const;
+export const RUNS_VERSION = 2 as const;
 
 export const EMPTY_STORED_RUNS: Readonly<StoredRunRecord> = {
 	version: RUNS_VERSION,
@@ -16,6 +16,25 @@ function isRecord(value: unknown): value is Record<string, unknown> {
 
 function finiteNonNegative(value: unknown, fallback: number): number {
 	return typeof value === 'number' && Number.isFinite(value) ? Math.max(0, value) : fallback;
+}
+
+function parseRoute(value: unknown): RouteTracePoint[] | undefined {
+	if (!Array.isArray(value)) return undefined;
+	const route = value.slice(0, 480).flatMap((candidate): RouteTracePoint[] => {
+		if (!isRecord(candidate)) return [];
+		const x = typeof candidate.x === 'number' ? candidate.x : Number.NaN;
+		const z = typeof candidate.z === 'number' ? candidate.z : Number.NaN;
+		const atMs = finiteNonNegative(candidate.atMs, 0);
+		if (!Number.isFinite(x) || !Number.isFinite(z)) return [];
+		const kind = ['walk', 'tea', 'food', 'turn-around', 'incident'].includes(
+			typeof candidate.kind === 'string' ? candidate.kind : ''
+		)
+			? (candidate.kind as RouteTracePoint['kind'])
+			: undefined;
+		const label = typeof candidate.label === 'string' ? candidate.label.slice(0, 120) : undefined;
+		return [{ x, z, atMs, ...(kind ? { kind } : {}), ...(label ? { label } : {}) }];
+	});
+	return route.length > 1 ? route : undefined;
 }
 
 export function parseStoredRuns(value: unknown): StoredRunRecord {
@@ -47,7 +66,8 @@ export function parseStoredRuns(value: unknown): StoredRunRecord {
 					typeof candidate.at === 'string' && !Number.isNaN(Date.parse(candidate.at))
 						? candidate.at
 						: new Date(0).toISOString();
-				return seed ? [{ seed, won, score, elapsedMs, at }] : [];
+				const route = parseRoute(candidate.route);
+				return seed ? [{ seed, won, score, elapsedMs, at, ...(route ? { route } : {}) }] : [];
 			})
 		: [];
 
@@ -61,7 +81,7 @@ export function parseStoredRuns(value: unknown): StoredRunRecord {
 
 export function recordRun(
 	current: StoredRunRecord,
-	result: Pick<RunResult, 'seed' | 'won' | 'elapsedMs' | 'score'>,
+	result: Pick<RunResult, 'seed' | 'won' | 'elapsedMs' | 'score' | 'route'>,
 	at = new Date()
 ): StoredRunRecord {
 	const score = finiteNonNegative(result.score.total, 0);
@@ -81,7 +101,8 @@ export function recordRun(
 				won: result.won,
 				score,
 				elapsedMs,
-				at: at.toISOString()
+				at: at.toISOString(),
+				...(result.route ? { route: parseRoute(result.route) } : {})
 			},
 			...current.recent
 		].slice(0, 8)

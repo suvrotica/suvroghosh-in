@@ -11,6 +11,8 @@
 	"scripts": {
 		"predev": "npm run sketches:generate",
 		"dev": "vite dev",
+		"calcutta-footpath:test": "vitest run src/lib/games/calcutta-footpath",
+		"calcutta-footpath:browser:test": "playwright test --config=playwright.calcutta-footpath.config.ts",
 		"tags:generate": "node scripts/generate-post-tags.mjs",
 		"tags:test": "node --test scripts/generate-post-tags.test.mjs",
 		"bengali:test": "node --test scripts/rehype-bengali-lang.test.mjs",

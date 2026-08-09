@@ -1,10 +1,10 @@
 ---
 title: "Calcutta Footpath Simulator: Ekdom Side Diye Jaan"
-description: "A full-screen Calcutta survival game where potholes, drains, cows, motorbikes, hawkers, snacks, and municipal entropy sabotage one ordinary walk."
+description: "A three-dimensional North Calcutta walking game of branching lanes, spatial traffic, tea stops, rain, and the art of taking another route."
 date: "2026-07-25"
-dateModified: "2026-07-25"
+dateModified: "2026-08-09"
 category: "Games"
-tags: ["Games","Calcutta","Kolkata","Browser Game","Satire","Svelte","Saved Scores","Technical Notes","Browser","Game"]
+tags: ["Games","Calcutta","Kolkata","Browser Game","Satire","Svelte","Saved Scores","Technical Notes","Route","Game"]
 pinnedTags: ["Games", "Calcutta", "Kolkata", "Browser Game", "Satire", "Svelte"]
 published: true
 color: "amber"
@@ -16,15 +16,15 @@ status: "complete"
 
 ## About the game
 
-Cross one Calcutta neighbourhood. Choose any side you like. It will shortly become the wrong one.
+Cross one North Calcutta neighbourhood. Choose any side you like. Circumstances will shortly amend it.
 
-This is a full-screen arcade walk through a continuously changing street. Potholes fill with rain, hawkers find one more foot of pavement, pedestrians stop to answer phones, dogs revise their sleeping arrangements, motorbikes discover supplementary highways, and cows remain legally blameless.
+This is a third-person walk through a small, dense three-dimensional street network. The old houses rise on both sides, roads bend into bylanes, traffic approaches through real depth, potholes fill with rain, pedestrians negotiate personal space, dogs revise their sleeping arrangements, and cows remain legally blameless.
 
 ## How to walk
 
-Use WASD or the arrow keys to move. Press Shift or Space for a short urgent squeeze. Press P or Escape to pause, M to mute, and F for browser fullscreen. Touch devices receive a thumb joystick or drag-to-walk mode plus a separate dash button. A gamepad can also be used.
+Click or tap a clear place on the visible road to walk there. Click into a side lane to turn. Arrow Up walks forward, Left and Right turn, Down steps back, Space hurries briefly, and Escape pauses. Labelled buttons stop the walk, turn around, open the map and handle nearby food without video-game shorthand. Optional experienced controls add WASD, mouse-look and gamepad.
 
-Reach the far end with stamina and morale remaining. Warnings appear visually as well as through optional sound. There is usually a plausible route, but the city is permitted to amend it.
+Reach the destination by any plausible route. Warnings appear visually as well as through spatial sound. Temporary blockages always resolve or leave another path; sometimes standing still for four seconds is the sensible move.
 
 ## Food and effects
 
@@ -32,12 +32,12 @@ Fuchka restores stamina. Mishti restores morale but takes a moment to eat. Tea s
 
 ## Accessibility
 
-Menus, settings, instructions, pause controls, and run results are regular accessible HTML rather than canvas-only text. The game includes keyboard and touch input, high-contrast warning options, sound-independent warnings, mute, reduced motion, visible focus states, and automatic pause when the tab loses focus.
+Menus, settings, instructions, map, prompts and route results are regular accessible HTML rather than WebGL-only text. The game includes simple keyboard and tap input, high-contrast visual warnings, explicit mute, gentle camera movement, reduced motion, visible focus states and automatic pause when the tab loses focus.
 
 ## Technical notes
 
-The street is rendered with an original Canvas 2D engine loaded only in the browser on this route. Runs use seeded random streams, bounded agents, fixed-timestep simulation, temporary safe corridors, and a difficulty director that quietly releases procedural deadlocks.
+The street is rendered with a lightweight Three.js engine loaded only after Play on this route. The world uses metres, an authored irregular navigation graph, procedural original materials, bounded agents and fixed-timestep simulation. Web Audio uses world-positioned sources, distance filtering, modest building occlusion, acoustic zones and a subtle clamped Doppler approximation for moving traffic.
 
 ## Privacy and saved scores
 
-Best scores, settings, and optional recent-run statistics stay in local storage in this browser. They are not uploaded. The game has no account, remote leaderboard, advertising, or game-specific tracking.
+Best scores, settings, recent-run statistics and the latest route stay in local storage in this browser. They are not uploaded. The game has no account, remote leaderboard, advertising or game-specific tracking.

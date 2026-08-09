@@ -10458,9 +10458,9 @@
 			"dateModified": "2026-07-25"
 		},
 		"src/lib/posts/calcutta-footpath-simulator-ekdom-side-diye-jaan.md": {
-			"bodyHash": "ff02e2be373dcffd48d1794bf4bb88a5fc575194213f48f11d1cefa109f9c14e",
+			"bodyHash": "5e3c6a620f48518a2258da3207e8ba3490c1f6859ef00a63b853e0e9f7bb13d0",
 			"hashVersion": 2,
-			"revisionHash": "61eb9453930938528df4ee7783d61248d6edb46572be6823857f683dab2e5399",
+			"revisionHash": "b0c4b96965148ca74ed3d24241ab498684315d496acb7793d1d8f165e22c081a",
 			"generatedTags": [
 				"Games",
 				"Calcutta",
@@ -10470,12 +10470,12 @@
 				"Svelte",
 				"Saved Scores",
 				"Technical Notes",
-				"Browser",
+				"Route",
 				"Game"
 			],
 			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Satire", "Svelte"],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-07-25"
+			"dateModified": "2026-08-09"
 		},
 		"src/lib/posts/the-neuron-zoo.md": {
 			"bodyHash": "26bd6fa96655dfe647a587a21e4c3a0c4dc0606f608e960036f7cbe08e5a603e",

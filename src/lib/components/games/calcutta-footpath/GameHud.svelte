@@ -4,144 +4,94 @@
 	type Props = {
 		hud: HudSnapshot;
 		soundEnabled: boolean;
+		audioNeedsGesture: boolean;
 		fullscreenSupported: boolean;
 		isFullscreen: boolean;
 		localNotice: string;
+		mapOpen: boolean;
 		onpause: () => void;
 		onmute: () => void;
+		onaudioretry: () => void;
 		onfullscreen: () => void;
+		onmap: () => void;
+		oninteract: () => void;
+		onstop: () => void;
+		onturnaround: () => void;
 	};
 
 	let {
 		hud,
 		soundEnabled,
+		audioNeedsGesture,
 		fullscreenSupported,
 		isFullscreen,
 		localNotice,
+		mapOpen,
 		onpause,
 		onmute,
-		onfullscreen
+		onaudioretry,
+		onfullscreen,
+		onmap,
+		oninteract,
+		onstop,
+		onturnaround
 	}: Props = $props();
 
-	const numberFormatter = new Intl.NumberFormat('en-IN');
-
-	const stamina = $derived(clampPercentage(hud.stamina));
-	const morale = $derived(clampPercentage(hud.morale));
-	const distance = $derived(clampPercentage(hud.distance * 100));
-	const weather = $derived(
-		hud.weather === 'post-rain' ? 'After rain' : hud.weather === 'rain' ? 'Rain' : 'Dry'
+	const stamina = $derived(Math.round(Math.max(0, Math.min(100, hud.stamina))));
+	const morale = $derived(Math.round(Math.max(0, Math.min(100, hud.morale))));
+	const destination = $derived(
+		Math.max(0, Math.round(hud.destinationMetres ?? Math.max(0, 180 - hud.distanceMetres)))
 	);
-
-	function clampPercentage(value: number): number {
-		return Math.round(Math.max(0, Math.min(100, Number.isFinite(value) ? value : 0)));
-	}
 </script>
 
-<div class="game-hud" aria-label="Current walk status">
-	<section class="hud-stats" aria-label="Player status">
-		<div class="vitals">
-			<div class:critical={stamina <= 25} class="vital stamina">
-				<div class="vital-heading">
-					<span>Stamina</span>
-					<strong>{stamina}%</strong>
-				</div>
-				<progress max="100" value={stamina} aria-label={`Stamina: ${stamina} percent`}>
-					{stamina}%
-				</progress>
-			</div>
-
-			<div class:critical={morale <= 25} class="vital morale">
-				<div class="vital-heading">
-					<span>Morale</span>
-					<strong>{morale}%</strong>
-				</div>
-				<progress max="100" value={morale} aria-label={`Morale: ${morale} percent`}>
-					{morale}%
-				</progress>
-			</div>
-		</div>
-
-		<dl class="journey">
-			<div>
-				<dt>Distance</dt>
-				<dd>{numberFormatter.format(Math.max(0, hud.distanceMetres))} m · {distance}%</dd>
-			</div>
-			<div>
-				<dt>Zone</dt>
-				<dd>{hud.zone}</dd>
-			</div>
-			<div>
-				<dt>Weather</dt>
-				<dd>{weather}</dd>
-			</div>
-			<div>
-				<dt>Score</dt>
-				<dd>{numberFormatter.format(Math.max(0, Math.round(hud.score)))}</dd>
-			</div>
-		</dl>
+<div
+	class:high-contrast={hud.highContrastWarnings}
+	class="game-hud"
+	aria-label="Current walk status"
+>
+	<section class="destination-card" aria-label="Journey">
+		<span>Destination</span>
+		<strong>{destination} m</strong>
+		<small>{hud.streetName ?? hud.zone}</small>
 	</section>
 
-	<nav class="hud-actions" aria-label="Game controls">
-		<button type="button" onclick={onpause} aria-label="Pause game" title="Pause game">
-			<svg viewBox="0 0 24 24" aria-hidden="true">
-				<path d="M7 5.5h3v13H7zM14 5.5h3v13h-3z"></path>
-			</svg>
+	<nav class="hud-actions" aria-label="Walk controls">
+		<button type="button" onclick={onmap} aria-expanded={mapOpen}>Map</button>
+		<button type="button" onclick={onmute} aria-pressed={soundEnabled}>
+			Sound {soundEnabled ? 'on' : 'off'}
 		</button>
-		<button
-			type="button"
-			onclick={onmute}
-			aria-label="Sound"
-			aria-pressed={soundEnabled}
-			title={soundEnabled ? 'Mute sound' : 'Turn sound on'}
-		>
-			{#if soundEnabled}
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M4 9.5v5h4l5 4v-13l-5 4H4z"></path>
-					<path
-						d="M16 8.2c1 .9 1.5 2.2 1.5 3.8s-.5 2.9-1.5 3.8M18.6 5.7c1.7 1.7 2.6 3.8 2.6 6.3s-.9 4.6-2.6 6.3"
-						class="stroke"
-					></path>
-				</svg>
-			{:else}
-				<svg viewBox="0 0 24 24" aria-hidden="true">
-					<path d="M4 9.5v5h4l5 4v-13l-5 4H4z"></path>
-					<path d="m16 9 5 6m0-6-5 6" class="stroke"></path>
-				</svg>
-			{/if}
-		</button>
-		{#if fullscreenSupported}
-			<button
-				type="button"
-				onclick={onfullscreen}
-				aria-label={isFullscreen ? 'Exit full screen' : 'Enter full screen'}
-				aria-pressed={isFullscreen}
-				title={isFullscreen ? 'Exit full screen' : 'Enter full screen'}
-			>
-				{#if isFullscreen}
-					<svg viewBox="0 0 24 24" aria-hidden="true">
-						<path d="M9.5 4v5.5H4M14.5 4v5.5H20M9.5 20v-5.5H4M14.5 20v-5.5H20" class="stroke"
-						></path>
-					</svg>
-				{:else}
-					<svg viewBox="0 0 24 24" aria-hidden="true">
-						<path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5" class="stroke"></path>
-					</svg>
-				{/if}
-			</button>
-		{/if}
+		<button type="button" class="pause" onclick={onpause}>Pause</button>
 	</nav>
 
+	{#if stamina < 92 || morale < 34}
+		<section class="vitals" aria-label="Walking condition">
+			{#if stamina < 92}
+				<label>
+					<span>Stamina <strong>{stamina}%</strong></span>
+					<progress max="100" value={stamina}>{stamina}%</progress>
+				</label>
+			{/if}
+			{#if morale < 34}
+				<p class="morale">Morale is low — {morale}%</p>
+			{/if}
+		</section>
+	{/if}
+
 	<div class="announcements">
+		{#if soundEnabled && audioNeedsGesture}
+			<button class="banner audio-retry" type="button" onclick={onaudioretry}>
+				Tap to hear the street
+			</button>
+		{/if}
 		{#if hud.tutorialCue}
 			<p class="banner tutorial" role="status" aria-live="polite" aria-atomic="true">
-				<span aria-hidden="true">?</span>
 				{hud.tutorialCue}
 			</p>
 		{/if}
-		{#if hud.warning}
+		{#if hud.visualCue || hud.warning}
 			<p class="banner warning" role="alert" aria-atomic="true">
 				<span aria-hidden="true">!</span>
-				{hud.warning}
+				{hud.visualCue || hud.warning}
 			</p>
 		{/if}
 		{#if hud.reaction}
@@ -151,7 +101,6 @@
 		{/if}
 		{#if hud.foodEffect}
 			<p class="banner food" role="status" aria-live="polite" aria-atomic="true">
-				<span aria-hidden="true">+</span>
 				{hud.foodEffect}
 			</p>
 		{/if}
@@ -161,6 +110,24 @@
 			</p>
 		{/if}
 	</div>
+
+	{#if hud.interactionPrompt}
+		<div class="interaction">
+			<button type="button" onclick={oninteract}>{hud.interactionPrompt}</button>
+			<small>or press Enter</small>
+		</div>
+	{/if}
+
+	<div class="quick-walk-actions" aria-label="Immediate walking actions">
+		{#if hud.walkingAutomatically}
+			<button type="button" onclick={onstop}>Stop walking</button>
+		{/if}
+		<button type="button" onclick={onturnaround}>Turn around</button>
+	</div>
+
+	{#if fullscreenSupported && isFullscreen}
+		<button class="exit-fullscreen" type="button" onclick={onfullscreen}>Exit full screen</button>
+	{/if}
 </div>
 
 <style>
@@ -178,120 +145,48 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.hud-stats {
+	.destination-card,
+	.hud-actions,
+	.vitals,
+	.interaction,
+	.quick-walk-actions,
+	.exit-fullscreen {
+		pointer-events: auto;
+	}
+
+	.destination-card {
 		position: absolute;
 		top: var(--safe-top);
 		left: var(--safe-left);
-		width: min(
-			36rem,
-			calc(100% - 11.25rem - env(safe-area-inset-left) - env(safe-area-inset-right))
-		);
-		padding: 0.65rem 0.75rem;
-		border: 1px solid rgb(255 233 185 / 42%);
-		border-radius: 0.65rem;
-		background: rgb(23 17 13 / 88%);
-		box-shadow: 0 0.4rem 1.4rem rgb(0 0 0 / 34%);
-		backdrop-filter: blur(8px);
-	}
-
-	.vitals {
 		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.65rem;
+		min-width: 8.5rem;
+		gap: 0.06rem;
+		border: 1px solid rgb(255 239 207 / 25%);
+		border-radius: 0.55rem;
+		background: rgb(18 17 15 / 72%);
+		padding: 0.55rem 0.7rem;
+		box-shadow: 0 0.35rem 1.2rem rgb(0 0 0 / 25%);
+		backdrop-filter: blur(7px);
 	}
 
-	.vital-heading {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 0.5rem;
-		margin-bottom: 0.25rem;
-		color: #f8e7c2;
+	.destination-card span {
+		color: #d8cbb5;
+		font-size: 0.62rem;
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.destination-card strong {
+		font-size: 1.1rem;
+		line-height: 1.1;
+	}
+
+	.destination-card small {
+		max-width: 12rem;
+		margin-top: 0.12rem;
+		color: #e7d9c0;
 		font-size: 0.68rem;
-		font-weight: 850;
-		letter-spacing: 0.09em;
-		line-height: 1;
-		text-transform: uppercase;
-	}
-
-	.vital-heading strong {
-		color: #fffdf6;
-		font-size: 0.78rem;
-		letter-spacing: 0;
-	}
-
-	progress {
-		display: block;
-		width: 100%;
-		height: 0.55rem;
-		overflow: hidden;
-		border: 1px solid rgb(255 255 255 / 24%);
-		border-radius: 999px;
-		appearance: none;
-		background: #191410;
-	}
-
-	progress::-webkit-progress-bar {
-		background: #191410;
-	}
-
-	progress::-webkit-progress-value {
-		border-radius: inherit;
-		background: #f4c84d;
-	}
-
-	progress::-moz-progress-bar {
-		border-radius: inherit;
-		background: #f4c84d;
-	}
-
-	.morale progress::-webkit-progress-value {
-		background: #73d3a3;
-	}
-
-	.morale progress::-moz-progress-bar {
-		background: #73d3a3;
-	}
-
-	.critical progress::-webkit-progress-value {
-		background: #ff6b57;
-	}
-
-	.critical progress::-moz-progress-bar {
-		background: #ff6b57;
-	}
-
-	.journey {
-		display: grid;
-		grid-template-columns: 1.2fr 1.8fr 1fr 1fr;
-		gap: 0.45rem 0.75rem;
-		margin: 0.6rem 0 0;
-		padding-top: 0.55rem;
-		border-top: 1px solid rgb(255 244 218 / 18%);
-	}
-
-	.journey div {
-		min-width: 0;
-	}
-
-	.journey dt {
-		color: #e7c98e;
-		font-size: 0.59rem;
-		font-weight: 850;
-		letter-spacing: 0.1em;
-		line-height: 1;
-		text-transform: uppercase;
-	}
-
-	.journey dd {
-		margin: 0.18rem 0 0;
-		overflow: hidden;
-		color: #fffdf6;
-		font-size: clamp(0.7rem, 1.6vw, 0.82rem);
-		font-weight: 760;
-		line-height: 1.2;
-		text-overflow: ellipsis;
-		white-space: nowrap;
 	}
 
 	.hud-actions {
@@ -299,203 +194,193 @@
 		top: var(--safe-top);
 		right: var(--safe-right);
 		display: flex;
-		gap: 0.4rem;
-		pointer-events: auto;
+		gap: 0.35rem;
 	}
 
-	.hud-actions button {
-		display: grid;
-		width: 2.75rem;
-		height: 2.75rem;
-		flex: none;
-		padding: 0;
-		place-items: center;
-		border: 1px solid rgb(255 235 193 / 48%);
-		border-radius: 0.55rem;
-		background: rgb(25 18 13 / 90%);
-		box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 30%);
-		color: #fff8e7;
+	button {
+		min-width: 2.75rem;
+		min-height: 2.75rem;
+		border: 1px solid rgb(255 239 207 / 32%);
+		border-radius: 0.5rem;
+		background: rgb(18 17 15 / 76%);
+		padding: 0.48rem 0.68rem;
+		color: #fff8ea;
+		font: inherit;
+		font-size: 0.72rem;
+		font-weight: 820;
 		cursor: pointer;
-		-webkit-tap-highlight-color: transparent;
-		backdrop-filter: blur(8px);
+		backdrop-filter: blur(7px);
 	}
 
-	.hud-actions button:hover {
-		border-color: #ffd878;
-		background: rgb(68 43 24 / 95%);
+	button:hover,
+	button:focus-visible {
+		border-color: #f2cc73;
+		background: rgb(47 40 32 / 90%);
 	}
 
-	.hud-actions button:focus-visible {
-		outline: 3px solid #fff2bd;
+	button:focus-visible {
+		outline: 3px solid #f2cc73;
 		outline-offset: 2px;
 	}
 
-	.hud-actions svg {
-		width: 1.35rem;
-		height: 1.35rem;
-		fill: currentColor;
+	.hud-actions .pause {
+		background: rgb(244 222 171 / 90%);
+		color: #251d16;
 	}
 
-	.hud-actions .stroke {
-		fill: none;
-		stroke: currentColor;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		stroke-width: 2;
+	.vitals {
+		position: absolute;
+		top: calc(var(--safe-top) + 5.25rem);
+		left: var(--safe-left);
+		width: min(11rem, 42vw);
+		border-radius: 0.45rem;
+		background: rgb(18 17 15 / 65%);
+		padding: 0.45rem 0.6rem;
+		backdrop-filter: blur(6px);
+	}
+
+	.vitals label,
+	.vitals label span {
+		display: grid;
+		gap: 0.2rem;
+	}
+
+	.vitals label span {
+		grid-template-columns: 1fr auto;
+		font-size: 0.68rem;
+	}
+
+	progress {
+		width: 100%;
+		height: 0.4rem;
+		accent-color: #e5b85c;
+	}
+
+	.morale {
+		margin: 0.35rem 0 0;
+		color: #ffd6c7;
+		font-size: 0.68rem;
 	}
 
 	.announcements {
 		position: absolute;
-		top: clamp(7.5rem, 20vh, 11rem);
-		right: max(1rem, env(safe-area-inset-right));
-		left: max(1rem, env(safe-area-inset-left));
+		top: max(5.2rem, 13vh);
+		left: 50%;
 		display: grid;
+		width: min(34rem, calc(100% - 2rem));
+		transform: translateX(-50%);
 		justify-items: center;
-		gap: 0.45rem;
+		gap: 0.42rem;
 	}
 
 	.banner {
-		max-width: min(40rem, 92vw);
 		margin: 0;
-		padding: 0.5rem 0.8rem;
-		border: 1px solid rgb(255 255 255 / 38%);
-		border-radius: 0.45rem;
-		background: rgb(24 18 14 / 91%);
-		box-shadow: 0 0.45rem 1.6rem rgb(0 0 0 / 40%);
-		color: #fffdf5;
-		font-size: clamp(0.78rem, 2.2vw, 1rem);
-		font-weight: 800;
+		border: 1px solid rgb(255 239 207 / 35%);
+		border-radius: 999px;
+		background: rgb(18 17 15 / 82%);
+		padding: 0.46rem 0.78rem;
+		color: #fff8e8;
+		font-size: clamp(0.72rem, 1.7vw, 0.84rem);
+		font-weight: 760;
 		line-height: 1.3;
 		text-align: center;
-		text-wrap: balance;
-		backdrop-filter: blur(8px);
+		box-shadow: 0 0.35rem 1.3rem rgb(0 0 0 / 24%);
+		backdrop-filter: blur(7px);
 	}
 
-	.banner span {
-		display: inline-grid;
-		min-width: 1.35rem;
-		height: 1.35rem;
-		margin-right: 0.3rem;
-		place-items: center;
-		border-radius: 50%;
-		background: currentColor;
-		color: #28120b;
-		font-size: 0.8rem;
-		line-height: 1;
+	.banner.warning {
+		border-color: #ffe59f;
+		background: rgb(68 42 24 / 91%);
 	}
 
-	.warning {
-		border-color: #ffb39c;
-		background: rgb(93 25 13 / 94%);
-		color: #fff0e8;
+	.audio-retry {
+		border-color: #f3d57f;
+		background: #f0cc75;
+		color: #281e15;
+		pointer-events: auto;
 	}
 
-	.tutorial {
-		border-color: #f0cd75;
-		background: rgb(56 42 21 / 94%);
-		color: #fff4ce;
+	.high-contrast .banner.warning {
+		border: 3px solid #fff;
+		background: #000;
+		color: #fff;
 	}
 
-	.reaction {
-		border-color: #f1d28e;
-		background: rgb(48 34 20 / 92%);
-		color: #fff3d6;
+	.banner.food {
+		border-color: #d7d299;
+	}
+	.banner.reaction {
 		font-style: italic;
 	}
 
-	.food {
-		border-color: #8ee0a9;
-		background: rgb(13 65 43 / 94%);
-		color: #edfff2;
+	.interaction {
+		position: absolute;
+		bottom: max(5.6rem, calc(env(safe-area-inset-bottom) + 5rem));
+		left: 50%;
+		display: grid;
+		transform: translateX(-50%);
+		justify-items: center;
+		gap: 0.18rem;
 	}
 
-	.notice {
-		border-color: rgb(255 255 255 / 38%);
-		background: rgb(25 24 23 / 88%);
-		color: #fffdf5;
-		font-weight: 650;
+	.interaction button {
+		min-height: 3rem;
+		border-color: #f0d08a;
+		background: rgb(241 213 153 / 94%);
+		padding-inline: 1rem;
+		color: #2b2017;
+		font-size: 0.86rem;
 	}
 
-	@media (max-width: 42rem) {
-		.hud-stats {
-			top: calc(var(--safe-top) + 3.2rem);
-			right: var(--safe-right);
-			width: auto;
-			padding: 0.5rem 0.6rem;
-		}
-
-		.journey {
-			grid-template-columns: repeat(4, minmax(0, 1fr));
-			gap: 0.35rem;
-			margin-top: 0.45rem;
-			padding-top: 0.45rem;
-		}
-
-		.journey dt {
-			font-size: 0.53rem;
-		}
-
-		.journey dd {
-			font-size: 0.68rem;
-		}
-
-		.announcements {
-			top: clamp(8.8rem, 24vh, 10.5rem);
-		}
+	.interaction small {
+		color: #fff4db;
+		font-size: 0.65rem;
+		text-shadow: 0 1px 4px #000;
 	}
 
-	@media (max-width: 25rem) {
-		.hud-stats {
-			padding-inline: 0.5rem;
-		}
-
-		.vitals {
-			gap: 0.45rem;
-		}
-
-		.journey {
-			grid-template-columns: repeat(2, minmax(0, 1fr));
-		}
+	.quick-walk-actions {
+		position: absolute;
+		bottom: max(0.65rem, env(safe-area-inset-bottom));
+		left: 50%;
+		display: flex;
+		transform: translateX(-50%);
+		gap: 0.4rem;
 	}
 
-	@media (max-height: 31rem) and (orientation: landscape) {
-		.hud-stats {
-			top: var(--safe-top);
-			width: min(
-				32rem,
-				calc(100% - 10.5rem - env(safe-area-inset-left) - env(safe-area-inset-right))
-			);
-			padding: 0.42rem 0.55rem;
-		}
-
-		.journey {
-			margin-top: 0.35rem;
-			padding-top: 0.35rem;
-		}
-
-		.announcements {
-			top: 5.6rem;
-		}
+	.exit-fullscreen {
+		position: absolute;
+		right: var(--safe-right);
+		bottom: max(0.65rem, env(safe-area-inset-bottom));
 	}
 
-	@media (prefers-reduced-motion: reduce) {
+	@media (max-width: 40rem) {
+		.destination-card {
+			min-width: 7.4rem;
+		}
+		.hud-actions {
+			gap: 0.22rem;
+		}
 		.hud-actions button {
-			transition: none;
+			padding-inline: 0.48rem;
+			font-size: 0.67rem;
+		}
+		.exit-fullscreen {
+			display: none;
 		}
 	}
 
-	@media (forced-colors: active) {
-		.hud-stats,
-		.hud-actions button,
-		.banner {
-			border: 2px solid CanvasText;
-			background: Canvas;
-			color: CanvasText;
-			forced-color-adjust: none;
+	@media (hover: none), (pointer: coarse) {
+		.quick-walk-actions {
+			display: none;
 		}
+	}
 
-		progress {
-			border-color: CanvasText;
+	@media (max-height: 34rem) and (orientation: landscape) {
+		.vitals {
+			display: none;
+		}
+		.announcements {
+			top: 3.7rem;
 		}
 	}
 </style>

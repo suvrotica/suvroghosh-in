@@ -20,12 +20,12 @@ export const gamesCatalog: readonly GameCatalogEntry[] = [
 		title: 'Calcutta Footpath Simulator: Ekdom Side Diye Jaan',
 		shortTitle: 'Calcutta Footpath Simulator',
 		description:
-			'A full-screen Calcutta survival game where potholes, drains, cows, motorbikes, hawkers, snacks, and municipal entropy sabotage one ordinary walk.',
+			'A three-dimensional North Calcutta walking game of branching lanes, spatial traffic, tea stops, rain, and taking another route.',
 		cover: '/images/games/calcutta-footpath-simulator-cover.svg',
 		socialCover: '/images/games/calcutta-footpath-simulator-cover.png',
 		coverAlt:
 			'A hand-painted Calcutta pavement crowded by a cow, a motorbike, pedestrians, puddles, a tea stall, and one worried walker',
-		inputs: ['Keyboard', 'Touch', 'Gamepad'],
+		inputs: ['Click or tap', 'Arrow keys', 'Optional gamepad'],
 		duration: '3–7 minutes',
 		compatibility: ['Desktop', 'Mobile', 'Tablet'],
 		status: 'New'

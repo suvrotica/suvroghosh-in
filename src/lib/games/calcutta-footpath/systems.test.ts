@@ -124,13 +124,14 @@ describe('settings parsing and migration', () => {
 		expect(result.migratedFrom).toBe(0);
 		expect(result.repaired).toBe(true);
 		expect(result.settings).toEqual({
-			version: 2,
+			version: 3,
 			soundEnabled: true,
 			reducedMotion: true,
 			detailLevel: 'low',
-			controlScheme: 'keyboard',
-			joystickSide: 'right',
+			controlScheme: 'simple',
+			cameraMovement: 'gentle',
 			tutorialEnabled: false,
+			tutorialCompleted: false,
 			highContrastWarnings: true
 		});
 	});
@@ -164,10 +165,33 @@ describe('settings parsing and migration', () => {
 		expect(result.settings).toMatchObject({
 			soundEnabled: true,
 			detailLevel: 'auto',
-			controlScheme: 'joystick',
-			joystickSide: 'left',
+			controlScheme: 'simple',
+			cameraMovement: 'gentle',
 			tutorialEnabled: false,
 			highContrastWarnings: true
+		});
+	});
+
+	it('migrates version-two preferences while preserving an explicit mute', () => {
+		const result = parseSettings({
+			version: 2,
+			soundEnabled: false,
+			reducedMotion: false,
+			detailLevel: 'high',
+			controlScheme: 'keyboard',
+			joystickSide: 'left',
+			tutorialEnabled: true,
+			highContrastWarnings: false
+		});
+
+		expect(result.migratedFrom).toBe(2);
+		expect(result.settings).toMatchObject({
+			version: 3,
+			soundEnabled: false,
+			detailLevel: 'high',
+			controlScheme: 'experienced',
+			cameraMovement: 'gentle',
+			tutorialCompleted: false
 		});
 	});
 });
