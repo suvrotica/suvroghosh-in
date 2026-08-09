@@ -3,8 +3,6 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import sharp from 'sharp';
-
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUTPUT_DIRECTORY = path.join(
 	ROOT,
@@ -13,7 +11,23 @@ const OUTPUT_DIRECTORY = path.join(
 	'visualizations',
 	'strange-attractor-orchestra'
 );
+const MANIFEST_PATH = path.join(
+	ROOT,
+	'scripts',
+	'strange-attractor-orchestra-assets.manifest.json'
+);
 const CHECK = process.argv.includes('--check');
+const MANIFEST_SCHEMA_VERSION = 1;
+const GENERATOR_PATH = 'scripts/render-strange-attractor-orchestra-assets.mjs';
+const PNG_OPTIONS = Object.freeze({
+	palette: true,
+	colors: 160,
+	compressionLevel: 9,
+	effort: 10,
+	dither: 0.12
+});
+const RENDER_CONTRACT = `sharp-svg-png-v1;${JSON.stringify(PNG_OPTIONS)}`;
+const PNG_SIGNATURE = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
 const SEED = 'langford-1847';
 const STEP = 0.005;
 const BURN_IN = 40_000;
@@ -30,6 +44,31 @@ const outputs = [
 	},
 	{ filename: 'langford-poster.png', width: 1440, height: 1080, variant: 'poster' }
 ];
+
+function sha256(value) {
+	return createHash('sha256').update(value).digest('hex');
+}
+
+function sourceSha256(markup) {
+	const normalizedMarkup = markup.replace(/\r\n?/g, '\n');
+	return sha256(
+		Buffer.from(`${MANIFEST_SCHEMA_VERSION}\0${RENDER_CONTRACT}\0${normalizedMarkup}`, 'utf8')
+	);
+}
+
+function readPngDimensions(value) {
+	if (
+		value.length < 24 ||
+		!value.subarray(0, PNG_SIGNATURE.length).equals(PNG_SIGNATURE) ||
+		value.subarray(12, 16).toString('ascii') !== 'IHDR'
+	) {
+		return null;
+	}
+	return {
+		width: value.readUInt32BE(16),
+		height: value.readUInt32BE(20)
+	};
+}
 
 function hashString(value) {
 	let hash = 0x811c9dc5;
@@ -263,14 +302,11 @@ function svg({ width, height, variant }, data) {
 	</svg>`;
 }
 
-async function renderOutput(definition, data) {
-	const buffer = await sharp(Buffer.from(svg(definition, data)))
-		.png({ palette: true, colors: 160, compressionLevel: 9, effort: 10, dither: 0.12 })
-		.toBuffer();
-	const metadata = await sharp(buffer).metadata();
-	if (metadata.width !== definition.width || metadata.height !== definition.height) {
+function validatePng(definition, buffer) {
+	const dimensions = readPngDimensions(buffer);
+	if (dimensions?.width !== definition.width || dimensions.height !== definition.height) {
 		throw new Error(
-			`${definition.filename} rendered ${metadata.width}×${metadata.height}; expected ${definition.width}×${definition.height}.`
+			`${definition.filename} is not a PNG with the expected ${definition.width}×${definition.height} dimensions.`
 		);
 	}
 	if (buffer.byteLength >= 750 * 1024) {
@@ -278,30 +314,138 @@ async function renderOutput(definition, data) {
 			`${definition.filename} is ${buffer.byteLength} bytes; budget is below 750 kB.`
 		);
 	}
-	const target = path.join(OUTPUT_DIRECTORY, definition.filename);
-	if (CHECK) {
-		let existing;
-		try {
-			existing = await readFile(target);
-		} catch {
-			throw new Error(
-				`${path.relative(ROOT, target)} is missing; run npm run strange-attractor-orchestra:assets.`
-			);
-		}
-		if (!existing.equals(buffer)) {
-			throw new Error(
-				`${path.relative(ROOT, target)} is stale; regenerate the deterministic assets.`
-			);
-		}
-	} else {
-		await writeFile(target, buffer);
+}
+
+function manifestRecord(definition, markup, buffer) {
+	return {
+		filename: definition.filename,
+		format: 'png',
+		width: definition.width,
+		height: definition.height,
+		variant: definition.variant,
+		sourceSha256: sourceSha256(markup),
+		pngSha256: sha256(buffer),
+		pngBytes: buffer.byteLength
+	};
+}
+
+function assetManifest(records) {
+	return {
+		schemaVersion: MANIFEST_SCHEMA_VERSION,
+		generator: GENERATOR_PATH,
+		renderContract: RENDER_CONTRACT,
+		seed: SEED,
+		outputs: records
+	};
+}
+
+async function readAssetManifest() {
+	let contents;
+	try {
+		contents = await readFile(MANIFEST_PATH, 'utf8');
+	} catch {
+		throw new Error(
+			`${path.relative(ROOT, MANIFEST_PATH)} is missing; run npm run strange-attractor-orchestra:assets.`
+		);
 	}
-	const digest = createHash('sha256').update(buffer).digest('hex');
+	try {
+		return JSON.parse(contents);
+	} catch {
+		throw new Error(`${path.relative(ROOT, MANIFEST_PATH)} is not valid JSON.`);
+	}
+}
+
+function assertManifestHeader(manifest) {
+	if (
+		!manifest ||
+		typeof manifest !== 'object' ||
+		manifest.schemaVersion !== MANIFEST_SCHEMA_VERSION ||
+		manifest.generator !== GENERATOR_PATH ||
+		manifest.renderContract !== RENDER_CONTRACT ||
+		manifest.seed !== SEED ||
+		!Array.isArray(manifest.outputs)
+	) {
+		throw new Error(
+			`${path.relative(ROOT, MANIFEST_PATH)} has a stale or invalid render contract; run npm run strange-attractor-orchestra:assets.`
+		);
+	}
+}
+
+function assertManifestRecord(recorded, actual, target) {
+	const relativeTarget = path.relative(ROOT, target);
+	if (!recorded || recorded.filename !== actual.filename) {
+		throw new Error(`${relativeTarget} is missing from the deterministic asset manifest.`);
+	}
+	if (recorded.sourceSha256 !== actual.sourceSha256) {
+		throw new Error(
+			`${relativeTarget} has a stale render source; regenerate the deterministic assets.`
+		);
+	}
+	if (
+		recorded.format !== actual.format ||
+		recorded.width !== actual.width ||
+		recorded.height !== actual.height ||
+		recorded.variant !== actual.variant ||
+		recorded.pngSha256 !== actual.pngSha256 ||
+		recorded.pngBytes !== actual.pngBytes
+	) {
+		throw new Error(
+			`${relativeTarget} does not match its deterministic asset manifest; regenerate the assets.`
+		);
+	}
+}
+
+async function verifyOutput(definition, data, manifest, index) {
+	const target = path.join(OUTPUT_DIRECTORY, definition.filename);
+	let existing;
+	try {
+		existing = await readFile(target);
+	} catch {
+		throw new Error(
+			`${path.relative(ROOT, target)} is missing; run npm run strange-attractor-orchestra:assets.`
+		);
+	}
+	validatePng(definition, existing);
+	// Native SVG rasterization depends on librsvg, Pango, and installed fonts, so Linux and
+	// Windows do not produce the same pixels. Bind the platform-neutral SVG/render contract
+	// to the exact reviewed PNG instead of rerasterizing during CI verification.
+	const record = manifestRecord(definition, svg(definition, data), existing);
+	assertManifestRecord(manifest.outputs[index], record, target);
 	console.log(
-		`${CHECK ? 'Verified' : 'Rendered'} ${path.relative(ROOT, target)} (${definition.width}×${definition.height}, ${buffer.byteLength} bytes, sha256 ${digest}).`
+		`Verified ${path.relative(ROOT, target)} (${definition.width}×${definition.height}, ${existing.byteLength} bytes, sha256 ${record.pngSha256}).`
 	);
+}
+
+async function renderOutput(definition, data, sharp) {
+	const markup = svg(definition, data);
+	const buffer = await sharp(Buffer.from(markup)).png(PNG_OPTIONS).toBuffer();
+	validatePng(definition, buffer);
+	const target = path.join(OUTPUT_DIRECTORY, definition.filename);
+	await writeFile(target, buffer);
+	const record = manifestRecord(definition, markup, buffer);
+	console.log(
+		`Rendered ${path.relative(ROOT, target)} (${definition.width}×${definition.height}, ${buffer.byteLength} bytes, sha256 ${record.pngSha256}).`
+	);
+	return record;
 }
 
 await mkdir(OUTPUT_DIRECTORY, { recursive: true });
 const data = trajectory();
-for (const definition of outputs) await renderOutput(definition, data);
+if (CHECK) {
+	const manifest = await readAssetManifest();
+	assertManifestHeader(manifest);
+	if (manifest.outputs.length !== outputs.length) {
+		throw new Error(
+			`${path.relative(ROOT, MANIFEST_PATH)} has an unexpected output count; regenerate the deterministic assets.`
+		);
+	}
+	for (const [index, definition] of outputs.entries()) {
+		await verifyOutput(definition, data, manifest, index);
+	}
+} else {
+	const { default: sharp } = await import('sharp');
+	const records = [];
+	for (const definition of outputs) records.push(await renderOutput(definition, data, sharp));
+	await writeFile(MANIFEST_PATH, `${JSON.stringify(assetManifest(records), null, '\t')}\n`, 'utf8');
+	console.log(`Rendered ${path.relative(ROOT, MANIFEST_PATH)}.`);
+}

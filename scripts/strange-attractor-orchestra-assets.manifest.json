@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"generator": "scripts/render-strange-attractor-orchestra-assets.mjs",
+	"renderContract": "sharp-svg-png-v1;{\"palette\":true,\"colors\":160,\"compressionLevel\":9,\"effort\":10,\"dither\":0.12}",
+	"seed": "langford-1847",
+	"outputs": [
+		{
+			"filename": "the-strange-attractor-orchestra.png",
+			"format": "png",
+			"width": 1200,
+			"height": 630,
+			"variant": "social",
+			"sourceSha256": "09fe07fa5b8cff693106a92cd57ce8abe325a60ad76da35774bf120ee8186eab",
+			"pngSha256": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
+			"pngBytes": 321407
+		},
+		{
+			"filename": "langford-poster.png",
+			"format": "png",
+			"width": 1440,
+			"height": 1080,
+			"variant": "poster",
+			"sourceSha256": "ebca4186a29ffca8a1b9d99cb3b44dfd83fe42e1d258eeadb5740a2dc4f34448",
+			"pngSha256": "764c6c6af6d82a80bd50d080d7c54acc5117f5e3f92b55024a1efbdacba54d3f",
+			"pngBytes": 618137
+		}
+	]
+}
