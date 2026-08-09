@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T07:40:30.508197+00:00",
+  "generatedAt": "2026-08-09T10:49:13.610063+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8646,6 +8646,29 @@
         "Water",
         "Priya",
         "Years"
+      ],
+      "wordCount": 130
+    },
+    "the-chitin-engine": {
+      "generatedAt": "2026-08-09T10:49:13.422016+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-chitin-engine.svg",
+      "source": "src/lib/posts/the-chitin-engine.md",
+      "sourceHash": "4e8995afa3c2018bcb34b66a0af5a8b3a17ab55e921674ed7fc0b25ccc44ea3c",
+      "sourceModified": "2026-08-09T10:41:48.046988+00:00",
+      "topWords": [
+        "Plate",
+        "Foot",
+        "Every",
+        "Gait",
+        "Insect",
+        "Reveals",
+        "Genome",
+        "Armour",
+        "Distance",
+        "Field",
+        "Target",
+        "Graph"
       ],
       "wordCount": 130
     },

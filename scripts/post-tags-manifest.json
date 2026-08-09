@@ -11216,6 +11216,32 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-09"
+		},
+		"src/lib/posts/the-chitin-engine.md": {
+			"bodyHash": "1c2097b65c5765af39f3e66943805234c3c3757eff8a20650a4fd2a092cfb373",
+			"hashVersion": 2,
+			"revisionHash": "7c617ce91c480044989502fe7285c1a213658c453951efa4979920d126a3ea52",
+			"generatedTags": [
+				"Generative Art",
+				"Procedural Modelling",
+				"Insects",
+				"Arachnids",
+				"Xenobiology",
+				"Inverse Kinematics",
+				"Wing Roots",
+				"Body-Plan Grammar",
+				"Xeno License",
+				"Phase Oscillator"
+			],
+			"pinnedTags": [
+				"Generative Art",
+				"Procedural Modelling",
+				"Insects",
+				"Arachnids",
+				"Xenobiology"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-09"
 		}
 	},
 	"maxTags": 10

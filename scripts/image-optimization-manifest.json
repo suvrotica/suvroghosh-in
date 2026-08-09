@@ -9269,6 +9269,21 @@
       "sourceHash": "1bdfc09bd6c926bba9941ae43d1fee98cbedfd2822fb564d31ded057a100c840",
       "width": 1200
     },
+    "static/images/the-chitin-engine-xenobiological-foundry.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 93251,
+      "outputHash": "b24af63db6a0c2a797139e4b5a06c2ee01b67e7f7561ba7799b71a2fcc5ed075",
+      "resized": false,
+      "sourceBytes": 111517,
+      "sourceHash": "9c8b082e162a6f693c7ff051827a1dcd5463a7313199ba790c8f02d44e1e048f",
+      "width": 1200
+    },
     "static/images/the-city-that-refuses-a-master-plan.webp": {
       "format": "WEBP",
       "height": 900,
@@ -9555,6 +9570,21 @@
       "sourceBytes": 570288,
       "sourceHash": "0bc6f1811fbaa331308c45e4858d0212cbbffdb6cccd14325e34ce1c4abdf57d",
       "width": 1800
+    },
+    "static/images/visualizations/chitin-engine/chitin-engine-four-worlds.png": {
+      "format": "PNG",
+      "height": 900,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 142999,
+      "outputHash": "488fbcf2777af6f7e555ad3ad3966c2622d9bae4dc3677a4d34c5c0f2a717a8f",
+      "resized": false,
+      "sourceBytes": 191361,
+      "sourceHash": "63508d3034620d8737c45ad0ff8f032e3fcd4733c9a08cb179f0f70eab347171",
+      "width": 1600
     },
     "static/images/visualizations/hello-fragment-poster.jpg": {
       "format": "JPEG",

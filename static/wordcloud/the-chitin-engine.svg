@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Chitin Engine: A Xenobiological Creature Foundry" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Chitin Engine: A Xenobiological Creature Foundry</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(716,498)" font-size="118" style="fill:#d9c89e">Plate</text>
+<text transform="translate(834,696)" font-size="108" style="fill:#c49a6c">Foot</text>
+<text transform="translate(790,315)" font-size="108" style="fill:#c7d7b5">Every</text>
+<text transform="translate(1014,82)" font-size="103" style="fill:#e0b879">Gait</text>
+<text transform="translate(250,430)" font-size="103" style="fill:#d88988">Insect</text>
+<text transform="translate(494,610)" font-size="103" style="fill:#d9c89e">Reveals</text>
+<text transform="translate(406,708)" font-size="97" style="fill:#a9b7a3">Genome</text>
+<text transform="translate(509,147)" font-size="97" style="fill:#e0b879">Armour</text>
+<text transform="translate(186,312)" font-size="97" style="fill:#d6a79f">Distance</text>
+<text transform="translate(71,179)" font-size="97" style="fill:#a9b7a3">Field</text>
+<text transform="translate(43,75)" font-size="97" style="fill:#e0b879">Target</text>
+<text transform="translate(159,551)" font-size="91" style="fill:#9fc9c5">Graph</text>
+<text transform="translate(833,177)" font-size="91" style="fill:#c7d7b5">Segments</text>
+<text transform="translate(11,667)" font-size="91" style="fill:#d6a79f">Bounded</text>
+<text transform="translate(573,78)" font-size="85" style="fill:#d5d2c2">World</text>
+<text transform="translate(623,402)" font-size="76" style="fill:#9fc9c5">Deterministic</text>
+<text transform="translate(965,560)" font-size="76" style="fill:#d88988">Shell</text>
+<text transform="translate(415,234)" font-size="76" style="fill:#c49a6c">Cellular</text>
+<text transform="translate(81,574) rotate(-90)" font-size="76" style="fill:#d5d2c2">Limb</text>
+<text transform="translate(1274,642) rotate(-90)" font-size="76" style="fill:#d6a79f">Parameter</text>
+<text transform="translate(408,481)" font-size="62" style="fill:#8fb7d0">Implicit</text>
+<text transform="translate(988,615)" font-size="57" style="fill:#d9c89e">Remain</text>
+<text transform="translate(167,395) rotate(-90)" font-size="57" style="fill:#a9b7a3">Seed</text>
+<text transform="translate(54,323) rotate(-90)" font-size="57" style="fill:#9fc9c5">Regions</text>
+<text transform="translate(16,714)" font-size="57" style="fill:#d5d2c2">Kinematics</text>
+<text transform="translate(181,226)" font-size="57" style="fill:#e0b879">Joints</text>
+<text transform="translate(404,360)" font-size="57" style="fill:#d88988">Axial</text>
+<text transform="translate(852,247)" font-size="57" style="fill:#d9c89e">Terrestrial</text>
+<text transform="translate(89,461)" font-size="57" style="fill:#c7d7b5">Legs</text>
+<text transform="translate(396,57)" font-size="57" style="fill:#8fb7d0">Root</text>
+<text transform="translate(1087,687)" font-size="52" style="fill:#8fb7d0">Engine</text>
+<text transform="translate(224,475)" font-size="52" style="fill:#8fb7d0">Curve</text>
+<text transform="translate(529,530)" font-size="52" style="fill:#d9c89e">FABRIK</text>
+<text transform="translate(115,393) rotate(-90)" font-size="52" style="fill:#c49a6c">Stance</text>
+<text transform="translate(84,593)" font-size="50" style="fill:#d88988">Mutation</text>
+<text transform="translate(829,61)" font-size="39" style="fill:#c49a6c">Specimen</text>
+<text transform="translate(896,113)" font-size="36" style="fill:#8fb7d0">Speculative</text>
+<text transform="translate(601,641)" font-size="36" style="fill:#9fc9c5">Repeatable</text>
+<text transform="translate(1224,567) rotate(-90)" font-size="36" style="fill:#b6c3dd">Limbs</text>
+<text transform="translate(1070,432)" font-size="36" style="fill:#b6c3dd">Inverse</text>
+<text transform="translate(407,586)" font-size="36" style="fill:#a9b7a3">Real</text>
+<text transform="translate(677,185)" font-size="36" style="fill:#d9c89e">Towards</text>
+<text transform="translate(383,163)" font-size="36" style="fill:#9fc9c5">Pairs</text>
+<text transform="translate(232,346)" font-size="36" style="fill:#c49a6c">Grammar</text>
+<text transform="translate(1136,309)" font-size="36" style="fill:#d5d2c2">Many</text>
+<text transform="translate(947,629) rotate(-90)" font-size="36" style="fill:#c49a6c">Creature</text>
+<text transform="translate(362,109)" font-size="36" style="fill:#d5d2c2">Planted</text>
+<text transform="translate(661,328)" font-size="36" style="fill:#e0b879">Visual</text>
+<text transform="translate(719,527)" font-size="35" style="fill:#c49a6c">Antennae</text>
+<text transform="translate(658,275)" font-size="35" style="fill:#d5d2c2">Rather</text>
+<text transform="translate(1083,469)" font-size="35" style="fill:#d5d2c2">Along</text>
+<text transform="translate(474,649)" font-size="35" style="fill:#a9b7a3">Zero</text>
+<text transform="translate(108,417)" font-size="29" style="fill:#d88988">Boundary</text>
+<text transform="translate(761,353)" font-size="29" style="fill:#b6c3dd">Material</text>
+<text transform="translate(393,611)" font-size="29" style="fill:#b6c3dd">Worley</text>
+<text transform="translate(570,343)" font-size="29" style="fill:#9fc9c5">Chain</text>
+<text transform="translate(833,427)" font-size="29" style="fill:#9fc9c5">Motion</text>
+<text transform="translate(9,348)" font-size="26" style="fill:#c49a6c">Four</text>
+<text transform="translate(830,26)" font-size="26" style="fill:#d6a79f">Exhibit</text>
+<text transform="translate(569,170)" font-size="26" style="fill:#d88988">Plates</text>
+<text transform="translate(91,507)" font-size="26" style="fill:#c49a6c">Eyes</text>
+<text transform="translate(760,677)" font-size="26" style="fill:#d88988">Wings</text>
+<text transform="translate(1115,271)" font-size="24" style="fill:#a9b7a3">Graphics</text>
+<text transform="translate(685,295)" font-size="24" style="fill:#d9c89e">Texture</text>
+<text transform="translate(652,22)" font-size="24" style="fill:#d6a79f">Clock</text>
+<text transform="translate(282,115)" font-size="24" style="fill:#c7d7b5">DNA</text>
+<text transform="translate(923,339)" font-size="24" style="fill:#8fb7d0">Natural</text>
+<text transform="translate(1135,199)" font-size="24" style="fill:#d88988">Heuristics</text>
+<text transform="translate(968,426)" font-size="24" style="fill:#c49a6c">Colour</text>
+<text transform="translate(1148,104)" font-size="22" style="fill:#c49a6c">Appendage</text>
+<text transform="translate(67,200)" font-size="22" style="fill:#c7d7b5">Bodyplan</text>
+<text transform="translate(59,95)" font-size="21" style="fill:#d5d2c2">Objectlocal</text>
+<text transform="translate(1109,636)" font-size="20" style="fill:#d6a79f">Supplies</text>
+<text transform="translate(1015,197)" font-size="20" style="fill:#9fc9c5">Arthropod</text>
+<text transform="translate(284,247)" font-size="20" style="fill:#8fb7d0">Modules</text>
+<text transform="translate(1183,710)" font-size="20" style="fill:#c7d7b5">Sensory</text>
+<text transform="translate(388,127)" font-size="20" style="fill:#d9c89e">Connected</text>
+<text transform="translate(837,200)" font-size="20" style="fill:#9fc9c5">Roots</text>
+<text transform="translate(965,627) rotate(-90)" font-size="20" style="fill:#d9c89e">Selected</text>
+<text transform="translate(336,366)" font-size="20" style="fill:#c49a6c">Rules</text>
+<text transform="translate(792,714)" font-size="20" style="fill:#b6c3dd">Software</text>
+<text transform="translate(409,241) rotate(-90)" font-size="20" style="fill:#a9b7a3">Points</text>
+<text transform="translate(1116,345) rotate(-90)" font-size="20" style="fill:#b6c3dd">Bend</text>
+<text transform="translate(172,380)" font-size="20" style="fill:#d9c89e">Portion</text>
+<text transform="translate(918,81)" font-size="20" style="fill:#d5d2c2">Across</text>
+<text transform="translate(271,494)" font-size="20" style="fill:#8fb7d0">Local</text>
+<text transform="translate(1016,715)" font-size="20" style="fill:#b6c3dd">Coordinates</text>
+<text transform="translate(119,245)" font-size="20" style="fill:#d6a79f">Base</text>
+<text transform="translate(452,525)" font-size="20" style="fill:#9fc9c5">Signed</text>
+<text transform="translate(554,549)" font-size="20" style="fill:#a9b7a3">Function</text>
+<text transform="translate(176,612)" font-size="20" style="fill:#d9c89e">Forward</text>
+<text transform="translate(19,595)" font-size="20" style="fill:#b6c3dd">Joint</text>
+<text transform="translate(666,349)" font-size="20" style="fill:#b6c3dd">Fixed</text>
+<text transform="translate(389,76)" font-size="20" style="fill:#c49a6c">Constraint</text>
+<text transform="translate(1131,329)" font-size="20" style="fill:#8fb7d0">Phase</text>
+<text transform="translate(654,424)" font-size="20" style="fill:#c7d7b5">Swing</text>
+<text transform="translate(944,19)" font-size="20" style="fill:#d5d2c2">Keep</text>
+<text transform="translate(777,217)" font-size="20" style="fill:#b6c3dd">Groups</text>
+<text transform="translate(1066,487)" font-size="20" style="fill:#b6c3dd">Gravity</text>
+<text transform="translate(477,253)" font-size="20" style="fill:#d88988">Surface</text>
+<text transform="translate(719,543)" font-size="17" style="fill:#c7d7b5">Phenotype</text>
+<text transform="translate(892,711)" font-size="14" style="fill:#d88988">Biosignatures</text>
+<text transform="translate(494,166)" font-size="14" style="fill:#9fc9c5">Anatomy</text>
+<text transform="translate(653,543)" font-size="12" style="fill:#d6a79f">Requires</text>
+<text transform="translate(863,75)" font-size="12" style="fill:#9fc9c5">Static</text>
+<text transform="translate(1076,16)" font-size="12" style="fill:#b6c3dd">Transforms</text>
+<text transform="translate(1139,445)" font-size="12" style="fill:#e0b879">Renderer</text>
+<text transform="translate(577,247)" font-size="12" style="fill:#d9c89e">Validated</text>
+<text transform="translate(432,628)" font-size="12" style="fill:#d9c89e">Axis</text>
+<text transform="translate(375,694)" font-size="12" style="fill:#c7d7b5">Draw</text>
+<text transform="translate(434,545)" font-size="12" style="fill:#b6c3dd">Targets</text>
+<text transform="translate(100,163)" font-size="12" style="fill:#9fc9c5">Limits</text>
+<text transform="translate(95,607)" font-size="12" style="fill:#8fb7d0">Muscles</text>
+<text transform="translate(207,392)" font-size="12" style="fill:#e0b879">Selection</text>
+<text transform="translate(185,15)" font-size="12" style="fill:#a9b7a3">Extraterrestrial</text>
+<text transform="translate(5,539)" font-size="12" style="fill:#b6c3dd">Changes</text>
+<text transform="translate(284,93)" font-size="12" style="fill:#a9b7a3">Terminator</text>
+<text transform="translate(827,86)" font-size="12" style="fill:#c49a6c">Five</text>
+<text transform="translate(743,480)" font-size="12" style="fill:#a9b7a3">Direction</text>
+<text transform="translate(794,283) rotate(-90)" font-size="12" style="fill:#d5d2c2">Visible</text>
+<text transform="translate(1040,575)" font-size="12" style="fill:#e0b879">Plan</text>
+<text transform="translate(25,64)" font-size="12" style="fill:#d5d2c2">Three</text>
+<text transform="translate(1212,650)" font-size="12" style="fill:#a9b7a3">Differ</text>
+<text transform="translate(970,354)" font-size="12" style="fill:#d6a79f">Xeno</text>
+<text transform="translate(112,552)" font-size="12" style="fill:#9fc9c5">License</text>
+<text transform="translate(354,573)" font-size="12" style="fill:#a9b7a3">Spider</text>
+<text transform="translate(168,119)" font-size="12" style="fill:#c7d7b5">Nodes</text>
+<text transform="translate(106,13)" font-size="12" style="fill:#d5d2c2">Appendages</text>
+<text transform="translate(183,324)" font-size="12" style="fill:#9fc9c5">Wing</text>
+<text transform="translate(12,30)" font-size="12" style="fill:#e0b879">Animal</text>
+</svg>

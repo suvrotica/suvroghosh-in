@@ -4080,6 +4080,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "the-chitin-engine-xenobiological-foundry.png",
+			"src": "/images/the-chitin-engine-xenobiological-foundry.png",
+			"bytes": 93251,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "the-city-that-refuses-a-master-plan.webp",
 			"src": "/images/the-city-that-refuses-a-master-plan.webp",
 			"bytes": 88668,
@@ -4211,6 +4218,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 441512,
 			"width": 1800,
 			"height": 1200
+		},
+		{
+			"name": "visualizations/chitin-engine/chitin-engine-four-worlds.png",
+			"src": "/images/visualizations/chitin-engine/chitin-engine-four-worlds.png",
+			"bytes": 142999,
+			"width": 1600,
+			"height": 900
 		},
 		{
 			"name": "visualizations/hello-fragment-poster.jpg",
