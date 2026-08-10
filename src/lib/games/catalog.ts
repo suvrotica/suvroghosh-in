@@ -1,4 +1,5 @@
 export const CALCUTTA_FOOTPATH_SLUG = 'calcutta-footpath-simulator-ekdom-side-diye-jaan';
+export const KAGOJER_DANA_SLUG = 'kagojer-dana-a-paper-plane-through-calcutta';
 
 export type GameCatalogEntry = {
 	slug: string;
@@ -15,6 +16,21 @@ export type GameCatalogEntry = {
 };
 
 export const gamesCatalog: readonly GameCatalogEntry[] = [
+	{
+		slug: KAGOJER_DANA_SLUG,
+		title: 'Kagojer Dana: A Paper Plane Through Calcutta',
+		shortTitle: 'Kagojer Dana',
+		description:
+			'An unpowered paper-plane flight through a charcoal Calcutta assembled by memory, crosswind, rooftops, river air, and borrowed lift.',
+		cover: '/images/games/kagojer-dana-poster.webp',
+		socialCover: '/images/games/kagojer-dana-social.png',
+		coverAlt:
+			'A folded notebook-paper plane gliding above a charcoal North Calcutta lane toward the cantilever trusses of Howrah Bridge',
+		inputs: ['Keyboard', 'One touch field', 'Optional gamepad'],
+		duration: '6–10 minutes',
+		compatibility: ['Desktop', 'Landscape mobile', 'Tablet'],
+		status: 'New'
+	},
 	{
 		slug: CALCUTTA_FOOTPATH_SLUG,
 		title: 'Calcutta Footpath Simulator: Ekdom Side Diye Jaan',

@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Kagojer Dana: A Paper Plane Through Calcutta" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Kagojer Dana: A Paper Plane Through Calcutta</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(505,425)" font-size="118" style="fill:#d5d2c2">Flight</text>
+<text transform="translate(635,111)" font-size="105" style="fill:#c49a6c">Open</text>
+<text transform="translate(858,249)" font-size="105" style="fill:#c49a6c">Sound</text>
+<text transform="translate(841,579)" font-size="91" style="fill:#e0b879">Height</text>
+<text transform="translate(21,256)" font-size="91" style="fill:#e0b879">Hooghly</text>
+<text transform="translate(638,655)" font-size="91" style="fill:#a9b7a3">Wind</text>
+<text transform="translate(1240,644) rotate(-90)" font-size="91" style="fill:#d9c89e">Geometry</text>
+<text transform="translate(247,653)" font-size="91" style="fill:#a9b7a3">Paper</text>
+<text transform="translate(900,123)" font-size="91" style="fill:#b6c3dd">Calm</text>
+<text transform="translate(539,319)" font-size="74" style="fill:#c7d7b5">Arrow</text>
+<text transform="translate(112,164)" font-size="74" style="fill:#d6a79f">Speed</text>
+<text transform="translate(236,64)" font-size="74" style="fill:#a9b7a3">Plane</text>
+<text transform="translate(321,581) rotate(-90)" font-size="74" style="fill:#d88988">Long</text>
+<text transform="translate(130,714)" font-size="74" style="fill:#c7d7b5">Air</text>
+<text transform="translate(201,376)" font-size="74" style="fill:#8fb7d0">Roofs</text>
+<text transform="translate(341,524)" font-size="74" style="fill:#d88988">Assembled</text>
+<text transform="translate(545,210)" font-size="74" style="fill:#e0b879">Memory</text>
+<text transform="translate(921,485)" font-size="74" style="fill:#b6c3dd">Lane</text>
+<text transform="translate(792,311)" font-size="74" style="fill:#e0b879">Bridge</text>
+<text transform="translate(968,701)" font-size="74" style="fill:#c49a6c">Street</text>
+<text transform="translate(42,625)" font-size="74" style="fill:#9fc9c5">Town</text>
+<text transform="translate(366,596)" font-size="74" style="fill:#8fb7d0">River</text>
+<text transform="translate(484,714)" font-size="74" style="fill:#e0b879">Remains</text>
+<text transform="translate(196,579) rotate(-90)" font-size="74" style="fill:#e0b879">Broad</text>
+<text transform="translate(486,425) rotate(-90)" font-size="74" style="fill:#e0b879">Towers</text>
+<text transform="translate(330,125)" font-size="64" style="fill:#d88988">Distance</text>
+<text transform="translate(95,564) rotate(-90)" font-size="64" style="fill:#e0b879">Controls</text>
+<text transform="translate(931,413)" font-size="64" style="fill:#c7d7b5">Canvas</text>
+<text transform="translate(5,77)" font-size="64" style="fill:#8fb7d0">Asset</text>
+<text transform="translate(499,260)" font-size="61" style="fill:#9fc9c5">Credits</text>
+<text transform="translate(895,688) rotate(-90)" font-size="44" style="fill:#d9c89e">Fly</text>
+<text transform="translate(770,493)" font-size="44" style="fill:#9fc9c5">Raise</text>
+<text transform="translate(1119,160)" font-size="44" style="fill:#8fb7d0">Nose</text>
+<text transform="translate(873,38)" font-size="44" style="fill:#d9c89e">Remember</text>
+<text transform="translate(133,456) rotate(-90)" font-size="44" style="fill:#8fb7d0">Costs</text>
+<text transform="translate(606,573)" font-size="44" style="fill:#c7d7b5">Lower</text>
+<text transform="translate(46,519) rotate(-90)" font-size="44" style="fill:#e0b879">Gather</text>
+<text transform="translate(1262,212) rotate(-90)" font-size="44" style="fill:#9fc9c5">Airspeed</text>
+<text transform="translate(20,708)" font-size="44" style="fill:#d5d2c2">Bank</text>
+<text transform="translate(392,461)" font-size="44" style="fill:#8fb7d0">Arrows</text>
+<text transform="translate(880,158)" font-size="41" style="fill:#9fc9c5">Landscape</text>
+<text transform="translate(103,313)" font-size="41" style="fill:#d88988">Touchscreen</text>
+<text transform="translate(1073,315)" font-size="41" style="fill:#d88988">Drag</text>
+<text transform="translate(465,43)" font-size="41" style="fill:#c7d7b5">Single</text>
+<text transform="translate(724,146)" font-size="41" style="fill:#d5d2c2">Field</text>
+<text transform="translate(241,544) rotate(-90)" font-size="41" style="fill:#d9c89e">Escape</text>
+<text transform="translate(1006,634)" font-size="41" style="fill:#9fc9c5">Pauses</text>
+<text transform="translate(340,161)" font-size="41" style="fill:#b6c3dd">Releases</text>
+<text transform="translate(986,370)" font-size="41" style="fill:#d6a79f">Control</text>
+<text transform="translate(1123,57)" font-size="41" style="fill:#c49a6c">Asks</text>
+<text transform="translate(355,710)" font-size="41" style="fill:#d6a79f">Throw</text>
+<text transform="translate(690,37)" font-size="41" style="fill:#9fc9c5">Mutes</text>
+<text transform="translate(551,458)" font-size="41" style="fill:#d88988">Enters</text>
+<text transform="translate(1275,635) rotate(-90)" font-size="41" style="fill:#8fb7d0">Fullscreen</text>
+<text transform="translate(794,715)" font-size="40" style="fill:#d88988">Browser</text>
+<text transform="translate(154,118)" font-size="39" style="fill:#e0b879">Permits</text>
+<text transform="translate(494,647)" font-size="38" style="fill:#e0b879">Engine</text>
+<text transform="translate(6,656)" font-size="36" style="fill:#b6c3dd">Contains</text>
+<text transform="translate(510,85)" font-size="36" style="fill:#9fc9c5">Boost</text>
+<text transform="translate(790,455)" font-size="36" style="fill:#c49a6c">Button</text>
+<text transform="translate(816,334)" font-size="25" style="fill:#d5d2c2">Exchanging</text>
+<text transform="translate(917,180)" font-size="25" style="fill:#d88988">Carefully</text>
+<text transform="translate(32,23)" font-size="25" style="fill:#c49a6c">Borrowing</text>
+<text transform="translate(21,147)" font-size="25" style="fill:#9fc9c5">Rising</text>
+<text transform="translate(431,323) rotate(-90)" font-size="25" style="fill:#c7d7b5">Courtyards</text>
+<text transform="translate(485,550)" font-size="25" style="fill:#c7d7b5">Traffic</text>
+<text transform="translate(746,541)" font-size="25" style="fill:#d88988">Grass</text>
+<text transform="translate(269,398)" font-size="22" style="fill:#b6c3dd">Approaching</text>
+<text transform="translate(243,715)" font-size="22" style="fill:#c49a6c">Weather</text>
+<text transform="translate(881,603)" font-size="22" style="fill:#a9b7a3">Municipal</text>
+<text transform="translate(46,308) rotate(-90)" font-size="22" style="fill:#e0b879">Map</text>
+<text transform="translate(583,151)" font-size="22" style="fill:#d88988">Crosswind</text>
+<text transform="translate(1135,88)" font-size="22" style="fill:#8fb7d0">North</text>
+<text transform="translate(1060,601)" font-size="22" style="fill:#d6a79f">Country</text>
+<text transform="translate(1174,469) rotate(-90)" font-size="22" style="fill:#b6c3dd">Maidan</text>
+<text transform="translate(1040,436)" font-size="22" style="fill:#d5d2c2">Breathe</text>
+<text transform="translate(730,589)" font-size="22" style="fill:#d88988">Beyond</text>
+<text transform="translate(1004,563) rotate(-90)" font-size="22" style="fill:#a9b7a3">Park</text>
+<text transform="translate(22,322) rotate(-90)" font-size="22" style="fill:#d5d2c2">Shimmer</text>
+<text transform="translate(829,253) rotate(-90)" font-size="22" style="fill:#b6c3dd">Across</text>
+<text transform="translate(1152,21)" font-size="22" style="fill:#c49a6c">Joins</text>
+<text transform="translate(1055,270)" font-size="22" style="fill:#8fb7d0">Impossible</text>
+<text transform="translate(138,535) rotate(-90)" font-size="22" style="fill:#e0b879">Place</text>
+<text transform="translate(178,186)" font-size="22" style="fill:#9fc9c5">Keeps</text>
+<text transform="translate(657,405) rotate(-90)" font-size="22" style="fill:#d9c89e">Visual</text>
+<text transform="translate(1155,118)" font-size="22" style="fill:#d5d2c2">Logic</text>
+<text transform="translate(22,613) rotate(-90)" font-size="22" style="fill:#d9c89e">Bridges</text>
+<text transform="translate(950,433)" font-size="22" style="fill:#d9c89e">Span</text>
+<text transform="translate(253,281)" font-size="22" style="fill:#d6a79f">Water</text>
+<text transform="translate(276,678)" font-size="22" style="fill:#e0b879">Ghats</text>
+<text transform="translate(1168,183)" font-size="22" style="fill:#d9c89e">Meet</text>
+<text transform="translate(43,100)" font-size="22" style="fill:#a9b7a3">Victoria</text>
+<text transform="translate(333,189)" font-size="22" style="fill:#8fb7d0">Green</text>
+<text transform="translate(703,343)" font-size="22" style="fill:#d6a79f">Space</text>
+<text transform="translate(24,169)" font-size="22" style="fill:#b6c3dd">Biswa</text>
+<text transform="translate(391,677)" font-size="22" style="fill:#b6c3dd">Bangla</text>
+<text transform="translate(766,561)" font-size="22" style="fill:#d9c89e">Gate</text>
+<text transform="translate(1089,505)" font-size="22" style="fill:#d6a79f">Belongs</text>
+<text transform="translate(1028,337)" font-size="22" style="fill:#b6c3dd">Newer</text>
+<text transform="translate(1071,180)" font-size="22" style="fill:#8fb7d0">Roads</text>
+<text transform="translate(751,517)" font-size="22" style="fill:#c49a6c">Mixture</text>
+<text transform="translate(245,560)" font-size="22" style="fill:#a9b7a3">Trams</text>
+<text transform="translate(914,640)" font-size="22" style="fill:#d9c89e">Yellow</text>
+<text transform="translate(1045,655)" font-size="22" style="fill:#8fb7d0">Ambassador</text>
+<text transform="translate(895,515)" font-size="22" style="fill:#d6a79f">Taxis</text>
+<text transform="translate(90,197)" font-size="22" style="fill:#b6c3dd">Ades</text>
+<text transform="translate(506,431) rotate(-90)" font-size="22" style="fill:#d5d2c2">Contemporary</text>
+<text transform="translate(1262,379) rotate(-90)" font-size="22" style="fill:#c7d7b5">Temporal</text>
+<text transform="translate(7,117)" font-size="17" style="fill:#c7d7b5">Palimpsest</text>
+<text transform="translate(388,17)" font-size="17" style="fill:#a9b7a3">Claim</text>
+<text transform="translate(182,647)" font-size="17" style="fill:#e0b879">Every</text>
+<text transform="translate(268,503) rotate(-90)" font-size="17" style="fill:#8fb7d0">Remembered</text>
+<text transform="translate(635,474)" font-size="17" style="fill:#8fb7d0">Occupied</text>
+<text transform="translate(809,673)" font-size="17" style="fill:#9fc9c5">Year</text>
+<text transform="translate(143,334)" font-size="17" style="fill:#d9c89e">Read</text>
+<text transform="translate(326,542)" font-size="17" style="fill:#d6a79f">Tea</text>
+<text transform="translate(1100,473)" font-size="17" style="fill:#d9c89e">Steam</text>
+<text transform="translate(355,419)" font-size="17" style="fill:#d5d2c2">Washing</text>
+<text transform="translate(6,671)" font-size="17" style="fill:#8fb7d0">Leaves</text>
+<text transform="translate(194,79)" font-size="17" style="fill:#e0b879">Newspapers</text>
+<text transform="translate(914,684)" font-size="17" style="fill:#e0b879">Birds</text>
+<text transform="translate(573,600)" font-size="17" style="fill:#d6a79f">Dust</text>
+<text transform="translate(832,230)" font-size="17" style="fill:#a9b7a3">Rain</text>
+<text transform="translate(993,502)" font-size="17" style="fill:#c7d7b5">Ripples</text>
+<text transform="translate(594,404) rotate(-90)" font-size="17" style="fill:#c7d7b5">Lean</text>
+<text transform="translate(627,19)" font-size="17" style="fill:#c49a6c">Strong</text>
+<text transform="translate(529,315) rotate(-90)" font-size="17" style="fill:#d5d2c2">Gust</text>
+<text transform="translate(101,274)" font-size="17" style="fill:#c49a6c">Arrives</text>
+<text transform="translate(140,354)" font-size="17" style="fill:#d5d2c2">Sunlit</text>
+<text transform="translate(810,163)" font-size="17" style="fill:#b6c3dd">Ground</text>
+</svg>

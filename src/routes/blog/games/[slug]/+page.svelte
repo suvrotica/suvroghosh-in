@@ -2,6 +2,8 @@
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import CalcuttaFootpathGame from '$lib/components/games/calcutta-footpath/CalcuttaFootpathGame.svelte';
+	import KagojerDanaShell from '$lib/components/games/kagojer-dana/KagojerDanaShell.svelte';
+	import { KAGOJER_DANA_SLUG } from '$lib/games/catalog';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -9,7 +11,11 @@
 
 <SEO {...data.seo} />
 
-<CalcuttaFootpathGame game={data.game} />
+{#if data.game.slug === KAGOJER_DANA_SLUG}
+	<KagojerDanaShell game={data.game} />
+{:else}
+	<CalcuttaFootpathGame game={data.game} />
+{/if}
 
 <section
 	id="about-the-game"
@@ -39,70 +45,131 @@
 				>
 					About the game
 				</p>
-				<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
-					One ordinary walk. No correct side.
-				</h2>
-				<p class="mt-5 text-left text-lg leading-relaxed">
-					Walk into a small three-dimensional North Calcutta neighbourhood of bending lanes,
-					ordinary old houses, shops, courtyards and one wider road. Choose a bylane, turn around,
-					wait for traffic, stop for tea and find another route when the city occupies the first
-					one.
-				</p>
-				<p class="mt-4 text-left leading-relaxed">
-					The authored street network includes residential, bazaar, workshop and old-house lanes.
-					Pedestrians have destinations, vehicles approach through real depth, rain changes the
-					street, and every run’s small events remain deterministic from its seed.
-				</p>
+				{#if data.game.slug === KAGOJER_DANA_SLUG}
+					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
+						You do not command the wind. You borrow it.
+					</h2>
+					<p class="mt-5 text-left text-lg leading-relaxed">
+						Fly a properly folded paper plane from a North Calcutta windowsill, through lanes and
+						roof air, over the Hooghly and into a skyline where memory has rearranged the map.
+					</p>
+					<p class="mt-4 text-left leading-relaxed">
+						This is not a municipal map. Calcutta has been assembled by memory and crosswind. Each
+						place keeps its local character even when the next district could never occupy the next
+						street in ordinary geography.
+					</p>
+				{:else}
+					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
+						One ordinary walk. No correct side.
+					</h2>
+					<p class="mt-5 text-left text-lg leading-relaxed">
+						Walk into a small three-dimensional North Calcutta neighbourhood of bending lanes,
+						ordinary old houses, shops, courtyards and one wider road. Choose a bylane, turn around,
+						wait for traffic, stop for tea and find another route when the city occupies the first
+						one.
+					</p>
+					<p class="mt-4 text-left leading-relaxed">
+						The authored street network includes residential, bazaar, workshop and old-house lanes.
+						Pedestrians have destinations, vehicles approach through real depth, rain changes the
+						street, and every run’s small events remain deterministic from its seed.
+					</p>
+				{/if}
 			</div>
 
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
-				<h2 class="m-0 text-lg font-black">How to walk</h2>
+				<h2 class="m-0 text-lg font-black">
+					{data.game.slug === KAGOJER_DANA_SLUG ? 'How to fly' : 'How to walk'}
+				</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
-					<li><strong>Click or tap the visible road</strong> and the walker goes there.</li>
-					<li>
-						<strong>Arrow Up:</strong> walk. <strong>Left / Right:</strong> turn.
-						<strong>Down:</strong> step back.
-					</li>
-					<li><strong>Space:</strong> hurry briefly. <strong>Escape:</strong> pause.</li>
-					<li>Labelled Stop, Turn around, Map and food buttons require no game shorthand.</li>
+					{#if data.game.slug === KAGOJER_DANA_SLUG}
+						<li><strong>W / ↑</strong> raises the nose and spends speed.</li>
+						<li><strong>S / ↓</strong> lowers the nose and gathers speed.</li>
+						<li><strong>A / D or ← / →</strong> banks into a turn.</li>
+						<li>
+							<strong>Escape</strong> pauses and releases control; <strong>R</strong> asks for another
+							throw.
+						</li>
+					{:else}
+						<li><strong>Click or tap the visible road</strong> and the walker goes there.</li>
+						<li>
+							<strong>Arrow Up:</strong> walk. <strong>Left / Right:</strong> turn.
+							<strong>Down:</strong> step back.
+						</li>
+						<li><strong>Space:</strong> hurry briefly. <strong>Escape:</strong> pause.</li>
+						<li>Labelled Stop, Turn around, Map and food buttons require no game shorthand.</li>
+					{/if}
 				</ul>
 			</aside>
 		</div>
 
 		<div class="mt-12 grid gap-5 sm:grid-cols-2">
-			<section class="rounded-xl border border-amber-950/15 p-5">
-				<h2 class="m-0 text-xl font-black">Food and effects</h2>
-				<p class="mt-3 text-left text-sm leading-relaxed">
-					Fuchka restores stamina. Mishti restores morale but slows the eater. Tea sharpens hazard
-					warnings until the hands become optimistic. Suspicious ghugni selects one consequence
-					without consulting you.
-				</p>
-			</section>
-			<section class="rounded-xl border border-amber-950/15 p-5">
-				<h2 class="m-0 text-xl font-black">Accessibility</h2>
-				<p class="mt-3 text-left text-sm leading-relaxed">
-					Menus, map, prompts and route results are accessible HTML. The game supports simple
-					keyboard and tap controls, visible equivalents for sound, high contrast, explicit mute,
-					gentle camera movement, reduced motion, focus management and automatic pause.
-				</p>
-			</section>
-			<section class="rounded-xl border border-amber-950/15 p-5">
-				<h2 class="m-0 text-xl font-black">Technical notes</h2>
-				<p class="mt-3 text-left text-sm leading-relaxed">
-					A lightweight Three.js world is loaded only after Play. Metre-based geometry, a fixed step
-					simulation, an authored navigation graph and named random streams keep movement, traffic
-					and temporary obstructions coherent. Web Audio positions important sounds in the world and
-					applies distance filtering, modest occlusion and restrained Doppler shift.
-				</p>
-			</section>
-			<section class="rounded-xl border border-amber-950/15 p-5">
-				<h2 class="m-0 text-xl font-black">Privacy and saved scores</h2>
-				<p class="mt-3 text-left text-sm leading-relaxed">
-					Settings, best scores, recent run summaries and the latest route stay in this browser’s
-					local storage. They are not uploaded. There is no account, remote leaderboard,
-					advertising, or game-specific telemetry.
-				</p>
-			</section>
+			{#if data.game.slug === KAGOJER_DANA_SLUG}
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Read the wind</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Smoke, washing, leaves, pages, birds, rain and river marks move before a strong gust
+						arrives. Thermals climb from sunlit roofs and open ground; lee sides sink.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Charcoal in three dimensions</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Real geometry provides mass and parallax. Tonal bands, surface-bound hatching, heavy
+						outer ink and erased-distance fog make the city behave like a drawing without flattening
+						it.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Sound, access and control</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Sound starts only after you ask for it. Captions, Calm Flight, Calm Camera, stronger
+						wind marks, high-contrast corridors, sensitivity and pitch inversion remain available as
+						ordinary controls over the canvas.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Asset credits</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Geometry, materials, paper textures and the procedural sound design are original to this
+						game. The local credit manifest records every shipped source; no CDN or scraped
+						recording is used at runtime.
+					</p>
+				</section>
+			{:else}
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Food and effects</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Fuchka restores stamina. Mishti restores morale but slows the eater. Tea sharpens hazard
+						warnings until the hands become optimistic. Suspicious ghugni selects one consequence
+						without consulting you.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Accessibility</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Menus, map, prompts and route results are accessible HTML. The game supports simple
+						keyboard and tap controls, visible equivalents for sound, high contrast, explicit mute,
+						gentle camera movement, reduced motion, focus management and automatic pause.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Technical notes</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						A lightweight Three.js world is loaded only after Play. Metre-based geometry, a fixed
+						step simulation, an authored navigation graph and named random streams keep movement,
+						traffic and temporary obstructions coherent. Web Audio positions important sounds in the
+						world and applies distance filtering, modest occlusion and restrained Doppler shift.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Privacy and saved scores</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Settings, best scores, recent run summaries and the latest route stay in this browser’s
+						local storage. They are not uploaded. There is no account, remote leaderboard,
+						advertising, or game-specific telemetry.
+					</p>
+				</section>
+			{/if}
 		</div>
 
 		<p class="mt-10 mb-0 text-center text-sm text-[#6c5a48] dark:text-[#b9aa93]">
@@ -116,9 +183,18 @@
 	</div>
 </section>
 
-<noscript>
-	<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
-		JavaScript is required to run the street simulation. The game description and controls remain
-		available below.
-	</div>
-</noscript>
+{#if data.game.slug === KAGOJER_DANA_SLUG}
+	<noscript>
+		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
+			JavaScript is required for the live paper-plane flight. The poster, controls and article
+			remain available without it.
+		</div>
+	</noscript>
+{:else}
+	<noscript>
+		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
+			JavaScript is required to run the street simulation. The game description and controls remain
+			available below.
+		</div>
+	</noscript>
+{/if}

@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"title": "Kagojer Dana: A Paper Plane Through Calcutta",
+	"runtimeNetworkPolicy": "Same-origin assets only; no third-party CDN requests.",
+	"assets": [
+		{
+			"path": "/games/kagojer-dana/audio/calcutta-bed.wav",
+			"kind": "audio",
+			"credit": "Original deterministic procedural stereo city-and-river bed created for Kagojer Dana",
+			"license": "Copyright Suvro Ghosh; used by this website",
+			"containsVoices": false
+		},
+		{
+			"path": "/images/games/kagojer-dana-poster.webp",
+			"kind": "image",
+			"credit": "Deterministic capture from the completed Kagojer Dana Three.js renderer",
+			"license": "Copyright Suvro Ghosh; used by this website"
+		},
+		{
+			"path": "/images/games/kagojer-dana-social.png",
+			"kind": "image",
+			"credit": "Deterministic social crop from the completed Kagojer Dana Three.js renderer",
+			"license": "Copyright Suvro Ghosh; used by this website"
+		},
+		{
+			"path": "/images/games/kagojer-dana-portrait.webp",
+			"kind": "image",
+			"credit": "Deterministic portrait capture from the completed Kagojer Dana Three.js renderer",
+			"license": "Copyright Suvro Ghosh; used by this website"
+		},
+		{
+			"path": "runtime-procedural-geometry-and-shaders",
+			"kind": "code-generated visual",
+			"credit": "Original paper plane, buildings, bridges, landmarks, people, animals, charcoal materials and wind marks",
+			"license": "Copyright Suvro Ghosh; used by this website"
+		}
+	]
+}
