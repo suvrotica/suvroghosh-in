@@ -843,6 +843,22 @@ async function runRenderedChecks() {
 				} else if (works.some((work) => work.creator?.['@id'] !== PERSON_ID)) {
 					fail(`${route}: every listed CreativeWork must link its creator to ${PERSON_ID}.`);
 				}
+
+				const recordProject = works.find((work) => work.name === 'A Record Crosses Town');
+				if (recordProject?.url !== 'https://record.suvroghosh.in/') {
+					fail(`${route}: A Record Crosses Town must retain the standalone exhibit as its URL.`);
+				}
+				if (recordProject?.hasPart?.url !== 'https://record.suvroghosh.in/guide/') {
+					fail(`${route}: A Record Crosses Town must expose its canonical guided tour as hasPart.`);
+				}
+				if (
+					!html.includes(
+						'href="https://record.suvroghosh.in/guide/" target="_blank" rel="noopener noreferrer"'
+					) ||
+					!html.includes('Use the 15-minute guided tour')
+				) {
+					fail(`${route}: the featured project card is missing its safe guided-tour link.`);
+				}
 			}
 		}
 	} finally {

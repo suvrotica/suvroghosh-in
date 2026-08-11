@@ -62,6 +62,15 @@
 					url:
 						project.link?.kind === 'external' ? project.link.href : `${canonicalUrl}#${project.id}`,
 					...(project.image ? { image: absoluteUrl(project.image.src) } : {}),
+					...(project.guide
+						? {
+								hasPart: {
+									'@type': 'WebPage',
+									name: `${project.name} guided tour`,
+									url: project.guide.href
+								}
+							}
+						: {}),
 					creator: { '@id': personId }
 				}
 			}))
@@ -230,25 +239,47 @@
 							{/each}
 						</ul>
 
-						{#if project.link?.kind === 'external'}
-							<!-- eslint-disable svelte/no-navigation-without-resolve -->
-							<a
-								href={project.link.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-bold text-accent-foreground no-underline transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+						{#if project.link || project.guide}
+							<div
+								class="mt-6 flex flex-wrap gap-3"
+								role="group"
+								aria-label={`${project.name} project links`}
 							>
-								{project.link.label} <span class="ml-1" aria-hidden="true">↗</span>
-								<span class="sr-only">, opens in a new tab</span>
-							</a>
-							<!-- eslint-enable svelte/no-navigation-without-resolve -->
-						{:else if project.link?.kind === 'internal'}
-							<a
-								href={resolve(project.link.href)}
-								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-bold text-accent-foreground no-underline transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-							>
-								{project.link.label} <span class="ml-1" aria-hidden="true">→</span>
-							</a>
+								{#if project.link?.kind === 'external'}
+									<!-- eslint-disable svelte/no-navigation-without-resolve -->
+									<a
+										href={project.link.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-bold text-accent-foreground no-underline transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+									>
+										{project.link.label} <span class="ml-1" aria-hidden="true">↗</span>
+										<span class="sr-only">, opens in a new tab</span>
+									</a>
+									<!-- eslint-enable svelte/no-navigation-without-resolve -->
+								{:else if project.link?.kind === 'internal'}
+									<a
+										href={resolve(project.link.href)}
+										class="inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-bold text-accent-foreground no-underline transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+									>
+										{project.link.label} <span class="ml-1" aria-hidden="true">→</span>
+									</a>
+								{/if}
+
+								{#if project.guide}
+									<!-- eslint-disable svelte/no-navigation-without-resolve -->
+									<a
+										href={project.guide.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="inline-flex min-h-11 items-center rounded-md border-2 border-accent bg-paper-raised px-4 py-2 text-sm font-bold text-accent no-underline transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+									>
+										{project.guide.label} <span class="ml-1" aria-hidden="true">↗</span>
+										<span class="sr-only">, opens in a new tab</span>
+									</a>
+									<!-- eslint-enable svelte/no-navigation-without-resolve -->
+								{/if}
+							</div>
 						{/if}
 
 						{#if project.relatedPosts.length > 0}

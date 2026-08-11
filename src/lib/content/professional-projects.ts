@@ -19,6 +19,11 @@ export type ProjectImage = {
 	height: number;
 };
 
+export type ProjectGuide = {
+	href: `https://${string}`;
+	label: string;
+};
+
 export type ProfessionalProject = {
 	id:
 		| 'va-research-data-warehouse'
@@ -37,6 +42,7 @@ export type ProfessionalProject = {
 	disciplines: readonly string[];
 	relatedPostSlugs: readonly string[];
 	link?: ProjectLink;
+	guide?: ProjectGuide;
 	image?: ProjectImage;
 	featured?: boolean;
 	showOnResume?: boolean;
@@ -126,6 +132,10 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			kind: 'external',
 			href: 'https://record.suvroghosh.in/',
 			label: 'Open the standalone exhibit'
+		},
+		guide: {
+			href: 'https://record.suvroghosh.in/guide/',
+			label: 'Use the 15-minute guided tour'
 		},
 		image: {
 			src: aRecordCrossesTownImage,
