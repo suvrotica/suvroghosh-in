@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T04:54:05.185583+00:00",
+  "generatedAt": "2026-08-11T00:56:35.129421+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10394,6 +10394,29 @@
         "Even",
         "Small",
         "Money"
+      ],
+      "wordCount": 130
+    },
+    "the-negotiable-serf": {
+      "generatedAt": "2026-08-11T00:56:32.338642+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-negotiable-serf.svg",
+      "source": "src/lib/posts/the-negotiable-serf.md",
+      "sourceHash": "62f918135cca833fdd2c5e96b36d405b221b6c0bdba46e71e15a1a46bc6db314",
+      "sourceModified": "2026-08-11T00:56:11.389787+00:00",
+      "topWords": [
+        "Goat",
+        "Void",
+        "Every",
+        "Write",
+        "Three",
+        "Yet",
+        "Human",
+        "Chews",
+        "Negotiable",
+        "Broken",
+        "Parts",
+        "Mathematics"
       ],
       "wordCount": 130
     },

@@ -5,7 +5,7 @@ date: "2026-08-11"
 thumbnail: "/thumbnail/Compress_20260811_061914_4585.jpg"
 thumbnailAlt: "me in 2000s in my veterans affairs office"
 category: "Satire"
-tags: ["Satire", "Bipolar", "Science", "Mathematics", "Etymology", "Calcutta", "Kolkata", "Philosophy", "Mental Health", "SuvroGhosh"]
+tags: ["Goat Chews","Broken Parts","Void","Goat","Al-Jabr","Negotiable","Serf","Al-Khwarizmi","Reunion","Chews"]
 published: true
 color: "#8B0000"
 ---

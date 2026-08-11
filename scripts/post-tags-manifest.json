@@ -11289,6 +11289,25 @@
 			"pinnedTags": ["Games", "Calcutta", "Kolkata", "Browser Game", "Three.js", "Flight"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-10"
+		},
+		"src/lib/posts/the-negotiable-serf.md": {
+			"bodyHash": "f70d1c7dad89d5d70708fc76fd88c530b6545d05c0ba381508f1932b99929e58",
+			"hashVersion": 2,
+			"revisionHash": "d67d4b91297f99e6e1819b3c12873eb3fb249e726e2a5a4fc052136d46247fe2",
+			"generatedTags": [
+				"Goat Chews",
+				"Broken Parts",
+				"Void",
+				"Goat",
+				"Al-Jabr",
+				"Negotiable",
+				"Serf",
+				"Al-Khwarizmi",
+				"Reunion",
+				"Chews"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
