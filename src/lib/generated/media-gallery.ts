@@ -6492,6 +6492,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-magnificent-plumbing-department-of-artificial-intelligence.jpg",
+			"src": "/thumbnail/art-the-magnificent-plumbing-department-of-artificial-intelligence.jpg",
+			"bytes": 497953,
+			"width": 1024,
+			"height": 1536
+		},
+		{
 			"name": "art-the-man-held-by-the-neck.jpg",
 			"src": "/thumbnail/art-the-man-held-by-the-neck.jpg",
 			"bytes": 125901,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T02:32:09.290637+00:00",
+  "generatedAt": "2026-08-11T22:01:54.757618+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10095,6 +10095,29 @@
         "Already",
         "Intelligence",
         "Systems"
+      ],
+      "wordCount": 130
+    },
+    "the-magnificent-plumbing-department-of-artificial-intelligence": {
+      "generatedAt": "2026-08-11T22:01:54.633653+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-magnificent-plumbing-department-of-artificial-intelligence.svg",
+      "source": "src/lib/posts/the-magnificent-plumbing-department-of-artificial-intelligence.md",
+      "sourceHash": "c2245bc071258ed18ba81c70766ff5b836b913270c2514a10c1464d77dcf688d",
+      "sourceModified": "2026-08-11T21:56:58.416754+00:00",
+      "topWords": [
+        "MCP",
+        "Skill",
+        "Server",
+        "Plugin",
+        "Agent",
+        "Model",
+        "Tools",
+        "Every",
+        "Tool",
+        "Skills",
+        "Text",
+        "Openai"
       ],
       "wordCount": 130
     },

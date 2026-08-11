@@ -16159,6 +16159,22 @@
       "sourceHash": "966bbc53731f4ac20795651d9d00911f35a9b5d5aea3a1979523e93bea581777",
       "width": 1200
     },
+    "static/thumbnail/art-the-magnificent-plumbing-department-of-artificial-intelligence.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1024,
+      "outputBytes": 497953,
+      "outputHash": "fa163e63a320e7a39702d20325cacbf113709efe9b4aa113926888c8e598a000",
+      "psnrDb": 36.39,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 612474,
+      "sourceHash": "9fdc958f02b0f0ec6d88bd0366756b5188a7352ca1213475deebdb40fb2262fc",
+      "width": 1024
+    },
     "static/thumbnail/art-the-man-held-by-the-neck.jpg": {
       "format": "JPEG",
       "height": 800,

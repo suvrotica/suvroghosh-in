@@ -11327,6 +11327,36 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-magnificent-plumbing-department-of-artificial-intelligence.md": {
+			"bodyHash": "72a96a1262d15822514cc4ff75080855c893dd5c1d3c0b183c6ff17717398bab",
+			"hashVersion": 2,
+			"revisionHash": "b5503b60c914a8e8b27eac02103bea8a747b366c989b8939b91178127cb8d96f",
+			"generatedTags": [
+				"MCP",
+				"Model Context Protocol",
+				"Skills",
+				"Plugins",
+				"Connectors",
+				"Agents",
+				"ChatGPT",
+				"Codex",
+				"suvrotica",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"MCP",
+				"Model Context Protocol",
+				"Skills",
+				"Plugins",
+				"Connectors",
+				"Agents",
+				"ChatGPT",
+				"Codex",
+				"suvrotica",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
