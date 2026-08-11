@@ -11308,6 +11308,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/tantrum.md": {
+			"bodyHash": "3345a2cda13be60a3f8faa6bdcaf42529db5fd82d75cc3de92e007c5bb6e4a62",
+			"hashVersion": 2,
+			"revisionHash": "e3e745b54d93b2fe76050832efa048a33ac0e659cd41ef18adefa00d1d3c48f9",
+			"generatedTags": [
+				"Structural Integrity",
+				"Defiance",
+				"Resides",
+				"Sheer",
+				"Heap",
+				"Accumulated",
+				"Building",
+				"Magnificent",
+				"Glorious",
+				"Geometry"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

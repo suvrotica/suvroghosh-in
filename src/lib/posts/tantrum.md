@@ -5,7 +5,7 @@ date: "2026-08-11"
 thumbnail: "/thumbnail/Compress_20260811_075206_6888.jpg"
 thumbnailAlt: "A pencil sketch of a building caught mid-collapse, windows sneering at gravity"
 category: "Raw Science"
-tags: ["Architecture", "Entropy", "Calcutta", "Bengali Resilience", "Geometry", "Physics", "Urban Decay", "Dialectics", "SuvroGhosh", "Kolkata"]
+tags: ["Structural Integrity","Defiance","Resides","Sheer","Heap","Accumulated","Building","Magnificent","Glorious","Geometry"]
 published: true
 color: "#8B4513"
 ---
