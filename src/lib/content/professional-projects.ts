@@ -129,7 +129,7 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 		},
 		image: {
 			src: aRecordCrossesTownImage,
-			alt: 'A luminous synthetic record route crosses an abstract dark exchange map of separate identity, terminology, clinical, supply, aggregate, and finance services.',
+			alt: 'A blue synthetic record route crosses a black-lined, high-contrast white exchange map of separate identity, terminology, clinical, supply, aggregate, and finance services.',
 			width: 1600,
 			height: 1000
 		},

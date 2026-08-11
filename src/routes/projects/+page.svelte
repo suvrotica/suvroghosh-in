@@ -145,14 +145,14 @@
 			<section
 				id={project.id}
 				class="scroll-mt-28 py-10 md:py-14 {project.featured
-					? 'my-6 rounded-2xl border border-cyan-700/40 bg-gradient-to-br from-neutral-950 via-neutral-900 to-cyan-950/80 px-5 text-white shadow-2xl shadow-neutral-950/20 sm:px-7'
+					? 'my-6 rounded-2xl border-2 border-rule bg-paper-raised px-5 text-ink shadow-none sm:px-7'
 					: ''}"
 				aria-labelledby={`${project.id}-heading`}
 			>
 				<div class="grid gap-5 md:grid-cols-[7rem_1fr] md:gap-8">
 					<p
 						class="mb-0 text-sm font-bold {project.featured
-							? 'text-cyan-300'
+							? 'text-accent'
 							: 'text-neutral-400 dark:text-neutral-500'}"
 					>
 						{String(index + 1).padStart(2, '0')} / {String(data.projects.length).padStart(2, '0')}
@@ -161,7 +161,7 @@
 					<div class="min-w-0">
 						{#if project.image}
 							<div
-								class="mb-7 overflow-hidden rounded-xl border border-cyan-800/70 bg-neutral-950 shadow-lg shadow-black/20"
+								class="mb-7 overflow-hidden rounded-xl border-2 border-rule bg-paper-raised shadow-none"
 							>
 								<img
 									src={project.image.src}
@@ -177,7 +177,7 @@
 
 						<p
 							class="mb-2 text-xs font-bold tracking-[0.12em] uppercase {project.featured
-								? 'text-cyan-300'
+								? 'text-accent'
 								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
 							{project.context}
@@ -185,14 +185,14 @@
 						<h2
 							id={`${project.id}-heading`}
 							class="mb-4 text-2xl leading-tight font-bold md:text-3xl {project.featured
-								? 'text-white'
+								? 'text-ink'
 								: 'text-neutral-950 dark:text-neutral-50'}"
 						>
 							{project.name}
 						</h2>
 						<p
 							class="mb-6 max-w-3xl text-left leading-relaxed {project.featured
-								? 'text-neutral-200'
+								? 'text-ink'
 								: 'text-neutral-700 dark:text-neutral-300'}"
 						>
 							{project.detail}
@@ -200,14 +200,14 @@
 
 						<h3
 							class="mb-3 text-xs font-bold tracking-[0.14em] uppercase {project.featured
-								? 'text-cyan-300'
+								? 'text-accent'
 								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
 							Contribution
 						</h3>
 						<ul
 							class="mb-6 space-y-3 text-sm leading-relaxed {project.featured
-								? 'text-neutral-200'
+								? 'text-ink'
 								: 'text-neutral-700 dark:text-neutral-300'}"
 						>
 							{#each project.contributions as contribution (contribution)}
@@ -222,7 +222,7 @@
 							{#each project.disciplines as discipline (discipline)}
 								<li
 									class="rounded-full border px-3 py-1 text-xs font-semibold {project.featured
-										? 'border-cyan-800 text-cyan-100'
+										? 'border-accent text-accent'
 										: 'border-neutral-300 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400'}"
 								>
 									{discipline}
@@ -236,7 +236,7 @@
 								href={project.link.href}
 								target="_blank"
 								rel="noopener noreferrer"
-								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-neutral-950 no-underline transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-bold text-accent-foreground no-underline transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 							>
 								{project.link.label} <span class="ml-1" aria-hidden="true">↗</span>
 								<span class="sr-only">, opens in a new tab</span>
@@ -245,7 +245,7 @@
 						{:else if project.link?.kind === 'internal'}
 							<a
 								href={resolve(project.link.href)}
-								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-neutral-950 no-underline transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-accent px-4 py-2 text-sm font-bold text-accent-foreground no-underline transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
 							>
 								{project.link.label} <span class="ml-1" aria-hidden="true">→</span>
 							</a>
