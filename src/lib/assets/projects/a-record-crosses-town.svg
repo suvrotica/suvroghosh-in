@@ -1,0 +1,175 @@
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	width="1600"
+	height="1000"
+	viewBox="0 0 1600 1000"
+	role="img"
+	aria-labelledby="project-card-title project-card-desc"
+>
+	<title id="project-card-title">A Record Crosses Town project card</title>
+	<desc id="project-card-desc">
+		A luminous synthetic record route crosses an abstract dark exchange map of separate identity,
+		terminology, clinical, supply, aggregate, and finance services.
+	</desc>
+	<defs>
+		<pattern id="project-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+			<path d="M48 0H0V48" fill="none" stroke="#223039" stroke-width="1" opacity="0.42" />
+		</pattern>
+		<pattern id="project-hold" width="10" height="10" patternUnits="userSpaceOnUse">
+			<path d="M-2 2L2-2M0 10L10 0M8 12L12 8" stroke="#e5ad63" stroke-width="2" />
+		</pattern>
+	</defs>
+
+	<rect width="1600" height="1000" fill="#0a1015" />
+	<rect x="30" y="30" width="1540" height="940" fill="none" stroke="#34434a" stroke-width="2" />
+	<rect x="56" y="56" width="1488" height="888" fill="url(#project-grid)" />
+
+	<g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+		<g transform="translate(96 88)">
+			<rect width="484" height="46" fill="#101b21" stroke="#6f8790" stroke-width="1.5" />
+			<circle cx="24" cy="23" r="6" fill="#78c7cb" />
+			<text x="44" y="29" fill="#d9ded8" font-size="18" letter-spacing="2.2">
+				EDUCATIONAL SIMULATION · SYNTHETIC
+			</text>
+		</g>
+
+		<text
+			x="94"
+			y="278"
+			fill="#f1eddf"
+			font-family="Georgia, 'Times New Roman', serif"
+			font-size="112"
+			letter-spacing="-3"
+		>
+			A Record
+		</text>
+		<text
+			x="94"
+			y="390"
+			fill="#f1eddf"
+			font-family="Georgia, 'Times New Roman', serif"
+			font-size="112"
+			letter-spacing="-3"
+		>
+			Crosses Town
+		</text>
+		<text x="100" y="448" fill="#aebcc0" font-size="25" letter-spacing="0.4">
+			One inspectable journey through systems that know different things.
+		</text>
+	</g>
+
+	<g transform="translate(95 516)" font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+		<rect width="1410" height="348" fill="#0d151b" stroke="#34434a" stroke-width="2" />
+		<text x="28" y="38" fill="#82969d" font-size="14" letter-spacing="2.4">
+			LOGICAL EXCHANGE · AUTHORED ROUTE
+		</text>
+
+		<!-- Route geometry -->
+		<path
+			d="M142 186H310C354 186 363 117 411 117H552"
+			fill="none"
+			stroke="#78c7cb"
+			stroke-width="5"
+		/>
+		<path d="M552 117H695V80H805" fill="none" stroke="#8e83c8" stroke-width="4" />
+		<path d="M552 117H695V158H805" fill="none" stroke="#78c7cb" stroke-width="5" />
+		<path d="M552 117H695V236H805" fill="none" stroke="#8e83c8" stroke-width="4" />
+		<path d="M939 158H1050" fill="none" stroke="#78c7cb" stroke-width="5" />
+		<path d="M1182 158H1222" fill="none" stroke="#78c7cb" stroke-width="5" />
+		<path d="M1222 158V72H1262" fill="none" stroke="#6fa589" stroke-width="4" />
+		<path d="M1222 158H1262" fill="none" stroke="#e5ad63" stroke-width="4" />
+		<path d="M1222 158V244H1262" fill="none" stroke="#d07f76" stroke-width="4" />
+
+		<!-- Clinic source -->
+		<g transform="translate(28 139)">
+			<rect width="114" height="94" fill="#111d23" stroke="#78c7cb" stroke-width="2" />
+			<path d="M18 22H96M18 38H72M18 54H82" stroke="#78c7cb" stroke-width="3" />
+			<text x="18" y="80" fill="#f1eddf" font-size="15">CLINIC EHR</text>
+		</g>
+
+		<!-- Moving record -->
+		<g transform="translate(245 171)">
+			<path d="M0 15L15 0H51V30H15Z" fill="#c8ece9" stroke="#78c7cb" stroke-width="2" />
+			<path d="M15 0V15H0" fill="none" stroke="#0a1015" stroke-width="2" />
+			<circle cx="59" cy="15" r="4" fill="#78c7cb" />
+			<text x="-4" y="54" fill="#9dafb4" font-size="12" letter-spacing="1.4">SYNTHETIC</text>
+		</g>
+
+		<!-- IOL switchyard -->
+		<g transform="translate(411 52)">
+			<circle cx="70" cy="65" r="65" fill="#101b21" stroke="#78c7cb" stroke-width="3" />
+			<circle
+				cx="70"
+				cy="65"
+				r="46"
+				fill="none"
+				stroke="#405c63"
+				stroke-width="2"
+				stroke-dasharray="7 7"
+			/>
+			<path d="M25 65H115M70 20V110M38 33L102 97" stroke="#78c7cb" stroke-width="2.5" />
+			<circle cx="70" cy="65" r="9" fill="#f1eddf" />
+			<text x="70" y="151" fill="#f1eddf" font-size="16" text-anchor="middle">IOL</text>
+			<text x="70" y="170" fill="#82969d" font-size="11" text-anchor="middle">COORDINATES</text>
+		</g>
+
+		<!-- Reference services -->
+		<g transform="translate(805 42)">
+			<rect width="134" height="76" fill="#171525" stroke="#8e83c8" stroke-width="2" />
+			<path d="M16 19H118M16 31H96" stroke="#8e83c8" stroke-width="2" />
+			<text x="16" y="57" fill="#f1eddf" font-size="15">IDENTITY</text>
+		</g>
+		<g transform="translate(805 120)">
+			<path d="M0 0H134V76H0Z" fill="#111d23" stroke="#78c7cb" stroke-width="2" />
+			<path d="M16 18H118M16 30H89" stroke="#78c7cb" stroke-width="2" />
+			<text x="16" y="57" fill="#f1eddf" font-size="15">SHARED RECORD</text>
+		</g>
+		<g transform="translate(805 198)">
+			<rect width="134" height="76" fill="#171525" stroke="#8e83c8" stroke-width="2" />
+			<path d="M18 18L35 30L18 42M55 18L38 30L55 42" fill="none" stroke="#8e83c8" stroke-width="2" />
+			<text x="16" y="62" fill="#f1eddf" font-size="15">MEANING</text>
+		</g>
+
+		<!-- Operational archive -->
+		<g transform="translate(1050 113)">
+			<path d="M0 12L66 0L132 12V80L66 92L0 80Z" fill="#111d23" stroke="#78c7cb" stroke-width="2" />
+			<path d="M0 30L66 42L132 30M0 52L66 64L132 52" fill="none" stroke="#405c63" stroke-width="2" />
+			<text x="66" y="115" fill="#f1eddf" font-size="15" text-anchor="middle">VERSIONED ARTIFACT</text>
+		</g>
+
+		<!-- Separate domains -->
+		<g transform="translate(1262 32)">
+			<rect width="118" height="76" fill="#102019" stroke="#6fa589" stroke-width="2" />
+			<path d="M16 23H102M16 38H86M16 53H94" stroke="#6fa589" stroke-width="2" />
+			<text x="16" y="70" fill="#f1eddf" font-size="13">HMIS · COUNT</text>
+		</g>
+		<g transform="translate(1262 120)">
+			<rect width="118" height="76" fill="#211b12" stroke="#e5ad63" stroke-width="2" />
+			<path d="M16 22H102M26 22V52M51 22V52M76 22V52M102 22V52" stroke="#e5ad63" stroke-width="2" />
+			<text x="16" y="70" fill="#f1eddf" font-size="13">LMIS · STOCK</text>
+		</g>
+		<g transform="translate(1262 208)">
+			<rect width="118" height="76" fill="#231516" stroke="#d07f76" stroke-width="2" />
+			<path d="M18 22H100M18 38H72" stroke="#d07f76" stroke-width="2" />
+			<text x="16" y="70" fill="#f1eddf" font-size="13">FIS · CLAIM</text>
+		</g>
+
+		<!-- Honest hold branch -->
+		<path d="M481 208V278H609" fill="none" stroke="#e5ad63" stroke-width="3" stroke-dasharray="8 7" />
+		<g transform="translate(609 250)">
+			<rect width="146" height="56" fill="url(#project-hold)" stroke="#e5ad63" stroke-width="2" />
+			<rect x="8" y="8" width="130" height="40" fill="#171711" opacity="0.92" />
+			<path d="M20 18V38M30 18V38" stroke="#e5ad63" stroke-width="3" />
+			<text x="46" y="34" fill="#f1eddf" font-size="13">HOLD · INSPECT</text>
+		</g>
+	</g>
+
+	<g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+		<text x="98" y="921" fill="#82969d" font-size="16" letter-spacing="1.8">
+			OPENHIE-INSPIRED · INDEPENDENT · NO LIVE DATA
+		</text>
+		<text x="1502" y="921" fill="#d9ded8" font-size="16" text-anchor="end">
+			Identity · routing · meaning · provenance · failure · recovery
+		</text>
+	</g>
+</svg>

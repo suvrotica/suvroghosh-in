@@ -1,8 +1,30 @@
+import aRecordCrossesTownImage from '$lib/assets/projects/a-record-crosses-town.svg';
+
+export type ProjectLink =
+	| {
+			kind: 'internal';
+			href: '/blog/visualizations';
+			label: string;
+	  }
+	| {
+			kind: 'external';
+			href: `https://${string}`;
+			label: string;
+	  };
+
+export type ProjectImage = {
+	src: string;
+	alt: string;
+	width: number;
+	height: number;
+};
+
 export type ProfessionalProject = {
 	id:
 		| 'va-research-data-warehouse'
 		| 'find-study-registry'
 		| 'hie-clinical-trial-platforms'
+		| 'a-record-crosses-town'
 		| 'functional-job-analysis'
 		| 'meta-analysis-platform'
 		| 'mojollm-notebooks'
@@ -14,7 +36,10 @@ export type ProfessionalProject = {
 	contributions: readonly string[];
 	disciplines: readonly string[];
 	relatedPostSlugs: readonly string[];
-	href?: string;
+	link?: ProjectLink;
+	image?: ProjectImage;
+	featured?: boolean;
+	showOnResume?: boolean;
 	demo?: {
 		url: string;
 		title: string;
@@ -73,6 +98,43 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			url: 'https://youtu.be/FkHa3W4pQME?si=S9mLi5y04An7A--I',
 			title: 'ClinZen platform overview'
 		}
+	},
+	{
+		id: 'a-record-crosses-town',
+		name: 'A Record Crosses Town',
+		context: 'Independent interactive systems explainer · OpenHIE-inspired · wholly synthetic',
+		detail:
+			'A standalone, fully prerendered exhibit that follows one wholly synthetic encounter through identity, trust, routing, terminology, shared clinical storage, supply, finance, aggregate reporting, deterministic failure, and bounded recovery.',
+		contributions: [
+			'Built a typed deterministic simulation with an original semantic architecture map and inspectable payload, difference, lineage, audit, and provenance views.',
+			'Authored twelve failure presets that stop at explicit system boundaries, preserve failed evidence, apply bounded recovery, and replay with stable idempotency semantics.',
+			'Mapped technical claims to official primary sources while keeping every fixture synthetic and every authority store separate.'
+		],
+		disciplines: [
+			'SvelteKit',
+			'TypeScript',
+			'HIE architecture',
+			'OpenHIE-inspired',
+			'Data provenance',
+			'Accessibility'
+		],
+		relatedPostSlugs: [
+			'hie-first-principles-openhie',
+			'fhir-the-universal-language-of-health-data'
+		],
+		link: {
+			kind: 'external',
+			href: 'https://record.suvroghosh.in/',
+			label: 'Open the standalone exhibit'
+		},
+		image: {
+			src: aRecordCrossesTownImage,
+			alt: 'A luminous synthetic record route crosses an abstract dark exchange map of separate identity, terminology, clinical, supply, aggregate, and finance services.',
+			width: 1600,
+			height: 1000
+		},
+		featured: true,
+		showOnResume: false
 	},
 	{
 		id: 'functional-job-analysis',
@@ -151,7 +213,12 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			'create-art-living-pigment-studio',
 			'domain-coloring-complex-functions-explorer'
 		],
-		href: '/blog/visualizations'
+		link: {
+			kind: 'internal',
+			href: '/blog/visualizations',
+			label: 'Enter the interactive laboratory'
+		},
+		featured: true
 	},
 	{
 		id: 'editorial-publishing-system',

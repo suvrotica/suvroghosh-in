@@ -13,6 +13,8 @@
 	import { professionalProjects as projects } from '$lib/content/professional-projects';
 	import { resolve } from '$app/paths';
 
+	const resumeProjects = projects.filter((project) => project.showOnResume !== false);
+
 	type SkillGroup = {
 		category: string;
 		items: string;
@@ -465,7 +467,7 @@
 		</div>
 
 		<div class="space-y-4 text-sm text-neutral-700 dark:text-neutral-300">
-			{#each projects as project (project.name)}
+			{#each resumeProjects as project (project.id)}
 				<div>
 					<h4 class="m-0 mb-1 text-base font-bold text-neutral-900 dark:text-neutral-100">
 						{project.name}

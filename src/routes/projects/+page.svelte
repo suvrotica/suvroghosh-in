@@ -3,6 +3,7 @@
 	import type { PageData } from './$types';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import {
+		absoluteUrl,
 		breadcrumbSchema,
 		collectionPageSchema,
 		personId,
@@ -58,7 +59,9 @@
 					'@type': 'CreativeWork',
 					name: project.name,
 					description: project.detail,
-					url: `${canonicalUrl}#${project.id}`,
+					url:
+						project.link?.kind === 'external' ? project.link.href : `${canonicalUrl}#${project.id}`,
+					...(project.image ? { image: absoluteUrl(project.image.src) } : {}),
 					creator: { '@id': personId }
 				}
 			}))
@@ -141,14 +144,14 @@
 		{#each data.projects as project, index (project.id)}
 			<section
 				id={project.id}
-				class="scroll-mt-28 py-10 md:py-14 {project.id === 'visualizations'
+				class="scroll-mt-28 py-10 md:py-14 {project.featured
 					? 'my-6 rounded-2xl border border-cyan-700/40 bg-gradient-to-br from-neutral-950 via-neutral-900 to-cyan-950/80 px-5 text-white shadow-2xl shadow-neutral-950/20 sm:px-7'
 					: ''}"
 				aria-labelledby={`${project.id}-heading`}
 			>
 				<div class="grid gap-5 md:grid-cols-[7rem_1fr] md:gap-8">
 					<p
-						class="mb-0 text-sm font-bold {project.id === 'visualizations'
+						class="mb-0 text-sm font-bold {project.featured
 							? 'text-cyan-300'
 							: 'text-neutral-400 dark:text-neutral-500'}"
 					>
@@ -156,9 +159,24 @@
 					</p>
 
 					<div class="min-w-0">
+						{#if project.image}
+							<div
+								class="mb-7 overflow-hidden rounded-xl border border-cyan-800/70 bg-neutral-950 shadow-lg shadow-black/20"
+							>
+								<img
+									src={project.image.src}
+									alt={project.image.alt}
+									width={project.image.width}
+									height={project.image.height}
+									loading="lazy"
+									decoding="async"
+									class="block h-auto w-full"
+								/>
+							</div>
+						{/if}
+
 						<p
-							class="mb-2 text-xs font-bold tracking-[0.12em] uppercase {project.id ===
-							'visualizations'
+							class="mb-2 text-xs font-bold tracking-[0.12em] uppercase {project.featured
 								? 'text-cyan-300'
 								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
@@ -166,15 +184,14 @@
 						</p>
 						<h2
 							id={`${project.id}-heading`}
-							class="mb-4 text-2xl leading-tight font-bold md:text-3xl {project.id ===
-							'visualizations'
+							class="mb-4 text-2xl leading-tight font-bold md:text-3xl {project.featured
 								? 'text-white'
 								: 'text-neutral-950 dark:text-neutral-50'}"
 						>
 							{project.name}
 						</h2>
 						<p
-							class="mb-6 max-w-3xl text-left leading-relaxed {project.id === 'visualizations'
+							class="mb-6 max-w-3xl text-left leading-relaxed {project.featured
 								? 'text-neutral-200'
 								: 'text-neutral-700 dark:text-neutral-300'}"
 						>
@@ -182,15 +199,14 @@
 						</p>
 
 						<h3
-							class="mb-3 text-xs font-bold tracking-[0.14em] uppercase {project.id ===
-							'visualizations'
+							class="mb-3 text-xs font-bold tracking-[0.14em] uppercase {project.featured
 								? 'text-cyan-300'
 								: 'text-neutral-500 dark:text-neutral-400'}"
 						>
 							Contribution
 						</h3>
 						<ul
-							class="mb-6 space-y-3 text-sm leading-relaxed {project.id === 'visualizations'
+							class="mb-6 space-y-3 text-sm leading-relaxed {project.featured
 								? 'text-neutral-200'
 								: 'text-neutral-700 dark:text-neutral-300'}"
 						>
@@ -205,8 +221,7 @@
 						<ul class="mb-0 flex flex-wrap gap-2" aria-label="Relevant disciplines">
 							{#each project.disciplines as discipline (discipline)}
 								<li
-									class="rounded-full border px-3 py-1 text-xs font-semibold {project.id ===
-									'visualizations'
+									class="rounded-full border px-3 py-1 text-xs font-semibold {project.featured
 										? 'border-cyan-800 text-cyan-100'
 										: 'border-neutral-300 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400'}"
 								>
@@ -215,12 +230,24 @@
 							{/each}
 						</ul>
 
-						{#if project.href}
+						{#if project.link?.kind === 'external'}
+							<!-- eslint-disable svelte/no-navigation-without-resolve -->
 							<a
-								href={resolve(project.href as '/blog/visualizations')}
-								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-neutral-950 no-underline hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+								href={project.link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-neutral-950 no-underline transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
 							>
-								Enter the interactive laboratory <span class="ml-1" aria-hidden="true">→</span>
+								{project.link.label} <span class="ml-1" aria-hidden="true">↗</span>
+								<span class="sr-only">, opens in a new tab</span>
+							</a>
+							<!-- eslint-enable svelte/no-navigation-without-resolve -->
+						{:else if project.link?.kind === 'internal'}
+							<a
+								href={resolve(project.link.href)}
+								class="mt-6 inline-flex min-h-11 items-center rounded-md bg-cyan-300 px-4 py-2 text-sm font-bold text-neutral-950 no-underline transition-colors hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+							>
+								{project.link.label} <span class="ml-1" aria-hidden="true">→</span>
 							</a>
 						{/if}
 
