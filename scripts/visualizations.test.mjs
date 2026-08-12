@@ -734,3 +734,75 @@ test('the Strange Attractor Orchestra publishes one consistent route and artwork
 	assert.deepEqual(pngDimensions(poster), { width: 1440, height: 1080 });
 	assert.ok(fs.statSync(social).size < 750 * 1024, 'social image exceeds 750 kB');
 });
+
+test('The Living Aperture is a native, scoped, scientifically guarded visualization article', () => {
+	const slug = 'the-living-aperture';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const lab = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'gastropod-shell-lab',
+		'LivingApertureLab.svelte'
+	);
+	const styles = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'gastropod-shell-lab',
+		'living-aperture-lab.css'
+	);
+	const worker = read(
+		'src',
+		'lib',
+		'visualizations',
+		'gastropod-shell-lab',
+		'workers',
+		'geometry-broker.ts'
+	);
+	const poster = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'gastropod-shell-lab',
+		'the-living-aperture.png'
+	);
+
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /immersiveLead: true/);
+	assert.match(post, /<LivingApertureLab \/>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /Nautilus is an extant cephalopod/);
+	assert.match(post, /not automatically a globally self-similar object/);
+	assert.match(post, /Nothing in that equation requires the golden ratio/);
+	assert.match(post, /fractal-like/);
+	assert.match(post, /no preset has been fitted to a specimen/i);
+
+	assert.match(registry, /'the-living-aperture':\s*\{/);
+	assert.match(registry, /href: '\/blog\/visualizations\/the-living-aperture'/);
+	assert.match(
+		landing,
+		/'the-living-aperture': visualizationSummaries\['the-living-aperture'\]\.subjects/
+	);
+	assert.match(lab, /article-breakout not-prose/);
+	assert.match(lab, /data-lab-theme/);
+	assert.match(lab, /labRoot\.addEventListener\('keydown'/);
+	assert.doesNotMatch(lab, /document\.documentElement|<svelte:head>|<svelte:window[^>]+onkeydown/);
+	assert.match(styles, /^\.living-aperture-lab\s*\{/);
+	assert.match(worker, /new Worker\(/);
+	assert.ok(fs.existsSync(poster));
+	assert.ok(fs.statSync(poster).size < 750 * 1024);
+});

@@ -63,6 +63,18 @@ export const visualizationSummaries = {
 			'A copper and mineral-cyan Langford attractor braided through a restrained curl-noise field on charcoal, with its faint canonical orbit still visible',
 		href: '/blog/visualizations/the-strange-attractor-orchestra',
 		status: 'published'
+	},
+	'the-living-aperture': {
+		id: 'the-living-aperture',
+		title: 'The Living Aperture: A Gastropod Shell Laboratory',
+		description:
+			'Grow deterministic shells aperture by aperture, sculpt logarithmic coiling and finite ornament, and inspect the boundary between geometry, kinematics, and reduced mechanics.',
+		subjects: ['Biology', 'Mathematics', 'Scientific Computing', 'Generative Art'],
+		poster: '/images/visualizations/gastropod-shell-lab/the-living-aperture.png',
+		posterAlt:
+			'The Living Aperture laboratory showing a cream-coloured variced shell between specimen drawers, a Three.js viewport, and mathematical sculpting controls',
+		href: '/blog/visualizations/the-living-aperture',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

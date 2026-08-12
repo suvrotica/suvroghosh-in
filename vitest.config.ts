@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/gastropod-shell-lab/**/*.{test,spec}.ts',
 			'src/lib/visualizations/strange-attractor-orchestra/**/*.test.ts',
 			'src/lib/visualizations/chitin-engine/**/*.test.ts',
 			'src/lib/visualizations/prior-authorization/**/*.test.ts',

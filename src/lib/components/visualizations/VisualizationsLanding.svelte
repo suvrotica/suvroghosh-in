@@ -29,7 +29,8 @@
 		'the-prior-authorization-machine':
 			visualizationSummaries['prior-authorization-machine'].subjects,
 		'the-strange-attractor-orchestra':
-			visualizationSummaries['the-strange-attractor-orchestra'].subjects
+			visualizationSummaries['the-strange-attractor-orchestra'].subjects,
+		'the-living-aperture': visualizationSummaries['the-living-aperture'].subjects
 	};
 	const subjects = [
 		'All',

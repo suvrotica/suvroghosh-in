@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Living Aperture: A Gastropod Shell Laboratory" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Living Aperture: A Gastropod Shell Laboratory</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(71,626)" font-size="118" style="fill:#e0b879">Aperture</text>
+<text transform="translate(675,446)" font-size="95" style="fill:#e0b879">Growth</text>
+<text transform="translate(331,518)" font-size="95" style="fill:#d9c89e">Theta</text>
+<text transform="translate(411,379)" font-size="87" style="fill:#a9b7a3">Shell</text>
+<text transform="translate(323,289)" font-size="87" style="fill:#c7d7b5">Surface</text>
+<text transform="translate(836,638)" font-size="83" style="fill:#d6a79f">Mathbf</text>
+<text transform="translate(175,168)" font-size="74" style="fill:#8fb7d0">Finite</text>
+<text transform="translate(1201,642) rotate(-90)" font-size="69" style="fill:#9fc9c5">Laboratory</text>
+<text transform="translate(544,142)" font-size="69" style="fill:#d9c89e">Recipe</text>
+<text transform="translate(1101,525) rotate(-90)" font-size="69" style="fill:#e0b879">History</text>
+<text transform="translate(750,208)" font-size="69" style="fill:#e0b879">Centreline</text>
+<text transform="translate(871,89)" font-size="69" style="fill:#d88988">Coiling</text>
+<text transform="translate(709,547)" font-size="64" style="fill:#d5d2c2">Ornament</text>
+<text transform="translate(94,517)" font-size="58" style="fill:#b6c3dd">Model</text>
+<text transform="translate(707,698)" font-size="58" style="fill:#d5d2c2">Geometry</text>
+<text transform="translate(746,303)" font-size="58" style="fill:#d5d2c2">Remains</text>
+<text transform="translate(758,370)" font-size="58" style="fill:#c7d7b5">Mesh</text>
+<text transform="translate(192,85)" font-size="58" style="fill:#a9b7a3">Open</text>
+<text transform="translate(105,269)" font-size="58" style="fill:#d5d2c2">Qquad</text>
+<text transform="translate(307,681)" font-size="58" style="fill:#8fb7d0">Mechanical</text>
+<text transform="translate(57,399)" font-size="58" style="fill:#d5d2c2">Goriely</text>
+<text transform="translate(1058,683)" font-size="52" style="fill:#c49a6c">Remain</text>
+<text transform="translate(535,44)" font-size="52" style="fill:#c49a6c">Mantle</text>
+<text transform="translate(945,139)" font-size="52" style="fill:#d88988">Adult</text>
+<text transform="translate(450,199)" font-size="52" style="fill:#a9b7a3">Visible</text>
+<text transform="translate(637,597)" font-size="52" style="fill:#e0b879">Engine</text>
+<text transform="translate(148,334)" font-size="52" style="fill:#a9b7a3">Analytic</text>
+<text transform="translate(381,56)" font-size="52" style="fill:#c7d7b5">Ring</text>
+<text transform="translate(1253,600) rotate(-90)" font-size="52" style="fill:#d5d2c2">Spiral</text>
+<text transform="translate(50,208) rotate(-90)" font-size="52" style="fill:#d5d2c2">Shells</text>
+<text transform="translate(53,714) rotate(-90)" font-size="52" style="fill:#a9b7a3">Threedimensional</text>
+<text transform="translate(85,214)" font-size="52" style="fill:#9fc9c5">Normalized</text>
+<text transform="translate(684,490)" font-size="52" style="fill:#b6c3dd">Mismatch</text>
+<text transform="translate(126,711)" font-size="52" style="fill:#c7d7b5">Full</text>
+<text transform="translate(463,441)" font-size="52" style="fill:#9fc9c5">Text</text>
+<text transform="translate(100,456)" font-size="52" style="fill:#d88988">Moulton</text>
+<text transform="translate(742,252)" font-size="52" style="fill:#d88988">Chirat</text>
+<text transform="translate(1262,409) rotate(-90)" font-size="52" style="fill:#8fb7d0">Morphogenesis</text>
+<text transform="translate(1204,225) rotate(-90)" font-size="45" style="fill:#d9c89e">Requires</text>
+<text transform="translate(513,82)" font-size="45" style="fill:#d5d2c2">Deterministic</text>
+<text transform="translate(650,642)" font-size="38" style="fill:#c49a6c">Boundary</text>
+<text transform="translate(477,552)" font-size="38" style="fill:#c7d7b5">Describes</text>
+<text transform="translate(122,34)" font-size="38" style="fill:#a9b7a3">Kinematics</text>
+<text transform="translate(214,550)" font-size="38" style="fill:#8fb7d0">Reduced</text>
+<text transform="translate(343,427)" font-size="38" style="fill:#a9b7a3">Lip</text>
+<text transform="translate(935,340)" font-size="38" style="fill:#b6c3dd">Spine</text>
+<text transform="translate(1137,394) rotate(-90)" font-size="38" style="fill:#c49a6c">Varix</text>
+<text transform="translate(342,101)" font-size="38" style="fill:#a9b7a3">Object</text>
+<text transform="translate(716,356) rotate(-90)" font-size="38" style="fill:#c49a6c">Changes</text>
+<text transform="translate(725,33)" font-size="38" style="fill:#b6c3dd">Natural</text>
+<text transform="translate(460,715)" font-size="38" style="fill:#d6a79f">Instead</text>
+<text transform="translate(165,665)" font-size="38" style="fill:#d9c89e">Volume</text>
+<text transform="translate(814,124)" font-size="38" style="fill:#d9c89e">Curve</text>
+<text transform="translate(267,713)" font-size="38" style="fill:#a9b7a3">Never</text>
+<text transform="translate(1102,708)" font-size="28" style="fill:#c7d7b5">Watertight</text>
+<text transform="translate(62,136)" font-size="28" style="fill:#d88988">Family</text>
+<text transform="translate(949,254)" font-size="28" style="fill:#d6a79f">Radius</text>
+<text transform="translate(973,27)" font-size="28" style="fill:#d5d2c2">Interface</text>
+<text transform="translate(62,98)" font-size="28" style="fill:#d6a79f">Lecture</text>
+<text transform="translate(58,169)" font-size="28" style="fill:#c7d7b5">Uses</text>
+<text transform="translate(1041,533) rotate(-90)" font-size="28" style="fill:#d5d2c2">Selfsimilar</text>
+<text transform="translate(547,228)" font-size="28" style="fill:#a9b7a3">Profile</text>
+<text transform="translate(77,312)" font-size="28" style="fill:#e0b879">Roll</text>
+<text transform="translate(451,127)" font-size="28" style="fill:#8fb7d0">Frame</text>
+<text transform="translate(843,570)" font-size="25" style="fill:#d5d2c2">Construction</text>
+<text transform="translate(65,63)" font-size="25" style="fill:#c49a6c">Torsion</text>
+<text transform="translate(796,147)" font-size="25" style="fill:#b6c3dd">Gastropod</text>
+<text transform="translate(995,713)" font-size="25" style="fill:#a9b7a3">Field</text>
+<text transform="translate(255,108)" font-size="25" style="fill:#d88988">Ribs</text>
+<text transform="translate(1060,543)" font-size="25" style="fill:#d88988">Proxy</text>
+<text transform="translate(78,589) rotate(-90)" font-size="25" style="fill:#d5d2c2">Hierarchical</text>
+<text transform="translate(509,400)" font-size="22" style="fill:#c49a6c">Mathematical</text>
+<text transform="translate(608,420)" font-size="22" style="fill:#e0b879">Claim</text>
+<text transform="translate(1029,229)" font-size="22" style="fill:#d5d2c2">Biological</text>
+<text transform="translate(600,456)" font-size="22" style="fill:#9fc9c5">Export</text>
+<text transform="translate(1014,297)" font-size="22" style="fill:#b6c3dd">Use</text>
+<text transform="translate(915,659)" font-size="22" style="fill:#9fc9c5">Scientific</text>
+<text transform="translate(376,235)" font-size="22" style="fill:#8fb7d0">Seashells</text>
+<text transform="translate(1134,521) rotate(-90)" font-size="22" style="fill:#d6a79f">Length</text>
+<text transform="translate(77,287) rotate(-90)" font-size="18" style="fill:#a9b7a3">Javascript</text>
+<text transform="translate(304,361)" font-size="18" style="fill:#8fb7d0">Preserves</text>
+<text transform="translate(1071,162)" font-size="18" style="fill:#b6c3dd">Sources</text>
+<text transform="translate(398,305)" font-size="14" style="fill:#d88988">Aperturebyaperture</text>
+<text transform="translate(935,463)" font-size="14" style="fill:#d6a79f">Explicitly</text>
+<text transform="translate(1269,650) rotate(-90)" font-size="14" style="fill:#a9b7a3">Mechanisms</text>
+<text transform="translate(208,284)" font-size="14" style="fill:#9fc9c5">Complete</text>
+<text transform="translate(1041,569)" font-size="14" style="fill:#d6a79f">Molluscan</text>
+<text transform="translate(766,386)" font-size="14" style="fill:#c49a6c">Development</text>
+<text transform="translate(53,15)" font-size="14" style="fill:#c49a6c">Preset</text>
+<text transform="translate(581,304)" font-size="14" style="fill:#8fb7d0">Specimen</text>
+<text transform="translate(263,494)" font-size="14" style="fill:#b6c3dd">Active</text>
+<text transform="translate(561,641)" font-size="14" style="fill:#c49a6c">Opening</text>
+<text transform="translate(462,154)" font-size="14" style="fill:#a9b7a3">Material</text>
+<text transform="translate(517,321)" font-size="14" style="fill:#d9c89e">Flare</text>
+<text transform="translate(805,715)" font-size="14" style="fill:#d5d2c2">Event</text>
+<text transform="translate(158,534)" font-size="14" style="fill:#d5d2c2">Unit</text>
+<text transform="translate(172,229)" font-size="14" style="fill:#d9c89e">Finished</text>
+<text transform="translate(642,703)" font-size="14" style="fill:#d5d2c2">Begins</text>
+<text transform="translate(339,390)" font-size="14" style="fill:#e0b879">Copy</text>
+<text transform="translate(186,358)" font-size="14" style="fill:#c49a6c">Moving</text>
+<text transform="translate(648,510)" font-size="14" style="fill:#d5d2c2">Scale</text>
+<text transform="translate(106,664)" font-size="14" style="fill:#c7d7b5">Shape</text>
+<text transform="translate(586,99)" font-size="14" style="fill:#9fc9c5">Timeline</text>
+<text transform="translate(676,187)" font-size="14" style="fill:#d9c89e">Completed</text>
+<text transform="translate(969,225)" font-size="14" style="fill:#b6c3dd">Living</text>
+<text transform="translate(272,478)" font-size="14" style="fill:#c49a6c">Produce</text>
+<text transform="translate(847,321)" font-size="14" style="fill:#d9c89e">Outer</text>
+<text transform="translate(830,655)" font-size="14" style="fill:#e0b879">Apex</text>
+<text transform="translate(128,161)" font-size="14" style="fill:#b6c3dd">Capped</text>
+<text transform="translate(950,488)" font-size="14" style="fill:#c49a6c">Point</text>
+<text transform="translate(1131,614)" font-size="14" style="fill:#8fb7d0">Visual</text>
+<text transform="translate(904,163)" font-size="14" style="fill:#a9b7a3">Printable</text>
+<text transform="translate(921,45)" font-size="14" style="fill:#d5d2c2">Solid</text>
+<text transform="translate(739,321)" font-size="14" style="fill:#d9c89e">Logarithmic</text>
+<text transform="translate(893,18)" font-size="14" style="fill:#c49a6c">Principal</text>
+<text transform="translate(137,474)" font-size="14" style="fill:#d5d2c2">Angle</text>
+<text transform="translate(189,100)" font-size="14" style="fill:#d88988">Exp</text>
+<text transform="translate(320,621)" font-size="14" style="fill:#9fc9c5">Factor</text>
+<text transform="translate(1053,586)" font-size="14" style="fill:#c49a6c">Turn</text>
+<text transform="translate(56,697)" font-size="14" style="fill:#e0b879">Exposes</text>
+<text transform="translate(495,95)" font-size="14" style="fill:#d9c89e">Reason</text>
+<text transform="translate(376,537)" font-size="14" style="fill:#d6a79f">Exponential</text>
+<text transform="translate(1010,685)" font-size="14" style="fill:#d6a79f">Broad</text>
+<text transform="translate(426,644)" font-size="14" style="fill:#e0b879">Circular</text>
+<text transform="translate(610,484)" font-size="14" style="fill:#d9c89e">Nothing</text>
+<text transform="translate(444,456)" font-size="14" style="fill:#c7d7b5">Equation</text>
+<text transform="translate(85,712)" font-size="14" style="fill:#d5d2c2">Proof</text>
+<text transform="translate(1112,242)" font-size="14" style="fill:#8fb7d0">Form</text>
+<text transform="translate(899,367)" font-size="14" style="fill:#c49a6c">Planar</text>
+<text transform="translate(443,394)" font-size="14" style="fill:#c49a6c">Height</text>
+</svg>

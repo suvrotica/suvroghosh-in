@@ -9697,6 +9697,21 @@
       "sourceHash": "63508d3034620d8737c45ad0ff8f032e3fcd4733c9a08cb179f0f70eab347171",
       "width": 1600
     },
+    "static/images/visualizations/gastropod-shell-lab/the-living-aperture.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 88538,
+      "outputHash": "285ef65be592505259a46f289239afb8b0beddc8da2c6e0f45561ed656cee424",
+      "resized": false,
+      "sourceBytes": 88538,
+      "sourceHash": "285ef65be592505259a46f289239afb8b0beddc8da2c6e0f45561ed656cee424",
+      "width": 1200
+    },
     "static/images/visualizations/hello-fragment-poster.jpg": {
       "format": "JPEG",
       "height": 941,

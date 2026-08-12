@@ -7,6 +7,9 @@ __pycache__/
 .codex-artifacts/
 .audit-private/
 
+# Standalone source snapshot; the native blog port lives under src/lib/visualizations.
+/gastropod-shell-lab/
+
 # Output
 .output
 .vercel
