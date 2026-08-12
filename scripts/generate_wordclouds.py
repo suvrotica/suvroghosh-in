@@ -259,6 +259,9 @@ def strip_markdown_noise(body: str) -> str:
 	# opening tour can render before it and the full explorer after it. Preserve
 	# that prose while still stripping the component boundary itself.
 	text = re.sub(r"</?BiasArchipelago(?:\s+[^<>]*)?>", " ", text)
+	# Raw-thought layouts use these components as structural wrappers. Keep the
+	# article prose inside them while excluding the Svelte-only boundaries.
+	text = re.sub(r"</?(?:ThoughtSpread|ThoughtLeaf)(?:\s+[^<>]*)?>", " ", text)
 	text = re.sub(r"<[A-Z][A-Za-z0-9_.:-]*(?:\s+[^<>]*)?/>", " ", text)
 	text = re.sub(r"<[A-Z][A-Za-z0-9_.:-]*(?:\s+[^<>]*)?>.*?</[A-Z][A-Za-z0-9_.:-]*>", " ", text, flags=re.DOTALL)
 	text = re.sub(r"!\[[^\]]*]\([^)]+\)", " ", text)

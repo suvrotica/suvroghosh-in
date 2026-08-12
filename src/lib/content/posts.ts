@@ -27,6 +27,7 @@ export type BlogPostMetadata = {
 	faq?: { question: string; answer: string }[];
 	interactiveFirst?: boolean;
 	immersiveLead?: boolean;
+	rawThoughtLayout?: string;
 	headings?: PostHeading[];
 };
 
@@ -160,6 +161,13 @@ export function validatePublishedPostMetadata(
 	source = 'post'
 ) {
 	if (!isPublishedPost(metadata)) return;
+	if (
+		metadata.rawThoughtLayout !== undefined &&
+		(typeof metadata.rawThoughtLayout !== 'string' ||
+			!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.rawThoughtLayout))
+	) {
+		throw new Error(`${source} has an invalid rawThoughtLayout; use a lowercase hyphenated slug.`);
+	}
 
 	const missing = ['title', 'description', 'date', 'category'].filter((field) => {
 		const value = metadata[field as keyof BlogPostMetadata];

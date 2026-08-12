@@ -180,6 +180,8 @@
 		"yaml": "^2.9.0"
 	},
 	"dependencies": {
+		"@fontsource-variable/archivo": "^5.3.0",
+		"@fontsource-variable/caveat": "^5.3.0",
 		"@fontsource-variable/noto-serif-bengali": "^5.3.0",
 		"@fontsource-variable/roboto": "^5.3.0",
 		"@fontsource-variable/source-serif-4": "^5.3.0",

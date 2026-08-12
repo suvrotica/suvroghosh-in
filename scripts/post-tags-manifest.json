@@ -11329,9 +11329,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-magnificent-plumbing-department-of-artificial-intelligence.md": {
-			"bodyHash": "72a96a1262d15822514cc4ff75080855c893dd5c1d3c0b183c6ff17717398bab",
+			"bodyHash": "0cb58c834f75253b8bbeb592a57c1002b7ccbadeb0879b58040699107e72df0b",
 			"hashVersion": 2,
-			"revisionHash": "b5503b60c914a8e8b27eac02103bea8a747b366c989b8939b91178127cb8d96f",
+			"revisionHash": "f5d740c36a54e48609e7de5647b26c9dacaa20d11b1eca674cee5539e1e8b755",
 			"generatedTags": [
 				"MCP",
 				"Model Context Protocol",
@@ -11356,7 +11356,8 @@
 				"suvrotica",
 				"suvroghosh"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-12"
 		}
 	},
 	"maxTags": 10

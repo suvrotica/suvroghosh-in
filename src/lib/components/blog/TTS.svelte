@@ -70,7 +70,9 @@
 	});
 
 	function getText() {
-		const articleBody = document.querySelector<HTMLElement>('.prose');
+		const articleBody =
+			document.querySelector<HTMLElement>('[data-article-reading-region]') ??
+			document.querySelector<HTMLElement>('.prose');
 		if (!articleBody) return '';
 
 		const clone = articleBody.cloneNode(true) as HTMLElement;

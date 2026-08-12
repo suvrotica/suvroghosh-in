@@ -1,0 +1,84 @@
+{
+	"id": "ai-plumbing",
+	"issue": "FIELD NOTES / 001",
+	"label": "The Department of Artificial Plumbing",
+	"spreads": [
+		{
+			"id": "naming-catastrophe",
+			"number": "01",
+			"kicker": "Orientation",
+			"title": "A naming catastrophe",
+			"tone": "coal"
+		},
+		{
+			"id": "hands-and-doors",
+			"number": "02",
+			"kicker": "Protocol anatomy",
+			"title": "MCP supplies the arm",
+			"tone": "paper"
+		},
+		{
+			"id": "manuals",
+			"number": "03",
+			"kicker": "Packaged method",
+			"title": "Skills are manuals",
+			"tone": "signal"
+		},
+		{
+			"id": "suitcase",
+			"number": "04",
+			"kicker": "Distribution layer",
+			"title": "The installable suitcase",
+			"tone": "coal"
+		},
+		{
+			"id": "control-flow",
+			"number": "05",
+			"kicker": "Tools and agency",
+			"title": "Doorbells are not agents",
+			"tone": "paper"
+		},
+		{
+			"id": "bureaucracy",
+			"number": "06",
+			"kicker": "Governance",
+			"title": "Workforce and bureaucracy",
+			"tone": "warning"
+		},
+		{
+			"id": "digestive-tract",
+			"number": "07",
+			"kicker": "System map",
+			"title": "The executable digestive tract",
+			"tone": "coal"
+		},
+		{
+			"id": "gmail-monarchy",
+			"number": "08",
+			"kicker": "Worked example",
+			"title": "A Gmail constitutional monarchy",
+			"tone": "paper"
+		},
+		{
+			"id": "hazards",
+			"number": "09",
+			"kicker": "Inspection sheet",
+			"title": "Polish, corrosion, and risk",
+			"tone": "warning"
+		},
+		{
+			"id": "field-chart",
+			"number": "10",
+			"kicker": "Identification chart",
+			"title": "What each contraption is",
+			"tone": "signal"
+		},
+		{
+			"id": "silicon",
+			"number": "11",
+			"kicker": "Back matter",
+			"title": "Now somebody else may be silicon",
+			"tone": "coal"
+		}
+	]
+}

@@ -4129,6 +4129,34 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "thought-folios/ai-plumbing/department-cabinet.jpg",
+			"src": "/images/thought-folios/ai-plumbing/department-cabinet.jpg",
+			"bytes": 242083,
+			"width": 1003,
+			"height": 1568
+		},
+		{
+			"name": "thought-folios/ai-plumbing/installable-suitcase.jpg",
+			"src": "/images/thought-folios/ai-plumbing/installable-suitcase.jpg",
+			"bytes": 270730,
+			"width": 1536,
+			"height": 1024
+		},
+		{
+			"name": "thought-folios/ai-plumbing/kitchen-facing-waiter.jpg",
+			"src": "/images/thought-folios/ai-plumbing/kitchen-facing-waiter.jpg",
+			"bytes": 240871,
+			"width": 1536,
+			"height": 1024
+		},
+		{
+			"name": "thought-folios/ai-plumbing/polished-corrosion.jpg",
+			"src": "/images/thought-folios/ai-plumbing/polished-corrosion.jpg",
+			"bytes": 273248,
+			"width": 1568,
+			"height": 1003
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,
@@ -4647,6 +4675,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"name": "art-ai-moat-labor-displacement.jpg",
 			"src": "/thumbnail/art-ai-moat-labor-displacement.jpg",
 			"bytes": 210813,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "art-ai-plumbing-field-manual.jpg",
+			"src": "/thumbnail/art-ai-plumbing-field-manual.jpg",
+			"bytes": 151228,
 			"width": 1200,
 			"height": 800
 		},

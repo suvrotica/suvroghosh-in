@@ -23,7 +23,8 @@ const stringFields = [
 	'status',
 	'inPlainEnglish',
 	'seriesId',
-	'seriesChapter'
+	'seriesChapter',
+	'rawThoughtLayout'
 ];
 const allowedFields = new Set([
 	...stringFields,
@@ -164,6 +165,13 @@ for (const file of postFiles) {
 	}
 	if (metadata.immersiveLead !== undefined && typeof metadata.immersiveLead !== 'boolean') {
 		errors.push(`${file}: immersiveLead must be true or false, without quotes.`);
+	}
+	if (
+		metadata.rawThoughtLayout !== undefined &&
+		typeof metadata.rawThoughtLayout === 'string' &&
+		!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.rawThoughtLayout)
+	) {
+		errors.push(`${file}: rawThoughtLayout must be a lowercase hyphenated slug.`);
 	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });

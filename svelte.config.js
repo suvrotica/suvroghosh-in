@@ -22,6 +22,9 @@ import TTS from '$lib/components/blog/TTS.svelte';
 import ChatterboxTTS from '$lib/components/tts/ChatterboxTTS.svelte';
 import Vid from '$lib/components/blog/PostVideo.svelte';
 import Notebook from '$lib/components/blog/Notebook.svelte';
+import ThoughtSpread from '$lib/components/blog/raw-thought/ThoughtSpread.svelte';
+import ThoughtLeaf from '$lib/components/blog/raw-thought/ThoughtLeaf.svelte';
+import ThoughtArt from '$lib/components/blog/raw-thought/ThoughtArt.svelte';
 `;
 
 const autoImport = {

@@ -17,6 +17,19 @@
 	import { resolveRouteMotion, shouldUseViewTransition } from '$lib/motion/route-biomes';
 	import type { ResolvedMotion } from '$lib/motion/types';
 
+	type PageDataWithPostMetadata = {
+		metadata?: {
+			rawThoughtLayout?: unknown;
+		};
+	};
+
+	function resolveRawThoughtLayout(data: unknown) {
+		if (data == null || typeof data !== 'object') return undefined;
+
+		const metadata = (data as PageDataWithPostMetadata).metadata;
+		return typeof metadata?.rawThoughtLayout === 'string' ? metadata.rawThoughtLayout : undefined;
+	}
+
 	let { children } = $props();
 	let routeMotion = $derived(resolveRouteMotion(page.url.pathname));
 	let routeEssayInk = $derived(
@@ -24,6 +37,7 @@
 			? ((page.data as Record<string, unknown>).essayInk as string)
 			: undefined
 	);
+	let rawThoughtLayout = $derived(resolveRawThoughtLayout(page.data));
 	let studioShell = $derived(
 		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
 	);
@@ -111,6 +125,13 @@
 	<div class="min-h-svh bg-[#171612]">
 		<a href="#main-content" class="skip-link">Skip to game and controls</a>
 		<main id="main-content" tabindex="-1" class="min-h-svh focus:outline-none">
+			{@render children()}
+		</main>
+	</div>
+{:else if rawThoughtLayout}
+	<div class="min-h-dvh" data-raw-thought-layout={rawThoughtLayout}>
+		<a href="#main-content" class="skip-link">Skip to essay</a>
+		<main id="main-content" tabindex="-1" class="min-h-dvh w-full focus:outline-none">
 			{@render children()}
 		</main>
 	</div>

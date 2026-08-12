@@ -2,25 +2,33 @@
 title: "The Magnificent Plumbing Department of Artificial Intelligence"
 description: "A satirical field guide to MCP servers, tools, skills, plugins, connectors, apps, hooks, agents, subagents, memory, and automations."
 date: "2026-08-11"
+dateModified: "2026-08-12"
 category: "Artificial Intelligence"
 tags: ["MCP", "Model Context Protocol", "Skills", "Plugins", "Connectors", "Agents", "ChatGPT", "Codex", "suvrotica", "suvroghosh"]
 pinnedTags: ["MCP", "Model Context Protocol", "Skills", "Plugins", "Connectors", "Agents", "ChatGPT", "Codex", "suvrotica", "suvroghosh"]
 published: true
 status: "living"
 color: "#8B5CF6"
-thumbnail: "/thumbnail/art-the-magnificent-plumbing-department-of-artificial-intelligence.jpg"
-thumbnailAlt: "Charcoal caricature of a brooding man in profile, chin resting on his fist, drawn on warm canvas"
+thumbnail: "/thumbnail/art-ai-plumbing-field-manual.jpg"
+thumbnailAlt: "Pipe-bodied waiter carrying a blank menu between a diner and a locked industrial kitchen"
+rawThoughtLayout: "ai-plumbing-field-manual"
 ---
 
-<TTS />
+<ThoughtSpread id="naming-catastrophe">
 
-<Pi src="/thumbnail/art-the-magnificent-plumbing-department-of-artificial-intelligence.jpg" />
+<ThoughtLeaf side="left" label="The nouns arrive">
+
+## A naming catastrophe
 
 I had scarcely learned to say “large language model” without imagining an enormously overweight Bengali gentleman reciting Shakespeare when the industry produced tools. Then tools acquired servers. Servers acquired protocols. Protocols acquired skills. Skills were married into plugins. Plugins began keeping connectors as domestic servants. Connectors sprouted apps, apps displayed widgets, widgets summoned agents, agents bred subagents, and somebody attached hooks to the whole reproductive catastrophe so that commands could leap out at predetermined moments and bite the operating system on the ankle.
 
-This is progress. Progress is what we call confusion after venture capital has purchased typography.
+> This is progress. Progress is what we call confusion after venture capital has purchased typography.
 
 The central difficulty is not that these things are especially complicated. A carburetor is complicated. The human complement system is complicated. Trying to understand why a Calcutta landlord believes a damp room beside an open drain constitutes “premium accommodation” is complicated. MCP and skills are mostly ordinary software ideas dressed for a conference at which every noun must arrive wearing a new lanyard.
+
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="The honest distinction">
 
 The shortest honest distinction is this:
 
@@ -32,6 +40,16 @@ A plugin puts the hands, doors, method, name badge, packaging, connection metada
 
 Everything else is elaboration, administration, nomenclature, and the continuing human attempt to sell a suitcase by calling it an autonomous mobility ecosystem.
 
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="hands-and-doors">
+
+<ThoughtLeaf side="left" label="Capability provider">
+
+## MCP supplies the arm
+
 MCP means Model Context Protocol. “Protocol” descends through Greek and Late Latin from prōtokollon, the first sheet glued to a manuscript roll, the administrative cover page telling officials what the enclosed bureaucratic entrails were. Two thousand years later, the word still means approximately the same thing: an agreed form by which two parties communicate without having to sniff one another ceremonially like dogs.
 
 A model cannot ordinarily rummage through Gmail, query a hospital database, inspect Figma, fetch an issue from GitHub, or discover whether I have once again forgotten to pay a bill. It produces tokens. Brilliant tokens, sometimes; idiotic tokens with an Oxford accent, sometimes. But still tokens. It has no natural arm reaching into the world.
@@ -41,6 +59,19 @@ An MCP server supplies that arm.
 More precisely, it advertises capabilities in a standard form. Some capabilities are tools: actions the model may request, such as searching messages, reading a file, creating an issue, querying a database, or inspecting a browser page. Some are resources: pieces of context a client may retrieve. MCP also defines prompts and other primitives, although every host does not necessarily support or expose every primitive in precisely the same fashion.
 
 The server defines its tools, their schemas, optional server instructions, authentication requirements, structured results, and related metadata. The client and host conduct the connection and sign-in flows and impose their own approval policies; the server integration still defines and enforces the access it requires. The model, acting through an MCP client inside a host such as ChatGPT or Codex, learns what is available and may request a tool call with structured arguments.
+
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Restaurant cutaway">
+
+<ThoughtArt
+  src="/images/thought-folios/ai-plumbing/kitchen-facing-waiter.jpg"
+  alt="A pipe-bodied waiter carries a blank menu from a locked industrial kitchen toward a seated diner"
+  width={1536}
+  height={1024}
+  ratio="landscape"
+  caption="The model dines. The server faces the kitchen. The schema is the menu."
+/>
 
 The arrangement resembles a restaurant. The model is the diner. The MCP server is the kitchen-facing waiter. The tool schema is the menu. Authentication is the maître d’ asking whether I actually possess trousers. The external service is the kitchen. The returned result is dinner, although in enterprise software it more often resembles a lukewarm bowl of JSON garnished with an expired OAuth token.
 
@@ -52,6 +83,16 @@ Still, MCP solves a real problem. Before a common protocol, every AI application
 
 The protocol defines more possibilities than every host necessarily implements. ChatGPT on the web, the ChatGPT desktop application, Codex CLI, and IDE extensions need not expose identical transports, resources, interface components, permissions, or configuration behavior. A protocol is a common language, not a divine order compelling every household to discuss the same subjects at dinner.
 
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="manuals">
+
+<ThoughtLeaf side="left" label="Procedure, not plumbing">
+
+## Skills are manuals
+
 A skill is not this.
 
 A skill is packaged know-how: instructions, decision points, examples, references, scripts, templates, assets, and expectations for accomplishing a recognizable task. If MCP says, “Here is a scalpel,” the skill says, “Wash your hands, identify the patient, confirm the side, make the incision here, do not improvise because you watched twelve minutes of surgery on YouTube, and count the instruments before closing.”
@@ -62,6 +103,10 @@ In ChatGPT and Codex, an authored skill is a directory anchored by a required SK
 
 This is less magical than the word suggests. Humans have used skills for millennia. We called them recipes, checklists, liturgies, standard operating procedures, field manuals, apprenticeship notes, and “listen carefully because I am only showing you once.” The AI industry discovered the operating manual and, with the innocence of Columbus discovering a continent containing millions of residents, named it a new capability.
 
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Prompt versus method">
+
 A prompt is usually an instruction for this occasion.
 
 A skill is an instruction system intended for repeated occasions.
@@ -70,6 +115,16 @@ That is the practical difference. “Make this presentation restrained, visual, 
 
 OpenAI currently describes a skill as a reusable workflow containing task-specific instructions and supporting resources. At the simplest product level, it describes a plugin as an installable bundle that can include skills, connectors, or both. Open the box, however, and the supported anatomy may also include direct MCP server configuration, browser extensions, lifecycle hooks, scheduled-task templates, and assets. The short definition belongs on the shop window. The longer inventory is what falls on your foot when you lift the lid.
 
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="suitcase">
+
+<ThoughtLeaf side="left" label="The thing one installs">
+
+## The installable suitcase
+
 Now we reach the plugin, where several simple ideas are packed together until the box becomes marketable.
 
 A plugin is distribution and identity. It is the thing one installs.
@@ -77,6 +132,19 @@ A plugin is distribution and identity. It is the thing one installs.
 Suppose somebody creates an MCP server connected to Figma. That server exposes Figma operations. Somebody then writes skills explaining how to inspect a design, compare it with an implementation, preserve components, and report discrepancies. The MCP integration handles its authentication. The package may add icons, assets, hooks, perhaps a browser extension, perhaps a visible interface. The plugin bundles or references these related pieces under a stable name so that users do not have to assemble them from screws, loose wiring, and a README written during a caffeine emergency.
 
 The plugin does not sit inside every runtime request like a toll collector demanding coins from passing JSON. It is chiefly the packaging and installation layer. Once installed, its skills can guide the agent and its configured connections can expose tools. Packaging is not execution, any more than the cardboard box containing a pressure cooker participates in the cooking of rice, though it may later be used by a Bengali family to store seventeen years of electricity bills.
+
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Inventory / identity">
+
+<ThoughtArt
+  src="/images/thought-folios/ai-plumbing/installable-suitcase.jpg"
+  alt="An open black field suitcase containing fitted pipes, connectors, a manual, scalpel, padlock, clock and notebook"
+  width={1536}
+  height={1024}
+  ratio="landscape"
+  caption="Distribution is not execution. The box carries the fittings."
+/>
 
 Thus:
 
@@ -98,6 +166,16 @@ OpenAI’s present plugin format uses a manifest to identify the package and poi
 
 The documentation even notes that the .app.json filename survives as a compatibility identifier while the underlying primitive remains the MCP server—a sentence with the faint archaeological melancholy of finding an old railway station beneath a shopping center.
 
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="control-flow">
+
+<ThoughtLeaf side="left" label="Callable operation ≠ worker">
+
+## Doorbells are not agents
+
 A tool, meanwhile, is merely a callable operation from the model’s perspective. “Search Gmail” may be a tool. “Read attachment” may be another. “Create calendar event” may be another. A tool has a name, a description, an input schema, and a result. The model decides—or is instructed—when to call it.
 
 Calling every tool an agent is marketing incontinence.
@@ -107,6 +185,10 @@ A calculator tool is not an agent. A database query is not an agent. A function 
 An agent is a model operating in a loop toward a goal. It observes the situation, reasons about what to do, selects tools or other actions, examines results, revises its approach, and continues until it reaches a stopping condition or has converted the token budget into heat. It possesses some degree of delegated initiative.
 
 The critical ingredient is not consciousness, personality, or an animated orb throbbing on the screen like a technologically embarrassed hemorrhoid. It is control flow.
+
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Observe / decide / act">
 
 A normal model call resembles:
 
@@ -138,6 +220,16 @@ $$
 
 The mathematics is not the miraculous part. Thermostats have loops. Bacteria have loops. Calcutta taxi negotiations are adversarial multi-agent loops with hidden state, stochastic pricing, and no known convergence theorem.
 
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="bureaucracy">
+
+<ThoughtLeaf side="left" label="Advice / reaction / prohibition / authority">
+
+## Workforce and bureaucracy
+
 A subagent is simply another agent given a bounded portion of the work. One researches, another reviews, another writes code, another tests. The parent agent coordinates their results. This can improve speed or specialization when tasks are genuinely separable. It can also create four simultaneous sources of nonsense, which management will recognize as organizational scaling.
 
 Subagents are not necessarily smaller models, inferior minds, or digital children sent down a mine. “Sub” describes their position in the orchestration hierarchy. A specialist may know more about its assigned subject than the coordinator. The conductor does not play every instrument better than every musician, though conductors have historically maintained this useful expression.
@@ -158,11 +250,25 @@ These are related but not identical. The skill may say, “Run tests after editi
 
 A plugin may carry a hook definition, but installation does not make the hook divinely trustworthy. Codex requires non-managed command hooks to be reviewed and trusted against their current definition before they run. Installation gives the hook lodging, not diplomatic immunity.
 
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Memory / local law / clocks">
+
 Memory is another separate contraption. It preserves useful information across conversations or work: preferences, facts, prior decisions, continuing context. A skill says how to perform a class of task. Memory says what has previously been learned about this user or project. Confusing them produces peculiar results. My preferred spelling of Calcutta belongs in memory or project instructions. A fifteen-step method for verifying a PowerPoint belongs in a skill. My recurring inability to earn money belongs in neither, although the system may infer it with distressing reliability.
 
 Project instructions are local law. They describe how work should be done inside a repository or project: coding conventions, commands, architecture, prohibitions, expected tests. A skill may travel across projects. Project instructions belong to the particular swamp.
 
 An automation schedules or repeatedly triggers work. “Check every morning” is an automation. The work it triggers may invoke an agent, which may follow a skill and request an MCP tool, whose authentication has expired because the universe remains governed by entropy.
+
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="digestive-tract">
+
+<ThoughtLeaf side="left" label="Main pipe">
+
+## The executable digestive tract
 
 There, at last, is one possible executable digestive tract:
 
@@ -180,6 +286,10 @@ $$
 
 The external system is optional. An MCP server may itself possess the requested information or perform the computation. Around the tract sit instructions, packaging, policy, and approvals:
 
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Orbiting instructions">
+
 $$
 \text{skill}
 \rightarrow
@@ -193,6 +303,16 @@ $$
 $$
 
 This is not a mandatory chain. An agent may use a built-in tool rather than an MCP tool. An automation may invoke a simple prompt rather than an agentic expedition. A skill may require no plugin. A plugin may be skills-only, MCP-only, or carry several supported components. An MCP server may be connected directly without a distributable plugin. The boxes are composable, not a Hindu genealogy in which every deity must marry another concept and produce six abstractions with elephant heads.
+
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="gmail-monarchy">
+
+<ThoughtLeaf side="left" label="A request enters">
+
+## A Gmail constitutional monarchy
 
 An example makes the plumbing less gaseous.
 
@@ -208,6 +328,10 @@ The connector’s MCP server exposes operations such as searching messages and r
 
 A bundled Gmail skill may tell the agent how to combine those operations safely and coherently: preserve conversation order, distinguish drafts from sent mail, inspect attachments, and avoid sending without explicit authorization.
 
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Policy surrounds the sovereign">
+
 A recipient-resolution skill may verify which Joseph I mean.
 
 Memory or project context may explain why this Joseph matters.
@@ -219,6 +343,16 @@ A writing skill may govern the final draft’s tone.
 An automation would enter only if I said, “Check again every morning.”
 
 No single component is “the AI.” It is a little constitutional monarchy of model, context, procedure, capability, packaging, identity, policy, and execution. The model appears sovereign because it speaks. The infrastructure, like every competent civil service, quietly determines what the sovereign can actually do.
+
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="hazards">
+
+<ThoughtLeaf side="left" label="Polished confidence">
+
+## Polish, corrosion, and risk
 
 The hazards follow the same boundaries.
 
@@ -232,9 +366,32 @@ A badly designed agent can call the right tools according to the right procedure
 
 An optional visual interface can display information with such polished confidence that the user forgets to ask whether the underlying server returned truth, approximation, stale data, or a small turd wearing CSS.
 
+<ThoughtArt
+  src="/images/thought-folios/ai-plumbing/polished-corrosion.jpg"
+  alt="A glossy blank control panel bolted over a rusted, leaking municipal pipe junction"
+  width={1568}
+  height={1003}
+  ratio="wide"
+  caption="An immaculate panel does not certify the pipe behind it."
+/>
+
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Operator inspection sheet">
+
 The sensible questions are therefore drearily unglamorous. What data can the server see? What actions can its tools perform? Which actions require approval? Who operates the server? Who wrote the skill? What instructions does it impose? What exactly is installed by the plugin? Is the connector maintained and authenticated by someone I trust? Does the interface display trustworthy information? Can the agent distinguish reading from writing? Can the result be audited? Can the user stop it? Does “autonomous” mean useful delegated work, or merely that the software can now make mistakes before I arrive?
 
 Once these questions are asked, the glitter settles.
+
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="field-chart">
+
+<ThoughtLeaf side="left" label="Capabilities / packages / workers">
+
+## What each contraption is
 
 MCP is plumbing.
 
@@ -250,6 +407,10 @@ Apps are the public counters through which humans reach connected capabilities; 
 
 Agents are workers permitted to decide which manual to consult and which valve to turn.
 
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Tripwires / fences / locks">
+
 Subagents are additional workers, introduced when one worker has become too inexpensive to impress investors.
 
 Hooks are tripwires wired to deterministic scripts.
@@ -262,11 +423,25 @@ Memory is the notebook in which someone has written that I dislike “Kolkata,�
 
 Automations are alarm clocks that wake the entire apparatus and order it to resume labor.
 
+</ThoughtLeaf>
+
+</ThoughtSpread>
+
+<ThoughtSpread id="silicon">
+
+<ThoughtLeaf side="left" label="The nomenclature treadmill">
+
+## Now somebody else may be silicon
+
 The language will change again. It always does. “Programs” became “applications,” applications became “apps,” APIs became platforms, scripts became bots, bots became copilots, copilots became agents, folders of instructions became skills, bundles became plugins, and soon plugins will become organisms, constellations, synaptic fabrics, cognitive meshes, or some other phrase emitted by a consultant after being left overnight near a thesaurus.
 
 Behind the nomenclature remains a remarkably old human arrangement: somebody can do something, somebody knows how it ought to be done, somebody packages the tools, somebody grants permission, and somebody else gets blamed.
 
 Now the somebody else may be silicon.
+
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Documentation ledger">
 
 References checked against the current product documentation on 11 August 2026:
 
@@ -303,3 +478,7 @@ OpenAI, “Hooks”
 https://learn.chatgpt.com/docs/hooks
 
 #AI #MCP #protocols #skills #plugins #connectors #apps #agents #subagents #tools #hooks #memory #permissions #automation #ChatGPT #Codex #software #architecture #context #orchestration #satire #technology #Calcutta #suvrotica #suvroghosh
+
+</ThoughtLeaf>
+
+</ThoughtSpread>
