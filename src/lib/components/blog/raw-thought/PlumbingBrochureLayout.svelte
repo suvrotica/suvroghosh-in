@@ -92,7 +92,7 @@
 			data-tone="coal"
 			aria-labelledby="folio-title"
 		>
-			<div class="thought-spread__rail" aria-hidden="true">
+			<div class="thought-spread__rail" aria-hidden="true" data-tts-exclude>
 				<span>{manifest.issue}</span>
 				<span>00</span>
 				<span>Orientation plate</span>
@@ -174,7 +174,7 @@
 			aria-labelledby="residue-heading"
 			data-tts-exclude
 		>
-			<div class="thought-spread__rail" aria-hidden="true">
+			<div class="thought-spread__rail" aria-hidden="true" data-tts-exclude>
 				<span>{manifest.issue}</span>
 				<span>12</span>
 				<span>Residue &amp; controls</span>

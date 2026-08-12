@@ -1051,26 +1051,293 @@
 	line-height: 1.32;
 }
 
-#field-chart .thought-leaf__content > p {
+#gmail-monarchy .thought-leaf__content {
 	display: grid;
-	grid-template-columns: minmax(7rem, 0.8fr) minmax(0, 1.8fr);
-	gap: 1rem;
-	align-items: baseline;
+	align-content: start;
+	gap: clamp(1rem, 3cqi, 1.5rem);
+}
+
+#gmail-monarchy .thought-leaf__content > h2,
+#gmail-monarchy .thought-leaf__content > p,
+#gmail-monarchy .thought-leaf__content > blockquote,
+#gmail-monarchy .thought-leaf__content > ol,
+#gmail-monarchy .thought-leaf__content > div,
+#gmail-monarchy .thought-leaf__content > section {
+	margin-block: 0;
+}
+
+#gmail-monarchy .thought-leaf__content > h2 {
+	max-width: 10ch;
+	font-size: clamp(2.75rem, 8.5cqi, 4rem);
+	font-weight: 720;
+	letter-spacing: -0.035em;
+	line-height: 0.96;
+}
+
+#gmail-monarchy .gmail-monarchy__intro {
+	max-width: 36ch;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.45;
+}
+
+#gmail-monarchy .gmail-request {
+	max-width: none;
+	padding: clamp(1.1rem, 3cqi, 1.5rem);
+	border: 1px solid currentColor;
+	border-left: 0.38rem solid var(--folio-lime);
+	background: rgba(216, 244, 59, 0.16);
+	color: var(--folio-coal);
+	font-family: var(--folio-reading);
+	font-size: clamp(1.2rem, 3.7cqi, 1.55rem);
+	font-style: normal;
+	font-weight: 520;
+	letter-spacing: -0.015em;
+	line-height: 1.3;
+}
+
+#gmail-monarchy .gmail-request::before {
+	display: block;
+	margin-bottom: 0.65rem;
+	color: var(--folio-muted);
+	content: 'INCOMING REQUEST';
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.085em;
+	line-height: 1.2;
+}
+
+#gmail-monarchy .gmail-route {
+	display: grid;
+	gap: 0;
+	margin: 0;
+	counter-reset: gmail-step;
+}
+
+#gmail-monarchy .gmail-route li {
+	display: grid;
+	grid-template-columns: 2.1rem minmax(0, 1fr);
+	gap: 0.8rem;
+	align-items: start;
+	padding: 0.85rem 0;
+	border-top: 1px solid var(--folio-rule);
+	font-size: clamp(1rem, 2.7cqi, 1.08rem);
+	line-height: 1.48;
+	counter-increment: gmail-step;
+}
+
+#gmail-monarchy .gmail-route li::before {
+	position: static;
+	width: auto;
+	height: auto;
+	background: none;
+	color: var(--folio-muted);
+	content: counter(gmail-step, decimal-leading-zero);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1.8;
+}
+
+#gmail-monarchy .gmail-route strong {
+	display: block;
+	margin-bottom: 0.2rem;
+	color: inherit;
+	font-weight: 700;
+}
+
+#gmail-monarchy .gmail-policy-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1px;
+	padding: 1px;
+	background: var(--folio-rule);
+}
+
+#gmail-monarchy .gmail-policy-grid > p {
 	max-width: none;
 	margin: 0;
-	padding: 1rem 0;
-	border-top: 1px solid currentColor;
-	font-family: var(--folio-reading);
+	padding: clamp(0.9rem, 2.7cqi, 1.25rem);
+	background: var(--folio-paper);
+	font-size: clamp(1rem, 2.8cqi, 1.08rem);
+	line-height: 1.46;
 }
 
-#field-chart .thought-leaf__content > p:first-of-type {
-	border-top-width: 0.3rem;
+#gmail-monarchy .gmail-policy-grid strong {
+	display: block;
+	margin-bottom: 0.45rem;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: 1.25;
+	text-transform: uppercase;
 }
 
-#field-chart .thought-leaf__content > p::first-line {
-	font-family: var(--folio-display);
-	font-size: 1.1em;
+#gmail-monarchy .gmail-thesis {
+	display: grid;
+	gap: clamp(0.85rem, 2.6cqi, 1.25rem);
+	align-content: end;
+	min-height: clamp(19rem, 58cqi, 27rem);
+	padding: clamp(1.3rem, 4cqi, 2rem);
+	border-top: 0.38rem solid var(--folio-lime);
+	background: var(--folio-coal);
+	color: var(--folio-paper);
+}
+
+#gmail-monarchy .gmail-thesis > p {
+	max-width: none;
+	margin: 0;
+	color: inherit;
+}
+
+#gmail-monarchy .gmail-thesis__kicker {
+	font-family: var(--folio-label);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.085em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+#gmail-monarchy .gmail-thesis__inventory,
+#gmail-monarchy .gmail-thesis__close {
+	font-size: clamp(1rem, 2.7cqi, 1.12rem);
+	line-height: 1.5;
+}
+
+#gmail-monarchy .gmail-thesis__inventory {
+	padding-bottom: 0.9rem;
+	border-bottom: 1px solid rgba(242, 239, 230, 0.34);
+}
+
+#gmail-monarchy .gmail-thesis__quote {
+	max-width: 17ch;
+	font-size: clamp(1.8rem, 5.4cqi, 2.35rem);
+	font-style: italic;
+	font-weight: 540;
+	letter-spacing: -0.02em;
+	line-height: 1.08;
+	text-wrap: balance;
+}
+
+#field-chart .thought-leaf__content {
+	display: grid;
+	align-content: start;
+	gap: clamp(1.25rem, 3.5cqi, 2rem);
+}
+
+#field-chart .thought-leaf__content > h2,
+#field-chart .thought-leaf__content > dl {
+	margin-block: 0;
+}
+
+#field-chart .thought-leaf[data-side='left'] h2 {
+	max-width: 12ch;
+	font-size: clamp(2.75rem, 8.5cqi, 4rem);
+	font-weight: 720;
+	letter-spacing: -0.035em;
+	line-height: 0.96;
+}
+
+#field-chart .field-chart__right-title {
+	max-width: 15ch;
+	font-size: clamp(2rem, 5.8cqi, 2.8rem);
 	font-weight: 650;
+	letter-spacing: -0.025em;
+	line-height: 1;
+}
+
+#field-chart .field-cards {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: clamp(0.65rem, 2cqi, 0.9rem);
+	padding: 0;
+}
+
+#field-chart .field-card {
+	display: grid;
+	gap: 0.55rem;
+	align-content: start;
+	min-width: 0;
+	padding: clamp(1rem, 3cqi, 1.4rem);
+	border: 1px solid currentColor;
+}
+
+#field-chart .field-card dt {
+	font-family: var(--folio-label);
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+#field-chart .field-card dd {
+	max-width: 34ch;
+	margin: 0;
+	font-family: var(--folio-reading);
+	font-size: clamp(1.08rem, 3.2cqi, 1.35rem);
+	font-weight: 450;
+	letter-spacing: -0.012em;
+	line-height: 1.3;
+}
+
+#field-chart .field-card--paper {
+	background: var(--folio-paper);
+}
+
+#field-chart .field-card--paper dd {
+	font-size: clamp(1rem, 2.6cqi, 1.1rem);
+	line-height: 1.47;
+}
+
+#field-chart .field-card--feature,
+#field-chart .field-card--memory {
+	border-color: var(--folio-coal);
+	background: var(--folio-coal);
+	color: var(--folio-paper);
+}
+
+#field-chart .field-card--feature {
+	min-height: clamp(12rem, 38cqi, 17rem);
+	align-content: end;
+	border-top: 0.38rem solid var(--folio-lime);
+}
+
+#field-chart .field-card--feature dt,
+#field-chart .field-card--memory dt {
+	color: var(--folio-lime);
+}
+
+#field-chart .field-card--feature dd {
+	max-width: 25ch;
+	font-size: clamp(1.55rem, 4.8cqi, 2rem);
+	font-weight: 500;
+	line-height: 1.14;
+}
+
+#field-chart .field-card--memory {
+	background-image: repeating-linear-gradient(
+		to bottom,
+		transparent 0,
+		transparent 2.25rem,
+		rgba(216, 244, 59, 0.16) 2.25rem,
+		rgba(216, 244, 59, 0.16) calc(2.25rem + 1px)
+	);
+}
+
+#field-chart .field-card--memory dd,
+#field-chart .field-card--automation dd {
+	font-size: clamp(1rem, 2.7cqi, 1.14rem);
+	line-height: 1.47;
+}
+
+#field-chart .field-card--automation {
+	border-color: var(--folio-lime);
+	background: var(--folio-lime);
+	color: var(--folio-coal);
 }
 
 #silicon .thought-leaf[data-side='left'] .thought-leaf__content > p:last-child {
@@ -1470,6 +1737,115 @@
 	#naming-catastrophe .thought-leaf[data-side='left'] blockquote {
 		margin-top: auto;
 	}
+
+	#gmail-monarchy .thought-leaf[data-side='right'] {
+		display: grid;
+		grid-template-rows: auto minmax(0, 1fr);
+	}
+
+	#gmail-monarchy .thought-leaf[data-side='right'] .thought-leaf__content {
+		grid-template-rows: auto minmax(0, 1fr);
+	}
+
+	#gmail-monarchy .gmail-policy-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	#gmail-monarchy .gmail-policy-grid__wide {
+		grid-column: 1 / -1;
+	}
+
+	#gmail-monarchy .gmail-thesis {
+		grid-row: 2;
+		min-height: 0;
+	}
+
+	#gmail-monarchy .thought-leaf {
+		padding-top: clamp(1.8rem, 3vw, 2.75rem);
+		padding-bottom: clamp(1.8rem, 3vw, 2.75rem);
+	}
+
+	#gmail-monarchy .thought-leaf__meta {
+		margin-bottom: 1.35rem;
+	}
+
+	#gmail-monarchy .thought-leaf__content {
+		gap: clamp(0.8rem, 2cqi, 1.1rem);
+	}
+
+	#gmail-monarchy .thought-leaf__content > h2 {
+		font-size: clamp(2.55rem, 7.6cqi, 3.65rem);
+	}
+
+	#gmail-monarchy .gmail-request {
+		padding: clamp(0.95rem, 2.3cqi, 1.25rem);
+		font-size: clamp(1.12rem, 3.1cqi, 1.36rem);
+	}
+
+	#gmail-monarchy .gmail-route li {
+		padding-block: 0.65rem;
+		font-size: clamp(0.98rem, 2.45cqi, 1.04rem);
+		line-height: 1.42;
+	}
+
+	#gmail-monarchy .gmail-policy-grid > p {
+		padding: clamp(0.75rem, 2cqi, 1rem);
+		font-size: clamp(0.96rem, 2.45cqi, 1.04rem);
+		line-height: 1.4;
+	}
+
+	#gmail-monarchy .gmail-thesis {
+		min-height: clamp(17rem, 47cqi, 21rem);
+		padding: clamp(1.15rem, 3.3cqi, 1.65rem);
+	}
+
+	#gmail-monarchy .gmail-thesis__quote {
+		font-size: clamp(1.7rem, 4.7cqi, 2.1rem);
+	}
+}
+
+@container (min-width: 22rem) {
+	#field-chart .field-cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	#field-chart .field-card--wide,
+	#field-chart .field-card--feature,
+	#field-chart .field-card--memory,
+	#field-chart .field-card--automation {
+		grid-column: 1 / -1;
+	}
+
+	#field-chart .field-cards--right .field-card--compact:nth-of-type(2) {
+		grid-column: 1 / -1;
+	}
+}
+
+@container (min-width: 32rem) {
+	#field-chart .field-cards--right {
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+	}
+
+	#field-chart .field-cards--right .field-card--feature {
+		grid-column: 1 / -1;
+	}
+
+	#field-chart .field-cards--right .field-card--compact {
+		grid-column: span 2;
+	}
+
+	#field-chart .field-cards--right .field-card--compact:nth-of-type(3),
+	#field-chart .field-cards--right .field-card--compact:nth-of-type(4) {
+		grid-column: span 3;
+	}
+
+	#field-chart .field-cards--right .field-card--memory {
+		grid-column: span 4;
+	}
+
+	#field-chart .field-cards--right .field-card--automation {
+		grid-column: span 2;
+	}
 }
 
 @container (min-width: 32rem) {
@@ -1531,11 +1907,6 @@
 		grid-template-columns: 1fr;
 	}
 
-	#field-chart .thought-leaf__content > p {
-		grid-template-columns: 1fr;
-		gap: 0.25rem;
-	}
-
 	#control-flow .folio-call-card__flow {
 		grid-template-columns: 1fr;
 	}
@@ -1588,7 +1959,11 @@
 	#control-flow .folio-call-card__flow > span,
 	#control-flow .folio-loop-card__steps li,
 	#digestive-tract .folio-orbits > div,
-	#digestive-tract .folio-pipeline li {
+	#digestive-tract .folio-pipeline li,
+	#gmail-monarchy .gmail-request,
+	#gmail-monarchy .gmail-policy-grid > p,
+	#gmail-monarchy .gmail-thesis,
+	#field-chart .field-card {
 		border: 1px solid CanvasText;
 	}
 }
@@ -1636,6 +2011,21 @@
 
 	.folio-cover h1,
 	.folio-deck {
+		color: black;
+	}
+
+	#gmail-monarchy .gmail-thesis,
+	#field-chart .field-card--feature,
+	#field-chart .field-card--memory,
+	#field-chart .field-card--automation,
+	#field-chart .field-card--paper {
+		border: 1px solid #222;
+		background: white;
+		color: black;
+	}
+
+	#field-chart .field-card--feature dt,
+	#field-chart .field-card--memory dt {
 		color: black;
 	}
 }

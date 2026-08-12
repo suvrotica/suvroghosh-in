@@ -6,7 +6,7 @@
 </script>
 
 <div class="thought-leaf" data-side={side}>
-	<div class="thought-leaf__meta" aria-hidden="true">
+	<div class="thought-leaf__meta" aria-hidden="true" data-tts-exclude>
 		<span>{side === 'left' ? 'L' : 'R'}</span>
 		{#if label}<span>{label}</span>{/if}
 	</div>

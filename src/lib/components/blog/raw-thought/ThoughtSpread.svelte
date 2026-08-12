@@ -22,7 +22,7 @@
 	data-tone={spread.tone}
 	aria-label={`${spread.number}. ${spread.title}`}
 >
-	<div class="thought-spread__rail" aria-hidden="true">
+	<div class="thought-spread__rail" aria-hidden="true" data-tts-exclude>
 		<span>{manifest.issue}</span>
 		<span>{spread.number}</span>
 		<span>{spread.kicker}</span>

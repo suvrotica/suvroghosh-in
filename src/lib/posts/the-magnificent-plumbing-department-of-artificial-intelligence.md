@@ -310,35 +310,38 @@ This is not a mandatory chain. An agent may use a built-in tool rather than an M
 
 ## A Gmail constitutional monarchy
 
-An example makes the plumbing less gaseous.
+<p class="gmail-monarchy__intro">An example makes the plumbing less gaseous.</p>
 
-I ask, “Find the latest email from Joseph, summarize the legal and financial facts, distinguish claims from evidence, and draft a restrained response without sending it.”
+<blockquote class="gmail-request">
+  <p>I ask, “Find the latest email from Joseph, summarize the legal and financial facts, distinguish claims from evidence, and draft a restrained response without sending it.”</p>
+</blockquote>
 
-The agent interprets the goal and manages the work.
-
-A Gmail plugin supplies the installable package containing the relevant integration, workflow knowledge, or both.
-
-Its Gmail connector supplies authenticated, MCP-backed access to the service.
-
-The connector’s MCP server exposes operations such as searching messages and reading threads.
-
-A bundled Gmail skill may tell the agent how to combine those operations safely and coherently: preserve conversation order, distinguish drafts from sent mail, inspect attachments, and avoid sending without explicit authorization.
+<ol class="gmail-route" aria-label="How the Gmail request moves through the system">
+  <li><span><strong>The agent</strong> interprets the goal and manages the work.</span></li>
+  <li><span><strong>A Gmail plugin</strong> supplies the installable package containing the relevant integration, workflow knowledge, or both.</span></li>
+  <li><span><strong>Its Gmail connector</strong> supplies authenticated, MCP-backed access to the service.</span></li>
+  <li><span><strong>The connector’s MCP server</strong> exposes operations such as searching messages and reading threads.</span></li>
+  <li><span><strong>A bundled Gmail skill</strong> may tell the agent how to combine those operations safely and coherently: preserve conversation order, distinguish drafts from sent mail, inspect attachments, and avoid sending without explicit authorization.</span></li>
+</ol>
 
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Policy surrounds the sovereign">
 
-A recipient-resolution skill may verify which Joseph I mean.
+<div class="gmail-policy-grid">
+  <p><strong>A recipient-resolution skill</strong> may verify which Joseph I mean.</p>
+  <p><strong>Memory or project context</strong> may explain why this Joseph matters.</p>
+  <p class="gmail-policy-grid__wide"><strong>The host’s sandbox, rules, permissions, and the connected service’s own access controls</strong> help prevent an accidental send.</p>
+  <p><strong>A writing skill</strong> may govern the final draft’s tone.</p>
+  <p><strong>An automation</strong> would enter only if I said, “Check again every morning.”</p>
+</div>
 
-Memory or project context may explain why this Joseph matters.
-
-The host’s sandbox, rules, permissions, and the connected service’s own access controls help prevent an accidental send.
-
-A writing skill may govern the final draft’s tone.
-
-An automation would enter only if I said, “Check again every morning.”
-
-No single component is “the AI.” It is a little constitutional monarchy of model, context, procedure, capability, packaging, identity, policy, and execution. The model appears sovereign because it speaks. The infrastructure, like every competent civil service, quietly determines what the sovereign can actually do.
+<section class="gmail-thesis" aria-label="The constitutional settlement">
+  <p class="gmail-thesis__kicker">No single component is “the AI.”</p>
+  <p class="gmail-thesis__inventory">It is a little constitutional monarchy of model, context, procedure, capability, packaging, identity, policy, and execution.</p>
+  <p class="gmail-thesis__quote">The model appears sovereign because it speaks.</p>
+  <p class="gmail-thesis__close">The infrastructure, like every competent civil service, quietly determines what the sovereign can actually do.</p>
+</section>
 
 </ThoughtLeaf>
 
@@ -389,35 +392,30 @@ Once these questions are asked, the glitter settles.
 
 ## What each contraption is
 
-MCP is plumbing.
-
-Tools are taps and valves.
-
-Skills are operating manuals.
-
-Connectors are fitted pipes leading to particular buildings.
-
-Plugins are boxed installation kits.
-
-Apps are the public counters through which humans reach connected capabilities; MCP App interfaces, when supplied, are the buttons, windows, and polished little panels mounted on those counters.
-
-Agents are workers permitted to decide which manual to consult and which valve to turn.
+<dl class="field-cards field-cards--left">
+  <div class="field-card field-card--compact"><dt>MCP</dt><dd>is plumbing.</dd></div>
+  <div class="field-card field-card--compact"><dt>Tools</dt><dd>are taps and valves.</dd></div>
+  <div class="field-card field-card--compact"><dt>Skills</dt><dd>are operating manuals.</dd></div>
+  <div class="field-card field-card--medium"><dt>Connectors</dt><dd>are fitted pipes leading to particular buildings.</dd></div>
+  <div class="field-card field-card--compact field-card--wide"><dt>Plugins</dt><dd>are boxed installation kits.</dd></div>
+  <div class="field-card field-card--wide field-card--paper"><dt>Apps</dt><dd>are the public counters through which humans reach connected capabilities; MCP App interfaces, when supplied, are the buttons, windows, and polished little panels mounted on those counters.</dd></div>
+  <div class="field-card field-card--wide"><dt>Agents</dt><dd>are workers permitted to decide which manual to consult and which valve to turn.</dd></div>
+</dl>
 
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Tripwires / fences / locks">
 
-Subagents are additional workers, introduced when one worker has become too inexpensive to impress investors.
+<h2 class="field-chart__right-title">Tripwires, fences, locks</h2>
 
-Hooks are tripwires wired to deterministic scripts.
-
-Rules are fences.
-
-Permissions are locks.
-
-Memory is the notebook in which someone has written that I dislike “Kolkata,” meetings before noon, and optimism unsupported by cash.
-
-Automations are alarm clocks that wake the entire apparatus and order it to resume labor.
+<dl class="field-cards field-cards--right">
+  <div class="field-card field-card--feature"><dt>Subagents</dt><dd>are additional workers, introduced when one worker has become too inexpensive to impress investors.</dd></div>
+  <div class="field-card field-card--compact"><dt>Hooks</dt><dd>are tripwires wired to deterministic scripts.</dd></div>
+  <div class="field-card field-card--compact"><dt>Rules</dt><dd>are fences.</dd></div>
+  <div class="field-card field-card--compact"><dt>Permissions</dt><dd>are locks.</dd></div>
+  <div class="field-card field-card--memory"><dt>Memory</dt><dd>is the notebook in which someone has written that I dislike “Kolkata,” meetings before noon, and optimism unsupported by cash.</dd></div>
+  <div class="field-card field-card--automation"><dt>Automations</dt><dd>are alarm clocks that wake the entire apparatus and order it to resume labor.</dd></div>
+</dl>
 
 </ThoughtLeaf>
 
