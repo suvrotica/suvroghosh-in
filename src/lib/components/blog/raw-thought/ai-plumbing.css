@@ -90,7 +90,7 @@
 	margin: 0 0 clamp(1rem, 3.5vw, 3.75rem);
 	border: 1px solid rgba(17, 18, 15, 0.38);
 	background: var(--folio-paper);
-	box-shadow: 0 1.8rem 5rem rgba(17, 18, 15, 0.2);
+	box-shadow: 0 0.8rem 2.4rem rgba(17, 18, 15, 0.16);
 	scroll-margin-top: 1rem;
 	overflow: clip;
 }
@@ -137,6 +137,7 @@
 	padding: clamp(1.25rem, 4.5vw, 4.75rem);
 	background: var(--folio-paper);
 	color: var(--folio-coal);
+	container-type: inline-size;
 	overflow: hidden;
 }
 
@@ -184,18 +185,23 @@
 .folio-reading h2,
 .folio-endpaper h2,
 .folio-related h2 {
-	max-width: 10ch;
+	max-width: 11ch;
 	margin: 0 0 clamp(1.5rem, 4vw, 3.5rem);
 	color: inherit;
 	font-family: 'Archivo Variable', 'Arial Narrow', Arial, sans-serif;
-	font-size: clamp(2.6rem, 6.4vw, 6.4rem);
+	font-size: clamp(2.5rem, 10cqi, 5rem);
 	font-variation-settings:
-		'wdth' 82,
-		'wght' 740;
-	font-weight: 740;
-	letter-spacing: -0.065em;
-	line-height: 0.88;
+		'wdth' 86,
+		'wght' 710;
+	font-weight: 710;
+	letter-spacing: -0.045em;
+	line-height: 0.94;
 	text-wrap: balance;
+}
+
+.folio-reading h2 > a {
+	color: inherit;
+	text-decoration: none;
 }
 
 .folio-reading h3 {
@@ -211,14 +217,14 @@
 .folio-reading p,
 .folio-controls > p,
 .folio-residue > p {
-	max-width: 64ch;
+	max-width: 54ch;
 	margin: 0 0 1.15rem;
 	color: inherit;
 	font-family: 'Source Serif 4 Variable', Georgia, serif;
-	font-size: clamp(1rem, 0.45vw + 0.91rem, 1.18rem);
+	font-size: clamp(1.0625rem, 0.35vw + 0.98rem, 1.18rem);
 	font-weight: 430;
 	letter-spacing: 0;
-	line-height: 1.67;
+	line-height: 1.6;
 	text-align: left;
 }
 
@@ -247,11 +253,11 @@
 	border-left: 0.38rem solid var(--folio-orange);
 	color: inherit;
 	font-family: 'Caveat Variable', 'Segoe Print', cursive;
-	font-size: clamp(1.65rem, 3vw, 2.65rem);
+	font-size: clamp(1.65rem, 5.5cqi, 2.3rem);
 	font-style: normal;
 	font-variation-settings: 'wght' 570;
 	font-weight: 570;
-	line-height: 1.04;
+	line-height: 1.08;
 }
 
 .folio-reading blockquote p {
@@ -402,40 +408,38 @@
 }
 
 .folio-cover__lead {
-	display: flex;
-	min-height: min(75rem, 120vw);
-	align-items: flex-end;
+	display: grid;
+	grid-template-rows: auto auto;
+	min-height: 0;
 	padding: 0;
 	background: var(--folio-coal);
 	color: var(--folio-paper);
 }
 
 .folio-cover__art {
-	position: absolute;
-	inset: 0;
+	position: relative;
+	aspect-ratio: 4 / 5;
+	background: var(--folio-paper);
+	overflow: hidden;
 }
 
 .folio-cover__art::after {
-	position: absolute;
-	inset: 0;
-	background:
-		linear-gradient(180deg, rgba(17, 18, 15, 0.04) 28%, rgba(17, 18, 15, 0.93) 91%),
-		linear-gradient(90deg, rgba(17, 18, 15, 0.15), transparent 55%);
-	content: '';
+	display: none;
 }
 
 .folio-cover__art img {
 	display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
-	object-position: 50% 36%;
+	object-fit: contain;
+	object-position: center;
 }
 
 .folio-cover__copy {
 	position: relative;
 	z-index: 1;
-	padding: clamp(1.5rem, 4.8vw, 4.5rem);
+	padding: clamp(1.5rem, 6cqi, 3.25rem);
+	background: var(--folio-coal);
 }
 
 .folio-kicker {
@@ -450,38 +454,71 @@
 }
 
 .folio-cover h1 {
-	max-width: 8.7ch;
+	max-width: none;
 	margin: 0;
 	color: var(--folio-paper);
 	font-family: 'Archivo Variable', 'Arial Narrow', Arial, sans-serif;
-	font-size: clamp(3.25rem, 8.2vw, 8rem);
+	font-size: clamp(3rem, 13cqi, 5.5rem);
 	font-variation-settings:
-		'wdth' 78,
-		'wght' 780;
-	font-weight: 780;
-	letter-spacing: -0.075em;
-	line-height: 0.8;
-	text-wrap: balance;
+		'wdth' 84,
+		'wght' 720;
+	font-weight: 720;
+	letter-spacing: -0.05em;
+	line-height: 0.92;
+	text-wrap: pretty;
+}
+
+.folio-cover h1 > span {
+	display: block;
+}
+
+.folio-title__quiet {
+	font-size: 0.61em;
+	font-variation-settings:
+		'wdth' 94,
+		'wght' 610;
+	font-weight: 610;
+	letter-spacing: -0.025em;
+}
+
+.folio-title__primary {
+	font-size: 1em;
+}
+
+.folio-title__secondary {
+	font-size: 0.72em;
+}
+
+.folio-title__closing {
+	font-size: 0.65em;
+	font-variation-settings:
+		'wdth' 90,
+		'wght' 680;
+	font-weight: 680;
+	letter-spacing: -0.035em;
 }
 
 .folio-cover h1 em {
 	display: inline-block;
 	color: var(--folio-lime);
-	transform: rotate(-5deg);
+	font-size: 0.72em;
+	transform: rotate(-3deg) translateY(-0.04em);
 }
 
 .folio-deck {
-	max-width: 34rem;
-	margin: 2rem 0 0;
+	max-width: 29rem;
+	margin: 1.35rem 0 0;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(242, 239, 230, 0.34);
 	color: var(--folio-paper);
 	font-family: 'Source Serif 4 Variable', Georgia, serif;
-	font-size: clamp(1.05rem, 1vw + 0.8rem, 1.55rem);
-	line-height: 1.35;
+	font-size: clamp(1rem, 0.5vw + 0.96rem, 1.25rem);
+	line-height: 1.42;
 }
 
 .folio-cover__contents {
 	display: flex;
-	min-height: 54rem;
+	min-height: 0;
 	flex-direction: column;
 	gap: 2.5rem;
 	justify-content: space-between;
@@ -622,18 +659,61 @@
 	box-shadow: 0 0 0 0.28rem rgba(242, 140, 40, 0.2);
 }
 
-#naming-catastrophe .thought-leaf[data-side='right'] p:nth-of-type(-n + 3) {
-	margin-bottom: 0.65rem;
-	padding: 0.7rem 0;
-	border-top: 1px solid currentColor;
+#naming-catastrophe .thought-leaf[data-side='right'] {
+	background: var(--folio-coal);
+	color: var(--folio-paper);
+}
+
+#naming-catastrophe .thought-leaf[data-side='right'] .thought-leaf__content > p:first-of-type {
+	margin: 0 0 0.25rem;
+	padding: 0 0 0.85rem;
+	border: 0;
+	font-family: 'Courier Prime', ui-monospace, monospace;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	line-height: 1.3;
+	text-transform: uppercase;
+	opacity: 0.72;
+}
+
+#naming-catastrophe .thought-leaf[data-side='right'] .thought-leaf__content > p:nth-of-type(2),
+#naming-catastrophe .thought-leaf[data-side='right'] .thought-leaf__content > p:nth-of-type(3) {
+	max-width: 23ch;
+	margin: 0;
+	padding: 0.9rem 0;
+	border-top: 1px solid rgba(242, 239, 230, 0.42);
 	font-family: 'Archivo Variable', Arial, sans-serif;
-	font-size: clamp(1.35rem, 2.2vw, 2.35rem);
+	font-size: clamp(1.55rem, 6cqi, 2.05rem);
 	font-variation-settings:
-		'wdth' 86,
-		'wght' 710;
-	font-weight: 710;
-	letter-spacing: -0.045em;
-	line-height: 1.02;
+		'wdth' 88,
+		'wght' 700;
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	line-height: 1.05;
+}
+
+#naming-catastrophe .folio-distinction__explanation {
+	margin-top: clamp(2rem, 7cqi, 4rem);
+	padding: clamp(1.1rem, 4cqi, 1.6rem);
+	border-top: 0.28rem solid var(--folio-lime);
+	background: var(--folio-paper);
+	color: var(--folio-coal);
+}
+
+#naming-catastrophe .folio-distinction__explanation p {
+	max-width: 46ch;
+	font-size: clamp(1rem, 3.5cqi, 1.08rem);
+	line-height: 1.56;
+}
+
+#naming-catastrophe .folio-distinction__explanation p:last-child {
+	margin-bottom: 0;
+	padding-top: 1rem;
+	border-top: 1px solid rgba(17, 18, 15, 0.28);
+	font-family: 'Archivo Variable', Arial, sans-serif;
+	font-weight: 650;
+	line-height: 1.35;
 }
 
 #control-flow .thought-leaf[data-side='left'] > .thought-leaf__content > p:first-of-type {
@@ -928,7 +1008,7 @@
 	}
 }
 
-@media (min-width: 60rem) {
+@media (min-width: 44rem) and (orientation: landscape) {
 	.thought-spread__leaves {
 		position: relative;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -956,7 +1036,7 @@
 	}
 
 	.thought-leaf {
-		min-height: 49rem;
+		min-height: 0;
 	}
 
 	.thought-leaf + .thought-leaf {
@@ -965,23 +1045,34 @@
 	}
 
 	.thought-leaf[data-side='left'] {
-		padding-right: clamp(2.25rem, 4.2vw, 4.75rem);
+		padding-right: clamp(2rem, 3vw, 3.5rem);
 	}
 
 	.thought-leaf[data-side='right'] {
-		padding-left: clamp(2.25rem, 4.2vw, 4.75rem);
+		padding-left: clamp(2rem, 3vw, 3.5rem);
 	}
 
 	.folio-cover__lead {
-		min-height: 67rem;
+		grid-template-rows: minmax(26rem, 1fr) auto;
 	}
 
-	.folio-cover__contents {
-		min-height: 67rem;
+	.folio-cover__art {
+		aspect-ratio: auto;
 	}
 
-	.folio-reading h2 {
-		font-size: clamp(3.7rem, 5vw, 6.4rem);
+	#naming-catastrophe .thought-leaf {
+		display: grid;
+		grid-template-rows: auto minmax(0, 1fr);
+	}
+
+	#naming-catastrophe .thought-leaf__content {
+		display: flex;
+		min-height: 0;
+		flex-direction: column;
+	}
+
+	#naming-catastrophe .thought-leaf[data-side='left'] blockquote {
+		margin-top: auto;
 	}
 }
 
@@ -995,12 +1086,12 @@
 
 @media (max-width: 27rem) {
 	.folio-book {
-		padding-inline: 0;
+		padding-inline: 0.7rem;
 	}
 
 	.thought-spread,
 	.folio-related {
-		border-inline: 0;
+		border-inline: 1px solid rgba(17, 18, 15, 0.38);
 	}
 
 	.thought-spread__rail span:last-child {
@@ -1009,10 +1100,6 @@
 
 	.thought-spread__rail {
 		grid-template-columns: 1fr auto;
-	}
-
-	.folio-cover h1 {
-		font-size: clamp(2.85rem, 15.5vw, 4.1rem);
 	}
 
 	.folio-controls .article-actions {

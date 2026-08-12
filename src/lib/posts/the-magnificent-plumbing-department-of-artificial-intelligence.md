@@ -24,8 +24,6 @@ I had scarcely learned to say “large language model” without imagining an en
 
 > This is progress. Progress is what we call confusion after venture capital has purchased typography.
 
-The central difficulty is not that these things are especially complicated. A carburetor is complicated. The human complement system is complicated. Trying to understand why a Calcutta landlord believes a damp room beside an open drain constitutes “premium accommodation” is complicated. MCP and skills are mostly ordinary software ideas dressed for a conference at which every noun must arrive wearing a new lanyard.
-
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="The honest distinction">
@@ -36,9 +34,15 @@ MCP gives the model hands and doors.
 
 A skill gives it a method.
 
+<div class="folio-distinction__explanation">
+
+The central difficulty is not that these things are especially complicated. A carburetor is complicated. The human complement system is complicated. Trying to understand why a Calcutta landlord believes a damp room beside an open drain constitutes “premium accommodation” is complicated. MCP and skills are mostly ordinary software ideas dressed for a conference at which every noun must arrive wearing a new lanyard.
+
 A plugin puts the hands, doors, method, name badge, packaging, connection metadata, and possibly a decorative little interface into one installable suitcase. Permissions and approvals remain partly in the surrounding host, because even the suitcase is not permitted to issue its own passport.
 
 Everything else is elaboration, administration, nomenclature, and the continuing human attempt to sell a suitcase by calling it an autonomous mobility ecosystem.
+
+</div>
 
 </ThoughtLeaf>
 
@@ -101,8 +105,6 @@ The skill may use MCP tools, ordinary local tools, scripts, attached files, or n
 
 In ChatGPT and Codex, an authored skill is a directory anchored by a required SKILL.md file. The name and description help the system decide when the skill applies. The remaining instructions tell the agent what to do after invocation. Optional scripts perform deterministic work; references hold detailed knowledge; assets supply templates or examples. A skill may be invoked explicitly or selected because the request matches its description.
 
-This is less magical than the word suggests. Humans have used skills for millennia. We called them recipes, checklists, liturgies, standard operating procedures, field manuals, apprenticeship notes, and “listen carefully because I am only showing you once.” The AI industry discovered the operating manual and, with the innocence of Columbus discovering a continent containing millions of residents, named it a new capability.
-
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Prompt versus method">
@@ -114,6 +116,8 @@ A skill is an instruction system intended for repeated occasions.
 That is the practical difference. “Make this presentation restrained, visual, and suitable for hospital executives” is a prompt. A reusable package explaining how to inspect source material, derive a visual system, construct slides, render them, check overflow, repair layout, and deliver the verified deck is a skill. One is tonight’s command. The other is the kitchen’s working procedure, including the note saying the sous-chef becomes dangerous after 9 p.m.
 
 OpenAI currently describes a skill as a reusable workflow containing task-specific instructions and supporting resources. At the simplest product level, it describes a plugin as an installable bundle that can include skills, connectors, or both. Open the box, however, and the supported anatomy may also include direct MCP server configuration, browser extensions, lifecycle hooks, scheduled-task templates, and assets. The short definition belongs on the shop window. The longer inventory is what falls on your foot when you lift the lid.
+
+This is less magical than the word suggests. Humans have used skills for millennia. We called them recipes, checklists, liturgies, standard operating procedures, field manuals, apprenticeship notes, and “listen carefully because I am only showing you once.” The AI industry discovered the operating manual and, with the innocence of Columbus discovering a continent containing millions of residents, named it a new capability.
 
 </ThoughtLeaf>
 
@@ -133,6 +137,18 @@ Suppose somebody creates an MCP server connected to Figma. That server exposes F
 
 The plugin does not sit inside every runtime request like a toll collector demanding coins from passing JSON. It is chiefly the packaging and installation layer. Once installed, its skills can guide the agent and its configured connections can expose tools. Packaging is not execution, any more than the cardboard box containing a pressure cooker participates in the cooking of rice, though it may later be used by a Bengali family to store seventeen years of electricity bills.
 
+Thus:
+
+The MCP server is the standardized capability and context provider.
+
+An MCP tool is one callable operation exposed and executed by such a server.
+
+A connector, in OpenAI’s current vocabulary, is a prepared connection to an external service such as Gmail, GitHub, Slack, or Google Drive. Connectors expose tools, are backed by MCP servers, and may optionally include custom UI. A remote MCP server may instead be connected more directly and may be operated by OpenAI, another company, an institution, or some sleepless fellow whose privacy policy consists of a shrug.
+
+A skill is the procedural knowledge governing how available capabilities should be combined.
+
+A plugin is the installable package that groups whichever supported pieces the workflow needs: skills, connectors, direct MCP server configuration, hooks, browser extensions, scheduled-task templates, assets, or some compatible mixture of the plumbing.
+
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Inventory / identity">
@@ -145,18 +161,6 @@ The plugin does not sit inside every runtime request like a toll collector deman
   ratio="landscape"
   caption="Distribution is not execution. The box carries the fittings."
 />
-
-Thus:
-
-The MCP server is the standardized capability and context provider.
-
-An MCP tool is one callable operation exposed and executed by such a server.
-
-A connector, in OpenAI’s current vocabulary, is a prepared connection to an external service such as Gmail, GitHub, Slack, or Google Drive. Connectors expose tools, are backed by MCP servers, and may optionally include custom UI. A remote MCP server may instead be connected more directly and may be operated by OpenAI, another company, an institution, or some sleepless fellow whose privacy policy consists of a shrug.
-
-A skill is the procedural knowledge governing how available capabilities should be combined.
-
-A plugin is the installable package that groups whichever supported pieces the workflow needs: skills, connectors, direct MCP server configuration, hooks, browser extensions, scheduled-task templates, assets, or some compatible mixture of the plumbing.
 
 “App” is the most treacherous label in the cupboard. In casual product speech, it may mean the connected capability presented to the user. In plugin packaging, an .app.json file is specifically a compatibility mapping to a registered MCP server connection; it is not the interface, the server, or a larval autonomous being. Install-surface metadata lives elsewhere in the plugin manifest. When an MCP server returns an optional visual component for ChatGPT to render, that interface follows the MCP Apps standard. The connection, its mapping file, the public-facing capability, and the UI resource are related contraptions, but they are not four interchangeable names for the same lump of software intestine.
 
@@ -246,13 +250,13 @@ A rule constrains what is permitted.
 
 A permission decides whether a sensitive operation may proceed.
 
-These are related but not identical. The skill may say, “Run tests after editing.” A PostToolUse hook may launch a deterministic check after a matching tool call. A rule may prohibit modification of production secrets. A permission system may require me to approve the deployment. Advice, automation, prohibition, authorization: four different bureaucrats, each with a stamp, none willing to lend the other a pen.
-
-A plugin may carry a hook definition, but installation does not make the hook divinely trustworthy. Codex requires non-managed command hooks to be reviewed and trusted against their current definition before they run. Installation gives the hook lodging, not diplomatic immunity.
-
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Memory / local law / clocks">
+
+These are related but not identical. The skill may say, “Run tests after editing.” A PostToolUse hook may launch a deterministic check after a matching tool call. A rule may prohibit modification of production secrets. A permission system may require me to approve the deployment. Advice, automation, prohibition, authorization: four different bureaucrats, each with a stamp, none willing to lend the other a pen.
+
+A plugin may carry a hook definition, but installation does not make the hook divinely trustworthy. Codex requires non-managed command hooks to be reviewed and trusted against their current definition before they run. Installation gives the hook lodging, not diplomatic immunity.
 
 Memory is another separate contraption. It preserves useful information across conversations or work: preferences, facts, prior decisions, continuing context. A skill says how to perform a class of task. Memory says what has previously been learned about this user or project. Confusing them produces peculiar results. My preferred spelling of Calcutta belongs in memory or project instructions. A fifteen-step method for verifying a PowerPoint belongs in a skill. My recurring inability to earn money belongs in neither, although the system may infer it with distressing reliability.
 
@@ -366,6 +370,10 @@ A badly designed agent can call the right tools according to the right procedure
 
 An optional visual interface can display information with such polished confidence that the user forgets to ask whether the underlying server returned truth, approximation, stale data, or a small turd wearing CSS.
 
+</ThoughtLeaf>
+
+<ThoughtLeaf side="right" label="Operator inspection sheet">
+
 <ThoughtArt
   src="/images/thought-folios/ai-plumbing/polished-corrosion.jpg"
   alt="A glossy blank control panel bolted over a rusted, leaking municipal pipe junction"
@@ -374,10 +382,6 @@ An optional visual interface can display information with such polished confiden
   ratio="wide"
   caption="An immaculate panel does not certify the pipe behind it."
 />
-
-</ThoughtLeaf>
-
-<ThoughtLeaf side="right" label="Operator inspection sheet">
 
 The sensible questions are therefore drearily unglamorous. What data can the server see? What actions can its tools perform? Which actions require approval? Who operates the server? Who wrote the skill? What instructions does it impose? What exactly is installed by the plugin? Is the connector maintained and authenticated by someone I trust? Does the interface display trustworthy information? Can the agent distinguish reading from writing? Can the result be audited? Can the user stop it? Does “autonomous” mean useful delegated work, or merely that the software can now make mistakes before I arrive?
 

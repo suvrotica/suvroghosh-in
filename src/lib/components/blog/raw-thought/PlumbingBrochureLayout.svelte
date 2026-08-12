@@ -113,7 +113,10 @@
 					<div class="folio-cover__copy">
 						<p class="folio-kicker">A satirical field manual</p>
 						<h1 id="folio-title">
-							The Magnificent Plumbing Department <em>of</em> Artificial Intelligence
+							<span class="folio-title__quiet">The Magnificent</span>
+							<span class="folio-title__primary">Plumbing</span>
+							<span class="folio-title__secondary">Department <em>of</em></span>
+							<span class="folio-title__closing">Artificial Intelligence</span>
 						</h1>
 						<p class="folio-deck">
 							Hands, doors, manuals, suitcases, tripwires—and the nouns hired to supervise them.
