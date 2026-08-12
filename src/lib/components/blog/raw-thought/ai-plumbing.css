@@ -7,13 +7,17 @@
 	--folio-lime: #d8f43b;
 	--folio-orange: #f28c28;
 	--folio-rule: rgba(17, 18, 15, 0.26);
+	--folio-display: 'Roboto Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--folio-reading: 'Roboto Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--folio-label: 'Roboto Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--folio-hand: 'Caveat Variable', 'Segoe Print', cursive;
+	--folio-code: 'Courier Prime', ui-monospace, monospace;
 	min-height: 100dvh;
 	background:
 		radial-gradient(circle at 12% 4%, rgba(242, 140, 40, 0.16), transparent 23rem),
 		linear-gradient(135deg, #c6c8c3 0%, #e2e0d8 48%, #bcbeb9 100%);
 	color: var(--folio-coal);
-	font-family: 'Archivo Variable', 'Arial Narrow', Arial, sans-serif;
-	font-variation-settings: 'wdth' 96;
+	font-family: var(--folio-reading);
 	line-height: 1.5;
 	color-scheme: light;
 	isolation: isolate;
@@ -47,10 +51,12 @@
 	padding: 0.75rem clamp(1rem, 3vw, 3rem);
 	background: var(--folio-coal);
 	color: var(--folio-paper);
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.72rem;
-	font-weight: 700;
-	letter-spacing: 0.12em;
+	font-family: var(--folio-label);
+	font-size: 0.75rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.08em;
+	line-height: 1.35;
 	text-transform: uppercase;
 }
 
@@ -105,11 +111,12 @@
 	border-bottom: 1px solid currentColor;
 	background: var(--folio-coal);
 	color: var(--folio-paper);
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.63rem;
-	font-weight: 700;
-	letter-spacing: 0.15em;
-	line-height: 1.2;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.08em;
+	line-height: 1.3;
 	text-transform: uppercase;
 }
 
@@ -153,10 +160,11 @@
 	margin-bottom: 2rem;
 	padding-bottom: 0.55rem;
 	border-bottom: 1px solid currentColor;
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.62rem;
-	font-weight: 700;
-	letter-spacing: 0.14em;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	opacity: 0.72;
 }
@@ -185,17 +193,14 @@
 .folio-reading h2,
 .folio-endpaper h2,
 .folio-related h2 {
-	max-width: 11ch;
+	max-width: 12ch;
 	margin: 0 0 clamp(1.5rem, 4vw, 3.5rem);
 	color: inherit;
-	font-family: 'Archivo Variable', 'Arial Narrow', Arial, sans-serif;
-	font-size: clamp(2.5rem, 10cqi, 5rem);
-	font-variation-settings:
-		'wdth' 86,
-		'wght' 710;
-	font-weight: 710;
-	letter-spacing: -0.045em;
-	line-height: 0.94;
+	font-family: var(--folio-display);
+	font-size: clamp(2.25rem, 8.5cqi, 4.4rem);
+	font-weight: 680;
+	letter-spacing: -0.025em;
+	line-height: 0.98;
 	text-wrap: balance;
 }
 
@@ -207,57 +212,54 @@
 .folio-reading h3 {
 	margin: 2.2rem 0 1rem;
 	color: inherit;
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.78rem;
-	font-weight: 700;
-	letter-spacing: 0.16em;
+	font-family: var(--folio-label);
+	font-size: 0.76rem;
+	font-weight: 650;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
 }
 
 .folio-reading p,
 .folio-controls > p,
 .folio-residue > p {
-	max-width: 54ch;
+	max-width: 58ch;
 	margin: 0 0 1.15rem;
 	color: inherit;
-	font-family: 'Source Serif 4 Variable', Georgia, serif;
-	font-size: clamp(1.0625rem, 0.35vw + 0.98rem, 1.18rem);
-	font-weight: 430;
+	font-family: var(--folio-reading);
+	font-size: clamp(1.075rem, 0.25vw + 1rem, 1.18rem);
+	font-weight: 400;
 	letter-spacing: 0;
-	line-height: 1.6;
+	line-height: 1.64;
 	text-align: left;
 }
 
 .folio-reading strong {
-	font-weight: 760;
+	font-weight: 650;
 }
 
 .folio-reading em,
-.folio-related em,
-.folio-cover h1 em {
+.folio-related em {
 	color: inherit;
-	font-family: 'Caveat Variable', 'Segoe Print', cursive;
-	font-size: 1.22em;
-	font-style: normal;
-	font-variation-settings: 'wght' 580;
-	font-weight: 580;
+	font-family: var(--folio-reading);
+	font-size: 1em;
+	font-style: italic;
+	font-weight: 400;
 	letter-spacing: 0;
 }
 
 .folio-reading blockquote {
 	position: relative;
-	max-width: 21ch;
+	max-width: 25ch;
 	margin: 2.25rem 0;
 	padding: 0.35rem 0 0.35rem 1.1rem;
 	border: 0;
 	border-left: 0.38rem solid var(--folio-orange);
 	color: inherit;
-	font-family: 'Caveat Variable', 'Segoe Print', cursive;
-	font-size: clamp(1.65rem, 5.5cqi, 2.3rem);
+	font-family: var(--folio-hand);
+	font-size: clamp(1.5rem, 4.5cqi, 2rem);
 	font-style: normal;
-	font-variation-settings: 'wght' 570;
-	font-weight: 570;
-	line-height: 1.08;
+	font-weight: 520;
+	line-height: 1.14;
 }
 
 .folio-reading blockquote p {
@@ -278,9 +280,9 @@
 	margin: 0;
 	padding: 0.85rem 0 0.85rem 2.1rem;
 	border-top: 1px solid currentColor;
-	font-family: 'Source Serif 4 Variable', Georgia, serif;
-	font-size: 1.02rem;
-	line-height: 1.5;
+	font-family: var(--folio-reading);
+	font-size: 1.075rem;
+	line-height: 1.58;
 }
 
 .folio-reading li::before {
@@ -291,9 +293,10 @@
 	height: 1.35rem;
 	background: var(--folio-lime);
 	color: var(--folio-coal);
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.62rem;
-	font-weight: 700;
+	font-family: var(--folio-label);
+	font-size: 0.68rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
 	line-height: 1.35rem;
 	text-align: center;
 	content: counter(list-item, decimal-leading-zero);
@@ -305,7 +308,7 @@
 	border-radius: 0;
 	background: transparent;
 	color: inherit;
-	font-family: 'Courier Prime', ui-monospace, monospace;
+	font-family: var(--folio-code);
 	font-size: 0.84em;
 }
 
@@ -361,9 +364,9 @@
 	padding: 0.75rem 0.9rem;
 	background: var(--folio-coal);
 	color: var(--folio-paper);
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.64rem;
-	font-weight: 700;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 650;
 	letter-spacing: 0.08em;
 	line-height: 1.35;
 	text-transform: uppercase;
@@ -445,10 +448,10 @@
 .folio-kicker {
 	margin: 0 0 1.1rem;
 	color: inherit;
-	font-family: 'Courier Prime', ui-monospace, monospace !important;
-	font-size: 0.67rem !important;
-	font-weight: 700 !important;
-	letter-spacing: 0.15em !important;
+	font-family: var(--folio-label) !important;
+	font-size: 0.72rem !important;
+	font-weight: 650 !important;
+	letter-spacing: 0.08em !important;
 	line-height: 1.3 !important;
 	text-transform: uppercase;
 }
@@ -457,14 +460,11 @@
 	max-width: none;
 	margin: 0;
 	color: var(--folio-paper);
-	font-family: 'Archivo Variable', 'Arial Narrow', Arial, sans-serif;
-	font-size: clamp(3rem, 13cqi, 5.5rem);
-	font-variation-settings:
-		'wdth' 84,
-		'wght' 720;
-	font-weight: 720;
-	letter-spacing: -0.05em;
-	line-height: 0.92;
+	font-family: var(--folio-display);
+	font-size: clamp(2.75rem, 11cqi, 4.85rem);
+	font-weight: 680;
+	letter-spacing: -0.025em;
+	line-height: 0.96;
 	text-wrap: pretty;
 }
 
@@ -473,36 +473,36 @@
 }
 
 .folio-title__quiet {
-	font-size: 0.61em;
-	font-variation-settings:
-		'wdth' 94,
-		'wght' 610;
-	font-weight: 610;
-	letter-spacing: -0.025em;
+	font-size: 0.52em;
+	font-weight: 400;
+	letter-spacing: -0.01em;
 }
 
 .folio-title__primary {
 	font-size: 1em;
+	font-weight: 720;
 }
 
 .folio-title__secondary {
-	font-size: 0.72em;
+	font-size: 0.68em;
+	font-weight: 600;
 }
 
 .folio-title__closing {
-	font-size: 0.65em;
-	font-variation-settings:
-		'wdth' 90,
-		'wght' 680;
-	font-weight: 680;
-	letter-spacing: -0.035em;
+	font-size: 0.58em;
+	font-weight: 600;
+	letter-spacing: -0.015em;
 }
 
 .folio-cover h1 em {
 	display: inline-block;
 	color: var(--folio-lime);
-	font-size: 0.72em;
-	transform: rotate(-3deg) translateY(-0.04em);
+	font-family: var(--folio-display);
+	font-size: 0.78em;
+	font-style: italic;
+	font-weight: 450;
+	letter-spacing: -0.01em;
+	transform: translateY(-0.02em);
 }
 
 .folio-deck {
@@ -511,9 +511,10 @@
 	padding-top: 1rem;
 	border-top: 1px solid rgba(242, 239, 230, 0.34);
 	color: var(--folio-paper);
-	font-family: 'Source Serif 4 Variable', Georgia, serif;
-	font-size: clamp(1rem, 0.5vw + 0.96rem, 1.25rem);
-	line-height: 1.42;
+	font-family: var(--folio-reading);
+	font-size: clamp(1.05rem, 0.35vw + 1rem, 1.2rem);
+	font-weight: 400;
+	line-height: 1.55;
 }
 
 .folio-cover__contents {
@@ -536,9 +537,10 @@
 
 .folio-cover__masthead p {
 	margin: 0;
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.66rem;
-	font-weight: 700;
+	font-family: var(--folio-label);
+	font-size: 0.72rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
 	letter-spacing: 0.08em;
 	line-height: 1.45;
 	text-transform: uppercase;
@@ -586,9 +588,11 @@
 
 .folio-contents span,
 .folio-contents small {
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.61rem;
-	letter-spacing: 0.08em;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.06em;
 	text-transform: uppercase;
 }
 
@@ -602,10 +606,7 @@
 
 .folio-contents strong {
 	font-size: clamp(0.9rem, 0.35vw + 0.82rem, 1.05rem);
-	font-variation-settings:
-		'wdth' 92,
-		'wght' 690;
-	font-weight: 690;
+	font-weight: 650;
 	line-height: 1.15;
 }
 
@@ -635,7 +636,7 @@
 .folio-tts section p,
 .folio-tts section button {
 	color: var(--folio-coal);
-	font-family: 'Courier Prime', ui-monospace, monospace;
+	font-family: var(--folio-label);
 }
 
 .folio-living {
@@ -643,9 +644,9 @@
 	gap: 0.6rem;
 	align-items: center;
 	margin: 1.25rem 0 0;
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.68rem;
-	font-weight: 700;
+	font-family: var(--folio-label);
+	font-size: 0.72rem;
+	font-weight: 650;
 	letter-spacing: 0.07em;
 	text-transform: uppercase;
 }
@@ -668,10 +669,10 @@
 	margin: 0 0 0.25rem;
 	padding: 0 0 0.85rem;
 	border: 0;
-	font-family: 'Courier Prime', ui-monospace, monospace;
+	font-family: var(--folio-label);
 	font-size: 0.72rem;
-	font-weight: 700;
-	letter-spacing: 0.12em;
+	font-weight: 650;
+	letter-spacing: 0.08em;
 	line-height: 1.3;
 	text-transform: uppercase;
 	opacity: 0.72;
@@ -683,14 +684,11 @@
 	margin: 0;
 	padding: 0.9rem 0;
 	border-top: 1px solid rgba(242, 239, 230, 0.42);
-	font-family: 'Archivo Variable', Arial, sans-serif;
-	font-size: clamp(1.55rem, 6cqi, 2.05rem);
-	font-variation-settings:
-		'wdth' 88,
-		'wght' 700;
-	font-weight: 700;
-	letter-spacing: -0.025em;
-	line-height: 1.05;
+	font-family: var(--folio-display);
+	font-size: clamp(1.35rem, 4.6cqi, 1.85rem);
+	font-weight: 650;
+	letter-spacing: -0.018em;
+	line-height: 1.12;
 }
 
 #naming-catastrophe .folio-distinction__explanation {
@@ -711,20 +709,17 @@
 	margin-bottom: 0;
 	padding-top: 1rem;
 	border-top: 1px solid rgba(17, 18, 15, 0.28);
-	font-family: 'Archivo Variable', Arial, sans-serif;
+	font-family: var(--folio-display);
 	font-weight: 650;
 	line-height: 1.35;
 }
 
 #control-flow .thought-leaf[data-side='left'] > .thought-leaf__content > p:first-of-type {
-	font-family: 'Archivo Variable', Arial, sans-serif;
-	font-size: clamp(1.5rem, 2.6vw, 2.8rem);
-	font-variation-settings:
-		'wdth' 84,
-		'wght' 740;
-	font-weight: 740;
-	letter-spacing: -0.045em;
-	line-height: 1;
+	font-family: var(--folio-display);
+	font-size: clamp(1.45rem, 2.4vw, 2.6rem);
+	font-weight: 680;
+	letter-spacing: -0.025em;
+	line-height: 1.04;
 }
 
 #digestive-tract .thought-leaf__content {
@@ -749,7 +744,7 @@
 	margin: 0;
 	padding: 1rem 0;
 	border-top: 1px solid currentColor;
-	font-family: 'Source Serif 4 Variable', Georgia, serif;
+	font-family: var(--folio-reading);
 }
 
 #field-chart .thought-leaf__content > p:first-of-type {
@@ -757,28 +752,28 @@
 }
 
 #field-chart .thought-leaf__content > p::first-line {
-	font-family: 'Archivo Variable', Arial, sans-serif;
+	font-family: var(--folio-display);
 	font-size: 1.1em;
-	font-weight: 750;
+	font-weight: 650;
 }
 
 #silicon .thought-leaf[data-side='left'] .thought-leaf__content > p:last-child {
 	max-width: 8ch;
 	margin-top: clamp(4rem, 12vw, 10rem);
 	color: var(--folio-lime);
-	font-family: 'Caveat Variable', 'Segoe Print', cursive;
-	font-size: clamp(3.2rem, 7vw, 7.2rem);
-	font-variation-settings: 'wght' 590;
-	font-weight: 590;
-	letter-spacing: -0.04em;
-	line-height: 0.88;
+	font-family: var(--folio-hand);
+	font-size: clamp(2.5rem, 5vw, 5rem);
+	font-weight: 540;
+	letter-spacing: -0.02em;
+	line-height: 0.95;
 }
 
 #silicon .thought-leaf[data-side='right'] p,
 #silicon .thought-leaf[data-side='right'] a {
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.78rem;
-	line-height: 1.45;
+	font-family: var(--folio-label);
+	font-size: 0.84rem;
+	font-weight: 450;
+	line-height: 1.5;
 	overflow-wrap: anywhere;
 }
 
@@ -839,8 +834,9 @@
 	border-radius: 0 !important;
 	background: transparent !important;
 	color: var(--folio-coal) !important;
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.68rem !important;
+	font-family: var(--folio-label);
+	font-size: 0.72rem !important;
+	font-weight: 650;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 }
@@ -860,9 +856,9 @@
 .folio-topics a {
 	padding: 0.48rem 0.62rem;
 	border: 1px solid var(--folio-coal);
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.64rem;
-	font-weight: 700;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 650;
 	letter-spacing: 0.05em;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -888,9 +884,10 @@
 
 .folio-signoff span,
 .folio-signoff small {
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.66rem;
-	letter-spacing: 0.1em;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
 }
 
@@ -898,10 +895,10 @@
 	grid-column: 2;
 	grid-row: span 2;
 	justify-self: end;
-	font-family: 'Caveat Variable', 'Segoe Print', cursive;
-	font-size: clamp(2rem, 5vw, 3.8rem);
-	font-weight: 620;
-	line-height: 0.9;
+	font-family: var(--folio-hand);
+	font-size: clamp(1.75rem, 4vw, 2.65rem);
+	font-weight: 520;
+	line-height: 1;
 	text-decoration: none;
 }
 
@@ -969,26 +966,26 @@
 .folio-related__grid span {
 	grid-row: span 3;
 	color: var(--folio-orange);
-	font-family: 'Courier Prime', ui-monospace, monospace;
+	font-family: var(--folio-label);
 	font-size: 0.72rem;
+	font-weight: 650;
+	font-variant-numeric: tabular-nums;
 }
 
 .folio-related__grid small {
-	font-family: 'Courier Prime', ui-monospace, monospace;
-	font-size: 0.63rem;
-	letter-spacing: 0.1em;
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
 	text-transform: uppercase;
 }
 
 .folio-related__grid strong {
 	align-self: center;
 	font-size: 1.25rem;
-	font-variation-settings:
-		'wdth' 90,
-		'wght' 720;
-	font-weight: 720;
-	letter-spacing: -0.035em;
-	line-height: 1.08;
+	font-weight: 680;
+	letter-spacing: -0.02em;
+	line-height: 1.12;
 }
 
 .folio-related__grid em {

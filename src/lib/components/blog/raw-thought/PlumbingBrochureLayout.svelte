@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '@fontsource-variable/archivo/wght.css';
 	import '@fontsource-variable/caveat/wght.css';
 	import { resolve } from '$app/paths';
 	import { setContext, type Component } from 'svelte';
