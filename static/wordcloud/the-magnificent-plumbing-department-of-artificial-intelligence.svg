@@ -6,129 +6,129 @@
 <text transform="translate(766,709)" font-size="98" style="fill:#e0b879">Server</text>
 <text transform="translate(737,610)" font-size="81" style="fill:#c49a6c">Plugin</text>
 <text transform="translate(238,461)" font-size="81" style="fill:#e0b879">Agent</text>
-<text transform="translate(483,98)" font-size="74" style="fill:#8fb7d0">Model</text>
-<text transform="translate(695,343)" font-size="69" style="fill:#a9b7a3">Tools</text>
-<text transform="translate(15,138)" font-size="69" style="fill:#e0b879">Skills</text>
-<text transform="translate(535,486)" font-size="69" style="fill:#9fc9c5">Every</text>
-<text transform="translate(949,66)" font-size="69" style="fill:#a9b7a3">Tool</text>
-<text transform="translate(100,392)" font-size="66" style="fill:#9fc9c5">Text</text>
-<text transform="translate(1126,563) rotate(-90)" font-size="61" style="fill:#9fc9c5">Openai</text>
-<text transform="translate(155,565)" font-size="58" style="fill:#c49a6c">Instructions</text>
-<text transform="translate(973,130)" font-size="55" style="fill:#c49a6c">Somebody</text>
-<text transform="translate(279,126)" font-size="55" style="fill:#a9b7a3">Hooks</text>
-<text transform="translate(241,613)" font-size="55" style="fill:#c7d7b5">Context</text>
-<text transform="translate(344,301)" font-size="55" style="fill:#d5d2c2">Rightarrow</text>
-<text transform="translate(55,287)" font-size="52" style="fill:#d6a79f">System</text>
-<text transform="translate(98,211)" font-size="49" style="fill:#c49a6c">Plugins</text>
-<text transform="translate(630,407)" font-size="49" style="fill:#9fc9c5">Connectors</text>
-<text transform="translate(42,426) rotate(-90)" font-size="49" style="fill:#c49a6c">Interface</text>
-<text transform="translate(108,432)" font-size="49" style="fill:#b6c3dd">Host</text>
-<text transform="translate(1128,685)" font-size="49" style="fill:#c49a6c">Gmail</text>
-<text transform="translate(1211,569) rotate(-90)" font-size="49" style="fill:#8fb7d0">Work</text>
-<text transform="translate(90,709)" font-size="49" style="fill:#d9c89e">Hook</text>
-<text transform="translate(128,61)" font-size="46" style="fill:#d6a79f">Call</text>
-<text transform="translate(981,460) rotate(-90)" font-size="46" style="fill:#d6a79f">Protocol</text>
-<text transform="translate(492,630)" font-size="46" style="fill:#a9b7a3">Package</text>
-<text transform="translate(880,218)" font-size="46" style="fill:#b6c3dd">Automation</text>
-<text transform="translate(314,652)" font-size="42" style="fill:#d88988">Apps</text>
-<text transform="translate(92,666) rotate(-90)" font-size="42" style="fill:#d88988">Agents</text>
-<text transform="translate(516,144)" font-size="42" style="fill:#d5d2c2">Software</text>
-<text transform="translate(397,358)" font-size="42" style="fill:#e0b879">Packaging</text>
-<text transform="translate(139,340)" font-size="42" style="fill:#8fb7d0">Connection</text>
-<text transform="translate(526,700)" font-size="42" style="fill:#d88988">Inspect</text>
-<text transform="translate(724,531)" font-size="42" style="fill:#a9b7a3">Capabilities</text>
-<text transform="translate(338,706)" font-size="42" style="fill:#b6c3dd">File</text>
-<text transform="translate(752,440)" font-size="42" style="fill:#e0b879">Browser</text>
-<text transform="translate(11,496)" font-size="42" style="fill:#d88988">Chatgpt</text>
-<text transform="translate(748,88)" font-size="42" style="fill:#d9c89e">Codex</text>
-<text transform="translate(784,275) rotate(-90)" font-size="42" style="fill:#d6a79f">Service</text>
-<text transform="translate(346,400)" font-size="42" style="fill:#d9c89e">Assets</text>
-<text transform="translate(1274,598) rotate(-90)" font-size="42" style="fill:#d9c89e">Connected</text>
-<text transform="translate(1249,310) rotate(-90)" font-size="42" style="fill:#d9c89e">Memory</text>
-<text transform="translate(258,61)" font-size="42" style="fill:#d6a79f">Project</text>
-<text transform="translate(1042,627)" font-size="38" style="fill:#d88988">Operating</text>
-<text transform="translate(890,174)" font-size="38" style="fill:#c49a6c">Installable</text>
-<text transform="translate(756,493)" font-size="38" style="fill:#e0b879">Permissions</text>
-<text transform="translate(1113,42)" font-size="38" style="fill:#d6a79f">Actions</text>
-<text transform="translate(726,38)" font-size="38" style="fill:#d5d2c2">Request</text>
-<text transform="translate(553,518)" font-size="38" style="fill:#d88988">Expose</text>
-<text transform="translate(117,654)" font-size="38" style="fill:#c49a6c">Optional</text>
-<text transform="translate(281,514)" font-size="38" style="fill:#e0b879">Describes</text>
-<text transform="translate(1061,593) rotate(-90)" font-size="38" style="fill:#8fb7d0">Operations</text>
-<text transform="translate(812,274)" font-size="38" style="fill:#d88988">Now</text>
-<text transform="translate(449,29)" font-size="33" style="fill:#8fb7d0">Configuration</text>
-<text transform="translate(1111,72)" font-size="33" style="fill:#d9c89e">Scripts</text>
-<text transform="translate(41,704) rotate(-90)" font-size="33" style="fill:#8fb7d0">Capability</text>
-<text transform="translate(118,169)" font-size="33" style="fill:#9fc9c5">Installation</text>
-<text transform="translate(417,663)" font-size="33" style="fill:#9fc9c5">Connector</text>
-<text transform="translate(744,280) rotate(-90)" font-size="33" style="fill:#9fc9c5">Information</text>
-<text transform="translate(584,569)" font-size="29" style="fill:#9fc9c5">Subagents</text>
-<text transform="translate(73,243) rotate(-90)" font-size="29" style="fill:#d6a79f">Method</text>
-<text transform="translate(506,258)" font-size="29" style="fill:#c49a6c">Complicated</text>
-<text transform="translate(222,712)" font-size="29" style="fill:#c49a6c">Name</text>
-<text transform="translate(825,120)" font-size="29" style="fill:#b6c3dd">Metadata</text>
-<text transform="translate(587,441)" font-size="29" style="fill:#c7d7b5">Suitcase</text>
-<text transform="translate(169,251)" font-size="29" style="fill:#8fb7d0">Autonomous</text>
-<text transform="translate(1136,347)" font-size="29" style="fill:#9fc9c5">Supplies</text>
-<text transform="translate(72,458)" font-size="29" style="fill:#9fc9c5">Whether</text>
-<text transform="translate(377,154)" font-size="29" style="fill:#c49a6c">Tokens</text>
-<text transform="translate(510,393)" font-size="29" style="fill:#c49a6c">Client</text>
-<text transform="translate(4,38)" font-size="29" style="fill:#a9b7a3">Defines</text>
-<text transform="translate(100,605)" font-size="29" style="fill:#d9c89e">Although</text>
-<text transform="translate(1168,595) rotate(-90)" font-size="29" style="fill:#8fb7d0">Authentication</text>
-<text transform="translate(987,348)" font-size="29" style="fill:#b6c3dd">Results</text>
-<text transform="translate(578,329)" font-size="29" style="fill:#a9b7a3">Related</text>
-<text transform="translate(1092,709)" font-size="27" style="fill:#a9b7a3">Integration</text>
-<text transform="translate(827,368)" font-size="27" style="fill:#a9b7a3">Access</text>
-<text transform="translate(813,242) rotate(-90)" font-size="27" style="fill:#d9c89e">Resembles</text>
-<text transform="translate(533,524) rotate(-90)" font-size="27" style="fill:#c49a6c">External</text>
-<text transform="translate(672,369)" font-size="27" style="fill:#9fc9c5">Merely</text>
-<text transform="translate(892,51)" font-size="27" style="fill:#8fb7d0">Mean</text>
-<text transform="translate(711,710)" font-size="27" style="fill:#b6c3dd">AI</text>
-<text transform="translate(1233,590) rotate(-90)" font-size="27" style="fill:#d5d2c2">Components</text>
-<text transform="translate(607,665)" font-size="27" style="fill:#d5d2c2">References</text>
-<text transform="translate(211,676)" font-size="24" style="fill:#d9c89e">Templates</text>
-<text transform="translate(288,23)" font-size="24" style="fill:#c49a6c">Procedure</text>
-<text transform="translate(820,241)" font-size="24" style="fill:#b6c3dd">Perform</text>
-<text transform="translate(862,650)" font-size="24" style="fill:#b6c3dd">Deterministic</text>
-<text transform="translate(250,293)" font-size="24" style="fill:#d5d2c2">Prompt</text>
-<text transform="translate(1008,448) rotate(-90)" font-size="24" style="fill:#c7d7b5">Visual</text>
-<text transform="translate(284,361)" font-size="24" style="fill:#a9b7a3">Check</text>
-<text transform="translate(818,141)" font-size="24" style="fill:#b6c3dd">Command</text>
-<text transform="translate(72,432) rotate(-90)" font-size="24" style="fill:#d88988">Containing</text>
-<text transform="translate(5,64)" font-size="24" style="fill:#d88988">Belongs</text>
-<text transform="translate(819,560)" font-size="24" style="fill:#d88988">Current</text>
-<text transform="translate(877,79)" font-size="24" style="fill:#a9b7a3">Policy</text>
-<text transform="translate(211,488)" font-size="24" style="fill:#c7d7b5">User</text>
-<text transform="translate(839,219) rotate(-90)" font-size="24" style="fill:#d9c89e">Event</text>
-<text transform="translate(694,619)" font-size="21" style="fill:#c49a6c">Say</text>
-<text transform="translate(623,594)" font-size="21" style="fill:#c7d7b5">Language</text>
-<text transform="translate(471,587)" font-size="21" style="fill:#d88988">Industry</text>
-<text transform="translate(609,537)" font-size="21" style="fill:#9fc9c5">Acquired</text>
-<text transform="translate(479,125) rotate(-90)" font-size="21" style="fill:#a9b7a3">Servers</text>
-<text transform="translate(147,20)" font-size="21" style="fill:#d6a79f">Protocols</text>
-<text transform="translate(173,516)" font-size="21" style="fill:#d6a79f">Attached</text>
-<text transform="translate(646,190)" font-size="21" style="fill:#e0b879">Gives</text>
-<text transform="translate(1156,176)" font-size="21" style="fill:#d6a79f">Hands</text>
-<text transform="translate(223,311)" font-size="21" style="fill:#a9b7a3">Human</text>
-<text transform="translate(459,703)" font-size="21" style="fill:#d6a79f">Ideas</text>
-<text transform="translate(1008,87)" font-size="21" style="fill:#a9b7a3">Wearing</text>
-<text transform="translate(751,632)" font-size="21" style="fill:#a9b7a3">Little</text>
-<text transform="translate(96,429) rotate(-90)" font-size="21" style="fill:#d6a79f">Permitted</text>
-<text transform="translate(444,321)" font-size="21" style="fill:#e0b879">Issue</text>
-<text transform="translate(307,206)" font-size="21" style="fill:#9fc9c5">Arm</text>
-<text transform="translate(171,81)" font-size="21" style="fill:#c7d7b5">Database</text>
-<text transform="translate(275,381)" font-size="21" style="fill:#9fc9c5">Figma</text>
-<text transform="translate(359,253)" font-size="21" style="fill:#d6a79f">Standard</text>
-<text transform="translate(860,293)" font-size="21" style="fill:#c49a6c">Reading</text>
-<text transform="translate(799,459)" font-size="21" style="fill:#d6a79f">Resources</text>
-<text transform="translate(640,168)" font-size="21" style="fill:#c7d7b5">Pieces</text>
-<text transform="translate(1080,511) rotate(-90)" font-size="21" style="fill:#e0b879">Necessarily</text>
-<text transform="translate(236,230)" font-size="21" style="fill:#d88988">Available</text>
-<text transform="translate(243,271)" font-size="21" style="fill:#c49a6c">Kitchen</text>
-<text transform="translate(736,299)" font-size="21" style="fill:#9fc9c5">Result</text>
-<text transform="translate(432,482)" font-size="21" style="fill:#a9b7a3">Though</text>
-<text transform="translate(1172,400)" font-size="21" style="fill:#9fc9c5">Calls</text>
-<text transform="translate(1273,319) rotate(-90)" font-size="21" style="fill:#b6c3dd">Extensions</text>
-<text transform="translate(393,88)" font-size="21" style="fill:#e0b879">Order</text>
+<text transform="translate(863,101)" font-size="77" style="fill:#8fb7d0">Model</text>
+<text transform="translate(306,349)" font-size="70" style="fill:#a9b7a3">Tools</text>
+<text transform="translate(380,133)" font-size="70" style="fill:#e0b879">Skills</text>
+<text transform="translate(926,520)" font-size="70" style="fill:#9fc9c5">Every</text>
+<text transform="translate(28,68)" font-size="70" style="fill:#a9b7a3">Tool</text>
+<text transform="translate(570,339)" font-size="62" style="fill:#9fc9c5">Openai</text>
+<text transform="translate(151,575) rotate(-90)" font-size="59" style="fill:#9fc9c5">Instructions</text>
+<text transform="translate(444,649)" font-size="56" style="fill:#c49a6c">Somebody</text>
+<text transform="translate(327,527)" font-size="56" style="fill:#d9c89e">Hooks</text>
+<text transform="translate(861,458)" font-size="56" style="fill:#d88988">Context</text>
+<text transform="translate(543,507)" font-size="53" style="fill:#d5d2c2">System</text>
+<text transform="translate(68,472) rotate(-90)" font-size="50" style="fill:#c7d7b5">Plugins</text>
+<text transform="translate(671,170)" font-size="50" style="fill:#d5d2c2">Connectors</text>
+<text transform="translate(197,277)" font-size="50" style="fill:#d6a79f">Interface</text>
+<text transform="translate(1139,127)" font-size="50" style="fill:#c49a6c">Host</text>
+<text transform="translate(908,413)" font-size="50" style="fill:#9fc9c5">Gmail</text>
+<text transform="translate(855,399) rotate(-90)" font-size="50" style="fill:#c49a6c">Work</text>
+<text transform="translate(633,443)" font-size="50" style="fill:#b6c3dd">Hook</text>
+<text transform="translate(284,612)" font-size="47" style="fill:#c49a6c">Call</text>
+<text transform="translate(1248,645) rotate(-90)" font-size="47" style="fill:#8fb7d0">Protocol</text>
+<text transform="translate(428,49)" font-size="47" style="fill:#e0b879">Package</text>
+<text transform="translate(22,140)" font-size="47" style="fill:#d6a79f">Automation</text>
+<text transform="translate(1175,544) rotate(-90)" font-size="43" style="fill:#d6a79f">Apps</text>
+<text transform="translate(21,613)" font-size="43" style="fill:#a9b7a3">Agents</text>
+<text transform="translate(429,586)" font-size="43" style="fill:#b6c3dd">Software</text>
+<text transform="translate(141,701)" font-size="43" style="fill:#d88988">Packaging</text>
+<text transform="translate(210,620) rotate(-90)" font-size="43" style="fill:#c49a6c">Connection</text>
+<text transform="translate(527,538) rotate(-90)" font-size="43" style="fill:#d5d2c2">Inspect</text>
+<text transform="translate(778,214)" font-size="43" style="fill:#e0b879">Capabilities</text>
+<text transform="translate(1140,179)" font-size="43" style="fill:#8fb7d0">File</text>
+<text transform="translate(603,285)" font-size="43" style="fill:#c7d7b5">Browser</text>
+<text transform="translate(1035,605)" font-size="43" style="fill:#8fb7d0">Chatgpt</text>
+<text transform="translate(892,357) rotate(-90)" font-size="43" style="fill:#d5d2c2">Codex</text>
+<text transform="translate(400,715)" font-size="43" style="fill:#e0b879">Service</text>
+<text transform="translate(1077,42)" font-size="43" style="fill:#c7d7b5">Assets</text>
+<text transform="translate(675,41)" font-size="43" style="fill:#d9c89e">Connected</text>
+<text transform="translate(1073,400)" font-size="43" style="fill:#d9c89e">Memory</text>
+<text transform="translate(338,188) rotate(-90)" font-size="43" style="fill:#c7d7b5">Project</text>
+<text transform="translate(187,357) rotate(-90)" font-size="39" style="fill:#b6c3dd">Operating</text>
+<text transform="translate(236,392)" font-size="39" style="fill:#8fb7d0">Installable</text>
+<text transform="translate(931,364)" font-size="39" style="fill:#e0b879">Permissions</text>
+<text transform="translate(259,571)" font-size="39" style="fill:#d5d2c2">Actions</text>
+<text transform="translate(1088,704)" font-size="39" style="fill:#9fc9c5">Request</text>
+<text transform="translate(712,100)" font-size="39" style="fill:#b6c3dd">Expose</text>
+<text transform="translate(112,653)" font-size="39" style="fill:#d9c89e">Optional</text>
+<text transform="translate(577,393)" font-size="39" style="fill:#d88988">Describes</text>
+<text transform="translate(1261,416) rotate(-90)" font-size="39" style="fill:#c49a6c">Operations</text>
+<text transform="translate(348,662)" font-size="39" style="fill:#e0b879">Now</text>
+<text transform="translate(875,130)" font-size="33" style="fill:#8fb7d0">Configuration</text>
+<text transform="translate(767,512)" font-size="33" style="fill:#d88988">Scripts</text>
+<text transform="translate(932,639)" font-size="33" style="fill:#8fb7d0">Capability</text>
+<text transform="translate(6,97)" font-size="33" style="fill:#d9c89e">Installation</text>
+<text transform="translate(532,558)" font-size="33" style="fill:#d6a79f">Connector</text>
+<text transform="translate(448,677)" font-size="32" style="fill:#9fc9c5">Information</text>
+<text transform="translate(209,216)" font-size="28" style="fill:#9fc9c5">Subagents</text>
+<text transform="translate(561,424) rotate(-90)" font-size="28" style="fill:#9fc9c5">Method</text>
+<text transform="translate(1078,78)" font-size="28" style="fill:#9fc9c5">Complicated</text>
+<text transform="translate(87,249) rotate(-90)" font-size="28" style="fill:#d6a79f">Name</text>
+<text transform="translate(362,74)" font-size="28" style="fill:#c49a6c">Metadata</text>
+<text transform="translate(599,712)" font-size="28" style="fill:#c7d7b5">Suitcase</text>
+<text transform="translate(649,65)" font-size="28" style="fill:#b6c3dd">Autonomous</text>
+<text transform="translate(1096,218)" font-size="28" style="fill:#c7d7b5">Supplies</text>
+<text transform="translate(715,137)" font-size="28" style="fill:#8fb7d0">Whether</text>
+<text transform="translate(985,560)" font-size="28" style="fill:#c7d7b5">Tokens</text>
+<text transform="translate(895,286)" font-size="28" style="fill:#d5d2c2">Client</text>
+<text transform="translate(680,469)" font-size="28" style="fill:#d9c89e">Defines</text>
+<text transform="translate(685,250)" font-size="28" style="fill:#d6a79f">Although</text>
+<text transform="translate(1274,693) rotate(-90)" font-size="28" style="fill:#c49a6c">Authentication</text>
+<text transform="translate(976,175)" font-size="28" style="fill:#c7d7b5">Results</text>
+<text transform="translate(939,28)" font-size="28" style="fill:#c49a6c">Related</text>
+<text transform="translate(93,580) rotate(-90)" font-size="28" style="fill:#8fb7d0">Integration</text>
+<text transform="translate(644,206)" font-size="28" style="fill:#b6c3dd">Access</text>
+<text transform="translate(27,290) rotate(-90)" font-size="28" style="fill:#a9b7a3">External</text>
+<text transform="translate(240,594) rotate(-90)" font-size="28" style="fill:#a9b7a3">Merely</text>
+<text transform="translate(902,327)" font-size="28" style="fill:#a9b7a3">Mean</text>
+<text transform="translate(697,103) rotate(-90)" font-size="28" style="fill:#d9c89e">AI</text>
+<text transform="translate(818,550)" font-size="22" style="fill:#c49a6c">Components</text>
+<text transform="translate(469,264)" font-size="22" style="fill:#9fc9c5">References</text>
+<text transform="translate(185,27)" font-size="22" style="fill:#8fb7d0">Templates</text>
+<text transform="translate(1088,564)" font-size="22" style="fill:#a9b7a3">Procedure</text>
+<text transform="translate(1139,672)" font-size="22" style="fill:#9fc9c5">Perform</text>
+<text transform="translate(436,154)" font-size="22" style="fill:#d9c89e">Deterministic</text>
+<text transform="translate(214,56)" font-size="22" style="fill:#c49a6c">Prompt</text>
+<text transform="translate(736,538)" font-size="22" style="fill:#d5d2c2">Visual</text>
+<text transform="translate(233,328)" font-size="22" style="fill:#b6c3dd">Check</text>
+<text transform="translate(8,666)" font-size="22" style="fill:#b6c3dd">Command</text>
+<text transform="translate(7,700)" font-size="22" style="fill:#d5d2c2">Containing</text>
+<text transform="translate(661,179) rotate(-90)" font-size="22" style="fill:#d88988">Belongs</text>
+<text transform="translate(755,449)" font-size="22" style="fill:#a9b7a3">Current</text>
+<text transform="translate(483,295)" font-size="22" style="fill:#b6c3dd">Policy</text>
+<text transform="translate(777,632)" font-size="22" style="fill:#9fc9c5">User</text>
+<text transform="translate(597,529)" font-size="22" style="fill:#c49a6c">Event</text>
+<text transform="translate(561,457)" font-size="22" style="fill:#8fb7d0">Input</text>
+<text transform="translate(63,526) rotate(-90)" font-size="19" style="fill:#a9b7a3">Say</text>
+<text transform="translate(211,178)" font-size="19" style="fill:#c49a6c">Language</text>
+<text transform="translate(900,240)" font-size="19" style="fill:#a9b7a3">Industry</text>
+<text transform="translate(638,577)" font-size="19" style="fill:#a9b7a3">Acquired</text>
+<text transform="translate(828,649)" font-size="19" style="fill:#d88988">Servers</text>
+<text transform="translate(820,479)" font-size="19" style="fill:#d6a79f">Protocols</text>
+<text transform="translate(1097,429)" font-size="19" style="fill:#d9c89e">Attached</text>
+<text transform="translate(358,301)" font-size="19" style="fill:#d9c89e">Gives</text>
+<text transform="translate(216,234)" font-size="19" style="fill:#d88988">Hands</text>
+<text transform="translate(1218,363) rotate(-90)" font-size="19" style="fill:#d88988">Human</text>
+<text transform="translate(705,686)" font-size="19" style="fill:#e0b879">Ideas</text>
+<text transform="translate(34,166)" font-size="19" style="fill:#d6a79f">Wearing</text>
+<text transform="translate(748,365)" font-size="19" style="fill:#a9b7a3">Little</text>
+<text transform="translate(205,346)" font-size="19" style="fill:#d5d2c2">Permitted</text>
+<text transform="translate(231,478)" font-size="19" style="fill:#c7d7b5">Issue</text>
+<text transform="translate(751,512) rotate(-90)" font-size="19" style="fill:#c49a6c">Arm</text>
+<text transform="translate(197,302)" font-size="19" style="fill:#c7d7b5">Database</text>
+<text transform="translate(5,558)" font-size="19" style="fill:#e0b879">Figma</text>
+<text transform="translate(1112,338)" font-size="19" style="fill:#9fc9c5">Standard</text>
+<text transform="translate(349,36)" font-size="19" style="fill:#c7d7b5">Reading</text>
+<text transform="translate(1043,476)" font-size="19" style="fill:#9fc9c5">Resources</text>
+<text transform="translate(1001,149)" font-size="19" style="fill:#d6a79f">Pieces</text>
+<text transform="translate(19,492) rotate(-90)" font-size="19" style="fill:#c49a6c">Necessarily</text>
+<text transform="translate(756,423)" font-size="19" style="fill:#d6a79f">Available</text>
+<text transform="translate(579,84)" font-size="19" style="fill:#c7d7b5">Kitchen</text>
+<text transform="translate(223,158)" font-size="19" style="fill:#e0b879">Result</text>
+<text transform="translate(597,605)" font-size="19" style="fill:#d88988">Though</text>
+<text transform="translate(505,604)" font-size="19" style="fill:#c49a6c">Calls</text>
+<text transform="translate(324,411)" font-size="19" style="fill:#9fc9c5">Extensions</text>
+<text transform="translate(254,527)" font-size="19" style="fill:#d5d2c2">Order</text>
+<text transform="translate(345,154)" font-size="19" style="fill:#b6c3dd">Manuals</text>
+<text transform="translate(70,19)" font-size="19" style="fill:#c7d7b5">Examples</text>
 </svg>

@@ -11329,9 +11329,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/the-magnificent-plumbing-department-of-artificial-intelligence.md": {
-			"bodyHash": "6ca770b39fcd487b76e555cbbb7f9efdf340e298598eac1802389b44ec73b981",
+			"bodyHash": "ee084e3bf1ae023da14c2b069b4068923a81bbac451ca02c9ad6b9da0abd4e56",
 			"hashVersion": 2,
-			"revisionHash": "e3044dd0b619c9a7b31f7de7199152d71f7050d8c0cc95e4d6fd5927898dd4ef",
+			"revisionHash": "aefdab63f86df4ed79bf967894794f32ffd541e0a26f3ed5bbb8044b448841bc",
 			"generatedTags": [
 				"MCP",
 				"Model Context Protocol",

@@ -715,24 +715,340 @@
 }
 
 #control-flow .thought-leaf[data-side='left'] > .thought-leaf__content > p:first-of-type {
+	max-width: 32ch;
 	font-family: var(--folio-display);
-	font-size: clamp(1.45rem, 2.4vw, 2.6rem);
-	font-weight: 680;
-	letter-spacing: -0.025em;
-	line-height: 1.04;
+	font-size: clamp(1.25rem, 4.5cqi, 1.75rem);
+	font-weight: 600;
+	letter-spacing: -0.018em;
+	line-height: 1.18;
+}
+
+#control-flow .thought-leaf[data-side='left'] > .thought-leaf__content > p:nth-of-type(2) {
+	max-width: 34ch;
+	margin-block: clamp(1.5rem, 5cqi, 2.5rem);
+	padding: 1.1rem 1.2rem;
+	border-top: 0.28rem solid var(--folio-lime);
+	background: var(--folio-coal);
+	color: var(--folio-paper);
+	font-family: var(--folio-display);
+	font-size: clamp(1.15rem, 4cqi, 1.5rem);
+	font-weight: 650;
+	letter-spacing: -0.018em;
+	line-height: 1.25;
+}
+
+#control-flow .thought-leaf[data-side='right'] .thought-leaf__content {
+	display: grid;
+	gap: clamp(1.1rem, 3cqi, 1.6rem);
+	align-content: start;
+}
+
+#control-flow .folio-call-card,
+#control-flow .folio-loop-card {
+	margin: 0;
+	padding: clamp(1.15rem, 4cqi, 1.75rem);
+	border: 1px solid var(--folio-coal);
+}
+
+#control-flow .folio-call-card {
+	background: rgba(167, 170, 164, 0.18);
+	color: var(--folio-coal);
+}
+
+#control-flow .folio-loop-card {
+	border-top: 0.32rem solid var(--folio-lime);
+	background: var(--folio-coal);
+	color: var(--folio-paper);
+}
+
+#control-flow .folio-card-label {
+	max-width: none;
+	margin: 0 0 1rem;
+	color: inherit;
+	font-family: var(--folio-label);
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.075em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+#control-flow .folio-call-card__flow {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: clamp(1.1rem, 4cqi, 2rem);
+	align-items: stretch;
+	margin: 0 0 1rem;
+}
+
+#control-flow .folio-call-card__flow > span {
+	position: relative;
+	display: grid;
+	gap: 0.25rem;
+	align-content: center;
+	min-width: 0;
+	min-height: 5.4rem;
+	padding: 0.75rem;
+	border: 1px solid var(--folio-coal);
+	background: var(--folio-paper);
+	text-align: center;
+}
+
+#control-flow .folio-call-card__flow > span:not(:last-child)::after {
+	position: absolute;
+	top: 50%;
+	right: -1.35rem;
+	z-index: 1;
+	color: var(--folio-orange);
+	content: '→';
+	font-family: var(--folio-label);
+	font-size: 1.15rem;
+	font-weight: 700;
+	line-height: 1;
+	transform: translateY(-50%);
+}
+
+#control-flow .folio-call-card__flow small {
+	font-family: var(--folio-label);
+	font-size: 0.66rem;
+	font-weight: 650;
+	letter-spacing: 0.07em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+#control-flow .folio-call-card__flow strong {
+	font-family: var(--folio-display);
+	font-size: clamp(1.35rem, 5cqi, 1.8rem);
+	font-style: italic;
+	font-weight: 550;
+	line-height: 1;
+}
+
+#control-flow .folio-call-card__operator {
+	background: var(--folio-coal) !important;
+	color: var(--folio-paper);
+}
+
+#control-flow .folio-call-card > p:last-child,
+#control-flow .folio-loop-card > p {
+	max-width: 46ch;
+	margin: 0;
+	font-family: var(--folio-reading);
+	font-size: clamp(1rem, 3.4cqi, 1.08rem);
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.5;
+}
+
+#control-flow .folio-loop-card__head {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	align-items: baseline;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	padding-bottom: 0.8rem;
+	border-bottom: 1px solid rgba(242, 239, 230, 0.28);
+}
+
+#control-flow .folio-loop-card__head .folio-card-label {
+	margin: 0;
+	color: var(--folio-lime);
+}
+
+#control-flow .folio-loop-card__formula {
+	margin: 0;
+	color: var(--folio-paper);
+	font-family: var(--folio-display);
+	font-size: clamp(1rem, 3.8cqi, 1.25rem);
+	font-weight: 520;
+	letter-spacing: -0.012em;
+	line-height: 1.2;
+}
+
+#control-flow .folio-loop-card__formula sub,
+#control-flow .folio-loop-card em sub {
+	font-size: 0.66em;
+}
+
+#control-flow .folio-loop-card__steps {
+	counter-reset: loop-step;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.55rem;
+	margin: 1.2rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+#control-flow .folio-loop-card__steps li {
+	counter-increment: loop-step;
+	position: relative;
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.65rem;
+	align-items: center;
+	min-width: 0;
+	margin: 0;
+	padding: 0.72rem;
+	border: 1px solid rgba(242, 239, 230, 0.3);
+	background: rgba(242, 239, 230, 0.07);
+	color: var(--folio-paper);
+	font-family: var(--folio-label);
+	font-size: clamp(0.78rem, 2.7cqi, 0.92rem);
+	font-weight: 650;
+	letter-spacing: 0.035em;
+	line-height: 1.18;
+	text-transform: uppercase;
+}
+
+#control-flow .folio-loop-card__steps li::before {
+	position: static;
+	width: auto;
+	height: auto;
+	background: none;
+	color: var(--folio-lime);
+	content: counter(loop-step, decimal-leading-zero);
+	font-family: var(--folio-label);
+	font-size: 0.65rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+#control-flow .folio-loop-card__steps li:not(:last-child)::after {
+	position: absolute;
+	bottom: -0.52rem;
+	left: 1.3rem;
+	z-index: 1;
+	color: var(--folio-lime);
+	content: '↓';
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+#control-flow .folio-loop-card__steps::after {
+	justify-self: end;
+	color: var(--folio-lime);
+	content: 'repeat ↺';
+	font-family: var(--folio-label);
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+#control-flow .thought-leaf[data-side='right'] > .thought-leaf__content > p:last-child {
+	margin: 0;
+	padding-top: 1.1rem;
+	border-top: 1px solid currentColor;
 }
 
 #digestive-tract .thought-leaf__content {
-	display: flex;
-	min-height: 100%;
-	flex-direction: column;
+	display: grid;
+	min-height: 0;
+	gap: clamp(1rem, 3cqi, 1.75rem);
+	align-content: start;
 }
 
-#digestive-tract .math-display,
-#digestive-tract .katex-display {
-	margin-block: auto 1.5rem;
-	border-color: var(--folio-lime);
-	font-size: clamp(0.7rem, 1.2vw, 1rem);
+#digestive-tract .thought-leaf__content > * {
+	margin-block: 0;
+}
+
+#digestive-tract .folio-pipeline {
+	counter-reset: pipe-step;
+	display: grid;
+	gap: 0;
+	margin: clamp(0.5rem, 2cqi, 1rem) 0;
+	padding: 0;
+	border-block: 1px solid var(--folio-lime);
+	list-style: none;
+	overflow: visible;
+}
+
+#digestive-tract .folio-pipeline li {
+	counter-increment: pipe-step;
+	position: relative;
+	display: grid;
+	grid-template-columns: 2.5rem minmax(0, 1fr);
+	gap: 0.75rem;
+	align-items: center;
+	margin: 0;
+	padding: 0.82rem 0;
+	border: 0;
+	border-top: 1px solid rgba(216, 244, 59, 0.28);
+	font-family: var(--folio-label);
+	font-size: clamp(1rem, 3.2cqi, 1.16rem);
+	font-weight: 600;
+	letter-spacing: -0.006em;
+	line-height: 1.25;
+}
+
+#digestive-tract .folio-pipeline li:first-child {
+	border-top: 0;
+}
+
+#digestive-tract .folio-pipeline li::before {
+	position: static;
+	width: auto;
+	height: auto;
+	background: none;
+	color: var(--folio-lime);
+	content: counter(pipe-step, decimal-leading-zero);
+	font-family: var(--folio-label);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	line-height: 1;
+}
+
+#digestive-tract .folio-pipeline li:not(:last-child)::after {
+	position: absolute;
+	bottom: -0.42rem;
+	left: 0.72rem;
+	z-index: 1;
+	padding-inline: 0.12rem;
+	background: var(--folio-coal);
+	color: var(--folio-lime);
+	content: '↓';
+	font-family: var(--folio-label);
+	font-size: 0.8rem;
+	line-height: 1;
+}
+
+#digestive-tract .folio-orbits {
+	display: grid;
+	gap: 1px;
+	margin: 0;
+	padding: 1px;
+	background: rgba(216, 244, 59, 0.35);
+}
+
+#digestive-tract .folio-orbits > div {
+	display: grid;
+	grid-template-columns: minmax(5rem, 0.42fr) minmax(0, 1fr);
+	gap: 1rem;
+	align-items: baseline;
+	padding: 1rem;
+	background: var(--folio-coal);
+}
+
+#digestive-tract .folio-orbits dt {
+	color: var(--folio-lime);
+	font-family: var(--folio-label);
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.065em;
+	text-transform: uppercase;
+}
+
+#digestive-tract .folio-orbits dd {
+	margin: 0;
+	font-family: var(--folio-reading);
+	font-size: clamp(1.05rem, 3.4cqi, 1.3rem);
+	font-weight: 500;
+	letter-spacing: -0.01em;
+	line-height: 1.32;
 }
 
 #field-chart .thought-leaf__content > p {
@@ -904,16 +1220,83 @@
 
 .folio-navigation {
 	margin: clamp(1rem, 3vw, 3rem) 0;
-	padding: clamp(1rem, 2vw, 2rem);
+	padding: 0;
 	border: 1px solid var(--folio-coal);
-	background: var(--folio-lime);
+	border-top: 0.35rem solid var(--folio-lime);
+	background: var(--folio-coal);
+	color: var(--folio-paper);
 }
 
-.folio-navigation a {
-	border-color: var(--folio-coal) !important;
+.folio-navigation .post-navigation {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent;
+}
+
+.folio-navigation .post-navigation__grid {
+	display: grid;
+	grid-template-columns: 1fr !important;
+	gap: 1px !important;
+	background: rgba(242, 239, 230, 0.35);
+}
+
+.folio-navigation .post-navigation__item {
+	min-height: clamp(9rem, 14vw, 11.5rem) !important;
+	padding: clamp(1.25rem, 2.5vw, 2.15rem) !important;
+	border: 0 !important;
 	border-radius: 0 !important;
-	background: transparent !important;
-	color: var(--folio-coal) !important;
+	background: var(--folio-coal) !important;
+	color: var(--folio-paper) !important;
+	box-shadow: none !important;
+	font-family: var(--folio-reading);
+}
+
+.folio-navigation .post-navigation__item--older {
+	grid-column: auto !important;
+	text-align: left !important;
+}
+
+.folio-navigation .post-navigation__item:hover {
+	background: #1b1d18 !important;
+}
+
+.folio-navigation .post-navigation__eyebrow {
+	color: var(--folio-lime) !important;
+	font-family: var(--folio-label);
+	font-size: 0.74rem;
+	font-weight: 650;
+	letter-spacing: 0.075em;
+	line-height: 1.25;
+}
+
+.folio-navigation .post-navigation__title {
+	max-width: 18ch;
+	margin-top: 0.75rem;
+	color: var(--folio-paper) !important;
+	font-family: var(--folio-display);
+	font-size: clamp(1.3rem, 4cqi, 1.8rem);
+	font-weight: 650;
+	letter-spacing: -0.018em;
+	line-height: 1.12;
+}
+
+.folio-navigation .post-navigation__item:hover .post-navigation__title {
+	color: var(--folio-paper) !important;
+	text-decoration: underline;
+	text-decoration-color: var(--folio-lime);
+	text-decoration-thickness: 0.12em;
+	text-underline-offset: 0.16em;
+}
+
+.folio-navigation .post-navigation__meta {
+	color: rgba(242, 239, 230, 0.68) !important;
+	font-family: var(--folio-label);
+	font-size: 0.78rem;
+	font-weight: 450;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0;
+	line-height: 1.4;
 }
 
 .folio-related {
@@ -1006,6 +1389,22 @@
 }
 
 @media (min-width: 44rem) and (orientation: landscape) {
+	.folio-navigation .post-navigation__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+	}
+
+	.folio-navigation .post-navigation__item--older {
+		text-align: right !important;
+	}
+
+	.folio-navigation .post-navigation__item--older:only-child {
+		grid-column: 2 !important;
+	}
+
+	.folio-navigation .post-navigation__item--older .post-navigation__title {
+		align-self: end;
+	}
+
 	.thought-spread__leaves {
 		position: relative;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1073,6 +1472,35 @@
 	}
 }
 
+@container (min-width: 32rem) {
+	#control-flow .folio-loop-card__steps {
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 1px;
+		padding: 1px;
+		background: rgba(242, 239, 230, 0.3);
+	}
+
+	#control-flow .folio-loop-card__steps li {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.35rem;
+		align-content: center;
+		min-height: 4.8rem;
+		padding: 0.7rem 0.45rem;
+		border: 0;
+		text-align: center;
+	}
+
+	#control-flow .folio-loop-card__steps li::after {
+		display: none;
+	}
+
+	#control-flow .folio-loop-card__steps::after {
+		grid-column: 1 / -1;
+		padding-top: 0.55rem;
+	}
+}
+
 @media (orientation: portrait) and (max-width: 59.999rem) {
 	.thought-spread__rail span:first-child {
 		overflow: hidden;
@@ -1107,6 +1535,23 @@
 		grid-template-columns: 1fr;
 		gap: 0.25rem;
 	}
+
+	#control-flow .folio-call-card__flow {
+		grid-template-columns: 1fr;
+	}
+
+	#control-flow .folio-call-card__flow > span:not(:last-child)::after {
+		top: auto;
+		right: 50%;
+		bottom: -1.15rem;
+		content: '↓';
+		transform: translateX(50%);
+	}
+
+	#digestive-tract .folio-orbits > div {
+		grid-template-columns: 1fr;
+		gap: 0.4rem;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1136,6 +1581,15 @@
 	.folio-related,
 	.folio-navigation {
 		border: 2px solid CanvasText;
+	}
+
+	#control-flow .folio-call-card,
+	#control-flow .folio-loop-card,
+	#control-flow .folio-call-card__flow > span,
+	#control-flow .folio-loop-card__steps li,
+	#digestive-tract .folio-orbits > div,
+	#digestive-tract .folio-pipeline li {
+		border: 1px solid CanvasText;
 	}
 }
 

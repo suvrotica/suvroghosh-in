@@ -194,33 +194,30 @@ The critical ingredient is not consciousness, personality, or an animated orb th
 
 <ThoughtLeaf side="right" label="Observe / decide / act">
 
-A normal model call resembles:
+<section class="folio-call-card" aria-labelledby="normal-call-heading">
+  <p class="folio-card-label" id="normal-call-heading">Normal model call</p>
+  <div class="folio-call-card__flow" aria-label="Input x passes through model f and produces output y">
+    <span><small>Input</small><strong>x</strong></span>
+    <span class="folio-call-card__operator"><small>Model</small><strong>f</strong></span>
+    <span><small>Output</small><strong>y</strong></span>
+  </div>
+  <p>Give it input <em>x</em>; receive output <em>y</em>.</p>
+</section>
 
-$$
-y = f(x)
-$$
-
-Give it input $x$; receive output $y$.
-
-An agentic loop resembles:
-
-$$
-s_{t+1} = T\left(s_t, a_t, o_t\right)
-$$
-
-At time $t$, the agent has state $s_t$, chooses action $a_t$, receives observation $o_t$, and updates its state. It can repeat:
-
-$$
-\text{observe}
-\rightarrow
-\text{decide}
-\rightarrow
-\text{act}
-\rightarrow
-\text{inspect}
-\rightarrow
-\text{revise}
-$$
+<section class="folio-loop-card" aria-labelledby="agentic-loop-heading">
+  <div class="folio-loop-card__head">
+    <p class="folio-card-label" id="agentic-loop-heading">Agentic loop</p>
+    <p class="folio-loop-card__formula"><span>s<sub>t+1</sub></span> = T(s<sub>t</sub>, a<sub>t</sub>, o<sub>t</sub>)</p>
+  </div>
+  <p>At time <em>t</em>, the agent has state <em>s<sub>t</sub></em>, chooses action <em>a<sub>t</sub></em>, receives observation <em>o<sub>t</sub></em>, and updates its state.</p>
+  <ol class="folio-loop-card__steps" aria-label="Repeating agentic loop">
+    <li>Observe</li>
+    <li>Decide</li>
+    <li>Act</li>
+    <li>Inspect</li>
+    <li>Revise</li>
+  </ol>
+</section>
 
 The mathematics is not the miraculous part. Thermostats have loops. Bacteria have loops. Calcutta taxi negotiations are adversarial multi-agent loops with hidden state, stochastic pricing, and no known convergence theorem.
 
@@ -276,17 +273,13 @@ An automation schedules or repeatedly triggers work. “Check every morning” i
 
 There, at last, is one possible executable digestive tract:
 
-$$
-\text{automation}
-\rightarrow
-\text{agent or host}
-\rightarrow
-\text{MCP client}
-\rightarrow
-\text{MCP server (tool call)}
-\rightarrow
-\text{external system}
-$$
+<ol class="folio-pipeline" aria-label="One possible executable chain">
+  <li>Automation</li>
+  <li>Agent or host</li>
+  <li>MCP client</li>
+  <li>MCP server (tool call)</li>
+  <li>External system</li>
+</ol>
 
 The external system is optional. An MCP server may itself possess the requested information or perform the computation. Around the tract sit instructions, packaging, policy, and approvals:
 
@@ -294,17 +287,16 @@ The external system is optional. An MCP server may itself possess the requested 
 
 <ThoughtLeaf side="right" label="Orbiting instructions">
 
-$$
-\text{skill}
-\rightarrow
-\text{guides the agent}
-$$
-
-$$
-\text{plugin}
-\rightarrow
-\text{installs or groups capabilities}
-$$
+<dl class="folio-orbits">
+  <div>
+    <dt>Skill</dt>
+    <dd>Guides the agent</dd>
+  </div>
+  <div>
+    <dt>Plugin</dt>
+    <dd>Installs or groups capabilities</dd>
+  </div>
+</dl>
 
 This is not a mandatory chain. An agent may use a built-in tool rather than an MCP tool. An automation may invoke a simple prompt rather than an agentic expedition. A skill may require no plugin. A plugin may be skills-only, MCP-only, or carry several supported components. An MCP server may be connected directly without a distributable plugin. The boxes are composable, not a Hindu genealogy in which every deity must marry another concept and produce six abstractions with elephant heads.
 
