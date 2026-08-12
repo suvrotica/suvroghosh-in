@@ -3870,6 +3870,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "monsoon-monotony-malignant-prostate-providence.jpg",
+			"src": "/images/monsoon-monotony-malignant-prostate-providence.jpg",
+			"bytes": 387552,
+			"width": 1012,
+			"height": 1440
+		},
+		{
 			"name": "monte-carlo-laboratory.svg",
 			"src": "/images/monte-carlo-laboratory.svg",
 			"bytes": 4642,

@@ -11384,6 +11384,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-12"
+		},
+		"src/lib/posts/monsoon-monotony-and-the-malignant-prostate-of-providence.md": {
+			"bodyHash": "4cec7e971c83214570ddf29bda147caf8b9cb55a061e3b0331d5fe6cbf8e69bb",
+			"hashVersion": 2,
+			"revisionHash": "941125146d3353506a3237095e7b25e1ae0c315149f443eaf4c1cb96e2709dc0",
+			"generatedTags": [
+				"Monsoon",
+				"Entropy",
+				"Prostate",
+				"Etymology",
+				"Aging",
+				"Calcutta",
+				"Meteorology",
+				"Thermodynamics",
+				"Cloudburst",
+				"Cumulonimbus"
+			],
+			"pinnedTags": [
+				"Monsoon",
+				"Entropy",
+				"Prostate",
+				"Etymology",
+				"Aging",
+				"Calcutta",
+				"Meteorology",
+				"Thermodynamics",
+				"Cloudburst",
+				"Cumulonimbus"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

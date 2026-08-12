@@ -8810,6 +8810,22 @@
       "sourceHash": "a86b5feca04fa3be7a4e8a7e330ea9c1f06e1e83fcef936e0d4ea6b9a7764d0f",
       "width": 1600
     },
+    "static/images/monsoon-monotony-malignant-prostate-providence.jpg": {
+      "format": "JPEG",
+      "height": 1440,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1440,
+      "originalWidth": 1012,
+      "outputBytes": 387552,
+      "outputHash": "81ac85cb2b9d58f58b293b5810d80e78a36e3c5a43af4253859ff572d14e39a3",
+      "psnrDb": 36.41,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 500338,
+      "sourceHash": "033a15e9d92822b3536f4680c5486fedd97f2d0f45d77c7851f9ae98caa80ae9",
+      "width": 1012
+    },
     "static/images/monte-carlo-laboratory.svg": {
       "format": "SVG",
       "height": 630,
