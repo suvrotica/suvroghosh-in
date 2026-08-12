@@ -11358,6 +11358,32 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-12"
+		},
+		"src/lib/posts/the-living-aperture.md": {
+			"bodyHash": "ba743f7c597770b41a0cae2e952ed1bebeab552a7a5cd1539e040980ae167a50",
+			"hashVersion": 2,
+			"revisionHash": "95de42b98a0defd37775fbdb63a39de5d35c2c5629c1707d22ce155938a626ff",
+			"generatedTags": [
+				"Gastropods",
+				"Mathematical Morphology",
+				"Logarithmic Spirals",
+				"Accretive Growth",
+				"Procedural Modelling",
+				"Determinism Diagnostics",
+				"Ornament Belongs",
+				"Scientific Scope",
+				"Presets Mean",
+				"Unfinished Subject"
+			],
+			"pinnedTags": [
+				"Gastropods",
+				"Mathematical Morphology",
+				"Logarithmic Spirals",
+				"Accretive Growth",
+				"Procedural Modelling"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-12"
 		}
 	},
 	"maxTags": 10

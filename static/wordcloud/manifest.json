@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T06:44:59.727526+00:00",
+  "generatedAt": "2026-08-12T13:36:17.826505+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10049,6 +10049,29 @@
         "Systems",
         "Health",
         "Representation"
+      ],
+      "wordCount": 130
+    },
+    "the-living-aperture": {
+      "generatedAt": "2026-08-12T13:36:17.711729+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-living-aperture.svg",
+      "source": "src/lib/posts/the-living-aperture.md",
+      "sourceHash": "bc211217b94b68478c48c28238faaea897c3ad6ad1c0a328b53f93a0c910305d",
+      "sourceModified": "2026-08-12T13:36:10.591637+00:00",
+      "topWords": [
+        "Aperture",
+        "Growth",
+        "Theta",
+        "Shell",
+        "Surface",
+        "Mathbf",
+        "Finite",
+        "Laboratory",
+        "Recipe",
+        "History",
+        "Centreline",
+        "Coiling"
       ],
       "wordCount": 130
     },
