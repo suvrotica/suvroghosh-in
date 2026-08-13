@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
-import { gamesCatalog } from './catalog';
+import { HEALTHCARE_IT_CROSSWORD_SLUG, gameBySlug, gamesCatalog } from './catalog';
 
 function frontmatterFor(slug: string): Record<string, unknown> {
 	const filename = path.join(process.cwd(), 'src', 'lib', 'posts', `${slug}.md`);
@@ -23,6 +23,13 @@ describe('games catalog integration', () => {
 			expect(metadata.description).toBe(game.description);
 			expect(metadata.thumbnail).toBe(game.socialCover);
 			expect(metadata.thumbnailAlt).toBe(game.coverAlt);
+			for (const imagePath of [game.cover, game.socialCover]) {
+				expect(imagePath.startsWith('/'), `${game.slug} uses a public image path`).toBe(true);
+				expect(
+					fs.existsSync(path.join(process.cwd(), 'static', imagePath.replace(/^\//, ''))),
+					`${game.slug} references ${imagePath}`
+				).toBe(true);
+			}
 		}
 	});
 
@@ -38,5 +45,26 @@ describe('games catalog integration', () => {
 			})
 			.sort();
 		expect(gamesCatalog.map((game) => game.slug).sort()).toEqual(publishedGameSlugs);
+	});
+
+	it('provides entry-specific card labels and metadata', () => {
+		for (const game of gamesCatalog) {
+			for (const field of ['kind', 'cardEyebrow', 'actionLabel', 'durationLabel'] as const) {
+				expect(game[field], `${game.slug}.${field}`).not.toBe('');
+			}
+			expect(game.keywords.length, `${game.slug}.keywords`).toBeGreaterThan(0);
+		}
+	});
+
+	it('keeps site navigation around the crossword without changing existing immersive games', () => {
+		const crossword = gameBySlug(HEALTHCARE_IT_CROSSWORD_SLUG);
+		expect(crossword).toMatchObject({
+			slug: 'healthcare-it-crossword-systems-rounds',
+			title: 'The Healthcare IT Crossword: Systems Rounds',
+			shell: 'site'
+		});
+
+		const existingGames = gamesCatalog.filter((game) => game.slug !== HEALTHCARE_IT_CROSSWORD_SLUG);
+		expect(existingGames.every((game) => game.shell === 'immersive')).toBe(true);
 	});
 });

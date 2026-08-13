@@ -6,7 +6,7 @@ group: 'Healthcare and technology'
 description: >-
   A route through clinical data, objectives, evaluation, workflow, safety, trials, interoperability, monitoring, and the distance between an impressive model and dependable care.
 date: '2026-07-26'
-dateModified: '2026-07-26'
+dateModified: '2026-08-13'
 primaryTag: 'healthcare-ai'
 sourceTags:
   - 'healthcare-ai'
@@ -23,6 +23,7 @@ includePaths:
   - '/blog/healthcare-it/latent-space-in-healthcare-data'
   - '/blog/healthcare-it/chatgpt-enters-healthcare-compliance-is-the-easy-part'
   - '/blog/healthcare-it/confounding-factors-healthcare-it-analytics'
+  - '/blog/games/healthcare-it-crossword-systems-rounds'
   - '/blog/ai-safety/premature-llm-deployment-clinical-trials-ai-safety'
   - '/blog/healthcare-ai/ai-health-insurance-surreptitious-risk-scoring'
 excludePaths: []
@@ -53,7 +54,8 @@ readingPaths:
       - '/blog/healthcare-ai/ai-health-insurance-surreptitious-risk-scoring'
 relatedResources:
   visualizations: []
-  games: []
+  games:
+    - '/blog/games/healthcare-it-crossword-systems-rounds'
   other: []
 glossary:
   - term: 'Clinical AI'

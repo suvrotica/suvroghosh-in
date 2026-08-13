@@ -23,14 +23,15 @@
 			<p
 				class="mb-2 text-xs font-black tracking-[0.2em] text-amber-800 uppercase dark:text-amber-300"
 			>
-				Games from an unreasonable city
+				Playable systems, patient teachers
 			</p>
 			<h1 class="m-0 max-w-3xl text-4xl leading-none font-black tracking-tight sm:text-6xl">
 				Games
 			</h1>
 			<p class="mt-5 mb-0 max-w-2xl text-left text-lg leading-relaxed opacity-80">
-				Original little systems of trouble: playable satire, procedural streets, and browser-sized
-				catastrophes. Built for a keyboard, a thumb, and a willingness to be blamed by a cow.
+				Original little systems of trouble and curiosity: procedural streets, impossible flights,
+				playable satire, and learning instruments that expect memory to need a little help. Built
+				for a keyboard or a thumb; a cow remains available but is no longer compulsory.
 			</p>
 		</div>
 	</header>

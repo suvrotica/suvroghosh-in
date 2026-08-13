@@ -6,7 +6,7 @@ group: 'Healthcare and technology'
 description: >-
   A practical route from hospital messages and FHIR resources to identity, terminology, provenance, implementation guides, data warehouses, and real health-system constraints.
 date: '2026-07-26'
-dateModified: '2026-07-26'
+dateModified: '2026-08-13'
 primaryTag: 'fhir'
 sourceTags:
   - 'fhir'
@@ -29,6 +29,7 @@ includePaths:
   - '/blog/healthcare-it/india-ehr-hie-ai-constraints'
   - '/blog/healthcare-it/questions_change_systems_uthscsa_va'
   - '/blog/healthcare-it/latent-space-in-healthcare-data'
+  - '/blog/games/healthcare-it-crossword-systems-rounds'
 excludePaths:
   - '/blog/mental-models/randomness-chaos-complexity-calcutta'
   - '/blog/public-health/sitala-manasa-public-health-superstition'
@@ -59,7 +60,8 @@ readingPaths:
       - '/blog/healthcare-it/latent-space-in-healthcare-data'
 relatedResources:
   visualizations: []
-  games: []
+  games:
+    - '/blog/games/healthcare-it-crossword-systems-rounds'
   other: []
 glossary:
   - term: 'HL7 v2'

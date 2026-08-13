@@ -8718,6 +8718,37 @@
       "sourceHash": "40d3ae478cf57738c3195f71b67cbd91f404a489b2e31d3564ab2de8cc4fa89b",
       "width": 1200
     },
+    "static/images/games/healthcare-it-crossword-systems-rounds-cover.webp": {
+      "format": "WEBP",
+      "height": 800,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 46350,
+      "outputHash": "1ac77a996d93bf2205e0e54ad16930447a5beadaf90634752fa62d79748d50d0",
+      "psnrDb": 37.45,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 123628,
+      "sourceHash": "324e450abf6c0075ceac572e480ccbd96bb5397d9f97e2bb11dd2a9bc7719d72",
+      "width": 1200
+    },
+    "static/images/games/healthcare-it-crossword-systems-rounds-social.png": {
+      "format": "PNG",
+      "height": 800,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 683247,
+      "outputHash": "810d7e8cf853ec2d444ef49cc3a11b7e3f5d1cb5c55ab25e2163f095f90d1d9d",
+      "resized": false,
+      "sourceBytes": 683247,
+      "sourceHash": "810d7e8cf853ec2d444ef49cc3a11b7e3f5d1cb5c55ab25e2163f095f90d1d9d",
+      "width": 1200
+    },
     "static/images/games/kagojer-dana-portrait.webp": {
       "format": "WEBP",
       "height": 1200,

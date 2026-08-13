@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Healthcare IT Crossword: Systems Rounds" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Healthcare IT Crossword: Systems Rounds</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(209,367)" font-size="118" style="fill:#d88988">Data</text>
+<text transform="translate(421,656)" font-size="92" style="fill:#9fc9c5">Crossword</text>
+<text transform="translate(545,398)" font-size="92" style="fill:#e0b879">Systems</text>
+<text transform="translate(437,540)" font-size="92" style="fill:#c49a6c">Game</text>
+<text transform="translate(5,617)" font-size="92" style="fill:#9fc9c5">Ask</text>
+<text transform="translate(716,164)" font-size="75" style="fill:#e0b879">Patient</text>
+<text transform="translate(913,289)" font-size="75" style="fill:#c49a6c">Rounds</text>
+<text transform="translate(102,163)" font-size="75" style="fill:#a9b7a3">Learning</text>
+<text transform="translate(821,95)" font-size="75" style="fill:#c49a6c">Healthcare</text>
+<text transform="translate(997,401)" font-size="75" style="fill:#a9b7a3">Work</text>
+<text transform="translate(896,511)" font-size="75" style="fill:#e0b879">Clinical</text>
+<text transform="translate(37,433)" font-size="75" style="fill:#c7d7b5">Round</text>
+<text transform="translate(915,703)" font-size="75" style="fill:#c7d7b5">Use</text>
+<text transform="translate(125,252)" font-size="75" style="fill:#8fb7d0">Clue</text>
+<text transform="translate(1028,583)" font-size="75" style="fill:#d9c89e">Mode</text>
+<text transform="translate(384,94)" font-size="75" style="fill:#9fc9c5">Letter</text>
+<text transform="translate(276,435)" font-size="75" style="fill:#a9b7a3">First</text>
+<text transform="translate(674,573)" font-size="75" style="fill:#d9c89e">Reveal</text>
+<text transform="translate(49,714)" font-size="75" style="fill:#8fb7d0">Review</text>
+<text transform="translate(534,283)" font-size="75" style="fill:#d6a79f">Settings</text>
+<text transform="translate(1109,338)" font-size="54" style="fill:#d5d2c2">Tutor</text>
+<text transform="translate(145,84)" font-size="54" style="fill:#8fb7d0">Compact</text>
+<text transform="translate(784,214)" font-size="54" style="fill:#b6c3dd">Resurfacing</text>
+<text transform="translate(35,492)" font-size="54" style="fill:#8fb7d0">Knowledge</text>
+<text transform="translate(975,650)" font-size="54" style="fill:#c49a6c">Choose</text>
+<text transform="translate(51,288) rotate(-90)" font-size="54" style="fill:#d9c89e">Topic</text>
+<text transform="translate(569,471)" font-size="53" style="fill:#d9c89e">Difficulty</text>
+<text transform="translate(463,202)" font-size="53" style="fill:#d88988">Session</text>
+<text transform="translate(188,631)" font-size="53" style="fill:#c7d7b5">Length</text>
+<text transform="translate(373,268)" font-size="53" style="fill:#b6c3dd">Clues</text>
+<text transform="translate(356,702)" font-size="53" style="fill:#9fc9c5">Interoperability</text>
+<text transform="translate(137,550)" font-size="45" style="fill:#9fc9c5">Terminology</text>
+<text transform="translate(882,327)" font-size="45" style="fill:#d6a79f">Research</text>
+<text transform="translate(474,140)" font-size="45" style="fill:#d9c89e">Analytics</text>
+<text transform="translate(59,36)" font-size="45" style="fill:#9fc9c5">Governance</text>
+<text transform="translate(977,438)" font-size="44" style="fill:#8fb7d0">Responsible</text>
+<text transform="translate(900,438)" font-size="44" style="fill:#8fb7d0">AI</text>
+<text transform="translate(560,37)" font-size="44" style="fill:#d9c89e">Forgetting</text>
+<text transform="translate(1038,132)" font-size="44" style="fill:#a9b7a3">Expected</text>
+<text transform="translate(487,317)" font-size="37" style="fill:#d6a79f">Inconveniently</text>
+<text transform="translate(648,99)" font-size="37" style="fill:#d6a79f">Reasons</text>
+<text transform="translate(1142,44)" font-size="37" style="fill:#d6a79f">Exists</text>
+<text transform="translate(91,324)" font-size="37" style="fill:#9fc9c5">Works</text>
+<text transform="translate(499,575)" font-size="37" style="fill:#a9b7a3">Physical</text>
+<text transform="translate(1068,706)" font-size="37" style="fill:#c7d7b5">Keyboard</text>
+<text transform="translate(1125,166)" font-size="37" style="fill:#c7d7b5">Touch</text>
+<text transform="translate(1163,617)" font-size="37" style="fill:#a9b7a3">Grid</text>
+<text transform="translate(103,277) rotate(-90)" font-size="37" style="fill:#d9c89e">Accessible</text>
+<text transform="translate(114,365)" font-size="37" style="fill:#b6c3dd">List</text>
+<text transform="translate(4,530)" font-size="37" style="fill:#b6c3dd">Coach</text>
+<text transform="translate(202,196)" font-size="37" style="fill:#b6c3dd">Quietly</text>
+<text transform="translate(890,33)" font-size="36" style="fill:#b6c3dd">Identifies</text>
+<text transform="translate(359,32)" font-size="36" style="fill:#d88988">Letters</text>
+<text transform="translate(4,106)" font-size="36" style="fill:#d5d2c2">Fit</text>
+<text transform="translate(331,468)" font-size="35" style="fill:#d9c89e">Traditional</text>
+<text transform="translate(33,473) rotate(-90)" font-size="35" style="fill:#9fc9c5">Waits</text>
+<text transform="translate(1139,235)" font-size="35" style="fill:#e0b879">Check</text>
+<text transform="translate(214,578)" font-size="35" style="fill:#d6a79f">Answer</text>
+<text transform="translate(720,514)" font-size="35" style="fill:#e0b879">Puzzle</text>
+<text transform="translate(56,654)" font-size="35" style="fill:#c7d7b5">Pencil</text>
+<text transform="translate(355,216)" font-size="35" style="fill:#b6c3dd">Marks</text>
+<text transform="translate(943,562)" font-size="35" style="fill:#e0b879">Keep</text>
+<text transform="translate(659,426)" font-size="32" style="fill:#d6a79f">Uncertain</text>
+<text transform="translate(674,74)" font-size="32" style="fill:#c49a6c">Answers</text>
+<text transform="translate(1142,194)" font-size="32" style="fill:#d5d2c2">Visibly</text>
+<text transform="translate(696,601)" font-size="31" style="fill:#d6a79f">Tentative</text>
+<text transform="translate(16,363)" font-size="31" style="fill:#c7d7b5">Hints</text>
+<text transform="translate(146,273)" font-size="22" style="fill:#b6c3dd">Progressively</text>
+<text transform="translate(1170,660)" font-size="22" style="fill:#9fc9c5">Explicit</text>
+<text transform="translate(562,595)" font-size="22" style="fill:#a9b7a3">Conceptual</text>
+<text transform="translate(647,337)" font-size="22" style="fill:#d9c89e">Nudge</text>
+<text transform="translate(340,579)" font-size="20" style="fill:#d88988">Plainlanguage</text>
+<text transform="translate(36,685) rotate(-90)" font-size="20" style="fill:#d9c89e">Bridge</text>
+<text transform="translate(1042,603)" font-size="20" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(211,597)" font-size="20" style="fill:#c49a6c">Contrast</text>
+<text transform="translate(965,233)" font-size="20" style="fill:#b6c3dd">Strategic</text>
+<text transform="translate(1194,375)" font-size="20" style="fill:#e0b879">Help</text>
+<text transform="translate(619,162)" font-size="20" style="fill:#c7d7b5">Finally</text>
+<text transform="translate(472,221)" font-size="20" style="fill:#d88988">Short</text>
+<text transform="translate(127,110)" font-size="20" style="fill:#c49a6c">Teaching</text>
+<text transform="translate(976,604)" font-size="20" style="fill:#d88988">Card</text>
+<text transform="translate(137,387)" font-size="20" style="fill:#9fc9c5">Treated</text>
+<text transform="translate(791,237)" font-size="20" style="fill:#d88988">Theatrical</text>
+<text transform="translate(337,295) rotate(-90)" font-size="20" style="fill:#b6c3dd">Failure</text>
+<text transform="translate(353,506)" font-size="20" style="fill:#9fc9c5">Concept</text>
+<text transform="translate(966,429) rotate(-90)" font-size="20" style="fill:#d5d2c2">Simply</text>
+<text transform="translate(45,556)" font-size="20" style="fill:#d88988">Joins</text>
+<text transform="translate(702,220)" font-size="20" style="fill:#d88988">Local</text>
+<text transform="translate(1264,574) rotate(-90)" font-size="20" style="fill:#8fb7d0">Queue</text>
+<text transform="translate(120,512)" font-size="20" style="fill:#d6a79f">Returns</text>
+<text transform="translate(515,396) rotate(-90)" font-size="20" style="fill:#e0b879">Later</text>
+<text transform="translate(325,650)" font-size="20" style="fill:#d6a79f">Progress</text>
+<text transform="translate(534,404) rotate(-90)" font-size="20" style="fill:#d88988">Privacy</text>
+<text transform="translate(548,221)" font-size="20" style="fill:#c7d7b5">Unfinished</text>
+<text transform="translate(947,114)" font-size="20" style="fill:#a9b7a3">Hint</text>
+<text transform="translate(402,289)" font-size="20" style="fill:#d9c89e">History</text>
+<text transform="translate(254,117)" font-size="20" style="fill:#c7d7b5">Remain</text>
+<text transform="translate(1186,279)" font-size="20" style="fill:#d6a79f">Browser</text>
+<text transform="translate(686,192)" font-size="20" style="fill:#d88988">Requires</text>
+<text transform="translate(373,387)" font-size="20" style="fill:#c7d7b5">Account</text>
+<text transform="translate(112,189)" font-size="20" style="fill:#d88988">Runtime</text>
+<text transform="translate(22,54)" font-size="20" style="fill:#d9c89e">Generation</text>
+<text transform="translate(1071,671)" font-size="20" style="fill:#e0b879">Remote</text>
+<text transform="translate(265,669)" font-size="20" style="fill:#e0b879">Learner</text>
+<text transform="translate(485,424)" font-size="20" style="fill:#b6c3dd">Profile</text>
+<text transform="translate(14,308)" font-size="20" style="fill:#c49a6c">Saved</text>
+<text transform="translate(1107,457)" font-size="20" style="fill:#c7d7b5">Exported</text>
+<text transform="translate(1179,254)" font-size="20" style="fill:#9fc9c5">Imported</text>
+<text transform="translate(943,532)" font-size="20" style="fill:#d5d2c2">Cleared</text>
+<text transform="translate(368,412) rotate(-90)" font-size="20" style="fill:#9fc9c5">Continue</text>
+<text transform="translate(1267,406) rotate(-90)" font-size="20" style="fill:#d6a79f">Compare</text>
+<text transform="translate(1063,345)" font-size="20" style="fill:#b6c3dd">HL7</text>
+<text transform="translate(1072,175)" font-size="20" style="fill:#a9b7a3">FHIR</text>
+<text transform="translate(831,429)" font-size="20" style="fill:#8fb7d0">Build</text>
+<text transform="translate(528,166)" font-size="20" style="fill:#8fb7d0">HIE</text>
+<text transform="translate(364,112)" font-size="18" style="fill:#d6a79f">Principles</text>
+<text transform="translate(1231,580) rotate(-90)" font-size="18" style="fill:#e0b879">Follow</text>
+<text transform="translate(8,330)" font-size="18" style="fill:#e0b879">MUMPS</text>
+<text transform="translate(14,712)" font-size="18" style="fill:#d5d2c2">SQL</text>
+<text transform="translate(329,487)" font-size="18" style="fill:#c49a6c">Provenance</text>
+<text transform="translate(73,457)" font-size="18" style="fill:#e0b879">Means</text>
+<text transform="translate(1167,634)" font-size="17" style="fill:#b6c3dd">Embeddings</text>
+<text transform="translate(956,641) rotate(-90)" font-size="17" style="fill:#9fc9c5">Teaches</text>
+<text transform="translate(795,324)" font-size="17" style="fill:#d5d2c2">Purposes</text>
+<text transform="translate(846,343)" font-size="17" style="fill:#a9b7a3">Mechanisms</text>
+<text transform="translate(1150,355)" font-size="17" style="fill:#9fc9c5">Boundaries</text>
+<text transform="translate(106,291)" font-size="17" style="fill:#d9c89e">Common</text>
+<text transform="translate(70,210) rotate(-90)" font-size="17" style="fill:#d88988">Confusions</text>
+<text transform="translate(668,540) rotate(-90)" font-size="17" style="fill:#e0b879">Arbitrary</text>
+<text transform="translate(1193,299)" font-size="17" style="fill:#b6c3dd">Billing</text>
+</svg>

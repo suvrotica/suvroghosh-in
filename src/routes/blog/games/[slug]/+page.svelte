@@ -3,7 +3,9 @@
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import CalcuttaFootpathGame from '$lib/components/games/calcutta-footpath/CalcuttaFootpathGame.svelte';
 	import KagojerDanaShell from '$lib/components/games/kagojer-dana/KagojerDanaShell.svelte';
-	import { KAGOJER_DANA_SLUG } from '$lib/games/catalog';
+	import CrosswordGame from '$lib/components/games/crossword/CrosswordGame.svelte';
+	import { healthcareItPack } from '$lib/games/crossword/content/packs/healthcare-it';
+	import { HEALTHCARE_IT_CROSSWORD_SLUG, KAGOJER_DANA_SLUG } from '$lib/games/catalog';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -13,6 +15,8 @@
 
 {#if data.game.slug === KAGOJER_DANA_SLUG}
 	<KagojerDanaShell game={data.game} />
+{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+	<CrosswordGame game={data.game} pack={healthcareItPack} />
 {:else}
 	<CalcuttaFootpathGame game={data.game} />
 {/if}
@@ -58,6 +62,20 @@
 						place keeps its local character even when the next district could never occupy the next
 						street in ordinary geography.
 					</p>
+				{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
+						Forgetting is expected. The crossings help it come back.
+					</h2>
+					<p class="mt-5 text-left text-lg leading-relaxed">
+						Choose a healthcare IT path, difficulty and round length, then solve a compact authored
+						grid about interoperability, clinical systems, terminology, research data, engineering,
+						analytics, governance and responsible AI.
+					</p>
+					<p class="mt-4 text-left leading-relaxed">
+						Hints move deliberately from a nudge to a teaching reveal. Completed answers unlock
+						concise Aha cards; concepts solved with substantial help return in later Review Rounds.
+						Every public grid is prevalidated—there is no runtime clue or puzzle generation.
+					</p>
 				{:else}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						One ordinary walk. No correct side.
@@ -78,7 +96,11 @@
 
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
 				<h2 class="m-0 text-lg font-black">
-					{data.game.slug === KAGOJER_DANA_SLUG ? 'How to fly' : 'How to walk'}
+					{data.game.slug === KAGOJER_DANA_SLUG
+						? 'How to fly'
+						: data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG
+							? 'How to solve'
+							: 'How to walk'}
 				</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
 					{#if data.game.slug === KAGOJER_DANA_SLUG}
@@ -88,6 +110,16 @@
 						<li>
 							<strong>Escape</strong> pauses and releases control; <strong>R</strong> asks for another
 							throw.
+						</li>
+					{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+						<li>
+							<strong>Type</strong> to fill a cell; arrow keys move spatially through the grid.
+						</li>
+						<li><strong>Space or Enter</strong> changes direction at a crossing.</li>
+						<li><strong>Backspace</strong> clears, then moves back; Delete clears in place.</li>
+						<li>
+							<strong>Solve as a list</strong> provides the same clues and answers without the visual
+							grid.
 						</li>
 					{:else}
 						<li><strong>Click or tap the visible road</strong> and the walker goes there.</li>
@@ -133,6 +165,46 @@
 						Geometry, materials, paper textures and the procedural sound design are original to this
 						game. The local credit manifest records every shipped source; no CDN or scraped
 						recording is used at runtime.
+					</p>
+				</section>
+			{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Coach, Traditional and hints</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Coach quietly marks letters that do not fit. Traditional waits until you request a
+						check. Every answer has six ordered hint stages, including strategic crossing letters
+						and a final show-and-teach step.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Accessibility and immersion</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						The numbered grid has roving keyboard focus, spoken cell context, visible focus and a
+						complete list-based solver. Full screen is optional and preserves an obvious exit; the
+						layout also respects reduced motion, high contrast, forced colours and safe areas.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Private, durable learning</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Unfinished letters, settings and mastery history stay on this device in local storage.
+						They are not uploaded. Settings let you export, import, reset a round, clear this pack,
+						or clear all crossword data.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Sources and further routes</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Teaching cards link to standards publishers and primary guidance, with freshness notes
+						and review dates. Continue through the
+						<a
+							class="font-bold underline underline-offset-4"
+							href={resolve('/topics/[slug]', { slug: 'hl7-fhir' })}>HL7 & FHIR topic route</a
+						>,
+						<a
+							class="font-bold underline underline-offset-4"
+							href={resolve('/topics/[slug]', { slug: 'healthcare-ai' })}>Healthcare AI route</a
+						>, or the related essays linked from each card.
 					</p>
 				</section>
 			{:else}
@@ -188,6 +260,15 @@
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required for the live paper-plane flight. The poster, controls and article
 			remain available without it.
+		</div>
+	</noscript>
+{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+	<noscript>
+		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
+			JavaScript is required for the interactive crossword grid, hints and on-device progress. The
+			game description, privacy explanation, source policy and related healthcare IT routes remain
+			available on this page without it. Forgetting is expected; no progress is sent from this
+			device.
 		</div>
 	</noscript>
 {:else}

@@ -1265,6 +1265,19 @@ html .article-breakout:fullscreen {
 	isolation: isolate;
 }
 
+/* A site-shell game owns the viewport only while its explicit immersive control
+   is active. The game restores this dataset on exit; normal game pages retain
+   the complete site chrome. */
+html[data-game-immersive='true'],
+html[data-game-immersive='true'] body {
+	overflow: hidden;
+	overscroll-behavior: none;
+}
+
+html[data-game-immersive='true'] .site-shell > :where(.skip-link, header, footer) {
+	display: none;
+}
+
 .site-shell > main,
 .site-shell > footer {
 	position: relative;

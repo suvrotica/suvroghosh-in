@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T15:53:03.240435+00:00",
+  "generatedAt": "2026-08-13T11:03:22.890935+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3862,6 +3862,29 @@
         "Workflow",
         "Health",
         "Wrong"
+      ],
+      "wordCount": 130
+    },
+    "healthcare-it-crossword-systems-rounds": {
+      "generatedAt": "2026-08-13T11:03:21.397836+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/healthcare-it-crossword-systems-rounds.svg",
+      "source": "src/lib/posts/healthcare-it-crossword-systems-rounds.md",
+      "sourceHash": "8ce076ef701dd547499dfaee110563e3d579d8bb1b34333235d9b90f731fc2d3",
+      "sourceModified": "2026-08-13T11:03:00.658374+00:00",
+      "topWords": [
+        "Data",
+        "Crossword",
+        "Systems",
+        "Game",
+        "Ask",
+        "Patient",
+        "Rounds",
+        "Learning",
+        "Healthcare",
+        "Work",
+        "Clinical",
+        "Round"
       ],
       "wordCount": 130
     },

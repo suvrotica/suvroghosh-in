@@ -22,7 +22,7 @@
 	);
 	let pageDescription = $derived(
 		data.categorySlug === 'games'
-			? 'Original browser games by Suvro Ghosh: playable satire, procedural trouble, and strange little systems built in Calcutta.'
+			? 'Original browser games by Suvro Ghosh: simulations, learning tools, procedural trouble, and strange little systems built for keyboard and touch.'
 			: `Essays by Suvro Ghosh on ${data.categoryDisplay}, with a focus on systems, evidence, and technology.`
 	);
 	let rangeStart = $derived((data.page - 1) * BLOG_PAGE_SIZE + 1);
@@ -34,17 +34,20 @@
 	description={pageDescription}
 	{canonicalUrl}
 	keywords={data.categorySlug === 'games'
-		? ['Games', 'Browser Games', 'Calcutta', 'Playable Satire', 'Suvro Ghosh']
+		? ['Games', 'Browser Games', 'Learning Games', 'Interactive Games', 'Suvro Ghosh']
 		: [data.categoryDisplay, 'Suvro Ghosh', 'Essays', 'Blog']}
 	schema={withSiteGraph([
 		collectionPageSchema({
 			name:
 				data.categorySlug === 'games'
-					? 'Games — Original Browser Games'
+					? 'Games — Original Browser Games and Learning Tools'
 					: `${data.categoryDisplay} Category Essays`,
 			description: pageDescription,
 			url: canonicalUrl,
-			about: data.categorySlug === 'games' ? 'Original browser games' : data.categoryDisplay
+			about:
+				data.categorySlug === 'games'
+					? 'Original browser games and learning tools'
+					: data.categoryDisplay
 		})
 	])}
 />

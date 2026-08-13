@@ -22,7 +22,7 @@ Author: Suvro Ghosh
 - [Topic index](https://www.suvroghosh.in/blog/topics): subject hubs and internal links.
 - [The Field Kit](https://www.suvroghosh.in/resources): reusable prompts, word lists, and compact reference material.
 - [Interactive visualizations](https://www.suvroghosh.in/blog/visualizations): browser-based science, mathematics, and computing laboratories.
-- [Games](https://www.suvroghosh.in/blog/games): original browser games, beginning with a full-screen Calcutta footpath survival game.
+- [Games](https://www.suvroghosh.in/blog/games): original browser games and learning tools, from full-screen Calcutta simulations to a progressively hinted healthcare IT crossword.
 
 ## Selected original technical writing
 
@@ -33,6 +33,7 @@ Author: Suvro Ghosh
 - [Clinical AI Needs A Shadow Architecture First](https://www.suvroghosh.in/blog/healthcare-it/shadow-architecture-clinical-ai)
 - [Vector Databases](https://www.suvroghosh.in/blog/healthcare-it/vector-databases)
 - [Why You Still Want to Read a Healthcare IT Blog in the Age of AI](https://www.suvroghosh.in/blog/healthcare-it/why-read-a-healthcare-it-blog-in-the-age-of-ai)
+- [The Healthcare IT Crossword: Systems Rounds](https://www.suvroghosh.in/blog/games/healthcare-it-crossword-systems-rounds)
 - [The Casino That Calculates: An Interactive Monte Carlo Laboratory](https://www.suvroghosh.in/blog/visualizations/monte-carlo-laboratory)
 - [Artificial Life Lab](https://www.suvroghosh.in/blog/visualizations/artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser)
 - [Calcutta Footpath Simulator](https://www.suvroghosh.in/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan)
