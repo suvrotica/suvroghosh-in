@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T15:15:47.288125+00:00",
+  "generatedAt": "2026-08-13T21:17:36.761339+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9796,6 +9796,29 @@
         "Fence",
         "National",
         "Middle"
+      ],
+      "wordCount": 130
+    },
+    "the-great-meme-reset-and-my-colon": {
+      "generatedAt": "2026-08-13T21:17:36.607898+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-great-meme-reset-and-my-colon.svg",
+      "source": "src/lib/posts/the-great-meme-reset-and-my-colon.md",
+      "sourceHash": "0ea22940d44cb26cdbb219f224e946b009ef814f171cdabd593ad205b1405518",
+      "sourceModified": "2026-08-13T21:16:53.817417+00:00",
+      "topWords": [
+        "Kind",
+        "Meme",
+        "Reset",
+        "Thinking",
+        "Great",
+        "Toilet",
+        "Internet",
+        "Sitting",
+        "Nothing",
+        "Meaning",
+        "Particularly",
+        "Never"
       ],
       "wordCount": 130
     },

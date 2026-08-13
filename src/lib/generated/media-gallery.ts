@@ -4143,6 +4143,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "the-great-meme-reset-and-my-colon.jpg",
+			"src": "/images/the-great-meme-reset-and-my-colon.jpg",
+			"bytes": 210581,
+			"width": 1280,
+			"height": 895
+		},
+		{
 			"name": "the-museum-of-invisible-weather.png",
 			"src": "/images/the-museum-of-invisible-weather.png",
 			"bytes": 87778,

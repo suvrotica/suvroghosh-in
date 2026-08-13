@@ -11480,6 +11480,30 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-great-meme-reset-and-my-colon.md": {
+			"bodyHash": "d88f1a97de8cd607ea1c850019f4e808ded6a119afb08779b5f3f3c5c729d921",
+			"hashVersion": 2,
+			"revisionHash": "caecba2693bd7b4b82652fef4434249d9af3670475286495ccb197f79b638f70",
+			"generatedTags": [
+				"Bipolar",
+				"Calcutta",
+				"Meme Culture",
+				"Etymology",
+				"Grotesque",
+				"Interior Monologue",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Bipolar",
+				"Calcutta",
+				"Meme Culture",
+				"Etymology",
+				"Grotesque",
+				"Interior Monologue",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
