@@ -9806,6 +9806,21 @@
       "sourceHash": "a5c25134ceee16c96ec3cdb3f9bbe6dc87c82a24fa9f1908371a3b39a9fa1716",
       "width": 1600
     },
+    "static/images/visualizations/random-matrix-shape/the-matrix-is-random.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 44313,
+      "outputHash": "d88e2ac9d7df55a3bcb447b284fcfcee710bf0e9bc7158f00476857d07b5071e",
+      "resized": false,
+      "sourceBytes": 44313,
+      "sourceHash": "d88e2ac9d7df55a3bcb447b284fcfcee710bf0e9bc7158f00476857d07b5071e",
+      "width": 1200
+    },
     "static/images/visualizations/reaction-diffusion/guided-observations.png": {
       "format": "PNG",
       "height": 828,

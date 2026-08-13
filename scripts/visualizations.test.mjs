@@ -806,3 +806,71 @@ test('The Living Aperture is a native, scoped, scientifically guarded visualizat
 	assert.ok(fs.existsSync(poster));
 	assert.ok(fs.statSync(poster).size < 750 * 1024);
 });
+
+test('the random-matrix laboratory is published, deterministic, worker-isolated, and scientifically sourced', () => {
+	const slug = 'the-matrix-is-random-why-does-it-have-a-shape';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const instrument = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'random-matrix',
+		'RandomMatrixInstrument.svelte'
+	);
+	const generator = read('src', 'lib', 'visualizations', 'random-matrix', 'matrix.ts');
+	const workerClient = read('src', 'lib', 'visualizations', 'random-matrix', 'worker', 'client.ts');
+	const poster = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'random-matrix-shape',
+		'the-matrix-is-random.png'
+	);
+
+	assert.match(post, /title: "The Matrix Is Random\. Why Does It Have a Shape\?"/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.match(post, /<RandomMatrixInstrument \/>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /What the picture can—and cannot—prove/);
+	for (const doi of [
+		'10.1214/10-AOP534',
+		'10.2307/1970079',
+		'10.1070/SM1967v001n04ABEH001994',
+		'10.1214/009117905000000233',
+		'10.1016/j.aim.2011.02.007',
+		'10.1137/S0036144595295284'
+	]) {
+		assert.ok(post.includes(doi), `missing random-matrix source DOI ${doi}`);
+	}
+
+	assert.match(registry, /'the-matrix-is-random':\s*\{/);
+	assert.match(registry, new RegExp(`href: '\\/blog\\/visualizations\\/${slug}'`));
+	assert.match(
+		landing,
+		/'the-matrix-is-random-why-does-it-have-a-shape':\s*visualizationSummaries\['the-matrix-is-random'\]\.subjects/
+	);
+	assert.match(instrument, /data-testid="random-matrix-instrument"/);
+	assert.match(instrument, /createRandomMatrixWorkerClient/);
+	assert.match(workerClient, /new Worker\(/);
+	assert.doesNotMatch(generator, /Math\.random\(/);
+	assert.ok(fs.existsSync(poster), 'missing deterministic random-matrix social image');
+	const header = fs.readFileSync(poster).subarray(0, 24);
+	assert.deepEqual(Array.from(header.subarray(0, 8)), [137, 80, 78, 71, 13, 10, 26, 10]);
+	assert.deepEqual(
+		{ width: header.readUInt32BE(16), height: header.readUInt32BE(20) },
+		{ width: 1200, height: 630 }
+	);
+	assert.ok(fs.statSync(poster).size < 750 * 1024, 'random-matrix social image exceeds 750 kB');
+});

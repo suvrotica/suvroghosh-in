@@ -11434,6 +11434,33 @@
 			"pinnedTags": ["Games", "Healthcare IT", "Crossword", "Learning Game", "FHIR", "HL7"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-13"
+		},
+		"src/lib/posts/the-matrix-is-random-why-does-it-have-a-shape.md": {
+			"bodyHash": "52aef652c0f6e08a782d3d1972ff6cbf40cc07adcacc92fa41e87cf30496a100",
+			"hashVersion": 2,
+			"revisionHash": "318f46d927e061955c56001e589aa020c84c463e3239170b20b2fd8e5d2e019e",
+			"generatedTags": [
+				"Random Matrices",
+				"Linear Algebra",
+				"Probability",
+				"Eigenvalues",
+				"Singular Values",
+				"Scientific Computing",
+				"Spectral Radius",
+				"Non-Normal Trap",
+				"Marchenko Pastur",
+				"Sorting Manufacture Structure"
+			],
+			"pinnedTags": [
+				"Random Matrices",
+				"Linear Algebra",
+				"Probability",
+				"Eigenvalues",
+				"Singular Values",
+				"Scientific Computing"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-13"
 		}
 	},
 	"maxTags": 10

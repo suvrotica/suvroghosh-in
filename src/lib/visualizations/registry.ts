@@ -75,6 +75,18 @@ export const visualizationSummaries = {
 			'The Living Aperture laboratory showing a cream-coloured variced shell between specimen drawers, a Three.js viewport, and mathematical sculpting controls',
 		href: '/blog/visualizations/the-living-aperture',
 		status: 'published'
+	},
+	'the-matrix-is-random': {
+		id: 'the-matrix-is-random',
+		title: 'The Matrix Is Random. Why Does It Have a Shape?',
+		description:
+			'Generate one seeded matrix, inspect its entries, spectrum and singular values, then watch circles, semicircles, ridges and signals emerge across an ensemble.',
+		subjects: ['Mathematics', 'Statistics', 'Scientific Computing'],
+		poster: '/images/visualizations/random-matrix-shape/the-matrix-is-random.png',
+		posterAlt:
+			'An interactive random-matrix instrument showing a blue-and-amber matrix heatmap, a circular cloud of complex eigenvalues and a descending singular-value profile',
+		href: '/blog/visualizations/the-matrix-is-random-why-does-it-have-a-shape',
+		status: 'published'
 	}
 } satisfies Record<string, VisualizationSummary>;
 

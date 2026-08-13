@@ -4325,6 +4325,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/random-matrix-shape/the-matrix-is-random.png",
+			"src": "/images/visualizations/random-matrix-shape/the-matrix-is-random.png",
+			"bytes": 44313,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/reaction-diffusion/guided-observations.png",
 			"src": "/images/visualizations/reaction-diffusion/guided-observations.png",
 			"bytes": 26728,
