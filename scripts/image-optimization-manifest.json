@@ -8826,6 +8826,22 @@
       "sourceHash": "90d0b01233f7b59277e7bc83739b3ca0ad47185aa82d1eea8c05c7705dafc72b",
       "width": 1200
     },
+    "static/images/holy-allergy.jpg": {
+      "format": "JPEG",
+      "height": 1440,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1440,
+      "originalWidth": 1012,
+      "outputBytes": 414422,
+      "outputHash": "1043696485b882b499f081a2dd93c4265ef9922589a5a34b68fe45533aab66a9",
+      "psnrDb": 37.7,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 507457,
+      "sourceHash": "d9207d40e2ac6312f2071857f3aa57c1cb26f3681f4e2da3acd3ae2f13dda475",
+      "width": 1012
+    },
     "static/images/lightning-atlas.png": {
       "format": "PNG",
       "height": 900,

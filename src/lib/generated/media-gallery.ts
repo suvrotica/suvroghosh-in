@@ -3429,6 +3429,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "holy-allergy.jpg",
+			"src": "/images/holy-allergy.jpg",
+			"bytes": 414422,
+			"width": 1012,
+			"height": 1440
+		},
+		{
 			"name": "IMG-20260422-WA0001.jpg",
 			"src": "/images/IMG-20260422-WA0001.jpg",
 			"bytes": 409248,
