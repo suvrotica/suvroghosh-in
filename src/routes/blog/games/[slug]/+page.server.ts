@@ -26,6 +26,7 @@ export const load: PageServerLoad = ({ params }) => {
 
 	const canonicalUrl = `${siteUrl}${gamePath(game.slug)}`;
 	const imageUrl = absoluteUrl(game.socialCover);
+	const keywords = [...new Set([...metadata.tags, ...game.keywords, 'Suvro Ghosh'])];
 	const breadcrumbs = breadcrumbSchema([
 		{ name: 'Home', url: siteUrl },
 		{ name: 'Games', url: `${siteUrl}/blog/games` },
@@ -42,13 +43,14 @@ export const load: PageServerLoad = ({ params }) => {
 		publisher: { '@id': personId },
 		isPartOf: { '@id': websiteId },
 		applicationCategory: 'Game',
+		genre: game.kind,
 		operatingSystem: 'Any modern web browser',
-		gamePlatform: ['Web browser', 'Desktop', 'Mobile', 'Tablet'],
+		gamePlatform: ['Web browser', ...game.compatibility],
 		playMode: 'SinglePlayer',
 		isAccessibleForFree: true,
 		inLanguage: 'en',
 		datePublished: metadata.date,
-		keywords: metadata.tags
+		keywords
 	};
 
 	return {
@@ -67,7 +69,7 @@ export const load: PageServerLoad = ({ params }) => {
 			modifiedTime: metadata.dateModified,
 			category: 'Games',
 			tags: metadata.tags,
-			keywords: [...metadata.tags, 'Calcutta game', 'Kolkata game', 'Suvro Ghosh'],
+			keywords,
 			schema: withSiteGraph([
 				blogPostingSchema({
 					...metadata,

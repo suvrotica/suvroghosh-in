@@ -3380,6 +3380,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "games/healthcare-it-crossword-systems-rounds-cover.webp",
+			"src": "/images/games/healthcare-it-crossword-systems-rounds-cover.webp",
+			"bytes": 46350,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "games/healthcare-it-crossword-systems-rounds-social.png",
+			"src": "/images/games/healthcare-it-crossword-systems-rounds-social.png",
+			"bytes": 683247,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "games/kagojer-dana-portrait.webp",
 			"src": "/images/games/kagojer-dana-portrait.webp",
 			"bytes": 29304,

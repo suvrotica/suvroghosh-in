@@ -13,6 +13,8 @@
 		"dev": "vite dev",
 		"calcutta-footpath:test": "vitest run src/lib/games/calcutta-footpath",
 		"calcutta-footpath:browser:test": "playwright test --config=playwright.calcutta-footpath.config.ts",
+		"crossword:test": "vitest run src/lib/games/crossword",
+		"crossword:browser:test": "playwright test --config=playwright.crossword.config.ts",
 		"kagojer-dana:test": "vitest run src/lib/games/kagojer-dana",
 		"kagojer-dana:browser:test": "playwright test --config=playwright.kagojer-dana.config.ts",
 		"kagojer-dana:assets": "node scripts/render-kagojer-dana-assets.mjs",

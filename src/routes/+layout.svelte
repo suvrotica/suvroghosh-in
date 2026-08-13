@@ -17,7 +17,10 @@
 	import { resolveRouteMotion, shouldUseViewTransition } from '$lib/motion/route-biomes';
 	import type { ResolvedMotion } from '$lib/motion/types';
 
-	type PageDataWithPostMetadata = {
+	type PageDataShellContext = {
+		game?: {
+			shell?: unknown;
+		};
 		metadata?: {
 			rawThoughtLayout?: unknown;
 		};
@@ -26,7 +29,7 @@
 	function resolveRawThoughtLayout(data: unknown) {
 		if (data == null || typeof data !== 'object') return undefined;
 
-		const metadata = (data as PageDataWithPostMetadata).metadata;
+		const metadata = (data as PageDataShellContext).metadata;
 		return typeof metadata?.rawThoughtLayout === 'string' ? metadata.rawThoughtLayout : undefined;
 	}
 
@@ -41,7 +44,14 @@
 	let studioShell = $derived(
 		page.url.pathname === '/notes/studio' || page.url.pathname.startsWith('/notes/studio/')
 	);
-	let gameShell = $derived(page.url.pathname.startsWith('/blog/games/'));
+	let immersiveGameShell = $derived(
+		page.url.pathname.startsWith('/blog/games/') &&
+			(page.data as PageDataShellContext).game?.shell === 'immersive'
+	);
+	let wideSiteGameShell = $derived(
+		page.url.pathname.startsWith('/blog/games/') &&
+			(page.data as PageDataShellContext).game?.shell === 'site'
+	);
 
 	function resolvedMotion(): ResolvedMotion {
 		const value = document.documentElement.dataset.motion;
@@ -121,7 +131,7 @@
 			{@render children()}
 		</main>
 	</div>
-{:else if gameShell}
+{:else if immersiveGameShell}
 	<div class="min-h-svh bg-[#171612]">
 		<a href="#main-content" class="skip-link">Skip to game and controls</a>
 		<main id="main-content" tabindex="-1" class="min-h-svh focus:outline-none">
@@ -151,9 +161,15 @@
 		<Header />
 
 		<main id="main-content" tabindex="-1" class="flex-1 scroll-smooth focus:outline-none">
-			<div class="container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
-				{@render children()}
-			</div>
+			{#if wideSiteGameShell}
+				<div class="w-full min-w-0">
+					{@render children()}
+				</div>
+			{:else}
+				<div class="container mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+					{@render children()}
+				</div>
+			{/if}
 		</main>
 
 		<Footer />

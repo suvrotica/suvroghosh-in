@@ -11414,6 +11414,26 @@
 				"Cumulonimbus"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/healthcare-it-crossword-systems-rounds.md": {
+			"bodyHash": "04d99c1dbdbb6e431d6050ed5b33c455ad85eb5ef893809f81625cd5627ff022",
+			"hashVersion": 2,
+			"revisionHash": "099102eb10ed9363aba491d4720677f83ffdfe0977addbd03f9b07c5acd3a2e0",
+			"generatedTags": [
+				"Games",
+				"Healthcare IT",
+				"Crossword",
+				"Learning Game",
+				"FHIR",
+				"HL7",
+				"Patient Tutor",
+				"Round Works",
+				"Game",
+				"Data"
+			],
+			"pinnedTags": ["Games", "Healthcare IT", "Crossword", "Learning Game", "FHIR", "HL7"],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-13"
 		}
 	},
 	"maxTags": 10

@@ -11,7 +11,7 @@
 	<a
 		href={resolve('/blog/games/[slug]', { slug: game.slug })}
 		class="block rounded-2xl no-underline outline-none focus-visible:ring-4 focus-visible:ring-amber-400 focus-visible:ring-offset-4 focus-visible:ring-offset-neutral-100 dark:focus-visible:ring-offset-neutral-950"
-		aria-label={`Play ${game.title}`}
+		aria-label={`${game.actionLabel}: ${game.title}`}
 	>
 		<div class="relative aspect-[3/2] overflow-hidden bg-[#3b2a22]">
 			<img
@@ -33,13 +33,13 @@
 			<span
 				class="absolute right-4 bottom-4 inline-flex min-h-11 items-center rounded-full bg-amber-300 px-5 py-2 text-sm font-black text-amber-950 shadow-xl transition-transform group-hover:-translate-y-0.5 motion-reduce:transform-none"
 			>
-				Play now <span class="ml-2" aria-hidden="true">→</span>
+				{game.actionLabel} <span class="ml-2" aria-hidden="true">→</span>
 			</span>
 		</div>
 
 		<div class="p-5 sm:p-7">
 			<p class="mb-2 text-xs font-bold tracking-[0.16em] text-amber-300 uppercase">
-				A municipal survival game
+				{game.cardEyebrow}
 			</p>
 			<h2 class="m-0 text-2xl leading-tight font-black text-[#fff7e8] sm:text-3xl">
 				{game.title}
@@ -54,7 +54,9 @@
 					<dd class="mt-1 text-[#f8edd7]">{game.inputs.join(' · ')}</dd>
 				</div>
 				<div class="rounded-lg border border-white/10 bg-white/5 p-3">
-					<dt class="text-xs font-bold tracking-wider text-amber-300 uppercase">One walk</dt>
+					<dt class="text-xs font-bold tracking-wider text-amber-300 uppercase">
+						{game.durationLabel}
+					</dt>
 					<dd class="mt-1 text-[#f8edd7]">{game.duration}</dd>
 				</div>
 				<div class="rounded-lg border border-white/10 bg-white/5 p-3">
