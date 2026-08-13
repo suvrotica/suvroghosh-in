@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "august-fifteenth.jpg",
+			"src": "/images/august-fifteenth.jpg",
+			"bytes": 135173,
+			"width": 960,
+			"height": 1280
+		},
+		{
 			"name": "belousov-zhabotinsky-laboratory.png",
 			"src": "/images/belousov-zhabotinsky-laboratory.png",
 			"bytes": 117009,
