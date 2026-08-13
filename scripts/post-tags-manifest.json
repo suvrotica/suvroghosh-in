@@ -11504,6 +11504,14 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/august-fifteenth.md": {
+			"bodyHash": "9ffac173989ed974f3b07554d88949cb9a9e0f741c921bfac85fbf71c7b97b65",
+			"hashVersion": 2,
+			"revisionHash": "cba0cff60c21b7567fc98d1475040d6452eb8ee444c661b47e3495ae6db3a458",
+			"generatedTags": ["Personal Essay", "Reflection", "SuvroGhosh"],
+			"pinnedTags": ["Personal Essay", "Reflection", "SuvroGhosh"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/august-fifteenth.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 960,
+      "outputBytes": 135173,
+      "outputHash": "84674f6827c6a5a38274c92b6359026894e412e35e23f2a8b7dc2df30eb619b1",
+      "psnrDb": 47.62,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 135173,
+      "sourceHash": "84674f6827c6a5a38274c92b6359026894e412e35e23f2a8b7dc2df30eb619b1",
+      "width": 960
+    },
     "static/images/belousov-zhabotinsky-laboratory.png": {
       "format": "PNG",
       "height": 630,
