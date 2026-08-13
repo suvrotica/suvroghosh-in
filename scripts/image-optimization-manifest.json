@@ -9410,6 +9410,22 @@
       "sourceHash": "e56d019a5fd8c894fb8cc14a701e53160ffd1ce6b052f9843e445c183f8eb225",
       "width": 1200
     },
+    "static/images/the-great-meme-reset-and-my-colon.jpg": {
+      "format": "JPEG",
+      "height": 895,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 895,
+      "originalWidth": 1280,
+      "outputBytes": 210581,
+      "outputHash": "9d989444aa839a2ab739547f192072aed90ab5a135f853a760390fcfd63b1559",
+      "psnrDb": 45.74,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 210581,
+      "sourceHash": "9d989444aa839a2ab739547f192072aed90ab5a135f853a760390fcfd63b1559",
+      "width": 1280
+    },
     "static/images/the-museum-of-invisible-weather.png": {
       "format": "PNG",
       "height": 900,
