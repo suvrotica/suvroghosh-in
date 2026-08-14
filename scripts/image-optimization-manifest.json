@@ -9536,6 +9536,21 @@
       "sourceHash": "c788cb2129471c0daea81196f73c0c768271eb3271c64f055a02309b1dfffeb5",
       "width": 1568
     },
+    "static/images/twerky-vishnu-from-vapor.jpg": {
+      "format": "JPEG",
+      "height": 895,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 895,
+      "originalWidth": 1280,
+      "outputBytes": 196912,
+      "outputHash": "7274dab2f0df99708288d87ea79efcf6fcfd9c5d3662ae8b295e6f984d638157",
+      "reason": "source retained unchanged by author request",
+      "resized": false,
+      "sourceBytes": 196912,
+      "sourceHash": "7274dab2f0df99708288d87ea79efcf6fcfd9c5d3662ae8b295e6f984d638157",
+      "width": 1280
+    },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",
       "height": 900,

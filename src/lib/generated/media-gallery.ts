@@ -4199,6 +4199,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1003
 		},
 		{
+			"name": "twerky-vishnu-from-vapor.jpg",
+			"src": "/images/twerky-vishnu-from-vapor.jpg",
+			"bytes": 196912,
+			"width": 1280,
+			"height": 895
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,

@@ -11542,6 +11542,36 @@
 				"Health Equity"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/twerky-vishnu-from-vapor.md": {
+			"bodyHash": "fc8d466ad9739244e9aa3d36131a906ba33a98a7422a75453f75db80bbe08eba",
+			"hashVersion": 2,
+			"revisionHash": "c711de7aace9f8f6be82530abc6906d882a27672d7ecddbe5fb4d4141ddb0b71",
+			"generatedTags": [
+				"Nationalism",
+				"Patriotism",
+				"Indian Politics",
+				"Jingoism",
+				"Generational Critique",
+				"Political Satire",
+				"Identity",
+				"Cultural Commentary",
+				"Calcutta",
+				"Kolkata"
+			],
+			"pinnedTags": [
+				"Nationalism",
+				"Patriotism",
+				"Indian Politics",
+				"Jingoism",
+				"Generational Critique",
+				"Political Satire",
+				"Identity",
+				"Cultural Commentary",
+				"Calcutta",
+				"Kolkata"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
