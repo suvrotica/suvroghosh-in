@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { formatNumber, type EnsembleSummaryView } from './types';
+	import {
+		formatNumber,
+		type EnsembleSummaryView,
+		type MatrixDistribution,
+		type UniversalityComparisonView
+	} from './types';
+	import UniversalityComparison from './UniversalityComparison.svelte';
 
 	let {
 		summary,
@@ -8,6 +14,8 @@
 		busy = false,
 		targetSamples,
 		speed,
+		universality,
+		primaryDistribution = 'rademacher',
 		onsamplecountchange = () => undefined,
 		onspeedchange = () => undefined,
 		onstart = () => undefined,
@@ -21,6 +29,8 @@
 		busy?: boolean;
 		targetSamples: number;
 		speed: number;
+		universality?: UniversalityComparisonView;
+		primaryDistribution?: MatrixDistribution;
 		onsamplecountchange?: (count: number) => void;
 		onspeedchange?: (speed: number) => void;
 		onstart?: () => void;
@@ -49,6 +59,9 @@
 				: 'an empirical distribution'
 	);
 	let plot = $derived(plotGeometry(chartWidth));
+	let primaryDistributionLabel = $derived(
+		primaryDistribution[0].toUpperCase() + primaryDistribution.slice(1)
+	);
 
 	function plotGeometry(width: number) {
 		const safeWidth = Math.max(280, Math.min(820, width));
@@ -134,8 +147,9 @@
 			<p class="eyebrow">LENS 06 · MANY MATRICES</p>
 			<h3 id="ensemble-laboratory-heading">Ensemble laboratory</h3>
 			<p>
-				Accumulate independent matrices with the same declared parameters. Calculation begins only
-				when you ask.
+				{universality
+					? 'Accumulate Gaussian, uniform and Rademacher matrices at the same sample indices with matched first two moments. Calculation begins only when you ask.'
+					: 'Accumulate independent matrices with the same declared parameters. Calculation begins only when you ask.'}
 			</p>
 		</div>
 		<div class="ensemble-readout"><span>Current evidence</span><strong>{stage}</strong></div>
@@ -149,7 +163,8 @@
 					data-testid="random-matrix-ensemble-start"
 					class="primary"
 					disabled={busy}
-					onclick={onstart}>Start accumulation</button
+					onclick={onstart}
+					>{universality ? 'Start matched comparison' : 'Start accumulation'}</button
 				>
 			{:else if paused}
 				<button
@@ -173,7 +188,7 @@
 			>
 		</div>
 		<label>
-			<span>Target matrices</span>
+			<span>{universality ? 'Target per distribution' : 'Target matrices'}</span>
 			<input
 				type="number"
 				min="1"
@@ -184,7 +199,11 @@
 			/>
 		</label>
 		<label class="speed-control">
-			<span><span>Accumulation pace</span><output>{speed.toFixed(0)} matrices/s</output></span>
+			<span
+				><span>Accumulation pace</span><output
+					>{speed.toFixed(0)} {universality ? 'matched indices/s' : 'matrices/s'}</output
+				></span
+			>
 			<input
 				type="range"
 				min="1"
@@ -225,10 +244,18 @@
 		</li>
 	</ol>
 
-	<div class="ensemble-grid">
+	{#if universality}
+		<UniversalityComparison comparison={universality} />
+	{/if}
+
+	<div class="ensemble-grid" class:secondary={universality !== undefined}>
 		<figure bind:this={plotHost} data-export-surface>
 			<div class="figure-heading">
-				<p class="figure-caption">Empirical distribution</p>
+				<p class="figure-caption">
+					{universality
+						? `${primaryDistributionLabel} detail · empirical distribution`
+						: 'Empirical distribution'}
+				</p>
 				<select bind:value={metric} aria-label="Ensemble metric">
 					<option value="spectral-radius">Spectral radius</option>
 					<option value="largest-singular">Largest singular value</option>
@@ -297,14 +324,17 @@
 
 	<div class="summary-grid">
 		<div>
-			<span>Matrices completed</span><strong data-testid="random-matrix-ensemble-completed"
+			<span>{universality ? 'Matched sample indices' : 'Matrices completed'}</span><strong
+				data-testid="random-matrix-ensemble-completed"
 				>{summary.completed.toLocaleString('en-GB')}</strong
 			>
 		</div>
 		<div>
-			<span>Eigenvalues retained for density</span><strong
-				>{summary.eigenvalues.length.toLocaleString('en-GB')}</strong
-			>
+			<span
+				>{universality
+					? `${primaryDistributionLabel} eigenvalues retained`
+					: 'Eigenvalues retained for density'}</span
+			><strong>{summary.eigenvalues.length.toLocaleString('en-GB')}</strong>
 		</div>
 		<div>
 			<span>Mean spectral radius</span><strong
@@ -323,9 +353,11 @@
 		</div>
 	</div>
 	<p class="finite-note">
-		A smoother empirical shape is evidence about this simulated ensemble, not proof of an asymptotic
-		theorem. Finite n, finite samples, the chosen distribution, and normalisation all remain visible
-		assumptions.
+		A smoother empirical shape is evidence about {universality
+			? 'these three simulated ensembles'
+			: 'this simulated ensemble'}, not proof of an asymptotic theorem. Finite n, finite samples,
+		{universality ? 'the compared distributions' : 'the chosen distribution'}, and normalisation all
+		remain visible assumptions.
 	</p>
 </section>
 
@@ -510,6 +542,11 @@
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.65rem;
 		margin-top: 0.65rem;
+	}
+	.ensemble-grid.secondary {
+		margin-top: 0.55rem;
+		border-top: 1px solid var(--rm-rule);
+		padding-top: 0.55rem;
 	}
 	.ensemble-grid figure {
 		min-width: 0;

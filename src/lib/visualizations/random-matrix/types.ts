@@ -1,3 +1,5 @@
+import type { RandomMatrixParameterFingerprint } from './fingerprint';
+
 export const RANDOM_MATRIX_MODEL_VERSION = 'random-matrix-v1' as const;
 
 export type MatrixPresetId =
@@ -63,6 +65,8 @@ export interface RandomMatrixState {
 
 export interface MatrixComputeInput {
 	state: RandomMatrixState;
+	/** Required and independently validated at the Worker boundary. */
+	parameterFingerprint?: RandomMatrixParameterFingerprint;
 	sampleIndex?: number;
 	rearrangement?: MatrixRearrangement;
 	reconstructionRank?: number;
@@ -141,6 +145,7 @@ export interface SameSpectrumComparison {
 
 export interface MatrixAnalysis {
 	modelVersion: typeof RANDOM_MATRIX_MODEL_VERSION;
+	parameterFingerprint: RandomMatrixParameterFingerprint;
 	state: RandomMatrixState;
 	sampleIndex: number;
 	rearrangement: MatrixRearrangement;
@@ -175,10 +180,14 @@ export interface NullMetricComparison {
 	/** Conservative two-sided Monte Carlo p-value with the finite-sample +1 correction. */
 	twoSidedPValue: number | null;
 	validSampleCount: number;
+	/** True when the null statistic is numerically invariant, so tail inference is meaningless. */
+	degenerate: boolean;
 }
 
 export interface NullEnsembleInput {
 	state: RandomMatrixState;
+	/** Required and independently validated at the Worker boundary. */
+	parameterFingerprint?: RandomMatrixParameterFingerprint;
 	sampleCount: number;
 	metrics?: readonly NullMetric[];
 	/** Sample currently displayed as the observed matrix. Defaults to zero. */
@@ -197,6 +206,7 @@ export interface NullEnsembleProgress {
 
 export interface NullEnsembleResult {
 	modelVersion: typeof RANDOM_MATRIX_MODEL_VERSION;
+	parameterFingerprint: RandomMatrixParameterFingerprint;
 	state: RandomMatrixState;
 	nullState: RandomMatrixState;
 	sampleCount: number;

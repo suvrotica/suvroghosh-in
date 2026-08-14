@@ -8,9 +8,10 @@ import type {
 } from '../types';
 import { RANDOM_MATRIX_MODEL_VERSION } from '../types';
 import { ALL_NULL_METRICS, MAX_MATRIX_DIMENSION } from '../constants';
+import { hasRandomMatrixParameterFingerprint } from '../fingerprint';
 import { normalizeRandomMatrixState } from '../url-state';
 
-export const RANDOM_MATRIX_WORKER_PROTOCOL_VERSION = 1 as const;
+export const RANDOM_MATRIX_WORKER_PROTOCOL_VERSION = 2 as const;
 
 const MATRIX_REARRANGEMENTS = [
 	'original',
@@ -130,6 +131,7 @@ function hasEnvelope(value: unknown): value is Envelope & Record<string, unknown
 function isMatrixComputeInput(value: unknown): value is MatrixComputeInput {
 	if (!isRecord(value) || !isState(value.state)) return false;
 	return (
+		hasRandomMatrixParameterFingerprint(value.parameterFingerprint, value.state) &&
 		(value.sampleIndex === undefined || isNonNegativeInteger(value.sampleIndex)) &&
 		(value.reconstructionRank === undefined || isNonNegativeInteger(value.reconstructionRank)) &&
 		(value.includeVectors === undefined || typeof value.includeVectors === 'boolean') &&
@@ -141,6 +143,7 @@ function isMatrixComputeInput(value: unknown): value is MatrixComputeInput {
 function isNullEnsembleInput(value: unknown): value is NullEnsembleInput {
 	if (!isRecord(value) || !isState(value.state)) return false;
 	return (
+		hasRandomMatrixParameterFingerprint(value.parameterFingerprint, value.state) &&
 		isPositiveInteger(value.sampleCount) &&
 		(value.observedSampleIndex === undefined || isNonNegativeInteger(value.observedSampleIndex)) &&
 		(value.selectedEigenIndex === undefined || isNonNegativeInteger(value.selectedEigenIndex)) &&
@@ -199,6 +202,7 @@ function isMatrixAnalysis(value: unknown): value is MatrixAnalysis {
 		columns > MAX_MATRIX_DIMENSION ||
 		!isFiniteFloat64Array(value.matrix, rows * columns) ||
 		!isState(value.state) ||
+		!hasRandomMatrixParameterFingerprint(value.parameterFingerprint, value.state) ||
 		value.state.dimension !== rows ||
 		columns !== rows ||
 		!isNonNegativeInteger(value.sampleIndex) ||
@@ -222,6 +226,7 @@ function isNullResult(value: unknown): value is NullEnsembleResult {
 		isRecord(value) &&
 		value.modelVersion === RANDOM_MATRIX_MODEL_VERSION &&
 		isState(value.state) &&
+		hasRandomMatrixParameterFingerprint(value.parameterFingerprint, value.state) &&
 		isState(value.nullState) &&
 		isPositiveInteger(value.sampleCount) &&
 		isNonNegativeInteger(value.observedSampleIndex) &&
@@ -353,7 +358,8 @@ function isMetricComparisons(value: unknown): boolean {
 			isNullableFinite(comparison.zScore) &&
 			isNullableBoundedFinite(comparison.percentile, 0, 100) &&
 			isNullableBoundedFinite(comparison.twoSidedPValue, 0, 1) &&
-			isNonNegativeInteger(comparison.validSampleCount)
+			isNonNegativeInteger(comparison.validSampleCount) &&
+			typeof comparison.degenerate === 'boolean'
 		);
 	});
 }

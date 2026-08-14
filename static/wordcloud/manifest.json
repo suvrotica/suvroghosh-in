@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T17:47:16.168896+00:00",
+  "generatedAt": "2026-08-14T20:00:51.171518+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10398,25 +10398,25 @@
       "wordCount": 130
     },
     "the-matrix-is-random-why-does-it-have-a-shape": {
-      "generatedAt": "2026-08-13T14:15:31.017243+00:00",
+      "generatedAt": "2026-08-14T20:00:51.052159+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-matrix-is-random-why-does-it-have-a-shape.svg",
       "source": "src/lib/posts/the-matrix-is-random-why-does-it-have-a-shape.md",
-      "sourceHash": "64a45c4fc2fa79b963021ba150d49c8631aa83f7c5e46bdb05973f7d0834d3a2",
-      "sourceModified": "2026-08-13T14:12:12.056796+00:00",
+      "sourceHash": "d3a1fdf5134553a596205f38a36e16b0f61eb73f40928e5d3c20f2617a92ea58",
+      "sourceModified": "2026-08-14T19:58:58.076882+00:00",
       "topWords": [
         "Matrix",
         "Eigenvalues",
         "Real",
         "Values",
-        "Mathbf",
         "Spectral",
-        "Matrices",
+        "Mathbf",
         "Singular",
+        "Matrices",
         "Null",
         "Entries",
         "Ensemble",
-        "Variance"
+        "Sample"
       ],
       "wordCount": 130
     },

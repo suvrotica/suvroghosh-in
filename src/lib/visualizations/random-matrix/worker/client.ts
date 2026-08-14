@@ -6,6 +6,10 @@ import type {
 	NullEnsembleResult
 } from '../types';
 import {
+	randomMatrixParameterFingerprint,
+	type RandomMatrixParameterFingerprint
+} from '../fingerprint';
+import {
 	RANDOM_MATRIX_WORKER_PROTOCOL_VERSION,
 	isRandomMatrixWorkerResponse,
 	type RandomMatrixWorkerRequest,
@@ -25,6 +29,7 @@ export type RandomMatrixProgressListener = (progress: NullEnsembleProgress) => v
 type AnalysisPending = {
 	type: 'analysis';
 	runId: number;
+	parameterFingerprint: RandomMatrixParameterFingerprint;
 	resolve: (result: MatrixAnalysis) => void;
 	reject: (reason: Error) => void;
 };
@@ -32,6 +37,7 @@ type AnalysisPending = {
 type NullPending = {
 	type: 'null';
 	runId: number;
+	parameterFingerprint: RandomMatrixParameterFingerprint;
 	resolve: (result: NullEnsembleResult) => void;
 	reject: (reason: Error) => void;
 };
@@ -77,11 +83,23 @@ export class RandomMatrixWorkerClient {
 	}
 
 	analyze(input: MatrixComputeInput): Promise<MatrixAnalysis> {
-		return this.start('analysis', { type: 'ANALYZE', input });
+		return this.start('analysis', {
+			type: 'ANALYZE',
+			input: {
+				...input,
+				parameterFingerprint: randomMatrixParameterFingerprint(input.state)
+			}
+		});
 	}
 
 	runNullEnsemble(input: NullEnsembleInput): Promise<NullEnsembleResult> {
-		return this.start('null', { type: 'RUN_NULL_ENSEMBLE', input });
+		return this.start('null', {
+			type: 'RUN_NULL_ENSEMBLE',
+			input: {
+				...input,
+				parameterFingerprint: randomMatrixParameterFingerprint(input.state)
+			}
+		});
 	}
 
 	subscribeProgress(listener: RandomMatrixProgressListener): () => void {
@@ -137,6 +155,10 @@ export class RandomMatrixWorkerClient {
 		this.nextRunId += 1;
 		this.activeRunId = this.nextRunId;
 		const runId = this.activeRunId;
+		const parameterFingerprint = body.input.parameterFingerprint;
+		if (!parameterFingerprint) {
+			return Promise.reject(new Error('The random-matrix Worker request lacks a fingerprint.'));
+		}
 		const worker = this.worker;
 		if (!worker) {
 			return Promise.reject(new Error('Web Workers are unavailable for random-matrix analysis.'));
@@ -146,6 +168,7 @@ export class RandomMatrixWorkerClient {
 			this.pending = {
 				type,
 				runId,
+				parameterFingerprint,
 				resolve: resolve as never,
 				reject
 			} as Pending;
@@ -188,6 +211,12 @@ export class RandomMatrixWorkerClient {
 				this.failProtocolMismatch('The Worker returned a matrix analysis for a null ensemble.');
 				return;
 			}
+			if (response.result.parameterFingerprint !== pending.parameterFingerprint) {
+				this.failProtocolMismatch(
+					'The Worker returned an analysis for different generative parameters.'
+				);
+				return;
+			}
 			this.pending = null;
 			pending.resolve(response.result);
 			return;
@@ -195,6 +224,12 @@ export class RandomMatrixWorkerClient {
 		if (response.type === 'NULL_ENSEMBLE_RESULT') {
 			if (pending.type !== 'null') {
 				this.failProtocolMismatch('The Worker returned a null ensemble for a matrix analysis.');
+				return;
+			}
+			if (response.result.parameterFingerprint !== pending.parameterFingerprint) {
+				this.failProtocolMismatch(
+					'The Worker returned a null ensemble for different generative parameters.'
+				);
 				return;
 			}
 			this.pending = null;

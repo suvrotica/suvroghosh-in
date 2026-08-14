@@ -2,133 +2,133 @@
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
 <text transform="translate(786,372)" font-size="118" style="fill:#c7d7b5">Matrix</text>
-<text transform="translate(393,222)" font-size="95" style="fill:#a9b7a3">Eigenvalues</text>
-<text transform="translate(594,484)" font-size="81" style="fill:#d88988">Real</text>
-<text transform="translate(188,603)" font-size="77" style="fill:#d9c89e">Values</text>
-<text transform="translate(204,708)" font-size="77" style="fill:#9fc9c5">Mathbf</text>
-<text transform="translate(369,509) rotate(-90)" font-size="75" style="fill:#c7d7b5">Spectral</text>
-<text transform="translate(639,99)" font-size="75" style="fill:#d5d2c2">Matrices</text>
-<text transform="translate(414,364)" font-size="73" style="fill:#d9c89e">Singular</text>
-<text transform="translate(128,228)" font-size="70" style="fill:#9fc9c5">Null</text>
-<text transform="translate(161,147)" font-size="67" style="fill:#9fc9c5">Entries</text>
-<text transform="translate(637,654)" font-size="64" style="fill:#e0b879">Ensemble</text>
-<text transform="translate(688,561)" font-size="64" style="fill:#b6c3dd">Variance</text>
-<text transform="translate(964,453)" font-size="61" style="fill:#c7d7b5">Random</text>
-<text transform="translate(983,655)" font-size="61" style="fill:#a9b7a3">Value</text>
-<text transform="translate(377,549)" font-size="58" style="fill:#b6c3dd">Colour</text>
-<text transform="translate(918,50)" font-size="58" style="fill:#8fb7d0">Noise</text>
-<text transform="translate(161,496) rotate(-90)" font-size="58" style="fill:#d5d2c2">Heatmap</text>
-<text transform="translate(92,70)" font-size="58" style="fill:#c49a6c">Numerical</text>
-<text transform="translate(1027,587)" font-size="58" style="fill:#d9c89e">Sample</text>
-<text transform="translate(614,274)" font-size="58" style="fill:#8fb7d0">Structure</text>
-<text transform="translate(387,298)" font-size="58" style="fill:#d9c89e">Model</text>
-<text transform="translate(789,450)" font-size="55" style="fill:#d5d2c2">Scale</text>
-<text transform="translate(426,49)" font-size="55" style="fill:#d6a79f">Change</text>
-<text transform="translate(83,543) rotate(-90)" font-size="55" style="fill:#a9b7a3">Lambda</text>
-<text transform="translate(934,700)" font-size="52" style="fill:#a9b7a3">Density</text>
-<text transform="translate(856,149)" font-size="52" style="fill:#d5d2c2">Covariance</text>
-<text transform="translate(791,499)" font-size="52" style="fill:#d5d2c2">Normalization</text>
-<text transform="translate(557,702)" font-size="52" style="fill:#c7d7b5">Instrument</text>
-<text transform="translate(255,401) rotate(-90)" font-size="52" style="fill:#c7d7b5">Entry</text>
-<text transform="translate(512,147)" font-size="52" style="fill:#9fc9c5">Changes</text>
-<text transform="translate(1243,280) rotate(-90)" font-size="52" style="fill:#c7d7b5">Every</text>
-<text transform="translate(89,327) rotate(-90)" font-size="49" style="fill:#d9c89e">Mathematics</text>
-<text transform="translate(125,644)" font-size="49" style="fill:#c49a6c">Different</text>
-<text transform="translate(1259,546) rotate(-90)" font-size="49" style="fill:#d88988">Spectrum</text>
-<text transform="translate(1012,92)" font-size="49" style="fill:#9fc9c5">Declared</text>
-<text transform="translate(391,464)" font-size="49" style="fill:#9fc9c5">Frac</text>
-<text transform="translate(481,646)" font-size="49" style="fill:#d9c89e">Sqrt</text>
-<text transform="translate(934,264)" font-size="40" style="fill:#c7d7b5">Independent</text>
-<text transform="translate(212,413) rotate(-90)" font-size="40" style="fill:#a9b7a3">Finite</text>
-<text transform="translate(290,527) rotate(-90)" font-size="40" style="fill:#8fb7d0">Eigenvalue</text>
-<text transform="translate(631,595)" font-size="40" style="fill:#d9c89e">Distribution</text>
-<text transform="translate(60,681)" font-size="40" style="fill:#d9c89e">Large</text>
-<text transform="translate(410,399)" font-size="40" style="fill:#c7d7b5">Sigma</text>
-<text transform="translate(738,143)" font-size="37" style="fill:#d5d2c2">Cloud</text>
-<text transform="translate(589,407)" font-size="37" style="fill:#e0b879">Symmetric</text>
-<text transform="translate(32,315) rotate(-90)" font-size="37" style="fill:#c49a6c">Probability</text>
-<text transform="translate(36,633) rotate(-90)" font-size="37" style="fill:#c49a6c">Transformation</text>
-<text transform="translate(1105,211)" font-size="37" style="fill:#a9b7a3">Row</text>
-<text transform="translate(431,94)" font-size="37" style="fill:#e0b879">Threshold</text>
-<text transform="translate(1100,33)" font-size="37" style="fill:#c7d7b5">Sorting</text>
-<text transform="translate(477,589)" font-size="37" style="fill:#c49a6c">Unit</text>
-<text transform="translate(992,530)" font-size="37" style="fill:#d88988">Becomes</text>
-<text transform="translate(648,40)" font-size="37" style="fill:#d6a79f">Selected</text>
-<text transform="translate(380,495)" font-size="37" style="fill:#a9b7a3">Nonnormal</text>
-<text transform="translate(663,307)" font-size="37" style="fill:#a9b7a3">Zero</text>
-<text transform="translate(44,584)" font-size="37" style="fill:#e0b879">Result</text>
-<text transform="translate(1265,708) rotate(-90)" font-size="37" style="fill:#a9b7a3">Wigner</text>
-<text transform="translate(955,404)" font-size="37" style="fill:#e0b879">Rank</text>
-<text transform="translate(95,525)" font-size="37" style="fill:#9fc9c5">Signal</text>
-<text transform="translate(1199,711) rotate(-90)" font-size="34" style="fill:#e0b879">Begins</text>
-<text transform="translate(120,252) rotate(-90)" font-size="34" style="fill:#d88988">Question</text>
-<text transform="translate(1121,402)" font-size="34" style="fill:#8fb7d0">Plane</text>
-<text transform="translate(1018,174)" font-size="27" style="fill:#d9c89e">Experiment</text>
-<text transform="translate(216,96)" font-size="27" style="fill:#d6a79f">Number</text>
-<text transform="translate(129,33)" font-size="27" style="fill:#e0b879">Circular</text>
-<text transform="translate(1155,55)" font-size="27" style="fill:#c49a6c">Mean</text>
-<text transform="translate(252,503) rotate(-90)" font-size="27" style="fill:#d88988">Rather</text>
-<text transform="translate(395,420) rotate(-90)" font-size="27" style="fill:#c7d7b5">Picture</text>
-<text transform="translate(16,715)" font-size="27" style="fill:#c7d7b5">Coordinates</text>
-<text transform="translate(569,550)" font-size="27" style="fill:#8fb7d0">Warning</text>
-<text transform="translate(585,505)" font-size="22" style="fill:#b6c3dd">Highdimensional</text>
-<text transform="translate(1080,113)" font-size="22" style="fill:#c7d7b5">Direction</text>
-<text transform="translate(792,394)" font-size="22" style="fill:#d88988">Behaviour</text>
-<text transform="translate(925,589)" font-size="22" style="fill:#a9b7a3">Complex</text>
-<text transform="translate(147,166)" font-size="22" style="fill:#c49a6c">Part</text>
-<text transform="translate(1195,295)" font-size="22" style="fill:#c49a6c">Annals</text>
-<text transform="translate(293,538)" font-size="22" style="fill:#d9c89e">Models</text>
-<text transform="translate(1028,230)" font-size="22" style="fill:#8fb7d0">Bulk</text>
-<text transform="translate(978,296)" font-size="22" style="fill:#c49a6c">Lvert</text>
-<text transform="translate(508,438)" font-size="22" style="fill:#d9c89e">Sparse</text>
-<text transform="translate(245,246)" font-size="20" style="fill:#a9b7a3">Times</text>
-<text transform="translate(456,430)" font-size="20" style="fill:#d6a79f">Disk</text>
-<text transform="translate(553,319)" font-size="20" style="fill:#a9b7a3">Line</text>
-<text transform="translate(897,518)" font-size="20" style="fill:#d5d2c2">Remain</text>
-<text transform="translate(329,91)" font-size="20" style="fill:#d88988">Seed</text>
-<text transform="translate(217,168)" font-size="20" style="fill:#d88988">Small</text>
-<text transform="translate(281,19)" font-size="20" style="fill:#9fc9c5">Rademacher</text>
-<text transform="translate(467,710)" font-size="20" style="fill:#a9b7a3">Remains</text>
-<text transform="translate(48,636)" font-size="20" style="fill:#b6c3dd">Order</text>
-<text transform="translate(129,91)" font-size="20" style="fill:#d88988">Smooth</text>
-<text transform="translate(1271,217) rotate(-90)" font-size="20" style="fill:#d5d2c2">Used</text>
-<text transform="translate(443,144)" font-size="20" style="fill:#c7d7b5">Data</text>
-<text transform="translate(825,23)" font-size="20" style="fill:#c49a6c">Visible</text>
-<text transform="translate(1072,550)" font-size="20" style="fill:#d6a79f">Vectors</text>
-<text transform="translate(148,249)" font-size="20" style="fill:#c7d7b5">Vector</text>
-<text transform="translate(540,607)" font-size="20" style="fill:#d5d2c2">Survive</text>
-<text transform="translate(397,639)" font-size="20" style="fill:#c7d7b5">Linear</text>
-<text transform="translate(109,448) rotate(-90)" font-size="20" style="fill:#c49a6c">Eigenvectors</text>
-<text transform="translate(443,123)" font-size="20" style="fill:#9fc9c5">Law</text>
-<text transform="translate(391,249)" font-size="20" style="fill:#d6a79f">Browser</text>
-<text transform="translate(42,602)" font-size="20" style="fill:#d9c89e">Randommatrix</text>
-<text transform="translate(855,296)" font-size="20" style="fill:#c7d7b5">Theory</text>
-<text transform="translate(1099,229)" font-size="20" style="fill:#d6a79f">Marchenko</text>
-<text transform="translate(671,429)" font-size="20" style="fill:#8fb7d0">Pastur</text>
-<text transform="translate(308,422) rotate(-90)" font-size="20" style="fill:#c49a6c">Decomposition</text>
-<text transform="translate(1273,124) rotate(-90)" font-size="20" style="fill:#d88988">Statistic</text>
-<text transform="translate(570,297)" font-size="20" style="fill:#9fc9c5">Unusual</text>
-<text transform="translate(481,678)" font-size="18" style="fill:#c7d7b5">Square</text>
-<text transform="translate(713,612)" font-size="18" style="fill:#8fb7d0">Numbers</text>
-<text transform="translate(182,470)" font-size="18" style="fill:#d6a79f">Grid</text>
-<text transform="translate(1045,204)" font-size="18" style="fill:#d88988">Face</text>
-<text transform="translate(1214,506) rotate(-90)" font-size="18" style="fill:#b6c3dd">Imaginary</text>
-<text transform="translate(875,696)" font-size="18" style="fill:#8fb7d0">Ridge</text>
-<text transform="translate(672,165)" font-size="18" style="fill:#d9c89e">Collective</text>
-<text transform="translate(524,421)" font-size="18" style="fill:#9fc9c5">Asks</text>
-<text transform="translate(501,165)" font-size="17" style="fill:#d9c89e">Deterministic</text>
-<text transform="translate(585,573)" font-size="17" style="fill:#d9c89e">Full</text>
-<text transform="translate(182,543)" font-size="17" style="fill:#8fb7d0">Gaussian</text>
-<text transform="translate(556,261)" font-size="17" style="fill:#d9c89e">Qquad</text>
-<text transform="translate(1227,699) rotate(-90)" font-size="17" style="fill:#d88988">Displayed</text>
-<text transform="translate(534,461)" font-size="17" style="fill:#e0b879">Radius</text>
-<text transform="translate(896,613)" font-size="17" style="fill:#9fc9c5">Useful</text>
-<text transform="translate(563,110)" font-size="17" style="fill:#a9b7a3">Column</text>
-<text transform="translate(1117,295)" font-size="17" style="fill:#d6a79f">Display</text>
-<text transform="translate(854,41)" font-size="17" style="fill:#d9c89e">Chosen</text>
-<text transform="translate(941,412) rotate(-90)" font-size="17" style="fill:#a9b7a3">Magnitude</text>
-<text transform="translate(474,512)" font-size="17" style="fill:#d5d2c2">Individual</text>
-<text transform="translate(1043,346)" font-size="17" style="fill:#9fc9c5">Keeps</text>
-<text transform="translate(779,378) rotate(-90)" font-size="17" style="fill:#d5d2c2">Orthogonal</text>
-<text transform="translate(1150,533)" font-size="17" style="fill:#9fc9c5">Basis</text>
+<text transform="translate(99,219)" font-size="94" style="fill:#a9b7a3">Eigenvalues</text>
+<text transform="translate(642,472)" font-size="81" style="fill:#d88988">Real</text>
+<text transform="translate(649,575)" font-size="77" style="fill:#d9c89e">Values</text>
+<text transform="translate(191,565)" font-size="77" style="fill:#d88988">Spectral</text>
+<text transform="translate(931,505)" font-size="77" style="fill:#e0b879">Mathbf</text>
+<text transform="translate(202,115)" font-size="72" style="fill:#9fc9c5">Singular</text>
+<text transform="translate(225,479)" font-size="72" style="fill:#e0b879">Matrices</text>
+<text transform="translate(809,108)" font-size="70" style="fill:#d9c89e">Null</text>
+<text transform="translate(868,265)" font-size="65" style="fill:#9fc9c5">Entries</text>
+<text transform="translate(791,714)" font-size="65" style="fill:#c7d7b5">Ensemble</text>
+<text transform="translate(29,698)" font-size="65" style="fill:#d88988">Sample</text>
+<text transform="translate(205,359)" font-size="65" style="fill:#e0b879">Variance</text>
+<text transform="translate(354,663)" font-size="62" style="fill:#a9b7a3">Random</text>
+<text transform="translate(937,593)" font-size="62" style="fill:#c49a6c">Value</text>
+<text transform="translate(48,302)" font-size="59" style="fill:#a9b7a3">Colour</text>
+<text transform="translate(324,409)" font-size="59" style="fill:#b6c3dd">Noise</text>
+<text transform="translate(21,50)" font-size="59" style="fill:#8fb7d0">Numerical</text>
+<text transform="translate(1265,371) rotate(-90)" font-size="59" style="fill:#d5d2c2">Scale</text>
+<text transform="translate(918,190)" font-size="59" style="fill:#c49a6c">Structure</text>
+<text transform="translate(981,646)" font-size="59" style="fill:#d9c89e">Model</text>
+<text transform="translate(560,137)" font-size="56" style="fill:#8fb7d0">Heatmap</text>
+<text transform="translate(715,619)" font-size="56" style="fill:#d9c89e">Entry</text>
+<text transform="translate(541,326)" font-size="56" style="fill:#d5d2c2">Every</text>
+<text transform="translate(646,47)" font-size="56" style="fill:#d6a79f">Lambda</text>
+<text transform="translate(635,675) rotate(-90)" font-size="53" style="fill:#a9b7a3">Covariance</text>
+<text transform="translate(375,277)" font-size="53" style="fill:#c49a6c">Normalization</text>
+<text transform="translate(914,49)" font-size="53" style="fill:#d5d2c2">Instrument</text>
+<text transform="translate(1082,98)" font-size="53" style="fill:#d5d2c2">Change</text>
+<text transform="translate(822,433)" font-size="50" style="fill:#c7d7b5">Mathematics</text>
+<text transform="translate(167,604) rotate(-90)" font-size="50" style="fill:#c7d7b5">Different</text>
+<text transform="translate(353,42)" font-size="50" style="fill:#9fc9c5">Density</text>
+<text transform="translate(1259,632) rotate(-90)" font-size="50" style="fill:#c7d7b5">Spectrum</text>
+<text transform="translate(122,553) rotate(-90)" font-size="50" style="fill:#d9c89e">Declared</text>
+<text transform="translate(777,525)" font-size="50" style="fill:#c49a6c">Frac</text>
+<text transform="translate(324,689) rotate(-90)" font-size="50" style="fill:#d88988">Sqrt</text>
+<text transform="translate(63,520) rotate(-90)" font-size="50" style="fill:#9fc9c5">Changes</text>
+<text transform="translate(328,705)" font-size="41" style="fill:#9fc9c5">Independent</text>
+<text transform="translate(1056,546)" font-size="41" style="fill:#d9c89e">Finite</text>
+<text transform="translate(36,303) rotate(-90)" font-size="41" style="fill:#b6c3dd">Eigenvalue</text>
+<text transform="translate(882,142)" font-size="41" style="fill:#8fb7d0">Distribution</text>
+<text transform="translate(1149,684)" font-size="41" style="fill:#d88988">Large</text>
+<text transform="translate(683,85)" font-size="41" style="fill:#d6a79f">Sigma</text>
+<text transform="translate(69,635)" font-size="38" style="fill:#d9c89e">Symmetric</text>
+<text transform="translate(333,599)" font-size="38" style="fill:#c7d7b5">Probability</text>
+<text transform="translate(648,663)" font-size="37" style="fill:#d5d2c2">Transformation</text>
+<text transform="translate(950,536)" font-size="37" style="fill:#d5d2c2">Row</text>
+<text transform="translate(718,190)" font-size="37" style="fill:#b6c3dd">Threshold</text>
+<text transform="translate(633,700)" font-size="37" style="fill:#c7d7b5">Sorting</text>
+<text transform="translate(704,408)" font-size="37" style="fill:#d6a79f">Unit</text>
+<text transform="translate(355,311)" font-size="37" style="fill:#e0b879">Selected</text>
+<text transform="translate(249,163)" font-size="37" style="fill:#d9c89e">Nonnormal</text>
+<text transform="translate(665,373)" font-size="37" style="fill:#c49a6c">Zero</text>
+<text transform="translate(37,591)" font-size="37" style="fill:#d88988">Law</text>
+<text transform="translate(39,122)" font-size="37" style="fill:#a9b7a3">Result</text>
+<text transform="translate(734,229)" font-size="37" style="fill:#d9c89e">Wigner</text>
+<text transform="translate(507,415)" font-size="37" style="fill:#8fb7d0">Rank</text>
+<text transform="translate(189,414)" font-size="37" style="fill:#a9b7a3">Signal</text>
+<text transform="translate(1122,584)" font-size="34" style="fill:#e0b879">Cloud</text>
+<text transform="translate(40,82)" font-size="33" style="fill:#a9b7a3">Question</text>
+<text transform="translate(980,83)" font-size="33" style="fill:#e0b879">Plane</text>
+<text transform="translate(1051,216)" font-size="29" style="fill:#9fc9c5">Experiment</text>
+<text transform="translate(26,667) rotate(-90)" font-size="29" style="fill:#e0b879">Number</text>
+<text transform="translate(590,555) rotate(-90)" font-size="29" style="fill:#d88988">Circular</text>
+<text transform="translate(519,355)" font-size="29" style="fill:#8fb7d0">Mean</text>
+<text transform="translate(95,232) rotate(-90)" font-size="29" style="fill:#d9c89e">Rather</text>
+<text transform="translate(548,91)" font-size="29" style="fill:#d6a79f">Picture</text>
+<text transform="translate(320,505)" font-size="29" style="fill:#e0b879">Coordinates</text>
+<text transform="translate(969,291)" font-size="29" style="fill:#c49a6c">Warning</text>
+<text transform="translate(26,450) rotate(-90)" font-size="29" style="fill:#d88988">Becomes</text>
+<text transform="translate(533,156)" font-size="20" style="fill:#c7d7b5">Highdimensional</text>
+<text transform="translate(99,237)" font-size="20" style="fill:#c49a6c">Direction</text>
+<text transform="translate(187,588) rotate(-90)" font-size="20" style="fill:#8fb7d0">Behaviour</text>
+<text transform="translate(266,284)" font-size="20" style="fill:#b6c3dd">Complex</text>
+<text transform="translate(343,69)" font-size="20" style="fill:#c7d7b5">Part</text>
+<text transform="translate(1137,713)" font-size="20" style="fill:#d88988">Annals</text>
+<text transform="translate(690,502)" font-size="20" style="fill:#9fc9c5">Models</text>
+<text transform="translate(1209,655)" font-size="20" style="fill:#e0b879">Bulk</text>
+<text transform="translate(707,338)" font-size="20" style="fill:#a9b7a3">Lvert</text>
+<text transform="translate(1104,392)" font-size="20" style="fill:#d5d2c2">Sparse</text>
+<text transform="translate(816,145)" font-size="18" style="fill:#e0b879">Times</text>
+<text transform="translate(919,522) rotate(-90)" font-size="18" style="fill:#e0b879">Begins</text>
+<text transform="translate(968,400)" font-size="18" style="fill:#d9c89e">Line</text>
+<text transform="translate(1144,249)" font-size="18" style="fill:#a9b7a3">Three</text>
+<text transform="translate(293,260)" font-size="18" style="fill:#d6a79f">Remain</text>
+<text transform="translate(1179,402)" font-size="18" style="fill:#a9b7a3">Seed</text>
+<text transform="translate(498,433)" font-size="18" style="fill:#d5d2c2">Small</text>
+<text transform="translate(198,497)" font-size="18" style="fill:#c7d7b5">Rademacher</text>
+<text transform="translate(1203,147)" font-size="18" style="fill:#d88988">Order</text>
+<text transform="translate(568,52)" font-size="18" style="fill:#9fc9c5">Smooth</text>
+<text transform="translate(852,475)" font-size="18" style="fill:#a9b7a3">Used</text>
+<text transform="translate(593,352)" font-size="18" style="fill:#b6c3dd">Data</text>
+<text transform="translate(444,133)" font-size="18" style="fill:#d88988">Visible</text>
+<text transform="translate(65,241) rotate(-90)" font-size="18" style="fill:#d5d2c2">Vectors</text>
+<text transform="translate(149,141)" font-size="18" style="fill:#c7d7b5">Vector</text>
+<text transform="translate(566,27)" font-size="18" style="fill:#c49a6c">Survive</text>
+<text transform="translate(848,390)" font-size="18" style="fill:#d6a79f">Linear</text>
+<text transform="translate(871,209)" font-size="18" style="fill:#c7d7b5">Eigenvectors</text>
+<text transform="translate(178,377)" font-size="18" style="fill:#d5d2c2">Comparison</text>
+<text transform="translate(437,241)" font-size="18" style="fill:#d6a79f">Browser</text>
+<text transform="translate(157,261)" font-size="18" style="fill:#d9c89e">Randommatrix</text>
+<text transform="translate(882,282)" font-size="18" style="fill:#d88988">Theory</text>
+<text transform="translate(20,554) rotate(-90)" font-size="18" style="fill:#d6a79f">Marchenko</text>
+<text transform="translate(598,237)" font-size="18" style="fill:#d9c89e">Pastur</text>
+<text transform="translate(1120,285)" font-size="14" style="fill:#c7d7b5">Decomposition</text>
+<text transform="translate(410,621)" font-size="14" style="fill:#c7d7b5">Statistic</text>
+<text transform="translate(142,328)" font-size="14" style="fill:#d88988">Unusual</text>
+<text transform="translate(1050,344)" font-size="12" style="fill:#8fb7d0">Square</text>
+<text transform="translate(256,301)" font-size="12" style="fill:#c49a6c">Numbers</text>
+<text transform="translate(901,94) rotate(-90)" font-size="12" style="fill:#d88988">Grid</text>
+<text transform="translate(825,277)" font-size="12" style="fill:#9fc9c5">Face</text>
+<text transform="translate(649,627)" font-size="12" style="fill:#c7d7b5">Imaginary</text>
+<text transform="translate(704,524)" font-size="12" style="fill:#8fb7d0">Disk</text>
+<text transform="translate(168,430)" font-size="12" style="fill:#d6a79f">Ridge</text>
+<text transform="translate(199,156)" font-size="12" style="fill:#d88988">Laws</text>
+<text transform="translate(252,131)" font-size="12" style="fill:#b6c3dd">Collective</text>
+<text transform="translate(87,564)" font-size="12" style="fill:#8fb7d0">Asks</text>
+<text transform="translate(888,619)" font-size="12" style="fill:#d9c89e">Deterministic</text>
+<text transform="translate(170,343)" font-size="12" style="fill:#9fc9c5">Full</text>
+<text transform="translate(1172,663) rotate(-90)" font-size="12" style="fill:#d9c89e">Gaussian</text>
+<text transform="translate(56,715)" font-size="12" style="fill:#d9c89e">Uniform</text>
+<text transform="translate(251,510)" font-size="12" style="fill:#8fb7d0">Qquad</text>
+<text transform="translate(279,234)" font-size="12" style="fill:#d9c89e">Displayed</text>
+<text transform="translate(1087,665)" font-size="12" style="fill:#c49a6c">Radius</text>
+<text transform="translate(834,448)" font-size="12" style="fill:#e0b879">Remains</text>
+<text transform="translate(645,515)" font-size="12" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(861,40)" font-size="12" style="fill:#a9b7a3">Column</text>
+<text transform="translate(1171,415)" font-size="12" style="fill:#d6a79f">Display</text>
+<text transform="translate(1107,14)" font-size="12" style="fill:#d9c89e">Chosen</text>
+<text transform="translate(1215,504) rotate(-90)" font-size="12" style="fill:#e0b879">Magnitude</text>
 </svg>

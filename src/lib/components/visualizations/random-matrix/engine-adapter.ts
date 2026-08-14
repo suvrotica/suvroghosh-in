@@ -117,7 +117,11 @@ export function toEngineRearrangement(value: MatrixRearrangement): EngineRearran
 function adaptTheory(theory: TheoryOverlay | null): TheoryView | undefined {
 	if (!theory) return undefined;
 	if (theory.kind === 'circle') {
-		return { kind: 'circular-law', radius: theory.radius, note: theory.label };
+		return {
+			kind: 'circular-law',
+			radius: theory.radius,
+			accessibilityLabel: theory.label
+		};
 	}
 	return {
 		kind: theory.kind,
@@ -127,7 +131,7 @@ function adaptTheory(theory: TheoryOverlay | null): TheoryView | undefined {
 		density: theory.density,
 		...(theory.gamma === undefined ? {} : { gamma: theory.gamma }),
 		...(theory.atomAtZero === undefined ? {} : { atomAtZero: theory.atomAtZero }),
-		note: theory.label
+		accessibilityLabel: theory.label
 	};
 }
 
@@ -219,7 +223,8 @@ export function adaptNullResult(result: NullEnsembleResult): NullEnsembleView {
 			...(comparison.zScore === null ? {} : { zScore: comparison.zScore }),
 			...(comparison.twoSidedPValue === null ? {} : { twoSidedPValue: comparison.twoSidedPValue }),
 			validSampleCount: comparison.validSampleCount,
-			description
+			description,
+			informative: !comparison.degenerate
 		};
 	});
 	return {

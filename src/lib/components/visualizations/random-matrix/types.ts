@@ -96,7 +96,8 @@ export interface TheoryView {
 	density?: Float64Array;
 	gamma?: number;
 	atomAtZero?: number;
-	note?: string;
+	/** Complete theory label for non-visible SVG descriptions. */
+	accessibilityLabel?: string;
 }
 
 export interface MetricComparisonView {
@@ -110,6 +111,7 @@ export interface MetricComparisonView {
 	twoSidedPValue?: number;
 	validSampleCount?: number;
 	description?: string;
+	informative?: boolean;
 }
 
 export interface NullEnsembleView {
@@ -131,6 +133,14 @@ export interface EnsembleSummaryView {
 	spectralRadii: readonly number[];
 	largestSingularValues: readonly number[];
 	eigenvalues: readonly EnsemblePointView[];
+}
+
+export interface UniversalityComparisonView {
+	dimension: number;
+	mean: number;
+	scale: number;
+	normalisation: MatrixNormalisation;
+	distributions: Readonly<Record<MatrixDistribution, EnsembleSummaryView>>;
 }
 
 export interface MatrixAnalysisView {

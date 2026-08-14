@@ -59,8 +59,38 @@ describe('structure statistics and empirical comparisons', () => {
 		expect(compareMetricToNull(2, [2, 2, 2])).toMatchObject({
 			stddev: 0,
 			zScore: null,
-			percentile: 50
+			percentile: null,
+			twoSidedPValue: null,
+			degenerate: true
 		});
+		expect(nullModelInterpretation(compareMetricToNull(2, [2, 2, 2]), 40)).toBe(
+			'not informative for this matrix class'
+		);
+	});
+
+	it('marks row/column correlation as uninformative for symmetric null matrices', async () => {
+		const result = await runNullEnsemble(
+			{
+				state: {
+					...DEFAULT_RANDOM_MATRIX_STATE,
+					dimension: 8,
+					symmetry: 'symmetric',
+					signalType: 'rank-one',
+					signalStrength: 1.2
+				},
+				sampleCount: 40,
+				metrics: ['rowColumnCorrelation']
+			},
+			{ yieldControl: () => Promise.resolve() }
+		);
+		const comparison = result.metrics.rowColumnCorrelation;
+		expect(comparison.observed).toBeCloseTo(1, 14);
+		expect(comparison.degenerate).toBe(true);
+		expect(comparison.percentile).toBeNull();
+		expect(comparison.twoSidedPValue).toBeNull();
+		expect(nullModelInterpretation(comparison, result.sampleCount)).toBe(
+			'not informative for this matrix class'
+		);
 	});
 
 	it('distinguishes planted two-block and smooth low-frequency structure', () => {

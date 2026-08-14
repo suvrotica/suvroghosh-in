@@ -4,7 +4,11 @@
 	import { onMount } from 'svelte';
 	import { Button } from '$lib/components/ui/button';
 	import * as Tabs from '$lib/components/ui/tabs';
-	import type { MatrixAnalysis, RandomMatrixWorkerClient } from '$lib/visualizations/random-matrix';
+	import type {
+		MatrixAnalysis,
+		RandomMatrixParameterFingerprint,
+		RandomMatrixWorkerClient
+	} from '$lib/visualizations/random-matrix';
 	import AccessibleMatrixSummary from './AccessibleMatrixSummary.svelte';
 	import DirectionMachine from './DirectionMachine.svelte';
 	import EnsembleLaboratory from './EnsembleLaboratory.svelte';
@@ -14,6 +18,11 @@
 	import SingularValueMountain from './SingularValueMountain.svelte';
 	import SpectralSky from './SpectralSky.svelte';
 	import StructureDetector from './StructureDetector.svelte';
+	import {
+		appendUniversalityAnalysis,
+		emptyUniversalityComparison,
+		UNIVERSALITY_DISTRIBUTIONS
+	} from './universality';
 	import {
 		adaptAnalysis,
 		adaptNullResult,
@@ -31,9 +40,11 @@
 		type ExperimentCard,
 		type ExperimentStateView,
 		type LensId,
+		type MatrixDistribution,
 		type MatrixRearrangement,
 		type NullEnsembleView,
-		type PresetId
+		type PresetId,
+		type UniversalityComparisonView
 	} from './types';
 
 	type EngineModule = typeof import('$lib/visualizations/random-matrix');
@@ -136,7 +147,7 @@
 		{
 			id: 'universality',
 			title: 'Change microscopic noise',
-			prompt: 'Swap Gaussian entries for matched Rademacher entries.',
+			prompt: 'Compare matched Gaussian, uniform and Rademacher clouds side by side.',
 			patch: {
 				preset: 'universality-test',
 				distribution: 'rademacher',
@@ -171,6 +182,7 @@
 	let nullPhase = $state<ComputePhase>('idle');
 	let nullResult: NullEnsembleView | undefined = $state();
 	let ensemble: EnsembleSummaryView = $state(emptyEnsembleSummary(INITIAL_STATE.sampleCount));
+	let universality: UniversalityComparisonView = $state(emptyUniversalityComparison(INITIAL_STATE));
 	let ensemblePaused = $state(true);
 	let ensembleBusy = $state(false);
 	let ensembleSpeed = $state(8);
@@ -196,6 +208,7 @@
 	let deviceLimitNotice = $state('');
 	let analysisGeneration = 0;
 	let ensembleGeneration = 0;
+	let ensembleParameterFingerprint: RandomMatrixParameterFingerprint | null = null;
 	let recomputeTimer = 0;
 	let ensembleTimer = 0;
 	let copyTimer = 0;
@@ -244,22 +257,10 @@
 		return true;
 	}
 
-	function calculationChanged(patch: Partial<ExperimentStateView>): boolean {
-		return [
-			'seed',
-			'preset',
-			'dimension',
-			'aspectRatio',
-			'distribution',
-			'mean',
-			'scale',
-			'normalisation',
-			'symmetry',
-			'sparsity',
-			'signalType',
-			'signalStrength',
-			'theory'
-		].some((key) => key in patch);
+	function parameterFingerprintFor(
+		state: ExperimentStateView
+	): RandomMatrixParameterFingerprint | null {
+		return engine?.randomMatrixParameterFingerprint(toEngineState(state)) ?? null;
 	}
 
 	function normaliseViewState(candidate: ExperimentStateView): ExperimentStateView {
@@ -284,22 +285,32 @@
 	}
 
 	function changeState(patch: Partial<ExperimentStateView>, commit = false): void {
+		const previousFingerprint = parameterFingerprintFor(experimentState);
+		const previousTheory = experimentState.theory;
 		let next = { ...experimentState, ...patch };
 		if (patch.preset && patch.preset !== experimentState.preset)
 			next = { ...stateWithPreset(patch.preset), ...patch };
 		next = normaliseViewState(next);
-		const needsCalculation = calculationChanged(patch);
+		const nextFingerprint = parameterFingerprintFor(next);
+		const generativeParametersChanged =
+			previousFingerprint !== null &&
+			nextFingerprint !== null &&
+			previousFingerprint !== nextFingerprint;
+		const needsCalculation = generativeParametersChanged || previousTheory !== next.theory;
 		const switchedToReconstruction = patch.lens === 'singular-values' && !view?.reconstruction;
 		experimentState = next;
+		if (generativeParametersChanged && nextFingerprint) {
+			clearNullResult();
+			invalidateEnsemble(nextFingerprint);
+		}
 		if (patch.sampleCount !== undefined) {
 			ensemble = { ...ensemble, requested: next.sampleCount };
+			universality = withUniversalityTarget(universality, next.sampleCount);
 			if (ensemble.completed > next.sampleCount) clearEnsemble(false);
 		}
 		activeExperiment = '';
 		syncUrl();
 		if (!needsCalculation && !switchedToReconstruction) return;
-		clearNullResult();
-		pauseEnsemble('Ensemble accumulation paused because the matrix model changed.', false);
 		if (commit) {
 			window.clearTimeout(recomputeTimer);
 			void runAnalysis();
@@ -350,7 +361,9 @@
 				progress = update.completed / Math.max(1, update.total);
 				status = `Null ensemble: ${update.completed} of ${update.total} matrices sampled.`;
 			});
+			ensembleParameterFingerprint = parameterFingerprintFor(experimentState);
 			ensemble = emptyEnsembleSummary(experimentState.sampleCount);
+			universality = emptyUniversalityComparison(experimentState);
 			initialized = true;
 			progress = 0.12;
 			await runAnalysis();
@@ -364,19 +377,27 @@
 	async function runAnalysis(): Promise<void> {
 		if (!engine || !analysisClient || destroyed) return;
 		const generation = ++analysisGeneration;
+		const requestedState = toEngineState(experimentState);
+		const requestedFingerprint = engine.randomMatrixParameterFingerprint(requestedState);
 		phase = 'working';
 		progress = 0.26;
 		status = `Computing ${PRESET_LABELS[experimentState.preset]} with seed ${experimentState.seed}.`;
 		numericalWarning = '';
 		try {
 			const result = await analysisClient.analyze({
-				state: toEngineState(experimentState),
+				state: requestedState,
 				sampleIndex: 0,
 				rearrangement: toEngineRearrangement(rearrangement),
 				...(lensNeedsReconstruction(experimentState.lens) ? { reconstructionRank } : {}),
 				includeVectors: false
 			});
-			if (destroyed || generation !== analysisGeneration) return;
+			if (
+				destroyed ||
+				generation !== analysisGeneration ||
+				result.parameterFingerprint !== requestedFingerprint ||
+				parameterFingerprintFor(experimentState) !== requestedFingerprint
+			)
+				return;
 			analysis = result;
 			selectedEigen = Math.max(
 				0,
@@ -437,18 +458,25 @@
 
 	async function runNullComparison(): Promise<void> {
 		if (!nullClient || !engine) return;
+		const requestedState = toEngineState(experimentState);
+		const requestedFingerprint = engine.randomMatrixParameterFingerprint(requestedState);
 		nullPhase = 'working';
 		progress = 0;
 		status = 'Sampling matrices under the declared null model.';
 		try {
 			const result = await nullClient.runNullEnsemble({
-				state: toEngineState(experimentState),
+				state: requestedState,
 				sampleCount: Math.min(200, Math.max(40, experimentState.sampleCount)),
 				observedSampleIndex: 0,
 				selectedEigenIndex: selectedEigen,
 				rearrangement: toEngineRearrangement(rearrangement)
 			});
-			if (destroyed) return;
+			if (
+				destroyed ||
+				result.parameterFingerprint !== requestedFingerprint ||
+				parameterFingerprintFor(experimentState) !== requestedFingerprint
+			)
+				return;
 			nullResult = adaptNullResult(result);
 			nullPhase = 'ready';
 			progress = 1;
@@ -460,7 +488,11 @@
 		}
 	}
 
-	function appendEnsembleResult(result: MatrixAnalysis): void {
+	function appendEnsembleResult(
+		result: MatrixAnalysis,
+		expectedFingerprint: RandomMatrixParameterFingerprint
+	): void {
+		if (result.parameterFingerprint !== expectedFingerprint) return;
 		const eigenvalues = ensemble.eigenvalues.slice();
 		if (result.eigen) {
 			for (let index = 0; index < result.eigen.real.length; index += 1) {
@@ -485,10 +517,17 @@
 	}
 
 	async function accumulateEnsemble(generation: number): Promise<void> {
-		if (!ensembleClient || ensemblePaused || destroyed || generation !== ensembleGeneration) return;
+		if (
+			!engine ||
+			!ensembleClient ||
+			ensemblePaused ||
+			destroyed ||
+			generation !== ensembleGeneration
+		)
+			return;
 		if (ensemble.completed >= experimentState.sampleCount) {
 			ensemblePaused = true;
-			status = `Ensemble complete: ${ensemble.completed} deterministic matrices accumulated.`;
+			status = ensembleCompletionStatus();
 			return;
 		}
 		if (document.hidden || offscreen) {
@@ -497,20 +536,75 @@
 		}
 		ensembleBusy = true;
 		const sampleIndex = ensemble.completed;
-		status = `Ensemble sample ${sampleIndex + 1} of ${experimentState.sampleCount} is being computed.`;
+		const requestedState = toEngineState({ ...experimentState, mode: 'ensemble' });
+		const requestedFingerprint = engine.randomMatrixParameterFingerprint(requestedState);
+		if (ensembleParameterFingerprint !== requestedFingerprint) {
+			invalidateEnsemble(requestedFingerprint);
+			status = 'Ensemble reset because its generative parameters changed.';
+			return;
+		}
+		const comparesUniversality = requestedState.preset === 'universality-test';
+		status = comparesUniversality
+			? `Matched universality sample ${sampleIndex + 1} of ${experimentState.sampleCount} is being computed for three entry laws.`
+			: `Ensemble sample ${sampleIndex + 1} of ${experimentState.sampleCount} is being computed.`;
 		try {
-			const result = await ensembleClient.analyze({
-				state: toEngineState({ ...experimentState, mode: 'ensemble' }),
-				sampleIndex,
-				rearrangement: 'original',
-				includeVectors: false
-			});
-			if (destroyed || generation !== ensembleGeneration || ensemblePaused) return;
-			appendEnsembleResult(result);
+			if (comparesUniversality) {
+				const matchedResults: Array<{
+					distribution: MatrixDistribution;
+					result: MatrixAnalysis;
+				}> = [];
+				for (const { id: distribution } of UNIVERSALITY_DISTRIBUTIONS) {
+					const distributionState = { ...requestedState, distribution };
+					const distributionFingerprint =
+						engine.randomMatrixParameterFingerprint(distributionState);
+					const result = await ensembleClient.analyze({
+						state: distributionState,
+						sampleIndex,
+						rearrangement: 'original',
+						includeVectors: false
+					});
+					if (destroyed || generation !== ensembleGeneration || ensemblePaused) return;
+					if (
+						result.parameterFingerprint !== distributionFingerprint ||
+						ensembleParameterFingerprint !== requestedFingerprint ||
+						parameterFingerprintFor(experimentState) !== requestedFingerprint
+					) {
+						discardStaleEnsembleResult();
+						return;
+					}
+					matchedResults.push({ distribution, result });
+				}
+
+				// Commit only after the complete matched triplet succeeds. A cancellation
+				// halfway through never leaves the panels at different sample indices.
+				let nextUniversality = universality;
+				for (const { distribution, result } of matchedResults) {
+					nextUniversality = appendUniversalityAnalysis(nextUniversality, distribution, result);
+				}
+				universality = nextUniversality;
+				ensemble = nextUniversality.distributions[requestedState.distribution];
+			} else {
+				const result = await ensembleClient.analyze({
+					state: requestedState,
+					sampleIndex,
+					rearrangement: 'original',
+					includeVectors: false
+				});
+				if (destroyed || generation !== ensembleGeneration || ensemblePaused) return;
+				if (
+					result.parameterFingerprint !== requestedFingerprint ||
+					ensembleParameterFingerprint !== requestedFingerprint ||
+					parameterFingerprintFor(experimentState) !== requestedFingerprint
+				) {
+					discardStaleEnsembleResult();
+					return;
+				}
+				appendEnsembleResult(result, requestedFingerprint);
+			}
 			ensembleBusy = false;
 			if (ensemble.completed >= experimentState.sampleCount) {
 				ensemblePaused = true;
-				status = `Ensemble complete: ${ensemble.completed} deterministic matrices accumulated.`;
+				status = ensembleCompletionStatus();
 				return;
 			}
 			const delay = reducedMotion ? 120 : Math.max(16, 1_000 / ensembleSpeed);
@@ -525,6 +619,11 @@
 
 	function startEnsemble(): void {
 		if (!initialized) return;
+		const currentFingerprint = parameterFingerprintFor(experimentState);
+		if (!currentFingerprint) return;
+		if (ensembleParameterFingerprint !== currentFingerprint) {
+			invalidateEnsemble(currentFingerprint);
+		}
 		if (ensemble.completed >= experimentState.sampleCount) clearEnsemble(false);
 		experimentState = normaliseViewState({ ...experimentState, mode: 'ensemble' });
 		ensemblePaused = false;
@@ -551,9 +650,45 @@
 
 	function clearEnsemble(announce = true): void {
 		pauseEnsemble('', false);
+		ensembleParameterFingerprint = parameterFingerprintFor(experimentState);
 		ensemble = emptyEnsembleSummary(experimentState.sampleCount);
+		universality = emptyUniversalityComparison(experimentState);
 		if (announce)
 			status = 'Ensemble cleared. The same seed will reproduce the same indexed sequence.';
+	}
+
+	function invalidateEnsemble(parameterFingerprint: RandomMatrixParameterFingerprint): void {
+		pauseEnsemble('', false);
+		ensembleParameterFingerprint = parameterFingerprint;
+		ensemble = emptyEnsembleSummary(experimentState.sampleCount);
+		universality = emptyUniversalityComparison(experimentState);
+	}
+
+	function discardStaleEnsembleResult(): void {
+		const currentFingerprint = parameterFingerprintFor(experimentState);
+		if (currentFingerprint) invalidateEnsemble(currentFingerprint);
+		status = 'A stale ensemble result was discarded after the parameters changed.';
+	}
+
+	function withUniversalityTarget(
+		comparison: UniversalityComparisonView,
+		requested: number
+	): UniversalityComparisonView {
+		return {
+			...comparison,
+			distributions: {
+				gaussian: { ...comparison.distributions.gaussian, requested },
+				uniform: { ...comparison.distributions.uniform, requested },
+				rademacher: { ...comparison.distributions.rademacher, requested }
+			}
+		};
+	}
+
+	function ensembleCompletionStatus(): string {
+		if (experimentState.preset === 'universality-test') {
+			return `Matched comparison complete: ${ensemble.completed} sample indices per entry law (${ensemble.completed * UNIVERSALITY_DISTRIBUTIONS.length} matrices total).`;
+		}
+		return `Ensemble complete: ${ensemble.completed} deterministic matrices accumulated.`;
 	}
 
 	function replayEnsemble(): void {
@@ -1161,6 +1296,10 @@
 					<Tabs.Content class="rm-tab-content" value="ensemble" data-lens="ensemble">
 						<EnsembleLaboratory
 							summary={ensemble}
+							universality={experimentState.preset === 'universality-test'
+								? universality
+								: undefined}
+							primaryDistribution={experimentState.distribution}
 							paused={ensemblePaused}
 							busy={ensembleBusy}
 							targetSamples={experimentState.sampleCount}

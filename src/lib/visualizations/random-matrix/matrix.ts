@@ -11,6 +11,7 @@ import {
 	MAX_MATRIX_DIMENSION,
 	MIN_MATRIX_DIMENSION
 } from './constants';
+import { NON_NORMAL_TRANSIENT_STEPS, validateNonNormalTrap } from './dynamics';
 import { createMatrixRandom, type MatrixRandom } from './prng';
 import type {
 	GeneratedMatrix,
@@ -216,17 +217,39 @@ function generateNonNormalTrap(state: RandomMatrixState, sampleIndex: number): G
 	const n = state.dimension;
 	const random = createMatrixRandom(state, sampleIndex, 'non-normal-perturbation');
 	const values = new Float64Array(n * n);
-	const perturbationScale = Math.max(1e-4, state.scale * 0.015) / Math.sqrt(n);
+	const perturbationScale = Math.min(0.08, Math.max(1e-4, state.scale * 0.04) / Math.sqrt(n));
 	// Keep the non-normal base ensemble independent of the planted-signal
 	// amplitude. signalStrength must have one meaning so null comparisons can
 	// remove a signal without changing the declared background ensemble.
-	const coupling = 1.8;
 	for (let row = 0; row < n; row += 1) {
-		for (let column = 0; column < n; column += 1) {
+		// Perturb only the upper triangle. The eigenvalues of the *perturbed*
+		// matrix are then its perturbed diagonal entries, rather than those of an
+		// idealised template that the final dense perturbation no longer respects.
+		for (let column = row; column < n; column += 1) {
 			values[row * n + column] = perturbationScale * random.standardized(state.distribution);
 		}
-		values[row * n + row] += -0.45 + (0.9 * row) / Math.max(1, n - 1);
-		if (row + 1 < n) values[row * n + row + 1] += coupling;
+		const diagonal = 0.66 + (0.08 * row) / Math.max(1, n - 1);
+		values[row * n + row] = clamp(values[row * n + row] + diagonal, 0.58, 0.78);
+		if (row + 1 < n) {
+			values[row * n + row + 1] += row === 0 ? 1.24 : 0.82;
+		}
+	}
+	// The plotted witness is x=e_2, so its orbit stays in the leading 2x2
+	// triangular block. Bound the already perturbed coupling to keep its rise
+	// visible without delaying the eventual fall beyond the twenty-step plot.
+	values[1] = clamp(values[1], 1.18, 1.3);
+
+	let validation = validateNonNormalTrap(values, n, NON_NORMAL_TRANSIENT_STEPS);
+	if (!validation.valid) {
+		// This deterministic guard is reached only for an extreme perturbation.
+		// Repair the three witness-block entries, then test the actual matrix again.
+		values[0] = 0.66;
+		values[n + 1] = 0.67;
+		values[1] = 1.24;
+		validation = validateNonNormalTrap(values, n, NON_NORMAL_TRANSIENT_STEPS);
+	}
+	if (!validation.valid) {
+		throw new Error('The non-normal preset could not satisfy its transient-growth contract.');
 	}
 	return {
 		rows: n,
@@ -234,9 +257,13 @@ function generateNonNormalTrap(state: RandomMatrixState, sampleIndex: number): G
 		values,
 		symmetric: false,
 		warnings: [
-			'This matrix is deliberately non-normal; eigenvalues alone do not bound transient growth.'
+			'This matrix is deliberately non-normal; compare the actual spectral radius with the explicit e₂ trajectory after any global rescaling.'
 		]
 	};
+}
+
+function clamp(value: number, minimum: number, maximum: number): number {
+	return Math.max(minimum, Math.min(maximum, value));
 }
 
 function entryNoiseScale(state: RandomMatrixState, dimension: number): number {

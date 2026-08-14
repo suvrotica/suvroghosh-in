@@ -9,6 +9,7 @@ import {
 	eigenvalueMatchDistance
 } from './decompositions';
 import { applyRearrangement, generateMatrix, isExactlySymmetric } from './matrix';
+import { randomMatrixParameterFingerprint } from './fingerprint';
 import { createMatrixRandom } from './prng';
 import { summarizeMatrix } from './statistics';
 import { theoryOverlayForState } from './theory';
@@ -18,6 +19,13 @@ import { normalizeRandomMatrixState } from './url-state';
 
 export function computeRandomMatrix(input: MatrixComputeInput): MatrixAnalysis {
 	const state = normalizeRandomMatrixState(input.state);
+	const parameterFingerprint = randomMatrixParameterFingerprint(state);
+	if (
+		input.parameterFingerprint !== undefined &&
+		input.parameterFingerprint !== parameterFingerprint
+	) {
+		throw new Error('The matrix request fingerprint does not match its generative parameters.');
+	}
 	const sampleIndex = normalizeSampleIndex(input.sampleIndex);
 	const rearrangement = input.rearrangement ?? 'original';
 	const generated = generateMatrix(state, sampleIndex);
@@ -121,6 +129,7 @@ export function computeRandomMatrix(input: MatrixComputeInput): MatrixAnalysis {
 
 	return {
 		modelVersion: RANDOM_MATRIX_MODEL_VERSION,
+		parameterFingerprint,
 		state,
 		sampleIndex,
 		rearrangement,

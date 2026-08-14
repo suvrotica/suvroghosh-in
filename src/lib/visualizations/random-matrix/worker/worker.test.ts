@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_RANDOM_MATRIX_STATE } from '../constants';
-import type { MatrixAnalysis } from '../types';
+import { randomMatrixParameterFingerprint } from '../fingerprint';
+import type { MatrixAnalysis, RandomMatrixState } from '../types';
 import {
 	RandomMatrixWorkerClient,
 	RandomMatrixWorkerDisposedError,
@@ -18,7 +19,11 @@ import {
 } from './protocol';
 
 const input = {
-	state: { ...DEFAULT_RANDOM_MATRIX_STATE, dimension: 6 },
+	state: { ...DEFAULT_RANDOM_MATRIX_STATE, dimension: 2 },
+	parameterFingerprint: randomMatrixParameterFingerprint({
+		...DEFAULT_RANDOM_MATRIX_STATE,
+		dimension: 2
+	}),
 	sampleIndex: 0
 };
 
@@ -32,6 +37,21 @@ describe('random-matrix Worker protocol and handler', () => {
 		};
 		expect(isRandomMatrixWorkerRequest(request)).toBe(true);
 		expect(isRandomMatrixWorkerRequest({ ...request, runId: 0 })).toBe(false);
+		expect(
+			isRandomMatrixWorkerRequest({
+				...request,
+				input: { ...input, parameterFingerprint: undefined }
+			})
+		).toBe(false);
+		expect(
+			isRandomMatrixWorkerRequest({
+				...request,
+				input: {
+					...input,
+					state: { ...input.state, distribution: 'uniform' }
+				}
+			})
+		).toBe(false);
 		expect(
 			isRandomMatrixWorkerRequest({
 				...request,
@@ -141,12 +161,32 @@ describe('RandomMatrixWorkerClient latest-only lifecycle', () => {
 		expect(factory.workers).toHaveLength(2);
 		client.dispose();
 	});
+
+	it('rejects a well-formed result fingerprinted for different parameters', async () => {
+		const factory = new FakeWorkerFactory();
+		const client = new RandomMatrixWorkerClient(() => factory.create());
+		const pending = client.analyze(input);
+		const worker = factory.workers[0];
+		const request = worker.requests[0];
+		worker.dispatch(
+			analysisResponse(request.runId, 0, { ...input.state, distribution: 'uniform' })
+		);
+		await expect(pending).rejects.toThrow(/different generative parameters/i);
+		expect(worker.terminationCount).toBe(1);
+		expect(factory.workers).toHaveLength(2);
+		client.dispose();
+	});
 });
 
-function analysisResponse(runId: number, sampleIndex: number): RandomMatrixWorkerResponse {
+function analysisResponse(
+	runId: number,
+	sampleIndex: number,
+	state: RandomMatrixState = input.state
+): RandomMatrixWorkerResponse {
 	const analysis: MatrixAnalysis = {
 		modelVersion: 'random-matrix-v1',
-		state: { ...input.state, dimension: 2 },
+		parameterFingerprint: randomMatrixParameterFingerprint(state),
+		state,
 		sampleIndex,
 		rearrangement: 'original',
 		rows: 2,

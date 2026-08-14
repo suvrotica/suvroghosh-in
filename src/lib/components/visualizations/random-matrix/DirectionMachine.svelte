@@ -1,5 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import {
+		matrixPowerTrajectory,
+		NON_NORMAL_TRANSIENT_STEPS,
+		nonNormalTrapWitness,
+		type MatrixPowerTrajectoryPoint
+	} from '$lib/visualizations/random-matrix/dynamics';
 	import { formatNumber, type ComplexSpectrumView, type SingularView } from './types';
 
 	let {
@@ -33,9 +39,18 @@
 	let inputCloud = $derived(buildInputCloud(72));
 	let projectedCloud = $derived(buildProjectedCloud(inputCloud));
 	let cloudScale = $derived(projectedScale());
-	let trajectory = $derived(buildTrajectory(20));
+	let trajectory = $derived(buildTrajectory(NON_NORMAL_TRANSIENT_STEPS));
 	let selectedTrajectory = $derived(
 		trajectory[Math.max(0, Math.min(trajectory.length - 1, trajectoryStep))]
+	);
+	let peakTrajectory = $derived(trajectoryPeak());
+	let finalTrajectory = $derived(trajectory[trajectory.length - 1]);
+	let demonstratesTransientDecay = $derived(
+		peakTrajectory.step > 0 &&
+			peakTrajectory.step < finalTrajectory.step &&
+			peakTrajectory.magnitude > 1 &&
+			finalTrajectory.magnitude < 1 &&
+			spectralRadius < 1
 	);
 	let dominantDirection = $derived(dominantSliceDirection());
 	let dynamicsLabel = $derived(classifyDynamics());
@@ -131,51 +146,20 @@
 		return { x, y, gain: Math.hypot(a * x + b * y, c * x + d * y) };
 	}
 
-	interface TrajectoryPoint {
-		step: number;
-		x: number;
-		y: number;
-		gain: number;
-		logMagnitude: number;
+	function buildTrajectory(steps: number): readonly MatrixPowerTrajectoryPoint[] {
+		const dimension = Math.max(1, columns);
+		if (rows !== dimension || matrix.length !== dimension * dimension) {
+			return [{ step: 0, x: 0, y: 0, gain: 1, logMagnitude: 0, magnitude: 1 }];
+		}
+		return matrixPowerTrajectory(matrix, dimension, nonNormalTrapWitness(dimension), steps);
 	}
 
-	function buildTrajectory(steps: number): readonly TrajectoryPoint[] {
-		const dimension = Math.max(1, columns);
-		let vector = new Float64Array(dimension);
-		vector[0] = 1;
-		if (dimension > 1) vector[1] = 0.37;
-		let norm = Math.hypot(...Array.from(vector));
-		for (let index = 0; index < vector.length; index += 1) vector[index] /= norm || 1;
-		let logMagnitude = 0;
-		const output: TrajectoryPoint[] = [
-			{ step: 0, x: vector[0] ?? 0, y: vector[1] ?? 0, gain: 1, logMagnitude }
-		];
-		for (let step = 1; step <= steps; step += 1) {
-			const next = new Float64Array(rows);
-			for (let row = 0; row < rows; row += 1) {
-				let sum = 0;
-				for (let column = 0; column < columns; column += 1)
-					sum += entry(row, column) * (vector[column] ?? 0);
-				next[row] = sum;
-			}
-			norm = Math.hypot(...Array.from(next));
-			if (!(norm > 1e-15) || !Number.isFinite(norm)) {
-				output.push({ step, x: 0, y: 0, gain: 0, logMagnitude: Number.NEGATIVE_INFINITY });
-				break;
-			}
-			logMagnitude += Math.log(norm);
-			vector = new Float64Array(dimension);
-			for (let index = 0; index < Math.min(dimension, next.length); index += 1)
-				vector[index] = next[index] / norm;
-			output.push({
-				step,
-				x: vector[0] ?? 0,
-				y: vector[1] ?? 0,
-				gain: norm,
-				logMagnitude
-			});
+	function trajectoryPeak(): MatrixPowerTrajectoryPoint {
+		let peak = trajectory[0];
+		for (const point of trajectory) {
+			if (point.logMagnitude > peak.logMagnitude) peak = point;
 		}
-		return output;
+		return peak;
 	}
 
 	function trajectoryPath(): string {
@@ -190,6 +174,7 @@
 
 	function classifyDynamics(): string {
 		const hasImaginary = eigen ? maxAbs(eigen.imaginary) > 1e-8 : false;
+		if (demonstratesTransientDecay) return 'amplifies transiently, then decays';
 		if (spectralRadius < 0.98)
 			return hasImaginary ? 'shrinks while turning' : 'shrinks asymptotically';
 		if (spectralRadius > 1.02)
@@ -207,8 +192,14 @@
 		return result;
 	}
 
-	function projectedMagnitude(): number {
-		return Math.hypot(selectedTrajectory?.x ?? 0, selectedTrajectory?.y ?? 0);
+	function trajectoryNarrative(): string {
+		if (demonstratesTransientDecay) {
+			return `||A^k x|| rises from 1 to ${formatNumber(peakTrajectory.magnitude, 5)} at k=${peakTrajectory.step}, then falls to ${formatNumber(finalTrajectory.magnitude, 5)} by k=${finalTrajectory.step}.`;
+		}
+		if (peakTrajectory.magnitude > 1) {
+			return `||A^k x|| reaches ${formatNumber(peakTrajectory.magnitude, 5)} at k=${peakTrajectory.step}; it is ${formatNumber(finalTrajectory.magnitude, 5)} at the plotted horizon.`;
+		}
+		return `This witness does not amplify over the ${finalTrajectory.step}-step plotted horizon.`;
 	}
 
 	onMount(() => {
@@ -240,9 +231,10 @@
 	</header>
 
 	<aside class="projection-warning">
-		<strong>Projection contract.</strong> The left circle lies in span(e₁,e₂). The right shape plots only
-		the first two coordinates of Av. Hidden coordinates can carry substantial energy. The trajectory is
-		renormalised after every multiplication so direction remains visible; growth is reported separately.
+		<strong>Projection contract.</strong> The left circle lies in span(e₁,e₂). The right shape plots
+		only the first two coordinates of Av. Hidden coordinates can carry substantial energy. The
+		explicit witness begins at x=e₂ and is renormalised after every multiplication so direction
+		remains visible; the readouts retain the actual norm ||A<sup>k</sup>x||.
 	</aside>
 
 	<figure bind:this={plotHost} data-export-surface class:narrow={narrowPlot}>
@@ -257,7 +249,8 @@
 			<desc id="direction-description"
 				>The left panel shows unit directions supported on the first two coordinate axes. The right
 				panel shows their first two output coordinates and a normalised repeated-application
-				trajectory through step {trajectoryStep}.</desc
+				trajectory from x equals e two through step {trajectoryStep}. The actual trajectory norm is
+				reported alongside the plot.</desc
 			>
 			<defs>
 				<marker
@@ -350,7 +343,10 @@
 						>Step {point.step}: projected direction ({formatNumber(point.x, 3)}, {formatNumber(
 							point.y,
 							3
-						)}), one-step gain {formatNumber(point.gain, 3)}</title
+						)}), one-step gain {formatNumber(point.gain, 3)}, norm {formatNumber(
+							point.magnitude,
+							3
+						)}</title
 					>
 				</circle>
 			{/each}
@@ -387,7 +383,8 @@
 		</svg>
 		<figcaption>
 			Orange line: strongest stretching direction within this two-coordinate slice. Blue path:
-			normalised power iteration projected to the same two displayed coordinates.
+			normalised trajectory of the explicit witness x=e₂, projected to the same two displayed
+			coordinates.
 		</figcaption>
 	</figure>
 
@@ -405,6 +402,10 @@
 			bind:value={trajectoryStep}
 		/>
 	</label>
+	<p class:verified={demonstratesTransientDecay} class="trajectory-verdict" aria-live="polite">
+		<strong>Witness x=e₂.</strong>
+		{trajectoryNarrative()}
+	</p>
 
 	<div class="summary-grid">
 		<div>
@@ -422,12 +423,18 @@
 			>
 		</div>
 		<div>
-			<span>Projected direction length</span><strong>{formatNumber(projectedMagnitude(), 5)}</strong
+			<span>||A<sup>{trajectoryStep}</sup>x||</span><strong
+				>{formatNumber(selectedTrajectory?.magnitude, 5)}</strong
 			>
 		</div>
 		<div>
-			<span>Cumulative log growth before normalising</span><strong
-				>{formatNumber(selectedTrajectory?.logMagnitude, 5)}</strong
+			<span>Peak witness norm · k={peakTrajectory.step}</span><strong
+				>{formatNumber(peakTrajectory.magnitude, 5)}</strong
+			>
+		</div>
+		<div>
+			<span>Final witness norm · k={finalTrajectory.step}</span><strong
+				>{formatNumber(finalTrajectory.magnitude, 5)}</strong
 			>
 		</div>
 	</div>
@@ -451,6 +458,7 @@
 	.projection-warning,
 	figure,
 	figcaption,
+	.trajectory-verdict,
 	.interpretation {
 		margin: 0;
 	}
@@ -602,6 +610,18 @@
 		min-height: 2.75rem;
 		accent-color: var(--rm-accent);
 	}
+	.trajectory-verdict {
+		margin-top: 0.45rem;
+		border-left: 3px solid var(--rm-rule);
+		padding: 0.4rem 0.6rem;
+		color: var(--rm-muted);
+		font-size: 0.74rem;
+		line-height: 1.45;
+	}
+	.trajectory-verdict.verified {
+		border-left-color: var(--rm-theory);
+		color: var(--rm-ink);
+	}
 	.summary-grid {
 		display: grid;
 		grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -671,6 +691,7 @@
 		.plot-background,
 		.projection-warning,
 		.trajectory-slider,
+		.trajectory-verdict,
 		.summary-grid,
 		.summary-grid > div {
 			border-color: CanvasText;

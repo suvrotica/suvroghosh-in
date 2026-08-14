@@ -104,6 +104,96 @@ test.afterEach(({ page }) => {
 	expect(runtimeDiagnostics.get(page) ?? []).toEqual([]);
 });
 
+test('theory captions keep accessibility labels out of visible prose', async ({
+	page
+}, testInfo) => {
+	test.skip(testInfo.project.name !== 'desktop', 'Theory caption semantics are covered once.');
+	const lab = await waitForLaboratory(
+		page,
+		`${articlePath}?rmv=1&seed=theory-caption&preset=circular-cloud&n=12&lens=spectral-sky`
+	);
+	const spectrum = lab.locator('[data-lens="spectrum"]');
+	const caption = spectrum.locator('figcaption');
+	await expect(caption).toContainText('The dashed circular-law disk has radius r =');
+	await expect(caption).not.toContainText('Circular law (radius');
+	await expect(spectrum.locator('#spectral-plot-description')).toContainText(
+		'Theory overlay: Circular law (radius'
+	);
+});
+
+test('invariant symmetric null statistics omit meaningless inference', async ({
+	page
+}, testInfo) => {
+	test.skip(testInfo.project.name !== 'desktop', 'Degenerate null presentation is covered once.');
+	const lab = await waitForLaboratory(
+		page,
+		`${articlePath}?rmv=1&seed=degenerate-null&preset=hidden-rank-one-signal&n=8&sym=symmetric&signal=rank-one&strength=1.2&lens=structure-detector&samples=40`
+	);
+	await lab.getByRole('button', { name: 'Compare with null ensemble' }).click();
+	const card = lab.locator('.metric-card').filter({ hasText: 'Row/column correlation' });
+	await expect(
+		card.getByText('not informative for this matrix class', { exact: true })
+	).toBeVisible({
+		timeout: 60_000
+	});
+	await expect(card.locator('dt', { hasText: 'Empirical percentile' })).toHaveCount(0);
+	await expect(card.locator('dt', { hasText: 'Two-sided empirical p' })).toHaveCount(0);
+});
+
+test('universality accumulates matched Gaussian, uniform and Rademacher clouds together', async ({
+	page
+}, testInfo) => {
+	test.skip(testInfo.project.name !== 'desktop', 'Universality comparison is covered once.');
+	const lab = await waitForLaboratory(
+		page,
+		`${articlePath}?rmv=1&seed=universality-triplet&preset=universality-test&n=8&dist=rademacher&lens=ensemble-laboratory&samples=2`
+	);
+	const comparison = lab.getByTestId('random-matrix-universality-comparison');
+	await expect(comparison).toBeVisible();
+	await lab.getByTestId('random-matrix-ensemble-start').click();
+	await expect(lab.getByTestId('random-matrix-ensemble-completed')).toHaveText('2', {
+		timeout: 60_000
+	});
+
+	for (const distribution of ['gaussian', 'uniform', 'rademacher'] as const) {
+		const panel = lab.getByTestId(`random-matrix-universality-${distribution}`);
+		await expect(panel).toContainText('2 matrices');
+		expect(await panel.locator('circle.sample-point').count()).toBe(16);
+	}
+	const viewBoxes = await comparison
+		.locator('svg')
+		.evaluateAll((plots) => plots.map((plot) => plot.getAttribute('viewBox')));
+	expect(new Set(viewBoxes).size).toBe(1);
+});
+
+test('the non-normal preset shows stable long-run decay after transient amplification', async ({
+	page
+}, testInfo) => {
+	test.skip(testInfo.project.name !== 'desktop', 'The non-normal witness is covered once.');
+	const lab = await waitForLaboratory(
+		page,
+		`${articlePath}?rmv=1&seed=tramlight-circle-1847&preset=non-normal-trap&n=24&lens=direction-machine`
+	);
+	const direction = lab.locator('[data-lens="direction"]');
+	await expect(
+		direction.getByText('amplifies transiently, then decays', { exact: true })
+	).toBeVisible();
+	await expect(direction.getByText(/\|\|A\^k x\|\| rises from 1 .* then falls to/iu)).toBeVisible();
+
+	const readout = async (label: string): Promise<number> => {
+		const value = await direction
+			.locator('.summary-grid > div')
+			.filter({ hasText: label })
+			.locator('strong')
+			.textContent();
+		return Number(value);
+	};
+	expect(await readout('Spectral radius')).toBeLessThan(1);
+	expect(await readout('Global largest singular value')).toBeGreaterThan(1);
+	expect(await readout('Peak witness norm')).toBeGreaterThan(1);
+	expect(await readout('Final witness norm')).toBeLessThan(1);
+});
+
 test('SSR and no-JavaScript reading preserve the article, poster and scientific boundary', async ({
 	page,
 	request,
@@ -206,6 +296,42 @@ test('matrix inspection, lens tabs and reduced-motion ensemble controls remain k
 		.toBeGreaterThan(0);
 	const pause = lab.getByTestId('random-matrix-ensemble-pause');
 	if (await pause.isVisible()) await pause.click();
+});
+
+test('ensemble evidence is fingerprinted to generative controls but survives display changes', async ({
+	page
+}, testInfo) => {
+	test.skip(testInfo.project.name !== 'desktop', 'Worker invalidation is covered once on desktop.');
+	const lab = await waitForLaboratory(page);
+	await lab.getByTestId('random-matrix-lens-ensemble').click();
+	const completed = lab.getByTestId('random-matrix-ensemble-completed');
+	await lab.getByTestId('random-matrix-ensemble-start').click();
+	await expect
+		.poll(async () => Number((await completed.textContent())?.replace(/\D/gu, '') ?? 0))
+		.toBeGreaterThan(1);
+	const pause = lab.getByTestId('random-matrix-ensemble-pause');
+	if (await pause.isVisible()) await pause.click();
+	const accumulated = Number((await completed.textContent())?.replace(/\D/gu, '') ?? 0);
+
+	await lab.locator('summary').filter({ hasText: 'Display' }).click();
+	await lab.getByLabel('Heatmap colour scale').selectOption('sequential');
+	await expect(completed).toHaveText(String(accumulated));
+
+	await lab.getByLabel('Entry distribution').selectOption('rademacher');
+	await expect(lab.getByLabel('Entry distribution')).toHaveValue('rademacher');
+	await expect(lab.locator('.fact-strip')).toContainText('rademacher');
+	await expect(completed).toHaveText('0');
+
+	await lab.getByTestId('random-matrix-ensemble-start').click();
+	await expect
+		.poll(async () => Number((await completed.textContent())?.replace(/\D/gu, '') ?? 0))
+		.toBeGreaterThan(0);
+	const secondPause = lab.getByTestId('random-matrix-ensemble-pause');
+	if (await secondPause.isVisible()) await secondPause.click();
+	await lab.getByLabel('Normalisation').selectOption('spectral-radius');
+	await expect(lab.getByLabel('Normalisation')).toHaveValue('spectral-radius');
+	await expect(lab.locator('.fact-strip')).toContainText('spectral-radius');
+	await expect(completed).toHaveText('0');
 });
 
 test('focus-mode fallback exits with Escape and restores focus', async ({ page }, testInfo) => {

@@ -149,10 +149,25 @@ export function compareMetricToNull(
 			zScore: null,
 			percentile: null,
 			twoSidedPValue: null,
-			validSampleCount: valid.length
+			validSampleCount: valid.length,
+			degenerate: false
 		};
 	}
 	const moments = streamingMoments(valid);
+	const scale = Math.max(1, Math.abs(moments.mean), ...valid.map((value) => Math.abs(value)));
+	const degenerate = moments.stddev <= 64 * Number.EPSILON * scale;
+	if (degenerate) {
+		return {
+			observed,
+			mean: moments.mean,
+			stddev: moments.stddev,
+			zScore: null,
+			percentile: null,
+			twoSidedPValue: null,
+			validSampleCount: valid.length,
+			degenerate: true
+		};
+	}
 	const less = valid.reduce((count, value) => count + (value < observed ? 1 : 0), 0);
 	const equal = valid.reduce((count, value) => count + (value === observed ? 1 : 0), 0);
 	const lowerTail = less + equal;
@@ -168,7 +183,8 @@ export function compareMetricToNull(
 		zScore: moments.stddev > 0 ? (observed - moments.mean) / moments.stddev : null,
 		percentile: (100 * (less + 0.5 * equal)) / valid.length,
 		twoSidedPValue,
-		validSampleCount: valid.length
+		validSampleCount: valid.length,
+		degenerate: false
 	};
 }
 

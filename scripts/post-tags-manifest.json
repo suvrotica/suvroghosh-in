@@ -11436,9 +11436,9 @@
 			"dateModified": "2026-08-13"
 		},
 		"src/lib/posts/the-matrix-is-random-why-does-it-have-a-shape.md": {
-			"bodyHash": "52aef652c0f6e08a782d3d1972ff6cbf40cc07adcacc92fa41e87cf30496a100",
+			"bodyHash": "1174591e4d0a0feb741e310feea3946e663dd4650131816a244f4972b52fe6e9",
 			"hashVersion": 2,
-			"revisionHash": "318f46d927e061955c56001e589aa020c84c463e3239170b20b2fd8e5d2e019e",
+			"revisionHash": "c68a58807b0f54e95a6b4d5f7052426246ba6c5f46af5534c7437ab4b56870cb",
 			"generatedTags": [
 				"Random Matrices",
 				"Linear Algebra",
@@ -11447,9 +11447,9 @@
 				"Singular Values",
 				"Scientific Computing",
 				"Spectral Radius",
+				"Sample Indices",
 				"Non-Normal Trap",
-				"Marchenko Pastur",
-				"Sorting Manufacture Structure"
+				"Marchenko Pastur"
 			],
 			"pinnedTags": [
 				"Random Matrices",
@@ -11460,7 +11460,7 @@
 				"Scientific Computing"
 			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-13"
+			"dateModified": "2026-08-15"
 		},
 		"src/lib/posts/holy-allergy.md": {
 			"bodyHash": "6a17934308056cf2feadafb989223e29faf6e6c7940cb96190b7a796280f2128",

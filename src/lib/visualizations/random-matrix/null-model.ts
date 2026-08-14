@@ -5,6 +5,7 @@ import {
 	maximumEnsembleSamples
 } from './constants';
 import { computeRandomMatrix } from './analysis';
+import { randomMatrixParameterFingerprint } from './fingerprint';
 import {
 	calculateMetricValues,
 	compareMetricToNull,
@@ -42,6 +43,13 @@ export async function runNullEnsemble(
 	options: NullEnsembleOptions = {}
 ): Promise<NullEnsembleResult> {
 	const state = normalizeRandomMatrixState(input.state);
+	const parameterFingerprint = randomMatrixParameterFingerprint(state);
+	if (
+		input.parameterFingerprint !== undefined &&
+		input.parameterFingerprint !== parameterFingerprint
+	) {
+		throw new Error('The null-ensemble request fingerprint does not match its parameters.');
+	}
 	const maximum = Math.min(MAX_NULL_ENSEMBLE_SAMPLES, maximumEnsembleSamples(state.dimension));
 	if (!Number.isFinite(input.sampleCount)) {
 		throw new RangeError('Null-ensemble sample count must be finite.');
@@ -151,6 +159,7 @@ export async function runNullEnsemble(
 
 	return {
 		modelVersion: RANDOM_MATRIX_MODEL_VERSION,
+		parameterFingerprint,
 		state,
 		nullState,
 		sampleCount,
@@ -166,9 +175,11 @@ export function nullModelInterpretation(
 	comparison: NullMetricComparison,
 	sampleCount: number
 ):
+	| 'not informative for this matrix class'
 	| 'insufficient ensemble samples'
 	| 'ordinary under this null model'
 	| 'unusual under this null model' {
+	if (comparison.degenerate) return 'not informative for this matrix class';
 	if (
 		sampleCount < MIN_NULL_SAMPLES_FOR_TAIL_INTERPRETATION ||
 		comparison.validSampleCount < MIN_NULL_SAMPLES_FOR_TAIL_INTERPRETATION ||
@@ -195,7 +206,8 @@ function emptyComparison(): NullMetricComparison {
 		zScore: null,
 		percentile: null,
 		twoSidedPValue: null,
-		validSampleCount: 0
+		validSampleCount: 0,
+		degenerate: false
 	};
 }
 

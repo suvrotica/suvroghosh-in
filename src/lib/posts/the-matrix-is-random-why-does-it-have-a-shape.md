@@ -3,11 +3,11 @@ title: "The Matrix Is Random. Why Does It Have a Shape?"
 seoTitle: "Random Matrix Shapes — Interactive Spectral Laboratory"
 description: "Generate one seeded random matrix, inspect its entries, spectrum, singular values and geometry, then watch stable shapes emerge across an ensemble."
 date: "2026-08-13"
-dateModified: "2026-08-13"
+dateModified: "2026-08-15"
 thumbnail: "/images/visualizations/random-matrix-shape/the-matrix-is-random.png"
 thumbnailAlt: "An interactive random-matrix instrument showing a blue-and-amber matrix heatmap, a circular cloud of complex eigenvalues and a descending singular-value profile"
 category: "Visualizations"
-tags: ["Random Matrices","Linear Algebra","Probability","Eigenvalues","Singular Values","Scientific Computing","Spectral Radius","Non-Normal Trap","Marchenko Pastur","Sorting Manufacture Structure"]
+tags: ["Random Matrices","Linear Algebra","Probability","Eigenvalues","Singular Values","Scientific Computing","Spectral Radius","Sample Indices","Non-Normal Trap","Marchenko Pastur"]
 pinnedTags: ["Random Matrices", "Linear Algebra", "Probability", "Eigenvalues", "Singular Values", "Scientific Computing"]
 published: true
 interactiveFirst: true
@@ -157,9 +157,9 @@ For an $n\times n$ matrix with independent, mean-zero, variance-$1/n$ entries, t
 
 The modern universality result by Tao, Vu and Krishnapur makes the striking point precise: after the stated centring and variance normalization, the limiting empirical spectral distribution does not depend on the full microscopic entry distribution under the theorem's assumptions ([Annals of Probability, 2010](https://doi.org/10.1214/10-AOP534)).
 
-That is why the **Universality test** can switch among Gaussian, uniform and Rademacher entries after matching their first two moments. Their individual heatmaps remain recognizably different—Rademacher has only two raw values—yet their large-scale spectral clouds can become similar. The browser provides an illustration, not a proof. Finite dimensions, tail behaviour and local statistics still matter.
+That is why the **Universality test** places Gaussian, uniform and Rademacher ensembles side by side after matching their first two moments. Their individual heatmaps remain recognizably different—Rademacher has only two raw values—yet their large-scale spectral clouds can become similar. All three spectral panels share one complex-plane scale, so the comparison does not depend on remembering an earlier run. The browser provides an illustration, not a proof. Finite dimensions, tail behaviour and local statistics still matter.
 
-Click **Accumulate** once and the single cloud remains ragged. Add ten matrices and the disk becomes plausible. Add one hundred within the device budget and a stable density begins to appear. Nothing in that sequence turns a finite point cloud into an exact theorem; it shows how an ensemble statement becomes visible only through repetition.
+Click **Start matched comparison** and one matrix per entry law leaves every cloud ragged. Add ten matched sample indices and the disks become plausible. Add one hundred per law within the device budget and stable densities begin to appear. Nothing in that sequence turns a finite point cloud into an exact theorem; it shows how an ensemble statement becomes visible only through repetition.
 
 ## 6. Symmetry changes everything: the Wigner semicircle
 
@@ -411,7 +411,7 @@ The experiment cards inside the instrument change the required controls together
 
 1. **Grow the circular cloud.** Increase $n$ while retaining variance $1/n$, then accumulate samples. Watch the boundary become statistically clearer without becoming exact.
 2. **Hold the seed, change the scale.** Switch among unscaled, variance-$1/n$, Frobenius and spectral-radius normalization. Notice which theoretical overlay remains justified.
-3. **Trade Gaussian for Rademacher.** Keep the first two moments fixed. The heatmap changes microscopically; the large spectral cloud may change much less.
+3. **Compare Gaussian, uniform and Rademacher.** Keep the first two moments fixed and accumulate the three ensembles at matched sample indices. Their microscopic laws differ; their large spectral clouds may differ much less.
 4. **Make it symmetric.** Watch complex conjugate pairs collapse to a real density and the semicircle reference replace the unit disk.
 5. **Change the face, keep the spectrum.** Compare $A$ with $Q^TAQ$ and inspect the numerical agreement rather than trusting the heatmaps.
 6. **Raise a rank-one signal slowly.** Find the region where the heatmap remains ambiguous while an extreme singular value begins to look unusual under the null.

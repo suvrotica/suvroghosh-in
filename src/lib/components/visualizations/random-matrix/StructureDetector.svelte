@@ -44,6 +44,7 @@
 	let busy = $derived(phase === 'loading' || phase === 'working');
 
 	function verdict(metric: MetricComparisonView): string {
+		if (metric.informative === false) return 'not informative for this matrix class';
 		if (
 			!nullResult ||
 			(metric.validSampleCount ?? 0) < MIN_NULL_SAMPLES_FOR_TAIL_INTERPRETATION ||
@@ -58,6 +59,7 @@
 		const label = verdict(metric);
 		if (label.startsWith('unusual')) return 'unusual';
 		if (label.startsWith('ordinary')) return 'ordinary';
+		if (label.startsWith('not informative')) return 'uninformative';
 		return 'insufficient';
 	}
 
@@ -161,15 +163,22 @@
 								</div>
 								<strong class={verdictClass(metric)}>{verdict(metric)}</strong>
 							</header>
-							<div
-								class="percentile-track"
-								aria-label={`${metric.label}: empirical percentile ${formatNumber(metric.percentile, 2)}`}
-							>
-								<span class="tail left">2.5</span><span class="tail right">97.5</span>
-								<div class="marker" style={`left: ${percentilePosition(metric)}%`}>
-									<span></span>
+							{#if metric.informative === false}
+								<p class="uninformative-explanation">
+									This statistic is invariant across the sampled null matrices, so percentiles and
+									p-values do not distinguish structure in this matrix class.
+								</p>
+							{:else}
+								<div
+									class="percentile-track"
+									aria-label={`${metric.label}: empirical percentile ${formatNumber(metric.percentile, 2)}`}
+								>
+									<span class="tail left">2.5</span><span class="tail right">97.5</span>
+									<div class="marker" style={`left: ${percentilePosition(metric)}%`}>
+										<span></span>
+									</div>
 								</div>
-							</div>
+							{/if}
 							<dl>
 								<div>
 									<dt>Observed</dt>
@@ -183,18 +192,20 @@
 									<dt>Null SD</dt>
 									<dd>{formatNumber(metric.nullStandardDeviation, 5)}</dd>
 								</div>
-								<div>
-									<dt>Empirical percentile</dt>
-									<dd>{formatNumber(metric.percentile, 3)}%</dd>
-								</div>
-								<div>
-									<dt>Standardised deviation</dt>
-									<dd>{formatNumber(metric.zScore, 4)}σ</dd>
-								</div>
-								<div>
-									<dt>Two-sided empirical p</dt>
-									<dd>{formatNumber(metric.twoSidedPValue, 4)}</dd>
-								</div>
+								{#if metric.informative !== false}
+									<div>
+										<dt>Empirical percentile</dt>
+										<dd>{formatNumber(metric.percentile, 3)}%</dd>
+									</div>
+									<div>
+										<dt>Standardised deviation</dt>
+										<dd>{formatNumber(metric.zScore, 4)}σ</dd>
+									</div>
+									<div>
+										<dt>Two-sided empirical p</dt>
+										<dd>{formatNumber(metric.twoSidedPValue, 4)}</dd>
+									</div>
+								{/if}
 								<div>
 									<dt>Valid null samples</dt>
 									<dd>{metric.validSampleCount ?? 0}</dd>
@@ -434,6 +445,18 @@
 	}
 	.metric-card header > strong.insufficient {
 		color: var(--rm-muted);
+	}
+	.metric-card header > strong.uninformative {
+		color: var(--rm-theory);
+	}
+	.uninformative-explanation {
+		margin: 0.65rem 0;
+		border-left: 3px solid var(--rm-theory);
+		background: color-mix(in srgb, var(--rm-theory) 7%, var(--rm-paper));
+		padding: 0.55rem 0.65rem;
+		color: var(--rm-ink);
+		font-size: 0.7rem;
+		line-height: 1.45;
 	}
 	.percentile-track {
 		position: relative;

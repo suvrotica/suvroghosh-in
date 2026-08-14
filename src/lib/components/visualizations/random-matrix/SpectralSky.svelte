@@ -287,6 +287,15 @@
 		return `Eigenvalue ${index + 1}: real ${formatNumber(real, 6)}, imaginary ${formatNumber(imaginary, 6)}, magnitude ${formatNumber(Math.hypot(real, imaginary), 6)}, angle ${formatNumber(Math.atan2(imaginary, real), 6)} radians`;
 	}
 
+	function plotDescription(): string {
+		const description = oneDimensional
+			? `A density view of ${eigenCount} real eigenvalues. The theoretical curve is an asymptotic reference.`
+			: `${eigenCount} eigenvalues plotted with equal real and imaginary scale. Select a point for its numerical coordinates.`;
+		return theoryVisible && theory?.accessibilityLabel
+			? `${description} Theory overlay: ${theory.accessibilityLabel}.`
+			: description;
+	}
+
 	function panBy(horizontal: number, vertical: number): void {
 		const distance = viewRadius() * 0.18;
 		panReal += horizontal * distance;
@@ -451,9 +460,7 @@
 				>{oneDimensional ? 'Real eigenvalue density' : 'Eigenvalues in the complex plane'}</title
 			>
 			<desc id="spectral-plot-description">
-				{oneDimensional
-					? `A density view of ${eigenCount} real eigenvalues. The theoretical curve is an asymptotic reference.`
-					: `${eigenCount} eigenvalues plotted with equal real and imaginary scale. Select a point for its numerical coordinates.`}
+				{plotDescription()}
 			</desc>
 			<defs>
 				<clipPath id="random-matrix-spectral-clip"
@@ -614,18 +621,14 @@
 		<figcaption>
 			{#if theoryVisible && theory?.kind && theory.kind !== 'none'}
 				{#if theory.kind === 'circular-law'}
-					The dashed circular-law disk has radius r = {formatNumber(
-						circularTheoryRadius,
-						6
-					)}{#if theory.note}
-						({theory.note}){/if}. It is a large-n theoretical reference—not an exact finite-matrix
-					boundary.
+					The dashed circular-law disk has radius r = {formatNumber(circularTheoryRadius, 6)}. It is
+					a large-n theoretical reference—not an exact finite-matrix boundary.
 				{:else if theory.kind === 'semicircle'}
-					The dashed semicircle curve{#if theory.note}
-						({theory.note}){/if} is a large-n theoretical reference—not an exact finite-matrix boundary.
+					The dashed semicircle curve is a large-n theoretical reference—not an exact finite-matrix
+					boundary.
 				{:else}
-					The dashed Marchenko–Pastur density and support{#if theory.note}
-						({theory.note}){/if} are a large-n theoretical reference—not an exact finite-matrix boundary.
+					The dashed Marchenko–Pastur density and support are a large-n theoretical reference—not an
+					exact finite-matrix boundary.
 				{/if}
 				{#if theory.kind === 'marchenko-pastur' && theory.gamma !== undefined}
 					Here γ = {formatNumber(theory.gamma, 4)}.{#if (theory.atomAtZero ?? 0) > 0}
