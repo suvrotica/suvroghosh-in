@@ -11512,6 +11512,36 @@
 			"generatedTags": ["Personal Essay", "Reflection", "SuvroGhosh"],
 			"pinnedTags": ["Personal Essay", "Reflection", "SuvroGhosh"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-ai-scribe-the-false-mushroom-and-the-rural-clinic.md": {
+			"bodyHash": "e560014c51dd3150e818e2f74b7b1bb613f0ba3b79337d8046dec04763ae0052",
+			"hashVersion": 2,
+			"revisionHash": "8c6fc54cba8ed12249271c47ebd72cd9906222580c138ff2681f00ee7c4f106d",
+			"generatedTags": [
+				"AI Scribes",
+				"Clinical AI",
+				"Patient Safety",
+				"Model Drift",
+				"Healthcare IT",
+				"Local Validation",
+				"Automation Bias",
+				"Rural Healthcare",
+				"Training Data",
+				"Health Equity"
+			],
+			"pinnedTags": [
+				"AI Scribes",
+				"Clinical AI",
+				"Patient Safety",
+				"Model Drift",
+				"Healthcare IT",
+				"Local Validation",
+				"Automation Bias",
+				"Rural Healthcare",
+				"Training Data",
+				"Health Equity"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T22:30:24.747893+00:00",
+  "generatedAt": "2026-08-14T11:54:21.673690+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8255,6 +8255,29 @@
         "Smelled",
         "Twelve",
         "Warm"
+      ],
+      "wordCount": 130
+    },
+    "the-ai-scribe-the-false-mushroom-and-the-rural-clinic": {
+      "generatedAt": "2026-08-14T11:54:15.579764+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-ai-scribe-the-false-mushroom-and-the-rural-clinic.svg",
+      "source": "src/lib/posts/the-ai-scribe-the-false-mushroom-and-the-rural-clinic.md",
+      "sourceHash": "35463c13a2cf7b4025bcad5e4cf577c2f3730f20981e26f9fb52400c3c610ff0",
+      "sourceModified": "2026-08-14T11:17:34.948163+00:00",
+      "topWords": [
+        "AI",
+        "Patient",
+        "Model",
+        "Record",
+        "Product",
+        "Enough",
+        "Clinician",
+        "Clinic",
+        "Clinical",
+        "Healthcare",
+        "Human",
+        "Scribe"
       ],
       "wordCount": 130
     },
