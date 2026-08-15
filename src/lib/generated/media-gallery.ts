@@ -4150,6 +4150,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "the-complacent-loser-and-the-texture-of-survival.jpg",
+			"src": "/images/the-complacent-loser-and-the-texture-of-survival.jpg",
+			"bytes": 131368,
+			"width": 1280,
+			"height": 895
+		},
+		{
 			"name": "the-great-meme-reset-and-my-colon.jpg",
 			"src": "/images/the-great-meme-reset-and-my-colon.jpg",
 			"bytes": 210581,

@@ -9426,6 +9426,22 @@
       "sourceHash": "e56d019a5fd8c894fb8cc14a701e53160ffd1ce6b052f9843e445c183f8eb225",
       "width": 1200
     },
+    "static/images/the-complacent-loser-and-the-texture-of-survival.jpg": {
+      "format": "JPEG",
+      "height": 895,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 895,
+      "originalWidth": 1280,
+      "outputBytes": 131368,
+      "outputHash": "7e2b0b0b52ce6263c298fda7080553c9aa726ede5eefd1a5d667a858a07d3414",
+      "psnrDb": 47.53,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 136426,
+      "sourceHash": "3316b0fe60f1ac1f807394d2cf212928e53c443b140f04656cc23f40565d7401",
+      "width": 1280
+    },
     "static/images/the-great-meme-reset-and-my-colon.jpg": {
       "format": "JPEG",
       "height": 895,

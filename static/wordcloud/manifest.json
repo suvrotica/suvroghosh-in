@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T10:06:18.579040+00:00",
+  "generatedAt": "2026-08-15T11:17:14.106975+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9014,6 +9014,29 @@
         "Enough",
         "Workers",
         "Office"
+      ],
+      "wordCount": 130
+    },
+    "the-complacent-loser-and-the-texture-of-survival": {
+      "generatedAt": "2026-08-15T11:17:13.926310+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-complacent-loser-and-the-texture-of-survival.svg",
+      "source": "src/lib/posts/the-complacent-loser-and-the-texture-of-survival.md",
+      "sourceHash": "44219e79d49654bd906c9abf4d31262ec88df73635b7b3fefe7dadeecae1b78e",
+      "sourceModified": "2026-08-15T11:10:06.647348+00:00",
+      "topWords": [
+        "Thou",
+        "Suspicious",
+        "Joy",
+        "Every",
+        "Art",
+        "Complacent",
+        "Loser",
+        "Doubt",
+        "Posttraumatic",
+        "Growth",
+        "Live",
+        "Lean"
       ],
       "wordCount": 130
     },

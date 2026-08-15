@@ -11602,6 +11602,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-complacent-loser-and-the-texture-of-survival.md": {
+			"bodyHash": "d1c2426535c9e1cd371bf71d83d816e8f45c55bf3e27c4f741fc2bbf456e0f2f",
+			"hashVersion": 2,
+			"revisionHash": "92296aea63a98970c22463082e935740c0a9f068f3449815ab26781b36881438",
+			"generatedTags": [
+				"Mental Health",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Post Traumatic Growth",
+				"Skepticism",
+				"Poverty",
+				"Consumerism",
+				"Advaita Vedanta",
+				"Coping",
+				"Kolkata"
+			],
+			"pinnedTags": [
+				"Mental Health",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Post Traumatic Growth",
+				"Skepticism",
+				"Poverty",
+				"Consumerism",
+				"Advaita Vedanta",
+				"Coping",
+				"Kolkata"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
