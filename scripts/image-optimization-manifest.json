@@ -9807,6 +9807,18 @@
       "sourceHash": "63508d3034620d8737c45ad0ff8f032e3fcd4733c9a08cb179f0f70eab347171",
       "width": 1600
     },
+    "static/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg": {
+      "format": "SVG",
+      "height": 630,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 7177,
+      "outputHash": "e68678148c7b562c94d6e3e58eb6a3b928bc0de9037bc0244aba84834ad4bda2",
+      "reason": "vector source retained",
+      "sourceBytes": 7177,
+      "sourceHash": "e68678148c7b562c94d6e3e58eb6a3b928bc0de9037bc0244aba84834ad4bda2",
+      "width": 1200
+    },
     "static/images/visualizations/gastropod-shell-lab/the-living-aperture.png": {
       "format": "PNG",
       "height": 630,
