@@ -4325,6 +4325,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg",
+			"src": "/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg",
+			"bytes": 7177,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/gastropod-shell-lab/the-living-aperture.png",
 			"src": "/images/visualizations/gastropod-shell-lab/the-living-aperture.png",
 			"bytes": 88538,
