@@ -13,6 +13,8 @@
 	const postSubjects: Record<string, readonly string[]> = {
 		'hello-fragment-your-first-shader-from-scratch':
 			visualizationSummaries['hello-fragment'].subjects,
+		'ray-marching-fragment-shader-from-scratch':
+			visualizationSummaries['ray-marching-cathedral'].subjects,
 		'hello-observable-your-first-living-d3-visualization': ['Mathematics'],
 		'artificial-life-lab-evolve-a-digital-ecosystem-in-your-browser': [
 			'Biology',

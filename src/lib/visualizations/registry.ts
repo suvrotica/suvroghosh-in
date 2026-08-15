@@ -1,17 +1,29 @@
 import type { VisualizationDefinition, VisualizationSummary } from './types';
 import { helloFragmentMetadata } from './experiments/hello-fragment/metadata';
+import { rayMarchingMetadata } from './experiments/ray-marching/metadata';
 
 const visualizationLoaders = {
 	'hello-fragment': () =>
 		import('./experiments/hello-fragment').then((module) => module.helloFragment)
 } satisfies Record<string, () => Promise<VisualizationDefinition>>;
 
+const dedicatedShaderLoaders = {
+	'ray-marching-cathedral': () =>
+		import('./experiments/ray-marching').then((module) => module.rayMarchingCathedral)
+};
+
 export type VisualizationId = keyof typeof visualizationLoaders;
+export type DedicatedShaderId = keyof typeof dedicatedShaderLoaders;
 
 export const visualizationSummaries = {
 	'hello-fragment': {
 		...helloFragmentMetadata,
 		href: '/blog/visualizations/hello-fragment-your-first-shader-from-scratch',
+		status: 'published'
+	},
+	'ray-marching-cathedral': {
+		...rayMarchingMetadata,
+		href: '/blog/visualizations/ray-marching-fragment-shader-from-scratch',
 		status: 'published'
 	},
 	'reaction-diffusion-atlas': {
@@ -112,9 +124,18 @@ export function isRegisteredVisualizationId(id: string): id is RegisteredVisuali
 	return id in visualizationSummaries;
 }
 
+export function isDedicatedShaderId(id: string): id is DedicatedShaderId {
+	return id in dedicatedShaderLoaders;
+}
+
 export async function loadVisualization(id: string) {
 	if (!isVisualizationId(id)) throw new Error(`Unknown visualization: ${id}`);
 	return visualizationLoaders[id]();
+}
+
+export async function loadDedicatedShader(id: string) {
+	if (!isDedicatedShaderId(id)) throw new Error(`Unknown dedicated shader: ${id}`);
+	return dedicatedShaderLoaders[id]();
 }
 
 export function visualizationSummary(id: string) {

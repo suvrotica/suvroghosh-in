@@ -1,9 +1,11 @@
 ---
 title: "Hello, Fragment: Your First Shader from Scratch"
-description: "Build a luminous, pointer-responsive fragment shader from an empty p5.js WebGL canvas, learning pixels, coordinates, uniforms, colour, time, and interference one visible step at a time."
+description: "Build a luminous, pointer-responsive fragment shader in p5.js WebGL, learning coordinates, uniforms, colour, time, and interference one visible step at a time."
 date: "2026-07-19"
+dateModified: "2026-08-15"
 category: "Visualizations"
-tags: ["Four Numbers","Fragment Shader","Wave Sources","Messages Shared","Reduce Motion","Shader","Fragment","Colour","Canvas","Pixel"]
+tags: ["Fragment Shader","Four Numbers","Wave Sources","Messages Shared","Reduce Motion","Narrow Luminous Ridges","Shader","Fragment","Colour","Canvas"]
+pinnedTags: ["Fragment Shader"]
 published: true
 thumbnail: "/images/visualizations/hello-fragment-poster.jpg"
 thumbnailAlt: "Luminous cyan, violet, and gold interference rings around a bright focal point beside the words Hello, Fragment"
@@ -243,3 +245,7 @@ Try Calm Field and lower the ring frequency. The image becomes broad enough to r
 The shader contains no photograph, no pre-rendered animation, and no simulated particles. Every visible frame is reconstructed from coordinates and a handful of numbers.
 
 That is the first lasting idea: a shader is not mysterious visual magic. It is ordinary mathematics repeated with extraordinary breadth.
+
+# Next experiment
+
+The rectangle is ready to acquire depth. Continue with [The Pixel Has a Postbox: Build a 3D World with Ray Marching](/blog/visualizations/ray-marching-fragment-shader-from-scratch), where each fragment sends a camera ray into an implicit hall and asks how far it may safely travel.
