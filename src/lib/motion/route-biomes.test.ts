@@ -4,7 +4,7 @@ import type { RouteMotionConfig } from './types';
 
 describe('route motion mapping', () => {
 	it.each<[string, RouteMotionConfig]>([
-		['/', { biome: 'home', intensity: 'standard', ambient: 'animated' }],
+		['/', { biome: 'home', intensity: 'standard', ambient: 'static' }],
 		['/start-here', { biome: 'home', intensity: 'quiet', ambient: 'animated' }],
 		['/writing', { biome: 'writing', intensity: 'standard', ambient: 'animated' }],
 		['/resources', { biome: 'writing', intensity: 'quiet', ambient: 'animated' }],
@@ -102,13 +102,15 @@ describe('special-route exclusions', () => {
 
 describe('view-transition eligibility', () => {
 	it('allows ordinary route changes with motion enabled', () => {
-		expect(shouldUseViewTransition('/', '/writing', 'gentle')).toBe(true);
+		expect(shouldUseViewTransition('/blog', '/writing', 'gentle')).toBe(true);
 		expect(shouldUseViewTransition('/projects', '/contact', 'alive')).toBe(true);
 		expect(shouldUseViewTransition('/writing', '/resources', 'gentle')).toBe(true);
 	});
 
-	it('skips still, same-document, specialist, and loop-owning routes', () => {
+	it('skips still, same-document, static-home, specialist, and loop-owning routes', () => {
 		expect(shouldUseViewTransition('/', '/writing', 'still')).toBe(false);
+		expect(shouldUseViewTransition('/', '/writing', 'alive')).toBe(false);
+		expect(isViewTransitionRoute('/')).toBe(false);
 		expect(shouldUseViewTransition('/writing#top', '/writing#archive', 'alive')).toBe(false);
 		expect(shouldUseViewTransition('/', '/blog/games', 'alive')).toBe(false);
 		expect(shouldUseViewTransition('/blog/visualizations', '/writing', 'alive')).toBe(false);

@@ -1,6 +1,6 @@
 # The Living Archive — motion system
 
-This document is the operating contract for the completed Phase 0–5 Living
+This document is the operating contract for the completed Phase 0–6 Living
 Archive motion system. It describes the system as implemented, the boundaries
 later work must preserve, and the checks to run when extending it.
 
@@ -77,9 +77,17 @@ attachment, deletes whole-page entry and orphaned constellation animation,
 adds pure frame/backing-store quality policy, consolidates lifecycle ownership,
 and caps/stops the Artificial Life renderer.
 
-The root layout owns route-level atmosphere and route transitions. Individual
-pages must not mount another ambient renderer. Specialist experiences continue
-to own their existing loops and shells.
+Phase 6 replaces the Phase 2 homepage composition with the Living Index. The
+semantic route renders first; one client-only, dynamically imported Three.js
+field may then enhance it. Four destination behaviours, the featured series,
+guided reading, work portals, recent content, and the closing invitation remain
+normal headings, lists, and links. The home renderer is never shared with the
+normal-shell Canvas 2D atmosphere.
+
+The root layout owns route-level atmosphere and route transitions on ordinary
+routes. `/` is the explicit exception: its global atmosphere is static and its
+Living Index component owns the only running homepage renderer. Specialist
+experiences continue to own their existing loops and shells.
 
 ## Architecture
 
@@ -99,6 +107,8 @@ to own their existing loops and shells.
 | Compatibility wrapper  | `src/lib/components/animation/ScrollReveal.svelte` | Preserve the existing `delay`, `class`, `tag`, and `children` API              |
 | Signal-glyph policy    | `src/lib/motion/signal-glyph.ts`                   | Generate stable, bounded inline-SVG geometry from post identity                |
 | Home composition       | `src/lib/components/home/*`                        | Render hero, reading paths, portals, recent signals, and semantic cards        |
+| Home scene gate        | `src/lib/components/home/LivingIndexScene.svelte`  | Keep the SSR fallback present and select Tier A, B, or C after semantic render |
+| Home Three controller  | `src/lib/components/home/living-index-scene.ts`    | Batch, choreograph, theme, pause, restore, and dispose the one homepage field  |
 | Topic-map policy       | `src/lib/topics/topic-map.ts`                      | Derive deterministic territories, landmarks, links, labels, and mobile order   |
 | Topic-map attachment   | `src/lib/attachments/topic-map-exploration.ts`     | Delegate focus/fine-pointer relationship emphasis without geometry reads       |
 | Topic-map component    | `src/lib/components/topics/LivingTopicMap.svelte`  | Render desktop semantic SVG and the mobile HTML metro representation           |
@@ -214,7 +224,7 @@ currently returns the same full configuration.
 
 | Route or route family                                                       | Biome        | Intensity     | Ambient    | Scope      |
 | --------------------------------------------------------------------------- | ------------ | ------------- | ---------- | ---------- |
-| `/`                                                                         | `home`       | `standard`    | `animated` | `viewport` |
+| `/`                                                                         | `home`       | `standard`    | `static`   | `viewport` |
 | `/start-here`                                                               | `home`       | `quiet`       | `animated` | `viewport` |
 | `/writing`                                                                  | `writing`    | `standard`    | `animated` | `viewport` |
 | `/blog`                                                                     | `writing`    | `quiet`       | `animated` | `viewport` |
@@ -424,7 +434,10 @@ Existing `--motion-medium`, `--motion-slow`, `--ease-standard`, and
 `--ease-emphatic` consumers remain supported. Do not remove compatibility
 tokens as part of an atmosphere extension.
 
-## Phase 2 home composition
+## Phase 2 home composition (historical)
+
+This section records the Phase 2/5 state for regression history. Phase 6 below
+is the current `/` contract wherever the two differ.
 
 The home route keeps `SEO`, `siteSEO`, and `withSiteGraph()` at route level.
 All public copy, links, heading order, and the four-post server load remain
@@ -494,18 +507,57 @@ draw one primary path once on hover or focus. No card owns a continuous loop.
 ### Responsive and fallback contract
 
 - desktop breakouts are centred grid items and must stay within the viewport;
-- the mobile reading rail uses native inline overflow,
-  `scroll-snap-type: inline proximity`, 82 vw bounded cards, and a visible next
-  edge;
-- it has no autoplay, carousel controls, roving `tabindex`, or keyboard trap;
+- the guided-reading list is a normal vertical flow at every width; mobile has
+  no carousel, drag requirement, scroll snapping, roving `tabindex`, or
+  keyboard trap;
 - below the desktop portal breakpoint, hero content comes first and the
-  decorative specimen recedes;
+  environmental field becomes substantially quieter;
 - forced colours and authored high contrast remove underlays/specimens/glyphs
   while retaining real borders and focus;
 - print removes decoration and transforms the rail/portals/signals into simple
   two-column document grids;
 - without JavaScript, the complete static identity sentence, all copy, every
   link, and deterministic SVG markup remain present.
+
+## Phase 6 Living Index homepage
+
+The Phase 6 homepage supersedes the Phase 2 hero and portal arrangement while
+retaining its data and progressive-enhancement contracts. `+page.server.ts`
+still derives the featured installment, the four latest posts, and all five
+reading-path summaries from canonical content. It now also forwards optional
+validated recent-image dimensions, reading time, and interactive status.
+
+`LivingIndexScene.svelte` always server-renders the CSS field. After mount it
+checks the site motion resolution, `prefers-reduced-motion`, Save-Data, forced
+colours, print, authored High Contrast, viewport/pointer class, processor and
+memory hints. Eligible pages import `living-index-scene.ts` during idle time:
+
+- Tier A caps DPR at 1.5 and enables the full batched field plus fine-pointer
+  parallax;
+- Tier B caps DPR at 1.18, reduces draw counts, and uses a 24/30 Hz cadence;
+- Tier C never imports or retains a renderer and leaves the complete CSS field
+  and semantic document visible.
+
+The controller measures `[data-scene-state]` elements rather than arbitrary
+page offsets. It damps between hero, Systems, Laboratory, Writing, Calcutta,
+patient, guided reading, work, latest, and closing states. Focus and fine
+pointer entry on a Four Ways link select the same state without making the
+Canvas interactive. The renderer is transparent, `aria-hidden`, unfocusable,
+and pointer-transparent; every destination is a native DOM link.
+
+One resize observer, scroll scheduler, visibility gate, and deterministic
+animation loop belong to the controller. Geometry and materials are shared,
+frame deltas are clamped, and no vectors, arrays, geometry, or material are
+created in the frame loop. Context loss pauses drawing; restoration resets the
+existing renderer, while an initialization or restoration failure permanently
+returns that page instance to Tier C. Route unmount or a change to Still fully
+disposes geometry/materials, cancels observers and frames, and releases the
+WebGL context.
+
+The former `KineticLine` and Phase 2 hero specimen are not part of the current
+homepage. Projects and Consulting are the primary actions; Resume, Writing,
+and Contact remain tertiary links. The Four Ways, patient trace, reading-path
+traces, and missing-image signal glyphs all have code-native DOM/SVG fallbacks.
 
 ## Phase 3 route dialects and quiet reading
 

@@ -6,11 +6,13 @@ type Phase5Audit = {
 	ambientDraws: number;
 	localFrames: number;
 	cls: number;
+	heroReadyAt: number | null;
 	lcp: Array<{
 		startTime: number;
 		tag: string | null;
 		text: string;
 		inAtmosphere: boolean;
+		inLivingIndex: boolean;
 	}>;
 };
 
@@ -22,8 +24,22 @@ async function installAudit(page: Page) {
 			ambientDraws: 0,
 			localFrames: 0,
 			cls: 0,
+			heroReadyAt: null,
 			lcp: []
 		};
+
+		const markSemanticHero = () => {
+			if (auditWindow.__phase5Audit.heroReadyAt !== null) return;
+			if (document.querySelector('[data-living-hero]')) {
+				auditWindow.__phase5Audit.heroReadyAt = performance.now();
+			}
+		};
+		const semanticObserver = new MutationObserver(markSemanticHero);
+		semanticObserver.observe(document, { childList: true, subtree: true });
+		document.addEventListener('DOMContentLoaded', () => {
+			markSemanticHero();
+			semanticObserver.disconnect();
+		});
 
 		new PerformanceObserver((list) => {
 			for (const entry of list.getEntries()) {
@@ -43,7 +59,8 @@ async function installAudit(page: Page) {
 					startTime: entry.startTime,
 					tag: element?.tagName ?? null,
 					text: element?.textContent?.trim().replace(/\s+/g, ' ').slice(0, 100) ?? '',
-					inAtmosphere: Boolean(element?.closest('[data-route-atmosphere]'))
+					inAtmosphere: Boolean(element?.closest('[data-route-atmosphere]')),
+					inLivingIndex: Boolean(element?.closest('[data-living-index-scene]'))
 				});
 			}
 		}).observe({ type: 'largest-contentful-paint', buffered: true });
@@ -74,6 +91,22 @@ async function audit(page: Page): Promise<Phase5Audit> {
 	);
 }
 
+function collectLivingIndexSceneModules(page: Page): () => Promise<string[]> {
+	const inspections: Array<Promise<string | null>> = [];
+	page.on('response', (response) => {
+		const pathname = new URL(response.url()).pathname;
+		if (!pathname.startsWith('/_app/immutable/chunks/') || !pathname.endsWith('.js')) return;
+		inspections.push(
+			response
+				.text()
+				.then((source) => (source.includes('createLivingIndexScene') ? response.url() : null))
+				.catch(() => null)
+		);
+	});
+
+	return async () => (await Promise.all(inspections)).filter((url): url is string => url !== null);
+}
+
 async function createAliveContext(
 	browser: Browser,
 	baseURL: string | undefined,
@@ -93,19 +126,75 @@ async function createAliveContext(
 	return { context, page };
 }
 
-test('home LCP and a trusted control interaction stay outside the old kinetic cost', async ({
+test('semantic home LCP precedes the lazy Living Index scene and stays outside its cost', async ({
 	page
 }, testInfo) => {
 	await installAudit(page);
-	await page.goto('/');
+	const readSceneModuleUrls = collectLivingIndexSceneModules(page);
+	await page.goto('/', { waitUntil: 'domcontentloaded' });
+	await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
+	await expect(page.locator('[data-living-index-fallback]')).toBeAttached();
+	await expect(page.locator('[data-route-atmosphere]')).toHaveAttribute('data-ambient', 'static');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 	await page.waitForTimeout(4_200);
 
 	const result = await audit(page);
+	const maximumLcpStart = Math.max(...result.lcp.map((entry) => entry.startTime));
+	expect(result.heroReadyAt).not.toBeNull();
 	expect(result.lcp.length).toBeGreaterThan(0);
 	expect(result.cls).toBeLessThanOrEqual(0.1);
 	expect(result.lcp.every((entry) => entry.startTime <= 2_500)).toBe(true);
-	expect(result.lcp.every((entry) => !entry.inAtmosphere && entry.tag !== 'CANVAS')).toBe(true);
-	await expect(page.locator('[data-kinetic-line]')).toHaveAttribute('data-kinetic-state', 'static');
+	expect(
+		result.lcp.every(
+			(entry) => !entry.inAtmosphere && !entry.inLivingIndex && entry.tag !== 'CANVAS'
+		)
+	).toBe(true);
+
+	const sceneModuleUrls = await readSceneModuleUrls();
+	const sceneResources = await page.evaluate(
+		(moduleUrls) =>
+			performance
+				.getEntriesByType('resource')
+				.filter((entry) => moduleUrls.includes(entry.name))
+				.map((entry) => ({
+					initiatorType: (entry as PerformanceResourceTiming).initiatorType,
+					startTime: entry.startTime
+				})),
+		sceneModuleUrls
+	);
+	const scene = page.locator('[data-living-index-scene]');
+	const tier = await scene.getAttribute('data-scene-tier');
+	expect(['A', 'B', 'C']).toContain(tier);
+	testInfo.annotations.push(
+		{
+			type: 'maximum-semantic-lcp',
+			description: `${maximumLcpStart.toFixed(1)} ms`
+		},
+		{ type: 'cumulative-layout-shift', description: result.cls.toFixed(4) },
+		{
+			type: 'semantic-hero-ready',
+			description: `${result.heroReadyAt!.toFixed(1)} ms`
+		},
+		{ type: 'living-index-tier', description: tier ?? 'unknown' },
+		{
+			type: 'scene-resource-start',
+			description: sceneResources[0] ? `${sceneResources[0].startTime.toFixed(1)} ms` : 'none'
+		}
+	);
+	if (tier === 'A' || tier === 'B') {
+		expect(sceneResources).toHaveLength(1);
+		expect(sceneResources[0].initiatorType).toBe('script');
+		expect(sceneResources[0].startTime).toBeGreaterThanOrEqual(result.heroReadyAt!);
+		await expect(page.locator('[data-living-index-canvas]')).toHaveCount(1);
+		await expect(page.locator('[data-local-animation-owner="living-index"]')).toHaveCount(1);
+	} else {
+		expect(sceneResources.length).toBeLessThanOrEqual(1);
+		if (sceneResources[0]) {
+			expect(sceneResources[0].initiatorType).toBe('script');
+			expect(sceneResources[0].startTime).toBeGreaterThanOrEqual(result.heroReadyAt!);
+		}
+		await expect(page.locator('[data-living-index-canvas]')).toHaveCount(0);
+	}
 
 	const motionSelect = page.getByLabel('Motion preference', { exact: true });
 	const interactionLatency = page.evaluate(

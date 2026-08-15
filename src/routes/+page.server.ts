@@ -28,6 +28,7 @@ export const load: PageServerLoad = () => {
 		return {
 			slug: post.slug,
 			categorySlug: post.categorySlug,
+			categoryLabel: post.categoryLabel,
 			title: post.title,
 			description: post.description,
 			date: post.date,
@@ -36,13 +37,36 @@ export const load: PageServerLoad = () => {
 			imageWidth: dimensions.width,
 			imageHeight: dimensions.height,
 			part: post.seriesPart,
-			chapter: post.seriesChapter
+			chapter: post.seriesChapter,
+			interactiveFirst: post.interactiveFirst ?? false
 		};
 	});
 
 	if (featuredParts.length === 0) {
 		throw new Error(`Featured series has no published installments: ${FEATURED_SERIES_ID}`);
 	}
+
+	const recentPosts = getPublishedPosts()
+		.slice(0, 4)
+		.map((post) => {
+			const dimensions = post.thumbnail ? getImageDimensions(post.thumbnail) : undefined;
+
+			return {
+				slug: post.slug,
+				title: post.title,
+				description: post.description,
+				date: post.date,
+				categorySlug: post.categorySlug,
+				categoryLabel: post.categoryLabel,
+				sectionLabel: post.sectionLabel,
+				readingTime: post.readingTime,
+				interactiveFirst: post.interactiveFirst ?? false,
+				thumbnail: dimensions ? post.thumbnail : undefined,
+				thumbnailAlt: dimensions ? post.thumbnailAlt : undefined,
+				imageWidth: dimensions?.width,
+				imageHeight: dimensions?.height
+			};
+		});
 
 	return {
 		featuredSeries: {
@@ -52,17 +76,7 @@ export const load: PageServerLoad = () => {
 			description: definition.description,
 			parts: featuredParts
 		},
-		recentPosts: getPublishedPosts()
-			.slice(0, 4)
-			.map(({ slug, title, description, date, categorySlug, categoryLabel, sectionLabel }) => ({
-				slug,
-				title,
-				description,
-				date,
-				categorySlug,
-				categoryLabel,
-				sectionLabel
-			})),
+		recentPosts,
 		readingPaths: getCuratedReadingPathSummaries()
 	};
 };
