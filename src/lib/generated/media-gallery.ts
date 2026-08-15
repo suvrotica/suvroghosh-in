@@ -4360,6 +4360,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp",
+			"src": "/images/visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp",
+			"bytes": 102080,
+			"width": 1600,
+			"height": 900
+		},
+		{
 			"name": "visualizations/prior-authorization-machine.png",
 			"src": "/images/visualizations/prior-authorization-machine.png",
 			"bytes": 78492,

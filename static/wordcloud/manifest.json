@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T17:59:39.136600+00:00",
+  "generatedAt": "2026-08-15T20:56:15.020409+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4391,6 +4391,29 @@
         "Tiffin",
         "Face",
         "Time"
+      ],
+      "wordCount": 130
+    },
+    "human-ai-icu-prediction-laboratory": {
+      "generatedAt": "2026-08-15T20:56:14.506463+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/human-ai-icu-prediction-laboratory.svg",
+      "source": "src/lib/posts/human-ai-icu-prediction-laboratory.md",
+      "sourceHash": "a0ce126e3c751906706c54cde78b3ae2942832961c98a3ca32ee7c5097c088f6",
+      "sourceModified": "2026-08-15T20:10:36.147793+00:00",
+      "topWords": [
+        "Synthetic",
+        "Model",
+        "Score",
+        "Probability",
+        "Calibration",
+        "AUC",
+        "Case",
+        "Outcome",
+        "Forecast",
+        "Clinician",
+        "Weight",
+        "Cohort"
       ],
       "wordCount": 130
     },

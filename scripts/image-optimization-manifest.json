@@ -9882,6 +9882,22 @@
       "sourceHash": "9743ea8247d9ad260c41e963d47ee1be2a6d602cdb5c92bc0f56a7eb8dac7ed1",
       "width": 1200
     },
+    "static/images/visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp": {
+      "format": "WEBP",
+      "height": 900,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 102080,
+      "outputHash": "d01de7daa7d4b9ba21e1678201f02a90980f00808ab8891cafde16b598642d29",
+      "psnrDb": 36.73,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 185828,
+      "sourceHash": "67e3d1a4d26ad02871e3c6ff03ef1110be3c43e46e84b76ceb79dcb8a6d76ed0",
+      "width": 1600
+    },
     "static/images/visualizations/prior-authorization-machine.png": {
       "format": "PNG",
       "height": 900,

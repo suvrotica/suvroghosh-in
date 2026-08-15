@@ -342,7 +342,7 @@ All cohort metrics use the complete set of approximately 3,000 cases. Realised A
 
 Calibration uses equal-count bins separately for each series, collapsing ties when fewer distinct bins are defensible. Wilson intervals expose finite-bin variability. The distribution rug shows where forecasts actually occur, preventing a smooth-looking line from implying support in empty probability regions.
 
-The shared-error Canvas draws no more than a deterministic 600-case sample for rendering performance; the accessible table and all summary calculations remain tied to the full cohort. The selected case is a deterministic, moderately high-disagreement record rather than the most extreme outlier, and Previous and Next controls make inspection independent of pointer input.
+The shared-error Canvas draws no more than a deterministic 600-case sample for rendering performance, and its accessible table mirrors that same display sample. All summary calculations still use the complete cohort. The selected case is a deterministic, moderately high-disagreement record rather than the most extreme outlier, and Previous and Next controls make inspection independent of pointer input.
 
 The score curve evaluates weights from zero to one against the same individual forecasts. Endpoint labels say **Model only** and **Clinician only**. Individual-score references and a non-exaggerating scale remain visible. If the member predictions are effectively identical, an “optimal” weight is not identifiable and the display reports an em dash rather than manufacturing certainty.
 

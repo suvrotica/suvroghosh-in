@@ -11662,6 +11662,33 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-15"
+		},
+		"src/lib/posts/human-ai-icu-prediction-laboratory.md": {
+			"bodyHash": "6d0c2b0753ce6f4980961a1957bbca10fcf99edff0f4baaed1324a105cc389bf",
+			"hashVersion": 2,
+			"revisionHash": "6122c664e18d907d7b93a1888a9cd3597060189234c76d9d1d60d08e8a7a127d",
+			"generatedTags": [
+				"Healthcare",
+				"Statistics",
+				"Machine Learning",
+				"Clinical Prediction",
+				"Calibration",
+				"Human-AI Systems",
+				"Brier Score Rewards",
+				"Cross-Error Term",
+				"Fictional ICU Snapshot",
+				"Trainee Plus"
+			],
+			"pinnedTags": [
+				"Healthcare",
+				"Statistics",
+				"Machine Learning",
+				"Clinical Prediction",
+				"Calibration",
+				"Human-AI Systems"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-16"
 		}
 	},
 	"maxTags": 10
