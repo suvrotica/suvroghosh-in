@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	width="1200"
+	height="630"
+	viewBox="0 0 1200 630"
+	role="img"
+	aria-labelledby="poster-title poster-description"
+>
+	<title id="poster-title">Before You Had a Heartbeat, You Were a Rhythm</title>
+	<desc id="poster-description">
+		A literature-based schematic of a calcium wave crossing an egg beside a time-series trace
+		with one large first rise and smaller repeated pulses.
+	</desc>
+	<defs>
+		<linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#07131c" />
+			<stop offset="0.56" stop-color="#0b1c27" />
+			<stop offset="1" stop-color="#102d35" />
+		</linearGradient>
+		<radialGradient id="egg-fill" cx="38%" cy="31%" r="72%">
+			<stop offset="0" stop-color="#24434b" />
+			<stop offset="0.7" stop-color="#102a34" />
+			<stop offset="1" stop-color="#081820" />
+		</radialGradient>
+		<linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0" stop-color="#ffb660" />
+			<stop offset="0.42" stop-color="#ff755e" />
+			<stop offset="1" stop-color="#e84a78" />
+		</linearGradient>
+		<linearGradient id="trace" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0" stop-color="#ffc46b" />
+			<stop offset="0.5" stop-color="#ff7964" />
+			<stop offset="1" stop-color="#f05384" />
+		</linearGradient>
+		<linearGradient id="trace-area" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#ff8a66" stop-opacity="0.26" />
+			<stop offset="1" stop-color="#ff8a66" stop-opacity="0" />
+		</linearGradient>
+		<pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+			<path d="M32 0H0V32" fill="none" stroke="#9ac2ca" stroke-opacity="0.07" />
+		</pattern>
+		<clipPath id="egg-clip">
+			<circle cx="292" cy="397" r="156" />
+		</clipPath>
+		<filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+			<feGaussianBlur stdDeviation="8" result="blur" />
+			<feMerge>
+				<feMergeNode in="blur" />
+				<feMergeNode in="SourceGraphic" />
+			</feMerge>
+		</filter>
+	</defs>
+
+	<rect width="1200" height="630" fill="url(#background)" />
+	<rect width="1200" height="630" fill="url(#grid)" />
+	<path d="M0 213H1200" stroke="#83abb4" stroke-opacity="0.18" />
+	<path d="M516 213V570" stroke="#83abb4" stroke-opacity="0.16" />
+
+	<g font-family="Inter, ui-sans-serif, system-ui, sans-serif">
+		<text x="58" y="42" fill="#87d6d3" font-size="13" font-weight="700" letter-spacing="3.4">
+			CELL SIGNAL ATLAS · 01
+		</text>
+		<text x="58" y="99" fill="#f5f0e6" font-size="47" font-weight="650" letter-spacing="-1.4">
+			BEFORE YOU HAD A HEARTBEAT,
+		</text>
+		<text x="58" y="158" fill="#f5f0e6" font-size="57" font-weight="760" letter-spacing="-1.8">
+			YOU WERE A RHYTHM
+		</text>
+		<text x="61" y="190" fill="#a9c1c6" font-size="20" font-weight="450">
+			The calcium signals that wake an egg
+		</text>
+
+		<g aria-hidden="true">
+			<circle cx="292" cy="397" r="168" fill="none" stroke="#8cd7d2" stroke-opacity="0.22" />
+			<circle cx="292" cy="397" r="156" fill="url(#egg-fill)" stroke="#afd9d8" stroke-width="2" />
+			<g clip-path="url(#egg-clip)" opacity="0.4">
+				<path
+					d="M184 347c42-41 91-26 111 5s60 36 93 4M173 401c35-36 76-25 101 6s70 43 116 5M181 457c47-28 88-11 108 18s57 24 92 2"
+					fill="none"
+					stroke="#75b9bd"
+					stroke-width="7"
+					stroke-linecap="round"
+					stroke-opacity="0.25"
+				/>
+				<circle cx="137" cy="397" r="54" fill="none" stroke="url(#wave)" stroke-width="18" opacity="0.95" />
+				<circle cx="137" cy="397" r="105" fill="none" stroke="url(#wave)" stroke-width="13" opacity="0.7" />
+				<circle cx="137" cy="397" r="158" fill="none" stroke="url(#wave)" stroke-width="8" opacity="0.42" />
+				<circle cx="137" cy="397" r="210" fill="none" stroke="url(#wave)" stroke-width="5" opacity="0.2" />
+				<g fill="#ffc66e" filter="url(#soft-glow)">
+					<circle cx="195" cy="381" r="4" />
+					<circle cx="222" cy="421" r="3" />
+					<circle cx="253" cy="354" r="3.5" />
+					<circle cx="278" cy="441" r="4" />
+					<circle cx="318" cy="373" r="3" />
+					<circle cx="349" cy="420" r="3.5" />
+					<circle cx="389" cy="385" r="3" />
+				</g>
+			</g>
+			<path d="M107 395c-19-9-33-22-45-41-10-15-21-18-33-10" fill="none" stroke="#ecdfc5" stroke-width="3" stroke-linecap="round" />
+			<ellipse cx="120" cy="398" rx="18" ry="10" transform="rotate(8 120 398)" fill="#f5f0e6" />
+			<circle cx="139" cy="397" r="7" fill="#ff9a64" filter="url(#soft-glow)" />
+		</g>
+
+		<text x="58" y="242" fill="#9cb8bd" font-size="12" font-weight="700" letter-spacing="2.5">
+			SPATIAL VIEW
+		</text>
+		<text x="292" y="580" fill="#f2eee3" font-size="16" font-weight="650" text-anchor="middle">
+			Ca²⁺ release travels across the cell
+		</text>
+		<text x="144" y="320" fill="#ffbd78" font-size="13" font-weight="700">
+			entry
+		</text>
+		<path d="M158 325l-16 52" fill="none" stroke="#ffbd78" stroke-width="1.5" />
+
+		<g transform="translate(558 239)">
+			<rect width="584" height="318" rx="16" fill="#07141b" fill-opacity="0.72" stroke="#7eaab2" stroke-opacity="0.24" />
+			<text x="24" y="30" fill="#9cb8bd" font-size="12" font-weight="700" letter-spacing="2.5">
+				TIME-SERIES VIEW
+			</text>
+			<text x="560" y="30" fill="#88d5d2" font-size="12" font-weight="650" text-anchor="end">
+				SECONDS → MINUTES
+			</text>
+			<g transform="translate(42 55)">
+				<path d="M0 214H510M0 154H510M0 94H510M0 34H510" stroke="#9ec0c5" stroke-opacity="0.12" />
+				<path d="M0 0V230H510" fill="none" stroke="#a7c7ca" stroke-opacity="0.45" stroke-width="1.5" />
+				<path
+					d="M0 219L26 219C40 219 42 53 60 26C70 10 83 130 94 192C101 219 118 219 133 218C149 217 155 121 169 98C180 81 189 191 200 216C214 219 228 219 239 217C250 212 255 136 266 117C278 96 288 188 300 215C310 219 325 219 338 217C350 210 354 148 365 128C376 108 388 190 399 215C413 219 423 219 436 216C449 208 454 157 465 139C477 119 489 193 500 216L510 219V230H0Z"
+					fill="url(#trace-area)"
+				/>
+				<path
+					d="M0 219L26 219C40 219 42 53 60 26C70 10 83 130 94 192C101 219 118 219 133 218C149 217 155 121 169 98C180 81 189 191 200 216C214 219 228 219 239 217C250 212 255 136 266 117C278 96 288 188 300 215C310 219 325 219 338 217C350 210 354 148 365 128C376 108 388 190 399 215C413 219 423 219 436 216C449 208 454 157 465 139C477 119 489 193 500 216L510 219"
+					fill="none"
+					stroke="url(#trace)"
+					stroke-width="5"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					filter="url(#soft-glow)"
+				/>
+				<circle cx="60" cy="26" r="5" fill="#ffc36b" />
+				<path d="M70 27H130" stroke="#ffc36b" stroke-opacity="0.65" />
+				<text x="137" y="31" fill="#f0dfc5" font-size="13" font-weight="650">first rise</text>
+				<text x="-14" y="10" fill="#86d3d0" font-size="13" font-weight="700" transform="rotate(-90 -14 10)">Ca²⁺</text>
+				<text x="510" y="252" fill="#9cb8bd" font-size="12" text-anchor="end">elapsed time</text>
+			</g>
+		</g>
+
+		<rect x="58" y="598" width="1084" height="1" fill="#84aeb5" fill-opacity="0.26" />
+		<text x="600" y="619" fill="#c8d5d5" font-size="13" font-weight="650" letter-spacing="1.2" text-anchor="middle">
+			LITERATURE-BASED SCHEMATIC · NOT A RAW EXPERIMENTAL RECORDING
+		</text>
+	</g>
+</svg>

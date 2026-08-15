@@ -76,6 +76,18 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/the-living-aperture',
 		status: 'published'
 	},
+	'fertilization-calcium-clock': {
+		id: 'fertilization-calcium-clock',
+		title: 'Before You Had a Heartbeat, You Were a Rhythm',
+		description:
+			'Compare literature-based calcium waves and pulse trains across fertilization studies, with every measurement tied to its evidence and limits.',
+		subjects: ['Biology', 'Scientific Computing'],
+		poster: '/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg',
+		posterAlt:
+			'A schematic calcium wave crossing an egg beside a luminous time-series trace with one large first rise and smaller repeated pulses',
+		href: '/blog/visualizations/fertilization-calcium-clock',
+		status: 'published'
+	},
 	'the-matrix-is-random': {
 		id: 'the-matrix-is-random',
 		title: 'The Matrix Is Random. Why Does It Have a Shape?',

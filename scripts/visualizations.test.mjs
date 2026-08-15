@@ -874,3 +874,114 @@ test('the random-matrix laboratory is published, deterministic, worker-isolated,
 	);
 	assert.ok(fs.statSync(poster).size < 750 * 1024, 'random-matrix social image exceeds 750 kB');
 });
+
+test('the fertilization calcium atlas is published, provenance-first, and resilient', () => {
+	const slug = 'fertilization-calcium-clock';
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const atlas = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'fertilization-calcium-clock',
+		'FertilizationCalciumAtlas.svelte'
+	);
+	const profiles = read(
+		'src',
+		'lib',
+		'visualizations',
+		'fertilization-calcium-atlas',
+		'profiles.ts'
+	);
+	const types = read('src', 'lib', 'visualizations', 'fertilization-calcium-atlas', 'types.ts');
+	const poster = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'fertilization-calcium-clock',
+		'fertilization-calcium-clock.svg'
+	);
+
+	assert.match(post, /title: "Before You Had a Heartbeat, You Were a Rhythm"/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /<FertilizationCalciumAtlas \/>/);
+	assert.match(post, /<TTS \/>/);
+	assert.match(post, /Before the embryo acquired a shape, it acquired a rhythm\./);
+	assert.match(post, /## Fertilization calcium method/);
+
+	for (const doi of [
+		'10.1093/oxfordjournals.humrep.a137999',
+		'10.1006/dbio.1999.9388',
+		'10.1006/dbio.1999.9573',
+		'10.1016/0012-1606(86)90093-X',
+		'10.1083/jcb.100.4.1325',
+		'10.1016/0012-1606(89)90168-1',
+		'10.1083/jcb.103.6.2333',
+		'10.3389/fcell.2018.00036',
+		'10.1016/bs.ctdb.2024.12.002',
+		'10.1006/dbio.2002.0788',
+		'10.1016/j.ydbio.2006.08.041',
+		'10.1242/dev.150227'
+	]) {
+		assert.ok(`${post}\n${profiles}`.includes(doi), `missing fertilization source DOI ${doi}`);
+	}
+
+	for (const evidenceStatus of [
+		'reported',
+		'reported-range',
+		'reported-maximum',
+		'derived',
+		'schematic'
+	]) {
+		assert.match(types, new RegExp(`'${evidenceStatus}'`));
+	}
+	for (const speciesId of [
+		'human',
+		'mouse',
+		'hamster',
+		'xenopus',
+		'phallusia',
+		'ciona',
+		'sea-urchin'
+	]) {
+		assert.match(profiles, new RegExp(`id: '${speciesId}'`));
+	}
+
+	assert.match(
+		atlas,
+		/Literature-based schematic generated from published summary measurements; not a raw\s+experimental recording\./
+	);
+	assert.match(atlas, /Actual time/);
+	assert.match(atlas, /Normalized replay/);
+	assert.match(atlas, /type="range"/);
+	assert.match(atlas, /<table>/);
+	assert.match(atlas, /prefers-reduced-motion: reduce/);
+	assert.match(atlas, /\['still', 'reduce'\]\.includes/);
+	assert.match(atlas, /new IntersectionObserver/);
+	assert.match(atlas, /aria-live="polite"/);
+	assert.doesNotMatch(atlas, /\bfetch\s*\(/);
+	assert.doesNotMatch(profiles, /Math\.random\s*\(/);
+
+	assert.match(registry, /'fertilization-calcium-clock':\s*\{/);
+	assert.match(registry, /href: '\/blog\/visualizations\/fertilization-calcium-clock'/);
+	assert.match(
+		landing,
+		/'fertilization-calcium-clock': visualizationSummaries\['fertilization-calcium-clock'\]\.subjects/
+	);
+	assert.ok(fs.existsSync(poster), 'missing fertilization calcium social poster');
+	const svg = fs.readFileSync(poster, 'utf8');
+	assert.match(svg, /<svg[\s\S]*width="1200"[\s\S]*height="630"/);
+	assert.match(svg, /<title id="poster-title">/);
+	assert.match(svg, /<desc id="poster-description">/);
+	assert.doesNotMatch(svg, /<image\b|\bhref=/);
+});

@@ -31,6 +31,7 @@
 		'the-strange-attractor-orchestra':
 			visualizationSummaries['the-strange-attractor-orchestra'].subjects,
 		'the-living-aperture': visualizationSummaries['the-living-aperture'].subjects,
+		'fertilization-calcium-clock': visualizationSummaries['fertilization-calcium-clock'].subjects,
 		'the-matrix-is-random-why-does-it-have-a-shape':
 			visualizationSummaries['the-matrix-is-random'].subjects
 	};
