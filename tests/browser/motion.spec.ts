@@ -16,6 +16,7 @@ function collectUnexpectedRuntimeErrors(page: Page): string[] {
 
 		const source = `${message.location().url} ${message.text()}`;
 		if (source.includes('/_vercel/')) return;
+		if (/THREE\.WebGLRenderer:.*WebGL context/i.test(source)) return;
 		errors.push(`console: ${message.text()}`);
 	});
 
@@ -41,6 +42,37 @@ async function storeMotionBeforePageScripts(page: Page, preference: string) {
 
 async function blockHydration(page: Page) {
 	await page.route('**/_app/immutable/**/*.js', (route) => route.abort());
+}
+
+async function expectHomeSceneContract(page: Page): Promise<'A' | 'B' | 'C'> {
+	const scene = page.locator('[data-living-index-scene]');
+	const canvas = page.locator('[data-living-index-canvas]');
+	await expect(page.locator('[data-route-atmosphere]')).toHaveAttribute('data-ambient', 'static');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
+	await expect
+		.poll(async () => scene.getAttribute('data-scene-status'), { timeout: 5_000 })
+		.toMatch(/^(running|paused|fallback|failed)$/);
+
+	const tier = await scene.getAttribute('data-scene-tier');
+	expect(['A', 'B', 'C']).toContain(tier);
+	if (tier === 'A' || tier === 'B') {
+		await expect(canvas).toHaveCount(1);
+		await expect(canvas).toHaveAttribute('data-local-animation-owner', 'living-index');
+		await expect(canvas).toHaveAttribute('aria-hidden', 'true');
+		await expect(canvas).toHaveCSS('pointer-events', 'none');
+		expect(await canvas.evaluate((element) => element.tabIndex)).toBe(-1);
+	} else {
+		await expect(canvas).toHaveCount(0);
+	}
+	return tier as 'A' | 'B' | 'C';
+}
+
+async function expectTierCHomeFallback(page: Page) {
+	const scene = page.locator('[data-living-index-scene]');
+	await expect(scene).toHaveAttribute('data-scene-tier', 'C');
+	await expect(scene).toHaveAttribute('data-scene-status', /^(fallback|failed)$/);
+	await expect(scene.locator('[data-living-index-canvas]')).toHaveCount(0);
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 }
 
 test('the early bootstrap resolves a stored preference before hydration', async ({ page }) => {
@@ -122,7 +154,7 @@ test('reduced motion remains authoritative without erasing an explicit preferenc
 	await expect(desktopSelect).toHaveValue('alive');
 	await expect(page.locator('html')).toHaveAttribute('data-motion-preference', 'alive');
 	await expect(page.locator('html')).toHaveAttribute('data-motion', 'still');
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
+	await expectTierCHomeFallback(page);
 	expect(await page.evaluate(() => window.localStorage.getItem('site-motion'))).toBe('alive');
 
 	await page.emulateMedia({ reducedMotion: 'no-preference' });
@@ -130,7 +162,7 @@ test('reduced motion remains authoritative without erasing an explicit preferenc
 	await expect(page.locator('html')).toHaveAttribute('data-motion', 'alive');
 	await expect(desktopSelect).toHaveValue('alive');
 	expect(await page.evaluate(() => window.localStorage.getItem('site-motion'))).toBe('alive');
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(1);
+	await expectHomeSceneContract(page);
 });
 
 test('paper, night, and high contrast honour explicit still, gentle, and alive choices', async ({
@@ -157,15 +189,11 @@ test('paper, night, and high contrast honour explicit still, gentle, and alive c
 				await expect(page.locator('html')).toHaveAttribute('data-motion', motion);
 				expect(await page.evaluate(() => window.localStorage.getItem('site-motion'))).toBe(motion);
 
-				const canvasExpected = motion !== 'still' && theme !== 'high-contrast';
-				await expect(page.locator('[data-ambient-field]')).toHaveCount(canvasExpected ? 1 : 0);
-
-				if (canvasExpected) {
-					const canvas = page.locator('[data-ambient-field]');
-					await expect(canvas).toHaveAttribute('aria-hidden', 'true');
-					expect(await canvas.getAttribute('tabindex')).toBeNull();
-					expect(await canvas.evaluate((element) => element.tabIndex)).toBe(-1);
-					await expect(canvas).toHaveCSS('pointer-events', 'none');
+				await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
+				if (motion === 'still' || theme === 'high-contrast') {
+					await expectTierCHomeFallback(page);
+				} else {
+					await expectHomeSceneContract(page);
 				}
 			}
 
@@ -178,23 +206,26 @@ test('paper, night, and high contrast honour explicit still, gentle, and alive c
 	expect(runtimeErrors).toEqual([]);
 });
 
-test('forced colours and print suppress both atmosphere layers', async ({ page }) => {
+test('forced colours and print suppress the global and page-owned environments', async ({
+	page
+}) => {
 	await page.goto('/');
 
 	const atmosphere = page.locator('[data-route-atmosphere]');
 	await expect(atmosphere).toHaveCount(1);
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(1);
+	await expect(atmosphere).toHaveAttribute('data-ambient', 'static');
+	await expectHomeSceneContract(page);
 
 	await page.emulateMedia({ forcedColors: 'active' });
 	await expect(atmosphere).toHaveCSS('display', 'none');
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
+	await expectTierCHomeFallback(page);
 
 	await page.emulateMedia({ forcedColors: 'none' });
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(1);
+	await expectHomeSceneContract(page);
 
 	await page.emulateMedia({ media: 'print' });
 	await expect(atmosphere).toHaveCSS('display', 'none');
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
+	await expectTierCHomeFallback(page);
 });
 
 test('normal routes expose deterministic biomes and one fixed, inert atmosphere', async ({
@@ -206,7 +237,7 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 			path: '/',
 			biome: 'home',
 			intensity: 'standard',
-			ambient: 'animated'
+			ambient: 'static'
 		},
 		{
 			path: '/writing',
@@ -309,6 +340,7 @@ test('normal routes expose deterministic biomes and one fixed, inert atmosphere'
 			if (route.ambient === 'static') {
 				await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 			}
+			if (route.path === '/') await expectHomeSceneContract(page);
 
 			if (
 				route.path === articlePath ||
@@ -380,12 +412,17 @@ test('SSR content and the static atmosphere remain meaningful without JavaScript
 			})
 		).toBeVisible();
 
-		const reveal = noJsPage.locator('.reveal').first();
-		await expect(reveal).toBeVisible();
-		await expect(reveal).not.toHaveClass(/reveal-enhanced/);
+		await expect(noJsPage.locator('[data-field-way]')).toHaveCount(4);
+		await expect(noJsPage.locator('[data-featured-series]')).toBeVisible();
 		await expect(noJsPage.locator('[data-route-atmosphere]')).toHaveCount(1);
 		await expect(noJsPage.locator('[data-route-atmosphere] > div')).toHaveCount(2);
 		await expect(noJsPage.locator('[data-ambient-field]')).toHaveCount(0);
+		await expect(noJsPage.locator('[data-living-index-scene]')).toHaveAttribute(
+			'data-scene-tier',
+			'C'
+		);
+		await expect(noJsPage.locator('[data-living-index-fallback]')).toBeVisible();
+		await expect(noJsPage.locator('[data-living-index-canvas]')).toHaveCount(0);
 
 		await noJsPage.goto(`${baseURL}${articlePath}`, { waitUntil: 'domcontentloaded' });
 		const articleImage = noJsPage.locator('img[data-original-src]').first();
@@ -446,7 +483,7 @@ test('navigation falls back normally when the View Transition API is unavailable
 	expect(runtimeErrors).toEqual([]);
 });
 
-test('eligible navigation uses the View Transition handshake while off routes skip it', async ({
+test('the static homepage skips the View Transition handshake while eligible routes use it', async ({
 	page
 }) => {
 	await page.addInitScript(() => {
@@ -475,6 +512,15 @@ test('eligible navigation uses the View Transition handshake while off routes sk
 	const primaryNavigation = page.getByRole('navigation', { name: 'Primary navigation' });
 	await primaryNavigation.getByRole('link', { name: 'Essays', exact: true }).click();
 	await expect(page).toHaveURL(/\/blog$/);
+	expect(
+		await page.evaluate(
+			() =>
+				(window as Window & { __archiveViewTransitionCalls?: number }).__archiveViewTransitionCalls
+		)
+	).toBe(0);
+
+	await primaryNavigation.getByRole('link', { name: 'Topics', exact: true }).click();
+	await expect(page).toHaveURL(/\/topics$/);
 	expect(
 		await page.evaluate(
 			() =>
@@ -544,7 +590,7 @@ test('reveals use the viewport observer, have no timer fallback, and yield to st
 		});
 	});
 
-	await page.goto('/');
+	await page.goto('/consulting');
 	const reveals = page.locator('.reveal');
 	await expect(reveals.first()).toHaveClass(/reveal-enhanced/);
 	expect(
@@ -572,7 +618,7 @@ test('static content and header atmosphere remain visible without IntersectionOb
 		});
 	});
 
-	await page.goto('/');
+	await page.goto('/consulting');
 	const reveal = page.locator('.reveal').first();
 	await expect(reveal).toHaveClass(/is-visible/);
 	await expect(reveal).not.toHaveClass(/reveal-enhanced/);

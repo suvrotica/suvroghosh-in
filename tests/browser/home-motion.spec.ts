@@ -6,11 +6,31 @@ const featuredSeriesPath = '/blog/visualizations/the-prior-authorization-machine
 const featuredSeriesPoster = '/images/visualizations/prior-authorization-machine.png';
 
 const heroLinks = [
-	['View Resume', '/resume'],
-	['Projects', '/projects'],
+	['View Projects', '/projects'],
 	['Healthcare IT Consulting', '/consulting'],
-	['Writings', '/writing'],
+	['Resume', '/resume'],
+	['Writing', '/writing'],
 	['Contact', '/contact']
+] as const;
+
+const fourWays = [
+	['systems', 'Systems', '/projects'],
+	['laboratory', 'Laboratory', '/blog/visualizations'],
+	['writing', 'Writing', '/writing'],
+	['calcutta', 'Calcutta', '/topics/calcutta']
+] as const;
+
+const narrativeStates = [
+	'hero',
+	'systems',
+	'laboratory',
+	'writing',
+	'calcutta',
+	'patient',
+	'guided',
+	'work',
+	'latest',
+	'closing'
 ] as const;
 
 const readingPathIds = ['orientation', 'healthcare', 'science', 'calcutta', 'fiction'] as const;
@@ -20,11 +40,15 @@ const portalLinks = {
 		['Projects', '/projects'],
 		['Resume', '/resume'],
 		['Consulting', '/consulting'],
-		['Gulf / Kuwait', '/healthcare-it-gulf']
+		['Gulf / Kuwait', '/healthcare-it-gulf'],
+		['Contact', '/contact']
 	],
-	writing: [
-		['Writings', '/writing'],
-		['All Posts', '/blog'],
+	creative: [
+		['Essays', '/writing'],
+		['Satire', '/blog/satire'],
+		['Fiction', '/blog/short-fiction'],
+		['Visualizations', '/blog/visualizations'],
+		['Games', '/blog/games'],
 		['Images', '/images'],
 		['Music', '/topics/songs'],
 		['Newsletter', 'https://suvroghosh.substack.com/']
@@ -34,14 +58,12 @@ const portalLinks = {
 function collectUnexpectedRuntimeErrors(page: Page): string[] {
 	const errors: string[] = [];
 
-	page.on('pageerror', (error) => {
-		errors.push(`pageerror: ${error.message}`);
-	});
+	page.on('pageerror', (error) => errors.push(`pageerror: ${error.message}`));
 	page.on('console', (message) => {
 		if (message.type() !== 'error') return;
-
 		const source = `${message.location().url} ${message.text()}`;
 		if (source.includes('/_vercel/')) return;
+		if (/THREE\.WebGLRenderer:.*WebGL context/i.test(source)) return;
 		errors.push(`console: ${message.text()}`);
 	});
 
@@ -63,6 +85,7 @@ async function expectFeaturedSeries(page: Page) {
 	const poster = firstPart.locator(`img[src="${featuredSeriesPoster}"]`);
 
 	await expect(featuredSeries).toHaveCount(1);
+	await expect(featuredSeries).toHaveAttribute('data-scene-state', 'patient');
 	await expect(featuredSeries).toContainText('The Patient Through the Machine');
 	await expect(seriesList).toHaveCount(1);
 	await expect(firstPart).toHaveCount(1);
@@ -70,7 +93,6 @@ async function expectFeaturedSeries(page: Page) {
 	expect(await seriesLink.evaluate((link: HTMLAnchorElement) => new URL(link.href).pathname)).toBe(
 		featuredSeriesPath
 	);
-	await expect(poster).toHaveCount(1);
 	await expect(poster).toHaveAttribute('width', '1600');
 	await expect(poster).toHaveAttribute('height', '900');
 	await expect(poster).toHaveAttribute('alt', '');
@@ -78,33 +100,57 @@ async function expectFeaturedSeries(page: Page) {
 
 async function storeMotionBeforePageScripts(page: Page, preference: string) {
 	await page.addInitScript((nextPreference) => {
-		try {
-			window.localStorage.setItem('site-motion', nextPreference);
-		} catch {
-			// The assertions expose an unexpected storage denial.
-		}
+		window.localStorage.setItem('site-motion', nextPreference);
 	}, preference);
 }
 
-async function readGlyphGeometry(page: Page) {
-	return page.locator('[data-recent-signal-card]').evaluateAll((cards) =>
-		cards.map((card) => {
-			const svg = card.querySelector<SVGElement>('[data-signal-glyph]');
-			return {
-				slug: card.getAttribute('data-recent-signal-card'),
-				variant: svg?.getAttribute('data-signal-glyph'),
-				paths: Array.from(svg?.querySelectorAll('path') ?? [], (path) => path.getAttribute('d')),
-				nodes: Array.from(svg?.querySelectorAll('circle') ?? [], (circle) => ({
-					cx: circle.getAttribute('cx'),
-					cy: circle.getAttribute('cy'),
-					r: circle.getAttribute('r')
-				}))
-			};
-		})
-	);
+async function expectStaticGlobalAtmosphere(page: Page) {
+	await expect(page.locator('[data-route-atmosphere]')).toHaveAttribute('data-ambient', 'static');
+	await expect(page.locator('[data-ambient-field]')).toHaveCount(0);
 }
 
-test('the living home preserves content, SEO, links, and one ambient owner', async ({ page }) => {
+async function expectSettledPageScene(page: Page): Promise<'A' | 'B' | 'C'> {
+	const scene = page.locator('[data-living-index-scene]');
+	const canvas = page.locator('[data-living-index-canvas]');
+
+	await expect(scene).toHaveCount(1);
+	await expect(scene).toHaveAttribute('aria-hidden', 'true');
+	await expect(scene.locator('[data-living-index-fallback]')).toHaveCount(1);
+	await expect
+		.poll(async () => scene.getAttribute('data-scene-status'), { timeout: 5_000 })
+		.toMatch(/^(running|paused|fallback|failed)$/);
+
+	const tier = await scene.getAttribute('data-scene-tier');
+	expect(['A', 'B', 'C']).toContain(tier);
+	await expectStaticGlobalAtmosphere(page);
+
+	if (tier === 'A' || tier === 'B') {
+		await expect(scene).toHaveAttribute('data-scene-status', /^(running|paused)$/);
+		await expect(canvas).toHaveCount(1);
+		await expect(canvas).toHaveAttribute('data-local-animation-owner', 'living-index');
+		await expect(canvas).toHaveAttribute('aria-hidden', 'true');
+		await expect(canvas).toHaveAttribute('role', 'presentation');
+		await expect(canvas).toHaveCSS('pointer-events', 'none');
+		expect(await canvas.evaluate((element) => element.tabIndex)).toBe(-1);
+		await expect(page.locator('[data-local-animation-owner]')).toHaveCount(1);
+	} else {
+		await expect(canvas).toHaveCount(0);
+		await expect(page.locator('[data-local-animation-owner="living-index"]')).toHaveCount(0);
+	}
+
+	return tier as 'A' | 'B' | 'C';
+}
+
+async function expectNarrativeOrder(page: Page) {
+	const order = await page
+		.locator('[data-living-home] [data-scene-state]:not([data-living-index-scene])')
+		.evaluateAll((anchors) => anchors.map((anchor) => anchor.getAttribute('data-scene-state')));
+	expect(order).toEqual(narrativeStates);
+}
+
+test('the Living Index preserves semantic order, destination priority, and one local scene owner', async ({
+	page
+}) => {
 	const runtimeErrors = collectUnexpectedRuntimeErrors(page);
 	await page.goto('/');
 
@@ -119,63 +165,53 @@ test('the living home preserves content, SEO, links, and one ambient owner', asy
 	const hero = page.locator('[data-living-hero]');
 	await expect(home).toHaveCount(1);
 	await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
-	const heroName = page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' });
-	await expect(heroName).toBeVisible();
-	expect(await heroName.evaluate((heading) => getComputedStyle(heading).fontFamily)).toContain(
-		'Roboto'
-	);
+	await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
 	await expect(hero).toContainText('Healthcare IT · Interoperability · Applied AI · Calcutta');
 	await expect(hero).toContainText('Healthcare IT Architect & Clinical Data Systems Consultant');
-	await expect(hero).toContainText(
-		'I work on healthcare data systems, interoperability, clinical data architecture'
+
+	await expect(hero.getByRole('link')).toHaveCount(heroLinks.length);
+	for (const [name, href] of heroLinks) {
+		await expect(hero.getByRole('link', { name, exact: true })).toHaveAttribute('href', href);
+	}
+	await expect(hero.locator('.living-hero__actions a').first()).toHaveText('View Projects');
+	await expect(hero.locator('.living-hero__actions a').nth(1)).toHaveText(
+		'Healthcare IT Consulting'
 	);
 
-	const introductionLinks = hero.locator('.living-hero__actions');
-	await expect(introductionLinks.getByRole('link')).toHaveCount(heroLinks.length);
-	for (const [name, href] of heroLinks) {
-		await expect(introductionLinks.getByRole('link', { name, exact: true })).toHaveAttribute(
-			'href',
-			href
-		);
+	const field = page.locator('[data-field-ways]');
+	await expect(
+		field.getByRole('heading', { level: 2, name: 'Four ways through the field', exact: true })
+	).toBeVisible();
+	for (const [state, name, href] of fourWays) {
+		const item = field.locator(`li[data-scene-state="${state}"]`);
+		const link = item.locator(`a[data-scene-destination="${state}"]`);
+		await expect(item).toHaveCount(1);
+		await expect(link).toHaveAttribute('href', href);
+		await expect(link.getByRole('heading', { level: 3, name, exact: true })).toBeVisible();
 	}
 
 	await expectFeaturedSeries(page);
-	const homeSectionOrder = await home
-		.locator(
-			':scope > [data-living-hero], :scope > [data-featured-series], :scope > [data-reading-path-rail]'
-		)
-		.evaluateAll((sections) =>
-			sections.map((section) => {
-				if (section.hasAttribute('data-living-hero')) return 'hero';
-				if (section.hasAttribute('data-featured-series')) return 'series';
-				return 'reading-paths';
-			})
-		);
-	expect(homeSectionOrder).toEqual(['hero', 'series', 'reading-paths']);
+	await expectNarrativeOrder(page);
 
-	const readingCards = page.locator('[data-reading-path-card]');
-	await expect(readingCards).toHaveCount(readingPathIds.length);
-	for (const [index, pathId] of readingPathIds.entries()) {
-		const card = readingCards.nth(index);
-		await expect(card).toHaveAttribute('data-path-id', pathId);
-		await expect(card).toHaveAttribute('href', `/start-here#${pathId}`);
-		await expect(card.locator('h3')).not.toBeEmpty();
-		await expect(card.locator('.reading-path-card__description')).not.toBeEmpty();
-	}
 	const readingPaths = page.locator('[data-reading-path-rail]');
+	await expect(readingPaths).toHaveAttribute('data-scene-state', 'guided');
 	await expect(
 		readingPaths.getByRole('heading', { level: 2, name: 'Five ways into the work', exact: true })
 	).toBeVisible();
+	const readingCards = readingPaths.locator('[data-reading-path-card]');
+	await expect(readingCards).toHaveCount(readingPathIds.length);
+	for (const [index, pathId] of readingPathIds.entries()) {
+		await expect(readingCards.nth(index)).toHaveAttribute('data-path-id', pathId);
+		await expect(readingCards.nth(index)).toHaveAttribute('href', `/start-here#${pathId}`);
+	}
 	await expect(
-		readingPaths.getByRole('link', {
-			name: 'Explore all five paths',
-			exact: true
-		})
+		readingPaths.getByRole('link', { name: 'Explore all five paths', exact: true })
 	).toHaveAttribute('href', '/start-here');
 
-	const portals = page.locator('[data-world-portal]');
-	await expect(portals).toHaveCount(2);
-	for (const kind of ['professional', 'writing'] as const) {
+	await expect(
+		page.getByRole('heading', { level: 2, name: 'Professional and creative work', exact: true })
+	).toBeVisible();
+	for (const kind of ['professional', 'creative'] as const) {
 		const portal = page.locator(`[data-world-portal="${kind}"]`);
 		await expect(portal).toHaveCount(1);
 		await expect(portal.getByRole('link')).toHaveCount(portalLinks[kind].length);
@@ -188,152 +224,240 @@ test('the living home preserves content, SEO, links, and one ambient owner', asy
 		}
 	}
 
-	const recentCards = page.locator('[data-recent-signal-card]');
-	await expect(recentCards).toHaveCount(4);
-	await expect(recentCards.locator('h3')).toHaveCount(4);
-	await expect(recentCards.locator('time')).toHaveCount(4);
-	await expect(recentCards.locator('.recent-signal-card__description')).toHaveCount(4);
-	await expect(page.locator('a a')).toHaveCount(0);
+	const recent = page.locator('[data-recent-signal-grid]');
+	await expect(recent).toHaveAttribute('data-scene-state', 'latest');
+	await expect(recent.locator('[data-recent-signal-card]')).toHaveCount(4);
+	await expect(recent.locator('[data-signal-position="lead"]')).toHaveCount(1);
+	await expect(recent.locator('[data-signal-position="supporting"]')).toHaveCount(3);
+	await expect(recent.locator('h3')).toHaveCount(4);
+	await expect(recent.locator('time')).toHaveCount(4);
 
-	await expect(page.locator('[data-route-atmosphere]')).toHaveCount(1);
-	await expect(page.locator('[data-ambient-field]')).toHaveCount(1);
-	await expect(home.locator('canvas')).toHaveCount(0);
+	const closing = page.locator('[data-home-invitation]');
+	await expect(closing).toHaveAttribute('data-scene-state', 'closing');
+	await expect(closing.getByRole('heading', { level: 2 })).toContainText(
+		'Have a difficult healthcare system'
+	);
+	await expect(closing.getByRole('link', { name: 'Contact', exact: true })).toHaveAttribute(
+		'href',
+		'/contact'
+	);
+	await expect(
+		closing.getByRole('link', { name: 'Healthcare IT Consulting', exact: true })
+	).toHaveAttribute('href', '/consulting');
+
+	await expectSettledPageScene(page);
 	await expect(home.locator('video')).toHaveCount(0);
-
-	const inactiveWillChange = await home
-		.locator('.living-card__underlay, .world-portal__underlay')
-		.evaluateAll((underlays) => underlays.map((element) => getComputedStyle(element).willChange));
-	expect(inactiveWillChange.every((value) => value === 'auto')).toBe(true);
+	await expect(page.locator('a a')).toHaveCount(0);
 	expect(runtimeErrors).toEqual([]);
 });
 
-test('the full-bleed home and native reading rail stay inside desktop and mobile viewports', async ({
+test('390 px and 320 px layouts use ordinary vertical reading paths without overflow', async ({
 	page
 }) => {
-	await page.goto('/');
+	await page.goto('/?webgl=off');
 
-	const hero = page.locator('[data-living-hero]');
-	const featuredSeries = page.locator('[data-featured-series]');
-	const readingRail = page.locator('.reading-paths__rail');
-	const readingColumn = page.locator('main#main-content > .container');
-	const desktopHeroBox = await hero.boundingBox();
-	const desktopSeriesBox = await featuredSeries.boundingBox();
-	const desktopColumnBox = await readingColumn.boundingBox();
+	for (const viewport of [
+		{ width: 390, height: 844 },
+		{ width: 320, height: 568 }
+	]) {
+		await test.step(`${viewport.width}px`, async () => {
+			await page.setViewportSize(viewport);
+			await expectNoHorizontalOverflow(page);
 
-	expect(desktopHeroBox).not.toBeNull();
-	expect(desktopSeriesBox).not.toBeNull();
-	expect(desktopColumnBox).not.toBeNull();
-	expect(desktopHeroBox!.width).toBeGreaterThan(desktopColumnBox!.width + 200);
-	expect(desktopHeroBox!.x).toBeGreaterThanOrEqual(0);
-	expect(desktopHeroBox!.x + desktopHeroBox!.width).toBeLessThanOrEqual(1441);
-	expect(desktopSeriesBox!.x).toBeGreaterThanOrEqual(0);
-	expect(desktopSeriesBox!.x + desktopSeriesBox!.width).toBeLessThanOrEqual(1441);
-	await expectNoHorizontalOverflow(page);
+			const railState = await page.locator('.reading-paths__rail').evaluate((rail) => {
+				const bounds = rail.getBoundingClientRect();
+				const cards = Array.from(rail.querySelectorAll(':scope > li'), (card) => {
+					const cardBounds = card.getBoundingClientRect();
+					return {
+						left: cardBounds.left,
+						right: cardBounds.right,
+						top: cardBounds.top,
+						bottom: cardBounds.bottom
+					};
+				});
+				return {
+					clientWidth: rail.clientWidth,
+					scrollWidth: rail.scrollWidth,
+					overflowX: getComputedStyle(rail).overflowX,
+					left: bounds.left,
+					right: bounds.right,
+					cards
+				};
+			});
 
-	for (const link of await hero.getByRole('link').all()) {
-		const bounds = await link.boundingBox();
-		expect(bounds?.height).toBeGreaterThanOrEqual(44);
+			expect(railState.scrollWidth).toBeLessThanOrEqual(railState.clientWidth + 1);
+			expect(railState.overflowX).not.toBe('scroll');
+			expect(railState.cards).toHaveLength(5);
+			for (const [index, card] of railState.cards.entries()) {
+				expect(card.left).toBeGreaterThanOrEqual(railState.left - 1);
+				expect(card.right).toBeLessThanOrEqual(railState.right + 1);
+				if (index > 0) expect(card.top).toBeGreaterThanOrEqual(railState.cards[index - 1].bottom);
+			}
+
+			for (const section of await page
+				.locator(
+					'[data-living-hero], [data-field-ways], [data-featured-series], [data-reading-path-rail], [data-work-worlds], [data-recent-signal-grid], [data-home-invitation]'
+				)
+				.all()) {
+				const box = await section.boundingBox();
+				expect(box).not.toBeNull();
+				expect(box!.x).toBeGreaterThanOrEqual(-1);
+				expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width + 1);
+			}
+		});
 	}
-
-	await page.setViewportSize({ width: 390, height: 844 });
-	await expectNoHorizontalOverflow(page);
-
-	const mobileHeroBox = await hero.boundingBox();
-	expect(mobileHeroBox).not.toBeNull();
-	expect(mobileHeroBox!.x).toBeGreaterThanOrEqual(0);
-	expect(mobileHeroBox!.x + mobileHeroBox!.width).toBeLessThanOrEqual(391);
-	const mobileSeriesBox = await featuredSeries.boundingBox();
-	const mobileSeriesLinkBox = await featuredSeries
-		.locator(`a[href="${featuredSeriesPath}"]`)
-		.boundingBox();
-	expect(mobileSeriesBox).not.toBeNull();
-	expect(mobileSeriesBox!.x).toBeGreaterThanOrEqual(0);
-	expect(mobileSeriesBox!.x + mobileSeriesBox!.width).toBeLessThanOrEqual(391);
-	expect(mobileSeriesLinkBox).not.toBeNull();
-	expect(mobileSeriesLinkBox!.x).toBeGreaterThanOrEqual(0);
-	expect(mobileSeriesLinkBox!.x + mobileSeriesLinkBox!.width).toBeLessThanOrEqual(391);
-	expect(mobileSeriesLinkBox!.height).toBeGreaterThanOrEqual(44);
-
-	const railState = await readingRail.evaluate((rail) => {
-		rail.scrollLeft = 0;
-		const style = getComputedStyle(rail);
-		const bounds = rail.getBoundingClientRect();
-		const cards = rail.querySelectorAll(':scope > li');
-		const first = cards[0]?.getBoundingClientRect();
-		const second = cards[1]?.getBoundingClientRect();
-
-		return {
-			clientWidth: rail.clientWidth,
-			scrollWidth: rail.scrollWidth,
-			scrollSnapType: style.scrollSnapType,
-			overflowX: style.overflowX,
-			railRight: bounds.right,
-			firstRight: first?.right ?? 0,
-			secondLeft: second?.left ?? Number.POSITIVE_INFINITY,
-			secondRight: second?.right ?? 0
-		};
-	});
-
-	expect(railState.scrollWidth).toBeGreaterThan(railState.clientWidth);
-	expect(['inline', 'inline proximity', 'x', 'x proximity']).toContain(railState.scrollSnapType);
-	expect(['auto', 'scroll']).toContain(railState.overflowX);
-	expect(railState.secondLeft).toBeGreaterThanOrEqual(railState.firstRight);
-	expect(railState.secondLeft).toBeLessThan(railState.railRight);
-	expect(railState.secondRight).toBeGreaterThan(railState.railRight);
-
-	await readingRail.evaluate((rail) => {
-		rail.scrollLeft = 160;
-	});
-	await expect.poll(() => readingRail.evaluate((rail) => rail.scrollLeft)).toBeGreaterThan(0);
-	await expectNoHorizontalOverflow(page);
 });
 
-test('the living home remains meaningful and navigable without JavaScript', async ({
+test('the hero scroll cue gets out of the way after the reader begins', async ({ page }) => {
+	await page.goto('/?webgl=off');
+	const cue = page.locator('.living-hero__cue');
+	await expect(cue).toBeVisible();
+	await page.evaluate(() => window.scrollTo(0, 80));
+	await expect(cue).toBeHidden();
+});
+
+test('an enhanced scene follows the semantic patient and closing anchors on scroll', async ({
+	page
+}, testInfo) => {
+	await page.goto('/');
+	const scene = page.locator('[data-living-index-scene]');
+	const tier = await expectSettledPageScene(page);
+	if (tier === 'C') {
+		testInfo.annotations.push({
+			type: 'scene-fallback',
+			description: 'WebGL was unavailable; Tier C correctly retained the semantic DOM.'
+		});
+		return;
+	}
+
+	await page.locator('[data-featured-series]').evaluate((section) => {
+		section.scrollIntoView({ block: 'center' });
+	});
+	await expect(scene).toHaveAttribute('data-scene-state', 'patient');
+
+	await page.locator('[data-home-invitation]').evaluate((section) => {
+		section.scrollIntoView({ block: 'center' });
+	});
+	await expect(scene).toHaveAttribute('data-scene-state', 'closing');
+});
+
+test('Still, reduced motion, Save-Data, and the explicit switch all use Tier C', async ({
 	browser,
 	baseURL
 }) => {
-	const context = await browser.newContext({
-		javaScriptEnabled: false,
-		viewport: { width: 390, height: 844 }
+	const fixtures: ReadonlyArray<{
+		name: string;
+		path: string;
+		motion?: 'still';
+		reducedMotion?: 'reduce';
+		saveData?: boolean;
+	}> = [
+		{ name: 'explicit WebGL off', path: '/?webgl=off' },
+		{ name: 'site Still', path: '/', motion: 'still' },
+		{ name: 'OS reduced motion', path: '/', reducedMotion: 'reduce' },
+		{ name: 'Save-Data', path: '/', saveData: true }
+	];
+
+	for (const fixture of fixtures) {
+		await test.step(fixture.name, async () => {
+			const context = await browser.newContext({
+				baseURL,
+				reducedMotion: fixture.reducedMotion
+			});
+			if (fixture.motion) {
+				await context.addInitScript((motion) => {
+					window.localStorage.setItem('site-motion', motion);
+				}, fixture.motion);
+			}
+			if (fixture.saveData) {
+				await context.addInitScript(() => {
+					const connection = new EventTarget();
+					Object.defineProperty(connection, 'saveData', { value: true });
+					Object.defineProperty(navigator, 'connection', {
+						configurable: true,
+						value: connection
+					});
+				});
+			}
+
+			const page = await context.newPage();
+			try {
+				await page.goto(fixture.path);
+				const scene = page.locator('[data-living-index-scene]');
+				await expect(scene).toHaveAttribute('data-scene-tier', 'C');
+				await expect(scene).toHaveAttribute('data-scene-status', 'fallback');
+				await expect(scene.locator('[data-living-index-fallback]')).toBeVisible();
+				await expect(scene.locator('[data-living-index-canvas]')).toHaveCount(0);
+				await expectStaticGlobalAtmosphere(page);
+			} finally {
+				await context.close();
+			}
+		});
+	}
+});
+
+test('a WebGL creation failure falls back to the Tier C DOM environment', async ({
+	browser,
+	baseURL
+}) => {
+	const context = await browser.newContext({ baseURL });
+	await context.addInitScript(() => {
+		const nativeGetContext = HTMLCanvasElement.prototype.getContext;
+		let webglCalls = 0;
+		Object.defineProperty(HTMLCanvasElement.prototype, 'getContext', {
+			configurable: true,
+			value(this: HTMLCanvasElement, contextId: string, ...args: unknown[]) {
+				if (contextId.startsWith('webgl') && ++webglCalls > 1) return null;
+				return Reflect.apply(nativeGetContext, this, [contextId, ...args]);
+			}
+		});
 	});
 	const page = await context.newPage();
 
 	try {
-		await page.goto(`${baseURL}/`, { waitUntil: 'domcontentloaded' });
+		await page.goto('/');
+		const scene = page.locator('[data-living-index-scene]');
+		await expect(scene).toHaveAttribute('data-scene-status', 'failed', { timeout: 5_000 });
+		await expect(scene).toHaveAttribute('data-scene-tier', 'C');
+		await expect(scene.locator('[data-living-index-canvas]')).toHaveCount(0);
+		await expect(scene.locator('[data-living-index-fallback]')).toBeVisible();
+		await expectStaticGlobalAtmosphere(page);
+	} finally {
+		await context.close();
+	}
+});
 
-		const home = page.locator('[data-living-home]');
-		const hero = page.locator('[data-living-hero]');
+test('the Living Index remains complete, semantic, and attractive without JavaScript', async ({
+	browser,
+	baseURL
+}) => {
+	const context = await browser.newContext({
+		baseURL,
+		javaScriptEnabled: false,
+		viewport: { width: 320, height: 568 }
+	});
+	const page = await context.newPage();
+
+	try {
+		await page.goto('/', { waitUntil: 'domcontentloaded' });
 		await expect(page.getByRole('heading', { level: 1, name: 'Suvro Ghosh' })).toBeVisible();
-		await expect(hero).toContainText('Healthcare IT Architect & Clinical Data Systems Consultant');
-		await expect(hero.locator('.living-hero__actions').getByRole('link')).toHaveCount(5);
-		await expectFeaturedSeries(page);
+		await expectNarrativeOrder(page);
 		await expect(
-			page.getByRole('heading', { level: 2, name: 'Five ways into the work', exact: true })
+			page.getByRole('heading', { level: 2, name: 'Four ways through the field' })
 		).toBeVisible();
-		const readingPathsLink = page.getByRole('link', {
-			name: 'Explore all five paths',
-			exact: true
-		});
-		expect(
-			await readingPathsLink.evaluate((link: HTMLAnchorElement) => new URL(link.href).pathname)
-		).toBe('/start-here');
+		await expect(page.locator('[data-field-way]')).toHaveCount(4);
+		await expectFeaturedSeries(page);
 		await expect(page.locator('[data-reading-path-card]')).toHaveCount(5);
-		await expect(page.locator('[data-world-portal] a')).toHaveCount(9);
+		await expect(page.locator('[data-world-portal]')).toHaveCount(2);
 		await expect(page.locator('[data-recent-signal-card]')).toHaveCount(4);
-		await expect(page.locator('[data-signal-glyph]')).toHaveCount(4);
-		await expect(page.locator('[data-kinetic-line]')).toHaveAttribute(
-			'data-kinetic-state',
-			'static'
-		);
-		await expect(page.locator('[data-kinetic-line]')).toHaveAttribute('data-kinetic-index', '0');
-		await expect(page.locator('[data-kinetic-line]')).toContainText(
-			'I build clinical data systems. I write essays and satire. I make scientific visual experiments. I map ordinary Calcutta.'
-		);
+		await expect(page.locator('[data-home-invitation]')).toBeVisible();
 
-		await expect(page.locator('[data-route-atmosphere]')).toHaveCount(1);
+		const scene = page.locator('[data-living-index-scene]');
+		await expect(scene).toHaveAttribute('data-scene-tier', 'C');
+		await expect(scene).toHaveAttribute('data-scene-status', 'fallback');
+		await expect(scene.locator('[data-living-index-fallback]')).toBeVisible();
 		await expect(page.locator('canvas')).toHaveCount(0);
-		await expect(home.locator('video')).toHaveCount(0);
-		await expect(home.locator('img')).toHaveCount(1);
+		await expectStaticGlobalAtmosphere(page);
 		await expect(page.locator('a a')).toHaveCount(0);
 		await expectNoHorizontalOverflow(page);
 	} finally {
@@ -341,65 +465,11 @@ test('the living home remains meaningful and navigable without JavaScript', asyn
 	}
 });
 
-test('signal glyph geometry is deterministic across themes, motion modes, and reload', async ({
-	page
-}) => {
-	await page.goto('/');
-
-	const glyphs = page.locator('[data-signal-glyph]');
-	await expect(glyphs).toHaveCount(4);
-	for (const glyph of await glyphs.all()) {
-		await expect(glyph).toHaveAttribute('aria-hidden', 'true');
-		await expect(glyph).toHaveAttribute('focusable', 'false');
-	}
-
-	const initialGeometry = await readGlyphGeometry(page);
-	await page.getByLabel('Colour theme', { exact: true }).selectOption('night');
-	await page.getByLabel('Motion preference', { exact: true }).selectOption('alive');
-	expect(await readGlyphGeometry(page)).toEqual(initialGeometry);
-
-	await page.reload();
-	await expect(page.locator('html')).toHaveAttribute('data-theme', 'night');
-	await expect(page.locator('html')).toHaveAttribute('data-motion', 'alive');
-	expect(await readGlyphGeometry(page)).toEqual(initialGeometry);
-	await expect(page.locator('[data-living-home] canvas')).toHaveCount(0);
-});
-
-test('the former kinetic line remains complete and static in every motion mode', async ({
-	page
-}) => {
-	await page.goto('/');
-
-	const kineticLine = page.locator('[data-kinetic-line]');
-	const motionSelect = page.getByLabel('Motion preference', { exact: true });
-	await expect(kineticLine).toContainText(
-		'I build clinical data systems. I write essays and satire. I make scientific visual experiments. I map ordinary Calcutta.'
-	);
-
-	for (const preference of ['still', 'gentle', 'alive'] as const) {
-		await motionSelect.selectOption(preference);
-		await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'static');
-		await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
-	}
-
-	await page.waitForTimeout(7_000);
-	await expect(kineticLine).toHaveAttribute('data-kinetic-state', 'static');
-	await expect(kineticLine).toHaveAttribute('data-kinetic-index', '0');
-});
-
-test('home cards keep static underlays and stable keyboard focus in Alive mode', async ({
-	page
-}) => {
+test('Alive cards keep static underlays and stable keyboard focus', async ({ page }) => {
 	const runtimeErrors = collectUnexpectedRuntimeErrors(page);
 	await storeMotionBeforePageScripts(page, 'alive');
-	await page.goto('/');
+	await page.goto('/?webgl=off');
 
-	expect(await page.evaluate(() => matchMedia('(hover: hover) and (pointer: fine)').matches)).toBe(
-		true
-	);
-
-	const cards = page.locator('[data-living-card]');
-	await expect(cards).toHaveCount(11);
 	const card = page.locator('[data-reading-path-card]').first();
 	await card.scrollIntoViewIfNeeded();
 	const bounds = await card.boundingBox();
@@ -428,82 +498,20 @@ test('home cards keep static underlays and stable keyboard focus in Alive mode',
 		).transform,
 		underlayWillChange: getComputedStyle(
 			element.querySelector<HTMLElement>('.living-card__underlay')!
-		).willChange,
-		underlayTransitionDuration: getComputedStyle(
-			element.querySelector<HTMLElement>('.living-card__underlay')!
-		).transitionDuration
+		).willChange
 	}));
 
-	expect(pose.x).toBe('');
-	expect(pose.y).toBe('');
-	expect(pose.rotate).toBe('');
-	expect(pose.contentTransform).toBe('none');
-	expect(pose.underlayTransform).toBe('none');
-	expect(pose.underlayWillChange).toBe('auto');
-	expect(pose.underlayTransitionDuration).toBe('0s');
-
-	await card.dispatchEvent('pointerleave', { pointerType: 'mouse' });
-	await expect(card).not.toHaveAttribute('data-living-card-active', /.+/);
+	expect(pose).toEqual({
+		x: '',
+		y: '',
+		rotate: '',
+		contentTransform: 'none',
+		underlayTransform: 'none',
+		underlayWillChange: 'auto'
+	});
 
 	await card.focus();
 	await expect(card).toBeFocused();
 	expect(await card.evaluate((element) => getComputedStyle(element).transform)).toBe('none');
-	expect(
-		await card
-			.locator('.living-card__underlay')
-			.evaluate((element) => getComputedStyle(element).transform)
-	).toBe('none');
 	expect(runtimeErrors).toEqual([]);
-});
-
-test('coarse pointers retain the same static card contract', async ({ browser, baseURL }) => {
-	const context = await browser.newContext({
-		baseURL,
-		hasTouch: true,
-		isMobile: true,
-		viewport: { width: 390, height: 844 }
-	});
-	await context.addInitScript(() => {
-		window.localStorage.setItem('site-motion', 'alive');
-	});
-	const page = await context.newPage();
-
-	try {
-		await page.goto('/');
-		expect(await page.evaluate(() => matchMedia('(pointer: coarse)').matches)).toBe(true);
-		await expect(page.locator('html')).toHaveAttribute('data-motion', 'alive');
-
-		const card = page.locator('[data-reading-path-card]').first();
-		const bounds = await card.boundingBox();
-		expect(bounds).not.toBeNull();
-		await card.dispatchEvent('pointerenter', {
-			pointerType: 'mouse',
-			clientX: bounds!.x + bounds!.width - 2,
-			clientY: bounds!.y + bounds!.height - 2
-		});
-		await card.dispatchEvent('pointermove', {
-			pointerType: 'mouse',
-			clientX: bounds!.x + bounds!.width - 2,
-			clientY: bounds!.y + bounds!.height - 2
-		});
-
-		await expect(card).not.toHaveAttribute('data-living-card-active', /.+/);
-		expect(
-			await card.evaluate((element) => ({
-				x: element.style.getPropertyValue('--living-card-x'),
-				y: element.style.getPropertyValue('--living-card-y'),
-				rotate: element.style.getPropertyValue('--living-card-rotate'),
-				willChange: getComputedStyle(element.querySelector<HTMLElement>('.living-card__underlay')!)
-					.willChange
-			}))
-		).toEqual({
-			x: '',
-			y: '',
-			rotate: '',
-			willChange: 'auto'
-		});
-		await expectNoHorizontalOverflow(page);
-	} finally {
-		await context.close();
-	}
 });

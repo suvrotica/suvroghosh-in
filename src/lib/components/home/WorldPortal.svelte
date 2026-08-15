@@ -9,11 +9,13 @@
 		kind,
 		title,
 		description,
+		capabilities = [],
 		links
 	}: {
-		kind: 'professional' | 'writing';
+		kind: 'professional' | 'creative';
 		title: string;
 		description: string;
+		capabilities?: readonly string[];
 		links: readonly PortalLink[];
 	} = $props();
 </script>
@@ -31,9 +33,18 @@
 		<span></span>
 	</div>
 	<div class="world-portal__content">
-		<p class="world-portal__eyebrow">{kind === 'professional' ? 'Systems' : 'Stories'}</p>
-		<h2 id={`world-portal-${kind}-heading`}>{title}</h2>
+		<p class="world-portal__eyebrow">
+			{kind === 'professional' ? 'Systems' : 'Stories & experiments'}
+		</p>
+		<h3 id={`world-portal-${kind}-heading`}>{title}</h3>
 		<p class="world-portal__description">{description}</p>
+		{#if capabilities.length > 0}
+			<ul class="world-portal__capabilities" aria-label={`${title} areas`}>
+				{#each capabilities as capability (capability)}
+					<li>{capability}</li>
+				{/each}
+			</ul>
+		{/if}
 		<nav aria-label={`${title} links`}>
 			<ul class="world-portal__links">
 				{#each links as link (link.href)}
@@ -45,7 +56,7 @@
 							target={link.external ? '_blank' : undefined}
 							rel={link.external ? 'noopener noreferrer' : undefined}
 						>
-							{link.label}<span aria-hidden="true"> ↗</span>
+							{link.label}<span aria-hidden="true"> {link.external ? '↗' : '→'}</span>
 							{#if link.external}<span class="sr-only">, opens in a new tab</span>{/if}
 						</a>
 						<!-- eslint-enable svelte/no-navigation-without-resolve -->
