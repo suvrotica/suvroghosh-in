@@ -7197,6 +7197,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 412621,
 			"width": 1097,
 			"height": 1434
+		},
+		{
+			"name": "hydrocephalus-of-the-tap.jpg",
+			"src": "/thumbnail/hydrocephalus-of-the-tap.jpg",
+			"bytes": 150928,
+			"width": 895,
+			"height": 1280
 		}
 	]
 };

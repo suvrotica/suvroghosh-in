@@ -17466,6 +17466,21 @@
       "sourceBytes": 155112,
       "sourceHash": "45ec5ba9ff662882666504f255130a97cc4682331dfb963870eb6dd3d3f0ac8e",
       "width": 1200
+    },
+    "static/thumbnail/hydrocephalus-of-the-tap.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 895,
+      "outputBytes": 150928,
+      "outputHash": "d3dc2e6564af4531e3c92ea9499db6d73f4febc347f65a803c56409e4c819a21",
+      "reason": "source retained unchanged by author request",
+      "resized": false,
+      "sourceBytes": 150928,
+      "sourceHash": "d3dc2e6564af4531e3c92ea9499db6d73f4febc347f65a803c56409e4c819a21",
+      "width": 895
     }
   },
   "settings": {
