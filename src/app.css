@@ -3662,7 +3662,7 @@ html[data-motion="alive"]
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.65fr);
   gap: clamp(1rem, 2vw, 1.7rem);
-  align-items: stretch;
+  align-items: start;
   margin: clamp(2.2rem, 5vw, 4.5rem) 0 0;
   padding: 0;
   list-style: none;
@@ -3694,7 +3694,8 @@ html[data-motion="alive"]
 }
 
 .recent-signals__lead .living-card--signal {
-  min-height: 100%;
+  height: auto;
+  min-height: 0;
 }
 
 .recent-signals__supporting .living-card--signal {
@@ -3716,6 +3717,22 @@ html[data-motion="alive"]
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.recent-signal-card--lead .recent-signal-card__media {
+  aspect-ratio: 1;
+}
+
+.recent-signal-card--lead
+  .recent-signal-card__media[data-media-orientation="portrait"] {
+  aspect-ratio: 3 / 4;
+}
+
+.recent-signal-card__body {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
 }
 
 .recent-signal-card__fallback {
@@ -3740,7 +3757,8 @@ html[data-motion="alive"]
 }
 
 .recent-signal-card--lead .recent-signal-card__fallback {
-  height: clamp(12rem, 22vw, 20rem);
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .signal-glyph {
@@ -3861,6 +3879,10 @@ html[data-motion="alive"]
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 740;
+}
+
+.recent-signal-card--lead .recent-signal-card__action {
+  margin-block-start: 1rem;
 }
 
 /* A compact human invitation; the field ends quietly. */
@@ -4017,6 +4039,54 @@ html[data-motion="alive"]
   }
 }
 
+/* Tablet portrait: one strong lead, then three compact follow-up signals. */
+@media (min-width: 60.001rem) and (max-width: 74rem) {
+  .recent-signals__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .recent-signals__lead {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .recent-signals__supporting {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: stretch;
+  }
+
+  .recent-signals__lead .living-card--signal,
+  .recent-signals__supporting .living-card--signal {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .recent-signals__lead .living-card__content {
+    display: grid;
+    grid-template-columns: minmax(15rem, 0.82fr) minmax(0, 1.18fr);
+    gap: 0 clamp(1.5rem, 3.5vw, 3rem);
+    align-items: center;
+  }
+
+  .recent-signals__lead
+    :is(.recent-signal-card__media, .recent-signal-card__fallback) {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .recent-signals__lead .recent-signal-card__body {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .recent-signals__supporting .living-card--signal h3 {
+    font-size: clamp(1.2rem, 2.1vw, 1.6rem);
+  }
+}
+
 @media (max-width: 60rem) {
   .living-hero {
     grid-template-columns: minmax(0, 1fr);
@@ -4060,7 +4130,16 @@ html[data-motion="alive"]
 
   .recent-signals__lead .living-card--signal,
   .recent-signals__supporting .living-card--signal {
+    height: auto;
     min-height: auto;
+  }
+
+  .recent-signal-card--lead
+    :is(
+      .recent-signal-card__media[data-media-orientation],
+      .recent-signal-card__fallback
+    ) {
+    aspect-ratio: 4 / 3;
   }
 }
 

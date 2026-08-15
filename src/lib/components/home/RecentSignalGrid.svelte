@@ -67,7 +67,10 @@
 					data-content-section={post.sectionLabel}
 				>
 					{#if post.thumbnail && post.imageWidth && post.imageHeight}
-						<figure class="recent-signal-card__media">
+						<figure
+							class="recent-signal-card__media"
+							data-media-orientation={post.imageHeight > post.imageWidth ? 'portrait' : 'landscape'}
+						>
 							<img
 								src={post.thumbnail}
 								alt={post.thumbnailAlt ?? ''}
@@ -87,24 +90,26 @@
 							<span class="recent-signal-card__initial">{post.title.slice(0, 1)}</span>
 						</span>
 					{/if}
-					<span class="recent-signal-card__meta">
-						<span>{post.categoryLabel}</span>
-						<span aria-hidden="true">·</span>
-						<time datetime={post.date}>{formatDate(post.date)}</time>
-					</span>
-					{#if post.interactiveFirst || post.readingTime}
-						<span class="recent-signal-card__badges">
-							{#if post.interactiveFirst}<span>Interactive</span>{/if}
-							{#if post.readingTime}<span>{post.readingTime}</span>{/if}
+					<div class="recent-signal-card__body">
+						<span class="recent-signal-card__meta">
+							<span>{post.categoryLabel}</span>
+							<span aria-hidden="true">·</span>
+							<time datetime={post.date}>{formatDate(post.date)}</time>
 						</span>
-					{/if}
-					<h3>{post.title}</h3>
-					{#if post.description}
-						<span class="recent-signal-card__description">{post.description}</span>
-					{/if}
-					<span class="recent-signal-card__action">
-						{post.interactiveFirst ? 'Open signal' : 'Read'} <span aria-hidden="true">→</span>
-					</span>
+						{#if post.interactiveFirst || post.readingTime}
+							<span class="recent-signal-card__badges">
+								{#if post.interactiveFirst}<span>Interactive</span>{/if}
+								{#if post.readingTime}<span>{post.readingTime}</span>{/if}
+							</span>
+						{/if}
+						<h3>{post.title}</h3>
+						{#if post.description}
+							<span class="recent-signal-card__description">{post.description}</span>
+						{/if}
+						<span class="recent-signal-card__action">
+							{post.interactiveFirst ? 'Open signal' : 'Read'} <span aria-hidden="true">→</span>
+						</span>
+					</div>
 				</LivingCard>
 			</li>
 		{/each}

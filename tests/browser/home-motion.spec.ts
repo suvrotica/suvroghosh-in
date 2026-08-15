@@ -308,6 +308,119 @@ test('390 px and 320 px layouts use ordinary vertical reading paths without over
 	}
 });
 
+test('the latest lead story stays editorially balanced in landscape and portrait', async ({
+	page
+}) => {
+	await page.goto('/?webgl=off');
+
+	for (const viewport of [
+		{ width: 1366, height: 768, regime: 'wide' },
+		{ width: 1269, height: 1423, regime: 'wide' },
+		{ width: 1024, height: 1366, regime: 'intermediate' },
+		{ width: 768, height: 1024, regime: 'compact' },
+		{ width: 390, height: 844, regime: 'compact' }
+	] as const) {
+		await test.step(`${viewport.width}×${viewport.height}`, async () => {
+			await page.setViewportSize(viewport);
+			await page.evaluate(async () => {
+				await document.fonts.ready;
+				await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+			});
+
+			const layout = await page.locator('[data-recent-signal-grid]').evaluate((section) => {
+				const grid = section.querySelector<HTMLElement>('.recent-signals__grid');
+				const lead = section.querySelector<HTMLElement>('[data-signal-position="lead"]');
+				const leadCard = lead?.querySelector<HTMLElement>('[data-recent-signal-card]');
+				const action = leadCard?.querySelector<HTMLElement>('.recent-signal-card__action');
+				const media = leadCard?.querySelector<HTMLElement>(
+					'.recent-signal-card__media, .recent-signal-card__fallback'
+				);
+				const supporting = Array.from(
+					section.querySelectorAll<HTMLElement>('[data-signal-position="supporting"]')
+				);
+
+				if (!grid || !lead || !leadCard || !action || !media) {
+					throw new Error('Latest-grid geometry missing');
+				}
+
+				const bounds = (element: Element) => {
+					const box = element.getBoundingClientRect();
+					return {
+						left: box.left,
+						right: box.right,
+						top: box.top,
+						bottom: box.bottom,
+						width: box.width,
+						height: box.height
+					};
+				};
+				const siblings = Array.from(action.parentElement?.children ?? []);
+				const actionIndex = siblings.indexOf(action);
+				const precedingBottom = Math.max(
+					...siblings.slice(0, actionIndex).map((element) => element.getBoundingClientRect().bottom)
+				);
+				const actionBounds = action.getBoundingClientRect();
+
+				return {
+					grid: bounds(grid),
+					lead: bounds(lead),
+					leadCard: bounds(leadCard),
+					action: bounds(action),
+					media: bounds(media),
+					mediaOrientation: media.dataset.mediaOrientation ?? 'fallback',
+					supporting: supporting.map(bounds),
+					blankBeforeAction: actionBounds.top - precedingBottom,
+					blankAfterAction: leadCard.getBoundingClientRect().bottom - actionBounds.bottom
+				};
+			});
+
+			expect(layout.blankBeforeAction).toBeLessThanOrEqual(64);
+			expect(layout.blankBeforeAction / layout.leadCard.height).toBeLessThanOrEqual(0.12);
+			expect(layout.blankAfterAction).toBeGreaterThanOrEqual(0);
+			if (viewport.regime === 'intermediate') {
+				expect(layout.blankAfterAction / layout.leadCard.height).toBeLessThanOrEqual(0.35);
+			} else {
+				expect(layout.blankAfterAction).toBeLessThanOrEqual(64);
+			}
+			const mediaAspectRatio = layout.media.width / layout.media.height;
+			if (viewport.regime === 'compact') {
+				expect(mediaAspectRatio).toBeCloseTo(4 / 3, 2);
+			} else if (layout.mediaOrientation === 'portrait') {
+				expect(mediaAspectRatio).toBeCloseTo(3 / 4, 2);
+			} else {
+				expect(mediaAspectRatio).toBeCloseTo(1, 2);
+			}
+			for (const card of [layout.lead, ...layout.supporting]) {
+				expect(card.left).toBeGreaterThanOrEqual(layout.grid.left - 1);
+				expect(card.right).toBeLessThanOrEqual(layout.grid.right + 1);
+			}
+
+			if (viewport.regime === 'wide') {
+				for (const supporting of layout.supporting) {
+					expect(layout.lead.right).toBeLessThanOrEqual(supporting.left);
+				}
+				for (let index = 1; index < layout.supporting.length; index += 1) {
+					expect(layout.supporting[index].top).toBeGreaterThanOrEqual(
+						layout.supporting[index - 1].bottom
+					);
+				}
+			} else if (viewport.regime === 'intermediate') {
+				for (const supporting of layout.supporting) {
+					expect(supporting.top).toBeGreaterThanOrEqual(layout.lead.bottom);
+					expect(Math.abs(supporting.top - layout.supporting[0].top)).toBeLessThanOrEqual(1);
+				}
+			} else {
+				const cards = [layout.lead, ...layout.supporting];
+				for (let index = 1; index < cards.length; index += 1) {
+					expect(cards[index].top).toBeGreaterThanOrEqual(cards[index - 1].bottom);
+				}
+			}
+
+			await expectNoHorizontalOverflow(page);
+		});
+	}
+});
+
 test('the hero scroll cue gets out of the way after the reader begins', async ({ page }) => {
 	await page.goto('/?webgl=off');
 	const cue = page.locator('.living-hero__cue');
