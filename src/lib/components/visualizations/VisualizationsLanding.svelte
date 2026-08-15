@@ -30,6 +30,8 @@
 			visualizationSummaries['belousov-zhabotinsky-laboratory'].subjects,
 		'the-prior-authorization-machine':
 			visualizationSummaries['prior-authorization-machine'].subjects,
+		'human-ai-icu-prediction-laboratory':
+			visualizationSummaries['human-ai-icu-prediction-laboratory'].subjects,
 		'the-strange-attractor-orchestra':
 			visualizationSummaries['the-strange-attractor-orchestra'].subjects,
 		'the-living-aperture': visualizationSummaries['the-living-aperture'].subjects,

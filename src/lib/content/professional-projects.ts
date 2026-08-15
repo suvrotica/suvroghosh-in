@@ -3,7 +3,7 @@ import aRecordCrossesTownImage from '$lib/assets/projects/a-record-crosses-town.
 export type ProjectLink =
 	| {
 			kind: 'internal';
-			href: '/blog/visualizations';
+			href: '/blog/visualizations' | '/blog/visualizations/human-ai-icu-prediction-laboratory';
 			label: string;
 	  }
 	| {
@@ -30,6 +30,7 @@ export type ProfessionalProject = {
 		| 'find-study-registry'
 		| 'hie-clinical-trial-platforms'
 		| 'a-record-crosses-town'
+		| 'human-ai-icu-prediction-laboratory'
 		| 'functional-job-analysis'
 		| 'meta-analysis-platform'
 		| 'mojollm-notebooks'
@@ -142,6 +143,43 @@ export const professionalProjects: readonly ProfessionalProject[] = [
 			alt: 'A blue synthetic record route crosses a black-lined, high-contrast white exchange map of separate identity, terminology, clinical, supply, aggregate, and finance services.',
 			width: 1600,
 			height: 1000
+		},
+		featured: true,
+		showOnResume: false
+	},
+	{
+		id: 'human-ai-icu-prediction-laboratory',
+		name: 'Human + AI ICU Prediction Laboratory',
+		context:
+			'Independent clinical-prediction explainer · wholly synthetic · educational, not clinical',
+		detail:
+			'A deterministic interactive laboratory showing when clinician–model probability ensembles improve prediction—and when shared error or population shift defeats the average.',
+		contributions: [
+			'Built a deterministic synthetic-cohort laboratory comparing clinician, model, and weighted-ensemble probability forecasts for one declared binary ICU outcome.',
+			'Exposed discrimination, calibration, shared residual dependence, individual and pooled Brier scores, reliability diagrams, and casewise error overlap using the same reproducible cohort.',
+			'Authored four failure-oriented presets, including shared hospital artifacts and deployment prevalence shift, with explicit educational boundaries and no patient-level claims.'
+		],
+		disciplines: [
+			'Clinical prediction',
+			'Human–AI collaboration',
+			'Probability',
+			'Calibration',
+			'Brier score',
+			'SvelteKit',
+			'TypeScript',
+			'Accessibility'
+		],
+		relatedPostSlugs: ['human-ai-icu-prediction-laboratory'],
+		link: {
+			kind: 'internal',
+			href: '/blog/visualizations/human-ai-icu-prediction-laboratory',
+			label: 'Open the synthetic laboratory →'
+		},
+		image: {
+			src: '/images/visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp',
+			alt: 'Graphic labelled Synthetic educational simulation, with blue and amber probability streams entering a weighted mixer and a violet ensemble stream leaving it beside a reliability diagonal.',
+			width: 1600,
+			height: 900
 		},
 		featured: true,
 		showOnResume: false

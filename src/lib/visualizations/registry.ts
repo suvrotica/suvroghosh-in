@@ -63,6 +63,19 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/the-prior-authorization-machine',
 		status: 'published'
 	},
+	'human-ai-icu-prediction-laboratory': {
+		id: 'human-ai-icu-prediction-laboratory',
+		title: 'Human + AI ICU Prediction Laboratory',
+		description:
+			'A wholly synthetic forecast laboratory showing when clinician–model probability ensembles improve—and when shared error or population shift defeats the average.',
+		subjects: ['Healthcare', 'Statistics', 'Machine Learning'],
+		poster:
+			'/images/visualizations/human-ai-icu-prediction-laboratory/human-ai-icu-prediction-laboratory.webp',
+		posterAlt:
+			'Graphic labelled Synthetic educational simulation, with a blue circle-marked probability stream and amber square-marked stream entering a weighted mixer, a violet diamond-marked ensemble leaving it, and a small reliability diagonal',
+		href: '/blog/visualizations/human-ai-icu-prediction-laboratory',
+		status: 'published'
+	},
 	'the-strange-attractor-orchestra': {
 		id: 'the-strange-attractor-orchestra',
 		title: 'The Strange Attractor Orchestra: When Chaos Learns to Sing',
