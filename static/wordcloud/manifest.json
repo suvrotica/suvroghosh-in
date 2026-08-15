@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T11:17:14.106975+00:00",
+  "generatedAt": "2026-08-15T17:59:39.136600+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3958,25 +3958,25 @@
       "wordCount": 130
     },
     "hello-fragment-your-first-shader-from-scratch": {
-      "generatedAt": "2026-07-19T00:04:00.404843+00:00",
+      "generatedAt": "2026-08-15T17:59:37.680482+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/hello-fragment-your-first-shader-from-scratch.svg",
       "source": "src/lib/posts/hello-fragment-your-first-shader-from-scratch.md",
-      "sourceHash": "26b23a655150ef3a492b1037e90d6ccad9f87ff4e8d7d5ee83a9ad140ecb4453",
-      "sourceModified": "2026-07-19T00:03:56.479003+00:00",
+      "sourceHash": "39180b48528ad491a8c0e3d9541858e00597710adf1b35366900246971a4e33c",
+      "sourceModified": "2026-08-15T17:39:16.954174+00:00",
       "topWords": [
         "Shader",
         "Fragment",
         "Colour",
         "Field",
         "Canvas",
-        "Time",
         "Pixel",
+        "Time",
+        "Rectangle",
         "Every",
         "Distance",
         "Pointer",
-        "GPU",
-        "Rectangle"
+        "GPU"
       ],
       "wordCount": 130
     },
@@ -6852,6 +6852,29 @@
         "Even",
         "Wheels",
         "Chariot"
+      ],
+      "wordCount": 130
+    },
+    "ray-marching-fragment-shader-from-scratch": {
+      "generatedAt": "2026-08-15T17:59:38.720227+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ray-marching-fragment-shader-from-scratch.svg",
+      "source": "src/lib/posts/ray-marching-fragment-shader-from-scratch.md",
+      "sourceHash": "9e74bfb0abdf6bf3e4042e59ad011c14477f0dd873df9e106f3c3bc63f2f51ce",
+      "sourceModified": "2026-08-15T17:39:16.954174+00:00",
+      "topWords": [
+        "Distance",
+        "Ray",
+        "Fragment",
+        "Shader",
+        "Surface",
+        "Tracing",
+        "Camera",
+        "Hit",
+        "Sphere",
+        "Geometry",
+        "Mathbf",
+        "Shadow"
       ],
       "wordCount": 130
     },

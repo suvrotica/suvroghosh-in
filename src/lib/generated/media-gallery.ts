@@ -4374,6 +4374,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "visualizations/ray-marching-cathedral/cathedral-poster.jpg",
+			"src": "/images/visualizations/ray-marching-cathedral/cathedral-poster.jpg",
+			"bytes": 39164,
+			"width": 1600,
+			"height": 900
+		},
+		{
+			"name": "visualizations/ray-marching-cathedral/ray-marching-fragment-shader-og.jpg",
+			"src": "/images/visualizations/ray-marching-cathedral/ray-marching-fragment-shader-og.jpg",
+			"bytes": 24395,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/reaction-diffusion/guided-observations.png",
 			"src": "/images/visualizations/reaction-diffusion/guided-observations.png",
 			"bytes": 26728,

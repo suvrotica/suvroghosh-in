@@ -10136,23 +10136,24 @@
 			"hashVersion": 2
 		},
 		"src/lib/posts/hello-fragment-your-first-shader-from-scratch.md": {
-			"bodyHash": "f454f37e19754b8eeb164cf9f54dcf48a433bd5926ef82ae912cfa456399a6c1",
+			"bodyHash": "0dbcea84ebc0e17d46b95ca7fee8e9de04f990a6df39c316f4732fdd1fcf3d95",
+			"hashVersion": 2,
+			"revisionHash": "484a59461eb99bb9bf696c9c2b38815638e0ba3191e3114c33113b1dd81e10d7",
 			"generatedTags": [
-				"Four Numbers",
 				"Fragment Shader",
+				"Four Numbers",
 				"Wave Sources",
 				"Messages Shared",
 				"Reduce Motion",
+				"Narrow Luminous Ridges",
 				"Shader",
 				"Fragment",
 				"Colour",
-				"Canvas",
-				"Pixel"
+				"Canvas"
 			],
-			"pinnedTags": [],
+			"pinnedTags": ["Fragment Shader"],
 			"generatorVersion": "2026-07-22.1",
-			"revisionHash": "165e928db2d0307c0eeaf47c3b7f40c628b392b3179e744d9dd4e94c852f9ca5",
-			"hashVersion": 2
+			"dateModified": "2026-08-15"
 		},
 		"src/lib/posts/one-program-at-a-time.md": {
 			"bodyHash": "ba18633b4ddd0185c2ccdc539ba61dce650635d3593b9aa9e765b28342998fe4",
@@ -11632,6 +11633,35 @@
 				"Kolkata"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ray-marching-fragment-shader-from-scratch.md": {
+			"bodyHash": "b378edd607b9308ab8c8d3996e875c423c59aacd217d9cdfbc7e0f3de1a62979",
+			"hashVersion": 2,
+			"revisionHash": "b7770385e953c0a7a3f712567b4e1eeadbfdb7668f2fcee0527908cd558f516b",
+			"generatedTags": [
+				"Shaders",
+				"Ray Marching",
+				"Signed Distance Fields",
+				"WebGL",
+				"p5.js",
+				"Creative Coding",
+				"Computer Graphics",
+				"Fragment Shader",
+				"Sphere Tracing",
+				"Running Fragment Shader"
+			],
+			"pinnedTags": [
+				"Shaders",
+				"Ray Marching",
+				"Signed Distance Fields",
+				"WebGL",
+				"p5.js",
+				"Creative Coding",
+				"Computer Graphics",
+				"Fragment Shader"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-15"
 		}
 	},
 	"maxTags": 10

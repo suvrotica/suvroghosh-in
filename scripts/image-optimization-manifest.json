@@ -9912,6 +9912,38 @@
       "sourceHash": "d88e2ac9d7df55a3bcb447b284fcfcee710bf0e9bc7158f00476857d07b5071e",
       "width": 1200
     },
+    "static/images/visualizations/ray-marching-cathedral/cathedral-poster.jpg": {
+      "format": "JPEG",
+      "height": 900,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 900,
+      "originalWidth": 1600,
+      "outputBytes": 39164,
+      "outputHash": "554a2c49e5269f3635fb9bdb1d4db82a67f79f36c9b4bdf7ce7a1cd3e72d1014",
+      "psnrDb": 56.41,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 39164,
+      "sourceHash": "554a2c49e5269f3635fb9bdb1d4db82a67f79f36c9b4bdf7ce7a1cd3e72d1014",
+      "width": 1600
+    },
+    "static/images/visualizations/ray-marching-cathedral/ray-marching-fragment-shader-og.jpg": {
+      "format": "JPEG",
+      "height": 630,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 24395,
+      "outputHash": "46bde698e3150f47dcd8dca5de551295cc2a908276b45df6c836151d9ace1776",
+      "psnrDb": 53.23,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 24395,
+      "sourceHash": "46bde698e3150f47dcd8dca5de551295cc2a908276b45df6c836151d9ace1776",
+      "width": 1200
+    },
     "static/images/visualizations/reaction-diffusion/guided-observations.png": {
       "format": "PNG",
       "height": 828,
