@@ -3926,6 +3926,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "obsolescence-velocity.jpg",
+			"src": "/images/obsolescence-velocity.jpg",
+			"bytes": 175327,
+			"width": 1280,
+			"height": 895
+		},
+		{
 			"name": "p0.jpeg",
 			"src": "/images/p0.jpeg",
 			"bytes": 189953,

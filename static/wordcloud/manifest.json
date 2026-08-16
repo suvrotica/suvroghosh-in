@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T09:22:59.482221+00:00",
+  "generatedAt": "2026-08-16T14:04:59.921864+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6116,6 +6116,29 @@
         "HITECH",
         "National",
         "VA"
+      ],
+      "wordCount": 130
+    },
+    "obsolescence-velocity": {
+      "generatedAt": "2026-08-16T14:04:58.888392+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/obsolescence-velocity.svg",
+      "source": "src/lib/posts/obsolescence-velocity.md",
+      "sourceHash": "ce5ea24f528f15897f9870682d12fc323f8a692b74b00866089b48557bb665c5",
+      "sourceModified": "2026-08-16T14:02:59.562348+00:00",
+      "topWords": [
+        "Family",
+        "Never",
+        "World",
+        "Jobs",
+        "Future",
+        "Past",
+        "Coffin",
+        "Quarter",
+        "Memo",
+        "Let",
+        "Years",
+        "Indian"
       ],
       "wordCount": 130
     },

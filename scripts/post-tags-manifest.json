@@ -11765,6 +11765,36 @@
 			"pinnedTags": ["Homeostasis", "Oscillations", "Complex Systems", "Physiology", "Ecology"],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-16"
+		},
+		"src/lib/posts/obsolescence-velocity.md": {
+			"bodyHash": "5fd4c4fe686f5538efa936eed6b7417ed34c6405268003f704ca41e764a93153",
+			"hashVersion": 2,
+			"revisionHash": "0a196e38ef0c9083d55241848d5d82dc69ba9f6f69b160a89e713cebc730a42b",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Career Obsolescence",
+				"Indian Economy",
+				"White Collar",
+				"Labor Arbitrage",
+				"Future of Work",
+				"Economic Disruption",
+				"Professional Development",
+				"Calcutta",
+				"Kolkata"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Career Obsolescence",
+				"Indian Economy",
+				"White Collar",
+				"Labor Arbitrage",
+				"Future of Work",
+				"Economic Disruption",
+				"Professional Development",
+				"Calcutta",
+				"Kolkata"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -8933,6 +8933,22 @@
       "sourceHash": "04edccaab976ca52067a3b2eae87e8726c9b0cdf53ddbb17583e638f76a9ec76",
       "width": 1200
     },
+    "static/images/obsolescence-velocity.jpg": {
+      "format": "JPEG",
+      "height": 895,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 895,
+      "originalWidth": 1280,
+      "outputBytes": 175327,
+      "outputHash": "bf788b3222f2e88210c328552f2cd6d2c1415f08a7214892e129e8efb228e026",
+      "psnrDb": 46.17,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 178402,
+      "sourceHash": "52602fb29706952c96afeee959d9d537e9890eaf13ada862a477644f7193e7a2",
+      "width": 1280
+    },
     "static/images/p0.jpeg": {
       "format": "JPEG",
       "height": 1600,
