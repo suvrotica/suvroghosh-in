@@ -4411,7 +4411,7 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
 			"src": "/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
-			"bytes": 3460,
+			"bytes": 3414,
 			"width": 1200,
 			"height": 630
 		},
