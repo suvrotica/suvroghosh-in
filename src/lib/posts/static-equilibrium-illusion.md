@@ -7,7 +7,7 @@ dateModified: "2026-08-16"
 thumbnail: "/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg"
 thumbnailAlt: "Editorial diagram in which a perturbed line returns, rings, and opens into a closed orbit beside the title The Static-Equilibrium Illusion"
 category: "Visualizations"
-tags: ["Homeostasis", "Oscillations", "Complex Systems", "Physiology", "Ecology"]
+tags: ["Homeostasis","Oscillations","Complex Systems","Physiology","Ecology","Per Minute","Limit Cycle","Flat-Line Opening","Fixed Point","Resting Range"]
 pinnedTags: ["Homeostasis", "Oscillations", "Complex Systems", "Physiology", "Ecology"]
 published: true
 color: "#167D80"

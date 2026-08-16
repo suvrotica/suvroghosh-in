@@ -4409,6 +4409,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 768
 		},
 		{
+			"name": "visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
+			"src": "/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg",
+			"bytes": 3460,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "visualizations/strange-attractor-orchestra/langford-poster.png",
 			"src": "/images/visualizations/strange-attractor-orchestra/langford-poster.png",
 			"bytes": 618137,

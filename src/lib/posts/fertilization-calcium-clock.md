@@ -7,7 +7,7 @@ dateModified: "2026-08-15"
 thumbnail: "/images/visualizations/fertilization-calcium-clock/fertilization-calcium-clock.svg"
 thumbnailAlt: "Original schematic of a calcium wave crossing an egg beside a rising and falling time-series trace"
 category: "Visualizations"
-tags: ["Developmental Biology", "Calcium", "Fertilization", "Biological Clocks", "Complex Systems"]
+tags: ["Developmental Biology","Calcium","Fertilization","Biological Clocks","Complex Systems","Micrometres Per Second","Sperm Starts","Temporal Dialects","Timing Accomplishes","Mouse Eggs"]
 pinnedTags: ["Developmental Biology", "Calcium", "Fertilization", "Biological Clocks", "Complex Systems"]
 published: true
 color: "#B35C74"

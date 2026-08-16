@@ -9990,6 +9990,18 @@
       "sourceHash": "160af22dcbf49db9eb7c4322bda5a9bc1b712ee7c3331848abbeab3b8265ae7b",
       "width": 960
     },
+    "static/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg": {
+      "format": "SVG",
+      "height": 630,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 3460,
+      "outputHash": "865b29e63d8be64b37fbc6698506c980351917875c578f87d4a3097b9a08b5a6",
+      "reason": "vector source retained",
+      "sourceBytes": 3460,
+      "sourceHash": "865b29e63d8be64b37fbc6698506c980351917875c578f87d4a3097b9a08b5a6",
+      "width": 1200
+    },
     "static/images/visualizations/strange-attractor-orchestra/langford-poster.png": {
       "format": "PNG",
       "height": 1080,
