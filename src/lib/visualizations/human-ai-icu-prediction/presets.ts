@@ -54,7 +54,7 @@ export const ICU_LAB_PRESETS = [
 			...baseConfig,
 			clinician: { ...baseConfig.clinician, targetAuc: 0.83 },
 			model: { ...baseConfig.model, targetAuc: 0.83 },
-			sharedResidualCorrelation: 0.94,
+			sharedResidualCorrelation: 0.95,
 			clinicianWeight: 0.5
 		}
 	},

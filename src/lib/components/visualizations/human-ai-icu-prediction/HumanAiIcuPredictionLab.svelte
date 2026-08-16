@@ -55,6 +55,8 @@
 	let fullscreenAvailable = $state(false);
 	let previousBodyOverflow = '';
 	let focusModeBodyStateApplied = false;
+	let focusModeAnchor: Comment | null = null;
+	let focusModeReturnScrollY: number | null = null;
 	let configFrame: number | null = null;
 	let pendingControlConfig: ControlConfig | null = null;
 	let controlAnnouncementTimer: ReturnType<typeof setTimeout> | null = null;
@@ -224,14 +226,17 @@
 		});
 	}
 
-	function restoreLaunchFocus(): void {
-		requestAnimationFrame(() => {
-			void tick().then(() => {
-				shell
-					?.querySelector<HTMLButtonElement>('[data-testid="icu-toggle-expanded"]')
-					?.focus({ preventScroll: true });
-			});
+	async function restoreLaunchFocus(returnScrollY: number | null = null): Promise<void> {
+		await tick();
+		await new Promise<void>((resolve) => {
+			requestAnimationFrame(() => resolve());
 		});
+		if (returnScrollY !== null) {
+			window.scrollTo({ top: returnScrollY, left: window.scrollX, behavior: 'auto' });
+		}
+		shell
+			?.querySelector<HTMLButtonElement>('[data-testid="icu-toggle-expanded"]')
+			?.focus({ preventScroll: true });
 	}
 
 	async function focusExitControl(): Promise<void> {
@@ -255,8 +260,23 @@
 		focusModeBodyStateApplied = false;
 	}
 
+	function portalFocusModeToBody(): void {
+		if (!shell || focusModeAnchor || shell.parentNode === document.body) return;
+		focusModeAnchor = document.createComment('icu-lab-focus-mode-anchor');
+		shell.parentNode?.insertBefore(focusModeAnchor, shell);
+		document.body.appendChild(shell);
+	}
+
+	function restoreFocusModePortal(): void {
+		if (!shell || !focusModeAnchor) return;
+		focusModeAnchor.parentNode?.insertBefore(shell, focusModeAnchor);
+		focusModeAnchor.remove();
+		focusModeAnchor = null;
+	}
+
 	async function openExpanded(_trigger: HTMLButtonElement): Promise<void> {
 		if (!shell) return;
+		const returnScrollY = window.scrollY;
 		if (fullscreenAvailable) {
 			try {
 				await shell.requestFullscreen();
@@ -265,7 +285,9 @@
 				liveMessage = 'Browser fullscreen was unavailable, so fixed focus mode opened instead.';
 			}
 		}
+		focusModeReturnScrollY = returnScrollY;
 		applyFocusModeBodyState();
+		portalFocusModeToBody();
 		focusMode = true;
 		await focusExitControl();
 	}
@@ -276,9 +298,13 @@
 			return;
 		}
 		if (focusMode) {
+			const returnScrollY = focusModeReturnScrollY;
 			focusMode = false;
+			await tick();
+			restoreFocusModePortal();
 			restoreFocusModeBodyState();
-			restoreLaunchFocus();
+			focusModeReturnScrollY = null;
+			await restoreLaunchFocus(returnScrollY);
 		}
 	}
 
@@ -286,7 +312,7 @@
 		const wasNative = nativeFullscreen;
 		nativeFullscreen = document.fullscreenElement === shell;
 		if (nativeFullscreen) void focusExitControl();
-		else if (wasNative) restoreLaunchFocus();
+		else if (wasNative) void restoreLaunchFocus();
 	}
 
 	function focusableElements(): HTMLElement[] {
@@ -329,7 +355,9 @@
 			document.removeEventListener('fullscreenchange', updateFullscreenState);
 			if (configFrame !== null) cancelAnimationFrame(configFrame);
 			if (controlAnnouncementTimer !== null) clearTimeout(controlAnnouncementTimer);
+			restoreFocusModePortal();
 			restoreFocusModeBodyState();
+			focusModeReturnScrollY = null;
 		};
 	});
 </script>

@@ -47,7 +47,7 @@ describe('fixed ICU laboratory presets', () => {
 				deployment: 0.2,
 				clinicianAuc: 0.83,
 				modelAuc: 0.83,
-				correlation: 0.94,
+				correlation: 0.95,
 				weight: 0.5
 			},
 			{

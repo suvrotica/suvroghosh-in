@@ -55,7 +55,7 @@ const presetFixtures = [
 		deploymentRate: '20.0%',
 		clinicianAuc: '0.83',
 		modelAuc: '0.83',
-		correlation: '0.94',
+		correlation: '0.95',
 		clinicianWeight: '0.5'
 	},
 	{
@@ -175,13 +175,8 @@ async function assertPresetConfiguration(
 	await expect(lab.locator('#icu-model-intercept')).toHaveValue('0');
 	await expect(lab.locator('#icu-clinician-slope')).toHaveValue('1');
 	await expect(lab.locator('#icu-model-slope')).toHaveValue('1');
-	// The requested 0.94 preset sits off the native 0.05 step grid anchored at -0.80, so Chromium
-	// sanitizes that range control to 0.95. The adjacent output and settings ledger remain the exact
-	// source of truth for the applied simulation configuration.
 	const correlationControl = lab.locator('#icu-residual-correlation');
-	expect(
-		Math.abs(Number(await correlationControl.inputValue()) - Number(fixture.correlation))
-	).toBeLessThanOrEqual(0.011);
+	await expect(correlationControl).toHaveValue(fixture.correlation);
 	await expect(correlationControl).toHaveAttribute('aria-valuetext', fixture.correlation);
 	await expect(lab.locator('label[for="icu-residual-correlation"] output')).toHaveText(
 		fixture.correlation
@@ -599,6 +594,108 @@ test('focus mode works in portrait and landscape, traps focus, exits, and restor
 	await expect(trigger).toBeFocused();
 	await expect(page.locator('body')).not.toHaveClass(/icu-lab-focus-mode-open/u);
 	await expect(siteHeader).toBeVisible();
+});
+
+test('rejected fullscreen falls back edge-to-edge on desktop and restores scroll and fresh launch focus', async ({
+	page
+}) => {
+	await page.setViewportSize({ width: 1440, height: 900 });
+	await page.addInitScript(() => {
+		Object.defineProperty(Document.prototype, 'fullscreenEnabled', {
+			configurable: true,
+			get: () => true
+		});
+		Object.defineProperty(Element.prototype, 'requestFullscreen', {
+			configurable: true,
+			value: () => {
+				document.documentElement.dataset.icuFullscreenRequest = 'rejected';
+				return Promise.reject(new DOMException('Fullscreen denied by test', 'NotAllowedError'));
+			}
+		});
+	});
+
+	const lab = await openLaboratory(page);
+	const trigger = lab.getByTestId('icu-toggle-expanded');
+	await expect(trigger).toContainText('Fullscreen');
+	await trigger.evaluate((element) => {
+		const absoluteTop = element.getBoundingClientRect().top + window.scrollY;
+		window.scrollTo({ top: Math.max(320, absoluteTop - 120), behavior: 'instant' });
+	});
+	await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(100);
+	const savedScrollY = await page.evaluate(() => window.scrollY);
+	const originalTrigger = await trigger.elementHandle();
+	if (!originalTrigger) throw new Error('The fullscreen launch button was not mounted.');
+
+	await trigger.click();
+	await expect(page.locator('html')).toHaveAttribute('data-icu-fullscreen-request', 'rejected');
+	await expect(lab).toHaveAttribute('data-expanded', 'true');
+	await expect(page.locator('body')).toHaveClass(/icu-lab-focus-mode-open/u);
+	await expect(lab.getByTestId('icu-exit-expanded')).toBeFocused();
+	await expect(lab.locator('.live-region')).toContainText(
+		'Browser fullscreen was unavailable, so fixed focus mode opened instead.'
+	);
+
+	const geometry = await lab.evaluate((element) => {
+		const bounds = element.getBoundingClientRect();
+		const containingBlockAncestors: string[] = [];
+		for (let ancestor = element.parentElement; ancestor; ancestor = ancestor.parentElement) {
+			const style = getComputedStyle(ancestor);
+			if (
+				style.transform !== 'none' ||
+				style.perspective !== 'none' ||
+				style.filter !== 'none' ||
+				style.willChange
+					.split(',')
+					.map((value) => value.trim())
+					.includes('transform')
+			) {
+				containingBlockAncestors.push(
+					ancestor.getAttribute('data-testid') ??
+						ancestor.id ??
+						ancestor.className ??
+						ancestor.tagName
+				);
+			}
+		}
+		return {
+			position: getComputedStyle(element).position,
+			top: bounds.top,
+			left: bounds.left,
+			right: bounds.right,
+			bottom: bounds.bottom,
+			width: bounds.width,
+			height: bounds.height,
+			viewportWidth: document.documentElement.clientWidth,
+			viewportHeight: window.innerHeight,
+			horizontalOverflow: element.scrollWidth - element.clientWidth,
+			containingBlockAncestors
+		};
+	});
+	expect(geometry.position).toBe('fixed');
+	expect(geometry.top).toBeCloseTo(0, 1);
+	expect(geometry.left).toBeCloseTo(0, 1);
+	expect(geometry.right).toBeCloseTo(geometry.viewportWidth, 1);
+	expect(geometry.bottom).toBeCloseTo(geometry.viewportHeight, 1);
+	expect(geometry.width).toBeCloseTo(geometry.viewportWidth, 1);
+	expect(geometry.height).toBeCloseTo(geometry.viewportHeight, 1);
+	expect(geometry.horizontalOverflow).toBeLessThanOrEqual(1);
+	expect(
+		geometry.containingBlockAncestors,
+		'fixed fallback must not remain inside a transformed containing block'
+	).toEqual([]);
+
+	await lab.getByTestId('icu-exit-expanded').click();
+	await expect(lab).toHaveAttribute('data-expanded', 'false');
+	await expect(page.locator('body')).not.toHaveClass(/icu-lab-focus-mode-open/u);
+	const restoredTrigger = lab.getByTestId('icu-toggle-expanded');
+	await expect(restoredTrigger).toContainText('Fullscreen');
+	await expect(restoredTrigger).toBeFocused();
+	expect(await originalTrigger.evaluate((element) => element.isConnected)).toBe(false);
+	await expect
+		.poll(() => page.evaluate((expected) => Math.abs(window.scrollY - expected), savedScrollY))
+		.toBeLessThanOrEqual(1);
+	expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(100);
+	await originalTrigger.dispose();
 });
 
 test('native fullscreen exposes Exit and restores the launch control when the API is available', async ({

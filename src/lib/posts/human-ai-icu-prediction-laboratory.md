@@ -227,7 +227,7 @@ $$
 
 Here $\rho$ is the configured correlation between latent residuals after conditioning on the synthetic outcome. At a high positive value, much of the model residual is inherited from the same draw that drives the clinician residual. At lower or negative values, the residuals have more independent or opposing movement.
 
-The preset **Both learn the same hospital artifact** uses $\rho=0.94$ as a proxy for a shared blind spot. It does not causally simulate an artifact, show how one was learned, or establish that a particular EHR field affects real clinicians and models. The title is a thought experiment attached to highly correlated synthetic residuals.
+The preset **Both learn the same hospital artifact** uses $\rho=0.95$ as a proxy for a shared blind spot. It does not causally simulate an artifact, show how one was learned, or establish that a particular EHR field affects real clinicians and models. The title is a thought experiment attached to highly correlated synthetic residuals.
 
 The Shared error view keeps four quantities separate: configured latent residual dependence, realised latent-residual correlation, correlation of casewise squared losses, and the cross-error term $C$. They are not interchangeable. In a binary forecast, the signed errors $p-Y$ are mechanically negative when $Y=1$ and positive when $Y=0$, so their ordinary correlation is not a clean estimate of the hidden conditional dependence controlled by the slider.
 
@@ -261,7 +261,7 @@ The preset numbers are illustrative, not empirical estimates:
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Specialist with missing structured data | 0.20 | 0.20 | 0.82 | 0.75 | 0.05 | 0.70 |
 | Trainee plus strong model | 0.20 | 0.20 | 0.70 | 0.86 | 0.15 | 0.15 |
-| Both learn the same hospital artifact | 0.20 | 0.20 | 0.83 | 0.83 | 0.94 | 0.50 |
+| Both learn the same hospital artifact | 0.20 | 0.20 | 0.83 | 0.83 | 0.95 | 0.50 |
 | Deployment population shift | 0.20 | 0.35 | 0.78 | 0.84 | 0.65 | 0.50 |
 
 Both forecasters begin with calibration intercept zero and slope one in every preset. Once a slider moves, the label becomes **Custom — based on [preset name]**. Reset restores the entire originating preset rather than only the last control.
