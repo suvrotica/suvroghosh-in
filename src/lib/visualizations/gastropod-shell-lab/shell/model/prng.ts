@@ -1,4 +1,5 @@
-export type PrngState = readonly [number, number, number, number];
+/** The optional fifth value preserves a cached Box-Muller normal across snapshots. */
+export type PrngState = readonly [number, number, number, number, number?];
 
 function rotateLeft(value: number, bits: number): number {
 	return ((value << bits) | (value >>> (32 - bits))) >>> 0;
@@ -43,6 +44,8 @@ export class SeededRandom {
 		this.seed = normalizeSeed(seed);
 		if (state) {
 			this.state = [state[0] >>> 0, state[1] >>> 0, state[2] >>> 0, state[3] >>> 0];
+			this.spareNormal =
+				typeof state[4] === 'number' && Number.isFinite(state[4]) ? state[4] : undefined;
 		} else {
 			const expand = splitMix32(this.seed);
 			this.state = [expand(), expand(), expand(), expand()];
@@ -130,7 +133,7 @@ export class SeededRandom {
 	}
 
 	snapshot(): PrngState {
-		return [...this.state] as PrngState;
+		return [...this.state, this.spareNormal] as PrngState;
 	}
 
 	fork(label: number | string): SeededRandom {

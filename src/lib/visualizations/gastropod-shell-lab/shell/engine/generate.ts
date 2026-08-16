@@ -105,6 +105,18 @@ export function generateShell(
 	resolution: Partial<MeshResolution> = {},
 	options: GenerateOptions = {}
 ): ShellGenerationResult {
+	const semanticDiagnostics = validateRecipeSemantics(input);
+	const numericalErrors = semanticDiagnostics.filter(
+		(diagnostic) =>
+			diagnostic.severity === 'error' &&
+			(diagnostic.code === 'growth-law-numerical-range' ||
+				diagnostic.code === 'kinematic-growth-overflow-risk')
+	);
+	if (numericalErrors.length > 0) {
+		throw new RangeError(
+			`Recipe cannot be generated with finite geometry: ${numericalErrors.map(({ path }) => path).join(', ')}.`
+		);
+	}
 	const fixedResolution = resolvedResolution(resolution);
 	const frames =
 		input.engine === 'analytic'
@@ -136,7 +148,7 @@ export function generateShell(
 			Math.ceil(((fixedResolution.growthRings - 1) / Math.max(0.25, input.coiling.turns)) * 1.25)
 		)
 	);
-	const parameterOverlapRisk = validateRecipeSemantics(input).some(
+	const parameterOverlapRisk = semanticDiagnostics.some(
 		(diagnostic) => diagnostic.code === 'self-intersection-likely'
 	);
 	// Ring envelopes overlap in many ordinary enveloping body whorls. Treat them
@@ -149,8 +161,20 @@ export function generateShell(
 		parameterRisk: parameterOverlapRisk,
 		likely: ringEnvelopeEstimate.likely && parameterOverlapRisk
 	};
-	const errors = [...rings.apertureValidation.errors, ...meshDiagnostics.errors];
-	const warnings = [...aliasingWarnings(input, fixedResolution), ...meshDiagnostics.warnings];
+	const errors = [
+		...semanticDiagnostics
+			.filter(({ severity }) => severity === 'error')
+			.map(({ message }) => message),
+		...rings.apertureValidation.errors,
+		...meshDiagnostics.errors
+	];
+	const warnings = [
+		...semanticDiagnostics
+			.filter(({ severity }) => severity !== 'error')
+			.map(({ message }) => message),
+		...aliasingWarnings(input, fixedResolution),
+		...meshDiagnostics.warnings
+	];
 	if (!rings.apertureValidation.valid) {
 		warnings.push('The invalid aperture was replaced by a finite circular fallback mesh.');
 	}

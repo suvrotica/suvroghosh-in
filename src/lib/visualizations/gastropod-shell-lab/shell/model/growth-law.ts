@@ -104,6 +104,11 @@ export type GrowthKeyframe = z.infer<typeof GrowthKeyframeSchema>;
 export type GrowthEpisode = z.infer<typeof GrowthEpisodeSchema>;
 export type GrowthLaw = z.infer<typeof GrowthLawSchema>;
 
+export interface GrowthLawRange {
+	min: number;
+	max: number;
+}
+
 export const constantLaw = (value: number): GrowthLaw => ({ type: 'constant', value });
 
 export const linearLaw = (start: number, end: number): GrowthLaw => ({
@@ -196,6 +201,86 @@ export function evaluateGrowthLaw(law: GrowthLaw, age: number): number {
 			return law.offset + law.amplitude * Math.sin(Math.PI * 2 * law.cycles * t + law.phase);
 		case 'keyframes':
 			return evaluateKeyframes(law.points, law.interpolation, t);
+	}
+}
+
+function rangeOf(values: readonly number[]): GrowthLawRange {
+	if (values.some(Number.isNaN)) {
+		return { min: Number.NEGATIVE_INFINITY, max: Number.POSITIVE_INFINITY };
+	}
+	return { min: Math.min(...values), max: Math.max(...values) };
+}
+
+function hermiteCriticalAges(law: Extract<GrowthLaw, { type: 'hermite' }>): number[] {
+	if (law.clampOvershoot) return [];
+	const cubic = 2 * law.start - 2 * law.end + law.startSlope + law.endSlope;
+	const quadratic = -3 * law.start + 3 * law.end - 2 * law.startSlope - law.endSlope;
+	const derivativeA = 3 * cubic;
+	const derivativeB = 2 * quadratic;
+	const derivativeC = law.startSlope;
+	if (![derivativeA, derivativeB, derivativeC].every(Number.isFinite)) return [Number.NaN];
+
+	const scale = Math.max(1, Math.abs(derivativeA), Math.abs(derivativeB), Math.abs(derivativeC));
+	if (Math.abs(derivativeA) <= Number.EPSILON * scale) {
+		if (Math.abs(derivativeB) <= Number.EPSILON * scale) return [];
+		const root = -derivativeC / derivativeB;
+		return root > 0 && root < 1 ? [root] : [];
+	}
+
+	const discriminant = derivativeB * derivativeB - 4 * derivativeA * derivativeC;
+	if (!Number.isFinite(discriminant)) return [Number.NaN];
+	if (discriminant < 0) return [];
+	const squareRoot = Math.sqrt(discriminant);
+	const roots = [
+		(-derivativeB - squareRoot) / (2 * derivativeA),
+		(-derivativeB + squareRoot) / (2 * derivativeA)
+	];
+	return roots.filter((root) => root > 0 && root < 1);
+}
+
+/**
+ * Exact output range over normalized age for every growth-law family. Step-law
+ * episode values are included conservatively even when a later overlapping
+ * episode masks one of them.
+ */
+export function growthLawRange(law: GrowthLaw): GrowthLawRange {
+	switch (law.type) {
+		case 'constant':
+			return { min: law.value, max: law.value };
+		case 'linear':
+			return rangeOf([law.start, law.end]);
+		case 'hermite': {
+			if (law.clampOvershoot) return rangeOf([law.start, law.end]);
+			const criticalAges = hermiteCriticalAges(law);
+			if (criticalAges.some(Number.isNaN)) {
+				return { min: Number.NEGATIVE_INFINITY, max: Number.POSITIVE_INFINITY };
+			}
+			return rangeOf([
+				law.start,
+				law.end,
+				...criticalAges.map((age) => evaluateGrowthLaw(law, age))
+			]);
+		}
+		case 'step':
+			return rangeOf([law.base, ...law.episodes.map((episode) => episode.value)]);
+		case 'sinusoid': {
+			if (law.cycles === 0) {
+				const value = evaluateGrowthLaw(law, 0);
+				return { min: value, max: value };
+			}
+			const period = Math.PI * 2;
+			const phase = law.phase % period;
+			const angleSpan = period * law.cycles;
+			const firstCritical = Math.ceil((phase - Math.PI / 2) / Math.PI);
+			const lastCritical = Math.floor((phase + angleSpan - Math.PI / 2) / Math.PI);
+			const values = [evaluateGrowthLaw(law, 0), evaluateGrowthLaw(law, 1)];
+			for (let critical = firstCritical; critical <= lastCritical; critical += 1) {
+				values.push(law.offset + law.amplitude * (Math.abs(critical % 2) === 0 ? 1 : -1));
+			}
+			return rangeOf(values);
+		}
+		case 'keyframes':
+			return rangeOf(law.points.map((point) => point.value));
 	}
 }
 

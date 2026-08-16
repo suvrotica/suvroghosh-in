@@ -106,4 +106,69 @@ describe('recipe classification and semantic validation', () => {
 			'aperture-axis-ratio-unsafe-range'
 		);
 	});
+
+	it.each([
+		{
+			name: 'a high-frequency sinusoid',
+			law: {
+				type: 'sinusoid' as const,
+				offset: 1,
+				amplitude: 2,
+				cycles: 64,
+				phase: Math.PI / 2
+			}
+		},
+		{
+			name: 'a narrow step episode',
+			law: {
+				type: 'step' as const,
+				base: 1,
+				episodes: [{ start: 0.1234, end: 0.1235, value: -1 }]
+			}
+		}
+	])('detects non-positive kinematic speed in $name', ({ law }) => {
+		const validation = validateShellRecipe(
+			createDefaultRecipe({ engine: 'accretion', kinematics: { speed: law } })
+		);
+
+		expect(validation.canGenerate).toBe(false);
+		expect(validation.diagnostics).toEqual(
+			expect.arrayContaining([
+				expect.objectContaining({
+					code: 'kinematic-speed-non-positive',
+					severity: 'error'
+				})
+			])
+		);
+	});
+
+	it('rejects active growth laws whose finite schema values can overflow geometry', () => {
+		const recipes = [
+			createDefaultRecipe({
+				engine: 'accretion',
+				kinematics: { growthRate: { type: 'constant', value: 1e308 } }
+			}),
+			createDefaultRecipe({
+				engine: 'accretion',
+				kinematics: { curvature1: { type: 'constant', value: 1e308 } }
+			}),
+			createDefaultRecipe({
+				coiling: {
+					axial: {
+						mode: 'keyframed',
+						keyframed: { type: 'constant', value: 1e308 }
+					}
+				}
+			})
+		];
+
+		for (const recipe of recipes) {
+			const validation = validateShellRecipe(recipe);
+			expect(validation.structurallyValid).toBe(true);
+			expect(validation.canGenerate).toBe(false);
+			expect(validation.diagnostics.map(({ code }) => code)).toContain(
+				'growth-law-numerical-range'
+			);
+		}
+	});
 });

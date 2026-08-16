@@ -22,6 +22,8 @@
 
 	let { recipe, age, diagnostics = {}, compact = false }: Props = $props();
 	let expanded = $state(false);
+	const descriptionInstanceId = $props.id();
+	const descriptionTitleId = `${descriptionInstanceId}-title`;
 
 	const family = $derived.by(() => {
 		const ratio = recipe.aperture.scale;
@@ -154,11 +156,11 @@
 	);
 </script>
 
-<section class:compact class="description" aria-labelledby="shell-description-title">
+<section class:compact class="description" aria-labelledby={descriptionTitleId}>
 	<div class="description-heading">
 		<div>
 			<p class="eyebrow">Text equivalent</p>
-			<h2 id="shell-description-title">Current shell description</h2>
+			<h2 id={descriptionTitleId}>Current shell description</h2>
 		</div>
 		<button
 			class="quiet-button"

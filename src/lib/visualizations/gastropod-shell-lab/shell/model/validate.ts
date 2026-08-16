@@ -1,5 +1,5 @@
 import type { GrowthLaw } from './growth-law';
-import { evaluateGrowthLaw } from './growth-law';
+import { growthLawRange } from './growth-law';
 import { ShellRecipeSchema, radialExpansionExponent, type ShellRecipe } from './recipe-schema';
 
 export type DiagnosticSeverity = 'info' | 'warning' | 'error';
@@ -138,15 +138,29 @@ export function classifyShellRecipe(recipe: ShellRecipe): RecipeClassification {
 	};
 }
 
-function sampleLawRange(law: GrowthLaw, samples = 65): { min: number; max: number } {
-	let min = Number.POSITIVE_INFINITY;
-	let max = Number.NEGATIVE_INFINITY;
-	for (let index = 0; index < samples; index += 1) {
-		const value = evaluateGrowthLaw(law, index / (samples - 1));
-		min = Math.min(min, value);
-		max = Math.max(max, value);
+const MAX_GROWTH_LAW_MAGNITUDE = 1_000_000;
+const MAX_ACCRETION_GROWTH_EXPONENT = 600;
+
+function growthLawParameterMagnitude(law: GrowthLaw): number {
+	switch (law.type) {
+		case 'constant':
+			return Math.abs(law.value);
+		case 'linear':
+			return Math.max(Math.abs(law.start), Math.abs(law.end));
+		case 'hermite':
+			return Math.max(
+				Math.abs(law.start),
+				Math.abs(law.end),
+				Math.abs(law.startSlope),
+				Math.abs(law.endSlope)
+			);
+		case 'step':
+			return Math.max(Math.abs(law.base), ...law.episodes.map(({ value }) => Math.abs(value)));
+		case 'sinusoid':
+			return Math.max(Math.abs(law.offset), Math.abs(law.amplitude));
+		case 'keyframes':
+			return Math.max(...law.points.map(({ value }) => Math.abs(value)));
 	}
-	return { min, max };
 }
 
 export function validateRecipeSemantics(recipe: ShellRecipe): RecipeDiagnostic[] {
@@ -171,6 +185,98 @@ export function validateRecipeSemantics(recipe: ShellRecipe): RecipeDiagnostic[]
 			);
 		}
 	};
+	const validateLawMagnitude = (law: GrowthLaw, path: string, name: string) => {
+		const range = growthLawRange(law);
+		const maximumMagnitude = Math.max(
+			Math.abs(range.min),
+			Math.abs(range.max),
+			growthLawParameterMagnitude(law)
+		);
+		if (!Number.isFinite(maximumMagnitude) || maximumMagnitude > MAX_GROWTH_LAW_MAGNITUDE) {
+			result.push(
+				diagnostic(
+					'growth-law-numerical-range',
+					'error',
+					`${name} exceeds the finite numerical range supported by the geometry engine.`,
+					path,
+					`Keep every value and slope in ${name.toLowerCase()} within ±${MAX_GROWTH_LAW_MAGNITUDE.toLocaleString('en-US')}.`
+				)
+			);
+		}
+	};
+
+	const activeLaws: Array<{ law: GrowthLaw; path: string; name: string }> = [
+		{
+			law: recipe.coiling.handednessLaw,
+			path: 'coiling.handednessLaw',
+			name: 'Handedness law'
+		},
+		{
+			law: recipe.aperture.scaleModulation,
+			path: 'aperture.scaleModulation',
+			name: 'Aperture scale modulation'
+		},
+		{
+			law: recipe.aperture.lipFlare,
+			path: 'aperture.lipFlare',
+			name: 'Aperture lip flare'
+		},
+		{ law: recipe.twist.rate, path: 'twist.rate', name: 'Profile-roll rate' }
+	];
+	if (recipe.coiling.axial.mode === 'keyframed') {
+		activeLaws.push({
+			law: recipe.coiling.axial.keyframed,
+			path: 'coiling.axial.keyframed',
+			name: 'Keyframed axial height'
+		});
+	}
+	if (recipe.engine === 'accretion') {
+		activeLaws.push(
+			{ law: recipe.kinematics.speed, path: 'kinematics.speed', name: 'Kinematic speed' },
+			{
+				law: recipe.kinematics.growthRate,
+				path: 'kinematics.growthRate',
+				name: 'Kinematic growth rate'
+			},
+			{
+				law: recipe.kinematics.curvature1,
+				path: 'kinematics.curvature1',
+				name: 'First kinematic curvature'
+			},
+			{
+				law: recipe.kinematics.curvature2,
+				path: 'kinematics.curvature2',
+				name: 'Second kinematic curvature'
+			},
+			{
+				law: recipe.kinematics.twistRate,
+				path: 'kinematics.twistRate',
+				name: 'Kinematic frame-twist rate'
+			}
+		);
+	}
+	const ornamentLaws = [
+		{ key: 'ribs', name: 'Rib onset', module: recipe.ornament.ribs },
+		{ key: 'cords', name: 'Cord onset', module: recipe.ornament.cords },
+		{ key: 'nodules', name: 'Nodule onset', module: recipe.ornament.nodules },
+		{ key: 'varices', name: 'Varix onset', module: recipe.ornament.varices },
+		{ key: 'spines', name: 'Spine onset', module: recipe.ornament.spines },
+		{ key: 'buckling', name: 'Buckling onset', module: recipe.ornament.buckling },
+		{ key: 'hierarchy', name: 'Hierarchy onset', module: recipe.ornament.hierarchy },
+		{ key: 'imperfection', name: 'Imperfection onset', module: recipe.ornament.imperfection }
+	] as const;
+	for (const ornament of ornamentLaws) {
+		if (ornament.module.enabled) {
+			activeLaws.push({
+				law: ornament.module.onset,
+				path: `ornament.${ornament.key}.onset`,
+				name: ornament.name
+			});
+		}
+	}
+	for (const activeLaw of activeLaws) {
+		validateLawMagnitude(activeLaw.law, activeLaw.path, activeLaw.name);
+	}
 
 	warnRange(recipe.coiling.turns, 2, 12, 'turns-unsafe-range', 'coiling.turns', 'Turns');
 	warnRange(
@@ -356,7 +462,7 @@ export function validateRecipeSemantics(recipe: ShellRecipe): RecipeDiagnostic[]
 	);
 
 	if (recipe.engine === 'accretion') {
-		const speed = sampleLawRange(recipe.kinematics.speed);
+		const speed = growthLawRange(recipe.kinematics.speed);
 		if (speed.min <= 0) {
 			result.push(
 				diagnostic(
@@ -365,6 +471,26 @@ export function validateRecipeSemantics(recipe: ShellRecipe): RecipeDiagnostic[]
 					'The local kinematic speed becomes zero or negative.',
 					'kinematics.speed',
 					'Keep the entire speed law above zero.'
+				)
+			);
+		}
+		const growthRate = growthLawRange(recipe.kinematics.growthRate);
+		const maximumGrowthExponent =
+			Math.max(Math.abs(growthRate.min), Math.abs(growthRate.max)) *
+			recipe.coiling.turns *
+			Math.PI *
+			2;
+		if (
+			!Number.isFinite(maximumGrowthExponent) ||
+			maximumGrowthExponent > MAX_ACCRETION_GROWTH_EXPONENT
+		) {
+			result.push(
+				diagnostic(
+					'kinematic-growth-overflow-risk',
+					'error',
+					'The local kinematic growth law can overflow the finite aperture-scale integration.',
+					'kinematics.growthRate',
+					'Reduce the growth-rate magnitude or the number of turns.'
 				)
 			);
 		}
