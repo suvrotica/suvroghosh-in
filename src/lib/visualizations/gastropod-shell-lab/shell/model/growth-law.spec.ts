@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { GrowthLawSchema, evaluateGrowthLaw, sampleGrowthLaw } from './growth-law';
+import { GrowthLawSchema, evaluateGrowthLaw, growthLawRange, sampleGrowthLaw } from './growth-law';
 
 describe('GrowthLaw', () => {
 	it('evaluates constants and clamps normalized age', () => {
@@ -70,5 +70,38 @@ describe('GrowthLaw', () => {
 			]
 		});
 		expect(parsed.success).toBe(false);
+	});
+
+	it('finds extrema hidden between coarse samples', () => {
+		expect(
+			growthLawRange({
+				type: 'sinusoid',
+				offset: 1,
+				amplitude: 2,
+				cycles: 64,
+				phase: Math.PI / 2
+			})
+		).toEqual({ min: -1, max: 3 });
+		expect(
+			growthLawRange({
+				type: 'step',
+				base: 2,
+				episodes: [{ start: 0.1234, end: 0.1235, value: -4 }]
+			})
+		).toEqual({ min: -4, max: 2 });
+	});
+
+	it('includes interior extrema of unclamped Hermite laws', () => {
+		const range = growthLawRange({
+			type: 'hermite',
+			start: 0,
+			end: 0,
+			startSlope: 4,
+			endSlope: -4,
+			clampOvershoot: false
+		});
+
+		expect(range.min).toBe(0);
+		expect(range.max).toBeCloseTo(1, 14);
 	});
 });

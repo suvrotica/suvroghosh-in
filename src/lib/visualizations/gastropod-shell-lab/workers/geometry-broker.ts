@@ -62,6 +62,9 @@ export class GeometryBroker {
 			});
 		};
 		worker.onerror = (event) => {
+			if (this.worker !== worker) return;
+			worker.terminate();
+			this.worker = undefined;
 			this.onStatus?.('error');
 			const error = new Error(event.message || 'Geometry worker failed.');
 			for (const pending of this.pending.values()) pending.reject(error);

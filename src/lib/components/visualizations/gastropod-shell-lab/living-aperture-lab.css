@@ -286,16 +286,14 @@ html[data-theme='high-contrast'] .living-aperture-lab[data-lab-theme='light'] {
 	backdrop-filter: blur(4px);
 }
 
-@media (prefers-reduced-motion: reduce) {
-	.living-aperture-lab,
-	.living-aperture-lab *,
-	.living-aperture-lab *::before,
-	.living-aperture-lab *::after {
-		scroll-behavior: auto !important;
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-	}
+.living-aperture-lab[data-lab-motion='reduced'],
+.living-aperture-lab[data-lab-motion='reduced'] *,
+.living-aperture-lab[data-lab-motion='reduced'] *::before,
+.living-aperture-lab[data-lab-motion='reduced'] *::after {
+	scroll-behavior: auto !important;
+	animation-duration: 0.01ms !important;
+	animation-iteration-count: 1 !important;
+	transition-duration: 0.01ms !important;
 }
 
 @media (max-width: 720px) {

@@ -348,10 +348,16 @@
 	let guide = $derived(guides[guideIndex]);
 	let step = $derived(stepIndex >= 0 ? guide.steps[stepIndex] : undefined);
 
+	function applyGuidedChange(next: ShellRecipe): void {
+		const guided = structuredClone(next);
+		if (guided.ancestry) guided.ancestry.modified = true;
+		onapply(guided);
+	}
+
 	function beginGuide(): void {
 		startingRecipe = structuredClone(recipe);
 		stepIndex = 0;
-		onapply(patchShellRecipe(structuredClone(recipe), guide.steps[0].patch));
+		applyGuidedChange(patchShellRecipe(structuredClone(recipe), guide.steps[0].patch));
 	}
 
 	function selectGuide(index: number): void {
@@ -368,7 +374,7 @@
 			return;
 		}
 		stepIndex += 1;
-		onapply(patchShellRecipe(recipe, guide.steps[stepIndex].patch));
+		applyGuidedChange(patchShellRecipe(recipe, guide.steps[stepIndex].patch));
 	}
 
 	function back(): void {
@@ -381,7 +387,7 @@
 		let accumulated = structuredClone(base);
 		for (let index = 0; index <= stepIndex; index += 1)
 			accumulated = patchShellRecipe(accumulated, guide.steps[index].patch);
-		onapply(accumulated);
+		applyGuidedChange(accumulated);
 	}
 
 	function skip(): void {

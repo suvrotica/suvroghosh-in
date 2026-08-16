@@ -4,18 +4,32 @@ export class TransactionHistory<T> {
 	current = $state.raw<T>(undefined as T);
 	past = $state.raw<T[]>([]);
 	future = $state.raw<T[]>([]);
-	private transactionBase: T | undefined;
+	private transactionBase: T;
+	private transactionActive = false;
 
 	constructor(
 		initial: T,
 		readonly limit = 64
 	) {
+		if (!Number.isInteger(limit) || limit < 1) {
+			throw new RangeError('History limit must be a positive integer.');
+		}
 		this.current = clone(initial);
+		this.transactionBase = clone(initial);
+	}
+
+	private appendPast(value: T): T[] {
+		const retainedCount = Math.max(0, this.limit - 1);
+		const retained = retainedCount === 0 ? [] : this.past.slice(-retainedCount);
+		return [...retained, clone(value)];
 	}
 
 	replace(next: T, record = true): void {
+		// A preset/import replacement ends a focus or pointer transaction even when
+		// that gesture never produced a preview value.
+		this.transactionActive = false;
 		if (record) {
-			this.past = [...this.past.slice(-(this.limit - 1)), clone(this.current)];
+			this.past = this.appendPast(this.current);
 			this.future = [];
 		}
 		this.current = clone(next);
@@ -28,33 +42,36 @@ export class TransactionHistory<T> {
 	}
 
 	begin(): void {
-		if (this.transactionBase === undefined) this.transactionBase = clone(this.current);
+		if (!this.transactionActive) {
+			this.transactionBase = clone(this.current);
+			this.transactionActive = true;
+		}
 	}
 
 	preview(mutator: (draft: T) => void): void {
-		if (this.transactionBase === undefined) this.begin();
+		if (!this.transactionActive) this.begin();
 		const next = clone(this.current);
 		mutator(next);
 		this.current = next;
 	}
 
 	commit(): void {
-		if (this.transactionBase === undefined) return;
-		this.past = [...this.past.slice(-(this.limit - 1)), this.transactionBase];
+		if (!this.transactionActive) return;
+		this.past = this.appendPast(this.transactionBase);
 		this.future = [];
-		this.transactionBase = undefined;
+		this.transactionActive = false;
 	}
 
 	cancel(): void {
-		if (this.transactionBase === undefined) return;
+		if (!this.transactionActive) return;
 		this.current = this.transactionBase;
-		this.transactionBase = undefined;
+		this.transactionActive = false;
 	}
 
 	undo(): boolean {
-		this.transactionBase = undefined;
-		const previous = this.past.at(-1);
-		if (!previous) return false;
+		this.transactionActive = false;
+		if (this.past.length === 0) return false;
+		const previous = this.past[this.past.length - 1];
 		this.future = [clone(this.current), ...this.future].slice(0, this.limit);
 		this.current = clone(previous);
 		this.past = this.past.slice(0, -1);
@@ -62,10 +79,10 @@ export class TransactionHistory<T> {
 	}
 
 	redo(): boolean {
-		this.transactionBase = undefined;
+		this.transactionActive = false;
+		if (this.future.length === 0) return false;
 		const next = this.future[0];
-		if (!next) return false;
-		this.past = [...this.past.slice(-(this.limit - 1)), clone(this.current)];
+		this.past = this.appendPast(this.current);
 		this.current = clone(next);
 		this.future = this.future.slice(1);
 		return true;

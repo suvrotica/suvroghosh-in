@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import fc from 'fast-check';
 import { createDefaultRecipe } from '../model/defaults';
+import { validateShellRecipe } from '../model/validate';
 import { expansionRateFromWhorl } from '../math/logarithmic-spiral';
 import { ALL_PRESETS } from '../presets';
 import { generateShell, generateShellAtAge } from './generate';
@@ -268,5 +269,58 @@ describe('deterministic shell generation', () => {
 		expect(result.classification.spatialSimilarity).toBe('local-kinematic');
 		expect(result.mesh.positions.every(Number.isFinite)).toBe(true);
 		expect(result.mesh.topology.boundaryLoopCount).toBe(1);
+	});
+
+	it('propagates semantic errors and warnings into generation diagnostics', () => {
+		const invalidSpeed = createDefaultRecipe({
+			engine: 'accretion',
+			kinematics: { speed: { type: 'constant', value: -1 } }
+		});
+		const invalidValidation = validateShellRecipe(invalidSpeed);
+		const invalidGeneration = generateShell(invalidSpeed, resolution);
+		for (const semanticError of invalidValidation.diagnostics.filter(
+			({ severity }) => severity === 'error'
+		)) {
+			expect(invalidGeneration.diagnostics.errors).toContain(semanticError.message);
+		}
+		expect(invalidGeneration.diagnostics.valid).toBe(false);
+		expect(invalidGeneration.mesh.positions.every(Number.isFinite)).toBe(true);
+
+		const warningPreset = ALL_PRESETS.find((preset) => preset.id === 'open-loose-coil');
+		expect(warningPreset).toBeDefined();
+		const warningValidation = validateShellRecipe(warningPreset!.recipe);
+		const warningGeneration = generateShell(warningPreset!.recipe, resolution);
+		for (const semanticWarning of warningValidation.diagnostics.filter(
+			({ severity }) => severity === 'warning'
+		)) {
+			expect(warningGeneration.diagnostics.warnings).toContain(semanticWarning.message);
+		}
+	});
+
+	it('rejects numerically unsafe laws before they can create non-finite buffers', () => {
+		const recipes = [
+			createDefaultRecipe({
+				engine: 'accretion',
+				kinematics: { growthRate: { type: 'constant', value: 1e308 } }
+			}),
+			createDefaultRecipe({
+				engine: 'accretion',
+				kinematics: { twistRate: { type: 'constant', value: 1e308 } }
+			}),
+			createDefaultRecipe({
+				coiling: {
+					axial: {
+						mode: 'keyframed',
+						keyframed: { type: 'constant', value: 1e308 }
+					}
+				}
+			})
+		];
+
+		for (const recipe of recipes) {
+			expect(() => generateShell(recipe, resolution)).toThrow(
+				'Recipe cannot be generated with finite geometry'
+			);
+		}
 	});
 });

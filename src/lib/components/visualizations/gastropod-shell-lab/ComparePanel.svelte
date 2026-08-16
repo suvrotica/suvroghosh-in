@@ -18,6 +18,10 @@
 		const preset = ALL_PRESETS.find((item) => item.id === selected);
 		onchange(preset ? structuredClone(preset.recipe) : undefined);
 	}
+
+	$effect(() => {
+		if (!compareRecipe) selected = '';
+	});
 </script>
 
 {#if open}
