@@ -2,12 +2,15 @@
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-	import type {
-		ShellGenerationResult,
-		MeshResolution
+	import {
+		ringPrefixAtAge,
+		visibleRingCountAtAge,
+		type ShellGenerationResult,
+		type MeshResolution
 	} from '$lib/visualizations/gastropod-shell-lab/shell/engine';
 	import type { ShellRecipe } from '$lib/visualizations/gastropod-shell-lab/shell/model';
 	import { decomposeAccretionVelocity } from '$lib/visualizations/gastropod-shell-lab/shell/math';
+	import { serializeShellRecipe } from '$lib/visualizations/gastropod-shell-lab/shell/serialization';
 	import type {
 		OverlayPreferences,
 		ProjectionMode,
@@ -49,7 +52,7 @@
 		cameraCommand?: CameraCommand;
 		exportCommand?: ViewportExportCommand;
 		/** Emitted only after a result has replaced the visible primary mesh. */
-		onresult?: (result: ShellGenerationResult) => void;
+		onresult?: (result: ShellGenerationResult, recipeToken: string) => void;
 		/** Reports a rejected request while the previous valid mesh remains visible. */
 		oninvalid?: (result: ShellGenerationResult) => void;
 		onperformance?: (performance: ViewportPerformance) => void;
@@ -57,6 +60,7 @@
 			status: 'preparing' | 'ready' | 'recovering' | 'fallback' | 'error',
 			message?: string
 		) => void;
+		oncomparisonstatus?: (message: string) => void;
 		onexportcomplete?: (message: { id: number; type: string; ok: boolean; error?: string }) => void;
 	}
 
@@ -74,6 +78,7 @@
 		oninvalid,
 		onperformance,
 		onstatus,
+		oncomparisonstatus,
 		onexportcomplete
 	}: Props = $props();
 
@@ -101,12 +106,15 @@
 	let ground: THREE.Mesh<THREE.PlaneGeometry, THREE.ShadowMaterial> | undefined;
 	let resizeObserver: ResizeObserver | undefined;
 	let raf = 0;
+	let fallbackRaf = 0;
 	let refineTimer: ReturnType<typeof setTimeout> | undefined;
 	let mounted = false;
 	let lastCameraCommand = -1;
 	let lastExportCommand = -1;
 	let lastRecipeToken = '';
 	let lastCompareToken = '';
+	let visibleRecipeToken = '';
+	let exportInFlight = false;
 	let originalCameraPosition = new THREE.Vector3(3.6, 2.4, 3.8);
 	let originalTarget = new THREE.Vector3(0, 0, 0);
 	const clippingPlane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 0);
@@ -185,6 +193,34 @@
 			renderer.render(scene, activeCamera);
 			updateDiagnostics((diagnostics) => (diagnostics.renderCount += 1));
 		});
+	}
+
+	function scheduleFallbackDraw(): void {
+		if (!mounted || !fallback || fallbackRaf) return;
+		updateDiagnostics((diagnostics) => (diagnostics.activeRafs += 1));
+		fallbackRaf = requestAnimationFrame(() => {
+			fallbackRaf = 0;
+			updateDiagnostics(
+				(diagnostics) => (diagnostics.activeRafs = Math.max(0, diagnostics.activeRafs - 1))
+			);
+			if (mounted && fallback) drawFallback();
+		});
+	}
+
+	function handleContextLost(event: Event): void {
+		event.preventDefault();
+		if (!mounted) return;
+		contextLost = true;
+		updateDiagnostics((diagnostics) => (diagnostics.contextLosses += 1));
+		onstatus?.('recovering', 'The 3D context was lost. Recipe state is safe; rebuilding the view…');
+	}
+
+	function handleContextRestored(): void {
+		if (!mounted) return;
+		contextLost = false;
+		updateDiagnostics((diagnostics) => (diagnostics.contextRestores += 1));
+		onstatus?.('ready', 'The 3D view was restored without changing the recipe.');
+		scheduleGeometry();
 	}
 
 	function resolutionFor(targetQuality: ViewportQuality, preview: boolean): MeshResolution {
@@ -269,7 +305,7 @@
 
 	function recipeToken(value: ShellRecipe | undefined): string {
 		if (!value) return '';
-		return JSON.stringify(value);
+		return serializeShellRecipe(value, false);
 	}
 
 	function disposeObject(object: THREE.Object3D): void {
@@ -289,7 +325,8 @@
 	function replaceShell(
 		result: ShellGenerationResult,
 		requestId: number,
-		durationMs: number
+		durationMs: number,
+		acceptedRecipeToken: string
 	): void {
 		if (!scene) return;
 		if (!result.diagnostics.valid) {
@@ -349,6 +386,7 @@
 		shellMesh = nextMesh;
 		scene.add(nextMesh);
 		currentResult = result;
+		visibleRecipeToken = acceptedRecipeToken;
 		updateDiagnostics((diagnostics) => {
 			diagnostics.acceptedRequestId = requestId;
 			diagnostics.workerDurationMs = durationMs;
@@ -357,7 +395,7 @@
 		rebuildOverlays();
 		busy = false;
 		progressLabel = 'Geometry ready';
-		onresult?.(result);
+		onresult?.(result, acceptedRecipeToken);
 		onperformance?.({
 			workerDurationMs: durationMs,
 			triangleCount: result.mesh.indices.length / 3,
@@ -371,6 +409,7 @@
 
 	async function buildGeometry(refine = false): Promise<void> {
 		if (!mounted || fallback) return;
+		const requestedRecipeToken = recipeToken(recipe);
 		const resolution = resolutionFor(quality, !refine);
 		busy = true;
 		progressLabel = refine ? 'Refining deposited surface…' : 'Depositing preview rings…';
@@ -382,7 +421,7 @@
 				diagnostics.activeWorkers = Number(broker.hasWorker) + Number(compareBroker.hasWorker);
 			});
 			const response = await pending;
-			replaceShell(response.result, response.requestId, response.durationMs);
+			replaceShell(response.result, response.requestId, response.durationMs, requestedRecipeToken);
 		} catch (error) {
 			if (error instanceof StaleGeometryError) return;
 			busy = false;
@@ -406,15 +445,11 @@
 
 	function applyAge(): void {
 		if (!shellMesh || !currentResult) return;
-		const ring = Math.min(
-			currentResult.mesh.ringCount - 1,
-			Math.max(0, Math.floor(Math.max(0, Math.min(1, age)) * (currentResult.mesh.ringCount - 1)))
-		);
-		const count = currentResult.mesh.stripIndexEnds[ring] ?? currentResult.mesh.indices.length;
-		shellMesh.geometry.setDrawRange(0, count);
+		const prefix = ringPrefixAtAge(currentResult.history, currentResult.mesh, age);
+		shellMesh.geometry.setDrawRange(0, prefix.indexCount);
 		updateDiagnostics((diagnostics) => {
-			diagnostics.visibleRingCount = ring + 1;
-			diagnostics.drawIndexCount = count;
+			diagnostics.visibleRingCount = prefix.visibleRingCount;
+			diagnostics.drawIndexCount = prefix.indexCount;
 		});
 		rebuildOverlays();
 		invalidate();
@@ -458,9 +493,9 @@
 		group.name = 'Scientific overlays';
 		const cyan = recipe.appearance.overlayColor;
 		const amber = recipe.appearance.growthColor;
-		const visibleRing = Math.min(
-			currentResult.history.ringCount - 1,
-			Math.max(0, Math.floor(age * (currentResult.history.ringCount - 1)))
+		const visibleRing = Math.max(
+			0,
+			visibleRingCountAtAge(currentResult.history.ringCount, age) - 1
 		);
 		if (overlays.centerline) {
 			const centers = currentResult.history.centers.slice(0, (visibleRing + 1) * 3);
@@ -682,6 +717,10 @@
 	async function rebuildCompare(): Promise<void> {
 		if (!scene) return;
 		if (!compareRecipe) {
+			compareBroker.cancel(true);
+			updateDiagnostics((diagnostics) => {
+				diagnostics.activeWorkers = Number(broker.hasWorker) + Number(compareBroker.hasWorker);
+			});
 			if (compareMesh) {
 				scene.remove(compareMesh);
 				disposeObject(compareMesh);
@@ -689,8 +728,11 @@
 			}
 			return invalidate();
 		}
+		const requestedRecipe = $state.snapshot(compareRecipe);
+		const requestedRecipeToken = recipeToken(requestedRecipe);
+		const requestedOverlayColor = requestedRecipe.appearance.overlayColor;
 		try {
-			const pending = compareBroker.request(compareRecipe, {
+			const pending = compareBroker.request(requestedRecipe, {
 				resolution: { growthRings: 260, apertureSamples: 56 },
 				age: 1
 			});
@@ -698,9 +740,9 @@
 				diagnostics.activeWorkers = Number(broker.hasWorker) + Number(compareBroker.hasWorker);
 			});
 			const response = await pending;
+			if (!mounted || recipeToken(compareRecipe) !== requestedRecipeToken) return;
 			if (!response.result.diagnostics.valid) {
-				onstatus?.(
-					'error',
+				oncomparisonstatus?.(
 					'Comparison recipe is invalid; the previous valid comparison remains visible.'
 				);
 				return;
@@ -713,7 +755,7 @@
 			geometry.setAttribute('normal', new THREE.BufferAttribute(response.result.mesh.normals, 3));
 			geometry.setIndex(new THREE.BufferAttribute(response.result.mesh.indices, 1));
 			const material = new THREE.MeshPhysicalMaterial({
-				color: compareRecipe.appearance.overlayColor,
+				color: requestedOverlayColor,
 				transparent: true,
 				opacity: 0.2,
 				depthWrite: false,
@@ -728,10 +770,13 @@
 			}
 			compareMesh = nextCompareMesh;
 			scene.add(nextCompareMesh);
+			oncomparisonstatus?.('Comparison surface ready; the primary shell remains exportable.');
 			invalidate();
 		} catch (error) {
 			if (!(error instanceof StaleGeometryError))
-				onstatus?.('error', 'Comparison geometry could not be built.');
+				oncomparisonstatus?.(
+					'Comparison geometry could not be built; the primary shell is unchanged.'
+				);
 		}
 	}
 
@@ -744,9 +789,9 @@
 		setTimeout(() => URL.revokeObjectURL(url), 1000);
 	}
 
-	function safeFilename(extension: string): string {
+	function safeFilename(name: string, extension: string): string {
 		const base =
-			recipe.name
+			name
 				.toLowerCase()
 				.replace(/[^a-z0-9]+/g, '-')
 				.replace(/^-|-$/g, '') || 'living-aperture';
@@ -754,56 +799,78 @@
 	}
 
 	async function exportViewport(command: ViewportExportCommand): Promise<void> {
-		if (!renderer || !scene || !activeCamera || !shellMesh)
+		const exportRenderer = renderer;
+		const exportScene = scene;
+		const exportCamera = activeCamera;
+		const exportMesh = shellMesh;
+		const exportRecipeName = recipe.name;
+		const exportRecipeToken = recipeToken(recipe);
+		if (!exportRenderer || !exportScene || !exportCamera || !exportMesh)
 			throw new Error('The specimen is not ready to export.');
+		if (visibleRecipeToken !== exportRecipeToken)
+			throw new Error('The current recipe surface is still being prepared.');
 		if (command.type === 'png') {
 			const width = Math.max(1, host.clientWidth);
 			const height = Math.max(1, host.clientHeight);
 			const scale = command.scale ?? 1;
-			const oldBackground = scene.background;
-			if (command.transparent) scene.background = null;
-			renderer.setPixelRatio(1);
-			renderer.setSize(width * scale, height * scale, false);
-			renderer.render(scene, activeCamera);
-			const blob = await new Promise<Blob>((resolve, reject) =>
-				renderer?.domElement.toBlob(
-					(value) => (value ? resolve(value) : reject(new Error('PNG encoding failed.'))),
-					'image/png'
-				)
-			);
-			downloadBlob(blob, safeFilename('png'));
-			scene.background = oldBackground;
-			resize();
+			const oldBackground = exportScene.background;
+			const oldPixelRatio = exportRenderer.getPixelRatio();
+			const oldSize = exportRenderer.getSize(new THREE.Vector2());
+			try {
+				if (command.transparent) exportScene.background = null;
+				exportRenderer.setPixelRatio(1);
+				exportRenderer.setSize(width * scale, height * scale, false);
+				exportRenderer.render(exportScene, exportCamera);
+				const blob = await new Promise<Blob>((resolve, reject) =>
+					exportRenderer.domElement.toBlob(
+						(value) => (value ? resolve(value) : reject(new Error('PNG encoding failed.'))),
+						'image/png'
+					)
+				);
+				downloadBlob(blob, safeFilename(exportRecipeName, 'png'));
+			} finally {
+				exportScene.background =
+					recipeToken(recipe) === exportRecipeToken ? oldBackground : sceneBackground();
+				exportRenderer.setPixelRatio(oldPixelRatio);
+				exportRenderer.setSize(oldSize.x, oldSize.y, false);
+				invalidate();
+			}
 			return;
 		}
-		const previousDrawRange = { ...shellMesh.geometry.drawRange };
-		shellMesh.geometry.setDrawRange(0, Infinity);
+		const previousDrawRange = { ...exportMesh.geometry.drawRange };
+		exportMesh.geometry.setDrawRange(0, Infinity);
 		try {
 			if (command.type === 'glb') {
 				const { GLTFExporter } = await import('three/examples/jsm/exporters/GLTFExporter.js');
 				const exporter = new GLTFExporter();
-				const data = await exporter.parseAsync(shellMesh, { binary: true, onlyVisible: true });
+				const data = await exporter.parseAsync(exportMesh, { binary: true, onlyVisible: true });
 				if (!(data instanceof ArrayBuffer))
 					throw new Error('GLB exporter returned text unexpectedly.');
-				downloadBlob(new Blob([data], { type: 'model/gltf-binary' }), safeFilename('glb'));
+				downloadBlob(
+					new Blob([data], { type: 'model/gltf-binary' }),
+					safeFilename(exportRecipeName, 'glb')
+				);
 			} else {
 				const { OBJExporter } = await import('three/examples/jsm/exporters/OBJExporter.js');
-				const data = new OBJExporter().parse(shellMesh);
-				downloadBlob(new Blob([data], { type: 'text/plain' }), safeFilename('obj'));
+				const data = new OBJExporter().parse(exportMesh);
+				downloadBlob(
+					new Blob([data], { type: 'text/plain' }),
+					safeFilename(exportRecipeName, 'obj')
+				);
 			}
 		} finally {
-			shellMesh.geometry.setDrawRange(previousDrawRange.start, previousDrawRange.count);
+			exportMesh.geometry.setDrawRange(previousDrawRange.start, previousDrawRange.count);
+			invalidate();
 		}
 	}
 
 	function drawFallback(): void {
 		if (!fallbackCanvas) return;
-		fallbackCanvas.tabIndex = 0;
-		const width = fallbackCanvas.clientWidth;
-		const height = fallbackCanvas.clientHeight;
+		const width = Math.max(1, fallbackCanvas.clientWidth);
+		const height = Math.max(1, fallbackCanvas.clientHeight);
 		const ratio = Math.min(2, window.devicePixelRatio || 1);
-		fallbackCanvas.width = width * ratio;
-		fallbackCanvas.height = height * ratio;
+		fallbackCanvas.width = Math.max(1, Math.round(width * ratio));
+		fallbackCanvas.height = Math.max(1, Math.round(height * ratio));
 		const context = fallbackCanvas.getContext('2d');
 		if (!context) return;
 		context.scale(ratio, ratio);
@@ -838,15 +905,28 @@
 		if (!supportsWebGL()) {
 			fallback = true;
 			busy = false;
+			lastRecipeToken = `${recipeToken(recipe)}|${quality}`;
 			updateDiagnostics((diagnostics) => (diagnostics.activeCanvases = 1));
 			onstatus?.('fallback', fallbackReason);
-			requestAnimationFrame(drawFallback);
+			resizeObserver = new ResizeObserver(scheduleFallbackDraw);
+			resizeObserver.observe(host);
+			updateDiagnostics((diagnostics) => (diagnostics.activeObservers += 1));
+			scheduleFallbackDraw();
 			return () => {
 				mounted = false;
+				if (fallbackRaf) {
+					cancelAnimationFrame(fallbackRaf);
+					fallbackRaf = 0;
+					updateDiagnostics(
+						(diagnostics) => (diagnostics.activeRafs = Math.max(0, diagnostics.activeRafs - 1))
+					);
+				}
+				resizeObserver?.disconnect();
 				broker.dispose();
 				compareBroker.dispose();
 				updateDiagnostics((diagnostics) => {
 					diagnostics.unmounts += 1;
+					diagnostics.activeObservers = Math.max(0, diagnostics.activeObservers - 1);
 					diagnostics.activeWorkers = 0;
 					diagnostics.activeCanvases = 0;
 				});
@@ -916,21 +996,8 @@
 		ground.visible = overlays.groundShadow;
 		scene.add(ground);
 
-		renderer.domElement.addEventListener('webglcontextlost', (event) => {
-			event.preventDefault();
-			contextLost = true;
-			updateDiagnostics((diagnostics) => (diagnostics.contextLosses += 1));
-			onstatus?.(
-				'recovering',
-				'The 3D context was lost. Recipe state is safe; rebuilding the view…'
-			);
-		});
-		renderer.domElement.addEventListener('webglcontextrestored', () => {
-			contextLost = false;
-			updateDiagnostics((diagnostics) => (diagnostics.contextRestores += 1));
-			onstatus?.('ready', 'The 3D view was restored without changing the recipe.');
-			scheduleGeometry();
-		});
+		renderer.domElement.addEventListener('webglcontextlost', handleContextLost);
+		renderer.domElement.addEventListener('webglcontextrestored', handleContextRestored);
 		document.addEventListener('visibilitychange', invalidate);
 		updateDiagnostics((diagnostics) => (diagnostics.activeListenerSets += 1));
 		resizeObserver = new ResizeObserver(resize);
@@ -957,6 +1024,8 @@
 			controls?.removeEventListener('change', invalidate);
 			controls?.dispose();
 			if (scene) disposeObject(scene);
+			renderer?.domElement.removeEventListener('webglcontextlost', handleContextLost);
+			renderer?.domElement.removeEventListener('webglcontextrestored', handleContextRestored);
 			renderer?.dispose();
 			renderer?.forceContextLoss();
 			scene?.clear();
@@ -974,14 +1043,15 @@
 
 	$effect(() => {
 		const token = `${recipeToken(recipe)}|${quality}`;
-		if (!mounted || fallback || token === lastRecipeToken) return;
+		if (!mounted || token === lastRecipeToken) return;
 		lastRecipeToken = token;
-		scheduleGeometry();
+		if (fallback) scheduleFallbackDraw();
+		else scheduleGeometry();
 	});
 
 	$effect(() => {
 		void age;
-		if (fallback) requestAnimationFrame(drawFallback);
+		if (fallback) scheduleFallbackDraw();
 		else applyAge();
 	});
 
@@ -994,7 +1064,9 @@
 		void surfaceMode;
 		void overlays;
 		void recipe.appearance;
-		if (mounted && !fallback) updateMaterial();
+		if (!mounted) return;
+		if (fallback) scheduleFallbackDraw();
+		else updateMaterial();
 	});
 
 	$effect(() => {
@@ -1012,17 +1084,31 @@
 
 	$effect(() => {
 		if (!exportCommand || exportCommand.id === lastExportCommand || !mounted || fallback) return;
-		lastExportCommand = exportCommand.id;
-		void exportViewport(exportCommand)
-			.then(() => onexportcomplete?.({ id: exportCommand.id, type: exportCommand.type, ok: true }))
+		const command = exportCommand;
+		lastExportCommand = command.id;
+		if (exportInFlight) {
+			onexportcomplete?.({
+				id: command.id,
+				type: command.type,
+				ok: false,
+				error: 'Another viewport export is already in progress.'
+			});
+			return;
+		}
+		exportInFlight = true;
+		void exportViewport(command)
+			.then(() => onexportcomplete?.({ id: command.id, type: command.type, ok: true }))
 			.catch((error) =>
 				onexportcomplete?.({
-					id: exportCommand.id,
-					type: exportCommand.type,
+					id: command.id,
+					type: command.type,
 					ok: false,
 					error: error instanceof Error ? error.message : 'Export failed.'
 				})
-			);
+			)
+			.finally(() => {
+				exportInFlight = false;
+			});
 	});
 </script>
 
@@ -1038,7 +1124,12 @@
 		</canvas>
 	{/if}
 	{#if fallback}
-		<canvas bind:this={fallbackCanvas} class="fallback-canvas" aria-label={fallbackReason}>
+		<canvas
+			bind:this={fallbackCanvas}
+			class="fallback-canvas"
+			aria-label={fallbackReason}
+			tabindex="0"
+		>
 			{fallbackReason}
 		</canvas>
 		<div class="fallback-notice">
@@ -1153,10 +1244,8 @@
 		color: var(--cyan);
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		.spinner {
-			animation: none;
-			border-color: var(--amber);
-		}
+	:global(.living-aperture-lab[data-lab-motion='reduced']) .spinner {
+		animation: none;
+		border-color: var(--amber);
 	}
 </style>

@@ -257,14 +257,18 @@
 	@media (max-width: 720px) {
 		.view-toolbar {
 			top: 3.55rem;
+			left: 0.5rem;
 			right: 0.5rem;
 		}
-		.primary-tools .icon-button:nth-child(3),
-		.primary-tools .icon-button:nth-child(4),
-		.primary-tools .icon-button:nth-child(5),
-		.primary-tools .icon-button:nth-child(6),
-		.primary-tools .tool-button:first-of-type {
-			display: none;
+		.primary-tools {
+			justify-content: flex-start;
+			overflow-x: auto;
+			overflow-y: hidden;
+			overscroll-behavior-inline: contain;
+			scrollbar-width: thin;
+		}
+		.primary-tools > * {
+			flex: 0 0 auto;
 		}
 		.overlay-menu {
 			width: min(300px, calc(100vw - 1rem));

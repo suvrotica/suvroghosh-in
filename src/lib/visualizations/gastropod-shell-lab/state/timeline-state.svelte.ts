@@ -1,3 +1,5 @@
+import { visibleRingCountAtAge } from '../shell/engine/history';
+
 const clamp01 = (value: number): number => Math.max(0, Math.min(1, value));
 
 export class TimelineState {
@@ -14,7 +16,11 @@ export class TimelineState {
 
 	step(direction: -1 | 1, ringCount = 320): void {
 		this.pause();
-		this.setAge(this.age + direction / Math.max(2, ringCount - 1));
+		const finiteRingCount = Number.isFinite(ringCount) ? Math.floor(ringCount) : 320;
+		const count = Math.max(2, finiteRingCount);
+		const currentRing = visibleRingCountAtAge(count, this.age) - 1;
+		const targetRing = Math.max(0, Math.min(count - 1, currentRing + direction));
+		this.setAge(targetRing / (count - 1));
 	}
 
 	restart(play = false): void {

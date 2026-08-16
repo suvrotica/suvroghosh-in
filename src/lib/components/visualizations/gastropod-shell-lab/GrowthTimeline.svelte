@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { onDestroy } from 'svelte';
+	import { visibleRingCountAtAge } from '$lib/visualizations/gastropod-shell-lab/shell/engine';
+
 	interface TimelineEvent {
 		age: number;
 		label: string;
@@ -42,9 +45,7 @@
 	let holding = $state(false);
 	let holdTimer: ReturnType<typeof setInterval> | undefined;
 
-	let currentRing = $derived(
-		Math.min(ringCount, Math.max(1, Math.floor(age * (ringCount - 1)) + 1))
-	);
+	let currentRing = $derived(visibleRingCountAtAge(ringCount, age));
 	let currentSpan = $derived(age * turns);
 	let depositionLabel = $derived(
 		age >= 1 ? 'Adult aperture reached' : `${Math.round(age * 100)}% of history deposited`
@@ -67,6 +68,8 @@
 			holdTimer = undefined;
 		}
 	}
+
+	onDestroy(stopHold);
 </script>
 
 <section class="timeline" aria-label="Growth timeline">

@@ -25,6 +25,21 @@ describe('seeded PRNG', () => {
 		expect(Array.from({ length: 24 }, () => restored.nextUint32())).toEqual(expected);
 	});
 
+	it('restores a cached normal variate from a state snapshot', () => {
+		const first = new SeededRandom(42);
+		first.normal();
+		const snapshot = first.snapshot();
+		const expected = [first.normal(), first.nextUint32(), first.normal(), first.normal()];
+		const restored = new SeededRandom(42, snapshot);
+
+		expect([
+			restored.normal(),
+			restored.nextUint32(),
+			restored.normal(),
+			restored.normal()
+		]).toEqual(expected);
+	});
+
 	it('keeps helpers deterministic and within their requested bounds', () => {
 		const a = new SeededRandom(0x5eed);
 		const b = new SeededRandom(0x5eed);

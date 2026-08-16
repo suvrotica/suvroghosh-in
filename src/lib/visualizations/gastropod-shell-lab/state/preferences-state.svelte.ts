@@ -16,6 +16,29 @@ export interface OverlayPreferences {
 }
 
 const STORAGE_KEY = 'living-aperture:preferences:v1';
+const QUALITY_VALUES: readonly ViewportQuality[] = ['auto', 'low', 'balanced', 'fine'];
+const PROJECTION_VALUES: readonly ProjectionMode[] = ['perspective', 'orthographic'];
+const THEME_VALUES = ['dark', 'light'] as const;
+const OVERLAY_KEYS: readonly (keyof OverlayPreferences)[] = [
+	'axis',
+	'centerline',
+	'aperture',
+	'recentRings',
+	'historicalApertures',
+	'frame',
+	'accretionVectors',
+	'grid',
+	'groundShadow',
+	'cutaway'
+];
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+	return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function isListedValue<T extends string>(value: unknown, values: readonly T[]): value is T {
+	return typeof value === 'string' && (values as readonly string[]).includes(value);
+}
 
 export class PreferencesState {
 	quality = $state<ViewportQuality>('auto');
@@ -41,37 +64,32 @@ export class PreferencesState {
 
 	load(): void {
 		if (typeof window === 'undefined') return;
-		this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		try {
+			this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 			const saved = window.localStorage.getItem(STORAGE_KEY);
 			if (!saved) return;
-			const value = JSON.parse(saved) as Partial<{
-				quality: ViewportQuality;
-				projection: ProjectionMode;
-				surfaceMode: SurfaceMode;
-				theme: 'dark' | 'light';
-				highContrast: boolean;
-				colourBlindSafe: boolean;
-				reducedMotion: boolean;
-				overlays: Partial<OverlayPreferences>;
-			}>;
-			if (value.quality) this.quality = value.quality;
-			if (value.projection) this.projection = value.projection;
+			const value: unknown = JSON.parse(saved);
+			if (!isRecord(value)) return;
+			if (isListedValue(value.quality, QUALITY_VALUES)) this.quality = value.quality;
+			if (isListedValue(value.projection, PROJECTION_VALUES)) this.projection = value.projection;
 			if (value.surfaceMode === 'solid' || value.surfaceMode === 'wireframe') {
 				this.surfaceMode = value.surfaceMode;
-			} else if (
-				value.surfaceMode === 'instability' ||
-				value.surfaceMode === ('curvature' as SurfaceMode)
-			) {
+			} else if (value.surfaceMode === 'instability' || value.surfaceMode === 'curvature') {
 				// Migrate the pre-v1 label. The field has always shown an instability proxy,
 				// never differential surface curvature.
 				this.surfaceMode = 'instability';
 			}
-			if (value.theme) this.theme = value.theme;
+			if (isListedValue(value.theme, THEME_VALUES)) this.theme = value.theme;
 			if (typeof value.highContrast === 'boolean') this.highContrast = value.highContrast;
 			if (typeof value.colourBlindSafe === 'boolean') this.colourBlindSafe = value.colourBlindSafe;
 			if (typeof value.reducedMotion === 'boolean') this.reducedMotion = value.reducedMotion;
-			if (value.overlays) this.overlays = { ...this.overlays, ...value.overlays };
+			if (isRecord(value.overlays)) {
+				const overlays = { ...this.overlays };
+				for (const key of OVERLAY_KEYS) {
+					if (typeof value.overlays[key] === 'boolean') overlays[key] = value.overlays[key];
+				}
+				this.overlays = overlays;
+			}
 		} catch {
 			// A corrupt local preference is non-fatal; defaults remain authoritative.
 		}
@@ -79,19 +97,23 @@ export class PreferencesState {
 
 	save(): void {
 		if (typeof window === 'undefined') return;
-		window.localStorage.setItem(
-			STORAGE_KEY,
-			JSON.stringify({
-				quality: this.quality,
-				projection: this.projection,
-				surfaceMode: this.surfaceMode,
-				theme: this.theme,
-				highContrast: this.highContrast,
-				colourBlindSafe: this.colourBlindSafe,
-				reducedMotion: this.reducedMotion,
-				overlays: this.overlays
-			})
-		);
+		try {
+			window.localStorage.setItem(
+				STORAGE_KEY,
+				JSON.stringify({
+					quality: this.quality,
+					projection: this.projection,
+					surfaceMode: this.surfaceMode,
+					theme: this.theme,
+					highContrast: this.highContrast,
+					colourBlindSafe: this.colourBlindSafe,
+					reducedMotion: this.reducedMotion,
+					overlays: this.overlays
+				})
+			);
+		} catch {
+			// Storage can be unavailable or full; in-memory preferences still work.
+		}
 	}
 
 	toggleOverlay(name: keyof OverlayPreferences): void {

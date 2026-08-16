@@ -15,7 +15,8 @@
 	} from '$lib/visualizations/gastropod-shell-lab/shell/presets';
 	import {
 		decodeRecipeFromUrlState,
-		deserializeShellRecipe
+		deserializeShellRecipe,
+		serializeShellRecipe
 	} from '$lib/visualizations/gastropod-shell-lab/shell/serialization';
 	import { TransactionHistory } from '$lib/visualizations/gastropod-shell-lab/state/history-state.svelte';
 	import {
@@ -75,6 +76,9 @@
 	let importInput = $state<HTMLInputElement>();
 	let cameraCommand = $state<CameraCommand>();
 	let exportCommand = $state<ViewportExportCommand>();
+	let acceptedRecipeToken = $state('');
+	let exportInFlight = $state(false);
+	let exportFeedback = $state<{ message: string; error: boolean }>();
 	let commandId = 0;
 	let exportId = 0;
 	let locks = $state<Record<LockGroup, boolean>>({
@@ -103,6 +107,13 @@
 	);
 	const geometryValid = $derived(
 		!rejectedResult && (result?.diagnostics.valid ?? viewportStatus !== 'error')
+	);
+	const currentRecipeToken = $derived(serializeShellRecipe(recipe, false));
+	const currentGeometryReady = $derived(
+		geometryValid &&
+			Boolean(result?.diagnostics.valid) &&
+			acceptedRecipeToken === currentRecipeToken &&
+			viewportStatus === 'ready'
 	);
 	const currentWarnings = $derived(
 		rejectedResult
@@ -175,11 +186,13 @@
 			if (draft.ancestry) draft.ancestry.modified = true;
 		});
 	}
+	function syncCurrentPreset(): void {
+		const ancestry = history.current.ancestry;
+		currentPresetId = ancestry && !ancestry.modified ? ancestry.presetId : undefined;
+	}
 	function commitEdit(): void {
 		history.commit();
-		currentPresetId = history.current.ancestry?.modified
-			? undefined
-			: history.current.ancestry?.presetId;
+		syncCurrentPreset();
 		persistRecipe();
 	}
 
@@ -195,7 +208,7 @@
 	function replaceRecipe(next: ShellRecipe, message?: string): void {
 		const normalized = normalizeRecipeForControls(next);
 		history.replace(normalized);
-		currentPresetId = normalized.ancestry?.presetId;
+		syncCurrentPreset();
 		timeline.pause();
 		timeline.age = 1;
 		persistRecipe();
@@ -227,12 +240,14 @@
 
 	function undo(): void {
 		if (history.undo()) {
+			syncCurrentPreset();
 			persistRecipe();
 			announce('Undid the last committed shell edit.');
 		}
 	}
 	function redo(): void {
 		if (history.redo()) {
+			syncCurrentPreset();
 			persistRecipe();
 			announce('Redid the shell edit.');
 		}
@@ -315,15 +330,53 @@
 	function command(action: CameraCommand['action']): void {
 		cameraCommand = { id: ++commandId, action };
 	}
+	function changeCompare(value?: ShellRecipe): void {
+		compareRecipe = value;
+		if (!value && viewportStatus === 'ready') statusMessage = 'Current shell surface ready.';
+	}
+	function closeCompare(): void {
+		compareOpen = false;
+		changeCompare(undefined);
+	}
+	function toggleCompare(): void {
+		if (compareOpen) closeCompare();
+		else compareOpen = true;
+	}
 	function requestExport(commandValue: Omit<ViewportExportCommand, 'id'>): void {
+		if (exportInFlight) {
+			exportFeedback = { message: 'An export is already in progress.', error: true };
+			announce(exportFeedback.message);
+			return;
+		}
+		if (!currentGeometryReady) {
+			exportFeedback = {
+				message: 'The current shell surface is still being prepared for export.',
+				error: true
+			};
+			announce(exportFeedback.message);
+			return;
+		}
+		exportInFlight = true;
 		exportCommand = { id: ++exportId, ...commandValue };
-		announce(`${commandValue.type.toUpperCase()} export started.`);
+		exportFeedback = {
+			message: `${commandValue.type.toUpperCase()} export started.`,
+			error: false
+		};
+		announce(exportFeedback.message);
+	}
+	function openExport(): void {
+		exportFeedback = undefined;
+		exportOpen = true;
 	}
 
 	function toggleOverlay(name: keyof OverlayPreferences): void {
 		preferences.toggleOverlay(name);
 	}
 	function saveAccessPreferences(): void {
+		if (preferences.reducedMotion && timeline.playing) {
+			timeline.pause();
+			announce('Growth playback paused because reduced motion is enabled.');
+		}
 		preferences.save();
 	}
 
@@ -385,6 +438,7 @@
 			if (state) {
 				const decoded = decodeRecipeFromUrlState(state);
 				history.replace(normalizeRecipeForControls(decoded), false);
+				syncCurrentPreset();
 				loaded = true;
 				announce('Loaded a deterministic shell recipe from the URL.');
 			}
@@ -398,6 +452,7 @@
 				const saved = localStorage.getItem(AUTOSAVE_KEY);
 				if (saved) {
 					history.replace(normalizeRecipeForControls(deserializeShellRecipe(saved)), false);
+					syncCurrentPreset();
 					announce('Restored the locally autosaved shell.');
 				}
 			} catch {
@@ -416,6 +471,7 @@
 	class="living-aperture-lab shell-lab article-breakout not-prose"
 	data-lab-theme={preferences.theme}
 	data-lab-contrast={preferences.highContrast ? 'high' : 'normal'}
+	data-lab-motion={preferences.reducedMotion ? 'reduced' : 'full'}
 	role="region"
 	aria-label="The Living Aperture shell laboratory"
 >
@@ -463,14 +519,12 @@
 				class="tool-button compare-action"
 				type="button"
 				aria-pressed={compareOpen}
-				onclick={() => (compareOpen = !compareOpen)}>Compare</button
+				onclick={toggleCompare}>Compare</button
 			>
 			<button class="tool-button share-action" type="button" onclick={() => (shareOpen = true)}
 				>Save / share</button
 			>
-			<button class="primary-button" type="button" onclick={() => (exportOpen = true)}
-				>Export</button
-			>
+			<button class="primary-button" type="button" onclick={openExport}>Export</button>
 			<button
 				class="icon-button"
 				type="button"
@@ -551,7 +605,7 @@
 				onselect={selectPreset}
 			/>
 		</div>
-		<section id={viewportId} class="specimen" aria-labelledby={specimenTitleId}>
+		<section id={viewportId} class="specimen" aria-labelledby={specimenTitleId} tabindex="-1">
 			<div class="specimen-copy">
 				<p id={specimenTitleId} class="display">A shell is a history of openings.</p>
 				<span>Every bright rim becomes a permanent part of the surface.</span>
@@ -584,22 +638,41 @@
 				{compareRecipe}
 				{cameraCommand}
 				{exportCommand}
-				onresult={(value) => {
+				onresult={(value, recipeToken) => {
 					result = value;
+					acceptedRecipeToken = recipeToken;
 					rejectedResult = undefined;
 				}}
 				oninvalid={(value) => (rejectedResult = value)}
 				onperformance={(value) => (performance = value)}
 				onstatus={(status, message) => {
 					viewportStatus = status;
-					if (message) statusMessage = message;
+					statusMessage =
+						message ??
+						(status === 'ready'
+							? 'Current shell surface ready.'
+							: status === 'preparing'
+								? 'Preparing the current shell surface.'
+								: status === 'recovering'
+									? 'Recovering the shell viewport.'
+									: status === 'fallback'
+										? 'Static shell fallback active.'
+										: 'Shell geometry is unavailable.');
 				}}
-				onexportcomplete={(event) =>
-					announce(
-						event.ok
+				oncomparisonstatus={(message) => {
+					statusMessage = message;
+					announce(message);
+				}}
+				onexportcomplete={(event) => {
+					if (event.id === exportCommand?.id) exportInFlight = false;
+					exportFeedback = {
+						message: event.ok
 							? `${event.type.toUpperCase()} export completed.`
-							: `${event.type.toUpperCase()} export failed: ${event.error}`
-					)}
+							: `${event.type.toUpperCase()} export failed: ${event.error}`,
+						error: !event.ok
+					};
+					announce(exportFeedback.message);
+				}}
 			/>
 			<div class="viewport-badges" aria-label="Model classification">
 				<span class="badge cyan"
@@ -632,8 +705,8 @@
 				open={compareOpen}
 				current={recipe}
 				{compareRecipe}
-				onchange={(value) => (compareRecipe = value)}
-				onclose={() => (compareOpen = false)}
+				onchange={changeCompare}
+				onclose={closeCompare}
 			/>
 		</section>
 
@@ -775,6 +848,9 @@
 		{recipe}
 		{result}
 		{geometryValid}
+		geometryCurrent={currentGeometryReady}
+		exporting={exportInFlight}
+		feedback={exportFeedback}
 		diagnosticMessages={currentWarnings}
 		onclose={() => (exportOpen = false)}
 		onviewportexport={requestExport}
@@ -1137,31 +1213,37 @@
 		.workbench.presets-collapsed {
 			grid-template-columns: 224px minmax(320px, 1fr) 320px;
 		}
-		.desktop-action {
-			display: none;
-		}
 		.recipe-name {
 			max-width: 170px;
 		}
 	}
 	@media (max-width: 900px) {
 		.topbar {
-			grid-template-columns: 1fr auto;
+			grid-template-columns: minmax(0, 1fr);
 			gap: 0.35rem;
 		}
 		.brand span:not(.brand-mark),
 		.brand-meta,
 		.recipe-name,
-		.status-cluster,
-		.desktop-action {
+		.status-cluster {
 			display: none;
 		}
 		.topbar nav {
-			grid-column: 2;
-			grid-row: 1;
+			grid-column: 1;
+			grid-row: 2;
+			width: 100%;
+			min-width: 0;
+			padding-bottom: 0.2rem;
+			overflow-x: auto;
+			overflow-y: hidden;
+			overscroll-behavior-inline: contain;
+			scrollbar-width: thin;
+		}
+		.topbar nav > button {
+			flex: 0 0 auto;
 		}
 		.topbar nav .tool-button {
-			width: 44px;
+			min-width: 44px;
 			padding: 0;
 			font-size: 0.52rem;
 		}
@@ -1271,22 +1353,39 @@
 	}
 	@media (max-width: 560px) {
 		.topbar {
-			min-height: 52px;
+			grid-template-columns: minmax(0, 1fr);
+			min-height: 0;
+			gap: 0.35rem;
 			padding: 0.25rem 0.45rem;
+		}
+		.brand,
+		.topbar nav {
+			grid-column: 1;
+		}
+		.brand {
+			grid-row: 1;
 		}
 		.brand-title {
 			font-size: 0.9rem;
+			overflow: hidden;
+			text-overflow: ellipsis;
 		}
 		.brand-mark {
 			width: 30px;
 			height: 30px;
 		}
 		.topbar nav {
+			grid-row: 2;
+			display: flex;
 			gap: 0.22rem;
+			width: 100%;
 		}
-		.topbar nav .tool-button:nth-of-type(3),
-		.topbar nav .tool-button:nth-of-type(4) {
-			display: none;
+		.topbar nav > button,
+		.topbar nav .tool-button {
+			width: auto;
+			min-width: 44px;
+			padding-inline: 0.2rem;
+			flex: 0 0 auto;
 		}
 		.specimen {
 			height: 52dvh;

@@ -14,23 +14,73 @@
 	let { open, recipe, onclose, onannounce }: Props = $props();
 	let dialog = $state<HTMLDialogElement>();
 	let copied = $state(false);
+	let copyMessage = $state('');
+	let copyFailed = $state(false);
+	let locationHref = $state('');
+	let previousOpen = false;
+	let previousFeedbackUrl = '';
 	const shareInstanceId = $props.id();
 	const shareTitleId = `${shareInstanceId}-title`;
 	let share = $derived(prepareRecipeShare(recipe));
-	let url = $derived(buildShareUrl());
+	let url = $derived(buildShareUrl(locationHref));
 
-	function buildShareUrl(): string {
-		if (share.kind !== 'url' || typeof window === 'undefined') return '';
-		const next = new SvelteURL(window.location.href);
+	function buildShareUrl(sourceHref: string): string {
+		if (share.kind !== 'url' || !sourceHref) return '';
+		const next = new SvelteURL(sourceHref);
 		next.searchParams.set('shell', share.state);
-		next.hash = '';
+		// Keep ordinary article anchors intact. Only discard the legacy hash-based
+		// recipe state once the canonical query parameter has replaced it.
+		if (new URLSearchParams(next.hash.slice(1)).has('shell')) next.hash = '';
 		return next.toString();
+	}
+
+	function copyUrlWithSelection(value: string): boolean {
+		const previousFocus =
+			document.activeElement instanceof HTMLElement ? document.activeElement : null;
+		const field = document.createElement('textarea');
+		field.value = value;
+		field.readOnly = true;
+		field.style.position = 'fixed';
+		field.style.opacity = '0';
+		// Elements outside an open modal are inert, so keep the fallback selection
+		// inside the dialog whenever it is connected.
+		(dialog?.isConnected ? dialog : document.body).append(field);
+		field.focus({ preventScroll: true });
+		field.select();
+		field.setSelectionRange(0, field.value.length);
+		try {
+			return document.execCommand('copy');
+		} catch {
+			return false;
+		} finally {
+			field.remove();
+			previousFocus?.focus({ preventScroll: true });
+		}
 	}
 
 	async function copyUrl(): Promise<void> {
 		if (share.kind !== 'url') return;
-		await navigator.clipboard.writeText(url);
+		copyMessage = '';
+		copyFailed = false;
+		let succeeded: boolean;
+		try {
+			if (navigator.clipboard?.writeText) {
+				await navigator.clipboard.writeText(url);
+				succeeded = true;
+			} else {
+				succeeded = copyUrlWithSelection(url);
+			}
+		} catch {
+			succeeded = copyUrlWithSelection(url);
+		}
+		if (!succeeded) {
+			copyFailed = true;
+			copyMessage = 'The shell link could not be copied. Select the URL and copy it manually.';
+			onannounce?.(copyMessage);
+			return;
+		}
 		copied = true;
+		copyMessage = 'Reproducible shell link copied.';
 		onannounce?.('Reproducible shell link copied.');
 		setTimeout(() => (copied = false), 1800);
 	}
@@ -41,11 +91,33 @@
 		onannounce?.('The address now contains this deterministic shell recipe.');
 	}
 
+	function resetCopyFeedback(): void {
+		copied = false;
+		copyMessage = '';
+		copyFailed = false;
+	}
+
+	$effect(() => {
+		const opening = open && !previousOpen;
+		previousOpen = open;
+		if (opening && typeof window !== 'undefined') locationHref = window.location.href;
+		if (opening) resetCopyFeedback();
+	});
+
+	$effect(() => {
+		const currentUrl = url;
+		if (currentUrl !== previousFeedbackUrl) resetCopyFeedback();
+		previousFeedbackUrl = currentUrl;
+	});
+
 	$effect(() => {
 		const currentDialog = dialog;
 		if (!currentDialog) return;
-		if (open && !currentDialog.open) void tick().then(() => currentDialog.showModal());
-		else if (!open && currentDialog.open) currentDialog.close();
+		if (open && !currentDialog.open) {
+			void tick().then(() => {
+				if (open && currentDialog.isConnected && !currentDialog.open) currentDialog.showModal();
+			});
+		} else if (!open && currentDialog.open) currentDialog.close();
 	});
 </script>
 
@@ -88,6 +160,9 @@
 						>Put in address bar</button
 					>
 				</div>
+				{#if copyMessage}
+					<p class="copy-status" class:failure={copyFailed} role="status">{copyMessage}</p>
+				{/if}
 				<small class="number">{share.encodedLength}/{share.maxLength} encoded characters</small>
 			</section>
 		{:else}
@@ -202,6 +277,13 @@
 		display: block;
 		margin-top: 0.45rem;
 		color: var(--faint);
+	}
+	.copy-status {
+		margin-bottom: 0;
+		color: var(--cyan);
+	}
+	.copy-status.failure {
+		color: var(--amber);
 	}
 	.fallback {
 		border-left: 2px solid var(--amber);

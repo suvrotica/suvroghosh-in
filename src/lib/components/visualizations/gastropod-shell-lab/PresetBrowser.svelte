@@ -416,6 +416,7 @@
 
 		.preset-list {
 			display: flex;
+			flex: 0 0 auto;
 			gap: 0.55rem;
 			padding: 0 0.65rem 0.7rem;
 			overflow-x: auto;

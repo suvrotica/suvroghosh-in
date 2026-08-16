@@ -17,6 +17,9 @@
 		recipe: ShellRecipe;
 		result?: ShellGenerationResult;
 		geometryValid?: boolean;
+		geometryCurrent?: boolean;
+		exporting?: boolean;
+		feedback?: { message: string; error: boolean };
 		diagnosticMessages?: string[];
 		onclose: () => void;
 		onviewportexport: (command: Omit<ViewportExportCommand, 'id'>) => void;
@@ -27,6 +30,9 @@
 		recipe,
 		result,
 		geometryValid = true,
+		geometryCurrent = true,
+		exporting = false,
+		feedback,
 		diagnosticMessages = [],
 		onclose,
 		onviewportexport
@@ -43,7 +49,9 @@
 					result.mesh.indices.byteLength
 			: 0
 	);
-	const canExportGeometry = $derived(geometryValid && Boolean(result?.diagnostics.valid));
+	const canExportGeometry = $derived(
+		geometryValid && geometryCurrent && !exporting && Boolean(result?.diagnostics.valid)
+	);
 	const recipeClassification = $derived(classifyShellRecipe(recipe));
 
 	function humanBytes(bytes: number): string {
@@ -53,18 +61,20 @@
 	}
 
 	$effect(() => {
-		if (!dialog) return;
-		if (open && !dialog.open) {
-			void tick().then(() => dialog.showModal());
-		} else if (!open && dialog.open) {
-			dialog.close();
-		}
+		const currentDialog = dialog;
+		if (!currentDialog) return;
+		if (open && !currentDialog.open) {
+			void tick().then(() => {
+				if (open && currentDialog.isConnected && !currentDialog.open) currentDialog.showModal();
+			});
+		} else if (!open && currentDialog.open) currentDialog.close();
 	});
 </script>
 
 <dialog
 	bind:this={dialog}
 	aria-labelledby="export-title"
+	aria-busy={exporting}
 	{onclose}
 	oncancel={(event) => {
 		event.preventDefault();
@@ -82,11 +92,26 @@
 	</header>
 
 	<div class="dialog-body">
+		{#if feedback}
+			<p
+				class:error={feedback.error}
+				class="export-feedback"
+				role={feedback.error ? 'alert' : 'status'}
+			>
+				{feedback.message}
+			</p>
+		{/if}
 		<div class="estimate">
 			<div>
-				<span>{geometryValid ? 'Current surface' : 'Last valid surface retained'}</span><strong
-					class="number">{triangleEstimate.toLocaleString()} triangles</strong
-				>
+				<span
+					>{exporting
+						? 'Export in progress'
+						: !geometryValid
+							? 'Last valid surface retained'
+							: !geometryCurrent
+								? 'Preparing current surface'
+								: 'Current surface'}</span
+				><strong class="number">{triangleEstimate.toLocaleString()} triangles</strong>
 			</div>
 			<div>
 				<span>Raw mesh buffers</span><strong class="number">≈ {humanBytes(binaryEstimate)}</strong>
@@ -125,7 +150,7 @@
 					type="button"
 					disabled={!canExportGeometry}
 					onclick={() => onviewportexport({ type: 'png', scale: pngScale, transparent })}
-					>Download PNG</button
+					>{exporting ? 'Exporting…' : 'Download PNG'}</button
 				>
 			</div>
 		</section>
@@ -233,6 +258,19 @@
 		max-height: calc(100dvh - 145px);
 		padding: 1rem;
 		overflow-y: auto;
+	}
+	.export-feedback {
+		margin: 0 0 0.8rem;
+		padding: 0.6rem 0.7rem;
+		border: 1px solid var(--cyan-soft);
+		border-radius: 7px;
+		background: color-mix(in srgb, var(--cyan-soft) 10%, transparent);
+		font-size: 0.65rem;
+		color: var(--text);
+	}
+	.export-feedback.error {
+		border-color: var(--danger);
+		background: color-mix(in srgb, var(--danger) 10%, transparent);
 	}
 	.estimate {
 		display: grid;
