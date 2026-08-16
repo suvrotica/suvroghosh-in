@@ -1,0 +1,111 @@
+{
+	"provenance": {
+		"dataset": "Data from: Using experimentation to understand the 10-year snowshoe hare cycle in the boreal forest of North America",
+		"datasetUrl": "https://doi.org/10.5061/dryad.684s1",
+		"license": "CC0 1.0",
+		"licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+		"sourceWorkbook": "3_Monitoring Data for Small Mammals.xlsx",
+		"sourceSheet": "Hares",
+		"sourceTableTitle": "SNOWSHOE HARE DENSITY per ha. ON CONTROL GRIDS AT KLUANE LAKE, YUKON",
+		"sourceRows": "26–41",
+		"sourceColumns": {
+			"A": "occasion",
+			"B": "All Controls (density/ha)",
+			"C": "Lower 95% C.L.",
+			"D": "Upper 95% C.L.",
+			"G": "decimal year"
+		},
+		"transformation": "Selected rows Spring87 through Fall94 and columns A, B, C, D and G; serialized without changing values. The component filters the eight spring rows for the 1987–1994 display window. Display labels round only at render time. Spreadsheet helper columns E and F were not used as confidence bounds.",
+		"estimatorNote": "The archive notes that estimates from 1985 onward use Efford's maximum-likelihood estimator. This later Dryad composite is not a transcription of Krebs et al. (1995) Figure 1, which used spring grid-level jackknife estimates from CAPTURE."
+	},
+	"controlSeries": [
+		{
+			"occasion": "Spring87",
+			"year": 1987.25,
+			"density": 0.17779166666666668,
+			"lower95": 0.10613333333333333,
+			"upper95": 0.3648
+		},
+		{
+			"occasion": "Fall87",
+			"year": 1987.75,
+			"density": 0.44545,
+			"lower95": 0.4136,
+			"upper95": 0.8444
+		},
+		{
+			"occasion": "Spring88",
+			"year": 1988.25,
+			"density": 0.5216666666666667,
+			"lower95": 0.40345,
+			"upper95": 0.8588
+		},
+		{ "occasion": "Fall88", "year": 1988.75, "density": 1.17, "lower95": 0.9, "upper95": 1.7 },
+		{
+			"occasion": "Spring89",
+			"year": 1989.25,
+			"density": 0.93125,
+			"lower95": 0.6936166666666667,
+			"upper95": 1.1717499999999998
+		},
+		{ "occasion": "Fall89", "year": 1989.75, "density": 1.6019, "lower95": 1.32, "upper95": 2.01 },
+		{
+			"occasion": "Spring90",
+			"year": 1990.25,
+			"density": 1.51375,
+			"lower95": 1.2285,
+			"upper95": 1.8733833333333334
+		},
+		{ "occasion": "Fall90", "year": 1990.75, "density": 2.645, "lower95": 1.85, "upper95": 3.83 },
+		{
+			"occasion": "Spring91",
+			"year": 1991.25,
+			"density": 1.01875,
+			"lower95": 0.715,
+			"upper95": 1.0776666666666666
+		},
+		{ "occasion": "Fall91", "year": 1991.75, "density": 0.86, "lower95": 0.63, "upper95": 1.16 },
+		{
+			"occasion": "Spring92",
+			"year": 1992.25,
+			"density": 0.2945833333333333,
+			"lower95": 0.2117,
+			"upper95": 0.44628333333333337
+		},
+		{
+			"occasion": "Fall92",
+			"year": 1992.75,
+			"density": 0.13625,
+			"lower95": 0.07980000000000001,
+			"upper95": 0.27416666666666667
+		},
+		{
+			"occasion": "Spring93",
+			"year": 1993.25,
+			"density": 0.09166666666666667,
+			"lower95": 0.05,
+			"upper95": 0.175
+		},
+		{
+			"occasion": "Fall93",
+			"year": 1993.75,
+			"density": 0.16166666666666665,
+			"lower95": 0.07363333333333333,
+			"upper95": 0.2914833333333333
+		},
+		{
+			"occasion": "Spring94",
+			"year": 1994.25,
+			"density": 0.06541666666666666,
+			"lower95": 0.03303333333333333,
+			"upper95": 0.14091666666666666
+		},
+		{
+			"occasion": "Fall94",
+			"year": 1994.75,
+			"density": 0.4166666666666667,
+			"lower95": 0.33285,
+			"upper95": 0.6556666666666666
+		}
+	]
+}
