@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T06:13:34.309686+00:00",
+  "generatedAt": "2026-08-16T07:30:36.196394+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8002,6 +8002,29 @@
         "Now",
         "Act",
         "Basket"
+      ],
+      "wordCount": 130
+    },
+    "sumit-sarkar-history-that-refused-to-bow": {
+      "generatedAt": "2026-08-16T07:30:35.720844+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/sumit-sarkar-history-that-refused-to-bow.svg",
+      "source": "src/lib/posts/sumit-sarkar-history-that-refused-to-bow.md",
+      "sourceHash": "b459e346c5b32043acdd0c2afca586522eb6e9e2ee6b74f55f6c812599ecd8da",
+      "sourceModified": "2026-08-16T07:26:42.362308+00:00",
+      "topWords": [
+        "Sarkar",
+        "History",
+        "Historian",
+        "Public",
+        "Road",
+        "India",
+        "Student",
+        "Students",
+        "Freedom",
+        "Later",
+        "Scholarship",
+        "Sumit"
       ],
       "wordCount": 130
     },
