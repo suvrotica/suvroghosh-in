@@ -1,0 +1,1248 @@
+.homeodynamics-explorer {
+	--hd-ui: var(--font-sans, 'Roboto Variable', system-ui, sans-serif);
+	--hd-editorial: var(--font-serif, 'Source Serif 4 Variable', Georgia, serif);
+	--hd-data: var(--font-mono, ui-monospace, Consolas, monospace);
+	--hd-label: 0.75rem;
+	--hd-small: 0.8125rem;
+	--hd-ui-size: 0.875rem;
+	--hd-copy: clamp(0.875rem, 0.84rem + 0.16vw, 1rem);
+	--hd-panel-title: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+	--hd-section-title: clamp(1.375rem, 1.22rem + 0.7vw, 1.875rem);
+	--hd-title: clamp(1.625rem, 1.35rem + 1.25vw, 2.5rem);
+	--hd-paper: var(--paper, #f5f1e8);
+	--hd-raised: var(--paper-raised, #fffdf7);
+	--hd-soft: var(--paper-soft, #ece7dc);
+	--hd-ink: var(--ink, #1d2424);
+	--hd-muted: var(--ink-muted, #5d6766);
+	--hd-rule: var(--rule, #b9beb8);
+	--hd-teal: #167d80;
+	--hd-blue: #236f92;
+	--hd-model: #a85019;
+	--hd-intervention: #b83f2c;
+	--hd-disputed: #8b3a62;
+	position: relative;
+	width: min(92rem, calc(100vw - 1rem));
+	max-width: none;
+	margin: clamp(3rem, 7vw, 6rem) 0;
+	transform: translateX(-50%);
+	border: 1px solid var(--hd-rule);
+	background:
+		linear-gradient(color-mix(in srgb, var(--hd-rule) 12%, transparent) 1px, transparent 1px),
+		var(--hd-paper);
+	background-size: 100% 2rem;
+	color: var(--hd-ink);
+	font-family: var(--hd-ui);
+	font-size: var(--hd-copy);
+	line-height: 1.5;
+	font-synthesis: none;
+	box-shadow: 0 1.2rem 4rem color-mix(in srgb, var(--hd-ink) 10%, transparent);
+}
+
+html[data-theme='night'] .homeodynamics-explorer,
+html.dark .homeodynamics-explorer {
+	--hd-teal: #72c7ca;
+	--hd-blue: #79b7d5;
+	--hd-model: #df9863;
+	--hd-intervention: #ef8b77;
+	--hd-disputed: #d0a8c2;
+}
+
+.homeodynamics-explorer *,
+.homeodynamics-explorer *::before,
+.homeodynamics-explorer *::after {
+	box-sizing: border-box;
+}
+
+.homeodynamics-explorer h2,
+.homeodynamics-explorer h3,
+.homeodynamics-explorer h4,
+.homeodynamics-explorer h5,
+.homeodynamics-explorer p,
+.homeodynamics-explorer ul,
+.homeodynamics-explorer dl,
+.homeodynamics-explorer blockquote {
+	margin-top: 0;
+}
+
+.homeodynamics-explorer h2,
+.homeodynamics-explorer h3,
+.homeodynamics-explorer h4,
+.homeodynamics-explorer h5 {
+	color: var(--hd-ink);
+	font-family: var(--hd-editorial);
+	font-optical-sizing: auto;
+}
+
+.explorer-header {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 2rem;
+	align-items: start;
+	padding: clamp(1.5rem, 4vw, 3.5rem);
+	border-bottom: 1px solid var(--hd-rule);
+	background: color-mix(in srgb, var(--hd-raised) 88%, transparent);
+}
+
+.explorer-header h2 {
+	max-width: 22ch;
+	margin-bottom: 0.8rem;
+	font-size: var(--hd-title);
+	font-weight: 700;
+	line-height: 1.08;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+}
+
+.explorer-eyebrow,
+.section-kicker,
+.mini-kicker,
+.panel-heading p,
+.equation-card > p,
+.loop-card > p,
+.audit-grid article > p:first-child {
+	margin-bottom: 0.45rem;
+	color: var(--hd-muted);
+	font-size: var(--hd-label);
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: 0.055em;
+	text-transform: uppercase;
+}
+
+.explorer-deck {
+	max-width: 62ch;
+	margin-bottom: 0;
+	font-family: var(--hd-editorial);
+	font-size: clamp(0.9375rem, 0.9rem + 0.18vw, 1.0625rem);
+	line-height: 1.55;
+	text-wrap: pretty;
+}
+
+.homeodynamics-explorer button,
+.homeodynamics-explorer select,
+.homeodynamics-explorer input {
+	font: inherit;
+}
+
+.homeodynamics-explorer button,
+.homeodynamics-explorer select {
+	min-height: 44px;
+	border: 1px solid var(--hd-rule);
+	border-radius: 0.25rem;
+	background: var(--hd-raised);
+	color: var(--hd-ink);
+	font-size: var(--hd-ui-size);
+	font-weight: 650;
+	line-height: 1.25;
+	cursor: pointer;
+}
+
+.homeodynamics-explorer button {
+	padding: 0.65rem 0.9rem;
+}
+
+.homeodynamics-explorer button:hover:not(:disabled),
+.homeodynamics-explorer button.active,
+.homeodynamics-explorer button[aria-pressed='true'],
+.homeodynamics-explorer button[aria-selected='true'] {
+	border-color: var(--hd-teal);
+	background: color-mix(in srgb, var(--hd-teal) 12%, var(--hd-raised));
+}
+
+.homeodynamics-explorer button:focus-visible,
+.homeodynamics-explorer select:focus-visible,
+.homeodynamics-explorer input:focus-visible,
+.homeodynamics-explorer a:focus-visible,
+.homeodynamics-explorer summary:focus-visible,
+.homeodynamics-explorer .table-scroll:focus-visible {
+	outline: 3px solid var(--focus, #0f6f8f);
+	outline-offset: 3px;
+}
+
+.homeodynamics-explorer button:disabled {
+	cursor: not-allowed;
+	opacity: 0.55;
+}
+
+.pause-all {
+	white-space: nowrap;
+}
+
+.explorer-index {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	border-bottom: 1px solid var(--hd-rule);
+}
+
+.explorer-index a {
+	display: flex;
+	min-height: 3.5rem;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.75rem 1.1rem;
+	border-right: 1px solid var(--hd-rule);
+	color: var(--hd-ink);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.explorer-index a:last-child {
+	border-right: 0;
+}
+
+.explorer-index span,
+.section-number {
+	color: var(--hd-teal);
+	font-family: var(--hd-data);
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+.definition-strip {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1px;
+	background: var(--hd-rule);
+	border-bottom: 1px solid var(--hd-rule);
+}
+
+.definition-strip div {
+	display: grid;
+	gap: 0.2rem;
+	padding: 0.9rem 1.1rem;
+	background: var(--hd-soft);
+}
+
+.definition-strip strong {
+	font-family: var(--hd-editorial);
+}
+
+.definition-strip span {
+	color: var(--hd-muted);
+	font-size: var(--hd-small);
+}
+
+.explorer-section {
+	position: relative;
+	padding: clamp(2rem, 5vw, 4.5rem) clamp(0.75rem, 3.6vw, 3.5rem);
+	border-bottom: 1px solid var(--hd-rule);
+}
+
+.explorer-section::before {
+	position: absolute;
+	top: 0;
+	left: clamp(1.3rem, 4.8vw, 4.3rem);
+	width: 1px;
+	height: 100%;
+	background: color-mix(in srgb, var(--hd-teal) 35%, var(--hd-rule));
+	content: '';
+	pointer-events: none;
+}
+
+.section-heading {
+	position: relative;
+	display: grid;
+	grid-template-columns: 3rem minmax(0, 1fr);
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.section-number {
+	z-index: 1;
+	display: grid;
+	width: 3rem;
+	height: 3rem;
+	place-items: center;
+	border: 1px solid var(--hd-teal);
+	border-radius: 50%;
+	background: var(--hd-paper);
+	font-weight: 700;
+}
+
+.section-heading h3 {
+	max-width: 28ch;
+	margin-bottom: 0.6rem;
+	font-size: var(--hd-section-title);
+	font-weight: 680;
+	line-height: 1.12;
+	letter-spacing: -0.012em;
+	text-wrap: balance;
+}
+
+.homeodynamics-explorer .explorer-header h2,
+.homeodynamics-explorer .section-heading h3 {
+	font-family: var(--hd-editorial);
+}
+
+.section-heading p:last-child {
+	max-width: 70ch;
+	margin-bottom: 0;
+	color: var(--hd-muted);
+}
+
+.evidence-banner,
+.mechanism-note,
+.variability-note,
+.motion-note,
+.field-findings {
+	margin: 1rem 0;
+	padding: 0.9rem 1rem;
+	border-left: 4px solid var(--hd-teal);
+	background: color-mix(in srgb, var(--hd-teal) 8%, var(--hd-raised));
+}
+
+.evidence-banner span {
+	display: block;
+	margin-top: 0.2rem;
+	color: var(--hd-muted);
+}
+
+.model-banner,
+.motion-note {
+	border-left-color: var(--hd-model);
+	background: color-mix(in srgb, var(--hd-model) 8%, var(--hd-raised));
+}
+
+.microscope-controls,
+.preset-row,
+.transport,
+.ecosystem-controls {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: end;
+	gap: 0.75rem;
+	margin: 1rem 0;
+}
+
+.tab-list,
+.preset-buttons,
+.transport-buttons,
+.challenge-options {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.tab-list button,
+.preset-buttons button {
+	flex: 1 1 auto;
+}
+
+.feedback-controls,
+.ecosystem-controls {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1rem;
+	padding: 1rem;
+	border: 1px solid var(--hd-rule);
+	background: var(--hd-raised);
+}
+
+.feedback-controls label,
+.ecosystem-controls label,
+.scrubber {
+	display: grid;
+	gap: 0.45rem;
+	font-size: var(--hd-small);
+	font-weight: 650;
+}
+
+.feedback-controls label > span,
+.ecosystem-controls label > span,
+.scrubber > span {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.homeodynamics-explorer output,
+.homeodynamics-explorer .live-readout strong,
+.homeodynamics-explorer .axis-text,
+.homeodynamics-explorer .axis-title,
+.homeodynamics-explorer .series-unit,
+.homeodynamics-explorer .domain-label,
+.homeodynamics-explorer .time-label {
+	font-family: var(--hd-data);
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+.homeodynamics-explorer .preset-strip small,
+.homeodynamics-explorer .source-drawer small {
+	font-size: var(--hd-small);
+	line-height: 1.5;
+}
+
+.homeodynamics-explorer .math-variable {
+	font-family: var(--hd-editorial);
+	font-style: italic;
+	font-weight: 400;
+}
+
+.homeodynamics-explorer input[type='range'] {
+	width: 100%;
+	min-height: 44px;
+	accent-color: var(--hd-teal);
+}
+
+.ecosystem-controls select {
+	width: 100%;
+	padding: 0.45rem;
+}
+
+.transport {
+	display: grid;
+	grid-template-columns: auto minmax(12rem, 1fr) auto;
+	align-items: end;
+	padding: 1rem;
+	border: 1px solid var(--hd-rule);
+	background: var(--hd-soft);
+}
+
+.transport .primary,
+.intervention-button {
+	border-color: var(--hd-teal);
+	background: var(--hd-teal);
+	color: #fff;
+}
+
+html[data-theme='night'] .homeodynamics-explorer .transport .primary,
+html[data-theme='night'] .homeodynamics-explorer .intervention-button,
+html.dark .homeodynamics-explorer .transport .primary,
+html.dark .homeodynamics-explorer .intervention-button {
+	color: #171512;
+}
+
+.intervention-button {
+	border-color: var(--hd-intervention) !important;
+	background: var(--hd-intervention) !important;
+}
+
+.live-readout {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	font-size: var(--hd-small);
+}
+
+.live-readout strong {
+	display: inline-block;
+	min-width: 6ch;
+	text-align: right;
+}
+
+.chart-card,
+.chart-panel,
+.equation-card,
+.loop-card,
+.intervention-challenge,
+.epistemic-panel,
+.audit-grid article,
+.evidence-card {
+	border: 1px solid var(--hd-rule);
+	background: var(--hd-raised);
+}
+
+.chart-card,
+.chart-panel {
+	overflow: hidden;
+	padding: clamp(0.65rem, 2vw, 1rem);
+}
+
+.homeodynamics-explorer svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.chart-grid,
+.facet-midline {
+	stroke: color-mix(in srgb, var(--hd-rule) 58%, transparent);
+	stroke-width: 1;
+}
+
+.chart-axis,
+.facet-axis,
+.chart-tick,
+.time-tick {
+	stroke: var(--hd-muted);
+	stroke-width: 1;
+}
+
+.axis-text,
+.axis-title,
+.domain-label,
+.time-label,
+.series-unit {
+	fill: var(--hd-muted);
+	font-size: 12px;
+}
+
+.axis-title {
+	font-weight: 700;
+}
+
+.series-label,
+.overlay-label {
+	fill: var(--hd-ink);
+	font-family: var(--hd-ui);
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.rhythm-path,
+.model-trace,
+.embedding-trace,
+.eco-trace,
+.measured-field-path {
+	fill: none;
+	stroke-width: 2.5;
+	vector-effect: non-scaling-stroke;
+}
+
+.facet-midline,
+.facet-axis,
+.rhythm-path,
+.point-stem,
+.chart-grid,
+.chart-axis,
+.chart-tick,
+.operating-line,
+.perturbation-line,
+.cursor-line,
+.embedding-diagonal,
+.eco-trace,
+.intervention-marker,
+.ci-line,
+.ci-cap,
+.measured-field-path {
+	vector-effect: non-scaling-stroke;
+}
+
+.point-stem {
+	stroke: var(--hd-rule);
+}
+
+.normalization-warning {
+	padding: 0.8rem 1rem;
+	border: 1px dashed var(--hd-model);
+	background: color-mix(in srgb, var(--hd-model) 7%, var(--hd-raised));
+}
+
+.rhythm-interpretation-grid,
+.feedback-explanation-grid,
+.treatment-summary-grid,
+.audit-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+.evidence-card,
+.equation-card,
+.loop-card,
+.audit-grid article,
+.treatment-summary-grid article {
+	padding: 1rem;
+}
+
+.evidence-card h4,
+.equation-card h4,
+.loop-card h4,
+.audit-grid h5,
+.treatment-summary-grid h5 {
+	margin-bottom: 0.45rem;
+	font-size: var(--hd-panel-title);
+	line-height: 1.2;
+}
+
+.evidence-card p,
+.audit-grid p,
+.treatment-summary-grid p,
+.treatment-summary-grid small {
+	color: var(--hd-muted);
+	font-size: var(--hd-small);
+}
+
+.evidence-chip,
+.epistemic-stamp,
+.regime-stamp {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	min-height: 1.75rem;
+	padding: 0.25rem 0.55rem;
+	border: 1px solid currentColor;
+	border-radius: 999px;
+	font-size: var(--hd-label);
+	font-weight: 720;
+	line-height: 1.15;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+
+.kind-authoritative-range {
+	color: var(--hd-blue);
+}
+.kind-measured-summary,
+.kind-derived-conversion,
+.measured-stamp {
+	color: var(--hd-teal);
+}
+.kind-model-derived,
+.model-stamp {
+	color: var(--hd-model);
+}
+.disputed-stamp {
+	color: var(--hd-disputed);
+}
+
+.source-drawer {
+	margin-top: 1.25rem;
+	border-top: 1px solid var(--hd-rule);
+	border-bottom: 1px solid var(--hd-rule);
+	background: color-mix(in srgb, var(--hd-soft) 60%, var(--hd-raised));
+}
+
+.source-drawer summary {
+	min-height: 44px;
+	padding: 0.8rem 1rem;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.source-drawer[open] > :not(summary) {
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+.source-drawer p,
+.source-drawer li,
+.source-drawer td,
+.source-drawer th {
+	font-size: var(--hd-small);
+	line-height: 1.5;
+}
+
+.source-drawer a,
+.evidence-card a {
+	color: color-mix(in srgb, var(--hd-teal) 82%, var(--hd-ink));
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+}
+
+.table-scroll {
+	max-width: 100%;
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+}
+
+.homeodynamics-explorer table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.homeodynamics-explorer caption {
+	padding: 0.65rem 0;
+	color: var(--hd-muted);
+	text-align: left;
+}
+
+.homeodynamics-explorer th,
+.homeodynamics-explorer td {
+	padding: 0.55rem;
+	border-bottom: 1px solid var(--hd-rule);
+	vertical-align: top;
+	text-align: left;
+}
+
+.homeodynamics-explorer .exact-values-table td {
+	font-family: var(--hd-data);
+	font-variant-numeric: tabular-nums lining-nums;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.homeodynamics-explorer .preset-ledger td:nth-of-type(-n + 2) {
+	font-family: var(--hd-data);
+	font-variant-numeric: tabular-nums lining-nums;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.temperature-convention {
+	margin-top: 1rem;
+}
+
+.temperature-convention p {
+	max-width: 70ch;
+	margin: 0.75rem 0 0;
+}
+
+.feedback-panels,
+.ecosystem-chart-grid,
+.field-layout,
+.drawer-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 2fr) minmax(17rem, 1fr);
+	gap: 1rem;
+	margin-top: 1rem;
+}
+
+.panel-heading,
+.epistemic-heading {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	align-items: flex-start;
+}
+
+.panel-heading h4,
+.panel-heading h5,
+.epistemic-heading h4 {
+	margin-bottom: 0.6rem;
+	font-size: var(--hd-panel-title);
+	line-height: 1.2;
+}
+
+.panel-heading p,
+.epistemic-heading p {
+	margin-bottom: 0.25rem;
+	color: var(--hd-muted);
+}
+
+.current-trace,
+.embedding-trace {
+	stroke: var(--hd-model);
+}
+
+.delayed-trace {
+	stroke: var(--hd-teal);
+	stroke-dasharray: 7 5;
+}
+
+.operating-line {
+	stroke: var(--hd-blue);
+	stroke-dasharray: 3 4;
+}
+
+.perturbation-line,
+.intervention-marker {
+	stroke: var(--hd-intervention);
+	stroke-dasharray: 4 4;
+}
+
+.cursor-line {
+	stroke: var(--hd-ink);
+	stroke-width: 1;
+	opacity: 0.5;
+}
+
+.embedding-diagonal {
+	stroke: var(--hd-rule);
+	stroke-dasharray: 3 4;
+}
+
+.current-dot,
+.operating-dot,
+.coexistence-dot {
+	fill: var(--hd-raised);
+	stroke: var(--hd-ink);
+	stroke-width: 2;
+	vector-effect: non-scaling-stroke;
+}
+
+.operating-dot,
+.coexistence-dot {
+	stroke: var(--hd-blue);
+}
+
+.operating-label,
+.perturbation-label {
+	fill: var(--hd-muted);
+	font-family: var(--hd-data);
+	font-size: 12px;
+}
+
+.chart-legend,
+.feedback-signs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	color: var(--hd-muted);
+	font-size: var(--hd-small);
+}
+
+.chart-legend i {
+	display: inline-block;
+	width: 1.5rem;
+	height: 0;
+	margin-right: 0.35rem;
+	border-top: 3px solid var(--hd-model);
+	vertical-align: middle;
+}
+
+.rhythm-legend span {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+}
+
+.rhythm-legend svg {
+	width: 2rem;
+	height: 0.5rem;
+	flex: none;
+}
+
+.rhythm-legend line {
+	stroke-width: 2.5;
+	vector-effect: non-scaling-stroke;
+}
+
+.chart-legend .delayed-swatch,
+.chart-legend .baseline-swatch {
+	border-top-style: dashed;
+	border-top-color: var(--hd-teal);
+}
+
+.chart-legend .operating-swatch {
+	border-top-style: dotted;
+	border-top-color: var(--hd-blue);
+}
+
+.chart-legend .tuna-swatch {
+	border-top-color: var(--hd-teal);
+	border-top-style: dotted;
+}
+.chart-legend .shark-swatch {
+	border-top-color: var(--hd-intervention);
+}
+
+.display-equation {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+	overflow-x: auto;
+	padding: 0.9rem;
+	background: var(--hd-soft);
+	font-family: var(--hd-editorial);
+	font-size: 1.0625rem;
+	font-style: italic;
+	line-height: 1.6;
+}
+
+.loop-diagram {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.55rem;
+	margin: 1rem 0;
+}
+
+.loop-diagram span {
+	padding: 0.45rem 0.65rem;
+	border: 1px solid var(--hd-rule);
+	background: var(--hd-soft);
+}
+
+.panel-note {
+	color: var(--hd-muted);
+	font-size: var(--hd-small);
+}
+
+.epistemic-panel {
+	margin-top: 2rem;
+	padding: clamp(0.85rem, 2.5vw, 1.5rem);
+}
+
+.model-panel {
+	border-top: 5px solid var(--hd-model);
+	background:
+		linear-gradient(color-mix(in srgb, var(--hd-model) 7%, transparent) 1px, transparent 1px),
+		var(--hd-raised);
+	background-size: 100% 1.5rem;
+}
+
+.measured-panel {
+	border-top: 5px solid var(--hd-teal);
+}
+
+.disputed-panel {
+	border: 2px dashed var(--hd-disputed);
+	background: color-mix(in srgb, var(--hd-disputed) 4%, var(--hd-raised));
+}
+
+.epistemic-heading {
+	justify-content: flex-start;
+}
+
+.epistemic-heading > div {
+	flex: 1;
+}
+
+.intervention-challenge {
+	display: grid;
+	grid-template-columns: minmax(12rem, 1fr) minmax(20rem, 2fr) auto;
+	gap: 1rem;
+	align-items: center;
+	margin: 1rem 0;
+	padding: 1rem;
+	border-left: 5px solid var(--hd-intervention);
+}
+
+.intervention-challenge h5 {
+	margin-bottom: 0;
+	font-size: var(--hd-panel-title);
+}
+
+.challenge-result {
+	grid-column: 1 / -1;
+	margin-bottom: 0;
+	padding-top: 0.8rem;
+	border-top: 1px solid var(--hd-rule);
+}
+
+.eco-trace.tuna {
+	stroke: var(--hd-teal);
+}
+.eco-trace.sharks {
+	stroke: var(--hd-intervention);
+}
+.eco-trace.baseline {
+	opacity: 0.55;
+}
+.eco-trace.branch {
+	stroke-width: 3;
+}
+.eco-trace.tuna.branch {
+	stroke-dasharray: 2 3;
+}
+.eco-trace.tuna.baseline {
+	stroke-dasharray: 10 4 2 4;
+}
+.eco-trace.sharks.baseline {
+	stroke-dasharray: 10 5;
+}
+.phase-trace {
+	stroke: var(--hd-model);
+}
+.tuna-dot {
+	stroke: var(--hd-teal);
+}
+.shark-dot {
+	stroke: var(--hd-intervention);
+}
+
+.feedback-signs {
+	justify-content: space-between;
+	margin-top: 1rem;
+	padding: 0.8rem;
+	border: 1px solid var(--hd-rule);
+}
+
+.assumption-list {
+	columns: 2;
+	column-gap: 1.5rem;
+}
+
+.treatment-summary-grid {
+	grid-template-columns: 1fr;
+	margin-top: 0;
+}
+
+.treatment-summary-grid article {
+	border-left: 4px solid var(--hd-teal);
+	background: var(--hd-soft);
+}
+
+.treatment-summary-grid article > span {
+	color: var(--hd-muted);
+	font-size: var(--hd-label);
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.treatment-summary-grid article > strong {
+	display: block;
+	font-family: var(--hd-data);
+	font-size: 1.25rem;
+	font-variant-numeric: tabular-nums lining-nums;
+}
+
+.ci-line,
+.ci-cap {
+	stroke: var(--hd-teal);
+	stroke-width: 1.5;
+}
+.measured-field-path {
+	stroke: var(--hd-teal);
+}
+.measured-field-dot {
+	fill: var(--hd-teal);
+	stroke: var(--hd-raised);
+	stroke-width: 2;
+	vector-effect: non-scaling-stroke;
+}
+
+.audit-grid article:first-child {
+	border-left: 4px solid var(--hd-disputed);
+}
+
+.audit-grid article:last-child {
+	border-left: 4px dotted var(--hd-disputed);
+}
+
+.disputed-panel blockquote {
+	margin: 1rem 0 0;
+	padding: 1rem 1.2rem;
+	border-left: 4px solid var(--hd-disputed);
+	font-family: var(--hd-editorial);
+	font-size: 1.1rem;
+	font-style: italic;
+}
+
+.explorer-guardrail {
+	padding: clamp(1.25rem, 3vw, 2.5rem);
+	border-bottom: 1px solid var(--hd-rule);
+	background: var(--hd-soft);
+}
+
+.explorer-guardrail p {
+	max-width: 75ch;
+	margin: 0.35rem 0 0;
+}
+
+.homeodynamics-explorer > figcaption,
+.noscript-note {
+	padding: 0.85rem 1.2rem;
+	color: var(--hd-muted);
+	font-size: var(--hd-small);
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@media (max-width: 64rem) {
+	.feedback-controls,
+	.ecosystem-controls {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.feedback-panels,
+	.ecosystem-chart-grid,
+	.field-layout,
+	.drawer-grid {
+		grid-template-columns: 1fr;
+	}
+	.intervention-challenge {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 45rem) {
+	.homeodynamics-explorer {
+		width: calc(100vw - 0.5rem);
+	}
+	.explorer-header {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+	.pause-all {
+		width: 100%;
+		white-space: normal;
+	}
+	.explorer-index,
+	.definition-strip,
+	.rhythm-interpretation-grid,
+	.feedback-explanation-grid,
+	.audit-grid {
+		grid-template-columns: 1fr;
+	}
+	.explorer-index a {
+		border-right: 0;
+		border-bottom: 1px solid var(--hd-rule);
+	}
+	.explorer-index a:last-child {
+		border-bottom: 0;
+	}
+	.transport {
+		grid-template-columns: 1fr;
+		align-items: stretch;
+	}
+	.transport-buttons button {
+		flex: 1;
+	}
+	.panel-heading,
+	.epistemic-heading {
+		flex-direction: column;
+	}
+	.assumption-list {
+		columns: 1;
+	}
+	.chart-card,
+	.chart-panel {
+		overflow-x: hidden;
+	}
+	.compact-chart {
+		width: 100%;
+		max-width: 21rem;
+		margin-inline: auto;
+	}
+	.compact-chart .domain-label {
+		paint-order: stroke;
+		stroke: var(--hd-raised);
+		stroke-width: 3px;
+	}
+}
+
+@media (max-width: 23rem) {
+	.homeodynamics-explorer {
+		--hd-title: 1.625rem;
+	}
+	.explorer-header,
+	.explorer-section {
+		padding-right: 0.75rem;
+		padding-left: 0.75rem;
+	}
+	.explorer-header h2 {
+		letter-spacing: -0.012em;
+	}
+	.explorer-eyebrow,
+	.section-kicker,
+	.mini-kicker,
+	.epistemic-stamp,
+	.evidence-chip {
+		letter-spacing: 0.05em;
+	}
+	.explorer-section::before {
+		left: 1.55rem;
+	}
+	.section-heading {
+		grid-template-columns: 2.5rem minmax(0, 1fr);
+		gap: 0.55rem;
+	}
+	.section-number {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+	.feedback-controls,
+	.ecosystem-controls {
+		grid-template-columns: 1fr;
+	}
+	.tab-list,
+	.preset-buttons,
+	.challenge-options {
+		width: 100%;
+		flex-direction: column;
+	}
+	.tab-list button,
+	.preset-buttons button,
+	.challenge-options button,
+	.overlay-toggle {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.homeodynamics-explorer *,
+	.homeodynamics-explorer *::before,
+	.homeodynamics-explorer *::after {
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+	}
+}
+
+@media (forced-colors: active) {
+	.homeodynamics-explorer,
+	.homeodynamics-explorer * {
+		box-shadow: none;
+	}
+	.homeodynamics-explorer svg text {
+		fill: CanvasText;
+	}
+	.rhythm-path,
+	.model-trace,
+	.embedding-trace,
+	.homeodynamics-explorer .eco-trace,
+	.measured-field-path,
+	.ci-line,
+	.ci-cap,
+	.rhythm-legend line,
+	.chart-axis,
+	.facet-axis,
+	.chart-tick,
+	.time-tick,
+	.operating-line,
+	.perturbation-line,
+	.intervention-marker,
+	.cursor-line,
+	.embedding-diagonal,
+	.point-stem {
+		stroke: CanvasText;
+	}
+	.chart-grid,
+	.ecosystem-chart-grid,
+	.facet-midline {
+		stroke: GrayText;
+	}
+	.current-dot,
+	.operating-dot,
+	.coexistence-dot,
+	.measured-field-dot {
+		fill: Canvas;
+		stroke: CanvasText;
+	}
+}
+
+@media print {
+	.homeodynamics-explorer {
+		--hd-paper: #fff;
+		--hd-raised: #fff;
+		--hd-soft: #fff;
+		--hd-ink: #111;
+		--hd-muted: #333;
+		--hd-rule: #444;
+		left: auto;
+		width: 100%;
+		margin: 1rem 0;
+		transform: none;
+		border-color: #000;
+		background: #fff;
+		color: var(--hd-ink);
+		box-shadow: none;
+		font-size: 9.5pt;
+		line-height: 1.4;
+		color-scheme: light;
+	}
+	.homeodynamics-explorer button,
+	.homeodynamics-explorer select,
+	.homeodynamics-explorer input,
+	.explorer-index,
+	.transport,
+	.microscope-controls {
+		display: none !important;
+	}
+	.source-drawer:not([open]) > :not(summary) {
+		display: block;
+	}
+	.chart-panel,
+	.evidence-card,
+	.epistemic-panel,
+	.audit-grid article,
+	.homeodynamics-explorer table {
+		break-inside: avoid-page;
+	}
+	.homeodynamics-explorer thead {
+		display: table-header-group;
+	}
+}

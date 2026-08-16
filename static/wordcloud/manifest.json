@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T07:30:36.196394+00:00",
+  "generatedAt": "2026-08-16T09:22:59.482221+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7933,6 +7933,29 @@
         "Square",
         "Little",
         "Sadness"
+      ],
+      "wordCount": 130
+    },
+    "static-equilibrium-illusion": {
+      "generatedAt": "2026-08-16T09:22:59.036628+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/static-equilibrium-illusion.svg",
+      "source": "src/lib/posts/static-equilibrium-illusion.md",
+      "sourceHash": "077c0bbd3dc7acb56e165d37c05a2c3a843dbad25203b80e5e78163ceda17787",
+      "sourceModified": "2026-08-16T09:13:44.798646+00:00",
+      "topWords": [
+        "Phase",
+        "Point",
+        "Sharks",
+        "Every",
+        "State",
+        "Tuna",
+        "Fixed",
+        "Cycle",
+        "Model",
+        "Homeostasis",
+        "Feedback",
+        "Changes"
       ],
       "wordCount": 130
     },

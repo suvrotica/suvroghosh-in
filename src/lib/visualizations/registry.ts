@@ -113,6 +113,18 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/fertilization-calcium-clock',
 		status: 'published'
 	},
+	'static-equilibrium-illusion': {
+		id: 'static-equilibrium-illusion',
+		title: 'The Static-Equilibrium Illusion: Life Refuses to Hold Still',
+		description:
+			'Open a time microscope, perturb delayed feedback, and test an ecological intervention while measurements, models, and disputed inferences remain visibly distinct.',
+		subjects: ['Biology', 'Healthcare', 'Mathematics', 'Scientific Computing'],
+		poster: '/images/visualizations/static-equilibrium-illusion/static-equilibrium-illusion.svg',
+		posterAlt:
+			'Editorial diagram in which a perturbed line returns, rings, and opens into a closed orbit beside the title The Static-Equilibrium Illusion',
+		href: '/blog/visualizations/static-equilibrium-illusion',
+		status: 'published'
+	},
 	'the-matrix-is-random': {
 		id: 'the-matrix-is-random',
 		title: 'The Matrix Is Random. Why Does It Have a Shape?',
