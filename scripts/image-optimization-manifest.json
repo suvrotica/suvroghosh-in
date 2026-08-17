@@ -9458,6 +9458,22 @@
       "sourceHash": "3316b0fe60f1ac1f807394d2cf212928e53c443b140f04656cc23f40565d7401",
       "width": 1280
     },
+    "static/images/the-drowning-prophet.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 896,
+      "outputBytes": 226515,
+      "outputHash": "e92ff836009166ad8ede855f405b0214ee3ba2a1654f0b1ccfebe5e295b55053",
+      "psnrDb": 43.46,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 323891,
+      "sourceHash": "57509835ffb5ee7d075713811972b853635006e7720cc7b5b0f5247156183291",
+      "width": 896
+    },
     "static/images/the-great-meme-reset-and-my-colon.jpg": {
       "format": "JPEG",
       "height": 895,
