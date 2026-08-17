@@ -25,6 +25,7 @@ import Notebook from '$lib/components/blog/Notebook.svelte';
 import ThoughtSpread from '$lib/components/blog/raw-thought/ThoughtSpread.svelte';
 import ThoughtLeaf from '$lib/components/blog/raw-thought/ThoughtLeaf.svelte';
 import ThoughtArt from '$lib/components/blog/raw-thought/ThoughtArt.svelte';
+import HumanMarginModule from '$lib/components/blog/raw-thought/HumanMarginModule.svelte';
 `;
 
 const autoImport = {

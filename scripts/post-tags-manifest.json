@@ -9641,9 +9641,9 @@
 			"dateModified": "2026-08-07"
 		},
 		"src/lib/posts/why-read-a-healthcare-it-blog-in-the-age-of-ai.md": {
-			"bodyHash": "e548147241abdd51988aaff4d2e9ce65be3ca46c47dbd1d5b1037be95d5ed6cd",
+			"bodyHash": "6636e1f74c7475782b4b8f4b607b9ed8c2a1f2cefb93e1d7f13674427b623c7b",
 			"hashVersion": 2,
-			"revisionHash": "59efc4fabcc8bf16bebf5829323ea39e5f14f9756e2ae7f686fea71915e447ac",
+			"revisionHash": "1a6e1d68863cb9abf692fe6dbb6a84920763b0a30fd24ad62e7ed2161bf84496",
 			"generatedTags": [
 				"Bodyshopping Moat",
 				"Linear Algebra",
@@ -9656,9 +9656,20 @@
 				"Genetic",
 				"Clinical"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"Bodyshopping Moat",
+				"Linear Algebra",
+				"Adversarial Attacks",
+				"AI-driven Healthcare",
+				"Model Drift",
+				"Healthcare",
+				"AI",
+				"Systems",
+				"Genetic",
+				"Clinical"
+			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-08-07"
+			"dateModified": "2026-08-17"
 		},
 		"src/lib/posts/woke-word-calcutta-redux.md": {
 			"bodyHash": "4a21a262cd3c861696d99c43bc2b3bbeb82f7734cbc2e25300132471b0a7dfa0",

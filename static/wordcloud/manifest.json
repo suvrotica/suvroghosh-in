@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T08:53:48.941608+00:00",
+  "generatedAt": "2026-08-17T11:07:22.494253+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -13503,12 +13503,12 @@
       "wordCount": 130
     },
     "why-read-a-healthcare-it-blog-in-the-age-of-ai": {
-      "generatedAt": "2026-08-07T01:47:41.199840+00:00",
+      "generatedAt": "2026-08-17T11:07:22.491243+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/why-read-a-healthcare-it-blog-in-the-age-of-ai.svg",
       "source": "src/lib/posts/why-read-a-healthcare-it-blog-in-the-age-of-ai.md",
-      "sourceHash": "fad867ad3aaefebd31587aaacac0fa5dc2fe7541c59688613b25ba17377ea853",
-      "sourceModified": "2026-08-07T01:39:42.064880+00:00",
+      "sourceHash": "b07197633ad8def212303064b4d0c66dcd7c79ab1dee0c3b1454c0a6e17ffbb4",
+      "sourceModified": "2026-08-17T11:04:12.282097+00:00",
       "topWords": [
         "AI",
         "Healthcare",

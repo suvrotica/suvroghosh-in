@@ -1,5 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {
+	isRawThoughtLayout,
+	SUPPORTED_RAW_THOUGHT_LAYOUTS
+} from '../src/lib/content/raw-thought-layouts.js';
 import { readPostFrontmatter } from './lib/post-metadata.mjs';
 
 const root = process.cwd();
@@ -166,12 +170,10 @@ for (const file of postFiles) {
 	if (metadata.immersiveLead !== undefined && typeof metadata.immersiveLead !== 'boolean') {
 		errors.push(`${file}: immersiveLead must be true or false, without quotes.`);
 	}
-	if (
-		metadata.rawThoughtLayout !== undefined &&
-		typeof metadata.rawThoughtLayout === 'string' &&
-		!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.rawThoughtLayout)
-	) {
-		errors.push(`${file}: rawThoughtLayout must be a lowercase hyphenated slug.`);
+	if (metadata.rawThoughtLayout !== undefined && !isRawThoughtLayout(metadata.rawThoughtLayout)) {
+		errors.push(
+			`${file}: rawThoughtLayout must be one of: ${SUPPORTED_RAW_THOUGHT_LAYOUTS.join(', ')}.`
+		);
 	}
 
 	validateStringArray(file, 'tags', metadata.tags, { required: true });

@@ -1,0 +1,245 @@
+{
+	"id": "healthcare-human-margin",
+	"issue": "THE HUMAN MARGIN / 01",
+	"label": "The Human Margin",
+	"contents": [
+		{
+			"number": "01",
+			"title": "The Uncomfortable Premise",
+			"anchor": "the-uncomfortable-premise"
+		},
+		{ "number": "02", "title": "Who Is Involved?", "anchor": "who-is-involved" },
+		{
+			"number": "03",
+			"title": "What Is This, Exactly?",
+			"anchor": "what-is-this-exactly"
+		},
+		{
+			"number": "04",
+			"title": "When Did This Become Significant?",
+			"anchor": "when-did-this-become-significant"
+		},
+		{
+			"number": "05",
+			"title": "Where Does This Apply?",
+			"anchor": "where-does-this-apply"
+		},
+		{ "number": "06", "title": "Why Does This Matter?", "anchor": "why-does-this-matter" },
+		{ "number": "07", "title": "How Does This Work?", "anchor": "how-does-this-work" },
+		{
+			"number": "08",
+			"title": "Which Technologies, Systems, Methods, and Discoveries Make This Possible?",
+			"anchor": "which-technologies-systems-methods-and-discoveries-make-this-possible"
+		},
+		{ "number": "09", "title": "The Bigger Picture", "anchor": "the-bigger-picture" }
+	],
+	"spreads": [
+		{
+			"id": "cover",
+			"number": "00",
+			"kicker": "Front page",
+			"title": "The Human Margin",
+			"tone": "paper"
+		},
+		{
+			"id": "reader-brief",
+			"number": "01",
+			"kicker": "Reader's brief",
+			"title": "What to carry in",
+			"tone": "paper"
+		},
+		{
+			"id": "uncomfortable-premise",
+			"number": "02",
+			"kicker": "The gap",
+			"title": "The Uncomfortable Premise",
+			"tone": "warning"
+		},
+		{
+			"id": "who-builders-frontline",
+			"number": "03",
+			"kicker": "Builders and frontline witnesses",
+			"title": "Who Is Involved? / I",
+			"tone": "paper"
+		},
+		{
+			"id": "who-power-exposure",
+			"number": "04",
+			"kicker": "Power, exposure, and position",
+			"title": "Who Is Involved? / II",
+			"tone": "paper"
+		},
+		{
+			"id": "what-map-territory",
+			"number": "05",
+			"kicker": "Map / territory",
+			"title": "What Is This, Exactly?",
+			"tone": "paper"
+		},
+		{
+			"id": "when-usable-ai",
+			"number": "06",
+			"kicker": "The usable-AI inflection",
+			"title": "When Did This Become Significant?",
+			"tone": "paper"
+		},
+		{
+			"id": "where-systems-touch-bodies",
+			"number": "07",
+			"kicker": "Where systems touch bodies",
+			"title": "Where Does This Apply?",
+			"tone": "signal"
+		},
+		{
+			"id": "why-stakes-incentives",
+			"number": "08",
+			"kicker": "Stakes, incentives, ignorance, hiring",
+			"title": "Why Does This Matter? / I",
+			"tone": "warning"
+		},
+		{
+			"id": "why-corruption-attack-surface",
+			"number": "09",
+			"kicker": "Corruption and attack surface",
+			"title": "Why Does This Matter? / II",
+			"tone": "coal"
+		},
+		{
+			"id": "how-writers-method",
+			"number": "10",
+			"kicker": "The writer's method",
+			"title": "How Does This Work?",
+			"tone": "paper"
+		},
+		{
+			"id": "technology-stack",
+			"number": "11",
+			"kicker": "The stack without magic",
+			"title": "Technologies and methods",
+			"tone": "signal"
+		},
+		{
+			"id": "bigger-unfinished-systems",
+			"number": "12",
+			"kicker": "Unfinished systems",
+			"title": "The Bigger Picture / I",
+			"tone": "paper"
+		},
+		{
+			"id": "bigger-judgment-invitation",
+			"number": "13",
+			"kicker": "Judgment and invitation",
+			"title": "The Bigger Picture / II",
+			"tone": "paper"
+		},
+		{
+			"id": "endpaper",
+			"number": "14",
+			"kicker": "Index and colophon",
+			"title": "Keep the record open",
+			"tone": "paper"
+		}
+	],
+	"art": {
+		"cover-service-panel": {
+			"src": "/images/thought-folios/healthcare-human-margin/cover-service-panel.jpg",
+			"alt": "A healthcare systems practitioner traces a cable through an open hospital service panel.",
+			"width": 1536,
+			"height": 1024,
+			"ratio": "landscape",
+			"fit": "cover",
+			"position": "58% center",
+			"caption": "One cable, one hand, and the infrastructure behind every abstraction."
+		},
+		"stakeholders-layered": {
+			"src": "/images/thought-folios/healthcare-human-margin/stakeholders-layered.jpg",
+			"alt": "A nurse, a systems technician, and a patient occupy connected layers of a clinical workflow.",
+			"width": 1000,
+			"height": 1250,
+			"ratio": "portrait",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Authority, expertise, and exposure do not sit in the same place."
+		},
+		"map-territory-drift": {
+			"src": "/images/thought-folios/healthcare-human-margin/map-territory-drift.jpg",
+			"alt": "A clinical trace drifts away from the older map beneath it.",
+			"width": 1500,
+			"height": 750,
+			"ratio": "wide",
+			"fit": "contain",
+			"position": "center",
+			"caption": "A model can keep its shape after the territory has moved."
+		},
+		"ai-convergence": {
+			"src": "/images/thought-folios/healthcare-human-margin/ai-convergence.jpg",
+			"alt": "Older and contemporary clinical computing equipment share the same working room.",
+			"width": 1600,
+			"height": 900,
+			"ratio": "wide",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Healthcare AI arrived by accumulation, not one clean break."
+		},
+		"rural-image-transfer": {
+			"src": "/images/thought-folios/healthcare-human-margin/rural-image-transfer.jpg",
+			"alt": "A rural clinic workstation receives a medical image through modest network equipment.",
+			"width": 1440,
+			"height": 1080,
+			"ratio": "landscape",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Useful systems depend on the path between sites, not only the model."
+		},
+		"corridor-network-cabinet": {
+			"src": "/images/thought-folios/healthcare-human-margin/corridor-network-cabinet.jpg",
+			"alt": "An open network cabinet reveals the infrastructure behind a quiet hospital corridor.",
+			"width": 1440,
+			"height": 1080,
+			"ratio": "landscape",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Clinical work continues through infrastructure most people never see."
+		},
+		"genetics-workbench": {
+			"src": "/images/thought-folios/healthcare-human-margin/genetics-workbench.jpg",
+			"alt": "An anonymized genetics workbench combines laboratory materials and family-study notes.",
+			"width": 1440,
+			"height": 1080,
+			"ratio": "landscape",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Family context, laboratory material, and computation meet before any conclusion."
+		},
+		"adversarial-clinical-film": {
+			"src": "/images/thought-folios/healthcare-human-margin/adversarial-clinical-film.jpg",
+			"alt": "Clinical film and paper traces show subtle corruption beside a locked server cabinet.",
+			"width": 1536,
+			"height": 1024,
+			"ratio": "landscape",
+			"fit": "contain",
+			"position": "center",
+			"caption": "When provenance is disturbed, confidence becomes part of the attack surface."
+		},
+		"method-tea-notebook": {
+			"src": "/images/thought-folios/healthcare-human-margin/method-tea-notebook.jpg",
+			"alt": "Milky tea and pencil-marked working papers sit beside an unbranded technical manual.",
+			"width": 1440,
+			"height": 1080,
+			"ratio": "landscape",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Programming craft and ordinary tea: the blog's technical method in miniature"
+		},
+		"not-there-yet": {
+			"src": "/images/thought-folios/healthcare-human-margin/not-there-yet.jpg",
+			"alt": "An open service door breaks the quiet of a hospital passage before dawn.",
+			"width": 1600,
+			"height": 800,
+			"ratio": "wide",
+			"fit": "cover",
+			"position": "center",
+			"caption": "Progress remains a working passage, not an arrival."
+		}
+	}
+}

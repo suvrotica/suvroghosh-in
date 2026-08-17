@@ -10,6 +10,7 @@
 	import AuthorPanel from '$lib/components/blog/AuthorPanel.svelte';
 	import Notebook from '$lib/components/blog/Notebook.svelte';
 	import PostNavigation from '$lib/components/blog/PostNavigation.svelte';
+	import HealthcareHumanMarginLayout from '$lib/components/blog/raw-thought/HealthcareHumanMarginLayout.svelte';
 	import PlumbingBrochureLayout from '$lib/components/blog/raw-thought/PlumbingBrochureLayout.svelte';
 	import TableOfContents from '$lib/components/blog/TableOfContents.svelte';
 	import WordCloud from '$lib/components/visual/WordCloud.svelte';
@@ -39,19 +40,32 @@
 </script>
 
 <svelte:head>
-	<link
-		rel="preload"
-		href={courierPrimeLatinUrl}
-		as="font"
-		type="font/woff2"
-		crossorigin="anonymous"
-	/>
+	{#if data.metadata.rawThoughtLayout !== 'healthcare-human-margin'}
+		<link
+			rel="preload"
+			href={courierPrimeLatinUrl}
+			as="font"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
+	{/if}
+	{#if data.metadata.rawThoughtLayout === 'healthcare-human-margin'}
+		<link
+			rel="preload"
+			href="/fonts/human-margin/barlow-condensed-latin-600-normal.woff2"
+			as="font"
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
+	{/if}
 </svelte:head>
 
 <SEO {...data.seo} />
 
 {#if data.metadata.rawThoughtLayout === 'ai-plumbing-field-manual'}
 	<PlumbingBrochureLayout {data} content={PostContent} />
+{:else if data.metadata.rawThoughtLayout === 'healthcare-human-margin'}
+	<HealthcareHumanMarginLayout {data} content={PostContent} />
 {:else}
 	<div
 		class="article-shell page-enter mx-auto max-w-6xl px-4 py-12 md:px-8 xl:relative xl:left-1/2 xl:grid xl:w-[72rem] xl:max-w-[calc(100vw-2rem)] xl:-translate-x-1/2 xl:grid-cols-[minmax(0,48rem)_minmax(12rem,16rem)] xl:items-start xl:gap-12 {data

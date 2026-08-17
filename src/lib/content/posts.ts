@@ -1,4 +1,9 @@
 import { slugifyCategory } from './categories';
+import {
+	isRawThoughtLayout,
+	SUPPORTED_RAW_THOUGHT_LAYOUTS,
+	type RawThoughtLayout
+} from './raw-thought-layouts.js';
 
 export type BlogPostMetadata = {
 	title: string;
@@ -27,7 +32,7 @@ export type BlogPostMetadata = {
 	faq?: { question: string; answer: string }[];
 	interactiveFirst?: boolean;
 	immersiveLead?: boolean;
-	rawThoughtLayout?: string;
+	rawThoughtLayout?: RawThoughtLayout;
 	headings?: PostHeading[];
 };
 
@@ -161,12 +166,10 @@ export function validatePublishedPostMetadata(
 	source = 'post'
 ) {
 	if (!isPublishedPost(metadata)) return;
-	if (
-		metadata.rawThoughtLayout !== undefined &&
-		(typeof metadata.rawThoughtLayout !== 'string' ||
-			!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(metadata.rawThoughtLayout))
-	) {
-		throw new Error(`${source} has an invalid rawThoughtLayout; use a lowercase hyphenated slug.`);
+	if (metadata.rawThoughtLayout !== undefined && !isRawThoughtLayout(metadata.rawThoughtLayout)) {
+		throw new Error(
+			`${source} has an unsupported rawThoughtLayout; expected one of: ${SUPPORTED_RAW_THOUGHT_LAYOUTS.join(', ')}.`
+		);
 	}
 
 	const missing = ['title', 'description', 'date', 'category'].filter((field) => {

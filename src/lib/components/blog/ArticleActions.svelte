@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let { title }: { title: string } = $props();
+	let { title, preparePrint }: { title: string; preparePrint?: () => void | Promise<void> } =
+		$props();
 
 	let enhanced = $state(false);
 	let canShare = $state(false);
@@ -69,6 +70,14 @@
 		}
 	}
 
+	async function printArticle() {
+		try {
+			await preparePrint?.();
+		} finally {
+			window.print();
+		}
+	}
+
 	onMount(() => {
 		enhanced = true;
 		canShare = typeof navigator.share === 'function';
@@ -125,7 +134,7 @@
 
 		<button
 			type="button"
-			onclick={() => window.print()}
+			onclick={printArticle}
 			class="inline-flex min-h-11 items-center gap-2 rounded-full border border-neutral-300 bg-transparent px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:border-neutral-500 hover:text-neutral-950 focus-visible:ring-2 focus-visible:ring-neutral-600 focus-visible:ring-offset-2 focus-visible:outline-none dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-white dark:focus-visible:ring-neutral-300 dark:focus-visible:ring-offset-neutral-950"
 		>
 			<svg

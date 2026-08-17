@@ -1,0 +1,1980 @@
+@font-face {
+	font-family: 'Newsreader';
+	src: url('/fonts/human-margin/newsreader-latin-wght-normal.woff2') format('woff2-variations');
+	font-style: normal;
+	font-weight: 200 800;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Newsreader';
+	src: url('/fonts/human-margin/newsreader-latin-400-italic.woff2') format('woff2');
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Barlow Condensed';
+	src: url('/fonts/human-margin/barlow-condensed-latin-600-normal.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 600 700;
+	font-display: optional;
+}
+
+@font-face {
+	font-family: 'IBM Plex Mono';
+	src: url('/fonts/human-margin/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'HM Newsreader Fallback';
+	src: local('Georgia');
+	font-style: normal;
+	font-weight: 400 500;
+	size-adjust: 90.8%;
+	ascent-override: 104%;
+	descent-override: 28%;
+	line-gap-override: 0%;
+}
+
+@font-face {
+	font-family: 'HM Newsreader Fallback';
+	src: local('Georgia Bold'), local('Georgia-Bold');
+	font-style: normal;
+	font-weight: 600 800;
+	size-adjust: 90.8%;
+	ascent-override: 104%;
+	descent-override: 28%;
+	line-gap-override: 0%;
+}
+
+@font-face {
+	font-family: 'HM Newsreader Fallback';
+	src: local('Georgia Italic'), local('Georgia-Italic');
+	font-style: italic;
+	font-weight: 400 500;
+	size-adjust: 90.8%;
+	ascent-override: 104%;
+	descent-override: 28%;
+	line-gap-override: 0%;
+}
+
+@font-face {
+	font-family: 'HM Barlow Fallback';
+	src: local('Arial Narrow Bold'), local('Arial Bold');
+	font-style: normal;
+	font-weight: 600 700;
+	size-adjust: 105%;
+	ascent-override: 93%;
+	descent-override: 24%;
+	line-gap-override: 0%;
+}
+
+.hm-folio {
+	--hm-paper: #f2efe6;
+	--hm-paper-cool: #e5e3dc;
+	--hm-ink: #121412;
+	--hm-coal: #151816;
+	--hm-coal-copy: #f3f0e7;
+	--hm-teal: #4d716d;
+	--hm-teal-dark: #244d4a;
+	--hm-warning: #c95436;
+	--hm-warning-text: #a23c27;
+	--hm-rule: rgb(18 20 18 / 42%);
+	--hm-rule-soft: rgb(18 20 18 / 18%);
+	--hm-muted: #5c625e;
+	--hm-serif: 'Newsreader', 'HM Newsreader Fallback', Georgia, 'Times New Roman', serif;
+	--hm-label: 'Barlow Condensed', 'HM Barlow Fallback', 'Arial Narrow', Arial, sans-serif;
+	--hm-mono: 'IBM Plex Mono', 'Cascadia Mono', Consolas, monospace;
+	--hm-ui: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	position: relative;
+	width: 100%;
+	min-width: 0;
+	color: var(--hm-ink);
+	background-color: var(--hm-paper);
+	background-image:
+		linear-gradient(90deg, rgb(18 20 18 / 2%) 1px, transparent 1px),
+		linear-gradient(rgb(18 20 18 / 1.5%) 1px, transparent 1px);
+	background-size:
+		31px 31px,
+		31px 31px;
+	font-family: var(--hm-serif);
+	font-size: 17px;
+	font-optical-sizing: auto;
+	font-kerning: normal;
+	font-synthesis: none;
+	line-height: 1.62;
+	overflow-wrap: break-word;
+	text-rendering: optimizeLegibility;
+	color-scheme: light;
+}
+
+.hm-folio *,
+.hm-folio *::before,
+.hm-folio *::after {
+	box-sizing: border-box;
+}
+
+/* The site shell's serif and Bengali faces are intentionally not part of this
+   route's compact type budget. Descendants normally inherit the folio face;
+   label, mono, and interface containers can then pass their own face down. */
+.hm-folio .hm-book {
+	font-family: var(--hm-serif);
+}
+
+.hm-folio .hm-book :where(h1, h2, h3, h4, h5, h6) {
+	font-family: var(--hm-serif);
+}
+
+.hm-folio .hm-book blockquote {
+	font-family: var(--hm-serif);
+}
+
+.hm-folio :where(a, button, [tabindex]) {
+	touch-action: manipulation;
+}
+
+.hm-folio :where(a, button, [tabindex]):focus-visible {
+	outline: 3px solid var(--hm-warning);
+	outline-offset: 4px;
+	box-shadow: 0 0 0 2px var(--hm-paper);
+}
+
+.hm-folio a {
+	color: inherit;
+	text-decoration-thickness: 0.08em;
+	text-underline-offset: 0.15em;
+}
+
+/* The application Night theme writes its global `--ink` directly onto every
+   paragraph. Folio copy follows the colour of its paper or coal leaf instead. */
+.hm-folio p {
+	color: inherit;
+}
+
+.hm-folio :where(h1, h2, h3, h4, h5, h6) {
+	color: inherit;
+}
+
+.hm-folio a:hover {
+	text-decoration-color: var(--hm-warning);
+}
+
+.hm-folio .reading-progress-bar {
+	z-index: 80;
+	height: 3px;
+	transform-origin: left center;
+}
+
+.hm-folio .hm-skip-link {
+	position: fixed;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 100;
+	min-height: 44px;
+	padding: 0.65rem 0.9rem;
+	transform: translateY(-180%);
+	border: 2px solid var(--hm-ink);
+	background: var(--hm-paper);
+	font-family: var(--hm-ui);
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.hm-folio .hm-skip-link:focus {
+	transform: translateY(0);
+}
+
+.hm-folio .hm-utility {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	width: min(100%, 100rem);
+	margin-inline: auto;
+	padding: 0.65rem clamp(1rem, 3vw, 3rem);
+	border-bottom: 1px solid var(--hm-rule);
+	background: var(--hm-paper);
+	font-family: var(--hm-label);
+	font-size: 13px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.075em;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-utility ol {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-utility > span {
+	flex: 0 0 auto;
+	color: var(--hm-teal-dark);
+}
+
+.hm-folio .hm-book {
+	width: min(100%, 100rem);
+	margin-inline: auto;
+}
+
+.hm-folio .thought-spread {
+	position: relative;
+	margin: 0;
+	padding: clamp(1.1rem, 2.7vw, 2.75rem) clamp(1rem, 3vw, 3rem) clamp(2.5rem, 6vw, 6rem);
+	border-bottom: 1px solid var(--hm-rule);
+	background: var(--hm-paper);
+	box-shadow: none;
+	container-type: inline-size;
+	overflow: visible;
+	scroll-margin-top: 1rem;
+}
+
+.hm-folio .thought-spread:nth-child(4n + 2) {
+	background-color: #eeeae1;
+}
+
+.hm-folio .thought-spread__rail {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+	align-items: end;
+	gap: 0.75rem;
+	margin: 0 0 0.8rem;
+	padding-block: 0 0.45rem;
+	border-bottom: 2px solid var(--hm-ink);
+	font-family: var(--hm-mono);
+	font-size: 12px;
+	font-weight: 500;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.035em;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+
+.hm-folio .thought-spread__rail span:nth-child(2) {
+	padding-inline: 0.55rem;
+	border-inline: 1px solid currentColor;
+	font-size: 14px;
+}
+
+.hm-folio .thought-spread__rail span:last-child {
+	text-align: right;
+}
+
+.hm-folio .thought-spread__leaves {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0;
+	min-width: 0;
+}
+
+.hm-folio .thought-leaf {
+	position: relative;
+	min-width: 0;
+	padding: clamp(1rem, 3.6vw, 2.5rem) clamp(1rem, 4.2vw, 3rem) clamp(2.5rem, 6vw, 4.5rem);
+	border: 1px solid var(--hm-rule);
+	background-color: rgb(242 239 230 / 96%);
+	box-shadow: none;
+	container-type: inline-size;
+	overflow: visible;
+}
+
+.hm-folio .thought-leaf + .thought-leaf {
+	border-top: 0;
+}
+
+.hm-folio .thought-leaf::after {
+	position: absolute;
+	right: 0.9rem;
+	bottom: 0.75rem;
+	width: 2.6rem;
+	height: 1px;
+	background: var(--hm-teal);
+	content: '';
+}
+
+.hm-folio .thought-leaf__content {
+	display: flow-root;
+	width: 100%;
+	min-width: 0;
+}
+
+/* Keep the ordinary `.prose` hook for reading-tool compatibility without
+   inheriting Tailwind Typography's single-column measure for the spread deck. */
+.hm-folio .hm-reading {
+	width: 100%;
+	max-width: none;
+}
+
+.hm-folio .thought-leaf__meta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+	margin: -0.25rem 0 1.25rem;
+	padding-bottom: 0.4rem;
+	border-bottom: 1px solid var(--hm-rule-soft);
+	color: var(--hm-muted);
+	font-family: var(--hm-label);
+	font-size: 13px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.08em;
+	line-height: 1.2;
+	opacity: 1;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-reading :where(h2, h3, p, ul, ol, blockquote, figure, hr) {
+	max-width: 52ch;
+	margin-inline: 0;
+}
+
+.hm-folio .hm-reading h2 {
+	margin: 0 0 clamp(1.5rem, 4vw, 2.5rem);
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: clamp(2.2rem, 11cqi, 3.2rem);
+	font-weight: 720;
+	letter-spacing: -0.035em;
+	line-height: 0.98;
+	text-wrap: balance;
+	scroll-margin-top: 1rem;
+}
+
+.hm-folio .hm-reading h2 a {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration-line: none;
+}
+
+.hm-folio #which-technologies-systems-methods-and-discoveries-make-this-possible {
+	font-size: clamp(2rem, 8.5cqi, 2.8rem);
+}
+
+.hm-folio .hm-reading p,
+.hm-folio .hm-reading li {
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: 17px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.62;
+	text-align: left;
+	text-wrap: pretty;
+}
+
+.hm-folio .hm-reading p {
+	margin-block: 0 1.25em;
+}
+
+.hm-folio .hm-reading p:first-of-type {
+	font-size: 19px;
+	line-height: 1.55;
+}
+
+.hm-folio .hm-reading strong {
+	font-weight: 700;
+}
+
+.hm-folio .hm-reading em {
+	font-style: italic;
+	font-weight: 400;
+}
+
+.hm-folio .hm-reading ul,
+.hm-folio .hm-reading ol {
+	padding-left: 1.25em;
+}
+
+.hm-folio .hm-reading li::marker {
+	color: var(--hm-teal-dark);
+	font-family: var(--hm-mono);
+	font-size: 0.8em;
+}
+
+.hm-folio .hm-reading blockquote {
+	margin-block: 2rem;
+	padding: 1rem 0 1rem 1.25rem;
+	border-left: 4px solid var(--hm-warning);
+	font-size: clamp(1.75rem, 5cqi, 3rem);
+	font-style: italic;
+	font-weight: 400;
+	line-height: 1.08;
+}
+
+.hm-folio .hm-reading hr {
+	margin-block: 2.5rem;
+	border: 0;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio .thought-art {
+	position: relative;
+	width: 100%;
+	max-width: none;
+	margin: clamp(1.6rem, 4vw, 2.75rem) 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	aspect-ratio: auto;
+	overflow: visible;
+}
+
+.hm-folio .thought-art::before {
+	position: absolute;
+	inset: -0.4rem auto auto -0.4rem;
+	z-index: 1;
+	width: 2.5rem;
+	height: 2px;
+	background: var(--hm-warning);
+	content: '';
+}
+
+.hm-folio .thought-art picture {
+	display: block;
+	width: 100%;
+	background: var(--hm-paper-cool);
+}
+
+.hm-folio .thought-art img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 0;
+	background: var(--hm-paper-cool);
+	filter: saturate(0.77) contrast(1.04) sepia(0.06);
+}
+
+.hm-folio .thought-art figcaption {
+	position: static;
+	inset: auto;
+	max-width: none;
+	min-height: 2.75rem;
+	margin: 0;
+	padding: 0.65rem 0.15rem 0;
+	border-top: 1px solid var(--hm-ink);
+	background: transparent;
+	color: var(--hm-muted);
+	font-family: var(--hm-serif);
+	font-size: 15px;
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 1.45;
+	text-transform: none;
+}
+
+.hm-folio .hm-cover {
+	padding-top: clamp(1rem, 2.5vw, 2.25rem);
+	background: var(--hm-paper);
+}
+
+.hm-folio .hm-cover .thought-spread__rail {
+	margin-bottom: 0;
+}
+
+.hm-folio .hm-cover .thought-leaf {
+	padding-top: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.hm-folio .hm-cover-lead {
+	background:
+		linear-gradient(145deg, transparent 0 62%, rgb(77 113 109 / 8%) 62% 100%), var(--hm-paper);
+}
+
+.hm-folio .hm-cover-strap,
+.hm-folio .hm-revision,
+.hm-folio .hm-cover-meta {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.5rem 1rem;
+	font-family: var(--hm-label);
+	font-size: 13px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.08em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-cover-strap {
+	padding-bottom: 0.6rem;
+	border-bottom: 2px solid var(--hm-ink);
+}
+
+.hm-folio .hm-cover .hm-cover-title {
+	margin: clamp(1.1rem, 3vw, 2rem) 0;
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: clamp(2.05rem, 10.8cqi, 4rem);
+	font-weight: 780;
+	letter-spacing: -0.04em;
+	line-height: 0.9;
+	text-transform: uppercase;
+	text-wrap: balance;
+}
+
+.hm-folio .hm-cover .hm-cover-title span {
+	display: block;
+}
+
+.hm-folio .hm-cover .hm-cover-title span:nth-child(3) {
+	color: var(--hm-teal-dark);
+}
+
+.hm-folio .hm-print-route {
+	display: none;
+}
+
+.hm-folio .hm-cover-meta {
+	justify-content: flex-start;
+	margin-block: 1.25rem;
+	padding-block: 0.65rem;
+	border-block: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-cover-meta p {
+	display: flex;
+	gap: 0.35rem;
+	margin: 0;
+}
+
+.hm-folio .hm-cover-meta p span {
+	color: var(--hm-muted);
+}
+
+.hm-folio .hm-cover-meta p .hm-date-pair {
+	display: inline-flex;
+	gap: 0.35rem;
+}
+
+.hm-folio .hm-cover-meta p .hm-date-pair time {
+	color: var(--hm-ink);
+}
+
+.hm-folio .hm-cover-deck {
+	max-width: 32ch;
+	margin: 1.4rem 0;
+	font-family: var(--hm-serif);
+	font-size: clamp(1.25rem, 4cqi, 1.7rem);
+	font-weight: 500;
+	line-height: 1.3;
+	text-wrap: pretty;
+}
+
+.hm-folio .hm-cover .thought-art {
+	margin-bottom: 0;
+}
+
+.hm-folio .hm-cover .thought-art img {
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+}
+
+.hm-folio .hm-cover-index {
+	background-color: var(--hm-paper-cool);
+	background-image: linear-gradient(152deg, transparent 0 64%, rgb(21 24 22 / 7%) 64% 100%);
+}
+
+.hm-folio .hm-revision {
+	padding-bottom: 0.65rem;
+	border-bottom: 3px solid var(--hm-ink);
+}
+
+.hm-folio .hm-label,
+.hm-folio .hm-kicker,
+.hm-folio .hm-module-title {
+	margin: 0;
+	font-family: var(--hm-label);
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-contents {
+	margin-top: clamp(2rem, 7vw, 5rem);
+}
+
+.hm-folio .hm-contents ol,
+.hm-folio .hm-tag-index ul,
+.hm-folio .hm-key-terms ol,
+.hm-folio .hm-faq-list,
+.hm-folio .hm-timeline ol,
+.hm-folio .hm-threats ol,
+.hm-folio .hm-method-rings ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-contents ol {
+	margin-top: 0.8rem;
+	border-top: 2px solid var(--hm-ink);
+}
+
+.hm-folio .hm-contents li {
+	border-bottom: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-contents a {
+	display: grid;
+	grid-template-columns: 2.5rem minmax(0, 1fr);
+	align-items: baseline;
+	min-height: 44px;
+	padding: 0.55rem 0;
+	text-decoration: none;
+}
+
+.hm-folio .hm-contents a span {
+	color: var(--hm-warning-text);
+	font-family: var(--hm-mono);
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.hm-folio .hm-contents a strong {
+	font-family: var(--hm-serif);
+	font-size: 17px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.hm-folio .hm-tag-index {
+	margin-top: 2rem;
+}
+
+.hm-folio .hm-tag-index ul {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin-top: 0.6rem;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-tag-index li {
+	padding: 0.45rem 0;
+	border-bottom: 1px solid var(--hm-rule-soft);
+	font-family: var(--hm-label);
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-cover-thesis {
+	margin: clamp(2rem, 7vw, 5rem) 0 0;
+	padding: clamp(1.25rem, 4vw, 2.5rem);
+	border: 0;
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio .hm-cover-thesis span {
+	display: block;
+	margin-bottom: 2.5rem;
+	color: #b6cbc6;
+	font-family: var(--hm-label);
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-cover-thesis p {
+	max-width: 12ch;
+	margin: 0;
+	font-size: clamp(2rem, 8cqi, 4rem);
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: -0.025em;
+	line-height: 1;
+}
+
+.hm-folio .hm-front-controls {
+	margin-top: 2rem;
+	padding-top: 0.75rem;
+	border-top: 2px solid var(--hm-ink);
+}
+
+.hm-folio .article-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.45rem;
+	margin: 0 0 0.75rem;
+}
+
+.hm-folio .article-actions button,
+.hm-folio .hm-front-controls > a,
+.hm-folio .hm-consulting nav a,
+.hm-folio .hm-topics a {
+	display: inline-flex;
+	min-width: 44px;
+	min-height: 44px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--hm-ink);
+	border-radius: 0;
+	background: transparent;
+	color: var(--hm-ink);
+	font-family: var(--hm-ui);
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.2;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+.hm-folio .article-actions button {
+	padding: 0.6rem 0.8rem;
+}
+
+.hm-folio .article-actions button:hover,
+.hm-folio .hm-front-controls > a:hover,
+.hm-folio .hm-consulting nav a:hover,
+.hm-folio .hm-topics a:hover {
+	border-color: var(--hm-warning);
+	background: var(--hm-ink);
+	color: var(--hm-paper);
+}
+
+.hm-folio .hm-front-controls > a {
+	justify-content: space-between;
+	width: 100%;
+	padding: 0.65rem 0.8rem;
+}
+
+.hm-folio .hm-reader-brief {
+	background: var(--hm-paper-cool);
+}
+
+.hm-folio .hm-reader-brief .thought-leaf {
+	background: #eeebe3;
+}
+
+.hm-folio .hm-brief-faq {
+	background: var(--hm-paper);
+}
+
+.hm-folio .hm-kicker {
+	padding-bottom: 0.55rem;
+	border-bottom: 3px solid var(--hm-teal);
+	color: var(--hm-teal-dark);
+}
+
+.hm-folio .hm-quick-answer {
+	max-width: 35ch;
+	margin: 1.5rem 0 2.5rem;
+	color: var(--hm-ink);
+	font-size: clamp(1.35rem, 5cqi, 2rem);
+	font-weight: 500;
+	line-height: 1.3;
+}
+
+.hm-folio .hm-key-terms ol,
+.hm-folio .hm-faq-list {
+	margin-top: 0.75rem;
+	border-top: 2px solid var(--hm-ink);
+}
+
+.hm-folio .hm-key-terms li {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr);
+	gap: 0.5rem;
+	padding: 0.55rem 0;
+	border-bottom: 1px solid var(--hm-rule-soft);
+}
+
+.hm-folio .hm-key-terms li span,
+.hm-folio .hm-faq-list li > span {
+	color: var(--hm-warning-text);
+	font-family: var(--hm-mono);
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.hm-folio .hm-key-terms li strong {
+	font-family: var(--hm-label);
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	line-height: 1.25;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-faq-list li {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr);
+	gap: 0.35rem 0.5rem;
+	padding: 0.85rem 0;
+	border-bottom: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-faq-list li > strong {
+	font-size: 18px;
+	font-weight: 650;
+	line-height: 1.25;
+}
+
+.hm-folio .hm-faq-list li p {
+	grid-column: 2;
+	margin: 0;
+	font-size: 17px;
+	line-height: 1.55;
+}
+
+.hm-folio .hm-listen {
+	margin-top: 2rem;
+	padding: 1rem;
+	border: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-listen button {
+	min-width: 44px;
+	min-height: 44px;
+	font-family: var(--hm-ui);
+	font-size: 16px;
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] * {
+	font-family: var(--hm-ui);
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'],
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] {
+	border-color: var(--hm-coal);
+	background-color: var(--hm-coal);
+	background-image: linear-gradient(143deg, transparent 0 72%, rgb(77 113 109 / 18%) 72% 100%);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'] .thought-leaf__meta,
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] .thought-leaf__meta {
+	border-color: rgb(243 240 231 / 28%);
+	color: #c8cec9;
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'] p,
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] p {
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'] strong,
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] strong {
+	color: white;
+}
+
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] figcaption {
+	border-color: rgb(243 240 231 / 42%);
+	color: #b6cbc6;
+}
+
+.hm-folio #who-builders-frontline .thought-leaf {
+	background-image: linear-gradient(
+		90deg,
+		transparent 0 12%,
+		rgb(77 113 109 / 7%) 12% 12.4%,
+		transparent 12.4%
+	);
+}
+
+.hm-folio #who-builders-frontline .thought-leaf[data-side='right'] p {
+	padding-left: 1rem;
+	border-left: 2px solid var(--hm-teal);
+}
+
+.hm-folio #who-power-exposure .thought-leaf[data-side='right'] {
+	background: var(--hm-paper-cool);
+}
+
+.hm-folio #who-power-exposure .thought-art img {
+	max-height: 42rem;
+	object-fit: cover;
+}
+
+.hm-folio #what-map-territory .thought-art img,
+.hm-folio #when-usable-ai .thought-art img,
+.hm-folio #bigger-unfinished-systems .thought-art img {
+	object-fit: contain;
+}
+
+.hm-folio #what-map-territory .thought-leaf[data-side='right'] p {
+	padding-block: 0.9rem;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'] {
+	background-image: linear-gradient(90deg, var(--hm-teal-dark) 0 0.55rem, transparent 0.55rem);
+}
+
+.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'] .thought-leaf__content {
+	padding-left: 0.7rem;
+}
+
+.hm-folio #why-stakes-incentives .thought-leaf[data-side='left'] {
+	background: #e3e6df;
+}
+
+.hm-folio #why-stakes-incentives .thought-art {
+	margin-top: 2rem;
+}
+
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='left'] {
+	background-image:
+		linear-gradient(155deg, transparent 0 74%, rgb(201 84 54 / 8%) 74% 100%),
+		linear-gradient(90deg, transparent 0 88%, rgb(21 24 22 / 5%) 88% 100%);
+}
+
+.hm-folio #how-writers-method .thought-leaf[data-side='right'] {
+	background: #ebe8df;
+}
+
+.hm-folio #technology-stack .thought-leaf {
+	background: #eceae2;
+}
+
+.hm-folio #technology-stack .thought-leaf p:not(:first-of-type) {
+	padding: 1rem 0;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio #technology-stack .thought-leaf p strong:first-child {
+	display: inline;
+	margin-bottom: 0;
+	color: var(--hm-teal-dark);
+	font-family: var(--hm-label);
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:last-of-type {
+	margin-top: clamp(2rem, 6vw, 4rem);
+	padding: clamp(1.5rem, 4vw, 2.5rem);
+	border: 0;
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+	font-size: clamp(1.2rem, 3cqi, 1.55rem);
+	line-height: 1.48;
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:last-of-type strong:first-child {
+	color: #b7d1ca;
+	font-size: 19px;
+}
+
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] {
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] p,
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] strong {
+	color: inherit;
+}
+
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] p:last-of-type {
+	max-width: 18ch;
+	margin-top: clamp(2.5rem, 8cqi, 6rem);
+	padding-top: 1rem;
+	border-top: 4px solid var(--hm-warning);
+	font-size: clamp(2rem, 7cqi, 3.8rem);
+	font-style: italic;
+	line-height: 1.03;
+}
+
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='right'] {
+	background-image: linear-gradient(150deg, transparent 0 76%, rgb(77 113 109 / 12%) 76% 100%);
+}
+
+.hm-folio
+	#bigger-judgment-invitation
+	.thought-leaf[data-side='right']
+	> .thought-leaf__content
+	> p:last-of-type,
+.hm-folio
+	#bigger-judgment-invitation
+	.thought-leaf[data-side='right']
+	> .thought-leaf__content
+	> ul:last-child {
+	padding-top: 1rem;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-live-module {
+	width: 100%;
+	max-width: 52ch;
+	margin: clamp(1.75rem, 5vw, 3rem) 0;
+	padding: 1rem;
+	border: 1px solid var(--hm-rule);
+	background: rgb(229 227 220 / 70%);
+}
+
+.hm-folio .hm-module-title {
+	margin-bottom: 1rem;
+	padding-bottom: 0.45rem;
+	border-bottom: 2px solid var(--hm-ink);
+}
+
+.hm-folio .hm-reading .hm-live-module > p.hm-module-title {
+	font-family: var(--hm-label);
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-timeline ol {
+	position: relative;
+	display: grid;
+	gap: 0.75rem;
+}
+
+.hm-folio .hm-timeline ol::before {
+	position: absolute;
+	top: 0.25rem;
+	bottom: 0.25rem;
+	left: 2.15rem;
+	width: 1px;
+	background: var(--hm-teal);
+	content: '';
+}
+
+.hm-folio .hm-timeline li {
+	position: relative;
+	display: grid;
+	grid-template-columns: 4.25rem minmax(0, 1fr);
+	gap: 0.65rem;
+	align-items: baseline;
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-timeline li strong {
+	z-index: 1;
+	padding-block: 0.2rem;
+	background: var(--hm-paper-cool);
+	color: var(--hm-teal-dark);
+	font-family: var(--hm-mono);
+	font-size: 13px;
+	font-weight: 500;
+}
+
+.hm-folio .hm-alignment table {
+	width: 100%;
+	border-collapse: collapse;
+	border-top: 2px solid var(--hm-ink);
+}
+
+.hm-folio .hm-alignment :where(th, td) {
+	padding: 0.6rem 0;
+	border-bottom: 1px solid var(--hm-rule);
+	font-size: 15px;
+	line-height: 1.3;
+	text-align: left;
+	vertical-align: top;
+}
+
+.hm-folio .hm-alignment :where(th, td) + :where(th, td) {
+	padding-left: 0.75rem;
+}
+
+.hm-folio .hm-alignment .hm-ledger-head {
+	font-family: var(--hm-label);
+	font-size: 13px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-alignment .hm-ledger-consequence :where(th, td) {
+	border-bottom: 3px solid var(--hm-warning);
+}
+
+.hm-folio .hm-threats {
+	border-color: rgb(243 240 231 / 38%);
+	background: rgb(243 240 231 / 6%);
+}
+
+.hm-folio .hm-corruption-evidence {
+	margin-top: clamp(4rem, 9cqi, 7rem);
+	padding: 1.25rem 0 2rem;
+	border-width: 3px 0 1px;
+	border-color: var(--hm-ink);
+	background: transparent;
+}
+
+.hm-folio .hm-corruption-evidence blockquote {
+	max-width: 17ch;
+	margin: 1.5rem 0 2rem;
+	padding: 0.25rem 0 0.25rem 1rem;
+	border-left: 4px solid var(--hm-warning);
+	color: var(--hm-teal-dark);
+	font-size: clamp(2rem, 5cqi, 3rem);
+	font-style: italic;
+	line-height: 1.04;
+}
+
+.hm-folio .hm-corruption-evidence ol {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid var(--hm-rule);
+	list-style: none;
+}
+
+.hm-folio .hm-corruption-evidence li {
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.5rem;
+	padding: 0.8rem 0.5rem 0.8rem 0;
+	border-bottom: 1px solid var(--hm-rule-soft);
+	font-family: var(--hm-label);
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.045em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-corruption-evidence li:nth-child(even) {
+	padding-left: 0.75rem;
+	border-left: 1px solid var(--hm-rule-soft);
+}
+
+.hm-folio .hm-corruption-evidence li span {
+	color: var(--hm-warning-text);
+	font-family: var(--hm-mono);
+	font-size: 12px;
+}
+
+.hm-folio .hm-threats .hm-module-title {
+	border-color: var(--hm-coal-copy);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio .hm-threats li {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr);
+	gap: 0.15rem 0.5rem;
+	padding: 0.65rem 0;
+	border-bottom: 1px solid rgb(243 240 231 / 26%);
+	color: var(--hm-coal-copy);
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+.hm-folio .hm-threats li > span {
+	grid-row: 1 / span 2;
+	color: #ef8d70;
+	font-family: var(--hm-mono);
+	font-size: 13px;
+}
+
+.hm-folio .hm-threats li small {
+	font-size: 15px;
+}
+
+.hm-folio .hm-threats .hm-threat-consequence {
+	border-bottom: 3px solid var(--hm-warning);
+}
+
+.hm-folio .hm-method-rings {
+	background: transparent;
+}
+
+.hm-folio .hm-method-rings ol {
+	display: grid;
+	place-items: center;
+	gap: 0;
+	padding-block: 0.75rem;
+}
+
+.hm-folio .hm-method-rings li {
+	display: flex;
+	width: min(100%, calc(10.5rem + var(--hm-ring, 0) * 1.8rem));
+	min-height: 3.2rem;
+	align-items: center;
+	gap: 0.6rem;
+	justify-content: center;
+	margin: -1px 0 0;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--hm-teal);
+	border-radius: 50%;
+	font-size: 15px;
+	line-height: 1.2;
+}
+
+.hm-folio .hm-method-rings li:nth-child(1) {
+	--hm-ring: 3;
+}
+
+.hm-folio .hm-method-rings li:nth-child(2) {
+	--hm-ring: 2;
+}
+
+.hm-folio .hm-method-rings li:nth-child(3) {
+	--hm-ring: 1;
+}
+
+.hm-folio .hm-method-rings li span {
+	color: var(--hm-warning-text);
+	font-family: var(--hm-mono);
+	font-size: 12px;
+}
+
+.hm-folio .hm-endpaper {
+	background: #e5e3dc;
+}
+
+.hm-folio .hm-endpaper .thought-leaf {
+	background: var(--hm-paper);
+}
+
+.hm-folio .hm-consulting {
+	margin-bottom: 2.5rem;
+	padding: 1.25rem 0;
+	border-block: 3px solid var(--hm-ink);
+}
+
+.hm-folio .hm-consulting h3,
+.hm-folio .hm-related h3 {
+	margin: 0.65rem 0 1rem;
+	font-family: var(--hm-serif);
+	font-size: clamp(1.8rem, 6cqi, 3rem);
+	font-weight: 700;
+	letter-spacing: -0.025em;
+	line-height: 1.02;
+}
+
+.hm-folio .hm-consulting p:not(.hm-label),
+.hm-folio .hm-endpaper-deck {
+	font-size: 18px;
+	line-height: 1.55;
+}
+
+.hm-folio .hm-consulting nav {
+	display: grid;
+	gap: 0.5rem;
+	margin-top: 1.25rem;
+}
+
+.hm-folio .hm-consulting nav a {
+	justify-content: flex-start;
+	padding: 0.65rem 0.8rem;
+}
+
+.hm-folio .hm-endpaper-deck {
+	max-width: 36ch;
+	margin: 1rem 0 2rem;
+}
+
+.hm-folio .hm-topics {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-block: 2rem;
+}
+
+.hm-folio .hm-topics .hm-label {
+	flex-basis: 100%;
+}
+
+.hm-folio .hm-topics a {
+	padding: 0.6rem 0.75rem;
+}
+
+.hm-folio .hm-navigation {
+	margin-block: 2rem;
+	padding-block: 1rem;
+	border-block: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-navigation :where(a, button) {
+	min-height: 44px;
+	border-radius: 0;
+	font-family: var(--hm-ui);
+	font-size: 16px;
+}
+
+.hm-folio .hm-related {
+	margin-top: 2.5rem;
+}
+
+.hm-folio .hm-related-grid {
+	display: grid;
+	gap: 0.75rem;
+	margin-top: 1rem;
+}
+
+.hm-folio .hm-related-grid > a {
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.2rem 0.65rem;
+	min-height: 44px;
+	padding: 0.75rem 0;
+	border-top: 1px solid var(--hm-rule);
+	text-decoration: none;
+}
+
+.hm-folio .hm-related-grid img {
+	grid-column: 1 / -1;
+	width: 100%;
+	height: auto;
+	margin-bottom: 0.5rem;
+	filter: saturate(0.7);
+}
+
+.hm-folio .hm-related-grid > a > span {
+	grid-row: span 3;
+	color: var(--hm-warning-text);
+	font-family: var(--hm-mono);
+	font-size: 13px;
+}
+
+.hm-folio .hm-related-grid small,
+.hm-folio .hm-related-grid em {
+	font-family: var(--hm-label);
+	font-size: 13px;
+	font-style: normal;
+	letter-spacing: 0.05em;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-related-grid strong {
+	font-family: var(--hm-serif);
+	font-size: 18px;
+	font-weight: 650;
+	line-height: 1.2;
+}
+
+.hm-folio .hm-word-cloud {
+	margin-block: 2.5rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-word-cloud h2 {
+	font-family: var(--hm-label);
+	font-size: 14px;
+	font-weight: 600;
+	letter-spacing: 0.09em;
+	line-height: 1.2;
+}
+
+/* The application boots in Night mode. This folio is deliberately a light
+   printed record, so shared components must not inherit their dark utilities. */
+.hm-folio .article-actions [role='status'] {
+	color: var(--hm-muted);
+}
+
+.hm-folio .hm-listen > section[aria-label='Audio article'] {
+	border-color: var(--hm-rule);
+	background: rgb(255 255 255 / 58%);
+	color: var(--hm-ink);
+	box-shadow: none;
+	backdrop-filter: none;
+}
+
+.hm-folio .hm-listen > section[aria-label='Audio article'] > button {
+	border-radius: 0;
+	background: var(--hm-ink);
+	color: var(--hm-paper);
+	box-shadow: none;
+}
+
+.hm-folio .hm-listen > section[aria-label='Audio article'] > button:hover {
+	background: var(--hm-teal-dark);
+	color: white;
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] > div button {
+	background: transparent;
+	color: var(--hm-warning-text);
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] > div button:hover {
+	background: rgb(162 60 39 / 10%);
+	color: var(--hm-warning-text);
+}
+
+.hm-folio .hm-listen [role='progressbar'] {
+	background: rgb(77 113 109 / 22%);
+}
+
+.hm-folio .hm-listen [role='progressbar'] > div {
+	background: var(--hm-teal-dark);
+}
+
+.hm-folio #about-the-author {
+	border-color: var(--hm-rule);
+	color: var(--hm-ink);
+}
+
+.hm-folio #about-the-author > div > [aria-hidden='true'] {
+	border-color: var(--hm-rule);
+	background: var(--hm-paper-cool);
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+}
+
+.hm-folio #about-the-author h2,
+.hm-folio #about-the-author a {
+	color: var(--hm-ink);
+}
+
+.hm-folio #about-the-author h2 {
+	font-family: var(--hm-serif);
+}
+
+.hm-folio #about-the-author p {
+	color: var(--hm-muted);
+	font-size: 15px;
+	line-height: 1.55;
+}
+
+.hm-folio .hm-navigation .post-navigation {
+	border-color: var(--hm-rule);
+}
+
+.hm-folio .hm-navigation .post-navigation__item {
+	border-color: var(--hm-rule);
+	background: rgb(255 255 255 / 45%);
+	color: var(--hm-ink);
+	box-shadow: none;
+}
+
+.hm-folio .hm-navigation .post-navigation .post-navigation__item .post-navigation__title {
+	color: var(--hm-ink);
+}
+
+.hm-folio .hm-navigation .post-navigation .post-navigation__item .post-navigation__eyebrow,
+.hm-folio .hm-navigation .post-navigation .post-navigation__item .post-navigation__meta {
+	color: var(--hm-muted);
+}
+
+.hm-folio .hm-navigation .post-navigation .post-navigation__item:hover .post-navigation__title {
+	color: var(--hm-ink);
+}
+
+.hm-folio .hm-navigation .post-navigation .post-navigation__item:focus-visible {
+	outline: 3px solid var(--hm-warning-text) !important;
+	outline-offset: 3px;
+}
+
+html.dark .hm-folio .hm-word-cloud h2,
+html[data-theme='night'] .hm-folio .hm-word-cloud h2 {
+	color: var(--hm-ink);
+}
+
+html.dark .hm-folio .hm-word-cloud figure,
+html[data-theme='night'] .hm-folio .hm-word-cloud figure {
+	border-color: var(--hm-rule);
+	box-shadow: none;
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] :where(p, span),
+.hm-folio .hm-colophon :where(p, small, span) {
+	color: var(--hm-muted);
+}
+
+@media (min-width: 48rem) {
+	.hm-folio {
+		font-size: 18px;
+		line-height: 1.62;
+	}
+
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li {
+		font-size: 18px;
+		line-height: 1.62;
+	}
+
+	.hm-folio .hm-reading p:first-of-type {
+		font-size: 21px;
+	}
+
+	.hm-folio .thought-leaf {
+		padding-inline: clamp(1.5rem, 4.5vw, 4.5rem);
+	}
+
+	.hm-folio .hm-related-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 48rem) and (max-width: 59.99rem) and (orientation: landscape) {
+	.hm-folio .hm-cover .hm-cover-title {
+		font-size: clamp(2.25rem, 5.5cqi, 2.875rem);
+	}
+
+	.hm-folio .hm-cover .hm-cover-title span {
+		white-space: nowrap;
+	}
+}
+
+@media (min-width: 60rem) and (orientation: landscape) {
+	.hm-folio .thought-spread__leaves {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(1.5rem, 2.2vw, 2.25rem);
+	}
+
+	.hm-folio .thought-leaf + .thought-leaf {
+		border-top: 1px solid var(--hm-rule);
+	}
+
+	.hm-folio .thought-leaf[data-side='left'] {
+		padding-right: clamp(1.5rem, 3vw, 3.4rem);
+	}
+
+	.hm-folio .thought-leaf[data-side='right'] {
+		padding-left: clamp(1.5rem, 3vw, 3.4rem);
+	}
+
+	.hm-folio .thought-spread__leaves::before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		width: 1px;
+		transform: translateX(-50%);
+		background: var(--hm-rule);
+		content: '';
+	}
+
+	.hm-folio .hm-cover .hm-cover-title {
+		font-size: clamp(1.975rem, 8.55cqi, 3rem);
+		letter-spacing: -0.045em;
+	}
+
+	.hm-folio .hm-cover .hm-cover-title span {
+		white-space: nowrap;
+	}
+
+	.hm-folio .hm-reading h2 {
+		font-size: clamp(2.4rem, 3.7cqi, 3.75rem);
+	}
+
+	.hm-folio #which-technologies-systems-methods-and-discoveries-make-this-possible {
+		font-size: clamp(2rem, 3.1cqi, 3.15rem);
+	}
+
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li {
+		font-size: 18px;
+		line-height: 1.62;
+	}
+
+	.hm-folio .hm-cover-lead {
+		background:
+			linear-gradient(145deg, transparent 0 64%, rgb(77 113 109 / 12%) 64% 100%), var(--hm-paper);
+	}
+
+	.hm-folio .hm-cover-index {
+		background-image: linear-gradient(152deg, transparent 0 67%, rgb(21 24 22 / 9%) 67% 100%);
+	}
+
+	.hm-folio #who-power-exposure .thought-art {
+		width: min(80%, 29rem);
+		margin-left: auto;
+	}
+
+	.hm-folio #why-stakes-incentives .thought-art {
+		width: min(92%, 34rem);
+	}
+
+	.hm-folio #why-corruption-attack-surface .thought-art {
+		width: min(93%, 34rem);
+	}
+
+	.hm-folio #how-writers-method .thought-art {
+		width: min(82%, 32rem);
+		margin-left: auto;
+	}
+
+	.hm-folio .hm-brief-summary,
+	.hm-folio #who-power-exposure .thought-leaf[data-side='left'],
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'],
+	.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'],
+	.hm-folio #why-stakes-incentives .thought-leaf[data-side='right'],
+	.hm-folio #bigger-unfinished-systems .thought-leaf[data-side='right'] {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.hm-folio .hm-brief-summary > .thought-leaf__content,
+	.hm-folio #who-power-exposure .thought-leaf[data-side='left'] > .thought-leaf__content,
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'] > .thought-leaf__content,
+	.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'] > .thought-leaf__content,
+	.hm-folio #why-stakes-incentives .thought-leaf[data-side='right'] > .thought-leaf__content,
+	.hm-folio #bigger-unfinished-systems .thought-leaf[data-side='right'] > .thought-leaf__content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+
+	.hm-folio .hm-brief-summary .hm-key-terms {
+		margin-top: auto;
+	}
+
+	.hm-folio #who-power-exposure .thought-leaf[data-side='left'] > .thought-leaf__content,
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'] > .thought-leaf__content,
+	.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'] > .thought-leaf__content,
+	.hm-folio #bigger-unfinished-systems .thought-leaf[data-side='right'] > .thought-leaf__content {
+		justify-content: space-between;
+	}
+
+	.hm-folio #who-power-exposure .thought-leaf[data-side='left'] p {
+		margin-bottom: 0;
+		padding-block: clamp(0.75rem, 1.6vw, 1.4rem);
+		border-top: 1px solid var(--hm-rule-soft);
+	}
+
+	.hm-folio #who-power-exposure .thought-leaf[data-side='right'] .thought-art:first-child {
+		margin-top: 0.75rem;
+	}
+
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'] p,
+	.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'] p,
+	.hm-folio #bigger-unfinished-systems .thought-leaf[data-side='right'] p {
+		margin-bottom: 0;
+	}
+
+	.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'] p + p,
+	.hm-folio #bigger-unfinished-systems .thought-leaf[data-side='right'] p + p {
+		padding-top: clamp(1rem, 2vw, 1.75rem);
+		border-top: 1px solid var(--hm-rule-soft);
+	}
+
+	.hm-folio #why-stakes-incentives .thought-leaf[data-side='right'] p:last-child {
+		margin-top: auto;
+		margin-bottom: 0;
+		padding-top: clamp(1.25rem, 2.4vw, 2rem);
+		border-top: 1px solid var(--hm-rule);
+	}
+}
+
+@media (min-width: 80rem) and (orientation: landscape) {
+	.hm-folio .thought-spread {
+		padding-inline: clamp(2.5rem, 4vw, 4.5rem);
+	}
+
+	.hm-folio .thought-spread__leaves {
+		gap: clamp(2rem, 3vw, 3.5rem);
+	}
+
+	.hm-folio .hm-cover .hm-cover-title {
+		font-size: clamp(1.975rem, 8.55cqi, 3rem);
+	}
+
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li {
+		font-size: 18.5px;
+		line-height: 1.6;
+	}
+}
+
+@media (max-width: 24rem) {
+	.hm-folio .hm-corruption-evidence ol {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.hm-folio .hm-corruption-evidence li:nth-child(even) {
+		padding-left: 0;
+		border-left: 0;
+	}
+
+	.hm-folio .thought-spread,
+	.hm-folio .thought-leaf {
+		padding-inline: 1rem;
+	}
+
+	.hm-folio .hm-cover .hm-cover-title {
+		font-size: clamp(2rem, 10.2cqi, 2.5rem);
+	}
+
+	.hm-folio .hm-utility > span {
+		display: none;
+	}
+
+	.hm-folio .hm-tag-index ul {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.hm-folio .hm-contents a {
+		grid-template-columns: 2rem minmax(0, 1fr);
+	}
+
+	.hm-folio .article-actions {
+		align-items: stretch;
+	}
+
+	.hm-folio .article-actions button {
+		flex: 1 1 7rem;
+	}
+}
+
+@media (max-width: 26rem) {
+	.hm-folio .thought-spread__rail {
+		grid-template-columns: auto minmax(0, 1fr);
+	}
+
+	.hm-folio .thought-spread__rail span:first-child {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hm-folio,
+	.hm-folio *,
+	.hm-folio *::before,
+	.hm-folio *::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+@media (forced-colors: active) {
+	.hm-folio {
+		--hm-paper: Canvas;
+		--hm-paper-cool: Canvas;
+		--hm-ink: CanvasText;
+		--hm-coal: Canvas;
+		--hm-coal-copy: CanvasText;
+		--hm-teal: LinkText;
+		--hm-teal-dark: LinkText;
+		--hm-warning: Mark;
+		--hm-warning-text: LinkText;
+		--hm-rule: CanvasText;
+		--hm-rule-soft: GrayText;
+		--hm-muted: GrayText;
+		background: Canvas;
+	}
+
+	.hm-folio .thought-spread,
+	.hm-folio .thought-leaf,
+	.hm-folio .hm-cover-lead,
+	.hm-folio .hm-cover-index,
+	.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'],
+	.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'],
+	.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] {
+		background: Canvas;
+		color: CanvasText;
+		forced-color-adjust: auto;
+	}
+
+	.hm-folio a {
+		text-decoration-line: underline !important;
+	}
+
+	.hm-folio :where(a, button, [tabindex]):focus-visible {
+		outline: 3px solid Highlight !important;
+		outline-offset: 3px !important;
+		box-shadow: none !important;
+	}
+
+	.hm-folio .thought-art img {
+		filter: none;
+	}
+}
+
+@media print {
+	@page {
+		margin: 12mm;
+	}
+
+	.hm-folio {
+		--hm-paper: white;
+		--hm-paper-cool: white;
+		--hm-ink: black;
+		--hm-coal: white;
+		--hm-coal-copy: black;
+		--hm-teal: black;
+		--hm-teal-dark: black;
+		--hm-warning: black;
+		--hm-warning-text: black;
+		--hm-rule: rgb(0 0 0 / 55%);
+		--hm-rule-soft: rgb(0 0 0 / 25%);
+		--hm-muted: #333;
+		width: 100%;
+		background: white;
+		color: black;
+		font-size: 11pt;
+		line-height: 1.45;
+	}
+
+	.hm-folio .reading-progress-bar,
+	.hm-folio .hm-skip-link,
+	.hm-folio .hm-utility,
+	.hm-folio .hm-reader-brief,
+	.hm-folio .hm-endpaper,
+	.hm-folio .hm-front-controls,
+	.hm-folio .article-actions,
+	.hm-folio .hm-live-module,
+	.hm-folio .thought-spread__rail,
+	.hm-folio .thought-leaf__meta {
+		display: none !important;
+	}
+
+	.hm-folio .hm-book,
+	.hm-folio .thought-spread,
+	.hm-folio .thought-spread__leaves,
+	.hm-folio .thought-leaf,
+	.hm-folio .thought-leaf__content {
+		display: block;
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: white !important;
+		background-image: none !important;
+		color: black !important;
+		box-shadow: none;
+	}
+
+	.hm-folio .thought-spread {
+		padding-bottom: 6mm;
+		break-after: auto;
+		page-break-after: auto;
+	}
+
+	.hm-folio .hm-cover {
+		break-after: page;
+		page-break-after: always;
+	}
+
+	/* The AI-plumbing folio's print stylesheet is present in the shared article
+	   bundle and gives every `.thought-spread` a hard page break. Human Margin is
+	   a linear print article, so its reading leaves must fragment normally. */
+	.hm-folio .hm-reading .thought-leaf,
+	.hm-folio .hm-reading .thought-leaf__content {
+		display: block !important;
+		min-height: 0 !important;
+		flex: none !important;
+	}
+
+	.hm-folio .thought-leaf + .thought-leaf {
+		padding-top: 0;
+	}
+
+	.hm-folio .thought-leaf::before,
+	.hm-folio .thought-leaf::after,
+	.hm-folio .thought-spread__leaves::before {
+		display: none;
+	}
+
+	.hm-folio .hm-cover .thought-leaf[data-side='right'] > .thought-leaf__content {
+		display: none;
+	}
+
+	.hm-folio .hm-cover .hm-cover-title {
+		margin: 0 0 5mm;
+		font-size: 32pt;
+		line-height: 0.98;
+	}
+
+	.hm-folio .hm-cover-meta {
+		margin: 3mm 0;
+		padding: 2mm 0;
+	}
+
+	.hm-folio .hm-print-route {
+		display: block;
+		max-width: none;
+		margin: 0 0 4mm;
+		font-family: var(--hm-ui);
+		font-size: 8.5pt;
+		line-height: 1.35;
+		overflow-wrap: anywhere;
+	}
+
+	.hm-folio .hm-print-route a[href]::after {
+		content: '';
+	}
+
+	.hm-folio .hm-cover-deck {
+		max-width: 42ch;
+		font-size: 15pt;
+	}
+
+	.hm-folio .hm-reading h2 {
+		max-width: none;
+		margin: 6mm 0 3mm;
+		font-size: 23pt;
+		line-height: 1.05;
+		break-after: avoid-page;
+		page-break-after: avoid;
+	}
+
+	.hm-folio #which-technologies-systems-methods-and-discoveries-make-this-possible {
+		font-size: 20pt;
+	}
+
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li,
+	.hm-folio .hm-reading p:first-of-type {
+		max-width: none;
+		margin-block: 0 3.5mm;
+		color: black !important;
+		font-size: 11pt !important;
+		line-height: 1.45 !important;
+		orphans: 3;
+		widows: 3;
+	}
+
+	.hm-folio .thought-art {
+		max-width: 155mm;
+		margin: 5mm 0;
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.hm-folio .thought-art::before {
+		display: none;
+	}
+
+	.hm-folio .thought-art img {
+		max-height: 84mm;
+		object-fit: contain !important;
+		filter: grayscale(1) contrast(1.05);
+	}
+
+	.hm-folio .thought-art figcaption {
+		min-height: 0;
+		font-size: 10.5pt;
+		line-height: 1.45;
+	}
+
+	.hm-folio a[href]::after {
+		color: #333;
+		font-family: var(--hm-ui);
+		font-size: 8pt;
+		content: ' (' attr(href) ')';
+	}
+
+	.hm-folio .hm-cover-meta a[href]::after {
+		content: '';
+	}
+}

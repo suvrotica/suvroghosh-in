@@ -21,7 +21,10 @@
 
 		image.addEventListener('error', hideMissingImage);
 
-		if (image.complete && image.naturalWidth === 0) {
+		// A native lazy image may report `complete` before the browser has selected a
+		// current source. Treat only a completed, selected resource as a cached error;
+		// otherwise an off-screen word cloud disappears during hydration.
+		if (image.currentSrc && image.complete && image.naturalWidth === 0) {
 			hideMissingImage();
 		}
 

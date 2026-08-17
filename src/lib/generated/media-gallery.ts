@@ -4220,6 +4220,76 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1003
 		},
 		{
+			"name": "thought-folios/healthcare-human-margin/adversarial-clinical-film.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/adversarial-clinical-film.jpg",
+			"bytes": 115742,
+			"width": 1536,
+			"height": 1024
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/ai-convergence.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/ai-convergence.jpg",
+			"bytes": 133648,
+			"width": 1600,
+			"height": 900
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/corridor-network-cabinet.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/corridor-network-cabinet.jpg",
+			"bytes": 159326,
+			"width": 1440,
+			"height": 1080
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/cover-service-panel.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/cover-service-panel.jpg",
+			"bytes": 122054,
+			"width": 1536,
+			"height": 1024
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/genetics-workbench.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/genetics-workbench.jpg",
+			"bytes": 127293,
+			"width": 1440,
+			"height": 1080
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/map-territory-drift.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/map-territory-drift.jpg",
+			"bytes": 88282,
+			"width": 1500,
+			"height": 750
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/method-tea-notebook.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/method-tea-notebook.jpg",
+			"bytes": 134992,
+			"width": 1440,
+			"height": 1080
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/not-there-yet.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/not-there-yet.jpg",
+			"bytes": 85224,
+			"width": 1600,
+			"height": 800
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/rural-image-transfer.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/rural-image-transfer.jpg",
+			"bytes": 139263,
+			"width": 1440,
+			"height": 1080
+		},
+		{
+			"name": "thought-folios/healthcare-human-margin/stakeholders-layered.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/stakeholders-layered.jpg",
+			"bytes": 118167,
+			"width": 1000,
+			"height": 1250
+		},
+		{
 			"name": "twerky-vishnu-from-vapor.jpg",
 			"src": "/images/twerky-vishnu-from-vapor.jpg",
 			"bytes": 196912,
@@ -7274,6 +7344,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 150928,
 			"width": 895,
 			"height": 1280
+		},
+		{
+			"name": "social-human-margin.jpg",
+			"src": "/thumbnail/social-human-margin.jpg",
+			"bytes": 50963,
+			"width": 1200,
+			"height": 630
 		}
 	]
 };

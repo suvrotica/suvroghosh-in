@@ -12,6 +12,7 @@
 	import { onMount } from 'svelte';
 	import Header from '$lib/components/layout/Header.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
+	import { isRawThoughtLayout } from '$lib/content/raw-thought-layouts.js';
 	import RouteAtmosphere from '$lib/components/motion/RouteAtmosphere.svelte';
 	import { normaliseMotionPreference, resolveMotion } from '$lib/motion/preferences';
 	import { resolveRouteMotion, shouldUseViewTransition } from '$lib/motion/route-biomes';
@@ -30,7 +31,7 @@
 		if (data == null || typeof data !== 'object') return undefined;
 
 		const metadata = (data as PageDataShellContext).metadata;
-		return typeof metadata?.rawThoughtLayout === 'string' ? metadata.rawThoughtLayout : undefined;
+		return isRawThoughtLayout(metadata?.rawThoughtLayout) ? metadata.rawThoughtLayout : undefined;
 	}
 
 	let { children } = $props();
