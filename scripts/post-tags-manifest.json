@@ -11862,6 +11862,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-17"
+		},
+		"src/lib/posts/rain-palimpest.md": {
+			"bodyHash": "c9b9df9c734988d157737da5aa4cf53ee8a8ddc40767fbc98e1c863fe9de4633",
+			"hashVersion": 2,
+			"revisionHash": "f44eb017a8c4fd5840f66a1cf1497c27dfc6e9277e384d8991715a849d07538e",
+			"generatedTags": [
+				"Calcutta",
+				"SuvroGhosh",
+				"Depression",
+				"Monsoon",
+				"Mental Health",
+				"Science",
+				"Rumination",
+				"Satire",
+				"Bengal",
+				"Survival"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"SuvroGhosh",
+				"Depression",
+				"Monsoon",
+				"Mental Health",
+				"Science",
+				"Rumination",
+				"Satire",
+				"Bengal",
+				"Survival"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

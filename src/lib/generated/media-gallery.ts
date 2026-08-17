@@ -3968,6 +3968,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 872
 		},
 		{
+			"name": "rain-palimpest.jpg",
+			"src": "/images/rain-palimpest.jpg",
+			"bytes": 211804,
+			"width": 1280,
+			"height": 895
+		},
+		{
 			"name": "reaching-the-light-together-overcoming-major-depression.jpg",
 			"src": "/images/reaching-the-light-together-overcoming-major-depression.jpg",
 			"bytes": 61287,

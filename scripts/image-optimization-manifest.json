@@ -9029,6 +9029,22 @@
       "sourceHash": "b0d6630a15e06ee4cec1f10670bce1c87ce1e0ea4aec773abe1f5027f4dc9cd7",
       "width": 1600
     },
+    "static/images/rain-palimpest.jpg": {
+      "format": "JPEG",
+      "height": 895,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 895,
+      "originalWidth": 1280,
+      "outputBytes": 211804,
+      "outputHash": "f4103feab354c0a0cc310640813810ed2fc50ab8587139544e69c52562c4dd4a",
+      "psnrDb": 42.95,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 304110,
+      "sourceHash": "bf98f7859481492e41bb10a3bb4ca169126c6014ada79054a99187b1d3af82f9",
+      "width": 1280
+    },
     "static/images/reaching-the-light-together-overcoming-major-depression.jpg": {
       "format": "JPEG",
       "height": 720,
