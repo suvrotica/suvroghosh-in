@@ -8,11 +8,15 @@ import {
 } from './counterfactual';
 import { createDefaultDisplayProfile, setAnswer, toGenerationProfile } from './input-boundary';
 import { createReplayCode, mulberry32, parseReplayCode } from './seeded-rng';
-import { directEchoIsCompatible, generateDirectEcho, sealGenericDeck } from './select-reading';
+import {
+	directEchoIsCompatible,
+	generateDirectEcho,
+	generateReading,
+	sealGenericDeck
+} from './select-reading';
 import { statementConflictsWithStatements } from './statement-compatibility';
 import { CORPUS_MANIFEST_HASH } from '../data/corpus-manifest';
-import { FRAGMENTS_EN } from '../data/fragments.en';
-import { FRAMES_EN } from '../data/frames.en';
+import { SURFACE_SENTENCES_EN } from '../data/surface-sentences.en.generated';
 import { canonicalSelfReportEntries } from './input-boundary';
 
 describe('versioned deterministic generation', () => {
@@ -37,13 +41,11 @@ describe('versioned deterministic generation', () => {
 	it('is invariant to source-array order', () => {
 		const profile = toGenerationProfile(createDefaultDisplayProfile(), 'fedcba9876543210');
 		const normal = compileCandidates(profile, {
-			fragments: FRAGMENTS_EN,
-			frames: FRAMES_EN,
+			sentences: SURFACE_SENTENCES_EN,
 			maxCandidates: 200
 		});
 		const reversed = compileCandidates(profile, {
-			fragments: [...FRAGMENTS_EN].reverse(),
-			frames: [...FRAMES_EN].reverse(),
+			sentences: [...SURFACE_SENTENCES_EN].reverse(),
 			maxCandidates: 200
 		});
 		expect(reversed.map((candidate) => candidate.id)).toEqual(
@@ -67,6 +69,38 @@ describe('versioned deterministic generation', () => {
 		const before = sealGenericDeck(toGenerationProfile(display, 'aaaaaaaaaaaaaaaa'));
 		const after = sealGenericDeck(toGenerationProfile(changed, 'aaaaaaaaaaaaaaaa'));
 		expect(compareSemanticManifests(before.genericStatements, after.genericStatements)).toEqual({
+			identical: true,
+			overlapPercent: 100,
+			changedSlotIds: []
+		});
+	});
+
+	it('regenerates the production counterfactual as the exact sealed seven-card order', () => {
+		let display = createDefaultDisplayProfile();
+		display = setAnswer(display, 'planning_style', 'loose-plan')!;
+		const seed = 'a11ce5eed1234567';
+		const sealed = sealGenericDeck(toGenerationProfile(display, seed));
+		const counterfactual = createDemographicCounterfactual(display);
+		const regenerated = generateReading(toGenerationProfile(counterfactual.profile, seed), {
+			count: sealed.genericStatements.length,
+			slotPrefix: 'generic',
+			// Keep this legacy key in the regression: it is what the production adapter shipped.
+			seedKey: 'sealed-generic-deck'
+		});
+
+		expect(regenerated.map((statement) => statement.trace.semanticFamilyIds)).toEqual(
+			sealed.genericStatements.map((statement) => statement.trace.semanticFamilyIds)
+		);
+		expect(regenerated.map((statement) => statement.trace.fragmentIds)).toEqual(
+			sealed.genericStatements.map((statement) => statement.trace.fragmentIds)
+		);
+		expect(regenerated.map((statement) => statement.text)).toEqual(
+			sealed.genericStatements.map((statement) => statement.text)
+		);
+		expect(canonicalSemanticManifest(regenerated)).toBe(
+			canonicalSemanticManifest(sealed.genericStatements)
+		);
+		expect(compareSemanticManifests(sealed.genericStatements, regenerated)).toEqual({
 			identical: true,
 			overlapPercent: 100,
 			changedSlotIds: []
@@ -136,6 +170,12 @@ describe('versioned deterministic generation', () => {
 	it('detects replay typos and unavailable manifests', () => {
 		const code = createReplayCode('0123456789abcdef', CORPUS_MANIFEST_HASH);
 		expect(parseReplayCode(code, CORPUS_MANIFEST_HASH)).toMatchObject({ ok: true });
+		expect(
+			parseReplayCode('BL1-G100-C100-00000000-0000000000000000-000000', CORPUS_MANIFEST_HASH)
+		).toMatchObject({
+			ok: false,
+			reason: 'unsupported-version'
+		});
 		expect(parseReplayCode(code.slice(0, -1) + '0', CORPUS_MANIFEST_HASH)).toMatchObject({
 			ok: false,
 			reason: 'checksum'
@@ -147,24 +187,25 @@ describe('versioned deterministic generation', () => {
 	});
 
 	it('omits a conflicting direct echo without reshuffling the sealed deck', () => {
-		const display = setAnswer(createDefaultDisplayProfile(), 'planning_style', 'loose-plan')!;
+		const display = setAnswer(createDefaultDisplayProfile(), 'planning_style', 'improvise')!;
 		const profile = toGenerationProfile(display, 'deadbeefdeadbeef');
 		const deck = sealGenericDeck(profile);
-		const oppositeFragment = FRAGMENTS_EN.find(
-			(fragment) =>
-				fragment.kind === 'clause' &&
-				fragment.axis === 'structure-flexibility' &&
-				fragment.pole === 'structure'
+		const oppositeSentence = SURFACE_SENTENCES_EN.find(
+			(sentence) => sentence.axis === 'structure-flexibility' && sentence.pole === 'structure'
 		)!;
 		const conflict = {
 			...deck.genericStatements[0],
 			trace: {
 				...deck.genericStatements[0].trace,
-				fragmentIds: [oppositeFragment.id]
+				fragmentIds: [oppositeSentence.id],
+				semanticKeys: [oppositeSentence.semanticFamilyId],
+				semanticFamilyIds: [oppositeSentence.semanticFamilyId],
+				axes: [oppositeSentence.axis],
+				poles: [{ axis: oppositeSentence.axis, pole: oppositeSentence.pole }]
 			}
 		};
 		const before = canonicalSemanticManifest(deck.genericStatements);
-		expect(directEchoIsCompatible('planning_style', 'loose-plan', [conflict])).toBe(false);
+		expect(directEchoIsCompatible('planning_style', 'improvise', [conflict])).toBe(false);
 		expect(generateDirectEcho(profile, 'planning_style', [conflict])).toBeUndefined();
 		expect(canonicalSemanticManifest(deck.genericStatements)).toBe(before);
 	});

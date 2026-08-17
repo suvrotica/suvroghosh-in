@@ -15,6 +15,92 @@ export type FitRating = 'does-not-fit' | 'partly-fits' | 'fits' | 'too-vague' | 
 export type BreadthEstimate = 'almost-nobody' | 'few' | 'many' | 'almost-everybody';
 export type SixPointRating = 0 | 1 | 2 | 3 | 4 | 5;
 
+export type TextChannel =
+	| 'surface-reading'
+	| 'direct-echo'
+	| 'feedback-reading'
+	| 'audit-only'
+	| 'interface-copy';
+
+export type SurfaceChannel = Exclude<TextChannel, 'audit-only' | 'interface-copy'>;
+
+export type Mechanism =
+	| 'broad-common-experience'
+	| 'rainbow-pair'
+	| 'flattering-ambiguity'
+	| 'unused-potential'
+	| 'guarded-vulnerability'
+	| 'redeemable-flaw'
+	| 'conditional-escape'
+	| 'direct-echo'
+	| 'feedback-reinforcement'
+	| 'feedback-qualification'
+	| 'miss-recovery';
+
+declare const surfaceTextBrand: unique symbol;
+export type SurfaceText = string & { readonly [surfaceTextBrand]: true };
+
+export type SurfaceOpener =
+	| 'you'
+	| 'often-you'
+	| 'you-often'
+	| 'sometimes-you'
+	| 'you-sometimes'
+	| 'at-times'
+	| 'rainbow';
+
+export interface SurfaceSentence {
+	id: string;
+	channel: SurfaceChannel;
+	text: SurfaceText;
+	mechanism: Mechanism;
+	semanticFamilyId: string;
+	axis: ContentAxis;
+	pole: string;
+	breadth: 'broad' | 'medium';
+	valence: 'positive' | 'mixed' | 'neutral';
+	reviewStatus: 'surface-approved-v2';
+	wordCount: number;
+	opener: SurfaceOpener;
+	rainbowCompatibilityFamilyId?: string;
+	claimBasis: ClaimBasis;
+}
+
+export interface AuditExplanation {
+	id: string;
+	channel: 'audit-only';
+	explanation: string;
+	concepts: readonly ('breadth' | 'hedge' | 'rainbow' | 'echo' | 'feedback' | 'falsifiability')[];
+	statementId?: string;
+	mechanism?: Mechanism;
+}
+
+export interface FeedbackProvenance {
+	sourceStatementId: string;
+	sourceRating: 'fits' | 'partly-fits' | 'does-not-fit';
+	tactic: 'reinforce' | 'qualify' | 'miss-recovery';
+	semanticFamilyId: string;
+}
+
+export interface FeedbackRelation {
+	sourceSentenceId: string;
+	sourceRating: 'fits' | 'partly-fits';
+	targetSentenceId: string;
+	tactic: 'reinforce' | 'qualify';
+	semanticFamilyId: string;
+}
+
+export interface HedgePair {
+	id: string;
+	coreId: string;
+	semanticFamilyId: string;
+	axis: ContentAxis;
+	pole: string;
+	plain: SurfaceText;
+	hedged: SurfaceText;
+	hedge: string;
+}
+
 export type ContentAxis =
 	| 'autonomy-approval'
 	| 'company-solitude'
@@ -58,7 +144,7 @@ export type ClauseRole =
 export type BreadthBand = 'very-broad' | 'broad' | 'moderate';
 export type LocaleId = 'en';
 export type Register = 'plain' | 'slightly-literary';
-export type ReviewStatus = 'approved-v1' | 'needs-review';
+export type ReviewStatus = 'approved-v1' | 'surface-approved-v2' | 'needs-review';
 
 export interface AxisDefinition {
 	id: ContentAxis;
@@ -140,7 +226,7 @@ export type SelectionInfluence =
 	| { kind: 'presentation'; questionId: PresentationQuestionId };
 
 export interface RenderedSegment {
-	text: string;
+	text: SurfaceText;
 	fragmentId?: string;
 	technique?: BarnumTechnique;
 	claimBasis: ClaimBasis;
@@ -171,7 +257,12 @@ export interface Candidate {
 	claimBasis: ClaimBasis;
 	selectionInfluences: readonly SelectionInfluence[];
 	renderedSegments: readonly RenderedSegment[];
-	text: string;
+	text: SurfaceText;
+	surfaceSentenceId?: string;
+	semanticFamilyIds?: readonly string[];
+	mechanisms?: readonly Mechanism[];
+	opener?: SurfaceOpener;
+	channel?: SurfaceChannel;
 }
 
 export type CandidateEvaluation =
@@ -180,17 +271,23 @@ export type CandidateEvaluation =
 
 export interface StatementTrace {
 	statementId: string;
+	channel: SurfaceChannel;
 	corpusVersion: string;
 	corpusManifestHash: string;
 	engineVersion: string;
 	frameId: string;
 	fragmentIds: readonly string[];
 	semanticKeys: readonly string[];
+	semanticFamilyIds: readonly string[];
+	axes: readonly ContentAxis[];
+	poles: readonly { axis: ContentAxis; pole: string }[];
 	techniques: readonly BarnumTechnique[];
+	mechanisms: readonly Mechanism[];
 	claimBasis: ClaimBasis;
 	selectionInfluences: readonly SelectionInfluence[];
 	seedKey: string;
 	score: ScoreBreakdown;
+	feedbackProvenance?: FeedbackProvenance;
 }
 
 export interface StatementVersion {
@@ -208,7 +305,8 @@ export interface GeneratedStatement {
 	statementId: string;
 	coreId: string;
 	slotId: string;
-	text: string;
+	channel: SurfaceChannel;
+	text: SurfaceText;
 	renderedSegments: readonly RenderedSegment[];
 	trace: StatementTrace;
 	version: StatementVersion;
@@ -437,6 +535,7 @@ export interface EventMeta {
 export type LabEvent =
 	| { type: 'begin'; seed: string; meta?: EventMeta }
 	| { type: 'present-baseline'; meta?: EventMeta }
+	| { type: 'present-next-baseline'; meta?: EventMeta }
 	| { type: 'present-next-claim'; meta?: EventMeta }
 	| { type: 'present-direct-echo'; meta?: EventMeta }
 	| { type: 'answer'; questionId: QuestionId; optionId: string; meta?: EventMeta }

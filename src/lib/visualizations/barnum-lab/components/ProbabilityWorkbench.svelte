@@ -22,10 +22,10 @@
 	let expected = $derived(probability.expectedAccepts(n, p));
 	let atLeastOne = $derived(probability.atLeastOne(n, p));
 	let oneClaimExpected = $derived(probability.expectedAccepts(1, p));
-	let twelveClaimsExpected = $derived(probability.expectedAccepts(12, p));
+	let currentClaimsExpected = $derived(probability.expectedAccepts(n, p));
 	let oneClaimMatch = $derived(probability.atLeastOne(1, p));
-	let twelveClaimMatch = $derived(probability.atLeastOne(12, p));
-	let atLeastK = $derived(probability.atLeastK(n, p, k));
+	let currentClaimsMatch = $derived(probability.atLeastOne(n, p));
+	let atLeastK = $derived(k > n ? 0 : probability.atLeastK(n, p, k));
 	let distinguishing = $derived(probability.distinguishingPower(groupA, groupB));
 	let groupANaturalCount = $derived(probability.naturalFrequency(groupA, 1_000));
 	let groupBNaturalCount = $derived(probability.naturalFrequency(groupB, 1_000));
@@ -38,7 +38,7 @@
 
 	function setCount(value: number): void {
 		n = Math.max(0, Math.min(100, Math.round(Number.isFinite(value) ? value : 0)));
-		k = Math.min(k, n);
+		k = Math.min(k, n + 1);
 	}
 
 	function setThreshold(value: number): void {
@@ -54,7 +54,7 @@
 
 <section class="probability" aria-labelledby="probability-heading">
 	<header>
-		<p>Experiment 2 · One guess versus twelve</p>
+		<p>Experiment 2 · One guess versus the current number</p>
 		<h3 id="probability-heading">The probability of throwing enough darts</h3>
 		<p>Set the assumptions yourself. Nothing below is estimated from your session.</p>
 	</header>
@@ -113,11 +113,14 @@
 
 	<section
 		class="multiplicity-comparison"
-		data-testid="barnum-one-vs-twelve"
+		data-testid="barnum-one-vs-many"
 		aria-labelledby="one-vs-twelve-heading"
 	>
 		<header>
-			<h4 id="one-vs-twelve-heading">Same hypothetical <i>p</i>: one claim versus twelve</h4>
+			<h4 id="one-vs-twelve-heading">
+				Same hypothetical <i>p</i>: one claim versus {n}
+				{n === 1 ? 'claim' : 'claims'}
+			</h4>
 			<p>
 				This holds the visitor-set chance per claim at {Math.round(p * 100)}% and changes only the
 				number of distinct guesses.
@@ -131,18 +134,18 @@
 			</article>
 			<span class="comparison-arrow" aria-hidden="true">→</span>
 			<article>
-				<span>Twelve claims</span>
-				<strong>{(twelveClaimMatch * 100).toFixed(1)}%</strong>
-				<small>at least one accepted · {twelveClaimsExpected.toFixed(2)} expected accepts</small>
+				<span>{n} {n === 1 ? 'claim' : 'claims'}</span>
+				<strong>{(currentClaimsMatch * 100).toFixed(1)}%</strong>
+				<small>at least one accepted · {currentClaimsExpected.toFixed(2)} expected accepts</small>
 			</article>
 		</div>
 		<p class="comparison-caveat">
-			Hypothetical illustration only. It assumes twelve independent claims with the same acceptance
-			probability; it is not a measured Barnum-effect rate or personal score.
+			Hypothetical illustration only. It assumes {n} independent {n === 1 ? 'claim' : 'claims'} with the
+			same acceptance probability; it is not a measured Barnum-effect rate or personal score.
 		</p>
 	</section>
 
-	<div class="results" aria-live="polite">
+	<div class="results" data-testid="barnum-probability-results">
 		<article>
 			<span>Expected accepted claims</span>
 			<strong>{expected.toFixed(2)}</strong>
@@ -200,12 +203,18 @@
 						<output for="barnum-k">{k}</output>
 					</div>
 				</div>
-				<p class="threshold-result">
-					P(at least {k}) = <strong>{(atLeastK * 100).toFixed(1)}%</strong>
-				</p>
-				<code class="long-formula">
-					Σ from i={k} to {n} of C({n}, i) p<sup>i</sup>(1−p)<sup>{n}−i</sup>
-				</code>
+				{#if k > n}
+					<p class="threshold-result" data-testid="barnum-k-impossible">
+						<strong>Impossible because k is greater than n; probability 0.</strong>
+					</p>
+				{:else}
+					<p class="threshold-result">
+						P(at least {k}) = <strong>{(atLeastK * 100).toFixed(1)}%</strong>
+					</p>
+					<code class="long-formula" data-testid="barnum-at-least-k-formula">
+						Σ from i={k} to {n} of C({n}, i) p<sup>i</sup>(1−p)<sup>{n}−i</sup>
+					</code>
+				{/if}
 			</section>
 
 			<section aria-labelledby="distinguishing-heading">

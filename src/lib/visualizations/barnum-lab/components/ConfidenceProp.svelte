@@ -11,33 +11,46 @@
 		revealed?: boolean;
 	} = $props();
 
-	let formulaOpen = $state(false);
+	let calculationHidden = $state(false);
 	let rawValue = $derived(39 + answeredCount * 6 + decoration);
+	let calculationVisible = $derived(revealed && !calculationHidden);
 </script>
 
 <section class="confidence" class:disowned={revealed} aria-labelledby="confidence-heading">
 	<div class="meter-copy">
 		<div>
-			<p class="eyebrow">Stage machinery</p>
-			<h3 id="confidence-heading">Reading confidence</h3>
-			<span>Stage prop, not probability</span>
+			<p class="eyebrow">{revealed ? 'How the display was made' : 'Reading display'}</p>
+			<h3 id="confidence-heading">{revealed ? 'Manufactured confidence' : 'Reading confidence'}</h3>
+			<span>
+				{revealed
+					? 'This number rose with clicks, not with knowledge about you.'
+					: 'Demonstration display—not a scientific score.'}
+			</span>
 		</div>
-		<output aria-label={`Stage-prop confidence ${value} percent`}>{value}<small>%</small></output>
+		<output aria-label={`Reading confidence display ${value} percent`}
+			>{value}<small>%</small></output
+		>
 	</div>
 
 	<div
 		class="track"
 		role="img"
-		aria-label={`Decorative meter filled to ${value} percent. It is not a statistical probability.`}
+		aria-label={`Demonstration meter filled to ${value} percent. This is not a scientific score.`}
 	>
 		<span style={`--value: ${Math.max(0, Math.min(100, value))}%`}></span>
 	</div>
 
-	<button type="button" aria-expanded={formulaOpen} onclick={() => (formulaOpen = !formulaOpen)}>
-		{formulaOpen ? 'Hide' : 'Show'} how this is calculated
-	</button>
+	{#if revealed}
+		<button
+			type="button"
+			aria-expanded={calculationVisible}
+			onclick={() => (calculationHidden = !calculationHidden)}
+		>
+			{calculationVisible ? 'Hide calculation' : 'Show calculation'}
+		</button>
+	{/if}
 
-	{#if formulaOpen || revealed}
+	{#if calculationVisible}
 		<div class="formula">
 			<code>d = floor(PRNG(session seed, “fake-confidence”) × 4)</code>
 			<code>shown = min(96, 39 + completed controls × 6 + d)</code>

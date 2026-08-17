@@ -91,7 +91,7 @@ export type ReplayParseResult =
 	  };
 
 function replayBody(seed: string, manifestHash: string): string {
-	return `BL1-${REPLAY_ENGINE_TOKEN}-${REPLAY_CORPUS_TOKEN}-${manifestHash.toUpperCase()}-${normalizeSeed64(seed).toUpperCase()}`;
+	return `BL2-${REPLAY_ENGINE_TOKEN}-${REPLAY_CORPUS_TOKEN}-${manifestHash.toUpperCase()}-${normalizeSeed64(seed).toUpperCase()}`;
 }
 
 export function createReplayCode(seed: string, manifestHash: string): string {
@@ -104,9 +104,10 @@ export function createReplayCode(seed: string, manifestHash: string): string {
 
 export function parseReplayCode(code: string, expectedManifestHash: string): ReplayParseResult {
 	const normalized = code.trim().toUpperCase();
-	const match = /^BL1-([A-Z0-9]+)-([A-Z0-9]+)-([0-9A-F]{8})-([0-9A-F]{16})-([0-9A-F]{6})$/.exec(
-		normalized
-	);
+	const match =
+		/^(BL[12])-([A-Z0-9]+)-([A-Z0-9]+)-([0-9A-F]{8})-([0-9A-F]{16})-([0-9A-F]{6})$/.exec(
+			normalized
+		);
 	if (!match) {
 		return {
 			ok: false,
@@ -114,7 +115,15 @@ export function parseReplayCode(code: string, expectedManifestHash: string): Rep
 			message: 'That replay code is not in the expected format.'
 		};
 	}
-	const [, engineToken, corpusToken, manifestHash, seed, checksum] = match;
+	const [, formatToken, engineToken, corpusToken, manifestHash, seed, checksum] = match;
+	if (formatToken !== 'BL2') {
+		return {
+			ok: false,
+			reason: 'unsupported-version',
+			message:
+				'This Barnum Lab v1 replay code is incompatible with the v2 corpus and cannot be interpreted.'
+		};
+	}
 	const body = normalized.slice(0, normalized.lastIndexOf('-'));
 	if (hashHex(body).slice(0, 6).toUpperCase() !== checksum) {
 		return { ok: false, reason: 'checksum', message: 'The replay code checksum does not match.' };

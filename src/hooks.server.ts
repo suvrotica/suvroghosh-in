@@ -3,6 +3,13 @@ import { slugifyCategory } from '$lib/content/categories';
 import { notesAuthReferrerPolicy } from '$lib/server/notes/referrer-policy';
 import { resolveNotesUser } from '$lib/server/notes/supabase';
 
+export const BARNUM_LAB_PATHNAME =
+	'/blog/visualizations/the-profile-that-knows-almost-nothing-about-you';
+
+export function applyRoutePreloadPolicy(pathname: string, headers: Headers): void {
+	if (pathname === BARNUM_LAB_PATHNAME) headers.delete('link');
+}
+
 export const handle: Handle = async ({ event, resolve }) => {
 	const path = event.url.pathname;
 	event.locals.supabase = null;
@@ -56,5 +63,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 		response.headers.set('expires', '0');
 		response.headers.set('x-robots-tag', 'noindex, nofollow, noarchive');
 	}
+	applyRoutePreloadPolicy(path, response.headers);
 	return response;
 };

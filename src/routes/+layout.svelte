@@ -122,7 +122,9 @@
 </script>
 
 <svelte:head>
-	<link rel="preload" href={robotoLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+	{#if page.url.pathname !== '/blog/visualizations/the-profile-that-knows-almost-nothing-about-you'}
+		<link rel="preload" href={robotoLatinUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+	{/if}
 </svelte:head>
 
 {#if studioShell}

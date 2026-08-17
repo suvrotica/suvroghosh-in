@@ -1,10 +1,10 @@
 <script lang="ts">
 	const STEPS = [
-		'Start with almost nothing',
-		'Add four clues',
-		'Watch the reading sharpen',
-		'Feed the reader',
-		'Lift the floorboards'
+		'First impression',
+		'A few clues',
+		'Your reading',
+		'One more pass',
+		'How it worked'
 	] as const;
 
 	let {

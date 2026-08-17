@@ -1,71 +1,58 @@
 <script lang="ts">
-	import type { ReadingStatement } from './ui-types';
+	import type { HedgePair } from '..';
 
-	let {
-		withoutHedges,
-		withHedges
-	}: {
-		withoutHedges: readonly ReadingStatement[];
-		withHedges: readonly ReadingStatement[];
-	} = $props();
-
-	let pairs = $derived(
-		Array.from({ length: Math.max(withoutHedges.length, withHedges.length) }, (_, index) => ({
-			id: `hedge-pair-${index + 1}`,
-			without: withoutHedges[index],
-			with: withHedges[index]
-		}))
-	);
+	let { pair }: { pair: HedgePair } = $props();
 </script>
 
 <section
 	id="barnum-hedge-experiment"
 	class="hedge-experiment"
 	data-testid="barnum-hedge-experiment"
+	data-pair-id={pair.id}
+	data-core-id={pair.coreId}
 	aria-labelledby="hedge-experiment-heading"
 >
 	<header>
-		<p>Experiment 4 · Hedges off versus on</p>
-		<h3 id="hedge-experiment-heading">Two deterministic runs, paired by output slot</h3>
+		<p>Experiment 4 · One proposition, one hedge</p>
+		<h3 id="hedge-experiment-heading">What changes when “{pair.hedge.trim()}” is added?</h3>
 		<span>
-			“Hedge off” excludes modal-hedge and exception-clause candidates. “Hedge on” moves those
-			candidates forward. These are controlled generator runs, not silent edits to the sealed guided
-			deck.
+			The substantive proposition and ending punctuation stay fixed; only the audited hedge prefix
+			is inserted.
 		</span>
 	</header>
 
-	<div class="pairs">
-		{#each pairs as pair, index (pair.id)}
-			<article>
-				<h4>Output slot {index + 1}</h4>
-				<div class="variants">
-					<section>
-						<strong>Hedge off</strong>
-						{#if pair.without}
-							<p>{pair.without.text}</p>
-							<code>{pair.without.coreId}</code>
-						{:else}
-							<p>No eligible claim filled this slot.</p>
-						{/if}
-					</section>
-					<section>
-						<strong>Hedge on</strong>
-						{#if pair.with}
-							<p>{pair.with.text}</p>
-							<code>{pair.with.coreId}</code>
-						{:else}
-							<p>No eligible claim filled this slot.</p>
-						{/if}
-					</section>
-				</div>
-				<p class="change">
-					{pair.without?.coreId === pair.with?.coreId
-						? 'Same core ID in this paired slot.'
-						: 'Core ID changed: the filter selected a different claim. This is not evidence that one fixed claim became more accurate.'}
-				</p>
-			</article>
-		{/each}
+	<div class="variants">
+		<section data-treatment="plain">
+			<strong>Plain</strong>
+			<p>{pair.plain}</p>
+		</section>
+		<section data-treatment="hedged">
+			<strong>Hedged</strong>
+			<p>{pair.hedged}</p>
+		</section>
 	</div>
+
+	<details>
+		<summary>Technical equality check</summary>
+		<dl>
+			<div>
+				<dt>Core ID</dt>
+				<dd><code>{pair.coreId}</code> on both sides</dd>
+			</div>
+			<div>
+				<dt>Semantic family</dt>
+				<dd><code>{pair.semanticFamilyId}</code></dd>
+			</div>
+			<div>
+				<dt>Axis and pole</dt>
+				<dd><code>{pair.axis} · {pair.pole}</code></dd>
+			</div>
+			<div>
+				<dt>Only insertion</dt>
+				<dd><code>{pair.hedge}</code></dd>
+			</div>
+		</dl>
+	</details>
 </section>
 
 <style>
@@ -82,9 +69,10 @@
 	header p,
 	header h3,
 	header span,
-	h4,
 	.variants p,
-	.change {
+	dl,
+	dt,
+	dd {
 		margin: 0;
 	}
 
@@ -100,33 +88,17 @@
 		font: 800 0.95rem/1.25 var(--barnum-sans);
 	}
 
-	header span,
-	.change {
+	header span {
 		display: block;
 		margin-top: 0.2rem;
 		color: var(--barnum-muted);
-		font: 0.72rem/1.5 var(--barnum-sans);
-	}
-
-	.pairs {
-		display: grid;
-		gap: 0.6rem;
-	}
-
-	.pairs > article {
-		border-top: 1px solid var(--barnum-rule);
-		padding-top: 0.6rem;
-	}
-
-	h4 {
-		font: 760 0.75rem/1.35 var(--barnum-sans);
+		font: 0.75rem/1.5 var(--barnum-sans);
 	}
 
 	.variants {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.5rem;
-		margin-top: 0.45rem;
 	}
 
 	.variants section {
@@ -135,39 +107,71 @@
 		border: 1px solid var(--barnum-rule);
 		border-radius: 0.35rem;
 		background: var(--barnum-paper);
-		padding: 0.6rem;
+		padding: 0.65rem;
 	}
 
 	.variants strong {
-		font: 760 0.72rem/1.35 var(--barnum-sans);
+		font: 760 0.75rem/1.35 var(--barnum-sans);
 	}
 
 	.variants p {
-		font: 0.84rem/1.5 var(--barnum-serif);
+		font: 0.9rem/1.5 var(--barnum-serif);
 	}
 
-	.variants code {
-		color: var(--barnum-muted);
-		font: 0.7rem/1.4 var(--barnum-mono);
+	details {
+		border-top: 1px solid var(--barnum-rule);
+	}
+
+	details summary {
+		min-height: 2.75rem;
+		padding-block: 0.7rem;
+		font: 760 0.75rem/1.35 var(--barnum-sans);
+		cursor: pointer;
+	}
+
+	dl {
+		display: grid;
+		gap: 0.25rem;
+		padding-bottom: 0.25rem;
+	}
+
+	dl > div {
+		display: grid;
+		grid-template-columns: minmax(7rem, 0.4fr) minmax(0, 1fr);
+		gap: 0.55rem;
+	}
+
+	dt,
+	dd {
+		font: 0.72rem/1.45 var(--barnum-sans);
 		overflow-wrap: anywhere;
 	}
 
-	.change {
-		border-left: 2px solid var(--barnum-ochre);
-		padding-left: 0.5rem;
+	dt {
+		color: var(--barnum-muted);
+		font-weight: 750;
+	}
+
+	code {
+		font: 0.7rem/1.4 var(--barnum-mono);
+	}
+
+	details summary:focus-visible {
+		outline: 3px solid var(--barnum-focus);
+		outline-offset: 2px;
 	}
 
 	@media (max-width: 36rem) {
-		.variants {
+		.variants,
+		dl > div {
 			grid-template-columns: 1fr;
 		}
 	}
 
 	@media (forced-colors: active) {
 		.hedge-experiment,
-		.pairs > article,
 		.variants section,
-		.change {
+		details {
 			border-color: CanvasText;
 		}
 	}

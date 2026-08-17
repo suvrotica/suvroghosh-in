@@ -1,181 +1,213 @@
 import { describe, expect, it } from 'vitest';
-import { AXIS_REGISTRY } from '../data/axes';
-import { applyDemographicCounterfactual } from './counterfactual';
+import surfaceAudit from '../data/surface-audit.v2.json';
+import { DIRECT_ECHO_SENTENCES_EN } from '../data/direct-echoes.en';
+import { SURFACE_SENTENCES_EN } from '../data/surface-sentences.en.generated';
+import { deriveFromFeedback } from './adapt-feedback';
+import { applyDemographicCounterfactual, canonicalSemanticManifest } from './counterfactual';
 import { createDefaultDisplayProfile, setAnswer, toGenerationProfile } from './input-boundary';
+import { generateDirectEcho, generateReading } from './select-reading';
+import { surfaceTextIssues } from './surface-text';
 import { contentWordOverlap, SIMILARITY_THRESHOLDS, trigramJaccard } from './text-similarity';
-import { generateReading, SELECTION_DISTRIBUTION_TOLERANCES } from './select-reading';
-import { FRAGMENTS_EN } from '../data/fragments.en';
-import { FRAMES_EN } from '../data/frames.en';
 
 const stressIt = process.env.BARNUM_STRESS === '1' ? it : it.skip;
+const SESSION_COUNT = 15_000;
+const STATEMENTS_PER_SESSION = 7;
 
-describe('Barnum 10,000-seed release stress', () => {
+describe('Barnum v2 100,000-statement release stress', () => {
 	stressIt(
-		'holds demographic invariance, incompatibility, cooldown, and repetition properties',
+		'holds surface, diversity, replay, counterfactual, echo, and feedback invariants',
 		() => {
-			let display = createDefaultDisplayProfile();
-			display = setAnswer(display, 'planning_style', 'loose-plan')!;
-			const counterfactual = applyDemographicCounterfactual(display);
-			const fragmentById = new Map(FRAGMENTS_EN.map((fragment) => [fragment.id, fragment]));
-			let profileBoundaryViolations = 0;
-			let readingLengthViolations = 0;
-			let semanticRepetitionViolations = 0;
-			let lexicalRepetitionViolations = 0;
-			let opposingStandalonePoleViolations = 0;
-			let techniqueCooldownViolations = 0;
-			let leadCooldownViolations = 0;
-			let bridgeCooldownViolations = 0;
-			let familyLimitViolations = 0;
-			const axisCounts = new Map<string, number>();
-			const primaryTechniqueCounts = new Map<string, number>();
-			const specialFamilyCounts = new Map<string, number>();
-			let axisOccurrenceCount = 0;
-			let statementCount = 0;
+			const defaultDisplay = createDefaultDisplayProfile();
+			const counterfactualDisplay = applyDemographicCounterfactual(defaultDisplay);
+			const sentenceById = new Map(SURFACE_SENTENCES_EN.map((sentence) => [sentence.id, sentence]));
+			const usage = new Map<string, number>();
+			const representativeUsage = new Set<string>();
+			let generatedStatementCount = 0;
+			let lintFailureCount = 0;
+			let emptyDeckCount = 0;
+			let familyCollisionCount = 0;
+			let openerViolationCount = 0;
+			let nearDuplicateCount = 0;
+			let rainbowFamilyFailureCount = 0;
+			let replayMismatchCount = 0;
+			let demographicMismatchCount = 0;
+			let feedbackFailureCount = 0;
 
-			for (let index = 0; index < 10_000; index += 1) {
+			for (let index = 0; index < SESSION_COUNT; index += 1) {
 				const seed = index.toString(16).padStart(16, '0');
-				const originalProfile = toGenerationProfile(display, seed);
-				const changedProfile = toGenerationProfile(counterfactual, seed);
-				if (JSON.stringify(originalProfile) !== JSON.stringify(changedProfile)) {
-					profileBoundaryViolations += 1;
+				const profile = toGenerationProfile(defaultDisplay, seed);
+				const counterfactualProfile = toGenerationProfile(counterfactualDisplay, seed);
+				if (JSON.stringify(counterfactualProfile) !== JSON.stringify(profile)) {
+					demographicMismatchCount += 1;
 				}
-				// Full semantic generation runs for every seed after the exact boundary comparison.
-				const reading = generateReading(originalProfile, {
-					count: 7,
-					seedKey: 'ten-thousand-release-stress'
+				const deck = generateReading(profile, {
+					count: STATEMENTS_PER_SESSION,
+					seedKey: 'one-hundred-thousand-v2'
 				});
-				if (reading.length !== 7) readingLengthViolations += 1;
-				const semanticKeys = reading.flatMap((statement) => statement.trace.semanticKeys);
-				if (new Set(semanticKeys).size !== semanticKeys.length) semanticRepetitionViolations += 1;
+				generatedStatementCount += deck.length;
+				if (deck.length !== STATEMENTS_PER_SESSION) emptyDeckCount += 1;
+				const families = deck.flatMap((statement) => statement.trace.semanticFamilyIds);
+				if (new Set(families).size !== STATEMENTS_PER_SESSION) familyCollisionCount += 1;
+				const openerCounts = new Map<string, number>();
 
-				const polesByAxis = new Map<string, Set<string>>();
-				const leadCounts = new Map<string, number>();
-				let flatteringCount = 0;
-				let vulnerabilityCount = 0;
-				for (let statementIndex = 0; statementIndex < reading.length; statementIndex += 1) {
-					const statement = reading[statementIndex];
-					statementCount += 1;
-					const primary = statement.trace.techniques[0];
-					primaryTechniqueCounts.set(primary, (primaryTechniqueCounts.get(primary) ?? 0) + 1);
-					for (const family of ['flattering-ambiguity', 'guarded-vulnerability'] as const) {
-						if (statement.trace.techniques.includes(family)) {
-							specialFamilyCounts.set(family, (specialFamilyCounts.get(family) ?? 0) + 1);
+				for (const statement of deck) {
+					const sentence = sentenceById.get(statement.trace.fragmentIds[0]);
+					if (!sentence) {
+						lintFailureCount += 1;
+						continue;
+					}
+					usage.set(sentence.id, (usage.get(sentence.id) ?? 0) + 1);
+					if (index < 1_000) representativeUsage.add(sentence.id);
+					openerCounts.set(sentence.opener, (openerCounts.get(sentence.opener) ?? 0) + 1);
+					lintFailureCount += surfaceTextIssues(statement.text, {
+						allowReviewedRainbowLength: sentence.mechanism === 'rainbow-pair'
+					}).length;
+					if (
+						statement.channel !== 'surface-reading' ||
+						statement.trace.channel !== 'surface-reading' ||
+						statement.trace.axes.length !== 1
+					) {
+						lintFailureCount += 1;
+					}
+					if (
+						sentence.mechanism === 'rainbow-pair' &&
+						sentence.rainbowCompatibilityFamilyId !== sentence.semanticFamilyId
+					) {
+						rainbowFamilyFailureCount += 1;
+					}
+				}
+				if ([...openerCounts.values()].some((count) => count > 2)) {
+					openerViolationCount += 1;
+				}
+				for (let left = 0; left < deck.length; left += 1) {
+					for (let right = left + 1; right < deck.length; right += 1) {
+						if (
+							trigramJaccard(deck[left].text, deck[right].text) >
+								SIMILARITY_THRESHOLDS.trigramJaccard ||
+							contentWordOverlap(deck[left].text, deck[right].text) >
+								SIMILARITY_THRESHOLDS.contentWordOverlap
+						) {
+							nearDuplicateCount += 1;
+						}
+					}
+				}
+
+				if (index % 100 === 0) {
+					const replay = generateReading(profile, {
+						count: STATEMENTS_PER_SESSION,
+						seedKey: 'one-hundred-thousand-v2'
+					});
+					const changed = generateReading(counterfactualProfile, {
+						count: STATEMENTS_PER_SESSION,
+						seedKey: 'one-hundred-thousand-v2'
+					});
+					generatedStatementCount += replay.length + changed.length;
+					if (canonicalSemanticManifest(replay) !== canonicalSemanticManifest(deck)) {
+						replayMismatchCount += 1;
+					}
+					if (canonicalSemanticManifest(changed) !== canonicalSemanticManifest(deck)) {
+						demographicMismatchCount += 1;
+					}
+				}
+
+				if (index < 1_000) {
+					const sourceSnapshot = JSON.stringify(deck);
+					const ratings = deck.slice(0, 2).map((statement, ratingIndex) => ({
+						statementId: statement.statementId,
+						rating: ratingIndex === 0 ? ('fits' as const) : ('partly-fits' as const),
+						eventId: `${seed}:rating:${ratingIndex}`
+					}));
+					const ratingSnapshot = JSON.stringify(ratings);
+					const derivatives = deriveFromFeedback(deck, ratings, profile, 2);
+					for (const derivative of derivatives) {
+						const source = deck.find(
+							(statement) =>
+								statement.statementId === derivative.trace.feedbackProvenance?.sourceStatementId
+						);
+						if (
+							!source ||
+							derivative.trace.semanticFamilyIds[0] !== source.trace.semanticFamilyIds[0]
+						) {
+							feedbackFailureCount += 1;
 						}
 					}
 					if (
-						reading
-							.slice(Math.max(0, statementIndex - 3), statementIndex)
-							.some((earlier) => earlier.trace.techniques[0] === primary)
+						JSON.stringify(deck) !== sourceSnapshot ||
+						JSON.stringify(ratings) !== ratingSnapshot
 					) {
-						techniqueCooldownViolations += 1;
-					}
-					if (statement.trace.techniques.includes('flattering-ambiguity')) flatteringCount += 1;
-					if (statement.trace.techniques.includes('guarded-vulnerability')) vulnerabilityCount += 1;
-					const fragments = statement.trace.fragmentIds.flatMap((id) => {
-						const fragment = fragmentById.get(id);
-						return fragment ? [fragment] : [];
-					});
-					for (const fragment of fragments) {
-						if (fragment.kind === 'lead') {
-							const previous = reading[statementIndex - 1];
-							if (previous?.trace.fragmentIds.includes(fragment.id)) leadCooldownViolations += 1;
-							leadCounts.set(fragment.id, (leadCounts.get(fragment.id) ?? 0) + 1);
-						}
-						if (fragment.kind === 'bridge') {
-							if (
-								reading
-									.slice(Math.max(0, statementIndex - 4), statementIndex)
-									.some((earlier) => earlier.trace.fragmentIds.includes(fragment.id))
-							) {
-								bridgeCooldownViolations += 1;
-							}
-						}
-						if (fragment.kind === 'clause' && fragment.axis && fragment.pole) {
-							axisOccurrenceCount += 1;
-							axisCounts.set(fragment.axis, (axisCounts.get(fragment.axis) ?? 0) + 1);
-							const poles = polesByAxis.get(fragment.axis) ?? new Set<string>();
-							if (
-								!statement.trace.techniques.includes('rainbow-pair') &&
-								[...poles].some((pole) => pole !== fragment.pole)
-							) {
-								opposingStandalonePoleViolations += 1;
-							}
-							poles.add(fragment.pole);
-							polesByAxis.set(fragment.axis, poles);
-						}
-					}
-				}
-				if ([...leadCounts.values()].some((count) => count > 2)) leadCooldownViolations += 1;
-				if (flatteringCount > 1 || vulnerabilityCount > 1) familyLimitViolations += 1;
-
-				for (let left = 0; left < reading.length; left += 1) {
-					for (let right = left + 1; right < reading.length; right += 1) {
-						if (
-							trigramJaccard(reading[left].text, reading[right].text) >
-								SIMILARITY_THRESHOLDS.trigramJaccard ||
-							contentWordOverlap(reading[left].text, reading[right].text) >
-								SIMILARITY_THRESHOLDS.contentWordOverlap
-						) {
-							lexicalRepetitionViolations += 1;
-						}
+						feedbackFailureCount += 1;
 					}
 				}
 			}
 
+			for (const echoSentence of DIRECT_ECHO_SENTENCES_EN) {
+				if (echoSentence.claimBasis.kind !== 'direct-echo') {
+					lintFailureCount += 1;
+					continue;
+				}
+				const display = setAnswer(
+					defaultDisplay,
+					echoSentence.claimBasis.questionId,
+					echoSentence.claimBasis.optionId
+				);
+				if (!display) {
+					lintFailureCount += 1;
+					continue;
+				}
+				const echo = generateDirectEcho(
+					toGenerationProfile(display, 'eeeeeeeeeeeeeeee'),
+					echoSentence.claimBasis.questionId
+				);
+				if (
+					!echo ||
+					echo.text !== echoSentence.text ||
+					echo.trace.fragmentIds[0] !== echoSentence.id
+				) {
+					lintFailureCount += 1;
+				}
+			}
+
+			const totalPrimaryStatements = SESSION_COUNT * STATEMENTS_PER_SESSION;
+			const maximumLineShare = Math.max(...usage.values()) / totalPrimaryStatements;
 			expect({
-				profileBoundaryViolations,
-				readingLengthViolations,
-				semanticRepetitionViolations,
-				lexicalRepetitionViolations,
-				opposingStandalonePoleViolations,
-				techniqueCooldownViolations,
-				leadCooldownViolations,
-				bridgeCooldownViolations,
-				familyLimitViolations
+				generatedStatementCount: generatedStatementCount >= 100_000,
+				lintFailureCount,
+				emptyDeckCount,
+				familyCollisionCount,
+				openerViolationCount,
+				nearDuplicateCount,
+				rainbowFamilyFailureCount,
+				replayMismatchCount,
+				demographicMismatchCount,
+				feedbackFailureCount,
+				representativeUniqueGate: representativeUsage.size >= 600,
+				frequencyGate: maximumLineShare <= 0.02
 			}).toEqual({
-				profileBoundaryViolations: 0,
-				readingLengthViolations: 0,
-				semanticRepetitionViolations: 0,
-				lexicalRepetitionViolations: 0,
-				opposingStandalonePoleViolations: 0,
-				techniqueCooldownViolations: 0,
-				leadCooldownViolations: 0,
-				bridgeCooldownViolations: 0,
-				familyLimitViolations: 0
+				generatedStatementCount: true,
+				lintFailureCount: 0,
+				emptyDeckCount: 0,
+				familyCollisionCount: 0,
+				openerViolationCount: 0,
+				nearDuplicateCount: 0,
+				rainbowFamilyFailureCount: 0,
+				replayMismatchCount: 0,
+				demographicMismatchCount: 0,
+				feedbackFailureCount: 0,
+				representativeUniqueGate: true,
+				frequencyGate: true
 			});
 
-			for (const axis of Object.keys(AXIS_REGISTRY)) {
-				const share = (axisCounts.get(axis) ?? 0) / axisOccurrenceCount;
-				expect(share, 'axis distribution:' + axis).toBeGreaterThanOrEqual(
-					SELECTION_DISTRIBUTION_TOLERANCES.minimumAxisShare
-				);
-				expect(share, 'axis distribution:' + axis).toBeLessThanOrEqual(
-					SELECTION_DISTRIBUTION_TOLERANCES.maximumAxisShare
-				);
-			}
-			const primaryTechniques = new Set(
-				FRAMES_EN.filter((frame) => frame.claimBasis === 'unsupported-generic').map(
-					(frame) => frame.technique
-				)
-			);
-			for (const technique of primaryTechniques) {
-				const share = (primaryTechniqueCounts.get(technique) ?? 0) / statementCount;
-				expect(share, 'primary technique distribution:' + technique).toBeGreaterThanOrEqual(
-					SELECTION_DISTRIBUTION_TOLERANCES.minimumPrimaryTechniqueShare
-				);
-				expect(share, 'primary technique distribution:' + technique).toBeLessThanOrEqual(
-					SELECTION_DISTRIBUTION_TOLERANCES.maximumPrimaryTechniqueShare
-				);
-			}
-			for (const family of ['flattering-ambiguity', 'guarded-vulnerability'] as const) {
-				const share = (specialFamilyCounts.get(family) ?? 0) / statementCount;
-				expect(share, 'special technique distribution:' + family).toBeGreaterThanOrEqual(
-					SELECTION_DISTRIBUTION_TOLERANCES.minimumSpecialFamilyShare
-				);
-				expect(share, 'special technique distribution:' + family).toBeLessThanOrEqual(
-					SELECTION_DISTRIBUTION_TOLERANCES.maximumSpecialFamilyShare
-				);
-			}
+			expect(surfaceAudit.representativeSampling).toMatchObject({
+				sessionCount: 1_000,
+				minimumUniqueRenderedLineGate: 600,
+				maximumSingleLineShareGate: 0.02
+			});
+			expect(surfaceAudit.representativeSampling).toHaveProperty('countsByAxis');
+			expect(surfaceAudit.representativeSampling).toHaveProperty('countsByPole');
+			expect(surfaceAudit.representativeSampling).toHaveProperty('countsByMechanism');
+			expect(surfaceAudit.representativeSampling).toHaveProperty('unreachableContentIds');
+			expect(surfaceAudit.representativeSampling).toHaveProperty('top50Lines');
+			expect(surfaceAudit.representativeSampling).toHaveProperty('collisions');
 		},
 		1_800_000
 	);

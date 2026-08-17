@@ -5,65 +5,101 @@
 	let {
 		statement,
 		index,
-		reveal = false,
+		label,
+		mode = 'plain',
 		showRating = true,
 		onrate
 	}: {
 		statement: ReadingStatement;
 		index: number;
-		reveal?: boolean;
+		label?: string;
+		mode?: 'plain' | 'xray';
 		showRating?: boolean;
 		onrate?: (rating: FitRatingValue) => void;
 	} = $props();
 
+	const componentId = $props.id();
+	let exposed = $derived(mode === 'xray');
+	let sentenceId = $derived(
+		exposed
+			? `${componentId}-statement-${statement.id.replace(/[^a-zA-Z0-9_-]/g, '-')}`
+			: `${componentId}-reading-${index}`
+	);
+	let provenanceId = $derived(`${sentenceId}-provenance`);
+	let displayLabel = $derived(label ?? `Statement ${index}`);
 	let cardKind = $derived(
 		statement.basis === 'direct-echo'
 			? 'Direct echo'
 			: statement.adaptation === 'sealed'
-				? 'Sealed generic claim'
-				: 'Feedback reuse'
+				? 'Generic reading'
+				: 'Rating-derived line'
+	);
+	let ratingLabel = $derived(
+		statement.rating === 'does-not-fit'
+			? 'No, not me'
+			: statement.rating === 'partly-fits'
+				? 'Maybe'
+				: statement.rating === 'fits'
+					? 'Yes, that sounds like me'
+					: statement.rating === 'too-vague'
+						? 'Too broad to tell'
+						: 'Not rated'
 	);
 </script>
 
 <article
 	class="reading-card"
-	class:echo={statement.basis === 'direct-echo'}
-	class:adaptive={statement.adaptation !== 'sealed'}
-	data-statement-id={statement.id}
-	data-basis={statement.basis}
-	data-adaptation={statement.adaptation}
+	class:echo={exposed && statement.basis === 'direct-echo'}
+	class:adaptive={exposed && statement.adaptation !== 'sealed'}
+	data-statement-id={exposed ? statement.id : undefined}
+	data-basis={exposed ? statement.basis : undefined}
+	data-adaptation={exposed ? statement.adaptation : undefined}
 >
 	<header>
-		<p>Statement {index}</p>
-		<span>{reveal ? cardKind : 'Reading'}</span>
+		<p>{displayLabel}</p>
+		<span>{exposed ? cardKind : 'Reading'}</span>
 	</header>
 
-	{#if reveal && statement.segments?.length}
-		<p class="sentence segmented">
-			{#each statement.segments as segment, segmentIndex (`${statement.id}:${segmentIndex}`)}
-				<span data-basis={segment.basis} data-adaptation={segment.adaptation}>
-					<span class="segment-text">{segment.text}</span>
-					{#if segment.label}<small>{segment.label}</small>{/if}
-				</span>
-			{/each}
+	{#if exposed && statement.segments?.length}
+		<p
+			class="sentence"
+			id={sentenceId}
+			aria-describedby={statement.plainExplanation ? provenanceId : undefined}
+		>
+			<span class="sr-only">{statement.text}</span>
+			<span class="segmented" aria-hidden="true">
+				{#each statement.segments as segment, segmentIndex (`${statement.id}:${segmentIndex}`)}
+					<span data-basis={segment.basis} data-adaptation={segment.adaptation}>
+						<span class="segment-text">{segment.text}</span>
+						{#if segment.label}<small>{segment.label}</small>{/if}
+					</span>
+				{/each}
+			</span>
 		</p>
 	{:else}
-		<p class="sentence">{statement.text}</p>
+		<p class="sentence" id={sentenceId}>{statement.text}</p>
 	{/if}
 
-	{#if reveal && statement.plainExplanation}
-		<p class="explanation">{statement.plainExplanation}</p>
+	{#if exposed && statement.plainExplanation}
+		<p class="explanation" aria-hidden="true">{statement.plainExplanation}</p>
+		<p class="sr-only" id={provenanceId}>{statement.plainExplanation}</p>
 	{/if}
 
 	{#if showRating && onrate}
-		<FitRating name={`rating-${statement.id}`} value={statement.rating} onchange={onrate} />
-	{:else if reveal}
+		<FitRating
+			name={`${componentId}-rating`}
+			value={statement.rating}
+			legend={`How well does ${displayLabel} fit?`}
+			describedby={sentenceId}
+			onchange={onrate}
+		/>
+	{:else if exposed}
 		<p class="rating-readout">
-			Current recorded judgment: <strong>{statement.rating.replaceAll('-', ' ')}</strong>
+			Your original rating: <strong>{ratingLabel}</strong>
 		</p>
 	{/if}
 
-	{#if reveal && statement.trace?.length}
+	{#if exposed && statement.trace?.length}
 		<details class="trace">
 			<summary>Inspect this statement</summary>
 			<dl>
@@ -189,6 +225,15 @@
 	.rating-readout strong {
 		color: var(--barnum-ink);
 		text-transform: capitalize;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
 	}
 
 	.trace {

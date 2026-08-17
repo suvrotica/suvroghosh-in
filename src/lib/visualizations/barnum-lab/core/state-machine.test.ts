@@ -1,4 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { compareSemanticManifests } from './counterfactual';
+import { createDefaultDisplayProfile, toGenerationProfile } from './input-boundary';
+import { generateReading } from './select-reading';
 import { createInitialLabState, transitionLabState } from './state-machine';
 import type { LabEvent, LabState } from './types';
 
@@ -22,8 +25,15 @@ function begin(seed = SEED): LabState {
 	return send(createInitialLabState(), { type: 'begin', seed });
 }
 
+function presentAllBaseline(state: LabState): LabState {
+	for (let index = 0; index < 3; index += 1) {
+		state = send(state, { type: 'present-next-baseline' });
+	}
+	return state;
+}
+
 function beginPresented(seed = SEED): LabState {
-	return send(begin(seed), { type: 'present-baseline' });
+	return presentAllBaseline(begin(seed));
 }
 
 function presentAllLater(state: LabState): LabState {
@@ -83,7 +93,7 @@ describe('Barnum guided-state reducer', () => {
 		expect(state.presentation.reservedSlots).toHaveLength(3);
 		expectRejected(state, { type: 'continue' }, 'invalid-transition');
 
-		state = send(state, { type: 'present-baseline' });
+		state = presentAllBaseline(state);
 		if (state.stage !== 'baseline') throw new Error('narrowing');
 		const first = state.deck.genericStatements[0];
 		state = send(state, { type: 'rate', statementId: first.statementId, rating: 'fits' });
@@ -170,6 +180,14 @@ describe('Barnum guided-state reducer', () => {
 		} as const;
 		state = send(state, present);
 		expectRejected(state, present, 'duplicate-activation');
+		state = send(state, {
+			type: 'present-next-baseline',
+			meta: { activationId: 'present-click-2' }
+		});
+		state = send(state, {
+			type: 'present-next-baseline',
+			meta: { activationId: 'present-click-3' }
+		});
 
 		const continued = {
 			type: 'continue',
@@ -227,6 +245,28 @@ describe('Barnum guided-state reducer', () => {
 		expectRejected(openLab, { type: 'reveal-now' }, 'invalid-transition');
 	});
 
+	it('records one shown baseline line and abandons only the two never shown on early reveal', () => {
+		let state = begin();
+		state = send(state, { type: 'present-next-baseline' });
+		if (state.stage !== 'baseline') throw new Error('narrowing');
+		const shown = state.presentation.baselineStatementIds[0];
+		const hidden = state.presentation.baselineStatementIds.slice(1);
+		state = send(state, { type: 'reveal-now' });
+		if (state.stage !== 'reveal') throw new Error('narrowing');
+		expect(state.presentation.presentedBaselineStatementIds).toEqual([shown]);
+		expect(state.presentation.abandonedStatementIds).toEqual([
+			...hidden,
+			...state.presentation.laterStatementIds
+		]);
+		expect(state.presentation.history).toHaveLength(1);
+		expect(state.auditLog.filter((event) => event.kind === 'statement-presented')).toHaveLength(1);
+		expect(state.auditLog.some((event) => event.kind === 'answered')).toBe(false);
+		expect(state.auditLog.some((event) => event.kind === 'derivative-created')).toBe(false);
+		expect(state).not.toHaveProperty('directEcho');
+		expect(state.derivatives).toEqual([]);
+		expect(state).not.toHaveProperty('counterfactualProfile');
+	});
+
 	it('distinguishes partial Step 3 presentation from early-reveal abandonment', () => {
 		let state = reachApparentSharpening();
 		state = send(state, { type: 'present-next-claim' });
@@ -259,24 +299,46 @@ describe('Barnum guided-state reducer', () => {
 		).toBe(true);
 	});
 
-	it('allows replay only from reveal/open-lab and resets current presentation state', () => {
-		let baseline = beginPresented();
-		const oldHistory = baseline.stage === 'baseline' ? [...baseline.presentation.history] : [];
-		const reveal = send(baseline, { type: 'reveal-now' });
+	it('replays the same sealed deck while resetting every session-derived field', () => {
+		let reveal = reachFeedback({ planningOption: 'loose-plan', rating: 'fits' });
+		reveal = send(reveal, { type: 'apply-counterfactual' });
+		reveal = send(reveal, { type: 'continue' });
+		if (reveal.stage !== 'reveal') throw new Error('narrowing');
+		const sealedBefore = JSON.stringify(reveal.deck.genericStatements);
+		expect(reveal.ratings.length).toBeGreaterThan(0);
+		expect(reveal).toHaveProperty('derivatives');
+		expect(reveal).toHaveProperty('counterfactualProfile');
+
 		const replayedFromReveal = send(reveal, { type: 'replay' });
 		expect(replayedFromReveal.stage).toBe('baseline');
 		if (replayedFromReveal.stage !== 'baseline') throw new Error('narrowing');
+		expect(JSON.stringify(replayedFromReveal.deck.genericStatements)).toBe(sealedBefore);
+		expect(replayedFromReveal.deck.replayCode).toBe(reveal.deck.replayCode);
+		expect(replayedFromReveal.displayProfile).toEqual(createDefaultDisplayProfile());
+		expect(replayedFromReveal.ratings).toEqual([]);
+		expect(replayedFromReveal.branchId).toBe('branch-0');
+		expect(replayedFromReveal.consumedActivationIds).toEqual([]);
 		expect(replayedFromReveal.presentation.presentedBaselineStatementIds).toEqual([]);
+		expect(replayedFromReveal.presentation.presentedLaterStatementIds).toEqual([]);
 		expect(replayedFromReveal.presentation.abandonedStatementIds).toEqual([]);
-		expect(replayedFromReveal.presentation.history).toEqual(oldHistory);
-		expect(replayedFromReveal.auditLog.at(-1)).toMatchObject({
+		expect(replayedFromReveal.presentation.history).toEqual([]);
+		expect(replayedFromReveal.auditLog).toHaveLength(1);
+		expect(replayedFromReveal.auditLog[0]).toMatchObject({
 			kind: 'replayed',
-			parentBranchId: reveal.branchId
+			replayCode: reveal.deck.replayCode,
+			branchId: 'branch-0',
+			sequence: 1
 		});
+		expect(replayedFromReveal).not.toHaveProperty('directEcho');
+		expect(replayedFromReveal).not.toHaveProperty('derivatives');
+		expect(replayedFromReveal).not.toHaveProperty('counterfactualProfile');
+		expect(replayedFromReveal).not.toHaveProperty('wholeReadingFit');
+		expect(replayedFromReveal).not.toHaveProperty('visitorEstimatedBreadth');
+		expect(replayedFromReveal).not.toHaveProperty('visitorRatedDistinctiveness');
 		expectRejected(replayedFromReveal, { type: 'continue' }, 'invalid-transition');
-		baseline = send(replayedFromReveal, { type: 'present-baseline' });
-		if (baseline.stage !== 'baseline') throw new Error('narrowing');
-		expect(baseline.presentation.history).toHaveLength(oldHistory.length + 3);
+		const onePresented = send(replayedFromReveal, { type: 'present-next-baseline' });
+		if (onePresented.stage !== 'baseline') throw new Error('narrowing');
+		expect(onePresented.presentation.history).toHaveLength(1);
 
 		const openLab = send(reveal, { type: 'continue' });
 		const replayedFromOpenLab = send(openLab, { type: 'replay' });
@@ -291,6 +353,25 @@ describe('Barnum guided-state reducer', () => {
 		state = reachFeedback();
 
 		state = send(state, { type: 'apply-counterfactual' });
+		if (state.stage !== 'feedback-and-counterfactual' || !state.counterfactualProfile) {
+			throw new Error('counterfactual narrowing');
+		}
+		const regenerated = generateReading(
+			toGenerationProfile(state.counterfactualProfile, state.deck.sessionSeed),
+			{
+				count: state.deck.genericStatements.length,
+				slotPrefix: 'generic',
+				seedKey: 'sealed-generic-deck'
+			}
+		);
+		expect(compareSemanticManifests(state.deck.genericStatements, regenerated)).toEqual({
+			identical: true,
+			overlapPercent: 100,
+			changedSlotIds: []
+		});
+		expect(regenerated.map((statement) => statement.trace.fragmentIds)).toEqual(
+			state.deck.genericStatements.map((statement) => statement.trace.fragmentIds)
+		);
 		expectRejected(state, { type: 'apply-counterfactual' }, 'invalid-transition');
 		state = send(state, { type: 'continue' });
 		expect(state.stage).toBe('reveal');
@@ -326,7 +407,15 @@ describe('Barnum guided-state reducer', () => {
 	it('adds stable baseline and later presentation events exactly once per reducer action', () => {
 		let state = begin();
 		expectRejected(state, { type: 'present-next-claim' }, 'invalid-transition');
-		state = send(state, { type: 'present-baseline', meta: { timestamp: 'baseline-shown' } });
+		for (let index = 0; index < 3; index += 1) {
+			state = send(state, {
+				type: 'present-next-baseline',
+				meta: { timestamp: `baseline-shown-${index + 1}` }
+			});
+			if (state.stage !== 'baseline') throw new Error('narrowing');
+			expect(state.presentation.presentedBaselineStatementIds).toHaveLength(index + 1);
+			expect(state.presentation.history).toHaveLength(index + 1);
+		}
 		if (state.stage !== 'baseline') throw new Error('narrowing');
 		const baselineAudits = state.auditLog.filter(
 			(event) => event.kind === 'statement-presented' && event.group === 'baseline'
@@ -341,7 +430,7 @@ describe('Barnum guided-state reducer', () => {
 		expect(state.presentation.history.map((entry) => entry.statement.statementId)).toEqual(
 			state.presentation.baselineStatementIds
 		);
-		expectRejected(state, { type: 'present-baseline' }, 'invalid-transition');
+		expectRejected(state, { type: 'present-next-baseline' }, 'invalid-transition');
 
 		state = send(state, { type: 'continue' });
 		expectRejected(state, { type: 'present-next-claim' }, 'invalid-transition');

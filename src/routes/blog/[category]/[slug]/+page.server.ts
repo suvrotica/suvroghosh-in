@@ -7,7 +7,12 @@ export const prerender = 'auto';
 
 export const entries: EntryGenerator = () =>
 	getPublishedPosts()
-		.filter(({ categorySlug, slug }) => categorySlug !== 'games' && slug !== 'the-bias-archipelago')
+		.filter(
+			({ categorySlug, slug }) =>
+				categorySlug !== 'games' &&
+				slug !== 'the-bias-archipelago' &&
+				slug !== 'the-profile-that-knows-almost-nothing-about-you'
+		)
 		.map(({ categorySlug, slug }) => ({ category: categorySlug, slug }));
 
 export const load: PageServerLoad = ({ params }) =>

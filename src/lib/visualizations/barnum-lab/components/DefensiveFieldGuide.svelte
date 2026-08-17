@@ -72,7 +72,7 @@
 		{/each}
 	</ol>
 
-	{#if interactive}<p class="status" role="status">{status}</p>{/if}
+	{#if interactive}<p class="status">{status}</p>{/if}
 </section>
 
 <style>

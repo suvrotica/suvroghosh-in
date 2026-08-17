@@ -2,7 +2,6 @@ import AxeBuilder from '@axe-core/playwright';
 import {
 	expect,
 	test,
-	type Browser,
 	type Locator,
 	type Page,
 	type Request as PlaywrightRequest
@@ -10,23 +9,62 @@ import {
 
 const articlePath = '/blog/visualizations/the-profile-that-knows-almost-nothing-about-you';
 const stageLabels = [
-	'Start with almost nothing',
-	'Add four clues',
-	'Watch the reading sharpen',
-	'Feed the reader',
-	'Lift the floorboards'
+	'First impression',
+	'A few clues',
+	'Your reading',
+	'One more pass',
+	'How it worked'
 ] as const;
-const guidedStages = [
-	'baseline',
-	'four-clues',
-	'apparent-sharpening',
-	'feedback-and-counterfactual',
-	'reveal'
+const forbiddenBeforeReveal = [
+	'stage dressing',
+	'sealed claim',
+	'direct echo',
+	'feedback reuse',
+	'semantic ID',
+	'reproducibility code',
+	'From your answer',
+	'Using only that selection',
+	'stage prop',
+	'not probability'
+] as const;
+const unrelatedAssetMarkers = [
+	'artificial-life',
+	'belousov-zhabotinsky',
+	'brownian-motion',
+	'domain-coloring',
+	'double-pendulum',
+	'fertilization-calcium',
+	'gradient-descent',
+	'hello-fragment',
+	'hello-observable',
+	'living-aperture',
+	'monte-carlo',
+	'neuron-zoo',
+	'ray-marching',
+	'reaction-diffusion',
+	'spacetime-laboratory',
+	'static-equilibrium',
+	'weather-inside-the-nucleus'
 ] as const;
 
-type RuntimeDiagnostics = {
-	errors: string[];
-	failedRequests: string[];
+type RuntimeDiagnostics = { errors: string[]; failedRequests: string[] };
+type RatingChoice = 'does-not-fit' | 'partly-fits' | 'fits' | 'too-vague';
+type RequestRecord = {
+	method: string;
+	url: string;
+	body: string;
+	headers: Record<string, string>;
+};
+type PrivacyAudit = {
+	beacons: Array<{ url: string; body: string }>;
+	fetches: Array<{ url: string; body: string }>;
+	xhrs: Array<{ method: string; url: string; body: string }>;
+	forms: string[];
+	clientErrors: string[];
+	storageWrites: Array<{ storage: string; operation: string; key: string; value: string }>;
+	indexedDbCalls: Array<{ operation: string; name: string }>;
+	historyCalls: Array<{ operation: string; state: string; url: string }>;
+	cookieWrites: string[];
 };
 
 function lab(page: Page): Locator {
@@ -86,26 +124,39 @@ async function openLab(page: Page): Promise<Locator> {
 	return root;
 }
 
-async function expectStep(root: Locator, step: number): Promise<void> {
-	await expect(root).toHaveAttribute('data-stage', guidedStages[step - 1]);
-	await expect(root.getByText(`Step ${step} of 5`, { exact: true })).toBeVisible();
-	await expect(
-		root
-			.getByRole('navigation', { name: 'Demonstration progress' })
-			.getByText(stageLabels[step - 1])
-	).toBeAttached();
+async function expectStep(
+	root: Locator,
+	step: number,
+	label = stageLabels[step - 1]
+): Promise<void> {
+	await expect(root.locator('.stage-heading > p')).toHaveText(`Step ${step} of 5`);
+	const progress = root.getByRole('navigation', { name: 'Demonstration progress' });
+	await expect(progress.getByText(label, { exact: true })).toBeAttached();
+	await expect(progress.locator('li.current')).toContainText(label);
+	await expect(root.locator('#guided-stage-heading')).toHaveText(label);
 }
 
-async function rateVisibleStatements(
-	root: Locator,
-	ratings: readonly ('does-not-fit' | 'partly-fits' | 'fits' | 'too-vague')[] = ['partly-fits']
-): Promise<void> {
-	const cards = root.locator('.reading-card:visible:has(fieldset.rating)');
-	for (let index = 0; index < (await cards.count()); index += 1) {
-		const card = cards.nth(index);
-		const checked = card.locator('fieldset.rating input:checked');
-		if ((await checked.count()) > 0) continue;
-		await card.locator(`fieldset.rating input[value="${ratings[index % ratings.length]}"]`).check();
+async function expectHeadingBelowHeader(page: Page, root: Locator): Promise<void> {
+	const heading = root
+		.locator('#guided-stage-heading:visible, #barnum-open-heading:visible')
+		.first();
+	await expect(heading).toBeFocused();
+	const siteHeader = page.locator('.site-shell > header.sticky').first();
+	const [headingBounds, headerBounds] = await Promise.all([
+		heading.boundingBox(),
+		siteHeader.boundingBox()
+	]);
+	expect(headingBounds, 'the current stage heading must have layout geometry').not.toBeNull();
+	expect(headerBounds, 'the sticky site header must have layout geometry').not.toBeNull();
+	expect(headingBounds!.y).toBeGreaterThanOrEqual(headerBounds!.y + headerBounds!.height + 12);
+}
+
+async function expectNoForbiddenCopy(root: Locator): Promise<void> {
+	const text = (await root.innerText()).toLocaleLowerCase('en');
+	for (const phrase of forbiddenBeforeReveal) {
+		expect(text, `pre-reveal copy leaked “${phrase}”`).not.toContain(
+			phrase.toLocaleLowerCase('en')
+		);
 	}
 }
 
@@ -113,66 +164,110 @@ async function continueGuided(root: Locator): Promise<void> {
 	const control = root.getByTestId('barnum-continue');
 	await expect(control).toBeEnabled();
 	await control.click();
+	// Stage actions deliberately ignore duplicate activations for 180 ms.
+	await root.page().waitForTimeout(190);
 }
 
-async function castAllLaterClaims(root: Locator): Promise<void> {
-	const castClaims = root.locator('#barnum-cast-claims .reading-card');
-	const castNext = root.getByTestId('barnum-cast-next');
-	await expect(castClaims).toHaveCount(0);
-	for (let count = 1; count <= 4; count += 1) {
-		await castNext.click();
-		await expect(castClaims).toHaveCount(count);
-	}
-	await expect(castNext).toHaveCount(0);
-	await expect(root.getByText(/All four additional sealed claims have been cast/iu)).toBeVisible();
+async function setRangeValue(root: Locator, selector: string, value: number): Promise<void> {
+	await root.locator(selector).evaluate((element, nextValue) => {
+		const input = element as HTMLInputElement;
+		input.value = String(nextValue);
+		input.dispatchEvent(new Event('input', { bubbles: true }));
+	}, value);
 }
 
 async function beginGuided(root: Locator): Promise<void> {
 	await root.getByTestId('barnum-begin').click();
 	await expectStep(root, 1);
+	await expect(root.getByTestId('barnum-current-baseline')).toBeVisible();
+	// The component's duplicate-activation guard lasts 180 ms.
+	await root.page().waitForTimeout(190);
 }
 
-async function advanceToReveal(root: Locator): Promise<void> {
-	await beginGuided(root);
-	await rateVisibleStatements(root, ['does-not-fit', 'too-vague', 'fits']);
-	await continueGuided(root);
+async function completeBaseline(
+	root: Locator,
+	ratings: readonly (RatingChoice | undefined)[] = [],
+	inspect?: (card: Locator, index: number) => Promise<void>
+): Promise<string[]> {
+	const sentences: string[] = [];
+	for (let index = 0; index < 3; index += 1) {
+		const current = root.getByTestId('barnum-current-baseline');
+		const card = current.locator('.reading-card');
+		await expect(root.locator('.reading-card:visible')).toHaveCount(1);
+		await expect(card.locator('header > p')).toHaveText(`Line ${index + 1} of 3`);
+		if (index === 0) {
+			await expect(root.getByTestId('barnum-baseline-history')).toHaveCount(0);
+		} else {
+			await expect(root.getByTestId('barnum-baseline-history').locator('li')).toHaveCount(index);
+		}
+		if (inspect) await inspect(card, index);
+		sentences.push((await card.locator('.sentence').innerText()).trim());
+		const rating = ratings[index];
+		if (rating && (await card.locator('fieldset.rating input:checked').count()) === 0) {
+			const ratingInput = card.locator(`fieldset.rating input[value="${rating}"]`);
+			await card.locator(`fieldset.rating label:has(input[value="${rating}"])`).click();
+			await expect(ratingInput).toBeChecked();
+		}
+		if (index === 2) break;
 
-	await expectStep(root, 2);
+		const next = root.getByTestId('barnum-next-statement');
+		await expect(next).toHaveText('Next statement');
+		await next.click();
+		await expect(current).toBeFocused();
+		await expect(card.locator('header > p')).toHaveText(`Line ${index + 2} of 3`);
+		await root.page().waitForTimeout(190);
+	}
+	await expect(root.getByTestId('barnum-next-statement')).toHaveCount(0);
+	await expect(root.getByTestId('barnum-continue')).toBeVisible();
+	return sentences;
+}
+
+async function chooseGuidedClues(root: Locator): Promise<void> {
 	await root.locator('#barnum-country').selectOption('bangladesh');
 	await root.locator('#barnum-city_context').selectOption('dhaka');
 	await root.locator('#barnum-language').selectOption('english');
 	await root.locator('#barnum-planning_style').selectOption('loose-plan');
-	await continueGuided(root);
+}
 
+async function advanceToStepThree(root: Locator): Promise<void> {
+	await beginGuided(root);
+	await completeBaseline(root, ['fits', 'partly-fits', 'does-not-fit']);
+	await continueGuided(root);
+	await expectStep(root, 2);
+	await chooseGuidedClues(root);
+	await continueGuided(root);
 	await expectStep(root, 3);
-	const echoCount = await root.locator('.reading-card[data-basis="direct-echo"]').count();
-	expect(echoCount).toBeLessThanOrEqual(1);
-	if (echoCount === 0) {
-		await expect(root.getByText(/conflict.*sealed|sealed.*conflict/iu)).toBeVisible();
-	}
-	await expect(root.getByTestId('barnum-continue')).toBeDisabled();
-	await castAllLaterClaims(root);
-	await expect(root.getByTestId('barnum-continue')).toBeEnabled();
-	await rateVisibleStatements(root, ['partly-fits', 'fits', 'does-not-fit']);
-	await continueGuided(root);
+}
 
+async function rateWholeReading(root: Locator): Promise<void> {
+	const group = root.getByTestId('barnum-whole-reading-rating');
+	await expect(group).toBeVisible();
+	const radios = group.locator('input[type="radio"]');
+	const count = await radios.count();
+	expect(count).toBeGreaterThan(0);
+	await radios.nth(Math.min(4, count - 1)).check();
+}
+
+async function advanceToReveal(root: Locator): Promise<void> {
+	await advanceToStepThree(root);
+	await rateWholeReading(root);
+	await continueGuided(root);
 	await expectStep(root, 4);
-	await rateVisibleStatements(root, ['fits', 'partly-fits', 'too-vague']);
-	const derivative = root.getByRole('button', {
-		name: /Create (?:the )?(?:adaptive|feedback)|Use (?:my )?feedback/iu
-	});
-	if ((await derivative.count()) > 0 && (await derivative.first().isVisible())) {
-		await derivative.first().click();
-	}
-	const counterfactual = root.getByRole('button', {
-		name: /Change every demographic clue|Apply (?:the )?demographic counterfactual/iu
-	});
-	await expect(counterfactual).toBeVisible();
-	await counterfactual.click();
-	await expect(root.getByText(/100% semantic-ID overlap/iu)).toBeVisible();
+	const counterfactual = root.getByRole('button', { name: 'Change several surface clues' });
+	if ((await counterfactual.count()) > 0) await counterfactual.click();
 	await continueGuided(root);
-
 	await expectStep(root, 5);
+}
+
+async function expectNoSeriousAxeViolations(page: Page, state: string): Promise<void> {
+	const accessibility = await new AxeBuilder({ page })
+		.include('[data-testid="barnum-lab"]')
+		.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
+		.analyze();
+	const seriousViolations = accessibility.violations.filter((violation) =>
+		['serious', 'critical'].includes(violation.impact ?? '')
+	);
+	expect(seriousViolations, `${state} has serious or critical Axe violations`).toEqual([]);
 }
 
 async function storageSnapshot(page: Page) {
@@ -190,52 +285,211 @@ async function storageSnapshot(page: Page) {
 		indexedDatabases:
 			typeof indexedDB.databases === 'function'
 				? (await indexedDB.databases()).map((database) => database.name ?? '')
-				: []
+				: [],
+		cookie: document.cookie,
+		historyState: JSON.stringify(history.state),
+		url: location.href,
+		referrer: document.referrer
 	}));
 }
 
-async function expectNoSeriousAxeViolations(page: Page, state: string): Promise<void> {
-	const accessibility = await new AxeBuilder({ page })
-		.include('[data-testid="barnum-lab"]')
-		.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-		.analyze();
-	const seriousViolations = accessibility.violations.filter((violation) =>
-		['serious', 'critical'].includes(violation.impact ?? '')
-	);
-	expect(seriousViolations, `${state} has serious or critical Axe violations`).toEqual([]);
+async function installPrivacyAudit(page: Page): Promise<void> {
+	await page.addInitScript(() => {
+		const audit: PrivacyAudit = {
+			beacons: [],
+			fetches: [],
+			xhrs: [],
+			forms: [],
+			clientErrors: [],
+			storageWrites: [],
+			indexedDbCalls: [],
+			historyCalls: [],
+			cookieWrites: []
+		};
+		Object.defineProperty(window, '__barnumPrivacyAudit', { value: audit });
+		const bodyText = (value: unknown) => {
+			if (value === undefined || value === null) return '';
+			if (typeof value === 'string') return value;
+			if (value instanceof URLSearchParams) return value.toString();
+			try {
+				return JSON.stringify(value);
+			} catch {
+				return String(value);
+			}
+		};
+		window.addEventListener('error', (event) => audit.clientErrors.push(event.message));
+		window.addEventListener('unhandledrejection', (event) =>
+			audit.clientErrors.push(bodyText(event.reason))
+		);
+		if (typeof window.reportError === 'function') {
+			const originalReportError = window.reportError.bind(window);
+			window.reportError = (error: unknown) => {
+				audit.clientErrors.push(bodyText(error));
+				originalReportError(error);
+			};
+		}
+
+		const originalFetch = window.fetch.bind(window);
+		window.fetch = ((input: RequestInfo | URL, init?: RequestInit) => {
+			audit.fetches.push({
+				url: input instanceof Request ? input.url : String(input),
+				body: bodyText(init?.body)
+			});
+			return originalFetch(input, init);
+		}) as typeof window.fetch;
+
+		const xhrMeta = new WeakMap<XMLHttpRequest, { method: string; url: string }>();
+		const originalOpen = XMLHttpRequest.prototype.open;
+		XMLHttpRequest.prototype.open = function (
+			method: string,
+			url: string | URL,
+			...rest: unknown[]
+		) {
+			xhrMeta.set(this, { method, url: String(url) });
+			return originalOpen.call(this, method, String(url), ...(rest as [boolean, string?, string?]));
+		};
+		const originalSend = XMLHttpRequest.prototype.send;
+		XMLHttpRequest.prototype.send = function (body?: Document | XMLHttpRequestBodyInit | null) {
+			const meta = xhrMeta.get(this) ?? { method: 'GET', url: '' };
+			audit.xhrs.push({ ...meta, body: bodyText(body) });
+			return originalSend.call(this, body as XMLHttpRequestBodyInit | null | undefined);
+		};
+
+		const originalBeacon = navigator.sendBeacon?.bind(navigator);
+		Object.defineProperty(navigator, 'sendBeacon', {
+			configurable: true,
+			value: (url: string | URL, data?: BodyInit | null) => {
+				audit.beacons.push({ url: String(url), body: bodyText(data) });
+				return originalBeacon ? originalBeacon(url, data) : true;
+			}
+		});
+
+		const originalSubmit = HTMLFormElement.prototype.submit;
+		HTMLFormElement.prototype.submit = function () {
+			audit.forms.push(this.action);
+			return originalSubmit.call(this);
+		};
+
+		for (const operation of ['setItem', 'removeItem', 'clear'] as const) {
+			const original = Storage.prototype[operation];
+			Storage.prototype[operation] = function (...args: string[]) {
+				audit.storageWrites.push({
+					storage: this === localStorage ? 'localStorage' : 'sessionStorage',
+					operation,
+					key: args[0] ?? '',
+					value: args[1] ?? ''
+				});
+				return (original as (...values: string[]) => void).apply(this, args);
+			};
+		}
+
+		const originalIndexedDbOpen = IDBFactory.prototype.open;
+		IDBFactory.prototype.open = function (name: string, version?: number): IDBOpenDBRequest {
+			audit.indexedDbCalls.push({ operation: 'open', name });
+			return version === undefined
+				? originalIndexedDbOpen.call(this, name)
+				: originalIndexedDbOpen.call(this, name, version);
+		};
+		const originalIndexedDbDelete = IDBFactory.prototype.deleteDatabase;
+		IDBFactory.prototype.deleteDatabase = function (name: string): IDBOpenDBRequest {
+			audit.indexedDbCalls.push({ operation: 'deleteDatabase', name });
+			return originalIndexedDbDelete.call(this, name);
+		};
+
+		for (const operation of ['pushState', 'replaceState'] as const) {
+			const original = History.prototype[operation];
+			History.prototype[operation] = function (
+				state: unknown,
+				unused: string,
+				url?: string | URL | null
+			) {
+				audit.historyCalls.push({
+					operation,
+					state: bodyText(state),
+					url: url === undefined || url === null ? '' : String(url)
+				});
+				return original.call(this, state, unused, url);
+			};
+		}
+
+		const cookie = Object.getOwnPropertyDescriptor(Document.prototype, 'cookie');
+		if (cookie?.get && cookie.set) {
+			Object.defineProperty(Document.prototype, 'cookie', {
+				configurable: true,
+				get: cookie.get,
+				set(value: string) {
+					audit.cookieWrites.push(value);
+					cookie.set?.call(this, value);
+				}
+			});
+		}
+	});
 }
 
-async function assertNoJavaScriptFallback(browser: Browser, baseURL: string): Promise<void> {
-	const context = await browser.newContext({
-		baseURL,
-		javaScriptEnabled: false,
-		viewport: { width: 390, height: 844 }
+async function installNetworkPrivacyGuard(page: Page, records: RequestRecord[]): Promise<void> {
+	await page.route('**/*', async (route) => {
+		const request = route.request();
+		records.push(recordRequest(request));
+		if (ignorablePlatformRequest(request.url())) {
+			await route.abort('blockedbyclient');
+			return;
+		}
+		if (!['GET', 'HEAD', 'OPTIONS'].includes(request.method())) {
+			await route.abort('blockedbyclient');
+			return;
+		}
+		await route.continue();
 	});
-	const page = await context.newPage();
-	try {
-		const response = await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
-		expect(response?.ok()).toBe(true);
-		await expect(
-			page.getByRole('heading', {
-				level: 1,
-				name: 'The Profile That Knows Almost Nothing About You',
-				exact: true
-			})
-		).toBeVisible();
-		await expect(
-			page.getByRole('heading', { name: 'The reading, without the machinery', exact: true })
-		).toBeVisible();
-		await expect(page.getByText(/Fit is not distinctiveness\./iu).first()).toBeVisible();
-		await expect(page.getByRole('heading', { name: 'The many-guesses model' })).toBeVisible();
-		await expect(page.getByRole('heading', { name: 'A ten-question defence' })).toBeVisible();
-		await expect(page.getByText(/uses no runtime AI or external API/iu)).toBeVisible();
-		await expect(page.locator('a[href="https://doi.org/10.1037/h0059240"]').first()).toBeVisible();
-	} finally {
-		await context.close();
+}
+
+async function resetPrivacyAudit(page: Page): Promise<void> {
+	await page.evaluate(() => {
+		const audit = (window as unknown as { __barnumPrivacyAudit: PrivacyAudit })
+			.__barnumPrivacyAudit;
+		for (const value of Object.values(audit)) value.length = 0;
+	});
+}
+
+async function readPrivacyAudit(page: Page): Promise<PrivacyAudit> {
+	return page.evaluate(
+		() => (window as unknown as { __barnumPrivacyAudit: PrivacyAudit }).__barnumPrivacyAudit
+	);
+}
+
+function recordRequest(request: PlaywrightRequest): RequestRecord {
+	return {
+		method: request.method(),
+		url: request.url(),
+		body: request.postData() ?? '',
+		headers: request.headers()
+	};
+}
+
+async function expectNoSensitiveLeak(
+	records: readonly unknown[],
+	sensitiveValues: readonly string[]
+): Promise<void> {
+	const serialized = JSON.stringify(records).toLocaleLowerCase('en');
+	for (const value of sensitiveValues.filter((candidate) => candidate.trim().length >= 4)) {
+		expect(serialized, `lab value leaked: ${value}`).not.toContain(value.toLocaleLowerCase('en'));
 	}
 }
 
-test('SSR and no-JavaScript retain the ethical boundary, formula, field guide, and sources', async ({
+async function visibleControlCount(root: Locator): Promise<number> {
+	return root.locator('button, input, select, textarea, summary').evaluateAll(
+		(nodes) =>
+			nodes.filter((node) => {
+				const style = getComputedStyle(node);
+				return (
+					(node as HTMLElement).getClientRects().length > 0 &&
+					style.display !== 'none' &&
+					style.visibility !== 'hidden'
+				);
+			}).length
+	);
+}
+
+test('SSR, no-JavaScript, and generated HTML keep the explanation useful and route assets isolated', async ({
 	request,
 	browser,
 	baseURL
@@ -245,613 +499,432 @@ test('SSR and no-JavaScript retain the ethical boundary, formula, field guide, a
 	const html = await response.text();
 	expect(html).toContain('The Profile That Knows Almost Nothing About You');
 	expect(html).toContain('data-testid="barnum-lab"');
-	expect(html).toContain('data-testid="assumption-ledger"');
-	expect(html).toContain('The reading, without the machinery');
-	expect(html).toContain('Fit is not distinctiveness.');
+	expect(html).toContain('data-barnum-critical');
+	expect(html).toContain('How the reading works');
 	expect(html).toContain('1 − (1 − <var>p</var>)<sup><var>n</var></sup>');
-	expect(html).toContain('10.1037/h0059240');
-	expect(html).toContain('10.2466/pr0.1985.57.2.367');
-	expect(html).toContain('10.1177/00986283241240454');
-	await assertNoJavaScriptFallback(browser, baseURL ?? 'http://127.0.0.1:4351');
+
+	const linkTags = html.match(/<link\b[^>]*>/giu) ?? [];
+	const routeAssets = linkTags
+		.map((tag) => ({
+			rel: tag.match(/\brel=["']([^"']+)["']/iu)?.[1] ?? '',
+			href: tag.match(/\bhref=["']([^"']+)["']/iu)?.[1] ?? ''
+		}))
+		.filter(({ rel }) => rel === 'stylesheet' || rel === 'modulepreload');
+	const serializedAssets = JSON.stringify(routeAssets).toLocaleLowerCase('en');
+	const serializedAssetTags = (html.match(/<(?:link|script)\b[^>]*>/giu) ?? [])
+		.join('\n')
+		.toLocaleLowerCase('en');
+	expect(serializedAssetTags).not.toMatch(
+		/<link\b[^>]*rel=["']preload["'][^>]*(?:roboto|courier-prime)|<link\b[^>]*(?:roboto|courier-prime)[^>]*rel=["']preload["']/iu
+	);
+	for (const marker of unrelatedAssetMarkers) {
+		expect(serializedAssets, `unrelated ${marker} asset was linked`).not.toContain(marker);
+		expect(
+			serializedAssetTags,
+			`production-served HTML mentioned unrelated ${marker} assets`
+		).not.toContain(marker);
+	}
+	expect(routeAssets.filter(({ rel }) => rel === 'stylesheet').length).toBeLessThanOrEqual(6);
+	expect(routeAssets.filter(({ rel }) => rel === 'modulepreload').length).toBeLessThanOrEqual(36);
+
+	const context = await browser.newContext({
+		baseURL: baseURL ?? 'http://127.0.0.1:4351',
+		javaScriptEnabled: false,
+		viewport: { width: 390, height: 844 }
+	});
+	try {
+		const page = await context.newPage();
+		const navigation = await page.goto(articlePath, { waitUntil: 'domcontentloaded' });
+		expect(navigation?.ok()).toBe(true);
+		const root = lab(page);
+		await expect(root).toHaveAttribute('data-ready', 'false');
+		await expect(root.locator('.noscript-poster')).toBeVisible();
+		await expect(root.locator('.noscript-poster')).toContainText(
+			/interactive\s+demonstration\s+needs JavaScript/iu
+		);
+		expect(await visibleControlCount(root)).toBe(0);
+		await expect(page.getByRole('heading', { name: 'The many-guesses model' })).toBeVisible();
+		await expect(page.getByRole('heading', { name: 'A ten-question defence' })).toBeVisible();
+		await expect(page.getByText(/uses no runtime AI or external API/iu)).toBeVisible();
+	} finally {
+		await context.close();
+	}
 });
 
-test('the full assumption ledger precedes interaction and keeps all demo defaults unconfirmed', async ({
+test('@cross-browser plain first impressions remain semantic, private, and focus-safe', async ({
 	page
 }) => {
+	await installPrivacyAudit(page);
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	const requests: RequestRecord[] = [];
+	const root = await openLab(page);
+	await resetPrivacyAudit(page);
+	await installNetworkPrivacyGuard(page, requests);
+	const before = await storageSnapshot(page);
+
+	await beginGuided(root);
+	await expectHeadingBelowHeader(page, root);
+	await expectNoForbiddenCopy(root);
+	const baselineSentences = await completeBaseline(
+		root,
+		['fits', 'partly-fits', 'does-not-fit'],
+		async (card, index) => {
+			const sentence = (await card.locator('.sentence').innerText()).trim();
+			expect(sentence.split(/\s+/u).length).toBeLessThanOrEqual(24);
+			await expect(card.locator('.segmented')).toHaveCount(0);
+			const snapshot = await card.locator('.sentence').ariaSnapshot();
+			expect(snapshot.split(sentence).length - 1).toBe(1);
+			const rating = card.locator('fieldset.rating');
+			await expect(rating.locator('legend')).toHaveText(
+				`How well does Line ${index + 1} of 3 fit?`
+			);
+			const sentenceId = await card.locator('.sentence').getAttribute('id');
+			expect(sentenceId).toBeTruthy();
+			await expect(rating.locator('input').first()).toHaveAttribute(
+				'aria-describedby',
+				sentenceId!
+			);
+		}
+	);
+	await continueGuided(root);
+	await expectStep(root, 2);
+	await expectHeadingBelowHeader(page, root);
+	await expectNoForbiddenCopy(root);
+
+	const after = await storageSnapshot(page);
+	expect(after).toEqual(before);
+	const audit = await readPrivacyAudit(page);
+	expect(audit.clientErrors).toEqual([]);
+	expect(audit.storageWrites).toEqual([]);
+	expect(audit.indexedDbCalls).toEqual([]);
+	expect(audit.historyCalls).toEqual([]);
+	expect(audit.cookieWrites).toEqual([]);
+	await expectNoSensitiveLeak(
+		[...requests, audit],
+		['fits', 'surface-autonomy', 'Line 1 of 3', ...baselineSentences]
+	);
+	for (const request of requests.filter(({ method }) => !['GET', 'HEAD'].includes(method))) {
+		expect(ignorablePlatformRequest(request.url)).toBe(true);
+	}
+});
+
+test('the compact opening and all five stages use truthful CTAs, plain readings, and exact focus geometry', async ({
+	page
+}) => {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
 	const diagnostics = observeRuntime(page);
 	const root = await openLab(page);
-	await expect(root).toHaveAttribute('data-analytics', 'disabled');
-	await expect(root).toHaveAttribute('data-no-track', 'true');
-	const ledger = root.getByTestId('assumption-ledger');
-	await expect(ledger.getByRole('heading', { name: 'Assumptions in play' })).toBeVisible();
-	await expect(ledger.getByText('Current tab memory only', { exact: true })).toBeVisible();
-	for (const [label, value] of [
-		['Country', 'India'],
-		['City or place context', 'Kolkata'],
-		['Language(s) used most', 'Bengali + English']
-	] as const) {
-		const row = ledger.locator('.wide-ledger tbody tr').filter({ hasText: label });
-		await expect(row).toContainText(value);
-		await expect(row).toContainText(/demo default, not confirmed/iu);
-	}
-	for (const label of ['Age band', 'Gender']) {
-		const row = ledger.locator('.wide-ledger tbody tr').filter({ hasText: label });
-		await expect(row).toContainText('Prefer not to say');
-		await expect(row).toContainText(/demo default, not confirmed/iu);
-	}
-	await expect(
-		ledger.getByText(/does not know your character, motives, intelligence/iu)
-	).toBeVisible();
-
-	const order = await root.evaluate((element) => {
-		const ledgerElement = element.querySelector('[data-testid="assumption-ledger"]');
-		const firstControl = Array.from(
-			element.querySelectorAll<HTMLElement>('button, input, select, textarea, summary, a[href]')
-		).find((control) => !ledgerElement?.contains(control));
-		return Boolean(
-			ledgerElement &&
-			firstControl &&
-			ledgerElement.compareDocumentPosition(firstControl) & Node.DOCUMENT_POSITION_FOLLOWING
-		);
+	await root.evaluate((element) => element.scrollIntoView({ block: 'start' }));
+	const openingGeometry = await root.evaluate((element) => {
+		const lab = element.getBoundingClientRect();
+		const ledger = element
+			.querySelector('[data-testid="assumption-ledger"]')
+			?.getBoundingClientRect();
+		const begin = element.querySelector('[data-testid="barnum-begin"]')?.getBoundingClientRect();
+		return {
+			ledgerHeight: ledger?.height ?? Infinity,
+			beginBottomFromLabTop: (begin?.bottom ?? Infinity) - lab.top
+		};
 	});
-	expect(order, 'the complete ledger must come before the first lab control').toBe(true);
+	expect(openingGeometry.ledgerHeight).toBeLessThanOrEqual(120);
+	expect(openingGeometry.beginBottomFromLabTop).toBeLessThanOrEqual(768);
+	await expect(root.getByTestId('assumption-ledger')).toContainText('India');
+	await expect(root.getByTestId('assumption-ledger')).toContainText('Kolkata');
+	await expect(root.getByTestId('assumption-ledger')).toContainText('Bengali + English');
+	await expect(root.getByText('3–4 minute interactive', { exact: true })).toBeVisible();
 
 	await beginGuided(root);
-	const progress = root.getByRole('navigation', { name: 'Demonstration progress' });
-	await expect(progress.locator('li')).toHaveCount(5);
-	for (const label of stageLabels) await expect(progress.getByText(label)).toBeAttached();
-	await expect(root.getByTestId('barnum-reset')).toBeVisible();
-	await root.getByTestId('barnum-reset').click();
-	await expect(root.getByText(/No personality test\s+is being performed/iu)).toBeVisible();
-	expect(diagnostics).toEqual({ errors: [], failedRequests: [] });
-});
+	await expectHeadingBelowHeader(page, root);
+	await expectNoForbiddenCopy(root);
+	await expect(root.getByTestId('barnum-next-statement')).toHaveText('Next statement');
+	await completeBaseline(root);
+	const cta = root.getByTestId('barnum-continue');
+	await expect(cta).toHaveText('Continue without rating');
+	await root.getByTestId('barnum-current-baseline').locator('input[value="fits"]').check();
+	await expect(cta).toHaveText('Continue with these ratings');
 
-test('all five guided steps preserve ratings, expose direct echoes and retain misses in the audit', async ({
-	page
-}) => {
-	const root = await openLab(page);
-	await beginGuided(root);
-	await expect(root.getByRole('button', { name: /Reveal the mechanism now/iu })).toBeVisible();
-	await rateVisibleStatements(root, ['does-not-fit', 'too-vague', 'fits']);
-	await continueGuided(root);
-
-	await expectStep(root, 2);
-	await root.getByTestId('barnum-back').click();
+	await root.getByTestId('barnum-reveal-now').click();
+	await expectStep(root, 5);
+	await root.getByRole('button', { name: 'Replay same sealed deck' }).click();
 	await expectStep(root, 1);
-	await expect(
-		root.locator('.reading-card').first().locator('input[value="does-not-fit"]')
-	).toBeChecked();
+	await root.page().waitForTimeout(190);
+	await completeBaseline(root, ['fits', 'partly-fits', 'does-not-fit']);
+	await expect(cta).toHaveText('Continue');
 	await continueGuided(root);
+
 	await expectStep(root, 2);
-	await expect(root.locator('#barnum-country')).toHaveValue('india');
-	await root.locator('#barnum-country').selectOption('bangladesh');
-	await expect(root.locator('#barnum-city_context')).toHaveValue('');
-	await expect(root.locator('#barnum-city_context option:checked')).toHaveText('No answer');
-	const clearedCityRow = root
-		.getByTestId('assumption-ledger')
-		.locator('.wide-ledger tbody tr')
-		.filter({ hasText: 'City or place context' });
-	await expect(clearedCityRow).toHaveCount(1);
-	await expect(clearedCityRow).toContainText('No answer');
-	await expect(clearedCityRow).toContainText('Cleared after country changed');
-	await expect(
-		root.getByTestId('assumption-ledger').getByText('Kolkata', { exact: true })
-	).toHaveCount(0);
-	await root.locator('#barnum-planning_style').selectOption('loose-plan');
-	await expect(
-		root.getByTestId('assumption-ledger').getByText('Selected by you', { exact: true }).first()
-	).toBeVisible();
-	await expect(root.getByText(/stage prop, not probability/iu)).toBeVisible();
+	await expectHeadingBelowHeader(page, root);
+	await expectNoForbiddenCopy(root);
+	await chooseGuidedClues(root);
 	await continueGuided(root);
 
 	await expectStep(root, 3);
-	const directEchoCount = await root.locator('.reading-card[data-basis="direct-echo"]').count();
-	expect(directEchoCount).toBeLessThanOrEqual(1);
-	if (directEchoCount === 0) {
-		await expect(root.getByText(/conflict.*sealed|sealed.*conflict/iu)).toBeVisible();
+	await expectHeadingBelowHeader(page, root);
+	await expectNoForbiddenCopy(root);
+	await expect(root.getByTestId('barnum-continue')).toHaveText(
+		'Continue without an overall rating'
+	);
+	for (const card of await root.locator('.reading-card:visible').all()) {
+		await expect(card.locator('header > span')).toHaveText('Reading');
+		await expect(card.locator('.segmented')).toHaveCount(0);
 	}
-	await expect(root.getByTestId('barnum-continue')).toBeDisabled();
-	await castAllLaterClaims(root);
-	await expect(root.getByTestId('barnum-continue')).toBeEnabled();
-	await rateVisibleStatements(root);
+	await rateWholeReading(root);
+	await expect(root.getByTestId('barnum-continue')).toHaveText('Continue to the next step');
 	await continueGuided(root);
 
 	await expectStep(root, 4);
-	await expect
-		.poll(() =>
-			root.locator('.reading-card[data-adaptation]:not([data-adaptation="sealed"])').count()
-		)
-		.toBeGreaterThan(0);
-	await expect(root.getByText(/Feedback reuse/iu).first()).toBeVisible();
-	await rateVisibleStatements(root, ['fits', 'partly-fits']);
-	const derivative = root.getByRole('button', {
-		name: /Create (?:the )?(?:adaptive|feedback)|Use (?:my )?feedback/iu
-	});
-	if ((await derivative.count()) > 0 && (await derivative.first().isVisible())) {
-		await derivative.first().click();
-	}
-	await root
-		.getByRole('button', {
-			name: /Change every demographic clue|Apply (?:the )?demographic counterfactual/iu
-		})
-		.click();
-	await expect(root.getByText(/100% semantic-ID overlap/iu)).toBeVisible();
+	await expectHeadingBelowHeader(page, root);
+	await expectNoForbiddenCopy(root);
+	await expect(root.getByText(/Feedback reuse|FEEDBACK REUSE/iu)).toHaveCount(0);
+	await root.getByRole('button', { name: 'Change several surface clues' }).click();
+	await expect(
+		root.getByRole('heading', { name: /Same seven readings, in the same order/iu })
+	).toBeVisible();
 	await continueGuided(root);
 
 	await expectStep(root, 5);
+	await expectHeadingBelowHeader(page, root);
 	await expect(root.getByText(/The profile did not read your mind/iu)).toBeVisible();
-	const audit = root.getByTestId('statement-audit');
-	await audit.locator(':scope > summary').click();
-	await expect(audit.getByText(/Current recorded judgment:\s*does not fit/iu)).toBeVisible();
-	await expect(audit.getByText(/Current recorded judgment:\s*too vague/iu)).toBeVisible();
-	await expect(audit.getByRole('heading', { name: 'Append-only event trail' })).toBeVisible();
-	expect(
-		await audit.getByText('Statement first shown', { exact: true }).count()
-	).toBeGreaterThanOrEqual(7);
-	const baselineTrace = audit.locator('.reading-card').first().locator('details.trace');
-	await baselineTrace.locator(':scope > summary').click();
 	await expect(
-		baselineTrace.locator('dl > div').filter({ hasText: 'Presentation status' })
-	).toContainText(/shown to the visitor as baseline/iu);
+		root.getByRole('heading', { name: 'Where the shown lines came from' })
+	).toBeVisible();
+	await expect(root.locator('#barnum-xrays .explanation').first()).toBeVisible();
 	await expect(
-		baselineTrace.locator('dl > div').filter({ hasText: 'First presentation event' })
-	).not.toContainText('None');
-	if (directEchoCount > 0) await expect(audit.getByText(/direct echo/iu).first()).toBeVisible();
+		root.getByRole('heading', { name: 'Original misses and “too vague” judgments' })
+	).toBeVisible();
+	const xray = root.locator('.reading-card:visible:has(.segmented)').first();
+	await expect(xray).toBeVisible();
+	const accessibleSentence = (await xray.locator('.sentence .sr-only').innerText()).trim();
+	const xraySnapshot = await xray.locator('.sentence').ariaSnapshot();
+	expect(xraySnapshot.split(accessibleSentence).length - 1).toBe(1);
+	expect(diagnostics).toEqual({ errors: [], failedRequests: [] });
 });
 
-test('answers and ratings never enter requests, storage, cookies, analytics payloads, or the URL', async ({
+test('every lab action stays in current-tab memory and cannot leak through network, storage, URL, referrer, or history', async ({
 	page,
 	context
 }) => {
-	await page.addInitScript(() => {
-		const audit = {
-			beacons: [] as { url: string; data: string }[],
-			forms: [] as string[],
-			analytics: [] as string[]
-		};
-		Object.defineProperty(window, '__barnumPrivacyAudit', { value: audit });
-		const originalBeacon = navigator.sendBeacon?.bind(navigator);
-		Object.defineProperty(navigator, 'sendBeacon', {
-			configurable: true,
-			value: (url: string | URL, data?: BodyInit | null) => {
-				audit.beacons.push({ url: String(url), data: String(data ?? '') });
-				return originalBeacon ? originalBeacon(url, data) : true;
-			}
-		});
-		const originalSubmit = HTMLFormElement.prototype.submit;
-		HTMLFormElement.prototype.submit = function () {
-			audit.forms.push(this.action);
-			return originalSubmit.call(this);
-		};
-		for (const name of ['dataLayer', '_paq'] as const) {
-			const existing = (window as unknown as Record<string, unknown>)[name];
-			if (Array.isArray(existing)) {
-				const originalPush = existing.push.bind(existing);
-				existing.push = (...items: unknown[]) => {
-					audit.analytics.push(JSON.stringify(items));
-					return originalPush(...items);
-				};
-			}
-		}
-	});
+	await installPrivacyAudit(page);
+	const requests: RequestRecord[] = [];
 	const root = await openLab(page);
 	await page.waitForLoadState('load');
-	await page.waitForTimeout(250);
-	const initialUrl = page.url();
-	const beforeStorage = await storageSnapshot(page);
+	await resetPrivacyAudit(page);
+	await installNetworkPrivacyGuard(page, requests);
+	const before = await storageSnapshot(page);
 	const beforeCookies = await context.cookies();
-	const actionRequests: { method: string; url: string; body: string }[] = [];
-	const recordRequest = (request: PlaywrightRequest) => {
-		if (!request.url().startsWith('data:') && !request.url().startsWith('blob:')) {
-			actionRequests.push({
-				method: request.method(),
-				url: request.url(),
-				body: request.postData() ?? ''
-			});
-		}
-	};
-	page.on('request', recordRequest);
 
 	await beginGuided(root);
-	await rateVisibleStatements(root, ['too-vague']);
+	const initialStatements = await completeBaseline(root, ['too-vague', 'fits', 'partly-fits']);
 	await continueGuided(root);
-	await root.locator('#barnum-country').selectOption('bangladesh');
-	await root.locator('#barnum-city_context').selectOption('dhaka');
-	await root.locator('#barnum-language').selectOption('english');
-	await root.locator('#barnum-planning_style').selectOption('loose-plan');
-	await expect(root.locator('#barnum-planning_style')).toHaveValue('loose-plan');
-	await root.getByText('Add more harmless clues', { exact: true }).click();
-	await root.locator('#barnum-age_band').selectOption('65-plus');
-	await root.locator('#barnum-gender').selectOption('non-binary');
-	await root.locator('#barnum-self_reported_device').selectOption('desktop');
-	await root.locator('#barnum-preferred_shape').selectOption('triangle');
-	await root.locator('#barnum-decision_pace').selectOption('usually-quick');
-
-	await root.getByTestId('barnum-reveal-now').click();
-	await expectStep(root, 5);
+	await chooseGuidedClues(root);
+	await continueGuided(root);
+	await rateWholeReading(root);
+	await continueGuided(root);
+	await root.getByRole('button', { name: 'Change several surface clues' }).click();
+	await continueGuided(root);
 	await root.getByTestId('barnum-open-lab').click();
 	await root.getByText('Advanced controls', { exact: true }).click();
-	await root.getByLabel('Show provenance', { exact: true }).check();
+	const replayCode = await root.getByTestId('barnum-replay-code').inputValue();
+	const auditIds = await root
+		.locator('[data-event-id], [data-statement-id]')
+		.evaluateAll((nodes) =>
+			nodes.flatMap((node) => [
+				node.getAttribute('data-event-id') ?? '',
+				node.getAttribute('data-statement-id') ?? ''
+			])
+		);
+	await root.getByTestId('barnum-toggle-showProvenance').check();
 	await root.getByLabel('Feedback adaptation', { exact: true }).uncheck();
-	await root.getByLabel('Surface context dressing', { exact: true }).uncheck();
-	await root.locator('#open-statement-count').fill('15');
-	const wordingControls = root.getByRole('group', { name: 'Wording', exact: true });
-	await wordingControls.locator('select').nth(0).selectOption('high');
-	await wordingControls.locator('select').nth(1).selectOption('moderate');
-	await page.waitForTimeout(250);
-	page.off('request', recordRequest);
-
-	expect(page.url()).toBe(initialUrl);
-	expect(await storageSnapshot(page)).toEqual(beforeStorage);
-	expect(await context.cookies()).toEqual(beforeCookies);
-	const audit = await page.evaluate(
-		() =>
-			(
-				window as unknown as {
-					__barnumPrivacyAudit: {
-						beacons: { url: string; data: string }[];
-						forms: string[];
-						analytics: string[];
-					};
-				}
-			).__barnumPrivacyAudit
-	);
-	expect(audit.forms).toEqual([]);
-	const sentinels = [
-		'bangladesh',
-		'dhaka',
-		'english',
-		'loose-plan',
-		'too-vague',
-		'65-plus',
-		'non-binary',
-		'desktop',
-		'triangle',
-		'usually-quick',
-		'moderate'
-	];
-	expect(
-		actionRequests.filter(
-			(request) =>
-				!ignorablePlatformRequest(request.url) && !['GET', 'HEAD'].includes(request.method)
-		),
-		'local controls must not trigger state-changing requests'
-	).toEqual([]);
-	for (const outbound of [...actionRequests, ...audit.beacons]) {
-		const serialized = JSON.stringify(outbound).toLocaleLowerCase('en');
-		for (const sentinel of sentinels) {
-			expect(serialized, `${sentinel} leaked through ${serialized}`).not.toContain(sentinel);
-		}
-	}
-	for (const payload of audit.analytics) {
-		for (const sentinel of sentinels)
-			expect(payload.toLocaleLowerCase('en')).not.toContain(sentinel);
-	}
-});
-
-test('reveal opens the comparison lab, honest probability model, provenance, and generic checklist', async ({
-	page
-}) => {
-	await page.addInitScript(() => {
-		Object.defineProperty(navigator, 'clipboard', {
-			configurable: true,
-			value: {
-				writeText: async (value: string) => {
-					(window as unknown as { __barnumClipboard?: string }).__barnumClipboard = value;
-				}
-			}
-		});
-	});
-	const root = await openLab(page);
-	await advanceToReveal(root);
-	const fitPanel = root.getByRole('heading', { name: 'Your fit judgments' }).locator('..');
-	await expect(fitPanel).toContainText('not a personality-accuracy score');
-	await root.getByLabel('Many people', { exact: true }).check();
-	await expect(
-		root.getByText(/Your estimated breadth — not measured population coverage/iu)
-	).toBeVisible();
-	await root.getByLabel('Distinctiveness numeric value').fill('2');
-	await root.getByLabel('Distinctiveness numeric value').press('Tab');
-	await expect(root.locator('output[for="barnum-distinctiveness"]')).toHaveText('2 / 5');
-	await root.getByRole('button', { name: /Open the laboratory/iu }).click();
-	await expect(
-		root.getByRole('heading', { name: 'Three views of the same local machine' })
-	).toBeVisible();
-	await expect(root.getByTestId('barnum-checklist')).toHaveCount(1);
-	await expect(root.getByTestId('barnum-copy-checklist')).toHaveCount(1);
-	const namedExperiments = root.getByRole('group', {
-		name: 'Named laboratory experiments'
-	});
-	await expect(namedExperiments.getByRole('button')).toHaveCount(4);
-	for (const experiment of [
-		'Same deck, different demographics',
-		'One guess versus twelve',
-		'Feedback off versus on',
-		'Hedges off versus on'
-	]) {
-		await expect(
-			namedExperiments.getByRole('button', { name: new RegExp(experiment, 'iu') })
-		).toBeVisible();
-	}
-	for (const heading of ['Blind', 'Dressed', 'Adaptive']) {
-		await expect(root.getByRole('heading', { name: heading, exact: true })).toBeVisible();
-	}
-	await expect(root.getByRole('heading', { name: 'Remove one trick at a time' })).toBeVisible();
-	await root.getByText('Advanced controls', { exact: true }).click();
-	await root.getByLabel('Show provenance', { exact: true }).check();
-	const openAudit = root.getByTestId('barnum-open-audit').getByTestId('statement-audit');
-	const originalEchoCount = await openAudit
-		.locator('.reading-card[data-basis="direct-echo"]')
-		.count();
-	await root.getByTestId('barnum-self-report-counterfactual').click();
-	const selfReportBranch = root.getByTestId('barnum-self-report-branch');
-	await expect(
-		selfReportBranch.getByRole('heading', {
-			name: 'The answer changed; the guided echo was not overwritten'
-		})
-	).toBeVisible();
-	await expect(selfReportBranch).toContainText('Original guided echo');
-	await expect(selfReportBranch).toContainText('Current branch echo');
-	await expect(selfReportBranch).toContainText(/sealed generic core\s+IDs remain unchanged/iu);
-	await expect(selfReportBranch.locator('code').nth(1)).not.toHaveText(
-		'compatibility-omitted reserved slot'
-	);
-	await expect
-		.poll(() => openAudit.locator('.reading-card[data-basis="direct-echo"]').count())
-		.toBe(originalEchoCount + 1);
-	await expect(
-		root.locator('.comparison .reading-card[data-basis="direct-echo"] .explanation').first()
-	).toContainText(/Source: your answer to “How tightly do you plan\?”.*did not discover it/iu);
-	await openAudit.locator(':scope > summary').click();
-	await expect(openAudit.getByText(/planning_style = /iu).last()).toBeVisible();
-
-	await root.getByRole('button', { name: /One guess versus twelve/iu }).click();
-	await expect(root.getByTestId('barnum-many-guesses-experiment')).toContainText(
-		/formulas and natural frequencies/iu
-	);
-	const probability = root.getByRole('heading', {
-		name: 'The probability of throwing enough darts'
-	});
-	await expect(probability).toBeVisible();
-	await root.getByLabel('Probability p numeric value').fill('0.25');
-	await root.getByLabel('Probability p numeric value').press('Tab');
-	await root.getByLabel('Number of claims numeric value').fill('4');
-	await root.getByLabel('Number of claims numeric value').press('Tab');
-	const oneVsTwelve = root.getByTestId('barnum-one-vs-twelve');
-	await expect(
-		oneVsTwelve.getByRole('heading', { name: /one claim versus twelve/iu })
-	).toBeVisible();
-	await expect(oneVsTwelve).toContainText('One claim');
-	await expect(oneVsTwelve).toContainText('25.0%');
-	await expect(oneVsTwelve).toContainText('Twelve claims');
-	await expect(oneVsTwelve).toContainText('96.8%');
-	await expect(root.locator('.probability .results')).toContainText('1.00');
-	await expect(root.locator('.probability .results')).toContainText('68.4%');
-	await expect(
-		root.getByText(/Illustrative assumptions, not measured Barnum-effect rates/iu)
-	).toBeVisible();
-	await root.getByText('More probability controls', { exact: true }).click();
-	await expect(
-		root.getByText(/It is not the probability\s+that someone belongs to A/iu)
-	).toBeVisible();
-
-	const checklist = root.getByTestId('barnum-checklist');
-	await expect(checklist.locator('li')).toHaveCount(10);
-	await root.getByTestId('barnum-copy-checklist').click();
-	await expect(checklist.getByRole('status')).toContainText(
-		'contains no selections, ratings, or session data'
-	);
-	const copied = await page.evaluate(
-		() => (window as unknown as { __barnumClipboard?: string }).__barnumClipboard ?? ''
-	);
-	expect(copied).toContain('A field guide for the next reading');
-	expect(copied.split('\n')).toHaveLength(11);
-	for (const privateValue of ['Bangladesh', 'Dhaka', 'English', 'Loose plan', 'too-vague']) {
-		expect(copied).not.toContain(privateValue);
-	}
-});
-
-test('a reproducibility code restores a deck after reset and reload, then regenerates for a new seed', async ({
-	page
-}) => {
-	let root = await openLab(page);
-	await beginGuided(root);
-	const code = root.locator('.stage-heading code');
-	await expect(root.locator('.stage-heading')).toContainText('Reproducibility code');
-	await expect(code).toHaveText(/^BL1-G100-C100-[0-9A-F]{8}-[0-9A-F]{16}-[0-9A-F]{6}$/u);
-	const originalCode = (await code.textContent()) ?? '';
-	const originalSentences = await root.locator('.reading-card .sentence').allTextContents();
-	expect(originalSentences).toHaveLength(3);
-	await rateVisibleStatements(root, ['fits']);
-
+	await root.getByRole('button', { name: 'Replay same sealed deck' }).click();
 	await root.getByTestId('barnum-reveal-now').click();
-	await expectStep(root, 5);
 	await root.getByTestId('barnum-reset').click();
-	await root.getByRole('button', { name: 'Reset immediately', exact: true }).click();
-	await expect(root).toHaveAttribute('data-stage', 'intro');
-	await expect(root.locator('.live-region')).toContainText(
-		'The lab discarded its current in-memory state.'
-	);
+	await expect(root.getByTestId('barnum-begin')).toBeVisible();
 
-	await page.reload({ waitUntil: 'domcontentloaded' });
-	root = lab(page);
-	await expect(root).toHaveAttribute('data-ready', 'true');
-	await expect(root).toHaveAttribute('data-stage', 'intro');
+	const after = await storageSnapshot(page);
+	expect(after).toEqual(before);
+	expect(await context.cookies()).toEqual(beforeCookies);
+	const audit = await readPrivacyAudit(page);
+	expect(audit.forms).toEqual([]);
+	expect(audit.clientErrors).toEqual([]);
+	expect(audit.storageWrites).toEqual([]);
+	expect(audit.indexedDbCalls).toEqual([]);
+	expect(audit.historyCalls).toEqual([]);
+	expect(audit.cookieWrites).toEqual([]);
+	for (const request of requests.filter(({ method }) => !['GET', 'HEAD'].includes(method))) {
+		expect(ignorablePlatformRequest(request.url), `${request.method} ${request.url}`).toBe(true);
+	}
+	await expectNoSensitiveLeak(
+		[requests, audit, await context.cookies(), after],
+		[
+			'bangladesh',
+			'dhaka',
+			'english',
+			'loose-plan',
+			'too-vague',
+			'fits',
+			replayCode,
+			...initialStatements,
+			...auditIds
+		]
+	);
+});
+
+test('early reveal and replay report only real events and clear every branch except the sealed deck identity', async ({
+	page
+}) => {
+	const root = await openLab(page);
+	await beginGuided(root);
+	const originalSentences = await root.locator('.reading-card:visible .sentence').allInnerTexts();
+	await root.locator('.reading-card:visible').first().locator('input[value="fits"]').check();
+	await root.getByTestId('barnum-next-statement').click();
+	await expect(root.getByTestId('barnum-current-baseline')).toBeFocused();
+	await expect(
+		root.getByTestId('barnum-current-baseline').locator('.reading-card header > p')
+	).toHaveText('Line 2 of 3');
+	await root.page().waitForTimeout(190);
 	await root.getByTestId('barnum-reveal-now').click();
 	await expectStep(root, 5);
+	const summary = root.getByTestId('barnum-reveal-summary');
+	await expect(summary).toContainText('2 original lines were shown');
+	await expect(summary).toContainText('5 prepared original lines were not shown');
+	await expect(root.getByText(/One line reworded an answer you gave/iu)).toHaveCount(0);
+	await expect(root.getByText(/selected because of earlier ratings/iu)).toHaveCount(0);
+	await expect(root.locator('.reading-card[data-basis="direct-echo"]')).toHaveCount(0);
+	await expect(root.locator('#barnum-xrays .reading-card')).toHaveCount(2);
+
 	await root.getByTestId('barnum-open-lab').click();
 	await root.getByText('Advanced controls', { exact: true }).click();
 	const replayInput = root.getByTestId('barnum-replay-code');
-	await expect(replayInput).toHaveAccessibleName('Reproducibility code');
-	await replayInput.fill(originalCode);
+	await replayInput.fill('BL1-G100-C100-00000000-0000000000000000-000000');
 	await root.getByTestId('barnum-load-replay').click();
-	await expect(root.locator('.replay-feedback[role="status"]')).toContainText(
-		/Code valid.*before the current in-memory trail is cleared/iu
+	await expect(root.getByTestId('barnum-replay-feedback')).toContainText(
+		/incompatible|version|invalid/iu
 	);
-	let replacementConfirmation = root.getByTestId('barnum-deck-replacement-confirmation');
-	await expect(replacementConfirmation).toBeVisible();
-	await expect(replacementConfirmation.getByRole('heading')).toBeFocused();
-	await expect(replacementConfirmation).toContainText(
-		/clears the current choices, ratings, branches, derivatives, and append-only audit/iu
+	await expect(root.locator('[aria-live]')).toHaveCount(1);
+	await expect(root.getByTestId('barnum-live-region')).toContainText(
+		/incompatible|version|invalid/iu
 	);
-	await expect(replacementConfirmation).toContainText(
-		/genuinely fresh Step 1.*no visitor actions are synthesized.*code itself contains no answers or ratings/iu
-	);
-	await expect(root).toHaveAttribute('data-stage', 'open-lab');
-	await root.getByTestId('barnum-confirm-deck-replacement').click();
-	await expect(replacementConfirmation).toHaveCount(0);
-	await expectStep(root, 1);
-	await expect(root.locator('.live-region')).toContainText(
-		/opened its deck at Step 1 with a fresh in-memory audit trail.*prior choices, ratings, and branches were cleared/iu
-	);
-	await expect(code).toHaveText(originalCode);
-	await expect
-		.poll(() => root.locator('.reading-card .sentence').allTextContents())
-		.toEqual(originalSentences);
 
-	await root.getByTestId('barnum-reveal-now').click();
-	await root.getByTestId('barnum-open-lab').click();
-	await root.getByText('Advanced controls', { exact: true }).click();
-	await root.getByRole('button', { name: 'Create a new seed', exact: true }).click();
-	replacementConfirmation = root.getByTestId('barnum-deck-replacement-confirmation');
-	await expect(replacementConfirmation).toBeVisible();
-	await expect(replacementConfirmation.getByRole('heading')).toBeFocused();
-	await expect(replacementConfirmation).toContainText(
-		/Creating a new seed clears the current choices, ratings, branches, derivatives, and append-only audit/iu
-	);
-	await expect(replacementConfirmation).toContainText(
-		/genuinely fresh Step 1.*no visitor actions are synthesized/iu
-	);
-	await expect(root.getByTestId('barnum-replay-code')).toHaveValue(originalCode);
-	await root.getByTestId('barnum-confirm-deck-replacement').click();
-	await expect(replacementConfirmation).toHaveCount(0);
+	await root.getByRole('button', { name: 'Replay same sealed deck' }).click();
 	await expectStep(root, 1);
-	await expect(root.locator('.live-region')).toContainText(
-		/new deterministic deck opened at Step 1 with a fresh in-memory audit trail.*prior choices, ratings, and branches were cleared/iu
+	expect(await root.locator('.reading-card:visible .sentence').allInnerTexts()).toEqual(
+		originalSentences
 	);
-	const regeneratedCode = (await code.textContent()) ?? '';
-	expect(regeneratedCode).not.toBe(originalCode);
-	await expect(code).toHaveText(regeneratedCode);
-	await expect(root.locator('.reading-card .sentence')).toHaveCount(3);
+	await expect(root.locator('.reading-card:visible input:checked')).toHaveCount(0);
+	await expect(root.locator('#barnum-country')).toHaveCount(0);
+	await expect(root.getByTestId('assumption-ledger')).not.toContainText('Bangladesh');
 });
 
-test('reset, reload, route remount, and persisted page restoration cannot resurrect a session', async ({
+test('counterfactual, hedge, probability, and X-ray experiments isolate what they claim', async ({
 	page
+}) => {
+	const root = await openLab(page);
+	await advanceToReveal(root);
+	await root.getByTestId('barnum-open-lab').click();
+
+	const counterfactual = root.locator('.counterfactual');
+	await expect(
+		counterfactual.getByRole('heading', { name: /Same seven readings, in the same order/iu })
+	).toBeVisible();
+	const changeRows = counterfactual.locator('tbody tr');
+	expect(await changeRows.count()).toBeGreaterThan(0);
+	for (const row of await changeRows.all()) {
+		const cells = await row.locator('th, td').allInnerTexts();
+		expect(cells[1]).not.toBe(cells[2]);
+	}
+
+	await root.getByTestId('barnum-experiment-hedges').click();
+	const hedge = root.getByTestId('barnum-hedge-experiment');
+	await expect(hedge).toHaveAttribute('data-pair-id', /.+/u);
+	await expect(hedge).toHaveAttribute('data-core-id', /.+/u);
+	const plain = (await hedge.locator('[data-treatment="plain"] p').innerText()).trim();
+	const hedged = (await hedge.locator('[data-treatment="hedged"] p').innerText()).trim();
+	expect(hedged).toBe(`At times, ${plain.charAt(0).toLocaleLowerCase('en')}${plain.slice(1)}`);
+	await hedge.getByText('Technical equality check', { exact: true }).click();
+	await expect(hedge.getByText(/on both sides/iu)).toBeVisible();
+
+	await root.getByTestId('barnum-experiment-many-guesses').click();
+	await setRangeValue(root, '#barnum-p', 0.25);
+	await setRangeValue(root, '#barnum-n', 4);
+	const comparison = root.getByTestId('barnum-one-vs-many');
+	await expect(comparison.getByRole('heading')).toContainText('one claim versus 4 claims');
+	await expect(comparison).not.toContainText('Twelve claims');
+	await expect(root.getByTestId('barnum-probability-results')).toContainText('1.00');
+	await expect(root.getByTestId('barnum-probability-results')).toContainText('68.4%');
+	await root.getByText('More probability controls', { exact: true }).click();
+	await setRangeValue(root, '#barnum-k', 5);
+	await expect(root.getByTestId('barnum-k-impossible')).toContainText(
+		'Impossible because k is greater than n; probability 0.'
+	);
+	await expect(
+		root.getByText(/independent claims with the same acceptance probability/iu)
+	).toBeVisible();
+});
+
+test('reload, route remount, back-forward restoration, and a replacement tab cannot resurrect state', async ({
+	page,
+	context
 }) => {
 	let root = await openLab(page);
 	await beginGuided(root);
-	await rateVisibleStatements(root, ['fits']);
+	await completeBaseline(root, ['fits', 'partly-fits', 'does-not-fit']);
 	await continueGuided(root);
 	await root.locator('#barnum-country').selectOption('bangladesh');
-	await expect(root.getByTestId('assumption-ledger')).toContainText('Bangladesh');
 
 	await page.evaluate(() => {
 		window.dispatchEvent(new PageTransitionEvent('pagehide', { persisted: true }));
 		window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
 	});
-	await expect(
-		root.getByRole('button', { name: /Begin (?:the )?(?:demonstration|experiment)/iu })
-	).toBeVisible();
+	await expect(root.getByTestId('barnum-begin')).toBeVisible();
 	await expect(root.getByTestId('assumption-ledger')).not.toContainText('Bangladesh');
 
 	await beginGuided(root);
-	await rateVisibleStatements(root, ['fits']);
 	await page.reload({ waitUntil: 'domcontentloaded' });
 	root = lab(page);
 	await expect(root).toHaveAttribute('data-ready', 'true');
-	await expect(
-		root.getByRole('button', { name: /Begin (?:the )?(?:demonstration|experiment)/iu })
-	).toBeVisible();
+	await expect(root.getByTestId('barnum-begin')).toBeVisible();
 
 	await beginGuided(root);
 	await page.goto('/blog/visualizations', { waitUntil: 'domcontentloaded' });
 	await page.goBack({ waitUntil: 'domcontentloaded' });
 	root = lab(page);
 	await expect(root).toHaveAttribute('data-ready', 'true');
-	await expect(
-		root.getByRole('button', { name: /Begin (?:the )?(?:demonstration|experiment)/iu })
-	).toBeVisible();
+	await expect(root.getByTestId('barnum-begin')).toBeVisible();
+
+	const restored = await context.newPage();
+	await restored.goto(articlePath, { waitUntil: 'domcontentloaded' });
+	await expect(lab(restored)).toHaveAttribute('data-stage', 'intro');
+	await restored.close();
 });
 
-test('keyboard focus, Axe, reduced motion, and forced colours preserve the guided path', async ({
+test('@cross-browser full screen or honest expansion restores focus and keeps the stage heading clear', async ({
 	page
 }) => {
 	await page.emulateMedia({ reducedMotion: 'reduce' });
 	const root = await openLab(page);
-	const begin = root.getByRole('button', { name: /Begin (?:the )?(?:demonstration|experiment)/iu });
-	await begin.focus();
-	await page.keyboard.press('Enter');
-	await expectStep(root, 1);
-	await expect(root.locator('#guided-stage-heading')).toBeFocused();
+	const trigger = root.getByTestId('barnum-fullscreen');
+	const initialName = await trigger.getAttribute('aria-label');
+	expect(initialName).toMatch(
+		/Open Barnum laboratory full screen|Expand Barnum laboratory in the page/u
+	);
+	await trigger.click();
+	await expect(root).toHaveAttribute('data-expanded', 'true');
+	const exit = root.getByTestId('barnum-fullscreen');
+	await expect(exit).toHaveAccessibleName(
+		/Exit Barnum laboratory full screen|Collapse Barnum laboratory/u
+	);
+	await exit.click();
+	await expect(root).toHaveAttribute('data-expanded', 'false');
+	await expect(trigger).toBeFocused();
 
-	const firstRating = root.locator('.reading-card:visible fieldset.rating').first();
-	const firstOption = firstRating.locator('input').first();
-	await firstOption.focus();
-	await page.keyboard.press('ArrowRight');
-	await expect(firstRating.locator('input:checked')).toHaveValue('partly-fits');
-	await rateVisibleStatements(root);
-
-	const moving = await root.evaluate((element) => {
-		const duration = (value: string): number =>
-			Math.max(
-				0,
-				...value.split(',').map((part) => {
-					const parsed = Number.parseFloat(part);
-					return part.trim().endsWith('ms') ? parsed : parsed * 1000;
-				})
-			);
-		return Array.from(element.querySelectorAll<HTMLElement>('*'))
-			.filter((node) => node.getClientRects().length > 0)
-			.map((node) => {
-				const style = getComputedStyle(node);
-				return {
-					name: node.getAttribute('data-testid') ?? node.className ?? node.tagName,
-					animation: duration(style.animationDuration),
-					transition: duration(style.transitionDuration)
-				};
-			})
-			.filter((entry) => entry.animation > 1 || entry.transition > 1);
-	});
-	expect(moving).toEqual([]);
-
-	await expectNoSeriousAxeViolations(page, 'guided baseline in the light theme');
-
-	await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'reduce' });
-	await firstRating.locator('input[value="fits"]').check();
-	await expect(firstRating.locator('input[value="fits"]')).toBeChecked();
-	expect(await page.evaluate(() => matchMedia('(forced-colors: active)').matches)).toBe(true);
-	expect(
-		await page.evaluate(
-			() => document.documentElement.scrollWidth - document.documentElement.clientWidth
-		)
-	).toBeLessThanOrEqual(1);
-
-	await page.emulateMedia({ forcedColors: 'none', reducedMotion: 'reduce' });
+	await beginGuided(root);
+	await expectHeadingBelowHeader(page, root);
 	await root.getByTestId('barnum-reveal-now').click();
-	await expectStep(root, 5);
-	const earlyRevealAudit = root.getByTestId('statement-audit');
-	await earlyRevealAudit.locator(':scope > summary').click();
-	await expect(
-		earlyRevealAudit.getByText('Sealed statement not shown', { exact: true })
-	).toHaveCount(4);
-	const abandonedTrace = earlyRevealAudit.locator('.reading-card').nth(3).locator('details.trace');
-	await abandonedTrace.locator(':scope > summary').click();
-	await expect(
-		abandonedTrace.locator('dl > div').filter({ hasText: 'Presentation status' })
-	).toContainText(/sealed but not shown.*abandoned on early reveal/iu);
-	await page.locator('#desktop-theme').selectOption('night');
-	await expectNoSeriousAxeViolations(page, 'reveal in the night theme');
-	await root.getByTestId('barnum-open-lab').click();
-	await root.getByText('Advanced controls', { exact: true }).click();
-	await expectNoSeriousAxeViolations(page, 'expanded open lab in the night theme');
-	await page.locator('#desktop-theme').selectOption('light');
-	await expectNoSeriousAxeViolations(page, 'expanded open lab in the light theme');
+	await expectHeadingBelowHeader(page, root);
 });
 
-test('phone, short-landscape, tablet, and desktop layouts stay bounded and focus mode restores focus', async ({
-	page,
-	browser,
-	baseURL
+test('responsive, zoomed, reduced-motion, forced-colour, keyboard, and Axe views remain operable', async ({
+	page
 }, testInfo) => {
 	await page.addInitScript(() => {
 		Object.defineProperty(Document.prototype, 'fullscreenEnabled', {
@@ -865,12 +938,13 @@ test('phone, short-landscape, tablet, and desktop layouts stay bounded and focus
 	});
 	await page.emulateMedia({ reducedMotion: 'reduce' });
 	let root = await openLab(page);
+	await expectNoSeriousAxeViolations(page, 'compact introduction');
+
 	for (const viewport of [
 		{ width: 320, height: 800 },
 		{ width: 375, height: 812 },
-		{ width: 800, height: 360 },
 		{ width: 768, height: 1024 },
-		{ width: 1024, height: 768 },
+		{ width: 800, height: 360 },
 		{ width: 1440, height: 900 }
 	] as const) {
 		await page.setViewportSize(viewport);
@@ -905,97 +979,50 @@ test('phone, short-landscape, tablet, and desktop layouts stay bounded and focus
 		expect(geometry.documentOverflow).toBeLessThanOrEqual(1);
 		expect(geometry.rootOverflow).toBeLessThanOrEqual(1);
 		expect(geometry.shortControls).toEqual([]);
-		if (viewport.width <= 375) {
-			await expect(root.locator('.narrow-ledger')).toBeVisible();
-			await expect(root.locator('.wide-ledger')).toBeHidden();
-		}
-		if (viewport.width === 800) {
-			const sticky = await root
-				.getByTestId('assumption-ledger')
-				.evaluate((element) => getComputedStyle(element).position);
-			expect(sticky).not.toBe('sticky');
-		}
 	}
 
-	await page.setViewportSize({ width: 1440, height: 900 });
-	const themeSelect = page.locator('#desktop-theme');
-	await expect(themeSelect).toBeVisible();
-	await expect(themeSelect).toBeEnabled();
-	await themeSelect.selectOption('light');
-	const lightTheme = await root.evaluate((element) => ({
-		theme: document.documentElement.dataset.theme,
-		background: getComputedStyle(element).backgroundColor,
-		foreground: getComputedStyle(element).color
-	}));
-	expect(lightTheme.theme).toBe('light');
-	await themeSelect.selectOption('night');
-	const darkTheme = await root.evaluate((element) => ({
-		theme: document.documentElement.dataset.theme,
-		background: getComputedStyle(element).backgroundColor,
-		foreground: getComputedStyle(element).color
-	}));
-	expect(darkTheme.theme).toBe('night');
-	expect(darkTheme.background).not.toBe(lightTheme.background);
-	expect(darkTheme.foreground).not.toBe(lightTheme.foreground);
+	await page.setViewportSize({ width: 320, height: 800 });
+	await root.getByTestId('barnum-begin').click();
+	const mobileActions = root.locator('.guided-actions');
+	await expect(mobileActions).toBeVisible();
+	expect(
+		await mobileActions.evaluate((element) => element.getBoundingClientRect().height)
+	).toBeLessThanOrEqual(100);
+	await expect(root.getByTestId('barnum-next-statement')).toBeVisible();
+	await expect(root.getByTestId('barnum-reveal-now')).toBeVisible();
 
+	const firstRating = root.locator('.reading-card:visible fieldset.rating').first();
+	await firstRating.locator('input').first().focus();
+	await page.keyboard.press('ArrowRight');
+	await expect(firstRating.locator('input:checked')).toHaveValue('partly-fits');
+	await expectNoSeriousAxeViolations(page, 'keyboard-rated first impression');
+
+	await page.emulateMedia({ forcedColors: 'active', reducedMotion: 'reduce' });
+	await firstRating.locator('input[value="fits"]').check();
+	expect(await page.evaluate(() => matchMedia('(forced-colors: active)').matches)).toBe(true);
+	await page.emulateMedia({ forcedColors: 'none', reducedMotion: 'reduce' });
+
+	await page.setViewportSize({ width: 1440, height: 900 });
 	const devtools = await page.context().newCDPSession(page);
 	await devtools.send('Emulation.setPageScaleFactor', { pageScaleFactor: 2 });
 	expect(await page.evaluate(() => window.visualViewport?.scale ?? 1)).toBeCloseTo(2, 1);
-	await expect(root.getByTestId('barnum-begin')).toBeVisible();
+	await expect(root.getByTestId('barnum-reveal-now')).toBeVisible();
 	await devtools.send('Emulation.setPageScaleFactor', { pageScaleFactor: 1 });
 
-	await page.setViewportSize({ width: 390, height: 844 });
-	const trigger = root.getByTestId('barnum-fullscreen');
-	await expect(trigger).toHaveAccessibleName('Open Barnum laboratory focus mode');
-	await expect(trigger).toBeVisible();
-	await trigger.click();
+	await root.getByTestId('barnum-reveal-now').click();
+	await expectNoSeriousAxeViolations(page, 'immediate reveal');
+	await root.getByTestId('barnum-open-lab').click();
+	await root.getByText('Advanced controls', { exact: true }).click();
+	await expectNoSeriousAxeViolations(page, 'expanded open laboratory');
+
+	const expand = root.getByTestId('barnum-fullscreen');
+	await expect(expand).toHaveAccessibleName('Expand Barnum laboratory in the page');
+	await expand.click();
 	await expect(root).toHaveAttribute('data-expanded', 'true');
-	const exit = root.getByTestId('barnum-fullscreen');
-	await expect(exit).toHaveAccessibleName('Exit Barnum laboratory focus mode');
-	const focusGeometry = await root.evaluate((element) => {
-		const bounds = element.getBoundingClientRect();
-		return {
-			position: getComputedStyle(element).position,
-			top: bounds.top,
-			left: bounds.left,
-			right: bounds.right,
-			width: document.documentElement.clientWidth,
-			documentOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth
-		};
-	});
-	expect(focusGeometry.position).not.toBe('fixed');
-	expect(focusGeometry.top).toBeGreaterThanOrEqual(-1);
-	expect(focusGeometry.left).toBeCloseTo(0, 1);
-	expect(focusGeometry.right).toBeCloseTo(focusGeometry.width, 1);
-	expect(focusGeometry.documentOverflow).toBeLessThanOrEqual(1);
 	await page.screenshot({
 		animations: 'disabled',
-		path: testInfo.outputPath('barnum-focus-mode-390x844.png')
+		path: testInfo.outputPath('barnum-expanded-1440x900.png')
 	});
-	await exit.click();
-	await expect(root).toHaveAttribute('data-expanded', 'false');
-	await expect(trigger).toBeFocused();
-
-	const touchContext = await browser.newContext({
-		baseURL: baseURL ?? 'http://127.0.0.1:4351',
-		viewport: { width: 375, height: 812 },
-		deviceScaleFactor: 2,
-		hasTouch: true,
-		isMobile: true,
-		colorScheme: 'dark'
-	});
-	try {
-		const touchPage = await touchContext.newPage();
-		const touchRoot = await openLab(touchPage);
-		expect(await touchPage.evaluate(() => navigator.maxTouchPoints)).toBeGreaterThan(0);
-		await touchRoot.getByTestId('barnum-begin').tap();
-		await expectStep(touchRoot, 1);
-		expect(
-			await touchPage.evaluate(
-				() => document.documentElement.scrollWidth - document.documentElement.clientWidth
-			)
-		).toBeLessThanOrEqual(1);
-	} finally {
-		await touchContext.close();
-	}
+	await root.getByTestId('barnum-fullscreen').click();
+	await expect(expand).toBeFocused();
 });

@@ -1,3 +1,7 @@
+/**
+ * @deprecated Historical v1 audit fixture only. Runtime sentence assembly was removed in v2;
+ * these frames cannot enter the SurfaceText candidate compiler.
+ */
 import type { BarnumTechnique, FrameConstraint, FramePart, SentenceFrame } from '../core/types';
 
 const slot = (

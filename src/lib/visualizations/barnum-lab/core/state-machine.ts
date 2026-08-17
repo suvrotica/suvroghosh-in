@@ -356,10 +356,10 @@ function revealState(
 			branchId: state.branchId,
 			consumedActivationIds: state.consumedActivationIds,
 			presentation,
-			directEcho,
-			wholeReadingFit,
 			derivatives,
-			counterfactualProfile
+			...(directEcho ? { directEcho } : {}),
+			...(wholeReadingFit === undefined ? {} : { wholeReadingFit }),
+			...(counterfactualProfile ? { counterfactualProfile } : {})
 		},
 		event
 	);
@@ -426,40 +426,27 @@ export function transitionLabState(state: LabState, event: LabEvent): Transition
 
 	if (state.stage === 'intro') return invalid(state, 'invalid-transition');
 
-	if (event.type === 'present-baseline') {
+	if (event.type === 'present-baseline' || event.type === 'present-next-baseline') {
 		if (state.stage !== 'baseline') return invalid(state, 'invalid-transition');
-		if (
-			state.presentation.presentedBaselineStatementIds.length > 0 ||
-			state.presentation.baselineStatementIds.some((statementId) =>
-				state.presentation.abandonedStatementIds.includes(statementId)
-			)
-		) {
+		const nextStatementId =
+			state.presentation.baselineStatementIds[
+				state.presentation.presentedBaselineStatementIds.length
+			];
+		if (!nextStatementId || state.presentation.abandonedStatementIds.includes(nextStatementId)) {
 			return invalid(state, 'invalid-transition');
 		}
-		const statements: GeneratedStatement[] = [];
-		for (const statementId of state.presentation.baselineStatementIds) {
-			const statement = state.deck.genericStatements.find(
-				(candidate) => candidate.statementId === statementId
-			);
-			if (!statement) return invalid(state, 'not-found');
-			statements.push(statement);
-		}
-		const branchStartId = branchStartEventId(state);
-		const audits: Extract<AuditEvent, { kind: 'statement-presented' }>[] = statements.map(
-			(statement, index) => ({
-				...auditBaseAt(
-					state,
-					event.meta,
-					index,
-					state.branchId,
-					branchStartId ? [branchStartId] : []
-				),
-				kind: 'statement-presented',
-				statementId: statement.statementId,
-				slotId: statement.slotId,
-				group: 'baseline'
-			})
+		const statement = state.deck.genericStatements.find(
+			(candidate) => candidate.statementId === nextStatementId
 		);
+		if (!statement) return invalid(state, 'not-found');
+		const branchStartId = branchStartEventId(state);
+		const audit: Extract<AuditEvent, { kind: 'statement-presented' }> = {
+			...auditBase(state, event.meta, state.branchId, branchStartId ? [branchStartId] : []),
+			kind: 'statement-presented',
+			statementId: statement.statementId,
+			slotId: statement.slotId,
+			group: 'baseline'
+		};
 		return {
 			ok: true,
 			state: consumeActivation(
@@ -467,13 +454,13 @@ export function transitionLabState(state: LabState, event: LabEvent): Transition
 					...state,
 					presentation: {
 						...state.presentation,
-						presentedBaselineStatementIds: [...state.presentation.baselineStatementIds],
-						history: [
-							...state.presentation.history,
-							...audits.map((audit, index) => historyEntry(audit, statements[index]))
-						]
+						presentedBaselineStatementIds: [
+							...state.presentation.presentedBaselineStatementIds,
+							nextStatementId
+						],
+						history: [...state.presentation.history, historyEntry(audit, statement)]
 					},
-					auditLog: [...state.auditLog, ...audits]
+					auditLog: [...state.auditLog, audit]
 				},
 				event
 			)
@@ -876,15 +863,19 @@ export function transitionLabState(state: LabState, event: LabEvent): Transition
 		if (state.stage !== 'reveal' && state.stage !== 'open-lab') {
 			return invalid(state, 'invalid-transition');
 		}
-		const newBranchId = 'branch-' + String(state.auditLog.length + 1);
+		const newBranchId = 'branch-0' as const;
 		const audit: AuditEvent = {
-			...auditBase(state, event.meta, newBranchId),
-			parentBranchId: state.branchId,
+			id: 'event-0001',
+			sequence: 1,
+			timestamp: event.meta?.timestamp ?? '',
+			branchId: newBranchId,
+			causalEventIds: [],
 			kind: 'replayed',
 			replayCode: state.deck.replayCode
 		};
+		const displayProfile = createDefaultDisplayProfile();
 		const deck = sealGenericDeck(
-			toGenerationProfile(state.displayProfile, state.deck.sessionSeed),
+			toGenerationProfile(displayProfile, state.deck.sessionSeed),
 			state.deck.genericStatements.length
 		);
 		return {
@@ -892,13 +883,13 @@ export function transitionLabState(state: LabState, event: LabEvent): Transition
 			state: consumeActivation(
 				{
 					stage: 'baseline',
-					displayProfile: state.displayProfile,
+					displayProfile,
 					deck,
 					ratings: [],
-					auditLog: [...state.auditLog, audit],
+					auditLog: [audit],
 					branchId: newBranchId,
-					consumedActivationIds: state.consumedActivationIds,
-					presentation: createPresentationLedger(deck, state.presentation.history)
+					consumedActivationIds: [],
+					presentation: createPresentationLedger(deck)
 				},
 				event
 			)

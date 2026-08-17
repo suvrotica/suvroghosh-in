@@ -10,6 +10,7 @@ export * from './seeded-rng';
 export * from './select-reading';
 export * from './state-machine';
 export * from './statement-compatibility';
+export * from './surface-text';
 export * from './text-similarity';
 export * from './types';
 export * from './version';

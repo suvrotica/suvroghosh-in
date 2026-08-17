@@ -5,34 +5,23 @@
 		question,
 		answer,
 		defaultOptionId,
-		onanswer,
-		onconfirm
+		onanswer
 	}: {
 		question: LabQuestion;
 		answer?: LabAnswer;
 		defaultOptionId?: string;
 		onanswer: (questionId: string, optionId: string) => void;
-		onconfirm?: (questionId: string, optionId: string) => void;
 	} = $props();
 
 	let currentValue = $derived(answer?.optionId ?? defaultOptionId ?? '');
 	let unconfirmedDefault = $derived(
 		Boolean(defaultOptionId && (!answer || answer.origin === 'demo-default'))
 	);
-	let useLabel = $derived(
-		question.permittedUse === 'direct-echo'
-			? 'May be paraphrased directly; no broader inference.'
-			: question.permittedUse === 'presentation-only'
-				? 'Surface wording only; unused in English v1.'
-				: question.permittedUse === 'unused-decoy'
-					? 'Theatrical decoy; changes nothing.'
-					: 'Display only; never personality inference.'
-	);
 </script>
 
-<fieldset class="clue" data-permitted-use={question.permittedUse}>
+<fieldset class="clue">
 	<legend>{question.label}</legend>
-	{#if question.description}<p class="description">{question.description}</p>{/if}
+	<p class="description">Optional. The page never detects this automatically.</p>
 	<label class="select-wrap" for={`barnum-${question.id}`}>
 		<span class="sr-only">Choose {question.label}</span>
 		<select
@@ -52,13 +41,12 @@
 		<span aria-hidden="true">⌄</span>
 	</label>
 	<div class="meta">
-		<p>{useLabel}</p>
-		{#if unconfirmedDefault && defaultOptionId && onconfirm}
-			<button type="button" onclick={() => onconfirm?.(question.id, defaultOptionId)}>
-				Confirm this demo value
-			</button>
+		{#if unconfirmedDefault}
+			<strong>Demo value, not detected</strong>
 		{:else if answer?.origin === 'user-selected'}
 			<strong>Selected by you</strong>
+		{:else}
+			<strong>Not specified</strong>
 		{/if}
 	</div>
 </fieldset>
@@ -80,8 +68,7 @@
 		font: 780 0.74rem/1.25 var(--barnum-sans);
 	}
 
-	.description,
-	.meta p {
+	.description {
 		margin: 0;
 		color: var(--barnum-muted);
 		font: 0.72rem/1.45 var(--barnum-sans);
@@ -114,8 +101,7 @@
 		pointer-events: none;
 	}
 
-	select:focus-visible,
-	button:focus-visible {
+	select:focus-visible {
 		outline: 3px solid var(--barnum-focus);
 		outline-offset: 2px;
 	}
@@ -127,25 +113,9 @@
 		gap: 0.65rem;
 	}
 
-	.meta p {
-		max-width: 25rem;
-	}
-
-	.meta button,
 	.meta strong {
-		flex: 0 0 auto;
 		color: var(--barnum-blue-text);
 		font: 750 0.72rem/1.35 var(--barnum-sans);
-	}
-
-	.meta button {
-		min-height: 2.75rem;
-		border: 0;
-		background: transparent;
-		padding: 0.4rem 0;
-		text-decoration: underline;
-		text-underline-offset: 0.16em;
-		cursor: pointer;
 	}
 
 	.sr-only {

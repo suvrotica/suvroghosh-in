@@ -1,13 +1,29 @@
 <script lang="ts">
 	import type { CounterfactualResult } from './ui-types';
 
-	let { result }: { result: CounterfactualResult } = $props();
+	let {
+		result,
+		technical = false
+	}: {
+		result: CounterfactualResult;
+		technical?: boolean;
+	} = $props();
 </script>
 
-<section class="counterfactual" aria-labelledby="counterfactual-heading">
+<section
+	class="counterfactual"
+	data-testid="barnum-counterfactual-result"
+	aria-labelledby="counterfactual-heading"
+>
 	<header>
-		<p>Demographic counterfactual</p>
-		<h3 id="counterfactual-heading">The supposed person changed. The claims did not.</h3>
+		<p>Surface-details check</p>
+		<h3 id="counterfactual-heading">
+			{result.identicalSemanticIds
+				? result.unchangedCoreIds.length === 7
+					? 'Same seven readings, in the same order'
+					: `Same ${result.unchangedCoreIds.length} readings, in the same order`
+				: 'The reading order changed unexpectedly'}
+		</h3>
 	</header>
 
 	<div class="profiles">
@@ -19,35 +35,48 @@
 	<div class="invariant">
 		<span aria-hidden="true">=</span>
 		<p>
-			<strong>{Math.round(result.semanticIdOverlap)}% semantic-ID overlap</strong>
+			<strong>
+				{result.identicalSemanticIds
+					? 'The original reading stayed unchanged.'
+					: 'This comparison failed its unchanged-reading check.'}
+			</strong>
 			{result.identicalSemanticIds
-				? 'The exact ordered core IDs stayed identical.'
-				: 'The core-ID sequence changed; this violates the intended invariant.'}
+				? 'Changing these details did not change what the page had already chosen.'
+				: 'The page should not describe this as an unchanged comparison.'}
 		</p>
 	</div>
 
-	<div class="diff-columns">
-		<section aria-labelledby="surface-changes-heading">
-			<h4 id="surface-changes-heading">Surface details changed</h4>
-			{#if result.changedSurfaceDetails.length}
-				<ul>
-					{#each result.changedSurfaceDetails as detail (detail)}<li>{detail}</li>{/each}
-				</ul>
-			{:else}
-				<p>Only the context label changed.</p>
-			{/if}
-		</section>
-		<section aria-labelledby="core-unchanged-heading">
-			<h4 id="core-unchanged-heading">Core claims held fixed</h4>
-			<p>{result.unchangedCoreIds.length} sealed semantic IDs remained in the same order.</p>
-			<details>
-				<summary>Show semantic IDs</summary>
-				<ul class="ids">
-					{#each result.unchangedCoreIds as id (id)}<li><code>{id}</code></li>{/each}
-				</ul>
-			</details>
-		</section>
-	</div>
+	<section class="changes" aria-labelledby="surface-changes-heading">
+		<h4 id="surface-changes-heading">What changed</h4>
+		{#if result.changes.length}
+			<table data-testid="barnum-counterfactual-changes">
+				<thead
+					><tr><th scope="col">Clue</th><th scope="col">Before</th><th scope="col">After</th></tr
+					></thead
+				>
+				<tbody>
+					{#each result.changes as change (change.label)}
+						<tr
+							><th scope="row">{change.label}</th><td>{change.before}</td><td>{change.after}</td
+							></tr
+						>
+					{/each}
+				</tbody>
+			</table>
+		{:else}
+			<p>No surface clue changed.</p>
+		{/if}
+	</section>
+
+	{#if technical}
+		<details class="technical">
+			<summary>Technical equality check</summary>
+			<p>{Math.round(result.semanticIdOverlap)}% ID overlap in the exact original order.</p>
+			<ul class="ids">
+				{#each result.unchangedCoreIds as id (id)}<li><code>{id}</code></li>{/each}
+			</ul>
+		</details>
+	{/if}
 </section>
 
 <style>
@@ -64,9 +93,10 @@
 	header p,
 	header h3,
 	.invariant p,
-	.diff-columns h4,
-	.diff-columns p,
-	.diff-columns ul {
+	.changes h4,
+	.changes p,
+	.technical p,
+	.technical ul {
 		margin: 0;
 	}
 
@@ -143,31 +173,42 @@
 		color: var(--barnum-ink);
 	}
 
-	.diff-columns {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 0.55rem;
-	}
-
-	.diff-columns section {
+	.changes {
 		border-top: 1px solid var(--barnum-rule);
 		padding-top: 0.55rem;
 	}
 
-	.diff-columns h4 {
+	.changes h4 {
 		font: 760 0.75rem/1.35 var(--barnum-sans);
 	}
 
-	.diff-columns p,
-	.diff-columns li,
+	.changes p,
 	details summary {
 		color: var(--barnum-muted);
 		font: 0.72rem/1.5 var(--barnum-sans);
 	}
 
-	.diff-columns ul {
+	table {
+		width: 100%;
 		margin-top: 0.35rem;
-		padding-left: 1rem;
+		border-collapse: collapse;
+	}
+
+	th,
+	td {
+		border-top: 1px solid var(--barnum-rule);
+		padding: 0.42rem;
+		font: 0.72rem/1.45 var(--barnum-sans);
+		text-align: left;
+	}
+
+	thead th {
+		color: var(--barnum-muted);
+		font-weight: 750;
+	}
+
+	.technical {
+		border-top: 1px solid var(--barnum-rule);
 	}
 
 	details summary {
@@ -187,6 +228,11 @@
 		overflow-y: auto;
 	}
 
+	.technical p,
+	.technical ul {
+		margin: 0 0.65rem 0.65rem;
+	}
+
 	.ids code {
 		font: 0.7rem/1.45 var(--barnum-mono);
 	}
@@ -200,10 +246,6 @@
 			transform: rotate(90deg);
 			text-align: center;
 		}
-
-		.diff-columns {
-			grid-template-columns: 1fr;
-		}
 	}
 
 	@media (forced-colors: active) {
@@ -211,7 +253,9 @@
 		.profiles article,
 		.invariant,
 		.invariant > span,
-		.diff-columns section {
+		.changes,
+		th,
+		td {
 			border-color: CanvasText;
 		}
 	}

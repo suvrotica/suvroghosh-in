@@ -1054,3 +1054,34 @@ test('the Barnum laboratory is published as a private, sourced five-step experim
 	assert.match(svg, /<desc id="desc">/);
 	assert.doesNotMatch(svg, /<image\b|\bhref=/);
 });
+
+test('the Barnum article has a literal route that cannot fan out across every post asset', () => {
+	const slug = 'the-profile-that-knows-almost-nothing-about-you';
+	const routeRoot = path.join('src', 'routes', 'blog', 'visualizations', slug);
+	const universalLoad = read(routeRoot, '+page.ts');
+	const serverLoad = read(routeRoot, '+page.server.ts');
+	const page = read(routeRoot, '+page.svelte');
+	const genericServerLoad = read(
+		'src',
+		'routes',
+		'blog',
+		'[category]',
+		'[slug]',
+		'+page.server.ts'
+	);
+
+	assert.match(
+		universalLoad,
+		/import\.meta\.glob<PostModule>\(\s*'\/src\/lib\/posts\/the-profile-that-knows-almost-nothing-about-you\.md'\s*\)/
+	);
+	assert.doesNotMatch(universalLoad, /posts\/\*\.md/);
+	assert.match(
+		serverLoad,
+		/loadPublishedBlogPost\('visualizations', 'the-profile-that-knows-almost-nothing-about-you'\)/
+	);
+	assert.match(
+		page,
+		/import BlogPostPage from '\.\.\/\.\.\/\[category\]\/\[slug\]\/\+page\.svelte'/
+	);
+	assert.match(genericServerLoad, /slug !== 'the-profile-that-knows-almost-nothing-about-you'/);
+});

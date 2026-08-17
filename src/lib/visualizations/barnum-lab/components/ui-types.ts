@@ -1,3 +1,5 @@
+import type { SurfaceText } from '..';
+
 export type FitRating = 'does-not-fit' | 'partly-fits' | 'fits' | 'too-vague' | 'unrated';
 
 export type AnswerOrigin = 'demo-default' | 'user-selected' | 'no-answer' | 'machine-unknown';
@@ -51,7 +53,7 @@ export interface StatementTraceRow {
 export interface ReadingStatement {
 	id: string;
 	coreId: string;
-	text: string;
+	text: SurfaceText;
 	basis: ClaimBasis;
 	adaptation: AdaptationStatus;
 	rating: FitRating;
@@ -92,6 +94,7 @@ export interface CounterfactualResult {
 	semanticIdOverlap: number;
 	identicalSemanticIds: boolean;
 	changedSurfaceDetails: readonly string[];
+	changes: readonly { label: string; before: string; after: string }[];
 	unchangedCoreIds: readonly string[];
 }
 

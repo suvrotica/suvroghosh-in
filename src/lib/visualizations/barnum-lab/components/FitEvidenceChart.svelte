@@ -15,6 +15,7 @@
 		{ id: 'many', label: 'Many people' },
 		{ id: 'almost-everybody', label: 'Almost everybody' }
 	];
+	const DISTINCTIVENESS_OPTIONS = [0, 1, 2, 3, 4, 5] as const;
 
 	let {
 		counts,
@@ -91,28 +92,21 @@
 
 	<fieldset class="distinctiveness">
 		<legend>How much does this reading distinguish you from other people?</legend>
-		<div>
-			<label for="barnum-distinctiveness">Distinctiveness, 0–5</label>
-			<input
-				id="barnum-distinctiveness"
-				type="range"
-				min="0"
-				max="5"
-				step="1"
-				value={distinctiveness ?? 0}
-				oninput={(event) => ondistinctivenesschange(Number(event.currentTarget.value))}
-			/>
-			<input
-				type="number"
-				min="0"
-				max="5"
-				step="1"
-				aria-label="Distinctiveness numeric value"
-				value={distinctiveness ?? 0}
-				onchange={(event) =>
-					ondistinctivenesschange(Math.max(0, Math.min(5, Number(event.currentTarget.value) || 0)))}
-			/>
-			<output for="barnum-distinctiveness">{distinctiveness ?? 'Not rated'} / 5</output>
+		<p>Choose only if you want to. No value is selected for you.</p>
+		<div class="distinctiveness-options">
+			{#each DISTINCTIVENESS_OPTIONS as value (value)}
+				<label>
+					<input
+						type="radio"
+						name="barnum-distinctiveness"
+						{value}
+						checked={distinctiveness === value}
+						onchange={() => ondistinctivenesschange(value)}
+					/>
+					<span>{value}</span>
+					<small>{value === 0 ? 'Not distinctive' : value === 5 ? 'Very distinctive' : ''}</small>
+				</label>
+			{/each}
 		</div>
 	</fieldset>
 </section>
@@ -237,27 +231,40 @@
 		box-shadow: inset 0 0 0 1px var(--barnum-blue);
 	}
 
-	.distinctiveness > div {
+	.distinctiveness-options {
 		display: grid;
-		grid-template-columns: minmax(8rem, auto) minmax(5rem, 1fr) 4rem auto;
-		align-items: center;
-		gap: 0.55rem;
+		grid-template-columns: repeat(6, minmax(0, 1fr));
+		gap: 0.35rem;
+		margin-top: 0.55rem;
 	}
 
-	.distinctiveness label,
-	.distinctiveness output {
-		font: 700 0.72rem/1.35 var(--barnum-sans);
-	}
-
-	.distinctiveness input[type='number'] {
-		width: 4rem;
+	.distinctiveness-options label {
+		display: grid;
 		min-height: 2.75rem;
+		place-items: center;
 		border: 1px solid var(--barnum-control);
 		border-radius: 0.35rem;
 		background: var(--barnum-paper);
-		padding: 0.4rem;
-		color: var(--barnum-ink);
-		font: 700 0.75rem var(--barnum-mono);
+		padding: 0.35rem;
+		font: 700 0.72rem/1.25 var(--barnum-sans);
+		text-align: center;
+		cursor: pointer;
+	}
+
+	.distinctiveness-options label:has(input:checked) {
+		border-color: var(--barnum-blue);
+		box-shadow: inset 0 0 0 1px var(--barnum-blue);
+	}
+
+	.distinctiveness-options input {
+		position: absolute;
+		opacity: 0;
+	}
+
+	.distinctiveness-options small {
+		min-height: 1.25em;
+		color: var(--barnum-muted);
+		font: 0.65rem/1.25 var(--barnum-sans);
 	}
 
 	input:focus-visible,
@@ -280,13 +287,8 @@
 			grid-column: 2 / 4;
 		}
 
-		.distinctiveness > div {
-			grid-template-columns: minmax(0, 1fr) 4rem;
-		}
-
-		.distinctiveness label,
-		.distinctiveness input[type='range'] {
-			grid-column: 1 / -1;
+		.distinctiveness-options {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 	}
 
@@ -295,7 +297,7 @@
 		fieldset,
 		.count-bars i,
 		.breadth label,
-		.distinctiveness input[type='number'] {
+		.distinctiveness-options label {
 			border-color: CanvasText;
 		}
 	}

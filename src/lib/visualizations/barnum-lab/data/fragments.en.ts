@@ -1,3 +1,7 @@
+/**
+ * @deprecated Historical v1 audit fixture only. These fragments are not surface-approved and no
+ * v2 compiler, manifest, sampler, feedback path, or browser barrel imports this file.
+ */
 import type { BarnumTechnique, BreadthBand, ContentAxis, CorpusFragment } from '../core/types';
 import type { SelfReportQuestionId } from '../core/question-types';
 

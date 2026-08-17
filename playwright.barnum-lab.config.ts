@@ -15,8 +15,6 @@ export default defineConfig({
 	outputDir: 'test-results/barnum-lab',
 	use: {
 		baseURL,
-		browserName: 'chromium',
-		channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || undefined,
 		headless: true,
 		navigationTimeout: 60_000,
 		trace: 'retain-on-failure',
@@ -31,7 +29,21 @@ export default defineConfig({
 	projects: [
 		{
 			name: 'chromium',
-			use: { viewport: { width: 1440, height: 900 } }
+			use: {
+				browserName: 'chromium',
+				channel: process.env.PLAYWRIGHT_CHANNEL?.trim() || undefined,
+				viewport: { width: 1440, height: 900 }
+			}
+		},
+		{
+			name: 'firefox-contracts',
+			grep: /@cross-browser/u,
+			use: { browserName: 'firefox', viewport: { width: 1280, height: 800 } }
+		},
+		{
+			name: 'webkit-contracts',
+			grep: /@cross-browser/u,
+			use: { browserName: 'webkit', viewport: { width: 1280, height: 800 } }
 		}
 	]
 });

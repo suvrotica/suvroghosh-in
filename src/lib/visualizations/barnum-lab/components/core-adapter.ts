@@ -552,6 +552,15 @@ export function buildCounterfactualResult(
 		seedKey: 'sealed-generic-deck'
 	});
 	const comparison = compareSemanticManifests(statements, regenerated);
+	const changes = counterfactual.changedQuestionIds.map((questionId) => {
+		const before = profile[questionId];
+		const after = counterfactual.profile[questionId];
+		return {
+			label: QUESTION_REGISTRY[questionId].label,
+			before: before ? optionLabel(questionId as never, before.optionId as never) : 'Not specified',
+			after: after ? optionLabel(questionId as never, after.optionId as never) : 'Not specified'
+		};
+	});
 	return {
 		beforeLabel: profileContextLabel(profile),
 		afterLabel: profileContextLabel(counterfactual.profile),
@@ -560,6 +569,7 @@ export function buildCounterfactualResult(
 		changedSurfaceDetails: counterfactual.changedQuestionIds.map(
 			(questionId) => QUESTION_REGISTRY[questionId].label
 		),
+		changes,
 		unchangedCoreIds: statements
 			.filter((statement) => !comparison.changedSlotIds.includes(statement.slotId))
 			.map((statement) => statement.coreId)

@@ -11,11 +11,11 @@
 		{
 			id: 'demographics',
 			label: 'Same deck, different demographics',
-			description: 'Change every demographic clue while holding the semantic deck fixed.'
+			description: 'Change several surface clues while holding the original deck fixed.'
 		},
 		{
 			id: 'many-guesses',
-			label: 'One guess versus twelve',
+			label: 'One guess versus many',
 			description: 'See how multiplicity creates more chances for an endorsed match.'
 		},
 		{
@@ -40,6 +40,7 @@
 		onloadreplay,
 		onnewseed,
 		oncounterfactual,
+		counterfactualAvailable = true,
 		onselfreportcounterfactual,
 		onreset
 	}: {
@@ -52,6 +53,7 @@
 		onloadreplay: (code: string) => string | undefined;
 		onnewseed: () => void;
 		oncounterfactual: () => void;
+		counterfactualAvailable?: boolean;
 		onselfreportcounterfactual: () => void;
 		onreset: () => void;
 	} = $props();
@@ -89,6 +91,7 @@
 		{#each EXPERIMENTS as experiment (experiment.id)}
 			<button
 				type="button"
+				data-testid={`barnum-experiment-${experiment.id}`}
 				aria-pressed={activeExperiment === experiment.id}
 				onclick={() => onexperiment(experiment.id)}
 			>
@@ -104,7 +107,9 @@
 			<fieldset>
 				<legend>Deck</legend>
 				<div class="button-row">
-					<button type="button" onclick={onreplay}>Replay same sealed deck</button>
+					<button type="button" data-testid="barnum-replay-same-deck" onclick={onreplay}>
+						Replay same sealed deck
+					</button>
 					<button type="button" onclick={onnewseed}>Create a new seed</button>
 				</div>
 				<label class="replay-entry" for="barnum-replay-code">
@@ -126,7 +131,9 @@
 					disabled={!replayInput.trim()}
 					onclick={loadReplay}>Load this code</button
 				>
-				{#if replayFeedback}<p class="replay-feedback" role="status">{replayFeedback}</p>{/if}
+				{#if replayFeedback}<p class="replay-feedback" data-testid="barnum-replay-feedback">
+						{replayFeedback}
+					</p>{/if}
 				<p class="replay-note">
 					Encodes a seed, engine/corpus versions, corpus manifest, and checksum. It contains no
 					answers or ratings and is not a cryptographic proof.
@@ -149,10 +156,11 @@
 
 			<fieldset>
 				<legend>Mechanisms</legend>
-				{#each [{ key: 'surfaceAdaptation', label: 'Surface context dressing' }, { key: 'directEchoes', label: 'Direct echoes' }, { key: 'feedbackAdaptation', label: 'Feedback adaptation' }, { key: 'oppositePairs', label: 'Opposite-pair statements' }, { key: 'showProvenance', label: 'Show provenance' }, { key: 'showNonFits', label: 'Show non-fits in polished summary' }] as toggle (toggle.key)}
+				{#each [{ key: 'surfaceAdaptation', label: 'Surface context dressing' }, { key: 'directEchoes', label: 'Direct echoes' }, { key: 'feedbackAdaptation', label: 'Feedback adaptation' }, { key: 'oppositePairs', label: 'Opposite-pair statements' }, { key: 'showProvenance', label: 'Show statement X-rays' }, { key: 'showNonFits', label: 'Show non-fits in polished summary' }] as toggle (toggle.key)}
 					<label class="toggle">
 						<input
 							type="checkbox"
+							data-testid={`barnum-toggle-${toggle.key}`}
 							checked={Boolean(settings[toggle.key as keyof OpenLabSettings])}
 							onchange={(event) => patchSettings({ [toggle.key]: event.currentTarget.checked })}
 						/>
@@ -196,7 +204,16 @@
 			<fieldset>
 				<legend>Counterfactuals and memory</legend>
 				<div class="button-row vertical">
-					<button type="button" onclick={oncounterfactual}>Change demographic clues</button>
+					<button
+						type="button"
+						data-testid="barnum-open-counterfactual"
+						disabled={!counterfactualAvailable}
+						onclick={oncounterfactual}
+					>
+						{counterfactualAvailable
+							? 'Change several surface clues'
+							: 'Surface clues already changed'}
+					</button>
 					<button
 						type="button"
 						data-testid="barnum-self-report-counterfactual"
@@ -336,6 +353,11 @@
 		color: var(--barnum-ink);
 		font: 740 0.72rem/1.35 var(--barnum-sans);
 		cursor: pointer;
+	}
+
+	.button-row button:disabled {
+		opacity: 0.55;
+		cursor: not-allowed;
 	}
 
 	.replay-entry {

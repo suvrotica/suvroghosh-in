@@ -1,0 +1,2451 @@
+{
+	"schemaVersion": "barnum-editorial-approval-v2",
+	"corpusVersion": "barnum-en-2.0.0",
+	"engineVersion": "generator-2.0.0",
+	"corpusManifestHash": "49e1fd7e",
+	"reviewSetFile": "editorial-review-set.v2.json",
+	"reviewSetSha256": "9b68bec6aa55bec8e795d2086586104a6185b60bc4362ffd893680fd44748d4a",
+	"lineCount": 253,
+	"criteria": [
+		"Could an ordinary person say this without rehearsing it?",
+		"Is the meaning clear after hearing it once?",
+		"Does it contain one idea or one clean tension?",
+		"Is it safe and low stakes?",
+		"Is it broad without becoming nonsense?",
+		"Does it avoid claiming knowledge the system does not have?"
+	],
+	"automatedChecks": {
+		"completeRenderedLines": true,
+		"uniqueText": true,
+		"minimumLineCount": true,
+		"mechanismAndSeedProvenanceIncluded": true
+	},
+	"readabilityReview": {
+		"policy": "Editorial targets are reported per line and are not hidden by the SurfaceText brand.",
+		"targets": {
+			"minimumFleschReadingEase": 70,
+			"maximumFleschKincaidGrade": 8
+		},
+		"corpusLineCount": 1091,
+		"exceptionCount": 479,
+		"exceptions": [
+			{
+				"id": "surface.autonomy-approval.room-to-decide.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.autonomy-approval.room-to-decide.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.autonomy-approval.truly-yours.you-sometimes",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.autonomy-approval.truly-yours.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.autonomy-approval.limited-agreement.at-times",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.autonomy-approval.limited-agreement.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.autonomy-approval.advice-without-control.often-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.autonomy-approval.advice-without-control.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.autonomy-approval.disagreement-doubt.you-often",
+				"fleschReadingEase": 28.5,
+				"fleschKincaidGrade": 11.52
+			},
+			{
+				"id": "surface.autonomy-approval.disagreement-doubt.sometimes-you",
+				"fleschReadingEase": 28.5,
+				"fleschKincaidGrade": 11.52
+			},
+			{
+				"id": "surface.autonomy-approval.reasons-brushed-aside.you-sometimes",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.autonomy-approval.reasons-brushed-aside.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.autonomy-approval.firm-choice.at-times",
+				"fleschReadingEase": 46.61,
+				"fleschKincaidGrade": 9.74
+			},
+			{
+				"id": "surface.autonomy-approval.firm-choice.sometimes-you",
+				"fleschReadingEase": 41.85,
+				"fleschKincaidGrade": 10.15
+			},
+			{
+				"id": "surface.autonomy-approval.reassurance-impact.you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.autonomy-approval.reassurance-impact.sometimes-you",
+				"fleschReadingEase": 53.66,
+				"fleschKincaidGrade": 8.76
+			},
+			{
+				"id": "surface.autonomy-approval.unexpected-decisions.often-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.autonomy-approval.unexpected-decisions.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.company-solitude.easy-company.you",
+				"fleschReadingEase": 66.79,
+				"fleschKincaidGrade": 5.68
+			},
+			{
+				"id": "surface.company-solitude.easy-company.sometimes-you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.company-solitude.social-quiet.often-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.company-solitude.social-quiet.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.company-solitude.leaving-early.at-times",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.company-solitude.leaving-early.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.company-solitude.easy-conversation.often-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.company-solitude.easy-conversation.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.company-solitude.easy-one-to-one.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.company-solitude.available-too-long.you-often",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.company-solitude.available-too-long.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.company-solitude.silence-personal.you-sometimes",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.company-solitude.silence-personal.sometimes-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.company-solitude.familiar-group.you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.company-solitude.familiar-group.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.company-solitude.social-confidence.often-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.company-solitude.social-confidence.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.company-solitude.company-and-quiet.rainbow-1",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.company-solitude.company-and-quiet.rainbow-2",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.company-solitude.company-and-quiet.rainbow-3",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.company-solitude.company-and-quiet.rainbow-4",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.important-choices.you",
+				"fleschReadingEase": 54.7,
+				"fleschKincaidGrade": 7.37
+			},
+			{
+				"id": "surface.deliberation-spontaneity.important-choices.sometimes-you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.deliberation-spontaneity.useful-details.you-often",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.deliberation-spontaneity.useful-details.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.deliberation-spontaneity.compare-options.often-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.compare-options.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.return-unsolved.at-times",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.deliberation-spontaneity.return-unsolved.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.deliberation-spontaneity.hidden-consequences.you",
+				"fleschReadingEase": 30.53,
+				"fleschKincaidGrade": 10.74
+			},
+			{
+				"id": "surface.deliberation-spontaneity.hidden-consequences.sometimes-you",
+				"fleschReadingEase": 29.52,
+				"fleschKincaidGrade": 11.13
+			},
+			{
+				"id": "surface.deliberation-spontaneity.replay-decision.you-often",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.deliberation-spontaneity.replay-decision.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.deliberation-spontaneity.quick-answer-pressure.you-sometimes",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.quick-answer-pressure.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.serious-promise.you",
+				"fleschReadingEase": 29.52,
+				"fleschKincaidGrade": 11.13
+			},
+			{
+				"id": "surface.deliberation-spontaneity.serious-promise.sometimes-you",
+				"fleschReadingEase": 28.5,
+				"fleschKincaidGrade": 11.52
+			},
+			{
+				"id": "surface.deliberation-spontaneity.faster-judgment.often-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.deliberation-spontaneity.faster-judgment.sometimes-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.deliberation-spontaneity.enough-information.you-often",
+				"fleschReadingEase": 35.95,
+				"fleschKincaidGrade": 10.73
+			},
+			{
+				"id": "surface.deliberation-spontaneity.enough-information.sometimes-you",
+				"fleschReadingEase": 35.95,
+				"fleschKincaidGrade": 10.73
+			},
+			{
+				"id": "surface.deliberation-spontaneity.thought-and-instinct.rainbow-1",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.thought-and-instinct.rainbow-2",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.deliberation-spontaneity.thought-and-instinct.rainbow-3",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.deliberation-spontaneity.thought-and-instinct.rainbow-4",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.stability-change.steady-habits.you-often",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.stability-change.steady-habits.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.stability-change.room-for-adventure.you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.stability-change.room-for-adventure.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.stability-change.familiar-return.you-sometimes",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.stability-change.familiar-return.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.stability-change.shared-rhythm.you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.stability-change.shared-rhythm.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.stability-change.improve-routine.often-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.stability-change.improve-routine.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.stability-change.resist-sudden-change.at-times",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.stability-change.resist-sudden-change.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.stability-change.attention-reset.you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.stability-change.attention-reset.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.stability-change.disrupted-flexibility.often-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.stability-change.disrupted-flexibility.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.reserve-openness.private-thoughts.often-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.reserve-openness.private-thoughts.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.reserve-openness.honest-boundary.at-times",
+				"fleschReadingEase": 35.95,
+				"fleschKincaidGrade": 10.73
+			},
+			{
+				"id": "surface.reserve-openness.honest-boundary.sometimes-you",
+				"fleschReadingEase": 28.5,
+				"fleschKincaidGrade": 11.52
+			},
+			{
+				"id": "surface.reserve-openness.opened-too-soon.you-often",
+				"fleschReadingEase": 54.7,
+				"fleschKincaidGrade": 7.37
+			},
+			{
+				"id": "surface.reserve-openness.opened-too-soon.sometimes-you",
+				"fleschReadingEase": 54.7,
+				"fleschKincaidGrade": 7.37
+			},
+			{
+				"id": "surface.reserve-openness.careless-reply.you-sometimes",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.reserve-openness.careless-reply.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.reserve-openness.useful-honesty.often-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.reserve-openness.useful-honesty.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.next-step.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.structure-flexibility.next-step.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.structure-flexibility.bring-order.you-often",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.structure-flexibility.bring-order.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.structure-flexibility.rough-plan.you-sometimes",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.structure-flexibility.rough-plan.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.structure-flexibility.better-option.at-times",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.structure-flexibility.better-option.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.detail-and-goal.often-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.detail-and-goal.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.unclear-expectations.you-often",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.structure-flexibility.unclear-expectations.sometimes-you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.structure-flexibility.rigid-plan.you-sometimes",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.rigid-plan.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.extra-details.at-times",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.structure-flexibility.extra-details.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.structure-flexibility.results-over-routine.you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.structure-flexibility.results-over-routine.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.structure-flexibility.unexpected-change.you-often",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.structure-flexibility.unexpected-change.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.confidence-doubt.recover-confidence.you-often",
+				"fleschReadingEase": 40.09,
+				"fleschKincaidGrade": 9.66
+			},
+			{
+				"id": "surface.confidence-doubt.recover-confidence.sometimes-you",
+				"fleschReadingEase": 40.09,
+				"fleschKincaidGrade": 9.66
+			},
+			{
+				"id": "surface.confidence-doubt.remember-criticism.you-sometimes",
+				"fleschReadingEase": 42.62,
+				"fleschKincaidGrade": 9.05
+			},
+			{
+				"id": "surface.confidence-doubt.remember-criticism.sometimes-you",
+				"fleschReadingEase": 42.62,
+				"fleschKincaidGrade": 9.05
+			},
+			{
+				"id": "surface.confidence-doubt.prepared-confidence.often-you",
+				"fleschReadingEase": 18.44,
+				"fleschKincaidGrade": 12.43
+			},
+			{
+				"id": "surface.confidence-doubt.prepared-confidence.sometimes-you",
+				"fleschReadingEase": 18.44,
+				"fleschKincaidGrade": 12.43
+			},
+			{
+				"id": "surface.confidence-doubt.embarrassment-recovery.you",
+				"fleschReadingEase": 30.53,
+				"fleschKincaidGrade": 10.74
+			},
+			{
+				"id": "surface.confidence-doubt.embarrassment-recovery.sometimes-you",
+				"fleschReadingEase": 29.52,
+				"fleschKincaidGrade": 11.13
+			},
+			{
+				"id": "surface.confidence-doubt.steady-others.often-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.confidence-doubt.steady-others.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.confidence-doubt.certain-voices.you-sometimes",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.confidence-doubt.certain-voices.sometimes-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.confidence-doubt.correct-pause.you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.confidence-doubt.correct-pause.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.confidence-doubt.pressure-voice.often-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.confidence-doubt.pressure-voice.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.confidence-doubt.recent-doubts.you-often",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.confidence-doubt.recent-doubts.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.patience-urgency.steady-longer.you-often",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.patience-urgency.steady-longer.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.patience-urgency.push-progress.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.patience-urgency.time-to-explain.you-sometimes",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.patience-urgency.time-to-explain.sometimes-you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.patience-urgency.waiting-limit.at-times",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.patience-urgency.waiting-limit.sometimes-you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.patience-urgency.demanding-pace.often-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.patience-urgency.demanding-pace.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.patience-urgency.unexplained-delay.you-often",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.patience-urgency.unexplained-delay.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.patience-urgency.careful-result.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.patience-urgency.hard-day-calm.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.patience-urgency.hard-day-calm.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.patience-urgency.purposeful-pace.you-often",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.patience-urgency.purposeful-pace.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.caution-experimentation.know-risk.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.caution-experimentation.spot-risks.you-often",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.caution-experimentation.spot-risks.sometimes-you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.caution-experimentation.choice-nerves.you-sometimes",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.caution-experimentation.choice-nerves.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.caution-experimentation.start-carefully.at-times",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.caution-experimentation.start-carefully.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.caution-experimentation.adventurous-side.you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.caution-experimentation.adventurous-side.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.caution-experimentation.early-trouble.you",
+				"fleschReadingEase": 54.7,
+				"fleschKincaidGrade": 7.37
+			},
+			{
+				"id": "surface.caution-experimentation.early-trouble.sometimes-you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.caution-experimentation.worst-result.you-often",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.caution-experimentation.worst-result.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.caution-experimentation.slow-test.you",
+				"fleschReadingEase": 53.66,
+				"fleschKincaidGrade": 8.76
+			},
+			{
+				"id": "surface.caution-experimentation.slow-test.sometimes-you",
+				"fleschReadingEase": 50.47,
+				"fleschKincaidGrade": 9.45
+			},
+			{
+				"id": "surface.caution-experimentation.sensible-risk.you-often",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.caution-experimentation.sensible-risk.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.directness-diplomacy.careful-feedback.often-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.directness-diplomacy.careful-feedback.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.directness-diplomacy.gentle-truth.you-often",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.directness-diplomacy.gentle-truth.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.directness-diplomacy.hold-bluntness.sometimes-you",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "surface.directness-diplomacy.exposed-feedback.you-often",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.directness-diplomacy.exposed-feedback.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.directness-diplomacy.plain-answer.you-sometimes",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.directness-diplomacy.plain-answer.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.directness-diplomacy.honest-not-cruel.at-times",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.directness-diplomacy.honest-not-cruel.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.directness-diplomacy.face-problem.often-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.directness-diplomacy.face-problem.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.directness-diplomacy.relationship-pause.you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.directness-diplomacy.relationship-pause.sometimes-you",
+				"fleschReadingEase": 47.3,
+				"fleschKincaidGrade": 8.9
+			},
+			{
+				"id": "surface.directness-diplomacy.direct-talk.you-often",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.directness-diplomacy.direct-talk.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.expression-restraint.notice-feelings.you-often",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.expression-restraint.notice-feelings.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.expression-restraint.hidden-hurt.you-sometimes",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.expression-restraint.hidden-hurt.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.expression-restraint.unspoken-feeling.you",
+				"fleschReadingEase": 28.5,
+				"fleschKincaidGrade": 11.52
+			},
+			{
+				"id": "surface.expression-restraint.unspoken-feeling.sometimes-you",
+				"fleschReadingEase": 27.49,
+				"fleschKincaidGrade": 11.91
+			},
+			{
+				"id": "surface.expression-restraint.quiet-misread.you-sometimes",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.expression-restraint.quiet-misread.sometimes-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.expression-restraint.careful-feeling.you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.expression-restraint.careful-feeling.sometimes-you",
+				"fleschReadingEase": 47.3,
+				"fleschKincaidGrade": 8.9
+			},
+			{
+				"id": "surface.expression-restraint.playful-side.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.expression-restraint.playful-side.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.expression-restraint.early-nerves.you-often",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.expression-restraint.early-nerves.sometimes-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.curiosity-focus.pulling-question.you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.curiosity-focus.pulling-question.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.curiosity-focus.finish-first.often-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.curiosity-focus.finish-first.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.curiosity-focus.link-ideas.you-often",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.curiosity-focus.link-ideas.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.curiosity-focus.empty-task.you-sometimes",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.curiosity-focus.empty-task.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.curiosity-focus.unexplored-interests.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.curiosity-focus.linked-ideas.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.curiosity-focus.linked-ideas.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.curiosity-focus.held-attention.you-often",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "surface.curiosity-focus.held-attention.sometimes-you",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "surface.curiosity-focus.learning-for-itself.at-times",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.curiosity-focus.learning-for-itself.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.curiosity-focus.unrelated-links.you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.curiosity-focus.unrelated-links.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.curiosity-focus.opening-question.often-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.curiosity-focus.opening-question.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.curiosity-focus.simple-answer.you-often",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.curiosity-focus.simple-answer.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.curiosity-focus.too-many-ideas.you-sometimes",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.curiosity-focus.too-many-ideas.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.curiosity-focus.unfinished-focus.you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.curiosity-focus.unfinished-focus.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.curiosity-focus.deeper-focus.you-often",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.curiosity-focus.deeper-focus.sometimes-you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.curiosity-focus.questions-and-focus.rainbow-1",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.curiosity-focus.questions-and-focus.rainbow-2",
+				"fleschReadingEase": 63.49,
+				"fleschKincaidGrade": 7.63
+			},
+			{
+				"id": "surface.curiosity-focus.questions-and-focus.rainbow-3",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.curiosity-focus.questions-and-focus.rainbow-4",
+				"fleschReadingEase": 63.49,
+				"fleschKincaidGrade": 7.63
+			},
+			{
+				"id": "surface.idealism-practicality.fallen-hopes.you-sometimes",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.idealism-practicality.fallen-hopes.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.idealism-practicality.useful-compromise.at-times",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.idealism-practicality.useful-compromise.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.idealism-practicality.useful-tradeoff.you-sometimes",
+				"fleschReadingEase": 47.3,
+				"fleschKincaidGrade": 8.9
+			},
+			{
+				"id": "surface.idealism-practicality.useful-tradeoff.sometimes-you",
+				"fleschReadingEase": 47.3,
+				"fleschKincaidGrade": 8.9
+			},
+			{
+				"id": "surface.idealism-practicality.imperfect-progress.at-times",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.idealism-practicality.imperfect-progress.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.idealism-practicality.human-and-practical.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.idealism-practicality.careless-idea.you-often",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.idealism-practicality.careless-idea.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.idealism-practicality.personal-unfairness.you-sometimes",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.idealism-practicality.personal-unfairness.sometimes-you",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.idealism-practicality.partial-progress.you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.idealism-practicality.partial-progress.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.idealism-practicality.waiting-idea.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.idealism-practicality.waiting-idea.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.idealism-practicality.ideals-to-action.you-often",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.idealism-practicality.ideals-to-action.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.independence-collaboration.shared-effort.often-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.independence-collaboration.shared-effort.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.independence-collaboration.group-balance.you-often",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.independence-collaboration.group-balance.sometimes-you",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.independence-collaboration.progress-alone.at-times",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.independence-collaboration.progress-alone.sometimes-you",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "surface.independence-collaboration.team-without-credit.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.independence-collaboration.heavy-dependence.you-often",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.independence-collaboration.heavy-dependence.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.independence-collaboration.lost-contribution.you-sometimes",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.independence-collaboration.lost-contribution.sometimes-you",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.independence-collaboration.awkward-help.you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.independence-collaboration.awkward-help.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.ambition-contentment.meaningful-effort.you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.ambition-contentment.meaningful-effort.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.ambition-contentment.small-wins.often-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.ambition-contentment.small-wins.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.ambition-contentment.feeling-behind.you-sometimes",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.ambition-contentment.feeling-behind.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.ambition-contentment.modest-goal.you-often",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.ambition-contentment.modest-goal.sometimes-you",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "surface.ambition-contentment.private-standard.you-sometimes",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.ambition-contentment.private-standard.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.ambition-contentment.hard-task-done.at-times",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.ambition-contentment.hard-task-done.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.ambition-contentment.unfinished-hours.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.ambition-contentment.high-expectation.sometimes-you",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "surface.ambition-contentment.larger-goals.often-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.ambition-contentment.larger-goals.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.ambition-contentment.measure-less.you-often",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.ambition-contentment.measure-less.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.optimism-realism.prepare-problems.often-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.optimism-realism.prepare-problems.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.optimism-realism.way-forward.you-often",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.optimism-realism.way-forward.sometimes-you",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.optimism-realism.setbacks-together.you-sometimes",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.optimism-realism.setbacks-together.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.optimism-realism.setbacks-and-outcome.you-often",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.optimism-realism.setbacks-and-outcome.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.optimism-realism.useful-hope.you",
+				"fleschReadingEase": 40.09,
+				"fleschKincaidGrade": 9.66
+			},
+			{
+				"id": "surface.optimism-realism.useful-hope.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.optimism-realism.honest-warning.often-you",
+				"fleschReadingEase": 29.52,
+				"fleschKincaidGrade": 11.13
+			},
+			{
+				"id": "surface.optimism-realism.honest-warning.sometimes-you",
+				"fleschReadingEase": 29.52,
+				"fleschKincaidGrade": 11.13
+			},
+			{
+				"id": "surface.optimism-realism.small-problems.you-often",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.optimism-realism.small-problems.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.optimism-realism.details-first.you-sometimes",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.optimism-realism.details-first.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.optimism-realism.trouble-ready.at-times",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.optimism-realism.trouble-ready.sometimes-you",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "surface.optimism-realism.setback-resilience.often-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.optimism-realism.setback-resilience.sometimes-you",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "surface.persistence-rest.finish-hard-work.you-often",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.persistence-rest.finish-hard-work.sometimes-you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.persistence-rest.guilty-rest.you-sometimes",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.persistence-rest.guilty-rest.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.persistence-rest.clear-beginning.you-sometimes",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.persistence-rest.clear-beginning.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.persistence-rest.quiet-finisher.you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.persistence-rest.quiet-finisher.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.persistence-rest.useful-persistence.often-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.persistence-rest.useful-persistence.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.persistence-rest.rest-guilt.you-often",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.persistence-rest.rest-guilt.sometimes-you",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "surface.persistence-rest.invested-effort.you-sometimes",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.persistence-rest.invested-effort.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.persistence-rest.recover-momentum.you-often",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.persistence-rest.recover-momentum.sometimes-you",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "surface.belonging-individuality.belong-and-self.you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.belonging-individuality.belong-and-self.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "surface.belonging-individuality.include-others.you-often",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.belonging-individuality.include-others.sometimes-you",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "surface.belonging-individuality.room-for-difference.often-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.belonging-individuality.room-for-difference.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.belonging-individuality.familiar-ritual.you-sometimes",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.belonging-individuality.familiar-ritual.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.belonging-individuality.different-groups.at-times",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "surface.belonging-individuality.different-groups.sometimes-you",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "surface.belonging-individuality.busy-loneliness.you-often",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.belonging-individuality.busy-loneliness.sometimes-you",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "surface.belonging-individuality.difference-risk.you-sometimes",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.belonging-individuality.difference-risk.sometimes-you",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "surface.belonging-individuality.values-over-approval.at-times",
+				"fleschReadingEase": 63.49,
+				"fleschKincaidGrade": 7.63
+			},
+			{
+				"id": "surface.belonging-individuality.values-over-approval.sometimes-you",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "surface.belonging-individuality.adapt-for-connection.you",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "surface.belonging-individuality.adapt-for-connection.sometimes-you",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.autonomy-approval.truly-yours",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.autonomy-approval.limited-agreement",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.autonomy-approval.advice-without-control",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.autonomy-approval.disagreement-doubt",
+				"fleschReadingEase": 35.95,
+				"fleschKincaidGrade": 10.73
+			},
+			{
+				"id": "feedback.autonomy-approval.firm-choice",
+				"fleschReadingEase": 46.61,
+				"fleschKincaidGrade": 9.74
+			},
+			{
+				"id": "feedback.autonomy-approval.reassurance-impact",
+				"fleschReadingEase": 56.98,
+				"fleschKincaidGrade": 8.54
+			},
+			{
+				"id": "feedback.autonomy-approval.unexpected-decisions",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.company-solitude.easy-company",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "feedback.company-solitude.social-quiet",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.company-solitude.leaving-early",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.company-solitude.easy-conversation",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.company-solitude.easy-one-to-one",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.company-solitude.available-too-long",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.company-solitude.silence-personal",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "feedback.company-solitude.familiar-group",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.company-solitude.social-confidence",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.company-solitude.company-and-quiet",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.important-choices",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.useful-details",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.compare-options",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.return-unsolved",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.hidden-consequences",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.replay-decision",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.serious-promise",
+				"fleschReadingEase": 35.95,
+				"fleschKincaidGrade": 10.73
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.faster-judgment",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.enough-information",
+				"fleschReadingEase": 41.85,
+				"fleschKincaidGrade": 10.15
+			},
+			{
+				"id": "feedback.deliberation-spontaneity.thought-and-instinct",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.stability-change.steady-habits",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.stability-change.room-for-adventure",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.stability-change.familiar-return",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.stability-change.shared-rhythm",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.stability-change.improve-routine",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.stability-change.resist-sudden-change",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.stability-change.attention-reset",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.stability-change.disrupted-flexibility",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.reserve-openness.private-thoughts",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.reserve-openness.honest-boundary",
+				"fleschReadingEase": 35.95,
+				"fleschKincaidGrade": 10.73
+			},
+			{
+				"id": "feedback.reserve-openness.opened-too-soon",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "feedback.reserve-openness.careless-reply",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.reserve-openness.useful-honesty",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.structure-flexibility.bring-order",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.structure-flexibility.rough-plan",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.structure-flexibility.better-option",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.structure-flexibility.detail-and-goal",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.structure-flexibility.unclear-expectations",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "feedback.structure-flexibility.rigid-plan",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.structure-flexibility.extra-details",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.structure-flexibility.results-over-routine",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.structure-flexibility.unexpected-change",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.confidence-doubt.recover-confidence",
+				"fleschReadingEase": 47.3,
+				"fleschKincaidGrade": 8.9
+			},
+			{
+				"id": "feedback.confidence-doubt.remember-criticism",
+				"fleschReadingEase": 50.67,
+				"fleschKincaidGrade": 8.18
+			},
+			{
+				"id": "feedback.confidence-doubt.prepared-confidence",
+				"fleschReadingEase": 29.52,
+				"fleschKincaidGrade": 11.13
+			},
+			{
+				"id": "feedback.confidence-doubt.embarrassment-recovery",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "feedback.confidence-doubt.steady-others",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.confidence-doubt.certain-voices",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "feedback.confidence-doubt.correct-pause",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.confidence-doubt.pressure-voice",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.confidence-doubt.recent-doubts",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.patience-urgency.steady-longer",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.patience-urgency.time-to-explain",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "feedback.patience-urgency.waiting-limit",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "feedback.patience-urgency.demanding-pace",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.patience-urgency.careful-result",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.caution-experimentation.spot-risks",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "feedback.caution-experimentation.start-carefully",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.caution-experimentation.adventurous-side",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.caution-experimentation.early-trouble",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "feedback.caution-experimentation.worst-result",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.caution-experimentation.slow-test",
+				"fleschReadingEase": 53.64,
+				"fleschKincaidGrade": 9.26
+			},
+			{
+				"id": "feedback.caution-experimentation.sensible-risk",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.directness-diplomacy.careful-feedback",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.directness-diplomacy.exposed-feedback",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.directness-diplomacy.honest-not-cruel",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.directness-diplomacy.face-problem",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.directness-diplomacy.relationship-pause",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "feedback.directness-diplomacy.direct-talk",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.expression-restraint.notice-feelings",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.expression-restraint.hidden-hurt",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.expression-restraint.unspoken-feeling",
+				"fleschReadingEase": 34.16,
+				"fleschKincaidGrade": 11.23
+			},
+			{
+				"id": "feedback.expression-restraint.quiet-misread",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "feedback.expression-restraint.careful-feeling",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "feedback.expression-restraint.early-nerves",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "feedback.curiosity-focus.pulling-question",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.curiosity-focus.finish-first",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.curiosity-focus.link-ideas",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.curiosity-focus.empty-task",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.curiosity-focus.unexplored-interests",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.curiosity-focus.held-attention",
+				"fleschReadingEase": 63.49,
+				"fleschKincaidGrade": 7.63
+			},
+			{
+				"id": "feedback.curiosity-focus.learning-for-itself",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.curiosity-focus.unrelated-links",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.curiosity-focus.opening-question",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.curiosity-focus.too-many-ideas",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.curiosity-focus.unfinished-focus",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.curiosity-focus.deeper-focus",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "feedback.curiosity-focus.questions-and-focus",
+				"fleschReadingEase": 65.73,
+				"fleschKincaidGrade": 7.57
+			},
+			{
+				"id": "feedback.idealism-practicality.fallen-hopes",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.idealism-practicality.useful-compromise",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.idealism-practicality.useful-tradeoff",
+				"fleschReadingEase": 52.87,
+				"fleschKincaidGrade": 8.37
+			},
+			{
+				"id": "feedback.idealism-practicality.imperfect-progress",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.idealism-practicality.human-and-practical",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.idealism-practicality.careless-idea",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.idealism-practicality.personal-unfairness",
+				"fleschReadingEase": 53.66,
+				"fleschKincaidGrade": 8.76
+			},
+			{
+				"id": "feedback.idealism-practicality.partial-progress",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.idealism-practicality.ideals-to-action",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.independence-collaboration.shared-effort",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.independence-collaboration.group-balance",
+				"fleschReadingEase": 53.66,
+				"fleschKincaidGrade": 8.76
+			},
+			{
+				"id": "feedback.independence-collaboration.progress-alone",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "feedback.independence-collaboration.team-without-credit",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.independence-collaboration.heavy-dependence",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.independence-collaboration.lost-contribution",
+				"fleschReadingEase": 53.66,
+				"fleschKincaidGrade": 8.76
+			},
+			{
+				"id": "feedback.independence-collaboration.awkward-help",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.ambition-contentment.meaningful-effort",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.ambition-contentment.small-wins",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.ambition-contentment.feeling-behind",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.ambition-contentment.modest-goal",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "feedback.ambition-contentment.private-standard",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.ambition-contentment.hard-task-done",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.optimism-realism.prepare-problems",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.optimism-realism.way-forward",
+				"fleschReadingEase": 60.71,
+				"fleschKincaidGrade": 7.77
+			},
+			{
+				"id": "feedback.optimism-realism.setbacks-together",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.optimism-realism.setbacks-and-outcome",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.optimism-realism.useful-hope",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.optimism-realism.honest-warning",
+				"fleschReadingEase": 37.9,
+				"fleschKincaidGrade": 10.21
+			},
+			{
+				"id": "feedback.optimism-realism.small-problems",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.optimism-realism.trouble-ready",
+				"fleschReadingEase": 44.41,
+				"fleschKincaidGrade": 9.55
+			},
+			{
+				"id": "feedback.optimism-realism.setback-resilience",
+				"fleschReadingEase": 64.92,
+				"fleschKincaidGrade": 6.94
+			},
+			{
+				"id": "feedback.persistence-rest.guilty-rest",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.persistence-rest.clear-beginning",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.persistence-rest.quiet-finisher",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.persistence-rest.useful-persistence",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.persistence-rest.rest-guilt",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "feedback.persistence-rest.invested-effort",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.persistence-rest.recover-momentum",
+				"fleschReadingEase": 53.66,
+				"fleschKincaidGrade": 8.76
+			},
+			{
+				"id": "feedback.belonging-individuality.belong-and-self",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "feedback.belonging-individuality.include-others",
+				"fleschReadingEase": 49.54,
+				"fleschKincaidGrade": 9.08
+			},
+			{
+				"id": "feedback.belonging-individuality.room-for-difference",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.belonging-individuality.familiar-ritual",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.belonging-individuality.different-groups",
+				"fleschReadingEase": 57.23,
+				"fleschKincaidGrade": 8.01
+			},
+			{
+				"id": "feedback.belonging-individuality.busy-loneliness",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "feedback.belonging-individuality.difference-risk",
+				"fleschReadingEase": 69.99,
+				"fleschKincaidGrade": 6.73
+			},
+			{
+				"id": "feedback.belonging-individuality.values-over-approval",
+				"fleschReadingEase": 63.49,
+				"fleschKincaidGrade": 7.63
+			},
+			{
+				"id": "feedback.belonging-individuality.adapt-for-connection",
+				"fleschReadingEase": 67.76,
+				"fleschKincaidGrade": 6.79
+			},
+			{
+				"id": "echo.decision_pace.usually-deliberate",
+				"fleschReadingEase": 59.75,
+				"fleschKincaidGrade": 6.42
+			},
+			{
+				"id": "echo.decision_pace.usually-quick",
+				"fleschReadingEase": 15.64,
+				"fleschKincaidGrade": 12.32
+			},
+			{
+				"id": "echo.novelty_preference.familiar-things",
+				"fleschReadingEase": 66.1,
+				"fleschKincaidGrade": 6.28
+			},
+			{
+				"id": "echo.novelty_preference.new-things",
+				"fleschReadingEase": 54.7,
+				"fleschKincaidGrade": 7.37
+			},
+			{
+				"id": "echo.novelty_preference.mixture",
+				"fleschReadingEase": 61.33,
+				"fleschKincaidGrade": 7.19
+			},
+			{
+				"id": "echo.focus_style.several-threads",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "echo.feedback_preference.gentle",
+				"fleschReadingEase": 61.24,
+				"fleschKincaidGrade": 6.71
+			},
+			{
+				"id": "echo.feedback_preference.with-context",
+				"fleschReadingEase": 45.65,
+				"fleschKincaidGrade": 8.38
+			},
+			{
+				"id": "echo.feedback_preference.depends",
+				"fleschReadingEase": 56.7,
+				"fleschKincaidGrade": 7.59
+			},
+			{
+				"id": "echo.time_horizon.varies",
+				"fleschReadingEase": 69.79,
+				"fleschKincaidGrade": 6.01
+			},
+			{
+				"id": "echo.pace.bursts",
+				"fleschReadingEase": 66.79,
+				"fleschKincaidGrade": 5.68
+			}
+		]
+	},
+	"reviewerAttestations": [
+		{
+			"reviewer": "Independent Codex editorial reviewer 1",
+			"method": "independent-agent silent read-aloud simulation",
+			"status": "approved",
+			"reviewedSha256": "9b68bec6aa55bec8e795d2086586104a6185b60bc4362ffd893680fd44748d4a",
+			"passCount": 253,
+			"rejectCount": 0,
+			"borderlineCount": 0,
+			"notes": "Reviewed all 253 lines, then verified and reviewed the hash-pinned 17-line final repair delta; no unlisted text or ID changes. This is an independent textual simulation, not a human audio or assistive-technology attestation."
+		},
+		{
+			"reviewer": "Independent Codex editorial reviewer 2",
+			"method": "independent-agent silent read-aloud simulation",
+			"status": "approved",
+			"reviewedSha256": "9b68bec6aa55bec8e795d2086586104a6185b60bc4362ffd893680fd44748d4a",
+			"passCount": 253,
+			"rejectCount": 0,
+			"borderlineCount": 0,
+			"notes": "Reviewed all 253 lines independently, then verified and reviewed the hash-pinned 17-line final repair delta; no unlisted text or ID changes. This is an independent textual simulation, not a human audio or assistive-technology attestation."
+		}
+	]
+}

@@ -9,6 +9,21 @@
 		statements: readonly ReadingStatement[];
 		events?: readonly AuditEventView[];
 	} = $props();
+
+	function letter(index: number): string {
+		return String.fromCharCode(64 + Math.max(1, Math.min(26, index)));
+	}
+
+	function statementLabel(statement: ReadingStatement, index: number): string {
+		const throughCurrent = statements.slice(0, index + 1);
+		if (statement.basis === 'direct-echo') {
+			return `Echo ${letter(throughCurrent.filter((item) => item.basis === 'direct-echo').length)}`;
+		}
+		if (statement.adaptation !== 'sealed') {
+			return `Derivative ${letter(throughCurrent.filter((item) => item.adaptation !== 'sealed').length)}`;
+		}
+		return `Original ${throughCurrent.filter((item) => item.basis !== 'direct-echo' && item.adaptation === 'sealed').length}`;
+	}
 </script>
 
 <details class="audit" data-testid="statement-audit">
@@ -21,7 +36,13 @@
 			<h3 id="statement-audit-heading">Statement provenance</h3>
 			<div class="cards">
 				{#each statements as statement, index (statement.id)}
-					<ReadingCard {statement} index={index + 1} reveal showRating={false} />
+					<ReadingCard
+						{statement}
+						index={index + 1}
+						label={statementLabel(statement, index)}
+						mode="xray"
+						showRating={false}
+					/>
 				{/each}
 			</div>
 		</section>

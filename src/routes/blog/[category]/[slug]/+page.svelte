@@ -40,7 +40,7 @@
 </script>
 
 <svelte:head>
-	{#if data.metadata.rawThoughtLayout !== 'healthcare-human-margin'}
+	{#if data.metadata.rawThoughtLayout !== 'healthcare-human-margin' && !(data.metadata.categorySlug === 'visualizations' && data.slug === 'the-profile-that-knows-almost-nothing-about-you')}
 		<link
 			rel="preload"
 			href={courierPrimeLatinUrl}

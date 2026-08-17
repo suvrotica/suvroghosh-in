@@ -1,28 +1,24 @@
 <script lang="ts">
+	import { createReadingProgressScheduler } from './reading-progress-scheduler';
+
 	let { ink = 'var(--accent)' }: { ink?: string } = $props();
 	let progress = $state(0);
 
 	$effect(() => {
-		let rafId: number | null = null;
-
 		const update = () => {
-			rafId = null;
 			const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
 			progress = documentHeight > 0 ? Math.min(Math.max(window.scrollY / documentHeight, 0), 1) : 0;
 		};
 
-		const scheduleUpdate = () => {
-			if (rafId === null) rafId = requestAnimationFrame(update);
-		};
+		const scheduler = createReadingProgressScheduler(update);
 
-		window.addEventListener('scroll', scheduleUpdate, { passive: true });
-		window.addEventListener('resize', scheduleUpdate, { passive: true });
-		update();
+		window.addEventListener('scroll', scheduler.schedule, { passive: true });
+		window.addEventListener('resize', scheduler.schedule, { passive: true });
 
 		return () => {
-			window.removeEventListener('scroll', scheduleUpdate);
-			window.removeEventListener('resize', scheduleUpdate);
-			if (rafId !== null) cancelAnimationFrame(rafId);
+			window.removeEventListener('scroll', scheduler.schedule);
+			window.removeEventListener('resize', scheduler.schedule);
+			scheduler.stop();
 		};
 	});
 </script>

@@ -6,22 +6,24 @@
 		label: string;
 		mark: string;
 	}[] = [
-		{ id: 'does-not-fit', label: 'Does not fit', mark: '−' },
-		{ id: 'partly-fits', label: 'Partly fits', mark: '≈' },
-		{ id: 'fits', label: 'Fits', mark: '●' },
-		{ id: 'too-vague', label: 'Too vague to test', mark: '?' }
+		{ id: 'does-not-fit', label: 'No, not me', mark: '−' },
+		{ id: 'partly-fits', label: 'Maybe', mark: '≈' },
+		{ id: 'fits', label: 'Yes, that sounds like me', mark: '●' },
+		{ id: 'too-vague', label: 'Too broad to tell', mark: '?' }
 	];
 
 	let {
 		name,
 		value = 'unrated',
 		legend = 'How well does this statement fit?',
+		describedby,
 		disabled = false,
 		onchange
 	}: {
 		name: string;
 		value?: FitRatingValue;
 		legend?: string;
+		describedby?: string;
 		disabled?: boolean;
 		onchange: (rating: FitRatingValue) => void;
 	} = $props();
@@ -37,6 +39,7 @@
 					{name}
 					value={option.id}
 					checked={value === option.id}
+					aria-describedby={describedby}
 					onchange={() => onchange(option.id)}
 				/>
 				<span class="mark" aria-hidden="true">{option.mark}</span>
@@ -90,10 +93,14 @@
 
 	input {
 		position: absolute;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
+		z-index: 1;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
 		opacity: 0;
+		cursor: pointer;
+		scroll-margin-top: calc(var(--site-header-height, 4.6rem) + 1rem);
 	}
 
 	label:has(input:focus-visible) {
@@ -110,6 +117,11 @@
 		border: 1px solid currentColor;
 		border-radius: 50%;
 		font: 750 0.72rem/1 var(--barnum-mono);
+		pointer-events: none;
+	}
+
+	fieldset:disabled input {
+		cursor: default;
 	}
 
 	fieldset:disabled label {
