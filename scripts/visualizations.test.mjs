@@ -4,7 +4,8 @@ import path from 'node:path';
 import test from 'node:test';
 
 const root = process.cwd();
-const read = (...segments) => fs.readFileSync(path.join(root, ...segments), 'utf8');
+const read = (...segments) =>
+	fs.readFileSync(path.join(root, ...segments), 'utf8').replace(/\r\n/g, '\n');
 
 test('the visualization registry keeps experiment and p5 code behind dynamic imports', () => {
 	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
@@ -983,5 +984,73 @@ test('the fertilization calcium atlas is published, provenance-first, and resili
 	assert.match(svg, /<svg[\s\S]*width="1200"[\s\S]*height="630"/);
 	assert.match(svg, /<title id="poster-title">/);
 	assert.match(svg, /<desc id="poster-description">/);
+	assert.doesNotMatch(svg, /<image\b|\bhref=/);
+});
+
+test('the Barnum laboratory is published as a private, sourced five-step experiment', () => {
+	const slug = 'the-profile-that-knows-almost-nothing-about-you';
+	const articlePath = `/blog/visualizations/${slug}`;
+	const posterPath = `/images/visualizations/barnum-lab/${slug}.webp`;
+	const post = read('src', 'lib', 'posts', `${slug}.md`);
+	const registry = read('src', 'lib', 'visualizations', 'registry.ts');
+	const landing = read(
+		'src',
+		'lib',
+		'components',
+		'visualizations',
+		'VisualizationsLanding.svelte'
+	);
+	const poster = path.join(root, 'static', ...posterPath.split('/').filter(Boolean));
+	const posterSource = path.join(
+		root,
+		'static',
+		'images',
+		'visualizations',
+		'barnum-lab',
+		`${slug}.svg`
+	);
+
+	assert.match(post, /title: "The Profile That Knows Almost Nothing About You"/);
+	assert.match(post, /category: "Visualizations"/);
+	assert.match(post, /published: true/);
+	assert.match(post, /interactiveFirst: true/);
+	assert.ok(post.includes(`thumbnail: "${posterPath}"`));
+	assert.match(
+		post,
+		/import BarnumLab from '\$lib\/visualizations\/barnum-lab\/components\/BarnumLab\.svelte'/
+	);
+	assert.match(post, /<BarnumLab \/>/);
+	assert.match(post, /<noscript>[\s\S]*The reading, without the machinery[\s\S]*<\/noscript>/);
+	assert.match(post, /Fit is not distinctiveness\./);
+	assert.match(post, /1 − \(1 − <var>p<\/var>\)<sup><var>n<\/var><\/sup>/);
+	assert.equal((post.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0].match(/<li>/g) ?? []).length, 10);
+	for (const doi of [
+		'10.1037/h0059240',
+		'10.2466/pr0.1985.57.2.367',
+		'10.1177/00986283241240454'
+	]) {
+		assert.ok(post.includes(doi), `missing Barnum source DOI ${doi}`);
+	}
+	assert.ok(post.includes('https://www.apa.org/ethics/code'));
+	assert.match(post, /Paul Rogers and Janice Soule/);
+	assert.match(post, /uses no runtime AI or external API, and stores no selections or ratings/);
+	assert.match(post, /copy button copies only this generic checklist/);
+
+	assert.match(registry, new RegExp(`'${slug}':\\s*\\{`));
+	assert.ok(registry.includes(`poster:\n\t\t\t'${posterPath}'`));
+	assert.ok(registry.includes(`href: '${articlePath}'`));
+	assert.match(registry, /status: 'published'/);
+	assert.match(
+		landing,
+		/'the-profile-that-knows-almost-nothing-about-you':\s*\n?\s*visualizationSummaries\['the-profile-that-knows-almost-nothing-about-you'\]\.subjects/
+	);
+
+	assert.ok(fs.existsSync(poster), 'missing Barnum laboratory social image');
+	assert.ok(fs.statSync(poster).size < 750 * 1024, 'Barnum laboratory social image exceeds 750 kB');
+	assert.ok(fs.existsSync(posterSource), 'missing accessible Barnum laboratory poster source');
+	const svg = fs.readFileSync(posterSource, 'utf8');
+	assert.match(svg, /<svg[\s\S]*width="1200"[\s\S]*height="800"/);
+	assert.match(svg, /<title id="title">/);
+	assert.match(svg, /<desc id="desc">/);
 	assert.doesNotMatch(svg, /<image\b|\bhref=/);
 });

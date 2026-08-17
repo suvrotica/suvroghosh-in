@@ -4234,6 +4234,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "visualizations/barnum-lab/the-profile-that-knows-almost-nothing-about-you.svg",
+			"src": "/images/visualizations/barnum-lab/the-profile-that-knows-almost-nothing-about-you.svg",
+			"bytes": 4923,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "visualizations/barnum-lab/the-profile-that-knows-almost-nothing-about-you.webp",
+			"src": "/images/visualizations/barnum-lab/the-profile-that-knows-almost-nothing-about-you.webp",
+			"bytes": 35322,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "visualizations/belousov-zhabotinsky/bz-laboratory-poster.png",
 			"src": "/images/visualizations/belousov-zhabotinsky/bz-laboratory-poster.png",
 			"bytes": 132792,

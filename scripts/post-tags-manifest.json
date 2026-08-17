@@ -11825,6 +11825,32 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md": {
+			"bodyHash": "cca8ea6097a94aee003353d3c7783e7573dcc724368e39166e9ba32e92eedf87",
+			"hashVersion": 2,
+			"revisionHash": "89c56cd0aa3a36f75d380d9bff4c070a1162345039e410838b3f1227748f8152",
+			"generatedTags": [
+				"Psychology",
+				"Statistics",
+				"Critical Thinking",
+				"Probability",
+				"Cognitive Bias",
+				"DOI Record",
+				"Throwing Enough Darts",
+				"Natural Frequencies",
+				"Base Rate",
+				"Generalized Feedback"
+			],
+			"pinnedTags": [
+				"Psychology",
+				"Statistics",
+				"Critical Thinking",
+				"Probability",
+				"Cognitive Bias"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-17"
 		}
 	},
 	"maxTags": 10

@@ -76,6 +76,19 @@ export const visualizationSummaries = {
 		href: '/blog/visualizations/human-ai-icu-prediction-laboratory',
 		status: 'published'
 	},
+	'the-profile-that-knows-almost-nothing-about-you': {
+		id: 'the-profile-that-knows-almost-nothing-about-you',
+		title: 'The Profile That Knows Almost Nothing About You',
+		description:
+			'Expose how broad claims, many guesses, direct echoes, and feedback can manufacture the feeling of personal insight.',
+		subjects: ['Statistics'],
+		poster:
+			'/images/visualizations/barnum-lab/the-profile-that-knows-almost-nothing-about-you.webp',
+		posterAlt:
+			'An editorial profile card separating into labelled sentence fragments above a backstage assumption ledger',
+		href: '/blog/visualizations/the-profile-that-knows-almost-nothing-about-you',
+		status: 'published'
+	},
 	'the-strange-attractor-orchestra': {
 		id: 'the-strange-attractor-orchestra',
 		title: 'The Strange Attractor Orchestra: When Chaos Learns to Sing',

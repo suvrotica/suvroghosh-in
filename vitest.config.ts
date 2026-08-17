@@ -5,6 +5,7 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: [
+			'src/lib/visualizations/barnum-lab/**/*.test.ts',
 			'src/lib/visualizations/homeodynamics/**/*.test.ts',
 			'src/lib/visualizations/fertilization-calcium-atlas/**/*.test.ts',
 			'src/lib/visualizations/random-matrix/**/*.test.ts',

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">The profile that knows almost nothing about you</title>
+  <desc id="desc">An editorial profile card separates into labelled fragments above a backstage assumption ledger.</desc>
+  <defs>
+    <pattern id="paper" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#eee8dc"/>
+      <path d="M0 8h32M0 24h32" stroke="#453f37" stroke-opacity=".045"/>
+      <circle cx="7" cy="18" r=".7" fill="#453f37" fill-opacity=".08"/>
+      <circle cx="25" cy="5" r=".5" fill="#453f37" fill-opacity=".08"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#171411" flood-opacity=".16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#paper)"/>
+  <path d="M0 0h1200v88H0z" fill="#242b32"/>
+  <text x="70" y="54" fill="#f5efe4" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="4">EDITORIAL LABORATORY · CASE 001</text>
+
+  <g transform="translate(70 128)">
+    <text fill="#8a3829" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FRONT OF HOUSE</text>
+    <text y="62" fill="#29251f" font-family="Georgia, 'Times New Roman', serif" font-size="51" font-weight="700">A profile that feels personal</text>
+    <text y="103" fill="#5a534a" font-family="Arial, Helvetica, sans-serif" font-size="24">assembled from roomy truths, supplied clues, and remembered hits</text>
+  </g>
+
+  <g filter="url(#shadow)" transform="translate(70 280)">
+    <rect width="1060" height="240" rx="10" fill="#fbf8f1" stroke="#6e665d" stroke-width="2"/>
+    <path d="M0 50h1060" stroke="#6e665d"/>
+    <circle cx="28" cy="25" r="6" fill="#a34935"/>
+    <text x="48" y="33" fill="#413c35" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2">THE POLISHED READING</text>
+
+    <g transform="translate(34 82)">
+      <rect width="290" height="58" rx="5" fill="#f2d9d1"/>
+      <text x="18" y="25" fill="#342f2a" font-family="Georgia, 'Times New Roman', serif" font-size="19">You value your own direction</text>
+      <text x="18" y="47" fill="#8a3829" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">BROAD COMMON EXPERIENCE</text>
+    </g>
+    <g transform="translate(344 82)">
+      <rect width="328" height="58" rx="5" fill="#dce6e8"/>
+      <text x="18" y="25" fill="#342f2a" font-family="Georgia, 'Times New Roman', serif" font-size="19">yet sometimes seek reassurance</text>
+      <text x="18" y="47" fill="#315b69" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">OPPOSITE-PAIR COVERAGE</text>
+    </g>
+    <g transform="translate(692 82)">
+      <rect width="334" height="58" rx="5" fill="#efe2b7"/>
+      <text x="18" y="25" fill="#342f2a" font-family="Georgia, 'Times New Roman', serif" font-size="19">when the stakes feel personal.</text>
+      <text x="18" y="47" fill="#765c0c" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">ESCAPE CONDITION</text>
+    </g>
+
+    <path d="M179 151v44M508 151v44M859 151v44" stroke="#6e665d" stroke-dasharray="5 5"/>
+    <text x="34" y="216" fill="#5a534a" font-family="Arial, Helvetica, sans-serif" font-size="17">Actual visitor-specific evidence:</text>
+    <text x="300" y="216" fill="#8a3829" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">none</text>
+  </g>
+
+  <g transform="translate(70 566)">
+    <text fill="#315b69" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">BACKSTAGE LEDGER</text>
+    <g transform="translate(0 28)">
+      <rect width="1060" height="126" fill="#242b32"/>
+      <path d="M0 42h1060M0 84h1060M240 0v126M500 0v126M820 0v126" stroke="#6d7780"/>
+      <g fill="#f5efe4" font-family="Arial, Helvetica, sans-serif" font-size="16">
+        <text x="16" y="27" font-weight="700">ITEM</text><text x="256" y="27" font-weight="700">ORIGIN</text><text x="516" y="27" font-weight="700">PERMITTED USE</text><text x="836" y="27" font-weight="700">READING</text>
+        <text x="16" y="69">Kolkata</text><text x="256" y="69">demo default</text><text x="516" y="69">surface detail only</text><text x="836" y="69">changed nothing</text>
+        <text x="16" y="111">Loose plan</text><text x="256" y="111">selected by you</text><text x="516" y="111">direct paraphrase</text><text x="836" y="111">echo, not inference</text>
+      </g>
+    </g>
+  </g>
+
+  <text x="1130" y="763" text-anchor="end" fill="#5a534a" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="2">FIT ≠ DISTINCTIVENESS</text>
+</svg>
