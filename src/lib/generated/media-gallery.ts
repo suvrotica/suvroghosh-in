@@ -4164,6 +4164,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "the-drowning-prophet.jpg",
+			"src": "/images/the-drowning-prophet.jpg",
+			"bytes": 226515,
+			"width": 896,
+			"height": 1280
+		},
+		{
 			"name": "the-great-meme-reset-and-my-colon.jpg",
 			"src": "/images/the-great-meme-reset-and-my-colon.jpg",
 			"bytes": 210581,

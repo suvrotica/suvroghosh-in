@@ -11795,6 +11795,36 @@
 				"Kolkata"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-drowning-prophet.md": {
+			"bodyHash": "c21e15da75bf789daffa2ca1db41ae0658f47da6a3ad97435f5c512ce5a020d6",
+			"hashVersion": 2,
+			"revisionHash": "9a4e14653ad58c9e00b191c6daaedaa0796dbb9d0ce13b8b41af3a40db97f7db",
+			"generatedTags": [
+				"Singularity",
+				"Mental Health",
+				"Bipolar",
+				"Artificial Intelligence",
+				"Calcutta",
+				"Kolkata",
+				"Technology",
+				"Depression",
+				"Futurism",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Singularity",
+				"Mental Health",
+				"Bipolar",
+				"Artificial Intelligence",
+				"Calcutta",
+				"Kolkata",
+				"Technology",
+				"Depression",
+				"Futurism",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
