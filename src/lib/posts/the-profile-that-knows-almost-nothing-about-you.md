@@ -1,7 +1,7 @@
 ---
 title: "The Profile That Knows Almost Nothing About You"
 seoTitle: "The Barnum Effect, Taken Apart — An Interactive Local Experiment"
-description: "Give a local reader harmless clues, watch its profile seem to sharpen, then expose every broad claim, direct echo, discarded miss, and stage-prop probability."
+description: "Meet a warm, plausible reading first, then inspect every broad statement, echoed clue, discarded miss, and many-guesses calculation behind it."
 date: "2026-08-17"
 dateModified: "2026-08-17"
 thumbnail: "/images/visualizations/barnum-lab/the-profile-that-knows-almost-nothing-about-you.webp"
@@ -82,7 +82,7 @@ There is a particular pleasure in being described well. A sentence arrives from 
 
 The surprise becomes stronger when the source seems to know very little. A horoscope has a birth date. A personality quiz has a few radio buttons. A salesperson has the last three things you said. A language model has the prompt currently in front of it. Yet the resulting profile can feel as though it has opened a private drawer.
 
-The laboratory above is built to make that feeling inspectable. It starts with broad claims sealed before you provide a clue. It then adds harmless context, one direct paraphrase of an answer, more independent guesses, and—only after warning you—up to two statements selected from your earlier reactions. At the end it opens the ledger. Nothing is scored as objectively correct because the page has no independent measure of your personality.
+The laboratory above is built to make that feeling inspectable. It first presents short, ordinary lines that were chosen before you supplied a clue. A few optional choices and ratings can later make the wording feel more familiar. Only after that brief experience does the page open the ledger and show what changed, what did not, and which misses remained. Nothing is scored as objectively correct because the page has no independent measure of your personality.
 
 The useful quantities are smaller and more honest:
 
@@ -162,7 +162,7 @@ Modern HCI research is a useful restraint against telling the neatest possible s
 
 Nor should this demonstration be converted into a cultural ranking. Cross-cultural work does not justify a table of national susceptibility, and this page never uses India, Kolkata, Bengali, age, or gender to select a personality clause. [Rogers and Soule reported mixed results that changed under adjustment](https://doi.org/10.1177/0022022109332843). The appropriate lesson is caution about universality, not a new stereotype.
 
-The lab's default setting is therefore visible stage dressing. “India”, “Kolkata”, and “Bengali + English” begin in the ledger as unconfirmed demo values. They may appear in a separate preparation label. Change all of them and the core statement IDs remain the same. The point is architectural as well as editorial: demographic answers never cross the allowlist into the semantic generator.
+The lab's default setting is therefore visible context, not personality evidence. “India”, “Kolkata”, and “Bengali + English” begin in the ledger as unconfirmed demo values. They may appear in a separate preparation label. Change all of them and the original seven readings remain in the same order. The point is architectural as well as editorial: demographic answers never cross the allowlist into the semantic generator.
 
 # A field guide for the next reading
 
@@ -193,7 +193,9 @@ If responses were ever stored, aggregated, profiled, or sent to another service,
 
 # Sources and implementation note
 
-The lab uses a bundled English corpus of original, reviewed fragments and constrained sentence frames. A versioned deterministic generator seals the generic deck on Begin. Country, city, language, age, gender, device, reading-time, and decoy fields are excluded from its semantic input type. Selections and ratings remain only in the mounted component's memory; Reset discards the current state, and a normal reload starts another session. The lab makes no API call, creates no account, writes no cookie or browser storage, and places no answer in a URL. Ordinary site analytics may still record the page visit.
+The lab uses a bundled English bank of original, reviewed, complete sentences: 720 generic reading lines, 342 feedback lines, and 29 direct echoes. Surface readings, direct echoes, feedback-shaped readings, interface copy, and audit explanations are different data types; an audit explanation cannot enter the unrevealed reading compiler. A versioned deterministic sampler seals the generic deck on Begin. Country, city, language, age, gender, device, reading-time, and decoy fields are excluded from its personality input type. Selections and ratings remain only in the mounted component's memory; Reset discards the current state, and a normal reload starts another session. The lab makes no API call, creates no account, writes no cookie or browser storage, and places no answer in a URL. Ordinary site analytics may still record the page visit.
+
+The short, active surface style is an accessibility and ecological-plausibility choice, not a claim that word count causes the Barnum effect. The [CDC Clear Communication Index recommends active voice because it is common in conversation](https://www.cdc.gov/ccindex/tool/page-6.html), while the [UK Home Office's limited-English guidance recommends clear language, active voice, and sentences averaging about 15 words](https://design.homeoffice.gov.uk/design-and-content/content/designing-for-limited-english). Those guidelines help a visitor understand a line after hearing it once; the Barnum literature instead points to generality, favourability, relevance, source, and context.
 
 The compact source registry below says what each reference supports. Every entry and link was checked on 17 August 2026.
 
@@ -212,6 +214,8 @@ The compact source registry below says what each reference supports. Every entry
 - Pang Suwanaposee and colleagues, “‘Specially For You’: The Barnum Effect in Personalized Recommendation” (CHI 2023). [DOI record](https://doi.org/10.1145/3544548.3580656). **Supports:** contemporary HCI evidence about personalization framing, including reported limits and null results.
 - Corentin Gonthier and Noémylle Thomassin, experiential Barnum teaching study (online 2024; issue 2025). [DOI record](https://doi.org/10.1177/00986283241240454). **Supports:** feasibility and engagement evidence from five undergraduate cohorts, not causal proof that deception improves learning or generalization to public visitors.
 - Paul Rogers and Janice Soule, cross-cultural Barnum-effect study (2009). [DOI record](https://doi.org/10.1177/0022022109332843). **Supports:** mixed and adjusted cross-cultural results used only to limit universal claims, never to rank groups.
+- Centers for Disease Control and Prevention, _Clear Communication Index_, active-voice criterion. [Official guidance](https://www.cdc.gov/ccindex/tool/page-6.html). **Supports:** active, conversational phrasing as a clarity choice, not a Barnum-effect mechanism.
+- UK Home Office, _Designing for people with limited English_. [Official design guidance](https://design.homeoffice.gov.uk/design-and-content/content/designing-for-limited-english). **Supports:** clear language, active voice, short sentences, and user testing as accessibility practices.
 - American Psychological Association, _Ethical Principles of Psychologists and Code of Conduct_, section 8 where relevant. [Authoritative code](https://www.apa.org/ethics/code). **Supports:** disclosure and debriefing as useful ethical reference points; this blog is not represented as APA-governed research.
 
 Historical sources explain mechanisms and evidence; none of their personality sketches was used as corpus material.

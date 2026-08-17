@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T13:29:56.537788+00:00",
+  "generatedAt": "2026-08-17T17:59:02.159981+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11272,25 +11272,25 @@
       "wordCount": 130
     },
     "the-profile-that-knows-almost-nothing-about-you": {
-      "generatedAt": "2026-08-17T08:53:48.589098+00:00",
+      "generatedAt": "2026-08-17T17:59:02.066031+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-profile-that-knows-almost-nothing-about-you.svg",
       "source": "src/lib/posts/the-profile-that-knows-almost-nothing-about-you.md",
-      "sourceHash": "5ba5f065fc6282efa79a9dce4dadc65532c393a456ba8f7c7678fbea22e55374",
-      "sourceModified": "2026-08-17T08:52:22.287864+00:00",
+      "sourceHash": "944ef6f4c32f44c461ae4fb31a6615a2cd67bba5da6f4b653d5b7018b7b894ac",
+      "sourceModified": "2026-08-17T17:50:06.702707+00:00",
       "topWords": [
-        "Record",
         "Supports",
+        "Record",
         "Reading",
-        "Fit",
-        "DOI",
         "Personality",
+        "Fit",
         "Feedback",
-        "Claims",
+        "DOI",
         "Source",
-        "Sentence",
+        "Barnum",
         "Page",
-        "Barnum"
+        "Language",
+        "Claims"
       ],
       "wordCount": 130
     },

@@ -1,134 +1,134 @@
 <svg role="img" aria-label="The Profile That Knows Almost Nothing About You" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Profile That Knows Almost Nothing About You</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
 <style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
 <rect width="100%" height="100%" style="fill:#101114"></rect>
-<text transform="translate(259,199)" font-size="118" style="fill:#c7d7b5">Record</text>
-<text transform="translate(27,457)" font-size="118" style="fill:#d5d2c2">Supports</text>
-<text transform="translate(680,324)" font-size="103" style="fill:#d6a79f">Reading</text>
-<text transform="translate(860,231)" font-size="103" style="fill:#d9c89e">Fit</text>
-<text transform="translate(449,626)" font-size="103" style="fill:#c49a6c">DOI</text>
-<text transform="translate(592,463)" font-size="99" style="fill:#8fb7d0">Personality</text>
-<text transform="translate(120,289)" font-size="99" style="fill:#9fc9c5">Feedback</text>
-<text transform="translate(871,578)" font-size="90" style="fill:#c49a6c">Claims</text>
-<text transform="translate(1207,351) rotate(-90)" font-size="90" style="fill:#d5d2c2">Source</text>
-<text transform="translate(116,702)" font-size="85" style="fill:#e0b879">Sentence</text>
-<text transform="translate(35,575)" font-size="85" style="fill:#d88988">Page</text>
-<text transform="translate(849,665)" font-size="85" style="fill:#9fc9c5">Barnum</text>
-<text transform="translate(161,108)" font-size="85" style="fill:#d5d2c2">Research</text>
-<text transform="translate(622,77)" font-size="80" style="fill:#d5d2c2">Probability</text>
-<text transform="translate(23,357)" font-size="80" style="fill:#c7d7b5">Broad</text>
-<text transform="translate(427,526)" font-size="80" style="fill:#d5d2c2">Language</text>
-<text transform="translate(553,691)" font-size="74" style="fill:#c49a6c">Claim</text>
-<text transform="translate(521,382)" font-size="74" style="fill:#9fc9c5">Assessment</text>
-<text transform="translate(290,356)" font-size="74" style="fill:#d5d2c2">Model</text>
-<text transform="translate(682,133)" font-size="64" style="fill:#9fc9c5">Independent</text>
-<text transform="translate(215,55)" font-size="64" style="fill:#c7d7b5">Evidence</text>
-<text transform="translate(22,205)" font-size="64" style="fill:#d5d2c2">Effect</text>
-<text transform="translate(1260,365) rotate(-90)" font-size="64" style="fill:#d5d2c2">Relevance</text>
-<text transform="translate(1033,713)" font-size="59" style="fill:#d5d2c2">Person</text>
-<text transform="translate(221,628)" font-size="59" style="fill:#d9c89e">Common</text>
-<text transform="translate(636,626)" font-size="59" style="fill:#d9c89e">Answer</text>
-<text transform="translate(7,270)" font-size="59" style="fill:#c7d7b5">Lab</text>
-<text transform="translate(781,704)" font-size="46" style="fill:#d88988">Accepted</text>
-<text transform="translate(692,226)" font-size="46" style="fill:#c7d7b5">True</text>
-<text transform="translate(129,523)" font-size="46" style="fill:#c49a6c">Different</text>
-<text transform="translate(821,496)" font-size="38" style="fill:#9fc9c5">Favourability</text>
-<text transform="translate(662,576)" font-size="38" style="fill:#d88988">Base</text>
-<text transform="translate(285,585)" font-size="38" style="fill:#9fc9c5">Results</text>
-<text transform="translate(10,34)" font-size="35" style="fill:#d6a79f">Ordinary</text>
-<text transform="translate(55,143)" font-size="35" style="fill:#e0b879">Supplied</text>
-<text transform="translate(599,237)" font-size="35" style="fill:#e0b879">Many</text>
-<text transform="translate(1261,595) rotate(-90)" font-size="35" style="fill:#8fb7d0">Uses</text>
-<text transform="translate(1031,383)" font-size="35" style="fill:#a9b7a3">Profile</text>
-<text transform="translate(34,693) rotate(-90)" font-size="35" style="fill:#8fb7d0">Prediction</text>
-<text transform="translate(696,167)" font-size="35" style="fill:#c49a6c">Direct</text>
-<text transform="translate(67,626)" font-size="35" style="fill:#d6a79f">Useful</text>
-<text transform="translate(7,78)" font-size="35" style="fill:#d6a79f">Rating</text>
-<text transform="translate(961,613)" font-size="35" style="fill:#d5d2c2">Classroom</text>
-<text transform="translate(99,388)" font-size="35" style="fill:#c7d7b5">Demonstration</text>
-<text transform="translate(506,322)" font-size="35" style="fill:#9fc9c5">Personal</text>
-<text transform="translate(1141,246) rotate(-90)" font-size="35" style="fill:#c49a6c">Setting</text>
-<text transform="translate(758,263)" font-size="35" style="fill:#c7d7b5">Account</text>
-<text transform="translate(238,551)" font-size="33" style="fill:#a9b7a3">Sometimes</text>
-<text transform="translate(1155,640)" font-size="33" style="fill:#d9c89e">Change</text>
-<text transform="translate(593,112) rotate(-90)" font-size="33" style="fill:#c49a6c">Work</text>
-<text transform="translate(769,560)" font-size="33" style="fill:#d5d2c2">Every</text>
-<text transform="translate(1267,505) rotate(-90)" font-size="33" style="fill:#d5d2c2">English</text>
-<text transform="translate(1215,599) rotate(-90)" font-size="33" style="fill:#c49a6c">Study</text>
-<text transform="translate(973,256)" font-size="28" style="fill:#c49a6c">Original</text>
-<text transform="translate(394,230)" font-size="28" style="fill:#a9b7a3">Answers</text>
-<text transform="translate(8,104)" font-size="28" style="fill:#8fb7d0">Least</text>
-<text transform="translate(324,482)" font-size="28" style="fill:#8fb7d0">Rates</text>
-<text transform="translate(735,193)" font-size="28" style="fill:#d5d2c2">Earlier</text>
-<text transform="translate(37,485)" font-size="28" style="fill:#c49a6c">Match</text>
-<text transform="translate(588,277)" font-size="28" style="fill:#d9c89e">Truth</text>
-<text transform="translate(375,381)" font-size="27" style="fill:#d88988">Merely</text>
-<text transform="translate(183,230)" font-size="27" style="fill:#a9b7a3">Interface</text>
-<text transform="translate(1126,27)" font-size="27" style="fill:#b6c3dd">Little</text>
-<text transform="translate(590,715)" font-size="27" style="fill:#9fc9c5">Statements</text>
-<text transform="translate(26,475) rotate(-90)" font-size="27" style="fill:#d6a79f">Whether</text>
-<text transform="translate(1021,164)" font-size="27" style="fill:#d5d2c2">Reuse</text>
-<text transform="translate(525,27)" font-size="27" style="fill:#8fb7d0">First</text>
-<text transform="translate(1155,673)" font-size="27" style="fill:#d5d2c2">Forer</text>
-<text transform="translate(387,650)" font-size="25" style="fill:#8fb7d0">Universal</text>
-<text transform="translate(39,684)" font-size="25" style="fill:#c49a6c">Used</text>
-<text transform="translate(668,22)" font-size="24" style="fill:#d9c89e">Framing</text>
-<text transform="translate(958,381)" font-size="24" style="fill:#d5d2c2">Label</text>
-<text transform="translate(724,404)" font-size="23" style="fill:#d5d2c2">Literature</text>
-<text transform="translate(4,288)" font-size="20" style="fill:#b6c3dd">Acceptance</text>
-<text transform="translate(484,545)" font-size="20" style="fill:#d5d2c2">Review</text>
-<text transform="translate(623,126) rotate(-90)" font-size="20" style="fill:#c7d7b5">Mechanisms</text>
-<text transform="translate(6,708)" font-size="20" style="fill:#a9b7a3">Technique</text>
-<text transform="translate(116,308)" font-size="20" style="fill:#c7d7b5">Natural</text>
-<text transform="translate(436,126)" font-size="18" style="fill:#c7d7b5">Frequencies</text>
-<text transform="translate(1090,524)" font-size="18" style="fill:#d5d2c2">General</text>
-<text transform="translate(50,650)" font-size="18" style="fill:#d6a79f">Snyder</text>
-<text transform="translate(872,400)" font-size="18" style="fill:#c7d7b5">Comparison</text>
-<text transform="translate(1020,209)" font-size="18" style="fill:#d88988">Reported</text>
-<text transform="translate(324,648)" font-size="18" style="fill:#e0b879">Never</text>
-<text transform="translate(968,519)" font-size="18" style="fill:#9fc9c5">Bengali</text>
-<text transform="translate(488,477)" font-size="18" style="fill:#c49a6c">Baserate</text>
-<text transform="translate(847,598)" font-size="16" style="fill:#9fc9c5">Information</text>
-<text transform="translate(1183,386)" font-size="16" style="fill:#e0b879">Feel</text>
-<text transform="translate(54,508)" font-size="16" style="fill:#d5d2c2">Guesses</text>
-<text transform="translate(175,645)" font-size="16" style="fill:#e0b879">Enough</text>
-<text transform="translate(344,124)" font-size="16" style="fill:#d5d2c2">Room</text>
-<text transform="translate(804,93)" font-size="15" style="fill:#8fb7d0">Distinctiveness</text>
-<text transform="translate(139,159)" font-size="15" style="fill:#d6a79f">Ratings</text>
-<text transform="translate(1137,501)" font-size="15" style="fill:#9fc9c5">Starts</text>
-<text transform="translate(1189,613)" font-size="15" style="fill:#d6a79f">Analytics</text>
-<text transform="translate(723,643)" font-size="15" style="fill:#d6a79f">Barnumeffect</text>
-<text transform="translate(1070,16)" font-size="15" style="fill:#d88988">Real</text>
-<text transform="translate(760,581)" font-size="15" style="fill:#c7d7b5">Count</text>
-<text transform="translate(441,15)" font-size="15" style="fill:#b6c3dd">Statement</text>
-<text transform="translate(774,660)" font-size="15" style="fill:#d5d2c2">Describe</text>
-<text transform="translate(961,356)" font-size="15" style="fill:#d6a79f">Misses</text>
-<text transform="translate(843,511)" font-size="15" style="fill:#c7d7b5">Hits</text>
-<text transform="translate(431,306)" font-size="15" style="fill:#d6a79f">Quiz</text>
-<text transform="translate(1113,296)" font-size="15" style="fill:#c49a6c">Last</text>
-<text transform="translate(263,490)" font-size="15" style="fill:#9fc9c5">Three</text>
-<text transform="translate(633,542)" font-size="15" style="fill:#c49a6c">Private</text>
-<text transform="translate(38,592)" font-size="15" style="fill:#d6a79f">Laboratory</text>
-<text transform="translate(98,107)" font-size="15" style="fill:#c49a6c">Context</text>
-<text transform="translate(989,92)" font-size="15" style="fill:#d6a79f">Reactions</text>
-<text transform="translate(1059,447) rotate(-90)" font-size="15" style="fill:#9fc9c5">Ledger</text>
-<text transform="translate(791,21)" font-size="15" style="fill:#b6c3dd">Nothing</text>
-<text transform="translate(855,148)" font-size="15" style="fill:#e0b879">Separate</text>
-<text transform="translate(350,310)" font-size="15" style="fill:#c7d7b5">Choose</text>
-<text transform="translate(467,481) rotate(-90)" font-size="15" style="fill:#b6c3dd">Later</text>
-<text transform="translate(1122,483)" font-size="15" style="fill:#d6a79f">Reveal</text>
-<text transform="translate(813,527)" font-size="15" style="fill:#d88988">Five</text>
-<text transform="translate(22,220)" font-size="15" style="fill:#d6a79f">Historical</text>
-<text transform="translate(813,232)" font-size="15" style="fill:#a9b7a3">Memory</text>
-<text transform="translate(630,93)" font-size="15" style="fill:#a9b7a3">Paul</text>
-<text transform="translate(608,198) rotate(-90)" font-size="15" style="fill:#c7d7b5">Meehl</text>
-<text transform="translate(1169,403)" font-size="15" style="fill:#c49a6c">Reviewed</text>
-<text transform="translate(804,213)" font-size="15" style="fill:#c7d7b5">Version</text>
-<text transform="translate(689,183)" font-size="15" style="fill:#d88988">Echo</text>
-<text transform="translate(425,525) rotate(-90)" font-size="15" style="fill:#8fb7d0">Multiplicity</text>
-<text transform="translate(260,208) rotate(-90)" font-size="15" style="fill:#d88988">Adaptation</text>
-<text transform="translate(626,643)" font-size="15" style="fill:#c49a6c">Estimate</text>
-<text transform="translate(983,340)" font-size="15" style="fill:#c7d7b5">Generic</text>
-<text transform="translate(1040,230)" font-size="15" style="fill:#8fb7d0">Visitor</text>
-<text transform="translate(623,478)" font-size="15" style="fill:#8fb7d0">India</text>
-<text transform="translate(1050,185)" font-size="15" style="fill:#c7d7b5">Group</text>
+<text transform="translate(194,152)" font-size="118" style="fill:#c7d7b5">Supports</text>
+<text transform="translate(484,375)" font-size="111" style="fill:#d5d2c2">Record</text>
+<text transform="translate(636,497)" font-size="104" style="fill:#d6a79f">Reading</text>
+<text transform="translate(491,610)" font-size="100" style="fill:#d9c89e">Personality</text>
+<text transform="translate(106,628)" font-size="96" style="fill:#c49a6c">Fit</text>
+<text transform="translate(601,714)" font-size="96" style="fill:#8fb7d0">Feedback</text>
+<text transform="translate(611,284)" font-size="96" style="fill:#9fc9c5">DOI</text>
+<text transform="translate(128,330)" font-size="88" style="fill:#c49a6c">Source</text>
+<text transform="translate(456,697) rotate(-90)" font-size="88" style="fill:#d6a79f">Barnum</text>
+<text transform="translate(814,254)" font-size="84" style="fill:#c49a6c">Page</text>
+<text transform="translate(862,118)" font-size="84" style="fill:#d88988">Language</text>
+<text transform="translate(60,468)" font-size="79" style="fill:#9fc9c5">Claims</text>
+<text transform="translate(894,375)" font-size="79" style="fill:#d5d2c2">Research</text>
+<text transform="translate(41,547)" font-size="74" style="fill:#a9b7a3">Sentence</text>
+<text transform="translate(171,397)" font-size="74" style="fill:#c7d7b5">Claim</text>
+<text transform="translate(117,239)" font-size="74" style="fill:#8fb7d0">Probability</text>
+<text transform="translate(86,387) rotate(-90)" font-size="74" style="fill:#c7d7b5">Evidence</text>
+<text transform="translate(76,712)" font-size="74" style="fill:#9fc9c5">Effect</text>
+<text transform="translate(274,63)" font-size="74" style="fill:#c49a6c">Relevance</text>
+<text transform="translate(965,430)" font-size="69" style="fill:#c49a6c">Common</text>
+<text transform="translate(864,199)" font-size="69" style="fill:#e0b879">Assessment</text>
+<text transform="translate(1250,641) rotate(-90)" font-size="69" style="fill:#a9b7a3">Model</text>
+<text transform="translate(1063,285)" font-size="69" style="fill:#d9c89e">Broad</text>
+<text transform="translate(894,66)" font-size="69" style="fill:#b6c3dd">Different</text>
+<text transform="translate(552,538)" font-size="47" style="fill:#d6a79f">Favourability</text>
+<text transform="translate(196,162) rotate(-90)" font-size="43" style="fill:#b6c3dd">Person</text>
+<text transform="translate(1183,694) rotate(-90)" font-size="43" style="fill:#d9c89e">Ordinary</text>
+<text transform="translate(677,42)" font-size="43" style="fill:#c7d7b5">Supplied</text>
+<text transform="translate(462,286)" font-size="43" style="fill:#d88988">Lab</text>
+<text transform="translate(542,409)" font-size="39" style="fill:#c7d7b5">Independent</text>
+<text transform="translate(609,195)" font-size="39" style="fill:#c49a6c">Accepted</text>
+<text transform="translate(310,272)" font-size="39" style="fill:#9fc9c5">True</text>
+<text transform="translate(501,465)" font-size="39" style="fill:#d88988">Direct</text>
+<text transform="translate(469,652)" font-size="39" style="fill:#9fc9c5">Base</text>
+<text transform="translate(984,319)" font-size="39" style="fill:#d6a79f">Results</text>
+<text transform="translate(151,179) rotate(-90)" font-size="39" style="fill:#e0b879">English</text>
+<text transform="translate(246,498)" font-size="35" style="fill:#e0b879">Answer</text>
+<text transform="translate(67,695) rotate(-90)" font-size="35" style="fill:#8fb7d0">Many</text>
+<text transform="translate(32,607) rotate(-90)" font-size="35" style="fill:#a9b7a3">Original</text>
+<text transform="translate(1121,534) rotate(-90)" font-size="35" style="fill:#8fb7d0">Uses</text>
+<text transform="translate(813,409)" font-size="35" style="fill:#c49a6c">Profile</text>
+<text transform="translate(1012,231)" font-size="35" style="fill:#d6a79f">Prediction</text>
+<text transform="translate(672,82)" font-size="35" style="fill:#d6a79f">Interface</text>
+<text transform="translate(907,647)" font-size="35" style="fill:#e0b879">First</text>
+<text transform="translate(40,163) rotate(-90)" font-size="35" style="fill:#c49a6c">Useful</text>
+<text transform="translate(368,701) rotate(-90)" font-size="35" style="fill:#9fc9c5">Rating</text>
+<text transform="translate(117,305) rotate(-90)" font-size="35" style="fill:#c49a6c">Classroom</text>
+<text transform="translate(487,615) rotate(-90)" font-size="35" style="fill:#c7d7b5">Demonstration</text>
+<text transform="translate(570,640)" font-size="34" style="fill:#a9b7a3">Personal</text>
+<text transform="translate(467,690)" font-size="34" style="fill:#d9c89e">Setting</text>
+<text transform="translate(767,145)" font-size="30" style="fill:#c49a6c">Literature</text>
+<text transform="translate(719,309)" font-size="30" style="fill:#d5d2c2">Account</text>
+<text transform="translate(698,435)" font-size="30" style="fill:#d5d2c2">Sometimes</text>
+<text transform="translate(297,666) rotate(-90)" font-size="30" style="fill:#c49a6c">Change</text>
+<text transform="translate(1075,713)" font-size="30" style="fill:#c49a6c">Work</text>
+<text transform="translate(206,265)" font-size="30" style="fill:#c49a6c">Every</text>
+<text transform="translate(884,305)" font-size="30" style="fill:#a9b7a3">Study</text>
+<text transform="translate(498,179)" font-size="30" style="fill:#8fb7d0">Active</text>
+<text transform="translate(734,642)" font-size="27" style="fill:#8fb7d0">Feel</text>
+<text transform="translate(1036,656)" font-size="27" style="fill:#b6c3dd">Answers</text>
+<text transform="translate(507,492)" font-size="27" style="fill:#d88988">Ratings</text>
+<text transform="translate(1186,683)" font-size="27" style="fill:#a9b7a3">Least</text>
+<text transform="translate(1275,601) rotate(-90)" font-size="27" style="fill:#d5d2c2">Barnumeffect</text>
+<text transform="translate(803,277)" font-size="27" style="fill:#8fb7d0">Rates</text>
+<text transform="translate(97,491)" font-size="27" style="fill:#b6c3dd">Count</text>
+<text transform="translate(577,309)" font-size="27" style="fill:#9fc9c5">Misses</text>
+<text transform="translate(32,25)" font-size="27" style="fill:#d6a79f">Match</text>
+<text transform="translate(501,715)" font-size="27" style="fill:#b6c3dd">Truth</text>
+<text transform="translate(1065,143)" font-size="27" style="fill:#c7d7b5">Merely</text>
+<text transform="translate(810,636)" font-size="27" style="fill:#8fb7d0">Little</text>
+<text transform="translate(90,392)" font-size="27" style="fill:#d9c89e">Later</text>
+<text transform="translate(226,177)" font-size="27" style="fill:#8fb7d0">Whether</text>
+<text transform="translate(773,108)" font-size="27" style="fill:#8fb7d0">Reuse</text>
+<text transform="translate(239,420)" font-size="27" style="fill:#d6a79f">Forer</text>
+<text transform="translate(25,334) rotate(-90)" font-size="27" style="fill:#e0b879">Universal</text>
+<text transform="translate(1064,681)" font-size="27" style="fill:#c7d7b5">Used</text>
+<text transform="translate(1148,547) rotate(-90)" font-size="27" style="fill:#a9b7a3">Framing</text>
+<text transform="translate(90,367)" font-size="27" style="fill:#9fc9c5">Label</text>
+<text transform="translate(1145,304)" font-size="21" style="fill:#9fc9c5">Acceptance</text>
+<text transform="translate(263,84)" font-size="21" style="fill:#c7d7b5">Context</text>
+<text transform="translate(185,648)" font-size="21" style="fill:#c7d7b5">Review</text>
+<text transform="translate(423,83)" font-size="21" style="fill:#d5d2c2">Mechanisms</text>
+<text transform="translate(1086,551) rotate(-90)" font-size="21" style="fill:#d6a79f">Technique</text>
+<text transform="translate(1080,23)" font-size="21" style="fill:#c7d7b5">Generic</text>
+<text transform="translate(490,428)" font-size="21" style="fill:#d88988">Natural</text>
+<text transform="translate(373,710)" font-size="19" style="fill:#e0b879">Frequencies</text>
+<text transform="translate(1191,707)" font-size="19" style="fill:#a9b7a3">Visitor</text>
+<text transform="translate(1194,656)" font-size="19" style="fill:#d6a79f">General</text>
+<text transform="translate(799,174)" font-size="19" style="fill:#a9b7a3">Snyder</text>
+<text transform="translate(358,347)" font-size="17" style="fill:#a9b7a3">Comparison</text>
+<text transform="translate(85,645)" font-size="17" style="fill:#a9b7a3">Reported</text>
+<text transform="translate(338,432)" font-size="17" style="fill:#d88988">Never</text>
+<text transform="translate(392,372)" font-size="17" style="fill:#9fc9c5">Bengali</text>
+<text transform="translate(581,127)" font-size="17" style="fill:#c7d7b5">Audit</text>
+<text transform="translate(544,276)" font-size="17" style="fill:#c49a6c">Clear</text>
+<text transform="translate(527,16)" font-size="17" style="fill:#d88988">Baserate</text>
+<text transform="translate(34,713) rotate(-90)" font-size="15" style="fill:#9fc9c5">Information</text>
+<text transform="translate(310,564)" font-size="15" style="fill:#d6a79f">Experience</text>
+<text transform="translate(5,429)" font-size="15" style="fill:#d6a79f">Enough</text>
+<text transform="translate(419,15)" font-size="15" style="fill:#d88988">Room</text>
+<text transform="translate(672,657)" font-size="15" style="fill:#c7d7b5">Distinctiveness</text>
+<text transform="translate(980,270)" font-size="15" style="fill:#b6c3dd">Analytics</text>
+<text transform="translate(950,578)" font-size="15" style="fill:#d5d2c2">Real</text>
+<text transform="translate(920,527)" font-size="15" style="fill:#e0b879">Describe</text>
+<text transform="translate(371,465)" font-size="15" style="fill:#c7d7b5">Earlier</text>
+<text transform="translate(16,405)" font-size="15" style="fill:#d6a79f">Hits</text>
+<text transform="translate(182,180)" font-size="15" style="fill:#c49a6c">Quiz</text>
+<text transform="translate(681,168)" font-size="15" style="fill:#c7d7b5">Last</text>
+<text transform="translate(40,602)" font-size="15" style="fill:#a9b7a3">Three</text>
+<text transform="translate(504,626)" font-size="15" style="fill:#c7d7b5">Private</text>
+<text transform="translate(791,288) rotate(-90)" font-size="15" style="fill:#d88988">Laboratory</text>
+<text transform="translate(327,412)" font-size="15" style="fill:#9fc9c5">Short</text>
+<text transform="translate(1007,154)" font-size="15" style="fill:#b6c3dd">Lines</text>
+<text transform="translate(205,25)" font-size="15" style="fill:#e0b879">Wording</text>
+<text transform="translate(178,485)" font-size="15" style="fill:#c7d7b5">Ledger</text>
+<text transform="translate(323,635) rotate(-90)" font-size="15" style="fill:#b6c3dd">Nothing</text>
+<text transform="translate(1014,628)" font-size="15" style="fill:#a9b7a3">Separate</text>
+<text transform="translate(1163,327)" font-size="15" style="fill:#c49a6c">Choose</text>
+<text transform="translate(490,529)" font-size="15" style="fill:#b6c3dd">Reveal</text>
+<text transform="translate(450,175)" font-size="15" style="fill:#e0b879">Five</text>
+<text transform="translate(1274,121) rotate(-90)" font-size="15" style="fill:#a9b7a3">Historical</text>
+<text transform="translate(204,44)" font-size="15" style="fill:#a9b7a3">Memory</text>
+<text transform="translate(460,323) rotate(-90)" font-size="15" style="fill:#c7d7b5">Paul</text>
+<text transform="translate(636,594)" font-size="15" style="fill:#c49a6c">Meehl</text>
+<text transform="translate(143,419)" font-size="15" style="fill:#9fc9c5">Reviewed</text>
+<text transform="translate(355,78)" font-size="15" style="fill:#9fc9c5">Version</text>
+<text transform="translate(598,433)" font-size="15" style="fill:#a9b7a3">Echo</text>
+<text transform="translate(120,257)" font-size="11" style="fill:#c7d7b5">Multiplicity</text>
+<text transform="translate(558,77)" font-size="11" style="fill:#9fc9c5">Adaptation</text>
+<text transform="translate(100,611) rotate(-90)" font-size="11" style="fill:#e0b879">Estimate</text>
 </svg>
