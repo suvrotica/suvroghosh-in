@@ -38,6 +38,8 @@ The age of artificial intelligence has arrived, and it has arrived with all the 
 
 In healthcare, you cannot afford this. You cannot afford the garnish. You cannot afford the conceit. Because at the end of every healthcare IT system—at the end of every algorithm, every dashboard, every predictive model—there are lives. There are bodies. There are people who will live or die, thrive or suffer, based on whether the technology actually works, whether it was built with care, whether it was deployed with skepticism, and whether it is being maintained by people who understand that "artificial intelligence" is not a synonym for "artificial wisdom."
 
+<ThoughtArt id="uncomfortable-premise-handoff" />
+
 This blog exists in that gap. The gap between what is promised and what is delivered. The gap between what is marketed and what is true. The gap between the utopian visions of AI-driven healthcare and the dystopian realities that emerge when the steering is wrong, when the people chosen to ask the questions are the wrong people, when subservience is valued over critical thinking and when the filters we use to vet expertise are designed for an industrial age that no longer exists.
 
 </ThoughtLeaf>
@@ -53,6 +55,8 @@ This blog exists in that gap. The gap between what is promised and what is deliv
 The cast of characters in this drama is larger and more varied than you might expect, and it extends far beyond the stereotypical image of the Silicon Valley engineer in a hoodie or the white-coated clinician peering at a tablet.
 
 There are, of course, the **healthcare IT specialists**—the people who actually build, maintain, and troubleshoot the systems that keep modern medicine functioning. These are the database administrators who know where the patient records live, the network engineers who ensure that a rural clinic can securely transmit a CT scan to a specialist three hundred miles away, the interface engineers who spend their days trying to make one proprietary system talk to another proprietary system in a language that vaguely resembles human communication. They are the unsung infrastructure workers of modern medicine, and they are often the first to know when something is going wrong, even if they are rarely the first to be asked.
+
+<ThoughtArt id="stakeholders-layered" />
 
 </ThoughtLeaf>
 
@@ -80,8 +84,6 @@ There are the **patients**, of course—the ultimate stakeholders, the ones whos
 
 <ThoughtLeaf side="right" label="Position">
 
-<ThoughtArt id="stakeholders-layered" />
-
 And then there are the **bad actors**—the people who will corrupt datasets, launch adversarial attacks, exploit vulnerabilities in AI systems for profit or malice. Healthcare data is valuable. Healthcare systems are vulnerable. The intersection of AI and healthcare crime is not a future problem; it is an emerging present, and it requires people who are paying attention.
 
 This blog is written from within this ecosystem, I have worked on the FIND diabetes study at the University of Texas Health Science Center at San Antonio, and struggled with family data and genetic data, I have run companies and hired people, I have watched the back-office bodyshopping moat crumble and wondered what comes next. It is not written from a position of omniscience. It is written from a position of informed curiosity, of having spent enough time in the trenches to know that the map is not the territory, and that the territory is changing faster than anyone's map can keep up.
@@ -100,13 +102,13 @@ This is a blog about healthcare information technology in the age of artificial 
 
 More precisely, this is a blog about **the friction between promise and reality**. It is about what happens when technologies that sound miraculous in a TED Talk meet the messy, complicated, often irrational world of human bodies and human institutions. It is about the statistical concepts that underpin AI systems and the ways those concepts can be misunderstood, misapplied, or weaponized. It is about model drift—the phenomenon where an AI system, trained on data from one moment in time, gradually becomes less accurate as the world changes around it, like a map of a river that no longer follows the riverbed. It is about the dangers of applying a model trained on one population to a different population, a practice that is not merely statistically unsound but ethically hazardous, particularly in a country like India where the diversity of genetic, environmental, and socioeconomic factors makes such transplantations especially perilous.
 
-It is also a blog about **curiosity without borders**. I approach topics like an old Victorian polymath, refusing to limit myself to scheduled compartments, allowing my curiosity to spill into intersections. In a world where education—particularly in India—often trains students to study by syllabus and solve problems at the end of a chapter, this blog insists that real life does not come attached with chapters. Real problems do not announce which rules apply. They require investigation, wide-ranging curiosity, and the willingness to look foolish in pursuit of understanding.
-
 <ThoughtArt id="map-territory-drift" />
 
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Three concerns">
+
+It is also a blog about **curiosity without borders**. I approach topics like an old Victorian polymath, refusing to limit myself to scheduled compartments, allowing my curiosity to spill into intersections. In a world where education—particularly in India—often trains students to study by syllabus and solve problems at the end of a chapter, this blog insists that real life does not come attached with chapters. Real problems do not announce which rules apply. They require investigation, wide-ranging curiosity, and the willingness to look foolish in pursuit of understanding.
 
 It is a blog about **the corruption of language**. About how "AI" has become a term so diluted by marketing that it is often impossible to tell whether someone is talking about a genuine technological advance or a repackaged if-then statement. About how this linguistic corruption is not merely annoying but dangerous in healthcare, where the difference between actual intelligence and algorithmic pattern-matching can be the difference between a correct diagnosis and a fatal error.
 
@@ -162,8 +164,6 @@ This applies in **hospitals**, where AI systems are being deployed to predict se
 
 It applies in **public health**, where AI is being used to model disease spread, to optimize vaccine distribution, and to identify at-risk populations. It applies in **genetics**, where machine learning is being deployed to analyze family data, to identify disease-associated variants, and to personalize treatment recommendations based on genetic profiles. My work on the FIND diabetes study, struggling with family data and genetic data in an era before the current AI boom, provides a personal anchor for this interest—a sense of how much has changed and how much remains to be done.
 
-<ThoughtArt id="genetics-workbench" />
-
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Work / rules / edges">
@@ -171,6 +171,8 @@ It applies in **public health**, where AI is being used to model disease spread,
 It applies in **the back office**, where the bodyshopping moat—the practice of outsourcing routine IT work to low-cost labor markets—is crumbling under the weight of automation. India, in particular, faces a moment of reckoning. The old model of healthcare IT outsourcing, built on armies of workers performing repetitive tasks, is being disrupted by AI systems that can perform those tasks faster, cheaper, and often more accurately. The question is not whether this disruption will happen, but whether India will pivot toward genuine expertise and innovation or simply find new ways to lie shamelessly about capabilities and stay complacent.
 
 It applies in **the regulatory space**, where frameworks for AI in healthcare are being written in real-time, often by people who do not fully understand or care about the dangers inherent in the technology they are attempting to govern. It applies in **the security space**, where adversarial attacks on AI systems, corruption of datasets, and misuse of protected health information (PHI) represent emerging threats that require new forms of vigilance.
+
+<ThoughtArt id="genetics-workbench" />
 
 And it applies in **the space between disciplines**—the intersections that are so often neglected by specialists who stay within their lanes. The intersection of healthcare and linear algebra. Of clinical medicine and hiring practices. Of technology and Maslow's hierarchy of needs. Of genetics and ethics. Of engineering and philosophy. This blog insists that these intersections matter, that the siloed thinking that dominates so much of modern professional life is inadequate to the challenges we face.
 
@@ -190,13 +192,13 @@ It matters because the current trajectory of AI adoption in healthcare is driven
 
 <HumanMarginModule type="alignment" />
 
-<ThoughtArt id="corridor-network-cabinet" />
-
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Ignorance / hiring">
 
 It matters because **you don't know what you don't know**. The Dunning-Kruger effect—the cognitive bias whereby people with limited knowledge in a domain overestimate their competence—is not merely a psychological curiosity. It is an operational hazard in healthcare IT. A person who does not understand the statistical foundations of machine learning may confidently deploy a model that is subtly but dangerously wrong. A person who does not understand the concept of model drift may continue to trust a system long after it has become unreliable. A person who does not understand population-specific biases may apply a model across demographic boundaries with catastrophic results. This blog is one attempt to combat that ignorance, to provide the kind of foundational knowledge that enables better questions and better decisions.
+
+<ThoughtArt id="corridor-network-cabinet" />
 
 It matters because the **hiring practices** that shape who gets to build and deploy these systems are broken. The tech industry, including healthcare IT, has developed a grammar of hiring—a set of practices, filters, and questionnaires—that may be a hand-me-down from an industrial age that doesn't fit Industry 4.0. Shallow, high-input examinations are used to vet learning and application, when in reality anything that can be learned or memorized in a stressed, short duration can also be amenable to picking up on the job. What matters is not whether someone can solve a leetcode problem under time pressure, but whether they possess the curiosity, the ethical grounding, and the Maslow's hierarchy fit with a position that will allow them to grow into someone who can ask the hard questions. I write, as someone who has run companies and hired people, from direct experience of this complacency and its costs.
 
@@ -272,11 +274,11 @@ The blog exists at the intersection of multiple technological and intellectual l
 
 **Genomics and Bioinformatics:** My particular area of ancillary interest, stemming from work on the FIND diabetes study. The blog explores how AI is being applied to genetic data, to family history analysis, to the identification of disease-associated variants, and to the personalization of treatment. It examines the statistical challenges of working with genetic data—population stratification, linkage disequilibrium, the multiple testing problem—and the ways that AI can help or hinder these analyses.
 
+**Natural Language Processing (NLP):** The technology that allows computers to extract meaning from unstructured clinical text—doctor's notes, discharge summaries, radiology reports. The blog examines how NLP is being used to automate coding, to identify patients for clinical trials, to flag potential adverse events, and to create conversational interfaces for patients and clinicians.
+
 </ThoughtLeaf>
 
 <ThoughtLeaf side="right" label="Stack / II">
-
-**Natural Language Processing (NLP):** The technology that allows computers to extract meaning from unstructured clinical text—doctor's notes, discharge summaries, radiology reports. The blog examines how NLP is being used to automate coding, to identify patients for clinical trials, to flag potential adverse events, and to create conversational interfaces for patients and clinicians.
 
 **Computer Vision and Medical Imaging:** The domain where AI has perhaps achieved its most impressive results to date. The blog explores how deep learning systems are being trained to detect diabetic retinopathy, to classify skin lesions, to identify fractures, and to assist in surgical planning—while also examining the dangers of over-reliance, the problem of dataset bias, and the challenge of integrating these tools into clinical workflows.
 
@@ -299,8 +301,6 @@ The blog exists at the intersection of multiple technological and intellectual l
 We are not there yet. This is the refrain that echoes through every honest discussion of AI in healthcare, and it is worth repeating until it becomes impossible to ignore. We are not there yet when it comes to safe AI adoption in healthcare. We are not there yet when it comes to understanding the long-term effects of algorithmic decision-making on clinical practice. We are not there yet when it comes to building regulatory frameworks that can keep pace with technological change. We are not there yet when it comes to addressing the societal questions that must be answered before robot butlers become commonplace—questions about work, about equity, about what it means to be cared for by a machine.
 
 The progress is always on a continuum. There is no arrival point, no moment when we can declare that the work is done and the problems are solved. Each solution generates new problems. Each advance reveals new gaps in our understanding. Each tool that we build changes the world in ways that we cannot fully predict, and those changes in turn require new tools, new questions, new forms of vigilance.
-
-<ThoughtArt id="not-there-yet" />
 
 </ThoughtLeaf>
 
@@ -338,6 +338,8 @@ P.S. If you have real, authentic questions raised by a post, or if you notice an
 
 * Bader, D. (2017). *Python Tricks: The Book*. Dan Bader.
 * Various ongoing posts on healthcare IT, AI, genetics, linear algebra in healthcare, and related topics. See blog archives for specific citations and further reading lists.
+
+<ThoughtArt id="not-there-yet" />
 
 </ThoughtLeaf>
 

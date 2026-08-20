@@ -151,6 +151,16 @@
 			"position": "58% center",
 			"caption": "One cable, one hand, and the infrastructure behind every abstraction."
 		},
+		"uncomfortable-premise-handoff": {
+			"src": "/images/thought-folios/healthcare-human-margin/uncomfortable-premise-handoff.jpg",
+			"alt": "A practitioner pauses beside a dark clinical workstation and an open technical cabinet in a quiet hospital corridor.",
+			"width": 1536,
+			"height": 1024,
+			"ratio": "landscape",
+			"fit": "cover",
+			"position": "center",
+			"caption": "The promise reaches the ward through people, wiring, and systems that can still fail."
+		},
 		"stakeholders-layered": {
 			"src": "/images/thought-folios/healthcare-human-margin/stakeholders-layered.jpg",
 			"alt": "A nurse, a systems technician, and a patient occupy connected layers of a clinical workflow.",

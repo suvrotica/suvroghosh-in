@@ -1,0 +1,1748 @@
+@font-face {
+	font-family: 'Human Margin Source Serif 4 Variable';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 200 900;
+	src: url('@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2')
+		format('woff2-variations');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Human Margin Source Serif 4 Variable';
+	font-style: italic;
+	font-display: swap;
+	font-weight: 200 900;
+	src: url('@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-italic.woff2')
+		format('woff2-variations');
+	unicode-range:
+		U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+		U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.hm-folio {
+	--hm-paper: #f3efe5;
+	--hm-paper-deep: #e5dfd2;
+	--hm-paper-warm: #ece5d8;
+	--hm-ink: #242522;
+	--hm-muted: #5b5b56;
+	--hm-coal: #151714;
+	--hm-coal-copy: #e4e0d7;
+	--hm-teal: #315f5b;
+	--hm-teal-deep: #173f3c;
+	--hm-warning: #ad3d28;
+	--hm-rule: rgb(36 37 34 / 25%);
+	--hm-rule-soft: rgb(36 37 34 / 14%);
+	--hm-serif: 'Human Margin Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
+	--hm-ui: 'Roboto Variable', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	position: relative;
+	width: 100%;
+	min-width: 0;
+	background: var(--hm-paper-deep);
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: 17.5px;
+	font-optical-sizing: auto;
+	font-kerning: normal;
+	font-synthesis: none;
+	line-height: 1.6;
+	overflow-wrap: break-word;
+	text-rendering: optimizeLegibility;
+	color-scheme: light;
+}
+
+.hm-folio *,
+.hm-folio *::before,
+.hm-folio *::after {
+	box-sizing: border-box;
+}
+
+.hm-folio .hm-book,
+.hm-folio .hm-reading,
+.hm-folio .hm-book blockquote,
+.hm-folio .hm-book :where(h1, h2, h3, h4, h5, h6):not(:lang(bn)) {
+	font-family: var(--hm-serif);
+}
+
+.hm-folio p,
+.hm-folio :where(h1, h2, h3, h4, h5, h6) {
+	color: inherit;
+}
+
+.hm-folio a {
+	color: inherit;
+	text-decoration-thickness: 0.075em;
+	text-underline-offset: 0.16em;
+}
+
+.hm-folio a:hover {
+	text-decoration-color: var(--hm-warning);
+}
+
+.hm-folio :where(a, button, [tabindex]) {
+	touch-action: manipulation;
+}
+
+.hm-folio :where(a, button, [tabindex]):focus-visible {
+	outline: 3px solid var(--hm-warning) !important;
+	outline-offset: 4px !important;
+	box-shadow: 0 0 0 2px var(--hm-paper) !important;
+}
+
+.hm-folio .reading-progress-bar {
+	z-index: 80;
+	height: 3px;
+	transform-origin: left center;
+}
+
+.hm-folio .hm-skip-link {
+	position: fixed;
+	top: 0.75rem;
+	left: 0.75rem;
+	z-index: 100;
+	min-height: 44px;
+	padding: 0.65rem 0.9rem;
+	transform: translateY(-180%);
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+	font-family: var(--hm-ui);
+	font-size: 0.875rem;
+	font-weight: 650;
+	text-decoration: none;
+}
+
+.hm-folio .hm-skip-link:focus {
+	transform: translateY(0);
+}
+
+.hm-folio .hm-utility {
+	display: flex;
+	min-height: 3rem;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.55rem clamp(1rem, 3vw, 3rem);
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.045em;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-utility ol {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.45rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-utility a {
+	display: inline-flex;
+	min-height: 2.25rem;
+	align-items: center;
+	text-decoration: none;
+}
+
+.hm-folio .hm-book {
+	width: min(100%, 100rem);
+	margin-inline: auto;
+	background: var(--hm-paper-deep);
+}
+
+.hm-folio .thought-spread {
+	position: relative;
+	width: 100%;
+	margin: 0 auto clamp(1rem, 2.4vw, 2.5rem);
+	background: var(--hm-paper);
+	scroll-margin-top: 1rem;
+	isolation: isolate;
+}
+
+.hm-folio .thought-spread__rail {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 1rem;
+	align-items: end;
+	min-height: 2.6rem;
+	margin-inline: clamp(1.1rem, 3vw, 3rem);
+	padding-block: 0.85rem 0.55rem;
+	border-bottom: 1px solid var(--hm-rule);
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.72rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.045em;
+	line-height: 1.35;
+	text-transform: none;
+}
+
+.hm-folio .thought-spread__rail span:first-child {
+	display: none;
+}
+
+.hm-folio .thought-spread__rail span:nth-child(2) {
+	grid-column: 2;
+	grid-row: 1;
+	color: var(--hm-ink);
+}
+
+.hm-folio .thought-spread__rail span:last-child {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.hm-folio .thought-spread__leaves {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+}
+
+/* Defensive isolation from the older Plumbing folio. */
+.hm-folio .thought-spread__leaves::after {
+	display: none !important;
+	content: none !important;
+}
+
+.hm-folio .thought-leaf {
+	--hm-leaf-inline: clamp(1.15rem, 5.5vw, 3.75rem);
+	--hm-leaf-bottom: clamp(2.25rem, 7vw, 4.75rem);
+	position: relative;
+	min-width: 0;
+	padding: clamp(1.35rem, 5vw, 3.25rem) var(--hm-leaf-inline) var(--hm-leaf-bottom);
+	background: var(--hm-paper);
+	color: var(--hm-ink);
+	container-type: inline-size;
+}
+
+.hm-folio .thought-leaf + .thought-leaf {
+	border-top: 0 !important;
+	box-shadow: none !important;
+}
+
+.hm-folio .thought-leaf__meta {
+	display: block;
+	margin: 0 0 1.15rem;
+	padding: 0;
+	border: 0;
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.055em;
+	line-height: 1.35;
+}
+
+.hm-folio .thought-leaf__meta span:first-child {
+	display: none;
+}
+
+.hm-folio .thought-leaf__content {
+	position: relative;
+	z-index: 1;
+	min-width: 0;
+}
+
+.hm-folio .hm-reading.prose {
+	width: 100%;
+	max-width: none;
+	margin: 0;
+	color: inherit;
+	font-family: var(--hm-serif);
+}
+
+.hm-folio .hm-reading .thought-leaf__content > :first-child {
+	margin-top: 0;
+}
+
+.hm-folio .hm-reading .thought-leaf__content > :last-child {
+	margin-bottom: 0;
+}
+
+.hm-folio .hm-reading h2 {
+	max-width: 15ch;
+	margin: 0 0 1.4rem;
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: clamp(2.125rem, 8.6cqi, 2.625rem);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.02;
+	text-wrap: balance;
+}
+
+.hm-folio .hm-reading h2 a {
+	color: inherit;
+	font-weight: inherit;
+	text-decoration: none;
+}
+
+.hm-folio .hm-reading h3 {
+	margin: 2rem 0 0.75rem;
+	font-size: 1.5rem;
+	font-weight: 650;
+	letter-spacing: -0.01em;
+	line-height: 1.12;
+}
+
+.hm-folio .hm-reading p,
+.hm-folio .hm-reading li {
+	max-width: 52ch;
+	margin-block: 0 1.08em;
+	color: inherit;
+	font-family: var(--hm-serif);
+	font-size: 17.5px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 1.6;
+}
+
+.hm-folio .hm-reading h2 + p {
+	max-width: 39ch;
+	font-size: 19px;
+	line-height: 1.5;
+}
+
+.hm-folio .hm-reading strong {
+	color: inherit;
+	font-family: inherit;
+	font-weight: 600;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+.hm-folio .hm-reading em {
+	font-family: var(--hm-serif);
+	font-style: italic;
+}
+
+.hm-folio .hm-reading ul,
+.hm-folio .hm-reading ol {
+	margin-block: 0 1.2rem;
+	padding-left: 1.25rem;
+}
+
+.hm-folio .hm-reading hr {
+	width: 3rem;
+	height: 2px;
+	margin: 0 0 1.5rem;
+	border: 0;
+	background: var(--hm-warning);
+}
+
+.hm-folio .thought-art {
+	position: relative;
+	width: 100%;
+	margin: clamp(1.4rem, 4vw, 2.5rem) 0;
+}
+
+.hm-folio .thought-art img {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: var(--hm-paper-warm);
+	object-fit: cover;
+}
+
+.hm-folio .thought-art figcaption {
+	max-width: 56ch;
+	margin-top: 0.7rem;
+	padding: 0;
+	border: 0;
+	color: var(--hm-muted);
+	font-family: var(--hm-serif);
+	font-size: 15px;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 1.42;
+}
+
+.hm-folio .hm-label,
+.hm-folio .hm-kicker,
+.hm-folio .hm-module-title {
+	margin: 0;
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.055em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+/* Cover */
+.hm-folio .hm-cover .thought-spread__rail {
+	border-color: var(--hm-ink);
+}
+
+.hm-folio .hm-cover .thought-leaf {
+	padding-top: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.hm-folio .hm-cover-strap,
+.hm-folio .hm-revision,
+.hm-folio .hm-cover-meta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem 1rem;
+	align-items: center;
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.04em;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-cover-strap {
+	margin-bottom: 1.25rem;
+}
+
+.hm-folio .hm-cover-title {
+	max-width: 12.2ch;
+	margin: 0 0 1.1rem;
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: clamp(2.25rem, 10cqi, 3.125rem);
+	font-weight: 800;
+	letter-spacing: -0.025em;
+	line-height: 0.95;
+	text-transform: none;
+}
+
+.hm-folio .hm-cover-title span {
+	display: block;
+}
+
+.hm-folio .hm-print-route {
+	display: none;
+}
+
+.hm-folio .hm-cover-meta {
+	margin: 0 0 1rem;
+}
+
+.hm-folio .hm-cover-meta p {
+	display: flex;
+	gap: 0.35rem;
+	margin: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+.hm-folio .hm-cover-meta p > span:first-child:not(.hm-date-pair) {
+	color: var(--hm-ink);
+}
+
+.hm-folio .hm-cover-deck {
+	max-width: 36ch;
+	margin: 0;
+	font-size: 19px;
+	line-height: 1.47;
+}
+
+.hm-folio .hm-cover-lead .thought-art {
+	margin: 1.5rem calc(0px - var(--hm-leaf-inline)) calc(0px - var(--hm-leaf-bottom));
+	width: calc(100% + var(--hm-leaf-inline) + var(--hm-leaf-inline));
+}
+
+.hm-folio .hm-cover-lead .thought-art img {
+	aspect-ratio: 4 / 3;
+	object-position: 58% center;
+}
+
+.hm-folio .hm-revision {
+	justify-content: space-between;
+	margin-bottom: 1.75rem;
+}
+
+.hm-folio .hm-contents > .hm-label {
+	margin-bottom: 0.8rem;
+	color: var(--hm-teal-deep);
+	font-family: var(--hm-serif);
+	font-size: 1.65rem;
+	font-weight: 700;
+	letter-spacing: -0.015em;
+	line-height: 1.15;
+	text-transform: none;
+}
+
+.hm-folio .hm-contents ol {
+	display: grid;
+	gap: 0.65rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-contents a {
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.4rem;
+	align-items: baseline;
+	min-height: 2.25rem;
+	padding: 0.2rem 0;
+	text-decoration: none;
+}
+
+.hm-folio .hm-contents a span {
+	color: var(--hm-warning);
+	font-family: var(--hm-ui);
+	font-size: 0.78rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.hm-folio .hm-contents a strong {
+	font-family: var(--hm-serif);
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-tag-index {
+	margin-top: 1.6rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-tag-index ul {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.35rem 1rem;
+	margin: 0.7rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-tag-index li {
+	color: var(--hm-muted);
+	font-family: var(--hm-serif);
+	font-size: 0.88rem;
+	font-style: italic;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-cover-thesis {
+	margin: clamp(2rem, 5vw, 4rem) 0 0;
+	padding: 0;
+	border: 0;
+	color: var(--hm-ink);
+}
+
+.hm-folio .hm-cover-thesis span {
+	display: block;
+	margin-bottom: 0.55rem;
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.045em;
+}
+
+.hm-folio .hm-cover-thesis p {
+	max-width: 15ch;
+	margin: 0;
+	font-family: var(--hm-serif);
+	font-size: clamp(1.8rem, 7.4cqi, 2.4rem);
+	font-style: italic;
+	font-weight: 450;
+	letter-spacing: -0.01em;
+	line-height: 1.08;
+}
+
+.hm-folio .hm-front-controls {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1.25rem;
+	align-items: center;
+	margin-top: 2rem;
+	font-family: var(--hm-ui);
+}
+
+.hm-folio .hm-front-controls > a {
+	display: inline-flex;
+	min-height: 44px;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.hm-folio .article-actions {
+	margin: 0;
+}
+
+.hm-folio .article-actions button {
+	border-color: var(--hm-rule);
+	background: transparent;
+	color: var(--hm-ink);
+	font-family: var(--hm-ui);
+	font-size: 0.875rem;
+	font-weight: 600;
+	box-shadow: none;
+}
+
+.hm-folio .article-actions [role='status'] {
+	color: var(--hm-muted);
+}
+
+/* Inside-cover brief */
+.hm-folio .hm-reader-brief .thought-leaf[data-side='right'] {
+	background: var(--hm-paper-warm);
+}
+
+.hm-folio .hm-kicker {
+	margin-bottom: 1rem;
+	color: var(--hm-teal-deep);
+}
+
+.hm-folio .hm-quick-answer {
+	max-width: 38ch;
+	margin: 0;
+	font-family: var(--hm-serif);
+	font-size: clamp(1.35rem, 6cqi, 1.8rem);
+	line-height: 1.3;
+}
+
+.hm-folio .hm-key-terms {
+	margin-top: 2rem;
+}
+
+.hm-folio .hm-key-terms ol,
+.hm-folio .hm-faq-list {
+	margin: 0.85rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-key-terms ol {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.75rem 1.25rem;
+}
+
+.hm-folio .hm-key-terms li {
+	display: grid;
+	grid-template-columns: 1.8rem minmax(0, 1fr);
+	gap: 0.35rem;
+	align-items: baseline;
+}
+
+.hm-folio .hm-key-terms li span,
+.hm-folio .hm-faq-list > li > span {
+	color: var(--hm-warning);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.hm-folio .hm-key-terms li strong {
+	font-family: var(--hm-serif);
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+.hm-folio .hm-faq-list {
+	display: grid;
+	gap: 1.35rem;
+}
+
+.hm-folio .hm-faq-list > li {
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.15rem 0.6rem;
+}
+
+.hm-folio .hm-faq-list > li > span {
+	grid-row: 1 / span 2;
+}
+
+.hm-folio .hm-faq-list strong {
+	font-family: var(--hm-serif);
+	font-size: 1.05rem;
+	font-weight: 650;
+	line-height: 1.3;
+}
+
+.hm-folio .hm-faq-list p {
+	grid-column: 2;
+	margin: 0.25rem 0 0;
+	font-family: var(--hm-serif);
+	font-size: 0.96rem;
+	line-height: 1.5;
+}
+
+.hm-folio .hm-listen {
+	margin-top: 2rem;
+}
+
+.hm-folio .hm-listen > .hm-label {
+	margin-bottom: 0.6rem;
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] {
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	background: rgb(255 255 255 / 42%);
+	box-shadow: none;
+	backdrop-filter: none;
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] button {
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio .hm-listen [aria-label='Audio article'] :where(p, span) {
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+}
+
+/* Tonal pages */
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'],
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'],
+.hm-folio #technology-stack .thought-leaf[data-side='right'],
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] {
+	background: var(--hm-coal);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'] .thought-leaf__meta,
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] .thought-leaf__meta,
+.hm-folio #technology-stack .thought-leaf[data-side='right'] .thought-leaf__meta,
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] .thought-leaf__meta {
+	color: #b8b4aa;
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'] figcaption,
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] figcaption,
+.hm-folio #technology-stack .thought-leaf[data-side='right'] figcaption,
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] figcaption {
+	color: #beb9af;
+}
+
+.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'] p:last-child {
+	margin-top: clamp(1.5rem, 4vw, 2.5rem);
+	font-size: clamp(1.65rem, 7cqi, 2rem);
+	font-style: italic;
+	line-height: 1.15;
+}
+
+.hm-folio #who-power-exposure .thought-leaf[data-side='left'] {
+	background: var(--hm-paper-warm);
+}
+
+.hm-folio #where-systems-touch-bodies .thought-leaf[data-side='right'],
+.hm-folio #why-stakes-incentives .thought-leaf[data-side='right'] {
+	background: #ede8dc;
+}
+
+.hm-folio #bigger-unfinished-systems .thought-leaf[data-side='right'] p:first-child {
+	max-width: 26ch;
+	font-size: clamp(1.45rem, 5.7cqi, 1.85rem);
+	font-style: italic;
+	line-height: 1.25;
+}
+
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] p:last-child {
+	max-width: 27ch;
+	margin-top: clamp(2rem, 7vw, 4rem);
+	font-size: clamp(1.7rem, 7.2cqi, 2.15rem);
+	font-style: italic;
+	line-height: 1.13;
+}
+
+.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='right'] .thought-art img {
+	aspect-ratio: 2 / 1;
+}
+
+/* Documentary plate sizing */
+.hm-folio #who-builders-frontline .thought-art img {
+	aspect-ratio: 4 / 5;
+}
+
+.hm-folio #uncomfortable-premise .thought-art img {
+	aspect-ratio: 3 / 2;
+	object-position: center;
+}
+
+.hm-folio #what-map-territory .thought-art img,
+.hm-folio #when-usable-ai .thought-art img,
+.hm-folio #where-systems-touch-bodies .thought-art img,
+.hm-folio #why-stakes-incentives .thought-art img,
+.hm-folio #how-writers-method .thought-art img {
+	aspect-ratio: 16 / 9;
+}
+
+.hm-folio #why-corruption-attack-surface .thought-art img {
+	aspect-ratio: 3 / 2;
+	object-fit: contain;
+}
+
+/* Live editorial modules */
+.hm-folio .hm-live-module {
+	position: relative;
+	margin: 1.75rem 0 2rem;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: inherit;
+}
+
+.hm-folio .hm-reading .hm-live-module > p.hm-module-title {
+	max-width: none;
+	margin: 0 0 1rem;
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.055em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-live-module ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hm-folio .hm-timeline ol {
+	position: relative;
+	display: grid;
+	gap: 1rem;
+	padding-left: 1.25rem;
+}
+
+.hm-folio .hm-timeline ol::before {
+	position: absolute;
+	top: 0.2rem;
+	bottom: 0.2rem;
+	left: 0;
+	width: 1px;
+	background: var(--hm-rule);
+	content: '';
+}
+
+.hm-folio .hm-timeline li {
+	display: grid;
+	grid-template-columns: 4.5rem minmax(0, 1fr);
+	gap: 0.75rem;
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.4;
+}
+
+.hm-folio .hm-timeline strong {
+	color: var(--hm-teal-deep);
+	font-family: var(--hm-ui);
+	font-size: 0.8rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.hm-folio .hm-alignment table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--hm-serif);
+	font-size: 0.96rem;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-alignment th,
+.hm-folio .hm-alignment td {
+	padding: 0.55rem 0;
+	border: 0;
+	text-align: left;
+	vertical-align: top;
+}
+
+.hm-folio .hm-alignment thead tr {
+	border-bottom: 1px solid var(--hm-rule);
+}
+
+.hm-folio .hm-alignment thead th {
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.045em;
+}
+
+.hm-folio .hm-alignment tbody th {
+	font-weight: 600;
+}
+
+.hm-folio .hm-alignment .hm-ledger-consequence {
+	color: var(--hm-warning);
+}
+
+.hm-folio .hm-corruption-evidence blockquote {
+	max-width: 23ch;
+	margin: 0 0 1.5rem;
+	padding-left: 1rem;
+	border-left: 2px solid var(--hm-warning);
+	font-family: var(--hm-serif);
+	font-size: clamp(1.55rem, 6.7cqi, 2rem);
+	font-style: italic;
+	font-weight: 450;
+	line-height: 1.14;
+}
+
+.hm-folio .hm-corruption-evidence ol,
+.hm-folio .hm-threats ol {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.25rem 1.5rem;
+}
+
+.hm-folio .hm-corruption-evidence li,
+.hm-folio .hm-threats li {
+	display: grid;
+	grid-template-columns: 2.25rem minmax(0, 1fr);
+	gap: 0.2rem 0.65rem;
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-corruption-evidence li span,
+.hm-folio .hm-threats li > span {
+	grid-row: 1 / span 2;
+	color: var(--hm-warning);
+	font-family: var(--hm-ui);
+	font-size: 1.75rem;
+	font-weight: 550;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+}
+
+.hm-folio .hm-corruption-evidence li strong,
+.hm-folio .hm-threats li strong {
+	font-family: var(--hm-serif);
+	font-size: 1.02rem;
+	font-weight: 650;
+	line-height: 1.25;
+	text-transform: none;
+}
+
+.hm-folio .hm-threats li small {
+	grid-column: 2;
+	color: #bbb7ad;
+	font-family: var(--hm-serif);
+	font-size: 0.88rem;
+	line-height: 1.35;
+}
+
+.hm-folio #why-corruption-attack-surface .hm-threats li > span {
+	color: #e06a4c;
+}
+
+.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'] .hm-module-title {
+	color: #b8b4aa;
+}
+
+.hm-folio .hm-threats .hm-threat-consequence strong,
+.hm-folio .hm-threats .hm-threat-consequence > span {
+	color: #e06a4c;
+}
+
+.hm-folio .hm-method-rings ol {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.85rem 1rem;
+}
+
+.hm-folio .hm-method-rings li {
+	position: relative;
+	min-height: 5.5rem;
+	margin: 0;
+	padding: 0.85rem 0.85rem 0.85rem 2.9rem;
+	background: color-mix(in srgb, var(--hm-teal) 9%, transparent);
+	font-size: 0.95rem;
+	line-height: 1.25;
+}
+
+.hm-folio .hm-method-rings li span {
+	position: absolute;
+	top: 0.85rem;
+	left: 0.8rem;
+	color: var(--hm-teal-deep);
+	font-family: var(--hm-ui);
+	font-size: 0.78rem;
+	font-weight: 600;
+}
+
+.hm-folio .hm-method-rings li strong {
+	font-family: var(--hm-serif);
+	font-size: 1rem;
+	font-weight: 650;
+}
+
+/* Technology ledger */
+.hm-folio #technology-stack .hm-reading,
+.hm-folio #technology-stack .thought-leaf__content {
+	min-width: 0;
+}
+
+.hm-folio #technology-stack .thought-leaf p {
+	position: relative;
+	max-width: 48ch;
+	margin-bottom: 1.7rem;
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='left'] p:not(:first-of-type),
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:not(:last-of-type) {
+	min-height: 2.25rem;
+	padding-left: 3.2rem;
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='left'] p:not(:first-of-type)::before,
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:not(:last-of-type)::before {
+	position: absolute;
+	top: 0.05rem;
+	left: 0;
+	color: color-mix(in srgb, currentColor 40%, transparent);
+	font-family: var(--hm-ui);
+	font-size: 1.75rem;
+	font-weight: 550;
+	font-variant-numeric: tabular-nums;
+	line-height: 1;
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='left'] p:nth-of-type(2)::before {
+	content: '01';
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='left'] p:nth-of-type(3)::before {
+	content: '02';
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='left'] p:nth-of-type(4)::before {
+	content: '03';
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='left'] p:nth-of-type(5)::before {
+	content: '04';
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:nth-of-type(1)::before {
+	content: '05';
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:nth-of-type(2)::before {
+	content: '06';
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:nth-of-type(3)::before {
+	content: '07';
+}
+
+.hm-folio #technology-stack .thought-leaf p strong {
+	display: block;
+	margin-bottom: 0.28rem;
+	font-family: var(--hm-serif);
+	font-size: 1.06rem;
+	font-weight: 650;
+	letter-spacing: 0;
+	line-height: 1.28;
+	text-transform: none;
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:last-of-type {
+	max-width: none;
+	margin: 2rem 0 0;
+	padding: 1.5rem;
+	background: var(--hm-teal-deep);
+	color: var(--hm-coal-copy);
+}
+
+.hm-folio #technology-stack .thought-leaf[data-side='right'] p:last-of-type strong {
+	max-width: 22ch;
+	font-size: clamp(1.55rem, 6.6cqi, 2rem);
+	font-style: italic;
+	font-weight: 450;
+	line-height: 1.1;
+}
+
+/* Endpaper */
+.hm-folio .hm-endpaper .thought-leaf[data-side='left'] {
+	background: var(--hm-paper-warm);
+}
+
+.hm-folio .hm-consulting {
+	margin: 0 0 2.5rem;
+}
+
+.hm-folio .hm-consulting h3,
+.hm-folio .hm-related h3,
+.hm-folio .hm-endpaper h2:not(#word-cloud-heading) {
+	max-width: 18ch;
+	margin: 0.55rem 0 0.85rem;
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: clamp(1.55rem, 6cqi, 2rem);
+	font-weight: 650;
+	letter-spacing: -0.01em;
+	line-height: 1.12;
+}
+
+.hm-folio .hm-consulting p,
+.hm-folio .hm-endpaper-deck,
+.hm-folio .hm-colophon :where(p, small, span) {
+	color: var(--hm-muted);
+	font-family: var(--hm-serif);
+	font-size: 0.96rem;
+	line-height: 1.5;
+}
+
+.hm-folio .hm-consulting nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 1.25rem;
+	margin-top: 1rem;
+	font-family: var(--hm-ui);
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+
+.hm-folio #about-the-author {
+	margin-top: 2rem;
+	border-color: var(--hm-rule);
+}
+
+.hm-folio #about-the-author h2 {
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-weight: 650;
+}
+
+.hm-folio #about-the-author .font-serif {
+	font-family: var(--hm-serif);
+}
+
+.hm-folio #about-the-author :where(p, a) {
+	color: var(--hm-muted);
+}
+
+.hm-folio .hm-word-cloud {
+	margin-top: 2rem;
+}
+
+.hm-folio .hm-word-cloud h2,
+html.dark .hm-folio .hm-word-cloud h2,
+html[data-theme='night'] .hm-folio .hm-word-cloud h2 {
+	margin-bottom: 0.75rem;
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.055em;
+	text-transform: uppercase;
+}
+
+.hm-folio .hm-word-cloud figure,
+html.dark .hm-folio .hm-word-cloud figure,
+html[data-theme='night'] .hm-folio .hm-word-cloud figure {
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.hm-folio .hm-endpaper-deck {
+	max-width: 39ch;
+	margin-bottom: 2rem;
+	font-size: 1.08rem;
+}
+
+.hm-folio .hm-topics {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0.3rem 1.25rem;
+	margin: 0 0 2rem;
+}
+
+.hm-folio .hm-topics > .hm-label {
+	grid-column: 1 / -1;
+	margin-bottom: 0.4rem;
+}
+
+.hm-folio .hm-topics a {
+	display: inline-flex;
+	min-height: 2.25rem;
+	align-items: center;
+	color: var(--hm-ink);
+	font-family: var(--hm-serif);
+	font-size: 0.96rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.hm-folio .hm-navigation {
+	margin: 0 0 2.5rem;
+}
+
+.hm-folio .hm-navigation .post-navigation {
+	margin: 0;
+	padding: 1.25rem 0;
+	border-color: var(--hm-rule);
+}
+
+.hm-folio .hm-navigation .post-navigation__item {
+	min-height: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	color: var(--hm-ink);
+	box-shadow: none;
+}
+
+.hm-folio .hm-navigation .post-navigation__title {
+	color: var(--hm-ink) !important;
+	font-family: var(--hm-serif);
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.hm-folio .hm-navigation :where(.post-navigation__eyebrow, .post-navigation__meta) {
+	color: var(--hm-muted) !important;
+	font-family: var(--hm-ui);
+}
+
+.hm-folio .hm-related {
+	margin-top: 2rem;
+}
+
+.hm-folio .hm-related-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: 1.5rem;
+	margin-top: 1.25rem;
+}
+
+.hm-folio .hm-related-grid > a {
+	display: grid;
+	grid-template-columns: 2rem minmax(0, 1fr);
+	gap: 0.15rem 0.6rem;
+	align-content: start;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--hm-ink);
+	text-decoration: none;
+}
+
+.hm-folio .hm-related-grid img {
+	grid-column: 1 / -1;
+	width: 100%;
+	margin-bottom: 0.55rem;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+.hm-folio .hm-related-grid > a > span {
+	grid-row: 2 / span 3;
+	color: var(--hm-warning);
+	font-family: var(--hm-ui);
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.hm-folio .hm-related-grid small,
+.hm-folio .hm-related-grid em {
+	color: var(--hm-muted);
+	font-family: var(--hm-ui);
+	font-size: 0.72rem;
+	font-style: normal;
+	line-height: 1.35;
+}
+
+.hm-folio .hm-related-grid strong {
+	font-family: var(--hm-serif);
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.28;
+}
+
+/* The site defaults to Night; this folio is intentionally paper-led. */
+html.dark .hm-folio,
+html[data-theme='night'] .hm-folio {
+	color-scheme: light;
+}
+
+html.dark .hm-folio #about-the-author,
+html[data-theme='night'] .hm-folio #about-the-author {
+	border-color: var(--hm-rule);
+}
+
+html.dark .hm-folio #about-the-author :where(h2, p, a),
+html[data-theme='night'] .hm-folio #about-the-author :where(h2, p, a) {
+	color: var(--hm-ink);
+}
+
+html.dark .hm-folio .hm-listen [aria-label='Audio article'],
+html[data-theme='night'] .hm-folio .hm-listen [aria-label='Audio article'] {
+	border: 0;
+	background: rgb(255 255 255 / 42%);
+}
+
+html.dark .hm-folio .hm-listen [aria-label='Audio article'] :where(p, span),
+html[data-theme='night'] .hm-folio .hm-listen [aria-label='Audio article'] :where(p, span) {
+	color: var(--hm-muted);
+}
+
+@media (min-width: 40rem) {
+	.hm-folio .hm-related-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 48rem) {
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li {
+		font-size: 18px;
+		line-height: 1.61;
+	}
+
+	.hm-folio .hm-reading h2 + p {
+		font-size: 20px;
+		line-height: 1.45;
+	}
+
+	.hm-folio .hm-cover-deck {
+		font-size: 20px;
+	}
+
+	.hm-folio .hm-key-terms ol {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 60rem) and (orientation: landscape) {
+	.hm-folio .thought-spread__leaves {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: clamp(1.5rem, 1.8vw, 2rem);
+		background: var(--hm-paper-deep);
+	}
+
+	.hm-folio .thought-leaf {
+		--hm-leaf-inline: clamp(1.8rem, 4.1vw, 3.6rem);
+		--hm-leaf-bottom: clamp(3rem, 6vw, 5.25rem);
+		padding: clamp(2rem, 4.5vw, 4rem) var(--hm-leaf-inline) var(--hm-leaf-bottom);
+	}
+
+	.hm-folio .thought-leaf__meta {
+		margin-bottom: 1.45rem;
+	}
+
+	.hm-folio .hm-reading h2 {
+		font-size: clamp(2.125rem, 7.3cqi, 2.625rem);
+	}
+
+	.hm-folio #which-technologies-systems-methods-and-discoveries-make-this-possible {
+		max-width: 18ch;
+		font-size: clamp(2rem, 6.2cqi, 2.35rem);
+	}
+
+	.hm-folio .hm-cover-title {
+		max-width: none;
+		font-size: clamp(1.96875rem, 7.2cqi, 3.125rem);
+	}
+
+	.hm-folio .hm-cover-title span {
+		white-space: nowrap;
+	}
+
+	.hm-folio .hm-cover-lead .thought-leaf__content {
+		display: flex;
+		min-height: 100%;
+		flex-direction: column;
+	}
+
+	.hm-folio .hm-cover-lead .thought-art {
+		margin-top: auto;
+	}
+
+	.hm-folio .hm-contents ol {
+		grid-auto-flow: column;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-template-rows: repeat(5, auto);
+		gap: 0.55rem 1.25rem;
+	}
+
+	.hm-folio .hm-cover-index .thought-leaf__content {
+		display: flex;
+		min-height: 100%;
+		flex-direction: column;
+	}
+
+	.hm-folio .hm-cover-thesis {
+		margin-top: auto;
+		padding-top: 2rem;
+	}
+
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='right'] .thought-leaf__content {
+		display: block;
+	}
+
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='left'] .thought-leaf__content {
+		display: block;
+	}
+
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='left'] .thought-leaf__meta {
+		margin-bottom: 1.6rem;
+	}
+
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='left'] h2,
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='left'] p {
+		max-width: 45ch;
+	}
+
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='left'] .thought-art {
+		width: min(100%, 32rem);
+		margin: 1.6rem 0 0;
+	}
+
+	.hm-folio #who-builders-frontline .thought-leaf[data-side='right'] p {
+		max-width: 45ch;
+	}
+
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'] .thought-leaf__content {
+		display: block;
+	}
+
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'] .thought-leaf__meta {
+		margin-bottom: 1.6rem;
+	}
+
+	.hm-folio #what-map-territory .thought-leaf[data-side='right'] p {
+		max-width: 45ch;
+	}
+
+	.hm-folio #why-corruption-attack-surface .hm-threats ol {
+		gap-block: 1rem;
+	}
+
+	.hm-folio #technology-stack .thought-leaf[data-side='right'] {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.hm-folio #technology-stack .thought-leaf[data-side='right'] .thought-leaf__content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+	}
+
+	.hm-folio #technology-stack .thought-leaf[data-side='right'] p:last-of-type {
+		display: flex;
+		min-height: 17rem;
+		flex: 1;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: clamp(1.75rem, 3vw, 2.5rem);
+	}
+
+	.hm-folio #why-corruption-attack-surface .thought-art {
+		width: min(100%, 31rem);
+		margin-top: 1.75rem;
+	}
+
+	.hm-folio #how-writers-method .thought-art,
+	.hm-folio #when-usable-ai .thought-art {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 80rem) and (orientation: landscape) {
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li {
+		font-size: 18.5px;
+		line-height: 1.62;
+	}
+
+	.hm-folio .hm-reading h2 + p {
+		font-size: 20px;
+		line-height: 1.45;
+	}
+
+	.hm-folio .hm-cover-deck {
+		font-size: 21px;
+		line-height: 1.43;
+	}
+}
+
+@media (max-width: 39.99rem) {
+	.hm-folio .thought-leaf__meta {
+		font-size: 0.72rem;
+	}
+
+	.hm-folio .hm-utility > span {
+		display: none;
+	}
+
+	.hm-folio .hm-tag-index ul,
+	.hm-folio .hm-key-terms ol,
+	.hm-folio .hm-topics {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.hm-folio .hm-corruption-evidence ol,
+	.hm-folio .hm-threats ol,
+	.hm-folio .hm-method-rings ol {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.hm-folio #technology-stack .thought-leaf[data-side='left'] p:not(:first-of-type),
+	.hm-folio #technology-stack .thought-leaf[data-side='right'] p:not(:last-of-type) {
+		padding-left: 0;
+	}
+
+	.hm-folio #technology-stack .thought-leaf[data-side='left'] p:not(:first-of-type) strong,
+	.hm-folio #technology-stack .thought-leaf[data-side='right'] p:not(:last-of-type) strong {
+		min-height: 2.25rem;
+		padding-left: 2.8rem;
+	}
+
+	.hm-folio .hm-cover-title {
+		font-size: clamp(2.15rem, 10.2cqi, 2.35rem);
+		line-height: 0.97;
+	}
+
+	.hm-folio .hm-cover-title span {
+		display: inline;
+		white-space: normal;
+	}
+
+	.hm-folio .hm-cover-title span::after {
+		content: ' ';
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hm-folio,
+	.hm-folio *,
+	.hm-folio *::before,
+	.hm-folio *::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+@media (forced-colors: active) {
+	.hm-folio {
+		--hm-paper: Canvas;
+		--hm-paper-deep: Canvas;
+		--hm-paper-warm: Canvas;
+		--hm-ink: CanvasText;
+		--hm-muted: GrayText;
+		--hm-coal: Canvas;
+		--hm-coal-copy: CanvasText;
+		--hm-teal: LinkText;
+		--hm-teal-deep: LinkText;
+		--hm-warning: LinkText;
+		--hm-rule: CanvasText;
+		--hm-rule-soft: GrayText;
+		background: Canvas;
+	}
+
+	.hm-folio .thought-spread,
+	.hm-folio .thought-spread__leaves,
+	.hm-folio .thought-leaf,
+	.hm-folio #uncomfortable-premise .thought-leaf[data-side='right'],
+	.hm-folio #why-corruption-attack-surface .thought-leaf[data-side='right'],
+	.hm-folio #technology-stack .thought-leaf[data-side='right'],
+	.hm-folio #bigger-judgment-invitation .thought-leaf[data-side='left'] {
+		background: Canvas;
+		color: CanvasText;
+		forced-color-adjust: auto;
+	}
+
+	.hm-folio a {
+		text-decoration-line: underline !important;
+	}
+
+	.hm-folio :where(a, button, [tabindex]):focus-visible {
+		outline: 3px solid Highlight !important;
+		outline-offset: 3px !important;
+		box-shadow: none !important;
+	}
+
+	.hm-folio .thought-art img {
+		filter: none;
+	}
+}
+
+@media print {
+	@page {
+		margin: 12mm;
+	}
+
+	.hm-folio {
+		--hm-paper: white;
+		--hm-paper-deep: white;
+		--hm-paper-warm: white;
+		--hm-ink: black;
+		--hm-muted: #333;
+		--hm-coal: white;
+		--hm-coal-copy: black;
+		--hm-rule: rgb(0 0 0 / 35%);
+		width: 100%;
+		background: white;
+		color: black;
+		font-size: 11pt;
+		line-height: 1.45;
+	}
+
+	.hm-folio .reading-progress-bar,
+	.hm-folio .hm-skip-link,
+	.hm-folio .hm-utility,
+	.hm-folio .hm-reader-brief,
+	.hm-folio .hm-endpaper,
+	.hm-folio .hm-front-controls,
+	.hm-folio .article-actions,
+	.hm-folio .hm-live-module,
+	.hm-folio .thought-spread__rail,
+	.hm-folio .thought-leaf__meta {
+		display: none !important;
+	}
+
+	.hm-folio .hm-book,
+	.hm-folio .thought-spread,
+	.hm-folio .thought-spread__leaves,
+	.hm-folio .thought-leaf,
+	.hm-folio .thought-leaf__content {
+		display: block;
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: white !important;
+		color: black !important;
+		box-shadow: none;
+	}
+
+	.hm-folio .thought-spread {
+		padding-bottom: 6mm;
+		break-after: auto;
+		page-break-after: auto;
+	}
+
+	.hm-folio .hm-cover {
+		break-after: page;
+		page-break-after: always;
+	}
+
+	.hm-folio .hm-reading .thought-leaf,
+	.hm-folio .hm-reading .thought-leaf__content {
+		display: block !important;
+		min-height: 0 !important;
+		flex: none !important;
+	}
+
+	.hm-folio .hm-cover .thought-leaf[data-side='right'] > .thought-leaf__content {
+		display: none;
+	}
+
+	.hm-folio .hm-cover-title {
+		max-width: none;
+		margin: 0 0 5mm;
+		font-size: 32pt;
+		line-height: 0.98;
+	}
+
+	.hm-folio .hm-cover-meta {
+		margin: 3mm 0;
+		padding: 2mm 0;
+	}
+
+	.hm-folio .hm-print-route {
+		display: block;
+		max-width: none;
+		margin: 0 0 4mm;
+		font-family: var(--hm-ui);
+		font-size: 8.5pt;
+		line-height: 1.35;
+		overflow-wrap: anywhere;
+	}
+
+	.hm-folio .hm-print-route a[href]::after,
+	.hm-folio .hm-cover-meta a[href]::after {
+		content: '';
+	}
+
+	.hm-folio .hm-cover-deck {
+		max-width: 42ch;
+		font-size: 15pt;
+	}
+
+	.hm-folio .hm-reading h2 {
+		max-width: none;
+		margin: 6mm 0 3mm;
+		font-size: 23pt;
+		line-height: 1.05;
+		break-after: avoid-page;
+		page-break-after: avoid;
+	}
+
+	.hm-folio #which-technologies-systems-methods-and-discoveries-make-this-possible {
+		font-size: 20pt;
+	}
+
+	.hm-folio .hm-reading p,
+	.hm-folio .hm-reading li,
+	.hm-folio .hm-reading h2 + p {
+		max-width: none;
+		margin-block: 0 3.5mm;
+		color: black !important;
+		font-size: 11pt !important;
+		line-height: 1.45 !important;
+		orphans: 3;
+		widows: 3;
+	}
+
+	.hm-folio .thought-art {
+		max-width: 155mm;
+		margin: 5mm 0;
+		break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.hm-folio .thought-art img {
+		max-height: 84mm;
+		object-fit: contain !important;
+		filter: grayscale(1) contrast(1.05);
+	}
+
+	.hm-folio .thought-art figcaption {
+		font-size: 10.5pt;
+		line-height: 1.45;
+	}
+
+	.hm-folio a[href]::after {
+		color: #333;
+		font-family: var(--hm-ui);
+		font-size: 8pt;
+		content: ' (' attr(href) ')';
+	}
+}

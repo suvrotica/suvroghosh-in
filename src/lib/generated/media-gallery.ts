@@ -4297,6 +4297,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1250
 		},
 		{
+			"name": "thought-folios/healthcare-human-margin/uncomfortable-premise-handoff.jpg",
+			"src": "/images/thought-folios/healthcare-human-margin/uncomfortable-premise-handoff.jpg",
+			"bytes": 70922,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "twerky-vishnu-from-vapor.jpg",
 			"src": "/images/twerky-vishnu-from-vapor.jpg",
 			"bytes": 196912,

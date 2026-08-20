@@ -9760,6 +9760,22 @@
       "sourceHash": "7547157eb8fc046b274229344ec3fc34aae062463156b8ac88a49ead62f977a2",
       "width": 1000
     },
+    "static/images/thought-folios/healthcare-human-margin/uncomfortable-premise-handoff.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 70922,
+      "outputHash": "b1b16072fad66d4788406a652d8c5ff30067fc470196088bb5ed6e0f1deecb47",
+      "psnrDb": 50.29,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 70922,
+      "sourceHash": "b1b16072fad66d4788406a652d8c5ff30067fc470196088bb5ed6e0f1deecb47",
+      "width": 1536
+    },
     "static/images/twerky-vishnu-from-vapor.jpg": {
       "format": "JPEG",
       "height": 895,

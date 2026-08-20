@@ -15,7 +15,7 @@
 		type ThoughtFolioManifest,
 		type ThoughtFolioSpread
 	} from './thought-folio-context';
-	import humanMarginStyles from './healthcare-human-margin.css?url';
+	import humanMarginStyles from './healthcare-human-margin-brochure.css?url';
 
 	type TopicLink = {
 		label: string;
@@ -289,6 +289,10 @@
 								{/each}
 							</ol>
 						</div>
+						<div class="hm-listen">
+							<p class="hm-label">Listen / canonical article only</p>
+							<TTS />
+						</div>
 					</div>
 				</div>
 
@@ -304,10 +308,6 @@
 								</li>
 							{/each}
 						</ol>
-						<div class="hm-listen">
-							<p class="hm-label">Listen / canonical article only</p>
-							<TTS />
-						</div>
 					</div>
 				</div>
 			</div>

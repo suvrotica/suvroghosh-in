@@ -10,7 +10,7 @@
 	import type { BlogPostMetadata } from '$lib/content/posts';
 	import manifestJson from '$lib/data/thought-folios/ai-plumbing.json';
 	import { THOUGHT_FOLIO_CONTEXT, type ThoughtFolioManifest } from './thought-folio-context';
-	import './ai-plumbing.css';
+	import aiPlumbingStyles from './ai-plumbing.css?url';
 
 	type TopicLink = {
 		label: string;
@@ -69,6 +69,10 @@
 		return dateFormatter.format(new Date(`${value}T00:00:00Z`));
 	}
 </script>
+
+<svelte:head>
+	<link rel="stylesheet" href={aiPlumbingStyles} />
+</svelte:head>
 
 <ReadingProgress ink="var(--folio-lime)" />
 

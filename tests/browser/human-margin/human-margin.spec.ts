@@ -11,7 +11,10 @@ const articleDescription =
 	'Why practitioner-written healthcare IT analysis still matters amid AI-generated noise, vendor jargon, and systems that resist generic answers.';
 const folioSelector = '[data-thought-folio="healthcare-human-margin"]';
 const readingRegionSelector = '[data-article-reading-region]';
-const humanFontPattern = /(?:newsreader|barlow(?:[\s_-]*condensed)?|ibm[\s_-]*plex[\s_-]*mono)/iu;
+const retiredHumanFontPattern =
+	/(?:newsreader|barlow(?:[\s_-]*condensed)?|ibm[\s_-]*plex[\s_-]*mono)/iu;
+const humanOnlyFontPattern =
+	/(?:newsreader|barlow(?:[\s_-]*condensed)?|ibm[\s_-]*plex[\s_-]*mono|human[\s_-]*margin[\s_-]*source[\s_-]*serif|source-serif-4-latin-wght-normal)/iu;
 const wordCloudGeneratorVersion = '2026-07-13.1';
 const slug = 'why-read-a-healthcare-it-blog-in-the-age-of-ai';
 
@@ -60,6 +63,14 @@ const bodyArt = [
 		height: 1_024,
 		loading: 'eager',
 		fetchPriority: 'high'
+	},
+	{
+		path: '/images/thought-folios/healthcare-human-margin/uncomfortable-premise-handoff.jpg',
+		alt: 'A practitioner pauses beside a dark clinical workstation and an open technical cabinet in a quiet hospital corridor.',
+		width: 1_536,
+		height: 1_024,
+		loading: 'lazy',
+		fetchPriority: 'auto'
 	},
 	{
 		path: '/images/thought-folios/healthcare-human-margin/stakeholders-layered.jpg',
@@ -626,6 +637,36 @@ test.describe('Human Margin responsive folio contract', () => {
 		}
 	});
 
+	test('technology ledger keeps one 01–07 sequence in portrait and paired layouts', async ({
+		page
+	}) => {
+		for (const viewport of [
+			{ width: 390, height: 844 },
+			{ width: 1_440, height: 900 }
+		]) {
+			await page.setViewportSize(viewport);
+			await openArticle(page);
+			const numbers = await page
+				.locator(
+					'#technology-stack .thought-leaf[data-side="left"] p:not(:first-of-type), #technology-stack .thought-leaf[data-side="right"] p:not(:last-of-type)'
+				)
+				.evaluateAll((entries) =>
+					entries.map((entry) =>
+						getComputedStyle(entry, '::before').content.replaceAll(/["']/gu, '')
+					)
+				);
+			expect(numbers, `${viewport.width}x${viewport.height}`).toEqual([
+				'01',
+				'02',
+				'03',
+				'04',
+				'05',
+				'06',
+				'07'
+			]);
+		}
+	});
+
 	test('canonical body spreads retain book width and paired leaves retain readable measure', async ({
 		page
 	}) => {
@@ -654,8 +695,18 @@ test.describe('Human Margin responsive folio contract', () => {
 					Array.from(
 						spread.querySelectorAll<HTMLElement>(':scope > .thought-spread__leaves > .thought-leaf')
 					).map((leaf) => {
-						const paragraph = Array.from(leaf.querySelectorAll<HTMLElement>('p')).find(
+						const canonicalParagraphs = Array.from(leaf.querySelectorAll<HTMLElement>('p')).filter(
 							(element) => !element.closest('[data-tts-exclude], .no-read')
+						);
+						const paragraph = canonicalParagraphs.reduce<HTMLElement | undefined>(
+							(smallest, element) => {
+								if (!smallest) return element;
+								return Number.parseFloat(getComputedStyle(element).fontSize) <
+									Number.parseFloat(getComputedStyle(smallest).fontSize)
+									? element
+									: smallest;
+							},
+							undefined
 						);
 						if (!paragraph) {
 							return {
@@ -787,7 +838,7 @@ test.describe('Human Margin semantics, controls and extraction', () => {
 		const semanticH1 = normalizeText((await h1.textContent()) ?? '');
 		expect(semanticH1).toBe(articleTitle);
 		expect(semanticH1.endsWith('.')).toBe(true);
-		await expect(h1).toHaveCSS('text-transform', 'uppercase');
+		await expect(h1).toHaveCSS('text-transform', 'none');
 
 		await expect(page.locator('main')).toHaveCount(1);
 		await expect(page.locator('article')).toHaveCount(1);
@@ -1034,9 +1085,9 @@ test.describe('Human Margin semantics, controls and extraction', () => {
 				)!
 			).color
 		}));
-		expect(themeColours.coverDeck).toBe('rgb(18, 20, 18)');
-		expect(themeColours.paperBody).toBe('rgb(18, 20, 18)');
-		expect(themeColours.coalBody).toBe('rgb(243, 240, 231)');
+		expect(themeColours.coverDeck).toBe('rgb(36, 37, 34)');
+		expect(themeColours.paperBody).toBe('rgb(36, 37, 34)');
+		expect(themeColours.coalBody).toBe('rgb(228, 224, 215)');
 		const results = await new AxeBuilder({ page })
 			.include(folioSelector)
 			.withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'])
@@ -1046,7 +1097,7 @@ test.describe('Human Margin semantics, controls and extraction', () => {
 });
 
 test.describe('Human Margin images, fonts and runtime isolation', () => {
-	test('the ten body-art images have exact paths, authored alts, intrinsic dimensions and loading policy', async ({
+	test('the body-art images have exact paths, authored alts, intrinsic dimensions and loading policy', async ({
 		page,
 		request
 	}) => {
@@ -1183,7 +1234,7 @@ test.describe('Human Margin images, fonts and runtime isolation', () => {
 		});
 
 		const families = await loadedFontFamilies(page);
-		for (const family of ['Newsreader', 'Barlow Condensed', 'IBM Plex Mono']) {
+		for (const family of ['Source Serif 4 Variable', 'Roboto Variable']) {
 			expect(
 				families.some((candidate) =>
 					candidate.toLocaleLowerCase('en').includes(family.toLowerCase())
@@ -1206,22 +1257,20 @@ test.describe('Human Margin images, fonts and runtime isolation', () => {
 				rail: family('.thought-spread__rail span')
 			};
 		});
-		expect(typeRoles.cover).toContain('Newsreader');
-		expect(typeRoles.author).toContain('Newsreader');
-		expect(typeRoles.wordCloud).toContain('Barlow Condensed');
-		expect(typeRoles.module).toContain('Barlow Condensed');
-		expect(typeRoles.rail).toContain('IBM Plex Mono');
+		expect(typeRoles.cover).toContain('Source Serif 4 Variable');
+		expect(typeRoles.author).toContain('Source Serif 4 Variable');
+		expect(typeRoles.wordCloud).toContain('Roboto Variable');
+		expect(typeRoles.module).toContain('Roboto Variable');
+		expect(typeRoles.rail).toContain('Roboto Variable');
 
 		const records = Array.from(
 			new Map((await Promise.all(fontResponses)).map((record) => [record.url, record])).values()
 		);
-		const humanRecords = records.filter((record) =>
-			humanFontPattern.test(decodeURIComponent(record.url))
+		const retiredHumanRecords = records.filter((record) =>
+			retiredHumanFontPattern.test(decodeURIComponent(record.url))
 		);
-		expect(
-			humanRecords.length,
-			humanRecords.map(({ url }) => url).join('\n')
-		).toBeGreaterThanOrEqual(3);
+		expect(retiredHumanRecords, 'retired dossier fonts must not load').toEqual([]);
+		expect(records.length, records.map(({ url }) => url).join('\n')).toBeGreaterThanOrEqual(2);
 		expect(records.length, records.map(({ url }) => url).join('\n')).toBeLessThanOrEqual(5);
 		for (const record of records) {
 			expect(record.status, record.url).toBe(200);
@@ -1438,19 +1487,19 @@ test.describe('Human Margin images, fonts and runtime isolation', () => {
 
 			const records = await Promise.all(fontResponses);
 			expect(
-				records.filter((record) => humanFontPattern.test(decodeURIComponent(record.url))),
+				records.filter((record) => humanOnlyFontPattern.test(decodeURIComponent(record.url))),
 				route
 			).toEqual([]);
 			const families = await loadedFontFamilies(page);
 			expect(
-				families.filter((family) => humanFontPattern.test(family)),
+				families.filter((family) => humanOnlyFontPattern.test(family)),
 				route
 			).toEqual([]);
 			const ordinaryPreloadHrefs = await page
 				.locator('link[rel="preload"][as="font"]')
 				.evaluateAll((links) => links.map((link) => (link as HTMLLinkElement).href));
 			const preloadLeak = ordinaryPreloadHrefs.filter((href) =>
-				humanFontPattern.test(decodeURIComponent(href))
+				humanOnlyFontPattern.test(decodeURIComponent(href))
 			);
 			expect(preloadLeak, route).toEqual([]);
 
@@ -1497,12 +1546,17 @@ test.describe('Human Margin images, fonts and runtime isolation', () => {
 		await expect(
 			page.locator('link[rel="stylesheet"][href*="healthcare-human-margin"]')
 		).toHaveCount(0);
-		await expect(page.locator('link[rel="preload"][href*="/fonts/human-margin/"]')).toHaveCount(0);
+		const ordinaryPreloadHrefs = await page
+			.locator('link[rel="preload"][as="font"]')
+			.evaluateAll((links) => links.map((link) => (link as HTMLLinkElement).href));
+		expect(
+			ordinaryPreloadHrefs.filter((href) => humanOnlyFontPattern.test(decodeURIComponent(href)))
+		).toEqual([]);
 		const ordinaryFamilies = await page
 			.locator('.article-shell h1, .article-shell .article-prose p')
 			.evaluateAll((elements) => elements.map((element) => getComputedStyle(element).fontFamily));
 		expect(ordinaryFamilies.length).toBeGreaterThan(1);
-		expect(ordinaryFamilies.join(' ')).not.toMatch(humanFontPattern);
+		expect(ordinaryFamilies.join(' ')).not.toMatch(humanOnlyFontPattern);
 	});
 
 	test('canonical prose remains usable when all web-font requests are blocked', async ({
@@ -1891,7 +1945,7 @@ test.describe('Human Margin alternate media and evidence', () => {
 		await page.getByRole('button', { name: 'Print', exact: true }).click();
 		await expect
 			.poll(() =>
-				page.evaluate(() => {
+				page.evaluate((expectedImageCount) => {
 					type PrintAuditWindow = Window & { __humanMarginPrintInvoked?: boolean };
 					const images = Array.from(
 						document.querySelectorAll<HTMLImageElement>(
@@ -1900,10 +1954,10 @@ test.describe('Human Margin alternate media and evidence', () => {
 					);
 					return (
 						(window as PrintAuditWindow).__humanMarginPrintInvoked === true &&
-						images.length === 10 &&
+						images.length === expectedImageCount &&
 						images.every((image) => image.complete && image.naturalWidth > 0)
 					);
-				})
+				}, bodyArt.length)
 			)
 			.toBe(true);
 		await page.emulateMedia({ media: 'print', reducedMotion: 'reduce' });

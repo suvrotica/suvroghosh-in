@@ -1,6 +1,7 @@
 <script lang="ts">
 	import 'katex/dist/katex.min.css';
 	import courierPrimeLatinUrl from '@fontsource/courier-prime/files/courier-prime-latin-400-normal.woff2?url';
+	import humanMarginSourceSerifLatinUrl from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url';
 	import { resolve } from '$app/paths';
 	import SEO from '$lib/components/seo/SEO.svelte';
 	import ScrollReveal from '$lib/components/animation/ScrollReveal.svelte';
@@ -40,19 +41,18 @@
 </script>
 
 <svelte:head>
-	{#if data.metadata.rawThoughtLayout !== 'healthcare-human-margin' && !(data.metadata.categorySlug === 'visualizations' && data.slug === 'the-profile-that-knows-almost-nothing-about-you')}
+	{#if data.metadata.rawThoughtLayout === 'healthcare-human-margin'}
 		<link
 			rel="preload"
-			href={courierPrimeLatinUrl}
+			href={humanMarginSourceSerifLatinUrl}
 			as="font"
 			type="font/woff2"
 			crossorigin="anonymous"
 		/>
-	{/if}
-	{#if data.metadata.rawThoughtLayout === 'healthcare-human-margin'}
+	{:else if !(data.metadata.categorySlug === 'visualizations' && data.slug === 'the-profile-that-knows-almost-nothing-about-you')}
 		<link
 			rel="preload"
-			href="/fonts/human-margin/barlow-condensed-latin-600-normal.woff2"
+			href={courierPrimeLatinUrl}
 			as="font"
 			type="font/woff2"
 			crossorigin="anonymous"
