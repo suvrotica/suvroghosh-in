@@ -11892,6 +11892,96 @@
 				"Survival"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/bipolar-hope-and-the-coming-chorus-of-pretensions.md": {
+			"bodyHash": "f291166b4ff1a3f3f6d3f793678224bdae343a30d50440a8839779af15807004",
+			"hashVersion": 2,
+			"revisionHash": "61ee20c10df6ed87cbc6e0973d1d0bb95821359bd1d54b8fab44ec63f1a9f3b2",
+			"generatedTags": [
+				"Mental Health",
+				"Bipolar Disorder",
+				"AI Displacement",
+				"Economic Anxiety",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Middle Class Crisis",
+				"Future of Work",
+				"Hope"
+			],
+			"pinnedTags": [
+				"Mental Health",
+				"Bipolar Disorder",
+				"AI Displacement",
+				"Economic Anxiety",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Middle Class Crisis",
+				"Future of Work",
+				"Hope"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-monopoly-of-the-powerful.md": {
+			"bodyHash": "8ed86197983bf96920b53d150280d5b136cbf579cd55a45c8abd3acd20637ac3",
+			"hashVersion": 2,
+			"revisionHash": "6697a7072269e5abf8a8b87427498e801fc9bcbca5c36732c482a0026b235c14",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Inequality",
+				"Class",
+				"Poverty",
+				"Economics",
+				"Satire",
+				"Social Commentary",
+				"Bengal"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Inequality",
+				"Class",
+				"Poverty",
+				"Economics",
+				"Satire",
+				"Social Commentary",
+				"Bengal"
+			],
+			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/umbra-and-penumbra-of-the-mind.md": {
+			"bodyHash": "26522adf789fa7d2b53d6826a381009044b991adbe090e89fa4d30ee504306e0",
+			"hashVersion": 2,
+			"revisionHash": "f9e11047262465a6dfb663a1ce09b46d0e2f6fde2d064cae01689fe3075823f5",
+			"generatedTags": [
+				"Mental Health",
+				"Depression",
+				"Bipolar",
+				"Shadow",
+				"Umbra",
+				"Penumbra",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Astronomy"
+			],
+			"pinnedTags": [
+				"Mental Health",
+				"Depression",
+				"Bipolar",
+				"Shadow",
+				"Umbra",
+				"Penumbra",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Astronomy"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

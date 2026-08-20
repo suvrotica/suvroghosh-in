@@ -8061,6 +8061,22 @@
       "sourceHash": "a0e58eeebcaf3f325f0237b576f22a4818410909b012940f2d1f1d6608d6cea1",
       "width": 1654
     },
+    "static/images/bipolar-hope-and-the-coming-chorus-of-pretensions.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 901,
+      "outputBytes": 168824,
+      "outputHash": "460fcecb74141c0316ebde6161e6a530068c93c6f39e74323b442776c5bb019d",
+      "psnrDb": 45.99,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 244862,
+      "sourceHash": "b2b0c7047713fc59921f2b0bef9f1bfe82d81d37f4a94c57973f83930ce7ef19",
+      "width": 901
+    },
     "static/images/brownian-motion-laboratory.png": {
       "format": "PNG",
       "height": 941,
@@ -9506,6 +9522,22 @@
       "sourceHash": "9d989444aa839a2ab739547f192072aed90ab5a135f853a760390fcfd63b1559",
       "width": 1280
     },
+    "static/images/the-monopoly-of-the-powerful.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 884,
+      "outputBytes": 236229,
+      "outputHash": "4b2240687bedaa0ddff9f67cbe855d9e633a9c5f1b8fb72ee50ea334c3de1349",
+      "psnrDb": 42.55,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 343195,
+      "sourceHash": "002098c288ccc6887d9fc3e2fb3376457ec939a6fd42d13c501ea5d5456e03e4",
+      "width": 884
+    },
     "static/images/the-museum-of-invisible-weather.png": {
       "format": "PNG",
       "height": 900,
@@ -9790,6 +9822,22 @@
       "sourceBytes": 196912,
       "sourceHash": "7274dab2f0df99708288d87ea79efcf6fcfd9c5d3662ae8b295e6f984d638157",
       "width": 1280
+    },
+    "static/images/umbra-and-penumbra-of-the-mind.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 897,
+      "outputBytes": 264504,
+      "outputHash": "2599d7e0d62241b6d6eee57c21527d73f837b9e20b0fed6fbbfed15395480edf",
+      "psnrDb": 41.94,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 381998,
+      "sourceHash": "2aeace69822b19ceb04273f06dda630f968da2c5b3a94fe7f3289e4b65cc030d",
+      "width": 897
     },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",

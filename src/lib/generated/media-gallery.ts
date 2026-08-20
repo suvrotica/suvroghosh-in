@@ -41,6 +41,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1040
 		},
 		{
+			"name": "bipolar-hope-and-the-coming-chorus-of-pretensions.jpg",
+			"src": "/images/bipolar-hope-and-the-coming-chorus-of-pretensions.jpg",
+			"bytes": 168824,
+			"width": 901,
+			"height": 1280
+		},
+		{
 			"name": "brownian-motion-laboratory.png",
 			"src": "/images/brownian-motion-laboratory.png",
 			"bytes": 555926,
@@ -4185,6 +4192,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "the-monopoly-of-the-powerful.jpg",
+			"src": "/images/the-monopoly-of-the-powerful.jpg",
+			"bytes": 236229,
+			"width": 884,
+			"height": 1280
+		},
+		{
 			"name": "the-museum-of-invisible-weather.png",
 			"src": "/images/the-museum-of-invisible-weather.png",
 			"bytes": 87778,
@@ -4309,6 +4323,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 196912,
 			"width": 1280,
 			"height": 895
+		},
+		{
+			"name": "umbra-and-penumbra-of-the-mind.jpg",
+			"src": "/images/umbra-and-penumbra-of-the-mind.jpg",
+			"bytes": 264504,
+			"width": 897,
+			"height": 1280
 		},
 		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
