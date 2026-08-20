@@ -11982,6 +11982,36 @@
 				"Astronomy"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/llm_hype_gaslighting.md": {
+			"bodyHash": "667801ef576910ef778144768e88819623252bab93d06ecdeb88d12b602f3e73",
+			"hashVersion": 2,
+			"revisionHash": "b3a43510b88ecea0de5e77081fdff9cc780be0848b518a54cf3adac0fdada20e",
+			"generatedTags": [
+				"AI",
+				"LLM",
+				"Hype",
+				"Social Media",
+				"Influencers",
+				"Technology",
+				"Economy",
+				"Mental Health",
+				"Calcutta",
+				"Satire"
+			],
+			"pinnedTags": [
+				"AI",
+				"LLM",
+				"Hype",
+				"Social Media",
+				"Influencers",
+				"Technology",
+				"Economy",
+				"Mental Health",
+				"Calcutta",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

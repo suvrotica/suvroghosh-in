@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T09:37:57.013995+00:00",
+  "generatedAt": "2026-08-20T14:10:06.501264+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5357,6 +5357,29 @@
         "Jobs",
         "Performs",
         "Job"
+      ],
+      "wordCount": 130
+    },
+    "llm_hype_gaslighting": {
+      "generatedAt": "2026-08-20T14:09:57.025339+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/llm_hype_gaslighting.svg",
+      "source": "src/lib/posts/llm_hype_gaslighting.md",
+      "sourceHash": "cc8dc4bba0e8eba5c869368575a6335fa7ea34628d388b0ebf05ad2679763217",
+      "sourceModified": "2026-08-20T13:58:05.006770+00:00",
+      "topWords": [
+        "Model",
+        "World",
+        "Every",
+        "Influencers",
+        "Human",
+        "Software",
+        "Stop",
+        "Maya",
+        "Read",
+        "Absolutely",
+        "Version",
+        "Actually"
       ],
       "wordCount": 130
     },

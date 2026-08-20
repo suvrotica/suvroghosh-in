@@ -3905,6 +3905,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "llm-hype-gaslighting.jpg",
+			"src": "/images/llm-hype-gaslighting.jpg",
+			"bytes": 254014,
+			"width": 896,
+			"height": 1280
+		},
+		{
 			"name": "monsoon-monotony-malignant-prostate-providence.jpg",
 			"src": "/images/monsoon-monotony-malignant-prostate-providence.jpg",
 			"bytes": 387552,

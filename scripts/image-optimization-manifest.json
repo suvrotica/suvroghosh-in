@@ -8889,6 +8889,22 @@
       "sourceHash": "a86b5feca04fa3be7a4e8a7e330ea9c1f06e1e83fcef936e0d4ea6b9a7764d0f",
       "width": 1600
     },
+    "static/images/llm-hype-gaslighting.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 896,
+      "outputBytes": 254014,
+      "outputHash": "20128349da16654910f8bf9667debd00ae98055f83cc514f3bb20374ae68eb16",
+      "psnrDb": 43.64,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 254014,
+      "sourceHash": "20128349da16654910f8bf9667debd00ae98055f83cc514f3bb20374ae68eb16",
+      "width": 896
+    },
     "static/images/monsoon-monotony-malignant-prostate-providence.jpg": {
       "format": "JPEG",
       "height": 1440,
