@@ -9459,6 +9459,22 @@
       "sourceHash": "1bdfc09bd6c926bba9941ae43d1fee98cbedfd2822fb564d31ded057a100c840",
       "width": 1200
     },
+    "static/images/the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg": {
+      "format": "JPEG",
+      "height": 1280,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1280,
+      "originalWidth": 780,
+      "outputBytes": 293843,
+      "outputHash": "c4b450778683cb9a885534636c87149cffa1f0afe3dd742414586e4f2f8bbaab",
+      "psnrDb": 40.37,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 301768,
+      "sourceHash": "309f36efa41ebb7ef0b2e28a18c3d500bfdd73115412dba38a484dcca543d9a7",
+      "width": 780
+    },
     "static/images/the-chitin-engine-xenobiological-foundry.png": {
       "format": "PNG",
       "height": 630,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T14:10:06.501264+00:00",
+  "generatedAt": "2026-08-20T17:03:11.989153+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8531,6 +8531,29 @@
         "Help",
         "Becomes",
         "Man"
+      ],
+      "wordCount": 130
+    },
+    "the-akathisiac-anxiety-of-a-camouflaged-nobody": {
+      "generatedAt": "2026-08-20T17:03:11.068512+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-akathisiac-anxiety-of-a-camouflaged-nobody.svg",
+      "source": "src/lib/posts/the-akathisiac-anxiety-of-a-camouflaged-nobody.md",
+      "sourceHash": "d7cc76af29d959a345c15bc68450cb1b0f490ff252439831e5bf448ba68bc9ea",
+      "sourceModified": "2026-08-20T16:24:54.689730+00:00",
+      "topWords": [
+        "Void",
+        "Think",
+        "India",
+        "Sit",
+        "Humor",
+        "Keeps",
+        "Akathisiac",
+        "Capital",
+        "Scream",
+        "Sitting",
+        "Depression",
+        "Anxiety"
       ],
       "wordCount": 130
     },

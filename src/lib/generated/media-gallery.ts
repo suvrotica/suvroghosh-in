@@ -4164,6 +4164,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg",
+			"src": "/images/the-akathisiac-anxiety-of-a-camouflaged-nobody.jpg",
+			"bytes": 293843,
+			"width": 780,
+			"height": 1280
+		},
+		{
 			"name": "the-chitin-engine-xenobiological-foundry.png",
 			"src": "/images/the-chitin-engine-xenobiological-foundry.png",
 			"bytes": 93251,

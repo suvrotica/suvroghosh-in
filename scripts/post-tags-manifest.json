@@ -12012,6 +12012,36 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-akathisiac-anxiety-of-a-camouflaged-nobody.md": {
+			"bodyHash": "64ca56b8ccc38bbb483d728de1bd8e4de887d122afc9dcd546f744c581c9dd9f",
+			"hashVersion": 2,
+			"revisionHash": "2da11ba4c595655cee46e1d4f13abde5d3889bf26e54c4c8b3e489735f04b88b",
+			"generatedTags": [
+				"Akathisia",
+				"Anxiety",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Depression",
+				"India",
+				"Industrial Revolution",
+				"Jingoism",
+				"Mental Health",
+				"Technology"
+			],
+			"pinnedTags": [
+				"Akathisia",
+				"Anxiety",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Depression",
+				"India",
+				"Industrial Revolution",
+				"Jingoism",
+				"Mental Health",
+				"Technology"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
