@@ -9538,6 +9538,22 @@
       "sourceHash": "57509835ffb5ee7d075713811972b853635006e7720cc7b5b0f5247156183291",
       "width": 896
     },
+    "static/images/the-foam-at-the-corner.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1024,
+      "outputBytes": 418312,
+      "outputHash": "c8ffe9fcc9009d7e3331bb250b17514aa53ccf21265f2fa86bab3d5886d0d05d",
+      "psnrDb": 36.63,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 479515,
+      "sourceHash": "0c567bc9e87dbd278363d857675b3df11cfbe33d727cb8b66339578d7fec8fc1",
+      "width": 1024
+    },
     "static/images/the-great-meme-reset-and-my-colon.jpg": {
       "format": "JPEG",
       "height": 895,

@@ -4199,6 +4199,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "the-foam-at-the-corner.jpg",
+			"src": "/images/the-foam-at-the-corner.jpg",
+			"bytes": 418312,
+			"width": 1024,
+			"height": 1536
+		},
+		{
 			"name": "the-great-meme-reset-and-my-colon.jpg",
 			"src": "/images/the-great-meme-reset-and-my-colon.jpg",
 			"bytes": 210581,

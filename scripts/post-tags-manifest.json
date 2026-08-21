@@ -12042,6 +12042,36 @@
 				"Technology"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-foam-at-the-corner.md": {
+			"bodyHash": "4a8ac5733f46f19e704c4bbf642103d7000dd0d6f1ea56b6ec1c139540c00102",
+			"hashVersion": 2,
+			"revisionHash": "a1dfa514a28fe14f367b27f31dd970d4997e246767592423e78cebbdecbc1789",
+			"generatedTags": [
+				"LLM",
+				"Artificial Intelligence",
+				"Mental Health",
+				"Burnout",
+				"K-Shaped Economy",
+				"Techno Feudalism",
+				"Future of Work",
+				"Automation Anxiety",
+				"Gini Index",
+				"Calcutta"
+			],
+			"pinnedTags": [
+				"LLM",
+				"Artificial Intelligence",
+				"Mental Health",
+				"Burnout",
+				"K-Shaped Economy",
+				"Techno Feudalism",
+				"Future of Work",
+				"Automation Anxiety",
+				"Gini Index",
+				"Calcutta"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

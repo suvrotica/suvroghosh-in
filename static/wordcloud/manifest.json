@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T17:03:11.989153+00:00",
+  "generatedAt": "2026-08-21T14:34:28.492716+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9865,6 +9865,29 @@
         "Memory",
         "Every",
         "Algorithm"
+      ],
+      "wordCount": 130
+    },
+    "the-foam-at-the-corner": {
+      "generatedAt": "2026-08-21T14:34:28.326609+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-foam-at-the-corner.svg",
+      "source": "src/lib/posts/the-foam-at-the-corner.md",
+      "sourceHash": "04bf98e887f2e45154d78decacdedd4c71fd0169da311a76b9ffdfb56683aa9c",
+      "sourceModified": "2026-08-21T14:32:23.334571+00:00",
+      "topWords": [
+        "Future",
+        "Now",
+        "Foam",
+        "Work",
+        "Human",
+        "Trickle",
+        "Longer",
+        "Bullshit",
+        "Already",
+        "Economy",
+        "Becomes",
+        "Plague"
       ],
       "wordCount": 130
     },
