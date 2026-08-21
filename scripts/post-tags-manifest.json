@@ -12072,6 +12072,37 @@
 				"Calcutta"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ludo-and-saap-ludo.md": {
+			"bodyHash": "58896d7cd5abddf11db479fba6f8b8a4e8306967400efa43061687190f35e135",
+			"hashVersion": 2,
+			"revisionHash": "092779a9b32237b5ca01557380aeb45d32d78e470321dfafa02d5bb6807b52ce",
+			"generatedTags": [
+				"Games",
+				"Ludo",
+				"Snakes and Ladders",
+				"Saap Ludo",
+				"Bengali Games",
+				"Board Games",
+				"Calcutta",
+				"Kolkata",
+				"Nostalgia",
+				"Interactive"
+			],
+			"pinnedTags": [
+				"Games",
+				"Ludo",
+				"Snakes and Ladders",
+				"Saap Ludo",
+				"Bengali Games",
+				"Board Games",
+				"Calcutta",
+				"Kolkata",
+				"Nostalgia",
+				"Interactive"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-21"
 		}
 	},
 	"maxTags": 10

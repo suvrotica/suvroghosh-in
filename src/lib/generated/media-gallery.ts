@@ -3429,6 +3429,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "games/ludo-and-saap-ludo-cover.svg",
+			"src": "/images/games/ludo-and-saap-ludo-cover.svg",
+			"bytes": 5982,
+			"width": 1200,
+			"height": 800
+		},
+		{
+			"name": "games/ludo-and-saap-ludo-social.png",
+			"src": "/images/games/ludo-and-saap-ludo-social.png",
+			"bytes": 29578,
+			"width": 1200,
+			"height": 800
+		},
+		{
 			"name": "gradient-descent-landscapes.png",
 			"src": "/images/gradient-descent-landscapes.png",
 			"bytes": 430729,

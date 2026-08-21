@@ -8828,6 +8828,33 @@
       "sourceHash": "d018d944457164a556a2b276dd5d8e416127ff69368e31a641e3f801ab83ac79",
       "width": 1200
     },
+    "static/images/games/ludo-and-saap-ludo-cover.svg": {
+      "format": "SVG",
+      "height": 800,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "outputBytes": 5982,
+      "outputHash": "7fed53d7936be620ae4bddf25cd7837a5b240012bc26775e4aaa0095c5facdf5",
+      "reason": "vector source retained",
+      "sourceBytes": 5982,
+      "sourceHash": "7fed53d7936be620ae4bddf25cd7837a5b240012bc26775e4aaa0095c5facdf5",
+      "width": 1200
+    },
+    "static/images/games/ludo-and-saap-ludo-social.png": {
+      "format": "PNG",
+      "height": 800,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 800,
+      "originalWidth": 1200,
+      "outputBytes": 29578,
+      "outputHash": "868b631dad12c7a9ebab6a5346daa6cc62539ee399a086f10bbc98fe8ff03044",
+      "resized": false,
+      "sourceBytes": 29578,
+      "sourceHash": "868b631dad12c7a9ebab6a5346daa6cc62539ee399a086f10bbc98fe8ff03044",
+      "width": 1200
+    },
     "static/images/gradient-descent-landscapes.png": {
       "format": "PNG",
       "height": 630,
