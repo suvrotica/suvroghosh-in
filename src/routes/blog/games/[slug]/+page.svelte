@@ -4,8 +4,13 @@
 	import CalcuttaFootpathGame from '$lib/components/games/calcutta-footpath/CalcuttaFootpathGame.svelte';
 	import KagojerDanaShell from '$lib/components/games/kagojer-dana/KagojerDanaShell.svelte';
 	import CrosswordGame from '$lib/components/games/crossword/CrosswordGame.svelte';
+	import PeriodBoardGames from '$lib/components/games/period-board-games/PeriodBoardGames.svelte';
 	import { healthcareItPack } from '$lib/games/crossword/content/packs/healthcare-it';
-	import { HEALTHCARE_IT_CROSSWORD_SLUG, KAGOJER_DANA_SLUG } from '$lib/games/catalog';
+	import {
+		HEALTHCARE_IT_CROSSWORD_SLUG,
+		KAGOJER_DANA_SLUG,
+		LUDO_SAAP_LUDO_SLUG
+	} from '$lib/games/catalog';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -13,7 +18,9 @@
 
 <SEO {...data.seo} />
 
-{#if data.game.slug === KAGOJER_DANA_SLUG}
+{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+	<PeriodBoardGames game={data.game} />
+{:else if data.game.slug === KAGOJER_DANA_SLUG}
 	<KagojerDanaShell game={data.game} />
 {:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
 	<CrosswordGame game={data.game} pack={healthcareItPack} />
@@ -49,7 +56,20 @@
 				>
 					About the game
 				</p>
-				{#if data.game.slug === KAGOJER_DANA_SLUG}
+				{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
+						A folding board, turned over without losing the afternoon.
+					</h2>
+					<p class="mt-5 text-left text-lg leading-relaxed">
+						Play a complete Ludo or Saap-Ludo match against one to three local computer opponents.
+						Each face keeps its own match, seeded die and move history in this browser.
+					</p>
+					<p class="mt-4 text-left leading-relaxed">
+						This is an original representative “Calcutta family preset”, informed by household
+						practice but not presented as one universal regional rulebook or a reproduction of any
+						manufacturer’s board.
+					</p>
+				{:else if data.game.slug === KAGOJER_DANA_SLUG}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						You do not command the wind. You borrow it.
 					</h2>
@@ -96,14 +116,25 @@
 
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
 				<h2 class="m-0 text-lg font-black">
-					{data.game.slug === KAGOJER_DANA_SLUG
-						? 'How to fly'
-						: data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG
-							? 'How to solve'
-							: 'How to walk'}
+					{data.game.slug === LUDO_SAAP_LUDO_SLUG
+						? 'How to play'
+						: data.game.slug === KAGOJER_DANA_SLUG
+							? 'How to fly'
+							: data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG
+								? 'How to solve'
+								: 'How to walk'}
 				</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
-					{#if data.game.slug === KAGOJER_DANA_SLUG}
+					{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+						<li><strong>Choose a board face</strong> with the two cardboard tabs.</li>
+						<li><strong>Roll the die yourself</strong> on every human throw.</li>
+						<li>
+							<strong>Choose a highlighted Ludo token</strong> on the board or with a full-size move button.
+						</li>
+						<li>
+							<strong>New game</strong> replaces only the active face; the other saved match remains untouched.
+						</li>
+					{:else if data.game.slug === KAGOJER_DANA_SLUG}
 						<li><strong>W / ↑</strong> raises the nose and spends speed.</li>
 						<li><strong>S / ↓</strong> lowers the nose and gathers speed.</li>
 						<li><strong>A / D or ← / →</strong> banks into a turn.</li>
@@ -135,7 +166,39 @@
 		</div>
 
 		<div class="mt-12 grid gap-5 sm:grid-cols-2">
-			{#if data.game.slug === KAGOJER_DANA_SLUG}
+			{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">The preset</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						The default Ludo table uses safe starts and rosettes, blockades, exact home, a third-six
+						discard, and single capture or home bonuses. Saap-Ludo needs one to enter, uses one
+						transport per landing, grants a throw after six, and requires exact 100.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Fair local opponents</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Mithu, Babai, Tukai, Rini, Piku or Bulti are plainly labelled computer players. They
+						share the human’s seeded unbiased die, see no future rolls, and choose only from the
+						current legal moves.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Access and pace</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Keyboard tabs, labelled dice, large legal-move buttons, concise live narration, visible
+						logs and patterned tokens make the games playable without interpreting colour or tiny
+						squares. Reduced motion settles movement without changing a result.
+					</p>
+				</section>
+				<section class="rounded-xl border border-amber-950/15 p-5">
+					<h2 class="m-0 text-xl font-black">Private and durable</h2>
+					<p class="mt-3 text-left text-sm leading-relaxed">
+						Both logical matches and the serializable random state stay in local storage. No login,
+						server, API, multiplayer service, ranking, advertising or game telemetry is involved.
+					</p>
+				</section>
+			{:else if data.game.slug === KAGOJER_DANA_SLUG}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">Read the wind</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -255,7 +318,14 @@
 	</div>
 </section>
 
-{#if data.game.slug === KAGOJER_DANA_SLUG}
+{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+	<noscript>
+		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
+			JavaScript is required to roll the die and run the local computer opponents. The game’s rules,
+			privacy explanation and historical boundaries remain available below.
+		</div>
+	</noscript>
+{:else if data.game.slug === KAGOJER_DANA_SLUG}
 	<noscript>
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required for the live paper-plane flight. The poster, controls and article

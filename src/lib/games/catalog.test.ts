@@ -2,7 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
-import { HEALTHCARE_IT_CROSSWORD_SLUG, gameBySlug, gamesCatalog } from './catalog';
+import {
+	HEALTHCARE_IT_CROSSWORD_SLUG,
+	LUDO_SAAP_LUDO_SLUG,
+	gameBySlug,
+	gamesCatalog
+} from './catalog';
 
 function frontmatterFor(slug: string): Record<string, unknown> {
 	const filename = path.join(process.cwd(), 'src', 'lib', 'posts', `${slug}.md`);
@@ -64,7 +69,16 @@ describe('games catalog integration', () => {
 			shell: 'site'
 		});
 
-		const existingGames = gamesCatalog.filter((game) => game.slug !== HEALTHCARE_IT_CROSSWORD_SLUG);
+		const boardGame = gameBySlug(LUDO_SAAP_LUDO_SLUG);
+		expect(boardGame).toMatchObject({
+			slug: 'ludo-and-saap-ludo',
+			title: 'Ludo & Saap-Ludo',
+			shell: 'site'
+		});
+
+		const existingGames = gamesCatalog.filter(
+			(game) => ![HEALTHCARE_IT_CROSSWORD_SLUG, LUDO_SAAP_LUDO_SLUG].includes(game.slug)
+		);
 		expect(existingGames.every((game) => game.shell === 'immersive')).toBe(true);
 	});
 });

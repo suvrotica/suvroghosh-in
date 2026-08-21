@@ -6,7 +6,7 @@ group: 'Calcutta and culture'
 description: >-
   Streets, transport, food, weather, work, class, memory, civic absurdity, and one impossible footpath: a guided route through Calcutta as people actually negotiate it.
 date: '2026-07-26'
-dateModified: '2026-08-10'
+dateModified: '2026-08-21'
 primaryTag: 'calcutta'
 sourceTags:
   - 'calcutta'
@@ -30,6 +30,7 @@ includePaths:
   - '/blog/calcutta/the-zeitgeist-of-calcutta-has-changed'
   - '/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan'
   - '/blog/games/kagojer-dana-a-paper-plane-through-calcutta'
+  - '/blog/games/ludo-and-saap-ludo'
 excludePaths: []
 bestStartingArticle: '/blog/personal/schooling-in-calcutta'
 startHereReason: >-
@@ -60,6 +61,7 @@ readingPaths:
 relatedResources:
   visualizations: []
   games:
+    - '/blog/games/ludo-and-saap-ludo'
     - '/blog/games/kagojer-dana-a-paper-plane-through-calcutta'
     - '/blog/games/calcutta-footpath-simulator-ekdom-side-diye-jaan'
   other: []

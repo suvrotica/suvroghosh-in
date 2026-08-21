@@ -1,6 +1,7 @@
 export const CALCUTTA_FOOTPATH_SLUG = 'calcutta-footpath-simulator-ekdom-side-diye-jaan';
 export const KAGOJER_DANA_SLUG = 'kagojer-dana-a-paper-plane-through-calcutta';
 export const HEALTHCARE_IT_CROSSWORD_SLUG = 'healthcare-it-crossword-systems-rounds';
+export const LUDO_SAAP_LUDO_SLUG = 'ludo-and-saap-ludo';
 
 export type GameCatalogEntry = {
 	slug: string;
@@ -23,6 +24,33 @@ export type GameCatalogEntry = {
 };
 
 export const gamesCatalog: readonly GameCatalogEntry[] = [
+	{
+		slug: LUDO_SAAP_LUDO_SLUG,
+		title: 'Ludo & Saap-Ludo',
+		shortTitle: 'Ludo & Saap-Ludo',
+		description: 'A cheap folding board, one die, and three opponents with all afternoon to play.',
+		kind: 'Traditional board games',
+		cardEyebrow: 'Two cardboard faces, one patient afternoon',
+		actionLabel: 'Open the board',
+		cover: '/images/games/ludo-and-saap-ludo-cover.svg',
+		socialCover: '/images/games/ludo-and-saap-ludo-social.png',
+		coverAlt:
+			'An original worn-paper folding board showing a square Ludo face beside a numbered snakes and ladders face',
+		inputs: ['Keyboard', 'Touch', 'Screen reader controls'],
+		duration: '20–90+ minutes',
+		durationLabel: 'One match',
+		compatibility: ['Desktop', 'Mobile', 'Tablet'],
+		keywords: [
+			'Ludo',
+			'Snakes and Ladders',
+			'Saap Ludo',
+			'Bengali board games',
+			'Calcutta game',
+			'Kolkata nostalgia'
+		],
+		shell: 'site',
+		status: 'New'
+	},
 	{
 		slug: HEALTHCARE_IT_CROSSWORD_SLUG,
 		title: 'The Healthcare IT Crossword: Systems Rounds',

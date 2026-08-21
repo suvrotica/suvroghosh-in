@@ -18,6 +18,8 @@
 		"kagojer-dana:test": "vitest run src/lib/games/kagojer-dana",
 		"kagojer-dana:browser:test": "playwright test --config=playwright.kagojer-dana.config.ts",
 		"kagojer-dana:assets": "node scripts/render-kagojer-dana-assets.mjs",
+		"period-board-games:test": "vitest run src/lib/games/period-board-games",
+		"period-board-games:browser:test": "playwright test --config=playwright.period-board-games.config.ts",
 		"tags:generate": "node scripts/generate-post-tags.mjs",
 		"tags:test": "node --test scripts/generate-post-tags.test.mjs",
 		"bengali:test": "node --test scripts/rehype-bengali-lang.test.mjs",
