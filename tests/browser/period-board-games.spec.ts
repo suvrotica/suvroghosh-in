@@ -238,6 +238,10 @@ test('SSR and no-JavaScript output expose exactly two useful game tabs and the f
 	const serverHtml = await response.text();
 	expect(serverHtml.match(/role="tab"/gu)).toHaveLength(2);
 	expect(serverHtml).toMatch(/JavaScript is required to roll the die/iu);
+	expect(serverHtml).toMatch(/A folding board, turned over without losing the afternoon/iu);
+	expect(serverHtml).not.toMatch(
+		/How to walk|One ordinary walk|visible road|street simulation|Calcutta Footpath Simulator/iu
+	);
 
 	const context = await browser.newContext({ baseURL, javaScriptEnabled: false });
 	const page = await context.newPage();
@@ -249,6 +253,16 @@ test('SSR and no-JavaScript output expose exactly two useful game tabs and the f
 		await expect(page.getByRole('tab')).toHaveCount(2);
 		await expect(page.getByTestId('ludo-board')).toBeVisible();
 		await expect(page.getByText(/JavaScript is required to roll the die/iu)).toBeVisible();
+		await expect(
+			page.getByRole('heading', {
+				name: 'A folding board, turned over without losing the afternoon.',
+				exact: true
+			})
+		).toBeVisible();
+		await expect(page.getByRole('heading', { name: 'How to play', exact: true })).toBeVisible();
+		expect(await page.locator('body').innerText()).not.toMatch(
+			/How to walk|One ordinary walk|visible road|street simulation|Calcutta Footpath Simulator/iu
+		);
 	} finally {
 		await context.close();
 	}

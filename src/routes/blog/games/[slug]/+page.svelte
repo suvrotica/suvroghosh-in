@@ -6,25 +6,28 @@
 	import CrosswordGame from '$lib/components/games/crossword/CrosswordGame.svelte';
 	import PeriodBoardGames from '$lib/components/games/period-board-games/PeriodBoardGames.svelte';
 	import { healthcareItPack } from '$lib/games/crossword/content/packs/healthcare-it';
-	import {
-		HEALTHCARE_IT_CROSSWORD_SLUG,
-		KAGOJER_DANA_SLUG,
-		LUDO_SAAP_LUDO_SLUG
-	} from '$lib/games/catalog';
+	import type { GameExperience } from '$lib/games/catalog';
 	import type { PageData } from './$types';
+
+	const instructionHeading = {
+		'period-board-games': 'How to play',
+		'healthcare-it-crossword': 'How to solve',
+		'kagojer-dana': 'How to fly',
+		'calcutta-footpath': 'How to walk'
+	} satisfies Record<GameExperience, string>;
 
 	let { data }: { data: PageData } = $props();
 </script>
 
 <SEO {...data.seo} />
 
-{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+{#if data.game.experience === 'period-board-games'}
 	<PeriodBoardGames game={data.game} />
-{:else if data.game.slug === KAGOJER_DANA_SLUG}
+{:else if data.game.experience === 'kagojer-dana'}
 	<KagojerDanaShell game={data.game} />
-{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+{:else if data.game.experience === 'healthcare-it-crossword'}
 	<CrosswordGame game={data.game} pack={healthcareItPack} />
-{:else}
+{:else if data.game.experience === 'calcutta-footpath'}
 	<CalcuttaFootpathGame game={data.game} />
 {/if}
 
@@ -56,7 +59,7 @@
 				>
 					About the game
 				</p>
-				{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+				{#if data.game.experience === 'period-board-games'}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						A folding board, turned over without losing the afternoon.
 					</h2>
@@ -69,7 +72,7 @@
 						practice but not presented as one universal regional rulebook or a reproduction of any
 						manufacturer’s board.
 					</p>
-				{:else if data.game.slug === KAGOJER_DANA_SLUG}
+				{:else if data.game.experience === 'kagojer-dana'}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						You do not command the wind. You borrow it.
 					</h2>
@@ -82,7 +85,7 @@
 						place keeps its local character even when the next district could never occupy the next
 						street in ordinary geography.
 					</p>
-				{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+				{:else if data.game.experience === 'healthcare-it-crossword'}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						Forgetting is expected. The crossings help it come back.
 					</h2>
@@ -96,7 +99,7 @@
 						concise Aha cards; concepts solved with substantial help return in later Review Rounds.
 						Every public grid is prevalidated—there is no runtime clue or puzzle generation.
 					</p>
-				{:else}
+				{:else if data.game.experience === 'calcutta-footpath'}
 					<h2 id="about-game-heading" class="m-0 text-3xl leading-tight font-black sm:text-4xl">
 						One ordinary walk. No correct side.
 					</h2>
@@ -115,17 +118,9 @@
 			</div>
 
 			<aside class="rounded-2xl border border-amber-950/15 bg-white/55 p-5 dark:bg-white/5">
-				<h2 class="m-0 text-lg font-black">
-					{data.game.slug === LUDO_SAAP_LUDO_SLUG
-						? 'How to play'
-						: data.game.slug === KAGOJER_DANA_SLUG
-							? 'How to fly'
-							: data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG
-								? 'How to solve'
-								: 'How to walk'}
-				</h2>
+				<h2 class="m-0 text-lg font-black">{instructionHeading[data.game.experience]}</h2>
 				<ul class="mt-4 space-y-3 text-sm leading-relaxed">
-					{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+					{#if data.game.experience === 'period-board-games'}
 						<li><strong>Choose a board face</strong> with the two cardboard tabs.</li>
 						<li><strong>Roll the die yourself</strong> on every human throw.</li>
 						<li>
@@ -134,7 +129,7 @@
 						<li>
 							<strong>New game</strong> replaces only the active face; the other saved match remains untouched.
 						</li>
-					{:else if data.game.slug === KAGOJER_DANA_SLUG}
+					{:else if data.game.experience === 'kagojer-dana'}
 						<li><strong>W / ↑</strong> raises the nose and spends speed.</li>
 						<li><strong>S / ↓</strong> lowers the nose and gathers speed.</li>
 						<li><strong>A / D or ← / →</strong> banks into a turn.</li>
@@ -142,7 +137,7 @@
 							<strong>Escape</strong> pauses and releases control; <strong>R</strong> asks for another
 							throw.
 						</li>
-					{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+					{:else if data.game.experience === 'healthcare-it-crossword'}
 						<li>
 							<strong>Type</strong> to fill a cell; arrow keys move spatially through the grid.
 						</li>
@@ -152,7 +147,7 @@
 							<strong>Solve as a list</strong> provides the same clues and answers without the visual
 							grid.
 						</li>
-					{:else}
+					{:else if data.game.experience === 'calcutta-footpath'}
 						<li><strong>Click or tap the visible road</strong> and the walker goes there.</li>
 						<li>
 							<strong>Arrow Up:</strong> walk. <strong>Left / Right:</strong> turn.
@@ -166,7 +161,7 @@
 		</div>
 
 		<div class="mt-12 grid gap-5 sm:grid-cols-2">
-			{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+			{#if data.game.experience === 'period-board-games'}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">The preset</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -198,7 +193,7 @@
 						server, API, multiplayer service, ranking, advertising or game telemetry is involved.
 					</p>
 				</section>
-			{:else if data.game.slug === KAGOJER_DANA_SLUG}
+			{:else if data.game.experience === 'kagojer-dana'}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">Read the wind</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -230,7 +225,7 @@
 						recording is used at runtime.
 					</p>
 				</section>
-			{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+			{:else if data.game.experience === 'healthcare-it-crossword'}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">Coach, Traditional and hints</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -270,7 +265,7 @@
 						>, or the related essays linked from each card.
 					</p>
 				</section>
-			{:else}
+			{:else if data.game.experience === 'calcutta-footpath'}
 				<section class="rounded-xl border border-amber-950/15 p-5">
 					<h2 class="m-0 text-xl font-black">Food and effects</h2>
 					<p class="mt-3 text-left text-sm leading-relaxed">
@@ -318,21 +313,21 @@
 	</div>
 </section>
 
-{#if data.game.slug === LUDO_SAAP_LUDO_SLUG}
+{#if data.game.experience === 'period-board-games'}
 	<noscript>
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required to roll the die and run the local computer opponents. The game’s rules,
 			privacy explanation and historical boundaries remain available below.
 		</div>
 	</noscript>
-{:else if data.game.slug === KAGOJER_DANA_SLUG}
+{:else if data.game.experience === 'kagojer-dana'}
 	<noscript>
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required for the live paper-plane flight. The poster, controls and article
 			remain available without it.
 		</div>
 	</noscript>
-{:else if data.game.slug === HEALTHCARE_IT_CROSSWORD_SLUG}
+{:else if data.game.experience === 'healthcare-it-crossword'}
 	<noscript>
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required for the interactive crossword grid, hints and on-device progress. The
@@ -341,7 +336,7 @@
 			device.
 		</div>
 	</noscript>
-{:else}
+{:else if data.game.experience === 'calcutta-footpath'}
 	<noscript>
 		<div class="bg-[#2a211b] p-6 text-center text-[#f8edd7]">
 			JavaScript is required to run the street simulation. The game description and controls remain

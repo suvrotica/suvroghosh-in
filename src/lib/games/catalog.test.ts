@@ -3,7 +3,9 @@ import path from 'node:path';
 import { parse } from 'yaml';
 import { describe, expect, it } from 'vitest';
 import {
+	CALCUTTA_FOOTPATH_SLUG,
 	HEALTHCARE_IT_CROSSWORD_SLUG,
+	KAGOJER_DANA_SLUG,
 	LUDO_SAAP_LUDO_SLUG,
 	gameBySlug,
 	gamesCatalog
@@ -61,6 +63,15 @@ describe('games catalog integration', () => {
 		}
 	});
 
+	it('assigns every catalog game an explicit experience instead of a catch-all renderer', () => {
+		expect(Object.fromEntries(gamesCatalog.map((game) => [game.slug, game.experience]))).toEqual({
+			[LUDO_SAAP_LUDO_SLUG]: 'period-board-games',
+			[HEALTHCARE_IT_CROSSWORD_SLUG]: 'healthcare-it-crossword',
+			[KAGOJER_DANA_SLUG]: 'kagojer-dana',
+			[CALCUTTA_FOOTPATH_SLUG]: 'calcutta-footpath'
+		});
+	});
+
 	it('keeps site navigation around the crossword without changing existing immersive games', () => {
 		const crossword = gameBySlug(HEALTHCARE_IT_CROSSWORD_SLUG);
 		expect(crossword).toMatchObject({
@@ -72,6 +83,7 @@ describe('games catalog integration', () => {
 		const boardGame = gameBySlug(LUDO_SAAP_LUDO_SLUG);
 		expect(boardGame).toMatchObject({
 			slug: 'ludo-and-saap-ludo',
+			experience: 'period-board-games',
 			title: 'Ludo & Saap-Ludo',
 			shell: 'site'
 		});

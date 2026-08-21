@@ -3,8 +3,24 @@ export const KAGOJER_DANA_SLUG = 'kagojer-dana-a-paper-plane-through-calcutta';
 export const HEALTHCARE_IT_CROSSWORD_SLUG = 'healthcare-it-crossword-systems-rounds';
 export const LUDO_SAAP_LUDO_SLUG = 'ludo-and-saap-ludo';
 
+export const GAME_EXPERIENCES = [
+	'period-board-games',
+	'healthcare-it-crossword',
+	'kagojer-dana',
+	'calcutta-footpath'
+] as const;
+
+export type GameExperience = (typeof GAME_EXPERIENCES)[number];
+
+export type GameSlug =
+	| typeof LUDO_SAAP_LUDO_SLUG
+	| typeof HEALTHCARE_IT_CROSSWORD_SLUG
+	| typeof KAGOJER_DANA_SLUG
+	| typeof CALCUTTA_FOOTPATH_SLUG;
+
 export type GameCatalogEntry = {
-	slug: string;
+	slug: GameSlug;
+	experience: GameExperience;
 	title: string;
 	shortTitle: string;
 	description: string;
@@ -26,6 +42,7 @@ export type GameCatalogEntry = {
 export const gamesCatalog: readonly GameCatalogEntry[] = [
 	{
 		slug: LUDO_SAAP_LUDO_SLUG,
+		experience: 'period-board-games',
 		title: 'Ludo & Saap-Ludo',
 		shortTitle: 'Ludo & Saap-Ludo',
 		description: 'A cheap folding board, one die, and three opponents with all afternoon to play.',
@@ -53,6 +70,7 @@ export const gamesCatalog: readonly GameCatalogEntry[] = [
 	},
 	{
 		slug: HEALTHCARE_IT_CROSSWORD_SLUG,
+		experience: 'healthcare-it-crossword',
 		title: 'The Healthcare IT Crossword: Systems Rounds',
 		shortTitle: 'Healthcare IT Crossword',
 		description:
@@ -80,6 +98,7 @@ export const gamesCatalog: readonly GameCatalogEntry[] = [
 	},
 	{
 		slug: KAGOJER_DANA_SLUG,
+		experience: 'kagojer-dana',
 		title: 'Kagojer Dana: A Paper Plane Through Calcutta',
 		shortTitle: 'Kagojer Dana',
 		description:
@@ -101,6 +120,7 @@ export const gamesCatalog: readonly GameCatalogEntry[] = [
 	},
 	{
 		slug: CALCUTTA_FOOTPATH_SLUG,
+		experience: 'calcutta-footpath',
 		title: 'Calcutta Footpath Simulator: Ekdom Side Diye Jaan',
 		shortTitle: 'Calcutta Footpath Simulator',
 		description:
