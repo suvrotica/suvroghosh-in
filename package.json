@@ -24,6 +24,7 @@
 		"tags:test": "node --test scripts/generate-post-tags.test.mjs",
 		"bengali:test": "node --test scripts/rehype-bengali-lang.test.mjs",
 		"visualizations:test": "node --test scripts/visualizations.test.mjs",
+		"domain-coloring:browser:test": "playwright test --config=playwright.domain-coloring.config.ts",
 		"ray-marching:test": "vitest run --config src/lib/visualizations/experiments/ray-marching/vitest.config.ts && node scripts/ray-marching.test.mjs",
 		"ray-marching:browser:test": "playwright test --config=playwright.ray-marching.config.ts",
 		"weather-inside-nucleus:test": "vitest run src/lib/visualizations/weather-inside-nucleus",

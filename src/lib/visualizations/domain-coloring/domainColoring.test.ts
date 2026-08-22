@@ -3,7 +3,13 @@ import { complex, evaluateExpression } from './complex';
 import { domainColor, hueFromPhase } from './color';
 import { expressionToGlsl, parseExpression } from './expression';
 import { DOMAIN_COLORING_PRESETS } from './presets';
-import { panViewport, screenToComplex, viewportBounds, zoomViewport } from './viewport';
+import {
+	panViewport,
+	screenToComplex,
+	viewportBounds,
+	viewportPlotRect,
+	zoomViewport
+} from './viewport';
 
 describe('domain-colouring expression language', () => {
 	it('evaluates the identity at representative complex values', () => {
@@ -43,6 +49,22 @@ describe('domain-colouring expression language', () => {
 		}
 	});
 
+	it('keeps principal branch-side CPU values and generated GLSL helpers aligned', () => {
+		const epsilon = 1e-8;
+		const logarithm = parseExpression('log(z)');
+		const squareRoot = parseExpression('sqrt(z)');
+		const logAbove = evaluateExpression(logarithm, complex(-1, epsilon));
+		const logBelow = evaluateExpression(logarithm, complex(-1, -epsilon));
+		const rootAbove = evaluateExpression(squareRoot, complex(-1, epsilon));
+		const rootBelow = evaluateExpression(squareRoot, complex(-1, -epsilon));
+		expect(logAbove.im).toBeCloseTo(Math.PI, 7);
+		expect(logBelow.im).toBeCloseTo(-Math.PI, 7);
+		expect(rootAbove.im).toBeCloseTo(1, 7);
+		expect(rootBelow.im).toBeCloseTo(-1, 7);
+		expect(expressionToGlsl(logarithm)).toContain('c_log(');
+		expect(expressionToGlsl(squareRoot)).toContain('c_sqrt(');
+	});
+
 	it('rejects unsafe or unsupported notation with reader-facing feedback', () => {
 		expect(() => parseExpression('window.alert(1)')).toThrow(/not part|not available/i);
 		expect(() => parseExpression('2z')).toThrow(/operator/i);
@@ -64,12 +86,23 @@ describe('domain colour mapping', () => {
 });
 
 describe('complex-plane viewport', () => {
-	const viewport = { centerRe: 0, centerIm: 0, spanIm: 4 };
+	const viewport = { centerRe: 0, centerIm: 0, spanRe: 8, spanIm: 4 };
 
 	it('preserves equal real and imaginary scale on a rectangular canvas', () => {
-		const bounds = viewportBounds(viewport, 800, 400);
+		const bounds = viewportBounds(viewport);
 		expect(bounds.maxRe - bounds.minRe).toBe(8);
 		expect(bounds.maxIm - bounds.minIm).toBe(4);
+	});
+
+	it('letterboxes a square domain instead of distorting complex-plane angles', () => {
+		const square = { centerRe: 0, centerIm: 0, spanRe: 4, spanIm: 4 };
+		const plot = viewportPlotRect(square, 800, 400);
+		expect(plot).toEqual({ x: 200, y: 0, width: 400, height: 400 });
+		expect(screenToComplex(square, 200, 200, 800, 400).re).toBe(-2);
+		expect(screenToComplex(square, 600, 200, 800, 400).re).toBe(2);
+		expect(screenToComplex(square, 400, 100, 800, 400).im).toBe(1);
+		expect(screenToComplex(square, 300, 200, 800, 400).re).toBe(-1);
+		expect(screenToComplex(square, 0, 200, 800, 400).re).toBe(-2);
 	});
 
 	it('keeps the complex point under the cursor fixed while zooming', () => {

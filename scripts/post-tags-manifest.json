@@ -10431,23 +10431,35 @@
 			"dateModified": "2026-07-24"
 		},
 		"src/lib/posts/domain-coloring-complex-functions-explorer.md": {
-			"bodyHash": "9fa0d8700874ace92508acd6ef590bf2db3cf612ba813454239448e4a06383dd",
+			"bodyHash": "d416b4e3e000cc2a59e2296a5270715a095f5ce1ce0251861b90a2787c493bc9",
 			"hashVersion": 2,
-			"revisionHash": "09a74c1518172941a0789f19dd16a30288a942a17c88ccf9ea996c9fca2995ba",
+			"revisionHash": "ffc5592b4982da48b8eca7e066a108ac144604f2b1572c402b5d227de07e516c",
 			"generatedTags": [
-				"Safe Custom Expressions",
-				"Real Axis",
-				"Branch Cuts",
-				"Zeros Poles",
-				"Hue",
-				"Magnitude",
+				"Complex Analysis",
+				"Complex Functions",
+				"Domain Colouring",
 				"Zeros",
-				"Contours",
-				"Exponential",
-				"Colours"
+				"Poles",
+				"Branch Cuts",
+				"Riemann Surfaces",
+				"Argument Principle",
+				"WebGL",
+				"Interactive Mathematics"
 			],
-			"pinnedTags": [],
-			"generatorVersion": "2026-07-22.1"
+			"pinnedTags": [
+				"Complex Analysis",
+				"Complex Functions",
+				"Domain Colouring",
+				"Zeros",
+				"Poles",
+				"Branch Cuts",
+				"Riemann Surfaces",
+				"Argument Principle",
+				"WebGL",
+				"Interactive Mathematics"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-22"
 		},
 		"src/lib/posts/the-flatulent-exhalation-of-being.md": {
 			"bodyHash": "4eaa880b068ee346fd17393dc79234403b987c7fffbe3c4e1a03690897e4eae0",
@@ -10775,9 +10787,9 @@
 			"dateModified": "2026-07-31"
 		},
 		"src/lib/posts/the-fractal-atlas.md": {
-			"bodyHash": "a773c3f01e2c2332250dc108b36a90b9d9762e08cdff12c2eb79b8f779cc9d38",
+			"bodyHash": "14b84539b30861c5bc10b9b8437a89c82837c37dc448a7ef9de1e7d0569c1ecf",
 			"hashVersion": 2,
-			"revisionHash": "7d6d561e6ba5fd9c5257ce260299053c3fa385aee8af59e4dd8e208caf58809e",
+			"revisionHash": "bf1ac18cc462c12b18a87c9f7b9fe2fb4a2c2bc8ab1d8a151d4d7fabbc1abc63",
 			"generatedTags": [
 				"Fractals",
 				"Mandelbrot Set",
@@ -10786,11 +10798,24 @@
 				"Chaos",
 				"WebGL",
 				"Interactive Mathematics",
-				"Generative Art"
+				"Generative Art",
+				"Complex Dynamics",
+				"Iterated Function Systems"
 			],
-			"pinnedTags": [],
+			"pinnedTags": [
+				"Fractals",
+				"Mandelbrot Set",
+				"Julia Sets",
+				"Complex Numbers",
+				"Chaos",
+				"WebGL",
+				"Interactive Mathematics",
+				"Generative Art",
+				"Complex Dynamics",
+				"Iterated Function Systems"
+			],
 			"generatorVersion": "2026-07-22.1",
-			"dateModified": "2026-07-31"
+			"dateModified": "2026-08-22"
 		},
 		"src/lib/posts/sql-or-sequel-the-immortal-language-of-data.md": {
 			"bodyHash": "da134b8167f1b094d331e700de4694a47ed1a9b7ebb05b64ad72ef52f68e17cc",

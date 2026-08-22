@@ -16,119 +16,119 @@
 <text transform="translate(701,85)" font-size="93" style="fill:#d5d2c2">Coordinate</text>
 <text transform="translate(293,184)" font-size="89" style="fill:#d5d2c2">Plane</text>
 <text transform="translate(754,713)" font-size="85" style="fill:#a9b7a3">Iteration</text>
-<text transform="translate(358,395)" font-size="81" style="fill:#d5d2c2">Every</text>
-<text transform="translate(166,700) rotate(-90)" font-size="81" style="fill:#c7d7b5">Different</text>
-<text transform="translate(289,265)" font-size="81" style="fill:#a9b7a3">Change</text>
-<text transform="translate(312,89)" font-size="81" style="fill:#8fb7d0">Values</text>
-<text transform="translate(81,533) rotate(-90)" font-size="81" style="fill:#a9b7a3">Finite</text>
-<text transform="translate(1017,251)" font-size="77" style="fill:#8fb7d0">First</text>
-<text transform="translate(1015,338)" font-size="72" style="fill:#c49a6c">Colour</text>
-<text transform="translate(465,560)" font-size="54" style="fill:#c7d7b5">Starting</text>
-<text transform="translate(316,703)" font-size="51" style="fill:#e0b879">Boundary</text>
-<text transform="translate(726,510) rotate(-90)" font-size="51" style="fill:#d9c89e">Three</text>
-<text transform="translate(265,314)" font-size="51" style="fill:#d6a79f">Changes</text>
-<text transform="translate(22,122)" font-size="48" style="fill:#e0b879">Rather</text>
-<text transform="translate(708,216)" font-size="48" style="fill:#d6a79f">Selected</text>
-<text transform="translate(710,339)" font-size="48" style="fill:#d5d2c2">Bounded</text>
-<text transform="translate(1115,188)" font-size="45" style="fill:#a9b7a3">View</text>
-<text transform="translate(496,326)" font-size="45" style="fill:#c49a6c">Work</text>
-<text transform="translate(405,443)" font-size="45" style="fill:#e0b879">Root</text>
-<text transform="translate(568,693)" font-size="39" style="fill:#b6c3dd">Ordinary</text>
-<text transform="translate(295,557) rotate(-90)" font-size="39" style="fill:#d9c89e">Precision</text>
-<text transform="translate(722,555)" font-size="36" style="fill:#e0b879">Begins</text>
-<text transform="translate(846,647)" font-size="36" style="fill:#b6c3dd">Computer</text>
-<text transform="translate(1092,129)" font-size="36" style="fill:#9fc9c5">Number</text>
-<text transform="translate(434,124)" font-size="36" style="fill:#c49a6c">Fractal</text>
-<text transform="translate(367,216)" font-size="36" style="fill:#a9b7a3">Current</text>
-<text transform="translate(1148,457)" font-size="36" style="fill:#c7d7b5">State</text>
-<text transform="translate(444,30)" font-size="30" style="fill:#d88988">Laboratory</text>
-<text transform="translate(790,582)" font-size="30" style="fill:#8fb7d0">Law</text>
-<text transform="translate(972,458)" font-size="30" style="fill:#a9b7a3">Visible</text>
-<text transform="translate(289,655)" font-size="30" style="fill:#e0b879">Palette</text>
-<text transform="translate(1087,546)" font-size="30" style="fill:#b6c3dd">Count</text>
-<text transform="translate(1190,418)" font-size="30" style="fill:#c7d7b5">Mode</text>
-<text transform="translate(1160,661)" font-size="30" style="fill:#8fb7d0">Pixels</text>
-<text transform="translate(604,439)" font-size="28" style="fill:#a9b7a3">Small</text>
-<text transform="translate(27,685) rotate(-90)" font-size="28" style="fill:#c49a6c">Remain</text>
-<text transform="translate(58,146)" font-size="28" style="fill:#a9b7a3">Becomes</text>
-<text transform="translate(110,468) rotate(-90)" font-size="28" style="fill:#c49a6c">Dynamical</text>
-<text transform="translate(1137,283)" font-size="28" style="fill:#e0b879">Escaping</text>
-<text transform="translate(72,702) rotate(-90)" font-size="28" style="fill:#c49a6c">Colouring</text>
-<text transform="translate(1022,636)" font-size="28" style="fill:#d88988">Family</text>
-<text transform="translate(597,486)" font-size="28" style="fill:#d9c89e">Field</text>
-<text transform="translate(190,648) rotate(-90)" font-size="28" style="fill:#c49a6c">Quadratic</text>
-<text transform="translate(190,25)" font-size="28" style="fill:#8fb7d0">Coordinates</text>
-<text transform="translate(777,23)" font-size="27" style="fill:#e0b879">Convergence</text>
-<text transform="translate(353,546)" font-size="27" style="fill:#8fb7d0">Step</text>
-<text transform="translate(340,422) rotate(-90)" font-size="27" style="fill:#b6c3dd">Newton</text>
-<text transform="translate(287,268) rotate(-90)" font-size="27" style="fill:#e0b879">Smooth</text>
-<text transform="translate(751,520) rotate(-90)" font-size="27" style="fill:#9fc9c5">Accumulated</text>
-<text transform="translate(1270,262) rotate(-90)" font-size="27" style="fill:#e0b879">Iterations</text>
-<text transform="translate(905,238)" font-size="27" style="fill:#8fb7d0">Raster</text>
-<text transform="translate(208,107)" font-size="27" style="fill:#c49a6c">Orbits</text>
-<text transform="translate(713,152)" font-size="27" style="fill:#d5d2c2">Fern</text>
-<text transform="translate(862,363)" font-size="27" style="fill:#8fb7d0">Dimension</text>
-<text transform="translate(560,154)" font-size="25" style="fill:#e0b879">Maps</text>
-<text transform="translate(1024,23)" font-size="25" style="fill:#a9b7a3">Geography</text>
-<text transform="translate(99,706) rotate(-90)" font-size="25" style="fill:#d6a79f">Colours</text>
-<text transform="translate(813,447)" font-size="25" style="fill:#d88988">Escaped</text>
-<text transform="translate(1072,362)" font-size="25" style="fill:#8fb7d0">Recurrence</text>
-<text transform="translate(749,607)" font-size="25" style="fill:#d88988">Squaring</text>
-<text transform="translate(195,288) rotate(-90)" font-size="25" style="fill:#d5d2c2">Sequence</text>
-<text transform="translate(1071,149)" font-size="22" style="fill:#a9b7a3">Mathematical</text>
-<text transform="translate(1012,540)" font-size="22" style="fill:#e0b879">Stops</text>
-<text transform="translate(417,344)" font-size="22" style="fill:#d9c89e">Limit</text>
-<text transform="translate(701,112)" font-size="22" style="fill:#e0b879">Census</text>
-<text transform="translate(324,111)" font-size="22" style="fill:#d9c89e">Records</text>
-<text transform="translate(593,396)" font-size="22" style="fill:#c7d7b5">Points</text>
-<text transform="translate(1023,275)" font-size="22" style="fill:#e0b879">Budget</text>
-<text transform="translate(499,582)" font-size="22" style="fill:#c49a6c">Bands</text>
-<text transform="translate(1184,544)" font-size="22" style="fill:#8fb7d0">Asks</text>
-<text transform="translate(921,321)" font-size="22" style="fill:#e0b879">Remains</text>
-<text transform="translate(580,714)" font-size="22" style="fill:#c49a6c">Useful</text>
-<text transform="translate(521,205)" font-size="22" style="fill:#d5d2c2">Merely</text>
-<text transform="translate(618,90)" font-size="22" style="fill:#b6c3dd">Table</text>
-<text transform="translate(1197,29)" font-size="22" style="fill:#8fb7d0">Result</text>
-<text transform="translate(949,198)" font-size="22" style="fill:#a9b7a3">Need</text>
-<text transform="translate(1169,633)" font-size="22" style="fill:#c49a6c">Evidence</text>
-<text transform="translate(497,346)" font-size="22" style="fill:#c49a6c">Distance</text>
-<text transform="translate(282,670) rotate(-90)" font-size="22" style="fill:#d9c89e">Question</text>
-<text transform="translate(947,105)" font-size="19" style="fill:#c49a6c">Histogram</text>
-<text transform="translate(4,237)" font-size="19" style="fill:#a9b7a3">Arithmetic</text>
-<text transform="translate(581,239)" font-size="19" style="fill:#d9c89e">GPU</text>
-<text transform="translate(594,460)" font-size="19" style="fill:#d6a79f">Reference</text>
-<text transform="translate(371,629)" font-size="19" style="fill:#b6c3dd">Recursive</text>
-<text transform="translate(752,632)" font-size="19" style="fill:#d9c89e">Triangle</text>
-<text transform="translate(57,542)" font-size="17" style="fill:#c49a6c">Rule</text>
-<text transform="translate(1195,386)" font-size="17" style="fill:#c7d7b5">Numbers</text>
-<text transform="translate(88,258)" font-size="17" style="fill:#e0b879">Infinity</text>
-<text transform="translate(183,359)" font-size="17" style="fill:#9fc9c5">Rounds</text>
-<text transform="translate(107,715)" font-size="17" style="fill:#c7d7b5">Answer</text>
-<text transform="translate(846,104)" font-size="17" style="fill:#b6c3dd">Feedback</text>
-<text transform="translate(595,188)" font-size="17" style="fill:#9fc9c5">Yet</text>
-<text transform="translate(536,283)" font-size="17" style="fill:#d9c89e">Magnitude</text>
-<text transform="translate(648,238)" font-size="17" style="fill:#c49a6c">Angle</text>
-<text transform="translate(45,712) rotate(-90)" font-size="17" style="fill:#d9c89e">Second</text>
-<text transform="translate(356,426) rotate(-90)" font-size="17" style="fill:#c49a6c">Repeatedly</text>
-<text transform="translate(93,162)" font-size="17" style="fill:#c7d7b5">Instrument</text>
-<text transform="translate(22,571) rotate(-90)" font-size="17" style="fill:#8fb7d0">Zoom</text>
-<text transform="translate(727,582)" font-size="17" style="fill:#8fb7d0">Fixed</text>
-<text transform="translate(1211,697)" font-size="17" style="fill:#c49a6c">Entire</text>
-<text transform="translate(17,142) rotate(-90)" font-size="17" style="fill:#a9b7a3">Deliberately</text>
-<text transform="translate(1126,204)" font-size="17" style="fill:#a9b7a3">Basilica</text>
-<text transform="translate(601,373)" font-size="17" style="fill:#c7d7b5">Certified</text>
-<text transform="translate(619,509)" font-size="17" style="fill:#9fc9c5">Status</text>
-<text transform="translate(146,309)" font-size="17" style="fill:#e0b879">Path</text>
-<text transform="translate(142,419)" font-size="17" style="fill:#9fc9c5">Proof</text>
-<text transform="translate(1242,189) rotate(-90)" font-size="17" style="fill:#d88988">Line</text>
-<text transform="translate(312,432) rotate(-90)" font-size="17" style="fill:#d88988">Operation</text>
-<text transform="translate(271,331)" font-size="17" style="fill:#e0b879">Four</text>
-<text transform="translate(944,538)" font-size="17" style="fill:#c49a6c">Ledger</text>
-<text transform="translate(224,168)" font-size="17" style="fill:#8fb7d0">Chosen</text>
-<text transform="translate(706,168)" font-size="17" style="fill:#d9c89e">Integer</text>
-<text transform="translate(682,638) rotate(-90)" font-size="17" style="fill:#c49a6c">Burning</text>
-<text transform="translate(1232,505)" font-size="17" style="fill:#a9b7a3">Ship</text>
-<text transform="translate(1170,105)" font-size="17" style="fill:#a9b7a3">Absolute</text>
-<text transform="translate(592,413)" font-size="17" style="fill:#b6c3dd">Instead</text>
-<text transform="translate(17,350) rotate(-90)" font-size="17" style="fill:#a9b7a3">Escapetime</text>
+<text transform="translate(265,426)" font-size="81" style="fill:#d5d2c2">Different</text>
+<text transform="translate(296,310)" font-size="81" style="fill:#c7d7b5">Change</text>
+<text transform="translate(311,76)" font-size="81" style="fill:#a9b7a3">Values</text>
+<text transform="translate(126,636) rotate(-90)" font-size="81" style="fill:#8fb7d0">Finite</text>
+<text transform="translate(1038,256)" font-size="77" style="fill:#a9b7a3">Every</text>
+<text transform="translate(362,259)" font-size="77" style="fill:#8fb7d0">First</text>
+<text transform="translate(1015,338)" font-size="72" style="fill:#d88988">Colour</text>
+<text transform="translate(500,560)" font-size="54" style="fill:#e0b879">Starting</text>
+<text transform="translate(45,555) rotate(-90)" font-size="54" style="fill:#d9c89e">Boundary</text>
+<text transform="translate(595,480)" font-size="54" style="fill:#d6a79f">Three</text>
+<text transform="translate(365,703)" font-size="51" style="fill:#d5d2c2">Changes</text>
+<text transform="translate(1100,153)" font-size="48" style="fill:#c49a6c">Rather</text>
+<text transform="translate(730,342)" font-size="48" style="fill:#9fc9c5">Selected</text>
+<text transform="translate(819,216)" font-size="48" style="fill:#c7d7b5">Bounded</text>
+<text transform="translate(49,678)" font-size="45" style="fill:#c49a6c">View</text>
+<text transform="translate(308,351)" font-size="45" style="fill:#c49a6c">Work</text>
+<text transform="translate(590,709)" font-size="45" style="fill:#d6a79f">Root</text>
+<text transform="translate(169,540) rotate(-90)" font-size="45" style="fill:#9fc9c5">Ordinary</text>
+<text transform="translate(818,649)" font-size="45" style="fill:#e0b879">Precision</text>
+<text transform="translate(23,287)" font-size="42" style="fill:#b6c3dd">Begins</text>
+<text transform="translate(383,113)" font-size="42" style="fill:#9fc9c5">Computer</text>
+<text transform="translate(24,129)" font-size="42" style="fill:#c49a6c">Fractal</text>
+<text transform="translate(1089,196)" font-size="42" style="fill:#a9b7a3">Current</text>
+<text transform="translate(301,654)" font-size="42" style="fill:#d6a79f">State</text>
+<text transform="translate(5,707)" font-size="30" style="fill:#a9b7a3">Laboratory</text>
+<text transform="translate(1183,545)" font-size="30" style="fill:#8fb7d0">Law</text>
+<text transform="translate(479,360)" font-size="30" style="fill:#a9b7a3">Visible</text>
+<text transform="translate(961,456)" font-size="30" style="fill:#e0b879">Palette</text>
+<text transform="translate(621,510)" font-size="30" style="fill:#b6c3dd">Count</text>
+<text transform="translate(1188,430)" font-size="30" style="fill:#c7d7b5">Mode</text>
+<text transform="translate(760,609)" font-size="30" style="fill:#8fb7d0">Pixels</text>
+<text transform="translate(780,552)" font-size="28" style="fill:#a9b7a3">Small</text>
+<text transform="translate(1163,641)" font-size="28" style="fill:#c49a6c">Number</text>
+<text transform="translate(710,208)" font-size="28" style="fill:#a9b7a3">Remain</text>
+<text transform="translate(1154,363)" font-size="28" style="fill:#c7d7b5">Becomes</text>
+<text transform="translate(196,106)" font-size="28" style="fill:#c7d7b5">Dynamical</text>
+<text transform="translate(1130,456)" font-size="28" style="fill:#c49a6c">Escaping</text>
+<text transform="translate(288,704) rotate(-90)" font-size="28" style="fill:#d88988">Colouring</text>
+<text transform="translate(826,456)" font-size="28" style="fill:#d9c89e">Family</text>
+<text transform="translate(356,539)" font-size="28" style="fill:#c49a6c">Field</text>
+<text transform="translate(289,269) rotate(-90)" font-size="28" style="fill:#8fb7d0">Quadratic</text>
+<text transform="translate(984,544)" font-size="28" style="fill:#d9c89e">Coordinates</text>
+<text transform="translate(771,23)" font-size="27" style="fill:#8fb7d0">Convergence</text>
+<text transform="translate(42,625) rotate(-90)" font-size="27" style="fill:#b6c3dd">Step</text>
+<text transform="translate(722,439) rotate(-90)" font-size="27" style="fill:#e0b879">Newton</text>
+<text transform="translate(195,286) rotate(-90)" font-size="27" style="fill:#a9b7a3">Smooth</text>
+<text transform="translate(444,27)" font-size="27" style="fill:#d6a79f">Accumulated</text>
+<text transform="translate(1115,110)" font-size="27" style="fill:#a9b7a3">Iterations</text>
+<text transform="translate(1176,400)" font-size="27" style="fill:#e0b879">Raster</text>
+<text transform="translate(104,311)" font-size="27" style="fill:#d6a79f">Orbits</text>
+<text transform="translate(594,176) rotate(-90)" font-size="27" style="fill:#d6a79f">Fern</text>
+<text transform="translate(409,451)" font-size="27" style="fill:#d6a79f">Dimension</text>
+<text transform="translate(303,688)" font-size="25" style="fill:#d5d2c2">Maps</text>
+<text transform="translate(1024,23)" font-size="25" style="fill:#c49a6c">Geography</text>
+<text transform="translate(769,581)" font-size="25" style="fill:#d9c89e">Colours</text>
+<text transform="translate(69,156)" font-size="25" style="fill:#8fb7d0">Escaped</text>
+<text transform="translate(1054,278)" font-size="25" style="fill:#d88988">Recurrence</text>
+<text transform="translate(193,622) rotate(-90)" font-size="25" style="fill:#d5d2c2">Squaring</text>
+<text transform="translate(441,205)" font-size="24" style="fill:#a9b7a3">Sequence</text>
+<text transform="translate(827,363)" font-size="24" style="fill:#e0b879">Mathematical</text>
+<text transform="translate(703,168)" font-size="24" style="fill:#d9c89e">Stops</text>
+<text transform="translate(1191,26)" font-size="24" style="fill:#e0b879">Limit</text>
+<text transform="translate(190,25)" font-size="24" style="fill:#d9c89e">Census</text>
+<text transform="translate(1043,362)" font-size="24" style="fill:#c7d7b5">Records</text>
+<text transform="translate(11,251)" font-size="24" style="fill:#c49a6c">Points</text>
+<text transform="translate(160,627) rotate(-90)" font-size="24" style="fill:#c49a6c">Budget</text>
+<text transform="translate(751,448)" font-size="24" style="fill:#8fb7d0">Bands</text>
+<text transform="translate(716,133)" font-size="24" style="fill:#e0b879">Asks</text>
+<text transform="translate(901,239)" font-size="24" style="fill:#c49a6c">Remains</text>
+<text transform="translate(962,106)" font-size="24" style="fill:#d5d2c2">Useful</text>
+<text transform="translate(599,90)" font-size="24" style="fill:#b6c3dd">Merely</text>
+<text transform="translate(709,109)" font-size="24" style="fill:#8fb7d0">Table</text>
+<text transform="translate(840,108)" font-size="24" style="fill:#a9b7a3">Result</text>
+<text transform="translate(141,649)" font-size="24" style="fill:#d88988">Need</text>
+<text transform="translate(24,118) rotate(-90)" font-size="24" style="fill:#d5d2c2">Evidence</text>
+<text transform="translate(606,332) rotate(-90)" font-size="24" style="fill:#9fc9c5">Distance</text>
+<text transform="translate(290,543) rotate(-90)" font-size="24" style="fill:#c49a6c">Question</text>
+<text transform="translate(1095,657)" font-size="17" style="fill:#a9b7a3">Histogram</text>
+<text transform="translate(477,376)" font-size="17" style="fill:#d9c89e">Arithmetic</text>
+<text transform="translate(314,203)" font-size="17" style="fill:#d6a79f">GPU</text>
+<text transform="translate(475,578)" font-size="17" style="fill:#b6c3dd">Reference</text>
+<text transform="translate(482,129)" font-size="17" style="fill:#d9c89e">Recursive</text>
+<text transform="translate(1194,657)" font-size="17" style="fill:#c49a6c">Triangle</text>
+<text transform="translate(1023,195)" font-size="15" style="fill:#e0b879">Rule</text>
+<text transform="translate(740,426) rotate(-90)" font-size="15" style="fill:#c7d7b5">Numbers</text>
+<text transform="translate(292,239)" font-size="15" style="fill:#d9c89e">Infinity</text>
+<text transform="translate(631,646) rotate(-90)" font-size="15" style="fill:#c7d7b5">Rounds</text>
+<text transform="translate(295,217)" font-size="15" style="fill:#b6c3dd">Answer</text>
+<text transform="translate(1167,168)" font-size="15" style="fill:#9fc9c5">Feedback</text>
+<text transform="translate(732,148)" font-size="15" style="fill:#e0b879">Yet</text>
+<text transform="translate(660,246)" font-size="15" style="fill:#c49a6c">Angle</text>
+<text transform="translate(422,625) rotate(-90)" font-size="15" style="fill:#d9c89e">Second</text>
+<text transform="translate(61,454) rotate(-90)" font-size="15" style="fill:#d6a79f">Repeatedly</text>
+<text transform="translate(706,222)" font-size="15" style="fill:#a9b7a3">Instrument</text>
+<text transform="translate(778,625)" font-size="15" style="fill:#8fb7d0">Zoom</text>
+<text transform="translate(417,333)" font-size="15" style="fill:#8fb7d0">Fixed</text>
+<text transform="translate(689,591)" font-size="15" style="fill:#a9b7a3">Entire</text>
+<text transform="translate(1145,290)" font-size="12" style="fill:#c7d7b5">Deliberately</text>
+<text transform="translate(1218,703)" font-size="12" style="fill:#9fc9c5">Basilica</text>
+<text transform="translate(593,376)" font-size="12" style="fill:#e0b879">Certified</text>
+<text transform="translate(207,405)" font-size="12" style="fill:#9fc9c5">Status</text>
+<text transform="translate(567,197) rotate(-90)" font-size="12" style="fill:#d88988">Path</text>
+<text transform="translate(716,702)" font-size="12" style="fill:#d88988">Proof</text>
+<text transform="translate(553,326)" font-size="12" style="fill:#e0b879">Line</text>
+<text transform="translate(506,591)" font-size="12" style="fill:#c49a6c">Operation</text>
+<text transform="translate(647,222)" font-size="12" style="fill:#8fb7d0">Four</text>
+<text transform="translate(65,332)" font-size="12" style="fill:#d9c89e">Ledger</text>
+<text transform="translate(22,639)" font-size="12" style="fill:#c49a6c">Chosen</text>
+<text transform="translate(711,519)" font-size="12" style="fill:#a9b7a3">Integer</text>
+<text transform="translate(220,237)" font-size="12" style="fill:#a9b7a3">Burning</text>
+<text transform="translate(762,643)" font-size="12" style="fill:#b6c3dd">Ship</text>
+<text transform="translate(692,677)" font-size="12" style="fill:#a9b7a3">Absolute</text>
+<text transform="translate(717,306) rotate(-90)" font-size="12" style="fill:#d88988">Instead</text>
+<text transform="translate(14,639) rotate(-90)" font-size="12" style="fill:#a9b7a3">Escapetime</text>
+<text transform="translate(1089,442)" font-size="12" style="fill:#d9c89e">Draws</text>
 </svg>

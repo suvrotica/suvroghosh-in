@@ -92,7 +92,7 @@ Set `compact={true}` and `controls={false}` for a gallery preview. New posts in 
 
 ## Embed the domain-colouring explorer
 
-Domain colouring uses a dedicated typed component because its expression parser, coordinate gestures, and demand-rendered shader do not fit the time-driven experiment registry:
+Domain colouring uses a dedicated typed component because its safe complex-expression language, synchronised mathematical views, numerical probes, and demand-rendered geometry do not fit the time-driven experiment registry:
 
 ```svelte
 <script>
@@ -102,9 +102,11 @@ Domain colouring uses a dedicated typed component because its expression parser,
 <DomainColoringExplorer />
 ```
 
-The safe parser in `src/lib/visualizations/domain-coloring/expression.ts` accepts only the documented complex-expression grammar and compiles its AST to known GLSL helper calls. Never interpolate user text directly into a shader. Keep CPU arithmetic, parser and compiler, presets, viewport transforms, colour reference logic, and the renderer in separate modules so their numerical invariants remain independently testable.
+The safe parser in `src/lib/visualizations/domain-coloring/expression.ts` accepts only the documented complex-expression grammar and compiles its validated AST to known CPU and GLSL operations. Never interpolate user text directly into a shader. Keep one typed mathematical core for tokenisation, AST validation, complex arithmetic, CPU evaluation, and shader generation; keep the grouped preset registry and shared explorer state independent of renderer-specific modules. Presets own their mathematical domain, camera and height defaults, known features and cuts, guided copy, and any supported sheet construction.
 
-The renderer draws only after a resize, view change, or expression change; it owns no animation loop. Its vertical complex-plane span and the canvas aspect ratio determine the horizontal span, so circles stay circular. The overlaid Canvas 2D grid carries labelled axes independently of the colour field. `?webgl=off` selects the static identity-map poster, matching the deterministic fallback convention used by the other GPU exhibits.
+The retained 2D map, clipped log-magnitude terrain, component-height lenses, comparison layout, numerical probe, winding loop, and curated square-root, cube-root, and logarithm sheets share one bounded state model. Domain pan and zoom change the common complex-plane bounds; camera orbit, pan, and dolly do not. Fragment colour must be evaluated from the interpolated domain coordinate rather than from interpolated hue, and meshes must omit or split invalid cells and documented discontinuities instead of drawing false walls across poles or branch seams.
+
+Render on demand after resize, mathematical-state, camera, or expression changes. Run continuous frames only while controls are active or damping is settling, pause offscreen work, and dispose observers, listeners, animation frames, programs, buffers, and contexts during teardown. URL state must be validated, quantised, bounded, and backwards compatible; never serialize transient pointer motion or compile raw query text. `?webgl=off` remains the deterministic no-WebGL test path. If only 3D fails, retain interactive 2D; if WebGL fails entirely, keep the server-rendered explanation and an honestly labelled static poster rather than implying that every selected expression is the identity map.
 
 To create a related model, reuse `SeededRandom`, the fixed-step lifecycle, telemetry interfaces, and shell where their assumptions still fit. Add model-specific genes and environmental rules in `src/lib/visualizations/artificial-life`; do not place biological rules in the Canvas renderer. Any new random event must consume the engine-owned seeded stream. Any new trait must define founder values, safe bounds, inheritance behaviour, statistics if relevant, and a visible or behavioural consequence.
 

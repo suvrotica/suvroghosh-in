@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T19:51:29.967991+00:00",
+  "generatedAt": "2026-08-21T22:29:43.319224+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2808,25 +2808,25 @@
       "wordCount": 130
     },
     "domain-coloring-complex-functions-explorer": {
-      "generatedAt": "2026-07-24T22:09:30.431158+00:00",
+      "generatedAt": "2026-08-21T22:29:42.463933+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/domain-coloring-complex-functions-explorer.svg",
       "source": "src/lib/posts/domain-coloring-complex-functions-explorer.md",
-      "sourceHash": "a9cb1dee044b53f15bad56670815c320c6c00147d123007130772c760f07a8ba",
-      "sourceModified": "2026-07-24T22:09:21.360712+00:00",
+      "sourceHash": "a6b0e7d354dfa5adcbd8cc186f40d2de387d1b8a6a9e9d804eb468f9b4782d3f",
+      "sourceModified": "2026-08-21T21:59:52.918433+00:00",
       "topWords": [
-        "Hue",
-        "Real",
-        "Magnitude",
-        "Zeros",
-        "Complex",
-        "Function",
-        "Angle",
+        "Operatorname",
+        "Phase",
         "Zero",
-        "Changes",
-        "Branch",
-        "Every",
-        "Input"
+        "Magnitude",
+        "Height",
+        "Log",
+        "Finite",
+        "Frac",
+        "Principal",
+        "Function",
+        "View",
+        "Numerical"
       ],
       "wordCount": 130
     },
@@ -9961,12 +9961,12 @@
       "wordCount": 130
     },
     "the-fractal-atlas": {
-      "generatedAt": "2026-07-31T14:50:41.142120+00:00",
+      "generatedAt": "2026-08-21T20:59:42.955430+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/the-fractal-atlas.svg",
       "source": "src/lib/posts/the-fractal-atlas.md",
-      "sourceHash": "0087334133bec7eda7d73a49d0a601465c18ec8ba4bf4f5d4036d64493f23f0d",
-      "sourceModified": "2026-07-31T14:50:30.391910+00:00",
+      "sourceHash": "ef1610bd48e6bf4b20aae83b883b05f35f54afc2ffdccb56a2ec14da8af9ced4",
+      "sourceModified": "2026-08-21T20:59:24.314791+00:00",
       "topWords": [
         "Orbit",
         "Pixel",

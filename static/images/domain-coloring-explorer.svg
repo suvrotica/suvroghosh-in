@@ -1,50 +1,146 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
-	<title id="title">Domain colouring of the identity function</title>
-	<desc id="description">A cyclic field of phase colours surrounds a dark zero at the origin, with logarithmically spaced circular magnitude contours and real and imaginary axes.</desc>
-	<rect width="1200" height="675" fill="#070b13"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title description">
+	<title id="title">Two synchronized views of the identity complex function</title>
+	<desc id="description">A restrained complex-function laboratory preview. At left, a two-dimensional domain-colouring map uses cyclic hue for the argument of f of z and powers-of-two contours for magnitude. At right, the same identity function is shown as a three-dimensional projection whose height is clipped log base two of the modulus, descending to a labelled low cap at the zero. Real and imaginary input axes, the modulus-one sea level, and clipping limits are labelled. A note states that the terrain is a projection, not the full graph in four dimensions.</desc>
+	<defs>
+		<linearGradient id="background" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#171512"/>
+			<stop offset="1" stop-color="#0d1015"/>
+		</linearGradient>
+		<linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#111823"/>
+			<stop offset="1" stop-color="#080c13"/>
+		</linearGradient>
+		<clipPath id="map-clip">
+			<rect x="42" y="160" width="518" height="344" rx="14"/>
+		</clipPath>
+	</defs>
+
+	<rect width="1200" height="630" fill="url(#background)"/>
+	<path d="M0 104H1200" stroke="#3b352e"/>
+
+	<g font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+		<text x="42" y="35" fill="#67e8f9" font-size="13" font-weight="700" letter-spacing="3">COMPLEX-FUNCTION LABORATORY</text>
+		<text x="42" y="75" fill="#f4efe6" font-size="32" font-weight="760">One function, two honest projections</text>
+		<g transform="translate(1037 25)">
+			<rect width="118" height="48" rx="24" fill="#231f1a" stroke="#675c4d"/>
+			<text x="59" y="31" fill="#f4efe6" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="18" font-weight="700" text-anchor="middle">f(z) = z</text>
+		</g>
+
+		<text x="42" y="137" fill="#d8d0c4" font-size="13" font-weight="700" letter-spacing="1.8">2D DOMAIN COLOURING</text>
+		<text x="585" y="137" fill="#d8d0c4" font-size="13" font-weight="700" letter-spacing="1.8">3D LANDSCAPE PROJECTION</text>
+		<text x="1155" y="137" fill="#8f9aab" font-size="12" text-anchor="end">same domain · same phase hue</text>
+	</g>
+
+	<!-- The 2D field: hue is Arg(z), while the dark rings mark powers of two in |z|. -->
+	<g clip-path="url(#map-clip)">
+		<rect x="42" y="160" width="518" height="344" fill="#090d14"/>
+		<g>
+			<path d="M300 332L800 332L733 582Z" fill="#ef4b55"/>
+			<path d="M300 332L733 582L550 765Z" fill="#d946a7"/>
+			<path d="M300 332L550 765L300 832Z" fill="#8354d9"/>
+			<path d="M300 332L300 832L50 765Z" fill="#4b67d1"/>
+			<path d="M300 332L50 765L-133 582Z" fill="#159fd0"/>
+			<path d="M300 332L-133 582L-200 332Z" fill="#20b9bb"/>
+			<path d="M300 332L-200 332L-133 82Z" fill="#28ae79"/>
+			<path d="M300 332L-133 82L50 -101Z" fill="#79b84a"/>
+			<path d="M300 332L50 -101L300 -168Z" fill="#c9bb3c"/>
+			<path d="M300 332L300 -168L550 -101Z" fill="#e5a638"/>
+			<path d="M300 332L550 -101L733 82Z" fill="#ed753d"/>
+			<path d="M300 332L733 82L800 332Z" fill="#ef4b55"/>
+		</g>
+		<g fill="none" stroke="#071019" stroke-opacity=".38">
+			<circle cx="300" cy="332" r="28" stroke-width="7"/>
+			<circle cx="300" cy="332" r="56" stroke-width="8"/>
+			<circle cx="300" cy="332" r="112" stroke-width="9"/>
+			<circle cx="300" cy="332" r="224" stroke-width="10"/>
+		</g>
+		<g stroke="#071019" stroke-opacity=".2" stroke-width="3">
+			<path d="M300 332H800"/>
+			<path d="M300 332L733 582"/>
+			<path d="M300 332L550 765"/>
+			<path d="M300 332V832"/>
+			<path d="M300 332L50 765"/>
+			<path d="M300 332L-133 582"/>
+			<path d="M300 332H-200"/>
+			<path d="M300 332L-133 82"/>
+			<path d="M300 332L50 -101"/>
+			<path d="M300 332V-168"/>
+			<path d="M300 332L550 -101"/>
+			<path d="M300 332L733 82"/>
+		</g>
+		<g stroke="#fffaf0" stroke-opacity=".72" stroke-width="1.5">
+			<path d="M42 332H560"/>
+			<path d="M300 160V504"/>
+		</g>
+		<circle cx="300" cy="332" r="15" fill="#03060c" stroke="#96a2b4" stroke-width="1.5"/>
+	</g>
+	<rect x="42.5" y="160.5" width="517" height="343" rx="14" fill="none" stroke="#454039"/>
+	<g fill="#fffaf0" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="13" font-weight="700">
+		<text x="543" y="321" text-anchor="end">Re z</text>
+		<text x="312" y="180">Im z</text>
+		<text x="300" y="360" text-anchor="middle" fill="#d3d9e2" font-size="11">zero</text>
+	</g>
+
+	<g font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+		<circle cx="300" cy="525" r="5" fill="#67e8f9"/>
+		<text x="314" y="530" fill="#aeb8c7" font-size="12">hue = Arg f(z) · rings = powers of two</text>
+	</g>
+
+	<!-- A faceted radial mesh for h = clip(log2|z|,-K,K). The centre is a low cap, not a finite value. -->
 	<g>
-		<path d="M600 337.5 L1600 337.5 A1000 1000 0 0 1 1466 837.5 Z" fill="#f43f5e"/>
-		<path d="M600 337.5 L1466 837.5 A1000 1000 0 0 1 1100 1203.5 Z" fill="#d946ef"/>
-		<path d="M600 337.5 L1100 1203.5 A1000 1000 0 0 1 600 1337.5 Z" fill="#8b5cf6"/>
-		<path d="M600 337.5 L600 1337.5 A1000 1000 0 0 1 100 1203.5 Z" fill="#4f46e5"/>
-		<path d="M600 337.5 L100 1203.5 A1000 1000 0 0 1 -266 837.5 Z" fill="#0ea5e9"/>
-		<path d="M600 337.5 L-266 837.5 A1000 1000 0 0 1 -400 337.5 Z" fill="#06b6d4"/>
-		<path d="M600 337.5 L-400 337.5 A1000 1000 0 0 1 -266 -162.5 Z" fill="#14b8a6"/>
-		<path d="M600 337.5 L-266 -162.5 A1000 1000 0 0 1 100 -528.5 Z" fill="#22c55e"/>
-		<path d="M600 337.5 L100 -528.5 A1000 1000 0 0 1 600 -662.5 Z" fill="#84cc16"/>
-		<path d="M600 337.5 L600 -662.5 A1000 1000 0 0 1 1100 -528.5 Z" fill="#eab308"/>
-		<path d="M600 337.5 L1100 -528.5 A1000 1000 0 0 1 1466 -162.5 Z" fill="#f97316"/>
-		<path d="M600 337.5 L1466 -162.5 A1000 1000 0 0 1 1600 337.5 Z" fill="#ef4444"/>
+		<rect x="585" y="160" width="570" height="344" rx="14" fill="url(#panel)" stroke="#454039"/>
+		<path d="M626 438L875 330L1124 438L875 496Z" fill="#101721" stroke="#536070" stroke-opacity=".45"/>
+		<path d="M626 438L875 496L1124 438" fill="none" stroke="#6f7b89" stroke-opacity=".4" stroke-dasharray="5 6"/>
+
+		<!-- Twelve phase-coloured mesh sectors, each descending through L=+K,+1,0,-1,-K. -->
+		<g stroke="#111821" stroke-opacity=".26" stroke-width="1">
+			<path d="M1120 270L1087 324L1035 341L986 362L941 385L904 410L909 402L951 368L1003 333L1060 300Z" fill="#ef4b55"/>
+			<path d="M1087 324L998 364L968 371L939 382L913 397L892 415L904 410L941 385L986 362L1035 341Z" fill="#d946a7"/>
+			<path d="M998 364L875 378L875 382L875 390L875 402L875 417L892 415L913 397L939 382L968 371Z" fill="#8354d9"/>
+			<path d="M875 378L753 364L783 371L811 382L837 397L858 415L875 417L875 402L875 390L875 382Z" fill="#4b67d1"/>
+			<path d="M753 364L663 324L715 341L764 362L809 385L846 410L858 415L837 397L811 382L783 371Z" fill="#159fd0"/>
+			<path d="M663 324L630 270L690 300L747 333L799 368L841 402L846 410L809 385L764 362L715 341Z" fill="#20b9bb"/>
+			<path d="M630 270L663 216L715 259L764 305L809 351L846 395L841 402L799 368L747 333L690 300Z" fill="#28ae79"/>
+			<path d="M663 216L753 176L783 229L811 284L837 339L858 389L846 395L809 351L764 305L715 259Z" fill="#79b84a"/>
+			<path d="M753 176L875 162L875 218L875 276L875 334L875 387L858 389L837 339L811 284L783 229Z" fill="#c9bb3c"/>
+			<path d="M875 162L998 176L968 229L939 284L913 339L892 389L875 387L875 334L875 276L875 218Z" fill="#e5a638"/>
+			<path d="M998 176L1087 216L1035 259L986 305L941 351L904 395L892 389L913 339L939 284L968 229Z" fill="#ed753d"/>
+			<path d="M1087 216L1120 270L1060 300L1003 333L951 368L909 402L904 395L941 351L986 305L1035 259Z" fill="#ef4b55"/>
+		</g>
+
+		<g fill="none">
+			<ellipse cx="875" cy="270" rx="245" ry="108" stroke="#f4c76b" stroke-width="3" stroke-dasharray="8 7"/>
+			<ellipse cx="875" cy="300" rx="185" ry="82" stroke="#141b25" stroke-opacity=".72" stroke-width="4"/>
+			<ellipse cx="875" cy="333" rx="128" ry="57" stroke="#d8f7fb" stroke-width="3"/>
+			<ellipse cx="875" cy="368" rx="76" ry="34" stroke="#141b25" stroke-opacity=".76" stroke-width="4"/>
+		</g>
+		<ellipse cx="875" cy="402" rx="34" ry="15" fill="#02050a" stroke="#aab4c1" stroke-width="2"/>
+
+		<g fill="none" stroke="#eef2f7" stroke-opacity=".65" stroke-width="1.5">
+			<path d="M875 270L1120 270"/>
+			<path d="M875 270L753 364"/>
+		</g>
+		<g fill="#edf1f6" font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="12" font-weight="700">
+			<text x="1117" y="259" text-anchor="end">Re z</text>
+			<text x="738" y="379">Im z</text>
+		</g>
+
+		<g font-family="ui-monospace,SFMono-Regular,Consolas,monospace" font-size="11" font-weight="700">
+			<path d="M1082 188L1120 178" stroke="#f4c76b"/>
+			<text x="1078" y="184" fill="#f4c76b" text-anchor="end">HIGH CAP  +K</text>
+			<path d="M996 350L1018 370" stroke="#d8f7fb"/>
+			<text x="1024" y="376" fill="#d8f7fb">SEA LEVEL  L=0 · |f|=1</text>
+			<path d="M901 410L959 432" stroke="#c6ced9"/>
+			<text x="965" y="437" fill="#c6ced9">LOW CAP  −K · zero limit</text>
+		</g>
 	</g>
-	<g fill="none" stroke="#05070d" stroke-opacity=".36">
-		<circle cx="600" cy="337.5" r="34" stroke-width="9"/>
-		<circle cx="600" cy="337.5" r="68" stroke-width="10"/>
-		<circle cx="600" cy="337.5" r="136" stroke-width="12"/>
-		<circle cx="600" cy="337.5" r="272" stroke-width="14"/>
-		<circle cx="600" cy="337.5" r="544" stroke-width="16"/>
-	</g>
-	<g stroke="#05070d" stroke-opacity=".2" stroke-width="7">
-		<path d="M600 337.5 L1600 337.5"/>
-		<path d="M600 337.5 L1466 837.5"/>
-		<path d="M600 337.5 L1100 1203.5"/>
-		<path d="M600 337.5 L600 1337.5"/>
-		<path d="M600 337.5 L100 1203.5"/>
-		<path d="M600 337.5 L-266 837.5"/>
-		<path d="M600 337.5 L-400 337.5"/>
-		<path d="M600 337.5 L-266 -162.5"/>
-		<path d="M600 337.5 L100 -528.5"/>
-		<path d="M600 337.5 L600 -662.5"/>
-		<path d="M600 337.5 L1100 -528.5"/>
-		<path d="M600 337.5 L1466 -162.5"/>
-	</g>
-	<g stroke="#fff" stroke-opacity=".55" stroke-width="2">
-		<path d="M0 337.5 H1200"/>
-		<path d="M600 0 V675"/>
-	</g>
-	<circle cx="600" cy="337.5" r="18" fill="#02040c"/>
-	<g fill="#fff" font-family="ui-monospace,monospace" font-size="22" font-weight="700">
-		<text x="1166" y="324" text-anchor="end">Re z</text>
-		<text x="616" y="30">Im z</text>
+
+	<g font-family="ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+		<rect x="42" y="558" width="1113" height="45" rx="10" fill="#211d18" stroke="#494137"/>
+		<text x="62" y="586" fill="#f0e9dd" font-size="14" font-weight="650">height = clip(log₂|f(z)|, −K, K)</text>
+		<text x="383" y="586" fill="#8f9aab" font-size="14">·</text>
+		<text x="405" y="586" fill="#f0e9dd" font-size="14" font-weight="650">colour = Arg f(z)</text>
+		<text x="625" y="586" fill="#8f9aab" font-size="14">·</text>
+		<text x="647" y="586" fill="#aeb8c7" font-size="14">3D projection, not the full graph in ℝ⁴</text>
 	</g>
 </svg>
-

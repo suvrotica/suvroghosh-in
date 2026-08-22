@@ -382,13 +382,14 @@ test('wide article visualizations share the viewport-centred breakout contract',
 test('the domain-colouring exhibit uses a safe parser, GPU renderer, fallback, and normal post route', () => {
 	const expression = read('src', 'lib', 'visualizations', 'domain-coloring', 'expression.ts');
 	const renderer = read('src', 'lib', 'visualizations', 'domain-coloring', 'renderer.ts');
-	const component = read(
+	const glsl = read('src', 'lib', 'visualizations', 'domain-coloring', 'glsl.ts');
+	const field2d = read(
 		'src',
 		'lib',
 		'components',
 		'visualizations',
 		'domain-coloring',
-		'DomainColoringExplorer.svelte'
+		'DomainColoring2D.svelte'
 	);
 	const post = read('src', 'lib', 'posts', 'domain-coloring-complex-functions-explorer.md');
 	const poster = path.join(root, 'static', 'images', 'domain-coloring-explorer.svg');
@@ -396,10 +397,10 @@ test('the domain-colouring exhibit uses a safe parser, GPU renderer, fallback, a
 	assert.doesNotMatch(expression, /\beval\s*\(|new Function/);
 	assert.match(expression, /maximumExpressionLength/);
 	assert.match(renderer, /expressionToGlsl/);
-	assert.match(renderer, /logMagnitude \/ log\(2\.0\)/);
-	assert.match(component, /onpointerdown/);
-	assert.match(component, /onwheel/);
-	assert.match(component, /aria-pressed=\{gridVisible\}/);
+	assert.match(glsl, /logMagnitude \/ log\(2\.0\)/);
+	assert.match(field2d, /onpointerdown/);
+	assert.match(field2d, /onwheel/);
+	assert.match(field2d, /explorer\.overlays\.grid/);
 	assert.match(post, /category: "Visualizations"/);
 	assert.match(post, /<DomainColoringExplorer \/>/);
 	assert.ok(fs.existsSync(poster));

@@ -8126,14 +8126,14 @@
     },
     "static/images/domain-coloring-explorer.svg": {
       "format": "SVG",
-      "height": 675,
+      "height": 630,
       "optimized": false,
       "optimizerVersion": "2026-07-18.1",
-      "outputBytes": 2641,
-      "outputHash": "286f4e8c7660f0f77109b836450a6b594810137d0d01011c0059282711dbd383",
+      "outputBytes": 8743,
+      "outputHash": "f2796e3b794fd7d1497dc74dbb245c0f2b16c29e9654155ae1d692ebc519420d",
       "reason": "vector source retained",
-      "sourceBytes": 2641,
-      "sourceHash": "286f4e8c7660f0f77109b836450a6b594810137d0d01011c0059282711dbd383",
+      "sourceBytes": 8743,
+      "sourceHash": "f2796e3b794fd7d1497dc74dbb245c0f2b16c29e9654155ae1d692ebc519420d",
       "width": 1200
     },
     "static/images/double-pendulum-chaos.svg": {

@@ -1,4 +1,4 @@
-import type { ExpressionNode } from './types';
+import type { ComplexFunctionName, ExpressionNode } from './types';
 
 type TokenKind = 'number' | 'identifier' | 'operator' | 'left-paren' | 'right-paren' | 'end';
 
@@ -9,7 +9,17 @@ type Token = {
 	position: number;
 };
 
-const supportedFunctions = new Set(['exp', 'log', 'sin', 'cos', 'tan', 'sqrt', 'abs']);
+const supportedFunctions = new Set<ComplexFunctionName>([
+	'exp',
+	'log',
+	'sin',
+	'cos',
+	'tan',
+	'sqrt',
+	'abs',
+	'conj',
+	'sinc'
+]);
 const supportedConstants = new Set(['z', 'i', 'e', 'pi']);
 const maximumExpressionLength = 180;
 const maximumNodes = 128;
@@ -161,9 +171,9 @@ class Parser {
 				});
 			}
 
-			if (!supportedFunctions.has(token.text)) {
+			if (!supportedFunctions.has(token.text as ComplexFunctionName)) {
 				throw new ExpressionError(
-					`“${token.text}” is not available. Try exp, log, sin, cos, tan, sqrt, or abs.`
+					`“${token.text}” is not available. Try exp, log, sin, cos, tan, sqrt, abs, conj, or sinc.`
 				);
 			}
 
@@ -178,7 +188,7 @@ class Parser {
 			this.consume();
 			return this.node({
 				kind: 'call',
-				name: token.text as 'exp' | 'log' | 'sin' | 'cos' | 'tan' | 'sqrt' | 'abs',
+				name: token.text as ComplexFunctionName,
 				argument
 			});
 		}

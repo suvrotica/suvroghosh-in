@@ -3116,9 +3116,9 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 		{
 			"name": "domain-coloring-explorer.svg",
 			"src": "/images/domain-coloring-explorer.svg",
-			"bytes": 2641,
+			"bytes": 8743,
 			"width": 1200,
-			"height": 675
+			"height": 630
 		},
 		{
 			"name": "double-pendulum-chaos.svg",

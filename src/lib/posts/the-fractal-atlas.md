@@ -2,11 +2,12 @@
 title: "The Fractal Atlas: A Field Guide to Infinity"
 description: "Explore Mandelbrot and Julia sets, Burning Ships, Newton basins, ferns and recursive curves in a hands-on fractal laboratory."
 date: "2026-07-31"
-dateModified: "2026-07-31"
+dateModified: "2026-08-22"
 thumbnail: "/images/fractal-atlas.png"
 thumbnailAlt: "A dark Mandelbrot form surrounded by branching violet, brass and blue filaments, with a linked Julia set inside a circular specimen lens"
 category: "Visualizations"
-tags: ["Fractals", "Mandelbrot Set", "Julia Sets", "Complex Numbers", "Chaos", "WebGL", "Interactive Mathematics", "Generative Art"]
+tags: ["Fractals","Mandelbrot Set","Julia Sets","Complex Numbers","Chaos","WebGL","Interactive Mathematics","Generative Art","Complex Dynamics","Iterated Function Systems"]
+pinnedTags: ["Fractals","Mandelbrot Set","Julia Sets","Complex Numbers","Chaos","WebGL","Interactive Mathematics","Generative Art","Complex Dynamics","Iterated Function Systems"]
 published: true
 interactiveFirst: true
 color: "#2B1D55"
@@ -118,7 +119,7 @@ Drag the point below. The first mark is $z$, the second is $z^2$, and the third 
 
 <ComplexPlaneDemo />
 
-If you want to see how arbitrary complex functions can be mapped directly through hue and magnitude, the companion essay [Every Complex Number Has a Colour](/blog/visualizations/domain-coloring-complex-functions-explorer) treats that different experiment. Domain colouring maps the output of a function once. This atlas repeatedly feeds an output back into the same function and asks about its fate.
+If you want to inspect arbitrary complex functions through synchronised phase colour, log-magnitude terrain, and carefully separated Riemann-sheet models, the companion essay [Complex Functions as Landscapes](/blog/visualizations/domain-coloring-complex-functions-explorer) treats that different experiment. Domain colouring maps the output of a function once. This atlas repeatedly feeds an output back into the same function and asks about its fate.
 
 # The Fractal Atlas laboratory
 
