@@ -1,0 +1,66 @@
+---
+title: "The Doldrums of the Carcass"
+description: "A satirical plunge into the physics of stagnation, where a bipolar Bengali carcass measures the terminal velocity of his own despair."
+date: "2026-08-22"
+thumbnail: "/images/doldrums-of-the-carcass.png"
+thumbnailAlt: "Sepia-toned sketch of a weary bald man smoking over an open book beside a cup beneath a dark cloud"
+category: "Satire"
+tags: ["Depression", "Bipolar Disorder", "Stagnation", "Calcutta", "Kolkata", "SuvroGhosh", "Existentialism", "Physics", "Mental Health", "Inertia"]
+pinnedTags: ["Depression", "Bipolar Disorder", "Stagnation", "Calcutta", "Kolkata", "SuvroGhosh", "Existentialism", "Physics", "Mental Health", "Inertia"]
+published: true
+color: "#4a4a4a"
+---
+
+<TTS />
+
+<Pi src="/images/doldrums-of-the-carcass.png" alt="Sepia-toned sketch of a weary bald man smoking over an open book beside a cup beneath a dark cloud" />
+
+The doldrums. Not the band. Not the region near the equator where the trade winds collapse into each other like tired lovers who have forgotten why they ever bothered to embrace. No. The doldrums of the carcass. My carcass. This meat-sack that I have to heave out of bed every morning, a Sisyphean boulder made of flesh and regret, rolling not up a hill but horizontally, pathetically, toward the commode.
+
+There is a mathematical term for where I have fetched up. Terminal velocity. $v_t = \sqrt{\frac{2mg}{\rho A C_d}}$. The maximum speed an object achieves while falling through a fluid, when the drag force equals the gravitational pull and acceleration ceases and you just... keep... falling... at the same... sodding... rate... forever. Newton's first law of motion, that bastard, states that an object at rest stays at rest unless acted upon by an external force. I am that object. I am the external force's absence. I am the null set. I am $\emptyset$.
+
+I have rushed. Oh, how I have rushed. Rushed through the manic highs like a rickshaw-wallah on Red Bull and unprocessed grief, rushed through the depressive lows like a rickshaw-wallah whose rickshaw has been stolen and he is chasing it on foot through the Bowbazar traffic at noon in July, rushed through the good times—which, let's be honest, were just the manic times wearing a slightly less terrifying mask—rushed through the exasperations, the anxieties, the depressions, or at least I *hoped* I could rush through them, hoped I could outpace them like a Calcutta taxi driver outpaces the traffic police, which is to say: not at all, they always catch you, they always catch you at the Esplanade crossing and you sit there, engine idling, meter running, wallet hemorrhaging, while life passes you by in a cloud of diesel and despair.
+
+But now. But now. The winds are dead. Permanently dead. Not "resting." Not "pining for the fjords." Dead. Deceased. Expired. Gone to meet its maker, to push up the daisies, to join the choir invisible. This is an ex-parrot of a life, and I am the pet shop owner insisting it is just stunned.
+
+Waking up. That is the Everest. That is the K2. That is the entire Himalayan range compressed into the act of peeling this carcass off the mattress, a mattress that has absorbed approximately fifteen years of nightmares and approximately zero hours of restful sleep, a mattress that knows me better than I know myself and probably judges me just as harshly. The ceiling fan rotates with the enthusiasm of a bureaucrat processing a pension application. The light filtering through the grimy window—because who has the energy to clean windows, who has the energy to do *anything*—is the color of old nicotine stains and forgotten promises.
+
+And then: the realization. The gut-punch. The existential collywobbles. It is another day. Another. Goddamn. Day. The calendar is a conspiracy against the sane, a relentless march of identical rectangles, each one a fresh insult, each one a reminder that time is passing and I am not, I am stuck, I am becalmed, I am the ship in the doldrums where the sails hang limp and the crew has resorted to cannibalism and I am both the crew and the meal.
+
+The etymology of "doldrums" is deliciously uncertain, which is fitting because certainty is a luxury I cannot afford. Some say it comes from "dold," an archaic form of "dull," which would make it the dull-drums, the drums of dullness, a percussion section playing a single note forever. Others suggest it derives from "dold" meaning "stupid" or "foolish," which, given my life choices, feels personally targeted. The Oxford English Dictionary, that prissy gatekeeper of linguistic respectability, admits it is "of obscure origin," which is exactly what I would say about my own current state if anyone bothered to ask, which they don't, because I have successfully constructed a fortress of solitude around myself and forgotten where I left the drawbridge.
+
+To write. To write is to admit that something remains. Some ember. Some spark. Some pathetic little glow-worm of a thought that insists, against all evidence, against all reason, against the crushing weight of $\rho A C_d$ and the terminal velocity of the soul, that there is something to say. But who reads? Who reads the scribblings of a carcass? The internet is a vast ocean of content, a Sargasso Sea of words, and my little contribution is a single strand of seaweed, rotting, ignored, consumed by the algorithm and excreted as metadata. The page views are a flatline. The comments section is a tomb. The engagement metrics are the mathematical proof of my irrelevance, Q.E.D., quod erat demonstrandum, which is Latin for "I have demonstrated that I am a waste of protoplasm."
+
+And yet. And yet. Here I am. Typing. The fingers move, the neurons fire, the neurotransmitters attempt their pathetic little dance of chemical communication across synaptic gaps that feel wider than the Hooghly at its broadest point. The bipolar brain is a traitor and a comedian, a court jester who occasionally tells the truth but mostly just jingles his bells and falls over. Type II, they call it, as if it were a lesser offense, a misdemeanor rather than a felony, a "soft" bipolarity, which is like calling a soft tumor benign when it is still occupying space in your skull and pressing against the parts that used to know joy.
+
+I have worked in healthcare research. Fifteen years. In the land of the free and the home of the brave and the insurance premiums that could fund a small nation's GDP. I have seen the inside of the machine. I have watched the sausage being made, and let me tell you, the sausage is mostly paperwork and administrative bloat and the desperate cries of patients who cannot afford the medication that keeps them from becoming me, from becoming this, from becoming the doldrums incarnate. I have published papers. I have presented at conferences. I have shaken hands and smiled and networked and all of it, *all of it*, has led to this: a room in Calcutta, a ceiling fan, a mattress that knows too much, and the crushing certainty that the next moment will be identical to this one, and the one after that, and the one after that, a geometric progression of nothingness, a series that converges to zero.
+
+The Sanskrit has a word for this. *Vairāgya*. Dispassion. Detachment. The state of being without *rāga*, without coloring, without the red of passion or the blue of melancholy, just... gray. Gray like the Calcutta sky before the monsoon breaks. Gray like the walls of a government hospital. Gray like the water in the Hooghly, that great sewer of history, that flowing testament to humanity's capacity for pollution both physical and spiritual. *Vairāgya* is supposed to be a spiritual achievement, the renunciation of worldly attachments, the path to liberation. But there is a difference, a vast and terrible difference, between the *vairāgya* of the sage who has seen through the illusion of *māyā* and the *vairāgya* of the depressive who cannot see *anything* because the fog is too thick and the compass is broken and the captain has jumped overboard.
+
+The captain has jumped overboard. The captain is me. The captain is also not me, because the me that could have been captain is somewhere else, perhaps in an alternate universe where the external force acted and the object moved and the sails caught wind and the ship did not rot in the doldrums until the hull sprang leaks and the rats departed for better vessels.
+
+There is a concept in thermodynamics. Entropy. The measure of disorder in a closed system. The second law states that entropy always increases, that the universe tends toward disorder, that the coffee cup shatters and never reassembles, that the egg breaks and never un-breaks, that the life progresses from organization to chaos and never, *never*, reverses. My room is a closed system. My mind is a closed system. My life is a closed system, and the entropy is winning, the entropy is always winning, the entropy is the house and the house always wins and I am the sucker at the table who keeps placing bets because what else is there to do, what else is there to do but watch the dice roll and come up snake eyes, every time, every single time, *every single goddamn time*.
+
+And yet. And yet. The fingers move. The words appear. The post is written, reluctantly, chore-fully, a reluctant chore, a chore of reluctance, a reluctance choreographed by the dead winds and the flat sails and the ship that will not move. Perhaps someone will read. Perhaps someone will click. Perhaps the tags will work their SEO magic and a stranger in another city, another country, another state of similar despair, will find this and think: yes. Yes. That carcass knows. That carcass understands. That carcass is me, or I am that carcass, and in the recognition there is a moment, a brief and flickering moment, of something that is not quite connection but is closer to connection than to the void.
+
+The void. The *śūnya*. The zero. The nothing from which all things come and to which all things return. The Buddhists say *śūnyatā* is not nihilism but emptiness, the absence of inherent existence, the interdependence of all phenomena. I say: nice try, Buddhists. I say: come live in this carcass for a week and then tell me about the interdependence of phenomena. I say: the phenomena are not interdependent, they are independently conspiring to crush me, one identical day at a time, one dead wind at a time, one terminal velocity at a time.
+
+But I do not say. I write. I write because the alternative is silence, and silence is the void, and the void is hungry, and I have fed it enough. I have fed it years. I have fed it decades. I have fed it the marrow of my bones and the juice of my joints and the last remaining drops of whatever it was that used to make me want to get out of bed in the morning, and the void is still hungry, the void is always hungry, but I am done feeding it for today.
+
+Today, I write. Today, the carcass moves. Today, the doldrums are documented, the entropy is observed, the terminal velocity is calculated and found to be: slow. Very slow. Glacially, geologically, cosmologically slow. But not zero. Never zero. $v_t \neq 0$. The math insists. The math insists that as long as there is mass and gravity and the merest whisper of atmosphere, there is motion, there is fall, there is the endless, endless, *endless* plummet through the fluid of existence.
+
+And in the plummet, in the fall, in the doldrums of the carcass and the carcass of the doldrums, there is this: the word. The sentence. The paragraph. The post that no one will read, written by the carcass that cannot move, in the room that cannot be cleaned, in the city that cannot be escaped, in the life that cannot be changed, all things remaining unchanged, all things remaining, all things, all, all, all.
+
+The fan rotates. The light stains. The mattress waits. And I, the carcass, the object at rest, the ship without wind, the equation without solution, I wait too. I wait for the external force. I wait for the wind to rise. I wait for the doldrums to end, knowing they will not, knowing they cannot, knowing that the waiting is the doldrums and the doldrums is the waiting and the carcass is the ship and the ship is the carcass and the words are the wind and the wind is the words and none of it, *none of it*, none of it makes any difference at all.
+
+But I type anyway. Because what else is there. Because the alternative is the void. Because the void has had enough. Because I am a selfish, stubborn, stupid, stagnant, stuck, stupefied, stultified, *still*—still here. Still typing. Still the carcass that moves, however reluctantly, however chore-fully, however pointlessly, however meaninglessly, however endlessly, however hopelessly, however, however, however.
+
+The doldrums. The doldrums of the carcass. The carcass of the doldrums. The doldrums, the doldrums, the ever-loving, ever-lasting, ever-dying, ever-dead doldrums.
+
+Here I am. Here I remain. Here I write. Here I rot.
+
+Here.
+
+---
+
+P.S. References: Newton, I. *Philosophiæ Naturalis Principia Mathematica*, 1687; Second Law of Thermodynamics, various poor bastards, 1850-ish; the Oxford English Dictionary, which remains smugly uncertain; my mattress, which knows everything and says nothing.

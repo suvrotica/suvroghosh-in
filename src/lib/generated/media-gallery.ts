@@ -3114,6 +3114,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "doldrums-of-the-carcass.png",
+			"src": "/images/doldrums-of-the-carcass.png",
+			"bytes": 2820175,
+			"width": 1049,
+			"height": 1500
+		},
+		{
 			"name": "domain-coloring-explorer.svg",
 			"src": "/images/domain-coloring-explorer.svg",
 			"bytes": 8743,

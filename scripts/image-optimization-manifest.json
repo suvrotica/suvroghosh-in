@@ -8124,6 +8124,21 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/doldrums-of-the-carcass.png": {
+      "format": "PNG",
+      "height": 1500,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1500,
+      "originalWidth": 1049,
+      "outputBytes": 2820175,
+      "outputHash": "d1ef5619c44010de94810cbe99a27801dedbbb13ec31648273e1c0e6f5146def",
+      "resized": false,
+      "sourceBytes": 2945227,
+      "sourceHash": "d10423f030dcac9904c8d412f4e26ef8db8775d6a1146cb53b08ece2c25355d7",
+      "width": 1049
+    },
     "static/images/domain-coloring-explorer.svg": {
       "format": "SVG",
       "height": 630,

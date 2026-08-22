@@ -12128,6 +12128,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-21"
+		},
+		"src/lib/posts/doldrums-of-the-carcass.md": {
+			"bodyHash": "e127730c12ad586e3691858d2086083b4828471a4d055c2715710fdf2c63eaad",
+			"hashVersion": 2,
+			"revisionHash": "8b9424dcbd10fdcd8f25a138807abdb175f8ef6d5c421b2737b242b5e9363d23",
+			"generatedTags": [
+				"Depression",
+				"Bipolar Disorder",
+				"Stagnation",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Existentialism",
+				"Physics",
+				"Mental Health",
+				"Inertia"
+			],
+			"pinnedTags": [
+				"Depression",
+				"Bipolar Disorder",
+				"Stagnation",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Existentialism",
+				"Physics",
+				"Mental Health",
+				"Inertia"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

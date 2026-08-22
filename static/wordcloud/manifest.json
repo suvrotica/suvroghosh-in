@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T22:29:43.319224+00:00",
+  "generatedAt": "2026-08-22T10:57:05.805702+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2804,6 +2804,29 @@
         "Patterns",
         "Bad",
         "Interaction"
+      ],
+      "wordCount": 130
+    },
+    "doldrums-of-the-carcass": {
+      "generatedAt": "2026-08-22T10:57:03.213208+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/doldrums-of-the-carcass.svg",
+      "source": "src/lib/posts/doldrums-of-the-carcass.md",
+      "sourceHash": "5c593b98fb31b3596e6260f169d0bd925a58ed6350618c3708c9a681b5514ebb",
+      "sourceModified": "2026-08-22T10:48:41.890537+00:00",
+      "topWords": [
+        "Carcass",
+        "Doldrums",
+        "Say",
+        "Void",
+        "Time",
+        "Rushed",
+        "Always",
+        "Mattress",
+        "Ship",
+        "Write",
+        "Wind",
+        "Entropy"
       ],
       "wordCount": 130
     },
