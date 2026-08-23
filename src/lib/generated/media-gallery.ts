@@ -3947,6 +3947,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "morbid-napping.jpg",
+			"src": "/images/morbid-napping.jpg",
+			"bytes": 367684,
+			"width": 1050,
+			"height": 1498
+		},
+		{
 			"name": "mysteries-of-mental-illness-pbs-series.jpg",
 			"src": "/images/mysteries-of-mental-illness-pbs-series.jpg",
 			"bytes": 101337,

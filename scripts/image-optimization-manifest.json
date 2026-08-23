@@ -8975,6 +8975,22 @@
       "sourceHash": "7a443e2f67fa54014ad27303430bf2f09f965ba4654ced8a81a81cce033dcb9d",
       "width": 1200
     },
+    "static/images/morbid-napping.jpg": {
+      "format": "JPEG",
+      "height": 1498,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1498,
+      "originalWidth": 1050,
+      "outputBytes": 367684,
+      "outputHash": "c846742560ee68896579692085ba8897bfbbf133f38b61ed570cecad59ac5d16",
+      "psnrDb": 36.04,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 1986073,
+      "sourceHash": "34214a391ceb01768cc38f3d74fd27d08324acbee74bcfb95060e143f89dfcc0",
+      "width": 1050
+    },
     "static/images/mysteries-of-mental-illness-pbs-series.jpg": {
       "format": "JPEG",
       "height": 720,

@@ -12158,6 +12158,37 @@
 				"Inertia"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/morbid-napping.md": {
+			"bodyHash": "c8d7d5c937b9fb11a0f57c8f19fd991f36c5ceef43ddc82356188fde1f3d1fd5",
+			"hashVersion": 2,
+			"revisionHash": "f7c942c9efed36067861f1a481dafda3f9f0a9289bc975b4e333b099a388b754",
+			"generatedTags": [
+				"Depression",
+				"Sleep",
+				"Bipolar Disorder",
+				"Anxiety",
+				"Nightmares",
+				"Calcutta",
+				"Kolkata",
+				"Mental Health",
+				"Existentialism",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Depression",
+				"Sleep",
+				"Bipolar Disorder",
+				"Anxiety",
+				"Nightmares",
+				"Calcutta",
+				"Kolkata",
+				"Mental Health",
+				"Existentialism",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-23"
 		}
 	},
 	"maxTags": 10

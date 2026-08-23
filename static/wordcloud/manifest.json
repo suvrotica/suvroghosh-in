@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T10:57:05.805702+00:00",
+  "generatedAt": "2026-08-23T09:41:37.262650+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5886,6 +5886,29 @@
         "Near",
         "Man",
         "Face"
+      ],
+      "wordCount": 130
+    },
+    "morbid-napping": {
+      "generatedAt": "2026-08-23T09:41:36.896079+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/morbid-napping.svg",
+      "source": "src/lib/posts/morbid-napping.md",
+      "sourceHash": "17922b275fbbb8706525cca76f825fd79876a520039aa8bea198e103dd57e984",
+      "sourceModified": "2026-08-23T09:39:42.155767+00:00",
+      "topWords": [
+        "Mattress",
+        "Time",
+        "Write",
+        "Sleep",
+        "Never",
+        "Death",
+        "Awake",
+        "Though",
+        "Sum",
+        "Horizontal",
+        "Humidity",
+        "Refuses"
       ],
       "wordCount": 130
     },
