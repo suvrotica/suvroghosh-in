@@ -8092,6 +8092,21 @@
       "sourceHash": "d88a1717db2899a61d881199d5e8c307bb3973b8484f04b80ca41e9c841dc729",
       "width": 1672
     },
+    "static/images/calcutta-insomniac-manifesto.png": {
+      "format": "PNG",
+      "height": 1049,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1049,
+      "originalWidth": 1500,
+      "outputBytes": 3243758,
+      "outputHash": "5bb7b14ad942a7ad7843c3accdffc36113b69142eb27178aaed5b15ad4b8d6ee",
+      "resized": false,
+      "sourceBytes": 3272053,
+      "sourceHash": "82a8e0341f225688f904ad68ba53fb56e937a7c9dab4082ace15da40bac807b1",
+      "width": 1500
+    },
     "static/images/charcoal-horror-zigzag-presence.jpg": {
       "format": "JPEG",
       "height": 1440,

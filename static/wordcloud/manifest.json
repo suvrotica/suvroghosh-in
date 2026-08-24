@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T09:41:37.262650+00:00",
+  "generatedAt": "2026-08-24T16:07:07.585533+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1792,6 +1792,29 @@
         "Tap",
         "Visible",
         "Map"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-insomniac-manifesto": {
+      "generatedAt": "2026-08-24T16:07:06.622736+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/calcutta-insomniac-manifesto.svg",
+      "source": "src/lib/posts/calcutta-insomniac-manifesto.md",
+      "sourceHash": "8145362b50746ee0eded5c49c67b203c5ffc5f59791842d6d2674a583aaff074",
+      "sourceModified": "2026-08-24T16:06:50.137726+00:00",
+      "topWords": [
+        "Sleep",
+        "Winding",
+        "God",
+        "Pills",
+        "Positive",
+        "Mind",
+        "Watched",
+        "Absence",
+        "Today",
+        "Worked",
+        "Part",
+        "Netflix"
       ],
       "wordCount": 130
     },

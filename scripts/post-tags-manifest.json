@@ -12189,6 +12189,36 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-23"
+		},
+		"src/lib/posts/calcutta-insomniac-manifesto.md": {
+			"bodyHash": "61266a406e53af204850a842e2ddde33aae262a75831ed1dafa935d26f35ed71",
+			"hashVersion": 2,
+			"revisionHash": "3563588e3e37dd6fbdf14502f0074d40bae995c7be66b04cad0071eaca5d1400",
+			"generatedTags": [
+				"Mental Health",
+				"Insomnia",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Depression",
+				"Satire",
+				"Existentialism",
+				"Medication"
+			],
+			"pinnedTags": [
+				"Mental Health",
+				"Insomnia",
+				"Bipolar Disorder",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Depression",
+				"Satire",
+				"Existentialism",
+				"Medication"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

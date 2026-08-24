@@ -55,6 +55,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "calcutta-insomniac-manifesto.png",
+			"src": "/images/calcutta-insomniac-manifesto.png",
+			"bytes": 3243758,
+			"width": 1500,
+			"height": 1049
+		},
+		{
 			"name": "charcoal-horror-zigzag-presence.jpg",
 			"src": "/images/charcoal-horror-zigzag-presence.jpg",
 			"bytes": 451521,
