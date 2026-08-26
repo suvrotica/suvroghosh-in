@@ -4715,6 +4715,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 32414,
 			"width": 1200,
 			"height": 630
+		},
+		{
+			"name": "zamindars-are-not-dead.png",
+			"src": "/images/zamindars-are-not-dead.png",
+			"bytes": 3407509,
+			"width": 1500,
+			"height": 1049
 		}
 	],
 	"photos": [

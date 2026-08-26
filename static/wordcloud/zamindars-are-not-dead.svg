@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Zamindars Are Not Dead" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Zamindars Are Not Dead</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(823,457)" font-size="118" style="fill:#8fb7d0">Poor</text>
+<text transform="translate(904,222)" font-size="118" style="fill:#d88988">Now</text>
+<text transform="translate(179,667)" font-size="118" style="fill:#d6a79f">Zamindar</text>
+<text transform="translate(617,307)" font-size="104" style="fill:#d9c89e">Starve</text>
+<text transform="translate(41,315)" font-size="96" style="fill:#a9b7a3">Zamindars</text>
+<text transform="translate(51,448)" font-size="96" style="fill:#d5d2c2">India</text>
+<text transform="translate(247,527)" font-size="87" style="fill:#9fc9c5">Zamindari</text>
+<text transform="translate(599,154)" font-size="77" style="fill:#d9c89e">Indian</text>
+<text transform="translate(1060,520)" font-size="77" style="fill:#d9c89e">Land</text>
+<text transform="translate(727,81)" font-size="77" style="fill:#d88988">Street</text>
+<text transform="translate(210,164)" font-size="77" style="fill:#d9c89e">Call</text>
+<text transform="translate(837,553)" font-size="77" style="fill:#d5d2c2">Gini</text>
+<text transform="translate(476,438)" font-size="77" style="fill:#b6c3dd">Wealth</text>
+<text transform="translate(17,70)" font-size="77" style="fill:#c49a6c">Enough</text>
+<text transform="translate(745,629)" font-size="77" style="fill:#d88988">Never</text>
+<text transform="translate(973,380)" font-size="77" style="fill:#c49a6c">Needed</text>
+<text transform="translate(410,166)" font-size="66" style="fill:#a9b7a3">Dead</text>
+<text transform="translate(6,529)" font-size="66" style="fill:#c7d7b5">Time</text>
+<text transform="translate(1012,56)" font-size="66" style="fill:#d9c89e">Mean</text>
+<text transform="translate(1060,600)" font-size="66" style="fill:#c49a6c">Read</text>
+<text transform="translate(120,229)" font-size="66" style="fill:#a9b7a3">Arthashastra</text>
+<text transform="translate(1001,651)" font-size="66" style="fill:#9fc9c5">Least</text>
+<text transform="translate(382,370)" font-size="66" style="fill:#b6c3dd">Ruthless</text>
+<text transform="translate(1171,311) rotate(-90)" font-size="66" style="fill:#d5d2c2">Money</text>
+<text transform="translate(322,57)" font-size="66" style="fill:#d6a79f">Ways</text>
+<text transform="translate(712,703)" font-size="66" style="fill:#d9c89e">Corner</text>
+<text transform="translate(1240,288) rotate(-90)" font-size="66" style="fill:#d5d2c2">Holds</text>
+<text transform="translate(797,363)" font-size="66" style="fill:#d6a79f">Didn</text>
+<text transform="translate(534,75)" font-size="66" style="fill:#d6a79f">King</text>
+<text transform="translate(6,713)" font-size="66" style="fill:#c7d7b5">Need</text>
+<text transform="translate(666,221)" font-size="66" style="fill:#9fc9c5">Knows</text>
+<text transform="translate(23,370)" font-size="54" style="fill:#c49a6c">Sound</text>
+<text transform="translate(69,576)" font-size="54" style="fill:#e0b879">Evolution</text>
+<text transform="translate(953,700)" font-size="49" style="fill:#d5d2c2">Aristocracy</text>
+<text transform="translate(184,708)" font-size="49" style="fill:#9fc9c5">Generalizations</text>
+<text transform="translate(900,131)" font-size="49" style="fill:#9fc9c5">Caste</text>
+<text transform="translate(17,113)" font-size="49" style="fill:#8fb7d0">System</text>
+<text transform="translate(380,570)" font-size="49" style="fill:#9fc9c5">Whoever</text>
+<text transform="translate(584,567)" font-size="47" style="fill:#d88988">Trickster</text>
+<text transform="translate(5,170)" font-size="47" style="fill:#b6c3dd">Version</text>
+<text transform="translate(1072,445)" font-size="47" style="fill:#c49a6c">Bootleg</text>
+<text transform="translate(24,632)" font-size="47" style="fill:#d6a79f">Robert</text>
+<text transform="translate(1007,95)" font-size="47" style="fill:#d9c89e">Greene</text>
+<text transform="translate(1262,641) rotate(-90)" font-size="47" style="fill:#d9c89e">Sort</text>
+<text transform="translate(385,108)" font-size="40" style="fill:#8fb7d0">Education</text>
+<text transform="translate(189,354)" font-size="40" style="fill:#b6c3dd">Required</text>
+<text transform="translate(1175,57)" font-size="40" style="fill:#c7d7b5">Meek</text>
+<text transform="translate(339,437)" font-size="40" style="fill:#d88988">Sheep</text>
+<text transform="translate(986,258)" font-size="40" style="fill:#9fc9c5">Except</text>
+<text transform="translate(1274,305) rotate(-90)" font-size="40" style="fill:#d5d2c2">Criminals</text>
+<text transform="translate(752,489)" font-size="37" style="fill:#e0b879">Parliament</text>
+<text transform="translate(724,493) rotate(-90)" font-size="37" style="fill:#9fc9c5">AI</text>
+<text transform="translate(776,662)" font-size="37" style="fill:#d9c89e">Bloat</text>
+<text transform="translate(627,34)" font-size="37" style="fill:#d9c89e">Find</text>
+<text transform="translate(655,598)" font-size="37" style="fill:#8fb7d0">Hard</text>
+<text transform="translate(114,488)" font-size="37" style="fill:#c49a6c">Little</text>
+<text transform="translate(802,32)" font-size="37" style="fill:#b6c3dd">Crumbs</text>
+<text transform="translate(405,258)" font-size="33" style="fill:#9fc9c5">Particular</text>
+<text transform="translate(780,441) rotate(-90)" font-size="33" style="fill:#b6c3dd">Stench</text>
+<text transform="translate(30,313) rotate(-90)" font-size="33" style="fill:#e0b879">Cruelty</text>
+<text transform="translate(1049,610) rotate(-90)" font-size="33" style="fill:#8fb7d0">Changes</text>
+<text transform="translate(840,576)" font-size="25" style="fill:#d88988">Magnificent</text>
+<text transform="translate(108,257)" font-size="25" style="fill:#b6c3dd">Parasite</text>
+<text transform="translate(74,23)" font-size="25" style="fill:#d9c89e">East</text>
+<text transform="translate(567,464)" font-size="25" style="fill:#e0b879">Company</text>
+<text transform="translate(894,225) rotate(-90)" font-size="25" style="fill:#d6a79f">Asking</text>
+<text transform="translate(1098,467)" font-size="25" style="fill:#d9c89e">Evicting</text>
+<text transform="translate(712,244)" font-size="25" style="fill:#b6c3dd">Mathematics</text>
+<text transform="translate(15,652)" font-size="22" style="fill:#b6c3dd">Exploitation</text>
+<text transform="translate(984,315)" font-size="22" style="fill:#d88988">Elegant</text>
+<text transform="translate(291,93)" font-size="22" style="fill:#d6a79f">Number</text>
+<text transform="translate(1029,152)" font-size="22" style="fill:#a9b7a3">Corrado</text>
+<text transform="translate(732,179)" font-size="22" style="fill:#e0b879">Measures</text>
+<text transform="translate(309,72) rotate(-90)" font-size="22" style="fill:#9fc9c5">Scale</text>
+<text transform="translate(431,398)" font-size="22" style="fill:#d5d2c2">Man</text>
+<text transform="translate(973,397) rotate(-90)" font-size="22" style="fill:#a9b7a3">Mills</text>
+<text transform="translate(580,180)" font-size="22" style="fill:#a9b7a3">Credit</text>
+<text transform="translate(33,452) rotate(-90)" font-size="22" style="fill:#c7d7b5">Suisse</text>
+<text transform="translate(282,374)" font-size="22" style="fill:#e0b879">Global</text>
+<text transform="translate(722,514)" font-size="22" style="fill:#d5d2c2">Report</text>
+<text transform="translate(642,705)" font-size="22" style="fill:#d9c89e">Tells</text>
+<text transform="translate(362,391)" font-size="22" style="fill:#8fb7d0">Owns</text>
+<text transform="translate(1098,547)" font-size="22" style="fill:#e0b879">Economy</text>
+<text transform="translate(289,251)" font-size="22" style="fill:#9fc9c5">Taste</text>
+<text transform="translate(775,103)" font-size="22" style="fill:#d9c89e">Middle</text>
+<text transform="translate(508,21)" font-size="22" style="fill:#d6a79f">Class</text>
+<text transform="translate(1206,76)" font-size="22" style="fill:#c49a6c">Apes</text>
+<text transform="translate(992,629) rotate(-90)" font-size="22" style="fill:#c7d7b5">Die</text>
+<text transform="translate(44,194)" font-size="22" style="fill:#a9b7a3">Afford</text>
+<text transform="translate(1225,409)" font-size="22" style="fill:#e0b879">Age</text>
+<text transform="translate(457,592)" font-size="22" style="fill:#d9c89e">Three</text>
+<text transform="translate(112,390)" font-size="22" style="fill:#8fb7d0">Learn</text>
+<text transform="translate(598,328)" font-size="22" style="fill:#d5d2c2">Thousand</text>
+<text transform="translate(1105,403)" font-size="22" style="fill:#8fb7d0">Ultimate</text>
+<text transform="translate(1005,293)" font-size="22" style="fill:#c49a6c">Holder</text>
+<text transform="translate(276,598)" font-size="22" style="fill:#b6c3dd">Possession</text>
+<text transform="translate(135,23)" font-size="22" style="fill:#c49a6c">Persists</text>
+<text transform="translate(341,461)" font-size="22" style="fill:#b6c3dd">Great</text>
+<text transform="translate(891,648)" font-size="19" style="fill:#d5d2c2">Innovation</text>
+<text transform="translate(559,284)" font-size="19" style="fill:#b6c3dd">Born</text>
+<text transform="translate(440,467)" font-size="19" style="fill:#d88988">Grotesque</text>
+<text transform="translate(378,184)" font-size="18" style="fill:#d6a79f">Algorithms</text>
+<text transform="translate(1165,17)" font-size="18" style="fill:#d6a79f">Accounts</text>
+<text transform="translate(1057,117)" font-size="18" style="fill:#d5d2c2">Simply</text>
+<text transform="translate(168,522)" font-size="18" style="fill:#c49a6c">Network</text>
+<text transform="translate(822,434) rotate(-90)" font-size="18" style="fill:#d88988">Code</text>
+<text transform="translate(24,548)" font-size="18" style="fill:#a9b7a3">Guy</text>
+<text transform="translate(61,332)" font-size="18" style="fill:#c7d7b5">State</text>
+<text transform="translate(270,182)" font-size="18" style="fill:#d5d2c2">Kautilya</text>
+<text transform="translate(105,597)" font-size="18" style="fill:#a9b7a3">Known</text>
+<text transform="translate(21,470)" font-size="18" style="fill:#9fc9c5">Chanakya</text>
+<text transform="translate(897,240)" font-size="18" style="fill:#d5d2c2">Original</text>
+<text transform="translate(1114,669)" font-size="18" style="fill:#d5d2c2">Extraction</text>
+<text transform="translate(48,668)" font-size="17" style="fill:#d9c89e">Currently</text>
+<text transform="translate(477,125)" font-size="17" style="fill:#8fb7d0">Predict</text>
+<text transform="translate(36,227)" font-size="17" style="fill:#d5d2c2">Starving</text>
+<text transform="translate(52,140)" font-size="17" style="fill:#d6a79f">Content</text>
+<text transform="translate(528,387)" font-size="17" style="fill:#e0b879">Scrolling</text>
+<text transform="translate(707,366)" font-size="17" style="fill:#e0b879">Verse</text>
+<text transform="translate(17,617) rotate(-90)" font-size="17" style="fill:#d6a79f">Mahabharata</text>
+<text transform="translate(438,74)" font-size="17" style="fill:#b6c3dd">Bharata</text>
+<text transform="translate(719,20)" font-size="17" style="fill:#d88988">Decline</text>
+<text transform="translate(268,293) rotate(-90)" font-size="17" style="fill:#c7d7b5">Glani</text>
+<text transform="translate(975,148)" font-size="17" style="fill:#d6a79f">Swamp</text>
+<text transform="translate(137,133)" font-size="17" style="fill:#a9b7a3">Dignity</text>
+<text transform="translate(536,596)" font-size="17" style="fill:#a9b7a3">Cost</text>
+<text transform="translate(421,16)" font-size="17" style="fill:#d88988">Data</text>
+<text transform="translate(681,681) rotate(-90)" font-size="17" style="fill:#9fc9c5">Subjects</text>
+<text transform="translate(1161,329)" font-size="17" style="fill:#c7d7b5">Century</text>
+<text transform="translate(1059,328)" font-size="12" style="fill:#d6a79f">Improbable</text>
+</svg>

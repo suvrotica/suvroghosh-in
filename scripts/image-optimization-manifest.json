@@ -10649,6 +10649,21 @@
       "sourceHash": "b5045f6a41a1164349a605cd3aa6a8b3466ba6d81a2eda5adf3a6e57977e780e",
       "width": 1200
     },
+    "static/images/zamindars-are-not-dead.png": {
+      "format": "PNG",
+      "height": 1049,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1049,
+      "originalWidth": 1500,
+      "outputBytes": 3407509,
+      "outputHash": "43ea1e8dd092bc336ec38ab930f5574cd2764842e8da165901fd4953cb0ddecd",
+      "resized": false,
+      "sourceBytes": 3438133,
+      "sourceHash": "dd5ccaf12f1cf2b2d59d4c6936c08590532033289265dc3067c511df73691704",
+      "width": 1500
+    },
     "static/photos/Compress_20260510_235335_5542.jpg": {
       "format": "JPEG",
       "height": 1056,
