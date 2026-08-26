@@ -8178,6 +8178,21 @@
       "sourceHash": "c3fd3aea23023f41e528c501903308eafe7c3624bac0ac4d73760d75b4dcfe52",
       "width": 1600
     },
+    "static/images/entropy-and-the-thermodynamics-of-lonely-bastards.png": {
+      "format": "PNG",
+      "height": 1239,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1239,
+      "originalWidth": 1269,
+      "outputBytes": 3087786,
+      "outputHash": "7f6f953b693fca939978e43a380b6dd506973f4d10571e675eb946ff85790a71",
+      "resized": false,
+      "sourceBytes": 3112306,
+      "sourceHash": "7a9a7e248bf7eaba857296ae1bf1eb089dadf869f580cd3f92c482ce5b420ce1",
+      "width": 1269
+    },
     "static/images/fractal-atlas.png": {
       "format": "PNG",
       "height": 900,

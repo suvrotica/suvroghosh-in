@@ -12219,6 +12219,36 @@
 				"Medication"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/entropy-and-the-thermodynamics-of-lonely-bastards.md": {
+			"bodyHash": "aefd9fe593dd0884ca11be4da26bb842ae5e55207dcb0c6972e15c38b5c9deb9",
+			"hashVersion": 2,
+			"revisionHash": "c64ce8ed2b4ff681cdf2a99e4a3c619cb9cc39e71f9cfe8508b1a36b59805335",
+			"generatedTags": [
+				"Entropy",
+				"Thermodynamics",
+				"Loneliness",
+				"Depression",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"Physics",
+				"Science Writing",
+				"Philosophy"
+			],
+			"pinnedTags": [
+				"Entropy",
+				"Thermodynamics",
+				"Loneliness",
+				"Depression",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"Physics",
+				"Science Writing",
+				"Philosophy"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -3142,6 +3142,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "entropy-and-the-thermodynamics-of-lonely-bastards.png",
+			"src": "/images/entropy-and-the-thermodynamics-of-lonely-bastards.png",
+			"bytes": 3087786,
+			"width": 1269,
+			"height": 1239
+		},
+		{
 			"name": "fractal-atlas.png",
 			"src": "/images/fractal-atlas.png",
 			"bytes": 87605,

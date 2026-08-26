@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T16:07:07.585533+00:00",
+  "generatedAt": "2026-08-26T12:53:00.915920+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3080,6 +3080,29 @@
         "Remember",
         "Often",
         "Time"
+      ],
+      "wordCount": 130
+    },
+    "entropy-and-the-thermodynamics-of-lonely-bastards": {
+      "generatedAt": "2026-08-26T12:52:44.672758+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/entropy-and-the-thermodynamics-of-lonely-bastards.svg",
+      "source": "src/lib/posts/entropy-and-the-thermodynamics-of-lonely-bastards.md",
+      "sourceHash": "d1ebcd2757978ffef66eeea8617bffe36c6aea00f8a30db0a7e2f99fa9e32c9e",
+      "sourceModified": "2026-08-26T12:47:45.644256+00:00",
+      "topWords": [
+        "Entropy",
+        "Every",
+        "Universe",
+        "Heat",
+        "Death",
+        "Disorder",
+        "Equation",
+        "News",
+        "Mathbf",
+        "Always",
+        "Write",
+        "Boltzmann"
       ],
       "wordCount": 130
     },
