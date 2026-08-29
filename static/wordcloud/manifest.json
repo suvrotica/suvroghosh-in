@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T03:57:14.576131+00:00",
+  "generatedAt": "2026-08-29T08:27:18.815822+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10854,6 +10854,29 @@
         "Entries",
         "Ensemble",
         "Sample"
+      ],
+      "wordCount": 130
+    },
+    "the-meaning-connection-map": {
+      "generatedAt": "2026-08-29T08:27:18.449216+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-meaning-connection-map.svg",
+      "source": "src/lib/posts/the-meaning-connection-map.md",
+      "sourceHash": "475596efe5cfcd24980e8074d4c0be1c1ca756cace482b67db95e043cce54f4f",
+      "sourceModified": "2026-08-29T08:19:42.744856+00:00",
+      "topWords": [
+        "Concepts",
+        "Every",
+        "Explanation",
+        "Map",
+        "Concept",
+        "Graph",
+        "Feedback",
+        "Loops",
+        "Language",
+        "Data",
+        "Connected",
+        "Node"
       ],
       "wordCount": 130
     },
