@@ -3947,6 +3947,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "meaning-connection-map.png",
+			"src": "/images/meaning-connection-map.png",
+			"bytes": 44313,
+			"width": 1200,
+			"height": 630
+		},
+		{
 			"name": "monsoon-monotony-malignant-prostate-providence.jpg",
 			"src": "/images/monsoon-monotony-malignant-prostate-providence.jpg",
 			"bytes": 387552,

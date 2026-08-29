@@ -157,7 +157,7 @@ export const visualizationSummaries = {
 		description:
 			'Explore a deeply interconnected map of 50+ ideas — probability, feedback loops, LLMs, Bayesian inference — with plain-English explanations and concrete examples.',
 		subjects: ['Epistemology', 'Computer Science', 'Data Science', 'Systems Thinking'],
-		poster: '',
+		poster: '/images/meaning-connection-map.png',
 		posterAlt:
 			'A dense, readable concept map showing 50+ ideas connected by 100+ labelled relationships against a dark background',
 		href: '/blog/visualizations/the-meaning-connection-map',

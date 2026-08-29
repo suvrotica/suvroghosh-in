@@ -8977,6 +8977,21 @@
       "sourceHash": "20128349da16654910f8bf9667debd00ae98055f83cc514f3bb20374ae68eb16",
       "width": 896
     },
+    "static/images/meaning-connection-map.png": {
+      "format": "PNG",
+      "height": 630,
+      "lossless": true,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 630,
+      "originalWidth": 1200,
+      "outputBytes": 44313,
+      "outputHash": "d88e2ac9d7df55a3bcb447b284fcfcee710bf0e9bc7158f00476857d07b5071e",
+      "resized": false,
+      "sourceBytes": 44313,
+      "sourceHash": "d88e2ac9d7df55a3bcb447b284fcfcee710bf0e9bc7158f00476857d07b5071e",
+      "width": 1200
+    },
     "static/images/monsoon-monotony-malignant-prostate-providence.jpg": {
       "format": "JPEG",
       "height": 1440,

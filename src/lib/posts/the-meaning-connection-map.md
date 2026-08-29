@@ -3,24 +3,15 @@ title: 'The Meaning & Connection Map: A Visual Encyclopedia of Ideas'
 date: '2026-08-29'
 dateModified: '2026-08-29'
 category: visualizations
-description: 'Explore a deeply interconnected map of 50+ ideas — from probability and feedback loops to large language models and Bayesian inference — with plain-English explanations and concrete examples.'
-tags:
-  - conceptual cartography
-  - knowledge graphs
-  - systems thinking
-  - artificial intelligence
-  - machine learning
-  - data science
-  - software engineering
-  - research methods
+description: 'Explore 50+ interconnected ideas — probability, feedback loops, LLMs, Bayesian inference — with plain-English explanations and concrete examples.'
+tags: ["conceptual cartography","knowledge graphs","systems thinking","artificial intelligence","machine learning","Feedback Loops","Technical Approach","Concepts","Node","Explanation"]
 pinnedTags:
   - conceptual cartography
   - knowledge graphs
   - systems thinking
   - artificial intelligence
   - machine learning
-thumbnail: /images/meaning-connection-map.png
-thumbnailAlt: 'A dense, readable concept map showing 50+ ideas connected by 100+ labelled relationships, with a selected node displaying plain-English explanation and constituent ideas'
+published: true
 color: ink
 author: Suvro Ghosh
 ---
