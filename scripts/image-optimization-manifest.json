@@ -9180,6 +9180,22 @@
       "sourceHash": "bf98f7859481492e41bb10a3bb4ca169126c6014ada79054a99187b1d3af82f9",
       "width": 1280
     },
+    "static/images/rakhi-and-the-currency-of-oblivion.jpeg": {
+      "format": "JPEG",
+      "height": 1498,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1498,
+      "originalWidth": 1050,
+      "outputBytes": 389431,
+      "outputHash": "96947f13329d066a11686037688d1d93cd78946b344b1f6ca84bc83c3285271a",
+      "psnrDb": 40.81,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 389431,
+      "sourceHash": "96947f13329d066a11686037688d1d93cd78946b344b1f6ca84bc83c3285271a",
+      "width": 1050
+    },
     "static/images/reaching-the-light-together-overcoming-major-depression.jpg": {
       "format": "JPEG",
       "height": 720,

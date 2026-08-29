@@ -12306,6 +12306,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-29"
+		},
+		"src/lib/posts/rakhi-and-the-currency-of-oblivion.md": {
+			"bodyHash": "11636a3ccb1fae14bbb944b88febc70976e23e95ad5c04cb29d09f5ed6fd677f",
+			"hashVersion": 2,
+			"revisionHash": "013f7991c0bd0ad36c1049767e36d2806d2c919e0346139e88f4a328370ed88b",
+			"generatedTags": [
+				"Rakhi",
+				"Festival",
+				"Calcutta",
+				"Poverty",
+				"Culture",
+				"Satire",
+				"Neurobiology",
+				"Prefrontal Cortex",
+				"Rakṣā",
+				"Sister"
+			],
+			"pinnedTags": [
+				"Rakhi",
+				"Festival",
+				"Calcutta",
+				"Poverty",
+				"Culture",
+				"Satire",
+				"Neurobiology"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-30"
 		}
 	},
 	"maxTags": 10

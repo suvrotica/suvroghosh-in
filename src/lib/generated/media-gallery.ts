@@ -4038,6 +4038,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "rakhi-and-the-currency-of-oblivion.jpeg",
+			"src": "/images/rakhi-and-the-currency-of-oblivion.jpeg",
+			"bytes": 389431,
+			"width": 1050,
+			"height": 1498
+		},
+		{
 			"name": "reaching-the-light-together-overcoming-major-depression.jpg",
 			"src": "/images/reaching-the-light-together-overcoming-major-depression.jpg",
 			"bytes": 61287,

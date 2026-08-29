@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T08:27:18.815822+00:00",
+  "generatedAt": "2026-08-29T22:48:10.845993+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7013,6 +7013,29 @@
         "Room",
         "India",
         "Ordinary"
+      ],
+      "wordCount": 130
+    },
+    "rakhi-and-the-currency-of-oblivion": {
+      "generatedAt": "2026-08-29T22:48:10.520972+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/rakhi-and-the-currency-of-oblivion.svg",
+      "source": "src/lib/posts/rakhi-and-the-currency-of-oblivion.md",
+      "sourceHash": "7ea604a8c013bc2827ec5e6993e6d017e917c15bd75e6cef8ecfd2719bbe625f",
+      "sourceModified": "2026-08-29T22:46:04.134136+00:00",
+      "topWords": [
+        "Rakhi",
+        "Social",
+        "Truth",
+        "Festival",
+        "Longer",
+        "Sister",
+        "Now",
+        "Love",
+        "Thread",
+        "Rak",
+        "Free",
+        "Forgotten"
       ],
       "wordCount": 130
     },
