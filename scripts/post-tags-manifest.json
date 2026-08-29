@@ -12334,6 +12334,32 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-30"
+		},
+		"src/lib/posts/linear-algebra-the-hidden-architecture-of-machine-learning.md": {
+			"bodyHash": "e0a4fcbb0a6de2e02e6b6e4d10af1cdf2c274ffc17ba4649ffd386e4d2327baf",
+			"hashVersion": 2,
+			"revisionHash": "e98996110c6bb2ffe9c3f2a8f4b1d002f8b6f2688c54b81d48cc9ded0d7b13e5",
+			"generatedTags": [
+				"Linear Algebra",
+				"Machine Learning",
+				"Mathematics",
+				"Deep Learning",
+				"Neural Networks",
+				"Matrix Multiplication",
+				"Matrix Multiplications",
+				"Linear",
+				"Algebra",
+				"Vector"
+			],
+			"pinnedTags": [
+				"Linear Algebra",
+				"Machine Learning",
+				"Mathematics",
+				"Deep Learning",
+				"Neural Networks"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-30"
 		}
 	},
 	"maxTags": 10

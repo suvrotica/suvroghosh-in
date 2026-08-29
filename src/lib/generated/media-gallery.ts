@@ -3940,6 +3940,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "linear-algebra-hidden-architecture-ml.png",
+			"src": "/images/linear-algebra-hidden-architecture-ml.png",
+			"bytes": 548042,
+			"width": 1200,
+			"height": 1800
+		},
+		{
 			"name": "llm-hype-gaslighting.jpg",
 			"src": "/images/llm-hype-gaslighting.jpg",
 			"bytes": 254014,

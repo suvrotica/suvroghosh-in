@@ -8961,6 +8961,21 @@
       "sourceHash": "a86b5feca04fa3be7a4e8a7e330ea9c1f06e1e83fcef936e0d4ea6b9a7764d0f",
       "width": 1600
     },
+    "static/images/linear-algebra-hidden-architecture-ml.png": {
+      "format": "PNG",
+      "height": 1800,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1800,
+      "originalWidth": 1200,
+      "outputBytes": 548042,
+      "outputHash": "8f9206b84290ff9dfebb47fc36d1c9e72ffd4c012c8227511c8641780382f958",
+      "resized": false,
+      "sourceBytes": 562081,
+      "sourceHash": "50572bcd69748ba058e6405980139e70c96e39cbf64278d8114d08b1318d42ee",
+      "width": 1200
+    },
     "static/images/llm-hype-gaslighting.jpg": {
       "format": "JPEG",
       "height": 1280,

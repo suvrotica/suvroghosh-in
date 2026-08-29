@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T22:48:10.845993+00:00",
+  "generatedAt": "2026-08-29T23:28:34.416732+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5403,6 +5403,29 @@
         "Strike",
         "Attachment",
         "Ground"
+      ],
+      "wordCount": 130
+    },
+    "linear-algebra-the-hidden-architecture-of-machine-learning": {
+      "generatedAt": "2026-08-29T23:28:33.997565+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/linear-algebra-the-hidden-architecture-of-machine-learning.svg",
+      "source": "src/lib/posts/linear-algebra-the-hidden-architecture-of-machine-learning.md",
+      "sourceHash": "bac6f5c8167f14d5cb703a7d5ef5c8c64df45f63102c89a4997f9dae23f5f8a2",
+      "sourceModified": "2026-08-29T23:28:27.539410+00:00",
+      "topWords": [
+        "Linear",
+        "Matrix",
+        "Algebra",
+        "Vector",
+        "Space",
+        "Learning",
+        "Vectors",
+        "Spaces",
+        "Matrices",
+        "Machine",
+        "Operations",
+        "Neural"
       ],
       "wordCount": 130
     },
