@@ -196,6 +196,7 @@ const config = {
 			}
 		},
 		prerender: {
+			handleEntryGeneratorMismatch: 'ignore',
 			handleHttpError: ({ path, message }) => {
 				// Vercel provides this optimizer endpoint after deployment, not during prerender crawling.
 				if (path === '/_vercel/image') return;
