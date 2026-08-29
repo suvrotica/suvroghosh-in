@@ -3,39 +3,35 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 
 /**
- * During the esbuild dep-scan phase (which builds the dependency
- * graph before the real build), import.meta.glob('/src/lib/posts/*.md')
- * creates 600+ parallel resolve requests. On Vercel's 1 GB runner
- * esbuild times out with "server restarted or closed" errors.
+ * import.meta.glob('/src/lib/posts/*.md') in +page.ts gets expanded
+ * by vite:import-glob into ~600 dynamic import()s. During esbuild's
+ * dep-scan on Vercel, all 600 resolve in parallel and time out.
  *
- * This plugin returns a no-op stub for every .md file during the
- * scan so esbuild finishes in milliseconds. During the real build
- * and dev server, .md files resolve normally through mdsvex.
+ * This plugin (enforce: 'pre') transforms the source BEFORE
+ * vite:import-glob, replacing the glob with a single Proxy that
+ * lazily calls import(). Result: 1 import instead of 600.
  */
-function skipMdDuringScan(): Plugin {
-	const VIRTUAL_ID = '\0virtual-empty-md';
-
+function lazyPostGlob(): Plugin {
 	return {
-		name: 'skip-md-during-scan',
+		name: 'lazy-post-glob',
 		enforce: 'pre',
+		transform(code, id) {
+			const marker = 'src/routes/blog/[category]/[slug]/+page.ts';
+			if (!id.includes(marker)) return;
 
-		resolveId(id, _importer, options) {
-			if (!id.endsWith('.md')) return;
-			// options.scan is true only during the initial esbuild dependency
-			// scan.  During actual builds and dev, it is absent or false.
-			if ((options as Record<string, unknown>).scan) {
-				return { id: VIRTUAL_ID };
-			}
-		},
+			const globMatch = /const\s+postModules\s*=\s*import\.meta\.glob[^;]+;/.exec(code);
+			if (!globMatch) return;
 
-		load(id) {
-			if (id === VIRTUAL_ID) {
-				return 'export default {}';
-			}
+			const before = code.slice(0, globMatch.index);
+			const after = code.slice(globMatch.index + globMatch[0].length);
+
+			const replacement = `const postModules = new Proxy({}, { get(_, key) { if (typeof key !== 'string') return; const p = key; return () => import(/* @vite-ignore */ p + '?raw'); } });`;
+
+			return { code: before + replacement + after, map: null };
 		}
 	};
 }
 
 export default defineConfig({
-	plugins: [tailwindcss(), sveltekit(), skipMdDuringScan()]
+	plugins: [tailwindcss(), sveltekit(), lazyPostGlob()]
 });
