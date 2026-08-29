@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T14:18:29.203466+00:00",
+  "generatedAt": "2026-08-29T03:57:14.576131+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -13917,12 +13917,12 @@
       "wordCount": 130
     },
     "zamindars-are-not-dead": {
-      "generatedAt": "2026-08-26T14:18:29.203466+00:00",
+      "generatedAt": "2026-08-29T03:57:14.576131+00:00",
       "generatorVersion": "2026-07-13.1",
       "output": "static/wordcloud/zamindars-are-not-dead.svg",
       "source": "src/lib/posts/zamindars-are-not-dead.md",
-      "sourceHash": "1d6a71970bc7ad217c52a504aa63f229517558dc05b548002e33173f0e21a9bd",
-      "sourceModified": "2026-08-26T14:14:57.793796+00:00",
+      "sourceHash": "dd04e40516c0b45ab3674ac1b767484a7dfe1e681ee5afb6676a71aeee4c83aa",
+      "sourceModified": "2026-08-29T03:54:45.267995+00:00",
       "topWords": [
         "Poor",
         "Now",

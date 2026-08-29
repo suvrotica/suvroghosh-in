@@ -12251,9 +12251,9 @@
 			"generatorVersion": "2026-07-22.1"
 		},
 		"src/lib/posts/zamindars-are-not-dead.md": {
-			"bodyHash": "52f3aaab61553130d898d115d4cf6e12f42ad6c858d53e0211f7394a0a295eed",
+			"bodyHash": "3e4ef50f047ed3221415121b0e518813813929c699cd077d6aae683285dee097",
 			"hashVersion": 2,
-			"revisionHash": "bb846150079c455d5142f28cdde3a276cdd3027ec80ee3b2e3501b935a531ec1",
+			"revisionHash": "4314028aa0723adae7ba312c73e86d8678886441c30864d32fd6b137c23e888c",
 			"generatedTags": [
 				"Zamindari",
 				"Calcutta",
@@ -12278,7 +12278,8 @@
 				"Indian Politics",
 				"Satire"
 			],
-			"generatorVersion": "2026-07-22.1"
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-29"
 		}
 	},
 	"maxTags": 10

@@ -2,6 +2,7 @@
 title: "The Zamindars Are Not Dead"
 description: "An anatomy of aristocratic cruelty reborn in the age of algorithms and wire fraud, traced through the evolution of taste and the mathematics of exploitation."
 date: "2026-08-26"
+dateModified: "2026-08-29"
 thumbnail: "/images/zamindars-are-not-dead.png"
 thumbnailAlt: "A corpulent man lounges on the floor, blowing smoke rings beside a cocktail."
 category: "Satire"
