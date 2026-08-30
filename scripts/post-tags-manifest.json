@@ -12360,6 +12360,33 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-30"
+		},
+		"src/lib/posts/understanding-ontology-data-model-healthcare-ai.md": {
+			"bodyHash": "5c0affb32029c0100ae111befabbe0d7498c8ffd4601deb8934136c460e62d07",
+			"hashVersion": 2,
+			"revisionHash": "533636ee7e6ccfc9c79b1432e1905a73a9090b303a34ab47919011b623966c6a",
+			"generatedTags": [
+				"Healthcare",
+				"Ontology",
+				"Data Modeling",
+				"Artificial Intelligence",
+				"Interoperability",
+				"Medical Informatics",
+				"Data Models",
+				"Diabetes Mellitus",
+				"John Smith",
+				"Hidden Architecture"
+			],
+			"pinnedTags": [
+				"Healthcare",
+				"Ontology",
+				"Data Modeling",
+				"Artificial Intelligence",
+				"Interoperability",
+				"Medical Informatics"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-30"
 		}
 	},
 	"maxTags": 10

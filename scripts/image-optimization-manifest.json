@@ -10021,6 +10021,22 @@
       "sourceHash": "2aeace69822b19ceb04273f06dda630f968da2c5b3a94fe7f3289e4b65cc030d",
       "width": 897
     },
+    "static/images/understanding-ontology-data-model-healthcare-ai.jpeg": {
+      "format": "JPEG",
+      "height": 864,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 864,
+      "originalWidth": 1184,
+      "outputBytes": 143228,
+      "outputHash": "33e9f7340dc285afae747a9f8af9d8a58cbf8f93360f1ac8c2a42eeebcd22926",
+      "psnrDb": 45.23,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 143228,
+      "sourceHash": "33e9f7340dc285afae747a9f8af9d8a58cbf8f93360f1ac8c2a42eeebcd22926",
+      "width": 1184
+    },
     "static/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg": {
       "format": "JPEG",
       "height": 900,

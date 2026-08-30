@@ -4416,6 +4416,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "understanding-ontology-data-model-healthcare-ai.jpeg",
+			"src": "/images/understanding-ontology-data-model-healthcare-ai.jpeg",
+			"bytes": 143228,
+			"width": 1184,
+			"height": 864
+		},
+		{
 			"name": "visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"src": "/images/visualizations/artificial-life-lab-evolving-microbe-garden-poster.jpg",
 			"bytes": 209994,
