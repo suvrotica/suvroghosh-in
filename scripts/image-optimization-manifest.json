@@ -8000,6 +8000,21 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/asymptotic-doom-of-the-orgasm-coffin.png": {
+      "format": "PNG",
+      "height": 1024,
+      "lossless": true,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1024,
+      "outputBytes": 1123307,
+      "outputHash": "9a8ad668cc6f43e72c27cfd609c7657dea922ea6c556a7a0dd8fe4c45c57691f",
+      "resized": false,
+      "sourceBytes": 1652552,
+      "sourceHash": "a8fa964f1cb453bb8057c93f44126aa4cc15f32747143772488f79b8319f2300",
+      "width": 1024
+    },
     "static/images/august-fifteenth.jpg": {
       "format": "JPEG",
       "height": 1280,

@@ -12387,6 +12387,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-30"
+		},
+		"src/lib/posts/asymptotic-doom-of-the-orgasm-coffin.md": {
+			"bodyHash": "ed529c205f42f4bde3173a16881c9a61b29fe3b469bc6972573482d9a8902cd4",
+			"hashVersion": 2,
+			"revisionHash": "c909a93ed1426ecbd388d8b7209579af91a5dba8bd6ad7632a7d318acf117e54",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Superintelligence",
+				"Satire",
+				"Dystopia",
+				"Calcutta",
+				"Mental Health",
+				"SuvroGhosh",
+				"Artificial Super-Duper Intelligence",
+				"Shanty Apartment",
+				"Human Capacity"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Superintelligence",
+				"Satire",
+				"Dystopia",
+				"Calcutta",
+				"Mental Health",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-31"
 		}
 	},
 	"maxTags": 10

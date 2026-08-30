@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "asymptotic-doom-of-the-orgasm-coffin.png",
+			"src": "/images/asymptotic-doom-of-the-orgasm-coffin.png",
+			"bytes": 1123307,
+			"width": 1024,
+			"height": 1024
+		},
+		{
 			"name": "august-fifteenth.jpg",
 			"src": "/images/august-fifteenth.jpg",
 			"bytes": 135173,
