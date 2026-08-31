@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T01:19:51.530410+00:00",
+  "generatedAt": "2026-08-31T15:30:21.953128+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1677,6 +1677,29 @@
         "Sqrt",
         "Diffusion",
         "Velocity"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-3am-taxonomy-of-night-noises": {
+      "generatedAt": "2026-08-31T15:30:19.524479+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/calcutta-3am-taxonomy-of-night-noises.svg",
+      "source": "src/lib/posts/calcutta-3am-taxonomy-of-night-noises.md",
+      "sourceHash": "be28b67517021731e242658e5a49de6a72b76328af6a913fa3b0867a55ef6e27",
+      "sourceModified": "2026-08-31T15:29:48.726080+00:00",
+      "topWords": [
+        "Never",
+        "Three",
+        "Morning",
+        "Hear",
+        "Noise",
+        "Sound",
+        "Small",
+        "Feel",
+        "Fan",
+        "Air",
+        "Man",
+        "Everything"
       ],
       "wordCount": 130
     },

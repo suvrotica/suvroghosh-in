@@ -12443,6 +12443,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-31"
+		},
+		"src/lib/posts/calcutta-3am-taxonomy-of-night-noises.md": {
+			"bodyHash": "5aa943041ce72f9b41b6682af61f4cd9aeee6a2eb8cecb79db889fab49182b04",
+			"hashVersion": 2,
+			"revisionHash": "9ae235e1c2e13a5ea28bc63e2cf6e1c25a8989d179e6495fb87136d6205cea8f",
+			"generatedTags": [
+				"Calcutta",
+				"soundscape",
+				"tinnitus",
+				"insomnia",
+				"bipolar",
+				"night",
+				"memoir",
+				"Air Conditioner",
+				"Fan Whirs",
+				"Neighbor Television"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"soundscape",
+				"tinnitus",
+				"insomnia",
+				"bipolar",
+				"night",
+				"memoir"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-31"
 		}
 	},
 	"maxTags": 10

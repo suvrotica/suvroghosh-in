@@ -8107,6 +8107,22 @@
       "sourceHash": "d88a1717db2899a61d881199d5e8c307bb3973b8484f04b80ca41e9c841dc729",
       "width": 1672
     },
+    "static/images/calcutta-3am-taxonomy-of-night-noises.jpeg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1535,
+      "outputBytes": 324931,
+      "outputHash": "6b3a5c43dd5266cace59cc52e519d028039e5aa0ab34a90d3f2109593206bf70",
+      "psnrDb": 41.36,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 324931,
+      "sourceHash": "6b3a5c43dd5266cace59cc52e519d028039e5aa0ab34a90d3f2109593206bf70",
+      "width": 1535
+    },
     "static/images/calcutta-insomniac-manifesto.png": {
       "format": "PNG",
       "height": 1049,

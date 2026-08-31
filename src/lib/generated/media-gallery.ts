@@ -62,6 +62,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 941
 		},
 		{
+			"name": "calcutta-3am-taxonomy-of-night-noises.jpeg",
+			"src": "/images/calcutta-3am-taxonomy-of-night-noises.jpeg",
+			"bytes": 324931,
+			"width": 1535,
+			"height": 1024
+		},
+		{
 			"name": "calcutta-insomniac-manifesto.png",
 			"src": "/images/calcutta-insomniac-manifesto.png",
 			"bytes": 3243758,
