@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T15:30:21.953128+00:00",
+  "generatedAt": "2026-08-31T22:37:01.975721+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12487,6 +12487,29 @@
         "Doctor",
         "Often",
         "Indian"
+      ],
+      "wordCount": 130
+    },
+    "the-unsleeping-attractor": {
+      "generatedAt": "2026-08-31T22:37:01.666083+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-unsleeping-attractor.svg",
+      "source": "src/lib/posts/the-unsleeping-attractor.md",
+      "sourceHash": "d680811127a27b455bb9b809fcbfdc72feba1f3905477d3a47dab1cba6f5760a",
+      "sourceModified": "2026-08-31T22:36:31.198520+00:00",
+      "topWords": [
+        "Attractor",
+        "Ecosystem",
+        "System",
+        "Every",
+        "States",
+        "Never",
+        "AI",
+        "State",
+        "Say",
+        "Term",
+        "Lorenz",
+        "Ungovernable"
       ],
       "wordCount": 130
     },

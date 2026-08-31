@@ -9782,6 +9782,22 @@
       "sourceHash": "36ae0f8d35b63b4dce07649bbfbfe53d6757d922beb2883bfb9d636174a9c17f",
       "width": 1600
     },
+    "static/images/the-unsleeping-attractor.jpeg": {
+      "format": "JPEG",
+      "height": 1086,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1086,
+      "originalWidth": 1448,
+      "outputBytes": 566679,
+      "outputHash": "ff3a2d69398d7df5c3ece921483a8f80a60aeb9261d53bab5036ee21cec10189",
+      "psnrDb": 36.51,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 705475,
+      "sourceHash": "f1dec40dce58d4a4bceb6073ab8262d9187227dad7f6717215932be362060ff2",
+      "width": 1448
+    },
     "static/images/thinking-outside-the-box-perlin-flower.png": {
       "format": "PNG",
       "height": 630,

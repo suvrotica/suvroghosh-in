@@ -4311,6 +4311,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "the-unsleeping-attractor.jpeg",
+			"src": "/images/the-unsleeping-attractor.jpeg",
+			"bytes": 566679,
+			"width": 1448,
+			"height": 1086
+		},
+		{
 			"name": "thinking-outside-the-box-perlin-flower.png",
 			"src": "/images/thinking-outside-the-box-perlin-flower.png",
 			"bytes": 208875,

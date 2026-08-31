@@ -12471,6 +12471,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-31"
+		},
+		"src/lib/posts/the-unsleeping-attractor.md": {
+			"bodyHash": "e2f658134472daa68d027ab694fc5deebe3a0842d461d921f7f61985b0b575f3",
+			"hashVersion": 2,
+			"revisionHash": "ea070e72bea0bed08caa89023af628de0189510299a843be1fc1bc73ed8c9001",
+			"generatedTags": [
+				"AI",
+				"Chaos Theory",
+				"Attractor States",
+				"Complexity",
+				"Insomnia",
+				"Calcutta",
+				"Dynamical Systems",
+				"Attractor State",
+				"Initial Conditions",
+				"Short Term"
+			],
+			"pinnedTags": [
+				"AI",
+				"Chaos Theory",
+				"Attractor States",
+				"Complexity",
+				"Insomnia",
+				"Calcutta",
+				"Dynamical Systems"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-09-01"
 		}
 	},
 	"maxTags": 10
