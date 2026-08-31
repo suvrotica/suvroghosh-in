@@ -3149,6 +3149,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "dread-and-the-metastatic-mind.jpeg",
+			"src": "/images/dread-and-the-metastatic-mind.jpeg",
+			"bytes": 74938,
+			"width": 1312,
+			"height": 736
+		},
+		{
 			"name": "entropy-and-the-thermodynamics-of-lonely-bastards.png",
 			"src": "/images/entropy-and-the-thermodynamics-of-lonely-bastards.png",
 			"bytes": 3087786,

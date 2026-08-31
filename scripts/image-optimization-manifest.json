@@ -8193,6 +8193,22 @@
       "sourceHash": "c3fd3aea23023f41e528c501903308eafe7c3624bac0ac4d73760d75b4dcfe52",
       "width": 1600
     },
+    "static/images/dread-and-the-metastatic-mind.jpeg": {
+      "format": "JPEG",
+      "height": 736,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 736,
+      "originalWidth": 1312,
+      "outputBytes": 74938,
+      "outputHash": "8c93b29b549386506e00fa5127cc828c94ed32ee9ecbc3828ad6deb7a660473c",
+      "psnrDb": 46.74,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 76938,
+      "sourceHash": "dba4d6a676efe2c67011586de93aaaf729fed5da878ed6251800b12115aba7ed",
+      "width": 1312
+    },
     "static/images/entropy-and-the-thermodynamics-of-lonely-bastards.png": {
       "format": "PNG",
       "height": 1239,

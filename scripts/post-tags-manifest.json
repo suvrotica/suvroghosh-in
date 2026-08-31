@@ -12415,6 +12415,34 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-08-31"
+		},
+		"src/lib/posts/dread-and-the-metastatic-mind.md": {
+			"bodyHash": "fedfc7f77941d24e0b7b48d2087638423b208e1553f05a27a26123a1dae9fa59",
+			"hashVersion": 2,
+			"revisionHash": "4eb8069ee46dc98a01fc533de24c28da3a2e87b5858acc4f35640c3d4201f03a",
+			"generatedTags": [
+				"Anxiety",
+				"Artificial Intelligence",
+				"Calcutta",
+				"Freelancing",
+				"Mental Health",
+				"Economy",
+				"Existential",
+				"Worry",
+				"Roulette",
+				"Metastasis"
+			],
+			"pinnedTags": [
+				"Anxiety",
+				"Artificial Intelligence",
+				"Calcutta",
+				"Freelancing",
+				"Mental Health",
+				"Economy",
+				"Existential"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-08-31"
 		}
 	},
 	"maxTags": 10

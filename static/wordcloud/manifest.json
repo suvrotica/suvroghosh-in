@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T19:32:22.008795+00:00",
+  "generatedAt": "2026-08-31T01:19:51.530410+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2942,6 +2942,29 @@
         "Common",
         "Civilization",
         "Maybe"
+      ],
+      "wordCount": 130
+    },
+    "dread-and-the-metastatic-mind": {
+      "generatedAt": "2026-08-31T01:19:50.929964+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/dread-and-the-metastatic-mind.svg",
+      "source": "src/lib/posts/dread-and-the-metastatic-mind.md",
+      "sourceHash": "ffbf3345c526058a27d9b3c1e75fa1aa536ca5cbc48780ed404eaebbfc1b4c22",
+      "sourceModified": "2026-08-31T01:19:40.945207+00:00",
+      "topWords": [
+        "Worry",
+        "Late",
+        "Noise",
+        "Never",
+        "Poor",
+        "Yet",
+        "AI",
+        "Years",
+        "Dread",
+        "Sleep",
+        "Metastasis",
+        "Beyond"
       ],
       "wordCount": 130
     },
