@@ -12499,6 +12499,25 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-09-01"
+		},
+		"src/lib/posts/when-the-gods-nap-and-the-donkeys-pull-the-sun.md": {
+			"bodyHash": "ce318550cb2ac132bb90e0701855f9fb20baac63e8fc88ecbe85f82774dd74d1",
+			"hashVersion": 2,
+			"revisionHash": "c47878d67b1e1146e85e0ba7133d4e990757a32fb14997f4f6629188102021d9",
+			"generatedTags": [
+				"Guru Aditya Dosha",
+				"Bhadra",
+				"Donkeys",
+				"Panchang",
+				"Chaitra",
+				"Vishnu",
+				"Sun",
+				"Kharmas",
+				"Shiva",
+				"Marry"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -7311,6 +7311,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-when-the-gods-nap-and-the-donkeys-pull-the-sun.jpg",
+			"src": "/thumbnail/art-when-the-gods-nap-and-the-donkeys-pull-the-sun.jpg",
+			"bytes": 224246,
+			"width": 1536,
+			"height": 1074
+		},
+		{
 			"name": "art-when-the-office-learns-to-beg.jpg",
 			"src": "/thumbnail/art-when-the-office-learns-to-beg.jpg",
 			"bytes": 218770,

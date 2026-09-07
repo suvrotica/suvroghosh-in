@@ -18003,6 +18003,22 @@
       "sourceHash": "a6bd3f5635b485eef253e158e90a2108a2125e54b7415be609352a95584e9af6",
       "width": 1200
     },
+    "static/thumbnail/art-when-the-gods-nap-and-the-donkeys-pull-the-sun.jpg": {
+      "format": "JPEG",
+      "height": 1074,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1074,
+      "originalWidth": 1536,
+      "outputBytes": 224246,
+      "outputHash": "21ac5b27b28383052631177d36a8e6453d12cdb22fdd59a9c224307e2e434b36",
+      "psnrDb": 37.51,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 414021,
+      "sourceHash": "c2c536ba1423c0124c5a0c214fc33a9d758cd7eecc20a62588161bdf95c0dd5b",
+      "width": 1536
+    },
     "static/thumbnail/art-when-the-office-learns-to-beg.jpg": {
       "format": "JPEG",
       "height": 800,
