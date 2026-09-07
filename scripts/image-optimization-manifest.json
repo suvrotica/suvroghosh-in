@@ -13491,6 +13491,22 @@
       "sourceHash": "c1d6ec364b988bea67b80abc820e54e289fe3594666a16e201e94b2be1ac3041",
       "width": 1200
     },
+    "static/thumbnail/art-calcutta-singularity-and-the-pyramid-scaffold.jpg": {
+      "format": "JPEG",
+      "height": 1049,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1049,
+      "originalWidth": 1500,
+      "outputBytes": 246921,
+      "outputHash": "410efa750e11f407825a2865c75f59a8e3eef2854e8b2ba79d9a987f02619d75",
+      "psnrDb": 44.54,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 248376,
+      "sourceHash": "8abb6a9b59de5592eac86e409137cecd91ec6d62644d86743747b0409c67871e",
+      "width": 1500
+    },
     "static/thumbnail/art-calcutta-smog-and-the-coming-winter.jpg": {
       "format": "JPEG",
       "height": 800,

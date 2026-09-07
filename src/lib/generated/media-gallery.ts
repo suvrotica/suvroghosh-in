@@ -5337,6 +5337,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-calcutta-singularity-and-the-pyramid-scaffold.jpg",
+			"src": "/thumbnail/art-calcutta-singularity-and-the-pyramid-scaffold.jpg",
+			"bytes": 246921,
+			"width": 1500,
+			"height": 1049
+		},
+		{
 			"name": "art-calcutta-smog-and-the-coming-winter.jpg",
 			"src": "/thumbnail/art-calcutta-smog-and-the-coming-winter.jpg",
 			"bytes": 123115,

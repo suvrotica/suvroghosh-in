@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T01:03:46.003868+00:00",
+  "generatedAt": "2026-09-07T05:33:26.286352+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1884,6 +1884,29 @@
         "Morning",
         "Days",
         "World"
+      ],
+      "wordCount": 130
+    },
+    "calcutta-singularity-and-the-pyramid-scaffold": {
+      "generatedAt": "2026-09-07T05:33:25.820210+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/calcutta-singularity-and-the-pyramid-scaffold.svg",
+      "source": "src/lib/posts/calcutta-singularity-and-the-pyramid-scaffold.md",
+      "sourceHash": "73d7148fa35b3918d867401f6fccdf5b7d61a6b5b17c15edd2365b039eee6b61",
+      "sourceModified": "2026-09-07T05:33:21.669055+00:00",
+      "topWords": [
+        "Singularity",
+        "Never",
+        "Man",
+        "Pyramid",
+        "Kind",
+        "Watch",
+        "Bones",
+        "End",
+        "Negative",
+        "Drag",
+        "Whether",
+        "Everything"
       ],
       "wordCount": 130
     },

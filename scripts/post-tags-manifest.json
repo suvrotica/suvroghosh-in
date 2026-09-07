@@ -12518,6 +12518,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/calcutta-singularity-and-the-pyramid-scaffold.md": {
+			"bodyHash": "66e22be2cf61282c3f2aefe2e95a10e152fa121b3ce916739ec697ef1c10edcf",
+			"hashVersion": 2,
+			"revisionHash": "6dcb4d790599864f29091528e31f416f5f3cb04b357a346ea70f7dcdd8bdff0e",
+			"generatedTags": [
+				"Positive Singularity",
+				"Negative Singularity",
+				"Pyramid",
+				"Espresso",
+				"Recluse",
+				"Bones",
+				"Flatulence",
+				"Drag",
+				"Calcutta",
+				"Drags"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
