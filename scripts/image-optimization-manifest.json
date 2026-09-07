@@ -17219,6 +17219,22 @@
       "sourceHash": "54d64726dabbbad8256c65a3aeeca07df8a246f61a30528485c8720ad4199af8",
       "width": 1200
     },
+    "static/thumbnail/art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg": {
+      "format": "JPEG",
+      "height": 1263,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1263,
+      "originalWidth": 883,
+      "outputBytes": 92683,
+      "outputHash": "c744e7399d9d1f0461e658afa35eb9bd660f2c9969e3dd58694063b5761c2af1",
+      "psnrDb": 48.06,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 92683,
+      "sourceHash": "c744e7399d9d1f0461e658afa35eb9bd660f2c9969e3dd58694063b5761c2af1",
+      "width": 883
+    },
     "static/thumbnail/art-the-ordinary-things.jpg": {
       "format": "JPEG",
       "height": 800,

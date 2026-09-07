@@ -6968,6 +6968,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg",
+			"src": "/thumbnail/art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg",
+			"bytes": 92683,
+			"width": 883,
+			"height": 1263
+		},
+		{
 			"name": "art-the-ordinary-things.jpg",
 			"src": "/thumbnail/art-the-ordinary-things.jpg",
 			"bytes": 135845,

@@ -12537,6 +12537,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.md": {
+			"bodyHash": "5af3775bb773f1883f28d8348e51e2cd18e6f8bfd55523daed7cc5b143ceefc2",
+			"hashVersion": 2,
+			"revisionHash": "d8cc78e4329b71ca63be26ec1da659709398a8b1cc8549f42666c138bb92d3eb",
+			"generatedTags": [
+				"Propensity Score",
+				"OMOP CDM",
+				"ACHILLES Heel",
+				"Comparative Effectiveness",
+				"São Paulo",
+				"OHDSI",
+				"OMOP",
+				"CDM",
+				"Data",
+				"Observational"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

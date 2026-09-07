@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Odyssey of OHDSI: How a Common Language is Rewriting the Story of Human Health" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Odyssey of OHDSI: How a Common Language is Rewriting the Story of Human Health</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(471,171)" font-size="118" style="fill:#d88988">Data</text>
+<text transform="translate(440,680)" font-size="88" style="fill:#a9b7a3">OHDSI</text>
+<text transform="translate(245,638) rotate(-90)" font-size="76" style="fill:#d5d2c2">OMOP</text>
+<text transform="translate(520,298)" font-size="64" style="fill:#b6c3dd">Health</text>
+<text transform="translate(889,109)" font-size="61" style="fill:#9fc9c5">CDM</text>
+<text transform="translate(752,666)" font-size="60" style="fill:#d9c89e">Clinical</text>
+<text transform="translate(348,431)" font-size="54" style="fill:#b6c3dd">Observational</text>
+<text transform="translate(1128,363)" font-size="54" style="fill:#a9b7a3">Drug</text>
+<text transform="translate(142,688)" font-size="54" style="fill:#8fb7d0">Community</text>
+<text transform="translate(458,228)" font-size="53" style="fill:#e0b879">Evidence</text>
+<text transform="translate(791,366)" font-size="52" style="fill:#9fc9c5">Database</text>
+<text transform="translate(641,477)" font-size="51" style="fill:#d6a79f">Standardized</text>
+<text transform="translate(199,228)" font-size="49" style="fill:#a9b7a3">Network</text>
+<text transform="translate(818,227)" font-size="49" style="fill:#d6a79f">Research</text>
+<text transform="translate(976,40)" font-size="48" style="fill:#b6c3dd">System</text>
+<text transform="translate(187,246) rotate(-90)" font-size="48" style="fill:#d88988">Results</text>
+<text transform="translate(1106,431) rotate(-90)" font-size="45" style="fill:#d5d2c2">Patients</text>
+<text transform="translate(824,587)" font-size="45" style="fill:#8fb7d0">Standard</text>
+<text transform="translate(128,348)" font-size="44" style="fill:#d6a79f">Across</text>
+<text transform="translate(957,521)" font-size="44" style="fill:#d6a79f">Code</text>
+<text transform="translate(305,560)" font-size="44" style="fill:#d6a79f">Model</text>
+<text transform="translate(533,573)" font-size="44" style="fill:#d5d2c2">Source</text>
+<text transform="translate(1032,156)" font-size="43" style="fill:#b6c3dd">Study</text>
+<text transform="translate(745,43)" font-size="42" style="fill:#d5d2c2">Databases</text>
+<text transform="translate(459,78)" font-size="42" style="fill:#d88988">ETL</text>
+<text transform="translate(140,276) rotate(-90)" font-size="41" style="fill:#d88988">Federated</text>
+<text transform="translate(1114,236)" font-size="40" style="fill:#8fb7d0">Mapped</text>
+<text transform="translate(273,304)" font-size="40" style="fill:#d88988">Tools</text>
+<text transform="translate(293,515)" font-size="39" style="fill:#c7d7b5">Medical</text>
+<text transform="translate(818,185)" font-size="39" style="fill:#c49a6c">Different</text>
+<text transform="translate(61,492) rotate(-90)" font-size="39" style="fill:#8fb7d0">Analytical</text>
+<text transform="translate(1005,111)" font-size="39" style="fill:#8fb7d0">Distributed</text>
+<text transform="translate(699,532)" font-size="39" style="fill:#d6a79f">Quality</text>
+<text transform="translate(1088,700)" font-size="39" style="fill:#c49a6c">Concepts</text>
+<text transform="translate(490,604) rotate(-90)" font-size="37" style="fill:#e0b879">Local</text>
+<text transform="translate(839,419)" font-size="37" style="fill:#e0b879">Questions</text>
+<text transform="translate(175,519) rotate(-90)" font-size="37" style="fill:#8fb7d0">Safety</text>
+<text transform="translate(796,311)" font-size="37" style="fill:#9fc9c5">Analysis</text>
+<text transform="translate(544,602)" font-size="37" style="fill:#9fc9c5">Opensource</text>
+<text transform="translate(1049,607)" font-size="37" style="fill:#e0b879">Studies</text>
+<text transform="translate(472,336)" font-size="35" style="fill:#c7d7b5">Common</text>
+<text transform="translate(307,90)" font-size="35" style="fill:#b6c3dd">Systems</text>
+<text transform="translate(892,266)" font-size="35" style="fill:#d6a79f">Single</text>
+<text transform="translate(536,376)" font-size="35" style="fill:#a9b7a3">Process</text>
+<text transform="translate(10,32)" font-size="35" style="fill:#9fc9c5">Knowledge</text>
+<text transform="translate(217,162)" font-size="33" style="fill:#d88988">Healthcare</text>
+<text transform="translate(1117,415)" font-size="33" style="fill:#b6c3dd">Records</text>
+<text transform="translate(1174,316)" font-size="33" style="fill:#8fb7d0">Codes</text>
+<text transform="translate(24,644)" font-size="33" style="fill:#d6a79f">Scale</text>
+<text transform="translate(867,139)" font-size="33" style="fill:#a9b7a3">Work</text>
+<text transform="translate(199,392)" font-size="33" style="fill:#d9c89e">Patient</text>
+<text transform="translate(720,710)" font-size="33" style="fill:#c49a6c">Vocabularies</text>
+<text transform="translate(486,473)" font-size="33" style="fill:#d9c89e">Rather</text>
+<text transform="translate(4,520)" font-size="33" style="fill:#e0b879">Methods</text>
+<text transform="translate(1085,535)" font-size="33" style="fill:#d88988">Cohort</text>
+<text transform="translate(362,32)" font-size="33" style="fill:#c49a6c">Infrastructure</text>
+<text transform="translate(542,710)" font-size="31" style="fill:#a9b7a3">Real</text>
+<text transform="translate(268,472)" font-size="31" style="fill:#d5d2c2">Treatments</text>
+<text transform="translate(703,71)" font-size="31" style="fill:#d5d2c2">Countries</text>
+<text transform="translate(1072,468)" font-size="31" style="fill:#9fc9c5">Vocabulary</text>
+<text transform="translate(74,206) rotate(-90)" font-size="31" style="fill:#d88988">Analyses</text>
+<text transform="translate(315,255)" font-size="31" style="fill:#c49a6c">ACHILLES</text>
+<text transform="translate(1100,666)" font-size="31" style="fill:#d6a79f">Treatment</text>
+<text transform="translate(375,331)" font-size="29" style="fill:#c7d7b5">Every</text>
+<text transform="translate(1103,67)" font-size="29" style="fill:#c7d7b5">Hospital</text>
+<text transform="translate(445,386)" font-size="29" style="fill:#d6a79f">Use</text>
+<text transform="translate(295,587)" font-size="29" style="fill:#8fb7d0">World</text>
+<text transform="translate(24,614)" font-size="29" style="fill:#9fc9c5">Global</text>
+<text transform="translate(16,550)" font-size="29" style="fill:#9fc9c5">Outcomes</text>
+<text transform="translate(525,510)" font-size="29" style="fill:#c49a6c">Whether</text>
+<text transform="translate(1055,560)" font-size="29" style="fill:#b6c3dd">Development</text>
+<text transform="translate(252,632)" font-size="29" style="fill:#d88988">Analytics</text>
+<text transform="translate(982,313)" font-size="29" style="fill:#8fb7d0">ATLAS</text>
+<text transform="translate(783,242) rotate(-90)" font-size="29" style="fill:#e0b879">Provides</text>
+<text transform="translate(115,458) rotate(-90)" font-size="29" style="fill:#c7d7b5">Conditions</text>
+<text transform="translate(1077,505)" font-size="27" style="fill:#c7d7b5">Lab</text>
+<text transform="translate(300,122)" font-size="27" style="fill:#c49a6c">History</text>
+<text transform="translate(405,280)" font-size="27" style="fill:#b6c3dd">SNOMED</text>
+<text transform="translate(1129,279)" font-size="27" style="fill:#d5d2c2">Care</text>
+<text transform="translate(667,29)" font-size="27" style="fill:#d6a79f">Far</text>
+<text transform="translate(1189,196)" font-size="27" style="fill:#e0b879">FDA</text>
+<text transform="translate(40,667)" font-size="27" style="fill:#a9b7a3">Center</text>
+<text transform="translate(1039,633)" font-size="27" style="fill:#9fc9c5">Methodological</text>
+<text transform="translate(237,60)" font-size="27" style="fill:#a9b7a3">Researchers</text>
+<text transform="translate(658,332)" font-size="27" style="fill:#d6a79f">Findings</text>
+<text transform="translate(1030,181)" font-size="27" style="fill:#d9c89e">Shared</text>
+<text transform="translate(30,714)" font-size="27" style="fill:#d88988">Standardization</text>
+<text transform="translate(30,188) rotate(-90)" font-size="27" style="fill:#a9b7a3">Requires</text>
+<text transform="translate(756,100)" font-size="27" style="fill:#c49a6c">Tables</text>
+<text transform="translate(1122,386)" font-size="27" style="fill:#d5d2c2">FHIR</text>
+<text transform="translate(549,100)" font-size="25" style="fill:#e0b879">Time</text>
+<text transform="translate(150,304)" font-size="25" style="fill:#c7d7b5">Concept</text>
+<text transform="translate(198,423)" font-size="25" style="fill:#b6c3dd">Rxnorm</text>
+<text transform="translate(39,585)" font-size="25" style="fill:#d5d2c2">LOINC</text>
+<text transform="translate(295,185)" font-size="25" style="fill:#d88988">Realworld</text>
+<text transform="translate(523,60)" font-size="25" style="fill:#8fb7d0">Partnership</text>
+<text transform="translate(1269,572) rotate(-90)" font-size="25" style="fill:#c49a6c">Public</text>
+<text transform="translate(778,609)" font-size="25" style="fill:#a9b7a3">Populations</text>
+<text transform="translate(752,267)" font-size="25" style="fill:#b6c3dd">Ecosystem</text>
+<text transform="translate(98,271) rotate(-90)" font-size="25" style="fill:#d88988">Designed</text>
+<text transform="translate(865,545)" font-size="25" style="fill:#e0b879">Effects</text>
+<text transform="translate(995,702)" font-size="25" style="fill:#e0b879">Needed</text>
+<text transform="translate(330,358)" font-size="25" style="fill:#d6a79f">Project</text>
+<text transform="translate(143,266)" font-size="25" style="fill:#a9b7a3">Statistical</text>
+<text transform="translate(503,531)" font-size="24" style="fill:#c49a6c">Coordinating</text>
+<text transform="translate(1201,142)" font-size="24" style="fill:#d88988">Using</text>
+<text transform="translate(281,714)" font-size="24" style="fill:#b6c3dd">HADES</text>
+<text transform="translate(1152,33)" font-size="24" style="fill:#d9c89e">Packages</text>
+<text transform="translate(201,27)" font-size="24" style="fill:#d6a79f">Confounding</text>
+<text transform="translate(1144,498)" font-size="24" style="fill:#b6c3dd">Coding</text>
+<text transform="translate(693,565)" font-size="22" style="fill:#c49a6c">Medicine</text>
+<text transform="translate(402,595)" font-size="22" style="fill:#d9c89e">Many</text>
+<text transform="translate(1065,429) rotate(-90)" font-size="22" style="fill:#a9b7a3">Trial</text>
+<text transform="translate(621,192)" font-size="22" style="fill:#d5d2c2">Reliable</text>
+<text transform="translate(225,121)" font-size="22" style="fill:#e0b879">Drugs</text>
+<text transform="translate(401,301)" font-size="22" style="fill:#9fc9c5">Trials</text>
+<text transform="translate(277,592) rotate(-90)" font-size="22" style="fill:#9fc9c5">Multiple</text>
+<text transform="translate(787,387)" font-size="22" style="fill:#9fc9c5">Patientlevel</text>
+<text transform="translate(131,598)" font-size="22" style="fill:#d6a79f">Open</text>
+<text transform="translate(1050,202)" font-size="22" style="fill:#d6a79f">Generated</text>
+<text transform="translate(449,194) rotate(-90)" font-size="22" style="fill:#c49a6c">Often</text>
+<text transform="translate(122,376)" font-size="22" style="fill:#9fc9c5">Works</text>
+<text transform="translate(229,445)" font-size="22" style="fill:#b6c3dd">Software</text>
+<text transform="translate(823,500)" font-size="22" style="fill:#a9b7a3">Frameworks</text>
+<text transform="translate(23,318) rotate(-90)" font-size="22" style="fill:#c7d7b5">Pandemic</text>
+<text transform="translate(1205,272)" font-size="22" style="fill:#8fb7d0">Tool</text>
+<text transform="translate(213,92)" font-size="22" style="fill:#c49a6c">Remains</text>
+<text transform="translate(431,702)" font-size="22" style="fill:#9fc9c5">Privacy</text>
+<text transform="translate(1165,434)" font-size="22" style="fill:#d9c89e">Language</text>
+<text transform="translate(619,703)" font-size="22" style="fill:#a9b7a3">Receive</text>
+</svg>
