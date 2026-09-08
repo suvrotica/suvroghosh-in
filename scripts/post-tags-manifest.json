@@ -12595,6 +12595,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-cow-who-crossed-the-sea.md": {
+			"bodyHash": "92310a70aa0990513ad19bb7922330bcb782da6e466215c6195505635bee9f99",
+			"hashVersion": 2,
+			"revisionHash": "a0f60fa511e211a0ca7a0026038455f27f83cd47fa6cef92de72f8ca3b1012fb",
+			"generatedTags": [
+				"Milking Cow",
+				"Cow",
+				"Milk",
+				"Sea",
+				"Brahmin",
+				"London",
+				"Sati",
+				"Roy",
+				"Liverpool",
+				"Orthodoxy"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

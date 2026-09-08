@@ -6751,6 +6751,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-cow-who-crossed-the-sea.jpg",
+			"src": "/thumbnail/art-the-cow-who-crossed-the-sea.jpg",
+			"bytes": 280610,
+			"width": 1024,
+			"height": 1536
+		},
+		{
 			"name": "art-the-cup-that-refused-to-become-content.jpg",
 			"src": "/thumbnail/art-the-cup-that-refused-to-become-content.jpg",
 			"bytes": 112471,

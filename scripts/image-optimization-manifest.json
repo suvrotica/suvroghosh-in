@@ -16723,6 +16723,22 @@
       "sourceHash": "2bc9bcb0ab58b8e36a02c0b79da66445e9f25f3fcfc2ffd5f404cd208dc9c864",
       "width": 1200
     },
+    "static/thumbnail/art-the-cow-who-crossed-the-sea.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1024,
+      "outputBytes": 280610,
+      "outputHash": "4db63a5bcf6f877cecaea70da5798f47943b41ec5e213b6ee5301b1ce25b0a02",
+      "psnrDb": 41.63,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 282094,
+      "sourceHash": "01ca777e872879bbc60665fdf35eba6a77f87c04c95f80baea3513b7f04453e4",
+      "width": 1024
+    },
     "static/thumbnail/art-the-cup-that-refused-to-become-content.jpg": {
       "format": "JPEG",
       "height": 800,
