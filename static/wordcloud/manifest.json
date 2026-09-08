@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T20:31:13.042714+00:00",
+  "generatedAt": "2026-09-08T01:12:10.982977+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2597,6 +2597,29 @@
         "Telegram",
         "Urine",
         "Pissing"
+      ],
+      "wordCount": 130
+    },
+    "craggy-intelligence-and-other-apocalypses": {
+      "generatedAt": "2026-09-08T01:12:10.530585+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/craggy-intelligence-and-other-apocalypses.svg",
+      "source": "src/lib/posts/craggy-intelligence-and-other-apocalypses.md",
+      "sourceHash": "483880848125e3c5f290b1bcbea2e6f480c73c9c4c93927a66fafa46a21819e4",
+      "sourceModified": "2026-09-08T01:12:07.230055+00:00",
+      "topWords": [
+        "Intelligence",
+        "Frontier",
+        "Nobody",
+        "Every",
+        "Percent",
+        "Somewhere",
+        "Model",
+        "Artificial",
+        "Phone",
+        "Twelve",
+        "Grid",
+        "Battery"
       ],
       "wordCount": 130
     },

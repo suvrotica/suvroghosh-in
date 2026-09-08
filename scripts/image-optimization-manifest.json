@@ -13827,6 +13827,22 @@
       "sourceHash": "b95dcb45a952a25a4553fb120211a5d2d33e3606d4d570dd55bd313a3e750a71",
       "width": 1200
     },
+    "static/thumbnail/art-craggy-intelligence-and-other-apocalypses.jpg": {
+      "format": "JPEG",
+      "height": 1049,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1049,
+      "originalWidth": 1500,
+      "outputBytes": 318443,
+      "outputHash": "0bda4d73ea146fefcd28e93741bdc87f5ef594bc72f6b28d9887bb6c99d45451",
+      "psnrDb": 42.09,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 318443,
+      "sourceHash": "0bda4d73ea146fefcd28e93741bdc87f5ef594bc72f6b28d9887bb6c99d45451",
+      "width": 1500
+    },
     "static/thumbnail/art-dangers-of-asking-ai-instead-of-hiring-experts.jpg": {
       "format": "JPEG",
       "height": 800,

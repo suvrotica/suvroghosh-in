@@ -5484,6 +5484,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-craggy-intelligence-and-other-apocalypses.jpg",
+			"src": "/thumbnail/art-craggy-intelligence-and-other-apocalypses.jpg",
+			"bytes": 318443,
+			"width": 1500,
+			"height": 1049
+		},
+		{
 			"name": "art-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
 			"src": "/thumbnail/art-dangers-of-asking-ai-instead-of-hiring-experts.jpg",
 			"bytes": 150682,

@@ -12556,6 +12556,26 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/craggy-intelligence-and-other-apocalypses.md": {
+			"bodyHash": "33824a8c5d303ae9e602f4d0092d9750aa89ebeeee8e703461885854f22a8f91",
+			"hashVersion": 2,
+			"revisionHash": "18fb39304436a87c02132f575055bc889cd744fca28264df3b9333d9f9f89181",
+			"generatedTags": [
+				"Twelve Percent",
+				"Frontier",
+				"AGI",
+				"Grok",
+				"Unreal",
+				"Intelligence",
+				"Percent",
+				"Schedule",
+				"Delhi",
+				"Index"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-09-08"
 		}
 	},
 	"maxTags": 10
