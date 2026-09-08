@@ -17571,6 +17571,22 @@
       "sourceHash": "4f5717edc9a8cf4b6045234d30cbd9401ab61b88029c0212f048b35b0e367bed",
       "width": 1200
     },
+    "static/thumbnail/art-the-tongue-that-licks-the-future.jpg": {
+      "format": "JPEG",
+      "height": 1496,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1496,
+      "originalWidth": 1051,
+      "outputBytes": 390991,
+      "outputHash": "9d441a9e401f73a68e50dd10dccb226662aaffa65d50850cac70e69c80e84f50",
+      "psnrDb": 40.71,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 393136,
+      "sourceHash": "f95cd7660c16ad0b4fa954e429b8fda8ec698250bcbb21d2279049e3f4fc005a",
+      "width": 1051
+    },
     "static/thumbnail/art-the-trolley-problem-is-already-hiding-in-healthcare.jpg": {
       "format": "JPEG",
       "height": 800,

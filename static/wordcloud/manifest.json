@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T01:44:55.249542+00:00",
+  "generatedAt": "2026-09-08T02:00:02.220069+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12418,6 +12418,29 @@
         "Exactly",
         "Somewhere",
         "Now"
+      ],
+      "wordCount": 130
+    },
+    "the-tongue-that-licks-the-future": {
+      "generatedAt": "2026-09-08T02:00:02.153021+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-tongue-that-licks-the-future.svg",
+      "source": "src/lib/posts/the-tongue-that-licks-the-future.md",
+      "sourceHash": "bb4c4960e544c5bc233d7f274d7e1160392519b07d4cfc8edcfa0753cd837d10",
+      "sourceModified": "2026-09-08T01:59:58.618773+00:00",
+      "topWords": [
+        "AI",
+        "Man",
+        "Human",
+        "Truth",
+        "Say",
+        "Sycophant",
+        "Agreeable",
+        "Yes",
+        "Engagement",
+        "Toward",
+        "Sycophants",
+        "Content"
       ],
       "wordCount": 130
     },

@@ -7122,6 +7122,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-tongue-that-licks-the-future.jpg",
+			"src": "/thumbnail/art-the-tongue-that-licks-the-future.jpg",
+			"bytes": 390991,
+			"width": 1051,
+			"height": 1496
+		},
+		{
 			"name": "art-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
 			"src": "/thumbnail/art-the-trolley-problem-is-already-hiding-in-healthcare.jpg",
 			"bytes": 149322,
