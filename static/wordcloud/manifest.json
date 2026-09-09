@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T20:45:05.511089+00:00",
+  "generatedAt": "2026-09-09T12:51:42.499307+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10164,6 +10164,29 @@
         "Memory",
         "Every",
         "Algorithm"
+      ],
+      "wordCount": 130
+    },
+    "the-flock-above-howrah-bridge": {
+      "generatedAt": "2026-09-09T12:51:42.343876+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-flock-above-howrah-bridge.svg",
+      "source": "src/lib/posts/the-flock-above-howrah-bridge.md",
+      "sourceHash": "909ef4608d1ea5d4c998a000b78436f6e1c1d16d1e641b67fea82afd385caa91",
+      "sourceModified": "2026-09-09T12:51:37.965702+00:00",
+      "topWords": [
+        "Flock",
+        "Bird",
+        "Birds",
+        "Swarm",
+        "Every",
+        "Local",
+        "Single",
+        "Neighbors",
+        "Sky",
+        "Point",
+        "Murmuration",
+        "Flocks"
       ],
       "wordCount": 130
     },

@@ -16899,6 +16899,22 @@
       "sourceHash": "7b0d5967204361a46cacd49599fc56b3ca145cfa952400fee73289504c8539c6",
       "width": 1200
     },
+    "static/thumbnail/art-the-flock-above-howrah-bridge.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1536,
+      "outputBytes": 394444,
+      "outputHash": "d0fb3066a78a997f6d6482a56b6fb73e244b1690ed169e2c55294ffa7e03234f",
+      "psnrDb": 40.2,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 394444,
+      "sourceHash": "d0fb3066a78a997f6d6482a56b6fb73e244b1690ed169e2c55294ffa7e03234f",
+      "width": 1536
+    },
     "static/thumbnail/art-the-former-bright-boy-problem.jpg": {
       "format": "JPEG",
       "height": 800,

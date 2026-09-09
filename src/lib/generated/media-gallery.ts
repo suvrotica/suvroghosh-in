@@ -6828,6 +6828,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-flock-above-howrah-bridge.jpg",
+			"src": "/thumbnail/art-the-flock-above-howrah-bridge.jpg",
+			"bytes": 394444,
+			"width": 1536,
+			"height": 1024
+		},
+		{
 			"name": "art-the-former-bright-boy-problem.jpg",
 			"src": "/thumbnail/art-the-former-bright-boy-problem.jpg",
 			"bytes": 133936,

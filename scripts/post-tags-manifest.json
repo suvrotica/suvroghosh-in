@@ -12614,6 +12614,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-flock-above-howrah-bridge.md": {
+			"bodyHash": "445c197b45f51b2da3c530155d52e3f9e7af250aa724336e0c3391279aed6d67",
+			"hashVersion": 2,
+			"revisionHash": "0f72f8076a3c2bf584a5790bdc4d480c99f13e04d1e086ab98c493384914f5d2",
+			"generatedTags": [
+				"Topological Coupling",
+				"Joint Staff",
+				"Swarm Robotics",
+				"Flocking Models",
+				"Rank Order",
+				"Flock",
+				"Murmuration",
+				"Swarm",
+				"Birds",
+				"Flocks"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
