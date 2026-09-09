@@ -6821,6 +6821,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-excremental-singularity.jpg",
+			"src": "/thumbnail/art-the-excremental-singularity.jpg",
+			"bytes": 154399,
+			"width": 1448,
+			"height": 1086
+		},
+		{
 			"name": "art-the-fat-animal-in-the-mirror.jpg",
 			"src": "/thumbnail/art-the-fat-animal-in-the-mirror.jpg",
 			"bytes": 148089,

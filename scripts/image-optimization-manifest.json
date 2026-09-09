@@ -16883,6 +16883,22 @@
       "sourceHash": "aed30bc7fe3c763d96b329ae0ddffb702e306ad632a5601a916e66f797636c66",
       "width": 1200
     },
+    "static/thumbnail/art-the-excremental-singularity.jpg": {
+      "format": "JPEG",
+      "height": 1086,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1086,
+      "originalWidth": 1448,
+      "outputBytes": 154399,
+      "outputHash": "a2f0c369ccaa8811687942d1d31a4373beb464ff975051089f6684356316d17d",
+      "psnrDb": 43.86,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 160483,
+      "sourceHash": "4df61243997a12281427ad53f3ef547d3c174e0a114f423b2438cf658c8791a3",
+      "width": 1448
+    },
     "static/thumbnail/art-the-fat-animal-in-the-mirror.jpg": {
       "format": "JPEG",
       "height": 800,
