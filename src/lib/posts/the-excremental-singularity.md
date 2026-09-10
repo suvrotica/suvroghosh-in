@@ -1,11 +1,12 @@
 ---
 title: "The Excremental Singularity"
-description: "A Bengali healthcare researcher in Calcutta reads the summer of 2026's AGI doom posts and finds, beneath the singularity, a funding winter and an old economy doing its best work."
+description: "A Bengali healthcare researcher in Calcutta reads summer 2026's AGI doom posts and finds, beneath the singularity, a funding winter and an old economy at full tilt."
 date: "2026-09-10"
+dateModified: "2026-09-10"
 thumbnail: "/thumbnail/art-the-excremental-singularity.jpg"
 thumbnailAlt: "A weary caveman crouched on a rock at sunset, the monsoon behind him and a glowing brain beside his feet"
 category: "Raw Science"
-tags: ["SuvroGhosh", "Calcutta", "Kolkata", "AI", "AGI", "ASI", "OpenAI", "Anthropic", "Existential Risk", "Capitalism"]
+tags: ["OpenAI","Hubinger's","Resignation","AGI","Superintelligence","Machine","Apocalypse","Eighty","Roughly","Cathedral"]
 published: true
 color: "#7f1d1d"
 ---

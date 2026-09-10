@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T12:51:42.499307+00:00",
+  "generatedAt": "2026-09-09T23:14:30.034932+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10049,6 +10049,29 @@
         "Paper",
         "Minutes",
         "Someone"
+      ],
+      "wordCount": 130
+    },
+    "the-excremental-singularity": {
+      "generatedAt": "2026-09-09T23:14:29.871110+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-excremental-singularity.svg",
+      "source": "src/lib/posts/the-excremental-singularity.md",
+      "sourceHash": "688a8c5cd48245c3e4e759520fddd1968046e31786845dfbe34251af0bc457f1",
+      "sourceModified": "2026-09-09T23:14:26.511765+00:00",
+      "topWords": [
+        "Machine",
+        "Man",
+        "Say",
+        "Openai",
+        "First",
+        "Future",
+        "Resignation",
+        "Years",
+        "Market",
+        "Never",
+        "Roughly",
+        "Now"
       ],
       "wordCount": 130
     },

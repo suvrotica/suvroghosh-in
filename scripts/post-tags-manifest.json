@@ -12633,6 +12633,26 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-excremental-singularity.md": {
+			"bodyHash": "0185ebad549bf028985e41063acd0197d8681a0fa4fd7c6ee7ad0ccb4efa0189",
+			"hashVersion": 2,
+			"revisionHash": "1d9e124b7bab81bb01863b68e4176b1640a846c4a1cd4d2977072e9df9a8ee0e",
+			"generatedTags": [
+				"OpenAI",
+				"Hubinger's",
+				"Resignation",
+				"AGI",
+				"Superintelligence",
+				"Machine",
+				"Apocalypse",
+				"Eighty",
+				"Roughly",
+				"Cathedral"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-09-10"
 		}
 	},
 	"maxTags": 10
