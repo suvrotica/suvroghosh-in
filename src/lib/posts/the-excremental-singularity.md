@@ -6,7 +6,7 @@ dateModified: "2026-09-10"
 thumbnail: "/thumbnail/art-the-excremental-singularity.jpg"
 thumbnailAlt: "A weary caveman crouched on a rock at sunset, the monsoon behind him and a glowing brain beside his feet"
 category: "Raw Science"
-tags: ["OpenAI","Hubinger's","Resignation","AGI","Superintelligence","Machine","Apocalypse","Eighty","Roughly","Cathedral"]
+tags: ["OpenAI","Hubinger's","Resignation","AGI","Machine","Superintelligence","Apocalypse","Eighty","Roughly","Cathedral"]
 published: true
 color: "#7f1d1d"
 ---
@@ -37,6 +37,10 @@ But here is the arithmetic nobody prints on the poster. Let belief be $B(t)$, an
 
 So what is left? The Sanskrit says it: धर्मो रक्षति रक्षितः, dharmaḥ rakṣati rakṣitaḥ, dharma protects that which is protected by dharma, a maxim the Mahābhārata tradition and the Manusmriti both wear. What protects us is the protecting; the restraint we put on ourselves before the machine needs any of its own. The Gītā puts it more bluntly: कर्मण्येवाधिकारस्ते मा फलेषु कदाचन, you have a right to action alone, never to its fruits; capitalism has simply deleted the second half and called the deletion innovation. And Tagore wrote it for us a hundred years ago, in Gitanjali: where the mind is without fear and the head is held high, which is to say nowhere yet, not even close, but at least the direction has been named. We built gods out of grammar and called the grammar god; we fed the model to the market and the cat; the machine that can do everything cannot yet do anything to anyone, and the human who can do anything keeps doing it to everyone.
 
-No one asked the machine if it wanted to save us. No one paid for the rescue plan. No one blinked. The alarmist gets his coat; the resignee gets his book deal; the market gets its quarter; and the rain keeps doing what the rain does, which is to make everything it touches a little more honest, from the monsoon to the market. I am going back inside now, before the monsoon decides what it has against my evening, carrying with me the one number I trust from the whole cathedral: the only one I have invented myself, the probability that this was all a career move, greater than one in ten, and the probability that we have been the catastrophe all along, which is to say —
+No one asked the machine if it wanted to save us. No one paid for the rescue plan. No one blinked. The alarmist gets his coat; the resignee gets his book deal; the market gets its quarter; and the rain keeps doing what the rain does, which is to make everything it touches a little more honest, from the monsoon to the market. I am going back inside now, before the monsoon decides what it has against my evening, carrying with me the one number I trust from the whole cathedral: the only one I have invented myself, the probability that this was all a career move, greater than one in ten.
+
+And the probability that we have been the catastrophe all along?
+
+I suspect the machine is still trying to calculate it.
 
 P.S. Coxon's resignation post on X (Sept 9); Hubinger's >10% estimate on X; Altman's year-end AGI timeline and Chen's eighty percent as reported by TIME; Astra's automated-research-intern benchmark per OpenAI and The Decoder; the July 2026 incident per Hugging Face's own forensic reconstruction ("Anatomy of a Frontier Lab Agent Intrusion") and OpenAI's incident account, plus Reuters on the additional sites. The Sanskrit maxim धर्मो रक्षति रक्षितः appears in the Mahābhārata tradition and Manusmriti 8.15; the Gītā verse is two.47; Tagore's line is from *Gitanjali*, poem 35.
