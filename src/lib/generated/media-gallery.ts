@@ -6961,6 +6961,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-meat-of-the-goddess.jpg",
+			"src": "/thumbnail/art-the-meat-of-the-goddess.jpg",
+			"bytes": 390096,
+			"width": 1024,
+			"height": 1536
+		},
+		{
 			"name": "art-the-moat-has-mosquitoes.jpg",
 			"src": "/thumbnail/art-the-moat-has-mosquitoes.jpg",
 			"bytes": 130627,

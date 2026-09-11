@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T00:43:56.372582+00:00",
+  "generatedAt": "2026-09-11T02:15:27.041672+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11107,6 +11107,29 @@
         "Data",
         "Connected",
         "Node"
+      ],
+      "wordCount": 130
+    },
+    "the-meat-of-the-goddess": {
+      "generatedAt": "2026-09-11T02:15:26.925109+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-meat-of-the-goddess.svg",
+      "source": "src/lib/posts/the-meat-of-the-goddess.md",
+      "sourceHash": "58d17253afdb5e4565364eec0efd12f0979a654d3c8b276a8f989296451b355e",
+      "sourceModified": "2026-09-11T02:15:22.573551+00:00",
+      "topWords": [
+        "Say",
+        "Eat",
+        "Meat",
+        "Babaji",
+        "Every",
+        "Man",
+        "Bengal",
+        "Food",
+        "Mutton",
+        "Never",
+        "September",
+        "Appeal"
       ],
       "wordCount": 130
     },

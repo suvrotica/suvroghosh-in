@@ -17203,6 +17203,22 @@
       "sourceHash": "b3fc05813397d421f055e39b84b9a30e30cf9c1f7b783684092b21575f36c535",
       "width": 1200
     },
+    "static/thumbnail/art-the-meat-of-the-goddess.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1024,
+      "outputBytes": 390096,
+      "outputHash": "0fb21ddd3ed53c633b7c0bc100dc2452653d11b97309197da04eacb9db0dcb28",
+      "psnrDb": 40.22,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 390096,
+      "sourceHash": "0fb21ddd3ed53c633b7c0bc100dc2452653d11b97309197da04eacb9db0dcb28",
+      "width": 1024
+    },
     "static/thumbnail/art-the-moat-has-mosquitoes.jpg": {
       "format": "JPEG",
       "height": 800,
