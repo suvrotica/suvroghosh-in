@@ -6912,6 +6912,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-lizard-in-your-pen.jpg",
+			"src": "/thumbnail/art-the-lizard-in-your-pen.jpg",
+			"bytes": 273122,
+			"width": 1086,
+			"height": 1448
+		},
+		{
 			"name": "art-the-low-market-value-of-reality.jpg",
 			"src": "/thumbnail/art-the-low-market-value-of-reality.jpg",
 			"bytes": 257008,

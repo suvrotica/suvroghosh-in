@@ -17091,6 +17091,22 @@
       "sourceHash": "15e06d30ce8bd077f38e3f18b432826113b5e9991f4e19d7fe5da6d2957cfbec",
       "width": 1200
     },
+    "static/thumbnail/art-the-lizard-in-your-pen.jpg": {
+      "format": "JPEG",
+      "height": 1448,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1448,
+      "originalWidth": 1086,
+      "outputBytes": 273122,
+      "outputHash": "c3308bb05771ffebc65d1840b280cf5a74a0c62885e3ff95e39c5b8ea9f0850d",
+      "psnrDb": 42.96,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 277586,
+      "sourceHash": "b9f3cfdec1bdafe3f262f593612608ab32b916a443ae209a8d55082d576b0f4f",
+      "width": 1086
+    },
     "static/thumbnail/art-the-low-market-value-of-reality.jpg": {
       "format": "JPEG",
       "height": 800,

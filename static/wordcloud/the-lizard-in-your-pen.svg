@@ -1,0 +1,134 @@
+<svg role="img" aria-label="The Lizard in Your Pen" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>The Lizard in Your Pen</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(28,679)" font-size="118" style="fill:#d6a79f">India</text>
+<text transform="translate(344,450)" font-size="111" style="fill:#9fc9c5">Exendin4</text>
+<text transform="translate(484,583)" font-size="111" style="fill:#b6c3dd">Semaglutide</text>
+<text transform="translate(820,284)" font-size="103" style="fill:#8fb7d0">Lizard</text>
+<text transform="translate(295,238)" font-size="103" style="fill:#d5d2c2">Wedding</text>
+<text transform="translate(135,123)" font-size="103" style="fill:#a9b7a3">GLP-1</text>
+<text transform="translate(233,352)" font-size="103" style="fill:#d88988">Indian</text>
+<text transform="translate(472,110)" font-size="103" style="fill:#c7d7b5">Obesity</text>
+<text transform="translate(25,578)" font-size="95" style="fill:#d6a79f">Called</text>
+<text transform="translate(746,694)" font-size="95" style="fill:#b6c3dd">Monster</text>
+<text transform="translate(905,369)" font-size="95" style="fill:#d88988">Weight</text>
+<text transform="translate(112,482) rotate(-90)" font-size="95" style="fill:#a9b7a3">Molecule</text>
+<text transform="translate(911,136)" font-size="95" style="fill:#d88988">Drugs</text>
+<text transform="translate(468,690) rotate(-90)" font-size="86" style="fill:#d6a79f">Gila</text>
+<text transform="translate(931,468)" font-size="86" style="fill:#d88988">Venom</text>
+<text transform="translate(906,58)" font-size="69" style="fill:#a9b7a3">Somewhere</text>
+<text transform="translate(120,431)" font-size="69" style="fill:#d6a79f">Story</text>
+<text transform="translate(494,698)" font-size="69" style="fill:#a9b7a3">Enough</text>
+<text transform="translate(601,341)" font-size="69" style="fill:#d9c89e">Roughly</text>
+<text transform="translate(741,186)" font-size="62" style="fill:#d88988">Mounjaro</text>
+<text transform="translate(127,228)" font-size="62" style="fill:#d88988">Even</text>
+<text transform="translate(597,499)" font-size="62" style="fill:#e0b879">Never</text>
+<text transform="translate(1244,277) rotate(-90)" font-size="62" style="fill:#c49a6c">Began</text>
+<text transform="translate(502,643)" font-size="62" style="fill:#c7d7b5">March</text>
+<text transform="translate(117,500)" font-size="62" style="fill:#d5d2c2">Diabetes</text>
+<text transform="translate(1140,702)" font-size="53" style="fill:#c7d7b5">Slow</text>
+<text transform="translate(1231,508) rotate(-90)" font-size="53" style="fill:#d9c89e">Long</text>
+<text transform="translate(1041,625)" font-size="50" style="fill:#b6c3dd">Peptide</text>
+<text transform="translate(147,43)" font-size="50" style="fill:#c7d7b5">Metabolism</text>
+<text transform="translate(462,276)" font-size="45" style="fill:#a9b7a3">Exactly</text>
+<text transform="translate(435,148)" font-size="45" style="fill:#c49a6c">Glucose</text>
+<text transform="translate(281,140)" font-size="45" style="fill:#9fc9c5">Eng</text>
+<text transform="translate(836,621)" font-size="45" style="fill:#d9c89e">Medical</text>
+<text transform="translate(104,715)" font-size="42" style="fill:#d5d2c2">Gilamonster</text>
+<text transform="translate(150,178)" font-size="42" style="fill:#d88988">Human</text>
+<text transform="translate(563,36)" font-size="42" style="fill:#9fc9c5">Reptile</text>
+<text transform="translate(288,275)" font-size="42" style="fill:#d6a79f">Sold</text>
+<text transform="translate(116,259)" font-size="35" style="fill:#9fc9c5">Appetite</text>
+<text transform="translate(1076,202)" font-size="35" style="fill:#d6a79f">Food</text>
+<text transform="translate(800,484)" font-size="35" style="fill:#d88988">Hunger</text>
+<text transform="translate(121,321)" font-size="35" style="fill:#8fb7d0">Merely</text>
+<text transform="translate(884,402)" font-size="35" style="fill:#c49a6c">Molecular</text>
+<text transform="translate(423,483)" font-size="35" style="fill:#c7d7b5">Desert</text>
+<text transform="translate(417,381)" font-size="35" style="fill:#c7d7b5">Patent</text>
+<text transform="translate(34,321) rotate(-90)" font-size="35" style="fill:#8fb7d0">Machinery</text>
+<text transform="translate(627,150)" font-size="35" style="fill:#d9c89e">April</text>
+<text transform="translate(115,365)" font-size="35" style="fill:#a9b7a3">Cheap</text>
+<text transform="translate(925,221)" font-size="35" style="fill:#a9b7a3">Reuters</text>
+<text transform="translate(761,28)" font-size="27" style="fill:#d88988">Medically</text>
+<text transform="translate(755,296) rotate(-90)" font-size="27" style="fill:#a9b7a3">Loss</text>
+<text transform="translate(448,27)" font-size="27" style="fill:#d5d2c2">Million</text>
+<text transform="translate(917,498)" font-size="27" style="fill:#d9c89e">Disease</text>
+<text transform="translate(223,378)" font-size="22" style="fill:#d88988">Rather</text>
+<text transform="translate(1082,415)" font-size="22" style="fill:#d6a79f">Fat</text>
+<text transform="translate(1004,79)" font-size="22" style="fill:#a9b7a3">Venomous</text>
+<text transform="translate(1070,490)" font-size="22" style="fill:#8fb7d0">Heloderma</text>
+<text transform="translate(92,603)" font-size="22" style="fill:#d88988">Suspectum</text>
+<text transform="translate(37,497)" font-size="22" style="fill:#d6a79f">Stupid</text>
+<text transform="translate(13,27)" font-size="22" style="fill:#c7d7b5">Meals</text>
+<text transform="translate(1192,650)" font-size="22" style="fill:#d88988">Months</text>
+<text transform="translate(946,715)" font-size="22" style="fill:#a9b7a3">Manufactures</text>
+<text transform="translate(326,600)" font-size="22" style="fill:#c7d7b5">Mammalian</text>
+<text transform="translate(1269,439) rotate(-90)" font-size="22" style="fill:#d6a79f">Argument</text>
+<text transform="translate(15,709)" font-size="22" style="fill:#a9b7a3">Write</text>
+<text transform="translate(748,229)" font-size="22" style="fill:#d88988">Turn</text>
+<text transform="translate(865,259) rotate(-90)" font-size="22" style="fill:#b6c3dd">Much</text>
+<text transform="translate(121,290)" font-size="22" style="fill:#9fc9c5">Useful</text>
+<text transform="translate(24,616) rotate(-90)" font-size="22" style="fill:#8fb7d0">Whatever</text>
+<text transform="translate(1255,572) rotate(-90)" font-size="22" style="fill:#9fc9c5">Originally</text>
+<text transform="translate(1057,303)" font-size="22" style="fill:#d88988">Years</text>
+<text transform="translate(389,705)" font-size="22" style="fill:#9fc9c5">Bronx</text>
+<text transform="translate(563,372)" font-size="22" style="fill:#e0b879">Mother</text>
+<text transform="translate(374,548)" font-size="22" style="fill:#d6a79f">Looks</text>
+<text transform="translate(324,67)" font-size="22" style="fill:#b6c3dd">John</text>
+<text transform="translate(400,175) rotate(-90)" font-size="22" style="fill:#d6a79f">Center</text>
+<text transform="translate(1038,163)" font-size="22" style="fill:#c7d7b5">NIH</text>
+<text transform="translate(17,95)" font-size="22" style="fill:#d88988">Work</text>
+<text transform="translate(31,485) rotate(-90)" font-size="22" style="fill:#9fc9c5">Pancreatic</text>
+<text transform="translate(1150,79)" font-size="22" style="fill:#d9c89e">Found</text>
+<text transform="translate(55,320) rotate(-90)" font-size="22" style="fill:#d88988">Release</text>
+<text transform="translate(1163,160)" font-size="22" style="fill:#d9c89e">Eat</text>
+<text transform="translate(738,132)" font-size="22" style="fill:#e0b879">Perhaps</text>
+<text transform="translate(864,516)" font-size="22" style="fill:#8fb7d0">Put</text>
+<text transform="translate(813,711)" font-size="17" style="fill:#e0b879">Accidentally</text>
+<text transform="translate(1261,325) rotate(-90)" font-size="17" style="fill:#d9c89e">Prescription</text>
+<text transform="translate(178,147)" font-size="17" style="fill:#c7d7b5">Direct</text>
+<text transform="translate(725,375)" font-size="17" style="fill:#8fb7d0">Synthetic</text>
+<text transform="translate(551,603)" font-size="17" style="fill:#d6a79f">Version</text>
+<text transform="translate(655,281)" font-size="17" style="fill:#c7d7b5">Family</text>
+<text transform="translate(491,697) rotate(-90)" font-size="17" style="fill:#c7d7b5">Ozempic</text>
+<text transform="translate(1068,510)" font-size="17" style="fill:#d5d2c2">Wegovy</text>
+<text transform="translate(1074,219)" font-size="17" style="fill:#9fc9c5">Analogue</text>
+<text transform="translate(130,144) rotate(-90)" font-size="17" style="fill:#d6a79f">Survives</text>
+<text transform="translate(765,204)" font-size="17" style="fill:#a9b7a3">Every</text>
+<text transform="translate(244,517)" font-size="17" style="fill:#c7d7b5">Injection</text>
+<text transform="translate(1163,179)" font-size="17" style="fill:#d88988">Pen</text>
+<text transform="translate(585,171)" font-size="17" style="fill:#e0b879">Drug</text>
+<text transform="translate(1263,162) rotate(-90)" font-size="17" style="fill:#d88988">Biological</text>
+<text transform="translate(683,600)" font-size="17" style="fill:#c49a6c">Doses</text>
+<text transform="translate(302,652) rotate(-90)" font-size="17" style="fill:#a9b7a3">Stomach</text>
+<text transform="translate(664,516)" font-size="17" style="fill:#c7d7b5">Arrives</text>
+<text transform="translate(657,172)" font-size="17" style="fill:#b6c3dd">Somebody</text>
+<text transform="translate(343,459) rotate(-90)" font-size="17" style="fill:#d6a79f">Better</text>
+<text transform="translate(852,637)" font-size="17" style="fill:#8fb7d0">Worse</text>
+<text transform="translate(884,264) rotate(-90)" font-size="17" style="fill:#d5d2c2">Wanting</text>
+<text transform="translate(149,448)" font-size="17" style="fill:#d9c89e">Metabolic</text>
+<text transform="translate(979,301)" font-size="17" style="fill:#c7d7b5">Cliff</text>
+<text transform="translate(584,514) rotate(-90)" font-size="17" style="fill:#b6c3dd">Principal</text>
+<text transform="translate(716,712)" font-size="14" style="fill:#c7d7b5">Genericdrug</text>
+<text transform="translate(836,43)" font-size="14" style="fill:#b6c3dd">Market</text>
+<text transform="translate(431,59)" font-size="14" style="fill:#b6c3dd">Sixty</text>
+<text transform="translate(555,713)" font-size="14" style="fill:#9fc9c5">Thousand</text>
+<text transform="translate(1205,667)" font-size="14" style="fill:#d6a79f">Generic</text>
+<text transform="translate(133,59) rotate(-90)" font-size="14" style="fill:#a9b7a3">Brands</text>
+<text transform="translate(1127,411)" font-size="14" style="fill:#e0b879">Across</text>
+<text transform="translate(740,513)" font-size="14" style="fill:#a9b7a3">Therapeutic</text>
+<text transform="translate(764,255)" font-size="14" style="fill:#d6a79f">Global</text>
+<text transform="translate(1003,545)" font-size="14" style="fill:#c49a6c">Came</text>
+<text transform="translate(237,76)" font-size="14" style="fill:#d88988">Now</text>
+<text transform="translate(915,512)" font-size="14" style="fill:#9fc9c5">Novo</text>
+<text transform="translate(164,338)" font-size="14" style="fill:#d9c89e">Nordisk</text>
+<text transform="translate(444,110) rotate(-90)" font-size="14" style="fill:#e0b879">Prices</text>
+<text transform="translate(873,450)" font-size="14" style="fill:#9fc9c5">Within</text>
+<text transform="translate(101,675) rotate(-90)" font-size="14" style="fill:#d88988">Weeks</text>
+<text transform="translate(1155,15)" font-size="14" style="fill:#a9b7a3">Commercial</text>
+<text transform="translate(767,269)" font-size="14" style="fill:#9fc9c5">Nobody</text>
+<text transform="translate(365,84)" font-size="14" style="fill:#b6c3dd">Delhi</text>
+<text transform="translate(386,432)" font-size="14" style="fill:#8fb7d0">Skin</text>
+<text transform="translate(286,232) rotate(-90)" font-size="14" style="fill:#e0b879">Advertising</text>
+<text transform="translate(705,627)" font-size="14" style="fill:#d5d2c2">Bride</text>
+</svg>
