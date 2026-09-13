@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T22:29:33.004204+00:00",
+  "generatedAt": "2026-09-12T23:46:30.320454+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8991,6 +8991,29 @@
         "Form",
         "Equation",
         "Equations"
+      ],
+      "wordCount": 130
+    },
+    "the-baroque-minutiae": {
+      "generatedAt": "2026-09-12T23:46:30.104909+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-baroque-minutiae.svg",
+      "source": "src/lib/posts/the-baroque-minutiae.md",
+      "sourceHash": "75322fd6fc9cc855b7100130d9f299dd828fec4759a49b54fbe7a07b82774e93",
+      "sourceModified": "2026-09-12T23:46:26.663421+00:00",
+      "topWords": [
+        "Sort",
+        "Small",
+        "Cycle",
+        "Working",
+        "Man",
+        "Particular",
+        "Sometimes",
+        "Days",
+        "Bad",
+        "Mind",
+        "Think",
+        "Noise"
       ],
       "wordCount": 130
     },

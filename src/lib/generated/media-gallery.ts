@@ -6653,6 +6653,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-baroque-minutiae.jpg",
+			"src": "/thumbnail/art-the-baroque-minutiae.jpg",
+			"bytes": 281989,
+			"width": 1448,
+			"height": 1086
+		},
+		{
 			"name": "art-the-bengali-baby.jpg",
 			"src": "/thumbnail/art-the-bengali-baby.jpg",
 			"bytes": 179766,

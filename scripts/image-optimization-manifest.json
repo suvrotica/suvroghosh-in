@@ -16499,6 +16499,22 @@
       "sourceHash": "d3bbdb9a209b020c15f905a67053b200ee8f2dc500f01e230f965a1e94cd84e4",
       "width": 1200
     },
+    "static/thumbnail/art-the-baroque-minutiae.jpg": {
+      "format": "JPEG",
+      "height": 1086,
+      "optimized": false,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1086,
+      "originalWidth": 1448,
+      "outputBytes": 281989,
+      "outputHash": "363a5e3d675dd313ef443bac5fc2aed16f124c92239fdafedc6b2b2dd0a86603",
+      "psnrDb": 43.65,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 281989,
+      "sourceHash": "363a5e3d675dd313ef443bac5fc2aed16f124c92239fdafedc6b2b2dd0a86603",
+      "width": 1448
+    },
     "static/thumbnail/art-the-bengali-baby.jpg": {
       "format": "JPEG",
       "height": 800,

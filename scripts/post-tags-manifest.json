@@ -12691,6 +12691,26 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-baroque-minutiae.md": {
+			"bodyHash": "0c0a2f8e34cd43806cb5ffde8b5824adc5107667da5191536a299aa8aa7c3b43",
+			"hashVersion": 2,
+			"revisionHash": "9fd1d03b9bac9eafb30ed3ff1aa487331a6d2b60353fe67aae7eb7bff49abf2a",
+			"generatedTags": [
+				"Cycle",
+				"Baroque",
+				"Pill",
+				"Choke",
+				"Fed",
+				"Particular",
+				"Working",
+				"Clear",
+				"Despite",
+				"Hours"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-09-13"
 		}
 	},
 	"maxTags": 10
