@@ -12741,6 +12741,25 @@
 				"Cynicism"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-extrovert-economy-gets-a-jetpack.md": {
+			"bodyHash": "adb129182ccb041cd70e218def5e45bf5c1bbc6d001bf48513796e2718707ce2",
+			"hashVersion": 2,
+			"revisionHash": "22a3bd06715a1e3d81c74b07cf23a4fd2fda90af090a4cf80136fe7b2595a8bb",
+			"generatedTags": [
+				"Generative AI",
+				"Attention Economy",
+				"Trumpet",
+				"Introvert",
+				"AI",
+				"Tooted",
+				"Leadership",
+				"Action",
+				"Generative",
+				"Lessons"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

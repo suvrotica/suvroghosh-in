@@ -6842,6 +6842,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1086
 		},
 		{
+			"name": "art-the-extrovert-economy-gets-a-jetpack.jpg",
+			"src": "/thumbnail/art-the-extrovert-economy-gets-a-jetpack.jpg",
+			"bytes": 301319,
+			"width": 1500,
+			"height": 1049
+		},
+		{
 			"name": "art-the-fat-animal-in-the-mirror.jpg",
 			"src": "/thumbnail/art-the-fat-animal-in-the-mirror.jpg",
 			"bytes": 148089,

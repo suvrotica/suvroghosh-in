@@ -16931,6 +16931,22 @@
       "sourceHash": "4df61243997a12281427ad53f3ef547d3c174e0a114f423b2438cf658c8791a3",
       "width": 1448
     },
+    "static/thumbnail/art-the-extrovert-economy-gets-a-jetpack.jpg": {
+      "format": "JPEG",
+      "height": 1049,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1049,
+      "originalWidth": 1500,
+      "outputBytes": 301319,
+      "outputHash": "686fc6e76bf716c6f1a228f9ab2600f468d16afdfd4798e248784c216079a4e5",
+      "psnrDb": 42.83,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 490079,
+      "sourceHash": "09aa9cfd513649a5980ca6d739241c39a0029d70bd53b0c7f847bb22ed7b31cb",
+      "width": 1500
+    },
     "static/thumbnail/art-the-fat-animal-in-the-mirror.jpg": {
       "format": "JPEG",
       "height": 800,

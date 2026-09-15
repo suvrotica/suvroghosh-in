@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T03:46:15.134508+00:00",
+  "generatedAt": "2026-09-15T09:19:22.833073+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10118,6 +10118,29 @@
         "Never",
         "Roughly",
         "Now"
+      ],
+      "wordCount": 130
+    },
+    "the-extrovert-economy-gets-a-jetpack": {
+      "generatedAt": "2026-09-15T09:19:22.680838+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-extrovert-economy-gets-a-jetpack.svg",
+      "source": "src/lib/posts/the-extrovert-economy-gets-a-jetpack.md",
+      "sourceHash": "5c2afe4fd898eaeec3d31d057fb9b27c1d54fe8645b6c4d58421bc29835bc499",
+      "sourceModified": "2026-09-15T09:19:18.400247+00:00",
+      "topWords": [
+        "AI",
+        "Trumpet",
+        "Now",
+        "Action",
+        "Never",
+        "Quiet",
+        "Introvert",
+        "Thought",
+        "Sentence",
+        "Merely",
+        "Economy",
+        "Linkedin"
       ],
       "wordCount": 130
     },
