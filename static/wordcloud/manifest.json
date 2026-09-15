@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T23:46:30.320454+00:00",
+  "generatedAt": "2026-09-15T03:46:15.134508+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3885,6 +3885,29 @@
         "Future",
         "Even",
         "Chair"
+      ],
+      "wordCount": 130
+    },
+    "gobhir-joler-machh": {
+      "generatedAt": "2026-09-15T03:46:14.769577+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/gobhir-joler-machh.svg",
+      "source": "src/lib/posts/gobhir-joler-machh.md",
+      "sourceHash": "f5af2d84ad63f8b01cdbac504f4ca071514ba1117e86c30bd81c5570f595238f",
+      "sourceModified": "2026-09-15T03:43:40.002942+00:00",
+      "topWords": [
+        "Joler",
+        "Machh",
+        "Gobhir",
+        "Fish",
+        "Water",
+        "Man",
+        "Education",
+        "Upon",
+        "Deep",
+        "Honest",
+        "Never",
+        "Means"
       ],
       "wordCount": 130
     },

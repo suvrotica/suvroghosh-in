@@ -14387,6 +14387,22 @@
       "sourceHash": "58b0b4b82b3e818a7497315f0923e1756859a4c96cecc607793c13c95707280a",
       "width": 1200
     },
+    "static/thumbnail/art-gobhir-joler-machh.jpg": {
+      "format": "JPEG",
+      "height": 1074,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1074,
+      "originalWidth": 1536,
+      "outputBytes": 296732,
+      "outputHash": "6156a06ef0525aaad33d93a2ea3a055a745c5ece7589090400d1e03b9faee809",
+      "psnrDb": 38.32,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 498665,
+      "sourceHash": "d48e7346d4fc5ef646ef5c78a1795f50f4f6a0f8d0199f71f1c7d53659943713",
+      "width": 1536
+    },
     "static/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg": {
       "format": "JPEG",
       "height": 800,

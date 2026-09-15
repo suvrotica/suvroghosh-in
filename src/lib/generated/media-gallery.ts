@@ -5729,6 +5729,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-gobhir-joler-machh.jpg",
+			"src": "/thumbnail/art-gobhir-joler-machh.jpg",
+			"bytes": 296732,
+			"width": 1536,
+			"height": 1074
+		},
+		{
 			"name": "art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"src": "/thumbnail/art-great-trigonometrical-survey-india-trigonometry-empire.jpg",
 			"bytes": 224679,

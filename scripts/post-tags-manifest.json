@@ -12711,6 +12711,36 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-09-13"
+		},
+		"src/lib/posts/gobhir-joler-machh.md": {
+			"bodyHash": "61bb6edc3c366d05c3d156e2fc273d16095a9a78e56e8880bbcea42ee0c45968",
+			"hashVersion": 2,
+			"revisionHash": "5e27b7fa7d14a26f37e2196f8d2b0bdffcfbe6e8c82a3b622300bdef6c6cf5b4",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Education",
+				"Morality",
+				"Religion",
+				"Satire",
+				"Society",
+				"Bengal",
+				"Cynicism"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Education",
+				"Morality",
+				"Religion",
+				"Satire",
+				"Society",
+				"Bengal",
+				"Cynicism"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
