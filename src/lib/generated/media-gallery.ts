@@ -6436,6 +6436,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-rumpelstiltskin-effect-brandolini-law-ai-doom.jpg",
+			"src": "/thumbnail/art-rumpelstiltskin-effect-brandolini-law-ai-doom.jpg",
+			"bytes": 249078,
+			"width": 1074,
+			"height": 1536
+		},
+		{
 			"name": "art-sadness-scarab-calcutta-depression.jpg",
 			"src": "/thumbnail/art-sadness-scarab-calcutta-depression.jpg",
 			"bytes": 161844,

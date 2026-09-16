@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T09:19:22.833073+00:00",
+  "generatedAt": "2026-09-16T01:49:04.246738+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7588,6 +7588,29 @@
         "Man",
         "Devotees",
         "Rich"
+      ],
+      "wordCount": 130
+    },
+    "rumpelstiltskin-effect-brandolini-law-ai-doom": {
+      "generatedAt": "2026-09-16T01:49:03.994786+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/rumpelstiltskin-effect-brandolini-law-ai-doom.svg",
+      "source": "src/lib/posts/rumpelstiltskin-effect-brandolini-law-ai-doom.md",
+      "sourceHash": "decc589c05a1fe0b96f8562e0e9a83dc7954dfbbb6190cb7064b634199d66971",
+      "sourceModified": "2026-09-16T01:47:34.709079+00:00",
+      "topWords": [
+        "Name",
+        "Rumpelstiltskin",
+        "Every",
+        "Work",
+        "Task",
+        "Enough",
+        "Naming",
+        "AI",
+        "Demon",
+        "Now",
+        "Brandolini",
+        "Bullshit"
       ],
       "wordCount": 130
     },

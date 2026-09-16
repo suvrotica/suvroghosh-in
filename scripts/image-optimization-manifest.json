@@ -16003,6 +16003,22 @@
       "sourceHash": "cff44c55fb052013ce314b658dec979f2f90e06395914eb522aaf8e0a8db7bc0",
       "width": 1200
     },
+    "static/thumbnail/art-rumpelstiltskin-effect-brandolini-law-ai-doom.jpg": {
+      "format": "JPEG",
+      "height": 1536,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1536,
+      "originalWidth": 1074,
+      "outputBytes": 249078,
+      "outputHash": "edf01dbbc8a8a34356959080457b59b53e968e1e182f4a7434c1d12cdbd3947f",
+      "psnrDb": 38.25,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 426765,
+      "sourceHash": "0c54d6071ed2c432b738645afbb3e50f1de1ee9fc809cb77914e68889956760c",
+      "width": 1074
+    },
     "static/thumbnail/art-sadness-scarab-calcutta-depression.jpg": {
       "format": "JPEG",
       "height": 800,
