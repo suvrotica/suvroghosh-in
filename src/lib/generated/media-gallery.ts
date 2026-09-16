@@ -7262,6 +7262,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-words-that-ate-the-world.jpg",
+			"src": "/thumbnail/art-the-words-that-ate-the-world.jpg",
+			"bytes": 277182,
+			"width": 1177,
+			"height": 1536
+		},
+		{
 			"name": "art-the-zeitgeist-of-calcutta-has-changed.jpg",
 			"src": "/thumbnail/art-the-zeitgeist-of-calcutta-has-changed.jpg",
 			"bytes": 189521,

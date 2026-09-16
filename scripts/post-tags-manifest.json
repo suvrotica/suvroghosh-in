@@ -12779,6 +12779,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-words-that-ate-the-world.md": {
+			"bodyHash": "51340b49182c2ecb4dd41c3b8dacc283ebd6a76cfe08d74a88ff5e48f7db2d5d",
+			"hashVersion": 2,
+			"revisionHash": "384ca4beaeaa072295093945cd61e0f5e2055d831d43b2258251710fa7d29a2b",
+			"generatedTags": [
+				"Gradient Descent",
+				"Finishing School",
+				"Scaling Laws",
+				"Fine Print",
+				"Neural Network",
+				"Dials",
+				"Training",
+				"Neural",
+				"Network",
+				"Accelerators"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
