@@ -12798,6 +12798,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-future-runs-on-a-voltage-stabilizer.md": {
+			"bodyHash": "668d4c07a73a8fdeb86d39103adc029f77163a26f47b9b4d571536b1d1713e46",
+			"hashVersion": 2,
+			"revisionHash": "419b36fee2e767dce37c14bcdf1e06e3151cfebf52e585f50a0a494dc914a2d8",
+			"generatedTags": [
+				"Data Center",
+				"Stabilizer",
+				"Socket",
+				"Voltage",
+				"Democratization",
+				"Electricity",
+				"Backup",
+				"Future",
+				"Transformer",
+				"Power"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

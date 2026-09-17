@@ -17011,6 +17011,22 @@
       "sourceHash": "66ca2cd28d395cf3650d0562f7ca02f9013f13d47fb79e76d66f2953642c7ba7",
       "width": 1200
     },
+    "static/thumbnail/art-the-future-runs-on-a-voltage-stabilizer.jpg": {
+      "format": "JPEG",
+      "height": 1074,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1074,
+      "originalWidth": 1536,
+      "outputBytes": 355123,
+      "outputHash": "ed238c474d076546997dd94698520c930dd5e6b04e2d835bab5267f69f92e42c",
+      "psnrDb": 36.16,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 487924,
+      "sourceHash": "8c0ef09dc1156768ac8200603ef37817f61ded91c152afda29f1cc424fc298e9",
+      "width": 1536
+    },
     "static/thumbnail/art-the-geometry-of-absence.jpg": {
       "format": "JPEG",
       "height": 800,

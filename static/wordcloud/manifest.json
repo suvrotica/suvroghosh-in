@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T05:14:47.243878+00:00",
+  "generatedAt": "2026-09-17T04:59:47.564943+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10417,6 +10417,29 @@
         "Face",
         "Gate",
         "Stood"
+      ],
+      "wordCount": 130
+    },
+    "the-future-runs-on-a-voltage-stabilizer": {
+      "generatedAt": "2026-09-17T04:59:47.425804+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-future-runs-on-a-voltage-stabilizer.svg",
+      "source": "src/lib/posts/the-future-runs-on-a-voltage-stabilizer.md",
+      "sourceHash": "ad634b4c4591e809dfc7637662a8a4813124b427f06260aacd0083c3e9a0e891",
+      "sourceModified": "2026-09-17T04:59:43.655249+00:00",
+      "topWords": [
+        "Future",
+        "Power",
+        "Electricity",
+        "Stabilizer",
+        "Gets",
+        "Voltage",
+        "Cloud",
+        "Little",
+        "Socket",
+        "Now",
+        "Supply",
+        "Yet"
       ],
       "wordCount": 130
     },

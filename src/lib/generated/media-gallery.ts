@@ -6877,6 +6877,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-future-runs-on-a-voltage-stabilizer.jpg",
+			"src": "/thumbnail/art-the-future-runs-on-a-voltage-stabilizer.jpg",
+			"bytes": 355123,
+			"width": 1536,
+			"height": 1074
+		},
+		{
 			"name": "art-the-geometry-of-absence.jpg",
 			"src": "/thumbnail/art-the-geometry-of-absence.jpg",
 			"bytes": 207950,
