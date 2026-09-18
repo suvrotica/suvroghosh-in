@@ -16547,6 +16547,22 @@
       "sourceHash": "363a5e3d675dd313ef443bac5fc2aed16f124c92239fdafedc6b2b2dd0a86603",
       "width": 1448
     },
+    "static/thumbnail/art-the-beautiful-annihilation.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 682,
+      "outputBytes": 103469,
+      "outputHash": "89b2562a892c0cc855f45552b72e544e486e77eedc096e115bd77506e56680de",
+      "psnrDb": 37.22,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 183321,
+      "sourceHash": "5f0d9899fbdb370659e3c1c78f2541dd5eea49933da6a965f1783787d7254e4f",
+      "width": 682
+    },
     "static/thumbnail/art-the-bengali-baby.jpg": {
       "format": "JPEG",
       "height": 800,

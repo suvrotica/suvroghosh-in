@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17T04:59:47.564943+00:00",
+  "generatedAt": "2026-09-18T10:42:40.203174+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9060,6 +9060,29 @@
         "Mind",
         "Think",
         "Noise"
+      ],
+      "wordCount": 130
+    },
+    "the-beautiful-annihilation": {
+      "generatedAt": "2026-09-18T10:42:39.974256+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-beautiful-annihilation.svg",
+      "source": "src/lib/posts/the-beautiful-annihilation.md",
+      "sourceHash": "675b06287aa9251bf63392ba7ac0a24bd758484178bd53c90e279772c8c32381",
+      "sourceModified": "2026-09-18T10:40:43.335487+00:00",
+      "topWords": [
+        "Human",
+        "Robot",
+        "Machines",
+        "Never",
+        "Face",
+        "Person",
+        "Man",
+        "Somebody",
+        "Every",
+        "Now",
+        "Enough",
+        "Kind"
       ],
       "wordCount": 130
     },

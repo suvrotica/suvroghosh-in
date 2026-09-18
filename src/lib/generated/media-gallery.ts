@@ -6674,6 +6674,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1086
 		},
 		{
+			"name": "art-the-beautiful-annihilation.jpg",
+			"src": "/thumbnail/art-the-beautiful-annihilation.jpg",
+			"bytes": 103469,
+			"width": 682,
+			"height": 1024
+		},
+		{
 			"name": "art-the-bengali-baby.jpg",
 			"src": "/thumbnail/art-the-bengali-baby.jpg",
 			"bytes": 179766,

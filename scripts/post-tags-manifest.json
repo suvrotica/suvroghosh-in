@@ -12817,6 +12817,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-beautiful-annihilation.md": {
+			"bodyHash": "ff6c879ce8b8fe85fb42db55ffc64369e94ff24df2133b97e988a437addc8005",
+			"hashVersion": 2,
+			"revisionHash": "b4a3a19c2b7c8932e0e829255dea8de3da22b77b6b754f7b7879653b412efdec",
+			"generatedTags": [
+				"Robot",
+				"Athletics",
+				"Machines",
+				"Actors",
+				"Somebody",
+				"Human",
+				"China",
+				"Actor",
+				"Establish",
+				"Automation"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
