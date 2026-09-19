@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T04:18:23.342377+00:00",
+  "generatedAt": "2026-09-19T09:14:47.883739+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -757,6 +757,29 @@
         "Doctor",
         "Infection",
         "Wrong"
+      ],
+      "wordCount": 130
+    },
+    "apolitical-in-bengal": {
+      "generatedAt": "2026-09-19T09:14:46.407930+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/apolitical-in-bengal.svg",
+      "source": "src/lib/posts/apolitical-in-bengal.md",
+      "sourceHash": "a019ab1da364b258baa1b1f5b4254707a25ddd143334e612909094edbf3ad5dd",
+      "sourceModified": "2026-09-19T09:10:54.647923+00:00",
+      "topWords": [
+        "Man",
+        "Occasionally",
+        "Criticize",
+        "Political",
+        "Bengal",
+        "Government",
+        "BJP",
+        "Trust",
+        "Perhaps",
+        "Trinamool",
+        "History",
+        "Merely"
       ],
       "wordCount": 130
     },

@@ -5099,6 +5099,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-apolitical-in-bengal.jpg",
+			"src": "/thumbnail/art-apolitical-in-bengal.jpg",
+			"bytes": 172197,
+			"width": 1024,
+			"height": 682
+		},
+		{
 			"name": "art-aqi-420-and-the-great-indian-snot-mine.jpg",
 			"src": "/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg",
 			"bytes": 136661,

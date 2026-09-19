@@ -12947,6 +12947,22 @@
       "sourceHash": "90e931a602f93a7263cf3bd7f534a67af2242905036e9d818860c95023c04282",
       "width": 1200
     },
+    "static/thumbnail/art-apolitical-in-bengal.jpg": {
+      "format": "JPEG",
+      "height": 682,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 682,
+      "originalWidth": 1024,
+      "outputBytes": 172197,
+      "outputHash": "e3aa5c66b53142a6be4dd5bdce33382e8f55963fb01455bcaf90eb20e7658b89",
+      "psnrDb": 37.98,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 212590,
+      "sourceHash": "cbec998ac3fbbb599e5672f944f812ca7030cb80cdfe60c0990796fec7d5b375",
+      "width": 1024
+    },
     "static/thumbnail/art-aqi-420-and-the-great-indian-snot-mine.jpg": {
       "format": "JPEG",
       "height": 800,

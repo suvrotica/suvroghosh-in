@@ -12885,6 +12885,36 @@
 				"Blog"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/apolitical-in-bengal.md": {
+			"bodyHash": "691f963916733d4ad1495fd8507276c8d7fb350a5dc74e0059788c075b5a223e",
+			"hashVersion": 2,
+			"revisionHash": "353be557d76784262dbd405d3a9539643c9eac39892b7e4870b5ebcde2b59f1c",
+			"generatedTags": [
+				"Politics",
+				"Bengal",
+				"Calcutta",
+				"Apolitical",
+				"Satire",
+				"Identity",
+				"Democracy",
+				"Opinion",
+				"India",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Politics",
+				"Bengal",
+				"Calcutta",
+				"Apolitical",
+				"Satire",
+				"Identity",
+				"Democracy",
+				"Opinion",
+				"India",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
