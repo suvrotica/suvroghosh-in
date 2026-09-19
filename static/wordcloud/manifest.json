@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T10:42:40.203174+00:00",
+  "generatedAt": "2026-09-19T01:46:31.531501+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8761,6 +8761,29 @@
         "Madam",
         "Tapas",
         "Came"
+      ],
+      "wordCount": 130
+    },
+    "terrace-tea-manic-depression": {
+      "generatedAt": "2026-09-19T01:46:30.926980+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/terrace-tea-manic-depression.svg",
+      "source": "src/lib/posts/terrace-tea-manic-depression.md",
+      "sourceHash": "53baa021d75db5e2226e4b758dcd08f5871fffde48ae72719336a5be00c51224",
+      "sourceModified": "2026-09-19T01:41:20.757930+00:00",
+      "topWords": [
+        "Bricks",
+        "Terrace",
+        "Tea",
+        "Maybe",
+        "Birds",
+        "Women",
+        "Man",
+        "Actually",
+        "Treats",
+        "Feel",
+        "Far",
+        "Looking"
       ],
       "wordCount": 130
     },

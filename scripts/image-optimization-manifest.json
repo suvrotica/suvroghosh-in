@@ -16483,6 +16483,22 @@
       "sourceHash": "49b60e06bcc8322d3503d6cb196662e251e237f70af702429fab9a8fb367d4bd",
       "width": 1200
     },
+    "static/thumbnail/art-terrace-tea-manic-depression.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 819,
+      "outputBytes": 136775,
+      "outputHash": "73f917a41e040367563d06f163975ca1d715ae6c1f701a460c6f9fa42f65439a",
+      "psnrDb": 36.13,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 249660,
+      "sourceHash": "93d0d42a11668d7b29121c31bfd0fea1a8c0a37ebe86603cb1a1c061d79f7632",
+      "width": 819
+    },
     "static/thumbnail/art-the-ai-sermon-and-the-wet-knot.jpg": {
       "format": "JPEG",
       "height": 800,

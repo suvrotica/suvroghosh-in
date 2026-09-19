@@ -6646,6 +6646,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-terrace-tea-manic-depression.jpg",
+			"src": "/thumbnail/art-terrace-tea-manic-depression.jpg",
+			"bytes": 136775,
+			"width": 819,
+			"height": 1024
+		},
+		{
 			"name": "art-the-ai-sermon-and-the-wet-knot.jpg",
 			"src": "/thumbnail/art-the-ai-sermon-and-the-wet-knot.jpg",
 			"bytes": 228461,
