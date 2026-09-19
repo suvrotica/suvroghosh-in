@@ -12855,6 +12855,36 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-machine-can-explain-everything-except-how-i-get-paid.md": {
+			"bodyHash": "65c43e8a80ab9fea17b9bc7fb07829f089f5eec147142872ccb598148e87a995",
+			"hashVersion": 2,
+			"revisionHash": "462c98cbecb4cc952921c8d5606c96f1246531b475326efae9351400e5413d14",
+			"generatedTags": [
+				"AI",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Work",
+				"Technology",
+				"Money",
+				"Society",
+				"Blog"
+			],
+			"pinnedTags": [
+				"AI",
+				"Economics",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Work",
+				"Technology",
+				"Money",
+				"Society",
+				"Blog"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

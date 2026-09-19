@@ -17235,6 +17235,22 @@
       "sourceHash": "4054934e8bf1d8b4cebd7ff0ea7fb8017719988c813781849284053a23335cee",
       "width": 1200
     },
+    "static/thumbnail/art-the-machine-can-explain-everything-except-how-i-get-paid.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 819,
+      "outputBytes": 107040,
+      "outputHash": "66178cf230e9b8215f1f6c7d6b2d89f68208590370e49f3e65f55ed88d1c6d6e",
+      "psnrDb": 38.44,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 190067,
+      "sourceHash": "5a0cace9db5767b2392f524d0e2906102c7a4fbd93c426dbf830a79bc9b4016e",
+      "width": 819
+    },
     "static/thumbnail/art-the-machine-that-cannot-defecate.jpg": {
       "format": "JPEG",
       "height": 800,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T01:46:31.531501+00:00",
+  "generatedAt": "2026-09-19T04:18:23.342377+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11084,6 +11084,29 @@
         "Mathematics",
         "Public",
         "Everyone"
+      ],
+      "wordCount": 130
+    },
+    "the-machine-can-explain-everything-except-how-i-get-paid": {
+      "generatedAt": "2026-09-19T04:18:22.831380+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-machine-can-explain-everything-except-how-i-get-paid.svg",
+      "source": "src/lib/posts/the-machine-can-explain-everything-except-how-i-get-paid.md",
+      "sourceHash": "5d0f2e0e08f59878114b99a2299b4f9ed4582798c2acd2df3319c491c04deb4f",
+      "sourceModified": "2026-09-19T04:07:37.846070+00:00",
+      "topWords": [
+        "Machine",
+        "Say",
+        "Intelligence",
+        "Man",
+        "Explain",
+        "Etymology",
+        "Knowledge",
+        "Remains",
+        "Expertise",
+        "Counsel",
+        "Power",
+        "Everything"
       ],
       "wordCount": 130
     },

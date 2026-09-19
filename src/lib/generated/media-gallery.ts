@@ -6975,6 +6975,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-machine-can-explain-everything-except-how-i-get-paid.jpg",
+			"src": "/thumbnail/art-the-machine-can-explain-everything-except-how-i-get-paid.jpg",
+			"bytes": 107040,
+			"width": 819,
+			"height": 1024
+		},
+		{
 			"name": "art-the-machine-that-cannot-defecate.jpg",
 			"src": "/thumbnail/art-the-machine-that-cannot-defecate.jpg",
 			"bytes": 131898,
