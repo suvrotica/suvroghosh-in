@@ -6107,6 +6107,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-low-self-esteem-in-middle-age.jpg",
+			"src": "/thumbnail/art-low-self-esteem-in-middle-age.jpg",
+			"bytes": 151870,
+			"width": 819,
+			"height": 1024
+		},
+		{
 			"name": "art-marys-retarded-room.jpg",
 			"src": "/thumbnail/art-marys-retarded-room.jpg",
 			"bytes": 93317,

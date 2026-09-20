@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T00:41:20.365766+00:00",
+  "generatedAt": "2026-09-20T05:18:16.812882+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5725,6 +5725,29 @@
         "Often",
         "Man",
         "Dawkins"
+      ],
+      "wordCount": 130
+    },
+    "low-self-esteem-in-middle-age": {
+      "generatedAt": "2026-09-20T05:18:15.455504+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/low-self-esteem-in-middle-age.svg",
+      "source": "src/lib/posts/low-self-esteem-in-middle-age.md",
+      "sourceHash": "2b0651a0e9bd17c3cafba0e19d238353271f94c2dadf43ef9c3011d088bfffcc",
+      "sourceModified": "2026-09-20T05:17:07.642411+00:00",
+      "topWords": [
+        "Merely",
+        "Becomes",
+        "Every",
+        "Little",
+        "Illness",
+        "Begins",
+        "Somebody",
+        "Whispers",
+        "Accountant",
+        "Thin",
+        "Difficult",
+        "Whether"
       ],
       "wordCount": 130
     },

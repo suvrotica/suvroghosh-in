@@ -15251,6 +15251,22 @@
       "sourceHash": "67f3094042e9ad525c2208b42728b2f3481cdfce388c72a3d567cc18faf4c941",
       "width": 1200
     },
+    "static/thumbnail/art-low-self-esteem-in-middle-age.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 819,
+      "outputBytes": 151870,
+      "outputHash": "e0dfb1a9a7d1f876c180cc911e78861e25ab4266ed25e2a725f41d646153c8a9",
+      "psnrDb": 36.26,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 255726,
+      "sourceHash": "aa6218c1ed977bf0ce1347a04f39e8ad36721a787b14123a03a5708467964d51",
+      "width": 819
+    },
     "static/thumbnail/art-marys-retarded-room.jpg": {
       "format": "JPEG",
       "height": 800,

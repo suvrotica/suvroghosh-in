@@ -12945,6 +12945,36 @@
 				"satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/low-self-esteem-in-middle-age.md": {
+			"bodyHash": "f011830cc02969a868a7fdbc24f6da80fd922c962fd22cb551ff83b4816ce5b5",
+			"hashVersion": 2,
+			"revisionHash": "87f946143aa631bb00b692b07128eff165bb73b4ef4db603ee3486f107053e9e",
+			"generatedTags": [
+				"Low Self-Esteem",
+				"Middle Age",
+				"Bipolar Disorder",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Self Worth",
+				"Depression",
+				"Identity"
+			],
+			"pinnedTags": [
+				"Low Self-Esteem",
+				"Middle Age",
+				"Bipolar Disorder",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Self Worth",
+				"Depression",
+				"Identity"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
