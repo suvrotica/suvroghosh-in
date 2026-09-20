@@ -7073,6 +7073,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-night-shift-editor-of-my-skull.jpg",
+			"src": "/thumbnail/art-the-night-shift-editor-of-my-skull.jpg",
+			"bytes": 58870,
+			"width": 723,
+			"height": 1024
+		},
+		{
 			"name": "art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg",
 			"src": "/thumbnail/art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg",
 			"bytes": 92683,

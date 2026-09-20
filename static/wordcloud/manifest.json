@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T09:14:47.883739+00:00",
+  "generatedAt": "2026-09-20T00:41:20.365766+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11705,6 +11705,29 @@
         "Warm",
         "Face",
         "Groom"
+      ],
+      "wordCount": 130
+    },
+    "the-night-shift-editor-of-my-skull": {
+      "generatedAt": "2026-09-20T00:41:19.966660+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-night-shift-editor-of-my-skull.svg",
+      "source": "src/lib/posts/the-night-shift-editor-of-my-skull.md",
+      "sourceHash": "943d2c6235bd3fab4190fa2883bada43c362f76293f796e27bfe5f5ce375f380",
+      "sourceModified": "2026-09-20T00:40:42.430649+00:00",
+      "topWords": [
+        "Brain",
+        "Sleep",
+        "Dream",
+        "Morning",
+        "Night",
+        "Sleeping",
+        "Goblin",
+        "Never",
+        "REM",
+        "Real",
+        "Poor",
+        "Machine"
       ],
       "wordCount": 130
     },

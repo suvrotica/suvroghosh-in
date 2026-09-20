@@ -12915,6 +12915,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-night-shift-editor-of-my-skull.md": {
+			"bodyHash": "ad59e96342c47d5293182adca8a7178c622fbb1232dfc2d78c420e728ddd5cf3",
+			"hashVersion": 2,
+			"revisionHash": "28cc6f47c559784a85eb8d0d5cb58f31ca76c7fe5fda77801416ece52d1a0f40",
+			"generatedTags": [
+				"nightmares",
+				"sleep",
+				"dreams",
+				"REM sleep",
+				"neuroscience",
+				"psychology",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"satire"
+			],
+			"pinnedTags": [
+				"nightmares",
+				"sleep",
+				"dreams",
+				"REM sleep",
+				"neuroscience",
+				"psychology",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

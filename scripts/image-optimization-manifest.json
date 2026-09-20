@@ -17459,6 +17459,22 @@
       "sourceHash": "54d64726dabbbad8256c65a3aeeca07df8a246f61a30528485c8720ad4199af8",
       "width": 1200
     },
+    "static/thumbnail/art-the-night-shift-editor-of-my-skull.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 723,
+      "outputBytes": 58870,
+      "outputHash": "f034c0612bf7a51bb88b31392b30aae580faa22f7cfe01858649d7c891e461aa",
+      "psnrDb": 40.65,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 126844,
+      "sourceHash": "9d8e028b0d2bb41ac0b240dab7b802735cc7337198bd873429a18f146b440124",
+      "width": 723
+    },
     "static/thumbnail/art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg": {
       "format": "JPEG",
       "height": 1263,
