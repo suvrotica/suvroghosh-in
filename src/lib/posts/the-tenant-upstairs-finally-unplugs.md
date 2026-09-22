@@ -2,6 +2,7 @@
 title: "The Tenant Upstairs Finally Unplugs"
 description: "On the narrow, holy, unhygienic gap between consciousness and oblivion, where the mind drops its props and the self finally stops narrating."
 date: "2026-09-22"
+dateModified: "2026-09-22"
 thumbnail: "/thumbnail/art-the-tenant-upstairs-finally-unplugs.jpg"
 thumbnailAlt: "A ceiling fan spinning in a dark Calcutta room, hypnotic and indifferent"
 category: "Essay"
