@@ -7213,6 +7213,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-tenant-upstairs-finally-unplugs.jpg",
+			"src": "/thumbnail/art-the-tenant-upstairs-finally-unplugs.jpg",
+			"bytes": 191332,
+			"width": 1024,
+			"height": 682
+		},
+		{
 			"name": "art-the-terrace-republic.jpg",
 			"src": "/thumbnail/art-the-terrace-republic.jpg",
 			"bytes": 234873,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T03:00:54.852190+00:00",
+  "generatedAt": "2026-09-22T13:25:49.370207+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12694,6 +12694,29 @@
         "Man",
         "Glass",
         "System"
+      ],
+      "wordCount": 130
+    },
+    "the-tenant-upstairs-finally-unplugs": {
+      "generatedAt": "2026-09-22T13:25:47.493964+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-tenant-upstairs-finally-unplugs.svg",
+      "source": "src/lib/posts/the-tenant-upstairs-finally-unplugs.md",
+      "sourceHash": "98b0d44083488d49084afba9ba108cbd6f8d4fa869188a6512205a8aa4d09df7",
+      "sourceModified": "2026-09-22T13:19:57.087715+00:00",
+      "topWords": [
+        "Sleep",
+        "Always",
+        "Tenant",
+        "Bipolar",
+        "Never",
+        "Building",
+        "Mind",
+        "Minutes",
+        "Brahman",
+        "Bastard",
+        "Arrives",
+        "Dark"
       ],
       "wordCount": 130
     },

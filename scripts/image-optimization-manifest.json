@@ -17779,6 +17779,22 @@
       "sourceHash": "5d13e6323c5309f552dcab0e7cc7367df259a627a2587f7b38fa1c80afc9f548",
       "width": 1200
     },
+    "static/thumbnail/art-the-tenant-upstairs-finally-unplugs.jpg": {
+      "format": "JPEG",
+      "height": 682,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 682,
+      "originalWidth": 1024,
+      "outputBytes": 191332,
+      "outputHash": "a1cdfb9a6b63bc850dd64e68d1bbeafb4c18d61780adca25859a1fc0893d6828",
+      "psnrDb": 37.08,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 233836,
+      "sourceHash": "1db5827d921ed0953b341faf23e2f9f9a3ec7da0495a999e3bb7969eaf63d461",
+      "width": 1024
+    },
     "static/thumbnail/art-the-terrace-republic.jpg": {
       "format": "JPEG",
       "height": 800,

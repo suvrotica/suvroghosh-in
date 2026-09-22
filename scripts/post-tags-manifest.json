@@ -13005,6 +13005,25 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-tenant-upstairs-finally-unplugs.md": {
+			"bodyHash": "dacd9e7c34008e0d44c792fb18cdf10dda686a19be2e91accca8c5644d2ef6b6",
+			"hashVersion": 2,
+			"revisionHash": "d7be9943c5ef37e621f8a0cfd268ca58d561b2ce1f98d73885919e7506dc46fa",
+			"generatedTags": [
+				"Hypnagogic State",
+				"Sleep",
+				"Hypnagogic",
+				"Brahman",
+				"Tenant",
+				"Bastard",
+				"Wakefulness",
+				"Episodes",
+				"Bipolar",
+				"Loves"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
