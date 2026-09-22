@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T05:18:16.812882+00:00",
+  "generatedAt": "2026-09-22T03:00:54.852190+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11866,6 +11866,29 @@
         "Better",
         "Book",
         "Smell"
+      ],
+      "wordCount": 130
+    },
+    "the-other-loadshedding": {
+      "generatedAt": "2026-09-22T03:00:54.429284+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-other-loadshedding.svg",
+      "source": "src/lib/posts/the-other-loadshedding.md",
+      "sourceHash": "f6a573949af7e2712a616cd38c0bddb882dbb657cf21765dab03c1c3962d1d21",
+      "sourceModified": "2026-09-22T02:54:42.872405+00:00",
+      "topWords": [
+        "Load",
+        "Fan",
+        "Electricity",
+        "Man",
+        "Loadshedding",
+        "Power",
+        "Sometimes",
+        "Dark",
+        "Room",
+        "Shedding",
+        "System",
+        "CESC"
       ],
       "wordCount": 130
     },

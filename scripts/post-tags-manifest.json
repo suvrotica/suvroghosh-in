@@ -12975,6 +12975,36 @@
 				"Identity"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-other-loadshedding.md": {
+			"bodyHash": "5845efe517d2a0226c559ab0c63f7145304a771a925460bbbc67eede54270717",
+			"hashVersion": 2,
+			"revisionHash": "56c66ca59a41aba31772f7093e94ef8cbe39ce057b25846bf35f4aec9c18c8ca",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Loadshedding",
+				"Depression",
+				"Bipolar",
+				"Electricity",
+				"Gratitude",
+				"Introspection",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Loadshedding",
+				"Depression",
+				"Bipolar",
+				"Electricity",
+				"Gratitude",
+				"Introspection",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

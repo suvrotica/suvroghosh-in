@@ -17523,6 +17523,22 @@
       "sourceHash": "47fe643a80d27bed6a656300d14c3cf7a6336248ccc6536e5a2cda66e4da663e",
       "width": 1200
     },
+    "static/thumbnail/art-the-other-loadshedding.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1024,
+      "outputBytes": 191653,
+      "outputHash": "6fb7efb2ebdd1b1550f4958a9b711139f74c883209d7533cabd5af54cfb611b2",
+      "psnrDb": 37.86,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 238718,
+      "sourceHash": "193a6fd8a5b308fe5dca8615c0da7c3a9f30ebf821659d2d74d93d1c54d32c2f",
+      "width": 1024
+    },
     "static/thumbnail/art-the-overzealous-credulity-crisis.jpg": {
       "format": "JPEG",
       "height": 800,

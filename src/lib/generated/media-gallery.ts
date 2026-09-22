@@ -7101,6 +7101,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-other-loadshedding.jpg",
+			"src": "/thumbnail/art-the-other-loadshedding.jpg",
+			"bytes": 191653,
+			"width": 1024,
+			"height": 768
+		},
+		{
 			"name": "art-the-overzealous-credulity-crisis.jpg",
 			"src": "/thumbnail/art-the-overzealous-credulity-crisis.jpg",
 			"bytes": 129302,
