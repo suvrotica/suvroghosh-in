@@ -18,7 +18,8 @@ const vite = await createServer({
 	root: repositoryRoot,
 	appType: 'custom',
 	logLevel: 'error',
-	server: { middlewareMode: true, hmr: false }
+	server: { middlewareMode: true, hmr: false },
+	optimizeDeps: { noDiscovery: true }
 });
 
 function sha256(value) {
