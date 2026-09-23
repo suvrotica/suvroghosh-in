@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T13:25:49.370207+00:00",
+  "generatedAt": "2026-09-23T01:41:29.639193+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6208,6 +6208,29 @@
         "Healthcare",
         "Variable",
         "Readmissions"
+      ],
+      "wordCount": 130
+    },
+    "muse-and-the-coupon": {
+      "generatedAt": "2026-09-23T01:41:28.426439+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/muse-and-the-coupon.svg",
+      "source": "src/lib/posts/muse-and-the-coupon.md",
+      "sourceHash": "0d19a553dcd44ae7018389831c608db16c80da021652e9fc71cb6baaed75251e",
+      "sourceModified": "2026-09-23T01:40:13.790710+00:00",
+      "topWords": [
+        "Meta",
+        "Muse",
+        "Agent",
+        "Dollars",
+        "Anartham",
+        "Money",
+        "Amazon",
+        "Intelligence",
+        "AI",
+        "Data",
+        "Artham",
+        "Merely"
       ],
       "wordCount": 130
     },

@@ -15443,6 +15443,22 @@
       "sourceHash": "2308ea8c0e5982d01df1e42be7eea11f8fc7d1d7254fb6ce551c8ea13a4dac3a",
       "width": 1200
     },
+    "static/thumbnail/art-muse-and-the-coupon.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 819,
+      "outputBytes": 126316,
+      "outputHash": "6bbdc990c071ad53cf68ea3fc4f525acf837fcfd69ac2a8875951c0b8a92d1a4",
+      "psnrDb": 37.34,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 225205,
+      "sourceHash": "ac0980bd2c5ea53e0bb93c8073e740469399c8e5533aa12721f153d7484cdd0f",
+      "width": 819
+    },
     "static/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg": {
       "format": "JPEG",
       "height": 800,

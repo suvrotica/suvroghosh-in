@@ -13025,6 +13025,36 @@
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-09-22"
+		},
+		"src/lib/posts/muse-and-the-coupon.md": {
+			"bodyHash": "111cda15bd304b59405e790c8aa3ac389f3fca374a0a4be50a74cb643ded0ea8",
+			"hashVersion": 2,
+			"revisionHash": "b74b85b7c9f1912c92f25e6c3400551f10b8ed5bee82ee46ae9dfccae3a65dac",
+			"generatedTags": [
+				"AI",
+				"Meta",
+				"Muse",
+				"Consumer Tech",
+				"E-commerce",
+				"Privacy",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Capitalism"
+			],
+			"pinnedTags": [
+				"AI",
+				"Meta",
+				"Muse",
+				"Consumer Tech",
+				"E-commerce",
+				"Privacy",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Capitalism"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

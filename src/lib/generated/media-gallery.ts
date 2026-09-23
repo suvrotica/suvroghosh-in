@@ -6191,6 +6191,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-muse-and-the-coupon.jpg",
+			"src": "/thumbnail/art-muse-and-the-coupon.jpg",
+			"bytes": 126316,
+			"width": 819,
+			"height": 1024
+		},
+		{
 			"name": "art-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
 			"src": "/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg",
 			"bytes": 110293,
