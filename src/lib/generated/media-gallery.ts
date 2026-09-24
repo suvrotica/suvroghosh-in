@@ -4773,6 +4773,20 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "what-is-left-is-love-calcutta-marriage.jpg",
+			"src": "/images/what-is-left-is-love-calcutta-marriage.jpg",
+			"bytes": 75215,
+			"width": 1024,
+			"height": 682
+		},
+		{
+			"name": "what-is-left-is-love-rajasthan-childhood.jpg",
+			"src": "/images/what-is-left-is-love-rajasthan-childhood.jpg",
+			"bytes": 89860,
+			"width": 1024,
+			"height": 768
+		},
+		{
 			"name": "zamindars-are-not-dead.png",
 			"src": "/images/zamindars-are-not-dead.png",
 			"bytes": 3407509,
@@ -7470,6 +7484,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"bytes": 132681,
 			"width": 1200,
 			"height": 800
+		},
+		{
+			"name": "art-what-is-left-is-love.jpg",
+			"src": "/thumbnail/art-what-is-left-is-love.jpg",
+			"bytes": 80463,
+			"width": 768,
+			"height": 1024
 		},
 		{
 			"name": "art-when-structure-loses-its-map.jpg",

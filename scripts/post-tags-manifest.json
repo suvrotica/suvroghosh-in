@@ -13055,6 +13055,36 @@
 				"Capitalism"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/what-is-left-is-love.md": {
+			"bodyHash": "a2dbd57d6fcde8f2bed682c5d8a4152967d38480057313b3d8c054f48348a332",
+			"hashVersion": 2,
+			"revisionHash": "66332196132f603877e33bd6fad67163251488da64723cf5df792e392ccd1efd",
+			"generatedTags": [
+				"Mother",
+				"Family",
+				"Ladnun",
+				"Rajasthan",
+				"Calcutta",
+				"Kolkata",
+				"Memory",
+				"Love",
+				"Poverty",
+				"Ageing"
+			],
+			"pinnedTags": [
+				"Mother",
+				"Family",
+				"Ladnun",
+				"Rajasthan",
+				"Calcutta",
+				"Kolkata",
+				"Memory",
+				"Love",
+				"Poverty",
+				"Ageing"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

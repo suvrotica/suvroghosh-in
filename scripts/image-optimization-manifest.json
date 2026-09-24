@@ -10774,6 +10774,38 @@
       "sourceHash": "b5045f6a41a1164349a605cd3aa6a8b3466ba6d81a2eda5adf3a6e57977e780e",
       "width": 1200
     },
+    "static/images/what-is-left-is-love-calcutta-marriage.jpg": {
+      "format": "JPEG",
+      "height": 682,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 682,
+      "originalWidth": 1024,
+      "outputBytes": 75215,
+      "outputHash": "6bccb617d5c2ec59bb62438131a56e037375227e3cecae164ed225ddcab478d7",
+      "psnrDb": 40.35,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 135437,
+      "sourceHash": "29e37ffc2c50c191971653025b9de8cb7a84db630c5ba24f7eb1e4972c146fc7",
+      "width": 1024
+    },
+    "static/images/what-is-left-is-love-rajasthan-childhood.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1024,
+      "outputBytes": 89860,
+      "outputHash": "e42d29d261949b42416c68a7646201b41e3684f71e0504e4991b6878c73e1abe",
+      "psnrDb": 40.64,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 167819,
+      "sourceHash": "3d96e14034bafd1261683942196ffca4de1dba227c633cef7c1fa93b5999793c",
+      "width": 1024
+    },
     "static/images/zamindars-are-not-dead.png": {
       "format": "PNG",
       "height": 1049,
@@ -18370,6 +18402,22 @@
       "sourceBytes": 188321,
       "sourceHash": "b8e550243efa75f624bfb4eeace943ef0c660a6a4f52daebfd499182bc86556f",
       "width": 1200
+    },
+    "static/thumbnail/art-what-is-left-is-love.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 768,
+      "outputBytes": 80463,
+      "outputHash": "7cf86185a7ab51a78933601f84e5e5d7a2428ef8009af3217446eb2f4d02cb2a",
+      "psnrDb": 40.36,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 151232,
+      "sourceHash": "7e5c1d57a3498ecdc9f8ee1203c86189561b8d06a2a43b9a680519d6a7c3f6b5",
+      "width": 768
     },
     "static/thumbnail/art-when-structure-loses-its-map.jpg": {
       "format": "JPEG",
