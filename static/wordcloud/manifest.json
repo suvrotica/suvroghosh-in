@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T00:55:25.585385+00:00",
+  "generatedAt": "2026-09-25T01:56:32.683923+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7197,6 +7197,29 @@
         "Water",
         "Fish",
         "Stood"
+      ],
+      "wordCount": 130
+    },
+    "rain-of-the-year": {
+      "generatedAt": "2026-09-25T01:56:25.799779+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/rain-of-the-year.svg",
+      "source": "src/lib/posts/rain-of-the-year.md",
+      "sourceHash": "19175b7531b593f6ca315b536087c58cebfb14b30239c31d6951d3159a4de9c7",
+      "sourceModified": "2026-09-25T01:50:00.918525+00:00",
+      "topWords": [
+        "Particles",
+        "Rain",
+        "Weather",
+        "Pollution",
+        "Air",
+        "Atmosphere",
+        "Silence",
+        "Particulate",
+        "Enough",
+        "Temperature",
+        "Tinnitus",
+        "Becomes"
       ],
       "wordCount": 130
     },

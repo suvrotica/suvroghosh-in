@@ -6408,6 +6408,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-rain-of-the-year.jpg",
+			"src": "/thumbnail/art-rain-of-the-year.jpg",
+			"bytes": 174478,
+			"width": 682,
+			"height": 1024
+		},
+		{
 			"name": "art-rain-power-and-quicksand.jpg",
 			"src": "/thumbnail/art-rain-power-and-quicksand.jpg",
 			"bytes": 191121,

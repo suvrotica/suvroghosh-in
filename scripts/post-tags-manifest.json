@@ -13085,6 +13085,36 @@
 				"Ageing"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/rain-of-the-year.md": {
+			"bodyHash": "c364407aeae117105a27653569195c2d1ff69a2949f3ae472e8aad75ac89be29",
+			"hashVersion": 2,
+			"revisionHash": "ff3c84cb2a470298a552a1265e1c0cd5e4fe83d86ccc837db6fe879ad29a4030",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Air Pollution",
+				"Climate",
+				"Monsoon",
+				"Tinnitus",
+				"Winter",
+				"Particulate Matter",
+				"Science"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Air Pollution",
+				"Climate",
+				"Monsoon",
+				"Tinnitus",
+				"Winter",
+				"Particulate Matter",
+				"Science"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

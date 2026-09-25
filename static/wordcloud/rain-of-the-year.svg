@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Rain of the Year" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Rain of the Year</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(170,315)" font-size="118" style="fill:#b6c3dd">Particles</text>
+<text transform="translate(784,568)" font-size="113" style="fill:#8fb7d0">Rain</text>
+<text transform="translate(580,422)" font-size="107" style="fill:#b6c3dd">Weather</text>
+<text transform="translate(1135,637) rotate(-90)" font-size="107" style="fill:#9fc9c5">Pollution</text>
+<text transform="translate(802,281)" font-size="101" style="fill:#8fb7d0">Air</text>
+<text transform="translate(160,651)" font-size="101" style="fill:#d9c89e">Atmosphere</text>
+<text transform="translate(144,347) rotate(-90)" font-size="82" style="fill:#d6a79f">Silence</text>
+<text transform="translate(250,519)" font-size="82" style="fill:#8fb7d0">Particulate</text>
+<text transform="translate(684,155)" font-size="74" style="fill:#c7d7b5">Enough</text>
+<text transform="translate(177,152)" font-size="74" style="fill:#d88988">Temperature</text>
+<text transform="translate(1232,401) rotate(-90)" font-size="74" style="fill:#8fb7d0">Tinnitus</text>
+<text transform="translate(327,61)" font-size="74" style="fill:#d9c89e">Becomes</text>
+<text transform="translate(55,427)" font-size="74" style="fill:#b6c3dd">PM2.5</text>
+<text transform="translate(819,686)" font-size="74" style="fill:#8fb7d0">Matter</text>
+<text transform="translate(766,68)" font-size="66" style="fill:#c49a6c">Perhaps</text>
+<text transform="translate(803,625)" font-size="66" style="fill:#9fc9c5">Room</text>
+<text transform="translate(310,412)" font-size="66" style="fill:#b6c3dd">Open</text>
+<text transform="translate(95,711)" font-size="66" style="fill:#e0b879">Window</text>
+<text transform="translate(57,369) rotate(-90)" font-size="66" style="fill:#a9b7a3">Somebody</text>
+<text transform="translate(520,215)" font-size="66" style="fill:#d88988">Problem</text>
+<text transform="translate(1227,659) rotate(-90)" font-size="66" style="fill:#c49a6c">Almost</text>
+<text transform="translate(533,714)" font-size="66" style="fill:#a9b7a3">Winter</text>
+<text transform="translate(157,573)" font-size="66" style="fill:#d5d2c2">Emissions</text>
+<text transform="translate(148,214)" font-size="50" style="fill:#a9b7a3">Atmospheric</text>
+<text transform="translate(1077,705)" font-size="50" style="fill:#b6c3dd">Little</text>
+<text transform="translate(883,348)" font-size="43" style="fill:#8fb7d0">Fiction</text>
+<text transform="translate(782,457)" font-size="43" style="fill:#b6c3dd">System</text>
+<text transform="translate(149,366)" font-size="43" style="fill:#d5d2c2">Months</text>
+<text transform="translate(22,582)" font-size="43" style="fill:#d6a79f">Cool</text>
+<text transform="translate(34,477)" font-size="43" style="fill:#e0b879">Stop</text>
+<text transform="translate(180,92)" font-size="43" style="fill:#b6c3dd">Fan</text>
+<text transform="translate(661,67)" font-size="43" style="fill:#d9c89e">Lung</text>
+<text transform="translate(560,581)" font-size="43" style="fill:#b6c3dd">Nothing</text>
+<text transform="translate(1050,37)" font-size="43" style="fill:#c7d7b5">Bengali</text>
+<text transform="translate(381,450)" font-size="43" style="fill:#9fc9c5">Silent</text>
+<text transform="translate(314,102)" font-size="43" style="fill:#d88988">Across</text>
+<text transform="translate(347,363)" font-size="43" style="fill:#b6c3dd">Use</text>
+<text transform="translate(36,526)" font-size="43" style="fill:#d6a79f">Hear</text>
+<text transform="translate(339,711)" font-size="43" style="fill:#d88988">Several</text>
+<text transform="translate(159,53)" font-size="43" style="fill:#c7d7b5">Relief</text>
+<text transform="translate(1036,254) rotate(-90)" font-size="43" style="fill:#c7d7b5">Changes</text>
+<text transform="translate(476,96)" font-size="43" style="fill:#d6a79f">Sources</text>
+<text transform="translate(1264,666) rotate(-90)" font-size="43" style="fill:#d88988">Morning</text>
+<text transform="translate(1268,362) rotate(-90)" font-size="43" style="fill:#9fc9c5">Control</text>
+<text transform="translate(31,631)" font-size="43" style="fill:#d6a79f">Board</text>
+<text transform="translate(941,468)" font-size="43" style="fill:#a9b7a3">Poor</text>
+<text transform="translate(676,352)" font-size="43" style="fill:#8fb7d0">Less</text>
+<text transform="translate(793,715)" font-size="33" style="fill:#d88988">Cardiovascular</text>
+<text transform="translate(1272,473) rotate(-90)" font-size="33" style="fill:#9fc9c5">Human</text>
+<text transform="translate(910,201)" font-size="33" style="fill:#c49a6c">Fine</text>
+<text transform="translate(146,465)" font-size="33" style="fill:#e0b879">Much</text>
+<text transform="translate(436,349)" font-size="33" style="fill:#c49a6c">Lungs</text>
+<text transform="translate(628,451)" font-size="33" style="fill:#d9c89e">Effects</text>
+<text transform="translate(833,310)" font-size="33" style="fill:#d88988">Guideline</text>
+<text transform="translate(1171,252) rotate(-90)" font-size="33" style="fill:#e0b879">Combustion</text>
+<text transform="translate(153,507)" font-size="33" style="fill:#d88988">Dust</text>
+<text transform="translate(785,97)" font-size="33" style="fill:#d9c89e">Gases</text>
+<text transform="translate(645,245)" font-size="33" style="fill:#d6a79f">Outside</text>
+<text transform="translate(677,38)" font-size="27" style="fill:#d9c89e">Came</text>
+<text transform="translate(469,405)" font-size="27" style="fill:#9fc9c5">First</text>
+<text transform="translate(1160,450) rotate(-90)" font-size="27" style="fill:#a9b7a3">September</text>
+<text transform="translate(606,538)" font-size="20" style="fill:#9fc9c5">Meteorological</text>
+<text transform="translate(958,272)" font-size="20" style="fill:#c49a6c">Finally</text>
+<text transform="translate(1168,526) rotate(-90)" font-size="20" style="fill:#d9c89e">Enters</text>
+<text transform="translate(568,465) rotate(-90)" font-size="20" style="fill:#c49a6c">Everything</text>
+<text transform="translate(1045,462)" font-size="20" style="fill:#b6c3dd">Walls</text>
+<text transform="translate(905,22)" font-size="20" style="fill:#d6a79f">Persistent</text>
+<text transform="translate(741,173)" font-size="20" style="fill:#8fb7d0">Concrete</text>
+<text transform="translate(92,178) rotate(-90)" font-size="20" style="fill:#a9b7a3">Fell</text>
+<text transform="translate(171,157) rotate(-90)" font-size="20" style="fill:#c7d7b5">Switched</text>
+<text transform="translate(181,173)" font-size="20" style="fill:#e0b879">Geriatric</text>
+<text transform="translate(264,337)" font-size="20" style="fill:#d88988">Whose</text>
+<text transform="translate(255,448)" font-size="20" style="fill:#d5d2c2">Compressor</text>
+<text transform="translate(667,97)" font-size="20" style="fill:#c49a6c">Sat</text>
+<text transform="translate(846,489)" font-size="20" style="fill:#9fc9c5">Actually</text>
+<text transform="translate(508,244)" font-size="20" style="fill:#d9c89e">Culture</text>
+<text transform="translate(407,171)" font-size="20" style="fill:#a9b7a3">American</text>
+<text transform="translate(848,191)" font-size="20" style="fill:#8fb7d0">Skull</text>
+<text transform="translate(13,649)" font-size="20" style="fill:#b6c3dd">Carry</text>
+<text transform="translate(581,334)" font-size="20" style="fill:#d5d2c2">Luxury</text>
+<text transform="translate(323,239)" font-size="20" style="fill:#d5d2c2">Horns</text>
+<text transform="translate(378,677)" font-size="20" style="fill:#d6a79f">Engines</text>
+<text transform="translate(675,670)" font-size="20" style="fill:#a9b7a3">Television</text>
+<text transform="translate(1013,397)" font-size="20" style="fill:#b6c3dd">Somewhere</text>
+<text transform="translate(14,24)" font-size="20" style="fill:#9fc9c5">Piece</text>
+<text transform="translate(9,42)" font-size="20" style="fill:#d9c89e">Washed</text>
+<text transform="translate(993,597)" font-size="20" style="fill:#9fc9c5">Noise</text>
+<text transform="translate(18,416) rotate(-90)" font-size="20" style="fill:#8fb7d0">Away</text>
+<text transform="translate(1072,150) rotate(-90)" font-size="20" style="fill:#8fb7d0">Perform</text>
+<text transform="translate(299,469)" font-size="20" style="fill:#c49a6c">Softened</text>
+<text transform="translate(23,541) rotate(-90)" font-size="20" style="fill:#9fc9c5">Thinking</text>
+<text transform="translate(4,693)" font-size="20" style="fill:#d5d2c2">America</text>
+<text transform="translate(1270,155) rotate(-90)" font-size="20" style="fill:#d88988">Civilization</text>
+<text transform="translate(980,628)" font-size="20" style="fill:#a9b7a3">Humans</text>
+<text transform="translate(967,497)" font-size="20" style="fill:#8fb7d0">Sky</text>
+<text transform="translate(948,140)" font-size="20" style="fill:#c49a6c">Take</text>
+<text transform="translate(810,328)" font-size="20" style="fill:#d88988">Merely</text>
+<text transform="translate(1138,586)" font-size="20" style="fill:#9fc9c5">Skin</text>
+<text transform="translate(165,330) rotate(-90)" font-size="20" style="fill:#d9c89e">Naturally</text>
+<text transform="translate(1108,656)" font-size="20" style="fill:#d88988">Layer</text>
+<text transform="translate(905,217)" font-size="15" style="fill:#c7d7b5">Especially</text>
+<text transform="translate(394,334)" font-size="15" style="fill:#d5d2c2">Now</text>
+<text transform="translate(274,429)" font-size="15" style="fill:#d9c89e">Arrived</text>
+<text transform="translate(596,436)" font-size="15" style="fill:#d6a79f">AQI</text>
+<text transform="translate(1073,52)" font-size="15" style="fill:#c7d7b5">India</text>
+<text transform="translate(251,244)" font-size="15" style="fill:#b6c3dd">Central</text>
+<text transform="translate(350,177)" font-size="15" style="fill:#c7d7b5">Sound</text>
+<text transform="translate(261,80)" font-size="15" style="fill:#d9c89e">School</text>
+<text transform="translate(79,442)" font-size="15" style="fill:#d88988">Report</text>
+<text transform="translate(1059,281) rotate(-90)" font-size="15" style="fill:#8fb7d0">Every</text>
+<text transform="translate(72,283) rotate(-90)" font-size="15" style="fill:#a9b7a3">Newspapers</text>
+<text transform="translate(93,542)" font-size="15" style="fill:#d88988">Aerosol</text>
+<text transform="translate(302,591)" font-size="15" style="fill:#d9c89e">Constitutional</text>
+<text transform="translate(65,364)" font-size="15" style="fill:#a9b7a3">Exercise</text>
+<text transform="translate(782,645) rotate(-90)" font-size="15" style="fill:#c7d7b5">Including</text>
+<text transform="translate(945,104)" font-size="15" style="fill:#c49a6c">Explain</text>
+<text transform="translate(391,230)" font-size="15" style="fill:#9fc9c5">Caused</text>
+<text transform="translate(495,467)" font-size="15" style="fill:#d88988">Return</text>
+<text transform="translate(258,667)" font-size="15" style="fill:#d6a79f">Different</text>
+<text transform="translate(4,710)" font-size="15" style="fill:#a9b7a3">Dispersion</text>
+<text transform="translate(77,648)" font-size="15" style="fill:#8fb7d0">Improves</text>
+<text transform="translate(434,365)" font-size="15" style="fill:#d88988">Defect</text>
+<text transform="translate(430,588)" font-size="14" style="fill:#a9b7a3">Dramatically</text>
+<text transform="translate(354,320)" font-size="14" style="fill:#9fc9c5">Mean</text>
+<text transform="translate(897,583)" font-size="14" style="fill:#a9b7a3">Micrometres</text>
+<text transform="translate(20,668)" font-size="14" style="fill:#a9b7a3">Material</text>
+<text transform="translate(677,171) rotate(-90)" font-size="14" style="fill:#d88988">Directly</text>
+<text transform="translate(747,101)" font-size="14" style="fill:#c7d7b5">Hair</text>
+<text transform="translate(58,597)" font-size="14" style="fill:#c7d7b5">Respiratory</text>
+<text transform="translate(798,15)" font-size="14" style="fill:#8fb7d0">Disease</text>
+</svg>

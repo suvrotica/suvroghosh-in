@@ -15939,6 +15939,22 @@
       "sourceHash": "84a5201d2bdf4848db37d82bfa6b6a94ee25b7bfd3c167ccbc948928220d4965",
       "width": 1200
     },
+    "static/thumbnail/art-rain-of-the-year.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 682,
+      "outputBytes": 174478,
+      "outputHash": "fe907d5c01c08502bc5a96f2747037392c3a38bf3d768548ec481b81925f17ec",
+      "psnrDb": 37.82,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 215634,
+      "sourceHash": "76035415345aa7be496e6e53134c9cedc9beba618a570d58d48b01b332268ad3",
+      "width": 682
+    },
     "static/thumbnail/art-rain-power-and-quicksand.jpg": {
       "format": "JPEG",
       "height": 800,
