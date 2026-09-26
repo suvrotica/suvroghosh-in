@@ -17155,6 +17155,22 @@
       "sourceHash": "8c0ef09dc1156768ac8200603ef37817f61ded91c152afda29f1cc424fc298e9",
       "width": 1536
     },
+    "static/thumbnail/art-the-genteel-hypocrisy-of-civilizational-life.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 682,
+      "outputBytes": 191050,
+      "outputHash": "beeafc5f350dbfb100c4f73d5b33c2ca429b9b076659353022bb45866d01b82a",
+      "psnrDb": 36.41,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 235825,
+      "sourceHash": "aa1971b6210bc0d4301bd3704030a52f658a2e8c3d273c97104a80da577932bf",
+      "width": 682
+    },
     "static/thumbnail/art-the-geometry-of-absence.jpg": {
       "format": "JPEG",
       "height": 800,

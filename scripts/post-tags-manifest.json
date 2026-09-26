@@ -13115,6 +13115,36 @@
 				"Science"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-genteel-hypocrisy-of-civilizational-life.md": {
+			"bodyHash": "f97c3fdc9fe1ee25d72dfecd6e6ac3ea5d7c7ba40adc258f8b7311d37845e592",
+			"hashVersion": 2,
+			"revisionHash": "8914ffdc5d6fb016bb3e1902d5389194e4b24b1229097d7c2b9538cb10958eb1",
+			"generatedTags": [
+				"Civilization",
+				"Hypocrisy",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Robotics",
+				"Etiquette",
+				"Society",
+				"Truth",
+				"Modernity"
+			],
+			"pinnedTags": [
+				"Civilization",
+				"Hypocrisy",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Robotics",
+				"Etiquette",
+				"Society",
+				"Truth",
+				"Modernity"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

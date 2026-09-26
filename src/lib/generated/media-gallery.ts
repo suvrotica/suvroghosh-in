@@ -6940,6 +6940,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1074
 		},
 		{
+			"name": "art-the-genteel-hypocrisy-of-civilizational-life.jpg",
+			"src": "/thumbnail/art-the-genteel-hypocrisy-of-civilizational-life.jpg",
+			"bytes": 191050,
+			"width": 682,
+			"height": 1024
+		},
+		{
 			"name": "art-the-geometry-of-absence.jpg",
 			"src": "/thumbnail/art-the-geometry-of-absence.jpg",
 			"bytes": 207950,
