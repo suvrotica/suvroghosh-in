@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T02:26:54.360015+00:00",
+  "generatedAt": "2026-09-27T11:03:24.226906+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3126,6 +3126,29 @@
         "Move",
         "Often",
         "Almost"
+      ],
+      "wordCount": 130
+    },
+    "ego-is-a-fart-that-narcissists-use-to-fly": {
+      "generatedAt": "2026-09-27T11:03:22.358041+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ego-is-a-fart-that-narcissists-use-to-fly.svg",
+      "source": "src/lib/posts/ego-is-a-fart-that-narcissists-use-to-fly.md",
+      "sourceHash": "674bac7fdd4d95fc0f5662f1f009ea309cdbf2d3c58e49a9ee465a4ebe056187",
+      "sourceModified": "2026-09-27T10:57:35.937879+00:00",
+      "topWords": [
+        "Ego",
+        "Merely",
+        "Personality",
+        "Linkedin",
+        "Narcissistic",
+        "Everyone",
+        "Somebody",
+        "Beneath",
+        "Reality",
+        "Nothing",
+        "Fly",
+        "Every"
       ],
       "wordCount": 130
     },

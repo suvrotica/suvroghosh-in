@@ -13175,6 +13175,36 @@
 				"Coping Mechanisms"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ego-is-a-fart-that-narcissists-use-to-fly.md": {
+			"bodyHash": "49f3fc70a47060075c068a7e0bde7faae4abc1584f717829bff924b530e8868f",
+			"hashVersion": 2,
+			"revisionHash": "b88e058cbabbef414dca0023c071653e7009fa2021a67aef9190a361d03757e3",
+			"generatedTags": [
+				"Ego",
+				"Narcissism",
+				"Social Media",
+				"LinkedIn",
+				"Psychology",
+				"Humor",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Ego",
+				"Narcissism",
+				"Social Media",
+				"LinkedIn",
+				"Psychology",
+				"Humor",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

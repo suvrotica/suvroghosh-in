@@ -14035,6 +14035,22 @@
       "sourceHash": "2354657cd18c39ea7aa45fe40d30a567520a3267da50b259744095a1ce989109",
       "width": 1200
     },
+    "static/thumbnail/art-ego-is-a-fart-that-narcissists-use-to-fly.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1024,
+      "outputBytes": 111850,
+      "outputHash": "09f6ca8a87916729bf23ed86a686368857d30c60dfa287d0059aee8e95885457",
+      "psnrDb": 36.68,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 203176,
+      "sourceHash": "0df0b55715b0188fbbc99882efba2589a00f5ea98d75596cbd0855689fcf55d0",
+      "width": 1024
+    },
     "static/thumbnail/art-election-puja-and-the-common-eye.jpg": {
       "format": "JPEG",
       "height": 800,

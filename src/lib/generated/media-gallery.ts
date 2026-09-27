@@ -5575,6 +5575,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-ego-is-a-fart-that-narcissists-use-to-fly.jpg",
+			"src": "/thumbnail/art-ego-is-a-fart-that-narcissists-use-to-fly.jpg",
+			"bytes": 111850,
+			"width": 1024,
+			"height": 768
+		},
+		{
 			"name": "art-election-puja-and-the-common-eye.jpg",
 			"src": "/thumbnail/art-election-puja-and-the-common-eye.jpg",
 			"bytes": 249230,
