@@ -6597,6 +6597,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-sleep-the-uninvited-guest-at-durga-puja.jpg",
+			"src": "/thumbnail/art-sleep-the-uninvited-guest-at-durga-puja.jpg",
+			"bytes": 188056,
+			"width": 722,
+			"height": 1024
+		},
+		{
 			"name": "art-slow-poisoning-republic.jpg",
 			"src": "/thumbnail/art-slow-poisoning-republic.jpg",
 			"bytes": 247543,

@@ -16371,6 +16371,22 @@
       "sourceHash": "cce43fba680554e5946b21e7d404f5ea3aaa1fe9b8231b17f3bf421f279c3fe3",
       "width": 1200
     },
+    "static/thumbnail/art-sleep-the-uninvited-guest-at-durga-puja.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 722,
+      "outputBytes": 188056,
+      "outputHash": "a53bf9627100504b713267a48475ff8793d6be7afd8110aacf05d03a5a812fb2",
+      "psnrDb": 37.18,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 231477,
+      "sourceHash": "3c4cecb33b2436e05c94e210dbe266d3ca22ff2daa9b8445e0619f41e559c140",
+      "width": 722
+    },
     "static/thumbnail/art-slow-poisoning-republic.jpg": {
       "format": "JPEG",
       "height": 800,

@@ -13145,6 +13145,36 @@
 				"Modernity"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/sleep-the-uninvited-guest-at-durga-puja.md": {
+			"bodyHash": "55f419d7ef9ac30dc54aa2afa7bc2f691c106cfcc30ac4253025400d4f54227f",
+			"hashVersion": 2,
+			"revisionHash": "70d836e6aa8a71c70b72d3596560fdfbc72ed60b0c1a43ae1b2f106e430984d8",
+			"generatedTags": [
+				"Depression",
+				"Sleep",
+				"Durga Puja",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Bipolar Disorder",
+				"Festive Season",
+				"Coping Mechanisms"
+			],
+			"pinnedTags": [
+				"Depression",
+				"Sleep",
+				"Durga Puja",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Bipolar Disorder",
+				"Festive Season",
+				"Coping Mechanisms"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
