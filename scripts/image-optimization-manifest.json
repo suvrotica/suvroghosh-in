@@ -9782,6 +9782,22 @@
       "sourceHash": "36ae0f8d35b63b4dce07649bbfbfe53d6757d922beb2883bfb9d636174a9c17f",
       "width": 1600
     },
+    "static/images/the-thirsty-city.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 103615,
+      "outputHash": "754a7be6a4bbfe7eb459b5edb6b119b8e82df088294421edd782d4b10180387e",
+      "psnrDb": 36.17,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 175343,
+      "sourceHash": "4031e74140a77dc2c03e07cebbcefdd5cc702cb5473f4a12001a19c1b7120785",
+      "width": 1024
+    },
     "static/images/the-unsleeping-attractor.jpeg": {
       "format": "JPEG",
       "height": 1086,

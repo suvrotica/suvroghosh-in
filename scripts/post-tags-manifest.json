@@ -13205,6 +13205,25 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-thirsty-city.md": {
+			"bodyHash": "6df771efa9a22a0b7e723afa2061821e97f36906bf89500d546876eebd0f4f9a",
+			"hashVersion": 2,
+			"revisionHash": "9000234565c0cb57e978d4a9617ba8bcb09026b79252a4bdde31446224714c31",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Science Fiction",
+				"Horror",
+				"Apocalypse",
+				"Rana",
+				"Drank",
+				"Thirst",
+				"Rabies",
+				"Factory"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Science Fiction", "Horror", "Apocalypse"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

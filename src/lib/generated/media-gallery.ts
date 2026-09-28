@@ -4311,6 +4311,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "the-thirsty-city.jpg",
+			"src": "/images/the-thirsty-city.jpg",
+			"bytes": 103615,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-unsleeping-attractor.jpeg",
 			"src": "/images/the-unsleeping-attractor.jpeg",
 			"bytes": 566679,
