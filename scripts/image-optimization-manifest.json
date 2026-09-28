@@ -16403,6 +16403,22 @@
       "sourceHash": "cce43fba680554e5946b21e7d404f5ea3aaa1fe9b8231b17f3bf421f279c3fe3",
       "width": 1200
     },
+    "static/thumbnail/art-sketching-the-void.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1024,
+      "outputBytes": 129421,
+      "outputHash": "1e83166e90a83fd27d6d0048a96e5fa703a820e5b0606990633282a373e889c2",
+      "psnrDb": 36.07,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 236804,
+      "sourceHash": "088e1d7c3664e255ab7959678facb0fe84b2433f29cbe09ef6b600791e2439b8",
+      "width": 1024
+    },
     "static/thumbnail/art-sleep-the-uninvited-guest-at-durga-puja.jpg": {
       "format": "JPEG",
       "height": 1024,

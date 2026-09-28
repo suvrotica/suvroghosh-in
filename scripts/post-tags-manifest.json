@@ -13224,6 +13224,36 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Science Fiction", "Horror", "Apocalypse"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/sketching-the-void.md": {
+			"bodyHash": "0ac7a52e89c6e4f00a7c66150ff132014ee8d8d0c32921278ce87d39df83e054",
+			"hashVersion": 2,
+			"revisionHash": "261253bbd0fde5a5c08baa378cc1d09ef2d5312df3f49744ce7634f17453a028",
+			"generatedTags": [
+				"Art",
+				"Mental Health",
+				"Bipolar Disorder",
+				"Depression",
+				"Meaning Crisis",
+				"Attention Span",
+				"Sketching",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Art",
+				"Mental Health",
+				"Bipolar Disorder",
+				"Depression",
+				"Meaning Crisis",
+				"Attention Span",
+				"Sketching",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

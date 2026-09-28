@@ -6611,6 +6611,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-sketching-the-void.jpg",
+			"src": "/thumbnail/art-sketching-the-void.jpg",
+			"bytes": 129421,
+			"width": 1024,
+			"height": 768
+		},
+		{
 			"name": "art-sleep-the-uninvited-guest-at-durga-puja.jpg",
 			"src": "/thumbnail/art-sleep-the-uninvited-guest-at-durga-puja.jpg",
 			"bytes": 188056,
