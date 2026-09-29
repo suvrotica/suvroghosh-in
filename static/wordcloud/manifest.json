@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T11:05:01.221159+00:00",
+  "generatedAt": "2026-09-29T12:12:12.207260+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6185,6 +6185,29 @@
         "Horizontal",
         "Humidity",
         "Refuses"
+      ],
+      "wordCount": 130
+    },
+    "mrsa-india-catastrophe": {
+      "generatedAt": "2026-09-29T12:12:10.986763+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/mrsa-india-catastrophe.svg",
+      "source": "src/lib/posts/mrsa-india-catastrophe.md",
+      "sourceHash": "68f9827277f1354803b368d6de947aeb9637204dd8fb7d563c00dbd395291f57",
+      "sourceModified": "2026-09-29T12:11:21.578846+00:00",
+      "topWords": [
+        "Antibiotic",
+        "MRSA",
+        "Whether",
+        "Drug",
+        "Aureus",
+        "Hospitals",
+        "Resistance",
+        "Infection",
+        "Merely",
+        "India",
+        "Blood",
+        "Staphylococcus"
       ],
       "wordCount": 130
     },

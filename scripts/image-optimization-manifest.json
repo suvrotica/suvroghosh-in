@@ -15475,6 +15475,22 @@
       "sourceHash": "72b8c47f47e80d5ddb2dbfed77af7f6f47312788fb95c25e43821088a36e5942",
       "width": 1200
     },
+    "static/thumbnail/art-mrsa-india-catastrophe.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1024,
+      "outputBytes": 164501,
+      "outputHash": "83b7b2086dedbb928b9805e442c359442df92c3c32de5557d78ad7cafea45d8b",
+      "psnrDb": 39.22,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 285149,
+      "sourceHash": "50e0e9c478b788040aa2af82b0456ef272553133a82ff214cbe6f52cacecc772",
+      "width": 1024
+    },
     "static/thumbnail/art-multivariate-statistical-modeling-in-healthcare-it.jpg": {
       "format": "JPEG",
       "height": 800,

@@ -13254,6 +13254,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mrsa-india-catastrophe.md": {
+			"bodyHash": "574ccddbf555f70cabf323cc8c5be6e9fe863e78f4b09a87563bed3d7876b3fe",
+			"hashVersion": 2,
+			"revisionHash": "f3dd552b4913cd4f6499eba7c4a1a56f1b95d2c6136023ebd64ecbd3e4cfc315",
+			"generatedTags": [
+				"MRSA",
+				"Antibiotic Resistance",
+				"Healthcare Inequality",
+				"Calcutta",
+				"Kolkata",
+				"Antimicrobial Resistance",
+				"Public Health",
+				"Satire",
+				"Bengali Perspective",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"MRSA",
+				"Antibiotic Resistance",
+				"Healthcare Inequality",
+				"Calcutta",
+				"Kolkata",
+				"Antimicrobial Resistance",
+				"Public Health",
+				"Satire",
+				"Bengali Perspective",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

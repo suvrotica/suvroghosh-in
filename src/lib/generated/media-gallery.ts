@@ -6205,6 +6205,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-mrsa-india-catastrophe.jpg",
+			"src": "/thumbnail/art-mrsa-india-catastrophe.jpg",
+			"bytes": 164501,
+			"width": 1024,
+			"height": 1024
+		},
+		{
 			"name": "art-multivariate-statistical-modeling-in-healthcare-it.jpg",
 			"src": "/thumbnail/art-multivariate-statistical-modeling-in-healthcare-it.jpg",
 			"bytes": 217049,
