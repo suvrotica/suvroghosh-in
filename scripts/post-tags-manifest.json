@@ -13284,6 +13284,25 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/perfect-storm.md": {
+			"bodyHash": "8d36768ccce7a30fe5d37d66c8458d4bd058005e2522966fc48fad3388f78e97",
+			"hashVersion": 2,
+			"revisionHash": "4e04318eb3368d7e7a8b46a37b48d7dfe88894fc456b54710bf4afcb5b976806",
+			"generatedTags": [
+				"Goddess",
+				"Poverty",
+				"Durga",
+				"October",
+				"Expenses",
+				"Bamboo",
+				"Gaze",
+				"Money",
+				"Depression",
+				"Everybody"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

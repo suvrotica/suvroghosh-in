@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:12:12.207260+00:00",
+  "generatedAt": "2026-09-30T10:46:16.338617+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6737,6 +6737,29 @@
         "Hello",
         "World",
         "Useful"
+      ],
+      "wordCount": 130
+    },
+    "perfect-storm": {
+      "generatedAt": "2026-09-30T10:46:15.204985+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/perfect-storm.svg",
+      "source": "src/lib/posts/perfect-storm.md",
+      "sourceHash": "ad3473ad8204dc32b8d456a6d8af7e71b4921811526afb7e2de54e3a92578f5a",
+      "sourceModified": "2026-09-30T10:45:54.105226+00:00",
+      "topWords": [
+        "Money",
+        "Poverty",
+        "Durga",
+        "Goddess",
+        "Bamboo",
+        "Year",
+        "Depression",
+        "Home",
+        "Waiting",
+        "Bank",
+        "October",
+        "Ten"
       ],
       "wordCount": 130
     },

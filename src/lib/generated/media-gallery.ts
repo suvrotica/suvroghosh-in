@@ -6317,6 +6317,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-perfect-storm.jpg",
+			"src": "/thumbnail/art-perfect-storm.jpg",
+			"bytes": 83057,
+			"width": 1024,
+			"height": 574
+		},
+		{
 			"name": "art-pest-department-in-my-skull.jpg",
 			"src": "/thumbnail/art-pest-department-in-my-skull.jpg",
 			"bytes": 179521,

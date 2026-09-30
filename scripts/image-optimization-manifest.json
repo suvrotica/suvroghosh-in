@@ -15731,6 +15731,22 @@
       "sourceHash": "94b642007b5ed43c043ef3748645ff8ed43b27dda36a7f33d665fc8702491073",
       "width": 1200
     },
+    "static/thumbnail/art-perfect-storm.jpg": {
+      "format": "JPEG",
+      "height": 574,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 574,
+      "originalWidth": 1024,
+      "outputBytes": 83057,
+      "outputHash": "f6a1762c153b11a92f1b1981cd902ed04157b7401142e9f72438dafc91bac62c",
+      "psnrDb": 51.42,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 87128,
+      "sourceHash": "a88046f0b2e6fbab974a5b406d0dc193a9083506517814060c5395180cc41f4d",
+      "width": 1024
+    },
     "static/thumbnail/art-pest-department-in-my-skull.jpg": {
       "format": "JPEG",
       "height": 800,
