@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T08:33:48.226968+00:00",
+  "generatedAt": "2026-10-01T12:34:33.069976+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3931,6 +3931,29 @@
         "Future",
         "Even",
         "Chair"
+      ],
+      "wordCount": 130
+    },
+    "ghost-on-a-budget": {
+      "generatedAt": "2026-10-01T12:34:22.701203+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ghost-on-a-budget.svg",
+      "source": "src/lib/posts/ghost-on-a-budget.md",
+      "sourceHash": "3b06a679fbb3cfe01476446e6ed2ac913b67f6b093e14d891eaf7054edfff5b1",
+      "sourceModified": "2026-10-01T12:33:58.886115+00:00",
+      "topWords": [
+        "Poor",
+        "Room",
+        "Ghost",
+        "Social",
+        "Poverty",
+        "Man",
+        "Nothing",
+        "Even",
+        "Somebody",
+        "Money",
+        "Merely",
+        "Never"
       ],
       "wordCount": 130
     },

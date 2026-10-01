@@ -13322,6 +13322,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ghost-on-a-budget.md": {
+			"bodyHash": "be00c3b3124035a424cfc3d965d554a5531a5b04b4e78d39138eac8072648f86",
+			"hashVersion": 2,
+			"revisionHash": "cd4d779cb2587ce337e1fc2fc53bea833de6b8da10b6e6775ba541db3ebfbf61",
+			"generatedTags": [
+				"Ghost",
+				"Keats",
+				"Pauper",
+				"Poverty",
+				"Schrödinger's",
+				"Prosperity",
+				"Somebody",
+				"Social",
+				"Poor",
+				"Approaches"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

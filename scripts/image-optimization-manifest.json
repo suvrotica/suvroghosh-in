@@ -14467,6 +14467,22 @@
       "sourceHash": "58b0b4b82b3e818a7497315f0923e1756859a4c96cecc607793c13c95707280a",
       "width": 1200
     },
+    "static/thumbnail/art-ghost-on-a-budget.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 682,
+      "outputBytes": 159708,
+      "outputHash": "d2e0116c03cf60844ea8f21b5aa9509d9c1ffd19c92f940b50867c5c20b9523f",
+      "psnrDb": 36.17,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 212352,
+      "sourceHash": "df6431453e6c2ecebed496d43f940bd83793daa9fb1af4c5b21d1ea416928e60",
+      "width": 682
+    },
     "static/thumbnail/art-gobhir-joler-machh.jpg": {
       "format": "JPEG",
       "height": 1074,
