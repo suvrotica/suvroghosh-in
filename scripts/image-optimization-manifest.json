@@ -15539,6 +15539,22 @@
       "sourceHash": "ac0980bd2c5ea53e0bb93c8073e740469399c8e5533aa12721f153d7484cdd0f",
       "width": 819
     },
+    "static/thumbnail/art-my-resume-is-a-lossy-compression-algorithm.jpg": {
+      "format": "JPEG",
+      "height": 783,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 783,
+      "originalWidth": 1024,
+      "outputBytes": 103473,
+      "outputHash": "794ec939fc64bc4c0896ae407448f431c327ecdae953abed535caafefa81fb5a",
+      "psnrDb": 39.26,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 188675,
+      "sourceHash": "bba61ab8c3f7f5251926775f1780bfb00cbc00cbedc678759bc9a3496a7027c4",
+      "width": 1024
+    },
     "static/thumbnail/art-mycin-expert-system-clinical-ai-calcutta-readable.jpg": {
       "format": "JPEG",
       "height": 800,

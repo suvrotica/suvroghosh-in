@@ -13303,6 +13303,25 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/my-resume-is-a-lossy-compression-algorithm.md": {
+			"bodyHash": "6118396b8fbe0429f633358f00aba7df6e0d01f7503f8f89c474be61db2fc8b6",
+			"hashVersion": 2,
+			"revisionHash": "d4ba6193d10d8140976d9ea31cf5b9eec5d4c1fc49e3e025736c948b810283cb",
+			"generatedTags": [
+				"Missing Information",
+				"Human Resources",
+				"Résumé",
+				"Compression",
+				"Information",
+				"Somebody",
+				"Hiring",
+				"Recruiter",
+				"Migration",
+				"MUMPS"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T10:46:16.338617+00:00",
+  "generatedAt": "2026-10-01T08:33:48.226968+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6277,6 +6277,29 @@
         "Data",
         "Artham",
         "Merely"
+      ],
+      "wordCount": 130
+    },
+    "my-resume-is-a-lossy-compression-algorithm": {
+      "generatedAt": "2026-10-01T08:33:47.841347+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/my-resume-is-a-lossy-compression-algorithm.svg",
+      "source": "src/lib/posts/my-resume-is-a-lossy-compression-algorithm.md",
+      "sourceHash": "6c78716286d60149f4c119f4ea9fb9ec006a74c566e1f272646813b70c5fb710",
+      "sourceModified": "2026-10-01T08:30:01.787566+00:00",
+      "topWords": [
+        "Sum",
+        "Information",
+        "Human",
+        "Somebody",
+        "Compression",
+        "Machine",
+        "Looks",
+        "Years",
+        "Every",
+        "Hiring",
+        "Gap",
+        "Healthcare"
       ],
       "wordCount": 130
     },
