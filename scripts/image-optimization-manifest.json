@@ -14851,6 +14851,22 @@
       "sourceHash": "adef58f5e5e34989cea0e1563f9d0afbe34f9479f13cba5792165c42074de2d1",
       "width": 1200
     },
+    "static/thumbnail/art-if-durga-actually-came-down-to-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 182841,
+      "outputHash": "3d8f71de6769ed82c2c919d1966f66242b2397421b1f425efe2fa5924a3e71fb",
+      "psnrDb": 35.69,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 233652,
+      "sourceHash": "d1fb2e2f98ba564d41da782517160b7236cbbb54394c81d54d5a2e4f39b5e0f1",
+      "width": 1024
+    },
     "static/thumbnail/art-if-lies-had-noses-again.jpg": {
       "format": "JPEG",
       "height": 800,

@@ -5932,6 +5932,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-if-durga-actually-came-down-to-calcutta.jpg",
+			"src": "/thumbnail/art-if-durga-actually-came-down-to-calcutta.jpg",
+			"bytes": 182841,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-if-lies-had-noses-again.jpg",
 			"src": "/thumbnail/art-if-lies-had-noses-again.jpg",
 			"bytes": 193342,

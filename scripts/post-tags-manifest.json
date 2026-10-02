@@ -13341,6 +13341,36 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/if-durga-actually-came-down-to-calcutta.md": {
+			"bodyHash": "82dbc619b16b4fc7694f275c6b4154f95f468334037b9454f3799ac145f95e39",
+			"hashVersion": 2,
+			"revisionHash": "a9a916e2f45e68de202079ed9509b47c1061147b4c86cfeb2ff3a81e7c0ab6b0",
+			"generatedTags": [
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Hinduism",
+				"Feminism",
+				"Consumerism",
+				"Religion",
+				"Bengali Culture",
+				"Satire",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Hinduism",
+				"Feminism",
+				"Consumerism",
+				"Religion",
+				"Bengali Culture",
+				"Satire",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T12:34:33.069976+00:00",
+  "generatedAt": "2026-10-02T13:05:09.034091+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4828,6 +4828,29 @@
         "Small",
         "Men",
         "Hatred"
+      ],
+      "wordCount": 130
+    },
+    "if-durga-actually-came-down-to-calcutta": {
+      "generatedAt": "2026-10-02T13:05:08.598249+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/if-durga-actually-came-down-to-calcutta.svg",
+      "source": "src/lib/posts/if-durga-actually-came-down-to-calcutta.md",
+      "sourceHash": "c4b781da8017ef2b84cfc913a75e8b1f087ab0bc4dca196439067c7795cc56c0",
+      "sourceModified": "2026-10-02T13:04:33.066538+00:00",
+      "topWords": [
+        "Goddess",
+        "Clay",
+        "Durga",
+        "Women",
+        "Whether",
+        "Devotion",
+        "Festival",
+        "Past",
+        "Say",
+        "Days",
+        "Home",
+        "Idol"
       ],
       "wordCount": 130
     },
