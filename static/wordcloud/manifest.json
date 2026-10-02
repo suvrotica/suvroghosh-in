@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T13:05:09.034091+00:00",
+  "generatedAt": "2026-10-02T14:05:16.150109+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6645,6 +6645,29 @@
         "Let",
         "Years",
         "Indian"
+      ],
+      "wordCount": 130
+    },
+    "october-pujo-and-the-arithmetic-of-empty-pockets": {
+      "generatedAt": "2026-10-02T14:05:15.822764+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/october-pujo-and-the-arithmetic-of-empty-pockets.svg",
+      "source": "src/lib/posts/october-pujo-and-the-arithmetic-of-empty-pockets.md",
+      "sourceHash": "27f6a7d1cb5eab32b024cdf2e16887d78a1de8c61a0d170745ca2c866ed20ae4",
+      "sourceModified": "2026-10-02T14:04:44.457925+00:00",
+      "topWords": [
+        "Puja",
+        "Books",
+        "Somewhere",
+        "Arrives",
+        "Money",
+        "Bengali",
+        "Electricity",
+        "Barshiki",
+        "October",
+        "Goddess",
+        "Bamboo",
+        "Ordinary"
       ],
       "wordCount": 130
     },

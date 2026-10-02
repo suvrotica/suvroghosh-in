@@ -15715,6 +15715,22 @@
       "sourceHash": "14012e2869017b103b7a8565d75596ae4bc8f10c3d7d476ae3218d15aaba0162",
       "width": 1200
     },
+    "static/thumbnail/art-october-pujo-and-the-arithmetic-of-empty-pockets.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 167254,
+      "outputHash": "075d4f07b4e573536f3a358b05b14607fec647967e2d9df38ec85eb36b477d98",
+      "psnrDb": 35.88,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 212122,
+      "sourceHash": "92b7d68e413eb5ab77e36bfb5f62605b7b03ff8e9dd318c9d1d2e7740a942940",
+      "width": 1024
+    },
     "static/thumbnail/art-one-life-no-rehearsal-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,

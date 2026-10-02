@@ -13371,6 +13371,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/october-pujo-and-the-arithmetic-of-empty-pockets.md": {
+			"bodyHash": "c92f6060d5cde33263904fec25b9206ba33fbdeff88d4641d6ea5de473cac1ee",
+			"hashVersion": 2,
+			"revisionHash": "31894be8863aa721a2dbc35b72ccb6a239a688d289cead85617ad23f0bfb2e40",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Satire",
+				"Bengal",
+				"Poverty",
+				"Mental Health",
+				"Bengali Literature",
+				"Puja Barshiki",
+				"Economics"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Satire",
+				"Bengal",
+				"Poverty",
+				"Mental Health",
+				"Bengali Literature",
+				"Puja Barshiki",
+				"Economics"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

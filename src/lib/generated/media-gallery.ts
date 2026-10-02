@@ -6310,6 +6310,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-october-pujo-and-the-arithmetic-of-empty-pockets.jpg",
+			"src": "/thumbnail/art-october-pujo-and-the-arithmetic-of-empty-pockets.jpg",
+			"bytes": 167254,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-one-life-no-rehearsal-calcutta.jpg",
 			"src": "/thumbnail/art-one-life-no-rehearsal-calcutta.jpg",
 			"bytes": 177036,
