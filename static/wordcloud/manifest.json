@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T14:24:08.710350+00:00",
+  "generatedAt": "2026-10-03T17:49:24.025102+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9865,6 +9865,29 @@
         "Poverty",
         "First",
         "Street"
+      ],
+      "wordCount": 130
+    },
+    "the-city-that-refused-to-swat": {
+      "generatedAt": "2026-10-03T17:49:23.292398+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-city-that-refused-to-swat.svg",
+      "source": "src/lib/posts/the-city-that-refused-to-swat.md",
+      "sourceHash": "315997d083e2738195a291a32e5426016651da38d69624b41c83d2575296336d",
+      "sourceModified": "2026-10-03T17:43:51.433225+00:00",
+      "topWords": [
+        "Arjun",
+        "Man",
+        "Dead",
+        "Toward",
+        "Mosquito",
+        "Black",
+        "Beneath",
+        "Every",
+        "Water",
+        "Mosquitoes",
+        "Moved",
+        "Fever"
       ],
       "wordCount": 130
     },

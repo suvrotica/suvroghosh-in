@@ -9671,6 +9671,22 @@
       "sourceHash": "9c8b082e162a6f693c7ff051827a1dcd5463a7313199ba790c8f02d44e1e048f",
       "width": 1200
     },
+    "static/images/the-city-that-refused-to-swat.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 182960,
+      "outputHash": "e0652b1bfd6e8e04f06b9fd5cf524deb7b49380d07d83b1faa0a434db39c8f9c",
+      "psnrDb": 35.09,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 237988,
+      "sourceHash": "2f5609354c3b70293cc0024d6b54da68a8292542d8d4bd8172ee13a77e2f7e23",
+      "width": 1024
+    },
     "static/images/the-city-that-refuses-a-master-plan.webp": {
       "format": "WEBP",
       "height": 900,

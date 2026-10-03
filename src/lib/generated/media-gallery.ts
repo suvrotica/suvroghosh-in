@@ -4262,6 +4262,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "the-city-that-refused-to-swat.jpg",
+			"src": "/images/the-city-that-refused-to-swat.jpg",
+			"bytes": 182960,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-city-that-refuses-a-master-plan.webp",
 			"src": "/images/the-city-that-refuses-a-master-plan.webp",
 			"bytes": 88668,

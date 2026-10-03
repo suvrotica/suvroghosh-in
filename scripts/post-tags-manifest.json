@@ -13486,6 +13486,33 @@
 				"Sacred Hunger"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-city-that-refused-to-swat.md": {
+			"bodyHash": "de0c28e72d2ab1eeec150acfe028bcb7205dbc1e2f19525706f6a4099a2d64e2",
+			"hashVersion": 2,
+			"revisionHash": "daa0576918801743f8da489f96d50ee4afde8dd016c74fd78b6be93d000000a4",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Horror",
+				"Claustrophobic",
+				"Civic Neglect",
+				"Mosquitoes",
+				"Disease Horror",
+				"Park Street",
+				"Arjun Stared",
+				"Already Dead"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Horror",
+				"Claustrophobic",
+				"Civic Neglect",
+				"Mosquitoes",
+				"Disease Horror"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
