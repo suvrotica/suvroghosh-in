@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T06:02:25.664995+00:00",
+  "generatedAt": "2026-10-03T07:53:50.800216+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5863,6 +5863,29 @@
         "Mama",
         "Distance",
         "South"
+      ],
+      "wordCount": 130
+    },
+    "mahishasura-was-probably-a-systems-problem": {
+      "generatedAt": "2026-10-03T07:53:50.015322+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/mahishasura-was-probably-a-systems-problem.svg",
+      "source": "src/lib/posts/mahishasura-was-probably-a-systems-problem.md",
+      "sourceHash": "3f62f692232b6bb768c6079b91d626441adb33855d8c62739e2216afa08143d1",
+      "sourceModified": "2026-10-03T07:53:29.485057+00:00",
+      "topWords": [
+        "Becomes",
+        "Somebody",
+        "Demon",
+        "Mahishasura",
+        "Durga",
+        "Audit",
+        "Human",
+        "Everybody",
+        "Systems",
+        "Memory",
+        "Prefer",
+        "Neck"
       ],
       "wordCount": 130
     },

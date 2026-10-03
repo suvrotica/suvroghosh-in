@@ -15363,6 +15363,22 @@
       "sourceHash": "aa6218c1ed977bf0ce1347a04f39e8ad36721a787b14123a03a5708467964d51",
       "width": 819
     },
+    "static/thumbnail/art-mahishasura-was-probably-a-systems-problem.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 192468,
+      "outputHash": "05386362bc0bc16717d4986f0ce992bccf0a028165b9f3592afca3090fb21bd5",
+      "psnrDb": 35.42,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 245696,
+      "sourceHash": "712b7f127fbf539609c888beefb872463a95ae13cc0ca1645df84fb5710873c7",
+      "width": 1024
+    },
     "static/thumbnail/art-marys-retarded-room.jpg": {
       "format": "JPEG",
       "height": 800,

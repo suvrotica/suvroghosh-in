@@ -13431,6 +13431,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mahishasura-was-probably-a-systems-problem.md": {
+			"bodyHash": "d3a2261665bf9d73dad7c3fca3624b67a9cedf04aa30c7f6cda5cfda176dccbb",
+			"hashVersion": 2,
+			"revisionHash": "9da1c2705faa18a8d8288f371af5d99fe13c0f01594b4dc84fd7a2bf5e58b9fc",
+			"generatedTags": [
+				"Systems Thinking",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Public Health",
+				"Bureaucracy",
+				"Mythology",
+				"Accountability",
+				"India"
+			],
+			"pinnedTags": [
+				"Systems Thinking",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Public Health",
+				"Bureaucracy",
+				"Mythology",
+				"Accountability",
+				"India"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

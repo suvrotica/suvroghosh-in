@@ -6156,6 +6156,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-mahishasura-was-probably-a-systems-problem.jpg",
+			"src": "/thumbnail/art-mahishasura-was-probably-a-systems-problem.jpg",
+			"bytes": 192468,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-marys-retarded-room.jpg",
 			"src": "/thumbnail/art-marys-retarded-room.jpg",
 			"bytes": 93317,
