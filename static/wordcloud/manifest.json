@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T07:53:50.800216+00:00",
+  "generatedAt": "2026-10-03T14:24:08.710350+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10601,6 +10601,29 @@
         "Call",
         "Royal",
         "Poor"
+      ],
+      "wordCount": 130
+    },
+    "the-fifth-hunger": {
+      "generatedAt": "2026-10-03T14:24:08.476117+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-fifth-hunger.svg",
+      "source": "src/lib/posts/the-fifth-hunger.md",
+      "sourceHash": "b0f8d2ddbb52732177d1ba284eae80623ee7f6701c057cb4413f3172bc798e3c",
+      "sourceModified": "2026-10-03T14:23:37.973005+00:00",
+      "topWords": [
+        "Eye",
+        "Clay",
+        "Goddess",
+        "Mother",
+        "Eyes",
+        "Three",
+        "Thursday",
+        "Toward",
+        "Door",
+        "Workshop",
+        "Black",
+        "Third"
       ],
       "wordCount": 130
     },

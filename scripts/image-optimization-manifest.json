@@ -9719,6 +9719,22 @@
       "sourceHash": "57509835ffb5ee7d075713811972b853635006e7720cc7b5b0f5247156183291",
       "width": 896
     },
+    "static/images/the-fifth-hunger.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 177535,
+      "outputHash": "63030f0406dee8bfd948050479b4c2584679b9f1c4c205c771f12376d4849039",
+      "psnrDb": 36.32,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 226561,
+      "sourceHash": "247fdfa7d5d6415d9c0b37cccf774da8106547eb07954cb4cc7a40bb2a98b5d4",
+      "width": 1024
+    },
     "static/images/the-foam-at-the-corner.jpg": {
       "format": "JPEG",
       "height": 1536,

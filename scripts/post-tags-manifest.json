@@ -13461,6 +13461,31 @@
 				"India"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-fifth-hunger.md": {
+			"bodyHash": "5c444fd9476f78a0e1a83cdf27152ca8d08ff736b2d6cd74d1368978e167f83b",
+			"hashVersion": 2,
+			"revisionHash": "bf1378b1e7c64420ab7a71494b4f1eff5d622d9abcaa6d81617d4c82b70909f1",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Weird Fiction",
+				"Devouring Dread",
+				"Sacred Hunger",
+				"Third Eye",
+				"Goddess",
+				"Clay",
+				"Workshop",
+				"Thursday"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Weird Fiction",
+				"Devouring Dread",
+				"Sacred Hunger"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

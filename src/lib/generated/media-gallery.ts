@@ -4283,6 +4283,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "the-fifth-hunger.jpg",
+			"src": "/images/the-fifth-hunger.jpg",
+			"bytes": 177535,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-foam-at-the-corner.jpg",
 			"src": "/images/the-foam-at-the-corner.jpg",
 			"bytes": 418312,
