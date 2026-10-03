@@ -6779,6 +6779,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-atheist-who-still-waits-for-durga.jpg",
+			"src": "/thumbnail/art-the-atheist-who-still-waits-for-durga.jpg",
+			"bytes": 88657,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-atrophy-of-attention.jpg",
 			"src": "/thumbnail/art-the-atrophy-of-attention.jpg",
 			"bytes": 72059,

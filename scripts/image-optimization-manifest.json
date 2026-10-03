@@ -16787,6 +16787,22 @@
       "sourceHash": "d5ee12f16764d6623153ecfa4c626c6501b0fd95b9c0e36173f41bb72223fa87",
       "width": 1200
     },
+    "static/thumbnail/art-the-atheist-who-still-waits-for-durga.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 88657,
+      "outputHash": "4f621d3ff960e9d2c06c587dded5f9a5028af0d0ef6e451f9da133bed1bdc29c",
+      "psnrDb": 37.91,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 156823,
+      "sourceHash": "b7a19650e56f57053a0f1eb4a751bdbe927ffa6bc2771133d11932b6ac451063",
+      "width": 1024
+    },
     "static/thumbnail/art-the-atrophy-of-attention.jpg": {
       "format": "JPEG",
       "height": 800,

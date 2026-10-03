@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T14:05:16.150109+00:00",
+  "generatedAt": "2026-10-03T06:02:25.664995+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9290,6 +9290,29 @@
         "AI",
         "Human",
         "Wrong"
+      ],
+      "wordCount": 130
+    },
+    "the-atheist-who-still-waits-for-durga": {
+      "generatedAt": "2026-10-03T06:02:24.902171+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-atheist-who-still-waits-for-durga.svg",
+      "source": "src/lib/posts/the-atheist-who-still-waits-for-durga.md",
+      "sourceHash": "f0ec9e0cee12bad167ce0836e20a2428efb1fc50eeecf6b14d7fcaba10c5bb06",
+      "sourceModified": "2026-10-03T06:01:46.254730+00:00",
+      "topWords": [
+        "Memory",
+        "Together",
+        "Believe",
+        "Durga",
+        "Dhaak",
+        "First",
+        "Supernatural",
+        "Goddess",
+        "Real",
+        "Atheist",
+        "Puja",
+        "Light"
       ],
       "wordCount": 130
     },

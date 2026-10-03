@@ -13401,6 +13401,36 @@
 				"Economics"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-atheist-who-still-waits-for-durga.md": {
+			"bodyHash": "0c47398e7ee8b6eda6b703a0cb28e9c56c8faecc24a88f79788a4051b3cf11a9",
+			"hashVersion": 2,
+			"revisionHash": "f0d99daa74148dd8cae72b422439673874c89db80b12b178e82c319c1242f9ad",
+			"generatedTags": [
+				"atheism",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"neuroscience",
+				"ritual",
+				"memory",
+				"Bengal",
+				"cognitive science",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"atheism",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"neuroscience",
+				"ritual",
+				"memory",
+				"Bengal",
+				"cognitive science",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
