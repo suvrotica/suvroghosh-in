@@ -13513,6 +13513,25 @@
 				"Disease Horror"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-ninth-day-of-small-things.md": {
+			"bodyHash": "958d6775e17acd9966d3fbf6e2941e0993e1a0899dfe35c643743282b5767ee3",
+			"hashVersion": 2,
+			"revisionHash": "f604da364aa5db844a40c103a26ea9b1c1cadeb1a456d9d834bd3c64257a855c",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Weird Fiction",
+				"Dread",
+				"Disappearance",
+				"Shuttered Medicine Shop",
+				"Lane-Side Arch",
+				"Third Time",
+				"Rono",
+				"Goddess"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Dread", "Disappearance"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

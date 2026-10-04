@@ -4325,6 +4325,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "the-ninth-day-of-small-things.jpg",
+			"src": "/images/the-ninth-day-of-small-things.jpg",
+			"bytes": 158307,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-thirsty-city.jpg",
 			"src": "/images/the-thirsty-city.jpg",
 			"bytes": 103615,

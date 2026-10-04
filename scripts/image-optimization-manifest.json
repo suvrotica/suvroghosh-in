@@ -9814,6 +9814,22 @@
       "sourceHash": "36ae0f8d35b63b4dce07649bbfbfe53d6757d922beb2883bfb9d636174a9c17f",
       "width": 1600
     },
+    "static/images/the-ninth-day-of-small-things.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 158307,
+      "outputHash": "fb64453a7c5845b576d86e242e83e18490a5403fec3ec50777bd051ba1e28832",
+      "psnrDb": 36.99,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 201005,
+      "sourceHash": "7e3b4dbfde6723238b394b9c97e776c04d7b909fbae433bb4f7835ea516167e3",
+      "width": 1024
+    },
     "static/images/the-thirsty-city.jpg": {
       "format": "JPEG",
       "height": 576,
