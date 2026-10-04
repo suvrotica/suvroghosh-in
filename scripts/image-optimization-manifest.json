@@ -8993,6 +8993,22 @@
       "sourceHash": "d9207d40e2ac6312f2071857f3aa57c1cb26f3681f4e2da3acd3ae2f13dda475",
       "width": 1012
     },
+    "static/images/hot-wind.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 186809,
+      "outputHash": "249fdb573da6d7191613294d9d89837e533f5034f6fa52c221172185d1afccd1",
+      "psnrDb": 35.65,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 239904,
+      "sourceHash": "66852526974f60b2e3f4cb6f62ee56d2028928d6abbb0928b3d9f1e1e2aa545c",
+      "width": 1024
+    },
     "static/images/lightning-atlas.png": {
       "format": "PNG",
       "height": 900,

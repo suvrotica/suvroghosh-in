@@ -13551,6 +13551,25 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Reverent Dread", "Faith"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/hot-wind.md": {
+			"bodyHash": "51ba29a5ac36de00ef8dac191158eea11c50d9e10a931214272788db9f72a2e3",
+			"hashVersion": 2,
+			"revisionHash": "1a9343ef4d9fad22a9b39c8b67a33e748d9abcbd2cc47e781fa98028f6502613",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Weird Fiction",
+				"Apocalyptic",
+				"Guilt",
+				"Muktaram Babu Street",
+				"Junction Box",
+				"Naren",
+				"Cable",
+				"Cables"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Apocalyptic", "Guilt"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

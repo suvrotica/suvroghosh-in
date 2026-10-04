@@ -3506,6 +3506,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1440
 		},
 		{
+			"name": "hot-wind.jpg",
+			"src": "/images/hot-wind.jpg",
+			"bytes": 186809,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "IMG-20260422-WA0001.jpg",
 			"src": "/images/IMG-20260422-WA0001.jpg",
 			"bytes": 409248,

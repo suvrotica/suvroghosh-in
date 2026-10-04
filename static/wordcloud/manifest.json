@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T09:58:41.345198+00:00",
+  "generatedAt": "2026-10-04T14:26:45.733314+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4575,6 +4575,29 @@
         "India",
         "Household",
         "Waste"
+      ],
+      "wordCount": 130
+    },
+    "hot-wind": {
+      "generatedAt": "2026-10-04T14:26:44.186430+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/hot-wind.svg",
+      "source": "src/lib/posts/hot-wind.md",
+      "sourceHash": "12594cffd7c9acf6438afed1439c57e0e02f21aace2c09af5b92aaa7b9d4695b",
+      "sourceModified": "2026-10-04T14:25:01.203898+00:00",
+      "topWords": [
+        "Naren",
+        "Cable",
+        "Wind",
+        "Cables",
+        "Straw",
+        "Lane",
+        "Every",
+        "Fire",
+        "Street",
+        "Hot",
+        "September",
+        "Crowd"
       ],
       "wordCount": 130
     },
