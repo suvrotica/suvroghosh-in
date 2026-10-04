@@ -9830,6 +9830,22 @@
       "sourceHash": "7e3b4dbfde6723238b394b9c97e776c04d7b909fbae433bb4f7835ea516167e3",
       "width": 1024
     },
+    "static/images/the-tenth-limb.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 91258,
+      "outputHash": "b5db388759ba7115b912f57328835430f045454f958ac294e7fe51b10760b895",
+      "psnrDb": 36.02,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 167754,
+      "sourceHash": "87220dd89e5820e3af8234e64e379a416638925bd013f644fb9ddba46941d665",
+      "width": 1024
+    },
     "static/images/the-thirsty-city.jpg": {
       "format": "JPEG",
       "height": 576,

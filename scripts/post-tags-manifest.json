@@ -13532,6 +13532,25 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Dread", "Disappearance"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-tenth-limb.md": {
+			"bodyHash": "f5e8a95ab958def75ddc309803a718286176f6ad89833eb65088b1f4a0f7fe90",
+			"hashVersion": 2,
+			"revisionHash": "3d9f1dbdd41c7272c7aa5c0e170f481bb5f0bdae91afadd913b23f9014624827",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Weird Fiction",
+				"Reverent Dread",
+				"Faith",
+				"Ten Arms",
+				"Bhairav",
+				"Spider",
+				"Kaka",
+				"Limbs"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Reverent Dread", "Faith"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

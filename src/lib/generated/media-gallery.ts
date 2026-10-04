@@ -4332,6 +4332,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "the-tenth-limb.jpg",
+			"src": "/images/the-tenth-limb.jpg",
+			"bytes": 91258,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-thirsty-city.jpg",
 			"src": "/images/the-thirsty-city.jpg",
 			"bytes": 103615,
