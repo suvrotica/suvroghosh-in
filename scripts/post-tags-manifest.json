@@ -13633,6 +13633,32 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Festive Dread", "Contagion"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/shobar-din.md": {
+			"bodyHash": "c955971a0feda8545d9c39b48bce75201d4a439d07630cba5fe575a0c7d09636",
+			"hashVersion": 2,
+			"revisionHash": "7cb29a576e2db3d1bfa100a48337fbb0e45310dbdaec6e7a4474e7b02944e26c",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Body Horror",
+				"Psychological Horror",
+				"Bipolar Depression",
+				"Loneliness",
+				"Tooth",
+				"Mahalaya",
+				"Dhaak",
+				"Jaw"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Body Horror",
+				"Psychological Horror",
+				"Bipolar Depression",
+				"Loneliness"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

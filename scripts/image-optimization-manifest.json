@@ -9672,6 +9672,22 @@
       "sourceHash": "8d2006abe17dff566ad920e44611d169f228c0564b39db93dd1fc25bd253cb9c",
       "width": 1280
     },
+    "static/images/shobar-din.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 79286,
+      "outputHash": "60063ee2766c1be96752a7a180f784646d03a5f2e690af677a7d00abe29dfe9a",
+      "psnrDb": 37.36,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 146823,
+      "sourceHash": "d4e70b54ec8e0b7bf18f2e4088dd9a465326af5d65ec15d4164a7e5e967fe4c1",
+      "width": 1024
+    },
     "static/images/spacetime-laboratory-einstein-equations.webp": {
       "format": "WEBP",
       "height": 630,

@@ -4262,6 +4262,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 720
 		},
 		{
+			"name": "shobar-din.jpg",
+			"src": "/images/shobar-din.jpg",
+			"bytes": 79286,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "spacetime-laboratory-einstein-equations.webp",
 			"src": "/images/spacetime-laboratory-einstein-equations.webp",
 			"bytes": 21508,
