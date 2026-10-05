@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T05:23:51.999879+00:00",
+  "generatedAt": "2026-10-05T06:37:34.807793+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12832,6 +12832,29 @@
         "Shop",
         "Hand",
         "Mukherjeemashi"
+      ],
+      "wordCount": 130
+    },
+    "the-second-smile": {
+      "generatedAt": "2026-10-05T06:37:34.709675+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-second-smile.svg",
+      "source": "src/lib/posts/the-second-smile.md",
+      "sourceHash": "720529238cfea98fe40c4fae8a5a797e1bf71307d4fee08903fcc1516af7b79a",
+      "sourceModified": "2026-10-05T06:37:00.796520+00:00",
+      "topWords": [
+        "Water",
+        "Teeth",
+        "Meera",
+        "Mouth",
+        "Tongue",
+        "Reflection",
+        "White",
+        "Smile",
+        "Mother",
+        "Hand",
+        "Jaw",
+        "Every"
       ],
       "wordCount": 130
     },

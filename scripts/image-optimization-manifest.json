@@ -9862,6 +9862,22 @@
       "sourceHash": "7e3b4dbfde6723238b394b9c97e776c04d7b909fbae433bb4f7835ea516167e3",
       "width": 1024
     },
+    "static/images/the-second-smile.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 86409,
+      "outputHash": "48b686e415deb00263bd33001c3344c24dca95df5706f91b0cb14fc5c9bf81d4",
+      "psnrDb": 37.28,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 158505,
+      "sourceHash": "f97449f5816f0487fb4ef954a6a5a601bffa9a529580320ca93cb41110535465",
+      "width": 1024
+    },
     "static/images/the-tenth-limb.jpg": {
       "format": "JPEG",
       "height": 576,

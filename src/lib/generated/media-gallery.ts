@@ -4346,6 +4346,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "the-second-smile.jpg",
+			"src": "/images/the-second-smile.jpg",
+			"bytes": 86409,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-tenth-limb.jpg",
 			"src": "/images/the-tenth-limb.jpg",
 			"bytes": 91258,

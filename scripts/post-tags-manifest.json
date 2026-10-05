@@ -13589,6 +13589,31 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Claustrophobic", "Guilt"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-second-smile.md": {
+			"bodyHash": "5a833453bf3c29966a803c284178612c4bf1e5f6b2b46ed55c9b43a077ea9db2",
+			"hashVersion": 2,
+			"revisionHash": "ea062e7c7adcf3d58f319d1b6170f0c67634b05c09de80fd7868391abd74b58a",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Body Horror",
+				"Pharmacological Dread",
+				"Contamination",
+				"Meera",
+				"Teeth",
+				"Vanilla",
+				"Reflection",
+				"Chatterjee"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Body Horror",
+				"Pharmacological Dread",
+				"Contamination"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
