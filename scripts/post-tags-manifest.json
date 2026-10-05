@@ -13570,6 +13570,25 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Weird Fiction", "Apocalyptic", "Guilt"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ashtami-approach.md": {
+			"bodyHash": "04fdd497912ffe8555916a984bd50d66933a7f4f75274df7c06da2b409138938",
+			"hashVersion": 2,
+			"revisionHash": "94465293405889a149c99e0c95c05e5404e30ff6539cd011f6ac39c04266c8f2",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Horror",
+				"Claustrophobic",
+				"Guilt",
+				"Red Thread",
+				"Vikram",
+				"Mehra",
+				"Aircraft",
+				"Captain"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Claustrophobic", "Guilt"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/ashtami-approach.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 153729,
+      "outputHash": "3bd979c14513f2dff98f92d8ba2f066cd6579b264378566c65842f5198f3e861",
+      "psnrDb": 36.18,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 197142,
+      "sourceHash": "450fdb52d536c2172c748259c3579314e0de26317e89b45f046b80fbedb4f849",
+      "width": 1024
+    },
     "static/images/asymptotic-doom-of-the-orgasm-coffin.png": {
       "format": "PNG",
       "height": 1024,

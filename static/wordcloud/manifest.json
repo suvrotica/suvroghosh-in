@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T14:26:45.733314+00:00",
+  "generatedAt": "2026-10-05T05:23:51.999879+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -895,6 +895,29 @@
         "Mind",
         "Ask",
         "Let"
+      ],
+      "wordCount": 130
+    },
+    "ashtami-approach": {
+      "generatedAt": "2026-10-05T05:23:51.371822+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ashtami-approach.svg",
+      "source": "src/lib/posts/ashtami-approach.md",
+      "sourceHash": "6260b3714e967e26e8d10a1dd368d293c39a495f75681a2720a842d26d13d1c3",
+      "sourceModified": "2026-10-05T05:22:08.076490+00:00",
+      "topWords": [
+        "Vikram",
+        "Lights",
+        "Aircraft",
+        "Mehra",
+        "Looking",
+        "Sound",
+        "Moment",
+        "Toward",
+        "Pandal",
+        "Face",
+        "Small",
+        "Night"
       ],
       "wordCount": 130
     },
