@@ -13614,6 +13614,25 @@
 				"Contamination"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mahalaya.md": {
+			"bodyHash": "a024add0102159c99be9192828afc55ed2571c88a479a08f69cc819367194203",
+			"hashVersion": 2,
+			"revisionHash": "0817e5de0277357436fe2ddd0ebf3d5b192a834292af2831bb64f3f7fc06a169",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Horror",
+				"Festive Dread",
+				"Contagion",
+				"Burnt Sugar",
+				"Broken Tube",
+				"Rina",
+				"Mahalaya",
+				"Sweetness"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Horror", "Festive Dread", "Contagion"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

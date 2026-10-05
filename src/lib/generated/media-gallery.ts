@@ -3989,6 +3989,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1280
 		},
 		{
+			"name": "mahalaya.jpg",
+			"src": "/images/mahalaya.jpg",
+			"bytes": 139477,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "meaning-connection-map.png",
 			"src": "/images/meaning-connection-map.png",
 			"bytes": 44313,

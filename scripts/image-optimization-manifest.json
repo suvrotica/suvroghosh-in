@@ -9071,6 +9071,22 @@
       "sourceHash": "20128349da16654910f8bf9667debd00ae98055f83cc514f3bb20374ae68eb16",
       "width": 896
     },
+    "static/images/mahalaya.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 139477,
+      "outputHash": "6e8a6769b40e9e98f5769e6701fcb7df2982c8503c864130c3789f6ba2b92de6",
+      "psnrDb": 36.18,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 193766,
+      "sourceHash": "729df7da081e608284630b9cdbf1e440c1f339e09a64f79772e1b29fcfec8e69",
+      "width": 1024
+    },
     "static/images/meaning-connection-map.png": {
       "format": "PNG",
       "height": 630,
