@@ -13659,6 +13659,31 @@
 				"Loneliness"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/i-wanted-a-life.md": {
+			"bodyHash": "f497cda9b2dc2784adff02fcddd36942de0ac682a4d8706b7bf72eac7dc48059",
+			"hashVersion": 2,
+			"revisionHash": "1e19d9524f34c93db5c66432e707be77b9c3dbe6bffb48adeca83bac17c48070",
+			"generatedTags": [
+				"Poetry",
+				"Free Verse",
+				"AI",
+				"Writing",
+				"Unemployment",
+				"Alienation",
+				"Madness"
+			],
+			"pinnedTags": [
+				"Poetry",
+				"Free Verse",
+				"AI",
+				"Writing",
+				"Unemployment",
+				"Alienation",
+				"Madness"
+			],
+			"generatorVersion": "2026-07-22.1",
+			"dateModified": "2026-10-05"
 		}
 	},
 	"maxTags": 10

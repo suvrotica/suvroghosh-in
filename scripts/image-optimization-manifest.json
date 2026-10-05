@@ -9025,6 +9025,22 @@
       "sourceHash": "66852526974f60b2e3f4cb6f62ee56d2028928d6abbb0928b3d9f1e1e2aa545c",
       "width": 1024
     },
+    "static/images/i-wanted-a-life.jpg": {
+      "format": "JPEG",
+      "height": 864,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 864,
+      "originalWidth": 1536,
+      "outputBytes": 205386,
+      "outputHash": "f227b97a8d44405bdfa34ce95ba5ba3a93fc095630cd7a4d053771e8e155b7eb",
+      "psnrDb": 36.48,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 358474,
+      "sourceHash": "56c722514f650970ff71e52c43de646b7e7b941d5039e1a4256df04f28034e80",
+      "width": 1536
+    },
     "static/images/lightning-atlas.png": {
       "format": "PNG",
       "height": 900,

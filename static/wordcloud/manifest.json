@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T11:22:12.096609+00:00",
+  "generatedAt": "2026-10-05T17:39:58.451947+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -4876,6 +4876,29 @@
         "Hatred"
       ],
       "wordCount": 130
+    },
+    "i-wanted-a-life": {
+      "generatedAt": "2026-10-05T17:39:58.080835+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/i-wanted-a-life.svg",
+      "source": "src/lib/posts/i-wanted-a-life.md",
+      "sourceHash": "250eefafd56f490c3c4dd9f5c4eddf0f478282286054b4cc091bf6c412ac2823",
+      "sourceModified": "2026-10-05T17:39:10.650560+00:00",
+      "topWords": [
+        "Change",
+        "Now",
+        "Didn",
+        "Work",
+        "Wind",
+        "Mad",
+        "Write",
+        "Bots",
+        "Pens",
+        "Hires",
+        "Honest",
+        "Men"
+      ],
+      "wordCount": 50
     },
     "if-durga-actually-came-down-to-calcutta": {
       "generatedAt": "2026-10-02T13:05:08.598249+00:00",

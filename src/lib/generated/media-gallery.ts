@@ -3520,6 +3520,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "i-wanted-a-life.jpg",
+			"src": "/images/i-wanted-a-life.jpg",
+			"bytes": 205386,
+			"width": 1536,
+			"height": 864
+		},
+		{
 			"name": "IMG-20260422-WA0001.jpg",
 			"src": "/images/IMG-20260422-WA0001.jpg",
 			"bytes": 409248,
