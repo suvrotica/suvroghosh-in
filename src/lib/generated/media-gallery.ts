@@ -4507,6 +4507,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "three-fevers.jpg",
+			"src": "/images/three-fevers.jpg",
+			"bytes": 202692,
+			"width": 1024,
+			"height": 768
+		},
+		{
 			"name": "twerky-vishnu-from-vapor.jpg",
 			"src": "/images/twerky-vishnu-from-vapor.jpg",
 			"bytes": 196912,

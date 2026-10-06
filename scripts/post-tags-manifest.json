@@ -13684,6 +13684,25 @@
 			],
 			"generatorVersion": "2026-07-22.1",
 			"dateModified": "2026-10-05"
+		},
+		"src/lib/posts/three-fevers.md": {
+			"bodyHash": "fa1f7ffc7e8b93c38ee80503e1ec37155a31176ad4c60d068059e073485762f1",
+			"hashVersion": 2,
+			"revisionHash": "fc5532a8a923ac1e616c0a3876bee322c514c956e651456820fefd2dddee9147",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Medical Horror",
+				"Epidemic Dread",
+				"Contagion",
+				"Karim",
+				"Registrar",
+				"Measles",
+				"Mosquitoes",
+				"Glove"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Medical Horror", "Epidemic Dread", "Contagion"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

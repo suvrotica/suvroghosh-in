@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T17:39:58.451947+00:00",
+  "generatedAt": "2026-10-06T08:28:12.827266+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -14304,6 +14304,29 @@
         "Person",
         "Place",
         "Enough"
+      ],
+      "wordCount": 130
+    },
+    "three-fevers": {
+      "generatedAt": "2026-10-06T08:28:12.782979+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/three-fevers.svg",
+      "source": "src/lib/posts/three-fevers.md",
+      "sourceHash": "0a285808d827f6b66c174f22316708b09f9b74050b8e3b27f72db03620457528",
+      "sourceModified": "2026-10-06T08:25:33.382301+00:00",
+      "topWords": [
+        "Blood",
+        "Three",
+        "Karim",
+        "Mosquitoes",
+        "Mosquito",
+        "Mouth",
+        "Registrar",
+        "Measles",
+        "Fever",
+        "Dengue",
+        "Gums",
+        "Someone"
       ],
       "wordCount": 130
     },

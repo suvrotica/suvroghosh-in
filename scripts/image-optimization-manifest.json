@@ -10229,6 +10229,22 @@
       "sourceHash": "b1b16072fad66d4788406a652d8c5ff30067fc470196088bb5ed6e0f1deecb47",
       "width": 1536
     },
+    "static/images/three-fevers.jpg": {
+      "format": "JPEG",
+      "height": 768,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 768,
+      "originalWidth": 1024,
+      "outputBytes": 202692,
+      "outputHash": "60a32b45cf0052a7850a2f7b8c06ddfda13063ab2072f9cff595d1ca5334f08b",
+      "psnrDb": 37.48,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 227786,
+      "sourceHash": "2fad37da3c8640626fb627245b4ff8484a36f51d1d5ebc35ee3f1f43888c5a73",
+      "width": 1024
+    },
     "static/images/twerky-vishnu-from-vapor.jpg": {
       "format": "JPEG",
       "height": 895,
