@@ -8062,6 +8062,22 @@
       "sourceHash": "c7dabe0cb861b69cd074683b7ead7c5977ebe2fcdb0f3ed2707d57ecd1e2dff7",
       "width": 1200
     },
+    "static/images/beneath-the-last-tram.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 165060,
+      "outputHash": "3b65e4d9e04b849fc09104f6decf32350327dbcbc918b700b97e6e238625aeb7",
+      "psnrDb": 37.29,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 208978,
+      "sourceHash": "9973a88ee81904bb6c2bc0b0631f695103ba045b5c1a946d80e5b15363c8c8b4",
+      "width": 1024
+    },
     "static/images/bias-archipelago-2026-08.png": {
       "format": "PNG",
       "height": 1040,

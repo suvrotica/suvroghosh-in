@@ -13703,6 +13703,31 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Medical Horror", "Epidemic Dread", "Contagion"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/beneath-the-last-tram.md": {
+			"bodyHash": "f3d99dfeb7978d1c7f2a32a705357b4dedbf8f61973fd6a1eb8996ba938c6717",
+			"hashVersion": 2,
+			"revisionHash": "b31949f4e6cd4642795a13a5a248a5c2463d04b776acd54fa3a24d29001b0b52",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Liminal Horror",
+				"Claustrophobic",
+				"Disappearance",
+				"Nalin Sarkar Street",
+				"Phone Vibrated",
+				"Bell Rang",
+				"Arindam Grabbed",
+				"Delivery Bag"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Liminal Horror",
+				"Claustrophobic",
+				"Disappearance"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

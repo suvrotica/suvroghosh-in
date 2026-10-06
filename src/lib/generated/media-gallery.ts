@@ -41,6 +41,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "beneath-the-last-tram.jpg",
+			"src": "/images/beneath-the-last-tram.jpg",
+			"bytes": 165060,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "bias-archipelago-2026-08.png",
 			"src": "/images/bias-archipelago-2026-08.png",
 			"bytes": 359414,
