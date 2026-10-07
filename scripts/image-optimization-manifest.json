@@ -9863,6 +9863,22 @@
       "sourceHash": "0c567bc9e87dbd278363d857675b3df11cfbe33d727cb8b66339578d7fec8fc1",
       "width": 1024
     },
+    "static/images/the-goddess-who-comes-home.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 112487,
+      "outputHash": "7cea5f5d593904516c0bbec4c58b8f729610dfaf1ceaf170e597e344ec126276",
+      "psnrDb": 36.05,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 191422,
+      "sourceHash": "bdb6faf949d08ee05982d4a897aede36262dc5e86904eb7ed6ad4e5d1b26d13f",
+      "width": 1024
+    },
     "static/images/the-great-meme-reset-and-my-colon.jpg": {
       "format": "JPEG",
       "height": 895,

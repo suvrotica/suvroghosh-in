@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T09:48:32.789131+00:00",
+  "generatedAt": "2026-10-07T12:12:27.251464+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11153,6 +11153,29 @@
         "Feel",
         "Irritation",
         "Now"
+      ],
+      "wordCount": 130
+    },
+    "the-goddess-who-comes-home": {
+      "generatedAt": "2026-10-07T12:12:27.072126+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-goddess-who-comes-home.svg",
+      "source": "src/lib/posts/the-goddess-who-comes-home.md",
+      "sourceHash": "18a641d7f2e8aa7e2147dc7ff77a32200ec19a707b506d29557c968d1e8b6d7f",
+      "sourceModified": "2026-10-07T12:11:46.344100+00:00",
+      "topWords": [
+        "Goddess",
+        "Puja",
+        "Durga",
+        "Bengal",
+        "Festival",
+        "Different",
+        "Images",
+        "Bengali",
+        "Worship",
+        "Clay",
+        "Familiar",
+        "Ritual"
       ],
       "wordCount": 130
     },

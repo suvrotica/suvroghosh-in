@@ -13758,6 +13758,34 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-goddess-who-comes-home.md": {
+			"bodyHash": "1c128f6deaca91d69c13c926ec8e5462c35ca1eb11b5e8996c70eb03868f05a6",
+			"hashVersion": 2,
+			"revisionHash": "2a009d45527d9374b55f787646fb43c92c298c312d1399e8b48006e5d7112875",
+			"generatedTags": [
+				"Durga Puja",
+				"Kolkata",
+				"History",
+				"Bengal",
+				"Culture",
+				"Festival",
+				"Essay",
+				"SuvroGhosh",
+				"Devi Mahatmya",
+				"Akal Bodhan"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Kolkata",
+				"History",
+				"Bengal",
+				"Culture",
+				"Festival",
+				"Essay",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

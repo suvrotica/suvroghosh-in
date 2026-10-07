@@ -4346,6 +4346,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1536
 		},
 		{
+			"name": "the-goddess-who-comes-home.jpg",
+			"src": "/images/the-goddess-who-comes-home.jpg",
+			"bytes": 112487,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-great-meme-reset-and-my-colon.jpg",
 			"src": "/images/the-great-meme-reset-and-my-colon.jpg",
 			"bytes": 210581,
