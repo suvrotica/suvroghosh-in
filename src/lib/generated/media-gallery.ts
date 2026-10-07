@@ -6422,6 +6422,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "art-october-without-the-wanting.jpg",
+			"src": "/thumbnail/art-october-without-the-wanting.jpg",
+			"bytes": 137212,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-one-life-no-rehearsal-calcutta.jpg",
 			"src": "/thumbnail/art-one-life-no-rehearsal-calcutta.jpg",
 			"bytes": 177036,

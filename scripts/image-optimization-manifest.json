@@ -15971,6 +15971,22 @@
       "sourceHash": "92b7d68e413eb5ab77e36bfb5f62605b7b03ff8e9dd318c9d1d2e7740a942940",
       "width": 1024
     },
+    "static/thumbnail/art-october-without-the-wanting.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 137212,
+      "outputHash": "9af49d5a32299773327690ec907b7ad2dc7ec029de1c079eb53f6fdf9154afb2",
+      "psnrDb": 36.21,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 190709,
+      "sourceHash": "263e5fa797848fb9a419db16b5dc4c02c3f11c422cc5bc7cd2365a25f65f9fc5",
+      "width": 1024
+    },
     "static/thumbnail/art-one-life-no-rehearsal-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,

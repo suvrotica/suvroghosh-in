@@ -13786,6 +13786,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/october-without-the-wanting.md": {
+			"bodyHash": "d8ed636e5d07b1c26f0f987f05a7639a54d6db70ed2ba7198d0515ac4208b203",
+			"hashVersion": 2,
+			"revisionHash": "017924e1450e8a273240b56f355196a137b811727abea63bd601cba51e3b0459",
+			"generatedTags": [
+				"October",
+				"Festivals",
+				"Depression",
+				"Anticipation",
+				"Memory",
+				"Joy",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"October",
+				"Festivals",
+				"Depression",
+				"Anticipation",
+				"Memory",
+				"Joy",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

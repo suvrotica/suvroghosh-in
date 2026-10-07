@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T12:12:27.251464+00:00",
+  "generatedAt": "2026-10-07T15:24:12.196772+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6829,6 +6829,29 @@
         "Goddess",
         "Bamboo",
         "Ordinary"
+      ],
+      "wordCount": 130
+    },
+    "october-without-the-wanting": {
+      "generatedAt": "2026-10-07T15:24:10.821862+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/october-without-the-wanting.svg",
+      "source": "src/lib/posts/october-without-the-wanting.md",
+      "sourceHash": "6f67601779ad381696bfeb3ca8edfebc9b9596528c7b89225b81051d78735360",
+      "sourceModified": "2026-10-07T15:21:24.528940+00:00",
+      "topWords": [
+        "Little",
+        "Anticipation",
+        "Feeling",
+        "October",
+        "Time",
+        "Even",
+        "Forward",
+        "Memory",
+        "Celebration",
+        "Mind",
+        "Almost",
+        "Month"
       ],
       "wordCount": 130
     },
