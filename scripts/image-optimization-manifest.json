@@ -18003,6 +18003,22 @@
       "sourceHash": "9d8e028b0d2bb41ac0b240dab7b802735cc7337198bd873429a18f146b440124",
       "width": 723
     },
+    "static/thumbnail/art-the-noise-of-being-alone.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 119210,
+      "outputHash": "3af895106d48c48afbe7ba360db72df5a8b835bcc44bb24c098f43cc58d793b1",
+      "psnrDb": 36.07,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 187215,
+      "sourceHash": "a8ddf610dd1fda2cf94b550005976652866714aa201202f8c5010134665d903a",
+      "width": 1024
+    },
     "static/thumbnail/art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg": {
       "format": "JPEG",
       "height": 1263,

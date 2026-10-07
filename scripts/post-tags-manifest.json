@@ -13816,6 +13816,36 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-noise-of-being-alone.md": {
+			"bodyHash": "80364538184393f220754917e65475c495e30f2d651837648deac3b6328a7935",
+			"hashVersion": 2,
+			"revisionHash": "e87448a245840f09a3ed01a36c806eef5801b5b92765b44b9038f6b095734c34",
+			"generatedTags": [
+				"Durga Puja",
+				"Loneliness",
+				"Bipolar Disorder",
+				"Depression",
+				"Festivals",
+				"Poverty",
+				"Belonging",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Loneliness",
+				"Bipolar Disorder",
+				"Depression",
+				"Festivals",
+				"Poverty",
+				"Belonging",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

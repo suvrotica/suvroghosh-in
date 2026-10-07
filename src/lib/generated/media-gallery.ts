@@ -7311,6 +7311,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-the-noise-of-being-alone.jpg",
+			"src": "/thumbnail/art-the-noise-of-being-alone.jpg",
+			"bytes": 119210,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg",
 			"src": "/thumbnail/art-the-odyssey-of-ohdsi-how-a-common-language-is-rewriting-the-story-of-human-health.jpg",
 			"bytes": 92683,
