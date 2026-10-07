@@ -13331,6 +13331,22 @@
       "sourceHash": "7d0d70a9fb76d45975e2eeccf7e382afb234614fd37d6aada8f7fa202576f1de",
       "width": 1200
     },
+    "static/thumbnail/art-bamboo-scaffolds-and-the-robotic-reckoning.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 199696,
+      "outputHash": "842ecd73253762461d11cc8e6b613637608226203495513dc98c4165454a9242",
+      "psnrDb": 35.3,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 255746,
+      "sourceHash": "b4b79740417aca685ec20acd402012967c9fcdb4b36c429356b1af39fba02b44",
+      "width": 1024
+    },
     "static/thumbnail/art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg": {
       "format": "JPEG",
       "height": 800,

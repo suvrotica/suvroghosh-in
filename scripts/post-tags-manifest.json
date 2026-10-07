@@ -13728,6 +13728,36 @@
 				"Disappearance"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/bamboo-scaffolds-and-the-robotic-reckoning.md": {
+			"bodyHash": "50c951d77e4083aa812841ae95ad0f963fc98984daac7fd1f5e42516ce5ee3c5",
+			"hashVersion": 2,
+			"revisionHash": "09019a954d781f6559d351e39b99cf3231c8a343502e86c6c90e8404813dc289",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Automation",
+				"Moravec's Paradox",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Labor",
+				"Economics",
+				"Robotics",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Automation",
+				"Moravec's Paradox",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Labor",
+				"Economics",
+				"Robotics",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

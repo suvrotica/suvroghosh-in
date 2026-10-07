@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-06T10:45:05.572156+00:00",
+  "generatedAt": "2026-10-07T09:48:32.789131+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -1078,6 +1078,29 @@
         "Little",
         "Drain",
         "Place",
+        "Years"
+      ],
+      "wordCount": 130
+    },
+    "bamboo-scaffolds-and-the-robotic-reckoning": {
+      "generatedAt": "2026-10-07T09:48:18.349490+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/bamboo-scaffolds-and-the-robotic-reckoning.svg",
+      "source": "src/lib/posts/bamboo-scaffolds-and-the-robotic-reckoning.md",
+      "sourceHash": "359b746911d9def54c928a178e2405fbff7ea3482b0af65ea29589624c2abe24",
+      "sourceModified": "2026-10-07T09:46:22.103490+00:00",
+      "topWords": [
+        "Bamboo",
+        "Human",
+        "Problem",
+        "Machines",
+        "Machine",
+        "Intelligence",
+        "Robot",
+        "Now",
+        "Work",
+        "Men",
+        "Pole",
         "Years"
       ],
       "wordCount": 130

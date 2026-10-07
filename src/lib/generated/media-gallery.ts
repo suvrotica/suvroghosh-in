@@ -5267,6 +5267,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-bamboo-scaffolds-and-the-robotic-reckoning.jpg",
+			"src": "/thumbnail/art-bamboo-scaffolds-and-the-robotic-reckoning.jpg",
+			"bytes": 199696,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
 			"src": "/thumbnail/art-bangalore-city-that-cannot-decide-whether-to-flood-or-flush.jpg",
 			"bytes": 231949,
