@@ -14259,6 +14259,22 @@
       "sourceHash": "c4e6b45b504a4ec87d1a73e12ba7a795c5aea83d09a9b6f8508ac85bc763865e",
       "width": 1200
     },
+    "static/thumbnail/art-durga-puja-negative-singularity.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 116432,
+      "outputHash": "759bfbff6143ea1b8fe938185b5b4cb6cc86be10d2fed757a4475ea6365ecf49",
+      "psnrDb": 36.07,
+      "quality": 82,
+      "resized": false,
+      "sourceBytes": 186188,
+      "sourceHash": "3d7cb1b7513f8591c801f1193677775ff9d6d042ca64ce764664f6e1dd492992",
+      "width": 1024
+    },
     "static/thumbnail/art-educated-boredom-horror.jpg": {
       "format": "JPEG",
       "height": 800,

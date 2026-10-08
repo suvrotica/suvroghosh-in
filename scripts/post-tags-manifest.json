@@ -13846,6 +13846,36 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/durga-puja-negative-singularity.md": {
+			"bodyHash": "aa7bf8b552a8de3ffd6dfa701ef485f1c6ff637fa45d294e0e3d2e5860ec2ce9",
+			"hashVersion": 2,
+			"revisionHash": "8bd10382a0fe465470a27fa6f856fda5d8100574f5809edff35ec7ac1508a015",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Durga Puja",
+				"Anhedonia",
+				"Poverty",
+				"Artificial Intelligence",
+				"Singularity",
+				"Mental Health",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Durga Puja",
+				"Anhedonia",
+				"Poverty",
+				"Artificial Intelligence",
+				"Singularity",
+				"Mental Health",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

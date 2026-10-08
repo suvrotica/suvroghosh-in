@@ -5673,6 +5673,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-durga-puja-negative-singularity.jpg",
+			"src": "/thumbnail/art-durga-puja-negative-singularity.jpg",
+			"bytes": 116432,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-educated-boredom-horror.jpg",
 			"src": "/thumbnail/art-educated-boredom-horror.jpg",
 			"bytes": 255158,
