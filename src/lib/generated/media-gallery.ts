@@ -6261,6 +6261,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-mahalaya-the-four-oclock-broadcast.jpg",
+			"src": "/thumbnail/art-mahalaya-the-four-oclock-broadcast.jpg",
+			"bytes": 96459,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-mahishasura-was-probably-a-systems-problem.jpg",
 			"src": "/thumbnail/art-mahishasura-was-probably-a-systems-problem.jpg",
 			"bytes": 192468,

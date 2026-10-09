@@ -13876,6 +13876,25 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mahalaya-the-four-oclock-broadcast.md": {
+			"bodyHash": "e910dea1f29e39cc3fa8267bb5126470bff4db9a7c3776fc78a5d5c656ced815",
+			"hashVersion": 2,
+			"revisionHash": "f676c4e547fea22355012acf91fdff8edf87aefe2b952783b6f0102c899fa4fe",
+			"generatedTags": [
+				"Somebody Else",
+				"Mahalaya",
+				"Bhadra's",
+				"Somebody",
+				"Tonight",
+				"Radio",
+				"Narration",
+				"Woken",
+				"Anybody",
+				"Listening"
+			],
+			"pinnedTags": [],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

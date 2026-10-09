@@ -15603,6 +15603,22 @@
       "sourceHash": "aa6218c1ed977bf0ce1347a04f39e8ad36721a787b14123a03a5708467964d51",
       "width": 819
     },
+    "static/thumbnail/art-mahalaya-the-four-oclock-broadcast.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 96459,
+      "outputHash": "5e60437210a38577fe3591daf4c5d3df281cb57fbe23b0521f7b62f653cf92c1",
+      "psnrDb": 36.16,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 178123,
+      "sourceHash": "fdde03c4d2c1eb0d616e9ea41289e3e5e8ac89f33d60e879c37194212abae954",
+      "width": 1024
+    },
     "static/thumbnail/art-mahishasura-was-probably-a-systems-problem.jpg": {
       "format": "JPEG",
       "height": 576,
