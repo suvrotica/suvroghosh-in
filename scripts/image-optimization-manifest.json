@@ -9895,6 +9895,22 @@
       "sourceHash": "9d989444aa839a2ab739547f192072aed90ab5a135f853a760390fcfd63b1559",
       "width": 1280
     },
+    "static/images/the-million-dollar-equation.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 148522,
+      "outputHash": "a4e892da6792c55a9c00b9c28fbea15f3272fb85d911d614edafb8ea4227325a",
+      "psnrDb": 37.0,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 186403,
+      "sourceHash": "f686562fa4140260b3ebdc46b6494a054db8cfc39b22c26ae1c3520b2b4ab8cc",
+      "width": 1024
+    },
     "static/images/the-monopoly-of-the-powerful.jpg": {
       "format": "JPEG",
       "height": 1280,

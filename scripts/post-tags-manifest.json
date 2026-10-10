@@ -13895,6 +13895,33 @@
 			],
 			"pinnedTags": [],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-million-dollar-equation.md": {
+			"bodyHash": "cd4358d79af250d406b50919724cedc26a4d79b792a17fe4b44c4436b5c744f2",
+			"hashVersion": 2,
+			"revisionHash": "bc548b0fca403f5771018ff3194f977fa9d024a48874b4b616fff055b116f490",
+			"generatedTags": [
+				"Mathematics",
+				"AI",
+				"Navier-Stokes",
+				"Millennium Prize",
+				"Fluid Dynamics",
+				"OpenAI",
+				"SuvroGhosh",
+				"Navier Stokes",
+				"AI Troubled Waters",
+				"Eighty-Eight Hours Plus"
+			],
+			"pinnedTags": [
+				"Mathematics",
+				"AI",
+				"Navier-Stokes",
+				"Millennium Prize",
+				"Fluid Dynamics",
+				"OpenAI",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

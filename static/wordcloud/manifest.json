@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T14:11:41.789279+00:00",
+  "generatedAt": "2026-10-10T01:18:12.120933+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12050,6 +12050,29 @@
         "Kind",
         "Fan",
         "Finally"
+      ],
+      "wordCount": 130
+    },
+    "the-million-dollar-equation": {
+      "generatedAt": "2026-10-10T01:18:11.647919+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-million-dollar-equation.svg",
+      "source": "src/lib/posts/the-million-dollar-equation.md",
+      "sourceHash": "cc330adc421fcfc456c48ab72379cff5ba55aa024a101ba831feb900983d1616",
+      "sourceModified": "2026-10-10T01:17:53.636981+00:00",
+      "topWords": [
+        "Openai",
+        "Mathematics",
+        "Equations",
+        "Mathematical",
+        "Smooth",
+        "Proof",
+        "Problem",
+        "September",
+        "Navier",
+        "Stokes",
+        "Work",
+        "Question"
       ],
       "wordCount": 130
     },

@@ -4360,6 +4360,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "the-million-dollar-equation.jpg",
+			"src": "/images/the-million-dollar-equation.jpg",
+			"bytes": 148522,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-monopoly-of-the-powerful.jpg",
 			"src": "/images/the-monopoly-of-the-powerful.jpg",
 			"bytes": 236229,
