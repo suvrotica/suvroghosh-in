@@ -17795,6 +17795,22 @@
       "sourceHash": "f0a02759f7e421e22cbc0974275401c1686a07305be899361077adf7dbd0149c",
       "width": 1200
     },
+    "static/thumbnail/art-the-last-dashami.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 200355,
+      "outputHash": "7358d84e2893f880783c5c325465dc3624cbdac9029e478a571e158e883c5e71",
+      "psnrDb": 35.77,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 254508,
+      "sourceHash": "4f869baec19922b1a2f87d091424544145e5305573b00b041ebd432425db7e05",
+      "width": 1024
+    },
     "static/thumbnail/art-the-laugh-track-has-left-the-room.jpg": {
       "format": "JPEG",
       "height": 800,

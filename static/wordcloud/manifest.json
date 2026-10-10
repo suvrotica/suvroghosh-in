@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T12:38:49.286614+00:00",
+  "generatedAt": "2026-10-10T17:05:20.784608+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11659,6 +11659,29 @@
         "Father",
         "Later",
         "Behind"
+      ],
+      "wordCount": 130
+    },
+    "the-last-dashami": {
+      "generatedAt": "2026-10-10T17:05:20.132941+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-last-dashami.svg",
+      "source": "src/lib/posts/the-last-dashami.md",
+      "sourceHash": "559da86e616718d4f9476a6a02abb10381772d1466a271c099d087e0f38b1ef9",
+      "sourceModified": "2026-10-10T17:04:11.265915+00:00",
+      "topWords": [
+        "Ritwik",
+        "Mother",
+        "Feet",
+        "Hole",
+        "Water",
+        "Came",
+        "Stood",
+        "Someone",
+        "Toward",
+        "Opening",
+        "Voice",
+        "Beneath"
       ],
       "wordCount": 130
     },

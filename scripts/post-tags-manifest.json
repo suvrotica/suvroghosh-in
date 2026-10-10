@@ -13950,6 +13950,25 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-last-dashami.md": {
+			"bodyHash": "4ea4f8a7ee28ae93ed9727277279f556d956669c38c44f0ae355a92994fd9f5d",
+			"hashVersion": 2,
+			"revisionHash": "0ea3c96dd19ad550c210f1baf5332d33109f59a2f248388010922a2938b95801",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Cosmic Horror",
+				"Apocalyptic",
+				"Devouring",
+				"Ritwik Saw",
+				"Ritwik Watched",
+				"Close Together",
+				"Hole",
+				"Mother"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Cosmic Horror", "Apocalyptic", "Devouring"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

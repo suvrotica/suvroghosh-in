@@ -7220,6 +7220,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-last-dashami.jpg",
+			"src": "/thumbnail/art-the-last-dashami.jpg",
+			"bytes": 200355,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-laugh-track-has-left-the-room.jpg",
 			"src": "/thumbnail/art-the-laugh-track-has-left-the-room.jpg",
 			"bytes": 79028,
