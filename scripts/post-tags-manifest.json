@@ -13922,6 +13922,34 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-five-days-of-rot.md": {
+			"bodyHash": "a40a4b4117af933548448620c754fdb93aabb33f13e2b567d9c92c8424351996",
+			"hashVersion": 2,
+			"revisionHash": "634a6d4e1926af402892f5d504d217d30e06ebcd99d689afc66bc1e6a951025a",
+			"generatedTags": [
+				"Short Fiction",
+				"Horror",
+				"Body Horror",
+				"Calcutta",
+				"Durga Puja",
+				"Food Safety",
+				"Corruption",
+				"SuvroGhosh",
+				"Golden Crown's",
+				"Anil Kumar"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Horror",
+				"Body Horror",
+				"Calcutta",
+				"Durga Puja",
+				"Food Safety",
+				"Corruption",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -17587,6 +17587,22 @@
       "sourceHash": "7b0d5967204361a46cacd49599fc56b3ca145cfa952400fee73289504c8539c6",
       "width": 1200
     },
+    "static/thumbnail/art-the-five-days-of-rot.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 193301,
+      "outputHash": "083ead681ae6cba09e57ee00d0e5c1a7179297b8564b02cff30417421246984d",
+      "psnrDb": 35.69,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 247337,
+      "sourceHash": "530d3c3ef7f41ecce7da66314fa5521b7c4b8b4f096b7d4215ed5bae54a05172",
+      "width": 1024
+    },
     "static/thumbnail/art-the-flock-above-howrah-bridge.jpg": {
       "format": "JPEG",
       "height": 1024,

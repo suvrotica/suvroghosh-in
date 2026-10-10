@@ -7129,6 +7129,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-five-days-of-rot.jpg",
+			"src": "/thumbnail/art-the-five-days-of-rot.jpg",
+			"bytes": 193301,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-flock-above-howrah-bridge.jpg",
 			"src": "/thumbnail/art-the-flock-above-howrah-bridge.jpg",
 			"bytes": 394444,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T01:18:12.120933+00:00",
+  "generatedAt": "2026-10-10T12:38:49.286614+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -10923,6 +10923,29 @@
         "Tram",
         "Sandesh",
         "Didima"
+      ],
+      "wordCount": 130
+    },
+    "the-five-days-of-rot": {
+      "generatedAt": "2026-10-10T12:38:48.644430+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-five-days-of-rot.svg",
+      "source": "src/lib/posts/the-five-days-of-rot.md",
+      "sourceHash": "5915e08dbeaecb29d1af6b7948d13e7e4de37dc744129c16502ad183f8e384d5",
+      "sourceModified": "2026-10-10T12:37:29.762356+00:00",
+      "topWords": [
+        "Arif",
+        "Bimal",
+        "Put",
+        "Priya",
+        "Hand",
+        "Wife",
+        "Nothing",
+        "Asked",
+        "Three",
+        "Man",
+        "Stopped",
+        "Chicken"
       ],
       "wordCount": 130
     },
