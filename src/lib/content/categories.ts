@@ -56,6 +56,7 @@ export const categoryLabels: Record<string, string> = {
 	technology: 'Technology',
 	'technology-and-society': 'Technology and Society',
 	'political-economy': 'Political Economy',
+	'political-satire': 'Political Satire',
 	'natural-history': 'Natural History',
 	neuroscience: 'Neuroscience',
 	psychology: 'Psychology',

@@ -17123,6 +17123,22 @@
       "sourceHash": "d3bbdb9a209b020c15f905a67053b200ee8f2dc500f01e230f965a1e94cd84e4",
       "width": 1200
     },
+    "static/thumbnail/art-the-ballot-and-the-banana-peel.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 100925,
+      "outputHash": "212846dd5f9a40f221f5ceb61b99ce9032a40189036e33e2f7ae8e90f93800e5",
+      "psnrDb": 36.21,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 183583,
+      "sourceHash": "7bf77ec8046ee3eb8469aacfe964d554723083b8728163e9fb9391c57ba4576e",
+      "width": 1024
+    },
     "static/thumbnail/art-the-baroque-minutiae.jpg": {
       "format": "JPEG",
       "height": 1086,

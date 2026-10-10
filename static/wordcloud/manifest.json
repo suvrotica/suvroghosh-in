@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T17:05:20.784608+00:00",
+  "generatedAt": "2026-10-10T20:12:27.965182+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -9635,6 +9635,29 @@
         "Form",
         "Equation",
         "Equations"
+      ],
+      "wordCount": 130
+    },
+    "the-ballot-and-the-banana-peel": {
+      "generatedAt": "2026-10-10T20:12:27.352079+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-ballot-and-the-banana-peel.svg",
+      "source": "src/lib/posts/the-ballot-and-the-banana-peel.md",
+      "sourceHash": "6cf7ea434a8d17a058f1e6ab263a1d28946b45eabfd84d03f11f5eaa840e3f31",
+      "sourceModified": "2026-10-10T20:11:47.094126+00:00",
+      "topWords": [
+        "Questions",
+        "Election",
+        "Public",
+        "Commissioner",
+        "Resignation",
+        "Question",
+        "Support",
+        "Electoral",
+        "Chief",
+        "Rolls",
+        "Commission",
+        "Protest"
       ],
       "wordCount": 130
     },

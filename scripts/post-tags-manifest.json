@@ -13969,6 +13969,36 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Cosmic Horror", "Apocalyptic", "Devouring"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-ballot-and-the-banana-peel.md": {
+			"bodyHash": "1a8bac59784768fe0f15eff773f83f02a83ab9f9dfce1e84eba3445b64ffb821",
+			"hashVersion": 2,
+			"revisionHash": "10db0bdbae6d1441d1d32c4d2086d4f6df86714f055e18cb4f1352412bcdb3fc",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Election Commission",
+				"Democracy",
+				"Protest",
+				"Satire",
+				"Civic Duty",
+				"Political Humor",
+				"India"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Election Commission",
+				"Democracy",
+				"Protest",
+				"Satire",
+				"Civic Duty",
+				"Political Humor",
+				"India"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

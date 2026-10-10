@@ -6926,6 +6926,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-ballot-and-the-banana-peel.jpg",
+			"src": "/thumbnail/art-the-ballot-and-the-banana-peel.jpg",
+			"bytes": 100925,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-baroque-minutiae.jpg",
 			"src": "/thumbnail/art-the-baroque-minutiae.jpg",
 			"bytes": 281989,
