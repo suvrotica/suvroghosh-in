@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T20:12:27.965182+00:00",
+  "generatedAt": "2026-10-11T02:35:34.084602+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2804,6 +2804,29 @@
         "Water",
         "Hotel",
         "Hotels"
+      ],
+      "wordCount": 130
+    },
+    "dashami-the-city-that-darkness-ate": {
+      "generatedAt": "2026-10-11T02:35:32.063970+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/dashami-the-city-that-darkness-ate.svg",
+      "source": "src/lib/posts/dashami-the-city-that-darkness-ate.md",
+      "sourceHash": "c3af47b0c3dc078fac57692ee2102a79002756050cb4901dc9493b090f157c41",
+      "sourceModified": "2026-10-11T02:34:45.023547+00:00",
+      "topWords": [
+        "House",
+        "Debabrata",
+        "Came",
+        "Warm",
+        "Hand",
+        "Voice",
+        "Man",
+        "Stood",
+        "Photograph",
+        "Water",
+        "Woman",
+        "Floor"
       ],
       "wordCount": 130
     },

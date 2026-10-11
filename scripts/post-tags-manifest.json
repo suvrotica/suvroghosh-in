@@ -13999,6 +13999,25 @@
 				"India"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/dashami-the-city-that-darkness-ate.md": {
+			"bodyHash": "76b7013100eadddd491040623127b1b88eff7f41702e5184c708dc56ba63b9e8",
+			"hashVersion": 2,
+			"revisionHash": "cf5cf249e413efdd1ae2c0278351be551d9f582a92e859a0b5b7b502bcd0d4e4",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Cosmic Horror",
+				"Apocalyptic",
+				"Memory",
+				"Green Paint",
+				"Always Forget",
+				"Debabrata",
+				"Deb",
+				"Shadow"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Cosmic Horror", "Apocalyptic", "Memory"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

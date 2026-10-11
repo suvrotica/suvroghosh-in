@@ -8202,6 +8202,22 @@
       "sourceHash": "e85762e4953ab29e2852773080ff2a948596a766b02985ecff4e9a39f4532adf",
       "width": 1536
     },
+    "static/images/dashami-the-city-that-darkness-ate.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 176419,
+      "outputHash": "0108e9a605f173251af96930668d264a68fa0adc615460c74f5d837d88374840",
+      "psnrDb": 36.07,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 225366,
+      "sourceHash": "9f8ecdb552612c70a9845e12e9f8ea0a5757daa8276b4248b08709275f65bdc3",
+      "width": 1024
+    },
     "static/images/doldrums-of-the-carcass.png": {
       "format": "PNG",
       "height": 1500,
