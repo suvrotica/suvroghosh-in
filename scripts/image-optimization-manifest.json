@@ -13171,6 +13171,22 @@
       "sourceHash": "1a98823e284ecfa262ada96e5bf4e1ce27346b0d0b6fb769130efdd5ae4dc03e",
       "width": 1200
     },
+    "static/thumbnail/art-alienation-during-durga-puja-and-democracy.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 188556,
+      "outputHash": "4f5817197b0416fbf8c4bfaf69d3b2eabca2e15ead79bc03a525d8c019b5edec",
+      "psnrDb": 34.69,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 245254,
+      "sourceHash": "076ad1acb7b148de03030b8a0bce82e3848f4d1a9517d1241f83a6178cc216ab",
+      "width": 1024
+    },
     "static/thumbnail/art-america-and-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,

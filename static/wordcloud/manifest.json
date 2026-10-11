@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T02:35:34.084602+00:00",
+  "generatedAt": "2026-10-11T14:04:38.037659+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -642,6 +642,29 @@
         "Memory",
         "Training",
         "Grows"
+      ],
+      "wordCount": 130
+    },
+    "alienation-during-durga-puja-and-democracy": {
+      "generatedAt": "2026-10-11T14:04:35.595042+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/alienation-during-durga-puja-and-democracy.svg",
+      "source": "src/lib/posts/alienation-during-durga-puja-and-democracy.md",
+      "sourceHash": "01f731b116e12adcdd073aabf950d696efeb5c2b078725a1506d65c90a9d4322",
+      "sourceModified": "2026-10-11T14:02:40.514271+00:00",
+      "topWords": [
+        "Room",
+        "Goddess",
+        "Somebody",
+        "Feel",
+        "Even",
+        "Demand",
+        "Lights",
+        "Paid",
+        "Work",
+        "Believe",
+        "Let",
+        "Getting"
       ],
       "wordCount": 130
     },

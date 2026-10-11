@@ -14018,6 +14018,36 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Cosmic Horror", "Apocalyptic", "Memory"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/alienation-during-durga-puja-and-democracy.md": {
+			"bodyHash": "ec8b813c43ff65f7c6ca5edc6965bdc8a3565fd8b89b85e0750924d513ef0e53",
+			"hashVersion": 2,
+			"revisionHash": "da3681750bf2d9350a99b5c0b4c4483ea99653f9fb8aab57fbc029b35693d71b",
+			"generatedTags": [
+				"Alienation",
+				"Unemployment",
+				"Durga Puja",
+				"Democracy",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"Satire",
+				"Bipolar Disorder",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Alienation",
+				"Unemployment",
+				"Durga Puja",
+				"Democracy",
+				"Mental Health",
+				"Calcutta",
+				"Kolkata",
+				"Satire",
+				"Bipolar Disorder",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

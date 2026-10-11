@@ -5197,6 +5197,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-alienation-during-durga-puja-and-democracy.jpg",
+			"src": "/thumbnail/art-alienation-during-durga-puja-and-democracy.jpg",
+			"bytes": 188556,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-america-and-calcutta.jpg",
 			"src": "/thumbnail/art-america-and-calcutta.jpg",
 			"bytes": 111423,
