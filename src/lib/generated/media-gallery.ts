@@ -7549,6 +7549,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-the-three-ts-and-the-three-fs-in-modis-india.jpg",
+			"src": "/thumbnail/art-the-three-ts-and-the-three-fs-in-modis-india.jpg",
+			"bytes": 195411,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-tongue-that-licks-the-future.jpg",
 			"src": "/thumbnail/art-the-tongue-that-licks-the-future.jpg",
 			"bytes": 390991,

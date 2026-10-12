@@ -14103,6 +14103,36 @@
 				"Exponential Catastrophe"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-three-ts-and-the-three-fs-in-modis-india.md": {
+			"bodyHash": "ac27a943df603c7dba7ebb7ab1fbbac8c2529ac430180d5a92e9875b54008cf5",
+			"hashVersion": 2,
+			"revisionHash": "532d139f1e37cb9c80909501b6b98e1fc2a2e205ed17203eeb8952ce41594ce7",
+			"generatedTags": [
+				"India",
+				"Politics",
+				"Democracy",
+				"Satire",
+				"Modi",
+				"Media",
+				"Censorship",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"India",
+				"Politics",
+				"Democracy",
+				"Satire",
+				"Modi",
+				"Media",
+				"Censorship",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

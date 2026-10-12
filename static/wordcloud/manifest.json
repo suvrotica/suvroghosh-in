@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T11:55:06.385204+00:00",
+  "generatedAt": "2026-10-12T15:28:53.582186+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -13752,6 +13752,29 @@
         "Nothing",
         "Red",
         "Thirst"
+      ],
+      "wordCount": 130
+    },
+    "the-three-ts-and-the-three-fs-in-modis-india": {
+      "generatedAt": "2026-10-12T15:28:52.121766+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-three-ts-and-the-three-fs-in-modis-india.svg",
+      "source": "src/lib/posts/the-three-ts-and-the-three-fs-in-modis-india.md",
+      "sourceHash": "7d90ac4465ce18e22e3ecda6d700d94ccc91d505abf7a9cb1385bed068d1b360",
+      "sourceModified": "2026-10-12T15:23:46.016441+00:00",
+      "topWords": [
+        "Question",
+        "Three",
+        "Fear",
+        "Person",
+        "Money",
+        "Becomes",
+        "Trust",
+        "Falsehood",
+        "Favoritism",
+        "Room",
+        "National",
+        "Work"
       ],
       "wordCount": 130
     },

@@ -18547,6 +18547,22 @@
       "sourceHash": "4f5717edc9a8cf4b6045234d30cbd9401ab61b88029c0212f048b35b0e367bed",
       "width": 1200
     },
+    "static/thumbnail/art-the-three-ts-and-the-three-fs-in-modis-india.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 195411,
+      "outputHash": "67ea7a625a2f9f351719b4140c87cc8cbfe7cf3aeb51d25b1f47e5f0cce5423e",
+      "psnrDb": 35.16,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 249693,
+      "sourceHash": "cb7cb88c4abff932644cc773f67a968f965f96c0663ea3139ec99d318356e903",
+      "width": 1024
+    },
     "static/thumbnail/art-the-tongue-that-licks-the-future.jpg": {
       "format": "JPEG",
       "height": 1496,
