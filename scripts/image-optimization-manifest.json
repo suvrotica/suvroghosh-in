@@ -9911,6 +9911,22 @@
       "sourceHash": "9d989444aa839a2ab739547f192072aed90ab5a135f853a760390fcfd63b1559",
       "width": 1280
     },
+    "static/images/the-last-supper-of-calcutta.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 212868,
+      "outputHash": "ad07f012e5f7acd74d288394bb17c1ad668809e2a6052d55902852ed646b3a46",
+      "psnrDb": 35.04,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 271639,
+      "sourceHash": "b92e837c2aa44cee19771b75b4c12faf463a8790fe1b9fe6daeb3e405ec9d8c9",
+      "width": 1024
+    },
     "static/images/the-million-dollar-equation.jpg": {
       "format": "JPEG",
       "height": 576,

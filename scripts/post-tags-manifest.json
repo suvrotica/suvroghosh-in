@@ -14078,6 +14078,31 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-last-supper-of-calcutta.md": {
+			"bodyHash": "3e42046e7f4d4f9df8939205dbef9af94be58b077b8aabdd1fbc42d5f63d9e9f",
+			"hashVersion": 2,
+			"revisionHash": "38720160fb6a013750c07ad6071db9afa3ac6f32de1a5fd6ce66665dae3dc6b9",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Apocalyptic Body Horror",
+				"Grotesque Satire",
+				"Exponential Catastrophe",
+				"Arup",
+				"Priya",
+				"Strand",
+				"Noodle",
+				"Noodles"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Apocalyptic Body Horror",
+				"Grotesque Satire",
+				"Exponential Catastrophe"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

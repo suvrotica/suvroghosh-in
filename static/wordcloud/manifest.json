@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T10:16:28.657648+00:00",
+  "generatedAt": "2026-10-12T11:55:06.385204+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11774,6 +11774,29 @@
         "Opening",
         "Voice",
         "Beneath"
+      ],
+      "wordCount": 130
+    },
+    "the-last-supper-of-calcutta": {
+      "generatedAt": "2026-10-12T11:55:05.832821+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-last-supper-of-calcutta.svg",
+      "source": "src/lib/posts/the-last-supper-of-calcutta.md",
+      "sourceHash": "467af5a34ed5bea91d0272708ec3abf825ef74a12c0c348efdb59519b7108bed",
+      "sourceModified": "2026-10-12T11:52:30.609799+00:00",
+      "topWords": [
+        "Arup",
+        "Beneath",
+        "Priya",
+        "First",
+        "Skin",
+        "Water",
+        "White",
+        "Away",
+        "Strand",
+        "Stopped",
+        "Someone",
+        "Material"
       ],
       "wordCount": 130
     },
