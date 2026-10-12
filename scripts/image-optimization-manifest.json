@@ -15891,6 +15891,22 @@
       "sourceHash": "ac0980bd2c5ea53e0bb93c8073e740469399c8e5533aa12721f153d7484cdd0f",
       "width": 819
     },
+    "static/thumbnail/art-my-puja-guest-has-a-spine.jpg": {
+      "format": "JPEG",
+      "height": 1024,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 1024,
+      "originalWidth": 1000,
+      "outputBytes": 346403,
+      "outputHash": "39324f279a11198dd6625adfa8790dfc1d484cbc86757e187878f542fdfdd069",
+      "psnrDb": 37.98,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 426088,
+      "sourceHash": "6bc57311f68ffa3a5572186ffcb5bbfa95102a5f82155cc887a6044af40d6d79",
+      "width": 1000
+    },
     "static/thumbnail/art-my-resume-is-a-lossy-compression-algorithm.jpg": {
       "format": "JPEG",
       "height": 783,

@@ -14048,6 +14048,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/my-puja-guest-has-a-spine.md": {
+			"bodyHash": "70f16cfeee1df614aa25da4fe0c7264b867a6eaca174fe0f0ce19e74d5113220",
+			"hashVersion": 2,
+			"revisionHash": "285bc517a43cae8d8a2a6adfaa8d493086e1cd3148ddcefdec9c17851c13c4ea",
+			"generatedTags": [
+				"Reading",
+				"Books",
+				"Sciencia",
+				"Science",
+				"Durga Puja",
+				"Bipolar Depression",
+				"Loneliness",
+				"Precarity",
+				"Calcutta",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Reading",
+				"Books",
+				"Sciencia",
+				"Science",
+				"Durga Puja",
+				"Bipolar Depression",
+				"Loneliness",
+				"Precarity",
+				"Calcutta",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

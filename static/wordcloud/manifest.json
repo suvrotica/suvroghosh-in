@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-11T14:04:38.037659+00:00",
+  "generatedAt": "2026-10-12T10:16:28.657648+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6576,6 +6576,29 @@
         "Data",
         "Artham",
         "Merely"
+      ],
+      "wordCount": 130
+    },
+    "my-puja-guest-has-a-spine": {
+      "generatedAt": "2026-10-12T10:16:27.442342+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/my-puja-guest-has-a-spine.svg",
+      "source": "src/lib/posts/my-puja-guest-has-a-spine.md",
+      "sourceHash": "cc925e381bb1a67094378f3ed479d4d756637da63cc2ac6ee523bcfb1a66a09c",
+      "sourceModified": "2026-10-12T10:13:34.285816+00:00",
+      "topWords": [
+        "Book",
+        "Motion",
+        "Bought",
+        "Need",
+        "Becomes",
+        "Sentence",
+        "Explanation",
+        "Purchase",
+        "Person",
+        "Enough",
+        "Diagram",
+        "Liquid"
       ],
       "wordCount": 130
     },

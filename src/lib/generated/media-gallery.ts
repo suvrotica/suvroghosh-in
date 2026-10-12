@@ -6387,6 +6387,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1024
 		},
 		{
+			"name": "art-my-puja-guest-has-a-spine.jpg",
+			"src": "/thumbnail/art-my-puja-guest-has-a-spine.jpg",
+			"bytes": 346403,
+			"width": 1000,
+			"height": 1024
+		},
+		{
 			"name": "art-my-resume-is-a-lossy-compression-algorithm.jpg",
 			"src": "/thumbnail/art-my-resume-is-a-lossy-compression-algorithm.jpg",
 			"bytes": 103473,
