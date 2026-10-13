@@ -14163,6 +14163,33 @@
 				"Blogging"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/mishti-the-sweetest-death.md": {
+			"bodyHash": "899eccdf8f928314ac77b4a92ac72d55390c888f43397e9412bb7bacb794b2f9",
+			"hashVersion": 2,
+			"revisionHash": "df591b76047d3e0da33567690e458aae62a8ee81a21616d79bce65f32c914083",
+			"generatedTags": [
+				"Short Fiction",
+				"Kolkata",
+				"Durga Puja",
+				"Apocalyptic Horror",
+				"Body Horror",
+				"Crime",
+				"SuvroGhosh",
+				"Blood Offering",
+				"Rupa",
+				"Ishani"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Kolkata",
+				"Durga Puja",
+				"Apocalyptic Horror",
+				"Body Horror",
+				"Crime",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

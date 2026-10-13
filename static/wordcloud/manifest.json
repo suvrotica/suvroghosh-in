@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T10:49:57.742794+00:00",
+  "generatedAt": "2026-10-13T13:56:49.214766+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -6323,6 +6323,29 @@
         "Somebody",
         "Bring",
         "Mindfulness"
+      ],
+      "wordCount": 130
+    },
+    "mishti-the-sweetest-death": {
+      "generatedAt": "2026-10-13T13:56:47.930268+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/mishti-the-sweetest-death.svg",
+      "source": "src/lib/posts/mishti-the-sweetest-death.md",
+      "sourceHash": "b0d25d425ddeb186334a5d42c42f0acb61e8cda068cd4e26780c93ff2045db3d",
+      "sourceModified": "2026-10-13T13:56:30.753169+00:00",
+      "topWords": [
+        "Rupa",
+        "Ishani",
+        "Arko",
+        "Lahiri",
+        "Behind",
+        "Hands",
+        "Beside",
+        "Haripada",
+        "Chaiti",
+        "Beneath",
+        "Woman",
+        "Patients"
       ],
       "wordCount": 130
     },

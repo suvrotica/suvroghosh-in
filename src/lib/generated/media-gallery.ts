@@ -4024,6 +4024,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "mishti-the-sweetest-death.jpg",
+			"src": "/images/mishti-the-sweetest-death.jpg",
+			"bytes": 206066,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "monsoon-monotony-malignant-prostate-providence.jpg",
 			"src": "/images/monsoon-monotony-malignant-prostate-providence.jpg",
 			"bytes": 387552,

@@ -9150,6 +9150,22 @@
       "sourceHash": "d88e2ac9d7df55a3bcb447b284fcfcee710bf0e9bc7158f00476857d07b5071e",
       "width": 1200
     },
+    "static/images/mishti-the-sweetest-death.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 206066,
+      "outputHash": "792c01214111f8ed3f3feb9275166a9bbd2245c3c8051ab5eb0059eff31e228d",
+      "psnrDb": 35.2,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 264558,
+      "sourceHash": "ee83cf5f9cc0f1e066845a98f4f35990a1987d68534532bde75e4e4751a9f731",
+      "width": 1024
+    },
     "static/images/monsoon-monotony-malignant-prostate-providence.jpg": {
       "format": "JPEG",
       "height": 1440,
