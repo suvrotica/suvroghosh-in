@@ -14190,6 +14190,34 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-five-days-of-rupture.md": {
+			"bodyHash": "1809df73f3f1919e0c9342c814d4ba8345d7a94930ade591b3c8abefad6a61f0",
+			"hashVersion": 2,
+			"revisionHash": "301e0649dc20feb713ea15d53802d328aa3ea2ca11e1bfcb45e03289c7ad6ec2",
+			"generatedTags": [
+				"Short Fiction",
+				"Horror Novella",
+				"Body Horror",
+				"Medical Thriller",
+				"Apocalyptic Fiction",
+				"Calcutta",
+				"Durga Puja",
+				"SuvroGhosh",
+				"MOKSHA SLIM",
+				"Ajit Dey"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Horror Novella",
+				"Body Horror",
+				"Medical Thriller",
+				"Apocalyptic Fiction",
+				"Calcutta",
+				"Durga Puja",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

@@ -9879,6 +9879,22 @@
       "sourceHash": "247fdfa7d5d6415d9c0b37cccf774da8106547eb07954cb4cc7a40bb2a98b5d4",
       "width": 1024
     },
+    "static/images/the-five-days-of-rupture.jpg": {
+      "format": "JPEG",
+      "height": 575,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 575,
+      "originalWidth": 1024,
+      "outputBytes": 161551,
+      "outputHash": "386965f64004869602508c164437bd060aeaff776290371a0bb7ec67460e7613",
+      "psnrDb": 36.79,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 205961,
+      "sourceHash": "955fdc07ac1f0f44bdf4b7de0a592db5e8c91552386d3b2814464084deabdbee",
+      "width": 1024
+    },
     "static/images/the-foam-at-the-corner.jpg": {
       "format": "JPEG",
       "height": 1536,

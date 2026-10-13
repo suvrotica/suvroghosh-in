@@ -4353,6 +4353,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "the-five-days-of-rupture.jpg",
+			"src": "/images/the-five-days-of-rupture.jpg",
+			"bytes": 161551,
+			"width": 1024,
+			"height": 575
+		},
+		{
 			"name": "the-foam-at-the-corner.jpg",
 			"src": "/images/the-foam-at-the-corner.jpg",
 			"bytes": 418312,

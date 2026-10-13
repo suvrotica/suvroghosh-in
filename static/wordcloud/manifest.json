@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T13:56:49.214766+00:00",
+  "generatedAt": "2026-10-13T16:25:16.867163+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -11061,6 +11061,29 @@
         "Man",
         "Stopped",
         "Chicken"
+      ],
+      "wordCount": 130
+    },
+    "the-five-days-of-rupture": {
+      "generatedAt": "2026-10-13T16:25:16.667807+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-five-days-of-rupture.svg",
+      "source": "src/lib/posts/the-five-days-of-rupture.md",
+      "sourceHash": "dfe8ce4f5f30ffdeabac25a3c6b0acce788379d2d89f9fed17372ec13c73b883",
+      "sourceModified": "2026-10-13T16:24:54.700805+00:00",
+      "topWords": [
+        "Ishani",
+        "Asked",
+        "Tara",
+        "Farzana",
+        "Sen",
+        "First",
+        "Biren",
+        "Someone",
+        "Man",
+        "Mother",
+        "Came",
+        "Room"
       ],
       "wordCount": 130
     },
