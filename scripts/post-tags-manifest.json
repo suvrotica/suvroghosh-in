@@ -14133,6 +14133,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/thinking-aloud-on-the-eve-of-the-end-of-thinking.md": {
+			"bodyHash": "54df36bfc9d10804fed546faf1e7a8db9562617e8bf670e88c1640672d1c7fab",
+			"hashVersion": 2,
+			"revisionHash": "94a9c4dc4474e551c5b456cf126e58c9dd74832731e81e6fc934594ee3803de7",
+			"generatedTags": [
+				"Artificial Intelligence",
+				"Philosophy",
+				"Education",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Thinking",
+				"Technology",
+				"Society",
+				"Blogging"
+			],
+			"pinnedTags": [
+				"Artificial Intelligence",
+				"Philosophy",
+				"Education",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Thinking",
+				"Technology",
+				"Society",
+				"Blogging"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

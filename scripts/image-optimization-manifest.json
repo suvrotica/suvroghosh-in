@@ -18787,6 +18787,22 @@
       "sourceHash": "b15812e2060a3f4076d5152309b4602ac07eb16797f806f2c6d4c37f14bc0dce",
       "width": 1200
     },
+    "static/thumbnail/art-thinking-aloud-on-the-eve-of-the-end-of-thinking.jpg": {
+      "format": "JPEG",
+      "height": 575,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 575,
+      "originalWidth": 1024,
+      "outputBytes": 83893,
+      "outputHash": "e12fafb8a1918588ce074247c45eddf8c7974de568ade4f9be3362367de50c7e",
+      "psnrDb": 37.02,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 151486,
+      "sourceHash": "2bbe75751df07a4f9415040e2c1477332434bc497b68731f025f3b98177560fc",
+      "width": 1024
+    },
     "static/thumbnail/art-this-blogs-history.jpg": {
       "format": "JPEG",
       "height": 800,

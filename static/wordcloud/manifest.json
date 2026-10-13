@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T15:28:53.582186+00:00",
+  "generatedAt": "2026-10-13T10:49:57.742794+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -14626,6 +14626,29 @@
         "Often",
         "Bengali",
         "Gas"
+      ],
+      "wordCount": 130
+    },
+    "thinking-aloud-on-the-eve-of-the-end-of-thinking": {
+      "generatedAt": "2026-10-13T10:49:57.561160+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/thinking-aloud-on-the-eve-of-the-end-of-thinking.svg",
+      "source": "src/lib/posts/thinking-aloud-on-the-eve-of-the-end-of-thinking.md",
+      "sourceHash": "a40164853ed17135603b5a3813dca4cc9c2eca45bd5479a9f59de9fd5f2b1703",
+      "sourceModified": "2026-10-13T10:48:38.756027+00:00",
+      "topWords": [
+        "Thought",
+        "Person",
+        "Enough",
+        "Work",
+        "Find",
+        "Much",
+        "Trying",
+        "Discover",
+        "Think",
+        "Question",
+        "Human",
+        "Somewhere"
       ],
       "wordCount": 130
     },

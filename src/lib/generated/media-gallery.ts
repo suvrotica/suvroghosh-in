@@ -7654,6 +7654,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-thinking-aloud-on-the-eve-of-the-end-of-thinking.jpg",
+			"src": "/thumbnail/art-thinking-aloud-on-the-eve-of-the-end-of-thinking.jpg",
+			"bytes": 83893,
+			"width": 1024,
+			"height": 575
+		},
+		{
 			"name": "art-this-blogs-history.jpg",
 			"src": "/thumbnail/art-this-blogs-history.jpg",
 			"bytes": 160062,
