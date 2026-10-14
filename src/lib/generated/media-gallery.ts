@@ -6639,6 +6639,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-puja-pandal-din-and-the-loneliness-of-a-bipolar-brain.jpg",
+			"src": "/thumbnail/art-puja-pandal-din-and-the-loneliness-of-a-bipolar-brain.jpg",
+			"bytes": 76270,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-questions-change-systems-uthscsa-va.jpg",
 			"src": "/thumbnail/art-questions-change-systems-uthscsa-va.jpg",
 			"bytes": 185005,

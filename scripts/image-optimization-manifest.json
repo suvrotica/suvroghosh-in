@@ -16467,6 +16467,22 @@
       "sourceHash": "3bbab1f109b2d7e53350de825f3c65b7831b81493c5de7fd52adcee4a2b0d813",
       "width": 1200
     },
+    "static/thumbnail/art-puja-pandal-din-and-the-loneliness-of-a-bipolar-brain.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 76270,
+      "outputHash": "57a8c2f663e108c2545a19090b915aa4a9dde71e74e3076684b108158a4ec923",
+      "psnrDb": 36.94,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 142596,
+      "sourceHash": "900d64592bef985f9d5a87073e5a9d61da839c7dfdd98d6e94374c21f873086e",
+      "width": 1024
+    },
     "static/thumbnail/art-questions-change-systems-uthscsa-va.jpg": {
       "format": "JPEG",
       "height": 800,

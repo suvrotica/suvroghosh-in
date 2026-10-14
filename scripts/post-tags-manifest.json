@@ -14246,6 +14246,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/puja-pandal-din-and-the-loneliness-of-a-bipolar-brain.md": {
+			"bodyHash": "99277f69c78b400dab21525851fede883238ddaa39bb309835c11d30d621c74c",
+			"hashVersion": 2,
+			"revisionHash": "3015262d9a7842516677a9acebb667bc3eb491f2f85758a805d9576a81976925",
+			"generatedTags": [
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Bipolar Disorder",
+				"Mental Health",
+				"Satire",
+				"Urban Life",
+				"SuvroGhosh",
+				"Loneliness",
+				"Festivals"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Bipolar Disorder",
+				"Mental Health",
+				"Satire",
+				"Urban Life",
+				"SuvroGhosh",
+				"Loneliness",
+				"Festivals"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

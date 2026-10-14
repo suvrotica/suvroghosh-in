@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T13:09:25.245676+00:00",
+  "generatedAt": "2026-10-14T15:01:09.475155+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7588,6 +7588,29 @@
         "Awareness",
         "Treatment",
         "Symptoms"
+      ],
+      "wordCount": 130
+    },
+    "puja-pandal-din-and-the-loneliness-of-a-bipolar-brain": {
+      "generatedAt": "2026-10-14T15:01:02.335059+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/puja-pandal-din-and-the-loneliness-of-a-bipolar-brain.svg",
+      "source": "src/lib/posts/puja-pandal-din-and-the-loneliness-of-a-bipolar-brain.md",
+      "sourceHash": "199ff73c5164c2a65ece79cfa43ca0a17d038f22eecb1e630eb8253e33d7b22f",
+      "sourceModified": "2026-10-14T14:59:48.355553+00:00",
+      "topWords": [
+        "Feel",
+        "Somebody",
+        "Even",
+        "Evening",
+        "Loneliness",
+        "Music",
+        "Windows",
+        "Anybody",
+        "Room",
+        "Age",
+        "Puja",
+        "Outside"
       ],
       "wordCount": 130
     },
