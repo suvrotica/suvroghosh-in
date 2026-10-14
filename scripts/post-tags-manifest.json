@@ -14218,6 +14218,34 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-year-we-breathed-her-in.md": {
+			"bodyHash": "5ca127a2b82cb579b3f84277b748988f3818df42c9d73c01914c81bcc3a3b750",
+			"hashVersion": 2,
+			"revisionHash": "d836ee9102d6fbab10d7f58fadbbd4f173d3517f1d5292489c4ab4ad2af8cd0d",
+			"generatedTags": [
+				"Short Fiction",
+				"Psychological Horror",
+				"Medical Horror",
+				"Bengali Gothic",
+				"Durga Puja",
+				"Kolkata",
+				"Memory",
+				"SuvroGhosh",
+				"Five-day Plot Treatment",
+				"Principal Reversals"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Psychological Horror",
+				"Medical Horror",
+				"Bengali Gothic",
+				"Durga Puja",
+				"Kolkata",
+				"Memory",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

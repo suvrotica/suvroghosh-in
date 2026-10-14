@@ -10086,6 +10086,22 @@
       "sourceHash": "f1dec40dce58d4a4bceb6073ab8262d9187227dad7f6717215932be362060ff2",
       "width": 1448
     },
+    "static/images/the-year-we-breathed-her-in.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 168143,
+      "outputHash": "caebf60c90770cccd28575c2e212e8efcb400b5ffb38ed48ed4c2efe939837e0",
+      "psnrDb": 36.51,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 213511,
+      "sourceHash": "394e26b0d0b6cb7e60a0808c81d0e5a6f0760fa05de10cec74a2959cfaf712fd",
+      "width": 1024
+    },
     "static/images/thinking-outside-the-box-perlin-flower.png": {
       "format": "PNG",
       "height": 630,

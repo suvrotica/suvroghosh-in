@@ -4444,6 +4444,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1086
 		},
 		{
+			"name": "the-year-we-breathed-her-in.jpg",
+			"src": "/images/the-year-we-breathed-her-in.jpg",
+			"bytes": 168143,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "thinking-outside-the-box-perlin-flower.png",
 			"src": "/images/thinking-outside-the-box-perlin-flower.png",
 			"bytes": 208875,
