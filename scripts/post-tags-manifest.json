@@ -14276,6 +14276,36 @@
 				"Festivals"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/cant-sleep-durga-puja-poverty.md": {
+			"bodyHash": "f66d0cd7a70bb7624f9a6bab391442cd054f29632522bd61578973f92a34f30a",
+			"hashVersion": 2,
+			"revisionHash": "4c382357b2bd7abd4f2413e3fca5365344468c8b27660478012aeb5b101a4017",
+			"generatedTags": [
+				"Insomnia",
+				"Poverty",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Mental Health",
+				"Depression",
+				"Class Divide",
+				"SuvroGhosh",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Insomnia",
+				"Poverty",
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Mental Health",
+				"Depression",
+				"Class Divide",
+				"SuvroGhosh",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

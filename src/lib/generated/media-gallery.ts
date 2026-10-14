@@ -5547,6 +5547,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-cant-sleep-durga-puja-poverty.jpg",
+			"src": "/thumbnail/art-cant-sleep-durga-puja-poverty.jpg",
+			"bytes": 160645,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-capex-and-the-geometry-of-obsolescence.jpg",
 			"src": "/thumbnail/art-capex-and-the-geometry-of-obsolescence.jpg",
 			"bytes": 175512,

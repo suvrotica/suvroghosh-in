@@ -13971,6 +13971,22 @@
       "sourceHash": "6f77f218fb32056776e9b3e63092cb34d6dee637691960408333cb52b6c2d64e",
       "width": 1200
     },
+    "static/thumbnail/art-cant-sleep-durga-puja-poverty.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 160645,
+      "outputHash": "277153dc61bbfbd500abdf07feb3972f832bedf67e876fcddd8e804130b31b1e",
+      "psnrDb": 36.51,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 204736,
+      "sourceHash": "85eb470cfa65ad071d352cf1b092d952963ef45281d39bdb6c803b1066d597cd",
+      "width": 1024
+    },
     "static/thumbnail/art-capex-and-the-geometry-of-obsolescence.jpg": {
       "format": "JPEG",
       "height": 800,

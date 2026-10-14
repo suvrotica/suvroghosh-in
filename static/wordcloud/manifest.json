@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T15:01:09.475155+00:00",
+  "generatedAt": "2026-10-14T20:40:37.756841+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2160,6 +2160,29 @@
         "Nostalgia",
         "Brain",
         "Even"
+      ],
+      "wordCount": 130
+    },
+    "cant-sleep-durga-puja-poverty": {
+      "generatedAt": "2026-10-14T20:40:35.589861+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/cant-sleep-durga-puja-poverty.svg",
+      "source": "src/lib/posts/cant-sleep-durga-puja-poverty.md",
+      "sourceHash": "736e7655a7105ac85e047c9cbc7977d6e55e691060cac93ac5be577988ac9593",
+      "sourceModified": "2026-10-14T20:39:57.581416+00:00",
+      "topWords": [
+        "Don",
+        "Month",
+        "Enough",
+        "Middle",
+        "Class",
+        "Even",
+        "Work",
+        "Money",
+        "Ordinary",
+        "Explain",
+        "Room",
+        "Next"
       ],
       "wordCount": 130
     },
