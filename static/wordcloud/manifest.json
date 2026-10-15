@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T11:45:25.007915+00:00",
+  "generatedAt": "2026-10-15T23:08:40.512695+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -343,6 +343,29 @@
         "Voice",
         "Needs",
         "Synthetic"
+      ],
+      "wordCount": 130
+    },
+    "ai-is-here-what-now": {
+      "generatedAt": "2026-10-15T23:08:24.080775+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/ai-is-here-what-now.svg",
+      "source": "src/lib/posts/ai-is-here-what-now.md",
+      "sourceHash": "33e0c2f039f2394b2599bdaa29c468cee13afefd84be6f892b15e1642c593d6e",
+      "sourceModified": "2026-10-15T23:07:13.459584+00:00",
+      "topWords": [
+        "Work",
+        "Years",
+        "Little",
+        "Money",
+        "Explain",
+        "Tired",
+        "Fucking",
+        "Trying",
+        "Now",
+        "Enough",
+        "AI",
+        "Somebody"
       ],
       "wordCount": 130
     },

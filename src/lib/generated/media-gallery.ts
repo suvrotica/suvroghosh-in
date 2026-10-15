@@ -5169,6 +5169,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-ai-is-here-what-now.jpg",
+			"src": "/thumbnail/art-ai-is-here-what-now.jpg",
+			"bytes": 153569,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-ai-layoff-trap-firing-your-customers.jpg",
 			"src": "/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg",
 			"bytes": 139001,

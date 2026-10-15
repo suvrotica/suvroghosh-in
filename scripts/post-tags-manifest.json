@@ -14336,6 +14336,36 @@
 				"Technology"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ai-is-here-what-now.md": {
+			"bodyHash": "765eed7e4b44202349ac538e83fa74d337886189fe0d70509c9aa8911cd53fe7",
+			"hashVersion": 2,
+			"revisionHash": "a509a3fa5f167529bee39d429a3b9c56599bb2fbfa902b84e2abdd43c2352d63",
+			"generatedTags": [
+				"AI",
+				"Automation",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Unemployment",
+				"Insomnia",
+				"Economics",
+				"Satire",
+				"FutureOfWork"
+			],
+			"pinnedTags": [
+				"AI",
+				"Automation",
+				"Calcutta",
+				"Kolkata",
+				"SuvroGhosh",
+				"Unemployment",
+				"Insomnia",
+				"Economics",
+				"Satire",
+				"FutureOfWork"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

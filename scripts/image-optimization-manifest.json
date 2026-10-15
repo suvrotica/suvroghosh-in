@@ -13107,6 +13107,22 @@
       "sourceHash": "52cc83ed3e98f5755c4f3b06c29c38023f23346c009f937881471ec17385f941",
       "width": 1200
     },
+    "static/thumbnail/art-ai-is-here-what-now.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 153569,
+      "outputHash": "e58dc4a3e0ef2056a11bd1a378309beb6400c9b751ef1c68af4de8031b89d0d9",
+      "psnrDb": 37.06,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 193546,
+      "sourceHash": "1b2d5eddc18328227305905767afbb0c0962d49daa7b10d030e74e3b8fe80486",
+      "width": 1024
+    },
     "static/thumbnail/art-ai-layoff-trap-firing-your-customers.jpg": {
       "format": "JPEG",
       "height": 800,
