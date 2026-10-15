@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T20:40:37.756841+00:00",
+  "generatedAt": "2026-10-15T11:45:25.007915+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12786,6 +12786,29 @@
         "House",
         "Man",
         "Children"
+      ],
+      "wordCount": 130
+    },
+    "the-oracle-has-indigestion": {
+      "generatedAt": "2026-10-15T11:45:22.391878+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-oracle-has-indigestion.svg",
+      "source": "src/lib/posts/the-oracle-has-indigestion.md",
+      "sourceHash": "46b2f1108578f499cbfc9bd4afb1d5bcc4e2e2923f1573b817e3ed4d130288b8",
+      "sourceModified": "2026-10-15T11:44:31.959288+00:00",
+      "topWords": [
+        "Ask",
+        "Question",
+        "Enough",
+        "Much",
+        "Room",
+        "Say",
+        "Use",
+        "Paragraph",
+        "Find",
+        "Feel",
+        "Tired",
+        "Time"
       ],
       "wordCount": 130
     },

@@ -18275,6 +18275,22 @@
       "sourceHash": "c744e7399d9d1f0461e658afa35eb9bd660f2c9969e3dd58694063b5761c2af1",
       "width": 883
     },
+    "static/thumbnail/art-the-oracle-has-indigestion.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 95336,
+      "outputHash": "05b8cb2b5529dafd7a020d6b3ac42ccbb02d06c2a3bf5c7ad6eac2a6f47425e1",
+      "psnrDb": 36.13,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 172377,
+      "sourceHash": "942932c743529e15ac808a16f37528ae3a2b55c2d65af91281a3a246e442c2a3",
+      "width": 1024
+    },
     "static/thumbnail/art-the-ordinary-things.jpg": {
       "format": "JPEG",
       "height": 800,

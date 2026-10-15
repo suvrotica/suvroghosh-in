@@ -7430,6 +7430,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1263
 		},
 		{
+			"name": "art-the-oracle-has-indigestion.jpg",
+			"src": "/thumbnail/art-the-oracle-has-indigestion.jpg",
+			"bytes": 95336,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-the-ordinary-things.jpg",
 			"src": "/thumbnail/art-the-ordinary-things.jpg",
 			"bytes": 135845,
