@@ -14415,6 +14415,36 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Devouring", "Festival"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/durga-puja-the-great-hiatus-of-larceny.md": {
+			"bodyHash": "8c3c63221555aee13a1f282db47edd432c1381c3cd37fc18e7ed7a21ce946bff",
+			"hashVersion": 2,
+			"revisionHash": "4c0409031351c2a427235851c81d26c0d8f1992099af6c4c2c447a489d6f6cea",
+			"generatedTags": [
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Politics",
+				"Corruption",
+				"History",
+				"Religion",
+				"Democracy",
+				"Dissent",
+				"SuvroGhosh"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Calcutta",
+				"Kolkata",
+				"Politics",
+				"Corruption",
+				"History",
+				"Religion",
+				"Democracy",
+				"Dissent",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

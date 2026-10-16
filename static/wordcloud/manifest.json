@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T16:32:38.871029+00:00",
+  "generatedAt": "2026-10-16T21:16:43.183399+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -3264,6 +3264,29 @@
         "Evening",
         "Say",
         "Poor"
+      ],
+      "wordCount": 130
+    },
+    "durga-puja-the-great-hiatus-of-larceny": {
+      "generatedAt": "2026-10-16T21:16:41.173225+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/durga-puja-the-great-hiatus-of-larceny.svg",
+      "source": "src/lib/posts/durga-puja-the-great-hiatus-of-larceny.md",
+      "sourceHash": "e244c379c28230d5db235be874a753407048c0931f9e602daeeafd111d26acfe",
+      "sourceModified": "2026-10-16T21:15:40.188633+00:00",
+      "topWords": [
+        "Public",
+        "Puja",
+        "Money",
+        "Questions",
+        "Everyone",
+        "Next",
+        "Political",
+        "Days",
+        "Asking",
+        "Happiness",
+        "Bengal",
+        "Put"
       ],
       "wordCount": 130
     },

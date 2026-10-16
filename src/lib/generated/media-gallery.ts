@@ -5750,6 +5750,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "art-durga-puja-the-great-hiatus-of-larceny.jpg",
+			"src": "/thumbnail/art-durga-puja-the-great-hiatus-of-larceny.jpg",
+			"bytes": 155932,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-educated-boredom-horror.jpg",
 			"src": "/thumbnail/art-educated-boredom-horror.jpg",
 			"bytes": 255158,

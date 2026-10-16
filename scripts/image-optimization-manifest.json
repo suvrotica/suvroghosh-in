@@ -14435,6 +14435,22 @@
       "sourceHash": "3d7cb1b7513f8591c801f1193677775ff9d6d042ca64ce764664f6e1dd492992",
       "width": 1024
     },
+    "static/thumbnail/art-durga-puja-the-great-hiatus-of-larceny.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 155932,
+      "outputHash": "1d6c9d31c4242ae84d4baa7e3fc755374dcb8e50f8f0395facf2f04f4031d9a2",
+      "psnrDb": 37.45,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 195712,
+      "sourceHash": "c85d80a448e3bec6243f55b22900f8dd1a2ad039836fab1195324c03f5150a3e",
+      "width": 1024
+    },
     "static/thumbnail/art-educated-boredom-horror.jpg": {
       "format": "JPEG",
       "height": 800,
