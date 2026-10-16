@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T23:08:40.512695+00:00",
+  "generatedAt": "2026-10-16T14:23:55.693989+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8600,6 +8600,29 @@
         "Capital",
         "AI",
         "Prey"
+      ],
+      "wordCount": 130
+    },
+    "shashthi-with-the-curtains-down": {
+      "generatedAt": "2026-10-16T14:23:54.427111+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/shashthi-with-the-curtains-down.svg",
+      "source": "src/lib/posts/shashthi-with-the-curtains-down.md",
+      "sourceHash": "0768c147a400fbca9b93fee862f1a39c9dfac3b659c3f533e2f7a9945c272e73",
+      "sourceModified": "2026-10-16T14:22:52.495987+00:00",
+      "topWords": [
+        "Evening",
+        "Little",
+        "Days",
+        "Mind",
+        "Lights",
+        "Happy",
+        "Feel",
+        "Celebration",
+        "Festive",
+        "Sanjay",
+        "Work",
+        "Ordinary"
       ],
       "wordCount": 130
     },

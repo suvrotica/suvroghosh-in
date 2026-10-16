@@ -16883,6 +16883,22 @@
       "sourceHash": "b22113c008d717ff0d08295be89971e70ed381ed95b449a1980b710069acc237",
       "width": 1200
     },
+    "static/thumbnail/art-shashthi-with-the-curtains-down.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 87129,
+      "outputHash": "a67a13a167747183e0ce2657761d97942c76a7847e7a65a964ab30c6a1988e65",
+      "psnrDb": 36.23,
+      "quality": 78,
+      "resized": false,
+      "sourceBytes": 155292,
+      "sourceHash": "4cb3c7572516c4d39c1e196d90228b1b711c6c0195ed1cf7ad7f4bb75bc812d9",
+      "width": 1024
+    },
     "static/thumbnail/art-shiva-and-the-poison-in-the-throat.jpg": {
       "format": "JPEG",
       "height": 800,

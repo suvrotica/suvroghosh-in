@@ -6821,6 +6821,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-shashthi-with-the-curtains-down.jpg",
+			"src": "/thumbnail/art-shashthi-with-the-curtains-down.jpg",
+			"bytes": 87129,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-shiva-and-the-poison-in-the-throat.jpg",
 			"src": "/thumbnail/art-shiva-and-the-poison-in-the-throat.jpg",
 			"bytes": 114341,

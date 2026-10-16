@@ -14366,6 +14366,36 @@
 				"FutureOfWork"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/shashthi-with-the-curtains-down.md": {
+			"bodyHash": "8c11a7396c2ff894b4d6375d688dc5f3c8d9373e8b05dcf41bbe25c4719914e0",
+			"hashVersion": 2,
+			"revisionHash": "275bbaf36aa60ad83fde70df9875f6453aa7663b9a7b33f0582af2c64b29e49c",
+			"generatedTags": [
+				"Durga Puja",
+				"Shashthi",
+				"Poverty",
+				"Depression",
+				"Bipolar",
+				"Hawkers",
+				"Education",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Durga Puja",
+				"Shashthi",
+				"Poverty",
+				"Depression",
+				"Bipolar",
+				"Hawkers",
+				"Education",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
