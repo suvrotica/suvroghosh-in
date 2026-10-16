@@ -9752,6 +9752,22 @@
       "sourceHash": "d4e70b54ec8e0b7bf18f2e4088dd9a465326af5d65ec15d4164a7e5e967fe4c1",
       "width": 1024
     },
+    "static/images/sixty-feet-of-marigolds.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 193674,
+      "outputHash": "e58235ac9ee274b37a108077f40fe4941875db6ff5da2f6f0643cda75770df0d",
+      "psnrDb": 34.67,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 252283,
+      "sourceHash": "5fd0a786203b4e1fd4054bbccc46bb4d6e67c3eb3bf233c4306c9d027a4d677e",
+      "width": 1024
+    },
     "static/images/spacetime-laboratory-einstein-equations.webp": {
       "format": "WEBP",
       "height": 630,

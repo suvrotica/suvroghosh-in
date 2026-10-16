@@ -14396,6 +14396,25 @@
 				"suvroghosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/sixty-feet-of-marigolds.md": {
+			"bodyHash": "00ec9e87ded1a85b30a417ca144b528c5edbeaf65f17b0a032d0eeecccc715b7",
+			"hashVersion": 2,
+			"revisionHash": "c0509a7fefdfbbba266d2b1384c457e925fb164ffb25a566f2427ab34cb97dbb",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Body Horror",
+				"Devouring",
+				"Festival",
+				"Sixty Feet",
+				"Mou",
+				"Goddess",
+				"Flowers",
+				"Opened"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Devouring", "Festival"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

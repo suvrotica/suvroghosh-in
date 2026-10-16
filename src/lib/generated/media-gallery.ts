@@ -4297,6 +4297,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 576
 		},
 		{
+			"name": "sixty-feet-of-marigolds.jpg",
+			"src": "/images/sixty-feet-of-marigolds.jpg",
+			"bytes": 193674,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "spacetime-laboratory-einstein-equations.webp",
 			"src": "/images/spacetime-laboratory-einstein-equations.webp",
 			"bytes": 21508,
