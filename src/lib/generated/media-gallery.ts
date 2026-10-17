@@ -13,6 +13,13 @@ export interface MediaGalleryAsset {
 export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 	"images": [
 		{
+			"name": "ashruto-the-unheard.jpg",
+			"src": "/images/ashruto-the-unheard.jpg",
+			"bytes": 144849,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "ashtami-approach.jpg",
 			"src": "/images/ashtami-approach.jpg",
 			"bytes": 153729,

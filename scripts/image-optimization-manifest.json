@@ -8000,6 +8000,22 @@
       "sourceHash": "d660b2c1c734bdb8146842f3cf5320a014bdb65298986a0abb9d2e4c2f65526f",
       "width": 738
     },
+    "static/images/ashruto-the-unheard.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 144849,
+      "outputHash": "7118d1420774717f58fb606286f9d0c0481ae798f03fef84d11470b315b12e84",
+      "psnrDb": 36.01,
+      "quality": 84,
+      "resized": false,
+      "sourceBytes": 200697,
+      "sourceHash": "0c700fc4d57321b2cac65d93f21b35c622c49ddf439267257ae4cb9c72dc9487",
+      "width": 1024
+    },
     "static/images/ashtami-approach.jpg": {
       "format": "JPEG",
       "height": 576,

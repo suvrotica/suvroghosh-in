@@ -14475,6 +14475,33 @@
 				"Durga Puja"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/ashruto-the-unheard.md": {
+			"bodyHash": "a8377c394251dc50927f21945380cf7de13b45b9dbc162ce5a898a1765cbad4a",
+			"hashVersion": 2,
+			"revisionHash": "4607945175c8b4a7b970720ff13082892a9c6bc7bf3d2a9be6ca5498a5ddc11f",
+			"generatedTags": [
+				"Bengali Horror",
+				"Kolkata",
+				"Durga Puja",
+				"Techno-Horror",
+				"Psychological Horror",
+				"Slasher",
+				"SuvroGhosh",
+				"Chhaya Mahal",
+				"College Square",
+				"THOUSAND KNIVES"
+			],
+			"pinnedTags": [
+				"Bengali Horror",
+				"Kolkata",
+				"Durga Puja",
+				"Techno-Horror",
+				"Psychological Horror",
+				"Slasher",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
