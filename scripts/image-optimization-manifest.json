@@ -10945,6 +10945,22 @@
       "sourceHash": "c6e99d3e1741924f35513d08fd9173abedda5b897b76b1d91b1adbc71e26cd09",
       "width": 1200
     },
+    "static/images/wait-until-she-finishes.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 95240,
+      "outputHash": "0d6ef76b01ce66fde1f92936dcdff73141dee32affa530f8ab01e321a64437d6",
+      "psnrDb": 36.77,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 175095,
+      "sourceHash": "d0b9c3e2670b904cd6958b5a37df7f9ab24ee7efd888c4a68d3e294fa35ac9a3",
+      "width": 1024
+    },
     "static/images/weather-inside-nucleus/portrait/weather-nucleus-1080.avif": {
       "format": "AVIF",
       "height": 1440,

@@ -4836,6 +4836,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 630
 		},
 		{
+			"name": "wait-until-she-finishes.jpg",
+			"src": "/images/wait-until-she-finishes.jpg",
+			"bytes": 95240,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "weather-inside-nucleus/portrait/weather-nucleus-360.avif",
 			"src": "/images/weather-inside-nucleus/portrait/weather-nucleus-360.avif",
 			"bytes": 13225,
