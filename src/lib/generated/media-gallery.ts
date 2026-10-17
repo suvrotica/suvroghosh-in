@@ -6653,6 +6653,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-probably-nothing-maha-saptami.jpg",
+			"src": "/thumbnail/art-probably-nothing-maha-saptami.jpg",
+			"bytes": 82136,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-prognosis-as-philosophy.jpg",
 			"src": "/thumbnail/art-prognosis-as-philosophy.jpg",
 			"bytes": 101393,

@@ -14445,6 +14445,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/probably-nothing-maha-saptami.md": {
+			"bodyHash": "e7b12a342be3643d3ba0d5cfb556dc69da7f789d5274af1f1c7a14992d88491d",
+			"hashVersion": 2,
+			"revisionHash": "30cdbc78847d1abbab9ae7bd184cae43c3189ea727335bbaac683bf02f7b0e77",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire",
+				"Nausea",
+				"Health",
+				"Poverty",
+				"Depression",
+				"Pollution",
+				"Durga Puja"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Satire",
+				"Nausea",
+				"Health",
+				"Poverty",
+				"Depression",
+				"Pollution",
+				"Durga Puja"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

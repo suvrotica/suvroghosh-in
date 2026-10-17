@@ -1,0 +1,134 @@
+<svg role="img" aria-label="Probably Nothing" xmlns="http://www.w3.org/2000/svg" width="1280" height="720"><title>Probably Nothing</title><desc>Static build-time word cloud generated from the article body.</desc><defs><filter id="wordGlow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#d8c7a1" flood-opacity="0.18"/></filter></defs><style><![CDATA[text { filter: url(#wordGlow); paint-order: stroke fill; stroke: rgba(16,17,20,.34); stroke-width: .9px; }]]></style>
+<style>text{font-family:'Droid Sans Mono';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:#101114"></rect>
+<text transform="translate(221,126)" font-size="118" style="fill:#9fc9c5">Fish</text>
+<text transform="translate(1165,487) rotate(-90)" font-size="118" style="fill:#d5d2c2">Now</text>
+<text transform="translate(541,418)" font-size="111" style="fill:#8fb7d0">Feel</text>
+<text transform="translate(836,134)" font-size="111" style="fill:#b6c3dd">Don</text>
+<text transform="translate(130,271)" font-size="103" style="fill:#9fc9c5">Even</text>
+<text transform="translate(459,504)" font-size="95" style="fill:#e0b879">Sick</text>
+<text transform="translate(9,518)" font-size="86" style="fill:#e0b879">Probably</text>
+<text transform="translate(814,636)" font-size="86" style="fill:#b6c3dd">Feeling</text>
+<text transform="translate(68,625)" font-size="86" style="fill:#d88988">Doesn</text>
+<text transform="translate(822,239)" font-size="86" style="fill:#c7d7b5">Keep</text>
+<text transform="translate(1256,666) rotate(-90)" font-size="86" style="fill:#9fc9c5">Whether</text>
+<text transform="translate(119,366) rotate(-90)" font-size="86" style="fill:#b6c3dd">Nausea</text>
+<text transform="translate(515,398) rotate(-90)" font-size="86" style="fill:#a9b7a3">Worse</text>
+<text transform="translate(738,352) rotate(-90)" font-size="86" style="fill:#d88988">Little</text>
+<text transform="translate(338,650)" font-size="86" style="fill:#b6c3dd">Thinking</text>
+<text transform="translate(143,412)" font-size="77" style="fill:#a9b7a3">Write</text>
+<text transform="translate(813,346)" font-size="77" style="fill:#d5d2c2">Afford</text>
+<text transform="translate(866,420)" font-size="77" style="fill:#d88988">Tell</text>
+<text transform="translate(205,704)" font-size="66" style="fill:#8fb7d0">Nauseated</text>
+<text transform="translate(811,551)" font-size="66" style="fill:#c7d7b5">Fiction</text>
+<text transform="translate(897,62)" font-size="66" style="fill:#d5d2c2">Stomach</text>
+<text transform="translate(441,560)" font-size="66" style="fill:#e0b879">Making</text>
+<text transform="translate(686,474)" font-size="65" style="fill:#d9c89e">Everything</text>
+<text transform="translate(838,693)" font-size="65" style="fill:#9fc9c5">Saying</text>
+<text transform="translate(178,189)" font-size="65" style="fill:#d6a79f">Becomes</text>
+<text transform="translate(31,681)" font-size="65" style="fill:#d5d2c2">Need</text>
+<text transform="translate(1237,286) rotate(-90)" font-size="65" style="fill:#c49a6c">Find</text>
+<text transform="translate(190,332)" font-size="65" style="fill:#a9b7a3">Settle</text>
+<text transform="translate(876,184)" font-size="57" style="fill:#9fc9c5">Difficult</text>
+<text transform="translate(700,548)" font-size="57" style="fill:#b6c3dd">Yes</text>
+<text transform="translate(1114,129)" font-size="57" style="fill:#c49a6c">Much</text>
+<text transform="translate(572,280) rotate(-90)" font-size="57" style="fill:#d9c89e">Thought</text>
+<text transform="translate(43,51)" font-size="57" style="fill:#c7d7b5">Eat</text>
+<text transform="translate(634,322) rotate(-90)" font-size="57" style="fill:#d9c89e">Knowing</text>
+<text transform="translate(837,127) rotate(-90)" font-size="57" style="fill:#c49a6c">Isn</text>
+<text transform="translate(1079,713)" font-size="57" style="fill:#d9c89e">Food</text>
+<text transform="translate(1045,250)" font-size="57" style="fill:#d9c89e">Stop</text>
+<text transform="translate(118,560)" font-size="47" style="fill:#d5d2c2">Breathing</text>
+<text transform="translate(485,42)" font-size="38" style="fill:#b6c3dd">Tablet</text>
+<text transform="translate(969,297)" font-size="38" style="fill:#a9b7a3">Past</text>
+<text transform="translate(565,699)" font-size="38" style="fill:#9fc9c5">Anyway</text>
+<text transform="translate(744,272)" font-size="38" style="fill:#b6c3dd">Nothing</text>
+<text transform="translate(146,31)" font-size="38" style="fill:#d5d2c2">Treatment</text>
+<text transform="translate(153,446)" font-size="38" style="fill:#9fc9c5">Somehow</text>
+<text transform="translate(16,715)" font-size="38" style="fill:#c7d7b5">Whatever</text>
+<text transform="translate(40,296) rotate(-90)" font-size="38" style="fill:#e0b879">Happening</text>
+<text transform="translate(780,226) rotate(-90)" font-size="38" style="fill:#d9c89e">Enough</text>
+<text transform="translate(702,37)" font-size="38" style="fill:#8fb7d0">Time</text>
+<text transform="translate(799,713) rotate(-90)" font-size="38" style="fill:#c49a6c">Sitting</text>
+<text transform="translate(5,442)" font-size="38" style="fill:#d9c89e">Trying</text>
+<text transform="translate(370,428)" font-size="38" style="fill:#8fb7d0">Haven</text>
+<text transform="translate(6,398)" font-size="32" style="fill:#d9c89e">Perhaps</text>
+<text transform="translate(1267,322) rotate(-90)" font-size="32" style="fill:#8fb7d0">Becoming</text>
+<text transform="translate(447,327) rotate(-90)" font-size="32" style="fill:#c7d7b5">Already</text>
+<text transform="translate(662,236) rotate(-90)" font-size="32" style="fill:#d9c89e">Ask</text>
+<text transform="translate(186,652)" font-size="30" style="fill:#b6c3dd">Establish</text>
+<text transform="translate(1057,572)" font-size="24" style="fill:#b6c3dd">Apparently</text>
+<text transform="translate(798,404)" font-size="24" style="fill:#d9c89e">Tired</text>
+<text transform="translate(1121,505)" font-size="24" style="fill:#d5d2c2">Every</text>
+<text transform="translate(174,142) rotate(-90)" font-size="24" style="fill:#a9b7a3">Small</text>
+<text transform="translate(650,598)" font-size="24" style="fill:#d88988">Attached</text>
+<text transform="translate(403,377)" font-size="24" style="fill:#b6c3dd">Bad</text>
+<text transform="translate(220,210)" font-size="24" style="fill:#b6c3dd">Leave</text>
+<text transform="translate(1243,75) rotate(-90)" font-size="24" style="fill:#c49a6c">Quite</text>
+<text transform="translate(541,316)" font-size="24" style="fill:#d6a79f">Ill</text>
+<text transform="translate(585,66)" font-size="24" style="fill:#c49a6c">Helping</text>
+<text transform="translate(1125,532)" font-size="24" style="fill:#d6a79f">Wrong</text>
+<text transform="translate(1197,65) rotate(-90)" font-size="24" style="fill:#d5d2c2">Hear</text>
+<text transform="translate(24,678) rotate(-90)" font-size="24" style="fill:#b6c3dd">Immediately</text>
+<text transform="translate(696,496)" font-size="24" style="fill:#a9b7a3">Anything</text>
+<text transform="translate(342,148)" font-size="24" style="fill:#d5d2c2">Anxious</text>
+<text transform="translate(655,315)" font-size="24" style="fill:#a9b7a3">Today</text>
+<text transform="translate(1199,392) rotate(-90)" font-size="24" style="fill:#9fc9c5">Wish</text>
+<text transform="translate(358,451)" font-size="24" style="fill:#8fb7d0">Nobody</text>
+<text transform="translate(267,354)" font-size="24" style="fill:#d6a79f">Uncomfortable</text>
+<text transform="translate(56,546)" font-size="24" style="fill:#d5d2c2">Seem</text>
+<text transform="translate(364,22)" font-size="24" style="fill:#d6a79f">Somebody</text>
+<text transform="translate(62,182) rotate(-90)" font-size="24" style="fill:#e0b879">Idea</text>
+<text transform="translate(1051,105)" font-size="24" style="fill:#9fc9c5">Help</text>
+<text transform="translate(890,496)" font-size="24" style="fill:#d6a79f">Pollution</text>
+<text transform="translate(864,574)" font-size="24" style="fill:#d9c89e">Problems</text>
+<text transform="translate(747,297)" font-size="24" style="fill:#c7d7b5">Maybe</text>
+<text transform="translate(583,672)" font-size="24" style="fill:#a9b7a3">Follow</text>
+<text transform="translate(784,167)" font-size="24" style="fill:#d88988">Coming</text>
+<text transform="translate(370,42)" font-size="24" style="fill:#c49a6c">Hope</text>
+<text transform="translate(1070,411)" font-size="17" style="fill:#d88988">Ate</text>
+<text transform="translate(160,56)" font-size="17" style="fill:#d6a79f">Morning</text>
+<text transform="translate(1043,139)" font-size="17" style="fill:#d5d2c2">Reglan</text>
+<text transform="translate(501,414)" font-size="17" style="fill:#d6a79f">Mind</text>
+<text transform="translate(1090,547)" font-size="17" style="fill:#d5d2c2">Constant</text>
+<text transform="translate(153,352)" font-size="17" style="fill:#b6c3dd">Almost</text>
+<text transform="translate(703,567)" font-size="17" style="fill:#a9b7a3">Happen</text>
+<text transform="translate(1224,682)" font-size="17" style="fill:#c49a6c">Stays</text>
+<text transform="translate(1025,17)" font-size="17" style="fill:#b6c3dd">Unpleasant</text>
+<text transform="translate(808,431)" font-size="17" style="fill:#e0b879">Part</text>
+<text transform="translate(294,206)" font-size="17" style="fill:#d6a79f">Reasoning</text>
+<text transform="translate(1060,79)" font-size="17" style="fill:#9fc9c5">Ridiculous</text>
+<text transform="translate(1053,201)" font-size="17" style="fill:#e0b879">Finances</text>
+<text transform="translate(548,333)" font-size="17" style="fill:#a9b7a3">Considerate</text>
+<text transform="translate(5,85)" font-size="17" style="fill:#d6a79f">First</text>
+<text transform="translate(1025,652)" font-size="17" style="fill:#a9b7a3">Convenient</text>
+<text transform="translate(70,457)" font-size="17" style="fill:#e0b879">Yet</text>
+<text transform="translate(943,715)" font-size="17" style="fill:#d5d2c2">Persuade</text>
+<text transform="translate(1025,510)" font-size="17" style="fill:#d9c89e">Problem</text>
+<text transform="translate(177,77)" font-size="17" style="fill:#d88988">Taken</text>
+<text transform="translate(1182,480) rotate(-90)" font-size="17" style="fill:#b6c3dd">Money</text>
+<text transform="translate(788,373)" font-size="17" style="fill:#c7d7b5">Explain</text>
+<text transform="translate(623,37)" font-size="17" style="fill:#d88988">Reminder</text>
+<text transform="translate(810,19)" font-size="17" style="fill:#c49a6c">Keeping</text>
+<text transform="translate(479,587)" font-size="17" style="fill:#9fc9c5">Rather</text>
+<text transform="translate(1268,164) rotate(-90)" font-size="17" style="fill:#d5d2c2">Disappointing</text>
+<text transform="translate(188,462)" font-size="17" style="fill:#c49a6c">Organism</text>
+<text transform="translate(564,436)" font-size="17" style="fill:#8fb7d0">Wanting</text>
+<text transform="translate(397,576)" font-size="17" style="fill:#b6c3dd">Exactly</text>
+<text transform="translate(562,576)" font-size="17" style="fill:#9fc9c5">Suffer</text>
+<text transform="translate(218,143)" font-size="17" style="fill:#c7d7b5">Aptitude</text>
+<text transform="translate(813,715)" font-size="17" style="fill:#a9b7a3">Preferred</text>
+<text transform="translate(933,261)" font-size="17" style="fill:#c7d7b5">Paid</text>
+<text transform="translate(743,319)" font-size="17" style="fill:#e0b879">Suppose</text>
+<text transform="translate(268,108)" font-size="17" style="fill:#e0b879">Say</text>
+<text transform="translate(10,324)" font-size="17" style="fill:#c7d7b5">Wait</text>
+<text transform="translate(138,157) rotate(-90)" font-size="17" style="fill:#d6a79f">Frightened</text>
+<text transform="translate(815,691) rotate(-90)" font-size="17" style="fill:#b6c3dd">Possibility</text>
+<text transform="translate(129,327)" font-size="17" style="fill:#d5d2c2">Manage</text>
+<text transform="translate(1217,703)" font-size="17" style="fill:#9fc9c5">Meal</text>
+<text transform="translate(1046,370)" font-size="17" style="fill:#8fb7d0">Meals</text>
+<text transform="translate(1119,672)" font-size="17" style="fill:#d9c89e">Recover</text>
+<text transform="translate(658,108)" font-size="17" style="fill:#9fc9c5">Able</text>
+<text transform="translate(654,259)" font-size="17" style="fill:#d6a79f">Getting</text>
+<text transform="translate(1052,267)" font-size="17" style="fill:#e0b879">Irritated</text>
+</svg>

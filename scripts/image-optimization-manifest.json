@@ -16499,6 +16499,22 @@
       "sourceHash": "2185a3c2e4ce69cc7038baa072ba07d74dfbb4b26d023dcd1e2a02eb587ed14e",
       "width": 1200
     },
+    "static/thumbnail/art-probably-nothing-maha-saptami.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 82136,
+      "outputHash": "721b228b74598f8399138b2e4bd72aecee2ecfb5977e19494f738e541c98f9a3",
+      "psnrDb": 37.67,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 145355,
+      "sourceHash": "9558ddf1573cf12f61e80dc3dc2feb248402e6029b1d1e6d8d88b20d2ef964d6",
+      "width": 1024
+    },
     "static/thumbnail/art-prognosis-as-philosophy.jpg": {
       "format": "JPEG",
       "height": 800,
