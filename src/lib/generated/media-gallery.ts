@@ -4080,6 +4080,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "one-mouthful.jpg",
+			"src": "/images/one-mouthful.jpg",
+			"bytes": 186725,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "p0.jpeg",
 			"src": "/images/p0.jpeg",
 			"bytes": 189953,

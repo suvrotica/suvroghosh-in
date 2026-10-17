@@ -14521,6 +14521,25 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Quantum Entanglement"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/one-mouthful.md": {
+			"bodyHash": "fcecc8c05358d73698d652f469e9096be023b99de61ba6022e79375e5415a09c",
+			"hashVersion": 2,
+			"revisionHash": "074bf27468136efd80299d4adbe50cce1816b6114c3779d51b73085411850366",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Apocalyptic Horror",
+				"Dread",
+				"Isolation",
+				"Nirmal",
+				"Dutta",
+				"Mrs",
+				"Molten",
+				"Mat"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Apocalyptic Horror", "Dread", "Isolation"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

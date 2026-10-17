@@ -9274,6 +9274,22 @@
       "sourceHash": "52602fb29706952c96afeee959d9d537e9890eaf13ada862a477644f7193e7a2",
       "width": 1280
     },
+    "static/images/one-mouthful.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 186725,
+      "outputHash": "1d1cab1d1a49c3e690f31ede9d57d5f6267075d67b272d7fdf9327d81e6477f8",
+      "psnrDb": 36.33,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 237680,
+      "sourceHash": "87bb88a3b85200fde5c59521608f8a37f0a15f6a0134c89e01a68724c735ab2b",
+      "width": 1024
+    },
     "static/images/p0.jpeg": {
       "format": "JPEG",
       "height": 1600,
