@@ -14083,6 +14083,22 @@
       "sourceHash": "c6b4ba90f59096c07bd6050c7995eb930f0d09542787a080ee87d43ec3f4d079",
       "width": 1200
     },
+    "static/thumbnail/art-chorbagan-who-signed.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 160192,
+      "outputHash": "049e1e708ee140ba7b93c213a1759c0a2feeb610f4c209526cc6cd2402a70eb9",
+      "psnrDb": 37.48,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 199620,
+      "sourceHash": "436211df7402086dd907f49197fb52634ce6601dc1db74dbdf4f3feb85b7cc8b",
+      "width": 1024
+    },
     "static/thumbnail/art-chronic-traumatic-nihilism-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,

@@ -5596,6 +5596,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 800
 		},
 		{
+			"name": "art-chorbagan-who-signed.jpg",
+			"src": "/thumbnail/art-chorbagan-who-signed.jpg",
+			"bytes": 160192,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "art-chronic-traumatic-nihilism-calcutta.jpg",
 			"src": "/thumbnail/art-chronic-traumatic-nihilism-calcutta.jpg",
 			"bytes": 171366,

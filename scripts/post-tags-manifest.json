@@ -14540,6 +14540,36 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Apocalyptic Horror", "Dread", "Isolation"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/chorbagan-who-signed.md": {
+			"bodyHash": "af7337d3692f96d5af6aae84da2d10bae82c6d6e3b9c2067e0b2bb02580d54eb",
+			"hashVersion": 2,
+			"revisionHash": "542b27edec72ac3fb3a0630f74e4f71d37a163bd21440f27eeadfe945ca2e090",
+			"generatedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Chorbagan",
+				"Puja",
+				"Politics",
+				"Democracy",
+				"Religion",
+				"Safety",
+				"Satire"
+			],
+			"pinnedTags": [
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh",
+				"Chorbagan",
+				"Puja",
+				"Politics",
+				"Democracy",
+				"Religion",
+				"Safety",
+				"Satire"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

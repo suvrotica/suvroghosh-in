@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-17T22:26:22.889382+00:00",
+  "generatedAt": "2026-10-18T12:44:19.081607+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -2321,6 +2321,29 @@
         "Shows",
         "Liquor",
         "Health"
+      ],
+      "wordCount": 130
+    },
+    "chorbagan-who-signed": {
+      "generatedAt": "2026-10-18T12:44:18.350534+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/chorbagan-who-signed.svg",
+      "source": "src/lib/posts/chorbagan-who-signed.md",
+      "sourceHash": "2fec1696e743e5a76c7ade02044334f43c6a7c3b02eb881b826be1670c9581f7",
+      "sourceModified": "2026-10-18T12:43:36.036639+00:00",
+      "topWords": [
+        "Person",
+        "Somebody",
+        "Political",
+        "Change",
+        "Already",
+        "Whose",
+        "Becomes",
+        "Don",
+        "Keep",
+        "Safety",
+        "Chorbagan",
+        "Responsibility"
       ],
       "wordCount": 130
     },
