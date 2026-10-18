@@ -3996,6 +3996,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 1052
 		},
 		{
+			"name": "lean-ai-and-the-trouble-with-being-certain.jpg",
+			"src": "/images/lean-ai-and-the-trouble-with-being-certain.jpg",
+			"bytes": 103489,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "lightning-atlas.png",
 			"src": "/images/lightning-atlas.png",
 			"bytes": 87512,

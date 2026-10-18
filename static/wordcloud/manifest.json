@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T15:33:02.159880+00:00",
+  "generatedAt": "2026-10-18T16:23:05.347358+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -5909,6 +5909,29 @@
         "Called",
         "Architecture",
         "Health"
+      ],
+      "wordCount": 130
+    },
+    "lean-ai-and-the-trouble-with-being-certain": {
+      "generatedAt": "2026-10-18T16:23:03.742916+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/lean-ai-and-the-trouble-with-being-certain.svg",
+      "source": "src/lib/posts/lean-ai-and-the-trouble-with-being-certain.md",
+      "sourceHash": "6ec379d983a1521c9add2093ed0ba25edbe95d91134942e305d13c92ca92dc80",
+      "sourceModified": "2026-10-18T16:22:45.504014+00:00",
+      "topWords": [
+        "Lean",
+        "Proof",
+        "Reasoning",
+        "AI",
+        "Argument",
+        "Mathematical",
+        "Statement",
+        "Formal",
+        "Need",
+        "Every",
+        "Mathematics",
+        "Work"
       ],
       "wordCount": 130
     },

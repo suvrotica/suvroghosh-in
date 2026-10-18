@@ -9089,6 +9089,22 @@
       "sourceHash": "56c722514f650970ff71e52c43de646b7e7b941d5039e1a4256df04f28034e80",
       "width": 1536
     },
+    "static/images/lean-ai-and-the-trouble-with-being-certain.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 103489,
+      "outputHash": "ea5b8fd800c28b6c6d0910f010086dd49db4873d7dd07d022c36ac2680feda9d",
+      "psnrDb": 36.16,
+      "quality": 80,
+      "resized": false,
+      "sourceBytes": 171930,
+      "sourceHash": "126516842922226d8b5321dfc71cc38015b8613fe4065de923427716a63f5c1b",
+      "width": 1024
+    },
     "static/images/lightning-atlas.png": {
       "format": "PNG",
       "height": 900,

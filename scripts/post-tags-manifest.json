@@ -14614,6 +14614,34 @@
 				"Bodily Autonomy"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/lean-ai-and-the-trouble-with-being-certain.md": {
+			"bodyHash": "a7e323c2599709c10e7558cd12c4b8c8cca9e28220bcd90f8f91938558ca2eb2",
+			"hashVersion": 2,
+			"revisionHash": "c70bc63299a044610741ed9014f696240445110a2c4e773d2fafdc63c57c0148",
+			"generatedTags": [
+				"Lean 4",
+				"Formal Verification",
+				"Artificial Intelligence",
+				"Mathematical Logic",
+				"Proof Assistants",
+				"Type Theory",
+				"Future of Mathematics",
+				"SuvroGhosh",
+				"Lean AI",
+				"Lean"
+			],
+			"pinnedTags": [
+				"Lean 4",
+				"Formal Verification",
+				"Artificial Intelligence",
+				"Mathematical Logic",
+				"Proof Assistants",
+				"Type Theory",
+				"Future of Mathematics",
+				"SuvroGhosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10
