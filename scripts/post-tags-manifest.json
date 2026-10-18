@@ -14589,6 +14589,31 @@
 			],
 			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Complicity"],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/the-last-fuchka.md": {
+			"bodyHash": "8a3e59e69059e232c81e78d8db3412768da26a4636c3def86b4ac4c5c609d52b",
+			"hashVersion": 2,
+			"revisionHash": "868f6bb75797c5544445341d6c0336bdc2847d99386168990f826d65c3fb22ee",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Biological Horror",
+				"Claustrophobic",
+				"Bodily Autonomy",
+				"Mou",
+				"Fuchka",
+				"Sen",
+				"Biologist",
+				"Stopped"
+			],
+			"pinnedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Biological Horror",
+				"Claustrophobic",
+				"Bodily Autonomy"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

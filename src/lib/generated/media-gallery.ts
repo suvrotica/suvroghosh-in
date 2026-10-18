@@ -4409,6 +4409,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 895
 		},
 		{
+			"name": "the-last-fuchka.jpg",
+			"src": "/images/the-last-fuchka.jpg",
+			"bytes": 70246,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "the-last-supper-of-calcutta.jpg",
 			"src": "/images/the-last-supper-of-calcutta.jpg",
 			"bytes": 212868,

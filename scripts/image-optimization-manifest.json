@@ -10007,6 +10007,22 @@
       "sourceHash": "9d989444aa839a2ab739547f192072aed90ab5a135f853a760390fcfd63b1559",
       "width": 1280
     },
+    "static/images/the-last-fuchka.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 70246,
+      "outputHash": "5fbe4ceb7578fae9322c754783a8a8713bbec1c72b31dabd27025996c25a003e",
+      "psnrDb": 37.54,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 126579,
+      "sourceHash": "9d586b1e447640036bd4f47119970fd01cccf4b15f9a47dbc00a8a0d2ea85e60",
+      "width": 1024
+    },
     "static/images/the-last-supper-of-calcutta.jpg": {
       "format": "JPEG",
       "height": 576,

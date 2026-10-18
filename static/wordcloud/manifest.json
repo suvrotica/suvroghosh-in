@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T13:48:01.575500+00:00",
+  "generatedAt": "2026-10-18T15:33:02.159880+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -12073,6 +12073,29 @@
         "Opening",
         "Voice",
         "Beneath"
+      ],
+      "wordCount": 130
+    },
+    "the-last-fuchka": {
+      "generatedAt": "2026-10-18T15:33:01.561511+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/the-last-fuchka.svg",
+      "source": "src/lib/posts/the-last-fuchka.md",
+      "sourceHash": "3d5806495aad7d1455eb1be9f598535793f049c5c2f867750b4400e3849c4a8f",
+      "sourceModified": "2026-10-18T15:32:42.273264+00:00",
+      "topWords": [
+        "Mou",
+        "Asked",
+        "Stopped",
+        "Woman",
+        "Wet",
+        "Hands",
+        "Beside",
+        "Kept",
+        "Held",
+        "Hand",
+        "Sen",
+        "Behind"
       ],
       "wordCount": 130
     },
