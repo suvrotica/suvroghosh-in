@@ -14570,6 +14570,25 @@
 				"Satire"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/references-available.md": {
+			"bodyHash": "bf6f82ef21e3fdd951393bf3816ee5795f146fcf33f6e46de00fb654d28331ab",
+			"hashVersion": 2,
+			"revisionHash": "533475bc21c9b41d0ceff73e79ba783f799599f8408ce06f7fd8a348dd27715e",
+			"generatedTags": [
+				"Short Fiction",
+				"Calcutta",
+				"Body Horror",
+				"Dread",
+				"Complicity",
+				"Mitali",
+				"Ritwik",
+				"Stretcher",
+				"Doctor",
+				"Dressing"
+			],
+			"pinnedTags": ["Short Fiction", "Calcutta", "Body Horror", "Dread", "Complicity"],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

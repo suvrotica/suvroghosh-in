@@ -9448,6 +9448,22 @@
       "sourceHash": "7605419ce7947a8f093398d38418b55863d82f003318c75057941845525c51b9",
       "width": 1600
     },
+    "static/images/references-available.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 185707,
+      "outputHash": "d553c1ae91255314df0a0ebbfcd51e570495858299d8646e68013dddcf13b831",
+      "psnrDb": 35.6,
+      "quality": 86,
+      "resized": false,
+      "sourceBytes": 237769,
+      "sourceHash": "5ee4db7c253540bb38c8a196178ff03ce244761c9a144f1d612e1b71b9c5187b",
+      "width": 1024
+    },
     "static/images/resources/alternatives-to-overused-ai-language.webp": {
       "format": "WEBP",
       "height": 675,

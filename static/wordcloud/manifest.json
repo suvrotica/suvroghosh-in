@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T12:44:19.081607+00:00",
+  "generatedAt": "2026-10-18T13:48:01.575500+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -8163,6 +8163,29 @@
         "Return",
         "System",
         "Evidence"
+      ],
+      "wordCount": 130
+    },
+    "references-available": {
+      "generatedAt": "2026-10-18T13:48:01.243006+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/references-available.svg",
+      "source": "src/lib/posts/references-available.md",
+      "sourceHash": "98493737554eca82a205547b25df33ca5a20639537d8260794bb817614da8694",
+      "sourceModified": "2026-10-18T13:47:42.392546+00:00",
+      "topWords": [
+        "Mitali",
+        "Doctor",
+        "Mouth",
+        "Hand",
+        "Phone",
+        "Ritwik",
+        "Name",
+        "Tongue",
+        "Asked",
+        "Stopped",
+        "Put",
+        "Woman"
       ],
       "wordCount": 130
     },

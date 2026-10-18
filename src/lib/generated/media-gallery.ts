@@ -4157,6 +4157,13 @@ export const mediaGallery: Record<MediaGalleryTab, MediaGalleryAsset[]> = {
 			"height": 900
 		},
 		{
+			"name": "references-available.jpg",
+			"src": "/images/references-available.jpg",
+			"bytes": 185707,
+			"width": 1024,
+			"height": 576
+		},
+		{
 			"name": "Resize_20260428_134350_0013.jpg",
 			"src": "/images/Resize_20260428_134350_0013.jpg",
 			"bytes": 17493,
