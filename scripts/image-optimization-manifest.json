@@ -16323,6 +16323,22 @@
       "sourceHash": "263e5fa797848fb9a419db16b5dc4c02c3f11c422cc5bc7cd2365a25f65f9fc5",
       "width": 1024
     },
+    "static/thumbnail/art-one-imaginary-firefly.jpg": {
+      "format": "JPEG",
+      "height": 576,
+      "optimized": true,
+      "optimizerVersion": "2026-07-18.1",
+      "originalHeight": 576,
+      "originalWidth": 1024,
+      "outputBytes": 82981,
+      "outputHash": "125785bfe06117d1e15c83200bc7bac713566b78e8a2eb8cfd11943ac8e4433e",
+      "psnrDb": 37.36,
+      "quality": 76,
+      "resized": false,
+      "sourceBytes": 158034,
+      "sourceHash": "05de4411d2892de6e6cd97e2948e443300ca25f9dfb23a98da2bc9c2c2ad05cd",
+      "width": 1024
+    },
     "static/thumbnail/art-one-life-no-rehearsal-calcutta.jpg": {
       "format": "JPEG",
       "height": 800,

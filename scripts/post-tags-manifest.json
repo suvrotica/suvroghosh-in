@@ -14642,6 +14642,36 @@
 				"SuvroGhosh"
 			],
 			"generatorVersion": "2026-07-22.1"
+		},
+		"src/lib/posts/one-imaginary-firefly.md": {
+			"bodyHash": "7d42cb582e26249d8c77b008a56e71beaeccf4d992307d905ece7b5bca9b35c7",
+			"hashVersion": 2,
+			"revisionHash": "07434ddd97d881eb173623f079a3d10105ae2d1742fe0dc3b0e323a6b500ce70",
+			"generatedTags": [
+				"Hope",
+				"Depression",
+				"Life",
+				"Time",
+				"Aging",
+				"Uncertainty",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"pinnedTags": [
+				"Hope",
+				"Depression",
+				"Life",
+				"Time",
+				"Aging",
+				"Uncertainty",
+				"Satire",
+				"Calcutta",
+				"Kolkata",
+				"suvroghosh"
+			],
+			"generatorVersion": "2026-07-22.1"
 		}
 	},
 	"maxTags": 10

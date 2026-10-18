@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T16:23:05.347358+00:00",
+  "generatedAt": "2026-10-18T22:11:25.782920+00:00",
   "posts": {
     "a-cup-of-cha-is-not-a-small-thing": {
       "generatedAt": "2026-08-07T03:10:20.683672+00:00",
@@ -7128,6 +7128,29 @@
         "Mind",
         "Almost",
         "Month"
+      ],
+      "wordCount": 130
+    },
+    "one-imaginary-firefly": {
+      "generatedAt": "2026-10-18T22:11:24.237265+00:00",
+      "generatorVersion": "2026-07-13.1",
+      "output": "static/wordcloud/one-imaginary-firefly.svg",
+      "source": "src/lib/posts/one-imaginary-firefly.md",
+      "sourceHash": "8906cb6199df19dc0b3c5663e3a0b6890ee6c45ee1a2d10292203aa42533bffc",
+      "sourceModified": "2026-10-18T22:10:47.454602+00:00",
+      "topWords": [
+        "Firefly",
+        "Tunnel",
+        "Looking",
+        "Fog",
+        "Lighter",
+        "Nothing",
+        "Whether",
+        "Machinery",
+        "Light",
+        "Hope",
+        "Years",
+        "Someone"
       ],
       "wordCount": 130
     },
